@@ -3,8 +3,7 @@
 <topic id="topic_i5v_bjb_ws">
   <title><b>Beta 0 Known Issues and Limitations</b></title>
   <body>
-    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-    <p>note: this document is under development<?oxy_custom_end?></p>
+    <note>This document is under development.</note>
     <p><b>Limitations</b></p>
     <p><b>Installing Swift</b></p>
     <p>Swift installs with the following limitations: </p>

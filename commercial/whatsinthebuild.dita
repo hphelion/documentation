@@ -21,6 +21,7 @@
 </metadata>
 </prolog>
 <body>
+  <note>This document is under development.</note>
 <p>HP Helion OpenStack is a commercial-grade distribution of OpenStack the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
 <p>In the Helion OpenStack 2.0 release, these are the features you can expect:</p>
 <ul>

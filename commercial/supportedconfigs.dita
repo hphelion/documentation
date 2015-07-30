@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ckw_kbc_ws">
-  <title>Beta 0 SupportedConfigurations</title>
+  <title>Beta 0 Supported Configurations</title>
   <body>
-    <p>Note: This document is under development.</p>
+    <note>This document is under development.</note>
     <p/>
     <p>The following list summaries the qualified configurations and their purpose. A more detailed
       configuration is liked off each of the sections</p>
