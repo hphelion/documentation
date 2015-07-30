@@ -165,7 +165,7 @@
 <section id="Networking">
       <title>Network Planning</title>
   <ul>
-    <li>NIC bonding</li>
+    <li>NIC bonding: Helion OpenStack 2.0 has native support for NIC bonding.</li>
     <li>Multi-NIC support</li>
     <li>Network separation (including VLAN)</li>
   </ul>
