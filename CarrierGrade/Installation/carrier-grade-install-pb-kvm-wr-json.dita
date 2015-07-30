@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample wr.json File for
+        Installing the KVM + ESX Topology</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
+    <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
+                KVM + ESX deployment</xref> requires several JSON files that will be used when
+            deploying the HLM VM.</p>
+        
+<section id="sample-node-provisionjson-file">
+            <p>The following represents a sample <codeph>wr.json</codeph> file. Use values
+                appropriate for your environment.</p>
+            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
+                    the KVM + ESX Deployment</xref>.</p>
+<codeblock>
+{
+    "product": {
+        "version": 1
+    },
+
+    "property-groups": [
+        {
+            "name": "wr-vars",
+            "properties": {
+                "database_storage": 70,
+                "backup_storage": 300,
+                "image_storage": 250,
+                "region_name": "RegionOne",
+                "logical_interface": [
+                    {
+                        "lag_interface": "N",
+                        "interface_mtu": 1500,
+                        "interface_ports": [
+                            "eth0"
+                        ],
+                        "network": [
+                            {
+                                "ip_start_address": "10.20.3.50",
+                                "ip_end_address": "10.20.3.99",
+                                "name": "management"
+                            },
+                            {
+                                "ip_start_address": "172.16.73.50",
+                                "ip_end_address": "172.16.73.99",
+                                "name": "blockstore"
+                            },
+                            {
+                                "ip_start_address": "10.20.4.50",
+                                "ip_end_address": "10.20.4.99",
+                                "name": "api"
+                            }
+                        ]
+                    }
+                ],
+                "pxeboot_cidr": "10.20.2.0/24",
+                "license_file_name": "license.lic"
+            }
+        }
+    ]
+}
+
+</codeblock>        
+
+</section>
+</body>
+</topic>
