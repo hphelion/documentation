@@ -9,12 +9,13 @@
       configuration is liked off each of the sections</p>
     <ol id="ol_stq_lbc_ws">
       <li>Cloud in a box <ol id="ol_q5q_lbc_ws">
-          <li>All HOS services installed from and running on a single node </li>
-          <li>Target is demos and POCs requiring minimum hardware footprint</li>
+          <li>All HP Helion OpenStack services installed from and running on a single node </li>
+          <li>This configuration is meant for anyone wanting a proof of concept and requires a
+            minimum hardware footprint</li>
           <li>Single NIC, no bonding</li>
         </ol></li>
-      <li>Configuration compatible with 1.1 <ol id="ol_cvq_lbc_ws">
-          <li>Supports migration target for 1.1 customer base</li>
+      <li>Configuration compatible with HP Helion OpenStack 1.1 <ol id="ol_cvq_lbc_ws">
+          <li>Supports migration  for 1.1 </li>
           <li>Single 3-node control plane for all CP services</li>
           <li>Single NIC, no bonding</li>
           <li>No IP separation</li>
@@ -22,12 +23,16 @@
             configuration options</li>
         </ol></li>
       <li>Single Region<ol id="ol_pvq_lbc_ws">
-          <li>Single control plane for all CP services</li>
+          <li>Single control plane for
+            <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all CP
+            services<?oxy_custom_end?></li>
           <li>Single bond of two NICs</li>
           <li>Network traffic separation providing for different services on different VLANs</li>
           <li>IP segmentation </li>
+          <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
           <li>Multiple server roles for different services (Compute, Object etc) with different disk
             configuration options</li>
+          <?oxy_custom_end?>
         </ol></li>
     </ol>
   </body>
