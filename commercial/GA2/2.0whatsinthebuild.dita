@@ -40,7 +40,7 @@
         <li>adding VSA, etc</li>
       </ul>
    </li> 
-  <li>Networking Planning
+  <li>Network Planning
     <ul>
       <li><xref type="section" href="#topic12031/NicBonding">NIC bonding</xref></li>
       <li><xref type="section" href="#topic12031/Multi-NIC">Multi-NIC support</xref></li>
@@ -60,8 +60,70 @@
 </ul>
 <section id="Baremetal-install"> <title>Baremetal Install Kit</title>
 </section>
-<section id="Kiloset"> <title>Full set of Kilo-based OpenStack services</title>
-</section>
+<section id="Kiloset">
+      <title>Full set of Kilo-based OpenStack services</title>
+      <table frame="all" rowsep="1" colsep="1" id="table_mkl_n41_ws">
+        <title>test</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Service</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>LBaaS (Load-Balancing-as-a-Service)</entry>
+              <entry>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a
+                load balancing feature set. Helion OpenStack 2.0 includes the V2 version which
+                allows flexible load balancing of multiple ports on one VIP. The included reference
+                implementation uses haproxy but 3rd party Load Balancers can be integrated as well.
+                In case that a 3rd party driver doesn’t exist for LBaaS V2 installing LBaaS V1
+                instead of V2 is supported.  For more information, see: <xref
+                  href="https://wiki.openstack.org/wiki/Neutron/LBaaS" scope="external"
+                  format="html">https://wiki.openstack.org/wiki/Neutron/LBaaS</xref></entry>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>table here </section>
 <section id="LBaaS"> <title>LBaaS</title>
 <p>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load balancing feature set. Helion OpenStack 2.0 includes the V2 version which allows flexible load balancing of multiple ports on one VIP. The included reference implementation uses haproxy but 3rd party Load Balancers can be integrated as well. In case that a 3rd party driver doesn’t exist for LBaaS V2 installing LBaaS V1 instead of V2 is supported.</p>
 <p>For more information, see: <xref href="https://wiki.openstack.org/wiki/Neutron/LBaaS" scope="external" format="html">https://wiki.openstack.org/wiki/Neutron/LBaaS</xref></p>
