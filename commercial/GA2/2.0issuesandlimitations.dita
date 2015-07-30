@@ -52,11 +52,8 @@
     <p>Currently testing and working through bugs in a HOS2.0 environment. </p>
     <p>~70% chance most of the top level functionality is available for internal beta 0 (alarm
       definitions, notifications, explorer, dashboard, and compute nodes). </p>
-    <p>Some content pages will lag to Beta 1.</p>
     <p><b>Cinder</b></p>
     <p>Core cinder services are all being installed and configured via HLM. </p>
-    <p>HPM-1254 and HPM-1255 are both green, and all cinder core tasks required for this integration
-      will be completed in sprint 6. </p>
     <p>Cinder installation with VSA as a backend is being worked through at the moment, manual steps
       to be defined later may be required to complete installation.</p>
     <p><b>Networks</b></p>
@@ -68,14 +65,11 @@
       Today we don't support multiple external networks at L2 (ML2 OVS mech driver) nor L3 (DVR Or
       Centralized)</p>
     <p> </p>
-    <p>Need use cases/stories [~vikas.deolaliker@hp.com]</p>
+    <p>Need use cases/stories </p>
     <p>* ability to span L3</p>
     <p>* multiple provider networks/separation of traffic</p>
     <p>* two pools for fip to span networks/different fip pools</p>
     <p>* talk to multiple networks</p>
-    <p> </p>
-    <p> </p>
-    <p>Need done done criteria [~vikas.deolaliker@hp.com]</p>
     <p> </p>
     <p>[06/02/15]</p>
     <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
