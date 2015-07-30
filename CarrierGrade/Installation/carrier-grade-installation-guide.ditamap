@@ -19,8 +19,8 @@
     </topicmeta>
     <topicref href="carrier-grade-install-pb-overview.dita">
         <topicref href="carrier-grade-install-pb-prereqs-GA.dita">
-            <topicref href="carrier-grade-install-pb-network-prepare-GA.dita"/>
-            <topicref href="carrier-grade-install-NTP.dita"/>
+            <topicref href="carrier-grade-install-pb-network-prepare-GA.dita" toc="no"/>
+            <topicref href="carrier-grade-install-NTP.dita" toc="no"/>
         </topicref>
         <topicref href="carrier-grade-install-non-kvm-GA.dita">
             <topicref href="carrier-grade-install-pb-kvm-only-json.dita"/>
