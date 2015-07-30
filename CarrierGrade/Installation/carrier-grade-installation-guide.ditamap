@@ -18,21 +18,28 @@
         </bookid -->
     </topicmeta>
     <topicref href="carrier-grade-install-pb-overview.dita">
+        <topicref href="carrier-grade-support-matrix2.dita"/>
+        <topicref href="carrier-grade-technical-overview.dita"/>
+        <topicref href="carrier-grade-technical-specs.dita"/>
         <topicref href="carrier-grade-install-pb-prereqs-GA.dita">
-            <topicref href="carrier-grade-install-pb-network-prepare-GA.dita"/>
-            <topicref href="carrier-grade-install-NTP.dita"/>
+            <topicref href="carrier-grade-install-pb-network-prepare-GA.dita" toc="no"/>
+            <topicref href="carrier-grade-install-NTP.dita" toc="no"/>
         </topicref>
-        <topicref href="carrier-grade-install-non-kvm-GA.dita">
-            <topicref href="carrier-grade-install-pb-kvm-only-json.dita"/>
-        </topicref>
-        <topicref href="carrier-grade-install-kvm-esx-GA.dita">
-            <topicref href="carrier-grade-install-pb-kvm-node-json.dita"/>
-            <topicref href="carrier-grade-install-pb-kvm-def-json.dita"/>
-            <topicref href="carrier-grade-install-pb-kvm-ansible-json.dita"/>
-            <topicref href="carrier-grade-install-pb-kvm-env-json.dita"/>
-            <topicref href="carrier-grade-install-pb-kvm-esx-json.dita"/>
-            <topicref href="carrier-grade-install-esx-proxy.dita"/>
-        </topicref>
+        <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1: Deploying the Non-KVM Region">
+            <topicref href="carrier-grade-install-non-kvm-GA.dita">
+                <topicref href="carrier-grade-install-pb-kvm-only-json.dita"/>
+            </topicref>
+            <topicref href="carrier-grade-install-kvm-esx-GA.dita">
+                <topicref href="carrier-grade-install-pb-kvm-node-json.dita" toc="no"/>
+                <topicref href="carrier-grade-install-pb-kvm-def-json.dita" toc="no"/>
+                <topicref href="carrier-grade-install-pb-kvm-ansible-json.dita" toc="no"/>
+                <topicref href="carrier-grade-install-pb-kvm-env-json.dita" toc="no"/>
+                <topicref href="carrier-grade-install-pb-kvm-esx-json.dita" toc="no"/>
+                <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
+                <topicref href="carrier-grade-install-pb-kvm-wr-json.dita" toc="no"/>
+                <topicref href="carrier-grade-install-pb-kvm-ldap-json.dita" toc="no"/>
+            </topicref>
+        </topichead>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita">
             <topicref href="carrier-grade-install-kvm-network-interface.dita"/>
         </topicref>

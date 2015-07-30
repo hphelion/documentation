@@ -283,20 +283,47 @@ Password: cghelion</codeblock></p></li>
   <codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
 </ol>
 <p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to <codeph>Network Device 1</codeph> on all the servers listed in <codeph>node-provision.json</codeph> file.</p>
-    <!--<section id="configure-def-json"><title>Configure the JSON Definition file</title><p>Edit the <codeph>definition.json</codeph> file on the HLM VM.</p><p>To see a sample <codeph>definition.json</codeph> file, see <xref href="carrier-grade-install-pb-kvm-def-json.dita">Sample definition.json File for Installing the KVM + ESX Topology</xref>..</p></section><section id="configure-env-json"><title>Configure the JSON Environment file</title><p>Edit the <codeph>environment-provision.json</codeph> file on the HLM VM.</p><p>To see a sample <codeph>environment-provision.json</codeph> file, see see <xref href="carrier-grade-install-pb-kvm-env-json.dita">Sample environment.json File for Installing the KVM + ESX Topology</xref>..</p></section>-->
+    <section id="configure-def-json"><title>Configure the JSON Definition file</title>
+      <p>Edit the <codeph>definition.json</codeph> file on the HLM VM:: <ol>
+        <li>Set the number of compute systems to 2.
+          <codeblock>"count": 2, //number of computes in the resource pool</codeblock></li>
+        <li>Update the <codeph>ansible-vars</codeph> section with all the information based on
+          your setup.</li>
+        <li>Make sure you have two NTP entries in the <codeph>upstream_ntp_servers</codeph>
+          fields in the <codeph>definition.json</codeph> file. If you have only one NTP server
+          in your environment, specify the same NTP server twice.<p>To see a sample
+            <codeph>definition.json</codeph> file, see <xref
+              href="carrier-grade-install-pb-kvm-def-json.dita">Sample definition.json File for
+              Installing the KVM + ESX Topology</xref>.</p></li>
+      </ol></p>
+      <p>To see a sample <codeph>definition.json</codeph> file, see <xref href="carrier-grade-install-pb-kvm-def-json.dita">Sample 
+        definition.json File for Installing the KVM + ESX Topology</xref>..</p></section>
+  
+  <section id="configure-env-json"><title>Configure the JSON Environment file</title>
+    <p>Edit the <codeph>environment.json</codeph> file on the HLM VM to configure the VLANs and network
+      addresses as appropriate for your environment. Set the following for the CLM, CAN, and BLS
+      network:
+      <codeblock>"cidr": 
+        "start-address": </codeblock> The three controller nodes
+      should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1.</p>
+    <p>To see a 
+      sample <codeph>environment.json</codeph> file, 
+      see  <xref href="carrier-grade-install-pb-kvm-env-json.dita">Sample environment.json File for 
+        Installing the KVM + ESX Topology</xref>..</p></section>
   
   <section id="configure-ansible-json">
     <title>Configure the JSON Ansible file</title>
     <p>Edit the <codeph>ansible.json</codeph> file on the HLM VM.</p>
-    <p>To see a sample <codeph>ansible.json</codeph> file, see see <xref
+    <p>To see a sample <codeph>ansible.json</codeph> file,  see <xref
           href="carrier-grade-install-pb-kvm-ansible-json.dita">Sample ansible.json File for
           Installing the KVM + ESX Topology</xref>.</p>
   </section>
   
   <section id="configure-esx-json">
     <title>Configure the JSON ESX file</title>
-    <p>Edit the <codeph>esx.json</codeph> file on the HLM VM.</p>
-    <p>To see a sample <codeph>esx.json</codeph> file, see see <xref
+    <p>Edit the <codeph>esx.json</codeph> file on the HLM VM. This file is called by the script that
+        installs the HP Helion OpenStack cloud, later in the installation. </p>
+    <p>To see a sample <codeph>esx.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-esx-json.dita">Sample esx.json File for Installing the
           KVM + ESX Topology</xref>.</p>
   </section>
@@ -304,20 +331,20 @@ Password: cghelion</codeblock></p></li>
   <section id="configure-ldap-json">
     <title>Configure the JSON LDAP file</title>
     <p>Edit the <codeph>ldap.json</codeph> file on the HLM VM.</p>
-    <p>To see a sample <codeph>ldap.json</codeph> file, see see
-        <!--  <xref
+    <p>To see a sample <codeph>ldap.json</codeph> file, see
+        <xref
       href="carrier-grade-install-pb-kvm-ldap-json.dita">Sample ldap.json File for Installing the KVM + ESX Topology</xref>.
-      -->
+
       </p>
   </section>
   
   <section id="configure-wr-json">
     <title>Configure the JSON KVM file</title>
     <p>Edit the <codeph>wr.json</codeph> file on the HLM VM.</p>
-    <p>To see a sample <codeph>wr.json</codeph> file, see see
-        <!-- <xref
+    <p>To see a sample <codeph>wr.json</codeph> file, see
+<xref
       href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the KVM + ESX Topology</xref>.
-  -->
+
       </p>
   
   </section>
@@ -356,30 +383,30 @@ Password: cghelion</codeblock></p></li>
               file.</li>
             <li>SSH to the compute proxy node from the HLM VM using the static CLM IP.</li>
           </ol></li>
-        <li>If you need cinder vmdk support, ????????</li>
-        <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network
-          addresses as appropriate for your environment. Set the following for the CLM, CAN, and BLS
-          network:<codeblock>"cidr": 
-"start-address": </codeblock> The three controller nodes
-          should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1. <!--Hiding for RC0 
-              <p>The two compute nodes should have CLM, EXT, BLS on eth0 and TUL on eth1.</p>
-           -->
-          <p>To see a sample <codeph>environment-provision.json</codeph> file, see see <xref
-              href="carrier-grade-install-pb-kvm-env-json.dita">Sample environment.json File for
-              Installing the KVM + ESX Topology</xref>..</p></li>
-        <li>Modify the <codeph>definition.json</codeph> file: <ol>
-            <li>Set the number of compute systems to 2.
-              <codeblock>"count": 2, //number of computes in the resource pool</codeblock></li>
-            <li>Update the <codeph>ansible-vars</codeph> section with all the information based on
-              your setup.</li>
-            <li>Make sure you have two NTP entries in the <codeph>upstream_ntp_servers</codeph>
-              fields in the <codeph>definition.json</codeph> file. If you have only one NTP server
-              in your environment, specify the same NTP server twice.<p>To see a sample
-                  <codeph>definition.json</codeph> file, see <xref
-                  href="carrier-grade-install-pb-kvm-def-json.dita">Sample definition.json File for
-                  Installing the KVM + ESX Topology</xref>.</p></li>
-          </ol></li>
-        <li>Use the following steps to modify to the <codeph>cinder/blocks</codeph> directory for
+        <li>If you need cinder vmdk support, execute the following steps:
+          <ol>
+            <li>Go to /root/&lt;cloud name>/services/cinder/blocks folder, copy <codeph>cinder_conf.vmdksample</codeph> to 
+              <codeph>cinder_conf</codeph> 
+            in the same folder and update the entries based on your infrastructure.
+            <codeblock>
+            [DEFAULT]
+            enabled_backends=vmdk
+            
+            [vmdk]
+            volume_backend_name = &lt;mybackendname3>
+            vmware_host_ip = &lt;hostip>
+            vmware_host_username = &lt;username>
+            vmware_host_password = &lt;password>
+            vmware_volume_folder = &lt;volumes_folder>
+                      vmware_image_transfer_timeout_secs = 7200
+                      vmware_task_poll_interval = 0.5
+                      vmware_max_objects_retrieval = 100
+                      volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
+            </codeblock></li>
+          </ol>        
+        </li>
+
+<!--        <li>Use the following steps to modify to the <codeph>cinder/blocks</codeph> directory for
           your cloud: <ul>
             <li>Change to the <codeph>cinder/blocks</codeph> directory:
               <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where &lt;cloudname>
@@ -399,6 +426,7 @@ volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 hp3par_debug=False
 hp3par_iscsi_chap_enabled=false</codeblock></li>
           </ul></li>
+-->        
         <li>Once you have correctly edited all the JSON files, run the HP Helion OpenStack
           Configuration Processor: <codeblock>hcfgproc -d definition.json</codeblock><p>The
               <codeph>hcfgproc</codeph> script gets installed in <codeph>/usr/local/bin</codeph> by

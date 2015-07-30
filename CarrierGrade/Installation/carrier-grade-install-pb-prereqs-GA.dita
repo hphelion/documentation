@@ -209,6 +209,12 @@ StrictHostKeyChecking no </codeblock></li>
                                                 you are logged in as root.</p></li>
 </ol>
 </section>
+        <section><title>Preparing the Network for Installation</title>
+                <p>Before installing HP Helion OpenStack Carrier Grade, 
+                        you are responsible for preparing the network for all installations.</p>
+                <p>See <xref href="carrier-grade-install-pb-network-prepare-GA.dita#topic7646">Preparing the Network for Installation</xref></p>
+                
+        </section>
 <section id="getinstall"> <title>Download and unpack the installation packages</title>
 <p>Before you begin, you must download the required HP Helion OpenStack installation package(s).</p>
                         <p><b>Note:</b> When downloading installation files, always download and
