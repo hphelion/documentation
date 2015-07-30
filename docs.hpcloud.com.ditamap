@@ -20,10 +20,10 @@
 <topicref href="home.dita"/>
 <!-- HoS 2.0 -->
 
-<topicref href="commercial/GA2/index.dita">
-<topicref href="commercial/GA2/whatsinthebuild.dita"/>
-  <topicref href="commercial/GA2/issuesandlimitations.dita"/>
-  <topicref href="commercial/GA2/supportedconfigs.dita"/>
+<topicref href="commercial/index.dita">
+<topicref href="commercial/whatsinthebuild.dita"/>
+  <topicref href="commercial/issuesandlimitations.dita"/>
+  <topicref href="commercial/supportedconfigs.dita"/>
 </topicref>
 
 </map>

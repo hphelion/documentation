@@ -47,7 +47,7 @@
       <li>Network separation (including VLAN)</li>
     </ul>
   </li>  
-  <li><xref type="section" href="#topic12031/Operations">Operational Management</xref>
+  <li><xref type="section" href="#topic12031/OpsManagement">Operational Management</xref>
     <ul>
       <li>Control Plane Backup and Restore</li>
       <li>Monitoring</li>
