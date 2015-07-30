@@ -53,7 +53,10 @@
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333831977.xml"/>
       <topicref href="CarrierGrade/CGHRelNotes/jow1430312565268.xml"/>
     </topicref>
-    <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"/>
+    <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita">
+      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-kvm-only.dita"/>
+      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-esx.dita"/>
+    </topicref>
     <topicref href="CarrierGrade/Installation/carrier-grade-technical-specs.dita"/>
     <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix2.dita"/>
     <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"/>

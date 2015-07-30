@@ -18,7 +18,8 @@
 <p>This document describes the process for installing HP Helion OpenStack Carrier Grade in a
       baremetal environment.</p>
 <section id="about-the-installation"> <title>About the installation</title>
-<p>The HP Helion OpenStack Carrier Grade installation installs HP Helion Lifecycle Management, creates a base HP Helion OpenStack cloud, <!--configures network virtualization through HP Distributed Cloud Networking (DCN),--> and deploys 
+<p>The HP Helion OpenStack Carrier Grade installation installs HP Helion Lifecycle Management, creates a base HP Helion OpenStack cloud, 
+  configures network virtualization through HP Distributed Cloud Networking (DCN), and deploys 
   a carrier grade cloud.</p>
 <p>After installation, you can interact with the HP Helion OpenStack cloud using the <xref
           href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita">Horizon graphical interface</xref> or using the CLIs of the respective <xref
@@ -28,8 +29,7 @@
     <p>HP Helion OpenStack is provided with two baremetal installation options depending on your system configuration.  It allows you to manage the KVM and ESX hypervisors and provision virtual machines.</p>
     <p>You can find more information on the hypervisor options in the Technical Overview.</p>
   </section>
-  <section id="kvm-Hypervisor"> <title>KVM Cloud</title>
-    <p>Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.</p>
+  <section id="kvm-Hypervisor"> <title>KVM Topology</title>
     <p>You can use your KVM cloud with either HP Storevirtual or HP StoreServ (3PAR) storage:</p>
   <ul>
    <li>With HP StoreVirtual VSA storage
@@ -40,11 +40,16 @@
   </ul>
   </section>
   <section id="esx-hypervisor"> <title>KVM and ESX Cloud</title>
-    <p>HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses the same for scheduling a new instances.</p>
+    <p>HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can
+        provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a
+        part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter
+        through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses
+        the same for scheduling a new instances. </p>
+      <p>Virtual networking between HP Helion Carrier Grade and the ESX servers is handled by HP
+        Distributed Cloud Networking (DCN) is a software-Defined Networking (SDN) solution that
+        enhances data center (DC) network virtualization by automatically establishing connectivity
+        between compute resources upon their creation.</p>
     <p>The ESX integration uses the OVSvApp application to connect the vCenter networking to the Network Operations controller to manage workload networks.</p>
-      <p>The HP Distributed Cloud Networking (DCN) is a software-Defined Networking (SDN) solution
-        that enhances data center (DC) network virtualization by automatically establishing
-        connectivity between compute resources upon their creation.</p>
   </section>
   
 <section id="installation-process"> <title>Installation process</title>

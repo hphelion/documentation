@@ -43,6 +43,11 @@
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T183118-0400"?><xref
                                                 href="#topic7148/ntp" format="dita"
                                         /><?oxy_insert_end?></li>
+                                <li><xref href="#topic7148/ssh" format="dita"/></li>
+                                <li><xref href="#topic7148/getinstall" format="dita"/></li>
+                                <li><xref href="#topic7148/download-esx" format="dita"/></li>
+                                <li><xref href="#topic7148/verify" format="dita"/></li>
+                                <li><xref href="#topic7148/prepbare" format="dita"/></li>
                         </ul>
                         <title>Install Ubuntu Server 14.04.2 LTS</title>
                         <p>The HLM host must have Ubuntu Server 14.04.2 LTS installed before
@@ -235,7 +240,7 @@ StrictHostKeyChecking no </codeblock></li>
 <li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> to the <codeph>/root/cg/</codeph> directory.</li>
 </ol>
 </section>
-        <section><title>Download packages for KXM+ESX</title>
+        <section id="download-esx"><title>Download packages for KXM+ESX</title>
         <p>If you are deploying the KVM+ESX topology, download the following additional packages.</p>
                 <ol>
                                 <li>Register and then log in to download the required installation
@@ -262,7 +267,7 @@ StrictHostKeyChecking no </codeblock></li>
                         </ol>  
                 <p>If you execute a list on that directory, the output appears similar to the following image:</p>
         </section>
-        <section><title>Verify download signature</title>
+        <section id="verify"><title>Verify download signature</title>
                 <p>After downloading the installation packages, you should verify the signature of
                                 the download. You can use the GPG utility, which is already
                                 installed on the HLM node.</p>
@@ -356,58 +361,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                         </ul>
                 </section>
                 
-                <section>
-                        <title>Install Ubuntu packages</title>
-                        <p>Before starting the installation, you must install the following packages
-                                on all servers that will become controllers or compute servers.</p>
-                        <ul id="ul_h44_fwp_rs">
-                                <li>ntp </li>
-                                <li>firefox </li>
-                                <li>gedit </li>
-                                <li>xrdp </li>
-                                <li>xfce4 </li>
-                                <li>qemu-kvm </li>
-                                <li>libvirt-bin </li>
-                                <li>openvswitch-switch </li>
-                                <li>openvswitch-common </li>
-                                <li>python-libvirt </li>
-                                <li>qemu-system-x86 </li>
-                                <li>libssl-dev </li>
-                                <li>libffi-dev </li>
-                                <li>git </li>
-                                <li>python-virtualenv </li>
-                                <li>python-dev virt-manager</li>
-                                <li>xorg </li>
-                                <li>gnome-core </li>
-                                <li>gnome-system-tools </li>
-                                <li>gnome-app-install </li>
-                                <li>vlan </li>
-                                <li>sudo </li>
-                                <li>ansible </li>
-                        </ul>
-                        <p>To install the packages:</p>
-                        <ol id="ol_j44_fwp_rs">
-                                <li>On the other servers in the non-KVM region and all KVM region
-                                        servers, run the following all in one command to install
-                                        packages:<codeblock><codeph>sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager xorg gnome-core gnome-system-tools gnome-app-install vlan sudo ansible"
-</codeph></codeblock></li>
-                                <li>Add the 802.1q module to the kernel on boot. The 802.1q standard
-                                        supports VLAN tagging on an ethernet
-                                        network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
-</codeph></codeblock></li>
-                                <li>Reboot the server</li>
-                                <li>Log out and re-login to the HLM host to activate the proxy
-                                        configuration.</li>
-                        </ol>
-                </section>
-                <section><title>Install and configure NTP</title>The HP Helion OpenStack Carrier
-                        grade servers must be configured as NTP clients and point to the same NTP
-                                server.<p>You need to configure the non-KVM and KVM systems as NTP
-                                clients pointing to the NTP server you have chosen to use during the
-                                installation process.</p><p>See <xref
-                                        href="carrier-grade-install-NTP.dita#topic4740/client"
-                                />.</p></section>
-        
+
 <section id="next-step"> <title>Next Step</title>
 <p>
                                 <xref
