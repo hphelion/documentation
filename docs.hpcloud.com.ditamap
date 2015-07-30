@@ -22,7 +22,8 @@
 
 <topicref href="commercial/GA2/index.dita">
 <topicref href="commercial/GA2/whatsinthebuild.dita"/>
-  <topicref href="commercial/GA2/2.0issuesandlimitations.dita"/>
+  <topicref href="commercial/GA2/issuesandlimitations.dita"/>
+  <topicref href="commercial/GA2/supportedconfigs.dita"/>
 </topicref>
 
 
