@@ -17,12 +17,9 @@
   <simpletable id="homepageTable" relcolwidth="1.0* 5.06*">
       <strow>
         <stentry>
-          <xref href="commercial/GA1/1.1commercial.index.dita">HP Helion <tm tmtype="reg">OpenStack</tm></xref>
+          <xref href="commercial/GA2/index.dita">HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Documentation Home</xref>
         </stentry>
-        <stentry>A commercial grade software solution that enables customers to deploy private,
-          managed, hybrid, and public cloud services based on OpenStack HP
-          Helion OpenStack reduces complexity of cloud deployments, and is the
-          underlying platform for the Helion Development Platform.</stentry>
+        <stentry>...</stentry>
       </strow>
       </simpletable>
 </body>
