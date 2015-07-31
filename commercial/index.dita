@@ -23,14 +23,12 @@
 <section id="getstart"> <title>Get Started with HP Helion OpenStack</title>
 <p>Use the following links and tools to begin working with HP Helion OpenStack</p>
 <ul>
-<li>Installation</li>
-<li>Installation Prerequisites</li>
-<li>FAQ</li>
-<li>Technical overview</li>
-<li>Services overview</li>
-<li>Support matrix</li>
-<li>HP Helion OpenStack Glossary</li>
-<li>For detailed REST API information, use the links on the Services Overview page. </li>
+  <li><xref href="installation.dita">Installation</xref></li>
+  <li><xref href="hardwaresetup.dita">Minimum Hardware Requirements</xref></li>
+  <li><xref href="hardwaresetup.dita">Hardware Setup</xref></li>
+  <li><xref href="supportedconfigs.dita">Supported Configurations</xref></li>
+  <li><xref href="issuesandlimitations.dita">Issues and Limitations</xref></li>
+  <li><xref href="whatsinthebuild.dita">What's In The Build</xref></li>
 </ul>
 </section>
 </body>

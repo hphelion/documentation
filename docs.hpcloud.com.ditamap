@@ -19,14 +19,12 @@
 <!-- Index -->
 <topicref href="home.dita"/>
 <!-- HoS 2.0 -->
-
 <topicref href="commercial/index.dita">
 <topicref href="commercial/whatsinthebuild.dita"/>
-  <topicref href="commercial/issuesandlimitations.dita"/>
-  <topicref href="commercial/supportedconfigs.dita"/>
-  <topicref href="commercial/hardware.dita"/>
-  <topicref href="commercial/hardwaresetup.dita"/>
-  <topicref href="commercial/installation.dita"/>
+<topicref href="commercial/issuesandlimitations.dita"/>
+<topicref href="commercial/supportedconfigs.dita"/>
+<topicref href="commercial/hardware.dita"/>
+<topicref href="commercial/hardwaresetup.dita"/>
+<topicref href="commercial/installation.dita"/>
 </topicref>
-
 </map>
