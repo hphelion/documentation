@@ -32,9 +32,10 @@
         href="#topic6108/DashIdent">Identity</xref>. The tabs expand and contract to show available
       commands grouped into <b>panels</b>.</p>
 <p>Across the top are menus to switch between projects and menus where you can access user settings.</p>
-<p>
+<!-- 
+  <p>
       <image href="../../../media/CGH-Helion-Window-RC.png"></image></p>
-  
+   -->
 <p>How you interact with your network environment depends upon your user type, either an administrative user or a non-administrative user (user). In general, a non-admin user can make changes to projects to which that user is associated. Admin users can make changes throughout the domain.</p>
 <p>To access the dashboard, <xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >enter the dashboard URL in a supported browser and log in</xref>.</p>
 <p>At the bottom of this page, you can see some of the services you can manage right from the dashboard.</p>

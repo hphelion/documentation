@@ -51,7 +51,6 @@
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333830815.xml"/>
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333831397.xml"/>
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333831977.xml"/>
-      <topicref href="CarrierGrade/CGHRelNotes/jow1430312565268.xml"/>
     </topicref>
     <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita">
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-kvm-only.dita"/>
@@ -64,7 +63,7 @@
     <topicref href="CarrierGrade/API/carrier-grade-api.dita"/>
     <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1: License Files">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"/>
-      <topicref href="CarrierGrade/carrier-grade-eula.dita"/>
+      <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="no"/>
     </topichead>
     <topichead navtitle="Files in map not TOC" toc="no">
       <topicref

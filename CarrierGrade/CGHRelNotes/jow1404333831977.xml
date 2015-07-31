@@ -14,8 +14,10 @@
             <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
         </metadata>
     </prolog>
-    <body><section>CG-1307; ;CG-1305; CG-1292</section>
-       
+    <body>
+        <!--  
+        <section>CG-1307; ;CG-1305; CG-1292</section>
+       -->
         <section><title>Enable GRE in iptables</title>
             <!-- CG-1265 -->
             <p>If an environment uses more than one VRS-G node, you must enable Generic Routing Encapsulation (GRE) in the IP tables.</p>
