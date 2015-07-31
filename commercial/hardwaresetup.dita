@@ -3,6 +3,21 @@
 <topic id="topic_qpj_lwg_ws">
   <title>Beta 0 Hardware Setup Notes</title>
   <body>
-    <p></p>
+    <note>This document is under development.</note>
+    <p/>
+    <p>The following is a list of hardware and setup items you must consider before beginning the
+      installation.</p>
+    <p>
+      <ol id="ol_km5_zwg_ws">
+        <li>All disks on the system(s) will be wiped /dev/sda will be used for the OS but all other
+          disks will also be wiped.</li>
+        <li>Install on nodes via legacy bios setting
+          <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>( No
+          UEFI)<?oxy_custom_end?></li>
+        <li>Four local disks on nodes in the control plane (for root OS and Swift) are
+          required.</li>
+        <li>The machine types should be homogeneous.</li>
+      </ol>
+    </p>
   </body>
 </topic>
