@@ -401,14 +401,11 @@ hp3par_iscsi_chap_enabled=false</codeblock></li></ul></li>
 
 
 </section>
-<section id="next-step"> <title>Next Step</title>
-<p>
-  <xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref>
+<section id="next-step">
+      <title>Next Step</title>
+      <p>
+        <xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref>
       </p>
-<p>
-  <xref type="section" href="#topic10581"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
-</section>
+    </section>
 </body>
 </topic>
