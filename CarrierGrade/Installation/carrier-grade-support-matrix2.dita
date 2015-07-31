@@ -36,8 +36,8 @@
       <p><b>Note:</b>
         <i><b>For the KVM + ESX cloud</b></i>, consult the DCN and ESX documentation for the
         supported hardware.</p>
-      <p><b id="hlm">HLM Host</b> The HLM host is a single server with at least a 20 GB disk size
-        and 4,096 MB RAM.</p>
+      <p><b id="hlm">HLM Host</b> The HLM host is a single server with at least a 40 GB disk size
+        and 8,192 MB RAM.</p>
       <p id="controllers"><b>Comtrollers and compute servers</b> The following servers are supported
         for the controllers and compute servers in both the <xref
           href="../Overview/carrier-grade-overview-non-kvm.dita#topic1495">Non-KVM region</xref> and
@@ -225,7 +225,7 @@
       <title>Required Hardware Configurations </title>
       <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported Hardware</xref> lists, must be configured as follows for HP Helion OpenStack
         Carrier Grade.</p>
-      <p><b>HLM Host</b>. You must have a server with a 20GB Disk and 4,096 MB RAM for the HLM
+      <p><b>HLM Host</b>. You must have a server with a 40GB Disk and 8,192 MB RAM for the HLM
         host.</p>
       <p id="non-kvm-hos"><b>HP Helion OpenStack Controllers.</b> You must have three (3) baremetal
         systems to install the HP Helion OpenStack controllers that meet the following requirements: </p>
@@ -247,8 +247,8 @@
       <p id="kvm-config"><b>KVM controllers</b>. You must have two (2) baremetal systems to install
         the KVM region controllers. For systems with multiple NICs, only one NIC may be active or
         connected. </p>
-      <p><b>KVM compute servers</b>. You must have two baremetal systems to install the KVM region
-        compute servers.</p>
+      <p><b>KVM compute servers</b>. You must have two (2) or more baremetal systems to install the
+        KVM region compute servers.</p>
       <p><b>KVM region NICs.</b> The following NICs have been verified for PXE booting of KVM region
         servers:</p>
       <ul id="ul_sdq_q1f_qs">
