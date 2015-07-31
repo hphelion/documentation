@@ -120,14 +120,16 @@
         <li> Note: Optional step to configure DNS resolution on deployer in FtC CDL labs. This is necessary in order to get 'pip install' type commands to work.
         <ul>
           <li>Replace /etc/resolv.conf on the deployer node with these lines:
-        <ul>
-          <li>search ftc.usa.hp.com</li>
-          <li>nameserver 10.1.64.20</li>
-          <li>nameserver 10.1.65.20</li>
-          <li>nameserver 10.240.20.1</li>
-        </ul>
-          </li>
-        </ul></li></ol> 
-    </section>
+<codeblock>
+search ftc.usa.hp.com
+nameserver 10.1.64.20
+nameserver 10.1.65.20
+nameserver 10.240.20.1
+</codeblock>
+</li>
+</ul>
+</li>
+</ol> 
+</section>
   </body>
 </topic>
