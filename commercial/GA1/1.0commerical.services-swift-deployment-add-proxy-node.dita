@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2391">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Add New Scale-out Proxy Node</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Add New Scale-out Proxy Node</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -37,8 +37,8 @@
 </ol>
 <section id="prer"> <title>Prerequisite</title>
 <ul>
-<li>HP <tm tmtype="reg">Helion OpenStack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Swift nodes are functional by default as they are part of cloud deployment)</i>
-</li>
+<li>HP Helion OpenStack cloud is successfully deployed.<p>(Starter Swift nodes are functional by
+            default as they are part of cloud deployment) </p></li>
 <li>Scale-out object-ring:1 is deployed.</li>
 </ul>
 </section>
@@ -47,112 +47,50 @@
 </section>
 <section id="update-load-balancer-with-new-proxy-nodes"> <title>Update load balancer with new Proxy nodes</title>
 <ol>
-<li>
-<p>Log in to the undercloud from seed.</p>
-
-<codeblock>
-<codeph># ssh heat-admin@&lt;undercloud IP address&gt; 
-# sudo -i
-
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Change the directory to ring builder.</p>
-
-<codeblock>
-<codeph># cd /root/ring-building 
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Copy account, container, object, and generated <codeph>object-1.ring.gz</codeph> files to proxy nodes and press <b>yes</b> when asked to authenticate the node.</p>
-
-<codeblock>
-<codeph># ringos copy-ring -s /root/ring-building/\*.ring.gz -n &lt;proxy node IP address&gt; 
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Copy account, container, object, and generated <codeph>object-1.builder</codeph> files to proxy nodes.</p>
-
-<codeblock>
-<codeph># ringos copy-ring -s /root/ring-building/\object-1.builder -n &lt;proxy node IP address&gt;
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>After creation of the Proxy node, list the Proxy IP addresses.</p>
-
-<codeblock>
-<codeph># ringos list-swift-nodes -t proxy
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>List all the controller nodes</p>
-
-<codeblock>
-<codeph># nova list
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Edit <codeph>swift-proxy.cfg</codeph> on each of the controller nodes.</p>
-
-<codeblock>
-<codeph>/etc/haproxy/manual/swift-proxy.cfg
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add the following content in the <codeph>swift-proxy.cfg</codeph> file.</p>
-
-<codeblock>
-<codeph>  listen scale_swift_proxy
+<li>Log in to the undercloud from
+          seed.<codeblock><codeph># ssh heat-admin@&lt;undercloud IP address&gt; 
+# sudo -i</codeph>
+</codeblock></li>
+<li>Change the directory to ring
+          builder.<codeblock><codeph># cd /root/ring-building 
+</codeph></codeblock></li>
+<li>Copy account, container, object, and generated <codeph>object-1.ring.gz</codeph> files to proxy
+          nodes and press <b>yes</b> when asked to authenticate the
+          node.<codeblock><codeph># ringos copy-ring -s /root/ring-building/\*.ring.gz -n &lt;proxy node IP address&gt; 
+</codeph></codeblock></li>
+<li>Copy account, container, object, and generated <codeph>object-1.builder</codeph> files to proxy
+          nodes.<codeblock><codeph># ringos copy-ring -s /root/ring-building/\object-1.builder -n &lt;proxy node IP address&gt;
+</codeph></codeblock></li>
+<li>After creation of the Proxy node, list the Proxy IP
+          addresses.<codeblock><codeph># ringos list-swift-nodes -t proxy
+</codeph></codeblock></li>
+<li>List all the controller nodes<codeblock><codeph># nova list
+</codeph></codeblock></li>
+<li>Edit <codeph>swift-proxy.cfg</codeph> on each of the controller
+          nodes.<codeblock><codeph>/etc/haproxy/manual/swift-proxy.cfg
+</codeph></codeblock></li>
+<li>Add the following content in the <codeph>swift-proxy.cfg</codeph> file.<codeblock><codeph>  listen scale_swift_proxy
   bind &lt;Virtual IP (running on the controller nodes)&gt;:8080
   server &lt;proxy node hostname&gt; &lt;proxy nodes IP address&gt;:8080 check inter 2000 rise 2 fall 5 
-</codeph>
-</codeblock>
-
-<p>
-<b>Note</b>:</p>
-
-<ul>
-<li>The number of "server" lines equals the number of Swift Proxies you have set up.</li>
-<li>
-<p>For virtual IP:</p>
-
-<ul>
-<li>
-<p>Login to the controller node</p>
-
-<codeblock>
-<codeph># ssh heat-admin@&lt;Controller Node IP address&gt;
+</codeph></codeblock><p>
+            <note> The number of "server" lines equals the number of Swift Proxies you have set up.
+                <p>                  For virtual IP:</p><ul id="ul_kqy_yqj_4s">
+                <li>
+                  <p>Login to the controller node</p>
+                  <codeblock><codeph># ssh heat-admin@&lt;Controller Node IP address&gt;
 # sudo -i
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Run the following command to view the virtual IP of the controller nodes</p>
-
-<codeblock>
-<codeph>vi /etc/keepalived/keepalived.conf
-</codeph>
-</codeblock>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Restart the HA Proxy service on all these nodes.</p>
-
-<codeblock>
-<codeph># service haproxy restart
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock>
+                </li>
+                <li>
+                  <p>Run the following command to view the virtual IP of the controller nodes</p>
+                  <codeblock><codeph>vi /etc/keepalived/keepalived.conf
+</codeph></codeblock>
+                </li>
+              </ul></note>
+          </p></li>
+<li>Restart the HA Proxy service on all these
+          nodes.<codeblock><codeph># service haproxy restart
+</codeph></codeblock></li>
 </ol>
 <p>The Swift Proxies are now successfully enabled with HA Proxy.</p>
 <p>

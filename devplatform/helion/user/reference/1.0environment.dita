@@ -28,12 +28,12 @@
 <p>Some environment variables are also available during application <xref type="section" href="#topic7937/staging">staging</xref>.</p>
 <p>You can set your own environment variables:</p>
 <ul>
-<li>in an <codeph>env:</codeph> block in <xref href="../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#env" type="section" scope="external"  >
+<li>in an <codeph>env:</codeph> block in <xref href="../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#env" type="section"  >
 <i>manifest.yml</i>
 </xref>,</li>
-<li>via the application's Details page in the <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#management-console" type="section" scope="external"  >Management
+<li>via the application's Details page in the <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#management-console" type="section"  >Management
 Console</xref>, or</li>
-<li>using the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-env-add" type="section" scope="external"  >
+<li>using the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-env-add" type="section"  >
 <i>env-add</i>
 </xref>
 command.</li>
@@ -48,7 +48,7 @@ command.</li>
 <dd>
 <p>Contains an access URL for a database service. If more than one type
 of database is present, <codeph>DATABASE_URL</codeph> will not
-be available. Instead, use the <xref href="../../../../devplatform/helion/user/services/1.0data-services.dita#database-specific-url" type="section" scope="external"  >Database-Specific URL
+be available. Instead, use the <xref href="../../../../devplatform/helion/user/services/1.0data-services.dita#database-specific-url" type="section"  >Database-Specific URL
 variables</xref>.</p>
 
 <p>Example:</p>
@@ -70,7 +70,7 @@ variables</xref>.</p>
 <p>HTTP_PROXY:   A variable recognized by many web applications to direct them to a proxy HTTP server.</p>
 <p>MEMORY_LIMIT: The amount of memory allocated to the application container.</p>
 <p>PATH: A list of directories, separated by ":", which are to be searched for the names of executable files to be interpreted as commands.</p>
-<p>PIP_OPTS: Custom/alternate <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-pip" type="section" scope="external"  >
+<p>PIP_OPTS: Custom/alternate <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-pip" type="section"  >
 <i>PIP</i>
 </xref> repo location. See <xref href="http://guide.python-distribute.org/pip.html#running-your-own-package-index" type="section" scope="external" format="html" >running your own package index</xref> for more info.</p>
 <p>Example:</p>
@@ -90,7 +90,7 @@ For example:</p>
 </codeph>
 </codeblock>
 <p>Note that <codeph>PROCESSES_WEB</codeph> may be undefined when Application Lifecycle Service can't determine the default command. This may occur because the app uses a non-standard main application file.</p>
-<p>PYPM_OPTS: Custom/alternate <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-pypm" type="section" scope="external"  >
+<p>PYPM_OPTS: Custom/alternate <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-pypm" type="section"  >
 <i>PyPM</i>
 </xref> repo location. Repo mirroring is sort of undocumented feature. Example:</p>
 <codeblock>
@@ -109,9 +109,9 @@ Contains a list of all environment variables set with [*env-add*](/als/v1/user/r
     (or in <i>manifest.yml</i>). Available during staging
     as well as in the application instance.
 HELION_APP_NAME_UPCASE: Contains the same value as HELION_APP_NAME transformed to uppercase, with dashes replaced by underscores. For example if HELION_APP_NAME is "php-info", then HELION_APP_NAME_UPCASE will be "PHP_INFO".</p>
-<p>This makes it possible to access the environment variables for <xref href="../../../../devplatform/helion/user/services/1.0port-service.dita#port-service-env-vars" type="section" scope="external"  >
+<p>This makes it possible to access the environment variables for <xref href="../../../../devplatform/helion/user/services/1.0port-service.dita#port-service-env-vars" type="section"  >
 <i>harbor</i>
-</xref> and <xref href="../../../../devplatform/helion/user/services/1.0filesystem.dita#file-system-usage" type="section" scope="external"  >
+</xref> and <xref href="../../../../devplatform/helion/user/services/1.0filesystem.dita#file-system-usage" type="section"  >
 <i>filesystem</i>
 </xref> services.</p>
 <p>HELION_APP_ROOT: This is the "root" directory from the Application Lifecycle Service point of view. It contains app specific HOME directory (app/), the log file directory (logs/) and various scripts.</p>
@@ -145,7 +145,7 @@ Two environment variables would be created:
 <p>VCAP_APP_HOST: This variable contains the IP address of the host that the application is running on.</p>
 <p>VCAP_APP_PORT: This variable contains the port that the application will be exposed on.</p>
 <p>VCAP_APPLICATION: This variable contains all relevant application details for the Application Lifecycle Service Application. (Instance ID, App Name, App Uris, Users/Groups etc.)</p>
-<p>VCAP_SERVICES: Contains connection details, credentials, and meta data for services bound to the application. See <xref href="../../../../devplatform/helion/user/services/1.0data-services.dita#database-services-vcap-services" type="section" scope="external"  >
+<p>VCAP_SERVICES: Contains connection details, credentials, and meta data for services bound to the application. See <xref href="../../../../devplatform/helion/user/services/1.0data-services.dita#database-services-vcap-services" type="section"  >
 <i>VCAP_SERVICES</i>
 </xref>.</p>
 <section id="staging"> <title>Staging Variables</title>

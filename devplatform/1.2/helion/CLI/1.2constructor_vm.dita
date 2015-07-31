@@ -24,8 +24,8 @@
             <!--PUBLISHED-->
             <!--./devplatform/helion/CLI/1.2constructor_vm.md-->
             <!--permalink: /helion/devplatform/1.2/als/client/constructor/--></p>
-        <p>The Constructor VM is normally a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP <tm tmtype="reg">Helion OpenStack</tm> public or private cloud. It can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.</p>
-        <p>Nearly all management tasks for the Constructor VM (CVM) are easily performed from the Horizon web-based management console. Horizon performs a <xref href="http://docs.openstack.org/cli-reference/content/novaclient_commands.html" scope="external" format="html" >Nova</xref> call with <xref href="http://cloudinit.readthedocs.org/en/latest/" scope="external" format="html" >cloud-init</xref> <xref href="http://docs.openstack.org/user-guide/content/inserting_userdata.html" scope="external" format="html" >configuration data</xref> to trigger the Helion ALS construction.  The <tm tmtype="reg">OpenStack</tm> metadata service is used to communicate ALS construction status back to the Horizon UI.</p>
+        <p>The Constructor VM is normally a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP Helion <tm tmtype="reg">OpenStack</tm> public or private cloud. It can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.</p>
+        <p>Nearly all management tasks for the Constructor VM (CVM) are easily performed from the Horizon web-based management console. Horizon performs a <xref href="http://docs.openstack.org/cli-reference/content/novaclient_commands.html" scope="external" format="html" >Nova</xref> call with <xref href="http://cloudinit.readthedocs.org/en/latest/" scope="external" format="html" >cloud-init</xref> <xref href="http://docs.openstack.org/user-guide/content/inserting_userdata.html" scope="external" format="html" >configuration data</xref> to trigger the Helion ALS construction.  The OpenStack metadata service is used to communicate ALS construction status back to the Horizon UI.</p>
         <p>There are a few features and <xref type="section" href="#topic11989/troubleshooting">troubleshooting</xref> options, however, that cannot be managed from within the Horizon UI. Currently, it does not support:</p>
         <ul>
             <li>
@@ -65,9 +65,8 @@
                 <li>The <i>cloud-init</i> file is automatically converted from JSON to ConfigParser format and renamed <i>cluster.conf</i>.</li>
                 <li>The <i>assemble.py</i> script runs, using the values contained in <i>cluster.conf</i> to build the Helion ALS system.</li>
             </ol>
-            <p>Here is an example of the <i>cloud-init</i> JSON file used for Helion ALS construction. There are three sections of key-value pairs related to ALS (PaaS), <tm tmtype="reg">OpenStack</tm> (IaaS), and Control of the construction process. This configuration file is passed to the CVM during the boot process.</p>
-            <codeblock>
-{
+            <p>Here is an example of the <i>cloud-init</i> JSON file used for Helion ALS construction. There are three sections of key-value pairs related to ALS (PaaS), OpenStack (IaaS), and Control of the construction process. This configuration file is passed to the CVM during the boot process.</p>
+            <codeblock>{
     "ALS": {
         "admin_email": "admin@example.com",
         "admin_org": "org1",
@@ -110,15 +109,17 @@
         "delete_database": "False",
         "terminate_constructor": "True"
     }
-}
-</codeblock>
+}</codeblock>
         </section>
         <section id="privatecloud"> <title>Method #3: Boot Without a <i>cloud-init</i> Configuration File (Helion private cloud)</title>
             <p>During the boot process the CVM will detect that a <xref href="http://cloudinit.readthedocs.org/en/latest/" scope="external" format="html" >
                 <i>cloud-init</i>
             </xref> configuration file is not present. When the user logs in via SSH, the CVM will prompt the user to run a script which will create a configuration file. This prompt is provided by the system's Message of the Day (motd).</p>
             <p>
-                <b>Note</b>: Using this method requires the user to set up the network to the CVM properly, including all routing information, security groups, ssh keys, accessible IP addresses, and so on.</p>
+                <note>Using this method requires the user to set up the network to the CVM properly,
+                    including all routing information, security groups, ssh keys, accessible IP
+                    addresses, and so on.</note>
+            </p>
             <ol>
                 <li>Create an instance of the ALS Installer and boot it manually, or perform a <i>Nova</i> boot without providing a <i>cloud-init</i> configuration file.</li>
                 <li>The CVM boots.</li>
@@ -137,8 +138,9 @@
                 that a configuration file is not present. When the user logs in, the CVM will prompt
                 the user to run a script which will create a configuration file specifically
                 tailored for the public beta.</p>
-            <p>
-                <b>Note</b>: Using this method requires the user to set up the network to the CVM properly, including all routing information, security groups, ssh keys, accessible IP addresses, and so on.</p>
+            <note>Using this method requires the user to set up the network to the CVM properly,
+                including all routing information, security groups, ssh keys, accessible IP
+                addresses, and so on.</note>
             <ol>
                 <li>Create an VM instance using the ALS Installer image and boot it manually, or perform a <i>Nova</i> boot without providing a <i>cloud-init</i> configuration file.</li>
                 <li>The CVM boots.</li>
@@ -148,8 +150,7 @@
                 <li>The CVM terminates. (Unless the termination is <xref type="section" href="#topic11989/disable">overridden</xref>.)</li>
             </ol>
             <p>This is an example of the ConfigParser file format options that are generated for the Quick Start Trial:</p>
-            <codeblock>
-[Openstack
+            <codeblock>[Openstack
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
 username = 
 password = 
@@ -177,13 +178,14 @@ services = mysql
 admin_email = admin@example.com
 admin_password = 
 admin_org = als
-services_on_core = True
-</codeblock>
+services_on_core = True</codeblock>
         </section>
         <section id="deanodes"> <title>DEA Growth Configuration File Example</title>
             <p>This example adds more DEA nodes to an existing cluster.</p>
-            <p>NOTE: The <i>dea_count</i> value is the number of DEAs to be <b>added</b> in this growth mode; do not count any DEAs that already exist.</p>
-            <codeblock>
+           
+                <note type="caution">The <i>dea_count</i> value is the number of DEAs to be <b>added</b> in this
+                    growth mode; do not count any DEAs that already exist.</note>
+                       <codeblock>
 [Openstack
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
 username = 
@@ -206,9 +208,8 @@ grow_cluster = True
         </section>
         <section id="addservices"> <title>Service Growth Configuration File Example</title>
             <p>This example adds more services to the cluster.</p>
-            <p>NOTE: The comma-separated values in the list of services contain only the services to be <b>added</b> in this growth mode. Do not list services that already exist.</p>
-            <codeblock>
-[Openstack
+            <note type="caution">The comma-separated values in the list of services contain only the services to be <b>added</b> in this growth mode. Do not list services that already exist.</note>
+            <codeblock>[Openstack
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
 username = 
 password = 
@@ -225,8 +226,7 @@ dea_count = 0
 services = filesystem,redis
 
 [Control]
-grow_cluster = True
-</codeblock>
+grow_cluster = True</codeblock>
         </section>
         <section id="troubleshooting"> <title>Troubleshooting</title>
             <table>
@@ -278,17 +278,13 @@ grow_cluster = True
         </section>
         <section id="disable"> <title>Disable Self-destruction</title>
             <p>Add this option to the <i>cloud-init</i> JSON file to prevent the CVM from self-destructing at the end of the Helion ALS construction process.</p>
-            <codeblock>
-"Control": {
+            <codeblock>"Control": {
     "terminate_constructor": "False"
-}
-</codeblock>
+}</codeblock>
         </section>
         <section id="logfile"> <title>CVM Logfile Location</title>
             <p>The CVM creates a log file during the construction process. To view this log, SSH into the CVM and open the following file:</p>
-            <codeblock>
-/tmp/assemble_log.txt
-</codeblock>
+            <codeblock>/tmp/assemble_log.txt</codeblock>
         </section>
     </body>
 </topic>

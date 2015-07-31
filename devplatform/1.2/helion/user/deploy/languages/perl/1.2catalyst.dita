@@ -34,11 +34,8 @@ installed via <i>requirements.txt</i>.</p>
 <p>Alternatively, the Home directory can be <xref href="https://metacpan.org/module/Catalyst#Home" type="section" scope="external" format="html" >set
 explicitly</xref> with environment
 variables. For example, you could set CATALYST_HOME in <i>manifest.yml</i>:</p>
-<codeblock>
-  <codeph>env:
-  CATALYST_HOME: $HOME
-</codeph>
-</codeblock>
+<codeblock>env:
+  CATALYST_HOME: $HOME</codeblock>
 </section>
 <section id="examples"> <title>Examples</title>
 <ul>

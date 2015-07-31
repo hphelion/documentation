@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1166">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Horizon Service Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Horizon Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,11 +15,11 @@
 <p>
 
 </p>
-<p>Horizon is the <tm tmtype="reg">OpenStack</tm> service that serves as the basis for the HP <tm tmtype="reg">Helion OpenStack</tm> web interface or <b>dashboards</b>.</p>
-<p>The dashboards provide a web-based user interface to HP <tm tmtype="reg">Helion OpenStack</tm> services including <xref href="../../commercial/GA1/1.0commerical.services-compute-overview.dita" >Compute</xref>, <xref href="../../commercial/GA1/1.0commerical.services-volume-overview.dita" >Volume Operations</xref>, <xref href="../../commercial/GA1/1.0commerical.services-networking-overview.dita" >Networking</xref>, and <xref href="../../commercial/GA1/1.0commerical.services-identity-overview.dita" >Identity</xref>.</p>
+<p>Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack web interface or <b>dashboards</b>.</p>
+<p>The dashboards provide a web-based user interface to HP Helion OpenStack services including <xref href="../../commercial/GA1/1.0commerical.services-compute-overview.dita" >Compute</xref>, <xref href="../../commercial/GA1/1.0commerical.services-volume-overview.dita" >Volume Operations</xref>, <xref href="../../commercial/GA1/1.0commerical.services-networking-overview.dita" >Networking</xref>, and <xref href="../../commercial/GA1/1.0commerical.services-identity-overview.dita" >Identity</xref>.</p>
 <p>Horizon ships with several dashboards, including a <b>Project</b> dashboard, an <b>Admin</b> dashboard, and a <b>System</b> dashboard. These dashboards provide administrators and users with a graphical interface to access, provision and automate cloud-based resources.</p>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on using the dashboards, see <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Dashboard</xref>.</p>
+<p>For information on using the dashboards, see <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref>.</p>
 <p>
   <xref href="#topic1166"> Return to Top </xref>
 </p>

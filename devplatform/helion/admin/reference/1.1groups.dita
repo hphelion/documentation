@@ -21,14 +21,12 @@
 <!--PUBLISHED-->
  <!--./devplatform/helion/admin/reference/1.1groups.md-->
  <!--permalink: /helion/devplatform/1.1/als/admin/reference/groups/--></p>
-<p>
-
-</p>
-<section id="-warning-"> <title>* Warning *</title>
-<p>Application Lifecycle Service Groups have been <b>replaced</b> by <xref href="../../../../devplatform/helion/user/deploy/1.1orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >
+<section>
+<note type="notice">
+Application Lifecycle Service Groups have been <b>replaced</b> by <xref href="../../../../devplatform/helion/user/deploy/1.1orgs-spaces.dita#orgs-spaces" type="section"  >
 <i>Organizations and
 Spaces</i>
-</xref>.</p>
+</xref>.</note>
 </section>
 </body>
 </topic>

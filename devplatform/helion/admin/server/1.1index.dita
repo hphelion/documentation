@@ -45,10 +45,10 @@ virtualization host.</p>
 <p>Command access to the Application Lifecycle Service server is available in several ways:</p>
 <ul>
 <li>
-<p>Over the hypervisor's <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-tty-console" type="section" scope="external"  >tty console</xref>.</p>
+<p>Over the hypervisor's <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-tty-console" type="section"  >tty console</xref>.</p>
 </li>
 <li>
-<p>The <xref href="../../../../devplatform/helion/user/reference/1.1client-ref.dita#command-ref-client" type="section" scope="external"  >Application Lifecycle Service Client</xref> command, which in addition to specialized functions can provide remote shell access to the server:</p>
+<p>The <xref href="../../../../devplatform/helion/user/reference/1.1client-ref.dita#command-ref-client" type="section"  >Application Lifecycle Service Client</xref> command, which in addition to specialized functions can provide remote shell access to the server:</p>
 
 <codeblock>
 <codeph>helion target helion@helion-xxxx.local
@@ -81,45 +81,45 @@ status checks. For a complete list of options, see the <xref href="../../../../d
 
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#server-status" type="section" scope="external"  >Server Status</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#server-status" type="section"  >Server Status</xref>
 
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#starting-and-stopping-roles" type="section" scope="external"  >Starting and Stopping
+<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#starting-and-stopping-roles" type="section"  >Starting and Stopping
 Roles</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#system-shutdown" type="section" scope="external"  >System Shutdown</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#system-shutdown" type="section"  >System Shutdown</xref>
 </li>
 </ul>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#setting-the-time-zone" type="section" scope="external"  >Setting the Time Zone</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#setting-the-time-zone" type="section"  >Setting the Time Zone</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#resetting-the-vm" type="section" scope="external"  >Resetting the VM</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#resetting-the-vm" type="section"  >Resetting the VM</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#monitoring-the-helion-server" type="section" scope="external"  >Monitoring The Application Lifecycle Service
+<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#monitoring-the-helion-server" type="section"  >Monitoring The Application Lifecycle Service
 Server</xref>
 
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#management-console" type="section" scope="external"  >Management Console</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#management-console" type="section"  >Management Console</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#new-relic" type="section" scope="external"  >New Relic</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#new-relic" type="section"  >New Relic</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#creating-an-admin-user" type="section" scope="external"  >Creating an Admin User</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#creating-an-admin-user" type="section"  >Creating an Admin User</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#system-monitoring-with-nagios" type="section" scope="external"  >System Monitoring with Nagios</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#system-monitoring-with-nagios" type="section"  >System Monitoring with Nagios</xref>
 </li>
 </ul>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#server-backup-import-and-export" type="section" scope="external"  >Server Backup, Import, and Export</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1operations.dita#server-backup-import-and-export" type="section"  >Server Backup, Import, and Export</xref>
 </li>
 </ul>
 </li>
@@ -128,10 +128,10 @@ Server</xref>
 
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1upgrade.dita#before-an-upgrade" type="section" scope="external"  >Before an upgrade</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1upgrade.dita#before-an-upgrade" type="section"  >Before an upgrade</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1upgrade.dita#executing-the-upgrade" type="section" scope="external"  >Executing the upgrade</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1upgrade.dita#executing-the-upgrade" type="section"  >Executing the upgrade</xref>
 </li>
 </ul>
 </li>
@@ -145,98 +145,98 @@ Server</xref>
 
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#general" type="section" scope="external"  >General</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#general" type="section"  >General</xref>
 
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#changing-the-password" type="section" scope="external"  >Changing the Password</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#changing-the-password" type="section"  >Changing the Password</xref>
 </li>
 </ul>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#network-setup" type="section" scope="external"  >Network Setup</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#network-setup" type="section"  >Network Setup</xref>
 
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#changing-the-hostname" type="section" scope="external"  >Changing the
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#changing-the-hostname" type="section"  >Changing the
 Hostname</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#changing-ip-addresses" type="section" scope="external"  >Changing IP
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#changing-ip-addresses" type="section"  >Changing IP
 Addresses</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#setting-a-static-ip" type="section" scope="external"  >Setting a Static
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#setting-a-static-ip" type="section"  >Setting a Static
 IP</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#modifying-etc-hosts" type="section" scope="external"  >Modifying
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#modifying-etc-hosts" type="section"  >Modifying
 /etc/hosts</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#dns" type="section" scope="external"  >DNS</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#dns" type="section"  >DNS</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#dynamic-dns" type="section" scope="external"  >Dynamic DNS</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#dynamic-dns" type="section"  >Dynamic DNS</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#alternate-dns-techniques" type="section" scope="external"  >Alternate DNS
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#alternate-dns-techniques" type="section"  >Alternate DNS
 Techniques</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#adding-dns-nameservers" type="section" scope="external"  >Adding DNS
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#adding-dns-nameservers" type="section"  >Adding DNS
 Nameservers</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#tcp-udp-port-configuration" type="section" scope="external"  >TCP/UDP Port
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#tcp-udp-port-configuration" type="section"  >TCP/UDP Port
 Configuration</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" type="section" scope="external"  >HTTP Proxy</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" type="section"  >HTTP Proxy</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#staging-cache-app-http-proxy" type="section" scope="external"  >Staging Cache &amp; App HTTP
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#staging-cache-app-http-proxy" type="section"  >Staging Cache &amp; App HTTP
 Proxy</xref>
 </li>
 </ul>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#vm-filesystem-setup" type="section" scope="external"  >VM Filesystem Setup</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#vm-filesystem-setup" type="section"  >VM Filesystem Setup</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#helion-data-services-vs-high-availability-databases" type="section" scope="external"  >Application Lifecycle Service Data Services vs. High Availability
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#helion-data-services-vs-high-availability-databases" type="section"  >Application Lifecycle Service Data Services vs. High Availability
 Databases</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#https-ssl" type="section" scope="external"  >HTTPS &amp; SSL</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#https-ssl" type="section"  >HTTPS &amp; SSL</xref>
 
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#using-your-own-ssl-certificate" type="section" scope="external"  >Using your own SSL
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#using-your-own-ssl-certificate" type="section"  >Using your own SSL
 certificate</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#adding-custom-ssl-certs-sni" type="section" scope="external"  >Adding Custom SSL Certs</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#adding-custom-ssl-certs-sni" type="section"  >Adding Custom SSL Certs</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#ca-certificate-chaining" type="section" scope="external"  >CA Certificate
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#ca-certificate-chaining" type="section"  >CA Certificate
 Chaining</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#generating-a-self-signed-ssl-certificate" type="section" scope="external"  >Generating a self-signed SSL
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#generating-a-self-signed-ssl-certificate" type="section"  >Generating a self-signed SSL
 certificate</xref>
 </li>
 </ul>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#quota-definitions" type="section" scope="external"  >Quota Definitions</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#quota-definitions" type="section"  >Quota Definitions</xref>
 
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#sudo" type="section" scope="external"  >sudo</xref>
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#sudo" type="section"  >sudo</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#allowed-repositories" type="section" scope="external"  >Allowed
+<xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#allowed-repositories" type="section"  >Allowed
 Repositories</xref>
 </li>
 </ul>

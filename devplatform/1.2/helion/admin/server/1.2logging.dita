@@ -31,62 +31,58 @@
 <xref type="section" href="#topic11928/debugging-logyard">Debugging Logyard</xref>
 </li>
 <li>
-<xref type="section" href="#topic11928/drains">Drains</xref>
-
-<ul>
+        <xref type="section" href="#topic11928/drains">Drains</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic11928/system-drains">System Drains</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/log-format">Log Format</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/saving-custom-log-formats">Saving Custom Log
+              Formats</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/custom-drains">Custom Drains</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/application-drains">Application Drains</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/drain-status">Drain Status</xref>
+          </li>
+        </ul></li>
 <li>
-<xref type="section" href="#topic11928/system-drains">System Drains</xref>
-</li>
+        <xref type="section" href="#topic11928/keys">Keys</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic11928/apptail">apptail</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/event">event</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/systail">systail</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/managing-the-systail-stream">Managing the systail
+              stream</xref>
+          </li>
+        </ul></li>
 <li>
-<xref type="section" href="#topic11928/log-format">Log Format</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/saving-custom-log-formats">Saving Custom Log Formats</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/custom-drains">Custom Drains</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/application-drains">Application Drains</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/drain-status">Drain Status</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic11928/keys">Keys</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic11928/apptail">apptail</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/event">event</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/systail">systail</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/managing-the-systail-stream">Managing the systail stream</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic11928/configuration">Configuration</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic11928/drain-timeouts">Drain Timeouts</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/user-drain-limit">User Drain Limit</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/apptail-limits">Apptail Limits</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic11928/configuration">Configuration</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic11928/drain-timeouts">Drain Timeouts</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/user-drain-limit">User Drain Limit</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/apptail-limits">Apptail Limits</xref>
+          </li>
+        </ul></li>
 </ul>
 <p>Application and system logs in Application Lifecycle Service are aggregated into streams
 which can be viewed, tailed, filtered, and/or sent via drains to other
@@ -137,7 +133,7 @@ application-specific events from the <b>logyard_sieve</b> stream.</p>
 </section>
 <section id="system-drains"> <title>System Drains</title>
 <p>Drains for system log and cloud event streams can be added by admins
-with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-log-drain-add" type="section" scope="external"  >kato log
+  with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-drain-add" type="section"   >kato log
 drain</xref>
 command. For example:</p>
 <codeblock>kato log drain add --prefix systail.kato mydrain udp://logs.papertrailapp.com:12345</codeblock>
@@ -150,7 +146,7 @@ all nodes in the cluster) and forwards them to
 prefix as its argument.</p>
 <p>To delete the drain:</p>
 <codeblock>kato log drain delete mydrain</codeblock>
-<p>The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-history" type="section" scope="external"  >
+  <p>The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-history" type="section"   >
 <i>kato
 history</i>
 </xref> command
@@ -223,7 +219,7 @@ streams</i>
 <li>syslog.priority: syslog priority</li>
 <li>syslog.time: syslog formatted time</li>
 </ul>
-<p>You can see a list of the default drain formats using <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section" scope="external"  >
+  <p>You can see a list of the default drain formats using <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato config
 get</i>
 </xref>:</p>
@@ -252,8 +248,8 @@ shorter command for creating the <b>all-apps</b> drain would be:</p>
 <codeblock>kato log drain add papertrail udp://logs.papertrailapp.com:45678 -f systail-papertrail</codeblock>
 <p>You can also change the default apptail, event, and systail drain
 formats to modify the output of any drains using these prefixes (e.g.
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-drain-add" type="section" scope="external"  >helion drain</xref>, Cloud
-Events in the Management Console, and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-log-tail" type="section" scope="external"  >kato log tail</xref>
+  <xref href="../../user/reference/1.2client-ref-management.dita#topic50918/command-drain-add" type="section"   >helion drain</xref>, Cloud
+  Events in the Management Console, and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-tail" type="section">kato log tail</xref>
 respectively).</p>
 </section>
 <section id="custom-drains"> <title>Custom Drains</title>
@@ -265,10 +261,12 @@ Guide</xref>
 </p>
 </section>
 <section id="application-drains"> <title>Application Drains</title>
-<p>Drains for application log streams can be added by end users with the
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-drain-add" type="section" scope="external"  >
-<i>helion drain add</i>
-</xref> command. See the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2app-logs.dita#application-logs" type="section" scope="external"  >Application Logs</xref> section of the documentation for an example.</p>
+<p>Drains for application log streams can be added by end users with the <xref
+          href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#topic50918/command-drain-add"
+          type="section">
+          <i>helion drain add</i>
+        </xref> command. See the <xref href="../../user/deploy/1.2app-logs.dita#topic5165"
+          >Application Logs</xref> section of the documentation for an example.</p>
 </section>
 <section id="drain-status"> <title>Drain Status</title>
 <p>You can check the status of all drains on Application Lifecycle Service with the
@@ -283,13 +281,11 @@ builtin.katohistory     192.168.68.5    RUNNING[3]</codeblock>
             timeout</i></xref> , its status will change to FATAL.</p>
 </section>
 <section id="keys"> <title>Keys</title>
-<p>Each message in a log stream is prefixed with a key, identifying what
-type of message it is or to which log stream it belongs. The following
-keys are available for use in defining drains using the
-<codeph>--prefix</codeph> flag for <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-log-drain-add" type="section" scope="external"  >
-<i>kato log drain
-add</i>
-</xref>).</p>
+<p>Each message in a log stream is prefixed with a key, identifying what type of message it is or to
+        which log stream it belongs. The following keys are available for use in defining drains
+        using the <codeph>--prefix</codeph> flag for <xref
+          href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-drain-add"><i>kato log
+            drain add</i></xref> ).</p>
 <p>Systail keys are <xref href="#topic11928/managing-the-systail-stream" format="dita"
             ><i>configurable</i></xref> .</p>
 </section>
@@ -368,7 +364,7 @@ add</i>
 </section>
 <section id="managing-the-systail-stream"> <title>Managing the systail stream</title>
 <p>The list above shows the default systail keys. These can keys can be
-modified with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section" scope="external"  >
+  modified with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato
 config</i>
 </xref> command to
@@ -394,14 +390,14 @@ source for an existing key.</p>
 <p>Restart the <codeph>systail</codeph> process after adding or
 removing log files:</p>
 <codeblock>kato process restart systail</codeblock>
-      <note> Do not remove the default Application Lifecycle Service log stream keys (i.e. anything
+      <note type="caution"> Do not remove the default Application Lifecycle Service log stream keys (i.e. anything
         in the <i><xref href="#topic11928/systail" format="dita">systail</xref></i> list above) as
         this would affect the output of <codeph>kato tail</codeph>.</note>
 </section>
 <section id="configuration"> <title>Configuration</title>
 <p>Application Lifecycle Service has a number of configurable limits on application log drains
 to help prevent performance problems the logging subsystems. These
-settings can all be viewed and set with <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section" scope="external"  >
+settings can all be viewed and set with <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato
 config</i>
 </xref> commands as
@@ -429,7 +425,7 @@ re-establish their connections within (at most) 5 minutes.</p>
 other drains will retry indefinitely.</p>
 
 <p>These timeouts can be configured. To see a list of the configured
-timeouts, use <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section" scope="external"  >
+  timeouts, use <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato config
 get</i>
 </xref>. For
@@ -439,7 +435,7 @@ example:</p>
 appdrain.: 24h
 tmp.: 25m</codeblock>
 
-<p>To set a time-out (minimum 21m), use <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section" scope="external"  >
+  <p>To set a time-out (minimum 21m), use <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato config
 set</i>
 </xref>. For

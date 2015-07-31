@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2121">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: How to use the Helion Dashboards</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: How to use the Helion Dashboards</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,8 +15,8 @@
 <p>
 
 </p>
-<p>The HP <tm tmtype="reg">Helion OpenStack</tm> Commercial dashboards are browser-based user interfaces that allow you to interact with the HP <tm tmtype="reg">Helion OpenStack</tm> Commercial overcloud. The overcloud is the end-user <tm tmtype="reg">OpenStack</tm> cloud.</p>
-<p>The interface, based on <tm tmtype="reg">OpenStack</tm> Horizon, is grouped into dashboards, including <xref type="section" href="#topic2121/DashProject">Project</xref>, <xref type="section" href="#topic2121/DashAdmin">Admin</xref> and <xref type="section" href="#topic2121/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
+<p>The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud. The overcloud is the end-user OpenStack cloud.</p>
+<p>The interface, based on OpenStack Horizon, is grouped into dashboards, including <xref type="section" href="#topic2121/DashProject">Project</xref>, <xref type="section" href="#topic2121/DashAdmin">Admin</xref> and <xref type="section" href="#topic2121/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
 <!-- Need new
 <img src="/media/HorizonCommunity.png" alt="" width="600" />
 -->
@@ -43,7 +43,7 @@ To access the dashboard, <xref href="../../commercial/GA1/1.0commercial.dashboar
   <!--A BR tag was used here in the original source.-->
 </p>
 <p>
-  <image href="../../media/HelionDashboardDetail.png"/>
+  <image href="../../media/HelionDashboardDetail.png" placement="break"/>
 </p>
 <p>
   <xref href="#topic2121"> Return to Top </xref>

@@ -21,7 +21,6 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/reference/1.2client-ref-flags.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/reference/client-ref/flags/--></p>
-<p>These commands are new in <tm tmtype="reg">Helion OpenStack</tm> Development Platform 1.1</p>
 <ul>
 <li>
 <xref type="section" href="#topic2298/command-disable-feature-flag">helion disable-feature-flag</xref>: Deactivate the specified feature. </li>
@@ -33,10 +32,7 @@
 <xref type="section" href="#topic2298/command-feature-flags">helion feature-flags</xref>: Show all known feature flags and the status of each one.</li>
 </ul>
 <section id="syntax"> <title>Syntax</title>
-<codeblock>
-  <codeph>helion [options] command [arguments] [command-options]
-</codeph>
-</codeblock>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

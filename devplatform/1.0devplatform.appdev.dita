@@ -29,7 +29,7 @@
 <section id="prerequisites-before-you-begin"> <title>Prerequisites - Before you begin</title>
 <p>In order to download and deploy these sample applications, you must have the necessary framework installed and configured.</p>
 <ul>
-<li>HP <tm tmtype="reg">Helion OpenStack</tm> <xref href="../commercial/GA1/1.0commercial.install-GA-overview.dita" >cloud deployed</xref>
+<li>HP Helion <tm tmtype="reg">OpenStack</tm> <xref href="../commercial/GA1/1.0commercial.install-GA-overview.dita" >cloud deployed</xref>
 </li>
 <li>Application Lifecycle Service <xref href="../devplatform/1.0devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
 
@@ -114,7 +114,7 @@ Create a database and execute a query against it.</p>
 <xref href="../devplatform/1.0devplatform.marketplace.install.dita" >Installing the Marketplace</xref>
 </li>
 <li>
-<xref href="../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" type="section" scope="external"  >ALS command-line interface (CLI) reference</xref>
+<xref href="../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" type="section">ALS command-line interface (CLI) reference</xref>
 </li>
 <li>
 <xref href="../devplatform/helion/user/1.0index.dita" >Application Lifecycle Service (ALS) User's Guide</xref>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5909">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Provisioning Object/Proxy Node(s)</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Provisioning Object/Proxy Node(s)</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Provisioning Object Storage (Swift) Node(s)</searchtitle>
 </titlealts>
@@ -56,12 +56,10 @@
 </li>
 </ul>
 <section id="Preq"> <title>Prerequisites</title>
-<p>A HP <tm tmtype="reg">Helion OpenStack</tm> cloud must be deployed. This ensures that the Starter Swift nodes are installed and functional as they are part of the default HP <tm tmtype="reg">Helion OpenStack</tm> cloud deployment.</p>
+<p>A HP Helion OpenStack cloud must be deployed. This ensures that the Starter Swift nodes are installed and functional as they are part of the default HP Helion OpenStack cloud deployment.</p>
 <p>You can check the health of the starter nodes using the following command. All nodes should be in <b>ACTIVE</b> status and the power state should be <b>Running</b>.</p>
-<codeblock>
-  <codeph># nova list
-</codeph>
-</codeblock>
+<codeblock><codeph># nova list
+</codeph></codeblock>
 </section>
 <section id="adding-physical-server-for-scale-out-Swift"> <title>Adding physical server to scale-out Object and Proxy Nodes</title>
 <p>You can add scale-out object and proxy nodes by adding a physical server.</p>
@@ -78,70 +76,39 @@
 <p>You must add a server to the cloud inventory to handle the increased number of nodes.</p>
 <p>Perform the following steps to add a physical server:</p>
 <ol>
-<li>
-<p>Log in to the seed VM:</p>
-
-<codeblock>
-<codeph>ssh root@&lt;Seed IP Address&gt;
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Make the respective Baremetal entry in <codeph>/root/baremetal.csv</codeph>.</p>
-</li>
-<li>
-<p>Add the node to <codeph>baremetal.csv</codeph> at the end.</p>
-
-<codeblock>
-<codeph>&lt;mac_address&gt;,&lt;user&gt;,&lt;password&gt;,&lt;ip_address&gt;,&lt;no_of_cpus&gt;,&lt;memory_MB&gt;,&lt;diskspace_GiB&gt;,&lt;role&gt;,&lt;power_managemenment&gt;
-</codeph>
-</codeblock>
-
-<p>The following sample displays the output of the above command:</p>
-
-<codeblock>
-<codeph>9C:B6:54:AD:55:A8,administrator,gone2far,10.1.192.50,12,73728,70,OvercloudSOSwiftStorage,IPMI
-</codeph>
-</codeblock>
-
-<p>Ensure that a new node is added at the end of the file.</p>
-</li>
-<li>
-<p>Edit the scale counts in JSON environment variables file ( for example: <codeph>kvm-custom-ips.json</codeph>) that was used during the initial installation to define the appropriate scale number:</p>
-
-<codeblock>
-<codeph>"so_swift_storage_scale":&lt;number of object servers&gt;,
-</codeph>
-</codeblock>
-
-<p>
-<b>Note</b>: While deploying a scale-out <b>object</b> node ensure that the value of <codeph>so_swift_storage_scale</codeph> is appended. For example: If the initial number of object servers were 2 and later you added 2 more object servers then the total number of object servers must be 4. The initially added object server should always get appended with the newly added object server. Also, while deploying a scale-out <b>object</b> node ensure that the value of <codeph>so_swift_proxy_scale</codeph> is not modified.</p>
-</li>
-<li>
-<p>Source the environment variables file created during initial installation.</p>
-
-<codeblock>
-<codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name&gt;
-</codeph>
-</codeblock>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Run the installer script:</p>
-
-<codeblock>
-<codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log
-</codeph>
-</codeblock>
-
-<p>This will register a new ironic node and create a new nova instance and a new heat stack.</p>
-</li>
+<li>Log in to the seed
+          VM:<codeblock><codeph>ssh root@&lt;Seed IP Address&gt;
+</codeph></codeblock></li>
+<li>Make the respective Baremetal entry in <codeph>/root/baremetal.csv</codeph>.</li>
+<li>Add the node to <codeph>baremetal.csv</codeph> at the
+            end.<codeblock><codeph>&lt;mac_address&gt;,&lt;user&gt;,&lt;password&gt;,&lt;ip_address&gt;,&lt;no_of_cpus&gt;,&lt;memory_MB&gt;,&lt;diskspace_GiB&gt;,&lt;role&gt;,&lt;power_managemenment&gt;
+</codeph></codeblock><p>The
+            following sample displays the output of the above
+            command:</p><codeblock><codeph>9C:B6:54:AD:55:A8,administrator,gone2far,10.1.192.50,12,73728,70,OvercloudSOSwiftStorage,IPMI
+</codeph></codeblock><p>Ensure
+            that a new node is added at the end of the file.</p></li>
+<li>Edit the scale counts in JSON environment variables file ( for example:
+            <codeph>kvm-custom-ips.json</codeph>) that was used during the initial installation to
+          define the appropriate scale number:<codeblock><codeph>"so_swift_storage_scale":&lt;number of object servers&gt;,
+</codeph></codeblock><p>
+            <note>While deploying a scale-out <b>object</b> node ensure that the value of
+                <codeph>so_swift_storage_scale</codeph> is appended. For example: If the initial
+              number of object servers were 2 and later you added 2 more object servers then the
+              total number of object servers must be 4. The initially added object server should
+              always get appended with the newly added object server. Also, while deploying a
+              scale-out <b>object</b> node ensure that the value of
+                <codeph>so_swift_proxy_scale</codeph> is not modified.</note>
+          </p></li>
+<li>Source the environment variables file created during initial
+            installation.<codeblock><codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name&gt;
+</codeph></codeblock><p>For
+            example:</p><codeblock><codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+</codeph></codeblock></li>
+<li>Run the installer
+            script:<codeblock><codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log
+</codeph></codeblock><p>This
+            will register a new ironic node and create a new nova instance and a new heat
+          stack.</p></li>
 </ol>
 <!--
 **Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes. -->
@@ -182,94 +149,51 @@ For example:
 <section id="verify-swift-node-deployment"> <title>Verify object node deployment</title>
 <p>Verify that the new nodes were created and are functioning properly using the following commands:</p>
 <ol>
-<li>
-<p>Log in to the undercloud from the seed cloud.</p>
-
-<codeblock>
-<codeph># ssh heat-admin@&lt;undercloud IP address&gt; 
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>List the available Swift nodes.</p>
-
-<codeblock>
-<codeph># nova list
-</codeph>
-</codeblock>
-
-<p>It displays available Swift nodes including the newly added node(s).</p>
-</li>
+<li>Log in to the undercloud from the seed
+          cloud.<codeblock><codeph># ssh heat-admin@&lt;undercloud IP address&gt; 
+</codeph></codeblock></li>
+<li>List the available Swift nodes.<codeblock><codeph># nova list
+</codeph></codeblock><p>It
+            displays available Swift nodes including the newly added node(s).</p></li>
 </ol>
 </section>
 <section id="adding-physical-node-proxy"> <title>Adding physical server to scale-out Proxy Nodes</title>
 <p>You must add a server to the cloud inventory to handle the increased number of nodes.</p>
 <p>Perform the following steps to add a physical server:</p>
 <ol>
-<li>
-<p>Log in to the seed VM:</p>
-
-<codeblock>
-<codeph>ssh root@&lt;Seed IP Address&gt;
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Make the respective Baremetal entry in <codeph>/root/baremetal.csv</codeph>.</p>
-</li>
-<li>
-<p>Add the node to <codeph>baremetal.csv</codeph> at the end.</p>
-
-<codeblock>
-<codeph>&lt;mac_address&gt;,&lt;user&gt;,&lt;password&gt;,&lt;ip_address&gt;,&lt;no_of_cpus&gt;,&lt;memory_MB&gt;,&lt;diskspace_GiB&gt;,&lt;role&gt;,&lt;power_managemenment&gt;
-</codeph>
-</codeblock>
-
-<p>The following sample displays the output of the above command:</p>
-
-<codeblock>
-<codeph>E8:39:35:2B:FA:30,administrator,password,10.1.192.46,12,73728,70,OvercloudSOSwiftProxy,IPMI
-</codeph>
-</codeblock>
-
-<p>Ensure that a new node is added at the end of the file.</p>
-</li>
-<li>
-<p>Edit the scale counts in JSON environment variables file ( for example: <codeph>kvm-custom-ips.json</codeph>) that was used during the initial installation to define the appropriate scale number:</p>
-
-<codeblock>
-<codeph>"so_swift_proxy_scale":&lt;number of proxy servers&gt;,
-</codeph>
-</codeblock>
-
-<p>
-<b>Note</b>: While deploying a scale-out <b>proxy</b> node ensure that the value of <codeph>so_swift_proxy_scale</codeph> is appended. For example: If the initial number of proxy servers were 2 and later you added 2 more proxy servers then the total number of proxy servers must be 4. The initially added proxy server should always get appended with the newly added object server. Also, while deploying a scale-out <b>proxy</b> node ensure that the value of <codeph>so_swift_storage_scale</codeph> is not modified.</p>
-</li>
-<li>
-<p>Source the environment variables file created during initial installation.</p>
-
-<codeblock>
-<codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name&gt;
-</codeph>
-</codeblock>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Run the installer script:</p>
-
-<codeblock>
-<codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log
-</codeph>
-</codeblock>
-
-<p>This will register a new ironic node and create a new nova instance and a new heat stack.</p>
-</li>
+<li>Log in to the seed
+          VM:<codeblock><codeph>ssh root@&lt;Seed IP Address&gt;
+</codeph></codeblock></li>
+<li>Make the respective Baremetal entry in <codeph>/root/baremetal.csv</codeph>.</li>
+<li>Add the node to <codeph>baremetal.csv</codeph> at the
+            end.<codeblock><codeph>&lt;mac_address&gt;,&lt;user&gt;,&lt;password&gt;,&lt;ip_address&gt;,&lt;no_of_cpus&gt;,&lt;memory_MB&gt;,&lt;diskspace_GiB&gt;,&lt;role&gt;,&lt;power_managemenment&gt;
+</codeph></codeblock><p>The
+            following sample displays the output of the above
+            command:</p><codeblock><codeph>E8:39:35:2B:FA:30,administrator,password,10.1.192.46,12,73728,70,OvercloudSOSwiftProxy,IPMI
+</codeph></codeblock><p>Ensure
+            that a new node is added at the end of the file.</p></li>
+<li>Edit the scale counts in JSON environment variables file ( for example:
+            <codeph>kvm-custom-ips.json</codeph>) that was used during the initial installation to
+          define the appropriate scale number:<codeblock><codeph>"so_swift_proxy_scale":&lt;number of proxy servers&gt;,
+</codeph></codeblock><p>
+            <note> While deploying a scale-out <b>proxy</b> node ensure that the value of
+                <codeph>so_swift_proxy_scale</codeph> is appended. For example: If the initial
+              number of proxy servers were 2 and later you added 2 more proxy servers then the total
+              number of proxy servers must be 4. The initially added proxy server should always get
+              appended with the newly added object server. Also, while deploying a scale-out
+                <b>proxy</b> node ensure that the value of <codeph>so_swift_storage_scale</codeph>
+              is not modified.</note>
+          </p></li>
+<li>Source the environment variables file created during initial
+            installation.<codeblock><codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name&gt;
+</codeph></codeblock><p>For
+            example:</p><codeblock><codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+</codeph></codeblock></li>
+<li>Run the installer
+            script:<codeblock><codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log
+</codeph></codeblock><p>This
+            will register a new ironic node and create a new nova instance and a new heat
+          stack.</p></li>
 </ol>
 <!--
 **Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes. -->
@@ -277,24 +201,12 @@ For example:
 <section id="verify-proxy-swift-node-deployment"> <title>Verify proxy node deployment</title>
 <p>Verify that the new nodes were created and are functioning properly using the following commands:</p>
 <ol>
-<li>
-<p>Log in to the undercloud from the seed cloud.</p>
-
-<codeblock>
-<codeph># ssh heat-admin@&lt;undercloud IP address&gt; 
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>List the available Swift nodes.</p>
-
-<codeblock>
-<codeph># nova list
-</codeph>
-</codeblock>
-
-<p>It displays available Swift nodes including the newly added node(s).</p>
-</li>
+<li>Log in to the undercloud from the seed
+          cloud.<codeblock><codeph># ssh heat-admin@&lt;undercloud IP address&gt; 
+</codeph></codeblock></li>
+<li>List the available Swift nodes.<codeblock><codeph># nova list
+</codeph></codeblock><p>It
+            displays available Swift nodes including the newly added node(s).</p></li>
 </ol>
 <p>
   <xref href="#topic5909"> Return to Top </xref>

@@ -167,8 +167,8 @@ do so.</p>
 </section>
 <section id="31-accounts"> <title>3.1 Accounts</title>
 <p>An account is created when a user first signs up with HP Helion Public Cloud. A <i>project</i> (with an associated <i>project_id</i>) is also created on first signing up with the cloud. All calls to the Block Storage APIs include the users
-<i>project_id</i> as part of the call. HP Helion and the <tm tmtype="reg">OpenStack</tm> community previously used the term <i>tenant</i> to refer to the what is now known as a <i>project</i>. The terms can be used interchangeably when reviewing HP Helion documentation (this document uses the term <i>project</i>).</p>
-<p>Similarly, the references to <i>tenant_id</i> can be read as <i>project_id</i>. For upstream <tm tmtype="reg">OpenStack</tm> tools and libraries (including <i>python-cinderclient</i> which can be used to interact with the Block Storage API), you can provide your <i>project_name</i> anywhere <i>tenant_name</i> is requested and your <i>project_id</i> anywhere <i>tenant_id</i> is requested. Similarly, where APIs return <i>tenant_id</i> or <i>tenantId</i>, this is equivalent to your <i>project_id</i>.</p>
+<i>project_id</i> as part of the call. HP Helion and the OpenStack community previously used the term <i>tenant</i> to refer to the what is now known as a <i>project</i>. The terms can be used interchangeably when reviewing HP Helion documentation (this document uses the term <i>project</i>).</p>
+<p>Similarly, the references to <i>tenant_id</i> can be read as <i>project_id</i>. For upstream OpenStack tools and libraries (including <i>python-cinderclient</i> which can be used to interact with the Block Storage API), you can provide your <i>project_name</i> anywhere <i>tenant_name</i> is requested and your <i>project_id</i> anywhere <i>tenant_id</i> is requested. Similarly, where APIs return <i>tenant_id</i> or <i>tenantId</i>, this is equivalent to your <i>project_id</i>.</p>
 <p>For additional details on accounts, tenants and projects please refer to the
   <xref href="keystone-api.dita" >Identity Service Overview</xref>.</p>
 </section>
@@ -2384,7 +2384,7 @@ volume_id="e5185058-943a-4cb4-96d9-72c184c337d6" /&gt;
 </codeblock>
 </section>
 <section id="455-servers"> <title>4.5.5 Servers</title>
-  <p>See <xref href="../../../publiccloud/apidocs/c1.1/nova-api.dita#Server" type="section" scope="external"  >Compute Service Servers</xref> for details of
+  <p>See <xref href="nova-api.dita">Compute Service Servers</xref> for details of
 the Server resource. From the Block Storage Service perspective,
 a server is system to which a <xref type="section" href="#topic65119/volume_resource">volume</xref> can be attached.
 When a volume is attached to a server, the server can mount the volume
@@ -2407,7 +2407,7 @@ formatted with a filesystem and so on).</p>
 <p>
   <b>Rate Limits</b>
 </p>
-  <p>See <xref href="../../../publiccloud/apidocs/c1.1/nova-api.dita" >Compute instances</xref> for details of the rate limits
+  <p>See <xref href="nova-api.dita" >Compute instances</xref> for details of the rate limits
 associated with the Server resource.</p>
 <p>
   <b>Quota Limits</b>

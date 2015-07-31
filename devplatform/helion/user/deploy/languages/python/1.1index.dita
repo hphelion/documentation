@@ -22,7 +22,7 @@
  <!--permalink: /helion/devplatform/1.1/als/user/deploy/languages/python/--></p>
 <p>Whether you're deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
-advantage of HP <tm tmtype="reg">Helion OpenStack</tm> to manage infrastructure or software services, tools
+advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools
 to enable successful development are available in Python.</p>
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
 <p>Application Lifecycle Services (ALS), a CloudFoundry-based Platform as a
@@ -122,7 +122,7 @@ Procfile web: command. For example:</p>
 </section>
 <section id="python-with-the-legacy-buildpack"> <title>Python with the Legacy Buildpack</title>
 <p>If your Python application has configuration for running on Application Lifecycle Service
-  2.10 or earlier, you can deploy it using the <xref href="../../../deploy/1.1buildpack.dita#topic3434/legacy-buildpack" type="section" scope="external"  >
+  2.10 or earlier, you can deploy it using the <xref href="../../../deploy/1.1buildpack.dita#topic3434/legacy-buildpack" type="section"  >
 <i>Legacy
 Buildpack</i>
 </xref>, which provides an
@@ -144,14 +144,14 @@ web: $HELION_UWSGI --mount foo=app.py --import module</codeblock>
           <xref href="1.1django.dita">Deploying Django applications</xref>
         </li>
         <li>
-          <xref href="1.1django.dita#topic3654/configuring-database" type="section" scope="external" >Configuring database</xref>
+          <xref href="1.1django.dita#topic3654/configuring-database" type="section" >Configuring database</xref>
         </li>
         <li>
-          <xref href="1.1django.dita#topic3654/configuring-static-media" type="section" scope="external" >Configuring static
+          <xref href="1.1django.dita#topic3654/configuring-static-media" type="section" >Configuring static
             media</xref>
         </li>
         <li>
-          <xref href="1.1django.dita#topic3654/configuring-project-location" type="section" scope="external" >Configuring project
+          <xref href="1.1django.dita#topic3654/configuring-project-location" type="section" >Configuring project
             location</xref>
         </li>
 </ul>
@@ -218,10 +218,10 @@ DATABASES = {
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-<xref href="../../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#command" type="section" scope="external"  >
+<xref href="../../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#command" type="section"  >
 <i>command</i>
 </xref> key and set the
-<xref href="../../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#web" type="section" scope="external"  >
+<xref href="../../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#web" type="section"  >
 <i>processes: web</i>
 </xref> key to
 Null ("\~").</p>
@@ -289,15 +289,15 @@ for an example.</p>
           <i>environment variables</i>
         </xref>.</p>
 <p>Application dependencies such as web frameworks or modules from PyPI can
-  be installed using <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" type="section" scope="external"  >
+  be installed using <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" type="section"  >
 <i>PyPM</i>
 </xref>
-  and/or <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" type="section" scope="external"  >
+  and/or <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" type="section"  >
 <i>pip</i>
 </xref>.</p>
 </section>
 <section id="pypm"> <title>PyPM</title>
-  <p>Definition <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" type="section" scope="external"  >
+  <p>Definition <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" type="section"  >
 <i>PyPM</i>
 </xref>
 </p>
@@ -312,13 +312,13 @@ sample app for an example.</p>
 <p>Alternatively, you can list the modules in a top-level requirements-pypm.txt file. The format is similar, if not same, as <xref href="http://pip.readthedocs.org/en/latest/user_guide.html#requirements-files" type="section" scope="external" format="html" >pip requirements files</xref> and accepts version specification. The name of this file can be overridden by setting the PYPM_REQUIREMENTS_FILE environment variable.</p>
 </section>
 <section id="pip"> <title>pip</title>
-  <p>Definition <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" type="section" scope="external"  >
+  <p>Definition <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" type="section"  >
 <i>pip</i>
 </xref>
 </p>
-  <p>In addition - or as alternative - to <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" type="section" scope="external"  >
+  <p>In addition - or as alternative - to <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" type="section"  >
 <i>PyPM</i>
-  </xref>, your application can also make use of pip to install certain dependencies. The above tornado-chat-mongo sample installs "pycurl" using <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" type="section" scope="external"  >
+  </xref>, your application can also make use of pip to install certain dependencies. The above tornado-chat-mongo sample installs "pycurl" using <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" type="section"  >
 <i>pip</i>
 </xref>:</p>
 <codeblock>  requirements:

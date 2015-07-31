@@ -27,7 +27,7 @@
 
 </p>
 <p>Application Lifecycle Service 1.0 provides the ability to upgrade a node or cluster in place
-via <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" type="section" scope="external"  >
+via <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" type="section"  >
 <i>kato node
 upgrade</i>
 </xref>
@@ -72,7 +72,7 @@ the upgrade process works.</p>
 </section>
 <section id="maintenance-mode"> <title>Maintenance Mode</title>
 <p>Before beginning an upgrade, put Application Lifecycle Service in maintenance mode in the
-<xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings-maintenance-mode" type="section" scope="external"  >
+<xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings-maintenance-mode" type="section"  >
 <i>Cloud Controller
 Settings</i>
 </xref> or
@@ -140,7 +140,7 @@ have enabled. This order is then followed when upgrading nodes.</p>
 nodes that don't match (e.g. data service nodes) are added to the end to
 be upgraded last.</p>
 <p>The order can be overridden with the
-<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" type="section" scope="external"  >
+<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" type="section"  >
 <i>--role-order</i>
 </xref>
 option.</p>
@@ -161,27 +161,21 @@ option.</p>
 latest code available. After this base check, the version of Application Lifecycle Service
 running on the node is checked against the latest version available. If
 a newer version of Application Lifecycle Service is available (or if the <codeph>--force</codeph> option was used) the upgrade process begins.</p>
-<p>
-  <b>Note</b>
-</p>
-<p>Using the <codeph>--force</codeph> option is not recommended unless
-you have been directed to do so by HP Application Lifecycle Service Support.</p>
+<note type="caution">Using the <codeph>--force</codeph> option is not recommended unless
+you have been directed to do so by HP Application Lifecycle Service Support.</note>
 <p>A pre-upgrade validation check is performed on the node to check that it
 is in working order before any upgrade actions are performed. If this
 validation fails then the upgrade process is stopped. These validation
 steps can be displayed to the user as errors while still continuing the
 upgrade process by using the <codeph>--ignore-inspect-failures</codeph> option.</p>
-<p>
-  <b>Warning</b>
-</p>
-<p>Use this option is only if you get failures running
+  <note type="caution">Use this option is only if you get failures running
 <codeph>kato node inspect</codeph> that are known to be caused by
 systems outside of the control of Application Lifecycle Service, or if directed by
-HP Application Lifecycle Service Support.</p>
+HP Application Lifecycle Service Support.</note>
 <p>Next, the upgrade packages are downloaded and a validation check is
 performed on the files to make sure everything required for an upgrade
 is available. If the node is a DEA it is then
-<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-retire" type="section" scope="external"  >
+<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-retire" type="section"  >
 <i>retired</i>
 </xref> to
 make sure any applications running on the node are evacuated before the

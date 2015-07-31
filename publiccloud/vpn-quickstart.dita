@@ -52,7 +52,7 @@
 <p>
 <b>Note:</b> This guide uses strongSwan for the IPsec functionality.</p>
 <p>A site-to-site VPN allows multiple fixed locations to establish secure connections with each other over a public network such as the Internet. Site-to-site VPN extends a defined network, making computer resources from one network available to other networks.</p>
-<p>For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the <tm tmtype="reg">OpenStack</tm> Networking API.  The customization can be done on either the command line or through the HP Helion Public Cloud Management Console.</p>
+<p>For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the OpenStack Networking API.  The customization can be done on either the command line or through the HP Helion Public Cloud Management Console.</p>
 <p>Before starting, ensure that you have adequate permissions to accomplish each of the following steps.</p>
 <p>
 <b>Note:</b> VPN instances are a potential single point of failure. We will soon be posting a high availability VPN setup guide, so please stay tuned.</p>
@@ -68,7 +68,7 @@
 <ul>
 <li>Local network configuration in HP Helion Public Cloud     </li>
 <li>HP Helion Public Cloud Compute and Networking services </li>
-<li><tm tmtype="reg">OpenStack</tm> Nova and Neutron CLI and API   </li>
+<li>OpenStack Nova and Neutron CLI and API   </li>
 <li>Virtual Private Networks (VPN)    </li>
 <li>strongSwan or other IPsec-based software solutions   </li>
 </ul>
@@ -144,10 +144,10 @@ $TENANT_ID = the id of the tenant<!--A BR tag was used here in the original sour
 $PORT_ID1 = id of port 1 (vm-gateway)<!--A BR tag was used here in the original source.-->
 $PORT_ID2 = id of port 2 (vm-test)<!--A BR tag was used here in the original source.-->
 $VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)</p>
-  <p>For more details on the Nova and Neutron commands please see the <xref href="apidocs/c1.1/neutron-api.dita" >HP Helion Public Cloud Networking</xref> and <xref href="apidocs/c1.1/nova-api.dita" >Compute</xref> API specifications.</p>
+  <p>For more details on the Nova and Neutron commands please see the <xref href="api/neutron-api.dita" >HP Helion Public Cloud Networking</xref> and <xref href="api/nova-api.dita" >Compute</xref> API specifications.</p>
 </section>
 <section id="compute"> <title>Activate the Compute service in HP Helion Public Cloud</title>
-  <p>If you have not previously created an account and activated the Compute service please sign up at <xref href="http://hpcloud.com" scope="external" format="html" >http://hpcloud.com</xref>.  Once you activate the Compute service, you need to install the <xref href="apidocs/c1.1/nova-api.dita" >compute</xref> and <xref href="apidocs/c1.1/neutron-api.dita" >networking</xref> clients or the <xref href="cli.openstack.dita" >CLI</xref>. Make sure you activate a Compute service instance to access the networking and VPN capabilities.</p>
+  <p>If you have not previously created an account and activated the Compute service please sign up at <xref href="http://hpcloud.com" scope="external" format="html" >http://hpcloud.com</xref>.  Once you activate the Compute service, you need to install the <xref href="api/nova-api.dita" >compute</xref> and <xref href="api/neutron-api.dita" >networking</xref> clients or the <xref href="cli.openstack.dita" >CLI</xref>. Make sure you activate a Compute service instance to access the networking and VPN capabilities.</p>
 </section>
 <section id="create-a-new-ubuntu-server-instance"> <title>Create a new Ubuntu server instance</title>
 <p>Set up a new Ubuntu server instance—separate from your other VPC gateway machines and using the command line. Test the setup of this new server.</p>
@@ -366,7 +366,7 @@ net.ipv4.ip_forward = 1
 <b>Note:</b> the location of the <i>ipsec.conf</i> file is <i>/etc/ipsec.conf</i>
 </p>
 <codeblock>
-  <codeph># ipsec.conf - strongSwan IPsec configuration file
+# ipsec.conf - strongSwan IPsec configuration file
 
 # basic configuration
 
@@ -408,7 +408,6 @@ conn vpn-test
       dpddelay=60
       dpdtimeout=500 
       auto=add
-</codeph>
 </codeblock>
 </section>
 <section id="secret"> <title>Set up ipsec.secrets file on the gateway instance</title>
@@ -427,7 +426,7 @@ conn vpn-test
 <b>Note</b>: The location of the <i>ipsec.secrets</i> file is <i>/etc/ipsec.secrets</i>.</p>
 <p>Based upon the authentication type and shared secret for the VPN instance customize the <i>ipsec.secrets</i> file with information from the above steps.</p>
 <codeblock>
-  <codeph># This file holds shared secrets or RSA private keys for inter-Pluto
+# This file holds shared secrets or RSA private keys for inter-Pluto
 # authentication.  See ipsec_pluto(8) manpage, and HTML documentation.
 
 # RSA private key for this host, authenticating it to any other host
@@ -438,7 +437,6 @@ conn vpn-test
 # this file is managed with debconf and will contain the automatically created private key
 # include /var/lib/strongswan/ipsec.secrets.inc 
 10.2.0.21 192.168.1.50 192.168.1.50 : PSK "abcd" 
-</codeph>
 </codeblock>
 </section>
 <section id="routes"> <title>Set up routes on non-gateway instance</title>
@@ -446,21 +444,18 @@ conn vpn-test
 <p>Example: <codeph>route add -net &lt;remote-subnet&gt; gw &lt;host gateway&gt;</codeph>
 </p>
 <codeblock>
-  <codeph>route add -net 192.168.2.0/24 gw 10.2.0.21
-</codeph>
+route add -net 192.168.2.0/24 gw 10.2.0.21
 </codeblock>
 <p>Verify that the new route was added by running the command <b>route-n</b> and finding the entry that was added in the table.</p>
 </section>
 <section id="connect"> <title>Establish connections</title>
 <p>Force IPsec to read the updated <i>ipsec.conf</i> and <i>ipsec.secrets</i> files and to establish a connection:</p>
 <codeblock>
-  <codeph>ipsec restart
-</codeph>
+ipsec restart
 </codeblock>
 <p>Start the connection (conn) that is defined in <i>ipsec.conf</i>:</p>
 <codeblock>
-  <codeph>ipsec up vpn-test
-</codeph>
+ipsec up vpn-test
 </codeblock>
 <p>Validate that the IPsec processes are available by running the  command <b>ps -welf | grep ipsec</b>
 </p>
@@ -469,8 +464,7 @@ conn vpn-test
 <p>Force IPsec to read the updated <i>ipsec.conf</i> and</p>
 <p>Stop the connection (conn) that is defined in <i>ipsec.conf</i>:</p>
 <codeblock>
-  <codeph>ipsec down vpn-test
-</codeph>
+ipsec down vpn-test
 </codeblock>
 <p>
 <b>Note:</b> The above step is required for a safe restart.</p>

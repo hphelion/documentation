@@ -33,7 +33,8 @@
 <li>
 <xref type="section" href="#topic3989/command-curl">helion curl</xref>: Run a raw REST request against the chosen target.</li>
 <li>
-<xref type="section" href="#topic3989/command-drain">helion drain</xref>: Commands for the management of drains attached to applications.</li>
+        <xref href="#topic3989/command-drain" format="dita">helion drain</xref>: Commands for the
+        management of drains attached to applications.</li>
 <li>
 <xref type="section" href="#topic3989/command-guid">helion guid</xref>: Map the specified name into a GUID given the type.</li>
 <li>
@@ -46,10 +47,7 @@
 <xref type="section" href="#topic3989/command-unalias">helion unalias</xref>: Remove a shortcut by name.</li>
 </ul>
 <section id="syntax"> <title>Syntax</title>
-<codeblock>
-  <codeph>helion [options] command [arguments] [command-options]
-</codeph>
-</codeblock>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
@@ -182,7 +180,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="helion-drain-command-drain"> <title>helion drain {command-drain}</title>
+<section id="command-drain"> <title>helion drain {command-drain}</title>
 <p>Commands for the management of drains attached to applications.</p>
 <table>
 <tgroup cols="1">

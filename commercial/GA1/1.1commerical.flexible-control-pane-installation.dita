@@ -29,8 +29,9 @@
 
 <p>As you can see in the <xref href="1.1commerical.flexible-control-pane-overview.dita">overview</xref> 
   of the documentation for 1.0, HP Helion Openstack Flexible Control Plane (FCP) allows you to deploy the control plane in a virtual environment, reducing the control plane footprint to just three servers for proof of concept, evaluation, and exploration of HP Helion Openstack features.</p>
-<p>
-<b>Note:</b> As of HP Helion OpenStack 1.1.1, FCP is in an experimental phase and we do not recommend you use FCP in your production environment. We recommend that you test FCP in your test environment, for small-scale clouds of up to eight compute nodes.</p>
+    <note>As of HP Helion OpenStack 1.1.1, FCP is in an experimental phase and we do not recommend
+      you use FCP in your production environment. We recommend that you test FCP in your test
+      environment, for small-scale clouds of up to eight compute nodes.</note>
 <p>For additional information about FCP, contact the HP Helion Support Center.</p>
 <p>The overview covered the <xref href="1.1commerical.flexible-control-pane-overview.dita">prerequisites</xref>. Now we will walk through the installation.</p>
 <p>This page contains:</p>
@@ -54,10 +55,10 @@
 <li>
   <xref href="1.1commerical.flexible-control-pane-overview.dita#topic6925/prereq" type="section">Review prerequisites and configure the infrastructure</xref> accordingly</li>
 <li>
-<xref href="1.1commerical.flexible-control-pane-overview.dita#configfiles" type="section" scope="external" >Create configuration files</xref>
+<xref href="1.1commerical.flexible-control-pane-overview.dita#configfiles" type="section">Create configuration files</xref>
 </li>
 <li>
-<xref href="1.1commerical.flexible-control-pane-overview.dita#kvmsetup" type="section" scope="external" >Set up KVM hosts</xref>
+<xref href="1.1commerical.flexible-control-pane-overview.dita#kvmsetup" type="section">Set up KVM hosts</xref>
 </li>
 <li>Deploy an HP Helion cloud</li>
 </ul>
@@ -246,8 +247,7 @@ bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh \
 <p>c. Load the configuration file</p>
 
 <codeblock>
-<codeph>source /root/tripleo/triple-incubator/scripts/hp_ced_load_config.json overcloud-config.json
-</codeph>
+<codeph>source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh overcloud-config.json</codeph>
 </codeblock>
 
 <p>d. Run the second stage, that is, configure under and overclouds. Export all relevant environment variables,</p>
@@ -323,7 +323,7 @@ bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh \
 </ul>
 </section>
 <section id="addnodes"> <title>Adding Additional Overcloud Compute Nodes</title>
-  <p>For more information, see: <xref href="1.1commerical.flexible-control-pane-overview.dita#add-remove-replace-nodes" type="section" scope="external" >Add, remove and replace nodes</xref>.</p>
+  <p>For more information, see: <xref href="1.1commerical.flexible-control-pane-overview.dita#add-remove-replace-nodes" type="section">Add, remove and replace nodes</xref>.</p>
 </section>
 <section id="knownissues"> <title>Known Issues and Resolutions</title>
 </section>

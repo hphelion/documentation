@@ -46,7 +46,7 @@ framework:
 </codeph>
 </codeblock>
 <p>
-<b>Note</b>: When using the Legacy Buildpack, config-defined environment variable values can only be updated by re-pushing the application with new settings (see <xref href="../../../../devplatform/helion/admin/reference/1.0known-issues.dita#known-issues-legacy-env" type="section" scope="external"  >Legacy Buildpack and Environment Variables</xref>).</p>
+<b>Note</b>: When using the Legacy Buildpack, config-defined environment variable values can only be updated by re-pushing the application with new settings (see <xref href="../../../../devplatform/helion/admin/reference/1.0known-issues.dita#known-issues-legacy-env" type="section"  >Legacy Buildpack and Environment Variables</xref>).</p>
 </section>
 <section id="custom-buildpacks"> <title>Custom Buildpacks</title>
 <p>To specify the exact buildpack to use for deploying your application,

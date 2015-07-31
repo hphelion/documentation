@@ -42,23 +42,17 @@ between multiple instances (containers) as required.</p>
 <xref href="http://www.websocket.org/aboutwebsocket.html" scope="external" format="html" >WebSocket</xref> (including
 "wss://" secure web sockets) and <xref href="http://www.chromium.org/spdy" scope="external" format="html" >SPDY</xref>.</p>
 <section id="settings"> <title>Settings</title>
-<p>The Router is configured using <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section" scope="external"  >
+  <p>The Router is configured using <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"  >
 <i>kato config</i>
 </xref>. The following settings are configurable:</p>
 <p>
 <b>client_inactivity_timeout</b>: time (in seconds) the router waits
 for idle clients (default 1200 seconds). To change this:</p>
-<codeblock>
-  <codeph>kato config set router2g client_inactivity_timeout 2400
-</codeph>
-</codeblock>
+<codeblock>kato config set router2g client_inactivity_timeout 2400</codeblock>
 <p>
 <b>backend_inactivity_timeout</b>: time (in seconds) the router waits
 for applications to respond (default 1200 seconds). To change this:</p>
-<codeblock>
-  <codeph>kato config set router2g client_inactivity_timeout 2400
-</codeph>
-</codeblock>
+<codeblock>kato config set router2g client_inactivity_timeout 2400</codeblock>
 <p>
 <b>prevent_x_spoofing</b> (true|false): Enable HTTP "X-" header
 spoofing prevention (default 'true'). When enabled, the router
@@ -66,10 +60,7 @@ discards all X- headers sent by the client (e.g. X-Forwarded-For,
 X-Forwarded-proto, X-Real-IP, etc.) and replaces them with values
 determined by the router itself. Set this option to 'false' only if the routers are behind a load balancer which terminates SSL connections; in this scenario, the router will trust the X-headers set by the load balancer.</p>
 <p>To enable:</p>
-<codeblock>
-  <codeph>kato config set router2g prevent_x_spoofing true --json
-</codeph>
-</codeblock>
+<codeblock>kato config set router2g prevent_x_spoofing true --json</codeblock>
 <p>
 <b>session_affinity</b> (true|false - disabled/unset by default):
 Enable sticky session support on the router. Overrides normal
@@ -91,20 +82,16 @@ configuration. Disabled if empty (default). Valid values are:</p>
 <li>ALLOW_FROM \&lt;uri&gt;</li>
 </ul>
 <p>For example:</p>
-<codeblock>
-  <codeph>   kato config set router2g x_frame_options SAMEORIGIN
-</codeph>
-</codeblock>
+<codeblock>kato config set router2g x_frame_options SAMEORIGIN</codeblock>
 <p>
-  <b>Note</b>
-</p>
-<p>Alternatively, end user applications can employ
-<xref href="http://en.wikipedia.org/wiki/Framekiller" scope="external" format="html" >framekiller</xref> JavaScript
-snippets to help prevent frame based clickjacking.</p>
+        <note type="tip">End-user applications can also employ <xref
+            href="http://en.wikipedia.org/wiki/Framekiller" scope="external" format="html"
+            >framekiller</xref> JavaScript snippets instead to help prevent frame-based clickjacking.</note>
+      </p>
 </section>
 <section id="websockets"> <title>WebSockets</title>
 <p>Applications using web sockets must use the VCAP_APP_PORT or PORT
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#environment-variables" type="section" scope="external"  >
+<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita" type="section" >
 <i>environment variables</i>
 </xref>
 to set the default listener port of the WebSocket server.</p>

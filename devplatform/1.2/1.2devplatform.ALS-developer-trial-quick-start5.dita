@@ -25,17 +25,15 @@
 <p>An ALS cluster provides the support infrastructure necessary to deploy and manage applications. During this step, you will send a set of commands and variables to the <varname>cf-mgmt</varname> tool. The tool will use those parameters to create the cluster, set up the admin login credentials, and return a URL for the cluster's management console.</p>
 <simpletable>
           <strow>
-            <stentry>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita">Register for your Helion Public
-            Cloud Account</xref>
-          <p>2. <xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743" type="section" scope="external" >Download
+            <stentry>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita">Register
+            for your Helion Public Cloud Account</xref>
+          <p>2. <xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743">Download
               Tools</xref>
           </p><p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the
               Sandbox Environment</xref></p><p>4. <xref
               href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
-            Cluster</xref></p><p>5. <image href="../../media/star.gif" scale="50"
-              id="image_zft_5cb_ms"/>
-            <b>Add Windows DEA and SQL Server (Optional Step)</b></p><p>6. <xref
-              href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore Sample
+            Cluster</xref></p><p>5. <b>Add Windows DEA and SQL Server (Optional Step)</b></p><p>6.
+              <xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore Sample
               Applications</xref></p></stentry>
             <stentry><p>This step is optional, but it exercises the new functionality in this
             version of the Helion Development Platform.</p><p>

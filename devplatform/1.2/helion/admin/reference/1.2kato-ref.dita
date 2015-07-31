@@ -345,19 +345,17 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="kato-command-ref-data-export"> <title>Data Export</title>
-<p>Export system data to or from clusters/nodes. <!--A BR tag was used here in the original source.-->
-If no options are specified, includes <b>all</b> data except <i>resources</i> and <i>aok-config</i>.</p>
+<p>Export system data to or from clusters/nodes. </p>
+      <p>If no options are specified, includes <b>all</b> data except <i>resources</i> and
+          <i>aok-config</i>.</p>
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>data export --only-this-node [options] &lt;filename&gt;
+<codeblock>data export --only-this-node [options] &lt;filename&gt;
 
 data export --cluster [options] &lt;filename&gt;
 
-data export --manual [options] &lt;filename&gt;
-</codeph>
-</codeblock>
+data export --manual [options] &lt;filename&gt;</codeblock>
 <ul>
 <li>&lt;<i>filename</i>&gt;: The name of the file that the export will be written to.</li>
 <li>
@@ -625,17 +623,15 @@ data export --manual [options] &lt;filename&gt;
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="kato-command-ref-data-import"> <title>Data Import</title>
-<p>Import system data to or from clusters/nodes. <!--A BR tag was used here in the original source.-->
-If no options are specified, includes <b>all</b> data except <i>resources</i> and <i>aok-config</i>.</p>
+<p>Import system data to or from clusters/nodes. </p>
+      <p>If no options are specified, includes <b>all</b> data except <i>resources</i> and
+          <i>aok-config</i>.</p>
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>data import --only-this-node [options] &lt;source&gt;
+<codeblock>data import --only-this-node [options] &lt;source&gt;
 data  import --cluster [options] &lt;source&gt;
-data import --manual [options] &lt;source&gt;
-</codeph>
-</codeblock>
+data import --manual [options] &lt;source&gt;</codeblock>
 <ul>
 <li>&lt;<i>source</i>&gt;:    The hostname or a filename to import from.</li>
 <li>
@@ -918,10 +914,7 @@ data import --manual [options] &lt;source&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>data repair routes [options]
-</codeph>
-</codeblock>
+<codeblock>data repair routes [options]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -968,10 +961,7 @@ data import --manual [options] &lt;source&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>debug configwatch [options] [&lt;process-name&gt;...]
-</codeph>
-</codeblock>
+<codeblock>debug configwatch [options] [&lt;process-name&gt;...]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1006,10 +996,7 @@ data import --manual [options] &lt;source&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>debug redis
-</codeph>
-</codeblock>
+<codeblock>debug redis</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1021,10 +1008,7 @@ data import --manual [options] &lt;source&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>history [--help] [-n &lt;node-IP&gt;*] [--json]
-</codeph>
-</codeblock>
+<codeblock>history [--help] [-n &lt;node-IP&gt;*] [--json]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1063,10 +1047,7 @@ data import --manual [options] &lt;source&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>info [--help] [-n &lt;node-IP&gt;] [--json] [--yaml]
-</codeph>
-</codeblock>
+<codeblock>info [--help] [-n &lt;node-IP&gt;] [--json] [--yaml]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1109,8 +1090,7 @@ data import --manual [options] &lt;source&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>inspect [options]
+<codeblock>inspect [options]
 
 inspect [options] all
 
@@ -1118,29 +1098,15 @@ inspect [options] group &lt;group-name&gt;
 
 inspect [options] tests &lt;test-name&gt;
 
-inspect [options] list
-</codeph>
-</codeblock>
+inspect [options] list</codeblock>
 <p>To run all tests, enter:</p>
-<codeblock>
-  <codeph>kato inspect
-</codeph>
-</codeblock>
+<codeblock>kato inspect</codeblock>
 <p>To run a specific group of tests, enter:</p>
-<codeblock>
-  <codeph>kato inspect group &lt;name of group&gt;
-</codeph>
-</codeblock>
+<codeblock>kato inspect group &lt;name of group&gt;</codeblock>
 <p>To run specific tests, enter:</p>
-<codeblock>
-  <codeph>kato inspect tests &lt;testname1&gt; &lt;testname2&gt; &lt;testname3&gt;
-</codeph>
-</codeblock>
+<codeblock>kato inspect tests &lt;testname1&gt; &lt;testname2&gt; &lt;testname3&gt;</codeblock>
 <p>To list all available tests, enter:</p>
-<codeblock>
-  <codeph>kato inspect list
-</codeph>
-</codeblock>
+<codeblock>kato inspect list</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1175,14 +1141,11 @@ inspect [options] list
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>license set [options] &lt;value&gt;
+<codeblock>license set [options] &lt;value&gt;
 
 license enable
 
-license disable
-</codeph>
-</codeblock>
+license disable</codeblock>
 <ul>
 <li>&lt;<i>value</i>&gt;: The license to use; if not given then it is read from STDIN</li>
 </ul>
@@ -1216,37 +1179,22 @@ license disable
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>log drain add [options] &lt;name&gt; &lt;uri&gt; [&lt;param&gt;...]
-</codeph>
-</codeblock>
+<codeblock>log drain add [options] &lt;name&gt; &lt;uri&gt; [&lt;param&gt;...]</codeblock>
 <p>
   <b>Examples</b>
 </p>
 <p>Add a drain to receive system logs</p>
-<codeblock>
-  <codeph>kato log drain add system_splunk udp://logs.splunk.com:1234/
-</codeph>
-</codeblock>
+<codeblock>kato log drain add system_splunk udp://logs.splunk.com:1234/</codeblock>
 <p>Add a drain to forward all application and system logs as json</p>
-<codeblock>
-  <codeph>kato log drain add -f json -p apptail,systail app_sys_splunk \
-udp://logs.splunk.com:1235/
-</codeph>
-</codeblock>
+<codeblock>kato log drain add -f json -p apptail,systail app_sys_splunk \
+udp://logs.splunk.com:1235/</codeblock>
 <p>Add a drain with a custom or named format,</p>
-<codeblock>
-  <codeph>kato log drain add -f ": " system_splunk_2 \
+<codeblock>kato log drain add -f ": " system_splunk_2 \
   udp://logs.splunk.com:1236/
 kato log drain add -f systail-syslog system_splunk_2 \
-  udp://logs.splunk.com:1236/
-</codeph>
-</codeblock>
+  udp://logs.splunk.com:1236/</codeblock>
 <p>Pass custom parameters to a drain</p>
-<codeblock>
-  <codeph>kato log drain add mydrain redis://localhost:6379 key=logdata 
-</codeph>
-</codeblock>
+<codeblock>kato log drain add mydrain redis://localhost:6379 key=logdata </codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1285,10 +1233,7 @@ kato log drain add -f systail-syslog system_splunk_2 \
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>log drain delete [options] &lt;name&gt;
-</codeph>
-</codeblock>
+<codeblock>log drain delete [options] &lt;name&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1319,10 +1264,7 @@ kato log drain add -f systail-syslog system_splunk_2 \
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>log drain list [options]
-</codeph>
-</codeblock>
+<codeblock>log drain list [options]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1357,11 +1299,9 @@ kato log drain add -f systail-syslog system_splunk_2 \
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="kato-command-ref-log-drain-status"> <title>Log Drain Status</title>
-<p>Show the status of all or specified log drains. If no options are passed, all drains are shown all.</p>
-<codeblock>
-  <codeph>log drain status [options] [&lt;drain1&gt;...]
-</codeph>
-</codeblock>
+<p>Show the status of all or specified log drains. If no options are passed, all drains are
+        shown.</p>
+<codeblock>log drain status [options] [&lt;drain1&gt;...]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1401,10 +1341,7 @@ kato log drain add -f systail-syslog system_splunk_2 \
 </section>
 <section id="kato-command-ref-log-stream"> <title>Log Stream</title>
 <p>Define a log stream.</p>
-<codeblock>
-  <codeph>log stream [options] &lt;key&gt;...
-</codeph>
-</codeblock>
+<codeblock>log stream [options] &lt;key&gt;...</codeblock>
 <ul>
 <li>&lt;<i>key</i>&gt;: Logyard stream key prefix (ex: <i>systail.dea</i>)</li>
 </ul>
@@ -1412,20 +1349,11 @@ kato log drain add -f systail-syslog system_splunk_2 \
   <b>Examples</b>
 </p>
 <p>Stream cloud events</p>
-<codeblock>
-  <codeph>kato log stream event
-</codeph>
-</codeblock>
+<codeblock>kato log stream event</codeblock>
 <p>Stream DEA and app log stream</p>
-<codeblock>
-  <codeph>kato log stream systail.dea systail.stager apptail
-</codeph>
-</codeblock>
+<codeblock>kato log stream systail.dea systail.stager apptail</codeblock>
 <p>Stream system logs (Note this is equivalent to <i>kato log tail</i>.)</p>
-<codeblock>
-  <codeph>kato log stream systail
-</codeph>
-</codeblock>
+<codeblock>kato log stream systail</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1476,13 +1404,10 @@ kato log drain add -f systail-syslog system_splunk_2 \
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="kato-command-ref-log-tail"> <title>Log Tail</title>
-<p>
-<b>Syntax</b>
-Create a stream that displays changes to the specified component in real time.</p>
-<codeblock>
-  <codeph>log tail [options] [&lt;component&gt;...]
-</codeph>
-</codeblock>
+<p> Create a stream that displays changes to the specified component in real time.</p>
+      <p><b>Syntax</b>
+      </p>
+<codeblock>log tail [options] [&lt;component&gt;...]</codeblock>
 <ul>
 <li>&lt;<i>component</i>&gt;: A process name, role name or role group name.</li>
 </ul>
@@ -1540,10 +1465,7 @@ Create a stream that displays changes to the specified component in real time.</
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node attach [options] &lt;core-ip&gt;
-</codeph>
-</codeblock>
+<codeblock>node attach [options] &lt;core-ip&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1587,10 +1509,7 @@ Create a stream that displays changes to the specified component in real time.</
 </section>
 <section id="kato-command-ref-node-availabilityzone"> <title>Node Availability Zone</title>
 <p>Gets/sets the availability zone on a node.</p>
-<codeblock>
-  <codeph>node availabilityzone [options] [&lt;zone&gt;]
-</codeph>
-</codeblock>
+<codeblock>node availabilityzone [options] [&lt;zone&gt;]</codeblock>
 <p>
   <b>Syntax</b>
 </p>
@@ -1625,10 +1544,7 @@ Create a stream that displays changes to the specified component in real time.</
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node detach [options]
-</codeph>
-</codeblock>
+<codeblock>node detach [options]</codeblock>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
@@ -1664,10 +1580,7 @@ Create a stream that displays changes to the specified component in real time.</
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node list [options]
-</codeph>
-</codeblock>
+<codeblock>node list [options]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1706,10 +1619,7 @@ Create a stream that displays changes to the specified component in real time.</
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node migrate &lt;old-node-IP&gt; &lt;new-node-IP&gt;
-</codeph>
-</codeblock>
+<codeblock>node migrate &lt;old-node-IP&gt; &lt;new-node-IP&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1744,10 +1654,7 @@ Create a stream that displays changes to the specified component in real time.</
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node placementzones add [options] &lt;zone&gt;
-</codeph>
-</codeblock>
+<codeblock>node placementzones add [options] &lt;zone&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1782,10 +1689,7 @@ Create a stream that displays changes to the specified component in real time.</
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node placementzones list [options]
-</codeph>
-</codeblock>
+<codeblock>node placementzones list [options]</codeblock>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
@@ -1817,10 +1721,7 @@ Create a stream that displays changes to the specified component in real time.</
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node placementzones remove [options] &lt;zone&gt;*
-</codeph>
-</codeblock>
+<codeblock>node placementzones remove [options] &lt;zone&gt;*</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1855,10 +1756,7 @@ Create a stream that displays changes to the specified component in real time.</
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node remove [--skip-detach] &lt;node-IP&gt;...
-</codeph>
-</codeblock>
+<codeblock>node remove [--skip-detach] &lt;node-IP&gt;...</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1893,10 +1791,7 @@ Create a stream that displays changes to the specified component in real time.</
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node rename [options] &lt;hostname&gt;
-</codeph>
-</codeblock>
+<codeblock>node rename [options] &lt;hostname&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -1943,16 +1838,13 @@ Create a stream that displays changes to the specified component in real time.</
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node reset factory
+<codeblock>node reset factory
 
 node reset docker
 
 node reset services
 
-node reset --help
-</codeph>
-</codeblock>
+node reset --help</codeblock>
 <ul>
 <li>
 <i>factory</i>: returns the VM to its state prior to first boot.</li>
@@ -1991,10 +1883,7 @@ node reset --help
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node retire [options]
-</codeph>
-</codeblock>
+<codeblock>node retire [options]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2029,12 +1918,9 @@ node reset --help
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node setup core [&lt;endpoint&gt;]
+<codeblock>node setup core [&lt;endpoint&gt;]
 
-node setup core --help
-</codeph>
-</codeblock>
+node setup core --help</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2069,10 +1955,7 @@ node setup core --help
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node setup firstuser [options] &lt;email&gt; &lt;org&gt;
-</codeph>
-</codeblock>
+<codeblock>node setup firstuser [options] &lt;email&gt; &lt;org&gt;</codeblock>
 <ul>
 <li>
 <i>&lt;email&gt;</i>: First user's email address.</li>
@@ -2121,12 +2004,9 @@ node setup core --help
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node setup load_balancer [&lt;IP&gt;...] [--force]
+<codeblock>node setup load_balancer [&lt;IP&gt;...] [--force]
 
-node setup load_balancer --help
-</codeph>
-</codeblock>
+node setup load_balancer --help</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2157,12 +2037,9 @@ node setup load_balancer --help
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node setup micro [options] [&lt;role&gt;...]
+<codeblock>node setup micro [options] [&lt;role&gt;...]
 
-node setup micro --help
-</codeph>
-</codeblock>
+node setup micro --help</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2205,10 +2082,7 @@ node setup micro --help
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node update [options]
-</codeph>
-</codeblock>
+<codeblock>node update [options]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2240,12 +2114,9 @@ node setup micro --help
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node upgrade [options]
+<codeblock>node upgrade [options]
 
-node upgrade --run-command &lt;command&gt;
-</codeph>
-</codeblock>
+node upgrade --run-command &lt;command&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2337,10 +2208,7 @@ node upgrade --run-command &lt;command&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>node version [options] [&lt;node-IP&gt;]
-</codeph>
-</codeblock>
+<codeblock>node version [options] [&lt;node-IP&gt;]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2371,14 +2239,11 @@ node upgrade --run-command &lt;command&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op custom_ssl_cert install [options] &lt;key-path&gt; &lt;cert-path&gt; &lt;domain&gt;
+<codeblock>op custom_ssl_cert install [options] &lt;key-path&gt; &lt;cert-path&gt; &lt;domain&gt;
 
 op custom_ssl_cert remove &lt;domain&gt;
 
-op custom_ssl_cert list
-</codeph>
-</codeblock>
+op custom_ssl_cert list</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2417,10 +2282,7 @@ op custom_ssl_cert list
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op defer (&lt;command&gt; | --reset) [--run-as-root] [--post-start]
-</codeph>
-</codeblock>
+<codeblock>op defer (&lt;command&gt; | --reset) [--run-as-root] [--post-start]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2463,10 +2325,7 @@ op custom_ssl_cert list
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op dhcp
-</codeph>
-</codeblock>
+<codeblock>op dhcp</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2496,10 +2355,7 @@ op custom_ssl_cert list
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op generate_service_tokens
-</codeph>
-</codeblock>
+<codeblock>op generate_service_tokens</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2530,10 +2386,7 @@ op custom_ssl_cert list
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op import_from_yaml_file [--upgrade] [--new-key-file=&lt;file&gt;] &lt;process&gt;
-</codeph>
-</codeblock>
+<codeblock>op import_from_yaml_file [--upgrade] [--new-key-file=&lt;file&gt;] &lt;process&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2572,10 +2425,7 @@ op custom_ssl_cert list
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op import_from_yaml_files [--upgrade] [--new-key-file=&lt;file&gt;]
-</codeph>
-</codeblock>
+<codeblock>op import_from_yaml_files [--upgrade] [--new-key-file=&lt;file&gt;]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2614,10 +2464,7 @@ op custom_ssl_cert list
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op max_client_upload &lt;max-size&gt;
-</codeph>
-</codeblock>
+<codeblock>op max_client_upload &lt;max-size&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2648,8 +2495,7 @@ op custom_ssl_cert list
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op regenerate all [--no-restart] [--no-prompt]
+<codeblock>op regenerate all [--no-restart] [--no-prompt]
 
 op regenerate cloud-controller-bulk-api-auth [--no-prompt]
 
@@ -2671,9 +2517,7 @@ op regenerate helion-rest-auth [--no-prompt]
 
 op regenerate helion-router-auth [--no-prompt]
 
-op regenerate token-signing-secret [--no-prompt]
-</codeph>
-</codeblock>
+op regenerate token-signing-secret [--no-prompt]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2712,10 +2556,7 @@ op regenerate token-signing-secret [--no-prompt]
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op remap_hosts &lt;old-hostname&gt; &lt;new-hostname&gt;
-</codeph>
-</codeblock>
+<codeblock>op remap_hosts &lt;old-hostname&gt; &lt;new-hostname&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2746,10 +2587,7 @@ op regenerate token-signing-secret [--no-prompt]
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op run_deferred [--post-start]
-</codeph>
-</codeblock>
+<codeblock>op run_deferred [--post-start]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2784,10 +2622,7 @@ op regenerate token-signing-secret [--no-prompt]
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op set_timezone [--timezone &lt;TZ&gt;]
-</codeph>
-</codeblock>
+<codeblock>op set_timezone [--timezone &lt;TZ&gt;]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2818,10 +2653,7 @@ op regenerate token-signing-secret [--no-prompt]
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op static_ip [--interface=&lt;if&gt;] [--ip=&lt;ip&gt;] [--netmask=&lt;netmask&gt;] [--gateway=&lt;gateway&gt;] [--dns-nameservers=&lt;dnsname&gt;] [--dns-search-domains=&lt;dnssearch&gt;] [--restart-network] [--no-restart]
-</codeph>
-</codeblock>
+<codeblock>op static_ip [--interface=&lt;if&gt;] [--ip=&lt;ip&gt;] [--netmask=&lt;netmask&gt;] [--gateway=&lt;gateway&gt;] [--dns-nameservers=&lt;dnsname&gt;] [--dns-search-domains=&lt;dnssearch&gt;] [--restart-network] [--no-restart]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2884,10 +2716,7 @@ op regenerate token-signing-secret [--no-prompt]
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op update_hostsfile
-</codeph>
-</codeblock>
+<codeblock>op update_hostsfile</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2918,12 +2747,9 @@ op regenerate token-signing-secret [--no-prompt]
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>op upstream_proxy set &lt;proxy-address&gt; [options]
+<codeblock>op upstream_proxy set &lt;proxy-address&gt; [options]
 
-op upstream_proxy delete
-</codeph>
-</codeblock>
+op upstream_proxy delete</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -2966,8 +2792,7 @@ op upstream_proxy delete
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>patch status [options]
+<codeblock>patch status [options]
 
 patch install [--node &lt;nodeip&gt;] [options]
 
@@ -2983,9 +2808,7 @@ patch reinstall [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;
 
 patch revert [--node &lt;nodeip&gt;] [options]
 
-patch revert [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;
-</codeph>
-</codeblock>
+patch revert [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3064,10 +2887,7 @@ patch revert [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>process list [options] [&lt;process&gt;...]
-</codeph>
-</codeblock>
+<codeblock>process list [options] [&lt;process&gt;...]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3114,10 +2934,7 @@ patch revert [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>process ready [options] &lt;process&gt;
-</codeph>
-</codeblock>
+<codeblock>process ready [options] &lt;process&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3156,10 +2973,7 @@ patch revert [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>process restart [options] [&lt;process&gt;...]
-</codeph>
-</codeblock>
+<codeblock>process restart [options] [&lt;process&gt;...]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3198,10 +3012,7 @@ patch revert [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>process start [options] [&lt;process&gt;...]
-</codeph>
-</codeblock>
+<codeblock>process start [options] [&lt;process&gt;...]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3236,10 +3047,7 @@ patch revert [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>process stop [options] [&lt;process&gt;...]
-</codeph>
-</codeblock>
+<codeblock>process stop [options] [&lt;process&gt;...]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3274,14 +3082,11 @@ patch revert [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>relocate [options] containers &lt;new_location&gt;
+<codeblock>relocate [options] containers &lt;new_location&gt;
 
 relocate [options] droplets &lt;new_location&gt;
 
-relocate [options] services &lt;new_location&gt;
-</codeph>
-</codeblock>
+relocate [options] services &lt;new_location&gt;</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3316,16 +3121,13 @@ relocate [options] services &lt;new_location&gt;
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>report
+<codeblock>report
 
 report --node &lt;node-IP&gt;
 
 report --cluster
 
-report --help
-</codeph>
-</codeblock>
+report --help</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3368,12 +3170,9 @@ report --help
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>restart [options] [&lt;role&gt;...]
+<codeblock>restart [options] [&lt;role&gt;...]
 
-restart --help
-</codeph>
-</codeblock>
+restart --help</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3412,8 +3211,7 @@ restart --help
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>role add --help
+<codeblock>role add --help
 
 role add [-v] [--node &lt;node-IP&gt;] [--no-start] &lt;role&gt;...
 
@@ -3421,9 +3219,7 @@ role add [-v] [--node &lt;node-IP&gt;*] [--no-start] --all
 
 role add [-v] [--node &lt;node-IP&gt;*] [--no-start] --all-but &lt;role&gt;...
 
-role add [-v] [--node &lt;node-IP&gt;*] --only &lt;role&gt;...
-</codeph>
-</codeblock>
+role add [-v] [--node &lt;node-IP&gt;*] --only &lt;role&gt;...</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3478,12 +3274,9 @@ role add [-v] [--node &lt;node-IP&gt;*] --only &lt;role&gt;...
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>role info --help
+<codeblock>role info --help
 
-role info [&lt;role&gt;...]
-</codeph>
-</codeblock>
+role info [&lt;role&gt;...]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3514,16 +3307,13 @@ role info [&lt;role&gt;...]
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>role remove --help
+<codeblock>role remove --help
 
 role remove [-v] [--node &lt;node-IP&gt;] &lt;role&gt;...
 
 role remove [-v] [--node &lt;node-IP&gt;] --all
 
-role remove [-v] [--node &lt;node-IP&gt;] --all-but &lt;role&gt;...
-</codeph>
-</codeblock>
+role remove [-v] [--node &lt;node-IP&gt;] --all-but &lt;role&gt;...</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3570,10 +3360,7 @@ role remove [-v] [--node &lt;node-IP&gt;] --all-but &lt;role&gt;...
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>shell [options]
-</codeph>
-</codeblock>
+<codeblock>shell [options]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3604,10 +3391,7 @@ role remove [-v] [--node &lt;node-IP&gt;] --all-but &lt;role&gt;...
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>start [options] [&lt;role&gt;...]
-</codeph>
-</codeblock>
+<codeblock>start [options] [&lt;role&gt;...]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3650,10 +3434,7 @@ role remove [-v] [--node &lt;node-IP&gt;] --all-but &lt;role&gt;...
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>status [options]
-</codeph>
-</codeblock>
+<codeblock>status [options]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3696,10 +3477,7 @@ role remove [-v] [--node &lt;node-IP&gt;] --all-but &lt;role&gt;...
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>stop [options] [&lt;rolename1&gt; &lt;rolename2&gt;...]
-</codeph>
-</codeblock>
+<codeblock>stop [options] [&lt;rolename1&gt; &lt;rolename2&gt;...]</codeblock>
 <p>
   <b>Options</b>
 </p>
@@ -3738,10 +3516,7 @@ role remove [-v] [--node &lt;node-IP&gt;] --all-but &lt;role&gt;...
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>
-  <codeph>version [-h]
-</codeph>
-</codeblock>
+<codeblock>version [-h]</codeblock>
 <p>
   <b>Options</b>
 </p>

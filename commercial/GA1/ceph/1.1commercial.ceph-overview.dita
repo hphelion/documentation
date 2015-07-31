@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic7563">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Ceph Firefly 0.80.7 Storage Solution</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Ceph Firefly 0.80.7 Storage Solution</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Ceph Firefly 0.80.7 Storage Solution</searchtitle>
 </titlealts>
@@ -27,20 +27,20 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commercial.ceph-overview.md  -->
  <!--permalink: /helion/openstack/1.1/services/ceph/--></p>
-<p>The HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1 Ceph Storage Solution provides an unified scaleable and stable storage solution for the management of <tm tmtype="reg">Helion OpenStack</tm> Image service (Glance), Compute (Nova Boot Volumes) service, and Volume Storage (Cinder persistent Volumes) service. The solution also supports user backup and archive workloads to the Object Storage (Swift) API service writing to the same unified Ceph storage platform.</p>
-<p>This guide focuses on post installation, configuration and integration between HP <tm tmtype="reg">Helion OpenStack</tm>: 1.1 and 1.1.1 and Ceph Firefly 0.80.7 running on the hlinux kernel 3.14-29.4.</p>
-<p>This guide assumes that you are familiar with the concepts of <tm tmtype="reg">OpenStack</tm> and Ceph. The main purpose of this guide is describe the integration of Ceph Block Storage with HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1, detail steps to install dependencies, configure HP <tm tmtype="reg">Helion OpenStack</tm> and Ceph Firefly, and provide troubleshooting guidance.</p>
-<!--Although installation steps are outlined, these are mostly as validity checks for dependencies. Most Enterprise Customers should have HP size and assist with the installation of HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1, and Inktank size and assist with the installation of Ceph Firefly 0.80.7. -->
+<p>The HP Helion OpenStack 1.1 and 1.1.1 Ceph Storage Solution provides an unified scaleable and stable storage solution for the management of Helion OpenStack Image service (Glance), Compute (Nova Boot Volumes) service, and Volume Storage (Cinder persistent Volumes) service. The solution also supports user backup and archive workloads to the Object Storage (Swift) API service writing to the same unified Ceph storage platform.</p>
+<p>This guide focuses on post installation, configuration and integration between HP Helion OpenStack: 1.1 and 1.1.1 and Ceph Firefly 0.80.7 running on the hlinux kernel 3.14-29.4.</p>
+<p>This guide assumes that you are familiar with the concepts of OpenStack and Ceph. The main purpose of this guide is describe the integration of Ceph Block Storage with HP Helion OpenStack 1.1 and 1.1.1, detail steps to install dependencies, configure HP Helion OpenStack and Ceph Firefly, and provide troubleshooting guidance.</p>
+<!--Although installation steps are outlined, these are mostly as validity checks for dependencies. Most Enterprise Customers should have HP size and assist with the installation of HP Helion OpenStack 1.1 and 1.1.1, and Inktank size and assist with the installation of Ceph Firefly 0.80.7. -->
 <section id="ceph-overview"> <title>Ceph Overview</title>
-<p>Ceph is an Open Source, scalable, software-defined storage system running on HP servers comprised of a  <xref type="section" href="#topic7563/block-storage">block storage</xref>, <xref type="section" href="#topic7563/object-storage">object storage</xref> and <xref type="section" href="#topic7563/file-system">file system</xref> with a unified management. <!--HP is committed to contribute to <tm tmtype="reg">OpenStack</tm> integration with  management and extensions to Ceph Open Source Storage as a Solution.--></p>
-<p>Ceph is designed to deliver different types of storage interfaces to the end user in the same storage platform. The integration  of HP <tm tmtype="reg">Helion OpenStack</tm> and Ceph is the usage of <xref type="section" href="#topic7563/block-storage">block storage</xref> of Ceph's RADOS Block Device (RDB). Also, the integration between User Application Archive and Backup Workloads running externally or in Virtual Machines in HP <tm tmtype="reg">Helion OpenStack</tm> is the usage of <xref type="section" href="#topic7563/object-storage">object storage</xref> of the Ceph RADOS Gateway (RADOSGW).</p>
-<p>The Ceph RADOSGW provides a REST interface with extensions which offers compatibility with the Swift API. Therefore the existing applications with the integration to the HP <tm tmtype="reg">Helion OpenStack</tm> Swift API can port seamlessly from a <tm tmtype="reg">OpenStack</tm> Swift backend storage platform to the Ceph Solution.</p>
+<p>Ceph is an Open Source, scalable, software-defined storage system running on HP servers comprised of a  <xref type="section" href="#topic7563/block-storage">block storage</xref>, <xref type="section" href="#topic7563/object-storage">object storage</xref> and <xref type="section" href="#topic7563/file-system">file system</xref> with a unified management. <!--HP is committed to contribute to OpenStack integration with  management and extensions to Ceph Open Source Storage as a Solution.--></p>
+<p>Ceph is designed to deliver different types of storage interfaces to the end user in the same storage platform. The integration  of HP Helion OpenStack and Ceph is the usage of <xref type="section" href="#topic7563/block-storage">block storage</xref> of Ceph's RADOS Block Device (RDB). Also, the integration between User Application Archive and Backup Workloads running externally or in Virtual Machines in HP Helion OpenStack is the usage of <xref type="section" href="#topic7563/object-storage">object storage</xref> of the Ceph RADOS Gateway (RADOSGW).</p>
+<p>The Ceph RADOSGW provides a REST interface with extensions which offers compatibility with the Swift API. Therefore the existing applications with the integration to the HP Helion OpenStack Swift API can port seamlessly from a OpenStack Swift backend storage platform to the Ceph Solution.</p>
 </section>
 <section id="block-storage"> <title>Understading Block Storage</title>
-<p>The Ceph Block Device is a network-attached device, which is introduced to the HP <tm tmtype="reg">Helion OpenStack</tm> Controller and Compute Nodes for Glance, Nova and Cinder storage utilization, or, in order to meet unique SLAs, to the Virtual Machines in the KVM <tm tmtype="reg">Helion OpenStack</tm> managed hypervisor. Glance can be configured with either Ceph object or block storage. Hence, HP has followed Ceph's best practices and is limiting support for Glance storage of images to block storage. This allows for the support of Ceph's Clone and Copy on Write Feature (COW).</p>
+<p>The Ceph Block Device is a network-attached device, which is introduced to the HP Helion OpenStack Controller and Compute Nodes for Glance, Nova and Cinder storage utilization, or, in order to meet unique SLAs, to the Virtual Machines in the KVM Helion OpenStack managed hypervisor. Glance can be configured with either Ceph object or block storage. Hence, HP has followed Ceph's best practices and is limiting support for Glance storage of images to block storage. This allows for the support of Ceph's Clone and Copy on Write Feature (COW).</p>
 </section>
 <section id="object-storage"> <title>Understanding Object Storage</title>
-<p>The Ceph RADOSGW is a REST API which supports the Swift API. HP <tm tmtype="reg">Helion OpenStack</tm> supports object storage primarily for user workloads, ranging from COTS applications running in Virtual Machines (such as MySQL which frequently needs to archive tar files to a reliable and resilient archive) to custom LOB Solutions (which require frequent and aggressive snapshots orchestrated in a consistency group across many VMs and external baremetal systems).</p>
+<p>The Ceph RADOSGW is a REST API which supports the Swift API. HP Helion OpenStack supports object storage primarily for user workloads, ranging from COTS applications running in Virtual Machines (such as MySQL which frequently needs to archive tar files to a reliable and resilient archive) to custom LOB Solutions (which require frequent and aggressive snapshots orchestrated in a consistency group across many VMs and external baremetal systems).</p>
 </section>
 <section id="file-system"> <title>File System</title>
 <p>Ceph provides a POSIX-compliant network file system that aims for high performance, large data storage and so on. In this release we are not supporting the File Interface. There is an alternative way suggested, that is, either leveraging Ceph's RBD Block storage, Ceph's RADOSGW Object Storage through Swift API, or, for user archive and backup type workloads, Open Source Swift API-compatible File System interfaces such as Duplicity.</p>
@@ -53,32 +53,32 @@
 <p>The Ceph object gateway is built on <codeph>librgw</codeph> to provide applications with a RESTful gateway to Ceph storage clusters. The Ceph object storage supports the following two interfaces:</p>
 <ol>
 <li>
-<p>
-<b>Swift-compatible</b>: Provides object storage functionality with a large subset of the <tm tmtype="reg">OpenStack</tm> Swift API. HP supports this interface and 3rd-party integrations with the Swift API.</p>
-</li>
+          <b>Swift-compatible</b>: Provides object storage functionality with a large subset of the
+          OpenStack Swift API. HP supports this interface and 3rd-party integrations with the Swift
+          API.</li>
 <li>
-<p>
-<b>S3-compatible</b>: Provides object storage functionality with a large subset of the Amazon S3 RESTful API. This functionality is not support in this release <!--This is not supported by HP as part of the Solution, but it has passed minimal API testing.--></p>
-</li>
+          <b>S3-compatible</b>: Provides object storage functionality with a large subset of the
+          Amazon S3 RESTful API. This functionality is not support in this release
+          <!--This is not supported by HP as part of the Solution, but it has passed minimal API testing.--></li>
 </ol>
 <p>The Ceph RADOSGW daemon (radosgw) is a fastCGI module for interacting with a Ceph storage cluster. The Ceph object gateway can store data in the same Ceph storage cluster used 
-to store data from Ceph block device clients or from Ceph file system clients. Ceph maintains its own user authentication and allows for extension to HP <tm tmtype="reg">Helion OpenStack</tm> Keystone Authentication. For User Archive and Backup workloads originating from HP <tm tmtype="reg">Helion OpenStack</tm> Tenant Project Virtual Machines, HP recommends integrating through Keystone as a consistent authentication model.</p>
-<p>The following diagram shows <tm tmtype="reg">Helion OpenStack</tm> Virtual Machine Access to Ceph Storage</p>
+to store data from Ceph block device clients or from Ceph file system clients. Ceph maintains its own user authentication and allows for extension to HP Helion OpenStack Keystone Authentication. For User Archive and Backup workloads originating from HP Helion OpenStack Tenant Project Virtual Machines, HP recommends integrating through Keystone as a consistent authentication model.</p>
+<p>The following diagram shows Helion OpenStack Virtual Machine Access to Ceph Storage</p>
 <p>
-  <image href="../../../media/helion_virtual_machine_access_ceph_storage.png"/>
+  <image href="../../../media/helion_virtual_machine_access_ceph_storage.png" placement="break"/>
 </p>
 </section>
 
-<section id="integrating-ceph-block-storage-with-hp-helion-openstack"> <title>Integrating Ceph Block Storage with HP <tm tmtype="reg">Helion OpenStack</tm></title>
+<section id="integrating-ceph-block-storage-with-hp-helion-openstack"> <title>Integrating Ceph Block Storage with HP Helion OpenStack</title>
   <p>Please see the Ceph topics on the left for integration with HP Helion OpenStack.</p>
   <!--
-<p>The following sections provides details on the integration of Ceph Block Storage with HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>The following sections provides details on the integration of Ceph Block Storage with HP Helion OpenStack</p>
 <ol>
 <li>
-<xref href="1.1commerical.services-ceph-archref.dita">HP <tm tmtype="reg">Helion OpenStack</tm> 1.x Ceph Architectural Reference</xref>
+<xref href="1.1commerical.services-ceph-archref.dita">HP Helion OpenStack 1.x Ceph Architectural Reference</xref>
 </li>
 <li>
-<xref href="1.1commenrcial.ceph-pre-requisite.dita">HP <tm tmtype="reg">Helion OpenStack</tm> 1.x Ceph Firefly 0.80.7 Storage Solution: Prerequisites</xref>
+<xref href="1.1commenrcial.ceph-pre-requisite.dita">HP Helion OpenStack 1.x Ceph Firefly 0.80.7 Storage Solution: Prerequisites</xref>
 </li>
 <li>
 <xref href="1.1commercial.ceph-automated-install.dita">Automated Installation</xref>
@@ -110,13 +110,13 @@ to store data from Ceph block device clients or from Ceph file system clients. C
 <xref href="1.1commercial-ceph-hp-helion-openstack-ceph-configuration.dita">Manual Ceph Configuration</xref>
 </li>
 <li>
-<xref href="1.1commenrcial.ceph-helion-openstack-glance-ceph-interoperability.dita"><tm tmtype="reg">Helion OpenStack</tm> Glance-Ceph Interoperability</xref>
+<xref href="1.1commenrcial.ceph-helion-openstack-glance-ceph-interoperability.dita">Helion OpenStack Glance-Ceph Interoperability</xref>
 </li>
 <li>
-  <xref href="1.1commenrcial.ceph-helion-openstack-ceph-hp-helion-openstack-cinder-storage.dita"><tm tmtype="reg">Helion OpenStack</tm> Cinder Ceph Storage</xref>
+  <xref href="1.1commenrcial.ceph-helion-openstack-ceph-hp-helion-openstack-cinder-storage.dita">Helion OpenStack Cinder Ceph Storage</xref>
 </li>
 <li>
-<xref href="1.1commercial-ceph-helion-openstack-nova-ceph-Storage.dita"><tm tmtype="reg">Helion OpenStack</tm> Nova Ceph Storage</xref>
+<xref href="1.1commercial-ceph-helion-openstack-nova-ceph-Storage.dita">Helion OpenStack Nova Ceph Storage</xref>
 </li>
 <li>
 <xref href="1.1commercial.ceph-rados-gateway.dita">Ceph RADOS Gateway</xref>
@@ -141,7 +141,7 @@ to store data from Ceph block device clients or from Ceph file system clients. C
 </section>
 <!--<section id="next-steps"> <title>Next Steps</title>
 <p>
-  <xref href="1.1commerical.services-ceph-archref.dita">HP  <tm tmtype="reg">Helion OpenStack</tm> Ceph Architectural Reference</xref>
+  <xref href="1.1commerical.services-ceph-archref.dita">HP  Helion OpenStack Ceph Architectural Reference</xref>
 </p>
 
 </section>-->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3154">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Measuring Performance of HP <tm tmtype="reg">Helion OpenStack</tm></title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Measuring Performance of HP Helion OpenStack</title>
 <titlealts>
 <searchtitle>HP Helion Openstack Object Operations Service Overview</searchtitle>
 </titlealts>
@@ -15,9 +15,9 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/commerical.performance-and-scalability.md-->
  <!--permalink: /helion/openstack/GA1/performance-and-scalability/--></p>
-<p>Performance of HP <tm tmtype="reg">Helion OpenStack</tm> is determined in terms of responsiveness and stability under various workloads. Scalability, reliability, and resource usage are the quality attributes of the system which are measured during performance testing.</p>
+<p>Performance of HP Helion OpenStack is determined in terms of responsiveness and stability under various workloads. Scalability, reliability, and resource usage are the quality attributes of the system which are measured during performance testing.</p>
 <section id="esx"> <title>ESX</title>
-<p>The performance, scalability, and reliability of HP <tm tmtype="reg">Helion OpenStack</tm> is tested using the following ESX environment:</p>
+<p>The performance, scalability, and reliability of HP Helion OpenStack is tested using the following ESX environment:</p>
 <ul>
 <li>19 ESXi servers (9 Clusters)</li>
 <li>3000 VM Instances</li>
@@ -29,240 +29,196 @@
 <section id="resource-requirements"> <title>Resource requirements</title>
 <p>The following resources are required to perform the test: <!-- do we need to mention the resources?? --></p>
 </section>
-<section id="maximum-supported-configuration-values-for-hp-helion-openstack"> <title>Maximum supported configuration values for HP <tm tmtype="reg">Helion OpenStack</tm></title>
-<p>The following table list the maximum supported configuration value for HP <tm tmtype="reg">Helion OpenStack</tm> with respect to ESX.</p>
+<section id="maximum-supported-configuration-values-for-hp-helion-openstack"> <title>Maximum supported configuration values for HP Helion OpenStack</title>
+<p>The following table list the maximum supported configuration value for HP Helion OpenStack with respect to ESX.</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
 <colspec colname="col2"/>
 <thead>
 <row>
-<entry>Parameters</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Maximum Numbers</ph>
-</required-cleanup>
-</entry>
+<entry colsep="1" rowsep="1">Parameters</entry>
+    <entry colsep="1" rowsep="1"><ph>Maximum Numbers</ph>
+                            </entry>
     </row>
 </thead>
 <tbody>
 <row>
-<entry>Managed virtual machine instances  </entry>
-    <entry>3000</entry>
+<entry colsep="1" rowsep="1">Managed virtual machine instances </entry>
+    <entry colsep="1" rowsep="1">3000</entry>
 </row>
 <row>
-<entry>Managed hypervisor hosts 
-</entry>
-    <entry>19
-</entry>
+<entry colsep="1" rowsep="1">Managed hypervisor hosts </entry>
+    <entry colsep="1" rowsep="1">19 </entry>
 </row>
 <row>
-<entry>Managed virtual machine instances per hypervisor host 
-</entry>
-    <entry>50</entry>
+<entry colsep="1" rowsep="1">Managed virtual machine instances per hypervisor host </entry>
+    <entry colsep="1" rowsep="1">50</entry>
 </row>
 <row>
-<entry>Clusters per vCenter
-</entry>
-    <entry>10</entry>
+<entry colsep="1" rowsep="1">Clusters per vCenter </entry>
+    <entry colsep="1" rowsep="1">10</entry>
 </row>
 <row>
-<entry>Number of vCenters supported
-</entry>
-    <entry>???</entry>
+<entry colsep="1" rowsep="1">Number of vCenters supported </entry>
+    <entry colsep="1" rowsep="1">???</entry>
 </row>
 <row>
-<entry>Self Service Portal users
-</entry>
-    <entry>32</entry>
+<entry colsep="1" rowsep="1">Self Service Portal users </entry>
+    <entry colsep="1" rowsep="1">32</entry>
 </row>
 <row>
-<entry>Self Service Portal simultaneous   users 
-</entry>
-    <entry>25</entry>
+<entry colsep="1" rowsep="1">Self Service Portal simultaneous users </entry>
+    <entry colsep="1" rowsep="1">25</entry>
 </row>
 <row>
-<entry>Projects
-</entry>
-    <entry>256</entry>
+<entry colsep="1" rowsep="1">Projects </entry>
+    <entry colsep="1" rowsep="1">256</entry>
 </row>
 <row>
-<entry>Virtual Machine Instance per projects
-</entry>
-    <entry>500</entry>
+<entry colsep="1" rowsep="1">Virtual Machine Instance per projects </entry>
+    <entry colsep="1" rowsep="1">500</entry>
 </row>
 <row>
-<entry>Images
-</entry>
-    <entry>512</entry>
+<entry colsep="1" rowsep="1">Images </entry>
+    <entry colsep="1" rowsep="1">512</entry>
 </row>
 <row>
-<entry>Flavors
-</entry>
-    <entry>32</entry>
+<entry colsep="1" rowsep="1">Flavors </entry>
+    <entry colsep="1" rowsep="1">32</entry>
 </row>
 <row>
-<entry>External networks
-</entry>
-<entry>1</entry>
+<entry colsep="1" rowsep="1">External networks </entry>
+<entry colsep="1" rowsep="1">1</entry>
 </row>
 <row>
-<entry>Provider networks
-</entry>
-    <entry>32</entry>
+<entry colsep="1" rowsep="1">Provider networks </entry>
+    <entry colsep="1" rowsep="1">32</entry>
 </row>
 <row>
-<entry>Private IP addresses
-</entry>
-    <entry>3000</entry>
+<entry colsep="1" rowsep="1">Private IP addresses </entry>
+    <entry colsep="1" rowsep="1">3000</entry>
 </row>
 <row>
-<entry>Floating IP addresses
-</entry>
-    <entry>3000</entry>
+<entry colsep="1" rowsep="1">Floating IP addresses </entry>
+    <entry colsep="1" rowsep="1">3000</entry>
 </row>
 <row>
-<entry>Private (tenant)networks
-</entry>
-    <entry>25</entry>
+<entry colsep="1" rowsep="1">Private (tenant)networks </entry>
+    <entry colsep="1" rowsep="1">25</entry>
 
 </row>
 <row>
-<entry>Virtual machine instances belonging to a single security group
-</entry>
-    <entry>500</entry>
+<entry colsep="1" rowsep="1">Virtual machine instances belonging to a single security group </entry>
+    <entry colsep="1" rowsep="1">500</entry>
 </row>
 <row>
-<entry>Disk arrays
-</entry>
-    <entry>1</entry>
+<entry colsep="1" rowsep="1">Disk arrays </entry>
+    <entry colsep="1" rowsep="1">1</entry>
 </row>
 <row>
-<entry>ESX volumes attached to all virtual machine instances in an ESX cluster
-</entry>
-    <entry>3000</entry>
+<entry colsep="1" rowsep="1">ESX volumes attached to all virtual machine instances in an ESX cluster </entry>
+    <entry colsep="1" rowsep="1">3000</entry>
 </row>
 </tbody>
 </tgroup>
 </table>
 </section>
 <section id="kvm"> <title>KVM</title>
-<p>The performance, scalability, and reliability of HP <tm tmtype="reg">Helion OpenStack</tm> is tested using the following KVM environment:</p>
+<p>The performance, scalability, and reliability of HP Helion OpenStack is tested using the following KVM environment:</p>
 <!-- **Please provide the details** -->
 </section>
-<section id="resource-requirements"> <title>Resource requirements</title>
-<p>The following resources are required to perform the test:</p>
-<p>
-  <required-cleanup remap="do">
-<ph/>
-</required-cleanup>
-</p>
-<p>The following table list the maximum supported configuration value for HP <tm tmtype="reg">Helion OpenStack</tm> with respect to KVM.</p>
+<section id="resource-requirements-kvm"> <title>Resource Requirements</title>
+<p>The following resources are required to perform the test:
+                <!-- do we need to mention the resources?? --></p>
+            <p>The following table list the maximum supported configuration value for HP Helion
+                OpenStack with respect to KVM.</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
 <colspec colname="col2"/>
 <thead>
 <row>
-<entry>Parameters</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Maximum Numbers</ph>
-</required-cleanup>
-</entry>
-    </row>
+                            <entry colsep="1" rowsep="1">Paramters</entry>
+                            <entry colsep="1" rowsep="1">
+                                <ph>Maximum Numbers</ph>
+                            </entry>
+                        </row>
 </thead>
 <tbody>
 <row>
-<entry>Managed virtual machine instances  </entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Managed virtual machine instances </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Managed hypervisor hosts 
-</entry>
-    <entry>
-</entry>
+<entry colsep="1" rowsep="1">Managed hypervisor hosts </entry>
+    <entry colsep="1" rowsep="1"> </entry>
 </row>
 <row>
-<entry>Managed virtual machine instances per hypervisor host 
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Managed virtual machine instances per hypervisor host </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Clusters per vCenter
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Clusters per vCenter </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Self Service Portal users
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Self Service Portal users </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Self Service Portal simultaneous   users 
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Self Service Portal simultaneous users </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Projects
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Projects </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Virtual Machine Instance per projects
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Virtual Machine Instance per projects </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Images
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Images </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Flavors
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Flavors </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>External networks
-</entry>
-<entry/>
+<entry colsep="1" rowsep="1">External networks </entry>
+<entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Provider networks
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Provider networks </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Private IP addresses
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Private IP addresses </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Floating IP addresses
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Floating IP addresses </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Private (tenant)networks
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Private (tenant)networks </entry>
+    <entry colsep="1" rowsep="1"/>
 
 </row>
 <row>
-<entry>Virtual machine instances belonging to a single security group
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Virtual machine instances belonging to a single security group </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>Disk arrays
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">Disk arrays </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 <row>
-<entry>KVM volumes attached to all virtual machine instances in a single KVM host
-</entry>
-    <entry/>
+<entry colsep="1" rowsep="1">KVM volumes attached to all virtual machine instances in a single KVM
+                                host </entry>
+    <entry colsep="1" rowsep="1"/>
 </row>
 </tbody>
 </tgroup>

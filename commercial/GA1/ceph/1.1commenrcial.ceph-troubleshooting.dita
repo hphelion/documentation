@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3651">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Troubleshooting Ceph</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Troubleshooting Ceph</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: troubleshooting tips</searchtitle>
 </titlealts>
@@ -39,7 +39,7 @@
 <p>If a <codeph>Decrypt error</codeph> occurs from any of the Helion nodes with glance, cinder, or nova, make sure that all the Ceph cluster nodes are in same time zone. HP recommends that you configure a NTP server in the <codeph>/etc/ntp.conf</codeph> file on all Ceph cluster nodes.  After making changes, restart NTP [<codeph>/etc/init.d/ntp restart</codeph>]. Install the <codeph>ntp</codeph> package, if it is not there.</p>
 </li>
 <li>
-<p>Make sure the Ceph cluster uses the same IP range as the <tm tmtype="reg">Helion OpenStack</tm> overcloud nodes. Also, make sure the IP range for the Ceph cluster does not conflict with those used by Helion setup.</p>
+<p>Make sure the Ceph cluster uses the same IP range as the Helion OpenStack overcloud nodes. Also, make sure the IP range for the Ceph cluster does not conflict with those used by Helion setup.</p>
 </li>
 <li>
 <p>Be sure to check the log files in <codeph>/var/log/ceph/</codeph> for each node. Any errors or exceptions are useful for troubleshooting.</p>
@@ -55,21 +55,17 @@
 
 <p>To do this, edit <codeph>glance-api.conf</codeph>, <codeph>cinder.conf</codeph> and <codeph>nova.conf</codeph> files with the following in the default section.</p>
 
-<codeblock>
-<codeph>debug = True
+<codeblock><codeph>debug = True
 verbose = True
-</codeph>
-</codeblock>
+</codeph></codeblock>
 
 <p>Restart Glance, Cinder, and Nova services respectively.</p>
 
 <p>On HP Helion Commercial, the logs for Glance and Cinder are stored by default in the following directories:</p>
 
-<codeblock>
-<codeph>Glance - /var/log/glance
+<codeblock><codeph>Glance - /var/log/glance
 Cinder - /var/log/upstart
-</codeph>
-</codeblock>
+</codeph></codeblock>
 
 <p>Gather these logs and contact HP support team.</p>
 </li>
@@ -84,17 +80,15 @@ Cinder - /var/log/upstart
 <section id="choosing-the-number-of-the-placement-group"> <title>Choosing the number of the placement group</title>
 <p>If there are more than 50 OSDs, we recommend approximately 50-100 PGs per OSD to balance resource usage, data durability and distribution. To get a baseline for a single pool of objects, use the following formula:</p>
 <p>
-  <image href="../../../media/commercial-ceph-formula-placement-group.png"/>
+  <image href="../../../media/commercial-ceph-formula-placement-group.png" placement="break"/>
 </p>
 <p>Where pool size is either the number of replicas for replicated pools or the K+M sum for erasure coded pools (as returned by <codeph>ceph osd erasure-code-profile get</codeph>).
 Round up the results to the nearest power of two. Rounding up is optional, but recommended for CRUSH to evenly balance the number of objects among PGs.</p>
 <p>For example, for a cluster with 200 OSDs and a pool size of 3 replicas, estimate the number of PGs as follows:</p>
-<codeblock>
-  <codeph>(200 * 100)
+<codeblock><codeph>(200 * 100)
 ----------- = 6667. Nearest power of 2: 8192
  3
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="ceph-osd-cleanup"> <title>Ceph OSD cleanup</title>
 <p>To do a Ceph OSD cleanup:</p>
@@ -114,10 +108,7 @@ Round up the results to the nearest power of two. Rounding up is optional, but r
 <li>Verify that <codeph>osd</codeph> was removed by executing: <codeph>- sudo ceph ?w</codeph> </li>
 </ol>
 </section>
-<section id="next-steps"> <title>Next Steps</title>
-<p>
-  <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-manual-install.dita" >Ceph Manual Installation</xref>
-</p>
+<section id="next-steps">
 <p>
   <xref href="#topic3651"> Return to Top </xref>
 </p>

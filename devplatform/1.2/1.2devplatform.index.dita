@@ -29,18 +29,23 @@
       developers build great cloud-native applications across private and public clouds. Based on
         <xref href="http://cloudfoundry.org/index.html" scope="external" format="html"><tm
           tmtype="tm">Cloud Foundry</tm></xref> and fully integrated with <xref
-        href="../../commercial/GA1/1.1commercial.index.dita#topic2448"><tm tmtype="reg">HP Helion
-          OpenStack</tm></xref>, the HP Helion Development Platform is open and interoperable,
+        href="../../commercial/GA1/1.1commercial.index.dita#topic2448">HP Helion <tm tmtype="reg">OpenStack</tm></xref>, the HP Helion Development Platform is open and interoperable,
       ensuring that developers can focus on building the right app for any environment.</p>
 <section id="platform-overview"> <title>Platform Overview</title>
 <p>The Helion Development Platform is a Cloud Foundry-based, managed runtime environment for applications.</p>
 <ul>
-  <li>It supports <xref href="1.2devplatform.appdev.dita#topic2457/java" >Java</xref>, <xref href="1.2devplatform.appdev.dita#topic2457/node" >Node</xref>, <xref href="1.2devplatform.appdev.dita#topic2457/PHP" type="section" scope="external" >PHP</xref>, and other language runtimes.</li>
+  <li>It supports <xref href="1.2devplatform.appdev.dita#topic2457/java" >Java</xref>, <xref href="1.2devplatform.appdev.dita#topic2457/node" >Node</xref>, <xref href="1.2devplatform.appdev.dita#topic2457/PHP" type="section">PHP</xref>, and other language runtimes.</li>
 <li>It provides easy access to services like MySQL, PostgreSQL, RabbitMQ, and Memcache.</li>
 <li>It allows Disk, Memory and Placement Zone constraints to be set per application.</li>
 <li>It provides auto-scaling and application log drains.</li>
 </ul>
-  <p>The Application Lifecycle Service is <xref href="1.2devplatform_commercial_install.dita#topic2457/install-als" >installed</xref> as part of the Helion Development Platform. You can easily <xref href="helion/admin/1.2index.dita#topic2276/wizard-based-cluster-creation" type="section" scope="external"  >create and configure</xref> Application Lifecycle Service clusters from the Horizon management console, or explore this service by setting up a <xref href="../../devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> in the public cloud.</p>
+  <p>The Application Lifecycle Service is <xref
+          href="1.2devplatform_commercial_install.dita#topic24073/install-als">installed</xref> as
+        part of the Helion Development Platform. You can easily <xref
+          href="helion/admin/1.2index.dita#topic2276/wizard-based-cluster-creation" type="section">create and configure</xref> Application Lifecycle Service clusters from
+        the Horizon management console, or explore this service by setting up a <xref
+          href="../../devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.dita">Quick
+          Start Developer Trial</xref> in the public cloud.</p>
 <p>Helion Development Platform version 1.2 includes a full end-to-end solution for creating and deploying .NET  applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of the Helion Development Platform. For more information on Windows and .NET support, see the <xref href="windows/windows_overview.dita" >Windows Overview</xref>.</p>
 </section>
 <section id="application-services"> <title>Application Services</title>
@@ -49,10 +54,10 @@
 <section id="database-as-a-service"> <title>Database as a Service</title>
 <p>The <xref href="1.2devplatform.database-instance.dita" >Database as a Service (DBaaS)</xref> provides lifecycle services for MySQL database instances. Lifecycle services includes provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard.</p>
 <ul>
-<li>An implementation of <xref href="https://wiki.openstack.org/wiki/Trove" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Trove</xref>, <xref href="1.2devplatform.database-instance.dita" >Database as a Service</xref> provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  </li>
+<li>An implementation of <xref href="https://wiki.openstack.org/wiki/Trove" scope="external" format="html" >OpenStack Trove</xref>, <xref href="1.2devplatform.database-instance.dita" >Database as a Service</xref> provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  </li>
 <li>The Database service provides a simple and easy way to access and utilize features in a database without the overhead of administration.  </li>
 </ul>
-  <p>The <xref href="../../devplatform/1.2/1.2devplatform.database-ALS.dita" >Database as a Service</xref> is optionally <xref href="1.2devplatform_commercial_install.dita#topic2457/install-database" type="section" scope="external"  >installed and configured</xref> as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for <xref href="1.2devplatform.database-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
+  <p>The <xref href="../../devplatform/1.2/1.2devplatform.database-ALS.dita" >Database as a Service</xref> is optionally <xref href="1.2devplatform_commercial_install.dita#topic24073/install-database" type="section" >installed and configured</xref> as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for <xref href="1.2devplatform.database-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
 </section>
 <section id="messaging-service"> <title>Messaging Service</title>
 <p>The <xref href="1.2devplatform.using-the-messaging-service.dita" >Messaging Service</xref>  provides developers with the ability to provision RabbitMQ clusters using a wizard-based UI directly from Horizon.</p>
@@ -74,12 +79,12 @@
 <li>It automates installation and enablement of supported applications and services.</li>
 <li>Includes instructions for installing an instance of Vertica Community Edition.</li>
 </ul>
-  <p>The Marketplace is optionally installed as part of the Helion Development Platform. You can <xref href="1.2devplatform_commercial_install.dita#topic24073/install-marketplace" type="section" scope="external"  >install</xref> and <xref href="1.2devplatform.marketplace.install.dita" >use</xref> it to easily install applications and services to accelerate your development efforts.</p>
+  <p>The Marketplace is optionally installed as part of the Helion Development Platform. You can <xref href="1.2devplatform_commercial_install.dita#topic24073/install-marketplace" type="section">install</xref> and <xref href="1.2devplatform.marketplace.install.dita" >use</xref> it to easily install applications and services to accelerate your development efforts.</p>
 </section>
 <section id="platform-tools"> <title>Platform Tools</title>
 <p>The Helion Development Platform is accessible via the following tools:</p>
 <p>
-        <b><xref href="helion/user/reference/1.2client-ref.dita#topic13355" type="section" scope="external" >Helion Command-Line
+        <b><xref href="helion/user/reference/1.2client-ref.dita#topic13355" type="section" >Helion Command-Line
             Interface (CLI)</xref></b>
       </p>
 <p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref

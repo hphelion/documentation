@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7877">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Configuring Your Storage Using Sirius</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Configuring Your Storage Using Sirius</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,7 +26,7 @@
 <p>
 
 Once you complete the undercloud and overcloud installation, you can use the Sirius client CLI package to configure your storage.</p>
-<p>The python-Siriusclient CLI package provides a http-client coupled command line tool for managing the Sirius service. The client works with Keystone through the python-keystoneclient and thus requires <tm tmtype="reg">OpenStack</tm> Keystone credentials to be sourced or augmented along with the command. This requirement is in line with other <tm tmtype="reg">OpenStack</tm> clients. This service helps with configuring the storage devices such as StoreVirtual and StoreServ, which function as the backend for Cinder.</p>
+<p>The python-Siriusclient CLI package provides a http-client coupled command line tool for managing the Sirius service. The client works with Keystone through the python-keystoneclient and thus requires OpenStack Keystone credentials to be sourced or augmented along with the command. This requirement is in line with other OpenStack clients. This service helps with configuring the storage devices such as StoreVirtual and StoreServ, which function as the backend for Cinder.</p>
 <p>You can use the following commands using the Sirius Client CLI package in the undercloud. For a list of all available commands, use the <xref type="section" href="#topic7877/help">Help Commands</xref>.</p>
 <ul>
 <li>
@@ -170,9 +170,7 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
   <codeph># sirius storeserv-show [--cpg-list &lt;CPG_LIST_FLAG&gt;] &lt;STORESERV_ID&gt;
 </codeph>
 </codeblock>
-<p>
-  <b>Note:</b>
-</p>
+      <note/>
 <p>
 <i>Optional argument</i> --cpg-list &lt;true/false&gt; [Setting this to 'true' displays the available CPGs for the given StoreServ]</p>
 </section>
@@ -183,8 +181,8 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
 </codeph>
 </codeblock>
 <p>
-  <b>Note:</b>
-</p>
+        <note/>
+      </p>
 <p>
 <i>Additional arguments</i>: --iscsi-ip &lt;ISCSI_IP&gt; [required for iSCSI type devices]</p>
 <p>For more than one iSCSI IP addresses, use a comma separated list . The ports can also be specified along with the IP addresses (separated by colon), if required.</p>
@@ -199,16 +197,16 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
   <codeph># sirius update-storeserv &lt;STORESERV_ID&gt;
 </codeph>
 </codeblock>
-<p>
-  <b>Note:</b>
-</p>
+      <note/>
 <p>
 <i>Optional Arguments</i>:   --name &lt;STORESERV_NAME&gt; --hostname &lt;STORESERV_IP&gt; --username &lt;USERNAME&gt; --password &lt;PASSWORD&gt; --port &lt;SSH_PORT&gt; --san-ip &lt;SAN_IP&gt; --san-username &lt;SAN_USERNAME&gt; --san-password &lt;SAN_PASSWORD&gt; --device-type &lt;DEVICE_TYPE&gt;</p>
 <p>
 <i>Additional arguments</i>: --iscsi-ip &lt;ISCSI_IP&gt; [<i>required for iSCSI type devices]</i>
 </p>
 <p>
-<b>Note</b>: Currently, CLI does not support the change of Device Type from <b>FC</b> to <b>ISCSI</b>.</p>
+        <note> Currently, CLI does not support the change of Device Type from <b>FC</b> to
+            <b>ISCSI</b>.</note>
+      </p>
 </section>
 <section id="delete-storeserv"> <title>Delete StoreServ</title>
 <p>You can unregister the StoreServ from Sirius.</p>
@@ -340,43 +338,43 @@ Path of CA TLS certificate(s) used to verify the remote server's certificate. Wi
      # -??-timeout TIMEOUT -->
 </section>
 <section id="os-username"> <title>OS username</title>
-<p>Username of the keystone (<tm tmtype="reg">OpenStack</tm> Defaults to env[OS_USERNAME].</p>
+<p>Username of the keystone (OpenStack Defaults to env[OS_USERNAME].</p>
 <codeblock>
   <codeph># --os-username OS_USERNAME
 </codeph>
 </codeblock>
 </section>
 <section id="os-password"> <title>OS PASSWORD</title>
-<p>Password of the keystone (<tm tmtype="reg">OpenStack</tm>  Defaults to env[OS_PASSWORD].</p>
+<p>Password of the keystone (OpenStack  Defaults to env[OS_PASSWORD].</p>
 <codeblock>
   <codeph># --os-password OS_PASSWORD
 </codeph>
 </codeblock>
 </section>
 <section id="os-tenant-id"> <title>OS TENANT ID</title>
-<p>Tenant identification of the <tm tmtype="reg">OpenStack</tm> Defaults to env[OS_TENANT_ID].</p>
+<p>Tenant identification of the OpenStack Defaults to env[OS_TENANT_ID].</p>
 <codeblock>
   <codeph># --os-tenant-id OS_TENANT_ID
 </codeph>
 </codeblock>
 <!--###OS TENANT NAME
-Tenant name of the <tm tmtype="reg">OpenStack</tm> Defaults to env[OS&#095;TENANT_NAME].
+Tenant name of the OpenStack Defaults to env[OS&#095;TENANT_NAME].
         
     -??-os-tenant-name OS_TENANT_NAME-->
 </section>
 <section id="os-auth-url"> <title>OS AUTH URL</title>
-<p>Authentication URL of <tm tmtype="reg">OpenStack</tm> Defaults to env[OS_AUTH_URL].</p>
+<p>Authentication URL of OpenStack Defaults to env[OS_AUTH_URL].</p>
 <codeblock>
   <codeph># --os-auth-url OS_AUTH_URL
 </codeph>
 </codeblock>
 <!--###OS REGION NAME
-The region name of  <tm tmtype="reg">OpenStack</tm> Defaults to env[OS_REGION_NAME].
+The region name of  OpenStack Defaults to env[OS_REGION_NAME].
 
     -??-os-region-name OS_REGION_NAME  -->
 </section>
 <section id="os-auth-token"> <title>OS AUTH TOKEN</title>
-<p>Authentication token of <tm tmtype="reg">OpenStack</tm> Defaults to env[OS_AUTH_TOKEN].</p>
+<p>Authentication token of OpenStack Defaults to env[OS_AUTH_TOKEN].</p>
 <codeblock>
   <codeph># --os-auth-token OS_AUTH_TOKEN
 </codeph>
@@ -395,13 +393,13 @@ The API version of Sirius. Defaults to env[SIRIUS_API_VERSION] or 1
                         
  
 ###OS SERVICE TYPE
-The service type of <tm tmtype="reg">OpenStack</tm> to env[OS_SERVICE_TYPE].
+The service type of OpenStack to env[OS_SERVICE_TYPE].
 
     -??-os-service-type OS_SERVICE_TYPE
                         
  
 ###OS ENDPOINT TYPE
-The endpoint type of <tm tmtype="reg">OpenStack</tm> Defaults to env[OS_ENDPOINT_TYPE].
+The endpoint type of OpenStack Defaults to env[OS_ENDPOINT_TYPE].
     
     -??-os-endpoint-type OS_ENDPOINT_TYPE  -->
 <p>

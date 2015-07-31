@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3399">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Installing Overcloud Controllers on Virtual Machines</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Installing Overcloud Controllers on Virtual Machines</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Installing Overcloud Controllers on Virtual Machines</searchtitle>
 </titlealts>
@@ -21,51 +21,38 @@
  <!--./commercial/GA1/1.1commercial.install-GA-virtual-control.md-->
  <!--permalink: /helion/openstack/1.1/install/hybrid/--></p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
 <p>In our 1.01 patch release, we've added a new deployment option that will allow a user to deploy various nodes of the Control Plane as Virtual Machines instead of Baremetal Machines, while still allowing user to add Compute Nodes or Storage Nodes as Baremetal. This is referred to as "Hybrid Control Plane deployment" and is being released in the 1.01 as an experimental feature only suitable for Proof Of Concept situations.</p>
-<section id="installation"> <title>Installation</title>
-<ol>
-<li>
-<p>Deploy the SEED VM with HP_VM_MODE=y</p>
-
-<codeblock>
+<section id="installation">
+            <title>Installation</title>
+            <ol>
+                <li>Deploy the SEED VM with
+                    HP_VM_MODE=y<codeblock>
 <codeph># HP_VM_MODE=y bash -x /myStore/myWork/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
 </codeph>
-</codeblock>
-</li>
-<li>
-<p>In the second KVM host, pre-create the required number of VMs and capture the information of them required to register as resources. (not clear)</p>
-</li>
-<li>The captured information should be appended to <codeph>baremetal.csv</codeph> file in the seed VM</li>
-<li>
-<p>Login to the SEED VM</p>
-
-<codeblock>
+</codeblock></li>
+                <li>In the second KVM host, pre-create the required number of VMs and capture the
+                    information of them required to register as resources. (not clear)</li>
+                <li>The captured information should be appended to <codeph>baremetal.csv</codeph>
+                    file in the seed VM</li>
+                <li>Login to the SEED
+                    VM<codeblock>
 <codeph># ssh root@&lt;seed IP address&gt;
 </codeph>
-</codeblock>
-</li>
-<li>
-<p>Deploy the Undercloud only</p>
-
-<codeblock>
+</codeblock></li>
+                <li>Deploy the Undercloud
+                    only.<codeblock>
 <codeph># bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-overcloud --skip-demo
 </codeph>
-</codeblock>
-</li>
-</ol>
-<p>
-<!--
+</codeblock></li>
+                <!--2. Login to the SEED VM and deploy the undercloud only
 
-2. Login to the SEED VM and deploy the undercloud only
-
-        # bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh -??-skip-overcloud -??-skip-demo
--->
-3. On successful installation of the underlcoud stack and its configuration, login to the undercloud and add the physical nodes for nova-compute (OC)</p>
-<codeblock>
-  <codeph>    root@hLinux:~# ssh -l heat-admin 192.0.2.2
+        # bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh -??-skip-overcloud -??-skip-demo-->
+                <li>On successful installation of the underlcoud stack and its configuration, login
+                    to the undercloud and add the physical nodes for nova-compute
+                    (OC).<codeblock><codeph>    root@hLinux:~# ssh -l heat-admin 192.0.2.2
 
     sudo -i
     undercloud-controller-xyz# ironic node-create -d pxe_ipmitool -p cpus=X -p memory_mb=Y -p local_gb=Z -p cpu_arch=amd64 -i ipmi_address=x.y.z.a -i ipmi_username=admin -i ipmi_password=xyz
@@ -74,58 +61,36 @@
     undercloud-controller-xyz# nova flavor-create &lt;flavor_name&gt; --ephemeral $DSK_SIZE auto $MEM $ROOT_DSK $CPU
     undercloud-controller-xyz# nova flavor-key &lt;flavor_name&gt; set "cpu_arch"=amd64 "baremetal:deploy_kernel_id"=&lt;kernel_id&gt; "barmetal:deploy_ramdisk_id"=&lt;ramdisk_id&gt;
     undercloud-controller-xyz#
-</codeph>
-</codeblock>
-<ol>
-<li>
-<p>Edit <codeph>nova-compute-instance.yaml</codeph> and modify the default flavor</p>
-
-<codeblock>
-<codeph>root@hLinux:~# vi tripleo/tripleo-heat-templates/nova-compute-instance.yaml
+</codeph></codeblock></li>
+                <li>Edit <codeph>nova-compute-instance.yaml</codeph> and modify the default
+                    flavor.<codeblock><codeph>root@hLinux:~# vi tripleo/tripleo-heat-templates/nova-compute-instance.yaml
 &gt;&gt;&gt;Snippet
     OvercloudComputeFlavor:
     Description: Use this flavor
     Type: String
     Default: &lt;flavor_name&gt;
 &lt;&lt;&lt;&lt;&lt;
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Edit <codeph>overcloud-source.yaml</codeph> and modify the compute flavor:</p>
-
-<codeblock>
-<codeph>root@hLinux:~# vi tripleo/tripleo-heat-templates/overcloud-source.yaml
+</codeph></codeblock></li>
+                <li> Edit <codeph>overcloud-source.yaml</codeph> and modify the compute
+                        flavor:<codeblock><systemoutput>root@hLinux:~# vi tripleo/tripleo-heat-templates/overcloud-source.yaml
 &gt;&gt;&gt;&gt;&gt; Snippet
     OvercloudComputeFlavor:
     Default: &lt;flavor_name&gt;
     Description: Flavor for compute nodes to request when deploying.
     Type: String
-&lt;&lt;&lt;&lt;&lt;
-</codeph>
-</codeblock>
-
-<p>
-<b>Note:</b> Replace &lt;flavor_name&gt; with the flavor created in Step 3</p>
-</li>
-<li>
-<p>Complete the installation</p>
-
-<codeblock>
-<codeph>root@hLinux:~# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-seed --skip-undercloud
-</codeph>
-</codeblock>
-</li>
-</ol>
-<p>
-<!-- This code block is not yet verified.
+&lt;&lt;&lt;&lt;&lt;</systemoutput></codeblock><note>Replace
+                        &lt;flavor_name&gt; with the flavor created in Step 3</note></li>
+                <li> Complete the installation</li>
+            </ol>
+            <codeblock><codeph>root@hLinux:~# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-seed --skip-undercloud
+</codeph></codeblock>
+            <p><!-- This code block is not yet verified.
     TBD: There is another way of passing the parameters to stack-create... via hp_ced_undercloud.
 
         ENV_JSON=$(jq '.parameters = {
         "OvercloudComputeFlavor": "'"${flavor_name}"'"
         }
--->
-<!-- We are referring to option 4 from the wiki page
+--><!-- We are referring to option 4 from the wiki page
 **Important:** If in excess of physical servers, there is a possibility that another component along with Nova-compute will also be installed on physical servers. This is because of best-fit along with least used resource.
 
 ## Alternative Solution
@@ -179,10 +144,10 @@ ComputeCapabilitiesFilter enabled us to overcome the above limitation. This is o
         root@hLinux:~# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh -??-skip-seed -??-skip-undercloud
 
 --></p>
-<p>
-  <xref href="#topic3399"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
-</section>
+            <p>
+                <xref href="#topic3399"> Return to Top </xref>
+            </p>
+            <!-- ===================== horizontal rule ===================== -->
+        </section>
 </body>
 </topic>

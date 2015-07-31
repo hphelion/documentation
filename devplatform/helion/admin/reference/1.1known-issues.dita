@@ -30,11 +30,11 @@
 <section id="11"> <title>1.1</title>
 </section>
 <section id="changing-the-mbus-ip-core-node"> <title>Changing the MBUS IP (Core node)</title>
-<p>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-migrate" >kato node migrate</xref> or <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-op-static_ip" >kato op static ip</xref> on the Core node, then <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-attach" type="section" scope="external"  >kato node attach</xref> on all other cluster nodes to set the new MBUS IP.</p>
+<p>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-migrate" >kato node migrate</xref> or <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-op-static_ip" >kato op static ip</xref> on the Core node, then <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-attach" type="section"  >kato node attach</xref> on all other cluster nodes to set the new MBUS IP.</p>
 </section>
 <section id="adding-new-relic-repositories"> <title>Adding New Relic Repositories</title>
 <p>The New Relic system monitoring (<b>newrelic-sysmond</b>) and PHP application monitoring (<b>newrelic-php5</b>) packages are no longer pre-installed in the ALS default Docker base container.</p>
-<p>To allow end users to install these packages in the <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#requirements" >requirements</xref> section of their application config, admins should <xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#allowed-repositories" type="section" scope="external"  >add New Relic repository URLS and keys</xref> to the system configuration.</p>
+<p>To allow end users to install these packages in the <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#requirements" >requirements</xref> section of their application config, admins should <xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#allowed-repositories" type="section"  >add New Relic repository URLS and keys</xref> to the system configuration.</p>
 </section>
 <section id="php-55-repositories"> <title>PHP 5.5 Repositories</title>
 <p>PHP 5.5 in contained in the default Docker image. This version is more recent than the one available in the standard Ubuntu repositories.</p>
@@ -47,7 +47,7 @@
 </codeblock>
 </section>
 <section id="kato-data-users-exportimport-broken"> <title>Kato data users export/import broken</title>
-<p>The <b>kato data users export</b> and <b>kato data users import</b> commands, which save and load lists of users to and from CSV files, are non-functional in the current release. The <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-data-import" >kato data import</xref> and <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-data-export" type="section" scope="external"  >kato data export</xref> commands are still available for migrating users from one ALS installation to another.</p>
+<p>The <b>kato data users export</b> and <b>kato data users import</b> commands, which save and load lists of users to and from CSV files, are non-functional in the current release. The <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-data-import" >kato data import</xref> and <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-data-export" type="section"  >kato data export</xref> commands are still available for migrating users from one ALS installation to another.</p>
 </section>
 <section id="kato-node-reset-factory-with-nopasswd"> <title>Kato node reset factory with NOPASSWD</title>
 <p>The kato <b>node reset factory</b> command will not work if <b>NOPASSWD</b> has been set for the admin account in <i>/etc/sudoers</i>. To work around this, revert the change to <i>/etc/sudoers</i> before resetting or start over with a new ALS VM.</p>
@@ -99,12 +99,12 @@
 set environment variables. This mechanism is fully supported by the Application Lifecycle Service and is used by all of the built-in buildpacks.</p>
 </section>
 <section id="legacy-buildpack-and-environment-variables"> <title>Legacy Buildpack and Environment Variables</title>
-<p>When using the <xref href="../../../../devplatform/helion/user/deploy/1.1buildpack.dita#buildpacks" type="section" scope="external"  >Legacy Buildpack</xref>, environment variable values defined in <i>manifest.yml</i> cannot be updated without re-pushing the application with new settings. Changes to variables made in the Management Console will be
+<p>When using the <xref href="../../../../devplatform/helion/user/deploy/1.1buildpack.dita#buildpacks" type="section"  >Legacy Buildpack</xref>, environment variable values defined in <i>manifest.yml</i> cannot be updated without re-pushing the application with new settings. Changes to variables made in the Management Console will be
 overwritten by the original ones defined at push when the application is restarted.</p>
 <p>To modify custom environment variables, re-push the application after changing the values in <i>manifest.yml</i>.</p>
 </section>
 <section id="service-gateway-log-errors-in-maintenance-mode"> <title>Service Gateway Log Errors in Maintenance Mode</title>
-<p>With Application Lifecycle Service set in <xref href="../../../../devplatform/helion/admin/console/1.1customize.dita#console-settings" type="section" scope="external"  >
+<p>With Application Lifecycle Service set in <xref href="../../../../devplatform/helion/admin/console/1.1customize.dita#console-settings" type="section"  >
 <i>Maintenance
 Mode</i>
 </xref>, all "_gateway"
@@ -133,7 +133,7 @@ these addresses wherever possible, as these addresses are subject to
 change with cluster configuration.</p>
 <p>If the VM instance can locally resolve a hostname rather than an IP
 address, it's generally best practice to use the hostname.</p>
-<p>If not, Application Lifecycle Service provides various <xref href="../../../../devplatform/helion/user/reference/1.1environment.dita#environment-variables" type="section" scope="external"  >environment variables</xref>
+<p>If not, Application Lifecycle Service provides various <xref href="../../../../devplatform/helion/user/reference/1.1environment.dita#environment-variables" type="section"  >environment variables</xref>
 so that applications do not need to hardcode them at install time. Some
 examples are <codeph>VCAP_SERVICES</codeph> and <codeph>DATABASE_URL</codeph>. We strongly encourage their use.</p>
 <p>A known issue is that some applications have install procedures that

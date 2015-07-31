@@ -15,43 +15,29 @@
 <p>HP Helion Public Cloud has a few software downloads, each of which is on its appropriate page--the Ruby Fog Bindings download is on the Ruby Fog Bindings page, for example.  But to give you quick and easy access, we have also consolidated our list of downloads here on this page.  Find what you're looking for and download away!</p>
 <p>Here's what we have for you:</p>
 <ul>
-<li>
-<xref type="section" href="#topic1790/WinCLIInstall">Windows CLI</xref>
-</li>
-<li>
-<xref type="section" href="#topic1790/OpenstackCLI"><tm tmtype="reg">OpenStack</tm> CLI Tools</xref>
-</li>
-<li>
-<xref type="section" href="#topic1790/RubyFogBindingsInstall">Ruby Fog Bindings</xref>
-</li>
-<li>
-<xref type="section" href="#topic1790/jcloudsBindingsInstall">Java/Clojure jclouds Bindings</xref>
-</li>
-<li>
-<xref type="section" href="#topic1790/PHPBindingsInstall">PHP Bindings</xref>
-</li>
-<li>
-<xref type="section" href="#topic1790/NetBindingsInstall">.NET Bindings</xref>
-</li>
-<li>
-<xref type="section" href="#topic1790/JavascriptBindingsInstall">Javascript Bindings</xref>
-</li>
+<li><xref type="section" href="#topic1790/WinCLIInstall">Windows CLI</xref></li>
+<li><xref type="section" href="#topic1790/OpenstackCLI"><tm tmtype="reg">OpenStack</tm> CLI Tools</xref></li>
+<li><xref type="section" href="#topic1790/RubyFogBindingsInstall">Ruby Fog Bindings</xref></li>
+<li><xref type="section" href="#topic1790/jcloudsBindingsInstall">Java/Clojure jclouds Bindings</xref></li>
+<li><xref type="section" href="#topic1790/PHPBindingsInstall">PHP Bindings</xref></li>
+<li><xref type="section" href="#topic1790/NetBindingsInstall">.NET Bindings</xref></li>
+<li><xref type="section" href="#topic1790/JavascriptBindingsInstall">Javascript Bindings</xref></li>
 </ul>
-<section id="command-line-interface-cli-packages"> <title>Command-line Interface (CLI) Packages</title>
-</section>
+  <section id="command-line-interface-cli-packages"> <title>Command-line Interface (CLI) Packages</title></section>
 <section id="WinCLIInstall"> <title>Windows CLI</title>
 <ul>
-<li>
-  <xref href="../file/WinCLI-1.3.5.7.zip" scope="external" format="html" >Installation package, Version 1.3.5.7</xref>  (for software version 13.5)</li>
-<li>
-<xref href="../publiccloud/cli.windows.2.dita" >Overview page</xref>
-</li>
-<li>
-<xref href="../publiccloud/cli.windows.2.release-notes.dita" >Release Notes</xref>
-</li>
+<li><xref href="../file/WinCLI-2.1.1.2.zip" scope="external" format="html" >Installation package, Version 2.1.1.2</xref></li>
+  <li>Previous Versions
+    <ul>
+      <li><xref href="../file/WinCLI-2.1.1.1.zip" scope="external" format="html" >Installation package, Version 2.1.1.1</xref></li>
+      <li><xref href="../file/WinCLI-1.3.5.7.zip" scope="external" format="html" >Installation package, Version 1.3.5.7</xref></li>
+    </ul>
+  </li>
+<li><xref href="../publiccloud/cli.windows.2.dita" >Overview page</xref></li>
+<li><xref href="../publiccloud/cli.windows.2.release-notes.dita" >Release Notes</xref></li>
 </ul>
 </section>
-<section id="OpenstackCLI"> <title><tm tmtype="reg">OpenStack</tm> CLI Tools</title>
+  <section id="OpenstackCLI"> <title><tm tmtype="reg">OpenStack</tm> CLI Tools</title>
 <ul>
 <li>
 <xref href="../publiccloud/cli.openstack.dita" >Overview page</xref>
@@ -66,11 +52,8 @@
 <li>
 <xref href="http://rubygems.org/gems/fog" scope="external" format="html" >Installation page</xref>
 </li>
-<li>
-<xref href="https://github.com/fog/fog/blob/master/lib/fog/hp/README.md" scope="external" format="html" >Overview page</xref> </li>
-<li>
-<xref href="http://fog.io/" scope="external" format="html" >Ruby Fog Community Documentation</xref>
-</li>
+<li><xref href="https://github.com/fog/fog/blob/master/lib/fog/hp/README.md" scope="external" format="html" >Overview page</xref> </li>
+<li><xref href="http://fog.io/" scope="external" format="html" >Ruby Fog Community Documentation</xref></li>
 </ul>
 </section>
 <section id="jcloudsBindingsInstall"> <title>Java/Clojure jclouds Bindings</title>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3077">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Create the baremetal.csv File for Installation</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Create the baremetal.csv File for Installation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -59,7 +59,7 @@
 <p>
 <b>Important</b>: Make sure that the information specified is correct. If any node fails to install, you must restart the installation from the beginning.</p>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" type="section" scope="external"  >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" type="section">Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

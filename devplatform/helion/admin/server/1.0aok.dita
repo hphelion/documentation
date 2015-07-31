@@ -66,7 +66,7 @@ web application. The Management Console checks with the AOK endpoint
 <section id="client"> <title>Client</title>
 <p>If the strategy has been changed to something other than builtin (see
 below), then users connecting with the
-<xref href="../../../../devplatform/helion/user/client/1.0index.dita#client" type="section" scope="external"  >
+<xref href="../../../../devplatform/helion/user/client/1.0index.dita#client" type="section"  >
 <i>helion</i>
 </xref> client should be aware
 that:</p>
@@ -115,7 +115,7 @@ use. This value must correspond exactly to one of the supported strategy
 names.</p>
 </section>
 <section id="configuration"> <title>Configuration</title>
-<p>To configure AOK, set the following keys in the AOK config using <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-config" type="section" scope="external"  >
+<p>To configure AOK, set the following keys in the AOK config using <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-config" type="section"  >
 <i>kato
 config set</i>
 </xref>:</p>

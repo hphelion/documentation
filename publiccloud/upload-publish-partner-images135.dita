@@ -15,7 +15,7 @@
 <p>
   <!--Removed anchor point publishPartnerImage--><!-- id="publishPartnerImage" -->
 </p>
-  <p>This document describes how to use the HP Helion Public Cloud Image API to upload images and make them available for public use in the public cloud. It is not intended to be an exhaustive description of <xref href="http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html" scope="external" format="html" >managing images using the Glance client</xref>. For additional detail, see the <xref href="http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html" scope="external" format="html" >glance command reference</xref> and the <xref href="apidocs/c1.1/glance-api.dita" >HP Helion Public Cloud Image Service API specification</xref>.</p>
+  <p>This document describes how to use the HP Helion Public Cloud Image API to upload images and make them available for public use in the public cloud. It is not intended to be an exhaustive description of <xref href="http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html" scope="external" format="html" >managing images using the Glance client</xref>. For additional detail, see the <xref href="http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html" scope="external" format="html" >glance command reference</xref> and the <xref href="api/glance-api.dita" >HP Helion Public Cloud Image Service API specification</xref>.</p>
 <p>
 <b>Note:</b> As an image owner, it is your responsibility to ensure you have rights to use any software included in the image. HP is not responsible or liable for any unauthorized use of software by the owner of an image.</p>
 <p>
@@ -111,7 +111,7 @@
 <p>To interact with the HP Helion Public Cloud Image API, you need to install the Nova and Glance client tools. If your platform does not support the Glance client, you can use the curl command.</p>
 </section>
 <section id="publishInstallGlance"> <title>The Nova and Glance client tools<!--Removed anchor point publishInstallGlance--><!-- id="publishInstallGlance" --></title>
-<p><tm tmtype="reg">OpenStack</tm> Nova client tool provides API access to the Nova service. <tm tmtype="reg">OpenStack</tm> Glance client tool provides the <codeph>glance</codeph> command, which is the preferred method for interacting with the HP Helion Public Cloud Image API. Refer to <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> documentation</xref> or <xref href="https://community.hpcloud.com/article/cloud-135-cli-installation-instructions" scope="external" format="html" >Cloud 13.5 CLI Installation Instructions</xref> for information on installing the Nova and Glance client tools.</p>
+<p>OpenStack Nova client tool provides API access to the Nova service. OpenStack Glance client tool provides the <codeph>glance</codeph> command, which is the preferred method for interacting with the HP Helion Public Cloud Image API. Refer to <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >OpenStack documentation</xref> or <xref href="https://community.hpcloud.com/article/cloud-135-cli-installation-instructions" scope="external" format="html" >Cloud 13.5 CLI Installation Instructions</xref> for information on installing the Nova and Glance client tools.</p>
 <p>If the Glance client is not available for your platform, see the alternate instructions below for <xref type="section" href="#topic26477/installCurl">installing curl</xref>.</p>
 </section>
 <section id="installCurl"> <title>The curl command<!--Removed anchor point installCurl--><!-- id="installCurl" --></title>
@@ -481,7 +481,7 @@ Boot an HP-provided instance and note the instance ID.</li>
 </ul>
 <p>There is also a section on the most <xref type="section" href="#topic26477/publishGlanceErrors">common HTTP errors</xref> that might occur when using the Glance client tool.</p>
 <p>
-<b>Important:</b> For more information, see <tm tmtype="reg">OpenStack</tm> documentation on <xref href="http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html" scope="external" format="html" >managing images using the Glance client</xref> and the <xref href="http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html" scope="external" format="html" >glance command reference</xref>.</p>
+<b>Important:</b> For more information, see OpenStack documentation on <xref href="http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html" scope="external" format="html" >managing images using the Glance client</xref> and the <xref href="http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html" scope="external" format="html" >glance command reference</xref>.</p>
 </section>
 <section id="publishGlanceList"> <title>Listing images<!--Removed anchor point publishGlanceList--><!-- id="publishGlanceList" --></title>
 <p>To see a list of available images, follow the instructions below.</p>
@@ -723,7 +723,7 @@ curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID"  -H 'X-Image-Meta-Property-com.hp__1_
 <xref href="https://docs.hpcloud.com/publiccloud/api/image/" scope="external" format="html" >HP Helion Public Cloud Image Service API documentation</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/user-guide/content/ch_cli.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> documentation</xref>
+<xref href="http://docs.openstack.org/user-guide/content/ch_cli.html" scope="external" format="html" >OpenStack documentation</xref>
 </li>
 <li>
 <xref href="https://community.hpcloud.com/article/cloud-135-cli-installation-instructions" scope="external" format="html" >Public Cloud CLI Installation Instructions</xref>
@@ -751,7 +751,6 @@ curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID"  -H 'X-Image-Meta-Property-com.hp__1_
 <li>
 <xref href="mailto:support@hpcloud.com" format="html" >Email support@hpcloud.com</xref>
 </li>
-<li>Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.</li>
 </ul>
 </section>
 </body>

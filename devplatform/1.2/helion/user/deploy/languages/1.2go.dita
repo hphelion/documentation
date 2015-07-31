@@ -31,19 +31,15 @@ application</xref>.</p>
 </section>
 <section id="files"> <title>Files</title>
 <p>You will need the following files to deploy a Go app on Application Lifecycle Service:</p>
-<codeblock>
-  <codeph>app.go
+<codeblock>app.go
 Procfile
 .godir
-manifest.yml
-</codeph>
-</codeblock>
+manifest.yml</codeblock>
 </section>
 <section id="app-go"> <title>app.go</title>
 <p>The Go buildpack recognizes Go apps by the existence of a .go source
 file anywhere in the repository:</p>
-<codeblock>
-  <codeph>package main
+<codeblock>package main
 
 import (
         "fmt"
@@ -62,28 +58,20 @@ func main() {
 
 func hello(w http.ResponseWriter, req *http.Request) {
         fmt.Fprintln(w, "hello, world!")
-}
-</codeph>
-</codeblock>
+}</codeblock>
 </section>
 <section id="procfile"> <title>Procfile</title>
 <p>To run your web process, you need to declare what command to use. In
 this case, we simply need to execute our Go program. Use Procfile to
 declare how your web process type is run:</p>
-<codeblock>
-  <codeph>web: server
-</codeph>
-</codeblock>
+<codeblock>web: server</codeblock>
 </section>
 <section id="godir"> <title>.godir</title>
 <p>The <codeph>go</codeph> tool uses the directory name of your
 project to name executables and determine package import paths. Create
 a file called .godir, in your project root, containing the path from
 <i>\$GOPATH/src</i> to your project root:</p>
-<codeblock>
-  <codeph>example.com/hello
-</codeph>
-</codeblock>
+<codeblock>example.com/hello</codeblock>
 </section>
 <section id="manifest-yml"> <title>manifest.yml</title>
 <p>This file is optional, as the framework will automatically be detected
@@ -91,11 +79,8 @@ by Application Lifecycle Service. However, it can still be used to set the app n
 configure settings, create services, etc. See the <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >
 <i>manifest.yml</i>
 </xref> documentation.</p>
-<codeblock>
-  <codeph>name:
-   hello-go
-</codeph>
-</codeblock>
+<codeblock>name:
+   hello-go</codeblock>
 </section>
 <section id="examples"> <title>Examples</title>
 <ul>

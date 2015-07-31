@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2805">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: AppArmor Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: AppArmor Overview</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: AppArmor Overview</searchtitle>
 </titlealts>
@@ -21,12 +21,12 @@
  <!--./commercial/GA1/1.1commercial.install-GA-apparmor.md-->
  <!--permalink: /helion/openstack/1.1/install/apparmor/--></p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
-<p>The HP <tm tmtype="reg">Helion OpenStack</tm> default installation includes AppArmor profiles as a tool for enhanced security for VMs running on KVM compute nodes.</p>
-<p>AppArmor profiles can modified, as needed, for your organization. However, the default profiles, as installed, have been configured to provide optimal protection for HP <tm tmtype="reg">Helion OpenStack</tm> All profiles are configured for <i>enforce</i> mode (for more information, see <xref type="section" href="#topic2805/modes">AppArmor profile modes</xref> below) and designed to mitigate hostile VMs exploiting hypervisor breakout attacks.</p>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> follows the <xref href="http://wiki.apparmor.net/index.php/Libvirt" scope="external" format="html" >svirt model</xref> to provide guest isolation. Every guest VM is locked down to be able to access only its own configuration files, disk files and volume devices.</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
+<p>The HP Helion OpenStack default installation includes AppArmor profiles as a tool for enhanced security for VMs running on KVM compute nodes.</p>
+<p>AppArmor profiles can modified, as needed, for your organization. However, the default profiles, as installed, have been configured to provide optimal protection for HP Helion OpenStack All profiles are configured for <i>enforce</i> mode (for more information, see <xref type="section" href="#topic2805/modes">AppArmor profile modes</xref> below) and designed to mitigate hostile VMs exploiting hypervisor breakout attacks.</p>
+<p>HP Helion OpenStack follows the <xref href="http://wiki.apparmor.net/index.php/Libvirt" scope="external" format="html" >svirt model</xref> to provide guest isolation. Every guest VM is locked down to be able to access only its own configuration files, disk files and volume devices.</p>
 <p>You should not need to interact with these profiles. Modification instructions are beyond the scope of this document.</p>
 <p>For more information on AppArmor and managing profiles, review the information in the <xref href="https://help.ubuntu.com/community/AppArmor" scope="external" format="html" >Ubuntu AppArmor Documentation</xref> and the other links <xref type="section" href="#topic2805/info">below</xref>.</p>
 <section id="about-apparmor"> <title>About AppArmor</title>

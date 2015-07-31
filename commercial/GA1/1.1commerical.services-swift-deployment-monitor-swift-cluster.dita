@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic848">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Monitor Object Storage (Swift) Cluster</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Monitor Object Storage (Swift) Cluster</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,7 +26,7 @@
 <p>
 
 </p>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> allows you to monitor Object Storage (Swift) cluster in any of the followings ways:</p>
+<p>HP Helion OpenStack allows you to monitor Object Storage (Swift) cluster in any of the followings ways:</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-disk.dita" >Monitor Disk Usage</xref>
@@ -62,9 +62,6 @@
 <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-file-ownership.dita" >File Ownership</xref>
 </li>
 </ul>
-<p>
-  <xref href="#topic848"> Return to Top </xref>
-</p>
 <!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

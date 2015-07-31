@@ -25,13 +25,12 @@
 <p>During this step, you will log in to the Helion Public Cloud and use the web-based console to create the sandbox environment.</p>
 <simpletable>
           <strow>
-            <stentry>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita">Register for your Helion Public
-                        Cloud Account</xref>
+            <stentry>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita">Register
+                        for your Helion Public Cloud Account</xref>
                     <p>2. <xref
                             href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743"
                             >Download Tools</xref>
-                    </p><p>3. <image href="../../media/star.gif" scale="50" id="image_zft_5cb_ms"/>
-                        <b>Create the Sandbox Environment</b></p><p>4. <xref
+                    </p><p>3. <b>Create the Sandbox Environment</b></p><p>4. <xref
                             href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
                             Cluster</xref></p><p>5. <xref
                             href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add Windows
@@ -57,7 +56,7 @@
               cluster. This RC file has been pre-configured for this sandbox project. <ol>
                 <li>Click <b>Access &amp; Security</b> and then click the <b>API Access</b>
                   tab.</li>
-                <li> Click <b>Download OpenStack RC file</b>.<image
+                <li> Click <b>Download <tm tmtype="reg">OpenStack</tm> RC file</b>.<image
                     href="../../media/quickstartC11.png" placement="break"/></li>
               </ol>
             </li>

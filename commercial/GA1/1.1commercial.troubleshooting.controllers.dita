@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2919">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Troubleshooting the Controller Nodes</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Troubleshooting the Controller Nodes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.controllers.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/controllers/--></p>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion OpenStack is an OpenStack technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <ul>
 <li>
 <xref type="section" href="#topic2919/foreverupdate">Heat Stack Updates Take 30+ Minutes</xref>
@@ -69,8 +69,8 @@ ironic port-create --address &lt;MAC&gt; --node_uuid &lt;UUID&gt;
 </codeblock>
 </li>
 </ul>
-<p>
-<b>Note:</b> If you see the following error after runing<codeph>os-refresh-config</codeph>, re-run the command.</p>
+          <note>If you see the following error after runing<codeph>os-refresh-config</codeph>,
+            re-run the command.</note>
 
 <codeblock>
 <codeph>        ERROR: os-refresh-config:Could not lock /var/run/os-refresh-config.lock. [Errno 11] Resource temporarily unavailable.
@@ -109,7 +109,7 @@ sudo os-refresh-config
 </ol>
 <!-- ## After Updating, Cinder Create and Backups Fail {#failcinder}
 
-After updating to HP <tm tmtype="reg">Helion OpenStack</tm> 1.1, Cinder [backup](#backupfail) and Cinder [create volume from image](#volumefail) (bootable volume) fail. 
+After updating to HP Helion OpenStack 1.1, Cinder [backup](#backupfail) and Cinder [create volume from image](#volumefail) (bootable volume) fail. 
 
 This indicates that ISCSI authentication is failing on controller0. The work-around is to migrate the cinder-volume service to another node and then stop the Cinder Backup service on controller0.
 
@@ -212,8 +212,7 @@ If this error occurs, **confirm** that the cause is an ISCSI error.
   <codeph>service keepalived restart
 </codeph>
 </codeblock>
-<p>
-<b>Note</b>: API requests will fail until the new keepalived cluster restarts.</p>
+      <note> API requests will fail until the new keepalived cluster restarts.</note>
 <p>
   <xref href="#topic2919"> Return to Top </xref>
 </p>

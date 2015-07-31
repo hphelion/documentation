@@ -57,7 +57,7 @@ booted.</li>
 domain name will run <codeph>kato rename &lt;extname&gt;</codeph> on
 the instance first boot.</li>
 <li>Roles takes a list of roles to configure the node with. For guidance on how to work with roles
-        see  <xref href="1.0index.dita#topic17783/roles" type="section" scope="external" />
+        see  <xref href="1.0index.dita#topic17783/roles" type="section" />
       </li>
 </ul>
 <section id="securing-the-new-node"> <title>Securing the new node</title>

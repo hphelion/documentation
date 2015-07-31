@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2174">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Ceph Nova Storage</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Ceph Nova Storage</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Ceph Nova Storage</searchtitle>
 </titlealts>
@@ -29,72 +29,35 @@
  <!--permalink: /helion/openstack/1.1/ceph-helion-openstack-nova-ceph-storage/--></p>
 <p>The following steps are automatically performed when you download and execute <codeph>Ceph_client</codeph> script from the controller and compute nodes as per the readme file in the tar file.</p>
 <ol>
-<li>
-<p>Verify Ceph health.</p>
-
-<codeblock>
-<codeph>ceph health
-</codeph>
-</codeblock>
-
-<p>Output:</p>
-
-<codeblock>
-<codeph>HEALTH_OK
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a new pool for the Cinder volume.</p>
-
-<codeblock>
-<codeph>ceph osd pool create &lt;cinder pool name&gt; &lt;pg-num&gt;
-</codeph>
-</codeblock>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph>ceph osd pool create helion-ceph-nova 100
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Verify that a new pool was created.</p>
-
-<codeblock>
-<codeph>rados lspools
-</codeph>
-</codeblock>
-
-<p>Output:</p>
-
-<codeblock>
-<codeph>rbd ls helion-ceph-nova
-</codeph>
-</codeblock>
-</li>
+<li>Verify Ceph
+                                health.<codeblock><codeph>ceph health
+</codeph></codeblock><p>Output:</p><codeblock><codeph>HEALTH_OK
+</codeph></codeblock></li>
+<li>Create a new pool for the Cinder
+                                        volume.<codeblock><codeph>ceph osd pool create &lt;cinder pool name&gt; &lt;pg-num&gt;
+</codeph></codeblock><p>For
+                                        example:</p><codeblock><codeph>ceph osd pool create helion-ceph-nova 100
+</codeph></codeblock></li>
+<li>Verify that a new pool was
+                                        created.<codeblock><codeph>rados lspools
+</codeph></codeblock><p>Output:</p><codeblock><codeph>rbd ls helion-ceph-nova
+</codeph></codeblock></li>
 <li>
 <p>Create symbolic or softlinks to the relevant files on the overcloud controller nodes.</p>
 
-<codeblock>
-<codeph>ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
+<codeblock><codeph>ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/nova/lib/python2.7/site-packages
 ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/nova/lib/python2.7/site-packages
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </li>
 </ol>
 <section id="configure-nova"> <title>Configure Nova</title>
 <p>Configure Nova to boot all Virtual Machines directly to Ceph. Edit <codeph>nova.conf</codeph> on each overcloud controller and compute node.</p>
 <p>Perform the following steps:</p>
 <ol>
-<li>
-<p>Edit <codeph>/etc/nova/nova.conf</codeph> and add the following options in the respective sections:</p>
-
-<codeblock>
-<codeph># For Ceph integration
+<li>Edit <codeph>/etc/nova/nova.conf</codeph> and add the following options in the respective
+                                        sections:<codeblock><codeph># For Ceph integration
 [DEFAULT]
 libvirt_inject_password=false
 libvirt_inject_key=false
@@ -107,41 +70,24 @@ The last libvirt section in the conf file
 images_type=rbd
 images_rbd_pool=helion-ceph-nova
 images_rbd_ceph_conf=/etc/ceph/ceph.conf
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Restart the Nova services:</p>
-
-<ul>
-<li>
-<p>From the compute node</p>
-
-<codeblock>
-<codeph>service nova-compute restart
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>From all controller nodes:</p>
-
-<codeblock>
-<codeph>service nova-api restart
+</codeph></codeblock></li>
+<li>Restart the Nova services:<ul>
+                                                <li>
+                                                  <p>From the compute node</p>
+                                                  <codeblock><codeph>service nova-compute restart
+</codeph></codeblock>
+                                                </li>
+                                                <li>
+                                                  <p>From all controller nodes:</p>
+                                                  <codeblock><codeph>service nova-api restart
 service nova-scheduler restart
 service nova-conductor restart
-</codeph>
-</codeblock>
-</li>
-</ul>
-</li>
-<li>
-<p>From the overcloud controller node0, execute the following command:</p>
-
-<codeblock>
-<codeph>source /root/stackrc
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock>
+                                                </li>
+                                        </ul></li>
+<li>From the overcloud controller node0, execute the following
+                                        command:<codeblock><codeph>source /root/stackrc
+</codeph></codeblock></li>
 </ol>
 <!--
 [[end of nova flow]]
@@ -188,7 +134,7 @@ There are two ways to attach a Cinder volume to a Nova instance.
 
 **Attaching a Cinder volume from Horizon overcloud dashboard**
 
-To attach a Cinder volume to Nova instance [<tm tmtype="reg">OpenStack</tm> User Guide](http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html)
+To attach a Cinder volume to Nova instance [OpenStack User Guide](http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html)
 -->
 <!--
 1. In the Horizon Dashboard, click the **Project** Tab.  

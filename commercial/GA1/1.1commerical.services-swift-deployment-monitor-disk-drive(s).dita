@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2368">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Monitor Disk Drive(s)</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Monitor Disk Drive(s)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -24,9 +24,10 @@
 </b> service, which runs in the undercloud, helps cloud admins monitor the health of the disk drive(s) of all the swift node(s).</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>HP <tm tmtype="reg">Helion OpenStack</tm> cloud is successfully deployed. <!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
-</li>
-<li>The Icinga service is active and running in the undercloud</li>
+<li>HP Helion OpenStack cloud is successfully deployed. <p><i>(Starter Object Storage (Swift) nodes
+                            are functional by default as they are part of cloud deployment)</i>
+                    </p></li>
+<li>The Icinga service is active and running in the undercloud.</li>
 <li>hpssacli utility must be downloaded and installed. To download and install, refer <xref href="../../commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita" >hpssacli utility</xref>.</li>
 </ul>
 </section>
@@ -44,33 +45,25 @@ With the list of disk labels of a Swift node, `mount` command allows you to chec
 -->
 Perform the following steps to monitor the status of the disk drive:</p>
 <ol>
-<li>
-<p>In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b> (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:</p>
-
-<ul>
-<li>Username: <i>icingaadmin</i>
-</li>
-<li>Password: <i>icingaadmin</i> </li>
-</ul>
-</li>
-<li>
-<p>Click <b>Status</b> on the left panel and then click 
-<xref format="html" href="javascript:window.open('/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
-<b>
-<varname>Host Detail</varname>
-</b>
-<!--(opens in a new window)-->
-</xref>.</p>
-</li>
-<li>
-<p>In the <b>Host</b> column, <xref format="html" href="javascript:window.open('/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
-<b>click the icon</b>
-<!-- (opens in a new window)--> </xref> next to the host IP when the tooltip displays as "View Service Details For This Host". <!--A BR tag was used here in the original source.-->
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the <xref format="html" href="javascript:window.open('/media/swift_icinga-disk-monitoring.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
-<b>status of the disk drive(s)</b>
-<!-- (opens in a new window)-->
-</xref> of the selected Swift node.</p>
-</li>
+<li> In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b>
+                    <b><i>(http://&lt;Undercloud_IP&gt;/icinga/</i></b>). The default login
+                    credentials are as follows:<ul>
+                        <li>Username: <i>icingaadmin</i>
+                        </li>
+                        <li>Password: <i>icingaadmin</i>
+                        </li>
+                    </ul></li>
+<li>Click <b>Status</b> on the left panel and click <b>Host Details</b>.<image
+                        href="../../media/icinga_host-details.png" id="image_etd_hdv_ns"/><p>The
+                        page navigates to the <b>Host Status Details for all Hosts</b>.<image
+                            href="../../media/swift_icinga_view-details.png" id="image_o53_t2v_ns"
+                        /></p></li>
+<li>In the <b>Host</b> column, click the icon  next to the host IP when the tooltip displays as
+                            "<b><i>View Service Details For This Host</i></b>".  The page navigates
+                    to Service Status Details For Host &lt;<b>Swift node IP address </b>&gt; and
+                    displays the <b>status of the disk drive(s)</b> of the selected Swift node.
+                        <image href="../../media/swift_icinga-disk-monitoring.png"
+                        id="image_fly_g2w_ns"/></li>
 </ol>
 </section>
 <section id="status-messages"> <title>Status Messages</title>
@@ -81,39 +74,40 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 <colspec colname="col3"/>
 <thead>
 <row>
-<entry>Status</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Message</ph>
-</required-cleanup>
-</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Cause/Resolution</ph>
-</required-cleanup>
-</entry>
+<entry colsep="1" rowsep="1">Status</entry>
+    <entry colsep="1" rowsep="1"><ph>Message</ph>
+                            </entry>
+    <entry colsep="1" rowsep="1"><ph>Cause/Resolution</ph>
+                            </entry>
 </row>
 </thead>
 <tbody>
 <row>
-<entry>OK</entry>
-    <entry>Drive diagnostic completed: No errors found.</entry>
-    <entry> This message appears on Proxy servers where there are no account, container or object servers configured. This is a normal status.</entry>
+<entry colsep="1" rowsep="1">OK</entry>
+    <entry colsep="1" rowsep="1">Drive diagnostic completed: No errors found.</entry>
+    <entry colsep="1" rowsep="1"> This message appears on Proxy servers where there are no account,
+                                container or object servers configured. This is a normal
+                                status.</entry>
 </row>
 <row>
-<entry>WARNING </entry>
-    <entry>Drive status in a warning state. </entry>
-    <entry>Drive errors.</entry>
+<entry colsep="1" rowsep="1">WARNING </entry>
+    <entry colsep="1" rowsep="1">Drive status in a warning state. </entry>
+    <entry colsep="1" rowsep="1">Drive errors.</entry>
 </row>
 <row>
-<entry>CRITICAL </entry>
-    <entry>System Error. Check for hpssacli utility. </entry>
-    <entry>The hpssacli utility is not installed. To install see <xref href="../../commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita" > hpssacli utility for HP servers.</xref> </entry>
+<entry colsep="1" rowsep="1">CRITICAL </entry>
+    <entry colsep="1" rowsep="1">System Error. Check for hpssacli utility. </entry>
+    <entry colsep="1" rowsep="1">The hpssacli utility is not installed. To install see <xref
+                                    href="../../commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita"
+                                    > hpssacli utility for HP servers.</xref>
+                            </entry>
 </row>
 <row>
-<entry>FAIL </entry>
-    <entry>&lt;Failed Drive&gt; drive(s)  may be missing or in a failed state. <!--A BR tag was used here in the original source.-->                         Found error in drive(s): &lt;drive slot and location&gt; </entry>
-    <entry>Verify a failure of drives and missing drives.</entry>
+<entry colsep="1" rowsep="1">FAIL </entry>
+    <entry colsep="1" rowsep="1">&lt;Failed Drive&gt; drive(s) may be missing or in a failed state.
+                                <!--A BR tag was used here in the original source.--> Found error in
+                                drive(s): &lt;drive slot and location&gt; </entry>
+    <entry colsep="1" rowsep="1">Verify a failure of drives and missing drives.</entry>
 </row>
 </tbody>
 </tgroup>

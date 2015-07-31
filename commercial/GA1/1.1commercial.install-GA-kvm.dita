@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7417">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Installation and Configuration for KVM Hypervisor</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Installation and Configuration for KVM Hypervisor</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -20,13 +20,18 @@
 <p>
 
 </p>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP <tm tmtype="reg">Helion OpenStack</tm> on a suitably specified and prepared system.</p>
-<section id="installing-hp-helion-openstack"> <title>Installing HP <tm tmtype="reg">Helion OpenStack</tm></title>
+  <p>
+    <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
+  </p>
+  <p>(If you already have 1.1 installed, you can update HP Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
+  <p>After you have completed and verified the HP Helion OpenStack installation, perform the following tasks as appropriate.</p>
+<p>HP Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.</p>
+<section id="installing-hp-helion-openstack"> <title>Installing HP Helion OpenStack</title>
 <p>The installation and configuration process for KVM consists of the following general steps:</p>
 <ul>
 <li>Verify Prerequisites</li>
 <li>Downloading and extracting the installation packages</li>
-<li>Installing HP <tm tmtype="reg">Helion OpenStack</tm>
+<li>Installing HP Helion OpenStack
 
 <ul>
 <li>Configure proxy information</li>
@@ -42,12 +47,11 @@
 <section id="pre"> <title>Verify Prerequisites</title>
 <p>To ensure successful installation, <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >perform required pre-installation tasks</xref> before you start.</p>
 </section>
-<section id="install"> <title>Installing HP <tm tmtype="reg">Helion OpenStack</tm></title>
+<section id="install"> <title>Installing HP Helion OpenStack</title>
 <p>Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed cloud host:</p>
 <ul>
-<li>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#proxy" type="section" scope="external"  >Configure proxy information</xref>
-</li>
+<li><xref href="1.1commercial.install-GA-prereqs.dita#topic9786/proxy"/>
+        </li>
 <li>
 <xref type="section" href="#topic7417/startseed">Install the seed VM and building your cloud</xref>
 </li>
@@ -59,15 +63,13 @@
 <p>Make sure you are logged into the seed cloud host as root. If not:</p>
 
 <codeblock>
-<codeph>sudo su -
-</codeph>
+<codeph>sudo -i</codeph>
 </codeblock>
 </li>
 <li>
 <p>Execute the <codeph>kvm-custom-ips.json</codeph> file for the undercloud and overcloud nodes using the <codeph>source</codeph> command. The <codeph>source</codeph> command sets the environment variables in the JSON file within the current shell.</p>
-
-<p>
-<b>Note</b>: You must use the source command to add variables to your existing deployment.</p>
+          <note> You must use the source command to add variables to your existing
+            deployment.</note>
 
 <codeblock>
 <codeph>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
@@ -81,9 +83,8 @@
 <codeph>bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed |&amp; tee seedinstall.log
 </codeph>
 </codeblock>
-
-<p>
-<b>Note</b>:The installation process takes approximately 10 minutes to complete. The output will be recorded in a file named <i>seedinstall.log</i>.</p>
+          <note>The installation process takes approximately 10 minutes to complete. The output will
+            be recorded in a file named <i>seedinstall.log</i>.</note>
 
 <p>When the seed VM startup is complete, you should see a message similar to the following:</p>
 
@@ -91,16 +92,15 @@
 <codeph>"Wed Oct 23 11:25:10 IST 2014 --- completed setup seed" 
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> If <codeph>hp_ced_host_manager.sh</codeph> fails to start the seed, restart the installation (step 1) and then follow the rest of the steps.</p>
+          <note>If <codeph>hp_ced_host_manager.sh</codeph> fails to start the seed, restart the
+            installation (step 1) and then follow the rest of the steps.</note>
 </li>
 <li>
 <p>Make sure the information in the <xref href="../../commercial/GA1/1.1commercial.install-GA-CSV.dita" >
 <codeph>baremetal.csv</codeph> configuration file</xref> file is correct and upload the file to <codeph>/root</codeph>.</p>
-
-<p>
-<b>Note:</b> For more information on creating this file, refer to <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section" scope="external"  >Creating the baremetal.csv file</xref> on the <i>Prerequisites</i> page.</p>
+          <note>For more information on creating this file, refer to <xref
+              href="1.1commercial.install-GA-prereqs.dita#topic9786/csv">Creating the baremetal.csv
+              file</xref> on the <i>Prerequisites</i> page.</note>
 </li>
 <li>
 <p>If you are integrating LDAP into your environment, copy the configuration files, as described in <xref href="../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >Integrating LDAP</xref>, to the seed cloud host.</p>
@@ -127,9 +127,7 @@ chmod 0600 $/root/tripleo/overcloud-env.json
 <codeph>ssh root@&lt;seed_VM_IP_address&gt;
 </codeph>
 </codeblock>
-
-<p>
-<b>Note</b>: It might take a few moments for the seed VM to become reachable.</p>
+          <note>It might take a few moments for the seed VM to become reachable.</note>
 </li>
 <li>
 <p>When prompted for host authentication, type <codeph>yes</codeph> to allow the SSH connection to proceed.</p>
@@ -190,10 +188,10 @@ For example:</p>
 <p>NTP servers are validated</p>
 </li>
 </ul>
-<p>b. The seed is customized and its <tm tmtype="reg">OpenStack</tm> services are configured and started. The undercloud node is registered with the seed's ironic service</p>
+<p>b. The seed is customized and its OpenStack services are configured and started. The undercloud node is registered with the seed's ironic service</p>
 
 <p>c. The undercloud is deployed, booted, and its heat stack is configured.
-The undercloud <tm tmtype="reg">OpenStack</tm> services are then configured and started.
+The undercloud OpenStack services are then configured and started.
 The overcloud nodes are registered with the undercloud's ironic service.</p>
 
 <p>d. The overcloud controller heat stack is configured, booting and deploying images to the Overcloud Controller nodes and the SwiftStorage nodes.</p>
@@ -215,14 +213,14 @@ The overcloud nodes are registered with the undercloud's ironic service.</p>
 <codeph>"HP - completed - Tue Oct 23 16:20:20 UTC 2014"
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> If the installation does not complete properly, refer to the <xref href="../../commercial/GA1/1.1commercial.troubleshooting.dita" >Troubleshooting</xref> document.</p>
+          <note>If the installation does not complete properly, refer to the <xref
+              href="../../commercial/GA1/1.1commercial.troubleshooting.dita">Troubleshooting</xref>
+            document.</note>
 </li>
 </ol>
 </section>
 <section id="verifying-your-installation"> <title>Verify your installation</title>
-<p>To verify that the installation is successful, connect to the HP <tm tmtype="reg">Helion OpenStack</tm> dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
+<p>To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
 <!-- Not needed in 1.1
 ## Create projects for LDAP users {#ldap}
 

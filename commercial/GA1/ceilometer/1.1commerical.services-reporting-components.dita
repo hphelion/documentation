@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4362">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Metering Service (Ceilometer) Components</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Metering Service (Ceilometer) Components</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -16,11 +16,11 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceilometer/1.1commerical.services-reporting-components.md-->
  <!--permalink: /helion/openstack/1.1/services/reporting/components/--></p>
-<p>The Metering service is included by the TripleO installer as part of the HP <tm tmtype="reg">Helion OpenStack</tm> installation. During installation, the Metering service is automatically configured to collect data from the Nova, Cinder, Glance and Neutron services.</p>
+<p>The Metering service is included by the TripleO installer as part of the HP Helion OpenStack installation. During installation, the Metering service is automatically configured to collect data from the Nova, Cinder, Glance and Neutron services.</p>
 <p>All the metering processes have a unified configuration file that can be found at <i>/etc/ceilometer/ceilometer.conf</i> on the specific overcloud controller you are logged in to.</p>
 <p>The TripleO installation creates several management nodes running different metering components.</p>
 <p>
-  <image href="../../../media/ceil_overallarchi.png"/>
+  <image href="../../../media/ceil_overallarchi.png" placement="break"/>
 </p>
 <section id="components-in-tripleo-overcloud-controller0"> <title>Components in TripleO Overcloud Controller0</title>
 <p>This controller node is the first of the High Available (HA) cluster. In this node there is an instance of the Ceilometer API running under the HA Proxy Virtual IP address. The Alarm services run on Overcloud Controller0.</p>
@@ -66,7 +66,7 @@
 <section id="ceilometer-sample-polling"> <title>Ceilometer Sample Polling</title>
 <p>The Sample Polling is part of the Central Agent. Once sent to the RabbitMQ service, they are consumed by the Collector and stored in the database. The Collector is also responsible for consuming and storing notifications. Here there is a high level picture of the overall polling/collecting cycle.</p>
 <p>
-  <image href="../../../media/ceil_collectorandagents.png"/>
+  <image href="../../../media/ceil_collectorandagents.png" placement="break"/>
 </p>
 </section>
 <section id="centralagent"> <title>Ceilometer Central Agent</title>

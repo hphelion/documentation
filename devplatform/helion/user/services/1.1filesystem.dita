@@ -104,7 +104,7 @@ mkdir ${!FOO}/myapp
   <b>Note</b>
 </p>
 <p>To use declarations like these in
-<xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#hooks" type="section" scope="external"  >
+<xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#hooks" type="section"  >
 <i>hooks</i>
 </xref>, put them in a
 separate bash script. Brace expansion and grouping cannot be used
@@ -132,7 +132,7 @@ information for all services:
                 }
         }
 -->
-Since the <xref href="../../../../devplatform/helion/user/reference/1.1environment.dita#environment-variables" type="section" scope="external"  >
+Since the <xref href="../../../../devplatform/helion/user/reference/1.1environment.dita#environment-variables" type="section"  >
 <i>environment
 variables</i>
 </xref> are

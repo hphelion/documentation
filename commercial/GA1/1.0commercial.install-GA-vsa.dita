@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13582">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Installation: Deploy and Configure HP StoreVirtual VSA</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Installation: Deploy and Configure HP StoreVirtual VSA</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -59,11 +59,11 @@
 <section id="high-level-view"> <title>Deployment and Configuration Procedure Overview</title>
 <p>The following diagram gives an overview of the steps involved in deploying, configuring and integrating StoreVirtual nodes into your cloud. The subsequent sections provide the detailed instructions on integration workflow.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreVirtual VSA Deployment and Configuration Procedure (opens in a new window)</xref>
+  <image href="../../media/storevirtual-integration.png" placement="break"/>HP StoreVirtual VSA Deployment and Configuration Procedure 
 </p>
 <!--1 - **Install CMC**
      
-   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes along with the HP <tm tmtype="reg">Helion OpenStack</tm> installer and is present in the **Tripleo** directory. 
+   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes along with the HP Helion OpenStack installer and is present in the **Tripleo** directory. 
 
 2 - **Add VSA Baremetal nodes to ironic database**
     
@@ -120,7 +120,7 @@
    * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from seed cloud. -->
 </section>
 <section id="install-hp-storevirtual-cmc"> <title>Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux</title>
-<p>In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP <tm tmtype="reg">Helion OpenStack</tm> management network.</p>
+<p>In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion OpenStack management network.</p>
 </section>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
@@ -128,7 +128,7 @@
 <p>You must be running the X Windows System to install the CMC.</p>
 </li>
 <li>
-<p>We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP <tm tmtype="reg">Helion OpenStack</tm> management network.</p>
+<p>We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack management network.</p>
 </li>
 </ul>
 <p>
@@ -150,7 +150,7 @@
 <section id="installation"> <title>Installation</title>
 <ol>
 <li>
-<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged along with the HP <tm tmtype="reg">Helion OpenStack</tm> installer) has the executable permission otherwise execute the following command:</p>
+<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged along with the HP Helion OpenStack installer) has the executable permission otherwise execute the following command:</p>
 
 <codeblock>
 <codeph># chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
@@ -222,7 +222,7 @@ From the directory in which the files are installed, click the <b>HP Store Virtu
 <p>The bundled license for the StoreVirtual VSA has a maximum limit of 50TB per node, and hence the total amount of the configured storage on the StoreVirtual system should not exceed 50 TB.</p>
 </li>
 </ul>
-<!--<img src="/media/storevirtual-cluster-network-diagram1.png"/>-->
+<!--<img src="/media/storevirtual-cluster-network-diagram1.png" placement="break"/>-->
 </section>
 <section id="enroll-new-baremetal-server"> <title>Enrolling the New Baremetal Server</title>
 <p>To deploy HP StoreVirtual VSA, perform the following:</p>
@@ -397,14 +397,14 @@ from the above steps.</p>
 <p>By default, the CMC is configured to discover the StoreVirtual nodes in the subnet in which it is installed. You can manually add the nodes also.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >CMC Main Page (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc1.png" placement="break"/>CMC Main Page 
 </p>
 </li>
 <li>
 <p>In the CMC UI, click <b>Find</b> and then click <b>Find Systems</b> from the left panel.<!--A BR tag was used here in the original source.--> Find Systems dialogue box is displayed.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Find Systems option (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc2.png" placement="break"/>Find Systems option 
 </p>
 </li>
 <li>
@@ -414,11 +414,11 @@ from the above steps.</p>
 <b>Note:</b>To get the details of the HP StoreVirtual VSA IP, log in to StoreVirtual system and check <codeph>/etc/vsa/vsa_network_config.json</codeph> file.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Add option (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc3.png" placement="break"/>Add option 
 </p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc4.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Find option (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc4.png" placement="break"/>Find option 
 </p>
 </li>
 <li>
@@ -437,14 +437,14 @@ from the above steps.</p>
 <p>Click <b>Close</b> to return to the Home page.<!--A BR tag was used here in the original source.--> The discovered nodes are displayed under <b>Available Systems</b> option in the left panel.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc5.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Discovered Nodes Under Available Systems (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc5.png" placement="break"/>Discovered Nodes Under Available Systems 
 </p>
 </li>
 <li>
 <p>To add the node to a management group, right-click the node to display a menu and select <b>Add to a New Management Group</b>.<!--A BR tag was used here in the original source.--> Management Groups, Clusters, And Volumes wizard is displayed.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc6.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Create Management Page (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc6.png" placement="break"/>Create Management Page 
 </p>
 </li>
 <li>
@@ -487,7 +487,7 @@ from the above steps.</p>
 <p>Click <b>Next</b>.<!--A BR tag was used here in the original source.-->The Management Group and Cluster is created and displays in the Home page of CMC.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc7.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >CMC Main Page with the Cluster (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc7.png" placement="break"/>CMC Main Page with the Cluster 
 </p>
 </li>
 </ol>
@@ -539,7 +539,7 @@ from the above steps.</p>
 <ul>
 <li>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.undercloud-resources-overview.dita" >Working with HP <tm tmtype="reg">Helion OpenStack</tm> Undercloud Horizon Dashboard</xref>-(Recommended)</p>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-resources-overview.dita" >Working with HP Helion OpenStack Undercloud Horizon Dashboard</xref>-(Recommended)</p>
 </li>
 <li>
 <p>
@@ -556,12 +556,12 @@ from the above steps.</p>
     For detailed intructions, see the  document. 
 - [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)-  REQUIRED
 
-    Our managed DNS service, based on the <tm tmtype="reg">OpenStack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+    Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
     For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
 <!--## Next step
 
-Configure HP 3PAR StoreServ, see [HP <tm tmtype="reg">Helion OpenStack</tm> Commercial: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/).-->
+Configure HP 3PAR StoreServ, see [HP Helion OpenStack Commercial: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/).-->
 <p>
   <xref href="#topic13582"> Return to Top </xref>
 </p>

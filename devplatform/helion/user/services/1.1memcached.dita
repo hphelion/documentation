@@ -28,7 +28,7 @@
 applications and frameworks. It is available in Application Lifecycle Service as a service
 which can be shared by application instances.</p>
 <section id="using-the-service"> <title>Using the Service</title>
-<p>As with other <xref href="../../../../devplatform/helion/user/services/1.1data-services.dita#data-services" type="section" scope="external"  >data services</xref>, the
+<p>As with other <xref href="../../../../devplatform/helion/user/services/1.1data-services.dita#data-services" type="section"  >data services</xref>, the
 location and port of the memcached service is exposed to the application
 via environment variables: MEMCACHE_URL or VCAP_SERVICES.</p>
 <p>The easiest way to connect an application to a Memcached service is to
@@ -47,15 +47,14 @@ administrator can run the following commands on the Cloud Controller:</p>
 kato restart memcached_node
 </codeph>
 </codeblock>
-<p>With SASL enabled, applications must parse the<xref href="../../../../devplatform/helion/user/services/1.1data-services.dita#database-services-vcap-services" type="section" scope="external"  >
+<p>With SASL enabled, applications must parse the<xref href="../../../../devplatform/helion/user/services/1.1data-services.dita#database-services-vcap-services" type="section"  >
 <i>VCAP_SERVICES</i>
 </xref>
 environment variables to extract the <codeph>name</codeph>, <codeph>user</codeph>, and <codeph>password</codeph>
 strings from the memcached <codeph>credentials</codeph> list. Using SASL with Memcached
 requires client libraries/modules in the application which support
 authentication via SASL.</p>
-<p>
-<b>Warning:</b> Running Memcached <b>without</b> SASL enabled is insecure and should only be done if all system users are trusted. Any Application Lifecycle Service user can connect to the provisioned service instance if the IP address and port is discovered.</p>
+    <note type="warning">Running Memcached <b>without</b> SASL enabled is insecure and should only be done if all system users are trusted. Any Application Lifecycle Service user can connect to the provisioned service instance if the IP address and port is discovered.</note>
 </section>
 <section id="django-example-using-memcached"> <title>Django Example using Memcached</title>
 <p>The <xref href="https://github.com/Stackato-Apps/django-gtd" scope="external" format="html" >Django GTD</xref> sample

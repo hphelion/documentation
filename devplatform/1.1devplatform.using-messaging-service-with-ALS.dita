@@ -25,12 +25,12 @@
 
 </p>
 <p>The Messaging Service provides on-demand RabbitMQ clusters and enables automatic access to the RabbitMQ management console. RabbitMQ is also available within ALS as a single-instance, unmanaged service. If your application relies on high message throughput or if you want to move an application from dev/test into production, you should strongly consider using the Messaging Service instead of the RabbitMQ service embedded with ALS.</p>
-<p>If the <tm tmtype="reg">Helion OpenStack</tm> cloud was configured with three availability zones, the Messaging Service will automatically deploy the cluster across all three so that the cluster is resilient to server, VM, or availability zone failures.</p>
+<p>If the Helion <tm tmtype="reg">OpenStack</tm> cloud was configured with three availability zones, the Messaging Service will automatically deploy the cluster across all three so that the cluster is resilient to server, VM, or availability zone failures.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <p>To use the Messaging Service ALS, you need to:</p>
 <ol>
 <li>
-<xref href="../devplatform/1.1devplatform.using-the-messaging-service.dita#create" type="section" scope="external"  >Create a RabbitMQ cluster</xref> from the <tm tmtype="reg">OpenStack</tm> Dashboard if a cluster does not already exist. </li>
+<xref href="../devplatform/1.1devplatform.using-the-messaging-service.dita#create" type="section">Create a RabbitMQ cluster</xref> from the OpenStack Dashboard if a cluster does not already exist. </li>
 <li>Once a cluster has been created, you can connect an application deployed to ALS with the Messaging Service.</li>
 <li>
 <p>To connect, you must create an environment variable in the <i>manifest.yml</i> file of the application you wish to connect to the Messaging Service. This will tell your application how to connect to the cluster using AMQP. The environment variable can be named anything you prefer. We will use <b>MQ_URL</b> in this example.</p>

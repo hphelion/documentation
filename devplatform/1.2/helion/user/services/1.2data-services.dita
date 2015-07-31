@@ -22,80 +22,80 @@
  <!--./devplatform/1.2/helion/user/services/1.2data-services.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/services/data-services/--></p>
 <p>The Application Lifecycle Service includes a number of data services which can be bound to the
-applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="../../../../../devplatform/1.2/helion/user/services/1.2filesystem.dita#persistent-file-system" >persistent file system</xref> service and <xref href="../../../../../devplatform/1.2/helion/user/services/1.2memcached.dita#memcached" type="section" scope="external"  >Memcached</xref>.</p>
+  applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="1.2filesystem.dita#topic4410/creating-a-persistent-file-system" >persistent file system</xref> service and 
+  <xref href="1.2memcached.dita">Memcached</xref>.</p>
 <p>For detailed information on using an <b>external</b> database system, see <xref type="section" href="#topic19772/using-external-databases">Using External Database Services</xref>.</p>
 <ul>
 <li>
-<xref type="section" href="#topic19772/configuring-helion-data-services">Configuring Application Lifecycle Service Data Services</xref>
-
-<ul>
+        <xref type="section" href="#topic19772/configuring-helion-data-services">Configuring
+          Application Lifecycle Service Data Services</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic19772/using-manifest-yml">Defining Services in the
+                <i>manifest.yml</i> File (before push)</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic19772/using-helion-push">Creating Services During
+              Push</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic19772/creating-and-binding-services">Creating and
+              Binding Services After Push</xref>
+          </li>
+        </ul></li>
 <li>
-<xref type="section" href="#topic19772/using-manifest-yml">Defining Services in the <i>manifest.yml</i> File (before push)</xref>
-</li>
-<li>
-<xref type="section" href="#topic19772/using-helion-push">Creating Services During Push</xref>
-</li>
-<li>
-<xref type="section" href="#topic19772/creating-and-binding-services">Creating and Binding Services After Push</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic19772/using-database-services">Using Database Service Environment Variables</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic19772/vcap-services">VCAP_SERVICES</xref>
-</li>
-<li>
-<xref type="section" href="#topic19772/using-external-databases">Connecting to External Databases</xref>
-</li>
-<li>
-<xref type="section" href="#topic19772/accessing-database-services">Directly Accessing Database Services</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic19772/using-dbshell">Using <i>dbshell</i>
-</xref>
-</li>
-<li>
-<xref type="section" href="#topic19772/using-tunnel">Using Tunnel</xref>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic19772/using-database-services">Using Database Service
+          Environment Variables</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic19772/vcap-services">VCAP_SERVICES</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic19772/using-external-databases">Connecting to External
+              Databases</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic19772/accessing-database-services">Directly Accessing
+              Database Services</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic19772/using-dbshell">Using <i>dbshell</i>
+                </xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic19772/using-tunnel">Using Tunnel</xref>
+              </li>
+            </ul></li>
+        </ul></li>
 <li>
 <xref type="section" href="#topic19772/pre-populating-a-database-while-pushing-an-app">Pre-populating a database while pushing an app</xref>
 </li>
 <li>
-<xref type="section" href="#topic19772/backing-up-a-mysql-database">Backing up a MySQL database</xref>
-
-<ul>
+        <xref type="section" href="#topic19772/backing-up-a-mysql-database">Backing up a MySQL
+          database</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic19772/using-helion-run">Using <i>helion run</i>
+            </xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic19772/using-helion-tunnel">Using <i>helion tunnel</i>
+            </xref>
+          </li>
+        </ul></li>
 <li>
-<xref type="section" href="#topic19772/using-helion-run">Using <i>helion run</i>
-</xref>
-</li>
-<li>
-<xref type="section" href="#topic19772/using-helion-tunnel">Using <i>helion tunnel</i>
-</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic19772/importing-a-mysql-database">Importing a MySQL database</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic19772/sqldbshell">Using <i>dbshell</i>
-</xref>
-</li>
-<li>
-<xref type="section" href="#topic19772/sqltunnel">Using <i>helion tunnel</i>
-</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic19772/importing-a-mysql-database">Importing a MySQL
+          database</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic19772/sqldbshell">Using <i>dbshell</i>
+            </xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic19772/sqltunnel">Using <i>helion tunnel</i>
+            </xref>
+          </li>
+        </ul></li>
 <li>
 <xref type="section" href="#topic19772/database-version-changes">Changing Database Versions</xref>
 </li>
@@ -121,33 +121,30 @@ for using the <i>manifest.yml</i> file, please see <xref href="../../../../../de
 </xref>.</p>
 <p>A simple example telling the Application Lifecycle Service Client to request a MySQL database named
 <b>cirrusdb</b>:</p>
-<codeblock>
-  <codeph>name: cirrus
+<codeblock>name: cirrus
 mem: 256M
 instances: 2
 services:
-    cirrusdb: mysql
-</codeph>
-</codeblock>
+    cirrusdb: mysql</codeblock>
 <p>Possible service types are:</p>
 <ul>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-filesystem" type="section" scope="external"  >filesystem</xref>
+  <xref href="../reference/1.2glossary.dita#topic6187/term-filesystem" type="section"   >filesystem</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-memcached" type="section" scope="external"  >memcached</xref>
+  <xref href="../reference/1.2glossary.dita#topic6187/term-memcached" type="section"   >memcached</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-mysql" type="section" scope="external"  >mysql</xref>
+  <xref href="../reference/1.2glossary.dita#topic6187/term-mysql" type="section"   >mysql</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-postgresql" type="section" scope="external"  >postgresql</xref>
+  <xref href="../reference/1.2glossary.dita#topic6187/term-postgresql" type="section"   >postgresql</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-RabbitMQ" type="section" scope="external"  >rabbitmq</xref>
+  <xref href="../reference/1.2glossary.dita#topic6187/term-RabbitMQ" type="section"   >rabbitmq</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-Redis" type="section" scope="external"  >redis</xref>
+  <xref href="../reference/1.2glossary.dita#topic6187/term-Redis" type="section"   >redis</xref>
 </li>
 </ul>
 <p>To access the database services after they've been created, see <xref type="section" href="#topic19772/accessing-database-services">Accessing Database Services</xref>.</p>
@@ -156,8 +153,7 @@ services:
 <p>In order to ensure that the correct services are configured each time the app is pushed, list the services in the <i>manifest.yml</i> file.</p>
 <p>However, if you do not specify any services in the <i>manifest.yml</i> file, you will be prompted to create them during the push process.</p>
 <p>To set up a database service, for example, enter "y" when asked and follow the prompts:</p>
-<codeblock>
-  <codeph>helion push
+<codeblock>helion push
 
 ...
 Would you like to bind any services to 'cirrus' ?  [yN]: y
@@ -171,27 +167,27 @@ Please select one you wish to provision: 2
 Specify the name of the service [mysql-18cab]: cirrusdb
 Creating Service: OK
 Binding Service: OK
-...
-</codeph>
-</codeblock>
+...</codeblock>
 </section>
 <section id="creating-and-binding-services"> <title>Creating and Binding Services After Push</title>
 <p>It is possible to create services and bind them to an app after they are pushed to the Application Lifecycle Service server.</p>
 <p>There are two ways to do this:</p>
 <ol>
-<li>
-<p>Combine all parameters into a single command.</p>
-
-<codeblock>
-<codeph>helion create-service \&lt;service\&gt; \&lt;name\&gt; \&lt;app\&gt;**
-</codeph>
-</codeblock>
-
-<p>
-<b>service</b> is the <i>type</i> of service you want to create (mysql, redis, postgresql). <!--A BR tag was used here in the original source.--><b>name</b> is the name you want to assign to the service.<!--A BR tag was used here in the original source.--><b>app</b> is the name of the application the service is to be bound to.</p>
-
-<codeblock>
-<codeph>helion create-service mysql ordersdb myapp
+<li> Combine all parameters into a single command.<codeblock>helion create-service \&lt;service\&gt; \&lt;name\&gt; \&lt;app\&gt;**</codeblock><dl>
+            <dlentry>
+              <dt><codeph>service</codeph></dt>
+              <dd>is the <i>type</i> of service to be created (mysql, redis, postgresql,
+                mongodb)</dd>
+            </dlentry>
+            <dlentry>
+              <dt><codeph>name</codeph></dt>
+              <dd>is the name you want to assign to the service.</dd>
+            </dlentry>
+            <dlentry>
+              <dt><codeph>app</codeph></dt>
+              <dd>is the name of the application the service is to be bound to.</dd>
+            </dlentry>
+          </dl><codeblock>helion create-service mysql ordersdb myapp
 Creating Service: OK
 Binding Service: OK
 Stopping Application [myapp]: OK
@@ -204,27 +200,35 @@ helion apps
 | Application | # | Health      | URLS                      | Services       |
 +-------------+---+-------------+---------------------------+----------------+
 | myapp       | 1 | RUNNING     | myapp.helion-xxxx.local | ordersdb       |
-+-------------+---+-------------+---------------------------+----------------+
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Pass all parameters in separate commands.</p>
-
-<p>These two commands (<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-create-service" >helion create-service</xref> and <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-bind-service" type="section" scope="external"  >helion bind-service</xref>) do the same thing as if all three parameters were passed using <codeph>create-service</codeph>, but provide additional flexibility to create and configure the service before binding it to an app.</p>
-
-<codeblock>
-<codeph>create-service \&lt;service\&gt; \&lt;name\&gt;
-
-bind-service \&lt;servicename\&gt; \&lt;app\&gt;
-</codeph>
-</codeblock>
-
-<p>
-<b>service</b> is the <i>type</i> of service to be created (mysql, redis, postgresql, mongodb). <!--A BR tag was used here in the original source.--><b>name</b> is the name you want to assign to the service.<!--A BR tag was used here in the original source.--><b>servicename</b> is the name assigned to this service during the <codeph>create-service</codeph> command. <!--A BR tag was used here in the original source.--><b>app</b> is the name of the application the service is to be bound to.</p>
-
-<codeblock>
-<codeph>helion create-service mysql customerdb
++-------------+---+-------------+---------------------------+----------------+</codeblock></li>
+<li> Pass all parameters in separate commands.<p>These two commands (<xref
+  href="../reference/1.2client-ref-service-management.dita#topic10567/command-create-service"
+              >helion create-service</xref> and <xref
+                href="../reference/1.2client-ref-service-management.dita#topic10567/command-bind-service"
+              type="section" >helion bind-service</xref>) do the same thing as if
+            all three parameters were passed using <codeph>create-service</codeph>, but provide
+            additional flexibility to create and configure the service before binding it to an
+            app.</p><codeblock>create-service \&lt;service\&gt; \&lt;name\&gt;
+bind-service \&lt;servicename\&gt; \&lt;app\&gt;</codeblock><dl>
+            <dlentry>
+              <dt><codeph>service</codeph></dt>
+              <dd>is the <i>type</i> of service to be created (mysql, redis, postgresql,
+                mongodb)</dd>
+            </dlentry>
+            <dlentry>
+              <dt><codeph>name</codeph></dt>
+              <dd>is the name you want to assign to the service.</dd>
+            </dlentry>
+            <dlentry>
+              <dt><codeph>servicename</codeph></dt>
+              <dd>is the name assigned to this service during the <codeph>create-service</codeph>
+                command. </dd>
+            </dlentry>
+            <dlentry>
+              <dt><codeph>app</codeph></dt>
+              <dd>is the name of the application the service is to be bound to.</dd>
+            </dlentry>
+          </dl><codeblock>helion create-service mysql customerdb
 Creating Service: OK
 
 helion bind-service customerdb myapp
@@ -239,33 +243,24 @@ $ helion apps
 | Application | # | Health  | URLS                      | Services              |
 +-------------+---+---------+---------------------------+-----------------------+
 | myapp       | 1 | RUNNING | myapp.helion-xxxx.local | ordersdb, customerdb  |
-+-------------+---+---------+---------------------------+-----------------------+
-</codeph>
-</codeblock>
-</li>
++-------------+---+---------+---------------------------+-----------------------+</codeblock></li>
 </ol>
 <p>For further information on the commands for managing services, or to remotely check the settings and credentials of any ALS service, please see
-the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita" >ALS Service Management</xref> command reference.</p>
+the <xref href="../reference/1.2client-ref-service-management.dita" >ALS Service Management</xref> command reference.</p>
 </section>
 <section id="using-database-services"> <title>Using Database Service Environment Variables</title>
-<p>When you bind a database service to an application, <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#environment-variables" type="section" scope="external"  >environment variables</xref> containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.</p>
-<p>Examples of how to parse and use these variables can be found in the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2index.dita#language-specific-deployment" type="section" scope="external"  >Language-Specific Deployment</xref> section.</p>
+  <p>When you bind a database service to an application, <xref href="../reference/1.2environment.dita#topic7631/helion-app-env" type="section" >environment variables</xref> containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.</p>
+  <p>Examples of how to parse and use these variables can be found in the <xref href="../deploy/1.2index.dita#topic1693/language-specific-deployment" type="section" >Language-Specific Deployment</xref> section.</p>
 </section>
 <section id="database-url"> <title>DATABASE_URL<!--Removed anchor point database-url--><!-- id="database-url" --></title>
 <p>
 <b>If only one relational database service</b> is bound to an application,
 use the DATABASE_URL environment variable. It contains the connection
 string for the bound database in the following format:</p>
-<codeblock>
-  <codeph>protocol://username:password@host:port/database_name
-</codeph>
-</codeblock>
+<codeblock>protocol://username:password@host:port/database_name</codeblock>
 <p>For example, a DATABASE_URL for a PostgreSQL service would look like
 this:</p>
-<codeblock>
-  <codeph>postgres://u65b0afbc8f8f4a1192b73e8d0eb38a24:p9eb83c11c59c4bcabfa475a4871e9242@192.168.69.117:5432/da17e48ddc82848499cb387bc65f5d4f9
-</codeph>
-</codeblock>
+<codeblock>postgres://u65b0afbc8f8f4a1192b73e8d0eb38a24:p9eb83c11c59c4bcabfa475a4871e9242@192.168.69.117:5432/da17e48ddc82848499cb387bc65f5d4f9</codeblock>
 <p>The <b>protocol</b> portion specifies the type of database. For example:</p>
 <ul>
 <li>mysql://</li>
@@ -303,8 +298,7 @@ VCAP_SERVICES instead.</p>
 <p>Contains a JSON string listing the credentials for all bound services,
 grouped by service type. VCAP_SERVICES variables use non-versioned service names, and the version number remains in the <b>label</b> key.</p>
 <p>For example:</p>
-<codeblock>
-  <codeph>{
+<codeblock>  {
         "mysql": [
                 {
                         "name": "mydb",
@@ -326,9 +320,7 @@ grouped by service type. VCAP_SERVICES variables use non-versioned service names
                         }
                 }
         ]
-}
-</codeph>
-</codeblock>
+}</codeblock>
 <p>This variable contains some additional meta-information and can be used for compatibility with Cloud Foundry.</p>
 </section>
 <section id="using-external-databases"> <title>Connecting External Databases</title>
@@ -340,7 +332,11 @@ grouped by service type. VCAP_SERVICES variables use non-versioned service names
 <p>setting the connection details in a User-Provided Service Instance</p>
 
 <p>
-<b>Note</b>: Apps which write database connection details during staging rather than taking them from environment variables at run time ("hard-coded applications") <b>must</b> be completely re-staged to pick up the new service location and credentials. Restarting the application will not automatically force restaging.</p>
+            <note>  Apps which write database connection details during staging rather than taking
+              them from environment variables at run time ("hard-coded applications") <b>must</b> be
+              completely re-staged to pick up the new service location and credentials. Restarting
+              the application will not automatically force restaging.</note>
+          </p>
 </li>
 </ul>
 <p>Container security prevents apps from connecting to arbitrary servers and ports on the local subnet for security reasons. To allow your application to connect to a database server you must either:</p>
@@ -350,15 +346,13 @@ grouped by service type. VCAP_SERVICES variables use non-versioned service names
 </ul>
 </section>
 <section id="accessing-database-services"> <title>Directly Accessing Database Services</title>
-<p>You may need to connect to a database service directly for purposes of initial database setup, modifying fields, running queries, or doing backups. These operations can be done using the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-dbshell" >helion dbshell</xref> (preferred) or <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> commands.</p>
+  <p>You may need to connect to a database service directly for purposes of initial database setup, modifying fields, running queries, or doing backups. These operations can be done using the <xref href="../reference/1.2client-ref-management.dita#topic50918/command-dbshell" >helion dbshell</xref> 
+    (preferred) or <xref href="../reference/1.2client-ref-service-management.dita#topic10567/command-tunnel" type="section" >helion tunnel</xref> commands.</p>
 </section>
 <section id="using-dbshell"> <title>Via <i>dbshell</i>
 </title>
-<p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-dbshell" type="section" scope="external"  >helion dbshell</xref> command creates an SSH tunnel to database services. To open an interactive shell to a service:</p>
-<codeblock>
-  <codeph>helion dbshell &lt;application_name&gt; &lt;service_name&gt;
-</codeph>
-</codeblock>
+  <p>The <xref href="../reference/1.2client-ref-management.dita#topic50918/command-dbshell" type="section" >helion dbshell</xref> command creates an SSH tunnel to database services. To open an interactive shell to a service:</p>
+<codeblock>  helion dbshell &lt;application_name&gt; &lt;service_name&gt;</codeblock>
 <p>The command automatically opens the appropriate database client for
 the database you're connecting to, provided that client is installed on
 the local system.</p>
@@ -366,28 +360,21 @@ the local system.</p>
 way to import data from dump files or set up schemas. For example,
 to import data from file in an application directory, you could use a
 hook in <i>manifest.yml</i> such as:</p>
-<codeblock>
-  <codeph>hooks:
+<codeblock>  hooks:
   post-staging:
-    - dbshell &lt; setup/sample-data.sql
-</codeph>
-</codeblock>
+    - dbshell &lt; setup/sample-data.sql</codeblock>
 </section>
 <section id="using-tunnel"> <title>Using Tunnel</title>
-<p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> command is an alternative
+  <p>The <xref href="../reference/1.2client-ref-service-management.dita#topic10567/command-tunnel" type="section"   >helion tunnel</xref> command is an alternative
 method for accessing database services. The command creates a small Ruby
 application which proxies database requests over HTTP. This is the
 standard method for database access in Cloud Foundry, but tends to be
 slower than using <i>dbshell</i>.</p>
 <p>To create or use a tunnel, execute the command:</p>
-<codeblock>
-  <codeph>helion tunnel &lt;servicename&gt;
-</codeph>
-</codeblock>
+<codeblock>  helion tunnel &lt;servicename&gt;</codeblock>
 <p>Depending on the service you are connecting to, a list of options will
 be provided. Here is an example of a connection to a MySQL service:</p>
-<codeblock>
-  <codeph>helion tunnel mydb
+<codeblock>  helion tunnel mydb
 
 Getting tunnel url: OK, at https://tunnel-xxxxx.helion-xxxx.local
 Getting tunnel connection info: OK
@@ -405,19 +392,17 @@ Service connection info:
 2. mysql
 3. mysqldump
 Which client would you like to start?
-</codeph>
 </codeblock>
 <p>You now have all the information you need to access the data. Note the
 <b>Service connection info</b> box that displays your username,
 password, and the actual database name.</p>
-<p>For simple command line access, select option <b>2. mysql</b>.</p>
-<p>To get a dump of the entire database, select option <b>3. mysqldump</b>.
-You will be prompted to enter a path to where the dump will be saved to.</p>
-<p>If you want to connect with a database viewer, or run multiple commands
-from the command line, or pass in SQL files, select option <b>1. none</b>.
-This will set up a port for you to connect with locally.</p>
-<codeblock>
-  <codeph>1. none
+<p>For simple command line access, select option <codeph>2. mysql</codeph>.</p>
+<p>To get a dump of the entire database, select option <codeph>3. mysqldump</codeph>. You will be
+        prompted to enter a path to where the dump will be saved to.</p>
+<p>If you want to connect with a database viewer, or run multiple commands from the command line, or
+        pass in SQL files, select option <codeph>1. none</codeph>. This will set up a port for you
+        to connect with locally.</p>
+<codeblock>1. none
 2. mysql
 3. mysqldump
 
@@ -426,30 +411,16 @@ Which client would you like to start? **none**
 Starting tunnel to remarks on port 10000.
 Open another shell to run command-line clients or
 use a UI tool to connect using the displayed information.
-Press Ctrl-C to exit...
-</codeph>
-</codeblock>
+Press Ctrl-C to exit...</codeblock>
 <p>Open a new command line window. You can connect to the MySQL database
 directly with:</p>
-<codeblock>
-  <codeph>mysql --protocol=TCP --host=localhost --port=10000 --user=&lt;user&gt; --password=&lt;password&gt; &lt;name&gt;
-</codeph>
-</codeblock>
+<codeblock>  mysql --protocol=TCP --host=localhost --port=10000 --user=&lt;user&gt; --password=&lt;password&gt; &lt;name&gt;</codeblock>
 <p>For example:</p>
-<codeblock>
-  <codeph>mysql --protocol=TCP --host=localhost --port=10000 --user=uT9efVVFCk --password=pHFitpIU1z d5eb2468f70ef4997b1514da1972
-</codeph>
-</codeblock>
+<codeblock>  mysql --protocol=TCP --host=localhost --port=10000 --user=uT9efVVFCk --password=pHFitpIU1z d5eb2468f70ef4997b1514da1972</codeblock>
 <p>To import an SQL file, call the same command and pipe in the file:</p>
-<codeblock>
-  <codeph>mysql --protocol=TCP --host=localhost --port=10000 --user=&lt;user&gt; --password=&lt;pass&gt; &lt;name&gt; &lt; mydatabase.sql
-</codeph>
-</codeblock>
+<codeblock>  mysql --protocol=TCP --host=localhost --port=10000 --user=&lt;user&gt; --password=&lt;pass&gt; &lt;name&gt; &lt; mydatabase.sql</codeblock>
 <p>To pull a dump of all databases:</p>
-<codeblock>
-  <codeph>mysqldump -A --protocol=TCP --port=10000 --host=localhost --user=&lt;user&gt; --password=&lt;pass&gt;
-</codeph>
-</codeblock>
+<codeblock>  mysqldump -A --protocol=TCP --port=10000 --host=localhost --user=&lt;user&gt; --password=&lt;pass&gt;</codeblock>
 </section>
 <section id="pre-populating-a-database-while-pushing-an-app"> <title>Pre-populating a database while pushing an app</title>
 <p>When a database needs to be populated with data the first time it is
@@ -459,8 +430,7 @@ This can be accomplished in two steps.</p>
 same data source variables from VCAP_SERVICES as the ones being
 used in the app. This file will open a connection to the database,
 create tables, and insert records as necessary, as in this Perl example:</p>
-<codeblock>
-  <codeph>use strict;
+<codeblock>  use strict;
 use warnings;
 
 use DBI;
@@ -492,31 +462,23 @@ $sql_init =
     ';
 $dbh-&gt;do($sql_init);
 
-$dbh-&gt;disconnect;
-</codeph>
-</codeblock>
+$dbh-&gt;disconnect;</codeblock>
 <p>Next, modify your <i>manifest.yml</i> file to make use of the
 <codeph>post-staging</codeph> hook which will execute a command to
 run the script:</p>
-<codeblock>
-  <codeph>name: customertracker
+<codeblock> name: customertracker
 services:
   mysql: customerdb
 hooks:
-  post-staging: perl preload.pl
-</codeph>
-</codeblock>
+  post-staging: perl preload.pl</codeblock>
 <p>With those changes, the data from your script will be executed after the
 staging process is complete but before the app starts to run.</p>
 </section>
 <section id="backing-up-a-mysql-database"> <title>Backing up a MySQL database</title>
 </section>
 <section id="using-helion-run"> <title>Using helion run</title>
-<p>To export a MySQL database, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-run" type="section" scope="external"  >helion run</xref> command to remotely execute the dbexport tool:</p>
-<codeblock>
-  <codeph>helion run [application-name] dbexport service-name &gt; dumpfile.sql
-</codeph>
-</codeblock>
+  <p>To export a MySQL database, use the <xref href="../reference/1.2client-ref-management.dita#topic50918/command-run" type="section"   >helion run</xref> command to remotely execute the dbexport tool:</p>
+<codeblock>helion run [application-name] dbexport service-name &gt; dumpfile.sql</codeblock>
 <p>This will run a <codeph>dbexport</codeph> of the named data service
 remotely and direct the output to a local file. If run from a directory
 containing the manifest.yml file, the application name may be omitted.</p>
@@ -526,10 +488,9 @@ containing the manifest.yml file, the application name may be omitted.</p>
 <p>To back up a MySQL database, use the <xref type="section" href="#topic19772/sqltunnel">tunnel</xref>
 command to make a connection to the server and export the data using
 <codeph>mysqldump</codeph>.</p>
-<p>Use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> command to access the service (in
+  <p>Use the <xref href="../reference/1.2client-ref-service-management.dita#topic10567/command-tunnel" type="section" >helion tunnel</xref> command to access the service (in
 this example a MySQL database named <codeph>customerdb</codeph>):</p>
-<codeblock>
-  <codeph>helion tunnel customerdb
+<codeblock>helion tunnel customerdb
 
 Password: ********
 Getting tunnel url: OK, at https://tunnel-xxxxx.helion-xxxx.local
@@ -547,12 +508,10 @@ Service connection info:
 1. none
 2. mysql
 3. mysqldump
-Which client would you like to start?
-</codeph>
-</codeblock>
-<p>Select option <b>3. mysqldump</b>. You will be prompted to enter a path to
-where the dump will be saved.</p>
-<p>See the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> command documentation for other
+Which client would you like to start?</codeblock>
+<p>Select option <codeph>3. mysqldump</codeph>. You will be prompted to enter a path to where the
+        dump will be saved.</p>
+  <p>See the <xref href="../reference/1.2client-ref-service-management.dita#topic10567/command-tunnel" type="section"   >helion tunnel</xref> command documentation for other
 ways of accessing a MySQL database. See <xref type="section" href="#topic19772/importing-a-mysql-database">Importing a MySQL database</xref> for details on importing a
 file created by mysqldump into an existing MySQL database service.</p>
 </section>
@@ -560,11 +519,8 @@ file created by mysqldump into an existing MySQL database service.</p>
 </section>
 <section id="sqldbshell"> <title>Using dbshell</title>
 <p>To import a MySQL database, use the <codeph>helion dbshell</codeph> command:</p>
-<codeblock>
-  <codeph>helion dbshell [application name] [service name] &lt; dumpfile.sql
-</codeph>
-</codeblock>
-<p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-dbshell" type="section" scope="external"  >helion dbshell</xref> command redirects the contents of a local database dump file to the
+<codeblock>helion dbshell [application name] [service name] &lt; dumpfile.sql</codeblock>
+  <p>The <xref href="../reference/1.2client-ref-management.dita#topic50918/command-dbshell" type="section"   >helion dbshell</xref> command redirects the contents of a local database dump file to the
 appropriate database client running in the application instance (i.e.
 equivalent to <codeph>helion run dbshell ...</codeph>). If run
 from a directory containing the <i>manifest.yml</i> file, the application and
@@ -573,9 +529,8 @@ service names may be omitted.</p>
 <section id="sqltunnel"> <title>Using helion tunnel</title>
 <p>This method of database import is provided for compatibility with Cloud Foundry. It tends to be slower than using <codeph>helion run ...</codeph>.</p>
 <p>To import data from a <i>mysqldump</i> file into an existing
-MySQL database service, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> command:</p>
-<codeblock>
-  <codeph>helion tunnel &lt;servicename&gt;
+  MySQL database service, use the <xref href="../reference/1.2client-ref-service-management.dita#topic10567/command-tunnel" type="section">helion tunnel</xref> command:</p>
+<codeblock>helion tunnel &lt;servicename&gt;
 
 Password: ********
 Getting tunnel url: OK, at https://tunnel-xxxxx.helion-xxxx.local
@@ -589,22 +544,16 @@ Service connection info:
 | password | pHFitpIU1z                        |
 | name     | d5eb2468f70ef4997b1514da1972      |
 +----------+-----------------------------------+
-
 1. none
 2. mysql
 3. mysqldump
-Which client would you like to start?
-</codeph>
-</codeblock>
-<p>Choose option <b>1. none</b> which will allow for command line access to
-the database. A MySQL service is configured on Port 10000, so open a new
-terminal window to enter commands through.</p>
+Which client would you like to start?</codeblock>
+<p>Choose option <codeph>1. none</codeph> which will allow for command line access to the database.
+        A MySQL service is configured on Port 10000, so open a new terminal window to enter commands
+        through.</p>
 <p>Then, import an SQL file with the following command:</p>
-<codeblock>
-  <codeph>mysql --protocol=TCP --host=localhost --port=10000 --user=&lt;user&gt; --password=&lt;pass&gt; &lt;name&gt; &lt; mydatabase.sql
-</codeph>
-</codeblock>
-<p>See the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> command documentation for other
+<codeblock>mysql --protocol=TCP --host=localhost --port=10000 --user=&lt;user&gt; --password=&lt;pass&gt; &lt;name&gt; &lt; mydatabase.sql</codeblock>
+  <p>See the <xref href="../reference/1.2client-ref-service-management.dita#topic10567/command-tunnel" type="section"   >helion tunnel</xref> command documentation for other
 ways of accessing a MySQL database. See <xref type="section" href="#topic19772/backing-up-a-mysql-database">Backing up a MySQL database</xref> for details on how to create
 a <codeph>mysqldump</codeph> backup that can then be imported into
 another database service.</p>
@@ -619,20 +568,17 @@ versioned database names in VCAP_SERVICES.</p>
 <section id="method-1"> <title>Method 1</title>
 <p>Update references to VCAP_SERVICES in the application code to exclude
 version numbers. For example:</p>
-<codeblock>
-  <codeph>MySQL:         'mysql-5.x' -&gt; 'mysql'
+<codeblock>MySQL:         'mysql-5.x' -&gt; 'mysql'
 PostgreSQL:    'postgresql-x.x' -&gt; 'postgresql'
-Redis:         'redis-2.x' -&gt; 'redis'
-</codeph>
-</codeblock>
+Redis:         'redis-2.x' -&gt; 'redis'</codeblock>
 </section>
 <section id="method-2"> <title>Method 2</title>
 <p>Update the application code to use the DATABASE_URL environment
 variable. See the following language-specific documentation:</p>
 <ul>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/languages/1.2php.dita#php-data-services" type="section" scope="external"  >PHP Data Services</xref>
-</li>
+          <xref href="../deploy/languages/1.2php.dita#topic5845/database-services">PHP Data Services
+          </xref></li>
 </ul>
 <p>The following changes to sample applications show this modification:</p>
 <ul>
@@ -648,7 +594,7 @@ variable. See the following language-specific documentation:</p>
 </ul>
 </section>
 <section id="sqlite"> <title>SQLite</title>
-<p>Applications can use an <xref href="http://www.sqlite.org/" scope="external" format="html" >SQLite database</xref> as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- <b>always</b> store the SQLite file on a <xref href="../../../../../devplatform/1.2/helion/user/services/1.2filesystem.dita#persistent-file-system" type="section" scope="external"  >Persistent File System</xref> mount point to avoid losing data.</p>
+  <p>Applications can use an <xref href="http://www.sqlite.org/" scope="external" format="html" >SQLite database</xref> as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- <b>always</b> store the SQLite file on a <xref href="1.2filesystem.dita#topic4410/creating-a-persistent-file-system" type="section"   >Persistent File System</xref> mount point to avoid losing data.</p>
 </section>
 </body>
 </topic>

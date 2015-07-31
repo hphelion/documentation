@@ -2,9 +2,18 @@
 <project version="16.1">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
-        <options/>
+        <options>
+            <serialized version="16.1" xml:space="preserve">
+                <serializableOrderedMap>
+                    <entry>
+                        <String>validation.scenarios</String>
+                        <validationScenario-array/>
+                    </entry>
+                </serializableOrderedMap>
+            </serialized>
+        </options>
     </meta>
-    <projectTree name="master-project.xpr">
+    <projectTree name="Master-Project.xpr">
         <folder path="automation/"/>
         <folder path="CarrierGrade/"/>
         <folder path="CloudGraphics/"/>
@@ -12,6 +21,7 @@
         <folder path="community/"/>
         <folder path="devplatform/"/>
         <folder path="euca/"/>
+        <folder path="file/"/>
         <folder path="media/"/>
         <folder path="pdf_sources/"/>
         <folder path="publiccloud/"/>
