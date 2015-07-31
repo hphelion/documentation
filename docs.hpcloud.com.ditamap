@@ -24,6 +24,8 @@
 <topicref href="commercial/whatsinthebuild.dita"/>
   <topicref href="commercial/issuesandlimitations.dita"/>
   <topicref href="commercial/supportedconfigs.dita"/>
+  <topicref href="commercial/hardware.dita"/>
+  <topicref href="commercial/installation.dita"/>
 </topicref>
 
 </map>
