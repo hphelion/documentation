@@ -33,6 +33,7 @@
           For deployer node this can be CD ROM with hard drives last.</li>
         <li>Synchronize the time on all nodes manually</li>
         <li>Turn off DHCP</li>
+        <li/>
       </ol>
     </p>
   </body>
