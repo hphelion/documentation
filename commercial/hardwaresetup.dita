@@ -13,7 +13,7 @@
         <li>The machine types should be homogeneous.</li>
         <li>To set up the deployment network, note that <ul>
             <li>The network will need to be set up with 3 routed VLANs 1 untagged and 2 tagged
-              (external and svc) with associated cidrs </li>
+              (external and svc) with associated CIDRs </li>
             <li>
               <p>The machine hosting the deployer, and all baremetal systems have to be connected to
                 a management network.</p>
@@ -64,6 +64,10 @@
         <li>If you are not configuring with Swift for whatever reason, including lack of hardware,
           comment out the Swift config entries in ccp.yml</li>
         <li>It is possible to add additional VSA and compute nodes. The default is 1 of each.</li>
+        <li>You may assign server roles to each or your nodes manually, or allow the installer to
+          assign them.</li>
+        <li>Any inconsistent or unworkable configuration choices will be flagged by the installer,
+          which will provide feedback explaining the issues.</li>
       </ol>
     </p>
   </body>
