@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3847">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Controller Nodes and High Availability</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-HA.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/controller/ha/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>Services in the controller nodes run constantly in active/standby mode to provide continuity in the event of a
+controller failure.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>This topic covers the following:</p>
+<ul>
+<li>
+<xref type="section" href="#topic3847/about">About controller HA</xref>
+</li>
+<li>
+<xref type="section" href="#topic3847/controller">Viewing the active controller</xref>
+</li>
+<li>
+<xref type="section" href="#topic3847/takeout">Taking a controller out of service</xref>
+</li>
+</ul>
+<section id="about"> <title>About controller HA</title>
+<p>Controller services are organized internally into the following groups:</p>
+<ul>
+<li>Cloud Services - The enhanced OpenStack components, including Nova, Neutron, Cinder, Ceilometer, and Heat</li>
+<li>Controller Services - Core HP Helion OpenStack Carrier Grade services such as maintenance and inventory</li>
+<li>Directory Services - LDAP services </li>
+<li>OAM Services - OAM access services</li>
+<li>Patching Services - Patching alarm services</li>
+<li>Storage Monitoring Services - Storage alarm services</li>
+<li>Storage Services - Storage REST API services</li>
+<li>Web Services - The HP Helion OpenStack Carrier Grade OpenStack Horizon service and web server</li>
+</ul>
+<p>Each of these groups is run in 1:1 HA mode by the controllers. This means that while some service groups can be active on controller-0, and in standby on controller-1, others are active on controller-1, and in standby on controller-0.</p>
+<p>The high-availability framework constantly monitors and reports on the health of the individual services within each of the service groups on both controllers. When a service fails, a decision is made on whether to restart it on the same controller, or to switch the corresponding service group to the other controller. This decision depends on the criticality and the dependencies of the affected service.</p>
+</section>
+<section id="controller"> <title>Viewing the active controller</title>
+<p>Services in the Controller Services group drive core functionality in the HP Helion OpenStack Carrier Grade. The controller where they are running is referred to as the active controller.</p>
+<p>When working from the CLI on a controller node it is often important to ensure that you are working on the active controller, for example, to execute OpenStack admin operations, or to change the password of the wrsroot user account. See Linux User Accounts on page 16 for further details on the wrsroot account.</p>
+<p>You can ensure you are working on the active controller by using the OAM floating IP address as the destination address in the SSH command.</p>
+<p>To determine which host is the active controller:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+</ol>
+<p>The <b>Hosts</b> tab lists the status of all hosts in the cluster; it reports the active controller as having the <codeph>Controller-Active</codeph> personality.</p>
+</section>
+<section id="takeout"> <title>Taking a controller out of service</title>
+<p>For maintenance purposes, when one of the controller nodes needs to be powered down for service, it is necessary to force all currently active service groups in one controller to switch to the other.</p>
+<p>This can be done from the Hosts tab on the Inventory page, by selecting the option swact (switch active) in the More menu of the controller you want to take out of service:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>For the host you want to take out of service, click <b>More</b> then <b>Swact Host</b>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic3847"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

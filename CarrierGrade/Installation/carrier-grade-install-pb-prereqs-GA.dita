@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7148">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation Prerequisites</title>
+<titlealts>
+<searchtitle>HP Helion Openstack Installation Prerequisites</searchtitle>
+</titlealts>
+<prolog>
+        <metadata>
+                <othermeta name="layout" content="default"/>
+                <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+                <othermeta name="role" content="Storage Administrator"/>
+                <othermeta name="role" content="Storage Architect"/>
+                <othermeta name="role" content="Michael B"/>
+                <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+        </metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-prereqs.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/prereqs/--></p>
+<p>This document describes the prerequisite steps and one time setup on your HLM host required to
+      install HP Helion OpenStack Carrier Grade in a baremetal environment.</p>
+<section id="hardware"> <title>Hardware and software requirements</title>
+<p>Before you start, if you have not done so already, make sure your environment meets the hardware
+                                and software requirements. See the <xref
+                                        href="carrier-grade-support-matrix2.dita#topic1773">HP Helion OpenStack
+                                        Support Matrix</xref>.</p>
+</section>
+<section id="kvm">
+                        <title>Preparing the HLM host</title>
+                        <p>Perform the following tasks on the HLM host:</p>
+                        <ul>
+                                <li><?oxy_delete author="burkmich" timestamp="20150727T182909-0400" content="&lt;xref href=&quot;#topic7148/proxy&quot; format=&quot;dita&quot;&gt;Configure proxy information &lt;/xref&gt;"?><?oxy_insert_start author="burkmich" timestamp="20150727T182851-0400"?><xref
+                                                href="#topic7148/proxy" format="dita"
+                                        /><?oxy_insert_end?></li>
+                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183005-0400"?><xref
+                                                href="#topic7148/ssh" format="dita"
+                                        /><?oxy_insert_end?></li>
+                                <li>Obtain a public key</li>
+                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183030-0400"?><xref
+                                                href="#topic7148/packages" format="dita"
+                                        /><?oxy_insert_end?></li>
+                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183112-0400"?><xref
+                                                href="#topic7148/configure-the-xrdp-remote-desktop-display"
+                                                format="dita"/><?oxy_insert_end?></li>
+                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183118-0400"?><xref
+                                                href="#topic7148/ntp" format="dita"
+                                        /><?oxy_insert_end?></li>
+                                <li><xref href="#topic7148/ssh" format="dita"/></li>
+                                <li><xref href="#topic7148/getinstall" format="dita"/></li>
+                                <li><xref href="#topic7148/download-esx" format="dita"/></li>
+                                <li><xref href="#topic7148/verify" format="dita"/></li>
+                                <li><xref href="#topic7148/prepbare" format="dita"/></li>
+                        </ul>
+                        <title>Install Ubuntu Server 14.04.2 LTS</title>
+                        <p>The HLM host must have Ubuntu Server 14.04.2 LTS installed before
+                                performing the HP Helion OpenStack Carrier Grade installation.</p>
+                </section>
+<!--<section id="pub-key"> <title>Obtain a public key</title>
+<p>On the HLM host, the user <codeph>root</codeph> must have a public key.</p>
+<ol>
+<li>Launch a terminal and log in to your HLM host as root:<p>sudo su -</p></li>
+<li>Use the following command to create the key. Accept the default
+          values.<p>/root/.ssh/id_rsa</p></li>
+<li>Install the public key into the authorized keys on the HLM
+            host:<codeblock><codeph>ssh-copy-id &lt;IP_address&gt;
+</codeph></codeblock><p>Enter the
+            IP address of the default network gateway on the HLM host.</p></li>
+</ol>
+</section>
+--><section id="proxy"> <title>Configure proxy information</title>
+<p>Before you begin your installation on the HLM host, configure the proxy information for your
+                                environment using the following steps:</p>
+<ol>
+<li>Launch a terminal and log in to your HLM host as
+          root:<codeblock><codeph>sudo su -
+</codeph></codeblock></li>
+<li>Edit the <codeph>/etc/environment</codeph> file to add the following lines, using values
+                                        specific to your
+                                                environment:<codeblock><codeph>PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export http_proxy=http://&lt;web_proxy_IP&gt;/
+export https_proxy=http://&lt;web_proxy_IP&gt;/
+export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address&gt;,&lt;provider_network&gt;
+</codeph></codeblock><p>Where:</p><codeblock>&lt;web_proxy_IP> is your web proxy IP address.
+&lt;HLM_host_IP_address> is the IP address of the HLM Host</codeblock></li>
+<li>Source the <codeph>environments</codeph>
+          file:<codeblock><codeph>source /etc/environment
+</codeph></codeblock></li>
+</ol>
+</section>
+<section id="packages">
+                        <title>Install Ubuntu packages</title>
+        <p>Before starting the installation, you must install the following packages
+                on the KVM host.</p>
+        <ul id="ul_szw_sh4_rs">
+                <li>ansible</li>
+                <li>ntp </li>
+                <li>firefox </li>
+                <li>gedit </li>
+                <li>xrdp </li>
+                <li>xfce4 </li>
+                <li>qemu-kvm </li>
+                <li>libvirt-bin </li>
+                <li>openvswitch-switch </li>
+                <li>openvswitch-common </li>
+                <li>python-libvirt </li>
+                <li>qemu-system-x86 </li>
+                <li>libssl-dev </li>
+                <li>libffi-dev </li>
+                <li>git </li>
+                <li>python-virtualenv </li>
+                <li>python-dev virt-manager</li>
+                <li>sshpass</li>
+                                <li>gnugpg</li>
+        </ul>
+        <p>To install the packages on the KVM host:</p>
+        <ol>
+                <li>On the KLM host, run the following all in one command to install packages:
+                                        <codeblock><codeph>sudo su -l -c "apt-get install -y ansible sshpass ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager gnugpg"</codeph></codeblock></li>
+                <li>Add the 802.1q module to the kernel on boot. The 802.1q standard
+                                        supports VLAN tagging on an ethernet
+                                        network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
+</codeph></codeblock></li>
+                                <li>Reboot the server</li>
+                                <li>Log out and re-login to the HLM host to activate the proxy
+                                        configuration.</li>
+                        </ol>
+                </section>
+<section id="configure-the-xrdp-remote-desktop-display"><title>Configure the XRDP remote desktop
+                                display</title><p>Configure XRDP on the KVM host for the remote
+                                desktop connection to access the server remotely as follows.</p><ol>
+                                <li>Edit the <codeph>sesman.ini</codeph> file: vi
+                                        /etc/xrdp/sesman.ini <ol>
+                                                <li>Update the<codeph>MaxSessions=1</codeph> to
+                                                  <codeph>MaxSessions=50</codeph>.</li>
+                                                <li>Save and close the file.</li>
+                                        </ol></li>
+                                <li>Configure the system to use
+                                        XRDP:<codeblock><codeph>echo "xfce4-session" &gt; ~/.xinitrc
+</codeph></codeblock></li>
+                                <li>Restart the XDRP service:
+                                        <codeblock>sudo /etc/init.d/xrdp restart</codeblock></li>
+                        </ol><p>If the XDRP display does not work as expected, (you see a gray
+                                screen), update the <codeph>startwm.sh</codeph>
+                                file:</p><codeblock><codeph>vi /etc/xrdp/startwm.sh
+
+#!/bin/sh
+
+if [ -r /etc/default/locale ]; then
+. /etc/default/locale
+export LANG LANGUAGE
+fi
+
+#. /etc/X11/Xsession
+. /usr/bin/startxfce4
+</codeph>
+</codeblock><p>Make
+                                sure you add a space after "." then restart
+                                XDRP:</p><codeblock><codeph>sudo /etc/init.d/xrdp restart
+</codeph></codeblock><p>When
+                                you XRDP to the KVM host, the screen appears similar to the
+                                following image:</p><image href="../../media/CGH-install-xrdp.png"
+                                id="image_pln_cdm_vs">
+                                <alt>XRDP display</alt>
+                        </image></section>
+<section id="ntp"> <title>Install and configure NTP</title>
+<p>You must configure the HLM Host as an NTP client.</p>
+<p>You can install NTP on the HLM host and configure it as an NTP server. Or, you can use a
+                                pre-existing NTP server that is reachable from the management
+                                network. </p>
+                        <p>For information on configuring the KLM host as an NTP client, see  <xref
+                                        href="carrier-grade-install-NTP.dita#topic4740/client"
+                                />.</p>
+<p>For information on installing NTP on the HLM host, see <xref
+          href="../../CarrierGrade/Installation/carrier-grade-install-NTP.dita">Installing an NTP
+          Server</xref>.</p>
+</section><section id="ssh"> <title>Configure SSH</title>
+<p>On the HLM host, the OpenSSH server must be running and the firewall configuration should allow
+        access to the SSH ports.</p>
+<ol>
+<li>Enable root login in the <codeph>/etc/ssh/sshd_config</codeph>  by setting the following values
+                                        and save the file:
+                                        <codeblock># Authentication:
+LoginGraceTime 120
+#PermitRootLogin without-password
+PermitRootLogin yes
+#StrictModes yes
+StrictModes no
+PermitRootLogin yes
+</codeblock></li>
+<!--<li>In the <codeph>sshd_config</codeph> file, set the following
+          variables:<codeblock><codeph># Authentication:
+LoginGraceTime 120
+#PermitRootLogin without-password
+StrictModes no
+</codeph></codeblock></li>
+--><li>Disable strict host key checking: in the <codeph>~/.ssh/config</codeph> file (create the file if
+                                        it does not exist) add following lines and save the file:
+                                        <codeblock>Host *
+StrictHostKeyChecking no </codeblock></li>
+        
+<li>Restart the SSH service:<codeblock><codeph>service ssh restart
+</codeph></codeblock></li>
+<li>Configure the public key and passwordless SSH access.<p>a. Enter the following
+                                                command:</p><codeblock><codeph>ssh-keygen -t rsa 
+</codeph></codeblock><p>b.
+                                                Press Enter to use default path
+                                                (/root/.ssh/id_rsa)</p><p>c. Press Enter when
+                                                prompted for the
+                                                <codeph>passphrase</codeph>.</p><p>d. Press enter
+                                                again to confirm the empty
+                                                  <codeph>passphrase</codeph>.</p><p>The output of
+                                                the public key will display, similar to the
+                                                following:</p><codeblock><codeph>ssh-copy-id 192.168.122.1 
+</codeph></codeblock><p>If
+                                                you get a <i>permission denied</i> error, make sure
+                                                you are logged in as root.</p></li>
+</ol>
+</section>
+        <section><title>Preparing the Network for Installation</title>
+                <p>Before installing HP Helion OpenStack Carrier Grade, 
+                        you are responsible for preparing the network for all installations.</p>
+                <p>See <xref href="carrier-grade-install-pb-network-prepare-GA.dita#topic7646">Preparing the Network for Installation</xref></p>
+                
+        </section>
+<section id="getinstall"> <title>Download and unpack the installation packages</title>
+<p>Before you begin, you must download the required HP Helion OpenStack installation package(s).</p>
+                        <p><b>Note:</b> When downloading installation files, always download and
+                                verify the signature file before installing.  </p>
+<ol>
+        <li>Register and then log in to download the required installation package(s) from <xref
+                href="https://helion.hpwsportal.com/catalog.html#/Category/{%22categoryId%22%3A10152}/Show"
+                                                format="html" scope="external">HP Helion
+                OpenStack product installation</xref>.</li>
+                                <li>Download and extract the <codeph>cg-hlm.qcow2</codeph> file to
+                                        the images folder:
+                                        <codeph>/var/lib/libvirt/images</codeph>.</li>
+<li> Download and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file to the
+                                                <codeph>/root</codeph> directory.</li>
+        <li> Decrypt and untar the PGP file using password <codeph>cghelion</codeph> when prompted.
+                                        <codeblock> gpg -d cg-infra-playbooks.tar.gz.gpg | tar -xzvf </codeblock></li>
+        <li> Create the <codeph>/root/cg/</codeph> directory</li>
+<li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> to the <codeph>/root/cg/</codeph> directory.</li>
+</ol>
+</section>
+        <section id="download-esx"><title>Download packages for KXM+ESX</title>
+        <p>If you are deploying the KVM+ESX topology, download the following additional packages.</p>
+                <ol>
+                                <li>Register and then log in to download the required installation
+                                        package(s) from <xref
+                                                href="https://helion.hpwsportal.com/catalog.html#/Category/{%22categoryId%22%3A10152}/Show"
+                                                format="html" scope="external">HP Helion OpenStack
+                                                product installation</xref>.</li>
+                                <li>Download the compute proxy OVA template.</li>
+                                <li>If you have not downloaded the DCN installation packages, browse
+                                        to the link in your confirmation email and download the
+                                        appropriate packages.</li>
+                                <li>Unzip the DCN packages: <ul id="ul_cqm_tzc_ws">
+                                                <li>DCN-VRS-GW-3.0R7</li>
+                                                <li>DCN-VRS-VMware-3.0R7</li>
+                                                <li>DCN-VSC-3.0R7</li>
+                                                <li>DCN-VSD-QCOW-3.0R7</li>
+                                        </ul></li>
+                                <li>Create the <codeph>~/cg/dcn</codeph> on HLM KVM directory on the
+                                        KVM host.</li>
+                                <li>Copy the following files from DCN downloaded packages to
+                                                <codeph>~/cg/dcn</codeph>: <ul>
+                                                <li>vsc_singledisk.qcow2</li>
+                                                <li>nuage-openvswitch-datapath-dkms_3.0.7-125_all.deb</li>
+                                                <li>nuage-openvswitch-common_3.0.7-125_amd64.deb</li>
+                                                <li>nuage-python-openvswitch_3.0.7-125_all.deb</li>
+                                                <li>nuage-openvswitch-switch_3.0.7-125_amd64.deb</li>
+                                                <li>nuage-openstack-nuagenetlib-juno.tar.gz</li>
+                                                <li>nuage-openstack-neutron-juno-plugin.tar.gz</li>
+                                        </ul></li>
+                        </ol>  
+                <p>If you execute a list on that directory, the output appears similar to the following image:</p>
+        </section>
+        <section id="verify"><title>Verify download signature</title>
+                <p>After downloading the installation packages, you should verify the signature of
+                                the download. You can use the GPG utility, which is already
+                                installed on the HLM node.</p>
+         <p>A set of GPG public keys are included in the installation package you downloaded.</p> 
+          <ol>
+                  <li>Copy the public keys to the HLM host server, extract the keys from the
+                                        compressed files. <p>The following keys are included in the
+                                                download:</p><ul>
+                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-1.pub</li>
+                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-2.pub</li>
+                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-3.pub</li>
+                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-4.pub</li>
+                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-5.pub</li>
+                                                <li>hpPublicKey.pub</li>
+                                                <li>hpPublicKey2048.pub</li>
+                                        </ul></li>
+                <li>Execute the following command to import the keys:
+                                                <codeblock>gpg --import "&lt;filename>"</codeblock><p>Where
+                                                &lt;filename> is the name of the extracted
+                                                file.</p><p>The keys are then imported into the gpgp
+                                                key share:
+                                                <codeblock>gpg --import hpPublicKey.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-1.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-2.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-3.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-4.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-5.pub 
+gpg --import hpPublicKey2048.pub </codeblock></p></li>
+                  <li>Use the following command to view the keys in the key store:
+                                                <codeblock>gpg --list-keys</codeblock><p>The key
+                                                store appears similar to the
+                                        following:</p><codeblock>/home/sad/.gnupg/pubring.gpg
+----------------------------
+pub   2048R/F7191CB9 2014-12-19
+pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
+uid                  Hewlett-Packard Company (HP Codesigning Service)
+pub   2048R/B1275EA3 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 1
+pub   2048R/B564A643 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 2
+pub   2048R/FF94BC78 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 3
+pub   2048R/BA849975 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 4
+pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 5
+pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service)        </codeblock></li>
+                  <li>Use the following command to verify the signature:
+                                                <codeblock>gpg --verify ./cg-hos.tar.gz.gpg.sig ./cg-hos.tar.gz.gpg</codeblock><p>The
+                                                output for the command appears similar to the
+                                                following:</p><codeblock>gpg: Signature made Wed 22 Jul 2015 01:23:24 PM EDT using RSA key ID C6978F0C
+gpg: Good signature from "Hewlett-Packard Company RSA (HP Codesigning Service) - 5"
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock>
+                                </li>
+          </ol>
+        </section>
+                <section id="prepbare">
+                        <title>Preparing the baremetal systems</title>
+                        <p>Perform the following tasks on each server you will use as  a compute
+                                server or controller in the non-KVM and KVM regions:</p>
+                        <ul id="ul_jy1_tvp_rs">
+                                <li>Configure the boot order with Network/PXE boot as the first
+                                                option:<p>For example, to set the boot order for a
+                                                HP SL390, from the iLO prompt enter <codeph>set
+                                                  system1/bootconfig1/bootsource5
+                                                  bootorder=1</codeph>.</p></li>
+                                <li>
+                                        <p>Configure the BIOS:</p>
+                                        <ul id="ul_ly1_tvp_rs">
+                                                <li>to the correct date and time</li>
+                                                <li>to use UTC (Coordinated Universal Time)</li>
+                                                <li>with only one network interface enabled for
+                                                  PXE/network boot and any additional interfaces
+                                                  should have PXE/network boot disabled</li>
+                                                <li>to stay powered off in the event of being
+                                                  shutdown rather than automatically restarting</li>
+                                        </ul>
+                                </li>
+                                <li>
+                                        <p>Update to the latest firmware recommended by the system
+                                                vendor for all system components, including the
+                                                BIOS, BMC firmware, disk controller firmware, drive
+                                                firmware, network adapter firmware, and so
+                                                forth.</p>
+                                        <p><b>Note:</b> If you are using ProLiant Gen9 blades or
+                                                rack servers, you must update the Snap3 firmware. </p>
+                                </li>
+                        </ul>
+                </section>
+                
+
+<section id="next-step"> <title>Next Step</title>
+<p>
+                                <xref
+                                        href="carrier-grade-install-non-kvm-GA.dita#topic10581"
+                                        >Deploying the Non-KVM Region</xref></p>
+
+</section>
+</body>
+</topic>

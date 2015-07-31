@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the ESX Compute Proxy</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+  </metadata>
+</prolog>
+<body>
+    <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
+      that enables the Compute service to communicate with a VMware vCenter server managing one or
+      more ESX hosts. The HP Helion OpenStack Compute Service (Nova) requires this driver to
+      interface with VMware ESX hypervisor APIs.</p>
+    <p>After installing and configuring the VMware ESX and vCenter Server, use the following
+      instructions to install the compute proxy. The compute proxy is distributed as open virtual
+      appliance (OVA).</p>
+    <p>The ESX and vCenter server should be installed within the non-KVM region and attached to the
+      CLM network, as shown in the <xref href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref></p>
+    <section>
+      <title>Deploy Compute Proxy template on ESX Host</title>
+      <p>The HP Helion OpenStack Carrier Grade installation process includes an open virtual
+        appliance (OVA) file that you import into vCenter. Compute proxy template needs to be
+        available in the vCenter before the deploying the HP Helion OpenStack cloud (before you run
+        hprovision script).</p>
+      <p>Compute proxy is deployed in vCenter using File > Deploy OVF Template > [Path to
+        TEMPL-CPV5.ova on 15.242.209.7]</p>
+      <p>It is not required by the cloud deployment for the proxy template to be powered on <image
+          href="../../media/CGH-esx-template.png" id="image_vrj_snc_5s" width="500"/></p>
+    </section>
+    <section>
+      <title>Integration with existing Cloud Framework</title>
+      <p>The <codeph>hprovision</codeph> script has been extended to execute <codeph>hlm_provsionproxy</codeph> script to provision
+        the compute proxy node(s). This script also appends the provisioned proxy nodes to
+        <codeph>nodes.json</codeph>.</p>
+      <p>Since the proxy nodes are available in <codeph>nodes.json</codeph>, they are recognized by the <codeph>hcfgproc</codeph> and
+        required metadata is generated for these nodes. Further <codeph>hnetinit</codeph> sets the appropriate
+        networking and updates hosts file on these nodes to be configured by the <codeph>hdeploy</codeph> process.</p>
+    </section>
+    <section>
+      <title>Modify esx.json</title>
+      <p>The ESX Proxy configuration requires a JSON file. </p>
+      <p>See <xref href="carrier-grade-install-pb-kvm-esx-json.dita#topic4797">Sample esx.json file</xref> for details on modifying 
+      the esx.json file.</p>
+    </section>
+    <section>
+      <title>Clone Compute Proxy</title>
+      <p>The <codeph>hprovision</codeph> script, using <codeph>hlm_provisionproxy.py</codeph>, provisions compute proxy based on the
+        details specified in the <codeph>esx.json</codeph> file.</p>
+      <p>The <codeph>hlm_provisionproxy</codeph> script uses <codeph>pyvmomi</codeph> library for cloning the Compute Proxy Template
+        and doing the initial configuration on ESX Compute proxy.</p>
+    </section>
+    <image href="../../media/CGH-esx-proxy.png" id="image_uwm_zgd_5s" width="300"/>
+  
+  <p>The <codeph>hlm_provisionproxy</codeph> script provisions compute proxy nodes on ESX host based on the
+    configuration in <codeph>esx.json</codeph>.</p>
+  
+  <p>It creates two interfaces on each proxy node.</p>
+  
+  <p><b>INTF0</b> is created as placeholder interface later to be configured by <codeph>hnetint</codeph> process and
+    used by <codeph>hdeploy</codeph> process</p>
+  
+  <p><b>INTF1</b> serves as temporary interface which is assigned the static IP defined in <codeph>esx.json</codeph>
+    (<codeph>compute_proxy.ipaddress</codeph>).</p>
+  
+  <p>This IP is stick in <codeph>nodes.json</codeph> along side CPN node ones the <codeph>hprovision</codeph> process concludes. 
+    This IP is further used by the <codeph>hnetinit</codeph> process to configure <codeph>INTF0</codeph> based on the definition 
+    in <codeph>environment.json</codeph>.</p>
+  
+  <p>During <codeph>hdeploy</codeph> process, when CPX-CFG role gets executed, this interface will be deleted 
+    releasing the assigned static IP.</p>
+  
+  <p>Ones the <codeph>hprovision</codeph> script completes, compute-proxy nodes will be added to <codeph>nodes.json</codeph> 
+    along controllers and other cloud nodes:</p>
+  
+<codeblock>
+  {
+    "product": {
+      "version": 1
+      },
+  
+    "servers": [
+        {
+          "failure-zone": "fz1",
+          "model": "DL680",
+          "node-type": "CCN-001-001",
+          "pxe-ip-addr": "10.200.210.101",
+          "pxe-mac-addr": "6C:3B:E5:B4:6E:D8",
+          "vendor": "HP"
+        },
+         …
+        {
+            "failure-zone": "fz1",
+            "model": "DL680",
+            "node-type": "CPN-001-001",
+            "pxe-ip-addr": "10.200.210.177",     >>>>>>>>> IP Address defined in esx.json
+            "pxe-mac-addr": "6C:3B:E5:B4:2E:B8",
+            "vendor": "HP"
+          },
+      }
+</codeblock>
+  <p>The <codeph>esx.json</codeph> will be populated with CLM network details from <codeph>environment.json</codeph>. Compute Proxy
+      nodes will be assigned static ip based on the cidr calculation.</p>
+    <codeblock>
+{
+        "product": {
+            "version":       1
+        },
+        "property-groups": [
+                  {
+                "name": "esx",
+                "properties":       {
+                    "vcenter":       {
+                        "ipaddress":       "10.200.216.211",
+                        "username":       "root",
+                        "password":       "vmware",
+                        "port":       "443",
+                        "domain":       "localhost.localdom"
+                           },
+                    "template":       {
+                        "username":       "cghelion",
+                        "password":       "cghelion",
+                        "name":       "TEMPL-CPV6"
+                    },
+                          "network":
+                    {
+                              "name": "CLM-ALL"
+    
+         "tagid" : "1716"
+                        "netmask" :           "255.255.255.0" 
+    ...
+    ]
+                }
+            }
+              ]
+    }
+    </codeblock>
+<section>
+  
+Modify environment.json
+<codeblock>
+  {
+      "name": "CPN",
+      "interface-map": [
+        {
+          "name": "INTF0",
+          "ethernet-port-map": {
+          "interface-ports": [
+            "eth0"
+            ]
+         },
+        "logical-network-map": [
+         {
+            "name": "management",
+            "ref": "ccn-INTF0-management"
+            }
+          ]
+        }
+      ]
+    }
+    
+</codeblock>
+</section>
+
+  <section><title>Configure  CLM network on Compute Proxy</title>
+    
+    <p><codeph>hnetinit</codeph> script configures compute proxy with the CLM IP generated by config processor (<codeph>hnetinit</codeph>).</p>
+    
+    <p>At this point we see following interfaces on compute proxy nodes:</p>
+    
+    <p><codeph>/etc/network/interface.d</codeph></p>
+    
+    <p><b>eth1.x.cfg</b> – This interface holds the temporary CLM IP used for provisioning and configuration</p>
+    
+    <p><b>eth0.x.cfg</b> – This sub interface holds the CLM IP allotted by config processor used during cloud deployment</p>
+    
+  </section>
+  <section><title>Configure nova-compute as proxy</title>
+    
+    <p>During the <codeph>hdeploy</codeph> process CPX-CFG role is responsible for making necessary changes to <codeph>nova.conf</codeph> 
+      file to make the nova-compute node behave as proxy.</p>
+    
+    <p>This role also deletes the temporary <codeph>eth1.x</codeph> interface on the proxy created during <codeph>hprovision</codeph>
+        process.</p>  
+</section>
+
+</body>
+</topic>
