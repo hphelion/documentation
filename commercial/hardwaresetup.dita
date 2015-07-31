@@ -11,12 +11,13 @@
       <ol id="ol_km5_zwg_ws">
         <li>Note that all disks on the system(s) will be wiped </li>
         <li>The machine types should be homogeneous.</li>
-        <li>Gather MAC addresses and IP addresses you wish to assign</li>
+        <li>Gather MAC addresses of your hardware and IP addresses you wish to assign for inclusion
+          in configuration files</li>
         <li>Install on nodes via legacy bios
           setting.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?> If you have
           UEFI instead of a BIOS, you need to switch to legacy BIOS setting.<?oxy_custom_end?> If
           using HP hardware, you can make these changes in the iLO console in system utilities |
-          BIOS/Platform Configuration |  boot options. Otherwise use you IPMI management console or
+          BIOS/Platform Configuration | boot options. Otherwise use your IPMI management console or
           command-line interface (CLI).
           <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Advanced iLO license
           needed to use the iLO console for advanced configurations. Otherwise use the command
@@ -27,13 +28,18 @@
               on deployer node with RAID 5 configuration if desired.</li>
         <li>Four local disks on nodes in the control plane (for root OS and Swift) are
           required.</li>
-            <li>Swift cannot currently use logical volumes</li>
+            <li>Swift cannot currently address logical volumes.</li>
           </ul></li>
         <li>Need to enable PXE booting. Adjust boot order for the control plane and storage nodes.
           For deployer node this can be CD ROM with hard drives last.</li>
-        <li>Synchronize the time on all nodes manually</li>
-        <li>Turn off DHCP</li>
-        <li/>
+        <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
+        <li>Turn off DHCP <ul id="ul_qvd_swh_ws">
+            <li>
+              <p>If you have other DHCP servers on the same network as your system, you must ensure
+                that the DHCP server does not hand out IP addresses to your physical nodes as they
+                PXE boot.</p>
+            </li>
+          </ul></li>
       </ol>
     </p>
   </body>
