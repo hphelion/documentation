@@ -21,8 +21,9 @@
             <li>
               <p>Nodes on this management network must be able to reach the iLO subsystem of each
                 baremetal systems to enable host reboots as part of the install process. The HP
-                Helion OpenStack architecture required that the IPMI network is a separate network
-                and a route exists from management network to the IPMI network for iLO access.</p>
+                Helion OpenStack architecture requires that the IPMI network is a separate network
+                and that a route exists from management network to the IPMI network for iLO
+                access.</p>
             </li>
           </ul></li>
                 <li>Ensure network interfaces that are not used for PXE boot are disabled in the
