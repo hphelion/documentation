@@ -60,6 +60,33 @@
   </ul>
   
 </section>
+ 
+  <section><b>ESX Region </b><p>HP Helion OpenStack Carrier Grade supports VMWare ESX hypervisor
+    using HP Distributed Cloud Networking (aka DCN). With our ESX integration, the cloud can
+    provision and manage an ESX cluster. VMWare Compute Proxy is used as a part of ESX
+    integration. The VMware vCenter driver connects to ESX clusters through Nova Compute proxy
+    nodes. A Compute node scheduler sees each cluster as compute and uses the same for
+    scheduling new instances.</p><p>The ESX integration uses VRSvAPP application to connect the
+      vCenter networking to the Network Operations controller to manage workload
+      networks.</p><p>The HP DCN is a software-Defined Networking (SDN) solution that enhances
+        data center (DC) network virtualization by automatically establishing connectivity between
+        compute resources upon their creation.  </p><p>ESX region uses mixture of best features from
+          OpenStack, ESX and DCN:</p><ul id="ul_p44_snk_ws">
+            <li>OpenStack features with rich services such as Keystone, Glance, Nova, Neutron, Cinder,
+              Horizon</li>
+            <li>ESX providing foundation for building and managing a virtualized IT infrastructure</li>
+            <li>ESX providing reliability and performance</li>
+            <li>ESX hypervisor abstracting processor, memory and storage</li>
+            <li>DCN providing programmable business logic and a powerful policy engine</li>
+            <li>DCN providing open and highly responsive solution that scales and span across
+              multi-tenant DCs</li>
+            <li>Inter-region and Inter-cloud communication between different data centers</li>
+            <li>ESX region uses VMDK driver using multi-backend storage support from Cinder </li>
+          </ul><p>In the KVM + ESX deployment, the non-KVM region also includes integration into your
+            VMware vServer storage environment using HP Distributed Cloud Networking
+            (DCN).</p></section>
+  
+  
   <section><title>HP Helion OpenStack</title>
   <p>HP Helion OpenStack Carrier Grade is a carrier-grade distribution of OpenStack the leading open source cloud computing platform. This
       distribution, backed by HP, enables customers to more easily build, manage, and use
@@ -68,11 +95,6 @@
       products, services, and professional support.</p>
 <p>HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >HP Helion OpenStack Services Overview page</xref> for a complete list of services.</p>
     <!-- From http://wiki.hpcloud.net/display/core/Helion+Lifecycle+Management+Root -->
-  </section>
-  <section><title>KVM + ESX Deployment</title>
-    <p>In the KVM + ESX deployment, the non-KVM region also includes integration into your VMware vServer storage environment using 
-      HP Distributed Cloud Networking (DCN).</p>
-    
   </section>
   
   <section>
