@@ -68,7 +68,7 @@
         <li>Edit the data/baremetalConfig.yml file to contain right info for hardware.  In my case I used yml file from last installtion on this rack.</li>
         <li>Edit data/servers.yml to contain ips from baremetalConfig.yml</li>
         <li>Edit data/net_global.yml to have right network data</li>
-        <li>Modify data/disks_controller.yml file specific to swift harware requirement.</li>
+        <li>Modify the data/disks_controller.yml file specific to Swift harware requirements.</li>
         <li>Run the configuration processor and check that your IP addresses are correct in the following:
           <ol>
             <li>cd ~/helion/hlm/ansible</li>
@@ -85,11 +85,9 @@
         </li> 
         <li>Export ANSIBLE_HOST_KEY_CHECKING=False</li>
         <li>time ansible-playbook -i hosts/localhost cobbler-deploy.yml</li>
-        <li>Run the following command: <codeph>ansible-playbook -i hosts/localhost cobbler-provision.yml</codeph>
-          <ul>
-            <li>This will power down all nodes, set them to pxe boot and power them up again.</li>
-          </ul>
-        </li>
+        <li>Run the following command: <codeph>ansible-playbook -i hosts/localhost
+            cobbler-provision.yml</codeph>
+          <p/>This will power down all nodes, set them to pxe boot and power them up again. </li>
         <li>Wait for the nodes to install: they will power down at the end.</li>
         <li>Power up recently-installed systems, e.g. ansible-playbook -i hosts/localhost cobbler-power-up.yml</li>
         <li>Set the following environment variables:
