@@ -5,8 +5,10 @@
   <body>
     <note type="attention">Please note that this is a beta version of the documentation which is still in development before its official release. The information contained herein is provided “as is”, confidential, and proprietary information and is provided only under the terms of the applicable non-disclosure agreement.</note>
     <p/>
-    <p>The following is a list of hardware and setup items you must consider before beginning the
-      installation.</p>
+    <b>
+      <p>The following is a list of hardware and setup items you must consider before beginning the
+        installation.</p>
+    </b>
     <p>
       <ul>
         <li>Note that all disks on the systems will be erased via the installation process.</li>

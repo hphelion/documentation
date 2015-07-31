@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_flx_j2b_ws">
-  <title>Beta 0 Installing HLM on Baremetal</title>
+  <title>Beta 0 Installing HP Helion OpenStack on Baremetal</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -24,7 +24,8 @@
     <note type="attention">Please note that this is a beta version of the documentation which is still in development before its official release. The information contained herein is provided “as is”, confidential, and proprietary information and is provided only under the terms of the applicable non-disclosure agreement.</note>
 <note>This assumes a BM deployer.</note>
 <note>This assumes hlinux ISO http://tarballs.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-8/hlm-deployer-2.0.0-20150730T215505Z.tgz</note>  
-<note>This assumes HLM kit  http://tarballs.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-8/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-07-30T23:07:26_52e38af.iso</note>
+<note>This assumes kit
+      http://tarballs.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-8/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-07-30T23:07:26_52e38af.iso</note>
 <section><title>Known Restrictions</title>
     <ol id="ol_kr3_2fb_ws">
       <li>All disks on the system(s) will be wiped /dev/sda will be used for the OS but all other disks will also be wiped.</li>
@@ -54,7 +55,7 @@
          </ul></li>
        </ul></li>
 </ol></section>
-    <section><title>Installing HLM</title>
+    <section><title>Installing HP Helion OpenStack</title>
       <ol>
         <li>Check that ssh localhost works without a password and that you can get from external sources, both with and without sudo.</li>
         <li>Use virtual media or download the ISO on to the system at /media/cdrom</li>
