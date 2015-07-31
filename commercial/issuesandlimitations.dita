@@ -81,6 +81,9 @@
     <p><b>Known Issues</b></p>
     <p/>
     <p><b>Install:</b></p>
+    <p>Boot order may be affected by random assignment of eth interface numbers to your NICs.
+      Therefore the node you need to boot first may not be first. You may want to disable NICs that
+      you are not planning to use.</p>
     <p><b>Operations:</b></p>
   </body>
 </topic>
