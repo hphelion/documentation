@@ -21,6 +21,7 @@
     </metadata>
   </prolog>
   <body>
+    <note type="attention">Please note that this is a beta version of the documentation which is still in development before its official release. The information contained herein is provided “as is”, confidential, and proprietary information and is provided only under the terms of the applicable non-disclosure agreement.</note>
 <note>This assumes a BM deployer.</note>
 <note>This assumes hlinux ISO http://tarballs.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-8/hlm-deployer-2.0.0-20150730T215505Z.tgz</note>  
 <note>This assumes HLM kit  http://tarballs.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-8/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-07-30T23:07:26_52e38af.iso</note>
