@@ -14,7 +14,7 @@
             <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
         </metadata>
     </prolog>
-    <body><section>CG-1307; CG-1305; CG-1292</section>
+    <body><section>CG-1307; CG-1306;CG-1305; CG-1292</section>
         <section><title>VXLAN not certified</title> <p>The VXLAN feature has not been certified for HP
             Helion OpenStack Carrier Grade.</p> </section>
                 

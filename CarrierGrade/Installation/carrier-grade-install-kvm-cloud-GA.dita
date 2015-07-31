@@ -36,7 +36,7 @@ ifconfig eth0 up</codeblock></li>
           <codeblock>route add default gw &lt;CIDR_gateway_IP&gt;</codeblock></li>
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
           controller-0:
-          <pre>TS_15.05_PATCH_0001.patch  # HLM VM /root/cg-hlm/windriver-files</pre><pre>region_config              # HLM VM ~/&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>cakey.pem                  # HLM VM ~&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>license.lic                # License file received/procured ny the user</pre><pre>helion_branding-v1.2.tgz   # HLM VM /root/cg-hlm/windriver-files</pre></li>
+          <pre>TS_15.05_PATCH_0001.patch  # HLM VM /root/cg-hlm/windriver-files</pre><pre>region_config              # HLM VM ~/&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>cakey.pem                  # HLM VM ~&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>license.lic                # License file received/procured by the user</pre><pre>helion_branding-v1.2.tgz   # HLM VM /root/cg-hlm/windriver-files</pre></li>
         <li>Move the <codeph>helion_branding-v1.2.tgz</codeph> to <codeph>/opt/branding</codeph> on
           the controller-0 </li>
         <li>Apply the required patches on controller-0:

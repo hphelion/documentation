@@ -256,7 +256,7 @@ StrictHostKeyChecking no </codeblock></li>
                                 <li>Download the compute proxy OVA template.</li>
                                 <li>If you have not downloaded the DCN installation packages, browse
                                         to the link in your confirmation email and download the
-                                        appropriate packages.. .</li>
+                                        appropriate packages.</li>
                                 <li>Unzip the DCN packages: <ul id="ul_cqm_tzc_ws">
                                                 <li>DCN-VRS-GW-3.0R7</li>
                                                 <li>DCN-VRS-VMware-3.0R7</li>
