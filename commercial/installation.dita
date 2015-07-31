@@ -91,8 +91,37 @@
         <ul>
           <li>export http_proxy=http://web-proxy.rose.hp.com:8080/</li>
           <li>export https_proxy=http://web-proxy.rose.hp.com:8080/</li>
-          <li>export no_proxy=localhost,127.0.0.1,[deployer_IP]</li>
+          <li>export no_proxy=localhost,127.0.0.1,&lt;deployer_IP&gt;</li>
         </ul></li>
+        <li>Install the ethtool package on all servers</li>
+        <li>Modify the ./helion/hlm/ansible/hlm-deploy.yml:
+        <ul>
+          <li>Comment out the line containing ironic-deploy</li>
+          <li>Comment out the line containing logging-deploy</li>
+        </ul></li>
+        <li>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e elasticsearch_cluster_name=[name of cluster]</li>
+        <li>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml
+          <ul><li><note>You can optionally specify the external network CIDR here too: e.g. ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</note></li></ul></li>
+        <li>ansible-playbook -i hosts/localhost cloud-client-setup.yml</li>
+        <li>source /etc/environment</li>
+        <li>As per HLM-533/HLM-973, the default root partition layout is too small and a consequence
+          is that logfiles will quickly fill up the / filesystem. As root, apply the following
+          workaround to all systems: <ul>
+            <li>lvextend -l +95%FREE /dev/hlm-vg/root</li>
+            <li>resize2fs /dev/hlm-vg/root</li>
+          </ul></li>
+        <li><note>Optional step to configure DNS resolution on deployer in FtC CDL labs. This is necessary in order to get 'pip install' type commands to work.</note>
+        <ul>
+          <li>Replace /etc/resolv.conf on the deployer node with these lines:
+        <ul>
+          <li>search ftc.usa.hp.com</li>
+          <li>nameserver 10.1.64.20</li>
+          <li>nameserver 10.1.65.20</li>
+          <li>nameserver 10.240.20.1</li>
+        </ul>
+          </li>
+        </ul></li>
+     
       </ol>
     </section>
   </body>
