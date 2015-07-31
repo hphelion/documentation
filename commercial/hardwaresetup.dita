@@ -8,7 +8,7 @@
     <p>The following is a list of hardware and setup items you must consider before beginning the
       installation.</p>
     <p>
-      <ol id="ol_km5_zwg_ws">
+      <ul>
         <li>Note that all disks on the systems will be erased via the installation process.</li>
         <li>The machine types should be homogeneous.</li>
         <li>To set up the deployment network, note that <ul>
@@ -74,7 +74,7 @@
         <li>Some Pre and Post install checks will run automatically: The installer will test
           configuration, test for ssh access to each node, and check that installed services are
           running, for example.</li>
-      </ol>
+      </ul>
     </p>
   </body>
 </topic>
