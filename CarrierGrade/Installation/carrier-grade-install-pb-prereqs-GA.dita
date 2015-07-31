@@ -38,7 +38,6 @@
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T183005-0400"?><xref
                                                 href="#topic7148/ssh" format="dita"
                                         /><?oxy_insert_end?></li>
-                                <li>Obtain a public key</li>
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T183030-0400"?><xref
                                                 href="#topic7148/packages" format="dita"
                                         /><?oxy_insert_end?></li>
