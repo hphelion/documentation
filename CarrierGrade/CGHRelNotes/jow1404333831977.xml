@@ -17,13 +17,11 @@
     <body><section>CG-1307; ;CG-1305; CG-1292</section>
         
         <section><title>StoreVirtual Cluster VIP not available on storage network. </title>
-            <p>If VIP is not pingable on the network, find the host with the VIP on it and reboot it.</p>
+            <p>If  you cannot ping a specific virtual IP address on the network, locate the host
+                with the associated IP and reboot that server.</p>
                 
-                <p>This will move the vip and rebalance storage which will bring the ip back on another node. 
-                The VIP of the StoreVirtual  cluster must ping for cinder volume to be provisioned. 
-                Just moving the VIP to a new host does not resolve the issue, the host with the VIP _must be rebooted.
-                    <!--  CG-1306 -->
-      </p>
+                <p><!--  CG-1306 -->
+            </p>
             
             
         </section>
