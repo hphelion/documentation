@@ -10,7 +10,11 @@
     <p>
       <ol id="ol_km5_zwg_ws">
         <li>Note that all disks on the system(s) will be wiped </li>
+        <li>Set up deployment network<ul>
+        <li>The network will need to be set up with 3 routed VLANs 1 unatgeed and 2 tagged (external
+              and svc) with associated cidrs</li></ul></li>
         <li>The machine types should be homogeneous.</li>
+        <li>Deployer node needs to be a dedicated node for beta0</li>
         <li>Gather MAC addresses of your hardware and IP addresses you wish to assign for inclusion
           in configuration files</li>
         <li>Install on nodes via legacy bios
@@ -22,12 +26,12 @@
           <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Advanced iLO license
           needed to use the iLO console for advanced configurations. Otherwise use the command
           line.<?oxy_custom_end?></li>
-        <li>Array configuration: In HPSAA HP Smart Storage Adminstrator, configure the logcal volume
-          setup. <ul>
-        <li>Deployer needs no partitions. Can create a single logical disk from all available disks
-              on deployer node with RAID 5 configuration if desired.</li>
-        <li>Four local disks on nodes in the control plane (for root OS and Swift) are
-          required.</li>
+        <li>Array configuration: In HPSAA (HP Smart Storage Adminstrator), configure the logcal
+          volume setup. <ul>
+            <li>Deployer needs no partitions. Can create a single logical disk from all available
+              disks on deployer node with RAID 5 configuration if desired.</li>
+            <li>Four local disks on nodes in the control plane (for root OS and Swift) are
+              required.</li>
             <li>Swift cannot currently address logical volumes.</li>
           </ul></li>
         <li>Need to enable PXE booting. Adjust boot order for the control plane and storage nodes.
@@ -40,6 +44,8 @@
                 PXE boot.</p>
             </li>
           </ul></li>
+        <li>If you are not configuring with Swift for whatever reason, including lack of hardware,
+          comment out the Swift config entries in ccp.yml</li>
       </ol>
     </p>
   </body>
