@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_flx_j2b_ws">
+  <title>Installing HLM on Baremetal</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion Openstack 2.0"/>
+      <othermeta name="role" content="Systems Administrator"/>
+      <othermeta name="role" content="Cloud Architect"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Network Administrator"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Cloud Administrator"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="Network Engineer"/>
+      <othermeta name="role" content="Geraldine K."/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion Openstack 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>NOTE: This assumes a BM deployer.</p> 
+      
+    <p>NOTE: This assumes hlinux ISO  http://tarballs.gozer.hpcloud.net/hlm/hlinux_iso/hLinux-cattleprod-amd64-blaster-netinst-20150723-hlm.2015-07-28T12:10:40_2cb6ab0.iso</p>   
+      
+      <p>NOTE: This assumes HLM kit  http://tarballs.gozer.hpcloud.net/hlm/release/2.0.0/20150727T083529Z/hlm-deployer-2.0.0-20150727T083529Z.tgz</p>
+    
+    <section><title>Known Restrictions</title></section>
+    <ol id="ol_kr3_2fb_ws">
+      <li>All disks on the system(s) will be wiped /dev/sda will be used for the OS but all other disks will also be wiped.</li>
+      <li>Install on nodes via legacy bios setting ( No UEFI)</li>
+      <li>Need 4 local disks on nodes in the control plane (for root os and swift).</li>
+      <li>You will most likely need to reinstall machines on the next drop because of disk layout changes.</li>
+      <li>Machines will need to be fully reinstalled on next drop - that is the disk layout might and will change.</li>
+      <li>The machine types should be homogeneous.</li>
+    </ol>
+    <section><title>Installing hLinux Deployer from ISO</title>
+   <ol><li>Create LUN(s)</li>
+     <li>Boot from ISO</li>
+     <li>Enter 'install' to start installation</li>
+     <li>Select Language</li>
+     <li>Select Location</li>
+     <li>Select Keyboard layout</li>
+     <li>Select appropriate network interface
+       <ul><li>Assign IP address, netmask</li>
+         <li>Create new account
+           <ul>
+             <li>Enter a username.</li>
+             <li>Enter a password.</li>
+             <li>Enter timezone if prompted to do so.</li>
+           </ul>         
+         </li>
+       </ul></li>
+</ol></section>
+    <section><title>Installing HLM</title>
+      <ol>
+        <li>Check that ssh localhost works without a password and that you can get from external sources, both with and without sudo.</li>
+        <li>Use virtual media or download the ISO on to the system at /media/cdrom</li>
+        <li>Untar the hlm-deployer.tgz file in ~stack</li>
+        <li>Run included script, e.g. ~/hlm-deployer/hlm-init-2.0.0.bash </li>
+        <li>Observe output for: 
+          <p>TASK: [deployer-setup | init-deployer-apt-repo | Find cmc32 apt tarball] ****** </p><p> ok: [localhost] => (item=/media/cdrom/extras/hLinux-cmc-i386.tar.gz)</p>
+          <p>If this fails to appear then you need to reinit deployer and point to where this files is located. Note that even when it fails it still is green and says ok! To fix run command: ansible-playbook -i hosts/localhost -e cmc32_apt_tarball_glob="/media/cdrom/extras/hLinux-cmc-i386.tar.gz" deployer-init.yml.</p>
+          <p>Modify location as required.</p></li> 
+        <li>Create the model. For now it can be based on Padawan. cd ~/hlm-input-model/2.0/hp-ci ; cp -r padwan new_model_name ; cd new_model_name</li>
+        <li>Edit the data/baremetalConfig.yml file to contain right info for hardware.  In my case I used yml file from last installtion on this rack.</li>
+        <li>Edit data/servers.yml to contain ips from baremetalConfig.yml</li>
+        <li>Edit data/net_global.yml to have right network data</li>
+        <li>Modify data/disks_controller.yml file specific to swift harware requirement.</li>
+        <li>Run the configuration processor and check that your IP addresses are correct in the following:
+        <ul><li>cd ~/helion/hlm/ansible</li></ul>
+          <ul><li>ansible- ansible-playbook -i hosts/localhost config-processor-run_v2.yml</li></ul>
+        <p>Confirm that the values used by the configuration processor are the values you want. Edit generated_files/etc/hosts and confirm that the IPs there are correct for your system. Do not proceed until they are correct. If you need to re-run the configuration processor, you must delete hlm-configuration-processor/output first. Otherwise, the existing values will be re-used even if you changed the input.</p>
+        </li>
+        <li>Prepare bare metal hardware (this can be done in parallel with the above steps, or in advance)
+        <ul><li>iLO Advanced license</li></ul>
+        <ul><li>Ensure every system has 5 enabled disk devices</li></ul>
+        <ul><li>Switch from UEFI to Legacy BIOS</li></ul>
+        </li>
+        <li>Export ANSIBLE_HOST_KEY_CHECKING=False</li>
+        <li>time ansible-playbook -i hosts/localhost cobbler-deploy.yml</li>
+        <li>Run the following command: ansible-playbook -i hosts/localhost cobbler-provision.yml
+          <p>This will power down all nodes, set them to pxe boot and power them up again.</p></li>
+        <li>Wait for the nodes to install: they will power down at the end.</li>
+        <li>Power up recently-installed systems, e.g. ansible-playbook -i hosts/localhost cobbler-power-up.yml</li>
+        <li>Set the following environment variables:
+        <ul>
+          <li>export http_proxy=http://web-proxy.rose.hp.com:8080/</li>
+          <li>export https_proxy=http://web-proxy.rose.hp.com:8080/</li>
+          <li>export no_proxy=localhost,127.0.0.1,&lt;deployer_IP&gt;</li>
+        </ul></li>
+        <li>Install the ethtool package on all servers</li>
+        <li>Modify the ./helion/hlm/ansible/hlm-deploy.yml:
+        <ul><li>Comment out the line containing ironic-deploy</li></ul>
+        <ul><li>Comment out the line containing logging-deploy</li></ul>
+        </li>
+        <li>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e elasticsearch_cluster_name=[name of cluster]</li>
+        <li>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml
+        <ul><li>NOTE you can optionally specify the external network CIDR here too: e.g. ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</li></ul>
+        </li>
+        <li>ansible-playbook -i hosts/localhost cloud-client-setup.yml</li>
+        <li>source /etc/environment</li>
+        <li>As per HLM-533/HLM-973, the default root partition layout is too small and a consequence is that logfiles will quickly fill up the / filesystem. As root, pply the following workaround to all systems:
+        <ul><li>lvextend -l +95%FREE /dev/hlm-vg/root</li></ul>
+        <ul><li>resize2fs /dev/hlm-vg/root</li></ul>
+        </li>
+        <li>NOTE: Optional step to configure DNS resolution on deployer in FtC CDL labs. This is necessary in order to get 'pip install' type commands to work.
+        <ul><li>Replace /etc/resolv.conf on the deployer node with these lines:</li></ul>
+        <p>search ftc.usa.hp.com</p>
+          <p>nameserver 10.1.64.20</p>
+          <p>nameserver 10.1.65.20</p>
+          <p>nameserver 10.240.20.1</p>
+        </li>
+      </ol>
+    </section>
+  </body>
+
+</topic>
