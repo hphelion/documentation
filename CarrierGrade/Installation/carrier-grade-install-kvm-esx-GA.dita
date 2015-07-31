@@ -584,7 +584,18 @@ ping router "management" &lt;vsd IP or domain name> </codeblock>
       
     </section>
 
+<section><title>Enable GRE in iptables</title>
 
+  <p>If an environment uses more than one VRS-G node, you must enable Generic Routing Encapsulation (GRE) in the IP tables.</p>
+  <ol><li>On each VRS-G node, navigate to the /etc/ufw/before.rules file.</li>
+  <li>Add the following lines to the file:
+    <codeblock>-A ufw-before-input -p 47 -j ACCEPT
+      -A ufw-before-output -p 47 -j ACCEPT</codeblock>
+  </li>
+
+
+  </ol>
+</section>
 
   <section id="next-step"> <title>Next Step</title>
 <p>
