@@ -39,6 +39,14 @@
         <stentry>Based on <tm tmtype="tm">Cloud Foundry</tm>, this add-on for Helion OpenStack empowers developers and IT professionals with an open
           development platform designed for agility. </stentry>
       </strow>
+    <strow>
+      <stentry>
+          <xref href="CarrierGrade/carrier-grade-index.dita#topic2685"/>
+        </stentry>
+      <stentry>A carrier grade OpenStack solution plus compute and network functions virtualization
+          (NFV) offering that enables CSPs to deploy  applications on open source software
+          platforms. </stentry>
+    </strow>
       <strow>
         <stentry>
           <xref href="euca/euca-landing-page.dita">HP Helion Eucalyptus</xref>

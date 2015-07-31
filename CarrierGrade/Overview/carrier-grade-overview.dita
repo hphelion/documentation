@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4010">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1 GA: Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Overview</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -15,9 +15,9 @@
 <body>
     <section>
       <!-- From QuickSpec Asawa, Manjari <manjari.asawa@hp.com> -->
-      <p><b>HP Helion OpenStack Carrier Grade </b> is a carrier grade OpenStack plus compute and
-        network virtualization offering for NFV that enable CSPs to deploy network functions
-        virtualization (NFV) applications on open source software platforms. </p>
+      <p><b>HP Helion OpenStack Carrier Grade </b> is a carrier grade OpenStack solution plus
+        compute and network functions virtualization (NFV) offering that enables CSPs to deploy
+        applications on open source software platforms.  </p>
       <p>Some key examples include the host operating system (for example, Linux), server
         virtualization (KVM), network virtualization (vSwitch and SDN controllers), an installer and
         cloud lifecycle management framework, fault and performance management, and
