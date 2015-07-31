@@ -29,7 +29,7 @@
           to prevent PXE boot attempts from those devices.</li>
               
         <li>The machine types should be homogeneous.</li>
-        <li>Deployer node needs to be a dedicated node for beta0</li>
+        <li>The deployer node needs to be a dedicated node for beta0</li>
         <li>Gather MAC addresses of your hardware and IP addresses you wish to assign for inclusion
           in configuration files</li>
         <li>Install on nodes via legacy bios
@@ -61,6 +61,7 @@
           </ul></li>
         <li>If you are not configuring with Swift for whatever reason, including lack of hardware,
           comment out the Swift config entries in ccp.yml</li>
+        <li>It is possible to add additional VSA and compute nodes. The default is 1 of each.</li>
       </ol>
     </p>
   </body>
