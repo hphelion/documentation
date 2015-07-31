@@ -55,7 +55,8 @@
         <li>Untar the hlm-deployer.tgz file in ~stack</li>
         <li>Run included script, e.g. ~/hlm-deployer/hlm-init-2.0.0.bash </li>
         <li>Observe output for: 
-          <p>TASK: [deployer-setup | init-deployer-apt-repo | Find cmc32 apt tarball] ****** </p><p> ok: [localhost] => (item=/media/cdrom/extras/hLinux-cmc-i386.tar.gz)</p>
+          <p>TASK: [deployer-setup | init-deployer-apt-repo | Find cmc32 apt tarball] ****** </p>
+          <p> ok: [localhost] => (item=/media/cdrom/extras/hLinux-cmc-i386.tar.gz)</p>
           <p>If this fails to appear then you need to reinit deployer and point to where this files is located. Note that even when it fails it still is green and says ok! To fix run command: ansible-playbook -i hosts/localhost -e cmc32_apt_tarball_glob="/media/cdrom/extras/hLinux-cmc-i386.tar.gz" deployer-init.yml.</p>
           <p>Modify location as required.</p></li> 
         <li>Create the model. For now it can be based on Padawan. cd ~/hlm-input-model/2.0/hp-ci ; cp -r padwan new_model_name ; cd new_model_name</li>
@@ -63,25 +64,31 @@
         <li>Edit data/servers.yml to contain ips from baremetalConfig.yml</li>
         <li>Edit data/net_global.yml to have right network data</li>
         <li>Modify data/disks_controller.yml file specific to swift harware requirement.</li>
-        <li>Run the configuration processor and check that your IP addresses are correct in the following:</li>
-        <ul><li>cd ~/helion/hlm/ansible</li></ul>
-          <ul><li>ansible- ansible-playbook -i hosts/localhost config-processor-run_v2.yml</li></ul>
-        <p>Confirm that the values used by the configuration processor are the values you want. Edit generated_files/etc/hosts and confirm that the IPs there are correct for your system. Do not proceed until they are correct. If you need to re-run the configuration processor, you must delete hlm-configuration-processor/output first. Otherwise, the existing values will be re-used even if you changed the input.</p>
-        <li>Prepare bare metal hardware (this can be done in parallel with the above steps, or in advance)</li>
-        <ul><li>iLO Advanced license</li></ul>
-        <ul><li>Ensure every system has 5 enabled disk devices</li></ul>
-        <ul><li>Switch from UEFI to Legacy BIOS</li></ul>
+        <li>Run the configuration processor and check that your IP addresses are correct in the following:
+          <ol>
+            <li>cd ~/helion/hlm/ansible</li>
+            <li>ansible- ansible-playbook -i hosts/localhost config-processor-run_v2.yml
+            <p>Confirm that the values used by the configuration processor are the values you want. Edit generated_files/etc/hosts and confirm that the IPs there are correct for your system. Do not proceed until they are correct. If you need to re-run the configuration processor, you must delete hlm-configuration-processor/output first. Otherwise, the existing values will be re-used even if you changed the input.</p></li>
+          </ol> 
+        </li>
+        <li>Prepare bare metal hardware (this can be done in parallel with the above steps, or in advance)
+          <ol>
+            <li>iLO Advanced license</li>
+            <li>Ensure every system has 5 enabled disk devices</li>
+            <li>Switch from UEFI to Legacy BIOS</li>
+          </ol>
+        </li> 
         <li>Export ANSIBLE_HOST_KEY_CHECKING=False</li>
         <li>time ansible-playbook -i hosts/localhost cobbler-deploy.yml</li>
-        <li>Run the following command: ansible-playbook -i hosts/localhost cobbler-provision.yml</li>
-        <p>This will power down all nodes, set them to pxe boot and power them up again.</p>
+        <li>Run the following command: ansible-playbook -i hosts/localhost cobbler-provision.yml
+          <p>This will power down all nodes, set them to pxe boot and power them up again.</p></li>
         <li>Wait for the nodes to install: they will power down at the end.</li>
         <li>Power up recently-installed systems, e.g. ansible-playbook -i hosts/localhost cobbler-power-up.yml</li>
         <li>Set the following environment variables:
         <ul>
           <li>export http_proxy=http://web-proxy.rose.hp.com:8080/</li>
           <li>export https_proxy=http://web-proxy.rose.hp.com:8080/</li>
-          <li>export no_proxy=localhost,127.0.0.1,<deployer_IP></li>
+          <li>export no_proxy=localhost,127.0.0.1,[deployer_IP]</li>
         </ul></li>
       </ol>
     </section>
