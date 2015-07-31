@@ -28,7 +28,7 @@
               on deployer node with RAID 5 configuration if desired.</li>
         <li>Four local disks on nodes in the control plane (for root OS and Swift) are
           required.</li>
-            <li>Swift cannot currently address logical volumes</li>
+            <li>Swift cannot currently address logical volumes.</li>
           </ul></li>
         <li>Need to enable PXE booting. Adjust boot order for the control plane and storage nodes.
           For deployer node this can be CD ROM with hard drives last.</li>
