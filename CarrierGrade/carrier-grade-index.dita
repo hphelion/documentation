@@ -44,7 +44,9 @@
 <p>Use the following links and tools to begin working with HP Helion OpenStack Carrier Grade:</p>
 <ul>
 <li>
-<p><xref href="../PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf">Administrator Guide</xref></p>
+<p><xref
+              href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
+              format="pdf" scope="external">Administrator Guide</xref></p>
 
 <p>The Administrator Guide is addressed to HP Helion OpenStack Carrier Grade administrators
             responsible for the following areas:</p>

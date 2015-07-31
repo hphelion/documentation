@@ -17,8 +17,8 @@
     <body><section>CG-1307; ;CG-1305; CG-1292</section>
         
         <section><title>StoreVirtual Cluster VIP not available on storage network. </title>
-            <p>If  you cannot ping a specific virtual IP address on the network, locate the host
-                with the associated IP and reboot that server.</p>
+            <p>If  you cannot ping a specific virtual IP address on a StoreVirtual server, locate
+                the host with the associated IP and reboot that server.</p>
                 
                 <p><!--  CG-1306 -->
             </p>
