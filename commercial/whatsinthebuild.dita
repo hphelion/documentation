@@ -53,10 +53,10 @@
     <li>adding VSA, etc</li>
   </ul>
 </section>
-<section id="Networking">
-      <title>Network Planning</title>
+<section id="Networking"> <title>Network Planning</title>
+  <p>Native support for:</p>
   <ul>
-    <li>NIC bonding: Helion OpenStack 2.0 has native support for NIC bonding.</li>
+    <li>NIC bonding</li>
     <li>Multi-NIC support</li>
     <li>Network separation (including VLAN)</li>
   </ul>
