@@ -18,14 +18,14 @@
         <li>1 dedicated NIC for PXE installation</li>
         <li>1 additional NIC for networking</li>
         <li>Support configurations with 4 NICs in total (including the NIC for PXE installation)</li>
-        <li><note>For Swift deployment, two disk drives are required on each of the three controller nodes.</note></li>
-      </ul>
+       </ul>
+      <note>For Swift deployment, two disk drives are required on each of the three controller nodes.</note>
     </section>
     <section id="MinimumRequirements">
       <title>Minimum Requirements</title>
       <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0* 1.0* 1.0* 1.0* 1.0*"
         id="simpletable_sy5_nph_ws">
-        <strow>
+        <sthead>
           <stentry>Node Type</stentry>
           <stentry>Role Name</stentry>
           <stentry>Required Number</stentry>
@@ -33,7 +33,7 @@
           <stentry>Memory</stentry>
           <stentry>Network</stentry>
           <stentry>CPU</stentry>
-        </strow>
+        </sthead>
         <strow>
           <stentry>Deployer</stentry>
           <stentry>Deployer</stentry>
