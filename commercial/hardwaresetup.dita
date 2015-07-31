@@ -47,10 +47,13 @@
               are required.</li>
             <li>Swift cannot currently address logical volumes.</li>
           </ul></li>
-        <li>Enable PXE booting. Adjust boot order for the control plane and storage nodes. For the
-          deployer node this can be CD ROM with hard drives designated last in the boot order.</li>
+        <li>Enable PXE booting, as HP Linux for HP Helion OpenStack will be installed on these blank
+          nodes during installation. Adjust boot order for the control plane and storage nodes. For
+          the deployer node this can be CD ROM with hard drives designated last in the boot
+          order.</li>
         <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
-        <li>Turn off DHCP <ul id="ul_qvd_swh_ws">
+        <li><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Turn off DHCP????
+            <?oxy_custom_end?><ul id="ul_qvd_swh_ws">
             <li>
               <p>If you have other DHCP servers on the same network as your system, you must ensure
                 that the DHCP server does not hand out IP addresses to your physical nodes as they
