@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic3485">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: KVM Deployment Architecture
+    Reference</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
+    <p>This page introduces deployment and network architectures of the KVM + ESX deployment of HP
+      Helion OpenStack Carrier Grade.</p>
+    <ul>
+      <li>
+        <xref type="section" href="#topic3485/Helion-services">HP Helion OpenStack services</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic3485/networkarch">Network architecture</xref>
+      </li>
+    </ul>
+    <section id="deploy-arch">
+      <title>Deployment architecture</title>
+      <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack
+        Carrier Grade.</p>
+      <p>
+        <image href="../../media/CGH-architecture-rc0.png" width="800"/></p>
+      <p>The following sections describe essential aspects of this diagram.</p>
+    </section>
+    <section id="networkarch">
+      <title>Network architecture</title>
+      <p>The following information describes the network configuration, which must be configured by
+        the network administrator.</p>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <thead>
+            <row>
+              <entry> Network </entry>
+              <entry> Description </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> PXE-1 and PXE-2</entry>
+              <entry>Boot/initial configuration network. Untagged </entry>
+            </row>
+            <row>
+              <entry> CLM / MGMT</entry>
+              <entry>Cloud Management Network. Shared between the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> CAN / OAM</entry>
+              <entry>Consumer Access Network Shared between the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> CTL </entry>
+              <entry>IPMI/iLO network. Shared between the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> BLS / INFRA</entry>
+              <entry>Block Storage Network; can be on a separate interface (`intf*`). Shared between
+                the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> DCM </entry>
+              <entry>Data Center Management network (accessible to KVM region) and route across
+                multiple data centers. </entry>
+            </row>
+            <row>
+              <entry> TUL/SR-IOV </entry>
+              <entry>Tenant Underlay Network from the KVM region </entry>
+            </row>
+            <row>
+              <entry> EXT </entry>
+              <entry> Provider VLAN as an External network (provides that FIP pool for the KVM
+                region). </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="interfaces">
+      <title>Interfaces</title>
+      <p>The following are the interfaces being used, based on the technical architecture diagram.
+        You can use more than two interfaces and specific networks to physical networks.</p>
+      <ul>
+        <li>Intf0 is mapped to Port1/Bonded Pair</li>
+        <li>Intf1 is mapped to Port2/Bonded Pair</li>
+        <li>Intf<i>n</i> are Multiple Provider Networks or SR-IOV interfaces.</li>
+      </ul>
+    </section>
+    <section id="routing-acls">
+      <title>Routing ACLs</title>
+      <p>Configure the following routing access lists.</p>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="col3"/>
+          <thead>
+            <row>
+              <entry> From </entry>
+              <entry> To </entry>
+              <entry> Reason </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> CLM </entry>
+              <entry> DCM </entry>
+              <entry> Access NTP, DNS, LDAP, StoreVirtual APIs, and so forth </entry>
+            </row>
+            <row>
+              <entry> CLM </entry>
+              <entry> CTL </entry>
+              <entry> Access iLO network for managing the lifecycle of the node </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>CLM/OBS, PXE-1, PXE-2, BLS/INFRA, TUL/SR-IOV should use RFC 1918 non-routable IPs to
+        prevent access to the CLM network from DCM, CTL, or EXT.</p>
+    </section>
+    <section><title>Regions</title>
+      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
+        or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in the
+        installation process. The <xref
+          href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment Architecture
+          diagram</xref> shows an illustration of these two zones. </p>
+        <p><b>Non-KVM</b></p>
+        <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
+        maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
+        distribution of OpenStack.   </p>
+        <p><b>KVM</b></p>
+        <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM region consists
+          of a software platform, providing ultra-reliability and exceptional performance efficiencies
+          for telecommunications networks. </p>
+      
+      
+    </section>
+  </body>
+</topic>

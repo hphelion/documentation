@@ -3,14 +3,14 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the KVM Region</title>
 <prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
-<othermeta name="role" content="Storage Administrator"/>
-<othermeta name="role" content="Storage Architect"/>
-<othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
-</metadata>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+  </metadata>
 </prolog>
 <body>
 
@@ -36,7 +36,7 @@ ifconfig eth0 up</codeblock></li>
           <codeblock>route add default gw &lt;CIDR_gateway_IP&gt;</codeblock></li>
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
           controller-0:
-          <pre>TS_15.05_PATCH_0001.patch  # HLM VM /root/cg-hlm/windriver-files</pre><pre>region_config              # HLM VM ~/&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>cakey.pem                  # HLM VM ~&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>license.lic                # License file received/procured ny the user</pre><pre>helion_branding-v1.2.tgz   # HLM VM /root/cg-hlm/windriver-files</pre></li>
+          <pre>TS_15.05_PATCH_0001.patch  # HLM VM /root/cg-hlm/windriver-files</pre><pre>region_config              # HLM VM ~/&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>cakey.pem                  # HLM VM ~&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>license.lic                # License file received/procured by the user</pre><pre>helion_branding-v1.2.tgz   # HLM VM /root/cg-hlm/windriver-files</pre></li>
         <li>Move the <codeph>helion_branding-v1.2.tgz</codeph> to <codeph>/opt/branding</codeph> on
           the controller-0 </li>
         <li>Apply the required patches on controller-0:

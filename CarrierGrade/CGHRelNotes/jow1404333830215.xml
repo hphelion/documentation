@@ -7,172 +7,31 @@
         (COTS) hardware to manage Virtualized Network Functions (VNF) within a carrier grade Network
         Function Virtualization (NFV) architecture.</shortdesc>
     <prolog>
-        <author>Jim Owens</author>
-        <author>Pedro Sanchez</author>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+        </metadata>
     </prolog>
     <body>
-        <p>HP Helion OpenStack Carrier Grade brings together the flexibility and scalability of the IT
-            cloud, and the high-availability and performance demanded by the Telecommunications
+        <p>HP Helion OpenStack Carrier Grade brings together the flexibility and scalability of the
+            IT cloud, and the high-availability and performance demanded by the Telecommunications
             industry, into a unique carrier grade, industry-leading solution to deliver a
-            price-performance ratio well above alternative solutions. HP Helion OpenStack Carrier Grade is aligned
-            with the ETSI-NFV architecture</p>
+            price-performance ratio well above alternative solutions. HP Helion OpenStack Carrier
+            Grade is aligned with the ETSI-NFV architecture</p>
         <p>For more information on using HP Helion OpenStack Carrier Grade, see the <cite>HP Helion
                 OpenStack Carrier Grade Software Installation Guide</cite> and the <cite>HP Helion
                 OpenStack Carrier Grade Administration Guide</cite>. For information on using the HP
             Helion OpenStack Carrier Grade Developer API, including API definitions and usage
             descriptions, see the <cite>HP Helion OpenStack Carrier Grade SDK</cite>.</p>
-        <p>See also: 
-        <ul><li><xref href="jow1404333830815.xml#topic6108"/></li>
+        <p>See also: <ul>
+                <li><xref href="jow1404333830815.xml#topic6108"/></li>
                 <li><xref href="jow1404333831397.xml#topic6108"/></li>
                 <li><xref href="jow1404333831977.xml#topic6108"/></li>
-            <li><xref href="jow1430312565268.xml#topic6108"/></li>
-            
-        </ul></p>
-        
-        <section>
-            <title>Supported Hardware Platforms</title>
-            <p>The following is the list of certified platforms for running HP Helion OpenStack Carrier Grade in the KVM region:</p>
-            <table frame="all" id="table_kp4_l3b_ln">
-                <title>HP Helion OpenStack Carrier Grade Certified Hardware Platforms</title>
-                <tgroup cols="2">
-                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-                    <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-                    <thead>
-                        <row>
-                            <entry>
-                                <p>Manufacturer</p>
-                            </entry>
-                            <entry>
-                                <p>Platform</p>
-                            </entry>
-                        </row>
-                    </thead>
-                    <tbody>
-                        <row>
-                            <entry morerows="3">
-                                <p>Hewlett-Packard</p>
-                            </entry>
-                            <entry>
-                                <p>HP360 Proliant DL360P Gen8 Server</p>
-                            </entry>
-                        </row>
-                        <row>
-                            <entry>
-                                <p>HP360 Proliant DL360P Gen9 Server</p>
-                            </entry>
-                        </row>
-                        <row>
-                            <entry>
-                                <p>HP380 Proliant DL380P Gen8 Server</p>
-                            </entry>
-                        </row>
-                        <row>
-                            <entry>
-                                <p>HP380 Proliant DL380P Gen9 Server</p>
-                            </entry>
-                        </row>
-                    </tbody>
-                </tgroup>
-            </table>
-            <p>The following NICs have been verified for PXE booting:</p>
-            <ul>
-                <li>
-                    <p>Broadcom 1G</p>
-                </li>
-                <li>
-                    <p>Broadcom 10G</p>
-                </li>
-                <li>
-                    <p>Emulex 10G</p>
-                </li>
-                <li>
-                    <p>Intel 82599</p>
-                </li>
-                <li>
-                    <p>Intel i350</p>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <title>Supported Hardware Configuration</title>
-            <p>HP Helion OpenStack Carrier Grade has been verified to work using the following
-                hardware configuration:</p>
-            <ul>
-                <li>
-                    <p>The required number of controller nodes is two.</p>
-                </li>
-                <li>
-                    <p>The required number of storage nodes is two. Storage nodes
-                        are optional, depending on storage needs.</p>
-                </li>
-                <li>
-                    <p>The verified number of compute nodes is 20.</p>
-                </li>
-                <li>
-                    <p>For predictable performance, it is recommended to disable hyper-threading in
-                        the BIOS of all nodes in the cluster.</p>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <title>Supported System Configuration</title>
-            <p>HP Helion OpenStack Carrier Grade has been verified to work using the following system
-                configuration:</p>
-            <ul>
-                <li>
-                    <p>two controllers</p>
-                </li>
-                <li>
-                    <p>20 compute nodes with dual Intel(R) Xeon(R) CPU E5-2670 v2
-                        and E5-2640v3</p>
-                </li>
-                <li>
-                    <p>200 virtual machine instances</p>
-                </li>
-                <li>
-                    <p>up to four physical ports per compute node</p>
-                </li>
-                <li>
-                    <p>maximum eight AVP vNICs per guest</p>
-                </li>
-                <li>
-                    <p>maximum eight SR-IOV vNICs per guest</p>
-                </li>
-                <li>
-                    <p>maximum 32 VFs per NIC</p>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <title>Supported Guest OSs</title>
-            <p>The following Guest OSs are supported by HP Helion OpenStack Carrier Grade:</p>
-            <ul>
-                <li>
-                    <p>KVM 6.0</p>
-                </li>
-                <li>
-                    <p>KVM 5.0</p>
-                </li>
-                <li>
-                    <p>CentOS 6.4</p>
-                </li>
-                <li>
-                    <p>Fedora 19</p>
-                </li>
-                <li>
-                    <p>RHEL 6.5</p>
-                </li>
-                <li>
-                    <p>OpenSUSE 12.3</p>
-                </li>
-            </ul>
-            <p>Requirements for specific guest OSs are included in the SDK README files.</p>
-        </section>
-        <section>
-            <title>Performance Considerations</title>
-            <p>The nature of the guest applications, their processing and storage
-                demands, and other configuration factors can affect the overall performance of the
-                HP Helion OpenStack Carrier Grade cluster.</p>
-        </section>
+                <li><xref href="jow1430312565268.xml#topic6108"/></li>
+            </ul></p>
     </body>
 </topic>

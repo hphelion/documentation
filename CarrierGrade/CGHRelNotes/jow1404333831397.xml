@@ -6,8 +6,14 @@
     <shortdesc>There are some usage issues you should be aware of when working working in the KVM region of this
   release.</shortdesc>
     <prolog>
-        <author>Jim Owens</author>
-        <author>Pedro Sanchez</author>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+        </metadata>
     </prolog>
     <body>
         <section>
