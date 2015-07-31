@@ -71,8 +71,9 @@
           processor can be rerun with the new values. <b>Note,</b> the config processor must be
           rerun after making config changes. Users can run Chef or Puppet for a comfiguration
           management solution if desired.</li>
-        <li>Some Pre and Post install checks will run automatically: The installer will test for ssh
-          access to each node ad will check that services are running</li>
+        <li>Some Pre and Post install checks will run automatically: The installer will test
+          configuration, test for ssh access to each node, and check that installed services are
+          running, for example.</li>
       </ol>
     </p>
   </body>
