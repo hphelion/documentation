@@ -42,7 +42,12 @@
      <li>Select Keyboard layout</li>
      <li>Select appropriate network interface
        <ul><li>Assign IP address, netmask</li>
-         <li>Create new account</li>
+         <li>Create new account
+         <ul>
+           <li>Enter a username.</li>
+           <li>Enter a password.</li>
+           <li>Enter timezone if prompted to do so.</li>
+         </ul></li>
        </ul></li>
 </ol></section>
     <section><title>Installing HLM</title>
@@ -55,10 +60,9 @@
           <ul>
             <li>TASK: [deployer-setup | init-deployer-apt-repo | Find cmc32 apt tarball] ****** </li>
             <li>ok: [localhost] => (item=/media/cdrom/extras/hLinux-cmc-i386.tar.gz)</li>
-            <li>If this fails to appear then you need to reinit deployer and point to where this files is located. Note that even when it fails it still is green and says ok! To fix run command: ansible-playbook -i hosts/localhost -e cmc32_apt_tarball_glob="/media/cdrom/extras/hLinux-cmc-i386.tar.gz" deployer-init.yml.</li>
-            <li>Modify location as required.</li> 
-          </ul>
-        </li>
+            <li>If this fails to appear then you need to reinit deployer and point to where this files is located. Note that even when it fails it still is green and says ok! To fix run command: ansible-playbook -i hosts/localhost -e cmc32_apt_tarball_glob="/media/cdrom/extras/hLinux-cmc-i386.tar.gz" deployer-init.yml</li>
+            <li>Modify location as required.</li>
+          </ul></li>
         <li>Create the model. For now it can be based on Padawan. cd ~/hlm-input-model/2.0/hp-ci ; cp -r padwan new_model_name ; cd new_model_name</li>
         <li>Edit the data/baremetalConfig.yml file to contain right info for hardware.  In my case I used yml file from last installtion on this rack.</li>
         <li>Edit data/servers.yml to contain ips from baremetalConfig.yml</li>
@@ -88,17 +92,19 @@
         <li>Wait for the nodes to install: they will power down at the end.</li>
         <li>Power up recently-installed systems, e.g. ansible-playbook -i hosts/localhost cobbler-power-up.yml</li>
         <li>Set the following environment variables:
-        <ul>
-          <li>export http_proxy=http://web-proxy.rose.hp.com:8080/</li>
-          <li>export https_proxy=http://web-proxy.rose.hp.com:8080/</li>
-          <li>export no_proxy=localhost,127.0.0.1,&lt;deployer_IP&gt;</li>
-        </ul></li>
+          <ol>
+            <li>export http_proxy=http://web-proxy.rose.hp.com:8080/</li>   
+            <li>export https_proxy=http://web-proxy.rose.hp.com:8080/</li>
+            <li>export no_proxy=localhost,127.0.0.1,&lt;deployer_IP&gt;</li>
+          </ol>
+        </li>
         <li>Install the ethtool package on all servers</li>
         <li>Modify the ./helion/hlm/ansible/hlm-deploy.yml:
-        <ul>
-          <li>Comment out the line containing ironic-deploy</li>
-          <li>Comment out the line containing logging-deploy</li>
-        </ul></li>
+       <ol>
+         <li>Comment out the line containing ironic-deploy</li>
+         <li>Comment out the line containing logging-deploy</li>
+       </ol>
+</li>
         <li>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e elasticsearch_cluster_name=[name of cluster]</li>
         <li>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml
           <ul><li><note>You can optionally specify the external network CIDR here too: e.g. ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</note></li></ul></li>
@@ -110,7 +116,7 @@
             <li>lvextend -l +95%FREE /dev/hlm-vg/root</li>
             <li>resize2fs /dev/hlm-vg/root</li>
           </ul></li>
-        <li><note>Optional step to configure DNS resolution on deployer in FtC CDL labs. This is necessary in order to get 'pip install' type commands to work.</note>
+        <li> Note: Optional step to configure DNS resolution on deployer in FtC CDL labs. This is necessary in order to get 'pip install' type commands to work.
         <ul>
           <li>Replace /etc/resolv.conf on the deployer node with these lines:
         <ul>
@@ -120,9 +126,7 @@
           <li>nameserver 10.240.20.1</li>
         </ul>
           </li>
-        </ul></li>
-     
-      </ol>
+        </ul></li></ol> 
     </section>
   </body>
 </topic>
