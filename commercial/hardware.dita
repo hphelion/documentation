@@ -3,6 +3,102 @@
 <topic id="topic_omx_srg_ws">
   <title>Beta 0 Minimum Hardware Requirements</title>
   <body>
-    <p></p>
-  </body>
+    <section id="SupportedConfigs"> <title>Supported Configurations</title>
+      <p>HP supports the following configurations for HP Helion OpenStack deployment:</p>
+      <p>Host Interconnects/Protocols</p>
+      <ul>
+        <li>10Gb Software iSCSi</li>
+        <li>8Gb and 16Gb Fibre-Channel</li>
+        <li>Software iSCSi and Fibre-Channel under KVM</li>
+      </ul>
+    </section>
+    <section id="HardwareRequirements"><title>Hardware Requirements</title>
+      <p>You must have the following hardware configuration:</p>
+      <ul>
+        <li>1 dedicated NIC for PXE installation</li>
+        <li>1 additional NIC for networking</li>
+        <li>Support configurations with 4 NICs in total (including the NIC for PXE installation)</li>
+        <li><note>For Swift deployment, two disk drives are required on each of the three controller nodes.</note></li>
+      </ul>
+    </section>
+    <section id="MinimumRequirements">
+      <title>Minimum Requirements</title>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0* 1.0* 1.0* 1.0* 1.0*"
+        id="simpletable_sy5_nph_ws">
+        <strow>
+          <stentry>Node Type</stentry>
+          <stentry>Role Name</stentry>
+          <stentry>Required Number</stentry>
+          <stentry>Disk</stentry>
+          <stentry>Memory</stentry>
+          <stentry>Network</stentry>
+          <stentry>CPU</stentry>
+        </strow>
+        <strow>
+          <stentry>Deployer</stentry>
+          <stentry>Deployer</stentry>
+          <stentry>1</stentry>
+          <stentry> 10 GB</stentry>
+          <stentry>1 GB</stentry>
+          <stentry>
+            <ul id="ul_i21_xqh_ws">
+              <li>1 x 10Gb with PXE Support</li>
+              <li>2 x 10Gb</li>
+            </ul>
+          </stentry>
+          <stentry>8 CPU (64-bit) cores total (can be Intel or AMD)</stentry>
+        </strow>
+        <strow>
+          <stentry>Controller</stentry>
+          <stentry>OvercloudControl</stentry>
+          <stentry>3</stentry>
+          <stentry>512 GB</stentry>
+          <stentry>32 GB</stentry>
+          <stentry>
+            <ul id="ul_vzb_1rh_ws">
+              <li>1 x 10Gb with PXE Support</li>
+              <li>2 x 10Gb</li>
+              <li>(Bonding)</li>
+            </ul>
+          </stentry>
+          <stentry>8 CPU (64-bit) cores total (can be Intel or AMD)</stentry>
+        </strow>
+        <strow>
+          <stentry>Compute</stentry>
+          <stentry>OvercloudCompute</stentry>
+          <stentry>1-3</stentry>
+          <stentry>512 GB (100GB is required for HP Moonshot servers)</stentry>
+          <stentry>32 GB (Memory must be sized based on the VM instances hosted on the Compute
+            node)</stentry>
+          <stentry>
+            <ul>
+              <li>1 x 10Gb with PXE Support</li>
+              <li>2 x 10Gb</li>
+            </ul>
+          </stentry>
+          <stentry>
+            <p>8 CPU (64-bit) cores total (can be Intel or AMD) with hardware virtualization
+              support. The CPU cores must be sized based on the VM instances hosted by the Compute
+              node.</p>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>VSA Server (Optional)</stentry>
+          <stentry>OvercloudVSAStorage</stentry>
+          <stentry>0, 1, or 3</stentry>
+          <stentry>512 GB</stentry>
+          <stentry>32 GB</stentry>
+          <stentry>
+            <ul>
+              <li>1 x 10Gb with PXE Support</li>
+              <li>2 x 10Gb</li>
+            </ul>
+          </stentry>
+          <stentry>
+            <p>8 CPU (64-bit) cores total (can be Intel or AMD)</p>
+          </stentry>
+        </strow>
+      </simpletable>
+    </section>
+    </body>
 </topic>
