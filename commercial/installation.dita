@@ -22,17 +22,20 @@
   </prolog>
   <body>
 <note>This assumes a BM deployer.</note>
-<note>This assumes hlinux ISO  http://tarballs.gozer.hpcloud.net/hlm/hlinux_iso/hLinux-cattleprod-amd64-blaster-netinst-20150723-hlm.2015-07-28T12:10:40_2cb6ab0.iso</note>  
-<note>This assumes HLM kit  http://tarballs.gozer.hpcloud.net/hlm/release/2.0.0/20150727T083529Z/hlm-deployer-2.0.0-20150727T083529Z.tgz</note>
-<section><title>Known Restrictions</title></section>
+<note>This assumes hlinux ISO http://tarballs.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-8/hlm-deployer-2.0.0-20150730T215505Z.tgz</note>  
+<note>This assumes HLM kit  http://tarballs.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-8/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-07-30T23:07:26_52e38af.iso</note>
+<section><title>Known Restrictions</title>
     <ol id="ol_kr3_2fb_ws">
       <li>All disks on the system(s) will be wiped /dev/sda will be used for the OS but all other disks will also be wiped.</li>
-      <li>Install on nodes via legacy bios setting ( No UEFI)</li>
+      <li>Install on nodes via legacy bios setting (No UEFI)</li>
+      <li>Only one network interface configuration tested</li>
+      <li>The network will need to be set up with 3 routed VLANs, 1 untagged and 2 tagged (external and svc) with associated CIDRs</li>
       <li>Need 4 local disks on nodes in the control plane (for root os and swift).</li>
-      <li>You will most likely need to reinstall machines on the next drop because of disk layout changes.</li>
       <li>Machines will need to be fully reinstalled on next drop - that is the disk layout might and will change.</li>
       <li>The machine types should be homogeneous.</li>
+      <li>This will onlyu work from within the HP Network</li>
     </ol>
+</section>
     <section><title>Installing hLinux Deployer from ISO</title>
    <ol><li>Create LUN(s)</li>
      <li>Boot from ISO</li>
