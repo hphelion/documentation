@@ -30,7 +30,8 @@
       <li>Install on nodes via legacy bios setting ( No UEFI)</li>
       <li>Need 4 local disks on nodes in the control plane (for root os and swift).</li>
       <li>You will most likely need to reinstall machines on the next drop because of disk layout changes.</li>
-      <li>Machines will need to be fully reinstalled on next drop - that is the disk layout might and will change.</li>
+      <li>Machines will need to be fully reinstalled on next drop – upgrade from beta0 to beta1 is
+        not supported.</li>
       <li>The machine types should be homogeneous.</li>
     </ol>
     <section><title>Installing hLinux Deployer from ISO</title>
