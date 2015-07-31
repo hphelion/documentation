@@ -60,8 +60,7 @@
     <topicref href="CarrierGrade/Installation/carrier-grade-technical-specs.dita"/>
     <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix2.dita"/>
     <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"/>
-    <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"
-      navtitle="Administrator Guide (PDF)"/>
+    <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"/>
     <topicref href="CarrierGrade/API/carrier-grade-api.dita"/>
     <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1: License Files">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"/>
