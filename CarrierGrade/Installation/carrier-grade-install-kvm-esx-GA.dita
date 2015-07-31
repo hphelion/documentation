@@ -17,8 +17,8 @@
   <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a
       virtual machine for the Helion Lifecycle Management (HLM), deploying the HP Helion OpenStack
       cloud, installing DCN components, and installing the ESX compute proxy.</p>
-    <p>The installation uses Ansible playbooks, which are files that contain which contains scripts
-      that execute required installation processes.</p>
+    <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
+      required installation processes.</p>
 
 <section id="prepare"> <title>Prepare the system for deployment</title>
 <p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM host):</p>
@@ -27,9 +27,9 @@
 
   <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
           environment. For information on each variable, refer to the comments in the file with each
-          variable. Make sure the <codeph>hlm_kvm_host</codeph> value is configured properly.
-    <p>The <codeph>group_vars/all</codeph> file should appear similar to the following for a KVM + ESX deployment:</p>
-  <codeblock>
+          variable. <p>The <codeph>group_vars/all</codeph> file should appear similar to the
+            following for a KVM + ESX
+          deployment:</p><codeblock>
     ############################################# Variables for HLM  #################################################################
     #These variables are relevant in both All Virtual and BareMetal scenarios.
     
@@ -88,8 +88,8 @@
     ###################################################################################################################################
   </codeblock></li>
   <li id="hosts">Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to
-    enter the IP address of the vibr0 interface in the <codeph>hlm_kvm_host</codeph> field, as shown in the following example. Make sure the DCM network
-          details are correct. Also, verify the CLM IP address in this file.</li>
+          enter the IP address of the vibr0 interface in the <codeph>hlm_kvm_host</codeph> field, as
+          shown in the following example. </li>
 </ol>
 <codeblock>  [hlm_kvm_host]
   192.168.122.1 </codeblock>
@@ -98,7 +98,6 @@
       <title>Deploy the HLM Virtual Machine</title>
       <p>Use the following steps to deploy the HLM VM on the HLM Host using Ansible playbooks.</p>
       <ol>
-        <li>Make sure the Ansible playbook file is not in executable mode.</li>
         <li>Execute the following
           command:<codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock> The command
           will do the following:<ul>
@@ -122,13 +121,10 @@
   
 <section id="vsd"> <title>Configuring the VSD node, creating user and applying License</title>
   <p>During the <xref href="#topic10581/deploy-the-hlm-and-vsd-vm" format="dita"/> process, the
-        Ansible playbook run creates a virtual machine is created to host the VSD node of DCN. You
-        need to create a default user and apply the required license</p>
-<p>Before you start, make sure the VSD node was installed by logging into the VSD node using
-        SSH.</p>
-  
-<p>After logging into the VSD node, execute the following command to launch a console window:</p>
-<codeblock>virsh console vsd</codeblock>
+        Ansible playbook run creates a virtual machine to host the VSD node of DCN. You need to
+        create a default user and apply the required license</p>
+<p>Before you start, make sure the VSD node was installed by logging into the VSD VM using SSH.</p>
+<codeblock>service vsd status</codeblock>
 <p>You should see the status as below from VSD VM.</p>
 <p>
   <image href="../../media/CGH-install-virsh-vsd.png"/>
@@ -165,8 +161,9 @@ Change to
       <ol>
         <li>Using a browser, browse to the link in the confirmation email you received when you
           purchased DCN and obtain the license.</li>
-        <li>After you have obtained the license, navigate to the DCM IP of VSD.</li>
-        <li>In the log in page, enter the default
+        <li>After you have obtained the license, use a browser to navigate to the VSD
+          dashboard.</li>
+        <li>In the login page, enter the default
           credentials:<codeblock>User Name: Csproot 
 Password: csproot 
 Org: csp 
@@ -175,7 +172,7 @@ VSD Server : auto
         <li>From VSD Dashboard, click the <b>Open VSP Configuration</b> tab on the top right corner of the
           dashboard.</li>
         <li>Click the <b>Licenses</b> tab and click <b>+</b>.</li>
-        <li>Copy and paste your DCN license key into the screen that displays.</li>
+        <li>Copy and paste your DCN license key into the pop-up window.</li>
 
       </ol>
       <!--Follow the instructions in the pdf to get the license - <b>Get confirmation from Nayana</b><p><xref href="https://wiki.hpcloud.net/display/HCG/HP+Helion+OpenStack+Carrier+Grade+%28NFVi%29+Home#HPHelionOpenStackCarrierGrade%28NFVi%29Home-HPHelionOpenStackCarrierGradeDCN/Nuage" format="html" scope="external">https://wiki.hpcloud.net/display/HCG/HP+Helion+OpenStack+Carrier+Grade+%28NFVi%29+Home#HPHelionOpenStackCarrierGrade%28NFVi%29Home-HPHelionOpenStackCarrierGradeDCN/Nuage</xref></p>-->
@@ -186,34 +183,36 @@ VSD Server : auto
 <li>From VSD Dashboard, click the <b>Open VSP Configuration</b> tab on the top right corner of the
           dashboard.</li>
 <li>Click the <b>CSP Users</b> tab and click <b>+</b>.</li>
-<li>Create a user named <codeph>OSadmin</codeph> with the password <codeph>OSadmin</codeph>.</li>
+<li>Create a user named <codeph>OSadmin</codeph> with the password <codeph>OSadmin</codeph>. The
+          name and password are case-sensitive.  Do not copy and paste from here into the
+          field.</li>
 <li>Add the user to the <codeph>CMS Group</codeph>.</li>
 </ol>
 </section>
   <section><title>Install the DVswitch</title></section>
   
   <section><title>Install the VRSVapp</title></section>
-  <section id="configure-a-json-file-for-installation"> <title>Deploy the HP Helion OpenStack VM</title>
-<p>Use the following steps  on the HLM host to deploy the HP Helion OpenStack VM:</p>
+  <section id="configure-a-json-file-for-installation"> <title>Deploy the HP Helion OpenStack</title>
+<p>Use the following steps on the HLM host to deploy the HP Helion OpenStac:</p>
 <ol>
 <li>Login to HLM VM.
             <codeblock>ssh &lt;HLM_VM_IP>
-where: HLM_VM_IP is the IP of the HLM VM. </codeblock><p>Use
+where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
             the default credentials:
           <codeblock>User Name: root
 Password: cghelion</codeblock></p></li>
     
 <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
-<li>Provision and configure your HP Helion OpenStack
-            VM.<codeblock>hnewcloud  &lt;cloudname&gt; &lt;memphis&gt;</codeblock><p>Where:</p><ul>
-            <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
-            <li><codeph>&lt;memphis&gt;</codeph> is the name of the template to use. The
-              installation kit includes the fully-tested <codeph>memphis</codeph> template.</li>
+<li>Provision and configure your HP Helion
+            OpenStack.<codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where:</p><ul>
+            <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.</li>
+            <li><codeph>memphis</codeph> is the name of the template to use. The installation kit
+              includes the fully-tested <codeph>memphis</codeph> template.</li>
           </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which will
             contain several JSON template files. </p></li></ol>
   </section>
   <section id="configure-node-provision-json">
-      <title>Configure the JSON Node Provision file</title>
+      <title>Configure the node-provision JSON file</title>
       <p>Edit the <codeph>node-provision.json</codeph> file. This template supplies input values to
         the <codeph>hprovision</codeph> script, later in the installation. </p>
         
@@ -225,27 +224,26 @@ Password: cghelion</codeblock></p></li>
           <thead>
             <row>
               <entry colsep="1" rowsep="1">Field</entry>
-              <entry colsep="1" rowsep="1">Baremetal</entry>
+              <entry colsep="1" rowsep="1">Description</entry>
             </row>
           </thead>
           <tbody>
             <row>
-              <entry>name</entry>
-              <entry>Name of the system you want to add</entry>
+              <entry/>
+              <entry/>
             </row>
             <row>
               <entry>Pxe-mac-address</entry>
               <entry>MAC address of the interface you want to PXE boot onto. This is not same as iLO
-                MAC address,</entry>
+                MAC address.</entry>
             </row>
             <row>
-              <entry>Pxe-interface</entry>
-              <entry>The name of the interface on which PXE boot should occur. For example:
-                  <codeph>eth0</codeph></entry>
+              <entry/>
+              <entry/>
             </row>
             <row>
               <entry>pm_type</entry>
-              <entry>ipmilan </entry>
+              <entry>ipmilan <b>Do not edit</b>. </entry>
             </row>
             <row>
               <entry>pm_ip</entry>
