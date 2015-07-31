@@ -10,9 +10,24 @@
     <p>
       <ol id="ol_km5_zwg_ws">
         <li>Note that all disks on the system(s) will be wiped </li>
-        <li>Set up deployment network<ul>
-        <li>The network will need to be set up with 3 routed VLANs 1 untagged and 2 tagged (external
-              and svc) with associated cidrs</li></ul></li>
+        <li>Set up deployment network <ul>
+            <li>The network will need to be set up with 3 routed VLANs 1 untagged and 2 tagged
+              (external and svc) with associated cidrs </li>
+            <li>
+              <p>The machine hosting the deployer, and all baremetal systems have to be connected to
+                a management network.</p>
+            </li>
+            <li>
+              <p>Nodes on this management network must be able to reach the iLO subsystem of each
+                baremetal systems to enable host reboots as part of the install process. </p>
+              <p>The HP Helion OpenStack architecture required that the IPMI network is a separate
+                network and a route exists from management network to the IPMI network for iLO
+                access.</p>
+            </li>
+          </ul></li>
+                <li>Ensure network interfaces that are not used for PXE boot are disabled from BIOS
+          to prevent PXE boot attempts from those devices.</li>
+              
         <li>The machine types should be homogeneous.</li>
         <li>Deployer node needs to be a dedicated node for beta0</li>
         <li>Gather MAC addresses of your hardware and IP addresses you wish to assign for inclusion
