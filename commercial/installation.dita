@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_flx_j2b_ws">
-  <title>Installing HLM on Baremetal</title>
+  <title>Beta 0 Installing HLM on Baremetal</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -21,13 +21,10 @@
     </metadata>
   </prolog>
   <body>
-    <p>NOTE: This assumes a BM deployer.</p> 
-      
-    <p>NOTE: This assumes hlinux ISO  http://tarballs.gozer.hpcloud.net/hlm/hlinux_iso/hLinux-cattleprod-amd64-blaster-netinst-20150723-hlm.2015-07-28T12:10:40_2cb6ab0.iso</p>   
-      
-      <p>NOTE: This assumes HLM kit  http://tarballs.gozer.hpcloud.net/hlm/release/2.0.0/20150727T083529Z/hlm-deployer-2.0.0-20150727T083529Z.tgz</p>
-    
-    <section><title>Known Restrictions</title></section>
+<note>This assumes a BM deployer.</note>
+<note>This assumes hlinux ISO  http://tarballs.gozer.hpcloud.net/hlm/hlinux_iso/hLinux-cattleprod-amd64-blaster-netinst-20150723-hlm.2015-07-28T12:10:40_2cb6ab0.iso</note>  
+<note>This assumes HLM kit  http://tarballs.gozer.hpcloud.net/hlm/release/2.0.0/20150727T083529Z/hlm-deployer-2.0.0-20150727T083529Z.tgz</note>
+<section><title>Known Restrictions</title></section>
     <ol id="ol_kr3_2fb_ws">
       <li>All disks on the system(s) will be wiped /dev/sda will be used for the OS but all other disks will also be wiped.</li>
       <li>Install on nodes via legacy bios setting ( No UEFI)</li>
@@ -55,10 +52,13 @@
         <li>Untar the hlm-deployer.tgz file in ~stack</li>
         <li>Run included script, e.g. ~/hlm-deployer/hlm-init-2.0.0.bash </li>
         <li>Observe output for: 
-          <p>TASK: [deployer-setup | init-deployer-apt-repo | Find cmc32 apt tarball] ****** </p>
-          <p> ok: [localhost] => (item=/media/cdrom/extras/hLinux-cmc-i386.tar.gz)</p>
-          <p>If this fails to appear then you need to reinit deployer and point to where this files is located. Note that even when it fails it still is green and says ok! To fix run command: ansible-playbook -i hosts/localhost -e cmc32_apt_tarball_glob="/media/cdrom/extras/hLinux-cmc-i386.tar.gz" deployer-init.yml.</p>
-          <p>Modify location as required.</p></li> 
+          <ul>
+            <li>TASK: [deployer-setup | init-deployer-apt-repo | Find cmc32 apt tarball] ****** </li>
+            <li>ok: [localhost] => (item=/media/cdrom/extras/hLinux-cmc-i386.tar.gz)</li>
+            <li>If this fails to appear then you need to reinit deployer and point to where this files is located. Note that even when it fails it still is green and says ok! To fix run command: ansible-playbook -i hosts/localhost -e cmc32_apt_tarball_glob="/media/cdrom/extras/hLinux-cmc-i386.tar.gz" deployer-init.yml.</li>
+            <li>Modify location as required.</li> 
+          </ul>
+        </li>
         <li>Create the model. For now it can be based on Padawan. cd ~/hlm-input-model/2.0/hp-ci ; cp -r padwan new_model_name ; cd new_model_name</li>
         <li>Edit the data/baremetalConfig.yml file to contain right info for hardware.  In my case I used yml file from last installtion on this rack.</li>
         <li>Edit data/servers.yml to contain ips from baremetalConfig.yml</li>
@@ -67,8 +67,8 @@
         <li>Run the configuration processor and check that your IP addresses are correct in the following:
           <ol>
             <li>cd ~/helion/hlm/ansible</li>
-            <li>ansible- ansible-playbook -i hosts/localhost config-processor-run_v2.yml
-            <p>Confirm that the values used by the configuration processor are the values you want. Edit generated_files/etc/hosts and confirm that the IPs there are correct for your system. Do not proceed until they are correct. If you need to re-run the configuration processor, you must delete hlm-configuration-processor/output first. Otherwise, the existing values will be re-used even if you changed the input.</p></li>
+            <li>ansible- ansible-playbook -i hosts/localhost config-processor-run_v2.yml</li>
+            <li>Confirm that the values used by the configuration processor are the values you want. Edit generated_files/etc/hosts and confirm that the IPs there are correct for your system. Do not proceed until they are correct. If you need to re-run the configuration processor, you must delete hlm-configuration-processor/output first. Otherwise, the existing values will be re-used even if you changed the input.</li>
           </ol> 
         </li>
         <li>Prepare bare metal hardware (this can be done in parallel with the above steps, or in advance)
@@ -80,8 +80,11 @@
         </li> 
         <li>Export ANSIBLE_HOST_KEY_CHECKING=False</li>
         <li>time ansible-playbook -i hosts/localhost cobbler-deploy.yml</li>
-        <li>Run the following command: ansible-playbook -i hosts/localhost cobbler-provision.yml
-          <p>This will power down all nodes, set them to pxe boot and power them up again.</p></li>
+        <li>Run the following command: <codeph>ansible-playbook -i hosts/localhost cobbler-provision.yml</codeph>
+          <ul>
+            <li>This will power down all nodes, set them to pxe boot and power them up again.</li>
+          </ul>
+        </li>
         <li>Wait for the nodes to install: they will power down at the end.</li>
         <li>Power up recently-installed systems, e.g. ansible-playbook -i hosts/localhost cobbler-power-up.yml</li>
         <li>Set the following environment variables:
@@ -93,5 +96,4 @@
       </ol>
     </section>
   </body>
-
 </topic>
