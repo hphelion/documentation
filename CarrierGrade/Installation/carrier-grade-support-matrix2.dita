@@ -322,12 +322,14 @@
 
   <section id="typical">
     <title>Typical Configurations</title>
-      <p>The following tables list the hardware required for a typical deployment cloud installation
-        using GEN9 servers in a <xref href="#topic1773/rack" format="dita">rackmount
+      <p>The following tables list the hardware required for a typical KVM + ESX deployment cloud
+        installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita">rackmount
           installation</xref> or an <xref href="#topic1773/enclosure" format="dita"
         >enclosure</xref>. </p>
-      <p><b>Note:</b> The KVM + ESX deployment requires an existing and operational VMware vSphere
-        installation on the appropriate ESX/ESXi servers.</p> 
+      <p>The KVM + ESX deployment requires an existing and operational VMware vSphere installation
+        on the appropriate ESX/ESXi servers.</p>
+      <p><b>Note:</b> The KVM deployment requires the same hardware, except you need only six (6)
+        DL360 G9 controllers, not ten (10).</p> 
         <p id="rack"><b>GEN9 Rackmount Base</b></p>
       <table id="table_tgx_5k2_qs">
         <tgroup cols="2">
@@ -368,7 +370,6 @@
           </tbody>
         </tgroup>
       </table>
-      <p><b>Note:</b> For a KVM deployment, you need 6  DL360 G9 controllers, not 10.</p>
 
     <p id="enclosure"><b>GEN9 Enclosure Based</b></p>
       <table id="table_xyv_xcs_ns">
@@ -427,7 +428,6 @@
           </tbody>
         </tgroup>
       </table>
-      <p><b>Note:</b> For a KVM deployment, you need 6  DL360 G9 controllers, not 10.</p>
   </section>
   
 <!-- 
