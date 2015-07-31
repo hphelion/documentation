@@ -33,7 +33,13 @@
         <li>Need to enable PXE booting. Adjust boot order for the control plane and storage nodes.
           For deployer node this can be CD ROM with hard drives last.</li>
         <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
-        <li>Turn off DHCP</li>
+        <li>Turn off DHCP <ul id="ul_qvd_swh_ws">
+            <li>
+              <p>If you have other DHCP servers on the same network as your system, you must ensure
+                that the DHCP server does not hand out IP addresses to your physical nodes as they
+                PXE boot.</p>
+            </li>
+          </ul></li>
       </ol>
     </p>
   </body>
