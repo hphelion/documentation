@@ -6,10 +6,10 @@
 <p>HP Helion OpenStack is a commercial-grade distribution of OpenStack the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
 <p>In the Helion OpenStack 2.0 release, these are the features you can expect:</p>
 <section id="OpenStackServices"> <title>New, Updated HP Helion OpenStack Services</title>
-  <p>We have included the core set of OpenStack services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html">Kilo release</xref>.  In addition we have also added these new services which are extensions of the Networking service (Neutron):</p>
+  <p>We have included the core set of OpenStack services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html">Kilo release</xref>.</p>
 </section>
 <section id="NeutronExtension"> <title>Newly Implemented Neutron Extensions</title>
-We have implemented new networking extensions for load balancing, firewalls, and VPN.
+We have implemented new networking extensions for load balancing, firewalls, and VPN:
 <ul>
 <li>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load balancing feature set. Helion OpenStack 2.0 includes the V2 version which allows implementation uses haproxy but 3rd party Load Balancers can be integrated as well. In case that a 3rd party driver doesn’t exist for LBaaS V2 installing LBaaS V1 instead of V2 is supported.
 <ul>
@@ -27,6 +27,12 @@ We have implemented new networking extensions for load balancing, firewalls, and
 </ul>
 </li>
 </ul>
+</section>
+<section id="Monitoring"> <title>Monasca-based Monitoring with OpsConsole GUI</title>
+  <ul>
+    <li>Monitoring</li>
+    <li>OpsConsole: The HP Helion OpenStack OpsConsole provides a graphical user interface (GUI) that allows you to interact and manage your Monitoring setup.</li>
+  </ul>
 </section>
 <section id="BaremetalInstall"> <title>Baremetal Install Kit</title>
   <ul>
@@ -48,8 +54,6 @@ We have implemented new networking extensions for load balancing, firewalls, and
     <title>Operational Management</title>
 <ul>
   <li>Control Plane Backup and Restore: Allows you to backup and recover your Helion OpenStack environment with RPO=0.</li>
-  <li>Monitoring</li>
-  <li>OpsConsole: The HP Helion OpenStack OpsConsole provides a graphical user interface (GUI) that allows you to interact and manage your Monitoring setup.</li>
 </ul>
 </section>
   <section id="OtherFeatures"><title>Other Features</title>
