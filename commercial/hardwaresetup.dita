@@ -9,8 +9,9 @@
       installation.</p>
     <p>
       <ol id="ol_km5_zwg_ws">
-        <li>Note that all disks on the system(s) will be wiped </li>
-        <li>Set up deployment network <ul>
+        <li>Note that all disks on the systems will be erased via the installation process.</li>
+        <li>The machine types should be homogeneous.</li>
+        <li>To set up the deployment network, note that <ul>
             <li>The network will need to be set up with 3 routed VLANs 1 untagged and 2 tagged
               (external and svc) with associated cidrs </li>
             <li>
@@ -19,38 +20,35 @@
             </li>
             <li>
               <p>Nodes on this management network must be able to reach the iLO subsystem of each
-                baremetal systems to enable host reboots as part of the install process. </p>
-              <p>The HP Helion OpenStack architecture required that the IPMI network is a separate
-                network and a route exists from management network to the IPMI network for iLO
-                access.</p>
+                baremetal systems to enable host reboots as part of the install process. The HP
+                Helion OpenStack architecture required that the IPMI network is a separate network
+                and a route exists from management network to the IPMI network for iLO access.</p>
             </li>
           </ul></li>
-                <li>Ensure network interfaces that are not used for PXE boot are disabled from BIOS
-          to prevent PXE boot attempts from those devices.</li>
-              
-        <li>The machine types should be homogeneous.</li>
-        <li>The deployer node needs to be a dedicated node for beta0</li>
+                <li>Ensure network interfaces that are not used for PXE boot are disabled in the
+          BIOS to prevent PXE boot attempts from those devices.</li>
+        <li>The deployer node needs to be a dedicated node in Beta0</li>
         <li>Gather MAC addresses of your hardware and IP addresses you wish to assign for inclusion
           in configuration files</li>
-        <li>Install on nodes via legacy bios
+        <li>Change or confirm that your hardare is set to legacy BIOS
           setting.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?> If you have
-          UEFI instead of a BIOS, you need to switch to legacy BIOS setting.<?oxy_custom_end?> If
-          using HP hardware, you can make these changes in the iLO console in system utilities |
+          UEFI instead of a BIOS, you need to switch to legacy BIOS.<?oxy_custom_end?> If using HP
+          hardware, you can make these changes in the iLO console in system utilities |
           BIOS/Platform Configuration | boot options. Otherwise use your IPMI management console or
           command-line interface (CLI).
           <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Advanced iLO license
           needed to use the iLO console for advanced configurations. Otherwise use the command
           line.<?oxy_custom_end?></li>
-        <li>Array configuration: In HPSAA (HP Smart Storage Adminstrator), configure the logcal
-          volume setup. <ul>
-            <li>Deployer needs no partitions. Can create a single logical disk from all available
-              disks on deployer node with RAID 5 configuration if desired.</li>
-            <li>Four local disks on nodes in the control plane (for root OS and Swift) are
-              required.</li>
+        <li>Set array configuration: In HPSAA (HP Smart Storage Adminstrator), configure the logcal
+          volume setup. Note that<ul>
+            <li>The deployer node needs no partitions. You can create a single logical disk from all
+              available disks on deployer node with RAID 5 configuration if desired.</li>
+            <li>You will need four local disks on nodes in the control plane (for root OS and Swift)
+              are required.</li>
             <li>Swift cannot currently address logical volumes.</li>
           </ul></li>
-        <li>Need to enable PXE booting. Adjust boot order for the control plane and storage nodes.
-          For deployer node this can be CD ROM with hard drives last.</li>
+        <li>Enable PXE booting. Adjust boot order for the control plane and storage nodes. For the
+          deployer node this can be CD ROM with hard drives designated last in the boot order.</li>
         <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
         <li>Turn off DHCP <ul id="ul_qvd_swh_ws">
             <li>
