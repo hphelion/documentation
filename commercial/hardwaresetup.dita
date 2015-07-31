@@ -69,7 +69,10 @@
         <li>Any inconsistent or unworkable configuration choices will be flagged by the installer,
           which will provide feedback explaining the issues. Changes can then be made and the config
           processor can be rerun with the new values. <b>Note,</b> the config processor must be
-          rerun after making config changes.</li>
+          rerun after making config changes. Users can run Chef or Puppet for a comfiguration
+          management solution if desired.</li>
+        <li>Some Pre and Post install checks will run automatically: The installer will test for ssh
+          access to each node ad will check that services are running</li>
       </ol>
     </p>
   </body>
