@@ -245,7 +245,8 @@ StrictHostKeyChecking no </codeblock></li>
 </ol>
 </section>
         <section id="download-esx"><title>Download packages for KXM+ESX</title>
-        <p>If you are deploying the KVM+ESX topology, download the following additional packages.</p>
+        <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM+ESX topology, download
+                                the following additional packages.</p>
                 <ol>
                                 <li>Register and then log in to download the required installation
                                         package(s) from <xref

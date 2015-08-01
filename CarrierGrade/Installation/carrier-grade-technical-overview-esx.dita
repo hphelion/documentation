@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3485">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: KVM + ESX Deployment
-    Architecture Reference </title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: KVM + ESX<tm tmtype="reg"/>
+    Deployment Architecture Reference </title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -17,7 +17,8 @@
   <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
     <p>This page introduces deployment and network architectures of the KVM + ESX deployment of HP
-      Helion OpenStack Carrier Grade.</p>
+      Helion OpenStack Carrier Grade. This deployment supports the integration of VMware ESX<tm
+        tmtype="reg"/> storage into HP Helion OpenStack Carrier Grade.</p>
     <section id="deploy-arch">
       <title>Deployment architecture</title>
       <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack

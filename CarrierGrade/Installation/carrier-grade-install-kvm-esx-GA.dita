@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM + ESX
-    Deployment</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM + ESX<tm
+      tmtype="reg"/> Deployment</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -16,7 +16,8 @@
 <body>
   <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a
       virtual machine for the Helion Lifecycle Management (HLM), deploying the HP Helion OpenStack
-      cloud, installing DCN components, and installing the ESX compute proxy.</p>
+      cloud, installing DCN components, and installing the VMware ESX <tm tmtype="reg"/>compute
+      proxy.</p>
     <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
       required installation processes.</p>
 

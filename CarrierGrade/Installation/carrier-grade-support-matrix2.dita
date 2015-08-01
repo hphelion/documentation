@@ -27,8 +27,9 @@
         <li><xref href="#topic1773/typical" format="dita">Typical Configurations</xref></li>
       </ul></p>
     <p>The hardware requirements and configurations are different, depending upon the topology: KVM
-      or KVM + ESX. See the <xref href="carrier-grade-technical-overview.dita#topic3485">Technical
-        Overview</xref> for more information on these topologies.</p>
+      or KVM + ESX<tm tmtype="reg"/>. See the <xref
+        href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref> for more
+      information on these topologies.</p>
     <section id="hardware">
       <title>Supported Hardware</title>
       <p>The following servers are supported for the HLM host, and for the controllers and compute

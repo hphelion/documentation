@@ -26,7 +26,9 @@
           href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">services</xref>.</p>
 </section>
   <section id="install-option"> <title>Installation options</title>
-    <p>HP Helion OpenStack is provided with two baremetal installation options depending on your system configuration.  It allows you to manage the KVM and ESX hypervisors and provision virtual machines.</p>
+    <p>HP Helion OpenStack is provided with two baremetal installation options depending on your
+        system configuration. It allows you to manage the KVM and VMware ESX<tm tmtype="reg"/>
+        hypervisors and provision virtual machines.</p>
     <p>You can find more information on the hypervisor options in the Technical Overview.</p>
   </section>
   <section id="kvm-Hypervisor"> <title>KVM Topology</title>
@@ -39,7 +41,7 @@
     <p>HP 3PAR StoreServ is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. HP 3PAR StoreServ is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver.</p></li>
   </ul>
   </section>
-  <section id="esx-hypervisor"> <title>KVM and ESX Cloud</title>
+  <section id="esx-hypervisor"> <title>KVM + ESX Topology</title>
     <p>HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can
         provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a
         part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter
