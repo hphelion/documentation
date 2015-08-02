@@ -31,9 +31,9 @@
 <section id="NeutronFeatures"> <title>New Neutron Features for Greater Flexibility</title>
 <p>We have included native support for the following features in our Neutron offering:</p>
   <ul>
-    <li>NIC bonding</li>
+    <li>NIC bonding with user-defined LACP modes</li>
     <li>Multi-NIC support</li>
-    <li>Network separation (including VLAN)</li>
+    <li>Network separation (physical or VLAN)</li>
   </ul>
 </section>
 <section id="Monitoring"> <title>Monasca-based Monitoring with OpsConsole GUI</title>
@@ -45,7 +45,7 @@
 <li>Anomaly and Prediction Engine</li>
 </ul>
 </section>
-<section id="BaremetalInstall"> <title>Baremetal Install Kit</title>
+<section id="BaremetalInstall"> <title>New Baremetal Install Kit</title>
   <ul>
     <li>Uses Config Process v2.0</li>
     <li>updating the configuration</li>
@@ -53,16 +53,16 @@
     <li>adding VSA, etc</li>
   </ul>
 </section>
-<section id="OpsManagement"> <title>Operational Management</title>
+<section id="OpsManagement"> <title>Backup and Restore Capabilities for the Control Plane</title>
 <ul>
-  <li>Control Plane Backup and Restore: Allows you to backup and recover your Helion OpenStack environment with RPO=0.</li>
+  <li>Allows you to backup and recover your Helion OpenStack environment with RPO=0.</li>
 </ul>
 </section>
   <section id="OtherFeatures"><title>Other Features</title>
     <ul>
   <li>VSA as a Cinder block storage provider</li>
   <li>Basic NTP and DNS integration</li>
-  <li>TLS only on external API</li>
+  <li>Secure TLS communication on the external-facing APIs</li>
     </ul>
   </section>
   </body>
