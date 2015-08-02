@@ -5,10 +5,10 @@
 <note type="attention">Please note that this is a beta version of the documentation which is still in development before its official release. The information contained herein is provided “as is”, confidential, and proprietary information and is provided only under the terms of the applicable non-disclosure agreement.</note>
 <p>HP Helion OpenStack is a commercial-grade distribution of OpenStack the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
 <p>In the Helion OpenStack 2.0 release, these are the features you can expect:</p>
-<section id="OpenStackServices"> <title>New, Updated HP Helion OpenStack Services</title>
+<section id="OpenStackServices"> <title>Updated HP Helion OpenStack Services</title>
 <p>We have included the core set of OpenStack services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html">Kilo release</xref>.</p>
 </section>
-<section id="NeutronExtension"> <title>Newly Implemented Neutron Extensions</title>
+<section id="NeutronExtension"> <title>New Neutron Extensions for Detailed Network Architectures</title>
 <p>We have implemented new networking extensions for load balancing, firewalls, and VPN.  Here is a description of each of these:</p>
 <ul>
 <li>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load balancing feature set. Helion OpenStack 2.0 includes the V2 version which allows implementation uses haproxy but 3rd party Load Balancers can be integrated as well. In case that a 3rd party driver doesn’t exist for LBaaS V2 installing LBaaS V1 instead of V2 is supported.
@@ -28,7 +28,7 @@
 </li>
 </ul>
 </section>
-<section id="NeutronFeatures">
+<section id="NeutronFeatures"> <title>New Neutron Features for Greater Flexibility</title>
 <p>We have included native support for the following features in our Neutron offering:</p>
   <ul>
     <li>NIC bonding</li>
