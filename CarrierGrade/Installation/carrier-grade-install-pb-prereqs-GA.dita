@@ -272,7 +272,7 @@ StrictHostKeyChecking no </codeblock></li>
         <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM+ESX topology, download
                                 the following additional packages.</p>
                 <ol>
-                                <li>If you have not downloaded the DCN installation packages, browse
+                                <li>If you have not downloaded the DCN installation packages, browse to
                                                 <xref href="http://www.hp.com/go/hpsc" format="html"
                                                 scope="external"/> and search for product
                                                 <b>JL025AAE</b>.  You will need your product serial
