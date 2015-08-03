@@ -3,7 +3,6 @@
 <topic id="topic_omx_srg_ws">
   <title>Beta 0 Minimum Hardware Requirements</title>
   <body>
-    <note type="attention">Please note that this is a beta version of the documentation which is still in development before its official release. The information contained herein is provided “as is”, confidential, and proprietary information and is provided only under the terms of the applicable non-disclosure agreement.</note>
     <section id="SupportedConfigs"> <title>Supported Configurations</title>
       <p>HP supports the following configurations for HP Helion OpenStack deployment:</p>
       <p>Host Interconnects/Protocols</p>

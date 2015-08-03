@@ -3,7 +3,6 @@
 <topic id="topic_i5v_bjb_ws">
   <title><b>Beta 0 Known Issues and Limitations</b></title>
   <body>
-    <note type="attention">Please note that this is a beta version of the documentation which is still in development before its official release. The information contained herein is provided “as is”, confidential, and proprietary information and is provided only under the terms of the applicable non-disclosure agreement.</note>
     <p><b>Limitations</b></p>
     <p><b>Installing Swift</b></p>
     <p>Swift installs with the following limitations: </p>
