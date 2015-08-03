@@ -1,4 +1,6 @@
 for i in `find . -name "*.dita"`;
+
+
 do  
 sed -i 's|<section id=\"\([^\"]*\)\"> <title>\([^><]*\)<\!--Removed anchor point \([A-Za-z-]*\)--|<section id="\3"> <title>\2<\!--Removed anchor point \3--|' $i 
 
