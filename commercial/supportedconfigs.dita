@@ -3,9 +3,7 @@
 <topic id="topic_ckw_kbc_ws">
   <title>Beta 0 Supported Configurations</title>
   <body>
-    <p>The following list summaries the qualified configurations and their
-      purpose.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?> A more detailed
-      configuration is liked off each of the sections<?oxy_custom_end?></p>
+    <p>The following list summaries the qualified configurations and their purpose.</p>
     <p>Note: While the hardware requirements are similar to those of HP Helion OpenStack 1.1, this
       is a completely new instsallation, not an upgrade or update operation.</p>
     <ol id="ol_stq_lbc_ws">
