@@ -4,6 +4,9 @@
   <title><b>Beta 0 Known Issues and Limitations</b></title>
   <body>
     <p><b>Limitations</b></p>
+    
+      <p><b>HP Helion Development Platform</b></p>
+    <p>Helion Development Platform is not supported on Beta 0</p>
     <p><b>Installing Swift</b></p>
     <p>Swift installs with the following limitations: </p>
     <ul id="ul_g5x_cjb_ws">
