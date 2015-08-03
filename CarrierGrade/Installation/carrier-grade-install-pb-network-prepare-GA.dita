@@ -3,9 +3,14 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7646">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Preparing the Network for Installation</title>
 <prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-</metadata>
+    <metadata>
+        <othermeta name="layout" content="default"/>
+        <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+        <othermeta name="role" content="Storage Administrator"/>
+        <othermeta name="role" content="Storage Architect"/>
+        <othermeta name="role" content="Michael B"/>
+        <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
 </prolog>
 <body>
 <p>
@@ -123,8 +128,11 @@ ovs_bridge br-dcm
 ovs_type OVSPort
 </codeph></codeblock></li>
 <li>Execute the following command to check the
-                        output:<codeblock><codeph>ovs-vsctl show
-</codeph></codeblock></li>
+                    output:<codeblock>ovs-vsctl show 
+
+706add53-21a4-4062-9149-d7bd77896076
+ovs_version: "2.0.2"
+</codeblock></li>
 </ol>
 </section>
 <section id="create-the-networks-for-associating-with-the-hlm-virtual-machine"> <title>Create the networks for associating with the HLM virtual machine</title>
@@ -354,7 +362,7 @@ ifup br-dcm
 </section>
 <section id="next-step"> <title>Next Step</title>
 <p>
-    <xref href="carrier-grade-install-NTP.dita">Configuring NTP</xref>
+    <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">Deploy the non-KVM region</xref>
             </p>
 </section>
     <section><!-- ===================== horizontal rule ===================== --></section>

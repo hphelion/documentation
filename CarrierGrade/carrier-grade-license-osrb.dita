@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic916">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 Carrier Grade: Open Source and Third-Party
+    Software License Agreements</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+      <othermeta name="role" content="All"/>
+      <othermeta name="role" content="Amanda F"/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>
+      <!--PUBLISHED-->
+      <!--./commercial/GA1/1.13rd-party-license-agreements.md-->
+      <!--permalink: /helion/openstack/1.1/3rd-party-license-agreements/--></p>
+    <p>The Open Source and Third-Party Software License Agreements for HP Helion OpenStack Carrier
+      Grade are available as a PDF download.</p>
+  </body>
+</topic>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample enviroment.json File for
+        Installing the KVM + ESX Topology</title>
+<prolog>
+    <metadata>
+        <othermeta name="layout" content="default"/>
+        <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+        <othermeta name="role" content="Storage Administrator"/>
+        <othermeta name="role" content="Storage Architect"/>
+        <othermeta name="role" content="Michael B"/>
+        <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
+    <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
+                KVM + ESX deployment</xref> requires several JSON files that will be used when
+            deploying the HLM VM.</p>
+<section id="sample-node-provisionjson-file">
+            <p>The following represents a sample <codeph>environment.json</codeph> file. Use values
+                appropriate for your environment.</p>
+            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
+                    the KVM + ESX Deployment</xref>.</p>
+        
+<codeblock>
+    {
+                "product": {
+                    "version": 1
+                },
+             
+                "node-type": [
+                    {
+                        "name": "CCN",
+                        "interface-map": [
+                            {
+                                "name": "INTF0",
+                                "ethernet-port-map": {
+                                    "interface-ports": [ "eth0"           ]
+                                },
+                                "logical-network-map": [
+                                    {
+                                        "name":           "management",
+                                        "type": "vlan",
+                                        "segment-id":           "203",
+                                        "network-address": {
+                                            "cidr":           "10.20.3.0/24",
+                                            "start-address":           "10.20.3.100",
+                                            "gateway":           "10.20.3.1"
+                                        }
+                                    },
+                                    {
+                                        "name": "api",
+                                        "type": "vlan",
+                                        "segment-id":           "204",
+                                        "network-address": {
+                                            "cidr":           "10.20.4.0/24",
+                                            "start-address": "10.20.4.100",
+                                            "gateway":           "10.20.4.1"
+                                        }
+                                    },
+                                    {
+                                        "name":           "blockstore",
+                                        "type": "vlan",
+                                        "segment-id": "73",
+                                        "network-address": {
+                                            "cidr":           "172.16.73.0/24",
+                                            "start-address":           "172.16.73.100",
+                                            "gateway": "172.16.73.1"
+                                        }
+                                   }
+                                ]
+                            }
+                        ]
+                    },
+             
+                    {
+                        "name": "CPN",
+                        "interface-map": [
+                            {
+                                "name": "INTF0",
+                                "ethernet-port-map": {
+                                    "interface-ports": [ "eth0"           ]
+                                },
+                                "logical-network-map": [
+                                    {
+                                        "name":           "management",
+                                        "ref":           "ccn-INTF0-management"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+             
+                    {
+                        "name": "DCN",
+                        "interface-map": [
+                            {
+                                "name": "INTF0",
+                                "ethernet-port-map": {
+                                    "interface-ports": [ "eth0"           ]
+                                },
+                                "logical-network-map": [
+                                    {
+                                        "name":           "management",
+                                        "ref":           "ccn-INTF0-management"
+                                    },
+                                    {
+                                        "name":           "datacenter",
+                                        "type": "vlan",
+                                        "segment-id": "205",
+                                        "network-address": {
+                                            "cidr":           "10.20.5.0/24",
+                                            "start-address":           "10.20.5.100",
+                                         "gateway":           "10.20.5.1"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "INTF1",
+                                "ethernet-port-map": {
+                                    "interface-ports": [ "eth1"           ]
+                                },
+                                "logical-network-map": [
+                                    {
+                                        "name": "tenant",
+                                        "type": "vlan",
+                                        "segment-id": "",
+                                        "network-address": {
+                                            "cidr":           "10.20.6.0/24",
+                                            "start-address":           "10.20.6.100",
+                                            "gateway":           "10.20.6.1"
+                                        }
+             
+                                              }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "VRG",
+                        "interface-map": [
+                            {
+                                "name": "INTF0",
+                                "ethernet-port-map": {
+                                    "interface-ports": [ "eth0"           ]
+                                },
+                                "logical-network-map": [
+                                    {
+                                        "name":           "management",
+                                        "ref":           "ccn-INTF0-management"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "INTF1",
+                                "ethernet-port-map": {
+                                  "interface-ports": [ "eth1" ]
+                                },
+                                "logical-network-map": [
+                                    {
+                                        "name": "tenant",
+                                        "ref":           "dcn-INTF1-tenant"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+
+</codeblock>
+    <p> NOTE: The Helion Configuration Processor assigns the first address of the CLM address range to itself for serving python 
+        and debian repositories. Make sure that you set the first IP address of the CLM range for the eth2 (CLM) address of the HLM node.</p>
+    
+        </section>
+</body>
+</topic>

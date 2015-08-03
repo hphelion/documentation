@@ -5,13 +5,20 @@
     <title>Known Problems and Limitations</title>
     <shortdesc>You may encounter some known limitations when working in the KVM region of this release.</shortdesc>
     <prolog>
-        <author>Jim Owens</author>
-        <author>Pedro Sanchez</author>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+        </metadata>
     </prolog>
-    <body>
-        <section><title>VXLAN not certified</title>
-            The VXLAN feature has not been certified for HP Helion OpenStack Carrier Grade.
-        </section>
+    <body><section>CG-1307; CG-1306;CG-1305; CG-1292</section>
+        <section><title>VXLAN not certified</title> <p>The VXLAN feature has not been certified for HP
+            Helion OpenStack Carrier Grade.</p> </section>
+                
+            
         <section>
             <title>Cinder Block Storage snapshot feature not working </title>
             <!-- CG-1043 -->
