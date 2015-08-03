@@ -97,7 +97,8 @@
 </section>
 <section id="deploy-the-hlm-and-vsd-vm">
       <title>Deploy the HLM Virtual Machine</title>
-      <p>Use the following steps to deploy the HLM VM on the HLM Host using Ansible playbooks.</p>
+      <p>Use the following steps on the HLM host to deploy the HLM VM on the HLM Host using Ansible
+        playbooks.</p>
       <ol>
         <li>Execute the following
           command:<codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock> The command
@@ -107,24 +108,26 @@
             <li>Execute the <codeph>updatepackages</codeph> command.</li>
             <li>Execute the <codeph>prepareenv</codeph> command.</li>
             <li>Execute the <codeph>Init cobbler</codeph> command.</li>
-            <li>Execute the <codeph>Importiso</codeph> command.<p>You will see similar message when
-                the playbook is run successful:</p></li>
+            <li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to
+                the following image when the playbook is run successful:</p></li>
           </ul>
           <image href="../../media/CGH-ansible-playbook-run.png" id="image_bfp_pjm_vs">
             <alt>Sample Ansible Playbook run output</alt>
           </image></li>
         <li>Locate the IP address for the HLM VM in the
             <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
-          <codeph>hlm_clmstaticip</codeph> field.</li> 
+            <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the HLM
+          VM during the installation process.</li> 
       </ol>
 
 </section>
   
-<section id="vsd"> <title>Configuring the VSD node, creating user and applying License</title>
+<section id="vsd"> <title>Applying the VSD license</title>
   <p>During the <xref href="#topic10581/deploy-the-hlm-and-vsd-vm" format="dita"/> process, the
-        Ansible playbook run creates a virtual machine to host the VSD node of DCN. You need to
-        create a default user and apply the required license</p>
-<p>Before you start, make sure the VSD node was installed by logging into the VSD VM using SSH.</p>
+        Ansible playbook run creates a virtual machine to host the VSD node of DCN. You need to and
+        apply the required license to use VSD.</p>
+<p>Before you start, make sure the VSD node was installed by logging into the VSD VM using SSH and
+        running the following command:</p>
 <codeblock>service vsd status</codeblock>
 <p>You should see the status as below from VSD VM.</p>
 <p>
@@ -162,8 +165,8 @@ Change to
       <ol>
         <li>Using a browser, browse to the link in the confirmation email you received when you
           purchased DCN and obtain the license.</li>
-        <li>After you have obtained the license, use a browser to navigate to the VSD
-          dashboard.</li>
+        <li>After you have obtained the license, use a browser to navigate to the VSD dashboard
+          using the VSD URI.</li>
         <li>In the login page, enter the default
           credentials:<codeblock>User Name: Csproot 
 Password: csproot 
@@ -173,7 +176,7 @@ VSD Server : auto
         <li>From VSD Dashboard, click the <b>Open VSP Configuration</b> tab on the top right corner of the
           dashboard.</li>
         <li>Click the <b>Licenses</b> tab and click <b>+</b>.</li>
-        <li>Copy and paste your DCN license key into the pop-up window.</li>
+        <li>Copy and paste your DCN license key into the dialog box.</li>
 
       </ol>
       <!--Follow the instructions in the pdf to get the license - <b>Get confirmation from Nayana</b><p><xref href="https://wiki.hpcloud.net/display/HCG/HP+Helion+OpenStack+Carrier+Grade+%28NFVi%29+Home#HPHelionOpenStackCarrierGrade%28NFVi%29Home-HPHelionOpenStackCarrierGradeDCN/Nuage" format="html" scope="external">https://wiki.hpcloud.net/display/HCG/HP+Helion+OpenStack+Carrier+Grade+%28NFVi%29+Home#HPHelionOpenStackCarrierGrade%28NFVi%29Home-HPHelionOpenStackCarrierGradeDCN/Nuage</xref></p>-->
@@ -193,8 +196,8 @@ VSD Server : auto
   <section><title>Install the DVswitch</title></section>
   
   <section><title>Install the VRSVapp</title></section>
-  <section id="configure-a-json-file-for-installation"> <title>Deploy the HP Helion OpenStack</title>
-<p>Use the following steps on the HLM host to deploy the HP Helion OpenStac:</p>
+  <section id="configure-a-json-file-for-installation"> <title>Deploy HP Helion OpenStack</title>
+<p>Use the following steps on the HLM host to deploy the HP Helion OpenStack:</p>
 <ol>
 <li>Login to HLM VM.
             <codeblock>ssh &lt;HLM_VM_IP>
@@ -208,16 +211,17 @@ Password: cghelion</codeblock></p></li>
             OpenStack.<codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.</li>
             <li><codeph>memphis</codeph> is the name of the template to use. The installation kit
-              includes the fully-tested <codeph>memphis</codeph> template.</li>
-          </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which will
-            contain several JSON template files. </p></li></ol>
+              includes a temlate called <codeph>memphis</codeph> designed to install HP Helion
+              OpenStack.</li>
+          </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which
+            contains several JSON template files. </p></li></ol>
   </section>
   <section id="configure-node-provision-json">
       <title>Configure the node-provision JSON file</title>
       <p>Edit the <codeph>node-provision.json</codeph> file. This template supplies input values to
         the <codeph>hprovision</codeph> script, later in the installation. </p>
         
-      <p> Edit <codeph>node-provision.json</codeph> file based on following guidelines:</p> 
+      <p> Edit <codeph>node-provision.json</codeph> file to change only the following fields:</p> 
         <table>
         <tgroup cols="2">
           <colspec colname="col1" colsep="1" rowsep="1"/>
@@ -230,21 +234,9 @@ Password: cghelion</codeblock></p></li>
           </thead>
           <tbody>
             <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
               <entry>Pxe-mac-address</entry>
               <entry>MAC address of the interface you want to PXE boot onto. This is not same as iLO
                 MAC address.</entry>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry>pm_type</entry>
-              <entry>ipmilan <b>Do not edit</b>. </entry>
             </row>
             <row>
               <entry>pm_ip</entry>
@@ -259,19 +251,14 @@ Password: cghelion</codeblock></p></li>
               <entry>Power management password (iLO password)</entry>
             </row>
             <row>
-              <entry>node_group</entry>
-              <entry>Enter the same value as <codeph>node-type</codeph> in the
-                  <codeph>nodes.json</codeph> file used during cloud deployment. For example:
-                `CCN-001-001`.</entry>
-            </row>
-            <row>
               <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
               <entry>Enter the same value as for these fields an in the <codeph>nodes.json</codeph>
                 file used during cloud deployment</entry>
             </row>
           </tbody>
         </tgroup>
-      </table><p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
+      </table>
+      <p>Also, remove the the server assigned for second VRSG.</p><p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
         href="carrier-grade-install-pb-kvm-node-json.dita">Sample node-provision.json File for Installing the KVM + ESX Topology</xref>.</p>
     </section>
  <p> <b>Configure PXE boot</b> </p>
