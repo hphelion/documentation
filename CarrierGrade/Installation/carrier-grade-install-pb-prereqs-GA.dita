@@ -243,14 +243,18 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <b>Download</b>.</li>
                                         </ul></li>
                                 <li>Download the following files: 
-                                        <ul><li><b>Helion Carrier Grade 1.1.0</b>. The file is named <codeph>hcg_1.1.0.tar</codeph>. </li><li><b>Horizon Patch Tar File for Helion Carrier Grade</b>. The file is 
-                                                named <codeph>hcg_1.1.0_horizon_patch1.tar.sha256</codeph>.</li>
+                                        <ul><li><b>Helion Carrier Grade 1.1.0</b>. The file is named <codeph>hcg_1.1.0.tar</codeph>.  Also
+                                                  download the Checksum and Signature files.</li><li><b>Horizon Patch Tar File for Helion Carrier Grade</b>. The file is named
+                                                  <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>.
+                                                  Also download the Checksum and Signature
+                                                  files.</li>
                                                 <li><b id="productShow_appName">GPG keys to verify
                                                   signature files</b>. This file is named
                                                         <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li>
-                                                <li><b>vCenter Proxy Appliance</b>. For the KVM +
-                                                  ESX deployment, download this file, named
-                                                  overcloud_vcenter_compute_proxy.tar. </li></ul></li>
+                                                <li><b>vCenter Proxy Appliance</b>. For the KVM + ESX
+                                                  deployment, download this file, named
+                                                  overcloud_vcenter_compute_proxy.tar. Also download
+                                                  the Signature files.</li></ul></li>
                                 <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file to the images
                                         folder: <codeph>/var/lib/libvirt/images</codeph>.</li>
 <li>Copy the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file from the
@@ -294,10 +298,10 @@ StrictHostKeyChecking no </codeblock></li>
                         </ol>  
                 <p>If you execute a list on that directory, the output appears similar to the following image:</p>
         </section>
-        <section id="verify"><title>Verify download signature</title>
+        <section id="verify"><title>Verify the download signature</title>
                 <p>After downloading the installation packages, you should verify the signature of
                                 the download. You can use the GPG utility, which is already
-                                installed on the HLM node.</p>
+                                installed on the HLM node. Signed by the signature file.</p>
          <p>A set of GPG public keys are included in the installation package you downloaded.</p> 
           <ol>
                   <li>Copy the public keys to the HLM host server, extract the keys from the
@@ -346,13 +350,44 @@ uid                  Hewlett-Packard Company RSA (HP Codesigning Service)       
                   <li>Use the following command to verify the signature:
                                                 <codeblock>gpg --verify ./cg-hos.tar.gz.gpg.sig ./cg-hos.tar.gz.gpg</codeblock><p>The
                                                 output for the command appears similar to the
-                                                following:</p><codeblock>gpg: Signature made Wed 22 Jul 2015 01:23:24 PM EDT using RSA key ID C6978F0C
+                                                following. This indicates the signature is verified:
+                                                  <b>Good signature from "Hewlett-Packard Company
+                                                  RSA (HP Codesigning
+                                        Service)</b>.</p><codeblock>gpg: Signature made Wed 22 Jul 2015 01:23:24 PM EDT using RSA key ID C6978F0C
 gpg: Good signature from "Hewlett-Packard Company RSA (HP Codesigning Service) - 5"
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li>
           </ol>
         </section>
+        <section id="checksum"><title>Verify the download checksums</title>
+        <p>You should also use a checksum verification tool, such as sha256sum, which should come
+                                installed with Ubuntu.<ol id="ol_icb_k4f_xs">
+                                        <li>Run the checksum tool against the
+                                                  <codeph>hcg_1.1.0.tar</codeph> file.
+                                                <codeblock>sha256sum &lt;path-to-file>hcg_1.1.0.tar</codeblock></li>
+                                        <li>Compare the output of the checksum tool to the
+                                                  <codeph>hcg_1.1.0.tar.sha256</codeph> file.
+                                                <codeblock>sha256sum.exe hcg_1.1.0.tar
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock>Note
+                                                that the chechsum file contains the date that the
+                                                file was generated, the checksum string, and the
+                                                name of the file that was
+                                                used:<codeblock>Fri Jul 31 10:55:37 EDT 2015
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar</codeblock></li>
+                                        <li>Run the checksum tool against the
+                                                  <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>
+                                                file.
+                                                <codeblock>sha256sum &lt;path-to-file>hcg_1.1.0_horizon_patch1.tar  </codeblock></li>
+                                                <li>Compare the output of the checksum tool to the
+                                                  <codeph>hcg_1.1.0.tar.sha256</codeph> file.
+                                                <codeblock>sha256sum.exe hcg_1.1.0.tar
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock></li>
+                                </ol></p>
+
+        
+        </section>
+       
                 <section id="prepbare">
                         <title>Preparing the baremetal systems</title>
                         <p>Perform the following tasks on each server you will use as  a compute
