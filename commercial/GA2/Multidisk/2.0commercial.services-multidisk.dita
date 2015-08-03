@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_ubb_zjy_ps">
+ <title>HP Helion OpenStack Multidisk Support</title>
+ <shortdesc></shortdesc>
+ <conbody>
+  <p>In Helion OpenStack 2.0, you will be able to configure Helion to address more than one disk. </p>
+  <p>This topic will explain what mulitdisk support is in Helion OpenStack 2.0, how it is used, and
+   how to configure it. </p>
+  <p/>
+ </conbody>
+</concept>
