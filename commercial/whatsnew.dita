@@ -44,12 +44,10 @@
 <li>Anomaly and Prediction Engine</li>
 </ul>
 </section>
-<section id="BaremetalInstall"> <title>New Baremetal Install Kit</title>
+<section id="BaremetalInstall"> <title>New Baremetal Installation Kit</title>
   <ul>
-    <li>Uses Config Process v2.0</li>
-    <li>updating the configuration</li>
-    <li>adding nodes</li>
-    <li>adding VSA, etc</li>
+    <li>You supply the cloud configuration you want based on our <xref href="supportedconfigs.dita">Supported Configurations</xref> and the baremetal installer will setup your environment.</li>
+    <li>Manage the different phases of your cloud deployment with ease</li>
   </ul>
 </section>
 <section id="OpsManagement"> <title>Backup and Restore Capabilities for the Control Plane</title>
