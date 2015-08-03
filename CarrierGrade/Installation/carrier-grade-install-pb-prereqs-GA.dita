@@ -242,27 +242,32 @@ StrictHostKeyChecking no </codeblock></li>
                                                   OpenStack Carrier Grade and click
                                                   <b>Download</b>.</li>
                                         </ul></li>
-                                <li>Download and extract the <codeph>cg-hlm.qcow2</codeph> file to
-                                        the images folder:
-                                        <codeph>/var/lib/libvirt/images</codeph>.</li>
-<li> Download and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file to the
+                                <li>Download the following files: 
+                                        <ul><li><b>Helion Carrier Grade 1.1.0</b>. The file is named <codeph>hcg_1.1.0.tar</codeph>. </li><li><b>Horizon Patch Tar File for Helion Carrier Grade</b>. The file is 
+                                                named <codeph>hcg_1.1.0_horizon_patch1.tar.sha256</codeph>.</li>
+                                                <li><b id="productShow_appName">GPG keys to verify
+                                                  signature files</b>. This file is named
+                                                        <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li>
+                                                <li><b>vCenter Proxy Appliance</b>. For the KVM +
+                                                  ESX deployment, download this file, named
+                                                  overcloud_vcenter_compute_proxy.tar. </li></ul></li>
+                                <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file to the images
+                                        folder: <codeph>/var/lib/libvirt/images</codeph>.</li>
+<li>Copy the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file from the
+                                                <codeph>hcg_1.1.0.tar</codeph> files to the
                                                 <codeph>/root</codeph> directory.</li>
-        <li> Decrypt and untar the PGP file using password <codeph>cghelion</codeph> when prompted.
+        <li> Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file using the password
+                                                <codeph>cghelion</codeph> when prompted.
                                         <codeblock> gpg -d cg-infra-playbooks.tar.gz.gpg | tar -xzvf </codeblock></li>
         <li> Create the <codeph>/root/cg/</codeph> directory</li>
-<li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> to the <codeph>/root/cg/</codeph> directory.</li>
+<li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file from the <codeph>hcg_1.1.0.tar</codeph> files
+                                        to the <codeph>/root/cg/</codeph> directory.</li>
 </ol>
 </section>
         <section id="download-esx"><title>Download packages for KXM+ESX</title>
         <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM+ESX topology, download
                                 the following additional packages.</p>
                 <ol>
-                                <li>Register and then log in to download the required installation
-                                        package(s) from <xref
-                                                href="https://helion.hpwsportal.com/catalog.html#/Category/{%22categoryId%22%3A10152}/Show"
-                                                format="html" scope="external">HP Helion OpenStack
-                                                product installation</xref>.</li>
-                                <li>Download the compute proxy OVA template.</li>
                                 <li>If you have not downloaded the DCN installation packages, browse
                                                 <xref href="http://www.hp.com/go/hpsc" format="html"
                                                 scope="external"/> and search for product
@@ -345,8 +350,7 @@ uid                  Hewlett-Packard Company RSA (HP Codesigning Service)       
 gpg: Good signature from "Hewlett-Packard Company RSA (HP Codesigning Service) - 5"
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock>
-                                </li>
+Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li>
           </ol>
         </section>
                 <section id="prepbare">
