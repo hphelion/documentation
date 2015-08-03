@@ -229,10 +229,19 @@ StrictHostKeyChecking no </codeblock></li>
                         <p><b>Note:</b> When downloading installation files, always download and
                                 verify the signature file before installing.  </p>
 <ol>
-        <li>Register and then log in to download the required installation package(s) from <xref
-                                                href="https://helion.hpwsportal.com/catalog.html#/Category/{%22categoryId%22%3A10152}/Show"
-                                                format="html" scope="external">HP Helion OpenStack
-                                                product installation</xref>.</li>
+        <li>In a browser, navigate to <xref
+                                                href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
+                                                format="html" scope="external">Helion Download
+                                                Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs">
+                                                <li>Click <b>Sign In</b> to log in using your
+                                                  account. </li>
+                                                <li>After signing in, click the <b>Downloads</b>
+                                                  link in the menu on the left side of the
+                                                  page.</li>
+                                                <li>On the <b>Downloads</b> page, locate HP Helion
+                                                  OpenStack Carrier Grade and click
+                                                  <b>Download</b>.</li>
+                                        </ul></li>
                                 <li>Download and extract the <codeph>cg-hlm.qcow2</codeph> file to
                                         the images folder:
                                         <codeph>/var/lib/libvirt/images</codeph>.</li>
