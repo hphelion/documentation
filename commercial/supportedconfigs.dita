@@ -7,7 +7,7 @@
     <p>Note: While the hardware requirements are similar to those of HP Helion OpenStack 1.1, this
       is a completely new instsallation, not an upgrade or update operation.</p>
     <ol id="ol_stq_lbc_ws">
-      <li>Cloud in a box <ol id="ol_q5q_lbc_ws">
+      <li>Single-node implementation <ol id="ol_q5q_lbc_ws">
           <li>All HP Helion OpenStack services installed from and running on a single node </li>
           <li>This configuration is meant for anyone wanting a proof of concept and requires a
             minimum hardware footprint</li>
