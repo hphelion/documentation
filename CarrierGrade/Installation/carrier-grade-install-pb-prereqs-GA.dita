@@ -255,8 +255,10 @@ StrictHostKeyChecking no </codeblock></li>
                                                 product installation</xref>.</li>
                                 <li>Download the compute proxy OVA template.</li>
                                 <li>If you have not downloaded the DCN installation packages, browse
-                                        to the link in your confirmation email and download the
-                                        appropriate packages.</li>
+                                                <xref href="http://www.hp.com/go/hpsc" format="html"
+                                                scope="external"/> and search for product
+                                                <b>JL025AAE</b>.  You will need your product serial
+                                        number to download the appropriate packages.</li>
                                 <li>Unzip the DCN packages: <ul id="ul_cqm_tzc_ws">
                                                 <li>DCN-VRS-GW-3.0R7</li>
                                                 <li>DCN-VRS-VMware-3.0R7</li>
