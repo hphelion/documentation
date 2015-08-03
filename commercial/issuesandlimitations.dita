@@ -14,10 +14,12 @@
       <li>In Beta0 you cannot add or remove Swift servers </li>
       <li>Only one Swift zone is supported</li>
       <li>Support only 1 storage policy, object-0</li>
+      <li/>
     </ul>
     <p> </p>
     <p>
-      <b>Deployment of VSA cloud on a separate Node as per HLM life-cycle</b></p>
+      <b>Deployment of VSA cloud on a separate Node as per the life-cycle management
+      features</b></p>
     <p>Completed activity:</p>
     <p> vsa-deploy play to deploy VSA on standalone node</p>
     <p> cmc-deploy play do deploy CMC on controller node [0] </p>
@@ -39,19 +41,15 @@
     </ul>
     <p>This list to be updated real time as teams progress</p>
     <p> </p>
-    <p><b>Helion Cloud Monitoring (Monasca) via HLM</b></p>
+    <p><b>Helion Cloud Monitoring (Monasca) via the lifecycle management features</b></p>
     <p>Basic Monitoring is complete for Beta0 with the following limitations:</p>
     <ul id="ul_oby_cjb_ws">
       <li>Vertica is not available in the install. Must choose InfluxDB option instead.</li>
       <li>InfluxDB not configured behind a VIP. Must directly access one node in the cluster.</li>
       <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
     </ul>
-    <p><b>Ops console</b></p>
-    <p>Currently testing and working through bugs in a HOS2.0 environment. </p>
-    <p>most of the top level functionality is available for internal beta 0 (alarm definitions,
-      notifications, explorer, dashboard, and compute nodes). </p>
     <p><b>Cinder</b></p>
-    <p>Core cinder services are all being installed and configured via HLM. </p>
+    <p>Core cinder services are all being installed and configured via the installer. </p>
     <p>Cinder installation with VSA as a backend is being worked through at the moment, manual steps
       to be defined later may be required to complete installation.</p>
     <p><b>Networks</b></p>
@@ -84,5 +82,18 @@
       Therefore the node you need to boot first may not be first. You may want to disable NICs that
       you are not planning to use.</p>
     <p><b>Operations:</b></p>
+    
+      <p><b>FAQ</b></p>
+    
+    <p><b>What level of customisation possible via modifying configurations in the CP and using them
+        to deploy?</b></p>
+    <p>Aim of beta0 is get additional testing of the POC configuration. </p>
+    <p><b>Support for Multiple Provider VLANs as external networks?</b></p>
+    <p>This functionality is latent in beta0 but has not yet (9/27) been tested. </p>
+    <p><b>Can I add nodes to resource pool?</b></p>
+    <p>Possible to add VSA and Compute nodes. Default is 1 of each.</p>
+    <p><b>What other settings will we be able to customize in Beta0?</b></p>
+    <p>Specifically, will we be able to set things like server affinity through jinja files, or will
+      those need to be manual changes? M. Dunnett</p>
   </body>
 </topic>
