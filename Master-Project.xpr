@@ -21,6 +21,7 @@
         <folder path="automation/"/>
         <folder path="CarrierGrade/"/>
         <folder path="CloudGraphics/"/>
+        <folder path="cloudsystem/"/>
         <folder path="commercial/"/>
         <folder path="devplatform/"/>
         <folder path="euca/"/>

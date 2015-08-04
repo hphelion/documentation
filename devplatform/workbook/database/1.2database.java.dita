@@ -42,8 +42,13 @@
 <li>Click <b>Save</b>.</li>
 </ol>
 <p>
-<b>NOTE</b>: If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. For more information, 
-  refer to <xref href="../../1.2devplatform.database-instance.dita">Using the Database Service</xref> and <xref href="../../1.2devplatform.database-ALS.dita" >Connecting the Database Service with ALS</xref>.</p>
+        <note> If a more durable or scalable MySQL database service is needed, ensure your ALS
+          cluster is configured to use a database instance or master/slave pair provided by the
+          Database Service. For more information, refer to <xref
+            href="../../1.2devplatform.database-instance.dita">Using the Database Service</xref> and
+            <xref href="../../1.2devplatform.database-ALS.dita">Connecting the Database Service with
+            ALS</xref>.</note>
+      </p>
 </section>
 <section id="jdk"> <title>JDK</title>
 <p>Install the Java Development Kit (JDK) before installing other prerequisites.</p>
@@ -51,10 +56,7 @@
 <li>
 <p>Mac/UNIX: the JDK can be installed with the following command.</p>
 
-<codeblock>
-<codeph>sudo apt-get install default-jdk
-</codeph>
-</codeblock>
+<codeblock>sudo apt-get install default-jdk</codeblock>
 </li>
 <li>
 <p>PC: Navigate to the <xref href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" scope="external" format="html" >JDK installation page</xref> and run the appropriate JDK installer for your platform.</p>
@@ -68,10 +70,7 @@
 <li>
 <p>Mac/UNIX: Maven can be installed with the following command:</p>
 
-<codeblock>
-<codeph>sudo apt-get install maven 
-</codeph>
-</codeblock>
+<codeblock>sudo apt-get install maven </codeblock>
 </li>
 <li>
 <p>PC: Navigate to the <xref href="http://maven.apache.org/download.cgi" scope="external" format="html" >Maven installation page</xref> and follow the <xref href="http://maven.apache.org/guides/getting-started/windows-prerequisites.html" scope="external" format="html" >installation directions</xref>.</p>
@@ -84,61 +83,36 @@
 </section>
 <section id="build-the-application"> <title>Build the Application</title>
 <p>If you are not already there, <i>cd</i> into this app's root directory and execute:</p>
-<codeblock>
-  <codeph>mvn clean package
-</codeph>
-</codeblock>
+<codeblock>mvn clean package</codeblock>
 <p>This builds the application with Maven. It will create the <i>mysql-java-1.0.war</i> file within the target directory.</p>
 </section>
 <section id="deploy-the-application"> <title>Deploy the Application</title>
-<p>
-        <b>Note</b>: Application Lifecycle Service clusters that require an upstream HTTP proxy to
-        access the internet will need to be <xref
-          href="../../helion/admin/server/1.2configuration.dita#topic31232/staging-cache-app-http-proxy"
+<p>Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet
+        will need to be <xref
+          href="../../helion/admin/server/https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
           >made aware of the proxy</xref>. The sample applications require access to the Internet in
         order to download dependent packages.</p>
 <p>Use the Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally use the <xref href="../../1.2devplatform.eclipse.dita" >plugin</xref> to deploy.</p>
 <ol>
-<li>Open the <xref href="../../helion/user/reference/1.2client-ref.dita" >Helion command-line interface (CLI)</xref>
+<li>Open the <xref href="../../helion/user/reference/1.2client-ref.dita">Helion command-line interface (CLI)</xref>
 </li>
-<li>
-<p>Ensure that you are targeting your desired environment. If you are not, execute</p>
-
-<codeblock>
-<codeph>helion target https://api.xx.xx.xx.xx.xip.io    
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Ensure that you are logged in to your desired environment. If you are not, execute</p>
-
-<codeblock>
-<codeph>helion login
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>If you are not already there, <codeph>cd</codeph> to the root directory of the sample.</p>
-</li>
-<li>
-<p>Deploy the application by using the command:</p>
-
-<codeblock>
-<codeph>helion push
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Accept any default values that you may be prompted for.
-<!--A BR tag was used here in the original source.--><b>Note</b>: By default, ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</p>
-</li>
+<li> Ensure that you are targeting your desired environment. If you are not,
+          execute<codeblock>helion target https://api.xx.xx.xx.xx.xip.io    </codeblock></li>
+<li> Ensure that you are logged in to your desired environment. If you are not,
+          execute<codeblock>helion login</codeblock></li>
+<li> If you are not already there, <codeph>cd</codeph> to the root directory of the sample.</li>
+<li> Deploy the application by using the command:<codeblock>helion push</codeblock></li>
+<li> Accept any default values that you may be prompted for.
+            <!--A BR tag was used here in the original source.--><b>Note</b>: By default, ALS
+          clusters are configured with two domains (private and public). In some situations the
+          Helion CLI may prompt you to select a target domain. If prompted, select the public domain
+          from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</li>
 </ol>
 </section>
 <section id="key-code-snippets"> <title>Key Code Snippets</title>
 <p>This first line in this section of the MysqlServlet.java file shows how to retrieve the connection information for the MySQL instance from the application's environment variables. The connection information is represented using JSON.</p>
 <p>The rest of the code shown here parses the JSON string that was retrieved and builds the appropriate JDBC connection string.</p>
-<codeblock>
-  <codeph>String vcap_services = System.getenv("VCAP_SERVICES");
+<codeblock>String vcap_services = System.getenv("VCAP_SERVICES");
 
         Connection dbConnection = null;
 
@@ -171,21 +145,16 @@
                 System.out.println("Caught error: ");
                 e.printStackTrace();
             }
-        }
-</codeph>
-</codeblock>
+        }</codeblock>
 <p>The <i>manifest.yml</i> file contains configuration information used by ALS to set up the environment. The <b>services</b> element informs ALS how to bind to the MySQL service provided by the ALS cluster to the application.</p>
-<codeblock>
-  <codeph>---
+<codeblock>---
 applications: 
 - name: mysql-java
   mem: 512M
   path: target/mysql-java-1.0
   services:
     ${name}-db:
-      type: mysql
-</codeph>
-</codeblock>
+      type: mysql</codeblock>
 </section>
 <section id="run-the-application"> <title>Run the Application</title>
 <ol>

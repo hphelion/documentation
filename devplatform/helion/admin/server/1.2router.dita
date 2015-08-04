@@ -41,53 +41,75 @@ between multiple instances (containers) as required.</p>
 <p>Application Lifecycle Service's default router ('router2g') supports
 <xref href="http://www.websocket.org/aboutwebsocket.html" scope="external" format="html" >WebSocket</xref> (including
 "wss://" secure web sockets) and <xref href="http://www.chromium.org/spdy" scope="external" format="html" >SPDY</xref>.</p>
+    <p>For Router SSL/TLS information, see the <xref href="1.2configuration.dita">Server
+      Configuration</xref> documentation.</p>
 <section id="settings"> <title>Settings</title>
-  <p>The Router is configured using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"  >
-<i>kato config</i>
-</xref>. The following settings are configurable:</p>
-<p>
-<b>client_inactivity_timeout</b>: time (in seconds) the router waits
-for idle clients (default 1200 seconds). To change this:</p>
-<codeblock>kato config set router2g client_inactivity_timeout 2400</codeblock>
-<p>
-<b>backend_inactivity_timeout</b>: time (in seconds) the router waits
-for applications to respond (default 1200 seconds). To change this:</p>
-<codeblock>kato config set router2g client_inactivity_timeout 2400</codeblock>
-<p>
-<b>prevent_x_spoofing</b> (true|false): Enable HTTP "X-" header
-spoofing prevention (default 'true'). When enabled, the router
-discards all X- headers sent by the client (e.g. X-Forwarded-For,
-X-Forwarded-proto, X-Real-IP, etc.) and replaces them with values
-determined by the router itself. Set this option to 'false' only if the routers are behind a load balancer which terminates SSL connections; in this scenario, the router will trust the X-headers set by the load balancer.</p>
-<p>To enable:</p>
-<codeblock>kato config set router2g prevent_x_spoofing true --json</codeblock>
-<p>
-<b>session_affinity</b> (true|false - disabled/unset by default):
-Enable sticky session support on the router. Overrides normal
-round-robin load balancing for clients with JSESSIONID, SESSIONID,
-or PHPSESSID cookies set (configurable in the router's
-<i>config/local.json</i> file), routing those clients to specific
-application instances. If the backend assigned on the first request
-goes down, a new one is automatically assigned. Clients can delete
-their sticky session assignment by removing the
-HELION_SESSION_AFFINITY cookie.</p>
-<p>
-<b>x_frame_options</b>: Prevent clickjacking on requests with
-<xref href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options" scope="external" format="html" >X-Frame response
-header</xref>
-configuration. Disabled if empty (default). Valid values are:</p>
-<ul>
-<li>DENY</li>
-<li>SAMEORIGIN</li>
-<li>ALLOW_FROM \&lt;uri&gt;</li>
-</ul>
-<p>For example:</p>
-<codeblock>kato config set router2g x_frame_options SAMEORIGIN</codeblock>
-<p>
-        <note type="tip">End-user applications can also employ <xref
-            href="http://en.wikipedia.org/wiki/Framekiller" scope="external" format="html"
-            >framekiller</xref> JavaScript snippets instead to help prevent frame-based clickjacking.</note>
-      </p>
+<p>Restart the router role to apply any config changes to the running router(s)</p>
+  <codeblock>kato restart router</codeblock>
+ <p>The Router is configured using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"  >
+      <i>kato config</i>
+    </xref>. The following settings are configurable:</p>
+<dl>
+  <dlentry>
+    <dt>client_inactivity_timeout</dt>
+    <dd>time (in seconds) the router waits
+      for idle clients (default 1200 seconds). To change this:
+      <codeblock>kato config set router2g client_inactivity_timeout 2400</codeblock></dd>
+  </dlentry>
+  <dlentry>
+    <dt>backend_inactivity_timeout</dt>
+    <dd>time (in seconds) the router waits
+      for applications to respond (default 1200 seconds). To change this:
+      <codeblock>kato config set router2g client_inactivity_timeout 2400</codeblock></dd>
+  </dlentry>
+  <dlentry>
+    <dt>prevent_x_spoofing (true|false)</dt>
+    <dd>Enable HTTP "X-" header spoofing prevention (default 'true'). When enabled, the router
+            discards all X- headers sent by the client (e.g. X-Forwarded-For, X-Forwarded-proto,
+            X-Real-IP, etc.) and replaces them with values determined by the router itself. Set this
+            option to 'false' only if the routers are behind a load balancer which terminates SSL
+            connections; in this scenario, the router will trust the X-headers set by the load
+            balancer. To enable:
+              <codeblock>kato config set router2g prevent_x_spoofing true --json</codeblock><note>If
+              you have configured separate network routes to the API endpoint and user applications
+              [private network access to the API endpoint, load-balanced public access to
+              applications] this option must be set to 'true', or user applications will not have
+              access to X-headers set by the load balancer.</note></dd>
+  </dlentry>
+  <dlentry>
+    <dt>session_affinity (true|false - disabled/unset by default)</dt>
+    <dd>Enable sticky session support on the router. Overrides normal
+      round-robin load balancing for clients with JSESSIONID, SESSIONID,
+      or PHPSESSID cookies set (configurable in the router's
+      <i>config/local.json</i> file), routing those clients to specific
+      application instances. If the backend assigned on the first request
+      goes down, a new one is automatically assigned. Clients can delete
+      their sticky session assignment by removing the
+      HELION_SESSION_AFFINITY cookie.</dd>
+  </dlentry>
+  <dlentry>
+    <dt>x_frame_options</dt>
+    <dd>Prevent clickjacking on requests with <xref
+              href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options" scope="external"
+              format="html">X-Frame response header</xref> configuration. Disabled if empty
+            (default). Valid values are: <ul>
+              <li>DENY</li>
+              <li>SAMEORIGIN</li>
+              <li>ALLOW_FROM \&lt;uri&gt;</li>
+            </ul> For example:
+              <codeblock>kato config set router2g x_frame_options SAMEORIGIN</codeblock><note>End-user
+              applications can also employ <xref href="http://en.wikipedia.org/wiki/Framekiller"
+                scope="external" format="html">framekiller</xref> JavaScript snippets instead to
+              help prevent frame-based clickjacking.</note></dd>
+  </dlentry><dlentry>
+    <dt>acl</dt><dd>Access Control List settings for the router. Undefined by default.</dd></dlentry>
+        <dlentry>
+          <dt>cluster_endpoint_aliases</dt>
+          <dd>Add aliases for the API Endpoint. See the API Endpoint Alias documentation for an example.</dd>
+        </dlentry><dlentry>
+          <dt>appOnlyRouter</dt>
+          <dd>Note that this is a file setting and not a <codeph>kato</codeph> command. This setting can be configured on router nodes in the <codeph>/s/code/stackato-router/config/local.json</codeph> file. Set <codeph>appOnlyRouter</codeph> to true and restart the router to enable. This configures the router to not serve the API Endpoint, only user-deployed applications. At least one router node in every cluster must expose the API Endpoint, but it does not need to be internet accessible if the developers pushing applications are within the same internal network where ALS is installed.</dd>
+        </dlentry></dl>
 </section>
 <section id="websockets"> <title>WebSockets</title>
 <p>Applications using web sockets must use the VCAP_APP_PORT or PORT
@@ -102,5 +124,15 @@ for reducing web page load time. The router supports SPDY versions 2 and
 3. Applications can use SPDY over any HTTPS connection, so long as the
 connection consumers (the application server and browser) support it.</p>
 </section>
+  <section>
+      <title>router.yml</title>
+      <p>The default settings for the router are loaded from a <b>router.yml</b> file in the
+          <codeph>/s/code/stackato-router/config/</codeph> directory during first boot (only). You
+        can use this file to configure the router, but the changes must be manually re-imported with
+        the <xref href="../reference/1.2kato-ref.ditatopic39432/kato-command-ref-op-import_from_yaml_file">kato-command-ref-op-import_from_yaml_file</xref>command.</p>
+      <codeblock>kato op import_from_yaml_file router2g 
+kato restart router </codeblock>
+      <p>This approach is often easier than manipulating the setings individually. </p>
+    </section>
 </body>
 </topic>

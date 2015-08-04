@@ -317,6 +317,8 @@
             navtitle="Common Server Operations"/>
           <topicref href="devplatform/helion/admin/server/1.2configuration.dita" locktitle="yes"
             navtitle="Detailed Configuration"/>
+          <topicref href="devplatform/helion/admin/server/https_and_ssl.dita"
+            navtitle="HTTP and SSL Configuration" locktitle="yes"/>
           <topicref href="devplatform/helion/admin/server/1.2aok.dita" locktitle="yes"
             navtitle="AOK Authentication Server"/>
           <topicref href="devplatform/helion/admin/server/1.2docker.dita" locktitle="yes"
