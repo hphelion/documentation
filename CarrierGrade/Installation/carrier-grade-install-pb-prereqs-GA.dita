@@ -295,6 +295,8 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <li>nuage-openvswitch-switch_3.0.7-125_amd64.deb</li>
                                                 <li>nuage-openstack-nuagenetlib-juno.tar.gz</li>
                                                 <li>nuage-openstack-neutron-juno-plugin.tar.gz</li>
+                                                <li>nuage-openstack-nuagenetlib-juno.tar.gz</li>
+                                                <li>nuage-openstack-neutron-juno-plugin.tar.gz</li>
                                         </ul></li>
                         </ol>  
                 <p>If you execute a list on that directory, the output appears similar to the following image:</p>

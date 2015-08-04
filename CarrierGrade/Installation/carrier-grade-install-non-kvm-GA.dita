@@ -388,12 +388,14 @@ hp3par_iscsi_chap_enabled=false</codeblock><p><b>For
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>
 hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></p></li>
-          </ol></li>            
+          </ol></li>
+        <li>After editing the JSON files, validate each JSON file to make sure there are no
+          syntactical errors using the tool of your preference. For example, using the Python
+          json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>            
 <li>Once you have correctly edited all the json Cloud Model files, run the HP Helion OpenStack
-          Configuration Processor: <codeblock>hcfgproc -d definition.json</codeblock><p>The
-              <codeph>hcfgproc</codeph> script gets installed in <codeph>/usr/local/bin</codeph> by
-            the <codeph>prepare-env</codeph> script. The script generates a <codeph>clouds/</codeph>
-            directory within the directory. </p></li>
+          Configuration Processor: <codeblock>hcfgproc -d definition.json</codeblock><p>The HP
+            Helion OpenStack Configuration Processor is a script, called <codeph>hcfgproc</codeph>,
+            that is incorporated into the installation environment. </p></li>
 <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
           correct.</li>
