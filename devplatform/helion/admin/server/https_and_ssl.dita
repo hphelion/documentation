@@ -108,6 +108,10 @@ Certificate chain
  2 s:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA
    i:/C=US/O=Entrust.net/OU=www.entrust.net/CPS incorp. by ref. (limits liab.)/OU=(c) 1999 Entrust.net Limited/CN=Entrust.net Secure Server Certification Authority</codeblock>
     </section>
+    <section id="cipher">
+      <title>Customizing the Cipher Suites</title>
+      <p/>
+    </section>
     <section id="generating-a-self-signed-ssl-certificate">
       <title>Generating a self-signed SSL certificate</title>
       <p>You can re-generate Application Lifecycle Service's self-signed SSL certificate by running
@@ -129,7 +133,7 @@ openssl req -new -x509 -nodes -sha1 -days 365 -key host.key -multivalue-rdn \
       <codeblock>openssl x509 -noout -fingerprint -text &lt; host.crt &gt; host.info
 chmod 400 host.key host.crt</codeblock>
       <p>To get the router to use the new certificate and key files, follow the steps in the <xref
-          type="section" href="#topic31232/using-your-own-ssl-certificate">
+        type="section" href="#topic_gwr_qgd_ws/using-your-own-ssl-certificate">
           <i>Using your own SSL certificate</i>
         </xref> section above.</p>
       <p>With any self-signed SSL certificate, you will get browser warning messages. The

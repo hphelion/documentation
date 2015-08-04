@@ -120,7 +120,7 @@ public URIs:</p>
 </li>
 </ul>
 <p>This may require setting the HTTPS_PROXY environment variable on each
-  node if a proxy is in use on your network. See <xref href="../server/1.2configuration.dita#topic31232/http-proxy">Upstream Proxy Settings</xref> for instructions on configuring upstream proxies. For upgrades specifically, the <b>http_proxy</b> environment variable must be set in the shell you'll be running the upgrade from. For example:</p>
+  node if a proxy is in use on your network. See <xref href="https_and_ssl.dita#topic_gwr_qgd_ws/http-proxy">Upstream Proxy Settings</xref> for instructions on configuring upstream proxies. For upgrades specifically, the <b>http_proxy</b> environment variable must be set in the shell you'll be running the upgrade from. For example:</p>
 <codeblock>export http_proxy=http://intproxy.example.com: </codeblock>
 </section>
 <section id="rsa-keys"> <title>Passwordless SSH</title>
@@ -241,7 +241,7 @@ stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ </codeblock></li>
       </p>
 </section>
 <section id="app-store-proxy-settings"> <title>App Store Proxy Settings</title>
-  <p>Proxy settings for the App Store may be lost during an upgrade. If the App Store cannot fetch data after an upgrade, and your system is behind an HTTP(S) proxy, <xref href="../server/1.2configuration.dita#topic31232/http-proxy" type="section"   >reset the proxy information</xref> for your network.</p>
+  <p>Proxy settings for the App Store may be lost during an upgrade. If the App Store cannot fetch data after an upgrade, and your system is behind an HTTP(S) proxy, <xref href="https_and_ssl.dita#topic_gwr_qgd_ws/http-proxy" type="section"   >reset the proxy information</xref> for your network.</p>
 </section>
 <section id="upgrading-with-customizations"> <title>Upgrading with Customizations</title>
 <p>Many files and directories in the ALS VM are overwritten during an upgrade. The <xref href="../console/1.2customize.dita" >Customization instructions</xref> document best practices which are safe for upgrades, but some customers may have modified the system further.</p>
@@ -294,7 +294,7 @@ stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ </codeblock></li>
         with broken support for <codeph>https_proxy</codeph> may fail during staging (or pre-running
         hooks) because <codeph>https_proxy</codeph> is now always defined during these stages, even
         when there is no upstream proxy behind the <xref
-          href="../server/1.2configuration.dita#topic31232/staging-cache-app-http-proxy"
+          href="https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
           type="section">built-in proxy</xref>.</p>
 </section>
 <section id="missing-kato"> <title>Missing Kato Utility</title>
