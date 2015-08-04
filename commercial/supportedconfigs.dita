@@ -23,7 +23,7 @@
         </ol></li>
       <li>Single Region Proof of Concept<ol id="ol_pvq_lbc_ws">
           <li>Single control plane for
-            <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all CP
+            <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all control plane
             services<?oxy_custom_end?></li>
           <li>Single bond of two NICs</li>
           <li>Network traffic separation providing for different services on different VLANs</li>
