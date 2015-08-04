@@ -98,5 +98,23 @@
     <p><b>What other settings will we be able to customize in Beta0?</b></p>
     <p>Specifically, will we be able to set things like server affinity through jinja files, or will
       those need to be manual changes? M. Dunnett</p>
+    
+    <p><b>Ops Console</b></p>
+    
+    <p>Rundown by feature:</p>
+    <p>Notification Methods: Functional </p>
+    <p>Alarm Definitions: Functional. The advanced editor may not work depending on which specific
+      build of the UI is in beta0. That’s accessed by clicking “create alarm definition” , then
+      “convert to alarm expression editor”, then “alarm expression editor”.  </p>
+    <p>Alarms: Functional. There is a known bug that filtering on condition doesn’t work. </p>
+    <p>Dashboard: Functional. Some services displayed on the dashboard may not have data if they’re
+      not currently monitored </p>
+    <p>Logging Dashboard: Not Functional. Button to launch logging dashboard goes to wrong URL </p>
+    <p>Monitoring Dashboard: Not Functional. Being completely redesigned with new functionality </p>
+    <p>Compute Summary: Not Functional. Displays empty graph widgets </p>
+    <p>Compute Nodes: Not Functional. Displays no data. </p>
+    <p>HDP Summary: Not Functional. Navigation fails to load page </p>
+    <p>DBAAS Nodes: Not Functional. Navigation fails to load page </p>
+    <p>MSGAAS Nodes: Not Functional. Navigation fails to load page </p>
   </body>
 </topic>
