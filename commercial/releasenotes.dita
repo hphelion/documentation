@@ -47,5 +47,90 @@
   </ul>
 <p><b>Backup and Restore Capabilities for the Control Plane</b> - Allows you to backup and recover your Helion OpenStack environment with RPO=0.</p>
 </section>
-  </body>
+<section id="KnownIssues"> <title>Known Issues in this Release</title>
+<p><b>HP Helion Development Platform</b></p>
+<p>Helion Development Platform is not supported on Beta 0</p>
+<p><b>Installing Swift</b></p>
+<p>Swift installs with the following limitations: </p>
+<ul>
+<li>Only a 3-node Swift configuration in which Swift runs on the 3 controller servers is supported</li>
+<li>No LVM (logical volumes) support. Therefore, dedicated disks are needed for Swift on the 3 controller nodes</li>
+<li>In Beta0 you cannot add or remove Swift servers</li>
+<li>Only one Swift zone is supported</li>
+<li>Support only 1 storage policy, object-0</li>
+</ul>
+  <!-- <p>
+      <b>Deployment of VSA cloud on a separate Node as per the life-cycle management
+      features</b></p>
+    <p>Completed activity:</p>
+    <p> vsa-deploy play to deploy VSA on standalone node</p>
+    <p> cmc-deploy play do deploy CMC on controller node [0] </p>
+    <p> one-region-poc-with-vsa file with dev environment </p>
+    <p>Impediment:</p>
+    <p>The one-region-poc-with-vsa will be provided by the HLM team which impacts not only VSA but
+      other services as well. This will be beyond be Beta0 timeframe.</p>
+    <p> </p>-->
+<p><b>Health and performance monitoring</b></p>
+<p>Monitoring is enabled for several, but not all services</p>
+<p>Monitoring is integrated for the following services:</p>
+<p>Logging, Neutron, Swift, Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, hLinux</p>
+<p>The following are yet to be completed:</p>
+<ul>
+<li>OpsConsole</li>
+<li>Keystone</li>
+<li>Horizon</li>
+</ul>
+<p>This list to be updated real time as teams progress</p>
+<p><b>Helion Cloud Monitoring (Monasca) via the lifecycle management features</b></p>
+<p>Basic Monitoring is complete for Beta0 with the following limitations:</p>
+<ul>
+<li>Vertica is not available in the install. Must choose InfluxDB option instead.</li>
+<li>InfluxDB not configured behind a VIP. Must directly access one node in the cluster.</li>
+<li>Backup/restore of Monasca configuration and metrics data is not available.</li>
+</ul>
+<p><b>Cinder</b></p>
+<p>Core cinder services are all being installed and configured via the installer.</p>
+<p>Cinder installation with VSA as a backend is being worked through at the moment, manual steps to be defined later may be required to complete installation.</p>
+<p><b>Networks</b></p>
+<p>This requirement is primarily network configuration that will be done through the installer.  There is no upstream neutron work required.</p>
+<p>** This is not NIC Bonding**</p>
+<p>Multiple NICs on a compute node and each NIC is connected to a different external network.  Today we don't support multiple external networks at L2 (ML2 OVS mech driver) nor L3 (DVR Or Centralized)</p>
+  <!--<p>Need use cases/stories </p>
+    <p>* ability to span L3</p>
+    <p>* multiple provider networks/separation of traffic</p>
+    <p>* two pools for fip to span networks/different fip pools</p>
+    <p>* talk to multiple networks</p>
+    <p> </p>
+    <p>[06/02/15]</p>
+    <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
+    <p> </p>-->
+<p><b>TLS</b></p>
+<p>The server certificate is currently hard coded. If an operator wishes to provide their own, they need to edit the defaults in the TLS playbook. <i>The intent is to provide an interface via a soft link in the ansible system to do this.</i>status unkown</p>
+<p><b>Known Issues</b></p>
+<p><b>Install:</b></p>
+<p>Boot order may be affected by random assignment of eth interface numbers to your NICs.  Therefore the node you need to boot first may not be first. You may want to disable NICs that you are not planning to use.</p>
+<p><b>Operations:</b></p>
+  
+  <!--<p><b>FAQ</b></p>
+    
+    <p><b>What level of customisation possible via modifying configurations in the CP and using them
+        to deploy?</b></p>
+    <p>Aim of beta0 is get additional testing of the POC configuration. </p>
+    <p><b>Support for Multiple Provider VLANs as external networks?</b></p>
+    <p>This functionality is latent in beta0 but has not yet (9/27) been tested. </p>
+    <p><b>Can I add nodes to resource pool?</b></p>
+    <p>Possible to add VSA and Compute nodes. Default is 1 of each.</p>
+    <p><b>What other settings will we be able to customize in Beta0?</b></p>
+    <p>Specifically, will we be able to set things like server affinity through jinja files, or will
+      those need to be manual changes? M. Dunnett</p>-->
+  
+<p><b>Ops Console</b></p>
+<p>Rundown by feature:</p>
+<p>Notification Methods: Functional </p>
+<p>Alarm Definitions: Functional. The advanced editor may not work depending on which specific build of the UI is in beta0. That’s accessed by clicking “create alarm definition” , then “convert to alarm expression editor”, then “alarm expression editor”.</p>
+<p>Alarms: Functional. There is a known bug that filtering on condition doesn’t work.</p>
+<p>Dashboard: Functional. Some services displayed on the dashboard may not have data if they’re not currently monitored.</p>
+<p>Non-functional: Logging Dashboard, Monitoring Dashboard, Compute Summary, Compute Nodes, HDP Summary, DBAAS Nodes, DBAAS Nodes.</p>
+</section>
+</body>
 </topic>
