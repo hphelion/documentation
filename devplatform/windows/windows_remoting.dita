@@ -70,6 +70,6 @@
   <p>To connect to the instance, open Remote Desktop Connection, and enter the external IP address for the instance. Enter the user name in the form
         <b>&lt;InstanceName&gt;/Administrator</b>, and password. To retrieve the Administrator
       password, see <xref href="windows_password.dita">Retrieving the Windows Password</xref> 
-    <image placement="break" href="../../media/windows" />_</p>
+    </p>
 </body>
 </topic>
