@@ -1,6 +1,8 @@
 #!/bin/bash
 
 
+
+
 for i in  `find . -name "*.md" -o -name "*.yml"`
 
 do 
