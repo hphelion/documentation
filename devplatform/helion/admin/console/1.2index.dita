@@ -148,7 +148,7 @@ https://helion-xxxx.local</codeblock>
         <note> The SSL certificate for the Application Lifecycle Service Management Console is
           self-signed. You will need to manually accept this certificate in your browser. See the
             <xref
-            href="../../admin/server/1.2configuration.dita#topic31232/using-your-own-ssl-certificate"
+              href="../server/https_and_ssl.dita#topic_gwr_qgd_ws/using-your-own-ssl-certificate"
             >Using your own SSL certificate</xref> for information on using your own
           certificate.</note>
       </p>

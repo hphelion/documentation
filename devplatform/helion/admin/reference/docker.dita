@@ -52,7 +52,7 @@
           Containers</xref>
       </li>
     </ul>
-    <section>
+    <section id="appdeploy">
       <title>Docker App Deployment Permission</title>
       <p>Since arbitrary Docker images could potentially expose a root user and other escalated
         privileges, you should restrict the ability to push Docker images to:</p>
@@ -196,7 +196,8 @@ RUN apt-get install newrelic-sysmond
 RUN echo "HELION ALL= NOPASSWD: /etc/init.d/newrelic-sysmond" &gt;&gt; /etc/sudoers
 RUN echo "HELION ALL= NOPASSWD: /usr/sbin/nrsysmond-config" &gt;&gt; /etc/sudoers
 
-ADD hooks /etc/helion/hooks </codeblock><title>Creating
+ADD hooks /etc/helion/hooks </codeblock>
+      </section><section id="creating-a-docker-registry"><title>Creating
         a Docker Registry </title><p>The steps above will work with smaller clusters or micro clouds
         where the creation of Docker images on each DEA can be done manually. On larger clusters,
         you should set up a <xref href="https://registry.hub.docker.com/_/registry/"
@@ -226,7 +227,7 @@ WARNING: Assumed type struct
       </ol> The <xref href="../best-practices/1.2index.dita#topic16169/upgrade-docker"
         type="section">Upgrade the Docker Image</xref> documentation explains how to modify the
       Docker base image without changing <i>kato config</i>. </section>
-    <section id="docker-privileged-containers">
+       <section id="docker-privileged-containers">
       <title>Privileged Containers</title>
       <p>ALS runs "unprivileged" Docker containers by default. The containers do not have access to
         any devices on the (virtual) host.</p>

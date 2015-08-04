@@ -203,12 +203,12 @@ status checks. For a complete list of options, see the <xref href="../reference/
             </li>
             <li>
               <xref
-                href="1.2configuration.dita#topic31232/http-proxy"
+                href="https_and_ssl.dita#topic_gwr_qgd_ws/http-proxy"
                 type="section">HTTP Proxy</xref>
             </li>
             <li>
               <xref
-                href="1.2configuration.dita#topic31232/staging-cache-app-http-proxy"
+                href="https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
                 type="section">Staging Cache &amp; App HTTP Proxy</xref>
             </li>
             <li><xref
@@ -223,27 +223,27 @@ status checks. For a complete list of options, see the <xref href="../reference/
             </li>
             <li>
               <xref
-                href="1.2configuration.dita#topic31232/https-ssl"
-                type="section">HTTPS &amp; SSL</xref>
+                href="https_and_ssl.dita"
+                type="section">HTTPS &amp; SSL Configuration</xref>
               <ul id="ul_hrp_vql_ns">
                 <li>
                   <xref
-                    href="1.2configuration.dita#topic31232/using-your-own-ssl-certificate"
+                    href="https_and_ssl.dita#topic_gwr_qgd_ws/using-your-own-ssl-certificate"
                     type="section">Using your own SSL certificate</xref>
                 </li>
                 <li>
                   <xref
-                    href="1.2configuration.dita#topic31232/adding-custom-ssl-certs-sni"
+                    href="https_and_ssl.dita#topic_gwr_qgd_ws/adding-custom-ssl-certs-sni"
                     type="section">Adding Custom SSL Certs</xref>
                 </li>
                 <li>
                   <xref
-                    href="1.2configuration.dita#topic31232/ca-certificate-chaining"
+                    href="https_and_ssl.dita#topic_gwr_qgd_ws/ca-certificate-chaining"
                     type="section">CA Certificate Chaining</xref>
                 </li>
                 <li>
                   <xref
-                    href="1.2configuration.dita#topic31232/generating-a-self-signed-ssl-certificate"
+                    href="https_and_ssl.dita#topic_gwr_qgd_ws/generating-a-self-signed-ssl-certificate"
                     type="section">Generating a self-signed SSL certificate</xref>
                 </li>
               </ul>
