@@ -110,6 +110,6 @@
     <p>Dashboard: Functional. Some services displayed on the dashboard may not have data if they’re
       not currently monitored </p>
     <p>Non-functional: Logging Dashboard, Monitoring Dashboard, Compute Summary, Compute Nodes, HDP
-      Summary, DBAAS Nodes,  DBAAS Nodess.  </p>
+      Summary, DBAAS Nodes,  DBAAS Nodes.  </p>
   </body>
 </topic>
