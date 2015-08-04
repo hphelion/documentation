@@ -72,17 +72,17 @@
             </li>
           </ul></li>
 <li>
-          <xref href="server/1.2docker.dita">Docker &amp; Fence</xref>
+          <xref href="server/docker.dita">Docker &amp; Fence</xref>
           <ul>
             <li>
-              <xref href="server/1.2docker.dita#topic7767/modifying-or-updating-the-container-image" type="section"  >Modifying
+              <xref href="server/docker.dita#topic7767/modifying-or-updating-the-container-image" type="section"  >Modifying
                 or Updating the Container Image</xref>
             </li>
             <li>
-              <xref href="server/1.2docker.dita#topic7767/admin-hooks" type="section"  >Admin Hooks</xref>
+              <xref href="server/docker.dita#topic7767/admin-hooks" type="section"  >Admin Hooks</xref>
             </li>
             <li>
-              <xref href="server/1.2docker.dita#topic7767/creating-a-docker-registry" type="section"  >Creating a
+              <xref href="server/docker.dita#topic7767/creating-a-docker-registry" type="section"  >Creating a
                 Docker Registry</xref>
             </li>
           </ul></li>

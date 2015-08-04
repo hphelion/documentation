@@ -121,7 +121,7 @@ application instances.</p>
       <dd>Streams application logs via Logyard to various log drains.</dd>
     </dlentry>
   </dl>
-<p>The Docker image used for the containers can be <xref href="docker.dita">customized</xref> by admins.</p>
+<p>The Docker image used for the containers can be <xref href="../server/docker.dita">customized</xref> by admins.</p>
 </section>
 <section id="architecture-service-roles"> <title>Service Roles</title>
 <p>Application Lifecycle Service nodes can also be assigned roles for data services. The data services can be run separately on their own nodes or grouped together.</p>

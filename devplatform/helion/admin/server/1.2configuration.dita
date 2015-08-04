@@ -691,9 +691,8 @@ list</i>
     - deb http://security.ubuntu.com/ubuntu precise-security main universe 
     - deb http://apt.newrelic.com/debian/ newrelic non-free </codeblock>
   <p>Once a repository has been added to the list, <b>the GPG key must also be added</b> to the
-          <xref href="1.2docker.dita#topic7767/modifying-or-updating-the-container-image">Docker
-          base image</xref> on each DEA (or the <xref
-          href="../server/1.2docker.dita#topic7767/creating-a-docker-registry" type="section">Docker
+          base image on each DEA (or the <xref
+          href="../server/docker.dita#topic7767/creating-a-docker-registry" type="section">Docker
           registry</xref> server if configured).</p>
 <p>For example, to trust the GPG for the New Relic repository, add the following line to the <i>Dockerfile</i> for the base image:</p>
 <codeblock>RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -</codeblock>
@@ -701,10 +700,10 @@ list</i>
 <section id="container_NFS"> <title>Container NFS Mounts</title>
       <note type="warning">Reconfiguring ALS to allow user applications to mount NFS partitions has serious
         security implications. See the <xref
-          href="../server/1.2docker.dita#topic7767/docker-privileged-containers" type="section"
+          href="../server/docker.dita#topic7767/docker-privileged-containers" type="section"
           >Privileged Containers</xref> section for details.</note>
 <p>By default, application containers are unable to mount external filesystems (other than the built-in <xref href="../../user/services/1.2filesystem.dita" >Filesystem Service</xref> via network protocols such as NFS.</p>
-  <p>If the system has been configured to use <xref href="../server/1.2docker.dita#topic7767/docker-privileged-containers" type="section" >privileged containers</xref> and <i>sudo</i> permissions have been explicitly allowed in the quota, NFS partitions can be mounted in application containers using application configuration similar to the following manifest.yml excerpt:
+  <p>If the system has been configured to use <xref href="../server/docker.dita#topic7767/docker-privileged-containers" type="section" >privileged containers</xref> and <i>sudo</i> permissions have been explicitly allowed in the quota, NFS partitions can be mounted in application containers using application configuration similar to the following manifest.yml excerpt:
 requirements:</p>
 <codeblock>ubuntu:
       - nfs-common

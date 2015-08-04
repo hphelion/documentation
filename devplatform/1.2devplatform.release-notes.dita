@@ -30,7 +30,7 @@
       <dl>
         <dlentry>
           <dt>Docker Image Deployment</dt>
-          <dd><xref href="helion/admin/reference/docker.dita">Deploying Docker Images as apps</xref>
+          <dd><xref href="helion/user/deploy/languages/docker_apps.dita">Deploying Docker Images as apps</xref>
             provides an alternative to the usual method of application deployment, which is driven
             by buildpacks. Administrators control user permissions and which registries and images
             are allowed. Local ALS caching registry servers share Docker image layers to improve

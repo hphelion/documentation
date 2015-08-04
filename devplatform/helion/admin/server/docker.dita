@@ -30,12 +30,12 @@
         <i>fence</i> process, which in turn uses <xref href="http://docs.docker.io/en/latest/"
         scope="external" format="html">Docker</xref> to create and destroy Linux containers on
       demand.</p>
-    <p>Docker Apps are web applications that can be pushed using ALS in the same way as regular
-      "staged" web applications. Administrators can control which users have this ability, which
-      images are allowed, and how much space is allocated on the Controller nodes for storing
-      images.</p>
+    <p>Once Docker has been set up and configured, see the documentation on<xref
+        href="../../user/deploy/languages/docker_apps.dita#topic_l4n_y3n_xs">deploying Docker
+        apps</xref>.</p>
     <ul>
-      <li><xref type="section" href="#topic7767/appdeploy">Docker App Deployment Permission</xref></li>
+      <li><xref type="section" href="#topic7767/appdeploy">Docker Apps and Deployment
+          Permission</xref></li>
       <li><xref type="section" href="#topic7767/storagelimits">Docker Image Storage Limits</xref></li>
       <li><xref type="section" href="#topic7767/modifying-or-updating-the-container-image">Modifying
           or Updating the Container Image</xref>
@@ -53,14 +53,19 @@
       </li>
     </ul>
     <section id="appdeploy">
-      <title>Docker App Deployment Permission</title>
+      <title>Docker Apps and Deployment Permission</title>
+      <p>Docker Apps are web applications that can be pushed using ALS in the same way as regular
+        "staged" web applications.  Administrators can control which users have this ability, which
+        images are allowed, and how much space is allocated on the Controller nodes for storing
+        images.</p>
       <p>Since arbitrary Docker images could potentially expose a root user and other escalated
         privileges, you should restrict the ability to push Docker images to:</p>
-      <ol id="ol_ggv_ybg_qs">
-        <li>a trusted group of users in an Organization with 'sudo' permissions enabled</li>
+      <ul id="ol_ggv_ybg_qs">
+        <li>a trusted group of users in an Organization with <codeph>sudo</codeph> permissions
+          enabled</li>
         <li>a trusted list of Docker images, namespaces, or registry servers</li>
         <li>a trusted group deploying from a trusted list</li>
-      </ol>
+      </ul>
       <p>The <xref href="../console/1.2index.dita">Settings</xref> view in the web management console exposes
         these settings, but you can also set them using the <xref
           href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config">kato config</xref>
@@ -101,10 +106,14 @@
         downloaded layers can be done more quickly. A <codeph>cron</codeph> job runs periodically to
         keep the local registry server from growing too large. The size limit is defined in the
         following setting in <codeph>kato config</codeph>:</p>
-      <p><codeph>cloud_controller_ng docker_apps/storage_limit_mb</codeph>: Int (default 10240) Size
-        limit of the cloud controller's local Docker registry server.</p>
-      <p>This value should be adjusted based on the disk space available on the cloud controller
-        node(s).</p>
+      <dl>
+        <dlentry>
+          <dt>cloud_controller_ng docker_apps/storage_limit_mb</dt>
+          <dd>Int (default 10240) Size limit of the cloud controller's local Docker registry server.
+            This value should be adjusted based on the disk space available on the cloud controller
+              node(s).</dd>
+        </dlentry>
+      </dl>
     </section>
     <section id="modifying-or-updating-the-container-image">
       <title>Modifying or Updating the Container Image</title>
@@ -146,8 +155,7 @@ RUN apt-get -y install libgraphite2-dev</codeblock><ul>
             <codeblock>helion/stack-alsek:latest</codeblock> as described in the <xref
               type="section"
               href="../best-practices/1.2index.dita#topic16169/bestpractices-ubuntu-security">Ubuntu
-              Security Updates</xref>, and skip the following step.</note>
-        </li><li>Configure Application Lifecycle Service to use the new image. This step only needs to be done
+              Security Updates</xref>, and skip the following step.</note></li><li>Configure Application Lifecycle Service to use the new image. This step only needs to be done
           once, as the configuration change is shared with all
           nodes.<codeblock>kato config set fence docker/images exampleco/newimg
 WARNING: Assumed type string
@@ -197,18 +205,20 @@ RUN echo "HELION ALL= NOPASSWD: /etc/init.d/newrelic-sysmond" &gt;&gt; /etc/sudo
 RUN echo "HELION ALL= NOPASSWD: /usr/sbin/nrsysmond-config" &gt;&gt; /etc/sudoers
 
 ADD hooks /etc/helion/hooks </codeblock>
-      </section><section id="creating-a-docker-registry"><title>Creating
-        a Docker Registry </title><p>The steps above will work with smaller clusters or micro clouds
-        where the creation of Docker images on each DEA can be done manually. On larger clusters,
-        you should set up a <xref href="https://registry.hub.docker.com/_/registry/"
-          scope="external" format="html">Docker registry</xref> as a central repository for the base
-        image. This registry server can also be used for deploying Docker apps. </p> Consult the
-      documentation for guidelines on <xref
+      </section><section id="creating-a-docker-registry"><title>Creating a Docker Registry </title><p>The steps
+        above will work with smaller clusters or micro clouds where the creation of Docker images on
+        each DEA can be done manually. On larger clusters, you should set up a <xref
+          href="https://registry.hub.docker.com/_/registry/" scope="external" format="html">Docker
+          registry</xref> as a central repository for the base image. This registry server can also
+        be used for deploying Docker apps. </p> Consult the documentation for guidelines on <xref
         href="https://docs.docker.com/registry/deploying/#making-dockers-official-registry-image-production-ready"
         format="html" scope="external">making Docker's official registry image production
-        ready</xref>. </section>
-    <section>To use the local registry server as the source for the base image to a registry server
-      set up at <i>registry.example.com:5000</i>: <ol id="ol_vrd_yzf_qs">
+        ready</xref>.  <p>If you do not want to set up your own private Docker registry server, you
+        can push your images to the <xref href="https://registry.hub.docker.com/" format="html"
+          scope="external">Docker Hub Registry</xref> instead. Private repositories are
+        available.</p></section>
+    <section>To use the local registry server as the source for the base image set up at
+        <i>registry.example.com:5000</i>: <ol id="ol_vrd_yzf_qs">
         <li> Push the newly built Docker image to the
             registry:<codeblock>sudo docker push registry.example.com:5000/exampleco/newimg</codeblock><note>The
               <i>helion/stack/alsek</i> and <i>helion/base images</i> (approximately 1.9GB) are
