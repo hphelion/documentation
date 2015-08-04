@@ -20,7 +20,7 @@
       
     </ul>
     <p> </p>
-    <p>
+   <!-- <p>
       <b>Deployment of VSA cloud on a separate Node as per the life-cycle management
       features</b></p>
     <p>Completed activity:</p>
@@ -30,7 +30,7 @@
     <p>Impediment:</p>
     <p>The one-region-poc-with-vsa will be provided by the HLM team which impacts not only VSA but
       other services as well. This will be beyond be Beta0 timeframe.</p>
-    <p> </p>
+    <p> </p>-->
     <p><b>Health and performance monitoring</b></p>
     <p>Monitoring is enabled for several, but not all services </p>
     <p>Monitoring is integrated for the following services:</p>
@@ -64,7 +64,7 @@
       Today we don't support multiple external networks at L2 (ML2 OVS mech driver) nor L3 (DVR Or
       Centralized)</p>
     <p> </p>
-    <p>Need use cases/stories </p>
+    <!--<p>Need use cases/stories </p>
     <p>* ability to span L3</p>
     <p>* multiple provider networks/separation of traffic</p>
     <p>* two pools for fip to span networks/different fip pools</p>
@@ -72,7 +72,7 @@
     <p> </p>
     <p>[06/02/15]</p>
     <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
-    <p> </p>
+    <p> </p>-->
     <p><b>TLS</b></p>
     <p>The server certificate is currently hard coded. If an operator wishes to provide their own,
       they need to edit the defaults in the TLS playbook. <i>The intent is to provide an interface
@@ -86,7 +86,7 @@
       you are not planning to use.</p>
     <p><b>Operations:</b></p>
     
-      <p><b>FAQ</b></p>
+      <!--<p><b>FAQ</b></p>
     
     <p><b>What level of customisation possible via modifying configurations in the CP and using them
         to deploy?</b></p>
@@ -97,7 +97,7 @@
     <p>Possible to add VSA and Compute nodes. Default is 1 of each.</p>
     <p><b>What other settings will we be able to customize in Beta0?</b></p>
     <p>Specifically, will we be able to set things like server affinity through jinja files, or will
-      those need to be manual changes? M. Dunnett</p>
+      those need to be manual changes? M. Dunnett</p>-->
     
     <p><b>Ops Console</b></p>
     
