@@ -17,12 +17,12 @@
 <!-- Index -->
 <topicref href="home.dita"/>
 <!-- HoS 2.0 -->
-<topicref href="commercial/index.dita">
-<topicref href="commercial/releasenotes.dita"/>
-<topicref href="commercial/supportedconfigs.dita"/>
-<topicref href="commercial/hardwaresetup.dita"/>
-<topicref href="commercial/hardware.dita"/>
-<topicref href="commercial/installation.dita"/>
-<topicref href="commercial/faq.dita"/>
+<topicref href="index.dita">
+<topicref href="releasenotes.dita"/>
+<topicref href="supportedconfigs.dita"/>
+<topicref href="hardwaresetup.dita"/>
+<topicref href="hardware.dita"/>
+<topicref href="installation.dita"/>
+<topicref href="faq.dita"/>
 </topicref>
 </map>
