@@ -51,6 +51,7 @@
                                 <li><xref href="#topic7148/getinstall" format="dita"/></li>
                                 <li><xref href="#topic7148/download-esx" format="dita"/></li>
                                 <li><xref href="#topic7148/verify" format="dita"/></li>
+                                <li><xref href="#topic7148/checksum" format="dita"/></li>
                                 <li><xref href="#topic7148/prepbare" format="dita"/></li>
                         </ul>
                         <title>Install Ubuntu Server 14.04.2 LTS</title>
