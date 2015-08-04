@@ -6,10 +6,39 @@
     
       <p><b>The following is a list of hardware and setup items you must consider before beginning the
         installation.</b></p>
-    
+    <p>
+      ...
+      
+      
+      
+      
+      
+    </p>
     <p>
       <ul>
-        <li>Note that all disks on the systems will be erased via the installation process.</li>
+        <li><p>Deployer </p><ul id="ul_pb5_qgl_xs">
+            <li> </li>
+          </ul><p>Controller Nodes</p><ul id="ul_kd5_qgl_xs">
+            <li>BIOS – PXE settings??</li>
+            <li>BIOS - Legacy</li>
+            <li>4 disk nodes for control-plane and swift – precondition??</li>
+            <li>Disk /dev/sda</li>
+            <li>Networking &#x96; 1 for IPMI/ILO. 1 for PXE/Mgmt/…. (atleast 2 NICS), </li>
+            <li>NIC bonding &#x96; 4 NICS ( 1 for IPMI, PXE &#x96; separate NIC, 2 NICs for bonding)
+              ??</li>
+            <li>· The network will need to be set up with 3 routed VLANs 1 untagged and 2 tagged
+              (external and svc)???</li>
+          </ul><p>Compute Nodes</p><ul id="ul_w25_qgl_xs">
+            <li>BIOS settings – PXE setting??</li>
+          </ul><p>BIOS – Legacy mode</p><ul id="ul_ag5_qgl_xs">
+            <li>5 LUNs?? </li>
+          </ul><p>Storage Nodes</p><ul id="ul_zh5_qgl_xs">
+            <li>VSA server – any hw setup needed??</li>
+          </ul><p> </p><p>Other notes:</p><ul id="ul_kj5_qgl_xs">
+            <li>No need to mention changing yaml files for certain deployment. It belongs to install
+              section (not hardware setup)</li>
+          </ul><p> </p><p>Things to confirm:</p> iLO Advanced licenseNote that all disks on the
+          systems will be erased via the installation process.</li>
         <li>The machine types should be homogeneous.</li>
         <li>To set up the deployment network, note that <ul>
             <li>The network will need to be set up with 3 routed VLANs 1 untagged and 2 tagged
