@@ -24,7 +24,7 @@
 <section id="prepare"> <title>Prepare the system for deployment</title>
 <p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM host):</p>
 <ol>
-        <li>Log into the HLM host.</li>
+        <li>Log into the HLM host using the default credentials</li>
 
   <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
           environment. For information on each variable, refer to the comments in the file with each
@@ -218,8 +218,9 @@ Password: cghelion</codeblock></p></li>
   </section>
   <section id="configure-node-provision-json">
       <title>Configure the node-provision JSON file</title>
-      <p>Edit the <codeph>node-provision.json</codeph> file. This template supplies input values to
-        the <codeph>hprovision</codeph> script, later in the installation. </p>
+      <p>Edit the <codeph>node-provision.json</codeph> file in the <codeph>&lt;cloudname></codeph>
+        directory of the HLM VM. This template supplies input values to the
+          <codeph>hprovision</codeph> script, later in the installation. </p>
         
       <p> Edit <codeph>node-provision.json</codeph> file to change only the following fields:</p> 
         <table>
@@ -277,18 +278,19 @@ Password: cghelion</codeblock></p></li>
 </ol>
 <p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to <codeph>Network Device 1</codeph> on all the servers listed in <codeph>node-provision.json</codeph> file.</p>
     <section id="configure-def-json"><title>Configure the definition.json file</title>
-      <p>Edit the <codeph>definition.json</codeph> file on the HLM VM to define the number of ESX
-        compute proxies requires in your environment. You need one proxy for each ESX cluster; set
-        this value to the number of clusters you have: <ol>
+      <p>Edit the <codeph>definition.json</codeph> file in the <codeph>&lt;cloudname></codeph>
+        directory of the HLM VM to define the number of ESX compute proxies requires in your
+        environment. You need one proxy for each ESX cluster; set this value to the number of
+        clusters you have: <ol>
           <li>Set the number of compute systems to 2.
             <codeblock>"count": 2, //number of computes in the resource pool</codeblock></li>
         </ol></p></section>
   
   <section id="configure-env-json"><title>Configure the environment.json file</title>
-    <p>Edit the <codeph>environment.json</codeph> file on the HLM VM to configure the VLANs and
-        network addresses as appropriate for your environment. Set the following for the CLM
-        (management), CAN (api), and BLS (blockstore) network:
-        <codeblock>"cidr": 
+    <p>Edit the <codeph>environment.json</codeph> file in the <codeph>&lt;cloudname></codeph>
+        directory of  the HLM VM to configure the VLANs and network addresses as appropriate for
+        your environment. Set the following for the CLM (management), CAN (api), and BLS
+        (blockstore) network: <codeblock>"cidr": 
         "start-address": </codeblock></p>
     <p>To see a sample <codeph>environment.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-env-json.dita">Sample environment.json File for
@@ -296,7 +298,8 @@ Password: cghelion</codeblock></p></li>
   
   <section id="configure-ansible-json">
     <title>Configure the ansible.json file</title>
-    <p>Edit the <codeph>ansible.json</codeph> file on the HLM VM.</p>
+    <p>Edit the <codeph>ansible.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph> directory of the HLM
+        VM.</p>
     <p>To see a sample <codeph>ansible.json</codeph> file,  see <xref
           href="carrier-grade-install-pb-kvm-ansible-json.dita">Sample ansible.json File for
           Installing the KVM + ESX Topology</xref>.</p>
@@ -312,25 +315,27 @@ Password: cghelion</codeblock></p></li>
   </section>
   
   <section id="configure-ldap-json">
-    <title>Configure the vars/ldap.json file</title>
-    <p>Edit the <codeph>vars/ldap.json</codeph> file on the HLM VM.</p>
-    <p>To see a sample <codeph>vars/ldap.json</codeph> file, see <xref
+    <title>Configure the ldap.json file</title>
+    <p>Edit the <codeph>ldap.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph>
+        directory of the HLM VM.</p>
+    <p>To see a sample <codeph>ldap.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-ldap-json.dita">Sample ldap.json File for Installing
           the KVM + ESX Topology</xref>. </p>
   </section>
   
   <section id="configure-wr-json">
-    <title>Configure the vars/wr.json file</title>
-    <p>Edit the <codeph>vars/wr.json</codeph> file on the HLM VM.</p>
-    <p>To see a sample <codeph>vars/wr.json</codeph> file, see <xref
+    <title>Configure the wr.json file</title>
+    <p>Edit the <codeph>wr.json</codeph> file on the HLM VM.</p>
+    <p>To see a sample <codeph>wr.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the
           KVM + ESX Topology</xref>. </p>
   
   </section>
   <section><title>Configure the dcn.json file</title>
-    <p>Edit the <codeph>/opt/share/hlm/1/site/services/dcn.json</codeph> file on HLM VM to remove 
-      both instances of the following code:
-    <codeblock>
+    <p>Edit the <codeph>dcn.json</codeph> file in the
+          <codeph>/opt/share/hlm/1/site/services/dcn.json</codeph> directory of the HLM VM to remove
+        both instances of the following code:
+        <codeblock>
       {
           "description": "Ingress 47 GRE",
           "firewall": {
@@ -394,9 +399,8 @@ volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
             </codeblock></li>
           </ol>
         </li>
-
-<!--        <li>Use the following steps to modify to the <codeph>cinder/blocks</codeph> directory for
-          your cloud: <ul>
+        <li>Configure the VMware VMDK driver to enable management of the OpenStack Block Storage volumes
+          on vCenter-managed data stores:<ol id="ul_btr_l52_xs">
             <li>Change to the <codeph>cinder/blocks</codeph> directory:
               <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where &lt;cloudname>
               is the name you assigned to the cloud.</li>
@@ -414,55 +418,40 @@ hp3par_iscsi_ips=&lt;iscsi_ip1>,&lt;iscsi_ip2>,&lt;iscsi_ip3>,&lt;iscsi_ip4>
 volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 hp3par_debug=False
 hp3par_iscsi_chap_enabled=false</codeblock></li>
-          </ul></li>
--->
-        <li>Validate the json files to make sure there are no syntax errors by running the following
-          command, or using a tool of your choice python -m jsaon.tool &lt;filenname.json></li>        
-        <li>Run the HP Helion OpenStack Configuration Processor:
-            <codeblock>hcfgproc -d definition.json</codeblock><p>The script generates a
-              <codeph>clouds/</codeph> directory within the  <codeph>/usr/local/bin</codeph>
-            directory. </p></li>
+          </ol></li>
+        <li>After editing the JSON files, validate each JSON file to make sure there are no
+          syntactical errors using the tool of your preference. For example, using the Python
+          json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>
+        <li>Once you have correctly edited all the json Cloud Model files, run the HP Helion
+          OpenStack Configuration Processor:
+            <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
+            Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
+            incorporated into the installation environment. </p></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
           correct.</li>
+        <li>Apply the Horizon interface patch: <ol id="ol_dqs_cxf_xs">
+            <li>Locate the hcg_1.1.0_horizon_patch1.tar file you downloaded to the HLM host and
+              extract the files.</li>
+            <li>Copy <codeph>user.py</codeph> file to first controller node in the
+                <codeph>/opt/stack/venvs/horizon/lib/python2.7/site-packages/openstack_auth/</codeph>
+              directory.</li>
+            <li>Us the following command to restart the Horizon service on that node:
+              <codeblock>sudo service apache2 restart</codeblock></li>
+            <li>Repeat above two steps on the other controller nodes. </li>
+          </ol></li>
         <li>Initialize network interfaces on all the cloud nodes using the following command:
             <codeblock><codeph>hnetinit &lt;cloudname&gt;</codeph></codeblock><p>After this command
-            completes, all cloud nodes and CLM network interfaces will be set correctly.</p></li>
+            completes, all cloud nodes and CLM network interfaces are configured.</p></li>
         <li>Use the following command to deploy the cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>When this command is
             complete the non-KVM cloud will be installed.</p></li>
       </ol>
     </section>
-<section><title>Verify the VSC VMs</title>
-  <p>Use the following steps to verify that the VSC VMs are installed and are operational</p>
-  <ol>
-    <li>SSH to your VSC VM from HLM Host using the DCM IP. The default username and password:
-            <codeph>admin/admin</codeph></li>
-  <li>Execute the following command:
-    <codeblock>admin display-config</codeblock></li>
-    <li>Execute the followng commands to verify the VMs are active:
-          <codeblock>show vswitch-controller vsd
-show vswitch-controller xmpp-server
-ping router "management" &lt;vsd IP or domain name> </codeblock>
-        </li>
-  </ol>
-</section>
-  <section><title>Verify the VRS-G Node</title> The installation creates a VRS-G node as part of the
-      cloud deployment. Use the following command to verify that the VRS-G is active: <p>
-        <codeblock>show vswitch-controller vswitches </codeblock>
-      </p><p>The output for the command should appear similar to the following image:</p>
-      <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/>
-      <p>Verify that the domain name and DNS server are listed in the
-          <codeph>/etc/resolv.conf</codeph> file on all the cloud nodes </p><codeblock>cat etc/resolv.conf          </codeblock>
-      <image href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
-        <alt>Verify VRS-G</alt>
-      </image>
-    </section>
   <section><title>Create external network and subnet</title>
     <ol>
-      <li>Obtain the static IP route for the external network/FIP EXT Uplink Subnet"
-      <codeblock>
-        #
+      <li>Obtain the static IP route for the external network/FIP EXT Uplink Subnet:
+          <codeblock>        #
         interface Vlan-interface 1553
         description NFV TestBed - EXT UPLINK SUBNET
         ip address 10.200.53.1 255.255.255.192
@@ -481,14 +470,18 @@ ping router "management" &lt;vsd IP or domain name> </codeblock>
         10.200.53.64/26     Static 60   0            10.200.53.2     Vlan1553
         10.200.53.128/26    Static 60   0            10.200.53.2     Vlan1553
         10.200.53.192/26    Static 60   0            10.200.53.2     Vlan1553
-      </codeblock></li>  
-      <li>Execute the following command to create the external netwoork:
-      <codeblock>neutron net-create ext-net --router:external</codeblock></li>
-      <li>Execute the following command to create a subnet for the external netwoork:
-            <codeblock>neutron subnet-create ext-net &lt;subnet-ip> --name &lt;name></codeblock><p>where:
+      </codeblock></li>
+        <li>Source the stackrc file: <codeblock>cd ~/
+source stackrc</codeblock></li>  
+      <li>Execute the following command on any controller node to create the external network:
+            <codeblock>neutron net-create &lt;external-network-name> --router:external</codeblock><p>where
+              <codeph>&lt;external-network-name></codeph> is a descriptive name for the network.</p></li>
+      <li>Execute the following command to create a subnet for the external network:
+            <codeblock>neutron subnet-create &lt;external-network-name> &lt;subnet-ip> --name &lt;name></codeblock><p>where:
             &lt;subnet-ip> is the IP address range to assign and &lt;name> is a descriptive
             name.</p><p>For
-          example:</p><codeblock>neutron subnet-create ext-net 10.200.53.64/26 --name extsub1</codeblock></li>
+            example:</p><codeblock>neutron subnet-create ext-net 10.200.53.64/26 --name extsub1 </codeblock><p>where
+            &lt;external-network-name> is a descriptive name for the network.</p></li>
       <li>Use the following command to create a virtual router: <codeblock>neutron router-create &lt;name></codeblock>
           <p>where: &lt;name> is a descriptive name.</p></li></ol>
   </section>
@@ -506,15 +499,15 @@ ping router "management" &lt;vsd IP or domain name> </codeblock>
       <li>Go to <b>VSD Dashboard->Open Data Center Configuration->Shared Network tab</b>
         </li>
         <li>For the Floating IP subnet, click the <b>Edit</b> button to get the FIP name. <p>This is
-            the same name you assiigned when you created the subnet.</p></li>
-      <li> Substitute this value in the FIP_NAME="3d2b2090-2044-4580-92ce-ab5a6e4a9184" 
-        [example]  in the curl scrip that will be run on HLM KVM Host.</li>
+            the same name you assigned when you created the subnet. Make note of this name, as you
+            will use it during the installation.</p></li>
+      <li> Substitute this value in the FIP_NAME="3d2b2090-2044-4580-92ce-ab5a6e4a9184" [example] in
+          the curl script that will be run on HLM KVM Host.</li>
       </ol>
   </section>
     <section><title>Add VLAN to VRSG network device </title>
-      <ol><li>Based on your VLAN ID, run the below command on VRS-G node1
-        
-        <p> For example: <codeph>nuage-vlan-config mod eth0 Access 1500-2000</codeph></p></li>
+      <ol><li>Based on your VLAN ID, run the below command on VRS-G node:<p> For example:
+              <codeph>nuage-vlan-config mod eth0 Access 1500-2000</codeph></p></li>
         
         <li>Add the VLAN ID [EXT Net] on the VSD dashboard for eth0</li>
       </ol>
@@ -526,11 +519,10 @@ ping router "management" &lt;vsd IP or domain name> </codeblock>
           <codeblock>cat vrsg_script_cloud2.sh</codeblock><p>Under Parameters, edit:</p><ul>
           <li>VLAN</li>
           <li>VSD_IP. Add DCM VSD IP</li>
-          <li>FIP_NAME. Enter a unique name show in VSD created for external network floating ip
-            pool</li>
-          <li>GW_NAME. Enter the TUL ip of the VRSG node created on VSD / VSC</li>
+          <li>FIP_NAME. Enter the name shown in VSD you obtained above.</li>
+          <li>GW_NAME. Enter the TUL IP of the VRSG node created on VSD / VSC.</li>
           <li>PORT_NAME. Enter the physical NIC; use don VRSG node for trunk/ tagged external
-            trafic</li>
+            traffic.</li>
           <li>UPLINK_SUBNET</li>
           <li>UPLINK_MASK</li>
           <li>VRSG_IP </li>
@@ -539,22 +531,9 @@ ping router "management" &lt;vsd IP or domain name> </codeblock>
         </ul></li>
       <li>Execute the curl script
         <codeblock>bash +x vrsg_script_cloud2.sh</codeblock></li>
-      <li>Use the VSD dashboard to confirm that uplink port appears in from monitoring tab under VRS-G node.</li>
+      <li>Use the VSD dashboard to confirm that uplink port appears in the Monitoring tab under
+        VRS-G node.</li>
     </ol>
-  <section><title>Upload a Glance VMDK Image</title>
-    <ol>
-      <li>Launch the Horizon dashboard.</li> 
-      <li>Go to <b>Admin -> Images</b> tab and upload the VMDK image.</li> 
-      <li>Select vmdk format from drop down menu.</li>
-      <li>Click <b>Create Image</b>.</li>
-      <li>For the new image, click <b>Actions -> Edit</b> to update the metadata for the image.</li> 
-      <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph> properties .</li>
-    </ol>
-    <p>Once the images are uploaded, you are ready to launch the instance with different flavors.</p>
-    <p>Once the VM is launched, the progress can be seen from recent tasks in ESX cluster.</p>
-      
-      
-    </section>
 
 <section><title>Enable GRE in iptables</title>
 <!-- CG-1265 -->
@@ -566,6 +545,42 @@ ping router "management" &lt;vsd IP or domain name> </codeblock>
     <li>Save and close the file.</li>
   </ol>
 </section>
+
+<section><title>Post-Installation Steps </title><p>After the installation of the KVM + ESX
+        deployment is complete, perform the steps in this section.</p>
+      <b>Verify the VSC VMs</b>
+      <p>Use the following steps to verify that the VSC VMs are installed and are operational </p><ol>
+        <li>SSH to your VSC VM from HLM Host using the DCM IP. The default username and password:
+            <codeph>admin/admin</codeph></li>
+        <li>Execute the following command: <codeblock>admin display-config</codeblock></li>
+        <li>Execute the followng commands to verify the VMs are active:
+          <codeblock>show vswitch-controller vsd
+          show vswitch-controller xmpp-server
+          ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
+      </ol><p><b>Verify the VRS-G Node</b>
+      </p><p>The installation creates a VRS-G node as part of the cloud deployment. Use the
+        following command to verify that the VRS-G is active:
+        </p><codeblock>show vswitch-controller vswitches  </codeblock><p>The output for the command
+        should appear similar to the following image:</p>
+      <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/>
+      <p>Verify that the domain name and DNS server are listed in the
+          <codeph>/etc/resolv.conf</codeph> file on all the cloud nodes </p><codeblock>cat etc/resolv.conf          </codeblock>
+      <image href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
+        <alt>Verify VRS-G </alt>
+      </image><p>Upload a Glance VMDK Image </p><ol>
+        <li>Launch the Horizon dashboard.</li>
+        <li>Go to <b>Admin -> Images</b> tab and upload the VMDK image.</li>
+        <li>Select vmdk format from drop down menu.</li>
+        <li>Click <b>Create Image</b>.</li>
+        <li>For the new image, click <b>Actions -> Edit</b> to update the metadata for the
+          image.</li>
+        <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph> properties
+          . </li>
+      </ol><p>Once the images are uploaded, you are ready to launch the instance with different
+        flavors. </p><p>Once the VM is launched, the progress can be seen from recent tasks in ESX
+        cluster.</p>
+    </section>
+
 
   <section id="next-step"> <title>Next Step</title>
 <p>
