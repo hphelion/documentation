@@ -15,31 +15,12 @@
       
     </p>
     <p>
-      <ul>
-        <li><p>Deployer </p><ul id="ul_pb5_qgl_xs">
-            <li> </li>
-          </ul><p>Controller Nodes</p><ul id="ul_kd5_qgl_xs">
-            <li>BIOS – PXE settings??</li>
-            <li>BIOS - Legacy</li>
-            <li>4 disk nodes for control-plane and swift – precondition??</li>
-            <li>Disk /dev/sda</li>
-            <li>Networking &#x96; 1 for IPMI/ILO. 1 for PXE/Mgmt/…. (atleast 2 NICS), </li>
-            <li>NIC bonding &#x96; 4 NICS ( 1 for IPMI, PXE &#x96; separate NIC, 2 NICs for bonding)
-              ??</li>
-            <li>The network will need to be set up with 3 routed VLANs 1 untagged and 2 tagged
-              (external and svc)???</li>
-          </ul><p>Compute Nodes</p><ul id="ul_w25_qgl_xs">
-            <li>BIOS settings – PXE setting??</li>
-          </ul><p>BIOS – Legacy mode</p><ul id="ul_ag5_qgl_xs">
-            <li>5 LUNs?? </li>
-          </ul><p>Storage Nodes</p><ul id="ul_zh5_qgl_xs">
-            <li>VSA server – any hw setup needed??</li>
-          </ul><p> </p><p>Other notes:</p><ul id="ul_kj5_qgl_xs">
-            <li>No need to mention changing yaml files for certain deployment. It belongs to install
-              section (not hardware setup)</li>
-          </ul><p> </p><p>Things to confirm:</p> iLO Advanced licenseNote that all disks on the
+
+          
+         <ul><li> Note that all disks on the
           systems will be erased via the installation process.</li>
         <li>The machine types should be homogeneous.</li>
+        <li>The deployer node needs to be a dedicated node in Beta0</li>
         <li>To set up the deployment network, note that <ul>
             <li>The network will need to be set up with 3 routed VLANs 1 untagged and 2 tagged
               (external and svc) with associated CIDRs </li>
@@ -49,7 +30,7 @@
             </li>
             <li>
               <p>Nodes on this management network must be able to reach the iLO subsystem of each
-                baremetal systems to enable host reboots as part of the install process. The HP
+                baremetal system to enable host reboots as part of the install process. The HP
                 Helion OpenStack architecture requires that the IPMI network is a separate network
                 and that a route exists from management network to the IPMI network for iLO
                 access.</p>
@@ -57,7 +38,6 @@
           </ul></li>
                 <li>Ensure network interfaces that are not used for PXE boot are disabled in the
           BIOS to prevent PXE boot attempts from those devices.</li>
-        <li>The deployer node needs to be a dedicated node in Beta0</li>
         <li>Gather MAC addresses of your hardware and IP addresses you wish to assign for inclusion
           in configuration files</li>
         <li>Change or confirm that your hardare is set to legacy BIOS
@@ -73,8 +53,8 @@
           volume setup. Note that<ul>
             <li>The deployer node needs no partitions. You can create a single logical disk from all
               available disks on deployer node with RAID 5 configuration if desired.</li>
-            <li>You will need four local disks on nodes in the control plane (for root OS and Swift)
-              are required.</li>
+            <li>You will need four local disks on nodes in the control plane (for root OS and
+              Swift). </li>
             <li>Swift cannot currently address logical volumes.</li>
           </ul></li>
         <li>Enable PXE booting, as HP Linux for HP Helion OpenStack will be installed on these blank
@@ -82,14 +62,9 @@
           the deployer node this can be CD ROM with hard drives designated last in the boot
           order.</li>
         <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
-        <li><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Turn off DHCP????
-            <?oxy_custom_end?><ul id="ul_qvd_swh_ws">
-            <li>
-              <p>If you have other DHCP servers on the same network as your system, you must ensure
-                that the DHCP server does not hand out IP addresses to your physical nodes as they
-                PXE boot.</p>
-            </li>
-          </ul></li>
+        <li>If you have other DHCP servers on the same network as your system, you must ensure that
+          the DHCP server does not hand out IP addresses to your physical nodes as they PXE
+          boot.</li>
         <li>If you are not configuring with Swift for whatever reason, including lack of hardware,
           comment out the Swift config entries in ccp.yml</li>
         <li>It is possible to add additional VSA and compute nodes. The default is 1 of each.</li>

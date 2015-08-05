@@ -28,14 +28,25 @@
 <section><title>Known Restrictions</title>
     <ol id="ol_kr3_2fb_ws">
       <li>All disks on the system(s) will be wiped /dev/sda will be used for the OS but all other disks will also be wiped.</li>
+        <li>The machine types should be homogeneous.</li>
+        <li>The deployer node needs to be a dedicated node in Beta0.</li>
       <li>Install on nodes via legacy bios setting (No UEFI)</li>
       <li>Only one network interface configuration tested</li>
-      <li>The network will need to be set up with 3 routed VLANs, 1 untagged and 2 tagged (external and svc) with associated CIDRs</li>
+        <li>The machine hosting the deployer, and all baremetal systems have to be connected to a
+          management network. Nodes on this management network must be able to reach the iLO
+          subsystem of each baremetal system to enable host reboots as part of the install process.
+          The HP Helion OpenStack architecture requires that the IPMI network is a separate network
+          and that a route exists from management network to the IPMI network for iLO access.</li>
+      <li>The network will need to be set up with 3 routed VLANs, 1 untagged and 2 tagged (external
+          and svc) with associated CIDRs, or the management network can also be untagged.</li>
       <li>Need 4 local disks on nodes in the control plane (for root os and swift).</li>
       <li>Machines will need to be fully reinstalled on next drop – upgrade from beta0 to beta1 is
         not supported.</li>
       <li>The machine types should be homogeneous.</li>
       <li>This will onlyu work from within the HP Network</li>
+        <li>Is possible to add additional VSA and compute nodes. The default is 1 of each.</li>
+        <li>You may assign server roles to each or your nodes manually, or allow the installer to
+          assign them.</li>
     </ol>
 </section>
     <section><title>Installing hLinux Deployer from ISO</title>
@@ -52,6 +63,7 @@
            <li>Enter a username.</li>
            <li>Enter a password.</li>
            <li>Enter timezone if prompted to do so.</li>
+                <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
          </ul></li>
        </ul></li>
 </ol></section>
@@ -72,12 +84,22 @@
         <li>Edit the data/baremetalConfig.yml file to contain right info for hardware.  In my case I used yml file from last installtion on this rack.</li>
         <li>Edit data/servers.yml to contain ips from baremetalConfig.yml</li>
         <li>Edit data/net_global.yml to have right network data</li>
-        <li>Modify the data/disks_controller.yml file specific to Swift harware requirements.</li>
+        <li>Modify the data/disks_controller.yml file specific to Swift harware requirements. </li>
+        <li>If you are not configuring with Swift for whatever reason, including lack of hardware,
+          comment out the Swift config entries in ccp.yml</li>
         <li>Run the configuration processor and check that your IP addresses are correct in the following:
           <ol>
             <li>cd ~/helion/hlm/ansible</li>
             <li>ansible- ansible-playbook -i hosts/localhost config-processor-run_v2.yml</li>
-            <li>Confirm that the values used by the configuration processor are the values you want. Edit generated_files/etc/hosts and confirm that the IPs there are correct for your system. Do not proceed until they are correct. If you need to re-run the configuration processor, you must delete hlm-configuration-processor/output first. Otherwise, the existing values will be re-used even if you changed the input.</li>
+            <li>Confirm that the values used by the configuration processor are the values you want.
+              Edit generated_files/etc/hosts and confirm that the IPs there are correct for your
+              system. Do not proceed until they are correct. If you need to re-run the configuration
+              processor, you must delete hlm-configuration-processor/output first. Otherwise, the
+              existing values will be re-used even if you changed the input. Any inconsistent or
+              unworkable configuration choices will be flagged by the installer, which will provide
+              feedback explaining the issues. Changes can then be made and the config processor can
+              be rerun with the new values. Note, the config processor must be rerun after making
+              config changes. </li>
           </ol> 
         </li>
         <li>Prepare bare metal hardware (this can be done in parallel with the above steps, or in advance)
