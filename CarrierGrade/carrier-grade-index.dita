@@ -34,8 +34,6 @@
           <xref href="Overview/carrier-grade-overview.dita#topic4010" type="section" />
         </li>
         <li><xref href="CGHRelNotes/jow1404333830215.xml#topic6108"/></li>
-        <li><xref href="http://docs-staging.hpcloud.com/internal-docs/" format="html"
-            scope="external"/></li>
 </ul>
 </section>
 <section id="getstart"> <title>Getting started with HP Helion OpenStack Carrier Grade</title>
