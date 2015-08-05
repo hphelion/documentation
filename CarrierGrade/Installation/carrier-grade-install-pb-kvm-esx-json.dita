@@ -130,7 +130,7 @@
                         "name": "esx", 
                         "properties": {
                             "vcenter": {
-                                "ipaddress": "10.20.3.11", 
+                                "ipaddress": "10.20.30.11", 
                                 "username": "root",  
                                 "password": "vmware", 
                                 "port": "443",
@@ -142,7 +142,7 @@
                                 "name": "overcloud_vcenter_compute_proxy.ova"
                            }, 
                            "network": {
-                                "name": "TRUNK-PORT"
+                                "name": "CLM-ALL"
                            }, 
                             "compute_proxy": [
                             {
