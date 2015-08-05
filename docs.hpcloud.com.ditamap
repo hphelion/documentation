@@ -20,7 +20,7 @@
 <topicref href="helion/index.dita">
   <topicref href="helion/releasenotes.dita"/>
   <topicref href="helion/supportedconfigs.dita"/>
-  <topicref href="helion/hardwaresetup.dita"/>
+  <topicref href="helion/hardwaresetup.dita" toc="no"/>
   <topicref href="helion/hardware.dita"/>
   <topicref href="helion/installation.dita"/>
   <topicref href="helion/faq.dita"/>
