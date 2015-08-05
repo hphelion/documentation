@@ -47,7 +47,9 @@
     <li>You supply the cloud configuration you want based on our <xref href="supportedconfigs.dita">Supported Configurations</xref> and the baremetal installer will setup your environment.</li>
     <li>Manage the different phases of your cloud deployment with ease</li>
   </ul>
-<p><b>Backup and Restore Capabilities for the Control Plane</b> - Allows you to backup and recover your Helion OpenStack environment with RPO=0.</p>
+<!--
+  <p><b>Backup and Restore Capabilities for the Control Plane</b> - Allows you to backup and recover your Helion OpenStack environment with RPO=0.</p>
+  -->
 </section>
 <section id="KnownIssues"> <title>Known Issues in this Release</title>
 <p><b>HP Helion Development Platform</b></p>
