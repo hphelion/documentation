@@ -14,17 +14,15 @@
       </vrmlist>
     </prodinfo>
   </topicmeta>
-  <!--permalink: -->
-  <!--permalink: /-->
 <!-- Index -->
 <topicref href="home.dita"/>
 <!-- HoS 2.0 -->
-<topicref href="commercial/index.dita">
-<topicref href="commercial/whatsinthebuild.dita"/>
-<topicref href="commercial/issuesandlimitations.dita"/>
-<topicref href="commercial/supportedconfigs.dita"/>
-<topicref href="commercial/hardware.dita"/>
-<topicref href="commercial/hardwaresetup.dita"/>
-<topicref href="commercial/installation.dita"/>
+<topicref href="helion/index.dita">
+  <topicref href="helion/releasenotes.dita"/>
+  <topicref href="helion/supportedconfigs.dita"/>
+  <topicref href="helion/hardwaresetup.dita" toc="no"/>
+  <topicref href="helion/hardware.dita"/>
+  <topicref href="helion/installation.dita"/>
+  <topicref href="helion/faq.dita"/>
 </topicref>
 </map>

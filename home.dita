@@ -12,7 +12,7 @@
   <simpletable id="homepageTable" relcolwidth="1.0* 5.06*">
       <strow>
         <stentry>
-          <xref href="commercial/index.dita">HP Helion <tm tmtype="reg">OpenStack</tm></xref>
+          <xref href="helion/index.dita">HP Helion <tm tmtype="reg">OpenStack 2.0 Beta 0</tm></xref>
         </stentry>
         <stentry>...</stentry>
       </strow>

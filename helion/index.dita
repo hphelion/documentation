@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2448">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta 0: Documentation Home</title>
+<titlealts>
+<searchtitle>HP Helion OpenStack 2.0 Beta 0: Documentation Home</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 2.0"/>
+<othermeta name="role" content="All"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 2.0"/>
+</metadata>
+</prolog>
+<body>
+<section id="top" />
+<p>HP Helion OpenStack is a commercial-grade distribution of OpenStack the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
+<p>HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the HP Helion OpenStack Services Overview page for a complete list of services.</p>
+<section id="getstart"> <title>Get Started with HP Helion OpenStack</title>
+<p>Use the following links and tools to begin working with HP Helion OpenStack</p>
+<ul>
+  <li><xref href="releasenotes.dita">Beta 0 Release Notes</xref></li>
+  <li><xref href="supportedconfigs.dita">Supported Configurations</xref></li>
+  <li><xref href="hardwaresetup.dita">Hardware Setup</xref></li>
+  <li><xref href="hardwaresetup.dita">Minimum Hardware Requirements</xref></li>
+  <li><xref href="installation.dita">Installation</xref></li>
+  <li><xref href="faq.dita">Frequently Asked Questions</xref></li>
+</ul>
+</section>
+</body>
+</topic>

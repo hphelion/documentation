@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic12031">
+<title><b>Beta 0: Frequently Asked Questions</b></title>
+<body>
+<section id="Customization"><title>Customization</title>
+<p><b>What level of customization will be possible via modifying the configuration files and using them to deploy?</b></p>
+<p></p>
+</section>
+<section id="Neutron"> <title>Neutron Features</title>
+<!--- THIS QUESTION HAS THINGS THAT HAVE NOT BEEN VERIFIED FOR HOS 2.0
+<p><b>How does NIC bonding work?</b></p>
+<p>You can deploy bonded NICs for both high availability (HA) and performance. When two NICs are bonded they appear as a single interface to the operating system but internally the bonding logic decides on which one of the NICs to use to transmit the data packet out of the system. The selection logic is called “mode”. Currently there are seven modes that are configurable.  We will list out the modes here but it has not been determined yet which of these modes will be supported in Helion OpenStack 2.0.
+
+<ul>
+  <li>Mode 0 (Round Robin Balancing)</li>
+  <li>Mode 1 (Failover Active/Passive)</li>
+  <li>Mode 2 (Pinning)</li>
+  <li>Mode 3 (Broadcast)</li>
+  <li>Mode 4 (Link Aggregation based on IETF 802.3ad standard)</li>
+  <li>Mode 5 (Transmit side Load Balancing)</li>
+  <li>Mode 6 (Adaptive Load Balancing)</li>
+</ul>
+
+The modes are generally further classified as those that require switch side configuration and those that are generic (i.e. don’t require switch config). Modes 0, 2, and 4 require switch support. They are also the most widely deployed modes. When no switch support is available, administrators use Mode 6 to increase throughput and enable failover. Mode 0 is sometime uses to replicate data between two servers that connected to each other on a link.</p>
+<p>Links within a bond can fail. This requires that the bond logic software (driver) monitor and links in a bond. There are two ways of doing this monitoring. MII monitoring  and ARP monitoring. Miimon queries registers on the NIC (based on the MII (Media Independent Interface) standard) to determine the health of the network link. The querying interval is set using HLM GUI. There are times when the link fails deeper in the network i.e. several hops deep. In this case ARP monitoring can be used. ARP monitoring requires setting the interval for the ARP monitor to send ARP (Address Resolution Protocol) queries to a remove IP address in the network. The health of the link is determined based on the responses receive from the remote address.</p>
+  -->
+<p><b>How does network separation work and what benefit does it provide?</b></p>
+<p>Network separation is the name given for the practice of segregation of traffic by types. The primary driver for this is performance and security. Having a dedicated channel enables a network admin to exercise better control over the SLA offered to the tenant. It is often implemented as part of a security policy that is enforced by the security practice in the company.</p>
+<p>There are two types of network separation: physical and logical. Both are identical in that they create separate channels for traffic types. For example, a best practice deployment is to create separate channel for storage (iSCSI) traffic. This can be done by creating a logical separation using VLAN on a single NIC or by dedicating a NIC for this type of traffic. In the cloud today, management, tenant, external and services traffic types are segregated into their own channels.</p>
+<p><b>How does the Multiple-Network feature work?</b></p>
+<p>Multiple networks is a feature in Helion OpenStack 2.0 that enables bridging of multiple external physical networks to neutron network. Using this functionality a tenant can dictate the path taken by the data in the physical network outside the cloud. It can also be used for multi-homing to two physical networks.</p>
+</section>
+</body>
+</topic>
