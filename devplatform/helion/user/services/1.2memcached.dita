@@ -27,17 +27,17 @@ which can be shared by application instances.</p>
 <section id="using-the-service"> <title>Using the Service</title>
     <p>As with other <xref href="1.2data-services.dita#topic19772">data services</xref>, the
                 location and port of the memcached service is exposed to the application via
-                environment variables: MEMCACHE_URL or VCAP_SERVICES.</p>
+                environment variables: MEMCACHED_URL or VCAP_SERVICES.</p>
 <p>The easiest way to connect an application to a Memcached service is to
 use the MEMCACHE_URL environment variable. It contains the location and
 port of the service created for the application. For example:</p>
 <codeblock>MEMCACHE_URL=10.13.0.6:11000</codeblock>
-<p>Using MEMCACHE_URL will only work if <codeph>sasl_enabled</codeph>
-is set to <codeph>False</codeph> in the memcached_node
-configuration (default). To enable SASL for Memcached, an Application Lifecycle Service
-administrator can run the following commands on the Cloud Controller:</p>
+<p>Using MEMCACHED_URL will only work if <codeph>sasl_enabled</codeph> is set to
+                    <codeph>False</codeph> in the memcached_node configuration (default). To enable
+                SASL for Memcached, an Application Lifecycle Service administrator can run the
+                following commands on the Cloud Controller:</p>
 <codeblock>kato config set memcached_node sasl_enabled true
-kato restart memcached_node</codeblock>
+kato restart memcached</codeblock>
     <p>With SASL enabled, applications must parse the <xref
                     href="1.2data-services.dita#topic19772/vcap-services"
                     ><i>VCAP_SERVICES</i></xref> environment variables to extract the
@@ -53,11 +53,11 @@ application uses the simpler VCAP_SERVICES method for connecting to the
 Memcached service without authentication.</p>
 <p>The relevant configuration in this example:</p>
 <ol>
-<li> specifies the location of memcache using the MEMCACHE_URL in
+<li> specifies the location of memcache using the MEMCACHED_URL in
                     <i>settings.py</i>:<codeblock>CACHES = {
     'default': {
     'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-    'LOCATION': os.getenv('MEMCACHE_URL'),
+    'LOCATION': os.getenv('MEMCACHED_URL'),
     }
 }</codeblock></li>
 <li> adds the cache to middleware

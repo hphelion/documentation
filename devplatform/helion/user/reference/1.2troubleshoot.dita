@@ -21,6 +21,13 @@
 <!--PUBLISHED-->
  <!--./devplatform/helion/user/reference/1.2troubleshoot.md-->
  <!--permalink: /helion/devplatform/als/user/reference/troubleshoot/--></p>
+    <section><title>Administrative Error Tracker</title>If an application deployment error is caused
+      by something outside of your application code or the staging process, you may see error
+      messages such as:
+      <codeblock>2015-04-10T16:22:56.000Z: Error 10001: An unknown error occurred. Please contact your administrator, 
+2015-04-10T16:22:56.000Z: specifying error tracker ID 1428682976 along with this message.</codeblock>Contact
+      your administrator with the tracker ID number. The admin will be able to use this to track
+      down related error messages in various system logs, which may help diagnose the issue. </section>
 <section id="ssh-to-failed-containers"> <title>SSH to Failed Containers</title>
   <p>For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a <xref href="1.2glossary.dita#topic6187/term-container" type="section"   >container</xref> that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the <xref href="1.2client-ref.dita">Command Reference</xref> for details on the <codeph>helion ssh</codeph> command.</p>
 </section>

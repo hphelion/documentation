@@ -42,7 +42,7 @@ command.</li>
 <p>Example:</p>
 <codeblock>mysql://u93Mm8XmGXQ9R:p8LwNeQXMrNzi@192.168.0.112:3306/d0a60c0be931f4982bbef153f993237bc</codeblock>
 </section>
-<section id="memcache-url"> <title>MEMCACHE_URL</title>
+<section id="memcache-url"> <title>MEMCACHED_URL</title>
 <p>Location of and credentials for the bound <b>Memcached</b> service, if there is (only) one.</p>
 </section>
 <section id="mysql-url"> <title>MYSQL_URL</title>
