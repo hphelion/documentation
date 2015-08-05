@@ -124,6 +124,8 @@
           navtitle="Organizations and Spaces"/>
         <!--permalink: /helion/devplatform/als/user/deploy/other-frameworks/-->
       </topicref>
+      <topicref href="devplatform/windows/windows_wcf.dita"
+        navtitle=" Deploy a WCF app to a Windows DEA Cluster" locktitle="yes"/>
       <topichead navtitle="Language Specific Application Deployment">
         <topicref href="devplatform/helion/user/deploy/languages/docker_apps.dita"
           navtitle="Docker Apps" locktitle="yes"/>
@@ -215,6 +217,8 @@
         navtitle="Windows Overview"/>
       <topicref href="devplatform/windows/windows_firstapp.dita" locktitle="yes"
         navtitle="Deploying your first .NET Application"/>
+      <topicref href="devplatform/windows/windows_wcf.dita"
+        navtitle=" Deploy a WCF app to a Windows DEA Cluster" locktitle="yes"/>
       <topicref href="devplatform/windows/windows_adding_services.dita" locktitle="yes"
         navtitle="Adding Services to Windows Applications"/>
       <topicref href="devplatform/windows/windows_building_and_deploying.dita" locktitle="yes"

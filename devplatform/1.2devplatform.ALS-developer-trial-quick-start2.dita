@@ -60,15 +60,15 @@
             push applications to your quick-start trial environment. </p>Click the download link
           that is appropriate for your operating system. <ul>
             <li>
-              <xref href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip"
+              <xref href="http://clients.als.hpcloud.com/helion-1.3.0-win32-ix86.zip"
                 scope="external" format="html"><tm tmtype="reg">Windows</tm></xref>
             </li>
             <li>
-              <xref href="http://clients.als.hpcloud.com/helion-1.2.0-linux-glibc2.3-x86_64.zip"
+              <xref href="http://clients.als.hpcloud.com/helion-1.3.0-linux-glibc2.3-x86_64.zip"
                 scope="external" format="html">Linux x64</xref>
             </li>
             <li>
-              <xref href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip"
+              <xref href="http://clients.als.hpcloud.com/helion-1.3.0-macosx10.5-i386-x86_64.zip"
                 scope="external" format="html"><tm tmtype="reg">Mac OS X</tm></xref>
             </li>
           </ul> The <xref href="helion/user/reference/1.2client-ref.dita">Command Reference</xref>
