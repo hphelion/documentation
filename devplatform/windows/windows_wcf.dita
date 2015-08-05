@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_j1s_nst_xs">
+    <title>Deploying a WCF application to a Windows DEA cluster</title>
+    <shortdesc/>
+    <taskbody>
+        <context>
+            <p>Windows applications running in Windows DEA clusters on Helion OpenStack or Helion Public Cloud are not limited to Web Applications and Web Sites. This tutorial demonstrates how to deploy a WCF application.</p>
+            <p>This tutorial will demonstrate how to deploy the WCF Getting Started sample application to a Windows DEA cluster running on Helion Public Cloud.</p>
+            <p><b>Prerequisites</b></p>
+            <p>This tutorial requires the following:</p>
+            <ul>
+                <li>A Helion OpenStack Public Cloud account wih a Windows DEA cluster.</li>
+                <li>The WCF Getting Started sample application. This sample can be found here.</li>
+                <li>Any edition of Visual Studio 2013, including the Community (free) edition, with the following packages installed:
+                    <ul>
+                        <li>Cloud Foundry MSBuild Tasks version 1.2.0.3</li>
+                        <li>Cloud Foundry Extensions for Visual Studio</li>
+                    </ul>
+                </li>
+            </ul>
+        </context>
+        <steps>
+            <step>
+                <cmd>Open GettingStarted.sln in Visual Studio</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>
