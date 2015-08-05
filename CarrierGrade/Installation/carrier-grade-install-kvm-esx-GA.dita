@@ -108,7 +108,7 @@
 <codeblock>service vsd status</codeblock>
 <p>You should see the status as below from VSD VM.</p>
 <p>
-        <image href="../../media/CGH-install-virsh-vsd.png"/> New image</p>
+        <image href="../../media/CGH-install-virsh-vsd.png" width="400"/></p>
 </section>
 
   <!--<section id="vsd-performance-workaround"> <title>VSD Performance workaround</title>
