@@ -78,23 +78,6 @@
                     <entry>Name of Cloud Lab Management network (CLM) network</entry>
                 </row>
                 <row>
-                    <entry>ipaddress</entry>
-                    <entry>CLM Network IP</entry>
-                </row>
-                <row>
-                    <entry>netmask</entry>
-                    <entry>CLM network netmask</entry>
-                </row>
-                <row>
-                    <entry>gateway</entry>
-                    <entry>CLM network gateway</entry>
-                </row>
-                <row>
-                    <entry>tagid</entry>
-                    <entry>When specified sub interface will be created else when left blank tagged
-                        interface will be created on eth1</entry>
-                </row>
-                <row>
                     <entry namest="col1" nameend="col2"><b>compute_proxy</b></entry>
                     
                 </row>

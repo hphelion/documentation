@@ -29,8 +29,8 @@
         available in the vCenter before the deploying the HP Helion OpenStack cloud (before you run
         hprovision script).</p>
       <p>Compute proxy is deployed in vCenter using File > Deploy OVF Template > [Path to
-        TEMPL-CPV5.ova on 15.242.209.7]</p>
-      <p>It is not required by the cloud deployment for the proxy template to be powered on <image
+        TEMPL-CPV81.ova]</p>
+      <p>It is not required by the cloud deployment for the proxy template to be powered on. <image
           href="../../media/CGH-esx-template.png" id="image_vrj_snc_5s" width="500"/></p>
     </section>
     <section>

@@ -174,21 +174,6 @@
     "model": "DL680",
     "os_partition_size": "20",
     "data_partition_size": "80"
-    },
-    {
-    "name": "vrg2",
-    "pxe_mac_address": "d0:bf:9c:c0:ba:38",
-    "pxe_interface": "auto",
-    "pm_type": "ipmilan",
-    "pm_ip": "10.1.3.56",
-    "pm_user": "cghelion",
-    "pm_pass": "cghelion#",
-    "failure_zone": "fz2",
-    "node_group": "VRG-001-001",
-    "vendor": "HP",
-    "model": "DL680",
-    "os_partition_size": "20",
-    "data_partition_size": "80"
     }
     ]
     

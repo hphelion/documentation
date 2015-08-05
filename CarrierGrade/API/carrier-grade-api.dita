@@ -37,7 +37,7 @@
         OpenStack Carrier Grade: REST API Guide</xref>. This document contains HP Helion OpenStack
       Carrier Grade extensions to the OpenStack Compute API for use with the servers in the KVM
       region.</p>
-    <p><b><i>For the KVM and ESX deployments:</i></b></p>
+    <p><b><i>For the KVM and ESX<tm tmtype="reg"/> deployments:</i></b></p>
     <p><b>ESX API</b>. You can use aspects of the VMware vSphere<tm tmtype="reg"/> API, as
         applicable for your license agreement. Refer to the vSphere documentation for more
         information.</p>

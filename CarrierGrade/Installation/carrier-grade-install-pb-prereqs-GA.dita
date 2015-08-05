@@ -95,6 +95,8 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address&gt;,&lt;provider_net
         <p>Before starting the installation, you must install the following packages
                 on the KVM host.</p>
         <ul id="ul_szw_sh4_rs">
+                                <li>vlan</li>
+                                <li>sudo</li>
                 <li>ansible</li>
                 <li>ntp </li>
                 <li>firefox </li>
@@ -119,7 +121,7 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address&gt;,&lt;provider_net
         <p>To install the packages on the KVM host:</p>
         <ol>
                 <li>On the KLM host, run the following all in one command to install packages:
-                                        <codeblock><codeph>sudo su -l -c "apt-get install -y ansible sshpass ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager gnugpg jq"</codeph></codeblock></li>
+                                        <codeblock><codeph>sudo su -l -c "apt-get install -y vlan sudo ansible sshpass ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager gnugpg jq xorg gnome-core gnome-system-tools gnome-app-install"</codeph></codeblock></li>
                 <li>Add the 802.1q module to the kernel on boot. The 802.1q standard
                                         supports VLAN tagging on an ethernet
                                         network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
@@ -171,7 +173,7 @@ fi
 <p>You can install NTP on the HLM host and configure it as an NTP server. Or, you can use a
                                 pre-existing NTP server that is reachable from the management
                                 network. </p>
-                        <p>For information on configuring the KLM host as an NTP client, see  <xref
+                        <p>For information on configuring the HLM host as an NTP client, see <xref
                                         href="carrier-grade-install-NTP.dita#topic4740/client"
                                 />.</p>
 <p>For information on installing NTP on the HLM host, see <xref
@@ -257,8 +259,9 @@ StrictHostKeyChecking no </codeblock></li>
                                                   deployment, download this file, named
                                                   overcloud_vcenter_compute_proxy.tar. Also download
                                                   the Signature files.</li></ul></li>
-                                <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file to the images
-                                        folder: <codeph>/var/lib/libvirt/images</codeph>.</li>
+                                <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file and copy the
+                                        <codeph>cg-hlm.qcow2</codeph> file to the images folder:
+                                                <codeph>/var/lib/libvirt/images</codeph>.</li>
 <li>Copy the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file from the
                                                 <codeph>hcg_1.1.0.tar</codeph> files to the
                                                 <codeph>/root</codeph> directory.</li>
@@ -266,13 +269,13 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <codeph>cghelion</codeph> when prompted.
                                         <codeblock> gpg -d cg-infra-playbooks.tar.gz.gpg | tar -xzvf </codeblock></li>
         <li> Create the <codeph>/root/cg/</codeph> directory</li>
-<li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file from the <codeph>hcg_1.1.0.tar</codeph> files
+<li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file from the <codeph>hcg_1.1.0</codeph> directory
                                         to the <codeph>/root/cg/</codeph> directory.</li>
 </ol>
 </section>
-        <section id="download-esx"><title>Download packages for KXM+ESX</title>
-        <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM+ESX topology, download
-                                the following additional packages.</p>
+        <section id="download-esx"><title>Download packages for KVM + ESX</title>
+        <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM + ESX topology,
+                                download the following additional packages.</p>
                 <ol>
                                 <li>If you have not downloaded the DCN installation packages, browse to
                                                 <xref href="http://www.hp.com/go/hpsc" format="html"
@@ -285,22 +288,22 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <li>DCN-VSC-3.0R7</li>
                                                 <li>DCN-VSD-QCOW-3.0R7</li>
                                         </ul></li>
-                                <li>Create the <codeph>~/cg/dcn</codeph> on HLM KVM directory on the
-                                        KVM host.</li>
+                                <li>Create the <codeph>~/cg/dcn</codeph> directory on the KVM
+                                        host.</li>
                                 <li>Copy the following files from DCN downloaded packages to
                                                 <codeph>~/cg/dcn</codeph>: <ul>
                                                 <li>vsc_singledisk.qcow2</li>
-                                                <li>nuage-openvswitch-datapath-dkms_3.0.7-125_all.deb</li>
+                                                <li>
+                                                  <p>nuage-metadata-agent_3.0.7-125_all.deb</p>
+                                                </li>
                                                 <li>nuage-openvswitch-common_3.0.7-125_amd64.deb</li>
                                                 <li>nuage-python-openvswitch_3.0.7-125_all.deb</li>
                                                 <li>nuage-openvswitch-switch_3.0.7-125_amd64.deb</li>
                                                 <li>nuage-openstack-nuagenetlib-juno.tar.gz</li>
                                                 <li>nuage-openstack-neutron-juno-plugin.tar.gz</li>
-                                                <li>nuage-openstack-nuagenetlib-juno.tar.gz</li>
-                                                <li>nuage-openstack-neutron-juno-plugin.tar.gz</li>
                                         </ul></li>
                         </ol>  
-                <p>If you execute a list on that directory, the output appears similar to the following image:</p>
+                <p><!--If you execute a list on that directory, the output appears similar to the following image:--></p>
         </section>
         <section id="verify"><title>Verify the download signature</title>
                 <p>After downloading the installation packages, you should verify the signature of
