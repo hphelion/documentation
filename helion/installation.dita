@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_flx_j2b_ws">
-  <title>Beta 0 Installing HP Helion OpenStack on Baremetal</title>
+  <title>Beta 0: Installing HP Helion OpenStack on Baremetal</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_omx_srg_ws">
-  <title>Beta 0 Minimum Hardware Requirements</title>
+  <title>Beta 0: Minimum Hardware Requirements</title>
   <body>
     <section id="SupportedConfigs"> <title>Supported Configurations</title>
       <p>HP supports the following configurations for HP Helion OpenStack deployment:</p>
