@@ -37,15 +37,16 @@ between multiple instances (containers) as required.</p>
 <li>
 <xref type="section" href="#topic3030/router-spdy">SPDY</xref>
 </li>
+  <li><xref type="section" href="#topic3030/router">router.yml</xref></li>
+  <li><xref type="section" href="#topic3030/ACL">Access Control List</xref></li>
+  <li><xref type="section" href="https_and_ssl.dita">Router SSL/TLS</xref></li> 
 </ul>
 <p>Application Lifecycle Service's default router ('router2g') supports
 <xref href="http://www.websocket.org/aboutwebsocket.html" scope="external" format="html" >WebSocket</xref> (including
 "wss://" secure web sockets) and <xref href="http://www.chromium.org/spdy" scope="external" format="html" >SPDY</xref>.</p>
-    <p>For Router SSL/TLS information, see the <xref href="1.2configuration.dita">Server
+    <p>For Router SSL/TLS information, see the <xref href="https_and_ssl.dita">HTTPS and SSL
       Configuration</xref> documentation.</p>
 <section id="settings"> <title>Settings</title>
-<p>Restart the router role to apply any config changes to the running router(s)</p>
-  <codeblock>kato restart router</codeblock>
  <p>The Router is configured using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"  >
       <i>kato config</i>
     </xref>. The following settings are configurable:</p>
@@ -108,8 +109,16 @@ between multiple instances (containers) as required.</p>
           <dd>Add aliases for the API Endpoint. See the API Endpoint Alias documentation for an example.</dd>
         </dlentry><dlentry>
           <dt>appOnlyRouter</dt>
-          <dd>Note that this is a file setting and not a <codeph>kato</codeph> command. This setting can be configured on router nodes in the <codeph>/s/code/stackato-router/config/local.json</codeph> file. Set <codeph>appOnlyRouter</codeph> to true and restart the router to enable. This configures the router to not serve the API Endpoint, only user-deployed applications. At least one router node in every cluster must expose the API Endpoint, but it does not need to be internet accessible if the developers pushing applications are within the same internal network where ALS is installed.</dd>
-        </dlentry></dl>
+          <dd>Note that this is a file setting and not a <codeph>kato</codeph> command. This setting
+            can be configured on router nodes in the
+              <codeph>/s/code/stackato-router/config/local.json</codeph> file. Set
+              <codeph>appOnlyRouter</codeph> to true and restart the router to enable. This
+            configures the router to not serve the API Endpoint, only user-deployed applications. At
+            least one router node in every cluster must expose the API Endpoint, but it does not
+            need to be internet accessible if the developers pushing applications are within the
+            same internal network where ALS is installed.</dd>
+        </dlentry></dl><p>When configuration is complete, restart the router role to apply any
+          changes to the running router(s).<codeblock>kato restart router</codeblock></p>
 </section>
 <section id="websockets"> <title>WebSockets</title>
 <p>Applications using web sockets must use the VCAP_APP_PORT or PORT
@@ -124,7 +133,7 @@ for reducing web page load time. The router supports SPDY versions 2 and
 3. Applications can use SPDY over any HTTPS connection, so long as the
 connection consumers (the application server and browser) support it.</p>
 </section>
-  <section>
+  <section id="router">
       <title>router.yml</title>
       <p>The default settings for the router are loaded from a <b>router.yml</b> file in the
           <codeph>/s/code/stackato-router/config/</codeph> directory during first boot (only). You
@@ -132,7 +141,45 @@ connection consumers (the application server and browser) support it.</p>
         the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-op-import_from_yaml_file">kato-command-ref-op-import_from_yaml_file</xref>command.</p>
       <codeblock>kato op import_from_yaml_file router2g 
 kato restart router </codeblock>
-      <p>This approach is often easier than manipulating the setings individually. </p>
+      <p>This approach is often easier than manipulating the settings individually. </p>
     </section>
+
+  <section id="ACL"><title>Access Control List</title>
+  <p>You can set the router to block specific IP addresses and ranges from connecting to ALS and the
+        applications it hosts. </p>
+      <p>
+        <note type="tip">To minimalize snooping or DoS attempts, always set the
+            <codeph>drop_conn</codeph> key to <i>true</i> . This will terminate connections from
+          blocked IP addresses abruptly without an HTTP 403 error.
+          <codeblock>kato config set router2g acl/drop_conn true</codeblock></note>
+      </p>
+      <p>To enable the access control list:
+        <codeblock>kato config set router2g acl/enabled true</codeblock> The rules key provides a
+        DENY list for single IP addresses and/or ranges to block. To specify a single IP address:
+        <codeblock>kato config set router2g acl/rules '["192.168.1.90"]'</codeblock> To add another
+        IP address to the existing list of blocked IPs:
+        <codeblock>kato config push router2g acl/rules "192.168.5.10"</codeblock> To set a range of
+        IP addresses:
+        <codeblock>kato config set router2g acl/rules '[["192.168.3.100","192.168.3.200"]]'</codeblock>
+        To set set individual addresses and ranges together: </p>
+    <p>(See the <xref href="#topic3030/router">router.yml</xref> section above for setting this configuration
+        using a YAML file instead.
+        )<codeblock>kato config set router2g acl/rules '["192.168.1.90",["192.168.3.100","192.168.3.200"]]'</codeblock></p>
+      <p> If the routers are behind a load balancer that sets the 'X-Forwarded-For' header, set the
+          <codeph>use_x_forwarded_for </codeph>to <i>true</i> :
+        <codeblock>kato config set router2g acl/use_x_forwarded_for true</codeblock> Use
+          <codeph>kato config get router2g acl </codeph>to check your settings:
+        <codeblock>kato config get router2g acl
+enabled: true
+drop_conn: true
+use_x_forwarded_for: false
+rules:
+- 192.168.1.90
+- - 192.168.3.100
+- 192.168.3.200</codeblock>
+        Restart the router role to apply the configuration changes:
+        <codeblock>kato restart router</codeblock></p>
+                
+  </section>
 </body>
 </topic>
