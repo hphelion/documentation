@@ -101,8 +101,9 @@
   </li>
   <li>In the next <b>Publish to Cloud Foundry</b> dialog (<b>Environment Variables</b>), enter key-value pairs that can be read by the application. In the screenshot below, an environment variable called <b>isDebug</b>
   is created with a value of <b>True</b>.
-    <li>Click <b>Finish</b>. The application will be deployed to the selected Helion environment.
+    
     <image href="../../media/windows_publish_step7_version_1_3.png" placement="break"/></li>
+  <li>Click <b>Finish</b>. The application will be deployed to the selected Helion environment.</li>
   <!--<li>In the <b>Login Wizard</b> dialog, enter the URL for the ALS cluster, and a user and
           password with sufficient privileges. Check the <b>Skip SSL Validation</b> checkbox if your
           Helion OpenStack installation uses self-signed certificates (as it does in HP Helion
