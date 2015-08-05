@@ -7,7 +7,7 @@
 <p><b>What level of customization will be possible via modifying the configuration files and using them to deploy?</b></p>
 <p></p>
 </section>
---->
+-->
 <section id="Neutron"> <title>Neutron Features</title>
 <!--- THIS QUESTION HAS THINGS THAT HAVE NOT BEEN VERIFIED FOR HOS 2.0
 <p><b>How does NIC bonding work?</b></p>
