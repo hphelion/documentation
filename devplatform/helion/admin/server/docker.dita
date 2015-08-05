@@ -210,10 +210,11 @@ ADD hooks /etc/helion/hooks </codeblock>
         each DEA can be done manually. On larger clusters, you should set up a <xref
           href="https://registry.hub.docker.com/_/registry/" scope="external" format="html">Docker
           registry</xref> as a central repository for the base image. This registry server can also
-        be used for deploying Docker apps. </p> Consult the documentation for guidelines on <xref
+        be used for <xref href="../../user/deploy/languages/docker_apps.dita">deploying Docker
+          apps</xref>. </p> Consult the Docker site documentation for guidelines on <xref
         href="https://docs.docker.com/registry/deploying/#making-dockers-official-registry-image-production-ready"
         format="html" scope="external">making Docker's official registry image production
-        ready</xref>.  <p>If you do not want to set up your own private Docker registry server, you
+        ready</xref>. <p>If you do not want to set up your own private Docker registry server, you
         can push your images to the <xref href="https://registry.hub.docker.com/" format="html"
           scope="external">Docker Hub Registry</xref> instead. Private repositories are
         available.</p></section>
@@ -247,12 +248,12 @@ WARNING: Assumed type struct
       <p>This <xref
           href="https://docs.docker.com/reference/run#runtime-privilege-and-lxc-configuration"
           type="section" scope="external" format="html">container privilege elevation</xref> would
-        normally be used in conjunction with <i>sudo</i> container access in the quota:</p>
+        normally be used in conjunction with <i>sudo</i> container access in the quota.</p>
       <codeblock>helion quota configure --allow-sudo </codeblock>
       <note type="warning">Every application running under this configuration has the potential to
-        become root on the host. These changes should only be made when all users of the system are
-        completely trusted (i.e. with admin privileges) as they compromise the isolation between
-        application containers and host.</note>
+        become root on the host. These changes compromise the isolation between application
+        containers and host and should only be made when <b>all</b> users of the system are
+        completely trusted with admin-level privileges. </note>
     </section>
   </body>
 </topic>
