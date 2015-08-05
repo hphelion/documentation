@@ -74,7 +74,7 @@
     <li><b>Target</b>: The URL of the ALS cluster</li>
     <li><b>Organization and Space</b>: Select from one of the provided options.</li>
   </ul>
-    <image href="../../media/windows_publish_step1_version_1_3.png"/></li>
+    <image href="../../media/windows_publish_step1_version_1_3.png" placement="break"/></li>
   <li>In the second <b>Publish to Cloud Foundry</b> dialog (<b>Application</b>), enter the following values and click <b>Next</b>:
   <ul>
     <li><b>Name</b>: The friendly name for the application</li>
@@ -82,12 +82,12 @@
     <li><b>Stack</b>: Leave as <codeph>win2012r2</codeph>.</li>
     <li><b>Memory</b>: The amount of memory the application will use (e.g. 512 MB).</li>
     <li><b>Instances</b>: The number of separate installations of the application.</li>
-  </ul><image href="../../media/windows_publish_step2_version_1_3.png"/></li>
+  </ul><image href="../../media/windows_publish_step2_version_1_3.png" placement="break"/></li>
   <li>In the third <b>Publish to Cloud Foundry</b> dialog (<b>Routes</b>), enter the following values and click <b>Next</b>:
   <ul><li><b>Hosts</b>: Add the host name that the application will use. This host name will be added to the cluster domain; for instance, in the image below, the URL to access the application will be <b>mygeekquiz.15.125.64.221.xip.io</b></li>
   <li><b>Shared Domains</b>: Select from one of the available options.</li>
   <li><b>Private Domains</b>: Select from one of the available options.</li></ul>
-    <image href="../../media/windows_publish_step3_version_1_3.png"/></li>
+    <image href="../../media/windows_publish_step3_version_1_3.png" placement="break" /></li>
   <li>In the fourth <b>Publish to Cloud Foundry</b> dialog (<b>Services</b>), if a service is needed for your application, either select from one of the available services, or select <b>Create Service</b>.
    <image href="../../media/windows_publish_step4_version_1_3.png"/></li>
   <li>If you clicked <b>Create Service</b> in the previous step, enter the following values in the <b>Create Service Instance</b> dialog and click <b>OK</b>:
@@ -95,8 +95,15 @@
       <li><b>Service Name</b>: The friendly name for the service you are creating.</li>
       <li><b>Service Type</b>: Select from the list of available options. <note>Creating custom services is not supported.</note></li>
       <li><b>Service Plan</b>: Select from the list of available options.</li>
-    </ul><image href="../../media/windows_publish_step5_version_1_3.png"/></li>
-  <li></li>
+    </ul><image href="../../media/windows_publish_step5_version_1_3.png" placement="break"/>
+  The new service will appear in the Services dialog:
+    <image href="../../media/windows_publish_step6_version_1_3.png" placement="break"/>
+  </li>
+  <li>In the next <b>Publish to Cloud Foundry</b> dialog (<b>Environment Variables</b>), enter key-value pairs that can be read by the application. In the screenshot below, an environment variable called <b>isDebug</b>
+  is created with a value of <b>True</b>.
+    
+    <image href="../../media/windows_publish_step7_version_1_3.png" placement="break"/></li>
+  <li>Click <b>Finish</b>. The application will be deployed to the selected Helion environment.</li>
   <!--<li>In the <b>Login Wizard</b> dialog, enter the URL for the ALS cluster, and a user and
           password with sufficient privileges. Check the <b>Skip SSL Validation</b> checkbox if your
           Helion OpenStack installation uses self-signed certificates (as it does in HP Helion
