@@ -559,7 +559,7 @@ source stackrc</codeblock></li>
     <ol>
       <li>From the KVM host, copy the following code to create a cURL script.</li>
       <li>Modify the cURL script for your environment:
-        <codeblock>
+          <codeblock>
             ##########################################
             #!/bin/bash
             set -x
@@ -652,9 +652,7 @@ source stackrc</codeblock></li>
               #else
               #echo "FIP uplink subnet already exists: $SUBNET_ID"
               #fi
-              
-              #############################################################
-            </codeblock></li>
+              #############################################################</codeblock></li>
       <li>Execute the curl script <codeblock>bash +x &lt;script_name>.sh</codeblock></li>
       <li>Use the VSD dashboard to confirm that uplink port appears in the Monitoring tab under
         VRS-G node. <b><i>image</i></b></li>
