@@ -46,7 +46,7 @@
           assign them.</li>
     </ol>
 </section>
-    <section><title>Installing hLinux Deployer from ISO</title>
+    <section><title>Initial OS Installation</title>
    <ol><li>Create LUN(s), if required.</li>
      <li>Boot from ISO</li>
      <li>Enter 'install' to start installation</li>
@@ -64,100 +64,113 @@
                 <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
          </ul></li>
 </ol></section>
-<section><title>Installing HP Helion OpenStack</title>
-<ol>
-<li>On the deployer node, create ssh keypair if one is not already present:
-<codeblock>
+<section><title>Installing HP Helion OpenStack</title></section>
+    <section>
+      <ol id="ol_bbw_fr1_ys">
+        <li>On the deployer node, create ssh keypair if one is not already present:
+          <codeblock>
 ssh-keygen -t rsa
-</codeblock>
-</li>
-<li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file:
-<codeblock>
+ </codeblock></li>
+        <li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file:
+          <codeblock>
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-</codeblock>
-</li>  
-<li>Check that ssh localhost works without a password and that you can get from external sources, both with and without sudo.</li>
-<li>Mount install media at /media/cdrom, e.g. sudo mount /media/cdrom (in case CD is in /dev/cdrom)</li>
-<li>Unpack tarball: 
-<codeblock>
+</codeblock></li>
+        <li>Check that ssh localhost works without a password and that you can get from external
+          sources, both with and without sudo.</li>
+        <li>Mount install media at /media/cdrom, e.g. sudo mount /media/cdrom (in case CD is in
+          /dev/cdrom)</li>
+        <li>Unpack tarball:
+          <codeblock>
 tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz
 </codeblock></li>
-<li>Run included script:
-<codeblock>
+        <li>Run included script: <codeblock>
 ~/hlm-deployer/hlm-init-2.0.0.bash
 </codeblock></li>
-<li>Setup your configuration files:
-<ul>
-<li>There is an example set of configuration files in the ~/helion/examples/one-region-poc-with-vsa directory along with a README.md file which explains the contents of each of the configuration files.</li>
-<li>You should copy these example configuration files into the required setup directory so that you can edit them as needed:
-<codeblock>
+        <li>Setup your configuration files: <ul id="ul_z2w_fr1_ys">
+            <li>There is an example set of configuration files in the
+              ~/helion/examples/one-region-poc-with-vsa directory along with a README.md file which
+              explains the contents of each of the configuration files.</li>
+            <li>You should copy these example configuration files into the required setup directory
+              so that you can edit them as needed:
+              <codeblock>
 cp -r ~/helion/examples/one-region-poc-with-vsa/* ~/helion/my_cloud/definition/
 </codeblock></li>
-<li>Edit the baremetalConfig.yml file according to the server information for your environment.</li>
-<li>Edit the servers.yml file to contain the IP address information for that same hardware.</li>
-<li>Edit the networks.yml file with your networking information.</li>
-<li>The control_plane.yml file will contain information about the services that will be installed.</li>
-</ul>
-</li>
-<li>Run the configuration processor and check that your IP addresses are correct in the following: 
-<codeblock>
+            <li>Edit the baremetalConfig.yml file according to the server information for your
+              environment.</li>
+            <li>Edit the servers.yml file to contain the IP address information for that same
+              hardware.</li>
+            <li>Edit the networks.yml file with your networking information.</li>
+            <li>The control_plane.yml file will contain information about the services that will be
+              installed.</li>
+          </ul>
+        </li>
+        <li>Run the configuration processor and check that your IP addresses are correct in the
+          following: <codeblock>
 cd ~/helion/hlm/ansible
 </codeblock>
-<codeblock>
+          <codeblock>
 ansible-playbook -i hosts/localhost config-processor-run_v2.yml  
 </codeblock>
-</li>
-<li>Check the generated hosts files in <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to make sure the correct IPs are included.  If they are not then run <codeph>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeph> and go to step 15.</li>
-<li>Prepare bare metal hardware (this can be done in parallel with the above steps, or in advance)
-<ul>
-<li>iLO Advanced license</li>
-<li>Ensure every system has 5 enabled disk devices</li>
-<li>Switch from UEFI to Legacy BIOS</li>
-</ul></li>
-<li>
-<codeblock>
+        </li>
+        <li>Check the generated hosts files in
+            <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to make sure the correct IPs
+          are included. If they are not then run <codeph>ansible-playbook -i hosts/localhost
+            config-processor-clean.yml</codeph> and go to the previous step.</li>
+        <li>
+          <codeblock>
 Export ANSIBLE_HOST_KEY_CHECKING=False
 </codeblock>
-</li>
-<li>Run
-<codeblock>
+        </li>
+        <li>Run <codeblock>
 ansible-playbook -i hosts/localhost cobbler-deploy.yml
 </codeblock>
-</li>
-<li>Run the following command.  This will power down all nodes, set them to pxe boot and power them up again. 
-<codeblock>
+        </li>
+        <li>Run the following command. This will power down all nodes, set them to pxe boot and
+          power them up again.
+          <codeblock>
 ansible-playbook -i hosts/localhost cobbler-provision.yml
 </codeblock>
-</li>
-<li>Wait for the nodes to install. They will power down at the end. You can make waiting easier with ansible-playbook -i hosts/localhost cobbler-wait-for-shutdown.yml which would complete once all machines are down.</li>
-<li>Power up recently-installed systems
-        <ol>
-          <li>ansible-playbook -i hosts/localhost cobbler-power-up.yml</li>
-          <li>You can make waiting easier with  ansible-playbook -i hosts/localhost cobbler-wait-for-ssh.yml which would complete once all machines are up and SSH daemon is responding.</li>
-        </ol></li>
-        <li>ansible-playbook -i hosts/verb_hosts osconfig-runV2.yml 
-          <ul>
+        </li>
+        <li>Wait for the nodes to install. They will power down at the end. You can make waiting
+          easier with ansible-playbook -i hosts/localhost cobbler-wait-for-shutdown.yml which would
+          complete once all machines are down.</li>
+        <li>Power up recently-installed systems <ol id="ol_xfw_fr1_ys">
+            <li>ansible-playbook -i hosts/localhost cobbler-power-up.yml</li>
+            <li>You can make waiting easier with ansible-playbook -i hosts/localhost
+              cobbler-wait-for-ssh.yml which would complete once all machines are up and SSH daemon
+              is responding.</li>
+          </ol></li>
+        <li>ansible-playbook -i hosts/verb_hosts osconfig-runV2.yml <ul id="ul_rgw_fr1_ys">
             <li>Verify the network is working correctly. Ping each IP (excluding VSA-BLK and VIPs)
               from the /etc/hosts file from one of the controller nodes.</li>
           </ul></li>
-        <li>Modify the ./helion/hlm/ansible/hlm-deploy.yml (currently horizon seems to be broken as well):</li>
-         <li>Comment out the line containing horizon</li>
-      <li>Run ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</li>
-        <li>Run ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml
-        <ol>
-          <li>NOTE you can optionally specify the external network CIDR here too. If you choose not to excercise this option or use wrong value it would cause VMs to be not accessible over network.</li>
-          <li>e.g. ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</li>
-        </ol>
+        <li>Modify the ./helion/hlm/ansible/hlm-deploy.yml (currently horizon seems to be broken as
+          well):</li>
+        <li>Comment out the line containing horizon</li>
+        <li>Run ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</li>
+        <li>Run ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml <ol id="ol_lhw_fr1_ys">
+            <li>NOTE you can optionally specify the external network CIDR here too. If you choose
+              not to excercise this option or use wrong value it would cause VMs to be not
+              accessible over network.</li>
+            <li>e.g. ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e
+              EXT_NET_CIDR=10.240.96.0/20</li>
+          </ol>
         </li>
-        <li>Run ansible-playbook -i hosts/localhost cloud-client-setup.yml, this replaces /etc/hosts file on deployer - as it no longer has entry for hlm it may become a bit slower. To fix once this step is complete to add "hlm" after "127.0.0.1 localhost"</li>
+        <li>Run ansible-playbook -i hosts/localhost cloud-client-setup.yml, this replaces /etc/hosts
+          file on deployer - as it no longer has entry for hlm it may become a bit slower. To fix
+          once this step is complete to add "hlm" after "127.0.0.1 localhost"</li>
         <li>Install and configure VSA</li>
-        <li>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium (unverified)</li>
-        <li>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml
-          <ul><li>Note: You can optionally specify the external network CIDR here too: e.g. ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</li></ul></li>
+        <li>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium
+          (unverified)</li>
+        <li>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml <ul id="ul_g3w_fr1_ys">
+            <li>Note: You can optionally specify the external network CIDR here too: e.g.
+              ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e
+              EXT_NET_CIDR=10.240.96.0/20</li>
+          </ul></li>
         <li>ansible-playbook -i hosts/localhost cloud-client-setup.yml</li>
         <li>Install and configure VSA </li>
-</ol> 
-</section>
+      </ol>
+    </section>
 <section>
    <title>Installing and configuring VSA (optional)</title>
   <ol>
@@ -165,7 +178,7 @@ ansible-playbook -i hosts/localhost cobbler-provision.yml
     <li>If above has error stderr: tar: /opt/stack/service/vsa/venv/lib/helion-vsa-11.5.01.0079.tgz:
           Cannot open: No such file or directory then you need to manually upload this file into
           that location. File is located in http://10.1.56.95/helion-vsa-11.5.01.0079.tgz then rerun
-          vsa-deploy.This is temporal issue and should be fixed by very next release.</li>
+          vsa-deploy.This is a temporary issue and should be fixed by the next release.</li>
     <li>Note IP numbers of VSA VMs from ansible output, look like this: "NIC 1: Virtual Network:
           vsa-network, IP Address: 10.241.103.11, Subnet Mark: 255.255.255.0, Gateway:
           10.241.103.1",</li>
@@ -202,7 +215,7 @@ ansible-playbook -i hosts/localhost cobbler-provision.yml
           </ul></li>
     <li>Run ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</li>
         <li>Create a volume to verify the VSA is correctly configured, and then delete the created
-          volume</li>
+          volume.</li>
   </ol>
 </section>
   </body>
