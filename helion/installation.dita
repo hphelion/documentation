@@ -22,34 +22,27 @@
   </prolog>
   <body>
 <note>This assumes a BM deployer.</note>
-<note>This assumes hlinux ISO http://tarballs.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-8/hlm-deployer-2.0.0-20150730T215505Z.tgz</note>  
-<note>This assumes kit
-      http://tarballs.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-8/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-07-30T23:07:26_52e38af.iso</note>
+<note>This assumes hlinux:
+      http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso</note>
 <section><title>Known Restrictions</title>
     <ol id="ol_kr3_2fb_ws">
       <li>All disks on the system(s) will be wiped /dev/sda will be used for the OS but all other disks will also be wiped.</li>
-        <li>The deployer node needs to be a dedicated node in Beta0.</li>
       <li>Install on nodes via legacy bios setting (No UEFI)</li>
-      <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else.
-          Important factor is that all machines can net boot from PXE and use deployer as DHCP
-          server. </li>
-        <li>The machine hosting the deployer, and all baremetal systems have to be connected to a
+      <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. Important factor is that all machines can net boot from PXE and use deployer as DHCP server.</li>
+      <li>The network will need to be set up with various number of VLANS depending on needs. Just make sure model reflects that.</li>
+      <li>Number of disks must be reflected in model as well. We used machines that have 5, but not always used all disks on every node</li>
+      <li>All machines used were same, but with right model there is no such restriction - although all machines of single type should be same, like all computes, all VSAs etc</li>
+      <li>This will only work anywhere, as no external network is used. However due to bugs we had to download some components from HP sources.</li>
+      <li>The deployer node needs to be a dedicated node in Beta0.</li>
+      <li>The machine hosting the deployer, and all baremetal systems have to be connected to a
           management network. Nodes on this management network must be able to reach the iLO
           subsystem of each baremetal system to enable host reboots as part of the install process.
           The HP Helion OpenStack architecture requires that the IPMI network is a separate network
           and that a route exists from management network to the IPMI network for iLO access.</li>
-      <li>The network will need to be set up with various number of VLANS depending on needs. Just
-          make sure model reflects that.</li>
-      <li>umber of disks must be reflected in model as well. We used machines that have 5, but not always used all disks on every node.</li>
-      <li>All machines used were same, but with right model there is no such restriction - although all machines of single type should be same, like all computes, all VSAs etc.</li>
-      <li>11.	This will only work anywhere on Earth as no external network is used. However due to bugs we had to download some components from HP sources.</li>      
-      
-      
       <li>Need 4 local disks on nodes in the control plane (for root os and swift).</li>
       <li>Machines will need to be fully reinstalled on next drop – upgrade from beta0 to beta1 is
         not supported.</li>
       <li>The machine types should be homogeneous.</li>
-      <li>This will only work from within the HP Network</li>
         <li>Is possible to add additional VSA and compute nodes. The default is 1 of each.</li>
         <li>You may assign server roles to each or your nodes manually, or allow the installer to
           assign them.</li>
@@ -62,16 +55,16 @@
      <li>Select Language</li>
      <li>Select Location</li>
      <li>Select Keyboard layout</li>
-     <li>Select appropriate network interface
-       <ul><li>Assign IP address, netmask</li>
-         <li>Create new account
+     <li>Select appropriate network interface <ul>
+            <li>Assign IP address, netmask</li>
+          </ul></li>
+       <li>Create new account
          <ul>
            <li>Enter a username.</li>
            <li>Enter a password.</li>
            <li>Enter timezone if prompted to do so.</li>
                 <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
          </ul></li>
-       </ul></li>
 </ol></section>
     <section><title>Installing HP Helion OpenStack</title>
       <ol>
