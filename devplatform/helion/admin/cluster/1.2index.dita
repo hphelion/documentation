@@ -531,6 +531,9 @@ configuration instructions.</note>
           for additional Controller nodes. The type of filesystem, storage server, and network mount
           method are left to the discretion of the Application Lifecycle Service
           administrator.</note>
+        <note type="warning">These directories are <b>not</b> empty. It is essential that the
+          contents of these directories are preserved and copied back into the new, shared
+          directories once symlinks have been created.</note>
       </p>
 <ol>
 <li>Create a shared filesystem on a Network Attached Storage device.</li>
