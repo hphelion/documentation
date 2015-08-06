@@ -138,8 +138,10 @@
           a soft link in the ansible system to do this.</i>status unkown</p><p><b>Known
         Issues</b></p><p><b>Install:</b></p><p>Boot order may be affected by random assignment of
         eth interface numbers to your NICs. Therefore the node you need to boot first may not be
-        first. You may want to disable NICs that you are not planning to
-          use.</p><p><b>Operations:</b></p><!--<p><b>FAQ</b></p>
+        first. You may want to disable NICs that you are not planning to use.</p><p>If you find that
+        your NICs are named out of order, you can configure your interface names ( eg. ethX ) to
+        specific MAC addresses by either directly modifying the udev rule or modifying the script
+        which creates them (/lib/udev/write_net_rules ).</p><p><b>Operations:</b></p><!--<p><b>FAQ</b></p>
     
     <p><b>What level of customisation possible via modifying configurations in the CP and using them
         to deploy?</b></p>
@@ -151,7 +153,9 @@
     <p><b>What other settings will we be able to customize in Beta0?</b></p>
     <p>Specifically, will we be able to set things like server affinity through jinja files, or will
       those need to be manual changes? M. Dunnett</p>-->
-      <p><b>Ops Console</b></p>Not enabled. <p><b>Horizon </b></p>Not enabled. </section>
+      <p><b>Ops Console</b></p>Not enabled. <p><b>Horizon </b></p>Not enabled. 
+       
+    </section>
     
 
   </body>
