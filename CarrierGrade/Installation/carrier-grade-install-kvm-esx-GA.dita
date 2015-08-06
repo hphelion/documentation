@@ -478,16 +478,37 @@ source stackrc</codeblock></li>
             <codeblock>neutron router-create &lt;name></codeblock><p>where: &lt;name> is a
             descriptive name.</p></li></ol>
   </section>
-  <section><title>Onboard the Gateway</title>
+  <section><title>Configure the VRS-G </title>
+      <p>The HP Helion OpenStack Carrier Grade installation creates the required VRS-G gateway. You
+        need to use the HP DCN Virtualized Services Directory Architect (VSD) interface to add the
+        gateway to VSD and configure the <codeph>eth0</codeph> port.</p>
     
-    <ol><li>Launch the VSD dashboard. <i><b>add screenshots</b></i></li>
-      <li>Click the <b>Gateways</b> tab</li>
-      <li>Click the arrow next to the new gateway to onboard that gateway</li>
-      <li>Click <b>Organizations</b> to add permissions to the Gateway.</li>
-        <li>Add the VLAN ID [EXT Net] on the VSD dashboard for eth0. <b><i>image in
-            email</i></b><p>For more information on performing these tasks, refer to the DCN
-            documentation </p></li>
-    </ol>
+    <ol><li>Launch the VSD dashboard:<ul id="ul_ylj_thz_xs">
+      <li>Using Chrome or Safari, navigate to <codeph>https://&lt;VSD address>:8443/</codeph> and enter user
+        name, password and organization.<p><image href="../../media/CGH-install-vsd-login.png" id="image_dls_phz_xs"
+          width="300">
+          <alt>VSD login screen</alt>
+        </image></p></li>
+      <li>Click the arrow icon to log in.</li>
+          </ul></li>
+      <li>Click the <b>Gateways</b> tab. The new gateway appears in the <b>Pending Gateways</b> list
+          on the left.</li>
+      <li>Click the blue arrow next to the new gateway to manage that gateway.<p><image
+              href="../../media/CGH-install-nuage-gateway.png" id="image_rgy_5fz_xs" width="500">
+              <alt>Discover the Gateway</alt>
+            </image></p></li>
+      <li>Click <b>Organization Profile</b> in the ribbon to add permissions to the Gateway.</li>
+        <li>Add a port for the gateway by clicking <b>Create a Port</b> in the second panel from the
+          left.</li>
+        <li>Enter the information as required, specifying  eth0 in the Physical Name field  and
+          entering the VLAN ID [EXT Net] for the VLAN range.<p><image
+              href="../../media/CGH-install-gateway-port.png" id="image_w3p_sgz_xs" width="250">
+              <alt>Gatewy Port</alt>
+          </image></p></li>
+      <li>Click <b>Create</b>.</li></ol>
+          <p>For more information on performing these tasks, refer to the DCN
+            documentation </p>
+    
   <p><b>Note:</b> To create a redundant grouping of the VRS-G, refer to the DCN documentation.</p>
 </section>
   <section><title>Retrieving the FIP Name from VSD for external Network</title>
@@ -650,16 +671,21 @@ source stackrc</codeblock></li>
   <section><title>Upload a Glance VMDK Image</title>
   <ol>
         <li>Launch the Horizon dashboard.</li>
-        <li>Go to <b>Admin -> Images</b> tab and upload the VMDK image.</li>
-        <li>Select <b>vmdk</b> format from drop down menu.</li>
-        <li>Click <b>Create Image</b>.</li>
-        <li>For the new image, click <b>Actions -> Edit</b> to update the metadata for the
+    <li>Click the <b>Images</b> link on the <b>Admin</b>upload the VMDK image.</li>
+    <li>In the <b>Images</b> screen, click <b>Create Image</b>.</li> <!-- Where is this file??? -->
+    <li>In the <b>Create an Image</b> screen, fill out the fields as appropriate:
+      <ol><li>From the <b>Image Source</b> list, select <b>Image File</b>.</li>
+        <li>From the <b>Image File</b> list that appears, navigate to the VMDK file.</li>
+        <li>From the <b>Format</b> list, select <codeph>VMDK</codeph>.</li></ol></li>
+      <li>Click <b>Create Image</b>.</li>
+      <li>For the new image, click <b>Actions -> Edit</b> to update the metadata for the
           image.</li>
         <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph> properties
           . </li>
-      </ol><p>Once the images are uploaded, you are ready to launch the instance with different
-        flavors. </p><p>Once the VM is launched, the progress can be seen from recent tasks in ESX
-        cluster.</p>
+      </ol>
+    
+    <p>Once the images are uploaded, you are ready to launch the instance with different
+        flavors. </p>
     </section>
 
 
