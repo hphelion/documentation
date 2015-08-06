@@ -16,7 +16,7 @@
   </topicmeta>
   <!--permalink: -->
   <!--permalink: /-->
-  <topicref href="publiccloud/index.dita"/>
+  <topicref href="home.dita"/>
   <topicref href="commercial/GA1/1.1commercial.index.dita"
     navtitle="HP Helion OpenStack 1.1.1 and 1.1" locktitle="yes">
     <topicref href="commercial/GA1/1.1commercial.whatsnew.dita" navtitle="What's New"
@@ -718,6 +718,8 @@
       <!--permalink: /helion/devplatform/1.2/als/user/services/user-provided/-->
       <topicref href="devplatform/1.2/helion/user/services/1.2user-provided.dita" locktitle="yes"
         navtitle="User-Provided Services"/>
+      <topicref href="devplatform/1.2/windows/windows_troubleshooting.dita"
+        navtitle="Troubleshooting Windows" locktitle="yes"/>
     </topicref>
     <topicref href="devplatform/1.2/helion/1.2index.dita" locktitle="yes"
       navtitle="Application Lifecycle Service Documentation">
@@ -1755,6 +1757,7 @@
       <topicref href="commercial/GA1/1.0commercial.glossary.dita"/>
     </topicref>
   </topichead>
+  <mapref href="docs.hpcloud.com.CGH.ditamap"/>
   <topicref href="euca/euca-landing-page.dita" navtitle="HP Helion Eucalyptus" locktitle="yes">
     <topicref href="euca/euca.thirdparty.licensing.dita"
       navtitle="Open-Source and Third-Party License Agreements" locktitle="yes"/>
@@ -1788,27 +1791,27 @@
       <topicref href="publiccloud/cdn.dita" navtitle="CDN Service Overview" locktitle="yes"/>
     </topicref>
     <topicref href="publiccloud/api.dita" navtitle="Helion Public Cloud APIs" locktitle="yes">
-      <topicref href="publiccloud/apidocs/c1.1/keystonev2-api.dita"
+      <topicref href="publiccloud/api/keystonev2-api.dita"
         navtitle="Identity Service v2 API" locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/keystone-api.dita" navtitle="Identity Service v3 API"
+      <topicref href="publiccloud/api/keystone-api.dita" navtitle="Identity Service v3 API"
         locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/nova-api.dita" navtitle="Compute Service API"
+      <topicref href="publiccloud/api/nova-api.dita" navtitle="Compute Service API"
         locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/neutron-api.dita" navtitle="Networking Service API"
+      <topicref href="publiccloud/api/neutron-api.dita" navtitle="Networking Service API"
         locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/glance-api.dita" navtitle="Image Service API"
+      <topicref href="publiccloud/api/glance-api.dita" navtitle="Image Service API"
         locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/cinder-api.dita" navtitle="Block Storage Service API"
+      <topicref href="publiccloud/api/cinder-api.dita" navtitle="Block Storage Service API"
         locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/dbaas-api.dita" navtitle="Database Service API"
+      <topicref href="publiccloud/api/dbaas-api.dita" navtitle="Database Service API"
         locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/dns-api.dita" navtitle="DNS Service API"
+      <topicref href="publiccloud/api/dns-api.dita" navtitle="DNS Service API"
         locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/lbaas-api.dita" navtitle="Load Balancer Service API"
+      <topicref href="publiccloud/api/lbaas-api.dita" navtitle="Load Balancer Service API"
         locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/swift-api.dita" navtitle="Object Storage Service API"
+      <topicref href="publiccloud/api/swift-api.dita" navtitle="Object Storage Service API"
         locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/cdn-api.dita" navtitle="CDN Service API"
+      <topicref href="publiccloud/api/cdn-api.dita" navtitle="CDN Service API"
         locktitle="yes"/>
       <topicref href="publiccloud/api.copyright.v13.dita"
         navtitle="Copyright for Helion Public Cloud APIs" locktitle="yes"/>
@@ -1847,13 +1850,13 @@
       locktitle="yes"/>
     <topicref href="publiccloud/hz.whatsnewjan.2014.dita"/>
     <topicref href="publiccloud/upload-publish-partner-images135.dita"
-      navtitle="Uploading and Publishing Partner Images" locktitle="yes" toc="no"/><!--set to toc=no later-->
+      navtitle="Uploading and Publishing Partner Images" locktitle="yes" toc="no"/>
     <topicref href="publiccloud/vpn-multisite.dita" navtitle="VPN Multi-Site Configuration Guide"
       locktitle="yes" toc="no"/><!--set to toc=no later-->
     <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide"
       locktitle="yes" toc="no"/><!--set to toc=no later-->
     <topicref href="publiccloud/plugins.teamcity.dita"
-      navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/><!--set to toc=no later-->
+      navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/>
     <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary"
       locktitle="yes"/>
   </topicref>

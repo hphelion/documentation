@@ -28,7 +28,7 @@
 <p>Do you need low level, raw REST API access to HP Helion Public Cloud compute?  Take a look at the Compute API page for the version of HP Helion Public Cloud you are using:</p>
 <ul>
 <li>
-<xref href="../publiccloud/apidocs/c1.1/nova-api.dita" >
+<xref href="../publiccloud/api/nova-api.dita" >
 <b>Compute API page</b>
 </xref>
 </li>

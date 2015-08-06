@@ -1,0 +1,2686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic65119">
+<title>HP Helion Public Cloud Block Storage API Specification</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./content/api/c1.1/cinder-api.md-->
+ <!--permalink: /publiccloud/api/block-storage/--></p>
+<p>
+<b>Date:</b> May 2014</p>
+<p>
+<b>Document Version:</b> 1.7</p>
+<section id="1-overview"> <title>1. Overview</title>
+<p>The HP Helion Public Cloud Block Storage service is based on
+<xref href="http://docs.openstack.org/developer/cinder/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Cinder</xref>.</p>
+<p>HP Helion Public Cloud Block Storage provides persistent block devices that can be attached to <xref href="nova-api.dita" >HP Helion Public Cloud Compute instances</xref>. HP Helion Public Cloud Block Storage volumes can be created in sizes from 1GB to 2047GB. Volumes attached to instances can be used as standard block devices. As volumes areexposed as standard block devices, the user is responsible for partitioning them and creating filesystems on them. There are no limitations on whatfilesystems can be created on volumes other than those imposed by the operating system running on the instance to which to volume is attached. Volumes persistuntil the user deletes them. A volume can only be attached to one instance at a time.</p>
+  <p>HP Helion Public Cloud Block Storage provides data durability with volume snapshots and volume backups. Snapshots capture the point in time state of a volume and are quick to create. A volume from which snapshots have been created cannot be deleted while any of these snapshots remains in existence. To use a snapshot, the user must create a new volume from the snapshot. Backups are full copies of volumes stored to <xref href="swift-api.dita">HP Helion Public Cloud Object Storage</xref>. Since they are full copies, they take longer to create than snapshots. Backups are independent of the original volume once created and are intended for archival and disaster recovery purposes.</p>
+<p>HP Helion Public Cloud Block Storage also supports bootable volumes, volumes which are pre-initialized with an operating system image.</p>
+<p>We will be referring to HP Helion Public Cloud Block Storage in this document as simply Block Storage or Block Storage service.</p>
+</section>
+<section id="11-api-maturity-level"> <title>1.1 API Maturity Level</title>
+<p>
+<b>Maturity Level</b>: <i>GA</i> (Block Storage is General Availability)</p>
+<p>
+<b>Version API Status</b>: <i>CURRENT</i>
+</p>
+</section>
+<section id="12-document-revision-history"> <title>1.2 Document Revision History</title>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Version</entry>
+  <entry align="left">Date</entry>
+  <entry align="left">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">1.0</entry>
+  <entry align="left">27-Mar-2013</entry>
+  <entry align="left">Initial draft.</entry>
+</row>
+<row>
+<entry align="left">1.1</entry>
+  <entry align="left">02-May-2013</entry>
+  <entry align="left">Added details of volume cloning to <xref type="section" href="#topic65119/create_volume">create volume</xref>.</entry>
+</row>
+<row>
+<entry align="left">1.2</entry>
+  <entry align="left">06-Jun-2013</entry>
+  <entry align="left">Updated sections on volume snapshots to note volumes must be in an available state. Clarified that volumes with snapshots cannot be deleted. Added the additional availability zone az3. Changed the BASE_URI variable used in the curl examples to HOST_URI to avoid confusion with the BaseURI field used in the document. Updated from v1.1 to v2 for HP Helion Compute Service API Operations. Various other minor corrections.</entry>
+</row>
+<row>
+<entry align="left">1.3</entry>
+  <entry align="left">27-Aug-2013</entry>
+  <entry align="left">Added details of the limit on the maximum number of volumes and snapshots which can be created from an origin volume through any combination of create snapshot from volume, create volume from snapshot and clone volume operations. Documented the limit of 26 volumes which can be attached to a guest. Added details to 4.5.4.2 on how to reliably identify an attached volume from within a Linux guest.</entry>
+</row>
+<row>
+<entry align="left">1.4</entry>
+  <entry align="left">30-Aug-2013</entry>
+  <entry align="left">Updated references to tenant to use the term project.</entry>
+</row>
+<row>
+<entry align="left">1.5</entry>
+  <entry align="left">Apr-2014</entry>
+  <entry align="left">Updated section 3.2</entry>
+</row>
+<row>
+<entry align="left">1.6</entry>
+  <entry align="left">April 2014</entry>
+  <entry align="left">Added section 4.5.1 for Limits</entry>
+</row>
+<row>
+<entry align="left">1.7</entry>
+  <entry align="left">May 2014</entry>
+  <entry align="left">HP Helion updates</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="13-changes-from-first-gen-api-to-next-gen-api"> <title>1.3 Changes from First Gen API to Next Gen API</title>
+<ul>
+<li>Block Storage API status has changed from <i>Public Beta</i> to <i>General Availability</i>.</li>
+<li>All operations now support XML output (in addition to existing JSON output).</li>
+<li>Block Storage API requests are now cross-AZ, requests no longer need to be sent to individual AZ endpoints.</li>
+<li>Create volume requests can specify the AZ to use, defaulting to AZ2.</li>
+<li>Volumes can only be attached to instances in the same AZ. Similarly, Boot from volume instances can only be created in the same
+AZ as the bootable volume.</li>
+<li>Block Storage API endpoints changed from <i>az</i>.<i>region</i>.<i>geo</i>.compute.hpcloudsvc.com to <i>region</i>.<i>geo</i>.block.hpcloudsvc.com.</li>
+<li>List volume backups and get volume backups use name instead of display_name.</li>
+<li>List volume backups and get volume backups use description instead of display_description.</li>
+<li>Backups API URI changed from /hp-volume-backups to /backups</li>
+</ul>
+</section>
+<section id="2-architecture-view"> <title>2. Architecture View</title>
+</section>
+<section id="21-overview"> <title>2.1 Overview</title>
+<p>The Block Storage API is implemented as a set of RESTful web services. All volume, snapshot and backup operations can be performed with standard HTTP calls. See the <xref href="http://en.wikipedia.org/wiki/REST" scope="external" format="html" >Wikipedia article on REST</xref>  for more information.</p>
+</section>
+<section id="22-resources"> <title>2.2 Resources</title>
+<p>The Block Storage API allows the management of the following resources:</p>
+<ul>
+<li>
+<xref type="section" href="#topic65119/volume_resource">Volumes</xref>
+</li>
+<li>
+<xref type="section" href="#topic65119/volume_snapshot_resource">Volume Snapshots</xref>
+</li>
+<li>
+<xref type="section" href="#topic65119/volume_backup_resource">Volume Backups</xref>
+</li>
+</ul>
+</section>
+<section id="volume_resource"> <title>2.2.1 Block Storage Volumes</title>
+<p>Volumes are persistent block devices provided by the Block Storage API. Data on volumes is accessed in the same way that a user accesses data on local physical block devices. On creation, volumes are in an unattached state (and the volume status is <i>available</i>). Volume size is specified at creation time and is fixed for the lifetime of the volume. Volume sizes can be from 1GB to 2047GB in units of 1GB. Volumes have an optional <i>display-name</i> and <i>display-description</i> associated with them.</p>
+<p>
+<b>Bootable volumes</b> can be created by specifying an <i>image-id</i> when creating
+a new volume. The <i>image-id</i> must refer to a suitable image available from
+the image service. The bootable volume can be used as the root file system for
+a new instance, and offers a persistent storage model to an otherwise ephemeral
+instance. An instance created from a bootable volume can be terminated without
+losing the volume or its contents (although the instance should be terminated
+using the best practices for the guest operating system to avoid the data loss which can result from the improper shutdown of any operating system). A new instance can be created from the same volume.</p>
+<p>Volumes may also be created from existing <xref type="section" href="#topic65119/volume_snapshot_resource">Volume Snapshots</xref> by specifying the <i>snapshot-id</i> at volume creation.</p>
+<p>Custom metadata may be associated with a volume at creation time using a set
+of optional key-value pairs.</p>
+</section>
+<section id="volume_snapshot_resource"> <title>2.2.2 Block Storage Volume Snapshots</title>
+<p>Volume Snapshots capture the point in time state of a volume. They are quick
+to create.  A volume from which snapshots have been created cannot be deleted while any of these snapshots remains in existence. Volumes must be in an unattached state (with a volume status of <i>available</i>) before a snapshot can be taken from them. To use a snapshot, a new volume must be created from a snapshot. Volume snapshots cannot be attached or otherwise used directly.</p>
+</section>
+<section id="volume_backup_resource"> <title>2.2.3 Block Storage Volume Backups</title>
+<p>Volume Backups are full copies of volumes stored in HP Object Storage. Since
+they are full copies, they take longer to create than snapshots. Backups are
+independent of the original volume once created and are intended for archival
+and disaster recovery purposes. Volumes must be in an unattached state (with
+a volume status of <i>available</i>) before a backup can be taken from them. To use
+a backup, the backup must be restored to a new or existing volume.</p>
+</section>
+<section id="23-conceptuallogical-architecture-view"> <title>2.3 Conceptual/Logical Architecture View</title>
+<p>The Block Storage facility consists of a,</p>
+<ul>
+<li>The Block Storage API - a RESTful API which allows users to view,
+create, delete, modify, snapshot, backup and restore volumes.</li>
+  <li>An extension to the <xref href="nova-api.dita">Compute API</xref> which allows users
+to attach/detach volumes to/from instances.</li>
+<li>The volume service which handles volume requests.</li>
+<li>The volume backup service which handles volume backup requests.</li>
+</ul>
+<p>The compute service handles the volume attach/detach requests, communicating directly with the volume service to do so.</p>
+<p>The volume backup service handles volume backup requests, communicating
+directly with the volume service and the Object Storage service to
+do so.</p>
+</section>
+<section id="3-account-level-view"> <title>3. Account-level View</title>
+</section>
+<section id="31-accounts"> <title>3.1 Accounts</title>
+<p>An account is created when a user first signs up with HP Helion Public Cloud. A <i>project</i> (with an associated <i>project_id</i>) is also created on first signing up with the cloud. All calls to the Block Storage APIs include the users
+<i>project_id</i> as part of the call. HP Helion and the OpenStack community previously used the term <i>tenant</i> to refer to the what is now known as a <i>project</i>. The terms can be used interchangeably when reviewing HP Helion documentation (this document uses the term <i>project</i>).</p>
+<p>Similarly, the references to <i>tenant_id</i> can be read as <i>project_id</i>. For upstream OpenStack tools and libraries (including <i>python-cinderclient</i> which can be used to interact with the Block Storage API), you can provide your <i>project_name</i> anywhere <i>tenant_name</i> is requested and your <i>project_id</i> anywhere <i>tenant_id</i> is requested. Similarly, where APIs return <i>tenant_id</i> or <i>tenantId</i>, this is equivalent to your <i>project_id</i>.</p>
+<p>For additional details on accounts, tenants and projects please refer to the
+  <xref href="keystone-api.dita" >Identity Service Overview</xref>.</p>
+</section>
+<section id="32-regions-and-availability-zones"> <title>3.2 Regions and Availability Zones</title>
+<p>
+<b>Region(s)</b>: region-a, region-b</p>
+<p>
+<b>Availability Zone(s)</b>: az1, az2 and az3</p>
+</section>
+<section id="33-service-catalog"> <title>3.3 Service Catalog</title>
+<p>The listing below shows a fragment of the Service Catalog returned by the
+Identity Service which contains the endpoints for Block Storage.</p>
+<codeblock>
+  <codeph>{
+endpoints: [2]
+    0:  {
+    links: {
+    self: "https://region-b.geo-1.identity.hpcloudsvc.com/v3/endpoints/13000300_P"
+    }
+    url: "https://region-b.geo-1.block.hpcloudsvc.com/v1/65589599430509"
+    region: "region-b.geo-1"
+    interface: "public"
+    service_Id: "130"
+    id: "13000300_P"
+    }
+    1:  {
+    links: {
+    self: "https://region-b.geo-1.identity.hpcloudsvc.com/v3/endpoints/130140_P"
+    }
+    url: "https://region-a.geo-1.block.hpcloudsvc.com/v1/65589599430509"
+    region: "region-a.geo-1"
+    interface: "public"
+    service_Id: "130"
+    id: "130140_P"
+    }
+type: "volume"
+id: "130"
+links: {
+self: "https://region-b.geo-1.identity.hpcloudsvc.com/v3/services/130"
+}
+name: "Block Storage"
+}
+</codeph>
+</codeblock>
+</section>
+<section id="4-rest-api-specifications"> <title>4. REST API Specifications</title>
+</section>
+<section id="service_api"> <title>4.1 Service API Operations</title>
+<p>In the following sections, a set of examples of how to use each API
+operation are provided using the <i>curl</i> command. The examples provided
+use Bourne shell style environment variables but should be easily adapted
+to Windows style environment variables if you are testing the examples
+from a Windows system.</p>
+<p>The curl examples do require the following variables to be set before
+they will work: AUTH_TOKEN, HOST_URI and PROJECT_ID. Some examples also
+use VOLUME_ID, BACKUP_ID and SERVER_ID.</p>
+<p>One easy way to retrieve the AUTH_TOKEN, HOST_URI and PROJECT_ID variables
+is to run the python novaclient or python cinderclient with the --debug
+option with a valid set of credentials configured in your environment.
+The variables can be extracted from any of the REQ lines in the debug output.
+The VOLUME_ID, BACKUP_ID and SERVER_ID will be valid IDs from the list
+of volumes, volume backups and compute instances that your user has
+access to respectively.</p>
+</section>
+<section id="411-block-storage-service-api-operations"> <title>4.1.1 Block Storage Service API Operations</title>
+<p>
+<b>Hosts</b>:<!--A BR tag was used here in the original source.-->
+https://region-a.geo-1.block.hpcloudsvc.com<!--A BR tag was used here in the original source.-->
+https://region-b.geo-1.block.hpcloudsvc.com</p>
+<p>
+<b>BaseURI</b>: {Host}/v1/{project_id}</p>
+<table>
+<tgroup cols="6">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<colspec colname="col5"/>
+<colspec colname="col6"/>
+<thead>
+<row>
+<entry align="left">Resource</entry>
+  <entry align="left">Operation</entry>
+  <entry align="left">HTTP Method</entry>
+  <entry align="left">Path</entry>
+  <entry align="left">JSON/XML?</entry>
+  <entry align="left">Privilege Level</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">
+<b>Limits</b>
+</entry>
+  <entry align="left">
+<xref type="section" href="#topic65119/list_limits">List limits</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/limits</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left">
+<b>Volumes</b>
+</entry>
+  <entry align="left">
+<xref type="section" href="#topic65119/list_volumes">List volumes</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/volumes</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/list_volumes_details">List volumes details</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/volumes/detail</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/get_volume_details">Get volume details</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/volumes/{volume_id}</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/create_volume">Create volume</xref>
+</entry>
+  <entry align="left">POST</entry>
+  <entry align="left">/volumes</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/set_volume_details">Set volume details</xref>
+</entry>
+  <entry align="left">PUT</entry>
+  <entry align="left">/volumes/{volume_id}</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/delete_volume">Delete volume</xref>
+</entry>
+  <entry align="left">DELETE</entry>
+  <entry align="left">/volumes/{volume_id}</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left">
+<b>Snapshots</b>
+</entry>
+  <entry align="left">
+<xref type="section" href="#topic65119/list_snapshots">List volume snapshots</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/snapshots</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/list_snapshots_details">List volume snapshots details</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/snapshots/detail</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/get_snapshot_details">Get volume snapshot details</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/snapshots/{snapshot_id}</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/create_snapshot">Create volume snapshot</xref>
+</entry>
+  <entry align="left">POST</entry>
+  <entry align="left">/snapshots</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/delete_snapshot">Delete volume snapshot</xref>
+</entry>
+  <entry align="left">DELETE</entry>
+  <entry align="left">/snapshots/{snapshot_id}</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left">
+<b>Backups</b>
+</entry>
+  <entry align="left">
+<xref type="section" href="#topic65119/list_backups">List volume backups</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/backups</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/list_backups_details">List volume backups details</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/backups/detail</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/get_backup_details">Get volume backup details</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/backups/{backup_id}</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/create_backup">Create volume backup</xref>
+</entry>
+  <entry align="left">POST</entry>
+  <entry align="left">/backups</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/delete_backup">Delete volume backup</xref>
+</entry>
+  <entry align="left">DELETE</entry>
+  <entry align="left">/backups/{backup_id}</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/restore_backup">Restore volume backup</xref>
+</entry>
+  <entry align="left">POST</entry>
+  <entry align="left">/backups/{backup_id}/restore</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="412-compute-service-api-operations"> <title>4.1.2 Compute Service API Operations</title>
+<p>
+<b>Hosts</b>:<!--A BR tag was used here in the original source.-->
+https://region-a.geo-1.compute.hpcloudsvc.com<!--A BR tag was used here in the original source.-->
+https://region-b.geo-1.compute.hpcloudsvc.com</p>
+<p>
+<b>BaseURI</b>: {Host}/v2/{project_id}</p>
+<table>
+<tgroup cols="6">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<colspec colname="col5"/>
+<colspec colname="col6"/>
+<thead>
+<row>
+<entry align="left">Resource</entry>
+  <entry align="left">Operation</entry>
+  <entry align="left">HTTP Method</entry>
+  <entry align="left">Path</entry>
+  <entry align="left">JSON/XML?</entry>
+  <entry align="left">Privilege Level</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">
+<b>Servers</b>
+</entry>
+  <entry align="left">
+<xref type="section" href="#topic65119/list_attached_volumes">List attached volumes</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/servers/{server_id}/os-volume_attachments</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/attach_volume">Attach a volume</xref>
+</entry>
+  <entry align="left">POST</entry>
+  <entry align="left">/servers/{server_id}/os-volume_attachments</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/detach_volume">Detach a volume</xref>
+</entry>
+  <entry align="left">DELETE</entry>
+  <entry align="left">/servers/{server_id}/os-volume_attachments/{volume_id}</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left">
+<xref type="section" href="#topic65119/get_attvolume_details">Get attached volume details</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/servers/{server_id}/os-volume_attachments/{volume_id}</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="left"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="42-common-request-headers"> <title>4.2 Common Request Headers</title>
+<p>Many operations accept request headers. This section provides an overview of
+each request header. Consult the specific operation to determine if the
+header applies to the operation and any other notes that are of interest.</p>
+</section>
+<section id="accept_request"> <title>4.2.1 Accept</title>
+<p>Where applicable, this specifies the media types which are acceptable for the
+response. The tables in <xref type="section" href="#topic65119/service_api">Service API Operations</xref> detail which
+media types are supported for each operation. Typically, all operations
+support either of the following formats:</p>
+<ul>
+<li>JSON (application/json)</li>
+<li>XML (application/xml)</li>
+</ul>
+<p>The response format can also be specified by adding a <i>.json</i> or <i>.xml</i>
+extension to the request URI. If both an <i>Accept</i> header and an
+extension are used, the extension takes precedence. If no response format
+is requested, JSON is the default.</p>
+<p>For example:</p>
+<codeblock>
+  <codeph>curl -H "Accept: application/json" ...
+</codeph>
+</codeblock>
+</section>
+<section id="content_type_request"> <title>4.2.2 Content-Type</title>
+<p>Where applicable, this indicates the media type of the request body. The tables
+in <xref type="section" href="#topic65119/service_api">Service API Operations</xref> detail which formats are supported
+for each operation. Typically, all operations support either of the following
+formats:</p>
+<ul>
+<li>JSON (application/json)</li>
+<li>XML (application/xml)</li>
+</ul>
+<p>For example:</p>
+<codeblock>
+  <codeph>curl -H "Content-Type: application/json" ...
+</codeph>
+</codeblock>
+</section>
+<section id="x_auth_token_request"> <title>4.2.3 X-Auth-Token</title>
+<p>All requests to the Block Storage API must be accompanied by a token.
+This is issued by the Identity Service in response to a successful
+authentication request. Each token has a scope which describes which resources
+are accessible with it. If the token is not specified or if an invalid or
+expired token is specified, the request will fail.</p>
+</section>
+<section id="43-common-response-headers"> <title>4.3 Common Response Headers</title>
+</section>
+<section id="content_type_response"> <title>4.3.1 Content-Type</title>
+<p>When the response includes a body, this indicates the media type of the
+response body. For operations that return a body, an <xref type="section" href="#topic65119/accept_request">Accept</xref>
+request header can be used to request a JSON or XML response.</p>
+</section>
+<section id="content_length_response"> <title>4.3.2 Content-Length</title>
+<p>When the response includes a body, this indicates the length of the body in
+bytes.</p>
+</section>
+<section id="date_response"> <title>4.3.3 Date</title>
+<p>When supplied, the Date header is the time of the operation expressed in GMT
+(effectively UTC) as shown in the following example:</p>
+<codeblock>
+  <codeph>  HTTP/1.1 200 OK
+  Date: Sun, 06 Nov 1994 08:49:37 GMT
+</codeph>
+</codeblock>
+</section>
+<section id="request_id_response"> <title>4.3.4 X-Compute-Request-Id</title>
+<p>The Block Storage API generates a unique id for each request received.
+This id is reported in the response with the <i>X-Compute-Request-Id</i> header and
+can be used by support to track individual requests within the system in the
+event of a failure.</p>
+</section>
+<section id="44-error-responses"> <title>4.4 Error Responses</title>
+<p>When an error occurs at request time, the system will return an HTTP
+error response code denoting the type of error. The system will also
+return additional information about the fault in the body of the
+response.</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "badRequest": {
+        "code": 400
+        "message": "Malformed request body",
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;badRequest code="400"
+xmlns="http://docs.openstack.org/volume/api/v1"&gt;
+  &lt;message&gt;Malformed request body&lt;/message&gt;
+&lt;/badRequest&gt;
+</codeph>
+</codeblock>
+<p>The error code is returned in the body of the response for convenience.
+The message section returns a human-readable message that is appropriate
+for display to the end user.</p>
+<p>The following error codes are used by Block Storage.</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Notes</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">5xx Server Error</entry>
+  <entry align="left">Response codes starting with 5 indicate the server has experienced an error and cannot process the request.</entry>
+  <entry align="left">Retry the request after a short delay. Contact Public Cloud support if the error persists.</entry>
+</row>
+<row>
+<entry align="left">400 Bad Request</entry>
+  <entry align="left">The request could not be processed by the server due to malformed syntax.</entry>
+  <entry align="left">Fix the request.</entry>
+</row>
+<row>
+<entry align="left">401 Unauthorized</entry>
+  <entry align="left">This usually means that the <xref type="section" href="#topic65119/x_auth_token_request">authorization token</xref> is missing, invalid or expired.</entry>
+  <entry align="left">Supply a valid token, possibly by request a new one with valid credentials.</entry>
+</row>
+<row>
+<entry align="left">403 Forbidden</entry>
+  <entry align="left">The request was a valid request, you do not have the appropriate access rights to the resource.</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left">404 Not Found</entry>
+  <entry align="left">The requested resource could not be found.</entry>
+  <entry align="left">Either your are using an incorrect url or the resource request never existed or has been deleted.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>The OverLimit fault is generated when any limit threshold is exceeded. Limits
+can be either transient limits (the number of requests allowed per second) or
+static limits (the number of volumes or backups allowed for a particular
+project).</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "overLimit" : {
+        "code" : 413,
+        "message" : "This request was rate-limited."
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;overLimit
+    xmlns="http://docs.openstack.org/compute/api/v1.1"
+    code="413"&gt;
+  &lt;message&gt;This request was rate-limited.&lt;/message&gt;
+&lt;/overLimit&gt;
+</codeph>
+</codeblock>
+</section>
+<section id="45-service-api-operation-details"> <title>4.5 Service API Operation Details</title>
+</section>
+<section id="451-limits-limits"> <title>4.5.1 Limits #### {limits}</title>
+</section>
+<section id="list_limits"> <title>4.5.1.1 List limits</title>
+</section>
+<section id="get-limits"> <title>GET /limits</title>
+<p>Returns current limits for the project.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    limits: {
+    rate: [0]
+    absolute: {
+        maxTotalVolumeGigabytes: 3000
+        maxTotalVolumes: 20
+        }
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='UTF-8' ?&gt;
+&lt;limits&gt;
+&lt;rates /&gt;
+    &lt;absolute&gt;
+        &lt;limit name="maxTotalVolumeGigabytes" value="3000" /&gt;
+        &lt;limit name="maxTotalVolumes" value="20" /&gt;
+    &lt;/absolute&gt;
+&lt;/limits&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/limits
+</codeph>
+</codeblock>
+</section>
+<section id="volumes"> <title>4.5.2 Volumes</title>
+<p>See <xref type="section" href="#topic65119/volume_resource">Block Storage Volumes</xref> for details.</p>
+<p>
+  <b>Status Lifecycle</b>
+</p>
+<p>
+<i>creating</i> =&gt; <i>available</i> (creation of standard volume)</p>
+<p>
+<i>downloading</i> =&gt; <i>available</i> (creation of bootable volume)</p>
+<p>
+<i>available</i> =&gt; <i>attaching</i> (during attach)</p>
+<p>
+<i>attaching</i> =&gt; <i>in-use</i> (after attach)</p>
+<p>
+<i>in-use</i> =&gt; <i>detaching</i> (during detach)</p>
+<p>
+<i>detaching</i> =&gt; <i>available</i> (after detach)</p>
+<p>
+<i>available</i> =&gt; <i>backing-up</i> (during volume backup creation)</p>
+<p>
+<i>available</i> =&gt; <i>restoring-backup</i> (during volume backup restore)</p>
+<p>In the event of an error the status can be  set to <i>error</i>. If an error occurs
+ during attach, the status is set to <i>error_attaching</i>  and if an error occurs
+during detach, the volume status is set to <i>error_detaching</i>. If an error occurs 
+while restoring  a backup to a volume, the volume status is set to <i>error_restoring</i>.</p>
+<p>
+  <b>Rate Limits</b>
+</p>
+<p>The Block Storage API has a limit of 1 call per second for each project.</p>
+<p>
+  <b>Quota Limits</b>
+</p>
+<p>The quota as configured for the project governs the size of the volume that can
+be created. An exception will be raised if quota is exceeded. Sample exception:</p>
+<codeblock>
+  <codeph>413 Request Entity Too Large
+{
+    "overLimit": {
+        "code": 413,
+        "message": "VolumeSizeExceedsAvailableQuota: Requested volume or snapshot exceeds allowed Gigabytes quota",
+        "retryAfter": 0
+    }
+}
+</codeph>
+</codeblock>
+<p>The error reported to the user when using the standard python-cinderclient is:</p>
+<codeblock>
+  <codeph>"ERROR: VolumeLimitExceeded: Maximum number of volumes allowed (10) exceeded"
+</codeph>
+</codeblock>
+<p>when the number of volumes quota is exceeded and:</p>
+<codeblock>
+  <codeph>"ERROR: VolumeSizeExceedsAvailableQuota: Requested volume or snapshot exceeds allowed Gigabytes quota"
+</codeph>
+</codeblock>
+<p>when the volume size quota is exceed.</p>
+<p>The default per-project quotas are as follows:</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<thead>
+<row>
+<entry align="left">Resource</entry>
+  <entry align="left">Quota</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">
+<b>Total No. of Volumes and Snapshots</b>
+</entry>
+  <entry align="left">10</entry>
+</row>
+<row>
+<entry align="left">
+<b>Total Storage (GB)</b>
+</entry>
+  <entry align="left">3000</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Business Rules</b>
+</p>
+<p>There is an additional limit on the maximum number of volumes and snapshots which can
+be created from an origin volume through any combination of create snapshot from
+volume, create volume from snapshot and clone volume operations. The maximum number
+of such operations that be performed on any one volume is currently 10. Attempting
+to perform additional create snapshot, create volume from snapshot or clone volume
+operations after hitting this limit will result in the created resources going into
+an error state.</p>
+</section>
+<section id="list_volumes"> <title>4.5.2.1 List volumes</title>
+</section>
+<section id="get-volumes"> <title>GET /volumes</title>
+<p>Lists volumes for this project.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "volumes": [
+        {
+            "attachments": [], 
+            "availability_zone": "az1", 
+            "bootable": "false", 
+            "created_at": "2013-01-23T11:25:03.000000", 
+            "display_description": "test volume 1", 
+            "display_name": "testvol01", 
+            "id": "128a2078-0de3-4ff2-bf9f-d315e91fe3bb", 
+            "metadata": {}, 
+            "size": 200, 
+            "snapshot_id": null, 
+            "source_volid": null, 
+            "status": "available", 
+            "volume_type": "None"
+        }, 
+        {
+            "attachments": [
+                {
+                    "device": "/dev/vdd", 
+                    "id": "29b53979-c09d-4944-a170-5430aac864df", 
+                    "server_id": "c31ae64f-03d4-4bc9-b2bf-06f80db0ff62", 
+                    "volume_id": "29b53979-c09d-4944-a170-5430aac864df"
+                }
+            ], 
+            "availability_zone": "az1", 
+            "bootable": "true", 
+            "created_at": "2013-01-21T16:36:19.000000", 
+            "display_description": "test volume 1", 
+            "display_name": "testvol01", 
+            "id": "29b53979-c09d-4944-a170-5430aac864df", 
+            "metadata": {}, 
+            "size": 5, 
+            "snapshot_id": null, 
+            "source_volid": null, 
+            "status": "in-use", 
+            "volume_type": "None"
+        }, 
+        {
+            "attachments": [], 
+            "availability_zone": "az1", 
+            "bootable": "false", 
+            "created_at": "2013-01-21T14:32:27.000000", 
+            "display_description": null, 
+            "display_name": null, 
+            "id": "d9f5479a-a9af-4e96-b418-0d9a602a8b03", 
+            "metadata": {}, 
+            "size": 2, 
+            "snapshot_id": "2ee9a7ed-48f3-481c-a20e-6c53bf08c067", 
+            "source_volid": null, 
+            "status": "available", 
+            "volume_type": "None"
+        }, 
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" ?&gt;
+&lt;volumes xmlns="http://docs.openstack.org/volume/api/v1" xmlns:atom="http://www.w3.org/2005/Atom"&gt;
+    &lt;volume availability_zone="nova" created_at="2013-01-23 11:25:03" display_description="None" display_name="None" id="128a2078-0de3-4ff2-bf9f-d315e91fe3bb" size="200" snapshot_id="None" source_volid="None" status="error" volume_type="None"&gt;
+        &lt;attachments/&gt;
+        &lt;metadata/&gt;
+    &lt;/volume&gt;
+    &lt;volume availability_zone="nova" created_at="2013-01-21 16:36:19" display_description="None" display_name="None" id="29b53979-c09d-4944-a170-5430aac864df" size="5" snapshot_id="None" source_volid="None" status="in-use" volume_type="None"&gt;
+        &lt;attachments&gt;
+            &lt;attachment device="/dev/vdd" id="29b53979-c09d-4944-a170-5430aac864df" server_id="c31ae64f-03d4-4bc9-b2bf-06f80db0ff62" volume_id="29b53979-c09d-4944-a170-5430aac864df"/&gt;
+        &lt;/attachments&gt;
+        &lt;metadata/&gt;
+    &lt;/volume&gt;
+    &lt;volume availability_zone="nova" created_at="2013-01-21 14:32:27" display_description="None" display_name="None" id="d9f5479a-a9af-4e96-b418-0d9a602a8b03" size="2" snapshot_id="2ee9a7ed-48f3-481c-a20e-6c53bf08c067" source_volid="None" status="available" volume_type="None"&gt;
+        &lt;attachments/&gt;
+        &lt;metadata/&gt;
+    &lt;/volume&gt;
+    &lt;volume availability_zone="nova" created_at="2013-01-17 11:39:56" display_description="None" display_name="None" id="9b93609e-229f-4e99-8f1e-721fcd86e7db" size="1" snapshot_id="None" source_volid="None" status="available" volume_type="None"&gt;
+        &lt;attachments/&gt;
+        &lt;metadata/&gt;
+    &lt;/volume&gt;
+&lt;/volumes&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/volumes
+</codeph>
+</codeblock>
+</section>
+<section id="list_volumes_details"> <title>4.5.2.2 List volumes details</title>
+</section>
+<section id="get-volumesdetail"> <title>GET /volumes/detail</title>
+<p>Lists volumes for this project, providing more detail about each volume
+than <xref type="section" href="#topic65119/list_volumes">List volumes</xref>.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "volumes": [
+        {
+            "attachments": [], 
+            "availability_zone": "az1", 
+            "bootable": "false", 
+            "created_at": "2013-01-23T11:25:03.000000", 
+            "display_description": "test volume 1", 
+            "display_name": "testvol01", 
+            "id": "128a2078-0de3-4ff2-bf9f-d315e91fe3bb", 
+            "metadata": {}, 
+            "size": 200, 
+            "snapshot_id": null, 
+            "source_volid": null, 
+            "status": "error", 
+            "volume_type": "None"
+        }, 
+        {
+            "attachments": [
+                {
+                    "device": "/dev/vdd", 
+                    "id": "29b53979-c09d-4944-a170-5430aac864df", 
+                    "server_id": "c31ae64f-03d4-4bc9-b2bf-06f80db0ff62", 
+                    "volume_id": "29b53979-c09d-4944-a170-5430aac864df"
+                }
+            ], 
+            "availability_zone": "az1", 
+            "bootable": "true", 
+            "created_at": "2013-01-21T16:36:19.000000", 
+            "display_description": "test volume 2", 
+            "display_name": "testvol02", 
+            "id": "29b53979-c09d-4944-a170-5430aac864df", 
+            "metadata": {}, 
+            "size": 5, 
+            "snapshot_id": null, 
+            "source_volid": null, 
+            "status": "in-use", 
+            "volume_image_metadata": {
+                "image_id": "62560ce2-ee31-4ee6-bc9b-81a98fd3d52b", 
+                "image_name": "precise-server-cloudimg-i386"
+            }, 
+            "volume_type": "None"
+        }, 
+        {
+            "attachments": [], 
+            "availability_zone": "az1", 
+            "bootable": "false", 
+            "created_at": "2013-01-21T14:32:27.000000", 
+            "display_description": null, 
+            "display_name": null, 
+            "id": "d9f5479a-a9af-4e96-b418-0d9a602a8b03", 
+            "metadata": {}, 
+            "size": 2, 
+            "snapshot_id": "2ee9a7ed-48f3-481c-a20e-6c53bf08c067", 
+            "source_volid": null, 
+            "status": "available", 
+            "volume_type": "None"
+        }, 
+        {
+            "attachments": [], 
+            "availability_zone": "az1", 
+            "bootable": "false", 
+            "created_at": "2013-01-17T11:39:56.000000", 
+            "display_description": null, 
+            "display_name": null, 
+            "id": "9b93609e-229f-4e99-8f1e-721fcd86e7db", 
+            "metadata": {}, 
+            "size": 1, 
+            "snapshot_id": null, 
+            "source_volid": null, 
+            "status": "available", 
+            "volume_type": "None"
+        }
+    ]
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" ?&gt;
+volumes xmlns="http://docs.openstack.org/volume/api/v1" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:os-vol-image-meta="http://docs.openstack.org/volume/ext/volume_image_metadata/api/v1"&gt;
+   &lt;volume availability_zone="nova" created_at="2013-01-23 11:25:03" display_description="None" display_name="None" id="128a2078-0de3-4ff2-bf9f-d315e91fe3bb" size="200" snapshot_id="None" source_volid="None" status="error" volume_type="None"&gt;
+       &lt;attachments/&gt;
+       &lt;metadata/&gt;
+   &lt;/volume&gt;
+   &lt;volume availability_zone="nova" created_at="2013-01-21 16:36:19" display_description="None" display_name="None" id="29b53979-c09d-4944-a170-5430aac864df" size="5" snapshot_id="None" source_volid="None" status="in-use" volume_type="None"&gt;
+       &lt;attachments&gt;
+           &lt;attachment device="/dev/vdd" id="29b53979-c09d-4944-a170-5430aac864df" server_id="c31ae64f-03d4-4bc9-b2bf-06f80db0ff62" volume_id="29b53979-c09d-4944-a170-5430aac864df"/&gt;
+       &lt;/attachments&gt;
+       &lt;metadata/&gt;
+       &lt;volume_image_metadata&gt;
+           &lt;meta key="image_id"&gt;62560ce2-ee31-4ee6-bc9b-81a98fd3d52b&lt;/meta&gt;
+           &lt;meta key="image_name"&gt;precise-server-cloudimg-i386&lt;/meta&gt;
+       &lt;/volume_image_metadata&gt;
+   &lt;/volume&gt;
+   &lt;volume availability_zone="nova" created_at="2013-01-21 14:32:27" display_description="None" display_name="None" id="d9f5479a-a9af-4e96-b418-0d9a602a8b03" size="2" snapshot_id="2ee9a7ed-48f3-481c-a20e-6c53bf08c067" source_volid="None" status="available" volume_type="None"&gt;
+       &lt;attachments/&gt;
+       &lt;metadata/&gt;
+   &lt;/volume&gt;
+   &lt;volume availability_zone="nova" created_at="2013-01-17 11:39:56" display_description="None" display_name="None" id="9b93609e-229f-4e99-8f1e-721fcd86e7db" size="1" snapshot_id="None" source_volid="None" status="available" volume_type="None"&gt;
+       &lt;attachments/&gt;
+       &lt;metadata/&gt;
+   &lt;/volume&gt;
+/volumes&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Examples</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/volumes/detail
+</codeph>
+</codeblock>
+</section>
+<section id="get_volume_details"> <title>4.5.2.3 Get volume details</title>
+</section>
+<section id="get-volumesvolume-id"> <title>GET /volumes/{volume_id}</title>
+<p>Gets the details of the volume specified by {volume_id}.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+<li>
+<i>volume_id</i> - The identifier for the volume.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "volume": {
+        "attachments": [], 
+        "availability_zone": "az1", 
+        "bootable": "false", 
+        "created_at": "2013-01-17T11:39:56.000000", 
+        "display_description": null, 
+        "display_name": null, 
+        "id": "9b93609e-229f-4e99-8f1e-721fcd86e7db", 
+        "metadata": {}, 
+        "size": 1, 
+        "snapshot_id": null, 
+        "source_volid": null, 
+        "status": "available", 
+        "volume_type": "None"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" ?&gt;
+&lt;volume availability_zone="nova" created_at="2013-01-17 11:39:56" display_description="None" display_name="None" id="9b93609e-229f-4e99-8f1e-721fcd86e7db" size="1" snapshot_id="None" source_volid="None" status="available" volume_type="None" xmlns="http://docs.openstack.org/volume/api/v1" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:os-vol-image-meta="http://docs.openstack.org/volume/ext/volume_image_metadata/api/v1"&gt;
+    &lt;attachments/&gt;
+    &lt;metadata/&gt;
+&lt;/volume&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Examples</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/volumes/{volume_id}
+</codeph>
+</codeblock>
+</section>
+<section id="create_volume"> <title>4.5.2.4 Create volume</title>
+</section>
+<section id="post-volumes"> <title>POST /volumes</title>
+<p>Create a new volume of a given size in the specified <i>availability_zone</i>.
+If <i>availability_zone</i> is not specified, it defaults to <i>az2</i>.</p>
+<p>If <i>snapshot_id</i> is specified, then the volume created is a copy
+of the specified snapshot. If the <i>imageRef</i> parameter is specified
+then a bootable volume is created using the specified image for the
+volume. If the <i>source_volid</i> is specified, then the volume created
+is a copy or clone of the specified source volume.</p>
+<p>If the <i>imageRef</i> parameter is specified, the <i>size</i> specified for the
+volume needs to be sufficiently large to accomodate the size of the
+specified image, specifying an inadequate size will result in an
+error.</p>
+<p>If the <i>source_volid</i> parameter is specified, the specified volume
+must be in the <i>available</i> state, specifying a volume which is not
+in an <i>available</i> state will result in an error.</p>
+<p>The <i>snapshot_id</i>, <i>source_volid</i> and <i>imageRef</i> parameters are
+mutually exclusive and only one should be specified in a request.
+Specifying values for more than one of these in the same request
+will result in an error.</p>
+<p>The <i>volume_type</i> defaults to <i>standard</i> which is currently the only
+supported type.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<ul>
+<li>
+<i>availability_zone</i> (Optional) - string - The availability zone (az1, az2 or az3)</li>
+<li>
+<i>display_description</i> (Optional) - string - Description for the volume</li>
+<li>
+<i>display_name</i> (Optional) - string - Name of the volume</li>
+<li>
+<i>imageRef</i> (Optional) - string - Id of an image service image from which to create the volume</li>
+<li>
+<i>metadata</i> (Optional) - hash or dictionary - Metadata key/value pairs</li>
+<li>
+<i>size</i> - (Optional if <i>snapshot_id</i> is specified) - integer - Size of the volume in GB</li>
+<li>
+<i>snapshot_id</i> (Optional) - string - Id of a volume snapshot from which to create the volume</li>
+<li>
+<i>source_volid</i> (Optional) - string - Id of a volume from which to create the volume</li>
+<li>
+<i>volume_type</i> (Optional) - string - The volume type</li>
+</ul>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "volume":{
+        "availability_zone": "az2", 
+        "size":1,
+        "display_description": "test volume 1", 
+        "display_name": "testvol01"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;volume availability_zone="nova" size="1"/&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "volume": {
+        "attachments": [], 
+        "availability_zone": "az2", 
+        "bootable": "false", 
+        "created_at": "2013-01-30T13:38:50.411386", 
+        "display_description": "test volume 1", 
+        "display_name": "testvol01",
+        "id": "b6f6b5fb-ba09-44c9-a263-b4acbdbf1d38", 
+        "metadata": {}, 
+        "size": 1, 
+        "snapshot_id": null, 
+        "source_volid": null, 
+        "status": "creating", 
+        "volume_type": "None"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;volume xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns="http://docs.openstack.org/volume/api/v1" status="creating"
+    display_name="testvol01" availability_zone="nova"
+    created_at="2013-01-30 13:50:55.134360" display_description="test volume 1"
+    volume_type="None" snapshot_id="None" source_volid="None"
+    id="8276e101-2d67-4e67-b63f-78b3a34e678c" size="1"&gt;
+  &lt;attachments /&gt;
+  &lt;metadata /&gt;
+&lt;/volume&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"volume":{"availability_zone": "{az}","size":{size},"display_description": "{description}","display_name": "{display_name}"}}' {BaseURI}/volumes
+</codeph>
+</codeblock>
+</section>
+<section id="set_volume_details"> <title>4.5.2.5 Set volume details</title>
+</section>
+<section id="put-volumesvolume-id"> <title>PUT /volumes/{volume_id}</title>
+<p>Modify the details of an existing volume. Details that can be
+modified are <i>display_description</i>, <i>display_name</i> and 
+<i>metadata</i>. All of these are optional.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+<li>
+<i>volume_id</i> - The identifier for the volume.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<ul>
+<li>
+<i>display_description</i> (Optional) - string - Description for the volume</li>
+<li>
+<i>display_name</i> (Optional) - string - Name of the volume</li>
+<li>
+<i>metadata</i> (Optional) - hash or dictionary - Metadata key/value pairs</li>
+</ul>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "volume":{
+        "display_description": "new description"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;volume display_description="new description"/&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "volume": {
+        "attachments": [], 
+        "availability_zone": "az1", 
+        "bootable": "false", 
+        "created_at": "2013-04-02T14:38:47.000000", 
+        "display_description": "new description", 
+        "display_name": "testvol01", 
+        "id": "d4a389d4-1612-409e-9e6b-d72c99c66a47", 
+        "metadata": {}, 
+        "size": 1, 
+        "snapshot_id": null, 
+        "source_volid": null, 
+        "status": "available", 
+        "volume_type": "None"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;volume xmlns:atom="http://www.w3.org/2005/Atom"
+xmlns="http://docs.openstack.org/volume/api/v1" status="available"
+display_name="testvol01" availability_zone="az1"
+created_at="2013-04-02 14:38:47"
+display_description="new description" volume_type="None"
+snapshot_id="None" source_volid="None"
+id="d4a389d4-1612-409e-9e6b-d72c99c66a47" size="1"&gt;
+&lt;attachments /&gt;
+&lt;metadata /&gt;
+&lt;/volume&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Examples</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"volume":{"display_description": "{description}"}}' {BaseURI}/volumes/{volume_id}
+</codeph>
+</codeblock>
+</section>
+<section id="delete_volume"> <title>4.5.2.6 Delete volume</title>
+</section>
+<section id="delete-volumesvolume-id"> <title>DELETE /volumes/{volume_id}</title>
+<p>Delete the volume specified by {volume_id}.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+<li>
+<i>volume_id</i> - The identifier for the volume.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>202 - Accepted</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>This call does not return a response body.</p>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/volumes/{volume_id}
+</codeph>
+</codeblock>
+</section>
+<section id="453-volume-snapshots"> <title>4.5.3 Volume Snapshots</title>
+<p>See <xref type="section" href="#topic65119/volume_snapshot_resource">Block Storage Volume Snapshots</xref> for details.</p>
+<p>
+  <b>Status Lifecycle</b>
+</p>
+<p>
+<i>creating</i> =&gt; <i>available</i> (after creation)</p>
+<p>In the event of an error status is set to <i>error</i>.</p>
+<p>
+  <b>Rate Limits</b>
+</p>
+<p>The Block Storage API has a limit of 1 call per second for each project.</p>
+<p>
+  <b>Quota Limits</b>
+</p>
+<p>The quota limits for snapshots are part of the quota limits for volumes, see
+<i>Quota Limits</i> in <xref type="section" href="#topic65119/volumes">Block Storage Volumes</xref> for details.</p>
+<p>
+  <b>Business Rules</b>
+</p>
+<p>A volume from which snapshots have been created cannot be deleted while
+any of these snapshots remains in existence. After you create a volume
+from a snapshot you can delete the snapshot and continue to work with the
+volume. You can not create a snapshot from a volume that is attached to a server.</p>
+<p>See <i>Business Rules</i> in <xref type="section" href="#topic65119/volumes">Block Storage Volumes</xref> for some
+additional limits on the total number of snapshots that can be created from
+a volume (and volumes that can be created from that snapshot).</p>
+</section>
+<section id="list_snapshots"> <title>4.5.3.1 List volume snapshots</title>
+</section>
+<section id="get-snapshots"> <title>GET /snapshots</title>
+<p>Lists volume snapshots for this project. At the moment this returns the
+same information as <xref type="section" href="#topic65119/list_snapshots_details">List volume snapshots details</xref>,
+this operation may change in the future to return less information.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "snapshots": [
+        {
+            "created_at": "2013-01-30T16:44:13.000000", 
+            "display_description": null, 
+            "display_name": null, 
+            "id": "0500944b-1179-4b1c-9f31-b3f0da8e669c", 
+            "metadata": {},
+            "size": 1, 
+            "status": "available", 
+            "volume_id": "64f5d2fb-d836-4063-b7e2-544d5c1ff607"
+        }, 
+        {
+            "created_at": "2013-01-30T16:41:58.000000", 
+            "display_description": null, 
+            "display_name": null, 
+            "id": "e45fed49-801d-4a61-8927-5c8005a1c584", 
+            "metadata": {},
+            "size": 1, 
+            "status": "available", 
+            "volume_id": "64f5d2fb-d836-4063-b7e2-544d5c1ff607"
+        }
+    ]
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;snapshots&gt;
+  &lt;snapshot status="available" display_name="None"
+  created_at="2013-01-30 16:44:13" display_description="None"
+  volume_id="64f5d2fb-d836-4063-b7e2-544d5c1ff607"
+  id="0500944b-1179-4b1c-9f31-b3f0da8e669c" size="1"&gt;
+    &lt;metadata /&gt;
+  &lt;/snapshot&gt;
+  &lt;snapshot status="available" display_name="None"
+  created_at="2013-01-30 16:41:58" display_description="None"
+  volume_id="64f5d2fb-d836-4063-b7e2-544d5c1ff607"
+  id="e45fed49-801d-4a61-8927-5c8005a1c584" size="1"&gt;
+    &lt;metadata /&gt;
+  &lt;/snapshot&gt;
+&lt;/snapshots&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Examples</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/snapshots
+</codeph>
+</codeblock>
+</section>
+<section id="list_snapshots_details"> <title>4.5.3.2 List volumes snapshots details</title>
+</section>
+<section id="get-snapshotsdetail"> <title>GET /snapshots/detail</title>
+<p>Lists volume snapshots for this project. At the moment this returns the
+same information as <xref type="section" href="#topic65119/list_snapshots">List volume snapshots</xref>. This
+operation will always return detailed information (while
+<xref type="section" href="#topic65119/list_snapshots">List volume snapshots</xref> may change in the future to
+return less information).</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "snapshots": [
+        {
+            "created_at": "2013-03-28T13:09:55.000000", 
+            "display_description": null, 
+            "display_name": null, 
+            "id": "cb6519c5-1990-4b3d-803f-2aa9679e3c4f", 
+            "metadata": {}, 
+            "size": 1, 
+            "status": "available", 
+            "volume_id": "fef2fa3d-19db-4fcc-8228-b1cebf1b2244"
+        }, 
+        {
+            "created_at": "2013-03-29T11:56:44.000000", 
+            "display_description": null, 
+            "display_name": null, 
+            "id": "ed1ea8aa-4440-44ee-a643-9e280ee445e4", 
+            "metadata": {}, 
+            "size": 1, 
+            "status": "error", 
+            "volume_id": "48a24407-4c94-46ea-a577-ad71907af2c2"
+        }
+    ]
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;snapshots&gt;
+  &lt;snapshot status="available" display_name="None"
+  created_at="2013-03-28 13:09:55" display_description="None"
+  volume_id="fef2fa3d-19db-4fcc-8228-b1cebf1b2244"
+  id="cb6519c5-1990-4b3d-803f-2aa9679e3c4f" size="1"&gt;
+    &lt;metadata /&gt;
+  &lt;/snapshot&gt;
+  &lt;snapshot status="error" display_name="None"
+  created_at="2013-03-29 11:56:44" display_description="None"
+  volume_id="48a24407-4c94-46ea-a577-ad71907af2c2"
+  id="ed1ea8aa-4440-44ee-a643-9e280ee445e4" size="1"&gt;
+    &lt;metadata /&gt;
+  &lt;/snapshot&gt;
+&lt;/snapshots&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Examples</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/snapshots/detail
+</codeph>
+</codeblock>
+</section>
+<section id="get_snapshot_details"> <title>4.5.3.3 Get volume snapshot details</title>
+</section>
+<section id="get-snapshotssnapshot-id"> <title>GET /snapshots/{snapshot_id}</title>
+<p>Gets the details of the snapshot specified by <i>snapshot_id</i>.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+<li>
+<i>snapshot_id</i> - The identifier for the snapshot.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "snapshot": {
+        "created_at": "2013-01-30T17:37:06.000000", 
+        "display_description": null, 
+        "display_name": null, 
+        "id": "49bfe04f-32c6-4804-805d-9c3d0040a11f", 
+        "metadata": {}, 
+        "size": 1, 
+        "status": "available", 
+        "volume_id": "64f5d2fb-d836-4063-b7e2-544d5c1ff607"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;snapshot xmlns:os-extended-snapshot-attributes="http://docs.openstack.org/volume/ext/extended_snapshot_attributes/api/v1"
+status="available" display_name="None"
+created_at="2013-01-30 17:37:06" display_description="None"
+volume_id="64f5d2fb-d836-4063-b7e2-544d5c1ff607"
+id="49bfe04f-32c6-4804-805d-9c3d0040a11f" size="1"&gt;
+    &lt;metadata /&gt;
+&lt;/snapshot&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/snapshots/{snapshot_id}
+</codeph>
+</codeblock>
+</section>
+<section id="create_snapshot"> <title>4.5.3.4 Create volume snapshot</title>
+</section>
+<section id="post-snapshots"> <title>POST /snapshots</title>
+<p>Create a new snapshot of the specified volume.</p>
+<p>The snapshot will be created in the <i>availability_zone</i> of the specified
+volume.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<ul>
+<li>
+<i>display_description</i> (Optional) - string - Description for the snapshot</li>
+<li>
+<i>display_name</i> (Optional) - string - Name of the snapshot</li>
+<li>
+<i>force</i> (Optional) - boolean - Defaults to false.</li>
+<li>
+<i>volume_id</i> - string - Id of the volume from which to create the snapshot</li>
+</ul>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "snapshot": {
+        "display_description": null, 
+        "display_name": null, 
+        "force": false, 
+        "volume_id": "64f5d2fb-d836-4063-b7e2-544d5c1ff607"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;snapshot display_name="None" display_description="None"
+force="false" volume_id="64f5d2fb-d836-4063-b7e2-544d5c1ff607"/&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "snapshot": {
+        "created_at": "2013-01-30T19:15:22.014175", 
+        "display_description": null, 
+        "display_name": null, 
+        "id": "64f0946c-2863-4392-afe3-94f3f600f5e8",
+        "metadata": {},
+        "size": 1, 
+        "status": "creating", 
+        "volume_id": "64f5d2fb-d836-4063-b7e2-544d5c1ff607"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;snapshot status="creating" display_name="None"
+created_at="2013-01-30 19:16:10.149951" display_description="None"
+volume_id="64f5d2fb-d836-4063-b7e2-544d5c1ff607"
+id="9b211c57-7fb5-4811-88ea-15fc30908dba" size="1"&gt;
+  &lt;metadata /&gt;
+&lt;/snapshot&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"snapshot": {"display_description": {description},"display_name": {name},"force": false,"volume_id": "{volume_id}"}}' {BaseURI}/snapshots
+</codeph>
+</codeblock>
+</section>
+<section id="delete_snapshot"> <title>4.5.3.5 Delete volume snapshot</title>
+</section>
+<section id="delete-snapshotssnapshot-id"> <title>DELETE /snapshots/{snapshot_id}</title>
+<p>Delete the snapshot specified by <i>snapshot_id</i>.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+<li>
+<i>snapshot_id</i> - The identifier for the snapshot.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>202 - Accepted</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>This call does not return a response body.</p>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/snapshots/{snapshot_id}
+</codeph>
+</codeblock>
+</section>
+<section id="454-volume-backups"> <title>4.5.4 Volume Backups</title>
+<p>See <xref type="section" href="#topic65119/volume_backup_resource">Block Storage Volume Backups</xref> for details.</p>
+<p>
+  <b>Status Lifecycle</b>
+</p>
+<p>
+<i>creating</i> =&gt; <i>available</i> (after creation)</p>
+<p>
+<i>available</i> =&gt; <i>restoring</i> (during restore)</p>
+<p>
+<i>available</i> =&gt; <i>deleting</i> (during delete)</p>
+<p>In the event of an error, during any operation, status is set to <i>error</i>
+</p>
+<p>Volume status is set to <i>backing-up</i> during backup creation and
+ <i>restoring-backup</i>  during backup restore. If an error occurs while restoring
+ a backup to a volume, the volume status is set to <i>error_restoring</i>.</p>
+<p>
+  <b>Rate Limits</b>
+</p>
+<p>The Block Storage API has a limit of 1 call per second for each project.</p>
+<p>
+  <b>Quota Limits</b>
+</p>
+<p>There are no specified quota limits associated with backups. The only limits are 
+  those imposed by <xref href="../../publiccloud/api/swift-api.dita" >HP Object Storage</xref> where backups are 
+actually stored. When restoring a backup, the normal quota limits for volumes
+apply if a new volume is created as part of a restore operation. See 
+<i>Quota Limits</i> in <xref type="section" href="#topic65119/volumes">Block Storage Volumes</xref> for details.</p>
+<p>
+  <b>Business Rules</b>
+</p>
+<p>N/A</p>
+</section>
+<section id="list_backups"> <title>4.5.4.1 List volume backups</title>
+</section>
+<section id="get-backups"> <title>GET /backups</title>
+<p>Lists volume backups for this project.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "backups": [
+        {
+            "id": "2ef47aee-8844-490c-804d-2a8efe561c65", 
+            "links": [
+                {   
+                    "href": "http://10.3.194.25:8776/v1/c95fc3e4afe248a49a28828f286a7b38/backups/2ef47aee-8844-490c-804d-2a8efe561c65", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "http://10.3.194.25:8776/c95fc3e4afe248a49a28828f286a7b38/backups/2ef47aee-8844-490c-804d-2a8efe561c65", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": null
+        }, 
+        {
+            "id": "4dbf0ec2-0b57-4669-9823-9f7c76f2b4f8", 
+            "links": [
+                {
+                    "href": "http://10.3.194.25:8776/v1/c95fc3e4afe248a49a28828f286a7b38/backups/4dbf0ec2-0b57-4669-9823-9f7c76f2b4f8", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "http://10.3.194.25:8776/c95fc3e4afe248a49a28828f286a7b38/backups/4dbf0ec2-0b57-4669-9823-9f7c76f2b4f8", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": null
+        }
+    ]
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;backups xmlns:backups="http://docs.openstack.org/volume/ext/backups/api/v1"&gt;
+
+  &lt;backup name="None" id="2ef47aee-8844-490c-804d-2a8efe561c65" /&gt;
+  &lt;backup name="None" id="4dbf0ec2-0b57-4669-9823-9f7c76f2b4f8" /&gt;
+  &lt;backup name="None" id="7ace10b7-3fe6-43a7-89b3-aed33b2fed3f" /&gt;
+  &lt;backup name="None" id="ce7f60c5-5b0f-4139-95fd-d0a4dead7533" /&gt;
+&lt;/backups&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/backups
+</codeph>
+</codeblock>
+</section>
+<section id="list_backups_details"> <title>4.5.4.2 List volume backups details</title>
+</section>
+<section id="get-backupsdetail"> <title>GET /backups/detail</title>
+<p>Lists volume backups for this project, providing more detail about each
+backup than <xref type="section" href="#topic65119/list_backups">List volume backups</xref>.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "backups": [
+        {
+            "availability_zone": "az1", 
+            "container": "volumebackups", 
+            "created_at": "2013-04-02T10:35:27.000000", 
+            "description": null, 
+            "fail_reason": null, 
+            "id": "2ef47aee-8844-490c-804d-2a8efe561c65", 
+            "links": [
+                {
+                    "href": "http://10.3.194.25:8776/v1/c95fc3e4afe248a49a28828f286a7b38/backups/2ef47aee-8844-490c-804d-2a8efe561c65", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "http://10.3.194.25:8776/c95fc3e4afe248a49a28828f286a7b38/backups/2ef47aee-8844-490c-804d-2a8efe561c65", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": null, 
+            "object_count": 22, 
+            "size": 1, 
+            "status": "available", 
+            "volume_id": "e5185058-943a-4cb4-96d9-72c184c337d6"
+        }, 
+        {
+            "availability_zone": "az1", 
+            "container": "volumebackups", 
+            "created_at": "2013-04-02T10:21:48.000000", 
+            "description": null, 
+            "fail_reason": null, 
+            "id": "4dbf0ec2-0b57-4669-9823-9f7c76f2b4f8", 
+            "links": [
+                {
+                    "href": "http://10.3.194.25:8776/v1/c95fc3e4afe248a49a28828f286a7b38/backups/4dbf0ec2-0b57-4669-9823-9f7c76f2b4f8", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "http://10.3.194.25:8776/c95fc3e4afe248a49a28828f286a7b38/backups/4dbf0ec2-0b57-4669-9823-9f7c76f2b4f8", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": null, 
+            "object_count": 22, 
+            "size": 1, 
+            "status": "available", 
+            "volume_id": "e5185058-943a-4cb4-96d9-72c184c337d6"
+        } 
+    ]
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;backups xmlns:backups="http://docs.openstack.org/volume/ext/backups/api/v1"&gt;
+
+  &lt;backup status="available" object_count="22"
+  container="volumebackups" name="None" availability_zone="az1"
+  created_at="2013-04-02 10:35:27" description="None"
+  volume_id="e5185058-943a-4cb4-96d9-72c184c337d6"
+  fail_reason="None" id="2ef47aee-8844-490c-804d-2a8efe561c65"
+  size="1" /&gt;
+  &lt;backup status="available" object_count="22"
+  container="volumebackups" name="None" availability_zone="az1"
+  created_at="2013-04-02 10:21:48" description="None"
+  volume_id="e5185058-943a-4cb4-96d9-72c184c337d6"
+  fail_reason="None" id="4dbf0ec2-0b57-4669-9823-9f7c76f2b4f8"
+  size="1" /&gt;
+&lt;/backups&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Examples</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/backups/detail
+</codeph>
+</codeblock>
+</section>
+<section id="get_backup_details"> <title>4.5.4.3 Get volume backup details</title>
+</section>
+<section id="get-backupsbackup-id"> <title>GET /backups/{backup_id}</title>
+<p>Gets the details of the backup specified by {backup_id}.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+<li>
+<i>backup_id</i> - The identifier for the backup.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "backup": {
+        "availability_zone": "az1", 
+        "container": "volumebackups", 
+        "created_at": "2013-04-02T10:35:27.000000", 
+        "description": null, 
+        "fail_reason": null, 
+        "id": "2ef47aee-8844-490c-804d-2a8efe561c65", 
+        "links": [
+            {
+                "href": "http://10.3.194.25:8776/v1/c95fc3e4afe248a49a28828f286a7b38/backups/2ef47aee-8844-490c-804d-2a8efe561c65", 
+                "rel": "self"
+            }, 
+            {
+                "href": "http://10.3.194.25:8776/c95fc3e4afe248a49a28828f286a7b38/backups/2ef47aee-8844-490c-804d-2a8efe561c65", 
+                "rel": "bookmark"
+            }
+        ], 
+        "name": null, 
+        "object_count": 22, 
+        "size": 1, 
+        "status": "available", 
+        "volume_id": "e5185058-943a-4cb4-96d9-72c184c337d6"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;backup xmlns:backups="http://docs.openstack.org/volume/ext/backups/api/v1"
+status="available" object_count="22" container="volumebackups"
+name="None" availability_zone="az1"
+created_at="2013-04-02 10:35:27" description="None"
+volume_id="e5185058-943a-4cb4-96d9-72c184c337d6" fail_reason="None"
+id="2ef47aee-8844-490c-804d-2a8efe561c65" size="1" /&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Examples</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/backups/{backup_id}
+</codeph>
+</codeblock>
+</section>
+<section id="create_backup"> <title>4.5.4.4 Create volume backup</title>
+</section>
+<section id="post-backups"> <title>POST /backups</title>
+<p>Create a new backup of the specified volume, copying the contents of the
+volume to the project's Object Storage. The backup will be created
+in a container called <i>volumebackups</i> if the container name is not
+specified. If the container does not exist, it will be created.</p>
+<p>The backup will be created in the <i>availability_zone</i> of the specified
+volume.</p>
+<p>The volume data is split into chunks (normally 50MB in size but this may
+change) and written to files named as follows,</p>
+<codeblock>
+  <codeph>volume_&lt;volume id&gt;/&lt;YYYYMMDDHHMMSS&gt;/az_&lt;availability zone&gt;_backup_&lt;backup id&gt;-&lt;object number&gt;
+</codeph>
+</codeblock>
+<p>For example,</p>
+<codeblock>
+  <codeph>volume_795114e8-7489-40be-a978-83797f2c1dd3/20130131124331/az_az1_backup_1-00001
+</codeph>
+</codeblock>
+<p>This operation is asynchronous. You must list backups repeatedly to determine
+if the backup has been created.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<ul>
+<li>
+<i>container</i> (Optional) - string - The name of the object storage container to which the volume is to be backed up.</li>
+<li>
+<i>description</i> (Optional) - string - Description for the backup</li>
+<li>
+<i>name</i> (Optional) - string - Name of the backup</li>
+<li>
+<i>volume_id</i> - string - Id of the volume from which to create the backup</li>
+</ul>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "backup": {
+        "container": null, 
+        "description": null, 
+        "name": null, 
+        "volume_id": "64f5d2fb-d836-4063-b7e2-544d5c1ff607"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;backup container="None" name="None" description="None"
+volume_id="64f5d2fb-d836-4063-b7e2-544d5c1ff607"/&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>202 - Accepted</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "backup": {
+        "id": "deac8b8c-35c9-4c71-acaa-889c2d5d5c8e", 
+        "links": [
+            {
+                "href": "http://10.3.194.25:8776/v1/c95fc3e4afe248a49a28828f286a7b38/backups/deac8b8c-35c9-4c71-acaa-889c2d5d5c8e", 
+                "rel": "self"
+            }, 
+            {
+                "href": "http://10.3.194.25:8776/c95fc3e4afe248a49a28828f286a7b38/backups/deac8b8c-35c9-4c71-acaa-889c2d5d5c8e", 
+                "rel": "bookmark"
+            }
+        ], 
+        "name": null
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;backup xmlns:backups="http://docs.openstack.org/volume/ext/backups/api/v1"
+name="None" id="0e11a5c9-57a8-46c7-8f07-f17c7b019ec1" /&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"backup": {"container":{container_name},"description":{description},"name":{name},"volume_id": "volume_id"}}' {BaseURI}/backups
+</codeph>
+</codeblock>
+</section>
+<section id="delete_backup"> <title>4.5.4.5 Delete volume backup</title>
+</section>
+<section id="delete-backupsbackup-id"> <title>DELETE /backups/{backup_id}</title>
+<p>Delete the backup specified by {backup_id}.</p>
+<p>This operation is asynchronous. You must list backups repeatedly to determine
+if the backup has been deleted.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+<li>
+<i>backup_id</i> - The identifier for the backup.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>202 - Accepted</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>This call does not return a response body.</p>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/backups/{backup_id}
+</codeph>
+</codeblock>
+</section>
+<section id="restore_backup"> <title>4.5.4.6 Restore volume backup</title>
+</section>
+<section id="post-backupsbackup-idrestore"> <title>POST /backups/{backup_id}/restore</title>
+<p>Restore the specific backup to a volume. The backup objects for this backup
+will be copied from the project's Object Storage to a volume.</p>
+<p>
+  <b>If a <i>volume_id</i> is specified in the request, that volume will be
+overwritten with the backup data. If no <i>volume_id</i> is specified, a new
+volume will be created and used for the restore operation.</b>
+</p>
+<p>If a new volume is created as part of a restore operation, it will be created
+in the <i>az2</i> <i>availability_zone</i>, the API does not currently allow the
+<i>availability_zone</i> to be specified. If you require a new volume in a specific
+<i>availability_zone</i> for a restore operation, the volume should be created
+first using <xref type="section" href="#topic65119/create_volume">Create volume</xref> which does allow the
+<i>availability_zone</i> to be specified.</p>
+<p>This operation is asynchronous. To check the status of the restore operation,
+the user can call <xref type="section" href="#topic65119/get_volume_details">Get volume details</xref> for the <i>volume_id</i>
+returned in the response (status will be set to <i>restoring</i> while the the
+restore operation runs, <i>error_restoring</i> if the restore operation fails and
+<i>available</i> if the restore operation succeeds).</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>backup_id</i> - The identifier for the backup.</li>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<ul>
+<li>
+<i>volume_id</i> - string - Id of the volume to which the backup should be restored.</li>
+</ul>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "restore": {
+        "volume_id": "64f5d2fb-d836-4063-b7e2-544d5c1ff607",
+     }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;restore volume_id="64f5d2fb-d836-4063-b7e2-544d5c1ff607"/&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>202 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "restore": {
+        "backup_id": 2, 
+        "volume_id": "795114e8-7489-40be-a978-83797f2c1dd3"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;restore xmlns:backups="http://docs.openstack.org/volume/ext/backups/api/v1"
+backup_id="d45c6a10-4471-4dc1-88d2-453e67194db3"
+volume_id="e5185058-943a-4cb4-96d9-72c184c337d6" /&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Examples</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"restore":{"volume_id":"{volume_id}"}}' {BaseURI}/backups/{backup_id}/restore
+</codeph>
+</codeblock>
+</section>
+<section id="455-servers"> <title>4.5.5 Servers</title>
+  <p>See <xref href="nova-api.dita">Compute Service Servers</xref> for details of
+the Server resource. From the Block Storage Service perspective,
+a server is system to which a <xref type="section" href="#topic65119/volume_resource">volume</xref> can be attached.
+When a volume is attached to a server, the server can mount the volume
+and use it as a normal block storage device (allowing it to be partitioned,
+formatted with a filesystem and so on).</p>
+<p>
+  <b>Status Lifecycle</b>
+</p>
+<p>The volume status lifecycle for attach/detach is as follows:</p>
+<p>
+<i>available</i> =&gt; <i>attaching</i> (during attach)</p>
+<p>
+<i>attaching</i> =&gt; <i>in-use</i> (after attach)</p>
+<p>
+<i>in-use</i> =&gt; <i>detaching</i> (during detach)</p>
+<p>
+<i>detaching</i> =&gt; <i>available</i> (after detach)</p>
+<p>If an error occurs during attach, the volume status is set to <i>error_attaching</i>
+ and if an error occurs during detach, the volume status is set to <i>error_detaching</i>.</p>
+<p>
+  <b>Rate Limits</b>
+</p>
+  <p>See <xref href="nova-api.dita" >Compute instances</xref> for details of the rate limits
+associated with the Server resource.</p>
+<p>
+  <b>Quota Limits</b>
+</p>
+<p>N/A</p>
+<p>
+  <b>Business Rules</b>
+</p>
+<p>A maximum of 26 volumes can be attached to a single guest. This limit is
+imposed by KVM (virtio-blk).</p>
+</section>
+<section id="list_attached_volumes"> <title>4.5.5.1 List attached volumes</title>
+</section>
+<section id="get-serversserver-idos-volume-attachments"> <title>GET /servers/{server_id}/os-volume_attachments</title>
+<p>Lists the volumes attached to the server specified by {server_id}.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+<li>
+<i>server_id</i> - The identifier for the server.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "volumeAttachments": [
+        {
+            "device": "/dev/vdb", 
+            "id": "795114e8-7489-40be-a978-83797f2c1dd3", 
+            "serverId": "bb6a4f73-c851-4d62-8ef4-56c9b6c12df1", 
+            "volumeId": "795114e8-7489-40be-a978-83797f2c1dd3"
+        }
+    ]
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;volumeAttachments&gt;
+  &lt;volumeAttachment device="/dev/vdb"
+  serverId="bb6a4f73-c851-4d62-8ef4-56c9b6c12df1"
+  id="795114e8-7489-40be-a978-83797f2c1dd3"
+  volumeId="795114e8-7489-40be-a978-83797f2c1dd3" /&gt;
+&lt;/volumeAttachments&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Examples</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/servers/{server_id}/os-volume_attachments
+</codeph>
+</codeblock>
+</section>
+<section id="attach_volume"> <title>4.5.5.2 Attach a volume</title>
+</section>
+<section id="post-serversserver-idos-volume-attachments"> <title>POST /servers/{server_id}/os-volume_attachments</title>
+<p>Attach the volume specified by <i>volume_id</i> to the server specified by
+<i>server_id</i>. This call takes a device name specified by <i>device</i> but
+it is advisory only and should not be relied on to be the same on the
+guest instance. In practice, the guest instance allocates device names
+in order of availability, starting at /dev/vdc and iterating up,
+regardless of what device is requested.</p>
+<p>For guests running Linux, the recommended approach for identifying and
+using attached volumes from within the guest is to use the unique device
+names in the <i>/dev/disk/by-id</i> directory. When a volume is attached to a
+guest, on guests using Linux kernel 3.2 or newer, the first 20 characters
+of the volume UUID are used as the device serial number and a link to
+the volume will appear as <i>/dev/disk/by-id/virtio-</i>
+<i>first 20 characters
+of volume UUID</i>. This device path should be used rather than the
+<i>/dev/vdX</i> path, particularly if multiple volumes are being attached to
+a guest.</p>
+<p>For example, when the volume with id 795114e8-7489-40be-a978-83797f2c1dd3
+is attached to a guest, the volume can be referenced from within the guest
+by the path <i>/dev/disk/by-id/virtio-795114e8-7489-40be-a</i>.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>server_id</i> - The identifier for the server.</li>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<ul>
+<li>
+<i>volume_id</i> - string - Id of the volume to attach</li>
+<li>
+<i>device</i> (Optional) - string - Name of the device to use</li>
+</ul>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "volumeAttachment": {
+        "volumeId": "795114e8-7489-40be-a978-83797f2c1dd3"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;volumeAttachment
+volume_id="64f5d2fb-d836-4063-b7e2-544d5c1ff607"/&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "volumeAttachment": {
+        "device": "/dev/vdc", 
+        "id": "c3b1a45c-9f3a-4226-af72-f38709ab25f2", 
+        "serverId": "bb6a4f73-c851-4d62-8ef4-56c9b6c12df1", 
+        "volumeId": "c3b1a45c-9f3a-4226-af72-f38709ab25f2"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;volumeAttachment device="/dev/vdc"
+serverId="bb6a4f73-c851-4d62-8ef4-56c9b6c12df1"
+id="c3b1a45c-9f3a-4226-af72-f38709ab25f2"
+volumeId="c3b1a45c-9f3a-4226-af72-f38709ab25f2" /&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Examples</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"volumeAttachment":{"volumeId": "{volume_id}"}}' {BaseURI}/servers/{server_id}/os-volume_attachments
+</codeph>
+</codeblock>
+</section>
+<section id="detach_volume"> <title>4.5.5.3 Detach a volume</title>
+</section>
+<section id="delete-serversserver-idos-volume-attachmentsvolume-id"> <title>DELETE /servers/{server_id}/os-volume_attachments/{volume_id}</title>
+<p>Detach the volume specified by <i>volume_id</i> from the server specified by
+<i>server_id</i>.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>server_id</i> - The identifier for the server.</li>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+<li>
+<i>volume_id</i> - The identifier of the volume to detach.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>202 - Accepted</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>This call does not return a response body.</p>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/servers/{server_id}/os-volume_attachments/{volume_id}
+</codeph>
+</codeblock>
+</section>
+<section id="get_attvolume_details"> <title>4.5.5.4 Get attached volume details</title>
+</section>
+<section id="get-serversserver-idos-volume-attachmentsvolume-id"> <title>GET /servers/{server_id}/os-volume_attachments/{volume_id}</title>
+<p>Gets the details of the volume specified by <i>volume_id</i> attached to <i>server_id</i>.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>server_id</i> - The identifier for the server.</li>
+<li>
+<i>project_id</i> - The unique identifier of the project or account.</li>
+<li>
+<i>volume_id</i> - The identifier of the volume to detach.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{
+    "volumeAttachment": {
+        "device": "/dev/vdc", 
+        "id": "c3b1a45c-9f3a-4226-af72-f38709ab25f2", 
+        "serverId": "bb6a4f73-c851-4d62-8ef4-56c9b6c12df1", 
+        "volumeId": "c3b1a45c-9f3a-4226-af72-f38709ab25f2"
+    }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;volumeAttachment device="/dev/vdc"
+serverId="bb6a4f73-c851-4d62-8ef4-56c9b6c12df1"
+id="c3b1a45c-9f3a-4226-af72-f38709ab25f2"
+volumeId="c3b1a45c-9f3a-4226-af72-f38709ab25f2" /&gt;
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Examples</b>
+</p>
+<codeblock>
+  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/servers/{server_id}/os-volume_attachments/{volume_id}
+</codeph>
+</codeblock>
+</section>
+</body>
+</topic>

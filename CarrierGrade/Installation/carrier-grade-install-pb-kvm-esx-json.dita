@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample esx.json File for
+        Installing the KVM + ESX Topology</title>
+<prolog>
+    <metadata>
+        <othermeta name="layout" content="default"/>
+        <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+        <othermeta name="role" content="Storage Administrator"/>
+        <othermeta name="role" content="Storage Architect"/>
+        <othermeta name="role" content="Michael B"/>
+        <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
+    <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
+                KVM + ESX deployment</xref> requires several JSON files that will be used when
+            deploying the HLM VM.</p>
+        <p>The <codeph>esx.json</codeph> file contains the following fields:</p>
+   <p> <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
+        <tgroup cols="2">
+                    <colspec colnum="1" colname="col1" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" colwidth="1.97*"/>
+                    <thead>
+                        <row>
+                            <entry>Attributes</entry>
+                            <entry>Description</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry namest="col1" nameend="col2"><b>vcenter:</b></entry>
+                        </row>
+                        <row>
+                            <entry>ipaddress</entry>
+                            <entry>IP address to connect to vCenter</entry>
+                        </row>
+                        <row>
+                            <entry>username</entry>
+                            <entry>UserName to log into vCenter</entry>
+                        </row>
+                        <row>
+                            <entry>password</entry>
+                            <entry>Password to log into vCenter</entry>
+                        </row>
+                        <row>
+                            <entry>port</entry>
+                            <entry>Port to connect to vcenter (default 443)</entry>
+                        </row>
+                        <row>
+                            <entry>domain</entry>
+                            <entry>vCenter domain (default localhost.localdom)</entry>
+                        </row>
+                        <row>
+                            <entry namest="col1" nameend="col2"><b>template:</b></entry>
+                        </row>
+                        <row>
+                            <entry>username</entry>
+                            <entry>Compute Proxy Template (OVA) Username (set to <codeph>cghelion</codeph>)</entry>
+                        </row>
+                        <row>
+                            <entry>password</entry>
+                            <entry>Compute Proxy Template (OVA) password (set to <codeph>cghelion</codeph>)</entry>
+                        </row>
+                        <row>
+                            <entry>name</entry>
+                            <entry>Name of OVA template  (set to
+                                <codeph>overcloud_vcenter_compute_proxy.ova</codeph>)</entry>
+                        </row>
+                        <row>
+                            <entry namest="col1" nameend="col2"><b>network:</b></entry>
+                        </row>
+                        <row>
+                            <entry>name</entry>
+                            <entry>Name of CLM (Cloud Lab Management) network </entry>
+                        </row>
+                        <row>
+                            <entry namest="col1" nameend="col2"><b>compute_proxy:</b></entry>
+                        </row>
+                        <row>
+                            <entry>datacenter</entry>
+                            <entry>Datacenter where the proxy node will be hosted</entry>
+                        </row>
+                        <row>
+                            <entry>cluster</entry>
+                            <entry>Cluster which the proxy node should belong to</entry>
+                        </row>
+                        <row>
+                            <entry>datastore</entry>
+                            <entry>Datastore where the proxy node will be stored</entry>
+                        </row>
+                        <row>
+                            <entry>name</entry>
+                            <entry>Name of your compute proxy</entry>
+                        </row>
+                        <row>
+                            <entry>failure-zone</entry>
+                            <entry>Failure zone for you compute proxy (This should match with
+                                failure zones defined in definition.json)</entry>
+                        </row>
+                        <row>
+                            <entry>bridge_name</entry>
+                            <entry>Bridge created per cluster</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+   </table>
+   </p>
+<section id="sample-node-provisionjson-file">
+            <p>The following represents a sample <codeph>esx.json</codeph> file. Use values
+                appropriate for your environment.</p>
+    <p><b>NOTE:</b> CLM network specified here will be configured on eth1 as tagged network by hprovision script and later used by 
+        hnetinit script to configure sub-interface eth0.x generated by config processor (hcfgproc script).</p>
+        <p>This interface, eth1, is created temporarily to hprovsion and hnetinit to work. This will be deleted ones the compute 
+            proxy is configured by hdeploy process.</p>
+            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
+                    the KVM + ESX Deployment</xref>.</p>
+<codeblock>
+            
+                "product": {
+                    "version": 1
+                }, 
+                "property-groups": [
+                    {
+                        "name": "esx", 
+                        "properties": {
+                            "vcenter": {
+                                "ipaddress": "10.20.30.11", 
+                                "username": "root",  
+                                "password": "vmware", 
+                                "port": "443",
+                                "domain": "localhost.localdom"
+                            }, 
+                            "template": {
+                                "username": "cghelion", 
+                                "password": "cghelion", 
+                                "name": "overcloud_vcenter_compute_proxy.ova"
+                           }, 
+                           "network": {
+                                "name": "CLM-ALL"
+                           }, 
+                            "compute_proxy": [
+                            {
+                                "datacenter": "Datacenter-1",
+                                 "cluster": "Cluster1",
+                                 "datastore": "datastore1",
+                                 "name": "ESX-Compute-Proxy-1",
+                                 "failure-zone": "f1",
+                                 "bridge_name": "B1"
+                            },
+                            {
+                                 "datacenter": "Datacenter-1",
+                                 "cluster": "Cluster1",
+                                 "datastore": "datastore1",
+                                 "name": "ESX-Compute-Proxy-2",
+                                 "failure-zone": "f1",
+                                 "bridge_name": "B1"
+                            },
+                            {
+                                 "datacenter": "Datacenter-1",
+                                 "cluster": "Cluster2",
+                                 "datastore": "datastore2",
+                                 "name": "ESX-Compute-Proxy-3",
+                                 "failure-zone": "f2",
+                                 "bridge_name": "B3"
+                            ]
+                        }
+                    }
+                ]
+            }
+            ~
+</codeblock>        
+
+</section>
+</body>
+</topic>

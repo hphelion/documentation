@@ -66,8 +66,8 @@
         <image placement="break" href="../../../media/windows_remoting_add_security_2.png"></image></li>
     </ol>
   </section>
-  <section id="connect"><title>Connect to the instance with Remote Desktop Connection</title></section>
-  To connect to the instance, enter the IP address, user name in the form <b></b>
-  
+  <section id="connect"><title>Connect to the instance with Remote Desktop Connection</title>
+  To connect to the instance, enter the IP address, user name in the form
+  </section>
 </body>
 </topic>
