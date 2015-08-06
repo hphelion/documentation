@@ -228,6 +228,11 @@ StrictHostKeyChecking no </codeblock></li>
                 <p>See <xref href="carrier-grade-install-pb-network-prepare-GA.dita#topic7646">Preparing the Network for Installation</xref></p>
                 
         </section>
+        <section><title>Integrating LDAP</title>
+
+        <p>OPTIONAL The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) 
+                to integrate your organization's existing directory service and user account management processes.</p> 
+</section>
 <section id="getinstall"> <title>Download and unpack the installation packages</title>
 <p>Before you begin, you must download the required HP Helion OpenStack installation package(s).</p>
                         <p><b>Note:</b> When downloading installation files, always download and
