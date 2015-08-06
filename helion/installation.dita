@@ -183,23 +183,26 @@ ansible-playbook -i hosts/localhost cobbler-provision.yml
           section cluster_ip</li>
     <li>Skip volume creation, there is little checkbox on the bottom do that</li>
     <li>Wait for completion</li>
-    <li>Edit file helion/hlm/ansible/roles/_CND-CMN/templates/cinder.conf.j2 and make
-          enabled_backends=vsa-1</li>
-    <li>Change {% if cinder_enabled_backends == 'lvm-1' %} to {% if cinder_enabled_backends ==
-          'no-backends' %}</li>
-    <li>Uncomment and fill VSA section, here example: <ul>
+    <li>On the deployer, edit the file helion/hlm/ansible/roles/_CND-CMN/templates/cinder.conf.j2 <ol>
+            <li>Make enabled_backends=vsa-1</li>
+            <li>Change {% if cinder_enabled_backends == 'lvm-1' %} to {% if cinder_enabled_backends
+              == 'no-backends' %}</li>
+          </ol></li>
+    <li>Copy the VSA section and uncomment it, and fill the values as in the following example: <ul>
             <li>[vsa-1]</li>
             <li>hplefthand_password: stack</li>
             <li>hplefthand_clustername: hlm003-vsa-cluster</li>
             <li>hplefthand_api_url: https://10.241.103.7:8081/lhos</li>
             <li>hplefthand_username: stack</li>
             <li>hplefthand_iscsi_chap_enabled: true</li>
-            <li>volume_backend_name: vsa-backend-hlm003</li>
+            <li>volume_backend_name: (Needed by horizon) vsa-backend-hlm003</li>
             <li>volume_driver: </li>
             <li>cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver</li>
             <li> hplefthand_debug: false</li>
           </ul></li>
     <li>Run ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</li>
+        <li>Create a volume to verify the VSA is correctly configured, and then delete the created
+          volume</li>
   </ol>
 </section>
   </body>
