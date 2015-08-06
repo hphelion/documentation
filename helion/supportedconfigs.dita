@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ckw_kbc_ws">
-  <title>Beta 0: Supported Configurations</title>
+  <title>Beta 0: Supported Configuration</title>
   <body>
     <p>The following list summaries the qualified configurations and their purpose.</p>
     <p>Note: While the hardware requirements are similar to those of HP Helion OpenStack 1.1, this
       is a completely new instsallation, not an upgrade or update operation.</p>
-    <ol id="ol_stq_lbc_ws">
-      <li>Single-node implementation <ol id="ol_q5q_lbc_ws">
-          <li>All HP Helion OpenStack services installed from and running on a single node </li>
-          <li>This configuration is meant for anyone wanting a proof of concept and requires a
-            minimum hardware footprint</li>
-          <li>Single NIC, no bonding</li>
-        </ol></li>
-      <li>Configuration compatible with HP Helion OpenStack 1.1 <ol id="ol_cvq_lbc_ws">
-          <li>Supports migration  for 1.1 </li>
-          <li>Single 3-node control plane for all CP services</li>
-          <li>Single NIC, no bonding</li>
-          <li>No IP separation</li>
-          <li>Multiple server roles for different services (Compute, Object etc) with different disk
-            configuration options</li>
-        </ol></li>
-      <li>Single Region Proof of Concept<ol id="ol_pvq_lbc_ws">
+   
+     <p><b> Single Region Proof of Concept</b></p>
+    <ul>
           <li>Single control plane for
             <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all control plane
             services<?oxy_custom_end?></li>
@@ -32,14 +19,14 @@
           <li>Multiple server roles for different services (Compute, Object etc) with different disk
             configuration options</li>
           <?oxy_custom_end?>
-        </ol></li>
-    </ol>
+        </ul>
+    
     <p> </p>
-    <p><b>Single region proof of concept configuration details:</b></p>
+    <p><b>Configuration details:</b></p>
     <p><b>Scaled down example, optimized for reduced server count</b></p>
     <p><b>Dedicated deployer node needed</b></p>
     <p><b>Control Plane with one cluster</b></p>
-    <p><b>Cloud controllers (min 3 nodes for DB quorum)</b></p>
+    <p><b>Cloud controllers (minimum of 3 nodes for database quorum)</b></p>
     <ul id="ul_jwn_c2l_xs">
       <li>Monitoring/Logging</li>
       <li>Neutron network services (centralized routers, DHCP, metadata, default SNAT, VPN
@@ -69,7 +56,7 @@
     </ul>
     <p>Each network is a single L3 segment</p>
     <p>Load balancers are provided by haproxy</p>
-    <p>TLS only on external API, using customer supplied cert</p>
+    <p>TLS only on external API, using customer supplied certificate</p>
     <p>VLAN IDs and IP addressing provided by customer</p>
     <p><b>Storage</b></p>
     <p>All servers assume single OS “disc” protected by RAID controller (to be set up by customer
@@ -78,7 +65,7 @@
       this pattern)</p>
     <p>VSA adds one additional disc dedicated to VSA (customer can add other discs following this
       pattern)</p>
-    <p>Controller adds one additional disc dedicated to object storage(customer can add other discs
+    <p>Controller adds one additional disc dedicated to object storage (customer can add other discs
       following this pattern) </p>
     <p>
       <image href="images/20beta0poc-diagram.png" width="1000" id="image_pl2_d4k_xs"/></p>
