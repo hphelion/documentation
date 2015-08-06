@@ -68,9 +68,9 @@
 </ol>
 <p>At the end of this section you should have a local directory structure that is described below:</p>
 <codeblock>
-helion/                        Top level directory.
-helion/examples/               Diretory contains the config of the example clouds.
-helion/my_cloud/definition/    Directory contains the config input files.
+helion/                        Top level directory
+helion/examples/               Directory contains the config input files of the example clouds
+helion/my_cloud/definition/    Directory contains the config input files
 helion/my_cloud/config/        Directory contains .j2 files which are symlinks to the /hlm/ansible directory
 helion/hlm/                    Directory contains files used by the installer
 </codeblock>
