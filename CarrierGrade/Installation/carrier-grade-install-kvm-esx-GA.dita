@@ -478,7 +478,7 @@ source stackrc</codeblock></li>
             <codeblock>neutron router-create &lt;name></codeblock><p>where: &lt;name> is a
             descriptive name.</p></li></ol>
   </section>
-  <section><title>Configure the VRS-G </title>
+  <section id="vrsg-config"><title>Configure the VRS-G </title>
       <p>The HP Helion OpenStack Carrier Grade installation creates the required VRS-G gateway. You
         need to use the HP DCN Virtualized Services Directory Architect (VSD) interface to add the
         gateway to VSD and configure the <codeph>eth0</codeph> port.</p>
