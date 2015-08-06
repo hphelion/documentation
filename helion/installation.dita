@@ -52,68 +52,54 @@
 </li>
 </ol>
 </section>
-<section id="HLM_Node_Personalization"> <title>Installing HP Helion OpenStack</title></section>
-    <section>
-      <ol id="ol_bbw_fr1_ys">
-        <li>On the deployer node, create ssh keypair if one is not already present:
-          <codeblock>
-ssh-keygen -t rsa
- </codeblock></li>
-        <li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file:
-          <codeblock>
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-</codeblock></li>
-        <li>Check that ssh localhost works without a password and that you can get from external
-          sources, both with and without sudo.</li>
-        <li>Mount install media at /media/cdrom, e.g. sudo mount /media/cdrom (in case CD is in
-          /dev/cdrom)</li>
-        <li>Unpack tarball:
-          <codeblock>
-tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz
-</codeblock></li>
-        <li>Run included script: <codeblock>
-~/hlm-deployer/hlm-init-2.0.0.bash
-</codeblock></li>
-        <li>Setup your configuration files: <ul id="ul_z2w_fr1_ys">
-            <li>There is an example set of configuration files in the
-              ~/helion/examples/one-region-poc-with-vsa directory along with a README.md file which
-              explains the contents of each of the configuration files.</li>
-            <li>You should copy these example configuration files into the required setup directory
-              so that you can edit them as needed:
-              <codeblock>
-cp -r ~/helion/examples/one-region-poc-with-vsa/* ~/helion/my_cloud/definition/
-</codeblock></li>
-            <li>Edit the baremetalConfig.yml file according to the server information for your
-              environment.</li>
-            <li>Edit the servers.yml file to contain the IP address information for that same
-              hardware.</li>
-            <li>Edit the networks.yml file with your networking information.</li>
-            <li>The control_plane.yml file will contain information about the services that will be
-              installed.</li>
-          </ul>
-        </li>
-        <li>Run the configuration processor and check that your IP addresses are correct in the
-          following: <codeblock>
-cd ~/helion/hlm/ansible
-</codeblock>
-          <codeblock>
-ansible-playbook -i hosts/localhost config-processor-run_v2.yml  
-</codeblock>
-        </li>
-        <li>Check the generated hosts files in
-            <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to make sure the correct IPs
-          are included. If they are not then run <codeph>ansible-playbook -i hosts/localhost
-            config-processor-clean.yml</codeph> and go to the previous step.</li>
-        <li>
-          <codeblock>
-Export ANSIBLE_HOST_KEY_CHECKING=False
-</codeblock>
-        </li>
-        <li>Run <codeblock>
+<section id="HLM_Node_Personalization"> <title>Installing HP Helion OpenStack</title>
+<ol>
+<li>On the deployer node, create ssh keypair if one is not already present:
+<codeblock>ssh-keygen -t rsa</codeblock></li>
+<li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file:
+<codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
+<li>Check that ssh localhost works without a password and that you can wget from external sources, both with and without sudo.</li>
+<li>Mount install media at /media/cdrom, e.g. sudo mount /media/cdrom (in case CD is in /dev/cdrom)</li>
+<li>Unpack tarball:
+<codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz </codeblock></li>
+<li>Run included script:
+<codeblock>~/hlm-deployer/hlm-init-2.0.0.bash</codeblock></li>
+</ol>
+</section>
+<section id="Configuration"> <title>Configure Your Environment</title>
+<ol>
+<li>Setup your configuration files:
+<ol>
+<li>There is an example set of configuration files in the ~/helion/examples/one-region-poc-with-vsa directory along with a README.md file which explains the contents of each of the configuration files.</li>
+<li>You should copy these example configuration files into the required setup directory so that you can edit them as needed:
+<codeblock>cp -r ~/helion/examples/one-region-poc-with-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
+<li>Edit the baremetalConfig.yml file according to the server information for your environment.</li>
+<li>Edit the servers.yml file to contain the IP address information for that same hardware.</li>
+<li>Edit the networks.yml file with your networking information.</li>
+<li>The control_plane.yml file will contain information about the services that will be installed.</li>
+</ol>
+</li>
+<li>Run the configuration processor:
+<codeblock>cd ~/helion/hlm/ansible</codeblock>
+<codeblock>ansible-playbook -i hosts/localhost config-processor-run_v2.yml</codeblock>
+</li>
+<li>Check the generated hosts files in <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to make sure the correct IPs are included. If they are not then run <codeph>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeph> and go to the previous step.</li>
+</ol>
+</section>
+<section id="CobblerDeploy"> <title>Cobbler Deploy</title>"
+<ol>
+  <li>Run this command:
+<codeblock>Export ANSIBLE_HOST_KEY_CHECKING=False</codeblock>
+</li>
+<li>Run <codeblock>
 ansible-playbook -i hosts/localhost cobbler-deploy.yml
 </codeblock>
         </li>
-        <li>Run the following command. This will power down all nodes, set them to pxe boot and
+</ol>
+</section>
+<section id="NodeProvision"><title>Provision Nodes</title></section>
+<ol>
+ <li>Run the following command. This will power down all nodes, set them to pxe boot and
           power them up again.
           <codeblock>
 ansible-playbook -i hosts/localhost cobbler-provision.yml
@@ -158,7 +144,7 @@ ansible-playbook -i hosts/localhost cobbler-provision.yml
         <li>ansible-playbook -i hosts/localhost cloud-client-setup.yml</li>
         <li>Install and configure VSA </li>
       </ol>
-    </section>
+    
 <section>
    <title>Installing and configuring VSA (optional)</title>
   <ol>
