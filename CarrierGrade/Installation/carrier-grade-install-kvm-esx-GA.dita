@@ -85,10 +85,8 @@
       <p>Use the following steps on the HLM host to deploy the HLM VM on the HLM Host using Ansible
         playbooks.</p>
       <ol>
-        <li>Execute the following
-          command:<codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock><!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the HLM host, decrypt, and extract the files.</li><li>Execute the <codeph>updatepackages</codeph> command.</li><li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul>-->
-            hlmcompleteionsnaphot<image href="../../media/CGH-ansible-playbook-run.png"
-            id="image_bfp_pjm_vs">
+        <li>Execute the following command:<codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock><!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the HLM host, decrypt, and extract the files.</li><li>Execute the <codeph>updatepackages</codeph> command.</li><li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul>-->
+          <image href="../../media/CGH-ansible-playbook-run.png" id="image_bfp_pjm_vs">
             <alt>Sample Ansible Playbook run output</alt>
           </image></li>
         <li>Locate the IP address for the HLM VM in the
@@ -519,10 +517,10 @@ source stackrc</codeblock></li>
             the ribbon.</li>
           <li>Right-click the default ingress security policy and click <b>Edit</b>.</li>
           <li>Select <b>Forward IP Traffic by Default</b>. Make sure <b>Make This Policy Active</b>
-            is selected<image href="../../media/CGH-install-ingress.png" id="image_fkf_yp1_ys"
-              width="650">
-              <alt>VSD Ingress Rule</alt>
-            </image></li>
+            is selected. <p><image href="../../media/CGH-install-ingress.png" id="image_fkf_yp1_ys"
+                width="650">
+                <alt>VSD Ingress Rule</alt>
+              </image></p></li>
           <li>Click <b>Update</b>.</li>
           <li>Click <b>Egress Security Policies</b> in the ribbon.</li>
           <li>Right-click the default egress security policy and click <b>Edit</b>.</li>
@@ -535,9 +533,10 @@ source stackrc</codeblock></li>
   </section>
   <section><title>Retrieving the Floating IP Name from VSD for external Network</title>
     <ol><li>In the VSD dashboard, click <b>Open Data Center Configuration</b>, then <b>Shared Network</b>
-          tab. <image href="../../media/CGH-install-vsd-fip.png" id="image_okn_sjz_xs">
+          tab. 
+      <p><image href="../../media/CGH-install-vsd-fip.png" id="image_okn_sjz_xs">
             <alt>Gatewy Port</alt>
-          </image></li>
+      </image></p></li>
         <li>For the Floating IP subnet, right-click and select <b>Edit</b> to get the name. <p>This
             is the same name you assigned when you created the subnet. Make note of this name, as
             you will use it during the installation.</p></li>
