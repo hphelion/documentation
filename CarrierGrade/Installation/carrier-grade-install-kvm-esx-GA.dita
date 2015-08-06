@@ -511,30 +511,52 @@ source stackrc</codeblock></li>
     
   <p><b>Note:</b> To create a redundant grouping of the VRS-G, refer to the DCN documentation.</p>
 </section>
+  <section><title>Configuring ingress and egress security policies</title>
+    <p>Ingress and egress security policies are</p>
+    <p>Use the following steps to configure these policies to allow SSH and PING access to the
+          VRS-G.<ol id="ol_lf3_dp1_ys">
+          <li>In the VSD dashboard, click <b>Domains</b>, then <b>Ingress Security Policies</b> in
+            the ribbon.</li>
+          <li>Right-click the default ingress security policy and click <b>Edit</b>.</li>
+          <li>Select <b>Forward IP Traffic by Default</b>. Make sure <b>Make This Policy Active</b>
+            is selected<image href="../../media/CGH-install-ingress.png" id="image_fkf_yp1_ys"
+              width="650">
+              <alt>VSD Ingress Rule</alt>
+            </image></li>
+          <li>Click <b>Update</b>.</li>
+          <li>Click <b>Egress Security Policies</b> in the ribbon.</li>
+          <li>Right-click the default egress security policy and click <b>Edit</b>.</li>
+          <li>Select <b>Deploy Implicit Rules</b> and <b>Forward IP Traffic by Default</b>. Make
+            sure <b>Make This Policy Active</b> is selected.</li>
+          <li>Click <b>Update</b>.</li>
+        </ol></p>
+  
+  
+  </section>
   <section><title>Retrieving the Floating IP Name from VSD for external Network</title>
-    <ol><li>Using the VSD. dashboard</li>
-        <li>Click <b>Open Data Center Configuration</b>, then <b>Shared Network</b> tab. <image
-            href="../../media/CGH-install-vsd-fip.png" id="image_okn_sjz_xs">
+    <ol><li>In the VSD dashboard, click <b>Open Data Center Configuration</b>, then <b>Shared Network</b>
+          tab. <image href="../../media/CGH-install-vsd-fip.png" id="image_okn_sjz_xs">
             <alt>Gatewy Port</alt>
           </image></li>
         <li>For the Floating IP subnet, right-click and select <b>Edit</b> to get the name. <p>This
             is the same name you assigned when you created the subnet. Make note of this name, as
             you will use it during the installation.</p></li>
       <li> You will need the Floating IP subnet name during the installation when you create and
-          edit a CuRL script.</li>
+          edit a cURL script.</li>
       </ol>
   </section>
     <section><title>Add VLAN to VRSG network device </title>
       <p>VRS‐G configuration includes setting up the port and VLAN ranges that are to be available
         for Nuage access on the VSD. By default, the VRS‐G boots with all its ports configured as
-        the network type, and therefore it has no VLANs available</p>
-      <ol><li>Based on your VLAN ID, run the below command on VRS-G node:<p> For example:
-              <codeph>nuage-vlan-config mod eth0 Access 1500-2000</codeph></p></li>
-        
-        <li>Add the VLAN ID [EXT Net] on the VSD dashboard for eth0</li>
+        the <b>network</b> type, and therefore it has no VLANs available. Use the following command
+        to change <codeph>eth1</codeph> from <b>network</b> to <b>access</b> and allow VLANs.</p>
+      <ol>
+        <li>Log into the VRS-G node.</li><li>Run the below command on the VRS-G node, using your VLAN ID:<p>
+            <codeph>nuage-vlan-config mod eth0 Access &lt;vlad-id></codeph></p></li>
       </ol>
   </section>
-    <section><title>Run the curl script</title></section>
+    <section><title>Run a cURL script to enable floating IPs on the VRS-G</title>
+      <p/>
     <ol>
       <li>From the KVM host, copy the following code to create a cURL script.</li>
       <li>Modify the cURL script for your environment:
@@ -638,16 +660,19 @@ source stackrc</codeblock></li>
       <li>Use the VSD dashboard to confirm that uplink port appears in the Monitoring tab under
         VRS-G node. <b><i>image</i></b></li>
     </ol>
-
-<section><title>Enable GRE in iptables</title>
-<!-- CG-1265 -->
-  <p>If an environment uses more than one VRS-G node, you must enable Generic Routing Encapsulation (GRE) in the IP tables.</p>
-  <ol><li>On each VRS-G node, navigate to the <codeph>/etc/ufw/before.rules</codeph> file.</li>
-    <li>Add the following lines to the file, before the <codeph>COMMIT</codeph> line:
+    </section>
+<section>
+      <title>Enable GRE in iptables</title>
+      <!-- CG-1265 -->
+      <p>If an environment uses more than one VRS-G node, you must enable Generic Routing
+        Encapsulation (GRE) in the IP tables.</p>
+      <ol>
+        <li>On each VRS-G node, navigate to the <codeph>/etc/ufw/before.rules</codeph> file.</li>
+        <li>Add the following lines to the file, before the <codeph>COMMIT</codeph> line:
           <codeblock>-A ufw-before-input -p 47 -j ACCEPT</codeblock></li>
-    <li>Save and close the file.</li>
-  </ol>
-</section>
+        <li>Save and close the file.</li>
+      </ol>
+    </section>
 
 <section><title>Post-Installation Steps </title><p>After the installation of the KVM + ESX
         deployment is complete, perform the steps in this section.</p>
@@ -675,6 +700,7 @@ source stackrc</codeblock></li>
   <section><title>Upload a Glance VMDK Image</title>
   <ol>
         <li>Launch the Horizon dashboard.</li>
+        <li>Switch to <b>memphis</b> region. </li>
     <li>Click the <b>Images</b> link on the <b>Admin</b>upload the VMDK image.</li>
     <li>In the <b>Images</b> screen, click <b>Create Image</b>.</li> <!-- Where is this file??? -->
     <li>In the <b>Create an Image</b> screen, fill out the fields as appropriate:
