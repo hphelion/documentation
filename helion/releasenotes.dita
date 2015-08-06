@@ -85,13 +85,13 @@
     <section id="KnownIssues"><title>Known Issues in this Release</title><p><b>HP Helion Development
           Platform</b></p><p>Helion Development Platform is not supported on Beta
           0</p><p><b>Installing Swift</b></p><p>Swift installs with the following limitations: </p><ul>
-        <li>Only a 3-node Swift configuration in which Swift runs on the 3 controller servers is
-          supported</li>
+        <li>Only a 3-node Swift configuration in which Swift runs on the three controller nodes is
+          supported.</li>
         <li>No LVM (logical volumes) support. Therefore, dedicated disks are needed for Swift on the
-          3 controller nodes</li>
-        <li>In Beta0 you cannot add or remove Swift servers</li>
-        <li>Only one Swift zone is supported</li>
-        <li>Support only 1 storage policy, object-0</li>
+          3 controller nodes.</li>
+        <li>In Beta0 you cannot add or remove Swift servers.</li>
+        <li>Only one Swift zone is supported.</li>
+        <li>Only one  storage policy, object-0, is supported in this release.</li>
       </ul><!-- <p>
       <b>Deployment of VSA cloud on a separate Node as per the life-cycle management
       features</b></p>
@@ -104,14 +104,10 @@
       other services as well. This will be beyond be Beta0 timeframe.</p>
     <p> </p>--><p><b>Health
           and performance monitoring</b></p><p>Monitoring is enabled for several, but not all
-        services</p><p>Monitoring is integrated for the following services:</p><p>Logging, Neutron,
-        Swift, Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca,
-        Nova, hLinux</p><p>The following are yet to be completed:</p><ul>
-        <li>OpsConsole</li>
-        <li>Keystone</li>
-        <li>Horizon</li>
-      </ul><p/><p><b>Helion Cloud Monitoring (Monasca) via the lifecycle management
-        features</b></p><p>Basic Monitoring is complete for Beta0 with the following
+        services</p><p>Monitoring is integrated for the following services: Logging, Neutron, Swift,
+        Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova,
+        hLinux</p><p/><p><b>Helion Cloud Monitoring (Monasca) via the lifecycle management
+          features</b></p><p>Basic Monitoring is complete for Beta0 with the following
         limitations:</p><ul>
         <li>Vertica is not available in the install. Must choose InfluxDB option instead.</li>
         <li>InfluxDB not configured behind a VIP. Must directly access one node in the cluster.</li>
@@ -134,9 +130,8 @@
     <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
     <p> </p>--><p><b>TLS</b></p><p>The
         server certificate is currently hard coded. If an operator wishes to provide their own, they
-        need to edit the defaults in the TLS playbook. <i>The intent is to provide an interface via
-          a soft link in the ansible system to do this.</i>status unkown</p><p><b>Known
-        Issues</b></p><p><b>Install:</b></p><p>Boot order may be affected by random assignment of
+        need to edit the defaults in the TLS playbook. </p><p><b>Known
+          Issues</b></p><p><b>Install:</b></p><p>Boot order may be affected by random assignment of
         eth interface numbers to your NICs. Therefore the node you need to boot first may not be
         first. You may want to disable NICs that you are not planning to use.</p><p>If you find that
         your NICs are named out of order, you can configure your interface names ( eg. ethX ) to
@@ -153,9 +148,7 @@
     <p><b>What other settings will we be able to customize in Beta0?</b></p>
     <p>Specifically, will we be able to set things like server affinity through jinja files, or will
       those need to be manual changes? M. Dunnett</p>-->
-      <p><b>Ops Console</b></p>Not enabled. <p><b>Horizon </b></p>Not enabled. 
-       
-    </section>
+      <p><b>Ops Console</b></p>Not enabled. <p><b>Horizon </b></p>Not enabled. </section>
     
 
   </body>
