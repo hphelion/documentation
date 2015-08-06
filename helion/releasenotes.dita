@@ -110,9 +110,9 @@
         <li>OpsConsole</li>
         <li>Keystone</li>
         <li>Horizon</li>
-      </ul><p>This list to be updated real time as teams progress</p><p><b>Helion Cloud Monitoring
-          (Monasca) via the lifecycle management features</b></p><p>Basic Monitoring is complete for
-        Beta0 with the following limitations:</p><ul>
+      </ul><p/><p><b>Helion Cloud Monitoring (Monasca) via the lifecycle management
+        features</b></p><p>Basic Monitoring is complete for Beta0 with the following
+        limitations:</p><ul>
         <li>Vertica is not available in the install. Must choose InfluxDB option instead.</li>
         <li>InfluxDB not configured behind a VIP. Must directly access one node in the cluster.</li>
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
@@ -150,7 +150,9 @@
     <p>Possible to add VSA and Compute nodes. Default is 1 of each.</p>
     <p><b>What other settings will we be able to customize in Beta0?</b></p>
     <p>Specifically, will we be able to set things like server affinity through jinja files, or will
-      those need to be manual changes? M. Dunnett</p>--><p><b>Ops
-          Console</b></p>Not enabled.</section>
+      those need to be manual changes? M. Dunnett</p>-->
+      <p><b>Ops Console</b></p>Not enabled. <p><b>Horizon </b></p>Not enabled. </section>
+    
+
   </body>
 </topic>
