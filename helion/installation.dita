@@ -64,15 +64,24 @@
                 <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
          </ul></li>
 </ol></section>
-    <section><title>Installing HP Helion OpenStack</title>
-      <ol>
-        <li>On the deployer node, create ssh keypair if one is not already present, e.g.
-          ssh-keygen -t rsa</li>
-        <li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file.
-          e.g. cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</li>  
-        <li>Check that ssh localhost works without a password and that you can get from external sources, both with and without sudo.</li>
-        <li>Mount install media at /media/cdrom, e.g. sudo mount /media/cdrom (in case CD is in /dev/cdrom)</li>
-        <li>Unpack tarball: tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz</li>
+<section><title>Installing HP Helion OpenStack</title>
+<ul>
+<li>On the deployer node, create ssh keypair if one is not already present:
+<codeblock>
+ssh-keygen -t rsa
+</codeblock>
+</li>
+<li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file:
+<codeblock>
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+</codeblock>
+</li>  
+<li>Check that ssh localhost works without a password and that you can get from external sources, both with and without sudo.</li>
+<li>Mount install media at /media/cdrom, e.g. sudo mount /media/cdrom (in case CD is in /dev/cdrom)</li>
+<li>Unpack tarball: 
+<codeblock>
+tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz
+</codeblock></li>
 <li>Run included script:
 <codeblock>
 ~/hlm-deployer/hlm-init-2.0.0.bash
@@ -104,7 +113,7 @@ ansible-playbook -i hosts/localhost config-processor-run_v2.yml
 <li>iLO Advanced license</li>
 <li>Ensure every system has 5 enabled disk devices</li>
 <li>Switch from UEFI to Legacy BIOS</li>
-</ul></li> 
+</ul></li>
 <li>
 <codeblock>
 Export ANSIBLE_HOST_KEY_CHECKING=False
@@ -142,15 +151,12 @@ ansible-playbook -i hosts/localhost cobbler-provision.yml
         </li>
         <li>Run ansible-playbook -i hosts/localhost cloud-client-setup.yml, this replaces /etc/hosts file on deployer - as it no longer has entry for hlm it may become a bit slower. To fix once this step is complete to add "hlm" after "127.0.0.1 localhost"</li>
         <li>Install and configure VSA</li>
-        
-        
-        
         <li>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium (unverified)</li>
         <li>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml
           <ul><li>Note: You can optionally specify the external network CIDR here too: e.g. ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</li></ul></li>
         <li>ansible-playbook -i hosts/localhost cloud-client-setup.yml</li>
         <li>Install and configure VSA </li>
-</ol> 
+</ul> 
 </section>
 <section>
    <title>Installing and configuring VSA (optional)</title>
