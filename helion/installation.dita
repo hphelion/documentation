@@ -32,7 +32,7 @@
 <section id="DeployerInstall"> <title>Deployer Setup</title>
 <ol>
 <li>Create LUN(s), if required.</li>
-  <li>Boot from ISO (downloadable at http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso)</li>
+  <li>Boot from ISO (downloadable <xref href="http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso" format="html">here</xref>)</li>
 <li>Enter 'install' to start installation</li>
 <li>Select Language</li>
 <li>Select Location</li>
@@ -51,8 +51,9 @@
 </ul>
 </li>
 </ol>
+<p>At the end of this section you should have a deployer node setup with hLinux on it.</p>
 </section>
-<section id="HLM_Node_Personalization"> <title>Configuring Deployer Node</title>
+<section id="HLM_Node_Personalization"> <title>Configuring and Running the Deployer</title>
 <ol>
 <li>On the deployer node, create ssh keypair if one is not already present:
 <codeblock>ssh-keygen -t rsa</codeblock></li>
@@ -65,6 +66,14 @@
 <li>Run included script:
 <codeblock>~/hlm-deployer/hlm-init-2.0.0.bash</codeblock></li>
 </ol>
+<p>At the end of this section you should have a local directory structure that is described below:</p>
+<codeblock>
+helion/                        Top level directory.
+helion/examples/               Diretory contains the config of the example clouds.
+helion/my_cloud/definition/    Directory contains the config input files.
+helion/my_cloud/config/        Directory contains .j2 files which are symlinks to the /hlm/ansible directory
+helion/hlm/                    Directory contains files used by the installer
+</codeblock>
 </section>
 <section id="Configuration"> <title>Configure Your Environment</title>
 <ol>
