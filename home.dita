@@ -14,7 +14,13 @@
         <stentry>
           <xref href="helion/index.dita">HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta 0</xref>
         </stentry>
-        <stentry>...</stentry>
+        <stentry>
+          <p>In HP Helion OpenStack 2.0 will bring greater flexibility than there was previously
+            with regard to the size and type of cloud you will build, and more automation in
+            installation and setup. </p>
+          <p>This beta release is the first step towards a more full-featured cloud installation and
+            an opportunity to test the features as they emerge.</p>
+        </stentry>
       </strow>
       </simpletable>
 </body>
