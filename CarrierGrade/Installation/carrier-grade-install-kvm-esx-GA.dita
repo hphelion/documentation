@@ -511,16 +511,17 @@ source stackrc</codeblock></li>
     
   <p><b>Note:</b> To create a redundant grouping of the VRS-G, refer to the DCN documentation.</p>
 </section>
-  <section><title>Retrieving the FIP Name from VSD for external Network</title>
+  <section><title>Retrieving the Floating IP Name from VSD for external Network</title>
     <ol><li>Using the VSD. dashboard</li>
-        <li>Click <b>Open Data Center Configuration</b>, then <b>Shared Network tab</b>
-        </li>
-        <li>For the Floating IP subnet, click the <b>Edit</b> button to get the FIP name. <p>This is
-            the same name you assigned when you created the subnet. Make note of this name, as you
-            will use it during the installation.</p></li>
-      <li> You will need this FIP name during the installation when you create and edit a curl
-          script to replace this value in the FIP_NAME="3d2b2090-2044-4580-92ce-ab5a6e4a9184"
-          [example] with the FIP name you obtained.</li>
+        <li>Click <b>Open Data Center Configuration</b>, then <b>Shared Network</b> tab. <image
+            href="../../media/CGH-install-vsd-fip.png" id="image_okn_sjz_xs">
+            <alt>Gatewy Port</alt>
+          </image></li>
+        <li>For the Floating IP subnet, right-click and select <b>Edit</b> to get the name. <p>This
+            is the same name you assigned when you created the subnet. Make note of this name, as
+            you will use it during the installation.</p></li>
+      <li> You will need the Floating IP subnet name during the installation when you create and
+          edit a CuRL script.</li>
       </ol>
   </section>
     <section><title>Add VLAN to VRSG network device </title>
