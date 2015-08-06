@@ -104,7 +104,7 @@ ansible-playbook -i hosts/localhost config-processor-run_v2.yml
 </li>
 </ul>
 </li>
-<li>Check the generated hosts files in <p><codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph></p> to make sure the correct IPs are included.  If they are not then run <p><codeph>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeph></p> and go to step 15.</li>
+<li><p>Check the generated hosts files in <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to make sure the correct IPs are included.  If they are not then run <codeph>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeph> and go to step 15.</p></li>
 <li>Prepare bare metal hardware (this can be done in parallel with the above steps, or in advance)
 <ul>
 <li>iLO Advanced license</li>
