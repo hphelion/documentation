@@ -91,20 +91,14 @@ cp -r ~/helion/examples/one-region-poc-with-vsa/* ~/helion/my_cloud/definition/
 </ul>
 </li>
 <li>Run the configuration processor and check that your IP addresses are correct in the following: 
-<ul>
-<li>
 <codeblock>
 cd ~/helion/hlm/ansible
 </codeblock>
-</li>
-<li>
 <codeblock>
 ansible-playbook -i hosts/localhost config-processor-run_v2.yml  
 </codeblock>
 </li>
-</ul>
-</li>
-<li><p>Check the generated hosts files in <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to make sure the correct IPs are included.  If they are not then run <codeph>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeph> and go to step 15.</p></li>
+<li>Check the generated hosts files in <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to make sure the correct IPs are included.  If they are not then run <codeph>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeph> and go to step 15.</li>
 <li>Prepare bare metal hardware (this can be done in parallel with the above steps, or in advance)
 <ul>
 <li>iLO Advanced license</li>
