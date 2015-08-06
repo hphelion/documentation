@@ -32,7 +32,7 @@
 <section id="DeployerInstall"> <title>Deployer Setup</title>
 <ol>
 <li>Create LUN(s), if required.</li>
-<li>Boot from ISO</li>
+  <li>Boot from ISO (downloadable at http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso)</li>
 <li>Enter 'install' to start installation</li>
 <li>Select Language</li>
 <li>Select Location</li>
