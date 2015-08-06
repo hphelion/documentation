@@ -24,8 +24,7 @@
 <ul>
   <li><xref href="releasenotes.dita">Beta 0 Release Notes</xref></li>
   <li><xref href="supportedconfigs.dita">Supported Configurations</xref></li>
-  <li><xref href="hardwaresetup.dita">Hardware Setup</xref></li>
-  <li><xref href="hardwaresetup.dita">Minimum Hardware Requirements</xref></li>
+  <li><xref href="hardware.dita">Minimum Hardware Requirements</xref></li>
   <li><xref href="installation.dita">Installation</xref></li>
   <li><xref href="faq.dita">Frequently Asked Questions</xref></li>
 </ul>
