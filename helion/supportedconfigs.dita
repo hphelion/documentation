@@ -44,7 +44,7 @@
     <p>Controller (shared by all control plane servers), Compute, VSA</p>
     <p/>
     <p><b>Networking</b></p>
-    <p>IPMI/iLO network</p>
+    <p>A dedicated network for IPMI/iLO must be connected to all the nodes</p>
     <p>Dedicated NIC for operating system installation and Ansible</p>
     <ul id="ul_yxn_c2l_xs">
       <li>configured as part of os-deploy, used by Ansible, not further configured by HLM</li>
@@ -69,6 +69,8 @@
       following this pattern) </p>
     <p>
       <image href="images/20beta0poc-diagram.png" width="1000" id="image_pl2_d4k_xs"/></p>
+    
+    <p> <image href="images/20beta0poc-diagram1.png" width="1000"/></p>
     <ul>
       
       <li>
