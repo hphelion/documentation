@@ -91,9 +91,8 @@
 <li>Run this command:
 <codeblock>Export ANSIBLE_HOST_KEY_CHECKING=False</codeblock>
 </li>
-<li>Run <codeblock>
-ansible-playbook -i hosts/localhost cobbler-deploy.yml
-</codeblock>
+<li>Run this playbook:
+<codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
 </li>
 </ol>
 </section>
