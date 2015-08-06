@@ -52,7 +52,7 @@
 </li>
 </ol>
 </section>
-<section id="HLM_Node_Personalization"> <title>Installing HP Helion OpenStack</title>
+<section id="HLM_Node_Personalization"> <title>Configuring Deployer Node</title>
 <ol>
 <li>On the deployer node, create ssh keypair if one is not already present:
 <codeblock>ssh-keygen -t rsa</codeblock></li>
