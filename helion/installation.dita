@@ -1,70 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_flx_j2b_ws">
-  <title>Beta 0: Installing HP Helion OpenStack on Baremetal</title>
-  <prolog>
-    <metadata>
-      <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack"/>
-      <othermeta name="product-version" content="HP Helion Openstack 2.0"/>
-      <othermeta name="role" content="Systems Administrator"/>
-      <othermeta name="role" content="Cloud Architect"/>
-      <othermeta name="role" content="Storage Administrator"/>
-      <othermeta name="role" content="Network Administrator"/>
-      <othermeta name="role" content="Service Developer"/>
-      <othermeta name="role" content="Cloud Administrator"/>
-      <othermeta name="role" content="Application Developer"/>
-      <othermeta name="role" content="Network Engineer"/>
-      <othermeta name="role" content="Geraldine K."/>
-      <othermeta name="product-version1" content="HP Helion Openstack"/>
-      <othermeta name="product-version2" content="HP Helion Openstack 2.0"/>
-    </metadata>
-  </prolog>
-  <body>
-<note>This assumes a BM deployer.</note>
+<title>Beta 0: Installing HP Helion OpenStack on Baremetal</title>
+<body>
 <note>This assumes hlinux:
       http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso</note>
 <section><title>Known Restrictions</title>
-    <ol id="ol_kr3_2fb_ws">
-      <li>All disks on the system(s) will be wiped /dev/sda will be used for the OS but all other disks will also be wiped.</li>
-      <li>Install on nodes via legacy bios setting (No UEFI)</li>
-      <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. Important factor is that all machines can net boot from PXE and use deployer as DHCP server.</li>
-      <li>The network will need to be set up with various number of VLANS depending on needs. Just make sure model reflects that.</li>
-      <li>All machines used were same, but with right model there is no such restriction - although all machines of single type should be same, like all computes, all VSAs etc</li>
-      <li>This will only work anywhere, as no external network is used. However due to bugs we had to download some components from HP sources.</li>
-      <li>The deployer node needs to be a dedicated node in Beta0.</li>
-      <li>The machine hosting the deployer, and all baremetal systems have to be connected to a
-          management network. Nodes on this management network must be able to reach the iLO
-          subsystem of each baremetal system to enable host reboots as part of the install process.
-          The HP Helion OpenStack architecture requires that the IPMI network is a separate network
-          and that a route exists from management network to the IPMI network for iLO access.</li>
-      <li>Machines will need to be fully reinstalled on next drop – upgrade from beta0 to beta1 is
-        not supported.</li>
-      <li>The machine types should be homogeneous.</li>
-        <li>Is possible to add additional VSA and compute nodes. The default is 1 of each.</li>
-        <li>You may assign server roles to each or your nodes manually, or allow the installer to
-          assign them.</li>
-    </ol>
+<ol>
+<li>All disks on the system(s) will be wiped /dev/sda will be used for the OS but all other disks will also be wiped.</li>
+<li>Install on nodes via legacy bios setting (No UEFI)</li>
+<li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. Important factor is that all machines can net boot from PXE and use deployer as DHCP server.</li>
+<li>The network will need to be set up with various number of VLANS depending on needs. Just make sure model reflects that.</li>
+<li>All machines used were same, but with right model there is no such restriction - although all machines of single type should be same, like all computes, all VSAs etc</li>
+<li>This will only work anywhere, as no external network is used. However due to bugs we had to download some components from HP sources.</li>
+<li>The deployer node needs to be a dedicated node in Beta0.</li>
+<li>The machine hosting the deployer, and all baremetal systems have to be connected to a management network. Nodes on this management network must be able to reach the iLO subsystem of each baremetal system to enable host reboots as part of the install process.  The HP Helion OpenStack architecture requires that the IPMI network is a separate network and that a route exists from management network to the IPMI network for iLO access.</li>
+<li>Machines will need to be fully reinstalled on next drop – upgrade from beta0 to beta1 is not supported.</li>
+<li>The machine types should be homogeneous.</li>
+<li>Is possible to add additional VSA and compute nodes. The default is 1 of each.</li>
+<li>You may assign server roles to each or your nodes manually, or allow the installer to assign them.</li>
+</ol>
 </section>
-    <section><title>Initial OS Installation</title>
-   <ol><li>Create LUN(s), if required.</li>
-     <li>Boot from ISO</li>
-     <li>Enter 'install' to start installation</li>
-     <li>Select Language</li>
-     <li>Select Location</li>
-     <li>Select Keyboard layout</li>
-     <li>Select appropriate network interface <ul>
-            <li>Assign IP address, netmask</li>
-          </ul></li>
-       <li>Create new account
-         <ul>
-           <li>Enter a username.</li>
-           <li>Enter a password.</li>
-           <li>Enter timezone if prompted to do so.</li>
-                <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
-         </ul></li>
-</ol></section>
-<section><title>Installing HP Helion OpenStack</title></section>
+<section id="Prereqs"> <title>Before You Start</title>
+<p>Prepare your baremetal hardware:</p>
+<ul>
+  <li>Setup the iLO Advanced license in the iLO config</li>
+  <li>Ensure every system has 5 enabled disk devices per the <xref href="hardware.dita">minimum hardware requirements</xref></li>
+  <li>Switch from UEFI to Legacy BIOS</li>
+</ul>  
+</section>
+<section id="DeployerInstall"> <title>Deployer Setup</title>
+<ol>
+<li>Create LUN(s), if required.</li>
+<li>Boot from ISO</li>
+<li>Enter 'install' to start installation</li>
+<li>Select Language</li>
+<li>Select Location</li>
+<li>Select Keyboard layout</li>
+<li>Select appropriate network interface
+<ul>
+<li>Assign IP address, netmask</li>
+</ul>
+</li>
+<li>Create new account
+<ul>
+<li>Enter a username.</li>
+<li>Enter a password.</li>
+<li>Enter timezone if prompted to do so.</li>
+<li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="HLM_Node_Personalization"> <title>Installing HP Helion OpenStack</title></section>
     <section>
       <ol id="ol_bbw_fr1_ys">
         <li>On the deployer node, create ssh keypair if one is not already present:
