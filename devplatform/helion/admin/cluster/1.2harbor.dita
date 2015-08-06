@@ -36,11 +36,12 @@
 <xref type="section" href="#topic4009/troubleshooting">Troubleshooting</xref>
 </li>
 </ul>
-<p>The Harbor service provisions ports to user applications. The standard
-router in Application Lifecycle Service is designed for HTTP(S) traffic only, if user
-applications require other protocols, consider setting up Harbor.</p>
-<p>Information on using the Harbor port service with deployed applications
-is in the <xref href="../../user/services/1.2port-service.dita" >Port Service (Harbor) documentation</xref>.</p>
+<p>The standard router in Application Lifecycle Service is designed for HTTP(S) traffic only. If
+      user applications require other protocols, consider setting up Harbor.</p>
+<p>The Harbor service provisions ports to user applications. Information on using the Harbor port
+      service with deployed applications is in the <xref
+        href="../../user/services/1.2port-service.dita">Port Service (Harbor)
+      documentation</xref>.</p>
 <section id="architecture"> <title>Architecture</title>
 <p>A Harbor node is designed to sit on the edge of the cluster network
 (i.e. with a publicly routable network interface) in a similar fashion
@@ -49,11 +50,10 @@ and internal traffic from your app to the outside world and vice versa.</p>
 <p>Unlike the router component which normally only requires 80/HTTP and
 443/HTTPS ports to be externally visible, a Harbor node will
 automatically provision ports from a pre-configured range.</p>
-<p>The harbor node learns about new routes for each provisioned service
-from the DEAs. When an application instance bound to a Harbor service on
-a DEA is terminated (stopped, failed, or scaled down), Harbor will also
-drop that instance from its list of backends available for the
-externally facing port.</p>
+<p>The Harbor node learns about new routes for each provisioned service from the DEAs. When an
+        application instance bound to a Harbor service on a DEA is terminated (stopped, failed, or
+        scaled down), Harbor will also drop that instance from its list of backends available for
+        the externally facing port.</p>
 </section>
 <section id="requirements-setup"> <title>Requirements &amp; Setup</title>
   <p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other <xref href="1.2index.dita#topic18326/data-services-nodes" type="section" >data service roles</xref>.

@@ -285,6 +285,8 @@
       <topicref href="devplatform/helion/CLI/1.2constructor_vm.dita"
         navtitle="ALS Constructor VM" locktitle="yes"/>
       <topichead navtitle="ALS Management Console">
+        <topicref href="devplatform/helion/admin/console/console_intro.dita"
+          navtitle="Introduction and First Use" locktitle="yes"/>
         <topicref href="devplatform/helion/admin/console/1.2index.dita" locktitle="yes"
           navtitle="Management Console (Admin View)"/>
         <topicref href="devplatform/helion/user/console/1.2index.dita"

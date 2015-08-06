@@ -27,6 +27,9 @@
       features described below are only available to Administrator users from the Admin view.</p>
     <ul>
       <li>
+        <xref href="console_intro.dita">Management Console Introduction and First Access</xref>
+      </li>
+      <li>
         <xref type="section" href="#topic13823/setup">Management Console Setup and Access</xref>
       </li>
       <li>

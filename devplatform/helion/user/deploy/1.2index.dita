@@ -25,6 +25,10 @@
       data services simply by pushing your source code to the system.</p>
 <p>Application Lifecycle Service handles the automatic configuration of the language runtime,
 web server, application dependencies, databases, and other services.</p>
+    <note>"Worker Applications" are non-HTTP apps, such as background scripts, which run as ALS
+      applications. To deploy worker applications, you need to use the <xref
+        href="1.2manifestyml.dita#topic20922/command">command</xref>key and set the <xref
+        href="1.2manifestyml.dita#topic20922/web">proceses: web</xref> key to Null ("~").</note>
 <section id="quick-start"> <title>Quick Start</title>
 <ul>
 <li>
