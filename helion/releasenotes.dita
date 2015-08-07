@@ -154,12 +154,12 @@
     <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
     <p> </p>-->
       <p><b>TLS</b></p>
-      <p>
+      
         <ul id="ul_s1v_5bg_ys">
           <li>The server certificate is currently hard coded. If an operator wishes to provide their
             own, they need to edit the defaults in the TLS playbook. </li>
         </ul>
-      </p>
+      
       <p><b>Installation and NIC Numbering</b></p>
       <ul id="ul_ilm_vbg_ys">
         <li>
