@@ -57,7 +57,7 @@
 <li>Mount the install media at /media/cdrom, for example,
           <codeblock>sudo mount /media/cdrom</codeblock></li>
 <li>Unpack the following tarball:
-          <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz </codeblock></li>
+          <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz</codeblock></li>
 <li>Run the following included script:
           <codeblock>~/hlm-deployer/hlm-init-2.0.0.bash</codeblock></li>
 </ol>
@@ -83,7 +83,8 @@ helion/hlm/                    Directory contains files used by the installer
 </ul></li>
 </ol></li>
 <li>Run the configuration processor, as follows:
-<codeblock>cd ~/helion/hlm/ansible</codeblock><codeblock>ansible-playbook -i hosts/localhost config-processor-run_v2.yml</codeblock></li>
+<codeblock>cd ~/helion/hlm/ansible</codeblock>
+<codeblock>ansible-playbook -i hosts/localhost config-processor-run_v2.yml</codeblock></li>
 <li>Check the generated host files in <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs are included. If they are not, run <codeph>ansible-p input files carefully.</codeph></li>
 </ol>
 </section>
@@ -91,7 +92,7 @@ helion/hlm/                    Directory contains files used by the installer
 <ol>
 <li>Run the following command: <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
 <li>Run the following playbook:
-          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+<codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
 </ol>
 </section>
 <section id="NodeProvision"><title>Provision the Nodes</title>
