@@ -138,7 +138,7 @@
 </ul>
 <p><b>Installation and NIC Numbering</b></p>
 <ul>
-<li>Boot order may be affected by random assignment of eth interface numbers to your NICs. Therefore the node you need to boot first may not be first. You may want to disable NICs that you are not planning to use.</li>
+<li>Boot order may be affected by random assignment of eth interface numbers to your physical network interfaces. Therefore the node you need to boot first may not be first. You may want to disable NICs that you are not planning to use.</li>
 <li>If you find that your NICs are named out of order, you can configure your interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
 </ul>
 <p><b>NIC Bonding changes needed during installation</b></p>
