@@ -5,20 +5,12 @@
 <body>
 <section><title>Known Restrictions</title>
 <ol>
-<li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other disks
-          will be wiped.</li>
-<li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All machines
-          can net boot from PXE and use the deployer as a DHCP server.</li>
-<li>The network must be set up with various number of VLANS depending on needs. Ensure the model
-          reflects that.</li>
-<li>All machines of a single type should be the same, that is, all computes, all VSAs, and so
-          on.</li>
+<li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
+<li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other disks will be wiped.</li>
+<li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All machines can net boot from PXE and use the deployer as a DHCP server.</li>
+<li>All machines of a single type should be the same, that is, all computes, all VSAs, and so on.</li>
 <li>The deployer node must be a dedicated node in Beta0.</li>
-<li>The machine hosting the deployer and all baremetal systems must be connected to a management
-          network. Nodes on this management network must be able to reach the iLO subsystem of each
-          baremetal system to enable host reboots as part of the install process. The HP Helion
-          OpenStack architecture requires that the IPMI network is a separate network and that a
-          route exists from the management network to the IPMI network for iLO access.</li>
+<li>The machine hosting the deployer and all baremetal systems must be connected to a management network. Nodes on this management network must be able to reach the iLO subsystem of each baremetal system to enable host reboots as part of the install process. The HP Helion OpenStack architecture requires that the IPMI network is a separate network and that a route exists from the management network to the IPMI network for iLO access.</li>
 <li>It is possible to add additional VSA and compute nodes: the default is one of each.</li>
 </ol>
 </section>
