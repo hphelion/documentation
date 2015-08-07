@@ -51,7 +51,9 @@
     <p><b>Server Roles</b></p>
     
       <ul id="ul_zc4_hyf_ys">
-        <li>Controller (shared by all control plane servers), compute, storage</li>
+        <li>Controller </li>
+        <li>Compute </li>
+        <li>Storage</li>
       </ul>
     
     
