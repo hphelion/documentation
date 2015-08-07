@@ -7,7 +7,8 @@
 <ul>
 <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
 <li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other disks will be wiped.</li>
-<li>The deployer node must use the provided hLinux ISO and the installer will install hLinux on all the other systems in the cluster.</li>
+  <li>The deployer node must use the <xref href="http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso"
+    format="html">provided hLinux ISO</xref> and the installer will install hLinux on all the other systems in the cluster.</li>
 <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All machines can net boot from PXE and use the deployer as a DHCP server.</li>
 <li>All machines of a single type should be the same, that is, all computes, all VSAs, and so on.</li>
 <li>The deployer node must be a dedicated node in Beta0.</li>
@@ -26,8 +27,8 @@
 <section id="DeployerInstall"> <title>Set up the Deployer</title>
 <ol>
 <li>Create LUN(s), if required.</li>
-<li>Boot from ISO (downloadable <xref href="http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso"
-            format="html">here</xref>).</li>
+<li>Boot from ISO (<xref href="http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso"
+            format="html">download here</xref>).</li>
 <li>Enter "install" to start installation.</li>
 <li>Select the language.</li>
 <li>Select the location.</li>
