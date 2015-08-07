@@ -42,10 +42,10 @@
     </ul>
     <p><b>Minimum server count</b></p>
     <ul id="ul_lrv_gyf_ys">
-      <li>7 with VSA (1 deployer, 3 control plane, 1 compute, 1 VSA) </li>
+      <li>6 with VSA (1 deployer, 3 control plane, 1 compute, 1 VSA) </li>
       <li>5 (as above but no VSA): 1 deployer, 3 control, 1 compute</li>
         <li>
-          <p>VSA can be 0, 1 or 3 nodes.</p>
+          VSA can be 0, 1 or 3 nodes.
         </li>
     </ul>
     <p><b>Server Roles</b></p>
