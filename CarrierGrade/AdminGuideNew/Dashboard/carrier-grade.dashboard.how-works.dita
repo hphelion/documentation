@@ -64,8 +64,8 @@
             </row>
             <row>
               <entry>Server Groups</entry>
-              <entry>Controls for managing server groups associated with the tenant. *Wind River
-                Linux servers only* </entry>
+              <entry>Controls for managing server groups associated with the tenant. KVM region
+                only.</entry>
             </row>
             <row>
               <entry>Volumes</entry>
