@@ -38,17 +38,20 @@
     <p><b>Resource pool</b></p>
     <ul id="ul_jyg_fyf_ys">
       <li>Compute (minimum of one node) </li>
-      <li>VSA Cluster (minimum of one node, no high availability) or you may use 3PAR </li>
+      <li>VSA Cluster (minimum of one node, no high availability)</li>
     </ul>
     <p><b>Minimum server count</b></p>
     <ul id="ul_lrv_gyf_ys">
-      <li>7 with VSA (deployer + 3 control plane + compute + VSA) </li>
-      <li>5 with 3PAR (as above but no VSA) </li>
+      <li>7 with VSA (1 deployer, 3 control plane, 1 compute, 1 VSA) </li>
+      <li>5 (as above but no VSA): 1 deployer, 3 control, 1 compute</li>
+        <li>
+          <p>VSA can be 0, 1 or 3 nodes.</p>
+        </li>
     </ul>
     <p><b>Server Roles</b></p>
     
       <ul id="ul_zc4_hyf_ys">
-        <li>Controller (shared by all control plane servers), Compute, Storage</li>
+        <li>Controller (shared by all control plane servers), compute, storage</li>
       </ul>
     
     
@@ -73,18 +76,14 @@
     </ul>
     <p><b>Storage</b></p>
     <ul id="ul_e4q_myf_ys">
-      <li> All servers assume single OS disc protected by a RAID controller (to be set up by
-          customer before OS deploy) </li>
-      <li> Compute node adds one additional disc and LV for Nova (customer can add other discs
+      <li> All servers assume single OS disc protected by a RAID controller (to be set up  before OS
+          deploy) </li>
+      <li> Compute node adds one additional disc and LV for Nova (you can add other discs following
+          this pattern) </li>
+      <li> VSA adds one additional disc dedicated to VSA (you can add other discs following this
+          pattern) </li>
+      <li> Controller adds one additional disc dedicated to object storage (you can add other discs
           following this pattern) </li>
-      <li>
-        VSA adds one additional disc dedicated to VSA (customer can add other discs following
-          this pattern)
-      </li>
-      <li>
-        Controller adds one additional disc dedicated to object storage (customer can add other
-          discs following this pattern) 
-      </li>
     </ul>
     </section>
       <section><title>Configuration Illustrations</title>
