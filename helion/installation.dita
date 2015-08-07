@@ -18,8 +18,6 @@
 <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
 <ul>
   <li>Setup the iLO Advanced license in the iLO configuration.</li>
-  <li>Ensure every system has five enabled disk devices, as detailed in the <xref
-            href="hardware.dita">minimum hardware requirements</xref>.</li>
   <li>Switch from UEFI to Legacy BIOS.</li>
         <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
         <li>Ensure that the other networks have PXE disabled.</li>
@@ -74,13 +72,17 @@ helion/hlm/                    Directory contains files used by the installer
 <ol>
 <li>Setup your configuration files, as follows: <ol>
 <li>See the sample set of configuration files in the ~/helion/examples/one-region-poc-with-vsa directory. The accompanying README.md file explains the contents of each of the configuration files.</li>
-<li>Copy the example configuration files into the required setup directory and edit them as required: <codeblock>cp -r ~/helion/examples/one-region-poc-with-vsa/* ~/helion/my_cloud/definition/</codeblock><ul>
-<li>The baremetalConfig.yml file should specify the server information for your environment.</li>
-<li>The servers.yml file contains the IP address information for the hardware.</li>
-<li>The networks.yml file contains networking information.</li>
-<li>The control_plane.yml file contains information about the services that will be installed.</li>
-<li>In the <codeph>net_interfaces.yml</codeph> file, replace all instances of “bond-mode: 1” to “bond-mode: active-backup”.</li>
-</ul></li>
+<li>Copy the example configuration files into the required setup directory and edit them as
+              required: <codeblock>cp -r ~/helion/examples/one-region-poc-with-vsa/* </codeblock><ul>
+                <li>The baremetalConfig.yml file should specify the server information for your
+                  environment.</li>
+                <li>The servers.yml file contains the IP address information for the hardware.</li>
+                <li>The networks.yml file contains networking information.</li>
+                <li>The control_plane.yml file contains information about the services that will be
+                  installed.</li>
+                <li>In the <codeph>net_interfaces.yml</codeph> file, replace all instances of
+                  “bond-mode: 1” to “bond-mode: active-backup”.</li>
+              </ul></li>
 </ol></li>
 <li>Run the configuration processor, as follows:
 <codeblock>cd ~/helion/hlm/ansible</codeblock>
