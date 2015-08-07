@@ -4,22 +4,21 @@
   <title>Beta 0: Supported Configuration</title>
   <body>
     <p>The following list summaries the qualified configurations and their purpose.</p>
-    <p><Note>: While the hardware requirements are similar to those of HP Helion OpenStack 1.1, this
-      is a completely new installation, not an upgrade or update operation.</Note></p>
+    <note> While the hardware requirements are similar to those of HP Helion OpenStack 1.1, this
+      is a completely new installation, not an upgrade or update operation.</note>
     <section><title>Single Region Proof of Concept</title>
    
     <ul>
-          <li>Single control plane for
-            <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all control plane
-            services<?oxy_custom_end?></li>
-          <li>Single bond of two NICs</li>
-          <li>Network traffic separation providing for different services on different VLANs</li>
-          <li>IP segmentation </li>
-          <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-          <li>Multiple server roles for different services (Compute, Object etc) with different disk
-            configuration options</li>
-          <?oxy_custom_end?>
-        </ul>
+        <li>Single control plane for
+          <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all control plane
+          services<?oxy_custom_end?></li>
+        <li>Single bond of two network interfaces</li>
+        <li>Network traffic separation providing for different services on different VLANs</li>
+        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+        <li>Multiple server roles for different services (Compute, Object etc) with different disk
+          configuration options</li>
+        <?oxy_custom_end?>
+      </ul>
     
    
     <p><b>Configuration details:</b></p>
