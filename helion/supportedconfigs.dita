@@ -27,14 +27,14 @@
       <li>Scaled down example, optimized for reduced server count </li>
       <li>Dedicated deployer node needed </li>
       <li>Control Plane with one cluster </li>
-      <li>Cloud controllers (minimum of 3 nodes for database quorum) </li>
-
+      <li>Cloud controllers (minimum of 3 nodes for database quorum) 
+<ul>
       <li>Monitoring/Logging</li>
       <li>Neutron network services (centralized routers, DHCP, metadata, default SNAT, VPN
         agent)</li>
       <li>Swift Object</li>
       <li>MySQL, RabbitMQ, API, Other Services</li>
-    </ul>
+    </ul></li></ul>
     <p><b>Resource pool</b></p>
     <ul id="ul_jyg_fyf_ys">
       <li>Compute (minimum of one node) </li>
@@ -43,7 +43,7 @@
     <p><b>Minimum server count</b></p>
     <ul id="ul_lrv_gyf_ys">
       <li>6 with VSA (1 deployer, 3 control plane, 1 compute, 1 VSA) </li>
-      <li>5 (as above but no VSA): 1 deployer, 3 control, 1 compute</li>
+      <li>5 without VSA (1 deployer, 3 control plane, 1 compute)</li>
         <li>
           VSA can be 0, 1 or 3 nodes.
         </li>
