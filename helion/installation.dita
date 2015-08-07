@@ -35,21 +35,21 @@
 <li>Select the location.</li>
 <li>Select the keyboard layout.</li>
 <li>Select the primary network interface, if prompted:<ul>
-            <li>Assign IP address, netmask</li>
-          </ul></li>
+<li>Assign IP address, netmask</li>
+</ul></li>
 <li>Create new account:<ul>
-            <li>Enter a username.</li>
-            <li>Enter a password.</li>
-            <li>Enter time zone if prompted to do so.</li>
-            <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
-          </ul></li>
+<li>Enter a username.</li>
+<li>Enter a password.</li>
+<li>Enter time zone if prompted to do so.</li>
+<li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
+</ul></li>
 </ol>
 <p>At the end of this section you should have a deployer node set up with hLinux on it.</p>
 </section>
 <section id="HLM_Node_Personalization"> <title>Configure and Run the Deployer</title>
 <ol>
-<li>On the deployer node, enter the following command to create the SSH keypair if one is not
-          already present:<codeblock>ssh-keygen -t rsa</codeblock></li>
+<li>On the deployer node, enter the following command to create the SSH keypair if one is not already present:<codeblock>ssh-keygen -t rsa</codeblock>
+</li>
 <li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file:
 <codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
 <li>Confirm that ssh localhost works without a password and that you can get from external sources,
@@ -118,21 +118,24 @@ helion/hlm/                    Directory contains files used by the installer
           </ol>
         </li>
 <li>Modify the ./helion/hlm/ansible/hlm-deploy.yml to comment out the line containing horizon.</li>
-<li>Run the following
-          command:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeblock></li>
+<li>Run the following command:
+<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeblock>
+</li>
 </ol>
 </section>
 <section id="VSA"> <title>Install and Configure VSA (optional)</title>
 <ol>
-<li>Deploy VSA by running the following command: <codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock><ul>
-            <li>If the output has the following error, manually upload the file to that location
-              then rerun
-              vsa-deploy:<codeblock>
+<li>Deploy VSA by running the following command: 
+<codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock>
+<ul>
+<li>If the output has the following error, manually upload the file to that location then rerun vsa-deploy:
+<codeblock>
 stderr: tar: /opt/stack/service/vsa/venv/lib/helion-vsa-11.5.01.0079.tgz:
-Cannot open: No such file or directory </codeblock></li>
-  <li>The file can be found at http://10.1.56.95/helion-vsa-11.5.01.0079.tgz.</li>
-  <li>This is a temporary issue and should be fixed by the next release.</li>
-          </ul></li>
+Cannot open: No such file or directory </codeblock>
+</li>
+<li>The file can be found at http://10.1.56.95/helion-vsa-11.5.01.0079.tgz.</li>
+<li>This is a temporary issue and should be fixed by the next release.</li>
+</ul></li>
 <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
           <codeblock>
 NIC 1: 
