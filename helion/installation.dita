@@ -129,7 +129,7 @@ helion/hlm/                    Directory contains files used by the installer
           the following
           command:<codeblock><codeph>ansible-playbook -i hosts/localhost cobbler-wait-for-shutdown.yml</codeph></codeblock>This
           will complete once all machines are down.</li>
-<li>Power up recently-installed systems, using the following
+<li>Once all nodes are down, power up the recently-installed systems, using the following
           command:<codeblock>ansible-playbook -i hosts/localhost cobbler-power-up.yml</codeblock></li>  
 <li>You can make waiting easier with the command below, which will complete once all machines are up
           and the SSH daemon is responding:
@@ -151,12 +151,13 @@ helion/hlm/                    Directory contains files used by the installer
 <section id="VSA"> <title>Install and Configure VSA (optional)</title>
 <ol>
 <li>Deploy VSA by running the following command: <codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock><ul>
-            <li>If the output has the following error, manually upload this file into that location:
-              <codeblock>
+            <li>If the output has the following error, manually upload the file to that location
+              then rerun
+              vsa-deploy:<codeblock>
 stderr: tar: /opt/stack/service/vsa/venv/lib/helion-vsa-11.5.01.0079.tgz:
 Cannot open: No such file or directory </codeblock></li>
-            <li>File is located in: http://10.1.56.95/helion-vsa-11.5.01.0079.tgz then rerun the
-              vsa-deploy. This is a temporary issue and should be fixed by the next release.</li>
+  <li>The file can be found at http://10.1.56.95/helion-vsa-11.5.01.0079.tgz.</li>
+  <li>This is a temporary issue and should be fixed by the next release.</li>
           </ul></li>
 <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
           <codeblock>
@@ -210,9 +211,9 @@ hplefthand_debug: false
             can optionally specify the external network CIDR here too. If you choose not to
             excercise this option or use a wrong value, the VMs will not be accessible over the
             network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
-<li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the deployer. As it
-          no longer has entry for HLM, it may become a bit slower. To fix this issue, once this step
-          is complete, add "hlm" after "127.0.0.1 localhost":
+<li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the deployer. As
+          they no longer have entries for HLM, sudo commands may become a bit slower. To fix this
+          issue, once this step is complete, add "hlm" after "127.0.0.1 localhost":
           <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock></li>
 <li>Install and configure VSA.</li>
 </ol>
