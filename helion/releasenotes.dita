@@ -79,13 +79,16 @@
     <p>The one-region-poc-with-vsa will be provided by the HLM team which impacts not only VSA but
       other services as well. This will be beyond be Beta0 timeframe.</p>
     <p> </p>-->
+<p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p>
+<ul>
+  <li>Access to Monasca is limited to the REST API and Command Line Client (CLI) only.  GUI access will be implemented in later releases.</li>
+</ul>
 <p><b>Helion Cloud Monitoring (Monasca) via the lifecycle management features</b></p>
 <p>Basic Monitoring is complete for Beta0 with the following limitations:</p>
 <ul>
 <li>Vertica is not available in the install. Must choose InfluxDB option instead.</li>
 <li>InfluxDB not configured behind a VIP. Must directly access one node in the cluster.</li>
 <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
-<li>Access to Monasca is limited to the REST API and Command Line Client (CLI) only.  GUI access will be implemented in later releases.</li>
 </ul>
       <!--  <p><b>Cinder</b></p><ul id="ul_vld_l1g_ys">
         <li>
