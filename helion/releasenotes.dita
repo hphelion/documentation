@@ -48,12 +48,12 @@
           </ul>
         </li>
       </ul>
-      <p><b>New Neutron Features for Greater Performance</b> - We have included native support for
+      <p><b>New Neutron Features for Better Performance</b> - We have included native support for
         the following features in our Neutron offering:</p>
       <ul>
-        <li>NIC bonding with multiple modes will allow you to setup a highly available and
+        <li>NIC bonding with multiple modes will allow you to set up a highly available and
           performant network infrastructure.</li>
-        <li>Multi-Network support will allow you to bridge multiple external physical networks to a
+        <li>Multi-network support will allow you to bridge multiple external physical networks to a
           Neutron network. This will enable you to dictate the path taken by the data in the
           physical network outside of your cloud deployment.</li>
         <li>Network separation (both physical and VLAN) will allow you to segregate traffic by type.
