@@ -159,7 +159,7 @@
             own, they need to edit the defaults in the TLS playbook. </li>
         </ul>
       </p>
-      <p><b>Install:</b></p>
+      <p><b>Installation and NIC Numbering</b></p>
       <ul id="ul_ilm_vbg_ys">
         <li>
           <p>Boot order may be affected by random assignment of eth interface numbers to your NICs.
