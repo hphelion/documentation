@@ -62,15 +62,13 @@
       <li>
         A dedicated network for IPMI/iLO must be connected to all the nodes 
       </li>
-      <li>
-        Dedicated NIC for operating system installation and Ansible
-      </li>
-   
+      <li> Dedicated network interface for operating system installation and Ansible 
+   <ul>
       <li>Configured as part of os-deploy, used by Ansible, not further configured by the
-        deployer</li>
-      <li>One pair of Bonded NICs</li>
-   
-      <li>Bond0: Management, External API, External VMs, Vxlan, Provider VLANs </li>
+        deployer</li></ul></li>
+      <li>One pair of bonded network interfaces
+   <ul>
+      <li>Bond0: Management, External API, External VMs, Vxlan, Provider VLANs </li></ul></li>
       <li>Each network is a single L3 segment</li>
       <li>Load balancers are provided by haproxy</li>
       <li>TLS only on external API, using customer supplied certificate</li>
