@@ -40,9 +40,9 @@
       <li>Compute (minimum of one node) </li>
       <li>VSA Cluster (minimum of one node, no high availability) or you may use 3PAR </li>
     </ul>
-    <p><b>Min server count</b></p>
+    <p><b>Minimum server count</b></p>
     <ul id="ul_lrv_gyf_ys">
-      <li>6 with VSA (deployer + 3 control plane + compute + VSA) </li>
+      <li>7 with VSA (deployer + 3 control plane + compute + VSA) </li>
       <li>5 with 3PAR (as above but no VSA) </li>
     </ul>
     <p><b>Server Roles</b></p>
