@@ -136,14 +136,14 @@
             steps to be defined later may be required to complete installation.</p>
         </li>
       </ul>-->
-      <p><b>Networks</b></p>
+      <!--<p><b>Networks</b></p>
       <p>
         <ul id="ul_rlg_dbg_ys">
           <li>Multiple NICs on a compute node and each NIC is connected to a different external
             network. Today we don't support multiple external networks at L2 (ML2 OVS mech driver)
             nor L3 (DVR or Centralized).</li>
         </ul>
-      </p>
+      </p>-->
       <!--<p>Need use cases/stories </p>
     <p>* ability to span L3</p>
     <p>* multiple provider networks/separation of traffic</p>
