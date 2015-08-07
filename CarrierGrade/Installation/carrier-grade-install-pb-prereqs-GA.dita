@@ -273,9 +273,8 @@ StrictHostKeyChecking no </codeblock></li>
 <li>Copy the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file from the
                                                 <codeph>hcg_1.1.0.tar</codeph> files to the
                                                 <codeph>/root</codeph> directory.</li>
-        <li> Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file using the password
-                                                <codeph>cghelion</codeph> when prompted.
-                                        <codeblock> gpg -d cg-infra-playbooks.tar.gz.gpg | tar -xzvf </codeblock></li>
+        <li> Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph>
+                                        file.<codeblock> <systemoutput>tar xvf GPG-HPCSS-Public-Keys.tar</systemoutput> </codeblock></li>
         <li> Create the <codeph>/root/cg/</codeph> directory</li>
 <li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file from the <codeph>hcg_1.1.0</codeph> directory
                                         to the <codeph>/root/cg/</codeph> directory.</li>
