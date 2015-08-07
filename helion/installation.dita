@@ -7,8 +7,8 @@
 <ul>
 <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
 <li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other disks will be wiped.</li>
-  <li>The deployer node must use the <xref href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
-    format="html" scope="external">provided hLinux ISO</xref> and the installer will install hLinux on all the other systems in the cluster.</li>
+  <li>The deployer node must use the HP Linux for HP Helion OpenStack ISO, which can be downloaded from the <xref href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
+    format="html" scope="external">Helion Downloads</xref> page.</li>
 <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All machines can net boot from PXE and use the deployer as a DHCP server.</li>
 <li>All machines of a single type should be the same, that is, all computes, all VSAs, and so on.</li>
 <li>The deployer node must be a dedicated node in Beta0.</li>
@@ -27,8 +27,8 @@
 <section id="DeployerInstall"> <title>Set up the Deployer</title>
 <ol>
 <li>Create LUN(s), if required.</li>
-  <li>Download the hLinux Deployer ISO from the <xref href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
-    format="html" scope="external">Helion Downloads Site</xref>.</li>
+  <li>Download the HP Linux for HP Helion OpenStack Deployer ISO from the <xref href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
+    format="html" scope="external">Helion Downloads</xref> page.</li>
 <li>Boot your deployer from the ISO.</li>
 <li>Enter "install" to start installation.</li>
 <li>Select the language.</li>
