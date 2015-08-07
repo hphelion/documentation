@@ -44,6 +44,8 @@
 <li>Anomaly and Prediction Engine</li>
 </ul>
 <p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP Helion OpenStack.</p>
+<p><b>Centralized Logging</b> - Logging for the services beow is enabled in the default configuration.  You will have the ability to disable per-service logging as needed.</p>
+<p>Logging is integrated for the following services: Nova, Glance, Swift, Neutron, Ceilometer, Monasca, Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p>
 <p><b>New Baremetal Installation Kit</b></p>
 <ul>
 <li>You supply the cloud configuration you want based on our <xref href="supportedconfigs.dita">Supported Configurations</xref> and the baremetal installer will set up your environment.</li>
@@ -82,6 +84,7 @@
 <p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p>
 <ul>
   <li>Access to Monasca is limited to the REST API and Command Line Client (CLI) only.  GUI access will be implemented in later releases.</li>
+  <li></li>
 </ul>
 <p><b>Helion Cloud Monitoring (Monasca) via the lifecycle management features</b></p>
 <p>Basic Monitoring is complete for Beta0 with the following limitations:</p>
@@ -89,6 +92,12 @@
 <li>Vertica is not available in the install. Must choose InfluxDB option instead.</li>
 <li>InfluxDB not configured behind a VIP. Must directly access one node in the cluster.</li>
 <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
+</ul>
+<p><b>Centralized Logging Limitations</b></p>
+<p>Logging support is complete for Beta0 with the following limitations:</p>
+<ul>
+  <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
+  <li>Logging-monitor 'stop' playbook is not integrated.</li>
 </ul>
       <!--  <p><b>Cinder</b></p><ul id="ul_vld_l1g_ys">
         <li>
