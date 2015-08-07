@@ -21,68 +21,50 @@
           <?oxy_custom_end?>
         </ul>
     
-    <p> </p>
+   
     <p><b>Configuration details:</b></p>
     <ul id="ul_ovh_r4f_ys">
-      <li>
-        Scaled down example, optimized for reduced server count
-      </li>
-      <li>
-        Dedicated deployer node needed
-      </li>
-      <li>
-        Control Plane with one cluster
-      </li>
-      <li>
-        Cloud controllers (minimum of 3 nodes for database quorum)
-      </li>
+      <li>Scaled down example, optimized for reduced server count </li>
+      <li>Dedicated deployer node needed </li>
+      <li>Control Plane with one cluster </li>
+      <li>Cloud controllers (minimum of 3 nodes for database quorum) </li>
 
-      <li> Monitoring/Logging</li>
-      <li> Neutron network services (centralized routers, DHCP, metadata, default SNAT, VPN
+      <li>Monitoring/Logging</li>
+      <li>Neutron network services (centralized routers, DHCP, metadata, default SNAT, VPN
         agent)</li>
-      <li> Swift Object</li>
-      <li> MySQL, RabbitMQ, API, Other Services</li>
+      <li>Swift Object</li>
+      <li>MySQL, RabbitMQ, API, Other Services</li>
     </ul>
     <p><b>Resource pool</b></p>
     <ul id="ul_jyg_fyf_ys">
-      <li>
-        <p>Compute (minimum of one node)</p>
-      </li>
-      <li>
-        <p>VSA Cluster (minimum of one node, no high availability)  or you may use 3PAR</p>
-      </li>
+      <li>Compute (minimum of one node) </li>
+      <li>VSA Cluster (minimum of one node, no high availability) or you may use 3PAR </li>
     </ul>
     <p><b>Min server count</b></p>
     <ul id="ul_lrv_gyf_ys">
-      <li>
-        <p>6 with VSA (deployer + 3 control plane + compute + VSA) </p>
-      </li>
-      <li>
-        <p>5 with 3PAR (as above but no VSA)</p>
-      </li>
+      <li>6 with VSA (deployer + 3 control plane + compute + VSA) </li>
+      <li>5 with 3PAR (as above but no VSA) </li>
     </ul>
     <p><b>Server Roles</b></p>
-    <p>
+    
       <ul id="ul_zc4_hyf_ys">
         <li>Controller (shared by all control plane servers), Compute, VSA</li>
       </ul>
-    </p>
-    <p/>
+    
+    
     <p><b>Networking</b></p>
     <ul id="ul_bfh_3yf_ys">
       <li>
-        <p>A dedicated network for IPMI/iLO must be connected to all the nodes </p>
+        A dedicated network for IPMI/iLO must be connected to all the nodes 
       </li>
       <li>
-        <p>Dedicated NIC for operating system installation and Ansible</p>
+        Dedicated NIC for operating system installation and Ansible
       </li>
-    </ul>
-    <ul id="ul_yxn_c2l_xs">
+   
       <li>Configured as part of os-deploy, used by Ansible, not further configured by the
         deployer</li>
       <li>One pair of Bonded NICs</li>
-    </ul>
-    <ul id="ul_ozn_c2l_xs">
+   
       <li>Bond0: Management, External API, External VMs, Vxlan, Provider VLANs </li>
       <li>Each network is a single L3 segment</li>
       <li>Load balancers are provided by haproxy</li>
@@ -92,20 +74,20 @@
     <p><b>Storage</b></p>
     <ul id="ul_e4q_myf_ys">
       <li>
-        <p>All servers assume single OS “disc” protected by RAID controller (to be set up by
-          customer before os-deploy)</p>
+        All servers assume single OS “disc” protected by RAID controller (to be set up by
+          customer before os-deploy)
       </li>
       <li>
-        <p>Compute Node adds one additional disc and LV for Nova (customer can add other discs
-          following this pattern)</p>
+        Compute Node adds one additional disc and LV for Nova (customer can add other discs
+          following this pattern)
       </li>
       <li>
-        <p>VSA adds one additional disc dedicated to VSA (customer can add other discs following
-          this pattern)</p>
+        VSA adds one additional disc dedicated to VSA (customer can add other discs following
+          this pattern)
       </li>
       <li>
-        <p>Controller adds one additional disc dedicated to object storage (customer can add other
-          discs following this pattern) </p>
+        Controller adds one additional disc dedicated to object storage (customer can add other
+          discs following this pattern) 
       </li>
     </ul>
     <p>
