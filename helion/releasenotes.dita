@@ -133,13 +133,14 @@
         </li>
       </ul>-->
 <p><b>TLS Support</b></p>
-<ul id="ul_s1v_5bg_ys">
+<ul>
 <li>The server certificate is currently hard coded. If an operator wishes to provide their own, they need to edit the defaults in the TLS playbook.</li>
 </ul>
 <p><b>Installation and NIC Numbering</b></p>
 <ul>
-<li>Boot order may be affected by random assignment of eth interface numbers to your physical network interfaces. Therefore the node you need to boot first may not be first. You may want to disable NICs that you are not planning to use.</li>
-<li>If you find that your NICs are named out of order, you can configure your interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
+<li>The assignment of eth interface numbers to your physical network interfaces may vary, and therefore your network interface naming (eth0, eth1, etc) may not be what you expect.</li>
+<li>You may want to disable the network interfaces that you are not planning to use.</li>
+<li>If you find that your network interfaces are named out of order, you can configure your interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
 </ul>
 <p><b>NIC Bonding changes needed during installation</b></p>
 <ul>
