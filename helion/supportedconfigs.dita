@@ -4,8 +4,8 @@
   <title>Beta 0: Supported Configuration</title>
   <body>
     <p>The following list summaries the qualified configurations and their purpose.</p>
-    <p>Note: While the hardware requirements are similar to those of HP Helion OpenStack 1.1, this
-      is a completely new instsallation, not an upgrade or update operation.</p>
+    <p><Note>: While the hardware requirements are similar to those of HP Helion OpenStack 1.1, this
+      is a completely new installation, not an upgrade or update operation.</Note></p>
     <section><title>Single Region Proof of Concept</title>
    
     <ul>
