@@ -24,13 +24,13 @@
 <li>Machines must be fully reinstalled on the next drop – upgrade from Beta0 to Beta1 is not
           supported.</li>
 <li>The machine types must be homogeneous.</li>
-<li>It is possible to add additional VSA and compute nodes. The default is one of each.</li>
+<li>It is possible to add additional VSA and compute nodes: the default is one of each.</li>
 <li>You may assign server roles to each or your nodes manually or allow the installer to assign them
           automatically.</li>
 </ol>
 </section>
 <section id="Prereqs"> <title>Before you Start</title>
-<p>Prepare your baremetal hardware, as follows:</p>
+<p>Prepare your baremetal hardware, as follows, on all nodes:</p>
 <ul>
   <li>Setup the iLO Advanced license in the iLO configuration.</li>
   <li>Ensure every system has five enabled disk devices, as detailed in the <xref
@@ -50,7 +50,7 @@
 <li>Select the language.</li>
 <li>Select the location.</li>
 <li>Select the keyboard layout.</li>
-<li>Select the appropriate network interface:<ul>
+<li>Select the 1GB as the primary network interface, if prompted:<ul>
             <li>Assign IP address, netmask</li>
           </ul></li>
 <li>Create new account:<ul>
@@ -108,28 +108,28 @@ helion/hlm/                    Directory contains files used by the installer
 <li>Run the configuration processor, as follows:
           <codeblock>cd ~/helion/hlm/ansible</codeblock><codeblock>ansible-playbook -i hosts/localhost config-processor-run_v2.yml</codeblock></li>
 <li>Check the generated hosts files in <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph>
-          to ensure the correct IPs are included. If they are not included, run
-            <codeph>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeph> and
-          return to the previous step.</li>
+          to ensure the correct IPs are included. If they are not, run <codeph>ansible-playbook -i
+            hosts/localhost config-processor-clean.yml</codeph> and return to Step 1 and review your
+          input files carefully.</li>
 </ol>
 </section>
 <section id="CobblerDeploy"> <title>Deploy Cobbler </title>
 <ol>
-<li>Run the following command: <codeblock>Export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
+<li>Run the following command: <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
 <li>Run the following playbook:
           <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
 </ol>
 </section>
 <section id="NodeProvision"><title>Provision the Nodes</title>
 <ol>
-<li>Run the following command, which will power down all nodes, set them to PXE boot, and power them
-          up
-          again:<codeblock>ansible-playbook -i hosts/localhost cobbler-provision.yml</codeblock></li>
+<li>Run the following command, which will set all nodes to PXE boot and power cycle them to start
+          their OS
+          install:<codeblock>ansible-playbook -i hosts/localhost cobbler-provision.yml</codeblock></li>
 <li>Wait for the nodes to install. They will power down at the end. You can make waiting easier with
-          the following command, <codeph>ansible-playbook -i hosts/localhost
-            cobbler-wait-for-shutdown.yml</codeph>, which would complete once all machines are
-          down.</li>
-<li>Power up recently-installed systems, using the following
+          the following
+          command:<codeblock><codeph>ansible-playbook -i hosts/localhost cobbler-wait-for-shutdown.yml</codeph></codeblock>This
+          will complete once all machines are down.</li>
+<li>Once all nodes are down, power up the recently-installed systems, using the following
           command:<codeblock>ansible-playbook -i hosts/localhost cobbler-power-up.yml</codeblock></li>  
 <li>You can make waiting easier with the command below, which will complete once all machines are up
           and the SSH daemon is responding:
@@ -151,12 +151,13 @@ helion/hlm/                    Directory contains files used by the installer
 <section id="VSA"> <title>Install and Configure VSA (optional)</title>
 <ol>
 <li>Deploy VSA by running the following command: <codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock><ul>
-            <li>If the output has the following error, manually upload this file into that location:
-              <codeblock>
+            <li>If the output has the following error, manually upload the file to that location
+              then rerun
+              vsa-deploy:<codeblock>
 stderr: tar: /opt/stack/service/vsa/venv/lib/helion-vsa-11.5.01.0079.tgz:
 Cannot open: No such file or directory </codeblock></li>
-            <li>File is located in: http://10.1.56.95/helion-vsa-11.5.01.0079.tgz then rerun the
-              vsa-deploy. This is a temporary issue and should be fixed by the next release.</li>
+  <li>The file can be found at http://10.1.56.95/helion-vsa-11.5.01.0079.tgz.</li>
+  <li>This is a temporary issue and should be fixed by the next release.</li>
           </ul></li>
 <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
           <codeblock>
@@ -210,9 +211,9 @@ hplefthand_debug: false
             can optionally specify the external network CIDR here too. If you choose not to
             excercise this option or use a wrong value, the VMs will not be accessible over the
             network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
-<li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the deployer. As it
-          no longer has entry for HLM, it may become a bit slower. To fix this issue, once this step
-          is complete, add "hlm" after "127.0.0.1 localhost":
+<li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the deployer. As
+          they no longer have entries for HLM, sudo commands may become a bit slower. To fix this
+          issue, once this step is complete, add "hlm" after "127.0.0.1 localhost":
           <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock></li>
 <li>Install and configure VSA.</li>
 </ol>
