@@ -82,22 +82,23 @@
       other services as well. This will be beyond be Beta0 timeframe.</p>
     <p> </p>-->
 <p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p>
+<p>Basic Monitoring is complete for Beta0 with the following limitations:</p>
 <ul>
   <li>Access to Monasca is limited to the REST API and Command Line Client (CLI) only.  GUI access will be implemented in later releases.</li>
   <li>Monasca has a stand-alone CLI, not integrated into the OpenStack client.  Prefix for CLI commands is "monasca".  Use "monasca help" for details.</li>
-</ul>
-<p><b>Helion Cloud Monitoring (Monasca) via the lifecycle management features</b></p>
-<p>Basic Monitoring is complete for Beta0 with the following limitations:</p>
-<ul>
-<li>Vertica is not available in the install. Must choose InfluxDB option instead.</li>
-<li>InfluxDB not configured behind a VIP. Must directly access one node in the cluster.</li>
-<li>Backup/restore of Monasca configuration and metrics data is not available.</li>
+  <li>Vertica is not available in the install. Must choose InfluxDB option instead.</li>
+  <li>InfluxDB not configured behind a VIP. Must directly access one node in the cluster.</li>
+  <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
 </ul>
 <p><b>Centralized Logging Limitations</b></p>
 <p>Logging support is complete for Beta0 with the following limitations:</p>
 <ul>
   <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
   <li>Logging-monitor 'stop' playbook is not integrated.</li>
+</ul>
+<p><b>Neutron Feature Limitations</b></p>
+<ul>
+  <li>VPNaaS (Virtual-Private-Network-as-a-Service) is not enabled in this release.</li>
 </ul>
       <!--  <p><b>Cinder</b></p><ul id="ul_vld_l1g_ys">
         <li>
@@ -157,14 +158,12 @@
       those need to be manual changes? M. Dunnett</p>-->
       <p><b>Ops Console</b></p>
       <ul id="ul_jjf_wbg_ys">
-        <li>Not enabled. </li>
+        <li>OpsConsole is not enabled in this release.</li>
       </ul>
       <p><b>Horizon </b></p>
       <ul id="ul_v4q_wbg_ys">
         <li>See installation workaround in the installation guide. </li>
       </ul>
     </section>
-    
-
   </body>
 </topic>
