@@ -169,7 +169,7 @@ Gateway: 10.241.103.1
 <li>Enter the following name for the management group: hlm003-vsa-mg</li>
 <li>Enter the following username and password: stack / stack</li>
 <li>Add NTP servers. To get a list log in into any VSA node and type ntpq -pn.</li>
-<li>Skip the DNS and SMTP section.</li>
+<li>Skip the DNS and SMTP sections.</li>
 <li>Add the following cluster name: hlm003-vsa-cluster</li>
 <li>Enter the VIP name, which you can find on the deployer in the following file:
           helion/my_cloud/stage/info/net_info.yml section cluster_ip.</li>
@@ -190,11 +190,11 @@ hplefthand_api_url: https://10.241.103.7:8081/lhos
 hplefthand_username: stack
 hplefthand_iscsi_chap_enabled: true
 volume_backend_name: vsa-backend-hlm003
-volume_driver: 
-cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
+volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false
 </codeblock>
-Note: Until horizon is enabled, the <codeblock>volume_backend_name</codeblock> is not used.</li>
+          Note: Until horizon is enabled, the <codeblock>volume_backend_name</codeblock> is not
+          used.</li>
 <li>Run the following command:
           <codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
 <li>Create a volume to verify the VSA is correctly configured, then delete the created volume.</li>
@@ -210,8 +210,6 @@ Note: Until horizon is enabled, the <codeblock>volume_backend_name</codeblock> i
 <li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the deployer:
           <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock>
   As they no longer have entries for HLM, sudo commands may become a bit slower. To fix this issue, once this step is complete, add "hlm" after "127.0.0.1 localhost".</li>
-<li>Verify that the VSA has been configured correctly by creating a cinder volume, verifying it
-          created successfully, and then deleting it.</li>
 </ol>
 </section>
 </body>
