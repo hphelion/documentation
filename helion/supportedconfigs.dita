@@ -6,8 +6,8 @@
     <p>The following list summaries the qualified configurations and their purpose.</p>
     <p>Note: While the hardware requirements are similar to those of HP Helion OpenStack 1.1, this
       is a completely new instsallation, not an upgrade or update operation.</p>
+    <section><title>Single Region Proof of Concept</title>
    
-     <p><b> Single Region Proof of Concept</b></p>
     <ul>
           <li>Single control plane for
             <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all control plane
@@ -90,10 +90,12 @@
           discs following this pattern) 
       </li>
     </ul>
+    
+    <p> <image href="images/20beta0poc-diagram1.png" width="1000"/></p>
     <p>
       <image href="images/20beta0poc-diagram.png" width="1000" id="image_pl2_d4k_xs"/></p>
     
-    <p> <image href="images/20beta0poc-diagram1.png" width="1000"/></p>
+    </section>
 
     
   </body>
