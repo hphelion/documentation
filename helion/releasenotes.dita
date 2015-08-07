@@ -141,6 +141,10 @@
 <li>Boot order may be affected by random assignment of eth interface numbers to your NICs. Therefore the node you need to boot first may not be first. You may want to disable NICs that you are not planning to use.</li>
 <li>If you find that your NICs are named out of order, you can configure your interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
 </ul>
+<p><b>NIC Bonding changes needed during installation</b></p>
+<ul>
+  <li>There is a workaround for the NIC bonding configuration needed that is included in the installation instructions.</li>
+</ul>
 <p><b>Horizon Installation Workaround Needed</b></p>
 <ul>
 <li>See installation workaround in the installation guide. </li>
