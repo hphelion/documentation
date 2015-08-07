@@ -148,41 +148,42 @@ helion/hlm/                    Directory contains files used by the installer
 <section id="VSA"> <title>Install and Configure VSA (optional)</title>
 <ol>
 <li>Deploy VSA by running the following command: <codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock><ul>
-            <li>If the above output has the error below then you need to manually upload this file
-              into that location.
+            <li>If the output has the following error, manually upload this file into that location:
               <codeblock>
 stderr: tar: /opt/stack/service/vsa/venv/lib/helion-vsa-11.5.01.0079.tgz:
-Cannot open: No such file or directory 
-</codeblock></li>
-            <li>File is located in http://10.1.56.95/helion-vsa-11.5.01.0079.tgz then rerun the
+Cannot open: No such file or directory </codeblock></li>
+            <li>File is located in: http://10.1.56.95/helion-vsa-11.5.01.0079.tgz then rerun the
               vsa-deploy. This is a temporary issue and should be fixed by the next release.</li>
           </ul></li>
-<li>Note that IP numbers of VSA VMs from ansible output, look like this:
-<codeblock>
+<li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
+          <codeblock>
 NIC 1: 
 Virtual Network: vsa-network 
 IP Address: 10.241.103.11
 Subnet Mark: 255.255.255.0
 Gateway: 10.241.103.1
 </codeblock></li>
-<li>Install Centralized Management Console on machine that can access IPs of VSA VMs linux installer is on. A copy is at http://10.1.56.95/HP_StoreVirtual_Linux_Centralized_Management_Console_for_Linux_BM480-10573.bin</li>
-<li>Manully add IPs of those VMs</li>
-<li>Choose Tasks -&gt; Management Group -&gt; New Management Group from menu above</li>
-<li>Enter a name for the management group: hlm003-vsa-mg</li>
-<li>Likewise a user and password: stack / stack</li>
-<li>Add NTP servers, to get a list log in into any vsa node and type ntpq -pn </li>
-<li>Skip DNS and SMTP section</li>
-<li>Add cluster name hlm003-vsa-cluster</li>
-<li>Enter VIP, you can find it on deployer in file helion/my_cloud/stage/info/net_info.yml section cluster_ip</li>
-<li>Skip volume creation, there is little checkbox on the bottom do that</li>
-<li>Wait for completion</li>
-<li>On the deployer, edit the file below: <codeblock>helion/hlm/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeblock><ol>
+<li>Install the Centralized Management Console (CMC) on machine that can access IPs of VSA VMs linux
+          installer is on. A copy is available at the following location:
+          http://10.1.56.95/HP_StoreVirtual_Linux_Centralized_Management_Console_for_Linux_BM480-10573.bin</li>
+<li>Manully add the IPs of those VMs.</li>
+<li>Choose Tasks -&gt; Management Group -&gt; New Management Group from the menu above.</li>
+<li>Enter the following name for the management group: hlm003-vsa-mg</li>
+<li>Enter the following username and password: stack / stack</li>
+<li>Add NTP servers. To get a list log in into any VSA node and type ntpq -pn.</li>
+<li>Skip the DNS and SMTP section.</li>
+<li>Add the following cluster name: hlm003-vsa-cluster</li>
+<li>Enter the VIP name, which you can find on the deployer in the following file:
+          helion/my_cloud/stage/info/net_info.yml section cluster_ip.</li>
+<li>Select the checkbox to skip volume creation.</li>
+<li>Wait for completion.</li>
+<li>On the deployer, edit the following file: <codeblock>helion/hlm/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeblock><ol>
             <li>Make enabled_backends=vsa-1</li>
             <li>Change {% if cinder_enabled_backends == 'lvm-1' %} to {% if cinder_enabled_backends
               == 'no-backends' %}</li>
           </ol></li>
-<li>Copy the VSA section and uncomment it, and fill the values as in the following example:
-<codeblock>
+<li>Copy the VSA section, uncomment it, and fill the values as in the following example:
+          <codeblock>
 [vsa-1]
 hplefthand_password: stack
 hplefthand_clustername: hlm003-vsa-cluster
@@ -194,23 +195,23 @@ volume_driver:
 cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false
 </codeblock></li>
-<li>Run this command:
-<codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
-<li>Create a volume to verify the VSA is correctly configured, and then delete the created volume.</li>
+<li>Run the following command:
+          <codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
+<li>Create a volume to verify the VSA is correctly configured, then delete the created volume.</li>
 </ol>
 </section>
 <section id="Post-Installation"><title>Post-Installation Steps</title>
 <ol>
-<li>Run this command:
+<li>Run the following command:
             <codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
             can optionally specify the external network CIDR here too. If you choose not to
-            excercise this option or use wrong value it would cause VMs to be not accessible over
+            excercise this option or use a wrong value, the VMs will not be accessible over the
             network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
-<li>Run this command which will replace <codeph>/etc/hosts</codeph> on the deployer as it no longer
-          has entry for hlm it may become a bit slower. To fix once this step is complete to add
-          "hlm" after "127.0.0.1 localhost":
+<li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the deployer. As it
+          no longer has entry for HLM, it may become a bit slower. To fix this issue, once this step
+          is complete, add "hlm" after "127.0.0.1 localhost":
           <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock></li>
-<li>Install and configure VSA</li>
+<li>Install and configure VSA.</li>
 </ol>
 </section>
 </body>
