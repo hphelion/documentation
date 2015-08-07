@@ -103,11 +103,17 @@
     <p>The one-region-poc-with-vsa will be provided by the HLM team which impacts not only VSA but
       other services as well. This will be beyond be Beta0 timeframe.</p>
     <p> </p>--><p><b>Health
-          and performance monitoring</b></p><p>Monitoring is enabled for several, but not all
-        services</p><p>Monitoring is integrated for the following services: Logging, Neutron, Swift,
-        Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova,
-        hLinux</p><p/><p><b>Helion Cloud Monitoring (Monasca) via the lifecycle management
-          features</b></p><p>Basic Monitoring is complete for Beta0 with the following
+          and performance monitoring</b></p><ul id="ul_ytz_jbg_ys">
+        <li>
+          <p>Monitoring is enabled for several, but not all services</p>
+        </li>
+        <li>
+          <p>Monitoring is integrated for the following services: Logging, Neutron, Swift,
+            Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca,
+            Nova,HP Linux for HP Helion OpenStack.</p>
+        </li>
+      </ul><p><b>Helion Cloud Monitoring (Monasca) via the lifecycle management
+        features</b></p><p>Basic Monitoring is complete for Beta0 with the following
         limitations:</p><ul>
         <li>Vertica is not available in the install. Must choose InfluxDB option instead.</li>
         <li>InfluxDB not configured behind a VIP. Must directly access one node in the cluster.</li>
