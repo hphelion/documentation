@@ -91,6 +91,10 @@
   <li>InfluxDB is not configured behind a VIP. It must directly access one node in the cluster.</li>
   <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
 </ul>
+<p><b>Ops Console</b></p>
+<ul>
+<li>OpsConsole is not enabled in this release.</li>
+</ul>
 <p><b>Centralized Logging Limitations</b></p>
 <p>Logging support is complete for Beta0 with the following limitations:</p>
 <ul>
@@ -149,14 +153,10 @@
     <p><b>What other settings will we be able to customize in Beta0?</b></p>
     <p>Specifically, will we be able to set things like server affinity through jinja files, or will
       those need to be manual changes? M. Dunnett</p>-->
-      <p><b>Ops Console</b></p>
-      <ul id="ul_jjf_wbg_ys">
-        <li>OpsConsole is not enabled in this release.</li>
-      </ul>
-      <p><b>Horizon </b></p>
-      <ul id="ul_v4q_wbg_ys">
-        <li>See installation workaround in the installation guide. </li>
-      </ul>
-    </section>
-  </body>
+<p><b>Horizon </b></p>
+<ul>
+<li>See installation workaround in the installation guide. </li>
+</ul>
+</section>
+</body>
 </topic>
