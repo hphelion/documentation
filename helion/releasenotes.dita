@@ -114,9 +114,9 @@
           <p>Monitoring is enabled for several, but not all services</p>
         </li>
         <li>
-          <p>Monitoring is integrated for the following services: Logging, Neutron, Swift,
+          Monitoring is integrated for the following services: Logging, Neutron, Swift,
             Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca,
-            Nova,HP Linux for HP Helion OpenStack.</p>
+            Nova,HP Linux for HP Helion OpenStack.
         </li>
       </ul>
       <p><b>Helion Cloud Monitoring (Monasca) via the lifecycle management features</b></p>
