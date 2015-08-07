@@ -85,10 +85,8 @@
       <p>Use the following steps on the HLM host to deploy the HLM VM on the HLM Host using Ansible
         playbooks.</p>
       <ol>
-        <li>Execute the following
-          command:<codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock><!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the HLM host, decrypt, and extract the files.</li><li>Execute the <codeph>updatepackages</codeph> command.</li><li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul>-->
-            hlmcompleteionsnaphot<image href="../../media/CGH-ansible-playbook-run.png"
-            id="image_bfp_pjm_vs">
+        <li>Execute the following command:<codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock><!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the HLM host, decrypt, and extract the files.</li><li>Execute the <codeph>updatepackages</codeph> command.</li><li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul>-->
+          <image href="../../media/CGH-ansible-playbook-run.png" id="image_bfp_pjm_vs">
             <alt>Sample Ansible Playbook run output</alt>
           </image></li>
         <li>Locate the IP address for the HLM VM in the
@@ -478,42 +476,90 @@ source stackrc</codeblock></li>
             <codeblock>neutron router-create &lt;name></codeblock><p>where: &lt;name> is a
             descriptive name.</p></li></ol>
   </section>
-  <section><title>Onboard the Gateway</title>
+  <section id="vrsg-config"><title>Configure the VRS-G </title>
+      <p>The HP Helion OpenStack Carrier Grade installation creates the required VRS-G gateway. You
+        need to use the HP DCN Virtualized Services Directory Architect (VSD) interface to add the
+        gateway to VSD and configure the <codeph>eth0</codeph> port.</p>
     
-    <ol><li>Launch the VSD dashboard. <i><b>add screenshots</b></i></li>
-      <li>Click the <b>Gateways</b> tab</li>
-      <li>Click the arrow next to the new gateway to onboard that gateway</li>
-      <li>Click <b>Organizations</b> to add permissions to the Gateway.</li>
-        <li>Add the VLAN ID [EXT Net] on the VSD dashboard for eth0. <b><i>image in
-            email</i></b><p>For more information on performing these tasks, refer to the DCN
-            documentation </p></li>
-    </ol>
+    <ol><li>Launch the VSD dashboard:<ul id="ul_ylj_thz_xs">
+      <li>Using Chrome or Safari, navigate to <codeph>https://&lt;VSD address>:8443/</codeph> and enter user
+        name, password and organization.<p><image href="../../media/CGH-install-vsd-login.png" id="image_dls_phz_xs"
+          width="300">
+          <alt>VSD login screen</alt>
+        </image></p></li>
+      <li>Click the arrow icon to log in.</li>
+          </ul></li>
+      <li>Click the <b>Gateways</b> tab. The new gateway appears in the <b>Pending Gateways</b> list
+          on the left.</li>
+      <li>Click the blue arrow next to the new gateway to manage that gateway.<p><image
+              href="../../media/CGH-install-nuage-gateway.png" id="image_rgy_5fz_xs" width="500">
+              <alt>Discover the Gateway</alt>
+            </image></p></li>
+      <li>Click <b>Organization Profile</b> in the ribbon to add permissions to the Gateway.</li>
+        <li>Add a port for the gateway by clicking <b>Create a Port</b> in the second panel from the
+          left.</li>
+        <li>Enter the information as required, specifying  eth0 in the Physical Name field  and
+          entering the VLAN ID [EXT Net] for the VLAN range.<p><image
+              href="../../media/CGH-install-gateway-port.png" id="image_w3p_sgz_xs" width="250">
+              <alt>Gatewy Port</alt>
+          </image></p></li>
+      <li>Click <b>Create</b>.</li></ol>
+          <p>For more information on performing these tasks, refer to the DCN
+            documentation </p>
+    
   <p><b>Note:</b> To create a redundant grouping of the VRS-G, refer to the DCN documentation.</p>
 </section>
-  <section><title>Retrieving the FIP Name from VSD for external Network</title>
-    <ol><li>Using the VSD. dashboard</li>
-        <li>Click <b>Open Data Center Configuration</b>, then <b>Shared Network tab</b>
-        </li>
-        <li>For the Floating IP subnet, click the <b>Edit</b> button to get the FIP name. <p>This is
-            the same name you assigned when you created the subnet. Make note of this name, as you
-            will use it during the installation.</p></li>
-      <li> You will need this FIP name during the installation when you create and edit a curl
-          script to replace this value in the FIP_NAME="3d2b2090-2044-4580-92ce-ab5a6e4a9184"
-          [example] with the FIP name you obtained.</li>
+  <section><title>Configuring ingress and egress security policies</title>
+    <p>Ingress and egress security policies are</p>
+    <p>Use the following steps to configure these policies to allow SSH and PING access to the
+          VRS-G.<ol id="ol_lf3_dp1_ys">
+          <li>In the VSD dashboard, click <b>Domains</b>, then <b>Ingress Security Policies</b> in
+            the ribbon.</li>
+          <li>Right-click the default ingress security policy and click <b>Edit</b>.</li>
+          <li>Select <b>Forward IP Traffic by Default</b>. Make sure <b>Make This Policy Active</b>
+            is selected. <p><image href="../../media/CGH-install-ingress.png" id="image_fkf_yp1_ys"
+                width="650">
+                <alt>VSD Ingress Rule</alt>
+              </image></p></li>
+          <li>Click <b>Update</b>.</li>
+          <li>Click <b>Egress Security Policies</b> in the ribbon.</li>
+          <li>Right-click the default egress security policy and click <b>Edit</b>.</li>
+          <li>Select <b>Deploy Implicit Rules</b> and <b>Forward IP Traffic by Default</b>. Make
+            sure <b>Make This Policy Active</b> is selected.</li>
+          <li>Click <b>Update</b>.</li>
+        </ol></p>
+  
+  
+  </section>
+  <section><title>Retrieving the Floating IP Name from VSD for external Network</title>
+    <ol><li>In the VSD dashboard, click <b>Open Data Center Configuration</b>, then <b>Shared Network</b>
+          tab. 
+      <p><image href="../../media/CGH-install-vsd-fip.png" id="image_okn_sjz_xs">
+            <alt>Gatewy Port</alt>
+      </image></p></li>
+        <li>For the Floating IP subnet, right-click and select <b>Edit</b> to get the name. <p>This
+            is the same name you assigned when you created the subnet. Make note of this name, as
+            you will use it during the installation.</p></li>
+      <li> You will need the Floating IP subnet name during the installation when you create and
+          edit a cURL script.</li>
       </ol>
   </section>
     <section><title>Add VLAN to VRSG network device </title>
-      <ol><li>Based on your VLAN ID, run the below command on VRS-G node:<p> For example:
-              <codeph>nuage-vlan-config mod eth0 Access 1500-2000</codeph></p></li>
-        
-        <li>Add the VLAN ID [EXT Net] on the VSD dashboard for eth0</li>
+      <p>VRS‐G configuration includes setting up the port and VLAN ranges that are to be available
+        for Nuage access on the VSD. By default, the VRS‐G boots with all its ports configured as
+        the <b>network</b> type, and therefore it has no VLANs available. Use the following command
+        to change <codeph>eth1</codeph> from <b>network</b> to <b>access</b> and allow VLANs.</p>
+      <ol>
+        <li>Log into the VRS-G node.</li><li>Run the below command on the VRS-G node, using your VLAN ID:<p>
+            <codeph>nuage-vlan-config mod eth0 Access &lt;vlad-id></codeph></p></li>
       </ol>
   </section>
-    <section><title>Run the curl script</title></section>
+    <section><title>Run a cURL script to enable floating IPs on the VRS-G</title>
+      <p/>
     <ol>
       <li>From the KVM host, copy the following code to create a cURL script.</li>
       <li>Modify the cURL script for your environment:
-        <codeblock>
+          <codeblock>
             ##########################################
             #!/bin/bash
             set -x
@@ -606,23 +652,26 @@ source stackrc</codeblock></li>
               #else
               #echo "FIP uplink subnet already exists: $SUBNET_ID"
               #fi
-              
-              #############################################################
-            </codeblock></li>
+              #############################################################</codeblock></li>
       <li>Execute the curl script <codeblock>bash +x &lt;script_name>.sh</codeblock></li>
       <li>Use the VSD dashboard to confirm that uplink port appears in the Monitoring tab under
         VRS-G node. <b><i>image</i></b></li>
     </ol>
-
-<section><title>Enable GRE in iptables</title>
-<!-- CG-1265 -->
-  <p>If an environment uses more than one VRS-G node, you must enable Generic Routing Encapsulation (GRE) in the IP tables.</p>
-  <ol><li>On each VRS-G node, navigate to the <codeph>/etc/ufw/before.rules</codeph> file.</li>
-    <li>Add the following lines to the file, before the <codeph>COMMIT</codeph> line:
+    </section>
+<section>
+      <title>Enable GRE in iptables</title>
+      <!-- CG-1265 -->
+      <p>If an environment uses more than one VRS-G node, you must enable Generic Routing
+        Encapsulation (GRE) in the IP tables. The following commands show you how to use the UFW
+        tool to configure the IP tables.</p>
+      <ol>
+        <li>On each VRS-G node, navigate to the <codeph>/etc/ufw/before.rules</codeph> file.</li>
+        <li>Add the following lines to the file, before the <codeph>COMMIT</codeph> line:
           <codeblock>-A ufw-before-input -p 47 -j ACCEPT</codeblock></li>
-    <li>Save and close the file.</li>
-  </ol>
-</section>
+        <li>Save and close the file.</li>
+        <li>execute the following command to restart the UFW service.</li>
+      </ol>
+    </section>
 
 <section><title>Post-Installation Steps </title><p>After the installation of the KVM + ESX
         deployment is complete, perform the steps in this section.</p>
@@ -650,16 +699,22 @@ source stackrc</codeblock></li>
   <section><title>Upload a Glance VMDK Image</title>
   <ol>
         <li>Launch the Horizon dashboard.</li>
-        <li>Go to <b>Admin -> Images</b> tab and upload the VMDK image.</li>
-        <li>Select <b>vmdk</b> format from drop down menu.</li>
-        <li>Click <b>Create Image</b>.</li>
-        <li>For the new image, click <b>Actions -> Edit</b> to update the metadata for the
+        <li>Switch to <b>memphis</b> region. </li>
+    <li>Click the <b>Images</b> link on the <b>Admin</b>upload the VMDK image.</li>
+    <li>In the <b>Images</b> screen, click <b>Create Image</b>.</li> <!-- Where is this file??? -->
+    <li>In the <b>Create an Image</b> screen, fill out the fields as appropriate:
+      <ol><li>From the <b>Image Source</b> list, select <b>Image File</b>.</li>
+        <li>From the <b>Image File</b> list that appears, navigate to the VMDK file.</li>
+        <li>From the <b>Format</b> list, select <codeph>VMDK</codeph>.</li></ol></li>
+      <li>Click <b>Create Image</b>.</li>
+      <li>For the new image, click <b>Actions -> Edit</b> to update the metadata for the
           image.</li>
         <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph> properties
           . </li>
-      </ol><p>Once the images are uploaded, you are ready to launch the instance with different
-        flavors. </p><p>Once the VM is launched, the progress can be seen from recent tasks in ESX
-        cluster.</p>
+      </ol>
+    
+    <p>Once the images are uploaded, you are ready to launch the instance with different
+        flavors. </p>
     </section>
 
 

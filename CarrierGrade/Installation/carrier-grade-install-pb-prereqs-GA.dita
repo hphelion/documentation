@@ -228,6 +228,11 @@ StrictHostKeyChecking no </codeblock></li>
                 <p>See <xref href="carrier-grade-install-pb-network-prepare-GA.dita#topic7646">Preparing the Network for Installation</xref></p>
                 
         </section>
+        <section><title>Integrating LDAP</title>
+
+        <p>OPTIONAL The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) 
+                to integrate your organization's existing directory service and user account management processes.</p> 
+</section>
 <section id="getinstall"> <title>Download and unpack the installation packages</title>
 <p>Before you begin, you must download the required HP Helion OpenStack installation package(s).</p>
                         <p><b>Note:</b> When downloading installation files, always download and
@@ -255,19 +260,15 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <li><b id="productShow_appName">GPG keys to verify
                                                   signature files</b>. This file is named
                                                         <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li>
-                                                <li><b>vCenter Proxy Appliance</b>. For the KVM + ESX
-                                                  deployment, download this file, named
-                                                  overcloud_vcenter_compute_proxy.tar. Also download
-                                                  the Signature files.</li></ul></li>
+                                                <li><!--<b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment, download this file, named overcloud_vcenter_compute_proxy.tar. Also download the Signature files. This file will need to be moved to the system that hosts the VMware vCenter client. You can move the file to that system or download the file later. --></li></ul></li>
                                 <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file and copy the
                                         <codeph>cg-hlm.qcow2</codeph> file to the images folder:
                                                 <codeph>/var/lib/libvirt/images</codeph>.</li>
 <li>Copy the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file from the
                                                 <codeph>hcg_1.1.0.tar</codeph> files to the
                                                 <codeph>/root</codeph> directory.</li>
-        <li> Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file using the password
-                                                <codeph>cghelion</codeph> when prompted.
-                                        <codeblock> gpg -d cg-infra-playbooks.tar.gz.gpg | tar -xzvf </codeblock></li>
+        <li> Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph>
+                                        file.<codeblock> <systemoutput>tar xvf GPG-HPCSS-Public-Keys.tar</systemoutput> </codeblock></li>
         <li> Create the <codeph>/root/cg/</codeph> directory</li>
 <li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file from the <codeph>hcg_1.1.0</codeph> directory
                                         to the <codeph>/root/cg/</codeph> directory.</li>
@@ -276,13 +277,13 @@ StrictHostKeyChecking no </codeblock></li>
         <section id="download-esx"><title>Download packages for KVM + ESX</title>
         <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM + ESX topology,
                                 download the following additional packages.</p>
+                        <p><b>Note:</b> For HP internal use contact HCG R &amp; D department.  </p>
                 <ol>
-                                <li>If you have not downloaded the DCN installation packages, browse to
-                                                <xref href="http://www.hp.com/go/hpsc" format="html"
-                                                scope="external"/> and search for product
-                                                <b>JL025AAE</b>.  You will need your product serial
-                                        number to download the appropriate packages.</li>
-                                <li>Unzip the DCN packages: <ul id="ul_cqm_tzc_ws">
+                                <li> When you purchased a license for DCN, you should have received
+                                        an email with all the instructions for how to obtain the DCN
+                                        installation package and required license. </li>
+                                <li>Move or copy the compressed installation packages to the KVM
+                                                host.<ul id="ul_cqm_tzc_ws">
                                                 <li>DCN-VRS-GW-3.0R7</li>
                                                 <li>DCN-VRS-VMware-3.0R7</li>
                                                 <li>DCN-VSC-3.0R7</li>
@@ -290,20 +291,25 @@ StrictHostKeyChecking no </codeblock></li>
                                         </ul></li>
                                 <li>Create the <codeph>~/cg/dcn</codeph> directory on the KVM
                                         host.</li>
-                                <li>Copy the following files from DCN downloaded packages to
-                                                <codeph>~/cg/dcn</codeph>: <ul>
+                                <li>Extract the compressed download packages. </li>
+                                <li>Copy the following files from extracted downloaded packages to the
+                                                <codeph>~/cg/dcn</codeph> directory: <ul>
                                                 <li>vsc_singledisk.qcow2</li>
                                                 <li>
                                                   <p>nuage-metadata-agent_3.0.7-125_all.deb</p>
                                                 </li>
                                                 <li>nuage-openvswitch-common_3.0.7-125_amd64.deb</li>
                                                 <li>nuage-python-openvswitch_3.0.7-125_all.deb</li>
-                                                <li>nuage-openvswitch-switch_3.0.7-125_amd64.deb</li>
-                                                <li>nuage-openstack-nuagenetlib-juno.tar.gz</li>
                                                 <li>nuage-openstack-neutron-juno-plugin.tar.gz</li>
                                         </ul></li>
-                        </ol>  
-                <p><!--If you execute a list on that directory, the output appears similar to the following image:--></p>
+                        <li>Copy the following files to the  to the
+                                <codeph>~/cg/dcn</codeph> directory
+                                <ul><li>nuage-openvswitch-switch_3.0.7-125_amd64.deb</li>
+                                <li>nuage-openstack-nuagenetlib-juno.tar.gz
+                                        <!--how does user get these two? Nazia and Nayana to find info--></li>
+                                
+                                </ul></li>
+                        </ol>
         </section>
         <section id="verify"><title>Verify the download signature</title>
                 <p>After downloading the installation packages, you should verify the signature of
