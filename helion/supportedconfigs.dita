@@ -85,7 +85,7 @@
       
       <li id="inlineA">
         
-        some text here<i><b><u>and some code in here</u></b></i>
+        some text here<i><b><u> also some code in here</u></b></i>
       </li>
       
     </ul>
