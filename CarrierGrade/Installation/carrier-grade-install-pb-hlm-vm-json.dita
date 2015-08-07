@@ -72,7 +72,7 @@
 </table>
 <section id="sample-node-provisionjson-file"> <title>Sample node-provision.json file</title>
 <p>The following represents a sample <codeph>node-provision.json</codeph> file. Use values appropriate for your environment.</p>
-<p>[
+<codeblock>[
     {
         "name": "ccn1",
         "pxe_mac_address": "52:54:00:97:81:11",
@@ -178,7 +178,7 @@
         "os_partition_size": "20",
         "data_partition_size": "80"
     }
-]</p>
+]</codeblock>
     <p>Return to <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">Create the HLM Virtual
                     Machine</xref>.</p>
 <p>
