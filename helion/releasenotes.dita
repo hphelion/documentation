@@ -112,7 +112,7 @@
       <p><b>Health and performance monitoring</b></p>
       <ul id="ul_ytz_jbg_ys">
         <li>
-          <p>Monitoring is enabled for several, but not all services.</p>
+          Monitoring is enabled for several, but not all services.
         </li>
         <li>
           Monitoring is integrated for the following services: Logging, Neutron, Swift,
