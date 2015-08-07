@@ -127,17 +127,15 @@
     <p>[06/02/15]</p>
     <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
     <p> </p>-->
-      <p><b>TLS</b></p>
-      
-        <ul id="ul_s1v_5bg_ys">
-          <li>The server certificate is currently hard coded. If an operator wishes to provide their
-            own, they need to edit the defaults in the TLS playbook. </li>
-        </ul>
+<p><b>TLS Support</b></p>
+<ul id="ul_s1v_5bg_ys">
+<li>The server certificate is currently hard coded. If an operator wishes to provide their own, they need to edit the defaults in the TLS playbook.</li>
+</ul>
       
 <p><b>Installation and NIC Numbering</b></p>
 <ul>
 <li>Boot order may be affected by random assignment of eth interface numbers to your NICs. Therefore the node you need to boot first may not be first. You may want to disable NICs that you are not planning to use.</li>
-<li>If you find that your NICs are named out of order, you can configure your interface names ( eg. ethX ) to specific MAC addresses by either directly modifying the udev rule or modifying the script which creates them (/lib/udev/write_net_rules ).</li>
+<li>If you find that your NICs are named out of order, you can configure your interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
 </ul>
       <!--<p><b>FAQ</b></p>
     
