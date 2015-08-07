@@ -183,7 +183,8 @@ Gateway: 10.241.103.1
 <li>Wait for completion.</li>
 <li>On the deployer, edit the following file: <codeblock>helion/hlm/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeblock><ol>
             <li>Change the enabled_backends line to: <codeblock>enabled_backends=vsa-1</codeblock></li>
-            <li>Change <codeblock>{% if cinder_enabled_backends == 'lvm-1' %}</codeblock> to
+            <li>Change the following line, if
+              present:<codeblock>{% if cinder_enabled_backends == 'lvm-1' %}</codeblock> to
               <codeblock>{% if cinder_enabled_backends == 'no-backends' %}</codeblock></li>
           </ol></li>
 <li>Copy the VSA section, uncomment it, and fill the values as in the following example:
@@ -194,11 +195,12 @@ hplefthand_clustername: hlm003-vsa-cluster
 hplefthand_api_url: https://10.241.103.7:8081/lhos
 hplefthand_username: stack
 hplefthand_iscsi_chap_enabled: true
-volume_backend_name: (Needed by horizon) vsa-backend-hlm003
+volume_backend_name: vsa-backend-hlm003
 volume_driver: 
 cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false
-</codeblock></li>
+</codeblock>
+Note: Until horizon is enabled, the <codeblock>volume_backend_name</codeblock> is not used.</li>
 <li>Run the following command:
           <codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
 <li>Create a volume to verify the VSA is correctly configured, then delete the created volume.</li>
@@ -214,7 +216,8 @@ hplefthand_debug: false
 <li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the deployer:
           <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock>
   As they no longer have entries for HLM, sudo commands may become a bit slower. To fix this issue, once this step is complete, add "hlm" after "127.0.0.1 localhost".</li>
-<li>Install and configure VSA.</li>
+<li>Verify that the VSA has been configured correctly by creating a cinder volume, verifying it
+          created successfully, and then deleting it.</li>
 </ol>
 </section>
 </body>
