@@ -5,18 +5,28 @@
 <body>
 <section><title>Known Restrictions</title>
 <ol>
-<li>All disks on the system(s) will be wiped /dev/sda will be used for the OS but all other disks will also be wiped.</li>
+<li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other disks
+          will be wiped.</li>
 <li>Install on nodes via legacy bios setting (No UEFI)</li>
-<li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. Important factor is that all machines can net boot from PXE and use deployer as DHCP server.</li>
-<li>The network will need to be set up with various number of VLANS depending on needs. Just make sure model reflects that.</li>
-<li>All machines used were same, but with right model there is no such restriction - although all machines of single type should be same, like all computes, all VSAs etc</li>
+<li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All machines
+          can net boot from PXE and use the deployer as a DHCP server.</li>
+<li>The network must be set up with various number of VLANS depending on needs. Ensure the model
+          reflects that.</li>
+<li>All machines of a single type should be the same, that is, all computes, all VSAs, and so
+          on.</li>
 <li>This will only work anywhere, as no external network is used. However due to bugs we had to download some components from HP sources.</li>
-<li>The deployer node needs to be a dedicated node in Beta0.</li>
-<li>The machine hosting the deployer, and all baremetal systems have to be connected to a management network. Nodes on this management network must be able to reach the iLO subsystem of each baremetal system to enable host reboots as part of the install process.  The HP Helion OpenStack architecture requires that the IPMI network is a separate network and that a route exists from management network to the IPMI network for iLO access.</li>
-<li>Machines will need to be fully reinstalled on next drop – upgrade from beta0 to beta1 is not supported.</li>
-<li>The machine types should be homogeneous.</li>
-<li>Is possible to add additional VSA and compute nodes. The default is 1 of each.</li>
-<li>You may assign server roles to each or your nodes manually, or allow the installer to assign them.</li>
+<li>The deployer node must be a dedicated node in Beta0.</li>
+<li>The machine hosting the deployer and all baremetal systems must be connected to a management
+          network. Nodes on this management network must be able to reach the iLO subsystem of each
+          baremetal system to enable host reboots as part of the install process. The HP Helion
+          OpenStack architecture requires that the IPMI network is a separate network and that a
+          route exists from the management network to the IPMI network for iLO access.</li>
+<li>Machines must be fully reinstalled on the next drop – upgrade from Beta0 to Beta1 is not
+          supported.</li>
+<li>The machine types must be homogeneous.</li>
+<li>It is possible to add additional VSA and compute nodes. The default is one of each.</li>
+<li>You may assign server roles to each or your nodes manually or allow the installer to assign them
+          automatically.</li>
 </ol>
 </section>
 <section id="Prereqs"> <title>Before you Start</title>
