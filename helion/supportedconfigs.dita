@@ -68,7 +68,7 @@
    <ul>
       <li>Bond0: Management, External API, External VMs, Vxlan, Provider VLANs </li></ul></li>
       <li>Each network is a single L3 segment</li>
-      <li>Load balancers are provided by haproxy</li>
+      <li>Load-balancers for control plane APIs are provided by haproxy</li>
       <li>TLS only on external API, using customer supplied certificate</li>
       <li>VLAN IDs and IP addressing provided by customer</li>
     </ul>
