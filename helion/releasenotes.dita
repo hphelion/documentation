@@ -3,7 +3,7 @@
 <topic xml:lang="en-us" id="topic12031">
 <title>Beta 0: Release Notes</title>
 <body>
-<p>This document provides an overview of the features contained within HP Helion OpenStack 2.0 Beta 0, including known issues and workarounds, and where to find further information on this release:</p>
+<p>This document provides an overview of the features contained within HP Helion OpenStack 2.0 Beta 0, including known issues and workarounds for this release:</p>
 <section id="Features"> <title>Features in HP Helion OpenStack 2.0</title>
 <p><b>Updated HP Helion OpenStack Services</b> - We have included the core set of OpenStack services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html">Kilo release</xref> with the exception of limitations notated in this document.</p>
 <p><b>Neutron LBaaS and FWaaS Extensions</b> - We have implemented networking extensions for load balancing and firewalls. Here is a description of each of these:</p>
