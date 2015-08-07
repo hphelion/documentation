@@ -105,15 +105,6 @@
 <ul>
   <li>VPNaaS (Virtual-Private-Network-as-a-Service) is not enabled in this release.</li>
 </ul>
-      <!--  <p><b>Cinder</b></p><ul id="ul_vld_l1g_ys">
-        <li>
-          <p>Core cinder services are all being installed and configured via the installer. </p>
-        </li>
-        <li>
-          <p>Cinder installation with VSA as a backend is being worked through at the moment, manual
-            steps to be defined later may be required to complete installation.</p>
-        </li>
-      </ul>-->
       <!--<p><b>Networks</b></p>
       <p>
         <ul id="ul_rlg_dbg_ys">
@@ -131,29 +122,26 @@
     <p>[06/02/15]</p>
     <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
     <p> </p>-->
+      
+      <!--  <p><b>Cinder</b></p><ul id="ul_vld_l1g_ys">
+        <li>
+          <p>Core cinder services are all being installed and configured via the installer. </p>
+        </li>
+        <li>
+          <p>Cinder installation with VSA as a backend is being worked through at the moment, manual
+            steps to be defined later may be required to complete installation.</p>
+        </li>
+      </ul>-->
 <p><b>TLS Support</b></p>
 <ul id="ul_s1v_5bg_ys">
 <li>The server certificate is currently hard coded. If an operator wishes to provide their own, they need to edit the defaults in the TLS playbook.</li>
 </ul>
-      
 <p><b>Installation and NIC Numbering</b></p>
 <ul>
 <li>Boot order may be affected by random assignment of eth interface numbers to your NICs. Therefore the node you need to boot first may not be first. You may want to disable NICs that you are not planning to use.</li>
 <li>If you find that your NICs are named out of order, you can configure your interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
 </ul>
-      <!--<p><b>FAQ</b></p>
-    
-    <p><b>What level of customisation possible via modifying configurations in the CP and using them
-        to deploy?</b></p>
-    <p>Aim of beta0 is get additional testing of the POC configuration. </p>
-    <p><b>Support for Multiple Provider VLANs as external networks?</b></p>
-    <p>This functionality is latent in beta0 but has not yet (9/27) been tested. </p>
-    <p><b>Can I add nodes to resource pool?</b></p>
-    <p>Possible to add VSA and Compute nodes. Default is 1 of each.</p>
-    <p><b>What other settings will we be able to customize in Beta0?</b></p>
-    <p>Specifically, will we be able to set things like server affinity through jinja files, or will
-      those need to be manual changes? M. Dunnett</p>-->
-<p><b>Horizon </b></p>
+<p><b>Horizon Installation Workaround Needed</b></p>
 <ul>
 <li>See installation workaround in the installation guide. </li>
 </ul>
