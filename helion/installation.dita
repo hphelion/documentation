@@ -7,7 +7,7 @@
 <ol>
 <li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other disks
           will be wiped.</li>
-<li>Install on nodes via legacy bios setting (No UEFI)</li>
+<li>Install on nodes via legacy bios setting (no UEFI).</li>
 <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All machines
           can net boot from PXE and use the deployer as a DHCP server.</li>
 <li>The network must be set up with various number of VLANS depending on needs. Ensure the model
@@ -30,47 +30,52 @@
 </ol>
 </section>
 <section id="Prereqs"> <title>Before you Start</title>
-<p>Prepare your baremetal hardware:</p>
+<p>Prepare your baremetal hardware, as follows:</p>
 <ul>
-  <li>Setup the iLO Advanced license in the iLO config</li>
-  <li>Ensure every system has 5 enabled disk devices per the <xref href="hardware.dita">minimum hardware requirements</xref></li>
-  <li>Switch from UEFI to Legacy BIOS</li>
+  <li>Setup the iLO Advanced license in the iLO configuration.</li>
+  <li>Ensure every system has five enabled disk devices, as detailed in the <xref
+            href="hardware.dita">minimum hardware requirements</xref>.</li>
+  <li>Switch from UEFI to Legacy BIOS.</li>
 </ul>  
 </section>
 <section id="DeployerInstall"> <title>Set up the Deployer</title>
 <ol>
 <li>Create LUN(s), if required.</li>
-<li>Boot from ISO (downloadable <xref href="http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso" format="html">here</xref>)</li>
-<li>Enter 'install' to start installation</li>
-<li>Select Language</li>
-<li>Select Location</li>
-<li>Select Keyboard layout</li>
-<li>Select appropriate network interface <ul>
+<li>Boot from ISO (downloadable <xref
+            href="http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso"
+            format="html">here</xref>).</li>
+<li>Enter "install" to start installation.</li>
+<li>Select the language.</li>
+<li>Select the location.</li>
+<li>Select the keyboard layout.</li>
+<li>Select the appropriate network interface:<ul>
             <li>Assign IP address, netmask</li>
           </ul></li>
-<li>Create new account <ul>
+<li>Create new account:<ul>
             <li>Enter a username.</li>
             <li>Enter a password.</li>
             <li>Enter timezone if prompted to do so.</li>
             <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
           </ul></li>
 </ol>
-<p>At the end of this section you should have a deployer node setup with hLinux on it.</p>
+<p>At the end of this section you should have a deployer node set up with hLinux on it.</p>
 </section>
 <section id="HLM_Node_Personalization"> <title>Configure and Run the Deployer</title>
 <ol>
-<li>On the deployer node, create ssh keypair if one is not already present:
-<codeblock>ssh-keygen -t rsa</codeblock></li>
+<li>On the deployer node, enter the following command to create ssh keypair if one is not already
+          present:<codeblock>ssh-keygen -t rsa</codeblock></li>
 <li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file:
 <codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
-<li>Check that ssh localhost works without a password and that you can wget from external sources, both with and without sudo.</li>
-<li>Mount install media at /media/cdrom, e.g. sudo mount /media/cdrom (in case CD is in /dev/cdrom)</li>
-<li>Unpack tarball:
-<codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz </codeblock></li>
-<li>Run included script:
-<codeblock>~/hlm-deployer/hlm-init-2.0.0.bash</codeblock></li>
+<li>Confirm that ssh localhost works without a password and that you can get from external sources,
+          both with and without sudo.</li>
+<li>Mount the install media at /media/cdrom, for example, sudo mount /media/cdrom (in case CD is in
+          /dev/cdrom).</li>
+<li>Unpack the following tarball:
+          <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz </codeblock></li>
+<li>Run the following included script:
+          <codeblock>~/hlm-deployer/hlm-init-2.0.0.bash</codeblock></li>
 </ol>
-<p>At the end of this section you should have a local directory structure that is described below:</p>
+<p>At the end of this section you should have a local directory structure, as described below:</p>
 <codeblock>
 helion/                        Top level directory
 helion/examples/               Directory contains the config input files of the example clouds
