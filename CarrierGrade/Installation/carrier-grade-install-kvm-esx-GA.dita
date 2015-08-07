@@ -662,12 +662,14 @@ source stackrc</codeblock></li>
       <title>Enable GRE in iptables</title>
       <!-- CG-1265 -->
       <p>If an environment uses more than one VRS-G node, you must enable Generic Routing
-        Encapsulation (GRE) in the IP tables.</p>
+        Encapsulation (GRE) in the IP tables. The following commands show you how to use the UFW
+        tool to configure the IP tables.</p>
       <ol>
         <li>On each VRS-G node, navigate to the <codeph>/etc/ufw/before.rules</codeph> file.</li>
         <li>Add the following lines to the file, before the <codeph>COMMIT</codeph> line:
           <codeblock>-A ufw-before-input -p 47 -j ACCEPT</codeblock></li>
         <li>Save and close the file.</li>
+        <li>execute the following command to restart the UFW service.</li>
       </ol>
     </section>
 

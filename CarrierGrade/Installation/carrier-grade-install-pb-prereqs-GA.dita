@@ -260,13 +260,7 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <li><b id="productShow_appName">GPG keys to verify
                                                   signature files</b>. This file is named
                                                         <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li>
-                                                <li><b>vCenter Proxy Appliance</b>. For the KVM +
-                                                  ESX deployment, download this file, named
-                                                  overcloud_vcenter_compute_proxy.tar. Also download
-                                                  the Signature files. This file will need to be
-                                                  moved to the system that hosts the VMware vCenter
-                                                  client. You can move the file to that system or
-                                                  download the file later. </li></ul></li>
+                                                <li><!--<b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment, download this file, named overcloud_vcenter_compute_proxy.tar. Also download the Signature files. This file will need to be moved to the system that hosts the VMware vCenter client. You can move the file to that system or download the file later. --></li></ul></li>
                                 <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file and copy the
                                         <codeph>cg-hlm.qcow2</codeph> file to the images folder:
                                                 <codeph>/var/lib/libvirt/images</codeph>.</li>
