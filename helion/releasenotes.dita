@@ -71,11 +71,12 @@
         <li>Events Engine </li>
         <li>Anomaly and Prediction Engine</li>
       </ul>
-      <p><b>New Baremetal Installation Kit</b> - </p>
+      <p><b>New Baremetal Installation Kit</b>
+      </p>
       <ul>
         <li>You supply the cloud configuration you want based on our <xref
             href="supportedconfigs.dita">Supported Configurations</xref> and the baremetal installer
-          will setup your environment.</li>
+          will set up your environment.</li>
         <li>Manage the different phases of your cloud deployment with ease</li>
       </ul>
       <!--
@@ -85,7 +86,7 @@
     <section id="KnownIssues">
       <title>Known Issues in this Release</title>
       <p><b>HP Helion Development Platform</b></p>
-      <p>Helion Development Platform is not supported on Beta 0</p>
+      <p>Helion Development Platform is not supported on Beta 0.</p>
       <p><b>Installing Swift</b></p>
       <p>Swift installs with the following limitations: </p>
       <ul>
@@ -111,7 +112,7 @@
       <p><b>Health and performance monitoring</b></p>
       <ul id="ul_ytz_jbg_ys">
         <li>
-          <p>Monitoring is enabled for several, but not all services</p>
+          <p>Monitoring is enabled for several, but not all services.</p>
         </li>
         <li>
           Monitoring is integrated for the following services: Logging, Neutron, Swift,
