@@ -7,7 +7,7 @@
 <ul>
 <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
 <li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other disks will be wiped.</li>
-<li>The Deployer node must use the provided hLinux ISO and the installer will install hLinux on all the other systems in the cluster.</li>
+<li>The deployer node must use the provided hLinux ISO and the installer will install hLinux on all the other systems in the cluster.</li>
 <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All machines can net boot from PXE and use the deployer as a DHCP server.</li>
 <li>All machines of a single type should be the same, that is, all computes, all VSAs, and so on.</li>
 <li>The deployer node must be a dedicated node in Beta0.</li>
