@@ -28,8 +28,7 @@
 <section id="DeployerInstall"> <title>Set up the Deployer</title>
 <ol>
 <li>Create LUN(s), if required.</li>
-<li>Boot from ISO (downloadable <xref
-            href="http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso"
+<li>Boot from ISO (downloadable <xref href="http://tarballs.gozer.ftclab.gozer.hpcloud.net/hos/hos-2.0.0/canary_build/01-18/hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-05T13:03:59_731caae.iso"
             format="html">here</xref>).</li>
 <li>Enter "install" to start installation.</li>
 <li>Select the language.</li>
