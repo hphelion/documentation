@@ -4,7 +4,7 @@
   <title>Beta 0: Minimum Hardware Requirements</title>
   <body>
     <section id="SupportedConfigs"> <title>Supported Configurations</title>
-      <p>HP supports the following configurations for HP Helion OpenStack deployment:</p>
+      <p>HP supports the following configurations for HP Helion <tm tmtype="reg">OpenStack</tm> deployment:</p>
       <p>Storage Interconnects/Protocols</p>
       <ul>
         <li>1Gb or 10Gb Eth.</li>

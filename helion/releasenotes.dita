@@ -3,12 +3,12 @@
 <topic xml:lang="en-us" id="topic12031">
 <title>Beta 0: Release Notes</title>
 <body>
-<p>This document provides an overview of the features contained within HP Helion OpenStack 2.0 Beta 0, including known issues and workarounds for this release:</p>
-<section id="Features"> <title>Features in HP Helion OpenStack 2.0</title>
-<p><b>Updated HP Helion OpenStack Services</b> - We have included the core set of OpenStack services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html">Kilo release</xref> with the exception of limitations notated in this document.</p>
+  <p>This document provides an overview of the features contained within HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta 0, including known issues and workarounds for this release:</p>
+  <section id="Features"> <title>Features in HP Helion <tm tmtype="reg">OpenStack</tm> 2.0</title>
+    <p><b>Updated HP Helion <tm tmtype="reg">OpenStack</tm> Services</b> - We have included the core set of <tm tmtype="reg">OpenStack</tm> services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html">Kilo release</xref> with the exception of limitations notated in this document.</p>
 <p><b>Neutron LBaaS and FWaaS Extensions</b> - We have implemented networking extensions for load balancing and firewalls. Here is a description of each of these:</p>
 <ul>
-<li>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load balancing feature set. Helion OpenStack 2.0 includes the V2 version which allows implementation uses haproxy but 3rd party Load Balancers can be integrated as well. In case that a 3rd party driver doesn’t exist for LBaaS V2 installing LBaaS V1 instead of V2 is supported. 
+  <li>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load balancing feature set. Helion <tm tmtype="reg">OpenStack</tm> 2.0 includes the V2 version which allows implementation uses haproxy but 3rd party Load Balancers can be integrated as well. In case that a 3rd party driver doesn’t exist for LBaaS V2 installing LBaaS V1 instead of V2 is supported. 
 <ul>
 <li>For more information, see: <xref href="https://wiki.openstack.org/wiki/Neutron/LBaaS" scope="external" format="html">https://wiki.openstack.org/wiki/Neutron/LBaaS</xref></li>
 </ul>
@@ -32,13 +32,13 @@
 <li>Multi-network support will allow you to bridge multiple external physical networks to a Neutron network. This will enable you to dictate the path taken by the data in the physical network outside of your cloud deployment.</li>
 <li>Network separation (both physical and VLAN) will allow you to segregate traffic by type.  For example, traffic can be separated into management, tenant, external, and services neworks.</li>
 </ul>
-<p><b>Monasca-based Monitoring</b> - Monasca is a multi-tenant, scalable, fault-tolerant, monitoring service. It uses a REST API for high-speed metrics processing and querying, and has a streaming alarm and notification engine. In the Helion OpenStack 2.0 release, the OpenStack monitoring standard, Monasca, is supported as the Helion OpenStack monitoring solution with the following exceptions (which are not implemented):</p>
+    <p><b>Monasca-based Monitoring</b> - Monasca is a multi-tenant, scalable, fault-tolerant, monitoring service. It uses a REST API for high-speed metrics processing and querying, and has a streaming alarm and notification engine. In the Helion <tm tmtype="reg">OpenStack</tm> 2.0 release, the <tm tmtype="reg">OpenStack</tm> monitoring standard, Monasca, is supported as the Helion <tm tmtype="reg">OpenStack</tm> monitoring solution with the following exceptions (which are not implemented):</p>
 <ul>
 <li>Transform Engine</li>
 <li>Events Engine </li>
 <li>Anomaly and Prediction Engine</li>
 </ul>
-<p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP Helion OpenStack.</p>
+    <p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP Helion <tm tmtype="reg">OpenStack</tm>.</p>
 <p><b>Centralized Logging</b> - Logging for the services below is enabled in the default configuration.  You will have the ability to disable per-service logging as needed.</p>
 <p>Logging is integrated for the following services: Nova, Glance, Swift, Neutron, Ceilometer, Monasca, Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p>
 <p><b>New Installer</b></p>
@@ -47,7 +47,7 @@
 <li>Manage the different phases of your cloud deployment with ease.</li>
 </ul>
 <!--
-<p><b>Backup and Restore Capabilities for the Control Plane</b> - Allows you to backup and recover your Helion OpenStack environment with RPO=0.</p>
+<p><b>Backup and Restore Capabilities for the Control Plane</b> - Allows you to backup and recover your Helion <tm tmtype="reg">OpenStack</tm> environment with RPO=0.</p>
 -->
 </section>
     <section id="KnownIssues">
