@@ -3,8 +3,8 @@
 echo 'running documentation/jenkins/check.sh'
 #Get the most recent version of the master branch  
 env | grep GIT
-git checkout $GIT_BRANCH
-git pull
+#git checkout $GIT_BRANCH
+#git pull
 
 
 #Delete any tempfiles left over from the last run and write introduction
