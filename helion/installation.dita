@@ -50,13 +50,13 @@
 <li>Select the language.</li>
 <li>Select the location.</li>
 <li>Select the keyboard layout.</li>
-<li>Select the 1GB as the primary network interface, if prompted:<ul>
+<li>Select the primary network interface, if prompted:<ul>
             <li>Assign IP address, netmask</li>
           </ul></li>
 <li>Create new account:<ul>
             <li>Enter a username.</li>
             <li>Enter a password.</li>
-            <li>Enter timezone if prompted to do so.</li>
+            <li>Enter time zone if prompted to do so.</li>
             <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
           </ul></li>
 </ol>
@@ -107,8 +107,8 @@ helion/hlm/                    Directory contains files used by the installer
         </li>
 <li>Run the configuration processor, as follows:
           <codeblock>cd ~/helion/hlm/ansible</codeblock><codeblock>ansible-playbook -i hosts/localhost config-processor-run_v2.yml</codeblock></li>
-<li>Check the generated hosts files in <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph>
-          to ensure the correct IPs are included. If they are not, run <codeph>ansible-playbook -i
+<li>Check the generated host files in <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to
+          ensure the correct IPs are included. If they are not, run <codeph>ansible-playbook -i
             hosts/localhost config-processor-clean.yml</codeph> and return to Step 1 and review your
           input files carefully.</li>
 </ol>
@@ -182,9 +182,9 @@ Gateway: 10.241.103.1
 <li>Select the checkbox to skip volume creation.</li>
 <li>Wait for completion.</li>
 <li>On the deployer, edit the following file: <codeblock>helion/hlm/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeblock><ol>
-            <li>Make enabled_backends=vsa-1</li>
-            <li>Change {% if cinder_enabled_backends == 'lvm-1' %} to {% if cinder_enabled_backends
-              == 'no-backends' %}</li>
+            <li>Change the enabled_backends line to: <codeblock>enabled_backends=vsa-1</codeblock></li>
+            <li>Change <codeblock>{% if cinder_enabled_backends == 'lvm-1' %}</codeblock> to
+              <codeblock>{% if cinder_enabled_backends == 'no-backends' %}</codeblock></li>
           </ol></li>
 <li>Copy the VSA section, uncomment it, and fill the values as in the following example:
           <codeblock>
@@ -211,10 +211,9 @@ hplefthand_debug: false
             can optionally specify the external network CIDR here too. If you choose not to
             excercise this option or use a wrong value, the VMs will not be accessible over the
             network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
-<li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the deployer. As
-          they no longer have entries for HLM, sudo commands may become a bit slower. To fix this
-          issue, once this step is complete, add "hlm" after "127.0.0.1 localhost":
-          <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock></li>
+<li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the deployer:
+          <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock>
+  As they no longer have entries for HLM, sudo commands may become a bit slower. To fix this issue, once this step is complete, add "hlm" after "127.0.0.1 localhost".</li>
 <li>Install and configure VSA.</li>
 </ol>
 </section>
