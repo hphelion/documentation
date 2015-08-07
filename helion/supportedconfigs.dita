@@ -34,12 +34,12 @@
         agent)</li>
       <li>Swift Object</li>
       <li>MySQL, RabbitMQ, API, Other Services</li>
-    </ul></li></ul>
-    <p><b>Resource pool</b></p>
+    </ul></li>
+    <li>Resource pool
     <ul id="ul_jyg_fyf_ys">
       <li>Compute (minimum of one node) </li>
       <li>VSA Cluster (minimum of one node, no high availability)</li>
-    </ul>
+    </ul></li></ul>
     <p><b>Minimum server count</b></p>
     <ul id="ul_lrv_gyf_ys">
       <li>6 with VSA (1 deployer, 3 control plane, 1 compute, 1 VSA) </li>
