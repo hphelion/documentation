@@ -139,8 +139,8 @@
 <p><b>Installation and NIC Numbering</b></p>
 <ul>
 <li>The assignment of eth interface numbers to your physical network interfaces may vary, and therefore your network interface naming (eth0, eth1, etc) may not be what you expect.</li>
-<li>You may want to disable the network interfaces that you are not planning to use.</li>
 <li>If you find that your network interfaces are named out of order, you can configure your interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
+<li>You may want to disable the network interfaces that you are not planning to use.</li>
 </ul>
 <p><b>NIC Bonding changes needed during installation</b></p>
 <ul>
