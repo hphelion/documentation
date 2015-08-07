@@ -24,7 +24,7 @@
 <li>Machines must be fully reinstalled on the next drop – upgrade from Beta0 to Beta1 is not
           supported.</li>
 <li>The machine types must be homogeneous.</li>
-<li>It is possible to add additional VSA and compute nodes. The default is one of each.</li>
+<li>It is possible to add additional VSA and compute nodes: the default is one of each.</li>
 <li>You may assign server roles to each or your nodes manually or allow the installer to assign them
           automatically.</li>
 </ol>
