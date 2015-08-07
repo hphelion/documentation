@@ -83,9 +83,9 @@
     <p> <image href="images/20beta0poc-diagram1.png" width="1000"/></p>
     <ul>
       
-      <li id="inlineA">
+      <li>
         
-        some text here<i><b><u> also there is some code in here</u></b></i>
+        some text here <ph id="inlineA">vvvv</ph>also there is some code in here
       </li>
       
     </ul>
