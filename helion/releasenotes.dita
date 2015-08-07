@@ -142,13 +142,14 @@
 <li>If you find that your network interfaces are named out of order, you can configure your interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
 <li>You may want to disable the network interfaces that you are not planning to use.</li>
 </ul>
-<p><b>NIC Bonding changes needed during installation</b></p>
+<p><b>Network Interface Bonding changes needed during installation</b></p>
 <ul>
-  <li>There is a workaround for the NIC bonding configuration needed that is included in the installation instructions.</li>
+<li>The bond mode in the network interface definition needs to be specified by name (active-backup) rather than by number (1).</li>
+<li>This workaround is included in the installation instructions.</li>
 </ul>
 <p><b>Horizon Installation Workaround Needed</b></p>
 <ul>
-<li>See installation workaround in the installation guide. </li>
+<li>See workaround in the installation guide.</li>
 </ul>
 </section>
 </body>
