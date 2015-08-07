@@ -91,7 +91,7 @@
           3 controller nodes.</li>
         <li>In Beta0 you cannot add or remove Swift servers.</li>
         <li>Only one Swift zone is supported.</li>
-        <li>Only one  storage policy, object-0, is supported in this release.</li>
+        <li>Only one storage policy, object-0, is supported in this release.</li>
       </ul><!-- <p>
       <b>Deployment of VSA cloud on a separate Node as per the life-cycle management
       features</b></p>
@@ -112,15 +112,23 @@
         <li>Vertica is not available in the install. Must choose InfluxDB option instead.</li>
         <li>InfluxDB not configured behind a VIP. Must directly access one node in the cluster.</li>
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
-      </ul><p><b>Cinder</b></p><p>Core cinder services are all being installed and configured via
-        the installer.</p><p>Cinder installation with VSA as a backend is being worked through at
-        the moment, manual steps to be defined later may be required to complete
-          installation.</p><p><b>Networks</b></p><p>This requirement is primarily network
-        configuration that will be done through the installer. There is no upstream neutron work
-        required.</p><p>** This is not NIC Bonding**</p><p>Multiple NICs on a compute node and each
-        NIC is connected to a different external network. Today we don't support multiple external
-        networks at L2 (ML2 OVS mech driver) nor L3 (DVR Or
-          Centralized)</p><!--<p>Need use cases/stories </p>
+      </ul>
+      
+    <!--  <p><b>Cinder</b></p><ul id="ul_vld_l1g_ys">
+        <li>
+          <p>Core cinder services are all being installed and configured via the installer. </p>
+        </li>
+        <li>
+          <p>Cinder installation with VSA as a backend is being worked through at the moment, manual
+            steps to be defined later may be required to complete installation.</p>
+        </li>
+      </ul>-->
+      
+      <p><b>Networks</b></p><p>This requirement is primarily network configuration that will be
+        done through the installer. There is no upstream neutron work required.</p><p>Multiple NICs
+        on a compute node and each NIC is connected to a different external network. Today we don't
+        support multiple external networks at L2 (ML2 OVS mech driver) nor L3 (DVR or
+        Centralized).</p><!--<p>Need use cases/stories </p>
     <p>* ability to span L3</p>
     <p>* multiple provider networks/separation of traffic</p>
     <p>* two pools for fip to span networks/different fip pools</p>
@@ -130,13 +138,15 @@
     <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
     <p> </p>--><p><b>TLS</b></p><p>The
         server certificate is currently hard coded. If an operator wishes to provide their own, they
-        need to edit the defaults in the TLS playbook. </p><p><b>Known
-          Issues</b></p><p><b>Install:</b></p><p>Boot order may be affected by random assignment of
-        eth interface numbers to your NICs. Therefore the node you need to boot first may not be
-        first. You may want to disable NICs that you are not planning to use.</p><p>If you find that
-        your NICs are named out of order, you can configure your interface names ( eg. ethX ) to
-        specific MAC addresses by either directly modifying the udev rule or modifying the script
-        which creates them (/lib/udev/write_net_rules ).</p><p><b>Operations:</b></p><!--<p><b>FAQ</b></p>
+        need to edit the defaults in the TLS playbook. </p><p><b>Install:</b></p><p>Boot order may
+        be affected by random assignment of eth interface numbers to your NICs. Therefore the node
+        you need to boot first may not be first. You may want to disable NICs that you are not
+        planning to use.</p><p>If you find that your NICs are named out of order, you can configure
+        your interface names ( eg. ethX ) to specific MAC addresses by either directly modifying the
+        udev rule or modifying the script which creates them (/lib/udev/write_net_rules
+          ).</p>
+      
+      <!--<p><b>FAQ</b></p>
     
     <p><b>What level of customisation possible via modifying configurations in the CP and using them
         to deploy?</b></p>
@@ -148,7 +158,7 @@
     <p><b>What other settings will we be able to customize in Beta0?</b></p>
     <p>Specifically, will we be able to set things like server affinity through jinja files, or will
       those need to be manual changes? M. Dunnett</p>-->
-      <p><b>Ops Console</b></p>Not enabled. <p><b>Horizon </b></p>Not enabled. </section>
+      <p><b>Ops Console</b></p>Not enabled. <p><b>Horizon </b></p>See workaround to install in the installation guide. </section>
     
 
   </body>
