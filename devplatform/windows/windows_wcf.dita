@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_j1s_nst_xs">
+    <title>Deploying a WCF application to a Windows DEA cluster</title>
+    <shortdesc>Windows applications running in Windows DEA clusters on Helion OpenStack or Helion Public Cloud are not limited to Web Applications and Web Sites. This tutorial demonstrates how to deploy a WCF application.</shortdesc>
+    <taskbody>
+        <context>
+            <p>This tutorial will demonstrate how to deploy the WCF Getting Started sample application to a Windows DEA cluster running on Helion Public Cloud.</p>
+            <p><b>Prerequisites</b></p>
+            <p>This tutorial requires the following:</p>
+            <ul>
+                <li>A Helion OpenStack Public Cloud account wih a Windows DEA cluster.</li>
+                <li>The WCF Getting Started sample application. This sample can be found in the download package <xref href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=21459" scope="external" format="html">here</xref>.</li>
+                <li>Any edition of Visual Studio 2013, including the Community (free) edition, with the following packages installed:
+                    <ul>
+                        <li>Cloud Foundry MSBuild Tasks version 1.3</li>
+                        <li>Cloud Foundry Extensions for Visual Studio</li>
+                    </ul>
+                </li>
+            </ul>
+        </context>
+        <steps>
+            <step>
+                <cmd>Open &lt;<i>samples directory</i>&gt;/WCF/Basic/GettingStarted/CS/GettingStarted.sln in Visual Studio 2013.</cmd>
+                <info>You will be warned that the application will need to be upgraded. Click OK.
+                    <image href="../../media/windows_wcf_convert.png" placement="break"/></info>
+            </step>
+            <step>
+                <cmd>Set both projects to .NET Framework 4.5</cmd>
+            </step>
+            <step><cmd>In service.cs, set the namespace to Server</cmd></step>
+            <step><cmd>Remove SecurityPermissionAttribute from both projects</cmd></step>
+            <step><cmd>Install cloud foundry MSBuild tasks</cmd></step>
+            <step><cmd>Publish <font color="red">(This to change from 1.2 version)</font></cmd></step>
+            <step><cmd>Set the endpoint in the client's </cmd></step>
+        </steps>
+    </taskbody>
+</task>

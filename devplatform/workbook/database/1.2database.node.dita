@@ -42,61 +42,45 @@
 <li>Click <b>Save</b>.</li>
 </ol>
 <p>
-<b>Note</b>: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer to <xref href="../../1.2devplatform.database-instance.dita" >Using the Database Service</xref>
-  and <xref href="../../1.2devplatform.database-ALS.dita" >Connecting the Database Service with ALS</xref>.</p>
+        <note>If a more durable or scalable MySQL database service is needed, configure your ALS
+          cluster to use a database instance or master/slave pair provided by the Database Service.
+          For more information, refer to <xref href="../../1.2devplatform.database-instance.dita"
+            >Using the Database Service</xref> and <xref
+            href="../../1.2devplatform.database-ALS.dita">Connecting the Database Service with
+            ALS</xref>.</note>
+      </p>
 </section>
 <section id="download-the-application-files"> <title>Download the Application Files</title>
 <p>
 <xref href="https://github.com/HelionDevPlatform/helion-mysql-node/" scope="external" format="html" >Click here to access the code repository</xref>.</p>
 </section>
 <section id="deploy-the-application"> <title>Deploy the Application</title>
-<p>
-        <b>Note</b>: Application Lifecycle Service clusters that require an upstream HTTP proxy to
-        access the internet will need to be <xref
-          href="../../helion/admin/server/1.2configuration.dita#topic31232/staging-cache-app-http-proxy"
+<p>Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet
+        will need to be <xref
+          href="../../helion/admin/server/https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
           >made aware of the proxy</xref>. The sample applications require access to the Internet in
         order to download dependent packages.</p>
 <p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../1.2devplatform.eclipse.dita" >plugin</xref>.</p>
 <ol>
 <li>Open the <xref href="../../helion/user/reference/1.2client-ref.dita" >Helion command-line interface (CLI)</xref>
 </li>
-<li>
-<p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
-
-<codeblock>
-<codeph>helion target https://api.xx.xx.xx.xx.xip.io    
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Ensure that you are logged in to your desired environment.  <!--A BR tag was used here in the original source.-->If you are not, execute</p>
-
-<codeblock>
-<codeph>helion login
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>If you are not already there, <codeph>cd</codeph> to the root directory of the sample.</p>
-</li>
-<li>
-<p>Deploy the application by using the command:</p>
-
-<codeblock>
-<codeph>helion push
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Accept any default values that you may be prompted for.
-<!--A BR tag was used here in the original source.--><b>Note</b>: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</p>
-</li>
+<li> Ensure that you are targeting your desired environment.
+          <!--A BR tag was used here in the original source.--> If you are not,
+          execute<codeblock>helion target https://api.xx.xx.xx.xx.xip.io    </codeblock></li>
+<li> Ensure that you are logged in to your desired environment.
+          <!--A BR tag was used here in the original source.-->If you are not,
+          execute<codeblock>helion login</codeblock></li>
+<li> If you are not already there, <codeph>cd</codeph> to the root directory of the sample.</li>
+<li> Deploy the application by using the command:<codeblock>helion push</codeblock></li>
+<li> Accept any default values that you may be prompted for.<note>By default, ALS clusters are
+            configured with two domains (private and public). In some situations the Helion CLI may
+            prompt you to select a target domain. If prompted, select the <b>public</b> domain from
+            the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</note></li>
 </ol>
 </section>
 <section id="key-code-snippets"> <title>Key Code Snippets</title>
 <p>The first line in this section of the Server.js file shows how to retrieve the connection information for the MySQL instance from the application's environment variables. The connection information is represented using JSON. The rest of the code shown here parses the JSON string that was retrieved, connects to the database, execute a query, and prints the response.</p>
-<codeblock>
-  <codeph>var services = process.env.VCAP_SERVICES;
+<codeblock>var services = process.env.VCAP_SERVICES;
 
 // Parse the JSON so that we can extract the individual components needed for
  // using MySQL
@@ -144,20 +128,15 @@
     connection.end(function(err){
       console.log("\n Closing the MySQL connection");
    });
-      }
-</codeph>
-</codeblock>
+      }</codeblock>
 <p>The <i>manifest.yml</i> file is the configuration information used by ALS to set up the environment. The <b>services</b> element instructs ALS how to bind to the MySQL service provided by the ALS cluster to the application.</p>
-<codeblock>
-  <codeph>---
+<codeblock>---
 applications:
 - name: mysql-node
   mem: 128M
   services:
     ${name}-db:
-      type: mysql
-</codeph>
-</codeblock>
+      type: mysql</codeblock>
 </section>
 <section id="run-the-application"> <title>Run the Application</title>
 <ol>

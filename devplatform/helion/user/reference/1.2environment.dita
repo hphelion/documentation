@@ -25,9 +25,9 @@
 <p>Some environment variables are also available during application <xref type="section" href="#topic7631/staging">staging</xref>.</p>
 <p>You can set your own environment variables:</p>
 <ul>
-<li>in an <codeph>env:</codeph> block in <xref href="../deploy/1.2manifestyml.dita">
-<i>manifest.yml</i>
-</xref>,</li>
+<li>in an <codeph>env</codeph> block in <xref href="../deploy/1.2manifestyml.dita">
+          <i>manifest.yml</i>
+        </xref>,</li>
 <li>via the application's Details page in the <xref href="../../admin/console/1.2customize.dita">Management
 Console</xref>, or</li>
   <li>using the <xref href="../reference/1.2client-ref-management.dita#topic50918/command-env-add" type="section"   >env-add</xref>
@@ -42,7 +42,7 @@ command.</li>
 <p>Example:</p>
 <codeblock>mysql://u93Mm8XmGXQ9R:p8LwNeQXMrNzi@192.168.0.112:3306/d0a60c0be931f4982bbef153f993237bc</codeblock>
 </section>
-<section id="memcache-url"> <title>MEMCACHE_URL</title>
+<section id="memcache-url"> <title>MEMCACHED_URL</title>
 <p>Location of and credentials for the bound <b>Memcached</b> service, if there is (only) one.</p>
 </section>
 <section id="mysql-url"> <title>MYSQL_URL</title>

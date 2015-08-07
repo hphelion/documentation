@@ -95,9 +95,84 @@
     
     <topicref href="devplatform/1.2devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers ">
+      <topicref href="devplatform/helion/user/deploy/1.2index.dita" locktitle="yes"
+        navtitle="General Deployment">
+        <!--permalink: /helion/devplatform/als/user/deploy/app-debug/-->
+        <topicref href="devplatform/helion/user/deploy/1.2app-debug.dita" locktitle="yes"
+          navtitle="Remote Debugging"/>
+        <topicref href="devplatform/helion/user/deploy/1.2other-frameworks.dita" locktitle="yes"
+          navtitle="Generic and Standalone Frameworks"/>
+        <!--permalink: /helion/devplatform/als/user/deploy/app-logs/-->
+        <!--permalink: /helion/devplatform/als/user/deploy/buildpack/-->
+        <topicref href="devplatform/helion/user/deploy/1.2buildpack.dita" locktitle="yes"
+          navtitle="Buildpacks"/>
+        <!--permalink: /helion/devplatform/als/user/deploy/languages/clojure/-->
+        <!--permalink: /helion/devplatform/als/user/deploy/languages/go/-->
+        <!--permalink: /helion/devplatform/als/user/deploy/languages/java/-->
+        <!--permalink: /helion/devplatform/als/user/deploy/languages/node/-->
+        <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/-->
+        <!--permalink: /helion/devplatform/als/user/deploy/languages/python/-->
+        <!--permalink: /helion/devplatform/als/user/deploy/languages/ruby/-->
+        <!--permalink: /helion/devplatform/als/user/deploy/manifestyml/-->
+        <topicref href="devplatform/helion/user/deploy/1.2manifestyml.dita" locktitle="yes"
+          navtitle="Manifest.yml Options"/>
+        <!--permalink: /helion/devplatform/als/user/deploy/newrelic/-->
+        <topicref href="devplatform/helion/user/deploy/1.2newrelic.dita" locktitle="yes"
+          navtitle="New Relic Monitoring"/>
+        <!--permalink: /helion/devplatform/als/user/deploy/orgs-spaces/-->
+        <topicref href="devplatform/helion/user/deploy/1.2orgs-spaces.dita" locktitle="yes"
+          navtitle="Organizations and Spaces"/>
+        <!--permalink: /helion/devplatform/als/user/deploy/other-frameworks/-->
+      </topicref>
+      <topicref href="devplatform/windows/windows_wcf.dita"
+        navtitle=" Deploy a WCF app to a Windows DEA Cluster" locktitle="yes"/>
+      <topichead navtitle="Language Specific Application Deployment">
+        <topicref href="devplatform/helion/user/deploy/languages/docker_apps.dita"
+          navtitle="Docker Apps" locktitle="yes"/>
+        <topicref href="devplatform/helion/user/deploy/languages/1.2clojure.dita" locktitle="yes"
+          navtitle="Clojure"/>
+        <topicref href="devplatform/helion/user/deploy/languages/1.2go.dita" locktitle="yes"
+          navtitle="Go"/>
+        <topicref href="devplatform/helion/user/deploy/languages/1.2java.dita" locktitle="yes"
+          navtitle="Java"/>
+        <topicref href="devplatform/helion/user/deploy/languages/1.2node.dita" locktitle="yes"
+          navtitle="Node"/>
+        <topicref href="devplatform/helion/user/deploy/languages/perl/1.2index.dita" locktitle="yes"
+          navtitle="Perl">
+          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/catalyst/-->
+          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2catalyst.dita"
+            locktitle="yes" navtitle="Catalyst"/>
+          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/cgiapppsgi/-->
+          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2cgiapppsgi.dita"
+            locktitle="yes" navtitle="CGI Application"/>
+          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/dancer/-->
+          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2dancer.dita"
+            locktitle="yes" navtitle="Dancer"/>
+          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/mason/-->
+          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2mason.dita"
+            locktitle="yes" navtitle="Mason"/>
+          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/mojo/-->
+          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2mojo.dita"
+            locktitle="yes" navtitle="Mojolicious"/>
+          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/perlcgi/-->
+          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2perlcgi.dita"
+            locktitle="yes" navtitle="Perl CGI"/>
+          <!--permalink: /helion/devplatform/als/user/deploy/languages/php/-->
+        </topicref>
+        <topicref href="devplatform/helion/user/deploy/languages/1.2php.dita" locktitle="yes"
+          navtitle=" PHP"/>
+        <topicref href="devplatform/helion/user/deploy/languages/python/1.2index.dita"
+          locktitle="yes" navtitle="Python">
+          <!--permalink: /helion/devplatform/als/user/deploy/languages/python/django/-->
+          <topicref href="devplatform/helion/user/deploy/languages/python/1.2django.dita"
+            locktitle="yes" navtitle="Deploying Django Apps"/>
+        </topicref>
+        <topicref href="devplatform/helion/user/deploy/languages/1.2ruby.dita" locktitle="yes"
+          navtitle="Ruby"/>
+      </topichead>
+      <topicref href="devplatform/helion/user/reference/1.2environment.dita" locktitle="yes"
+        navtitle="Environment Variables "/>
       <!--permalink: /helion/devplatform/deploy/-->
-      <topicref href="devplatform/1.2devplatform.deploy-ALS.dita" locktitle="yes"
-        navtitle="Configuring and Deploying an Application Lifecycle Service Cluster"/>
       <!--permalink: /helion/devplatform/eclipse/-->
       <topicref href="devplatform/1.2devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin"/>
@@ -142,6 +217,8 @@
         navtitle="Windows Overview"/>
       <topicref href="devplatform/windows/windows_firstapp.dita" locktitle="yes"
         navtitle="Deploying your first .NET Application"/>
+      <topicref href="devplatform/windows/windows_wcf.dita"
+        navtitle=" Deploy a WCF app to a Windows DEA Cluster" locktitle="yes"/>
       <topicref href="devplatform/windows/windows_adding_services.dita" locktitle="yes"
         navtitle="Adding Services to Windows Applications"/>
       <topicref href="devplatform/windows/windows_building_and_deploying.dita" locktitle="yes"
@@ -163,7 +240,9 @@
     <topicref href="devplatform/1.2devplatform.sysadmin.dita" locktitle="yes"
       navtitle="Resources for IT Ops">
       <!--permalink: /helion/devplatform/connectdatabase/-->
-      <topicref href="devplatform/helion/admin/reference/docker.dita" navtitle="Docker and Fence"
+      <topicref href="devplatform/1.2devplatform.deploy-ALS.dita" locktitle="yes"
+        navtitle="Configuring and Deploying an Application Lifecycle Service Cluster"/>
+      <topicref href="devplatform/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
       <topicref href="devplatform/windows/windows_password.dita"
         navtitle="Retrieving the Admin Password for Windows Instances" locktitle="yes"/>
@@ -206,6 +285,8 @@
       <topicref href="devplatform/helion/CLI/1.2constructor_vm.dita"
         navtitle="ALS Constructor VM" locktitle="yes"/>
       <topichead navtitle="ALS Management Console">
+        <topicref href="devplatform/helion/admin/console/console_intro.dita"
+          navtitle="Introduction and First Use" locktitle="yes"/>
         <topicref href="devplatform/helion/admin/console/1.2index.dita" locktitle="yes"
           navtitle="Management Console (Admin View)"/>
         <topicref href="devplatform/helion/user/console/1.2index.dita"
@@ -317,9 +398,11 @@
             navtitle="Common Server Operations"/>
           <topicref href="devplatform/helion/admin/server/1.2configuration.dita" locktitle="yes"
             navtitle="Detailed Configuration"/>
+          <topicref href="devplatform/helion/admin/server/https_and_ssl.dita"
+            navtitle="HTTP and SSL Configuration" locktitle="yes"/>
           <topicref href="devplatform/helion/admin/server/1.2aok.dita" locktitle="yes"
             navtitle="AOK Authentication Server"/>
-          <topicref href="devplatform/helion/admin/server/1.2docker.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/server/docker.dita" locktitle="yes"
             navtitle="Docker and Fence"/>
           <topicref href="devplatform/helion/admin/best-practices/1.2logging-examples.dita"
             locktitle="yes" navtitle="Log Drain Examples"/>
@@ -356,91 +439,19 @@
         <!--permalink: /helion/devplatform/als/user/deploy/-->
         <topicref href="devplatform/helion/user/quick-start/1.2index.dita"
           navtitle="ALS Quick Start" locktitle="yes"/>
-        <topicref href="devplatform/helion/user/deploy/1.2index.dita" locktitle="yes"
-          navtitle="General Deployment">
-          <!--permalink: /helion/devplatform/als/user/deploy/app-debug/-->
-          <topicref href="devplatform/helion/user/deploy/1.2app-debug.dita" locktitle="yes"
-            navtitle="Remote Debugging"/>
-          <!--permalink: /helion/devplatform/als/user/deploy/app-logs/-->
-          <topicref href="devplatform/helion/user/deploy/1.2app-logs.dita" locktitle="yes"
-            navtitle="Application Logs "/>
-          <!--permalink: /helion/devplatform/als/user/deploy/buildpack/-->
-          <topicref href="devplatform/helion/user/deploy/1.2buildpack.dita" locktitle="yes"
-            navtitle="Buildpacks">
-            <topicref href="devplatform/helion/user/deploy/1.2other-frameworks.dita"
-              locktitle="yes" navtitle="Generic and Standalone Frameworks"/>
-            <topicref href="devplatform/helion/user/deploy/languages/1.2clojure.dita"
-              locktitle="yes" navtitle="Clojure"/>
-            <topicref href="devplatform/helion/user/deploy/languages/1.2go.dita" locktitle="yes"
-              navtitle="Go"/>
-            <topicref href="devplatform/helion/user/deploy/languages/1.2java.dita"
-              locktitle="yes" navtitle="Java"/>
-            <topicref href="devplatform/helion/user/deploy/languages/1.2node.dita"
-              locktitle="yes" navtitle="Node"/>
-            <topicref href="devplatform/helion/user/deploy/languages/perl/1.2index.dita"
-              locktitle="yes" navtitle="Perl">
-              <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/catalyst/-->
-              <topicref href="devplatform/helion/user/deploy/languages/perl/1.2catalyst.dita"
-                locktitle="yes" navtitle="Catalyst"/>
-              <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/cgiapppsgi/-->
-              <topicref href="devplatform/helion/user/deploy/languages/perl/1.2cgiapppsgi.dita"
-                locktitle="yes" navtitle="CGI Application"/>
-              <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/dancer/-->
-              <topicref href="devplatform/helion/user/deploy/languages/perl/1.2dancer.dita"
-                locktitle="yes" navtitle="Dancer"/>
-              <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/mason/-->
-              <topicref href="devplatform/helion/user/deploy/languages/perl/1.2mason.dita"
-                locktitle="yes" navtitle="Mason"/>
-              <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/mojo/-->
-              <topicref href="devplatform/helion/user/deploy/languages/perl/1.2mojo.dita"
-                locktitle="yes" navtitle="Mojolicious"/>
-              <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/perlcgi/-->
-              <topicref href="devplatform/helion/user/deploy/languages/perl/1.2perlcgi.dita"
-                locktitle="yes" navtitle="Perl CGI"/>
-              <!--permalink: /helion/devplatform/als/user/deploy/languages/php/-->
-            </topicref>
-            <topicref href="devplatform/helion/user/deploy/languages/1.2php.dita"
-              locktitle="yes" navtitle=" PHP"/>
-            <topicref href="devplatform/helion/user/deploy/languages/python/1.2index.dita"
-              locktitle="yes" navtitle="Python">
-              <!--permalink: /helion/devplatform/als/user/deploy/languages/python/django/-->
-              <topicref href="devplatform/helion/user/deploy/languages/python/1.2django.dita"
-                locktitle="yes" navtitle="Deploying Django Apps"/>
-            </topicref>
-            <topicref href="devplatform/helion/user/deploy/languages/1.2ruby.dita"
-              locktitle="yes" navtitle="Ruby"/>
-          </topicref>
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/clojure/-->
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/go/-->
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/java/-->
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/node/-->
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/-->
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/python/-->
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/ruby/-->
-          <!--permalink: /helion/devplatform/als/user/deploy/manifestyml/-->
-          <topicref href="devplatform/helion/user/deploy/1.2manifestyml.dita" locktitle="yes"
-            navtitle="Manifest.yml Options"/>
-          <!--permalink: /helion/devplatform/als/user/deploy/newrelic/-->
-          <topicref href="devplatform/helion/user/deploy/1.2newrelic.dita" locktitle="yes"
-            navtitle="New Relic Monitoring"/>
-          <!--permalink: /helion/devplatform/als/user/deploy/orgs-spaces/-->
-          <topicref href="devplatform/helion/user/deploy/1.2orgs-spaces.dita" locktitle="yes"
-            navtitle="Organizations and Spaces"/>
-          <!--permalink: /helion/devplatform/als/user/deploy/other-frameworks/-->
-        </topicref>
         <topicref href="devplatform/helion/user/reference/1.2api.dita" locktitle="yes"
           navtitle="Application Lifecycle Service API"
           ><!--permalink: /helion/devplatform/als/user/reference/client-ref/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/administration/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/applications/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/brokers/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/buildpacks/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/control/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/domains/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/flags/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/gettingstarted/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/history/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/information/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/management/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/miscellaneous/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/organizations/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/placement/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/quotas/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/routes/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/securitygroups/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/servicemanagement/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/serviceplans/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/services/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/spacequotas/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/spaces/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/tokens/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/usermanagement/--></topicref>
         <!--permalink: /helion/devplatform/als/user/reference/api/-->
         <!--permalink: /helion/devplatform/als/user/reference/environment/-->
-        <topicref href="devplatform/helion/user/reference/1.2environment.dita" locktitle="yes"
-          navtitle="Environment Variables "/>
         <!--permalink: /helion/devplatform/als/user/reference/glossary/-->
         <topicref href="devplatform/helion/user/reference/1.2glossary.dita" locktitle="yes"
           navtitle="Glossary"/>
         <!--permalink: /helion/devplatform/als/user/reference/troubleshoot/-->
         <topicref href="devplatform/helion/user/reference/1.2troubleshoot.dita" locktitle="yes"
           navtitle="Troubleshooting "/>
+        <topicref href="devplatform/helion/user/deploy/1.2app-logs.dita" locktitle="yes"
+          navtitle="Application Logs "/>
       </topicref>
     </topicref>
   </topicref>

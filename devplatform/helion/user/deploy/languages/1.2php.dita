@@ -175,7 +175,7 @@ session storage instead:</p>
 hooks:
   post-staging:
   - echo "session.save_handler = memcached" &gt; "$HELION_APP_ROOT"/apache/php/sessions.ini
-  - echo "session.save_path = $MEMCACHE_URL" &gt;&gt; "HELIONO_APP_ROOT"/apache/php/sessions.ini</codeblock>
+  - echo "session.save_path = $MEMCACHED_URL" &gt;&gt; "HELIONO_APP_ROOT"/apache/php/sessions.ini</codeblock>
 </section>
 </body>
 </topic>

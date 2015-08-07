@@ -531,6 +531,9 @@ configuration instructions.</note>
           for additional Controller nodes. The type of filesystem, storage server, and network mount
           method are left to the discretion of the Application Lifecycle Service
           administrator.</note>
+        <note type="warning">These directories are <b>not</b> empty. It is essential that the
+          contents of these directories are preserved and copied back into the new, shared
+          directories once symlinks have been created.</note>
       </p>
 <ol>
 <li>Create a shared filesystem on a Network Attached Storage device.</li>
@@ -610,7 +613,7 @@ Router nodes. For example:</p>
 <section id="load-balancer-ssl-certificates"> <title>Load Balancer SSL Certificates</title>
 <p>The load balancer terminates SSL connections, so SSL certificates must
 be set up and maintained on this node.</p>
-  <p>See the <xref href="../server/1.2configuration.dita#topic31232/using-your-own-ssl-certificate" >Using your own SSL certificate</xref> and <xref href="../server/1.2configuration.dita#topic31232/ca-certificate-chaining" type="section"   >CA Certificate Chaining</xref> sections for Application Lifecycle Service Load Balancer instructions.</p>
+  <p>See the <xref href="../server/https_and_ssl.dita#topic_gwr_qgd_ws/using-your-own-ssl-certificate" >Using your own SSL certificate</xref> and <xref href="../server/https_and_ssl.dita#topic_gwr_qgd_ws/ca-certificate-chaining" type="section"   >CA Certificate Chaining</xref> sections for Application Lifecycle Service Load Balancer instructions.</p>
 <p>For other load balancers, consult the documentation for your device or service on uploading/updating server certificates.</p>
 </section>
 </body>

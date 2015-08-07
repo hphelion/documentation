@@ -226,7 +226,78 @@ Members of certain LDAP groups can be granted admin accounts for ALS. This requi
     This command would automatically grant admin privileges to all members of the 'admins' and 'bosses' LDAP groups.
 
 - allowed_groups is an option that can be specified if limiting regular-user-level access is also desired.
--->
+
+Individual Organizations for LDAP Users
+
+
+As an alternative to putting new users in one default :ref:`Organization
+<orgs-spaces>`, Stackato can be set to automatically create an new,
+single-user Organization for each new LDAP user that logs in. This
+simulates the behavior of older Stackato and Cloud Foundry systems where
+individual users had their own quotas.
+
+The new organizations have the same name as the user (which may be an
+email address if ``use_email_for_username`` is set in AOK).
+
+To enable this behavior, add the following settings to the
+``cloud_controller_ng`` configuration:
+
+* **uaa/new_user_strategy**: global (default) or individual. When set
+  to ``individual`` creates a default org and space when an LDAP user
+  logs in to the management console for the first time. If unset, the
+  default (``global``) behavior described above is used.
+
+* **uaa/new_user_strategies/individual**: contains the following
+  sub-keys defining how new individual orgs are set up:
+  
+  * **quota_name**: name of the :ref:`quota plan
+    <console-settings-quota-plans>` for the org. You should set up a new
+    quota plan specifically for single-user orgs with limits appropriate
+    to the number of users you plan to add to the system.
+    
+  * **space_name**: name of the default space created for each new user
+    within their individual org.
+  
+  * **space_role**: role of the user in the created space. May be
+    one of manager, auditor or developer (default). 
+
+  * **organization_role**: The role of the user in the created
+    organization - manager, billing_manager, auditor or user (default).
+
+Use :ref:`kato config set <kato-command-ref-config>` to set these values,
+for example::
+
+  $ kato config set cloud_controller_ng uaa/new_user_strategy individual
+  ...
+  $ kato config set cloud_controller_ng uaa/new_user_strategies/individual/space_name dev
+  
+Restart the controller to make the configuration changes active::
+
+  $ kato restart controller
+
+Individual Organization Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A typical configuration for creating individual organizations might look
+like this::
+
+  $ kato config get cloud_controller_ng uaa
+  
+  uaa:
+    url: https://aok.paas.example.com/uaa
+    resource_id: cloud_controller
+    symmetric_secret: jezmyCXJ45YWAqr4sG9hvsrlhwMHIK//drcBd76a+L4PMitJTAR4XZKvoUHSuDSL
+    new_user_strategy: individual
+    new_user_strategies:
+      individual:
+        space_name: default
+        quota_name: single-user
+        space_role: manager
+        organization_role: manager
+
+This creates a new organization for each LDAP user that logs in, makes
+the user a manager of their org, creates a space called "default", and
+makes the user a manager for that space.</pre>-->
 </section>
 <section id="activedir"> <title>Active Directory Example Settings</title>
 <p>The following example shows what a typical AOK configuration might look like for an Active Directory server. This configuration:</p>

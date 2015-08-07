@@ -90,7 +90,7 @@ object:</p>
     "user": "ro-web"
   }
 }</codeblock>
-  <p>To have your application use this information, parse the variable in your application code to extract the credentials at runtime. See the <xref href="../deploy/1.2index.dita#topic1693/language-specific-deployment" type="section"   >Language Specific Deployment</xref> documentation for examples.</p>
+  <p>To have your application use this information, parse the variable in your application code to extract the credentials at runtime. See the <xref href="../deploy/1.2index.dita#topic1693/languages" type="section"   >Language Specific Deployment</xref> documentation for examples.</p>
 <p>Buildpacks that auto-configure applications for system-provided services can also do so for user-provided services. For example, the <xref href="https://github.com/cloudfoundry/java-buildpack" scope="external" format="html" >java buildpack</xref> will configure applications to connect to a database if the service has a name or tag with <i>postgres</i>, <i>mariadb</i>, or <i>mysql</i> in it. Check the buildpack's documentation or code to see exactly what it supports.</p>
 </section>
 <section id="user-provided-URL-env"> <title>Other Environment Variables</title>

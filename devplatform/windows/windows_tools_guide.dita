@@ -185,11 +185,17 @@
  
  <section id="msbuild"><title>Cloud Foundry MSBuild Tasks</title>
 
-  <p>These MSBuild processes allow you to build and deploy .NET applications to Cloud Foundry instances as part of the usual build process for your application. </p>
+  <p>These MSBuild processes allow you to build and deploy applications to Cloud Foundry instances as part of the usual build process for your application. </p>
+  
+  <p>As of Helion Development Platform 1.3, the MSBuild Tasks are language and technology agnostic, and can be used to deploy Java, Node, and other applications, in addition to .NET applications.</p>
 
   <p>The MSBuild tasks can be installed using NuGet:</p>
-  <ol><li>Right-click the project in <b>Solution Explorer</b> and select <b>Manage NuGet Packages</b>
+  <ol>
+   
+ <li>Right-click the project in <b>Solution Explorer</b> and select <b>Manage NuGet Packages</b>
      <image placement="break" href="../../media/windows_manage_packages.png"/></li>
+   <li>If a previous version of the Cloud Foundry MSBuild Tasks is already installed, select <b>Installed Packages</b>, and click <b>Uninstall</b>.
+    <image placement="break" href="../../media/windows_nuget_uninstall.png"/></li>
  <li>Search for <b>Cloud Foundry MSBuild Tasks</b> in the <b>Online</b> section</li>
  <li>Click <b>Install</b>
      <image placement="break" href="../../media/windows_select_msbuild.png"/></li>
