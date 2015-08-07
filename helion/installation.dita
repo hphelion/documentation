@@ -36,6 +36,8 @@
   <li>Ensure every system has five enabled disk devices, as detailed in the <xref
             href="hardware.dita">minimum hardware requirements</xref>.</li>
   <li>Switch from UEFI to Legacy BIOS.</li>
+        <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
+        <li>Ensure that the other networks have PXE disabled.</li>
 </ul>  
 </section>
 <section id="DeployerInstall"> <title>Set up the Deployer</title>
@@ -68,8 +70,9 @@
 <codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
 <li>Confirm that ssh localhost works without a password and that you can get from external sources,
           both with and without sudo.</li>
-<li>Mount the install media at /media/cdrom, for example, sudo mount /media/cdrom (in case CD is in
-          /dev/cdrom).</li>
+<li>Mount the install media at /media/cdrom, for example, 
+  <codeblock>sudo mount /media/cdrom</codeblock>(in case CD is in /dev/cdrom).</li>
+  
 <li>Unpack the following tarball:
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz </codeblock></li>
 <li>Run the following included script:
