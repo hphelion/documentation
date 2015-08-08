@@ -53,8 +53,8 @@ sudo reboot       </codeblock></li>
         <li>While registering compute nodes, make sure you specify the <codeph>mgmt_ip</codeph>.
           This IP should from the KVM CLM range (refer to the <codeph>region_config</codeph> file)
           and must not overlap controller IPs. It is safe to start after a block of 10 IPs.</li>
-        <li>Set the controller-1 and compute-0 to <codeph>One-time PXE boot from
-          network</codeph>.</li>
+        <li>Set the <codeph>controller-1</codeph> and <codeph>compute-0</codeph> to <codeph>One-time
+            PXE boot from network</codeph>.</li>
         <li>PXE boot all the registered nodes.</li>
         <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160"
             >Log in to the Horizon interface</xref> and monitor the status of nodes being PXE

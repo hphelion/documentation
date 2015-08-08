@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring LDAP 3y</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+  </metadata>
+</prolog>
+<body>
+  <p>If you installed HP Helion OpenStack Carrier Grade 1.1, your system was configured to use LDAP v2. 
+    LDAP (Lightweight Directory Access Protocol) is a protocol that programs 
+    use to look up information from a server. </p>
+  <p>THis document explains how to configure HP Helion OpenStack to use LDAP v3. </p>
+  <p><b>NOTE:</b> If you installed HP Helion OpenStack Carrier Grade after *****, you do not need to perform these steps.
+  Your installation configured LDAP v3 upon installation.</p>
+  <ol>
+    <li>Log into the HLM host.</li>
+    <li>Execute the following commands to modify the <codeph>stackrc</codeph> file. 
+      The <codeph>stackrc</codeph> file is a configuration file contains all of the settings 
+      that control the services started and the repositories used to download the source for those services.
+      <codeblock>
+        export OS_PASSWORD=admin
+        export OS_USERNAME=admin
+        export OS_TENANT_NAME=admin
+        export OS_AUTH_URL=https://10.200.52.100:5000/v2.0
+        export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
+        export OS_REGION_NAME=memphis
+        unset OS_PROJECT_DOMAIN_NAME
+        unset OS_USER_DOMAIN_ID
+        unset OS_IDENTITY_API_VERSION
+        unset OS_AUTH_VERSION
+        unset OS_PROJECT_NAME
+      </codeblock></li>
+    <li>Execute the following commands to source the <codeph>stackrc</codeph> file:
+      <codeblock>source stackrc</codeblock></li>
+    <li>Execute the following OpenStack CLI command to create a new project:
+      <codeblock>openstack project create ldapdemo --domain americas </codeblock>
+    </li>
+    <li>Make note of the <codeph>domain-id</codeph> in the command output.</li>
+    <li>Execute the following command to list all user names:
+      <codeblock>openstack user list --domain Americas</codeblock>
+    </li>
+    <li>Make note of the ID number for the <codeph>cg-ldap-admin</codeph> user.</li>
+    <li>Execute the following command to add the <codeph>cg-ldap-admin</codeph> user to the project you created as an admin.
+      <codeblock>openstack role add --user &lt;user id> --project ldapdemo admin</codeblock>
+    </li>
+    <li>Execute the following commands to source the <codeph>stackrc</codeph> file:
+      <codeblock>source stackrc</codeblock></li>
+    <li>Execute the following commands to modify the <codeph>stackrc</codeph> file. 
+      The <codeph>stackrc</codeph> file is a configuration file contains all of the settings 
+      that control the services started and the repositories used to download the source for those services.
+      <codeblock>
+        export OS_USERNAME=ldapuser1
+        export OS_PASSWORD=init123#
+        export OS_PROJECT_NAME=ldap_project1
+        export OS_TENANT_NAME=ldap_project1
+        export OS_PROJECT_DOMAIN_NAME=americas
+        export OS_USER_DOMAIN_ID=c1f0e239545f428fb53128650ae23771
+        export OS_IDENTITY_API_VERSION=3 export OS_AUTH_VERSION=3
+        export OS_AUTH_URL=https://10.20.4.100:5000/v3
+        export OS_AUTH_URL=http://10.20.3.103:35357/v3
+        export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
+        export OS_REGION_NAME=memphis
+      </codeblock>
+    </li>
+    <li>Edit the <codeph>/etc/nova/nova.conf</codeph> file to comment out the following line:
+      <codeblock>#auth_version = 2.0</codeblock>
+    </li>
+    <li>Modify the <codeph>/etc/cinder/api-paste.ini</codeph>  file as follows:
+        <p>Replace <codeph>paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory</codeph></p>
+        <p>With: <codeph>paste.filter_factory = keystonemiddleware.auth_token:filter_factory</codeph></p>
+    </li>
+    <li>Modify the <codeph>/etc/glance/glance-api-paste.ini</codeph> file as follows:
+      <p>Replace <codeph>paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory</codeph></p>
+      <p>With: <codeph>paste.filter_factory = keystonemiddleware.auth_token:filter_factory</codeph></p>
+    </li>
+    <li>Modify the <codeph>/etc/glance/glance-registry-paste.ini</codeph> file as follows:
+      <p>Replace <codeph>paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory</codeph></p>
+      <p>With: <codeph>paste.filter_factory = keystonemiddleware.auth_token:filter_factory</codeph></p>
+    </li>
+    <li>Modify the <codeph>/etc/glance/glance-registry.conf</codeph> file as follows:
+      <p>Replace <codeph>paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory</codeph></p>
+      <p>With: <codeph>paste.filter_factory = keystonemiddleware.auth_token:filter_factory</codeph></p>
+    </li>
+    <li>Execute the following commands to restart affected OpenStack services:
+      <codeblock>
+        service glance-registry restart
+        service glance-api restart
+        service cinder-api restart
+        service nova-api restart
+      </codeblock>
+    </li>
+  </ol>
+  </body>
+</topic>
