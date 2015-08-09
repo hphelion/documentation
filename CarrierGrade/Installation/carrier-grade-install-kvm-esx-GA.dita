@@ -414,13 +414,69 @@ volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock>
           OpenStack Configuration Processor:
             <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
             Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
-            incorporated into the installation environment. </p></li>
+            incorporated into the installation environment. </p><p>When the command completes, you
+            will see the following:
+          message:</p><codeblock>#################################################################################
+The configuration processor completed successfully.
+################################################################################</codeblock></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
           correct.</li>
         <li>Initialize network interfaces on all the cloud nodes using the following command:
             <codeblock><codeph>hnetinit &lt;cloudname&gt;</codeph></codeblock><p>After this command
-            completes, all cloud nodes and CLM network interfaces are configured.</p></li>
+            completes, all cloud nodes and CLM network interfaces are configured. The output for the
+            command should appear similar to the
+          following:</p><codeblock>~/b52/clouds/b52/001/stage/ansible ~/b52
+PLAY [RESOURCES]
+**************************************************************          
+TASK: [initialize-networking | Copy hosts file]
+*******************************
+changed: [B52-CCP-T1-M2-NETPXE]
+changed: [B52-CCP-T1-M1-NETPXE]
+changed: [B52-CCP-T1-M3-NETPXE]
+changed: [B52-CCP-CPN-N0001-NETPXE]          
+TASK: [initialize-networking | Generate temporary filename]
+*******************
+changed: [B52-CCP-T1-M2-NETPXE]
+changed: [B52-CCP-T1-M3-NETPXE]
+changed: [B52-CCP-CPN-N0001-NETPXE]
+changed: [B52-CCP-T1-M1-NETPXE]
+TASK: [initialize-networking | Copy interfaces files to temporary location] ***
+changed: [B52-CCP-CPN-N0001-NETPXE]
+changed: [B52-CCP-T1-M3-NETPXE]
+changed: [B52-CCP-T1-M2-NETPXE]
+changed: [B52-CCP-T1-M1-NETPXE]
+TASK: [initialize-networking | Check if rules file exists on src files location] ***
+ok: [B52-CCP-T1-M1-NETPXE -> 127.0.0.1]
+ok: [B52-CCP-T1-M2-NETPXE -> 127.0.0.1]
+ok: [B52-CCP-T1-M3-NETPXE -> 127.0.0.1]
+ok: [B52-CCP-CPN-N0001-NETPXE -> 127.0.0.1]
+TASK: [initialize-networking | Copy rules files to temporary location]
+********
+skipping: [B52-CCP-T1-M1-NETPXE]
+skipping: [B52-CCP-T1-M3-NETPXE]
+skipping: [B52-CCP-T1-M2-NETPXE]
+skipping: [B52-CCP-CPN-N0001-NETPXE]
+TASK: [initialize-networking | Restart networking]
+****************************
+changed: [B52-CCP-T1-M1-NETPXE]
+changed: [B52-CCP-T1-M2-NETPXE]
+changed: [B52-CCP-CPN-N0001-NETPXE]
+changed: [B52-CCP-T1-M3-NETPXE]
+TASK: [initialize-networking | Wait for networking]
+***************************
+ok: [B52-CCP-T1-M1-NETPXE]
+ok: [B52-CCP-CPN-N0001-NETPXE]
+ok: [B52-CCP-T1-M3-NETPXE]
+ok: [B52-CCP-T1-M2-NETPXE]
+PLAY RECAP
+********************************************************************
+B52-CCP-CPN-N0001-NETPXE   : ok=6    changed=4    unreachable=0 failed=0
+B52-CCP-T1-M1-NETPXE       : ok=6    changed=4    unreachable=0 failed=0
+B52-CCP-T1-M2-NETPXE       : ok=6    changed=4    unreachable=0 failed=0
+B52-CCP-T1-M3-NETPXE       : ok=6    changed=4    unreachable=0 failed=0          
+~/b52</codeblock>
+        </li>
         <li>Use the following command to deploy the cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>When this command is
             complete the non-KVM cloud will be installed.</p></li>
