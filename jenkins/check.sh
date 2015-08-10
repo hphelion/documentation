@@ -14,9 +14,9 @@ do
 		
 			echo "Found in file: $i"
 			issue=`grep -n "$test" $i  | sed "s|\($test\)|\e[31;1m>>\e[0m\1\e[31;1m<<\e[0m|" | sed 's|^\s||'`
-			echo "     Line number: $issue"
-			echo "     Correction:  $help"
-			echo " "
+			echo -e "     Line number: $issue"
+			echo    "     Correction:  $help"
+			echo    " "
 		fi
 	done < ./jenkins/badstrings.txt
 done
