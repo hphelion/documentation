@@ -12,7 +12,6 @@ do
 		if [[ -n $(cat $i | sed 's|<!--[^><]*-->||g' |grep "$test") ]]; 
 		then
 		
-		\e[31;1mWARNING:\e[0m 
 			echo "Found in file: $i"
 			issue=`grep -n "$test" $i  | sed "s|\($test\)|\e[31;1m>>\e[0m\1\e[31;1m<<\e[0m|" | sed 's|^\s||'`
 			echo "     Line number: $issue"
