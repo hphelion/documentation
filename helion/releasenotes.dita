@@ -53,11 +53,14 @@
     <section id="KnownIssues"><title>Known Issues in this Release</title>
       <p><b>Horizon Support</b></p>
       <ul>
-        <li>Horizon is not functioning in this release.</li>
+        <li>Horizon is not supported in this release.</li>
       </ul>
       <p><b>HP Helion Development
-          Platform</b></p><p>Helion Development Platform is not supported on Beta
-          0.</p><p><b>Installing Swift</b></p><p>Swift installs with the following limitations: </p><ul>
+          Platform</b></p>
+      <ul>
+        <li>Helion Development Platform is not supported on Beta 0.</li>
+      </ul>
+<p><b>Installing Swift</b></p><p>Swift installs with the following limitations: </p><ul>
         <li>Only a 3-node Swift configuration in which Swift runs on the three controller nodes is
           supported.</li>
         <li>There is no LVM (logical volumes) support. Therefore, dedicated disks are needed for
