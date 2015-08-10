@@ -89,7 +89,7 @@ helion/hlm/                    Directory contains files used by the installer
 <li>Run the configuration processor, as follows:
 <codeblock>cd ~/helion/hlm/ansible</codeblock>
 <codeblock>ansible-playbook -i hosts/localhost config-processor-run_v2.yml</codeblock></li>
-<li>Check the generated host files in <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs are included. If they are not, run <codeph>ansible-p input files carefully.</codeph></li>
+  <li>Check the generated host files in <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs are included. If they are not, run <codeblock>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock> and go to step 1.</li>
 </ol>
 </section>
 <section id="CobblerDeploy"> <title>Deploy Cobbler </title>
