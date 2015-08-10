@@ -1,3 +1,4 @@
+%??%= If is a comment or reminder, place it in a comment.
 % HDP %= do not abbreviate. Use Helion Development Platform.
 %[bB]are [mM]etal %= use baremetal (one word, no caps)
 %[bB]are-[mM]etal %= use baremetal (one word, no caps)
