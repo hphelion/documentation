@@ -21,7 +21,7 @@
   <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a virtual machine for the Helion Lifecycle Management (HLM) and then deploying the HP Helion Openstack cloud.</p>
 
 <section id="prepare"> <title>Prepare the system for deployment</title>
-<p>Make sure you have downloaded and extracted all of the required installation packages on the KVM
+<p>Make sure you have downloaded and extracted all of the required installation packages on the HLM
         host </p>
       <p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM
         host):</p>
