@@ -186,6 +186,20 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
 Password: cghelion</codeblock>
           </p><p><b>Important:</b> After logging in with the default password, make sure you change
             the password for the <codeph>cghelion</codeph> user.  </p></li>
+  <li>Execute the following command to run a script that disables the <codeph>root</codeph> user.
+          For security purposes, we strongly recommend disabling root.
+            <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock><p>This command will
+            disable the <codeph>root</codeph> user and performs the following tasks:</p><ul>
+            <li>removes password for root from the /etc/shadow file</li>
+            <li>removes any and all keys in /root/.ssh/authorized_keys file</li>
+            <li>changes PermitRootLogin in /etc/ssh/sshd_config file from "yes" back to default of
+              "without-password"</li>
+            <li>restarts the ssh service so the above config change takes effect immediately</li>
+          </ul><p>Once this command complete, the <codeph>cghelion</codeph> user should be used to
+            access the HLM VM and any actions that require root access should be done using
+              <codeph>sudo</codeph>.</p></li>
+        <li>Execute the following command to switch to the root
+          user:<codeblock>sudo su -</codeblock></li>
     
 <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
 <li>Provision and configure your HP Helion
@@ -519,8 +533,8 @@ B52-CCP-T1-M3-NETPXE       : ok=6    changed=4    unreachable=0 failed=0
         10.200.70.128/26    Static 60   0            10.200.70.2     Vlan1553
         10.200.70.192/26    Static 60   0            10.200.70.2     Vlan1553
       </codeblock></li>
-        <li>From the HLM VM, SSH into any controller node and source the stackrc file, using the
-          cghelion username and password: <codeblock>cd ~/
+      <li>From the HLM VM, SSH into any controller node and source the <codeph>stackrc</codeph> file,
+        using the <codeph>cghelion</codeph> username and password: <codeblock>cd ~/
 source stackrc</codeblock></li>  
       <li>Execute the following command on any controller node to create the external network:
             <codeblock>neutron net-create &lt;external-network-name> --router:external</codeblock><p>where
