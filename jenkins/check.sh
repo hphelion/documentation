@@ -1,8 +1,8 @@
 #!/bin/bash 
 
 echo "$GIT_BRANCH "
-echo "===Looking for typos and words that should be avoided \e[31;1m>>\e[0m\1\e[31;1m<<\e[0m============================="
-
+echo -e "===Looking for typos and words that should be avoided \e[31;1m>>\e[0m\1\e[31;1m<<\e[0m============================="
+echo -e "\e[31;1mWARNING:\e[0m The ditamap docs.hpcloud.com.com calls the ditamap"
 for i in `find . -name "*.dita"`
 do
 	while IFS='' read -r line  || [[ -n "$line" ]]
