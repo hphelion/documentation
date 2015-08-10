@@ -15,10 +15,10 @@
   <li>The machine hosting the deployer and all baremetal systems must be connected to a management network. Nodes on this management network must be able to reach the iLO subsystem of each baremetal system to enable host reboots as part of the install process. The HP Helion OpenStack architecture requires that the IPMI network is a separate network and that a route exists from the management network to the IPMI network for iLO access.</li>
 </ul>
 </section>
-<section id="Prereqs"> <title>Before you Start</title>
+<section id="Prereqs"> <title>Before You Start</title>
 <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
 <ul>
-  <li>Setup the iLO Advanced license in the iLO configuration.</li>
+  <li>Set up the iLO Advanced license in the iLO configuration.</li>
   <li>Switch from UEFI to Legacy BIOS.</li>
         <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
         <li>Ensure that the other networks have PXE disabled.</li>
@@ -70,12 +70,16 @@ helion/my_cloud/config/        Directory contains .j2 files which are symlinks t
 helion/hlm/                    Directory contains files used by the installer
 </codeblock>
 </section>
-<section id="Configuration"> <title>Configure your Environment</title>
+<section id="Configuration"> <title>Configure Your Environment</title>
 <ol>
-<li>Setup your configuration files, as follows: <ol>
-<li>See the sample set of configuration files in the ~/helion/examples/one-region-poc-with-vsa directory. The accompanying README.md file explains the contents of each of the configuration files.</li>
-<li>Copy the example configuration files into the required setup directory and edit them as
-              required: <codeblock>cp -r ~/helion/examples/one-region-poc-with-vsa/* </codeblock>The configuration files for editing can be found at the following location: <codeblock>~/helion/my_cloud/definition/data</codeblock><ul>
+<li>Set up your configuration files, as follows: <ol>
+            <li>See the sample set of configuration files in the
+              ~/helion/examples/one-region-poc-with-vsa directory. The accompanying README.md file
+              explains the contents of each of the configuration files.</li>
+            <li>Copy the example configuration files into the required setup directory and edit them
+              as required:
+              <codeblock>cp -r ~/helion/examples/one-region-poc-with-vsa/* </codeblock>The
+              configuration files for editing can be found at the following location: <codeblock>~/helion/my_cloud/definition/data</codeblock><ul>
                 <li>The baremetalConfig.yml file should specify the server information for your
                   environment.</li>
                 <li>The servers.yml file contains the IP address information for the hardware.</li>
@@ -85,7 +89,7 @@ helion/hlm/                    Directory contains files used by the installer
                 <li>In the <codeph>net_interfaces.yml</codeph> file, replace all instances of
                   “bond-mode: 1” to “bond-mode: active-backup”.</li>
               </ul></li>
-</ol></li>
+          </ol></li>
 <li>Run the configuration processor, as follows:
 <codeblock>cd ~/helion/hlm/ansible</codeblock>
 <codeblock>ansible-playbook -i hosts/localhost config-processor-run_v2.yml</codeblock></li>
@@ -181,7 +185,7 @@ volume_backend_name: vsa-backend-hlm003
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false
 </codeblock>
-          Note: Until horizon is enabled, the <codeblock>volume_backend_name</codeblock> is not
+          Note: Until Horizon is enabled, the <codeblock>volume_backend_name</codeblock> is not
           used.</li>
 <li>Run the following command:
           <codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
