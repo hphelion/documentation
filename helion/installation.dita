@@ -141,6 +141,7 @@ Cannot open: No such file or directory </codeblock>
 <li>The file can be found at http://10.1.56.95/helion-vsa-11.5.01.0079.tgz.</li>
 <li>This is a temporary issue and should be fixed by the next release.</li>
 </ul></li>
+        <li>Deploy CMC by running the following command:<p><codeblock>ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></p></li>
 <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
           <codeblock>
 NIC 1: 
@@ -149,9 +150,8 @@ IP Address: 10.241.103.11
 Subnet Mark: 255.255.255.0
 Gateway: 10.241.103.1
 </codeblock></li>
-<li>Install the Centralized Management Console (CMC) on machine that can access IPs of VSA VMs linux
-          installer is on. A copy is available at the following location:
-          http://10.1.56.95/HP_StoreVirtual_Linux_Centralized_Management_Console_for_Linux_BM480-10573.bin</li>
+<li>Set your X display and Launch CMC:
+          <codeblock>ssh –X to the deployer node</codeblock><codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
 <li>Manully add the IPs of those VMs.</li>
 <li>Choose Tasks -&gt; Management Group -&gt; New Management Group from the menu above.</li>
 <li>Enter the following name for the management group: hlm003-vsa-mg</li>
