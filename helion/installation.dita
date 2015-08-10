@@ -189,8 +189,10 @@ hplefthand_debug: false
 </section>
 <section id="Post-Installation"><title>Post-Installation Steps</title>
 <ol>
-<li>Run the following command:
-            <codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
+<li>This step may be used to verify your cloud installation. Note that running the command below
+          will download a cirros image, upload a cirros image to Glance, and create a Neutron
+          external
+            network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
             can optionally specify the external network CIDR here too. If you choose not to
             excercise this option or use a wrong value, the VMs will not be accessible over the
             network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
