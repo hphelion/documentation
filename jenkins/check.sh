@@ -17,5 +17,5 @@ do
 			echo "     Correction:  $help"
 			echo " "
 		fi
-	done < ./badstrings.txt
+	done < ./jenkins/badstrings.txt
 done
