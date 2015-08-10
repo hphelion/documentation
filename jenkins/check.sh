@@ -26,7 +26,7 @@ do
 		then
 		
 			echo -e "${cc_blue}Found in file: $i on the $GIT_BRANCH branch${cc_normal}"
-			issue=`grep -n "$test" $i  | sed "s|\($test\)|${cc_red}>>\1<<${cc_normal}|" | sed 's|^\s||'`
+			issue=`grep -n "$test" $i  | sed "s|\($test\)|${cc_red}##\1##${cc_normal}|" | sed 's|^\s||'`
 			echo -e "     ${cc_blue}Line number${cc_normal}: $issue"
 			echo -e "     ${cc_blue}Correction${cc_normal}:  $help"
 			echo -e " "
