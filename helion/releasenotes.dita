@@ -147,7 +147,7 @@
         for that is to set adminMaxThreads higher for both the persister and api. </p><p>To calculate the number of CPUs to use, execute the following command:
         <codeblock>cat /proc/cpuinfo | grep processor | wc –l</codeblock> If the result is greater
         than 32, add the following line to <b>/etc/monasca/api-config.yml</b> and <b>
-          /etc/monasca/persister-config.yml </b> after the lines that starts with "server:" Use a
+          /etc/monasca/persister-config.yml </b> after the lines that start with "server:" Use a
         value equal to 2 times the number of CPUs.</p><p>
         adminMaxThreads: &lt;<i>calculated_value</i>&gt;</p><p>For example, if your number of CPUs
         is 48, you would add this line: </p><codeblock>  adminMaxThreads: 96</codeblock> <p><note> this line must be
