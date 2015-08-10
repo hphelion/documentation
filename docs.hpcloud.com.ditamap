@@ -18,10 +18,15 @@
 <topicref href="home.dita"/>
 <!-- HoS 2.0 -->
 <topicref href="helion/index.dita">
-  <topicref href="helion/releasenotes.dita"/>
-  <topicref href="helion/supportedconfigs.dita"/>
-  <topicref href="helion/hardware.dita"/>
-  <topicref href="helion/installation.dita"/>
-  <topicref href="helion/faq.dita"/>
+<topicref href="helion/releasenotes.dita"/>
+<topicref href="helion/supportedconfigs.dita"/>
+<topicref href="helion/hardware.dita"/>
+<topicref href="helion/installation.dita"/>
+<topicref href="helion/faq.dita"/>
+<topichead navtitle="Operations Guide">
+  <topicref href="helion/Monasca/monasca.dita"/>
+  <topicref href="helion/Monasca/alarms.dita"/>
+  <topicref href="helion/Monasca/alarm_definitions.dita"/>
+</topichead>
 </topicref>
 </map>
