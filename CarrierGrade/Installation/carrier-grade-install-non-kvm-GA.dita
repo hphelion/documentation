@@ -60,8 +60,11 @@
             <codeblock>ssh &lt;HLM_VM_IP>
 where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
             the default credentials:
-          <codeblock>User Name: root
-Password: cghelion</codeblock></p></li>
+            <codeblock>User Name: cghelion
+    Password: cghelion</codeblock></p><p><b>Important:</b>
+            After logging in with the default password, make sure you change the password for the
+              <codeph>cghelion</codeph> user. </p></li>
+  
     
 <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
 <li>Provision and configure your HP Helion OpenStack
