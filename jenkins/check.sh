@@ -12,10 +12,10 @@ do
 		if [[ -n $(cat $i | sed 's|<!--[^><]*-->||g' |grep "$test") ]]; 
 		then
 			echo "Found in file: $i"
-			issue=`grep -n "$test" $i  | sed "s|$test| >> $test << |"`
+			issue=`grep -n "$test" $i  | sed "s|\($test\)|>>\1<<|"`
 			echo "     Line number: $issue"
 			echo "     Correction:  $help"
 			echo " "
 		fi
-	done < ./jenkins/badstrings.txt
+	done < ./badstrings.txt
 done
