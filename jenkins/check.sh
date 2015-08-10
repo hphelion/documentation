@@ -3,6 +3,25 @@
 echo "$GIT_BRANCH "
 echo -e "===Looking for typos and words that should be avoided============================="
 
+# Escape code
+esc=`echo -en "\033"`
+
+# Set colors
+cc_red="${esc}[0;31m"
+cc_green="${esc}[0;32m"
+cc_yellow="${esc}[0;33m"
+cc_blue="${esc}[0;34m"
+cc_normal=`echo -en "${esc}[m\017"`
+
+echo "Here's ${cc_red}some green text${cc_normal} for you."
+echo "Here's ${cc_blue}some green text${cc_normal} for you."
+
+
+
+
+
+
+
 for i in `find . -name "*.dita"`
 do
 	while IFS='' read -r line  || [[ -n "$line" ]]
@@ -13,7 +32,7 @@ do
 		then
 		
 			echo -e "\e[31;1mFound in file: $i on the $GIT_BRANCH branch\e[0m"
-			issue=`grep -n "$test" $i  | sed "s|\($test\)|>>\1<<|" | sed 's|^\s||'`
+			issue=`grep -n "$test" $i  | sed "s|\($test\)|${cc_red}>>\1<<${cc_normal}|" | sed 's|^\s||'`
 			echo -e "     \e[31;1mLine number\e[0m: $issue"
 			echo -e "     \e[31;1mCorrection\e[0m:  $help"
 			echo -e " "
