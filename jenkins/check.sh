@@ -13,7 +13,7 @@ cc_yellow="${esc}[0;33m"
 cc_blue="${esc}[0;34m"
 cc_normal=`echo -en "${esc}[m\017"`
 
-
+ 
 
 
 for i in `find . -name "*.dita"`
@@ -30,6 +30,19 @@ do
 			echo -e "     ${cc_blue}Line number and text${cc_normal}: $issue"
 			echo -e "     ${cc_blue}Correction${cc_normal}:  $help"
 			echo -e " "
+			echo "1" > checktmp
 		fi
 	done < ./jenkins/badstrings.txt
 done
+#Read chcktemp and assign content to EXIT (indicating that at least one error was found)
+EXIT=`cat checktmp` > /dev/null 2>&1
+rm checktmp || true
+
+
+#Exit script with 1 if an error was found.  Otherwise exit with 0.
+if [ -z "$EXIT" ]
+     then
+          exit 0
+     else
+          exit 1
+fi
