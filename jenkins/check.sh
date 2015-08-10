@@ -13,12 +13,6 @@ cc_yellow="${esc}[0;33m"
 cc_blue="${esc}[0;34m"
 cc_normal=`echo -en "${esc}[m\017"`
 
-echo "Here's ${cc_red}some green text${cc_normal} for you."
-echo "Here's ${cc_blue}some green text${cc_normal} for you."
-
-
-
-
 
 
 
@@ -31,10 +25,10 @@ do
 		if [[ -n $(cat $i | sed 's|<!--[^><]*-->||g' |grep "$test") ]]; 
 		then
 		
-			echo -e "\e[31;1mFound in file: $i on the $GIT_BRANCH branch\e[0m"
+			echo -e "${cc_blue}Found in file: $i on the $GIT_BRANCH branch${cc_normal}"
 			issue=`grep -n "$test" $i  | sed "s|\($test\)|${cc_red}>>\1<<${cc_normal}|" | sed 's|^\s||'`
-			echo -e "     \e[31;1mLine number\e[0m: $issue"
-			echo -e "     \e[31;1mCorrection\e[0m:  $help"
+			echo -e "     ${cc_blue}Line number${cc_normal}: $issue"
+			echo -e "     ${cc_blue}Correction${cc_normal}:  $help"
 			echo -e " "
 		fi
 	done < ./jenkins/badstrings.txt
