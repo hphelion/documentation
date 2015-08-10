@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 echo "$GIT_BRANCH "
-echo "===Looking for typos and words that should be avoided ============================="
+echo "===Looking for typos and words that should be avoided \e[31;1m>>\e[0m\1\e[31;1m<<\e[0m============================="
 
 for i in `find . -name "*.dita"`
 do
@@ -13,7 +13,7 @@ do
 		then
 		
 			echo "Found in file: $i"
-			issue=`grep -n "$test" $i  | sed "s|\($test\)|\\\e[31;1m>>\\\\e[0m\1\\\\e[31;1m<<\\\\e[0m|" | sed 's|^\s||'`
+			issue=`grep -n "$test" $i  | sed "s|\($test\)|>>\1\e<<|" | sed 's|^\s||'`
 			echo -e "     Line number: $issue"
 			echo    "     Correction:  $help"
 			echo    " "
