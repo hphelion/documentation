@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 echo " "
-echo "===Looking for badstrings	============================="
+echo "===Looking for typos and words that should be avoided ============================="
 
 for i in `find . -name "*.dita"`
 do
@@ -12,7 +12,7 @@ do
 		if [[ -n $(cat $i | sed 's|<!--[^><]*-->||g' |grep "$test") ]]; 
 		then
 			echo "Found in file: $i"
-			issue=`grep -n "$test" $i  | sed "s|\($test\)|>>\1<<|"`
+			issue=`grep -n "$test" $i  | sed "s|\($test\)|>>\1<<|" | sed 's|^\s||'`
 			echo "     Line number: $issue"
 			echo "     Correction:  $help"
 			echo " "
