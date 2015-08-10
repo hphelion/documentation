@@ -12,7 +12,7 @@ do
 		if [[ -n $(cat $i | sed 's|<!--[^><]*-->||g' |grep "$test") ]]; 
 		then
 		
-			echo "\e[31;1mFound in file\e[0m: $i"
+			echo "\e[31;1mFound in file: $i on the $GIT_BRANCH branch\e[0m"
 			issue=`grep -n "$test" $i  | sed "s|\($test\)|>>\1<<|" | sed 's|^\s||'`
 			echo -e "     \e[31;1mLine number\e[0m: $issue"
 			echo    "     \e[31;1mCorrection\e[0m:  $help"
