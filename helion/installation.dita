@@ -150,7 +150,7 @@ IP Address: 10.241.103.11
 Subnet Mark: 255.255.255.0
 Gateway: 10.241.103.1
 </codeblock></li>
-<li>Set your X display and Launch CMC:
+<li>Set your X display and launch CMC:
           <codeblock>ssh –X to the deployer node</codeblock><codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
 <li>Manully add the IPs of those VMs.</li>
 <li>Choose Tasks -&gt; Management Group -&gt; New Management Group from the menu above.</li>
