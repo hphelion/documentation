@@ -3,8 +3,8 @@
 echo 'running documentation/jenkins/check.sh'
 #Get the most recent version of the master branch  
 env | grep GIT
-git checkout $GIT_BRANCH
-git pull
+#git checkout $GIT_BRANCH
+#git pull
 
 
 #Delete any tempfiles left over from the last run and write introduction
@@ -19,7 +19,7 @@ echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural er
  
 echo " "
 echo "===??============================="
-for i in `find . -name "*.md"`; 
+for i in `find . -name "*.dita"`; 
 do 
 
 if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  -H \?\? )" ]];
@@ -61,8 +61,8 @@ cat ./jenkins/badstrings.txt |
 while read BAD
 do
 
-     #Do a recursive grep on all md files for the badstring and assign result to RESULT
-     RESULT=`grep -r --include="*.md" --exclude-dir=jenkins "${BAD}" ./`
+     #Do a recursive grep on all dita files for the badstring and assign result to RESULT
+     RESULT=`grep -r --include="*.dita" --exclude-dir=jenkins "${BAD}" ./`
 	
      #If RESULT is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
      if [ -z "$RESULT" ]
@@ -77,7 +77,7 @@ do
 done  
 
 
-BADCHAR=`grep -r --include="*.md" --color='auto'  -P -n "[\x80-\xFF]" ./ |grep -vF '\`'`
+BADCHAR=`grep -r --include="*.dita" --color='auto'  -P -n "[\x80-\xFF]" ./ |grep -vF '\`'`
 	      #If BADCHAR is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
      if [ -z "$BADCHAR" ]
           then
