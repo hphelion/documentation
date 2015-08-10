@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-echo " "
+echo "$GIT_BRANCH "
 echo "===Looking for typos and words that should be avoided ============================="
 
 for i in `find . -name "*.dita"`
