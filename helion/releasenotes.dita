@@ -149,7 +149,7 @@
         than 32, add the following line to <b>/etc/monasca/api-config.yml</b> and <b>
           /etc/monasca/persister-config.yml </b> after the lines that start with "server:" Use a
         value equal to 2 times the number of CPUs.</p><p>
-        adminMaxThreads: &lt;<i>calculated_value</i>&gt;</p><p>For example, if your number of CPUs
+          <codeblock>  adminMaxThreads: &lt;<i>calculated_value</i>&gt;</codeblock></p><p>For example, if your number of CPUs
         is 48, you would add this line: </p><codeblock>  adminMaxThreads: 96</codeblock> <p><note> this line must be
           indented exactly 2 spaces. </note>After these files are changed, restart the monasca-api
         and monasca-persister services. </p></section>
