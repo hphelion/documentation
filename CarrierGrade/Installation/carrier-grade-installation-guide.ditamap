@@ -35,6 +35,7 @@
                 <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-wr-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-ldap-json.dita" toc="no"/>
+                <topicref href="carrier-grade-install-hcfgproc-output.dita" toc="no"/>
             </topicref>
         </topichead>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita">

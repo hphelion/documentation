@@ -416,9 +416,12 @@ volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock>
             Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
             incorporated into the installation environment. </p><p>When the command completes, you
             will see the following:
-          message:</p><codeblock>#################################################################################
+            message:</p><codeblock>#################################################################################
 The configuration processor completed successfully.
-################################################################################</codeblock></li>
+################################################################################</codeblock><p>To
+            view the complete output of the command, see <xref
+              href="carrier-grade-install-hcfgproc-output.dita#topic10581"> Output from the hcfgproc
+              command</xref></p></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
           correct.</li>

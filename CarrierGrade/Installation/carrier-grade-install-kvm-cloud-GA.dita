@@ -64,10 +64,11 @@ sudo reboot       </codeblock></li>
               <codeph>ip_start_address</codeph> value provided for the CLM network in the
               <codeph>definition.json</codeph> during the <xref
               href="carrier-grade-install-non-kvm-GA.dita#topic10581">non-KVM Region
-            deployment</xref>). </p><p>The log-in credentials for Horizon are as follows:
+              deployment</xref>). </p><p>The log-in credentials for Horizon are as follows:
             <codeblock>username: admin 
-password:  admin</codeblock></p><p>Change the password on
-            first login.</p></li>
+password:  admin </codeblock></p><p><b>Important:</b> After
+            logging in with the default password, make sure you change the password for the
+              <codeph>admin</codeph> user. </p></li>
         <li>For each compute node in the inventory, do the following<ol id="ul_gss_srg_ms">
             <li>Create Infra interface. See <xref
                 href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
