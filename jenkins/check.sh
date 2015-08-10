@@ -1,8 +1,8 @@
 #!/bin/bash 
 
 echo "$GIT_BRANCH "
-echo -e "===Looking for typos and words that should be avoided \e[31;1m>>\e[0m\1\e[31;1m<<\e[0m============================="
-echo -e "\e[31;1mWARNING:\e[0m The ditamap docs.hpcloud.com.com calls the ditamap"
+echo -e "===Looking for typos and words that should be avoided============================="
+
 for i in `find . -name "*.dita"`
 do
 	while IFS='' read -r line  || [[ -n "$line" ]]
@@ -12,10 +12,10 @@ do
 		if [[ -n $(cat $i | sed 's|<!--[^><]*-->||g' |grep "$test") ]]; 
 		then
 		
-			echo "Found in file: $i"
-			issue=`grep -n "$test" $i  | sed "s|\($test\)|\\e[31;1m>>\\e[0m\1\\e[31;1m<<\\e[0m|" | sed 's|^\s||'`
-			echo -e "     Line number: $issue"
-			echo    "     Correction:  $help"
+			echo "\e[31;1mFound in file\e[0m: $i"
+			issue=`grep -n "$test" $i  | sed "s|\($test\)|>>\1<<|" | sed 's|^\s||'`
+			echo -e "     \e[31;1mLine number\e[0m: $issue"
+			echo    "     \e[31;1mCorrection\e[0m:  $help"
 			echo    " "
 		fi
 	done < ./jenkins/badstrings.txt
