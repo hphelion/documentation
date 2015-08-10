@@ -50,7 +50,12 @@
 <p><b>Backup and Restore Capabilities for the Control Plane</b> - Allows you to backup and recover your Helion OpenStack</tm> environment with RPO=0.</p>
 -->
 </section>
-    <section id="KnownIssues"><title>Known Issues in this Release</title><p><b>HP Helion Development
+    <section id="KnownIssues"><title>Known Issues in this Release</title>
+      <p><b>Horizon Support</b></p>
+      <ul>
+        <li>Horizon is not functioning in this release.</li>
+      </ul>
+      <p><b>HP Helion Development
           Platform</b></p><p>Helion Development Platform is not supported on Beta
           0.</p><p><b>Installing Swift</b></p><p>Swift installs with the following limitations: </p><ul>
         <li>Only a 3-node Swift configuration in which Swift runs on the three controller nodes is
@@ -70,18 +75,28 @@
     <p>Impediment:</p>
     <p>The one-region-poc-with-vsa will be provided by the HLM team which impacts not only VSA but
       other services as well. This will be beyond be Beta0 timeframe.</p>
-    <p> </p>--><p><b>Helion
-          Cloud Monitoring (Monasca) Limitations</b></p><p>Basic Monitoring is complete for Beta0
-        with the following limitations:</p><ul>
-        <li>Access to Monasca is limited to the REST API and Command Line Client (CLI) only. GUI
-          access will be implemented in later releases. When using the CLI, the prefix for CLI
-          commands is "monasca". Use "monasca help" for details.</li>
-        <li>Vertica is not available in the install. You must choose the InfluxDB option
-          instead.</li>
-        <li>InfluxDB is not configured behind a VIP. It must directly access one node in the
-          cluster.</li>
-        <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
-      </ul><p><b>Ops Console</b></p><ul>
+    <p> </p>-->
+<p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p>
+<p>Basic Monitoring is complete for Beta0 with the following limitations:</p>
+<ul>
+<li>Access to Monasca is limited to the REST API and Command Line Client (CLI) only. GUI access will be implemented in later releases. When using the CLI, the prefix for CLI commands is "monasca". Use "monasca help" for details.</li>
+<li>Vertica is not available in the install. You must choose the InfluxDB option instead.</li>
+<li>InfluxDB is not configured behind a VIP. It must directly access one node in the cluster.</li>
+<li>Backup/restore of Monasca configuration and metrics data is not available.</li>
+</ul>
+<p><b>Monasca API may timeout waiting on Keystone</b></p>
+<p>When keystone is responding slowly, the Monasca API may time out waiting on Keystone. The API timeout can be increased by editing <codeph>/etc/monasca/api-config.yml</codeph> and changing the value of <b>connTimeout</b> from <b>500 to 2000</b> and restarting the API.</p>
+<p><b>Monasca stops collecting metrics when running on more than 32 processors</b></p>
+<p>On machines with more than 32 processors there is a bug that halts metrics collection. The workaround for that is to set <codeph>adminMaxThreads</codeph> higher for both the persister and api.</p>
+<p>To calculate the number of CPUs to use, execute the following command:
+<codeblock>cat /proc/cpuinfo | grep processor | wc –l</codeblock> 
+If the result is greater than 32, add the following line to <codeph>/etc/monasca/api-config.yml</codeph> and <codeph>/etc/monasca/persister-config.yml</codeph> after the lines that start with "server:" Use a value equal to 2 times the number of CPUs.</p>
+<codeblock>adminMaxThreads: &lt;<i>calculated_value</i>&gt;</codeblock>
+<p>For example, if your number of CPUs is 48, you would add this line:</p>
+<codeblock>adminMaxThreads: 96</codeblock>
+<note>this line must be indented exactly 2 spaces.</note>
+<p>After these files are changed, restart the monasca-api and monasca-persister services.</p>
+<p><b>Ops Console</b></p><ul>
         <li>OpsConsole is not enabled in this release.</li>
       </ul><p><b>Centralized Logging Limitations</b></p><p>Logging support is complete for Beta0
         with the following limitations:</p><ul>
@@ -112,8 +127,8 @@
           <p>Cinder installation with VSA as a backend is being worked through at the moment, manual
             steps to be defined later may be required to complete installation.</p>
         </li>
-      </ul>--><p><b>TLS
-          Support</b></p><ul>
+      </ul>-->
+<p><b>TLS Support</b></p><ul>
         <li>The server certificate is currently hard coded. If an operator wishes to provide their
           own, they need to edit the defaults in the TLS playbook.</li>
       </ul><p><b>Installation and NIC Numbering</b></p><ul>
@@ -128,30 +143,7 @@
         <li>The bond mode in the network interface definition needs to be specified by name
           (active-backup) rather than by number (1).</li>
         <li>This workaround is included in the installation instructions.</li>
-      </ul><p><b>Horizon Installation Workaround Needed</b></p><ul>
-        <li>See workaround in the installation guide.</li>
       </ul>
-      
-      <p><b>Monasca API may timeout waiting on Keystone</b></p>
-      
-      <p/><p>When keystone is
-        responding slowly, the Monasca API may time out waiting on Keystone. The API timeout can be
-        increased by editing <b> /etc/monasca/api-config.yml</b> and changing the value of
-          <b>connTimeout</b> from <b>500 to 2000</b> and restarting the API.</p><p/>
-      
-      
-      <p><b>Monasca stops collecting metrics when running on more than 32 processors</b></p>
-      
-      <p>On machines
-        with more than 32 processors there is a bug that halts metrics collection. The workaround
-        for that is to set adminMaxThreads higher for both the persister and api. </p><p>To calculate the number of CPUs to use, execute the following command:
-        <codeblock>cat /proc/cpuinfo | grep processor | wc –l</codeblock> If the result is greater
-        than 32, add the following line to <b>/etc/monasca/api-config.yml</b> and <b>
-          /etc/monasca/persister-config.yml </b> after the lines that start with "server:" Use a
-        value equal to 2 times the number of CPUs.</p><p>
-          <codeblock>  adminMaxThreads: &lt;<i>calculated_value</i>&gt;</codeblock></p><p>For example, if your number of CPUs
-        is 48, you would add this line: </p><codeblock>  adminMaxThreads: 96</codeblock> <p><note> this line must be
-          indented exactly 2 spaces. </note>After these files are changed, restart the monasca-api
-        and monasca-persister services. </p></section>
+      </section>
 </body>
 </topic>
