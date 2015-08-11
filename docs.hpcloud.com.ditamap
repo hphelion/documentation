@@ -25,9 +25,12 @@
     <topicref href="helion/faq.dita"/>
     <topichead navtitle="Monitoring Guide">
       <topicref href="helion/Monasca/monasca.dita"/>
-      <topicref href="helion/Monasca/alarms.dita"/>
-      <topicref href="helion/Monasca/alarm_definitions.dita"/>
       <topicref href="helion/Monasca/metrics.dita"/>
+      <topicref href="helion/Monasca/alarms.dita"/>
+      <topichead navtitle="OpsConsole User Guide">
+        <topicref href="helion/Monasca/OpsConsole/alarms.dita"/>
+        <topicref href="helion/Monasca/OpsConsole/alarm_definitions.dita"/>
+      </topichead>
     </topichead>
   </topicref>
 </map>
