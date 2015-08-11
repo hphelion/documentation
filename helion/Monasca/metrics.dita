@@ -1,120 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="alarm_definitions">
- <title>Alarms Definitions</title>
- <shortdesc>This page allows you to define alarms that are useful in generating notifications and metrics required by your organization. 
-  By default, alarm definitions are sorted by name and in a table format.</shortdesc>
+<concept id="metric_definitions">
+ <title>Metrics Definitions</title>
+ <shortdesc>This page allows you to define alarms that are useful in generating notifications and
+  metrics required by your organization. By default, alarm definitions are sorted by name and in a
+  table format.</shortdesc>
  <conbody>
-  <section>
-   <title>Search and Sort</title>
-   <p>The search bar allows you to filter the alarm definitions you want to view. Type and Status are 
-    examples of alarm criteria that can be specified. Additionally, you can filter by typing in text 
-    similar to searching by keywords.</p>
-   <p>The checkbox allows you to select (or deselect) a group of alarm definitions to delete:</p>
-   <ul>
-    <li><uicontrol>Select Visible</uicontrol> allows you to delete the selected alarm definitions from the table.</li>
-    <li><uicontrol>Select All</uicontrol> allows you to delete all the alarms from the table.</li>
-    <li><uicontrol>Clear Selection</uicontrol> allows you to clear all the selections currently selected from the table.</li>
-   </ul>
-   <p>You can display the alarm definitions by grid, list or table views by selecting the corresponding icons next to the 
-    <uicontrol>Sort By</uicontrol> control.</p>
-   <p>The <uicontrol>Sort By</uicontrol> control contains a drop-down list of ways by which you can sort the alarm definitions.  
-    Alternatively, you can also sort using the column headers in the table.</p>
-   <ul>
-    <li><uicontrol>Sort by Name</uicontrol> displays the alarm definitions by the name assigned to it when it was created.</li>
-    <li><uicontrol>Sort by Description</uicontrol> displays the descriptive details of the alarm definitions.</li>
-    <li><uicontrol>Sort by Notifications Enabled</uicontrol> displays the alarm definitions' notification criteria, 
-     such as whether enabled for certain types of alarms and how the notification is disseminated (by Email, Web, etc.)</li>
-   </ul>
-  </section>
-  <section>
-   <title>Create Alarm Definitions</title>
-   <p>The <uicontrol>Create Alarm Definition</uicontrol> button beside the search bar allows you to create a new alarm definition.</p> 
-     <p>To create a new alarm definition:</p>
-     <ol>
-      <li>Click the <uicontrol>Create Alarm Definitions</uicontrol> button to open a separate window that allows you to configure a new alarm.</li>
-      <li>In the Create Alarm Definition window, type a name for the alarm in the <uicontrol>Name</uicontrol> text field. The name is required and 
-       may be up to 255 characters in length consisting of letters, numbers, or special characters.</li>  
-      <li>Provide some useful details about the alarm in the <uicontrol>Description</uicontrol> text field (optional).</li>
-      <li>Set the severity level for the alarm in the <uicontrol>Severity</uicontrol> drop-down
-     menu. The severity level is optional but subjective, so choose the level appropriate for
-     prioritizing the handling of alarms when they occur.</li>
-      <li>Although not required, in order to specify how to receive notifications, you must be able to select the method(s) of notification 
-       (Email, Web, API, etc.) from the the list of options in the Alarm Notifications area. If none are available to choose from, 
-       you must first configure them in the Notifications Methods window. Refer to the Notification Methods help page for further instructions.</li>
-       <li>To turn the notifications on for the alarm, click to select <uicontrol>Enable Notifications</uicontrol>. </li>
-      <li>Apply the following rules to your alarm by using the Alarm Expressions form:
-       <ul>
-      <li><uicontrol>Function</uicontrol>: determines the output value from a supplied input value. </li>
-      <li><uicontrol>Metric</uicontrol>: applies a pre-defined means of measuring whatever aspect of the alarm.</li>
-      <li><uicontrol>Relational Operator</uicontrol>: specifies the operator for how you want the alarm to trigger.</li>
-      <li><uicontrol>Value</uicontrol>: determines the numeric threshold associated with the operator you specified.</li>
-      <li><uicontrol>Dimensions</uicontrol>: identifies which aspect (Hostname, Region, and Service) of the alarm you want to monitor.</li>
-     </ul></li>
-  
-    <li>Select whether you want to apply the expressions individually or as a group to the previously selected dimension(s). </li>
-      <li>When done creating the alarm, click <uicontrol>Create Alarm</uicontrol>. If you want to create multiple expressions for the alarm, 
-      or use the Alarm Expression Editor instead, proceed to the next section.</li>
-    </ol>
-  </section>
-  <section>
-   <title>Alarm Expression Editor</title>
-   <p>The Alarm Expression Editor is particularly useful if you already know the string syntax of the expression(s) you 
-    want to use, or can paste it from another expression and adjust values in the syntax as needed.</p> 
-   <p>If you prefer to use an Expression Editor instead, perform the following steps:</p>
-   <ol>
-    <li>Click the <uicontrol>Convert to Alarm Expression Editor</uicontrol> button.<p>The right
-      half of the form turns into a free-form text field. </p></li>
-    <li>Type or paste syntax for the expression you want to use. Adjust values as necessary.</li>
-    <li>Once in the Editor mode, and you need to create a new expression, click the <uicontrol>Alarm Expression Editor</uicontrol> 
-     button to open the Alarm Expressions form. The form on this screen allows you to set up one or multiple expressions at once. 
-    <note>For more information about working with multiple expressions, refer to the next section.</note></li>
-    <li>Use the form to apply rules to your alarm as described in the Create Alarm Definitions section.</li>
-    <li>When done applying rules to create an expression for your alarm, click <uicontrol>Create Alarm</uicontrol>.</li>
-   </ol>
-  <title>Work with Multiple Expressions</title>
-   <p>You may create, edit, or delete multiple expressions using the Alarm Expression Editor form.</p>
-   <p>To create multiple expressions:</p>
-   <ol>
-    <li>From the Create Alarm Definition window, click the <uicontrol>Convert to Alarm Expression Editor</uicontrol> button if not already converted. </li>
-    <li>Click the <uicontrol>Alarm Expression Editor</uicontrol> button to open a separate window.</li>
-    <li>Use the form to apply rules to your alarm as described in the Create Alarm Definitions section.</li>
-    <li>Click <uicontrol>Add New Expression</uicontrol> to add another expression to your alarm.
-    <p>A new blank form is inserted for creating a new expression.</p></li>
-    <li>Repeat for each new expression you want to add.</li>
-
-     
-  
-   <li>If there are multiple expressions, the following options are available:
-     <ul>
-      <li>To edit an expression, locate the one you want to edit, change its values and then click the <uicontrol>Update Expression</uicontrol> button.</li>
-      <li>To remove any expression you no longer need, locate the expression you want to delete, and
-       click the <uicontrol>Delete Expression</uicontrol> button.</li>
-      <li>To create expressions to be included as part of a group, click the <uicontrol>Add New Expression Group</uicontrol> button, then refer to the 
-       previous section to create multiple expressions for each group.</li>
-      <li>To add more expression groups, click the <uicontrol>Add New Expression Group</uicontrol> button to insert a new Expression Group form.</li>
-      <li>To remove any expression group you no longer need, locate the expression group you want to
-       delete, and click the <uicontrol>Delete Expression Group</uicontrol> button.</li>
-      <li>Specify the type of trigger you want for each expression group by selecting <uicontrol>Any Expression in Group</uicontrol> to let the alarm trigger 
-      if the criteria applied to any of the expressions in the group is met; or select <uicontrol>All Expressions in the Group</uicontrol> to only trigger the 
-      alarm if all the critera of all the expressions in the group are met.</li>
-     </ul></li>
-   <li>Multiple group expressions must have triggering conditions, which is presented in a table format at the bottom of the form in the 
-    Expression Group Combination Triggering Conditions area:
-   <ol>
-    <li>You may set <uicontrol>Any</uicontrol>, <uicontrol>All</uicontrol> or <uicontrol>None</uicontrol> of the groups to trigger by selecting 
-    the conditions and their associated expession groups.</li>
-    <li>When done specifying the triggers and their conditions, click the <uicontrol>Set Conditions</uicontrol> button.</li>
-    <li>To see the syntax of the newly created expressions, click the <uicontrol>View Expressions
-        Syntax</uicontrol> button. <p>Viewing the syntax opens a window showing the entire
-        expression(s) created, like in the following
-       example:</p><codeblock>avg(cpu.system_perc{hostname=hostname.domain.com}) > 90 or avg(disk_read_ops{hostname=hostname.domain.com, device=vda}, 120) > 1000</codeblock></li>
- </ol></li>
-    <li>When done with the Expressions Editor, click <uicontrol>Complete Editing</uicontrol> to close the Alarm Expression Editor form.</li>
-    <li>When done creating the alarm, click <uicontrol>Create Alarm</uicontrol>. </li>
-   </ol>
-    <p>After the alarm definition saves, the Alarm Definitions window refreshes with the new alarm definition populates in the table.</p>
-  </section>
+  <section> </section>
  </conbody>
 </concept>
