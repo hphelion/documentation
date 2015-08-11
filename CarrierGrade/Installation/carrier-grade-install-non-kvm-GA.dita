@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM
     Deployment</title>
-<prolog>
-  <metadata>
-    <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
-    <othermeta name="role" content="Storage Administrator"/>
-    <othermeta name="role" content="Storage Architect"/>
-    <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
-  </metadata>
-</prolog>
-<body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
- <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
-  <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a virtual machine for the Helion Lifecycle Management (HLM) and then deploying the HP Helion Openstack cloud.</p>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>
+      <!--UNDER REVISION-->
+      <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
+      <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
+    <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a
+      virtual machine for the Helion Lifecycle Management (HLM) and then deploying the HP Helion
+      Openstack cloud.</p>
 
-<section id="prepare"> <title>Prepare the system for deployment</title>
-<p>Make sure you have downloaded and extracted all of the required installation packages on the KVM
-        host </p>
+    <section id="prepare">
+      <title>Prepare the system for deployment</title>
+      <p>Make sure you have downloaded and extracted all of the required installation packages on
+        the HLM host </p>
       <p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM
         host):</p>
-<ol>
+      <ol>
 
-  <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
+        <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
           environment. For information on each variable, refer to the comments in the file with each
           variable. Make sure the <codeph>hlm_kvm_host</codeph> value is configured properly.</li>
-  <li id="hosts">Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to
-          enter the IP address of the vibr0 interface in the <codeph>hlm_kvm_host</codeph> field, as
-          shown in the following example. </li>
-</ol>
-<codeblock>  [hlm_kvm_host]
+        <li id="hosts">Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph>
+          file to enter the IP address of the vibr0 interface in the <codeph>hlm_kvm_host</codeph>
+          field, as shown in the following example. </li>
+      </ol>
+      <codeblock>  [hlm_kvm_host]
   192.168.122.1 </codeblock>
-</section>
-<section id="deploy-the-hlm-and-vsd-vm">
+    </section>
+    <section id="deploy-the-hlm-and-vsd-vm">
       <title>Deploy the HLM Virtual Machine</title>
       <p>Use the following steps to deploy the HLM VM on the HLM Host using Ansible playbooks.</p>
       <ol>
@@ -48,23 +52,42 @@
           </ul></li>
         <li>Locate the IP address for the HLM VM in the
             <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
-            <codeph>hlm_clmstaticip</codeph> field.  You will use this IP address to SSH into the
-          HLM VM during the installation process.</li> 
-      </ol>    
-</section>
-  <section id="configure-a-json-file-for-installation"> <title>Configure a JSON file for installation</title>
-<p>The HP Helion OpenStack deployment requires a JSON file. Use the following steps to install and
-        edit the file.</p>
-<ol>
-<li>Login to HLM VM.
+            <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the HLM
+          VM during the installation process.</li>
+      </ol>
+    </section>
+    <section id="configure-a-json-file-for-installation">
+      <title>Configure a JSON file for installation</title>
+      <p>The HP Helion OpenStack deployment requires a JSON file. Use the following steps to install
+        and edit the file.</p>
+      <ol>
+        <li>Login to HLM VM.
             <codeblock>ssh &lt;HLM_VM_IP>
 where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
             the default credentials:
-          <codeblock>User Name: root
-Password: cghelion</codeblock></p></li>
-    
-<li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
-<li>Provision and configure your HP Helion OpenStack
+            <codeblock>User Name: cghelion
+    Password: cghelion</codeblock></p><p><b>Important:</b>
+            After logging in with the default password, make sure you change the password for the
+              <codeph>cghelion</codeph> user. </p></li>
+
+
+        <li>Execute the following command to run a script that disables the <codeph>root</codeph>
+          user. For security purposes, we strongly recommend disabling root.
+            <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock><p>This command will
+            disable the <codeph>root</codeph> user and performs the following tasks:</p><ul>
+            <li>removes password for root from the /etc/shadow file</li>
+            <li>removes any and all keys in /root/.ssh/authorized_keys file</li>
+            <li>changes PermitRootLogin in /etc/ssh/sshd_config file from "yes" back to default of
+              "without-password"</li>
+            <li>restarts the ssh service so the above config change takes effect immediately</li>
+          </ul><p>Once this command complete, the <codeph>cghelion</codeph> user should be used to
+            access the HLM VM and any actions that require root access should be done using
+              <codeph>sudo</codeph>.</p></li>
+        <li>Execute the following command to switch to the root
+          user:<codeblock>sudo su -</codeblock></li>
+
+        <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
+        <li>Provision and configure your HP Helion OpenStack
             VM.<codeblock>hnewcloud  &lt;cloudname&gt; denver</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
             <li><codeph>denver</codeph> is the name of the template to use. The installation kit
@@ -73,8 +96,8 @@ Password: cghelion</codeblock></p></li>
             contain a JSON template file <codeph>node-provision.json</codeph>. This template
             supplies input values to the <codeph>hprovision</codeph> script, later in the
             installation.</p></li>
-<li>Edit <codeph>node-provision.json</codeph> file to change only the following fields:<table
-            id="table_ycw_qrn_xs">
+        <li>Edit <codeph>node-provision.json</codeph> file to change only the following
+            fields:<table id="table_ycw_qrn_xs">
             <tgroup cols="2">
               <colspec colname="col1" colsep="1" rowsep="1"/>
               <colspec colname="col2" colsep="1" rowsep="1"/>
@@ -232,23 +255,27 @@ Password: cghelion</codeblock></p></li>
  }
 </codeblock></li>
           </ol></li>
-</ol>
-</section>
-<section id="pxe-boot"> <title>Configure PXE boot</title>
-<p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE boot
-        on the servers set the correct boot order. Execute the following on the HLM VM:</p>
-<ol>
-<li>Copy the <codeph>ilopxebootonce.py</codeph> from the
+      </ol>
+    </section>
+    <section id="pxe-boot">
+      <title>Configure PXE boot</title>
+      <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE
+        boot on the servers set the correct boot order. Execute the following on the HLM VM:</p>
+      <ol>
+        <li>Copy the <codeph>ilopxebootonce.py</codeph> from the
             <systemoutput>/root/cg-hlm/dev-tools/ilopxebootonce.py</systemoutput> to the directory
           where you have the <codeph>node-provision.json</codeph> file.</li>
-<li>Execute the following script:
-  <codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
-</ol>
-<p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to <codeph>Network Device 1</codeph> on all the servers listed in <codeph>node-provision.json</codeph> file.</p>
-</section>
-<section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up"> <title>Provision the cloud nodes</title>
-<ol>
-<li>Use the following script to start the provisioning of the HP Helion OpenStack cloud:
+        <li>Execute the following script:
+          <codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
+      </ol>
+      <p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to
+          <codeph>Network Device 1</codeph> on all the servers listed in
+          <codeph>node-provision.json</codeph> file.</p>
+    </section>
+    <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
+      <title>Provision the cloud nodes</title>
+      <ol>
+        <li>Use the following script to start the provisioning of the HP Helion OpenStack cloud:
             <codeblock>hprovision &lt;cloudname&gt; </codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
           </ul><p>This script will PXE boot the nodes specified in
@@ -260,16 +287,16 @@ Password: cghelion</codeblock></p></li>
             nodes are provisioned, make sure the <codeph>nodes.json</codeph> file is generated and
             that you can establish a password-less SSH connection to these nodes from HLM
           VM.</p></li>
-  
-  <li>Based on your environment, you can use either HP StoreServ (3PAR) or HP StoreVirtual VSA block
-          storage  Use the following steps to integrate a fully-installed block storage into HP
+
+        <li>Based on your environment, you can use either HP StoreServ (3PAR) or HP StoreVirtual VSA
+          block storage Use the following steps to integrate a fully-installed block storage into HP
           Helion OpenStack Carrier Grade: <ol>
             <li>Change to the <codeph>cinder/blocks</codeph> directory:
               <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where &lt;cloudname>
               is the name you assigned to the cloud.</li>
             <li>Then:<p><b>For HP StoreServ (3PAR) storage </b>: Edit the
-                  <codeph>cinder_conf</codeph> file  to configure the 3PAR settings. For
-                example:</p><codeblock>[DEFAULT]
+                  <codeph>cinder_conf</codeph> file to configure the 3PAR settings. For
+                  example:</p><codeblock>[DEFAULT]
 enabled_backends=hp3par,hplefthand
 
 [hp3par]
@@ -298,34 +325,32 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></p>
           </ol></li>
         <li>After editing the JSON files, validate each JSON file to make sure there are no
           syntactical errors using the tool of your preference. For example, using the Python
-          json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>            
-<li>Once you have correctly edited all the json Cloud Model files, run the HP Helion OpenStack
-          Configuration Processor: <codeblock>hcfgproc -d definition.json</codeblock><p>The HP
-            Helion OpenStack Configuration Processor is a script, called <codeph>hcfgproc</codeph>,
-            that is incorporated into the installation environment. </p></li>
-<li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
+          json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>
+        <li>Once you have correctly edited all the json Cloud Model files, run the HP Helion
+          OpenStack Configuration Processor:
+            <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
+            Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
+            incorporated into the installation environment. </p></li>
+        <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
           correct.</li>
-<li>Initialize network interfaces on all the cloud nodes using the following command:
+        <li>Initialize network interfaces on all the cloud nodes using the following command:
             <codeblock><codeph>hnetinit &lt;cloudname&gt;</codeph></codeblock><p>You can run this
             command from any directory.</p><p>After this command completes, all cloud nodes and CLM
             network interfaces should be set correctly.</p></li>
 
-<li>Use the following command to deploy the cloud:
+        <li>Use the following command to deploy the cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>Once cloud
             deployment is successfully complete, there will be 3 controller nodes in the non-KVM
             region.</p></li>
 
-</ol>
-
-
-
-</section>
-<section id="next-step">
+      </ol>
+    </section>
+    <section id="next-step">
       <title>Next Step</title>
       <p>
         <xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref>
       </p>
     </section>
-</body>
+  </body>
 </topic>

@@ -16,8 +16,8 @@
 <body>
   <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a
       virtual machine for the Helion Lifecycle Management (HLM), deploying the HP Helion OpenStack
-      cloud, installing DCN components, and installing the VMware ESX <tm tmtype="reg"/>compute
-      proxy.</p>
+      cloud, and installing DCN components. You must install the VMware ESX <tm tmtype="reg"
+      />compute proxy.</p>
     <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
       required installation processes.</p>
 <section id="prereqs">
@@ -28,8 +28,8 @@
   <ul><li>	vSphere Cluster running ESXi 5.5u2 with vMotion enabled.</li> 
     <li>1 Virtual Machine Port Group with all Cloud Vlans associated to the Port Group.</li></ul></li>
   
-  <li>VRS requirements <p>VRSvApp must be installed. Please Refer to the DCN VSP 3.0 R7 installation
-            Guide for VRSvApp installation.</p></li>
+  <li>VRSvApp requirements <p>VRSvApp must be installed. Please Refer to the DCN VSP 3.0 R7
+            installation Guide for VRSvApp installation.</p></li>
 </ul>  
   
 </section>
@@ -73,9 +73,9 @@
     
     #Set the location of your infra-ansible-playbooks
     ansible_dir: ~/infra-ansible-playbooks</codeblock></li>
-  <li id="hosts">Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to
-          enter the IP address of the vibr0 interface in the <codeph>hlm_kvm_host</codeph> field, as
-          shown in the following example. </li>
+  <li id="hosts">Check the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to enter the IP
+          address of the <codeph>vibr0</codeph> interface in the <codeph>hlm_kvm_host</codeph>
+          field, as shown in the following example. </li>
 </ol>
 <codeblock>  [hlm_kvm_host]
   192.168.122.1 </codeblock>
@@ -92,7 +92,7 @@
         <li>Locate the IP address for the HLM VM in the
             <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
             <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the HLM
-          VM during the installation process.</li> 
+          VM during the HP Helion OpenStack Carrier Grade installation process.</li> 
       </ol>
 
 </section>
@@ -169,6 +169,8 @@ VSD Server : auto
 </section>
   <section><title>Install the DVswitch</title></section>
     <section>
+      <p>The VMware® vNetwork Distributed Switch (vDS) enables you to manage virtual machine networking for a
+        number of hosts in a datacenter using the VMware vSphere application </p>
           <p>Please Refer to the DCN VSP 3.0 R7 installation Guide for DVswitch installation.</p>
     </section>
   
@@ -182,65 +184,87 @@ VSD Server : auto
             <codeblock>ssh &lt;HLM_VM_IP>
 where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
             the default credentials: </p><p>
-            <!--when to change?-->
-            <codeblock>User Name: root
+            <codeblock>User Name: cghelion
 Password: cghelion</codeblock>
-          </p></li>
+          </p><p><b>Important:</b> After logging in with the default password, make sure you change
+            the password for the <codeph>cghelion</codeph> user. </p></li>
+  <li>Execute the following command to run a script that disables the <codeph>root</codeph> user.
+          For security purposes, we strongly recommend disabling root.
+            <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock><p>This command will
+            disable the <codeph>root</codeph> user and performs the following tasks:</p><ul>
+            <li>remove the password for <codeph>root</codeph> from the <codeph>/etc/shadow
+                file</codeph>;</li>
+            <li>remove any and all keys in <codeph>/root/.ssh/authorized_keys</codeph> file;</li>
+            <li>change the <codeph>PermitRootLogin</codeph> variable in the
+                <codeph>/etc/ssh/sshd_config</codeph> file from <codeph>yes</codeph> to
+                <codeph>without-password</codeph> (the default value);</li>
+            <li>restart the SSH service to put the configuration chagnes into effect.</li>
+          </ul><p>Once this command complete, the <codeph>cghelion</codeph> user should be used to
+            access the HLM VM. Any actions that require root access should be done using
+              <codeph>sudo</codeph>.</p></li>
+        <li>Execute the following command to switch to the root
+          user:<codeblock>sudo su -</codeblock></li>
     
-<li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
-<li>Provision and configure your HP Helion
+<li>Change to the home directory.<codeblock>cd ~</codeblock></li>
+<li>Provision and configure HP Helion
             OpenStack.<codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.</li>
             <li><codeph>memphis</codeph> is the name of the template to use. The installation kit
               includes a temlate called <codeph>memphis</codeph> designed to install HP Helion
-              OpenStack.</li>
+              OpenStack, specific to the KVM + ESX deployment.</li>
           </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which
             contains several JSON template files. </p></li></ol>
   </section>
   <section id="configure-node-provision-json">
       <title>Configure the node-provision JSON file</title>
-      <p>Edit the <codeph>node-provision.json</codeph> file in the <codeph>&lt;cloudname></codeph>
+      <p>Modify the <codeph>node-provision.json</codeph> file in the <codeph>&lt;cloudname></codeph>
         directory of the HLM VM. This template supplies input values to the
           <codeph>hprovision</codeph> script, later in the installation. </p>
         
-      <p> Edit <codeph>node-provision.json</codeph> file to change only the following fields:</p> 
-        <table>
-        <tgroup cols="2">
-          <colspec colname="col1" colsep="1" rowsep="1"/>
-          <colspec colname="col2" colsep="1" rowsep="1"/>
-          <thead>
-            <row>
-              <entry colsep="1" rowsep="1">Field</entry>
-              <entry colsep="1" rowsep="1">Description</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>Pxe-mac-address</entry>
-              <entry>MAC address of the interface you want to PXE boot onto. This is not same as iLO
-                MAC address.</entry>
-            </row>
-            <row>
-              <entry>pm_ip</entry>
-              <entry>Power management IP (iLO ip)</entry>
-            </row>
-            <row>
-              <entry>pm_user</entry>
-              <entry>Power management user (iLO username)</entry>
-            </row>
-            <row>
-              <entry>pm_pass</entry>
-              <entry>Power management password (iLO password)</entry>
-            </row>
-            <row>
-              <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
-              <entry>Enter the same value as for these fields an in the <codeph>nodes.json</codeph>
-                file used during cloud deployment</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-      <p>Also, remove the server assigned for second VRSG.</p>
+    <p><b>Note:</b> To see a sample <codeph>node-provision.json</codeph> file, see <xref
+          href="carrier-grade-install-pb-kvm-node-json.dita">Sample node-provision.json File for
+          Installing the KVM + ESX Topology</xref>.</p>
+    
+        <ol id="ol_ub2_xfl_zs">
+          <li>Edit <codeph>node-provision.json</codeph> file to change only the following fields: <table>
+            <tgroup cols="2">
+              <colspec colname="col1" colsep="1" rowsep="1"/>
+              <colspec colname="col2" colsep="1" rowsep="1"/>
+              <thead>
+                <row>
+                  <entry colsep="1" rowsep="1">Field</entry>
+                  <entry colsep="1" rowsep="1">Description</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>Pxe-mac-address</entry>
+                  <entry>MAC address of the interface you want to PXE boot onto. This is not same as
+                    iLO* MAC address.</entry>
+                </row>
+                <row>
+                  <entry>pm_ip</entry>
+                  <entry>The power management IP address (iLO IP address)</entry>
+                </row>
+                <row>
+                  <entry>pm_user</entry>
+                  <entry>The power management user name (iLO user name)</entry>
+                </row>
+                <row>
+                  <entry>pm_pass</entry>
+                  <entry>The power management password (iLO password)</entry>
+                </row>
+                <row>
+                  <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
+                  <entry>Enter the same value as for these fields an in the
+                      <codeph>nodes.json</codeph> file used during cloud deployment </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table><p>*iLO is HP Integrated Lights-Out, a server management tool embedded with the
+            ProLiant servers. Consult your iLO documentation for information on how to locate the
+            iLO IP address, user name, and password.</p></li>
+      <li>Remove the server assigned for second VRSG.
     <codeblock>,
 {
       "name": "vrg2",
@@ -256,15 +280,13 @@ Password: cghelion</codeblock>
       "model": "DL680",
       "os_partition_size": "20",
       "data_partition_size": "80"
-      }    </codeblock>
-    
-  
-    <p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
-        href="carrier-grade-install-pb-kvm-node-json.dita">Sample node-provision.json File for Installing the KVM + ESX Topology</xref>.</p>
-    </section>
+      }    </codeblock></li>
+          <li>Save and close the file.</li>
+  </ol>
+</section>
  <p> <b>Configure PXE boot</b> </p>
 <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE boot
-        on the servers set the correct boot order. Execute the following on the HLM VM:</p>
+      on the servers to set the correct boot order. Execute the following on the HLM VM:</p>
 <ol>
 <li>Copy the <codeph>ilopxebootonce.py</codeph> from the
           <systemoutput>/root/cg-hlm/dev-tools/ilopxebootonce.py</systemoutput> to the
@@ -275,19 +297,25 @@ Password: cghelion</codeblock>
 </ol>
 <p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to <codeph>Network Device 1</codeph> on all the servers listed in <codeph>node-provision.json</codeph> file.</p>
     <section id="configure-def-json"><title>Configure the definition.json file</title>
-      <p>Edit the <codeph>definition.json</codeph> file in the <codeph>&lt;cloudname></codeph>
+      <p>Modify the <codeph>definition.json</codeph> file in the <codeph>&lt;cloudname></codeph>
         directory of the HLM VM to define the number of ESX compute proxies required in your
         environment. You need one proxy per vCenter; set this value to the number of vCenters you
-        have: <ol>
+        have.</p>
+      <p><b>Note:</b> To see a sample <codeph>definition.json</codeph> file, see <xref
+          href="carrier-grade-install-pb-kvm-def-json.dita#topic4797">Sample definition.json File
+          for Installing the KVM + ESX Topology</xref>.<ol id="ol_zzr_khl_zs">
           <li>Set the number of compute systems to 1.
             <codeblock>"count": 1, //number of computes in the resource pool</codeblock></li>
         </ol></p></section>
   
   <section id="configure-env-json"><title>Configure the environment.json file</title>
-    <p>Edit the <codeph>environment.json</codeph> file in the <codeph>&lt;cloudname></codeph>
+    <p>Modify the <codeph>environment.json</codeph> file in the <codeph>&lt;cloudname></codeph>
         directory of the HLM VM to configure the VLANs and network addresses as appropriate for your
         environment. Set the following for the CLM (management), CAN (api), and BLS (blockstore)
-        network.</p>
+        networks.</p>
+      <p><b>Note:</b> To see a sample <codeph>environment.json</codeph> file, see <xref
+          href="carrier-grade-install-pb-kvm-env-json.dita">Sample environment.json File for
+          Installing the KVM + ESX Topology</xref>.</p>
       <p>For each network
         provide:</p>
         <codeblock>{
@@ -299,15 +327,12 @@ Password: cghelion</codeblock>
   "start-address": "10.200.51.100",
   "gateway": "10.200.51.1"
   }
-},        </codeblock>
-          <p>To see a sample <codeph>environment.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-env-json.dita">Sample environment.json File for
-          Installing the KVM + ESX Topology</xref>.</p></section>
+},        </codeblock></section>
   
   <section id="configure-ansible-json">
     <title>Configure the ansible.json file</title>
-    <p>Edit the <codeph>ansible.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph> directory of the HLM
-        VM.</p>
+    <p>Modify the <codeph>ansible.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph>
+        directory of the HLM VM.</p>
     <p>To see a sample <codeph>ansible.json</codeph> file,  see <xref
           href="carrier-grade-install-pb-kvm-ansible-json.dita">Sample ansible.json File for
           Installing the KVM + ESX Topology</xref>.</p>
@@ -315,8 +340,9 @@ Password: cghelion</codeblock>
   
   <section id="configure-esx-json">
     <title>Configure the esx.json file</title>
-    <p>Edit the <codeph>esx.json</codeph> file on the HLM VM. This file is called by the script that
-        installs the HP Helion OpenStack cloud, later in the installation. </p>
+    <p>Modify the <codeph>esx.json</codeph> file in the <codeph>&lt;cloudname></codeph> directory on
+        the HLM VM. This file is called by the script that installs the HP Helion OpenStack cloud,
+        later in the installation. </p>
     <p>To see a sample <codeph>esx.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-esx-json.dita">Sample esx.json File for Installing the
           KVM + ESX Topology</xref>.</p>
@@ -324,7 +350,7 @@ Password: cghelion</codeblock>
   
   <section id="configure-ldap-json">
     <title>Configure the ldap.json file</title>
-    <p>Edit the <codeph>ldap.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph>
+    <p>Modify the <codeph>ldap.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph>
         directory of the HLM VM.</p>
     <p>To see a sample <codeph>ldap.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-ldap-json.dita">Sample ldap.json File for Installing
@@ -333,18 +359,18 @@ Password: cghelion</codeblock>
   
   <section id="configure-wr-json">
     <title>Configure the wr.json file</title>
-    <p>Edit the <codeph>wr.json</codeph> file on the HLM VM.</p>
+    <p>Modify the <codeph>wr.json</codeph> file in the <codeph>&lt;cloudname></codeph> directory on
+        the HLM VM.</p>
     <p>To see a sample <codeph>wr.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the
           KVM + ESX Topology</xref>. </p>
   
   </section>
   <section><title>Configure the dcn.json file</title>
-    <p>Edit the <codeph>dcn.json</codeph> file in the
+    <p>Modify the <codeph>dcn.json</codeph> file in the
           <codeph>/opt/share/hlm/1/site/services/dcn.json</codeph> directory of the HLM VM to remove
           <b>both</b> instances of the following code:
-        <codeblock>
-      {
+        <codeblock>      {
           "description": "Ingress 47 GRE",
           "firewall": {
             "direction": "in",
@@ -352,32 +378,35 @@ Password: cghelion</codeblock>
             },
            "port": 47,
             "scope": "private"
-      },
-    </codeblock></p>
+      },    </codeblock></p>
     </section>
+  <section><title>Verify the JSON files</title>
+    <p>After editing the JSON files, validate each JSON file to make sure there are no syntactical errors 
+      using the tool of your preference. For example, using the Python json.tool: </p>
+      <codeblock>python -m json.tool &lt;filename>.json</codeblock>
+  </section>
       <section><title>Configure the ESX Compute Proxy</title>
     <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
-      that enables the Compute service to communicate with a VMware vCenter server managing one or
-      more ESX hosts. The HP Helion OpenStack Compute Service (Nova) requires this driver to
-      interface with VMware ESX hypervisor APIs.</p>
-    <p>For instructions to configure the ESX compute proxy, see <xref
+        that enables the Compute service to communicate with a VMware vCenter server. The HP Helion
+        OpenStack Compute Service (Nova) requires this driver to interface with VMware ESX
+        hypervisor APIs.</p>
+    <p>For instructions on installing the ESX compute proxy, see <xref
           href="carrier-grade-install-esx-proxy.dita#topic10581">Deploy the ESX Compute
-        Proxy</xref></p>
+        Proxy</xref>.</p>
   </section>
   
 <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
       <title>Provision the cloud nodes and bring the cloud nodes up</title>
       <ol>
         <li>On the HLM host, use the following script to start the provisioning of the HP Helion
-          OpenStack cloud:
-            <codeblock>hprovision &lt;cloudname&gt;          </codeblock><p>Where:</p><ul>
-            <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created</li>
-          </ul><p>This script will PXE boot the nodes specified in
-              <codeph>node-provision.json</codeph> file. The script also tracks the PXE boot
-            completion process and will create the <codeph>nodes.json</codeph> file in the
-            directory. </p><p>You can log in to the iLO of each of the nodes to monitor the boot
-            process.</p></li>
-        <li>Make sure the nodes are booted up using iLO.</li>
+          OpenStack cloud: <codeblock>hprovision &lt;cloudname&gt;          </codeblock><p>Where:
+              <codeph>&lt;cloudname&gt;</codeph>  is the name of the cloud you created.</p><p>This
+            script will PXE boot the nodes specified in <codeph>node-provision.json</codeph> file.
+            The script also tracks the PXE boot completion process and will create the
+              <codeph>nodes.json</codeph> file in the directory. </p><p>You can log in to the iLO
+            server management tool for each of the nodes to monitor the boot process. Consult yout
+            iLO documentation for information on how to log into iLO. </p></li>
+        <li>Make sure the nodes are booted up using iLO. </li>
         <li>Once the baremetal nodes are provisioned, make sure the <codeph>nodes.json</codeph> file
           is generated. The <codeph>nodes.json</codeph> file will have entries of 3 controllers, 2
           DCN Hosts, 1 VRS-G and the compute proxy node.</li>
@@ -389,9 +418,9 @@ Password: cghelion</codeblock>
           </ol></li>
         <li>Configure the VMware VMDK driver to enable management of the OpenStack Block Storage volumes
           on vCenter-managed data stores:<ol id="ul_btr_l52_xs">
-            <li>Change to the <codeph>cinder/blocks</codeph> directory:
-              <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where &lt;cloudname>
-              is the name you assigned to the cloud.</li>
+            <li>Change to the <codeph>/cinder/blocks</codeph> directory:
+              <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where
+                <codeph>&lt;cloudname></codeph> is the name you assigned to the cloud.</li>
             <li>Edit the <codeph>cinder_conf</codeph> to configure VMware VMDK:
               <codeblock>[DEFAULT]
 enabled_backends=vmdk
@@ -407,86 +436,174 @@ vmware_task_poll_interval = 0.5
 vmware_max_objects_retrieval = 100
 volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock></li>
           </ol></li>
-        <li>After editing the JSON files, validate each JSON file to make sure there are no
-          syntactical errors using the tool of your preference. For example, using the Python
-          json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>
-        <li>Once you have correctly edited all the json Cloud Model files, run the HP Helion
-          OpenStack Configuration Processor:
+        <li>Run the HP Helion OpenStack Configuration Processor:
             <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
             Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
-            incorporated into the installation environment. </p></li>
+            incorporated into the installation environment. </p><p>When the command completes, you
+            will see the following:
+            message:</p><codeblock>#################################################################################
+The configuration processor completed successfully.
+################################################################################</codeblock><p>To
+            view the complete output of the command, see <xref
+              href="carrier-grade-install-hcfgproc-output.dita#topic10581"> Output from the hcfgproc
+              command</xref>.</p></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
           correct.</li>
         <li>Initialize network interfaces on all the cloud nodes using the following command:
-            <codeblock><codeph>hnetinit &lt;cloudname&gt;</codeph></codeblock><p>After this command
-            completes, all cloud nodes and CLM network interfaces are configured.</p></li>
-        <li>Use the following command to deploy the cloud:
+            <codeblock><codeph>hnetinit &lt;cloudname&gt;</codeph></codeblock><p>Where:
+              <codeph>&lt;cloudname&gt;</codeph>  is the name of the cloud you created.</p><p>After
+            this command completes, all cloud nodes and CLM network interfaces are configured. The
+            output for the command should appear similar to the
+          following:</p><codeblock>~/b52/clouds/b52/001/stage/ansible ~/b52
+PLAY [RESOURCES]
+**************************************************************          
+TASK: [initialize-networking | Copy hosts file]
+*******************************
+changed: [B52-CCP-T1-M2-NETPXE]
+changed: [B52-CCP-T1-M1-NETPXE]
+changed: [B52-CCP-T1-M3-NETPXE]
+changed: [B52-CCP-CPN-N0001-NETPXE]          
+TASK: [initialize-networking | Generate temporary filename]
+*******************
+changed: [B52-CCP-T1-M2-NETPXE]
+changed: [B52-CCP-T1-M3-NETPXE]
+changed: [B52-CCP-CPN-N0001-NETPXE]
+changed: [B52-CCP-T1-M1-NETPXE]
+TASK: [initialize-networking | Copy interfaces files to temporary location] ***
+changed: [B52-CCP-CPN-N0001-NETPXE]
+changed: [B52-CCP-T1-M3-NETPXE]
+changed: [B52-CCP-T1-M2-NETPXE]
+changed: [B52-CCP-T1-M1-NETPXE]
+TASK: [initialize-networking | Check if rules file exists on src files location] ***
+ok: [B52-CCP-T1-M1-NETPXE -> 127.0.0.1]
+ok: [B52-CCP-T1-M2-NETPXE -> 127.0.0.1]
+ok: [B52-CCP-T1-M3-NETPXE -> 127.0.0.1]
+ok: [B52-CCP-CPN-N0001-NETPXE -> 127.0.0.1]
+TASK: [initialize-networking | Copy rules files to temporary location]
+********
+skipping: [B52-CCP-T1-M1-NETPXE]
+skipping: [B52-CCP-T1-M3-NETPXE]
+skipping: [B52-CCP-T1-M2-NETPXE]
+skipping: [B52-CCP-CPN-N0001-NETPXE]
+TASK: [initialize-networking | Restart networking]
+****************************
+changed: [B52-CCP-T1-M1-NETPXE]
+changed: [B52-CCP-T1-M2-NETPXE]
+changed: [B52-CCP-CPN-N0001-NETPXE]
+changed: [B52-CCP-T1-M3-NETPXE]
+TASK: [initialize-networking | Wait for networking]
+***************************
+ok: [B52-CCP-T1-M1-NETPXE]
+ok: [B52-CCP-CPN-N0001-NETPXE]
+ok: [B52-CCP-T1-M3-NETPXE]
+ok: [B52-CCP-T1-M2-NETPXE]
+PLAY RECAP
+********************************************************************
+B52-CCP-CPN-N0001-NETPXE   : ok=6    changed=4    unreachable=0 failed=0
+B52-CCP-T1-M1-NETPXE       : ok=6    changed=4    unreachable=0 failed=0
+B52-CCP-T1-M2-NETPXE       : ok=6    changed=4    unreachable=0 failed=0
+B52-CCP-T1-M3-NETPXE       : ok=6    changed=4    unreachable=0 failed=0          
+~/b52</codeblock>
+        </li>
+        <li>Use the following command to deploy the HP Helion OpenStack cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>When this command is
-            complete the non-KVM cloud will be installed.</p></li>
+            complete, the non-KVM cloud installation is complete. Use the following sections to
+            configure the Horizon interface, configure networking, and configure the ESX
+            environment. </p></li>
+        <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
 </section>
   <section>        
           <title>  Apply the Horizon interface patch:</title> 
-          <ol><li>Locate the hcg_1.1.0_horizon_patch1.tar file you downloaded to the HLM host and extract the files.</li> 
-           <li>Copy user.py file to first controller node in the
-              /opt/stack/venvs/horizon/lib/python2.7/site-packages/openstack_auth/ directory.</li>
+          <ol><li>Locate the <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file you downloaded to the HLM host and
+          extract the files.</li>
+        <li>From the HLM VM, SSH into any controller node using the default credentials: <p>
+            <codeblock>User Name: cghelion
+Password: cghelion</codeblock>
+          </p></li>
+        <li>Execute the following command to switch to the root
+          user:<codeblock>sudo su -</codeblock></li> 
+            <li>Copy the <codeph>user.py</codeph> file to first controller node in the
+          <codeph>/opt/stack/venvs/horizon/lib/python2.7/site-packages/openstack_auth/</codeph>
+          directory.</li>
             <li>Use the following command to restart the Horizon service on that node:
               <codeblock>sudo service apache2 restart</codeblock></li>
-             <li>Repeat above two steps on the other two controller nodes in the non-KVM region.</li> 
+        <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
+             <li>Log into each of the other two controller nodes in the non-KVM region and repeat
+          above steps to copy the <codeph>user.py</codeph> to each controller .</li> 
           </ol>
   </section>
 
   <section><title>Create external network and subnet</title>
+      <p>Use the HP Networking Service (Neutron) service to configure the external network.</p>
     <ol>
-      <li>Obtain the static IP route for the external network/FIP EXT Uplink Subnet:
-          <codeblock>        #
-        interface Vlan-interface 1553
-        description NFV TestBed - EXT UPLINK SUBNET
-        ip address 10.200.70.1 255.255.255.192
-        #
-        .
-        .
-        .
-        IP Packet Frame Type: PKTFMT_ETHNT_2,  Hardware Address: abcd-1234-lmno
-        .
-        .
-        .
-        Destination/Mask    Proto  Pre  Cost         NextHop         Interface
-        
-        10.200.70.0/26      Direct 0    0            10.200.70.1     Vlan1553
-        10.200.70.1/32      Direct 0    0            127.0.0.1       InLoop0
-        10.200.70.64/26     Static 60   0            10.200.70.2     Vlan1553
-        10.200.70.128/26    Static 60   0            10.200.70.2     Vlan1553
-        10.200.70.192/26    Static 60   0            10.200.70.2     Vlan1553
-      </codeblock></li>
-        <li>From the HLM VM, SSH into any controller node and source the stackrc file, using the
-          cghelion username and password: <codeblock>cd ~/
+      <li>Execute the following command to obtain the static IP route for the external network/FIP
+          EXT Uplink Subnet: <codeblock>interface Vlan-interface &lt;vlan_id></codeblock><p>Where
+            &lt;vlan_id> is the VLAN ID. </p><p>The output for the command is similar to the
+            following;</p><codeblock>#
+interface Vlan-interface 1553
+description NFV TestBed - EXT UPLINK SUBNET
+ip address 10.200.70.1 255.255.255.192
+#
+.
+.
+.
+IP Packet Frame Type: PKTFMT_ETHNT_2,  Hardware Address: abcd-1234-lmno
+.
+.
+.
+Destination/Mask    Proto  Pre  Cost         NextHop         Interface
+10.200.70.0/26      Direct 0    0            10.200.70.1     Vlan1553
+10.200.70.1/32      Direct 0    0            127.0.0.1       InLoop0
+10.200.70.64/26     Static 60   0            10.200.70.2     Vlan1553
+10.200.70.128/26    Static 60   0            10.200.70.2     Vlan1553
+10.200.70.192/26    Static 60   0            10.200.70.2     Vlan1553</codeblock></li>
+      <li>From the HLM VM, SSH into any controller node using the default credentials: <p>
+            <codeblock>User Name: cghelion
+Password: cghelion</codeblock>
+          </p></li>
+        <li>Execute the following command to switch to the root
+          user:<codeblock>sudo su -</codeblock></li>
+        <li>Change to the home directory and source the <codeph>stackrc</codeph> file:
+          <codeblock>cd ~/
 source stackrc</codeblock></li>  
       <li>Execute the following command on any controller node to create the external network:
-            <codeblock>neutron net-create &lt;external-network-name> --router:external</codeblock><p>where
-              <codeph>&lt;external-network-name></codeph> is a descriptive name for the network.</p></li>
+            <codeblock>neutron net-create &lt;external-network-name> --router:external</codeblock><p>Where
+              <codeph>&lt;external-network-name></codeph> is a descriptive name for the
+            network.</p><p>For
+            example:</p><codeblock>neutron net-create ext-net  --router:external </codeblock><p>Where
+              <codeph>&lt;external-network-name></codeph> is a descriptive name for the
+          network.</p></li>
       <li>Execute the following command to create a subnet for the external network:
-            <codeblock>neutron subnet-create &lt;external-network-name> &lt;subnet-ip> --name &lt;name></codeblock><p>where:
-            &lt;subnet-ip> is the IP address range to assign and &lt;name> is a descriptive
-            name.</p><p>For
-            example:</p><codeblock>neutron subnet-create ext-net 10.200.70.64/26 --name extsub1 </codeblock><p>where
-            &lt;external-network-name> is a descriptive name for the network.</p></li>
+            <codeblock>neutron subnet-create &lt;external-network-name> &lt;subnet-ip> --name &lt;name></codeblock><p>Where:
+              <ul id="ul_frm_3ml_zs">
+              <li>
+                <codeph>&lt;external-network-name></codeph>  is the name of the external network you
+                created;</li>
+              <li><codeph>&lt;subnet-ip></codeph> is the IP address range to assign </li>
+              <li><codeph>&lt;name></codeph> is a descriptive name for the subnet.  Make note of
+                this name, as you will use it during the installation.</li>
+            </ul></p><p>For
+          example:</p><codeblock>neutron subnet-create ext-net 10.200.70.64/26 --name extsub1 </codeblock></li>
       <li>Use the following command to create a virtual router:
-            <codeblock>neutron router-create &lt;name></codeblock><p>where: &lt;name> is a
-            descriptive name.</p></li></ol>
+            <codeblock>neutron router-create &lt;name></codeblock><p>Where:
+              <codeph>&lt;name></codeph> is a descriptive name for the router.</p></li>
+        <li>Enter <codeph>exit</codeph> to leave the root shell.</li></ol>
   </section>
   <section id="vrsg-config"><title>Configure the VRS-G </title>
       <p>The HP Helion OpenStack Carrier Grade installation creates the required VRS-G gateway. You
         need to use the HP DCN Virtualized Services Directory Architect (VSD) interface to add the
-        gateway to VSD and configure the <codeph>eth0</codeph> port.</p>
+        gateway and configure the <codeph>eth0</codeph> port.</p>
+      <p><i>For more information on performing these tasks, refer to the DCN documentation </i></p>
     
     <ol><li>Launch the VSD dashboard:<ul id="ul_ylj_thz_xs">
-      <li>Using Chrome or Safari, navigate to <codeph>https://&lt;VSD address>:8443/</codeph> and enter user
-        name, password and organization.<p><image href="../../media/CGH-install-vsd-login.png" id="image_dls_phz_xs"
-          width="300">
-          <alt>VSD login screen</alt>
-        </image></p></li>
+      <li>Using Chrome or Safari, navigate to <codeph>https://&lt;VSD_address>:8443/</codeph> and
+              enter user name, password and organization. See the DCN documentation if you need to
+              locate the IP address for the VSD.<p><image
+                  href="../../media/CGH-install-vsd-login.png" id="image_dls_phz_xs" width="300">
+                  <alt>VSD login screen</alt>
+                </image></p></li>
       <li>Click the arrow icon to log in.</li>
           </ul></li>
       <li>Click the <b>Gateways</b> tab. The new gateway appears in the <b>Pending Gateways</b> list
@@ -498,21 +615,20 @@ source stackrc</codeblock></li>
       <li>Click <b>Organization Profile</b> in the ribbon to add permissions to the Gateway.</li>
         <li>Add a port for the gateway by clicking <b>Create a Port</b> in the second panel from the
           left.</li>
-        <li>Enter the information as required, specifying  eth0 in the Physical Name field  and
-          entering the VLAN ID [EXT Net] for the VLAN range.<p><image
+        <li>Enter the information as required, specifying <codeph>eth0</codeph> in the <b>Physical
+            Name</b> field and entering the VLAN ID for the external network.<p><image
               href="../../media/CGH-install-gateway-port.png" id="image_w3p_sgz_xs" width="250">
-              <alt>Gatewy Port</alt>
-          </image></p></li>
+              <alt>Gateway Port</alt>
+            </image></p></li>
       <li>Click <b>Create</b>.</li></ol>
-          <p>For more information on performing these tasks, refer to the DCN
-            documentation </p>
     
-  <p><b>Note:</b> To create a redundant grouping of the VRS-G, refer to the DCN documentation.</p>
+  <p><b>Note:</b> To create a redundant grouping for the VRS-G, refer to the DCN documentation.</p>
 </section>
   <section><title>Configuring ingress and egress security policies</title>
-    <p>Ingress and egress security policies are</p>
     <p>Use the following steps to configure these policies to allow SSH and PING access to the
-          VRS-G.<ol id="ol_lf3_dp1_ys">
+        VRS-G.</p>
+      <p><i>For more information on performing these tasks, refer to the DCN documentation </i><ol
+          id="ol_lf3_dp1_ys">
           <li>In the VSD dashboard, click <b>Domains</b>, then <b>Ingress Security Policies</b> in
             the ribbon.</li>
           <li>Right-click the default ingress security policy and click <b>Edit</b>.</li>
@@ -531,24 +647,27 @@ source stackrc</codeblock></li>
   
   
   </section>
-  <section><title>Retrieving the Floating IP Name from VSD for external Network</title>
+  <section><title>Retrieving the subnet floating IP name from VSD</title>
+      <p>You will need the floating IP subnet name during the installation when you create and edit
+        a cURL script. If you do not have the name of the subnet you created, use the following
+        steps:</p>
+      <p><i>For more information on performing these tasks, refer to the DCN documentation </i></p>
     <ol><li>In the VSD dashboard, click <b>Open Data Center Configuration</b>, then <b>Shared Network</b>
           tab. 
       <p><image href="../../media/CGH-install-vsd-fip.png" id="image_okn_sjz_xs">
             <alt>Gatewy Port</alt>
       </image></p></li>
-        <li>For the Floating IP subnet, right-click and select <b>Edit</b> to get the name. <p>This
+        <li>For the floating IP subnet, right-click and select <b>Edit</b> to get the name. <p>This
             is the same name you assigned when you created the subnet. Make note of this name, as
             you will use it during the installation.</p></li>
-      <li> You will need the Floating IP subnet name during the installation when you create and
-          edit a cURL script.</li>
       </ol>
   </section>
     <section><title>Add VLAN to VRSG network device </title>
-      <p>VRS‐G configuration includes setting up the port and VLAN ranges that are to be available
-        for Nuage access on the VSD. By default, the VRS‐G boots with all its ports configured as
-        the <b>network</b> type, and therefore it has no VLANs available. Use the following command
-        to change <codeph>eth1</codeph> from <b>network</b> to <b>access</b> and allow VLANs.</p>
+      <p>The VRS‐G installation requires that the port and VLAN ranges be available to access the
+        VSD. By default, the VRS‐G boots with all its ports configured as the <b>network</b> type,
+        and therefore it has no VLANs available. Use the following command to change
+          <codeph>eth1</codeph> from <b>network</b> to <b>access</b> and allow VLANs.</p>
+      <p><i>For more information on performing these tasks, refer to the DCN documentation </i></p>
       <ol>
         <li>Log into the VRS-G node.</li><li>Run the below command on the VRS-G node, using your VLAN ID:<p>
             <codeph>nuage-vlan-config mod eth0 Access &lt;vlad-id></codeph></p></li>
@@ -557,7 +676,7 @@ source stackrc</codeblock></li>
     <section><title>Run a cURL script to enable floating IPs on the VRS-G</title>
       <p/>
     <ol>
-      <li>From the KVM host, copy the following code to create a cURL script.</li>
+      <li>From the HLM host, copy the following code to create a cURL script.</li>
       <li>Modify the cURL script for your environment:
           <codeblock>
             ##########################################
@@ -653,9 +772,11 @@ source stackrc</codeblock></li>
               #echo "FIP uplink subnet already exists: $SUBNET_ID"
               #fi
               #############################################################</codeblock></li>
-      <li>Execute the curl script <codeblock>bash +x &lt;script_name>.sh</codeblock></li>
-      <li>Use the VSD dashboard to confirm that uplink port appears in the Monitoring tab under
-        VRS-G node. <b><i>image</i></b></li>
+        <li>Save and close the script.</li>
+      <li>Execute the cURL script <codeblock>bash +x &lt;script_name>.sh</codeblock><p>Where:
+            &lt;script_name> is the name of the cURL script you created.</p></li>
+      <li>Use the VSD dashboard to confirm that uplink port appears in the <b>Monitoring</b> tab
+          under VRS-G node. </li>
     </ol>
     </section>
 <section>
@@ -669,14 +790,14 @@ source stackrc</codeblock></li>
         <li>Add the following lines to the file, before the <codeph>COMMIT</codeph> line:
           <codeblock>-A ufw-before-input -p 47 -j ACCEPT</codeblock></li>
         <li>Save and close the file.</li>
-        <li>execute the following command to restart the UFW service.</li>
+        <li>Execute the following command to restart the UFW service.</li>
       </ol>
     </section>
 
 <section><title>Post-Installation Steps </title><p>After the installation of the KVM + ESX
         deployment is complete, perform the steps in this section.</p>
       <b>Verify the VSC VMs</b>
-      <p>Use the following steps to verify that the VSC VMs are installed and are operational </p><ol>
+      <p>Use the following steps to verify that the VSC VMs are installed and are operational:</p><ol>
         <li>SSH to your VSC VM from HLM Host using the DCM IP. The default username and password:
             <codeph>admin/admin</codeph></li>
         <li>Execute the following command: <codeblock>admin display-config</codeblock></li>
@@ -695,28 +816,32 @@ source stackrc</codeblock></li>
       <image href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
         <alt>Verify VRS-G </alt>
       </image>
-</section>
+    </section>
   <section><title>Upload a Glance VMDK Image</title>
+    <p>In order to create VM instances in HP Helion OpenStack Carrier Grade, you need at least on
+        ISO image file. </p>
+      <p>The installation package contains an image file in the VMware VMDK format that you can
+        import using the Horizon interface.</p>
   <ol>
         <li>Launch the Horizon dashboard.</li>
         <li>Switch to <b>memphis</b> region. </li>
-    <li>Click the <b>Images</b> link on the <b>Admin</b>upload the VMDK image.</li>
+    <li>Click the <b>Images</b> link on the <b>Admin</b>panel. </li>
     <li>In the <b>Images</b> screen, click <b>Create Image</b>.</li> <!-- Where is this file??? -->
     <li>In the <b>Create an Image</b> screen, fill out the fields as appropriate:
       <ol><li>From the <b>Image Source</b> list, select <b>Image File</b>.</li>
         <li>From the <b>Image File</b> list that appears, navigate to the VMDK file.</li>
         <li>From the <b>Format</b> list, select <codeph>VMDK</codeph>.</li></ol></li>
       <li>Click <b>Create Image</b>.</li>
-      <li>For the new image, click <b>Actions -> Edit</b> to update the metadata for the
+      <li>For the image, click <b>More</b> then click <b>Edit</b>  to update the metadata for the
           image.</li>
-        <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph> properties
-          . </li>
+        <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph>
+          properties.</li>
+        <li>When complete, click <b>Update Image</b>. </li>
       </ol>
     
     <p>Once the images are uploaded, you are ready to launch the instance with different
         flavors. </p>
     </section>
-
 
   <section id="next-step"> <title>Next Step</title>
 <p>

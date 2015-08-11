@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic1107">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Post-Installation
+    Tasks</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.md-->
+    <!--permalink: /helion/openstack/carrier/install/pb/hlm-cloud/-->
+    <p>After the HP Helion OpenStack Carrier Grade  is installed and running, perform the following
+      tasks.</p>
+    <section><title>Install the KVM Region License</title>
+      <p>The servers in the KVM region require a specific license file to be installed. You must
+        download this file from the <xref
+          href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
+          scope="external">HP Helion Download Network(HDN)</xref>. </p>
+      <p>Before installing the patch, make sure the KVM region controller-0 was properly installed
+        by the HP Helion OpenStack Carrier Grade installation. </p>
+      <ol id="ol_mdt_dd3_ys">
+        <li>In a browser, navigate to <xref
+            href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
+            scope="external">HP Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs">
+            <li>Click <b>Sign In</b> to log in using your account. </li>
+            <li>After signing in, click the <b>Downloads</b> link in the menu on the left side of
+              the page.</li>
+            <li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click
+                <b>Download</b>.</li>
+          </ul></li>
+        <li>Download and extract the <b id="productShow_appName">Helion Carrier Grade 1.1.0
+            Windriver License patch signature file</b> and the associated signature and checksum
+          files.  For information on performing verifications of the download, see the
+          Prerequistues. </li>
+        <li>Copy the <codeph>license.lic</codeph> file to KVM region <codeph>controller0</codeph> node to the 
+          <codeph>/home/wrsroot/</codeph> directory.</li>
+          <li>Restart <codeph>controller-0</codeph> to load the license file.</li>
+      </ol>
+      
+      
+      
+    </section>
+  </body>
+</topic>

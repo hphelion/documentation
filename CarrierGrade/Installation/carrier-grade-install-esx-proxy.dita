@@ -14,6 +14,10 @@
   </metadata>
 </prolog>
 <body>
+  <p><i>Return to the Installing the <xref
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
+          >KVM + ESX Deployment</xref>.</i></p>
+  
     <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
       that enables the Compute service to communicate with a VMware vCenter server managing one or
       more ESX hosts. The HP Helion OpenStack Compute Service (Nova) requires this driver to
@@ -86,5 +90,8 @@
         and updates hosts file on these nodes to be configured by the <codeph>hdeploy</codeph>
         process.</p>
     </section>
+  <p><i>Return to the Installing the <xref
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
+          >KVM + ESX Deployment</xref>.</i></p>
   </body>
 </topic>
