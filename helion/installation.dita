@@ -121,9 +121,8 @@ The configuration files for editing can be found at the following location:
               from the /etc/hosts file from one of the controller nodes.</li>
           </ol>
         </li>
-<li>Add the details of the WA:
- <p>
-edit roles/HZN-WEB/tasks/install.yml and add the following after the 'install-package' section:</p>
+<li>
+Edit roles/HZN-WEB/tasks/install.yml and add the following after the 'install-package' section:
 <codeblock>- name: HZN-WEB | install | TEMP fix horizon permissions
   sudo: yes
   command: "chown -R stack:stack {{ HORIZON_VENV_DIR }}/lib/python2.7/site-packages"</codeblock>
