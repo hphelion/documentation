@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="boldproperty">
-  <title>Bold property</title>
-  <shortdesc>(Read-write) Whether to use a bold font for the specified text string.</shortdesc>
+  <title>Alarms</title>
+  <shortdesc>List of service-specific alarms</shortdesc>
   <refbody>
-    <table frame="all" rowsep="1" colsep="1" id="table_flj_2tl_zs">
-      <title>HA Proxy</title>
-      <tgroup cols="4">
-        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-        <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-        <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-        <colspec colname="c4" colnum="4" colwidth="1.0*"/>
-        <thead>
-          <row>
-            <entry>Alarm Name</entry>
-            <entry>Description</entry>
-            <entry>Likely Cause</entry>
-            <entry>Mitigation Tasks to Perform</entry>
-          </row>
-        </thead>
-        <tbody>
-          <row>
-            <entry>Process Check</entry>
-            <entry>process_name=haproxy</entry>
-            <entry>Haproxy is not running on this machine.</entry>
-            <entry>Restart haproxy on the alarming host.</entry>
-          </row>
-        </tbody>
-      </tgroup>
-    </table>
+    <section id="HAProxy">
+      <title>HAProxy</title>
+      <table frame="all" rowsep="1" colsep="1" id="table_flj_2tl_zs">
+        <tgroup cols="4" align="center">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Process Check</entry>
+              <entry>process_name=haproxy</entry>
+              <entry>Haproxy is not running on this machine.</entry>
+              <entry>Restart haproxy on the alarming host.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
   </refbody>
 </reference>
