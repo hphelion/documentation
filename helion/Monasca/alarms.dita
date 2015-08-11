@@ -7,7 +7,7 @@
     <section id="HAProxy">
       <title>HAProxy</title>
       <table frame="all" rowsep="1" colsep="1" id="table_flj_2tl_zs">
-        <tgroup cols="4" align="center">
+        <tgroup cols="4" align="left">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
           <colspec colname="c2" colnum="2" colwidth="1.0*"/>
           <colspec colname="c3" colnum="3" colwidth="1.0*"/>
@@ -26,6 +26,64 @@
               <entry>process_name=haproxy</entry>
               <entry>Haproxy is not running on this machine.</entry>
               <entry>Restart haproxy on the alarming host.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="HLinux">
+      <title>HLinux</title>
+      <table frame="all" rowsep="1" colsep="1" id="table_ik5_3km_zs">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>CPU Usage</entry>
+              <entry>Alarms on high CPU usage</entry>
+              <entry>Heavy load or runaway processes</entry>
+              <entry>Log onto the box and diagnose heavy CPU usage.</entry>
+            </row>
+            <row>
+              <entry>Disk Inode Usage</entry>
+              <entry>Nearly out of inodes for a partition.</entry>
+              <entry>Many files on the disk.</entry>
+              <entry>Investigate cleanup of data or migration to other partitions.</entry>
+            </row>
+            <row>
+              <entry>Disk Usage</entry>
+              <entry>High Disk usage.</entry>
+              <entry>Large files on the disk</entry>
+              <entry>Investigate cleanup of data or migration to other partitions.</entry>
+            </row>
+            <row>
+              <entry>Host Status</entry>
+              <entry>Alerts when a host is unreachable</entry>
+              <entry>Host or network is down</entry>
+              <entry>If a single host attempt to restart the box. If multiple investigate network
+                issues.</entry>
+            </row>
+            <row>
+              <entry>Memory Usage</entry>
+              <entry>High memory usage.</entry>
+              <entry>Overloaded system or services with memory leaks</entry>
+              <entry>Log onto the system investigate high memory users.</entry>
+            </row>
+            <row>
+              <entry>Network Errors</entry>
+              <entry>Alarms on a high network error rate.</entry>
+              <entry>Bad network or cabling</entry>
+              <entry>Take this system out of service until the network can be fixed.</entry>
             </row>
           </tbody>
         </tgroup>
