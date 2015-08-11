@@ -1,55 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic12031">
-<title>Beta 0: Release Notes</title>
-<body>
-  <p>This document provides an overview of the features contained within HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta 0, including known issues and workarounds for this release:</p>
-  <section id="Features"> <title>Features in HP Helion OpenStack 2.0</title>
-    <p><b>Updated HP Helion OpenStack Services</b> - We have included the core set of OpenStack services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html">Kilo release</xref> with the exception of limitations notated in this document.</p>
-<p><b>Neutron LBaaS and FWaaS Extensions</b> - We have implemented networking extensions for load balancing and firewalls. Here is a description of each of these:</p>
-<ul>
-  <li>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load balancing feature set. Helion OpenStack 2.0 includes the V2 version which allows implementation uses haproxy but 3rd party Load Balancers can be integrated as well. In case that a 3rd party driver doesn’t exist for LBaaS V2 installing LBaaS V1 instead of V2 is supported. 
-<ul>
-<li>For more information, see: <xref href="https://wiki.openstack.org/wiki/Neutron/LBaaS" scope="external" format="html">https://wiki.openstack.org/wiki/Neutron/LBaaS</xref></li>
-</ul>
-</li>
-<li>FWaaS (FireWall-as-a-Service) is a Neutron extension that introduces a firewall feature set. The included reference implementation is using iptables to block traffic but 3rd party Firewalls can be integrated with this extension into Helion OpenStack as well. 
-<ul>
-<li>For more information, see: <xref href="https://wiki.openstack.org/wiki/Neutron/FWaaS" scope="external" format="html">https://wiki.openstack.org/wiki/Neutron/FWaaS</xref></li>
-</ul>
-</li>
-<!-- removed per wiki
+  <title>Beta 0: Release Notes</title>
+  <body>
+    <p>This document provides an overview of the features contained within HP Helion <tm
+        tmtype="reg">OpenStack</tm> 2.0 Beta 0, including known issues and workarounds for this
+      release:</p>
+    <section id="Features">
+      <title>Features in HP Helion OpenStack 2.0</title>
+      <p><b>Updated HP Helion OpenStack Services</b> - We have included the core set of OpenStack
+        services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
+          scope="external" format="html">Kilo release</xref> with the exception of limitations
+        notated in this document.</p>
+      <p><b>Neutron LBaaS and FWaaS Extensions</b> - We have implemented networking extensions for
+        load balancing and firewalls. Here is a description of each of these:</p>
+      <ul>
+        <li>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
+          balancing feature set. Helion OpenStack 2.0 includes the V2 version which allows
+          implementation uses haproxy but 3rd party Load Balancers can be integrated as well. In
+          case that a 3rd party driver doesn’t exist for LBaaS V2 installing LBaaS V1 instead of V2
+          is supported. <ul>
+            <li>For more information, see: <xref
+                href="https://wiki.openstack.org/wiki/Neutron/LBaaS" scope="external" format="html"
+                >https://wiki.openstack.org/wiki/Neutron/LBaaS</xref></li>
+          </ul>
+        </li>
+        <li>FWaaS (FireWall-as-a-Service) is a Neutron extension that introduces a firewall feature
+          set. The included reference implementation is using iptables to block traffic but 3rd
+          party Firewalls can be integrated with this extension into Helion OpenStack as well. <ul>
+            <li>For more information, see: <xref
+                href="https://wiki.openstack.org/wiki/Neutron/FWaaS" scope="external" format="html"
+                >https://wiki.openstack.org/wiki/Neutron/FWaaS</xref></li>
+          </ul>
+        </li>
+        <!-- removed per wiki
 <li>VPNaaS (Virtual-Private-Network-as-a-Service) is a Neutron extension that introduces a vpn feature set. It allows for encrypted traffic between two routers in (potentially) different datacenters hence supporting secure multi Availability Zone architectures for customers. 
 <ul>
 <li>For more information, see: <xref href="https://wiki.openstack.org/wiki/Neutron/VPNaaS" scope="external" format="html">https://wiki.openstack.org/wiki/Neutron/VPNaaS</xref></li>
 </ul>
 </li>
 -->
-</ul>
-<p><b>New Network Configuration Options</b></p>
-<ul>
-<li>Network interface bonding with multiple modes will allow you to set up a highly available and performant network infrastructure.</li>
-<li>Multi-network support will allow you to bridge multiple external physical networks to a Neutron network. This will enable you to dictate the path taken by the data in the physical network outside of your cloud deployment.</li>
-<li>Network separation (both physical and VLAN) will allow you to segregate traffic by type.  For example, traffic can be separated into management, tenant, external, and services neworks.</li>
-</ul>
-    <p><b>Monasca-based Monitoring</b> - Monasca is a multi-tenant, scalable, fault-tolerant, monitoring service. It uses a REST API for high-speed metrics processing and querying, and has a streaming alarm and notification engine. In the Helion OpenStack 2.0 release, the OpenStack monitoring standard, Monasca, is supported as the Helion OpenStack monitoring solution with the following exceptions (which are not implemented):</p>
-<ul>
-<li>Transform Engine</li>
-<li>Events Engine </li>
-<li>Anomaly and Prediction Engine</li>
-</ul>
-    <p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP Helion OpenStack.</p>
-<p><b>Centralized Logging</b> - Logging for the services below is enabled in the default configuration.  You will have the ability to disable per-service logging as needed.</p>
-<p>Logging is integrated for the following services: Nova, Glance, Swift, Neutron, Ceilometer, Monasca, Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p>
-<p><b>New Installer</b></p>
-<ul>
-<li>You supply the cloud configuration you want based on our <xref href="supportedconfigs.dita">Supported Configurations</xref> and the installer will set up your environment.</li>
-<li>Manage the different phases of your cloud deployment with ease.</li>
-</ul>
-<!--
+      </ul>
+      <p><b>New Network Configuration Options</b></p>
+      <ul>
+        <li>Network interface bonding with multiple modes will allow you to set up a highly
+          available and performant network infrastructure.</li>
+        <li>Multi-network support will allow you to bridge multiple external physical networks to a
+          Neutron network. This will enable you to dictate the path taken by the data in the
+          physical network outside of your cloud deployment.</li>
+        <li>Network separation (both physical and VLAN) will allow you to segregate traffic by type.
+          For example, traffic can be separated into management, tenant, external, and services
+          neworks.</li>
+      </ul>
+      <p><b>Monasca-based Monitoring</b> - Monasca is a multi-tenant, scalable, fault-tolerant,
+        monitoring service. It uses a REST API for high-speed metrics processing and querying, and
+        has a streaming alarm and notification engine. In the Helion OpenStack 2.0 release, the
+        OpenStack monitoring standard, Monasca, is supported as the Helion OpenStack monitoring
+        solution with the following exceptions (which are not implemented):</p>
+      <ul>
+        <li>Transform Engine</li>
+        <li>Events Engine </li>
+        <li>Anomaly and Prediction Engine</li>
+      </ul>
+      <p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer,
+        Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP
+        Helion OpenStack.</p>
+      <p><b>Centralized Logging</b> - Logging for the services below is enabled in the default
+        configuration. You will have the ability to disable per-service logging as needed.</p>
+      <p>Logging is integrated for the following services: Nova, Glance, Swift, Neutron, Ceilometer,
+        Monasca, Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p>
+      <p><b>New Installer</b></p>
+      <ul>
+        <li>You supply the cloud configuration you want based on our <xref
+            href="supportedconfigs.dita">Supported Configurations</xref> and the installer will set
+          up your environment.</li>
+        <li>Manage the different phases of your cloud deployment with ease.</li>
+      </ul>
+      <!--
 <p><b>Backup and Restore Capabilities for the Control Plane</b> - Allows you to backup and recover your Helion OpenStack</tm> environment with RPO=0.</p>
 -->
-</section>
+    </section>
     <section id="KnownIssues">
       <title>Known Issues in this Release</title>
       <p><b>HP Helion Development Platform</b></p>
@@ -76,30 +106,32 @@
     <p>The one-region-poc-with-vsa will be provided by the HLM team which impacts not only VSA but
       other services as well. This will be beyond be Beta0 timeframe.</p>
     <p> </p>-->
-<p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p>
-<p>Basic Monitoring is complete for Beta0 with the following limitations:</p>
-<ul>
-  <li>Access to Monasca is limited to the REST API and Command Line Client (CLI) only. GUI access
-          will be implemented in later releases. When using the CLI, the prefix for CLI commands is
-          "monasca". Use "monasca help" for details.</li>
-  <li>Vertica is not available in the install. You must choose the InfluxDB option instead.</li>
-  <li>InfluxDB is not configured behind a VIP. It must directly access one node in the cluster.</li>
-  <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
-</ul>
-<p><b>Ops Console</b></p>
-<ul>
-<li>OpsConsole is not enabled in this release.</li>
-</ul>
-<p><b>Centralized Logging Limitations</b></p>
-<p>Logging support is complete for Beta0 with the following limitations:</p>
-<ul>
-  <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
-  <li>Logging-monitor 'stop' playbook is not integrated.</li>
-</ul>
-<p><b>Neutron Feature Limitations</b></p>
-<ul>
-  <li>VPNaaS (Virtual-Private-Network-as-a-Service) is not enabled in this release.</li>
-</ul>
+      <p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p>
+      <p>Basic Monitoring is complete for Beta0 with the following limitations:</p>
+      <ul>
+        <li>Access to Monasca is limited to the REST API and Command Line Client (CLI) only. GUI
+          access will be implemented in later releases. When using the CLI, the prefix for CLI
+          commands is "monasca". Use "monasca help" for details.</li>
+        <li>Vertica is not available in the install. You must choose the InfluxDB option
+          instead.</li>
+        <li>InfluxDB is not configured behind a VIP. It must directly access one node in the
+          cluster.</li>
+        <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
+      </ul>
+      <p><b>Ops Console</b></p>
+      <ul>
+        <li>OpsConsole is not enabled in this release.</li>
+      </ul>
+      <p><b>Centralized Logging Limitations</b></p>
+      <p>Logging support is complete for Beta0 with the following limitations:</p>
+      <ul>
+        <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
+        <li>Logging-monitor 'stop' playbook is not integrated.</li>
+      </ul>
+      <p><b>Neutron Feature Limitations</b></p>
+      <ul>
+        <li>VPNaaS (Virtual-Private-Network-as-a-Service) is not enabled in this release.</li>
+      </ul>
       <!--<p><b>Networks</b></p>
       <p>
         <ul id="ul_rlg_dbg_ys">
@@ -117,7 +149,6 @@
     <p>[06/02/15]</p>
     <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
     <p> </p>-->
-      
       <!--  <p><b>Cinder</b></p><ul id="ul_vld_l1g_ys">
         <li>
           <p>Core cinder services are all being installed and configured via the installer. </p>
@@ -127,25 +158,31 @@
             steps to be defined later may be required to complete installation.</p>
         </li>
       </ul>-->
-<p><b>TLS Support</b></p>
-<ul>
-<li>The server certificate is currently hard coded. If an operator wishes to provide their own, they need to edit the defaults in the TLS playbook.</li>
-</ul>
-<p><b>Installation and NIC Numbering</b></p>
-<ul>
-<li>The assignment of eth interface numbers to your physical network interfaces may vary, and therefore your network interface naming (eth0, eth1, etc) may not be what you expect.</li>
-<li>If you find that your network interfaces are named out of order, you can configure your interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
-<li>You may want to disable the network interfaces that you are not planning to use.</li>
-</ul>
-<p><b>Network Interface Bonding changes needed during installation</b></p>
-<ul>
-<li>The bond mode in the network interface definition needs to be specified by name (active-backup) rather than by number (1).</li>
-<li>This workaround is included in the installation instructions.</li>
-</ul>
-<p><b>Horizon Installation Workaround Needed</b></p>
-<ul>
-<li>See workaround in the installation guide.</li>
-</ul>
-</section>
-</body>
+      <p><b>TLS Support</b></p>
+      <ul>
+        <li>The server certificate is currently hard coded. If an operator wishes to provide their
+          own, they need to edit the defaults in the TLS playbook.</li>
+      </ul>
+      <p><b>Installation and NIC Numbering</b></p>
+      <ul>
+        <li>The assignment of eth interface numbers to your physical network interfaces may vary,
+          and therefore your network interface naming (eth0, eth1, etc) may not be what you
+          expect.</li>
+        <li>If you find that your network interfaces are named out of order, you can configure your
+          interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev
+          rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
+        <li>You may want to disable the network interfaces that you are not planning to use.</li>
+      </ul>
+      <p><b>Network Interface Bonding changes needed during installation</b></p>
+      <ul>
+        <li>The bond mode in the network interface definition needs to be specified by name
+          (active-backup) rather than by number (1).</li>
+        <li>This workaround is included in the installation instructions.</li>
+      </ul>
+      <p><b>Horizon Installation Workaround Needed</b></p>
+      <ul>
+        <li>See workaround in the installation guide.</li>
+      </ul>
+    </section>
+  </body>
 </topic>
