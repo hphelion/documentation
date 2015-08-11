@@ -1,96 +1,42 @@
-#!/bin/bash -li
+#!/bin/bash 
 
-echo 'running documentation/jenkins/check.sh'
-#Get the most recent version of the master branch  
-env | grep GIT
-#git checkout $GIT_BRANCH
-#git pull
+echo "$GIT_BRANCH "
+echo -e "===Looking for typos and words that should be avoided============================="
 
+# Escape code
+esc=`echo -en "\033"`
 
-#Delete any tempfiles left over from the last run and write introduction
-rm checktmp > /dev/null 2>&1  
-rm permalinklist.txt  > /dev/null 2>&1  
-rm filepermalink.txt > /dev/null 2>&1  
-
-echo " "
-echo " "
-echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors... 
+# Set colors
+cc_red="${esc}[0;31m"
+cc_green="${esc}[0;32m"
+cc_yellow="${esc}[0;33m"
+cc_blue="${esc}[0;34m"
+cc_normal=`echo -en "${esc}[m\017"`
 
  
-echo " "
-echo "===??============================="
-for i in `find . -name "*.dita"`; 
-do 
 
-if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  -H \?\? )" ]];
-					then
-						echo $i
-						echo "1" > checktmp
-					fi
+
+for i in `find . -name "*.dita"`
+do
+	while IFS='' read -r line  || [[ -n "$line" ]]
+	do
+		test=`echo $line | sed 's|=.*||' | sed 's|%||g' `
+		help=`echo $line | sed 's|.*=||' `
+		if [[ -n $(cat $i |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g' | grep "$test") ]]; 
+		then
+		cat $i |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g' | grep "$test"
+			echo -e "${cc_blue}Found in file: $i on the $GIT_BRANCH (the issue is surrounded by ${cc_red}##${cc_blue}):${cc_normal}"
+			issue=`grep -n "$test" $i  | sed "s|\($test\)|${cc_red}##\1##${cc_normal}|" | sed 's|^\s||'`
+			echo -e "     ${cc_blue}Line number and text${cc_normal}: $issue"
+			echo -e "     ${cc_blue}Correction${cc_normal}:  $help"
+			echo -e " "
+			echo "1" > checktmp
+		fi
+	done < ./jenkins/badstrings.txt
 done
- 
-#Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
-IFS='%'
-
-
-#Search yml files for HTML codes
-cat ./jenkins/badYAMLstrings.txt |
-
-while read BAD
-do
-
-  #Do a recursive grep for all yml files for the badstring and assign result to RESULT
-     RESULT=`grep -r --include="*.yml" --exclude-dir=jenkins "${BAD}" ./`
-
-
-     #If RESULT is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
-     if [ -z "$RESULT" ]
-          then
-          EXIT=""
-     else
-          echo ""
-          echo "===$BAD============================="
-          echo "$RESULT"
-          echo "1" > checktmp
-     fi
-
-done  
-
-#Read badstrings and pipe into loop
-cat ./jenkins/badstrings.txt |
-while read BAD
-do
-
-     #Do a recursive grep on all dita files for the badstring and assign result to RESULT
-     RESULT=`grep -r --include="*.dita" --exclude-dir=jenkins "${BAD}" ./`
-	
-     #If RESULT is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
-     if [ -z "$RESULT" ]
-          then
-          EXIT=""
-     else
-          echo ""
-          echo "===$BAD============================="
-          echo "$RESULT"
-          echo "1" > checktmp
-     fi
-done  
-
-
-BADCHAR=`grep -r --include="*.dita" --color='auto'  -P -n "[\x80-\xFF]" ./ |grep -vF '\`'`
-	      #If BADCHAR is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
-     if [ -z "$BADCHAR" ]
-          then
-          EXIT=""
-     else
-          echo ""
-          echo "===These files contain non-UTF8 characters (format filename:linenumber: line with bad character================="
-          echo "$BADCHAR"
-          echo "1" > checktmp
-     fi
-
 #Read chcktemp and assign content to EXIT (indicating that at least one error was found)
 EXIT=`cat checktmp` > /dev/null 2>&1
+rm checktmp || true
 
 
 #Exit script with 1 if an error was found.  Otherwise exit with 0.
