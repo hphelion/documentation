@@ -51,9 +51,9 @@
 -->
 </section>
     <section id="KnownIssues"><title>Known Issues in this Release</title>
-      <p><b>Horizon Support</b></p>
+      <p><b>Horizon</b></p>
       <ul>
-        <li>Horizon is not supported in Beta 0.</li>
+        <li>See the workaround to install Horizon in the installation instructions.</li>
       </ul>
       <p><b>HP Helion Development
           Platform</b></p>
