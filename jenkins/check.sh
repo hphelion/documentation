@@ -22,7 +22,7 @@ do
 	do
 		test=`echo $line | sed 's|=.*||' | sed 's|%||g' `
 		help=`echo $line | sed 's|.*=||' `
-		if [[ -n $(cat $i | sed 's|<!--[^><]*-->||g' |grep "$test") ]]; 
+		if [[ -n $(cat $i |sed ':a;N;$!ba;s/\n/ /g' | sed 's|<!--|\n|g' | sed 's|<!--[^><]*-->||g' |grep "$test") ]]; 
 		then
 		
 			echo -e "${cc_blue}Found in file: $i on the $GIT_BRANCH (the issue is surrounded by ${cc_red}##${cc_blue}):${cc_normal}"
