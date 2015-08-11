@@ -127,7 +127,7 @@ Edit roles/HZN-WEB/tasks/install.yml and add the following after the 'install-pa
   sudo: yes
   command: "chown -R stack:stack {{ HORIZON_VENV_DIR }}/lib/python2.7/site-packages"</codeblock>
  
-the modified file should look as folows:
+the modified file should look as follows:
 <codeblock># Install pre-packaged Horizon venv from tarball
 - name: HZN-WEB | install | Install Horizon
   install_package:
