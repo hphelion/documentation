@@ -214,7 +214,7 @@ If you are updating to a release that includes new Orchestration (Heat) template
   </li>
 <li>Source the <codeph>kvm-custom-ips.json</codeph> file and run the update script by
           entering:<codeblock>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
-cd tripleo/helion-update/undercloud_update
+cd helion-update-1.1-to-1.1.1/tripleo/helion-update/undercloud_update
 ./update_uc.sh ~/helion-update-1.1-to-1.1.1/tripleo</codeblock></li>
 <li>Confirm that update was successful by examining the
             <codeph>/var/log/ansible/ansible.log</codeph>. This report should not list any
