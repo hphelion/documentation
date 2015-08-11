@@ -145,7 +145,7 @@ If the result is greater than 32, add the following line to <codeph>/etc/monasca
       </ul><p><b>Network Interface Bonding changes needed during installation</b></p><ul>
         <li>The bond mode in the network interface definition needs to be specified by name
           (active-backup) rather than by number (1).</li>
-        <li>This workaround is included in the installation instructions.</li>
+        <li>This workaround is included in the installation instructions.</li> 
       </ul>
       </section>
 </body>
