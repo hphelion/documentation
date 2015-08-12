@@ -23,6 +23,14 @@
     <p>Based on OpenStack® Object Sotrage, the HP Helion OpenStack® Object Storage service provides
       a highly available, resilient, and scalable storage pool for unstructured data. It is highly
       durable architecture with no single point of failure. </p>
+    <?oxy_insert_start author="sharmabi" timestamp="20150811T153152+0530"?>
+    <p>With the introdcution of the input model HP Helion OpenStack 2.0 Object Storage allows you to
+      specify the cloud configuration that you want to build. You must provide  the detailed
+      information about the desired cloud topology (structure of control plane, assignment of
+      services to nodes) and their services' configuration (e.g. Neutron plugins, etc) and
+      environment specific configuration (e.g. OS kernel settings). </p>
+    <p>HP Helion OpenStack 2.0 Object Storage allows you tp  monitor the Swift service.</p>
+    <?oxy_insert_end?>
     <p>HP Helion OpenStack 2.0 allows you to specify your cloud configuration, knows as input data
       model. Here, you need to provide the detailed information about the desired cloud topology
       (structure of control plane, assignment of services to nodes) and their services'
@@ -50,9 +58,9 @@
         follows:<?oxy_insert_end?><?oxy_insert_start author="sharmabi" timestamp="20150807T114719+0530" type="split"?></p><?oxy_insert_end?><ul
         id="ul_lhh_sg2_ys">
         <li>Different types or classes of disk drive </li>
-      </ul><p>     For example: You can use different drives to store various type of data. You can
-        use 7.5K RPM high-capacity drives for one type of data and fast SSD drives for   another
-        type of data.</p><p>
+      </ul><p> For example: You can use different drives to store various type of data. You can use
+        7.5K RPM high-capacity drives for one type of data and fast SSD drives for another type of
+        data.</p><p>
         <ul id="ul_azy_sg2_ys">
           <li>Different redundancy or availability needs</li>
         </ul>
@@ -80,19 +88,19 @@
         disk drives, as one storage policy receives many objects, the drives that are common to both
         policies must store more objects than drives that are only allocated to one storage policy.
         This can be appropriate for a situation where the "overlapped" disk drives are larger than
-        the non-overlapped drives</p><?oxy_insert_end?><p>
-        <?oxy_delete author="sharmabi" timestamp="20150807T123252+0530" content="The disk drives used by storage policies can overlap or be distinct. However, if you overlap (i.e., have disks in common between two storage policies) you are recommended to use the same set of disk drives for both policies. If there is not a complete overlap in disk drives, as one storage policy receives many objects, the drives that are common to both policies must store more objects than drives that are only allocated to one storage policy. This may be appropriate for a situation where the &quot;overlapped&quot; disk drives are larger than the non-overlapped drives. However, in general this situation is harder to balance then a simple topology"?></p></section>
+        the non-overlapped
+        drives</p><?oxy_insert_end?><p><?oxy_delete author="sharmabi" timestamp="20150807T123252+0530" content="The disk drives used by storage policies can overlap or be distinct. However, if you overlap (i.e., have disks in common between two storage policies) you are recommended to use the same set of disk drives for both policies. If there is not a complete overlap in disk drives, as one storage policy receives many objects, the drives that are common to both policies must store more objects than drives that are only allocated to one storage policy. This may be appropriate for a situation where the &quot;overlapped&quot; disk drives are larger than the non-overlapped drives. However, in general this situation is harder to balance then a simple topology"?></p></section>
     <?oxy_delete author="sharmabi" timestamp="20150807T123252+0530" content="&lt;p&gt; &lt;/p&gt;"?>
     <?oxy_insert_start author="sharmabi" timestamp="20150810T152840+0530"?>
     <section><b>Part Power</b><p>Partition power is used to distribute the data uniformly across
-        drives in a Swift nodes. It also defines the storage cluster capacity. Set the pat partition
-        power value based on the total amount of storage you expect your entire ring to use.</p>When
-      storing an object, the object storage system hashes the name. This hash results in a hit on a
-      partition (so a number of different object names will result in the same partition number).
-      Generally, the partition is mapped to available disk drives. With a replica count of 3, each
-      partition is mapped to three different disk drives. The hashing algorithm used hashes over a
-      fixed number of partitions. The partition-power attribute determines the number of partitions
-      you have. </section>
+        drives in a Swift nodes. It also defines the storage cluster capacity. You must set the pat
+        partition power value based on the total amount of storage you expect your entire ring to
+        use.</p>When storing an object, the object storage system hashes the name. This hash results
+      in a hit on a partition (so a number of different object names will result in the same
+      partition number). Generally, the partition is mapped to available disk drives. With a replica
+      count of 3, each partition is mapped to three different disk drives. The hashing algorithm
+      used hashes over a fixed number of partitions. The partition-power attribute determines the
+      number of partitions you have. </section>
     <section>Select a partition power for a given ring that is appropriate to the number of disk
       drives you allocate to the ring for the following reasons:<ul id="ul_hgp_1db_zs">
         <li>If you use a high partition power and have few disk drives, each disk drives will have
@@ -150,7 +158,7 @@
         system). This means that you can install your system with a small partition power
         appropriate to a small number of initial disk drives. Later when you have many disk drives,
         the new storage policy can have a higher value appropriate to the larger number of
-        drives.</p><p> However, while his technique allows you to continue to add storage capacity
+        drives.</p><p> However, while this technique allows you to continue to add storage capacity
         you should note that existing containers continue to use their original storage policy.
         Hence, the additional objects must be added to new containers to take advantage of the new
         storage policy.</p></section>
