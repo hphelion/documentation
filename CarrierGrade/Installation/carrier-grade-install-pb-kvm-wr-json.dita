@@ -23,8 +23,8 @@
             deploying the HLM VM.</p>
         
 <section id="sample-node-provisionjson-file">
-            <p>The following represents a sample <codeph>wr.json</codeph> file. Use values
-                appropriate for your environment.</p>
+    <p>The following represents a sample <codeph>wr.json</codeph> file.  The IP addresses are masked for security purposes. 
+        Use values appropriate for your environment.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
 <codeblock>
@@ -50,24 +50,24 @@
                         ],
                         "network": [
                             {
-                                "ip_start_address": "10.20.3.50",
-                                "ip_end_address": "10.20.3.99",
+                                "ip_start_address": "10.20.x.x",
+                                "ip_end_address": "10.20.x.x",
                                 "name": "management"
                             },
                             {
-                                "ip_start_address": "172.16.73.50",
-                                "ip_end_address": "172.16.73.99",
+                                "ip_start_address": "172.16.x.x",
+                                "ip_end_address": "172.16.x.x",
                                 "name": "blockstore"
                             },
                             {
-                                "ip_start_address": "10.20.4.50",
-                                "ip_end_address": "10.20.4.99",
+                                "ip_start_address": "10.20.x.x",
+                                "ip_end_address": "10.20.x.x",
                                 "name": "api"
                             }
                         ]
                     }
                 ],
-                "pxeboot_cidr": "10.20.2.0/24",
+                "pxeboot_cidr": "10.20.x.x/24",
                 "license_file_name": "license.lic"
             }
         }
