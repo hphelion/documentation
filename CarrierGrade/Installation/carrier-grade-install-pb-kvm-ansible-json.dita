@@ -21,6 +21,135 @@
     <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
                 KVM + ESX deployment</xref> requires several JSON files that will be used when
             deploying the HLM VM.</p>
+        <p>The <codeph>ansible.json</codeph> file contains the following fields:</p>
+    <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
+            <tgroup cols="2">
+                <colspec colnum="1" colname="col1"/>
+                <colspec colnum="2" colname="col2"/>
+                <thead>
+                    <row>
+                        <entry><b><u>Variable Name</u></b></entry>
+                        <entry><b><u>Description</u></b></entry>
+                    </row>
+                </thead>
+                <tbody>
+                <row>
+                        <entry>dns_domain_name</entry>
+                        <entry>This corresponds to the domain name i.e "helion.cg"</entry>
+                    </row>
+                    <row>
+                        <entry>ext_dns_ip</entry>
+                        <entry>Internet Address of the domain server ie. 10.10.10.25</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_dcm_ip</entry>
+                        <entry>
+                            <p>This corresponds to the management IP of VSC VM and is being set by
+                                referring in the bof.cfg file along with subnet. Ie 10.10.10.20</p>
+                            <p> </p>
+                            <p>//bof.cfg</p>
+                            <p>address {{ global.ansible_vars.vsc_dcm_ip
+                                }}/{{global.ansible_vars.vsc_dcm_ip_subnet}}</p>
+                            <p> _vars.vsc_dcm_ip_subnet}}</p>
+                            <p> </p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>vsc_dcm_ip_ha</entry>
+                        <entry>
+                            <p>This corresponds to the management IP of <b>HA (High
+                                    Availability)</b> VSC VM and is being set by referring in the
+                                bof.cfg file along with subnet. Ie 10.10.10.20</p>
+                            <p> </p>
+                            <p>//bof.cfg</p>
+                            <p>address {{ global.ansible_vars.vsc_dcm_ip
+                                }}/{{global.ansible_vars.vsc_dcm_ip_subnet}}</p>
+                            <p> _vars.vsc_dcm_ip_subnet}}</p>
+                            <p> </p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>vsc_dcm_ip_subnet</entry>
+                        <entry>Subnet associated with the management IP ie /24</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_tul_cidr</entry>
+                        <entry>This corresponds to Data management IP and should be mentioned with
+                            subnet ie 192.168.200.20/24</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_tul_cidr_ha</entry>
+                        <entry>This corresponds to <b>HA (High Availability) </b>Data management IP
+                            and should be mentioned with subnet ie 192.168.200.20/24</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_user_name</entry>
+                        <entry>User name purposed for login to the VSC VM. Ie “admin”</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_user_pass</entry>
+                        <entry>Password purposed for login to the VSC VM. Ie “admin”</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_xmpp_name</entry>
+                        <entry>Corresponds to the xmpp server ie vsc:password@vsd.helion.cg</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_xmpp_name_ha</entry>
+                        <entry>Corresponds to the <b>HA (High Availability)</b> xmpp server ie
+                            vsc:password@vsd.helion.cg</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_route_mgmt_cidr</entry>
+                        <entry>
+                            <p>This is json list and all the static routes (with /subnet) for
+                                subnets reachable through the management IP ie</p>
+                            <p> vsc_route_mgmt_cidr": [</p>
+                            <p> "10.20.20.0/24", </p>
+                            <p> "10.1.33.0/24" </p>
+                            <p> ]</p>
+                            <p>Here first address corresponds to DNS and next to reach the CLM
+                                Network.</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>vsc_route_mgmt_gw</entry>
+                        <entry>
+                            <p>This is Gateway IP used while setting the static routes after
+                                next-hop ie</p>
+                            <p> static-route vsc_route_mgmt_cidr[0] next-hop vsc_route_mgmt_gw </p>
+                            <p> </p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>vsc_image_name</entry>
+                        <entry>Name of the Image to be used for the deployment of the VSC
+                            VM.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_host_name</entry>
+                        <entry>System name of the VSC VM used in the vsc configuration.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_host_name_ha</entry>
+                        <entry>System name of the <b>HA (High Availability)</b> VSC VM used in the
+                            vsc configuration.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_ha_enabled</entry>
+                        <entry>Flag to set the High Availability functionality for VSC. By default
+                            it is set as 1 and can be set to 0 if High Availability functionality is
+                            not desired.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_bgp_required</entry>
+                        <entry>Flag to set if the BGP configuration setup is required for the
+                            Federation of VSC Nodes. By default it is set as 1 and can be set to 0
+                            if BGP configuration setup is not desired.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
 <section id="sample-node-provisionjson-file">
             <p>The following represents a sample <codeph>ansible.json</codeph> file. Use values
                 appropriate for your environment.</p>
