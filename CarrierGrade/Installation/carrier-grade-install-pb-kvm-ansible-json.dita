@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample ansible.json File for
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic4797">
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample ansible.json File for
         Installing the KVM + ESX Topology</title>
-<prolog>
-    <metadata>
-        <othermeta name="layout" content="default"/>
-        <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
-        <othermeta name="role" content="Storage Administrator"/>
-        <othermeta name="role" content="Storage Architect"/>
-        <othermeta name="role" content="Michael B"/>
-        <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
-    </metadata>
-</prolog>
-<body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
- <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
-    <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
-                KVM + ESX deployment</xref> requires several JSON files that will be used when
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+        </metadata>
+    </prolog>
+    <body>
+        <p>
+            <!--UNDER REVISION-->
+            <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
+            <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
+        <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing
+                the KVM + ESX deployment</xref> requires several JSON files that will be used when
             deploying the HLM VM.</p>
         <p>The <codeph>ansible.json</codeph> file contains the following fields:</p>
-    <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
+        <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
             <tgroup cols="2">
                 <colspec colnum="1" colname="col1"/>
                 <colspec colnum="2" colname="col2"/>
@@ -33,7 +34,7 @@
                     </row>
                 </thead>
                 <tbody>
-                <row>
+                    <row>
                         <entry>dns_domain_name</entry>
                         <entry>The DNS domain name, for example: <codeph>helion.cg</codeph>.</entry>
                     </row>
@@ -45,10 +46,11 @@
                     <row>
                         <entry>vsc_dcm_ip</entry>
                         <entry><p>The management IP address of VSC VM, for example:
-                                    <codeph>10.10.10.20</codeph>.  This address is in the
+                                    <codeph>10.10.10.20</codeph>. This address is in the
                                     <codeph>bof.cfg</codeph> file. </p>
-                            <p>Open the <codeph>bof.cfg</codeph> file and look for the following:</p>
-                                <codeblock>address {{ global.ansible_vars.vsc_dcm_ip }}/{{global.ansible_vars.vsc_dcm_ip_subnet}}
+                            <p>Open the <codeph>bof.cfg</codeph> file and look for the
+                                following:</p>
+                            <codeblock>address {{ global.ansible_vars.vsc_dcm_ip }}/{{global.ansible_vars.vsc_dcm_ip_subnet}}
 _vars.vsc_dcm_ip_subnet}}
                                 </codeblock></entry>
                     </row>
@@ -72,13 +74,13 @@ _vars.vsc_dcm_ip_subnet}}
                     </row>
                     <row>
                         <entry>vsc_tul_cidr</entry>
-                        <entry>The data management IP address  and subnet, for example:
+                        <entry>The data management IP address and subnet, for example:
                                 <codeph>192.168.200.20/24</codeph>.</entry>
                     </row>
                     <row>
                         <entry>vsc_tul_cidr_ha</entry>
-                        <entry>The high availability (HA)  data management IP address and subnet,
-                            for example: <codeph>192.168.200.20/24</codeph>.</entry>
+                        <entry>The high availability (HA) data management IP address and subnet, for
+                            example: <codeph>192.168.200.20/24</codeph>.</entry>
                     </row>
                     <row>
                         <entry>vsc_user_name</entry>
@@ -98,7 +100,7 @@ _vars.vsc_dcm_ip_subnet}}
                     <row>
                         <entry>vsc_xmpp_name_ha</entry>
                         <entry>The user name for the high availability (HA) XMPP server, for
-                            example:  <codeph>vsc:password@vsd.helion.cg</codeph>.</entry>
+                            example: <codeph>vsc:password@vsd.helion.cg</codeph>.</entry>
                     </row>
                     <row>
                         <entry>vsc_route_mgmt_cidr</entry>
@@ -141,77 +143,74 @@ _vars.vsc_dcm_ip_subnet}}
                     <row>
                         <entry>vsc_bgp_required</entry>
                         <entry><p>A flag to set if the BGP configuration setup is required for the
-                            Federation of VSC Nodes.</p> 
-                            <p>By default this value is set to <codeph>1</codeph> 1. Set to
-                            0 if BGP configuration setup is not required.</p></entry>
+                                Federation of VSC Nodes.</p>
+                            <p>By default this value is set to <codeph>1</codeph> 1. Set to 0 if BGP
+                                configuration setup is not required.</p></entry>
                     </row>
                 </tbody>
             </tgroup>
         </table>
-<section id="sample-node-provisionjson-file">
+        <section id="sample-node-provisionjson-file">
             <p>The following represents a sample <codeph>ansible.json</codeph> file. Use values
                 appropriate for your environment.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
-<codeblock/>
-            <p>{</p>
-            <p>            "product": {</p>
-            <p>        "version": 1</p>
-            <p>              },</p>
-            <p> </p>
-            <p>            "property-groups": [</p>
-            <p>        {</p>
-            <p>            "name": "ansible-vars",</p>
-            <p>            "properties": {</p>
-            <p>                "nuagenetlib_tar_name":
-                "nuage-openstack-nuagenetlib-juno.tar.gz",</p>
-            <p>                "nuageneutron_tar_name":
-                "nuage-openstack-neutron-juno-plugin.tar.gz",</p>
-            <p>                "dns_domain_name": "dcn-one.helion.cg",</p>
-            <p>                "ext_dns_ip": "10.1.2.44",</p>
-            <p>                "dns_address": "10.1.2.44",</p>
-            <p>                "vsc_dcm_ip": "10.20.5.31",</p>
-            <p>                "vsc_dcm_ip_ha": "10.20.5.32",</p>
-            <p>                "vsc_dcm_ip_subnet": "24",</p>
-            <p>                "vsc_tul_cidr": "10.20.6.31/24",</p>
-            <p>                "vsc_tul_cidr_ha": "10.20.6.32/24",</p>
-            <p>                "vsc_tul_ip": "10.20.6.31",</p>
-            <p>                "vsc_tul_ip_ha": "10.20.6.32",</p>
-            <p>                "vsc_user_name": "admin",</p>
-            <p>                "vsc_user_pass": "admin",</p>
-            <p>                "vsc_xmpp_name":
-                "vscha1.password@vsd1.dcn-two.helion.cg",</p>
-            <p>                "vsc_xmpp_name_ha":
-                "vscha2.password@vsd1.dcn-two.helion.cg",</p>
-            <p>                "vsc_route_mgmt_cidr": [</p>
-            <p>                    "10.1.2.0/24",</p>
-            <p>                    "10.20.3.0/24"</p>
-            <p>                ],</p>
-            <p>                "vsc_route_mgmt_gw": "10.20.5.1",</p>
-            <p>                "vsd_address": "10.20.5.21",</p>
-            <p>                "vsd_name": "vsd1",</p>
-            <p>                "vsc_image_name": "vsc_singledisk",</p>
-            <p>                "vsc_host_name": "vscha1",</p>
-            <p>                "vsc_host_name_ha": "vscha2",</p>
-            <p>                "vsc_ha_enabled": 1,</p>
-            <p>                "vsc_bgp_required": 1,</p>
-            <p>                "vsd_image_name": "VSD-3.0.0_HP_r3.0_36",</p>
-            <p>                "vsd_gateway": "10.20.5.1",</p>
-            <p>                "vsd_netmask": "255.255.255.0",</p>
-            <p>                "upstream_ntp_servers": [</p>
-            <p>                    "10.1.2.44",</p>
-            <p>                    "16.110.135.123"</p>
-            <p>                ],</p>
-            <p>               "compute_virt_type": "kvm",</p>
-            <p>                "ssl_cert_file": "ca.crt",</p>
-            <p>                "ssl_key_file": "cakey.pem",</p>
-            <p>                "ssl_passphrase": "cghelion"</p>
-            <p>            }</p>
-            <p>        }</p>
-            <p>              ]</p>
-            <p>}</p>
-            <codeblock>               
+<codeblock>
+    {
+        "product": {
+            "version": 1
+           },
+    
+        "property-groups": [
+            {
+                "name": "ansible-vars",
+                "properties": {
+                    "nuagenetlib_tar_name": "nuage-openstack-nuagenetlib-juno.tar.gz",
+                    "nuageneutron_tar_name": "nuage-openstack-neutron-juno-plugin.tar.gz",
+                    "dns_domain_name": "dcn-two.helion.cg",
+                    "ext_dns_ip": "10.1.x.x",
+                    "dns_address": "10.1.x.x",
+                    "vsc_dcm_ip": "10.20.x.x",
+                    "vsc_dcm_ip_ha": "10.20.x.x",
+                    "vsc_dcm_ip_subnet": "24",
+                    "vsc_tul_cidr": "10.10.x.x/24",
+                    "vsc_tul_cidr_ha": "10.10.x.x/24",
+                    "vsc_tul_ip": "10.10.x.x",
+                    "vsc_tul_ip_ha": "10.10.x.x",
+                    "vsc_user_name": "admin",
+                    "vsc_user_pass": "admin",
+                    "vsc_xmpp_name": "vscha1:password@vsd1.dcn-two.helion.cg",
+                "vsc_xmpp_name_ha": "vscha2:password@vsd1.dcn-two.helion.cg",
+                    "vsc_route_mgmt_cidr": [
+                        "10.1.x.x/24",
+                        "10.10.x.x/24"
+                        ],
+                    "vsc_route_mgmt_gw": "10.10.x.x",
+                    "vsd_address": "10.10.x.x",
+                    "vsd_name": "vsd1",
+                    "vsc_image_name": "vsc_singledisk",
+                    "vsc_host_name": "vscha1",
+                "vsc_host_name_ha": "vscha2",
+                    "vsc_ha_enabled": 1,
+                "vsc_bgp_required": 1,
+                    "vsd_image_name": "VSD-3.0.0_HP_r3.0_36",
+                    "vsd_gateway": "10.10.x.x",
+                    "vsd_netmask": "255.255.255.0",
+                    "upstream_ntp_servers": [
+                        "10.1.x.x",
+                        "16.110.x.x
+                        ],
+                    "compute_virt_type": "kvm",
+                    "ssl_cert_file": "ca.crt",
+                    "ssl_key_file": "cakey.pem",
+                    "ssl_passphrase": "cghelion"
+                }
+            }
+        ]
+    }
 </codeblock>
+           
+        
         </section>
-</body>
+    </body>
 </topic>
