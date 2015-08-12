@@ -186,6 +186,12 @@
           (active-backup) rather than by number (1).</li>
         <li>This workaround is included in the installation instructions.</li>
       </ul>
+      <p><b>Manual Restarting of Network Service May Be Needed</b></p>
+      <p>When manually restarting the networking service on a node using OVS, one of the following
+        sequences must be used to restart Linux networking and OVS networking at the same time:</p>
+      <codeblock>service networking restart ; service openvswitch-switch restart</codeblock> or <codeblock>systemctl restart networking ; systemctl restart openvswitch-switch</codeblock>
+      <p>Failure to follow these sequences as shown may leave OVS-managed objects (bridges)
+        undefined or not connected to network ports.</p>
       <p><b>Service Endpoints Use Hostnames</b></p>
       <ul>
         <li>Each of the service endpoints returned when querying Keystone use hostnames rather than
