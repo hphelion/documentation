@@ -447,10 +447,8 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                 
 
 <section id="next-step"> <title>Next Step</title>
-<p>
-                                <xref
-                                        href="carrier-grade-install-non-kvm-GA.dita#topic10581"
-                                        >Deploying the Non-KVM Region</xref></p>
+<p>Install the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">HP Helion Lifecycle
+                                        Management application onto a virtual machine</xref>.  </p>
 
 </section>
 </body>

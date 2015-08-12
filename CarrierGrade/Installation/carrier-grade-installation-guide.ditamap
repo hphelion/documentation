@@ -23,7 +23,8 @@
             <topicref href="carrier-grade-install-NTP.dita" toc="no"/>
         </topicref>
         <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1: Deploying the Non-KVM Region">
-            <topicref href="carrier-grade-install-non-kvm-GA.dita">
+            <topicref href="carrier-grade-install-hlm-vm.dita"/>
+            <topicref href="carrier-grade-install-kvm.dita">
                 <topicref href="carrier-grade-install-pb-kvm-only-json.dita"/>
             </topicref>
             <topicref href="carrier-grade-install-kvm-esx-GA.dita">

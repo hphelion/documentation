@@ -99,6 +99,12 @@ echo 1 > /proc/sys/net/ipv4/ip_forward </codeblock></li>
       </ol>
     </section>
   
+  <section id="next-step"> <title>Next Step</title>
+    <p> Perform some required <xref href="carrier-grade-install-post-install.dita#topic1107"
+          >post-installation tasks</xref>. </p>
+  </section>
+  
+  
   <section><!-- ===================== horizontal rule ===================== --></section>
 </body>
 </topic>

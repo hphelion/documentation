@@ -14,12 +14,13 @@
   </metadata>
 </prolog>
 <body>
-  <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a
-      virtual machine for the Helion Lifecycle Management (HLM), deploying the HP Helion OpenStack
-      cloud, and installing DCN components. You must install the VMware ESX <tm tmtype="reg"
-      />compute proxy.</p>
-    <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
-      required installation processes.</p>
+  <p>After the Helion Lifecycle Management (HLM) is installed, the next task in installing the <xref
+        href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM + ESX
+        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HP Distributed
+      Cloud Networking (DCN) components. You must install the VMware ESX <tm tmtype="reg"/>compute
+      proxy.</p>
+  <p><b>Note:</b> If you are installing the KVM deployment, see <xref
+        href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref>.</p> 
 <section id="prereqs">
   <p>Before starting the HP Helion OpenStack Carrier Grade installation, the VMware vSphere application and 
     HP Distributed Cloud Networking components must be fully installed and functioning:</p>
@@ -33,71 +34,8 @@
 </ul>  
   
 </section>
-<section id="prepare"> <title>Prepare the system for deployment</title>
-<p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM host):</p>
-<ol>
-        <li>Log into the HLM host using the default credentials</li>
-
-  <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
-          environment. For information on each variable, refer to the comments in the file with each
-          variable. <p>The <codeph>group_vars/all</codeph> file should appear similar to the
-            following for a KVM + ESX
-          deployment:</p><codeblock>
-    ############################################# Variables for HLM  #################################################################
-    #These variables are relevant in both All Virtual and BareMetal scenarios.
-    
-    #Set this to 1 if you will not deploy a dcn cloud via this HLM node and will deploy only ovs cloud
-    ovs_cloud_only:  0
-    
-    #Set this to 'bm' if cloud is being deployed over baremetal.
-    #Set this to 'av' if the cloud is all virtual
-    cloud_type: 'bm'
-    
-    #These are hlm related variables that must be changed according to your Baremetal Env
-    hlm_login_id:       root
-    hlm_password:       cghelion
-    
-    #The following variables are for CLM network IP details for HLM
-    hlm_clmstaticip:    10.20.3.100
-    hlm_clmnetmask:     255.255.255.0
-    hlm_clmgateway:     10.20.3.1
-    
-    #The variables starting with cobbler_ are inputs that are usually given to initcobbler.sh. Set accordingly.
-    cobbler_pxestartip: 10.20.1.100
-    cobbler_pxeendip:   10.20.1.200
-    cobbler_pxestaticip: 10.20.1.51
-    cobbler_pxenetmask: 255.255.255.0
-    
-    #Set the location of your images that will be used by libvirt
-    imagelocation: /var/lib/libvirt/images
-    
-    #Set the location of your infra-ansible-playbooks
-    ansible_dir: ~/infra-ansible-playbooks</codeblock></li>
-  <li id="hosts">Check the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to enter the IP
-          address of the <codeph>vibr0</codeph> interface in the <codeph>hlm_kvm_host</codeph>
-          field, as shown in the following example. </li>
-</ol>
-<codeblock>  [hlm_kvm_host]
-  192.168.122.1 </codeblock>
-</section>
-<section id="deploy-the-hlm-and-vsd-vm">
-      <title>Deploy the HLM Virtual Machine</title>
-      <p>Use the following steps on the HLM host to deploy the HLM VM on the HLM Host using Ansible
-        playbooks.</p>
-      <ol>
-        <li>Execute the following command:<codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock><!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the HLM host, decrypt, and extract the files.</li><li>Execute the <codeph>updatepackages</codeph> command.</li><li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul>-->
-          <image href="../../media/CGH-ansible-playbook-run.png" id="image_bfp_pjm_vs">
-            <alt>Sample Ansible Playbook run output</alt>
-          </image></li>
-        <li>Locate the IP address for the HLM VM in the
-            <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
-            <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the HLM
-          VM during the HP Helion OpenStack Carrier Grade installation process.</li> 
-      </ol>
-
-</section>
   
-<section id="vsd"> <title>Applying the VSD license</title>
+<section id="vsd"> <title>Apply the VSD license</title>
   <p>During the <xref href="#topic10581/deploy-the-hlm-and-vsd-vm" format="dita"/> process, the
         Ansible playbook run creates a virtual machine to host the VSD node of DCN. You need to and
         apply the required license to use VSD.</p>
@@ -133,9 +71,8 @@ Change to
             more to sync with NTP and to get all the other VSD services up.</p></li>
 </ol>
 </section>-->
-<section id="launch-vsd-dashboard">
-      <title>Apply the license</title>
-      <p>On the HLM host:</p>
+
+      <p>To apply the VSD license, on the HLM host:</p>
       <ol>
         <li>Using a browser, browse to the link in the confirmation email you received when you
           purchased DCN and obtain the license.</li>
@@ -154,7 +91,7 @@ VSD Server : auto
 
       </ol>
       <!--Follow the instructions in the pdf to get the license - <b>Get confirmation from Nayana</b><p><xref href="https://wiki.hpcloud.net/display/HCG/HP+Helion+OpenStack+Carrier+Grade+%28NFVi%29+Home#HPHelionOpenStackCarrierGrade%28NFVi%29Home-HPHelionOpenStackCarrierGradeDCN/Nuage" format="html" scope="external">https://wiki.hpcloud.net/display/HCG/HP+Helion+OpenStack+Carrier+Grade+%28NFVi%29+Home#HPHelionOpenStackCarrierGrade%28NFVi%29Home-HPHelionOpenStackCarrierGradeDCN/Nuage</xref></p>-->
-    </section>
+    
 <section id="create-user-for-plugin-login"> <title>Create User for Plugin Login</title>
 <p>You must create a user and add it to CMS Group.</p>
 <ol>
