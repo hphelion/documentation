@@ -343,9 +343,30 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></p>
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>Once cloud
             deployment is successfully complete, there will be 3 controller nodes in the non-KVM
             region.</p></li>
-
       </ol>
     </section>
+    <section>        
+      <title>  Apply the Horizon interface patch:</title> 
+      <ol><li>Locate the <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file you downloaded to the HLM host and
+        extract the files.</li>
+        <li>From the HLM VM, SSH into any controller node using the default credentials: <p>
+          <codeblock>User Name: cghelion
+            Password: cghelion</codeblock>
+        </p></li>
+        <li>Execute the following command to switch to the root
+          user:<codeblock>sudo su -</codeblock></li> 
+        <li>Copy the <codeph>user.py</codeph> file to first controller node in the
+          <codeph>/opt/stack/venvs/horizon/lib/python2.7/site-packages/openstack_auth/</codeph>
+          directory.</li>
+        <li>Use the following command to restart the Horizon service on that node:
+          <codeblock>sudo service apache2 restart</codeblock></li>
+        <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
+        <li>Log into each of the other two controller nodes in the non-KVM region and repeat
+          above steps to copy the <codeph>user.py</codeph> to each controller .</li> 
+      </ol>
+    </section>
+    
+    
     <section id="next-step">
       <title>Next Step</title>
       <p>

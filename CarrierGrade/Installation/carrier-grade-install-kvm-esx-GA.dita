@@ -304,8 +304,9 @@ Password: cghelion</codeblock>
       <p><b>Note:</b> To see a sample <codeph>definition.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-def-json.dita#topic4797">Sample definition.json File
           for Installing the KVM + ESX Topology</xref>.<ol id="ol_zzr_khl_zs">
-          <li>Set the number of compute systems to 1.
-            <codeblock>"count": 1, //number of computes in the resource pool</codeblock></li>
+          <li>Set the number of compute systems to 1. By default, a single, non-HA VRS-G
+            installation.<codeblock>"file": ".hos/ccp-vrsg.json",
+"count": 1</codeblock></li>
         </ol></p></section>
   
   <section id="configure-env-json"><title>Configure the environment.json file</title>

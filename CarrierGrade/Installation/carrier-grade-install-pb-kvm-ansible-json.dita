@@ -35,117 +35,115 @@
                 <tbody>
                 <row>
                         <entry>dns_domain_name</entry>
-                        <entry>This corresponds to the domain name i.e "helion.cg"</entry>
+                        <entry>The DNS domain name, for example: <codeph>helion.cg</codeph>.</entry>
                     </row>
                     <row>
                         <entry>ext_dns_ip</entry>
-                        <entry>Internet Address of the domain server ie. 10.10.10.25</entry>
+                        <entry>The IP address of the domain server, for example:
+                                <codeph>10.10.10.25</codeph>. </entry>
                     </row>
                     <row>
                         <entry>vsc_dcm_ip</entry>
-                        <entry>
-                            <p>This corresponds to the management IP of VSC VM and is being set by
-                                referring in the bof.cfg file along with subnet. Ie 10.10.10.20</p>
-                            <p> </p>
-                            <p>//bof.cfg</p>
-                            <p>address {{ global.ansible_vars.vsc_dcm_ip
-                                }}/{{global.ansible_vars.vsc_dcm_ip_subnet}}</p>
-                            <p> _vars.vsc_dcm_ip_subnet}}</p>
-                            <p> </p>
-                        </entry>
+                        <entry><p>The management IP address of VSC VM, for example:
+                                    <codeph>10.10.10.20</codeph>.  This address is in the
+                                    <codeph>bof.cfg</codeph> file. </p>
+                            <p>Open the <codeph>bof.cfg</codeph> file and look for the following:</p>
+                                <codeblock>address {{ global.ansible_vars.vsc_dcm_ip }}/{{global.ansible_vars.vsc_dcm_ip_subnet}}
+_vars.vsc_dcm_ip_subnet}}
+                                </codeblock></entry>
                     </row>
                     <row>
                         <entry>vsc_dcm_ip_ha</entry>
                         <entry>
-                            <p>This corresponds to the management IP of <b>HA (High
-                                    Availability)</b> VSC VM and is being set by referring in the
-                                bof.cfg file along with subnet. Ie 10.10.10.20</p>
-                            <p> </p>
-                            <p>//bof.cfg</p>
-                            <p>address {{ global.ansible_vars.vsc_dcm_ip
-                                }}/{{global.ansible_vars.vsc_dcm_ip_subnet}}</p>
-                            <p> _vars.vsc_dcm_ip_subnet}}</p>
-                            <p> </p>
+                            <p>The management IP of <b>HA (High Availability)</b> VSC VM, for
+                                example: <codeph>10.10.10.20</codeph>. This address is in the
+                                    <codeph>bof.cfg</codeph> file. </p>
+                            <p>Open the <codeph>bof.cfg</codeph> file and look for the
+                                following:</p>
+                            <codeblock>address {{ global.ansible_vars.vsc_dcm_ip }}/{{global.ansible_vars.vsc_dcm_ip_subnet}}
+_vars.vsc_dcm_ip_subnet}}
+                            </codeblock>
                         </entry>
                     </row>
                     <row>
                         <entry>vsc_dcm_ip_subnet</entry>
-                        <entry>Subnet associated with the management IP ie /24</entry>
+                        <entry>The subnet associated with the management, for example:
+                                <codeph>/24</codeph>.</entry>
                     </row>
                     <row>
                         <entry>vsc_tul_cidr</entry>
-                        <entry>This corresponds to Data management IP and should be mentioned with
-                            subnet ie 192.168.200.20/24</entry>
+                        <entry>The data management IP address  and subnet, for example:
+                                <codeph>192.168.200.20/24</codeph>.</entry>
                     </row>
                     <row>
                         <entry>vsc_tul_cidr_ha</entry>
-                        <entry>This corresponds to <b>HA (High Availability) </b>Data management IP
-                            and should be mentioned with subnet ie 192.168.200.20/24</entry>
+                        <entry>The high availability (HA)  data management IP address and subnet,
+                            for example: <codeph>192.168.200.20/24</codeph>.</entry>
                     </row>
                     <row>
                         <entry>vsc_user_name</entry>
-                        <entry>User name purposed for login to the VSC VM. Ie “admin”</entry>
+                        <entry>The VSC VM user name to create; for example:
+                            <codeph>admin</codeph>.</entry>
                     </row>
                     <row>
                         <entry>vsc_user_pass</entry>
-                        <entry>Password purposed for login to the VSC VM. Ie “admin”</entry>
+                        <entry>The VSC VM password to assign to the user name, for example:
+                                <codeph>admin</codeph>.</entry>
                     </row>
                     <row>
                         <entry>vsc_xmpp_name</entry>
-                        <entry>Corresponds to the xmpp server ie vsc:password@vsd.helion.cg</entry>
+                        <entry>The user name for the XMPP server, for example:
+                                <codeph>vsc:password@vsd.helion.cg</codeph>.</entry>
                     </row>
                     <row>
                         <entry>vsc_xmpp_name_ha</entry>
-                        <entry>Corresponds to the <b>HA (High Availability)</b> xmpp server ie
-                            vsc:password@vsd.helion.cg</entry>
+                        <entry>The user name for the high availability (HA) XMPP server, for
+                            example:  <codeph>vsc:password@vsd.helion.cg</codeph>.</entry>
                     </row>
                     <row>
                         <entry>vsc_route_mgmt_cidr</entry>
                         <entry>
-                            <p>This is json list and all the static routes (with /subnet) for
-                                subnets reachable through the management IP ie</p>
-                            <p> vsc_route_mgmt_cidr": [</p>
-                            <p> "10.20.20.0/24", </p>
-                            <p> "10.1.33.0/24" </p>
-                            <p> ]</p>
-                            <p>Here first address corresponds to DNS and next to reach the CLM
-                                Network.</p>
+                            <p>The static routes (with /subnet) for subnets reachable through the
+                                management IP ie</p>
+                            <codeblock> vsc_route_mgmt_cidr": ["10.20.20.0/24", "10.1.33.0/24" ]</codeblock>
+                            <p>The first address corresponds to the DNS server and the second
+                                corresponds to the CLM Network.</p>
                         </entry>
                     </row>
                     <row>
                         <entry>vsc_route_mgmt_gw</entry>
                         <entry>
-                            <p>This is Gateway IP used while setting the static routes after
-                                next-hop ie</p>
-                            <p> static-route vsc_route_mgmt_cidr[0] next-hop vsc_route_mgmt_gw </p>
-                            <p> </p>
+                            <p>The Gateway IP address used while setting the static routes after
+                                next-hop, for example:</p>
+                            <codeblock> static-route vsc_route_mgmt_cidr[0] next-hop vsc_route_mgmt_gw </codeblock>
                         </entry>
                     </row>
                     <row>
                         <entry>vsc_image_name</entry>
-                        <entry>Name of the Image to be used for the deployment of the VSC
+                        <entry>The name of the Image to be used for the deployment of the VSC
                             VM.</entry>
                     </row>
                     <row>
                         <entry>vsc_host_name</entry>
-                        <entry>System name of the VSC VM used in the vsc configuration.</entry>
+                        <entry>The system name of the VSC VM used in the VCS configuration.</entry>
                     </row>
                     <row>
                         <entry>vsc_host_name_ha</entry>
-                        <entry>System name of the <b>HA (High Availability)</b> VSC VM used in the
-                            vsc configuration.</entry>
+                        <entry>The system name of the high availability (HA) VSC VM used in the VSC
+                            configuration.</entry>
                     </row>
                     <row>
                         <entry>vsc_ha_enabled</entry>
-                        <entry>Flag to set the High Availability functionality for VSC. By default
-                            it is set as 1 and can be set to 0 if High Availability functionality is
-                            not desired.</entry>
+                        <entry>A flag to set the high availability (HA) functionality for VSC.
+                                <p>Use 1 for HA and 0 for non-HA.</p>By default this value is set to
+                                <codeph>1</codeph>.</entry>
                     </row>
                     <row>
                         <entry>vsc_bgp_required</entry>
-                        <entry>Flag to set if the BGP configuration setup is required for the
-                            Federation of VSC Nodes. By default it is set as 1 and can be set to 0
-                            if BGP configuration setup is not desired.</entry>
+                        <entry><p>A flag to set if the BGP configuration setup is required for the
+                            Federation of VSC Nodes.</p> 
+                            <p>By default this value is set to <codeph>1</codeph> 1. Set to
+                            0 if BGP configuration setup is not required.</p></entry>
                     </row>
                 </tbody>
             </tgroup>
