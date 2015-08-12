@@ -72,7 +72,7 @@
       <li>TLS only on external API, using customer supplied certificate</li>
       <li>VLAN IDs and IP addressing provided by customer</li>
     </ul>
-    <p><b>Storage</b></p>
+    <p><b>Storage</b> </p>
     <ul id="ul_e4q_myf_ys">
       <li> All servers assume single OS disc protected by a RAID controller (to be set up  before OS
           deploy) </li>
