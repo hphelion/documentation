@@ -51,7 +51,7 @@
         </topichead>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita" navtitle="Deploying the KVM Region"
             locktitle="yes">
-            <topicref href="carrier-grade-install-kvm-network-interface.dita"/>
+            <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
         </topicref>
         <topicref href="../AdminGuideNew/carrier-grade-install-post-install.dita" toc="yes"
             navtitle="Post-Installation Tasks" locktitle="yes"/>
