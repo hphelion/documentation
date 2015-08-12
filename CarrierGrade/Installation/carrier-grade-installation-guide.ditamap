@@ -33,7 +33,8 @@
             <topicref href="carrier-grade-install-kvm.dita" navtitle="Installing the KVM Deployment"
                 locktitle="yes">
                 <topicref href="carrier-grade-install-pb-kvm-only-json.dita"
-                    navtitle="Sample JSON File for Installing the KVM Deployment" locktitle="yes"/>
+                    navtitle="Sample JSON File for Installing the KVM Deployment" locktitle="yes"
+                    toc="no"/>
             </topicref>
             <topicref href="carrier-grade-install-kvm-esx-GA.dita"
                 navtitle="Installing the KVM + ESX Deployment" locktitle="yes">

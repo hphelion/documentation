@@ -49,7 +49,7 @@
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"
           navtitle="HP Metering Service (Ceilometer) Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
-          navtitle="HP Horizon Service Overview">
+          navtitle="HP Horizon Service Overview" locktitle="yes">
           <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
             navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
           <topicref
@@ -80,11 +80,15 @@
       navtitle="Support Matrix" locktitle="yes"/>
     <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
       format="ditamap" navtitle="Installation Guide" locktitle="yes"/>
-    <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"/>
-    <topicref href="CarrierGrade/API/carrier-grade-api.dita"/>
-    <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1: License Files">
-      <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"/>
-      <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="no"/>
+    <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
+      navtitle="Administrator Guide" locktitle="yes"/>
+    <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
+      locktitle="yes"/>
+    <topichead navtitle=" License Files">
+      <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
+        navtitle="Open Source and Third-Party Software License Agreement" locktitle="yes"/>
+      <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="no"
+        navtitle="Software License Terms" locktitle="yes"/>
     </topichead>
     <topichead navtitle="Files in map not TOC" toc="no">
       <topicref
