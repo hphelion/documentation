@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_pgx_vcg_5s">
-  <title>Deploying and Configuring Object Storage (Swift)</title>
+  <title>Configuring Object Storage (Swift)</title>
   <body>
-    <p>This page provides detailed instructions on the deployment of HP Helion OpenStack Object
-      Storage and their configuration. </p>
+    <p>This page provides detailed instructions on the configuration of the input model for HP
+      Helion OpenStack Object Storage and validating the object storage cloud model. </p>
     <p> Before starting the Swift deployment ensure that HP Helion OpenStack deployer node is
-      successfully installed and make the following configuration changes.</p>
+      successfully installed.</p>
+    <section id="setting-up-cloud"><b>Setting up the Cloud Model</b></section>
     <section>
       <p>
         <ul id="ul_ic3_hkg_5s">
@@ -26,9 +27,9 @@
         </ul>
       </p>
     </section>
-    <section id="hardware-req"><b>Hardware Requirement</b><p>It is recommended to have two disk
-        drives on 3 controller nodes to run swift services. <b>How do we add extra drive ? is it in
-          baremetal file etc??</b></p></section>
+    <section id="hardware-req"><b>Hardware Requirement</b><p>It is recommended to have two <b>disk
+          drives on 3 controller nodes</b> to run swift services. <b>How do we add extra drive ? is
+          it in baremetal file etc??</b></p></section>
     <section id="allocate-server-disk"><b>Allocate servers and disk drives</b></section>
     <p>The disk model describes the number of disk present on a particular server and its usage.
       Disk are used by the operating system (for example: for the root, log crash filesystem) and
@@ -194,6 +195,48 @@
           can be specified for a specific ring</li>
       </ul>
     </p>
-    <ul id="ul_fnc_xxc_vs"/>
+    <p>Once you have configured the object storage in the input model, you can verify the following
+      configuration in <codeph>~/helion/my_cloud/definition/</codeph>on the deployer.</p>
+    <p>
+      <ul id="ul_wqf_3fy_vs">
+        <li>Verify the configured ring-specification.</li>
+        <li>Verify that all disk drives allocated to swift have specified a ring and has a
+          corresponding ring in the <b>ring-specifications</b>. <note>It is an error to name a ring
+            which does not have a specification.</note></li>
+        <li>Verify that you have allocated the appropriate servers and their drives to the
+          appropriate ring.</li>
+      </ul>
+    </p>
+    <section><b> Object Storage Cloud Model Validation</b><note>Before validating the objsct storage
+        cloud model, run the configuration processor against your cloud model.</note><p>To validate
+        object storage cloud model, execute the following command on the deployer
+        :<codeblock>ansible-playbook -i hosts/verb_hosts swift-ring-validate.yml</codeblock></p><p>If
+        any error occurs while executing the validation command, you can get the detailed
+        information as follows:<ul id="ul_x1j_s3y_vs">
+          <li>Logon to the node that has been designated as the Ring-Builder (<b>see "Allocate a
+              Ring-Builder Node" above</b>). <note>You should run the swift-ring-validate playbook
+              as mentioned above otherwise the files required to run the swiftlm-ring-supervisor
+              will not be in place on the node.</note></li>
+          <li>Execute the following
+            command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report</codeblock></li>
+        </ul></p><p> The command reports an error or problem with the input model. It also prints a
+        summanry of the ring create actions that are planned for the deploy phase of the
+        process.</p></section>
+    <section><b>Examine the ring-delta file</b><p><b>Important:</b>You should run the
+        swift-ring-validate playbook as mentioned above otherwise the files required to run the
+        swiftlm-ring-supervisor will not be in place on the node.</p></section>
+    <ul id="ul_o5x_sry_vs">
+      <li>Logon to the node that has been designated as the Ring-Builder (<b>see "Allocate a
+          Ring-Builder Node" above</b>).</li>
+      <li>Execute the following command to list all drives and the actions planned for the
+        rings:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report --detail detail</codeblock></li>
+    </ul>
+    <p>Validate the following information in the output:<ul id="ul_mvh_fwy_vs">
+        <li>Drives are being added to all rings in the ring specifications.</li>
+        <li>Servers are being used as expected (for example, you may have a different set of servers
+          for the account/container rings than the object rings.</li>
+        <li>The weight value is as expected. The weight value is the drive size expressed in GB
+          (i.e., a 1 TB drive has a weight of 1024).</li>
+      </ul></p>
   </body>
 </topic>
