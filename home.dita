@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3076">
-<title>Welcome to HP Helion Documentation</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-</metadata>
-</prolog>
-<body>
-<p>HP Helion provides public, private, and managed cloud solutions to get you moving on your cloud journey. Whichever HP Helion product you are using, we have all the documentation resources and references for you.</p>
-  <simpletable id="homepageTable" relcolwidth="1.0* 5.06*">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic3076">
+  <title>Welcome to HP Helion Documentation</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>HP Helion provides public, private, and managed cloud solutions to get you moving on your
+      cloud journey. Whichever HP Helion product you are using, we have all the documentation
+      resources and references for you.</p>
+    <simpletable id="homepageTable" relcolwidth="1.0* 5.06*">
       <strow>
         <stentry>
-          <xref href="helion/index.dita">HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta 0</xref>
+          <xref href="helion/index.dita">HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta 1</xref>
         </stentry>
         <stentry>
-          <p>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 will bring greater flexibility than there was previously with
-            regard to the size and type of cloud you will build, and more automation in installation
-            and setup. </p>
+          <p>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 will bring greater flexibility than there
+            was previously with regard to the size and type of cloud you will build, and more
+            automation in installation and setup. </p>
           <p>This beta release is the first step towards a more full-featured cloud installation and
             an opportunity to test the features as they emerge.</p>
         </stentry>
       </strow>
-      </simpletable>
-</body>
+    </simpletable>
+  </body>
 </topic>
