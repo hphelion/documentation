@@ -14,14 +14,14 @@
       </vrmlist>
     </prodinfo>
   </topicmeta>
-<!-- Index -->
-<topicref href="home.dita"/>
-<!-- HoS 2.0 -->
-<topicref href="helion/index.dita">
-  <topicref href="helion/releasenotes.dita"/>
-  <topicref href="helion/supportedconfigs.dita"/>
-  <topicref href="helion/hardware.dita"/>
-  <topicref href="helion/installation.dita"/>
-  <topicref href="helion/faq.dita"/>
-</topicref>
+  <!-- Index -->
+  <topicref href="home.dita"/>
+  <!-- HoS 2.0 -->
+  <topicref href="helion/index.dita">
+    <topicref href="helion/releasenotes.dita"/>
+    <topicref href="helion/supportedconfigs.dita"/>
+    <topicref href="helion/hardware.dita"/>
+    <topicref href="helion/installation.dita"/>
+    <topicref href="helion/faq.dita"/>
+  </topicref>
 </map>
