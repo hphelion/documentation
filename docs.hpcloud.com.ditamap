@@ -29,6 +29,7 @@
       <topichead navtitle="OpsConsole User Guide">
         <topicref href="helion/Monasca/OpsConsole/alarms.dita"/>
         <topicref href="helion/Monasca/OpsConsole/alarm_definitions.dita"/>
+        <topicref href="helion/Monasca/OpsConsole/notification_methods.dita"/>
       </topichead>
     </topichead>
   </topicref>
