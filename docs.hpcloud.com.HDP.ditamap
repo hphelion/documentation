@@ -233,6 +233,8 @@
         navtitle="Glazier Reference Guide"/>
       <topicref href="devplatform/windows/windows_remoting.dita" navtitle="Remote Desktop Access"
         locktitle="yes"/>
+      <topicref href="devplatform/windows/windows_password.dita"
+        navtitle="Retrieving the Admin Password for Windows Instances" locktitle="yes"/>
       <topicref href="devplatform/windows/windows_troubleshooting.dita" navtitle="Troubleshooting"
         locktitle="yes"/>
     </topichead>
@@ -244,8 +246,6 @@
         navtitle="Configuring and Deploying an Application Lifecycle Service Cluster"/>
       <topicref href="devplatform/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
-      <topicref href="devplatform/windows/windows_password.dita"
-        navtitle="Retrieving the Admin Password for Windows Instances" locktitle="yes"/>
       <topicref href="devplatform/1.2devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
       <!--permalink: /helion/devplatform/databaseservice/-->

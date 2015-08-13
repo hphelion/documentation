@@ -1,100 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_xx1_4bt_ts">
+<topic id="object-storage">
   <title>HP Helion OpenStack Object Storage (Swift)</title>
-    <body>
+  <body>
     <p> </p>
     <p> A Object Storage (Swift) is Software Defined Storage (SDS) architecture, layered on top of
       industry standard servers, using native storage devices which are typically disk drives. Swift
       presents an object paradigm using an undelying set of disk drives. The disk drives are managed
-      by a data structure called the "ring". Also, Swift enable you to store, retrieve, and delete
+      by a data structure called "ring". Also, Swift enable you to store, retrieve, and delete
       objects in a containers through RESTful HTTP API.</p>
     <p>The services in the Swift cluster are either <i>access</i> services or <i>storage</i>
-      services. <ul id="ul_x1l_32z_ts">
+      services. <ul>
         <li> The <i>access</i> services group is made up of the Swift Proxy Servers, which run
           Swift-Proxy, Account and Container Services, HTTP/HTTPS load balancers, and OpenStack®
           Keystone authentication service. </li>
         <li> The <i>storage</i> services group is composed of Swift Object Servers and various
-          background services such as replicators. <p>Each of the service group can scaled
+          background services such as replicators. <p>Each of the service group can be scaled
             independently to meet workload and redundany requirements. The storage service can
             scaled up as necessary. It can also be horizontally scalable to handle an increased
             number of simultaneous connections as well as large number of objects.</p></li>
       </ul></p>
     <p>Based on OpenStack® Object Sotrage, the HP Helion OpenStack® Object Storage service provides
       a highly available, resilient, and scalable storage pool for unstructured data. It is highly
-      durable architecture with no single point of failure. </p>
-    <p>HP Helion OpenStack 2.0 allows you to specify your cloud configuration, knows as input data
-      model. Here, you need to provide the detailed information about the desired cloud topology
-      (structure of control plane, assignment of services to nodes) and their services'
-      configuration (e.g. Neutron plugins, etc) and environment specific configuration (e.g. OS
-      kernel settings).</p>
+      durable architecture with no single point of failure. Apart from this, HP Helion OpenStack
+      introduces a concept of input model. The input model allows you to define disk and
+      server-role. </p>
     <p>
-      <b>Input Model</b></p>
-    <p><b> Enter the information what input model means in terms of swift. what all configurations
-        can be set as an input data???</b>. </p>
+      <ul>
+        <li><b>Disk model</b>- The disk model describes the number of disk present on a particular
+          server and its usage.Some disks are used by the operating system (e.g. root, log, crash
+          filesystems) and others for swift storage. For a swift system there are two disk models-
+          swift proxy servers (which may hold the account &amp; container data) and swift object
+          servers. </li>
+        <li><b>Server-role model</b>- It maps the disk-model to a particular server type.</li>
+      </ul>
+    </p>
+    <p> HP Helion OpenStack 2.0 Object Storage also monitors Swift cluster using Monasca. </p>
     <section id="arch-overview"><b>Architecture Overview</b></section>
-    <p> The following diagram depicts the architectural overview of the Swift deployment into your
-        cloud:<ul id="ul_x1l_33z_ts">
+    <p> The following diagram depicts the architectural overview of the Swift deployment into your cloud:<ul>
         <li>
           <p><b>insert diagram</b>?????</p>
           <p>topology</p>
         </li>
       </ul></p>
     <section id="storage-plocies"><b>Storage Policies</b><p>Storage policies allow you to
-        differentiate <?oxy_insert_start author="sharmabi" timestamp="20150807T114750+0530"?>how the
-        <?oxy_insert_end?><?oxy_delete author="sharmabi" timestamp="20150807T114757+0530" content="how the objects are"?><?oxy_insert_start author="sharmabi" timestamp="20150807T114813+0530"?>objects
-        are<?oxy_insert_end?> stored in the cluster.<?oxy_insert_start author="sharmabi" timestamp="20150810T124416+0530"?>
-        <?oxy_insert_end?>
-        <?oxy_insert_start author="sharmabi" timestamp="20150807T114229+0530"?>A few of the possible
-        reasons are as
-        follows:<?oxy_insert_end?><?oxy_insert_start author="sharmabi" timestamp="20150807T114719+0530" type="split"?></p><?oxy_insert_end?><ul
-        id="ul_lhh_sg2_ys">
-        <li>Different types or classes of disk drive </li>
-      </ul><p>     For example: You can use different drives to store various type of data. You can
-        use 7.5K RPM high-capacity drives for one type of data and fast SSD drives for   another
-        type of data.</p><p>
-        <ul id="ul_azy_sg2_ys">
-          <li>Different redundancy or availability needs</li>
+        differentiate how the objects are stored in the cluster. A few of the possible reasons are
+        as follows:</p><ul>
+        <li><b>Different types or classes of disk drive</b>
+        </li>
+      </ul><p>You can use different drives to store various type of data. For example: You can use
+        7.5K RPM high-capacity drives for one type of data and fast SSD drives for another type of
+        data.</p><p>
+        <ul>
+          <li><b>Different redundancy or availability needs</b></li>
         </ul>
-      </p><p>For example: You can define the redundancy and availability based on your requirement.
-        You can use a replica count of 3 for "normal" data and a replica count of 4 for "critical"
-        data. </p><p>As described in <b>partition power</b> you are growing your capacity beyond the
-        recommended partition power. (not clear)</p><p>
-        <ul id="ul_oh4_tg2_ys">
-          <li>Erasure-coded storage for some objects and replicated storage for other objects.</li>
+      </p><p>You can define the redundancy and availability based on your requirement. You can use a
+        replica count of 3 for "normal" data and a replica count of 4 for "critical" data. </p><p>As
+        described in <b>partition power</b> you are growing your capacity beyond the recommended
+        partition power. (not clear)</p><p>
+        <ul>
+          <li><b>Erasure-coded storage for some objects and replicated storage for other
+            objects</b><?oxy_insert_start author="sharmabi" timestamp="20150812T162721+0530"?> (this
+            is not supported in production)<?oxy_insert_end?></li>
         </ul>
-      </p><p><?oxy_insert_start author="sharmabi" timestamp="20150807T120913+0530"?> A storage
-        policies are implemented on per-container basis. You can choose the storage policies of your
-        choice. But if you fail to specify the storage policy then the default policy is used. Also,
-        once you create and assign the storage policy to a container that remains in place, i.e.,
-        you cannot change the policy for that contaier but you can always create additional policies
-        and move data from one contianer to another if you choose to assign a different policy to a
-        new container.
-        <?oxy_insert_end?><?oxy_insert_start author="sharmabi" timestamp="20150810T124540+0530" type="split"?></p><p><?oxy_insert_end?><?oxy_insert_start author="sharmabi" timestamp="20150807T120913+0530"?>
-        additional policies and move data within policies. (one container can have more than one
-        storage policy??) once u crete a torage plcy
-        <?oxy_insert_end?></p><?oxy_delete author="sharmabi" timestamp="20150807T122404+0530" content="&lt;p&gt;Your end users chose which storage policy they use on a per-container basis. In practice most users will not explicitly specify the storage policy. You can specify which storage policy is then used by using thedefault attribute. You can change which storage policy is the default. However, this does not affect existing containers. Once the storage policy of a container is set, the policy for that container cannot be changed.&lt;/p&gt;"?><?oxy_insert_start author="sharmabi" timestamp="20150807T122651+0530"?><p>
-        The disk drives used by storage policies can overlap or be distinct. If the storage policies
-        overlap (i.e., have disks in common between two storage policies), it is recommended to use
-        the same set of disk drives for both policies. But in case there is a partial overlap in
-        disk drives, as one storage policy receives many objects, the drives that are common to both
-        policies must store more objects than drives that are only allocated to one storage policy.
-        This can be appropriate for a situation where the "overlapped" disk drives are larger than
-        the non-overlapped drives</p><?oxy_insert_end?><p>
-        <?oxy_delete author="sharmabi" timestamp="20150807T123252+0530" content="The disk drives used by storage policies can overlap or be distinct. However, if you overlap (i.e., have disks in common between two storage policies) you are recommended to use the same set of disk drives for both policies. If there is not a complete overlap in disk drives, as one storage policy receives many objects, the drives that are common to both policies must store more objects than drives that are only allocated to one storage policy. This may be appropriate for a situation where the &quot;overlapped&quot; disk drives are larger than the non-overlapped drives. However, in general this situation is harder to balance then a simple topology"?></p></section>
-    <?oxy_delete author="sharmabi" timestamp="20150807T123252+0530" content="&lt;p&gt; &lt;/p&gt;"?>
-    <?oxy_insert_start author="sharmabi" timestamp="20150810T152840+0530"?>
-    <section><b>Part Power</b><p>Partition power is used to distribute the data uniformly across
-        drives in a Swift nodes. It also defines the storage cluster capacity. Set the pat partition
-        power value based on the total amount of storage you expect your entire ring to use.</p>When
-      storing an object, the object storage system hashes the name. This hash results in a hit on a
-      partition (so a number of different object names will result in the same partition number).
-      Generally, the partition is mapped to available disk drives. With a replica count of 3, each
-      partition is mapped to three different disk drives. The hashing algorithm used hashes over a
-      fixed number of partitions. The partition-power attribute determines the number of partitions
-      you have. </section>
-    <section>Select a partition power for a given ring that is appropriate to the number of disk
-      drives you allocate to the ring for the following reasons:<ul id="ul_hgp_1db_zs">
+      </p><p> A storage policies are implemented on per-container basis. You can choose the storage
+        policies of your choice. But if you fail to specify the storage policy then the default
+        policy is used. Once you create and assign the storage policy to a container that remains
+        intact , i.e., you cannot change the policy for that contaier but you can always create
+        additional policies and move data from one contianer to another, if you choose to assign a
+        different policy to a new container. </p><p> additional policies and move data within
+        policies. (one container can have more than one storage policy??) once u crete a
+        <?oxy_insert_start author="sharmabi" timestamp="20150812T162622+0530"?>s<?oxy_insert_end?>torage
+        plcy </p><p> The disk drives used by storage policies can overlap or be distinct. If the
+        storage policies overlap (i.e., have disks in common between two storage policies), it is
+        recommended to use the same set of disk drives for both policies. But in case there is a
+        partial overlap in disk drives, as one storage policy receives many objects, the drives that
+        are common to both policies must store more objects than drives that are only allocated to
+        one storage policy. This can be appropriate for a situation where the "overlapped" disk
+        drives are larger than the non-overlapped drives. </p></section>
+    <section id="Part-Power"><b>Part Power</b>
+      <p>Partition power is used to distribute the data uniformly across drives in a Swift nodes. It
+        also defines the storage cluster capacity. You must set the part partition power value based
+        on the total amount of storage you expect your entire ring to use. </p><p>When storing an
+        object, the object storage system hashes the name. This hash results in a hit on a partition
+        (so a number of different object names will result in the same partition number). Generally,
+        the partition is mapped to available disk drives. With a replica count of 3, each partition
+        is mapped to three different disk drives. The hashing algorithm used hashes over a fixed
+        number of partitions. The partition-power attribute determines the number of partitions you
+        have. </p></section>
+    <section id="Select-part-power">Select a partition power for a given ring that is appropriate to
+      the number of disk drives you allocate to the ring for the following reasons:<ul>
         <li>If you use a high partition power and have few disk drives, each disk drives will have
           1000s of partitions. With too many partitions, audit and other processes in the Object
           Storage system cannot "walk" the partitions in a reasonable time and updates will not
@@ -140,7 +135,7 @@
         grow to a very large capacity but you cannot fit within any of the ranges in the table,
         please seek help from Professional Services to plan your system..</p><p>There are a few
         additional factors that can help or mitigate the fixed nature of the partition power, as
-        follows:</p><ul id="ul_hhp_1db_zs">
+        follows:</p><ul>
         <li>Account and container storage represents a small fraction (typically 1%) of your object
           storage needs. Hence, you can select a smaller partition power (relative to object ring
           partition power) for the account and container rings. </li>
@@ -150,16 +145,16 @@
         system). This means that you can install your system with a small partition power
         appropriate to a small number of initial disk drives. Later when you have many disk drives,
         the new storage policy can have a higher value appropriate to the larger number of
-        drives.</p><p> However, while his technique allows you to continue to add storage capacity
+        drives.</p><p> However, while this technique allows you to continue to add storage capacity
         you should note that existing containers continue to use their original storage policy.
         Hence, the additional objects must be added to new containers to take advantage of the new
         storage policy.</p></section>
-    <section>
+    <section id="non-standard-replica-count">
       <p><b>Non-Standard Replica Count</b></p>
       <p>The recommended value for the <b>replica-count</b> attribute is 3. Three copies of data are
         kept to ensure redundancy and continued access in the event of component failures. There are
         two situations where a different replica count is appropriate:</p>
-      <ul id="ul_irx_sgb_zs">
+      <ul>
         <li>A replica count of 2 may be used. We do not recommend using a small replica count
           becuase the probability of object loss is higher with small replica counts.</li>
         <li> You can increase the replica count to give a higher reliability or availability. For
@@ -174,7 +169,8 @@
         allowed. You can gradually change to a higher or lower value.</p>
       <p> </p>
     </section>
-    <?oxy_insert_end?>
   </body>
 </topic>
+
+
 <?oxy_options track_changes="on"?>
