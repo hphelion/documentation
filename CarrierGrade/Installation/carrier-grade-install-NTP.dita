@@ -112,6 +112,9 @@ fudge 127.127.1.0 stratum 10
 </codeph></codeblock></li>
 </ol>
 <p>Using <codeph>fudge</codeph> to configure the local clock as stratum 10 makes NTP use the local clock when no timeservers are available. The system will only use the local clock if your system cannot access the NTP server.</p>
+      <p><b>Return to the <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148"
+            >prerequisites</xref>.</b>
+      </p>
 <!--
 ## Troubleshooting ##
 

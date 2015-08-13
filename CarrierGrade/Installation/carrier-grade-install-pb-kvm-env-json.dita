@@ -22,8 +22,8 @@
                 KVM + ESX deployment</xref> requires several JSON files that will be used when
             deploying the HLM VM.</p>
 <section id="sample-node-provisionjson-file">
-            <p>The following represents a sample <codeph>environment.json</codeph> file. Use values
-                appropriate for your environment.</p>
+  <p>The following represents a sample <codeph>environment.json</codeph> file.  The IP addresses are masked for security purposes. 
+    Use values appropriate for your environment.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
         
@@ -66,9 +66,9 @@
               "type": "vlan",
               "segment-id": "303",
               "network-address": {
-                 "cidr": "10.30.3.0/24",
-                 "start-address": "10.30.3.100",
-                 "gateway": "10.30.3.1"
+                 "cidr": "10.30.x.x/24",
+                 "start-address": "10.30.x.x",
+                 "gateway": "10.30.x.x"
                 }
               },
               {
@@ -76,8 +76,8 @@
                "type": "vlan",
                "segment-id": "304",
                "network-address": {
-                 "cidr": "10.30.4.0/24",
-                 "start-address": "10.30.4.100"
+                 "cidr": "10.30.x.x/24",
+                 "start-address": "10.30.x.x"
                  }
               },
               {
@@ -85,8 +85,8 @@
                "type": "vlan",
                "segment-id": "74",
                "network-address": {
-                  "cidr": "172.16.74.0/24",
-                  "start-address": "174.16.74.0"
+                  "cidr": "172.16.x.x/24",
+                  "start-address": "174.16.x.x"
                   }
               }
             ]
@@ -167,8 +167,8 @@
             "segment-id": "305",
             "network-address": {
               "cidr": "10.30.5.0/24",
-              "start-address": "10.30.5.100",
-              "gateway": "10.30.5.1"
+              "start-address": "10.30.x.x",
+              "gateway": "10.30.x.x"
               }
            }
          ]
@@ -208,8 +208,8 @@
                  "segment-id": "306",
                  "network-address": {
                     "cidr": "10.30.6.0/24",
-                    "start-address": "10.30.6.100",
-                    "gateway": "10.30.6.1"
+                    "start-address": "10.30.x.x",
+                    "gateway": "10.30.x.x"
                    }
                   }
                 ]

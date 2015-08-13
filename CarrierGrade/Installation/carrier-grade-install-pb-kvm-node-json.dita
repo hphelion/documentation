@@ -78,7 +78,8 @@
             </tgroup>
 </table>
 <section id="sample-node-provisionjson-file"> <title>Sample node-provision.json file</title>
-<p>The following represents a sample <codeph>node-provision.json</codeph> file. Use values appropriate for your environment.</p>
+    <p>The following represents a sample <codeph>node-provision.json</codeph> file.  The IP addresses are masked for security purposes.
+        Use values appropriate for your environment.</p>
     <p>Return to <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">Create the HLM Virtual
                     Machine</xref>.</p>
 <codeblock>
@@ -90,7 +91,7 @@
     "pxe_mac_address": "d0:bf:9c:f1:85:a0",
     "pxe_interface": "auto",
     "pm_type": "ipmilan",
-    "pm_ip": "10.1.3.81",
+    "pm_ip": "10.1.x.x",
     "pm_user": "cghelion",
     "pm_pass": "cghelion#",
     "failure_zone": "fz1",
@@ -102,10 +103,10 @@
     },
     {
     "name": "ccn2",
-    "pxe_mac_address": "5c:b9:01:7a:13:e0",
+    "pxe_mac_address": "5c:b9:01:7a",
     "pxe_interface": "auto",
     "pm_type": "ipmilan",
-    "pm_ip": "10.1.3.82",
+    "pm_ip": "10.1.x.x",
     "pm_user": "cghelion",
     "pm_pass": "cghelion#",
     "failure_zone": "fz2",
@@ -117,10 +118,10 @@
     },
     {
     "name": "ccn3",
-    "pxe_mac_address": "5c:b9:01:7a:a3:70",
+    "pxe_mac_address": "5c:b9:01:7a",
     "pxe_interface": "auto",
     "pm_type": "ipmilan",
-    "pm_ip": "10.1.3.83",
+    "pm_ip": "10.1.x.x",
     "pm_user": "cghelion",
     "pm_pass": "cghelion#",
     "failure_zone": "fz3",
@@ -132,7 +133,7 @@
     },
     {
     "name": "dcn1",
-    "pxe_mac_address": "d0:bf:9c:c0:e7:b0",
+    "pxe_mac_address": "d0:bf:9c:c0",
     "pxe_interface": "auto",
     "pm_type": "ipmilan",
     "pm_ip": "10.1.3.53",
@@ -147,10 +148,10 @@
     },
     {
     "name": "dcn2",
-    "pxe_mac_address": "d0:bf:9c:c0:6b:58",
+    "pxe_mac_address": "d0:bf:9c:c0",
     "pxe_interface": "auto",
     "pm_type": "ipmilan",
-    "pm_ip": "10.1.3.54",
+    "pm_ip": "10.1.x.x",
     "pm_user": "cghelion",
     "pm_pass": "cghelion#",
     "failure_zone": "fz2",
@@ -162,7 +163,7 @@
     },
     {
     "name": "vrg1",
-    "pxe_mac_address": "d0:bf:9c:c0:ba:18",
+    "pxe_mac_address": "d0:bf:9c:c0",
     "pxe_interface": "auto",
     "pm_type": "ipmilan",
     "pm_ip": "10.1.3.55",

@@ -264,11 +264,22 @@
     <p><b>ESX components</b>. You must have a minimum of two (2) baremetal systems for ESXi hosts. 1
         – 4 ESXi clusters are supported. Refer to the ESX documentation for the supported hardware
         configurations. </p>
+      <ul>
+        <li>ESXi requirements: 
+          <ul><li>	vSphere Cluster running ESXi 5.5u2 with vMotion enabled.</li> 
+            <li>1 Virtual Machine Port Group with all Cloud Vlans associated to the Port Group.</li></ul></li>
+        
+        
+      </ul>  
+      
+    
     <p><b>Note:</b> These systems are not required for a KVM-only cloud.</p>
     <p><b>DCN components</b>. You must have:</p>
       <ul>
         <li>two (2) baremetal systems for DCN VSC controllers (HA mode) </li>
         <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
+        <li>VRSvApp requirements VRSvApp must be installed. Please Refer to the DCN VSP 3.0 R7
+          installation Guide for VRSvApp installation.</li>
       </ul>
       <p>Refer to the DCN documentation for the supported hardware configurations.</p>
       <p><b>Note:</b> These systems are not required for a KVM-only cloud.</p>
