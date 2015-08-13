@@ -467,14 +467,14 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
               id="simpletable_r5t_n4p_xs">
               <sthead>
                 <stentry>Ceph Integrated with HOS Components</stentry>
-                <stentry>Command</stentry>
+                <stentry>Commands</stentry>
                 <stentry>Volumes</stentry>
                 <stentry>Images</stentry>
                 <stentry>Instances</stentry>
               </sthead>
               <strow>
                 <stentry>Cinder</stentry>
-                <stentry><codeph>python /root/tripleo/hp_ceph_passthrough/hp_ceph_load_config.py -s
+                <stentry><codeph>python/root/tripleo/hp_ceph_passthrough/hp_ceph_load_config.py -s
                     cinder</codeph></stentry>
                 <stentry>Supports all Cinder operations including multi-backend (VSA, 3PAR,
                   CEPH)</stentry>
@@ -483,7 +483,7 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
               </strow>
               <strow>
                 <stentry>Cinder and Glance</stentry>
-                <stentry><codeph>python /root/tripleo/hp_ceph_passthrough/hp_ceph_load_config.py -s
+                <stentry><codeph>python/root/tripleo/hp_ceph_passthrough/hp_ceph_load_config.py -s
                     cinder,glance</codeph></stentry>
                 <stentry>Supports all Cinder operations including multi-backend (VSA, 3PAR,
                   CEPH)</stentry>
@@ -924,25 +924,31 @@ rbd children &lt;glance pool name&gt;/&lt;glance-image id&gt;@&lt;snap name&gt;
           <li> Log into the Overcloud Horizon dashboard. The Overcloud dashboard displays with the
             options in the left panel.</li>
           <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
-            to display the Volumes page.<p><image href="create-ceph-volumetype%20-%201.png"
-                id="image_hlg_qtw_xs"/></p></li>
+            to display the Volumes page.<p><image
+                href="../../../media/create-ceph-volumetype%20-%201.png" id="image_hlg_qtw_xs"
+            /></p></li>
           <li>Click <b>Create Volume Type</b> to display a dialog box. <p><image
-                href="create-ceph-volumetype%20(2).png" id="image_hf2_sbr_xs"/></p></li>
+                href="../../../media/create-ceph-volumetype%20(2).png" id="image_hf2_sbr_xs"
+            /></p></li>
           <li>Enter the name of the volume type.</li>
           <li>Click<b> Create Volume Type</b>. The newly created volume displays in the Volumes
-            page. <image href="create-ceph-volumetype.png" id="image_r5l_1sw_xs"/></li>
+            page. <image href="../../../media/create-ceph-volumetype.png" id="image_r5l_1sw_xs"
+            /></li>
         </ol></p></section>
     <section><b><b>Associate the volume type to a backend</b></b><p>To map a volume type to a
         backend, do the following:</p><ol id="ol_hcb_vsv_zs">
         <li> Login to the Overcloud Horizon dashboard. The Overcloud dashboard displays with the
           options in the left panel.</li>
         <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab to
-          display the Volumes page.<p><image href="create-ceph-volumetype%20-%20extra-specs.png"
-              id="image_yf3_ktv_zs"/></p></li>
+          display the Volumes page.<p><image href="../../../media/create-ceph-volumetype.png"
+              id="image_sy1_hyv_zs"/></p></li>
         <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
-          associate to the backend. The <b>Create Volume Type Extra Specs</b> dialog box
-              displays.<p><image href="volume-extra-specs-ceph.png" id="image_tkf_f5v_zs"/></p></li>
-        <li> In the <b>Key</b> box, enter <i>volume_backend_name</i>. This is the name of the key
+          associate to the backend. <p><image
+              href="../../../media/create-ceph-volumetype%20-%20extra-specs.png"
+              id="image_yf3_ktv_zs"/></p> The <b>Create Volume Type Extra Specs</b> dialog box
+              displays.<p><image href="../../../media/volume-extra-specs-ceph.png"
+              id="image_xyk_nyv_zs"/></p></li>
+        <li>In the <b>Key</b> box, enter <i>volume_backend_name</i>. This is the name of the key
           used to specify the storage backend when provisioning volumes of this volume type.</li>
         <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate
           the volume type. For example:<i>helion-ceph-cinder</i>.</li>
