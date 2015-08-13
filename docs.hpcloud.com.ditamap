@@ -34,8 +34,16 @@
       </topichead>
     </topichead>
     <topichead navtitle="Logging Guide">
-      <topicref href="helion/Logging/logging_overview.dita"/>
-      <topicref href="helion/Logging/logging_troubleshooting.dita"/>
+      <topicref href="helion/Logging/logging_overview.dita">
+        <topicmeta>
+          <navtitle>Centralized Logging Overview</navtitle>
+        </topicmeta>
+      </topicref>
+      <topicref href="helion/Logging/logging_troubleshooting.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>Troubleshooting Logging Issues</navtitle>
+        </topicmeta>
+      </topicref>
     </topichead>
   </topicref>
 </map>
