@@ -2,7 +2,7 @@
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="boldproperty">
   <title>Alarm Definitions</title>
-  <shortdesc>List of service-specific alarms</shortdesc>
+  <shortdesc>List of service-specific alarms and the recommended troubleshooting steps.</shortdesc>
   <refbody>
     <section id="HAProxy">
       <title>HAProxy</title>
@@ -84,6 +84,174 @@
               <entry>Alarms on a high network error rate.</entry>
               <entry>Bad network or cabling</entry>
               <entry>Take this system out of service until the network can be fixed.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="monasca">
+      <title>Monasca</title>
+      <table frame="all" rowsep="1" colsep="1" id="table_dry_245_zs">
+        <tgroup cols="5">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <colspec colname="c5" colnum="5" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Component</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>HTTP Status</entry>
+              <entry>persister</entry>
+              <entry>Persister Health Check</entry>
+              <entry>The process has crashed or a dependency is out.</entry>
+              <entry>If the process has crashed, restart. If a dependent service is down, address
+                that issue.</entry>
+            </row>
+            <row>
+              <entry>HTTP Status</entry>
+              <entry>api</entry>
+              <entry>API Health Check</entry>
+              <entry>The process has crashed or a dependency is out.</entry>
+              <entry>If the process has crashed, restart. If a dependent service is down, address
+                that issue.</entry>
+            </row>
+            <row>
+              <entry>Kafka Consumer Lag</entry>
+              <entry>Kafka</entry>
+              <entry>Consumers are falling behind for a particular Kafka topic.</entry>
+              <entry>There is a slow down in the system or heavy load.</entry>
+              <entry>Look for high load in the various systems. This alert can fire for multiple
+                topics or on multiple hosts. Which alarms are firing can help diagnose likely
+                causes, ie if all on one machine it could be the machine. If one topic across
+                multiple machines it is likely the consumers of that topic, etc.</entry>
+            </row>
+            <row>
+              <entry>Monasca Agent Collection Time</entry>
+              <entry>monasca-agent</entry>
+              <entry>The time the agent took to collect metrics.</entry>
+              <entry>Heavy load on the box or a stuck agent plugin.</entry>
+              <entry>Address load issue on the machine. If needed restart the agent.</entry>
+            </row>
+            <row>
+              <entry>Monasca Agent Emit Time</entry>
+              <entry>monasca-agent</entry>
+              <entry>The time the agent took to send metrics to the Monasca API.</entry>
+              <entry>API or the network is slow.</entry>
+              <entry>Check the network graphs and look for indication of networks issues. If coming
+                from most boxes it is possibly api problems.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>Kafka</entry>
+              <entry>Process not running.</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>notification</entry>
+              <entry>Process not running.</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>storm</entry>
+              <entry>Process not running.</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>zookeeper</entry>
+              <entry>Process not running.</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Zookeeper Latency</entry>
+              <entry>zookeeper</entry>
+              <entry>Zookeeper is experiencing high latency.</entry>
+              <entry>Heavy system load.</entry>
+              <entry>Check the individual system as well as activity across the entire
+                service.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="mysql"><title>MySQL</title>
+      <table frame="all" rowsep="1" colsep="1" id="table_ft3_bp5_zs">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>MySQL Slow Query Rate</entry>
+              <entry>MySQL is reporting many slow queries.</entry>
+              <entry>System load.</entry>
+              <entry>This could be an indication of near capacity limits or an exposed bad query.
+                First, check overall system load and then investigate MySQL details.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>Alarms when MySQL process is not found.</entry>
+              <entry>MySQL crashed.</entry>
+              <entry>Restart MySQL on the affected node.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="rabbitmq">
+      <title>RabbitMQ</title>
+      <table frame="all" rowsep="1" colsep="1" id="table_rsb_mp5_zs">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Process Check</entry>
+              <entry>rabbitmq-server process not running</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>RabbitMQ Queue Depth</entry>
+              <entry>Alarms when the depth of the message queue is high.</entry>
+              <entry>System load or a slow/failed consumer.</entry>
+              <entry>Look for high load in the system. This alarm can fire for multiple queues and
+                multiple machines. Which ones it fired on can indicate the cause. If only a single
+                queue is slowing, the cause could be that the consumer is down.</entry>
             </row>
           </tbody>
         </tgroup>
