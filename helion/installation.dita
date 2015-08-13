@@ -180,7 +180,8 @@ helion/hlm/                    Directory contains files used by the installer
 stderr: tar: /opt/stack/service/vsa/venv/lib/helion-vsa-11.5.01.0079.tgz:
 Cannot open: No such file or directory </codeblock>
             </li>
-            <li>The file can be found at http://10.1.56.95/helion-vsa-11.5.01.0079.tgz.</li>
+            <li>The file can be found at http://10.1.56.95/helion-vsa-11.5.01.0079.tgz</li>
+            <li>Note that you may need VPN access to downoad the file from the lab at the link above.</li>
             <li>This is a temporary issue and should be fixed by the next release.</li>
           </ul></li>
         <li>Deploy CMC by running the following
