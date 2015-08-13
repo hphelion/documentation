@@ -7,7 +7,7 @@
                 <serializableOrderedMap>
                     <entry>
                         <String>keys.context</String>
-                        <String>${pdu}/docs.hpcloud.com.HDP.ditamap</String>
+                        <String>${pdu}/docs.hpcloud.com.ditamap</String>
                     </entry>
                     <entry>
                         <String>validation.scenarios</String>
@@ -18,18 +18,11 @@
         </options>
     </meta>
     <projectTree name="Master-Project.xpr">
+        <folder path="ServerArtifacts/"/>
         <folder path="automation/"/>
-        <folder path="CarrierGrade/"/>
-        <folder path="CloudGraphics/"/>
-        <folder path="cloudos/"/>
-        <folder path="commercial/"/>
-        <folder path="devplatform/"/>
-        <folder path="euca/"/>
+        <folder path="helion/"/>
+        <folder path="jenkins/"/>
         <folder path="media/"/>
-        <folder path="PDF/"/>
-        <folder path="pdf_sources/"/>
-        <folder path="publiccloud/"/>
-        <folder path="unusedgraphics/"/>
-        <folder path="UseCases/"/>
+        <folder path="teamscripts/"/>
     </projectTree>
 </project>
