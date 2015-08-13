@@ -33,5 +33,9 @@
         <topicref href="helion/Monasca/OpsConsole/metric_monitoring.dita"/>
       </topichead>
     </topichead>
+    <topichead navtitle="Logging Guide">
+      <topicref href="helion/Logging/logging_overview.dita"/>
+      <topicref href="helion/Logging/logging_troubleshooting.dita"/>
+    </topichead>
   </topicref>
 </map>
