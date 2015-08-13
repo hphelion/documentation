@@ -453,8 +453,8 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
     <p>
       <codeblock>ansible-playbook –i hosts client_setup.yml --skip-tags computes</codeblock>
     </p>
-    <section>Integration of Ceph with HOS components<p>Perform the following steps to integrate ceph
-        with HOS components</p><ol id="ol_h12_vpp_xs">
+    <section><b>Integration of Ceph with HOS components</b><p>Perform the following steps to
+        integrate ceph with HOS components</p><ol id="ol_h12_vpp_xs">
         <li>Login to Seed VM.<codeblock>ssh &lt;seed IP address></codeblock></li>
         <li>Source the environment variables file created during initial
           installation.<codeblock><systemoutput># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name></systemoutput></codeblock></li>
@@ -1594,4 +1594,3 @@ export ST_KEY= abd
     </section>
   </body>
 </topic>
-<?oxy_options track_changes="on"?>
