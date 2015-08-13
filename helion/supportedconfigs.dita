@@ -4,10 +4,11 @@
   <title>Beta 0: Supported Configuration</title>
   <body>
     <p>The following list summaries the qualified configurations and their purpose.</p>
-<note>While the hardware requirements are similar to those of HP Helion <tm tmtype="reg">OpenStack</tm> 1.1, this is a completely new installation, not an upgrade or update operation.</note>
+    <note>While the hardware requirements are similar to those of HP Helion <tm tmtype="reg"
+        >OpenStack</tm> 1.1, this is a completely new installation, not an upgrade or update
+      operation.</note>
     <section><title>Single Region Proof of Concept</title>
-   
-    <ul>
+      <ul>
         <li>Single control plane for
           <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all control plane
           services<?oxy_custom_end?></li>
@@ -18,80 +19,74 @@
           configuration options</li>
         <?oxy_custom_end?>
       </ul>
-    
-   
-    <p><b>Configuration details:</b></p>
-    <ul id="ul_ovh_r4f_ys">
-      <li>Scaled down example, optimized for reduced server count </li>
-      <li>Dedicated deployer node needed </li>
-      <li>Control Plane with one cluster </li>
-      <li>Cloud controllers (minimum of 3 nodes for database quorum) 
-<ul>
-      <li>Monitoring/Logging</li>
-      <li>Neutron network services (centralized routers, DHCP, metadata, default SNAT, VPN
-        agent)</li>
-      <li>Swift Object</li>
-      <li>MySQL, RabbitMQ, API, Other Services</li>
-    </ul></li>
-    <li>Resource pool
-    <ul id="ul_jyg_fyf_ys">
-      <li>Compute (minimum of one node) </li>
-      <li>VSA Cluster (minimum of one node, no high availability)</li>
-    </ul></li></ul>
-    <p><b>Minimum server count</b></p>
-    <ul id="ul_lrv_gyf_ys">
-      <li>6 with VSA (1 deployer, 3 control plane, 1 compute, 1 VSA) </li>
-      <li>5 without VSA (1 deployer, 3 control plane, 1 compute)</li>
-        <li>
-          VSA can be 0, 1 or 3 nodes.
-        </li>
-    </ul>
-    <p><b>Server Roles</b></p>
-    
+      <p><b>Configuration details:</b></p>
+      <ul id="ul_ovh_r4f_ys">
+        <li>Scaled down example, optimized for reduced server count </li>
+        <li>Dedicated deployer node needed </li>
+        <li>Control Plane with one cluster </li>
+        <li>Cloud controllers (minimum of 3 nodes for database quorum) <ul>
+            <li>Monitoring/Logging</li>
+            <li>Neutron network services (centralized routers, DHCP, metadata, default SNAT, VPN
+              agent)</li>
+            <li>Swift Object</li>
+            <li>MySQL, RabbitMQ, API, Other Services</li>
+          </ul></li>
+        <li>Resource pool <ul id="ul_jyg_fyf_ys">
+            <li>Compute (minimum of one node) </li>
+            <li>VSA Cluster (minimum of one node, no high availability)</li>
+          </ul></li>
+      </ul>
+      <p><b>Minimum server count</b></p>
+      <ul id="ul_lrv_gyf_ys">
+        <li>6 with VSA (1 deployer, 3 control plane, 1 compute, 1 VSA) </li>
+        <li>5 without VSA (1 deployer, 3 control plane, 1 compute)</li>
+        <li> VSA can be 0, 1 or 3 nodes. </li>
+      </ul>
+      <p><b>Server Roles</b></p>
       <ul id="ul_zc4_hyf_ys">
         <li>Controller </li>
         <li>Compute </li>
         <li>VSA</li>
       </ul>
-    
-    
-    <p><b>Networking</b></p>
-    <ul id="ul_bfh_3yf_ys">
-      <li>
-        A dedicated network for IPMI/iLO must be connected to all the nodes 
-      </li>
-      <li> Dedicated network interface for operating system installation and Ansible 
-   <ul>
-      <li>Configured as part of os-deploy, used by Ansible, not further configured by the
-        deployer</li></ul></li>
-      <li>One pair of bonded network interfaces
-   <ul>
-      <li>Bond0: Management, External API, External VMs, Vxlan, Provider VLANs </li></ul></li>
-      <li>Each network is a single L3 segment</li>
-      <li>Load-balancers for control plane APIs are provided by haproxy</li>
-      <li>TLS only on external API, using customer supplied certificate</li>
-      <li>VLAN IDs and IP addressing provided by customer</li>
-    </ul>
-    <p><b>Storage</b></p>
-    <ul id="ul_e4q_myf_ys">
-      <li> All servers assume single OS disc protected by a RAID controller (to be set up  before OS
+      <p><b>Networking</b></p>
+      <ul id="ul_bfh_3yf_ys">
+        <li> A dedicated network for IPMI/iLO must be connected to all the nodes </li>
+        <li> Dedicated network interface for operating system installation and Ansible <ul>
+            <li>Configured as part of os-deploy, used by Ansible, not further configured by the
+              deployer</li>
+          </ul></li>
+        <li>One pair of bonded network interfaces <ul>
+            <li>Bond0: Management, External API, External VMs, Vxlan, Provider VLANs </li>
+          </ul></li>
+        <li>Each network is a single L3 segment</li>
+        <li>Load-balancers for control plane APIs are provided by haproxy</li>
+        <li>TLS only on external API, using customer supplied certificate</li>
+        <li>VLAN IDs and IP addressing provided by customer</li>
+      </ul>
+      <p><b>Storage</b>
+      </p>
+      <ul id="ul_e4q_myf_ys">
+        <li>See the <xref href="hardware.dita">Minimum Hardware Requirements</xref> page for
+          hardware requirements.</li>
+        <!--<li> All servers assume single OS disc protected by a RAID controller (to be set up  before OS
           deploy) </li>
       <li> Compute node adds one additional disc and LV for Nova (you can add other discs following
           this pattern) </li>
       <li> VSA adds one additional disc dedicated to VSA (you can add other discs following this
           pattern) </li>
       <li> Controller adds one additional disc dedicated to object storage (you can add other discs
-          following this pattern) </li>
-    </ul>
+          following this pattern) </li>-->
+      </ul>
     </section>
-      <section><title>Configuration Illustrations</title>
-        <p>The following diagrams illustrate the proof of concept configuration.</p>
-    <p> <image href="images/20beta0poc-diagram1.png" width="1000"/></p>
-    <p>
-      <image href="images/20beta0poc-diagram.png" width="1000" id="image_pl2_d4k_xs"/></p>
-      </section>
-    
+    <section><title>Configuration Illustrations</title>
+      <p>The following diagrams illustrate the proof of concept configuration.</p>
+      <p>
+        <image href="images/20beta0poc-diagram1.png" width="1000"/></p>
+      <p>
+        <image href="images/20beta0poc-diagram.png" width="1000" id="image_pl2_d4k_xs"/></p>
+    </section>
 
-    
+
+
   </body>
 </topic>
