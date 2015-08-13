@@ -3,24 +3,6 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic12031">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monasca Overview</title>
-  <prolog>
-    <metadata>
-      <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack"/>
-      <othermeta name="product-version" content="HP Helion Openstack 2.0"/>
-      <othermeta name="role" content="Systems Administrator"/>
-      <othermeta name="role" content="Cloud Architect"/>
-      <othermeta name="role" content="Storage Administrator"/>
-      <othermeta name="role" content="Network Administrator"/>
-      <othermeta name="role" content="Service Developer"/>
-      <othermeta name="role" content="Cloud Administrator"/>
-      <othermeta name="role" content="Application Developer"/>
-      <othermeta name="role" content="Network Engineer"/>
-      <othermeta name="role" content="Joel B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack"/>
-      <othermeta name="product-version2" content="HP Helion Openstack 2.0"/>
-    </metadata>
-  </prolog>
   <body>
     <p>Monasca is a multi-tenant, scalable, fault-tolerant monitoring-as-a-service, HTTP-based
       service. It is open-source and integrates with OpenStack. It uses a REST API for high-speed
