@@ -3,8 +3,10 @@
 <topic id="topic_omx_srg_ws">
   <title>Beta 0: Minimum Hardware Requirements</title>
   <body>
-    <section id="SupportedConfigs"> <title>Supported Configurations</title>
-      <p>HP supports the following configurations for HP Helion <tm tmtype="reg">OpenStack</tm> deployment:</p>
+    <section id="SupportedConfigs">
+      <title>Supported Configurations</title>
+      <p>HP supports the following configurations for HP Helion <tm tmtype="reg">OpenStack</tm>
+        deployment:</p>
       <p>Storage Interconnects/Protocols</p>
       <ul>
         <li>1Gb or 10Gb Eth.</li>
@@ -14,11 +16,13 @@
     <section id="HardwareRequirements"><title>Hardware Requirements</title>
       <p>You must have the following hardware configuration:</p>
       <ul>
-        <li>1 dedicated NIC for PXE installation. Note: This will disappear in future Beta releases.</li>
-        
+        <li>1 dedicated NIC for PXE installation. Note: This will disappear in future Beta
+          releases.</li>
+
         <li>2 additional NICs for networking</li>
-       </ul>
-      <note>For Swift deployment, two disk drives are required on each of the three controller nodes.</note>
+      </ul>
+      <note>For Swift deployment, two disk drives are required on each of the three controller
+        nodes.</note>
     </section>
     <section id="MinimumRequirements">
       <title>Minimum Node Requirements</title>
@@ -110,5 +114,5 @@
         </tgroup>
       </table>
     </section>
-    </body>
+  </body>
 </topic>
