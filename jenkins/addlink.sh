@@ -1,8 +1,6 @@
 #!/bin/bash -li
 
 
-
-
 newversion=`echo $i | sed 's/1\.0/1\.1/'`
 
  
