@@ -5,11 +5,16 @@
   <body>
     <p>Open Source and Third-Party Software License Agreements are available here as a PDF download.</p>
 <ul>
-<li>HOS (work in progress)</li>
+<li>Helion OpenStack version 2.0 (work in progress)</li>
   <li><xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Vertica_71_OSRB_Licensing.pdf" format="pdf" scope="external">Vertica</xref></li>
-  <li><xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HDP_Thirdparty_OS_v2.pdf" format="pdf" scope="external">HDP</xref></li>
+  <li><xref
+          href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HDP_Thirdparty_OS_v2.pdf"
+          format="pdf" scope="external">Helion Development Platform</xref></li>
+      <li>CloudSystem 9</li>
   <li><xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_CSA_450_OSRB_Licensing.pdf" format="pdf" scope="external">Cloud System Automation (CSA) 4.5</xref></li>
-  <li><xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/OO_OpenSource_ThirdParty-10_20.pdf" format="pdf" scope="external">HP OO 10.20</xref></li>
+  <li><xref
+          href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/OO_OpenSource_ThirdParty-10_20.pdf"
+          format="pdf" scope="external">Operations Orchestration 10.20</xref></li>
 <li>Codar 1.5: There are no additional license requirements for this product.</li>
 </ul> 
 <p>Please allow sufficient time for the document to fully load. </p>
