@@ -3,16 +3,15 @@
 <topic id="topic_mqk_j4l_xs">
   <title>HP CloudSystem: Open Source and Third-Party Software License Agreements</title>
   <body>
-    <p><!-- placeholder for CS9 OSRB docs-->
-      <!--
+    <p>Open Source and Third-Party Software License Agreements are available here as a PDF download.</p>
 <ul>
-<li>Vertica</li>
-<li>HOS</li>
-<li>HDP</li>
-<li>CSA 4.5</li>
-<li>HP OO 10.</li>
-<li>Codar 1.5</li>
-</ul> -->
-</p>
+<li>HOS (work in progress)</li>
+  <li><xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Vertica_71_OSRB_Licensing.pdf" format="pdf" scope="external">Vertica</xref></li>
+  <li><xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HDP_Thirdparty_OS_v2.pdf" format="pdf" scope="external">HDP</xref></li>
+  <li><xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_CSA_450_OSRB_Licensing.pdf" format="pdf" scope="external">Cloud System Automation (CSA) 4.5</xref></li>
+  <li><xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/OO_OpenSource_ThirdParty-10_20.pdf" format="pdf" scope="external">HP OO 10.20</xref></li>
+<li>Codar 1.5: There are no additional license requirements for this product.</li>
+</ul> 
+<p>Please allow sufficient time for the document to fully load. </p>
   </body>
 </topic>
