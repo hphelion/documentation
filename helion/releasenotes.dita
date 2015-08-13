@@ -80,7 +80,8 @@
 <p><b>Backup and Restore Capabilities for the Control Plane</b> - Allows you to backup and recover your Helion OpenStack</tm> environment with RPO=0.</p>
 -->
     </section>
-    <section id="KnownIssues"><title>Known Issues in this Release</title>
+    <section id="KnownIssues">
+      <title>Known Issues in this Release</title>
       <p><b>Horizon</b></p>
       <ul>
         <li>See the workaround to install Horizon in the installation instructions.</li>
@@ -89,7 +90,9 @@
       <ul>
         <li>Helion Development Platform is not supported on Beta 0.</li>
       </ul>
-      <p><b>Installing Swift</b></p><p>Swift installs with the following limitations: </p><ul>
+      <p><b>Installing Swift</b></p>
+      <p>Swift installs with the following limitations: </p>
+      <ul>
         <li>Only a 3-node Swift configuration in which Swift runs on the three controller nodes is
           supported.</li>
         <li>There is no LVM (logical volumes) support. Therefore, dedicated disks are needed for
@@ -97,7 +100,8 @@
         <li>In Beta0 you cannot add or remove Swift servers.</li>
         <li>Only one Swift zone is supported.</li>
         <li>Only one storage policy, object-0, is supported in this release.</li>
-      </ul><!-- <p>
+      </ul>
+      <!-- <p>
       <b>Deployment of VSA cloud on a separate Node as per the life-cycle management
       features</b></p>
     <p>Completed activity:</p>
@@ -138,22 +142,29 @@
       <codeblock>adminMaxThreads: 96</codeblock>
       <note>this line must be indented exactly 2 spaces.</note>
       <p>After these files are changed, restart the monasca-api and monasca-persister services.</p>
-      <p><b>Ops Console</b></p><ul>
+      <p><b>Ops Console</b></p>
+      <ul>
         <li>OpsConsole is not enabled in this release.</li>
-      </ul><p><b>Centralized Logging Limitations</b></p><p>Logging support is complete for Beta0
-        with the following limitations:</p><ul>
+      </ul>
+      <p><b>Centralized Logging Limitations</b></p>
+      <p>Logging support is complete for Beta0 with the following limitations:</p>
+      <ul>
         <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
         <li>Logging-monitor 'stop' playbook is not integrated.</li>
-      </ul><p><b>Neutron Feature Limitations</b></p><ul>
+      </ul>
+      <p><b>Neutron Feature Limitations</b></p>
+      <ul>
         <li>VPNaaS (Virtual-Private-Network-as-a-Service) is not enabled in this release.</li>
-      </ul><!--<p><b>Networks</b></p>
+      </ul>
+      <!--<p><b>Networks</b></p>
       <p>
         <ul id="ul_rlg_dbg_ys">
           <li>Multiple NICs on a compute node and each NIC is connected to a different external
             network. Today we don't support multiple external networks at L2 (ML2 OVS mech driver)
             nor L3 (DVR or Centralized).</li>
         </ul>
-      </p>--><!--<p>Need use cases/stories </p>
+      </p>-->
+      <!--<p>Need use cases/stories </p>
     <p>* ability to span L3</p>
     <p>* multiple provider networks/separation of traffic</p>
     <p>* two pools for fip to span networks/different fip pools</p>
@@ -161,7 +172,8 @@
     <p> </p>
     <p>[06/02/15]</p>
     <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
-    <p> </p>--><!--  <p><b>Cinder</b></p><ul id="ul_vld_l1g_ys">
+    <p> </p>-->
+      <!--  <p><b>Cinder</b></p><ul id="ul_vld_l1g_ys">
         <li>
           <p>Core cinder services are all being installed and configured via the installer. </p>
         </li>
@@ -170,10 +182,13 @@
             steps to be defined later may be required to complete installation.</p>
         </li>
       </ul>-->
-      <p><b>TLS Support</b></p><ul>
+      <p><b>TLS Support</b></p>
+      <ul>
         <li>The server certificate is currently hard coded. If an operator wishes to provide their
           own, they need to edit the defaults in the TLS playbook.</li>
-      </ul><p><b>Installation and NIC Numbering</b></p><ul>
+      </ul>
+      <p><b>Installation and NIC Numbering</b></p>
+      <ul>
         <li>The assignment of eth interface numbers to your physical network interfaces may vary,
           and therefore your network interface naming (eth0, eth1, etc) may not be what you
           expect.</li>
@@ -181,16 +196,19 @@
           interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev
           rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
         <li>You may want to disable the network interfaces that you are not planning to use.</li>
-      </ul><p><b>Network Interface Bonding changes needed during installation</b></p><ul>
+      </ul>
+      <p><b>Network Interface Bonding changes needed during installation</b></p>
+      <ul>
         <li>The bond mode in the network interface definition needs to be specified by name
           (active-backup) rather than by number (1).</li>
         <li>This workaround is included in the installation instructions.</li>
       </ul>
       <p><b>Manual Restarting of Network Service May Be Needed</b></p>
-      <p>When manually restarting the networking service on a node using OVS, one of the following
-        sequences must be used to restart Linux networking and OVS networking at the same time:</p>
-      <codeblock>service networking restart ; service openvswitch-switch restart</codeblock> or <codeblock>systemctl restart networking ; systemctl restart openvswitch-switch</codeblock>
-      <p>Failure to follow these sequences as shown may leave OVS-managed objects (bridges)
+      <p>If manually restarting the networking service on a node using Open vSwitch is required, use
+        the following sequences to restart Linux networking and Open vSwitch networking services
+        together:</p>
+      <codeblock>service networking restart ; service openvswitch-switch restart</codeblock>
+      <p>Failure to restart networking as shown may leave Open vSwitch managed objects (bridges)
         undefined or not connected to network ports.</p>
       <p><b>Service Endpoints Use Hostnames</b></p>
       <ul>
