@@ -24,14 +24,34 @@
     <topicref href="helion/installation.dita"/>
     <topicref href="helion/faq.dita"/>
     <topichead navtitle="Monitoring Guide">
-      <topicref href="helion/Monasca/monasca.dita"/>
-      <topicref href="helion/Monasca/alarms.dita"/>
+      <topicref href="helion/Monasca/monasca.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>Monasca Overview</navtitle>
+        </topicmeta>
+      </topicref>
+      <topicref href="helion/Monasca/alarms.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>Service Alarm Definitions</navtitle>
+        </topicmeta>
+      </topicref>
       <topichead navtitle="OpsConsole User Guide">
         <topicref href="helion/Monasca/OpsConsole/alarms.dita"/>
         <topicref href="helion/Monasca/OpsConsole/alarm_definitions.dita"/>
         <topicref href="helion/Monasca/OpsConsole/notification_methods.dita"/>
         <topicref href="helion/Monasca/OpsConsole/metric_monitoring.dita"/>
       </topichead>
+    </topichead>
+    <topichead navtitle="Logging Guide">
+      <topicref href="helion/Logging/logging_overview.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>Centralized Logging Overview</navtitle>
+        </topicmeta>
+      </topicref>
+      <topicref href="helion/Logging/logging_troubleshooting.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>Troubleshooting Logging Issues</navtitle>
+        </topicmeta>
+      </topicref>
     </topichead>
   </topicref>
 </map>
