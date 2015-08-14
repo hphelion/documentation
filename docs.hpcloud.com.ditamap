@@ -53,5 +53,19 @@
         </topicmeta>
       </topicref>
     </topichead>
+    <!-- reprting = metering = ceilomter -->
+    <topichead navtitle="Metering Guide">
+    <topicref href="helion/ceilometer/2.0commerical.services-reporting-overview.dita" navtitle="Metering with Ceilometer" locktitle="yes">
+      <topicref href="helion/ceilometer/2.0commerical.services-reporting-components.dita" navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
+      <topicref href="helion/ceilometer/2.0commerical.services-reporting-metertypes.dita" navtitle="Available Meter Types" locktitle="yes"/>
+      <topicref href="helion/ceilometer/2.0commerical.services-reporting-RBAC.dita" navtitle="Role-based Access Control" locktitle="yes"/>
+      <topicref
+        href="helion/ceilometer/2.0commercial.services-reporting-troubleshoot.dita" navtitle="Troubleshootig the Ceilometer Metering Service" locktitle="yes"/>
+      <topicref
+        href="helion/ceilometer/2.0commerical.services-reporting-APIExtensions.dita" navtitle="Ceilometer API Extensions" locktitle="yes"/>
+      <topicref
+        href="helion/ceilometer/2.0commerical.services-reporting-bestpractice.dita" navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
+    </topicref>
+    </topichead>
   </topicref>
 </map>
