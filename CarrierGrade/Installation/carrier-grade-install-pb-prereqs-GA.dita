@@ -291,7 +291,16 @@ StrictHostKeyChecking no </codeblock></li>
                                                   Also download the Signature files. This file will
                                                   need to be moved to the system that hosts the
                                                   VMware vCenter client. You can move the file to
-                                                  that system or download the file later. </li>
+                                                  that system or download the file later.</li>
+                                                <li><b id="productShow_appName">VCN OVSvApp
+                                                  Appliance</b>.  For the KVM + ESX deployment,
+                                                  download this file, named   Also download the
+                                                  Signature files. HP Virtual Cloud Networking's
+                                                  Open vSwitch vApp (OVSvApp) must be installed for
+                                                  HP Helion OpenStack environment to provision VMs
+                                                  in your VMware vCenter environment. Once deployed,
+                                                  OVSvApp appliance enables networking between the
+                                                  tenant Virtual Machines (VMs).</li>
                                         </ul></li>
                                 <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file. The following
                                         list of files is

@@ -21,6 +21,8 @@
     <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
                 KVM + ESX deployment</xref> requires several JSON file that will be used when
             deploying the HLM VM.</p>
+        <p><i>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the
+                    KVM + ESX deployment</xref>.</i></p>
 <p>The <codeph>node-provision.json</codeph> file contains the following fields:</p>
 <table>
 <tgroup cols="2">
@@ -80,8 +82,6 @@
 <section id="sample-node-provisionjson-file"> <title>Sample node-provision.json file</title>
     <p>The following represents a sample <codeph>node-provision.json</codeph> file.  The IP addresses are masked for security purposes.
         Use values appropriate for your environment.</p>
-    <p>Return to <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">Create the HLM Virtual
-                    Machine</xref>.</p>
 <codeblock>
 [
   {
@@ -190,12 +190,9 @@
     "os_partition_size": "20",
     "data_partition_size": "80"
   }    
-]
-    
-    
-</codeblock>
-
-
+]</codeblock>
 </section>
+        <p><i>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the
+                    KVM + ESX deployment</xref>.</i></p>
 </body>
 </topic>
