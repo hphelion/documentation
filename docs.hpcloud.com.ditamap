@@ -55,7 +55,7 @@
     </topichead>
     <!-- reprting = metering = ceilomter -->
 
-    <topicref href="helion/ceilometer/reporting_overview.dita" navtitle="Metering with Ceilometer"
+    <topicref href="helion/ceilometer/reporting_overview.dita" navtitle="Metering Guide"
       locktitle="yes">
       <topicref href="helion/ceilometer/reporting_components.dita"
         navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
