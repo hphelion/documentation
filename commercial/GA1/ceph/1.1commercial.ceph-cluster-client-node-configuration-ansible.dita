@@ -87,13 +87,13 @@
               <codeph>/helion-ceph</codeph>.</p></li>
         <li>Ensure the client setup scripts tar ball (also containing the Ceph Debian distribution
           for installing on Helion nodes) has been copied under
-            <codeph>/helion-ceph/cephconfigureation/ansible-playbooks/roles/ceph-client/files</codeph>.<p>For
-            example:</p><codeblock><codeph>/helion-ceph/cephconfigureation/ansible-playbooks/roles/ceph-client/files/ceph_client_setup-0.80.7_h1.1.fix6_newdebs.tar
+            <codeph>/helion-ceph/cephconfiguration/ansible-playbooks/roles/ceph-client/files</codeph>.<p>For
+            example:</p><codeblock><codeph>/helion-ceph/cephconfiguration/ansible-playbooks/roles/ceph-client/files/ceph_client_setup-0.80.7_h1.1.fix6_newdebs.tar
 </codeph></codeblock></li>
         <li>Once the nodes are provisioned (for more information on nodes provisioning, refer <xref
             href="../../../commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita#topic10341/running-provision-tool"
             type="section">Running the Provisioning Tool</xref>), create the following configuration
-          files under <codeph>/helion-ceph/cephconfigureation/ansible-playbooks/</codeph> on the
+          files under <codeph>/helion-ceph/cephconfiguration/ansible-playbooks/</codeph> on the
             <codeph>ceph-admin</codeph> node<p>
             <b>cephcluster.csv:</b>
           </p><codeblock><codeph>&lt;ip-address&gt;, &lt;ceph-identifier&gt;, &lt;type&gt;, 
@@ -104,7 +104,7 @@ ip-address
               <codeph>ceph-cluster</codeph>. This can either be a PXE, management or some other
             network.</p><p>
             <b>ceph-identifier</b>: is the unique name to identify an OSD, mon, admin or RADOS. This
-            will be used by the bootstrap script to generate Ansible
+            will be used by the bootstrap script to generate ansible
               metadata.</p><p><b>IMPORTANT</b>: The RADOS nodes must be given the identifier
               <codeph>rados-1</codeph> and <codeph>rados-2</codeph>.</p><p>
             <b>Type</b>: can be <codeph>mon-master</codeph>, <codeph>mon</codeph>,
@@ -250,6 +250,7 @@ step is in wrong order. here it wipes existing
 192.168.51.87,controller0,controllers
 192.168.51.86,controller1,controllers
 192.168.51.85,controller2,controllers
+192.168.124.4,seed0,seed
 </codeph></codeblock><p>
             <note>Before running this script, make sure that no partition numbers are associated
               with &lt;journal-disk-path> in the <codeph>cephcluster.csv</codeph> file. This script
@@ -258,7 +259,7 @@ step is in wrong order. here it wipes existing
         <li>Execute the following
             command.<codeblock><codeph>sudo ./bootstrap.sh &lt;cephadmin keypair&gt;
 </codeph></codeblock><p>This
-            script creates Ansible metadata from the <codeph>cephcluster.csv</codeph> manifest file,
+            script creates ansible metadata from the <codeph>cephcluster.csv</codeph> manifest file,
             and configures the <codeph>/etc/hosts</codeph> file on Ceph nodes.</p><p>After the
             bootstrap is run, verify that the <codeph>hosts</codeph> file and
               <codeph>host_vars/*</codeph> files are generated.</p><p>The following is a sample host
@@ -338,6 +339,9 @@ controllers
 controller0 ansible_ssh_private_key_file=seed-id_rsa.private
 controller1 ansible_ssh_private_key_file=seed-id_rsa.private
 controller2 ansible_ssh_private_key_file=seed-id_rsa.private
+
+[seed]
+seed0   ansible_ssh_private_key_file=seed-id_rsa.private
 </codeph></codeblock></li>
       </ol>
       <p>
@@ -360,8 +364,7 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
       </note>
       <codeblock><codeph>4 -rw------- 1 hlinux hlinux 1676 Feb 24 07:46 cephadmin.pem 
 4 -rw------- 1 hlinux hlinux 1675 Feb 24 07:45 seed-id_rsa.private
-4 -rw------- 1 hlinux hlinux 393 Feb 24 07:45 seed-id_rsa.public
-</codeph></codeblock>
+4 -rw------- 1 hlinux hlinux 393 Feb 24 07:45 seed-id_rsa.public</codeph></codeblock>
     </section>
     <section id="ceph-is-deployed-in-three-different-stages">
       <title>Ceph is deployed in three different stages</title>
@@ -446,8 +449,8 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
 2015-02-24 21:27:24,358 p=18817 u=hlinux | mon-2 : ok=2 changed=0 unreachable=0 failed=0
 </codeph></codeblock>
     </section>
-    <p>You can choose to integrate CEPH with Cinder, Glance , and  Nova. To intergrate Ceph with
-      these openstack components, execute the following
+    <p>You can choose to integrate CEPH with Cinder, Glance , and Nova. To integrate Ceph with these
+      OpenStack components, execute the following
       command:<codeblock>ansible-playbook –i hosts client_setup.yml</codeblock></p>
     <p>Execute the following command to integrate Ceph without Nova:</p>
     <p>
@@ -458,11 +461,11 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
         <li>Login to Seed VM.<codeblock>ssh &lt;seed IP address></codeblock></li>
         <li>Source the environment variables file created during initial
           installation.<codeblock><systemoutput># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name></systemoutput></codeblock></li>
-        <li>Execute the following command with a specfic options (refer table below) to integrate
+        <li>Execute the following command with a specific options (refer table below) to integrate
           various HOS components with Ceph using passthrough:<p>
             <codeblock><codeph>python /root/tripleo/hp_ceph_passthrough/hp_ceph_load_config.py</codeph></codeblock>
-          </p><p>The folllowing table provides a specific option to integrate various HP Helion
-            Opentack components with CEPH.</p><p>
+          </p><p>The following table provides a specific option to integrate various HP Helion
+            OpenStack components with CEPH.</p><p>
             <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0* 1.0* 1.0*"
               id="simpletable_r5t_n4p_xs">
               <sthead>
@@ -493,7 +496,7 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
               <strow>
                 <stentry>Cinder, Glance, Nova</stentry>
                 <stentry><codeph>python
-                    /root/tripleo/hp_ceph_passthrough/hp_ceph_load_config.p</codeph></stentry>
+                    /root/tripleo/hp_ceph_passthrough/hp_ceph_load_config.py</codeph></stentry>
                 <stentry>Only CEPH backend works</stentry>
                 <stentry>All Glance operations use CEPH as backend.</stentry>
                 <stentry>Instances are in CEPH pool.</stentry>
@@ -509,15 +512,15 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
             </simpletable>
           </p></li>
         <li>Execute the following command to update the cloud:<codeblock><systemoutput>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log</systemoutput></codeblock><p>
-            <note>It is recommended to execute step <b>3</b> and <b>4</b> before updating the cloud.
-              This is applicable for scale operation too.</note>
+            <note>(<b>Mandatory</b>)Please execute step <b>3</b> and <b>4</b> before updating the
+              cloud or for any scale operation .</note>
           </p></li>
         <li>To move from one configuration to another choose the appropriate command for the new
           configuration. <p><b>Example</b>:</p>To move from CEPH+Cinder to CEPH +Cinder and Glance
           you must execute the following
           command:<codeblock><codeph>python /root/tripleo/hp_ceph_passthrough/hp_ceph_load_config.py -s cinder,glance</codeph></codeblock></li>
       </ol></section>
-    <section><b>Limitation</b><p>There are some known limitaion when you switch from one
+    <section><b>Limitation</b><p>There are some known limitation when you switch from one
         configuration to another. A few of them are listed below:</p><p>
         <ol id="ol_fk1_qkq_xs">
           <li>Cinder to Cinder+glance<ol id="ol_zdg_zkq_xs">
@@ -539,7 +542,7 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
             </ol></li>
         </ol>
       </p></section>
-    <note>When intergrating or removing CEPH as a backend for a given OpenStack service, all the
+    <note>When integrating or removing CEPH as a backend for a given OpenStack service, all the
       entities created with the earlier configuration becomes unusable. </note>
     <p>III. Set up RADOS Gateway nodes in the Ceph cluster by entering:</p>
     <codeblock><codeph>ansible-playbook -i hosts rados_setup.yml
@@ -591,7 +594,7 @@ f0:92:1c:05:35:58,helioncsel,m0ng00s3,192.168.51.106,163840,200,overcloud-ceph-c
 </codeph></codeblock>
         </li>
         <li>For NTP-related warnings, check the following section on how to sync all the servers in
-          the Ceph cluser with the NTP server.</li>
+          the Ceph cluster with the NTP server.</li>
       </ul>
     </section>
     <section id="add-osd">
@@ -667,14 +670,15 @@ f0:92:1c:05:33:12,helioncsel,m0ng00s3,10.1.67.123,179,163840,200,overcloud-ceph-
       <p>The Heartbeat tool is written in Python and it is an open ended tool so other 3rd party
         service and status checks can be added or extended. This tool is run on the seed node from
         the HP Helion setup. This tool continuously queries for HP Helion OpenStack services and
-        provides notifications to the pre-defined administrator when config file mismatches are
-        detected, or when any of the specified services in config file are down. The Configuration
-        service automatically reapplies the known good config files when the checksum does not
-        match. It then restarts the associated services specified in the config file and triggers
-        the validation script to do a minimal check for that service. Even if the config files are
-        overwritten when the checksum does not match, a backup of the existing file from the current
-        folder (named <codeph>[filename].timestamp</codeph>) is also saved in the backup folder.
-        This allows the admin to verify the changes at any time.</p>
+        provides notifications to the pre-defined administrator when configuration file mismatches
+        are detected, or when any of the specified services in configuration file are down. The
+        configuration service automatically reapplies the known good configuration files when the
+        checksum does not match. It then restarts the associated services specified in the
+        configuration file and triggers the validation script to do a minimal check for that
+        service. Even if the configuration files are overwritten when the checksum does not match, a
+        backup of the existing file from the current folder (named
+          <codeph>[filename].timestamp</codeph>) is also saved in the backup folder. This allows the
+        admin to verify the changes at any time.</p>
       <p>The Heartbeat tar files are:</p>
       <codeblock><codeph>heartbeat-tool/Readme.md 
 heartbeat-tool/conf/heartbeat.conf 
