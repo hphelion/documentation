@@ -190,5 +190,27 @@
           of a software platform, providing ultra-reliability and exceptional performance
           efficiencies for telecommunications networks. </p>
       </section>
+    <section><title id="dcn">HP Distributed Cloud Networking Components</title><p>The HP Helion OpenStack
+        Carrier Grade KVM + ESX deployment uses HP Distributed Cloud Networking to provide virtual
+        networking within the cloud.</p><p>DCN must be deployed before starting the cloud
+        deployment. Please refer to DCN documentation for details. </p>The main components in the HP
+      DCN solution are: Virtualized Services Directory (VSD) and Virtualized Services Directory
+      Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and Switching (VRS).<ul>
+        <li>HP Virtualized Service Directory (VSD) - The VSD is a policy engine for managing users,
+          compute resources and network resources, that is located on a server outside of the HP
+          Helion OpenStack Carrier Grade cloud. </li>
+        <li>HP Networks Virtualized Services Directory Architect (VSD Architect). The VSD Architect
+          is a GUI for management tasks on the VSD.</li>
+        <li>HP Virtual Services Controller (VSC): The VSC is a virtual machine application running
+          all the control plane tasks, maintaining a full view of per-tenant network and service
+          topologies. The VSC should be installed on the KVM host system within the HP Helion
+          OpenStack Carrier Grade cloud.</li>
+        <li>HP Distributed Virtual Routing and Switching (VRS): The HP VRS is the software agent
+          that runs in each Hypervisor (HV). The HP VRS component is an enhanced Open vSwitch (OVS)
+          implementation that constitutes the network forwarding plane.</li>
+      </ul><p>During the installation, you will be interacting with DCN. You should be familiar with
+        the major DCN components, including how to access the various systems, IP addresses, and
+        user credentials.</p>
+    </section>
     </body>
 </topic>

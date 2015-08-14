@@ -47,7 +47,7 @@
                 <topicref href="carrier-grade-install-pb-kvm-wr-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-ldap-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-hcfgproc-output.dita" toc="no"/>
-                <topicref href="carrier-grade-install-vspere-switch.dita" toc="no"/>
+                <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-vsvapp.dita" toc="no"/>
             </topicref>
         </topichead>

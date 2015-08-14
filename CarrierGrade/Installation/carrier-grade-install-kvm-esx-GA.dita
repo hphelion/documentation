@@ -27,8 +27,11 @@
         application and HP Distributed Cloud Networking components must be fully installed and
         functioning:</p>
       <p><b>DCN Requirements</b></p>
-      <p>VSD should be deployed before starting the cloud deployment. Please refer to DCN
-        documentation for details. </p>
+      <p>HP Helion Distributed Cloud Networking (DCN) must be deployed before starting the cloud
+        deployment. Please refer to DCN documentation for details. </p>
+      <p>For a quick overview of the DCN components, see <xref
+        href="carrier-grade-technical-overview-esx.dita#topic3485/dcn">KVM + ESX
+        Deployment Architecture Reference</xref></p>
       <p>In production cloud deployments:</p>
       <ul id="ul_hnw_pry_zs">
         <li>DCN should be deployed in HA mode (with 2 VSCs, 2 VRS-Gs).</li>
