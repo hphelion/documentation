@@ -19,7 +19,7 @@
 <p>The Metering service contains three types of meters:</p>
 <ul>
 <li>
-<b>Cumulative</b> - A cumulative meter measures date over time (for example, instance hours).</li>
+<b>Cumulative</b> - A cumulative meter measures data over time (for example, instance hours).</li>
 <li>
 <b>Gauge</b> - A gauge measures discrete items (for example, floating IPs or image uploads) or fluctuating values (such as disk input or output).</li>
 <li>

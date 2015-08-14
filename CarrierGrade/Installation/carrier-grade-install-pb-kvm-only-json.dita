@@ -79,16 +79,17 @@
         </table>
         <section id="sample-node-provisionjson-file"> <title>Sample node-provision.json file</title>
             <p>The following represents a sample <codeph>node-provision.json</codeph> file. Use values appropriate for your environment.</p>
-            <codeblock>[
+            <codeblock>
+                [
                 {
                 "name": "ccn1",
-                "pxe_mac_address": "52:54:00:97:81:11",
-                "pxe_interface": "eth0",
+                "pxe_mac_address": "d0:bf:9c:f1:85:00",
+                "pxe_interface": "auto",
                 "pm_type": "ipmilan",
-                "pm_ip": "192.168.100.105",
-                "pm_user": "kvm-host-username",
-                "pm_pass": "kvm-host-pass",
-                "failure_zone": "1",
+                "pm_ip": "10.1.x.x",
+                "pm_user": "cghelion",
+                "pm_pass": "cghelion#",
+                "failure_zone": "fz1",
                 "node_group": "CCN-001-001",
                 "vendor": "HP",
                 "model": "DL680",
@@ -97,13 +98,13 @@
                 },
                 {
                 "name": "ccn2",
-                "pxe_mac_address": "52:54:00:6f:34:04",
-                "pxe_interface": "eth0",
+                "pxe_mac_address": "5c:b9:01:7a: 00: 00",
+                "pxe_interface": "auto",
                 "pm_type": "ipmilan",
-                "pm_ip": "192.168.100.106",
-                "pm_user": "kvm-host-username",
-                "pm_pass": "kvm-host-pass",
-                "failure_zone": "2",
+                "pm_ip": "10.1.x.x",
+                "pm_user": "cghelion",
+                "pm_pass": "cghelion#",
+                "failure_zone": "fz2",
                 "node_group": "CCN-001-001",
                 "vendor": "HP",
                 "model": "DL680",
@@ -112,13 +113,13 @@
                 },
                 {
                 "name": "ccn3",
-                "pxe_mac_address": "52:54:00:7a:32:06",
-                "pxe_interface": "eth0",
+                "pxe_mac_address": "5c:b9:01:7a: 00: 00",
+                "pxe_interface": "auto",
                 "pm_type": "ipmilan",
-                "pm_ip": "192.168.100.107",
-                "pm_user": "kvm-host-username",
-                "pm_pass": "kvm-host-pass",
-                "failure_zone": "3",
+                "pm_ip": "10.1.x.x",
+                "pm_user": "cghelion",
+                "pm_pass": "cghelion#",
+                "failure_zone": "fz3",
                 "node_group": "CCN-001-001",
                 "vendor": "HP",
                 "model": "DL680",
@@ -127,13 +128,28 @@
                 },
                 {
                 "name": "dcn1",
-                "pxe_mac_address": "52:54:00:6f:55:01",
-                "pxe_interface": "eth0",
+                "pxe_mac_address": "d0:bf:9c:c0: 00: 00",
+                "pxe_interface": "auto",
                 "pm_type": "ipmilan",
-                "pm_ip": "192.168.100.121",
-                "pm_user": "kvm-host-username",
-                "pm_pass": "kvm-host-pass",
-                "failure_zone": "2",
+                "pm_ip": "10.1.x.x",
+                "pm_user": "cghelion",
+                "pm_pass": "cghelion#",
+                "failure_zone": "fz1",
+                "node_group": "DCN-001-001",
+                "vendor": "HP",
+                "model": "DL680",
+                "os_partition_size": "20",
+                "data_partition_size": "80"
+                },
+                {
+                "name": "dcn2",
+                "pxe_mac_address": "d0:bf:9c:c0: 00: 00",
+                "pxe_interface": "auto",
+                "pm_type": "ipmilan",
+                "pm_ip": "10.1.x.x",
+                "pm_user": "cghelion",
+                "pm_pass": "cghelion#",
+                "failure_zone": "fz2",
                 "node_group": "DCN-001-001",
                 "vendor": "HP",
                 "model": "DL680",
@@ -142,50 +158,25 @@
                 },
                 {
                 "name": "vrg1",
-                "pxe_mac_address": "52:54:00:6f:66:01",
-                "pxe_interface": "eth0",
+                "pxe_mac_address": "d0:bf:9c:c0: 00: 00",
+                "pxe_interface": "auto",
                 "pm_type": "ipmilan",
-                "pm_ip": "192.168.100.111",
-                "pm_user": "kvm-host-username",
-                "pm_pass": "kvm-host-pass",
-                "failure_zone": "1",
-                "node_group": "DCN-001-001",
-                "vendor": "HP",
-                "model": "DL680",
-                "os_partition_size": "20",
-                "data_partition_size": "80"
-                },
-                {
-                "name": "cpn1",
-                "pxe_mac_address": "52:54:00:ce:89:85",
-                "pxe_interface": "eth0",
-                "pm_type": "ipmilan",
-                "pm_ip": "192.168.100.104",
-                "pm_user": "kvm-host-username",
-                "pm_pass": "kvm-host-pass",
-                "failure_zone": "2",
-                "node_group": "CPN-001-001",
-                "vendor": "HP",
-                "model": "DL680",
-                "os_partition_size": "20",
-                "data_partition_size": "80"
-                },
-                {
-                "name": "cpn2",
-                "pxe_mac_address": "52:54:00:ce:89:86",
-                "pxe_interface": "eth0",
-                "pm_type": "ipmilan",
-                "pm_ip": "192.168.100.109",
-                "pm_user": "kvm-host-username",
-                "pm_pass": "kvm-host-pass",
-                "failure_zone": "3",
-                "node_group": "CPN-001-001",
+                "pm_ip": "10.1.x.x",
+                "pm_user": "cghelion",
+                "pm_pass": "cghelion#",
+                "failure_zone": "fz1",
+                "node_group": "VRG-001-001",
                 "vendor": "HP",
                 "model": "DL680",
                 "os_partition_size": "20",
                 "data_partition_size": "80"
                 }
-                ]</codeblock>
+                ]
+                
+                
+            
+            
+            </codeblock>
             <p>Return to <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">Create the HLM Virtual
                 Machine</xref>.</p>
             <p>

@@ -92,6 +92,8 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="hp-proliant-rack-servers"> <title>HP ProLiant Rack Servers</title>
 <ul>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8255128" scope="external" format="html">DL560 Gen9</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8090149" scope="external" format="html">DL580 Gen9</xref></li>
   <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836" scope="external" format="html">DL360 Gen9</xref></li>
   <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241" format="html" scope="external">DL380 Gen9</xref></li>
   <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527" scope="external" format="html">DL320 Gen8</xref></li>
@@ -119,7 +121,12 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="hp-proliant-xl-servers"> <title>HP ProLiant XL Servers</title>
 <ul>
-<li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7307066" scope="external" format="html">XL230a Gen9</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7799270" scope="external" format="html">XL170r Gen9</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7799274" scope="external" format="html">XL190r Gen9</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7832023" scope="external" format="html">Apollo 2000 Gen9</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8261839#!tab=features" format="html" scope="external">XL450 Gen9</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8261835" format="html" scope="external">Apollo 4500 Gen9</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7307066" scope="external" format="html">XL230a Gen9</xref></li>
 <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7307070" format="html" scope="external">XL250a Gen9</xref></li>
   <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7152918" format="html" scope="external">Apollo 6000</xref></li>
 </ul>
@@ -145,6 +152,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="flexiblelom"> <title>FlexibleLOM</title>
 <ul>
+        <li>HP Ethernet 10Gb 2-port 546FLR-SFP+ Adapter </li>
 <li>HP Ethernet 10Gb 2-port 530FLR-SFP+ Adapter</li>
 <li>HP FlexFabric 10Gb 2-port 533FLR-T Adapter</li>
 <li>HP FlexFabric 10Gb 2-port 534FLR-SFP+ Adapter</li>
@@ -156,6 +164,8 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <section id="nic"> <title>NIC</title>
 <ul>
 <li>Dell: Broadcom Corporation NetXtreme II BCM57810 10 Gigabit Ethernet (rev 10)</li>
+        <li>HP Ethernet 10Gb/40Gb 2-port 544+QSFP Adapter </li>
+        <li>HP Ethernet 10Gb 2-port 546SFP+ Adapter</li>
 <li>HP Ethernet 10Gb 2-port 530SFP+ Adapter</li>
 <li>HP Ethernet 10Gb 2-port 530T Adapter</li>
 <li>HP NC552SFP 10Gb 2-port Ethernet Server Adapter</li>
@@ -208,6 +218,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="hpnic"> <title>NIC</title>
 <ul>
+        <li>HP Ethernet 10Gb/40Gb 2-port 544+M Adapter </li>
 <li>HP Flex-10 10Gb 2-port 530M Adapter</li>
 <li>HP FlexFabric 10Gb 2-port 534M Adapter</li>
 <li>HP Flex-10 10Gb 2-port 552M Adapter</li>
@@ -218,7 +229,8 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="hpsas"> <title>SAS</title>
 <ul>
-<li>HP Smart Array P244br/ 1GB FBWC 12 Gb 2-ports Int SAS Controller</li>
+  <li>HP Smart Array P246br/1GB FBWC 12Gb 4-ports Int SAS Controller</li>
+  <li>HP Smart Array P244br/ 1GB FBWC 12 Gb 2-ports Int SAS Controller</li>
 <li>HP Smart Array P721m/2GB FBWC 6Gb 4-ports Ext Mezzanine SAS Controller</li>
 <li>HP Smart Array P731m/2GB FBWC 6Gb 4-ports Ext Mezzanine SAS Controller </li>
 </ul>

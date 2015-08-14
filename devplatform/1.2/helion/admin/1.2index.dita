@@ -184,18 +184,6 @@
             </li>
           </ul></li>
 <li>
-          <xref href="cluster/1.2cloud-init.dita">cloud-init</xref>
-          <ul>
-            <li>
-              <xref href="cluster/1.2cloud-init.dita#topic2346/securing-the-new-node" type="section"  >Securing the
-                new node</xref>
-            </li>
-            <li>
-              <xref href="cluster/1.2cloud-init.dita#topic2346/custom-system-configuration" type="section"  >Custom
-                System Configuration</xref>
-            </li>
-          </ul></li>
-<li>
           <xref href="cluster/1.2external-db.dita">External Data Services</xref>
           <ul>
             <li>

@@ -22,48 +22,73 @@
 <!-- Euca -->
 <!-- CGH -->
   <topicref href="CarrierGrade/carrier-grade-index.dita">
-    <topicref href="CarrierGrade/Overview/carrier-grade-overview.dita">
-      <topicref href="CarrierGrade/Overview/carrier-grade-overview-non-kvm.dita"/>
-      <topicref href="CarrierGrade/Overview/carrier-grade-overview-kvm.dita"/>
-      <topicref href="CarrierGrade/Overview/carrier-grade.services-overview.dita">
-        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita"/>
+    <topicref href="CarrierGrade/Overview/carrier-grade-overview.dita" navtitle="Overview"
+      locktitle="yes">
+      <topicref href="CarrierGrade/Overview/carrier-grade-overview-non-kvm.dita"
+        navtitle="Non-KVM Region Overview" locktitle="yes"/>
+      <topicref href="CarrierGrade/Overview/carrier-grade-overview-kvm.dita"
+        navtitle="KVM Region Overview" locktitle="yes"/>
+      <topicref href="CarrierGrade/Overview/carrier-grade.services-overview.dita"
+        navtitle="Services Overview" locktitle="yes">
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita"
+          navtitle="Compute Service (Nova) Overview" locktitle="yes"/>
         <topicref
-          href="CarrierGrade/ServicesOverviews/carrier-grade-services-networking-overview.dita"/>
-        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-imaging-overview.dita"/>
-        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-volume-overview.dita"/>
+          href="CarrierGrade/ServicesOverviews/carrier-grade-services-networking-overview.dita"
+          navtitle="HP Networking Service (Neutron) Overview" locktitle="yes"/>
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-imaging-overview.dita"
+          navtitle="HP Image Operations (Glance) Overview" locktitle="yes"/>
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-volume-overview.dita"
+          navtitle="HP Block Storage Operations (Cinder) Overview" locktitle="yes"/>
         <topicref
-          href="CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"/>
+          href="CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"
+          navtitle="HP Orchestration Service (Heat) Overview" locktitle="yes"/>
         <topicref
-          href="CarrierGrade/ServicesOverviews/carrier-grade-services-identity-overview.dita"/>
+          href="CarrierGrade/ServicesOverviews/carrier-grade-services-identity-overview.dita"
+          navtitle="HP Identity Service (Keystone) Overview" locktitle="yes"/>
         <topicref
-          href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"/>
-        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita">
-          <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"/>
+          href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"
+          navtitle="HP Metering Service (Ceilometer) Overview" locktitle="yes"/>
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
+          navtitle="HP Horizon Service Overview" locktitle="yes">
+          <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+            navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
           <topicref
-            href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"/>
+            href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"
+            navtitle="How to Use the Helion Dashboard" locktitle="yes"/>
           <topicref
-            href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita"/>
+            href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita"
+            navtitle="Using the Helion Dashboard to Manage Your Cloud" locktitle="yes"/>
         </topicref>
       </topicref>
     </topicref>
-    <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml"
-      navtitle="HP Helion OpenStack Carrier Grade 1.1: Release Notes">
+    <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml" navtitle="Release Notes"
+      locktitle="yes">
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333830815.xml"/>
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333831397.xml"/>
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333831977.xml"/>
     </topicref>
-    <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita">
-      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-kvm-only.dita"/>
-      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-esx.dita"/>
+    <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"
+      navtitle="Technical Overview" locktitle="yes">
+      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-kvm-only.dita"
+        navtitle="KVM Deployment Architecture Reference" locktitle="yes"/>
+      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-esx.dita"
+        navtitle="KVM+ ESX  Deployment Architecture Reference" locktitle="yes"/>
     </topicref>
-    <topicref href="CarrierGrade/Installation/carrier-grade-technical-specs.dita"/>
-    <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix2.dita"/>
-    <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"/>
-    <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"/>
-    <topicref href="CarrierGrade/API/carrier-grade-api.dita"/>
-    <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1: License Files">
-      <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"/>
-      <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="no"/>
+    <topicref href="CarrierGrade/Installation/carrier-grade-technical-specs.dita"
+      navtitle="Technical Specifications" locktitle="yes"/>
+    <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix2.dita"
+      navtitle="Support Matrix" locktitle="yes"/>
+    <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
+      format="ditamap" navtitle="Installation Guide" locktitle="yes"/>
+    <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
+      navtitle="Administrator Guide" locktitle="yes"/>
+    <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
+      locktitle="yes"/>
+    <topichead navtitle=" License Files">
+      <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
+        navtitle="Open Source and Third-Party Software License Agreement" locktitle="yes"/>
+      <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="no"
+        navtitle="Software License Terms" locktitle="yes"/>
     </topichead>
     <topichead navtitle="Files in map not TOC" toc="no">
       <topicref

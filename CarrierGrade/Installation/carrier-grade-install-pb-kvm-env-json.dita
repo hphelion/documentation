@@ -26,6 +26,7 @@
     Use values appropriate for your environment.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
+      <p/>
         
 <codeblock>
     {
@@ -37,270 +38,136 @@
               "name": "CCN",
               "interface-map": [
               {
-                "name": "INTF0",
-                "machine-port-map": [
+              "name": "INTF0",
+              "ethernet-port-map": {
+              "interface-ports": [ "eth0" ]
+              },
+              "logical-network-map": [
                 {
-                  "vendor": "HP",
-                  "model": "ProLiant DL360 Gen9",
-                  "interface-ports": [
-                  {
-                    "port": "port5",
-                    "label": "ctrl-1"
-                  },
-                  {
-                     "port": "port6",
-                     "label": "ctrl-2"
+                  "name": "management",
+                  "type": "vlan",
+                  "segment-id": "203",
+                  "network-address": {
+                  "cidr": "10.x.x.x/24",
+                  "start-address": "10.x.x.x",
+                  "gateway": "10.x.x.x"
+                }
+                },
+                {
+                  "name": "api",
+                  "type": "vlan",
+                  "segment-id": "204",
+                  "network-address": {
+                  "cidr": "10.x.x.x/24",
+                  "start-address": "10.x.x.x"
+                  }
+                },
+                {
+                  "name": "blockstore",
+                  "type": "vlan",
+                  "segment-id": "73",
+                  "network-address": {
+                    "cidr": "172.x.x.x/24",
+                    "start-address": "172.x.x.x"
+                   }
                   }
                 ]
-                }       
-               ],
-             "bond-options": {
-                "bond-mode": 4,
-                "bond-miimon": 100,
-                "bond-updelay": 200,
-                "bond-slaves": "ctrl-1 ctrl-2"
-            },
-             "logical-network-map": [
+              }
+            ]
+        },
+        {
+          "name": "CPN",
+          "interface-map": [
             {
-              "name": "management",
-              "type": "vlan",
-              "segment-id": "303",
-              "network-address": {
-                 "cidr": "10.30.x.x/24",
-                 "start-address": "10.30.x.x",
-                 "gateway": "10.30.x.x"
-                }
+              "name": "INTF0",
+              "ethernet-port-map": {
+                  "interface-ports": [ "eth0" ]
               },
-              {
-               "name": "api",
-               "type": "vlan",
-               "segment-id": "304",
-               "network-address": {
-                 "cidr": "10.30.x.x/24",
-                 "start-address": "10.30.x.x"
+              "logical-network-map": [
+               {
+                  "name": "management",
+                  "ref": "ccn-INTF0-management"
                  }
+               ]
+             }
+           ]
+        },
+        {
+          "name": "DCN",
+          "interface-map": [
+            {
+              "name": "INTF0",
+              "ethernet-port-map": {
+                  "interface-ports": [ "eth0" ]
               },
-              {
-               "name": "blockstore",
-               "type": "vlan",
-               "segment-id": "74",
-               "network-address": {
-                  "cidr": "172.16.x.x/24",
-                  "start-address": "174.16.x.x"
-                  }
+               "logical-network-map": [
+                {
+                  "name": "management",
+                  "ref": "ccn-INTF0-management"
+                  },
+                  {
+                    "name": "datacenter",
+                    "type": "vlan",
+                    "segment-id": "205",
+                    "network-address": {
+                      "cidr": "10.x.x.x/24",
+                      "start-address": "10.x.x.x",
+                      "gateway": "10.x.x.x"
+                      }
+                   }
+                 ]
+               },
+                {
+        "name": "INTF1",
+        "ethernet-port-map": {
+          "interface-ports": [ "eth1" ]
+          },
+          "logical-network-map": [
+          {
+             "name": "tenant",
+             "type": "vlan",
+             "segment-id": "",
+             "network-address": {
+                "cidr": "10.x.x.x/24",
+                "start-address": "10.x.x.x",
+                "gateway": "10.x.x.x"
+                }
               }
             ]
           }
         ]
-      },
-      {
-        "name": "CPN",
-        "interface-map": [
-        {
-         "name": "INTF0",
-         "machine-port-map": [
-          {
-           "vendor": "HP",
-           "model": "ProLiant DL360 Gen9",
-           "interface-ports": [
-            {
-             "port": "port5",
-             "label": "ctrl-1"
-             },
-             {
-              "port": "port6",
-              "label": "ctrl-2"
-             }
-           ]
-         }
-       ],
-       "bond-options": {
-        "bond-mode": 4,
-        "bond-miimon": 100,
-        "bond-updelay": 200,
-        "bond-slaves": "ctrl-1 ctrl-2"
-       },
-        "logical-network-map": [
-         {
-          "name": "management",
-          "ref": "ccn-INTF0-management"
-          }
-        ]
-       }
-      ]
-    },
-    {
-     "name": "DCN",
-     "interface-map": [
-      {
-        "name": "INTF0",
-        "machine-port-map": [
-         {
-          "vendor": "HP",
-          "model": "ProLiant DL360 Gen9",
-          "interface-ports": [
-           {
-             "port": "port5",
-             "label": "ctrl-1"
-            },
-            {
-              "port": "port6",
-              "label": "ctrl-2"
-             }
-           ]
-         }
-       ],
-        "bond-options": {
-        "bond-mode": 4,
-        "bond-miimon": 100,
-        "bond-updelay": 200,
-        "bond-slaves": "ctrl-1 ctrl-2"
-       },
-         "logical-network-map": [
-          {
-            "name": "management",
-            "ref": "ccn-INTF0-management"
-          },
-          {
-            "name": "datacenter",
-            "type": "vlan",
-            "segment-id": "305",
-            "network-address": {
-              "cidr": "10.30.5.0/24",
-              "start-address": "10.30.x.x",
-              "gateway": "10.30.x.x"
-              }
-           }
-         ]
-       },
-       {
-         "name": "INTF1",
-         "ethernet-port-map": {
-            "interface-map": [
-             {
-              "name": "INTF1",
-              "machine-port-map": [
-               {
-                 "vendor": "HP",
-                 "model": "ProLiant DL360 Gen9",
-                 "interface-ports": [
-                   {
-                     "port": "port7",
-                     "label": "data-1"
-                    },
-                    {
-                      "port": "port8",
-                      "label": "data-2"
-                    }
-                  ]
-                }
-             ],
-              "bond-options": {
-              "bond-mode": 4,
-              "bond-miimon": 100,
-              "bond-updelay": 200,
-              "bond-slaves": "data-1 data-2"
-             },
-              "logical-network-map": [
-               {
-                 "name": "tenant",
-                 "type": "vlan",
-                 "segment-id": "306",
-                 "network-address": {
-                    "cidr": "10.30.6.0/24",
-                    "start-address": "10.30.x.x",
-                    "gateway": "10.30.x.x"
-                   }
-                  }
-                ]
-               }
-             ] 
-           }
-          }
-         ]
         },
         {
-          "name": "VRG",
-          "interface-map": [
-           {
-            "name": "INTF0",
-            "interface-map": [
+         "name": "VRG",
+         "interface-map": [
            {
              "name": "INTF0",
-             "machine-port-map": [
-              {
-                "vendor": "HP",
-                "model": "ProLiant DL360 Gen9",
-                "interface-ports": [
-                 {
-                   "port": "port5",
-                   "label": "ctrl-1"
-                  },
-                  {
-                    "port": "port6",
-                    "label": "ctrl-2"
-                   }
-                  ]
-                 }
-               ],
-                 "bond-options": {
-                   "bond-mode": 4,
-                   "bond-miimon": 100,
-                   "bond-updelay": 200,
-                   "bond-slaves": "ctrl-1 ctrl-2"
+             "ethernet-port-map": {
+               "interface-ports": [ "eth0" ]
                },
-                 "logical-network-map": [
-                  {
-                    "name": "management",
-                    "ref": "ccn-INTF0-management"
-                   }
-                  ]
-                 },
-                 {
-                  "name": "INTF1",
-                  "ethernet-port-map": {
-                  "interface-map": [
-                 {
-                  "name": "INTF1",
-                  "machine-port-map": [
-                  {
-                   "vendor": "HP",
-                   "model": "ProLiant DL360 Gen9",
-                   "interface-ports": [
-                  {
-                    "port": "port7",
-                    "label": "data-1"
-                   },
-                   {
-                     "port": "port8",
-                     "label": "data-2"
-                   }
-                 ] 
-               }
-             ],
-              "bond-options": {
-                "bond-mode": 4,
-                "bond-miimon": 100,
-                "bond-updelay": 200,
-                "bond-slaves": "data-1 data-2"
-             },
-              "logical-network-map": [
-               {
-                 "name": "tenant",
-                 "ref": "dcn-INTF1-tenant"
+             "logical-network-map": [
+             {
+                "name": "management",
+                "ref": "ccn-INTF0-management"
                 }
-               ]
+              ]
+            },
+            {
+              "name": "INTF1",
+              "ethernet-port-map": {
+                "interface-ports": [ "eth1" ]
+                },
+              "logical-network-map": [
+                {
+                  "name": "tenant",
+                  "ref": "dcn-INTF1-tenant"
+                  }
+                ]
               }
-             ]
-            }
-           }
-          ]
-         }
+            ]
+          }
         ]
-       }
-      ]
-     }
-</codeblock>
+      }</codeblock>
     
     
     <p> NOTE: The Helion Configuration Processor assigns the first address of the CLM address range to itself for serving python 

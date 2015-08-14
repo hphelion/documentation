@@ -312,7 +312,9 @@ ifup br-clm
 ifup br-dcm
 </codeph></codeblock></li>
 </ol>
-<p>Networking will be restored through the OVS Bridge</p>
+<p>Networking will be restored through the OVS Bridge.</p>
+            <p><b>Return to the <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148"
+                        >prerequisites</xref>.</b></p>
 <!-- Hide this; might not be needed 
 
 1. On the KVM host, change to the `/root/infra-ansible-playbooks/roles/HLM-CFG/` directory.
@@ -359,11 +361,6 @@ ifup br-dcm
     <img src="/media/CGH-install-route-table.png" />
 
 -->
-</section>
-<section id="next-step"> <title>Next Step</title>
-<p>
-    <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">Deploy the non-KVM region</xref>
-            </p>
 </section>
     <section><!-- ===================== horizontal rule ===================== --></section>
 </body>
