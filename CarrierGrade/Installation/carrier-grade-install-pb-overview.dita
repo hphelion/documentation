@@ -77,9 +77,10 @@
             <li>KVM Cloud <p>In this cloud topology, the standard services like keystone, glance,
                 cinder, swift are installed in the non-kvm region first. Then the KVM region is
                 installed. </p><ul>
-                <li> Install the <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">HLM
-                    and the HP Helion OpenStack environments</xref>. These components will be
-                  installed into what is called the <i>Non-KVM region</i>.</li>
+                <li> Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581"/>Helion Lifecycle
+                    Management.</li> 
+                  <li>Install the <xref href="carrier-grade-install-kvm.dita#topic10581">HP Helion OpenStack cloud</xref>. These components will be installed into what is
+                  called the <i>Non-KVM region</i>.</li>
                 <li>Install the carrier grade cloud. The carrier grade cloud is deployed into what
                   is called the KVM region.</li>
               </ul></li></ul>
@@ -87,9 +88,13 @@
             <li>KVM and ESX Cloud <p>In this cloud topology, the components required to support ESX
                 hypervisor are installed along with standard services in the non-kvm region first.
                 Then the KVM region is installed.</p><ul>
-                <li>Install the HLM and the HP Helion OpenStack environments. These components will
-                  be installed into what is called the Non-KVM region ESX hypervisor with DCN
-                  networking.</li>
+                  <li> Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581"/>Helion Lifecycle
+                    Management.</li> 
+                  <li>Install <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">the HP
+                    Helion OpenStack cloud and install the HP Distributed Cloud Networking (DCN)
+                    components</xref>. You will also install the VMware ESX compute proxy. These
+                  components will be installed into what is called the Non-KVM region and connect to
+                  the ESX cluster with DCN networking.</li>
                 <li>Install the <xref href="carrier-grade-install-kvm-cloud-GA.dita#topic1107"
                     >carrier grade cloud</xref>. The carrier grade cloud is deployed into what is
                   called the <i>KVM region</i></li>
@@ -100,7 +105,9 @@
 </section>
   
 <section id="first-step"> <title>First Step</title>
-  <p>Before you start, learn about the HP Helion Carrier Grade environment. Review the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita">Technical Overview</xref>.</p>
+  <p>Perform the <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148">prerequisite steps
+          and one time setup</xref> on your HLM host required to install HP Helion OpenStack Carrier
+        Grade in a baremetal environment.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
