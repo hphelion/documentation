@@ -27,8 +27,7 @@
         Use values appropriate for your environment.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
-<codeblock>
-{
+<codeblock>{
     "product": {
         "version": 1
     },
@@ -72,9 +71,7 @@
             }
         }
     ]
-}
-
-</codeblock>        
+}</codeblock>        
 
 </section>
 </body>

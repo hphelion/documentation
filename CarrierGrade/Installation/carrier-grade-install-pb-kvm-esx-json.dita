@@ -121,61 +121,42 @@
             proxy is configured by hdeploy process.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
-<codeblock>
-            
-                "product": {
-                    "version": 1
+<codeblock>            { 
+              "product": {
+              "version": 1
                 }, 
                 "property-groups": [
                     {
                         "name": "esx", 
                         "properties": {
                             "vcenter": {
-                                "ipaddress": "10.20.x.x", 
-                                "username": "root",  
-                                "password": "vmware", 
-                                "port": "443",
+                                "username": "root",
                                 "domain": "localhost.localdom"
+                                "password": "vmware", 
+                                "ipaddress": "10.20.x.x", 
+                                "port": "443",
+                            }, 
+                            }, 
+                            "network": {
+                                 "name": "Trunk Network"
                             }, 
                             "template": {
                                 "username": "cghelion", 
                                 "password": "cghelion", 
-                                "name": "overcloud_vcenter_compute_proxy.ova"
-                           }, 
-                           "network": {
-                                "name": "CLM-ALL"
-                           }, 
+                                "name": "TEMPL-CPV81"
                             "compute_proxy": [
                             {
                                 "datacenter": "Datacenter-1",
-                                 "cluster": "Cluster1",
-                                 "datastore": "datastore1",
-                                 "name": "ESX-Compute-Proxy-1",
-                                 "failure-zone": "f1",
-                                 "bridge_name": "B1"
-                            },
-                            {
-                                 "datacenter": "Datacenter-1",
-                                 "cluster": "Cluster1",
-                                 "datastore": "datastore1",
-                                 "name": "ESX-Compute-Proxy-2",
-                                 "failure-zone": "f1",
-                                 "bridge_name": "B1"
-                            },
-                            {
-                                 "datacenter": "Datacenter-1",
-                                 "cluster": "Cluster2",
-                                 "datastore": "datastore2",
-                                 "name": "ESX-Compute-Proxy-3",
-                                 "failure-zone": "f2",
-                                 "bridge_name": "B3"
-                            ]
+                                "cluster": "Cluster1",
+                                "name": "ESX-Compute-Proxy-1",
+                                "failure-zone": "f1",
+                                "bridge_name": "B1"
+                                "datastore": "datastore1"
+                             }
                         }
                     }
                 ]
-            }
-            ~
-</codeblock>        
+            }</codeblock>        
 
 </section>
 </body>

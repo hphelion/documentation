@@ -71,7 +71,11 @@
       <p>Use the following steps on the HLM host to deploy the HLM VM on the HLM Host using Ansible
         playbooks.</p>
       <ol>
-        <li>Execute the following command:<codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock><!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the HLM host, decrypt, and extract the files.</li><li>Execute the <codeph>updatepackages</codeph> command.</li><li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul>-->
+        <li>Execute the following command: <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock>
+          <!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the HLM host, decrypt, 
+            and extract the files.</li>
+            <li>Execute the <codeph>updatepackages</codeph> command.</li>
+            <li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul>-->
           <image href="../../media/CGH-ansible-playbook-run.png" id="image_bfp_pjm_vs">
             <alt>Sample Ansible Playbook run output</alt>
           </image></li>
