@@ -17,9 +17,11 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceilometer/1.1commerical.services-reporting-components.md-->
  <!--permalink: /helion/openstack/1.1/services/reporting/components/--></p>
-<p>The Metering service is included by the TripleO installer as part of the HP Helion OpenStack installation. During installation, the Metering service is automatically configured to collect data from the Nova, Cinder, Glance and Neutron services.</p>
+<p>The Metering service is installed during the HP Helion OpenStack installation process. During
+      installation, the Metering service is automatically configured to collect data from the Nova,
+      Cinder, Glance and Neutron services.</p>
 <p>All the metering processes have a unified configuration file that can be found at <i>/etc/ceilometer/ceilometer.conf</i> on the specific overcloud controller you are logged in to.</p>
-<p>The TripleO installation creates several management nodes running different metering components.</p>
+<p>The installation creates several management nodes running different metering components.</p>
 <p>
   <image href="../../../media/ceil_overallarchi.png" placement="break"/>
 </p>
