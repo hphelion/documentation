@@ -26,7 +26,7 @@
       in to.</p>
     <p>The installation creates several management nodes running different metering components.</p>
     <p>
-      <image href="../../../media/ceil_overallarchi.png" placement="break"/>
+      <image href="../images/ceil_overallarchi.png" placement="break"/>
     </p>
     <section id="components-in-tripleo-overcloud-controller0">
       <title>Components in TripleO Overcloud Controller0</title>
@@ -85,7 +85,7 @@
         for consuming and storing notifications. Here there is a high level picture of the overall
         polling/collecting cycle.</p>
       <p>
-        <image href="../../../media/ceil_collectorandagents.png" placement="break"/>
+        <image href="../images/ceil_collectorandagents.png" placement="break"/>
       </p>
     </section>
     <section id="centralagent">
