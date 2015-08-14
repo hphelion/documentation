@@ -24,48 +24,51 @@
     <topicref href="helion/installation.dita"/>
     <topicref href="helion/faq.dita"/>
     <topichead navtitle="Monitoring Guide">
-      <topicref href="helion/Monasca/monasca.dita" locktitle="yes">
+      <topicref href="helion/monasca/monasca.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Monasca Overview</navtitle>
         </topicmeta>
       </topicref>
-      <topicref href="helion/Monasca/alarms.dita" locktitle="yes">
+      <topicref href="helion/monasca/alarms.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Service Alarm Definitions</navtitle>
         </topicmeta>
       </topicref>
       <topichead navtitle="OpsConsole User Guide">
-        <topicref href="helion/Monasca/OpsConsole/alarms.dita"/>
-        <topicref href="helion/Monasca/OpsConsole/alarm_definitions.dita"/>
-        <topicref href="helion/Monasca/OpsConsole/notification_methods.dita"/>
-        <topicref href="helion/Monasca/OpsConsole/metric_monitoring.dita"/>
+        <topicref href="helion/monasca/opsconsole/alarms.dita"/>
+        <topicref href="helion/monasca/opsconsole/alarm_definitions.dita"/>
+        <topicref href="helion/monasca/opsconsole/notification_methods.dita"/>
+        <topicref href="helion/monasca/opsconsole/metric_monitoring.dita"/>
       </topichead>
     </topichead>
     <topichead navtitle="Logging Guide">
-      <topicref href="helion/Logging/logging_overview.dita" locktitle="yes">
+      <topicref href="helion/logging/logging_overview.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Centralized Logging Overview</navtitle>
         </topicmeta>
       </topicref>
-      <topicref href="helion/Logging/logging_troubleshooting.dita" locktitle="yes">
+      <topicref href="helion/logging/logging_troubleshooting.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Troubleshooting Logging Issues</navtitle>
         </topicmeta>
       </topicref>
     </topichead>
     <!-- reprting = metering = ceilomter -->
-    
-    <topicref href="helion/ceilometer/2.0commerical.services-reporting-overview.dita" navtitle="Metering with Ceilometer" locktitle="yes">
-      <topicref href="helion/ceilometer/2.0commerical.services-reporting-components.dita" navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
-      <topicref href="helion/ceilometer/2.0commerical.services-reporting-metertypes.dita" navtitle="Available Meter Types" locktitle="yes"/>
-      <topicref href="helion/ceilometer/2.0commerical.services-reporting-RBAC.dita" navtitle="Role-based Access Control" locktitle="yes"/>
-      <topicref
-        href="helion/ceilometer/2.0commercial.services-reporting-troubleshoot.dita" navtitle="Troubleshootig the Ceilometer Metering Service" locktitle="yes"/>
-      <topicref
-        href="helion/ceilometer/2.0commerical.services-reporting-APIExtensions.dita" navtitle="Ceilometer API Extensions" locktitle="yes"/>
-      <topicref
-        href="helion/ceilometer/2.0commerical.services-reporting-bestpractice.dita" navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
+
+    <topicref href="helion/ceilometer/reporting_overview.dita" navtitle="Metering with Ceilometer"
+      locktitle="yes">
+      <topicref href="helion/ceilometer/reporting_components.dita"
+        navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
+      <topicref href="helion/ceilometer/reporting_metertypes.dita" navtitle="Available Meter Types"
+        locktitle="yes"/>
+      <topicref href="helion/ceilometer/reporting_rbac.dita" navtitle="Role-based Access Control"
+        locktitle="yes"/>
+      <topicref href="helion/ceilometer/reporting_troubleshoot.dita"
+        navtitle="Troubleshootig the Ceilometer Metering Service" locktitle="yes"/>
+      <topicref href="helion/ceilometer/reporting_apiextensions.dita"
+        navtitle="Ceilometer API Extensions" locktitle="yes"/>
+      <topicref href="helion/ceilometer/reporting_bestpractice.dita"
+        navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
     </topicref>
-    
   </topicref>
 </map>
