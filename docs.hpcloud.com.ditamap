@@ -809,8 +809,6 @@
           navtitle="Cluster Setup">
           <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
             navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
-          <topicref href="devplatform/1.2/helion/admin/cluster/1.2cloud-init.dita" locktitle="yes"
-            navtitle="Using the cloud-init Package"/>
           <topicref href="devplatform/1.2/helion/admin/server/1.2upgrade.dita" locktitle="yes"
             navtitle="In-Place Upgrades of ALS Nodes and Clusters"/>
         </topicref>
@@ -1467,8 +1465,6 @@
           <topicref href="devplatform/helion/admin/cluster/1.0index.dita" locktitle="yes"
             navtitle="Cluster Setup ">
             <!--permalink: /als/v1/admin/cluster/cloud-init/-->
-            <topicref href="devplatform/helion/admin/cluster/1.0cloud-init.dita" locktitle="yes"
-              navtitle="Using the cloud-init Package "/>
             <!--permalink: /als/v1/admin/cluster/external-db/-->
             <topicref href="devplatform/helion/admin/cluster/1.0external-db.dita" locktitle="yes"
               navtitle="External Data Services "/>
