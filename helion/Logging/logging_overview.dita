@@ -46,16 +46,14 @@
     </ul>
     <section id="install">
       <title>Installation</title>
-      <p>The Centralized Logging feature is automatically installed in the undercloud as part of the
-        HP Helion OpenStack installation.</p>
+      <p>The Centralized Logging feature is automatically installed as part of the HP Helion
+        OpenStack installation.</p>
       <p>No specific configuration is required to use Centralized Logging. However, you can tune or
-        configure the individual components as needed for your environment. Tuning and configuring
-        these components is outside the scope of this document.</p>
+        configure the individual components as needed for your environment.</p>
     </section>
     <section id="components">
       <title>Centralized Logging components</title>
-      <p>Centralized logging consists of several components, including Logstash, Elasticsearch,
-        RabbitMQ, and Kibana.</p>
+      <p>Centralized logging consists of several components, detailed below:</p>
       <ul>
         <li>
           <p>
@@ -177,8 +175,7 @@
         <b>Example:</b>
       </p>
       <codeblock>
-  <codeph>http://192.0.2.2:81
-</codeph>
+http://192.0.2.2:81
 </codeblock>
       <p>Log in with the user name <codeph>kibana</codeph> and the password.</p>
       <p>If you did not retrieve the undercloud IP from the end of the install,</p>
@@ -186,16 +183,14 @@
         <li>
           <p>From the seed cloud host log in to the undercloud as super user:</p>
           <codeblock>
-<codeph>ssh heat-admin@&lt;undercloud IP&gt; 
+ssh heat-admin@&lt;undercloud IP&gt; 
 sudo su - 
-</codeph>
 </codeblock>
         </li>
         <li>
           <p>Enter the following command to display the password:</p>
           <codeblock>
-<codeph>cat  /root/work/tripleo/tripleo-undercloud-passwords
-</codeph>
+cat  /root/work/tripleo/tripleo-undercloud-passwords
 </codeblock>
           <p>Make note of the password.</p>
         </li>
@@ -203,6 +198,26 @@ sudo su -
       <p>Because centralized logging is separate service from the Horizon dashboards, there is
         separate username/password authentication. By default, the HP Horizon dashboard username and
         password will not work with Kibana.</p>
+    </section>
+    <section id="configuration">
+      <title>Configuration</title>
+      <p>TBD</p></section>
+    <section id="troubleshooting"><title>Using Centralized Logging to Troubleshoot Issues</title>
+      TBD</section>
+    <section id="troubleshooting_issues"><title>Troubleshooting Logging Issues</title>
+      <p>If centralized logging is not working, go through the following steps to
+        troubleshooting:</p>
+      <ul>
+        <li><b>Processes</b> - Ensure that all the centralized logging processes are up <ul>
+            <li>Elasticsearch</li>
+            <li>Logstash</li>
+            <li>RabbitMQ</li>
+            <li>Beaver</li>
+            <li>Apache</li>
+          </ul></li>
+        <li><b>Check Disk Space</b> - Ensure that you have not run out of disk space</li>
+        <li><b>RAM</b> - Ensure that you have sufficient RAM and that it is allocated properly</li>
+      </ul>
     </section>
     <section id="info">
       <title>For more information</title>
