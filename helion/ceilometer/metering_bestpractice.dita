@@ -296,9 +296,9 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start
             <p>In the Sources section there is a list of default meters. These meters are the data
                 that is going to be collected. The list of meters can be easily reduced or increased
                 by editing the <i>pipeline.yml</i> configuration file and then restarting the <xref
-                    href="reporting_components.dita#topic4362/centralagent"
+                    href="metering_components.dita#topic4362/centralagent"
                 />and the <xref
-                    href="reporting_components.dita#topic4362/collector"/>.
+                    href="metering_components.dita#topic4362/collector"/>.
                 If more meters are desired, please refer to the <xref
                     href="http://docs.openstack.org/developer/ceilometer/measurements.html#measurements"
                     type="section" scope="external" format="html">OpenStack Ceilometer
