@@ -11,7 +11,7 @@
     <p>In the Helion OpenStack 2.0 release, the OpenStack monitoring standard, Monasca, is supported
       as the Helion OpenStack monitoring solution with the following exceptions (which are not
       implemented):</p>
-    <ul id="ul_scl_svw_ps">
+    <ul>
       <li>Transform Engine</li>
       <li>Events Engine </li>
       <li>Anomaly and Prediction Engine</li>
