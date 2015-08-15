@@ -355,6 +355,87 @@
         </tgroup>
       </table>
     </section>
+    <section id="neutron">
+      <title>Neutron</title>
+      <table frame="all" rowsep="1" colsep="1" id="table_bcj_5p4_1t">
+        <tgroup cols="5">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <colspec colname="c5" colnum="5" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Monitor Location</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Process Check</entry>
+              <entry>neutron-openvswitch-agent pid check</entry>
+              <entry>local node</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart service on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>neutron-l3-agent pid check</entry>
+              <entry>local node</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart service on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>neutron-dhcp-agent pid check</entry>
+              <entry>local node</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart service on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>neutron-metadata-agent pid check</entry>
+              <entry>local node</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart service on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>neutron-rootwrap pid check</entry>
+              <entry>local node</entry>
+              <entry>Process crashed.</entry>
+              <entry>Currently neutron-rootwrap is only used to run ovsdb-client. To restart this,
+                restart neutron-openvswitch-agent on the affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>neutron-server pid check</entry>
+              <entry>local node</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart service on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>HTTP Status</entry>
+              <entry>neutron api health check</entry>
+              <entry>local node</entry>
+              <entry>Process stuck if neutron-server Process Check OK</entry>
+              <entry>Restart service on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>HTTP Status</entry>
+              <entry>neutron api health check</entry>
+              <entry>remote node</entry>
+              <entry>Node crashed or connectivity lost if local node HTTP Status OK or
+                UNKNOWN</entry>
+              <entry>Reboot node or repair network. Review logs.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
     <section id="nova">
       <title>Nova</title>
       <table frame="all" rowsep="1" colsep="1" id="table_bv5_q2h_1t">
