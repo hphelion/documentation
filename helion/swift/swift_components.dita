@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jxs_1xz_1t">
+  <title>Swift Components</title>
+  <body>
+    <p><?oxy_insert_start author="sharmabi" timestamp="20150817T150416+0530"?>The following Swift
+      components enable you to deliver high availability, high durability and high
+      concurrency:<?oxy_insert_end?></p>
+    <?oxy_insert_start author="sharmabi" timestamp="20150817T150426+0530"?>
+    <p>
+      <ul>
+        <li><b>Proxy Server</b>
+            <p>It handles all the incoming API request. When it receives the request, it determines the storage nodes based on the URL of the object.
+             </p></li>
+        <li><b>Accounts and Conatainers</b>
+            <p>Each account and containers are individual database that is distributed across the cluster.
+             </p></li>
+        <li><b>Objects</b>
+            <p>Objects are the data itself. </p></li>
+        <li><b>Rings</b>
+          <p>The ring maps the logical names of data to locations on a particular
+            disks. There is a separate ring for account database, conainer database, and individual
+            objects, but each rings works similarly. The rings are built and managed manually by a
+            utility called the ring-builder. The ring-builder also keeps its own builder file with
+            the ring information and additional data required to build future rings. </p></li>
+        <li><b>Zone</b>
+          <p>Yet to get the content</p></li>
+        <li><b>Part Power</b>
+             <p>Partition power is used to distribute the data uniformly across drives in a Swift nodes. It also defines the storage cluster capacity. You must set the
+              part partition power value based on the total amount of storage you expect your entire ring to use. 
+             </p>
+          
+             <p>When storing an object, the object storage system hashes the name.
+            This hash results in a hit on a partition (so a number of different object names will
+            result in the same partition number). Generally, the partition is mapped to available
+            disk drives. With a replica count of 3, each partition is mapped to three different disk
+            drives. The hashing algorithm used hashes over a fixed number of partitions. The
+            partition-power attribute determines the number of partitions you have. 
+             </p></li>
+      </ul>
+    </p>
+    <section id="Select-part-power">Select a partition power for a given ring that is appropriate to
+      the number of disk drives you allocate to the ring for the following reasons:<ul>
+        <li>If you use a high partition power and have few disk drives, each disk drives will have
+          1000s of partitions. With too many partitions, audit and other processes in the Object
+          Storage system cannot "walk" the partitions in a reasonable time and updates will not
+          occur in a timely manner.</li>
+        <li>If you use a low partition power and have many disk drives, you will have 10s (or maybe
+          only one) partition on a drive. <p>With many partitions on a drive, a large partition is
+            cancelled out by a smaller partition so the overall drive usage is similar. However,
+            with very small numbers of partitions, the uneven distribution of sizes can be reflected
+            in disk drive utilization (so one drive becomes full while a neighboring drive is
+            empty).</p></li>
+      </ul><p>An ideal number of partitions per drive is 100. If you know the number of drives,
+        select part power approximatley to 100 partition per drive. Usually, you install a system
+        with a specific number of drives and add drives as your storage needs grow. However, you
+        cannot change the value of the partition power. Hence you must select a value that is a
+        compromise between current and planned capacity. </p><p>The following artition power
+        selection table shows a range of drives:<table frame="all" rowsep="1" colsep="1"
+          id="table_part_power">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry/>
+                <entry/>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table><b>Important</b>: if you are installting a small capacity systen and you need to
+        grow to a very large capacity but you cannot fit within any of the ranges in the table,
+        please seek help from Professional Services to plan your system..</p><p>There are a few
+        additional factors that can help or mitigate the fixed nature of the partition power, as
+        follows:</p><ul>
+        <li>Account and container storage represents a small fraction (typically 1%) of your object
+          storage needs. Hence, you can select a smaller partition power (relative to object ring
+          partition power) for the account and container rings. </li>
+      </ul><p>For object storage, you can add additional storage policies (i.e., another object
+        ring). When you have reached capacity in an existing storage policy, you can add a new
+        storage policy with a higher partition power (because you now have more disk drives in your
+        system). This means that you can install your system with a small partition power
+        appropriate to a small number of initial disk drives. Later when you have many disk drives,
+        the new storage policy can have a higher value appropriate to the larger number of
+        drives.</p><p> However, while this technique allows you to continue to add storage capacity
+        you should note that existing containers continue to use their original storage policy.
+        Hence, the additional objects must be added to new containers to take advantage of the new
+        storage policy.</p><p><b>Non-Standard Replica Count</b></p><p>The recommended value for the
+          <b>replica-count</b> attribute is 3. Three copies of data are kept to ensure redundancy
+        and continued access in the event of component failures. There are two situations where a
+        different replica count is appropriate:</p><ul>
+        <li>A replica count of 2 may be used. We do not recommend using a small replica count
+          becuase the probability of object loss is higher with small replica counts.</li>
+        <li> You can increase the replica count to give a higher reliability or availability. For
+          example, if you have a system divided into 4 swift zones, with a replica count of 4, if
+          two zones are failed or unavailable, you still have two copies of all objects in the
+          remaining surviving zones. With a replica count of 3, this system would have an average of
+          1.5 objects in the surviving zones. (Obviously, you won't have 1.5 copies of a given
+          object. Instead, 50% of the objects would have a copy in one or other zone and 50% of
+          objects would have a copy in both surviving zones).</li>
+      </ul><p>It is possible to change the value of the replica count. In fact, fractional values
+        are allowed. You can gradually change to a higher or lower value.</p></section>
+    <p>
+      <ul>
+        <li><b>Storage Policies</b><p>Storage policies allow you to differentiate how the objects
+            are stored in the cluster. A few of the possible reasons are as follows:</p><ul>
+            <li><b>Different types or classes of disk drive</b>
+            </li>
+          </ul><p>You can use different drives to store various type of data. For example: You can
+            use 7.5K RPM high-capacity drives for one type of data and fast SSD drives for another
+            type of data.</p><p>
+            <ul>
+              <li><b>Different redundancy or availability needs</b></li>
+            </ul>
+          </p><p>You can define the redundancy and availability based on your requirement. You can
+            use a replica count of 3 for "normal" data and a replica count of 4 for "critical" data.
+            </p><p>As described in <b>partition power</b> you are growing your capacity beyond the
+            recommended partition power. (not clear)</p><p>
+            <ul>
+              <li><b>Erasure-coded storage for some objects and replicated storage for other
+                  objects</b> (this is not supported in production)</li>
+            </ul>
+          </p><p> A storage policies are implemented on per-container basis. You can choose the
+            storage policies of your choice. But if you fail to specify the storage policy then the
+            default policy is used. Once you create and assign the storage policy to a container
+            that remains intact , i.e., you cannot change the policy for that contaier but you can
+            always create additional policies and move data from one contianer to another, if you
+            choose to assign a different policy to a new container. </p><p> additional policies and
+            move data within policies. (one container can have more than one storage policy??) once
+            u crete a storage plcy </p><p> The disk drives used by storage policies can overlap or
+            be distinct. If the storage policies overlap (i.e., have disks in common between two
+            storage policies), it is recommended to use the same set of disk drives for both
+            policies. But in case there is a partial overlap in disk drives, as one storage policy
+            receives many objects, the drives that are common to both policies must store more
+            objects than drives that are only allocated to one storage policy. This can be
+            appropriate for a situation where the "overlapped" disk drives are larger than the
+            non-overlapped drives. </p></li>
+      </ul>
+    </p>
+    <section>
+      <p/>
+    </section>
+    <section/>
+    <?oxy_insert_end?>
+  </body>
+</topic>
+<?oxy_options track_changes="on"?>

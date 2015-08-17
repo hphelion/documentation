@@ -23,19 +23,21 @@
     <p>Based on OpenStack® Object Sotrage, the HP Helion OpenStack® Object Storage service provides
       a highly available, resilient, and scalable storage pool for unstructured data. It is highly
       durable architecture with no single point of failure. Apart from this, HP Helion OpenStack
-      introduces a concept of input model. The input model allows you to define disk and
-      server-role. </p>
+      introduces a concept of cloud input model. It allows you to define Swift-specific details like
+      disk and server role of your choice based on the hardwares available. </p>
     <p>
       <ul>
         <li><b>Disk model</b>- The disk model describes the number of disk present on a particular
           server and its usage.Some disks are used by the operating system (e.g. root, log, crash
-          filesystems) and others for swift storage. For a swift system there are two disk models-
-          swift proxy servers (which may hold the account &amp; container data) and swift object
+          filesystems) and others for Swift storage. For a Swift system there are two disk models-
+          Swift proxy servers (which may hold the account and container data) and Swift object
           servers. </li>
         <li><b>Server-role model</b>- It maps the disk-model to a particular server type.</li>
       </ul>
     </p>
-    <p> HP Helion OpenStack 2.0 Object Storage also monitors Swift cluster using Monasca. </p>
+    <p>You can monitor the health of  Swift cluster using Monasca. <note>Icinga, which was the
+        supported monitor service in previous releases of Helion OpenStack, is not supported in
+        Helion OpenStack 2.0.</note></p>
     <section id="arch-overview"><b>Architecture Overview</b></section>
     <p> The following diagram depicts the architectural overview of the Swift deployment into your cloud:<ul>
         <li>
@@ -43,6 +45,25 @@
           <p>topology</p>
         </li>
       </ul></p>
+    <p>Before you start your Swift deployment ensure that you are familiar with the
+        <?oxy_insert_start author="sharmabi" timestamp="20150817T152209+0530" type="surround"?><xref
+        href="swift_components.dita#topic_jxs_1xz_1t"><?oxy_insert_end?>Swift components</xref>.</p>
+    <?oxy_insert_start author="sharmabi" timestamp="20150817T155420+0530"?>
+    <b>
+      <p>&lt;need to remove this section from here></p>
+    </b>
+    <?oxy_insert_end?>
+    <p>
+      <ul id="ul_hdc_qwz_1t">
+        <li>Proxy Server</li>
+        <li>Accounts and Conatainers</li>
+        <li>Objects</li>
+        <li>Rings</li>
+        <li>Zone</li>
+        <li>Part Power</li>
+        <li>Storage Policies</li>
+      </ul>
+    </p>
     <section id="storage-plocies"><b>Storage Policies</b><p>Storage policies allow you to
         differentiate how the objects are stored in the cluster. A few of the possible reasons are
         as follows:</p><ul>
@@ -59,9 +80,8 @@
         described in <b>partition power</b> you are growing your capacity beyond the recommended
         partition power. (not clear)</p><p>
         <ul>
-          <li><b>Erasure-coded storage for some objects and replicated storage for other
-            objects</b><?oxy_insert_start author="sharmabi" timestamp="20150812T162721+0530"?> (this
-            is not supported in production)<?oxy_insert_end?></li>
+          <li><b>Erasure-coded storage for some objects and replicated storage for other objects</b>
+            (this is not supported in production)</li>
         </ul>
       </p><p> A storage policies are implemented on per-container basis. You can choose the storage
         policies of your choice. But if you fail to specify the storage policy then the default
@@ -69,8 +89,7 @@
         intact , i.e., you cannot change the policy for that contaier but you can always create
         additional policies and move data from one contianer to another, if you choose to assign a
         different policy to a new container. </p><p> additional policies and move data within
-        policies. (one container can have more than one storage policy??) once u crete a
-        <?oxy_insert_start author="sharmabi" timestamp="20150812T162622+0530"?>s<?oxy_insert_end?>torage
+        policies. (one container can have more than one storage policy??) once u crete a storage
         plcy </p><p> The disk drives used by storage policies can overlap or be distinct. If the
         storage policies overlap (i.e., have disks in common between two storage policies), it is
         recommended to use the same set of disk drives for both policies. But in case there is a
@@ -149,12 +168,10 @@
         you should note that existing containers continue to use their original storage policy.
         Hence, the additional objects must be added to new containers to take advantage of the new
         storage policy.</p></section>
-    <section id="non-standard-replica-count">
-      <p><b>Non-Standard Replica Count</b></p>
-      <p>The recommended value for the <b>replica-count</b> attribute is 3. Three copies of data are
-        kept to ensure redundancy and continued access in the event of component failures. There are
-        two situations where a different replica count is appropriate:</p>
-      <ul>
+    <section id="non-standard-replica-count"><p><b>Non-Standard Replica Count</b></p><p>The
+        recommended value for the <b>replica-count</b> attribute is 3. Three copies of data are kept
+        to ensure redundancy and continued access in the event of component failures. There are two
+        situations where a different replica count is appropriate:</p><ul>
         <li>A replica count of 2 may be used. We do not recommend using a small replica count
           becuase the probability of object loss is higher with small replica counts.</li>
         <li> You can increase the replica count to give a higher reliability or availability. For
@@ -164,11 +181,13 @@
           1.5 objects in the surviving zones. (Obviously, you won't have 1.5 copies of a given
           object. Instead, 50% of the objects would have a copy in one or other zone and 50% of
           objects would have a copy in both surviving zones).</li>
-      </ul>
-      <p>It is possible to change the value of the replica count. In fact, fractional values are
-        allowed. You can gradually change to a higher or lower value.</p>
-      <p> </p>
-    </section>
+      </ul><p>It is possible to change the value of the replica count. In fact, fractional values
+        are allowed. You can gradually change to a higher or lower value.</p><p> </p><b>Ring
+        Specification</b><p>The ring maps the logical names of data to locations on a particular
+        disks. There is a separate ring for account database, conainer database, and individual
+        objects, but each rings works similarly. The rings are built and managed manually by a
+        utility called the ring-builder. The ring-builder also keeps its own builder file with the
+        ring information and additional data  required to build future rings.</p><p/></section>
   </body>
 </topic>
 
