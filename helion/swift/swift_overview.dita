@@ -35,7 +35,7 @@
         <li><b>Server-role model</b>- It maps the disk-model to a particular server type.</li>
       </ul>
     </p>
-    <p>You can monitor the health of  Swift cluster using Monasca. <note>Icinga, which was the
+    <p>You can monitor the health of Swift cluster using Monasca. <note>Icinga, which was the
         supported monitor service in previous releases of Helion OpenStack, is not supported in
         Helion OpenStack 2.0.</note></p>
     <section id="arch-overview"><b>Architecture Overview</b></section>
@@ -48,11 +48,6 @@
     <p>Before you start your Swift deployment ensure that you are familiar with the
         <?oxy_insert_start author="sharmabi" timestamp="20150817T152209+0530" type="surround"?><xref
         href="swift_components.dita#topic_jxs_1xz_1t"><?oxy_insert_end?>Swift components</xref>.</p>
-    <?oxy_insert_start author="sharmabi" timestamp="20150817T155420+0530"?>
-    <b>
-      <p>&lt;need to remove this section from here></p>
-    </b>
-    <?oxy_insert_end?>
     <p>
       <ul id="ul_hdc_qwz_1t">
         <li>Proxy Server</li>
@@ -187,7 +182,7 @@
         disks. There is a separate ring for account database, conainer database, and individual
         objects, but each rings works similarly. The rings are built and managed manually by a
         utility called the ring-builder. The ring-builder also keeps its own builder file with the
-        ring information and additional data  required to build future rings.</p><p/></section>
+        ring information and additional data required to build future rings.</p><p/></section>
   </body>
 </topic>
 
