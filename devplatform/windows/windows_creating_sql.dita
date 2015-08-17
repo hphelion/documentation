@@ -3,7 +3,8 @@
 <topic id="topic_rbs_ysb_bt">
   <title>Creating and connecting to a MSSQL service</title>
   <body>
-    <p>This document describes how to create a MSSQL 2012 or 2014 service, and connect to it using the Helion client's <b>tunnel</b> command.</p>
+    <p><ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i></ph></p>
+    <p>This document describes how to create a MSSQL 2012 or 2014 service, and provide connectivity to it using the Helion client's <b>tunnel</b> command.</p>
     <note>This document will demonstrate how to create and connect to a MSSQL 2012 instance; the procedure for creating and connecting to a MSSQL 2014 service is the same.</note>
     <p>This document contains the following sections:</p>
     <ul>
@@ -23,18 +24,18 @@
           </li>
       </ul></section>
     <section id="create"><title>Create a MSSQL service instance</title>
-      <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i></ph>
+      
       <p>To create a MSSQL service instance, use the <xref href="../helion/CLI/1.2ALS_Client_Downloads.html">Helion ALS Client</xref>. To create a service
         instance, first connect the Helion ALS client to your ALS cluster using <xref type="section" href="../helion/user/reference/1.2client-ref-getting-started.html#topic2439__command-login">helion login</xref>
         and <xref type="section" href="../helion/user/reference/1.2client-ref-getting-started.html#topic2439__command-target">helion target</xref>.</p>
-    <p>The following command creates an instance of a MSSQL 2012 service called <i>MSSQL2012Service</i> (the command will request the service plan to use):</p>
+    <p>The following command creates an instance of a MSSQL 2012 service called <b>MSSQL2012Service</b> (the command will request the service plan to use):</p>
     <codeblock>helion create-service mssql2012 MSSQL2012Service</codeblock>
     <p>The output from this command may look like the following (in this example, the Free service plan is selected):</p>
       <image placement="break" href="../../media/windows_sql_create.png"></image></section>
     <section id="deploy"><title>Deploy a Helion tunneling application</title>
     <p>Once the service instance is created, in order to connect to the instance, you must first deploy a tunneling application using the <b>helion tunnel</b> command.</p>
-      <p>The following command creates a tunneling application to the <i>MSSQL2012Service</i> service in the connected cluster, binds the tunneling application to the requested service, and returns the credentials
-        <b>username</b>, <b>password</b>, <b>(database) name</b>, and <b>connectionstring</b> required to connect to the service:</p>
+      <p>The following command creates a tunneling application to the <b>MSSQL2012Service</b> service in the connected cluster, binds the tunneling application to the requested service, and returns the credentials
+        <b>username</b>, <b>password</b>, <b>(database) name</b>, and <b>connectionString</b> required to connect to the service:</p>
       <codeblock>helion tunnel MSSQL2012Service</codeblock>
       <p>The output from this command may look like the following:</p>
       <image placement="break" href="../../media/helion_sql_tunnel.png"></image></section>
