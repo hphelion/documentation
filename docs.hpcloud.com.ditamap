@@ -34,10 +34,16 @@
       </topicmeta>
     </topicref>
     <topichead navtitle="OpsConsole User Guide" toc="no">
+      <topicref href="helion/monasca/opsconsole/dashboard.dita" toc="no"/>
+      <topicref href="helion/monasca/opsconsole/logging.dita" toc="no"/>
       <topicref href="helion/monasca/opsconsole/alarms.dita" toc="no"/>
       <topicref href="helion/monasca/opsconsole/alarm_definitions.dita" toc="no"/>
       <topicref href="helion/monasca/opsconsole/notification_methods.dita" toc="no"/>
       <topicref href="helion/monasca/opsconsole/metric_monitoring.dita" toc="no"/>
+      <topicref href="helion/monasca/opsconsole/compute_summary.dita" toc="no"/>
+      <topicref href="helion/monasca/opsconsole/compute_nodes.dita" toc="no"/>
+      <topicref href="helion/monasca/opsconsole/storage_summary.dita" toc="no"/>
+      <topicref href="helion/monasca/opsconsole/networking_summary.dita" toc="no"/>
     </topichead>
     <topicref href="helion/logging/logging_overview.dita" locktitle="yes">
       <topicmeta>
