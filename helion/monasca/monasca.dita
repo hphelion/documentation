@@ -4,34 +4,47 @@
 <topic xml:lang="en-us" id="topic12031">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monitoring Guide</title>
   <body>
-    <p>Monasca is a multi-tenant, scalable, fault-tolerant monitoring service. It is open-source and
-      integrates with OpenStack. It uses a REST API for high-speed metrics processing and querying,
-      and has a streaming alarm and notification engine. The name "Monasca" is short for "monitoring
-      at scale".</p>
-    <p>In the Helion OpenStack 2.0 release, the OpenStack monitoring standard, Monasca, is supported
-      as the Helion OpenStack monitoring solution with the following exceptions (which are not
-      implemented):</p>
-    <ul>
-      <li>Transform Engine</li>
-      <li>Events Engine </li>
-      <li>Anomaly and Prediction Engine</li>
-    </ul>
-    <note>Icinga, which was the supported monitor service in previous releases of Helion OpenStack,
-      is not supported in Helion OpenStack 2.0.</note>
+    <section id="about">
+      <p>The HP Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
+        scalable, fault-tolerant monitoring service. The name "Monasca" is short for "monitoring at
+        scale".</p>
+      <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca"
+          format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></p>
+    </section>
+    <section id="differences"><title>Differences Between Upstream and Helion OpenStack
+        Implementations</title>
+      <p>In the Helion OpenStack 2.0 release, the OpenStack monitoring standard, Monasca, is
+        supported as the Helion OpenStack monitoring solution with the following exceptions (which
+        are not implemented):</p>
+      <ul>
+        <li>Transform Engine</li>
+        <li>Events Engine </li>
+        <li>Anomaly and Prediction Engine</li>
+      </ul>
+      <note>Icinga, which was the supported monitor service in previous releases of Helion
+        OpenStack, is not supported in Helion OpenStack 2.0.</note>
+    </section>
+    <section id="working"><title>Working with Monasca</title>
+      <p>The primary ways of interacting with this service are:</p>
+        <ul>
+          <li><xref href="#topic12031/opsconsole">Web UI - Ops Console</xref></li>
+          <li>Command Line - python-monascaclient</li>
+          <li>REST API</li>
+        </ul>
+        
+    </section>
     <section id="diagram">
       <title>Diagram of Monasca Service</title>
       <p><image placement="break" href="../images/monasca_diagram.png"/></p>
     </section>
-    <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca"
-        format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></p>
     <section id="opsconsole">
       <p>The Ops Console (Operations Console) is designed for Helion OpenStack Administrators to
         have a web-based UI that they can use to view data about their Helion OpenStack
-        infrastructure. The Ops Console is a web-based GUI that offers the user access to data such
-        as a alarms data by service, performance data, compute nodes and instances lists, and a
-        drilldown to Kibana for a deep look into logs. The Business Logic Layer is a middleware
-        component that serves as a single point of contact for the UI to communicate with OpenStack
-        services such as Monasca, Nova, and others.</p>
+        infrastructure. The Ops Console offers the user access to data such as the alarms data by
+        service, performance data, compute nodes and instances lists, and a drilldown to Kibana for
+        a deep look into logs. The Business Logic Layer is a middleware component that serves as a
+        single point of contact for the UI to communicate with OpenStack services such as Monasca,
+        Nova, and others.</p>
     </section>
   </body>
 </topic>
