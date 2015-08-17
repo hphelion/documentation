@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_x5b_m3c_bt">
+ <title>Metering with Ceilometer</title>
+ <shortdesc>A high-level look at metering.</shortdesc>
+ <conbody>
+  <p>Metering in HP Helion OpenStack 2.0 is based on the OpenStack Celiometer component. One major
+   difference between the OpenStack native component and the HP implementation is the Helion allows
+   you to customize the configuration of Ceilometer.</p>
+  <p/>
+  <p> Provide templates that use the format of the target file, with obvious and simple j2
+   substitutions </p>
+  <p>•Expose all of the default configuration </p>
+ </conbody>
+</concept>
