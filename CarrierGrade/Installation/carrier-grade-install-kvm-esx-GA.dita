@@ -449,7 +449,7 @@ vmware_image_transfer_timeout_secs = 7200
 vmware_task_poll_interval = 0.5
 vmware_max_objects_retrieval = 100
 volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
-
+          
 [hp3par]
 volume_backend_name=&lt;mybackendname1>
 hp3par_api_url=https://&lt;management_ip>:8080/api/v1
@@ -465,12 +465,14 @@ hp3par_debug=False
 hp3par_iscsi_chap_enabled=false
 hp3par_snapshot_retention=48
 hp3par_snapshot_expiration=72
-
+                            
 [hplefthand]
 hplefthand_username = &lt;username>
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>
-hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li>
+hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos 
+                                    
+</codeblock></li>
             <li>Save the file to <codeph>cinder_conf</codeph>.</li>
           </ol></li>
         <li>Run the HP Helion OpenStack Configuration Processor:
