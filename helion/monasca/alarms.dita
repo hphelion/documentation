@@ -4,7 +4,7 @@
   <title>Alarm Definitions</title>
   <shortdesc>List of service-specific alarms and the recommended troubleshooting steps.</shortdesc>
   <refbody>
-    <section id="HAProxy">
+    <section id="haproxy">
       <title>HAProxy</title>
       <table frame="all" rowsep="1" colsep="1" id="table_flj_2tl_zs">
         <tgroup cols="4" align="left">
@@ -31,8 +31,8 @@
         </tgroup>
       </table>
     </section>
-    <section id="HLinux">
-      <title>HLinux</title>
+    <section id="hlinux">
+      <title>HP Linux for HP Helion OpenStack</title>
       <table frame="all" rowsep="1" colsep="1" id="table_ik5_3km_zs">
         <tgroup cols="4">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>

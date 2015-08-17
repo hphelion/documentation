@@ -25,14 +25,11 @@
         OpenStack, is not supported in Helion OpenStack 2.0.</note>
     </section>
     <section id="working"><title>Working with Monasca</title>
-      <p>The primary ways of interacting with this service are:</p>
-      <ul>
-        <li>Web UI - <xref href="#topic12031/opsconsole">Ops Console</xref></li>
-        <li>Command Line - <xref href="#topic12031/cli">python-monascaclient</xref></li>
-        <li><xref
-            href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
-            format="html" scope="external">REST API</xref></li>
-      </ul>
+      <p>Access to Monasca is available through the Web UI (<xref href="#topic12031/opsconsole">Ops
+          Console</xref>), command-line interface (<xref href="#topic12031/cli">CLI</xref>), or the
+        low-level <xref
+          href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
+          format="html" scope="external">REST API</xref>.</p>
     </section>
     <section id="diagram">
       <title>Diagram of Monasca Service</title>
@@ -49,12 +46,13 @@
     </section>
     <section id="cli"><title>Monasca CLI</title>
       <p>The python-monascaclient can be installed via pip on any machine and used by providing it
-        with the keystone user/password and url (v3). It is already installed on any machine with
-        the Monasca Agent and can be found at `/opt/monasca/bin/monasca`. I suggest setting the
-        necessary credentials as environment variables and as an aid to development we have provided
-        a simple Ansible playbook which will write out the file `~/monasca-env.sh`. After running
-        this playbook you can ssh into the host, source that file and run any monasca cli commands.
-        Just remember to limit the boxes you run this on. For example from the deployer:</p>
+        with the keystone authentication information (username/password) and endpoint url (v3). It
+        is already installed on any machine with the Monasca Agent and can be found at
+        `/opt/monasca/bin/monasca`. I suggest setting the necessary credentials as environment
+        variables and as an aid to development we have provided a simple Ansible playbook which will
+        write out the file `~/monasca-env.sh`. After running this playbook you can ssh into the
+        host, source that file and run any monasca cli commands. Just remember to limit the boxes
+        you run this on. For example from the deployer:</p>
       <codeblock>
 ansible-playbook -i hosts/verb_hosts monasca-cli-dev.yml --limit PADAWANBASE-CCP-T1-M1-NETCLM
 ssh PADAWANBASE-CCP-T1-M1-NETCLM
@@ -64,6 +62,9 @@ monasca alarm-definition-list
 monasca metric-list
 . . . 
 </codeblock>
+      <p>For more details on the Monasca CLI, see <xref
+          href="https://github.com/stackforge/python-monascaclient" format="html" scope="external"
+          >https://wiki.openstack.org/wiki/Monasca</xref></p>
     </section>
   </body>
 </topic>
