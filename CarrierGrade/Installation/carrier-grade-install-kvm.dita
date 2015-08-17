@@ -255,8 +255,8 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
           VM.</p></li>
 
         <li>Based on your environment, you can use either HP StoreServ (3PAR) or HP StoreVirtual VSA
-          block storage Use the following steps to integrate a fully-installed block storage into HP
-          Helion OpenStack Carrier Grade: <ol>
+          block storage or both. Use the following steps to integrate a fully-installed block
+          storage into HP Helion OpenStack Carrier Grade:  <ol>
             <li>Change to the <codeph>cinder/blocks</codeph> directory:
               <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where &lt;cloudname>
               is the name you assigned to the cloud. The directory contains several sample Cinder
@@ -264,14 +264,45 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
               using.</li>
             <li>Depending upon they type of storage you are using, edit one of the following files:
                 <ul id="ul_xcf_v24_1t">
-                <li><codeph>cinder_conf.hp3parSample</codeph> - if you plan to have HP StoreServ
-                  (3PAR)  storage attched to the KVM region;</li>
-                <li><codeph>cinder_conf.vsasample</codeph> - if you plan to have For HP StoreVirtual
-                  VSA storage storage attched to the KVM region</li>
-              </ul><p><b>For 3PAR storage </b>: Edit the <codeph>cinder_conf.hp3parSample</codeph>
-                file to configure the 3PAR settings. For
-                  example:</p><codeblock>[DEFAULT]
-enabled_backends=hp3par,hplefthand
+                <li>3PAR - if you plan to have only HP StoreServ (3PAR) storage attached to the KVM
+                  region, edit the <codeph>cinder_conf.hp3parSample</codeph> file.</li>
+                <li>VSA - if you plan to have only HP StoreVirtual VSA storage attached to the KVM
+                  region, edit the <codeph>cinder_conf.vsasample</codeph> file.</li>
+                <li>3PAR and VSA - if you plan to have HP StoreServ (3PAR) and HP StoreVirtual VSA
+                  storage attached to the KVM region, edit the
+                    <codeph>cinder_conf.multiBackendSample</codeph> file, which contains variables
+                  for both storage types. </li>
+              </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the
+                back-ends you are using. You must specify at least one back-end for the KVM
+                region.</p><table>
+                <tgroup cols="3">
+                  <colspec colname="col1" colsep="1" rowsep="1"/>
+                  <colspec colname="col2" colsep="1" rowsep="1"/>
+                  <colspec colname="col3" colsep="1" rowsep="1"/>
+                  <thead>
+                    <row>
+                      <entry colsep="1" rowsep="1">Region/Hypervisor</entry>
+                      <entry colsep="1" rowsep="1">Volume Backend</entry>
+                      <entry colsep="1" rowsep="1">Backend Name</entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry>KVM</entry>
+                      <entry>3PAR </entry>
+                      <entry>hp3par</entry>
+                    </row>
+                    <row>
+                      <entry>KVM</entry>
+                      <entry>VSA</entry>
+                      <entry>hplefthand</entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table><p><b>For 3PAR storage </b>: Edit the
+                  <codeph>cinder_conf.hp3parSample</codeph> file to configure the 3PAR settings. For
+                example:</p><codeblock>[DEFAULT]
+enabled_backends=hp3par
 
 [hp3par]
 volume_backend_name=&lt;mybackendname1>
@@ -287,16 +318,44 @@ volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 hp3par_debug=False
 hp3par_iscsi_chap_enabled=false
 hp3par_snapshot_retention=48
-hp3par_snapshot_expiration=72</codeblock><p><b>VSA
-                  storage</b> Edit the <codeph>cinder_conf.vsasample</codeph> file to configure the
-                VSA settings. For example:
+hp3par_snapshot_expiration=72</codeblock><p>
+                <b>VSA storage</b>: Edit the <codeph>cinder_conf.vsasample</codeph> file to
+                configure the VSA settings. For example:
                 <codeblock>[DEFAULT]
-enabled_backends=hp3par,hplefthand
+enabled_backends=hplefthand
 hplefthand_username = &lt;username>
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>
-hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></p></li>
-            <li>Save the file to <codeph>cinder_conf</codeph>.</li></ol></li>
+hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></p><p><b>3PAR
+                  and VSA storage</b>: If you are using both 3par and VSA, the configuration should
+                look like:</p><p>
+                <codeblock>[DEFAULT]
+ enabled_backends=hp3par, hplefthand
+[hp3par]
+volume_backend_name=&lt;mybackendname1_use_this_name_when_creating_volume_type>
+hp3par_api_url=https://&lt;management_ip>:8080/api/v1
+hp3par_username=&lt;username>
+hp3par_password=&lt;password>
+hp3par_cpg=&lt;cpg>
+san_ip=&lt;san_ip>
+san_login=&lt;username>
+san_password=&lt;password>
+hp3par_iscsi_ips=&lt;iscsi_target_ips seperated by ,>
+volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
+hp3par_debug=False
+hp3par_iscsi_chap_enabled=false
+hp3par_snapshot_retention=48
+hp3par_snapshot_expiration=72
+                    
+[hplefthand]
+volume_backend_name=&lt;mybackendname2>
+hplefthand_username = &lt;username>
+hplefthand_password = &lt;password>
+hplefthand_clustername = &lt;Cluster Name>
+hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock>
+              </p></li>
+            <li>Save the file to <codeph>cinder_conf</codeph>.</li>
+          </ol></li>
         <li>After editing the JSON files, validate each JSON file to make sure there are no
           syntactical errors using the tool of your preference. For example, using the Python
           json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>

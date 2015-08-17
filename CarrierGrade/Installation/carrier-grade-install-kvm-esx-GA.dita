@@ -387,8 +387,8 @@ Password: cghelion</codeblock>
             <li>SSH to the compute proxy node from the HLM VM using IP specified in
                 <codeph>nodes.json</codeph> file.</li>
           </ol></li>
-        <li>Configure the VMware VMDK driver to enable management of the OpenStack Block Storage
-          volumes on vCenter-managed data stores and 3PAR and/or VSA storage arrays. The HP Blick
+        <li>Configure the back-end drivers to enable management of the OpenStack Block Storage
+          volumes on vCenter-managed data stores and 3PAR and/or VSA storage arrays. The HP Block
           Storage (Cinder) service allows you to configure multiple storage back-ends. Use the
           following steps to configure back-end support:<ol id="ul_btr_l52_xs">
             <li>Change to the <codeph>/cinder/blocks</codeph> directory:
@@ -401,8 +401,8 @@ Password: cghelion</codeblock>
                   the variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA
                   and/or HP StoreServ (3PAR) attched to the KVM region;</li>
               </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the
-                back-ends you are using. You can specify one, two, or all three back-ends in this
-                field.</p><table>
+                back-ends you are using. You must specify at least one back-end for the non-KVM
+                region  and one or more for the KVM region.</p><table>
                 <tgroup cols="3">
                   <colspec colname="col1" colsep="1" rowsep="1"/>
                   <colspec colname="col2" colsep="1" rowsep="1"/>
@@ -428,14 +428,14 @@ Password: cghelion</codeblock>
                     <row>
                       <entry>Non-KVM </entry>
                       <entry>ESX Datastores</entry>
-                      <entry>vmdk
-                      </entry>
+                      <entry>vmdk </entry>
                     </row>
                   </tbody>
                 </tgroup>
-              </table><p>Note: You can use either 3PAR and VSA or select both if you have respective
-                storage arrays </p> A typical <codeph>cinder_conf</codeph> that enables all three
-              back ends appears similar to the following example:
+              </table><p><b>Note:</b> You can use either 3PAR and VSA or select both if you have
+                respective storage arrays </p> 
+              <p>A typical <codeph>cinder_conf</codeph> that enables
+              all three back ends appears similar to the following example:</p>
               <codeblock>[DEFAULT]
 enabled_backends=vmdk
 ...                                
@@ -467,6 +467,7 @@ hp3par_snapshot_retention=48
 hp3par_snapshot_expiration=72
                             
 [hplefthand]
+volume_backend_name=&lt;mybackendname2>
 hplefthand_username = &lt;username>
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>
