@@ -254,9 +254,10 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
             that you can establish a password-less SSH connection to these nodes from HLM
           VM.</p></li>
 
-        <li>Based on your environment, you can use either HP StoreServ (3PAR) or HP StoreVirtual VSA
-          block storage or both. Use the following steps to integrate a fully-installed block
-          storage into HP Helion OpenStack Carrier Grade:  <ol>
+        <li>Configure the back-end drivers to enable management of the OpenStack Block Storage
+          volumes in the KVM region equipped with 3PAR and/or VSA storage arrays. The HP Block
+          Storage (Cinder) service allows you to configure multiple storage back-ends. Use the
+          following steps to configure back-end support:<ol>
             <li>Change to the <codeph>cinder/blocks</codeph> directory:
               <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where &lt;cloudname>
               is the name you assigned to the cloud. The directory contains several sample Cinder
@@ -299,7 +300,8 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
                     </row>
                   </tbody>
                 </tgroup>
-              </table><p><b>For 3PAR storage </b>: Edit the
+              </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select
+                both if you have respective storage arrays </p><p><b>For 3PAR storage </b>: Edit the
                   <codeph>cinder_conf.hp3parSample</codeph> file to configure the 3PAR settings. For
                 example:</p><codeblock>[DEFAULT]
 enabled_backends=hp3par
@@ -318,21 +320,26 @@ volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 hp3par_debug=False
 hp3par_iscsi_chap_enabled=false
 hp3par_snapshot_retention=48
-hp3par_snapshot_expiration=72</codeblock><p>
+hp3par_snapshot_expiration=72
+</codeblock><p>
                 <b>VSA storage</b>: Edit the <codeph>cinder_conf.vsasample</codeph> file to
                 configure the VSA settings. For example:
                 <codeblock>[DEFAULT]
 enabled_backends=hplefthand
+                            
+[hplefthand]
+volume_backend_name=&lt;mybackendname2>
 hplefthand_username = &lt;username>
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>
-hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></p><p><b>3PAR
+hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos 
+</codeblock></p><p><b>3PAR
                   and VSA storage</b>: If you are using both 3par and VSA, the configuration should
                 look like:</p><p>
                 <codeblock>[DEFAULT]
  enabled_backends=hp3par, hplefthand
 [hp3par]
-volume_backend_name=&lt;mybackendname1_use_this_name_when_creating_volume_type>
+volume_backend_name=&lt;mybackendname1>
 hp3par_api_url=https://&lt;management_ip>:8080/api/v1
 hp3par_username=&lt;username>
 hp3par_password=&lt;password>
@@ -346,13 +353,14 @@ hp3par_debug=False
 hp3par_iscsi_chap_enabled=false
 hp3par_snapshot_retention=48
 hp3par_snapshot_expiration=72
-                    
+                            
 [hplefthand]
 volume_backend_name=&lt;mybackendname2>
 hplefthand_username = &lt;username>
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>
-hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock>
+hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos 
+</codeblock>
               </p></li>
             <li>Save the file to <codeph>cinder_conf</codeph>.</li>
           </ol></li>

@@ -402,7 +402,7 @@ Password: cghelion</codeblock>
                   and/or HP StoreServ (3PAR) attched to the KVM region;</li>
               </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the
                 back-ends you are using. You must specify at least one back-end for the non-KVM
-                region  and one or more for the KVM region.</p><table>
+                region and one or more for the KVM region.</p><table>
                 <tgroup cols="3">
                   <colspec colname="col1" colsep="1" rowsep="1"/>
                   <colspec colname="col2" colsep="1" rowsep="1"/>
@@ -432,12 +432,12 @@ Password: cghelion</codeblock>
                     </row>
                   </tbody>
                 </tgroup>
-              </table><p><b>Note:</b> You can use either 3PAR and VSA or select both if you have
-                respective storage arrays </p> 
-              <p>A typical <codeph>cinder_conf</codeph> that enables
-              all three back ends appears similar to the following example:</p>
+              </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select
+                both if you have respective storage arrays </p><p>A typical
+                  <codeph>cinder_conf</codeph> that enables all three back ends appears similar to
+                the following example:</p>
               <codeblock>[DEFAULT]
-enabled_backends=vmdk
+enabled_backends=vmdk, hp3par, hplefthand
 ...                                
 [vmdk]
 volume_backend_name = &lt;mybackendname3>
@@ -471,9 +471,7 @@ volume_backend_name=&lt;mybackendname2>
 hplefthand_username = &lt;username>
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>
-hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos 
-                                    
-</codeblock></li>
+hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li>
             <li>Save the file to <codeph>cinder_conf</codeph>.</li>
           </ol></li>
         <li>Run the HP Helion OpenStack Configuration Processor:
