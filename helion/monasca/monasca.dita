@@ -2,12 +2,12 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic12031">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monasca Overview</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monitoring Guide</title>
   <body>
-    <p>Monasca is a multi-tenant, scalable, fault-tolerant monitoring-as-a-service, HTTP-based
-      service. It is open-source and integrates with OpenStack. It uses a REST API for high-speed
-      metrics processing and querying, and has a streaming alarm and notification engine. The name
-      "Monasca" is short for "monitoring at scale".</p>
+    <p>Monasca is a multi-tenant, scalable, fault-tolerant monitoring service. It is open-source and
+      integrates with OpenStack. It uses a REST API for high-speed metrics processing and querying,
+      and has a streaming alarm and notification engine. The name "Monasca" is short for "monitoring
+      at scale".</p>
     <p>In the Helion OpenStack 2.0 release, the OpenStack monitoring standard, Monasca, is supported
       as the Helion OpenStack monitoring solution with the following exceptions (which are not
       implemented):</p>
