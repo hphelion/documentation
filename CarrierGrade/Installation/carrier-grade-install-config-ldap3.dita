@@ -16,7 +16,7 @@
   <p>If you installed HP Helion OpenStack Carrier Grade 1.1, your system was configured to use LDAP v2. 
     LDAP (Lightweight Directory Access Protocol) is a protocol that programs 
     use to look up information from a server. </p>
-  <p>THis document explains how to configure HP Helion OpenStack to use LDAP v3. </p>
+  <p>This document explains how to configure HP Helion OpenStack to use LDAP v3. </p>
   <p><b>NOTE:</b> If you installed HP Helion OpenStack Carrier Grade after *****, you do not need to perform these steps.
   Your installation configured LDAP v3 upon installation.</p>
   <ol>
