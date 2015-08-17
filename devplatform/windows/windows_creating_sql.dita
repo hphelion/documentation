@@ -12,20 +12,28 @@
       <li><xref type="section" href="#topic_rbs_ysb_bt/connect">Connect to the service instance</xref></li>
     </ul>
     <section id="create"><title>Create a MSSQL service instance</title>
-      <p>To create a MSSQL service instance, use the <xref type="external" href="http://docs.hpcloud.com/devplatform/1.2/helion/CLI/1.2ALS_Client_Downloads.html">Helion ALS Client</xref>. To create a service
-        instance, first connect the Helion ALS client to your Helion OpenStack or Helion Public Cloud instance using <xref type="section" href="../helion/user/reference/.2client-ref-getting-started.html#topic2439__command-login">helion login</xref>
-        and <xref type="section" href="../helion/user/reference/.2client-ref-getting-started.html#topic2439__command-login">helion target</xref>.</p>
+      <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i></ph>
+      <p>To create a MSSQL service instance, use the <xref href="../helion/CLI/1.2ALS_Client_Downloads.html">Helion ALS Client</xref>. To create a service
+        instance, first connect the Helion ALS client to your Helion OpenStack or Helion Public Cloud instance using <xref type="section" href="../helion/user/reference/1.2client-ref-getting-started.html#topic2439__command-login">helion login</xref>
+        and <xref type="section" href="../helion/user/reference/1.2client-ref-getting-started.html#topic2439__command-target">helion target</xref>.</p>
     <p>The following command creates an instance of a MSSQL 2012 service called <i>MSSQL2012Service</i>:</p>
     <codeblock>helion create-service mssql2012 MSSQL2012Service</codeblock>
     <p>The output from this command may look like the following:</p>
       <image placement="break" href="../../media/windows_sql_create.png"></image></section>
     <section id="deploy"><title>Deploy a Helion tunneling application</title>
     <p>Once the service instance is created, in order to connect to the instance, you must first deploy a tunneling application using the <b>helion tunnel</b> command.</p>
+      <p>The following command creates a tunneling application to the <i>MSSQL2012Service</i> service in the connected cluster, binds the tunneling application to the requested service, and returns the credentials
+        <b>username</b>, <b>password</b>, <b>(database) name</b>, and <b>connectionstring</b> required to connect to the service:</p>
+      <codeblock>helion tunnel MSSQL2012Service</codeblock>
+      <p>The output from this command may look like the following:</p>
       <image placement="break" href="../../media/helion_sql_tunnel.png"></image></section>
     <section id="connect"><title>Connect to the service instance</title>
-    <p></p>
+    <p>Once the tunneling application is deployed and bound to the service, you can connect to the service using SQL Server Management Studio.</p>
+      <p>In the login dialog for SQL Management Studio, enter the hostname and port for the ALS cluster, and provide the login credentials from the previous section:</p>
       <image placement="break" href="../../media/windows_sql_connect_1.png"></image>
+      <p>In the next dialog, provide the database name from the previous section: </p>
       <image placement="break" href="../../media/windows_sql_connect_2.png"></image>
+      <p>When the connection is complete, you will be connected to the database service in SQL Management Studio:</p>
       <image placement="break" href="../../media/windows_sql_connect_3.png"></image></section>
   </body>
 </topic>
