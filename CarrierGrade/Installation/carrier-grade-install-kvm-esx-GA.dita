@@ -398,8 +398,8 @@ Password: cghelion</codeblock>
               which storage method(s) you are using.</li>
             <li>Depending upon the type of storage you are using, edit the following file: <ul>
                 <li><codeph>cinder_conf.multiBackendSample</codeph> - this sample file provides all
-                  the variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA or
-                  HP StoreServ (3PAR) attched to the KVM region;</li>
+                  the variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA
+                  and/or HP StoreServ (3PAR) attched to the KVM region;</li>
               </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the
                 back-ends you are using. You can specify one, two, or all three back-ends in this
                 field.</p><table>
@@ -411,7 +411,7 @@ Password: cghelion</codeblock>
                     <row>
                       <entry colsep="1" rowsep="1">Region/Hypervisor</entry>
                       <entry colsep="1" rowsep="1">Volume Backend</entry>
-                      <entry>Backend Name</entry>
+                      <entry colsep="1" rowsep="1">Backend Name</entry>
                     </row>
                   </thead>
                   <tbody>
@@ -428,8 +428,7 @@ Password: cghelion</codeblock>
                     <row>
                       <entry>Non-KVM </entry>
                       <entry>ESX Datastores</entry>
-                      <entry>
-                        <p>vmdk</p>
+                      <entry>vmdk
                       </entry>
                     </row>
                   </tbody>
