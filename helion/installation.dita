@@ -110,7 +110,7 @@ helion/hlm/                    Directory contains files used by the installer
         <li>Run the configuration processor, as follows: <codeblock>cd ~/helion/hlm/ansible</codeblock>
           <codeblock>ansible-playbook -i hosts/localhost config-processor-run_v2.yml</codeblock>
           Note that if the installer tells you to run ansible-playbook -i hosts/localhost
-          config-processor-run.yml, don't. Run command as above (v2).  </li>
+          config-processor-run.yml, don't. Run command as above (v2). </li>
         <li>Check the generated host files in
             <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs
           are included. If they are not, run
