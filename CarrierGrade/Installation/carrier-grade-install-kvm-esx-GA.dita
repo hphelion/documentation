@@ -206,7 +206,8 @@ Password: cghelion</codeblock>
           href="carrier-grade-install-pb-kvm-node-json.dita">Sample node-provision.json File for
           Installing the KVM + ESX Topology</xref>.</p>
       <ol id="ol_ub2_xfl_zs">
-        <li>Edit <codeph>node-provision.json</codeph> file to change only the following fields: <table>
+        <li>Edit <codeph>node-provision.json</codeph> file to change only the following fields: 
+          <table>
             <tgroup cols="2">
               <colspec colname="col1" colsep="1" rowsep="1"/>
               <colspec colname="col2" colsep="1" rowsep="1"/>
@@ -244,23 +245,6 @@ Password: cghelion</codeblock>
           </table><p>*iLO is HP Integrated Lights-Out, a server management tool embedded with the
             ProLiant servers. Consult your iLO documentation for information on how to locate the
             iLO IP address, user name, and password.</p></li>
-        <li>Remove the server assigned for second VRS-G.
-          <codeblock>,
-{
-      "name": "vrg2",
-      "pxe_mac_address": "d0:bf:9c:c0:ba:38",
-      "pxe_interface": "auto",
-      "pm_type": "ipmilan",
-      "pm_ip": "10.1.3.56",
-      "pm_user": "cghelion",
-      "pm_pass": "cghelion#",
-      "failure_zone": "fz2",
-      "node_group": <b>"VRG-001-001",</b>
-      "vendor": "HP",
-      "model": "DL680",
-      "os_partition_size": "20",
-      "data_partition_size": "80"
-      }    </codeblock></li>
         <li>Save and close the file.</li>
       </ol>
     </section>
@@ -404,22 +388,55 @@ Password: cghelion</codeblock>
                 <codeph>nodes.json</codeph> file.</li>
           </ol></li>
         <li>Configure the VMware VMDK driver to enable management of the OpenStack Block Storage
-          volumes on vCenter-managed data stores:<ol id="ul_btr_l52_xs">
+          volumes on vCenter-managed data stores and 3PAR and/or VSA storage arrays:<ol
+            id="ul_btr_l52_xs">
             <li>Change to the <codeph>/cinder/blocks</codeph> directory:
               <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where
                 <codeph>&lt;cloudname></codeph> is the name you assigned to the cloud. The directory
               contains several sample Cinder configuration files that you can edit, depending upon
               which storage method(s) you are using.</li>
-            <li>Depending upon the type of storage you are using, edit one of the following files: <ul>
-                <li><codeph>cinder_conf.multiBackendSample</codeph> - if you plan to have ESX
-                  attached to the non-KVM region and HP StoreVirtual VSA or HP StoreServ (3PAR)
-                  attched to the KVM region;</li>
-                <li><codeph>cinder_conf.vmdksample</codeph> - if you are using ESX only.</li>
+            <li>Depending upon the type of storage you are using, edit the following file: <ul>
+                <li><codeph>cinder_conf.multiBackendSample</codeph> - this sample file provides all
+                  the variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA or
+                  HP StoreServ (3PAR) attched to the KVM region;</li>
               </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the
                 backends you are using. You can specify one, two, or all three backends in this
-                field.</p>
-              <b>For ESX storage</b> Edit the file to configure the ESX (VMDK) settings. For
-                  example:<codeblock>[DEFAULT]
+                field.</p><table>
+                <tgroup cols="3">
+                  <colspec colname="col1" colsep="1" rowsep="1"/>
+                  <colspec colname="col2" colsep="1" rowsep="1"/>
+                  <colspec colname="col3" colsep="1" rowsep="1"/>
+                  <thead>
+                    <row>
+                      <entry colsep="1" rowsep="1">Region/Hypervisor</entry>
+                      <entry colsep="1" rowsep="1">Volume Backend</entry>
+                      <entry>Backend Name</entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry>KVM</entry>
+                      <entry>3PAR </entry>
+                      <entry>hp3par</entry>
+                    </row>
+                    <row>
+                      <entry>KVM</entry>
+                      <entry>VSA</entry>
+                      <entry>hplefthand</entry>
+                    </row>
+                    <row>
+                      <entry>Non-KVM </entry>
+                      <entry>ESX Datastores</entry>
+                      <entry>
+                        <p>vmdk</p>
+                      </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table><p>Note: You can use either 3PAR and VSA or select both if you have respective
+                storage arrays </p> A typical <codeph>cinder_conf</codeph> that enables all three
+              back ends appears similar to the following example:
+              <codeblock>[DEFAULT]
 enabled_backends=vmdk
 ...                                
 [vmdk]
@@ -431,10 +448,8 @@ vmware_volume_folder = &lt;volumes_folder>
 vmware_image_transfer_timeout_secs = 7200
 vmware_task_poll_interval = 0.5
 vmware_max_objects_retrieval = 100
-volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock><p><b>For
-                  3PAR storage </b>: Edit the file to configure the 3PAR settings. For
-                  example:</p><codeblock>[DEFAULT]
-enabled_backends=hp3par
+volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
+
 [hp3par]
 volume_backend_name=&lt;mybackendname1>
 hp3par_api_url=https://&lt;management_ip>:8080/api/v1
@@ -449,10 +464,9 @@ volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 hp3par_debug=False
 hp3par_iscsi_chap_enabled=false
 hp3par_snapshot_retention=48
-hp3par_snapshot_expiration=72</codeblock><p><b>For
-                  VSA storage</b> Edit the file to configure the VSA (HP Lefthand) settings. For
-                example:</p><codeblock>[DEFAULT]
-enabled_backends=hplefthand
+hp3par_snapshot_expiration=72
+
+[hplefthand]
 hplefthand_username = &lt;username>
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>

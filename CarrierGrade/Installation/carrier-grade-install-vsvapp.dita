@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the VRS vApp</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the VRSvApp</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -28,7 +28,7 @@
         Settings</b>.</p>
     <p><image href="../../media/CGH-install-vrsvapp.png" id="image_ab4_wy3_1t"/></p>
     <p>Then, select Virtual Machine Options then using the drop down dialog box disable vMotion for
-      each VRS vApp vm. Click ok to save settings.</p>
+      each VRSvApp vm. Click ok to save settings.</p>
     <p><image href="../../media/CGH-install-vmotion.png" id="image_j3x_cz3_1t"/></p>
     <section>
       <p> To install the VRSvApp:</p>
@@ -127,10 +127,10 @@
           ]
         }
         </codeblock>
-      <p><b>Notes and definitions regarding VRS vApp</b></p>
+      <p><b>Notes and definitions regarding VRSvApp</b></p>
       <ul id="ul_if4_nvy_zs">
         <li>vCenter=vcenter Ip address</li>
-        <li>Hypervisor=ESX Host that this VRS vApp will be deployed</li>
+        <li>Hypervisor=ESX Host that this VRSvApp will be deployed</li>
         <li>mgmtSubnet1=CLM network</li>
         <li>dataSubNet1=TUL network</li>
         <li>controller=VSC server ip</li>
