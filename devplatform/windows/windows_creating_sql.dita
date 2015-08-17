@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rbs_ysb_bt">
+  <title>Creating and connecting to a MSSQL service</title>
+  <body>
+    <p>This document describes how to create a MSSQL 2012 or 2014 service, and connect to it using the Helion client's <b>tunnel</b> command.</p>
+    <note>This document will demonstrate how to create and connect to a MSSQL 2012 instance; the procedure for creating and connecting to a MSSQL 2014 service is the same.</note>
+    <p>This document contains the following sections:</p>
+    <ul>
+      <li><xref type="section" href="#topic_rbs_ysb_bt/create">Create a MSSQL service instance</xref></li>
+      <li><xref type="section" href="#topic_rbs_ysb_bt/deploy">Deploy a Helion tunneling application</xref></li>
+      <li><xref type="section" href="#topic_rbs_ysb_bt/connect">Connect to the service instance</xref></li>
+    </ul>
+    <section id="create"><title>Create a MSSQL service instance</title>
+      <p>To create a MSSQL service instance, use the <xref type="external" href="http://docs.hpcloud.com/devplatform/1.2/helion/CLI/1.2ALS_Client_Downloads.html">Helion ALS Client</xref>. To create a service
+        instance, first connect the Helion ALS client to your Helion OpenStack or Helion Public Cloud instance using <xref type="section" href="../helion/user/reference/.2client-ref-getting-started.html#topic2439__command-login">helion login</xref>
+        and <xref type="section" href="../helion/user/reference/.2client-ref-getting-started.html#topic2439__command-login">helion target</xref>.</p>
+    <p>The following command creates an instance of a MSSQL 2012 service called <i>MSSQL2012Service</i>:</p>
+    <codeblock>helion create-service mssql2012 MSSQL2012Service</codeblock>
+    <p>The output from this command may look like the following:</p>
+      <image placement="break" href="../../media/windows_sql_create.png"></image></section>
+    <section id="deploy"><title>Deploy a Helion tunneling application</title>
+    <p>Once the service instance is created, in order to connect to the instance, you must first deploy a tunneling application using the <b>helion tunnel</b> command.</p>
+      <image placement="break" href="../../media/helion_sql_tunnel.png"></image></section>
+    <section id="connect"><title>Connect to the service instance</title>
+    <p></p>
+      <image placement="break" href="../../media/windows_sql_connect_1.png"></image>
+      <image placement="break" href="../../media/windows_sql_connect_2.png"></image>
+      <image placement="break" href="../../media/windows_sql_connect_3.png"></image></section>
+  </body>
+</topic>
