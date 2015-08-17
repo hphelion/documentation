@@ -259,9 +259,17 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
           Helion OpenStack Carrier Grade: <ol>
             <li>Change to the <codeph>cinder/blocks</codeph> directory:
               <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where &lt;cloudname>
-              is the name you assigned to the cloud.</li>
-            <li>Then:<p><b>For HP StoreServ (3PAR) storage </b>: Edit the
-                  <codeph>cinder_conf</codeph> file to configure the 3PAR settings. For
+              is the name you assigned to the cloud. The directory contains several sample Cinder
+              configuration files that you can edit, depending upon which storage method(s) you are
+              using.</li>
+            <li>Depending upon they type of storage you are using, edit one of the following files:
+                <ul id="ul_xcf_v24_1t">
+                <li><codeph>cinder_conf.hp3parSample</codeph> - if you plan to have HP StoreServ
+                  (3PAR)  storage attched to the KVM region;</li>
+                <li><codeph>cinder_conf.vsasample</codeph> - if you plan to have For HP StoreVirtual
+                  VSA storage storage attched to the KVM region</li>
+              </ul><p><b>For 3PAR storage </b>: Edit the <codeph>cinder_conf.hp3parSample</codeph>
+                file to configure the 3PAR settings. For
                   example:</p><codeblock>[DEFAULT]
 enabled_backends=hp3par,hplefthand
 
@@ -279,16 +287,16 @@ volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 hp3par_debug=False
 hp3par_iscsi_chap_enabled=false
 hp3par_snapshot_retention=48
-hp3par_snapshot_expiration=72</codeblock><p><b>For
-                  HP StoreVirtual VSA storage</b> Edit the <codeph>cinder_conf</codeph> file to
-                configure the VSA settings. For example:
+hp3par_snapshot_expiration=72</codeblock><p><b>VSA
+                  storage</b> Edit the <codeph>cinder_conf.vsasample</codeph> file to configure the
+                VSA settings. For example:
                 <codeblock>[DEFAULT]
 enabled_backends=hp3par,hplefthand
 hplefthand_username = &lt;username>
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>
 hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></p></li>
-          </ol></li>
+            <li>Save the file to <codeph>cinder_conf</codeph>.</li></ol></li>
         <li>After editing the JSON files, validate each JSON file to make sure there are no
           syntactical errors using the tool of your preference. For example, using the Python
           json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>

@@ -18,9 +18,18 @@
           href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
           >KVM + ESX Deployment</xref>.</i></p>
 
-    <p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VSvApp. One
-      VRS vApp is required for each ESX host. vmotion must be disabled to prevent the VRS VM from
-      moving from the ESX host.</p>
+    <p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VRSvApp. One
+      VRSvApp is required for each ESX host. There is a 1-to-1 mapping between each VRSvApp and its
+      ESX host. The VRSvApp installation package is contained in the packages you downloaded from
+      DCN</p>
+    <p><b>Important:</b> You must disable vMotion for the VRSvApp to prevent the VRS VM from moving
+      from the ESX host. in case of failure of the host in the ESX cluster. </p>
+    <p>To disable vMotion for the VRSvApp, in vCenter, right-click the VRSvApp and select <b>Edit
+        Settings</b>.</p>
+    <p><image href="../../media/CGH-install-vrsvapp.png" id="image_ab4_wy3_1t"/></p>
+    <p>Then, select Virtual Machine Options then using the drop down dialog box disable vMotion for
+      each VRS vApp vm. Click ok to save settings.</p>
+    <p><image href="../../media/CGH-install-vmotion.png" id="image_j3x_cz3_1t"/></p>
     <section>
       <p> To install the VRSvApp:</p>
       <ol id="ol_hf4_nvy_zs">
@@ -28,16 +37,16 @@
           node in the <codeph>/opt/vsd</codeph> directory. For more information on downloading DCN
           files, see <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/download-esx"
             >Download packages for KVM + ESX</xref>.</li>
-        <li>Extract <codeph>DCN-VRS-VMware-3.0R7.zip</codeph> file to any directory. </li>
+        <li>Extract <codeph>DCN-VRS-VMware-3.0R7.zip</codeph> file to the
+            <codeph>/opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeph> directory. </li>
         <li>Change to the directory where you extracted the files, for
-            example:<codeblock>cd /opt/vsd/CloudMgmt-vmware-working/</codeblock><p>The
+            example:<codeblock>cd /opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeblock><p>The
               <codeph>vrs-metafile.config</codeph> file is in the extracted files. </p></li>
         <li>Modify the <codeph>vrs-metafile.config</codeph> using values appropriate for your
-          environment. A example has been provided below.</li>
+          environment. An example has been provided below.</li>
         <li>Run the command to deploy the template using the example below after making changes to
           file paths to match your environment, vcenter username, vcenter password and vcenter ip
-            <codeblock>./cli.bash deploy_vrs [-d &lt;ATASTORE>] -f &lt;PATH> -m &lt;FILE> -p &lt;PASSWORD> [-r &lt;RESOURCEPOOL>] –u &lt;USRNAME> --url &lt;URL></codeblock><p>Where:</p><codeblock>usage: 
--d,--datastore &lt;DATASTORE>         Datastore name or moref. (Optional)
+            <codeblock>./cli.bash deploy_vrs -f /opt/vsd/CloudMgmt-vmware/&lt;VRS-Template.ovf> -m /opt/vsd/CloudMgmt-vmware/vrs-metafile.config -p &lt;vcenter password> -u &lt;vcenter user> --url https://&lt;vecenter IP>/sdk</codeblock><p>Where:</p><codeblock>usage: 
 -f,--path &lt;PATH>                   VRS template path.
 -m,--metafile &lt;FILE>               Meta file defining VRS property values.
 -p,--password &lt;PASSWORD>           vCenter password.

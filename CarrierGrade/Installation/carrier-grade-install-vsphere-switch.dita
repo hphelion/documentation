@@ -18,12 +18,13 @@
           href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
           >KVM + ESX Deployment</xref>.</i></p>
   
-  <p>The HP Helion OpenStack Carrier Grade  in the KVM + ESX Deployment  requires the VMWare vSphere
+  <p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VMWare vSphere
       Distributed Switch (VDS). The VDS provides a centralized interface from which you can
-      configure, monitor and administer virtual machine access switching for the entire data center. </p>
+      configure, monitor and administer virtual machine access switching for the entire data center.
+      You should have obtained the VDS installation package from VMware.</p>
     <section>
       <p>Before starting, make sure your VSD server is up and running.</p>
-      <p> To install the VDS</p>
+      <p> To install the VDS:</p>
       <ol id="ol_z24_nvy_zs">
         <li>Copy the downloaded and extracted <codeph>CloudMgmt-vmware.tar.gz</codeph> file from HLM
           host to VSD node in the <codeph>/opt/vsd</codeph> directory. For more information on
@@ -31,16 +32,15 @@
             href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/download-esx">Download packages
             for KVM + ESX</xref>.</li>
         <li>Log into your VSD server</li>
-        <li>Extract the contents of the <codeph>CloudMgmt-vmware.tar.gz</codeph> file to any
-          location. </li>
-        <li>Change to the directory where you extracted the files, for
-          example:<codeblock>cd /opt/vsd/CloudMgmt-vmware-working/</codeblock></li>
+        <li>Extract the contents of the <codeph>CloudMgmt-vmware.tar.gz</codeph> file into the
+            <codeph>/opt/vsd/ </codeph>directory. </li>
+        <li>Change to the directory created by extracting the
+          files:<codeblock>cd /opt/vsd/CloudMgmt-vmware-working/</codeblock></li>
         <li>Change the permissions on that
           directory:<codeblock>Chmod -R 777 /opt/vsd/CloudMgmt-vmware-working/</codeblock></li>
         <li>Execute the following command, using appropriate values for the vCenter ip, the vCenter
           user and password, and the ESX cluster name:
-          <codeblock>./cli.bash create_dvswitch --add-hosts true --num-portgroups 1 --provider-vdc-id 1 --url https://&lt;vcenter ip> /sdk -u &lt;vcenter user> -p &lt;vcenter password> -r &lt;cluster name>
-          </codeblock></li>
+          <codeblock>./cli.bash create_dvswitch --add-hosts true --num-portgroups 1 --provider-vdc-id 1 --url <xref href="https://%3cvcenter" format="html" scope="external">https://&lt;vcenter</xref> ip&gt;/sdk -u &lt;vcenter user&gt; -p &lt;vcenter password&gt; -r  &lt;cluster name&gt;</codeblock></li>
       
       <li>After the command completes successfully, launch the vCenter client and navigate to the
           <b>Network Inventory</b> page, as shown: 

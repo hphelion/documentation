@@ -276,31 +276,29 @@ StrictHostKeyChecking no </codeblock></li>
                                 <li>Download the following files: <ul>
                                                 <li><b>Helion Carrier Grade 1.1.0</b>. The file is
                                                   named <codeph>hcg_1.1.0.tar</codeph>. Also
-                                                  download the Checksum and Signature files.</li>
+                                                  download the <b>Helion Carrier Grade 1.1.0
+                                                  Checksum</b> and <b>Helion Carrier Grade 1.1.0
+                                                  Signature</b> files.</li>
                                                 <li><b>Horizon Patch Tar File for Helion Carrier
                                                   Grade</b>. The file is named
                                                   <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>.
-                                                  Also download the Checksum and Signature
-                                                  files.</li>
-                                                <li><b id="productShow_appName">GPG keys to verify
+                                                  Also download the <b>Horizon Patch Tar File for
+                                                  Helion Carrier Grade Checksum</b> and <b>Horizon
+                                                  Patch Tar File for Helion Carrier Grade
+                                                  Signature</b> files.</li>
+                                                <li><b id="productShow_appName">Helion Carrier Grade
+                                                  1.1.0 Windriver License patch signature file</b>
+                                                  and the <b>Helion Carrier Grade 1.1.0 Windriver
+                                                  License patch</b> signature file signature and
+                                                  <b>Helion Carrier Grade 1.1.0 Windriver License
+                                                  patch</b> signature file checksum files.</li>
+                                                <li>LDAP patch</li>
+                                                <li>Compute Proxy patch</li>
+                                                <li>GRE tunnel</li>
+                                                <li><b>GPG keys to verify
                                                   signature files</b>. This file is named
                                                   <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li>
-                                                <li><b>vCenter Proxy Appliance</b>. For the KVM +
-                                                  ESX deployment, download this file, named
-                                                  <codeph>overcloud_vcenter_compute_proxy.tar</codeph>.
-                                                  Also download the Signature files. This file will
-                                                  need to be moved to the system that hosts the
-                                                  VMware vCenter client. You can move the file to
-                                                  that system or download the file later.</li>
-                                                <li><b id="productShow_appName">VCN OVSvApp
-                                                  Appliance</b>.  For the KVM + ESX deployment,
-                                                  download this file, named   Also download the
-                                                  Signature files. HP Virtual Cloud Networking's
-                                                  Open vSwitch vApp (OVSvApp) must be installed for
-                                                  HP Helion OpenStack environment to provision VMs
-                                                  in your VMware vCenter environment. Once deployed,
-                                                  OVSvApp appliance enables networking between the
-                                                  tenant Virtual Machines (VMs).</li>
+                                                <!--<li><b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment, download this file, named <codeph>overcloud_vcenter_compute_proxy.tar</codeph>. Also download the Signature files. This file will need to be moved to the system that hosts the VMware vCenter client. You can move the file to that system or download the file later.</li><li><b id="productShow_appName">VCN OVSvApp Appliance</b>.  For the KVM + ESX deployment, download this file, named   Also download the Signature files. HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</li>-->
                                         </ul></li>
                                 <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file. The following
                                         list of files is
@@ -336,6 +334,10 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                         <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM + ESX
                                 topology, download the following additional packages.</p>
                         <p><b>Note:</b> For HP internal use contact HCG R &amp; D department. </p>
+                        <p><b>ESX components</b></p>
+                        <p>Download all required packages needed to deploy the ESX environment,
+                                including the VMware vSphere Distributed Switch (VDS) .</p>
+                        <p><b>DCN components</b></p>
                         <ol>
                                 <li> When you purchased a license for DCN, you should have received
                                         an email with all the instructions for how to obtain the DCN
@@ -412,7 +414,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                         </ol>
                         
                 </section>
-                <section id="verify"><title>Verify the download signature</title>
+                <section id="verify"><title>Verify the downloaded signature</title>
                         <p>After downloading the installation packages, you should verify the
                                 signature of the download. You can use the GPG utility, which is
                                 already installed on the HLM node. Signed by the signature file.</p>
@@ -475,7 +477,7 @@ gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li>
                         </ol>
                 </section>
-                <section id="checksum"><title>Verify the download checksums</title>
+                <section id="checksum"><title>Verify the downloaded checksums</title>
                         <p>You should also use a checksum verification tool, such as sha256sum,
                                 which should come installed with Ubuntu.<ol id="ol_icb_k4f_xs">
                                         <li>Run the checksum tool against the
@@ -539,9 +541,10 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
 
                 <section id="next-step">
                         <title>Next Step</title>
-                        <p>Install the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">HP
-                                        Helion Lifecycle Management application onto a virtual
-                                        machine</xref>. </p>
+                        <p>
+                                <xref href="carrier-grade-install-hlm-vm.dita#topic10581"
+                                        >Bootstrapping the HP Helion Lifecycle Management virtual
+                                        machine and installation services</xref>. </p>
                 </section>
         </body>
 </topic>

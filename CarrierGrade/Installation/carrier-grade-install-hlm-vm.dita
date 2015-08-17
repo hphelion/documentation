@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the Helion Lifecycle
-    Management Virtual Machine (HLM VM)</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Bootstrapping the HP Helion
+    Lifecycle Management Virtual Machine and Installation Services</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -14,8 +14,8 @@
   </metadata>
 </prolog>
 <body>
-  <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a
-      virtual machine for the Helion Lifecycle Management (HLM). .</p>
+  <p>The first phase of the HP Helion OpenStack Carrier Grade installation involves creating a
+      bootstrapping the HP Helion Lifecycle Management virtual machine and installation services. </p>
     <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
       required installation processes.</p>
 

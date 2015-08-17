@@ -36,8 +36,15 @@ ifconfig eth0 up</codeblock></li>
           <codeblock>route add default gw &lt;CIDR_gateway_IP&gt;</codeblock></li>
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
           controller-0:
-          <pre>TS_15.05_PATCH_0001.patch  # HLM VM /root/cg-hlm/windriver-files</pre><pre>region_config              # HLM VM ~/&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>cakey.pem                  # HLM VM ~&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>helion_branding-v1.2.tgz   # HLM VM /root/cg-hlm/windriver-files</pre></li>
-        <li>Move the <codeph>helion_branding-v1.2.tgz</codeph> to <codeph>/opt/branding</codeph> on
+          <ul><li>TS_15.05_PATCH_0001.patch  # HLM VM /root/cg-hlm/windriver-files</li>
+           <li>TS_15.05_PATCH_0002.patch # HLM VM /root/cg-hlm/windriver-files</li>
+           <li>TS_15.05_DESIGN_PATCH_HEAT.patch # HLM VM/root/cg-hlm/windriver-files</li>
+           <li>TS_15.05_DESIGN_PATCH_HORIZON.patch # HLM VM /root/cg-hlm/windriver-files</li>
+           <li>region_config   # HLM VM ~/&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</li>
+           <li>cakey.pem # HLM VM ~&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</li>
+           <li>helion_branding-v1.3.tgz   # HLM VM /root/cg-hlm/windriver-files</li>
+          </ul></li>
+        <li>Move the <codeph>helion_branding-v1.3.tgz</codeph> to <codeph>/opt/branding</codeph> on
           the controller-0 </li>
         <li>Apply the required patches on controller-0:
           <codeblock>sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0001.patch
@@ -59,12 +66,11 @@ sudo reboot       </codeblock></li>
         <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160"
             >Log in to the Horizon interface</xref> and monitor the status of nodes being PXE
           booted. After succesful PXE boot, Operational State as Disabled and Availability State as
-          Online in the <b>Admin &gt; Inventory</b> page. <p><b>Note:</b>The Horizon Dashboard will
-            be running on the first IP address of the CLM network range (refer to the
+          Online in the <b>Admin</b>, then <b>Inventory</b> page. <p><b>Note:</b>The Horizon
+            Dashboard will be running on the first IP address of the CLM network range (refer to the
               <codeph>ip_start_address</codeph> value provided for the CLM network in the
-              <codeph>definition.json</codeph> during the <xref
-              href="carrier-grade-install-non-kvm-GA.dita#topic10581">non-KVM Region
-              deployment</xref>). </p><p>The log-in credentials for Horizon are as follows:
+              <codeph>definition.json</codeph> during the non-KVM Region
+              deployment). </p><p>The log-in credentials for Horizon are as follows:
             <codeblock>username: admin 
 password:  admin </codeblock></p><p><b>Important:</b> After
             logging in with the default password, make sure you change the password for the
