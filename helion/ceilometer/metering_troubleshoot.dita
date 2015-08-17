@@ -25,7 +25,7 @@
 <xref type="section" href="#topic1976/qerrors">Messaging/Queuing Errors</xref>
 </li>
 </ul>
-<section id="logging"> <title>Logging nancy test</title>
+<section id="logging"> <title>Logging </title>
 <p>Logs for the various running components in the Overcloud Controllers can be found at <i>/var/log/ceilometer.log</i>
 </p>
 <p>The Upstart for the services also logs data at <i>/var/log/upstart</i>
