@@ -99,7 +99,7 @@
   The new service will appear in the Services dialog:
     <image href="../../media/windows_publish_step6_version_1_3.png" placement="break"/>
   </li>
-  <li>In the next <b>Publish to Cloud Foundry</b> dialog (<b>Environment Variables</b>), enter key-value pairs that can be read by the application. In the screenshot below, an environment variable called <b>isDebug</b>
+  <li>In the next <b>Publish to Cloud Foundry</b> dialog (<b>Environment Variables</b>), enter key-value pairs that can be read by the application using the VCAP_APPLICATION environment variable. In the screenshot below, an environment variable called <b>isDebug</b>
   is created with a value of <b>True</b>.
     
     <image href="../../media/windows_publish_step7_version_1_3.png" placement="break"/></li>
