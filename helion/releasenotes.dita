@@ -12,6 +12,7 @@
         services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
           scope="external" format="html">Kilo release</xref> with the exception of limitations
         notated in this document.</p>
+      <p><b>The ability to bond network interface cards (NICs)</b></p>
       <p><b>Neutron LBaaS and FWaaS Extensions</b> - We have implemented networking extensions for
         load balancing and firewalls. Here is a description of each of these:</p>
       <ul>
