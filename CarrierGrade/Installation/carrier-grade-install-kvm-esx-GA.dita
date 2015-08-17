@@ -388,8 +388,9 @@ Password: cghelion</codeblock>
                 <codeph>nodes.json</codeph> file.</li>
           </ol></li>
         <li>Configure the VMware VMDK driver to enable management of the OpenStack Block Storage
-          volumes on vCenter-managed data stores and 3PAR and/or VSA storage arrays:<ol
-            id="ul_btr_l52_xs">
+          volumes on vCenter-managed data stores and 3PAR and/or VSA storage arrays. The HP Blick
+          Storage (Cinder) service allows you to configure multiple storage back-ends. Use the
+          following steps to configure back-end support:<ol id="ul_btr_l52_xs">
             <li>Change to the <codeph>/cinder/blocks</codeph> directory:
               <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where
                 <codeph>&lt;cloudname></codeph> is the name you assigned to the cloud. The directory
@@ -400,7 +401,7 @@ Password: cghelion</codeblock>
                   the variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA or
                   HP StoreServ (3PAR) attched to the KVM region;</li>
               </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the
-                backends you are using. You can specify one, two, or all three backends in this
+                back-ends you are using. You can specify one, two, or all three back-ends in this
                 field.</p><table>
                 <tgroup cols="3">
                   <colspec colname="col1" colsep="1" rowsep="1"/>
