@@ -24,33 +24,32 @@
     <topicref href="helion/installation.dita"/>
     <topicref href="helion/faq.dita"/>
     <topicref href="helion/monasca/monasca.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Monitoring Guide</navtitle>
-        </topicmeta>
-      </topicref>
-      <topicref href="helion/monasca/alarms.dita" locktitle="yes" toc="no">
-        <topicmeta>
-          <navtitle>Service Alarm Definitions</navtitle>
-        </topicmeta>
-      </topicref>
-      <topichead navtitle="OpsConsole User Guide">
-        <topicref href="helion/monasca/opsconsole/alarms.dita"/>
-        <topicref href="helion/monasca/opsconsole/alarm_definitions.dita"/>
-        <topicref href="helion/monasca/opsconsole/notification_methods.dita"/>
-        <topicref href="helion/monasca/opsconsole/metric_monitoring.dita"/>
-      </topichead>
-    <topichead navtitle="Logging Guide">
-      <topicref href="helion/logging/logging_overview.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Centralized Logging Overview</navtitle>
-        </topicmeta>
-      </topicref>
-      <topicref href="helion/logging/logging_troubleshooting.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Troubleshooting Logging Issues</navtitle>
-        </topicmeta>
-      </topicref>
+      <topicmeta>
+        <navtitle>Monitoring Guide</navtitle>
+      </topicmeta>
+    </topicref>
+    <topicref href="helion/monasca/alarms.dita" locktitle="yes" toc="no">
+      <topicmeta>
+        <navtitle>Service Alarm Definitions</navtitle>
+      </topicmeta>
+    </topicref>
+    <topichead navtitle="OpsConsole User Guide" toc="no">
+      <topicref href="helion/monasca/opsconsole/alarms.dita" toc="no"/>
+      <topicref href="helion/monasca/opsconsole/alarm_definitions.dita" toc="no"/>
+      <topicref href="helion/monasca/opsconsole/notification_methods.dita" toc="no"/>
+      <topicref href="helion/monasca/opsconsole/metric_monitoring.dita" toc="no"/>
     </topichead>
+    <topicref href="helion/logging/logging_overview.dita" locktitle="yes">
+      <topicmeta>
+        <navtitle>Centralized Logging Guide</navtitle>
+      </topicmeta>
+    </topicref>
+    <topicref href="helion/logging/logging_troubleshooting.dita" locktitle="yes">
+      <topicmeta>
+        <navtitle>Troubleshooting Logging Issues</navtitle>
+      </topicmeta>
+    </topicref>
+
     <!-- reprting = metering = ceilomter -->
 
     <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Guide"
