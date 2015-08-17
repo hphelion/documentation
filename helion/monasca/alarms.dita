@@ -623,7 +623,7 @@
                   filesystem.</p>
                 <p>If the XFS repair fails, you should wipe the GPT table as follows (where LETTER
                   is replaced by the actual drive name)</p>
-                <p>sudo dd if=/dev/zero of=/dev/sd&lt;LETTER&gt; bs=$((1024*1024)) count=1</p>
+                <codeblock>sudo dd if=/dev/zero of=/dev/sd&lt;LETTER&gt; bs=$((1024*1024)) count=1</codeblock>
                 <p>Then, on the deployer, run the _swift-configure.yml playbook. This will reformat
                   the drive, remount it and restart Swift services.</p>
                 <p>It is safe to reformat drives containing Swift data because Swift mains other
