@@ -189,7 +189,19 @@ Password: cghelion</codeblock>
         <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
         <li>Provision and configure HP Helion
             OpenStack.<codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where:</p><ul>
-            <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.</li>
+            <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.<p>The cloud
+                name can be any combination of up to 63 digits, letters, and <codeph>-</codeph><ul
+                  id="ul_lz5_rbf_bt">
+                  <li>
+                    <p>Cannot start or end with <codeph>-</codeph></p>
+                  </li>
+                  <li>
+                    <p>Must be greater than 0 characters</p>
+                  </li>
+                  <li>
+                    <p>No restriction on the number of letters or digits (0 or more)</p>
+                  </li>
+                </ul></p></li>
             <li><codeph>memphis</codeph> is the name of the template to use. The installation kit
               includes a template called <codeph>memphis</codeph> designed to install HP Helion
               OpenStack, specific to the KVM + ESX deployment.</li>

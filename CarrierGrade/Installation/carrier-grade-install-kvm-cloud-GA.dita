@@ -143,8 +143,7 @@ echo 0 > /proc/sys/net/ipv4/conf/eth0.&lt;CAN_VLAN_ID&gt;/rp_filter
 echo 0 > /proc/sys/net/ipv4/conf/eth0.&lt;CLM_VLAN_ID&gt;/rp_filter
 echo 1 > /proc/sys/net/ipv4/ip_forward </codeblock></li>
       </ol>
-  <!--   <p>This workaround needs to be replaced with the new one being tested out by Naveen. 
-      He should update us shortly. We still need a workaround for this issue</p>  --> 
+  <!--   <p>Leave in workaround, per Naveen and Hrushi email 8/17</p>  --> 
     </section>
   
   <section id="next-step"> <title>Next Step</title>
