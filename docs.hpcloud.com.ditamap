@@ -26,52 +26,47 @@
     <!-- keystone identity -->
     <topichead navtitle="Identity Guide">
       <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Overview"
-        locktitle="yes">
-      </topicref>
-      <topicref href="helion/keystone/keystone_roles.dita" navtitle="Domains, Projects, Users, Groups, and Roles"
-        locktitle="yes">
-      </topicref>
-      <topicref href="helion/keystone/keystone_installation.dita" navtitle="Installing Keystone Identity"
-        locktitle="yes">
-      </topicref>
+        locktitle="yes"> </topicref>
+      <topicref href="helion/keystone/keystone_roles.dita"
+        navtitle="Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
+      <topicref href="helion/keystone/keystone_installation.dita"
+        navtitle="Installing Keystone Identity" locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
-        locktitle="yes">
-      </topicref>
+        locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_update.dita" navtitle="Updating Keystone"
-        locktitle="yes">
-      </topicref>
+        locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Current Limitations"
-        locktitle="yes">
-      </topicref>
+        locktitle="yes"> </topicref>
     </topichead>
+    <!-- Monitoring and Logging -->
     <topicref href="helion/monasca/monasca.dita" locktitle="yes">
       <topicmeta>
         <navtitle>Monitoring Guide</navtitle>
       </topicmeta>
     </topicref>
-    <topicref href="helion/monasca/alarms.dita" locktitle="yes" toc="no">
+    <topicref href="helion/monasca/alarms.dita" locktitle="yes">
       <topicmeta>
         <navtitle>Service Alarm Definitions</navtitle>
       </topicmeta>
     </topicref>
-    <topichead navtitle="OpsConsole User Guide" toc="no">
-      <topichead navtitle="General" toc="no">
-        <topicref href="helion/monasca/opsconsole/dashboard.dita" toc="no"/>
-        <topicref href="helion/monasca/opsconsole/logging.dita" toc="no"/>
-        <topicref href="helion/monasca/opsconsole/alarm_explorer.dita" toc="no"/>
-        <topicref href="helion/monasca/opsconsole/alarm_creation.dita" toc="no"/>
-        <topicref href="helion/monasca/opsconsole/notification_methods.dita" toc="no"/>
-        <topicref href="helion/monasca/opsconsole/metric_monitoring.dita" toc="no"/>
+    <topichead navtitle="OpsConsole User Guide">
+      <topichead navtitle="General">
+        <topicref href="helion/monasca/opsconsole/dashboard.dita"/>
+        <topicref href="helion/monasca/opsconsole/logging.dita"/>
+        <topicref href="helion/monasca/opsconsole/alarm_explorer.dita"/>
+        <topicref href="helion/monasca/opsconsole/alarm_creation.dita"/>
+        <topicref href="helion/monasca/opsconsole/notification_methods.dita"/>
+        <topicref href="helion/monasca/opsconsole/metric_monitoring.dita"/>
       </topichead>
-      <topichead navtitle="Compute" toc="no">
-        <topicref href="helion/monasca/opsconsole/compute_summary.dita" toc="no"/>
-        <topicref href="helion/monasca/opsconsole/compute_nodes.dita" toc="no"/>
+      <topichead navtitle="Compute">
+        <topicref href="helion/monasca/opsconsole/compute_summary.dita"/>
+        <topicref href="helion/monasca/opsconsole/compute_nodes.dita"/>
       </topichead>
-      <topichead navtitle="Storage" toc="no">
-        <topicref href="helion/monasca/opsconsole/storage_summary.dita" toc="no"/>
+      <topichead navtitle="Storage">
+        <topicref href="helion/monasca/opsconsole/storage_summary.dita"/>
       </topichead>
-      <topichead navtitle="Networking" toc="no">
-        <topicref href="helion/monasca/opsconsole/networking_summary.dita" toc="no"/>
+      <topichead navtitle="Networking">
+        <topicref href="helion/monasca/opsconsole/networking_summary.dita"/>
       </topichead>
     </topichead>
     <topicref href="helion/logging/logging_overview.dita" locktitle="yes">

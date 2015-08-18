@@ -6,6 +6,7 @@
   <shortdesc>This page allows you to define charts that display data based on the metrics and
     parameters you choose. </shortdesc>
   <conbody>
+    <note>This section is not confirmed to be working in Beta 1.</note>
     <section>
       <title>Search</title>
       <p>The search bar allows you to filter the notification methods you want to view. </p>
