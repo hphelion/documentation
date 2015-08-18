@@ -87,9 +87,13 @@
     </topichead>
 
   <!-- keystone identity -->
-  
-  <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Guide"
+    <topichead navtitle="Identity Guide">
+  <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Overview"
     locktitle="yes">
   </topicref>
+      <topicref href="helion/keystone/keystone_installation.dita" navtitle="Installing Keystone Identity"
+        locktitle="yes">
+      </topicref>
+    </topichead>
   </topicref>
 </map>
