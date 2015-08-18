@@ -216,7 +216,11 @@ hplefthand_debug: false
           deployer:
           <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock> As they
           no longer have entries for HLM, sudo commands may become a bit slower. To fix this issue,
-          once this step is complete, add "hlm" after "127.0.0.1 localhost".</li>
+          once this step is complete, add "hlm" after "127.0.0.1 localhost". The result will look
+          like this:<codeblock>...
+# Localhost Information
+127.0.0.1 localhost hlm
+</codeblock></li>
       </ol>
     </section>
   </body>
