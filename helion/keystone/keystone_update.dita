@@ -3,33 +3,37 @@
 <topic id="topic_m43_2j3_bt">
   <title>Updating Keystone</title>
   <body>
-   
-    <section><title>Updating Keystone </title> 
-      
-      HP Helion OpenStack&#174; supports updating the following parts of
-      Identity service configuration: Any content in main keystone configuration file:
-      /etc/keystone/keystone.conf This allows to manipulate Keystone configuration parameters and
-      enable experimental features, such as Fernet Tokens. Creating and updating domain-specific
-      configuration files: /etc/keystone/domains/keystone.&lt;domain_name&gt;.conf This allows to
-      integrate Keystone with one or more external authentication sources, such as LDAP server.
-      Certain content in logging configuration file: /etc/keystone/logging.conf This allows to
-      adjust verbosity of logs being written to keystone log files. Apache2 WSGI module
-      configuration file: /etc/apache2/sites-enabled/keystone-modwsgi.conf Allows to adjust certain
-      WSGI module parameters (like process counts) </section>
-    <section> Updating main Keystone configuration file 1.Main Keystone configuration file
-      (/etc/keystone/keystone.conf) is generated from the following template file:
-      roles/KEY-API/templates/keystone.conf.j2 <codeblock>roles/KEY-API/templates/keystone.conf.j2
-</codeblock>
-      <p/>Modify this template file as appropriate. Please refer to Keystone Kilo documentation for
-      full descriptions of all settings <xref
-        href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
-        scope="external" format="html">Keystone docs at OpenStack.org</xref>
-      <note>This is a Jinja2 template, which expects certain template variables to be set. Do not
-        change values inside double curly quotes (i.e. {{ }}). </note>
-      <p>Once template is modified, run reconfiguration playbook:</p>
-      <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
-    </section> 
-   
-   
+
+    <section><title>Updating Keystone </title> HP Helion OpenStack&#174; allows you to perform
+      updates on the following parts of the Identity service configuration: <ul>
+        <li>The main Keystone configuration file: <b>/etc/keystone/keystone.conf</b> Here you can
+          manipulate Keystone configuration parameters and enable experimental features, such as
+          Fernet Tokens.</li>
+        <li>Domain-specific configuration files:
+            <b>/etc/keystone/domains/keystone.&lt;domain_name&gt;.conf</b>. Here you can integrate
+          Keystone with one or more external authentication sources, such as an LDAP server. </li>
+        <li>Certain content in the logging configuration file: <b>/etc/keystone/logging.conf</b>. In
+          this file you can adjust the verbosity of the output written to Keystone log files. </li>
+        <li> The Apache2 WSGI module configuration file:
+            <b>/etc/apache2/sites-enabled/keystone-modwsgi.conf</b>. In this file you can  adjust
+          certain WSGI module parameters (like process counts). </li>
+      </ul>
+    </section>
+    <section> <title>Updating the main Keystone configuration file</title>
+      The main Keystone configuration file (<b>/etc/keystone/keystone.conf</b>) is generated from the
+          following template file: <b>roles/KEY-API/templates/keystone.conf.j2</b>
+      <ol> 
+      <li>Modify this template file as appropriate. Please refer to the Keystone Kilo documentation
+          for full descriptions of all settings in the <xref
+            href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
+            scope="external" format="html">Keystone docs at OpenStack.org</xref>
+          <note>This is a Jinja2 template, which expects certain template variables to be set. Do
+            not change values inside double curly quotes (i.e. {{ }}). </note></li>
+      <li>Once the template is modified, run reconfiguration playbook:
+          <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock></li>
+      </ol>
+    </section>
+
+
   </body>
 </topic>

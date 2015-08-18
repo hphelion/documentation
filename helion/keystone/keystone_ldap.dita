@@ -3,22 +3,25 @@
 <topic id="topic_ifg_n33_bt">
   <title>LDAP Integration</title>
   <body>
-    <section><title>Integrating with an external LDAP server</title> <ol>
-      <li>Ensure that the <b>domain_specific_drivers_enabled</b> option is set to <b>True</b> in the
-          main configuration file template (<b>roles/KEY-API/templates/keystone.conf.j2</b>).</li>
-      <li>Create a YAML file that contains the definition of the LDAP server connection. Use
+    <section><title>Integrating with an external LDAP server</title>
+      <p>If your organization, like most, uses an LDAP directory service such as Active Directory, you can integrate it with Keystone by following the steps outlined below. </p>
+      <ol>
+        <li>Ensure that the <b>domain_specific_drivers_enabled</b> option is set to <b>True</b> in
+          the main configuration file template
+          (<b>roles/KEY-API/templates/keystone.conf.j2</b>).</li>
+        <li>Create a YAML file that contains the definition of the LDAP server connection. Use
             <b>roles/KEY-API/files/samples/keystone_configure_ldap_sample.yml</b> as an example.
-          Save the file, as, for example, /tmp/myldap.yml. Please refer to the LDAP  section of the
+          Save the file, as, for example, /tmp/myldap.yml. Please refer to the LDAP section of the
           Keystone Kilo documentation for a full list of options and descriptions: <xref
             href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
             format="html" scope="external"
             >http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html</xref></li>
-      
-      <li>Run the reconfiguration playbook, passing the YAML file created in the previous step as a
-          command-line option:
+
+        <li>Run the reconfiguration playbook, passing the YAML file created in the previous step as
+          a command-line option:
           <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/tmp/myldap.yml
 </codeblock></li>
-      <li>Ensure that the new domain was created for LDAP (Microsoft Active Directory in this
+        <li>Ensure that the new domain was created for LDAP (Microsoft Active Directory in this
           example), and that user and group records can be retrieved: <codeblock># Import environment variables suited for Keystone administration
 $ source keystone.osrc
  
@@ -66,16 +69,16 @@ stack@hLinux:~$ openstack role assignment list --user 05f107e4b1645c52c24a529e3f
           <note>The LDAP domain is read-only. This means that you cannot create a new user or group
             record in it. </note>
         </li>
-      <li>Once an LDAP user is granted the appropriate role, it can authenticate within the
+        <li>Once an LDAP user is granted the appropriate role, he or she can authenticate within the
           specified domain by setting the appropriate OS_* environment variables for the OpenStack
           CLI.</li>
-    </ol>
+      </ol>
     </section>
     <section><title>Adjusting WSGI and logging parameters</title> To modify Web Server Gateway
       Interface (WSGI) parameters (such as process counts for public and admin Keystone interfaces)
-      and log levels, do the following: <ol>
+      and log levels: <ol>
         <li>Adjust respective parameters in
-          roles/keystone-common/vars/keystone_deploy_config.yml.</li>
+            <b>roles/keystone-common/vars/keystone_deploy_config.yml</b>.</li>
         <li>Run reconfiguration playbook:
           <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
         </li>
