@@ -55,10 +55,9 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
         <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
         <li>Provision and configure your HP Helion OpenStack
             VM.<codeblock>hnewcloud  &lt;cloudname&gt; denver</codeblock><p>Where:</p><ul>
-            <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create:
-              <p>The cloud
-                name can be any combination of up to 63 digits, letters, and <codeph>-</codeph><ul
-                  id="ul_lz5_rbf_bt">
+            <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create: <p>The cloud
+                name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
+                  chracter:<ul id="ul_lz5_rbf_bt">
                   <li>
                     <p>Cannot start or end with the <codeph>-</codeph> chracter;</p>
                   </li>
