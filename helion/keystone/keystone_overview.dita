@@ -118,7 +118,7 @@
         about his assigned project membership and role for that project. This role is then matched
         to the service-specific script and the user is allowed to perform functions within that
         service defined by the role mapping.</p>
-      <p>Infrastructure resource quotas are also defined within OpenStack. Quotas are defined per
+      <p>Infrastructure resource quotas are also defined within the OpenStack cloud. Quotas are defined per
         service but can be assigned via the Horizon user interface in the Projects section; thus, this
         function is often associated with the Keystone API. <!--Insert screen shot of
         the Horizon interface used to configure upper limit quotas for specific

@@ -34,7 +34,7 @@
     <section>
       <title>Domains</title> A domain is a top-level container targeted at defining major
       organizational entities. <ul>
-        <li> Domains can be used in a multi-tenant Openstack deployment to segregate projects and
+        <li> Domains can be used in a multi-tenant OpenStack deployment to segregate projects and
           users from different companies in a public cloud deployment or different organizational
           units in a private cloud setting.</li>
         <li>Domains provide the means to identify multiple authentication sources.</li>
