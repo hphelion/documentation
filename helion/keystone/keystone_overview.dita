@@ -15,27 +15,28 @@
     <section>
       <title>Authentication</title>
       <p>The authentication function provides the initial login function to OpenStack. Keystone
-        supports multiple sources of authentication including a native or built-in authentication
+        supports multiple sources of authentication, including a native or built-in authentication
         system. The Keystone native system can be used for all user management functions for proof
         of concept deployments or small deployments not requiring integration with a corporate
-        authentication system but it lacks some of the advanced functions usually found in user
+        authentication system, but it lacks some of the advanced functions usually found in user
         management systems such as forcing password changes. The focus of the Keystone native
         authentication system is to be the source of authentication for OpenStack-specific users
         required for the operation of the various OpenStack services. These users are stored by
-        Keystone in a default domain and do not require the addition of these IDs in an external
-        authentication system.</p>
-      <p>Keystone is more commonly integrated with external authentication systems like OpenLDAP or
-        Microsoft Active Directory. These systems are usually centrally deployed by organizations to
-        service as the single source of user management and authentication for all
-        organizationally-deployed applications and systems requiring user authentication. In
-        addition to LDAP and Microsoft Active Directory, support for integrating with SAML-based
-        Identity Providers from companies like Ping, CA, IBM, Oracle, etc. is also on the verge of
-        becoming "production-ready". Keystone also provides architectural support via the underlying
-        Apache deployment for other types of authentication systems like Multi-Factor
-        Authentication. These types of systems typically require driver support and integration from
-        the respective provider vendors. NOTE: While support for Identity Providers and Multi-factor
-        authentication is available in Keystone it has not yet been certified by the Helion
-        Openstack engineering team and is an experimental feature in Helion OpenStack v1.1.</p>
+        Keystone in a default domain; the addition of these IDs to an external authentication system
+        is not required.</p>
+      <p>Keystone is more commonly integrated with external authentication systems such as OpenLDAP
+        or Microsoft Active Directory. These systems are usually centrally deployed by organizations
+        to serve as the single source of user management and authentication for all in-house
+        deployed applications and systems requiring user authentication. In addition to LDAP and
+        Microsoft Active Directory, support for integration with Security Assertion Markup Language
+        (SAML)-based identity providers from companies such as Ping, CA, IBM, Oracle, and others is
+        also nearly "production-ready". </p>
+      <p>Keystone also provides architectural support via the underlying Apache deployment for other
+        types of authentication systems such as Multi-Factor Authentication. These types of systems
+        typically require driver support and integration from the respective provider vendors. </p>
+      <p><note> While support for Identity Providers and Multi-factor authentication is available in
+          Keystone, it has not yet been certified by the HP Helion OpenStack engineering team and is
+          an experimental feature in HP Helion OpenStack.</note></p>
       <p>LDAP-compatible directories such as OpenLDAP and Microsoft Active Directory are recommended
         alternatives to using the Keystone local authentication. Both methods are widely used
         already by most organizations and are integrated with a variety of other enterprise
@@ -83,13 +84,14 @@
         not yet been certified and documented for Helion OpenStack.</p></section>
     <section>
       <title>Authorization</title>
-      <p>The 2nd major function provided by the Keystone service is access authorization that
+      <p>The second major function provided by the Keystone service is access authorization that
         determines what resources and actions are available based on the UserID, the role of the
         user, and the projects that a User is provided access to. All of this information is
         created, managed, and stored by Keystone. These functions are applied via the Horizon web
-        interface, the OpenStack Command Line Interface or CLI client, or the direct Keystone API.
-        </p><p>Keystone provides support for organizing users via 3 different entities
-        including:</p><p>•Domains – Domains provide the highest level of organization. Domains are
+        interface, the OpenStack Command Line Interface or CLI client, or the direct Keystone API. </p><p>Keystone provides support for organizing users via 3 different entities
+        including:</p>
+      <ul>
+      <li>Domains – Domains provide the highest level of organization. Domains are
         intended to be used as high level containers for multiple projects. A domain can represent
         different tenants, companies or organizations for an OpenStack cloud deployed for public
         cloud deployments or represent major business units, functions, or any other type of
@@ -97,11 +99,13 @@
         least one Domain Admin assigned to it. This domain admin can then create multiple projects
         within the domain and assign the project admin role to specific project owners. Each domain
         created in an OpenStack deployment is unique and the projects assigned to a domain cannot
-        exist in another domain.•Projects – Projects are entities within a domain that represent
+        exist in another domain.</li><li>Projects – Projects are entities within a domain that represent
         groups of users, each user role within that project, and how many underlying infrastructure
-        resources can be consumed by members of the project.•Groups – Groups are an optional
+        resources can be consumed by members of the project.</li><li>Groups – Groups are an optional
         function and provide the means of assigning project roles to multiple users at
-        once.</p><p>Keystone also provides the means to create and assign roles to groups of users
+        once.</li></ul>
+        
+        <p>Keystone also provides the means to create and assign roles to groups of users
         or individual users. The role names are created and user assignments are made within
         Keystone. The actual function of a role is defined currently per each OpenStack service via
         scripts. When a user requests access to an OpenStack service their access token contains
