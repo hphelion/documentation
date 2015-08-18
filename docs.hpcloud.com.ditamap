@@ -97,6 +97,9 @@
       <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
         locktitle="yes">
       </topicref>
+      <topicref href="helion/keystone/keystone_update.dita" navtitle="Updating Keystone"
+        locktitle="yes">
+      </topicref>
     </topichead>
   </topicref>
 </map>
