@@ -7,7 +7,7 @@
   
     <p>General Service Overview</p>
 
-  <p><b>What is the Identity service</b></p>
+      <title>What is the Identity service</title>
   <p>The OpenStack Identity service, based on the Keystone API, is responsible for providing UserID
     authentication and access authorization to enable organizations the ability to achieve their
     access security and compliance objectives in order to successfully deploy OpenStack. In short,
@@ -15,7 +15,7 @@
  
     </section>  
      <section>
-    <p> <b>Authentication</b></p>
+       <title>Authentication</title>
   <p>The authentication function provides the initial login function to OpenStack. Keystone supports
     multiple sources of authentication including a native or built-in authentication system. The
     Keystone native system can be used for all user management functions for proof of concept
@@ -80,7 +80,9 @@
     scanner, etc. Each of these types of MFA are usually specific to particular MFA vendor. The
     Keystone architecture supports an MFA-based authentication system but this has not yet been
     certified and documented for Helion OpenStack.</p></section>
- <section><p>Authorization</p><p>The 2nd major function provided by the Keystone service is access
+ <section>
+   <title>Authorization</title>
+   <p>The 2nd major function provided by the Keystone service is access
         authorization that determines what resources and actions are available based on the UserID,
         the role of the user, and the projects that a User is provided access to. All of this
         information is created, managed, and stored by Keystone. These functions are applied via the
@@ -104,12 +106,20 @@
         scripts. When a user requests access to an OpenStack service their access token contains
         information about their assigned project membership and role for that project. This role is
         then matched to the service-specific script and the user is allowed to perform functions
-        within that service defined by the role mapping.</p><p>Infrastructure resource quotas are
+        within that service defined by the role mapping.</p>
+   
+   <p>Infrastructure resource quotas are
         also defined within OpenStack. Quotas are defined per service but can be assigned via the
         Horizon user interface in the Projects section thus this function is often times associated
         with the Keystone API. This slide shows a screen shot of the Horizon interface used to
         configure upper limit quotas for specific infrastructure-related functions. Quotas are
-        assigned per each project.</p><p/><b>Domains, Projects, Users, Groups, and Roles</b><p>Most
+        assigned per each project.</p><p/>
+   
+ </section>
+    <section>
+      <title>Domains, Projects, Users, Groups, and Roles</title>
+        
+        <p>Most
         large business organizations use an identity system like Microsoft Active Directory to store
         and manage their internal user information. A variety of applications such as HR systems in
         turn are used to manage the data inside of Active Directory. These same organizations often
@@ -134,7 +144,12 @@
         configured to the underlying organization’s authentication source. For example, the ABC
         company would have a Keystone domain created called “abc”. All users authenticating to the
         “abc” domain would be authenticated against the authentication system provided by the ABC
-        organization; in this case <xref href="ldap">ldap://ad.abc.com</xref>. </p><b>Domains</b>•A
+        organization; in this case 
+          <xref href="ldap">ldap://ad.abc.com</xref>. </p>
+    </section><section>
+      
+      <title>Domains</title>
+      A
       domain is a top-level container targeted at defining major organizational entities.•Domains
       can be used in a multi-tenant Openstack deployment to segregate projects and users from
       different companies in a public cloud deployment or different organizational units in a
@@ -152,8 +167,13 @@
       during the HOS keystone installation process.<ul id="ul_crr_fpd_bt">
         <li>No users but the OpenStack service accounts should be assigned to the "default"
           domain.</li>
-      </ul>•Domain admins can be any UserID inside or outside of the domain<b>Domain
-        Administrator</b>•A UID is a domain administrator for a given domain if that UID has a
+      </ul>•Domain admins can be any UserID inside or outside of the domain
+    </section><section>
+      
+      <title>Domain
+        Administrator</title>
+      
+      A UID is a domain administrator for a given domain if that UID has a
       domain-scoped token scoped for the given domain. This means that the UID has the “admin” role
       assigned to it for the selected domain.•The Cloud Admin UID assigns the domain administrator
       role for a domain to a selected UID.•A domain administrator can create/delete local
@@ -172,15 +192,25 @@
       need to List Users from an external domain.•A domain administrator can assign a UID from
       outside of their domain the “project admin” role for a specific project within their domain
       but it is assumed that the domain admin would know the specific UID and would not need to List
-      Users from an external domain.<b>Projects</b>•The domain administrator creates projects within
+      Users from an external domain.
+    </section><section>
+      
+      <title>Projects</title>
+      
+      The domain administrator creates projects within
       their assigned domain and assigns the project admin role to each project to a selected UID.•A
       UID is a project administrator for a given project if that UID has a project-scoped token
       scoped for the given project.•There can be multiple projects per domain.•The project admin
       sets the project quota settings, adds/deletes users and groups to the project, and defines the
       user/group roles for the assigned project.•Users can be belong to multiple projects and have
       different roles assigned per project•Users are assigned to a specific domain and a default
-      project. Users can belong to multiple projects. Roles are assigned per project.<b>Users and
-        Groups</b>•Each user belongs to one domain only.•Domain assignments are defined either by
+      project. Users can belong to multiple projects. Roles are assigned per project.
+    </section><section>
+      
+      <title>Users and
+        Groups</title>
+      
+      Each user belongs to one domain only.•Domain assignments are defined either by
       the domain configuration files or by a domain administrator when creating a new, local (user
       authenticated against Keystone) user.•There is no current method for “moving” a user from one
       domain to another.•A user can belong to multiple projects within a domain with a different
@@ -189,7 +219,11 @@
       is defined for the assigned domain. •Groups can be assigned to multiple projects within a
       domain and have different roles assigned to the group per project.•A group can be assigned the
       “admin” role for a domain or project. All members of the group will be an “admin” for the
-      selected domain or project.<b>Roles</b><p>Service roles represent the function used to
+      selected domain or project.
+    </section><section>
+      
+      <title>Roles</title>
+      <p>Service roles represent the function used to
         implement the OpenStack role based access control, or RBAC, model used to manage access to
         each OpenStack service. Roles are named and assigned per user or group for each project by
         the Keystone service. Role definition and policy enforcement are defined outside of Keystone
@@ -203,7 +237,10 @@
         policy file called /etc/nova/policy.json.</p><p>Helion OpenStack is deployed with 3
         redundant control plane servers. If modified, the policy files for each service need to be
         replicated in each control plane server. Service restarts are NOT required for policy file
-        changes.</p><p/><b>Current Limitations</b><b>Domains</b><ul id="ul_ks2_jpd_bt">
+        changes.</p>
+    </section><section>
+      
+      <title>Current Limitations</title><b>Domains</b><ul id="ul_ks2_jpd_bt">
         <li>Domains can be created and managed by the Keystone API and OpenStackClient CLI.</li>
         <li>End users can authenticate to a particular project and domain via the Keystone API and
           OpenStackClient CLI.</li>
@@ -248,7 +285,11 @@
             href="http://docs.openstack.org/security-guide/content/identity-authentication-methods.html#identity-authentication-methods-external-authentication-methods"
             format="html" scope="external"
             >http://docs.openstack.org/security-guide/content/identity-authentication-methods.html#identity-authentication-methods-external-authentication-methods</xref></li>
-      </ul><b>Hierarchical Multitenancy</b><ul id="ul_tbf_jpd_bt">
+      </ul>
+   
+   <b>Hierarchical Multitenancy</b>
+   
+   <ul id="ul_tbf_jpd_bt">
         <li>Provides the ability to create sub-projects within a Domain-Project hierarchy.</li>
         <li>Requires additional OpenStack service support prior to being used for general use.</li>
         <li>Recommended currently only for test deployments.</li>
@@ -293,7 +334,9 @@
        <note></note>Keystone administration tasks should be performed by <i>admin</i> user with a
                   token scoped with <i>default</i> domain via v3 identity API. These settings are
                   pre-configured in the <i>keystone.osrc</i> file.
-      </p></section>
+      </p>
+    
+    </section>
   
   <section>
     Here are some examples:
