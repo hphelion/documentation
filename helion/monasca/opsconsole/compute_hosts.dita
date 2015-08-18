@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="compute_nodes">
-  <title>Compute Nodes</title>
+<concept id="compute_hosts">
+  <title>Compute Hosts</title>
   <shortdesc>This page allows you to activate and deactivate Compute resources.</shortdesc>
   <conbody>
     <section>
