@@ -88,7 +88,7 @@
 
   <!-- keystone identity -->
   
-  <topicref href="helion/keystone/keystone.dita" navtitle="Identity Guide"
+  <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Guide"
     locktitle="yes">
   </topicref>
   </topicref>
