@@ -85,10 +85,11 @@
       <topicref href="helion/swift/swift_overview.dita"/>
       <topicref href="helion/swift/swift_components.dita"/>
     </topichead>
-  </topicref>
+
   <!-- keystone identity -->
   
   <topicref href="helion/keystone/keystone.dita" navtitle="Identity Guide"
     locktitle="yes">
+  </topicref>
   </topicref>
 </map>
