@@ -91,6 +91,9 @@
   <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Overview"
     locktitle="yes">
   </topicref>
+      <topicref href="helion/keystone/keystone_roles.dita" navtitle="Domains, Projects, Users, Groups, and Roles"
+        locktitle="yes">
+      </topicref>
       <topicref href="helion/keystone/keystone_installation.dita" navtitle="Installing Keystone Identity"
         locktitle="yes">
       </topicref>
