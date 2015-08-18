@@ -39,9 +39,10 @@
         locktitle="yes"> </topicref>
     </topichead>
     <!-- Monitoring and Logging -->
+    <topichead navtitle="Monitoring Guide">
     <topicref href="helion/monasca/monasca.dita" locktitle="yes">
       <topicmeta>
-        <navtitle>Monitoring Guide</navtitle>
+        <navtitle>Monitoring Overview</navtitle>
       </topicmeta>
     </topicref>
     <topicref href="helion/monasca/alarms.dita" locktitle="yes">
@@ -49,6 +50,7 @@
         <navtitle>Service Alarm Definitions</navtitle>
       </topicmeta>
     </topicref>
+    </topichead>
     <topichead navtitle="OpsConsole User Guide">
       <topichead navtitle="General">
         <topicref href="helion/monasca/opsconsole/dashboard.dita"/>
