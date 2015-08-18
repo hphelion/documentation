@@ -10,37 +10,37 @@
         the default configuration. Once Helion OpenStack is up and running, you can add any
         customization to Keystone (like LDAP server integration). Please refer to "Updating
         Keystone" section below.</p><p/><p>Keystone" section below.</p><b>Default
-          Settings</b><b>Keystone Configuration Settings</b><p>&lt;&lt;&lt;insert default settings of
-            the keystone.conf file here&gt;&gt;&gt;</p><b>Default Domain and Service Accounts</b><p>The
-              "default" domain is automatically created during the Keystone installation to contain the
-              various, required OpenStack service accounts including the following:</p><ul
-                id="ul_tzb_lpd_bt">
-                <li>neutron</li>
-                <li>glance</li>
-                <li>swift-monitor</li>
-                <li>ceilometer</li>
-                <li>swift</li>
-                <li>monasca-agent</li>
-                <li>glance-swift</li>
-                <li>swift-demo</li>
-                <li>nova</li>
-                <li>monascal</li>
-                <li>logging</li>
-                <li>demo &lt;&lt;&lt;why is this account auto-created??&gt;&gt;</li>
-                <li>heat</li>
-                <li>cinder</li>
-                <li>admin</li>
-              </ul><p>These are required accounts and are used by the underlying OpenStack services. These
-                accounts should not be removed or reassigned to a different domain. The "default" domain
-                should only be used for these service accounts.</p><p>&lt;&lt;&lt; insert instructions on
-                  how to change the service account passwords &gt;&gt;&gt;</p><p/><b>Post-Install Verification
-                    and Administration</b><p>Keystone query and administration tasks can be performed using
-                      openstack command line utility. The utility is installed by HLM onto deployer node. Also,
-                      HLM installs convenient *.osrc files which contain exports of environment variables used by
-                      openstack CLI.</p><p>
-                        <note/>Keystone administration tasks should be performed by <i>admin</i> user with a token
-                        scoped with <i>default</i> domain via v3 identity API. These settings are pre-configured in
-                        the <i>keystone.osrc</i> file. </p>
+        Settings</b><b>Keystone Configuration Settings</b><p>&lt;&lt;&lt;insert default settings of
+        the keystone.conf file here&gt;&gt;&gt;</p><b>Default Domain and Service Accounts</b><p>The
+        "default" domain is automatically created during the Keystone installation to contain the
+        various, required OpenStack service accounts including the following:</p><ul
+        id="ul_tzb_lpd_bt">
+        <li>neutron</li>
+        <li>glance</li>
+        <li>swift-monitor</li>
+        <li>ceilometer</li>
+        <li>swift</li>
+        <li>monasca-agent</li>
+        <li>glance-swift</li>
+        <li>swift-demo</li>
+        <li>nova</li>
+        <li>monascal</li>
+        <li>logging</li>
+        <li>demo &lt;&lt;&lt;why is this account auto-created??&gt;&gt;</li>
+        <li>heat</li>
+        <li>cinder</li>
+        <li>admin</li>
+      </ul><p>These are required accounts and are used by the underlying OpenStack services. These
+        accounts should not be removed or reassigned to a different domain. The "default" domain
+        should only be used for these service accounts.</p><p>&lt;&lt;&lt; insert instructions on
+        how to change the service account passwords &gt;&gt;&gt;</p><p/><b>Post-Installation
+        Verification and Administration</b><p>Keystone query and administration tasks can be
+        performed using openstack command line utility. The utility is installed by HLM onto
+        deployer node. Also, HLM installs convenient *.osrc files which contain exports of
+        environment variables used by openstack CLI.</p><p>
+        <note/>Keystone administration tasks should be performed by <i>admin</i> user with a token
+        scoped with <i>default</i> domain via v3 identity API. These settings are pre-configured in
+        the <i>keystone.osrc</i> file. </p>
     </section>
     
     <section> Here are some examples:
