@@ -3,7 +3,7 @@
 <topic id="topic_ifg_n33_bt">
   <title>LDAP Integration</title>
   <body>
-    <section>Integrating with an external LDAP server <ol>
+    <section><title>Integrating with an external LDAP server</title> <ol>
       <li>Ensure that domain_specific_drivers_enabled option is set to True in main configuration
         file template (roles/KEY-API/templates/keystone.conf.j2).</li>
       <li>Create YAML file which contains definition of LDAP server connection. Use
@@ -68,7 +68,7 @@ stack@hLinux:~$ openstack role assignment list --user 05f107e4b1645c52c24a529e3f
         by setting appropriate OS_* environment variables for openstack CLI.</li>
     </ol>
     </section>
-    <section>Adjusting WSGI and logging parameters To modify WSGI parameters (such as process counts
+    <section><title>Adjusting WSGI and logging parameters</title> To modify WSGI parameters (such as process counts
       for public and admin Keystone interfaces) and log levels, do the following: <ol>
         <li>Adjust respective parameters in
           roles/keystone-common/vars/keystone_deploy_config.yml.</li>
