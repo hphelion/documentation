@@ -38,58 +38,60 @@
           Keystone, it has not yet been certified by the HP Helion OpenStack engineering team and is
           an experimental feature in HP Helion OpenStack.</note></p>
       <p>LDAP-compatible directories such as OpenLDAP and Microsoft Active Directory are recommended
-        alternatives to using the Keystone local authentication. Both methods are widely used
-        already by most organizations and are integrated with a variety of other enterprise
-        applications. These directories act as the single source of user information within an
-        organization. Keystone can be configured to authenticate against an LDAP-compatible
-        directory on a per-domain basis. Domains, explained later in this slide deck, can be
-        configured so that based on the user id, a incoming user is automatically mapped to a
-        specific domain. This domain can then be configured to authenticate against a specific LDAP
-        directory. The user credentials provided by the user to Keystone are passed along to the
-        designated LDAP source for authentication. This communication can be optionally configured
-        to be secure via SSL encryption. No special LDAP administrative access and only read-only
-        access is required for this configuration. Keystone will NOT add any LDAP information. All
-        user adds, deletes, and modifications are performed by the applications front ending the
-        LDAP directories. After a user has been successfully authenticated they are then assigned to
-        the groups, roles, and projects defined by the Keystone domain or project administrators.
-        This information is stored within the Keystone service database.</p>
+        alternatives to using the Keystone local authentication. Both methods are widely used by
+        organizations and are integrated with a variety of other enterprise applications. These
+        directories act as the single source of user information within an organization. Keystone
+        can be configured to authenticate against an LDAP-compatible directory on a per-domain
+        basis. </p>
+      <p>Domains, explained in the <xref href="keystone_roles.dita">Domains, Projects, Users,
+          Groups, and Roles</xref> topic, can be configured so that based on the user ID, a incoming
+        user is automatically mapped to a specific domain. This domain can then be configured to
+        authenticate against a specific LDAP directory. The user credentials provided by the user to
+        Keystone are passed along to the designated LDAP source for authentication. This
+        communication can be optionally configured to be secure via SSL encryption. No special LDAP
+        administrative access is required, and only read-only access is needed for this
+        configuration. Keystone will not add any LDAP information. All user additions, deletions,
+        and modifications are performed by the application's front end in the LDAP directories.
+        After a user has been successfully authenticated, he  is then assigned to the groups, roles,
+        and projects defined by the Keystone domain or project administrators. This information is
+        stored within the Keystone service database.</p>
       <p>Another form of external authentication provided by the Keystone service is via integration
         with SAML-based Identity Providers (IdP) such as Ping Identity, IBM Tivoli, and Microsoft
-        Active Directory Federation Server. A SAML-based IdP provides an authentication often called
-        "single sign on". The IdP server is configured to authenticate against identity sources like
-        Active Directory and provides a single authentication API against multiple types of
-        downstream identity sources. This means that an organization could have multiple identity
-        storage sources but a single authentication source. In addition, if a user has "logged in"
-        one during a defined session timeframe they do not need to re-authenticate within the
-        defined session. The IdP will automatically validate the user to requesting applications and
-        services. A SAML-based IdP authentication source is configured with Keystone on a per-domain
-        basis similar to how native LDAP directories are configured. Extra mapping rules are
-        required in the configuration that define which Keystone group an incoming UID is
-        automatically assigned to. This means that groups needs to be defined in Keystone firstly
-        but it also removes the requirement for a domain or project admin to have to assign user
-        roles and project membership on a per user basis. Instead, groups are used to define project
-        membership and roles and incoming users are automatically mapped to Keystone groups based on
-        their upstream group membership. This provides a very consistent RBAC model based on the
-        upstream identity source. The configuration of this option is fairly straight forward. IdP
-        vendors like Ping and IBM are contributing to the maintenance of this function and have also
-        produced their own integration documentation. HP is using the Microsoft Active Directory
-        Federation Server for functional testing and future documentation. Horizon support for web
-        single sign on is also now available in the OpenStack Kilo release but not yet validated for
-        Helion OpenStack.</p>
-      <p>The 3rd Keystone-supported authentication source is known as Multi Factor Authentication
-        (MFA). MFA authentication typically requires an external source of authentication beyond a
-        login name and password including options like a SMS text, a temporal token generator, a
-        fingerprint scanner, etc. Each of these types of MFA are usually specific to particular MFA
-        vendor. The Keystone architecture supports an MFA-based authentication system but this has
-        not yet been certified and documented for Helion OpenStack.</p></section>
+        Active Directory Federation Server. A SAML-based identity provider provides authentication
+        that is often called "single sign-on". The IdP server is configured to authenticate against
+        identity sources such as Active Directory and provides a single authentication API against
+        multiple types of downstream identity sources. This means that an organization could have
+        multiple identity storage sources but a single authentication source. In addition, if a user
+        has logged into one such source during a defined session timeframe, they do not need to
+        reauthenticate within the defined session. Instead, the IdP will automatically validate the
+        user to requesting applications and services. </p>
+      <p>A SAML-based IdP authentication source is configured with Keystone on a per-domain basis
+        similar to the manner in which native LDAP directories are configured. Extra mapping rules
+        are required in the configuration that define which Keystone group an incoming UID is
+        automatically assigned to. This means that groups need to be defined in Keystone first, but
+        it also removes the requirement that a domain or project admin assign user roles and project
+        membership on a per-user basis. Instead, groups are used to define project membership and
+        roles and incoming users are automatically mapped to Keystone groups based on their upstream
+        group membership. This provides a very consistent role-based access control (RBAC) model
+        based on the upstream identity source. The configuration of this option is fairly
+        straightforward. IdP vendors such as Ping and IBM are contributing to the maintenance of
+        this function and have also produced their own integration documentation. HP is using the
+        Microsoft Active Directory Federation Services (ADFS) for functional testing and future
+        documentation. Horizon support for web single sign-on is also now available in the OpenStack
+        Kilo release but not yet validated for HP Helion OpenStack.</p>
+      <p>The third Keystone-supported authentication source is known as Multi-Factor Authentication
+        (MFA). MFA typically requires an external source of authentication beyond a login name and
+        password, and can include options such as SMS text, a temporal token generator, a
+        fingerprint scanner, etc. Each of these types of MFA are usually specific to a particular
+        MFA vendor. The Keystone architecture supports an MFA-based authentication system, but this
+        has not yet been certified or documented for HP Helion OpenStack.</p></section>
     <section>
       <title>Authorization</title>
       <p>The second major function provided by the Keystone service is access authorization that
         determines what resources and actions are available based on the UserID, the role of the
-        user, and the projects that a User is provided access to. All of this information is
+        user, and the projects that a user is provided access to. All of this information is
         created, managed, and stored by Keystone. These functions are applied via the Horizon web
-        interface, the OpenStack Command Line Interface or CLI client, or the direct Keystone API. </p><p>Keystone provides support for organizing users via 3 different entities
-        including:</p>
+        interface, the OpenStack Command Line Interface (CLI), or the direct Keystone API. </p><p>Keystone provides support for organizing users via three entities including:</p>
       <ul>
       <li>Domains – Domains provide the highest level of organization. Domains are
         intended to be used as high level containers for multiple projects. A domain can represent
@@ -105,13 +107,13 @@
         function and provide the means of assigning project roles to multiple users at
         once.</li></ul>
         
-        <p>Keystone also provides the means to create and assign roles to groups of users
-        or individual users. The role names are created and user assignments are made within
-        Keystone. The actual function of a role is defined currently per each OpenStack service via
-        scripts. When a user requests access to an OpenStack service their access token contains
-        information about their assigned project membership and role for that project. This role is
-        then matched to the service-specific script and the user is allowed to perform functions
-        within that service defined by the role mapping.</p>
+        <p>Keystone also provides the means to create and assign roles to groups of users or
+        individual users. The role names are created and user assignments are made within Keystone.
+        The actual function of a role is defined currently per each OpenStack service via scripts.
+        When a user requests access to an OpenStack service, his access token contains information
+        about his assigned project membership and role for that project. This role is then matched
+        to the service-specific script and the user is allowed to perform functions within that
+        service defined by the role mapping.</p>
       <p>Infrastructure resource quotas are also defined within OpenStack. Quotas are defined per
         service but can be assigned via the Horizon user interface in the Projects section thus this
         function is often times associated with the Keystone API. This slide shows a screen shot of
