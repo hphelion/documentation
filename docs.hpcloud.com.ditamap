@@ -94,6 +94,9 @@
       <topicref href="helion/keystone/keystone_installation.dita" navtitle="Installing Keystone Identity"
         locktitle="yes">
       </topicref>
+      <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
+        locktitle="yes">
+      </topicref>
     </topichead>
   </topicref>
 </map>
