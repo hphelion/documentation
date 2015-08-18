@@ -16,10 +16,6 @@ RewriteRule ^helion/devplatform/preview/ALS-developer-trial-quick-start/3/?$ /#d
 RewriteRule ^helion/devplatform/preview/ALS-developer-trial-quick-start/4/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start4.html [NE,R=301,L]
 RewriteRule ^helion/devplatform/preview/ALS-developer-trial-quick-start/5/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start5.html [NE,R=301,L]
 RewriteRule ^helion/devplatform/preview/ALS-developer-trial-quick-start/6/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start6.html [NE,R=301,L]
-
-
-
-
 RewriteRule ^helion/devplatform/1.2/als/admin/server/logging.html/?$ /#devplatform/1.2/helion/admin/server/1.2logging.html [NE,R=301,L]
 RewriteRule ^helion/devplatform/?$	/#devplatform/1.2/1.2devplatform.index.html [NE,R=301,L] 
 RewriteRule ^helion/devplatform/1.1/ALS-developer-trial-quick-start/?$	/#devplatform/1.2devplatform.ALS-developer-trial-quick-start.html [NE,R=301,L]
