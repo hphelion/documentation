@@ -26,14 +26,17 @@
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
     <topicref href="commercial/GA1/1.1commercial.release-notes.dita" toc="no"/>
     <!--set to toc=no later-->
-    <topicref href="commercial/GA1/Landing/1.1commercial.landing.start.dita" navtitle="Getting Started" locktitle="yes">
+    <topicref href="commercial/GA1/Landing/1.1commercial.landing.start.dita"
+      navtitle="Getting Started" locktitle="yes">
       <topicref href="commercial/GA1/1.1commercial.faq.dita" navtitle="FAQ" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita" navtitle="Technical Overview" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"
+        navtitle="Technical Overview" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita"
         navtitle="Support Matrix" locktitle="yes"/>
       <!--set to toc=no later-->
     </topicref>
-    <topicref href="commercial/GA1/Landing/1.1commercial.landing.install.dita" navtitle="Installation" locktitle="yes">
+    <topicref href="commercial/GA1/Landing/1.1commercial.landing.install.dita"
+      navtitle="Installation" locktitle="yes">
       <topicref href="commercial/GA1/1.1commercial.install-GA-overview.dita"
         navtitle="Installation Overview" locktitle="yes">
         <topicref href="commercial/GA1/1.1commercial.install-GA-virtual-control.dita"
@@ -69,8 +72,8 @@
       </topicref>
       <topicref href="commercial/GA1/1.1commercial.roll.dita"
         navtitle="Roll Your Own Installation Guide" locktitle="yes"/>
-     
-       
+
+
       <!-- Prereqs -->
       <topicref href="commercial/GA1/1.1commercial.install-GA-kvm.dita"
         navtitle="Install and Configure on KVM" locktitle="yes">
@@ -114,7 +117,7 @@
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
         navtitle="Installation Troubleshooting" locktitle="yes" toc="no"/>
       <topichead navtitle="Network Security">
-     <!-- <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita" locktitle="yes"
+        <!-- <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita" locktitle="yes"
         navtitle="Network Security">-->
         <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"
           navtitle="Configuring Your Network Securely" locktitle="yes"/>
@@ -122,8 +125,8 @@
           locktitle="yes"/>
         <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"
           navtitle="Configuring Support for Customer-provided Certs" locktitle="yes" toc="no"/>
-      
-  </topichead>
+
+      </topichead>
       <!-- Install KVM -->
       <!-- Install ESK -->
       <!-- Post Install -->
@@ -181,10 +184,12 @@
       <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"
         navtitle="Ceph Troubleshooting" locktitle="yes"/>
     </topicref>
-    
+
     <!-- Services -->
-    <topicref href="commercial/GA1/Landing/1.1commercial.landing.services.dita" navtitle="HP Helion OpenStack Services" locktitle="yes">
-      <topicref href="commercial/GA1/1.1commerical.services-overview.dita" navtitle="Services Overview" locktitle="yes"/>
+    <topicref href="commercial/GA1/Landing/1.1commercial.landing.services.dita"
+      navtitle="HP Helion OpenStack Services" locktitle="yes">
+      <topicref href="commercial/GA1/1.1commerical.services-overview.dita"
+        navtitle="Services Overview" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita"
         navtitle="Network Administrator Notes" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita"
@@ -289,32 +294,51 @@
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-imaging-overview.dita"
         navtitle="Glance Image Operations Overview" locktitle="yes"/>
-      <topicref href="commercial/GA1/Landing/1.1commercial.landing.identity.dita" navtitle="Identity Management" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commerical.services-identity-overview.dita" navtitle="Identity Service (Keystone) Overview" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-domains.dita" navtitle="Domain Management" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-using.dita" navtitle="Using the Identity Service" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" navtitle="Integrating the Keystone Identity Service with LDAP/AD" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-configure-v3.dita" navtitle="Configuring Horizon for Keystone V3" locktitle="yes"/>
+      <topicref href="commercial/GA1/Landing/1.1commercial.landing.identity.dita"
+        navtitle="Identity Management" locktitle="yes">
+        <topicref href="commercial/GA1/1.1commerical.services-identity-overview.dita"
+          navtitle="Identity Service (Keystone) Overview" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-domains.dita"
+          navtitle="Domain Management" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-using.dita"
+          navtitle="Using the Identity Service" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita"
+          navtitle="Integrating the Keystone Identity Service with LDAP/AD" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-configure-v3.dita"
+          navtitle="Configuring Horizon for Keystone V3" locktitle="yes"/>
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-orchestration-overview.dita"
         navtitle="Orchestration Service (Heat) Overview" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita" navtitle="Neutron Networking Service Overview" locktitle="yes">
+      <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita"
+        navtitle="Neutron Networking Service Overview" locktitle="yes">
         <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita" navtitle="Networking Hardware Configuration and Software Requirements" locktitle="yes"/>
-        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-intro.dita" navtitle="Neutron Networking Pre and Post Install" locktitle="yes"/>
-        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita" navtitle="Networking Operation (Neutron) Administrator: Preinstallation Requirements" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita" navtitle="Tracking Masked IPs When Using NAT" locktitle="yes"/>
-          <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita" navtitle="Neutron Networking Post-installation" locktitle="yes"/>
+          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita"
+          navtitle="Networking Hardware Configuration and Software Requirements" locktitle="yes"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-intro.dita"
+          navtitle="Neutron Networking Pre and Post Install" locktitle="yes"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita"
+          navtitle="Networking Operation (Neutron) Administrator: Preinstallation Requirements"
+          locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"
+          navtitle="Tracking Masked IPs When Using NAT" locktitle="yes"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita"
+          navtitle="Neutron Networking Post-installation" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-DNaaS.dita" navtitle="DNSaaS Installation and Configuration" locktitle="yes"/>
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-DNaaS.dita"
+          navtitle="DNSaaS Installation and Configuration" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita" navtitle="Configuring Your Network Securely" locktitle="yes"/>
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita"
+          navtitle="Configuring Your Network Securely" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita" navtitle="Neutron Networking Integration" locktitle="yes"/>
-       
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita"
+          navtitle="Neutron Networking Integration" locktitle="yes"/>
+
         <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita" navtitle="Neutron Networking High Availability" locktitle="yes"/> <!--necessary or no-->
-        <topicref href="commercial/GA1/1.1commerical.services-dvr-overview.dita" navtitle="Distributed Virtual Routing Overview" locktitle="yes"/>
+          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita"
+          navtitle="Neutron Networking High Availability" locktitle="yes"/>
+        <!--necessary or no-->
+        <topicref href="commercial/GA1/1.1commerical.services-dvr-overview.dita"
+          navtitle="Distributed Virtual Routing Overview" locktitle="yes"/>
       </topicref>
       <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita"
         navtitle="Ceph Firefly 0.80.7 Storage Solution" locktitle="yes">
@@ -369,20 +393,29 @@
           href="commercial/GA1/ceph/1.1commenrcial.ceph-configuration-recovery-and-backup-procedure-helion-nodes.dita"
           navtitle="Ceph Backup and Recovery" locktitle="yes"/>
       </topicref>
-      <topicref href="commercial/GA1/1.1commerical.services-volume-overview.dita" navtitle="Cinder: Block Storage Volume Operations" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commercial.services-volume-fibre.dita" navtitle="Cinder Auto Zoning with Brocade Fibre Channel Zone Manager" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commerical.services-volume-overview.dita"
+        navtitle="Cinder: Block Storage Volume Operations" locktitle="yes">
+        <topicref href="commercial/GA1/1.1commercial.services-volume-fibre.dita"
+          navtitle="Cinder Auto Zoning with Brocade Fibre Channel Zone Manager" locktitle="yes"/>
       </topicref>
       <!-- reprting = metering = ceilomter -->
-      <topicref href="commercial/GA1/1.1commerical.services-reporting-overview.dita" navtitle="Metering with Ceilometer" locktitle="yes">
-        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita" navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
-        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-metertypes.dita" navtitle="Available Meter Types" locktitle="yes"/>
-        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-RBAC.dita" navtitle="Role-based Access Control" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commerical.services-reporting-overview.dita"
+        navtitle="Metering with Ceilometer" locktitle="yes">
+        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita"
+          navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-metertypes.dita"
+          navtitle="Available Meter Types" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-RBAC.dita"
+          navtitle="Role-based Access Control" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceilometer/1.1commercial.services-reporting-troubleshoot.dita" navtitle="Troubleshootig the Ceilometer Metering Service" locktitle="yes"/>
+          href="commercial/GA1/ceilometer/1.1commercial.services-reporting-troubleshoot.dita"
+          navtitle="Troubleshootig the Ceilometer Metering Service" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-APIExtensions.dita" navtitle="Ceilometer API Extensions" locktitle="yes"/>
+          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-APIExtensions.dita"
+          navtitle="Ceilometer API Extensions" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita" navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
+          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita"
+          navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
       </topicref>
       <!--Ceph stuff-->
       <topicref href="commercial/GA1/1.1commerical.services-sirius-overview.dita"
@@ -397,8 +430,8 @@
         <topicref href="commercial/GA1/1.1commercial.undercloud-eon-cli.dita"
           navtitle="EON Command-line Interface" locktitle="yes"/>
       </topicref>
-      
-        <topicref href="commercial/GA1/1.1commerical.services-sherpa-overview.dita"
+
+      <topicref href="commercial/GA1/1.1commerical.services-sherpa-overview.dita"
         navtitle="Sherpa Service - Overview" locktitle="yes">
         <topicref href="commercial/GA1/1.1commerical.services-sherpa-accessing-ui.dita"
           navtitle="Accessing the Sherpa UI" locktitle="yes"/>
@@ -495,13 +528,14 @@
     <!--set to toc=no later-->
     <!--set to toc=no later-->
     <!--set to toc=no later  removed site index. not needed-->
-    <topicref href="commercial/GA1/1.1commercial.glossary.dita" navtitle="Glossary" locktitle="yes" toc="no"/>
+    <topicref href="commercial/GA1/1.1commercial.glossary.dita" navtitle="Glossary" locktitle="yes"
+      toc="no"/>
     <!-- Files in MD repo Under Revision not in DITA -->
     <!-- 1.0 -->
   </topicref>
- 
+
   <!-- Community -->
-  
+
   <topicref href="community/community.index.dita" navtitle="HP Helion OpenStack Community Edition"
     locktitle="yes">
     <topichead navtitle="Getting Started">
@@ -552,12 +586,12 @@
       <topicref href="community/community.eula.dita"/>
     </topichead>
   </topicref>
-  
-  
-  <!--Dev Plat-->  
-  
-    
- 
+
+
+  <!--Dev Plat-->
+
+
+
   <topicref href="devplatform/1.2/1.2devplatform.index.dita"
     navtitle="HP Helion Development Platform 1.2" locktitle="yes">
     <!--//OASIS//DTD DITA Topic//EN"-->
@@ -615,13 +649,13 @@
         locktitle="yes" navtitle="Quick Start Troubleshooting"/>
     </topichead>
     <!--permalink: /helion/devplatform/1.2/appdev/-->
-      <!--permalink: /helion/devplatform/1.2/upgrade/-->
-      <!--permalink: /helion/devplatform/1.2/install/troubleshooting/-->
-      <!--permalink: /helion/devplatform/1.2/marketplace/-->
-      <!--permalink: /helion/devplatform/1.2/horizonuiinstallation/-->
-      <!--permalink: /helion/devplatform/1.2/related-topics/-->
-      <!--permalink: /helion/devplatform/1.2/release-notes/-->
-         <topicref href="devplatform/1.2/1.2devplatform.appdev.dita" locktitle="yes"
+    <!--permalink: /helion/devplatform/1.2/upgrade/-->
+    <!--permalink: /helion/devplatform/1.2/install/troubleshooting/-->
+    <!--permalink: /helion/devplatform/1.2/marketplace/-->
+    <!--permalink: /helion/devplatform/1.2/horizonuiinstallation/-->
+    <!--permalink: /helion/devplatform/1.2/related-topics/-->
+    <!--permalink: /helion/devplatform/1.2/release-notes/-->
+    <topicref href="devplatform/1.2/1.2devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers ">
       <!--permalink: /helion/devplatform/1.2/deploy/-->
       <topicref href="devplatform/1.2/windows/windows_firstapp.dita" locktitle="yes"
@@ -681,7 +715,7 @@
         navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
       <topicref href="devplatform/1.2/windows/windows_remoting.dita" toc="no"
         navtitle="Remote Desktop Access to Windows DEA and SQL Server Instances" locktitle="yes"/>
-        <topicref href="devplatform/1.2/windows/windows_password.dita" toc="no"
+      <topicref href="devplatform/1.2/windows/windows_password.dita" toc="no"
         navtitle="Retrieving the Instance Admin Password" locktitle="yes"/>
       <topicref href="devplatform/1.2/1.2devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
@@ -1164,9 +1198,6 @@
           <!--permalink: /helion/devplatform/1.1/als/admin/cluster/-->
           <topicref href="devplatform/helion/admin/cluster/1.1index.dita" locktitle="yes"
             navtitle="Cluster Setup "/>
-          <!--permalink: /helion/devplatform/1.1/als/admin/cluster/cloud-init/-->
-          <topicref href="devplatform/helion/admin/cluster/1.1cloud-init.dita" locktitle="yes"
-            navtitle="Using the cloud-init Package "/>
           <!--permalink: /helion/devplatform/1.1/als/admin/cluster/external-db/-->
           <topicref href="devplatform/helion/admin/cluster/1.1external-db.dita" locktitle="yes"
             navtitle="External Data Services "/>
@@ -1756,7 +1787,7 @@
       navtitle="Open-Source and Third-Party License Agreements" locktitle="yes"/>
     <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
   </topicref>
-  
+
   <!-- BEGIN Public cloud -->
   <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud"
     locktitle="yes">
@@ -1784,31 +1815,27 @@
       <topicref href="publiccloud/cdn.dita" navtitle="CDN Service Overview" locktitle="yes"/>
     </topicref>
     <topicref href="publiccloud/api.dita" navtitle="Helion Public Cloud APIs" locktitle="yes">
-      <topicref href="publiccloud/api/keystonev2-api.dita"
-        navtitle="Identity Service v2 API" locktitle="yes"/>
+      <topicref href="publiccloud/api/keystonev2-api.dita" navtitle="Identity Service v2 API"
+        locktitle="yes"/>
       <topicref href="publiccloud/api/keystone-api.dita" navtitle="Identity Service v3 API"
         locktitle="yes"/>
-      <topicref href="publiccloud/api/nova-api.dita" navtitle="Compute Service API"
-        locktitle="yes"/>
+      <topicref href="publiccloud/api/nova-api.dita" navtitle="Compute Service API" locktitle="yes"/>
       <topicref href="publiccloud/api/neutron-api.dita" navtitle="Networking Service API"
         locktitle="yes"/>
-      <topicref href="publiccloud/api/glance-api.dita" navtitle="Image Service API"
-        locktitle="yes"/>
+      <topicref href="publiccloud/api/glance-api.dita" navtitle="Image Service API" locktitle="yes"/>
       <topicref href="publiccloud/api/cinder-api.dita" navtitle="Block Storage Service API"
         locktitle="yes"/>
       <topicref href="publiccloud/api/dbaas-api.dita" navtitle="Database Service API"
         locktitle="yes"/>
-      <topicref href="publiccloud/api/dns-api.dita" navtitle="DNS Service API"
-        locktitle="yes"/>
+      <topicref href="publiccloud/api/dns-api.dita" navtitle="DNS Service API" locktitle="yes"/>
       <topicref href="publiccloud/api/lbaas-api.dita" navtitle="Load Balancer Service API"
         locktitle="yes"/>
       <topicref href="publiccloud/api/swift-api.dita" navtitle="Object Storage Service API"
         locktitle="yes"/>
-      <topicref href="publiccloud/api/cdn-api.dita" navtitle="CDN Service API"
-        locktitle="yes"/>
+      <topicref href="publiccloud/api/cdn-api.dita" navtitle="CDN Service API" locktitle="yes"/>
       <topicref href="publiccloud/api.copyright.v13.dita"
         navtitle="Copyright for Helion Public Cloud APIs" locktitle="yes"/>
-      </topicref>
+    </topicref>
     <topicref href="publiccloud/cli.dita" navtitle="Helion Public Cloud CLIs" locktitle="yes">
       <topicref href="publiccloud/cli.openstack.dita" navtitle="Openstack CLI" locktitle="yes"/>
       <topicref href="publiccloud/cli.windows.2.dita" navtitle="Windows PowerShell CLI"
@@ -1845,21 +1872,23 @@
     <topicref href="publiccloud/upload-publish-partner-images135.dita"
       navtitle="Uploading and Publishing Partner Images" locktitle="yes" toc="no"/>
     <topicref href="publiccloud/vpn-multisite.dita" navtitle="VPN Multi-Site Configuration Guide"
-      locktitle="yes" toc="no"/><!--set to toc=no later-->
+      locktitle="yes" toc="no"/>
+    <!--set to toc=no later-->
     <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide"
-      locktitle="yes" toc="no"/><!--set to toc=no later-->
+      locktitle="yes" toc="no"/>
+    <!--set to toc=no later-->
     <topicref href="publiccloud/plugins.teamcity.dita"
       navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/>
     <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary"
       locktitle="yes"/>
   </topicref>
-  
+
   <!-- END Public cloud -->
-  
+
   <topicref href="automation/csa.index.dita"/>
   <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
-  
+
 </map>
