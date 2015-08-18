@@ -102,9 +102,8 @@
       project. There can be multiple projects per domain. The project admin sets the project quota
       settings, adds/deletes users and groups to and from the project, and defines the user/group roles for
       the assigned project. 
-      Users can be belong to multiple projects and have different roles
-      assigned per project. Users are assigned to a specific domain and a default project. Users can
-      belong to multiple projects. Roles are assigned per project. </section>
+      Users can be belong to multiple projects and have different roles on each project. 
+      Users are assigned to a specific domain and a default project. Roles are assigned per project. </section>
     <section>
       <title>Users and Groups</title> Each user belongs to one domain only. Domain assignments are
       defined either by the domain configuration files or by a domain administrator when creating a
