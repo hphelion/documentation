@@ -4,90 +4,91 @@
   <title>Keystone Identity Service</title>
   <body>
     <section>
-  
-    <p>General Service Overview</p>
-
+      <p>General Service Overview</p>
       <title>What is the Identity service</title>
-  <p>The OpenStack Identity service, based on the Keystone API, is responsible for providing UserID
-    authentication and access authorization to enable organizations the ability to achieve their
-    access security and compliance objectives in order to successfully deploy OpenStack. In short,
-    the Identity Service is the gateway to the rest of the OpenStack services. </p>
- 
-    </section>  
-     <section>
-       <title>Authentication</title>
-  <p>The authentication function provides the initial login function to OpenStack. Keystone supports
-    multiple sources of authentication including a native or built-in authentication system. The
-    Keystone native system can be used for all user management functions for proof of concept
-    deployments or small deployments not requiring integration with a corporate authentication
-    system but it lacks some of the advanced functions usually found in user management systems such
-    as forcing password changes. The focus of the Keystone native authentication system is to be the
-    source of authentication for OpenStack-specific users required for the operation of the various
-    OpenStack services. These users are stored by Keystone in a default domain and do not require
-    the addition of these IDs in an external authentication system.</p>
-  <p>Keystone is more commonly integrated with external authentication systems like OpenLDAP or
-    Microsoft Active Directory. These systems are usually centrally deployed by organizations to
-    service as the single source of user management and authentication for all
-    organizationally-deployed applications and systems requiring user authentication. In addition to
-    LDAP and Microsoft Active Directory, support for integrating with SAML-based Identity Providers
-    from companies like Ping, CA, IBM, Oracle, etc. is also on the verge of becoming
-    “production-ready”. Keystone also provides architectural support via the underlying Apache
-    deployment for other types of authentication systems like Multi-Factor Authentication. These
-    types of systems typically require driver support and integration from the respective provider
-    vendors. NOTE: While support for Identity Providers and Multi-factor authentication is available
-    in Keystone it has not yet been certified by the Helion Openstack engineering team and is an
-    experimental feature in Helion OpenStack v1.1.</p>
-  <p>LDAP-compatible directories such as OpenLDAP and Microsoft Active Directory are recommended
-    alternatives to using the Keystone local authentication. Both methods are widely used already by
-    most organizations and are integrated with a variety of other enterprise applications. These
-    directories act as the single source of user information within an organization. Keystone can be
-    configured to authenticate against an LDAP-compatible directory on a per-domain basis. Domains,
-    explained later in this slide deck, can be configured so that based on the user id, a incoming
-    user is automatically mapped to a specific domain. This domain can then be configured to
-    authenticate against a specific LDAP directory. The user credentials provided by the user to
-    Keystone are passed along to the designated LDAP source for authentication. This communication
-    can be optionally configured to be secure via SSL encryption. No special LDAP administrative
-    access and only read-only access is required for this configuration. Keystone will NOT add any
-    LDAP information. All user adds, deletes, and modifications are performed by the applications
-    front ending the LDAP directories. After a user has been successfully authenticated they are
-    then assigned to the groups, roles, and projects defined by the Keystone domain or project
-    administrators. This information is stored within the Keystone service database.</p>
-  <p>Another form of external authentication provided by the Keystone service is via integration
-    with SAML-based Identity Providers (IdP) such as Ping Identity, IBM Tivoli, and Microsoft Active
-    Directory Federation Server. A SAML-based IdP provides an authentication often called “single
-    sign on”. The IdP server is configured to authenticate against identity sources like Active
-    Directory and provides a single authentication API against multiple types of downstream identity
-    sources. This means that an organization could have multiple identity storage sources but a
-    single authentication source. In addition, if a user has “logged in” one during a defined
-    session timeframe they do not need to re-authenticate within the defined session. The IdP will
-    automatically validate the user to requesting applications and services. A SAML-based IdP
-    authentication source is configured with Keystone on a per-domain basis similar to how native
-    LDAP directories are configured. Extra mapping rules are required in the configuration that
-    define which Keystone group an incoming UID is automatically assigned to. This means that groups
-    needs to be defined in Keystone firstly but it also removes the requirement for a domain or
-    project admin to have to assign user roles and project membership on a per user basis. Instead,
-    groups are used to define project membership and roles and incoming users are automatically
-    mapped to Keystone groups based on their upstream group membership. This provides a very
-    consistent RBAC model based on the upstream identity source. The configuration of this option is
-    fairly straight forward. IdP vendors like Ping and IBM are contributing to the maintenance of
-    this function and have also produced their own integration documentation. HP is using the
-    Microsoft Active Directory Federation Server for functional testing and future documentation.
-    Horizon support for web single sign on is also now available in the OpenStack Kilo release but
-    not yet validated for Helion OpenStack.</p>
-  <p>The 3rd Keystone-supported authentication source is known as Multi Factor Authentication (MFA).
-    MFA authentication typically requires an external source of authentication beyond a login name
-    and password including options like a SMS text, a temporal token generator, a fingerprint
-    scanner, etc. Each of these types of MFA are usually specific to particular MFA vendor. The
-    Keystone architecture supports an MFA-based authentication system but this has not yet been
-    certified and documented for Helion OpenStack.</p></section>
- <section>
-   <title>Authorization</title>
-   <p>The 2nd major function provided by the Keystone service is access
-        authorization that determines what resources and actions are available based on the UserID,
-        the role of the user, and the projects that a User is provided access to. All of this
-        information is created, managed, and stored by Keystone. These functions are applied via the
-        Horizon web interface, the OpenStack Command Line Interface or CLI client, or the direct
-        Keystone API. </p><p>Keystone provides support for organizing users via 3 different entities
+      <p>The OpenStack Identity service, based on the Keystone API, is responsible for providing
+        UserID authentication and access authorization to enable organizations the ability to
+        achieve their access security and compliance objectives in order to successfully deploy
+        OpenStack. In short, the Identity Service is the gateway to the rest of the OpenStack
+        services. </p>
+    </section>
+    <section>
+      <title>Authentication</title>
+      <p>The authentication function provides the initial login function to OpenStack. Keystone
+        supports multiple sources of authentication including a native or built-in authentication
+        system. The Keystone native system can be used for all user management functions for proof
+        of concept deployments or small deployments not requiring integration with a corporate
+        authentication system but it lacks some of the advanced functions usually found in user
+        management systems such as forcing password changes. The focus of the Keystone native
+        authentication system is to be the source of authentication for OpenStack-specific users
+        required for the operation of the various OpenStack services. These users are stored by
+        Keystone in a default domain and do not require the addition of these IDs in an external
+        authentication system.</p>
+      <p>Keystone is more commonly integrated with external authentication systems like OpenLDAP or
+        Microsoft Active Directory. These systems are usually centrally deployed by organizations to
+        service as the single source of user management and authentication for all
+        organizationally-deployed applications and systems requiring user authentication. In
+        addition to LDAP and Microsoft Active Directory, support for integrating with SAML-based
+        Identity Providers from companies like Ping, CA, IBM, Oracle, etc. is also on the verge of
+        becoming "production-ready". Keystone also provides architectural support via the underlying
+        Apache deployment for other types of authentication systems like Multi-Factor
+        Authentication. These types of systems typically require driver support and integration from
+        the respective provider vendors. NOTE: While support for Identity Providers and Multi-factor
+        authentication is available in Keystone it has not yet been certified by the Helion
+        Openstack engineering team and is an experimental feature in Helion OpenStack v1.1.</p>
+      <p>LDAP-compatible directories such as OpenLDAP and Microsoft Active Directory are recommended
+        alternatives to using the Keystone local authentication. Both methods are widely used
+        already by most organizations and are integrated with a variety of other enterprise
+        applications. These directories act as the single source of user information within an
+        organization. Keystone can be configured to authenticate against an LDAP-compatible
+        directory on a per-domain basis. Domains, explained later in this slide deck, can be
+        configured so that based on the user id, a incoming user is automatically mapped to a
+        specific domain. This domain can then be configured to authenticate against a specific LDAP
+        directory. The user credentials provided by the user to Keystone are passed along to the
+        designated LDAP source for authentication. This communication can be optionally configured
+        to be secure via SSL encryption. No special LDAP administrative access and only read-only
+        access is required for this configuration. Keystone will NOT add any LDAP information. All
+        user adds, deletes, and modifications are performed by the applications front ending the
+        LDAP directories. After a user has been successfully authenticated they are then assigned to
+        the groups, roles, and projects defined by the Keystone domain or project administrators.
+        This information is stored within the Keystone service database.</p>
+      <p>Another form of external authentication provided by the Keystone service is via integration
+        with SAML-based Identity Providers (IdP) such as Ping Identity, IBM Tivoli, and Microsoft
+        Active Directory Federation Server. A SAML-based IdP provides an authentication often called
+        "single sign on". The IdP server is configured to authenticate against identity sources like
+        Active Directory and provides a single authentication API against multiple types of
+        downstream identity sources. This means that an organization could have multiple identity
+        storage sources but a single authentication source. In addition, if a user has "logged in"
+        one during a defined session timeframe they do not need to re-authenticate within the
+        defined session. The IdP will automatically validate the user to requesting applications and
+        services. A SAML-based IdP authentication source is configured with Keystone on a per-domain
+        basis similar to how native LDAP directories are configured. Extra mapping rules are
+        required in the configuration that define which Keystone group an incoming UID is
+        automatically assigned to. This means that groups needs to be defined in Keystone firstly
+        but it also removes the requirement for a domain or project admin to have to assign user
+        roles and project membership on a per user basis. Instead, groups are used to define project
+        membership and roles and incoming users are automatically mapped to Keystone groups based on
+        their upstream group membership. This provides a very consistent RBAC model based on the
+        upstream identity source. The configuration of this option is fairly straight forward. IdP
+        vendors like Ping and IBM are contributing to the maintenance of this function and have also
+        produced their own integration documentation. HP is using the Microsoft Active Directory
+        Federation Server for functional testing and future documentation. Horizon support for web
+        single sign on is also now available in the OpenStack Kilo release but not yet validated for
+        Helion OpenStack.</p>
+      <p>The 3rd Keystone-supported authentication source is known as Multi Factor Authentication
+        (MFA). MFA authentication typically requires an external source of authentication beyond a
+        login name and password including options like a SMS text, a temporal token generator, a
+        fingerprint scanner, etc. Each of these types of MFA are usually specific to particular MFA
+        vendor. The Keystone architecture supports an MFA-based authentication system but this has
+        not yet been certified and documented for Helion OpenStack.</p></section>
+    <section>
+      <title>Authorization</title>
+      <p>The 2nd major function provided by the Keystone service is access authorization that
+        determines what resources and actions are available based on the UserID, the role of the
+        user, and the projects that a User is provided access to. All of this information is
+        created, managed, and stored by Keystone. These functions are applied via the Horizon web
+        interface, the OpenStack Command Line Interface or CLI client, or the direct Keystone API.
+        </p><p>Keystone provides support for organizing users via 3 different entities
         including:</p><p>•Domains – Domains provide the highest level of organization. Domains are
         intended to be used as high level containers for multiple projects. A domain can represent
         different tenants, companies or organizations for an OpenStack cloud deployed for public
@@ -107,30 +108,25 @@
         information about their assigned project membership and role for that project. This role is
         then matched to the service-specific script and the user is allowed to perform functions
         within that service defined by the role mapping.</p>
-   
-   <p>Infrastructure resource quotas are
-        also defined within OpenStack. Quotas are defined per service but can be assigned via the
-        Horizon user interface in the Projects section thus this function is often times associated
-        with the Keystone API. This slide shows a screen shot of the Horizon interface used to
-        configure upper limit quotas for specific infrastructure-related functions. Quotas are
-        assigned per each project.</p><p/>
-   
- </section>
+      <p>Infrastructure resource quotas are also defined within OpenStack. Quotas are defined per
+        service but can be assigned via the Horizon user interface in the Projects section thus this
+        function is often times associated with the Keystone API. This slide shows a screen shot of
+        the Horizon interface used to configure upper limit quotas for specific
+        infrastructure-related functions. Quotas are assigned per each project.</p><p/>
+    </section>
     <section>
       <title>Domains, Projects, Users, Groups, and Roles</title>
-        
-        <p>Most
-        large business organizations use an identity system like Microsoft Active Directory to store
-        and manage their internal user information. A variety of applications such as HR systems in
-        turn are used to manage the data inside of Active Directory. These same organizations often
-        times deploy a separate user management system for external users such as contractors,
-        partners, and customers. Multiple authentication systems are then deployed to support
-        multiple types of users.</p><p>An LDAP-compatible directory like Active Directory provide a
-        top level organization or domain component. In this example, the organization is called
-        Acme. The domain component (DC) is defined as acme.com. Underneath the top level domain
-        component are entities referred to as organizational units (OU). Organizational units are
-        typically designed to reflect the entity structure of the organization. For example, this
-        particular schema has 3 different organizational units for the Marketing, IT, and
+      <p>Most large business organizations use an identity system like Microsoft Active Directory to
+        store and manage their internal user information. A variety of applications such as HR
+        systems in turn are used to manage the data inside of Active Directory. These same
+        organizations often times deploy a separate user management system for external users such
+        as contractors, partners, and customers. Multiple authentication systems are then deployed
+        to support multiple types of users.</p><p>An LDAP-compatible directory like Active Directory
+        provide a top level organization or domain component. In this example, the organization is
+        called Acme. The domain component (DC) is defined as acme.com. Underneath the top level
+        domain component are entities referred to as organizational units (OU). Organizational units
+        are typically designed to reflect the entity structure of the organization. For example,
+        this particular schema has 3 different organizational units for the Marketing, IT, and
         Contractors units or departments of the Acme organization. Users (and other types of
         entities like printers) are then defined appropriately underneath each organizational
         entity. The Keystone domain entity can be used to match the LDAP OU entity; each LDAP OU can
@@ -141,105 +137,127 @@
         different authentication source assigned to the corresponding Keystone-defined Contractors
         domain.</p><p>A public cloud deployment usually supports multiple, separate organizations.
         Keystone domains can be created to provide a domain per organization with each domain
-        configured to the underlying organization’s authentication source. For example, the ABC
-        company would have a Keystone domain created called “abc”. All users authenticating to the
-        “abc” domain would be authenticated against the authentication system provided by the ABC
-        organization; in this case 
-          <xref href="ldap">ldap://ad.abc.com</xref>. </p>
-    </section><section>
-      
-      <title>Domains</title>
-      A
-      domain is a top-level container targeted at defining major organizational entities.•Domains
-      can be used in a multi-tenant Openstack deployment to segregate projects and users from
-      different companies in a public cloud deployment or different organizational units in a
-      private cloud setting.•Domains provide the means to identify multiple authentication
-      sources.•Each domain is unique within an OpenStack implementation. •Multiple projects can be
-      assigned to a domain but each project can only belong to a single domain. •Each domain and
-      project have an assigned admin. •Domains are created by the “admin” service account and domain
-      admins are assigned by the “admin” user.•The “admin” UserID (UID) is pre-created by the
-      Keystone installation, has the “admin” role assigned to it, and is defined as the “Cloud
-      Admin”. This UID is created using the “magic” or “secret” admin token found in the default
-      ‘keystone.conf’ file installed during HOS keystone installation after the Keystone service has
-      been installed. This secret token should be removed after installation and the “admin”
-      password changed.•The “default” domain is created automatically during the HOS Keystone
-      installation.•The “default” domain contains all OpenStack service accounts that are installed
-      during the HOS keystone installation process.<ul id="ul_crr_fpd_bt">
+        configured to the underlying organization's authentication source. For example, the ABC
+        company would have a Keystone domain created called "abc". All users authenticating to the
+        "abc" domain would be authenticated against the authentication system provided by the ABC
+        organization; in this case <xref href="ldap">ldap://ad.abc.com</xref>. </p>
+    </section>
+    <section>
+      <title>Domains</title> A domain is a top-level container targeted at defining major
+      organizational entities. <ul>
+        <li> Domains can be used in a multi-tenant Openstack deployment to segregate projects and
+          users from different companies in a public cloud deployment or different organizational
+          units in a private cloud setting.</li>
+        <li>Domains provide the means to identify multiple authentication sources.</li>
+        <li>Each domain is unique within an OpenStack implementation. </li>
+        <li>Multiple projects can be assigned to a domain but each project can only belong to a
+          single domain. </li>
+        <li>Each domain and project have an assigned admin.</li>
+        <li>Domains are created by the "admin" service account and domain admins are assigned by the
+          "admin" user.</li>
+        <li>The "admin" UserID (UID) is pre-created by the Keystone installation, has the "admin"
+          role assigned to it, and is defined as the "Cloud Admin". This UID is created using the
+          "magic" or "secret" admin token found in the default 'keystone.conf' file installed during
+          HOS keystone installation after the Keystone service has been installed. This secret token
+          should be removed after installation and the "admin" password changed.</li>
+        <li>The "default" domain is created automatically during the HOS Keystone installation.</li>
+        <li>The "default" domain contains all OpenStack service accounts that are installed during
+          the HOS keystone installation process.</li>
+
         <li>No users but the OpenStack service accounts should be assigned to the "default"
           domain.</li>
-      </ul>•Domain admins can be any UserID inside or outside of the domain
-    </section><section>
+        <li>Domain admins can be any UserID inside or outside of the domain.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Domain Administrator</title> 
       
-      <title>Domain
-        Administrator</title>
+      A UID is a domain administrator for a given domain if that
+      UID has a domain-scoped token scoped for the given domain. This means that the UID has the
+      "admin" role assigned to it for the selected domain.
+      <ul>
+      <li>The Cloud Admin UID assigns the domain
+        administrator role for a domain to a selected UID.</li>
       
-      A UID is a domain administrator for a given domain if that UID has a
-      domain-scoped token scoped for the given domain. This means that the UID has the “admin” role
-      assigned to it for the selected domain.•The Cloud Admin UID assigns the domain administrator
-      role for a domain to a selected UID.•A domain administrator can create/delete local
-      (authenticated against Keystone) users. These users will be assigned to the domain assigned to
-      the domain administrator that creates the UserID.•A domain administrator can only create users
-      and projects within their assigned domains.•A domain administrator can assign or revoke the
-      “admin” role to their domains to another UID; each UID with the “admin” role for a specified
-      domain will be co-administrators for that domain.•A UID can be assigned to be the domain admin
-      of multiple domains.•A domain administrator can assign non-admin roles to any users and groups
-      within their assigned domain including projects owned by their assigned domain.•A domain admin
-      UID can belong to projects within their administered domains.•Each domain can have a different
-      authentication source.•The domain field is used during the initial login to define the source
-      of authentication.•The “List Users” function can only be executed by a UID with the domain
-      admin role.•A domain administrator can assign a UID from outside of their domain the “domain
-      admin” role but it is assumed that the domain admin would know the specific UID and would not
-      need to List Users from an external domain.•A domain administrator can assign a UID from
-      outside of their domain the “project admin” role for a specific project within their domain
-      but it is assumed that the domain admin would know the specific UID and would not need to List
-      Users from an external domain.
-    </section><section>
+        <li>A domain administrator can create/delete
+      local (authenticated against Keystone) users. These users will be assigned to the domain
+      assigned to the domain administrator that creates the UserID.</li>
       
-      <title>Projects</title>
+        <li>A domain administrator can only
+      create users and projects within their assigned domains.</li>
       
-      The domain administrator creates projects within
-      their assigned domain and assigns the project admin role to each project to a selected UID.•A
-      UID is a project administrator for a given project if that UID has a project-scoped token
-      scoped for the given project.•There can be multiple projects per domain.•The project admin
-      sets the project quota settings, adds/deletes users and groups to the project, and defines the
-      user/group roles for the assigned project.•Users can be belong to multiple projects and have
-      different roles assigned per project•Users are assigned to a specific domain and a default
-      project. Users can belong to multiple projects. Roles are assigned per project.
-    </section><section>
+        <li>A domain administrator can assign or
+      revoke the "admin" role to their domains to another UID; each UID with the "admin" role for a
+      specified domain will be co-administrators for that domain.</li>
       
-      <title>Users and
-        Groups</title>
+        <li>A UID can be assigned to be the
+      domain admin of multiple domains.</li>
       
-      Each user belongs to one domain only.•Domain assignments are defined either by
-      the domain configuration files or by a domain administrator when creating a new, local (user
-      authenticated against Keystone) user.•There is no current method for “moving” a user from one
-      domain to another.•A user can belong to multiple projects within a domain with a different
-      role assignment per project.•A group is a collection of users.•Users can be assigned to groups
-      either by the project admin or automatically via mappings if an external authentication source
-      is defined for the assigned domain. •Groups can be assigned to multiple projects within a
-      domain and have different roles assigned to the group per project.•A group can be assigned the
-      “admin” role for a domain or project. All members of the group will be an “admin” for the
-      selected domain or project.
-    </section><section>
+        <li>A domain administrator can assign non-admin roles to any
+      users and groups within their assigned domain including projects owned by their assigned
+      domain.</li>
       
+        <li>A domain admin UID can belong to projects within their administered domains.</li>
+      
+        <li>Each domain can have a different authentication source.</li>
+        <li>The domain field is used during the initial
+      login to define the source of authentication.</li>
+        <li>The "List Users" function can only be executed
+      by a UID with the domain admin role.</li>
+        <li>A domain administrator can assign a UID from outside of
+      their domain the "domain admin" role but it is assumed that the domain admin would know the
+      specific UID and would not need to List Users from an external domain.</li>
+        <li>A domain administrator
+      can assign a UID from outside of their domain the "project admin" role for a specific project
+      within their domain but it is assumed that the domain admin would know the specific UID and
+      would not need to List Users from an external domain.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Projects</title> The domain administrator creates projects within their assigned domain
+      and assigns the project admin role to each project to a selected UID.
+      A UID is a project
+      administrator for a given project if that UID has a project-scoped token scoped for the given
+      project. There can be multiple projects per domain. The project admin sets the project quota
+      settings, adds/deletes users and groups to the project, and defines the user/group roles for
+      the assigned project. Users can be belong to multiple projects and have different roles
+      assigned per project. Users are assigned to a specific domain and a default project. Users can
+      belong to multiple projects. Roles are assigned per project. </section>
+    <section>
+      <title>Users and Groups</title> Each user belongs to one domain only.
+      Domain assignments are
+      defined either by the domain configuration files or by a domain administrator when creating a
+      new, local (user authenticated against Keystone) user. 
+      There is no current method for "moving"
+      a user from one domain to another. 
+      A user can belong to multiple projects within a domain with
+      a different role assignment per project. 
+      A group is a collection of users. Users can be
+      assigned to groups either by the project admin or automatically via mappings if an external
+      authentication source is defined for the assigned domain.  
+      Groups can be assigned to multiple
+      projects within a domain and have different roles assigned to the group per project.
+      A group
+      can be assigned the "admin" role for a domain or project. All members of the group will be an
+      "admin" for the selected domain or project. </section>
+    <section>
       <title>Roles</title>
-      <p>Service roles represent the function used to
-        implement the OpenStack role based access control, or RBAC, model used to manage access to
-        each OpenStack service. Roles are named and assigned per user or group for each project by
-        the Keystone service. Role definition and policy enforcement are defined outside of Keystone
-        independently by each OpenStack service. The token generated by Keystone for each user
-        authentication contains the role assigned to that user for a particular project. When a user
-        attempts to access a specific OpenStack service the role is parsed by the service, compared
-        to the service-specific policy file, and then granted the resource access defined for that
-        role by the service policy file.</p><p>Each service has it’s own service policy file with
-        the /etc/[SERVICE_CODENAME]/policy.json file name format where [SERVICE_CODENAME] represents
-        a specific OpenStack service name. For example, the OpenStack Nova service would have a
-        policy file called /etc/nova/policy.json.</p><p>Helion OpenStack is deployed with 3
-        redundant control plane servers. If modified, the policy files for each service need to be
-        replicated in each control plane server. Service restarts are NOT required for policy file
-        changes.</p>
-    </section><section>
-      
+      <p>Service roles represent the function used to implement the OpenStack role based access
+        control, or RBAC, model used to manage access to each OpenStack service. Roles are named and
+        assigned per user or group for each project by the Keystone service. Role definition and
+        policy enforcement are defined outside of Keystone independently by each OpenStack service.
+        The token generated by Keystone for each user authentication contains the role assigned to
+        that user for a particular project. When a user attempts to access a specific OpenStack
+        service the role is parsed by the service, compared to the service-specific policy file, and
+        then granted the resource access defined for that role by the service policy
+        file.</p><p>Each service has its own service policy file with the
+        /etc/[SERVICE_CODENAME]/policy.json file name format where [SERVICE_CODENAME] represents a
+        specific OpenStack service name. For example, the OpenStack Nova service would have a policy
+        file called /etc/nova/policy.json.</p><p>Helion OpenStack is deployed with 3 redundant
+        control plane servers. If modified, the policy files for each service need to be replicated
+        in each control plane server. Service restarts are NOT required for policy file changes.</p>
+    </section>
+    <section>
       <title>Current Limitations</title><b>Domains</b><ul id="ul_ks2_jpd_bt">
         <li>Domains can be created and managed by the Keystone API and OpenStackClient CLI.</li>
         <li>End users can authenticate to a particular project and domain via the Keystone API and
@@ -286,10 +304,8 @@
             format="html" scope="external"
             >http://docs.openstack.org/security-guide/content/identity-authentication-methods.html#identity-authentication-methods-external-authentication-methods</xref></li>
       </ul>
-   
-   <b>Hierarchical Multitenancy</b>
-   
-   <ul id="ul_tbf_jpd_bt">
+      <b>Hierarchical Multitenancy</b>
+      <ul id="ul_tbf_jpd_bt">
         <li>Provides the ability to create sub-projects within a Domain-Project hierarchy.</li>
         <li>Requires additional OpenStack service support prior to being used for general use.</li>
         <li>Recommended currently only for test deployments.</li>
@@ -331,16 +347,13 @@
         openstack command line utility. The utility is installed by HLM onto deployer node. Also,
         HLM installs convenient *.osrc files which contain exports of environment variables used by
         openstack CLI.</p><p>
-       <note></note>Keystone administration tasks should be performed by <i>admin</i> user with a
-                  token scoped with <i>default</i> domain via v3 identity API. These settings are
-                  pre-configured in the <i>keystone.osrc</i> file.
-      </p>
-    
+        <note/>Keystone administration tasks should be performed by <i>admin</i> user with a token
+        scoped with <i>default</i> domain via v3 identity API. These settings are pre-configured in
+        the <i>keystone.osrc</i> file. </p>
     </section>
-  
-  <section>
-    Here are some examples:
-    <codeblock>
+
+    <section> Here are some examples:
+      <codeblock>
       
       # Set environment variables needed for Keystone administration
 stack@hLinux:~$ source keystone.osrc 
@@ -428,50 +441,46 @@ stack@hLinux:~$ openstack role assignment list --user testuser --domain default
 +----------------------------------+----------------------------------+-------+---------+---------+
  
 </codeblock>
-  </section>
-  <section>
-    Updating Keystone
-    Helion Lifecycle Manager supports updating the following parts of Identity service configuration:
-    Any content in main keystone configuration file: /etc/keystone/keystone.conf
-    This allows to manipulate Keystone configuration parameters and enable experimental features, such as Fernet Tokens.
-    
-    
-    Creating and updating domain-specific configuration files: /etc/keystone/domains/keystone.&lt;domain_name&gt;.conf
-      This allows to integrate Keystone with one or more external authentication sources, such as LDAP server.
-      
-      
-      Certain content in logging configuration file: /etc/keystone/logging.conf
-      This allows to adjust verbosity of logs being written to keystone log files.
-      
-      
-      Apache2 WSGI module configuration file: /etc/apache2/sites-enabled/keystone-modwsgi.conf
-      Allows to adjust certain WSGI module parameters (like process counts)
-      
-  </section>
-    <section>
-    Updating main Keystone configuration file
-    1.Main Keystone configuration file (/etc/keystone/keystone.conf) is generated from the following template file: roles/KEY-API/templates/keystone.conf.j2
-    <codeblock>roles/KEY-API/templates/keystone.conf.j2
+    </section>
+    <section> Updating Keystone Helion Lifecycle Manager supports updating the following parts of
+      Identity service configuration: Any content in main keystone configuration file:
+      /etc/keystone/keystone.conf This allows to manipulate Keystone configuration parameters and
+      enable experimental features, such as Fernet Tokens. Creating and updating domain-specific
+      configuration files: /etc/keystone/domains/keystone.&lt;domain_name&gt;.conf This allows to
+      integrate Keystone with one or more external authentication sources, such as LDAP server.
+      Certain content in logging configuration file: /etc/keystone/logging.conf This allows to
+      adjust verbosity of logs being written to keystone log files. Apache2 WSGI module
+      configuration file: /etc/apache2/sites-enabled/keystone-modwsgi.conf Allows to adjust certain
+      WSGI module parameters (like process counts) </section>
+    <section> Updating main Keystone configuration file 1.Main Keystone configuration file
+      (/etc/keystone/keystone.conf) is generated from the following template file:
+      roles/KEY-API/templates/keystone.conf.j2 <codeblock>roles/KEY-API/templates/keystone.conf.j2
 </codeblock>
-    <p></p>Modify this template file as appropriate. Please refer to Keystone Kilo documentation for full descriptions of all settings <xref href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html" scope="external" format="html">Keystone docs at OpenStack.org</xref>
-      <note>This is a Jinja2 template, which expects certain template variables to be set. Do not change values inside double curly quotes (i.e. {{ }}).
-      </note>
-    
+      <p/>Modify this template file as appropriate. Please refer to Keystone Kilo documentation for
+      full descriptions of all settings <xref
+        href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
+        scope="external" format="html">Keystone docs at OpenStack.org</xref>
+      <note>This is a Jinja2 template, which expects certain template variables to be set. Do not
+        change values inside double curly quotes (i.e. {{ }}). </note>
       <p>Once template is modified, run reconfiguration playbook:</p>
       <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
     </section>
-      
-    <section>Integrating with an external LDAP server
-      <ol><li>Ensure that domain_specific_drivers_enabled option is set to True in main configuration file template (roles/KEY-API/templates/keystone.conf.j2).</li>
-        <li>Create YAML file which contains definition of LDAP server connection. Use roles/KEY-API/files/samples/keystone_configure_ldap_sample.yml as an example. Save the file, as, for example, /tmp/myldap.yml
-        Please refer to [ldap] section of Keystone KIlo documentation for full option list and description: http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html</li>
-        
-        <li>Run reconfiguration playbook, passing a YAML file created at previous step as command line option:
-        <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/tmp/myldap.yml
+
+    <section>Integrating with an external LDAP server <ol>
+        <li>Ensure that domain_specific_drivers_enabled option is set to True in main configuration
+          file template (roles/KEY-API/templates/keystone.conf.j2).</li>
+        <li>Create YAML file which contains definition of LDAP server connection. Use
+          roles/KEY-API/files/samples/keystone_configure_ldap_sample.yml as an example. Save the
+          file, as, for example, /tmp/myldap.yml Please refer to [ldap] section of Keystone KIlo
+          documentation for full option list and description:
+          http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html</li>
+
+        <li>Run reconfiguration playbook, passing a YAML file created at previous step as command
+          line option:
+          <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/tmp/myldap.yml
 </codeblock></li>
-        <li>Ensure that new domain was created for LDAP (Microsoft AD in this example), user and group records can be retrieved:
-        
-        <codeblock># Import environment variables suited for Keystone administration
+        <li>Ensure that new domain was created for LDAP (Microsoft AD in this example), user and
+          group records can be retrieved: <codeblock># Import environment variables suited for Keystone administration
 $ source keystone.osrc
  
 # Get list of domains
@@ -515,25 +524,22 @@ stack@hLinux:~$ openstack role assignment list --user 05f107e4b1645c52c24a529e3f
 +----------------------------------+------------------------------------------------------------------+-------+---------+----------------------------------+
 
 </codeblock>
-          <note>LDAP domain is read-only. This means that you can not create new user or group record in it.
-          </note>
+          <note>LDAP domain is read-only. This means that you can not create new user or group
+            record in it. </note>
         </li>
-        <li>5.Once LDAP user is granted appropriate role, it can authenticate within specified domain by setting appropriate OS_* environment variables for openstack CLI.</li>
+        <li>5.Once LDAP user is granted appropriate role, it can authenticate within specified
+          domain by setting appropriate OS_* environment variables for openstack CLI.</li>
       </ol>
-   
-     
-</section>
-    <section>Adjusting WSGI and logging parameters
-      To modify WSGI parameters (such as process counts for public and admin Keystone  interfaces) and log levels, do the following:
-      <ol><li>1.Adjust respective parameters in roles/keystone-common/vars/keystone_deploy_config.yml.</li>
+    </section>
+    <section>Adjusting WSGI and logging parameters To modify WSGI parameters (such as process counts
+      for public and admin Keystone interfaces) and log levels, do the following: <ol>
+        <li>1.Adjust respective parameters in
+          roles/keystone-common/vars/keystone_deploy_config.yml.</li>
         <li>2.Run reconfiguration playbook:
-        
-        <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
+          <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
         </li>
-      
+
       </ol>
-    
-    
     </section>
   </body>
 </topic>
