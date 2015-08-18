@@ -170,53 +170,45 @@
       </ul>
     </section>
     <section>
-      <title>Domain Administrator</title> 
-      
-      A UID is a domain administrator for a given domain if that
+      <title>Domain Administrator</title> A UID is a domain administrator for a given domain if that
       UID has a domain-scoped token scoped for the given domain. This means that the UID has the
-      "admin" role assigned to it for the selected domain.
-      <ul>
-      <li>The Cloud Admin UID assigns the domain
-        administrator role for a domain to a selected UID.</li>
-      
-        <li>A domain administrator can create/delete
-      local (authenticated against Keystone) users. These users will be assigned to the domain
-      assigned to the domain administrator that creates the UserID.</li>
-      
-        <li>A domain administrator can only
-      create users and projects within their assigned domains.</li>
-      
-        <li>A domain administrator can assign or
-      revoke the "admin" role to their domains to another UID; each UID with the "admin" role for a
-      specified domain will be co-administrators for that domain.</li>
-      
-        <li>A UID can be assigned to be the
-      domain admin of multiple domains.</li>
-      
-        <li>A domain administrator can assign non-admin roles to any
-      users and groups within their assigned domain including projects owned by their assigned
-      domain.</li>
-      
+      "admin" role assigned to it for the selected domain. <ul>
+        <li>The Cloud Admin UID assigns the domain administrator role for a domain to a selected
+          UID.</li>
+
+        <li>A domain administrator can create/delete local (authenticated against Keystone) users.
+          These users will be assigned to the domain assigned to the domain administrator that
+          creates the UserID.</li>
+
+        <li>A domain administrator can only create users and projects within their assigned
+          domains.</li>
+
+        <li>A domain administrator can assign or revoke the "admin" role to their domains to another
+          UID; each UID with the "admin" role for a specified domain will be co-administrators for
+          that domain.</li>
+
+        <li>A UID can be assigned to be the domain admin of multiple domains.</li>
+
+        <li>A domain administrator can assign non-admin roles to any users and groups within their
+          assigned domain including projects owned by their assigned domain.</li>
+
         <li>A domain admin UID can belong to projects within their administered domains.</li>
-      
+
         <li>Each domain can have a different authentication source.</li>
-        <li>The domain field is used during the initial
-      login to define the source of authentication.</li>
-        <li>The "List Users" function can only be executed
-      by a UID with the domain admin role.</li>
-        <li>A domain administrator can assign a UID from outside of
-      their domain the "domain admin" role but it is assumed that the domain admin would know the
-      specific UID and would not need to List Users from an external domain.</li>
-        <li>A domain administrator
-      can assign a UID from outside of their domain the "project admin" role for a specific project
-      within their domain but it is assumed that the domain admin would know the specific UID and
-      would not need to List Users from an external domain.</li>
+        <li>The domain field is used during the initial login to define the source of
+          authentication.</li>
+        <li>The "List Users" function can only be executed by a UID with the domain admin role.</li>
+        <li>A domain administrator can assign a UID from outside of their domain the "domain admin"
+          role but it is assumed that the domain admin would know the specific UID and would not
+          need to List Users from an external domain.</li>
+        <li>A domain administrator can assign a UID from outside of their domain the "project admin"
+          role for a specific project within their domain but it is assumed that the domain admin
+          would know the specific UID and would not need to List Users from an external domain.</li>
       </ul>
     </section>
     <section>
       <title>Projects</title> The domain administrator creates projects within their assigned domain
-      and assigns the project admin role to each project to a selected UID.
-      A UID is a project
+      and assigns the project admin role to each project to a selected UID. A UID is a project
       administrator for a given project if that UID has a project-scoped token scoped for the given
       project. There can be multiple projects per domain. The project admin sets the project quota
       settings, adds/deletes users and groups to the project, and defines the user/group roles for
@@ -224,20 +216,14 @@
       assigned per project. Users are assigned to a specific domain and a default project. Users can
       belong to multiple projects. Roles are assigned per project. </section>
     <section>
-      <title>Users and Groups</title> Each user belongs to one domain only.
-      Domain assignments are
+      <title>Users and Groups</title> Each user belongs to one domain only. Domain assignments are
       defined either by the domain configuration files or by a domain administrator when creating a
-      new, local (user authenticated against Keystone) user. 
-      There is no current method for "moving"
-      a user from one domain to another. 
-      A user can belong to multiple projects within a domain with
-      a different role assignment per project. 
-      A group is a collection of users. Users can be
+      new, local (user authenticated against Keystone) user. There is no current method for "moving"
+      a user from one domain to another. A user can belong to multiple projects within a domain with
+      a different role assignment per project. A group is a collection of users. Users can be
       assigned to groups either by the project admin or automatically via mappings if an external
-      authentication source is defined for the assigned domain.  
-      Groups can be assigned to multiple
-      projects within a domain and have different roles assigned to the group per project.
-      A group
+      authentication source is defined for the assigned domain. Groups can be assigned to multiple
+      projects within a domain and have different roles assigned to the group per project. A group
       can be assigned the "admin" role for a domain or project. All members of the group will be an
       "admin" for the selected domain or project. </section>
     <section>
@@ -527,15 +513,15 @@ stack@hLinux:~$ openstack role assignment list --user 05f107e4b1645c52c24a529e3f
           <note>LDAP domain is read-only. This means that you can not create new user or group
             record in it. </note>
         </li>
-        <li>5.Once LDAP user is granted appropriate role, it can authenticate within specified
-          domain by setting appropriate OS_* environment variables for openstack CLI.</li>
+        <li>Once LDAP user is granted appropriate role, it can authenticate within specified domain
+          by setting appropriate OS_* environment variables for openstack CLI.</li>
       </ol>
     </section>
     <section>Adjusting WSGI and logging parameters To modify WSGI parameters (such as process counts
       for public and admin Keystone interfaces) and log levels, do the following: <ol>
-        <li>1.Adjust respective parameters in
+        <li>Adjust respective parameters in
           roles/keystone-common/vars/keystone_deploy_config.yml.</li>
-        <li>2.Run reconfiguration playbook:
+        <li>Run reconfiguration playbook:
           <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
         </li>
 
