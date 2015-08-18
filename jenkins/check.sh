@@ -50,9 +50,10 @@ if [ -z "$EXIT" ]
  
 #Set HipChat authorization and room     
 auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
-room=" "  
+room="1537175"  
 
 #amok  
+#doctest 1537175
 
 #Set the URL to the console output for this build
 CONSOLE=${BUILD_URL}console
