@@ -15,8 +15,9 @@
     <p>
       <ul id="ul_aqj_3fg_bt">
         <li>Configure Processor has to be executed. When you execute the configure processor, the
-          hosts/verb_hosts file is generated and two sections 'CEP-MON:children' and
-          'CEP-OSD:children' is added. <b>need to check this</b></li>
+            <codeph>hosts/verb_hosts</codeph> file is generated and two sections 'CEP-MON:children'
+          and 'CEP-OSD:children' are added. The<codeph>hosts/verb_hosts</codeph>  file list the host
+          on which the corresponding services will be installed.</li>
         <li>
           <p>Config processor should have executed, which will generate the hosts/verb_hosts file
             with 'CEP-MON:children' and 'CEP-OSD:children' sections, which will list the hosts on
