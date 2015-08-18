@@ -103,6 +103,9 @@
       <topicref href="helion/keystone/keystone_update.dita" navtitle="Updating Keystone"
         locktitle="yes">
       </topicref>
+      <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Current Limitations"
+        locktitle="yes">
+      </topicref>
     </topichead>
   </topicref>
 </map>
