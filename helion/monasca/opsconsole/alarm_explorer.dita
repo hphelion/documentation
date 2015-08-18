@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="alarms">
- <title>Alarms - Explorer</title>
+<concept id="alarm_explorer">
+ <title>Alarm Explorer</title>
  <shortdesc>This page displays the alarms for all services and appliances. By default, alarms are
   sorted by most recent and in a table format.</shortdesc>
  <conbody>
@@ -29,6 +29,7 @@
     <li><uicontrol>Sort by State</uicontrol> displays the alarms by reported status of <b>OK</b>,
       <b>Warning</b>, <b>Error</b>, and <b>Unknown</b></li>
     <li><uicontrol>Sort by Alarm</uicontrol> displays the alarms by name.</li>
+    <li><uicontrol>Sort by Alarm ID</uicontrol> displays the alarms UUID.</li>
     <li><uicontrol>Sort by Last Check</uicontrol> displays the alarms by the date and timestamp of
      the most recent occurence.</li>
     <li><uicontrol>Sort by Dimension</uicontrol> displays the alarms by device, hostname and service

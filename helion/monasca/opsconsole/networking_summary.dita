@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="networking_summary">
+  <title>Networking Summary</title>
+  <shortdesc>This page allows you to view your networking resources</shortdesc>
+  <conbody>
+    <section>
+      <title>Search and Sort</title>
+      <p>The search bar allows you to filter the alarm definitions you want to view. Type and Status
+        are examples of alarm criteria that can be specified. Additionally, you can filter by typing
+        in text similar to searching by keywords.</p>
+      <p>The checkbox allows you to select (or deselect) a group of alarm definitions to delete:</p>
+      <ul>
+        <li><uicontrol>Select Visible</uicontrol> allows you to delete the selected alarm
+          definitions from the table.</li>
+        <li><uicontrol>Select All</uicontrol> allows you to delete all the alarms from the
+          table.</li>
+        <li><uicontrol>Clear Selection</uicontrol> allows you to clear all the selections currently
+          selected from the table.</li>
+      </ul>
+      <p>You can display the alarm definitions by grid, list or table views by selecting the
+        corresponding icons next to the <uicontrol>Sort By</uicontrol> control.</p>
+      <p>The <uicontrol>Sort By</uicontrol> control contains a drop-down list of ways by which you
+        can sort the alarm definitions. Alternatively, you can also sort using the column headers in
+        the table.</p>
+      <ul>
+        <li><uicontrol>Sort by Name</uicontrol> displays the alarm definitions by the name assigned
+          to it when it was created.</li>
+        <li><uicontrol>Sort by Description</uicontrol> displays the descriptive details of the alarm
+          definitions.</li>
+        <li><uicontrol>Sort by Notifications Enabled</uicontrol> displays the alarm definitions'
+          notification criteria, such as whether enabled for certain types of alarms and how the
+          notification is disseminated (by Email, Web, etc.)</li>
+      </ul>
+    </section>
+  </conbody>
+</concept>

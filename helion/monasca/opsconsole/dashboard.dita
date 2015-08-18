@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dashboard">
+ <title>Dashboard</title>
+ <shortdesc>This page displays a high level overview of all cloud resources and their alarm
+  status.</shortdesc>
+ <conbody>
+  <section><title>Alarm Table</title><p>Each service will have a graph displayed with the total
+    number of alarms in the middle.</p><p>The bar graphs displays an indicator that shows the alarms
+    in each of these states:</p><ul>
+    <li>Purple: Open.</li>
+    <li>Light Blue: Acknowledged.</li>
+    <li>Gray: Resolved. </li>
+   </ul>You can click on any of these indicators to pull up a list of the alarms.</section>
+ </conbody>
+</concept>

@@ -23,36 +23,47 @@
     <topicref href="helion/hardware.dita"/>
     <topicref href="helion/installation.dita"/>
     <topicref href="helion/faq.dita"/>
-    <topichead navtitle="Monitoring Guide">
-      <topicref href="helion/monasca/monasca.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Monasca Overview</navtitle>
-        </topicmeta>
-      </topicref>
-      <topicref href="helion/monasca/alarms.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Service Alarm Definitions</navtitle>
-        </topicmeta>
-      </topicref>
-      <topichead navtitle="OpsConsole User Guide">
-        <topicref href="helion/monasca/opsconsole/alarms.dita"/>
-        <topicref href="helion/monasca/opsconsole/alarm_definitions.dita"/>
-        <topicref href="helion/monasca/opsconsole/notification_methods.dita"/>
-        <topicref href="helion/monasca/opsconsole/metric_monitoring.dita"/>
+    <topicref href="helion/monasca/monasca.dita" locktitle="yes">
+      <topicmeta>
+        <navtitle>Monitoring Guide</navtitle>
+      </topicmeta>
+    </topicref>
+    <topicref href="helion/monasca/alarms.dita" locktitle="yes" toc="no">
+      <topicmeta>
+        <navtitle>Service Alarm Definitions</navtitle>
+      </topicmeta>
+    </topicref>
+    <topichead navtitle="OpsConsole User Guide" toc="no">
+      <topichead navtitle="General" toc="no">
+        <topicref href="helion/monasca/opsconsole/dashboard.dita" toc="no"/>
+        <topicref href="helion/monasca/opsconsole/logging.dita" toc="no"/>
+        <topicref href="helion/monasca/opsconsole/alarm_explorer.dita" toc="no"/>
+        <topicref href="helion/monasca/opsconsole/alarm_creation.dita" toc="no"/>
+        <topicref href="helion/monasca/opsconsole/notification_methods.dita" toc="no"/>
+        <topicref href="helion/monasca/opsconsole/metric_monitoring.dita" toc="no"/>
+      </topichead>
+      <topichead navtitle="Compute" toc="no">
+        <topicref href="helion/monasca/opsconsole/compute_summary.dita" toc="no"/>
+        <topicref href="helion/monasca/opsconsole/compute_nodes.dita" toc="no"/>
+      </topichead>
+      <topichead navtitle="Storage" toc="no">
+        <topicref href="helion/monasca/opsconsole/storage_summary.dita" toc="no"/>
+      </topichead>
+      <topichead navtitle="Networking" toc="no">
+        <topicref href="helion/monasca/opsconsole/networking_summary.dita" toc="no"/>
       </topichead>
     </topichead>
-    <topichead navtitle="Logging Guide">
-      <topicref href="helion/logging/logging_overview.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Centralized Logging Overview</navtitle>
-        </topicmeta>
-      </topicref>
-      <topicref href="helion/logging/logging_troubleshooting.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Troubleshooting Logging Issues</navtitle>
-        </topicmeta>
-      </topicref>
-    </topichead>
+    <topicref href="helion/logging/logging_overview.dita" locktitle="yes">
+      <topicmeta>
+        <navtitle>Centralized Logging Guide</navtitle>
+      </topicmeta>
+    </topicref>
+    <topicref href="helion/logging/logging_troubleshooting.dita" locktitle="yes">
+      <topicmeta>
+        <navtitle>Troubleshooting Logging Issues</navtitle>
+      </topicmeta>
+    </topicref>
+
     <!-- reprting = metering = ceilomter -->
 
     <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Guide"
@@ -71,8 +82,8 @@
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
     </topicref>
     <topichead navtitle="Object Storage">
-      <topicref href="helion/swift/swift_components.dita"/>
       <topicref href="helion/swift/swift_overview.dita"/>
+      <topicref href="helion/swift/swift_components.dita"/>
     </topichead>
   </topicref>
 </map>

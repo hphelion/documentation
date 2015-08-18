@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="compute_summary">
+ <title>Compute Summary</title>
+ <shortdesc>This page shows you a summary of all the Compute resources being used.</shortdesc>
+ <conbody>
+  </conbody>
+</concept>

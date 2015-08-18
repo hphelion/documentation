@@ -110,10 +110,7 @@
               -  name: object-1</codeblock></p>
     <p>In the above example <codeph>/dev/sdc</codeph> is allocated to account and container rings,
       whereas <codeph>/dev/sdd</codeph> and<codeph>dev/sde</codeph> are devoted to object storage
-      using two different storage policies (object-0 and object-1).<b> Can i remove object-1 from
-        the storage policy as for beta??</b> ) <b>As per <xref
-          href="https://jira.hpcloud.net/browse/HPM-1151" format="html" scope="external"
-          id="key-val">HPM-1151</xref> we support only one storage ploicy??.</b></p>
+      using two different storage policies (object-0 and object-1).</p>
     <section id="allocate-network"><b>Allocate networks </b><p>Information is required for beta
         0?</p></section>
     <section id="allocate-ring-builder"><b>Allocate a Ring -Builder Node</b><p>Information is
@@ -171,15 +168,15 @@
         <li><b>name</b> - The <b>name</b> attribute must be "account" and "container" respectively.
           Also, you must have account and container ring. The display-name attribute can be set to
           any value and is not used by the system.</li>
-        <li><?oxy_insert_start author="sharmabi" timestamp="20150729T143034+0530" type="surround"?><b><?oxy_insert_end?>min-part-time</b>-
-          This is the number of hours that the swift-ring-builder tool will enforce between ring
-          rebuilds. On a small system, this can be as low as one hour. The value can be different
-          for each ring.</li>
         <li><?oxy_insert_start author="sharmabi" timestamp="20150729T143038+0530" type="surround"?><b><?oxy_insert_end?>partition-power</b>
           - The appropriate value is related to the number of disk drives you allocate for the
           account and container storage. We recommend that you use the same drives for both the
           account and container rings. Therefore, the <b>partition-power</b> value should be the
-          same.</li>
+          same. For more detailed information on partition-power, refer <xref
+            href="swift_components.dita#topic_jxs_1xz_1t/part-power">Swift Parameters</xref></li>
+        <li><b>Storage policies</b></li>
+        <li>display-name</li>
+        <li>default</li>
         <li><?oxy_insert_start author="sharmabi" timestamp="20150729T143041+0530" type="surround"?><b><?oxy_insert_end?>replication-policy</b>
           - The <b>replication-policy</b> attribute is used to specify that a ring uses replicated
           storage. The duplicate copies of the object are created and stored on different disk
@@ -189,6 +186,10 @@
           - Defines the number of copies of objects created. The recommended value for the
             <b>replica-count</b> attribute is 3. That is, three copies of data are kept to ensure
           redundancy and continued access in the even of component failures.</li>
+        <li><?oxy_insert_start author="sharmabi" timestamp="20150729T143034+0530" type="surround"?><b><?oxy_insert_end?>min-part-time</b>-
+          This is the number of hours that the swift-ring-builder tool will enforce between ring
+          rebuilds. On a small system, this can be as low as one hour. The value can be different
+          for each ring.</li>
         <li>(Optional)<b>Swift-regions</b> - The swift-regions attribute applies to all rings in a
           given Keystone region.</li>
         <li><b>swift-zones</b> - The swift-zones can be applied to all rings in a given region or

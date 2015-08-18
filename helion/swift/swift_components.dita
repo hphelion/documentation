@@ -1,46 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_jxs_1xz_1t">
-  <title>Swift Components</title>
+  <title>Ring Paramters</title>
   <body>
-    <p><?oxy_insert_start author="sharmabi" timestamp="20150817T150416+0530"?>The following Swift
-      components enable you to deliver high availability, high durability and high
-      concurrency:<?oxy_insert_end?></p>
-    <?oxy_insert_start author="sharmabi" timestamp="20150817T150426+0530"?>
     <p>
       <ul>
-        <li><b>Proxy Server</b>
-            <p>It handles all the incoming API request. When it receives the request, it determines the storage nodes based on the URL of the object.
-             </p></li>
-        <li><b>Accounts and Conatainers</b>
-            <p>Each account and containers are individual database that is distributed across the cluster.
-             </p></li>
-        <li><b>Objects</b>
-            <p>Objects are the data itself. </p></li>
-        <li><b>Rings</b>
-          <p>The ring maps the logical names of data to locations on a particular
-            disks. There is a separate ring for account database, conainer database, and individual
-            objects, but each rings works similarly. The rings are built and managed manually by a
-            utility called the ring-builder. The ring-builder also keeps its own builder file with
-            the ring information and additional data required to build future rings. </p></li>
-        <li><b>Zone</b>
-          <p>Yet to get the content</p></li>
-        <li><b>Part Power</b>
-             <p>Partition power is used to distribute the data uniformly across drives in a Swift nodes. It also defines the storage cluster capacity. You must set the
-              part partition power value based on the total amount of storage you expect your entire ring to use. 
-             </p>
-          
-             <p>When storing an object, the object storage system hashes the name.
-            This hash results in a hit on a partition (so a number of different object names will
-            result in the same partition number). Generally, the partition is mapped to available
-            disk drives. With a replica count of 3, each partition is mapped to three different disk
-            drives. The hashing algorithm used hashes over a fixed number of partitions. The
-            partition-power attribute determines the number of partitions you have. 
-             </p></li>
+        <li>
+          <p>The ring maps the logical names of data to locations on a particular disks. There is a
+            separate ring for account database, conainer database, and individual objects, but each
+            rings works similarly. The rings are built and managed manually by a utility called the
+            ring-builder. The ring-builder also keeps its own builder file with the ring information
+            and additional data required to build future rings. </p>
+        </li>
       </ul>
     </p>
-    <section id="Select-part-power">Select a partition power for a given ring that is appropriate to
-      the number of disk drives you allocate to the ring for the following reasons:<ul>
+    <section id="part-power"><b>Part Power</b></section>
+    <p>
+      <ul>
+        <li>
+          <p>Partition power is used to distribute the data uniformly across drives in a Swift
+            nodes. It also defines the storage cluster capacity. You must set the part partition
+            power value based on the total amount of storage you expect your entire ring to use. </p>
+          <p>When storing an object, the object storage system hashes the name. This hash results in
+            a hit on a partition (so a number of different object names will result in the same
+            partition number). Generally, the partition is mapped to available disk drives. With a
+            replica count of 3, each partition is mapped to three different disk drives. The hashing
+            algorithm used hashes over a fixed number of partitions. The partition-power attribute
+            determines the number of partitions you have. </p>
+        </li>
+      </ul>
+    </p>
+    <p>Select a partition power for a given ring that is appropriate to
+      the number of disk drives you allocate to the ring for the following reasons:
+    </p>
+      <ul>
         <li>If you use a high partition power and have few disk drives, each disk drives will have
           1000s of partitions. With too many partitions, audit and other processes in the Object
           Storage system cannot "walk" the partitions in a reasonable time and updates will not
@@ -99,10 +92,18 @@
         drives.</p><p> However, while this technique allows you to continue to add storage capacity
         you should note that existing containers continue to use their original storage policy.
         Hence, the additional objects must be added to new containers to take advantage of the new
-        storage policy.</p><p><b>Non-Standard Replica Count</b></p><p>The recommended value for the
-          <b>replica-count</b> attribute is 3. Three copies of data are kept to ensure redundancy
-        and continued access in the event of component failures. There are two situations where a
-        different replica count is appropriate:</p><ul>
+        storage policy.</p>
+        <section id="replication-policy"><b>Replication Policy</b><p>The <b>replication-policy</b> attribute is used to specify
+        that a ring uses replicated storage. The duplicate copies of the object are created and
+        stored on different disk drives. All replicas are identical. If one is lost or corrupted,
+        the system automatically copies one of the remaining replicas to restore the missing
+        replica.</p></section>
+    <section id="replica-count">
+      <p><b>Replica Count</b></p>
+      <p>The recommended value for the <b>replica-count</b> attribute is 3. Three copies of data are
+        kept to ensure redundancy and continued access in the event of component failures. There are
+        two situations where a different replica count is appropriate:</p>
+      <ul>
         <li>A replica count of 2 may be used. We do not recommend using a small replica count
           becuase the probability of object loss is higher with small replica counts.</li>
         <li> You can increase the replica count to give a higher reliability or availability. For
@@ -112,12 +113,15 @@
           1.5 objects in the surviving zones. (Obviously, you won't have 1.5 copies of a given
           object. Instead, 50% of the objects would have a copy in one or other zone and 50% of
           objects would have a copy in both surviving zones).</li>
-      </ul><p>It is possible to change the value of the replica count. In fact, fractional values
-        are allowed. You can gradually change to a higher or lower value.</p></section>
+      </ul>
+      <p>It is possible to change the value of the replica count. In fact, fractional values are
+        allowed. You can gradually change to a higher or lower value.</p>
+    </section>
+    <section id="storage-policy"><b>Storage Policies</b></section>
     <p>
       <ul>
-        <li><b>Storage Policies</b><p>Storage policies allow you to differentiate how the objects
-            are stored in the cluster. A few of the possible reasons are as follows:</p><ul>
+        <li><b/><p>Storage policies allow you to differentiate how the objects are stored in the
+            cluster. A few of the possible reasons are as follows:</p><ul>
             <li><b>Different types or classes of disk drive</b>
             </li>
           </ul><p>You can use different drives to store various type of data. For example: You can
@@ -155,7 +159,7 @@
       <p/>
     </section>
     <section/>
-    <?oxy_insert_end?>
   </body>
 </topic>
+
 <?oxy_options track_changes="on"?>

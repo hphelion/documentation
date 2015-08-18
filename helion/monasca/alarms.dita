@@ -4,7 +4,7 @@
   <title>Alarm Definitions</title>
   <shortdesc>List of service-specific alarms and the recommended troubleshooting steps.</shortdesc>
   <refbody>
-    <section id="HAProxy">
+    <section id="haproxy">
       <title>HAProxy</title>
       <table frame="all" rowsep="1" colsep="1" id="table_flj_2tl_zs">
         <tgroup cols="4" align="left">
@@ -31,8 +31,8 @@
         </tgroup>
       </table>
     </section>
-    <section id="HLinux">
-      <title>HLinux</title>
+    <section id="hlinux">
+      <title>HP Linux for HP Helion OpenStack</title>
       <table frame="all" rowsep="1" colsep="1" id="table_ik5_3km_zs">
         <tgroup cols="4">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -554,6 +554,168 @@
               <entry>Look for high load in the system. This alarm can fire for multiple queues and
                 multiple machines. Which ones it fired on can indicate the cause. If only a single
                 queue is slowing, the cause could be that the consumer is down.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="swift">
+      <title>Swift</title>
+      <table frame="all" rowsep="1" colsep="1" id="table_zn3_2pb_bt">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>swiftlm-scan monitor</entry>
+              <entry>Alarms if swiftlm-scan cannot execute a monitoring task</entry>
+              <entry>The swiftlm-scan program is used to monitor/measure a number of metrics. If it
+                is unable to monitor or measure something, it raises this alarm.</entry>
+              <entry>Examine the "Details" field and look for a "msg" field. The text may explain
+                the error problem. To view/confirm this, you can also log into the host specified by
+                the "hostname" dimension and run this command "sudo swiftlm-scan | python
+                -mjson.tool". The "msg" field is contained in the "value_meta" item.</entry>
+            </row>
+            <row>
+              <entry>Swift file ownership</entry>
+              <entry>Alarms if files/directories in /srv/node/ or /etc/swift are not owned by
+                Swift.</entry>
+              <entry>
+                <p>For files in /etc/swift, somebody has probably manually edited or created a
+                  file.</p>
+                <p>For directories in /srv/node/*, it may happen that root partition was reimages or
+                  reinstalled and the UID assigned to the swift user changes. The directories and
+                  files are then not owned by the UID assigned to the swift user.</p>
+              </entry>
+              <entry>
+                <p>For files in /etc/swift, use this command "sudo chown swift.swift /etc/swift/,
+                  /etc/swift/*"</p>
+                <p>For directories and files in /srv/node/*, compare the swift UID of this system
+                  and other systems and the UID of the owner of /srv/node/*. If possible, make the
+                  UID of the Swift user match the directories/files. Otherwise, change the ownership
+                  of all files and directories under the /srv/node path.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>Drive URE errors</entry>
+              <entry>Alarms if swift-drive-audit reports a unrecoverable read error on a drive used
+                by Swift</entry>
+              <entry>An unrecoverable read error has occurred when Swift attempted to access a
+                directory.</entry>
+              <entry>
+                <p>The UREs reported only apply to filesystem metadata (i.e., directory structures).
+                  For UREs in object files, the swift system automatically deletes the file and
+                  replicates a fresh copy from one of the other replicas.</p>
+                <p>UREs are a normal feature of large disk drives. It does not mean that the drive
+                  has failed. However, if you get regular UREs on a specific drives, then this may
+                  indicate that the drive is indeed failed and should be replaced.</p>
+                <p>You can use standard XFS repair actions to correct the UREs in the
+                  filesystem.</p>
+                <p>If the XFS repair fails, you should wipe the GPT table as follows (where LETTER
+                  is replaced by the actual drive name)</p>
+                <codeblock>sudo dd if=/dev/zero of=/dev/sd&lt;LETTER&gt; bs=$((1024*1024)) count=1</codeblock>
+                <p>Then, on the deployer, run the _swift-configure.yml playbook. This will reformat
+                  the drive, remount it and restart Swift services.</p>
+                <p>It is safe to reformat drives containing Swift data because Swift mains other
+                  copies of the data (usually, Swift is configured to have three replicas of all
+                  data).</p>
+              </entry>
+            </row>
+            <row>
+              <entry>Swift services</entry>
+              <entry>Alarms if a Swift process is not running.</entry>
+              <entry>A daemon specified by the "component" dimension on the host specfied by the
+                "hostname" dimension has stopped running.</entry>
+              <entry>
+                <p>Examine the /var/log/swift/swift.log file for possible error messages related the
+                  Swift process. The process in question is listed in the alarm dimensions in the
+                  "component" dimension.</p>
+                <p>Restart Swift processes by running the swift-start.yml playbook.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>Swift filesystem mount status</entry>
+              <entry>Alarms if a filesystem/drive used by Swift in not correctly mounted</entry>
+              <entry>
+                <p>The device specified by the "device" dimension is not correctly mounted at the
+                  mountpoint specified by the "mount" dimension.</p>
+                <p>The most probable cause is that the drive has failed or that it had a temporary
+                  failure during the boot process and remained unmounted.</p>
+                <p>Other possible causes are a filesystem corruption that prevents the device from
+                  being mounted.</p>
+              </entry>
+              <entry>
+                <p>Reboot the node and see if the filesystem remains unmounted.</p>
+                <p>If the filesystem is corrupt, see the process used for the "Drive URE errors"
+                  alarm to wipe and reformat the drive..</p>
+              </entry>
+            </row>
+            <row>
+              <entry>Swift host ping</entry>
+              <entry>Alarms if the specified Swift target host cannot be pinged</entry>
+              <entry>The server is down.</entry>
+              <entry>
+                <p>Reboot the server.</p>
+                <p>If many servers have this alarm, it may indicate that the network has a
+                  failure.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>Swift host socket connect</entry>
+              <entry>Alarms if a socket cannot be opened to the specified target Swift host and
+                port</entry>
+              <entry>The server may be down. The Swift process running on the server may have
+                stopped. You may be able to distinguish these situations by looking to see if there
+                are "Swift services" or "Swift host ping" alarms. The "msg" field may also provide
+                additional information.</entry>
+              <entry>
+                <p>If the server is down, boot it.</p>
+                <p>If Swift processes have stopped, you can restart them by using the
+                  swift-start.yml playbook. if this fails, rebooting the node will restart the Swift
+                  processes.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>Swift memcache connect</entry>
+              <entry>Alarms if a socket cannot be opened to the specified target memcached
+                server</entry>
+              <entry>The server may be down. The memcached deamon running the the server may have
+                stopped.</entry>
+              <entry>
+                <p>If the server is down, boot it.</p>
+                <p>If memcached has stopped, you can restart them by using the memcached-start.yml
+                  playbook. if this fails, rebooting the node will restart the process.</p>
+                <p>If the server is running and memcached is running, there may be a network problem
+                  blocking port 11211.</p>
+                <p>If you see sporadic alarms on different servers, the system may be running out of
+                  resources. Contact HP Support for advise.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>Alarms when the specified process is not running</entry>
+              <entry>If the "service" dimension is "object-store", see the description of the "Swift
+                Services" alarm for possible causes.</entry>
+              <entry>If the "service" dimension is "object-store", see the description of the "Swift
+                Services" alarm for possible mitigation tasks.</entry>
+            </row>
+            <row>
+              <entry>HTTP Status</entry>
+              <entry>Alarms when the specified HTTP endpoint is down or not reachable</entry>
+              <entry>If the "service" dimension is "object-store", see the description of the "Swift
+                host socket connect" alarm for possible causes.</entry>
+              <entry>If the "service" dimension is "object-store", see the description of the "Swift
+                host socket connect" alarm for possible mitigation tasks.</entry>
             </row>
           </tbody>
         </tgroup>
