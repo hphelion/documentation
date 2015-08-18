@@ -12,7 +12,7 @@
           <li>Users cannot currently select a Domain when logging into Horizon</li>
           <li>No domains created by API or CLI will be visible in Horizon</li>
         </ul></li>
-      </ul><b>Authentication with external authentication systems (LDAP, AD or Identity
+      </ul><b>Authentication with external authentication systems (LDAP, Active Directory (AD) or Identity
         Providers)</b><ul id="ul_u52_jpd_bt">
           <li>The configuration of external authentication systems requires the creation and usage of
             Domains.</li>

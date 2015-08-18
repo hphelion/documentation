@@ -4,20 +4,22 @@
   <title>LDAP Integration</title>
   <body>
     <section><title>Integrating with an external LDAP server</title> <ol>
-      <li>Ensure that domain_specific_drivers_enabled option is set to True in main configuration
-        file template (roles/KEY-API/templates/keystone.conf.j2).</li>
-      <li>Create YAML file which contains definition of LDAP server connection. Use
-        roles/KEY-API/files/samples/keystone_configure_ldap_sample.yml as an example. Save the
-        file, as, for example, /tmp/myldap.yml Please refer to [ldap] section of Keystone KIlo
-        documentation for full option list and description:
-        http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html</li>
+      <li>Ensure that the <b>domain_specific_drivers_enabled</b> option is set to <b>True</b> in the
+          main configuration file template (<b>roles/KEY-API/templates/keystone.conf.j2</b>).</li>
+      <li>Create a YAML file that contains the definition of the LDAP server connection. Use
+            <b>roles/KEY-API/files/samples/keystone_configure_ldap_sample.yml</b> as an example.
+          Save the file, as, for example, /tmp/myldap.yml. Please refer to the LDAP  section of the
+          Keystone Kilo documentation for a full list of options and descriptions: <xref
+            href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
+            format="html" scope="external"
+            >http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html</xref></li>
       
-      <li>Run reconfiguration playbook, passing a YAML file created at previous step as command
-        line option:
-        <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/tmp/myldap.yml
+      <li>Run the reconfiguration playbook, passing the YAML file created in the previous step as a
+          command-line option:
+          <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/tmp/myldap.yml
 </codeblock></li>
-      <li>Ensure that new domain was created for LDAP (Microsoft AD in this example), user and
-        group records can be retrieved: <codeblock># Import environment variables suited for Keystone administration
+      <li>Ensure that the new domain was created for LDAP (Microsoft Active Directory in this
+          example), and that user and group records can be retrieved: <codeblock># Import environment variables suited for Keystone administration
 $ source keystone.osrc
  
 # Get list of domains
@@ -61,21 +63,22 @@ stack@hLinux:~$ openstack role assignment list --user 05f107e4b1645c52c24a529e3f
 +----------------------------------+------------------------------------------------------------------+-------+---------+----------------------------------+
 
 </codeblock>
-        <note>LDAP domain is read-only. This means that you can not create new user or group
-          record in it. </note>
-      </li>
-      <li>Once LDAP user is granted appropriate role, it can authenticate within specified domain
-        by setting appropriate OS_* environment variables for openstack CLI.</li>
+          <note>The LDAP domain is read-only. This means that you cannot create a new user or group
+            record in it. </note>
+        </li>
+      <li>Once an LDAP user is granted the appropriate role, it can authenticate within the
+          specified domain by setting the appropriate OS_* environment variables for the OpenStack
+          CLI.</li>
     </ol>
     </section>
-    <section><title>Adjusting WSGI and logging parameters</title> To modify WSGI parameters (such as process counts
-      for public and admin Keystone interfaces) and log levels, do the following: <ol>
+    <section><title>Adjusting WSGI and logging parameters</title> To modify Web Server Gateway
+      Interface (WSGI) parameters (such as process counts for public and admin Keystone interfaces)
+      and log levels, do the following: <ol>
         <li>Adjust respective parameters in
           roles/keystone-common/vars/keystone_deploy_config.yml.</li>
         <li>Run reconfiguration playbook:
           <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
         </li>
-        
       </ol>
     </section>
   </body>
