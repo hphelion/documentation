@@ -46,8 +46,9 @@
         </li>
       </ul></p>
     <p>Before you start your Swift deployment ensure that you are familiar with the
-        <?oxy_insert_start author="sharmabi" timestamp="20150817T152209+0530" type="surround"?><xref
-        href="swift_components.dita#topic_jxs_1xz_1t"><?oxy_insert_end?>Swift components</xref>.</p>
+      <?oxy_insert_start author="sharmabi" timestamp="20150818T112735+0530"?>following Swift
+        components:<?oxy_insert_end?><xref href="swift_components.dita#topic_jxs_1xz_1t"
+        ><?oxy_delete author="sharmabi" timestamp="20150818T112759+0530" content="Swift components"?></xref>.</p>
     <p>
       <ul id="ul_hdc_qwz_1t">
         <li>Proxy Server</li>
@@ -56,9 +57,15 @@
         <li>Rings</li>
         <li>Zone</li>
         <li>Part Power</li>
-        <li>Storage Policies</li>
+        <li>Storage
+            Policies<?oxy_insert_start author="sharmabi" timestamp="20150818T112808+0530"?><p>For
+            more details on the Swift components, refer <xref
+              href="swift_components.dita#topic_jxs_1xz_1t"/>.</p><?oxy_insert_end?></li>
       </ul>
     </p>
+    <?oxy_insert_start author="sharmabi" timestamp="20150818T113012+0530"?>
+    <!--          
+    <?oxy_insert_end?>
     <section id="storage-plocies"><b>Storage Policies</b><p>Storage policies allow you to
         differentiate how the objects are stored in the cluster. A few of the possible reasons are
         as follows:</p><ul>
@@ -183,8 +190,10 @@
         objects, but each rings works similarly. The rings are built and managed manually by a
         utility called the ring-builder. The ring-builder also keeps its own builder file with the
         ring information and additional data required to build future rings.</p><p/></section>
+        -->
   </body>
 </topic>
+
 
 
 <?oxy_options track_changes="on"?>
