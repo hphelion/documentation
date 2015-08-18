@@ -56,7 +56,7 @@
         <topicref href="helion/monasca/opsconsole/alarm_explorer.dita"/>
         <topicref href="helion/monasca/opsconsole/alarm_creation.dita"/>
         <topicref href="helion/monasca/opsconsole/notification_methods.dita"/>
-        <topicref href="helion/monasca/opsconsole/metric_monitoring.dita"/>
+        <topicref href="helion/monasca/opsconsole/metric_monitoring.dita" toc="no"/>
       </topichead>
       <topichead navtitle="Compute">
         <topicref href="helion/monasca/opsconsole/compute_summary.dita"/>
