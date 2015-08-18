@@ -4,12 +4,11 @@
   <title>Keystone Identity Service</title>
   <body>
     <section>
-      
       <title>What is the Identity service?</title>
-      <p>The HP Helion OpenStack&#174; Identity service, based on the OpenStack Keystone API, is responsible for providing
-        UserID authentication and access authorization to enable organizations to
-        achieve their access security and compliance objectives and successfully deploy
-        OpenStack. In short, the Identity Service is the gateway to the rest of the OpenStack
+      <p>The HP Helion OpenStack&#174; Identity service, based on the OpenStack Keystone API, is
+        responsible for providing UserID authentication and access authorization to enable
+        organizations to achieve their access security and compliance objectives and successfully
+        deploy OpenStack. In short, the Identity Service is the gateway to the rest of the OpenStack
         services. </p>
     </section>
     <section>
@@ -52,7 +51,7 @@
         administrative access is required, and only read-only access is needed for this
         configuration. Keystone will not add any LDAP information. All user additions, deletions,
         and modifications are performed by the application's front end in the LDAP directories.
-        After a user has been successfully authenticated, he  is then assigned to the groups, roles,
+        After a user has been successfully authenticated, he is then assigned to the groups, roles,
         and projects defined by the Keystone domain or project administrators. This information is
         stored within the Keystone service database.</p>
       <p>Another form of external authentication provided by the Keystone service is via integration
@@ -91,23 +90,28 @@
         determines what resources and actions are available based on the UserID, the role of the
         user, and the projects that a user is provided access to. All of this information is
         created, managed, and stored by Keystone. These functions are applied via the Horizon web
-        interface, the OpenStack Command Line Interface (CLI), or the direct Keystone API. </p><p>Keystone provides support for organizing users via three entities including:</p>
-      <ul>
-      <li>Domains – Domains provide the highest level of organization. Domains are
-        intended to be used as high level containers for multiple projects. A domain can represent
-        different tenants, companies or organizations for an OpenStack cloud deployed for public
-        cloud deployments or represent major business units, functions, or any other type of
-        top-level organization unit in an OpenStack private cloud deployment. Each domain has at
-        least one Domain Admin assigned to it. This domain admin can then create multiple projects
-        within the domain and assign the project admin role to specific project owners. Each domain
-        created in an OpenStack deployment is unique and the projects assigned to a domain cannot
-        exist in another domain.</li><li>Projects – Projects are entities within a domain that represent
-        groups of users, each user role within that project, and how many underlying infrastructure
-        resources can be consumed by members of the project.</li><li>Groups – Groups are an optional
-        function and provide the means of assigning project roles to multiple users at
-        once.</li></ul>
-        
-        <p>Keystone also provides the means to create and assign roles to groups of users or
+        interface, the OpenStack Command Line Interface (CLI), or the direct Keystone API.
+        </p><p>Keystone provides support for organizing users via three entities including:</p>
+      <dl><dlentry>
+        <dt>Domains</dt><dd>Domains provide the highest level of organization. Domains are intended to
+          be used as high-level containers for multiple projects. A domain can represent different
+          tenants, companies or organizations for an OpenStack cloud deployed for public cloud
+          deployments or represent major business units, functions, or any other type of top-level
+          organization unit in an OpenStack private cloud deployment. Each domain has at least one
+          Domain Admin assigned to it. This Domain Admin can then create multiple projects within
+          the domain and assign the project admin role to specific project owners. Each domain
+          created in an OpenStack deployment is unique and the projects assigned to a domain cannot
+          exist in another domain.</dd>
+      </dlentry>
+        <dlentry><dt>Projects</dt> <dd>Projects are entities within a domain that represent groups of users, each
+          user role within that project, and how many underlying infrastructure resources can be
+          consumed by members of the project.</dd>
+        </dlentry>
+        <dlentry><dt>Groups</dt><dd>Groups are an optional function and provide the means of assigning project
+          roles to multiple users at once.</dd>
+        </dlentry>
+      </dl>
+      <p>Keystone also provides the means to create and assign roles to groups of users or
         individual users. The role names are created and user assignments are made within Keystone.
         The actual function of a role is defined currently per each OpenStack service via scripts.
         When a user requests access to an OpenStack service, his access token contains information
@@ -120,8 +124,8 @@
         the Horizon interface used to configure upper limit quotas for specific
         infrastructure-related functions. Quotas are assigned per each project.</p><p/>
     </section>
-    
-     
+
+
   </body>
 </topic>
 <!---->
