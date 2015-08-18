@@ -4,7 +4,7 @@
   <title>Installing Keystone</title>
   <body>
     <section>
-      <b>Installing Keystone</b><p>Keystone is a vital part of HP Helion OpenStack&#174;, so it is
+      <p>Keystone is a vital part of HP Helion OpenStack&#174;, so it is
         installed automatically by the Helion OpenStack installer (just after MySQL and RabbitMQ).
         The recommended way of installing Keystone is to allow the installer to install with the
         default configuration. Once your cloud is up and running, you can customize Keystone in a
