@@ -295,8 +295,8 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <li>LDAP patch</li>
                                                 <li>Compute Proxy patch</li>
                                                 <li>GRE tunnel</li>
-                                                <li><b>GPG keys to verify
-                                                  signature files</b>. This file is named
+                                                <li><b>GPG keys to verify signature files</b>. This
+                                                  file is named
                                                   <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li>
                                                 <!--<li><b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment, download this file, named <codeph>overcloud_vcenter_compute_proxy.tar</codeph>. Also download the Signature files. This file will need to be moved to the system that hosts the VMware vCenter client. You can move the file to that system or download the file later.</li><li><b id="productShow_appName">VCN OVSvApp Appliance</b>.  For the KVM + ESX deployment, download this file, named   Also download the Signature files. HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</li>-->
                                         </ul></li>
@@ -329,19 +329,45 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                         </ol>
                 </section>
                 <section id="download-esx">
-                        <title>Download packages for KVM + ESX</title>
+                        <title>Download the DCN and ESX packages for KVM + ESX</title>
                         <p><b>Note:</b> This is applicable only for KVM + ESX Cloud Deployment. </p>
                         <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM + ESX
                                 topology, download the following additional packages.</p>
                         <p><b>Note:</b> For HP internal use contact HCG R &amp; D department. </p>
                         <p><b>ESX components</b></p>
-                        <p>Download all required packages needed to deploy the ESX environment,
+                        <p>Download all required ESX packages needed to deploy the ESX environment,
                                 including the VMware vSphere Distributed Switch (VDS) .</p>
                         <p><b>DCN components</b></p>
+                        <p>Download all required DCN packages needed to deploy the DCN
+                                environment.</p>
                         <ol>
-                                <li> When you purchased a license for DCN, you should have received
-                                        an email with all the instructions for how to obtain the DCN
-                                        installation package and required license. </li>
+                                <li> DCN has a well-defined process for Pre-Sales and Post-Sales
+                                        process to download DCN bits and obtain license: Use one of
+                                        the following processes to to download DCN bits and obtain
+                                        license: <ul>
+                                                <li>External customers will follow the DCN
+                                                  Post-Sales Process:<ol>
+                                                  <li>You purchase a DCN license through the
+                                                  Post-Sales process.</li>
+                                                  <li>After you purchase the license, you will
+                                                  receive an email with all the instructions on how
+                                                  to obtain DCN installation packages and required
+                                                  license.</li>
+                                                  <li>Follow the instructions in the email to
+                                                  download all the required DCN packages listed
+                                                  above form the link provided in the email.</li>
+                                                  </ol></li>
+                                        </ul><ul id="ul_whv_rcf_bt">
+                                                <li>Internal HP partners will follow DCN Pre-Sales
+                                                  Process:<ol id="ol_xhv_rcf_bt">
+                                                  <li>Internal HP partners can contact HP Helion
+                                                  OpenStack Carrier Grade team for help.</li>
+                                                  <li>Internal HP partners can refer to HP Helion
+                                                  OpenStack Carrier Grade Engineering Wiki under
+                                                  section “HOS CG 1.1 GA: ESX (non-KVM region) DCN
+                                                  package details”</li>
+                                                  </ol></li>
+                                        </ul></li>
                                 <li>Move or copy the compressed installation packages to the KVM
                                                 host.<ul id="ul_cqm_tzc_ws">
                                                 <li>DCN-VRS-GW-3.0R7</li>
@@ -375,7 +401,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <p>
                                                   <codeph>DCN-VRS-3.0.7-125-ubuntu.14.04.tar.gz
                                                   </codeph></p>
-                                                  <p>Then untar this file and pick following:</p>
+                                                  <p>Untarring this file will extract::</p>
                                                   <p><codeph>nuage-openvswitch-common_3.0.7-125_amd64.deb</codeph></p>
                                                   <p><codeph>nuage-openvswitch-switch_3.0.7-125_amd64.deb</codeph></p>
                                                   <p><codeph>nuage-python-openvswitch_3.0.7-125_all.deb</codeph></p>
@@ -391,7 +417,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <entry>DCN-VSC-3.0R7</entry>
                                                   <entry>
                                                   <p><codeph> DCN-VSC-07-OEM-125.tar.gz</codeph></p>
-                                                  <p>Then untar this file and pick following:</p>
+                                                  <p>Untarring this file will extract::</p>
                                                   <p><codeph>…/single_disk/vsc_singledisk.qcow2</codeph></p>
                                                   </entry>
                                                   <entry>~/cg/dcn</entry>
@@ -400,19 +426,21 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <entry>DCN-VSD-QCOW-3.0R8.zip</entry>
                                                   <entry>
                                                   <p><codeph>CloudMgmt-vmware.tar.gz</codeph></p>
+                                                  <p>Then untarring this file will extract the
+                                                  installation file for vSphere Distributed Switch. </p>
                                                   </entry>
                                                   <entry>Any location</entry>
                                                   </row>
                                                   <row>
                                                   <entry> DCN-VRS-VMware-3.0R7.zip</entry>
-                                                  <entry/>
+                                                  <entry>Unzipping this file extracts the VRS VM
+                                                  template for the VRSvApp installation.</entry>
                                                   <entry>Any location</entry>
                                                   </row>
                                                   </tbody>
                                                 </tgroup>
                                         </table></li>
                         </ol>
-                        
                 </section>
                 <section id="verify"><title>Verify the downloaded signature</title>
                         <p>After downloading the installation packages, you should verify the
