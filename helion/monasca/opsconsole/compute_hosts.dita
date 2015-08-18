@@ -3,7 +3,7 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="compute_hosts">
   <title>Compute Hosts</title>
-  <shortdesc>This page allows you to activate and deactivate Compute resources.</shortdesc>
+  <shortdesc>This page allows you to activate and deactivate Compute Host resources.</shortdesc>
   <conbody>
     <section>
       <title>Search and Sort</title>
@@ -32,8 +32,9 @@
         <li><uicontrol>Sort by Type</uicontrol> displays the type of compute node.</li>
         <li><uicontrol>Sort by Status</uicontrol> displays the current status of the compute
           node.</li>
-        <li><uicontrol>Sort by Operating System</uicontrol> aaa</li>
-        <li><uicontrol>Sort by Capacity</uicontrol> aaa</li>
+        <li><uicontrol>Sort by CPU (Allocated)</uicontrol></li>
+        <li><uicontrol>Sort by Memory (Allocated)</uicontrol></li>
+        <li><uicontrol>Sort by Storage (Allocated)</uicontrol></li>
       </ul>
     </section>
   </conbody>

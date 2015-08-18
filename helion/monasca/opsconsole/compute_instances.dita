@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="compute_hosts">
-  <title>Compute Hosts</title>
-  <shortdesc>This page allows you to activate and deactivate Compute resources.</shortdesc>
+<concept id="compute_instances">
+  <title>Compute Instances</title>
+  <shortdesc>This page allows you to monitor your Compute instances.</shortdesc>
   <conbody>
     <section>
       <title>Search and Sort</title>
@@ -25,15 +25,17 @@
         can sort the compute nodes. Alternatively, you can also sort using the column headers in the
         table.</p>
       <ul>
-        <li><uicontrol>Sort by Name</uicontrol> displays the compute nodes by the name assigned to
-          it when it was created.</li>
-        <li><uicontrol>Sort by State</uicontrol> displays the current state of the compute
-          node.</li>
-        <li><uicontrol>Sort by Type</uicontrol> displays the type of compute node.</li>
-        <li><uicontrol>Sort by Status</uicontrol> displays the current status of the compute
-          node.</li>
-        <li><uicontrol>Sort by Operating System</uicontrol> aaa</li>
-        <li><uicontrol>Sort by Capacity</uicontrol> aaa</li>
+        <li><uicontrol>Sort by Name</uicontrol> displays the compute instances by the name assigned
+          to it when it was created.</li>
+        <li><uicontrol>Sort by State</uicontrol> displays the compute instances by their current
+          state.</li>
+        <li><uicontrol>Sort by Status</uicontrol> displays the compute instances by their current
+          status.</li>
+        <li><uicontrol>Sort by Host</uicontrol> displays the compute instances by their host.</li>
+        <li><uicontrol>Sort by Image</uicontrol> displays the compute instances by the image being
+          used.</li>
+        <li><uicontrol>Sort by IP Address</uicontrol> displays the compute instances by their IP
+          address.</li>
       </ul>
     </section>
   </conbody>
