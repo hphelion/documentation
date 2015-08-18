@@ -193,13 +193,13 @@ Password: cghelion</codeblock>
                 name can be any combination of up to 63 digits, letters, and <codeph>-</codeph><ul
                   id="ul_lz5_rbf_bt">
                   <li>
-                    <p>Cannot start or end with <codeph>-</codeph></p>
+                    <p>Cannot start or end with the <codeph>-</codeph> chracter;</p>
                   </li>
                   <li>
-                    <p>Must be greater than 0 characters</p>
+                    <p>Must be greater than 0 characters;</p>
                   </li>
                   <li>
-                    <p>No restriction on the number of letters or digits (0 or more)</p>
+                    <p>No restriction on the number of letters or digits (0 or more).</p>
                   </li>
                 </ul></p></li>
             <li><codeph>memphis</codeph> is the name of the template to use. The installation kit
