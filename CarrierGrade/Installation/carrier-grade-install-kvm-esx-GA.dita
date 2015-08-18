@@ -148,13 +148,12 @@ VSD Server : auto </codeblock></li>
           of the dashboard.</li>
         <li>Click the <b>CSP Users</b> tab and click <b>+</b>.</li>
         <li>Create a user named <codeph>OSadmin</codeph> with the password <codeph>OSadmin</codeph>.
-          The name and password are case-sensitive. Do not copy and paste from here into the
-            field.
-          <p><image href="../../media/CGH-install-OSadmin.png" id="image_hlq_5dj_1t"
-            width="600"/></p></li>
+          The name and password are case-sensitive. Do not copy and paste from here into the field.
+              <p><image href="../../media/CGH-Install-VSD-create-user.png" id="image_pjz_wy3_bt"
+              width="600"/></p></li>
         <li>Add the user to the <codeph>CMS Group</codeph>.<p><image
-            href="../../media/CGH-install-OSadmin-group.png" width="600" id="image_pth_zdj_1t"
-        /></p></li>
+              href="../../media/CGH-install-VSD-user-to-group.png" width="600" id="image_q4m_sz3_bt"
+            /></p></li>
       </ol>
     </section>
     <!--<section><title>Install the DVswitch</title></section><section><p>The VMware® vNetwork Distributed Switch (vDS) enables you to manage virtual machine networking for a number of hosts in a datacenter using the VMware vSphere application </p><p>Please Refer to the DCN VSP 3.0 R7 installation Guide for DVswitch installation.</p></section>-->
@@ -170,20 +169,6 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
 Password: cghelion</codeblock>
           </p><p><b>Important:</b> After logging in with the default password, make sure you change
             the password for the <codeph>cghelion</codeph> user. </p></li>
-        <li>Execute the following command to run a script that disables the <codeph>root</codeph>
-          user. For security purposes, we strongly recommend disabling root.
-            <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock><p>This command will
-            disable the <codeph>root</codeph> user and perform the following tasks:</p><ul>
-            <li>remove the password for <codeph>root</codeph> from the <codeph>/etc/shadow
-                file</codeph>;</li>
-            <li>remove any and all keys in <codeph>/root/.ssh/authorized_keys</codeph> file;</li>
-            <li>change the <codeph>PermitRootLogin</codeph> variable in the
-                <codeph>/etc/ssh/sshd_config</codeph> file from <codeph>yes</codeph> to
-                <codeph>without-password</codeph> (the default value);</li>
-            <li>restart the SSH service to put the configuration chagnes into effect.</li>
-          </ul><p>When this command completes, use the <codeph>cghelion</codeph> user to access the
-            HLM VM. Any actions that require root access should be done using
-            <codeph>sudo</codeph>.</p></li>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
         <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
@@ -383,12 +368,15 @@ Password: cghelion</codeblock>
       <ol>
         <li>On the HLM host, use the following script to start the provisioning of the HP Helion
           OpenStack cloud: <codeblock>hprovision &lt;cloudname&gt;          </codeblock><p>Where:
-              <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created.</p><p>This
-            script will PXE boot the nodes specified in <codeph>node-provision.json</codeph> file.
-            The script also tracks the PXE boot completion process and will create the
-              <codeph>nodes.json</codeph> file in the directory. </p><p>You can log in to the iLO
-            server management tool for each of the nodes to monitor the boot process. Consult yout
-            iLO documentation for information on how to log into iLO. </p></li>
+              <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created. The script
+            takes approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers
+            for the HP Helion OpenStack Carrier Grade cloud installation including the hLinux
+            operating system. The script also PXE boots the nodes specified in
+              <codeph>node-provision.json</codeph> file and tracks the PXE boot completion process.
+            The script also creates the <codeph>nodes.json</codeph> file in the directory.
+            </p><p>You can log in to the iLO server management tool for each of the nodes to monitor
+            the boot process. Consult yout iLO documentation for information on how to log into iLO.
+          </p></li>
         <li>Make sure the nodes are booted up using iLO. </li>
         <li>Once the baremetal nodes are provisioned, make sure the <codeph>nodes.json</codeph> file
           is generated. The <codeph>nodes.json</codeph> file will have entries of 3 controllers, 2
@@ -507,11 +495,13 @@ The configuration processor completed successfully.
             this command completes, all cloud nodes and CLM network interfaces are configured. The
             output for the command should appear similar to the following:</p><p><image
               href="../../media/CGH-install-hnetinit-output.png" id="image_tft_r11_1t"/></p></li>
+        <li>Apply the Compute Proxy and GRE patches. <!--Details forthcoming--></li>
         <li>Use the following command to deploy the HP Helion OpenStack cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>This command takes a
             significant period of time. When this command is complete, the non-KVM cloud
             installation is complete. Use the following sections to configure the Horizon interface,
             configure networking, and configure the ESX environment. </p></li>
+        <li>Apply the LDAP patch. <!--Details forthcoming--></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
     </section>
