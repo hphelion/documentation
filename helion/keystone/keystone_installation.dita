@@ -3,17 +3,15 @@
 <topic id="topic_qmz_fg3_bt">
   <title>Installing Keystone</title>
   <body>
-    <section>
-      <p>Keystone is a vital part of HP Helion OpenStack&#174;, so it is
-        installed automatically by the Helion OpenStack installer (just after MySQL and RabbitMQ).
-        The recommended way of installing Keystone is to allow the installer to install with the
-        default configuration. Once your cloud is up and running, you can customize Keystone in a
-        number of ways, including  LDAP server integration. </p><p/><p>Keystone" section
-        below.</p><b>Default Settings</b><b>Keystone Configuration Settings</b><p>&lt;&lt;&lt;insert
-        default settings of the keystone.conf file here&gt;&gt;&gt;</p><b>Default Domain and Service
-        Accounts</b><p>The "default" domain is automatically created during the Keystone
-        installation to contain the various, required OpenStack service accounts including the
-        following:</p><ul id="ul_tzb_lpd_bt">
+    <section><p>Keystone is a vital part of HP Helion OpenStack&#174;, so it is installed
+        automatically by the Helion OpenStack installer (just after MySQL and RabbitMQ). The
+        recommended way of installing Keystone is to allow the installer to install with the default
+        configuration. Once your cloud is up and running, you can customize Keystone in a number of
+        ways, including LDAP server integration. </p><b>Default Settings</b><b>Keystone
+        Configuration Settings</b><p>&lt;&lt;&lt;insert default settings of the keystone.conf file
+        here&gt;&gt;&gt;</p><b>Default Domain and Service Accounts</b><p>The "default" domain is
+        automatically created during the Keystone installation to contain the various, required
+        OpenStack service accounts including the following:</p><ul id="ul_tzb_lpd_bt">
         <li>neutron</li>
         <li>glance</li>
         <li>swift-monitor</li>
@@ -39,8 +37,7 @@
         environment variables used by openstack CLI.</p><p>
         <note/>Keystone administration tasks should be performed by <i>admin</i> user with a token
         scoped with <i>default</i> domain via v3 identity API. These settings are pre-configured in
-        the <i>keystone.osrc</i> file. </p>
-    </section>
+        the <i>keystone.osrc</i> file. </p></section>
     
     <section> Here are some examples:
       <codeblock>
