@@ -66,5 +66,6 @@ monasca metric-list
           href="https://github.com/stackforge/python-monascaclient" format="html" scope="external"
           >https://wiki.openstack.org/wiki/Monasca</xref></p>
     </section>
+    <p conref="alarms.dita#alarmdefinitions"></p>
   </body>
 </topic>
