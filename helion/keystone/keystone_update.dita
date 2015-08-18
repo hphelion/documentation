@@ -6,7 +6,7 @@
    
     <section><title>Updating Keystone </title> 
       
-      HP Helion OpenStack supports updating the following parts of
+      HP Helion OpenStack&#174; supports updating the following parts of
       Identity service configuration: Any content in main keystone configuration file:
       /etc/keystone/keystone.conf This allows to manipulate Keystone configuration parameters and
       enable experimental features, such as Fernet Tokens. Creating and updating domain-specific

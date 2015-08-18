@@ -4,11 +4,11 @@
   <title>Keystone Identity Service</title>
   <body>
     <section>
-      <p>General Service Overview</p>
-      <title>What is the Identity service</title>
-      <p>The OpenStack Identity service, based on the Keystone API, is responsible for providing
-        UserID authentication and access authorization to enable organizations the ability to
-        achieve their access security and compliance objectives in order to successfully deploy
+      
+      <title>What is the Identity service?</title>
+      <p>The HP Helion OpenStack&#174; Identity service, based on the OpenStack Keystone API, is responsible for providing
+        UserID authentication and access authorization to enable organizations to
+        achieve their access security and compliance objectives and successfully deploy
         OpenStack. In short, the Identity Service is the gateway to the rest of the OpenStack
         services. </p>
     </section>

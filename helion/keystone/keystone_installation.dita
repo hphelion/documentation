@@ -4,17 +4,16 @@
   <title>Installing Keystone</title>
   <body>
     <section>
-      <b>Installing Keystone</b><p>Keystone is a vital part of OpenStack, so it is installed
-        automatically among the first services engaged by the Helion OpenStack installer (just after
-        MySQL and RabbitMQ). Recommended way of installing Keystone is to let the installer install
-        the default configuration. Once Helion OpenStack is up and running, you can add any
-        customization to Keystone (like LDAP server integration). Please refer to "Updating
-        Keystone" section below.</p><p/><p>Keystone" section below.</p><b>Default
-        Settings</b><b>Keystone Configuration Settings</b><p>&lt;&lt;&lt;insert default settings of
-        the keystone.conf file here&gt;&gt;&gt;</p><b>Default Domain and Service Accounts</b><p>The
-        "default" domain is automatically created during the Keystone installation to contain the
-        various, required OpenStack service accounts including the following:</p><ul
-        id="ul_tzb_lpd_bt">
+      <b>Installing Keystone</b><p>Keystone is a vital part of HP Helion OpenStack&#174;, so it is
+        installed automatically by the Helion OpenStack installer (just after MySQL and RabbitMQ).
+        The recommended way of installing Keystone is to allow the installer to install with the
+        default configuration. Once your cloud is up and running, you can customize Keystone in a
+        number of ways, including  LDAP server integration. </p><p/><p>Keystone" section
+        below.</p><b>Default Settings</b><b>Keystone Configuration Settings</b><p>&lt;&lt;&lt;insert
+        default settings of the keystone.conf file here&gt;&gt;&gt;</p><b>Default Domain and Service
+        Accounts</b><p>The "default" domain is automatically created during the Keystone
+        installation to contain the various, required OpenStack service accounts including the
+        following:</p><ul id="ul_tzb_lpd_bt">
         <li>neutron</li>
         <li>glance</li>
         <li>swift-monitor</li>
