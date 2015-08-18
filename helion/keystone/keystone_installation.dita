@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qmz_fg3_bt">
-  <title>Instaling Keystone</title>
+  <title>Installing Keystone</title>
   <body>
     <section>
       <b>Installing Keystone</b><p>Keystone is a vital part of OpenStack, so it is installed
