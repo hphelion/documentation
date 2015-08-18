@@ -295,9 +295,203 @@
                   pre-configured in the <i>keystone.osrc</i> file.
       </p></section>
   
-  
-  
-  
+  <section>
+    Here are some examples:
+    <codeblock>
+      
+      # Set environment variables needed for Keystone administration
+stack@hLinux:~$ source keystone.osrc 
+ 
+# List users in default domain
+# These users are created by HLM installer in MySQL backend
+stack@hLinux:~$ openstack user list
++----------------------------------+---------------+
+| ID                               | Name          |
++----------------------------------+---------------+
+| 341027a3255a4727950fb927389c3688 | neutron       |
+| 39bcb0edc9564d7c9dfa8ed18a34b3a5 | glance        |
+| 3e62e6aa950343ad8117523fad19d327 | swift-monitor |
+| 409015168eee476e8b98975391fdf7d1 | ceilometer    |
+| 4f9ff011e160478db4f8a91cc27d8a87 | swift         |
+| 6ce855e41ef74270b222a0a10a7e0106 | monasca-agent |
+| 71d65560801b4d21a15f4f68c78a0c82 | glance-swift  |
+| 8ec70b8f54f44f70a624db5dbd24903f | swift-demo    |
+| 992d44994476476caa9c7ebbc77f1537 | nova          |
+| c41e12469cbc43c3adc71807bdb8dbe8 | monasca       |
+| c6976c9aa50647d987004ec52daf18a1 | logging       |
+| cc81b4961c094ff29d290c096948af62 | demo          |
+| d37fe7f76d0f4e63aaaa2c51f927da1e | heat          |
+| d4a1a40662cc4757b0d2fc7bcfc1b60f | cinder        |
+| fed1c038d9e64392890b6b44c38f5bbb | admin         |
++----------------------------------+---------------+
+ 
+# List domains created by HLM installer
+stack@hLinux:~$ openstack domain list
++----------------------------------+---------+---------+----------------------------------------------------------------------+
+| ID                               | Name    | Enabled | Description                                                          |
++----------------------------------+---------+---------+----------------------------------------------------------------------+
+| 6740dbf7465a4108a36d6476fc967dbd | heat    | True    | Owns users and projects created by heat                              |
+| default                          | Default | True    | Owns users and tenants (i.e. projects) available on Identity API v2. |
++----------------------------------+---------+---------+----------------------------------------------------------------------+
+ 
+# List roles
+stack@hLinux:~$ openstack role list
++----------------------------------+-----------------+
+| ID                               | Name            |
++----------------------------------+-----------------+
+| 3ab2ed4754aa4379af8454937ea5efb4 | swiftoperator   |
+| 3af37c0effb74d92adc9cc6cecb148f8 | ResellerAdmin   |
+| 7e80806758414c398c8cebbc8044ae33 | KeystoneAdmin   |
+| 90dbc08989f94d958eeda44af082cf81 | monasca-agent   |
+| 9fe2ff9ee4384b1894a90878d3e92bab | _member_        |
+| b398322103504546a070d607d02618ad | admin           |
+| c7211fd83ecc4cce960538471e718db3 | Member          |
+| cb79abf164c5431797a01bc92791b840 | monasca-user    |
+| d76c511534684a9bab2a7038dfb2fd81 | heat_stack_user |
++----------------------------------+-----------------+
+ 
+# List admin user role assignment within default domain
+# This indicated that admin user is assigned admin role within default domain
+stack@hLinux:~$ openstack role assignment list --user admin --domain default
++----------------------------------+----------------------------------+-------+---------+---------+
+| Role                             | User                             | Group | Project | Domain  |
++----------------------------------+----------------------------------+-------+---------+---------+
+| b398322103504546a070d607d02618ad | fed1c038d9e64392890b6b44c38f5bbb |       |         | default |
++----------------------------------+----------------------------------+-------+---------+---------+
+ 
+# Create new user in default domain (MySQL)
+stack@hLinux:~$ openstack user create --domain default --password-prompt --email test@example.com --description "Test User" --enable testuser
+User Password:
+Repeat User Password:
++-------------+----------------------------------+
+| Field       | Value                            |
++-------------+----------------------------------+
+| description | Test User                        |
+| domain_id   | default                          |
+| email       | test@example.com                 |
+| enabled     | True                             |
+| id          | 8aad69acacf0457e9690abf8c557754b |
+| name        | testuser                         |
++-------------+----------------------------------+
+ 
+# Assign admin role for testuser within default domain
+# Just for demonstration purpose - do not do this in production environment!
+stack@hLinux:~$ openstack role add admin --user testuser --domain default
+stack@hLinux:~$ openstack role assignment list --user testuser --domain default
++----------------------------------+----------------------------------+-------+---------+---------+
+| Role                             | User                             | Group | Project | Domain  |
++----------------------------------+----------------------------------+-------+---------+---------+
+| b398322103504546a070d607d02618ad | 8aad69acacf0457e9690abf8c557754b |       |         | default |
++----------------------------------+----------------------------------+-------+---------+---------+
+ 
+</codeblock>
+  </section>
+  <section>
+    Updating Keystone
+    Helion Lifecycle Manager supports updating the following parts of Identity service configuration:
+    Any content in main keystone configuration file: /etc/keystone/keystone.conf
+    This allows to manipulate Keystone configuration parameters and enable experimental features, such as Fernet Tokens.
+    
+    
+    Creating and updating domain-specific configuration files: /etc/keystone/domains/keystone.&lt;domain_name&gt;.conf
+      This allows to integrate Keystone with one or more external authentication sources, such as LDAP server.
+      
+      
+      Certain content in logging configuration file: /etc/keystone/logging.conf
+      This allows to adjust verbosity of logs being written to keystone log files.
+      
+      
+      Apache2 WSGI module configuration file: /etc/apache2/sites-enabled/keystone-modwsgi.conf
+      Allows to adjust certain WSGI module parameters (like process counts)
+      
+  </section>
+    <section>
+    Updating main Keystone configuration file
+    1.Main Keystone configuration file (/etc/keystone/keystone.conf) is generated from the following template file: roles/KEY-API/templates/keystone.conf.j2
+    <codeblock>roles/KEY-API/templates/keystone.conf.j2
+</codeblock>
+    <p></p>Modify this template file as appropriate. Please refer to Keystone Kilo documentation for full descriptions of all settings <xref href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html" scope="external" format="html">Keystone docs at OpenStack.org</xref>
+      <note>This is a Jinja2 template, which expects certain template variables to be set. Do not change values inside double curly quotes (i.e. {{ }}).
+      </note>
+    
+      <p>Once template is modified, run reconfiguration playbook:</p>
+      <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
+    </section>
+      
+    <section>Integrating with an external LDAP server
+      <ol><li>Ensure that domain_specific_drivers_enabled option is set to True in main configuration file template (roles/KEY-API/templates/keystone.conf.j2).</li>
+        <li>Create YAML file which contains definition of LDAP server connection. Use roles/KEY-API/files/samples/keystone_configure_ldap_sample.yml as an example. Save the file, as, for example, /tmp/myldap.yml
+        Please refer to [ldap] section of Keystone KIlo documentation for full option list and description: http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html</li>
+        
+        <li>Run reconfiguration playbook, passing a YAML file created at previous step as command line option:
+        <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/tmp/myldap.yml
+</codeblock></li>
+        <li>Ensure that new domain was created for LDAP (Microsoft AD in this example), user and group records can be retrieved:
+        
+        <codeblock># Import environment variables suited for Keystone administration
+$ source keystone.osrc
+ 
+# Get list of domains
+stack@hLinux:~$ openstack domain list
++----------------------------------+---------+---------+----------------------------------------------------------------------+
+| ID                               | Name    | Enabled | Description                                                          |
++----------------------------------+---------+---------+----------------------------------------------------------------------+
+| 6740dbf7465a4108a36d6476fc967dbd | heat    | True    | Owns users and projects created by heat                              |
+| default                          | Default | True    | Owns users and tenants (i.e. projects) available on Identity API v2. |
+| b2aac984a52e49259a2bbf74b7c4108b | ad      | True    | Dedicated domain for users managed by Microsoft AD server            |
++----------------------------------+---------+---------+----------------------------------------------------------------------+
+ 
+# Get list of LDAP groups
+stack@hLinux:~$ openstack group list --domain ad
++------------------------------------------------------------------+------------+
+| ID                                                               | Name       |
++------------------------------------------------------------------+------------+
+| 03976b0ea6f54a8e4c0032e8f756ad581f26915c7e77500c8d4aaf0e83afcdc6 | testgroup1 |
+| 7ba52ee1c5829d9837d740c08dffa07ad118ea1db2d70e0dc7fa7853e0b79fcf | testgroup2 |
++------------------------------------------------------------------+------------+
+ 
+# Get user record
+stack@hLinux:~$ openstack user show testuser1 --domain ad
++-----------+------------------------------------------------------------------+
+| Field     | Value                                                            |
++-----------+------------------------------------------------------------------+
+| domain_id | b2aac984a52e49259a2bbf74b7c4108b                                 |
+| id        | 05f107e4b1645c52c24a529e3fb464647e4075a31db3e51b34e1ed41116d7706 |
+| name      | testuser1                                                        |
++-----------+------------------------------------------------------------------+
+ 
+# Grant testuser1 admin role within LDAP domain. For demonstration purpose only - don't do this in production!
+# Please note that due to current Openstack CLI limitation, we have to use user ID rather then user name
+# when working with non-default domain.
+stack@hLinux:~$ openstack role add admin --user 05f107e4b1645c52c24a529e3fb464647e4075a31db3e51b34e1ed41116d7706 --domain ad
+stack@hLinux:~$ openstack role assignment list --user 05f107e4b1645c52c24a529e3fb464647e4075a31db3e51b34e1ed41116d7706 --domain ad
++----------------------------------+------------------------------------------------------------------+-------+---------+----------------------------------+
+| Role                             | User                                                             | Group | Project | Domain                           |
++----------------------------------+------------------------------------------------------------------+-------+---------+----------------------------------+
+| c0b1ee04cd0c44c4bf001da9585b107e | 05f107e4b1645c52c24a529e3fb464647e4075a31db3e51b34e1ed41116d7706 |       |         | b2aac984a52e49259a2bbf74b7c4108b |
++----------------------------------+------------------------------------------------------------------+-------+---------+----------------------------------+
+
+</codeblock>
+          <note>LDAP domain is read-only. This means that you can not create new user or group record in it.
+          </note>
+        </li>
+        <li>5.Once LDAP user is granted appropriate role, it can authenticate within specified domain by setting appropriate OS_* environment variables for openstack CLI.</li>
+      </ol>
+   
+     
+</section>
+    <section>Adjusting WSGI and logging parameters
+      To modify WSGI parameters (such as process counts for public and admin Keystone  interfaces) and log levels, do the following:
+      <ol><li>1.Adjust respective parameters in roles/keystone-common/vars/keystone_deploy_config.yml.</li>
+        <li>2.Run reconfiguration playbook:
+        
+        <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
+        </li>
+      
+      </ol>
+    
+    
+    </section>
   </body>
 </topic>
 <!---->
