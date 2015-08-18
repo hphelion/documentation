@@ -62,13 +62,6 @@
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
       <ol>
-        <li>On the deployer node, enter the following command to create the SSH keypair if one is
-          not already present:<codeblock>ssh-keygen -t rsa</codeblock>
-        </li>
-        <li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file:
-          <codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
-        <li>Confirm that ssh localhost works without a password and that you can get from external
-          sources, both with and without sudo.</li>
         <li>Mount the install media at /media/cdrom, for example,
           <codeblock>sudo mount /media/cdrom</codeblock></li>
         <li>Unpack the following tarball:
@@ -108,7 +101,7 @@ helion/hlm/                    Directory contains files used by the installer
               </ul></li>
           </ol></li>
         <li>Run the configuration processor, as follows: <codeblock>cd ~/helion/hlm/ansible</codeblock>
-          <codeblock>ansible-playbook -i hosts/localhost config-processor-run_v2.yml</codeblock></li>
+          <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Check the generated host files in
             <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs
           are included. If they are not, run
@@ -127,23 +120,14 @@ helion/hlm/                    Directory contains files used by the installer
     </section>
     <section id="NodeProvision"><title>Provision the Nodes</title>
       <ol>
-        <li>Run the following command, which will set all nodes to PXE boot and power cycle them to
-          start their OS
-          install:<codeblock>ansible-playbook -i hosts/localhost cobbler-provision.yml</codeblock></li>
-        <li>Wait for the nodes to install. They will power down at the end. You can make waiting
-          easier with the following
-          command:<codeblock><codeph>ansible-playbook -i hosts/localhost cobbler-wait-for-shutdown.yml</codeph></codeblock>This
-          will complete once all machines are down.</li>
-        <li>Once all nodes are down, power up the recently-installed systems, using the following
-          command:<codeblock>ansible-playbook -i hosts/localhost cobbler-power-up.yml</codeblock></li>
-        <li>You can make waiting easier with the command below, which will complete once all
-          machines are up and the SSH daemon is responding:
-          <codeblock>ansible-playbook -i hosts/localhost cobbler-wait-for-ssh.yml</codeblock></li>
+        <li>Run the following command, which will reimage all the nodes using PXE:
+          <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
+        <li>Wait for the nodes to install and come back up.</li>
       </ol>
     </section>
     <section id="CloudDeploy"><title>Deploy the Cloud</title>
       <ol>
-        <li>Run the following command: <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-runV2.yml</codeblock><ol>
+        <li>Run the following command: <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol>
             <li>Verify the network is working correctly. Ping each IP (excluding VSA-BLK and VIPs)
               from the /etc/hosts file from one of the controller nodes.</li>
           </ol>
@@ -221,8 +205,10 @@ hplefthand_debug: false
     </section>
     <section id="Post-Installation"><title>Verification Steps</title>
       <ol>
-        <li>Run the following command:
-            <codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
+        <li>This step may be used to verify your cloud installation. Note that running the command
+          below will download a cirros image from the internet, upload it to Glance, and create a
+          Neutron external
+            network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
             can optionally specify the external network CIDR here too. If you choose not to
             excercise this option or use a wrong value, the VMs will not be accessible over the
             network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
