@@ -37,7 +37,7 @@
         <li>Select <b>Web</b> in the left pane if it isn't selected already. Scroll down the middle pane and select <b>WCF Service</b>. Click <b>OK</b>.
           <image placement="break" href="../../media/windows_wcf_create_3.png"></image></li>
         <li>Change the contents of <b>IService1.cs</b> (the service interface definition) to the following:
-        <pre>using System.ServiceModel;
+        <codeph>using System.ServiceModel;
 using System.Text;
 
 namespace HelionWCF
@@ -48,7 +48,7 @@ namespace HelionWCF
         [OperationContract]
         <span style="background-color:#FFFF00">double DoubleIt(double numToDouble);</span>
     }
-}</pre></li>
+}</codeph></li>
       </ol>
     </section>
     <section id="deploy"><title>Deploying the web service application</title>
