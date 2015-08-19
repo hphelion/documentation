@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the VRS vApp</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the VRSvApp</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -24,12 +24,15 @@
       DCN</p>
     <p><b>Important:</b> You must disable vMotion for the VRSvApp to prevent the VRS VM from moving
       from the ESX host. in case of failure of the host in the ESX cluster. </p>
-    <p>To disable vMotion for the VRSvApp, in vCenter, right-click the VRSvApp and select <b>Edit
-        Settings</b>.</p>
-    <p><image href="../../media/CGH-install-vrsvapp.png" id="image_ab4_wy3_1t"/></p>
-    <p>Then, select Virtual Machine Options then using the drop down dialog box disable vMotion for
-      each VRS vApp vm. Click ok to save settings.</p>
-    <p><image href="../../media/CGH-install-vmotion.png" id="image_j3x_cz3_1t"/></p>
+    <p>To disable vMotion for the VRSvApp:</p>
+    <ol>
+        <li>Iin the vSphere Client, right-click the VRSvApp and select <b>Edit Settings</b>.
+    <p><image href="../../media/CGH-install-vrsvapp.png" id="image_ab4_wy3_1t"/></p></li>
+    <li>Select <b>Virtual Machine Options</b>.</li>
+      <li> For each VRSvApp, select Disabled from the tAutomation Level list.  </li>
+      <li>Click <b>OK</b> to save the settings. <p><image href="../../media/CGH-install-vmotion.png"
+            id="image_j3x_cz3_1t"/></p>
+      </li></ol>
     <section>
       <p> To install the VRSvApp:</p>
       <ol id="ol_hf4_nvy_zs">
@@ -43,28 +46,33 @@
             example:<codeblock>cd /opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeblock><p>The
               <codeph>vrs-metafile.config</codeph> file is in the extracted files. </p></li>
         <li>Modify the <codeph>vrs-metafile.config</codeph> using values appropriate for your
-          environment. An example has been provided below.</li>
+          environment. An example has been provided below.<p><b>Important:</b> The values in this
+            files are case sensitive and errors will cause the installation to stop.</p></li>
         <li>Run the command to deploy the template using the example below after making changes to
-          file paths to match your environment, vcenter username, vcenter password and vcenter ip
+          file paths to match your environment, vCenter username, vCenter password and vCenter IP
+          address:
             <codeblock>./cli.bash deploy_vrs -f /opt/vsd/CloudMgmt-vmware/&lt;VRS-Template.ovf> -m /opt/vsd/CloudMgmt-vmware/vrs-metafile.config -p &lt;vcenter password> -u &lt;vcenter user> --url https://&lt;vecenter IP>/sdk</codeblock><p>Where:</p><codeblock>usage: 
 -f,--path &lt;PATH>                   VRS template path.
 -m,--metafile &lt;FILE>               Meta file defining VRS property values.
 -p,--password &lt;PASSWORD>           vCenter password.
 -r,--resourcepool &lt;RESOURCEPOOL>   Resource pool name or moref. (Optional)
 -u,--username &lt;USRNAME>            vCenter user name.
---url &lt;URL>                     vCenter url (example: https://localhost/sdk)          </codeblock></li>
-      </ol>
-      <p> </p>
-      <p><b>Syntax Help</b></p>
-      <codeblock>usage: deploy_vrs [-d &lt;DATASTORE&gt;] -f &lt;PATH&gt; -m &lt;FILE&gt; -p &lt;PASSWORD&gt; [-r &lt;RESOURCEPOOL&gt;] –u &lt;USRNAME&gt; --url &lt;URL&gt;
+--url &lt;URL>                     vCenter url (example: https://localhost/sdk)          </codeblock>
+          <p> </p>
+          <p><b>Syntax Help</b></p>
+          <codeblock>usage: deploy_vrs [-d &lt;DATASTORE&gt;] -f &lt;PATH&gt; -m &lt;FILE&gt; -p &lt;PASSWORD&gt; [-r &lt;RESOURCEPOOL&gt;] –u &lt;USRNAME&gt; --url &lt;URL&gt;
 -d,--datastore &lt;DATASTORE&gt; Datastore name or moref. (Optional)
 -f,--path &lt;PATH&gt; VRS template path.
 -m,--metafile &lt;FILE&gt; Meta file defining VRS property values.
 -p,--password &lt;PASSWORD&gt; vCenter password.
 -r,--resourcepool &lt;RESOURCEPOOL&gt; Resource pool name or moref. (Optional)
 -u,--username &lt;USRNAME&gt; vCenter user name.
---url &lt;URL&gt; vCenter url (example: <xref href="https://localhost/sdk" format="html" scope="external">https://localhost/sdk</xref>)</codeblock>
-      <p><b>Example <codeph>vrs-metafile.config</codeph> file</b></p>
+--url &lt;URL&gt; vCenter url (example: <xref href="https://localhost/sdk" format="html" scope="external">https://localhost/sdk</xref>)</codeblock></li>
+        <li>Use the vSpenere client to power on the VRSvApp. <p>This process must be performed for
+            each ESX host.</p></li>
+      </ol>
+          
+          <p><b>Example <codeph>vrs-metafile.config</codeph> file</b></p>
       <p>The following is a sample <codeph>vrs-metafile.config</codeph> that you can use to create a
         file on your local system. Note that the IP addresses have been masked for security
         purposes. You must use proper IP addresses in your file.</p>
@@ -127,10 +135,10 @@
           ]
         }
         </codeblock>
-      <p><b>Notes and definitions regarding VRS vApp</b></p>
+      <p><b>Notes and definitions regarding VRSvApp</b></p>
       <ul id="ul_if4_nvy_zs">
         <li>vCenter=vcenter Ip address</li>
-        <li>Hypervisor=ESX Host that this VRS vApp will be deployed</li>
+        <li>Hypervisor=ESX Host that this VRSvApp will be deployed</li>
         <li>mgmtSubnet1=CLM network</li>
         <li>dataSubNet1=TUL network</li>
         <li>controller=VSC server ip</li>

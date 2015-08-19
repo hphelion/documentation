@@ -84,8 +84,25 @@
             <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the HLM
           VM during the HP Helion OpenStack Carrier Grade installation process.</li> 
       </ol>
-
 </section>
+  <section><title>Disabling the root user</title>
+    <p>For security purposes, we strongly recommend disabling root. After the <codeph>root</codeph>
+        user is disabled, you can use another default user account, <codeph>cghelion</codeph> to
+        access the HLM VM and any actions that require root access should be done using
+          <codeph>sudo</codeph>.</p>
+      <p>Execute the following command to run a script that disables the <codeph>root</codeph> user. </p>
+      <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock>
+    <p>This command will disable the <codeph>root</codeph> user and performs the following tasks:</p>
+    <ul>
+          <li>removes password for root from the /etc/shadow file</li>
+          <li>removes any and all keys in /root/.ssh/authorized_keys file</li>
+          <li>changes PermitRootLogin in /etc/ssh/sshd_config file from "yes" back to default of
+            "without-password"</li>
+          <li>restarts the ssh service so the above config change takes effect immediately</li>
+        </ul>
+    <p>Once this command complete, the <codeph>cghelion</codeph> user should be used .</p>
+  
+  </section>
 
   <section id="next-step"> <title>Next Step</title>
 <p>The next step depends upon the HP Helion OpenStack Carrier Grade deployment model you are

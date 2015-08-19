@@ -33,7 +33,39 @@
           the KVM PXE. <codeblock>ip addr add &lt;CIDR> dev eth0
 ifconfig eth0 up</codeblock></li>
         <li> Set the default gateway to the PXE network gateway
-          <codeblock>route add default gw &lt;CIDR_gateway_IP&gt;</codeblock></li>
+          <codeblock>route add default gw &lt;CIDR_gateway_IP&gt;</codeblock></li></ol>
+  </section>
+    
+    <section><title>Download and install the required patches</title>
+      <p>The following patches must be installed in the KVM region</p>
+      <p><b>Install the KVM region license</b></p>
+      <p>The servers in the KVM region require a specific license file to be installed. You must
+        download this file from the <xref
+          href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
+          scope="external">HP Helion Download Network(HDN)</xref>. </p>
+      <p>Before installing the patch, make sure the KVM region controller-0 was properly installed
+        by the HP Helion OpenStack Carrier Grade installation. </p>
+      <ol id="ol_mdt_dd3_ys">
+        <li>In a browser, navigate to <xref
+          href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
+          scope="external">HP Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs">
+            <li>Click <b>Sign In</b> to log in using your account. </li>
+            <li>After signing in, click the <b>Downloads</b> link in the menu on the left side of
+              the page.</li>
+            <li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click
+              <b>Download</b>.</li>
+          </ul></li>
+        <li>Download and extract the <b id="productShow_appName">Helion Carrier Grade 1.1.0
+          Windriver License patch signature file</b> and the associated signature and checksum
+          files.  For information on performing verifications of the download, see the
+          Prerequistues. </li>
+        <li>Copy the <codeph>license.lic</codeph> file to KVM region <codeph>controller0</codeph> node to the 
+          <codeph>/home/wrsroot/</codeph> directory.</li>
+        <li>Restart <codeph>controller-0</codeph> to load the license file.</li>
+      </ol>
+      
+      <p><b>Apply KVM region patches</b></p>
+    <ol>
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
           controller-0:
           <ul><li>TS_15.05_PATCH_0001.patch  # HLM VM /root/cg-hlm/windriver-files</li>
@@ -44,15 +76,27 @@ ifconfig eth0 up</codeblock></li>
            <li>cakey.pem # HLM VM ~&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</li>
            <li>helion_branding-v1.3.tgz   # HLM VM /root/cg-hlm/windriver-files</li>
           </ul></li>
-        <li>Move the <codeph>helion_branding-v1.3.tgz</codeph> to <codeph>/opt/branding</codeph> on
-          the controller-0 </li>
-        <li>Apply the required patches on controller-0:
+        <li>Apply the required patches on controller-0. Execute the following commands for each
+          patch listed in the previous step and move the <codeph>helion_branding-v1.3.tgz</codeph>
+          to <codeph>/opt/branding</codeph> on the <codeph>controller-0</codeph>.
           <codeblock>sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0001.patch
-sudo wrs-patch apply TS_15.05_PATCH_0001
-sudo wrs-patch install-local
-sudo reboot       </codeblock></li>
-        <li>Install the KVM region coud: <codeblock>sudo config_region</codeblock> Ignore the
-          message which displays during <codeph>config_region</codeph> process.
+sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0002.patch
+sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HEAT.patch
+sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HORIZON.patch
+sudo wrs-patch apply /home/wrsroot/TS_15.05_PATCH_0001.patch
+sudo wrs-patch apply /home/wrsroot/TS_15.05_PATCH_0002.patch
+sudo wrs-patch apply /home/wrsroot/TS_15.05_DESIGN_PATCH_HEAT.patch
+sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HORIZON.patch
+sudo mv /home/wrsroot/helion_branding-v1.3.tgz
+sudo wrs-patch install-local /opt/branding</codeblock></li>
+        <li>Reboot <codeph>controller-0</codeph>.<codeblock>sudo reboot       </codeblock></li>
+    </ol>
+    </section><section><title>Install the KVM region cloud</title>
+      <ol>
+        <li>Execute the following command to install the KVM region cloud:
+              <codeblock>sudo config_region</codeblock><p><image
+              href="../../media/CGH-install-KVM.png" width="600" id="image_c2w_4kk_bt" height="198"
+            /></p>Ignore the message which displays during <codeph>config_region</codeph> process.
           <codeblock>Step 9 of 29 [####  ]dm-6 WRITE SAME failed. Manually zeroing.</codeblock></li>
         <li>After <codeph>controller-0</codeph> is deployed, deploy the remaining nodes as
             <codeph>controller-1</codeph> and <codeph>compute-'n'</codeph>.
@@ -76,7 +120,7 @@ password:  admin </codeblock></p><p><b>Important:</b> After
             logging in with the default password, make sure you change the password for the
               <codeph>admin</codeph> user. </p></li>
         <li>For each compute node in the inventory, do the following<ol id="ul_gss_srg_ms">
-            <li>Create Infra interface. See <xref
+            <li>Create the Infra interface. See <xref
                 href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
               /> or <i>Interfaces</i> in the Administrtor Guide.</li>
             <li>Create a Provider Network. See <xref
@@ -89,6 +133,9 @@ password:  admin </codeblock></p><p><b>Important:</b> After
             <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107">Create data
                 interface.</xref>  See <i>Configuring Endpoint IP Addresses</i> in the Administrator
               Guide.</li>
+            <li>Optionally, change the default CPU allocations and/or the default memory allocations
+              (huge pages) on each processor, such as the NUMA (Non-Uniform Memory Access) nodes.
+              See <i>Processor</i> in the Administrator Guide.</li>
           </ol></li>
         <li><xref
             href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
@@ -103,14 +150,12 @@ echo 0 > /proc/sys/net/ipv4/conf/eth0.&lt;CAN_VLAN_ID&gt;/rp_filter
 echo 0 > /proc/sys/net/ipv4/conf/eth0.&lt;CLM_VLAN_ID&gt;/rp_filter
 echo 1 > /proc/sys/net/ipv4/ip_forward </codeblock></li>
       </ol>
+  <!--   <p>Leave in workaround, per Naveen and Hrushi email 8/17</p>  --> 
     </section>
   
   <section id="next-step"> <title>Next Step</title>
     <p> Perform some required <xref href="carrier-grade-install-post-install.dita#topic1107"
           >post-installation tasks</xref>. </p>
   </section>
-  
-  
-  <section><!-- ===================== horizontal rule ===================== --></section>
 </body>
 </topic>

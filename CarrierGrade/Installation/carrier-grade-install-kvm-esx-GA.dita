@@ -148,13 +148,12 @@ VSD Server : auto </codeblock></li>
           of the dashboard.</li>
         <li>Click the <b>CSP Users</b> tab and click <b>+</b>.</li>
         <li>Create a user named <codeph>OSadmin</codeph> with the password <codeph>OSadmin</codeph>.
-          The name and password are case-sensitive. Do not copy and paste from here into the
-            field.
-          <p><image href="../../media/CGH-install-OSadmin.png" id="image_hlq_5dj_1t"
-            width="600"/></p></li>
+          The name and password are case-sensitive. Do not copy and paste from here into the field.
+              <p><image href="../../media/CGH-Install-VSD-create-user.png" id="image_pjz_wy3_bt"
+              width="600"/></p></li>
         <li>Add the user to the <codeph>CMS Group</codeph>.<p><image
-            href="../../media/CGH-install-OSadmin-group.png" width="600" id="image_pth_zdj_1t"
-        /></p></li>
+              href="../../media/CGH-install-VSD-user-to-group.png" width="600" id="image_q4m_sz3_bt"
+            /></p></li>
       </ol>
     </section>
     <!--<section><title>Install the DVswitch</title></section><section><p>The VMware® vNetwork Distributed Switch (vDS) enables you to manage virtual machine networking for a number of hosts in a datacenter using the VMware vSphere application </p><p>Please Refer to the DCN VSP 3.0 R7 installation Guide for DVswitch installation.</p></section>-->
@@ -170,26 +169,24 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
 Password: cghelion</codeblock>
           </p><p><b>Important:</b> After logging in with the default password, make sure you change
             the password for the <codeph>cghelion</codeph> user. </p></li>
-        <li>Execute the following command to run a script that disables the <codeph>root</codeph>
-          user. For security purposes, we strongly recommend disabling root.
-            <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock><p>This command will
-            disable the <codeph>root</codeph> user and perform the following tasks:</p><ul>
-            <li>remove the password for <codeph>root</codeph> from the <codeph>/etc/shadow
-                file</codeph>;</li>
-            <li>remove any and all keys in <codeph>/root/.ssh/authorized_keys</codeph> file;</li>
-            <li>change the <codeph>PermitRootLogin</codeph> variable in the
-                <codeph>/etc/ssh/sshd_config</codeph> file from <codeph>yes</codeph> to
-                <codeph>without-password</codeph> (the default value);</li>
-            <li>restart the SSH service to put the configuration chagnes into effect.</li>
-          </ul><p>When this command completes, use the <codeph>cghelion</codeph> user to access the
-            HLM VM. Any actions that require root access should be done using
-            <codeph>sudo</codeph>.</p></li>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
         <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
         <li>Provision and configure HP Helion
             OpenStack.<codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where:</p><ul>
-            <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.</li>
+            <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.<p>The cloud
+                name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
+                  chracter:<ul id="ul_lz5_rbf_bt">
+                  <li>
+                    <p>Cannot start or end with the <codeph>-</codeph> chracter;</p>
+                  </li>
+                  <li>
+                    <p>Must be greater than 0 characters;</p>
+                  </li>
+                  <li>
+                    <p>No restriction on the number of letters or digits (0 or more).</p>
+                  </li>
+                </ul></p></li>
             <li><codeph>memphis</codeph> is the name of the template to use. The installation kit
               includes a template called <codeph>memphis</codeph> designed to install HP Helion
               OpenStack, specific to the KVM + ESX deployment.</li>
@@ -206,7 +203,8 @@ Password: cghelion</codeblock>
           href="carrier-grade-install-pb-kvm-node-json.dita">Sample node-provision.json File for
           Installing the KVM + ESX Topology</xref>.</p>
       <ol id="ol_ub2_xfl_zs">
-        <li>Edit <codeph>node-provision.json</codeph> file to change only the following fields: <table>
+        <li>Edit <codeph>node-provision.json</codeph> file to change only the following fields: 
+          <table>
             <tgroup cols="2">
               <colspec colname="col1" colsep="1" rowsep="1"/>
               <colspec colname="col2" colsep="1" rowsep="1"/>
@@ -244,23 +242,6 @@ Password: cghelion</codeblock>
           </table><p>*iLO is HP Integrated Lights-Out, a server management tool embedded with the
             ProLiant servers. Consult your iLO documentation for information on how to locate the
             iLO IP address, user name, and password.</p></li>
-        <li>Remove the server assigned for second VRS-G.
-          <codeblock>,
-{
-      "name": "vrg2",
-      "pxe_mac_address": "d0:bf:9c:c0:ba:38",
-      "pxe_interface": "auto",
-      "pm_type": "ipmilan",
-      "pm_ip": "10.1.3.56",
-      "pm_user": "cghelion",
-      "pm_pass": "cghelion#",
-      "failure_zone": "fz2",
-      "node_group": <b>"VRG-001-001",</b>
-      "vendor": "HP",
-      "model": "DL680",
-      "os_partition_size": "20",
-      "data_partition_size": "80"
-      }    </codeblock></li>
         <li>Save and close the file.</li>
       </ol>
     </section>
@@ -387,12 +368,15 @@ Password: cghelion</codeblock>
       <ol>
         <li>On the HLM host, use the following script to start the provisioning of the HP Helion
           OpenStack cloud: <codeblock>hprovision &lt;cloudname&gt;          </codeblock><p>Where:
-              <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created.</p><p>This
-            script will PXE boot the nodes specified in <codeph>node-provision.json</codeph> file.
-            The script also tracks the PXE boot completion process and will create the
-              <codeph>nodes.json</codeph> file in the directory. </p><p>You can log in to the iLO
-            server management tool for each of the nodes to monitor the boot process. Consult yout
-            iLO documentation for information on how to log into iLO. </p></li>
+              <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created. The script
+            takes approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers
+            for the HP Helion OpenStack Carrier Grade cloud installation including the hLinux
+            operating system. The script also PXE boots the nodes specified in
+              <codeph>node-provision.json</codeph> file and tracks the PXE boot completion process.
+            The script also creates the <codeph>nodes.json</codeph> file in the directory.
+            </p><p>You can log in to the iLO server management tool for each of the nodes to monitor
+            the boot process. Consult yout iLO documentation for information on how to log into iLO.
+          </p></li>
         <li>Make sure the nodes are booted up using iLO. </li>
         <li>Once the baremetal nodes are provisioned, make sure the <codeph>nodes.json</codeph> file
           is generated. The <codeph>nodes.json</codeph> file will have entries of 3 controllers, 2
@@ -403,24 +387,57 @@ Password: cghelion</codeblock>
             <li>SSH to the compute proxy node from the HLM VM using IP specified in
                 <codeph>nodes.json</codeph> file.</li>
           </ol></li>
-        <li>Configure the VMware VMDK driver to enable management of the OpenStack Block Storage
-          volumes on vCenter-managed data stores:<ol id="ul_btr_l52_xs">
+        <li>Configure the back-end drivers to enable management of the OpenStack Block Storage
+          volumes on vCenter-managed data stores and 3PAR and/or VSA storage arrays. The HP Block
+          Storage (Cinder) service allows you to configure multiple storage back-ends. Use the
+          following steps to configure back-end support:<ol id="ul_btr_l52_xs">
             <li>Change to the <codeph>/cinder/blocks</codeph> directory:
               <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where
                 <codeph>&lt;cloudname></codeph> is the name you assigned to the cloud. The directory
               contains several sample Cinder configuration files that you can edit, depending upon
               which storage method(s) you are using.</li>
-            <li>Depending upon the type of storage you are using, edit one of the following files: <ul>
-                <li><codeph>cinder_conf.multiBackendSample</codeph> - if you plan to have ESX
-                  attached to the non-KVM region and HP StoreVirtual VSA or HP StoreServ (3PAR)
-                  attched to the KVM region;</li>
-                <li><codeph>cinder_conf.vmdksample</codeph> - if you are using ESX only.</li>
+            <li>Depending upon the type of storage you are using, edit the following file: <ul>
+                <li><codeph>cinder_conf.multiBackendSample</codeph> - this sample file provides all
+                  the variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA
+                  and/or HP StoreServ (3PAR) attched to the KVM region;</li>
               </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the
-                backends you are using. You can specify one, two, or all three backends in this
-                field.</p>
-              <b>For ESX storage</b> Edit the file to configure the ESX (VMDK) settings. For
-                  example:<codeblock>[DEFAULT]
-enabled_backends=vmdk
+                back-ends you are using. You must specify at least one back-end for the non-KVM
+                region and one or more for the KVM region.</p><table>
+                <tgroup cols="3">
+                  <colspec colname="col1" colsep="1" rowsep="1"/>
+                  <colspec colname="col2" colsep="1" rowsep="1"/>
+                  <colspec colname="col3" colsep="1" rowsep="1"/>
+                  <thead>
+                    <row>
+                      <entry colsep="1" rowsep="1">Region/Hypervisor</entry>
+                      <entry colsep="1" rowsep="1">Volume Backend</entry>
+                      <entry colsep="1" rowsep="1">Backend Name</entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry>KVM</entry>
+                      <entry>3PAR </entry>
+                      <entry>hp3par</entry>
+                    </row>
+                    <row>
+                      <entry>KVM</entry>
+                      <entry>VSA</entry>
+                      <entry>hplefthand</entry>
+                    </row>
+                    <row>
+                      <entry>Non-KVM </entry>
+                      <entry>ESX Datastores</entry>
+                      <entry>vmdk </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select
+                both if you have respective storage arrays </p><p>A typical
+                  <codeph>cinder_conf</codeph> that enables all three back ends appears similar to
+                the following example:</p>
+              <codeblock>[DEFAULT]
+enabled_backends=vmdk, hp3par, hplefthand
 ...                                
 [vmdk]
 volume_backend_name = &lt;mybackendname3>
@@ -431,10 +448,8 @@ vmware_volume_folder = &lt;volumes_folder>
 vmware_image_transfer_timeout_secs = 7200
 vmware_task_poll_interval = 0.5
 vmware_max_objects_retrieval = 100
-volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock><p><b>For
-                  3PAR storage </b>: Edit the file to configure the 3PAR settings. For
-                  example:</p><codeblock>[DEFAULT]
-enabled_backends=hp3par
+volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
+          
 [hp3par]
 volume_backend_name=&lt;mybackendname1>
 hp3par_api_url=https://&lt;management_ip>:8080/api/v1
@@ -449,10 +464,10 @@ volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 hp3par_debug=False
 hp3par_iscsi_chap_enabled=false
 hp3par_snapshot_retention=48
-hp3par_snapshot_expiration=72</codeblock><p><b>For
-                  VSA storage</b> Edit the file to configure the VSA (HP Lefthand) settings. For
-                example:</p><codeblock>[DEFAULT]
-enabled_backends=hplefthand
+hp3par_snapshot_expiration=72
+                            
+[hplefthand]
+volume_backend_name=&lt;mybackendname2>
 hplefthand_username = &lt;username>
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>
@@ -480,11 +495,65 @@ The configuration processor completed successfully.
             this command completes, all cloud nodes and CLM network interfaces are configured. The
             output for the command should appear similar to the following:</p><p><image
               href="../../media/CGH-install-hnetinit-output.png" id="image_tft_r11_1t"/></p></li>
+        <li>Apply the ESX compute proxy patch.<p>This patch fixes an intermittent issue where the
+            ESX compute proxy is not configured after the <codeph>hprovision</codeph> completes
+            successfully. The patch increase the timeout to allow enough time for the proxy VM to
+              boot.<ol id="ol_n4h_mxm_bt">
+              <li>On the HLM host, execute the following command to create directory for the patch
+                <codeblock>mkdir ~/patch_cghelion1.1\ </codeblock></li>
+              <li>Copy the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> to the
+                  <codeph>~/patch_cghelion1.1</codeph> directory. </li>
+              <li>Use the following command to extract the
+                  <codeph>compute_proxy_patch_1.1.tar.gz</codeph>:
+                <codeblock>tar -zxvf compute_proxy_patch_1.1.tar.gz</codeblock></li>
+              <li>Use the following command to install the Ubuntu patch
+                utility:<codeblock>apt-get install patch </codeblock></li>
+              <li>Change to the  <codeph>~/cg-hlm </codeph>
+                directory:<codeblock>cd ~/cg-hlm</codeblock></li>
+              <li>You can confirm that the patch will execute properly before performing the patch
+                operation  by executing the following
+                command:<codeblock>patch -p1 --dry-run &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock></li>
+              <li>The command shoild result in the following
+                message:<codeblock>checking file node-provision/hlm_provisionproxy.py</codeblock></li>
+              <li>Execute the following command to perform tha patching operation:
+                <codeblock>patch -p1 &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock>The
+                patch application returns the following message, if
+                successful:<codeblock> patching file node-provision/hlm_provisionproxy.py</codeblock></li>
+              <li>Change to the <codeph>~/cg-hlm/hlm-build</codeph>
+                folder:<codeblock>cd ~/cg-hlm/hlm-build</codeblock></li>
+              <li>Execute the following command to synch the patch
+                file:<codeblock>./hlm_prepare-env.sh</codeblock></li>
+            </ol></p></li>
+        <li>Apply the GRE patch. <p>This patch contains three files. The first file fixes an issue
+            with the iptables role failing during installation while enabling GRE in firewall in VRG
+            node. The other two files enable GRE on VRG node in iptables.</p><p>You should have
+            downloaded the patch files in the <xref
+              href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
+              >Prerequisites</xref>. If not, execute the following
+            command:<codeblock>apt-get install patch</codeblock></p><p>
+            <ol id="ol_kjd_hvm_bt">
+              <li>Extract the gre_patch_1.1.tar.gz file on the HLM host to any directory.</li>
+              <li> Change to the following directory:
+                <codeblock>cd /root/kenobi-configuration-processor</codeblock></li>
+              <li> Execute the following command:
+                <codeblock>patch -p1 &lt; &lt;path_to_patch_file>/GRE-related-installer-failure-fix.patch </codeblock></li>
+              <li>Change to the following directory:
+                <codeblock>cd /root/kenobi-node-configuration </codeblock></li>
+              <li>Execute the following command:
+                <codeblock>patch -p1 &lt; &lt;path_to_patch_file>/enabling-GRE-in-iptables-for-VRG.patch </codeblock></li>
+              <li>Execute the following command:
+                <codeblock>~/cg-hlm/hlm-build/./hlm_prepare-env.sh</codeblock></li>
+              <li>Verfiy that the GRE is enabled in iptables on VRG node by running the following
+                command on the VRG node:<codeblock>iptables -S | grep gre</codeblock> The following
+                output should appear: <codeph>A ufw-before-input -p gre -j ACCEPT</codeph>. </li>
+            </ol>
+          </p></li>
         <li>Use the following command to deploy the HP Helion OpenStack cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>This command takes a
             significant period of time. When this command is complete, the non-KVM cloud
             installation is complete. Use the following sections to configure the Horizon interface,
             configure networking, and configure the ESX environment. </p></li>
+        <li>Apply the LDAP patch. <!--Details forthcoming--></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
     </section>
