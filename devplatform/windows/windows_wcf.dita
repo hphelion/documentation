@@ -3,7 +3,7 @@
 <topic id="topic_u2d_gxj_bt">
   <title>Deploying a WCF Service to a Windows DEA Cluster</title>
   <body>
-    <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
+    <section><ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
       Microsoft Corporation in the United States and/or other countries.</i></ph>
     <p>This topic describes how to deploy a basic Windows Communication Foundation (WCF) service to a Windows DEA cluster. For the purposes of this tutorial, you will create
     a WCF web service with one method, deploy it to a Windows DEA cluster, and create a basic client application to test the service.</p>
@@ -14,6 +14,7 @@
       <li><xref type="section" href="topic_u2d_gxj_bt/deploy">Deploying the service application</xref></li>
       <li><xref type="section" href="topic_u2d_gxj_bt/client">Creating and running the test client</xref></li>
     </ul>
+    </section>
     <section id="prerequisites"><title>Prerequisites</title>
     <p>This tutorial requires the following:</p>
       <ul>
