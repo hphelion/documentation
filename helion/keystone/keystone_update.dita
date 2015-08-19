@@ -4,7 +4,7 @@
   <title>Updating Keystone</title>
   <body>
 
-    <section><title>Updating Keystone </title> HP Helion OpenStack&#174; allows you to perform
+    <section><title>Updating Keystone </title>HP Helion OpenStack&#174; allows you to perform
       updates on the following parts of the Identity service configuration: <ul>
         <li>The main Keystone configuration file: <b>/etc/keystone/keystone.conf</b> Here you can
           manipulate Keystone configuration parameters and enable experimental features, such as
