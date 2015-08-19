@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_omx_srg_ws">
+  <title>Beta 1: Minimum Hardware Requirements For ESX</title>
+  <body>
+    <section id="SupportedConfigs">
+      <title>Supported Configurations</title>
+      <p>HP supports the following configurations for HP Helion <tm tmtype="reg">OpenStack</tm>
+        deployment:</p>
+      <p>Storage Interconnects/Protocols</p>
+      <ul>
+        <li>1Gb or 10Gb Eth.</li>
+        <li>Software iSCSi</li>
+      </ul>
+    </section>
+    <section id="HardwareRequirements">
+      <title>Hardware Requirements</title>
+      <p>You must have the following hardware configuration:</p>
+      <ul>
+        <li>1 dedicated NIC for PXE installation. Note: This will disappear in future Beta
+          releases.</li>
+        <li>2 additional NICs for networking</li>
+      </ul>
+      <?oxy_delete author="sharmabi" timestamp="20150819T154844+0530" content="&lt;note&gt;For Swift deployment, two disk drives are required on each of the three controller nodes.&lt;/note&gt;"?>
+    </section>
+    <section id="MinimumRequirements">
+      <title>Minimum Node Requirements</title>
+      <table>
+        <tgroup cols="7">
+          <colspec colname="c1" colnum="1" colwidth="1.17*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.42*"/>
+          <colspec colname="c2" colnum="3" colwidth="1*"/>
+          <colspec colname="c2" colnum="4" colwidth="1.23*"/>
+          <colspec colname="c2" colnum="5" colwidth="1.23*"/>
+          <colspec colname="c2" colnum="6" colwidth="1.7*"/>
+          <colspec colname="c2" colnum="7" colwidth="1.29*"/>
+          <thead>
+            <row>
+              <entry>Node Type</entry>
+              <entry>Role Name</entry>
+              <entry>Required Number</entry>
+              <entry>Disk</entry>
+              <entry>Memory</entry>
+              <entry>Network</entry>
+              <entry>CPU</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Deployer</entry>
+              <entry>Deployer</entry>
+              <entry>1</entry>
+              <entry> 512 GB (Min.)</entry>
+              <entry>8 GB</entry>
+              <entry>
+                <ul id="ul_i21_xqh_ws">
+                  <li>1 x 1 Gb with PXE Support</li>
+                  <li>2 x 1 Gb or 2 x10 Gb</li>
+                </ul>
+              </entry>
+              <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+            <row>
+              <entry>Controller</entry>
+              <entry>OvercloudControl</entry>
+              <entry>3</entry>
+              <entry>3 X 512 GB (Min.)</entry>
+              <entry>32 GB</entry>
+              <entry>
+                <ul id="ul_vzb_1rh_ws">
+                  <li>1 x 1 Gb with PXE Support</li>
+                  <li>2 x 1 Gb or 2 x10 Gb</li>
+                </ul>
+              </entry>
+              <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+            <row>
+              <entry>Compute<?oxy_insert_start author="sharmabi" timestamp="20150819T154727+0530"?>-
+                remove<?oxy_insert_end?></entry>
+              <entry>For
+                <?oxy_delete author="sharmabi" timestamp="20150819T153120+0530" content="one"?><?oxy_insert_start author="sharmabi" timestamp="20150819T153120+0530"?>1<?oxy_insert_end?>
+                cluster <?oxy_insert_start author="sharmabi" timestamp="20150819T153122+0530"?>1
+                compute node.<?oxy_insert_end?>wih 4 ESX nodes, it requires one compute node and 4
+                OVSvApp nodes which will be deployed as VM in the same cluster.</entry>
+              <entry><?oxy_insert_start author="sharmabi" timestamp="20150819T153653+0530"?>4<?oxy_insert_end?></entry>
+              <entry><?oxy_insert_start author="sharmabi" timestamp="20150819T153325+0530"?>40 GB
+                (Shared across storage <?oxy_insert_end?></entry>
+              <entry><?oxy_insert_start author="sharmabi" timestamp="20150819T153333+0530"?>4GB<?oxy_insert_end?></entry>
+              <entry/>
+              <entry><?oxy_insert_start author="sharmabi" timestamp="20150819T153343+0530"?>2
+                CPU<?oxy_insert_end?></entry>
+            </row>
+            <?oxy_insert_start author="sharmabi" timestamp="20150819T154020+0530"?>
+            <row>
+              <entry>Compute</entry>
+              <entry>1 vCenter with 2 ESX  nodes under one cluster</entry>
+              <entry>2</entry>
+              <entry>1 TB (min) (Shared across all  nodes)</entry>
+              <entry>128 GB</entry>
+              <entry>2 x 1 Gb or 2 x10 Gb</entry>
+              <entry>16 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+            <?oxy_insert_end?>
+            <row>
+              <entry>OVSvAPP<?oxy_insert_start author="sharmabi" timestamp="20150819T154548+0530"?>
+                (not required for  now)<?oxy_insert_end?></entry>
+              <entry>d<?oxy_delete author="sharmabi" timestamp="20150819T153131+0530" content="o need this as separate"?><?oxy_insert_start author="sharmabi" timestamp="20150819T153132+0530"?>
+                1 host 1 OVSvAPP node<?oxy_insert_end?></entry>
+              <entry><?oxy_insert_start author="sharmabi" timestamp="20150819T153225+0530"?>1 host 1
+                OVSvAPP node<?oxy_insert_end?></entry>
+              <entry/>
+              <entry><?oxy_insert_start author="sharmabi" timestamp="20150819T153424+0530"?>4GB<?oxy_insert_end?></entry>
+              <entry/>
+              <entry><?oxy_insert_start author="sharmabi" timestamp="20150819T153349+0530"?>2
+                CPU<?oxy_insert_end?></entry>
+            </row>
+            <row>
+              <entry>VSA Server (Optional)</entry>
+              <entry>OvercloudVSAStorage</entry>
+              <entry>0, 1, or 3</entry>
+              <entry>3 X 512 GB (Min.)</entry>
+              <entry>32 GB</entry>
+              <entry>
+                <ul>
+                  <li>1 x 1 Gb with PXE Support</li>
+                  <li>2 x 1 Gb or 2 x10 Gb</li>
+                </ul>
+              </entry>
+              <entry>
+                <p>8 CPU (64-bit) cores total (can be Intel or AMD)</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </body>
+</topic>
+<?oxy_options track_changes="on"?>
