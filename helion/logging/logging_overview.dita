@@ -213,7 +213,7 @@ cat /root/work/tripleo/tripleo-undercloud-passwords
       <p>To configure logging, modify the <codeph>roles/logging-common/defaults/main.yml</codeph>
         file as needed then reconfigure. To turn enable or disable logging for a service, for
         example, set it in this file and reconfigure:</p>
-      <codeblock>  
+      <codeblock>
 logr_services:
   rabbitmq:
     files:
