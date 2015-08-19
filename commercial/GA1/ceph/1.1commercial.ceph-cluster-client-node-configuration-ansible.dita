@@ -458,7 +458,7 @@ seed0   ansible_ssh_private_key_file=seed-id_rsa.private
     </p>
     <section><b>Integration of Ceph with HOS components</b><p>Perform the following steps to
         integrate ceph with HOS components</p><ol id="ol_h12_vpp_xs">
-        <li>Login to Seed VM.<codeblock>ssh &lt;seed IP address></codeblock></li>
+        <li>Login to Seed VM.<codeblock>ssh root@ &lt;seed IP address></codeblock></li>
         <li>Source the environment variables file created during initial
           installation.<codeblock><systemoutput># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name></systemoutput></codeblock></li>
         <li>Execute the following command with a specific options (refer table below) to integrate
@@ -512,7 +512,7 @@ seed0   ansible_ssh_private_key_file=seed-id_rsa.private
             </simpletable>
           </p></li>
         <li>Execute the following command to update the cloud:<codeblock><systemoutput>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log</systemoutput></codeblock><p>
-            <note>(<b>Mandatory</b>)Please execute step <b>3</b> and <b>4</b> before updating the
+            <note>(<b>Mandatory</b>) Please execute step <b>3</b> and <b>4</b> before updating the
               cloud or for any scale operation .</note>
           </p></li>
         <li>To move from one configuration to another choose the appropriate command for the new
