@@ -1,38 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task id="task_j1s_nst_xs">
-    <title>Deploying a WCF application to a Windows DEA cluster</title>
-    <shortdesc>Windows applications running in Windows DEA clusters on Helion OpenStack or Helion Public Cloud are not limited to Web Applications and Web Sites. This tutorial demonstrates how to deploy a WCF application.</shortdesc>
-    <taskbody>
-        <context>
-            <p>This tutorial will demonstrate how to deploy the WCF Getting Started sample application to a Windows DEA cluster running on Helion Public Cloud.</p>
-            <p><b>Prerequisites</b></p>
-            <p>This tutorial requires the following:</p>
-            <ul>
-                <li>A Helion OpenStack Public Cloud account wih a Windows DEA cluster.</li>
-                <li>The WCF Getting Started sample application. This sample can be found in the download package <xref href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=21459" scope="external" format="html">here</xref>.</li>
-                <li>Any edition of Visual Studio 2013, including the Community (free) edition, with the following packages installed:
-                    <ul>
-                        <li>Cloud Foundry MSBuild Tasks version 1.3</li>
-                        <li>Cloud Foundry Extensions for Visual Studio</li>
-                    </ul>
-                </li>
-            </ul>
-        </context>
-        <steps>
-            <step>
-                <cmd>Open &lt;<i>samples directory</i>&gt;/WCF/Basic/GettingStarted/CS/GettingStarted.sln in Visual Studio 2013.</cmd>
-                <info>You will be warned that the application will need to be upgraded. Click OK.
-                    <image href="../../media/windows_wcf_convert.png" placement="break"/></info>
-            </step>
-            <step>
-                <cmd>Set both projects to .NET Framework 4.5</cmd>
-            </step>
-            <step><cmd>In service.cs, set the namespace to Server</cmd></step>
-            <step><cmd>Remove SecurityPermissionAttribute from both projects</cmd></step>
-            <step><cmd>Install cloud foundry MSBuild tasks</cmd></step>
-            <step><cmd>Publish <font color="red">(This to change from 1.2 version)</font></cmd></step>
-            <step><cmd>Set the endpoint in the client's </cmd></step>
-        </steps>
-    </taskbody>
-</task>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_u2d_gxj_bt">
+  <title>Deploying a WCF Service to a Windows DEA Cluster</title>
+  <body>
+    <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
+      Microsoft Corporation in the United States and/or other countries.</i></ph>
+    <p>This topic describes how to deploy a basic Windows Communication Foundation (WCF) service to a Windows DEA cluster. For the purposes of this tutorial, you will create
+    a WCF web service with one method, deploy it to a Windows DEA cluster, and create a basic client application to test the service.</p>
+    <p>This topic contains the following sections:</p>
+    <ul>
+      <li><xref type="section" href="topic_u2d_gxj_bt/prerequisistes">Prerequisites</xref></li>
+      <li><xref type="section" href="topic_u2d_gxj_bt/service">Creating the web service application</xref></li>
+      <li><xref type="section" href="topic_u2d_gxj_bt/deploy">Deploying the service application</xref></li>
+      <li><xref type="section" href="topic_u2d_gxj_bt/client">Creating and running the test client</xref></li>
+    </ul>
+    <section id="prerequisites"><title>Prerequisites</title>
+    <p>This tutorial requires the following:</p>
+      <ul>
+        <li>Visual Studio 2013. Any edition is supported, including the Community (Free) edition.</li>
+        <li>Cloud Foundry Extensions and Cloud Foundry MSBuild tasks. See 
+          <xref href="windows_tools_guide.dita#topic_w5z_kcw_js/cloudfoundryextensions" type="section"> Windows and .NET Tools Guide: Cloud Foundry Explorer</xref> and 
+          <xref href="windows_tools_guide.dita#topic_w5z_kcw_js/msbuild" type="section">Windows and .NET Tools Guide: MSBuild Tasks</xref> for more details. </li>
+      </ul>
+    </section>
+    <section id="service"><title>Creating the web service application</title>
+    <p>In this section, you'll create a Web application and add a WCF service.</p>
+      <note>The Cloud Foundry MSBuild tasks only support deploying a Web Application or a Web Site; other application types, such as WCF, are not supported.</note>
+      <ol>
+        <li>Open Visual Studio 2013. Select <b>File</b>, <b>New...</b></li>
+        <li>In the <b>Templates</b> pane, select the <b>Visual C#</b> node, and select <b>Web</b>. Select <b>ASP.NET Web Application</b>, name the project <b>HelionWCF</b>, and click <b>OK</b>.
+        <image placement="break" href="../../media/windows_wcf_create_1.png"></image></li>
+        <li>In the <b>New ASP.NET Project</b> window, leave the settings as they are and click <b>OK</b>.
+          <image placement="break" href="../../media/windows_wcf_create_2.png"></image></li>
+        <li>In <b>Solution Explorer</b>, right-click the <b>HelionWCF</b> project and select <b>Add...</b>, <b>New Item</b>.</li>
+        <li>Select <b>Web</b> in the left pane if it isn't selected already. Scroll down the middle pane and select <b>WCF Service</b>. Click <b>OK</b>.
+          <image placement="break" href="../../media/windows_wcf_create_3.png"></image></li>
+        <li>Change the contents of <b>IService1.cs</b> (the service interface definition) to the following:
+        <codeblock>using System.ServiceModel;
+using System.Text;
+
+namespace HelionWCF
+{
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
+    [ServiceContract]
+    public interface IService1
+    {
+        [OperationContract]
+        <span style="background-color: #FFFF00">double DoubleIt(double numToDouble);</span>
+    }
+}</codeblock></li>
+      </ol>
+    </section>
+    <section id="deploy"><title>Deploying the web service application</title>
+      <p></p>
+    </section>
+    <section id="client"><title>Creating and running the test client</title>
+      <p></p>
+    </section>
+  </body>
+</topic>
