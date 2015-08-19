@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring LDAP 3</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring LDAP CLI
+    Support</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -13,63 +14,82 @@
   </metadata>
 </prolog>
 <body>
-  <p>If you installed HP Helion OpenStack Carrier Grade 1.1, your system was configured to use LDAP v2. 
-    LDAP (Lightweight Directory Access Protocol) is a protocol that programs 
-    use to look up information from a server. </p>
+  <p>In order to enable LDAP users to exercise CLI's across all the modules, following changes needs
+      to be done on all the controller nodes:</p>
   <p>This document explains how to configure HP Helion OpenStack to use LDAP v3. </p>
-  <p><b>NOTE:</b> If you installed HP Helion OpenStack Carrier Grade after *****, you do not need to perform these steps.
-  Your installation configured LDAP v3 upon installation.</p>
   <ol>
     <li>Log into the HLM host.</li>
-    <li>Execute the following commands to modify the <codeph>stackrc</codeph> file. 
-      The <codeph>stackrc</codeph> file is a configuration file contains all of the settings 
-      that control the services started and the repositories used to download the source for those services.
-      <codeblock>
-        export OS_PASSWORD=admin
-        export OS_USERNAME=admin
-        export OS_TENANT_NAME=admin
-        export OS_AUTH_URL=https://10.200.52.100:5000/v2.0
-        export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
-        export OS_REGION_NAME=memphis
-        unset OS_PROJECT_DOMAIN_NAME
-        unset OS_USER_DOMAIN_ID
-        unset OS_IDENTITY_API_VERSION
-        unset OS_AUTH_VERSION
-        unset OS_PROJECT_NAME
-      </codeblock></li>
-    <li>Execute the following commands to source the <codeph>stackrc</codeph> file:
-      <codeblock>source stackrc</codeblock></li>
+      <li>If you did not perform this step in the <xref
+          href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall">Prerequisites</xref>,
+        create a patch folder to store the patch file and copy the
+          <codeph>ldap_patch_1.1.tar.gz</codeph> and <codeph>hoscg-update.tgz</codeph> patches file
+        to that directory.<codeblock>mkdir ~/patch_cghelion1.1/ </codeblock></li>
+      <li>Extract <codeph>ldap_patch_1.1.tar.gz</codeph> file to the
+          <codeph>~/patch_cghelion1.1</codeph> directory.
+        <codeblock>- tar -zxvf ldap_patch_1.1.tar.gz </codeblock></li>
+  </ol>
+
+  <section><title>Modify the <codeph>stackrc</codeph> files</title>
+    <p>The <codeph>stackrc</codeph> file is a
+      configuration file contains all of the settings that control the services started and the
+      repositories used to download the source for those services.</p>
+    <ol>
+    <li>Modify the <codeph>stackrc</codeph> file. 
+        <codeblock>export OS_PASSWORD=admin
+export OS_USERNAME=admin
+export OS_TENANT_NAME=admin
+export OS_AUTH_URL=https://10.200.52.100:5000/v2.0
+export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
+export OS_REGION_NAME=memphis
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_USER_DOMAIN_ID
+unset OS_IDENTITY_API_VERSION
+unset OS_AUTH_VERSION
+unset OS_PROJECT_NAME</codeblock></li>
+    <li>Execute the following commands to source the <codeph>stactrcv3</codeph> file:
+        <codeblock>source stactrcv3</codeblock></li>
     <li>Execute the following OpenStack CLI command to create a new project:
-      <codeblock>openstack project create ldapdemo --domain americas </codeblock>
-    </li>
-    <li>Make note of the <codeph>domain-id</codeph> in the command output.</li>
+        <codeblock>openstack project create ldapdemo --domain americas </codeblock></li>
+    <li>Make note of the <codeph>domain-id</codeph>.</li>
     <li>Execute the following command to list all user names:
-      <codeblock>openstack user list --domain Americas</codeblock>
-    </li>
+        <codeblock>openstack user list --domain Americas</codeblock></li>
     <li>Make note of the ID number for the <codeph>cg-ldap-admin</codeph> user.</li>
-    <li>Execute the following command to add the <codeph>cg-ldap-admin</codeph> user to the project you created as an admin.
-      <codeblock>openstack role add --user &lt;user id> --project ldapdemo admin</codeblock>
-    </li>
-    <li>Execute the following commands to source the <codeph>stackrc</codeph> file:
-      <codeblock>source stackrc</codeblock></li>
-    <li>Execute the following commands to modify the <codeph>stackrc</codeph> file. 
-      The <codeph>stackrc</codeph> file is a configuration file contains all of the settings 
-      that control the services started and the repositories used to download the source for those services.
-      <codeblock>
-        export OS_USERNAME=ldapuser1
-        export OS_PASSWORD=init123#
-        export OS_PROJECT_NAME=ldap_project1
-        export OS_TENANT_NAME=ldap_project1
-        export OS_PROJECT_DOMAIN_NAME=americas
-        export OS_USER_DOMAIN_ID=c1f0e239545f428fb53128650ae23771
-        export OS_IDENTITY_API_VERSION=3 export OS_AUTH_VERSION=3
-        export OS_AUTH_URL=https://10.20.4.100:5000/v3
-        export OS_AUTH_URL=http://10.20.3.103:35357/v3
-        export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
-        export OS_REGION_NAME=memphis
-      </codeblock>
-    </li>
-    <li>Edit the <codeph>/etc/nova/nova.conf</codeph> file to comment out the following line:
+    <li>Execute the following command to add the <codeph>cg-ldap-admin</codeph> user from the
+        previous step to the project you created as an admin.
+        <codeblock>openstack role add --user &lt;user id> --project ldapdemo admin</codeblock></li>
+    <li>Execute the following commands to again source the <codeph>stactrcv3</codeph> file:
+        <codeblock>source stactrcv3</codeblock></li>
+    <li>Modify the <codeph>stactrcv3</codeph> file.
+        <codeblock>export OS_USERNAME=&lt;ldapusername>
+export OS_PASSWORD=&lt;ldapuserpassword>
+export OS_PROJECT_NAME=ldapdemo
+export OS_TENANT_NAME=ldapdemo
+export OS_PROJECT_DOMAIN_NAME=americas
+export OS_USER_DOMAIN_ID=&lt;DOMAIN_GUID>
+export OS_IDENTITY_API_VERSION=3 
+export OS_AUTH_VERSION=3 [ Move this to the next line]
+export OS_AUTH_URL=&lt;CAN_AUTH_URL> 
+#export OS_AUTH_URL=&lt;CLM_AUTH_URL>
+export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
+export OS_REGION_NAME=memphis         </codeblock></li>
+    </ol>
+  </section>
+  <section><title>Install the HP Identity Operations (Keystone) package on all the controllers</title>
+    <ol>
+      <li>On the HLM node, copy the <codeph>hoscg-update.tgz</codeph> to the <codeph>~/&lt;Cloud
+            Name></codeph> directory.</li>
+      <li>Execute the following command, using your cloudname and failure-zone:
+          <codeblock>hupdate -c &lt;cloudName> -f &lt;failureZone> hoscg-update.tgz</codeblock></li>
+    </ol>
+        <p>Where:<ul id="ul_lcw_gbs_bt">
+          <li>&lt;cloudName> is the name of your cloud</li>
+          <li>&lt;failureZone></li>
+        </ul>   This command has to be run for 3 controllers nodes with different failure zones</p>
+  </section>
+  <section><title>Configure Controllers</title>
+ <p>On each of the three non-KVM region conrollers, you meed to perform the following tasks:</p>    
+  <ol>
+  <li>Edit the <codeph>/etc/nova/nova.conf</codeph> file to comment out the following line:
       <codeblock>#auth_version = 2.0</codeblock>
     </li>
     <li>Modify the <codeph>/etc/cinder/api-paste.ini</codeph>  file as follows:
@@ -84,18 +104,70 @@
       <p>Replace <codeph>paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory</codeph></p>
       <p>With: <codeph>paste.filter_factory = keystonemiddleware.auth_token:filter_factory</codeph></p>
     </li>
-    <li>Modify the <codeph>/etc/glance/glance-registry.conf</codeph> file as follows:
-      <p>Replace <codeph>paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory</codeph></p>
-      <p>With: <codeph>paste.filter_factory = keystonemiddleware.auth_token:filter_factory</codeph></p>
-    </li>
+    <li>Modify the <codeph>/etc/glance/glance-registry.conf</codeph> file as follows: <p>Replace
+            <codeph>paste.filter_factory =
+            keystoneclient.middleware.auth_token:filter_factory</codeph></p><p>With:
+            <codeph>paste.filter_factory =
+        keystonemiddleware.auth_token:filter_factory</codeph></p></li>
     <li>Execute the following commands to restart affected OpenStack services:
-      <codeblock>
-        service glance-registry restart
-        service glance-api restart
-        service cinder-api restart
-        service nova-api restart
-      </codeblock>
-    </li>
+        <codeblock>service glance-registry restart
+service glance-api restart
+service cinder-api restart
+service nova-api restart</codeblock>
+      </li>
+    <li>Modify the stackrcv3 file:
+        <codeblock>
+export OS_USERNAME=cg-ldap
+export OS_PASSWORD=cg-ldap
+export OS_PROJECT_NAME=ldapdemo
+export OS_TENANT_NAME=ldapdemo
+export OS_PROJECT_DOMAIN_NAME=americas
+export OS_USER_DOMAIN_ID=48b0aac906394e99855af16bfdbd9d32
+export OS_IDENTITY_API_VERSION=3
+export OS_AUTH_VERSION=3
+export OS_AUTH_URL=https://10.20.4.100:5000/v3
+#export OS_AUTH_URL=http://10.20.3.103:35357/v3
+export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
+export OS_REGION_NAME=regionone
+root@B53DEMO-CCP-T2-M1-NETCLM:~#         </codeblock></li>
+      <li>Execute a <codeph>glance image-list</codeph>
+          command.<codeblock>glance image-list</codeblock><p>The output of the command appears
+          similar to the
+        following:</p><codeblock>
+/opt/stack/venvs/python-glanceclient/local/lib/python2.7/site-packages/requests/packages/urllib3/connection.py:251: SecurityWarning: Certificate has no `subjectAltName`, falling back to check for a `commonName` for now. This feature is being removed by major browsers and deprecated by RFC 2818. (See https://github.com/shazow/urllib3/issues/497 for details.)
+SecurityWarning
+/opt/stack/venvs/python-glanceclient/local/lib/python2.7/site-packages/requests/packages/urllib3/connection.py:251: SecurityWarning: Certificate has no `subjectAltName`, falling back to check for a `commonName` for now. This feature is being removed by major browsers and deprecated by RFC 2818. (See https://github.com/shazow/urllib3/issues/497 for details.)
+SecurityWarning
++--------------------------------------+-------------+-------------+------------------+------------+--------+
+| ID                                   | Name        | Disk Format | Container Format | Size       | Status |
++--------------------------------------+-------------+-------------+------------------+------------+--------+
+| 46ffcdbb-e393-4730-8e4e-8592394bbc15 | cirros      | vmdk        | bare             | 18743296   | active |
+| e25e8f97-c130-4a82-8988-05483cd7701d | cirros-qcow | qcow2       | bare             | 13200896   | active |
+| 49ee2a3a-eb0e-4e14-a7aa-24e459f4497e | cirros-test | qcow2       | bare             | 13147648   | active |
+| 57fc3e34-910f-49e6-9277-a46ed8156b42 | rhel65vmdk  | vmdk        | bare             | 1001783296 | active |
++--------------------------------------+-------------+-------------+------------------+------------+--------+
+</codeblock>
+      </li>
   </ol>
+</section>
+  <section><title>Run the patch file</title>
+  <ol>
+    <li>On the HML host excute the following command to launch the patch installation:
+      <codeblock>hupdate -c b53demo -f fz2 hoscg-update.tgz</codeblock></li>
+  </ol>
+    <p>The command outut ends with the following upon completion:</p>
+    <codeblock>
+      PLAY RECAP ********************************************************************
+      B53DEMO-CCP-CPN-N0001-NETCLM : ok=10   changed=0    unreachable=0    failed=0
+      B53DEMO-CCP-T1-M1-NETCLM   : ok=4    changed=0    unreachable=0    failed=0
+      B53DEMO-CCP-T1-M2-NETCLM   : ok=4    changed=0    unreachable=0    failed=0
+      B53DEMO-CCP-T2-M1-NETCLM   : ok=25   changed=0    unreachable=0    failed=0
+      B53DEMO-CCP-T2-M2-NETCLM   : ok=52   changed=47   unreachable=0    failed=0
+      B53DEMO-CCP-T2-M3-NETCLM   : ok=25   changed=0    unreachable=0    failed=0
+      B53DEMO-CCP-VRG-N0001-NETCLM : ok=4    changed=0    unreachable=0    failed=0
+      B53DEMO-CCP-VRG-N0002-NETCLM : ok=4    changed=0    unreachable=0    failed=0
+      localhost                  : ok=6    changed=2    unreachable=0    failed=0
+    </codeblock>
+  </section>
   </body>
 </topic>
