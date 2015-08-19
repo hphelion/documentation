@@ -1,8 +1,9 @@
 #     redirect-from redirect-to
 #     Example:
 #
-#     path/from/root/to/old-file.html #path/from/root/to/new-file.html
+#     path/from/root/to/old-file.html path/from/root/to/new-file.html
 #
-#     Note that the first path does not begin with the '#' symbol, but the second path does.
+#     Note that the '#' symbol is not included.
 #
 devplatform/1.1devplatform.ALS-developer-trial-quick-start.html devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html
+devplatform/1.1devplatform.index.html devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html
