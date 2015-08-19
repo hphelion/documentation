@@ -5,4 +5,4 @@
 #
 #     Note that the first path does not begin with the '#' symbol, but the second path does.
 #
-devplatform/1.1devplatform.ALS-developer-trial-quick-start.html #devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html
+devplatform/1.1devplatform.ALS-developer-trial-quick-start.html devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html
