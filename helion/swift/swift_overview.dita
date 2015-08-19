@@ -16,19 +16,27 @@
           Keystone authentication service. </li>
         <li> The <i>storage</i> services group is composed of Swift Object Servers and various
           background services such as replicators. <p>Each of the service group can be scaled
-            independently to meet workload and redundany requirements. The storage service can
-            scaled up as necessary. It can also be horizontally scalable to handle an increased
-            number of simultaneous connections as well as large number of objects.</p></li>
+            independently to meet workload and
+            <?oxy_delete author="sharmabi" timestamp="20150819T121157+0530" content="redundany"?><?oxy_insert_start author="sharmabi" timestamp="20150819T121157+0530"?>redundancy<?oxy_insert_end?>
+            requirements. The storage service can scaled up as necessary. It can also be
+            horizontally scalable to handle an increased number of simultaneous connections as well
+            as large number of objects.</p></li>
       </ul></p>
-    <p>Based on OpenStack® Object Sotrage, the HP Helion OpenStack® Object Storage service provides
-      a highly available, resilient, and scalable storage pool for unstructured data. It is highly
-      durable architecture with no single point of failure. Apart from this, HP Helion OpenStack
-      introduces a concept of cloud input model. It allows you to define Swift-specific details like
-      disk and server role of your choice based on the hardwares available. </p>
+    <p>Based on OpenStack® Object
+      <?oxy_delete author="sharmabi" timestamp="20150819T121204+0530" content="Sotrage"?><?oxy_insert_start author="sharmabi" timestamp="20150819T121204+0530"?>Storage<?oxy_insert_end?>,
+      the HP Helion OpenStack® Object Storage service provides a highly available, resilient, and
+      scalable storage pool for unstructured data. It is highly durable architecture with no single
+      point of failure. Apart from this, HP Helion OpenStack introduces a concept of cloud input
+      model. It allows you to define Swift-specific details like disk and server role of your choice
+      based on the
+      <?oxy_delete author="sharmabi" timestamp="20150819T121211+0530" content="hardwares"?><?oxy_insert_start author="sharmabi" timestamp="20150819T121211+0530"?>hardware<?oxy_insert_end?>
+      available. </p>
     <p>
       <ul>
         <li><b>Disk model</b>- The disk model describes the number of disk present on a particular
-          server and its usage.Some disks are used by the operating system (e.g. root, log, crash
+          server and its
+          <?oxy_delete author="sharmabi" timestamp="20150819T121215+0530" content="usage.Some"?><?oxy_insert_start author="sharmabi" timestamp="20150819T121215+0530"?>usage.
+          Some<?oxy_insert_end?> disks are used by the operating system (e.g. root, log, crash
           filesystems) and others for Swift storage. For a Swift system there are two disk models-
           Swift proxy servers (which may hold the account and container data) and Swift object
           servers. </li>
@@ -52,7 +60,8 @@
     <p>
       <ul id="ul_hdc_qwz_1t">
         <li>Proxy Server</li>
-        <li>Accounts and Conatainers</li>
+        <li>Accounts and
+          <?oxy_delete author="sharmabi" timestamp="20150819T121236+0530" content="Conatainers"?><?oxy_insert_start author="sharmabi" timestamp="20150819T121236+0530"?>Containers<?oxy_insert_end?></li>
         <li>Objects</li>
         <li>Rings</li>
         <li>Zone</li>

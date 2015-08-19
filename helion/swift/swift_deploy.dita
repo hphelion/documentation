@@ -34,7 +34,7 @@
     <p>The disk model describes the number of disk present on a particular server and its usage.
       Disk are used by the operating system (for example: for the root, log crash filesystem) and
       swift storage.</p>
-    <p>A disk model specifies a number of disk drives/devices and then alloctes them for a specific
+    <p>A disk model specifies a number of disk drives/devices and then allocates them for a specific
       purpose. The general syntax is as follows:</p>
     <p>
       <codeblock>device-groups:
@@ -120,11 +120,11 @@
         account database, and individual objects, but each rings works similarly. The rings are
         built and managed manually by a utility called the ring-builder. The ring-builder also keeps
         its own builder file with the ring information and additional data required to build future
-        rings.</p><p>Using the ring -sepcification key you can specify the ring in the input model.
+        rings.</p><p>Using the ring -specification key you can specify the ring in the input model.
         Also, there is an entry for each distinct Swift system. Therefore, in the input model
         keystone region name in the specified in the <b>region-name</b>. </p><p>In the example files
           (<b>do we have any such file in build</b>??), a ring-specification is located in
-          <codeph>config/swift/rings.yml</codeph> file.The sample of <codeph>rings.yml</codeph> is
+          <codeph>config/swift/rings.yml</codeph> file. The sample of <codeph>rings.yml</codeph> is
         as follows:</p></section>
     <example>
       <codeblock>ring-specifications:
@@ -164,7 +164,7 @@
           we support only one storage policy, i.e. object-0. The <b>display-name</b> is the name of
           the storage policy and can be used by users of the Swift system when they create
           containers. It allows them to specify the storage policy that the container uses.
-              <p><b>Ring Parameters</b></p>You can specify the ring parametes as follows:</li>
+              <p><b>Ring Parameters</b></p>You can specify the ring parameters as follows:</li>
         <li><b>name</b> - The <b>name</b> attribute must be "account" and "container" respectively.
           Also, you must have account and container ring. The display-name attribute can be set to
           any value and is not used by the system.</li>
@@ -208,7 +208,7 @@
           appropriate ring.</li>
       </ul>
     </p>
-    <section><b> Object Storage Cloud Model Validation</b><note>Before validating the objsct storage
+    <section><b> Object Storage Cloud Model Validation</b><note>Before validating the object storage
         cloud model, run the configuration processor against your cloud model.</note><p>To validate
         object storage cloud model, execute the following command on the deployer
         :<codeblock>ansible-playbook -i hosts/verb_hosts swift-ring-validate.yml</codeblock></p><p>If
@@ -221,8 +221,8 @@
           <li>Execute the following
             command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report</codeblock></li>
         </ul></p><p> The command reports an error or problem with the input model. It also prints a
-        summanry of the ring create actions that are planned for the deploy phase of the
-        process.</p></section>
+        summary of the ring create actions that are planned for the deploy phase of the
+      process.</p></section>
     <section><b>Examine the ring-delta file</b><p><b>Important:</b>You should run the
         swift-ring-validate playbook as mentioned above otherwise the files required to run the
         swiftlm-ring-supervisor will not be in place on the node.</p></section>
