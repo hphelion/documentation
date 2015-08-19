@@ -55,19 +55,14 @@
 </section>
 <section id="create-a-new-vm"> <title>Create a new VM</title>
 <ol>
+<li>Import the <codeph>overcloud_vcenter_compute_proxy_1.0.1.ova</codeph> into the vCenter using the
+          vSphere client.</li>
+<li>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF Template</b>.</li>
+<li>Follow the instructions in the wizard to specify the data center, cluster, and node to install
+          to. Refer to the VMWare vSphere documentation as needed.</li>
 <li>
-<p>Import the <codeph>overcloud_vcenter_compute_proxy_1.0.1.ova</codeph> into the vCenter using the vSphere client.</p>
-</li>
-<li>
-<p>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF Template</b>.</p>
-</li>
-<li>
-<p>Follow the instructions in the wizard to specify the data center, cluster, and node to install to. Refer to the VMWare vSphere documentation as needed.</p>
-</li>
-<li>
-<p>
-<b>Important</b>. You must enter <codeph>overcloud_vcenter_compute_proxy</codeph> as the name for the template.</p>
-</li>
+          <b>Important</b>. You must enter <codeph>overcloud_vcenter_compute_proxy</codeph> as the
+          name for the template.</li>
 </ol>
 <p>A new VM, referred to here as <b>
 <i>OVF VM</i>
@@ -75,41 +70,21 @@
 </section>
 <section id="add-a-cd-rom-device-to-the-ovf-vm"> <title>Add a CD-ROM device to the OVF VM</title>
 <ol>
-<li>
-<p>In the vSphere Client, right-click the OVF VM.</p>
-</li>
-<li>
-<p>Click <b>Edit Settings</b>.</p>
-</li>
-<li>
-<p>Select the <b>Hardware</b> tab and click <b>Add</b>.</p>
-</li>
-<li>
-<p>Select <b>DVD/CD-ROM Drive</b>.</p>
-</li>
-<li>
-<p>Follow the instructions in the wizard. Refer to the VMWare vSphere documentation as needed.</p>
-</li>
+<li>In the vSphere Client, right-click the OVF VM.</li>
+<li>Click <b>Edit Settings</b>.</li>
+<li>Select the <b>Hardware</b> tab and click <b>Add</b>.</li>
+<li>Select <b>DVD/CD-ROM Drive</b>.</li>
+<li>Follow the instructions in the wizard. Refer to the VMWare vSphere documentation as needed.</li>
 </ol>
 </section>
 <section id="power-on-the-ovf-vm-using-vcenter"> <title>Power on the OVF VM using vCenter.</title>
 <p>The default credentials to log in to the OVF VM are <codeph>stack/stack</codeph>.</p>
 <ol>
-<li>
-<p>Install the VMWare tools into the OVF VM:</p>
-
-<p>a.In the vSphere Client, right-click the OVF VM.</p>
-
-<p>b. Select <b>Guest &gt; Install/Upgrade VMware Tools</b>.</p>
-</li>
-<li>
-<p>Launch the OVF VM console to install the VMware Tools from command line terminal:</p>
-
-<p>a. Right-click the OVF VM and select <b>Open Console</b>.</p>
-
-<p>b. Enter the following commands:</p>
-
-<codeblock>
+<li>Install the VMWare tools into the OVF VM:<p>a.In the vSphere Client, right-click the OVF
+            VM.</p><p>b. Select <b>Guest &gt; Install/Upgrade VMware Tools</b>.</p></li>
+<li>Launch the OVF VM console to install the VMware Tools from command line terminal:<p>a.
+            Right-click the OVF VM and select <b>Open Console</b>.</p><p>b. Enter the following
+            commands:</p><codeblock>
 <codeph>mkdir /tmp/vmware-tools
 sudo mount /dev/cdrom/  /tmp/vmware-tools
 cd /tmp
@@ -118,10 +93,8 @@ cd vmware-tools-distrib
 sudo ./vmware-tools-install.pl --default
 sudo poweroff
 </codeph>
-</codeblock>
-
-<p>Follow the instructions to continue the installation.</p>
-</li>
+</codeblock><p>Follow
+            the instructions to continue the installation.</p></li>
 </ol>
 </section>
 <section id="remove-the-cd-rom-device-from-the-ovf-vm"> <title>Remove the <b>CD-ROM</b> device from the OVF VM</title>

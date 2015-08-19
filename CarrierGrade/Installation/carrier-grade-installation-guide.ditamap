@@ -57,6 +57,8 @@
         </topicref>
         <topicref href="carrier-grade-backup-restore.dita" toc="no"
             navtitle="Backup and Restire the HLM Node" locktitle="yes"/>
-        <topicref href="carrier-grade-install-config-ldap3.dita" toc="yes"
+        <topicref href="carrier-grade-install-config-backend.dita"
+            navtitle="Configuring Multi-Backend Support" locktitle="yes" toc="no"/>
+        <topicref href="carrier-grade-install-config-ldap3.dita" toc="no"
             navtitle="Configuring LDAP 3" locktitle="yes"/>
     </topicref></map>

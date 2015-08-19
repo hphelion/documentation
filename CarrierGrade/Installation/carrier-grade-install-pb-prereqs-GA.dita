@@ -300,9 +300,105 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li>
                                                 <!--<li><b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment, download this file, named <codeph>overcloud_vcenter_compute_proxy.tar</codeph>. Also download the Signature files. This file will need to be moved to the system that hosts the VMware vCenter client. You can move the file to that system or download the file later.</li><li><b id="productShow_appName">VCN OVSvApp Appliance</b>.  For the KVM + ESX deployment, download this file, named   Also download the Signature files. HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</li>-->
                                         </ul></li>
-                                <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file. The following
-                                        list of files is
-                                        extracted:<codeblock>cg-hlm.qcow2 
+                                
+                                <li><xref href="#topic7148/verify" format="dita">Verify the
+                                                signature and checksums</xref>. </li>
+                        </ol>
+                </section>
+                <section id="verify"><title>Verify the downloaded signature</title>
+                        <p>After downloading the installation packages, you should verify the
+                                signature of the download. You can use the GPG utility, which is
+                                already installed on the HLM node. Signed by the signature file.</p>
+                        <p>A set of GPG public keys are included in the installation package you
+                                downloaded.</p>
+                        <ol>
+                                <li>Copy the public keys to the HLM host server, extract the keys
+                                        from the compressed files. <p>The following keys are
+                                                included in the download:</p><ul>
+                                                        <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-1.pub</li>
+                                                        <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-2.pub</li>
+                                                        <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-3.pub</li>
+                                                        <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-4.pub</li>
+                                                        <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-5.pub</li>
+                                                        <li>hpPublicKey.pub</li>
+                                                        <li>hpPublicKey2048.pub</li>
+                                                </ul></li>
+                                <li>Execute the following command to import the keys:
+                                        <codeblock>gpg --import "&lt;filename>"</codeblock><p>Where
+                                                &lt;filename> is the name of the extracted
+                                                file.</p><p>The keys are then imported into the gpgp key share:
+                                                <codeblock>gpg --import hpPublicKey.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-1.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-2.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-3.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-4.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-5.pub 
+gpg --import hpPublicKey2048.pub </codeblock></p></li>
+                                <li>Use the following command to view the keys in the key store:
+                                                <codeblock>gpg --list-keys</codeblock><p>The key
+                                                store appears similar to the
+                                        following:</p><codeblock>/home/sad/.gnupg/pubring.gpg
+  ----------------------------
+pub   2048R/F7191CB9 2014-12-19
+pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
+uid                  Hewlett-Packard Company (HP Codesigning Service)
+pub   2048R/B1275EA3 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 1
+pub   2048R/B564A643 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 2
+pub   2048R/FF94BC78 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 3
+pub   2048R/BA849975 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 4
+pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 5
+pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service)        </codeblock></li>
+                                <li>Use the following command to verify the signature:
+                                                <codeblock>gpg --verify ./hcg_1.1.0.tar.sig ./hcg_1.1.0.tar  </codeblock><p>The
+                                                output for the command appears similar to the
+                                                following. This indicates the signature is verified:
+                                                  <b>Good signature from "Hewlett-Packard Company
+                                                  RSA (HP Codesigning
+                                        Service)</b>.</p><codeblock>gpg: Signature made Wed 22 Jul 2015 01:23:24 PM EDT using RSA key ID C6978F0C
+gpg: Good signature from "Hewlett-Packard Company RSA (HP Codesigning Service) - 5"
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg: There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li>
+                                <li>Perform this verification for each file you downloaded.</li>
+                        </ol>
+                </section>
+                <section id="checksum"><title>Verify the downloaded checksums</title>
+                        <p>You should also use a checksum verification tool, such as sha256sum,
+                                which should come installed with Ubuntu.<ol id="ol_icb_k4f_xs">
+                                        <li>Run the checksum tool against the
+                                                  <codeph>hcg_1.1.0.tar</codeph> file.
+                                                <codeblock>sha256sum &lt;path-to-file>/hcg_1.1.0.tar</codeblock></li>
+                                        <li>Compare the output of the checksum tool to the
+                                                <codeph>hcg_1.1.0.tar.sha256</codeph> file.
+                                                <codeblock>sha256sum.exe hcg_1.1.0.tar
+                                                        97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock>Note
+                                                that the chechsum file contains the date that the
+                                                file was generated, the checksum string, and the
+                                                name of the file that was
+                                                used:<codeblock>Fri Jul 31 10:55:37 EDT 2015
+                                                        97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar</codeblock></li>
+                                        <li>Run the checksum tool against the
+                                                  <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>
+                                                file.
+                                                <codeblock>sha256sum &lt;path-to-file>/hcg_1.1.0_horizon_patch1.tar  </codeblock></li>
+                                        <li>Compare the output of the checksum tool to the
+                                                  <codeph>hcg_1.1.0.tar.sha256</codeph> file.
+                                                <codeblock>sha256sum.exe hcg_1.1.0.tar
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock></li>
+                                </ol></p>
+                </section>      
+                <section id="extract"><title>Extract and copy the installation files</title>
+                        <ol>
+                        <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file. The following
+                                list of files is
+                                extracted:
+<codeblock>cg-hlm.qcow2 
 cg-hlm.qcow2.md5
 cg-hos.tar.gz.gpg
 cg-hos.tar.gz.gpg.md5
@@ -315,18 +411,17 @@ WR/extras/HP-HCG-SDK-15.05-b10.tgz
 WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5
 WR/extras/HP-HCG-sample-guest-15.05-b9.img
 WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
-                                <li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images
-                                        folder: <codeph>/var/lib/libvirt/images</codeph>. </li>
-                                <li>Copy the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file
-                                        from the <codeph>hcg_1.1.0.tar</codeph> files to the
-                                                <codeph>/root</codeph> directory.</li>
-                                <li> Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph>
-                                        file.<codeblock> <systemoutput>tar xvf GPG-HPCSS-Public-Keys.tar</systemoutput> </codeblock></li>
-                                <li> Create the <codeph>/root/cg/</codeph> directory</li>
-                                <li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file from the
-                                                <codeph>hcg_1.1.0</codeph> directory to the
-                                                <codeph>/root/cg/</codeph> directory.</li>
-                        </ol>
+                        <li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images
+                                folder: <codeph>/var/lib/libvirt/images</codeph>. </li>
+                        <li>Copy the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file
+                                from the <codeph>hcg_1.1.0.tar</codeph> files to the
+                                <codeph>/root</codeph> directory.</li>
+                        <li> Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph>
+                                file.<codeblock> <systemoutput>tar xvf GPG-HPCSS-Public-Keys.tar</systemoutput> </codeblock></li>
+                        <li> Create the <codeph>/root/cg/</codeph> directory</li>
+                        <li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file from the
+                                <codeph>hcg_1.1.0</codeph> directory to the
+                                <codeph>/root/cg/</codeph> directory.</li></ol>
                 </section>
                 <section id="download-esx">
                         <title>Download the DCN and ESX packages for KVM + ESX</title>
@@ -363,9 +458,9 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <li>Internal HP partners can contact HP Helion
                                                   OpenStack Carrier Grade team for help.</li>
                                                   <li>Internal HP partners can refer to HP Helion
-                                                  OpenStack Carrier Grade Engineering Wiki under
-                                                  section “HOS CG 1.1 GA: ESX (non-KVM region) DCN
-                                                  package details”</li>
+                                                  OpenStack Carrier Grade Engineering Wiki under the
+                                                  <i>HOS CG 1.1 GA: ESX (non-KVM region) DCN package
+                                                  details</i> section.</li>
                                                   </ol></li>
                                         </ul></li>
                                 <li>Move or copy the compressed installation packages to the KVM
@@ -376,7 +471,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   server)</li>
                                                 <li>DCN-VSD-QCOW-3.0R8 (copy to VSD server)</li>
                                         </ul></li>
-                                <li>Create the <codeph>~/cg/dcn</codeph> directory on the KVM
+                                <li>Create the <codeph>~/cg/dcn</codeph> directory on the HLM
                                         host.</li>
                                 <li>Extract the compressed download packages. <table
                                                 id="table_yhb_zny_zs">
@@ -391,7 +486,8 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <entry>File Name</entry>
                                                   <entry>List of files to be used after
                                                   Extraction</entry>
-                                                  <entry>Dir Path on KVM Host</entry>
+                                                  <entry>Copy the files to directory on HLM
+                                                  Host</entry>
                                                   </row>
                                                   </thead>
                                                   <tbody>
@@ -419,118 +515,31 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <p><codeph> DCN-VSC-07-OEM-125.tar.gz</codeph></p>
                                                   <p>Untarring this file will extract::</p>
                                                   <p><codeph>…/single_disk/vsc_singledisk.qcow2</codeph></p>
+                                                  <p>Copy this file to
+                                                  <codeph>~/cg/dcn</codeph>.</p>
                                                   </entry>
                                                   <entry>~/cg/dcn</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry>DCN-VSD-QCOW-3.0R8.zip</entry>
-                                                  <entry>
-                                                  <p><codeph>CloudMgmt-vmware.tar.gz</codeph></p>
-                                                  <p>Then untarring this file will extract the
-                                                  installation file for vSphere Distributed Switch. </p>
-                                                  </entry>
-                                                  <entry>Any location</entry>
                                                   </row>
                                                   <row>
                                                   <entry> DCN-VRS-VMware-3.0R7.zip</entry>
                                                   <entry>Unzipping this file extracts the VRS VM
                                                   template for the VRSvApp installation.</entry>
-                                                  <entry>Any location</entry>
+                                                  <entry>Any location. Copy to VSD VM.</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry>DCN-VSD-QCOW-3.0R8.zip</entry>
+                                                  <entry>
+                                                  <p><codeph>CloudMgmt-vmware.tar.gz</codeph></p>
+                                                  <p>Then untarring this file will extract a patch
+                                                  file for the vSphere Distributed Switch. </p>
+                                                  </entry>
+                                                  <entry>Any location. Copy to VSD VM.</entry>
                                                   </row>
                                                   </tbody>
                                                 </tgroup>
                                         </table></li>
                         </ol>
                 </section>
-                <section id="verify"><title>Verify the downloaded signature</title>
-                        <p>After downloading the installation packages, you should verify the
-                                signature of the download. You can use the GPG utility, which is
-                                already installed on the HLM node. Signed by the signature file.</p>
-                        <p>A set of GPG public keys are included in the installation package you
-                                downloaded.</p>
-                        <ol>
-                                <li>Copy the public keys to the HLM host server, extract the keys
-                                        from the compressed files. <p>The following keys are
-                                                included in the download:</p><ul>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-1.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-2.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-3.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-4.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-5.pub</li>
-                                                <li>hpPublicKey.pub</li>
-                                                <li>hpPublicKey2048.pub</li>
-                                        </ul></li>
-                                <li>Execute the following command to import the keys:
-                                                <codeblock>gpg --import "&lt;filename>"</codeblock><p>Where
-                                                &lt;filename> is the name of the extracted
-                                                file.</p><p>The keys are then imported into the gpgp
-                                                key share:
-                                                <codeblock>gpg --import hpPublicKey.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-1.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-2.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-3.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-4.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-5.pub 
-gpg --import hpPublicKey2048.pub </codeblock></p></li>
-                                <li>Use the following command to view the keys in the key store:
-                                                <codeblock>gpg --list-keys</codeblock><p>The key
-                                                store appears similar to the
-                                        following:</p><codeblock>/home/sad/.gnupg/pubring.gpg
-----------------------------
-pub   2048R/F7191CB9 2014-12-19
-pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
-uid                  Hewlett-Packard Company (HP Codesigning Service)
-pub   2048R/B1275EA3 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 1
-pub   2048R/B564A643 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 2
-pub   2048R/FF94BC78 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 3
-pub   2048R/BA849975 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 4
-pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 5
-pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service)        </codeblock></li>
-                                <li>Use the following command to verify the signature:
-                                                <codeblock>gpg --verify ./cg-hos.tar.gz.gpg.sig ./cg-hos.tar.gz.gpg</codeblock><p>The
-                                                output for the command appears similar to the
-                                                following. This indicates the signature is verified:
-                                                  <b>Good signature from "Hewlett-Packard Company
-                                                  RSA (HP Codesigning
-                                        Service)</b>.</p><codeblock>gpg: Signature made Wed 22 Jul 2015 01:23:24 PM EDT using RSA key ID C6978F0C
-gpg: Good signature from "Hewlett-Packard Company RSA (HP Codesigning Service) - 5"
-gpg: WARNING: This key is not certified with a trusted signature!
-gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li>
-                        </ol>
-                </section>
-                <section id="checksum"><title>Verify the downloaded checksums</title>
-                        <p>You should also use a checksum verification tool, such as sha256sum,
-                                which should come installed with Ubuntu.<ol id="ol_icb_k4f_xs">
-                                        <li>Run the checksum tool against the
-                                                  <codeph>hcg_1.1.0.tar</codeph> file.
-                                                <codeblock>sha256sum &lt;path-to-file>hcg_1.1.0.tar</codeblock></li>
-                                        <li>Compare the output of the checksum tool to the
-                                                  <codeph>hcg_1.1.0.tar.sha256</codeph> file.
-                                                <codeblock>sha256sum.exe hcg_1.1.0.tar
-97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock>Note
-                                                that the chechsum file contains the date that the
-                                                file was generated, the checksum string, and the
-                                                name of the file that was
-                                                used:<codeblock>Fri Jul 31 10:55:37 EDT 2015
-97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar</codeblock></li>
-                                        <li>Run the checksum tool against the
-                                                  <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>
-                                                file.
-                                                <codeblock>sha256sum &lt;path-to-file>hcg_1.1.0_horizon_patch1.tar  </codeblock></li>
-                                        <li>Compare the output of the checksum tool to the
-                                                  <codeph>hcg_1.1.0.tar.sha256</codeph> file.
-                                                <codeblock>sha256sum.exe hcg_1.1.0.tar
-97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock></li>
-                                </ol></p>
-                </section>
-
                 <section id="prepbare">
                         <title>Preparing the baremetal systems</title>
                         <p>Perform the following tasks on each server you will use as a compute

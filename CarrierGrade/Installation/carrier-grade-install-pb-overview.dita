@@ -41,18 +41,19 @@
     <p>HP 3PAR StoreServ is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. HP 3PAR StoreServ is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver.</p></li>
   </ul>
   </section>
-  <section id="esx-hypervisor"> <title>KVM + ESX Topology</title>
-    <p>HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can
-        provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a
-        part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter
-        through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses
-        the same for scheduling a new instances. </p>
-      <p>Virtual networking between HP Helion Carrier Grade and the ESX servers is handled by HP
-        Distributed Cloud Networking (DCN) is a software-Defined Networking (SDN) solution that
-        enhances data center (DC) network virtualization by automatically establishing connectivity
-        between compute resources upon their creation.</p>
-    <p>The ESX integration uses the OVSvApp application to connect the vCenter networking to the Network Operations controller to manage workload networks.</p>
-  </section>
+  <section id="esx-hypervisor"><title>KVM + ESX Topology</title>The ESXi/DCN integration enables
+      data center to data center communications through DCN, which can be used by the VNF KVM region
+      through a gateway (VRS-G).<p>HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX
+        integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute
+        driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX
+        clusters in a vCenter through Compute proxy nodes. A Compute node scheduler sees each
+        cluster as compute and uses the same for scheduling a new instances. </p><p>Virtual
+        networking between HP Helion Carrier Grade and the ESX servers is handled by HP Distributed
+        Cloud Networking (DCN) is a software-Defined Networking (SDN) solution that enhances data
+        center (DC) network virtualization by automatically establishing connectivity between
+        compute resources upon their creation. </p><p>The ESX integration uses the OVSvApp
+        application to connect the vCenter networking to the Network Operations controller to manage
+        workload networks.</p></section>
   
 <section id="installation-process"> <title>Installation process</title>
 <p>Use the following process to install HP Helion OpenStack Carrier Grade in a baremetal environment.</p>

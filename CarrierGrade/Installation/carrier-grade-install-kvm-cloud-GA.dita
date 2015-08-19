@@ -76,20 +76,27 @@ ifconfig eth0 up</codeblock></li>
            <li>cakey.pem # HLM VM ~&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</li>
            <li>helion_branding-v1.3.tgz   # HLM VM /root/cg-hlm/windriver-files</li>
           </ul></li>
-        <li>Move the <codeph>helion_branding-v1.3.tgz</codeph> to <codeph>/opt/branding</codeph> on
-          the <codeph>controller-0</codeph>. </li>
         <li>Apply the required patches on controller-0. Execute the following commands for each
-          patch listed in the previous step:
+          patch listed in the previous step and move the <codeph>helion_branding-v1.3.tgz</codeph>
+          to <codeph>/opt/branding</codeph> on the <codeph>controller-0</codeph>.
           <codeblock>sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0001.patch
-sudo wrs-patch apply TS_15.05_PATCH_0001
-sudo wrs-patch install-local</codeblock></li>
+sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0002.patch
+sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HEAT.patch
+sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HORIZON.patch
+sudo wrs-patch apply /home/wrsroot/TS_15.05_PATCH_0001.patch
+sudo wrs-patch apply /home/wrsroot/TS_15.05_PATCH_0002.patch
+sudo wrs-patch apply /home/wrsroot/TS_15.05_DESIGN_PATCH_HEAT.patch
+sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HORIZON.patch
+sudo mv /home/wrsroot/helion_branding-v1.3.tgz
+sudo wrs-patch install-local /opt/branding</codeblock></li>
         <li>Reboot <codeph>controller-0</codeph>.<codeblock>sudo reboot       </codeblock></li>
     </ol>
     </section><section><title>Install the KVM region cloud</title>
       <ol>
         <li>Execute the following command to install the KVM region cloud:
-          <codeblock>sudo config_region</codeblock> Ignore the message which displays during
-            <codeph>config_region</codeph> process.
+              <codeblock>sudo config_region</codeblock><p><image
+              href="../../media/CGH-install-KVM.png" width="600" id="image_c2w_4kk_bt" height="198"
+            /></p>Ignore the message which displays during <codeph>config_region</codeph> process.
           <codeblock>Step 9 of 29 [####  ]dm-6 WRITE SAME failed. Manually zeroing.</codeblock></li>
         <li>After <codeph>controller-0</codeph> is deployed, deploy the remaining nodes as
             <codeph>controller-1</codeph> and <codeph>compute-'n'</codeph>.
