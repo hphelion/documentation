@@ -24,16 +24,16 @@
       <note>Icinga, which was the supported monitor service in previous releases of Helion
         OpenStack, is not supported in Helion OpenStack 2.0.</note>
     </section>
+    <section id="diagram">
+      <title>Diagram of Monasca Service</title>
+      <p><image placement="break" href="../images/monasca_diagram.png"/></p>
+    </section>
     <section id="working"><title>Working with Monasca</title>
       <p>Access to Monasca is available through the Web UI (<xref href="#topic12031/opsconsole">Ops
           Console</xref>), command-line interface (<xref href="#topic12031/cli">CLI</xref>), or the
         low-level <xref
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">REST API</xref>.</p>
-    </section>
-    <section id="diagram">
-      <title>Diagram of Monasca Service</title>
-      <p><image placement="break" href="../images/monasca_diagram.png"/></p>
     </section>
     <section id="opsconsole"><title>Ops Console</title>
       <p>The Ops Console (Operations Console) is designed for Helion OpenStack Administrators to
