@@ -46,7 +46,7 @@ namespace HelionWCF
     public interface IService1
     {
         [OperationContract]
-        <span style="background-color: #FFFF00">double DoubleIt(double numToDouble);</span>
+        double DoubleIt(double numToDouble);
     }
 }</codeblock></li>
       </ol>
