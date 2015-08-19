@@ -67,18 +67,27 @@ ifconfig eth0 up</codeblock></li>
       <p><b>Apply KVM region patches</b></p>
     <ol>
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
-          controller-0:
-          <ul><li>TS_15.05_PATCH_0001.patch  # HLM VM /root/cg-hlm/windriver-files</li>
-           <li>TS_15.05_PATCH_0002.patch # HLM VM /root/cg-hlm/windriver-files</li>
-           <li>TS_15.05_DESIGN_PATCH_HEAT.patch # HLM VM/root/cg-hlm/windriver-files</li>
-           <li>TS_15.05_DESIGN_PATCH_HORIZON.patch # HLM VM /root/cg-hlm/windriver-files</li>
-           <li>region_config   # HLM VM ~/&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</li>
-           <li>cakey.pem # HLM VM ~&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</li>
-           <li>helion_branding-v1.3.tgz   # HLM VM /root/cg-hlm/windriver-files</li>
+          controller-0. The files are located in the <codeph>/root/cg-hlm/windriver-files</codeph>
+          directory on the HLM host.<ul>
+            <li>TS_15.05_PATCH_0001.patch</li>
+            <li>TS_15.05_PATCH_0002.patch</li>
+            <li>TS_15.05_DESIGN_PATCH_HEAT.patch</li>
+            <li>TS_15.05_DESIGN_PATCH_HORIZON.patch</li>
+          </ul></li>
+        <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
+          controller-0. The files are located in the <codeph>/root/cg-hlm/windriver-files</codeph>
+          directory on the HLM host.<ul id="ul_mpn_hnr_bt">
+            <li>region_config </li>
+            <li>cakey.pem</li>
+          </ul></li>
+        <li> Copy the following file to <codeph>/opt/branding</codeph> on the
+            <codeph>controller-0</codeph>. The file is located in the
+            <codeph>/root/cg-hlm/windriver-files</codeph> directory on the HLM host.<ul
+            id="ul_rzd_pnr_bt">
+            <li>helion_branding-v1.3.tgz</li>
           </ul></li>
         <li>Apply the required patches on controller-0. Execute the following commands for each
-          patch listed in the previous step and move the <codeph>helion_branding-v1.3.tgz</codeph>
-          to <codeph>/opt/branding</codeph> on the <codeph>controller-0</codeph>.
+          patch listed in the previous step.
           <codeblock>sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0001.patch
 sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0002.patch
 sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HEAT.patch
@@ -87,7 +96,6 @@ sudo wrs-patch apply /home/wrsroot/TS_15.05_PATCH_0001.patch
 sudo wrs-patch apply /home/wrsroot/TS_15.05_PATCH_0002.patch
 sudo wrs-patch apply /home/wrsroot/TS_15.05_DESIGN_PATCH_HEAT.patch
 sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HORIZON.patch
-sudo mv /home/wrsroot/helion_branding-v1.3.tgz
 sudo wrs-patch install-local /opt/branding</codeblock></li>
         <li>Reboot <codeph>controller-0</codeph>.<codeblock>sudo reboot       </codeblock></li>
     </ol>
