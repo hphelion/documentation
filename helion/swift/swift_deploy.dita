@@ -111,8 +111,9 @@
     <p>In the above example <codeph>/dev/sdc</codeph> is allocated to account and container rings,
       whereas <codeph>/dev/sdd</codeph> and<codeph>dev/sde</codeph> are devoted to object storage
       using two different storage policies (object-0 and object-1).</p>
-    <section id="allocate-network"><b>Allocate networks </b><p>Information is required for beta
-        0?</p></section>
+    <section id="allocate-network"><b>Allocate networks
+        </b><p><?oxy_insert_start author="sharmabi" timestamp="20150819T150739+0530"?>It is
+        recommended not the change the network configuration.<?oxy_insert_end?></p></section>
     <section id="allocate-ring-builder"><b>Allocate a Ring -Builder Node</b><p>Information is
         required for beta 0?</p></section>
     <section id="ring-specification"><b>Ring Specification</b><p>The ring maps the logical names of
@@ -241,3 +242,4 @@
       </ul></p>
   </body>
 </topic>
+<?oxy_options track_changes="on"?>
