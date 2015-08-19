@@ -431,7 +431,11 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                         folder: <codeph>/var/lib/libvirt/images</codeph>. </li>
                                 <li>Copy the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file
                                         from the <codeph>hcg_1.1.0.tar</codeph> files to the
-                                                <codeph>/root</codeph> directory. <table
+                                                <codeph>/root</codeph> directory.</li>
+                        </ol>
+                                <p>The following table lists the installation and patch files and
+                                indicates where you need to copy those files.</p>        
+                                <table
                                                 id="table_yhb_zny_zs">
                                                 <tgroup cols="3">
                                                   <colspec colnum="1" colname="col2" colwidth="1*"/>
@@ -475,28 +479,28 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <row>
                                                   <entry><codeph>ldap_patch_1.1.tar.gz and
                                                   hoscg-update.tgz </codeph></entry>
-                                                  <entry/>
+                                                  <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1/</codeph>
                                                   directory on the HML host. You must first create
                                                   this directory.</entry>
                                                   </row>
                                                   <row>
                                                   <entry><codeph>gre_patch_1.1.tar.gz</codeph></entry>
-                                                  <entry/>
+                                                  <entry>N/A</entry>
                                                   <entry>Any directory on the HLM host. Make note of
                                                   the location.</entry>
                                                   </row>
                                                   <row>
                                                   <entry><codeph>compute_proxy_patch_1.1.tar.gz</codeph></entry>
-                                                  <entry/>
+                                                  <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
                                                   directory on the HML host. You must first create
                                                   this directory.</entry>
                                                   </row>
                                                   </tbody>
                                                 </tgroup>
-                                        </table></li>
-                        </ol>
+                                        </table>
+                        
                 </section>
                 <section id="download-esx">
                         <title>Download the DCN and ESX packages for KVM + ESX</title>
