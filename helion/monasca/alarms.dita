@@ -31,6 +31,75 @@
         </tgroup>
       </table>
     </section>
+    <section id="heat">
+      <title>Heat</title>
+      <table frame="all" rowsep="1" colsep="1" id="table_k33_xcq_bt">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Process Check</entry>
+              <entry>heat-api process check on each node</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>heat-api-cfn process check on each node</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>heat-api-cloudwatch process check on each node</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>heat-engine process check on each node</entry>
+              <entry>Process crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>HTTP Status</entry>
+              <entry>heat-api local http status check on each node</entry>
+              <entry>Process hung or crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>HTTP Status</entry>
+              <entry>heat-api-cfn local http status check on each node</entry>
+              <entry>Process hung or crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>HTTP Status</entry>
+              <entry>heat-api remote http status check only on one node</entry>
+              <entry>Process hung or crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+            <row>
+              <entry>HTTP Status</entry>
+              <entry>heat-api-cfn remote http status check only on one node</entry>
+              <entry>Process hung or crashed.</entry>
+              <entry>Restart process on affected node. Review logs.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
     <section id="hlinux">
       <title>HP Linux for HP Helion OpenStack</title>
       <table frame="all" rowsep="1" colsep="1" id="table_ik5_3km_zs">
