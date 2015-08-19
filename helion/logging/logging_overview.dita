@@ -210,7 +210,17 @@ cat /root/work/tripleo/tripleo-undercloud-passwords
       <title>Configuration</title>
       <p>TBD</p></section>
     <section id="troubleshooting"><title>Using Centralized Logging to Troubleshoot Issues</title>
-      TBD</section>
+      <p>To configure logging, modify the <codeph>roles/logging-common/defaults/main.yml</codeph>
+        file as needed then reconfigure. To turn enable or disable logging for a service, for
+        example, set it in this file and reconfigure:</p>
+      <codeblock>  
+logr_services:
+  rabbitmq:
+    files:
+    - centralized_logging:
+      enabled: true
+</codeblock>
+    </section>
     <section id="troubleshooting_issues"><title>Troubleshooting Logging Issues</title>
       <p>If centralized logging is not working, go through the following steps to
         troubleshooting:</p>

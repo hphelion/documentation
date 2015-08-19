@@ -41,10 +41,10 @@ The user needs to manually follow the below steps to re-configure Kibana for log
 -->
     </section>
     <section id="logs-can-fill-undercloud-node">
-      <title>Logs can fill undercloud node</title>
+      <title>Logs can fill the control plane node</title>
       <p>Logs are stored in one index per day in the Elasticsearch database but are not rotated.</p>
       <p>Because logs are not rotated, the logs can accumulate and consume significant space on the
-        undercloud.</p>
+        control plane.</p>
       <p>Use the following command to view information on log storage:</p>
       <codeblock>curl http://localhost:9200/_cat/indices?v</codeblock>
       <p>The following is an example of output from this command:</p>
@@ -54,7 +54,7 @@ yellow logstash-2015.02.10 5 1 33758082 0 16.5gb 16.5gb
 yellow logstash-2015.02.11 5 1 27471823 0 13.6gb 13.6gb
 </codeblock>
       <p>You can delete older data using following command:</p>
-      <codeblock>curl -X delete http://localhost:9200/[index name]</codeblock>
+      <codeblock>curl -X DELETE http://localhost:9200/[index name]</codeblock>
     </section>
     <section id="the-number-of-logstash-processes-might-not-be-sufficient">
       <title>The number of logstash processes might not be sufficient</title>
@@ -85,13 +85,12 @@ yellow logstash-2015.02.11 5 1 27471823 0 13.6gb 13.6gb
       <p>In approximately 15 minutes logstash starts processing. Re-check the queue size to make
         sure the queue size is reducing.</p>
     </section>
+    <!-- this is incorrect information
     <section id="sos">
       <title>Contacting Customer Service</title>
       <p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact"
           scope="external" format="html">HP Customer Support</xref>.</p>
-      <p>Before contacting HP Customer Support, <xref
-          href="1.1commercial.troubleshooting.dita#topic2105/sos" type="section">run the
-            <codeph>run-sosreport</codeph> command</xref> on the affected system.</p>
-    </section>
+      </section>
+      -->
   </body>
 </topic>
