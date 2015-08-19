@@ -161,15 +161,22 @@
         dashboards are JSON files that you can modify or create new dashboards based on existing
         dashboards.</p>
       <note>Kibana is client-side software. To operate properly, the browser must be able to access
-        port 81 on undercloud.</note>
+        port 5601 on undercloud.</note>
     </section>
     <section id="interface">
       <title>Logging into Kibana</title>
-      <p>Launch a web browser on the seed cloud host to the following IP address, using the
-        undercloud IP address from the end of the install:</p>
+      <p>There are two ways to access Kibana:</p>
+      <ul>
+        <li>Through the <b>Logging Dashboard</b> option in the Operations Console</li>
+        <li>Direct link via port 5601 on the control plane IP</li>
+      </ul>
+      <p><b>Operations Console method</b> - Launch a web browser on the control plane host to the
+        following IP address, using the control plane IP address from the end of the install:</p>
+      <codeblock>http://&lt;control plane IP&gt;:9095</codeblock>
+      <p><b>Direct Access method</b> - Launch a web browser on the control plane host to the
+        following IP address, using the control plane IP address from the end of the install:</p>
       <codeblock>
-  <codeph>http://&lt;undercloud IP&gt;:81 
-</codeph>
+http://&lt;control plane IP&gt;:5601 
 </codeblock>
       <p>
         <b>Example:</b>
@@ -190,14 +197,14 @@ sudo su -
         <li>
           <p>Enter the following command to display the password:</p>
           <codeblock>
-cat  /root/work/tripleo/tripleo-undercloud-passwords
+cat /root/work/tripleo/tripleo-undercloud-passwords
 </codeblock>
           <p>Make note of the password.</p>
         </li>
       </ol>
-      <p>Because centralized logging is separate service from the Horizon dashboards, there is
+      <note>Because centralized logging is a separate service from the Horizon dashboard, there is
         separate username/password authentication. By default, the HP Horizon dashboard username and
-        password will not work with Kibana.</p>
+        password will not work with Kibana.</note>
     </section>
     <section id="configuration">
       <title>Configuration</title>
