@@ -39,7 +39,7 @@
         locktitle="yes"> </topicref>
     </topichead>
     <!-- Monitoring and Logging -->
-    <topichead navtitle="Monitoring Guide">
+    <topichead navtitle="Monitoring">
       <topicref href="helion/monasca/monasca.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Monitoring Overview</navtitle>
@@ -50,7 +50,7 @@
           <navtitle>Service Alarm Definitions</navtitle>
         </topicmeta>
       </topicref>
-      <topichead navtitle="OpsConsole User Guide">
+      <topichead navtitle="Operations Console">
         <topichead navtitle="General">
           <topicref href="helion/monasca/opsconsole/dashboard.dita"/>
           <topicref href="helion/monasca/opsconsole/logging.dita"/>
@@ -72,7 +72,7 @@
         </topichead>
       </topichead>
     </topichead>
-    <topichead navtitle="Centralized Logging Guide">
+    <topichead navtitle="Centralized Logging">
       <topicref href="helion/logging/logging_overview.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Centralized Logging Overview</navtitle>

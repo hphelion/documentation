@@ -31,13 +31,13 @@
     <section id="working"><title>Working with Monasca</title>
       <p>Access to Monasca is available through the Web UI (<xref
           href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
-          format="html" scope="external">Ops Console</xref>), command-line interface (<xref
+          format="html" scope="external">Operations Console</xref>), command-line interface (<xref
           href="#topic12031/cli">CLI</xref>), or the low-level <xref
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">REST API</xref>.</p>
     </section>
-    <section id="opsconsole"><title>Ops Console</title>
-      <p>The Ops Console (Operations Console) is designed for Helion OpenStack Administrators to
+    <section id="opsconsole"><title>Operations Console</title>
+      <p>The Operations Console (Ops Console) is designed for Helion OpenStack Administrators to
         have a web-based UI that they can use to view data about their Helion OpenStack
         infrastructure. The Ops Console offers the user access to data such as the alarms data by
         service, performance data, compute nodes and instances lists, and a drilldown to Kibana for
