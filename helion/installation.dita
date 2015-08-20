@@ -125,7 +125,7 @@ helion/hlm/                    Directory contains files used by the installer
         <li>Run the following command:
           <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
         <li>Run the following playbook:
-          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock> Note that the full path is /root/helion/hlm/ansible/cobbler-deploy.yml</li>
+          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock> Note that the full path is &lt;username&gt;/helion/hlm/ansible/cobbler-deploy.yml</li>
       </ol>
     </section>
     <section id="NodeProvision"><title>Provision the Nodes</title>
