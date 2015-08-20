@@ -32,6 +32,7 @@ do
 			echo -e "${cc_blue}Correction${cc_normal}:  $help"
 			echo -e " "
 			checktmp=$(($checktmp + 1))
+			echo $checktmp
 		fi
 	done < ./jenkins/badstrings.txt
 done
