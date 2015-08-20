@@ -50,14 +50,14 @@
             <li>Assign IP address, netmask</li>
           </ul></li>
         <li>Create new account:<ul>
-            <li>Enter a username.</li>
+            <li>Enter a username. It is best to leave the default here: stack. </li>
             <li>Enter a password.</li>
             <li>Enter time zone if prompted to do so.</li>
             <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
           </ul></li>
       </ol>
       <p>At the end of this section you should have a deployer node set up with hLinux on it.</p>
-      <note>Run as the user you just created, not root.</note>
+      <note>Run as the user you just created (or stack if you left the default of "stack", but do not run as root.</note>
     </section>
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
