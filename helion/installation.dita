@@ -97,8 +97,10 @@ helion/hlm/                    Directory contains files used by the installer
               explains the contents of each of the configuration files.</li>
             <li>Copy the example configuration files into the required setup directory and edit them
               as required:
-              <codeblock>cp -r ~/helion/examples/one-region-poc-with-vsa/* </codeblock>The
-              configuration files for editing can be found at the following location: <codeblock>~/helion/my_cloud/definition/data</codeblock><ul>
+              <codeblock>cp -r ~/helion/examples/one-region-poc-with-vsa/* </codeblock>Note: There
+              have been changes to some of the files since Beta 0. The configuration files for
+              editing can be found at the following location:
+                <codeblock>~/helion/my_cloud/definition/data</codeblock><ul id="ul_wwn_rtx_bt">
                 <li>The baremetalConfig.yml file should specify the server information for your
                   environment.</li>
                 <li>The servers.yml file contains the IP address information for the hardware.</li>
