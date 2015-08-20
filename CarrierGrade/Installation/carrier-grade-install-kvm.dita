@@ -387,6 +387,14 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
             region.</p></li>
       </ol>
     </section>
+    <section>
+      <title>Configure LDAP to enable CLI and use Keystone v3</title>
+      <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
+        v2 authorization. The services need to be modified to use Keystone v3.  Users will not be
+        able to execute OpenStack CLI commands until the specific changes are made on all three
+        controller nodes in the non-KVM region. </p>
+      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
+    </section>
     <section>        
       <title>  Apply the Horizon interface patch:</title> 
       <ol><li>Locate the <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file you downloaded to the HLM host and
