@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qkg_l4v_bt">
+  <title>Mid Sized Cloud Model</title>
+  <body>
+    <p>This section describes the configuration of the Swift services in the example mid sized cloud
+      model. </p>
+    <p>In the example, the Swift services are configured as follows:</p>
+    <ul id="ul_b2b_gpv_bt">
+      <li>There are two types of nodes:<ul id="ul_v2b_gpv_bt">
+          <li>Proxy, Container, Account (PAC) Node. This node runs the swift-proxy, swift-account
+            and swift-container services. The swift-proxy service is responsible for processing API
+            requests and directing them to the swift-account, swift-container or swift-object
+            services for processing. The swift-account and swift-container are responsible for
+            handling requests to accounts and containers respectively.</li>
+          <li>Object (OBJ) Node. This node runs the swift-object service. The swift-object service
+            is responsible for handling requests for objects.</li>
+        </ul></li>
+      <li>The Proxy, Container, Account node type is assigned to a dedicated cluster of nodes as
+        specified in the <b>swpac</b> cluster in <u>data/control_plane.yml</u> file. By "dedicated",
+        we mean that the nodes are dedicated to Swift and not running other cloud services.</li>
+      <li>The Object node type is assigned to a dedicated resource nodes group as specified by the
+          <b>swobj</b> group in <u>data/control_plane.yml</u> file.</li>
+      <li>
+        <p>The Proxy, Container, Account node type uses two disk drives to store account and
+          container databases. This is specified in the <u>data/disks_swpac.yml</u> file.</p>
+      </li>
+      <li>
+        <p>The Object node type uses uses two disk drives to store account and container databases.
+          This is specified in the <u>data/disks_swobj.yml</u> file.</p>
+      </li>
+      <li>Swift account, container and object storage is managed by Swift using a data structure
+        known as a <i>ring</i>. The specification of the rings is provided in the
+          <u>config/swift/rings.yml</u> file. In the example, the replica count is set to 3 (i.e.,
+        three copies of all data is kept to provide resiliency and availability). A single storage
+        policy is used (i.e. there is one object ring called "object-0").</li>
+      <li>Requests to Swift are directed to a virtual ip address (VIP) that is managed by a cluster
+        as specified in the <b>core</b> cluster in <u>data/control_plane.yml</u>. The requests are
+        then directed on the MGMT network to the swift-proxy service on one of the Proxy, Container,
+        Account nodes (in round robin fashion).</li>
+      <li>The swift-proxy service uses the SWIFT network to communicate with the other swift
+        services (they also communicated among themselves). The MGMT and SWIFT networks are
+        specified in the <u>data/network_groups.yml</u> file.</li>
+      <li> The swift-proxy service uses other cloud services as follows. Both of these are
+        configured in the example to run on the <b>core </b>cluster:<ul id="ul_ffb_gpv_bt">
+          <li>Swift validates token by making requests to the Keystone service</li>
+          <li>Swift caches tokens and other data using the memcached service</li>
+        </ul></li>
+    </ul>
+  </body>
+</topic>

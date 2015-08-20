@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_flx_j2b_ws">
-  <title>Beta 1: Installing HP Helion <tm tmtype="reg">OpenStack</tm> on Baremetal</title>
+  <title>ESX Installation </title>
   <body>
     <section>
       <title>Known Restrictions</title>
@@ -183,9 +183,9 @@ helion/hlm/                    Directory contains files used by the installer
       </ol>
     </section>
     <section id="VSA">
-      <title>Install and Configure  ESX Compute  and OVSvAPP on vCenter</title>
-      <p>This section describes the procedure to install and configure ESX compute and OVSvAPP on
-        vCenter.</p>
+      <title>Install and Configure ESX Compute and OVSvAPP on vCenter</title>
+      <p>The following section describes the procedure to install and configure ESX compute and
+        OVSvAPP on vCenter.</p>
     </section>
     <section>
       <p><b>Deploy a template</b></p>
@@ -199,11 +199,8 @@ helion/hlm/                    Directory contains files used by the installer
     <section><b>Deploy a Service</b><p>To deploy the service using the EON CLI, execute the
         following steps from the deployer:</p><p>
         <ol id="ol_t1q_jl5_bt">
-          <li>Execute <codeph>source service.osrc</codeph>. When you execute this what is the output
-            and why do we execute this?)</li>
-          <li>Run the following command to update the network
-              configuration:<codeblock><codeph>eon get-network-info-template --filename net_conf.json</codeph></codeblock><p>output,
-              if any and is this json file available???how to get this file??</p></li>
+          <li>Source  <codeph>service.osrc</codeph>.
+              <p><!--<p>unset OS_DOMAIN_NAME</p><p>export OS_IDENTITY_API_VERSION=3</p><p>export OS_AUTH_VERSION=3</p><p>export OS_PROJECT_NAME=admin</p><p>export OS_PROJECT_DOMAIN_NAME=Default</p><p>export OS_USERNAME=admin</p><p>export OS_USER_DOMAIN_NAME=Default</p><p>export OS_PASSWORD=admin</p><p>export OS_AUTH_URL=http://helion-ccp-vip-admin-KEY-API-mgmt:35357/v3</p><p>export OS_CACERT=/etc/ssl/certs/ca-certificates.cr</p>--></p></li>
           <li>Add the vCenter to the eon
               database.<codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password&lt;vCenter Password> --port&lt;vCenter Port></codeph></codeblock><p>where:</p><p>
               <ul id="ul_lx4_yr5_bt">
@@ -231,58 +228,49 @@ helion/hlm/                    Directory contains files used by the installer
 +------------+---------------------------------------+</codeblock></li>
               </ul>
             </p></li>
-          <li>Set the proxy VM network information for a vCenter. This is used to deploy proxy VM
-            when you activate cluster for the first time under the vCenter.<codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;Compute Proxy Config File></codeph></codeblock><p>
+          <li>Run the following command to update the network
+              configuration:<codeblock><codeph>eon get-network-info-template --filename &lt;abc.json></codeph></codeblock><note>The
+              json filename can vary. </note></li>
+          <li>Modify the  json &lt;abc. json> file as per your
+            environment.<codeblock>vi &lt;abc.json></codeblock></li>
+          <li>Set the network information for a vCenter. <codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;abc.json></codeph></codeblock><p>
               <note>The vcenter ID is generated when you execute the above (<b>step 3</b>)
-                  command.<p>The following is the sample compute proxy configuration
-                  file.<?oxy_insert_start author="sharmabi" timestamp="20150820T120800+0530"?> do
-                  the user need to create this file or is it availabe as a part of product install
-                  ??<?oxy_insert_end?><codeblock>[vmware]
-# Details related to vCenter in which Compute Proxy VM will be created
-# Datacenter name
-datacenter=
-# Management Cluster name
-mgmt_cluster=
-# Shared datatstore name
-datastore=
-# SSL certificate file (cacert.pem) of vCenter
-cert_location=
-
-[network]
-# port group name which will attached to the proxy VM 
-# it will be management port group which will connect compute proxy VM
-# with your overcontrollers 
-port_group_name=
-
-[compute_proxy]
-# This section hold the values which will be used to configure proxy VM
-# 1) hostname -> should not have '_'
-# 2) Network information of the vm
-# if usedhcp = False, provide values for ipaddr, netmask, gateway
-# if usedhcp = True, leave empty  ipaddr, netmask, gateway
-hostname=
-usedhcp=True
-ipaddr=
-netmask=
-gateway=</codeblock></p></note>
+                command.</note>
             </p></li>
           <li>Execute the following command to view the list of clusters for the given
-              vCenter<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
-              Output</b></li>
+              vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
+              Output</b><codeblock>+------------+-----------+---------------+----------------+----------------+ 
+| MOID | Name| Datacenter| Import Status | Managed Status                  | 
++------------+-----------+---------------+----------------+----------------+ 
+| domain-c26 | Cluster1  | COS           | not_imported   | False          | 
+| domain-c28 | Cluster2  | COS           | not_imported   | False          | 
++------------+-----------+---------------+----------------+----------------+</codeblock></li>
           <li>Import the cluster for the EON database under the given vCenter.
               <codeblock><codeph>eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock><p>where:</p><p>
               <ul id="ul_osx_bx5_bt">
-                <li>vCenter  ID:  ID of the vcenter containing the cluster.</li>
+                <li>vCenter ID: ID of the vcenter containing the cluster.</li>
                 <li>Cluster Name: the name of the cluster that needs to be imported.</li>
                 <li>cluster Moid: Moid of the cluster that needs to be imported.</li>
               </ul>
-            </p>One vCenter can have multiple clusters. You can import all the cluster associate4d
-            with that vCenter.</li>
+              <codeblock>+---------------+--------------------------------------+ 
+| Property      | Value                                | 
++---------------+--------------------------------------+ 
+| id            | 7e7ed17d-de71-4207-af5f-3c5fca847d3d | 
+| name          | Cluster1                             | 
+| resource_moid | domain-c26                           | 
+| resource_uuid | 7e7ed17d-de71-4207-af5f-3c5fca847d3d | 
+| state         | imported                             | 
+| vcenter_id    | f7cb3811-0d33-44ec-a54a-a69cf7615f5e | 
++---------------+--------------------------------------+</codeblock>
+            </p>One vCenter can have multiple clusters. And you can import only one cluster at a
+            time.</li>
           <li>Activate the cluster for the selected
             vCenter.<codeblock><codeph>eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock></li>
         </ol>
       </p></section>
-    <p>when u activate the cluster what happnes and where will the cluster be updated???</p>
+    <p>You all the cluster under the given vCenter.</p>
+    <p><b>Sample Output</b></p>
+    <p><b>required information</b></p>
     <section><b>Run the config processor</b></section>
     <section>
       <p>Execute the following commands:</p>
@@ -296,7 +284,24 @@ gateway=</codeblock></p></note>
       <p>Execute the following command to deploy a
         cloud:<codeblock><codeph>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeph></codeblock></p>
     </section>
-    <section>Verify post install</section>
-    <section> </section>
+    <section><b>Verification Steps</b><p><b>Change this section as per esx.</b><ol
+          id="ol_o5y_yyv_bt">
+          <li>This step may be used to verify your cloud installation. Note that running the command
+            below will download a cirros image format the internet, upload it to Glance and create a
+            Neutron external
+              network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
+              can optionally specify the external network CIDR here too. If you choose not to
+              exercise this option or use a wrong value, the VMs will not be accessible over the
+              network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
+          <li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the
+            deployer:
+            <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock></li>
+          <li>As the /etc/hosts no longer have entries for HLM, sudo commands may become a bit
+            slower. To fix this issue, once this step is complete, add "hlm" after "127.0.0.1
+            localhost". The result will look like
+            this:<codeblock>...
+# Localhost Information
+127.0.0.1 localhost hlm</codeblock></li>
+        </ol></p></section>
   </body>
 </topic>
