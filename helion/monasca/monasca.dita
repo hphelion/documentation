@@ -29,9 +29,10 @@
       <p><image placement="break" href="../images/monasca_diagram.png"/></p>
     </section>
     <section id="working"><title>Working with Monasca</title>
-      <p>Access to Monasca is available through the Web UI (<xref href="#topic12031/opsconsole">Ops
-          Console</xref>), command-line interface (<xref href="#topic12031/cli">CLI</xref>), or the
-        low-level <xref
+      <p>Access to Monasca is available through the Web UI (<xref
+          href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
+          format="html" scope="external">Ops Console</xref>), command-line interface (<xref
+          href="#topic12031/cli">CLI</xref>), or the low-level <xref
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">REST API</xref>.</p>
     </section>
@@ -43,28 +44,6 @@
         a deep look into logs. The Business Logic Layer is a middleware component that serves as a
         single point of contact for the UI to communicate with OpenStack services such as Monasca,
         Nova, and others.</p>
-    </section>
-    <section id="cli"><title>Monasca CLI</title>
-      <p>The python-monascaclient can be installed via pip on any machine and used by providing it
-        with the keystone authentication information (username/password) and endpoint url (v3). It
-        is already installed on any machine with the Monasca Agent and can be found at
-        `/opt/monasca/bin/monasca`. I suggest setting the necessary credentials as environment
-        variables and as an aid to development we have provided a simple Ansible playbook which will
-        write out the file `~/monasca-env.sh`. After running this playbook you can ssh into the
-        host, source that file and run any monasca cli commands. Just remember to limit the boxes
-        you run this on. For example from the deployer:</p>
-      <codeblock>
-ansible-playbook -i hosts/verb_hosts monasca-cli-dev.yml --limit PADAWANBASE-CCP-T1-M1-NETCLM
-ssh PADAWANBASE-CCP-T1-M1-NETCLM
-source ~/monasca-env.sh
-monasca alarm-definition-list
-. . .
-monasca metric-list
-. . . 
-</codeblock>
-      <p>For more details on the Monasca CLI, see <xref
-          href="https://github.com/stackforge/python-monascaclient" format="html" scope="external"
-          >https://wiki.openstack.org/wiki/Monasca</xref></p>
     </section>
   </body>
 </topic>
