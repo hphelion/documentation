@@ -115,7 +115,7 @@ helion/hlm/                    Directory contains files used by the installer
           are included. If they are not, run
           <codeblock>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock> and
           go to step 1.</li>
-          <li>If you notice your eth names assigned incorrectly at this point, see the workaround in the release notes document.</li>
+          
       </ol>
     </section>
     <section id="CobblerDeploy">
