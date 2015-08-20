@@ -14,9 +14,12 @@
   </metadata>
 </prolog>
 <body>
-  <p>In order to enable LDAP users to exercise CLI's across all the modules, following changes needs
-      to be done on all the controller nodes:</p>
-  <p>This document explains how to configure HP Helion OpenStack to use LDAP v3. </p>
+    <p><!--Based on https://wiki.hpcloud.net/pages/viewpage.action?pageId=53516567--></p>
+  <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone v2
+      authorization. The services need to be modified to use Keystone v3.  Users will not be able to
+      execute OpenStack CLI commands until the following changes are made on all three controller
+      nodes in the non-KVM region. </p>
+  <p>To configure HP Helion OpenStack Carrier Grade services to use Keystone v3: </p>
   <ol>
     <li>Log into the HLM host.</li>
       <li>If you did not perform this step in the <xref
@@ -38,7 +41,8 @@
         that control the supported services and the repositories used to download the source for
         those services.</p>
     <ol>
-      <li>On the HLM host, modify the <codeph>/root/stackrc</codeph> file.
+      <li>On the HLM host, modify the <codeph>/root/stackrc</codeph> file with values appropriate to
+          your environment, using the following example.
           <codeblock>export OS_PASSWORD=admin
 export OS_USERNAME=admin
 export OS_TENANT_NAME=admin
@@ -50,8 +54,8 @@ unset OS_USER_DOMAIN_ID
 unset OS_IDENTITY_API_VERSION
 unset OS_AUTH_VERSION
 unset OS_PROJECT_NAME</codeblock></li>
-    <li>Execute the following commands to source the <codeph>stactrcv3</codeph> file:
-        <codeblock>source stactrcv3</codeblock></li>
+    <li>Execute the following commands to source the <codeph>- /root/stactrcv3</codeph> file:
+          <codeblock>source stactrcv3</codeblock></li>
     <li>Execute the following OpenStack CLI command to create a new project:
               <codeblock>openstack project create ldapdemo --domain americas </codeblock><p><image
               href="../../media/CGH-install-ldap-id.png" id="image_qst_sky_bt"/></p></li>
@@ -63,8 +67,8 @@ unset OS_PROJECT_NAME</codeblock></li>
     <li>Execute the following command to add the <codeph>cg-ldap-admin</codeph> user (from the
           previous step) as an admin to the project you created as an admin.
           <codeblock>openstack role add --user &lt;user id> --project ldapdemo admin</codeblock></li>
-    <li>Execute the following commands to again source the <codeph>stactrcv3</codeph> file:
-        <codeblock>source stactrcv3</codeblock></li>
+    <li>Execute the following commands to again source the <codeph>- /root/stactrcv3</codeph> file:
+          <codeblock>source stactrcv3</codeblock></li>
     <li>Modify the <codeph>stactrcv3</codeph> file to update the LDAP username/password,
           project/tenant name, domain name and ID, Identity service API version, and other values as
           shown:
@@ -75,7 +79,7 @@ export OS_TENANT_NAME=ldapdemo
 export OS_PROJECT_DOMAIN_NAME=americas
 export OS_USER_DOMAIN_ID=&lt;DOMAIN_GUID>
 export OS_IDENTITY_API_VERSION=3 
-export OS_AUTH_VERSION=3 [ Move this to the next line]
+export OS_AUTH_VERSION=3
 export OS_AUTH_URL=&lt;CAN_AUTH_URL> 
 #export OS_AUTH_URL=&lt;CLM_AUTH_URL>
 export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
@@ -90,8 +94,9 @@ export OS_REGION_NAME=memphis         </codeblock></li>
           <codeblock>hupdate -c &lt;cloudname> -f &lt;failureZone> hoscg-update.tgz</codeblock></li>
     </ol>
         <p>Where:<ul id="ul_lcw_gbs_bt">
-          <li>&lt;cloudname> is the name of your cloud</li>
-          <li>&lt;failurezone></li>
+          <li>&lt;cloudname> is the name of your cloud;</li>
+          <li>&lt;failurezone> is controller mapping can be obtained from
+            &lt;cloud-directory&gt;/nodes.json file on HLM node.</li>
         </ul> Execute this command on all three non-KVM controllers, using a different failure zone
         for each.</p>
   </section>

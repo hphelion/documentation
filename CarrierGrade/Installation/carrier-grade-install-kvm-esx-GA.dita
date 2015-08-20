@@ -349,10 +349,10 @@ Password: cghelion</codeblock>
     </section>
     <section id="configure-mach-json">
       <title>Configure the machine_architecture.json file</title>
-      <p>Modify the <codeph>machine_architecture.json</codeph> file in the
-          <codeph>/opt/share/hlm/1/site/</codeph> directory of the HLM VM to to fit your hardware
-        model. You have to gather the correct PCI SLOT INFO and add ports accordingly on the
-        hardware slots or cards used for networking.</p>
+      <p><b>For bonded NIC environments</b>, modify the <codeph>machine_architecture.json</codeph>
+        file in the <codeph>/opt/share/hlm/1/site/</codeph> directory of the HLM VM to to fit your
+        hardware model. You have to gather the correct PCI SLOT INFO and add ports accordingly on
+        the hardware slots or cards used for networking.</p>
       <p><b>Note:</b> To see a sample <codeph>machine_architecture.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-env-json-bonded.dita#topic4797">Sample enviroment.json
           File for Installing the KVM + ESX Topology in an Bonded NIC Environment</xref>.</p>
@@ -507,37 +507,39 @@ The configuration processor completed successfully.
               <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created.</p><p>After
             this command completes, all cloud nodes and CLM network interfaces are configured. The
             output for the command should appear similar to the following:</p><p><image
-              href="../../media/CGH-install-hnetinit-output.png" id="image_tft_r11_1t"/></p></li>
-        <li>Apply the ESX compute proxy patch.<p>This patch fixes an intermittent issue where the
-            ESX compute proxy is not configured after the <codeph>hprovision</codeph> completes
-            successfully. The patch increase the timeout to allow enough time for the proxy VM to
-              boot.<ol id="ol_n4h_mxm_bt">
-              <li>On the HLM host, execute the following command to create directory for the patch
-                <codeblock>mkdir ~/patch_cghelion1.1 </codeblock></li>
-              <li>Copy the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> to the
-                  <codeph>~/patch_cghelion1.1</codeph> directory. </li>
-              <li>Use the following command to extract the
-                  <codeph>compute_proxy_patch_1.1.tar.gz</codeph>:
-                <codeblock>tar -zxvf compute_proxy_patch_1.1.tar.gz</codeblock></li>
-              <li>Use the following command to install the Ubuntu patch
-                utility:<codeblock>apt-get install patch </codeblock></li>
-              <li>Change to the  <codeph>~/cg-hlm </codeph>
-                directory:<codeblock>cd ~/cg-hlm</codeblock></li>
-              <li>You can confirm that the patch will execute properly before performing the patch
-                operation  by executing the following
-                command:<codeblock>patch -p1 --dry-run &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock></li>
-              <li>The command shoild result in the following
-                message:<codeblock>checking file node-provision/hlm_provisionproxy.py</codeblock></li>
-              <li>Execute the following command to perform tha patching operation:
-                <codeblock>patch -p1 &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock>The
-                patch application returns the following message, if
-                successful:<codeblock> patching file node-provision/hlm_provisionproxy.py</codeblock></li>
-              <li>Change to the <codeph>~/cg-hlm/hlm-build</codeph>
-                folder:<codeblock>cd ~/cg-hlm/hlm-build</codeblock></li>
-              <li>Execute the following command to synch the patch
-                file:<codeblock>./hlm_prepare-env.sh</codeblock></li>
-            </ol></p></li>
-        <li>Apply the GRE patch. <p>This patch contains three files. The first file fixes an issue
+              href="../../media/CGH-install-hnetinit-output.png" id="image_tft_r11_1t"/></p></li></ol>
+    </section>
+    <section><title>Apply the ESX compute proxy patch</title>
+        <p>This patch fixes an intermittent issue where the ESX compute proxy is not configured
+        after the <codeph>hprovision</codeph> completes successfully. The patch increase the timeout
+        to allow enough time for the proxy VM to boot.<ol id="ol_n4h_mxm_bt">
+          <li>On the HLM host, execute the following command to create directory for the patch
+            <codeblock>mkdir ~/patch_cghelion1.1 </codeblock></li>
+          <li>Copy the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> to the
+              <codeph>~/patch_cghelion1.1</codeph> directory. </li>
+          <li>Use the following command to extract the
+              <codeph>compute_proxy_patch_1.1.tar.gz</codeph>:
+            <codeblock>tar -zxvf compute_proxy_patch_1.1.tar.gz</codeblock></li>
+          <li>Use the following command to install the Ubuntu patch
+            utility:<codeblock>apt-get install patch </codeblock></li>
+          <li>Change to the <codeph>~/cg-hlm </codeph>
+            directory:<codeblock>cd ~/cg-hlm</codeblock></li>
+          <li>You can confirm that the patch will execute properly before performing the patch
+            operation by executing the following
+            command:<codeblock>patch -p1 --dry-run &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock></li>
+          <li>The command shoild result in the following
+            message:<codeblock>checking file node-provision/hlm_provisionproxy.py</codeblock></li>
+          <li>Execute the following command to perform tha patching operation:
+            <codeblock>patch -p1 &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock>The
+            patch application returns the following message, if
+            successful:<codeblock> patching file node-provision/hlm_provisionproxy.py</codeblock></li>
+          <li>Change to the <codeph>~/cg-hlm/hlm-build</codeph>
+            folder:<codeblock>cd ~/cg-hlm/hlm-build</codeblock></li>
+          <li>Execute the following command to synch the patch
+            file:<codeblock>./hlm_prepare-env.sh</codeblock></li>
+        </ol></p></section>
+    <section><title>Apply the GRE patch</title>
+        <p>This patch contains three files. The first file fixes an issue
             with the IP tables role failing during installation while enabling Generic Routing
             Encapsulation (GRE) in firewall in VRS-GG nodes. The other two files enable GRE on VRS-G
             nodes in the IP tables. </p><p>You should have downloaded the patch files in the <xref
@@ -561,16 +563,25 @@ The configuration processor completed successfully.
                 command on the VRG node:<codeblock>iptables -S | grep gre</codeblock> The following
                 output should appear: <codeph>A ufw-before-input -p gre -j ACCEPT</codeph>. </li>
             </ol>
-          </p></li>
-        <li>Apply the </li>
+          </p>
+      </section>
+    <section><title>Deploy HP Helion OpenStack</title>
+      <ol>
         <li>Use the following command to deploy the HP Helion OpenStack cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>This command takes a
             significant period of time. When this command is complete, the non-KVM cloud
             installation is complete. Use the following sections to configure the Horizon interface,
             configure networking, and configure the ESX environment. </p></li>
-        <li>Apply the LDAP patch. <!--Details forthcoming--></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
+    </section>
+    <section>
+      <title>Configure LDAP to enable CLI and use Keystone v3</title>
+      <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
+        v2 authorization. The services need to be modified to use Keystone v3.  Users will not be
+        able to execute OpenStack CLI commands until the specific changes are made on all three
+        controller nodes in the non-KVM region. </p>
+      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
     </section>
     <section>
       <title> Apply the Horizon interface patch:</title>
