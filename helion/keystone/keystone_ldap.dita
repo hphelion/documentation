@@ -7,8 +7,8 @@
       <p>If your organization, like most, uses an LDAP directory service such as Active Directory, you can integrate it with Keystone by following the steps outlined below. </p>
       <ol>
         <li>Ensure that the <b>domain_specific_drivers_enabled</b> option is set to <b>True</b> in
-          the main configuration file template
-          (<b>roles/KEY-API/templates/keystone.conf.j2</b>).</li>
+          the main configuration file template (<b>roles/KEY-API/templates/keystone.conf.j2</b>).
+          You'll see a sample file at the end of this topic.</li>
         <li>Create a YAML file that contains the definition of the LDAP server connection. Use
             <b>roles/KEY-API/files/samples/keystone_configure_ldap_sample.yml</b> as an example.
           Save the file, as, for example, /tmp/myldap.yml. Please refer to the LDAP section of the
@@ -84,5 +84,89 @@ stack@hLinux:~$ openstack role assignment list --user 05f107e4b1645c52c24a529e3f
         </li>
       </ol>
     </section>
+    
+    <section>
+      <title>Sample LDAP configuration file</title>
+      <p>
+        
+        Below is a sample LDAP configuration file
+        
+      </p>
+      <codeblock>---
+
+keystone_domainldap_conf:
+
+    # CA certificates file content.
+    # Certificates are stored in Base64 PEM format. This may be entire LDAP server
+    # certificate (in case of self-signed certificates), certificate of authority 
+    # which issued LDAP server certificate, or a full certificate chain (Root CA
+    # certificate, intermediate CA certificate(s), issuer certificate).
+    #
+    cert_settings:
+      cacert: |
+        -----BEGIN CERTIFICATE-----
+
+        generated certificate appears here
+
+        -----END CERTIFICATE-----
+
+    # A domain will be created in MySQL with this name, and associated with ldap backend.
+    # Installer will also generate a config file named /etc/keystone/domains/keystone.&lt;domain_name>.conf
+    #
+    domain_settings:
+      name: dept1
+      description: Dedicated domain for dept1 users
+
+    conf_settings:
+      identity:
+         driver: keystone.identity.backends.ldap.Identity
+
+      assignment:
+        driver: keystone.assignment.backends.sql.Assignment
+
+      # For full list and description of ldap configuration options, please refer to
+      # https://github.com/openstack/keystone/blob/master/etc/keystone.conf.sample or
+      # http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html.
+      #
+      # Please note:
+      #  1. LDAP configuration is read-only. Configuration which performs write operations (i.e. creates users, groups, etc)
+      #     is not supported at the moment.
+      #  2. LDAP is only supported for identity operations (reading users and groups from LDAP). Assignment
+      #     operations with LDAP (i.e. managing roles, projects) are not supported.
+      #  3. LDAP is configured as non-default domain. Configuring LDAP as a default domain is not supported.
+      #
+      ldap:
+        url: ldap://ad.myorg.com
+        suffix: DC=acme,DC=net
+        user_tree_dn: CN=Users,DC=acme,DC=net
+        user : CN=admin,CN=Users,DC=acme,DC=net
+        password: REDACTED
+        user_objectclass: user
+        user_id_attribute: cn
+        user_name_attribute: cn
+        user_allow_create: False
+        user_allow_update: False
+        user_allow_delete: False
+        group_tree_dn: CN=Users,DC=acme,DC=net
+        group_objectclass: group
+        group_id_attribute: cn
+        group_name_attribute: cn
+        group_allow_create: False
+        group_allow_update: False
+        group_allow_delete: False
+        use_pool: True
+        user_enabled_attribute: userAccountControl
+        user_enabled_mask: 2
+        user_enabled_default: 512
+        use_tls: True
+        # if you are configuring multiple LDAP domains, and LDAP server certificates are issued
+        # by different authorities, make sure that CA file names are unique for each domain.
+        tls_cacertfile: /etc/keystone/ssl/certs/domainname_ldapca.pem</codeblock>
+      
+
+    </section>
   </body>
 </topic>
+<!--
+
+-->
