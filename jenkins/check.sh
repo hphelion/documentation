@@ -31,7 +31,7 @@ do
 			echo "$issue"
 			echo -e "${cc_blue}Correction${cc_normal}:  $help"
 			echo -e " "
-			echo "1" > checktmp
+			checktmp=$checktmp + 1
 		fi
 	done < ./jenkins/badstrings.txt
 done
@@ -60,7 +60,7 @@ CONSOLE=${BUILD_URL}console
 
   
     
-MESSAGE="The link checker reports <b>$FAILURES files(s)</b> listed in the dita map that did not build in the output."
+MESSAGE="r reports <b>$FAILURES files(s)</b> listed in the dita map that did not build in the output."
 
  
  
