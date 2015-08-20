@@ -20,22 +20,26 @@
   <ol>
     <li>Log into the HLM host.</li>
       <li>If you did not perform this step in the <xref
-          href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall">Prerequisites</xref>,
-        create a patch folder to store the patch file and copy the
-          <codeph>ldap_patch_1.1.tar.gz</codeph> and <codeph>hoscg-update.tgz</codeph> patches file
-        to that directory.<codeblock>mkdir ~/patch_cghelion1.1/ </codeblock></li>
-      <li>Extract <codeph>ldap_patch_1.1.tar.gz</codeph> file to the
-          <codeph>~/patch_cghelion1.1</codeph> directory.
-        <codeblock>- tar -zxvf ldap_patch_1.1.tar.gz </codeblock></li>
-  </ol>
+          href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall">Prerequisites</xref>:
+          <ol id="ol_k5v_dmy_bt">
+          <li>Download the LDAP patch from <xref
+              href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
+              scope="external">HDN</xref>.</li>
+          <li>Create a patch folder to store the patch file and copy the
+              <codeph>ldap_patch_1.1.tar.gz</codeph> and <codeph>hoscg-update.tgz</codeph> patches
+            file to that directory. <codeblock>mkdir ~/patch_cghelion1.1/ </codeblock></li>
+          <li>Extract <codeph>ldap_patch_1.1.tar.gz</codeph> file to the
+              <codeph>~/patch_cghelion1.1</codeph> directory.
+            <codeblock>- tar -zxvf ldap_patch_1.1.tar.gz </codeblock></li>
+        </ol></li></ol>
 
   <section><title>Modify the <codeph>stackrc</codeph> files</title>
-    <p>The <codeph>stackrc</codeph> file is a
-      configuration file contains all of the settings that control the services started and the
-      repositories used to download the source for those services.</p>
+    <p>The <codeph>stackrc</codeph> file is a configuration file that contains all of the settings
+        that control the supported services and the repositories used to download the source for
+        those services.</p>
     <ol>
-    <li>Modify the <codeph>stackrc</codeph> file. 
-        <codeblock>export OS_PASSWORD=admin
+      <li>On the HLM host, modify the <codeph>/root/stackrc</codeph> file.
+          <codeblock>export OS_PASSWORD=admin
 export OS_USERNAME=admin
 export OS_TENANT_NAME=admin
 export OS_AUTH_URL=https://10.200.52.100:5000/v2.0
@@ -49,18 +53,22 @@ unset OS_PROJECT_NAME</codeblock></li>
     <li>Execute the following commands to source the <codeph>stactrcv3</codeph> file:
         <codeblock>source stactrcv3</codeblock></li>
     <li>Execute the following OpenStack CLI command to create a new project:
-        <codeblock>openstack project create ldapdemo --domain americas </codeblock></li>
+              <codeblock>openstack project create ldapdemo --domain americas </codeblock><p><image
+              href="../../media/CGH-install-ldap-id.png" id="image_qst_sky_bt"/></p></li>
     <li>Make note of the <codeph>domain-id</codeph>.</li>
     <li>Execute the following command to list all user names:
-        <codeblock>openstack user list --domain Americas</codeblock></li>
+              <codeblock>openstack user list --domain Americas</codeblock><p><image
+              href="../../media/CGH-install-ldap-user.png" id="image_fzy_2ly_bt"/></p></li>
     <li>Make note of the ID number for the <codeph>cg-ldap-admin</codeph> user.</li>
-    <li>Execute the following command to add the <codeph>cg-ldap-admin</codeph> user from the
-        previous step to the project you created as an admin.
-        <codeblock>openstack role add --user &lt;user id> --project ldapdemo admin</codeblock></li>
+    <li>Execute the following command to add the <codeph>cg-ldap-admin</codeph> user (from the
+          previous step) as an admin to the project you created as an admin.
+          <codeblock>openstack role add --user &lt;user id> --project ldapdemo admin</codeblock></li>
     <li>Execute the following commands to again source the <codeph>stactrcv3</codeph> file:
         <codeblock>source stactrcv3</codeblock></li>
-    <li>Modify the <codeph>stactrcv3</codeph> file.
-        <codeblock>export OS_USERNAME=&lt;ldapusername>
+    <li>Modify the <codeph>stactrcv3</codeph> file to update the LDAP username/password,
+          project/tenant name, domain name and ID, Identity service API version, and other values as
+          shown:
+          <codeblock>export OS_USERNAME=&lt;ldapusername>
 export OS_PASSWORD=&lt;ldapuserpassword>
 export OS_PROJECT_NAME=ldapdemo
 export OS_TENANT_NAME=ldapdemo
@@ -76,22 +84,24 @@ export OS_REGION_NAME=memphis         </codeblock></li>
   </section>
   <section><title>Install the HP Identity Operations (Keystone) package on all the controllers</title>
     <ol>
-      <li>On the HLM node, copy the <codeph>hoscg-update.tgz</codeph> to the <codeph>~/&lt;Cloud
-            Name></codeph> directory.</li>
+      <li>On the HLM host, copy the <codeph>hoscg-update.tgz</codeph> to the
+            <codeph>~/&lt;cloudname></codeph> directory.</li>
       <li>Execute the following command, using your cloudname and failure-zone:
-          <codeblock>hupdate -c &lt;cloudName> -f &lt;failureZone> hoscg-update.tgz</codeblock></li>
+          <codeblock>hupdate -c &lt;cloudname> -f &lt;failureZone> hoscg-update.tgz</codeblock></li>
     </ol>
         <p>Where:<ul id="ul_lcw_gbs_bt">
-          <li>&lt;cloudName> is the name of your cloud</li>
-          <li>&lt;failureZone></li>
-        </ul>   This command has to be run for 3 controllers nodes with different failure zones</p>
+          <li>&lt;cloudname> is the name of your cloud</li>
+          <li>&lt;failurezone></li>
+        </ul> Execute this command on all three non-KVM controllers, using a different failure zone
+        for each.</p>
   </section>
   <section><title>Configure Controllers</title>
  <p>On each of the three non-KVM region conrollers, you meed to perform the following tasks:</p>    
   <ol>
   <li>Edit the <codeph>/etc/nova/nova.conf</codeph> file to comment out the following line:
           <codeblock>#auth_version = 2.0</codeblock></li>
-    <li>Modify INI file by making the following change: <p>Replace <codeph>paste.filter_factory =
+    <li>Modify Cinder and Glance INI files by making the following change: <p>Replace
+              <codeph>paste.filter_factory =
               keystoneclient.middleware.auth_token:filter_factory</codeph></p><p>With:
               <codeph>paste.filter_factory =
             keystonemiddleware.auth_token:filter_factory</codeph></p><p>In the following files:<ul
@@ -141,8 +151,8 @@ SecurityWarning
 </section>
   <section><title>Run the patch file</title>
   <ol>
-    <li>On the HML host excute the following command to launch the patch installation:
-      <codeblock>hupdate -c b53demo -f fz2 hoscg-update.tgz</codeblock></li>
+    <li>On the HLM host, execute the following command to launch the patch installation:
+          <codeblock>hupdate -c b53demo -f fz2 hoscg-update.tgz</codeblock></li>
   </ol>
     <p>The command outut ends with the following upon completion:</p>
     <codeblock>
