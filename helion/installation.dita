@@ -38,9 +38,9 @@
       <title>Set up the Deployer</title>
       <ol>
         <li>Create LUN(s), if required.</li>
-        <li>Download the HP Linux for HP Helion OpenStack Deployer ISO from the <xref
+        <li>Download the HP Helion OpenStack Deployer ISO from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
-            format="html" scope="external">Helion Downloads</xref> page.</li>
+            format="html" scope="external">Helion Downloads</xref> page after signing up and being approved for the program.</li>
         <li>Boot your deployer from the ISO.</li>
         <li>Enter "install" to start installation.</li>
         <li>Select the language.</li>
