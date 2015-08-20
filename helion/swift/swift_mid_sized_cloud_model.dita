@@ -26,8 +26,8 @@
           container databases. This is specified in the <u>data/disks_swpac.yml</u> file.</p>
       </li>
       <li>
-        <p>The Object node type uses uses two disk drives to store account and container databases.
-          This is specified in the <u>data/disks_swobj.yml</u> file.</p>
+        <p>The Object node type uses two disk drives to store account and container databases. This
+          is specified in the <u>data/disks_swobj.yml</u> file.</p>
       </li>
       <li>Swift account, container and object storage is managed by Swift using a data structure
         known as a <i>ring</i>. The specification of the rings is provided in the

@@ -40,7 +40,7 @@
             must use this example model as the basis for building a cloud model  for your actual
             cloud by configuring the server and network that you plan to deploy. To deploy swift
             using this model you must make swift -specif changes to the provided example. For more
-            details, refer Swift-specific changes in the example mid sized cloud. model.</p>
+            details, refer Swift  in the example mid sized cloud. model.</p>
           <p> </p>
         </li>
       </ul>
