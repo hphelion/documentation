@@ -31,14 +31,11 @@ do
 			echo "$issue"
 			echo -e "${cc_blue}Correction${cc_normal}:  $help"
 			echo -e " "
-			checktmp=$(($checktmp + 1))
-			echo $checktmp
+			EXIT=$(($EXIT + 1))
 		fi
 	done < ./jenkins/badstrings.txt
 done
 #Read chcktemp and assign content to EXIT (indicating that at least one error was found)
-EXIT=`cat checktmp` > /dev/null 2>&1
-rm checktmp || true
 
 
 #Exit script with 1 if an error was found.  Otherwise exit with 0.
