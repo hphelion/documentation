@@ -284,8 +284,7 @@ helion/hlm/                    Directory contains files used by the installer
       <p>Execute the following command to deploy a
         cloud:<codeblock><codeph>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeph></codeblock></p>
     </section>
-    <section><b>Verification Steps</b><p><b>Change this section as per esx.</b><ol
-          id="ol_o5y_yyv_bt">
+    <section><b>Verification Steps</b><p><b>Change this section as per esx</b><ol id="ol_o5y_yyv_bt">
           <li>This step may be used to verify your cloud installation. Note that running the command
             below will download a cirros image format the internet, upload it to Glance and create a
             Neutron external
