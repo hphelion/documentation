@@ -63,6 +63,13 @@
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
       <ol>
+        <li>On the deployer node, enter the following command to create the SSH keypair if one is
+          not already present:<codeblock>ssh-keygen -t rsa</codeblock>
+        </li>
+        <li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file:
+          <codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
+        <li>Confirm that ssh localhost works without a password and that you can get from external
+          sources, both with and without sudo.</li>
         <li>Mount the install media at /media/cdrom, for example,
           <codeblock>sudo mount /media/cdrom</codeblock></li>
         <li> Unpack the following tarball:
