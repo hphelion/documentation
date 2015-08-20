@@ -281,20 +281,23 @@ Password: cghelion</codeblock>
       <p>Modify the <codeph>environment.json</codeph> file in the <codeph>&lt;cloudname></codeph>
         directory of the HLM VM to configure the VLANs and network addresses as appropriate for your
         environment. Configure the CLM (management), CAN (api), and BLS (blockstore) networks.</p>
-      <p><b>Note:</b> To see a sample <codeph>environment.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-env-json.dita">Sample environment.json File for
-          Installing the KVM + ESX Topology</xref>.</p>
-      <p>For each network provide:</p>
-      <codeblock>{
-"name": "management",
-"type": "vlan",
-"segment-id": "1551",
-"network-address": {
-  "cidr": "10.200.51.0/24",
-  "start-address": "10.200.51.100",
-  "gateway": "10.200.51.1"
-  }
-},        </codeblock>
+      <p><b>Note:</b> To see a sample <codeph>environment.json</codeph> file, see one of the
+        following: <ul id="ul_smq_yqt_bt">
+          <li><xref href="carrier-grade-install-pb-kvm-env-json.dita">For an Unbonded NIC
+              Environment</xref>. <p>For each network provide:
+            </p><codeblock>{
+              "name": "management",
+              "type": "vlan",
+              "segment-id": "1551",
+              "network-address": {
+              "cidr": "10.200.51.0/24",
+              "start-address": "10.200.51.100",
+              "gateway": "10.200.51.1"
+              }
+              },        </codeblock></li>
+          <li><xref href="carrier-grade-install-pb-kvm-env-json-bonded.dita#topic4797">For a Bonded
+              NIC Environment</xref></li>
+        </ul></p>
     </section>
     <section id="configure-ansible-json">
       <title>Configure the ansible.json file</title>
@@ -343,6 +346,16 @@ Password: cghelion</codeblock>
            "port": 47,
             "scope": "private"
       },    </codeblock></p>
+    </section>
+    <section id="configure-mach-json">
+      <title>Configure the machine_architecture.json file</title>
+      <p>Modify the <codeph>machine_architecture.json</codeph> file in the
+          <codeph>/opt/share/hlm/1/site/</codeph> directory of the HLM VM to to fit your hardware
+        model. You have to gather the correct PCI SLOT INFO and add ports accordingly on the
+        hardware slots or cards used for networking.</p>
+      <p><b>Note:</b> To see a sample <codeph>machine_architecture.json</codeph> file, see <xref
+          href="carrier-grade-install-pb-kvm-env-json-bonded.dita#topic4797">Sample enviroment.json
+          File for Installing the KVM + ESX Topology in an Bonded NIC Environment</xref>.</p>
     </section>
     <section>
       <title>Verify the JSON files</title>
@@ -500,7 +513,7 @@ The configuration processor completed successfully.
             successfully. The patch increase the timeout to allow enough time for the proxy VM to
               boot.<ol id="ol_n4h_mxm_bt">
               <li>On the HLM host, execute the following command to create directory for the patch
-                <codeblock>mkdir ~/patch_cghelion1.1\ </codeblock></li>
+                <codeblock>mkdir ~/patch_cghelion1.1 </codeblock></li>
               <li>Copy the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> to the
                   <codeph>~/patch_cghelion1.1</codeph> directory. </li>
               <li>Use the following command to extract the
@@ -525,14 +538,15 @@ The configuration processor completed successfully.
                 file:<codeblock>./hlm_prepare-env.sh</codeblock></li>
             </ol></p></li>
         <li>Apply the GRE patch. <p>This patch contains three files. The first file fixes an issue
-            with the iptables role failing during installation while enabling GRE in firewall in VRG
-            node. The other two files enable GRE on VRG node in iptables.</p><p>You should have
-            downloaded the patch files in the <xref
+            with the IP tables role failing during installation while enabling Generic Routing
+            Encapsulation (GRE) in firewall in VRS-GG nodes. The other two files enable GRE on VRS-G
+            nodes in the IP tables. </p><p>You should have downloaded the patch files in the <xref
               href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
               >Prerequisites</xref>. If not, execute the following
             command:<codeblock>apt-get install patch</codeblock></p><p>
             <ol id="ol_kjd_hvm_bt">
-              <li>Extract the gre_patch_1.1.tar.gz file on the HLM host to any directory.</li>
+              <li>Extract the <codeph>gre_patch_1.1.tar.gz</codeph> file on the HLM host to any
+                directory.</li>
               <li> Change to the following directory:
                 <codeblock>cd /root/kenobi-configuration-processor</codeblock></li>
               <li> Execute the following command:
@@ -548,6 +562,7 @@ The configuration processor completed successfully.
                 output should appear: <codeph>A ufw-before-input -p gre -j ACCEPT</codeph>. </li>
             </ol>
           </p></li>
+        <li>Apply the </li>
         <li>Use the following command to deploy the HP Helion OpenStack cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>This command takes a
             significant period of time. When this command is complete, the non-KVM cloud

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample machine_architecture.json
+    File for Installing the KVM + ESX Topology in an Bonded NIC Environment</title>
+<prolog>
+    <metadata>
+        <othermeta name="layout" content="default"/>
+        <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+        <othermeta name="role" content="Storage Administrator"/>
+        <othermeta name="role" content="Storage Architect"/>
+        <othermeta name="role" content="Michael B"/>
+        <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
+    <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
+                KVM + ESX deployment</xref> requires several JSON files that will be used when
+            deploying the HLM VM.</p>
+<section id="sample-node-provisionjson-file">
+  <p>The following represents a sample <codeph>machine_architecture.json</codeph> file for <xref
+          href="carrier-grade-install-pb-overview.dita#topic1925/nic">a bonded NIC
+          installation</xref>.  Use values appropriate for your environment.</p>
+            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
+                    the KVM + ESX Deployment</xref>.</p>
+        
+<codeblock>{
+                    "name": "ProLiant DL360 Gen9",
+                    "model-class": "001",
+                    "port": [
+                        {
+                            "name": "port1",
+                            "bus-address": "0000:00/0000:00:1c.4/0000:02:00.0"
+                        },
+                        {
+                            "name": "port2",
+                            "bus-address": "0000:00/0000:00:1c.4/0000:02:00.1"
+                        },
+                        {
+                            "name": "port3",
+                            "bus-address": "0000:00/0000:00:1c.4/0000:02:00.2"
+                        },
+                        {
+                            "name": "port4",
+                            "bus-address": "0000:00/0000:00:1c.4/0000:02:00.3"
+                        },
+                        {
+                            "name": "port5",
+                            "bus-address": "0000:00/0000:00:02.2/0000:04:00.0"
+                        },
+                        {
+                            "name": "port6",
+                            "bus-address": "0000:00/0000:00:02.2/0000:04:00.1"
+                        },
+                        {
+                            "name": "port7",
+                            "bus-address": "0000:00/0000:00:02.0/0000:05:00.0"
+                        },
+                        {
+                            "name": "port8",
+                            "bus-address": "0000:00/0000:00:02.0/0000:05:00.1"
+                        }
+}</codeblock>
+    
+    
+    <p> NOTE: The Helion Configuration Processor assigns the first address of the CLM address range to itself for serving python 
+        and debian repositories. Make sure that you set the first IP address of the CLM range for the eth2 (CLM) address of the HLM node.</p>
+    
+        </section>
+</body>
+</topic>

@@ -72,7 +72,7 @@
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-kvm-only.dita"
         navtitle="KVM Deployment Architecture Reference" locktitle="yes"/>
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-esx.dita"
-        navtitle="KVM+ ESX  Deployment Architecture Reference" locktitle="yes"/>
+        navtitle="KVM + ESX  Deployment Architecture Reference" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade/Installation/carrier-grade-technical-specs.dita"
       navtitle="Technical Specifications" locktitle="yes"/>

@@ -90,34 +90,24 @@ export OS_REGION_NAME=memphis         </codeblock></li>
  <p>On each of the three non-KVM region conrollers, you meed to perform the following tasks:</p>    
   <ol>
   <li>Edit the <codeph>/etc/nova/nova.conf</codeph> file to comment out the following line:
-      <codeblock>#auth_version = 2.0</codeblock>
-    </li>
-    <li>Modify the <codeph>/etc/cinder/api-paste.ini</codeph>  file as follows:
-        <p>Replace <codeph>paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory</codeph></p>
-        <p>With: <codeph>paste.filter_factory = keystonemiddleware.auth_token:filter_factory</codeph></p>
-    </li>
-    <li>Modify the <codeph>/etc/glance/glance-api-paste.ini</codeph> file as follows:
-      <p>Replace <codeph>paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory</codeph></p>
-      <p>With: <codeph>paste.filter_factory = keystonemiddleware.auth_token:filter_factory</codeph></p>
-    </li>
-    <li>Modify the <codeph>/etc/glance/glance-registry-paste.ini</codeph> file as follows:
-      <p>Replace <codeph>paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory</codeph></p>
-      <p>With: <codeph>paste.filter_factory = keystonemiddleware.auth_token:filter_factory</codeph></p>
-    </li>
-    <li>Modify the <codeph>/etc/glance/glance-registry.conf</codeph> file as follows: <p>Replace
-            <codeph>paste.filter_factory =
-            keystoneclient.middleware.auth_token:filter_factory</codeph></p><p>With:
-            <codeph>paste.filter_factory =
-        keystonemiddleware.auth_token:filter_factory</codeph></p></li>
+          <codeblock>#auth_version = 2.0</codeblock></li>
+    <li>Modify INI file by making the following change: <p>Replace <codeph>paste.filter_factory =
+              keystoneclient.middleware.auth_token:filter_factory</codeph></p><p>With:
+              <codeph>paste.filter_factory =
+            keystonemiddleware.auth_token:filter_factory</codeph></p><p>In the following files:<ul
+              id="ul_axl_kst_bt">
+              <li>/etc/cinder/api-paste.ini</li>
+              <li>/etc/glance/glance-api-paste.ini</li>
+              <li>/etc/glance/glance-registry-paste.ini</li>
+              <li>/etc/glance/glance-registry.conf</li>
+            </ul></p></li>
     <li>Execute the following commands to restart affected OpenStack services:
-        <codeblock>service glance-registry restart
+          <codeblock>service glance-registry restart
 service glance-api restart
 service cinder-api restart
-service nova-api restart</codeblock>
-      </li>
+service nova-api restart</codeblock></li>
     <li>Modify the stackrcv3 file:
-        <codeblock>
-export OS_USERNAME=cg-ldap
+          <codeblock>export OS_USERNAME=cg-ldap
 export OS_PASSWORD=cg-ldap
 export OS_PROJECT_NAME=ldapdemo
 export OS_TENANT_NAME=ldapdemo
@@ -131,10 +121,9 @@ export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
 export OS_REGION_NAME=regionone
 root@B53DEMO-CCP-T2-M1-NETCLM:~#         </codeblock></li>
       <li>Execute a <codeph>glance image-list</codeph>
-          command.<codeblock>glance image-list</codeblock><p>The output of the command appears
-          similar to the
-        following:</p><codeblock>
-/opt/stack/venvs/python-glanceclient/local/lib/python2.7/site-packages/requests/packages/urllib3/connection.py:251: SecurityWarning: Certificate has no `subjectAltName`, falling back to check for a `commonName` for now. This feature is being removed by major browsers and deprecated by RFC 2818. (See https://github.com/shazow/urllib3/issues/497 for details.)
+            command.<codeblock>glance image-list</codeblock><p>The output of the command appears
+            similar to the
+          following:</p><codeblock>/opt/stack/venvs/python-glanceclient/local/lib/python2.7/site-packages/requests/packages/urllib3/connection.py:251: SecurityWarning: Certificate has no `subjectAltName`, falling back to check for a `commonName` for now. This feature is being removed by major browsers and deprecated by RFC 2818. (See https://github.com/shazow/urllib3/issues/497 for details.)
 SecurityWarning
 /opt/stack/venvs/python-glanceclient/local/lib/python2.7/site-packages/requests/packages/urllib3/connection.py:251: SecurityWarning: Certificate has no `subjectAltName`, falling back to check for a `commonName` for now. This feature is being removed by major browsers and deprecated by RFC 2818. (See https://github.com/shazow/urllib3/issues/497 for details.)
 SecurityWarning
@@ -147,7 +136,7 @@ SecurityWarning
 | 57fc3e34-910f-49e6-9277-a46ed8156b42 | rhel65vmdk  | vmdk        | bare             | 1001783296 | active |
 +--------------------------------------+-------------+-------------+------------------+------------+--------+
 </codeblock>
-      </li>
+        </li>
   </ol>
 </section>
   <section><title>Run the patch file</title>

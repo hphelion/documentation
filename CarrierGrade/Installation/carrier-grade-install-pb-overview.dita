@@ -55,6 +55,11 @@
         application to connect the vCenter networking to the Network Operations controller to manage
         workload networks.</p></section>
   
+  <section id="nic"><title>Unbonded or Bonded NIC configuration</title>
+    
+    
+  </section>
+  
 <section id="installation-process"> <title>Installation process</title>
 <p>Use the following process to install HP Helion OpenStack Carrier Grade in a baremetal environment.</p>
 <ol>
