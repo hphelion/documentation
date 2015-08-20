@@ -31,7 +31,7 @@ do
 			echo "$issue"
 			echo -e "${cc_blue}Correction${cc_normal}:  $help"
 			echo -e " "
-			checktmp=$checktmp + 1
+			checktmp=$(($checktmp + 1))
 		fi
 	done < ./jenkins/badstrings.txt
 done
@@ -60,7 +60,7 @@ CONSOLE=${BUILD_URL}console
 
   
     
-MESSAGE="r reports <b>$FAILURES files(s)</b> listed in the dita map that did not build in the output."
+MESSAGE="Redfaced reports <b>$EXIT</b> issues that should be corrected."
 
  
  
@@ -75,7 +75,7 @@ curl \
 {
 	"color":"red",
 	"notify":false,
-	"message":"$MESSAGE  You can see the list files that are not building (<a href=\"$CONSOLE\">here</a>.)",
+	"message":"$MESSAGE  You can see the errors (<a href=\"$CONSOLE\">here</a>.)",
 	"message_format":"html"
 }
 EOP
