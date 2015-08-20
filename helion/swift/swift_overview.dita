@@ -23,43 +23,39 @@
     <p>Based on OpenStack® Object Storage, the HP Helion OpenStack® Object Storage service provides
       a highly available, resilient, and scalable storage pool for unstructured data. It is highly
       durable architecture with no single point of failure. Apart from this, HP Helion OpenStack
-      introduces a concept of cloud input model. It allows you to define Swift-specific details like
-      disk and server role of your choice based on the hardware available. </p>
+      introduces a concept of cloud input model.
+      <?oxy_insert_start author="sharmabi" timestamp="20150820T140401+0530"?>In this release (beta1)
+      we are providing three types of cloud model.<?oxy_insert_end?></p>
+    <?oxy_insert_start author="sharmabi" timestamp="20150820T140434+0530"?>
     <p>
-      <ul>
-        <li><b>Disk model</b>- The disk model describes the number of disk present on a particular
-          server and its usage. Some disks are used by the operating system (e.g. root, log, crash
-          filesystems) and others for Swift storage. For a Swift system there are two disk models-
-          Swift proxy servers (which may hold the account and container data) and Swift object
-          servers. </li>
-        <li><b>Server-role model</b>- It maps the disk-model to a particular server type.</li>
-      </ul>
-    </p>
-    <p>You can monitor the health of Swift cluster using Monasca. <note>Icinga, which was the
-        supported monitor service in previous releases of Helion OpenStack, is not supported in
-        Helion OpenStack 2.0.</note></p>
-    <section id="arch-overview"><b>Architecture Overview</b></section>
-    <p> The following diagram depicts the architectural overview of the Swift deployment into your cloud:<ul>
+      <ul id="ul_p41_rkv_bt">
+        <li>hp-ci/padawan - This cloud model runs in virtual machines. The virtual machines are
+          configured  similar to  the <b>one-region-poc-with-vsa</b>. </li>
+        <li>one-region-poc-with-vsa- This has a single control plane cluster running all services
+          (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova compute
+          servers. The number and usage of disk drives is fixed in the model. Therefore, Swift is
+          automatically configured for this system and no changes are needed or anticipated for
+          Swift-specific services. </li>
         <li>
-          <p><b>insert diagram</b>?????</p>
-          <p>topology</p>
+          <p>mid sized cloud - This example model describes a system using multiple servers and
+            networks. It provides an example for the cofiguration of the mid sized cloud. You must
+            use this example model as the basis for building a cloud model  for your actual cloud by
+            configuring the server and network that you plan to deploy. To deploy swift using this
+            model you must make swift -specif changes to the provided example. For more details,
+            refer Swift-specific changes in the example mid sized cloud. model.</p>
+          <p> </p>
         </li>
-      </ul></p>
-    <p>Before you start your Swift deployment ensure that you are familiar with the following Swift
-      components:</p>
-    <p>
-      <ul id="ul_hdc_qwz_1t">
-        <li>Proxy Server</li>
-        <li>Accounts and Containers</li>
-        <li>Objects</li>
-        <li>Rings</li>
-        <li>Zone</li>
-        <li>Part Power</li>
-        <li>Storage Policies<p>For more details on the Swift components, refer <xref
-              href="swift_components.dita#topic_jxs_1xz_1t"/>.</p></li>
       </ul>
     </p>
-    <?oxy_insert_start author="sharmabi" timestamp="20150818T113012+0530"?>
+    <?oxy_insert_end?>
+    <p><?oxy_insert_start author="sharmabi" timestamp="20150820T140936+0530"?><!--It allows you to define Swift-specific details like disk and server role of your choice based on the hardware available. 
+Disk model- The disk model describes the number of disk present on a particular server and its usage. Some disks are used by the operating system (e.g. root, log, crash filesystems) and others for Swift storage. For a Swift system there are two disk models- Swift proxy servers (which may hold the account and container data) and Swift object servers. 
+Server-role model- It maps the disk-model to a particular server type.You can monitor the health of Swift cluster using Monasca. Icinga, which was the supported monitor service in previous releases of Helion OpenStack, is not supported in Helion OpenStack 2.0.--><?oxy_insert_end?><?oxy_delete author="sharmabi" timestamp="20150820T140950+0530" content="It allows you to define Swift-specific details like disk and server role of your choice based on the hardware available. "?></p>
+    <?oxy_delete author="sharmabi" timestamp="20150820T140950+0530" content="&lt;p&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Disk model&lt;/b&gt;- The disk model describes the number of disk present on a particular server and its usage. Some disks are used by the operating system (e.g. root, log, crash filesystems) and others for Swift storage. For a Swift system there are two disk models- Swift proxy servers (which may hold the account and container data) and Swift object servers. &lt;/li&gt;&lt;li&gt;&lt;b&gt;Server-role model&lt;/b&gt;- It maps the disk-model to a particular server type.&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;&lt;p&gt;You can monitor the health of Swift cluster using Monasca. &lt;note&gt;Icinga, which was the supported monitor service in previous releases of Helion OpenStack, is not supported in Helion OpenStack 2.0.&lt;/note&gt;&lt;/p&gt;"?>
+    <?oxy_insert_start author="sharmabi" timestamp="20150820T142720+0530"?>
+    <!--Architecture Overview The following diagram depicts the architectural overview of the Swift deployment into your cloud:insert diagram?????topologyBefore you start your Swift deployment ensure that you are familiar with the following Swift components:Proxy ServerAccounts and ContainersObjectsRingsZonePart PowerStorage PoliciesFor more details on the Swift components, refer .-->
+    <?oxy_insert_end?>
+    <?oxy_delete author="sharmabi" timestamp="20150820T142727+0530" content="&lt;section id=&quot;arch-overview&quot;&gt;&lt;b&gt;Architecture Overview&lt;/b&gt;&lt;/section&gt;&lt;p&gt; The following diagram depicts the architectural overview of the Swift deployment into your cloud:&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;b&gt;insert diagram&lt;/b&gt;?????&lt;/p&gt;&lt;p&gt;topology&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;&lt;p&gt;Before you start your Swift deployment ensure that you are familiar with the following Swift components:&lt;/p&gt;&lt;p&gt;&lt;ul id=&quot;ul_hdc_qwz_1t&quot;&gt;&lt;li&gt;Proxy Server&lt;/li&gt;&lt;li&gt;Accounts and Containers&lt;/li&gt;&lt;li&gt;Objects&lt;/li&gt;&lt;li&gt;Rings&lt;/li&gt;&lt;li&gt;Zone&lt;/li&gt;&lt;li&gt;Part Power&lt;/li&gt;&lt;li&gt;Storage Policies&lt;p&gt;For more details on the Swift components, refer &lt;xref href=&quot;swift_components.dita#topic_jxs_1xz_1t&quot;/&gt;.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;"?>
     <!--          
     <?oxy_insert_end?>
     <section id="storage-plocies"><b>Storage Policies</b><p>Storage policies allow you to
