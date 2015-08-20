@@ -5,7 +5,7 @@
   <body>
     <section><ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
       Microsoft Corporation in the United States and/or other countries.</i></ph>
-    <p>This topic describes how to deploy a basic Windows Communication Foundation (WCF) service to a Windows DEA cluster. For the purposes of this tutorial, you will create
+    <p>This topic describes how to deploy a basic Windows Communication Foundation (WCF) service to a Helion Windows DEA cluster. For the purposes of this tutorial, you will create
     a WCF web service with one method, deploy it to a Windows DEA cluster, and create a basic client application to test the service.</p>
     <p>This topic contains the following sections:</p>
     <ul>
@@ -40,12 +40,10 @@
         <li>Select <b>Web</b> in the left pane if it isn't selected already. Scroll down the middle pane and select <b>WCF Service</b>. Click <b>OK</b>.
           <image placement="break" href="../../media/windows_wcf_create_3.png"></image></li>
         <li>Change the contents of <b>IService1.cs</b> (the service interface definition) to the following:
-        <codeblock>using System;
-using System.ServiceModel;
+        <codeblock>using System.ServiceModel;
 
 namespace HelionWCF
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
     public interface IService1
     {
@@ -68,6 +66,7 @@ namespace HelionWCF
       </ol>
     </section>
     <section id="deploy"><title>Deploying the web service application</title>
+      <p>Now that you've created a WCF service hosted in a Web application, you'll deploy the application to a Helion Windows DEA node.</p>
       <p>For this section, you'll need the connection information for a Windows DEA cluster running in Helion OpenStack or Helion Public Cloud. For the purposes of this tutorial, you'll use 
       a Public Cloud account. For information on creating a Windows DEA node on Public Cloud, see <xref href="windows_firstapp.dita">Building and deploying your first Windows application</xref>.</p>
       <ol>
@@ -80,8 +79,8 @@ namespace HelionWCF
       </ol>
     </section>
     <section id="client"><title>Creating and running the test client</title>
-      <p>In this section, you'll create a basic console application to test the web service. You'll use <b>svcutil.exe</b> to create a proxy, then use the proxy to call the method
-      from the client console application.</p>
+      <p>Now that you've developed a WCF service and deployed it to a Helion installation, you'll create a basic console application to test it. You'll use 
+        <b>svcutil.exe</b> to create a proxy, then use the proxy to call the web service from the client application.</p>
       <ol>
         <li>Right-click the solution in <b>Solution Explorer</b>. Select <b>Add</b>, <b>New Project</b>. In the Templates pane, select the <b>Visual C#</b> node, select <b>Console Application</b>, name the project <b>HelionWCFClient</b>, and click <b>OK</b>.
         <image placement="break" href="../../media/windows_wcf_client_1.png"></image></li>
