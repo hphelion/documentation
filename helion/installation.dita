@@ -57,6 +57,7 @@
           </ul></li>
       </ol>
       <p>At the end of this section you should have a deployer node set up with hLinux on it.</p>
+      <note>Run as the user you just created, not root.</note>
     </section>
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
