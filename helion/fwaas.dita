@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="HP2.0FWaaS">
+  <title>HP Helion OpenStack 2.0 FWaaS Configuration</title>
+  <body>
+    <p>HP Helion OpenStack 2.0 FWaaS Configuration</p>
+    <p>This document describes the configuration process and requirements for the HP Helion
+      OpenStack 2.0 Firewall as a Service module.</p>
+    <p>
+      <ul id="LBaaSlist">
+        <li><xref href="fwaas.dita#HP2.0FWaaS/Prerequisites">Prerequisites</xref></li>
+        <li><xref href="fwaas.dita#HP2.0FWaaS/Configuration">Configuration</xref></li>
+        <li><xref href="fwaas.dita#HP2.0FWaaS/MoreInfo">More Information</xref></li>
+      </ul>
+    </p>
+    
+    <section id="Prerequisites">
+      <title>Prerequisites</title>
+      <p>HP Helion <tm tmtype="reg">OpenStack</tm> must be installed. </p>
+      
+    </section>
+    <section id="Configuration">
+      <title>Configuration</title>
+      <p>HP Helion OpenStack 2.0 FWaaS Configuration</p>
+      <p>You can create a Firewall, set the Firewall rules and policy by using the networking command-line client <codeph>neutron</codeph>
+        by executing the following command from the deployer. 
+      </p>
+      <ol>
+        <li>Display the available services.<codeblock>neutron ext-list</codeblock></li>
+        <li>Display the available networks.<codeblock>neutron net-list</codeblock></li>
+        <li>Display the available machines and networks
+          <codeblock>nova list</codeblock></li>
+        <li>Create new fireall rules using <codeph>firewall-rule-create</codeph> and providing the protocol, action (allow, deny) and name for the new rule.
+        <codeblock>neutron firewall-rule-create --protocol icmp --action allow --name allow-icmp
+neutron firewall-rule-create --protocol tcp --destination-port 80 --action deny --name deny-http
+neutron firewall-rule-create --protocol tcp --destination-port 22 --action allow --name allow-ssh</codeblock></li>
+        <li>Once the rules are created, create the firewall policy by using the <codeph>firewall-policy-create</codeph> command with the 
+          <codeph>--firewall-rules</codeph> option and rules to include in quotes, followed by the name of the new policy.
+          <codeblock>neutron firewall-policy-create --firewall-rules "allow-icmp deny-http allow-ssh" policy-fw</codeblock></li>
+        <li>Finish the firewall creation by using the <codeph>firewall-create</codeph> command, the policy name and the new name you want to
+          give to your new firewall.
+          <codeblock>neutron firewall-create policy-fw --name user-fw</codeblock></li>
+        <li>You can view the details of your new firewall by using the <codeph>firewall-show</codeph> command and the name of your firewall.
+          <codeblock>neutron firewall-show user-fw</codeblock></li>
+      </ol>
+     </section>
+    <section id="MoreInfo">
+      <title>More Information</title>
+      <p>For more information on the neutron command-line interface (CLI) and firewalls, see the OpenStack networking command-line client
+        reference: <xref href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" scope="external" format="html"></xref></p>
+    </section>
+  </body>
+</topic>
