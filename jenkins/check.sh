@@ -52,7 +52,7 @@ if [ -z "$EXIT" ]
  
 #Set HipChat authorization and room     
 auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
-room="doctest"  
+room="Tech writers amok!"  
 
 #amok  
 #doctest 1537175
@@ -62,7 +62,7 @@ CONSOLE=${BUILD_URL}console
 
   
     
-MESSAGE="Redfaced reports <b>$EXIT</b> typos in the $BRANCH branch that should be corrected."
+MESSAGE="Redfaced reports <b>$EXIT typos in the $BRANCH branch</b> that should be corrected."
 
  
  
