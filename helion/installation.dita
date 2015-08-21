@@ -220,7 +220,8 @@ Gateway: 10.241.103.1
               present:<codeblock>{% if cinder_enabled_backends == 'lvm-1' %}</codeblock> to
               <codeblock>{% if cinder_enabled_backends == 'no-backends' %}</codeblock></li>
           </ol></li>
-        <li>Copy the VSA section, uncomment it, and fill the values as in the following example:
+        <li>Copy the VSA section (beginning with &lt;unique section name, uncomment the lines under it, 
+        change the name of the section to [vsa-1], and fill the values as in the following example:
           <codeblock>
 [vsa-1]
 hplefthand_password: stack
