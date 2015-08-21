@@ -143,7 +143,7 @@ container with a construct such as:</p>
 UDP_SERVICE_PORT=${!UDP_SERVICE_NAME}</codeblock>
 <p>
         <note>To use declarations like these in <xref
-            href="../deploy/1.2manifestyml.dita#topic20922/hooks"><i>hooks</i></xref> , put them in
+            href="../deploy/1.2manifestyml.dita#topic20922/hooks"><i>hooks</i></xref>, put them in
           a separate bash script. Brace expansion and grouping cannot be used directly in YAML
           files.</note>
       </p>

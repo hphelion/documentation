@@ -157,7 +157,7 @@ directives to correct the server name or port in URLs.</p>
 <p>One of the issues with managing a PHP application running multiple
 instances is dealing with user sessions.</p>
   <p>If your application uses a <xref href="../../services/1.2filesystem.dita#topic4410"><i>shared
-            filesystem service</i></xref> , you can store user sessions there. The following
+            filesystem service</i></xref>, you can store user sessions there. The following
           <i>manifest.yml</i> snippet creates a persistent filesystem service, creates a directory
         for sessions, and writes a PHP config file to set the path to the session directory:</p>
 <codeblock>  services:
