@@ -242,7 +242,9 @@
       navtitle="Resources for IT Ops">
       <!--permalink: /helion/devplatform/connectdatabase/-->
       <topicref href="devplatform/1.2devplatform.deploy-ALS.dita" locktitle="yes"
-        navtitle="Configuring and Deploying an Application Lifecycle Service Cluster"/>
+        navtitle="Creating a Cluster using the Horizon UI"/>
+      <topicref href="devplatform/helion/CLI/cf_mgmt_createcluster.dita"
+        navtitle="Creating Clusters and Services using the Command Line" locktitle="yes"/>
       <topicref href="devplatform/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
       <topicref href="devplatform/1.2devplatform.database-ALS.dita" locktitle="yes"
