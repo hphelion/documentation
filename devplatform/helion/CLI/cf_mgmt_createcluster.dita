@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_exb_b21_ct">
+  <title>Creating a Cluster with the cf-mgmt Tool</title>
+  <body>
+    <p>The cf-mgmt tool can leverage a bootstrap file to simplify cluster creation management. </p>
+    <p>The first example will show you how to create a micro-cloud where all roles are on one
+      VM.</p>
+    <p>The second example creates a cluster with one core node, two DEAs, and adds the MySQL
+      service.</p>
+    <p>The third example demonstrates how to grow a cluster once it has been created. Best practice
+      is to avoid creating huge clusters; if size is required, create a core and then expand it.</p>
+    <section><title>Before You Begin</title>To exercise these examples, you will need to: <ol
+        id="ol_fwd_k21_ct">
+        <li>Download the RC file for Windows. RC files contain information about a hosted service,
+          including region, tenant, and other information required to create a cluster.</li>
+        <li>Use a text editor to open the RC file. You will need to be able to copy values out of
+          the file. </li>
+        <li>The PEM key from the OpenStack security key.</li>
+      </ol>You may also want to refer to the full cf-mgmt tool <xref
+        href="1.2ALS_Client_Reference.dita">command reference documentation</xref>. </section><section><title>Create a Micro-Cloud</title><p>The following is an example on how to create a micro
+        cloud where all roles are in a VM.</p>For convenience, copy the code blocks and paste them
+      into a text editor. You can edit them there and then paste that information into the <xref
+        href="helion/user/reference/1.2client-ref.dita">
+        <varname>cf-mgmt</varname>
+      </xref> tool as necessary. <ol>
+        <li>Open a terminal window and change directory to the location where you installed the
+            <xref href="helion/user/reference/1.2client-ref.dita">
+            <varname>cf-mgmt</varname>
+          </xref> command-line tool. </li>
+        <li>Run the following set of commands using the <xref
+            href="helion/user/reference/1.2client-ref.dita">
+            <varname>cf-mgmt</varname>
+          </xref> tool to create the cluster.</li>
+        <li>Open the RC file you downloaded earlier in a text editor, as you will need to enter
+          values from that file.
+          <codeblock>cf-mgmt.exe ^
+    --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
+    --os-username &lt;OS_USERNAME from openstackrc&gt; ^
+    --os-password &lt;Openstack password&gt; ^
+    --os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
+    --os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
+    --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
+create-cluster ^
+    --keypair-name &lt;name of keypair created earlier&gt; ^
+    --admin-email &lt;your login for the quick-start&gt; ^
+    --admin-password &lt;your password for the quick-start&gt; ^
+    --load http://clients.als.hpcloud.com/config/trial.yml</codeblock></li>
+        <li>After the <varname>cf-mgmt</varname> tool creates the cluster, it displays the ALS
+          Console URL. This URL will have the form
+            <varname>http://api.&lt;ipaddress&gt;.xip.io</varname> For example:
+            <varname>htttp://api.255.255.255.255.xip.io</varname>
+        </li>
+        <li>Enter the Console URL in your web browser to navigate to the Management
+            Console.<note>You may be "warned" that the Console has a self-signed certificate or that
+            the site is "not trusted". These "warnings" can be safely ignored.</note> Log in to the
+          Console using the email and password you specified when you created the cluster.</li>
+      </ol></section><section><title>Create a Cluster</title>
+
+    <p>The following is an example on how to create a cluster with a Core node, two DEAs and a MySql
+      service</p>
+    <ol><li>Save this content in a text file named <i>bootstrap.yml
+            </i><codeblock>constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
+constructor-flavor: standard.xsmall 
+seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
+core-flavor: standard.medium 
+cluster-title: &lt;My Cluster Title&gt; 
+cluster-prefix: &lt;My prefix&gt;
+dea-count: 2 
+dea-flavor: standard.medium 
+services: mysql 
+services-on-core: false 
+service-flavor: standard.medium 
+az: &lt;my az&gt;</codeblock><note>Please
+            ensure the values for image names, image sizes and availability zones ("az") match your
+            current configuration.</note></li>
+      <li>Run the command.
+          <codeblock> cf-mgmt.exe ^
+        --os-auth-url <xref href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/" format="html" scope="external">https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/</xref> ^
+        --os-username &lt;username&gt; ^
+        --os-password &lt;password&gt; ^
+        --os-tenant-id &lt;id&gt; ^
+        --os-tenant-name "&lt;tenant-name&gt;" ^
+        --os-region-name "&lt;region-name&gt;" ^
+        create-cluster ^
+        --keypair-name &lt;keypair name&gt; ^
+        --admin-email &lt;admin email&gt; ^
+        --admin-password &lt;admin password&gt; ^
+        --max-cluster-wait-duration -1 ^
+        --max-corenode-wait-duration -1 ^
+        --load bootstrap.yml</codeblock></li></ol>
+    </section>
+ <section><title>Creating big clusters</title>
+    <p>It is not recommended to create big clusters in a single command to reduce chances of errors.
+        It is best to start with a small cluster and expand it. </p>
+      <p>The following is an example on how to add a DEA and a service to a cluster that already
+        exists.</p>
+    <p>Step 1. Save this content in a bootstrap.yml file</p>
+    <p>version: 1.2</p>
+    <p>constructor-image-name: HP Helion Development Platform - Application Lifecycle Service
+      Installer 1.2.0.282</p>
+    <p>constructor-flavor: standard.xsmall</p>
+    <p>seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed
+      Node 1.2.0.282</p>
+    <p>core-flavor: standard.medium</p>
+    <p>cluster-title: &lt;My Cluster Title&gt;</p>
+    <p>cluster-prefix: &lt;My prefix&gt;</p>
+    <p>dea-count: 1</p>
+    <p>dea-flavor: standard.medium</p>
+    <p>az: &lt;my az&gt;</p>
+    <p> Step 3. Run command.</p>
+    <p>cf-mgmt.exe ^</p>
+    <p> --os-auth-url <xref href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/"
+        format="html" scope="external"
+        >https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/</xref> ^</p>
+    <p> --os-username &lt;username&gt; ^</p>
+    <p> --os-password &lt;password&gt; ^</p>
+    <p> --os-tenant-id &lt;id&gt; ^</p>
+    <p> --os-tenant-name "&lt;tenant-name&gt;" ^</p>
+    <p> --os-region-name "&lt;region-name&gt;" ^</p>
+    <p> --skip-ssl-validation ^</p>
+    <p>add-role dea ^</p>
+    <p> --keypair-name &lt;keypair name&gt; ^ </p>
+    <p> --load bootstrap_Service.yml ^</p>
+    <p> </p>
+    <p>Adding a Service</p>
+    <p>Step 1. Save this content in a bootstrap.yml file</p>
+    <p>version: 1.2</p>
+    <p>constructor-image-name: HP Helion Development Platform - Application Lifecycle Service
+      Installer 1.2.0.282</p>
+    <p>constructor-flavor: standard.xsmall</p>
+    <p>seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed
+      Node 1.2.0.282</p>
+    <p>core-flavor: standard.medium</p>
+    <p>cluster-title: &lt;My Cluster Title&gt;</p>
+    <p>cluster-prefix: &lt;My prefix&gt;</p>
+    <p>services-on-core: false</p>
+    <p>service-flavor: standard.medium</p>
+    <p> </p>
+    <p>Note: please ensure the image names, sizes and azs match your system.</p>
+    <p> </p>
+    <p>Step 2. Run command.</p>
+    <p>cf-mgmt.exe ^</p>
+    <p> --os-auth-url <xref href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/"
+        format="html" scope="external"
+        >https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/</xref> ^</p>
+    <p> --os-username &lt;username&gt; ^</p>
+    <p> --os-password &lt;password&gt; ^</p>
+    <p> --os-tenant-id &lt;id&gt; ^</p>
+    <p> --os-tenant-name "&lt;tenant-name&gt;" ^</p>
+    <p> --os-region-name "&lt;region-name&gt;" ^</p>
+    <p> --skip-ssl-validation ^</p>
+    <p>add-service mysql ^</p>
+    <p> --keypair-name &lt;keypair name&gt; ^ </p>
+    <p> --load bootstrap_Service.yml ^</p>
+ </section>
+  </body>
+</topic>
