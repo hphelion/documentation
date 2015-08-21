@@ -57,10 +57,11 @@
           </ul></li>
       </ol>
       <p>At the end of this section you should have a deployer node set up with hLinux on it.</p>
-      <note>Run as the user you just created (or stack if you left the default of "stack", but do not run as root.</note>
+      
     </section>
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
+      <note>Run as the user you just created (or stack if you left the default of "stack", but do not run as root.</note>
       <ol>
         <li>On the deployer node, enter the following command to create the SSH keypair if one is
           not already present:<codeblock>ssh-keygen -t rsa</codeblock>
