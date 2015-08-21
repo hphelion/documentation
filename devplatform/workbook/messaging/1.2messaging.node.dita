@@ -103,7 +103,7 @@ var rabbitMqConnection = amqp.createConnection({ url: connectionString });
 ...
 
 rabbitMqConnection.once('ready', function() {
-    rabbitMqConnection.queue('msg-queue', {} , function(queue) {
+    rabbitMqConnection.queue('msg-queue', {}, function(queue) {
       rabbitMqConnection.publish('msg-queue', { message: newMessage });
 </codeph>
 </codeblock>

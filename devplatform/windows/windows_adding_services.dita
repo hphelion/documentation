@@ -74,8 +74,8 @@
                 <image href="../../media/windows_nuget_json.png"/>
               </p></li>
             <li> Add a Redis client. In this case, you'll install <b>StackExchange.Redis</b>. Open
-              the <b>Manage NuGet Packages</b> dialog, , select the <b>Online</b> node, and search
-              for <b>StackExchange.Redis</b>. Click <b>Install</b>.<p>
+              the <b>Manage NuGet Packages</b> dialog, select the <b>Online</b> node, and search for
+                <b>StackExchange.Redis</b>. Click <b>Install</b>.<p>
                 <image href="../../media/windows_nuget_redis.png"/>
               </p></li>
           </ol></li>
