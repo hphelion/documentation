@@ -1,3 +1,6 @@
+% a the %= choose either the direct or the indirect article
+% in in %= delete repeated word (in).
+% by it's %= Don't use a apostrophe in this instance.
 %??%= If is a comment or reminder, place it in a comment.
 % HDP %= do not abbreviate. Use Helion Development Platform.
 %[bB]are [mM]etal %= use baremetal (one word, no caps)
