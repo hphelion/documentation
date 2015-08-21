@@ -58,7 +58,7 @@ CONSOLE=${BUILD_URL}console
 
   
     
-MESSAGE="Redfaced reports <b>$EXIT</b> issues that should be corrected."
+MESSAGE="Redfaced reports <b>$EXIT</b> typos in the $BRANCH branch that should be corrected."
 
  
  
@@ -77,11 +77,5 @@ curl \
 	"message_format":"html"
 }
 EOP
-
- 
- 
-	 
-	 
-	 
           exit 1
 fi
