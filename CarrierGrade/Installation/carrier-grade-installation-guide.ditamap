@@ -28,7 +28,7 @@
         </topicref>
         <topichead navtitle="Deploying the Non-KVM Region">
             <topicref href="carrier-grade-install-hlm-vm.dita"
-                navtitle="Installing the Helion Lifecycle Management Virtual Machine"
+                navtitle="Bootstrapping the HP Helion Lifecycle Management Virtual Machine and Installation Services"
                 locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm.dita" navtitle="Installing the KVM Deployment"
                 locktitle="yes">
@@ -65,5 +65,5 @@
         <topicref href="carrier-grade-install-config-backend.dita"
             navtitle="Configuring Multi-Backend Support" locktitle="yes" toc="no"/>
         <topicref href="carrier-grade-install-bonded-nic.dita"
-            navtitle="NIC Bonding and PCI Enumeration" locktitle="yes"/>
+            navtitle="NIC Bonding and PCI Enumeration" locktitle="yes" toc="no"/>
     </topicref></map>

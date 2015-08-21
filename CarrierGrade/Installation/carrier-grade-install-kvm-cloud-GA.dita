@@ -108,9 +108,10 @@ sudo wrs-patch install-local /opt/branding</codeblock></li>
               <codeblock>Step 9 of 29 [####  ]dm-6 WRITE SAME failed. Manually zeroing. </codeblock><p><image
               href="../../media/CGH-install-kvm-error.png" id="image_u2g_1z1_ct"/></p></li>
         <li>After <codeph>controller-0</codeph> is deployed, deploy the remaining nodes as
-            <codeph>controller-1</codeph> and <codeph>compute-'n'</codeph>. <codeblock>system host-add --hostname controller-1 --personality controller --mgmt_mac &lt;mgmt_mac&gt; --bm_mac &lt;bm_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt; --bm_password &lt;ilo_password&gt;
-            system host-add --hostname &lt;unique-compute-name&gt; --personality compute --mgmt_mac &lt;mgmt_mac&gt; --mgmt_ip &lt;mgmt_ip&gt; --bm_mac &lt;ilo_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt;  --bm_password &lt;ilo_password&gt;</codeblock>
-          <p><image href="../../media/CGH-install-kvm-host-add.png" id="image_tv5_wz1_ct"/></p></li>
+            <codeph>controller-1</codeph> and <codeph>compute-'n'</codeph>.
+              <codeblock>system host-add --hostname controller-1 --personality controller --mgmt_mac &lt;mgmt_mac&gt; --bm_mac &lt;bm_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt; --bm_password &lt;ilo_password&gt;
+system host-add --hostname &lt;unique-compute-name&gt; --personality compute --mgmt_mac &lt;mgmt_mac&gt; --mgmt_ip &lt;mgmt_ip&gt; --bm_mac &lt;ilo_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt;  --bm_password &lt;ilo_password&gt;</codeblock><p><image
+              href="../../media/CGH-install-kvm-host-add.png" id="image_tv5_wz1_ct"/></p></li>
         <li>While registering compute nodes, make sure you specify the <codeph>mgmt_ip</codeph>.
           This IP should from the KVM CLM range (refer to the <codeph>region_config</codeph> file)
           and must not overlap controller IPs. It is safe to start after a block of 10 IPs.</li>

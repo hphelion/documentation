@@ -205,33 +205,43 @@ VSD Server : auto </codeblock></li>
                 <codeblock>cd /root/kenobi-node-configuration </codeblock></li>
               <li>Execute the following command:
                 <codeblock>patch -p1 &lt; &lt;path_to_patch_file>/enabling-GRE-in-iptables-for-VRG.patch </codeblock></li>
-              <li>Execute the following command:
-                <codeblock>~/cg-hlm/hlm-build/./hlm_prepare-env.sh</codeblock></li>
+              <li>Execute the following command to synch the patch file:
+            <codeblock>~/cg-hlm/hlm-build/./hlm_prepare-env.sh</codeblock></li>
               <li>Verfiy that the GRE is enabled in iptables on VRG node by running the following
                 command on the VRG node:<codeblock>iptables -S | grep gre</codeblock> The following
                 output should appear: <codeph>A ufw-before-input -p gre -j ACCEPT</codeph>. </li>
             </ol>
           </p>
     </section>
+    <section><title>Apply the NIC bonding patch</title><p><b>For bonded NIC environments</b>, use
+        the following steps to install a required patch.</p><ol id="ol_nbz_1hb_ct">
+        <li>Copy the patch file to <codeph>/root/</codeph> directory on the HLM host.</li>
+        <li>Execute the following command to download the patch package:
+          <codeblock>apt-get install patch</codeblock></li>
+          <li>Change to the <codeph>root/kenobi-configuration-processor</codeph> directory:
+          <codeblock>cd /root/kenobi-configuration-processor </codeblock></li>
+        <li>Execute the following command to launch the patch installation:
+          <codeblock>patch -p1 ../cg-hos-nic-bonding.patch </codeblock></li>
+        <li>Execute following command to synch the patch file:
+          <codeblock>/root/cg-hlm/hlm-build/hlm_prepare-env.sh </codeblock></li>
+        <li>And then run all steps starting from running hcfgproc again</li></ol></section>
     <section id="configure-a-json-file-for-installation">
       <title>Launch the HP Helion OpenStack cloud</title>
       <p>Use the following steps on the HLM host to log on to the HLM VM created in <xref
         href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HP Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
       <ol>
-        <li>Login to HLM VM.
-          <codeblock>ssh &lt;HLM_VM_IP>
-            where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
-              the default credentials: </p><p>
-                <codeblock>User Name: cghelion
-                  Password: cghelion</codeblock>
-              </p><p><b>Important:</b> After logging in with the default password, make sure you change
-                the password for the <codeph>cghelion</codeph> user. </p></li>
+        <li>Login to HLM VM. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
+            IP of the HLM VM. </p><p>Use the default credentials: </p><p>
+            <codeblock>User Name: cghelion
+Password: cghelion</codeblock>
+          </p><p><b>Important:</b> After logging in with the default password, make sure you change
+            the password for the <codeph>cghelion</codeph> user. </p></li>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
         <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
       
         <li>Execute the following command to provision and configure HP Helion
-            OpenStack.<codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where:</p><ul>
+            OpenStack.<codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where::</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.<p>The cloud
                 name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
                   chracter:<ul id="ul_lz5_rbf_bt">
