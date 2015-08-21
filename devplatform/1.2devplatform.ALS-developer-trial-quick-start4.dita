@@ -45,7 +45,7 @@
                             installed the <xref href="helion/user/reference/1.2client-ref.dita">
                                 <varname>cf-mgmt</varname>
                             </xref> command-line tool. </li>
-                        <li props="highlight">Run the following set of commands using the <xref
+                        <li>Run the following set of commands using the <xref
                                 href="helion/user/reference/1.2client-ref.dita">
                                 <varname>cf-mgmt</varname>
                             </xref> tool to create the cluster. In the unlikely event that the
@@ -63,7 +63,7 @@
     --os-username &lt;OS_USERNAME from openstackrc&gt; ^
     --os-password &lt;Openstack password&gt; ^
     --os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
-    --os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
+   <ph props="highlight">--os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^</ph>
 --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
 create-cluster ^
     --keypair-name &lt;name of keypair created earlier&gt; ^
@@ -78,7 +78,7 @@ create-cluster ^
 cf-mgmt create-cluster \
    --keypair-name &lt;name of keypair created earlier&gt; \
    --admin-email &lt;your login for the quick-start&gt; \
-   <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>--admin-password &lt;your password for the quick-start&gt; \<?oxy_custom_end?>
+   --admin-password &lt;your password for the quick-start&gt; \
    --load http://clients.als.hpcloud.com/config/trial.yml</codeblock></li>
                             </ul></li>
                         <li>After the <varname>cf-mgmt</varname> tool creates the cluster, it
@@ -100,5 +100,7 @@ cf-mgmt create-cluster \
                     </xref></stentry>
                     </strow>
 </simpletable>
+    <p><ph props="highlight">Here's another highlighting test.</ph></p>
+    <p>Here's another <ph props="highlight">highlighting</ph> test.</p>
 </body>
 </topic>
