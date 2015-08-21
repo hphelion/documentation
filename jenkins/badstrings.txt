@@ -1,4 +1,7 @@
-% a the %= choose either the direct or the indirect article
+% are have%= incorrect word grouping.
+% a [oO]bject%= object requires the article an.
+% a [iI]nstance%= instance requires the article an.
+% a the %= choose either the direct or the indirect article.
 % in in %= delete repeated word (in).
 % by it's %= Don't use a apostrophe in this instance.
 %??%= If is a comment or reminder, place it in a comment.
