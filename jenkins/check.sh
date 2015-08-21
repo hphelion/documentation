@@ -77,7 +77,7 @@ curl \
 {
 	"color":"red",
 	"notify":false,
-	"message":"$MESSAGE  You can see the errors (<a href=\"$CONSOLE\">here</a>.)",
+	"message":"$MESSAGE  You can see the errors <a href=\"$CONSOLE\">here</a>.",
 	"message_format":"html"
 }
 EOP
