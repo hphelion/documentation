@@ -334,15 +334,15 @@
   </row>
 <row>
 <entry>--upstream-proxy </entry>
-<entry>Upstream proxy. (Protocol://hostname:port. For example: ftp://proxy.comp.net:8080)</entry>
+  <entry>Upstream proxy. (Protocol://hostname:port. For example: <codeph>http://proxy.comp.net:8080</codeph>)</entry>
 </row>
 <row>
 <entry>--http-proxy</entry>
-<entry>HTTP proxy. (Protocol://hostname:port. For example: ftp://proxy.comp.net:8080)</entry>
+<entry>HTTP proxy. (Protocol://hostname:port. For example: <codeph>http://proxy.comp.net:8080</codeph>))</entry>
 </row>
 <row>
 <entry>--https-proxy</entry>
-<entry>HTTPS proxy. (Protocol://hostname:port. For example: ftp://proxy.comp.net:8080)</entry>
+  <entry>HTTPS proxy. (Protocol://hostname:port. For example: <codeph>http://proxy.comp.net:8080</codeph></entry>
 </row>
 <row>
     <entry>--ftpproxy</entry>
