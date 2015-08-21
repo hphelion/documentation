@@ -241,9 +241,9 @@ hplefthand_debug: false
           volume.</li>
       </ol>
     </section>
-    <section id="Post-Installation"><title>Verification Steps</title>
+    <section id="Post-Installation"><title>Post-installation Configuration Steps</title>
       <ol>
-        <li>This step may be used to verify your cloud installation. Note that running the command
+        <li>Note that running the command
           below will download a cirros image, upload a cirros image to Glance, and create a Neutron
           external
             network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
