@@ -48,7 +48,7 @@
         <li>Select a <uicontrol>Type</uicontrol> in the drop down. Choices are:. <ul>
             <li><uicontrol>URL</uicontrol> allows you to enter in an internet address Also referred
               to as a <uicontrol>Web Hook</uicontrol>.</li>
-            <li><uicontrol>Email</uicontrol> allows you to enter in an email address.</li>
+            <li><uicontrol>Email</uicontrol> allows you to enter in an email address.  See Note Below.</li>
             <li><uicontrol>PagerDuty</uicontrol> allows you to enter in a PagerDuty address.</li>
           </ul></li>
         <li>In the <uicontrol>Address/Key</uicontrol> text field, enter in a valid value based on
@@ -56,6 +56,7 @@
         <li>When done creating the notification method, click <uicontrol>Create Notification
             Method</uicontrol>. </li>
       </ol>
+      <note>In Beta 1 the Email option is not functioning.</note>
     </section>
     <section>
       <p>After the notification method saves, the Notification Methods window refreshes with the new

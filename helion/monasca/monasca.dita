@@ -28,6 +28,24 @@
       <title>Diagram of Monasca Service</title>
       <p><image placement="break" href="../images/monasca_diagram.png"/></p>
     </section>
+    <section id="configuration"><title>Configuring Monasca</title>
+      <p>In Beta 1 you will have the option to specify which database platform you want to use for
+        the Metrics Database</p>
+      <p>Monasca supports two different database options. The primary metrics database is <b>Vertica</b>, which
+        is an HP analytics database with many features and impressive speed. This the default and
+        recommended database to use for Helion OpenStack.</p>
+      <p>The alternative database is <b>InfluxDB</b>. Though InfluxDB works, it does not handle failure
+        recoveries in a high availability cluster very well, which is a known issue.</p>
+      <p>To use InfluxDB there are two steps that must be completed during your cloud
+        deployment:</p>
+      <ul>
+        <li>Edit the <codeph>data/ccp.yml</codeph> file, replacing 'vertica' with 'influxdb'</li>
+        <li>Then when running the <codeph>hlm-deploy.yml</codeph> Ansible playbook, add the argument
+            <codeph>-e database_type=influxdb</codeph></li>
+      </ul>
+      <p>Example:</p>
+      <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium -e database_type=influxdb </codeblock>
+    </section>
     <section id="working"><title>Working with Monasca</title>
       <p>Access to Monasca is available through the Web UI (<xref
           href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
