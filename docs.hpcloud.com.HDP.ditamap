@@ -46,14 +46,18 @@
  <topichead navtitle="Installation">
    <topicref href="devplatform/installation/devplatform_commercial_install.dita"
         navtitle="Full Platform Installation - All Services" locktitle="yes" chunk="to-content">
-        <topicref href="devplatform/installation/devplatform.horizonui.install.dita" toc="no"/>
-        <topicref href="devplatform/installation/devplatform_install_prereq.dita" toc="no"/>
+        <topicref href="devplatform/installation/devplatform.horizonui.install.dita" toc="no"
+          navtitle="Install the Horizon UI Panels" locktitle="yes"/>
+        <topicref href="devplatform/installation/devplatform_install_prereq.dita" toc="no"
+          navtitle="Installation Prerequisites" locktitle="yes"/>
         <topicref href="devplatform/installation/devplatform_install_platform.dita" toc="no"/>
         <topicref href="devplatform/installation/devplatform_install_ALS.dita" toc="no"/>
         <topicref href="devplatform/installation/devplatform_install_database.dita" toc="no"/>
         <topicref href="devplatform/installation/devplatform_install_messaging.dita" toc="no"/>
-        <topicref href="devplatform/installation/devplatform_install_marketplace.dita" toc="no"/>
-        <topicref href="devplatform/installation/devplatform.vertica.install.dita" toc="no"/>
+        <topicref href="devplatform/installation/devplatform_install_marketplace.dita" toc="no"
+          navtitle="Install the Marketplace Service (Beta)" locktitle="yes"/>
+        <topicref href="devplatform/installation/devplatform.vertica.install.dita" toc="no"
+          navtitle="Install the Vertica Application" locktitle="yes"/>
       </topicref>
       <topicref href="devplatform/helion/admin/server/1.2upgrade.dita" locktitle="yes"
         navtitle="Upgrade Existing ALS Nodes and Clusters"/> 
@@ -385,12 +389,9 @@
         <!--permalink: /helion/devplatform/als/admin/best-practices/logging-examples/-->
         <!--permalink: /helion/devplatform/als/admin/cluster/-->
         <topicref href="devplatform/helion/admin/cluster/1.2index.dita" locktitle="yes"
-          navtitle="Cluster Setup">
-          <topicref href="devplatform/helion/admin/cluster/1.2cloud-init.dita" locktitle="yes"
-            navtitle="Using the cloud-init Package"/>
-          <topicref href="devplatform/helion/admin/cluster/zones.dita"
-            navtitle="Availability and Placement Zones" locktitle="yes"/>
-        </topicref>
+          navtitle="Cluster Setup"/>
+        <topicref href="devplatform/helion/admin/cluster/zones.dita"
+          navtitle="Configure Availability and Placement Zones" locktitle="yes"/>
         <!--permalink: /helion/devplatform/als/admin/cluster/cloud-init/-->
         <!--permalink: /helion/devplatform/als/admin/cluster/external-db/-->
         <!--permalink: /helion/devplatform/als/admin/cluster/harbor/-->
