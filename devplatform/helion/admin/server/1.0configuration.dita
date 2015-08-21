@@ -225,8 +225,8 @@ will obtain an appropriate IP address automatically. DNS at your site
 may establish a similar convention, which you will want to follow when
 making any name or address changes within the cluster.</p>
 <p>Having determined the hostnames of cluster nodes to be managed by <xref href="#topic29241/dns"
-          format="dita"/> , the hostname on the primary node should be set using <xref
-          type="section" href="#topic29241/server-config-hostname">
+          format="dita"/>, the hostname on the primary node should be set using <xref type="section"
+          href="#topic29241/server-config-hostname">
           <i>kato node rename</i>
         </xref>.</p>
 <p>Finally, if you must set a static IP on any cluster node, be sure to
