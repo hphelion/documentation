@@ -2311,7 +2311,7 @@ first using <xref type="section" href="#topic65119/create_volume">Create volume<
 <i>availability_zone</i> to be specified.</p>
 <p>This operation is asynchronous. To check the status of the restore operation,
 the user can call <xref type="section" href="#topic65119/get_volume_details">Get volume details</xref> for the <i>volume_id</i>
-returned in the response (status will be set to <i>restoring</i> while the the
+returned in the response (status will be set to <i>restoring</i> while the
 restore operation runs, <i>error_restoring</i> if the restore operation fails and
 <i>available</i> if the restore operation succeeds).</p>
 <p>
