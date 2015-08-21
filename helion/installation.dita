@@ -150,7 +150,7 @@ helion/hlm/                    Directory contains files used by the installer
             <li>Verify the network is working correctly by pinging each IP (excluding VSA-BLK and VIPs)
                from the deployer node. You can find the IP addresses in <b>generated_files/etc/hosts</b>. To do so, run:
                
-               <codeblock>stack@hlm:~/helion/hlm/ansible$ less generated_files/etc/hosts</codeblock></li>
+               <codeblock>~/helion/hlm/ansible$ less generated_files/etc/hosts</codeblock></li>
           </ol>
         </li>
         <li> Edit roles/HZN-WEB/tasks/install.yml and add the following after the 'install-package'
