@@ -758,7 +758,7 @@
               <entry>Swift memcache connect</entry>
               <entry>Alarms if a socket cannot be opened to the specified target memcached
                 server</entry>
-              <entry>The server may be down. The memcached deamon running the the server may have
+              <entry>The server may be down. The memcached deamon running the server may have
                 stopped.</entry>
               <entry>
                 <p>If the server is down, boot it.</p>
