@@ -14,6 +14,7 @@
   </metadata>
 </prolog>
 <body>
+  <!-- https://wiki.hpcloud.net/pages/viewpage.action?pageId=53513771 -->
   <p>This page explains how to backup and restore the HLM VM in the event of catastrophic failure.
       The page also explains how to recover the <tm tmtype="reg">Percona</tm>
       <tm tmtype="reg">XtraDB</tm> cluster on cloud controllers in the event of a database

@@ -157,22 +157,80 @@ VSD Server : auto </codeblock></li>
       </ol>
     </section>
     <!--<section><title>Install the DVswitch</title></section><section><p>The VMware® vNetwork Distributed Switch (vDS) enables you to manage virtual machine networking for a number of hosts in a datacenter using the VMware vSphere application </p><p>Please Refer to the DCN VSP 3.0 R7 installation Guide for DVswitch installation.</p></section>-->
+    <section><title>Apply the ESX compute proxy patch</title>
+      <p>This patch fixes an intermittent issue where the ESX compute proxy is not configured
+        after the <codeph>hprovision</codeph> completes successfully. The patch increase the timeout
+        to allow enough time for the proxy VM to boot.<ol id="ol_n4h_mxm_bt">
+          <li>On the HLM host, execute the following command to create directory for the patch
+            <codeblock>mkdir ~/patch_cghelion1.1 </codeblock></li>
+          <li>Copy the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> to the
+            <codeph>~/patch_cghelion1.1</codeph> directory. </li>
+          <li>Use the following command to extract the
+            <codeph>compute_proxy_patch_1.1.tar.gz</codeph>:
+            <codeblock>tar -zxvf compute_proxy_patch_1.1.tar.gz</codeblock></li>
+          <li>Use the following command to install the Ubuntu patch
+            utility:<codeblock>apt-get install patch </codeblock></li>
+          <li>Change to the <codeph>~/cg-hlm </codeph>
+            directory:<codeblock>cd ~/cg-hlm</codeblock></li>
+          <li>You can confirm that the patch will execute properly before performing the patch
+            operation by executing the following
+            command:<codeblock>patch -p1 --dry-run &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock></li>
+          <li>The command shoild result in the following
+            message:<codeblock>checking file node-provision/hlm_provisionproxy.py</codeblock></li>
+          <li>Execute the following command to perform tha patching operation:
+            <codeblock>patch -p1 &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock>The
+            patch application returns the following message, if
+            successful:<codeblock> patching file node-provision/hlm_provisionproxy.py</codeblock></li>
+          <li>Change to the <codeph>~/cg-hlm/hlm-build</codeph>
+            folder:<codeblock>cd ~/cg-hlm/hlm-build</codeblock></li>
+          <li>Execute the following command to synch the patch
+            file:<codeblock>./hlm_prepare-env.sh</codeblock></li>
+        </ol></p></section>
+    <section><title>Apply the GRE patch</title>
+      <p>This patch contains three files. The first file fixes an issue
+        with the IP tables role failing during installation while enabling Generic Routing
+        Encapsulation (GRE) in firewall in VRS-GG nodes. The other two files enable GRE on VRS-G
+        nodes in the IP tables. </p><p>You should have downloaded the patch files in the <xref
+          href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
+          >Prerequisites</xref>. If not, execute the following
+          command:<codeblock>apt-get install patch</codeblock></p><p>
+            <ol id="ol_kjd_hvm_bt">
+              <li>Extract the <codeph>gre_patch_1.1.tar.gz</codeph> file on the HLM host to any
+                directory.</li>
+              <li> Change to the following directory:
+                <codeblock>cd /root/kenobi-configuration-processor</codeblock></li>
+              <li> Execute the following command:
+                <codeblock>patch -p1 &lt; &lt;path_to_patch_file>/GRE-related-installer-failure-fix.patch </codeblock></li>
+              <li>Change to the following directory:
+                <codeblock>cd /root/kenobi-node-configuration </codeblock></li>
+              <li>Execute the following command:
+                <codeblock>patch -p1 &lt; &lt;path_to_patch_file>/enabling-GRE-in-iptables-for-VRG.patch </codeblock></li>
+              <li>Execute the following command:
+                <codeblock>~/cg-hlm/hlm-build/./hlm_prepare-env.sh</codeblock></li>
+              <li>Verfiy that the GRE is enabled in iptables on VRG node by running the following
+                command on the VRG node:<codeblock>iptables -S | grep gre</codeblock> The following
+                output should appear: <codeph>A ufw-before-input -p gre -j ACCEPT</codeph>. </li>
+            </ol>
+          </p>
+    </section>
     <section id="configure-a-json-file-for-installation">
-      <title>Deploy HP Helion OpenStack</title>
-      <p>Use the following steps on the HLM host to deploy HP Helion OpenStack:</p>
+      <title>Launch the HP Helion OpenStack cloud</title>
+      <p>Use the following steps on the HLM host to log on to the HLM VM created in <xref
+        href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HP Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
       <ol>
         <li>Login to HLM VM.
-            <codeblock>ssh &lt;HLM_VM_IP>
-where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
-            the default credentials: </p><p>
-            <codeblock>User Name: cghelion
-Password: cghelion</codeblock>
-          </p><p><b>Important:</b> After logging in with the default password, make sure you change
-            the password for the <codeph>cghelion</codeph> user. </p></li>
+          <codeblock>ssh &lt;HLM_VM_IP>
+            where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
+              the default credentials: </p><p>
+                <codeblock>User Name: cghelion
+                  Password: cghelion</codeblock>
+              </p><p><b>Important:</b> After logging in with the default password, make sure you change
+                the password for the <codeph>cghelion</codeph> user. </p></li>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
         <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
-        <li>Provision and configure HP Helion
+      
+        <li>Execute the following command to provision and configure HP Helion
             OpenStack.<codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.<p>The cloud
                 name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
@@ -509,62 +567,6 @@ The configuration processor completed successfully.
             output for the command should appear similar to the following:</p><p><image
               href="../../media/CGH-install-hnetinit-output.png" id="image_tft_r11_1t"/></p></li></ol>
     </section>
-    <section><title>Apply the ESX compute proxy patch</title>
-        <p>This patch fixes an intermittent issue where the ESX compute proxy is not configured
-        after the <codeph>hprovision</codeph> completes successfully. The patch increase the timeout
-        to allow enough time for the proxy VM to boot.<ol id="ol_n4h_mxm_bt">
-          <li>On the HLM host, execute the following command to create directory for the patch
-            <codeblock>mkdir ~/patch_cghelion1.1 </codeblock></li>
-          <li>Copy the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> to the
-              <codeph>~/patch_cghelion1.1</codeph> directory. </li>
-          <li>Use the following command to extract the
-              <codeph>compute_proxy_patch_1.1.tar.gz</codeph>:
-            <codeblock>tar -zxvf compute_proxy_patch_1.1.tar.gz</codeblock></li>
-          <li>Use the following command to install the Ubuntu patch
-            utility:<codeblock>apt-get install patch </codeblock></li>
-          <li>Change to the <codeph>~/cg-hlm </codeph>
-            directory:<codeblock>cd ~/cg-hlm</codeblock></li>
-          <li>You can confirm that the patch will execute properly before performing the patch
-            operation by executing the following
-            command:<codeblock>patch -p1 --dry-run &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock></li>
-          <li>The command shoild result in the following
-            message:<codeblock>checking file node-provision/hlm_provisionproxy.py</codeblock></li>
-          <li>Execute the following command to perform tha patching operation:
-            <codeblock>patch -p1 &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock>The
-            patch application returns the following message, if
-            successful:<codeblock> patching file node-provision/hlm_provisionproxy.py</codeblock></li>
-          <li>Change to the <codeph>~/cg-hlm/hlm-build</codeph>
-            folder:<codeblock>cd ~/cg-hlm/hlm-build</codeblock></li>
-          <li>Execute the following command to synch the patch
-            file:<codeblock>./hlm_prepare-env.sh</codeblock></li>
-        </ol></p></section>
-    <section><title>Apply the GRE patch</title>
-        <p>This patch contains three files. The first file fixes an issue
-            with the IP tables role failing during installation while enabling Generic Routing
-            Encapsulation (GRE) in firewall in VRS-GG nodes. The other two files enable GRE on VRS-G
-            nodes in the IP tables. </p><p>You should have downloaded the patch files in the <xref
-              href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
-              >Prerequisites</xref>. If not, execute the following
-            command:<codeblock>apt-get install patch</codeblock></p><p>
-            <ol id="ol_kjd_hvm_bt">
-              <li>Extract the <codeph>gre_patch_1.1.tar.gz</codeph> file on the HLM host to any
-                directory.</li>
-              <li> Change to the following directory:
-                <codeblock>cd /root/kenobi-configuration-processor</codeblock></li>
-              <li> Execute the following command:
-                <codeblock>patch -p1 &lt; &lt;path_to_patch_file>/GRE-related-installer-failure-fix.patch </codeblock></li>
-              <li>Change to the following directory:
-                <codeblock>cd /root/kenobi-node-configuration </codeblock></li>
-              <li>Execute the following command:
-                <codeblock>patch -p1 &lt; &lt;path_to_patch_file>/enabling-GRE-in-iptables-for-VRG.patch </codeblock></li>
-              <li>Execute the following command:
-                <codeblock>~/cg-hlm/hlm-build/./hlm_prepare-env.sh</codeblock></li>
-              <li>Verfiy that the GRE is enabled in iptables on VRG node by running the following
-                command on the VRG node:<codeblock>iptables -S | grep gre</codeblock> The following
-                output should appear: <codeph>A ufw-before-input -p gre -j ACCEPT</codeph>. </li>
-            </ol>
-          </p>
-      </section>
     <section><title>Deploy HP Helion OpenStack</title>
       <ol>
         <li>Use the following command to deploy the HP Helion OpenStack cloud:
@@ -666,8 +668,7 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
         nodes,.</p><codeblock>cat etc/resolv.conf          </codeblock><image
         href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
         <alt>Verify VRS-G </alt>
-      </image>
-    </section>
+      </image></section>
     
     <section><title>Prerequisite to be performed on switch for the uplink subnet </title>You need to
       create the static IP route for external network/FIP to point to point IP subnet from Gateway
@@ -712,10 +713,12 @@ source stackrc</codeblock></li>
               <li><codeph>&lt;name></codeph> is a descriptive name for the subnet. Make note of this
                 name, as you will use it during the installation.</li>
             </ul></p><p>For
-          example:</p><codeblock>neutron subnet-create ext-net 10.200.70.64/26 --name extsub1 </codeblock></li>
+            example:</p><codeblock>neutron subnet-create ext-net 10.200.70.64/26 --name extsub1 </codeblock><image
+            href="../../media/CGH-install-subnet-create.png" id="image_sn2_gbb_ct"/></li>
         <li>Use the following command to create a virtual router:
             <codeblock>neutron router-create &lt;name></codeblock><p>Where:
-              <codeph>&lt;name></codeph> is a descriptive name for the router.</p></li>
+              <codeph>&lt;name></codeph> is a descriptive name for the router.</p>
+          <image href="../../media/CGH-install-router-create.png" id="image_qfb_k1b_ct"/></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol></section>
     <section>
@@ -794,8 +797,7 @@ VSD Server : auto </codeblock>
         dashboard: </p><ol>
         <li>Select the two peers and click on the redundancy group icon.<p><image
               href="../../media/CGH-install-vsd-redundancy.png" id="image_q5q_5j1_1t"/></p></li>
-      </ol>
-    </section>
+      </ol></section>
     <section><title>Assign permissions to the VRS-G</title> There are two types of permissions,
         <b>Use Permissions</b> and <b>Extend Permissions</b>. Use Permissions allow members in the
       assigned group to use an object. Extend Permissions allow the members of an assigned group to
