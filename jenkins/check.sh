@@ -1,6 +1,10 @@
 #!/bin/bash 
 
-echo "$GIT_BRANCH "
+
+BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
+
+
+
 echo -e "===Looking for typos and words that should be avoided============================="
 
 # Escape code
