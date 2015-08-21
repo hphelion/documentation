@@ -12,13 +12,12 @@
     <p>Centralized logging helps the administrator triage and troubleshoot the distributed HP Helion
       OpenStack cloud deployment from a single location. The admin is not required to access the
       several remote servers (SSH) to view the individual log files.</p>
-    <p>In addition to each of the <xref
-        href="../../commercial/GA1/1.1commerical.services-overview.dita">HP Helion services</xref>,
-      Centralized Logging also processes logs for the following HP Helion OpenStack features:</p>
+    <p>In addition to each of the HP Helion services, Centralized Logging also processes logs for
+      the following HP Helion OpenStack features:</p>
     <ul>
       <li>HAProxy</li>
       <li>syslog</li>
-      <li>keepalived </li>
+      <li>keepalived</li>
     </ul>
     <p>This document describes the Centralized Logging feature and contains the following
       sections:</p>
@@ -112,7 +111,7 @@
               <entry>Data name</entry>
               <entry>Confidentiality</entry>
               <entry>Integrity</entry>
-              <entry> Availability</entry>
+              <entry>Availability</entry>
               <entry>Backup?</entry>
               <entry>Description</entry>
             </row>
@@ -175,36 +174,12 @@
       <codeblock>http://&lt;control plane IP&gt;:9095</codeblock>
       <p><b>Direct Access method</b> - Launch a web browser on the control plane host to the
         following IP address, using the control plane IP address from the end of the install:</p>
-      <codeblock>
-http://&lt;control plane IP&gt;:5601 
-</codeblock>
-      <p>
-        <b>Example:</b>
-      </p>
-      <codeblock>
-http://192.0.2.2:81
-</codeblock>
-      <p>Log in with the user name <codeph>kibana</codeph> and the password.</p>
-      <p>If you did not retrieve the undercloud IP from the end of the install,</p>
-      <ol>
-        <li>
-          <p>From the seed cloud host log in to the undercloud as super user:</p>
-          <codeblock>
-ssh heat-admin@&lt;undercloud IP&gt; 
-sudo su - 
-</codeblock>
-        </li>
-        <li>
-          <p>Enter the following command to display the password:</p>
-          <codeblock>
-cat /root/work/tripleo/tripleo-undercloud-passwords
-</codeblock>
-          <p>Make note of the password.</p>
-        </li>
-      </ol>
-      <note>Because centralized logging is a separate service from the Horizon dashboard, there is
-        separate username/password authentication. By default, the HP Horizon dashboard username and
-        password will not work with Kibana.</note>
+      <codeblock>http://&lt;control plane IP&gt;:5601</codeblock>
+      <p>Log in with these credentials:</p>
+      <ul>
+        <li>Username: kibana</li>
+        <li>Password: 1f3pNxQmXXELJn/MJ4jOHixePSXlu4eZzhi1gJjr7mI=</li>
+      </ul>
     </section>
     <section id="configuration">
       <title>Configuration</title>

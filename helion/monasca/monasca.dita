@@ -28,6 +28,8 @@
       <title>Diagram of Monasca Service</title>
       <p><image placement="break" href="../images/monasca_diagram.png"/></p>
     </section>
+    <section id="components"><title>Components</title>
+        </section>
     <section id="working"><title>Working with Monasca</title>
       <p>Access to Monasca is available through the Web UI (<xref
           href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
