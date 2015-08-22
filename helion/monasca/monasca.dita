@@ -32,10 +32,14 @@
       <p>Monasca supports two different database options. The default metrics database is
           <b>Vertica</b>, which is a highly-scalable analytics database from HP. Vertica is free to
         use for all paid Helion customers as a Helion operational database (please see <xref
-          href="../eula.dita" format="html" scope="external">Helion EULA</xref>). Vertica is the
-        recommended database for Helion OpenStack.</p>
-      <p>The alternative database is <b>InfluxDB</b>. Though InfluxDB works, it does not handle
-        failure recovery in a high availability cluster very well, which is a known issue.</p>
+          href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html" format="html"
+          scope="external">Helion EULA</xref>). Vertica is the recommended database for Helion
+        OpenStack.</p>
+      <p>The alternative opensource database is <b>InfluxDB</b>. InfluxDB is an emerging opensource
+        monitoring database, however the current release contains the following limitations:</p>
+      <ul>
+        <li>InfluxDB cluster does not recover upon node failure.</li>
+      </ul>
       <p>To use InfluxDB there are two steps that must be completed during your cloud
         deployment:</p>
       <ul>
@@ -44,7 +48,7 @@
             <codeph>-e database_type=influxdb</codeph></li>
       </ul>
       <p>Example:</p>
-      <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium -e database_type=influxdb </codeblock>
+      <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium -e database_type=influxdb</codeblock>
     </section>
     <section id="working"><title>Working with Monasca</title>
       <p>Access to Monasca is available through the Web UI (<xref
@@ -56,12 +60,10 @@
     </section>
     <section id="opsconsole"><title>Operations Console</title>
       <p>The Operations Console (Ops Console) is designed for Helion OpenStack Administrators to
-        have a web-based UI that they can use to view data about their Helion OpenStack
-        infrastructure. The Ops Console offers the user access to data such as the alarms data by
-        service, performance data, compute nodes and instances lists, and a drilldown to Kibana for
-        a deep look into logs. The Business Logic Layer is a middleware component that serves as a
-        single point of contact for the UI to communicate with OpenStack services such as Monasca,
-        Nova, and others.</p>
+        have a web-based UI that they can use to operate and manage the Helion OpenStack
+        environment.</p>
+      <p>For details on the Operations Console, see link</p>
     </section>
+    <section id="api"><title>Monasca API</title> Limitations here</section>
   </body>
 </topic>
