@@ -37,10 +37,11 @@
         <li>
           <p><b>mid sized cloud </b>- This example model describes a system using multiple servers
             and networks. It provides an example for the cofiguration of the mid sized cloud. You
-            must use this example model as the basis for building a cloud model  for your actual
+            must use this example model as the basis for building a cloud model for your actual
             cloud by configuring the server and network that you plan to deploy. To deploy swift
             using this model you must make swift -specif changes to the provided example. For more
-            details, refer Swift  in the example mid sized cloud. model.</p>
+            details, refer <xref href="swift_mid_sized_cloud_model.dita#topic_qkg_l4v_bt">Swift in
+              the example mid sized cloud. model.</xref></p>
           <p> </p>
         </li>
       </ul>

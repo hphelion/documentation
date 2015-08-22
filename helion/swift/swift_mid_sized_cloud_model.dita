@@ -5,47 +5,380 @@
   <body>
     <p>This section describes the configuration of the Swift services in the example mid sized cloud
       model. </p>
-    <p>In the example, the Swift services are configured as follows:</p>
+    <section><b>Node Type</b></section>
+    <p>There are two type of nodes that is associated with Swift services. They are as follows:</p>
     <ul id="ul_b2b_gpv_bt">
-      <li>There are two types of nodes:<ul id="ul_v2b_gpv_bt">
-          <li>Proxy, Container, Account (PAC) Node. This node runs the swift-proxy, swift-account
-            and swift-container services. The swift-proxy service is responsible for processing API
-            requests and directing them to the swift-account, swift-container or swift-object
-            services for processing. The swift-account and swift-container are responsible for
-            handling requests to accounts and containers respectively.</li>
-          <li>Object (OBJ) Node. This node runs the swift-object service. The swift-object service
-            is responsible for handling requests for objects.</li>
-        </ul></li>
-      <li>The Proxy, Container, Account node type is assigned to a dedicated cluster of nodes as
-        specified in the <b>swpac</b> cluster in <u>data/control_plane.yml</u> file. By "dedicated",
-        we mean that the nodes are dedicated to Swift and not running other cloud services.</li>
-      <li>The Object node type is assigned to a dedicated resource nodes group as specified by the
-          <b>swobj</b> group in <u>data/control_plane.yml</u> file.</li>
+      <li>Proxy, Container, Account (PAC) Node: This node runs the swift-proxy, swift-account, and
+        swift-container services. The swift-proxy service processes API requests and directs them to
+        the swift-account, swift-container or swift-object services for processing. The
+        swift-account and swift-container handle requests to accounts and containers
+        respectively.</li>
+      <li>Object (OBJ) Node: This node runs the swift-object service. The swift-object service
+        handles requests for objects.</li>
+    </ul>
+    <section><b>Configuration of Swift Services in the Mid Sized Cloud Model</b><p>In the example,
+        the Swift services are configured in the following <codeph>yml</codeph> files:</p></section>
+    <ul id="ul_c2g_mkd_ct">
+      <li><u>data/control_plane.yml</u><p>
+          <ul id="ul_lzb_2x3_ct">
+            <li>The Proxy, Container, Account node type is assigned to a dedicated cluster of nodes
+              as specified in the <b>swpac</b> cluster in <codeph>yml</codeph> file. These nodes are
+              dedicated only to Swift services.</li>
+            <li>The Object node type is assigned to a dedicated resource nodes group as specified by
+              the <b>swobj</b> group in <codeph>yml</codeph> file.</li>
+            <li>Requests to Swift are directed to a virtual IP address (VIP) that is managed by a
+              cluster as specified in the <b>core</b> cluster in <u>data/control_plane.yml</u> file.
+              The requests are then directed on the MGMT network to the swift-proxy service on one
+              of the Proxy, Container, Account nodes.</li>
+          </ul>
+        </p></li>
       <li>
+        <p><u>data/disks_swpac.yml</u></p>
         <p>The Proxy, Container, Account node type uses two disk drives to store account and
-          container databases. This is specified in the <u>data/disks_swpac.yml</u> file.</p>
+          container databases which is specified in this file.</p>
       </li>
       <li>
+        <p>
+          <u>data/disks_swobj.yml</u></p>
         <p>The Object node type uses two disk drives to store account and container databases. This
-          is specified in the <u>data/disks_swobj.yml</u> file.</p>
+          is specified in this file.</p>
       </li>
-      <li>Swift account, container and object storage is managed by Swift using a data structure
-        known as a <i>ring</i>. The specification of the rings is provided in the
-          <u>config/swift/rings.yml</u> file. In the example, the replica count is set to 3 (i.e.,
-        three copies of all data is kept to provide resiliency and availability). A single storage
-        policy is used (i.e. there is one object ring called "object-0").</li>
-      <li>Requests to Swift are directed to a virtual ip address (VIP) that is managed by a cluster
-        as specified in the <b>core</b> cluster in <u>data/control_plane.yml</u>. The requests are
-        then directed on the MGMT network to the swift-proxy service on one of the Proxy, Container,
-        Account nodes (in round robin fashion).</li>
-      <li>The swift-proxy service uses the SWIFT network to communicate with the other swift
-        services (they also communicated among themselves). The MGMT and SWIFT networks are
-        specified in the <u>data/network_groups.yml</u> file.</li>
+      <li><p><u>config/swift/rings.yml</u>
+        </p>Swift account, container, and object storage are managed by Swift using a data structure
+        known as a <i>ring</i>. The specification of the rings is provided in this file.</li>
+      <li><u>data/network_groups.yml</u><p>This yml file specifies the MGMT and SWIFT networks. The
+          swift-proxy service uses the SWIFT network to communicate with the other swift services
+          (they also communicated among themselves)</p></li>
       <li> The swift-proxy service uses other cloud services as follows. Both of these are
         configured in the example to run on the <b>core </b>cluster:<ul id="ul_ffb_gpv_bt">
           <li>Swift validates token by making requests to the Keystone service</li>
           <li>Swift caches tokens and other data using the memcached service</li>
         </ul></li>
     </ul>
+    <section><b>Allocating Server</b></section>
+    <p>In the <codeph>data/baremetal.yml</codeph> file, you specify the roles for servers. For
+      example, a Swift Proxy, Container, Account (PAC) node is specified as
+      follows:<codeblock>baremetal_servers:
+.
+.
+.
+- node_name: swpac1
+  node_type: ROLE-SWPAC
+  pxe_mac_addr: 26:67:3e:49:5a:a7
+  pxe_interface: eth2
+  pxe_ip_addr: 192.168.10.12
+  ilo_ip: 192.168.9.12
+  ilo_user: admin
+  ilo_password: password
+.
+.
+.</codeblock></p>
+    <p>In the above example a <b>node_type</b> is assigned as <b>ROLE-SWPAC</b>, which indicates
+      that this node is Swift Proxy, Container, Account (PAC) node.</p>
+    <note>If you don't use Cobbler to install your servers then you must configure nodes on the <u>
+        data/servers.yml</u> file.</note>
+    <p>The number of servers is specified in the <b>swpac </b>cluster in the
+        <u>data/control_plane.yml file</u>. In the following example, the number of servers is set
+      to 3.</p>
+    <p>
+      <codeblock>
+control-planes:
+    - name: ccp
+      region-name: region1
+      common-service-components:
+        - logging-producer
+        - monasca-agent
+        - stunnel
+      clusters:
+.
+.
+.
+- id: "4"
+          name: swpac
+          server-role: ROLE-SWPAC
+          member-count: 3
+          service-components:
+            - ntp-client
+            - swift-proxy
+            - swift-account
+            - swift-container
+            - swift-ring-builder
+            - swift-client
+.
+.
+.</codeblock>
+    </p>
+    <p>You can increase the <b>member-count</b> value so that more Proxy, Account, Container nodes
+      are used. When you increase the <b>member-count</b> you must also increase the number of nodes
+      with the <codeph>ROLE-SWPAC</codeph> role in the <u>data/baremetalConfig.yml</u> (or
+        <u>data/servers.yml</u>) file.</p>
+    <p>A Swift Object (OBJ) node is specified in<u>data/baremetalConfig.yml</u> as shown in the
+      following
+      example:<codeblock>baremetal_servers:
+.
+.
+.
+- node_name: swobj1
+  node_type: ROLE-SWOBJ
+  pxe_mac_addr: 8b:f6:9e:ca:3b:78
+  pxe_interface: eth2
+  pxe_ip_addr: 192.168.10.20
+  ilo_ip: 192.168.9.20
+  ilo_user: admin
+  ilo_password: password
+.
+.
+.</codeblock></p>
+    <p>In the above example a <codeph>node_type</codeph> is assigned as <codeph>ROLE_SWOBJ</codeph>,
+      which indicates that this node is Swift Object node.</p>
+    <p>To specify the number of Swift Object servers add more servers of type
+        <codeph>ROLE_SWOBJ</codeph> to the <u>data/baremetalConfig.yml</u> (or
+        <u>data/servers/yml</u>) file. <note>For Swift Object, the <codeph>member-count</codeph> is
+        automatically determined. It is recommened not to change or increment the <codeph>member
+          count</codeph>.</note></p>
+    <section id="allocating-disk-drives"><b>Allocating disk drives </b><p>The disk model describes
+        the number of disk present on a particular server and its usage. The examples include
+        several disk models. The disk model used by any given server is determined as
+        follows:</p><ul id="ul_jkh_njd_ct">
+        <li>The <codeph>node_type</codeph> of server as specified in <u>data/baremetalConfig.yml</u>
+          (or <u>data/servers/yml</u>) determines the role of the server.</li>
+        <li>There is a specification for each sever role in the <u>data/server_roles.yml</u> file.
+          This specifies a disk model for a given server role. For example, for the
+            <codeph>ROLE-SWOBJ</codeph>, the disk model is called
+          <codeph>DISK_SET_SWOBJ</codeph></li>
+        <li>The Object server uses the <codeph>DISK_SET_SWOBJ</codeph> disk model in the
+            <u>data/disks_swobj.yml</u> file.</li>
+        <li>
+          <p>The Proxy, Account, Container servers use the <codeph>DISK_SET_SWPAC</codeph> disk
+            model in the <u> data/disks_swpac.yml</u> file.</p>
+        </li>
+      </ul><p>The structure of the <codeph>DISK_SET_SWOBJ</codeph> and
+          <codeph>DISK_SET_SWPAC</codeph> disk models are similar. The <u>data/disks_swpac.yml</u>
+        file specifies the disk mode as
+        follows:<codeblock>disk-models:
+- name: DISK_SET_SWPAC
+  volume-groups:
+    - name: hlm-vg
+      physical-volumes:
+        - /dev/sda5
+      ...
+      consumer:
+         name: os
+ 
+  device-groups:
+    - name: swiftpac
+      devices:
+        - name: /dev/sdb
+        - name: /dev/sdc
+      consumer:
+        name: swift
+        attrs:
+          rings:
+            - account
+            - container</codeblock></p><p>In
+        the above example, <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> disk drives are
+        used by Swift and <codeph>/dev/sda</codeph> is used for the operating system.</p><p>The disk
+        model has the following fields:</p><ul id="ul_gfk_qjd_ct">
+        <li><b>device-groups</b>: There can be several device groups. This this allows different
+          sets of disks to be used for different purposes. In this example, there is only one entry
+          in the device groups list.</li>
+        <li><b>name</b>: This is an arbitrary name for the device group. The name must be unique,
+          but is not otherwise used.</li>
+        <li><b>devices</b>: This is a list of devices allocated to the device group. For Swift,
+          these devices must meet criteria as explained in <i>Requirements for a disk
+          device</i></li>
+        <li><b>consumer</b>: This specifies the service that uses the device group. A
+            <codeph>name</codeph> field containing <codeph>swift</codeph>indicates that the device
+          group is used by Swift. If the name field contains other values, the Swift system will
+          ignore the device group.</li>
+        <li><b>attrs.rings</b>: This lists the rings that the devices are allocated to. In this
+          example, the disk model is used by Proxy, Account, Container nodes, so the "account" and
+          "container" rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model,
+            <codeph>object-0</codeph> ring is listed. It would be an error to add the
+            <codeph>object-0</codeph> ring to the <codeph>DISK_SET_SWPAC</codeph> disk model because
+          the swift-object service does not run on that type of node.</li>
+      </ul><p>You should review the disk devices in the disk model. See <i>Making Changes to a Swift
+          Disk Model</i> for possible changes you expect to make to the disk
+            model.</p><p><b><i>Requirements for a disk device</i></b></p><p>Disk devices listed in
+        the <b>devices</b> list must meet the following criteria:</p><ul id="ul_ohk_qjd_ct">
+        <li>The disk device must exist on the server. For example, if you add
+            <codeph>/dev/sdx</codeph> to a server with only 3 devices then the deploy process will
+          fail.</li>
+        <li>The disk device must be unpartitioned or have a single partition that uses the whole
+          drive.</li>
+        <li>Don't have a label on the partition</li>
+        <li>Don't have an XFS filesystem that contains a filesystem label</li>
+        <li>If the disk drive is already labeled as described above, the
+            <codeph>swiftlm-drive-provision</codeph> process will assume that the drive has valuable
+          data and refuse to use or modify the drive.</li>
+      </ul><p><i><b>Making Changes to a Swift Disk Model</b></i></p><p>There are several reasons why
+        you might change the disk model as follows:</p><ul id="ul_qkk_qjd_ct">
+        <li>The disk devices listed in the disk model have different names on your servers. This may
+          be due to probe order differences or differences due to the type of devices. Edit the disk
+          model and change the device names to the correct names.</li>
+        <li>You prefer a different disk drive than the one listed in the model. For example, if
+            <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you
+          have SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In
+          this case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace with
+            <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.</li>
+        <li>You have additional drives available. You can add the drives to the devices list.</li>
+      </ul></section>
+    <section id="allocation-network"><b>Allocation Network</b><p>It is recommended not to change a
+        network.</p></section>
+    <section><b>Specifying the rings (ring specifications)</b><p>The ring maps the logical names of
+        data to locations on a particular disks. There is a separate ring for account database,
+        account database, and individual objects, but each rings works similarly. The rings are
+        built and managed manually by a utility called the ring-builder. The ring-builder also keeps
+        its own builder file with the ring information and additional data required to build future
+        rings</p><p>The rings are specified by in the input model using the
+          <b>ring-specifications</b> key. There is an entry for each distinct Swift system – hence
+        the Keystone region name is specified in the <b>region-name</b> key of the input
+        model.</p><p>In the example, a ring-specification is mentioned in
+          <codeph>config/swift/rings.yml</codeph> file. The sample of <codeph>rings.yml</codeph> is
+        as follows:</p><p>
+        <codeblock>ring-specifications:
+    - region-name: region1
+      rings:
+        - name: account
+          display-name: Account Ring
+          min-part-time: 16
+          partition-power: 17
+          replication-policy:
+            replica-count: 3
+        - name: container
+          display-name: Container Ring
+          min-part-time: 16
+          partition-power: 17
+          replication-policy:
+            replica-count: 3
+        - name: object-0
+          display-name: General
+          default: yes
+          min-part-time: 16
+          partition-power: 17
+          replication-policy:
+            replica-count: 3</codeblock>
+      </p><p>The above example shows that the <b>region1</b> has three rings as follows: </p><p>
+        <ul id="ul_owf_4mc_vs">
+          <li><b>Account ring</b> - You must always specify a ring called "account". The account
+            ring is used by Swift to store metadata about the projects in your system. In Swift, a
+            Keystone project maps to a Swift account. The <b>display-name</b> is informational and
+            not used. <p>The purpose of the <b>min-part-time, partition-power,
+                replication-policy</b> and<b>replica-count</b> are described later. </p></li>
+          <li><b>Container ring</b> -You must always specify a ring called "container". The
+              <b>display-name</b> is informational and not used.</li>
+          <li><b>Object ring</b> - It is also known as Storage Policy. You must always specify a
+            ring called "object-0". It is possible to have multiple object rings, which is known as
+              <i>storage policies</i>. But in this release we support only one storage policy, i.e.
+            object-0. The <b>display-name</b> is the name of the storage policy and can be used by
+            users of the Swift system when they create containers. It allows them to specify the
+            storage policy that the container uses. In the example, the storage policy is called
+            "General".</li>
+          <li>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</li>
+          <li>Replica count: The recommended value for the <b>replica-count</b> attribute is 3.
+            Three copies of data are kept to provide resiliency and availability.</li>
+        </ul>
+      </p><p><i><b>Making Changes to the Ring Specifications</b></i>
+        <!--need to edit this section--></p><p>The ring specifications provided in the example is
+        generally sufficient for your needs and you probably will not need to edit the file.
+        However, there may be reasons for changing the model as follows:</p><ul id="ul_brt_yjd_ct">
+        <li>Your system has many more servers and disks than in the mid sized cloud example. If so
+          you may need to pick a different value for <b>partition-power</b>. The appropriate value
+          is related to the number of disk drives you allocate for the account and container
+          storage. We recommend that you use the same drives for both the account and container
+          rings. Hence, the <b>partition-power</b> value should be the same. More information about
+          picking an appropriate value is in <i>Selecting a Partition Power</i></li>
+        <li>You require high resiliency or availability and want a higher replica count. The
+            <b>replica-count</b> is normally 3 (i.e., Swift will keep three copies of accounts and
+          containers). we do not recommend changing the value to lower than 3.</li>
+        <li>You require a different name for the Storage Policy. If so, edit the <b>display-name</b>
+          of the object-0 ring. This must be a single word (character such as underscore or dash are
+          allowed). This is visible to your end users.</li>
+        <li>Your system has many more servers and disks than in the mid sized cloud example and the
+          time to replicate data during a ring rebuild is longer than 16 hours. However, this time
+          is very system-dependent so you probably won't know an appropriate value for
+            <b>min-part-time</b> until you have more experience with your system. During the initial
+          deploy we suggest you leave <b>min-part-time</b> as-is.</li>
+      </ul></section>
+    <section><b>Selecting a Partition Power</b></section>
+    <p>
+      <ul id="ul_dck_2jk_ct">
+        <li>
+          <p>Partition power is used to distribute the data uniformly across drives in a Swift
+            nodes. It also defines the storage cluster capacity. You must set the part partition
+            power value based on the total amount of storage you expect your entire ring to use. </p>
+          <p>When storing an object, the object storage system hashes the name. This hash results in
+            a hit on a partition (so a number of different object names will result in the same
+            partition number). Generally, the partition is mapped to available disk drives. With a
+            replica count of 3, each partition is mapped to three different disk drives. The hashing
+            algorithm used hashes over a fixed number of partitions. The partition-power attribute
+            determines the number of partitions you have. </p>
+        </li>
+      </ul>
+    </p>
+    <p>Select a partition power for a given ring that is appropriate to the number of disk drives
+      you allocate to the ring for the following reasons: </p>
+    <ul id="ul_ygk_2jk_ct">
+      <li>If you use a high partition power and have few disk drives, each disk drives will have
+        1000s of partitions. With too many partitions, audit and other processes in the Object
+        Storage system cannot "walk" the partitions in a reasonable time and updates will not occur
+        in a timely manner.</li>
+      <li>If you use a low partition power and have many disk drives, you will have 10s (or maybe
+        only one) partition on a drive. <p>With many partitions on a drive, a large partition is
+          cancelled out by a smaller partition so the overall drive usage is similar. However, with
+          very small numbers of partitions, the uneven distribution of sizes can be reflected in
+          disk drive utilization (so one drive becomes full while a neighboring drive is
+        empty).</p></li>
+    </ul>
+    <p>An ideal number of partitions per drive is 100. If you know the number of drives, select part
+      power approximatley to 100 partition per drive. Usually, you install a system with a specific
+      number of drives and add drives as your storage needs grow. However, you cannot change the
+      value of the partition power. Hence you must select a value that is a compromise between
+      current and planned capacity. </p>
+    <p>The following artition power selection table shows a range of drives:<table frame="all"
+        rowsep="1" colsep="1" id="table_part_power">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table><b>Important</b>: if you are installting a small capacity systen and you need to grow
+      to a very large capacity but you cannot fit within any of the ranges in the table, please seek
+      help from Professional Services to plan your system..</p>
+    <p>There are a few additional factors that can help or mitigate the fixed nature of the
+      partition power, as follows:</p>
+    <ul id="ul_lqk_2jk_ct">
+      <li>Account and container storage represents a small fraction (typically 1%) of your object
+        storage needs. Hence, you can select a smaller partition power (relative to object ring
+        partition power) for the account and container rings. </li>
+    </ul>
+    <p>For object storage, you can add additional storage policies (i.e., another object ring). When
+      you have reached capacity in an existing storage policy, you can add a new storage policy with
+      a higher partition power (because you now have more disk drives in your system). This means
+      that you can install your system with a small partition power appropriate to a small number of
+      initial disk drives. Later when you have many disk drives, the new storage policy can have a
+      higher value appropriate to the larger number of drives.</p>
+    <p> However, while this technique allows you to continue to add storage capacity you should note
+      that existing containers continue to use their original storage policy. Hence, the additional
+      objects must be added to new containers to take advantage of the new storage policy.</p>
   </body>
 </topic>
