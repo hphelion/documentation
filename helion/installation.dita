@@ -62,6 +62,8 @@
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
       <note>Run as the user you just created (or stack if you left the default of "stack", but do not run as root.</note>
+      <note>Your NICs may have the wrong numbers/names assigned to them. If so, see the workaround in the <xref
+            href="releasenotes.dita">release notes</xref> topic.</note>
       <ol>
         <li>On the deployer node, enter the following command to create the SSH keypair if one is
           not already present:<codeblock>ssh-keygen -t rsa</codeblock>
