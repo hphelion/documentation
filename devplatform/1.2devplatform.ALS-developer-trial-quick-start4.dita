@@ -88,8 +88,8 @@ cf-mgmt create-cluster \
                         </li>
                         <li>Enter the Console URL in your web browser to navigate to the Management
                             Console.Note: You may be "warned" that the Console has a self-signed
-                            certificate or that the site is "not trusted". These <ph
-                                props="highlight">"warnings" can be</ph> safely ignored. </li>
+                            certificate or that the site is "not trusted". These "warnings" can be
+                            safely ignored. </li>
                         <li>Log in to the Console using the email and password you specified when
                             you created the cluster.</li>
                     </ol> Congratulations! You are now ready to begin deploying apps to your new
@@ -100,7 +100,7 @@ cf-mgmt create-cluster \
                     </xref></stentry>
                     </strow>
 </simpletable>
-    <p><ph props="highlight">Here's another highlighting test.</ph></p>
+    <p><ph props="highlight">Here's another highlighting test</ph>.</p>
     <p>Here's another <ph props="highlight">highlighting</ph> test.</p>
 </body>
 </topic>
