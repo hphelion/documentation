@@ -6,23 +6,21 @@
   <body>
     <section id="about">
       <p>The HP Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
-        scalable, fault-tolerant monitoring service. The name "Monasca" is short for "monitoring at
-        scale".</p>
+        scalable, fault-tolerant OpenStack monitoring service.</p>
       <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca"
           format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></p>
     </section>
     <section id="differences"><title>Differences Between Upstream and Helion OpenStack
         Implementations</title>
-      <p>In the Helion OpenStack 2.0 release, the OpenStack monitoring standard, Monasca, is
-        supported as the Helion OpenStack monitoring solution with the following exceptions (which
-        are not implemented):</p>
+      <p>In the Helion OpenStack 2.0 release, the OpenStack monitoring service, Monasca, is included
+        as the Helion OpenStack monitoring solution with the following exceptions:</p>
       <ul>
         <li>Transform Engine</li>
         <li>Events Engine </li>
         <li>Anomaly and Prediction Engine</li>
       </ul>
-      <note>Icinga, which was the supported monitor service in previous releases of Helion
-        OpenStack, is not supported in Helion OpenStack 2.0.</note>
+      <note>Icinga was supported in previous Helion versions but it has been deprecated in Helion
+        OpenStack 2.0.</note>
     </section>
     <section id="diagram">
       <title>Diagram of Monasca Service</title>
@@ -31,11 +29,13 @@
     <section id="configuration"><title>Configuring Monasca</title>
       <p>In Beta 1 you will have the option to specify which database platform you want to use for
         the Metrics Database</p>
-      <p>Monasca supports two different database options. The primary metrics database is <b>Vertica</b>, which
-        is an HP analytics database with many features and impressive speed. This the default and
-        recommended database to use for Helion OpenStack.</p>
-      <p>The alternative database is <b>InfluxDB</b>. Though InfluxDB works, it does not handle failure
-        recoveries in a high availability cluster very well, which is a known issue.</p>
+      <p>Monasca supports two different database options. The default metrics database is
+          <b>Vertica</b>, which is a highly-scalable analytics database from HP. Vertica is free to
+        use for all paid Helion customers as a Helion operational database (please see <xref
+          href="../eula.dita" format="html" scope="external">Helion EULA</xref>). Vertica is the
+        recommended database for Helion OpenStack.</p>
+      <p>The alternative database is <b>InfluxDB</b>. Though InfluxDB works, it does not handle
+        failure recovery in a high availability cluster very well, which is a known issue.</p>
       <p>To use InfluxDB there are two steps that must be completed during your cloud
         deployment:</p>
       <ul>
