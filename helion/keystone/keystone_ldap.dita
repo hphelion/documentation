@@ -16,7 +16,14 @@
             href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
             format="html" scope="external"
             >http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html</xref></li>
-
+        <li><note>The name of the file you create is important and is always of the form: keystone.&lt;domain-name&gt;.conf, where 
+          the domain name must match the name of the domain created in Keystone. Options provided in the domain-specific configuration 
+          file will override those in the primary configuration file (i.e. keystone.conf) for the specified domain.
+          
+          Domains without a specific configuration file will continue to use the options from the primary 
+          configuration file. For example, if the service provider creates a domain called "domainA", 
+          then the domain-specific configuration file must be keystone.domainA.conf. 
+        </note></li>
         <li>Run the reconfiguration playbook, passing the YAML file created in the previous step as
           a command-line option:
           <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/tmp/myldap.yml
