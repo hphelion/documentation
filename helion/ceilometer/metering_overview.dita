@@ -63,7 +63,7 @@
     <section id="working-with-ceilometer">
       <title>Working with Ceilometer</title>
       <p>All the Ceilometer processes have a unified configuration file that can be found at
-          <i>______________</i> on the specific overcloud controller you are logged into.</p>
+          <i>______________</i> on the ____________.</p>
       <p>Access to Ceilometer is through the command-line interface <xref
           href="http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html"
           scope="external" format="html">(CLI)</xref>, or the low-level <xref
