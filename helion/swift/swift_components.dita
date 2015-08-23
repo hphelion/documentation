@@ -141,18 +141,19 @@
           </p><p> A storage policies are implemented on per-container basis. You can choose the
             storage policies of your choice. But if you fail to specify the storage policy then the
             default policy is used. Once you create and assign the storage policy to a container
-            that remains intact , i.e., you cannot change the policy for that contaier but you can
-            always create additional policies and move data from one contianer to another, if you
-            choose to assign a different policy to a new container. </p><p> additional policies and
-            move data within policies. (one container can have more than one storage policy??) once
-            u crete a storage plcy </p><p> The disk drives used by storage policies can overlap or
-            be distinct. If the storage policies overlap (i.e., have disks in common between two
-            storage policies), it is recommended to use the same set of disk drives for both
-            policies. But in case there is a partial overlap in disk drives, as one storage policy
-            receives many objects, the drives that are common to both policies must store more
-            objects than drives that are only allocated to one storage policy. This can be
-            appropriate for a situation where the "overlapped" disk drives are larger than the
-            non-overlapped drives. </p></li>
+            that remains
+            intact<?oxy_delete author="michelln" timestamp="20150823T114225-0400" content=" "?>,
+            i.e., you cannot change the policy for that contaier but you can always create
+            additional policies and move data from one contianer to another, if you choose to assign
+            a different policy to a new container. </p><p> additional policies and move data within
+            policies. (one container can have more than one storage policy??) once u crete a storage
+            plcy </p><p> The disk drives used by storage policies can overlap or be distinct. If the
+            storage policies overlap (i.e., have disks in common between two storage policies), it
+            is recommended to use the same set of disk drives for both policies. But in case there
+            is a partial overlap in disk drives, as one storage policy receives many objects, the
+            drives that are common to both policies must store more objects than drives that are
+            only allocated to one storage policy. This can be appropriate for a situation where the
+            "overlapped" disk drives are larger than the non-overlapped drives. </p></li>
       </ul>
     </p>
     <section>
