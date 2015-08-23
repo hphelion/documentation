@@ -16,7 +16,7 @@
             href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
             format="html" scope="external"
             >http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html</xref></li>
-        <li><note>The name of the file you create is important and is always of the form: keystone.&lt;domain-name&gt;.conf, where 
+        <li><note>The name of the file you create is important and is always of the form: &lt;domain-name&gt;.yml, in /tmp where 
           the domain name must match the name of the domain created in Keystone. Options provided in the domain-specific configuration 
           file will override those in the primary configuration file (i.e. keystone.conf) for the specified domain.
           
