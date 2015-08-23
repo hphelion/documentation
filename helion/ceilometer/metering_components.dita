@@ -75,9 +75,8 @@
         are consumed by the Collector and stored in the database. The Collector is also responsible
         for consuming and storing notifications. Here there is a high level picture of the overall
         polling/collecting cycle.</p>
-      <p>
-        <image href="../images/ceil_collectorandagents.png" placement="break"/>
-      </p>
+      <p><image href="../../media/ceilometer/ceil_collectorandagents.png" id="image_u42_fvt_ct"
+        /></p>
     </section>
     <section id="centralagent">
       <title>Ceilometer Central Agent</title>
