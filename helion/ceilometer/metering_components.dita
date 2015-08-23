@@ -28,10 +28,10 @@
     <p>
       <image href="../../media/ceilometer/ceil_overallarchi.png" id="image_mbd_c5t_ct" placement="break"/></p>
     <section id="components-in-tripleo-overcloud-controller0">
-      <title>Components in TripleO Overcloud Controller0</title>
+      <title>Components in TripleO Overcloud Controller0______________</title>
       <p>This controller node is the first of the High Available (HA) cluster. In this node there is
         an instance of the Ceilometer API running under the HA Proxy Virtual IP address. The Alarm
-        services run on Overcloud Controller0.</p>
+        services run on Overcloud Controller0 ________________.</p>
       <p>
         <b>Note</b>: When a configuration change is made to an API running under the HA Proxy, that
         change needs to be replicated in <b>all</b> controllers.</p>
@@ -61,12 +61,12 @@
       </ol>
     </section>
     <section id="ceilometer-components-in-tripleo-overcloud-controller1">
-      <title>Ceilometer Components in TripleO Overcloud Controller1</title>
+      <title>Ceilometer Components in TripleO Overcloud Controller1_________________</title>
       <p>Just like Controller0, Controller1 has an instance of the Ceilometer API running under the
         HA Proxy.</p>
     </section>
     <section id="ceilometer-components-in-tripleo-overcloud-controller2">
-      <title>Ceilometer Components in TripleO Overcloud Controller2</title>
+      <title>Ceilometer Components in TripleO Overcloud Controller2_________________</title>
       <p>This node is where all other Ceilometer components are running.</p>
     </section>
     <section id="ceilometer-sample-polling">
