@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ckw_kbc_ws">
-  <title>Beta 0: Supported Configuration</title>
+  <title>Beta 1: Supported Configuration2</title>
   <body>
     <p>The following list summaries the qualified configurations and their purpose.</p>
 <note>While the hardware requirements are similar to those of HP Helion <tm tmtype="reg">OpenStack</tm> 1.1, this is a completely new installation, not an upgrade or update operation.</note>
