@@ -460,7 +460,7 @@ sinks:
                 </tgroup>
             </table>
             <p>Even a very, very small Swift storage with only 10 containers and 100 files will
-                store 120,000 samples a day. File size doesn't matter; it's the number of samples
+                store 120,000 samples per day. File size doesn't matter; it's the number of samples
                 that risks a severe performance impact on the database.</p>
         </section>
     </body>
