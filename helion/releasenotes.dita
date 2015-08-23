@@ -4,10 +4,10 @@
   <title>Beta 1: Release Notes</title>
   <body>
     <p>This document provides an overview of the features contained within HP Helion <tm
-        tmtype="reg">OpenStack</tm> 2.0 Beta 0, including known issues and workarounds for this
+        tmtype="reg">OpenStack</tm> 2.0 Beta 1, including known issues and workarounds for this
       release:</p>
     <section id="Features">
-      <title>Features in HP Helion OpenStack 2.0</title>
+      <title>Features in HP Helion OpenStack 2.0 Beta 1</title>
       <p><b>Updated HP Helion OpenStack Services</b> - We have included the core set of OpenStack
         services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
           scope="external" format="html">Kilo release</xref> with the exception of limitations
