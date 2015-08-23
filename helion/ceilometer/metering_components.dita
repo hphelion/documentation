@@ -26,8 +26,7 @@
       in to.</p>
     <p>The installation creates several management nodes running different metering components.</p>
     <p>
-      <image href="../images/ceil_overallarchi.png" placement="break"/>
-    </p>
+      <image href="../../media/ceilometer/ceil_overallarchi.png" id="image_mbd_c5t_ct" placement="break"/></p>
     <section id="components-in-tripleo-overcloud-controller0">
       <title>Components in TripleO Overcloud Controller0</title>
       <p>This controller node is the first of the High Available (HA) cluster. In this node there is
@@ -40,33 +39,25 @@
         Keystone. To remove them from the active list so that changes can be made and then
         re-instate them, use the following commands.</p>
       <ol>
-        <li>
-          <p>Disable the Ceilometer API on the active sites.</p>
-          <codeblock>
+        <li>Disable the Ceilometer API on the active
+          sites.<codeblock>
 <codeph>sudo a2dissite ceilometer.conf
 </codeph>
-</codeblock>
-        </li>
-        <li>
-          <p>Perform all necessary changes. The Ceilometer API will not be served until it is
-            re-enabled.</p>
-        </li>
-        <li>
-          <p>Re-enable the Ceilometer API on the active sites.</p>
-          <codeblock>
+</codeblock></li>
+        <li>Perform all necessary changes. The Ceilometer API will not be served until it is
+          re-enabled.</li>
+        <li>Re-enable the Ceilometer API on the active
+          sites.<codeblock>
 <codeph>sudo a2ensite ceilometer.conf
 </codeph>
-</codeblock>
-        </li>
-        <li>
-          <p>The new changes need to be picked up by Apache2. If possible, force a reload rather
-            than a restart. Unlike a restart, the reload waits for currently active sessions to
-            gracefully terminate or complete.</p>
-          <codeblock>
+</codeblock></li>
+        <li>The new changes need to be picked up by Apache2. If possible, force a reload rather than
+          a restart. Unlike a restart, the reload waits for currently active sessions to gracefully
+          terminate or
+          complete.<codeblock>
 <codeph>sudo  /etc/init.d/apache2 force-reload
 </codeph>
-</codeblock>
-        </li>
+</codeblock></li>
       </ol>
     </section>
     <section id="ceilometer-components-in-tripleo-overcloud-controller1">
@@ -100,26 +91,20 @@
         attempt to restart stopped processes even if the process was deliberately stopped manually.
         In order to avoid this conflict, stop or start processes using the following commands.</p>
       <ol>
-        <li>
-          <p>Determine whether the process is running:</p>
-          <codeblock>
+        <li>Determine whether the process is
+          running:<codeblock>
 <codeph>sudo service ceilometer-agent-central status 
 ceilometer-agent-central start/running, process 27989
 </codeph>
-</codeblock>
-        </li>
-        <li>
-          <p>start or stop the process as needed:</p>
-          <codeblock>
+</codeblock></li>
+        <li>Start or stop the process as
+            needed:<codeblock>
 <codeph>sudo service ceilometer-agent-central stop
 </codeph>
-</codeblock>
-          <p>or</p>
-          <codeblock>
+</codeblock><p>or</p><codeblock>
 <codeph>sudo service ceilometer-agent-central start
 </codeph>
-</codeblock>
-        </li>
+</codeblock></li>
       </ol>
     </section>
     <section id="collector">
@@ -130,26 +115,20 @@ ceilometer-agent-central start/running, process 27989
         attempt to restart stopped processes even if the process was deliberately stopped manually.
         In order to avoid this conflict, stop or start processes using the following commands.</p>
       <ol>
-        <li>
-          <p>Determine whether the process is running:</p>
-          <codeblock>
+        <li>Determine whether the process is
+          running:<codeblock>
 <codeph>sudo service ceilometer-collector status 
 ceilometer-collector start/running, process 27455
 </codeph>
-</codeblock>
-        </li>
-        <li>
-          <p>start or stop the process as needed:</p>
-          <codeblock>
+</codeblock></li>
+        <li>Start or stop the process as
+            needed:<codeblock>
 <codeph>sudo service ceilometer-collector stop
 </codeph>
-</codeblock>
-          <p>or</p>
-          <codeblock>
+</codeblock><p>or</p><codeblock>
 <codeph>sudo service ceilometer-collector start
 </codeph>
-</codeblock>
-        </li>
+</codeblock></li>
       </ol>
     </section>
   </body>
