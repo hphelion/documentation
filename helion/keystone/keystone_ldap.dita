@@ -14,7 +14,9 @@
       <p>With domain_specific_drivers_enabled set to True, the ability to add domains individually
         will be enabled, causing Keystone to look in the ______________________ (e.g.
         ______________________) for configuration files of the form _____________________</p>
+      <p>To integrate an LDAP domain, follow this process:</p>
       <ol>
+        
         <li>Ensure that the <b>domain_specific_drivers_enabled</b> option is set to <b>True</b> in
           the main configuration file template
             (<b>_________________roles/KEY-API/templates/keystone.conf.j2</b>). You'll see a sample
