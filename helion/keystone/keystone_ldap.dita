@@ -11,9 +11,9 @@
         give a specific domain its own LDAP server. In general,  the process to create an LDAP
         domain in Keystone looks like this:</p>
       <p><image href="../../media/keystone/ldap_flow.png" id="image_ifn_j2t_ct"/></p>
-      <p>With domain_specific_drivers_enabled set to True, this feature will be enabled, causing
-        Keystone to look in the ______________________ (e.g. ______________________) for
-        configuration files of the form _____________________</p>
+      <p>With domain_specific_drivers_enabled set to True, the ability to add domains individually
+        will be enabled, causing Keystone to look in the ______________________ (e.g.
+        ______________________) for configuration files of the form _____________________</p>
       <ol>
         <li>Ensure that the <b>domain_specific_drivers_enabled</b> option is set to <b>True</b> in
           the main configuration file template
