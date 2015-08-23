@@ -128,7 +128,7 @@ keystone_domainldap_conf:
       cacert: |
         -----BEGIN CERTIFICATE-----
 
-        generated certificate appears here
+        certificate appears here
 
         -----END CERTIFICATE-----
 
