@@ -83,7 +83,7 @@
     <section id="KnownIssues">
       <title>Known Issues in this Release</title>
       <p><b>HP Helion Development Platform</b></p>
-      <p>Helion Development Platform is not supported on Beta 0.</p>
+      <p>Helion Development Platform is not supported on Beta 1.</p>
       <p><b>Installing Swift</b></p>
       <p>Swift installs with the following limitations: </p>
       <ul>
@@ -91,7 +91,7 @@
           supported.</li>
         <li>There is no LVM (logical volumes) support. Therefore, dedicated disks are needed for
           Swift on the 3 controller nodes.</li>
-        <li>In Beta0 you cannot add or remove Swift servers.</li>
+        <li>In Beta 1 you cannot add or remove Swift servers.</li>
         <li>Only one Swift zone is supported.</li>
         <li>Only one storage policy, object-0, is supported in this release.</li>
       </ul>
@@ -107,7 +107,7 @@
       other services as well. This will be beyond be Beta0 timeframe.</p>
     <p> </p>-->
       <p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p>
-      <p>Basic Monitoring is complete for Beta0 with the following limitations:</p>
+      <p>Basic Monitoring is complete for Beta 1 with the following limitations:</p>
       <ul>
         <li>Access to Monasca is limited to the REST API and Command Line Client (CLI) only. GUI
           access will be implemented in later releases. When using the CLI, the prefix for CLI
@@ -123,7 +123,7 @@
         <li>OpsConsole is not enabled in this release.</li>
       </ul>
       <p><b>Centralized Logging Limitations</b></p>
-      <p>Logging support is complete for Beta0 with the following limitations:</p>
+      <p>Logging support is complete for Beta 1 with the following limitations:</p>
       <ul>
         <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
         <li>Logging-monitor 'stop' playbook is not integrated.</li>
