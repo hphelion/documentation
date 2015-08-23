@@ -53,8 +53,8 @@
         <section id="ceilandnova">
             <title>Nova</title>
             <p>The Nova service is configured by default to send certain notifications regarding
-                usage and VM status information collected by Ceilometer. To increase, decrease, or
-                stop these notifications from the Nova service, modify <xref type="section"
+                usage and VM status collected by Ceilometer. To increase, decrease, or stop these
+                notifications from the Nova service, modify <xref type="section"
                     href="#topic11470/novaconfigfile">Nova's Ceilometer configuration
                 file</xref>.</p>
         </section>
@@ -141,7 +141,7 @@
                 necessary to enable notifications. When notification publishing has been enabled,
                 the <i>nova.conf</i> file will appear as follows.</p>
             <codeblock>
-  <codeph>notification_driver=nova.openstack.common.notifier.rpc_notifier
+<codeph>notification_driver=nova.openstack.common.notifier.rpc_notifier
 notification_topics=notifications
 notify_on_state_change=vm_and_task_state
 instance_usage_audit=True
@@ -151,16 +151,16 @@ instance_usage_audit_period=hour
             <p>The <i>instance_usage_audit_period</i> interval can be set to check the instance's
                 status every hour, once a day, once a week or once a month. Every time the audit
                 period elapses, Nova sends a notification to Ceilometer to record whether or not the
-                instance is live and running. Metering this statistic is critical if billing depends
-                on usage.</p>
+                instance is alive and running. Metering this statistic is critical if billing
+                depends on usage.</p>
         </section>
         <section id="restart-the-nova-service">
             <title>Restart the Nova Service</title>
             <p>Note that the Nova service must be restarted to pick up the changes to the
-                configuration file. Log in to the controller node and execute the following to
+                configuration file. Log into the controller node and execute the following to
                 restart the Compute services:</p>
             <codeblock>
-  <codeph>service nova-api restart
+<codeph>service nova-api restart
 service nova-cert restart
 service nova-consoleauth restart
 service nova-scheduler restart
@@ -173,23 +173,22 @@ service nova-novncproxy restart
                     href="http://docs.openstack.org/developer/ceilometer/measurements.html"
                     scope="external" format="html">OpenStack Ceilometer documentation</xref>.</p>
             <p>
-                <b>Validation</b> After the Nova service is re-started, the notification daemons
+                <b>Validation</b> After the Nova service is restarted, the notification daemons
                 using the namespace <i>ceilometer.notification</i> should receive some traffic. Each
                 plugin can listen to any topic(s), but by default it will listen to
                     <i>notifications.info</i>.</p>
         </section>
         <section id="webserverapi">
             <title>Configuring the Web Server for API Performance</title>
-            <p>Reporting API provide the main access point for data stored in Ceilometer. An
-                excessive increase of concurrent access at the front-end tends to put strain on the
-                database. Use this procedure to optimize both the front-end and back-end (database)
-                and improve performance.</p>
+            <p>The Reporting API provides the main access point for data stored in Ceilometer. An
+                excessive increase of concurrent access at the front end tends to put a strain on
+                the database. Follow this procedure to optimize both the front end and back end
+                (database) and improve performance.</p>
             <ol>
                 <li>Add the <i>ceilometer.conf</i> file to the <i>/etc/apache2/sites-available</i>
                     folder.</li>
-                <li>
-                    <p>Add the following data to the <i>ceilometer.conf</i> file:</p>
-                    <codeblock>
+                <li>Add the following data to the <i>ceilometer.conf</i>
+                    file:<codeblock>
 <codeph>Listen &lt;ipaddress&gt;:8777 
 &lt;VirtualHost *:8777&gt;
     WSGIDaemonProcess ceilometer user=ceilometer group=ceilometer processes=4 threads=5 home=/opt/stack/venvs/openstack python-path=/opt/stack/venvs/openstack/lib/python2.7/site-packages
@@ -205,82 +204,69 @@ service nova-novncproxy restart
     &lt;/Directory&gt;
 &lt;/VirtualHost&gt;
 </codeph>
-</codeblock>
-                </li>
-                <li>
-                    <p>Create a softlink for the <i>ceilometer.conf</i> file in the
-                            <i>/etc/apache2/sites-enabled</i> folder.</p>
-                    <codeblock>
+</codeblock></li>
+                <li>Create a softlink for the <i>ceilometer.conf</i> file in the
+                        <i>/etc/apache2/sites-enabled</i>
+                    folder.<codeblock>
 <codeph>ln -s /etc/apache2/sites-available/ceilometer.conf /etc/apache2/sites-enabled
 </codeph>
-</codeblock>
-                </li>
-                <li>
-                    <p>Apply the WSGIDaemon recommended settings.</p>
-                    <p>The Ceilometer API run as WSGI processes. Each process can have a certain
-                        amount of threads to handle the filters and applications that make up the
-                        processing pipeline. Increasing the number of threads will improve
-                        responsiveness, but only up to a point.</p>
-                    <p>The recommended configuration is to have <b>four</b> processes running in
-                        parallel with <b>five</b> threads per process. Add the following lines to
-                        the <i>ceilometer.conf</i> file:</p>
-                    <codeblock>
+</codeblock></li>
+                <li>Apply the WSGIDaemon recommended settings.<p>The Ceilometer API run as WSGI
+                        processes. Each process can have a certain amount of threads to handle the
+                        filters and applications that make up the processing pipeline. Increasing
+                        the number of threads will improve responsiveness, but only up to a
+                        point.</p><p>The recommended configuration is to have <b>four</b> processes
+                        running in parallel with <b>five</b> threads per process. Add the following
+                        lines to the <i>ceilometer.conf</i>
+                    file:</p><codeblock>
 <codeph>processes=4
 threads=5
 </codeph>
-</codeblock>
-                </li>
-                <li>
-                    <p>Reload the Web Server</p>
-                    <p>For the changes to take effect, the Apache2 service also needs to be
-                        reloaded. After reload, the system administrator can change the
-                        configuration of processes and threads and experiment if alternative
-                        settings as necessary.</p>
-                    <codeblock>
+</codeblock></li>
+                <li>Reload the Web Server<p>For the changes to take effect, the Apache2 service also
+                        needs to be reloaded. After reload, the system administrator can change the
+                        configuration of processes and threads and experiment with alternative
+                        settings as
+                    necessary.</p><codeblock>
 <codeph>sudo service apache2 reload
 </codeph>
-</codeblock>
-                </li>
+</codeblock></li>
             </ol>
             <p>
                 <b>Verification</b>
             </p>
             <ol>
-                <li>
-                    <p>Verify that the Ceilometer API are running. Execute:</p>
-                    <codeblock>
+                <li>Verify that the Ceilometer API is running.
+                        Execute:<codeblock>
 <codeph>ps -ef | grep apache
 </codeph>
-</codeblock>
-                    <p>If everything is working, this command should generate an output similar to
-                        the following:</p>
-                    <codeblock>
+</codeblock><p>If
+                        everything is working, this command should generate output similar to the
+                        following:</p><codeblock>
 <codeph>ceilome+ 31430 31427 10 16:29 ? 00:02:40 /usr/sbin/apache2 -k start
 ceilome+ 31431 31427 10 16:29 ? 00:02:41 /usr/sbin/apache2 -k start
 ceilome+ 31432 31427 10 16:29 ? 00:02:42 /usr/sbin/apache2 -k start
 ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start  
 </codeph>
-</codeblock>
-                    <p>Note that the number of entries in the output should match the number of
-                        processors set in the configuration file. The recommended value is four.</p>
-                </li>
-                <li>
-                    <p>Verify that Apache2 is accepting incoming traffic on port 8777:</p>
-                    <codeblock>
+</codeblock><p>Note
+                        that the number of entries in the output should match the number of
+                        processors set in the configuration file. The recommended value is
+                    four.</p></li>
+                <li>Verify that Apache2 is accepting incoming traffic on port
+                        8777:<codeblock>
 <codeph>netstat -tulpn | grep 8777
 </codeph>
-</codeblock>
-                    <p>This command should produce the following output:</p>
-                    <codeblock>
+</codeblock><p>This
+                        command should produce the following
+                    output:</p><codeblock>
 <codeph>tcp6 0 0 :::8777 :::* LISTEN 8959/apache2
 </codeph>
-</codeblock>
-                </li>
+</codeblock></li>
             </ol>
         </section>
         <section id="meterlist">
             <title>Modifying the List of Meters</title>
-            <p>Reducing the amount of unnecessary data sent to the storage reduces the load on the
+            <p>Reducing the amount of unnecessary data sent to storage reduces the load on the
                 SQL-based cluster, which increases performance. Ceilometer data collection is
                 configured by modifying the <i>pipeline.yml</i> file. This configuration file is
                 located in the <i>/etc/ceilometer</i> folder on all of the controller nodes.</p>
@@ -293,13 +279,12 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start
                 services or collected through polling. <b>Sinks</b> represent how that data is
                 modified before it is published to the internal queue for collection and
                 storage.</p>
-            <p>In the Sources section there is a list of default meters. These meters are the data
-                that is going to be collected. The list of meters can be easily reduced or increased
-                by editing the <i>pipeline.yml</i> configuration file and then restarting the <xref
-                    href="metering_components.dita#topic4362/centralagent"
-                />and the <xref
-                    href="metering_components.dita#topic4362/collector"/>.
-                If more meters are desired, please refer to the <xref
+            <p>In the Sources section there is a list of default meters. These meters represent the
+                data that is going to be collected. The list of meters can easily be reduced or
+                increased by editing the <i>pipeline.yml</i> configuration file and then restarting
+                the <xref href="metering_components.dita#topic4362/centralagent"/>and the <xref
+                    href="metering_components.dita#topic4362/collector"/>. If more meters are
+                desired, please refer to the <xref
                     href="http://docs.openstack.org/developer/ceilometer/measurements.html#measurements"
                     type="section" scope="external" format="html">OpenStack Ceilometer
                     documentation</xref>.</p>
@@ -341,9 +326,9 @@ sinks:
             <p>The <b>interval attribute</b> is the time between polls. Meters that are available as
                 both notification <i>and</i> polling are going to be polled at the specified
                 interval. To rely on notifications rather than polling, set the interval attribute
-                to 604800 seconds, or once a week.</p>
-            <p>Here it is an example of a compute-only <i>pipeline.yml</i> file where the poll
-                interval has been increased to once daily.</p>
+                to 604800 seconds (one week).</p>
+            <p>Here is an example of a compute-only <i>pipeline.yml</i> file where the poll interval
+                has been increased to once per day.</p>
             <p>
                 <b>Note</b>: These changes will also completely STOP reception of data from all the
                 non-listed meters.</p>
@@ -372,15 +357,15 @@ sinks:
         </section>
         <section id="swift">
             <title>Swift Considerations</title>
-            <p>Ceilometer, by default, does not collect any data from Swift. Swift data can only be
-                collected using polling, not notifications, and the service could easily generate
-                enough traffic to overwhelm any back-end solution not specifically built to handle
-                Big Data.</p>
-            <p>Polling can be a big performance hit due to the sheer amount of data that the system
-                may have to ingest. It also greatly increases query response time when the database
-                has overly-large amounts of data to scan. Such scans usually consume excessive
-                amounts of CPU and memory resources. In the worst cases, long waits for query
-                replies can result in timeouts.</p>
+            <p>By default, Ceilometer does not collect any data from Swift. You can only collect
+                Swift data by using polling, not notifications, and the service could easily
+                generate enough traffic to overwhelm any back-end solution not specifically built to
+                handle Big Data.</p>
+            <p>Polling can cause a big performance hit due to the sheer amount of data that the
+                system may have to process. It also greatly increases query response time when the
+                database has overly large amounts of data to scan. Such scans usually consume
+                excessive amounts of CPU and memory resources. In the worst cases, long waits for
+                query replies can result in timeouts.</p>
             <p>The Swift service has five separate polling meters:</p>
             <ul>
                 <li>storage.objects</li>
@@ -392,7 +377,7 @@ sinks:
             <p>Here is an example of the <i>pipeline.yml</i> configuration file updating the Swift
                 meters to poll only once an hour.</p>
             <codeblock>
-  <codeph>---
+<codeph>---
 sources:
     - name: meter_source
       interval: 604800
@@ -431,9 +416,9 @@ sinks:
           - notifier://
 </codeph>
 </codeblock>
-            <p>Every time polling interval elapses, it collects at least five messages per
-                    <b>each</b> existing Swift object and container. The following table illustrate
-                the amount of data produced hourly in different scenarios:</p>
+            <p>During each polling interval, Ceilometer collects at least five messages for
+                    <b>each</b> existing Swift object and container. The following table illustrates
+                the amount of data produced hourly in various scenarios:</p>
             <table>
                 <tgroup cols="4">
                     <colspec colname="col1"/>
@@ -475,8 +460,8 @@ sinks:
                 </tgroup>
             </table>
             <p>Even a very, very small Swift storage with only 10 containers and 100 files will
-                store 120,000 samples a day. File size doesn't matter; it's the sheer number of
-                samples that risks a severe performance impact on the database.</p>
+                store 120,000 samples a day. File size doesn't matter; it's the number of samples
+                that risks a severe performance impact on the database.</p>
         </section>
     </body>
 </topic>
