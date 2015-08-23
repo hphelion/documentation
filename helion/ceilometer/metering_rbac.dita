@@ -138,8 +138,8 @@
 +----------+----------------------------------+     
 </codeph>
 </codeblock></li>
-        <li>We need to link the ResellerAdmin Role to a Project/Tenant. Determine which tenants are
-          available on this
+        <li>We need to link the ResellerAdmin Role to a Project/Tenant. To start, determine which
+          tenants are available on this
             deployment.<codeblock>
 <codeph>keystone tenant-list
 </codeph>
