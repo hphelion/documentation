@@ -5,9 +5,11 @@
   <body>
     <section><title>Integrating with an external LDAP server</title>
       <p>If your organization, like most, uses an LDAP directory service such as Active Directory, you can integrate it with Keystone by following the steps outlined below. </p>
-      <p>While you may configure LDAP at installation time, you may also add LDAP support on a per-domain basis after installation because Keystone also supports the option to 
-        specify identity driver configurations on a domain-by-domain basis. 
-        This allows you to, for example, give a specific domain its own LDAP server.</p>
+      <p>While you may configure LDAP at installation time, you may also add LDAP support on a
+        per-domain basis after installation because Keystone also supports the option to specify
+        identity driver configurations on a domain-by-domain basis. This allows you to, for example,
+        give a specific domain its own LDAP server. In general,  the process to create an LDAP
+        domain in Keystone looks like this:</p>
       <p><image href="../../media/keystone/ldap_flow.png" id="image_ifn_j2t_ct"/></p>
       <p>With domain_specific_drivers_enabled set to True, this feature will be enabled, causing
         Keystone to look in the ______________________ (e.g. ______________________) for
