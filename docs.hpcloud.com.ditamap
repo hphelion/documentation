@@ -24,6 +24,9 @@
     <topicref href="helion/installation.dita"/>
     <topicref href="helion/faq.dita"/>
     <topicref href="helion/eula.dita" toc="no"/>
+    <topichead navtitle="Installing on ESX ">
+      <topicref href="helion/esx/esx_installation.dita"/>
+    </topichead>
     <!-- keystone identity -->
     <topichead navtitle="Identity Guide">
       <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Overview"
@@ -107,9 +110,7 @@
       <topicref href="helion/swift/swift_overview.dita"/>
       <topicref href="helion/swift/swift_components.dita"/>
     </topichead>
- 
-  <topichead navtitle="ESX ">
-    <topicref href="helion/esx/esx_installation.dita"/>
-  </topichead>
+
+
   </topicref>
 </map>
