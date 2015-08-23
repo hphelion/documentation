@@ -28,7 +28,7 @@
       <topicref href="helion/esx/esx_installation.dita"/>
     </topichead>
     <!-- keystone identity -->
-    <topichead navtitle="Identity Guide">
+    <topichead navtitle="Identity">
       <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Overview"
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_roles.dita"
@@ -91,7 +91,7 @@
 
     <!-- reporting = metering = ceilomter -->
 
-    <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Guide"
+    <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering"
       locktitle="yes">
       <topicref href="helion/ceilometer/metering_components.dita"
         navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
