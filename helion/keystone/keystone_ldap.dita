@@ -8,13 +8,15 @@
       <p>While you may configure LDAP at installation time, you may also add LDAP support on a per-domain basis after installation because Keystone also supports the option to 
         specify identity driver configurations on a domain-by-domain basis. 
         This allows you to, for example, give a specific domain its own LDAP server.</p>
+      <p><image href="../../media/keystone/ldap_flow.png" id="image_ifn_j2t_ct"/></p>
       <p>With domain_specific_drivers_enabled set to True, this feature will be enabled, causing
         Keystone to look in the ______________________ (e.g. ______________________) for
         configuration files of the form _____________________</p>
       <ol>
         <li>Ensure that the <b>domain_specific_drivers_enabled</b> option is set to <b>True</b> in
-          the main configuration file template (<b>roles/KEY-API/templates/keystone.conf.j2</b>).
-          You'll see a sample file at the end of this topic.</li>
+          the main configuration file template
+            (<b>_________________roles/KEY-API/templates/keystone.conf.j2</b>). You'll see a sample
+          file at the end of this topic.</li>
         <li>Create a YAML file that contains the definition of the LDAP server connection. Use
             <b>roles/KEY-API/files/samples/keystone_configure_ldap_sample.yml</b> as an example.
           Save the file, as, for example, /tmp/myldap.yml. Please refer to the LDAP section of the
