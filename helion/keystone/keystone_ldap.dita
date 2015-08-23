@@ -21,8 +21,11 @@
           a command-line option:
           <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/tmp/myldap.yml
 </codeblock></li>
-        <li>Ensure that the new domain was created for LDAP (Microsoft Active Directory in this
-          example), and that user and group records can be retrieved: <codeblock># Import environment variables suited for Keystone administration
+        <li>Follow these same steps for each LDAP domain with which you are integrating Keystone,
+          creating a yaml file for each and running the reconfigure playbook once for each
+          additional domain.</li>
+        <li>Ensure that the new domain or domains were created for LDAP (Microsoft Active Directory
+          in this example), and that user and group records can be retrieved: <codeblock># Import environment variables suited for Keystone administration
 $ source keystone.osrc
  
 # Get list of domains
