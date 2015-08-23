@@ -90,8 +90,8 @@
     </topichead>
 
     <!-- reporting = metering = ceilomter -->
-
-    <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering"
+    <topichead navtitle="Metering">
+    <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Overview"
       locktitle="yes">
       <topicref href="helion/ceilometer/metering_components.dita"
         navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
@@ -106,6 +106,7 @@
       <topicref href="helion/ceilometer/metering_bestpractice.dita"
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
     </topicref>
+    </topichead>
     <topichead navtitle="Object Storage">
       <topicref href="helion/swift/swift_overview.dita"/>
       <topicref href="helion/swift/swift_components.dita"/>
