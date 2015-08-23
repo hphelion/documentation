@@ -67,7 +67,7 @@
         </ul></p></section>
     <section><title>Adapting the mid-size model to fit your environment</title>
       <p>The minimum set of changes you need to make to adapt the model for your environment are:<ul>
-          <li>Update baremetalConfig.yml to list the details of your bare metal servers. You need to
+          <li>Update baremetalConfig.yml to list the details of your baremetal servers. You need to
             perform this step if you are using the HLM supplied Cobber playbooks to install hLinux
             on your servers.</li>
           <li>Update servers.yml,: This step is not necessary if you are using the HLM supplied
