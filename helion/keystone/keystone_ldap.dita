@@ -96,16 +96,7 @@ stack@hLinux:~$ openstack role assignment list --user 05f107e4b1645c52c24a529e3f
           CLI.</li>
       </ol>
     </section>
-    <section><title>Adjusting WSGI and logging parameters</title> To modify Web Server Gateway
-      Interface (WSGI) parameters (such as process counts for public and admin Keystone interfaces)
-      and log levels: <ol>
-        <li>Adjust respective parameters in
-            <b>roles/keystone-common/vars/keystone_deploy_config.yml</b>.</li>
-        <li>Run reconfiguration playbook:
-          <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
-        </li>
-      </ol>
-    </section>
+
     
     <section>
       <title>Sample LDAP configuration file</title>
