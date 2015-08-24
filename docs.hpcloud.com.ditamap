@@ -55,6 +55,7 @@
         </topicmeta>
       </topicref>
       <topichead navtitle="Operations Console">
+        <topicref href="helion/monasca/opsconsole/overview.dita"/>
         <topichead navtitle="General">
           <topicref href="helion/monasca/opsconsole/dashboard.dita"/>
           <topicref href="helion/monasca/opsconsole/logging.dita"/>
