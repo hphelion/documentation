@@ -39,7 +39,7 @@
 <colspec colname="col4"/>
 <tbody>
 <row>
-    <entry/>
+    <entry>Request</entry>
     <entry>Successful Response</entry>
     <entry>Error Response</entry>
     <entry>Take Action</entry>
@@ -69,7 +69,7 @@
 <colspec colname="col3"/>
 <tbody>
 <row>
-    <entry/>
+    <entry>Request</entry>
     <entry>Error Response</entry>
     <entry>Explanation</entry>
   </row>
