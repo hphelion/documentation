@@ -62,7 +62,8 @@
       <p>The Operations Console (Ops Console) is designed for Helion OpenStack Administrators to
         have a web-based UI that they can use to operate and manage the Helion OpenStack
         environment.</p>
-      <p>For details on the Operations Console, see link</p>
+      <p>For details on the Operations Console, see <xref href="opsconsole/overview.dita">Operations
+          Console Overview</xref></p>
     </section>
     <section id="api"><title>Monasca API</title> Limitations here</section>
   </body>
