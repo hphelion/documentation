@@ -508,16 +508,14 @@
     <section id="nova">
       <title>Nova</title>
       <table frame="all" rowsep="1" colsep="1" id="table_bv5_q2h_1t">
-        <tgroup cols="5">
+        <tgroup cols="4">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
-          <colspec colname="c5" colnum="5" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c5" colnum="4" colwidth="1.0*"/>
           <thead>
             <row>
               <entry>Alarm Name</entry>
-              <entry>Component</entry>
               <entry>Description</entry>
               <entry>Likely Cause</entry>
               <entry>Mitigation Tasks to Perform</entry>
@@ -526,64 +524,55 @@
           <tbody>
             <row>
               <entry>Process Check</entry>
-              <entry>nova-api</entry>
-              <entry/>
+              <entry>nova-api check</entry>
               <entry>Process crashed.</entry>
               <entry>Restart process on affected node. Review nova-api log files.</entry>
             </row>
             <row>
               <entry>HTTP Status</entry>
-              <entry>nova-api</entry>
-              <entry>API health check</entry>
+              <entry>nova-api health check</entry>
               <entry>Process crashed.</entry>
               <entry>Restart process on affected node. Review nova-api log files. Try to connect
                 locally to the http port to see if the connection is accepted.</entry>
             </row>
             <row>
               <entry>Process Check</entry>
-              <entry>nova-cert</entry>
-              <entry/>
+              <entry>nova-cert check</entry>
               <entry>Process crashed.</entry>
               <entry>Restart process on affected node. Review nova-cert.log files.</entry>
             </row>
             <row>
               <entry>Process Check</entry>
-              <entry>nova-compute</entry>
-              <entry/>
+              <entry>nova-compute check</entry>
               <entry>Process crashed.</entry>
               <entry>Restart process on affected node. Review nova-compute.log files.</entry>
             </row>
             <row>
               <entry>Process Check</entry>
-              <entry>nova-conductor</entry>
-              <entry/>
+              <entry>nova-conductor check</entry>
               <entry>Process crashed.</entry>
               <entry>Restart process on affected node. Review nova-conductor.log files.</entry>
             </row>
             <row>
               <entry>Process Check</entry>
-              <entry>nova-consoleauth</entry>
-              <entry/>
+              <entry>nova-consoleauth check</entry>
               <entry>Process crashed.</entry>
               <entry>Restart process on affected node. Review nova-consoleauth log files.</entry>
             </row>
             <row>
               <entry>Process Check</entry>
-              <entry>nova-novncproxy</entry>
-              <entry/>
+              <entry>nova-novncproxy check</entry>
               <entry>Process crashed.</entry>
               <entry>Restart process on affected node. Review nova-novncproxy log files.</entry>
             </row>
             <row>
               <entry>Process Check</entry>
-              <entry>nova-scheduler</entry>
-              <entry/>
+              <entry>nova-scheduler check</entry>
               <entry>Process crashed.</entry>
               <entry>Restart process on affected node. Review nova-scheduler.log files.</entry>
             </row>
             <row>
               <entry>Process Bound Check</entry>
-              <entry>nova-api</entry>
               <entry>process_name=nova-api. Check that the number of processes found is in a
                 predefined range</entry>
               <entry>Process crashed or too many processes running</entry>
