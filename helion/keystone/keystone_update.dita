@@ -28,7 +28,7 @@
             href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
             scope="external" format="html">Keystone docs at OpenStack.org</xref>
           <note>This is a Jinja2 template, which expects certain template variables to be set. Do
-            not change values inside double curly quotes (i.e. {{ }}). </note></li>
+            not change values inside double curly braces (i.e. {{ }}). </note></li>
       <li>Once the template is modified, run reconfiguration playbook:
           <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock></li>
       </ol>
