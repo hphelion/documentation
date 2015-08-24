@@ -278,7 +278,7 @@ builtin.apptail         192.168.68.5    RUNNING[3]
 builtin.cloudevents     192.168.68.5    RUNNING[3]
 builtin.katohistory     192.168.68.5    RUNNING[3]</codeblock>
 <p>If the RETRYING drain hits a <xref href="#topic11928/drain-timeouts" format="dita"><i>drain
-            timeout</i></xref> , its status will change to FATAL.</p>
+            timeout</i></xref>, its status will change to FATAL.</p>
 </section>
 <section id="keys"> <title>Keys</title>
 <p>Each message in a log stream is prefixed with a key, identifying what type of message it is or to
