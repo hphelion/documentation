@@ -6,7 +6,7 @@
     <section><title>Known Restrictions</title>
       <ul>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
-        <li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other
+        <li>All disks on the system(s) should be wiped before attempting installation. /dev/sda will be used for the OS but all other
           disks will be wiped.</li>
         <li>The deployer node must run on HP Linux for HP Helion OpenStack. It is part of the ISO you will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
