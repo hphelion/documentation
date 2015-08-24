@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_a4c_11b_dt">
+  <title><i>cf-mgmt</i> Tool Example 2: Create a Cluster</title>
+  <body>      <simpletable><strow><stentry><xref href="cfmgmt_createcluster_microcloud.dita">&lt;- microcloud example</xref> </stentry><stentry>
+        <xref href="cfmgmt_createcluster_large.dita">grow a cluster example -&gt;</xref></stentry></strow></simpletable>
+    <section>
+            <p>The following is an example on how to create a cluster with a Core node, two DEAs and a MySql
+        service</p>
+
+      <ol><li>Save this content in a text file named <i>bootstrap.yml
+      </i><codeblock>constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
+constructor-flavor: standard.xsmall 
+seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
+core-flavor: standard.medium 
+cluster-title: &lt;My Cluster Title&gt; 
+cluster-prefix: &lt;My prefix&gt;
+dea-count: 2 
+dea-flavor: standard.medium 
+services: mysql 
+services-on-core: false 
+service-flavor: standard.medium 
+az: &lt;my az&gt;</codeblock><note>Please
+  ensure the values for image names, image sizes and availability zones ("az") are valid
+  for your current configuration.</note></li>
+        <li>Run the following set of commands.
+          <codeblock> cf-mgmt.exe ^
+        --os-auth-url <xref href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/" format="html" scope="external">https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/</xref> ^
+        --os-username &lt;username&gt; ^
+        --os-password &lt;password&gt; ^
+        --os-tenant-id &lt;id&gt; ^
+        --os-tenant-name "&lt;tenant-name&gt;" ^
+        --os-region-name "&lt;region-name&gt;" ^
+ create-cluster ^
+        --keypair-name &lt;keypair name&gt; ^
+        --admin-email &lt;admin email&gt; ^
+        --admin-password &lt;admin password&gt; ^
+        --max-cluster-wait-duration -1 ^
+        --max-corenode-wait-duration -1 ^
+        --load bootstrap.yml</codeblock></li></ol><note>A value of -1 indicates an infinite duration.</note>
+    </section>
+  </body>
+</topic>
