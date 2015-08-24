@@ -8,16 +8,17 @@
     <section><b>Node Type</b></section>
     <p>There are two type of nodes that is associated with Swift services. They are as follows:</p>
     <ul id="ul_b2b_gpv_bt">
-      <li>Proxy, Container, Account (PAC) Node: This node runs the swift-proxy, swift-account, and
-        swift-container services. The swift-proxy service processes API requests and directs them to
-        the swift-account, swift-container or swift-object services for processing. The
-        swift-account and swift-container handle requests to accounts and containers
+      <li><b>Proxy, Container, Account (PAC) Node</b>: This node runs the Swift-proxy,
+        Swift-account, and Swift-container services. The Swift-proxy service processes API requests
+        and directs them to the Swift-account, Swift-container or Swift-object services for
+        processing. The Swift-account and Swift-container handle requests to accounts and containers
         respectively.</li>
-      <li>Object (OBJ) Node: This node runs the swift-object service. The swift-object service
-        handles requests for objects.</li>
+      <li><b>Object (OBJ) Node</b>: This node runs the Swift-object service. The Swift-object
+        service handles requests for objects.</li>
     </ul>
-    <section><b>Configuration of Swift Services in the Mid Sized Cloud Model</b><p>In the example,
-        the Swift services are configured in the following <codeph>yml</codeph> files:</p></section>
+    <section><b>Configuration of Swift Services in the Mid Sized Cloud Model</b><p>In the example
+        mid sized cloud model, the Swift services are configured in the following
+          <codeph>yml</codeph> files:</p></section>
     <ul id="ul_c2g_mkd_ct">
       <li><u>data/control_plane.yml</u><p>
           <ul id="ul_lzb_2x3_ct">
@@ -28,7 +29,7 @@
               the <b>swobj</b> group in <codeph>yml</codeph> file.</li>
             <li>Requests to Swift are directed to a virtual IP address (VIP) that is managed by a
               cluster as specified in the <b>core</b> cluster in <u>data/control_plane.yml</u> file.
-              The requests are then directed on the MGMT network to the swift-proxy service on one
+              The requests are then directed on the MGMT network to the Swift-proxy service on one
               of the Proxy, Container, Account nodes.</li>
           </ul>
         </p></li>
@@ -45,11 +46,13 @@
       </li>
       <li><p><u>config/swift/rings.yml</u>
         </p>Swift account, container, and object storage are managed by Swift using a data structure
-        known as a <i>ring</i>. The specification of the rings is provided in this file.</li>
-      <li><u>data/network_groups.yml</u><p>This yml file specifies the MGMT and SWIFT networks. The
-          swift-proxy service uses the SWIFT network to communicate with the other swift services
-          (they also communicated among themselves)</p></li>
-      <li> The swift-proxy service uses other cloud services as follows. Both of these are
+        known as a <i>ring</i>. The specification of the rings is provided in this file. For more
+        information on ring specification, refer to <xref
+          href="#topic_qkg_l4v_bt/ring-specification" format="dita">ring specification.</xref></li>
+      <li><u>data/network_groups.yml</u><p>This yml file specifies the MGMT and Swift networks. The
+          Swift-proxy service uses the Swift network to communicate with the other Swift services
+          and among  themselves.</p></li>
+      <li> The Swift-proxy service uses other cloud services as follows. Both of these are
         configured in the example to run on the <b>core </b>cluster:<ul id="ul_ffb_gpv_bt">
           <li>Swift validates token by making requests to the Keystone service</li>
           <li>Swift caches tokens and other data using the memcached service</li>
@@ -140,8 +143,9 @@ control-planes:
         the number of disk present on a particular server and its usage. The examples include
         several disk models. The disk model used by any given server is determined as
         follows:</p><ul id="ul_jkh_njd_ct">
-        <li>The <codeph>node_type</codeph> of server as specified in <u>data/baremetalConfig.yml</u>
-          (or <u>data/servers/yml</u>) determines the role of the server.</li>
+        <li>The <codeph>node_type</codeph> of server as specified in
+            <codeph>data/baremetalConfig.yml</codeph> (or <codeph>data/servers/ym</codeph>)
+          determines the role of the server.</li>
         <li>There is a specification for each sever role in the <u>data/server_roles.yml</u> file.
           This specifies a disk model for a given server role. For example, for the
             <codeph>ROLE-SWOBJ</codeph>, the disk model is called
@@ -225,8 +229,8 @@ control-planes:
       </ul></section>
     <section id="allocation-network"><b>Allocation Network</b><p>It is recommended not to change a
         network.</p></section>
-    <section><b>Specifying the rings (ring specifications)</b><p>The ring maps the logical names of
-        data to locations on a particular disks. There is a separate ring for account database,
+    <section id="ring-specification"><b>Specifying the rings </b><p>The ring maps the logical names
+        of data to locations on a particular disks. There is a separate ring for account database,
         account database, and individual objects, but each rings works similarly. The rings are
         built and managed manually by a utility called the ring-builder. The ring-builder also keeps
         its own builder file with the ring information and additional data required to build future

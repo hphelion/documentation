@@ -114,10 +114,17 @@ helion/hlm/                    Directory contains files used by the installer
                   “bond-mode: 1” to “bond-mode: active-backup”.</li>
               </ul></li>
           </ol></li>
-        <li>Run the configuration processor, as follows: <codeblock>cd ~/helion/hlm/ansible</codeblock>
-          <codeblock>ansible-playbook -i hosts/localhost config-processor-run<?oxy_delete author="sharmabi" timestamp="20150819T155903+0530" content="_v2"?>.yml</codeblock>
-          Note that if the installer tells you to run ansible-playbook -i hosts/localhost
-          config-processor-run.yml, don't. Run command as above (v2). </li>
+        <li> To continue installation copy your cloud layout to
+            <codeph>/home/stack/helion/my_cloud/definition</codeph></li>
+        <li>Execute the following
+          command:<codeblock>cd /home/stack/helion/hlm/ansible;
+git add -A;
+git commit -m 'My config';</codeblock></li>
+        <li>Execute the installation
+          playbooks:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml;
+ansible-playbook -i hosts/localhost ready-deployment.yml;
+cd /home/stack/scratch/ansible/next/hlm/ansible;
+ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
         <li>Check the generated host files in
             <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs
           are included. If they are not, run
@@ -234,13 +241,28 @@ helion/hlm/                    Directory contains files used by the installer
               </ul>
             </p></li>
           <li>Run the following command to update the network
-              configuration:<codeblock><codeph>eon get-network-info-template --filename &lt;<b> file name</b>></codeph></codeblock><p>For
-              example:<codeblock><codeph>eon get-network-info-template --filename &lt;<b>net_conf.json</b>></codeph></codeblock></p></li>
+              configuration:<codeblock><codeph>eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+              example:<codeblock>eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
+              file of <codeph>net_conf.json</codeph> is shown
+              below:<codeblock>unset OS_DOMAIN_NAME
+export OS_IDENTITY_API_VERSION=3
+export OS_AUTH_VERSION=3
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=admin
+export OS_AUTH_URL=http://helion-ccp-vip-admin-KEY-API-mgmt:35357/v3
+export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</codeblock></p></li>
           <li>Modify the json file as per your
-              environment.<codeblock>vi &lt;<b>file name</b>></codeblock><p>For
-              example:<codeblock>vi &lt;<b>net_conf.json</b>></codeblock></p></li>
-          <li>Set the network information for a vCenter. <codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;abc.json></codeph></codeblock><p>
-              <note>The vcenter ID is generated when you execute the above (<b>step 3</b>)
+              environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
+              example:<codeblock>vi net_conf.json</codeblock></p></li>
+          <li>Set the network information for a vCenter which is used to deploy and configure
+            compute proxy and OvsvApp VMs during the cluster activation.
+              <codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+              example:
+              <codeblock>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json net_conf.json</codeblock></p><p>
+              <note>The vcenter ID is generated when you execute the above (<b>step 2</b>)
                 command.</note>
             </p></li>
           <li>Execute the following command to view the list of clusters for the given
@@ -258,6 +280,7 @@ helion/hlm/                    Directory contains files used by the installer
                 <li>Cluster Name: the name of the cluster that needs to be imported.</li>
                 <li>cluster Moid: Moid of the cluster that needs to be imported.</li>
               </ul>
+            </p><p><b>Sample Output</b></p><p>
               <codeblock>+---------------+--------------------------------------+ 
 | Property      | Value                                | 
 +---------------+--------------------------------------+ 
