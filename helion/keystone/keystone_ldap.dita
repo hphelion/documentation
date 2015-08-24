@@ -4,23 +4,25 @@
   <title>LDAP Integration</title>
   <body>
     <section><title>Integrating with an external LDAP server</title>
-      <p>If your organization, like most, uses an LDAP directory service such as Active Directory, you can integrate it with Keystone by following the steps outlined below. </p>
+      <p>If your organization, like most, uses an LDAP directory service such as Active Directory,
+        you can integrate it with Keystone by following the steps outlined below. </p>
       <p>While you may configure LDAP at installation time, you may also add LDAP support on a
         per-domain basis after installation because Keystone also supports the option to specify
         identity driver configurations on a domain-by-domain basis. This allows you to, for example,
-        give a specific domain its own LDAP server. In general,  the process to create an LDAP
-        domain in Keystone looks like this:</p>
+        give a specific domain its own LDAP server. In general, the process to create an LDAP domain
+        in Keystone looks like this:</p>
       <p><image href="../../media/keystone/ldap_flow.png" id="image_ifn_j2t_ct"/></p>
       <p>With domain_specific_drivers_enabled set to True, the ability to add domains individually
-        will be enabled, causing Keystone to look in the ______________________ (e.g.
-        ______________________) for configuration files of the form _____________________</p>
+        will be enabled, causing Keystoneinstalled on each control plane server to look in the
+          <b>/etc/keystone/domains</b> directory for configuration file of the form
+        keystone.&lt;domain_name&gt;.conf</p>
       <p>To integrate an LDAP domain, follow this process:</p>
       <ol>
-        
+
         <li>Ensure that the <b>domain_specific_drivers_enabled</b> option is set to <b>True</b> in
-          the main configuration file template
-            (<b>_________________roles/KEY-API/templates/keystone.conf.j2</b>). You'll see a sample
-          file at the end of this topic.</li>
+          the main configuration file template (<b>/home/&lt;your user
+            name&gt;/helion/hlm/ansible/roles/KEY-API/templates/keystone.conf.j2</b>). You'll see a
+          sample file at the end of this topic.</li>
         <li>Create a YAML file that contains the definition of the LDAP server connection. Use
             <b>roles/KEY-API/files/samples/keystone_configure_ldap_sample.yml</b> as an example.
           Save the file, as, for example, /tmp/myldap.yml. Please refer to the LDAP section of the
@@ -28,18 +30,11 @@
             href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
             format="html" scope="external"
             >http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html</xref></li>
-        <li><note>The name of the file you create is important and must always be of the form:
-            &lt;domain-name&gt;.yml, in /tmp where the domain name must match the name of the domain
-            created in Keystone. Options provided in the domain-specific configuration file will
-            override those in the primary configuration file (i.e. keystone.yml) for the specified
-            domain. Domains without a specific configuration file will continue to use the options
-            from the primary configuration file. For example, if the service provider creates a
-            domain called "domainA", then the domain-specific configuration file must be
-            domainA.yml. </note></li>
-        <li>Run the reconfiguration playbook, passing the YAML file created in the previous step as
-          a command-line option:
-          <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/tmp/myldap.yml
-</codeblock></li>
+        <li>Create a YML file with any name, on a deployer node, and provide this file name as a
+          parameter to keystone-reconfigure playbook:
+          <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/tmp/any_random_file_name_for_domainA.yml</codeblock>
+        </li>
+       
         <li>Follow these same steps for each LDAP domain with which you are integrating Keystone,
           creating a yaml file for each and running the reconfigure playbook once for each
           additional domain.</li>
@@ -97,14 +92,10 @@ stack@hLinux:~$ openstack role assignment list --user 05f107e4b1645c52c24a529e3f
       </ol>
     </section>
 
-    
+
     <section>
       <title>Sample LDAP configuration file</title>
-      <p>
-        
-        Below is a sample LDAP configuration file
-        
-      </p>
+      <p> Below is a sample LDAP configuration file </p>
       <codeblock>---
 
 keystone_domainldap_conf:
@@ -175,8 +166,6 @@ keystone_domainldap_conf:
         # if you are configuring multiple LDAP domains, and LDAP server certificates are issued
         # by different authorities, make sure that CA file names are unique for each domain.
         tls_cacertfile: /etc/keystone/ssl/certs/domainname_ldapca.pem</codeblock>
-      
-
     </section>
   </body>
 </topic>
