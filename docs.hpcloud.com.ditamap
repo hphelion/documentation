@@ -110,12 +110,10 @@
         navtitle="Ceilometer API Extensions" locktitle="yes"/>
       <topicref href="helion/ceilometer/metering_bestpractice.dita"
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
-
     </topichead>
     <topichead navtitle="Object Storage">
       <topicref href="helion/swift/swift_overview.dita"/>
     </topichead>
-
 
   </topicref>
 </map>
