@@ -10,12 +10,14 @@
         ways, including LDAP server integration. </p>
     </section>
     <section><title>Default Settings</title>
-  
-    <b>Keystone Configuration Settings</b><p>&lt;&lt;&lt;insert default settings of the
-        keystone.conf file here&gt;&gt;&gt;</p><b>Default Domain and Service Accounts</b><p>The
-        "default" domain is automatically created during the Keystone installation to contain the
-        various, required OpenStack service accounts including the following:</p><ul
-        id="ul_tzb_lpd_bt">
+      <b>Keystone Configuration Settings</b> The Keystone identity service configuration options are
+      described in the OpenStack documentation on the <xref
+        href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
+        format="html" scope="external">identity service configuration file (for Kilo) page</xref> on
+      the OpenStack site. <p> </p>
+      <b>Default Domain and Service Accounts</b><p>The "default" domain is automatically created
+        during the Keystone installation to contain the various, required OpenStack service accounts
+        including the following:</p><ul id="ul_tzb_lpd_bt">
         <li>neutron</li>
         <li>glance</li>
         <li>swift-monitor</li>
@@ -33,12 +35,11 @@
         <li>admin</li>
       </ul><p>These are required accounts and are used by the underlying OpenStack services. These
         accounts should not be removed or reassigned to a different domain. The "default" domain
-        should only be used for these service accounts.</p><p>&lt;&lt;&lt; insert instructions on
-        how to change the service account passwords &gt;&gt;&gt;</p><p/><b>Post-Installation
-        Verification and Administration</b><p>Keystone query and administration tasks can be
-        performed using the OpenStack command line utility. The utility is installed by the
-        installer onto deployer node. Also, the installer installs convenient *.osrc files which
-        contain exports of environment variables used by OpenStack CLI.</p><p>
+        should only be used for these service accounts.</p><p/><b>Post-Installation Verification and
+        Administration</b><p>Keystone query and administration tasks can be performed using the
+        OpenStack command line utility. The utility is installed by the installer onto deployer
+        node. Also, the installer installs convenient *.osrc files which contain exports of
+        environment variables used by OpenStack CLI.</p><p>
         <note/>Keystone administration tasks should be performed by <i>admin</i> user with a token
         scoped with <i>default</i> domain via v3 identity API. These settings are pre-configured in
         the <i>keystone.osrc</i> file. </p></section>
