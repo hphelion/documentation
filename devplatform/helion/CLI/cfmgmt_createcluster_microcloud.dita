@@ -8,10 +8,9 @@
       complete installation, this example runs in the Helion Public Cloud.</p>
 
     <ol id="ol_gtt_nz1_dt">
-      <li><xref href="1.2ALS_Client_Downloads.dita#topic843">Download </xref>and install the <xref
-          href="helion/user/reference/1.2client-ref.dita">
+      <li><xref href="1.2ALS_Client_Downloads.dita#topic843">Download </xref>and install the 
           <varname>cf-mgmt</varname>
-        </xref>configuration tool.</li>
+        configuration tool.</li>
       <li>Register for a <xref href="http://www.hpcloud.com/cloud-credit" scope="external"
           format="html"> Helion Public Cloud</xref> account. Keep your username and password handy
         as you will be asked for them during installation. </li>
