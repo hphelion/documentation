@@ -339,35 +339,9 @@ control-planes:
       number of drives and add drives as your storage needs grow. However, you cannot change the
       value of the partition power. Hence you must select a value that is a compromise between
       current and planned capacity. </p>
-    <p>The following artition power selection table shows a range of drives:<table frame="all"
-        rowsep="1" colsep="1" id="table_part_power">
-        <tgroup cols="2">
-          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-          <thead>
-            <row>
-              <entry/>
-              <entry/>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-            </row>
-          </tbody>
-        </tgroup>
-      </table><b>Important</b>: if you are installting a small capacity systen and you need to grow
-      to a very large capacity but you cannot fit within any of the ranges in the table, please seek
-      help from Professional Services to plan your system..</p>
+    <p><b>Important</b>: if you are installting a small capacity systen and you need to grow to a
+      very large capacity but you cannot fit within any of the ranges in the table, please seek help
+      from Professional Services to plan your system..</p>
     <p>There are a few additional factors that can help or mitigate the fixed nature of the
       partition power, as follows:</p>
     <ul id="ul_lqk_2jk_ct">
@@ -384,5 +358,156 @@ control-planes:
     <p> However, while this technique allows you to continue to add storage capacity you should note
       that existing containers continue to use their original storage policy. Hence, the additional
       objects must be added to new containers to take advantage of the new storage policy.</p>
+    <?oxy_delete author="sharmabi" timestamp="20150824T162047+0530" content="&lt;p/&gt;"?>
+    <p>Use the following table to select an appropriate partition power for each ring. The partition
+      power of a ring cannot be changed so it is important to select an appropriate value. This
+      table is based on a replica count of 3. See <b><i>Calculating Numbers of Partitions</i>
+      </b>for information of selecting a partition power if your replica count is different or if
+      you cannot find your system in the table.</p>
+    <p> </p>
+    <p>The table assumes that when you first deploy the system you have a small number of drives
+      (the minimum column in the table) and
+      later<?oxy_delete author="sharmabi" timestamp="20150824T162123+0530" content=" "?><?oxy_insert_start author="sharmabi" timestamp="20150824T162123+0530"?>you
+      <?oxy_insert_end?>add drives. The largest anticipated size in the maximum column in the table.
+      <?oxy_delete author="sharmabi" timestamp="20150824T162155+0530" content="Notes:"?></p>
+    <p>
+      <?oxy_insert_start author="sharmabi" timestamp="20150824T162159+0530"?>
+      <note>
+        <ul id="ul_nnb_z2z_ct">
+          <li>You use the total number of drives. For example, if you have 3 servers, each with two
+            drives, the total number of drives is 6.</li>
+          <li>The  lookup should be done separably for each of the account, container and object
+            rings. Since account and containers represent approximately 1-2% of object storage, you
+            will probably use fewer drives for the account and container rings (i.e., you will have
+            fewer Proxy, Account, Container (PAC) servers) – hence you your object rings may have a
+            higher partition power.</li>
+          <li>The largest anticipated number of drives imposes a limit in how few drives (the
+            minimum) you can have. See <b><i>Calculating Numbers of Partitions</i></b>for the
+            reason. This means that if you anticipate significant growth, your initial system can be
+            small, but there are limits in how small it can be.</li>
+          <li>The table assumes that disk drives are the same size. The actual size of a drive is
+            not significant.</li>
+        </ul>
+      </note>
+      <?oxy_insert_end?>
+    </p>
+    <ul id="ul_hrn_t2z_ct">
+      <li><?oxy_delete author="sharmabi" timestamp="20150824T162229+0530" content="You use the total number of drives. For example, if you have 3 servers, each with two drives, the total number of drives is 6."?></li>
+      <?oxy_delete author="sharmabi" timestamp="20150824T162354+0530" content="&lt;li&gt;The lookup should be done separably for each of the account, container and object rings. Since account and containers represent approximately 1-2% of object storage, you will probably use fewer drives for the account and container rings (i.e., you will have fewer Proxy, Account, Container (PAC) servers) – hence you your object rings may have a higher partition power.&lt;/li&gt;&lt;li&gt;The largest anticipated number of drives imposes a limit in how few drives (the minimum) you can have. See &lt;b&gt;&lt;i&gt;Calculating Numbers of Partitions&lt;/i&gt;&lt;/b&gt;for the reason. This means that if you anticipate significant growth, your initial system can be small, but there are limits in how small it can be.&lt;/li&gt;"?>
+      <li>
+        <?oxy_delete author="sharmabi" timestamp="20150824T162354+0530" content="The table assumes that disk drives are the same size. The actual size of a drive is not significant."?>
+        <?oxy_insert_start author="sharmabi" timestamp="20150824T162744+0530"?>
+        <p>
+          <table frame="all" rowsep="1" colsep="1" id="table_i5k_5fz_ct">
+            <title>Partition Power</title>
+            <tgroup cols="3">
+              <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+              <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+              <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+              <thead>
+                <row>
+                  <entry>Number of drive during deployment (minimum)</entry>
+                  <entry>Number of drives in largest anticipated system (maximum)</entry>
+                  <entry>Recommended Part Power</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>6</entry>
+                  <entry>5,000</entry>
+                  <entry>14</entry>
+                </row>
+                <row>
+                  <entry>12</entry>
+                  <entry>10,000</entry>
+                  <entry>15</entry>
+                </row>
+                <row>
+                  <entry>36</entry>
+                  <entry>40,000</entry>
+                  <entry>17</entry>
+                </row>
+                <row>
+                  <entry>72</entry>
+                  <entry>80,000</entry>
+                  <entry>18</entry>
+                </row>
+                <row>
+                  <entry>128</entry>
+                  <entry>160,000</entry>
+                  <entry>19</entry>
+                </row>
+                <row>
+                  <entry>256</entry>
+                  <entry>300,000</entry>
+                  <entry>20</entry>
+                </row>
+                <row>
+                  <entry>512</entry>
+                  <entry>600,000</entry>
+                  <entry>21</entry>
+                </row>
+                <row>
+                  <entry>1024</entry>
+                  <entry>1,200,00</entry>
+                  <entry>22</entry>
+                </row>
+                <row>
+                  <entry>2048</entry>
+                  <entry>2,500,000</entry>
+                  <entry>23</entry>
+                </row>
+                <row>
+                  <entry>5120</entry>
+                  <entry>5,000,000</entry>
+                  <entry>24</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </p>
+        <?oxy_insert_end?>
+      </li>
+    </ul>
+    <?oxy_insert_start author="sharmabi" timestamp="20150824T162438+0530"?>
+    <section>
+      <p><b><i>Calculating Numbers of Partitions</i></b></p>
+      <p>The Object Storage system hashes a given name into a specific <i>partition</i>. For each
+        partition, for a replica count of 3, there are three <i>partition directories</i>. The
+        partition directories are then evenly scattered over all drives. We can calculate the number
+        of partition directories as
+        follows:<codeblock>number-partition-directories-per-drive = ( (2 ** partition-power) * replica-count ) / number-of-drives
+</codeblock></p>
+    </section>
+    <p/>
+    <p>An ideal number of partition directories per drive is 100. However, the system can tolerate
+      and operate normally with a wide range of number of partition directories per drive. The table
+      in <i><b>Selecting Partition Power</b></i> is based on the following: </p>
+    <ul id="ul_ajk_mfz_ct">
+      <li>A replica count of 3</li>
+      <li>For a given partition power, the minimum number of drives results in approximately 10,000
+        partition directories per drive. Putting more directories on a drive will result in
+        performance issues.</li>
+      <li>
+        <p>For a given partition power, the maximum number of drives results in approximately 10
+          partition directories per drive. Putting fewer directories per drive will result in an
+          uneven distribution of space utilization</p>
+      </li>
+    </ul>
+    <p> If your system is a fixed size, than it's easy to select an appropriate partition power –
+      select a value that gives the closest value to 100 partition directories per drive. If your
+      system starts smaller and then grows, the issue is more complicated. There are two techniques
+      that may help:</p>
+    <p> Start with a system that is closer to your final anticipated system size – this means you
+      can use a high partition power that suites your final system</p>
+    <ul id="ul_p4k_mfz_ct">
+      <li>You can add additional storage policies as the system grows. These storage policies can
+        have a higher partition power because there will be more drives in a larger system. Note,
+        that this does not help account and container rings – storage policies only applies to
+        object rings.</li>
+    </ul>
+    <p> </p>
+    <?oxy_insert_end?>
   </body>
 </topic>
+<?oxy_options track_changes="on"?>
