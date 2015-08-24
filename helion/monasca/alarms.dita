@@ -5,10 +5,21 @@
   <title>Alarm Definitions</title>
   <shortdesc>List of service-specific alarms and the recommended troubleshooting steps.</shortdesc>
   <body>
-    <p>Services</p>
-    <ul>
-      <li><xref href="#alarmdefinitions/haproxy">HAProxy</xref></li>
-    </ul>
+    <section id="services"><title>Services</title>
+      <p>Alarms for these services are included:</p>
+      <ul>
+        <li><xref href="#alarmdefinitions/haproxy">HAProxy</xref></li>
+        <li><xref href="#alarmdefinitions/heat">Heat</xref></li>
+        <li><xref href="#alarmdefinitions/hlinux">HP Linux for HP Helion OpenStack</xref></li>
+        <li><xref href="#alarmdefinitions/logging">Logging</xref></li>
+        <li><xref href="#alarmdefinitions/monasca">Monasca</xref></li>
+        <li><xref href="#alarmdefinitions/mysql">MySQL</xref></li>
+        <li><xref href="#alarmdefinitions/neutron">Neutron</xref></li>
+        <li><xref href="#alarmdefinitions/nova">Nova</xref></li>
+        <li><xref href="#alarmdefinitions/rabbitmq">RabbitMQ</xref></li>
+        <li><xref href="#alarmdefinitions/swift">Swift</xref></li>
+      </ul>
+    </section>
     <section id="haproxy">
       <title>HAProxy</title>
       <table frame="all" rowsep="1" colsep="1" id="table_flj_2tl_zs">

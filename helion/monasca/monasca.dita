@@ -67,8 +67,10 @@
     </section>
     <section id="api"><title>Monasca API</title> Limitations here</section>
     <section id="servicealarms"><title>Service Alarm Definitions</title>
-      Helion OpenStack comes with some predefined monitoring alarms for the services installed.
-      
+      <p>Helion OpenStack comes with some predefined monitoring alarms for the services
+        installed.</p>
+      <p>Full details of all of these alarms can be found here: <xref href="alarms.dita">Service
+          Alarm Definitions</xref>.</p>
     </section>
   </body>
 </topic>
