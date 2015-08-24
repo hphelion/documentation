@@ -151,6 +151,19 @@
         sooner. The number of rotations held will be balanced to attempt to cap logs from all
         services at 200GB.</p>
     </section>
+    <section id="configuration">
+      <title>Configuration</title>
+      <p>To configure logging, modify the <codeph>roles/logging-common/defaults/main.yml</codeph>
+        file as needed then reconfigure. To enable or disable logging for a service, for example,
+        set it in this file and reconfigure:</p>
+      <codeblock>
+        logr_services:
+        rabbitmq:
+        files:
+        - centralized_logging:
+        enabled: true
+      </codeblock>
+    </section>
     <section id="kibana">
       <title>Kibana configuration</title>
       <p>You can use the Kibana dashboards to view log data. Kibana is a tool developed to create
@@ -181,20 +194,15 @@
         <li>Password: 1f3pNxQmXXELJn/MJ4jOHixePSXlu4eZzhi1gJjr7mI=</li>
       </ul>
     </section>
-    <section id="configuration">
-      <title>Configuration</title>
-      <p>To configure logging, modify the <codeph>roles/logging-common/defaults/main.yml</codeph>
-        file as needed then reconfigure. To enable or disable logging for a service, for example,
-        set it in this file and reconfigure:</p>
-      <codeblock>
-logr_services:
-  rabbitmq:
-    files:
-    - centralized_logging:
-      enabled: true
-</codeblock>
-    </section>
     <section id="troubleshooting"><title>Using Centralized Logging to Troubleshoot Issues</title>
+      <p>You can troubleshoot service-specific issues by reviewing the logs. After logging into
+        Kibana, follow these steps:</p>
+      <ol>
+        <li>Select an index and click the green <b>Create</b> button on the <b>Configure an Index
+            Pattern</b></li>
+        <li>Click the <b>Discover</b> tab in the top left and you should be able to perform a search
+          for the service and component for their logs</li>
+      </ol>
     </section>
     <section id="troubleshooting_issues"><title>Troubleshooting Logging Issues</title>
       <p>If centralized logging is not working, go through the following steps to
