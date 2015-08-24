@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
-<reference id="alarmdefinitions">
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="alarmdefinitions">
   <title>Alarm Definitions</title>
   <shortdesc>List of service-specific alarms and the recommended troubleshooting steps.</shortdesc>
-  <refbody>
+  <body>
+    <p>Services</p>
+    <ul>
+      <li><xref href="#alarmdefinitions/haproxy">HAProxy</xref></li>
+    </ul>
     <section id="haproxy">
       <title>HAProxy</title>
       <table frame="all" rowsep="1" colsep="1" id="table_flj_2tl_zs">
@@ -780,5 +785,5 @@
         </tgroup>
       </table>
     </section>
-  </refbody>
-</reference>
+  </body>
+</topic>
