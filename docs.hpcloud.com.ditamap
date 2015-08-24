@@ -90,7 +90,7 @@
           <navtitle>Centralized Logging Overview</navtitle>
         </topicmeta>
       </topicref>
-      <topicref href="helion/logging/logging_troubleshooting.dita" locktitle="yes">
+      <topicref href="helion/logging/logging_troubleshooting.dita" locktitle="yes" toc="no">
         <topicmeta>
           <navtitle>Troubleshooting Logging Issues</navtitle>
         </topicmeta>
