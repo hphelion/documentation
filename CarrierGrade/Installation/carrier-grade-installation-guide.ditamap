@@ -42,9 +42,7 @@
                 <topicref href="carrier-grade-install-pb-kvm-def-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-ansible-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-env-json.dita" toc="no"/>
-                <topicref href="carrier-grade-install-pb-kvm-machine-json-bonded.dita"
-                    translate="no" toc="no"/>
-                <topicref href="carrier-grade-install-pb-kvm-machine-json-bonded.dita"/>
+                <topicref href="carrier-grade-install-pb-kvm-machine-json-bonded.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-esx-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-wr-json.dita" toc="no"/>
