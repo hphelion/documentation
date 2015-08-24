@@ -109,7 +109,6 @@
     </topichead>
     <topichead navtitle="Object Storage">
       <topicref href="helion/swift/swift_overview.dita"/>
-      <topicref href="helion/swift/swift_components.dita"/>
     </topichead>
 
 

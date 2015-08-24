@@ -298,7 +298,7 @@ export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</codeblock></p></li>
         </ol>
       </p></section>
     <p><b>Sample Output</b></p>
-    <p><b>required sample out for the activated cluster</b></p>
+    <p><b>required sample output for the activated cluster</b></p>
     <section><b>Run the config processor</b></section>
     <section>
       <p>Execute the following commands:</p>
