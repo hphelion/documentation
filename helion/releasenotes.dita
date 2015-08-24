@@ -77,13 +77,18 @@
         <li>Manage the different phases of your cloud deployment with ease.</li>
       </ul>
       <p><b>Git repository for config tracking</b></p>
-      <p>In HP Helion OpenStack 2.0 versions, a local git repository is used to track configuration changes and for the config processor to gather configuration settings from. The operations work as explained below:</p>
+      <p>In HP Helion OpenStack 2.0 versions, a local git repository is used to track configuration
+        changes and for the config processor to gather configuration settings from. The operations
+        work as explained below:</p>
       <ul>
-      <li>Operatiosn under ~/helion are under the aegis of git. You’ll need to commit any config
+        <li>Operatiosn under ~/helion are under the aegis of git. You’ll need to commit any config
           into git (on the "site" branch) before the CP can run over it. The script that runs the
-          config processor now guards against uncommitted changes. </li><li>Deployment operations are run from a scratch directory that's assembled from various parts (the
-          ansible output of the CP and the playbooks). The directory is created using
-          "ready-deployment.yml". </li><li>All deployment operations should be run from ~/scratch/ansible/next/hos/ansible.</li></ul>
+          config processor now guards against uncommitted changes. </li>
+        <li>Deployment operations are run from a scratch directory that's assembled from various
+          parts (the ansible output of the CP and the playbooks). The directory is created using
+          "ready-deployment.yml". </li>
+        <li>All deployment operations should be run from ~/scratch/ansible/next/hos/ansible.</li>
+      </ul>
       <!--
 <p><b>Backup and Restore Capabilities for the Control Plane</b> - Allows you to backup and recover your Helion OpenStack</tm> environment with RPO=0.</p>
 -->
