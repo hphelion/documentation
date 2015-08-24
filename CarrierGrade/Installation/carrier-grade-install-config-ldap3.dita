@@ -33,7 +33,7 @@
             file to that directory. <codeblock>mkdir ~/patch_cghelion1.1/ </codeblock></li>
           <li>Extract <codeph>ldap_patch_1.1.tar.gz</codeph> file to the
               <codeph>~/patch_cghelion1.1</codeph> directory.
-            <codeblock>- tar -zxvf ldap_patch_1.1.tar.gz </codeblock></li>
+            <codeblock>tar -zxvf ldap_patch_1.1.tar.gz </codeblock></li>
         </ol></li></ol>
 
   <section><title>Modify the <codeph>stackrc</codeph> files</title>
@@ -54,8 +54,8 @@ unset OS_USER_DOMAIN_ID
 unset OS_IDENTITY_API_VERSION
 unset OS_AUTH_VERSION
 unset OS_PROJECT_NAME</codeblock></li>
-    <li>Execute the following commands to source the <codeph>- /root/stactrcv3</codeph> file:
-          <codeblock>source stactrcv3</codeblock></li>
+    <li>Execute the following commands to source the <codeph>- /root/stackrcv3</codeph> file:
+          <codeblock>source stackrcv3</codeblock></li>
     <li>Execute the following OpenStack CLI command to create a new project:
               <codeblock>openstack project create ldapdemo --domain americas </codeblock><p><image
               href="../../media/CGH-install-ldap-id.png" id="image_qst_sky_bt"/></p></li>
@@ -67,12 +67,9 @@ unset OS_PROJECT_NAME</codeblock></li>
     <li>Execute the following command to add the <codeph>cg-ldap-admin</codeph> user (from the
           previous step) as an admin to the project you created as an admin.
           <codeblock>openstack role add --user &lt;user id> --project ldapdemo admin</codeblock></li>
-    <li>Execute the following commands to again source the <codeph>- /root/stactrcv3</codeph> file:
-          <codeblock>source stactrcv3</codeblock></li>
-    <li>Modify the <codeph>stactrcv3</codeph> file to update the LDAP username/password,
-          project/tenant name, domain name and ID, Identity service API version, and other values as
-          shown:
-          <codeblock>export OS_USERNAME=&lt;ldapusername>
+    <li>Create a text file with the LDAP username/password, project/tenant name, domain name and ID,
+          Identity service API version, and other values as shown:
+            <codeblock>export OS_USERNAME=&lt;ldapusername>
 export OS_PASSWORD=&lt;ldapuserpassword>
 export OS_PROJECT_NAME=ldapdemo
 export OS_TENANT_NAME=ldapdemo
@@ -83,13 +80,29 @@ export OS_AUTH_VERSION=3
 export OS_AUTH_URL=&lt;CAN_AUTH_URL> 
 #export OS_AUTH_URL=&lt;CLM_AUTH_URL>
 export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
-export OS_REGION_NAME=memphis         </codeblock></li>
+export OS_REGION_NAME=memphis         </codeblock><p>The
+            file should appears similar to the
+            following:<codeblock>export OS_USERNAME=cg-ldap
+export OS_PASSWORD=cg-ldap
+export OS_PROJECT_NAME=ldapdemo
+export OS_TENANT_NAME=ldapdemo
+export OS_PROJECT_DOMAIN_NAME=americas
+export OS_USER_DOMAIN_ID=48b0aac906394e99855af16bfdbd9d32
+export OS_IDENTITY_API_VERSION=3
+export OS_AUTH_VERSION=3
+export OS_AUTH_URL=https://10.20.4.100:5000/v3
+#export OS_AUTH_URL=http://10.20.3.103:35357/v3
+export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
+export OS_REGION_NAME=regionone </codeblock></p></li>
+        <li> Save the files as <codeph>stackrcv3</codeph>, replacing the existing file. </li>
     </ol>
   </section>
   <section><title>Install the HP Identity Operations (Keystone) package on all the controllers</title>
     <ol>
       <li>On the HLM host, copy the <codeph>hoscg-update.tgz</codeph> to the
             <codeph>~/&lt;cloudname></codeph> directory.</li>
+        <li>Change to the to the <codeph>~/&lt;cloudname></codeph>
+          directory.<codeblock>cd ~/&lt;cloudname&gt; </codeblock></li>
       <li>Execute the following command, using your cloudname and failure-zone:
           <codeblock>hupdate -c &lt;cloudname> -f &lt;failureZone> hoscg-update.tgz</codeblock></li>
     </ol>
@@ -98,7 +111,17 @@ export OS_REGION_NAME=memphis         </codeblock></li>
           <li>&lt;failurezone> is controller mapping can be obtained from
             &lt;cloud-directory&gt;/nodes.json file on HLM node.</li>
         </ul> Execute this command on all three non-KVM controllers, using a different failure zone
-        for each.</p>
+        for each. The command output ends with the following upon
+        completion:<codeblock>PLAY RECAP ********************************************************************      
+B53DEMO-CCP-CPN-N0001-NETCLM : ok=10   changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-T1-M1-NETCLM     : ok=4    changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-T1-M2-NETCLM     : ok=4    changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-T2-M1-NETCLM     : ok=25   changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-T2-M2-NETCLM     : ok=52   changed=47   unreachable=0    failed=0      
+B53DEMO-CCP-T2-M3-NETCLM     : ok=25   changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-VRG-N0001-NETCLM : ok=4    changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-VRG-N0002-NETCLM : ok=4    changed=0    unreachable=0    failed=0      
+localhost                    : ok=6    changed=2    unreachable=0    failed=0        </codeblock></p>
   </section>
   <section><title>Configure Controllers</title>
  <p>On each of the three non-KVM region conrollers, you meed to perform the following tasks:</p>    
@@ -127,20 +150,6 @@ export OS_REGION_NAME=memphis         </codeblock></li>
 service glance-api restart
 service cinder-api restart
 service nova-api restart</codeblock></li>
-    <li>Modify the stackrcv3 file:
-          <codeblock>export OS_USERNAME=cg-ldap
-export OS_PASSWORD=cg-ldap
-export OS_PROJECT_NAME=ldapdemo
-export OS_TENANT_NAME=ldapdemo
-export OS_PROJECT_DOMAIN_NAME=americas
-export OS_USER_DOMAIN_ID=48b0aac906394e99855af16bfdbd9d32
-export OS_IDENTITY_API_VERSION=3
-export OS_AUTH_VERSION=3
-export OS_AUTH_URL=https://10.20.4.100:5000/v3
-#export OS_AUTH_URL=http://10.20.3.103:35357/v3
-export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
-export OS_REGION_NAME=regionone
-root@B53DEMO-CCP-T2-M1-NETCLM:~#         </codeblock></li>
       <li>Execute a <codeph>glance image-list</codeph>
             command.<codeblock>glance image-list</codeblock><p>The output of the command appears
             similar to the
@@ -160,24 +169,5 @@ SecurityWarning
         </li>
   </ol>
 </section>
-  <section><title>Run the patch file</title>
-  <ol>
-    <li>On the HLM host, execute the following command to launch the patch installation:
-          <codeblock>hupdate -c b53demo -f fz2 hoscg-update.tgz</codeblock></li>
-  </ol>
-    <p>The command outut ends with the following upon completion:</p>
-    <codeblock>
-      PLAY RECAP ********************************************************************
-      B53DEMO-CCP-CPN-N0001-NETCLM : ok=10   changed=0    unreachable=0    failed=0
-      B53DEMO-CCP-T1-M1-NETCLM   : ok=4    changed=0    unreachable=0    failed=0
-      B53DEMO-CCP-T1-M2-NETCLM   : ok=4    changed=0    unreachable=0    failed=0
-      B53DEMO-CCP-T2-M1-NETCLM   : ok=25   changed=0    unreachable=0    failed=0
-      B53DEMO-CCP-T2-M2-NETCLM   : ok=52   changed=47   unreachable=0    failed=0
-      B53DEMO-CCP-T2-M3-NETCLM   : ok=25   changed=0    unreachable=0    failed=0
-      B53DEMO-CCP-VRG-N0001-NETCLM : ok=4    changed=0    unreachable=0    failed=0
-      B53DEMO-CCP-VRG-N0002-NETCLM : ok=4    changed=0    unreachable=0    failed=0
-      localhost                  : ok=6    changed=2    unreachable=0    failed=0
-    </codeblock>
-  </section>
   </body>
 </topic>
