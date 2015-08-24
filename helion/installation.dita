@@ -165,7 +165,7 @@ git commit –m “My config”
       <title>Install and Configure VSA (optional).</title>
       <p>You can set up Virtual Storage Appliance (VSA) using the instructions on the following
         page: <xref href="vsa.dita" format="dita" scope="external">Install and Configure VSA
-          (optional)</xref></p>
+          (optional).</xref></p>
     </section>
     <section id="Post-Installation"><title>Verification Steps</title>
       <ol>
