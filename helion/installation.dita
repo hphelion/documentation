@@ -8,9 +8,11 @@
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
         <li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other
           disks will be wiped.</li>
-        <li>The deployer node must run on HP Linux for HP Helion OpenStack. It is part of the ISO you will download from the <xref
+        <li>The deployer node must run on HP Linux for HP Helion OpenStack. It is part of the ISO
+          you will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
-            format="html" scope="external">Helion Downloads</xref> page. There is only one download; it includes both the OS and the Beta0 installer in one ISO.</li>
+            format="html" scope="external">Helion Downloads</xref> page. There is only one download;
+          it includes both the OS and the Beta0 installer in one ISO.</li>
         <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All
           machines can net boot from PXE and use the deployer as a DHCP server.</li>
         <li>All machines of a single type should be the same, that is, all computes, all VSAs, and
@@ -41,7 +43,8 @@
         <li>Create LUN(s), if required.</li>
         <li>Download the HP Helion OpenStack Deployer ISO from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
-            format="html" scope="external">Helion Downloads</xref> page after signing up and being approved for the program.</li>
+            format="html" scope="external">Helion Downloads</xref> page after signing up and being
+          approved for the program.</li>
         <li>Boot your deployer from the ISO.</li>
         <li>Enter "install" to start installation.</li>
         <li>Select the language.</li>
@@ -75,7 +78,7 @@
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz</codeblock>
         </li>
         <li>Run the following included script:
-          <codeblock>~/hlm-deployer/hlm-init-2.0.0.bash</codeblock></li>
+          <codeblock>~/hlm-deployer/hlm-init-2.0.0-1.bash</codeblock></li>
       </ol>
       <p>At the end of this section you should have a local directory structure, as described
         below:</p>
@@ -108,14 +111,24 @@ helion/hlm/                    Directory contains files used by the installer
                 <li>In the <codeph>net_interfaces.yml</codeph> file, replace all instances of
                   “bond-mode: 1” to “bond-mode: active-backup”.</li>
               </ul></li>
+            <li>Commit your configuration into git, as
+              follows:<codeblock>git add –A
+git commit –m “My config”
+</codeblock></li>
           </ol></li>
         <li>Run the configuration processor, as follows: <codeblock>cd ~/helion/hlm/ansible</codeblock>
-          <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>The CP
+          output is placed on to the following two private branches of the git repo: <ul>
+            <li>stagig-ansible</li>
+            <li>staging-cp-persistents</li>
+          </ul>
+        </li>
         <li>Check the generated host files in
             <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs
           are included. If they are not, run
           <codeblock>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock> and
-          go to step 1.</li>
+          go to step 1. You can review the ansible change by running the following command:
+          <codeblock>git show staging-ansible</codeblock></li>
       </ol>
     </section>
     <section id="CobblerDeploy">
@@ -149,68 +162,10 @@ helion/hlm/                    Directory contains files used by the installer
       </ol>
     </section>
     <section id="VSA">
-      <title>Install and Configure VSA (optional)</title>
-      <ol>
-        <li>Deploy VSA by running the following command: <codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock>
-          <ul>
-            <li>If the output has the following error, manually upload the file to that location
-              then rerun vsa-deploy:
-              <codeblock>
-stderr: tar: /opt/stack/service/vsa/venv/lib/helion-vsa-11.5.01.0079.tgz:
-Cannot open: No such file or directory</codeblock>
-            </li>
-            <li>The file can be found at http://10.1.56.95/helion-vsa-11.5.01.0079.tgz.</li>
-            <li>This is a temporary issue and should be fixed by the next release.</li>
-          </ul></li>
-        <li>Deploy CMC by running the following
-            command:<p><codeblock>ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></p></li>
-        <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
-          <codeblock>
-NIC 1: 
-Virtual Network: vsa-network 
-IP Address: 10.241.103.11
-Subnet Mark: 255.255.255.0
-Gateway: 10.241.103.1
-</codeblock></li>
-        <li>Set your X display and launch CMC:
-          <codeblock>ssh –X to the deployer node</codeblock><codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
-        <li>Manully add the IPs of those VMs.</li>
-        <li>Choose Tasks -&gt; Management Group -&gt; New Management Group from the menu above.</li>
-        <li>Enter the following name for the management group: hlm003-vsa-mg</li>
-        <li>Enter the following username and password: stack / stack</li>
-        <li>Add NTP servers. To get a list log in into any VSA node and type ntpq -pn.</li>
-        <li>Skip the DNS and SMTP sections.</li>
-        <li>Add the following cluster name: hlm003-vsa-cluster</li>
-        <li>Enter the VIP name, which you can find on the deployer in the following file:
-          helion/my_cloud/stage/info/net_info.yml section cluster_ip.</li>
-        <li>Select the checkbox to skip volume creation.</li>
-        <li>Wait for completion.</li>
-        <li>On the deployer, edit the following file: <codeblock>helion/hlm/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeblock><ol>
-            <li>Change the enabled_backends line to:
-              <codeblock>enabled_backends=vsa-1</codeblock></li>
-            <li>Change the following line, if
-              present:<codeblock>{% if cinder_enabled_backends == 'lvm-1' %}</codeblock> to
-              <codeblock>{% if cinder_enabled_backends == 'no-backends' %}</codeblock></li>
-          </ol></li>
-        <li>Copy the VSA section, uncomment it, and fill the values as in the following example:
-          <codeblock>
-[vsa-1]
-hplefthand_password: stack
-hplefthand_clustername: hlm003-vsa-cluster
-hplefthand_api_url: https://10.241.103.7:8081/lhos
-hplefthand_username: stack
-hplefthand_iscsi_chap_enabled: true
-volume_backend_name: vsa-backend-hlm003
-volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
-hplefthand_debug: false
-</codeblock>
-          Note: Until horizon is enabled, the <codeblock>volume_backend_name</codeblock> is not
-          used.</li>
-        <li>Run the following command:
-          <codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
-        <li>Create a volume to verify the VSA is correctly configured, then delete the created
-          volume.</li>
-      </ol>
+      <title>Install and Configure VSA (optional).</title>
+      <p>You can set up Virtual Storage Appliance (VSA) using the instructions on the following
+        page: <xref href="vsa.dita#topic_hjr_4x1_dt">Install and Configure VSA
+        (optional)</xref>.</p>
     </section>
     <section id="Post-Installation"><title>Verification Steps</title>
       <ol>

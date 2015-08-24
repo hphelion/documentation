@@ -22,6 +22,7 @@
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
     <topicref href="helion/installation.dita"/>
+    <topicref href="helion/vsa.dita" navtitle="Installing VSA"/>
     <topicref href="helion/faq.dita"/>
     <topicref href="helion/eula.dita" toc="no"/>
     <topichead navtitle="Installing on ESX ">
