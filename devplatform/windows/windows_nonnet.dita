@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic_amr_q3w_js">
+  <title>HP Helion 1.3 Development Platform: Deploying Non-.NET Applications</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default-devplatform"/>
+      <othermeta name="product-version" content="HP Helion Development Platform"/>
+      <othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
+      <othermeta name="role" content="Systems Administrator"/>
+      <othermeta name="role" content="System Engineer"/>
+      <othermeta name="role" content="Cloud Administrator"/>
+      <othermeta name="role" content="Network Administrator"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="ISV Developer"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Patrick F"/>
+      <othermeta name="product-version1" content="HP Helion Development Platform"/>
+      <othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
+    </metadata>
+  </prolog>
+  <body>
+    <!--permalink: /helion/devplatform/windows/deployingnet/-->
+    <section><title>HP Helion 1.3 Development Platform: Deploying Non-.NET Applications</title>
+      <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
+        Microsoft Corporation in the United States and/or other countries.</i></ph>
+      <p>This tutorial demonstrates how to deploy a non.NET application. For the purposes
+        of this tutorial, you'll deploy Hello World NodeJS application.</p></section>
+  </body>
+</topic>
