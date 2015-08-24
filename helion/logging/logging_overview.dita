@@ -204,21 +204,6 @@
           for the service and component for their logs</li>
       </ol>
     </section>
-    <section id="troubleshooting_issues"><title>Troubleshooting Logging Issues</title>
-      <p>If centralized logging is not working, go through the following steps to
-        troubleshooting:</p>
-      <ul>
-        <li><b>Processes</b> - Ensure that all the centralized logging processes are up.<ul>
-            <li>Elasticsearch</li>
-            <li>Logstash</li>
-            <li>RabbitMQ</li>
-            <li>Beaver</li>
-            <li>Apache</li>
-          </ul></li>
-        <li><b>Check Disk Space</b> - Ensure that you have not run out of disk space.</li>
-        <li><b>RAM</b> - Ensure that you have sufficient RAM and that it is allocated properly.</li>
-      </ul>
-    </section>
     <section id="monitoring"><title>Monitoring</title>
       <p>To help keep abreast of potential logging issues and resolve issues before they affect
         logging, you may wish to monitor the Centralized Logging Alarms. To do so:</p>
@@ -226,7 +211,7 @@
         <li>Log in to the Operations Console GUI</li>
         <li>Navigate to the Monitoring | Alarm Definitions page</li>
         <li>Find the alarm definitions that are applied to the various hosts. See the <xref
-            href="../monasca/alarms.dita">Alarm Definitions List</xref> for the Centralized Logging
+          href="../monasca/alarms.dita">Alarm Definitions List</xref> for the Centralized Logging
           Alarm Definitions.</li>
         <li>Navigate to the Monitoring | Alarm page</li>
         <li>Find the alarm definitions applied to the various hosts. These should match the alarm
@@ -250,6 +235,73 @@
       <p>To look for sufficient Disk space, filter for "Disk"</p>
       <p>To look for sufficient RAM Memory, filter for "Memory"</p>
     </section>
+    <section id="troubleshooting_issues"><title>Troubleshooting Logging Issues</title>
+      <p>If centralized logging is not working, go through the following steps to
+        troubleshooting:</p>
+      <ul>
+        <li><b>Processes</b> - Ensure that all the centralized logging processes are up.<ul>
+            <li>Elasticsearch</li>
+            <li>Logstash</li>
+            <li>RabbitMQ</li>
+            <li>Beaver</li>
+            <li>Apache</li>
+          </ul></li>
+        <li><b>Check Disk Space</b> - Ensure that you have not run out of disk space.</li>
+        <li><b>RAM</b> - Ensure that you have sufficient RAM and that it is allocated properly.</li>
+      </ul>
+      
+      <b>Logging Best Practices</b>
+        <p>By default a full backup includes all logs. Logs can be large, which can slow down the
+          backup process. During this time, the control plane is offline.</p>
+        <p>To balance having useful logs with optimizing system performance, you should routinely
+          clean up logs from <codeph>logstash</codeph> to only keep logs of interest. You should only
+          do a full backup if you need to preserve logs. In most cases, the exclude option is
+          appropriate.</p>
+      <b>Logs can fill the control plane node</b>
+        <p>Logs are stored in one index per day in the Elasticsearch database but are not rotated.</p>
+        <p>Because logs are not rotated, the logs can accumulate and consume significant space on the
+          control plane.</p>
+        <p>Use the following command to view information on log storage:</p>
+        <codeblock>curl http://localhost:9200/_cat/indices?v</codeblock>
+        <p>The following is an example of output from this command:</p>
+        <codeblock>
+          health index pri rep docs.count docs.deleted store.size pri.store.size
+          yellow logstash-2015.02.10 5 1 33758082 0 16.5gb 16.5gb
+          yellow logstash-2015.02.11 5 1 27471823 0 13.6gb 13.6gb
+        </codeblock>
+        <p>You can delete older data using following command:</p>
+        <codeblock>curl -X DELETE http://localhost:9200/[index name]</codeblock>
+      
+      <b>The number of logstash processes might not be sufficient</b>
+        <p>On larger installations, logstash may not be able to process logs as they are produced. In
+          this case unprocessed logs are stored in RabbitMQ queue and this queue is increasing.</p>
+        <p>To check size of queue, use the following command:</p>
+        <codeblock>rabbitmqctl list_queues | grep logs</codeblock>
+        <p>The output of the command is similar to the following:</p>
+        <codeblock>logstash-queue 0</codeblock>
+        <p>If the queue is more than zero, wait a few minutes and run command again. If the size has
+          increased, logs are not being processed quickly enough and the number of logstash processes
+          should be increased.</p>
+        <p>To increase logstash processes:</p>
+        <ol>
+          <li>
+            <p>Stop logstash using command</p>
+            <p>service logstash stop</p>
+          </li>
+          <li>
+            <p>In the <codeph>/etc/default/logstash</codeph> file, find the
+              <codeph>LS_NUM_INSTANCES</codeph> line and change the value to a larger number.</p>
+          </li>
+          <li>
+            <p>Restart logstash using the following command</p>
+            <p>service logstash start</p>
+          </li>
+        </ol>
+        <p>In approximately 15 minutes logstash starts processing. Re-check the queue size to make
+          sure the queue size is reducing.</p>
+   
+    </section>
+    
     <section id="info">
       <title>For more information</title>
       <p>For information the centralized logging components, use the following links:</p>
