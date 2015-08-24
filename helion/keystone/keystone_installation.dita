@@ -32,9 +32,9 @@
         should only be used for these service accounts.</p><p>&lt;&lt;&lt; insert instructions on
         how to change the service account passwords &gt;&gt;&gt;</p><p/><b>Post-Installation
         Verification and Administration</b><p>Keystone query and administration tasks can be
-        performed using the OpenStack command line utility. The utility is installed by HLM onto
-        deployer node. Also, HLM installs convenient *.osrc files which contain exports of
-        environment variables used by OpenStack CLI.</p><p>
+        performed using the OpenStack command line utility. The utility is installed by the
+        installer onto deployer node. Also, the installer installs convenient *.osrc files which
+        contain exports of environment variables used by OpenStack CLI.</p><p>
         <note/>Keystone administration tasks should be performed by <i>admin</i> user with a token
         scoped with <i>default</i> domain via v3 identity API. These settings are pre-configured in
         the <i>keystone.osrc</i> file. </p></section>
@@ -46,7 +46,7 @@
 stack@hLinux:~$ source keystone.osrc 
  
 # List users in default domain
-# These users are created by HLM installer in MySQL backend
+# These users are created by the installer in MySQL backend
 stack@hLinux:~$ openstack user list
 +----------------------------------+---------------+
 | ID                               | Name          |
@@ -68,7 +68,7 @@ stack@hLinux:~$ openstack user list
 | fed1c038d9e64392890b6b44c38f5bbb | admin         |
 +----------------------------------+---------------+
  
-# List domains created by HLM installer
+# List domains created by the installer
 stack@hLinux:~$ openstack domain list
 +----------------------------------+---------+---------+----------------------------------------------------------------------+
 | ID                               | Name    | Enabled | Description                                                          |
