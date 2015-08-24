@@ -94,7 +94,16 @@
         </topicmeta>
       </topicref>
     </topichead>
-
+    <topicref href="helion/neutron/lbaas.dita" locktitle="yes">
+      <topicmeta>
+        <navtitle>Load Balancer (LBaaS)</navtitle>
+      </topicmeta>
+    </topicref>
+    <topicref href="helion/neutron/fwaas.dita" locktitle="yes">
+      <topicmeta>
+        <navtitle>Firewall (FWaaS)</navtitle>
+      </topicmeta>
+    </topicref>
     <!-- reporting = metering = ceilomter -->
     <topichead navtitle="Metering">
       <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Overview"
