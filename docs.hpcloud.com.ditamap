@@ -55,7 +55,11 @@
         </topicmeta>
       </topicref>
       <topichead navtitle="Operations Console">
-        <topicref href="helion/monasca/opsconsole/overview.dita"/>
+        <topicref href="helion/monasca/opsconsole/overview.dita" locktitle="yes">
+          <topicmeta>
+            <navtitle>Operations Console Overview</navtitle>
+          </topicmeta>
+        </topicref>
         <topichead navtitle="General">
           <topicref href="helion/monasca/opsconsole/dashboard.dita"/>
           <topicref href="helion/monasca/opsconsole/logging.dita"/>
@@ -92,8 +96,8 @@
 
     <!-- reporting = metering = ceilomter -->
     <topichead navtitle="Metering">
-    <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Overview"
-      locktitle="yes" />
+      <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Overview"
+        locktitle="yes"/>
       <topicref href="helion/ceilometer/metering_components.dita"
         navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
       <topicref href="helion/ceilometer/metering_metertypes.dita" navtitle="Available Meter Types"
@@ -106,7 +110,7 @@
         navtitle="Ceilometer API Extensions" locktitle="yes"/>
       <topicref href="helion/ceilometer/metering_bestpractice.dita"
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
-   
+
     </topichead>
     <topichead navtitle="Object Storage">
       <topicref href="helion/swift/swift_overview.dita"/>
