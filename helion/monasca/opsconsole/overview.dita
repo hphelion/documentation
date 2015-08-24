@@ -5,7 +5,25 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Operations Console Overview</title>
   <body>
     <section id="about">
-      <p>The HP Helion OpenStack Operations Console</p>
+      <p>The Operations Console (Ops Console) is designed for Helion OpenStack Administrators to
+        have a web-based UI that they can use to operate and manage the Helion OpenStack
+        environment.</p>
+      <p>The following topics explain how to use each of the menus in the console:</p>
+      <ul>
+        <li>General <ul>
+            <li><xref href="dashboard.dita">Dashboard</xref></li>
+            <li>Logging</li>
+            <li>Alarm Explorer</li>
+            <li>Alarm Creation</li>
+            <li>Notification Methods</li>
+          </ul></li>
+        <li>Compute <ul>
+            <li>Compute - Alarm Summary</li>
+            <li>Compute Hosts</li>
+            <li>Compute Instances</li>
+          </ul>
+        </li>
+      </ul>
     </section>
   </body>
 </topic>
