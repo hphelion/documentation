@@ -157,12 +157,11 @@
         file as needed then reconfigure. To enable or disable logging for a service, for example,
         set it in this file and reconfigure:</p>
       <codeblock>
-        logr_services:
-        rabbitmq:
-        files:
-        - centralized_logging:
-        enabled: true
-      </codeblock>
+logr_services:
+  rabbitmq:
+    files:
+    - centralized_logging:
+    enabled: true</codeblock>
     </section>
     <section id="kibana">
       <title>Kibana configuration</title>
@@ -173,7 +172,7 @@
         dashboards are JSON files that you can modify or create new dashboards based on existing
         dashboards.</p>
       <note>Kibana is client-side software. To operate properly, the browser must be able to access
-        port 5601 on undercloud.</note>
+        port 5601 on the control plane.</note>
     </section>
     <section id="interface">
       <title>Logging into Kibana</title>
@@ -182,17 +181,20 @@
         <li>Through the <b>Logging Dashboard</b> option in the Operations Console</li>
         <li>Direct link via port 5601 on the control plane IP</li>
       </ul>
+      <p>Details:</p>
       <p><b>Operations Console method</b> - Launch a web browser on the control plane host to the
         following IP address, using the control plane IP address from the end of the install:</p>
       <codeblock>http://&lt;control plane IP&gt;:9095</codeblock>
+      <p>Navigate to the <b>Logging Dashboard</b> via the menu.</p>
       <p><b>Direct Access method</b> - Launch a web browser on the control plane host to the
         following IP address, using the control plane IP address from the end of the install:</p>
       <codeblock>http://&lt;control plane IP&gt;:5601</codeblock>
+      <b>Login Credentials</b>
       <p>Log in with these credentials:</p>
-      <ul>
-        <li>Username: kibana</li>
-        <li>Password: 1f3pNxQmXXELJn/MJ4jOHixePSXlu4eZzhi1gJjr7mI=</li>
-      </ul>
+        <ul>
+          <li>Username: kibana</li>
+          <li>Password: 1f3pNxQmXXELJn/MJ4jOHixePSXlu4eZzhi1gJjr7mI=</li>
+        </ul>"/>
     </section>
     <section id="troubleshooting"><title>Using Centralized Logging to Troubleshoot Issues</title>
       <p>You can troubleshoot service-specific issues by reviewing the logs. After logging into
