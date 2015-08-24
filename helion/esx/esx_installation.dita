@@ -184,8 +184,13 @@ helion/hlm/                    Directory contains files used by the installer
     </section>
     <section id="VSA">
       <title>Install and Configure ESX Compute and OVSvAPP on vCenter</title>
-      <p>The following section describes the procedure to install and configure ESX compute and
-        OVSvAPP on vCenter.</p>
+      <p>The following sections describe the procedure to install and configure ESX compute and
+        OVSvAPP on vCenter.<ul id="ul_jqm_zjx_ct">
+          <li>Deploy a template</li>
+          <li>Deploy a service</li>
+          <li>Run the config processor</li>
+          <li>Deploy a cloud</li>
+        </ul></p>
     </section>
     <section>
       <p><b>Deploy a template</b></p>
@@ -196,12 +201,12 @@ helion/hlm/                    Directory contains files used by the installer
         <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
           install. Refer to the VMWare vSphere documentation as needed. </li>
       </ol></section>
-    <section><b>Deploy a Service</b><p>To deploy the service using the EON CLI, execute the
-        following steps from the deployer:</p><p>
+    <section><b>Deploy a Service</b><p>Execute the following steps form the deployer to deploy a
+        service using the EON CLI</p><p>
         <ol id="ol_t1q_jl5_bt">
-          <li>Source  <codeph>service.osrc</codeph>.
+          <li>Source <codeph>service.osrc</codeph>.
               <p><!--<p>unset OS_DOMAIN_NAME</p><p>export OS_IDENTITY_API_VERSION=3</p><p>export OS_AUTH_VERSION=3</p><p>export OS_PROJECT_NAME=admin</p><p>export OS_PROJECT_DOMAIN_NAME=Default</p><p>export OS_USERNAME=admin</p><p>export OS_USER_DOMAIN_NAME=Default</p><p>export OS_PASSWORD=admin</p><p>export OS_AUTH_URL=http://helion-ccp-vip-admin-KEY-API-mgmt:35357/v3</p><p>export OS_CACERT=/etc/ssl/certs/ca-certificates.cr</p>--></p></li>
-          <li>Add the vCenter to the eon
+          <li>Add a vCenter to the eon
               database.<codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password&lt;vCenter Password> --port&lt;vCenter Port></codeph></codeblock><p>where:</p><p>
               <ul id="ul_lx4_yr5_bt">
                 <li>vCenter Name - the name of the vCenter server where the service will be
@@ -229,10 +234,10 @@ helion/hlm/                    Directory contains files used by the installer
               </ul>
             </p></li>
           <li>Run the following command to update the network
-              configuration:<codeblock><codeph>eon get-network-info-template --filename &lt;abc.json></codeph></codeblock><note>The
-              json filename can vary. </note></li>
-          <li>Modify the  json &lt;abc. json> file as per your
-            environment.<codeblock>vi &lt;abc.json></codeblock></li>
+              configuration:<codeblock><codeph>eon get-network-info-template --filename &lt;<b> file name</b>></codeph></codeblock><p>For
+              example:<codeblock><codeph>eon get-network-info-template --filename &lt;<b>net_conf.json</b>></codeph></codeblock></p></li>
+          <li>Modify the json file as per your
+            environment.<codeblock>vi &lt;<b>file name</b>></codeblock></li>
           <li>Set the network information for a vCenter. <codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;abc.json></codeph></codeblock><p>
               <note>The vcenter ID is generated when you execute the above (<b>step 3</b>)
                 command.</note>
@@ -262,15 +267,14 @@ helion/hlm/                    Directory contains files used by the installer
 | state         | imported                             | 
 | vcenter_id    | f7cb3811-0d33-44ec-a54a-a69cf7615f5e | 
 +---------------+--------------------------------------+</codeblock>
-            </p>One vCenter can have multiple clusters. And you can import only one cluster at a
-            time.</li>
+            </p>One vCenter can have multiple clusters. But it allows you to import only one cluster
+            at a time.</li>
           <li>Activate the cluster for the selected
             vCenter.<codeblock><codeph>eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock></li>
         </ol>
       </p></section>
-    <p>You all the cluster under the given vCenter.</p>
     <p><b>Sample Output</b></p>
-    <p><b>required information</b></p>
+    <p><b>required sample out for the activated cluster</b></p>
     <section><b>Run the config processor</b></section>
     <section>
       <p>Execute the following commands:</p>
