@@ -15,9 +15,9 @@
             format="html" scope="external">Helion Downloads</xref> page.</li>
         <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All
           machines can net boot from PXE and use the deployer as a DHCP server.</li>
-        <li>All machines of a single type should be the same, that is, all computes,
-          <?oxy_delete author="sharmabi" timestamp="20150819T155733+0530" content="all VSAs"?>, and
-          so on.</li>
+        <li>All machines of a single type should be the same, that is, all
+          computes<?oxy_delete author="sharmabi" timestamp="20150819T155733+0530" content="all VSAs"?>,
+          and so on.</li>
         <li>The deployer node must be a dedicated node in
           Beta<?oxy_delete author="sharmabi" timestamp="20150819T155748+0530" content="0"?><?oxy_insert_start author="sharmabi" timestamp="20150819T155748+0530"?>1<?oxy_insert_end?>.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
@@ -237,7 +237,8 @@ helion/hlm/                    Directory contains files used by the installer
               configuration:<codeblock><codeph>eon get-network-info-template --filename &lt;<b> file name</b>></codeph></codeblock><p>For
               example:<codeblock><codeph>eon get-network-info-template --filename &lt;<b>net_conf.json</b>></codeph></codeblock></p></li>
           <li>Modify the json file as per your
-            environment.<codeblock>vi &lt;<b>file name</b>></codeblock></li>
+              environment.<codeblock>vi &lt;<b>file name</b>></codeblock><p>For
+              example:<codeblock>vi &lt;<b>net_conf.json</b>></codeblock></p></li>
           <li>Set the network information for a vCenter. <codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;abc.json></codeph></codeblock><p>
               <note>The vcenter ID is generated when you execute the above (<b>step 3</b>)
                 command.</note>
