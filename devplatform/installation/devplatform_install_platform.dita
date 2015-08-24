@@ -18,9 +18,9 @@
           <li>python-virtualenv</li>
           <li>python-pip</li>
         </ul>
-        <p>On the Base node, these packages can be installed using <codeph>apt-get</codeph> , but
-          on the Seed node, you 'll need to use <codeph>pip</codeph> to install the following
-          packages:</p>
+        <p>On the Base node, these packages can be installed using <codeph>apt-get</codeph>, but on
+            the Seed node, you 'll need to use <codeph>pip</codeph> to install the following
+            packages:</p>
         <codeblock>pip install cffi enum34 pyasn1 virtualenv </codeblock>
       </li>
     </ul></section>

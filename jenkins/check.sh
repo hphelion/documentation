@@ -1,6 +1,10 @@
 #!/bin/bash 
 
-echo "$GIT_BRANCH "
+
+BRANCH=`echo $GIT_BRANCH | sed 's|.*\/||'`
+
+
+
 echo -e "===Looking for typos and words that should be avoided============================="
 
 # Escape code
@@ -31,13 +35,11 @@ do
 			echo "$issue"
 			echo -e "${cc_blue}Correction${cc_normal}:  $help"
 			echo -e " "
-			echo "1" > checktmp
+			EXIT=$(($EXIT + 1))
 		fi
 	done < ./jenkins/badstrings.txt
 done
 #Read chcktemp and assign content to EXIT (indicating that at least one error was found)
-EXIT=`cat checktmp` > /dev/null 2>&1
-rm checktmp || true
 
 
 #Exit script with 1 if an error was found.  Otherwise exit with 0.
@@ -50,7 +52,7 @@ if [ -z "$EXIT" ]
  
 #Set HipChat authorization and room     
 auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
-room="1537175"  
+room="145"  
 
 #amok  
 #doctest 1537175
@@ -60,7 +62,7 @@ CONSOLE=${BUILD_URL}console
 
   
     
-MESSAGE="The link checker reports <b>$FAILURES files(s)</b> listed in the dita map that did not build in the output."
+MESSAGE="Redfaced reports <b>$EXIT typos in the $BRANCH branch</b> that should be corrected."
 
  
  
@@ -75,15 +77,9 @@ curl \
 {
 	"color":"red",
 	"notify":false,
-	"message":"$MESSAGE  You can see the list files that are not building (<a href=\"$CONSOLE\">here</a>.)",
+	"message":"$MESSAGE  You can see the errors <a href=\"$CONSOLE\">here</a>.",
 	"message_format":"html"
 }
 EOP
-
- 
- 
-	 
-	 
-	 
           exit 1
 fi

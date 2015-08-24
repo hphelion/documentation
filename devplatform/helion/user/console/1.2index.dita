@@ -219,8 +219,8 @@
 <p>
   <b>Credentials</b>
 </p>
-<p>Lists the credentials for the service instance.
-If a the service is a User Provided Service, new credentials can be added and existing credentials may be edited.</p>
+<p>Lists the credentials for the service instance. If the service is a User Provided Service, new
+        credentials can be added and existing credentials may be edited.</p>
 <p>
   <b>App Bindings</b>
 </p>
