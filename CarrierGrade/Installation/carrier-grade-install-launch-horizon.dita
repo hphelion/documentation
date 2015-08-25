@@ -111,7 +111,7 @@
         <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph>
           properties. For Ubuntu, Rhel images you can change the <codeph>vmware_adaptertype</codeph>
           to <codeph>lsiLogic</codeph>.</li>
-        <li>When complete, click <b>Update Image</b>. </li>
+        <li>When complete, click <b>Update Image</b>.  </li>
       </ol>
       <p>Once the images are uploaded, you are ready to launch the instance with different flavors.
       </p>

@@ -20,7 +20,7 @@
         href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM + ESX
         deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HP Distributed
       Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
-      proxy.</p>
+      proxy. </p>
     <p><b>Note:</b> If you are installing the KVM-only deployment, see <xref
         href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref>.</p>
     <section id="prereqs">
@@ -995,9 +995,8 @@ fi
     
     <section id="next-step">
       <title>Next Step</title>
-      <p>
-        <xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref>
-      </p>
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>
+      <!--<p><xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref></p>-->
     </section>
   </body>
 </topic>

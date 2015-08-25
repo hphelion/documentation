@@ -395,7 +395,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
         controller nodes in the non-KVM region. </p>
       <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
     </section>
-    <section>        
+<!--    <section>        
       <title>  Apply the Horizon interface patch:</title> 
       <ol><li>Locate the <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file you downloaded to the HLM host and
         extract the files.</li>
@@ -415,13 +415,12 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
           above steps to copy the <codeph>user.py</codeph> to each controller .</li> 
       </ol>
     </section>
-    
+-->    
     
     <section id="next-step">
       <title>Next Step</title>
-      <p>
-        <xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref>
-      </p>
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>
+      <!--<p><xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref></p>-->
     </section>
   </body>
 </topic>
