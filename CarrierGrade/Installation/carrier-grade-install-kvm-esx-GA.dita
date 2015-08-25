@@ -213,18 +213,14 @@ VSD Server : auto </codeblock></li>
             </ol>
           </p>
     </section>
-    <section><title>Apply the NIC bonding patch</title><p><b>For bonded NIC environments</b>, use
-        the following steps to install a required patch.</p><ol id="ol_nbz_1hb_ct">
-        <li>Copy the patch file to <codeph>/root/</codeph> directory on the HLM host.</li>
-        <li>Execute the following command to download the patch package:
-          <codeblock>apt-get install patch</codeblock></li>
-          <li>Change to the <codeph>root/kenobi-configuration-processor</codeph> directory:
-          <codeblock>cd /root/kenobi-configuration-processor </codeblock></li>
-        <li>Execute the following command to launch the patch installation:
-          <codeblock>patch -p1 ../cg-hos-nic-bonding.patch </codeblock></li>
-        <li>Execute following command to synch the patch file:
-          <codeblock>/root/cg-hlm/hlm-build/hlm_prepare-env.sh </codeblock></li>
-        <li>And then run all steps starting from running hcfgproc again</li></ol></section>
+    <section>
+      <title>Apply the Random RabbitMQ Password patch</title>
+      <p>For information, see <xref href="carrier-grade-install-rabbitmq-patch.dita#topic10581"
+          >Applying the Random RabbitMQ Password Patch</xref>.</p>
+    </section>
+    <section><title>Apply the NIC bonding patch</title><p>HP Helion OpenStack Carreir Grade environments using NIC bonding, see <xref
+          href="carrier-grade-install-nic-patch.dita#topic10581">Applying the NIC Bonding
+          Patch</xref> to install a required patch.</p></section>
     <section id="configure-a-json-file-for-installation">
       <title>Launch the HP Helion OpenStack cloud</title>
       <p>Use the following steps on the HLM host to log on to the HLM VM created in <xref

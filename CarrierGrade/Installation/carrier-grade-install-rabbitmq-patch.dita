@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the Random RabbitMQ
+    Password Patch</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+  </metadata>
+</prolog>
+<body>
+    <p><!--Based on https://wiki.hpcloud.net/display/HCG/.Helion+CG+1.1+GA+Patch+Instructions--></p>
+    <section>
+      <p/>
+      <p>To apply the patch:</p>
+      <ol id="ol_dhy_1pj_dt">
+        <li>Copy the <codeph>random-password.tar.gz</codeph> to the
+            <codeph>~/patch_cghelion1.1</codeph> directory.
+          <codeblock>cp random-password.tar.gz ~/patch_cghelion1.1</codeblock></li>
+        <li>Use the following command to extract the <codeph>random-password.tar.gz</codeph>:
+          <codeblock>tar -zxvf random-password.tar.gz</codeblock></li>
+        <li>Change to the following directory:
+          <codeblock>cd ~/kenobi-configuration-processor</codeblock></li>
+        <li> Execute the following command to perform a dry-run of the patch to verify:
+            <codeblock>patch -p1 --dry-run &lt; ~/patch_cghelion1.1/random-password-cp.patch </codeblock><p>The
+            output appears similar to the
+          following:</p><codeblock>checking file Data/Site/services/ceilometer/api.json
+checking file Data/Site/services/cinder/cinder.json
+checking file Data/Site/services/cinder/scheduler.json
+checking file Data/Site/services/glance/api.json
+checking file Data/Site/services/heat/api.json
+checking file Data/Site/services/icinga/service.json
+checking file Data/Site/services/keystone.json
+checking file Data/Site/services/logstash.json
+checking file Data/Site/services/neutron/api.json
+checking file Data/Site/services/nova/api.json
+checking file Data/Site/services/rabbitmq.json</codeblock></li>
+        <li> Execute the following command to apply the
+            patch:<codeblock>patch -p1 &lt; ~/patch_cghelion1.1/random-password-cp.patch</codeblock><p>The
+            output appears similar to the
+          following:</p><codeblock>patching file Data/Site/services/ceilometer/api.json 
+patching file Data/Site/services/cinder/cinder.json 
+patching file Data/Site/services/cinder/scheduler.json
+patching file Data/Site/services/glance/api.json
+patching file Data/Site/services/heat/api.json
+patching file Data/Site/services/icinga/service.json
+patching file Data/Site/services/keystone.json
+patching file Data/Site/services/logstash.json
+patching file Data/Site/services/neutron/api.json
+patching file Data/Site/services/nova/api.json 
+patching file Data/Site/services/rabbitmq.json</codeblock></li>
+        <li>Change to the following directory:
+          <codeblock>cd ~/kenobi-node-configuration</codeblock></li>
+        <li>Execute the following command to perform a dry-run of the patch to verify:
+            <codeblock>patch -p1 --dry-run &lt; ~/patch_cghelion1.1/random-password-nc.patch </codeblock><p>The
+            output appears similar to the
+          following:</p><codeblock>checking file ansible-playbooks/roles/FND-RMQ/tasks/deploy.yml
+checking file ansible-playbooks/roles/FND-RMQ/tasks/updateusrpass.yml</codeblock></li>
+        <li>Execute the following command to apply the patch:
+            <codeblock>patch -p1 &lt; ~/patch_cghelion1.1/random-password-nc.patch</codeblock><p>The
+            output appears similar to the
+          following:</p><codeblock>patching file ansible-playbooks/roles/FND-RMQ/tasks/deploy.yml
+patching file ansible-playbooks/roles/FND-RMQ/tasks/updateusrpass.yml </codeblock></li>
+      </ol>
+    </section>
+  </body>
+</topic>
