@@ -29,7 +29,7 @@
         configured to the underlying organization's authentication source. For example, the ABC
         company would have a Keystone domain created called "abc". All users authenticating to the
         "abc" domain would be authenticated against the authentication system provided by the ABC
-        organization; in this case <!--<xref href="ldap">ldap://ad.abc.com</xref>.--> </p>
+        organization; in this case ldap://ad.abc.com </p>
     </section>
     <section>
       <title>Domains</title> A domain is a top-level container targeted at defining major
