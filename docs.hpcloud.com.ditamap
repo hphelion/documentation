@@ -22,7 +22,7 @@
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
     <topicref href="helion/installation.dita"/>
-    <topicref href="backup_and_restore.dita"/>
+    <topicref href="helion/backup_and_restore.dita"/>
     <topicref href="helion/faq.dita"/>
     <topicref href="helion/eula.dita" toc="no"/>
     <topichead navtitle="Installing on ESX">
