@@ -31,9 +31,9 @@
         <li>Open Visual Studio 2013. Select <b>File</b>, <b>New...</b></li>
         <li>In the <b>Templates</b> pane, select the <b>Visual C#</b> node, and select <b>Web</b>. Select <b>ASP.NET Web Application</b>, name the project <b>HelionWCF</b>, and click <b>OK</b>.
         <image placement="break" href="../../media/windows_wcf_create_1.png"></image></li>
-        <li>In the <b>New ASP.NET Project</b> window, leave the settings as they are and click <b>OK</b>.
+        <li>In the <b>New ASP.NET Project</b> window, select the <b>Empty</b> template and click <b>OK</b>.
           <image placement="break" href="../../media/windows_wcf_create_2.png"></image></li>
-        <li>Select <b>Tools</b>, <b>NuGet Package Manager</b>, <b>Manage NuGet Packages for Solution</b>. Search online for <b>CloudFoundry MSBuild Tasks</b>, and click <b>Install</b> in the 
+        <li>Right-click the solution and select <b>Manage NuGet Packages for Solution...</b>. Search online for <b>CloudFoundry MSBuild Tasks</b>, and click <b>Install</b> in the 
         <b>Cloud Foundry Build Tasks</b> item. Click <b>Close</b>.
         <image placement="break" href="../../media/windows_wcf_create_4.png"></image></li>
         <li>In <b>Solution Explorer</b>, right-click the <b>HelionWCF</b> project and select <b>Add...</b>, <b>New Item</b>.</li>
