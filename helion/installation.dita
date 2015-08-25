@@ -127,7 +127,16 @@ helion/hlm/                    Directory contains files used by the installer
         <li>Run the following command:
           <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
         <li>Run the following playbook:
-          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock> Note that the full path is &lt;username&gt;/helion/hlm/ansible/cobbler-deploy.yml</li>
+          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock> Note that
+          the full path is &lt;username&gt;/helion/hlm/ansible/cobbler-deploy.yml <note>If you need
+            to change MAC addresses after running cobbler-deploy, <b>etc/dhcp/dhcpd.conf</b> will
+            retain the old addresses until you manually clean them up. Starting the process over
+            will not clear out the <b>/etc/dhcp/dhcpd.conf</b> file on the deployer. So for each
+            server where you changed a MAC address of a device, run:
+            <codeblock>cobbler system remove --name &lt;server name&gt; </codeblock> After running
+            that command for each server, start the process again from the cobbler-deploy
+            step.</note>
+        </li>
       </ol>
     </section>
     <section id="NodeProvision"><title>Provision the Nodes</title>
