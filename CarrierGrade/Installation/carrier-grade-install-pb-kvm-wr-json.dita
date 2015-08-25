@@ -36,38 +36,39 @@
         {
             "name": "wr-vars",
             "properties": {
-                "database_storage": 70,
-                "backup_storage": 300,
-                "image_storage": 250,
-                "region_name": "RegionOne",
+                "database_storage":  , # The storage allotment for the OpenStack databases. As a reference point, a system with six hosts, 40 VMs and 120 tenant networks requires about 9 GiB.
+                "backup_storage": , # The storage allotment for backup operations. To ensure enough space for at least one backup, this should be equal to or greater than the sum of "database storage" and "image storage"
+                "image_storage": , # The size of the partition to use for nova instances (root and ephemeral storage for an instance accounted under this). So please specify the value (in GB) per your requirement
+                "region_name": "", # Specify a custom name of the KVM region
                 "logical_interface": [
                     {
-                        "lag_interface": "N",
-                        "interface_mtu": 1500,
+                        "lag_interface": "N", # An option to use LAG for the management network. If using LAG, specify lag_mode and multiple nic ports in interface_ports 
+                        "lag_mode":   "4", # 4=802.3ad (LACP) policy (default); This is the only supported option for the management (CLM) interface.                         
+                        "interface_mtu": 1500, # The maximum transmission unit for the interface. Typically set it to 9000.
                         "interface_ports": [
-                            "eth0"
+                            "eth0" # Interface to be used. In case of lag mode, specific multiple interfaces with comma separated for example, “eth0”, “eth1”
                         ],
                         "network": [
                             {
-                                "ip_start_address": "10.20.x.x",
-                                "ip_end_address": "10.20.x.x",
+                                "ip_start_address": "", # The start and end address should be from CLM subnet and non-conflicting with non-kvm/standard region
+                                "ip_end_address": "", # The start and end address should be from CLM subnet and non-conflicting with non-kvm/standard region
                                 "name": "management"
                             },
                             {
-                                "ip_start_address": "172.16.x.x",
-                                "ip_end_address": "172.16.x.x",
+                                "ip_start_address": "", # The start and end address should be from BLS subnet and non-conflicting with non-kvm/standard region
+                                "ip_end_address": "", # The start and end address should be from BLS subnet and non-conflicting with non-kvm/standard region
                                 "name": "blockstore"
                             },
                             {
-                                "ip_start_address": "10.20.x.x",
-                                "ip_end_address": "10.20.x.x",
+                                "ip_start_address": "", # The start and end address should be from CAN subnet and non-conflicting with non-kvm/standard region
+                                "ip_end_address": "", # The start and end address should be from CAN subnet and non-conflicting with non-kvm/standard region
                                 "name": "api"
                             }
                         ]
                     }
                 ],
-                "pxeboot_cidr": "10.20.x.x/24",
-                "license_file_name": "license.lic"
+                "pxeboot_cidr": "", # This should be unique subnet for KVM region
+                "license_file_name": "" # Specify the full name of the licence file 
             }
         }
     ]
