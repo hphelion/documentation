@@ -16,7 +16,17 @@
 <body>
     <p><!--Based on https://wiki.hpcloud.net/display/HCG/.Helion+CG+1.1+GA+Patch+Instructions--></p>
     <section>
-      <p/>
+      <p>After executing this patch, OpenStack services will use a string of random characters (as
+        specified in the service definition) as the RabbitMQ password. By default the services will
+        use "guest" as the password. The service definition can be verified by looking at the
+        services' configuration files. </p>
+      <p><b>Notes:</b></p>
+        <ul id="ul_ss3_c5j_dt">
+          <li>The Ceilometer service will be set to always use the password
+            <codeph>metering_secret</codeph>.</li>
+          <li>The Nova and Neutron services will be set to use the password
+            <codeph>metada_shared_secret</codeph>.</li></ul>
+            <p>The services will communicate with RabbitMQ using the newly defined password. </p>
       <p>To apply the patch:</p>
       <ol id="ol_dhy_1pj_dt">
         <li>Copy the <codeph>random-password.tar.gz</codeph> to the
@@ -24,7 +34,8 @@
           <codeblock>cp random-password.tar.gz ~/patch_cghelion1.1</codeblock></li>
         <li>Use the following command to extract the <codeph>random-password.tar.gz</codeph>:
           <codeblock>tar -zxvf random-password.tar.gz</codeblock></li>
-      </ol></section>
+      </ol>
+    </section>
       <section><title>Apply the patch to the Configuration Processor</title>
         <ol>
         <li>Change to the following directory:
