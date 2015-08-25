@@ -202,7 +202,7 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
           install. Refer to the VMWare vSphere documentation as needed. </li>
       </ol></section>
     <section><b>Deploy a Service</b><p>Execute the following steps form the deployer to deploy a
-        service using the EON CLI</p><p>
+        service using the EON CLI.</p><p>
         <ol id="ol_t1q_jl5_bt">
           <li>Source <codeph>service.osrc</codeph>.
               <p><!--<p>unset OS_DOMAIN_NAME</p><p>export OS_IDENTITY_API_VERSION=3</p><p>export OS_AUTH_VERSION=3</p><p>export OS_PROJECT_NAME=admin</p><p>export OS_PROJECT_DOMAIN_NAME=Default</p><p>export OS_USERNAME=admin</p><p>export OS_USER_DOMAIN_NAME=Default</p><p>export OS_PASSWORD=admin</p><p>export OS_AUTH_URL=http://helion-ccp-vip-admin-KEY-API-mgmt:35357/v3</p><p>export OS_CACERT=/etc/ssl/certs/ca-certificates.cr</p>--></p></li>
