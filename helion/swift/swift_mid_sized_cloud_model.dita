@@ -395,8 +395,8 @@
       new containers to take advantage of the new storage policy.</p>
     <p>Use the following table to select an appropriate partition power for each ring. The partition
       power of a ring cannot be changed so it is important to select an appropriate value. This
-      table is based on a replica count of 3. But , your replica count is different or you are
-      unable to find your system in the table then refer to <xref
+      table is based on a replica count of 3. But, your replica count is different or you are unable
+      to find your system in the table then refer to <xref
         href="#topic_qkg_l4v_bt/calculate-number-of-partition" format="dita">Calculating Numbers of
         Partitions</xref> for information of selecting a partition power. </p>
     <p> The table assumes that when you first deploy the system (<b>by system- are we referring

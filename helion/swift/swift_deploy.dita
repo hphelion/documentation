@@ -22,14 +22,14 @@
           <li><xref href="#topic_pgx_vcg_5s/ring-specification" format="dita">Ring
               specifications</xref></li>
           <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-          <li>Making site-specific changes to configuration parameters<?oxy_custom_end?> (<b>can we
-              exclude this for beta???</b>)</li>
+          <li>Making site-specific changes to configuration parameters (<b>can we exclude this for
+              beta?</b>)</li>
         </ul>
       </p>
     </section>
     <section id="hardware-req"><b>Hardware Requirement</b><p>It is recommended to have two <b>disk
-          drives on 3 controller nodes</b> to run swift services. <b>How do we add extra drive ? is
-          it in baremetal file etc??</b></p></section>
+          drives on 3 controller nodes</b> to run swift services. <b>How do we add extra drive? is
+          it in baremetal file etc?</b></p></section>
     <section id="allocate-server-disk"><b>Allocate servers and disk drives</b></section>
     <p>The disk model describes the number of disk present on a particular server and its usage.
       Disk are used by the operating system (for example: for the root, log crash filesystem) and
@@ -124,7 +124,7 @@
         rings.</p><p>Using the ring -specification key you can specify the ring in the input model.
         Also, there is an entry for each distinct Swift system. Therefore, in the input model
         keystone region name in the specified in the <b>region-name</b>. </p><p>In the example files
-          (<b>do we have any such file in build</b>??), a ring-specification is located in
+          (<b>do we have any such file in build</b>?), a ring-specification is located in
           <codeph>config/swift/rings.yml</codeph> file. The sample of <codeph>rings.yml</codeph> is
         as follows:</p></section>
     <example>

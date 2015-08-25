@@ -30,74 +30,75 @@
         </li>
       </ul>
     </p>
-    <p>Select a partition power for a given ring that is appropriate to
-      the number of disk drives you allocate to the ring for the following reasons:
-    </p>
-      <ul>
-        <li>If you use a high partition power and have few disk drives, each disk drives will have
-          1000s of partitions. With too many partitions, audit and other processes in the Object
-          Storage system cannot "walk" the partitions in a reasonable time and updates will not
-          occur in a timely manner.</li>
-        <li>If you use a low partition power and have many disk drives, you will have 10s (or maybe
-          only one) partition on a drive. <p>With many partitions on a drive, a large partition is
-            cancelled out by a smaller partition so the overall drive usage is similar. However,
-            with very small numbers of partitions, the uneven distribution of sizes can be reflected
-            in disk drive utilization (so one drive becomes full while a neighboring drive is
-            empty).</p></li>
-      </ul><p>An ideal number of partitions per drive is 100. If you know the number of drives,
-        select part power approximatley to 100 partition per drive. Usually, you install a system
-        with a specific number of drives and add drives as your storage needs grow. However, you
-        cannot change the value of the partition power. Hence you must select a value that is a
-        compromise between current and planned capacity. </p><p>The following artition power
-        selection table shows a range of drives:<table frame="all" rowsep="1" colsep="1"
-          id="table_part_power">
-          <tgroup cols="2">
-            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-            <thead>
-              <row>
-                <entry/>
-                <entry/>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-              </row>
-            </tbody>
-          </tgroup>
-        </table><b>Important</b>: if you are installting a small capacity systen and you need to
-        grow to a very large capacity but you cannot fit within any of the ranges in the table,
-        please seek help from Professional Services to plan your system..</p><p>There are a few
-        additional factors that can help or mitigate the fixed nature of the partition power, as
-        follows:</p><ul>
-        <li>Account and container storage represents a small fraction (typically 1%) of your object
-          storage needs. Hence, you can select a smaller partition power (relative to object ring
-          partition power) for the account and container rings. </li>
-      </ul><p>For object storage, you can add additional storage policies (i.e., another object
-        ring). When you have reached capacity in an existing storage policy, you can add a new
-        storage policy with a higher partition power (because you now have more disk drives in your
-        system). This means that you can install your system with a small partition power
-        appropriate to a small number of initial disk drives. Later when you have many disk drives,
-        the new storage policy can have a higher value appropriate to the larger number of
-        drives.</p><p> However, while this technique allows you to continue to add storage capacity
-        you should note that existing containers continue to use their original storage policy.
-        Hence, the additional objects must be added to new containers to take advantage of the new
-        storage policy.</p>
-        <section id="replication-policy"><b>Replication Policy</b><p>The <b>replication-policy</b> attribute is used to specify
-        that a ring uses replicated storage. The duplicate copies of the object are created and
-        stored on different disk drives. All replicas are identical. If one is lost or corrupted,
-        the system automatically copies one of the remaining replicas to restore the missing
-        replica.</p></section>
+    <p>Select a partition power for a given ring that is appropriate to the number of disk drives
+      you allocate to the ring for the following reasons: </p>
+    <ul>
+      <li>If you use a high partition power and have few disk drives, each disk drives will have
+        1000s of partitions. With too many partitions, audit and other processes in the Object
+        Storage system cannot "walk" the partitions in a reasonable time and updates will not occur
+        in a timely manner.</li>
+      <li>If you use a low partition power and have many disk drives, you will have 10s (or maybe
+        only one) partition on a drive. <p>With many partitions on a drive, a large partition is
+          cancelled out by a smaller partition so the overall drive usage is similar. However, with
+          very small numbers of partitions, the uneven distribution of sizes can be reflected in
+          disk drive utilization (so one drive becomes full while a neighboring drive is
+        empty).</p></li>
+    </ul>
+    <p>An ideal number of partitions per drive is 100. If you know the number of drives, select part
+      power approximatley to 100 partition per drive. Usually, you install a system with a specific
+      number of drives and add drives as your storage needs grow. However, you cannot change the
+      value of the partition power. Hence you must select a value that is a compromise between
+      current and planned capacity. </p>
+    <p>The following artition power selection table shows a range of drives:<table frame="all"
+        rowsep="1" colsep="1" id="table_part_power">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table><b>Important</b>: if you are installting a small capacity systen and you need to grow
+      to a very large capacity but you cannot fit within any of the ranges in the table, please seek
+      help from Professional Services to plan your system..</p>
+    <p>There are a few additional factors that can help or mitigate the fixed nature of the
+      partition power, as follows:</p>
+    <ul>
+      <li>Account and container storage represents a small fraction (typically 1%) of your object
+        storage needs. Hence, you can select a smaller partition power (relative to object ring
+        partition power) for the account and container rings. </li>
+    </ul>
+    <p>For object storage, you can add additional storage policies (i.e., another object ring). When
+      you have reached capacity in an existing storage policy, you can add a new storage policy with
+      a higher partition power (because you now have more disk drives in your system). This means
+      that you can install your system with a small partition power appropriate to a small number of
+      initial disk drives. Later when you have many disk drives, the new storage policy can have a
+      higher value appropriate to the larger number of drives.</p>
+    <p> However, while this technique allows you to continue to add storage capacity you should note
+      that existing containers continue to use their original storage policy. Hence, the additional
+      objects must be added to new containers to take advantage of the new storage policy.</p>
+    <section id="replication-policy"><b>Replication Policy</b><p>The <b>replication-policy</b>
+        attribute is used to specify that a ring uses replicated storage. The duplicate copies of
+        the object are created and stored on different disk drives. All replicas are identical. If
+        one is lost or corrupted, the system automatically copies one of the remaining replicas to
+        restore the missing replica.</p></section>
     <section id="replica-count">
       <p><b>Replica Count</b></p>
       <p>The recommended value for the <b>replica-count</b> attribute is 3. Three copies of data are
@@ -146,14 +147,16 @@
             i.e., you cannot change the policy for that contaier but you can always create
             additional policies and move data from one contianer to another, if you choose to assign
             a different policy to a new container. </p><p> additional policies and move data within
-            policies. (one container can have more than one storage policy??) once u crete a storage
-            plcy </p><p> The disk drives used by storage policies can overlap or be distinct. If the
-            storage policies overlap (i.e., have disks in common between two storage policies), it
-            is recommended to use the same set of disk drives for both policies. But in case there
-            is a partial overlap in disk drives, as one storage policy receives many objects, the
-            drives that are common to both policies must store more objects than drives that are
-            only allocated to one storage policy. This can be appropriate for a situation where the
-            "overlapped" disk drives are larger than the non-overlapped drives. </p></li>
+            policies. (one container can have more than one storage policy?) once you create a
+            storage policy</p>
+          <p>The disk drives used by storage policies can overlap or be distinct. If the storage
+            policies overlap (i.e., have disks in common between two storage policies), it is
+            recommended to use the same set of disk drives for both policies. But in case there is a
+            partial overlap in disk drives, as one storage policy receives many objects, the drives
+            that are common to both policies must store more objects than drives that are only
+            allocated to one storage policy. This can be appropriate for a situation where the
+            "overlapped" disk drives are larger than the non-overlapped drives.</p>
+        </li>
       </ul>
     </p>
     <section>
@@ -162,5 +165,4 @@
     <section/>
   </body>
 </topic>
-
 <?oxy_options track_changes="on"?>
