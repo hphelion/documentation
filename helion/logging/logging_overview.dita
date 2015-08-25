@@ -191,10 +191,10 @@ logr_services:
       <codeblock>http://&lt;control plane IP&gt;:5601</codeblock>
       <b>Login Credentials</b>
       <p>Log in with these credentials:</p>
-        <ul>
-          <li>Username: kibana</li>
-          <li>Password: 1f3pNxQmXXELJn/MJ4jOHixePSXlu4eZzhi1gJjr7mI=</li>
-        </ul>"/>
+      <ul>
+        <li>Username: kibana</li>
+        <li>Password: 1f3pNxQmXXELJn/MJ4jOHixePSXlu4eZzhi1gJjr7mI=</li>
+      </ul>
     </section>
     <section id="troubleshooting"><title>Using Centralized Logging to Troubleshoot Issues</title>
       <p>You can troubleshoot service-specific issues by reviewing the logs. After logging into
