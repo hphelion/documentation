@@ -2,6 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2261">
 <title>HP Cloud Service Automation</title>
+  
+  
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +14,8 @@
 <!--PUBLISHED-->
  <!--./automation/csa.index.md-->
  <!--permalink: /automation/--></p>
-<p>HP Cloud Service Automation (CSA) provides open, heterogeneous, extensible enterprise-grade cloud service lifecycle management to design and orchestrate full stack services. CSA embraces existing automation assets with an enhanced orchestration engine, which provides IT with an informed, transparent delivery of secure compliant services for the hybrid cloud.</p>
+<p>HP Cloud Service Automation (CSA) provides open, heterogeneous, extensible enterprise-grade cloud service lifecycle management to design and orchestrate full stack services. CSA embraces existing automation assets with an 
+  enhanced orchestration engine, which provides IT with an informed, transparent delivery of secure compliant services for the hybrid cloud.</p>
 <section id="core-features"> <title>Core Features</title>
 <p>Consists of platform-level core capabilities such as subscriber portal, service designer, and role-based access and includes:</p>
 <ul>
@@ -38,6 +41,297 @@
 <p>Build a cloud that supports heterogeneous environments and hybrid delivery. Choose from a vast library of out-of-box integrations with other products to expand your solution.</p>
 </li>
 </ul>
+</section>
+<section id="documentation-library"><title>Documentation Library</title>
+  <p>The HP Cloud Service Automation (CSA) Dcoumentation Library provides the most up-to-date version of CSA documents available on the <xref type="external" format="html" href="http://softwaresupport.hp.com/">HP Software Support Portal</xref>. The 
+table below shows new and updated documents for CSA.</p> 
+  <note outputclass="lightgrey">If the file download cell is blank for a release, the documentation for the previous release applies.</note>
+  <p><b>HP Cloud Service Automation (CSA) Documents</b></p>
+  <table>
+    <tgroup cols="7">
+      <colspec colnum="1" colname="DocumentName" />
+      <colspec colnum="2" colname="4.00" />
+      <colspec colnum="3" colname="4.01" />
+      <colspec colnum="4" colname="4.10" />
+      <colspec colnum="5" colname="4.20" />
+      <colspec colnum="6" colname="4.50" />
+      <colspec colnum="7" colname="Comment" />
+        <thead>
+        <row>
+          <entry></entry>
+          <entry namest="4.00" nameend="4.50" align="center">DOWNLOAD</entry>
+          <entry></entry>
+        </row>
+        <row>
+          <entry>Document Name</entry>
+          <entry outputclass="whiteheadercell">4.00</entry>
+          <entry outputclass="whiteheadercell">4.01</entry>
+          <entry outputclass="whiteheadercell">4.10</entry>
+          <entry outputclass="whiteheadercell">4.20</entry>
+          <entry outputclass="whiteheadercell">4.50</entry>
+          <entry outputclass="whiteheadercell">Comment</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Read First!</entry>
+        </row>
+        <row>
+          <entry>Concepts Guide</entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731450">go</xref></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061671">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286537">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691287">go</xref></entry>
+          <entry>Read First!</entry>
+        </row>
+        <row>
+          <entry>What's New</entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00768301">go</xref></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286561">go</xref></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691514">go</xref></entry>
+        </row>
+        <row>
+          <entry>System and Software Support Matrix</entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731462">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00833069">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061724">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286555">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691511">go</xref></entry>
+          <entry>Read Before Installation!</entry>
+        </row>
+        <row>
+          <entry>Release Notes</entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731460">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00834515">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061666">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286554">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691515">go</xref></entry>
+          <entry>Read Before Installation!</entry>
+        </row>
+        <row>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Installation and Upgrade Guides</entry>
+        </row>
+        <row>
+          <entry>Installation Guide (zip)</entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731464">go</xref></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061713">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286545">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691508">go</xref></entry>
+        </row>
+        <row>
+          <entry>Upgrade Guide (zip)</entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731463">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00833079">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061717">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286557">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691513">go</xref></entry>
+        </row>
+        <row>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Configuration Guides</entry>
+        </row>
+        <row>
+          <entry>Configuration Guide - Linux</entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731466">go</xref></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061715">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286538">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691503">go</xref></entry>
+        </row>
+        <row>
+          <entry>Configuration Guide - Windows</entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731465">go</xref></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061716">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286539">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691507">go</xref></entry>
+        </row>
+        <row>
+          <entry>Configuring an HP CSA Linux Cluster for High Availability Using a Load Balancer</entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01091935">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286540">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691506">go</xref></entry>
+        </row>
+        <row>
+          <entry>Configuring an HP CSA Windows Cluster for High Availability Using a Load Balancer</entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01091936">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286541">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691505">go</xref></entry>
+        </row>
+        <row>
+          <entry>Configuring an HP CSA Linux Cluster for High Availability Using an Apache Web Server as a Proxy</entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061726">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286558">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01737522">go</xref></entry>
+        </row>
+        <row>
+          <entry>Configuring an HP CSA Windows Cluster for High Availability Using an Apache Web Server</entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061727">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286559">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01737523">go</xref></entry>
+        </row>
+        <row>
+          <entry>FIPS Compliance Configuration Guide</entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01702243">go</xref></entry>
+        </row>
+        <row>
+          <entry>FIPS 140-2 Compliance Statement</entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731453">go</xref></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061712">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286544">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691504">go</xref></entry>
+        </row>
+        <row>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Help</entry>
+        </row>
+        <row>
+          <entry>Cloud Service Management Console Help (PDF)</entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731471">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00833074">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061667">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286536">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691502">go</xref></entry>
+        </row>
+        <row>
+          <entry>Marketplace Portal Help (PDF)</entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731455">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00833075">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061668">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286551">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01702240">go</xref></entry>
+        </row>
+        <row>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Reference Guides</entry>
+        </row>
+        <row>
+          <entry>API Guide</entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691501">go</xref></entry>
+        </row>
+        <row>
+          <entry>Health Tool</entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01702242">go</xref></entry>
+        </row>
+        <row>
+          <entry>Troubleshooting Guide</entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+        </row>
+        <row>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Content Guides</entry>
+        </row>
+        <row>
+          <entry>Content Archive Tool Guide</entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+        </row>
+        <row>
+          <entry>Content Archive Tool Guide</entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+        </row>
+        <row>
+          <entry>Content Installation Guide</entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+        </row>
+        <row>
+          <entry>Content Pack User Guide</entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+        </row>
+        <row>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">White Papers</entry>
+        </row>
+        <row>
+          <entry>Application Deployment on Realized Topology Instance Using Sequenced Design</entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry></entry>
+          <entry></entry>
+        </row>
+        <row>
+          <entry>Customizing the Marketplace Portal</entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+        </row>
+        <row>
+          <entry>Integrated Billing Solutions</entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+        </row>
+        <row>
+          <entry>Integration with ArcSight Logger</entry>
+          <entry></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry></entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+        </row>
+        <row>
+          <entry>Integration with HP Operations Orchestration </entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+        </row>
+        <row>
+          <entry>Integration with HP Operations Orchestration </entry>
+          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+          <entry></entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </table>
 </section>
 <section id="hp-csa-technical-information-and-manuals-a-z"> <title>HP CSA Technical Information and Manuals (A-Z)</title>
 <ul>
