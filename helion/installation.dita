@@ -137,8 +137,9 @@ git commit –m “My config”
               <codeblock>git show staging-ansible</codeblock></li>
             <li>Create a deployment directory after a successful CP run, using the following
               command:
-              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml cd ~/scratch/ansible/next/hos/ansible</codeblock>
-              Run commands that mention "verb_hosts" from this directory. </li>
+              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml </codeblock> Run
+              your deployment operations from the following directory:
+              <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
           </ol></li>
       </ol>
     </section>
