@@ -77,64 +77,68 @@ status checks. For a complete list of options, see the <xref href="../../../../d
 <p>Instructions for common operations on the Application Lifecycle Service VM can be found here:</p>
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita" >Common Server Operations</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita#server-status" type="section"  >Server Status</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita#starting-and-stopping-roles" type="section"  >Starting and Stopping
-Roles</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita#system-shutdown" type="section"  >System Shutdown</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita#setting-the-time-zone" type="section"  >Setting the Time Zone</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita#resetting-the-vm" type="section"  >Resetting the VM</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita#monitoring-the-helion-server" type="section"  >Monitoring The Application Lifecycle Service
-Server</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita#management-console" type="section"  >Management Console</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita#new-relic" type="section"  >New Relic</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita#creating-an-admin-user" type="section"  >Creating an Admin User</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita#system-monitoring-with-nagios" type="section"  >System Monitoring with Nagios</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0operations.dita#server-backup-import-and-export" type="section"  >Server Backup, Import, and Export</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0upgrade.dita" >Upgrading Application Lifecycle Service</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0upgrade.dita#before-an-upgrade" type="section"  >Before an upgrade</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/helion/admin/server/1.0upgrade.dita#executing-the-upgrade" type="section"  >Executing the upgrade</xref>
-</li>
-</ul>
-</li>
+          <xref href="../../../../devplatform/helion/admin/server/1.0operations.dita">Common Server
+            Operations</xref>
+          <ul>
+            <li>
+              <xref
+                href="../../../../devplatform/helion/admin/server/1.0operations.dita#server-status"
+                type="section">Server Status</xref>
+              <ul>
+                <li>
+                  <xref
+                    href="../../../../devplatform/helion/admin/server/1.0operations.dita#starting-and-stopping-roles"
+                    type="section">Starting and Stopping Roles</xref>
+                </li>
+                <li>
+                  <xref
+                    href="../../../../devplatform/helion/admin/server/1.0operations.dita#system-shutdown"
+                    type="section">System Shutdown</xref>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <xref
+                href="../../../../devplatform/helion/admin/server/1.0operations.dita#setting-the-time-zone"
+                type="section">Setting the Time Zone</xref>
+            </li>
+            <li>
+              <xref
+                href="../../../../devplatform/helion/admin/server/1.0operations.dita#resetting-the-vm"
+                type="section">Resetting the VM</xref>
+            </li>
+            <li>
+              <xref
+                href="../../../../devplatform/helion/admin/server/1.0operations.dita#monitoring-the-helion-server"
+                type="section">Monitoring The Application Lifecycle Service Server</xref>
+              <ul>
+                <li>
+                  <xref
+                    href="../../../../devplatform/helion/admin/server/1.0operations.dita#management-console"
+                    type="section">Management Console</xref>
+                </li>
+                <li>
+                  <xref
+                    href="../../../../devplatform/helion/admin/server/1.0operations.dita#new-relic"
+                    type="section">New Relic</xref>
+                </li>
+                <li>
+                  <xref
+                    href="../../../../devplatform/helion/admin/server/1.0operations.dita#creating-an-admin-user"
+                    type="section">Creating an Admin User</xref>
+                </li>
+                <li>
+                  <xref
+                    href="../../../../devplatform/helion/admin/server/1.0operations.dita#system-monitoring-with-nagios"
+                    type="section">System Monitoring with Nagios</xref>
+                </li>
+              </ul></li>
+            <li>
+              <xref
+                href="../../../../devplatform/helion/admin/server/1.0operations.dita#server-backup-import-and-export"
+                type="section">Server Backup, Import, and Export</xref>
+            </li>
+          </ul></li>
 </ul>
 </section>
 <section id="detailed-configuration"> <title>Detailed Configuration</title>

@@ -115,43 +115,36 @@ Registry</xref>
 </ul>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita" >AOK Authentication Server</xref>
-
-<ul>
-<li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#end-user-login" type="section">End User Login</xref>
-</li>
-<li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#strategies" type="section">Strategies</xref>
-</li>
-<li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#configuration" type="section">Configuration</xref>
-</li>
-<li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#user-management" type="section">User Management</xref>
-</li>
-<li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#first-admin-user-setup" type="section">First Admin User Setup</xref>
-</li>
-<li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#regular-ldap-user-setup" type="section">Regular LDAP User
-Setup</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../devplatform/helion/admin/server/1.0upgrade.dita" >Upgrading Application Lifecycle Service</xref>
-
-<ul>
-<li>
-<xref href="../../../devplatform/helion/admin/server/1.0upgrade.dita#before-an-upgrade" type="section">Before an upgrade</xref>
-</li>
-<li>
-<xref href="../../../devplatform/helion/admin/server/1.0upgrade.dita#executing-the-upgrade" type="section">Executing the
-upgrade</xref>
-</li>
-</ul>
-</li>
+          <xref href="../../../devplatform/helion/admin/server/1.0aok.dita">AOK Authentication
+            Server</xref>
+          <ul>
+            <li>
+              <xref href="../../../devplatform/helion/admin/server/1.0aok.dita#end-user-login"
+                type="section">End User Login</xref>
+            </li>
+            <li>
+              <xref href="../../../devplatform/helion/admin/server/1.0aok.dita#strategies"
+                type="section">Strategies</xref>
+            </li>
+            <li>
+              <xref href="../../../devplatform/helion/admin/server/1.0aok.dita#configuration"
+                type="section">Configuration</xref>
+            </li>
+            <li>
+              <xref href="../../../devplatform/helion/admin/server/1.0aok.dita#user-management"
+                type="section">User Management</xref>
+            </li>
+            <li>
+              <xref
+                href="../../../devplatform/helion/admin/server/1.0aok.dita#first-admin-user-setup"
+                type="section">First Admin User Setup</xref>
+            </li>
+            <li>
+              <xref
+                href="../../../devplatform/helion/admin/server/1.0aok.dita#regular-ldap-user-setup"
+                type="section">Regular LDAP User Setup</xref>
+            </li>
+          </ul></li>
 </ul>
 </section>
 <section id="cluster-configuration"> <title>Advanced/Manual Cluster Configuration</title>
@@ -223,20 +216,23 @@ upgrade</xref>
             </li>
           </ul></li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita" >Harbor: TCP/UDP Port Service</xref>
-
-<ul>
-<li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#architecture" type="section">Architecture</xref>
-</li>
-<li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#requirements-setup" type="section">Requirements &amp; Setup</xref>
-</li>
-<li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#troubleshooting" type="section">Troubleshooting</xref>
-</li>
-</ul>
-</li>
+          <xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita">Harbor: TCP/UDP Port
+            Service</xref>
+          <ul>
+            <li>
+              <xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#architecture"
+                type="section">Architecture</xref>
+            </li>
+            <li>
+              <xref
+                href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#requirements-setup"
+                type="section">Requirements &amp; Setup</xref>
+            </li>
+            <li>
+              <xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#troubleshooting"
+                type="section">Troubleshooting</xref>
+            </li>
+          </ul></li>
 </ul>
 </section>
 <section id="best-practices"> <title>Best Practices</title>

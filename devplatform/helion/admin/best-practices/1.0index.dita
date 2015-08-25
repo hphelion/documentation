@@ -70,46 +70,35 @@ Relic</xref>
 <xref type="section" href="#topic9421/system-monitoring-with-nagios">System Monitoring with Nagios</xref>
 </li>
 <li>
-<xref type="section" href="#topic9421/storage">Persistent Storage</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic9421/relocating-services-droplets-and-containers">Relocating Services, Droplets, and
-Containers</xref>
-</li>
-<li>
-<xref type="section" href="#topic9421/enabling-filesystem-quotas">Enabling Filesystem Quotas</xref>
-</li>
+          <xref type="section" href="#topic9421/storage">Persistent Storage</xref>
+          <ul>
+            <li>
+              <xref type="section" href="#topic9421/relocating-services-droplets-and-containers"
+                >Relocating Services, Droplets, and Containers</xref>
+            </li>
+            <li>
+              <xref type="section" href="#topic9421/enabling-filesystem-quotas">Enabling Filesystem
+                Quotas</xref>
+            </li>
+          </ul></li>
 </ul>
-</li>
-</ul>
-<p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../../../../devplatform/helion/admin/server/1.0upgrade.dita#upgrade" type="section"  >
-<i>kato node
-upgrade</i>
-</xref> or a <xref type="section" href="#topic9421/bestpractices-migration">
-<i>migration to a new VM
-or cluster</i>
-</xref>, but patch releases (normally
-minor fixes to particular components) can be applied in place using the
-<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-patch" type="section"  >
-<i>kato patch</i>
-</xref>
-command.</p>
+<p>Patch releases (normally minor fixes to particular components) can be applied in place using the
+          <xref
+          href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-patch"
+          type="section">
+          <i>kato patch</i>
+        </xref> command.</p>
 <p>To see a list of patches available from HP, run the following
 command on any Application Lifecycle Service VM:</p>
-<codeblock>
-  <codeph>kato patch status
-</codeph>
-</codeblock>
+<codeblock>kato patch status</codeblock>
 <p>The command will list the updates available. For example:</p>
-<codeblock>
-  <codeph>1 update available to be installed.
+<codeblock>1 update available to be installed.
 
 Known updates:
   dea-memory-usage-reporting: Fix the reporting of helion stats usage on the DEA end.
     severity: required
     roles affected: dea
-</codeph>
+
 </codeblock>
 <p>To apply all patches to all relevant cluster nodes:</p>
 <codeblock>
@@ -250,27 +239,13 @@ corresponding roles must be enabled (see also <xref href="../../../../devplatfor
 RabbitMQ
 2.4</i>
 </xref>).</p>
-<p>Login to the Application Lifecycle Service VM (or Core node) and run
-<codeph>kato data import</codeph> with the relevant options. For
-example, to import all data into a new cluster from a .tgz file:</p>
-<codeblock>
-  <codeph>$ kato data import --cluster helion-export-xxxxxxxxxx.tgz
-</codeph>
-</codeblock>
+<p>Log in to the Application Lifecycle Service VM (or Core node) and run <codeph>kato data
+          import</codeph> with the relevant options. For example, to import all data into a new
+        cluster from a .tgz file:</p>
+<codeblock>kato data import --cluster helion-export-xxxxxxxxxx.tgz</codeblock>
 <p>To import data from a running Application Lifecycle Service system instead, specify the
 hostname of the old Core node:</p>
-<codeblock>
-  <codeph>$ kato data import --cluster helion-host.example.com
-</codeph>
-</codeblock>
-</section>
-<section id="upgrade"> <title>Upgrading (v1.0 and later)</title>
-<p>The <codeph>kato node upgrade</codeph> command was added in
-Application Lifecycle Service 1.0 to allow upgrading Application Lifecycle Service systems in place. See
-<xref href="../../../../devplatform/helion/admin/server/1.0upgrade.dita#upgrade" type="section"  >
-<i>Upgrading Application Lifecycle Service</i>
-</xref> for full
-instructions.</p>
+<codeblock>kato data import --cluster helion-host.example.com</codeblock>
 </section>
 <section id="server-monitoring-with-new-relic"> <title>Server Monitoring with New Relic</title>
 <p>To use New Relic for server monitoring, you'll need a <xref href="http://newrelic.com/" scope="external" format="html" >New Relic

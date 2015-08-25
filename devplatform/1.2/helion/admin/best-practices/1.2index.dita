@@ -71,9 +71,6 @@
 <xref type="section" href="#topic16169/importing-the-server-data">Importing the server data</xref>
 </li>
 <li>
-        <xref type="section" href="#topic16169/upgrade">Upgrading</xref>
-      </li>
-<li>
 <xref type="section" href="#topic16169/bestpractices-snapshots">Snapshots</xref>
 </li>
 <li>
@@ -279,22 +276,7 @@ some shell operations performed in the export require <codeph>sudo</codeph> when
 <p>To import data from a running Application Lifecycle Service system instead, specify the hostname of the old Core node:</p>
 <codeblock>kato data import --cluster helion-host.example.com</codeblock>
 </section>
-<section id="upgrade"> <title>Upgrading</title>
-<p>The <i>kato node upgrade</i> command was added in this version to allow upgrading Application Lifecycle Service clusters in place. See
-<xref href="../server/1.2upgrade.dita">Upgrading Application Lifecycle Service</xref> for full
-instructions.</p>
-<p>The <i>kato data import</i> command automatically detects if you are upgrading from version 2.x to 3.x and does some special processing to account for differences in the two versions:</p>
-<ul>
-<li>Users will be imported, and each user will be added to their own Organization.</li>
-<li>Existing admin users will have corresponding (global) admin privileges in the new system.</li>
-<li>Groups (deprecated) will be converted into Organizations. </li>
-<li>All apps and users will be placed within a "default" Space within each organization.</li>
-<li>Services will be imported.</li>
-<li>Apps will be automatically redeployed. Any apps which fail to do so will be listed, and must be redeployed manually by their owners. Some apps are <xref type="section" href="#topic16169/incompatible">known to be incompatible</xref> with automatic redeployment.</li>
-<li>AOK (LDAP) configuration will be imported.</li>
-</ul>
-<p>Other than these notes, the migration will follow the same Export and Import steps outlined below.</p>
-</section>
+    <!--<section id="upgrade"><title>Upgrading</title><p>The <i>kato node upgrade</i> command was added in this version to allow upgrading Application Lifecycle Service clusters in place. See Upgrading Application Lifecycle Service for full instructions.</p><p>The <i>kato data import</i> command automatically detects if you are upgrading from version 2.x to 3.x and does some special processing to account for differences in the two versions:</p><ul><li>Users will be imported, and each user will be added to their own Organization.</li><li>Existing admin users will have corresponding (global) admin privileges in the new system.</li><li>Groups (deprecated) will be converted into Organizations. </li><li>All apps and users will be placed within a "default" Space within each organization.</li><li>Services will be imported.</li><li>Apps will be automatically redeployed. Any apps which fail to do so will be listed, and must be redeployed manually by their owners. Some apps are <xref type="section" href="#topic16169/incompatible">known to be incompatible</xref> with automatic redeployment.</li><li>AOK (LDAP) configuration will be imported.</li></ul><p>Other than these notes, the migration will follow the same Export and Import steps outlined below.</p></section>-->
 <section id="incompatible"> <title>Incompatible Apps</title>
 <p>Applications that use the following techniques will not import successfully from version 2.10 to newer systems and will need to be modified or manually redeployed.</p>
 <ul>
