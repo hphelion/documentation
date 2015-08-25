@@ -15,8 +15,7 @@
     <section>
       <note type="tip"> For convenience, copy the code blocks and paste them into a text editor. You
         can edit them there and then copy and paste back into the <varname>cf-mgmt</varname> tool as
-        necessary. </note>
-      <note type="tip">You may also want to refer to the full cf-mgmt tool <xref
+        necessary. You may also want to refer to the full <i>cf-mgmt </i>tool <xref
           href="1.2ALS_Client_Reference.dita">command reference documentation</xref>. </note>
     </section>
    

@@ -22,28 +22,44 @@
  <!--./devplatform/1.2devplatform.whatsnew.md-->
  <!--permalink: /helion/devplatform/whatsnew/--></p>
 <ul>
-<li>What's New in Helion <tm tmtype="reg">OpenStack</tm> x.x.x</li>
 <li>
 <xref href="1.2devplatform.release-notes.dita" >Release Notes and Known Issues</xref>
 </li>
 </ul>
-<p>These features and functionality are new in the HP Helion Development Platform 1.2</p>
-<section id="updates"> <title>Updates</title>
-<p>Helion Development Platform service updates can be downloaded from the Content Delivery Network (CODN),  installed from the command line, and configured using the Horizon UI. See the <xref href="installation/devplatform_commercial_install.dita" >Installation Guide</xref> for details.</p>
-<p>The <xref href="helion/CLI/1.2ALS_Client_Reference.dita" >ALS command line client</xref> (cfmgmt.exe) can be updated by running the <i>cf-mgmt update</i> command.</p>
-</section>
-<section id="new-features"> <title>New Features</title>
-<p>
-  <b>.NET and Windows support</b>
-</p>
-<p>Helion Development Platform version 1.2 includes a full end-to-end solution for creating and
-        deploying .NET applications. Windows developers can now leverage their knowledge and use the
-        tools they are accustomed to in order to leverage the power of the Helion Development
-        Platform. For more information on Windows and .NET support, see <xref
-          href="windows/windows_overview.dita#topic24073_2">Windows Overview.</xref></p>
-<p>
-<b>Updated Command Line Client</b> <!--A BR tag was used here in the original source.-->
-The <xref href="helion/CLI/1.2ALS_Client_Reference.dita" >ALS command line client</xref> (cfmgmt.exe) has been updated to provide options for creating and managing <tm tmtype="reg">Windows</tm> DEA clusters.</p>
+<p>These features and functionality are new in the HP Helion Development Platform 1.3</p>
+<section id="updates">
+  <dl>
+    <dlentry>
+      <dt>Docker Image Deployment</dt>
+      <dd><xref href="helion/user/deploy/languages/docker_apps.dita">Deploying Docker Images as
+              apps</xref> provides an alternative to the usual method of image deployment.
+            Administrators control user permissions and which registries and images are allowed.
+            Local ALS caching registry servers share Docker image layers to improve deployment
+            efficiency. </dd>
+    </dlentry><dlentry><dt>In-Place Node Upgrades</dt><dd>After installing Helion Development Platform 1.3, you may upgrade existing ALS clusters to use the new images. You do not have to re-create them. Images created in version 1.2 will continue to function, but will not support new features available in version 1.3</dd></dlentry>
+    <dlentry>
+      <dt>Updated Buildpacks</dt>
+      <dd> The <xref href="helion/user/deploy/1.2index.dita#topic1693/languages"
+        >buildpacks</xref> have all been updated, including Ruby (2.1.5) and Docker
+        (1.5).</dd>
+    </dlentry>
+    <dlentry>
+      <dt>Updated Source</dt>
+      <dd>This release includes a merge from Cloud Foundry v205.</dd>
+    </dlentry>
+    <dlentry>
+      <dt>New Feature Flags</dt>
+      <dd>More <xref
+        href="helion/admin/console/console_settings.dita#topic_od4_byj_rs/feature-flags"
+        >fine-grained Admin permission controls</xref> are now available.</dd>
+    </dlentry>
+    <dlentry>
+      <dt>New Kato command</dt>
+      <dd><codeph>op regenerate <xref
+        href="helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-op-regenerate"
+        >authorized_keys</xref></codeph></dd>
+    </dlentry>
+  </dl>
 </section>
 </body>
 </topic>

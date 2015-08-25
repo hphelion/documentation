@@ -258,17 +258,34 @@
     <topicref href="devplatform/1.2devplatform.sysadmin.dita" locktitle="yes"
       navtitle="Resources for IT Ops">
       <!--permalink: /helion/devplatform/connectdatabase/-->
-      <topicref href="devplatform/1.2devplatform.deploy-ALS.dita" locktitle="yes"
-        navtitle="Creating a Cluster using the Horizon UI"/>
-      <topicref href="devplatform/helion/CLI/cf_mgmt_createcluster.dita"
-        navtitle="Creating Clusters and Services using the Command Line" locktitle="yes">
-        <topicref href="devplatform/helion/CLI/cfmgmt_createcluster_microcloud.dita"
-          navtitle="Microcloud Creation Example" locktitle="yes"/>
-        <topicref href="devplatform/helion/CLI/cfmgmt_createcluster_twonode.dita"
-          navtitle="Cluster Creation Example" locktitle="yes"/>
-        <topicref href="devplatform/helion/CLI/cfmgmt_createcluster_large.dita"
-          navtitle="Cluster Expansion Example" locktitle="yes"/>
-      </topicref>
+      <topichead navtitle="Cluster Creation and Management">
+        <topicref href="devplatform/helion/CLI/cf_mgmt_createcluster.dita"
+          navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
+          <topicref href="devplatform/helion/CLI/cfmgmt_createcluster_microcloud.dita"
+            navtitle="Microcloud Creation Example" locktitle="yes"/>
+          <topicref href="devplatform/helion/CLI/cfmgmt_createcluster_twonode.dita"
+            navtitle="Cluster Creation Example" locktitle="yes"/>
+          <topicref href="devplatform/helion/CLI/cfmgmt_createcluster_large.dita"
+            navtitle="Cluster Expansion Example" locktitle="yes"/>
+        </topicref>
+        <topicref href="devplatform/1.2devplatform.deploy-ALS.dita" locktitle="yes"
+          navtitle="Create a Cluster using the Horizon UI"/>
+        <topichead navtitle="ALS Management Console">
+          <topicref href="devplatform/helion/admin/console/console_intro.dita"
+            navtitle="Introduction and First Use" locktitle="yes"/>
+          <topicref href="devplatform/helion/admin/console/1.2index.dita" locktitle="yes"
+            navtitle="Management Console (Admin View)"/>
+          <topicref href="devplatform/helion/user/console/1.2index.dita"
+            navtitle="Management Console (User View)" locktitle="yes"/>
+          <topicref href="devplatform/helion/admin/console/console_settings.dita"
+            navtitle="Management Console Settings" locktitle="yes"/>
+          <topicref href="devplatform/helion/admin/console/1.2customize.dita" locktitle="yes"
+            navtitle="Management Console Customization"/>
+          <topicref href="devplatform/helion/admin/console/1.2app-store.dita" locktitle="yes"
+            navtitle="Sample Applications"/>
+        </topichead>
+      </topichead>
+      <topichead navtitle="Continuous Integration and Deployment"/>
       <topicref href="devplatform/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
       <topicref href="devplatform/1.2devplatform.database-ALS.dita" locktitle="yes"
@@ -307,22 +324,8 @@
     <topicref href="devplatform/helion/1.2index.dita" locktitle="yes"
       navtitle="Application Lifecycle Service Documentation">
       <!--permalink: /helion/devplatform/als/admin/-->
-      <topicref href="devplatform/helion/CLI/1.2constructor_vm.dita"
-        navtitle="ALS Constructor VM" locktitle="yes"/>
-      <topichead navtitle="ALS Management Console">
-        <topicref href="devplatform/helion/admin/console/console_intro.dita"
-          navtitle="Introduction and First Use" locktitle="yes"/>
-        <topicref href="devplatform/helion/admin/console/1.2index.dita" locktitle="yes"
-          navtitle="Management Console (Admin View)"/>
-        <topicref href="devplatform/helion/user/console/1.2index.dita"
-          navtitle="Management Console (User View)" locktitle="yes"/>
-        <topicref href="devplatform/helion/admin/console/console_settings.dita"
-          navtitle="Management Console Settings" locktitle="yes"/>
-        <topicref href="devplatform/helion/admin/console/1.2customize.dita" locktitle="yes"
-          navtitle="Management Console Customization"/>
-        <topicref href="devplatform/helion/admin/console/1.2app-store.dita" locktitle="yes"
-          navtitle="Sample Applications"/>
-      </topichead>
+      <topicref href="devplatform/helion/CLI/1.2constructor_vm.dita" navtitle="ALS Constructor VM"
+        locktitle="yes"/>
       <topichead navtitle="ALS Command Line Clients">
         <topicref href="devplatform/helion/CLI/1.2ALS_Client_Downloads.dita"
           navtitle="Command Line Client Downloads" locktitle="yes"/>
@@ -365,8 +368,7 @@
             locktitle="yes" navtitle="Security Groups "/>
           <topicref href="devplatform/helion/user/reference/1.2client-ref-brokers.dita"
             locktitle="yes" navtitle="Service Brokers "/>
-          <topicref
-            href="devplatform/helion/user/reference/1.2client-ref-service-management.dita"
+          <topicref href="devplatform/helion/user/reference/1.2client-ref-service-management.dita"
             locktitle="yes" navtitle="Service Management "/>
           <topicref href="devplatform/helion/user/reference/1.2client-ref-serviceplans.dita"
             locktitle="yes" navtitle="Service Plans "/>
@@ -441,14 +443,14 @@
         <topichead navtitle="Reference">
           <topicref href="devplatform/helion/admin/reference/1.2groups.dita" locktitle="yes"
             navtitle="Managing Groups, Users and Limits (DEPRECATED)"/>
-          <topicref href="devplatform/helion/admin/reference/1.2known-issues.dita"
-            locktitle="yes" navtitle="Known Issues"/>
-          <topicref href="devplatform/helion/admin/reference/1.2architecture.dita"
-            locktitle="yes" navtitle="Architectural Design"/>
-          <topicref href="devplatform/helion/admin/reference/1.2add-service.dita"
-            locktitle="yes" navtitle="Adding System Services"/>
-          <topicref href="devplatform/helion/admin/reference/1.2troubleshoot.dita"
-            locktitle="yes" navtitle="Troubleshooting"/>
+          <topicref href="devplatform/helion/admin/reference/1.2known-issues.dita" locktitle="yes"
+            navtitle="Known Issues"/>
+          <topicref href="devplatform/helion/admin/reference/1.2architecture.dita" locktitle="yes"
+            navtitle="Architectural Design"/>
+          <topicref href="devplatform/helion/admin/reference/1.2add-service.dita" locktitle="yes"
+            navtitle="Adding System Services"/>
+          <topicref href="devplatform/helion/admin/reference/1.2troubleshoot.dita" locktitle="yes"
+            navtitle="Troubleshooting"/>
         </topichead>
       </topicref>
       <!--permalink: /helion/devplatform/als/user/-->
