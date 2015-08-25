@@ -51,17 +51,23 @@
       <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium -e database_type=influxdb</codeblock>
     </section>
     <section id="working"><title>Working with Monasca</title>
-      <p>Access to Monasca is available through the Web UI (<xref
+      <p>Access to Monasca is available through the Web UI (Operations Console), <xref
           href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
-          format="html" scope="external">Operations Console</xref>), command-line interface (CLI), or the low-level <xref
+          format="html" scope="external">command-line interface (CLI)</xref>, or the low-level <xref
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">REST API</xref>.</p>
       <b>Operations Console</b>
       <p>The Operations Console (Ops Console) is designed for Helion OpenStack Administrators to
         have a web-based UI that they can use to operate and manage the Helion OpenStack
         environment.</p>
+      <p>It can be accessed on port 9095 on the control plane IP.</p>
       <p>For details on the Operations Console, see <xref href="opsconsole/overview.dita">Operations
           Console Overview</xref></p>
+      <b>Command-Line Interface</b>
+      <p>The python-monascaclient is the Monasca CLI and can be installed using python-pip.</p>
+      <p>For details on the CLI, including installation instructions, see <xref
+          href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
+          format="html" scope="external">Python-Monasca Client</xref></p>
       <b>Monasca API</b>
       <p>Limitations here</p>
     </section>
