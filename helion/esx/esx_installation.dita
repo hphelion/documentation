@@ -6,7 +6,8 @@
     <section>
       <title>Known Restrictions</title>
       <ul>
-        <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
+        <li>Ensure the <xref href="../hardware.dita#topic_omx_srg_ws">minimum hardware
+            requirements</xref> are met.</li>
         <li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other
           disks will be wiped.</li>
         <li>The deployer node must use the HP Linux for HP Helion OpenStack ISO, which can be
@@ -15,11 +16,8 @@
             format="html" scope="external">Helion Downloads</xref> page.</li>
         <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All
           machines can net boot from PXE and use the deployer as a DHCP server.</li>
-        <li>All machines of a single type should be the same, that is, all
-          computes<?oxy_delete author="sharmabi" timestamp="20150819T155733+0530" content="all VSAs"?>,
-          and so on.</li>
-        <li>The deployer node must be a dedicated node in
-          Beta<?oxy_delete author="sharmabi" timestamp="20150819T155748+0530" content="0"?><?oxy_insert_start author="sharmabi" timestamp="20150819T155748+0530"?>1<?oxy_insert_end?>.</li>
+        <li>All machines of a single type should be the same, that is, all computes, and so on.</li>
+        <li>The deployer node must be a dedicated node in Beta1.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO
           subsystem of each baremetal system to enable host reboots as part of the install process.
@@ -53,10 +51,10 @@
         <li>Select the primary network interface, if prompted:<ul>
             <li>Assign IP address, netmask</li>
           </ul></li>
-        <li>Create new account:<ul>
+        <li>Create a new account:<ul>
             <li>Enter a username.</li>
             <li>Enter a password.</li>
-            <li>Enter time zone if prompted to do so.</li>
+            <li>Enter time zone, if prompted to do so.</li>
             <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
           </ul></li>
       </ol>
@@ -65,14 +63,14 @@
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
       <ol>
-        <li>On the deployer node, enter the following command to create the SSH keypair if one is
-          not already present:<codeblock>ssh-keygen -t rsa</codeblock>
-        </li>
-        <li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file:
+        <li>On the deployer node, enter the following command to create the SSH keypair. Please do
+          not create the SSH Keypair if it is already
+          present.<codeblock>ssh-keygen -t rsa</codeblock></li>
+        <li>Add <codeph>~/.ssh/id_rsa.pub</codeph> to <codeph>~/.ssh/authorized_keys</codeph> file:
           <codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
         <li>Confirm that ssh localhost works without a password and that you can get from external
           sources, both with and without sudo.</li>
-        <li>Mount the install media at /media/cdrom, for example,
+        <li>Mount the install media at <codeph>/media/cdrom</codeph>, for example,
           <codeblock>sudo mount /media/cdrom</codeblock></li>
         <li>Unpack the following tarball:
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz</codeblock></li>
@@ -81,8 +79,7 @@
       </ol>
       <p>At the end of this section you should have a local directory structure, as described
         below:</p>
-      <codeblock>
-helion/                        Top level directory
+      <codeblock>helion/                        Top level directory
 helion/examples/               Directory contains the config input files of the example clouds
 helion/my_cloud/definition/    Directory contains the config input files
 helion/my_cloud/config/        Directory contains .j2 files which are symlinks to the /hlm/ansible directory
@@ -94,29 +91,27 @@ helion/hlm/                    Directory contains files used by the installer
       <ol>
         <li>Set up your configuration files, as follows: <ol>
             <li>See the sample set of configuration files in the
-              ~/helion/examples/one-region-poc-with-<?oxy_delete author="sharmabi" timestamp="20150819T115047+0530" content="vsa"?><?oxy_insert_start author="sharmabi" timestamp="20150819T115047+0530"?>esx<?oxy_insert_end?>
-              directory. The accompanying README.md file explains the contents of each of the
-              configuration files.</li>
-            <li>Copy the example configuration files
-              <?oxy_delete author="sharmabi" timestamp="20150819T115054+0530" content="into"?><?oxy_insert_start author="sharmabi" timestamp="20150819T115055+0530"?>in<?oxy_insert_end?>
-              the required setup directory and edit them as required:
-              <codeblock>cp -r ~/helion/examples/one-region-poc-with-<?oxy_delete author="sharmabi" timestamp="20150819T115030+0530" content="vsa"?><?oxy_insert_start author="sharmabi" timestamp="20150819T115030+0530"?>esx<?oxy_insert_end?>/* ~/helion/my_cloud/definition/</codeblock>
+                <codeph>~/helion/examples/one-region-poc-with-esx</codeph> directory. The
+              accompanying README.md file explains the contents of each of the configuration
+              files.</li>
+            <li>Copy the example configuration files in the required setup directory and edit them
+              as required:
+              <codeblock>cp -r ~/helion/examples/one-region-poc-with-esx/* ~/helion/my_cloud/definition/</codeblock>
               The configuration files for editing can be found at the following location: <codeblock>~/helion/my_cloud/definition/data</codeblock><ul>
-                <li>The baremetalConfig.yml file should specify the server information for your
-                  environment.</li>
-                <li>The servers.yml file contains the IP address information for the
-                  hardware<?oxy_insert_start author="sharmabi" timestamp="20150819T155831+0530"?>
-                  for controller nodes<?oxy_insert_end?>.</li>
-                <li>The networks.yml file contains networking information.</li>
-                <li>The control_plane.yml file contains information about the services that will be
-                  installed.</li>
+                <li>The <codeph>baremetalConfig.yml</codeph> file should specify the server
+                  information for your environment.</li>
+                <li>The <codeph>servers.yml</codeph> file contains the IP address information for
+                  the hardware for controller nodes.</li>
+                <li>The <codeph>networks.yml</codeph> file contains networking information.</li>
+                <li>The <codeph>control_plane.yml</codeph> file contains information about the
+                  services that will be installed.</li>
                 <li>In the <codeph>net_interfaces.yml</codeph> file, replace all instances of
                   “bond-mode: 1” to “bond-mode: active-backup”.</li>
               </ul></li>
           </ol></li>
         <li> To continue installation copy your cloud layout to
             <codeph>/home/stack/helion/my_cloud/definition</codeph></li>
-        <li>Add the cloud deployment defination to the git
+        <li>Add the cloud deployment definition to the git
           :<codeblock>cd /home/stack/helion/hlm/ansible;
 git add -A;
 git commit -m 'My config';</codeblock></li>
@@ -164,12 +159,11 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
         <li>Run the following command: <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-runV2.yml</codeblock><ol>
             <li>Verify the network is working correctly by pinging each IP (excluding VSA-BLK and
               VIPs) from the deployer node. You can find the IP addresses in
-                <b>generated_files/etc/hosts</b>. To do so, run:
+                <codeph>generated_files/etc/hosts</codeph>. To do so, run:
               <codeblock>stack@hlm:~/helion/hlm/ansible$ less generated_files/etc/hosts</codeblock></li>
-          </ol>
-        </li>
-        <li> Edit roles/HZN-WEB/tasks/install.yml and add the following after the 'install-package'
-          section:
+          </ol></li>
+        <li> Edit <codeph>roles/HZN-WEB/tasks/install.yml</codeph> and add the following after the
+          'install-package' section:
           <codeblock>- name: HZN-WEB | install | TEMP fix horizon permissions
   sudo: yes
   command: "chown -R stack:stack {{ HORIZON_VENV_DIR }}/lib/python2.7/site-packages"</codeblock>
@@ -185,8 +179,7 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
   sudo: yes
   command: "chown -R stack:stack {{ HORIZON_VENV_DIR }}/lib/python2.7/site-packages"</codeblock></li>
         <li>Run the following command:
-          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeblock>
-        </li>
+          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeblock></li>
       </ol>
     </section>
     <section id="VSA">
