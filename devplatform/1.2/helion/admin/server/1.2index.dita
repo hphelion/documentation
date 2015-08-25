@@ -128,21 +128,6 @@ status checks. For a complete list of options, see the <xref href="../../../../.
                 type="section">Server Backup, Import, and Export</xref>
             </li>
           </ul></li>
-<li>
-          <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita">Upgrading
-            Application Lifecycle Service</xref>
-          <ul>
-            <li>
-              <xref
-                href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#topic13180/before-an-upgrade"
-                type="section">Before an upgrade</xref>
-            </li>
-            <li>
-              <xref
-                href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#topic13180/executing-the-upgrade"
-                type="section">Executing the upgrade</xref>
-            </li>
-          </ul></li>
 </ul>
 </section>
 <section id="detailed-configuration"> <title>Detailed Configuration</title>

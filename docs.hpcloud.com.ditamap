@@ -840,12 +840,9 @@
         <!--permalink: /helion/devplatform/1.2/als/admin/best-practices/logging-examples/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/-->
         <topicref href="devplatform/1.2/helion/admin/cluster/1.2index.dita" locktitle="yes"
-          navtitle="Cluster Setup">
-          <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
-            navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
-          <topicref href="devplatform/1.2/helion/admin/server/1.2upgrade.dita" locktitle="yes"
-            navtitle="In-Place Upgrades of ALS Nodes and Clusters"/>
-        </topicref>
+          navtitle="Cluster Setup"/>
+        <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
+          navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/cloud-init/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/external-db/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/harbor/-->
@@ -1247,8 +1244,6 @@
           <topicref href="devplatform/helion/admin/server/1.1router.dita" locktitle="yes"
             navtitle="ALS Router "/>
           <!--permalink: /helion/devplatform/1.1/als/admin/server/upgrade/-->
-          <topicref href="devplatform/helion/admin/server/1.1upgrade.dita" locktitle="yes"
-            navtitle="In-Place Upgrades of ALS Nodes and Clusters "/>
         </topicref>
         <!--permalink: /helion/devplatform/1.1/als/user/-->
         <topicref href="devplatform/helion/user/1.1index.dita" locktitle="yes"
@@ -1542,8 +1537,6 @@
             <topicref href="devplatform/helion/admin/server/1.0router.dita" locktitle="yes"
               navtitle="ALS Router "/>
             <!--permalink: /als/v1/admin/server/upgrade/-->
-            <topicref href="devplatform/helion/admin/server/1.0upgrade.dita" locktitle="yes"
-              navtitle="Upgrading Application Lifecycle Service "/>
           </topicref>
           <topicref href="devplatform/helion/admin/console/1.0app-store.dita" locktitle="yes"
             navtitle="Sample Applications "/>
