@@ -28,7 +28,7 @@
     <topichead navtitle="Installing on ESX">
       <topicref href="helion/esx/esx_installation.dita"/>
     </topichead>
-    <topichead navtitle="Installing on VSA">
+    <topichead navtitle="Installing VSA">
       <topicref href="helion/vsa.dita"/>
     </topichead>
     <!-- keystone identity -->
