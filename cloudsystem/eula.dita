@@ -3,6 +3,352 @@
 <topic id="topic_zd5_k4l_xs">
   <title>HP CloudSystem: Software License Terms</title>
   <body>
-    <p><!-- placeholder for CS9 eulas--></p>
+    <section><title>Part 1–HP End User License Agreement</title>
+         <ol>
+        <li><b>Applicability</b>. This end user license agreement (the "Agreement") governs the use
+          of accompanying HP Helion CloudSystem Software ("Software"), unless it is subject to a
+          separate agreement between you and Hewlett-Packard Company and its affiliates and
+          subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this
+          Agreement.</li>
+        <li><b>Terms</b>. This Agreement includes supporting material accompanying the Software or
+          referenced by HP, which may be software license information, additional license
+          authorizations, software specifications, published warranties, supplier terms, open source
+          software licenses and similar content ("Supporting Material"). Additional license
+          authorizations are below and at: <xref
+            href="http://docs.hpcloud.com/#cloudsystem/licensing.html" format="html"
+            scope="external">docs.hpcloud.com/#cloudsystem/licensing.html</xref>.</li>
+        <li><b>Authorization</b>. If you agree to this Agreement on behalf of another person or
+          entity, you warrant you have authority to do so.</li>
+        <li><b>Consumer Rights</b>. If you obtained Software as a consumer, nothing in this
+          Agreement affects your statutory rights.</li>
+        <li><b>Electronic Delivery</b>. HP may elect to deliver Software and related software
+          product or license information by electronic transmission or download.</li>
+        <li><b>License Grant</b>. If you abide by this Agreement, HP grants you a non-exclusive,
+          non-transferable license to use one copy of the version or release of the accompanying
+          Software for your Internal Use (as defined below) only, and is subject to any specific
+          software licensing information that is in the Software product or its Supporting Material.
+          Your use is subject to the following restrictions, unless specifically allowed in
+          Supporting Material: 
+        <ul id="ul_fcj_gv3_dt">
+          <li>You may not use Software to provide products or services to third parties.</li>
+          <li>You may not make copies and distribute, resell, sublicense or provide access to the
+            Software to third parties.</li>
+          <li>You may not download and use patches, enhancements, bug fixes, or similar updates
+            unless you have a license to the underlying Software. However, such license doesn't
+            automatically give you a right to receive such updates and HP reserves the right to make
+            such updates only available to customers with support contracts.</li>
+          <li>You may not copy Software or make it available on a public or external distributed
+            network.</li>
+          <li>You may not allow access on an intranet unless it is restricted to authorized
+            users.</li>
+          <li>You may make one copy of the software for archival purposes or when it is an essential
+            step in authorized use.</li>
+          <li>You may not modify, reverse engineer, disassemble, decrypt, decompile, or make
+            derivative works of Software except as permitted by law. </li>
+        </ul></li><li>
+          <b>Remote Monitoring. </b>Some software may require keys or other technical protection
+          measures and HP may monitor your compliance with the Agreement, remotely or otherwise. If
+          HP makes a license management program for recording and reporting license usage
+          information, you will use such program no later than 180 days from the date it's made
+          available.</li>
+        <li><b>Ownership. </b>No transfer of ownership of any intellectual property will occur under
+          this Agreement.</li>
+        <li><b>Copyright Notices. </b>You must reproduce copyright notices on software and
+          documentation for authorized copies.</li>
+        <li><b>90-day Limited Warranty for HP Software. </b>HP-branded software is free of malware
+          at the time of delivery; if you notify HP within 90 days of delivery of non-conformance to
+          this warranty, HP will replace your copy. This Agreement states all remedies for warranty
+          claims. HP does not warrant that the operation of software will be uninterrupted or error
+          free, or that software will operate in hardware and software combinations other than as
+          authorized by HP in Supporting Material. To the extent permitted by law, HP disclaims all
+          other warranties.</li>
+        <li><b>Intellectual Property Rights Infringement. </b>Subject to Section 14(e) of this Part
+          1,HP will defend and/or settle any claims against you that allege that HP-branded software
+          as supplied under this Agreement infringes the intellectual property rights of a third
+          party. HP will rely on your prompt notification of the claim and cooperation with our
+          defense. HP may modify the software so as to be non-infringing and materially equivalent,
+          or we may procure a license. If these options are not available, we will refund to you the
+          amount paid for the affected product in the first year or the depreciated value
+          thereafter. HP is not responsible for claims resulting from any unauthorized use of the
+          software.</li>
+        <li><b>Limitation of Liability. </b>HP's liability to you under this Agreement is limited to
+          the amount actually paid by you to HP for the relevant software, except for amounts in
+          Section 11 ("Intellectual Property Rights Infringement"). Neither you nor HP will be
+          liable for lost revenues or profits, downtime costs, loss or damage to data or indirect,
+          special or consequential costs or damages. This provision does not limit either party's
+          liability for: unauthorized use of intellectual property, death or bodily injury caused by
+          their negligence; acts of fraud; willful repudiation of the Agreement; or any liability
+          that may not be excluded or limited by applicable law.</li>
+        <li><b>Termination. </b>This Agreement is effective until terminated or in the case of a
+          limited-term license, upon expiration; however, your rights under this Agreement terminate
+          if you fail to comply with it. Immediately upon termination or expiration, you will
+          destroy the software and documentation and any copies, or return them to HP. You may keep
+          one copy of software and documentation for archival purposes. We may ask you to certify in
+          writing you have complied with this section. Warranty disclaimers, the limitation of
+          liability, this section on termination, and Section 14 ("General") will survive
+          termination.</li>
+        <li><b>General.</b><ol>
+            <li><b>Assignment</b>. You may not assign this Agreement without prior written consent
+              of HP, payment of transfer fees and compliance with HP's software license transfer
+              policies. Authorized assignments will terminate your license to the software and you
+              must deliver software and documentation and copies thereof to the assignee. The
+              assignee will agree in writing to this Agreement. You may only transfer firmware if
+              you transfer associated hardware.</li>
+            <li><b>U.S. Government.</b> If the software is licensed to you for use in the
+              performance of a U.S. Government prime contract or subcontract, you agree that,
+              consistent with FAR 12.211 and 12.212, commercial computer software, computer software
+              documentation and technical data for commercial items are licensed under HP's standard
+              commercial license.</li>
+            <li><b>Global Trade Compliance</b>. You agree to comply with the trade-related laws and
+              regulations of the U.S. and other national governments. If you export, import or
+              otherwise transfer products provided under this Agreement, you will be responsible for
+              obtaining any required export or import authorizations. You confirm that you are not
+              located in a country that is subject to trade control sanctions (currently Cuba, Iran,
+              N. Korea, N. Sudan, and Syria) and further agree that you will not retransfer the
+              products to any such country. HP may suspend its performance under this Agreement to
+              the extent required by laws applicable to either party.</li>
+            <li><b>Audit.</b> HP may audit you for compliance with the software license terms. Upon
+              reasonable notice, HP may conduct an audit during normal business hours (with the
+              auditor's costs being at HP's expense). If an audit reveals underpayments then you
+              will pay to HP such underpayments. If underpayments discovered exceed five (5)
+              percent, you will reimburse HP for the auditor costs.</li>
+            <li><b>Third Party and Open Source Components.</b> To the extent any component of the
+              software is subject to any third party license terms, including open source license
+              terms, then those third party license terms or open source license terms shall govern
+              with respect to the subject component; otherwise, the terms of this Agreement shall
+              govern.</li>
+            <li><b>Notices.</b> Written notices under this Agreement may be provided to HP via the
+              method provided in the Supporting Material or if none, via "contact HP" site on
+              www.HP.com.</li>
+            <li><b>Governing Law.</b> This Agreement will be governed by the laws of the state of
+              California, U.S.A., excluding rules as to choice and conflict of law. You and HP agree
+              that the United Nations Convention on Contracts for the International Sale of Goods
+              will not apply.</li>
+            <li><b>Force Majeure</b>. Neither party will be liable for performance delays nor for
+              non-performance due to causes beyond its reasonable control, except for payment
+              obligations.</li>
+            <li><b>Entire Agreement</b>. This Agreement represents our entire understanding with
+              respect to its subject matter and supersedes any previous communication or agreements
+              that may exist. Modifications to the Agreement will be made only through a written
+              amendment signed by both parties. If HP doesn't exercise its rights under this
+              Agreement, such delay is not a waiver of its rights.</li>
+            <li><b>Australian Consumers</b>. If you acquired the software as a consumer within the
+              meaning of the 'Australian Consumer Law' under the Australian <i>Competition and
+                Consumer Act </i>2010 (Cth) then despite any other provision of this Agreement, the
+              terms at this URL apply: <xref href="http://www.hp.com/go/SWLicensing" format="html"
+                scope="external">http://www.hp.com/go/SWLicensing</xref>.</li>
+          </ol></li></ol>
+    </section><section>
+      <title>Part 2–Additional License Authorization for HP Helion CloudSystem Software</title>
+      <p>This Part 2 includes Additional License Authorizations (ALA) for the Software, including HP
+        Helion CloudSystem Foundation Software and HP Helion CloudSystem Enterprise Software. You
+        may Use (as defined below) the Software in accordance with the terms of this ALA in addition
+        to the terms of your agreement with HP, or in the absence of such agreement, the HP End User
+        License Agreement (EULA) in Part 1 above as well as the Ancillary and Open Source Software
+        license terms listed in Part 3 (collectively, the “Agreement”). You may also be referred to
+        as “Customer” below.</p>
+      <p><b>Definitions</b></p>
+      <p>Capitalized terms not otherwise defined in this Additional License Authorizations document
+        are defined in the governing Agreement.</p>
+      <table id="table_gqj_gv3_dt">
+        <tgroup cols="2">
+          <colspec colnum="1" colname="col1" colwidth="288.75pt"/>
+          <colspec colnum="2" colname="col2" colwidth="561.75pt"/>
+          <tbody>
+            <row>
+              <entry><b>Term</b></entry>
+              <entry><b>Definition</b></entry>
+            </row>
+            <row>
+              <entry><b>HP Helion CloudSystem Software</b></entry>
+              <entry>means any or all software in the family of Software products including, without
+                limitation, HP Helion CloudSystem Foundation Software and HP Helion CloudSystem
+                Enterprise Software.</entry>
+            </row>
+            <row>
+              <entry><b>HP Helion CloudSystem Foundation Software </b></entry>
+              <entry>means the Software product used for delivery and management of simple
+                infrastructure cloud services. </entry>
+            </row>
+            <row>
+              <entry><b>HP Helion CloudSystem Enterprise Software </b></entry>
+              <entry>means the Software product used for design, delivery, and management of simple
+                and complex infrastructure services. </entry>
+            </row>
+            <row>
+              <entry><b>HP Helion Development Platform Software</b></entry>
+              <entry>means the HP Helion Development Platform software products that provide a
+                development and application runtime environment. </entry>
+            </row>
+            <row>
+              <entry><b>Operating System Instance, OS Instance, or OSI</b></entry>
+              <entry>means each implementation of the bootable program that can be installed onto a
+                physical system or a partition, such as Virtual Machines, virtual environments,
+                virtual private servers, containers, guests and zones within the physical system. A
+                physical system can contain multiple Operating System Instances. </entry>
+            </row>
+            <row>
+              <entry><b>Physical Server</b></entry>
+              <entry>means a single, physical hardware server or other computer but is not a Virtual
+                Machine.</entry>
+            </row>
+            <row>
+              <entry><b>Public Cloud</b></entry>
+              <entry>means a cloud computing environment where resources run on infrastructure not
+                owned by the customer or physically located in their datacenter. </entry>
+            </row>
+            <row>
+              <entry><b>Vertica Software</b></entry>
+              <entry>means a software component of the Software that provides database capabilities
+                for monitoring the Software environment</entry>
+            </row>
+            <row>
+              <entry><b>Virtual Machine</b></entry>
+              <entry>means an abstraction of a single computing system made possible by use of
+                Virtualization Software that is running on a host Physical Server, and on which one
+                copy of an operating system software and software application programs may run.
+              </entry>
+            </row>
+            <row>
+              <entry><b>Virtualization Software</b></entry>
+              <entry>means software that (i) allows more than one copy of operating system software
+                to run simultaneously on the same Physical Computer, (ii) ensures that all copies of
+                the operating system software remain logically independent and isolated from each
+                other, even though they are actually sharing common Physical Computer hardware
+                resources such as processors and memory, and (iii) may enable more than one Virtual
+                Machine to run simultaneously up to a maximum number of Virtual Machines. </entry>
+            </row>
+            <row>
+              <entry><b>Use</b></entry>
+              <entry>means to install, store, load, execute and display the Software in accordance
+                with the particular license(s) purchased by the customer.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>
+        <b>Additional License Terms</b></p>
+      <ul id="ul_uwj_gv3_dt">
+        <li><b>HP Helion CloudSystem Enterprise Software: </b></li>
+      </ul>
+      <p>HP grants to customer a non-exclusive, limited, non-sublicenseable, non-transferable,
+        revocable license to Use of the HP Helion CloudSystem Enterprise Software to manage cloud
+        services under either a per Physical Server or per OS Instance basis as specified in the
+        purchase agreement. Generally, customers may not mix per-Physical Server and per-OS Instance
+        models to deploy and manage a single cloud. However, customers may license the Software
+        under a Per-Physical Server license to manage on premise servers and also license the
+        Software under a Per OS Instance license to manage instances in a Public Cloud. </p>
+      <p><b>Per Server License: </b>If purchased under a per Physical Server license, then customer
+        may Use the HP Helion CloudSystem Enterprise Software to manage cloud services that run on
+        no more than the specified number of licensed Physical Servers. The right to Use this
+        Software may not be transferred from any licensed Physical Server to a new or replacement
+        Physical Server. In addition, customer may use this Software to manage OS Instances on
+        public clouds for non-production use environments so long as the number of public
+        cloud-based OS Instances managed does not exceed at any one time the number of Physical
+        Server licenses that Customer purchased. </p>
+      <p><b>Per OS Instance License: </b>If purchased under a per OS Instance license, then customer
+        may Use the HP Helion CloudSystem Enterprise Software to manage cloud services so long as
+        the total number of OS Instances used by the cloud services does not exceed at any one time
+        the number of OS Instances that the customer has purchased. </p>
+      <p>HP Helion Development Platform software, included as part of the Software, may only run on
+        a physical server licensed for the Software. Vertica Software included as part of the
+        Software may only be used to provide database features to monitor and report on performance
+        and health of the Software. The maximum permitted size of the Vertica Software database is
+        12TB. </p>
+      <p>All components of the HP Helion CloudSystem Enterprise Software are delivered collectively
+        as a single, non-decomposable product that must be supported, upgraded, and updated as a
+        whole.</p>
+      <ul id="ul_fdk_gv3_dt">
+        <li><b>HP Helion CloudSystem Foundation Software: </b></li>
+      </ul>
+      <p>HP grants to customer a non-exclusive, limited, non-sublicenseable, non-transferable,
+        revocable license to Use the HP Helion CloudSystem Foundation Software to manage cloud
+        services under either a per Physical Server or per OS Instance basis as specified in the
+        purchase agreement Generally, customers may not mix per-Physical Server and per-OS Instance
+        models to deploy and manage a single cloud. However, customers may license the Software
+        under a Per-Physical Server license to manage on premise servers and also license the
+        Software under a Per OS Instance license to manage instances in a Public Cloud.</p>
+      <p><b>Per Server License: </b>If purchased under a per Physical Server license, then customer
+        may Use the HP Helion CloudSystem Foundation Software to manage cloud services that run on
+        no more than the specified number of licensed Physical Servers. The right to Use this
+        Software may not be transferred to a new or replacement server. </p>
+      <p><b>Per OS Instance License: </b>If purchased under a per OS Instance license, then customer
+        may Use the HP Helion CloudSystem Foundation Software to manage cloud services so long as
+        the total number of OS Instances used by the cloud services does not exceed at any one time
+        the number of OS Instances that the customer has purchased. </p>
+      <p>HP Helion Development Platform software, included as part of the Software, may only run on
+        a physical server licensed for CloudSystem Software. </p>
+      <p>Vertica Software included as part of the Software may only be used to provide database
+        features to monitor and report on performance and health of the Software. The maximum
+        permitted size of the Vertica Software database is 12TB. </p>
+      <p>All components of the HP Helion CloudSystem Foundation Software are delivered collectively
+        as a single, non-decomposable product that must be supported, upgraded, and updated as a
+        whole.</p>
+      <ul id="ul_pjk_gv3_dt">
+        <li><b>Other Terms:</b><ol id="ol_eqk_gv3_dt">
+            <li><b>Delivery</b>: Customer agrees to accept the Software upon delivery.</li>
+            <li><b>Commercial Service Providers: </b>Customers must accept the terms contained in a
+              supplemental agreement in order to provide commercial services using the Software,
+              found at <xref href="http://www.hp.com/go/CloudSystem_Service_Provider_Agreement"
+                format="html" scope="external"
+                >www.hp.com/go/CloudSystem_Service_Provider_Agreement</xref>.</li>
+            <li><b>Compliance and Audit: </b>HP shall have the right to audit the customer’s use of
+              the Software at HP’s expense and in accordance with any agreement between the parties
+              related to confidentiality.</li>
+            <li><b>Confidentiality</b>: The Software contains confidential and proprietary
+              information of HP (“Confidential Information”). Customer will hold in confidence and
+              not use or disclose any Confidential Information, except as expressly permitted in the
+              Agreement. To the extent this restriction is not prohibited under applicable law, and
+              except as specifically authorized under in writing by HP, customer shall not disclose
+              to any third party the results of (i) any performance benchmarks you run on the
+              Software, or any portion thereof, or (ii) specific detailed comparisons you make
+              between the Software, or any portion thereof, and any product owned by you or a
+              third-party product.</li>
+            <li><b>Copyright Notices</b>: Customer must reproduce all copyright notices that appear
+              in or on the Software (including documentation) on all permitted copies or adaptions.
+              Copies of documentation are limited to internal use.</li>
+            <li><b>Right to Use Prior Versions: </b>Under the terms of this license agreement you
+              may create, store, install, run, use, or access either the current or an earlier
+              version of the Software under these license terms. Using a prior version of the
+              Software under these downgrade rights does not extend the support lifecycle for that
+              earlier version of the Software.</li>
+            <li><b>Third Party Licenses</b>: You are responsible for complying with all terms of use
+              for any third party software, content, service or website you load, create or access
+              when using the Software. </li>
+            <li><b>Updates and Supplements:</b> We may update or supplement the Software. If so, you
+              may use that update or supplement with the Software, subject to any additional terms
+              that accompany the update or supplement.</li>
+          </ol></li>
+      </ul>
+      <p>
+        <b>Security Bulletin and Alert Policy for Non-HP Owned Software Components </b></p>
+      <p>HP addresses security bulletins for the software components listed in this ALA with the
+        same level of support afforded HP products. HP is committed to reducing security defects and
+        helping you mitigate the risks associated with security defects when they do occur. </p>
+      <p>HP has a well-defined process when a security defect is found that culminates with the
+        publication of a security bulletin. The security bulletin provides you with a high level
+        description of the problem and explains how to mitigate the security defect. </p>
+      <ul id="ul_hhl_gv3_dt">
+        <li><b>Procedure for Subscribing to Security Bulletins:</b><ol id="ol_xnl_gv3_dt">
+            <li>Open a browser to the HP home page: <xref href="http://www.hp.com/" format="html"
+                scope="external">http://www.HP.com/</xref>
+            </li>
+            <li>Click the Support &amp; Drivers tab. </li>
+            <li>Click Sign up: driver, support, &amp; security alerts, which appears under
+              Additional Resources in the right navigation pane. </li>
+            <li>Select Business &amp; IT Professionals to open the Subscriber's Choice web page. </li>
+            <li>Do one of the following:</li>
+          </ol></li>
+      </ul>
+      <p>- Sign in if you are a registered customer.</p>
+      <p>- Enter your email address to sign-up now. Select Driver and Support alerts and click
+        Continue. </p></section><section><title> Part 3–Ancillary and Open Source Software</title>
+     
+      <p>Additional license authorizations related to ancillary, third party and open source
+        software components are available at <xref
+          href="http://docs.hpcloud.com/#cloudsystem/thirdparty.licensing.html" format="html"
+          scope="external">http://docs.hpcloud.com/#cloudsystem/thirdparty.licensing.html</xref>.
+      </p>
+    </section>
   </body>
 </topic>
