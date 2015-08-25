@@ -25,7 +25,9 @@
     <topicref href="backup_and_restore.dita"/>
     <topicref href="helion/faq.dita"/>
     <topicref href="helion/eula.dita" toc="no"/>
-
+    <topichead navtitle="Installing on ESX">
+      <topicref href="helion/esx/esx_installation.dita"/>
+    </topichead>
     <topichead navtitle="Installing on VSA">
       <topicref href="helion/vsa.dita"/>
     </topichead>
