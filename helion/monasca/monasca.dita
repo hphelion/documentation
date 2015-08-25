@@ -57,15 +57,15 @@
           href="#topic12031/cli">CLI</xref>), or the low-level <xref
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">REST API</xref>.</p>
-    </section>
-    <section id="opsconsole"><title>Operations Console</title>
+      <b>Operations Console</b>
       <p>The Operations Console (Ops Console) is designed for Helion OpenStack Administrators to
         have a web-based UI that they can use to operate and manage the Helion OpenStack
         environment.</p>
       <p>For details on the Operations Console, see <xref href="opsconsole/overview.dita">Operations
           Console Overview</xref></p>
+      <b>Monasca API</b>
+      <p>Limitations here</p>
     </section>
-    <section id="api"><title>Monasca API</title> Limitations here</section>
     <section id="servicealarms"><title>Service Alarm Definitions</title>
       <p>Helion OpenStack comes with some predefined monitoring alarms for the services
         installed.</p>
