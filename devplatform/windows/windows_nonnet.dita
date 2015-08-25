@@ -26,5 +26,22 @@
         Microsoft Corporation in the United States and/or other countries.</i></ph>
       <p>This tutorial demonstrates how to deploy a non.NET application. For the purposes
         of this tutorial, you'll deploy Hello World NodeJS application.</p></section>
+    <section><title>Contents</title>
+    <p>This tutorial contains the following sections:</p>
+    <ul>
+      <li><xref type="section" href="#topic_amr_q3w_js/install">Installing Node.js tools for Visual Studio</xref></li>
+      <li><xref type="section" href="#topic_amr_q3w_js/create">Creating the Hello.World application</xref></li>
+      <li><xref type="section" href="#topic_amr_q3w_js/deploy">Deploying the application</xref></li>
+    </ul></section>
+    <section id="install"><title>Installing Node.js tools for Visual Studio</title>
+    <p>This tutorial requires Node.js tools for Visual Studio. These tools are available in the following locations:</p>
+    <ul>
+      <li><xref type="external" href="http://http://nodejstools.codeplex.com/">Node.js tools for Visual Studio 2013</xref></li>
+      <li><xref type="external" href="https://www.visualstudio.com/en-us/features/node-js-vs.aspx">Node.js tools for Visual Studio 2015</xref></li>
+    </ul></section>
+    <section id="create"><title>Creating the Hello.World application</title>
+      <p></p></section>
+    <section id="deploy"><title>Deploying the application</title>
+      <p></p></section>
   </body>
 </topic>

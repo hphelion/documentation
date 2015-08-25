@@ -32,6 +32,7 @@
     <ul>
       <li><xref href="#topic1035/kato_upstream_proxies">Upstream proxies are not set in DEAs added after cluster creation</xref></li>
       <li><xref href="#topic1035/kato_patch">Kato tries to install patches on Windows nodes</xref></li>
+      <li><xref href="#topic1035/instances">Windows instances created from the Images page in Horizon do not work</xref></li>
     </ul>
     <section id="kato_upstream_proxies"><title>Upstream proxies are not set in DEAs added after cluster creation</title>
     <p>When DEAs are added to clusters after they have been created, upstream proxies are not automatically configured. To configure upstream proxies for these nodes, do the following:</p>
@@ -56,5 +57,7 @@ service polipo restart
  ssh: connect to host 10.0.0.40 port 22: Connection timed out
  Updating kato patch on 10.0.0.40...
  ssh: connect to host 10.0.0.40 port 22: Connection timed out</codeblock></section>
+    <section id="instances"><title>Windows instances created from the Images page in Horizon do not work</title>
+    <p>This behavior is by design. Windows instances must be created with the <b>cf-mgmt</b> tool or through Horizon.</p></section>
   </body>
 </topic>
