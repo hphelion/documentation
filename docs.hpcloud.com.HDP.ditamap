@@ -243,6 +243,8 @@
       <topicref href="devplatform/windows/windows_troubleshooting.dita" navtitle="Troubleshooting"
         locktitle="yes"/>
       <topicref href="devplatform/windows/windows_creating_sql.dita"/>
+      <topicref href="devplatform/windows/windows_nonnet.dita"
+        navtitle="Deploying Non-NET Applications" locktitle="yes"/>
     </topichead>
     <!--permalink: /helion/devplatform/als/-->
     <topicref href="devplatform/1.2devplatform.sysadmin.dita" locktitle="yes"
@@ -281,6 +283,7 @@
         <topicref href="devplatform/CICD/cicd_troubleshooting.dita"/>
         <topicref href="devplatform/CICD/cicd_users_guide.dita"/>
       </topichead>
+      <topicref href="devplatform/helion/admin/server/network_port_configuration.dita"/>
       <topicref href="devplatform/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
       <topicref href="devplatform/1.2devplatform.database-ALS.dita" locktitle="yes"
