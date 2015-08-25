@@ -25,8 +25,9 @@
 <p>We have provided several sample applications in multiple programming languages. Exploring and deploying these simple apps will help you understand how the push process works and how applications can be connected to the other HP Helion <tm tmtype="reg">OpenStack</tm> services.</p>
 <simpletable>
 <strow>
-                        <stentry>1. <p>2. <xref
-              href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743">Download
+                        <stentry>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita"
+            >Register for your Helion Public Cloud Account</xref>
+          <p>2. <xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743">Download
               Tools</xref>
           </p><p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the
               Sandbox Environment</xref></p><p>4. <xref
