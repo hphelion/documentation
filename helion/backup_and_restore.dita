@@ -4,9 +4,10 @@
   <title>Backup and Restore</title>
   <body>
     <p>Freezer is a Backup, Restore, and Disaster Recovery as a Service platform that helps you
-      automate the backup and restore process for your data. In HP Helion OpenStack® 2.0 Beta 1, you
+      automate the backup and restore process for your data. In HP Helion OpenStack 2.0&#174; Beta 1, you
       can backup the control plane services. </p>
-    <p>The following features are supported:<ul id="ul_pg4_5s3_dt">
+    <p>The following features are supported:</p>
+      <ul id="ul_pg4_5s3_dt">
         <li> Back up your file system using point in time snapshot.</li>
         <li>Strong encryption supported: AES-256-CFB.</li>
         <li>Back up your MySQL database with LVM snapshot.</li>
@@ -20,7 +21,7 @@
         <li>Manage multiple jobs (multiple backups on the same node).</li>
         <li>Synchronize backups and restore on multiple node.</li>
         <li>Can execute scripts/commands before or after a job execution. </li>
-      </ul></p>
+      </ul>
     <section>
       <title>Architecture</title>
       <p> The Freezer architectural components are as follows:</p>
@@ -71,7 +72,8 @@
                 perform other actions on a running system. <p>In order to provide flexibility in
                   terms of data integrity, speed, performance, resources usage, and so on, the
                   Freezer Agent offers a wide range of options to execute optimized backup according
-                  the available resources, such as: </p><ul id="ul_o43_253_dt">
+                  the available resources, such as: </p>
+                <ul id="ul_o43_253_dt">
                   <li>Segments size (the amount of memory used) </li>
                   <li>Queues size (optimize backups where I/O, bandwidth, memory, or CPU is a
                     constraint) </li>
@@ -93,7 +95,7 @@
               <entry>Freezer API </entry>
               <entry>Used to store and provide metadata to the Freezer Web UI and to the Freezer
                 Scheduler. Also used to store session information for multi node backup
-                synchronization. No workload data is stored in the API .  </entry>
+                synchronization. No workload data is stored in the API . </entry>
             </row>
             <row>
               <entry>DB Elasticsearch </entry>
@@ -104,7 +106,7 @@
         </tgroup>
       </table>
     </section>
-    
+
     <section>
       <title>Limitations</title>
       <ul id="ul_glx_gt3_dt">
