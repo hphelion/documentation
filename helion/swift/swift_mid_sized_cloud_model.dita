@@ -214,37 +214,38 @@
           fail.</li>
         <li>The disk device must be unpartitioned or have a single partition that uses the whole
           drive.</li>
-        <li>Don't have a label on the partition</li>
-        <li>Don't have an XFS filesystem that contains a filesystem label</li>
+        <li>Do not have a label on the partition. &lt;is there any example we can provide?></li>
+        <li>Do not have an XFS filesystem that contains a filesystem label. &lt;is there any example
+          we can provide?></li>
         <li>If the disk drive is already labeled as described above, the
             <codeph>swiftlm-drive-provision</codeph> process will assume that the drive has valuable
-          data and refuse to use or modify the drive.</li>
-      </ul><p id="making-changes-to-swift"><i><b>Making Changes to a Swift Disk
-        Model</b></i></p><p>There are several reasons why you might change the disk model as
-        follows:</p><ul>
+          data and refuses to use or modify the drive.</li>
+      </ul><p id="making-changes-to-swift"><i><b>Making Changes to a Swift Disk Model</b></i></p><p>
+        There are sewveral reasons for changing the disk model as follows:</p><ul>
         <li>The disk devices listed in the disk model have different names on your servers. This may
           be due to probe order differences or differences due to the type of devices. Edit the disk
-          model and change the device names to the correct names.</li>
-        <li>You prefer a different disk drive than the one listed in the model. For example, if
+          model (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>)  and change the
+          device names to the correct names.</li>
+        <li>If you prefer a different disk drive than the one listed in the model. For example, if
             <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you
           have SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In
           this case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace with
             <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.</li>
-        <li>You have additional drives available. You can add the drives to the devices list.</li>
+        <li>If you have additional drives available. You can add the drives to the devices
+          list.</li>
       </ul></section>
     <section id="allocation-network"><b>Allocation Network</b><p>It is recommended not to change a
         network.</p></section>
-    <section id="ring-specification"><b>Specifying the rings </b><p>The ring maps the logical names
+    <section id="ring-specification"><b>Specifying the Rings </b><p>The ring maps the logical names
         of data to locations on a particular disks. There is a separate ring for account database,
         account database, and individual objects, but each rings works similarly. The rings are
         built and managed manually by a utility called the ring-builder. The ring-builder also keeps
         its own builder file with the ring information and additional data required to build future
-        rings</p><p>The rings are specified by in the input model using the
-          <b>ring-specifications</b> key. There is an entry for each distinct Swift system – hence
-        the Keystone region name is specified in the <b>region-name</b> key of the input
-        model.</p><p>In the example, a ring-specification is mentioned in
-          <codeph>config/swift/rings.yml</codeph> file. The sample of <codeph>rings.yml</codeph> is
-        as follows:</p><p>
+        rings.</p><p>The rings are specified in the input model using the <b>ring-specifications</b>
+        key. There is an entry for each distinct Swift system – hence the Keystone region name is
+        specified in the <b>region-name</b> key of the input model.</p><p>In the example, a
+        ring-specification is mentioned in <codeph>config/swift/rings.yml</codeph> file. The sample
+        of <codeph>rings.yml</codeph> is as follows:</p><p>
         <codeblock>ring-specifications:
     - region-name: region1
       rings:
@@ -272,8 +273,7 @@
           <li><b>Account ring</b> - You must always specify a ring called "account". The account
             ring is used by Swift to store metadata about the projects in your system. In Swift, a
             Keystone project maps to a Swift account. The <b>display-name</b> is informational and
-            not used. <p>The purpose of the <b>min-part-time, partition-power,
-                replication-policy</b> and<b>replica-count</b> are described later. </p></li>
+            not used. </li>
           <li><b>Container ring</b> -You must always specify a ring called "container". The
               <b>display-name</b> is informational and not used.</li>
           <li><b>Object ring</b> - It is also known as Storage Policy. You must always specify a
@@ -284,32 +284,37 @@
             storage policy that the container uses. In the example, the storage policy is called
             "General".</li>
           <li>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</li>
-          <li>Replica count: The recommended value for the <b>replica-count</b> attribute is 3.
-            Three copies of data are kept to provide resiliency and availability.</li>
+          <li><b>Replica count</b>: The recommended value for the <b>replica-count</b> attribute is
+            3. Three copies of data are kept to provide resiliency and availability.<p>The purpose
+              of the <b>min-part-time, partition-power, replication-policy</b>
+                and<b>replica-count</b> are described in the following section. </p></li>
         </ul>
-      </p><p><i><b>Making Changes to the Ring Specifications</b></i>
-        <!--need to edit this section--></p><p>The ring specifications provided in the example is
-        generally sufficient for your needs and you probably will not need to edit the file.
-        However, there may be reasons for changing the model as follows:</p><ul>
-        <li>Your system has many more servers and disks than in the mid sized cloud example. If so
-          you may need to pick a different value for <b>partition-power</b>. The appropriate value
-          is related to the number of disk drives you allocate for the account and container
+      </p><p id="making-changes-ring-specification"><b>Making Changes to the Ring Specifications</b>
+      </p><p>The ring specification provided in the example model contains adequate configuration
+        details to deploy Swift. However, there may be reasons for changing the model as
+        follows:</p><ul>
+        <li>Your system has more servers and disks than in the mid sized cloud example. Therefore,
+          you may require to pick a different value for <b>partition-power</b>. The appropriate
+          value is related to the number of disk drives you allocate for the account and container
           storage. We recommend that you use the same drives for both the account and container
-          rings. Hence, the <b>partition-power</b> value should be the same. More information about
-          picking an appropriate value is in <i>Selecting a Partition Power</i></li>
+          rings. Hence, the <b>partition-power</b> value should be the same. For more information
+          about selecting an appropriate value, refer to <i><xref
+              href="#topic_qkg_l4v_bt/selecting-a-partition-power" format="dita">Selecting a
+              Partition Power</xref></i>.</li>
         <li>You require high resiliency or availability and want a higher replica count. The
             <b>replica-count</b> is normally 3 (i.e., Swift will keep three copies of accounts and
-          containers). we do not recommend changing the value to lower than 3.</li>
+          containers). It is not recommend to change the value to lower than 3.</li>
         <li>You require a different name for the Storage Policy. If so, edit the <b>display-name</b>
           of the object-0 ring. This must be a single word (character such as underscore or dash are
           allowed). This is visible to your end users.</li>
-        <li>Your system has many more servers and disks than in the mid sized cloud example and the
-          time to replicate data during a ring rebuild is longer than 16 hours. However, this time
-          is very system-dependent so you probably won't know an appropriate value for
-            <b>min-part-time</b> until you have more experience with your system. During the initial
-          deploy we suggest you leave <b>min-part-time</b> as-is.</li>
+        <li>Your system has more servers and disks than in the mid sized cloud example and the time
+          to replicate data during a ring rebuild is longer than 16 hours. However, this time is
+          system-dependent so you will be unable to figure out the appropriate value for
+            <b>min-part-time</b> until you have more experience with your system.<p>Therefore,
+            during the intial deployment of Swift, we suggest not to make changes in
+              <b>min-part-time</b>.</p></li>
       </ul></section>
-    <section><b>Selecting a Partition Power</b></section>
+    <section id="selecting-a-partition-power"><b>Selecting a Partition Power</b></section>
     <p>
       <ul>
         <li>
@@ -317,9 +322,9 @@
             nodes. It also defines the storage cluster capacity. You must set the part partition
             power value based on the total amount of storage you expect your entire ring to use. </p>
           <p>When storing an object, the object storage system hashes the name. This hash results in
-            a hit on a partition (so a number of different object names will result in the same
-            partition number). Generally, the partition is mapped to available disk drives. With a
-            replica count of 3, each partition is mapped to three different disk drives. The hashing
+            a hit on a partition (so a number of different object names result in the same partition
+            number). Generally, the partition is mapped to available disk drives. With a replica
+            count of 3, each partition is mapped to three different disk drives. The hashing
             algorithm used hashes over a fixed number of partitions. The partition-power attribute
             determines the number of partitions you have. </p>
         </li>
@@ -328,25 +333,27 @@
     <p>Select a partition power for a given ring that is appropriate to the number of disk drives
       you allocate to the ring for the following reasons: </p>
     <ul>
-      <li>If you use a high partition power and have few disk drives, each disk drives will have
+      <li>If you use a high partition power and have a few disk drives, each disk drives will have
         1000s of partitions. With too many partitions, audit and other processes in the Object
         Storage system cannot "walk" the partitions in a reasonable time and updates will not occur
         in a timely manner.</li>
       <li>If you use a low partition power and have many disk drives, you will have 10s (or maybe
-        only one) partition on a drive. <p>With many partitions on a drive, a large partition is
-          cancelled out by a smaller partition so the overall drive usage is similar. However, with
-          very small numbers of partitions, the uneven distribution of sizes can be reflected in
-          disk drive utilization (so one drive becomes full while a neighboring drive is
-        empty).</p></li>
+        only one) partition on a drive. The Object Storage system does not use size when hashing to
+        a partition – it hashes the name.
+          <!--If sizes and names are randomly distributed, it is normally expected a random, even,  distribution of sizes within a partition. However, this may not happen (i.e., two neighboring partitions may have different sizes). --><p>With
+          many partitions on a drive, a large partition is cancelled out by a smaller partition so
+          the overall drive usage is similar. However, with very small numbers of partitions, the
+          uneven distribution of sizes can be reflected in uneven disk drive utilization (so one
+          drive becomes full while a neighboring drive is empty).</p></li>
     </ul>
     <p>An ideal number of partitions per drive is 100. If you know the number of drives, select part
       power approximatley to 100 partition per drive. Usually, you install a system with a specific
-      number of drives and add drives as your storage needs grow. However, you cannot change the
-      value of the partition power. Hence you must select a value that is a compromise between
-      current and planned capacity. </p>
-    <p><b>Important</b>: if you are installting a small capacity systen and you need to grow to a
+      number of drives and add drives as your required for storage  grows. However, you cannot
+      change the value of the partition power. Hence you must select a value that is a compromise
+      between current and planned capacity. </p>
+    <p><b>Important</b>: If you are installting a small capacity systen and you need to grow to a
       very large capacity but you cannot fit within any of the ranges in the table, please seek help
-      from Professional Services to plan your system..</p>
+      from Professional Services to plan your system.</p>
     <p>There are a few additional factors that can help or mitigate the fixed nature of the
       partition power, as follows:</p>
     <ul>
@@ -354,27 +361,32 @@
         storage needs. Hence, you can select a smaller partition power (relative to object ring
         partition power) for the account and container rings. </li>
     </ul>
-    <p>For object storage, you can add additional storage policies (i.e., another object ring). When
-      you have reached capacity in an existing storage policy, you can add a new storage policy with
-      a higher partition power (because you now have more disk drives in your system). This means
-      that you can install your system with a small partition power appropriate to a small number of
-      initial disk drives. Later when you have many disk drives, the new storage policy can have a
-      higher value appropriate to the larger number of drives.</p>
-    <p> However, while this technique allows you to continue to add storage capacity you should note
-      that existing containers continue to use their original storage policy. Hence, the additional
-      objects must be added to new containers to take advantage of the new storage policy.</p>
+    <p>
+      <ul id="ul_shv_s2g_dt">
+        <li>For object storage, you can add additional storage policies (i.e., another object ring).
+          When you have reached capacity in an existing storage policy, you can add a new storage
+          policy with a higher partition power &lt;<b>can we add new storage policy in Beta as we
+            claim to support one?</b>> (because you now have more disk drives in your system). This
+          means that you can install your system with a small partition power appropriate to a small
+          number of initial disk drives. Later when you have many disk drives, the new storage
+          policy can have a higher value appropriate to the larger number of drives.</li>
+      </ul>
+    </p>
+    <p> However,  when you continue to add storage capacity you should note that existing containers
+      continue to use their original storage policy. Hence, the additional objects must be added to
+      new containers to take advantage of the new storage policy.</p>
     <p>Use the following table to select an appropriate partition power for each ring. The partition
       power of a ring cannot be changed so it is important to select an appropriate value. This
-      table is based on a replica count of 3. See <b><i>Calculating Numbers of Partitions</i>
-      </b>for information of selecting a partition power if your replica count is different or if
-      you cannot find your system in the table.</p>
-    <p> </p>
-    <p>The table assumes that when you first deploy the system you have a small number of drives
-      (the minimum column in the table) and lateryou add drives. The largest anticipated size in the
-      maximum column in the table. </p>
+      table is based on a replica count of 3. But , your replica count is different or you are
+      unable to find your system in the table then refer to <xref
+        href="#topic_qkg_l4v_bt/calculate-number-of-partition" format="dita">Calculating Numbers of
+        Partitions</xref> for information of selecting a partition power. </p>
+    <p> The table assumes that when you first deploy the system (<b>by system- are we referring
+        Swift here?</b>) you have a small number of drives (the minimum column in the table) and
+      later you add drives. </p>
     <p>
       <note>
-        <ul>
+        <ul id="ul_nlg_zgg_dt">
           <li>You use the total number of drives. For example, if you have 3 servers, each with two
             drives, the total number of drives is 6.</li>
           <li>The lookup should be done separably for each of the account, container and object
@@ -382,21 +394,15 @@
             will probably use fewer drives for the account and container rings (i.e., you will have
             fewer Proxy, Account, Container (PAC) servers) – hence you your object rings may have a
             higher partition power.</li>
-          <li>The largest anticipated number of drives imposes a limit in how few drives (the
-            minimum) you can have. See <b><i>Calculating Numbers of Partitions</i></b>for the
-            reason. This means that if you anticipate significant growth, your initial system can be
-            small, but there are limits in how small it can be.</li>
+          <li>The largest anticipated number of drives imposes a limit in how a few drives (the
+            minimum) you can have. See  <xref href="#topic_qkg_l4v_bt/calculate-number-of-partition"
+              format="dita">Calculating Numbers of Partitions</xref>. This means that if you
+            anticipate significant growth, your initial system can be small, but under certain
+            limit.</li>
           <li>The table assumes that disk drives are the same size. The actual size of a drive is
             not significant.</li>
         </ul>
-      </note>
-    </p>
-    <ul>
-      <li/>
-      <li>
-        <p>
-          <table frame="all" rowsep="1" colsep="1" id="table_i5k_5fz_ct">
-            <title>Partition Power</title>
+        <p><b>Partition Power</b><table frame="all" rowsep="1" colsep="1" id="table_fz3_2hg_dt">
             <tgroup cols="3">
               <colspec colname="c1" colnum="1" colwidth="1.0*"/>
               <colspec colname="c2" colnum="2" colwidth="1.0*"/>
@@ -461,12 +467,11 @@
                 </row>
               </tbody>
             </tgroup>
-          </table>
-        </p>
-      </li>
-    </ul>
+          </table></p>
+      </note>
+    </p>
     <section>
-      <p><b><i>Calculating Numbers of Partitions</i></b></p>
+      <p id="calculate-number-of-partition"><b>Calculating Numbers of Partitions</b></p>
       <p>The Object Storage system hashes a given name into a specific <i>partition</i>. For each
         partition, for a replica count of 3, there are three <i>partition directories</i>. The
         partition directories are then evenly scattered over all drives. We can calculate the number
@@ -474,32 +479,35 @@
         follows:<codeblock>number-partition-directories-per-drive = ( (2 ** partition-power) * replica-count ) / number-of-drives
 </codeblock></p>
     </section>
-    <p/>
-    <p>An ideal number of partition directories per drive is 100. However, the system can tolerate
-      and operate normally with a wide range of number of partition directories per drive. The table
-      in <i><b>Selecting Partition Power</b></i> is based on the following: </p>
+    <p>An ideal number of partition directories per drive is 100. However, the system operate
+      normally with a wide range of number of partition directories per drive. The table  <i><b>
+          Partition Power</b></i> is based on the following: </p>
     <ul>
       <li>A replica count of 3</li>
       <li>For a given partition power, the minimum number of drives results in approximately 10,000
-        partition directories per drive. Putting more directories on a drive will result in
-        performance issues.</li>
+        partition directories per drive. With more directories on a drive results in performance
+        issues.</li>
       <li>
         <p>For a given partition power, the maximum number of drives results in approximately 10
-          partition directories per drive. Putting fewer directories per drive will result in an
-          uneven distribution of space utilization</p>
+          partition directories per drive. With fewer directories per drive results in an uneven
+          distribution of space utilization.</p>
       </li>
     </ul>
-    <p> If your system is a fixed size, than it's easy to select an appropriate partition power –
-      select a value that gives the closest value to 100 partition directories per drive. If your
-      system starts smaller and then grows, the issue is more complicated. There are two techniques
-      that may help:</p>
-    <p> Start with a system that is closer to your final anticipated system size – this means you
-      can use a high partition power that suites your final system</p>
+    <p> It is easy to select an appropriate partition power if your system is a fixed size. Select a
+      value that gives the closest value to 100 partition directories per drive. If your system
+      starts smaller and then grows, the issue is more complicated. The following two techniques may
+      help:</p>
+    <p>
+      <ul id="ul_pkv_f3g_dt">
+        <li>Start with a system that is closer to your final anticipated system size – this means
+          you can use a high partition power that suites your final system.</li>
+      </ul>
+    </p>
     <ul>
       <li>You can add additional storage policies as the system grows. These storage policies can
-        have a higher partition power because there will be more drives in a larger system. Note,
-        that this does not help account and container rings – storage policies only applies to
-        object rings.</li>
+        have a higher partition power because there will be more drives in a larger system. Note
+        that this does not help account and container rings – storage policies are only applicable
+        to object rings.</li>
     </ul>
     <p> </p>
   </body>
