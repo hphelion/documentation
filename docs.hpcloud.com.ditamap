@@ -127,6 +127,7 @@
     </topichead>
     <topichead navtitle="Object Storage">
       <topicref href="helion/swift/swift_overview.dita"/>
+      <topicref href="helion/swift/swift_mid_sized_cloud_model.dita" toc="no"/>
     </topichead>
 
   </topicref>

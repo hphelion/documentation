@@ -53,8 +53,7 @@
     <section id="working"><title>Working with Monasca</title>
       <p>Access to Monasca is available through the Web UI (<xref
           href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
-          format="html" scope="external">Operations Console</xref>), command-line interface (<xref
-          href="#topic12031/cli">CLI</xref>), or the low-level <xref
+          format="html" scope="external">Operations Console</xref>), command-line interface (CLI), or the low-level <xref
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">REST API</xref>.</p>
       <b>Operations Console</b>

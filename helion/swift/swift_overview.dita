@@ -28,7 +28,7 @@
     <p>
       <ul id="ul_p41_rkv_bt">
         <li><b>hp-ci/padawan</b> - This cloud model runs in virtual machines. The virtual machines
-          are configured  similar to  the <b>one-region-poc-with-vsa</b>. </li>
+          are configured similar to the <b>one-region-poc-with-vsa</b>. </li>
         <li><b>one-region-poc-with-vsa</b>- This has a single control plane cluster running all
           services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova
           compute servers. The number and usage of disk drives is fixed in the model. Therefore,
@@ -40,14 +40,11 @@
             must use this example model as the basis for building a cloud model for your actual
             cloud by configuring the server and network that you plan to deploy. To deploy Swift
             using this model you must make Swift -specific changes to the provided example. For more
-            details, refer to <xref href="swift_mid_sized_cloud_model.dita#topic_qkg_l4v_bt">Swift
-              in the example mid sized cloud model.</xref></p>
+            details, refer to <xref href="swift_mid_sized_cloud_model.dita">Swift in the example mid
+              sized cloud model.</xref></p>
           <p> </p>
         </li>
       </ul>
     </p>
   </body>
 </topic>
-
-
-

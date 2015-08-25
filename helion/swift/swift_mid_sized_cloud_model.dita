@@ -82,7 +82,7 @@
     <p>In the above example a <b>node_type</b> is assigned as <b>ROLE-SWPAC</b>, which indicates
       that this node is Swift Proxy, Container, Account (PAC) node.</p>
     <note>If you don't use Cobbler to install your servers then you must create
-        <codeph>data/servers.yml</codeph> and  configure nodes on the file.</note>
+        <codeph>data/servers.yml</codeph> and configure nodes on the file.</note>
     <p>The number of servers is specified in the <b>swpac </b>cluster in the
         <codeph>data/control_plane.yml</codeph> file. In the following example, the number of
       servers is set to 3.</p>
@@ -390,7 +390,7 @@
           policy can have a higher value appropriate to the larger number of drives.</li>
       </ul>
     </p>
-    <p> However,  when you continue to add storage capacity you should note that existing containers
+    <p> However, when you continue to add storage capacity you should note that existing containers
       continue to use their original storage policy. Hence, the additional objects must be added to
       new containers to take advantage of the new storage policy.</p>
     <p>Use the following table to select an appropriate partition power for each ring. The partition
@@ -413,7 +413,7 @@
             fewer Proxy, Account, Container (PAC) servers) – hence you your object rings may have a
             higher partition power.</li>
           <li>The largest anticipated number of drives imposes a limit in how a few drives (the
-            minimum) you can have. See  <xref href="#topic_qkg_l4v_bt/calculate-number-of-partition"
+            minimum) you can have. See <xref href="#topic_qkg_l4v_bt/calculate-number-of-partition"
               format="dita">Calculating Numbers of Partitions</xref>. This means that if you
             anticipate significant growth, your initial system can be small, but under certain
             limit.</li>
@@ -498,7 +498,7 @@
 </codeblock></p>
     </section>
     <p>An ideal number of partition directories per drive is 100. However, the system operate
-      normally with a wide range of number of partition directories per drive. The table  <i><b>
+      normally with a wide range of number of partition directories per drive. The table <i><b>
           Partition Power</b></i> is based on the following: </p>
     <ul>
       <li>A replica count of 3</li>
