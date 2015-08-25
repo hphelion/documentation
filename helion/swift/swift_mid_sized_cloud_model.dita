@@ -81,8 +81,8 @@
 .</codeblock></p>
     <p>In the above example a <b>node_type</b> is assigned as <b>ROLE-SWPAC</b>, which indicates
       that this node is Swift Proxy, Container, Account (PAC) node.</p>
-    <note>If you don't use Cobbler to install your servers then you must configure nodes on the
-        <codeph>data/servers.yml</codeph> file.</note>
+    <note>If you don't use Cobbler to install your servers then you must create
+        <codeph>data/servers.yml</codeph> and  configure nodes on the file.</note>
     <p>The number of servers is specified in the <b>swpac </b>cluster in the
         <codeph>data/control_plane.yml</codeph> file. In the following example, the number of
       servers is set to 3.</p>
@@ -116,7 +116,8 @@
     <p>You can increase the <b>member-count</b> value so that more Proxy, Account, Container nodes
       are used. When you increase the <b>member-count</b> you must also increase the number of nodes
       with the <codeph>ROLE-SWPAC</codeph> role in the <codeph>data/baremetalConfig.yml</codeph> (or
-        <codeph>data/servers.yml</codeph>) file.</p>
+        <codeph>data/servers.yml</codeph>) file. &lt;<b>if we dont increase the nodes in the
+        data/barementalconfig.yml file then what error message do we get?</b>></p>
     <p>A Swift Object (OBJ) node is specified in <codeph>data/baremetalConfig.yml</codeph> file as
       shown in the following
       example:<codeblock>baremetal_servers:
@@ -139,12 +140,40 @@
     <p>To specify the number of Swift Object servers add more servers of type
         <codeph>ROLE_SWOBJ</codeph> to the <codeph>data/baremetalConfig.yml</codeph> (or
         <codeph>data/servers.yml</codeph>) file. <note>For Swift Object, the
-          <codeph>member-count</codeph> is automatically determined. It is recommened not to change
+          <codeph>member-count</codeph> is automatically determined. It is recommended not to change
         or increment the <codeph>member count</codeph>.</note></p>
     <section id="allocating-disk-drives"><b>Allocating Disk Drives </b><p>The disk model describes
         the number of disk present on a particular server and its usage. The examples include
-        several disk models. The disk model used by any given server is determined as
-        follows:</p><p>The structure of the <codeph>DISK_SET_SWOBJ</codeph> and
+        several disk models. The disk model used by any given server is determined as follows:</p><p>
+        <ul>
+          <li>The <codeph>node_type</codeph> of server as specified in
+              <codeph>data/baremetalConfig.yml</codeph> (or <codeph>data/servers.yml</codeph>)
+            determines the role of the server.</li>
+          <li>There is a specification for each sever role in the
+              <codeph>data/server_roles.yml</codeph> file. This specifies a disk model for a given
+            server role. For example, for the <codeph>ROLE-SWOBJ</codeph>, the disk model is called
+              <codeph>DISK_SET_SWOBJ</codeph>. <p><codeph>data/server_roles.yml</codeph> file
+              specifies the disk model as
+            follows:</p><codeblock>server-roles:   
+
+
+    - name: ROLE-SWPAC 16 
+      interface-model: INTERFACE_SET_SWPAC 17 
+      disk-model: DISK_SET_SWPAC 18 
+
+
+    - name: ROLE-SWOBJ 24 
+      interface-model: INTERFACE_SET_SWOBJ 25 
+      disk-model: DISK_SET_SWOBJ 
+</codeblock></li>
+          <li>The Object server uses the <codeph>DISK_SET_SWOBJ</codeph> disk model in the
+              <codeph>data/disks_swobj.yml</codeph> file.</li>
+          <li>
+            <p>The Proxy, Account, Container servers use the <codeph>DISK_SET_SWPAC</codeph> disk
+              model in the <codeph>data/disks_swpac.yml</codeph> file.</p>
+          </li>
+        </ul>
+      </p><p>The structure of the <codeph>DISK_SET_SWOBJ</codeph> and
           <codeph>DISK_SET_SWPAC</codeph> disk models are similar. The
           <codeph>data/disks_swpac.yml</codeph> file specifies the disk mode as
         follows:<codeblock>disk-models:
@@ -169,22 +198,8 @@
             - account
             - container</codeblock></p><p>In
         the above example, <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> disk drives are
-        used by Swift and <codeph>/dev/sda5</codeph> is used for the operating system.</p><p><ul
-          id="ul_lbr_lrf_dt">
-          <li>The <codeph>node_type</codeph> of server as specified in
-              <codeph>data/baremetalConfig.yml</codeph> (or <codeph>data/servers.yml</codeph>)
-            determines the role of the server.</li>
-          <li>There is a specification for each sever role in the
-              <codeph>data/server_roles.yml</codeph> file. This specifies a disk model for a given
-            server role. For example, for the <codeph>ROLE-SWOBJ</codeph>, the disk model is called
-              <codeph>DISK_SET_SWOBJ</codeph>.</li>
-          <li>The Object server uses the <codeph>DISK_SET_SWOBJ</codeph> disk model in the
-              <codeph>data/disks_swobj.yml</codeph> file.</li>
-          <li>
-            <p>The Proxy, Account, Container servers use the <codeph>DISK_SET_SWPAC</codeph> disk
-              model in the <codeph>data/disks_swpac.yml</codeph> file.</p>
-          </li>
-        </ul>The disk model has the following fields:</p><ul>
+        used by Swift and <codeph>/dev/sda5</codeph> is used for the operating system.</p><p>The
+        disk model has the following fields:</p><ul>
         <li><b>device-groups</b>: There can be several device groups. This allows different sets of
           disks to be used for different purposes. In this example, there is only one entry in the
           device groups list.</li>
@@ -195,19 +210,19 @@
               href="#topic_qkg_l4v_bt/requirement-disk-device" format="dita">Requirements for a disk
               device</xref></i></li>
         <li><b>consumer</b>: This specifies the service that uses the device group. A
-            <codeph>name</codeph> field containing <codeph>swift</codeph> indicates that the device
-          group is used by Swift. If the name field contains other values, the Swift system will
-          ignore the device group.</li>
+            <codeph>name</codeph> field containing <b>swift</b> indicates that the device group is
+          used by Swift. If the name field contains other values, the Swift system will ignore the
+          device group.</li>
         <li><b>attrs.rings</b>: This lists the rings that the devices are allocated to. In this
-          example, the disk model is used by Proxy, Account, Container nodes, so the "account" and
-          "container" rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model,
+          example, the disk model is used by Proxy, Account, Container nodes, so the <b>account</b>
+          and <b>container</b> rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model,
             <codeph>object-0</codeph> ring is listed. It would be an error to add the
             <codeph>object-0</codeph> ring to the <codeph>DISK_SET_SWPAC</codeph> disk model because
           the swift-object service does not run on that type of node.</li>
       </ul><p>You should review the disk devices in the disk model. See <i><xref
             href="#topic_qkg_l4v_bt/making-changes-to-swift" format="dita">Making Changes to a Swift
-            Disk Model</xref></i>. </p><p id="requirement-disk-device"><b><i>Requirements for a disk
-            device</i></b></p><p>Disk devices listed in the <b>devices</b> list must meet the
+            Disk Model</xref></i>. </p><p id="requirement-disk-device"><b><i>Requirements for a Disk
+            Device</i></b></p><p>Disk devices listed in the <b>devices</b> list must meet the
         following criteria:</p><ul>
         <li>The disk device must exist on the server. For example, if you add
             <codeph>/dev/sdx</codeph> to a server with only 3 devices then the deploy process will
@@ -220,23 +235,25 @@
             example we can provide?</b>></li>
         <li>If the disk drive is already labeled as described above, the
             <codeph>swiftlm-drive-provision</codeph> process will assume that the drive has valuable
-          data and refuses to use or modify the drive.</li>
+          data and refuses to use or modify the drive. &lt;<b>any procedure we should include in the
+            troubleshooting section so that the user can clean the drives and run install the
+            process? </b>></li>
       </ul><p id="making-changes-to-swift"><i><b>Making Changes to a Swift Disk Model</b></i></p><p>
-        There are sewveral reasons for changing the disk model as follows:</p><ul>
-        <li>The disk devices listed in the disk model have different names on your servers. This may
-          be due to probe order differences or differences due to the type of devices. Edit the disk
-          model (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>)  and change the
-          device names to the correct names.</li>
+        There are several reasons for changing the disk model as follows:</p><ul>
+        <li>It is advices that if you have additional drives available then you can add the drives
+          to the devices list</li>
+        <li>The disk devices listed in the example disk model have different names on your servers.
+          This may be due to probe order differences or differences due to the type of devices. Edit
+          the disk model (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) and
+          change the device names to the correct names.</li>
         <li>If you prefer a different disk drive than the one listed in the model. For example, if
             <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you
           have SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In
           this case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace with
             <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.</li>
-        <li>If you have additional drives available. You can add the drives to the devices
-          list.</li>
       </ul></section>
     <section id="allocation-network"><b>Allocation Network</b><p>It is recommended not to change a
-        network.</p></section>
+        network configurations.</p></section>
     <section id="ring-specification"><b>Specifying the Rings </b><p>The ring maps the logical names
         of data to locations on a particular disks. There is a separate ring for account database,
         account database, and individual objects, but each rings works similarly. The rings are
@@ -304,7 +321,7 @@
               Partition Power</xref></i>.</li>
         <li>You require high resiliency or availability and want a higher replica count. The
             <b>replica-count</b> is normally 3 (i.e., Swift will keep three copies of accounts and
-          containers). It is not recommend to change the value to lower than 3.</li>
+          containers). It is <b>recommended</b> not to change the value to lower than 3.</li>
         <li>You require a different name for the Storage Policy. If so, edit the <b>display-name</b>
           of the object-0 ring. This must be a single word (character such as underscore or dash are
           allowed). This is visible to your end users.</li>
@@ -312,7 +329,7 @@
           to replicate data during a ring rebuild is longer than 16 hours. However, this time is
           system-dependent so you will be unable to figure out the appropriate value for
             <b>min-part-time</b> until you have more experience with your system.<p>Therefore,
-            during the intial deployment of Swift, we suggest not to make changes in
+            during the initial deployment of Swift, we suggest not to make changes in
               <b>min-part-time</b>.</p></li>
       </ul></section>
     <section id="selecting-a-partition-power"><b>Selecting a Partition Power</b></section>
@@ -348,11 +365,11 @@
           drive becomes full while a neighboring drive is empty).</p></li>
     </ul>
     <p>An ideal number of partitions per drive is 100. If you know the number of drives, select part
-      power approximatley to 100 partition per drive. Usually, you install a system with a specific
-      number of drives and add drives as your required for storage  grows. However, you cannot
-      change the value of the partition power. Hence you must select a value that is a compromise
-      between current and planned capacity. </p>
-    <p><b>Important</b>: If you are installting a small capacity systen and you need to grow to a
+      power approximately to 100 partition per drive. Usually, you install a system with a specific
+      number of drives and add drives as your required for storage grows. However, you cannot change
+      the value of the partition power. Hence you must select a value that is a compromise between
+      current and planned capacity. </p>
+    <p><b>Important</b>: If you are installing a small capacity system and you need to grow to a
       very large capacity but you cannot fit within any of the ranges in the table, please seek help
       from Professional Services to plan your system.</p>
     <p>There are a few additional factors that can help or mitigate the fixed nature of the

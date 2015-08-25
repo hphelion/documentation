@@ -40,8 +40,8 @@
             must use this example model as the basis for building a cloud model for your actual
             cloud by configuring the server and network that you plan to deploy. To deploy Swift
             using this model you must make Swift -specific changes to the provided example. For more
-            details, refer <xref href="swift_mid_sized_cloud_model.dita#topic_qkg_l4v_bt">Swift in
-              the example mid sized cloud model.</xref></p>
+            details, refer to <xref href="swift_mid_sized_cloud_model.dita#topic_qkg_l4v_bt">Swift
+              in the example mid sized cloud model.</xref></p>
           <p> </p>
         </li>
       </ul>
