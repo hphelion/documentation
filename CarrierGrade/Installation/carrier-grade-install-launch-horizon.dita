@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Launching the Horizon
+    Interface</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>
+      <!--UNDER REVISION-->
+      <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
+      <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
+    <p>After the HP Helion Openstack cloud is installed, you can launch the Horizon interface to
+      verify that the installation was successful.</p>
+    <section>
+      <title> Apply the Horizon interface patch:</title>
+      <ol>
+        <li>Locate the <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file you downloaded to the HLM
+          host and extract the files.</li>
+        <li>From the HLM VM, SSH into any controller node using the default credentials: <p>
+          <codeblock>User Name: cghelion
+            Password: cghelion</codeblock>
+        </p></li>
+        <li>Execute the following command to switch to the root
+          user:<codeblock>sudo su -</codeblock></li>
+        <li>Copy the <codeph>user.py</codeph> file to first controller node in the
+          <codeph>/opt/stack/venvs/horizon/lib/python2.7/site-packages/openstack_auth/</codeph>
+          directory.</li>
+        <li>Use the following command to restart the Horizon service on that node:
+          <codeblock>sudo service apache2 restart</codeblock></li>
+        <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
+        <li>Log into each of the other two controller nodes in the non-KVM region and repeat above
+          steps to copy the <codeph>user.py</codeph> to each controller.</li>
+      </ol>
+    </section>
+    <section>
+      <title>Import the Horizon browser certificate</title>
+      <p>After applying the Horizon patch, you need to import the Horizon security certificate
+        (<codeph>ca.crt</codeph>) into your browser. The <codeph>ca.crt</codeph> is available in
+        the HLM VM in the <codeph>~/&lt;cloudname></codeph> folder.</p>
+      <p>Use the instructions provided by the browser manufacturer to import the
+        <codeph>ca.crt</codeph> file. For a list of browsers supported by OpenStack, see <xref
+          href="https://wiki.openstack.org/wiki/Horizon/BrowserSupport" format="html"
+          scope="external">https://wiki.openstack.org/wiki/Horizon/BrowserSupport</xref>.</p>
+      <p>Also, clear the cache from the browser.</p>
+    </section>
+    <section>
+      <title>Login to Horizon</title>
+      <p>At this point, you can log into the Horizon interface, a web-interface you can use to
+        manage and maintain HP Helion OpenStack Carrier Grade. Use the <xref href="#topic10581/CAN"
+          format="dita">CAN IP address</xref> to launch Horizon. </p>
+      <p>
+        <codeblock>https://&lt;CAN_IP></codeblock>
+      </p>
+      <p>The default credentials are:</p>
+      <codeblock>login: admin
+        password: admin        </codeblock>
+      <p id="CAN">You can locate the CAN IP address in the <codeph>/root/stackrc</codeph> file on any of the
+        controller nodes in the non-KVM region.</p>
+      <p>The CAN IP address contains port <codeph>5000</codeph>. </p>
+      <p>For example:</p>
+      <codeblock>root@B53NEW-CCP-T2-M1-NETCLM:~# cat /root/stackrc
+        export OS_PASSWORD=admin
+        export OS_USERNAME=admin
+        export OS_TENANT_NAME=admin
+        #export OS_AUTH_URL=http://10.x.x.x:35357/v2.0
+        export OS_AUTH_URL=https://10.x.x.x:5000/v2.0
+        export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt </codeblock>
+      <p>In this case, the CAN IP address is located in the
+        <codeph>OS_AUTH_URL=https://10.x.x.x:5000/v2.0</codeph> line. You would log in using
+        <codeph>https://10.x.x.x</codeph>.</p>
+      <p>The Horizon interface appears similar to the following:</p>
+      <p><image href="../../media/CGH-install-horizon.png" id="image_rcc_td1_1t"/></p>
+    </section>
+    <section>
+      <title>Upload a Glance VMDK Image</title>
+      <p>For the <xref href="carrier-grade-install-pb-overview.dita#topic1925/install-option"><b>KVM
+            + ESX deployment</b></xref>, perform the following task. </p>
+      <p>For <xref href="carrier-grade-install-pb-overview.dita#topic1925/install-option"><b>the KVM
+            deployment</b></xref>, proced to the <xref href="#topic10581/next-step" format="dita"
+          >Next Step</xref>.</p>
+      <p>In order to create VM instances in HP Helion OpenStack Carrier Grade, you need to supply at
+        least on ISO image file, and import that file into Horizon. </p>
+      <ol id="ol_yd1_ckj_1t">
+        <li>Launch the Horizon dashboard.</li>
+        <li>Switch to <b>memphis</b> region. </li>
+        <li>Click the <b>Images</b> link on the <b>Admin</b> panel. </li>
+        <li>In the <b>Images</b> screen, click <b>Create Image</b>.</li>
+        <li>In the <b>Create an Image</b> screen, fill out the fields as appropriate: <ol
+          id="ol_zd1_ckj_1t">
+          <li>From the <b>Image Source</b> list, select <b>Image File</b>.</li>
+          <li>From the <b>Image File</b> list that appears, navigate to the VMDK file.</li>
+          <li>From the <b>Format</b> list, select <codeph>VMDK</codeph>.
+            <p><image href="../../media/CGH-install-create-vmdk-image.png" width="400"
+              id="image_qym_mlj_1t"/>
+            </p></li>
+        </ol></li>
+        <li>Click <b>Create Image</b>.</li>
+        <li>For the image, click <b>More</b> then click <b>Edit</b> to update the metadata for the
+          image.<p><image href="../../media/CGH-install-create-image.png" width="400"
+            id="image_etd_dlj_1t"/></p></li>
+        <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph>
+          properties. For Ubuntu, Rhel images you can change the <codeph>vmware_adaptertype</codeph>
+          to <codeph>lsiLogic</codeph>.</li>
+        <li>When complete, click <b>Update Image</b>. </li>
+      </ol>
+      <p>Once the images are uploaded, you are ready to launch the instance with different flavors.
+      </p>
+    </section>
+    
+    <section id="next-step">
+      <title>Next Step</title>
+      <p>
+        <xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref>
+      </p>
+    </section>
+  </body>
+</topic>

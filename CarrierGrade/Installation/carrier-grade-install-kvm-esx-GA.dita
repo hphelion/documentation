@@ -595,7 +595,7 @@ The configuration processor completed successfully.
         controller nodes in the non-KVM region. </p>
       <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
     </section>
-    <section>
+    <!--<section>
       <title> Apply the Horizon interface patch:</title>
       <ol>
         <li>Locate the <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file you downloaded to the HLM
@@ -656,9 +656,12 @@ export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt </codeblock>
       <p><image href="../../media/CGH-install-horizon.png" id="image_rcc_td1_1t"/></p>
     </section>
     <section>
-      <b>Verify the VSC VMs</b>
+    -->  
+    <section>
+      <title>Verify the VSC VMs</title>
       <p>The installation process creates virtual machines for VSC. Use the following steps to
-        verify that the VSC VMs are installed and are operational:</p><ol id="ol_fkv_xjj_1t">
+        verify that the VSC VMs are installed and are operational:</p>
+      <ol id="ol_fkv_xjj_1t">
         <li>SSH to your VSC VM from HLM Host using the DCM IP. The default username and password:
             <codeph>admin/admin</codeph></li>
         <li>Execute the following command: <codeblock>admin display-config</codeblock></li>
@@ -666,7 +669,8 @@ export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt </codeblock>
           <codeblock>show vswitch-controller vsd
 show vswitch-controller xmpp-server
 ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
-      </ol></section>
+      </ol>
+    </section>
     <section><p><b>Verify the VRS-G Node</b>
       </p><p>The installation creates a VRS-G node as part of the cloud deployment. Use the
         following command to verify that the VRS-G is active:
@@ -988,36 +992,7 @@ fi
         <li>Execute the following command to restart the UFW service.</li>
       </ol>
     </section>
-    <section>
-      <title>Upload a Glance VMDK Image</title>
-      <p>In order to create VM instances in HP Helion OpenStack Carrier Grade, you need to supply at
-        least on ISO image file, and import that file into Horizon. </p>
-      <ol id="ol_yd1_ckj_1t">
-        <li>Launch the Horizon dashboard.</li>
-        <li>Switch to <b>memphis</b> region. </li>
-        <li>Click the <b>Images</b> link on the <b>Admin</b> panel. </li>
-        <li>In the <b>Images</b> screen, click <b>Create Image</b>.</li>
-        <li>In the <b>Create an Image</b> screen, fill out the fields as appropriate: <ol
-            id="ol_zd1_ckj_1t">
-            <li>From the <b>Image Source</b> list, select <b>Image File</b>.</li>
-            <li>From the <b>Image File</b> list that appears, navigate to the VMDK file.</li>
-            <li>From the <b>Format</b> list, select <codeph>VMDK</codeph>.
-              <p><image href="../../media/CGH-install-create-vmdk-image.png" width="400"
-                    id="image_qym_mlj_1t"/>
-              </p></li>
-          </ol></li>
-        <li>Click <b>Create Image</b>.</li>
-        <li>For the image, click <b>More</b> then click <b>Edit</b> to update the metadata for the
-              image.<p><image href="../../media/CGH-install-create-image.png" width="400"
-              id="image_etd_dlj_1t"/></p></li>
-        <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph>
-          properties. For Ubuntu, Rhel images you can change the <codeph>vmware_adaptertype</codeph>
-          to <codeph>lsiLogic</codeph>.</li>
-        <li>When complete, click <b>Update Image</b>. </li>
-      </ol>
-      <p>Once the images are uploaded, you are ready to launch the instance with different flavors.
-      </p>
-    </section>
+    
     <section id="next-step">
       <title>Next Step</title>
       <p>
