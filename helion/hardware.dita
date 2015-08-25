@@ -110,5 +110,69 @@
         </tgroup>
       </table>
     </section>
+    <section id="minimum-node-esx"><b>Minimum Node Requirements For ESX</b></section>
+    <table id="table_ixh_np2_dt">
+      <tgroup cols="7">
+        <colspec colname="c1" colnum="1" colwidth="1.19*"/>
+        <colspec colname="c2" colnum="2" colwidth="1.47*"/>
+        <colspec colname="c2" colnum="3" colwidth="1*"/>
+        <colspec colname="c2" colnum="4" colwidth="1.28*"/>
+        <colspec colname="c2" colnum="5" colwidth="1.26*"/>
+        <colspec colname="c2" colnum="6" colwidth="1.73*"/>
+        <colspec colname="c2" colnum="7" colwidth="1.32*"/>
+        <thead>
+          <row>
+            <entry>Node Type</entry>
+            <entry>Role Name</entry>
+            <entry>Required Number</entry>
+            <entry>Disk</entry>
+            <entry>Memory</entry>
+            <entry>Network</entry>
+            <entry>CPU</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>Deployer</entry>
+            <entry>Deployer</entry>
+            <entry>1</entry>
+            <entry> 8 GB</entry>
+            <entry>1 GB</entry>
+            <entry>
+              <ul id="ul_ob3_np2_dt">
+                <li>1 x 1 GB with PXE Support</li>
+                <li>2 x 1 GB or 2 x10 GB</li>
+              </ul>
+            </entry>
+            <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+          </row>
+          <row>
+            <entry>Controller</entry>
+            <entry>OvercloudControl</entry>
+            <entry>3</entry>
+            <entry>3 X 512 GB (Min.)</entry>
+            <entry>32 GB</entry>
+            <entry>
+              <ul id="ul_sc3_np2_dt">
+                <li>1 x 1 GB with PXE Support</li>
+                <li>2 x 1 GB or 2 x10 GB</li>
+              </ul>
+            </entry>
+            <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+          </row>
+          <row>
+            <entry>Compute</entry>
+            <entry>1 vCenter with 2 ESX nodes under one cluster</entry>
+            <entry>2</entry>
+            <entry>1 TB (min) (Shared across all nodes)</entry>
+            <entry>128 GB</entry>
+            <entry>2 x 1 GB or 2 x10 GB</entry>
+            <entry>
+              <p>16 CPU (64-bit) cores total (can be Intel or AMD)</p>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
     </body>
 </topic>

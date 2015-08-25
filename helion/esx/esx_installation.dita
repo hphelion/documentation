@@ -116,12 +116,12 @@ helion/hlm/                    Directory contains files used by the installer
           </ol></li>
         <li> To continue installation copy your cloud layout to
             <codeph>/home/stack/helion/my_cloud/definition</codeph></li>
-        <li>Execute the following
-          command:<codeblock>cd /home/stack/helion/hlm/ansible;
+        <li>Add the cloud deployment defination to the git
+          :<codeblock>cd /home/stack/helion/hlm/ansible;
 git add -A;
 git commit -m 'My config';</codeblock></li>
-        <li>Execute the installation
-          playbooks:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml;
+        <li>Prepare your environment for deployment:
+          <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml;
 ansible-playbook -i hosts/localhost ready-deployment.yml;
 cd /home/stack/scratch/ansible/next/hlm/ansible;
 ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
