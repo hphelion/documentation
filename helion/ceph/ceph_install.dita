@@ -57,7 +57,7 @@ osd_disk_model:
 
           journal_disk: /dev/sdf</codeblock><note>In
                   the above sample, the consumer name <b>ceph</b> is standard. This indicates that
-                  the drive shoulbe be consumed by Ceph.</note><note>You can repeat
+                  the drive should be consumed by Ceph.</note><note>You can repeat
                     <codeph>ceph-osd-data-and-journal</codeph> for each data disk on an OSD
                   node.</note></li>
               <li>Execute the following command to install
