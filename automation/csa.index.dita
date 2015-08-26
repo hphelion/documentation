@@ -74,7 +74,7 @@ table below shows new and updated documents for CSA.</p>
       </thead>
       <tbody>
         <row>
-          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Read First!</entry>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey"><b>Read First!</b></entry>
         </row>
         <row>
           <entry>Concepts Guide</entry>
@@ -113,7 +113,7 @@ table below shows new and updated documents for CSA.</p>
           <entry>Read Before Installation!</entry>
         </row>
         <row>
-          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Installation and Upgrade Guides</entry>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey"><b>Installation and Upgrade Guides</b></entry>
         </row>
         <row>
           <entry>Installation Guide (zip)</entry>
@@ -134,7 +134,7 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Configuration Guides</entry>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey"><b>Configuration Guides</b></entry>
         </row>
         <row>
           <entry>Configuration Guide - Linux</entry>
@@ -209,7 +209,7 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Help</entry>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey"><b>Help</b></entry>
         </row>
         <row>
           <entry>Cloud Service Management Console Help (PDF)</entry>
@@ -230,7 +230,7 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Reference Guides</entry>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey"><b>Reference Guides</b></entry>
         </row>
         <row>
           <entry>API Guide</entry>
@@ -260,7 +260,7 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Content Guides</entry>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey"><b>Content Guides</b></entry>
         </row>
         <row>
           <entry>Content Archive Tool Guide</entry>
@@ -290,7 +290,7 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">White Papers</entry>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey"><b>White Papers</b></entry>
         </row>
         <row>
           <entry>Application Deployment on Realized Topology Instance Using Sequenced Design</entry>
@@ -392,7 +392,7 @@ table below shows new and updated documents for CSA.</p>
           <entry><i>4.5 version not yet available. Will contain extra guidance on configuring intelligent resource management, custom resource provider selection, and custom resource provider and pool selection.</i></entry>
         </row>
         <row>
-          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Additional Information</entry>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey"><b>Additional Information</b></entry>
         </row>
         <row>
           <entry>Open Source and Third-Party Software License Agreements</entry>
@@ -408,9 +408,6 @@ table below shows new and updated documents for CSA.</p>
           <entry><xref type="external" format="html" href="http://support.openview.hp.com/selfsolve/document/KM00731447/">go</xref></entry>
           <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00833068">go</xref></entry>
           <entry namest="4.10" nameend="Comment"><i>obsolete</i></entry>
-          <entry></entry>
-          <entry></entry>
-          <entry></entry>
         </row>
         <row>
           <entry>Language Support Readme</entry>
@@ -422,7 +419,7 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey">Discontinued Documents</entry>
+          <entry namest="DocumentName" nameend="Comment" outputclass="lightgrey"><b>Discontinued Documents</b></entry>
         </row>
         <row>
           <entry>API Reference</entry>
