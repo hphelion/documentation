@@ -337,12 +337,14 @@
             <li>Click Sign up: driver, support, &amp; security alerts, which appears under
               Additional Resources in the right navigation pane. </li>
             <li>Select Business &amp; IT Professionals to open the Subscriber's Choice web page. </li>
-            <li>Do one of the following:</li>
+            <li>Do one of the following:
+              <ul>
+              <li>Sign in if you are a registered customer.</li>
+              <li>Enter your email address to sign-up now. Select Driver and Support alerts and click
+                Continue.</li></ul></li>
           </ol></li>
       </ul>
-      <p>- Sign in if you are a registered customer.</p>
-      <p>- Enter your email address to sign-up now. Select Driver and Support alerts and click
-        Continue. </p></section><section><title> Part 3–Ancillary and Open Source Software</title>
+</section><section><title> Part 3–Ancillary and Open Source Software</title>
      
       <p>Additional license authorizations related to ancillary, third party and open source
         software components are available at <xref
