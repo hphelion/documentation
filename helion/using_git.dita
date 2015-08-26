@@ -94,5 +94,15 @@
       upgrades, that any topology change will require ansible to know where services _used_ to run
       in order to successfully find and disable them. At the moment, the best use of this directory
       is as a convenient tree to run "diff" from. </p>
+    <p><b>Updating your configuration</b> </p>
+    <p>When you need to make updates to your existing configuration you must 
+      <ol>
+      <li>check out the _______ git branch.</li>
+        <li>edit the yaml file or files that contain the configuration you want to change. </li>
+        <li>commit the changes to the _________ branch.</li>
+        <li>run the configuration processor.</li>
+      
+      </ol>
+    </p>
   </body>
 </topic>
