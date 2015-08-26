@@ -35,8 +35,9 @@
           href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html" format="html"
           scope="external">Helion EULA</xref>). Vertica is the recommended database for Helion
         OpenStack.</p>
-      <p>The alternative opensource database is <b>InfluxDB</b>. InfluxDB is an emerging opensource
-        monitoring database, however the current release contains the following limitations:</p>
+      <p>The alternative opensource database option is <b>InfluxDB</b>. InfluxDB is an emerging
+        opensource monitoring database, however the current release contains the following
+        limitations:</p>
       <ul>
         <li>InfluxDB cluster does not recover upon node failure.</li>
       </ul>
@@ -61,20 +62,26 @@
         have a web-based UI that they can use to operate and manage the Helion OpenStack
         environment.</p>
       <p>It can be accessed on port 9095 on the control plane IP.</p>
-      <p>For details on the Operations Console, see <xref href="opsconsole/overview.dita">Operations
-          Console Overview</xref></p>
+      <p>For details on the use of the Operations Console, see <xref href="opsconsole/overview.dita"
+          >Operations Console Overview</xref></p>
       <b>Command-Line Interface</b>
       <p>The python-monascaclient is the Monasca CLI and can be installed using python-pip.</p>
       <p>For details on the CLI, including installation instructions, see <xref
           href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
           format="html" scope="external">Python-Monasca Client</xref></p>
       <b>Monasca API</b>
-      <p>Limitations here</p>
+      <p>The Monasca REST API offers you low-level access to all monitoring operations.</p>
+      <p>Full details of the Monasca API can be found <xref
+          href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
+          format="html" scope="external">on GitHub</xref></p>
+      <p>In Beta 1 there are some API functions that are not available, please see the Release Notes
+        for more details.</p>
     </section>
     <section id="servicealarms"><title>Service Alarm Definitions</title>
       <p>Helion OpenStack comes with some predefined monitoring alarms for the services
         installed.</p>
-      <p>To review service logs, see <xref href="../logging/logging_overview.dita#interface">Logging Interface</xref></p>
+      <p>To review service logs, see <xref href="../logging/logging_overview.dita#interface">Logging
+          Interface</xref></p>
       <p>Full details of all of these alarms can be found here: <xref href="alarms.dita">Service
           Alarm Definitions</xref>.</p>
     </section>
