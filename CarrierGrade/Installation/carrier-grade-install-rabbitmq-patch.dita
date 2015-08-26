@@ -18,9 +18,11 @@
     <section><p>After executing this patch, OpenStack services will use a string of random
         characters (as specified in the service definition) as the RabbitMQ password. By default the
         services will use "guest" as the password. The service definition can be verified by looking
-        at the services' configuration files. </p><p>The password is located in the
+        at the services' configuration files. </p>
+      <p>The password is located in the
           <codeph>&lt;cloud-name&gt;/clouds/v0/001/stage/ansible/group_vars/&lt;tier-name&gt;</codeph>
-          file at: <codeblock>
+          file at:</p> 
+        <codeblock>
 FND_RMQ: 
 vars:  
 rmq_service_password:random

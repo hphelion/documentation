@@ -57,7 +57,8 @@
                 <topicref href="carrier-grade-install-services-netcan.dita" toc="no"/>
                 <topicref href="carrier-grade-install-helion-password-patch.dita" toc="no"/>
             </topicref>
-            <topicref href="carrier-grade-install-launch-horizon.dita"/>
+            <topicref href="carrier-grade-install-launch-horizon.dita"
+                navtitle="Launching the Horizon Interface" locktitle="yes"/>
         </topichead>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita" navtitle="Deploying the KVM Region"
             locktitle="yes">
