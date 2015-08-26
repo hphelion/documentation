@@ -286,7 +286,7 @@
         key. There is an entry for each distinct Swift system – hence the Keystone region name is
         specified in the <b>region-name</b> key of the input model.</p><p>In the example, a
         ring-specification is mentioned in <codeph>config/swift/rings.yml</codeph> file. The sample
-        of ring-specification is as follows:</p><p>
+        file of ring-specification is as follows:</p><p>
         <codeblock>ring-specifications:
     - region-name: region1
       rings:
@@ -309,51 +309,54 @@
           partition-power: 17
           replication-policy:
             replica-count: 3</codeblock>
-      </p><p>The above example shows that the <b>region1</b> has three rings as follows: </p><p>
+      </p><p>The above smaple file shows that the <b>region1</b> has three rings as follows: </p><p>
         <ul>
-          <li><b>Account ring</b> - You must always specify a ring called "account". The account
-            ring is used by Swift to store metadata about the projects in your system. In Swift, a
-            Keystone project maps to a Swift account. The <b>display-name</b> is informational and
-            not used. </li>
+          <li><b>Account ring</b> - You must always specify a ring called <b>account</b>. The
+            account ring is used by Swift to store metadata about the projects in your system. In
+            Swift, a Keystone project maps to a Swift account. The <codeph>display-name</codeph> is
+            informational and not used. </li>
           <li><b>Container ring</b> -You must always specify a ring called "container". The
-              <b>display-name</b> is informational and not used.</li>
+              <codeph>display-name</codeph> is informational and not used.</li>
           <li><b>Object ring</b> - It is also known as Storage Policy. You must always specify a
             ring called "object-0". It is possible to have multiple object rings, which is known as
               <i>storage policies</i>. But in this release we support only one storage policy, i.e.
-            object-0. The <b>display-name</b> is the name of the storage policy and can be used by
-            users of the Swift system when they create containers. It allows them to specify the
-            storage policy that the container uses. In the example, the storage policy is called
-            "General".</li>
+            object-0. The <codeph>display-name</codeph> is the name of the storage policy and can be
+            used by users of the Swift system when they create containers. It allows them to specify
+            the storage policy that the container uses. In the example, the storage policy is called
+              <b>General</b>.</li>
           <li>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</li>
-          <li><b>Replica count</b>: The recommended value for the <b>replica-count</b> attribute is
-            3. Three copies of data are kept to provide resiliency and availability.<p>The purpose
-              of the <b>min-part-time, partition-power, replication-policy</b>
-                and<b>replica-count</b> are described in the following section. </p></li>
+          <li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph>
+            attribute is 3. Three copies of data are kept to provide resiliency and
+              availability.<p>The purpose of the <b>min-part-time, partition-power,
+                replication-policy</b> and<b>replica-count</b> are described in the following
+              section. </p></li>
         </ul>
       </p><p id="making-changes-ring-specification"><b>Making Changes to the Ring Specifications</b>
       </p><p>The ring specification provided in the example model contains adequate configuration
         details to deploy Swift. However, there may be reasons for changing the model as
         follows:</p><ul>
         <li>Your system has more servers and disks than in the mid sized cloud example. Therefore,
-          you may require to pick a different value for <b>partition-power</b>. The appropriate
-          value is related to the number of disk drives you allocate for the account and container
-          storage. We recommend that you use the same drives for both the account and container
-          rings. Hence, the <b>partition-power</b> value should be the same. For more information
-          about selecting an appropriate value, refer to <i><xref
+          you may require to pick a different value for <codeph>partition-power</codeph>. The
+          appropriate value is related to the number of disk drives you allocate for the account and
+          container storage. We recommend that you use the same drives for both the account and
+          container rings. Hence, the <codeph>partition-power</codeph> value should be the same. For
+          more information about selecting an appropriate value, refer to <i><xref
               href="#topic_qkg_l4v_bt/selecting-a-partition-power" format="dita">Selecting a
               Partition Power</xref></i>.</li>
         <li>You require high resiliency or availability and want a higher replica count. The
-            <b>replica-count</b> is normally 3 (i.e., Swift will keep three copies of accounts and
-          containers). It is <b>recommended</b> not to change the value to lower than 3.</li>
-        <li>You require a different name for the Storage Policy. If so, edit the <b>display-name</b>
-          of the object-0 ring. This must be a single word (character such as underscore or dash are
-          allowed). This is visible to your end users.</li>
+            <codeph>replica-count</codeph>  is normally 3 (i.e., Swift will keep three copies of
+          accounts and containers). It is <b>recommended</b> not to change the value to lower than
+          3.</li>
+        <li>You require a different name for the Storage Policy. If so, edit the
+            <codeph>display-name</codeph> of the object-0 ring. This must be a single word
+          (character such as underscore or dash are allowed). This is visible to your end
+          users.</li>
         <li>Your system has more servers and disks than in the mid sized cloud example and the time
           to replicate data during a ring rebuild is longer than 16 hours. However, this time is
           system-dependent so you will be unable to figure out the appropriate value for
-            <b>min-part-time</b> until you have more experience with your system.<p>Therefore,
-            during the initial deployment of Swift, we suggest not to make changes in
-              <b>min-part-time</b>.</p></li>
+            <codeph>min-part-power</codeph> until you have more experience with your
+            system.<p>Therefore, during the initial deployment of Swift, we suggest not to make
+            changes in <b>min-part-time</b>.</p></li>
       </ul></section>
     <section id="selecting-a-partition-power"><b>Selecting a Partition Power</b></section>
     <p>
