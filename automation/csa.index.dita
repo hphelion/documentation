@@ -63,13 +63,13 @@ table below shows new and updated documents for CSA.</p>
           <entry></entry>
         </row>
         <row>
-          <entry>Document Name</entry>
-          <entry outputclass="whiteheadercell">4.00</entry>
-          <entry outputclass="whiteheadercell">4.01</entry>
-          <entry outputclass="whiteheadercell">4.10</entry>
-          <entry outputclass="whiteheadercell">4.20</entry>
-          <entry outputclass="whiteheadercell">4.50</entry>
-          <entry outputclass="whiteheadercell">Comment</entry>
+          <entry outputclass="headerrow">Document Name</entry>
+          <entry>4.00</entry>
+          <entry>4.01</entry>
+          <entry>4.10</entry>
+          <entry>4.20</entry>
+          <entry>4.50</entry>
+          <entry outputclass="headerrow">Comment</entry>
         </row>
       </thead>
       <tbody>
