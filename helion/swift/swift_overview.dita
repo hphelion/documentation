@@ -36,7 +36,7 @@
           for Swift-specific services. </li>
         <li>
           <p><b>mid sized cloud </b>- This example model describes a system using multiple servers
-            and networks. It provides an example for the cofiguration of the mid sized cloud. You
+            and networks. It provides an example for the configuration of the mid sized cloud. You
             must use this example model as the basis for building a cloud model for your actual
             cloud by configuring the server and network that you plan to deploy. To deploy Swift
             using this model you must make Swift -specific changes to the provided example. For more

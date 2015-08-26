@@ -34,6 +34,7 @@
         <li>Switch from UEFI to Legacy BIOS.</li>
         <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
         <li>Ensure that the other networks have PXE disabled.</li>
+        <li>Insert the CD ROM in the Virtual Media drive on the iLO.</li>
       </ul>
     </section>
     <section id="DeployerInstall">
@@ -97,7 +98,7 @@ helion/hlm/                    Directory contains files used by the installer
             <li>Copy the example configuration files in the required setup directory and edit them
               as required:
               <codeblock>cp -r ~/helion/examples/one-region-poc-with-esx/* ~/helion/my_cloud/definition/</codeblock>
-              The configuration files for editing can be found at the following location: <codeblock>~/helion/my_cloud/definition/data</codeblock><ul>
+              The configuration files for editing are available at the following location: <codeblock>~/helion/my_cloud/definition/data</codeblock><ul>
                 <li>The <codeph>baremetalConfig.yml</codeph> file should specify the server
                   information for your environment.</li>
                 <li>The <codeph>servers.yml</codeph> file contains the IP address information for
@@ -138,46 +139,24 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
     </section>
     <section id="NodeProvision">
       <title>Provision the Nodes</title>
-      <ol>
-        <li>Run the following command, which will set all nodes to PXE boot and power cycle them to
-          start their OS
-          install:<codeblock>ansible-playbook -i hosts/localhost cobbler-provision.yml</codeblock></li>
-        <li>Wait for the nodes to install. They will power down at the end. You can make waiting
-          easier with the following
-          command:<codeblock><codeph>ansible-playbook -i hosts/localhost cobbler-wait-for-shutdown.yml</codeph></codeblock>This
-          will complete once all machines are down.</li>
-        <li>Once all nodes are down, power up the recently-installed systems, using the following
-          command:<codeblock>ansible-playbook -i hosts/localhost cobbler-power-up.yml</codeblock></li>
-        <li>You can make waiting easier with the command below, which will complete once all
-          machines are up and the SSH daemon is responding:
-          <codeblock>ansible-playbook -i hosts/localhost cobbler-wait-for-ssh.yml</codeblock></li>
+      <ol id="ol_n3r_sfm_dt">
+        <li>Run the following command, which reimages all the nodes using PXE:
+          <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
+        <li>Wait for the nodes to install and come back up.</li>
       </ol>
     </section>
     <section id="CloudDeploy">
       <title>Deploy the Cloud</title>
       <ol>
-        <li>Run the following command: <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-runV2.yml</codeblock><ol>
-            <li>Verify the network is working correctly by pinging each IP (excluding VSA-BLK and
-              VIPs) from the deployer node. You can find the IP addresses in
-                <codeph>generated_files/etc/hosts</codeph>. To do so, run:
-              <codeblock>stack@hlm:~/helion/hlm/ansible$ less generated_files/etc/hosts</codeblock></li>
-          </ol></li>
-        <li> Edit <codeph>roles/HZN-WEB/tasks/install.yml</codeph> and add the following after the
-          'install-package' section:
-          <codeblock>- name: HZN-WEB | install | TEMP fix horizon permissions
-  sudo: yes
-  command: "chown -R stack:stack {{ HORIZON_VENV_DIR }}/lib/python2.7/site-packages"</codeblock>
-          the modified file should look as follows:
-          <codeblock># Install pre-packaged Horizon venv from tarball
-- name: HZN-WEB | install | Install Horizon
-  install_package:
-    name: horizon
-    service: horizon
-    state: present
- 
-- name: HZN-WEB | install | TEMP fix horizon permissions
-  sudo: yes
-  command: "chown -R stack:stack {{ HORIZON_VENV_DIR }}/lib/python2.7/site-packages"</codeblock></li>
+        <li>Run the following command:
+            <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-runV2.yml</codeblock><ol
+            id="ol_tkl_dgm_dt">
+            <li>Verify the network is working correctly. Ping each IP (excluding VSA-BLK and VIPs)
+              from the <codeph>/etc/hosts</codeph>  file from one of the controller nodes.</li>
+          </ol>
+        </li>
+        <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to comment out the line
+          containing horizon.</li>
         <li>Run the following command:
           <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeblock></li>
       </ol>
