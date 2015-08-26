@@ -118,7 +118,6 @@ helion/hlm/                    Directory contains files used by the installer
                   use<?oxy_insert_end?>s<?oxy_insert_start author="sharmabi" timestamp="20150825T113040+0530"?>
                   those drives. </li>
                 <?oxy_insert_end?>
-                <li/>
                 <li>In the <codeph>net_interfaces.yml</codeph> file, replace all instances of
                   “bond-mode: 1” to “bond-mode: active-backup”.</li>
               </ul></li>

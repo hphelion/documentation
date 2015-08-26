@@ -165,29 +165,31 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
       <title>Install and Configure ESX Compute and OVSvAPP on vCenter</title>
       <p>The following sections describe the procedure to install and configure ESX compute and
         OVSvAPP on vCenter.<ul id="ul_jqm_zjx_ct">
-          <li>Deploy a template</li>
-          <li>Deploy a service</li>
-          <li>Run the config processor</li>
-          <li>Deploy a cloud</li>
+          <li><xref href="#topic_flx_j2b_ws/deploy-template" format="dita">Deploy a
+            template</xref></li>
+          <li><xref href="#topic_flx_j2b_ws/deploy-service" format="dita">Deploy a
+            service</xref></li>
+          <li><xref href="#topic_flx_j2b_ws/run-processor" format="dita">Run the config
+              processor</xref></li>
+          <li><xref href="#topic_flx_j2b_ws/deploy-cloud" format="dita">Deploy a cloud</xref></li>
         </ul></p>
     </section>
-    <section>
-      <p><b>Deploy a template</b></p>
-    </section>
-    <section>Perform the following steps to deploy a template:<ol id="ol_khb_dk5_bt">
-        <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the vSphere client. </li>
-        <li>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF Template</b>.</li>
-        <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
-          install. Refer to the VMWare vSphere documentation as needed. </li>
-      </ol></section>
-    <section><b>Deploy a Service</b><p>Execute the following steps form the deployer to deploy a
+    <section id="deploy-template"><b>Deploy a template</b></section>
+      <p>Perform the following steps to deploy a template:</p>
+        <ol>
+      <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the vSphere client. </li>
+      <li>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF Template</b>.</li>
+      <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
+        install. Refer to the VMWare vSphere documentation as needed. </li>
+    </ol>
+    <section id="deploy-service"><b>Deploy a Service</b><p>Execute the following steps form the deployer to deploy a
         service using the EON CLI.</p><p>
-        <ol id="ol_t1q_jl5_bt">
+        <ol>
           <li>Source <codeph>service.osrc</codeph>.
               <p><!--<p>unset OS_DOMAIN_NAME</p><p>export OS_IDENTITY_API_VERSION=3</p><p>export OS_AUTH_VERSION=3</p><p>export OS_PROJECT_NAME=admin</p><p>export OS_PROJECT_DOMAIN_NAME=Default</p><p>export OS_USERNAME=admin</p><p>export OS_USER_DOMAIN_NAME=Default</p><p>export OS_PASSWORD=admin</p><p>export OS_AUTH_URL=http://helion-ccp-vip-admin-KEY-API-mgmt:35357/v3</p><p>export OS_CACERT=/etc/ssl/certs/ca-certificates.cr</p>--></p></li>
           <li>Add a vCenter to the eon
               database.<codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:</p><p>
-              <ul id="ul_lx4_yr5_bt">
+              <ul>
                 <li>vCenter Name - the name of the vCenter server where the service will be
                   deployed.</li>
                 <li>vCenter IP address - the IP address of the vCenter server where the service will
@@ -342,7 +344,7 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
 +------------+----------+------------+---------------+</codeblock></li>
           <li>Import the cluster for the EON database under the given vCenter.
               <codeblock><codeph>eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock><p>where:</p><p>
-              <ul id="ul_osx_bx5_bt">
+              <ul>
                 <li>vCenter ID: ID of the vcenter containing the cluster.</li>
                 <li>Cluster Name: the name of the cluster that needs to be imported.</li>
                 <li>cluster Moid: Moid of the cluster that needs to be imported.</li>
@@ -380,36 +382,14 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
 | resource_name | Cluster1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | state         | activated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock></p>
-    <section><b>Run the config processor</b></section>
-    <section>
-      <p>Execute the following commands:</p>
+    <section id="run-processor"><b>Run the config processor</b></section>
+         <p>Execute the following commands:</p>
       <p>
         <codeblock><codeph>cd ~/helion/hlm/ansible</codeph>
 <codeph>ansible-playbook -i hosts/localhost config-processor-run.yml</codeph></codeblock>
       </p>
-    </section>
-    <section><b>Deploy a cloud</b></section>
-    <section>
-      <p>Execute the following command to deploy a
+        <section id="deploy-cloud"><b>Deploy a cloud</b></section>
+       <p>Execute the following command to deploy a
         cloud:<codeblock><codeph>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeph></codeblock></p>
-    </section>
-    <section><b>Verification Steps</b><p><b>Change this section as per esx</b><ol id="ol_o5y_yyv_bt">
-          <li>This step may be used to verify your cloud installation. Note that running the command
-            below will download a cirros image format the internet, upload it to Glance and create a
-            Neutron external
-              network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
-              can optionally specify the external network CIDR here too. If you choose not to
-              exercise this option or use a wrong value, the VMs will not be accessible over the
-              network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
-          <li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the
-            deployer:
-            <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock></li>
-          <li>As the /etc/hosts no longer have entries for HLM, sudo commands may become a bit
-            slower. To fix this issue, once this step is complete, add "hlm" after "127.0.0.1
-            localhost". The result will look like
-            this:<codeblock>...
-# Localhost Information
-127.0.0.1 localhost hlm</codeblock></li>
-        </ol></p></section>
   </body>
 </topic>
