@@ -15,8 +15,8 @@
         <li>Certain content in the logging configuration file: <b>/etc/keystone/logging.conf</b>. In
           this file you can adjust the verbosity of the output written to Keystone log files. </li>
         <li> The Apache2 WSGI module configuration file:
-            <b>/etc/apache2/sites-enabled/keystone-modwsgi.conf</b>. In this file you can  adjust
-          certain WSGI module parameters (like process counts). </li>
+            <b>/etc/apache2/sites-enabled/keystone-modwsgi.conf</b>. In this file you can adjust
+          certain WSGI module parameters (such as process counts). </li>
       </ul>
     </section>
     <section>
