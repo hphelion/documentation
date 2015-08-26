@@ -617,7 +617,8 @@ The configuration processor completed successfully.
       HLM VM. The standard protocol ports will allow inbound access only and the only the cloud
       nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see
           <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port
-          Security Patch</xref>.</p></section>
+          Security Patch</xref>.</p>
+    </section>
     <!--<section>
       <title> Apply the Horizon interface patch:</title>
       <ol>

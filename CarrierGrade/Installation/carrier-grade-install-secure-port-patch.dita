@@ -63,6 +63,9 @@ ssl_cert_file: /root/ovs/ca.crt
         enter.</li>
       <li>This should run the hlmiptables role which will secure all ports on HLM</li>
     </ol>
-    patch-after
+      <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patches">KVM
+        installation</xref>.</p>
+      <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/patches">the KVM +
+          ESX installation</xref>.</p>
     </body>
 </topic>
