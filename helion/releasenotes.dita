@@ -151,8 +151,8 @@
           </ul></li>
         <li>Logging Dashboard <ul>
             <li>There is no auto-logon function, users must use the credentials in the <xref
-                href="logging/logging_overview.dita#interface">Logging Overview</xref> to access the
-              UI.</li>
+                href="logging/logging_overview.dita#logging/interface">Logging Overview</xref> to
+              access the UI.</li>
           </ul></li>
         <li>Alarms <ul>
             <li>The tile view of alarms with lengthy dimensions does not render cleanly.</li>
