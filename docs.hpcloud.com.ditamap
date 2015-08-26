@@ -21,12 +21,10 @@
     <topicref href="helion/releasenotes.dita"/>
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
+    <topichead navtitle="Installation">
     <topicref href="helion/installation.dita"/>
-    <topichead navtitle="Installing on ESX">
-      <topicref href="helion/esx/esx_installation.dita"/>
-    </topichead>
-    <topichead navtitle="Installing VSA">
-      <topicref href="helion/vsa.dita"/>
+    <topicref href="helion/esx/esx_installation.dita" navtitle="Installing on ESX"/>
+    <topicref  href="helion/vsa.dita" navtitle="Installing VSA"/>
     </topichead>
     <topicref href="helion/backup_and_restore.dita"/>
     <topicref href="helion/faq.dita"/>
