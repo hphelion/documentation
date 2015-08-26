@@ -80,9 +80,10 @@
     <section id="servicealarms"><title>Service Alarm Definitions</title>
       <p>Helion OpenStack comes with some predefined monitoring alarms for the services
         installed.</p>
-      <p>To review service logs, see <xref href="../logging/logging_overview.dita#interface">Logging
-          Interface</xref></p>
-      <p>Full details of all of these alarms can be found here: <xref href="alarms.dita">Service
+      <p>An important step when alarms are triggered is to review the service logs. Details on how
+        to use the logging UI built into the Operations Console, seee <xref
+          href="../logging/logging_overview.dita#interface">Logging Interface</xref></p>
+      <p>Full details of all service alarms can be found here: <xref href="alarms.dita">Service
           Alarm Definitions</xref>.</p>
     </section>
   </body>
