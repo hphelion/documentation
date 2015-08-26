@@ -253,12 +253,22 @@
             process? </b>></li>
       </ul><p id="making-changes-to-swift"><i><b>Making Changes to a Swift Disk Model</b></i></p><p>
         There are several reasons for changing the disk model as follows:</p><ul>
-        <li>It is adviced that if you have additional drives available then you can add the drives
+        <li>It is advisable that if you have additional drives available then you can add the drives
           to the devices list.</li>
         <li>The disk devices listed in the example disk model have different names on your servers.
           This may be due different harware drives. Edit the disk model
             (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) and change the
-          device names to the correct names.</li>
+          device names to the correct names.<table frame="all" rowsep="0" colsep="0"
+            id="table_rwv_rpm_dt">
+            <tgroup cols="1">
+              <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+              <tbody>
+                <row>
+                  <entry>Useful tips:</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table></li>
         <li>If you prefer a different disk drive than the one listed in the model. For example, if
             <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you
           have SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In
@@ -269,14 +279,14 @@
         network configurations.</p></section>
     <section id="ring-specification"><b> Ring Specifications </b><p>The ring maps the logical names
         of data to locations on a particular disks. There is a separate ring for account database,
-        account database, and individual objects, but each rings works similarly. The rings are
-        built and managed manually by a utility called the ring-builder. The ring-builder also keeps
-        its own builder file with the ring information and additional data required to build future
+        account database, and individual objects, but each ring works similarly. Ring-builder is a
+        utility which builts and manually manages the rings. The ring-builder also keeps its own
+        builder file with the ring information and additional data required to build future
         rings.</p><p>The rings are specified in the input model using the <b>ring-specifications</b>
         key. There is an entry for each distinct Swift system – hence the Keystone region name is
         specified in the <b>region-name</b> key of the input model.</p><p>In the example, a
         ring-specification is mentioned in <codeph>config/swift/rings.yml</codeph> file. The sample
-        of <codeph>rings.yml</codeph> is as follows:</p><p>
+        of ring-specification is as follows:</p><p>
         <codeblock>ring-specifications:
     - region-name: region1
       rings:
