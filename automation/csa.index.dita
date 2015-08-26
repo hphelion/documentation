@@ -92,6 +92,7 @@ table below shows new and updated documents for CSA.</p>
           <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01286561">go</xref></entry>
           <entry></entry>
           <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01691514">go</xref></entry>
+          <entry></entry>
         </row>
         <row>
           <entry>System and Software Support Matrix</entry>
@@ -404,8 +405,8 @@ table below shows new and updated documents for CSA.</p>
         </row>
         <row>
           <entry>Open Source and Third-Party Software License Agreements Converged Cloud User Experience Licenses</entry>
-          <entry><xref type="external" format="html" href="">go</xref></entry>
-          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry><xref type="external" format="html" href="http://support.openview.hp.com/selfsolve/document/KM00731447/">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00833068">go</xref></entry>
           <entry namest="4.10" nameend="Comment"><i>obsolete</i></entry>
           <entry></entry>
           <entry></entry>
@@ -472,9 +473,9 @@ table below shows new and updated documents for CSA.</p>
           <entry namest="4.50" nameend="Comment"><i>Replaced by the new Resource Management in CSA white paper in 4.5.</i></entry>
         </row><row>
           <entry>Integration Pack Guide</entry>
-          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM00731469">go</xref></entry>
           <entry></entry>
-          <entry><xref type="external" format="html" href="">go</xref></entry>
+          <entry><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01061719">go</xref></entry>
           <entry></entry>
           <entry namest="4.50" nameend="Comment"><i>Replaced by Content Pack Guide in 4.5</i></entry>
         </row>
@@ -487,154 +488,18 @@ table below shows new and updated documents for CSA.</p>
     <p>To check for recent updates or to verify that you are using the most recent edition of a document, go to: <xref type="external" format="html" href="https://softwaresupport.hp.com">https://softwaresupport.hp.com</xref></p>
     <note outputclass="lightgrey">If you have reached this library, you have already signed in with your HP Passport credentials. You can also receive updated documentation if you subscribe to the appropriate product support service. Contact your HP sales representative for details. See Document Change Notes within the document for a list of any revisions. </note>
   </section>
-<section id="hp-csa-technical-information-and-manuals-a-z"> <title>HP CSA Technical Information and Manuals (A-Z)</title>
-<ul>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01085663/binary/CSA_410_API_Quick_Start.pdf" scope="external" format="pdf">API Quick Start Guide</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061670/binary/CSA_410_API_Reference.pdf" scope="external" format="pdf">API Reference</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061722/binary/CSA_410_AppDeploymentRealizedTopoOnSequencedDesigns.pdf" scope="external" format="pdf">Application Deployment on Realized Topology Instance using Sequenced Design</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061667/binary/CSA_410_Management_Console_Help.pdf" scope="external" format="pdf">Cloud Service Management Console Help</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061671/binary/CSA_410_Concepts_Guide.pdf" scope="external" format="pdf">Concepts Guide</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061715/binary/CSA_410_Linux_Configuration_Guide.pdf" scope="external" format="pdf">Configuration Guide for Linux</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061716/binary/CSA_410_Win_Configuration_Guide.pdf" scope="external" format="pdf">Configuration Guide for Windows</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061726/binary/CSA_410_Config_Linux_Cluster_Server_Failover.pdf" scope="external" format="pdf">Configuring an HP CSA Linux Cluster Server for Failover</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061727/binary/CSA_410_Config_Win_Cluster_Server_Failover.pdf" scope="external" format="pdf">Configuring an HP CSA Windows Cluster Server for Failover</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061723/binary/CSA_410_Oracle_RAC_Configuration.pdf" scope="external" format="pdf">Configuring HP CSA to Work with Oracle RAC</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01082360/binary/CSA_410_Configuring_Intelligent_Resource_Management.pdf" scope="external" format="pdf">Configuring Intelligent Resource Management</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061669/binary/CSA_410_Content_Archive_Tool.pdf" scope="external" format="pdf">Content Archive Tool Guide</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01082361/binary/CSA_410_CustomerResoureProvider_PoolSelection.pdf" scope="external" format="pdf">Custom Resource Provider and Pool Selection</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01082362/binary/CSA_410_CustomerResoureProvider_Selection.pdf" scope="external" format="pdf">Custom Resource Provider Selection</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061712/binary/CSA_410_FIPS_140-2_Compliance_Statement_Doc.pdf" scope="external" format="pdf">FIPS Compliance Statement</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061713/binary/CSA_410_Installation_Guide.zip" scope="external" format="html" >Installation Guide</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061719/binary/CSA_410_IntegrationPack.pdf" scope="external" format="pdf">Integration Pack Guide</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061665/binary/CSA_410_LangSupport_Readme.pdf" scope="external" format="pdf">Language Support Readme</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061668/binary/CSA_410_Marketplace_Portal_Help.pdf" scope="external" format="pdf">Marketplace Portal help</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061718/binary/CSA_410_OS-3rdPty-Licenses.pdf" scope="external" format="pdf">Open Source and Third-Party License Agreement</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061721/binary/CSA_410_Process_Definition_Tool.pdf" scope="external" format="pdf">Process Definition Tool</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01085662/binary/CSA_410_Provider_Configuration_Tool.pdf" scope="external" format="pdf">Provider Configuration Tool</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061666/binary/CSA_410_Release_Notes.pdf" scope="external" format="pdf">Release Notes</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01073005/binary/CSA_410_Release_Notes_ja.pdf" scope="external" format="pdf">Release Notes (Japanese)</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061720/binary/CSA_410_Reporting.pdf" scope="external" format="pdf">Reporting and Auditing</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061724/binary/CSA_410_SupportMatrix.pdf" scope="external" format="pdf">System and Software Support Matrix</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061714/binary/CSA_410_Troubleshooting.pdf" scope="external" format="pdf">Troubleshooting Guide</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061717/binary/CSA_410_Upgrade_Guide.zip" scope="external" format="html" >Upgrade Guide</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061725/binary/CSA_410_Whats_New.pdf" scope="external" format="pdf">What's New</xref>
-</p>
-</li>
-</ul>
-</section>
+<section><title>Support</title>
+  <p>You can visit the HP Software Support web site at: <xref type="external" format="html" href="https://softwaresupport.hp.com/">https://softwaresupport.hp.com/</xref></p>
+  <p>This web site provides contact information and details about the products, services, and support that HP offers.
+    Most of the support areas require that you register as an HP Passport user and sign in. Many also require an active support contract. To find more information about support access levels, go to: 
+  </p>
+  <p><xref type="external" format="html" href="https://softwaresupport.hp.com/web/softwaresupport/access-levels">https://softwaresupport.hp.com/web/softwaresupport/access-levels</xref></p>
+  <p>To register for an HP Passport ID, go to: <xref type="external" format="html" href=" https://ovrd.external.hp.com/rd/register"> https://ovrd.external.hp.com/rd/register</xref></p></section>
+  <section><title>Support Matrices</title>
+    <p>For complete support and compatibility information, see the support matrix for the relevant product release. All support matrices and product manuals are available here on the HP Software Support Online website:</p>
+    <p><xref type="external" format="html" href="https://softwaresupport.hp.com/group/softwaresupport/support-matrices">https://softwaresupport.hp.com/group/softwaresupport/support-matricesa</xref></p>
+    <p>You can also download the Support Matrix for this release from the HP Self-solve documentation portal:</p>
+    <p><xref type="external" format="html" href="https://softwaresupport.hp.com/">https://softwaresupport.hp.com/</xref></p>
+  </section>
 </body>
 </topic>
