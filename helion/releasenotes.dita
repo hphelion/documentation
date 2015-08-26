@@ -65,10 +65,14 @@
       <p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer,
         Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP
         Helion OpenStack.</p>
+      <p>Learn more about Monasca here: <xref href="monasca/monasca.dita">Monasca
+        Overview</xref></p>
       <p><b>Centralized Logging</b> - Logging for the services below is enabled in the default
         configuration. You will have the ability to disable per-service logging as needed.</p>
       <p>Logging is integrated for the following services: Nova, Glance, Swift, Neutron, Ceilometer,
         Monasca, Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p>
+      <p>Learn more about Centralized Logging here: <xref href="logging/logging_overview.dita"
+          >Centralized Logging Overview</xref></p>
       <p><b>New Installer</b></p>
       <ul>
         <li>You supply the cloud configuration you want based on our <xref
@@ -131,9 +135,44 @@
           cluster.</li>
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
       </ul>
-      <p><b>Ops Console</b></p>
+      <p><b>Operations Console (Ops Console)</b></p>
+      <p>The Operations Console is available on port 9095 on the Control Plane. There are some
+        limitations to note and they are listed below by menu:</p>
       <ul>
-        <li>OpsConsole is not enabled in this release.</li>
+        <li>Dashboard <ul>
+            <li>There are two notification sections for the Storage services. The one in the upper
+              left is the Compute service mislabeled as Storage.</li>
+            <li>The New Alarms section uses the UTC timezone to determine timeframes regardless of
+              what timezone set in the settings.</li>
+            <li>The New Alarms section will only display alarms that have a service dimension
+              defined.</li>
+            <li>Platform Services (HDP Summary) alarm panels are not yet implemented but appear in
+              the menu and thus will not populate if selected.</li>
+          </ul></li>
+        <li>Logging Dashboard <ul>
+            <li>There is no auto-logon function, users must use the credentials in the <xref
+                href="#logging/interface">Logging Overview</xref> to access the UI.</li>
+          </ul></li>
+        <li>Alarms <ul>
+            <li>The tile view of alarms with lengthy dimensions does not render cleanly.</li>
+          </ul></li>
+        <li>Networking - Alarm Summary <ul>
+            <li>Alarms may be limited to only those with the dimension "service=networking".</li>
+          </ul></li>
+        <li>Storage - Alarm Summary <ul>
+            <li>Alarms with the dimension "service=compute" sometimes appear in this list in
+              addition to the "service=block-storage" and "service=object-storage" ones.</li>
+          </ul></li>
+        <li>HDP - Alarm Summary <ul>
+            <li>This section is not implemented in Beta 1</li>
+          </ul></li>
+        <li>Masthead Items <ul>
+            <li>The Help and EULA links will not work properly. You can view the Help files here:
+                <xref href="monasca/opsconsole/overview.dita">Operations Console
+              Overview</xref></li>
+            <li>User information panel fails to load making it so a user cannot update their email
+              address or password.</li>
+          </ul></li>
       </ul>
       <p><b>Centralized Logging Limitations</b></p>
       <p>Logging support is complete for Beta 1 with the following limitations:</p>

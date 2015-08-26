@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic12031">
+<topic xml:lang="en-us" id="opsconsole">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Operations Console Overview</title>
   <body>
     <section id="about">
