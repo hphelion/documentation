@@ -25,10 +25,10 @@
     <p><b>Note:</b> If you are installing the KVM + ESX deployment, see <xref
         href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the KVM + ESX
         Deployment</xref>.</p>
-    <section id="configure-a-json-file-for-installation">
-      <title>Configure a JSON file for installation</title>
-      <p>The HP Helion OpenStack deployment requires a JSON file. Use the following steps to install
-        and edit the file.</p>
+    
+    <section>
+      <title>Log into the HLM VM</title>
+      <p>Log into the HLM VM you created in the previous page.</p>
       <ol>
         <li>Login to HLM VM.
             <codeblock>ssh &lt;HLM_VM_IP>
@@ -38,10 +38,14 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
 Password: cghelion</codeblock></p><p><b>Important:</b>
             After logging in with the default password, make sure you change the password for the
               <codeph>cghelion</codeph> user. </p></li>
-        
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
         <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
+      </ol></section>
+    
+    <section id="configure-a-json-file-for-installation">
+          <title>Provision the new cloud</title>
+          <ol>
         <li>Provision and configure your HP Helion OpenStack
             VM.<codeblock>hnewcloud  &lt;cloudname&gt; denver</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create: <p>The cloud
@@ -63,8 +67,9 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
             contain a JSON template file <codeph>node-provision.json</codeph>. This template
             supplies input values to the <codeph>hprovision</codeph> script, later in the
             installation.</p></li>
-        <li>Edit <codeph>node-provision.json</codeph> file to change only the following
-            fields:<table id="table_ycw_qrn_xs">
+        <li>The HP Helion OpenStack deployment requires a JSON file. Edit
+            <codeph>node-provision.json</codeph> file to change only the following fields:<table
+            id="table_ycw_qrn_xs">
             <tgroup cols="2">
               <colspec colname="col1" colsep="1" rowsep="1"/>
               <colspec colname="col2" colsep="1" rowsep="1"/>
@@ -111,7 +116,55 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
            -->
           <p>
             <b>Example:</b>
-          </p><pre>{</pre><pre>    "product": {</pre><pre>        "version": 1</pre><pre>    },</pre><pre> </pre><pre>    "node-type": [</pre><pre>        {</pre><pre>            "name": "CCN",</pre><pre>            "interface-map": [</pre><pre>                {</pre><pre>                    "name": "INTF0",</pre><pre>                    "ethernet-port-map": {</pre><pre>                        "interface-ports": [ "eth0" ]</pre><pre>                    },</pre><pre>                    "logical-network-map": [</pre><pre>                        {</pre><pre>                            "name": "CLM",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "502",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "10.50.2.0/24",</pre><pre>                                "start-address": "10.50.2.10",</pre><pre>                                "gateway": "10.50.2.1"</pre><pre>                            }</pre><pre>                        },</pre><pre>                        {</pre><pre>                            "name": "CAN",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "504",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "10.50.4.0/24",</pre><pre>                                "start-address": "10.50.4.10"</pre><pre>                            }</pre><pre>                        },</pre><pre>                        {</pre><pre>                            "name": "BLS",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "76",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "172.16.76.0/19",</pre><pre>                                "start-address": "172.16.76.10"</pre><pre>                            }</pre><pre>                        }</pre><pre>                    ]</pre><pre>                }</pre><pre>            ]</pre><pre>        }</pre><pre>    ]</pre><pre>}</pre><p>
+          </p><p><codeblock>{
+    "product": {
+        "version": 1
+    },
+ 
+    "node-type": [
+        {
+            "name": "CCN",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "ethernet-port-map": {
+                        "interface-ports": [ "eth0" ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "CLM",
+                            "type": "vlan",
+                            "segment-id": "502",
+                            "network-address": {
+                                "cidr": "10.50.2.0/24",
+                                "start-address": "10.50.2.10",
+                                "gateway": "10.50.2.1"
+                            }
+                        },
+                        {
+                            "name": "CAN",
+                            "type": "vlan",
+                            "segment-id": "504",
+                            "network-address": {
+                                "cidr": "10.50.4.0/24",
+                                "start-address": "10.50.4.10"
+                            }
+                        },
+                        {
+                            "name": "BLS",
+                            "type": "vlan",
+                            "segment-id": "76",
+                            "network-address": {
+                                "cidr": "172.16.76.0/19",
+                                "start-address": "172.16.76.10"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}</codeblock>
             <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM
             address range to itself for serving python and debian repositories. Make sure that you
             set the first IP address of the CLM range for the eth2 (CLM) address of the HLM
@@ -368,7 +421,35 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
         <li>After editing the JSON files, validate each JSON file to make sure there are no
           syntactical errors using the tool of your preference. For example, using the Python
           json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>
-        <li>Once you have correctly edited all the json Cloud Model files, run the HP Helion
+      </ol></section>
+    <section>
+      <title>Apply the Rabbit MQ Random Password patch</title>
+      <p>For information, see <xref href="carrier-grade-install-rabbitmq-patch.dita#topic10581"
+        >Applying the Random RabbitMQ Password Patch</xref>.</p>
+    </section>
+    
+    <section><title>Apply the Reverse Path Filter Patch</title>After deploying the HP OpenStack
+      cloud, you might not be able to access the Horizon interface and the OpenStack services cannot
+      be accessed over the CAN network. <p>To prevent this problem, install a patch to configure the
+        kernel to set the reverse path filter (<codeph>rp_filter</codeph>)  to 1 in the
+        <codeph>all</codeph> and <codeph>default</codeph> configuration files. </p><p>For more
+          information, see <xref href="carrier-grade-install-rp-filter.dita#topic10581"
+            >Applying the Reverse Path Filter Patch</xref>.</p></section>
+    
+    <section><title>Apply the Helion Dynamic Password Patch</title>The HP Helion OpenStack cloud
+      deployment creates a default password to log into the Helion interface.  You can deploy a
+      patch to configure the installer to generate a dynamic user name and password for the Helion
+      interface. The user name can password can be retrieved from a configuration files. <p>For more
+        information, see <xref href="carrier-grade-install-helion-password-patch.dita#topic10581"
+          >Applying the Helion Dynamic Password Patch</xref>.</p></section>
+    
+    <section><title>Apply the NIC bonding patch</title><p>HP Helion OpenStack Carrier Grade environments using NIC bonding, see <xref
+      href="carrier-grade-install-nic-patch.dita#topic10581">Applying the NIC Bonding
+      Patch</xref> to install a required patch.</p></section>
+    
+    <section><title>Deploy the HP Helion OpenStack cloud</title>
+      <ol>
+        <li>Once you have correctly edited all the json files and applied the appropriate patches, run the HP Helion
           OpenStack Configuration Processor:
             <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
             Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
@@ -395,6 +476,11 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
         controller nodes in the non-KVM region. </p>
       <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
     </section>
+    <section><title>Applying the HLM Port Security Patch</title>This patch secures all ports on the
+      HLM VM. The standard protocol ports will allow inbound access only and the only the cloud
+      nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see
+        <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port
+          Security Patch</xref>.</p></section>
 <!--    <section>        
       <title>  Apply the Horizon interface patch:</title> 
       <ol><li>Locate the <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file you downloaded to the HLM host and

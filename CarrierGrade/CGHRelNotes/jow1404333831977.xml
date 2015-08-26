@@ -18,15 +18,15 @@
         <!--  
         <section>CG-1307; ;CG-1305; CG-1292</section>
        -->
-        <section><title>Enable GRE in iptables</title>
-            <!-- CG-1265 -->
-            <p>If an environment uses more than one VRS-G node, you must enable Generic Routing Encapsulation (GRE) in the IP tables.</p>
-            <ol><li>On each VRS-G node, navigate to the /etc/ufw/before.rules file.</li>
-                <li>Add the following lines to the file, before the <codeph>COMMIT</codeph> line:
-                    <codeblock>-A ufw-before-input -p 47 -j ACCEPT</codeblock>
-                </li>
-                <li>Save and close the file.</li>
-            </ol>
+        <section><title>Potential Vulnerability with Intel® LAN Products with SR-IOV</title>
+            <p>In Intel® LAN products with SR-IOV capability, the potential exists where, under
+                specific conditions, Virtual Machines (VMs) can cause network congestion spreading,
+                a well-known side-effect of Ethernet flow control, which could affect other VMs as
+                well as the Hypervisor itself.</p>
+            <p>For more information, see <xref
+                    href="Potential Vulnerability with Intel® LAN Products with SR-IOV"
+                    format="html" scope="external">the bulletin in the Intel Security
+                Center</xref>.</p>
         </section>
         <section><title>Non-shared services do not work from Horizon dashboard</title>
             <ol><li>1. Go to each controller node in the non-KVM region and replace <codeph>user.py</codeph> file in the following location:

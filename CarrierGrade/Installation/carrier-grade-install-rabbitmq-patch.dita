@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the Random RabbitMQ
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the Rabbit MQ Random
     Password Patch</title>
 <prolog>
   <metadata>
@@ -15,27 +15,34 @@
 </prolog>
 <body>
     <p><!--Based on https://wiki.hpcloud.net/display/HCG/.Helion+CG+1.1+GA+Patch+Instructions--></p>
-    <section>
-      <p>After executing this patch, OpenStack services will use a string of random characters (as
-        specified in the service definition) as the RabbitMQ password. By default the services will
-        use "guest" as the password. The service definition can be verified by looking at the
-        services' configuration files. </p>
-      <p><b>Notes:</b></p>
-        <ul id="ul_ss3_c5j_dt">
-          <li>The Ceilometer service will be set to always use the password
+    <section><p>After executing this patch, OpenStack services will use a string of random
+        characters (as specified in the service definition) as the RabbitMQ password. By default the
+        services will use "guest" as the password. The service definition can be verified by looking
+        at the services' configuration files. </p><p>The password is located in the
+          <codeph>&lt;cloud-name&gt;/clouds/v0/001/stage/ansible/group_vars/&lt;tier-name&gt;</codeph>
+          file at: <codeblock>
+FND_RMQ: 
+vars:  
+rmq_service_password:random
+rmq_service_user: guest
+          </codeblock>
+          <p>The random password is in the <codeph>rmq_service_password</codeph> field.</p>
+                      
+          <p><b>Notes:</b></p><ul id="ul_ss3_c5j_dt">
+        <li>The Ceilometer service will be set to always use the password
             <codeph>metering_secret</codeph>.</li>
-          <li>The Nova and Neutron services will be set to use the password
-            <codeph>metada_shared_secret</codeph>.</li></ul>
-            <p>The services will communicate with RabbitMQ using the newly defined password. </p>
-      <p>To apply the patch:</p>
-      <ol id="ol_dhy_1pj_dt">
+        <li>The Nova and Neutron services will be set to use the password
+            <codeph>metada_shared_secret</codeph>.</li>
+      </ul><p>The services will communicate with RabbitMQ using the newly defined password.
+        </p><p>You should have downloaded the patch files in the <xref
+          href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
+        >Prerequisites</xref>.</p><p>To apply the patch:</p><ol id="ol_dhy_1pj_dt">
         <li>Copy the <codeph>random-password.tar.gz</codeph> to the
             <codeph>~/patch_cghelion1.1</codeph> directory.
           <codeblock>cp random-password.tar.gz ~/patch_cghelion1.1</codeblock></li>
         <li>Use the following command to extract the <codeph>random-password.tar.gz</codeph>:
           <codeblock>tar -zxvf random-password.tar.gz</codeblock></li>
-      </ol>
-    </section>
+      </ol></section>
       <section><title>Apply the patch to the Configuration Processor</title>
         <ol>
         <li>Change to the following directory:

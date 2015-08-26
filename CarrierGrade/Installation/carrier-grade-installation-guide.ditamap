@@ -52,6 +52,10 @@
                 <topicref href="carrier-grade-install-vsvapp.dita" toc="no"/>
                 <topicref href="carrier-grade-install-config-ldap3.dita" toc="no"
                     navtitle="Configuring LDAP 3" locktitle="yes"/>
+                <topicref href="carrier-grade-install-rabbitmq-patch.dita" toc="no"/>
+                <topicref href="carrier-grade-install-secure-port-patch.dita" toc="no"/>
+                <topicref href="carrier-grade-install-services-netcan.dita" toc="no"/>
+                <topicref href="carrier-grade-install-helion-password-patch.dita" toc="no"/>
             </topicref>
             <topicref href="carrier-grade-install-launch-horizon.dita"/>
         </topichead>
