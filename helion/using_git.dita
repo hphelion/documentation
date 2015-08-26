@@ -15,8 +15,10 @@
     <p/>
     <p>The git repository provides a way for you to merge changes that you pull down as "upstream"
       updates, and allows you to manage your site configuration. </p>
-    <p><b>Initialization on a new deployment</b>
-    </p>
+    
+    <section>
+      <title>Initialization on a new deployment</title>
+    
     <p>On a system new to HP Helion OpenStack 2.0, the deployer will prepare a git repository under
       ~/helion. The deployer provisioning runs the hlm-init-deployer script automatically; this
       calls ansible-playbook -i hosts/localhost git-00-initialise.yml.</p>
@@ -39,8 +41,10 @@
           <dd>definition</dd>
         </dlentry>
       </dl> The use of each of these branches is detailed below. </p>
-    <p><b>When receiving a new Helion drop</b>
-    </p>
+    </section>
+    <section>
+      <title>When receiving a new Helion drop</title>
+  
     <note>The steps for new drops will only be run on HP Helion OpenStack 2.0 Beta 1 and later. The
       git repository is not present in Beta 0.</note>
     <p>When you are ready to deploy a new deployer image, you must merge any configuration changes
@@ -85,8 +89,10 @@
       there is no guarantee that any additional CP state accruing will gain any measure of
       real-world semantics by being used for a deployment. We always reset the inputs to the CP to
       the last *deployed* persistent state. </p>
-    <p><b>Prepare and run a deployment</b>
-    </p>
+    </section>
+    <section> 
+      <title>Prepare and run a deployment</title>
+   
     <p>A deployment area is prepared to run an update or a deploy from. At this point we consider
       the staged output from the CP to be 'live' - promoting the commits to the long-lived 'ansible'
       and 'cp-persistent' branches. </p>
@@ -109,8 +115,9 @@
       upgrades, that any topology change will require ansible to know where services _used_ to run
       in order to successfully find and disable them. At the moment, the best use of this directory
       is as a convenient tree to run "diff" from. <?oxy_custom_end?></p>
-    <p><b>Updating your configuration</b>
-    </p>
+    </section>
+    <section><title>Updating your configuration</title>
+    
     <p>When you need to make updates to your existing configuration you must <ol>
         <li>check out the _______ git branch.</li>
         <li>edit the yaml file or files that contain the configuration you want to change. </li>
@@ -118,5 +125,6 @@
         <li>run the configuration processor.</li>
       </ol>
     </p>
+    </section>
   </body>
 </topic>
