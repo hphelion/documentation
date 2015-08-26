@@ -422,7 +422,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
           syntactical errors using the tool of your preference. For example, using the Python
           json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>
       </ol></section>
-    <section>
+    <section id="patches">
       <title>Apply the Rabbit MQ Random Password patch</title>
       <p>For information, see <xref href="carrier-grade-install-rabbitmq-patch.dita#topic10581"
         >Applying the Random RabbitMQ Password Patch</xref>.</p>
@@ -468,7 +468,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
             region.</p></li>
       </ol>
     </section>
-    <section>
+    <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
       <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
         v2 authorization. The services need to be modified to use Keystone v3.  Users will not be

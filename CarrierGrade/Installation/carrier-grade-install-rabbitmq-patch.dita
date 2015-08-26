@@ -102,5 +102,9 @@ patching file ansible-playbooks/roles/FND-RMQ/tasks/updateusrpass.yml </codebloc
           file:<codeblock>./hlm_prepare-env.sh</codeblock></li>
       </ol>
     </section>
+  <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patches">KVM
+      installation</xref>.</p>
+  <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/patches">the KVM + ESX
+        installation</xref>.</p>
   </body>
 </topic>

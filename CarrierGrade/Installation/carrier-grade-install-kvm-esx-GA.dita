@@ -546,7 +546,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
                 </ol>
               </p>
         </section>
-        <section>
+        <section id="patches">
           <title>Apply the RabbitMQ Random Password patch</title>
           <p>For information, see <xref href="carrier-grade-install-rabbitmq-patch.dita#topic10581"
             >Applying the Random RabbitMQ Password Patch</xref>.</p>
@@ -605,7 +605,7 @@ The configuration processor completed successfully.
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
     </section>
-    <section>
+    <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
       <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
         v2 authorization. The services need to be modified to use Keystone v3.  Users will not be
