@@ -8,6 +8,16 @@
 <p></p>
 </section>
 -->
+  
+  <section>
+    <title>How do I change my service passwords from the default?</title>
+    <p>By default the user name and password to administer the services (such as Horare admin and
+        admin. Service accounts are within default domain, so they are stored in MySQL. The default
+        password can be changed  via the Keystone API, using
+        <codeblock>openstack user password set –password &lt;one_password> </codeblock> However,
+        this password will also need to be updated in the respective service configurations (for
+        example, in /etc/nova/nova.conf file for Nova). </p>
+  </section>
 <section id="Neutron"> <title>Neutron Features</title>
 <!--- THIS QUESTION HAS THINGS THAT HAVE NOT BEEN VERIFIED FOR HOS 2.0
 <p><b>How does NIC bonding work?</b></p>
