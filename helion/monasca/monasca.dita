@@ -65,12 +65,12 @@
       <p>For details on the use of the Operations Console, see <xref href="opsconsole/overview.dita"
           >Operations Console Overview</xref></p>
       <b>Command-Line Interface</b>
-      <p>The python-monascaclient is the Monasca CLI and can be installed using python-pip.</p>
+      <p>For users who prefer using the command line, there is the python-monascaclient.</p>
       <p>For details on the CLI, including installation instructions, see <xref
           href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
           format="html" scope="external">Python-Monasca Client</xref></p>
       <b>Monasca API</b>
-      <p>The Monasca REST API offers you low-level access to all monitoring operations.</p>
+      <p>If low-level access is desired, there is the Monasca REST API.</p>
       <p>Full details of the Monasca API can be found <xref
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">on GitHub</xref></p>
@@ -80,11 +80,11 @@
     <section id="servicealarms"><title>Service Alarm Definitions</title>
       <p>Helion OpenStack comes with some predefined monitoring alarms for the services
         installed.</p>
-      <p>When alarms are triggered it is helpful to review the service logs. Details on how
-        to use the logging UI built into the Operations Console can be found here: <xref
-          href="../logging/logging_overview.dita#interface">Logging Interface</xref></p>
       <p>Full details of all service alarms can be found here: <xref href="alarms.dita">Service
           Alarm Definitions</xref>.</p>
+      <p>When alarms are triggered it is helpful to review the service logs. Details on how to use
+        the logging UI built into the Operations Console can be found here: <xref
+          href="../logging/logging_overview.dita#interface">Logging Interface</xref></p>
     </section>
   </body>
 </topic>
