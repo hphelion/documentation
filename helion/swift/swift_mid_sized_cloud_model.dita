@@ -114,7 +114,7 @@
 - id: "4"
           name: swpac
           server-role: ROLE-SWPAC
-          member-count: 3
+          member-count: <b>3</b>
           service-components:
             - ntp-client
             - swift-proxy
@@ -210,16 +210,16 @@
           rings:
             - account
             - container</codeblock></p><p>In
-        the above example, <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> disk drives are
-        used by Swift and <codeph>/dev/sda5</codeph> is used for the operating system.</p><p>The
-        disk model has the following fields:</p><ul>
+        the above example, Swift uses <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> disk
+        drives and  operating system uses <codeph>/dev/sda</codeph> disk drives.</p><p>The disk
+        model has the following fields:</p><ul>
         <li><b>device-groups</b>: There can be several device groups. This allows different sets of
           disks to be used for different purposes. In this example, there is only one entry in the
           device groups list.</li>
         <li><b>name</b>: This is an arbitrary name for the device group. The name must be unique,
           but is not otherwise used.</li>
         <li><b>devices</b>: This is a list of devices allocated to the device group. For Swift,
-          these devices must meet criteria as explained in <i><xref
+          these devices must meet the criteria as explained in <i><xref
               href="#topic_qkg_l4v_bt/requirement-disk-device" format="dita">Requirements for a disk
               device</xref></i></li>
         <li><b>consumer</b>: This specifies the service that uses the device group. A
@@ -231,15 +231,15 @@
           and <b>container</b> rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model,
             <codeph>object-0</codeph> ring is listed. It would be an error to add the
             <codeph>object-0</codeph> ring to the <codeph>DISK_SET_SWPAC</codeph> disk model because
-          the swift-object service does not run on that type of node.</li>
-      </ul><p>You should review the disk devices in the disk model. See <i><xref
-            href="#topic_qkg_l4v_bt/making-changes-to-swift" format="dita">Making Changes to a Swift
-            Disk Model</xref></i>. </p><p id="requirement-disk-device"><b><i>Requirements for a Disk
-            Device</i></b></p><p>Disk devices listed in the <b>devices</b> list must meet the
-        following criteria:</p><ul>
+          the Swift-object service does not run on PAC node.</li>
+      </ul><p>You should review the disk devices in the disk model before making any changes to the
+        existing model. See <i><xref href="#topic_qkg_l4v_bt/making-changes-to-swift" format="dita"
+            >Making Changes to a Swift Disk Model</xref></i>. </p><p id="requirement-disk-device"
+            ><b><i>Requirements for a Disk Device</i></b></p><p>Disk devices listed in the
+          <b>devices</b> list must meet the following criteria:</p><ul>
         <li>The disk device must exist on the server. For example, if you add
-            <codeph>/dev/sdx</codeph> to a server with only 3 devices then the deploy process will
-          fail.</li>
+            <codeph>/dev/sdx</codeph> to a server with only 3 devices then the deploy process
+          fails.</li>
         <li>The disk device must be unpartitioned or have a single partition that uses the whole
           drive.</li>
         <li>Do not have a label on the partition. &lt;<b>is there any example we can
@@ -253,12 +253,12 @@
             process? </b>></li>
       </ul><p id="making-changes-to-swift"><i><b>Making Changes to a Swift Disk Model</b></i></p><p>
         There are several reasons for changing the disk model as follows:</p><ul>
-        <li>It is advices that if you have additional drives available then you can add the drives
-          to the devices list</li>
+        <li>It is adviced that if you have additional drives available then you can add the drives
+          to the devices list.</li>
         <li>The disk devices listed in the example disk model have different names on your servers.
-          This may be due to probe order differences or differences due to the type of devices. Edit
-          the disk model (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) and
-          change the device names to the correct names.</li>
+          This may be due different harware drives. Edit the disk model
+            (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) and change the
+          device names to the correct names.</li>
         <li>If you prefer a different disk drive than the one listed in the model. For example, if
             <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you
           have SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In
