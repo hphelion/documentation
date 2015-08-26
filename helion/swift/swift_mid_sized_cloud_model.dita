@@ -258,7 +258,7 @@
         <li>The disk devices listed in the example disk model have different names on your servers.
           This may be due different harware drives. Edit the disk model
             (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) and change the
-          device names to the correct names.<table frame="all" rowsep="0" colsep="0"
+          device names to the correct names.<!--<table frame="all" rowsep="0" colsep="0"
             id="table_rwv_rpm_dt">
             <tgroup cols="1">
               <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -268,7 +268,7 @@
                 </row>
               </tbody>
             </tgroup>
-          </table></li>
+          </table>--></li>
         <li>If you prefer a different disk drive than the one listed in the model. For example, if
             <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you
           have SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In
