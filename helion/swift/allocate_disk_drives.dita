@@ -84,7 +84,8 @@
         the Swift-object service does not run on PAC node.</li>
     </ul>
     <p>You should review the disk devices in the disk model before making any changes to the
-      existing model. See Making Changes to a Swift Disk Model. </p>
+      existing model. See <xref href="#topic_twv_b55_dt/making-changes-to-swift" format="dita"
+        >Making Changes to a Swift Disk Model</xref>. </p>
     <p id="requirement-disk-device"><b><i>Requirements for a Disk Device</i></b></p>
     <p>Disk devices listed in the <b>devices</b> list must meet the following criteria:</p>
     <ul id="ul_fsy_255_dt">
