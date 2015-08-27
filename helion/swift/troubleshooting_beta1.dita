@@ -8,9 +8,9 @@
       error perform the following steps:<ol id="ol_szd_tht_dt">
         <li>Log onto the node that has been designated as the Ring-Builder. <note> You must run the
               <codeph>_swift-validate-input-model.yml</codeph> playbook as mentioned in step
-              <b>2</b> in <xref href="#topic_flx_j2b_ws/CloudDeploy" format="dita"/> otherwise the
-            files needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on
-            the node. </note></li>
+              <b>2</b> in <xref href="../installation.dita#topic_flx_j2b_ws/CloudDeploy"/> otherwise
+            the files needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in
+            place on the node. </note></li>
         <li>Execute the following
             command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report </codeblock><p>
             The command will report any errors or problems with the input model. It also prints a

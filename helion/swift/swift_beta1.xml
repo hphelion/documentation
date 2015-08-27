@@ -7,9 +7,7 @@
                 id="ul_c5c_gjm_dt">
                 <li><xref href="#topic_qkg_l4v_bt/node-type" format="dita">Node Type</xref></li>
                 <li><xref href="#topic_qkg_l4v_bt/config-swift-services" format="dita">Configuration
-                        of Swift Services in the Mid Sized Cloud Model</xref></li>
-                <li><xref href="#topic_qkg_l4v_bt/allocate-server" format="dita">Allocating
-                        Server</xref></li>
+                        of Swift Services in the entry-scale-with-vsa</xref></li>
                 <li><xref href="#topic_qkg_l4v_bt/allocating-disk-drives" format="dita">Allocating
                         Disk Drives</xref></li>
                 <li><xref href="#topic_qkg_l4v_bt/allocation-network" format="dita">Allocating
@@ -28,8 +26,6 @@
                 Swift-account, and Swift-container services. These services run on one (PAC) node
                 type in a control plane. This is used for in larger clouds or where a larger Swift
                 system is in use or planned.</li>
-            <li>The Swift-Proxy, Account and Container services run on one (PAC) node type in a
-                control plane and the Object services run </li>
       <li><b>Object (OBJ) Node</b>: This node runs the Swift-object service. This service runs on
                 another (OBJ) node type in a resource pool. This is used for in larger clouds or
                 where a larger Swift system is in use or planned.</li>
@@ -39,7 +35,9 @@
                 for <b>entry-scale-with-vsa</b> model:</p></section>
     <ul>
       <li><codeph>data/control_plane.yml</codeph><p/></li>
-            <li><codeph>data/disk_controller.yml</codeph><p/></li>
+            <li><codeph>data/disk_controller.yml</codeph><p>This <codeph>yml</codeph> file contains
+          the Swift information (swiftobj disk-group). This describes what disks on each of the
+          servers are assigned to Swift and the rings that uses those drives.</p></li>
       <li><codeph>config/swift/rings.yml</codeph><p>Swift account, container, and object storage are
                     managed by Swift using a data structure known as a <i>ring</i>. This
                         <codeph>yml</codeph> file provides the specification of the rings. For more
