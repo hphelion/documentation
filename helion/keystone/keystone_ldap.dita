@@ -10,7 +10,7 @@
         the option to specify identity driver configurations on a domain-by-domain basis. This
         allows you to, for example, give a specific domain its own LDAP server. In general, the
         process to create an LDAP domain in Keystone looks like this:</p>
-      <p><image href="../../media/keystone/ldap_flow.png" id="image_ifn_j2t_ct"/></p>
+      <p><image placement="break" href="../../media/keystone/ldap_flowold.png"/></p>
       <p>With domain_specific_drivers_enabled set to True, the ability to add domains individually
         will be enabled, causing Keystoneinstalled on each control plane server to look in the
           <b>/etc/keystone/domains</b> directory for configuration file of the form
