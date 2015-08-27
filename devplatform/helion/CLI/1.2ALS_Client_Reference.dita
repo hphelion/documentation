@@ -17,20 +17,17 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/CLI/1.2ALS_Client_Reference.md-->
- <!--permalink: /helion/devplatform/als/client/reference/--></p>
-<p>The ALS command-line interface client (<codeph>cf-mgmt.exe</codeph>) provides an option for
+    <p><!--PUBLISHED--><!--./devplatform/helion/CLI/1.2ALS_Client_Reference.md--><!--permalink: /helion/devplatform/als/client/reference/--></p>
+    <p>The ALS command-line interface client (<codeph>cf-mgmt.exe</codeph>) provides an option for
       executing commands that construct, manage, update, or delete ALS clusters. Use the command
       line when the Horizon management console is unavailable or when direct access is
       preferred.</p>
-<ul>
-<li>
-<xref type="section" href="#topic13234/global">Global Options</xref>
-</li>
+    <ul>
+      <li>
+        <xref type="section" href="#topic13234/global">Global Options</xref>
+      </li>
       <li><xref href="#topic13234/update-the-cf-mgmt-tool" format="dita"/></li>
-<li>
+      <li>
         <xref type="section" href="#topic13234/commands">Cluster Commands</xref>
         <ul id="ul_j43_nzl_ms">
           <li>
@@ -39,6 +36,8 @@
           <li>
             <xref type="section" href="#topic13234/delete">Delete a Cluster</xref>
           </li>
+          <li><xref type="section" href="#topic13234/list">List Clusters in a Tenant</xref></li>
+          <li><xref type="section" href="#topic13234/show">Display Detailed Cluster Information</xref></li>
           <li>
             <xref type="section" href="#topic13234/addrole">Add a Role to an Existing Cluster</xref>
           </li>
@@ -47,16 +46,20 @@
               Cluster</xref>
           </li>
         </ul></li>
-</ul>
-<section id="configuration-values"> <title>Configuration Values</title>
-<p>There are three ways to pass configuration values into ALS:</p>
-<ul>
-<li>Direct entry through the <codeph>cf-mgmt</codeph> tool</li>
-<li>Defined in an <xref href="../user/reference/1.2environment.dita">environment variable</xref></li>
-<li>Recorded in a <xref href="#topic13234/downloadfile" format="dita">configuration file</xref>
+    </ul>
+    <section id="configuration-values">
+      <title>Configuration Values</title>
+      <p>There are three ways to pass configuration values into ALS:</p>
+      <ul>
+        <li>Direct entry through the <codeph>cf-mgmt</codeph> tool</li>
+        <li>Defined in an <xref href="../user/reference/1.2environment.dita">environment
+            variable</xref></li>
+        <li>Recorded in a <xref href="#topic13234/downloadfile" format="dita">configuration
+            file</xref>
         </li>
-</ul></section>
-<section id="downloadfile">
+      </ul>
+    </section>
+    <section id="downloadfile">
       <title>Configuration Files</title>
       <p>ALS maintains separate configuration files, so configuration values must be included in the
         appropriate file.</p>
@@ -70,14 +73,17 @@
       <p>The other configuration files, specified by the <b>--load</b> option, includes the values
         that should be passed as arguments to a specific command. </p>
     </section>
-<section id="global"> <title>Global Options</title>
-<p>These variables affect the entire cluster; they are <b>global</b> in scope. These environment variables are configured to work with the <tm tmtype="reg">OpenStack</tm> Python tools to enable faster integration.</p>
-<codeblock>cf-mgmt <b>[global options]</b> command [command options] [arguments...] </codeblock>
-<table>
-<tgroup cols="4">
-          <colspec colname="col1"/>
-          <colspec colname="col2"/>
-          <colspec colname="col3"/>
+    <section id="global">
+      <title>Global Options</title>
+      <p>These variables affect the entire cluster; they are <b>global</b> in scope. These
+        environment variables are configured to work with the <tm tmtype="reg">OpenStack</tm> Python
+        tools to enable faster integration.</p>
+      <codeblock>cf-mgmt <b>[global options]</b> command [command options] [arguments...] </codeblock>
+      <table>
+        <tgroup cols="4">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="1*"/>
+          <colspec colname="col3" colwidth="1*"/>
           <colspec colname="newCol4" colwidth="1*"/>
           <thead>
             <row>
@@ -169,17 +175,20 @@
             </row>
           </tbody>
         </tgroup>
-</table>
-</section>
-<section id="commands"> <title>Cluster Commands</title>
-<p>These commands are available from the command line interface.</p>
-</section>
-<section id="use-syntax"> <title>Use Syntax</title>
-<codeblock>cf-mgmt [global options] <b>command</b> [command options] [arguments...] </codeblock>
-</section>
-<section id="command-options"> <title>Command Options</title>
-<table>
-<tgroup cols="2">
+      </table>
+    </section>
+    <section id="commands">
+      <title>Cluster Commands</title>
+      <p>These commands are available from the command line interface.</p>
+    </section>
+    <section id="use-syntax">
+      <title>Use Syntax</title>
+      <codeblock>cf-mgmt [global options] <b>command</b> [command options] [arguments...] </codeblock>
+    </section>
+    <section id="command-options">
+      <title>Command Options</title>
+      <table>
+        <tgroup cols="2">
           <colspec colname="col1" colwidth="109.5pt"/>
           <colspec colname="col2" colwidth="445.5pt"/>
           <thead>
@@ -198,12 +207,20 @@
               <entry>Deletes a cluster</entry>
             </row>
             <row>
-              <entry>add-role, ar</entry>
-              <entry>Add node of the specified role to an existing cluster.</entry>
+              <entry>list-clusters, lc</entry>
+              <entry> List clusters within a tenant. </entry>
+            </row>
+            <row>
+              <entry>show-cluster, sc </entry>
+              <entry>Display detailed cluster information.</entry>
             </row>
             <row>
               <entry>add-service, as</entry>
               <entry>Add services to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>add-role, ar</entry>
+              <entry>Add node of the specified role to an existing cluster.</entry>
             </row>
             <row>
               <entry>update, up</entry>
@@ -215,15 +232,16 @@
             </row>
           </tbody>
         </tgroup>
-</table>
-</section>
-<section id="create"> <title>Create a Cluster</title>
-<p>This command creates a cluster. (<i>create-cluster</i>).</p>
-<codeblock>cf-mgmt [global options] <b>create-cluster</b> [command options] [arguments...] </codeblock>
-<p>For help with this command within the command-line interface, enter</p>
-<codeblock>cf-mgmt help create-cluster</codeblock>
-<table>
-<tgroup cols="3">
+      </table>
+    </section>
+    <section id="create">
+      <title>Create a Cluster</title>
+      <p>This command creates a cluster. (<i>create-cluster</i>).</p>
+      <codeblock>cf-mgmt [global options] <b>create-cluster</b> [command options] [arguments...] </codeblock>
+      <p>For help with this command within the command-line interface, enter</p>
+      <codeblock>cf-mgmt help create-cluster</codeblock>
+      <table>
+        <tgroup cols="3">
           <colspec colname="col1" colwidth="1*"/>
           <colspec colname="col2" colwidth="1.9*"/>
           <colspec colname="newCol3" colwidth="1.45*"/>
@@ -405,23 +423,26 @@
             </row>
             <row>
               <entry>--upstream-proxy </entry>
-              <entry>Upstream proxy. (Protocol://hostname:port. For example:<codeph> http://proxy.comp.net:8080</codeph>)</entry>
+              <entry>Upstream proxy. (Protocol://hostname:port. For example:<codeph>
+                  http://proxy.comp.net:8080</codeph>)</entry>
               <entry>No</entry>
             </row>
             <row>
               <entry>--http-proxy</entry>
-              <entry>HTTP proxy.(Protocol://hostname:port. For example:<codeph> http://proxy.comp.net:8080</codeph>)</entry>
+              <entry>HTTP proxy.(Protocol://hostname:port. For example:<codeph>
+                  http://proxy.comp.net:8080</codeph>)</entry>
               <entry>No</entry>
             </row>
             <row>
               <entry>--https-proxy</entry>
-              <entry>HTTPS proxy. (Protocol://hostname:port. For example:<codeph> http://proxy.comp.net:8080</codeph>)</entry>
+              <entry>HTTPS proxy. (Protocol://hostname:port. For example:<codeph>
+                  http://proxy.comp.net:8080</codeph>)</entry>
               <entry>No</entry>
             </row>
             <row>
               <entry>--ftpproxy</entry>
               <entry>FTP proxy. (Protocol://hostname:port. For example:
-                <codeph>ftp://proxy.comp.net:8080</codeph>)</entry>
+                  <codeph>ftp://proxy.comp.net:8080</codeph>)</entry>
               <entry>No</entry>
             </row>
             <row>
@@ -471,19 +492,22 @@
             </row>
           </tbody>
         </tgroup>
-</table>
-</section>
-<section id="delete"> <title>Delete a Cluster</title>
-<p>This command deletes a cluster (<i>delete-cluster</i>).</p>
-</section>
-<section id="delete-cluster-use-syntax"> <title>Use Syntax</title>
-<codeblock>cf-mgmt [global options] <b>delete-cluster</b> [command options] [arguments...] </codeblock>
-<p>For help with this command within the command-line interface, enter</p>
-<codeblock>cf-mgmt help delete-cluster</codeblock>
-</section>
-<section id="delete-cluster-command-options"> <title>Command Options</title>
-<table>
-<tgroup cols="3">
+      </table>
+    </section>
+    <section id="delete">
+      <title>Delete a Cluster</title>
+      <p>This command deletes a cluster (<i>delete-cluster</i>).</p>
+    </section>
+    <section id="delete-cluster-use-syntax">
+      <title>Use Syntax</title>
+      <codeblock>cf-mgmt [global options] <b>delete-cluster</b> [command options] [arguments...] </codeblock>
+      <p>For help with this command within the command-line interface, enter</p>
+      <codeblock>cf-mgmt help delete-cluster</codeblock>
+    </section>
+    <section id="delete-cluster-command-options">
+      <title>Command Options</title>
+      <table>
+        <tgroup cols="3">
           <colspec colname="col1" colwidth="1*"/>
           <colspec colname="col2" colwidth="1.9*"/>
           <colspec colname="newCol3" colwidth="1.45*"/>
@@ -583,24 +607,85 @@
             </row>
           </tbody>
         </tgroup>
-</table>
-</section>
-<section id="addrole"> <title>Add Roles to an Existing Cluster</title>
-<p>Options can be passed when adding roles to an existing cluster (<i>add-role dea</i>). </p>
+      </table>
+    </section>
+    <section id="list">
+      <title>List Clusters</title><p>Lists all clusters that exist on a single tenant. (<i>list-clusters</i>)</p>
+      <title>Use Syntax</title>
+      <codeblock>cf-mgmt [global options] <b>list-clusters</b> [arguments...] </codeblock>
+      <p>For help with this command within the command-line interface, enter</p>
+      <codeblock>cf-mgmt help list-clusters</codeblock>      <table>
+        <tgroup cols="3">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="2.68*"/>
+          <colspec colname="newCol3" colwidth="4.72*"/>
+          <thead>
+            <row>
+              <entry>Command Options</entry>
+              <entry>Description</entry>
+              <entry>Required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>-h</entry>
+              <entry>Shows a list of commands or help for one command.</entry>
+              <entry>No</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  <section id="show">
+    <title>Show Details</title><p>Displays detailed information about a the target cluster. (<i>show-cluster</i>)</p>
+      <p>For help with this command within the command-line interface, enter</p>
+      <codeblock>cf-mgmt help show-cluster</codeblock>
+    <table>
+      <tgroup cols="3">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="3.09*"/>
+          <colspec colname="newCol3" colwidth="4.31*"/>
+          <thead>
+            <row>
+              <entry>Command Options</entry>
+              <entry>Description</entry>
+              <entry>Required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> --cluster-prefix </entry>
+              <entry>Prefix to affix to cluster instance names.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>-h</entry>
+              <entry>Shows a list of commands or help for one command.</entry>
+              <entry>No</entry>
+            </row>
+          </tbody>
+        </tgroup>
+    </table>
+  </section>
+    <section id="addrole">
+      <title>Add Roles to an Existing Cluster</title>
+      <p>Options can be passed when adding roles to an existing cluster (<i>add-role dea</i>). </p>
       <p>
         <note>Adding a role will create one or more additional nodes in the cluster as part of the
           process.</note>
       </p>
-</section>
-<section id="add-role-use-syntax"> <title>Use Syntax</title>
-<codeblock>cf-mgmt [global options] <b>add-role</b> [subcommand] [subcommand options] [arguments...]</codeblock>
-<p>For help with this command within the command-line interface, enter</p>
-<codeblock>cf-mgmt add-role --help</codeblock>
-</section>
-<section id="subcommands"> <title>Subcommands</title>
-<codeblock>cf-mgmt [global options] add-role <b>[subcommand]</b> [subcommand options] [arguments...]</codeblock>
-<table>
-<tgroup cols="2">
+    </section>
+    <section id="add-role-use-syntax">
+      <title>Use Syntax</title>
+      <codeblock>cf-mgmt [global options] <b>add-role</b> [subcommand] [subcommand options] [arguments...]</codeblock>
+      <p>For help with this command within the command-line interface, enter</p>
+      <codeblock>cf-mgmt add-role --help</codeblock>
+    </section>
+    <section id="subcommands">
+      <title>Subcommands</title>
+      <codeblock>cf-mgmt [global options] add-role <b>[subcommand]</b> [subcommand options] [arguments...]</codeblock>
+      <table>
+        <tgroup cols="2">
           <colspec colname="col1" colwidth="1*"/>
           <colspec colname="col2" colwidth="7.33*"/>
           <thead>
@@ -616,12 +701,13 @@
             </row>
           </tbody>
         </tgroup>
-</table>
-</section>
-<section id="sub-command-options"> <title>Sub-Command Options</title>
-<codeblock>cf-mgmt [global options] add-role [subcommand] <b>[subcommand options]</b> [arguments...]</codeblock>
-<table>
-<tgroup cols="3">
+      </table>
+    </section>
+    <section id="sub-command-options">
+      <title>Sub-Command Options</title>
+      <codeblock>cf-mgmt [global options] add-role [subcommand] <b>[subcommand options]</b> [arguments...]</codeblock>
+      <table>
+        <tgroup cols="3">
           <colspec colname="col1" colwidth="1*"/>
           <colspec colname="col2" colwidth="2.13*"/>
           <colspec colname="newCol3" colwidth="1.56*"/>
@@ -727,20 +813,23 @@
             </row>
           </tbody>
         </tgroup>
-</table>
-</section>
-<section id="addservice"> <title>Add Services to an Existing Cluster</title>
-<p>This command adds services to an existing cluster (<i>add-service</i>).</p>
-</section>
-<section id="add-service-use-syntax"> <title>Use Syntax</title>
-<codeblock>cf-mgmt [global options] <b>add-service</b> [subcommand] [subcommand options] [arguments..]</codeblock>
-<p>For help with each subcommand, enter</p>
-<codeblock>cf-mgmt add-service <b>[subcommand]</b> --help</codeblock>
-</section>
-<section id="add-service-subcommands"> <title>Subcommands</title>
-<codeblock>cf-mgmt [global options] add-service <b>[subcommand]</b> [subcommand options] [arguments..]</codeblock>
-<table>
-<tgroup cols="2">
+      </table>
+    </section>
+    <section id="addservice">
+      <title>Add Services to an Existing Cluster</title>
+      <p>This command adds services to an existing cluster (<i>add-service</i>).</p>
+    </section>
+    <section id="add-service-use-syntax">
+      <title>Use Syntax</title>
+      <codeblock>cf-mgmt [global options] <b>add-service</b> [subcommand] [subcommand options] [arguments..]</codeblock>
+      <p>For help with each subcommand, enter</p>
+      <codeblock>cf-mgmt add-service <b>[subcommand]</b> --help</codeblock>
+    </section>
+    <section id="add-service-subcommands">
+      <title>Subcommands</title>
+      <codeblock>cf-mgmt [global options] add-service <b>[subcommand]</b> [subcommand options] [arguments..]</codeblock>
+      <table>
+        <tgroup cols="2">
           <colspec colname="col1" colwidth="119.25pt"/>
           <colspec colname="col2" colwidth="445.5pt"/>
           <thead>
@@ -796,15 +885,16 @@
             </row>
           </tbody>
         </tgroup>
-</table>
-</section>
-<section id="subcommand-options"> <title>Subcommand Options</title>
-<p>Each subcommand in the Add-Service command has these following options available. The
+      </table>
+    </section>
+    <section id="subcommand-options">
+      <title>Subcommand Options</title>
+      <p>Each subcommand in the Add-Service command has these following options available. The
           <varname>mysql</varname> subcommand has <xref href="#topic13234/subcommand-options"
           format="dita">additional options</xref>.</p>
-<codeblock>cf-mgmt [global options] add-service [subcommand] <b>[subcommand options]</b> [arguments..]</codeblock>
-<table>
-<tgroup cols="3">
+      <codeblock>cf-mgmt [global options] add-service [subcommand] <b>[subcommand options]</b> [arguments..]</codeblock>
+      <table>
+        <tgroup cols="3">
           <colspec colname="col1" colwidth="1*"/>
           <colspec colname="col2" colwidth="2.13*"/>
           <colspec colname="newCol3" colwidth="1.56*"/>
@@ -931,10 +1021,10 @@
             </row>
           </tbody>
         </tgroup>
-</table>
-<p>The <varname>mysql</varname> subcommand has additional options.</p>
-<table id="mysqlcommand">
-<tgroup cols="3">
+      </table>
+      <p>The <varname>mysql</varname> subcommand has additional options.</p>
+      <table id="mysqlcommand">
+        <tgroup cols="3">
           <colspec colname="col1"/>
           <colspec colname="col2"/>
           <colspec colname="newCol3" colwidth="1*"/>
@@ -963,15 +1053,17 @@
             </row>
           </tbody>
         </tgroup>
-</table>
-</section>
-<section id="update-the-cf-mgmt-tool"> <title>Update the <codeph>cf-mgmt </codeph>Tool</title>
-<p>This command checks for and downloads the latest version of the <varname>cf-mgmt.exe</varname> tool.</p>
+      </table>
+    </section>
+    <section id="update-the-cf-mgmt-tool">
+      <title>Update the <codeph>cf-mgmt </codeph>Tool</title>
+      <p>This command checks for and downloads the latest version of the
+          <varname>cf-mgmt.exe</varname> tool.</p>
       <p>There are no arguments for this command. Passing the <codeph>Help</codeph> option will
         generate an empty list.</p>
-<codeblock>cf-mgmt <b>update</b></codeblock>
-<table>
-<tgroup cols="2">
+      <codeblock>cf-mgmt <b>update</b></codeblock>
+      <table>
+        <tgroup cols="2">
           <colspec colname="col1" colwidth="1*"/>
           <colspec colname="col2" colwidth="6.41*"/>
           <thead>
@@ -987,7 +1079,7 @@
             </row>
           </tbody>
         </tgroup>
-</table>
-</section>
-</body>
+      </table>
+    </section>
+  </body>
 </topic>
