@@ -131,7 +131,6 @@
         <li>Swift - No backup of the objects</li>
         <li>Operations Console</li>
         <li>Monasca - No backup of the metrics</li>
-        <li>MySQL Database</li>
       </ul>
     </section>
     <section>
