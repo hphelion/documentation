@@ -74,23 +74,23 @@
         <topichead navtitle="General">
           <topicref href="helion/monasca/opsconsole/dashboard.dita"/>
           <topicref href="helion/monasca/opsconsole/logging.dita"/>
-          <topicref href="helion/monasca/opsconsole/alarm_explorer.dita"/>
           <topicref href="helion/monasca/opsconsole/alarm_creation.dita"/>
+          <topicref href="helion/monasca/opsconsole/alarm_explorer.dita"/>
           <topicref href="helion/monasca/opsconsole/notification_methods.dita"/>
           <topicref href="helion/monasca/opsconsole/metric_monitoring.dita" toc="no"/>
         </topichead>
         <topichead navtitle="Compute">
           <topicref href="helion/monasca/opsconsole/compute_summary.dita"/>
           <topicref href="helion/monasca/opsconsole/compute_hosts.dita"/>
-          <topicref href="helion/monasca/opsconsole/compute_instances.dita"/>
-        </topichead>
-        <topichead navtitle="Storage">
-          <topicref href="helion/monasca/opsconsole/storage_summary.dita"/>
+          <topicref href="helion/monasca/opsconsole/compute_instances.dita" toc="no"/>
         </topichead>
         <topichead navtitle="Networking">
           <topicref href="helion/monasca/opsconsole/networking_summary.dita"/>
         </topichead>
-      </topichead>
+        <topichead navtitle="Storage">
+          <topicref href="helion/monasca/opsconsole/storage_summary.dita"/>
+        </topichead>
+     </topichead>
     </topichead>
     <topichead navtitle="Centralized Logging">
       <topicref href="helion/logging/logging_overview.dita" locktitle="yes">

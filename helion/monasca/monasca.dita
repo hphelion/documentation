@@ -86,5 +86,8 @@
         the logging UI built into the Operations Console can be found here: <xref
           href="../logging/logging_overview.dita#interface">Logging Interface</xref></p>
     </section>
+    <section id="workflow"><title>Service Alarm Workflows</title>
+    <p>TBD</p>
+    </section>
   </body>
 </topic>
