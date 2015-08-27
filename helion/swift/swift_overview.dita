@@ -3,8 +3,7 @@
 <topic id="object-storage">
   <title>HP Helion OpenStack Object Storage (Swift)</title>
   <body>
-    <p> </p>
-    <p> A Object Storage (Swift) is Software Defined Storage (SDS) architecture, layered on top of
+    <p>  A Object Storage (Swift) is Software Defined Storage (SDS) architecture, layered on top of
       industry standard servers, using native storage devices which are typically disk drives. Swift
       presents an object paradigm using an underlying set of disk drives. The disk drives are
       managed by a data structure called the "ring". Swift also enable you to store, retrieve, and
@@ -41,7 +40,8 @@
           services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova
           compute servers. The number and usage of disk drives is fixed in the model. Therefore,
           Swift is automatically configured for this system and no changes are needed or anticipated
-          for Swift-specific services. </li>
+          for Swift-specific services. For more details, refer to <xref
+            href="swift_beta1.xml#topic_qkg_l4v_bt">cloud model</xref>.</li>
         <li>
           <p><b>mid sized cloud </b>- This example model describes a system using multiple servers
             and networks. It provides an example for the configuration of the mid sized cloud. You
