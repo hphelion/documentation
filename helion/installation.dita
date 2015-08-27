@@ -112,12 +112,12 @@ helion/hlm/                    Directory contains files used by the installer
                 <li>The <codeph>/data/disks_controller.yml</codeph> contains the Swift information
                   (swiftobj disk-group). This describes what disks on each of the servers are
                   assigned to Swift and the rings that uses those drives. For more information,
-                  refer to <xref href="swift/swift_beta1.xml#topic_qkg_l4v_bt">cloud
-                  model</xref>.</li>
+                  refer to <xref href="swift/swift_input_cloud_model.dita#topic_qkg_l4v_bt">cloud
+                    model modification</xref>.</li>
                 <li>The <codeph>config/swift/rings.yml</codeph> specifies the ring which maps the
                   logical names of data to locations on a particular disks. For more information,
-                  refer to <xref href="swift/swift_beta1.xml#topic_qkg_l4v_bt">cloud
-                  model</xref>.</li>
+                  refer to <xref href="swift/swift_input_cloud_model.dita#topic_qkg_l4v_bt">cloud
+                    model modification</xref>.</li>
                 <li>In the <codeph>net_interfaces.yml</codeph> file, replace all instances of
                   “bond-mode: 1” to “bond-mode: active-backup”.</li>
               </ul></li>

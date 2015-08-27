@@ -3,16 +3,42 @@
 <topic id="topic_qkg_l4v_bt">
   <title>How to Modify Input Model</title>
   <body>
-    <p>This section describes the configuration of Swift services with the various type of input
-      model supported in this release.<ul id="ul_l4q_31v_dt">
-        <li><xref href="#topic_qkg_l4v_bt/configuration-of-swift-vsa-model" format="dita"
-            >Configuration of Swift Services in the entry-scale-with-vsa</xref></li>
-        <li><xref href="#topic_qkg_l4v_bt/config-swift-services" format="dita">Configuration of
-            Swift Services in the Mid Sized Cloud Model</xref></li>
-      </ul></p>
-    <section id="configuration-of-swift-vsa-model"><b>Configuration of Swift Services in the entry-scale-with-vsa</b><p>The following
-          <codeph>yml</codeph> files are configured for <b>entry-scale-with-vsa</b>
-      model:</p></section>
+    <p>This page describes the configuration of Swift services with the various types of input
+      models supported in this release. </p>
+    <p><b>Types of Input Models</b></p>
+    <p>
+      <ul id="ul_l4q_31v_dt">
+        <li><b>
+            <xref href="#topic_qkg_l4v_bt/configuration-of-swift-vsa-model" format="dita"
+              >Entry-scale-with-vsa</xref>
+          </b>- This has a single control plane cluster running all services (Nova, Swift, Glance,
+          etc) with an additional 3 resource nodes used as Nova compute servers. The number and
+          usage of disk drives is fixed in the model. Therefore, Swift is automatically configured
+          for this system and no changes are needed or anticipated for Swift-specific services. </li>
+        <li>
+          <p><b><xref href="#topic_qkg_l4v_bt/config-swift-services" format="dita">mid size
+                cloud</xref>
+            </b>- (<b>NOTE : This model is not supported in Beta1)</b>This example model describes a
+            system using multiple servers and networks. It provides an example for the configuration
+            of the mid sized cloud. You must use this example model as the basis for building a
+            cloud model for your actual cloud by configuring the server and network that you plan to
+            deploy. To deploy Swift using this model you must make Swift -specific changes to the
+            provided example.</p>
+        </li>
+      </ul>
+    </p>
+    <section id="configuration-of-swift-vsa-model"><b>Configuration of Swift Services in the
+        Entry-scale-with-vsa</b><p>This section describes configuration of Swift services in th
+        entry-scal-with-vsa.</p></section>
+    <section><b>Node Type</b><p><b>Proxy, Container, Account, Object (PACO) Node</b>: The
+        Swift-proxy, Account, Container and Object services run on the same (PACO) node type in the
+        control plane. This is used for smaller clouds or where Swift is a minor element in a larger
+        cloud.</p></section>
+    <section><b>YML files associated with Swift Services</b></section>
+    <section>
+      <p>The following <codeph>yml</codeph> files are configured for <b>entry-scale-with-vsa</b>
+        model:</p>
+    </section>
     <p>
       <ul>
         <li><codeph>data/control_plane.yml</codeph><p/></li>
@@ -35,8 +61,9 @@
         </li>
       </ul>
     </p>
-    <section id="config-swift-services"><b>Configuration of Swift Services in the Mid Size Cloud
-        Model</b></section>
+    <section id="config-swift-services"><b><b>Configuration of Swift Services in the Mid Size Cloud
+          Model</b></b><p>This section describes configuration of Swift services  in the mid size
+        cloud model.</p></section>
     <section id="node-type"><b>Node Type</b></section>
     <p>There are two type of nodes that is associated with Swift services. They are as follows:</p>
     <ul>
@@ -48,6 +75,7 @@
       <li><b>Object (OBJ) Node</b>: This node runs the Swift-object service. The Swift-object
         service handles requests for objects.</li>
     </ul>
+    <section><b>YML files associated with Swift Services</b></section>
     <section>
       <p>In the example mid sized cloud model, the Swift services are configured in the following
           <codeph>yml</codeph> files:</p>
