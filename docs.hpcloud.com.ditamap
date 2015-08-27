@@ -48,11 +48,11 @@
     </topichead>
     <!-- Monitoring and Logging -->
     <topichead navtitle="Monitoring">
-      <!--  <topicref href="helion/monasca/monasca.dita" locktitle="yes">
+       <topicref href="helion/monasca/monasca.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Monitoring Overview</navtitle>
         </topicmeta>
-      </topicref>--> 
+      </topicref> 
       <topicref href="helion/monasca/alarms.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Service Alarm Definitions</navtitle>
