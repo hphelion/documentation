@@ -130,7 +130,7 @@
     </topichead>
     <topichead navtitle="Object Storage">
       <topicref href="helion/swift/swift_overview.dita"/>
-      <topicref href="helion/swift/swift_mid_sized_cloud_model.dita" toc="no"/>
+      <topicref href="helion/swift/swift_input_cloud_model.dita"/>
       <topicref href="helion/swift/allocate_disk_drives.dita"/>
       <topicref href="helion/swift/ring_parameters.dita"/>
       <topicref href="helion/swift/label_on_partition.dita"/>

@@ -3,15 +3,12 @@
 <topic id="topic_dlv_54t_dt">
   <title>Label on Partition</title>
   <body>
-    <p>This page explains the procedure to check whether a device has labels on partition..<ul
-        id="ul_yx2_4st_dt">
-        <li><xref href="#topic_dlv_54t_dt/filesystem-label" format="dita">Filesytem
-          label</xref></li>
-      </ul></p>
+    <p>This page explains the procedure to check whether a device has labels on partition..</p>
     <section id="label-partition">
-      <p> To check whether a device has labels on a partition, log on to the server (<b>server
-          means- disk/devices?</b>) and use the parted command as
-        follows:<codeblock>sudo parted -l</codeblock>The output lists all of the block devices.
+      <p> To check whether a device has labels on a partition, perform the folowing step:<ul
+          id="ul_tjw_1z5_dt">
+          <li>Log on to the Node and use the parted command as follows:</li>
+        </ul><codeblock>sudo parted -l</codeblock>The output lists all of the block devices.
         Following is an example output for <codeph>/dev/sdc.</codeph> with a single partition and a
         label of <b>c0a8f502h000</b>. Therefore the device has a
         label.<codeblock>.
@@ -24,29 +21,12 @@ Partition Table: gpt
 Disk Flags: 
 
 Number  Start   End     Size    File system  Name          Flags
-1      1049kB  20.0GB  20.0GB  xfs          c0a8f502h000
+1      1049kB  20.0GB  20.0GB  xfs          <b>c0a8f502h000</b>
 
 .
 .
 .</codeblock></p>
     </section>
-    <section id="filesystem-label"><b>Filesytem label</b><p>To check whether a filesystem has labels
-        on a partition, log on to the server and execute the <codeph>xfs_admin</codeph> command as
-        follows (where <codeph>/dev/sdc1</codeph> is the partition where the filesystem is
-        located).<codeblock>--code--
-sudo xfs_admin -l /dev/sdc1
- --end-code</codeblock></p></section>
-    <p>The output shows if a filesystem has a label. For exampe, this shows a label of
-        <b>c0a8f502h000</b>.<codeblock>--code--
-$ sudo xfs_admin -l /dev/sdc1
-label = "c0a8f502h000"
---end-code---</codeblock></p>
-    <p>If no filesystem exists, the result is similar as
-      follows:<codeblock>--code--
-$ sudo xfs_admin -l /dev/sde1
-xfs_admin: /dev/sde is not a valid XFS filesystem (unexpected SB magic number 0x00000000)
---end-code--</codeblock></p>
-    <p>In this example, <codeph>/dev/sde1</codeph> does not have a filesystem label.</p>
     <p> </p>
   </body>
 </topic>
