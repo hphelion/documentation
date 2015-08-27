@@ -19,13 +19,13 @@
           follows:</p><codeblock>server-roles:   
 
 
-    - name: ROLE-SWPAC 16 
-      interface-model: INTERFACE_SET_SWPAC 17 
-      disk-model: DISK_SET_SWPAC 18 
+    - name: ROLE-SWPAC  
+      interface-model: INTERFACE_SET_SWPAC  
+      disk-model: DISK_SET_SWPAC  
 
 
-    - name: ROLE-SWOBJ 24 
-      interface-model: INTERFACE_SET_SWOBJ 25 
+    - name: ROLE-SWOBJ  
+      interface-model: INTERFACE_SET_SWOBJ  
       disk-model: DISK_SET_SWOBJ 
 </codeblock></li>
         <li>The Object server uses the <codeph>DISK_SET_SWOBJ</codeph> disk model in the

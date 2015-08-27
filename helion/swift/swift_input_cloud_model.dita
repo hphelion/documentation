@@ -18,7 +18,9 @@
         <li><codeph>data/control_plane.yml</codeph><p/></li>
         <li><codeph>data/disk_controller.yml</codeph><p>This <codeph>yml</codeph> file contains the
             Swift information (swiftobj disk-group). This describes what disks on each of the
-            servers are assigned to Swift and the rings that uses those drives.</p></li>
+            servers are assigned to Swift and the rings that uses those drives. For more information
+            about allocating a disk drives, refer to <xref
+              href="allocate_disk_drives.dita#topic_twv_b55_dt"/></p></li>
         <li><codeph>config/swift/rings.yml</codeph><p>Swift account, container, and object storage
             are managed by Swift using a data structure known as a <i>ring</i>. This
               <codeph>yml</codeph> file provides the specification of the rings. For more
@@ -67,13 +69,15 @@
       <li>
         <p><u>data/disks_swpac.yml</u></p>
         <p>The Proxy, Container, Account node type uses two disk drives to store account and
-          container databases which is specified in this file.</p>
+          container databases which is specified in this file. For more information about allocating
+          a disk drives, refer to <xref href="allocate_disk_drives.dita#topic_twv_b55_dt"/></p>
       </li>
       <li>
         <p>
           <u>data/disks_swobj.yml</u></p>
         <p>The Object node type uses two disk drives to store account and container databases which
-          is specified in this file.</p>
+          is specified in this file. For more information about allocating a disk drives, refer to
+            <xref href="allocate_disk_drives.dita#topic_twv_b55_dt"/></p>
       </li>
       <li><u>config/swift/rings.yml</u><p>Swift account, container, and object storage are managed
           by Swift using a data structure known as a <i>ring</i>. This <codeph>yml</codeph> file
@@ -85,7 +89,7 @@
           <u>data/network_groups.yml</u></p>
         <p>This <codeph>yml</codeph> file specifies the MGMT and Swift networks. The Swift-proxy
           service uses the Swift network to communicate with the other Swift services and among
-          themselves.</p>
+          themselves. For more information about allocating a disk drives, refer to </p>
       </li>
       <li> The Swift-proxy service uses other cloud services as follows. Both of these are
         configured in the example to run on the <b>core</b> cluster:<ul>
