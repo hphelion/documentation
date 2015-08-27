@@ -106,7 +106,7 @@
     </section>
     <section id="diagram">
       <title>Diagram of the Backup Service</title>
-      <p><image placement="break" href="../../media/bura/bura_diagram.png"/></p>
+      <image placement="break" href="../../media/bura/bura_diagram.png"/>
       <note>The Freezer Web UI Horizon Panels are NOT in Beta release.</note>
     </section>
     <section id="supporteddeployments"><title>Supported Cloud Deployments and Services</title>

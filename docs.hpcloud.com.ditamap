@@ -36,7 +36,6 @@
       <topicref href="helion/bura/backup.dita"/>
       <topicref href="helion/bura/restore.dita"/>
     </topichead>
-    <topicref href="helion/faq.dita"/>
     <topicref href="helion/eula.dita" toc="no"/>
 
     <!-- keystone identity -->
