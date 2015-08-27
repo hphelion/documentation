@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qmz_fg3_bt">
-  <title>Installing Keystone</title>
+  <title>Initial Configuration</title>
   <body>
     <section><p>Keystone is a vital part of HP Helion OpenStack&#174;, so it is installed
         automatically by the Helion OpenStack installer (just after MySQL and RabbitMQ). The
