@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_sd2_wsw_dt">
+  <title>Restore</title>
+  <body>
+    <section><title>Introduction</title><p> As of HP Helion OpenStack® 2.0 Beta 1, you must do the
+        following: <ol>
+          <li>Select a backup to restore.</li>
+          <li>Define a mode for the restore: The following modes are available:<ul>
+              <li>fs (filesystem) (default)</li>
+              <li>MySQL</li>
+              <li>sqlserver</li>
+              <li>mongo</li>
+            </ul></li>
+          <li>If the restore involves an application (such as MySQL) remember to shut down the
+            application or service and start it again after the restore.</li>
+        </ol></p></section>
+    <section>
+      <title>Basic Configuration</title>
+      <p>There are several mandatory options to execute a restore: <ul>
+          <li>action (backup by default)</li>
+          <li>mode (fs by default)</li>
+          <li>restore-abs-path</li>
+          <li>backup-name</li>
+          <li>container (swift container or local path)</li>
+          <li>storage (swift by default)</li>
+          <li>restore-from-host</li>
+          <li>restore-from-date (optional)</li>
+        </ul></p>
+      <p>You can create a restore using mandatory values, as in the following example:
+        <codeblock>  - freezerc --action restore --mode fs --storage swift --restore-abs-path /home/user/tmp --container tmp_backups --backup-name backup1 --restore-from-host ubuntu</codeblock></p>
+      <p>The translation to a configuration file for this restore execution would be as
+        follows:<codeblock>
+  {
+    "job_actions": [
+        {
+            "freezer_action": {
+                "action": "restore",
+                "mode": "fs",
+                "backup_name": "backup1",
+                "restore_abs_path": "/home/user/tmp",
+                "container": "tmp_backups",
+                "restore_from_host": "ubuntu"
+            },
+            "max_retries": 3,
+            "max_retries_interval": 60
+        }
+    ],
+    "description": "backup for tmp dir"
+  }
+</codeblock></p>
+    </section>
+    <p/>
+  </body>
+</topic>
