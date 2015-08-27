@@ -158,7 +158,7 @@ git commit –m “My config”
       <ol>
         <li>Run the following command, which will reimage all the nodes using PXE:
           <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
-        <li>Wait for the nodes to install and come back up.</li>
+        <li>The script will wait for the nodes to install and come back up.</li>
       </ol>
     </section>
     <section id="CloudDeploy"><title>Deploy the Cloud</title>
@@ -201,9 +201,9 @@ git commit –m “My config”
         <li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the
           deployer:
           <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock> As the
-          /etc/hosts no longer have entries for HLM, sudo commands may become a bit slower. To fix
-          this issue, once this step is complete, add "hlm" after "127.0.0.1 localhost". The result
-          will look like
+          /etc/hosts file no longer has entries for HLM, sudo commands may become a bit slower. To
+          fix this issue, once this step is complete, add "hlm" after "127.0.0.1 localhost". The
+          result will look like
           this:<codeblock>...
 # Localhost Information
 127.0.0.1 localhost hlm
