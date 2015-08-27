@@ -65,8 +65,8 @@
             locktitle="yes">
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
         </topicref>
-        <topicref href="carrier-grade-backup-restore.dita" toc="no"
-            navtitle="Backup and Restire the HLM Node" locktitle="yes"/>
+        <topicref href="carrier-grade-backup-restore.dita" toc="yes"
+            navtitle="Backup and Restore the HLM Node" locktitle="yes"/>
         <topicref href="carrier-grade-install-config-backend.dita"
             navtitle="Configuring Multi-Backend Support" locktitle="yes" toc="no"/>
         <topicref href="carrier-grade-install-bonded-nic.dita"
