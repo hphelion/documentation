@@ -86,11 +86,11 @@
       </topichead>
     </topichead>
     <topichead navtitle="Centralized Logging">
-     <!--    <topicref href="helion/logging/logging_overview.dita" locktitle="yes"> 
+         <topicref href="helion/logging/logging_overview.dita" locktitle="yes"> 
         <topicmeta>
           <navtitle>Centralized Logging Overview</navtitle>
         </topicmeta>
-      </topicref> --> 
+      </topicref> 
       <topicref href="helion/logging/logging_troubleshooting.dita" locktitle="yes" toc="no">
         <topicmeta>
           <navtitle>Troubleshooting Logging Issues</navtitle>
