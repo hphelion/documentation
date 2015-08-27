@@ -145,9 +145,12 @@
         <li>commit the changes to the <b>site</b> branch.
             <codeblock>git add --all .
 git commit -m "your message"</codeblock> </li>
-        <li> Run config-processor-run to produce the required CP output from those changes. Review this manually if required.</li>
-        <li>cd to scratch? Dir</li>
-        <li>Run the deploy/upgrade/reconfiguration playbooks from the resulting scratch/... directory.</li>
+        <li> Run <codeblock>config-processor-run</codeblock> to produce the required configuration
+            processor output from those changes. Review this manually if required.</li>
+        <li>cd to scratch? Dir <codeblock>cd ____________</codeblock></li>
+        <li>Run the deploy/upgrade/reconfiguration playbooks from the resulting scratch/... directory.
+        <codeblock>what are the commands???</codeblock>
+        </li>
         </ol>
       </p>
       
