@@ -31,7 +31,6 @@
         is provided, it uses OpenSSL to encrypt data (AES-256-CFB).</p>
       <p>Freezer architecture consists of the following components:</p>
       <table frame="all" rowsep="1" colsep="1" id="table_vkv_st3_dt">
-        <title>Freezer Architecture</title>
         <tgroup cols="2" align="left">
           <colspec colname="c1" colnum="1" colwidth="123pt"/>
           <colspec colname="c2" colnum="2" colwidth="372.75pt"/>
