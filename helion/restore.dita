@@ -53,18 +53,34 @@
 </codeblock></p>
     </section>
     <section><title>HP Helion OpenStack Restore Process</title></section>
-    <p>Deployer Restore</p>
+    <section><title>Deployer Restore</title></section>
     <ol>
-      <li>Connect to deployer</li>
-      <li>Become root <codeblock>sudo su</codeblock></li>
-      <li>Source backup environment file<codeblock>source /etc/freezer/backup.osrc</codeblock></li>
-      <li>List jobs<codeblock>freezer-scheduler -c</codeblock>deployer hostname (generaly
-        hLinux)<codeblock>job-list</codeblock></li>
-      <li>Get the id corresponding to the job "HLM Default: Deployer restore"</li>
-      <li>Launch the restore <codeblock>freezer-scheduler -c</codeblock>deployer hostname (generaly
-        hLinux)<codeblock>job-start -j</codeblock></li>
+      <li>Connect to deployer.</li>
+      <li>Become root:<codeblock>sudo su</codeblock></li>
+      <li>Source backup environment file:<codeblock>source /etc/freezer/backup.osrc</codeblock></li>
+      <li>List
+        jobs:<codeblock>freezer-scheduler -c &lt;deployer hostname (generaly hLinux)> job-list</codeblock></li>
+      <li>Get the id corresponding to the job "HLM Default: Deployer restore";</li>
+      <li>Launch the restore:
+        <codeblock>freezer-scheduler -c &lt;deployer hostname (generaly hLinux)&gt; job-start -j &lt;job-id&gt;</codeblock></li>
       <li>Wait for some time, you can follow the
         <codeblock>/var/log/freezer-agent/freezer-agent.log</codeblock></li>
+    </ol>
+    <section><title>Nova Compute Restore</title></section>
+    <ol>
+      <li>Stop Nova.</li>
+      <li>On each compute node you want to restore, run the following steps: <ol>
+          <li>Become root <codeblock>sudo su</codeblock></li>
+          <li>Source backup environment
+            file:<codeblock>source /etc/freezer/backup.osrc</codeblock></li>
+          <li>List jobs:<codeblock>freezer-scheduler -c &lt;hostname&gt; job-list</codeblock></li>
+          <li>Get the id corresponding to the job "HLM Default: Nova restore".</li>
+          <li>Launch the
+            restore:<codeblock>freezer-scheduler -c &lt;hostname&gt; job-start -j &lt;job-id&gt;</codeblock></li>
+          <li>Wait for some time, you can follow the
+            <codeblock>/var/log/freezer-agent/freezer-agent.log</codeblock></li>
+          <li>Once OK, restart Nova.</li>
+        </ol></li>
     </ol>
     <p/>
   </body>
