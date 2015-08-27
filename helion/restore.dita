@@ -66,10 +66,6 @@
       <li>Wait for some time, you can follow the
         <codeblock>/var/log/freezer-agent/freezer-agent.log</codeblock></li>
     </ol>
-    <p>Nova Compute Restore</p><ol>
-      <li>Stop Nova</li>
-      <li>On each compute node you want to restore, run the following steps: </li>
-    </ol>
     <p/>
   </body>
 </topic>
