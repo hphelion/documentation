@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_cfn_lvq_dt">
+  <title>Continuous Integration and Deployment Overview</title>
+  <body>
+    <p> "Greenfield" software provides new functionality for new infrastructure, new customers, new
+      owners, or new ideas. Writing enterprise apps in such an undefined arena can be risky, and
+      best practice is to take an agile, iteritave approach. With CICD, small project teams can
+      build, test, and deploy each functional iteration with little effort, allowing them to focus
+      on the code, not the process.</p>
+    <p/>
+    <p><image href="../../media/CICD_Overview.png" id="image_isf_4vq_dt"/></p>
+  </body>
+</topic>

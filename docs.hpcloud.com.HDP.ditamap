@@ -278,6 +278,7 @@
         </topichead>
       </topichead>
       <topichead navtitle="Continuous Integration and Deployment">
+        <topicref href="devplatform/CICD/cicd_overview.dita" navtitle="Overview" locktitle="yes"/>
         <topicref href="devplatform/CICD/cicd_installation.dita"/>
         <topicref href="devplatform/CICD/cicd_inital_configuration.dita"/>
         <topicref href="devplatform/CICD/cicd_troubleshooting.dita"/>
@@ -286,6 +287,8 @@
       <topicref href="devplatform/helion/admin/server/network_port_configuration.dita"/>
       <topicref href="devplatform/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
+      <topicref href="devplatform/helion/user/deploy/docker_firstapp.dita"
+        navtitle="Create a Docker Image from an App" locktitle="yes"/>
       <topicref href="devplatform/1.2devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
       <!--permalink: /helion/devplatform/databaseservice/-->
