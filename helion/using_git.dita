@@ -16,7 +16,7 @@
     <p><image href="../media/install/gitWorkflow.png" id="image_cbv_wg4_dt"/></p>
     <p/>
     <p>The git repository provides a way for you to merge changes that you pull down as "upstream"
-      updates, and allows you to manage your site configuration. </p>
+      updates, and allows you to manage your own configuration changes. </p>
     <section>
       <title>Initialization on a new deployment</title>
       <p>On a system new to HP Helion OpenStack 2.0, the deployer will prepare a git repository
@@ -33,13 +33,13 @@
           </dlentry>
           <dlentry>
             <dt>site</dt>
-            <dd>this branch begins life as a copy of the first 'hos' drop. It is onto this branch
+            <dd>This branch begins life as a copy of the first 'hos' drop. It is onto this branch
               that you commit your configuration changes. It's the branch most visible to the end
               user.</dd>
           </dlentry>
           <dlentry>
             <dt>ansible</dt>
-            <dd>this branch contains the variable definitions that the CP outputs that our main
+            <dd>This branch contains the variable definitions that the CP outputs that our main
               ansible playbooks need: the verb_hosts file (which describes to ansible what servers
               are playing what roles), amongst others. The ready-deployment playbook takes this
               output and assembles a 'scratch' directory containing the ansible playbooks together
@@ -48,7 +48,7 @@
           </dlentry>
           <dlentry>
             <dt>cp-persistent</dt>
-            <dd>this branch contains the persistent state that the CP needs to keep hold of. That
+            <dd>This branch contains the persistent state that the CP needs to keep hold of. That
               state is mostly the assignment of IP addresses and roles to particular servers. There
               are some operational procedures that we will want to support that involve editing the
               contents of this branch (things like retiring a machine frmo service or repurposing
@@ -57,13 +57,13 @@
         </dl>Two temporary branches are created and populated at run time: <dl>
           <dlentry>
             <dt>staging-ansible</dt>
-            <dd>holds the most recent commit that will be copied to/merged with the ansible
-              branch.</dd>
+            <dd>This branch holds the most recent commit that will be copied to/merged with the
+              ansible branch.</dd>
           </dlentry>
           <dlentry>
             <dt>staging-cp-persistent</dt>
-            <dd>holds the most recent commit that will be copied to/merged with the cp-persistent
-              branch.</dd>
+            <dd>This branch holds the most recent commit that will be copied to/merged with the
+              cp-persistent branch.</dd>
           </dlentry>
         </dl>
         <note>The information above provides insight into the workings of the configuration
@@ -148,7 +148,7 @@
     <section>
       <title>Updating any configuration, including the default configuration</title>
       <p>When you need to make updates to a configuration you must <ol>
-          <li>check out the <b>site</b> branch. You may aready be on that branch. If so, git will
+          <li>Check out the <b>site</b> branch. You may aready be on that branch. If so, git will
             tell you that and the command will leave you
             there.<codeblock>git checkout site</codeblock>
           </li>
@@ -161,8 +161,8 @@ git commit -m "your commit message goes here in quotes"</codeblock>
             processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml
 </codeblock>
-            to produce the required configuration processor output from those changes. Review this
-            manually if required.</li>
+            to produce the required configuration processor output from those changes. Review the
+            output files manually if required.</li>
           <li>Ready the deployment area
             <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           <li>Run the deployment playbooks from the resulting scratch directory.
