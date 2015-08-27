@@ -86,11 +86,11 @@
       </topichead>
     </topichead>
     <topichead navtitle="Centralized Logging">
-      <!--  <topicref href="helion/logging/logging_overview.dita" locktitle="yes"> 
+        <topicref href="helion/logging/logging_overview.dita" locktitle="yes"> 
         <topicmeta>
           <navtitle>Centralized Logging Overview</navtitle>
         </topicmeta>
-      </topicref>-->
+      </topicref>
       <topicref href="helion/logging/logging_troubleshooting.dita" locktitle="yes" toc="no">
         <topicmeta>
           <navtitle>Troubleshooting Logging Issues</navtitle>
@@ -113,8 +113,8 @@
     <topichead navtitle="Metering">
       <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Overview"
         locktitle="yes"/>
-       <topicref href="helion/ceilometer/metering_components.dita"
-        navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
+    <!--    <topicref href="helion/ceilometer/metering_components.dita"
+        navtitle="Ceilometer Metering Service Components" locktitle="yes"/>-->
       <topicref href="helion/ceilometer/metering_metertypes.dita" navtitle="Available Meter Types"
         locktitle="yes"/>
       <topicref href="helion/ceilometer/metering_rbac.dita" navtitle="Role-based Access Control"
