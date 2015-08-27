@@ -148,7 +148,7 @@
       <title>Updating any configuration, including the default configuration</title>
       <p>When you need to make updates to a configuration you must <ol>
           <li>check out the <b>site</b> branch. You may aready be on that branch. If so, git will
-            tell you that and the comman will leave you
+            tell you that and the command will leave you
             there.<codeblock>git checkout site</codeblock>
           </li>
           <li>Edit the YAML file or files that contain the configuration you want to change. </li>
