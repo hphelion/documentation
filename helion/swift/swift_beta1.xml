@@ -140,9 +140,9 @@
             ><b><i>Requirements for a Disk Device</i></b></p><p>Disk devices listed in the
           <b>devices</b> list must meet the following criteria:</p><ul>
         <li>The disk device must exist on the server. For example, if you add
-                        <codeph>/dev/sdx</codeph> to a disk model
-                        (<codeph>data/disks_swpac.yml</codeph>) with only 3 devices then the deploy
-                    process fails.</li>
+            <codeph>/dev/sdx</codeph> to a disk model (<codeph>data/disks_swpac.yml</codeph> or
+            <codeph>data/disks_swobj.yml</codeph>) with only 3 devices then the deploy process
+          fails.</li>
         <li>The disk device must be unpartitioned or have a single partition that uses the whole
           drive.</li>
         <li>Do not have a label on the partition. To know whether a device has labels on a

@@ -12,9 +12,7 @@
         <li>Swift-Proxy provides the API for all requests to the Swift System.</li>
         <li>Account and Container services provide storage management of the accounts and
           containers.</li>
-        <li>
-          <p>Object services provide storage management for object storage.</p>
-        </li>
+        <li>Object services provide storage management for object storage.</li>
       </ul></p>
     <p>These services can be co-located in a number of ways. In the example cloud models distributed
       in Helion, the following two general patterns exist:<ul id="ul_myw_kft_dt">
