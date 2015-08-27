@@ -3,14 +3,43 @@
 <topic id="topic_pgq_mnw_dt">
   <title>Backup</title>
   <body>
-    <p>There are several mandatory requirements to execute a backup:
-    <ul>
-      <li>action (backup by default)</li>
-      <li>mode (fs by default)</li>
-      <li>path-to-backup</li>
-      <li>backup-name</li>
-      <li>container (swift container or local path)</li>
-      <li>storage (swift by default)</li>
-    </ul></p>
+    <section><title>Basic Configuration</title>
+      <p>There are several mandatory requirements to execute a backup: <ul>
+          <li>Action (backup by default)</li>
+          <li>Mode (fs by default)</li>
+          <li>Path-to-backup</li>
+          <li>Backup-name</li>
+          <li>Container (swift container or local path)</li>
+          <li>Storage (swift by default)</li>
+        </ul></p> For HP Helion OpenStack® 2.0 Beta 1, a backup using only mandatory values would be
+      as follows:
+      <codeblock>  - freezerc --action backup --mode fs --storage swift --path-to-backup /home/user/tmp --container tmp_backups --backup-name backup1</codeblock>
+      The translation to a configuration file for this backup execution would be as follows:
+      <codeblock>
+
+  {
+    "job_actions": [
+        {
+            "freezer_action": {
+                "action": "backup",
+                "mode": "fs",
+                "backup_name": "backup1",
+                "path_to_backup": "/home/user/tmp",
+                "container": "tmp_backups"
+            },
+            "max_retries": 3,
+            "max_retries_interval": 60
+        }
+    ],
+    "job_schedule": {
+        "schedule_interval": "24 hours"
+    },
+    "description": "backup for tmp dir"
+  }
+</codeblock>
+      In this configuration file (JSON), the freezer command is wrapped in a "freezer_action".
+        <note>All "-" are translated to "_" and the first "--" are omitted.</note> HP Helion
+      OpenStack 2.0 Beta 1, we can define the schedule rules that this job will follow (only
+      available through the configuration file) and a brief description of the job. </section>
   </body>
 </topic>
