@@ -6,17 +6,19 @@
     <section><title>Introduction</title><p> As of HP Helion OpenStack® 2.0 Beta 1, you must do the
         following: <ol>
           <li>Select a backup to restore.</li>
-          <li>Define a mode for the restore: The following modes are available:<ul>
+          <li>2. Define a mode for the restore: The following modes are available:<ul>
               <li>fs (filesystem) (default)</li>
-              <li>MySQL</li>
+              <li>mysql</li>
               <li>sqlserver</li>
               <li>mongo</li>
             </ul></li>
-          <li>If the restore involves an application (such as MySQL) remember to shut down the
+          <li>If the restore involves an application (such as mysql) remember to shut down the
             application or service and start it again after the restore.</li>
         </ol></p></section>
     <section>
       <title>Basic Configuration</title>
+      <p>To restore from a backup, note that in some cases you must stop the service (for instance
+        MySQL) before the restore.</p>
       <p>There are several mandatory options to execute a restore: <ul>
           <li>action (backup by default)</li>
           <li>mode (fs by default)</li>
@@ -50,6 +52,20 @@
   }
 </codeblock></p>
     </section>
+    <section><title>HP Helion OpenStack Restore Process</title></section>
+    <p><b/>Deployer Restore <ol>
+        <li>Connect to deployer</li>
+        <li>Become root <codeblock>sudo su</codeblock></li>
+        <li>Source backup environment
+          file<codeblock>source /etc/freezer/backup.osrc</codeblock></li>
+        <li>List jobs<codeblock>freezer-scheduler -c</codeblock>deployer hostname (generaly
+          hLinux)<codeblock>job-list</codeblock></li>
+        <li>Get the id corresponding to the job "HLM Default: Deployer restore"</li>
+        <li>Launch the restore <codeblock>freezer-scheduler -c</codeblock>deployer hostname
+          (generaly hLinux)<codeblock>job-start -j</codeblock></li>
+        <li>Wait for some time, you can follow the
+          <codeblock>/var/log/freezer-agent/freezer-agent.log</codeblock></li>
+      </ol></p>
     <p/>
   </body>
 </topic>
