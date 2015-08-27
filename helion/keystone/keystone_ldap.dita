@@ -9,8 +9,8 @@
       <p>You may add LDAP support on a per-domain basis after installation because Keystone supports
         the option to specify identity driver configurations on a domain-by-domain basis. This
         allows you to, for example, give a specific domain its own LDAP server. In general, the
-        process to create an LDAP domain in Keystone looks like this:</p>
-      <p><image placement="break" href="../../media/keystone/ldap_flowold.png"/></p>
+        process to create an LDAP domain in Keystone is as follows.</p>
+      <p/>
       <p>With domain_specific_drivers_enabled set to True, the ability to add domains individually
         will be enabled, causing Keystoneinstalled on each control plane server to look in the
           <b>/etc/keystone/domains</b> directory for configuration file of the form

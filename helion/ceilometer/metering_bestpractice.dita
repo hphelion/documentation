@@ -269,12 +269,26 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start
             <p>Reducing the amount of unnecessary data sent to storage reduces the load on the
                 SQL-based cluster, which increases performance. Ceilometer data collection is
                 configured by modifying the <i>pipeline.yml</i> file. This configuration file is
-                located in the <i>/etc/ceilometer</i> folder on all of the controller nodes.</p>
+                located in the <i>_____________</i> folder on all of the controller nodes.</p>
             <p>
-                <b>Note</b>: The <i>pipeline.yml</i> configuration file needs to be changed on
+                <ul id="ul_qnk_lmy_dt">
+                    <li>In HOS 2.0 Ceilometer Central Agent and Ceilometer Notification agent use
+                        different pipeline.yml to configure meters that are fetched via polling and
+                        using notifications. This was done to prevent accidently polling for meters
+                        which can be retrieved by polling agent as well as the notification agent.
+                        (e.g glance image and image.size are meters which are both of pollster and
+                        notification type)</li>
+                    <li>
+                        <p>Ceilometer Central Agent's (polling agent) pipeline.yml is located at
+                            /opt/_________/service/ceilometer-common/etc/pipeline-agent-central.yml</p>
+                    </li>
+                </ul>
+            </p>
+            <p>
+                <b>Note</b>: The <i>pipeline.yml</i> configuration files need to be changed on
                     <b>all</b> the controller nodes to actually affect the white-listing and or
                 polling strategy.</p>
-            <p>The configuration file is comprised of two major elements: <b>sources</b> and
+            <p>The configuration files are comprised of two major elements: <b>sources</b> and
                     <b>sinks</b>. <b>Sources</b> are data harvested from notifications posted by
                 services or collected through polling. <b>Sinks</b> represent how that data is
                 modified before it is published to the internal queue for collection and
@@ -288,8 +302,8 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start
                     href="http://docs.openstack.org/developer/ceilometer/measurements.html#measurements"
                     type="section" scope="external" format="html">OpenStack Ceilometer
                     documentation</xref>.</p>
-            <codeblock>
-  <codeph>---
+            <!--<codeblock>
+  <codeph>
 sources:
     - name: meter_source
       interval: 604800
@@ -317,7 +331,56 @@ sinks:
       publishers:
           - notifier://
 </codeph>
+</codeblock>-->
+            <p>Here is an example of current pipeline-agent-central that will ship with HP Helion OpenStack 2.0</p>
+<codeblock>               
+---
+sources:
+    - name: meter_source
+      interval: 600
+      meters:
+          - "!*"
+      resources:
+      discovery:
+      sinks:
+          - meter_sink
+sinks:
+    - name: meter_sink
+      transformers:
+      publishers:
+         - notifier://
 </codeblock>
+            <p>Ceilometer Notification Agent (notification agent) pipeline.yml is located at /opt/____________/service/ceilometer-common/etc/pipeline.yaml</p>     
+            <p>The following is an example of the current pipeline.yml that will ship with HP Helion OpenStack 2.0</p>
+        <codeblock>
+---
+sources:
+    - name: meter_source
+      interval: 30
+      meters:
+          - "instance"
+          - "image"
+          - "image.size"
+          - "image.upload"
+          - "image.delete"
+          - "volume"
+          - "volume.size"
+          - "snapshot"
+          - "snapshot.size"
+          - "ip.floating"
+          - "network"
+          - "network.create"
+          - "network.update"
+      resources:
+      discovery:
+      sinks:
+          - meter_sink
+sinks:
+    - name: meter_sink
+      transformers:
+      publishers:
+         - notifier://</codeblock>
+        
         </section>
         <section id="pollinterval">
             <title>Modifying the Polling Intervals</title>
