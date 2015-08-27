@@ -6,30 +6,38 @@
     <p> </p>
     <p> A Object Storage (Swift) is Software Defined Storage (SDS) architecture, layered on top of
       industry standard servers, using native storage devices which are typically disk drives. Swift
-      presents an object paradigm using an undelying set of disk drives. The disk drives are managed
-      by a data structure called "ring". Swift also enable you to store, retrieve, and delete
-      objects in a containers through RESTful API.</p>
-    <p>The services in the Swift cluster are either <i>access</i> services or <i>storage</i>
-      services. <ul>
-        <li> The <i>access</i> services group is made up of the Swift Proxy Servers, which run
-          Swift-Proxy, Account and Container Services, HTTP/HTTPS load balancers, and OpenStack®
-          Keystone authentication service. </li>
-        <li> The <i>storage</i> services group is composed of Swift Object Servers and various
-          background services such as replicators. <p>Each of the service group can be scaled
-            independently to meet workload and redundancy requirements. The storage service can
-            scaled up as necessary. It can also be horizontally scalable to handle an increased
-            number of simultaneous connections as well as large number of objects.</p></li>
+      presents an object paradigm using an underlying set of disk drives. The disk drives are
+      managed by a data structure called the "ring". Swift also enable you to store, retrieve, and
+      delete objects in a containers through RESTful API.</p>
+    <p>A Swift system comprises a number of services as follows: <ul id="ul_sfz_gft_dt">
+        <li>Swift-Proxy provides the API for all requests to the Swift System.</li>
+        <li>Account and Container services provide storage management of the accounts and
+          containers.</li>
+        <li>
+          <p>Object services provide storage management for object storage.</p>
+        </li>
       </ul></p>
+    <p>These services can be co-located in a number of ways. In the example cloud models distributed
+      in Helion, the following two general patterns exist:<ul id="ul_myw_kft_dt">
+        <li>The Swift-proxy, Account, Container and Object services run on the same  (PACO) node
+          type in the control plane. This is used for smaller clouds or where Swift is a minor
+          element in a larger cloud.</li>
+        <li>The Swift-Proxy, Account and Container services run on one (PAC) node type in a control
+          plane and the Object services run on another (OBJ) node type in a resource pool. This is
+          used for in larger clouds or where a larger Swift system is in use or planned.</li>
+      </ul></p>
+    <p>Each of these node types can be scaled  independently to meet workload and redundancy
+      requirements. The storage service can scaled up as necessary. It can also be horizontally
+      scalable to handle an increased number of simultaneous connections as well as large number of
+      objects.</p>
     <p>Based on OpenStack® Object Storage, the HP Helion OpenStack® Object Storage service provides
       a highly available, resilient, and scalable storage pool for unstructured data. It is highly
-      durable architecture with no single point of failure. Apart from this, HP Helion OpenStack
-      introduces a concept of cloud input model. In this release (<b>beta1</b>) we are providing
-      three types of cloud model.</p>
+      durable architecture with no single point of failure.</p>
+    <p>Apart from this, HP Helion OpenStack introduces a concept of cloud input model. In this
+      release (<b>beta1</b>) we are supporting <b>entry-scale-with-vsa</b> of cloud model.</p>
     <p>
       <ul id="ul_p41_rkv_bt">
-        <li><b>hp-ci/padawan</b> - This cloud model runs in virtual machines. The virtual machines
-          are configured similar to the <b>one-region-poc-with-vsa</b>. </li>
-        <li><b>one-region-poc-with-vsa</b>- This has a single control plane cluster running all
+        <li><b> entry-scale-with-vsa </b>- This has a single control plane cluster running all
           services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova
           compute servers. The number and usage of disk drives is fixed in the model. Therefore,
           Swift is automatically configured for this system and no changes are needed or anticipated
