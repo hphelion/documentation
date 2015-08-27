@@ -119,9 +119,9 @@ Password: cghelion</codeblock>
     
     <section id="next-step">
       <title>Next Step</title>
-      <p>
-        <xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref>
-      </p>
+      <p>For KVM-only deployments, proceed to <xref href="carrier-grade-install-kvm-cloud-GA.dita"
+          >Deploying the KVM Region</xref>.</p>
+      <p>For KVM + ESX deployments, proceed to  </p>
     </section>
   </body>
 </topic>

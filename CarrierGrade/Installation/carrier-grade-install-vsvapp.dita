@@ -21,7 +21,7 @@
     <p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VRSvApp. One
       VRSvApp is required for each ESX host. There is a 1-to-1 mapping between each VRSvApp and its
       ESX host. The VRSvApp installation package is contained in the packages you downloaded from
-      DCN</p>
+      DCN.</p>
     <p><b>Important:</b> You must disable vMotion for the VRSvApp to prevent the VRS VM from moving
       from the ESX host. in case of failure of the host in the ESX cluster. </p>
     <p>To disable vMotion for the VRSvApp:</p>

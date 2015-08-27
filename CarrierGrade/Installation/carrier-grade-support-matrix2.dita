@@ -253,36 +253,30 @@
       <p><b>KVM region NICs.</b> The following NICs have been verified for PXE booting of KVM region
         servers:</p>
       <ul id="ul_sdq_q1f_qs">
-        <li>
-          <p>Emulex 10G</p>
+        <li>Emulex 10G
         </li>
-        <li>
-          <p>Intel 82599</p>
-        </li>
+        <li>Intel 82599</li>
       </ul>
-    <p><b>For the KVM + ESX cloud:</b></p>
-    <p><b>ESX components</b>. You must have a minimum of two (2) baremetal systems for ESXi hosts. 1
-        – 4 ESXi clusters are supported. Refer to the ESX documentation for the supported hardware
-        configurations. </p>
-      <ul>
-        <li>ESXi requirements: 
-          <ul><li>	vSphere Cluster running ESXi 5.5u2 with vMotion enabled.</li> 
-            <li>1 Virtual Machine Port Group with all Cloud Vlans associated to the Port Group.</li></ul></li>
-        
-        
-      </ul>  
+          <p><b>Important:</b> Using the correct NICs is essential to proper installation of HP
+            Helion OpenStack Carrier Grade.</p>
       
-    
-    <p><b>Note:</b> These systems are not required for a KVM-only cloud.</p>
-    <p><b>DCN components</b>. You must have:</p>
-      <ul>
-        <li>two (2) baremetal systems for DCN VSC controllers (HA mode) </li>
-        <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
-        <li>VRSvApp requirements VRSvApp must be installed. Please Refer to the DCN VSP 3.0 R7
-          installation Guide for VRSvApp installation.</li>
-      </ul>
-      <p>Refer to the DCN documentation for the supported hardware configurations.</p>
-      <p><b>Note:</b> These systems are not required for a KVM-only cloud.</p>
+    <p><b><i>For a KVM and ESX cloud topology</i></b></p>
+    <p>
+        <ul id="ul_s3d_pmx_dt">
+          <li><b>ESX components</b>. You must have a minimum of two (2) baremetal systems for ESXi
+            hosts. 1 – 4 ESXi clusters are supported. Refer to the ESX documentation for the
+            supported hardware configurations. <ul>
+              <li> vSphere Cluster running ESXi 5.5u2 with vMotion enabled.</li>
+              <li>1 Virtual Machine Port Group with all Cloud Vlans associated to the Port Group.
+              </li>
+            </ul><p><b>Note:</b> These systems are not required for a KVM-only cloud.</p></li>
+    <li><b>DCN components</b>. You must have: <ul>
+              <li>two (2) baremetal systems for DCN VSC controllers (HA mode) </li>
+              <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
+              <li>VRSvApp requirements VRSvApp must be installed. Please Refer to the DCN VSP 3.0 R7
+                installation Guide for VRSvApp installation. </li>
+            </ul><p>Refer to the DCN documentation for the supported hardware configurations.
+                </p><p><b>Note:</b> These systems are not required for a KVM-only cloud.</p></li></ul></p>
     </section>
 
   <section id="software"><title>Software Requirements</title><p><b>HLM Host</b>. The HLM host
@@ -293,7 +287,7 @@
         Grade installation process installs the required software.</p>
       <p><b>KVM compute</b>. The servers should be baremetal. The HP Helion OpenStack Carrier Grade
         installation process installs the required software.</p>
-    <p><b><i>For the KVM and ESX cloud</i></b>, VMware vSphere must be fully installed and
+    <p><b><i>For a KVM and ESX cloud topology</i></b>, VMware vSphere must be fully installed and
         operational before installing HP Helion OpenStack Carrier Grade.</p></section>
   
   <section id="guestOS"><title>Supported Guest Operating Systems</title> The following guest

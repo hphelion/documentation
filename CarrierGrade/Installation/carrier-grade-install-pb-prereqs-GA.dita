@@ -246,10 +246,10 @@ StrictHostKeyChecking no </codeblock></li>
                 </section>
                 <section>
                         <title>Integrating LDAP</title>
-                        <p>OPTIONAL The HP Helion OpenStack Identity service can use Lightweight
-                                Directory Access Protocol (LDAP) to integrate your organization's
-                                existing directory service and user account management
-                                processes.</p>
+                        <p><b>OPTIONAL:</b> The HP Helion OpenStack Identity service can use
+                                Lightweight Directory Access Protocol (LDAP) to integrate your
+                                organization's existing directory service and user account
+                                management processes.</p>
                 </section>
                 <section id="getinstall">
                         <title>Download and unpack the installation packages</title>
@@ -405,12 +405,12 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                         <li>Compare the output of the checksum tool to the
                                                   <codeph>hcg_1.1.0.tar.sha256</codeph> file.
                                                 <codeblock>sha256sum.exe hcg_1.1.0.tar
-                                                        97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock>Note
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock>Note
                                                 that the chechsum file contains the date that the
                                                 file was generated, the checksum string, and the
                                                 name of the file that was
                                                 used:<codeblock>Fri Jul 31 10:55:37 EDT 2015
-                                                        97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar</codeblock></li>
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar</codeblock></li>
                                         <li>Run the checksum tool against the
                                                   <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>
                                                 file.
@@ -503,7 +503,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   this directory.</entry>
                                                   </row>
                                                 <row>
-                                                  <entry>secure_HLM_ports_patch_1.1.tar.gz</entry>
+                                                  <entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
                                                   directory on the HML host. You must first create
