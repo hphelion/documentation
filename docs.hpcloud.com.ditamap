@@ -113,8 +113,8 @@
     <topichead navtitle="Metering">
       <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Overview"
         locktitle="yes"/>
-     <!--   <topicref href="helion/ceilometer/metering_components.dita"
-        navtitle="Ceilometer Metering Service Components" locktitle="yes"/>--> 
+      <topicref href="helion/ceilometer/metering_components.dita"
+        navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
       <topicref href="helion/ceilometer/metering_metertypes.dita" navtitle="Available Meter Types"
         locktitle="yes"/>
       <topicref href="helion/ceilometer/metering_rbac.dita" navtitle="Role-based Access Control"
