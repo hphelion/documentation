@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_dlv_54t_dt">
-  <title>Label on Partition</title>
+  <title>Disk Partition Label</title>
   <body>
-    <p>This page explains the procedure to check whether a device has labels on partition.</p>
+    <p>This page explains the procedure to check whether a device has label on partition.</p>
     <section id="label-partition">
       <p> To check whether a device has labels on a partition, perform the folowing step:<ul
           id="ul_tjw_1z5_dt">
