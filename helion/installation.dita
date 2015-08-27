@@ -6,10 +6,13 @@
     <section><title>Known Restrictions</title>
       <ul>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
-        <li>All disks on the system(s) should be wiped before attempting installation. /dev/sda will be used for the OS.</li>
-        <li>The deployer node must run on HP Linux for HP Helion OpenStack. It is part of the ISO you will download from the <xref
+        <li>All disks on the system(s) should be wiped before attempting installation. /dev/sda will
+          be used for the OS.</li>
+        <li>The deployer node must run on HP Linux for HP Helion OpenStack. It is part of the ISO
+          you will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
-            format="html" scope="external">Helion Downloads</xref> page. There is only one download; it includes both the OS and the Beta0 installer in one ISO.</li>
+            format="html" scope="external">Helion Downloads</xref> page. There is only one download;
+          it includes both the OS and the Beta0 installer in one ISO.</li>
         <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All
           machines can net boot from PXE and use the deployer as a DHCP server.</li>
         <li>All machines of a single type should be the same, that is, all computes, all VSAs, and
@@ -39,7 +42,8 @@
         <li>Create LUN(s), if required.</li>
         <li>Download the HP Helion OpenStack Deployer ISO from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
-            format="html" scope="external">Helion Downloads</xref> page after signing up and being approved for the program.</li>
+            format="html" scope="external">Helion Downloads</xref> page after signing up and being
+          approved for the program.</li>
         <li>Boot your deployer from the ISO.</li>
         <li>Enter "install" to start installation.</li>
         <li>Select the language.</li>
@@ -56,13 +60,14 @@
           </ul></li>
       </ol>
       <p>At the end of this section you should have a deployer node set up with hLinux on it.</p>
-      
     </section>
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
-      <note>Run as the user you just created (or stack if you left the default of "stack", but do not run as root.</note>
-      <note>Your NICs may have the wrong numbers/names assigned to them. If so, see the workaround in the Installation and NIC Numbering section of the <xref
-            href="releasenotes.dita">release notes</xref> topic.</note>
+      <note>Run as the user you just created (or stack if you left the default of "stack", but do
+        not run as root.</note>
+      <note>Your NICs may have the wrong numbers/names assigned to them. If so, see the workaround
+        in the Installation and NIC Numbering section of the <xref href="releasenotes.dita">release
+          notes</xref> topic.</note>
       <ol>
         <li>On the deployer node, enter the following command to create the SSH keypair if one is
           not already present:<codeblock>ssh-keygen -t rsa</codeblock>
@@ -71,7 +76,8 @@
           <codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
         <li>Confirm that ssh localhost works without a password and that you can get from external
           sources, both with and without sudo.</li>
-        <li>Mount the install media at /media/cdrom, for example,
+        <li>Log in to the deployer node as the user you created during the setup phase, and mount
+          the install media at /media/cdrom, for example,
           <codeblock>sudo mount /media/cdrom</codeblock></li>
         <li>Unpack the following tarball:
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz</codeblock></li>
@@ -118,7 +124,7 @@ helion/hlm/                    Directory contains files used by the installer
           are included. If they are not, run
           <codeblock>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock> and
           go to step 1.</li>
-          
+
       </ol>
     </section>
     <section id="CobblerDeploy">
@@ -158,10 +164,10 @@ helion/hlm/                    Directory contains files used by the installer
     <section id="CloudDeploy"><title>Deploy the Cloud</title>
       <ol>
         <li>Run the following command: <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-runV2.yml</codeblock><ol>
-            <li>Verify the network is working correctly by pinging each IP (excluding VSA-BLK and VIPs)
-               from the deployer node. You can find the IP addresses in <b>generated_files/etc/hosts</b>. To do so, run:
-               
-               <codeblock>~/helion/hlm/ansible$ less generated_files/etc/hosts</codeblock></li>
+            <li>Verify the network is working correctly by pinging each IP (excluding VSA-BLK and
+              VIPs) from the deployer node. You can find the IP addresses in
+                <b>generated_files/etc/hosts</b>. To do so, run:
+              <codeblock>~/helion/hlm/ansible$ less generated_files/etc/hosts</codeblock></li>
           </ol>
         </li>
         <li> Edit roles/HZN-WEB/tasks/install.yml and add the following after the 'install-package'
@@ -197,7 +203,8 @@ stderr: tar: /opt/stack/service/vsa/venv/lib/helion-vsa-11.5.01.0079.tgz:
 Cannot open: No such file or directory </codeblock>
             </li>
             <li>The file can be found at http://10.1.56.95/helion-vsa-11.5.01.0079.tgz</li>
-            <li>Note that you may need VPN access to downoad the file from the lab at the link above.</li>
+            <li>Note that you may need VPN access to downoad the file from the lab at the link
+              above.</li>
             <li>This is a temporary issue and should be fixed by the next release.</li>
           </ul></li>
         <li>Deploy CMC by running the following
@@ -230,8 +237,9 @@ Gateway: 10.241.103.1
               present:<codeblock>{% if cinder_enabled_backends == 'lvm-1' %}</codeblock> to
               <codeblock>{% if cinder_enabled_backends == 'no-backends' %}</codeblock></li>
           </ol></li>
-        <li>Copy the VSA section (beginning with &lt;unique section name, uncomment the lines under it, 
-        change the name of the section to [vsa-1], and fill the values as in the following example:
+        <li>Copy the VSA section (beginning with &lt;unique section name, uncomment the lines under
+          it, change the name of the section to [vsa-1], and fill the values as in the following
+          example:
           <codeblock>
 [vsa-1]
 hplefthand_password: stack
@@ -253,9 +261,8 @@ hplefthand_debug: false
     </section>
     <section id="Post-Installation"><title>Post-installation Configuration Steps</title>
       <ol>
-        <li>Note that running the command
-          below will download a cirros image, upload a cirros image to Glance, and create a Neutron
-          external
+        <li>Note that running the command below will download a cirros image, upload a cirros image
+          to Glance, and create a Neutron external
             network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
             can optionally specify the external network CIDR here too. If you choose not to
             excercise this option or use a wrong value, the VMs will not be accessible over the
