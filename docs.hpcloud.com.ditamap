@@ -19,7 +19,7 @@
   <!-- HoS 2.0 -->
   <topicref href="helion/index.dita">
     <topicref href="helion/releasenotes.dita"/>
-    <topicref href="helion/supportedconfigs.dita"/>
+    <!--  <topicref href="helion/supportedconfigs.dita"/> -->
     <topicref href="helion/hardware.dita"/>
     <topichead navtitle="Installation">
     <topicref href="helion/installation.dita"/>
@@ -39,8 +39,8 @@
         navtitle="Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_installation.dita"
         navtitle="Installing Keystone Identity" locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
-        locktitle="yes"> </topicref>
+     <!--  <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
+        locktitle="yes"> </topicref>--> 
       <topicref href="helion/keystone/keystone_update.dita" navtitle="Updating Keystone"
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Current Limitations"
@@ -48,11 +48,11 @@
     </topichead>
     <!-- Monitoring and Logging -->
     <topichead navtitle="Monitoring">
-      <topicref href="helion/monasca/monasca.dita" locktitle="yes">
+      <!--  <topicref href="helion/monasca/monasca.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Monitoring Overview</navtitle>
         </topicmeta>
-      </topicref>
+      </topicref>--> 
       <topicref href="helion/monasca/alarms.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Service Alarm Definitions</navtitle>
@@ -86,11 +86,11 @@
       </topichead>
     </topichead>
     <topichead navtitle="Centralized Logging">
-      <topicref href="helion/logging/logging_overview.dita" locktitle="yes">
+      <!--  <topicref href="helion/logging/logging_overview.dita" locktitle="yes"> 
         <topicmeta>
           <navtitle>Centralized Logging Overview</navtitle>
         </topicmeta>
-      </topicref>
+      </topicref>-->
       <topicref href="helion/logging/logging_troubleshooting.dita" locktitle="yes" toc="no">
         <topicmeta>
           <navtitle>Troubleshooting Logging Issues</navtitle>
@@ -113,8 +113,8 @@
     <topichead navtitle="Metering">
       <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Overview"
         locktitle="yes"/>
-      <topicref href="helion/ceilometer/metering_components.dita"
-        navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
+    <!--    <topicref href="helion/ceilometer/metering_components.dita"
+        navtitle="Ceilometer Metering Service Components" locktitle="yes"/>-->
       <topicref href="helion/ceilometer/metering_metertypes.dita" navtitle="Available Meter Types"
         locktitle="yes"/>
       <topicref href="helion/ceilometer/metering_rbac.dita" navtitle="Role-based Access Control"
