@@ -153,15 +153,42 @@
     </section>
     <section id="configuration">
       <title>Configuration</title>
-      <p>To configure logging, modify the <codeph>roles/logging-common/defaults/main.yml</codeph>
-        file as needed then reconfigure. To enable or disable logging for a service, for example,
-        set it in this file and reconfigure:</p>
+      <p>To configure logging, modify the <codeph>/roles/logging-common/defaults/main.yml</codeph>
+        file as needed, then reconfigure. Here is a snippet of this file showing the logging
+        settings for the Keystone service. An explanation of this file is below.</p>
       <codeblock>
-logr_services:
-  rabbitmq:
+  keystone:
     files:
     - centralized_logging:
-    enabled: true</codeblock>
+        enabled: false
+        format: json
+        file:
+        - /var/log/keystone/keystone.log
+        options:
+        - daily
+        - maxsize 400M
+        - rotate 45
+        - compress
+        - delaycompress
+        - missingok
+        - create 640 keystone keystone
+        - copytruncate
+  - centralized_logging:
+        enabled: true
+        format: rawjson
+        file:
+        - /var/log/keystone/keystone-json.log
+        options:
+        - daily
+        - maxsize 400M
+        - rotate 5
+        - compress
+        - delaycompress
+        - missingok
+        - create 640 keystone keystone
+        - copytruncate
+...</codeblock>
+      <p/>
     </section>
     <section id="kibana">
       <title>Kibana configuration</title>
@@ -198,13 +225,37 @@ logr_services:
     </section>
     <section id="troubleshooting"><title>Using Centralized Logging to Troubleshoot Issues</title>
       <p>You can troubleshoot service-specific issues by reviewing the logs. After logging into
-        Kibana, follow these steps:</p>
+        Kibana, follow these steps to load the logs for viewing:</p>
       <ol>
-        <li>Select an index and click the green <b>Create</b> button on the <b>Configure an Index
-            Pattern</b></li>
-        <li>Click the <b>Discover</b> tab in the top left and you should be able to perform a search
-          for the service and component for their logs</li>
+        <li>Navigate to the <b>Settings</b> menu to configure an index pattern to search for.</li>
+        <li>In the <b>Index name or pattern</b> field, you can enter <codeph>logstash-*</codeph> to
+          query all elasticsearch indices.</li>
+        <li>Click the green <b>Create</b> button to create and load the index.</li>
+        <li>Navigate to the <b>Discover</b> menu to load the index and make it available to
+          search.</li>
       </ol>
+      <note>If you want to search specific elasticsearch indices, you can run <codeph>curl
+          localhost:9200/_cat/indices?v</codeph> from the control plane to get a full list of
+        available indices.</note>
+      <p>Once the logs load you can change the timeframe from the dropdown in the upper-righthand
+        corner of the Kibana window. You have the following options to choose from:</p>
+      <ul>
+        <li>Quick - a variety of timeframe choices will be available here</li>
+        <li>Relative - allows you to select a start time relative to the current time to show this
+          range</li>
+        <li>Absolute - allows you to select a date range to query</li>
+      </ul>
+      <p>When searching there are common fields you will want to use, such as:</p>
+      <ul>
+        <li>type - this will include the service name, such as <codeph>keystone</codeph> or
+            <codeph>ceilometer</codeph></li>
+        <li>host - you can specify a specific host to search for in the logs</li>
+        <li>file - you can specify a specific log file to search</li>
+      </ul>
+      <p>For more details on using Kibana and Elasticsearch to query logs, see <xref
+          href="https://www.elastic.co/guide/en/kibana/3.0/working-with-queries-and-filters.html"
+          scope="external" format="html"
+          >https://www.elastic.co/guide/en/kibana/3.0/working-with-queries-and-filters.html</xref></p>
     </section>
     <section id="monitoring"><title>Monitoring</title>
       <p>To help keep abreast of potential logging issues and resolve issues before they affect
