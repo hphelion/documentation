@@ -62,7 +62,7 @@
         
         The use of each of these branches is detailed below. </p>
     </section>
-    <section>
+<!--    <section>
       <title>When receiving a new Helion drop</title>
       <note>The steps for new drops will only be run on HP Helion OpenStack 2.0 Beta 1 and later.
         The git repository is not present in Beta 0.</note>
@@ -98,7 +98,7 @@
         <codeblock>ansible-playbook -i hosts/localhost config-proessor-run.yml </codeblock> However,
         the CP persistent state and the ansible outputs now reside on different branches, not
         immediately visible to you. If the config processor run was unsuccessful, you may continue
-        to edit and commit to your 'site' branch. An "--amend" commit is acceptable here. </p>
+        to edit and commit to your 'site' branch. An " (dash dash note for comments issue replace with dashes later )amend" commit is acceptable here. </p>
       <p><b>Result</b>
       </p>
       <p>A scratch directory is prepared to run the config processor in (~/scratch/cp). The site
@@ -134,16 +134,27 @@
         upgrades, that any topology change will require ansible to know where services _used_ to run
         in order to successfully find and disable them. At the moment, the best use of this
         directory is as a convenient tree to run "diff" from. </p>
-    </section>
+    </section>-->
     <section>
       <title>Updating your configuration</title>
       <p>When you need to make updates to your existing configuration you must <ol>
-          <li>check out the <b>site</b> branch.</li>
+          <li>check out the <b>site</b> branch.
+          <codeblock>git checkout site</codeblock>
+          </li>
           <li>edit the yaml file or files that contain the configuration you want to change. </li>
-        <li>commit the changes to the <b>site</b> branch.</li>
-          <li>run the configuration processor.</li>
+        <li>commit the changes to the <b>site</b> branch.
+            <codeblock>git add --all .
+git commit -m "your message"</codeblock> </li>
+        <li> Run config-processor-run to produce the required CP output from those changes. Review this manually if required.</li>
+        <li>cd to scratch? Dir</li>
+        <li>Run the deploy/upgrade/reconfiguration playbooks from the resulting scratch/... directory.</li>
         </ol>
       </p>
+      
+
+      
+     
+      
     </section>
   </body>
 </topic>
