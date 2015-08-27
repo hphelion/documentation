@@ -16,29 +16,27 @@
 <body>
     <p><!--Based on https://wiki.hpcloud.net/display/HCG/.Helion+CG+1.1+GA+Patch+Instructions--></p>
     <section><p>After executing this patch, OpenStack services will use a string of random
-        characters (as specified in the service definition) as the RabbitMQ password. By default the
-        services will use "guest" as the password. The service definition can be verified by looking
-        at the services' configuration files. </p>
-      <p>The password is located in the
+        characters as the RabbitMQ password. By default the services will use <codeph>guest</codeph>
+        as the password. You should have downloaded the patch files in the <xref
+          href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
+        >Prerequisites</xref>.</p><p>The password is located in the
           <codeph>&lt;cloud-name&gt;/clouds/v0/001/stage/ansible/group_vars/&lt;tier-name&gt;</codeph>
-          file at:</p> 
-        <codeblock>
-FND_RMQ: 
+        file
+        at:</p><codeblock>FND_RMQ: 
 vars:  
 rmq_service_password:random
-rmq_service_user: guest
-          </codeblock>
-          <p>The random password is in the <codeph>rmq_service_password</codeph> field.</p>
-                      
-          <p><b>Notes:</b></p><ul id="ul_ss3_c5j_dt">
+rmq_service_user: guest          </codeblock><p>The
+        random password can be found in the <codeph>rmq_service_password</codeph>
+          field.</p><p><b>Notes:</b></p><ul id="ul_ss3_c5j_dt">
         <li>The Ceilometer service will be set to always use the password
             <codeph>metering_secret</codeph>.</li>
         <li>The Nova and Neutron services will be set to use the password
             <codeph>metada_shared_secret</codeph>.</li>
       </ul><p>The services will communicate with RabbitMQ using the newly defined password.
-        </p><p>You should have downloaded the patch files in the <xref
-          href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
-        >Prerequisites</xref>.</p><p>To apply the patch:</p><ol id="ol_dhy_1pj_dt">
+        </p><b>Note:</b> You need the Ubuntu patch utility installed on the HLM host. If you do not
+      have the utility installed, use the following
+        command:<codeblock>apt-get install patch</codeblock><p>To apply the patch:</p><ol
+        id="ol_dhy_1pj_dt">
         <li>Copy the <codeph>random-password.tar.gz</codeph> to the
             <codeph>~/patch_cghelion1.1</codeph> directory.
           <codeblock>cp random-password.tar.gz ~/patch_cghelion1.1</codeblock></li>

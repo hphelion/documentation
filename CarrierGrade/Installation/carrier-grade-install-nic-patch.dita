@@ -17,22 +17,25 @@
   <body>
     <p><!--Based on https://wiki.hpcloud.net/display/HCG/.Helion+CG+1.1+GA+Patch+Instructions--></p>
     <section>
-      <p><b>For bonded NIC environments</b>, use the following steps to install a required
-        patch.</p>
+      <p><b>For bonded NIC environments</b>, use the following steps to install a required patch.
+        You should have downloaded the patch files in the <xref
+          href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
+        >Prerequisites</xref>.</p>
+      <p><b>Note:</b> You need the Ubuntu patch utility installed on the HLM host. If you do not
+        have the utility installed, use the following command:</p>
+      <codeblock>apt-get install patch </codeblock>
     </section>
     <section>
       <p>To apply the patch:</p>
       <ol id="ol_nbz_1hb_ct">
-        <li>Copy the patch file to <codeph>/root/</codeph> directory on the HLM host.</li>
-        <li>Execute the following command to download the patch package:
-          <codeblock>apt-get install patch</codeblock></li>
+        <li>Copy the <codeph>cg-hos-nic-bonding.patch</codeph> file to <codeph>/root/</codeph>
+          directory on the HLM host.</li>
         <li>Change to the <codeph>root/kenobi-configuration-processor</codeph> directory:
           <codeblock>cd /root/kenobi-configuration-processor </codeblock></li>
         <li>Execute the following command to launch the patch installation:
           <codeblock>patch -p1 ../cg-hos-nic-bonding.patch </codeblock></li>
         <li>Execute following command to synch the patch file:
           <codeblock>/root/cg-hlm/hlm-build/hlm_prepare-env.sh </codeblock></li>
-        <li>And then run all steps starting from running hcfgproc again</li>
       </ol>
     </section>
   </body>

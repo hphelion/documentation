@@ -22,7 +22,9 @@
         filter (<codeph>rp_filter</codeph>) to 1 in the <codeph>all</codeph> and
           <codeph>default</codeph> configuration files. You should have downloaded the patch files
         in the <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
-          >Prerequisites</xref>.</p>
+          >Prerequisites</xref>. You should have downloaded the patch files in the <xref
+          href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
+        >Prerequisites</xref>.</p>
       <p><b>Note:</b> You need the Ubuntu patch utility installed on the HLM host. If you do not
         have the utility installed, use the following command:</p>
       <codeblock>apt-get install patch </codeblock>

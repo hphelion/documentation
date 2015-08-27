@@ -306,6 +306,10 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <li>Helion Dynamic Password patch. Download the
                                                   <codeph>horizon_web_patch_1.1.tar.gz</codeph>
                                                   file.</li>
+                                                <li>NIC Bonding Patch. If you are using bonded NIC,
+                                                  download the
+                                                  <codeph>cg-hos-nic-bonding.patch</codeph>
+                                                  file.</li>
                                                 <li><b>GPG keys to verify signature files</b>. This
                                                   file is named
                                                   <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li>
