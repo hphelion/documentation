@@ -16,7 +16,7 @@
           usage of disk drives is fixed in the model. Therefore, Swift is automatically configured
           for this system and no changes are needed or anticipated for Swift-specific services. </li>
         <li>
-          <p><b><xref href="#topic_qkg_l4v_bt/config-swift-services" format="dita">mid sized
+          <p><b><xref href="#topic_qkg_l4v_bt/config-swift-services" format="dita">mid size
                 cloud</xref>
             </b>- (<b>NOTE : This model is not supported in Beta1)</b>This example model describes a
             system using multiple servers and networks. It provides an example for the configuration
