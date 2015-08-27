@@ -33,34 +33,42 @@
           </dlentry>
           <dlentry>
             <dt>site</dt>
-            <dd>this branch begins life as a copy of the first 'hos' drop. It is onto this branch that you 
-              commit your configuration changes. It's the branch most visible to the end user.</dd>
+            <dd>this branch begins life as a copy of the first 'hos' drop. It is onto this branch
+              that you commit your configuration changes. It's the branch most visible to the end
+              user.</dd>
           </dlentry>
           <dlentry>
             <dt>ansible</dt>
-            <dd>this branch contains the variable definitions that the CP outputs that our main ansible playbooks
-              need: the verb_hosts file (which describes to ansible what servers are playing what roles), amongst 
-              others. The ready-deployment playbook takes this output and assembles a 'scratch' directory containing
-              the ansible playbooks together with the variable definitions in this branch; the result is a working 
-              ansible directory from which the main deployment playbooks may be successfully run.</dd>
-          </dlentry>
-          <dlentry>
-            <dt>staging-ansible</dt>
-            <dd>holds the most recent commit that will be copied to/merged with the ansible branch.</dd>
+            <dd>this branch contains the variable definitions that the CP outputs that our main
+              ansible playbooks need: the verb_hosts file (which describes to ansible what servers
+              are playing what roles), amongst others. The ready-deployment playbook takes this
+              output and assembles a 'scratch' directory containing the ansible playbooks together
+              with the variable definitions in this branch; the result is a working ansible
+              directory from which the main deployment playbooks may be successfully run.</dd>
           </dlentry>
           <dlentry>
             <dt>cp-persistent</dt>
-            <dd>this branch contains the persistent state that the CP needs to keep hold of. That state is mostly the assignment of IP 
-              addresses and roles to particular servers. There are some operational procedures that we will want to support that involve editing the 
-              contents of this branch (things like retiring a machine frmo service or repurposing it) </dd>
+            <dd>this branch contains the persistent state that the CP needs to keep hold of. That
+              state is mostly the assignment of IP addresses and roles to particular servers. There
+              are some operational procedures that we will want to support that involve editing the
+              contents of this branch (things like retiring a machine frmo service or repurposing
+              it) </dd>
+          </dlentry>
+        </dl>Two temporary branches are created at run time: <dl>
+          <dlentry>
+            <dt>staging-ansible</dt>
+            <dd>holds the most recent commit that will be copied to/merged with the ansible
+              branch.</dd>
           </dlentry>
           <dlentry>
             <dt>staging-cp-persistent</dt>
-            <dd>holds the most recent commit that will be copied to/merged with the cp-persistent branch.</dd>
+            <dd>holds the most recent commit that will be copied to/merged with the cp-persistent
+              branch.</dd>
           </dlentry>
-        </dl> 
-        
-        The use of each of these branches is detailed below. </p>
+        </dl>
+        <note>The information above provides insight into the workings of the configuration processor and the git repository. However, in practice
+        you can simply follow the steps below to make configuration changes.</note>
+      </p>
     </section>
 <!--    <section>
       <title>When receiving a new Helion drop</title>
@@ -143,11 +151,15 @@
           </li>
           <li>edit the yaml file or files that contain the configuration you want to change. </li>
         <li>commit the changes to the <b>site</b> branch.
-            <codeblock>git add --all .
-git commit -m "your message"</codeblock> </li>
-        <li> Run config-processor-run to produce the required CP output from those changes. Review this manually if required.</li>
-        <li>cd to scratch? Dir</li>
-        <li>Run the deploy/upgrade/reconfiguration playbooks from the resulting scratch/... directory.</li>
+            <codeblock>git add -A
+git commit -m "your message"</codeblock>
+          </li>
+        <li> Run <codeblock>config-processor-run</codeblock> to produce the required configuration
+            processor output from those changes. Review this manually if required.</li>
+        <li>cd to scratch? Dir <codeblock>cd ____________</codeblock></li>
+        <li>Run the deploy/upgrade/reconfiguration playbooks from the resulting scratch/... directory.
+        <codeblock>what are the commands???</codeblock>
+        </li>
         </ol>
       </p>
       
