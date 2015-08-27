@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the Generic Routing
+    Encapsulation (GRE) Patch</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--Based on https://wiki.hpcloud.net/display/HCG/.Helion+CG+1.1+GA+Patch+Instructions--></p>
+    <section>
+      <p><i>Return to the <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/proxy-patch"
+            >the KVM + ESX installation</xref>.</i></p>
+    </section>
+    <section>
+      <p>This patch contains three files. The first file fixes an issue with the IP tables role
+        failing during installation while enabling Generic Routing Encapsulation (GRE) in firewall
+        in VRS-G nodes. The other two files enable GRE on VRS-G nodes in the IP tables. </p>
+      <p>You should have downloaded the patch files in the <xref
+          href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall">Prerequisites</xref>.
+        If not, execute the following command:<codeblock>apt-get install patch</codeblock></p>
+      <p>
+        <ol id="ol_kjd_hvm_bt">
+          <li>Extract the <codeph>gre_patch_1.1.tar.gz</codeph> file on the HLM host to any
+            directory.</li>
+          <li> Change to the following directory:
+            <codeblock>cd /root/kenobi-configuration-processor</codeblock></li>
+          <li> Execute the following command:
+            <codeblock>patch -p1 &lt; &lt;path_to_patch_file>/GRE-related-installer-failure-fix.patch </codeblock></li>
+          <li>Change to the following directory:
+            <codeblock>cd /root/kenobi-node-configuration </codeblock></li>
+          <li>Execute the following command:
+            <codeblock>patch -p1 &lt; &lt;path_to_patch_file>/enabling-GRE-in-iptables-for-VRG.patch </codeblock></li>
+          <li>Execute the following command to synch the patch file:
+            <codeblock>~/cg-hlm/hlm-build/./hlm_prepare-env.sh</codeblock></li>
+          <li>Verfiy that the GRE is enabled in iptables on VRG node by running the following
+            command on the VRG node:<codeblock>iptables -S | grep gre</codeblock> The following
+            output should appear: <codeph>A ufw-before-input -p gre -j ACCEPT</codeph>. </li>
+        </ol>
+      </p>
+    </section>
+    <p>Return to the <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/proxy-patch">the
+        KVM + ESX installation</xref>.</p>
+    </body>
+</topic>

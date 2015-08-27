@@ -28,8 +28,7 @@
         </topicref>
         <topichead navtitle="Deploying the Non-KVM Region">
             <topicref href="carrier-grade-install-hlm-vm.dita"
-                navtitle="Bootstrapping the HP Helion Lifecycle Management Virtual Machine and Installation Services"
-                locktitle="yes"/>
+                navtitle="Deploying the HLM VM and Installation Services" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm.dita" navtitle="Installing the KVM Deployment"
                 locktitle="yes">
                 <topicref href="carrier-grade-install-pb-kvm-only-json.dita"
@@ -59,9 +58,13 @@
                 <topicref href="carrier-grade-install-services-netcan.dita" toc="no"/>
                 <topicref href="carrier-grade-install-helion-password-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-nic-patch.dita" toc="no"/>
+                <topicref href="carrier-grade-install-esx-proxy-patch.dita" toc="no"/>
+                <topicref href="carrier-grade-install-gre-patch.dita"/>
             </topicref>
             <topicref href="carrier-grade-install-launch-horizon.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
+            <topicref href="carrier-grade-install-verify-esx-GA.dita"
+                navtitle="Configuring the DCN Components" locktitle="yes"/>
         </topichead>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita" navtitle="Deploying the KVM Region"
             locktitle="yes">

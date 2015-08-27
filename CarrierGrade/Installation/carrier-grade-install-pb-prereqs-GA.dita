@@ -705,9 +705,8 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                 <section id="next-step">
                         <title>Next Step</title>
                         <p>
-                                <xref href="carrier-grade-install-hlm-vm.dita#topic10581"
-                                        >Bootstrapping the HP Helion Lifecycle Management virtual
-                                        machine and installation services</xref>. </p>
+                                <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Deploying
+                                        the HLM VM and installation services</xref>. </p>
                 </section>
         </body>
 </topic>
