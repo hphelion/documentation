@@ -50,7 +50,7 @@
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_reconfigure.dita" navtitle="Reconfiguring Keystone"
         locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Current Limitations"
+      <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Notes and Limitations"
         locktitle="yes"> </topicref>
     </topichead>
     <!-- Monitoring and Logging -->
