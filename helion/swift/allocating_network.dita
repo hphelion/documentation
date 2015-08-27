@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_pcj_hzv_dt">
+  <title>Allocate Network</title>
+  <body>
+    <p>Thie section describes the network configuration for Swift.</p>
+    <p><b>PLEASE DO NOT CHANGE THE NETWORK CONFIGURATION.</b></p>
+  </body>
+</topic>

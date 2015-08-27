@@ -3,7 +3,7 @@
 <topic id="topic_j15_fx5_dt">
   <title>Filesystem Label</title>
   <body>
-    <p>This page explains the procedure to check whether a filesystem has labels on a partition.</p>
+    <p>This page explains the procedure to check whether a filesystem has label on a partition.</p>
     <p>To check whether a filesystem has labels on a partition, perform the following step:<ul
         id="ul_yzr_fz5_dt">
         <li>Log on to the server and execute the <codeph>xfs_admin</codeph> command as follows

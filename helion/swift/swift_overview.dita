@@ -15,7 +15,7 @@
         <li>Object services provide storage management for object storage.</li>
       </ul></p>
     <p>These services can be co-located in a number of ways. In the example cloud models distributed
-      in Helion, the following two general patterns exist:<ul id="ul_myw_kft_dt">
+      in HP Helion OpenStack®, the following two general patterns exist:<ul id="ul_myw_kft_dt">
         <li>The Swift-proxy, Account, Container and Object services run on the same (PACO) node type
           in the control plane. This is used for smaller clouds or where Swift is a minor element in
           a larger cloud.</li>
@@ -23,36 +23,16 @@
           plane and the Object services run on another (OBJ) node type in a resource pool. This is
           used for in larger clouds or where a larger Swift system is in use or planned.</li>
       </ul></p>
-    <p>Each of these node types can be scaled  independently to meet workload and redundancy
+    <p>Each of these node types can be scaled independently to meet workload and redundancy
       requirements. The storage service can scaled up as necessary. It can also be horizontally
-      scalable to handle an increased number of simultaneous connections as well as large number of
+      scalable to handle an increased number of simultaneous connections and large number of
       objects.</p>
     <p>Based on OpenStack® Object Storage, the HP Helion OpenStack® Object Storage service provides
       a highly available, resilient, and scalable storage pool for unstructured data. It is highly
       durable architecture with no single point of failure.</p>
-    <p>Apart from this, HP Helion OpenStack introduces a concept of cloud input model. In this
-      release (<b>beta1</b>) we are supporting <b>entry-scale-with-vsa</b> of cloud model.</p>
-    <p>
-      <ul id="ul_p41_rkv_bt">
-        <li><b> Entry-scale-with-vsa </b>- This has a single control plane cluster running all
-          services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova
-          compute servers. The number and usage of disk drives is fixed in the model. Therefore,
-          Swift is automatically configured for this system and no changes are needed or anticipated
-          for Swift-specific services. For more details, refer to <xref
-            href="swift_mid_sized_cloud_model.dita#topic_qkg_l4v_bt">How to Modify Input
-            Models</xref>.</li>
-        <li>
-          <p><b>mid sized cloud </b>-  (<b>NOTE : This model is not supported in Beta1)</b>This
-            example model describes a system using multiple servers and networks. It provides an
-            example for the configuration of the mid sized cloud. You must use this example model as
-            the basis for building a cloud model for your actual cloud by configuring the server and
-            network that you plan to deploy. To deploy Swift using this model you must make Swift
-            -specific changes to the provided example. For more details, refer to  <xref
-              href="swift_mid_sized_cloud_model.dita#topic_qkg_l4v_bt">How to Modify Input
-              Models</xref>..</p>
-          <p> </p>
-        </li>
-      </ul>
-    </p>
+    <p>Apart from this, HP Helion OpenStack introduces a concept of cloud input models. In this
+      release (<b>beta1</b>) we are supporting <b><xref
+          href="swift_input_cloud_model.dita#topic_qkg_l4v_bt/configuration-of-swift-vsa-model"
+          >entry-scale-with-vsa</xref></b> of cloud model.</p>
   </body>
 </topic>
