@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_fvn_ps3_dt">
-  <title>Overview</title>
+  <title>Backup and Restore Overview</title>
   <body>
     <p>Freezer is a Backup, Restore, and Disaster Recovery as a Service platform that helps you
-      automate the backup and restore process for your data. In HP Helion OpenStack 2.0&#174; Beta
-      1, you can backup the control plane services. </p>
+      automate the backup and restore process for your data. Freezer executes backups and restores
+      as jobs, and executes these jobs independently and/or as managed sessions (multiple jobs in
+      multiple machines sharing a state).</p>
+    <p>In HP Helion OpenStack 2.0&#174; Beta 1, you can backup the control plane services. </p>
     <p>The following features are supported:</p>
     <ul id="ul_pg4_5s3_dt">
       <li>Back up your file system using point in time snapshot.</li>
@@ -42,8 +44,9 @@
             <row>
               <entry>Freezer Web UI </entry>
               <entry>Web interface that interacts with the Freezer API to configure and change
-                settings. It provides most of the features from the freezerc CLI, advanced scheduler
-                settings as multi-node backup synchronization, metrics, and reporting. </entry>
+                settings. It provides most of the features from the freezerc CLI (command line
+                interface), advanced scheduler settings as multi-node backup synchronization,
+                metrics, and reporting. </entry>
             </row>
             <row>
               <entry>Freezer Scheduler </entry>
