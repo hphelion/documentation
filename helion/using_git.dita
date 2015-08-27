@@ -155,8 +155,9 @@
             <codeblock>git add -A
 git commit -m "your commit message goes here in quotes"</codeblock>
           </li>
-        <li> Run <codeblock>config-processor-run</codeblock> to produce the required configuration
-            processor output from those changes. Review this manually if required.</li>
+        <li> Run <codeblock>config-processor-run.yml</codeblock> to produce the required
+            configuration processor output from those changes. Review this manually if
+            required.</li>
         <li>cd to scratch? Dir <codeblock>cd ____________</codeblock></li>
         <li>Run the deploy/upgrade/reconfiguration playbooks from the resulting scratch/... directory.
         <codeblock>what are the commands???</codeblock>
