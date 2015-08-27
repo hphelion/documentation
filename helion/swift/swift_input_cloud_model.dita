@@ -17,6 +17,7 @@
         <li><xref href="#topic_qkg_l4v_bt/ring-specification" format="dita">Ring
             Specifications</xref></li>
       </ul></p>
+    <section/>
     <section id="node-type"><b>Node Type</b></section>
     <p>There are two type of nodes that is associated with Swift services. They are as follows:</p>
     <ul>

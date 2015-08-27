@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_twv_b55_dt">
+  <title>Allocating Disk Drives</title>
+  <body>
+    <p>The disk model describes the number of disk present on a particular server and its usage. The
+      examples include several disk models. The disk model used by any given server is determined as
+      follows:</p>
+    <p>
+      <ul id="ul_t4y_255_dt">
+        <li>The <codeph>node_type</codeph> of server as specified in
+            <codeph>data/baremetalConfig.yml</codeph> (or <codeph>data/servers.yml</codeph>)
+          determines the role of the server.</li>
+        <li>There is a specification for each sever role in the
+            <codeph>data/server_roles.yml</codeph> file. This specifies a disk model for a given
+          server role. For example, for the <codeph>ROLE-SWOBJ</codeph>, the disk model is called
+            <codeph>DISK_SET_SWOBJ</codeph>. <p><codeph>data/server_roles.yml</codeph> file
+            specifies the disk model as
+          follows:</p><codeblock>server-roles:   
+
+
+    - name: ROLE-SWPAC 16 
+      interface-model: INTERFACE_SET_SWPAC 17 
+      disk-model: DISK_SET_SWPAC 18 
+
+
+    - name: ROLE-SWOBJ 24 
+      interface-model: INTERFACE_SET_SWOBJ 25 
+      disk-model: DISK_SET_SWOBJ 
+</codeblock></li>
+        <li>The Object server uses the <codeph>DISK_SET_SWOBJ</codeph> disk model in the
+            <codeph>data/disks_swobj.yml</codeph> file.</li>
+        <li>
+          <p>The Proxy, Account, Container servers use the <codeph>DISK_SET_SWPAC</codeph> disk
+            model in the <codeph>data/disks_swpac.yml</codeph> file.</p>
+        </li>
+      </ul>
+    </p>
+    <p>The structure of the <codeph>DISK_SET_SWOBJ</codeph> and <codeph>DISK_SET_SWPAC</codeph> disk
+      models are similar. The <codeph>data/disks_swpac.yml</codeph> file specifies the disk mode as
+      follows:<codeblock>disk-models:
+- name: DISK_SET_SWPAC
+  volume-groups:
+    - name: hlm-vg
+      physical-volumes:
+        - /dev/sda5
+      ...
+      consumer:
+         name: os
+ 
+  device-groups:
+    - name: swiftpac
+      devices:
+        - name: /dev/sdb
+        - name: /dev/sdc
+      consumer:
+        name: swift
+        attrs:
+          rings:
+            - account
+            - container</codeblock></p>
+    <p>In the above example, Swift uses <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> disk
+      drives and operating system uses <codeph>/dev/sda</codeph> disk drives.</p>
+    <p>The disk model has the following fields:</p>
+    <ul id="ul_xpy_255_dt">
+      <li><b>device-groups</b>: There can be several device groups. This allows different sets of
+        disks to be used for different purposes. In this example, there is only one entry in the
+        device groups list.</li>
+      <li><b>name</b>: This is an arbitrary name for the device group. The name must be unique, but
+        is not otherwise used.</li>
+      <li><b>devices</b>: This is a list of devices allocated to the device group. For Swift, these
+        devices must meet the criteria as explained in <xref
+          href="#topic_twv_b55_dt/requirement-disk-device" format="dita">Requirements for a disk
+          device</xref>.</li>
+      <li><b>consumer</b>: This specifies the service that uses the device group. A
+          <codeph>name</codeph> field containing <b>swift</b> indicates that the device group is
+        used by Swift. If the name field contains other values, the Swift system will ignore the
+        device group.</li>
+      <li><b>attrs.rings</b>: This lists the rings that the devices are allocated to. In this
+        example, the disk model is used by Proxy, Account, Container nodes, so the <b>account</b>
+        and <b>container</b> rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model,
+          <codeph>object-0</codeph> ring is listed. It would be an error to add the
+          <codeph>object-0</codeph> ring to the <codeph>DISK_SET_SWPAC</codeph> disk model because
+        the Swift-object service does not run on PAC node.</li>
+    </ul>
+    <p>You should review the disk devices in the disk model before making any changes to the
+      existing model. See Making Changes to a Swift Disk Model. </p>
+    <p id="requirement-disk-device"><b><i>Requirements for a Disk Device</i></b></p>
+    <p>Disk devices listed in the <b>devices</b> list must meet the following criteria:</p>
+    <ul id="ul_fsy_255_dt">
+      <li>The disk device must exist on the server. For example, if you add
+          <codeph>/dev/sdx</codeph> to a server with only 3 devices then the deploy process
+        fails.</li>
+      <li>The disk device must be unpartitioned or have a single partition that uses the whole
+        drive.</li>
+      <li>Do not have a label on the partition.  To check whether your disk is lable, execute the
+        procedure mentioned  in <xref href="label_on_partition.dita#topic_dlv_54t_dt"/></li>
+      <li>Do not have an XFS filesystem that contains a filesystem label. To check the filesytem
+        with a lable, execute the procedure mentioned in <xref
+          href="filesystem_label.dita#topic_j15_fx5_dt"/></li>
+      <li>If the disk drive is already labeled as described above, the
+          <codeph>swiftlm-drive-provision</codeph> process will assume that the drive has valuable
+        data and refuses to use or modify the drive.</li>
+    </ul>
+    <p id="making-changes-to-swift"><i><b>Making Changes to a Swift Disk Model</b></i></p>
+    <p> There are several reasons for changing the disk model as follows:</p>
+    <ul id="ul_d5y_255_dt">
+      <li>It is advisable that if you have additional drives available then you can add the drives
+        to the devices list.</li>
+      <li>The disk devices listed in the example disk model have different names on your servers.
+        This may be due different harware drives. Edit the disk model
+          (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) and change the device
+        names to the correct
+        names.<!--<table frame="all" rowsep="0" colsep="0"
+            id="table_rwv_rpm_dt">
+            <tgroup cols="1">
+              <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+              <tbody>
+                <row>
+                  <entry>Useful tips:</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>--></li>
+      <li>If you prefer a different disk drive than the one listed in the model. For example, if
+          <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you have
+        SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In this
+        case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace with
+          <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.</li>
+    </ul>
+  </body>
+</topic>

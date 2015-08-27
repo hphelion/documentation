@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_tq1_xt5_dt">
+  <title>Allocating Server</title>
+  <body>
+    <p>In the <codeph>data/baremetal.yml</codeph> file, you specify the roles for servers. For
+      example, a Swift Proxy, Container, Account (PAC) node is specified as follows:</p>
+    <p>
+      <codeblock>baremetal_servers:
+.
+.
+.
+- node_name: swpac1
+  node_type: ROLE-SWPAC
+  pxe_mac_addr: 26:67:3e:49:5a:a7
+  pxe_interface: eth2
+  pxe_ip_addr: 192.168.10.12
+  ilo_ip: 192.168.9.12
+  ilo_user: admin
+  ilo_password: password
+.
+.
+.</codeblock>
+    </p>
+    <p>In the above example a <b>node_type</b> is assigned as <b>ROLE-SWPAC</b>, which indicates
+      that this node is Swift Proxy, Container, Account (PAC) node.</p>
+    <note>If you don't use Cobbler to install your servers then you must create
+        <codeph>data/servers.yml</codeph> and configure nodes on the file.</note>
+    <p>The number of servers is specified in the <b>swpac </b>cluster in the
+        <codeph>data/control_plane.yml</codeph> file. In the following example, the number of
+      servers is set to 3.</p>
+    <p>
+      <codeblock>control-planes:
+    - name: ccp
+      region-name: region1
+      common-service-components:
+        - logging-producer
+        - monasca-agent
+        - stunnel
+      clusters:
+.
+.
+.
+- id: "4"
+          name: swpac
+          server-role: ROLE-SWPAC
+          member-count: <b>3</b>
+          service-components:
+            - ntp-client
+            - swift-proxy
+            - swift-account
+            - swift-container
+            - swift-ring-builder
+            - swift-client
+.
+.
+.</codeblock>
+    </p>
+    <p>You can increase the <b>member-count</b> value so that more Proxy, Account, Container nodes
+      are used. When you increase the <b>member-count</b> you must also increase the number of nodes
+      with the <codeph>ROLE-SWPAC</codeph> role in the <codeph>data/baremetalConfig.yml</codeph> (or
+        <codeph>data/servers.yml</codeph>) file. &lt;<b>if we dont increase the nodes in the
+        data/barementalconfig.yml file then what error message do we get?</b>></p>
+    <p>A Swift Object (OBJ) node is specified in <codeph>data/baremetalConfig.yml</codeph> file as
+      shown in the following
+      example:<codeblock>baremetal_servers:
+.
+.
+.
+- node_name: swobj1
+  node_type: ROLE-SWOBJ
+  pxe_mac_addr: 8b:f6:9e:ca:3b:78
+  pxe_interface: eth2
+  pxe_ip_addr: 192.168.10.20
+  ilo_ip: 192.168.9.20
+  ilo_user: admin
+  ilo_password: password
+.
+.
+.</codeblock></p>
+    <p>In the above example a <codeph>node_type</codeph> is assigned as <codeph>ROLE_SWOBJ</codeph>,
+      which indicates that this node is Swift Object node.</p>
+    <p>To specify the number of Swift Object servers add more servers of type
+        <codeph>ROLE_SWOBJ</codeph> to the <codeph>data/baremetalConfig.yml</codeph> (or
+        <codeph>data/servers.yml</codeph>) file. <note>For Swift Object, the
+          <codeph>member-count</codeph> is automatically determined. It is recommended not to change
+        or increment the <codeph>member count</codeph>.</note></p>
+  </body>
+</topic>
