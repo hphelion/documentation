@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hyx_43n_dt">
+  <title>Troubleshooting - Object Storage (Swift)</title>
+  <body>
+    <p>This page describes the trouble shooting scenarios for Swift services.</p>
+    <section>Installation of Swift<p>When you run the validation check for Swift and an error is
+        triggered,  perform the following steps:<ol id="ol_lhp_npn_dt">
+          <li>Log onto the node that has been designated as the Ring-Builder. <note> You must run
+              the swift-ring-validate playbook otherwise the files needed to run the
+                <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node.
+            </note></li>
+          <li>Execute the following
+              command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report </codeblock><p>
+              The command will report any errors or problems with the input model. It also prints a
+              summary of the ring create actions that are planned (i.e., that will occur) for the
+              deploy phase of the process.</p></li>
+        </ol></p></section>
+    <p><b>Examine the ring-delta File</b></p>
+    <p>
+      <note> You must run the swift-ring-validate playbook otherwise the files needed to run the
+          <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node. </note>
+    </p>
+    <ul id="ul_p4d_v3n_dt">
+      <li>Log onto the node that has been designated as the Ring-Builder (see "Allocate a
+        Ring-Builder Node" above).</li>
+    </ul>
+    <ul id="ul_u4d_v3n_dt">
+      <li>
+        <p>You can get a full listing of all drives and the actions planned for the rings by adding
+          the --detail option as follows:
+          <codeblock>sudo swiftlm-ring-supervisor --make-delta --report --detail detail</codeblock></p>
+      </li>
+    </ul>
+    <p>
+      <ul id="ul_yn2_y3n_dt">
+        <li>The output is verbose so you should redirect the output to a file so it is easier to
+          examine.</li>
+        <li>You should validate:<ul id="ul_i42_y3n_dt">
+            <li>Drives are being added to all rings in the ring specifications.</li>
+            <li>Servers are being used as expected (for example, you may have a different set of
+              servers for the account/container rings than the object rings.</li>
+            <li>The weight value is as expected. The weight value is the drive size expressed in GB
+              (i.e., a 1 TB drive has a weight of 1024).</li>
+          </ul></li>
+      </ul>
+    </p>
+    <section><b>Recovering Builder Files</b><p>When you execute the deploy process for a system, a
+        copy of the builder files is also stored on every Object Storage node in the
+        /etc/swiftlm/buiilder_dir/region-&lt;region-name&gt; directory. You can restore the builder
+        files as follows:</p><ul id="ul_krk_14n_dt">
+        <li>Log into the Ring Buider node</li>
+        <li>
+          <p>Copy the swift-rings-tarball.tar file as follows from any other node as follows:
+            <codeblock>scp &lt;username>@&lt;nodename>:/etc/swiftlm/swiftlm-rings-tarball.tar /tmp</codeblock></p>
+        </li>
+      </ul></section>
+    <p>
+      <ul id="ul_c1b_j4n_dt">
+        <li>
+          <p>Unpack the tarball in the /etc/swiftlm/builder_dir/region-&lt;region-name&gt;
+            directory. For example, if the Keystone region is called region2, use the following
+            commands:
+            <codeblock>cd  /etc/swiftlm/builder_dir/region-region2
+sudo tar -xpf /tmp/swiftlm-rings-tarball.tar</codeblock></p>
+        </li>
+      </ul>
+    </p>
+  </body>
+</topic>
