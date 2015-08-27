@@ -153,7 +153,7 @@
           <li>edit the yaml file or files that contain the configuration you want to change. </li>
         <li>commit the changes to the <b>site</b> branch.
             <codeblock>git add -A
-git commit -m "your message"</codeblock>
+git commit -m "your commit message goes here in quotes"</codeblock>
           </li>
         <li> Run <codeblock>config-processor-run</codeblock> to produce the required configuration
             processor output from those changes. Review this manually if required.</li>
