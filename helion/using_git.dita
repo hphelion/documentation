@@ -147,20 +147,26 @@
     <section>
       <title>Updating any configuration, including the deafult config</title>
       <p>When you need to make updates to your existing configuration you must <ol>
-          <li>check out the <b>site</b> branch.
-          <codeblock>git checkout site</codeblock>
+          <li>check out the <b>site</b> branch. You may aready be on that branch. If so, git will
+            tell you that and the comman will leave you
+            there.<codeblock>git checkout site</codeblock>
           </li>
-          <li>edit the yaml file or files that contain the configuration you want to change. </li>
-        <li>commit the changes to the <b>site</b> branch.
+          <li>Edit the YAML file or files that contain the configuration you want to change. </li>
+        <li>Commit the changes to the <b>site</b> branch.
             <codeblock>git add -A
 git commit -m "your commit message goes here in quotes"</codeblock>
           </li>
-        <li> Run <codeblock>config-processor-run.yml</codeblock> to produce the required
-            configuration processor output from those changes. Review this manually if
-            required.</li>
-        <li>cd to scratch? Dir <codeblock>cd ____________</codeblock></li>
-        <li>Run the deploy/upgrade/reconfiguration playbooks from the resulting scratch/... directory.
-        <codeblock>what are the commands???</codeblock>
+        <li> Run the configuration
+            processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml
+</codeblock>
+            to produce the required configuration processor output from those changes. Review this
+            manually if required.</li>
+        <li>Ready the deployment area <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Run the deployment playbooks from the resulting scratch directory.
+        <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml
+</codeblock>
         </li>
         </ol>
       </p>
