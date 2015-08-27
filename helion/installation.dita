@@ -72,7 +72,8 @@
           <codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
         <li>Confirm that ssh localhost works without a password and that you can get from external
           sources, both with and without sudo.</li>
-        <li>Mount the install media at /media/cdrom, for example,
+        <li>Log in to the deployer node as the user you created during the setup phase, and mount
+          the install media at /media/cdrom, for example,
           <codeblock>sudo mount /media/cdrom</codeblock></li>
         <li> Unpack the following tarball:
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz</codeblock>
@@ -137,10 +138,10 @@ git commit –m “My config”
                 <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct
               IPs are included. You can review the ansible change by running the following command:
               <codeblock>git show staging-ansible</codeblock></li>
-            <li>Use the 
-              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> file to create a
-              deployment directory. Run your "verb_host" commands from the following directory:
-              <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
+            <li>Use the
+              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> file
+              to create a deployment directory. Run your "verb_host" commands from the following
+              directory: <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
           </ol></li>
       </ol>
     </section>
@@ -150,14 +151,14 @@ git commit –m “My config”
         <li>Run the following command:
           <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
         <li>Run the following playbook:
-          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock><codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
       </ol>
     </section>
     <section id="NodeProvision"><title>Provision the Nodes</title>
       <ol>
         <li>Run the following command, which will reimage all the nodes using PXE:
           <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
-        <li>Wait for the nodes to install and come back up.</li>
+        <li>The script will wait for the nodes to install and come back up.</li>
       </ol>
     </section>
     <section id="CloudDeploy"><title>Deploy the Cloud</title>
@@ -200,9 +201,9 @@ git commit –m “My config”
         <li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the
           deployer:
           <codeblock>ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock> As the
-          /etc/hosts no longer have entries for HLM, sudo commands may become a bit slower. To fix
-          this issue, once this step is complete, add "hlm" after "127.0.0.1 localhost". The result
-          will look like
+          /etc/hosts file no longer has entries for HLM, sudo commands may become a bit slower. To
+          fix this issue, once this step is complete, add "hlm" after "127.0.0.1 localhost". The
+          result will look like
           this:<codeblock>...
 # Localhost Information
 127.0.0.1 localhost hlm

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_m43_2j3_bt">
-  <title>Updating Keystone</title>
+  <title>Reconfiguring Keystone</title>
   <body>
 
-    <section><title>Updating Keystone </title>HP Helion OpenStack&#174; allows you to perform
+    <section>HP Helion OpenStack&#174; allows you to perform
       updates on the following parts of the Identity service configuration: <ul>
         <li>The main Keystone configuration file: <b>/etc/keystone/keystone.conf</b> Here you can
           manipulate Keystone configuration parameters and enable experimental features, such as
@@ -29,7 +29,7 @@
             href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
             scope="external" format="html">Keystone docs at OpenStack.org</xref>
           <note>This is a Jinja2 template, which expects certain template variables to be set. Do
-            not change values inside double curly braces (i.e. {{ }}). </note></li>
+            not change values inside double curly braces: {{ }}. </note></li>
         <li>Once the template is modified, run reconfiguration playbook:
           <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock></li>
       </ol></section>

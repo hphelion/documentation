@@ -43,7 +43,7 @@
         navtitle="Installing Keystone Identity" locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
         locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_update.dita" navtitle="Updating Keystone"
+      <topicref href="helion/keystone/keystone_reconfigure.dita" navtitle="Reconfiguring Keystone"
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Current Limitations"
         locktitle="yes"> </topicref>
