@@ -89,7 +89,7 @@
         can use the Kibana interface to view and analyze the information, as shown in the following
         figure:</p>
       <p>
-        <image href="../images/centralized_logging_diagram.png" placement="break"  scale="50"/>
+        <image href="../images/centralized_logging_diagram.png" placement="break"  width="10cm"/>
       </p>
       <note>Logging requires 4GB of disk space to make sure that all logging messages are
         retained.</note>
