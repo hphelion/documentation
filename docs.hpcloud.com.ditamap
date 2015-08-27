@@ -25,7 +25,7 @@
     <topichead navtitle="Installation">
       <topicref href="helion/installation.dita" navtitle="Installing HP Helion OpenStack"
         locktitle="yes"/>
-      <topicref href="helion/using_git.dita" navtitle="Using git for configuration management"
+      <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
         locktitle="yes"/>
       <topicref href="helion/esx/esx_installation.dita" navtitle="Installing on ESX" locktitle="yes"
         toc="no"/>

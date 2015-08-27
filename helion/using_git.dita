@@ -3,11 +3,11 @@
 <topic id="topic_u3v_1yz_ct">
   <title>Using the local git repository for configuration</title>
   <body>
-    <p>In HP Helion OpenStack&#174; 2.0 versions, inclusding Beta1, a local git repository is used
-      to track configuration changes and for the config processor to look to for configuration
-      changes. The introduction of a git workflow also means that your configuration history is
-      maintained, making rollbacks easier as well as keeping a record of previous configuration
-      settings.</p>
+    <p>In HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 versions, inclusding Beta1, a local git
+      repository is used to track configuration changes and for the config processor to look to for
+      configuration changes. The introduction of a git workflow also means that your configuration
+      history is maintained, making rollbacks easier as well as keeping a record of previous
+      configuration settings.</p>
     <p>The git repository, which is installed by the deployer, is local to your cloud servers, but
       in other ways functions like a remote git repository.</p>
     <note>As of 8/27 the remainder of this doc is not developed or in any way complete and will not
@@ -71,7 +71,7 @@
           below to make configuration changes.</note>
       </p>
     </section>
-<!--    <section>
+    <!--    <section>
       <title>When receiving a new Helion drop</title>
       <note>The steps for new drops will only be run on HP Helion OpenStack 2.0 Beta 1 and later.
         The git repository is not present in Beta 0.</note>
@@ -172,11 +172,6 @@ ansible-playbook -i hosts/verb_hosts site.yml
           </li>
         </ol>
       </p>
-      
-
-      
-     
-      
     </section>
   </body>
 </topic>
