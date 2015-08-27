@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_pgq_mnw_dt">
+  <title>Backup</title>
+  <body>
+    <p>There are several mandatory requirements to execute a backup:
+    <ul>
+      <li>action (backup by default)</li>
+      <li>mode (fs by default)</li>
+      <li>path-to-backup</li>
+      <li>backup-name</li>
+      <li>container (swift container or local path)</li>
+      <li>storage (swift by default)</li>
+    </ul></p>
+  </body>
+</topic>
