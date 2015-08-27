@@ -74,7 +74,7 @@
         <topichead navtitle="General">
           <topicref href="helion/monasca/opsconsole/dashboard.dita"/>
           <topicref href="helion/monasca/opsconsole/logging.dita"/>
-          <topicref href="helion/monasca/opsconsole/alarm_creation.dita"/>
+          <topicref href="helion/monasca/opsconsole/alarm_definitions.dita"/>
           <topicref href="helion/monasca/opsconsole/alarm_explorer.dita"/>
           <topicref href="helion/monasca/opsconsole/notification_methods.dita"/>
           <topicref href="helion/monasca/opsconsole/metric_monitoring.dita" toc="no"/>
@@ -90,7 +90,7 @@
         <topichead navtitle="Storage">
           <topicref href="helion/monasca/opsconsole/storage_summary.dita"/>
         </topichead>
-     </topichead>
+      </topichead>
     </topichead>
     <topichead navtitle="Centralized Logging">
       <topicref href="helion/logging/logging_overview.dita" locktitle="yes">
