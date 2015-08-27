@@ -76,7 +76,7 @@
       <p>In the VMware vCenter client, the port group list should appear as follows:</p>
       <p><image href="../../media/CGH-install-ESX-ports.png" id="image_os2_2vy_zs"/></p>
     </section>
-    <section>
+    <section id="vmware">
       <title>Deploy the VMware vSphere Distributed Switch</title>
       <p>The VMware vSphere Distributed Switch you obtained from VMware must be installed. For more
         information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581">Deploying
@@ -88,75 +88,23 @@
           href="carrier-grade-install-vsvapp.dita#topic10581">Deploying the VRS vApp</xref>. </p>
     </section>
     <section id="vsd">
-      <title>Apply the VSD license</title>
-      <p>Before you start, make sure the VSD node is installed by logging into the VSD VM using SSH
-        and running the following command:</p>
+      <title>Verify VSD is running</title>
+      <p>Make sure the VSD node is installed by logging into the VSD VM using SSH and running the
+        following command:</p>
       <codeblock>service vsd status</codeblock>
       <p>You should see the status as below from VSD VM.</p>
       <p>
         <image href="../../media/CGH-install-virsh-vsd.png" width="400"/></p>
     </section>
-    <!--<section id="vsd-performance-workaround"> <title>VSD Performance workaround</title>
-<p>By default VSD has only 8G memory. For better performance behavior, you can update the VSD memory to 16G.</p>
-<ol>
-<li>From HLM host, execute the following command to power down the VSD node:
-          VM:<codeblock>virsh destroy vsd</codeblock></li>
-<li>Execute the following command to edit the memory setting in the VSD XML
-          file:<codeph>virsh edit vsd 
-
-Current value 
-    &lt;memory unit='KiB'&gt;8388608&lt;/memory&gt;
-    &lt;currentMemory unit='KiB'&gt;8388608&lt;/currentMemory&gt;
-
-Change to 
-    &lt;memory unit='KiB'&gt;16777216&lt;/memory&gt;
-    &lt;currentMemory unit='KiB'&gt;16777216&lt;/currentMemory&gt;
-</codeph></li>
-<li>Save the value<codeph>virsh save vsd
-</codeph></li>
-<li>Use the following command to start the
-            VM:<codeph>virsh start vsd
-</codeph><p>It can take 15 minutes or
-            more to sync with NTP and to get all the other VSD services up.</p></li>
-</ol>
-</section>-->
-    <p>You should have recevied a license file when you purchased DCN. You need to apply that
-      license on the HLM host. </p>
-    <p>To apply the VSD license, on the HLM host:</p>
-    <ol>
-      <li>If you do not have the license file, through the DCN post-sales process, you received a
-        confirmation email. Use a browser and go to the link in the email to obtain the
-        license.</li>
-      <li>After you have obtained the license, use a browser to navigate to the VSD dashboard using
-        the VSD URI.</li>
-      <li>In the login page, enter the default
-        credentials:<codeblock>User Name: Csproot 
-Password: csproot 
-Org: csp 
-VSD Server : auto </codeblock></li>
-      <li>From VSD Dashboard, click the <b>Open VSP Configuration</b> tab on the top right corner of
-        the dashboard.</li>
-      <li>Click the <b>Licenses</b> tab and click <b>+</b>.</li>
-      <li>Copy and paste your DCN license key into the dialog box.</li>
-    </ol>
-    <!--Follow the instructions in the pdf to get the license - <b>Get confirmation from Nayana</b><p><xref href="https://wiki.hpcloud.net/display/HCG/HP+Helion+OpenStack+Carrier+Grade+%28NFVi%29+Home#HPHelionOpenStackCarrierGrade%28NFVi%29Home-HPHelionOpenStackCarrierGradeDCN/Nuage" format="html" scope="external">https://wiki.hpcloud.net/display/HCG/HP+Helion+OpenStack+Carrier+Grade+%28NFVi%29+Home#HPHelionOpenStackCarrierGrade%28NFVi%29Home-HPHelionOpenStackCarrierGradeDCN/Nuage</xref></p>-->
+    <section><title>Apply the VSD License</title>You should have recevied a license file when you
+      purchased DCN. You need to apply that license on the HLM host. For more information, see <xref
+        href="carrier-grade-install-vsd-license.dita#topic10581"/>.</section>
     <section id="create-user-for-plugin-login">
-      <title>Create an OSadmin user for plugin login</title>
-      <p>You must create an administrative user called OSadmin and add it to CMS Group.</p>
-      <ol>
-        <li>From VSD Dashboard, click the <b>Open VSP Configuration</b> tab on the top right corner
-          of the dashboard.</li>
-        <li>Click the <b>CSP Users</b> tab and click <b>+</b>.</li>
-        <li>Create a user named <codeph>OSadmin</codeph> with the password <codeph>OSadmin</codeph>.
-          The name and password are case-sensitive. Do not copy and paste from here into the field.
-              <p><image href="../../media/CGH-Install-VSD-create-user.png" id="image_pjz_wy3_bt"
-              width="600"/></p></li>
-        <li>Add the user to the <codeph>CMS Group</codeph>.<p><image
-              href="../../media/CGH-install-VSD-user-to-group.png" width="600" id="image_q4m_sz3_bt"
-            /></p></li>
-      </ol>
+      <title>Create an OSadmin user for VSD</title>
+      <p>You must create an administrative user called OSadmin and add it to CMS Group. For more
+        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581">Create an
+          OSadmin User for VSD</xref>.</p>
     </section>
-    <!--<section><title>Install the DVswitch</title></section><section><p>The VMware® vNetwork Distributed Switch (vDS) enables you to manage virtual machine networking for a number of hosts in a datacenter using the VMware vSphere application </p><p>Please Refer to the DCN VSP 3.0 R7 installation Guide for DVswitch installation.</p></section>-->
     
     <section id="configure-a-json-file-for-installation">
       <title>Launch the HP Helion OpenStack cloud</title>

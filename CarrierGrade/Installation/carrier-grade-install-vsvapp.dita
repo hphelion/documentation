@@ -15,8 +15,8 @@
   </prolog>
   <body>
     <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
-          >KVM + ESX Deployment</xref>.</i></p>
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+        Deployment</xref>.</i></p>
 
     <p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VRSvApp. One
       VRSvApp is required for each ESX host. There is a 1-to-1 mapping between each VRSvApp and its
@@ -144,8 +144,8 @@
         <li>controller=VSC server ip</li>
         <li>Default user name and password for the VRS vm: ,<codeph>root/UFXCr4733F</codeph></li></ul>
       <p><i>Return to the Installing the <xref
-            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
-            >KVM + ESX Deployment</xref>.</i></p>
+            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+            Deployment</xref>.</i></p>
     </section>
   </body>
 </topic>

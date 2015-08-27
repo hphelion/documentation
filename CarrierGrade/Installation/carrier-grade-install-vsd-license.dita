@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Apply the VSD License</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><i>Return to the Installing the <xref
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+        Deployment</xref>.</i></p>
+    <p>You should have recevied a license file when you purchased DCN. You need to apply that
+      license on the HLM host. </p>
+    <p>To apply the VSD license, on the HLM host:</p>
+    <ol id="ol_oyq_vjw_dt">
+      <li>If you do not have the license file, through the DCN post-sales process, you received a
+        confirmation email. Use a browser and go to the link in the email to obtain the
+        license.</li>
+      <li>After you have obtained the license, use a browser to navigate to the VSD dashboard using
+        the VSD URI.</li>
+      <li>In the login page, enter the default
+        credentials:<codeblock>User Name: Csproot 
+Password: csproot 
+Org: csp 
+VSD Server : auto </codeblock></li>
+      <li>From VSD Dashboard, click the <b>Open VSP Configuration</b> tab on the top right corner of
+        the dashboard.</li>
+      <li>Click the <b>Licenses</b> tab and click <b>+</b>.</li>
+      <li>Copy and paste your DCN license key into the dialog box.</li>
+    </ol>
+    <section>
+      <p><i>Return to the Installing the <xref
+            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+            Deployment</xref>.</i></p>
+    </section>
+  </body>
+</topic>

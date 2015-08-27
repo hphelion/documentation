@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Backup and Restore the HLM
-    Node and MySQL Cluster</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Backup and Restore the HLM VM
+    and MySQL Cluster</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -32,7 +32,8 @@
       <ul>
         <li>when the HP Helion OpenStack Carrier Grade installation is complete,</li>
         <li>when any change is made to the HP Helion OpenStack Carrier Grade components, </li>
-        <li>after synching the files on the HLM VM. The files should be synced periodically.</li>
+        <li>after synching the files on the HLM VM. The files should be synced periodically using a
+          tool appropriate for your environment.</li>
       </ul>
     </section>
     <section>
@@ -118,23 +119,23 @@
           files that the <codeph>innobackupex</codeph> script uses to make sure the restore works
           properly.
             <codeblock>sudo innobackupex --apply-log /backups/&lt;timestamped-folder-path></codeblock><p>Where
-              <codeph>&lt;timestamped-folder-path></codeph> is the path to the timestamped folder
+              <codeph>&lt;timestamped-folder-path></codeph> is the path to the time-stamped folder
             generated in previous step.</p></li>
 
-        <li>Copy the timestamped backup folder to a remote location.</li>
+        <li>Copy the time-stamped backup folder to a remote location.</li>
       </ol>
     </section>
     <section><title>Restore the MySQL cluster</title>
       <p>Use the following steps to restore the MySQL cluster:</p>
       <ol>
-        <li>Stop the MySQL instance on all the three cluster nodes.
-          <codeblock>sudo /etc/init.d/mysql stop</codeblock></li>
-        <li>Delete the current data in the MySQL nodes on each of the three cluster nodes.<ol
-            id="ol_ccd_g5v_dt">
-            <li>SSH into each MySQL node.</li>
-          <li>Execute the following command:
-              <codeblock>sudo rm -rf /var/lib/mysql/*</codeblock></li></ol></li>
-        <li>Copy the timestamped backup folder from the remote location to any location on the
+        <li>Stop the MySQL instance and delete the current data  on all the three cluster nodes.
+            <ol id="ol_thg_ttw_dt">
+            <li>SSH to each controller node in the non-KVM region.</li>
+            <li>Execute the following
+              commands:<codeblock>sudo /etc/init.d/mysql stop
+sudo rm -rf /var/lib/mysql/*</codeblock></li>
+          </ol></li>
+        <li>Copy the time-stamped backup folder from the remote location to any location on the
           controller from which you created the backup.</li>
         <li>Perform a Percona XtraBackup recovery using the <codeph>innobackupex</codeph> command
             <codeblock>sudo innobackupex --copy-back /backups/&lt;timestamped-folder-path> </codeblock><p>Where

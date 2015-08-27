@@ -15,8 +15,8 @@
 </prolog>
 <body>
   <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
-          >KVM + ESX Deployment</xref>.</i></p>
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+        Deployment</xref>.</i></p>
   
   <p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VMWare vSphere
       Distributed Switch (VDS). The VDS provides a centralized interface from which you can
@@ -51,8 +51,8 @@
               href="../../media/CGH-install-portgroup-name.png" id="image_eqm_ngz_zs"/></p></li>
       </ol>
       <p><i>Return to the Installing the <xref
-            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
-            >KVM + ESX Deployment</xref>.</i></p>
+            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+            Deployment</xref>.</i></p>
     </section>
 </body>
 </topic>
