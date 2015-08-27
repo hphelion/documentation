@@ -21,22 +21,23 @@
     <topicref href="helion/releasenotes.dita"/>
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
+    <topicref href="helion/faq.dita"/>
     <topichead navtitle="Installation">
-      
-    <topicref href="helion/installation.dita" navtitle="Installing HP Helion OpenStack" locktitle="yes"/>
-      <topicref href="helion/using_git.dita" navtitle="Using git for configuration management" locktitle="yes"/>
-    <topicref href="helion/esx/esx_installation.dita" navtitle="Installing on ESX" locktitle="yes" toc="no"/>
-    <topicref  href="helion/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
+      <topicref href="helion/installation.dita" navtitle="Installing HP Helion OpenStack"
+        locktitle="yes"/>
+      <topicref href="helion/using_git.dita" navtitle="Using git for configuration management"
+        locktitle="yes"/>
+      <topicref href="helion/esx/esx_installation.dita" navtitle="Installing on ESX" locktitle="yes"
+        toc="no"/>
+      <topicref href="helion/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
     </topichead>
     <topichead navtitle="Backup and Restore">
-      <topicref href="helion/buar_overview.dita" />
-      <topicref href="helion/backup.dita" />
-      <topicref href="helion/restore.dita" />
-   
- </topichead>
+      <topicref href="helion/bura/bura_overview.dita"/>
+      <topicref href="helion/bura/backup.dita"/>
+      <topicref href="helion/bura/restore.dita"/>
+    </topichead>
     <topicref href="helion/faq.dita"/>
     <topicref href="helion/eula.dita" toc="no"/>
-
 
     <!-- keystone identity -->
     <topichead navtitle="Identity">
@@ -44,8 +45,8 @@
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_roles.dita"
         navtitle="Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_init.dita"
-        navtitle="Keystone Identity Configuration" locktitle="yes"> </topicref>
+      <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Identity Configuration"
+        locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_reconfigure.dita" navtitle="Reconfiguring Keystone"
