@@ -1,64 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qtp_cn3_bt">
-  <title>Current Limitations</title>
+  <title>Notes and Limitations</title>
   <body>
-    <section>
-<b>Domains</b><ul id="ul_ks2_jpd_bt">
+    <section><title>Notes</title>
+      <b>Domains</b>
+      <ul>
         <li>Domains can be created and managed by the Keystone API and OpenStackClient CLI.</li>
         <li>End users can authenticate to a particular project and domain via the Keystone API and
           OpenStackClient CLI.</li>
+
+        <li>The configuration of external authentication systems requires the creation and usage of
+          Domains.</li>
+        <li>All configurations are managed by creating and editing specific configuration files. </li>
+        <li>End users can authenticate to a particular project and domain via the Keystone API and
+          OpenStackClient CLI.</li>
+      </ul>
+      <b>Keystone-to-Keystone Federation</b>
+      <ul>
+        <li>Keystone-to-Keystone (K2K) Federation provides the ability to authenticate once with one
+          cloud and then use these credentials to access resources on other federated clouds.</li>
+        <li>All configurations are managed by creating and editing specific configuration files. </li>
+      </ul>
+      
+      <b>Multi-Factor Authentication (MFA)</b>
+      <ul>
+        <li>The Keystone architecture provides support for MFA deployments.</li>
+        <li>MFA provides the ability to deploy non-password based authentication; for example: token
+          providing hardware and text messages.</li>
+      </ul>
+      
+      
+      <b>Hierarchical Multitenancy</b>
+      
+      <ul>
+        
+        <li>Provides the ability to create sub-projects within a Domain-Project hierarchy.</li>
+        
+        
+      </ul>
+    </section>
+
+
+
+    <section>
+      <title>Limitations</title>
+      <b>Domains</b><ul id="ul_ks2_jpd_bt">
+
         <li>No Horizon web portal support currently exists for Domains. <ul id="ul_p52_jpd_bt">
-          <li>Users cannot currently select a Domain when logging into Horizon</li>
-          <li>No domains created by API or CLI will be visible in Horizon</li>
-        </ul></li>
-      </ul><b>Authentication with external authentication systems (LDAP, Active Directory (AD) or Identity
-        Providers)</b><ul id="ul_u52_jpd_bt">
-          <li>The configuration of external authentication systems requires the creation and usage of
-            Domains.</li>
-          <li>All configurations are managed by creating and editing specific configuration files. </li>
-          <li>No Horizon web portal support currently exists for the creation and management of
-            external authentication system configurations.</li>
-          <li>End users can authenticate to a particular project and domain via the Keystone API and
-            OpenStackClient CLI.</li>
-          <li>A new Domain Admin API has been included in the Kilo release of OpenStack but is
-            currently an "experimental" function and is not recommended for production use until a
-            future OpenStack release.</li>
-        </ul><b>Keystone-to-Keystone Federation</b><ul id="ul_xw2_jpd_bt">
-          <li>Keystone-to-Keystone (K2K) Federation provides the ability to authenticate once with one
-            cloud and then use these credentials to access resources on other federated clouds.</li>
-          <li>All configurations are managed by creating and editing specific configuration files. </li>
-          <li>No Horizon web portal support currently exists for the creation and management of
-            federation configurations.</li>
-          <li>All end users authentication is available only via the Keystone API and OpenStackClient
-            CLI.</li>
-          <li>No current HP documentation is available for this function.</li>
-          <li>Additional information can be found at <xref
+            <li>Users cannot currently select a Domain when logging into Horizon</li>
+            <li>No domains created by API or CLI will be visible in Horizon</li>
+          </ul></li>
+      </ul>
+      <b>Authentication with external authentication systems (LDAP, Active Directory (AD) or
+        Identity Providers)</b><ul id="ul_u52_jpd_bt">
+
+        <li>No Horizon web portal support currently exists for the creation and management of
+          external authentication system configurations.</li>
+
+        <li>A new Domain Admin API has been included in the Kilo release of OpenStack but is
+          currently an "experimental" function and is not recommended for production use until a
+          future OpenStack release.</li>
+      </ul>
+      <b>Keystone-to-Keystone Federation</b><ul id="ul_xw2_jpd_bt">
+    
+     
+        <li>No Horizon web portal support currently exists for the creation and management of
+          federation configurations.</li>
+        <li>All end users authentication is available only via the Keystone API and OpenStackClient
+          CLI.</li>
+        <li>No current HP documentation is available for this function.</li>
+        <li>Additional information can be found at <xref
             href="http://docs.openstack.org/developer/keystone/configure_federation.html"
             format="html" scope="external"
             >http://docs.openstack.org/developer/keystone/configure_federation.html</xref></li>
-        </ul><b>Multi-Factor Authentication (MFA)</b><ul id="ul_az2_jpd_bt">
-          <li>MFA provides the ability to deploy non-password based authentication; for example: token
-            providing hardware and text messages.</li>
-          <li>The Keystone architecture provides support for MFA deployments.</li>
-          <li>Helion OpenStack MFA support is a custom configuration requiring HP Professional
-            Services support.</li>
-          <li>MFA drivers are not included with Helion OpenStack and need to be provided by a specific
-            MFA vendor.</li>
-          <li>Additional information can be found at <xref
+      </ul>
+      
+      <b>Multi-Factor Authentication (MFA)</b>
+      
+      <ul id="ul_az2_jpd_bt">
+
+        
+        <li>Helion OpenStack MFA support is a custom configuration requiring HP Professional
+          Services support.</li>
+        <li>MFA drivers are not included with Helion OpenStack and need to be provided by a specific
+          MFA vendor.</li>
+        <li>Additional information can be found at <xref
             href="http://docs.openstack.org/security-guide/content/identity-authentication-methods.html#identity-authentication-methods-external-authentication-methods"
             format="html" scope="external"
             >http://docs.openstack.org/security-guide/content/identity-authentication-methods.html#identity-authentication-methods-external-authentication-methods</xref></li>
-        </ul>
+      </ul>
       <b>Hierarchical Multitenancy</b>
       <ul id="ul_tbf_jpd_bt">
-        <li>Provides the ability to create sub-projects within a Domain-Project hierarchy.</li>
+       
         <li>Requires additional OpenStack service support prior to being used for general use.</li>
         <li>Recommended currently only for test deployments.</li>
         <li>Additional information can be found at <xref
-          href="http://specs.openstack.org/openstack/keystone-specs/specs/juno/hierarchical_multitenancy.html"
-          format="html" scope="external"
-          >http://specs.openstack.org/openstack/keystone-specs/specs/juno/hierarchical_multitenancy.html</xref>.</li>
+            href="http://specs.openstack.org/openstack/keystone-specs/specs/juno/hierarchical_multitenancy.html"
+            format="html" scope="external"
+            >http://specs.openstack.org/openstack/keystone-specs/specs/juno/hierarchical_multitenancy.html</xref>.</li>
       </ul>
     </section>
   </body>
