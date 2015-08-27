@@ -104,8 +104,6 @@
       <p><b>Installing Swift</b></p>
       <p>Swift installs with the following limitations: </p>
       <ul>
-        <li>Only a 3-node Swift configuration in which Swift runs on the three controller nodes is
-          supported.</li>
         <li>There is no LVM (logical volumes) support. Therefore, dedicated disks are needed for
           Swift on the 3 controller nodes.</li>
         <li>In Beta 1 you cannot add or remove Swift servers.</li>
