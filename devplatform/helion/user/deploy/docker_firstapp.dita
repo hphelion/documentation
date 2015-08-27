@@ -15,8 +15,8 @@
       chaining them together with the FROM directive at the top of each separate Dockerfile. This example includes both methods.</p></section><section><title>Update and Installing OS Packages</title>
         <p>The first thing this Dockerfile does is execute an update using the OS package manager. On openSUSE, this is done with <codeph>zypper</codeph>. </p>
           <codeblock>RUN
-      \ zypper -n up \ &amp;&amp; zypper -n install python python-pip ca-certificates-mozilla \ vim
-      git curl wget</codeblock>  
+\ zypper -n up \ &amp;&amp; zypper -n install python python-pip ca-certificates-mozilla \ vim
+git curl wget</codeblock>  
         <p>The openSUSE base image is intentionally minimal, so this also installs:
           <dl><dlentry>
             <dt>python</dt>
@@ -52,65 +52,65 @@
       use cached layers when rebuilding, which can speed up the build significantly.</p>
       </section><section><title>Build, test, and push Docker Images</title> 
       <p>The new "base+1" image layer is named 'troytop/opensuse-python'. </p><p>To build it, run this command in a directory that is empty
-      except for the Dockerfile:</p><codeblock> $ sudo docker build --no-cache -t troytop/opensuse-python
-      .</codeblock><p>In this case, <codeph>--no-cache</codeph> is used to ensure that the <codeph>zypper</codeph> update runs each time it builds, rather than relying on the cached image layer from previous builds.</p>
+      except for the Dockerfile:</p><codeblock> $ sudo docker build --no-cache -t troytop/opensuse-python .</codeblock><p>In this case, <codeph>--no-cache</codeph> is used to ensure that the <codeph>zypper</codeph> update runs each time it builds, rather than relying on the cached image layer from previous builds.</p>
         <p>After the build completes, open an interactive shell and verify that it went as expected:</p>
-<codeblock>sudo docker run -i -t troytop/opensuse-python /bin/sh sh-4.2# pip -V
-      pip 1.5 from /usr/lib/python2.7/site-packages (python 2.7) sh-4.2# exit </codeblock> 
-        <p>Note that if an app is to be shared, it should be pushed to the Docker Hub or other registry
-      server:</p><codeblock>sudo docker push troytop/opensuse-python</codeblock></section>
+<codeblock>sudo docker run -i -t troytop/opensuse-python /bin/sh 
+sh-4.2# pip -V
+pip 1.5 from /usr/lib/python2.7/site-packages (python 2.7) 
+sh-4.2# exit </codeblock> 
+        <p>Note that if an app is to be shared, it should be pushed to the <xref
+          href="https://registry.hub.docker.com/" format="html" scope="external">Docker Hub</xref>
+        or other registry server:</p><codeblock>sudo docker push troytop/opensuse-python</codeblock></section>
     
     <section><title>The Next Layer: bottle-currency-suse</title>The Docker version of the example
       app (bottle-currency) is based on ubuntu:12.04, so the Dockerfile can be adapted to work with
-      an opensuse-python image. Here's a breakdown:
-      <codeblock>FROM troytop/opensuse-python MAINTAINER Troy Topnik &lt;troyt@activestate.com></codeblock>
-      Nothing surprising here. Using a different container as a starting point and identifying
-      myself as the maintainer.
+      an opensuse-python image.
+      <codeblock>FROM troytop/opensuse-python MAINTAINER Troy Topnik &lt;troyt@activestate.com></codeblock>Use
+      a different container as a starting point and identify yourself as the maintainer.
       <codeblock>RUN useradd -d /home/www -m -s /bin/bash www 
 USER www 
 WORKDIR /home/www</codeblock>This
-      creates a new user called 'www' and sets the active user and the working directory. If the app
-      does not need to run as root, it should not.<codeblock>COPY . . </codeblock>Since the
-      Dockerfile exists in the base directory of the bottle-currency sources, this command will
-      recursively copy the contents of the current directory into the WORKDIR defined above.
+      creates a new user called <codeph>www</codeph> and sets the active user and the working
+        directory.<note>For maximum security, no app should run as root unless absolutely
+        necessary.</note><codeblock>COPY . . </codeblock>Since the Dockerfile exists in the base
+      directory of the bottle-currency sources, this command will recursively copy the contents of
+      the current directory into the WORKDIR defined above.
       <codeblock>RUN pip install --user -r requirements.txt </codeblock>This installs the modules
       required by the application. With a staged application, this part would be handled by the
-      buildpack. <codeblock>EXPOSE 8080</codeblock>Apps default to running on port 8080 if it
-      doesn't see a $PORT environment variable, so we EXPOSE that port in the container with this
-      command so that it's routed to an external port on the DEA host. The Stackato router will in
-      turn be able to route to the app by forwarding external requests to this <i>hostname:port</i>.
-      When running a staged app in Stackato, the application code or the Procfile will have to
-      reference the $PORT variable that Stackato provides in the container. With Docker Apps we just
-      have to make sure there's only one port exposed. CMD python wsgi.py Finally, we specify the
-      command that starts the web process. In the buildpack world, this would be specified in a
-      Procfile. With the Dockerfile ready, we repeat the same steps we did with the opensuse-python
-      image to build, test, and push the image. The testing step is slightly different as we
-      probably want to look at this with a browser. To do this we forward the container's port 8080
-      to port 8000 on the host:
-      <codeblock>sudo docker run -p 8000:8080 -t troytop/bottle-currency-suse</codeblock> Assuming
-      we're doing this all on localhost, connecting to http://localhost:8000 with a browser will
-      show the running web app. It won't work just yet. If you're trying this yourself, you'll see
-      "An error occurred while contacting the server" and the conversion app won't actually
-      function. That's because the app is looking for a Redis data service. There are a few ways to
-      link Docker containers to other Docker containers providing databases, but we can handle this
-      once it's deployed to Stackato. For now, we'll push our new image to the Docker Hub:
-      <codeblock>sudo docker push troytop/bottle-currency-suse</codeblock></section><section><title>Attaching Services</title><p> The
-      bottle-currency app looks for a Redis data service exposed by a REDIS_URL environment
-      variable. Stackato injects environment variables (VCAP_SERVICES, _URL, etc. ) into the Docker
-      containers to provide connection information for any services that have been bound to the app.
-      This is the 12-factor way of doing things, and it's the way staged applications have always
-      worked in Cloud Foundry. So, to deploy our app to Stackato:
-      <codeblock>stackato push -n --docker-image troytop/bottle-currency-suse --mem 128 --as docker-currency</codeblock>
-     This fetches the docker image from the Hub and deploys it (without a database yet). Next, we
-      create a new Redis data service and bind it to the app:
-      <codeblock>stackato create-service --plan free redis currency-data docker-currency</codeblock>
-     This step will recreate the container with the necessary REDIS_URL variable in it. With your
-      own code, you can find a number of ways to parse these environment variables and connect to
-      the data services, but if you're trying to deploy something that someone *else* has already
-      packaged as a Docker image, you might have to find creative ways to reformat the credentials
-      provided by Stackato into variables that the app understands. The way to do this is to add
-      another layer on top of the third-party image which parses the Stackato-provided environment
-      variables, reformats them in a way the app will understand, and reiterates the CMD /
-      ENTRYPOINT line from the original image.</p></section>
+      buildpack instead. <codeblock>EXPOSE 8080</codeblock>Without a $PORT environment variable,
+      apps default to running on port 8080. This command EXPOSEs the default port in the container
+      so that it's routed to an external port on the DEA host. The ALS router will in turn be able
+      to route to the app by forwarding external requests to this <i>hostname:port</i>.<p>With
+        Docker Apps, only one port must be exposed. When running a staged app, the application code
+        or the Procfile would have to reference the $PORT variable provided in the
+      container.</p><codeblock>CMD python wsgi.py</codeblock>This command starts the web process. In
+      a staged app, this would be specified in a Procfile. Now that the Dockerfile is ready, repeat
+      the same steps used for the opensuse-python image to build, test, and push the image. <p>The
+        testing step is slightly different since the app will be viewed in a web browser. To support
+        this, forward the container's port 8080 to port 8000 on the host:
+      </p><codeblock>sudo docker run -p 8000:8080 -t troytop/bottle-currency-suse</codeblock>Assuming
+      all work was done on localhost, connecting to <codeph>http://localhost:8000 </codeph>with a
+      browser will show the running web app, but the error message "An error occurred while
+      contacting the server" will appear. The conversion app does not function yet because it
+      requires a Redis data service. <p>Push the new image to the Docker Hub:
+      </p><codeblock>sudo docker push troytop/bottle-currency-suse</codeblock></section><section><title>Attaching Services</title><p> The bottle-currency app looks for a Redis data service exposed by a REDIS_URL environment
+        variable. <xref href="../reference/1.2environment.dita#topic7631">Environment
+          variables</xref> (VCAP_SERVICES) are injected into the Docker containers to provide
+        connection information for any services that have been bound to the app. This is the <xref
+          href="http://12factor.net/config" format="html" scope="external">12-Factor method</xref>,
+        which has always been standard practice for Cloud Foundry. </p>
+      <p>Deploy the
+        app:<codeblock>helion push -n --docker-image troytop/bottle-currency-suse --mem 128 --as docker-currency</codeblock>
+        This fetches the Docker image from the Hub and deploys it, but without a database.</p>
+      <p>Next, we create a new Redis data service and bind it to the app:
+        <codeblock>helion create-service --plan free redis currency-data docker-currency</codeblock>
+        This step will recreate the container with the necessary REDIS_URL variable in it. The app
+        should now function properly.</p>
+      <note>There are a number of ways to parse environment variables when connecting to the data
+        services. If you are deploying a Docker image written by a third party, the credentials
+        provided by ALS will need to be reformatted into variables that the app can understand. To
+        do this, add another layer on top of the third-party image which parses the provided
+        environment variables, reformats them in a way the app will understand, and reiterates the
+        CMD / ENTRYPOINT line from the original image.</note></section>
   </body>
 </topic>
