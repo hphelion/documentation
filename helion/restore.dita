@@ -53,19 +53,23 @@
 </codeblock></p>
     </section>
     <section><title>HP Helion OpenStack Restore Process</title></section>
-    <p><b/>Deployer Restore <ol>
-        <li>Connect to deployer</li>
-        <li>Become root <codeblock>sudo su</codeblock></li>
-        <li>Source backup environment
-          file<codeblock>source /etc/freezer/backup.osrc</codeblock></li>
-        <li>List jobs<codeblock>freezer-scheduler -c</codeblock>deployer hostname (generaly
-          hLinux)<codeblock>job-list</codeblock></li>
-        <li>Get the id corresponding to the job "HLM Default: Deployer restore"</li>
-        <li>Launch the restore <codeblock>freezer-scheduler -c</codeblock>deployer hostname
-          (generaly hLinux)<codeblock>job-start -j</codeblock></li>
-        <li>Wait for some time, you can follow the
-          <codeblock>/var/log/freezer-agent/freezer-agent.log</codeblock></li>
-      </ol></p>
+    <p>Deployer Restore</p>
+    <ol>
+      <li>Connect to deployer</li>
+      <li>Become root <codeblock>sudo su</codeblock></li>
+      <li>Source backup environment file<codeblock>source /etc/freezer/backup.osrc</codeblock></li>
+      <li>List jobs<codeblock>freezer-scheduler -c</codeblock>deployer hostname (generaly
+        hLinux)<codeblock>job-list</codeblock></li>
+      <li>Get the id corresponding to the job "HLM Default: Deployer restore"</li>
+      <li>Launch the restore <codeblock>freezer-scheduler -c</codeblock>deployer hostname (generaly
+        hLinux)<codeblock>job-start -j</codeblock></li>
+      <li>Wait for some time, you can follow the
+        <codeblock>/var/log/freezer-agent/freezer-agent.log</codeblock></li>
+    </ol>
+    <p>Nova Compute Restore</p><ol>
+      <li>Stop Nova</li>
+      <li>On each compute node you want to restore, run the following steps: </li>
+    </ol>
     <p/>
   </body>
 </topic>
