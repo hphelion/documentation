@@ -54,7 +54,7 @@
               contents of this branch (things like retiring a machine frmo service or repurposing
               it) </dd>
           </dlentry>
-        </dl>Two temporary branches are created at run time: <dl>
+        </dl>Two temporary branches are created and populated at run time: <dl>
           <dlentry>
             <dt>staging-ansible</dt>
             <dd>holds the most recent commit that will be copied to/merged with the ansible
@@ -66,8 +66,9 @@
               branch.</dd>
           </dlentry>
         </dl>
-        <note>The information above provides insight into the workings of the configuration processor and the git repository. However, in practice
-        you can simply follow the steps below to make configuration changes.</note>
+        <note>The information above provides insight into the workings of the configuration
+          processor and the git repository. However, in practice you can simply follow the steps
+          below to make configuration changes.</note>
       </p>
     </section>
 <!--    <section>
