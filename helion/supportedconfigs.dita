@@ -7,7 +7,7 @@
     <note>While the hardware requirements are similar to those of HP Helion <tm tmtype="reg"
         >OpenStack</tm> 1.1, this is a completely new installation, not an upgrade or update
       operation.</note>
-    <section><title>Single Region Proof of Concept</title>
+    <section><title>Entry Scale Cloud</title>
       <ul>
         <li>Single control plane for
           <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all control plane

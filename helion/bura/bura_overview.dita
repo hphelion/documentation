@@ -113,7 +113,7 @@
     <section id="supporteddeployments"><title>Supported Cloud Deployments and Services</title>
       <p><b>Deployments</b></p>
       <ul>
-        <li>Entry Scale Cloud</li>
+        <li><xref href="../supportedconfigs.dita">Entry Scale Cloud</xref></li>
       </ul>
       <p><b>Services</b></p>
       <p>The following services will be included in the backup and restore service. The critical
@@ -139,8 +139,7 @@
       <ul id="ul_glx_gt3_dt">
         <li>Backup and Restore of the data on the control plane nodes were tested (Compute nodes and
           Deployer node backups are in the build, but not tested)</li>
-        <li>Upgrade from HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta 1 to HP Helion <tm
-            tmtype="reg">OpenStack</tm> 2.0 Beta 2 is not supported.</li>
+        <li>Upgrade from HP Helion OpenStack 2.0 Beta 1 to HP Helion OpenStack 2.0 Beta 2 is not supported.</li>
         <li>ESX Cloud deployment is not supported.</li>
         <li>The Freezer Web UI Horizon panels are not in this release.</li>
         <li>No backup support for the following services: <ul>
