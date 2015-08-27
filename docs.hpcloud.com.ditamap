@@ -21,12 +21,12 @@
     <topicref href="helion/releasenotes.dita"/>
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
-    <topicref href="helion/installation.dita"/>
-    <topichead navtitle="Installing on ESX">
-      <topicref href="helion/esx/esx_installation.dita"/>
-    </topichead>
-    <topichead navtitle="Installing VSA">
-      <topicref href="helion/vsa.dita"/>
+    <topichead navtitle="Installation">
+      
+    <topicref href="helion/installation.dita" navtitle="Installing HP Helion OpenStack" locktitle="yes"/>
+      <topicref href="helion/using_git.dita" navtitle="Using git for configuration management" locktitle="yes"/>
+    <topicref href="helion/esx/esx_installation.dita" navtitle="Installing on ESX" locktitle="yes"/>
+    <topicref  href="helion/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
     </topichead>
     <topicref href="helion/backup_and_restore.dita"/>
     <topicref href="helion/faq.dita"/>

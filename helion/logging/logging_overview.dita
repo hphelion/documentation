@@ -23,24 +23,24 @@
       sections:</p>
     <ul>
       <li>
-        <xref type="section" href="#topic5937/install">Installation</xref>
+        <xref type="section" href="#logging/install">Installation</xref>
       </li>
       <li>
-        <xref type="section" href="#topic5937/components">Centralized Logging components</xref>
+        <xref type="section" href="#logging/components">Centralized Logging components</xref>
       </li>
       <li>
-        <xref type="section" href="#topic5937/types">Centralized Logging log types</xref>
+        <xref type="section" href="#logging/types">Centralized Logging log types</xref>
       </li>
       <li>
-        <xref type="section" href="#topic5937/kibana">Kibana configuration</xref>
+        <xref type="section" href="#logging/kibana">Kibana configuration</xref>
         <ul>
           <li>
-            <xref type="section" href="#topic5937/interface">Logging into Kibana</xref>
+            <xref type="section" href="#logging/interface">Logging into Kibana</xref>
           </li>
         </ul>
       </li>
       <li>
-        <xref type="section" href="#topic5937/info">For more information</xref>
+        <xref type="section" href="#logging/info">For more information</xref>
       </li>
     </ul>
     <section id="install">
