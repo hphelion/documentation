@@ -65,14 +65,15 @@
       </ul>
       <p><b>Storage</b></p>
       <ul id="ul_e4q_myf_ys">
-        <li>All servers assume single OS disc protected by a RAID controller (to be set up before
-          OS deploy)</li>
-        <li>Compute node adds one additional disc and LV for Nova (you can add other discs
-          following this pattern)</li>
+        <li>All servers assume single OS disc protected by a RAID controller (to be set up before OS
+          deploy)</li>
+        <li>Compute node adds one additional disc and LV for Nova (you can add other discs following
+          this pattern)</li>
         <li>VSA adds one additional disc dedicated to VSA (you can add other discs following this
           pattern)</li>
-        <li>Controller adds one additional disc dedicated to object storage (you can add other
-          discs following this pattern)</li>
+        <li>Controller adds one additional disc dedicated to object storage (you can add other discs
+          following this pattern)</li>
+        <li>A log partition must be declared and reside on the first disk</li>
       </ul>
     </section>
     <section><title>Configuration Illustrations</title>
