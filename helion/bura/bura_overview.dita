@@ -111,11 +111,11 @@
       <note>The Freezer Web UI Horizon Panels are NOT in Beta release.</note>
     </section>
     <section id="supporteddeployments"><title>Supported Cloud Deployments and Services</title>
-      <b>Deployments</b>
+      <p><b>Deployments</b></p>
       <ul>
         <li>Entry Scale Cloud</li>
       </ul>
-      <b>Services</b>
+      <p><b>Services</b></p>
       <p>The following services will be included in the backup and restore service. The critical
         data that will be backed up are the databases and the configuration related files.
         Service-specific limitations are listed as well.</p>
