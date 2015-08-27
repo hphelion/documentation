@@ -36,8 +36,8 @@
     <section id="install"><title>Installing Node.js tools for Visual Studio</title>
     <p>This tutorial requires Node.js tools for Visual Studio. These tools are available in the following locations:</p>
     <ul>
-      <li><xref type="external" href="http://http://nodejstools.codeplex.com/">Node.js tools for Visual Studio 2013</xref></li>
-      <li><xref type="external" href="https://www.visualstudio.com/en-us/features/node-js-vs.aspx">Node.js tools for Visual Studio 2015</xref></li>
+      <li><xref href="http://http://nodejstools.codeplex.com/" scope="external" format="html">Node.js tools for Visual Studio 2013</xref></li>
+      <li><xref href="https://www.visualstudio.com/en-us/features/node-js-vs.aspx" scope="external" format="html">Node.js tools for Visual Studio 2015</xref></li>
     </ul></section>
     <section id="create"><title>Creating the Hello World Node.js application</title>
       <p></p></section>

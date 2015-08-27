@@ -1,61 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2806">
-<title>HP Helion Public Cloud APIs</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-</metadata>
-</prolog>
-<body>
-<p>
-<!--PUBLISHED-->
- <!--./publiccloud/api.md-->
- <!--permalink: /publiccloud/api/--></p>
-<p>We offer a number of HP Helion Public Cloud APIs. In addition, we have some public beta and private beta APIs that you can put to use, so please give them a try.</p>
-<ul>
-<li>
-<xref type="section" href="#topic2806/apiga">APIs in general availability</xref>
-</li>
-<li>
-<xref type="section" href="#topic2806/privbeta">APIs in private beta</xref>
-</li>
-</ul>
-<section id="apiga"> <title>HP Helion Public Cloud APIs in General Availability</title>
-<p>There are a number of HP Helion Public Cloud APIs available for your programming pleasure:</p>
-<ul>
-<li>
-<xref href="../publiccloud/api/cinder-api.dita" >Block Storage</xref>: API for HP Helion Public Cloud block storage; enabling additional volumes to Compute instances.</li>
-<li>
-<xref href="../publiccloud/api/cdn-api.dita" >CDN</xref>: API for the HP Helion Public Cloud content delivery network (CDN) service; content inside HP Helion Public Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.</li>
-<li>
-<xref href="../publiccloud/api/nova-api.dita" >Compute</xref>: API for the HP Helion Public Cloud compute service; a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers</li>
-<li>
-<xref href="../publiccloud/api/dns-api.dita" >DNS</xref>: API for the HP Helion Public Cloud Domain Name Service (DNS); enables display and management of DNS records.</li>
-<li>
-<xref href="../publiccloud/api/keystonev2-api.dita" >v2 Identity service</xref>: V2 API for the HP Helion Public Cloud identity service; one-stop authentication for all HP Helion Public Cloud services.</li>
-<li>
-<xref href="../publiccloud/api/keystone-api.dita" >v3 Identity service</xref>: V3 API for the HP Helion Public Cloud identity service; one-stop authentication for all HP Helion Public Cloud services.</li>
-<li>
-<xref href="../publiccloud/api/glance-api.dita" >Image</xref>: API for HP Helion Public Cloud Image; enabling managing of virtual machine images.</li>
-<li>
-<xref href="../publiccloud/api/neutron-api.dita" >Networking</xref>: API for HP Helion Public Cloud Networking; enabling virtual network, subnet, router and port abstractions to describe network resources.</li>
-<li>
-<xref href="../publiccloud/api/swift-api.dita" >Object Storage</xref>: API for HP Helion Public Cloud object storage; a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. </li>
-<li>
-<xref href="../publiccloud/api/dbaas-api.dita" >Relational Database</xref>: API for the HP Helion Public Cloud Relational Database service; simplifies the creation and management of MySQL database instances.</li>
-</ul>
-</section>
-<section id="privbeta"> <title>APIs in Private Beta</title>
-<p>You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!</p>
-<ul>
-<li>
-<xref href="../publiccloud/api/lbaas-api.dita" >Load Balancer as a Service (LBaaS)</xref>: API for the HP Helion Public Cloud Load Balancer service; facilitates creation and management of load balancers.
-<b>Note</b>: This service requires activation while in private beta; please <xref href="https://horizon.hpcloud.com/landing/pbr/hpext:lbaas" scope="external" format="html" >request access on our sign-up page</xref>.  Service use is free of charge during the private beta period.    </li>
-</ul>
-</section>
-<section id="copyright"> <title>Copyright</title>
-<p>View the <xref href="../publiccloud/api.copyright.v13.dita" >copyright</xref> messages.</p>
-</section>
-</body>
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic2806">
+  <title>HP Helion Public Cloud APIs: Placeholder</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--PUBLISHED--><!--./publiccloud/api.md--><!--permalink: /publiccloud/api/--></p>
+  </body>
 </topic>
