@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_fvn_ps3_dt">
+<topic id="bura_overview">
   <title>Backup and Restore Overview</title>
   <body>
     <p>Freezer is a Backup, Restore, and Disaster Recovery as a Service platform that helps you
@@ -23,7 +23,7 @@
       <li>Multiple storage media support (Swift, local file system, SSH). </li>
       <li>Manage multiple jobs (multiple backups on the same node).</li>
       <li>Synchronize backups and restore on multiple nodes.</li>
-      <li>Execute scripts/commands before or after a job execution. </li>
+      <li>Execute scripts/commands before or after a job execution.</li>
     </ul>
     <section>
       <title>Architecture</title>
@@ -107,7 +107,7 @@
     </section>
     <section id="diagram">
       <title>Diagram of the Backup Service</title>
-      <p><image placement="break" href="../media/bura/bura_diagram.png"/></p>
+      <p><image placement="break" href="../../media/bura/bura_diagram.png"/></p>
       <note>The Freezer Web UI Horizon Panels are NOT in Beta release.</note>
     </section>
     <section id="supporteddeployments"><title>Supported Cloud Deployments and Services</title>
