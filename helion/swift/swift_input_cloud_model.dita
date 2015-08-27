@@ -4,12 +4,17 @@
   <title>How to Modify Input Model</title>
   <body>
     <p>This section describes the configuration of Swift services with the various type of input
-      model supported in this release.</p>
-    <section><b>Configuration of Swift Services in the entry-scale-with-vsa</b><p>The following
+      model supported in this release.<ul id="ul_l4q_31v_dt">
+        <li><xref href="#topic_qkg_l4v_bt/configuration-of-swift-vsa-model" format="dita"
+            >Configuration of Swift Services in the entry-scale-with-vsa</xref></li>
+        <li><xref href="#topic_qkg_l4v_bt/config-swift-services" format="dita">Configuration of
+            Swift Services in the Mid Sized Cloud Model</xref></li>
+      </ul></p>
+    <section id="configuration-of-swift-vsa-model"><b>Configuration of Swift Services in the entry-scale-with-vsa</b><p>The following
           <codeph>yml</codeph> files are configured for <b>entry-scale-with-vsa</b>
       model:</p></section>
     <p>
-      <ul id="ul_zf4_wz5_dt">
+      <ul>
         <li><codeph>data/control_plane.yml</codeph><p/></li>
         <li><codeph>data/disk_controller.yml</codeph><p>This <codeph>yml</codeph> file contains the
             Swift information (swiftobj disk-group). This describes what disks on each of the
@@ -17,9 +22,8 @@
         <li><codeph>config/swift/rings.yml</codeph><p>Swift account, container, and object storage
             are managed by Swift using a data structure known as a <i>ring</i>. This
               <codeph>yml</codeph> file provides the specification of the rings. For more
-            information on ring specification, refer to <xref
-              href="#topic_qkg_l4v_bt/ring-specification" format="dita">ring
-            specification.</xref></p></li>
+            information on ring specification, refer to<xref
+              href="ring_parameters.dita#topic_efw_k55_dt"> ring specification</xref>.</p></li>
         <li>
           <p>
             <codeph>data/network_groups.yml</codeph></p>
@@ -27,18 +31,13 @@
             service uses the Swift network to communicate with the other Swift services and among
             themselves.</p>
         </li>
-        <li> The Swift-proxy service uses other cloud services as follows. Both of these are
-          configured in the example to run on the <b>core</b> cluster:<ul id="ul_tg4_wz5_dt">
-            <li>Swift validates token by making requests to the Keystone service</li>
-            <li>Swift caches tokens and other data using the memcached service</li>
-          </ul></li>
       </ul>
     </p>
-    <section id="config-swift-services"><b>Configuration of Swift Services in the Mid Sized Cloud
+    <section id="config-swift-services"><b>Configuration of Swift Services in the Mid Size Cloud
         Model</b></section>
     <section id="node-type"><b>Node Type</b></section>
     <p>There are two type of nodes that is associated with Swift services. They are as follows:</p>
-    <ul id="ul_vrv_qz5_dt">
+    <ul>
       <li><b>Proxy, Container, Account (PAC) Node</b>: This node runs the Swift-proxy,
         Swift-account, and Swift-container services. The Swift-proxy service processes API requests
         and directs them to the Swift-account, Swift-container or Swift-object services for
@@ -94,6 +93,5 @@
           <li>Swift caches tokens and other data using the memcached service</li>
         </ul></li>
     </ul>
-    <section id="allocate-server"><b>Allocating Server</b></section>
   </body>
 </topic>
