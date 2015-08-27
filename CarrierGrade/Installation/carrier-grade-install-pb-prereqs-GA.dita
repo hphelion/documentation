@@ -476,13 +476,6 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   host</entry>
                                                   </row>
                                                   <row>
-                                                  <entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/root</codeph> on
-                                                  <codeph>controller-0</codeph> in the KVM
-                                                  region.</entry>
-                                                  </row>
-                                                  <row>
                                                   <entry><codeph>TEMPL-CPV9.ova</codeph></entry>
                                                   <entry><codeph>hcg_1.1.0.tar</codeph></entry>
                                                   <entry>Any location on any server that can be
@@ -529,6 +522,30 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
                                                   directory on the HML host. You must first create
                                                   this directory.</entry>
+                                                </row>
+                                                <row>
+                                                  <entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry>
+                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
+                                                  <entry><codeph>/root</codeph> on
+                                                  <codeph>controller-0</codeph> in the KVM
+                                                  region.</entry>
+                                                </row>
+                                                <row>
+                                                  <entry><codeph>WR/extras/HP-HCG-SDK-15.05-b10.tgz
+                                                  WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5</codeph></entry>
+                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
+                                                  <entry><codeph>/root</codeph> on
+                                                  <codeph>controller-0</codeph> in the KVM region.
+                                                  SDK files to be used as needed.</entry>
+                                                </row>
+                                                <row>
+                                                  <entry><codeph>WR/extras/HP-HCG-sample-guest-15.05-b9.img
+                                                  WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeph></entry>
+                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
+                                                  <entry><codeph>/root</codeph> on
+                                                  <codeph>controller-0</codeph> in the KVM region.
+                                                  Sample guestt OS files to be used as
+                                                  needed.</entry>
                                                 </row>
                                                   </tbody>
                                                 </tgroup>

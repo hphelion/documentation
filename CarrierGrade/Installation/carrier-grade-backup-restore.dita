@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Backup and Restore the HLM
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Backup and Restore the HLM
     Node</title>
-<prolog>
-  <metadata>
-    <othermeta name="layout" content="default"/>
-    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
-    <othermeta name="role" content="Storage Administrator"/>
-    <othermeta name="role" content="Storage Architect"/>
-    <othermeta name="role" content="Michael B"/>
-    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
-  </metadata>
-</prolog>
-<body>
-  <!-- https://wiki.hpcloud.net/pages/viewpage.action?pageId=53513771 -->
-  <p>This page explains how to backup and restore the HLM VM in the event of catastrophic failure.
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <!-- https://wiki.hpcloud.net/pages/viewpage.action?pageId=53513771 -->
+    <p>This page explains how to backup and restore the HLM VM in the event of catastrophic failure.
       The page also explains how to recover the <tm tmtype="reg">Percona</tm>
       <tm tmtype="reg">XtraDB</tm> cluster on cloud controllers in the event of a database
       corruption.</p>
     <p>The Percona XtraDB Cluster takes care of synchronization of the data between nodes if one of
       the nodes goes down and comes back later. </p>
-  <section><title>When to Backup</title>
-    <p>You should create a backup from HLM VM as follows:</p>
-      
-    <ul><li>when the HP Helion OpenStack Carrier Grade installation is complete,</li>
-      <li>when any change is made to the HP Helion OpenStack Carrier Grade components, </li>
-      <li>after synching the files on the HLM VM. The files should be synced periodically.</li></ul> 
-  </section>
-  <section>
+    <section><title>When to Backup</title>
+      <p>You should create a backup from HLM VM as follows:</p>
+      <ul>
+        <li>when the HP Helion OpenStack Carrier Grade installation is complete,</li>
+        <li>when any change is made to the HP Helion OpenStack Carrier Grade components, </li>
+        <li>after synching the files on the HLM VM. The files should be synced periodically.</li>
+      </ul>
+    </section>
+    <section>
       <title>When to Restore</title>
-      <p>You should  restore the HLM VM if there are any issues with the HP Helion OpenStack Carrier
+      <p>You should restore the HLM VM if there are any issues with the HP Helion OpenStack Carrier
         Grade components, for example:</p>
       <ul>
         <li>there is any problem with a VM;</li>
@@ -40,38 +42,47 @@
       <p><b>Important:</b> During the restore process the original HLM VM will be deleted from the
         KVM Host. </p>
     </section>
-  <section><title>Backing up the HLM Node</title>
-    <p>To back up the HLM node, use the following steps:</p>
+    <section><title>Backing up the HLM Node</title>
+      <p>To back up the HLM node, use the following steps:</p>
       <ol>
         <li>Log in to the KVM host.</li>
-      <li>Backup /root/infra-ansible-playbooks folder. This is to backup the group_vars input for
+        <li>Backup /root/infra-ansible-playbooks folder. This is to backup the group_vars input for
           bringing up HLM VM. </li>
-        <li>Once the HLM node is installed and running, backup the following folders periodically
-          <ul><li> <codeph>/root</codeph> - This backs up all the source code, packages, hlinux netboot as well as cloud
-              folders</li> 
-            <li><codeph>/opt</codeph> - This backs up all the installed code/configuration and also h* scripts</li>
+        <li>Once the HLM node is installed and running, backup the following folders periodically <ul>
+            <li>
+              <codeph>/root</codeph> - This backs up all the source code, packages, hlinux netboot
+              as well as cloud folders</li>
+            <li><codeph>/opt</codeph> - This backs up all the installed code/configuration and also
+              h* scripts</li>
             <li><codeph>/var/log/hlm</codeph> - This backs up all generated log files </li>
-            <li><codeph>/root/.ssh</codeph> - This backs up ssh keys generated per cloud used to access cloud nodes </li></ul></li></ol>
-  </section>
-  <section><title>Restore the HLM Node</title>
-    <p>To restore the HLM node, use the following steps:</p>
-    <ol>
-      <li>Log in to the KVM server.</li>
-      <li>Copy the <codeph>/root/infra-ansible-playbooks</codeph> folder from the backup location .</li>
-      <li>Install the HLM VM by executing from /root/infra-ansible-playbooks folder:
+            <li><codeph>/root/.ssh</codeph> - This backs up ssh keys generated per cloud used to
+              access cloud nodes </li>
+          </ul></li>
+      </ol>
+    </section>
+    <section><title>Restore the HLM Node</title>
+      <p>To restore the HLM node, use the following steps:</p>
+      <ol>
+        <li>Log in to the KVM server.</li>
+        <li>Copy the <codeph>/root/infra-ansible-playbooks</codeph> folder from the backup location
+          .</li>
+        <li>Install the HLM VM by executing from /root/infra-ansible-playbooks folder:
           <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock></li>
-      <li>Log in to the HLM VM.</li>
-     <li>Copy back the following files from the backup folder:
+        <li>Log in to the HLM VM.</li>
+        <li>Copy back the following files from the backup folder:
           <codeblock>    /root - This includes all the source code, packages, hlinux netboot as well as cloud folders
     /opt - This includes all the installed code/configuration and also h* scripts
     /var/log/hlm - This includes all generated log files
-    /root/.ssh - This includes ssh keys generated per cloud used to access cloud nodes     </codeblock></li></ol>
-  </section>
-  <section><title>Backup and Restore the Mysql cluster</title>
-      <p>This section deals with the disaster recovery scenarios of the 3 node Mysql cluster
+    /root/.ssh - This includes ssh keys generated per cloud used to access cloud nodes     </codeblock></li>
+      </ol>
+    </section>
+    <section><title>Backup and Restore the MySQL cluster</title>
+      <p>The HP Helion OpenStack cloud installation provides highly optimized MySQL databases inside
+        of the HP Helion Public Cloud.</p>
+      <p>This section deals with the disaster recovery scenarios of the 3 node MySQL cluster
         (Percona XtraDB Cluster) that runs in cloud controller nodes. </p>
-      <p>If an entire cluster goes down, due to an issue (such as data corruption or MySQL bug etc),
-        and the cluster does not come up, you must restore the cluster to a previous well-known
+      <p>If an entire cluster goes down, due to an issue (such as data corruption or MySQL defect),
+        and the cluster does not come back up, you must restore the cluster to a previous well-known
         state (backup) and start the cluster from that point.</p>
       <p>The solution is to use the Percona <tm tmtype="reg">XtraBackup</tm> utility to take full
         backups of the <tm tmtype="reg">MySQL</tm> instance frequently, such as on a daily basis, on
@@ -81,19 +92,19 @@
         the same node on which backup was taken. Then, bootstrap the Percona cluster. Later bring up
         rest of the nodes to synchronize the data with the recovered node of cluster.</p>
       <p>The whole process is given in detail at: <xref
-        href="http://fromdual.com/xtrabackup_in_a_nutshell" format="html" scope="external"
-          >http://fromdual.com/xtrabackup_in_a_nutshell</xref>.</p> 
-    <p>Here are the specific commands used for backup and recovery:</p>
-  </section>
-  <section><title>Backing up the MySQL cluster</title>
-    <p>Use the following steps to back up the MySQL cluster:</p>
-    <ol>
-      <li>Execute the following command to SSH into <codeph>Controller0</codeph> of the three
+          href="http://fromdual.com/xtrabackup_in_a_nutshell" format="html" scope="external"
+          >http://fromdual.com/xtrabackup_in_a_nutshell</xref>.</p>
+      <p>Here are the specific commands used for backup and recovery:</p>
+    </section>
+    <section><title>Backing up the MySQL cluster</title>
+      <p>Use the following steps to back up the MySQL cluster:</p>
+      <ol>
+        <li>Execute the following command to SSH into <codeph>Controller0</codeph> of the three
           cluster nodes: <codeblock>ssh &lt;ip-address-controller0></codeblock><p>Where
               <codeph>&lt;ip-address-controller0></codeph> is the IP address of
-              <codeph>controller0</codeph> node of your environment.</p></li> 
-      
-      <li>Take full backup by running the innobackup perl script that uses percona xtrabackup
+              <codeph>controller0</codeph> node of your environment.</p></li>
+
+        <li>Take full backup by running the innobackup perl script that uses Percona XtraBackup
           internally. This creates a timestamped folder (for example: "2013-11-06_00-00-00") to
           contain all backup files.
             <codeblock>sudo innobackupex --galera-info /backups</codeblock><p>Where
@@ -102,32 +113,38 @@
               href="http://www.percona.com/doc/percona-xtrabackup/2.1/innobackupex/innobackupex_option_reference.html"
               format="html" scope="external"
               >http://www.percona.com/doc/percona-xtrabackup/2.1/innobackupex/innobackupex_option_reference.html</xref>.</p></li>
-      
-      <li>Prepare the backup to be consistent at a point-in-time.
+
+        <li>Prepare the backup to be consistent at a point-in-time.
             <codeblock>sudo innobackupex  --apply-log /backups/&lt;timestamped-folder-path></codeblock><p>Where
               <codeph>&lt;timestamped-folder-path></codeph> is the timestamped path generated in
             previous step.</p></li>
-        
-      <li>Copy the backup to a remote location.</li></ol>
-  </section>
-  <section><title>Restore the MySQL cluster</title>
-    <p>Use the following steps to restore the MySQL cluster:</p>
-    <ol>
-      <li>Stop the MySQL instance on all the three cluster nodes.
-        <codeblock>sudo /etc/init.d/mysql stop</codeblock></li>
-      <li>Delete all the files in data directory of mysql on all the three cluster nodes. (ssh into all the 3 nodes )
-      <codeblock>sudo rm -rf /var/lib/mysql/*</codeblock></li>
-      <li>Copy the backup from remote location to a local location on <codeph>controller0</codeph> (controller on which the backup is taken)</li>    
-      <li>Run <codeph>xtrabackup</codeph> recovery using the <codeph>innobackupex</codeph> command
+
+        <li>Copy the backup to a remote location.</li>
+      </ol>
+    </section>
+    <section><title>Restore the MySQL cluster</title>
+      <p>Use the following steps to restore the MySQL cluster:</p>
+      <ol>
+        <li>Stop the MySQL instance on all the three cluster nodes.
+          <codeblock>sudo /etc/init.d/mysql stop</codeblock></li>
+        <li>Delete the current data in the MySQL nodes on each of the three cluster nodes.<ol
+            id="ol_ccd_g5v_dt">
+            <li>SSH into each MySQL node.</li>
+          <li>Exeute the following command:
+            <codeblock>sudo rm -rf /var/lib/mysql/*</codeblock></li></ol></li>
+        <li>Copy the backup from the remote location to a any location on
+            <codeph>controller0</codeph>.</li>
+        <li>Perform a Percona XtraBackup recovery using the <codeph>innobackupex</codeph> command
             <codeblock>sudo innobackupex --copy-back /backups/&lt;timestamped-folder-path> </codeblock><p>Where
               <codeph>&lt;timestamped-folder-path></codeph> is the actual local location.</p></li>
-      <li>Change the permissions of mysql data folder to mysql user and group
+        <li>Change the permissions of MySQL data folder for the MySQL user and group.
           <codeblock>sudo chown -R mysql:mysql /var/lib/mysql </codeblock></li>
-      <li>Bootstrap mysql cluster on controller0
+        <li>Start the MySQL cluster on <codeph>controller0</codeph> in bootstrap mode.
           <codeblock>sudo /etc/init.d/mysql bootstrap-pxc</codeblock></li>
-      <li>Start mysql services on other controller nodes so that they can sync up their data with the restored MySQL cluster
-        <codeblock>sudo service mysql start</codeblock>
-      </li></ol>
-  </section>
+        <li>Start MySQL services on the other controller nodes so that they can sync data with the
+          restored MySQL cluster. <codeblock>sudo service mysql start</codeblock><p>When this
+            command is complete, the MySQL cluster is fully restored to the last known .</p></li>
+      </ol>
+    </section>
   </body>
 </topic>

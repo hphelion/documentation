@@ -122,8 +122,8 @@ localhost                    : ok=6    changed=2    unreachable=0    failed=0   
   <ol>
         <li>Replace the <codeph>/etc/keystone/keystone-paste.ini</codeph> file on all three
           controllers. From the HLM host, execute the following command for each
-            controller:<codeblock>scp ~/~/patch_cghelion1.1/keystone-paste.ini cghelion@&lt;comtroller-ip&gt;</codeblock><p>Where:
-              <codeph>&lt;comtroller-ip&gt;</codeph> is the IP address for each controller.</p></li>
+            controller:<codeblock>scp ~/~/patch_cghelion1.1/keystone-paste.ini cghelion@&lt;controller-ip&gt;</codeblock><p>Where:
+              <codeph>&lt;controller-ip&gt;</codeph> is the IP address for each controller.</p></li>
   <li>Edit the <codeph>/etc/nova/nova.conf</codeph> file to comment out the following line:
           <codeblock>#auth_version = 2.0</codeblock></li>
         <li>Edit the <codeph>/etc/ceilometer/ceilometer.conf</codeph> file to comment out the
