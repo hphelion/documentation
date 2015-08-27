@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_sl2_nht_dt">
-  <title>Swift- Troubleshooting for Beta1</title>
+  <title>Swift- Troubleshooting </title>
   <body>
     <section><b>Installation</b></section>
     <p>When you execute the validation check the Swift service can trigger an error. To rectify the
