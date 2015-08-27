@@ -72,7 +72,8 @@
           <codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
         <li>Confirm that ssh localhost works without a password and that you can get from external
           sources, both with and without sudo.</li>
-        <li>Mount the install media at /media/cdrom, for example,
+        <li>Log in to the deployer node as the user you created during the setup phase, and mount
+          the install media at /media/cdrom, for example,
           <codeblock>sudo mount /media/cdrom</codeblock></li>
         <li> Unpack the following tarball:
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz</codeblock>
