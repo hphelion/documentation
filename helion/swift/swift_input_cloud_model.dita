@@ -29,7 +29,7 @@
     </p>
     <section id="configuration-of-swift-vsa-model"><b>Configuration of Swift Services in the
         Entry-scale-with-vsa</b><p>This section describes configuration of Swift services in th
-        entry-scal-with-vsa</p></section>
+        entry-scal-with-vsa.</p></section>
     <section><b>Node Type</b><p><b>Proxy, Container, Account, Object (PACO) Node</b>: The
         Swift-proxy, Account, Container and Object services run on the same (PACO) node type in the
         control plane. This is used for smaller clouds or where Swift is a minor element in a larger
