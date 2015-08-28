@@ -123,9 +123,14 @@ cd /home/stack/scratch/ansible/next/hos/ansible;
 ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
         <li>Check the generated host files in
             <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs
-          are included. If they are not, run
-          <codeblock>ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock> and
-          go to step 1.</li>
+          are included. <ol id="ol_j1m_4bb_2t">
+            <li>Execute the following command to review the ansible
+              changes:<codeblock>git show staging-ansible</codeblock></li>
+            <li>Use the <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph>
+              file to create a deployment directory.</li>
+            <li>Run <codeph>verb_host</codeph> command from the following
+              directory:<codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
+          </ol></li>
       </ol>
     </section>
     <section id="CobblerDeploy">
@@ -134,7 +139,7 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
         <li>Run the following command:
           <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
         <li>Run the following playbook:
-          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock><codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
       </ol>
     </section>
     <section id="NodeProvision">
@@ -149,10 +154,10 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
       <title>Deploy the Cloud</title>
       <ol>
         <li>Run the following command:
-            <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-runV2.yml</codeblock><ol
+            <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
             id="ol_tkl_dgm_dt">
             <li>Verify the network is working correctly. Ping each IP (excluding VSA-BLK and VIPs)
-              from the <codeph>/etc/hosts</codeph>  file from one of the controller nodes.</li>
+              from the <codeph>/etc/hosts</codeph> file from one of the controller nodes.</li>
           </ol>
         </li>
         <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to comment out the line
@@ -182,18 +187,18 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
       <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
         install. Refer to the VMWare vSphere documentation as needed. </li>
     </ol>
-    <section id="deploy-service"><b>Deploy a Service</b><p>Execute the following steps from the
+    <section id="deploy-service"><b>Deploy a service</b><p>Execute the following steps from the
         deployer to deploy a service using the EON CLI.</p><p>
         <ol>
           <li>Source <codeph>service.osrc</codeph>.
               <p><!--<p>unset OS_DOMAIN_NAME</p><p>export OS_IDENTITY_API_VERSION=3</p><p>export OS_AUTH_VERSION=3</p><p>export OS_PROJECT_NAME=admin</p><p>export OS_PROJECT_DOMAIN_NAME=Default</p><p>export OS_USERNAME=admin</p><p>export OS_USER_DOMAIN_NAME=Default</p><p>export OS_PASSWORD=admin</p><p>export OS_AUTH_URL=http://helion-ccp-vip-admin-KEY-API-mgmt:35357/v3</p><p>export OS_CACERT=/etc/ssl/certs/ca-certificates.cr</p>--></p></li>
-          <li>Add a vCenter to the eon
+          <li>Add a vCenter to the EON
               database.<codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:</p><p>
               <ul>
-                <li>vCenter Name - the name of the vCenter server where the service will be
+                <li>vCenter Name - the name of the vCenter server where the service is
                   deployed.</li>
-                <li>vCenter IP address - the IP address of the vCenter server where the service will
-                  be deployed.</li>
+                <li>vCenter IP address - the IP address of the vCenter server where the service is
+                  deployed.</li>
                 <li>vCenter Username - the username for the vCenter administrator.</li>
                 <li>vCenter Password - the password for the vCenter administrator.</li>
                 <li>vCenter Port - the vCenter server port.<p><b>Sample
@@ -370,18 +375,19 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
             vCenter can have multiple clusters. But it allows you to import only one cluster at a
             time.</li>
           <li>Activate the cluster for the selected
-            vCenter.<codeblock><codeph>eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock></li>
-        </ol>
-      </p></section>
-    <p><b>Sample
-      Output</b><codeblock>+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+                vCenter.<codeblock><codeph>eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock><p><b>Sample
+                Output</b></p><p>
+              <codeblock>+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Property      | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | node_info     | {u'computeproxy': {u'pxe-mac-addr': u'00:50:56:b6:ce:1b', u'pxe-ip-addr': u'172.170.2.4', u'name': u'COMPUTEPROXY_Cluster1', u'cluster-moid': u'domain-c21'}, u'network_driver': {u'cluster_dvs_mapping': u'DC1/host/Cluster1:hlm-Trunk', u'Cluster1': [{u'host-moid': u'host-29', u'pxe-ip-addr': u'172.170.2.3', u'esx_hostname': u'10.1.200.33', u'ovsvapp_node': u'ovsvapp-10-1-200-33', u'pxe-mac-addr': u'00:50:56:b6:5e:9a'}, {u'host-moid': u'host-25', u'pxe-ip-addr': u'172.170.2.2', u'esx_hostname': u'10.1.200.66', u'ovsvapp_node': u'ovsvapp-10-1-200-66', u'pxe-mac-addr': u'00:50:56:b6:56:e6'}]}} |
 | resource_moid | domain-c21                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | resource_name | Cluster1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | state         | activated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock></p>
++---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock>
+            </p></li>
+        </ol>
+      </p></section>
     <section id="run-processor"><b>Run the config processor</b></section>
          <p>Execute the following commands:</p>
       <p>
