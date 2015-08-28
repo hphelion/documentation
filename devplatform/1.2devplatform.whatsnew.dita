@@ -30,9 +30,8 @@
 <section id="updates">
   <dl>
     <dlentry>
-      <dt>Docker Image Deployment</dt>
-      <dd><xref href="helion/user/deploy/languages/docker_apps.dita">Deploying Docker Images as
-              apps</xref> provides an alternative to the usual method of image deployment.
+      <dt>Docker Apps</dt>
+      <dd><xref href="helion/user/deploy/languages/docker_apps.dita">Deploy applications as Docker containers</xref> provides an alternative to the usual method of application deployment.
             Administrators control user permissions and which registries and images are allowed.
             Local ALS caching registry servers share Docker image layers to improve deployment
             efficiency. </dd>
@@ -54,10 +53,18 @@
         >fine-grained Admin permission controls</xref> are now available.</dd>
     </dlentry>
     <dlentry>
-      <dt>New Kato command</dt>
-      <dd><codeph>op regenerate <xref
-        href="helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-op-regenerate"
-        >authorized_keys</xref></codeph></dd>
+      <dt>Improved Windows Server stack updates</dt>
+      <dd>Windows server stack has been updated to improve customer experience
+•	.NET buildpack streamlined with a Java workflow
+•	.NET buildpack packaged as an Admin buildpack providing updatability 
+•	Support for Microsft SQL Server tunneling
+•	General performance improvements
+</dd>
+    </dlentry>
+    <dlentry>
+      <dt>Improved Windows development tools</dt>
+      <dd>Improved deployment workflow, application file browsing, service instance creation, and more.
+</dd>
     </dlentry>
   </dl>
 </section>
