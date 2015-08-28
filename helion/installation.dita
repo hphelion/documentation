@@ -7,7 +7,7 @@
       <ul>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
         <li>Make sure all disks on the system(s) are wiped before you begin the install. </li>
-        <li>/dev/sda will be used for the OS.  </li>
+        <li>/dev/sda will be used for the OS. </li>
         <li>Both HP Linux for HP Helion OpenStack and HP Helion OpenStack are part of the ISO you
           will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
@@ -45,7 +45,8 @@
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page after signing up and being
           approved for the program.</li>
-        <li>Boot your deployer from the ISO. Insert the CD ROM in the Virtual Media drive on the iLO.</li>
+        <li>Boot your deployer from the ISO. Insert the CD ROM in the Virtual Media drive on the
+          iLO.</li>
         <li>Enter "install" to start installation. (note "install" all lower case)</li>
         <li>Select the language.</li>
         <li>Select the location.</li>
@@ -74,7 +75,7 @@
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-1-20150827T092008Z.tgz</codeblock>
         </li>
         <li>Run the following included script: <codeblock>~/hos-2.0.0-1/hos-init.bash </codeblock>
-          see comment inside this file  <!--~/hos-deployer/hos-init.bash --></li>
+          see comment inside this file <!--~/hos-deployer/hos-init.bash --></li>
       </ol>
       <p>At the end of this section you should have a local directory structure, as described
         below:</p>
@@ -101,7 +102,10 @@ helion/hos/                    Directory contains files used by the installer
                 <li>The baremetalConfig.yml file should specify the server information for your
                   environment.</li>
                 <li>The servers.yml file contains the IP address information for the hardware.</li>
-                <li>The networks.yml file contains networking information.</li>
+                <li>The <codeph>data/networks.yml</codeph> file contains networking information. It
+                  is recommended that you set your <codeph>start-address</codeph> at .10 in your
+                  subnet range as to avoid conflicts with the virtual IPs being used by the rest of
+                  your environment.</li>
                 <li>The control_plane.yml file contains information about the services that will be
                   installed.</li>
                 <li>The <codeph>/data/disks_controller.yml</codeph> contains the Swift information
@@ -122,8 +126,8 @@ helion/hos/                    Directory contains files used by the installer
               <codeblock>git add –A
 git commit –m "My config"
 </codeblock></li>
-          </ol></li></ol>
-
+          </ol></li>
+      </ol>
     </section>
     <section id="CobblerDeploy">
       <title>Deploy Cobbler </title>
@@ -155,15 +159,15 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           </ul>
         </li>
         <li><ol>
-          <li>Check the generated host files in
-            <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct
-            IPs are included. You can review the ansible change by running the following command:
-            <codeblock>git show staging-ansible</codeblock></li>
-          <li>Use the
-            <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> file
-            to create a deployment directory. Run your "verb_host" commands from the following
-            directory: <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
-        </ol></li>
+            <li>Check the generated host files in
+                <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct
+              IPs are included. You can review the ansible change by running the following command:
+              <codeblock>git show staging-ansible</codeblock></li>
+            <li>Use the
+              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> file
+              to create a deployment directory. Run your "verb_host" commands from the following
+              directory: <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
+          </ol></li>
       </ol>
     </section>
     <section id="CloudDeploy"><title>Deploy the Cloud</title>
@@ -196,9 +200,9 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
     </section>
     <section id="Post-Installation"><title>Verification Steps - Optional</title>
       <ol>
-        <li>This step may be used to verify that your cloud is up and running. However, note that running the command
-          below will download a cirros image from the internet, upload it to Glance, and create a
-          Neutron external
+        <li>This step may be used to verify that your cloud is up and running. However, note that
+          running the command below will download a cirros image from the internet, upload it to
+          Glance, and create a Neutron external
             network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
             can optionally specify the external network CIDR here too. If you choose not to
             excercise this option or use a wrong value, the VMs will not be accessible over the
