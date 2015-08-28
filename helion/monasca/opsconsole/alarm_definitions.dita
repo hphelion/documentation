@@ -78,7 +78,10 @@
           create multiple expressions for the alarm, or use the Alarm Expression Editor instead,
           proceed to the next section. --></li>
       </ol>
+      <p>After the alarm definition saves, it can take roughly one minute for the alarm definition
+        to appear in the chart.</p>
     </section>
+    <!-- removed
     <section>
       <title>Alarm Expression Editor</title>
       <p>The Alarm Expression Editor is particularly useful if you already know the string syntax of
@@ -150,8 +153,7 @@
           close the Alarm Expression Editor form.</li>
         <li>When done creating the alarm, click <uicontrol>Create Alarm</uicontrol>. </li>
       </ol>
-      <p>After the alarm definition saves, the Alarm Definitions window refreshes with the new alarm
-        definition populates in the table.</p>
     </section>
+    -->
   </conbody>
 </concept>
