@@ -31,7 +31,9 @@
       <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
       <ul>
         <li>Setup the iLO Advanced license in the iLO configuration.</li>
-        <li>Switch from UEFI to Legacy BIOS.</li>
+        <li>Select the required mode (legacy BIOS or UEFI ) on each node through its BIOS settings
+          before beginning the install process. HOS 2.0 will detect and use the mode you have
+          selected for each node; UEFI support is new in Beta 1.</li>
         <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
         <li>Ensure that the other networks have PXE disabled.</li>
         <li>Insert the CD ROM in the Virtual Media drive on the iLO.</li>
@@ -65,13 +67,6 @@
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
       <ol>
-        <li>On the deployer node, enter the following command to create the SSH keypair if one is
-          not already present:<codeblock>ssh-keygen -t rsa</codeblock>
-        </li>
-        <li>Add ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys file:
-          <codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
-        <li>Confirm that ssh localhost works without a password and that you can get from external
-          sources, both with and without sudo.</li>
         <li>Log in to the deployer node as the user you created during the setup phase, and mount
           the install media at /media/cdrom, for example,
           <codeblock>sudo mount /media/cdrom</codeblock></li>
