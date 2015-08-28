@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_a4c_11b_dt">
-  <title><i>cf-mgmt</i> Tool Example 2: Create a Cluster</title>
+  <title><i>cf-mgmt</i> Create a small cluster</title>
   <body>      <simpletable><strow><stentry><xref href="cfmgmt_createcluster_microcloud.dita">&lt;- microcloud example</xref> </stentry><stentry>
         <xref href="cfmgmt_createcluster_large.dita">grow a cluster example -&gt;</xref></stentry></strow></simpletable>
    
-            <p>The following is an example on how to create a cluster with a Core node, two DEAs and
-      a MySQL service.</p>
+            <p>The following is an example on how to create a small cluster with a Core node and one DEA.</p>
     <p>
       <note type="tip"> For convenience, copy the code blocks and paste them into a text editor. You
         can edit them there and then copy and paste back into the <varname>cf-mgmt</varname> tool as
@@ -30,16 +29,13 @@ core-flavor: standard.medium
 cluster-title: &lt;My Cluster Title&gt; 
 cluster-prefix: &lt;My Cluster Prefix&gt;
 dea-count: 1 
-dea-flavor: standard.medium 
-services: mysql 
-services-on-core: false 
-service-flavor: standard.medium 
+dea-flavor: standard.large
 az: &lt;My Availability Zones&gt;</codeblock><note>Please
             ensure the values for image names, image sizes and availability zones ("az") are valid
             for your current configuration.</note></li>
         <li>Run the following set of commands.
           <codeblock> cf-mgmt.exe ^
-        --os-auth-url [OpenStack authentication URL] ^
+        --os-auth-url &lt;OpenStack authentication URL&gt; ^
         --os-username &lt;username&gt; ^
         --os-password &lt;password&gt; ^
         --os-tenant-id &lt;id&gt; ^
