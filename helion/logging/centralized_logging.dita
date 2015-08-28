@@ -251,7 +251,7 @@
         - create 640 keystone keystone
         - copytruncate
 ...</codeblock>
-      <p>In the above example here</p>
+      <p>In the above example, here is a description of the options:</p>
       <ul>
         <li><b>enabled</b> indicates whether centralized logging is enabled for the file specified.
           If this value is set to <codeph>false</codeph> then this log will not be sent to
