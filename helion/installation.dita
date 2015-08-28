@@ -194,9 +194,9 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
         page: <xref href="vsa.dita#topic_hjr_4x1_dt">Install and Configure VSA
         (optional)</xref>.</p>
     </section>
-    <section id="Post-Installation"><title>Verification Steps</title>
+    <section id="Post-Installation"><title>Verification Steps - Optional</title>
       <ol>
-        <li>This step may be used to verify your cloud installation. Note that running the command
+        <li>This step may be used to verify that your cloud is up and running. However, note that running the command
           below will download a cirros image from the internet, upload it to Glance, and create a
           Neutron external
             network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
