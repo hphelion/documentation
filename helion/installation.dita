@@ -8,15 +8,15 @@
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
         <li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other
           disks will be wiped.</li>
-        <li>The deployer node must run on HP Linux for HP Helion OpenStack. It is part of the ISO
-          you will download from the <xref
+        <li>Both HP Linux for HP Helion OpenStack and HP Helion OpenStack are part of the ISO you
+          will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page. There is only one download;
-          it includes both the OS and the Beta0 installer in one ISO.</li>
-        <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All
+          it includes both the OS and the Beta1 installer in one ISO.</li>
+        <li>Three NICs are tested, one 1Gb used for PXE and two bonded 10Gb for everything else. All
           machines can net boot from PXE and use the deployer as a DHCP server.</li>
-        <li>All machines of a single type should be the same, that is, all computes, all VSAs, and
-          so on.</li>
+        <li>All machines of a single type should be the same, that is, all compute nodes, all VSA
+          nodes, and so on.</li>
         <li>The deployer node must be a dedicated node in Beta1.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO
