@@ -76,7 +76,7 @@
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-1-20150827T092008Z.tgz</codeblock>
         </li>
         <li>Run the following included script:
-          <codeblock>~/hlm-deployer/hos-init.bash </codeblock></li>
+          <codeblock>~/hos-2.0.0-1/hos-init.bash </codeblock></li>
       </ol>
       <p>At the end of this section you should have a local directory structure, as described
         below:</p>
