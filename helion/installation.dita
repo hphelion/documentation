@@ -47,7 +47,7 @@
             format="html" scope="external">Helion Downloads</xref> page after signing up and being
           approved for the program.</li>
         <li>Boot your deployer from the ISO. Insert the CD ROM in the Virtual Media drive on the iLO.</li>
-        <li>Enter "install" to start installation.</li>
+        <li>Enter "install" to start installation. (note "install" all lower case)</li>
         <li>Select the language.</li>
         <li>Select the location.</li>
         <li>Select the keyboard layout.</li>

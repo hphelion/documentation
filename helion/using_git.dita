@@ -11,8 +11,7 @@
     <p>The git repository, which is installed by the deployer, is local to your cloud servers, but
       in other ways functions like a remote git repository.</p>
  
-    <p>Below is a representation of the typical git workflow in HP Helion OpenStack 2.0. Note that
-      initially the </p>
+    <p>Below is a representation of the typical git workflow in HP Helion OpenStack 2.0. </p>
     <p><image href="../media/install/gitWorkflow.png" id="image_cbv_wg4_dt"/></p>
     <p/>
     <p>The git repository provides a way for you to merge changes that you pull down as "upstream"
