@@ -218,7 +218,8 @@
 | state         | activated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock></p></li>
         </ol></p></section>
-    <section id="run-config-processor"><b>Run the config processor</b><p>Execute the following commands:</p><p>
+    <section id="run-config-processor"><b>Run the config processor</b><p>Execute the following
+        commands:</p><p>
         <codeblock><codeph>cd ~/helion/hlm/ansible</codeph>
 <codeph>ansible-playbook -i hosts/localhost config-processor-run.yml</codeph></codeblock>
       </p></section>
