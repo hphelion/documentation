@@ -24,7 +24,7 @@
     <section id="deploy-service"><b>Deploy a Service</b><p>Execute the following steps from the
                 deployer to deploy a service using the EON CLI.<ol>
                     <li>Source <codeph>service.osrc</codeph></li>
-                    <li>Add a vCenter to the eon
+                    <li>Add a vCenter to the EON
                             database.<codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:</p><p>
                             <ul>
                                 <li>vCenter Name - the name of the vCenter server where the service
@@ -35,8 +35,8 @@
                                     administrator.</li>
                                 <li>vCenter Password - the password for the vCenter
                                     administrator.</li>
-                                <li>vCenter Port - the vCenter server port.<p>Sample
-                                        Output<codeblock>+------------+--------------------------------------+
+                                <li>vCenter Port - the vCenter server port.<p><b>Sample
+                                        Output</b><codeblock>+------------+--------------------------------------+
 | Property   | Value                                |
 +------------+--------------------------------------+
 | created_at | 2015-08-20T12:08:09.000000           |
