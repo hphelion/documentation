@@ -82,8 +82,8 @@
 helion/                        Top level directory
 helion/examples/               Directory contains the config input files of the example clouds
 helion/my_cloud/definition/    Directory contains the config input files
-helion/my_cloud/config/        Directory contains .j2 files which are symlinks to the /hlm/ansible directory
-helion/hlm/                    Directory contains files used by the installer
+helion/my_cloud/config/        Directory contains .j2 files which are symlinks to the /hos/ansible directory
+helion/hos/                    Directory contains files used by the installer
 </codeblock>
     </section>
     <section id="Configuration">
@@ -144,7 +144,7 @@ git commit –m "My config"
     <section><title>Run the Configuration Processor</title>
       <ol>
         <li>Run the configuration processor, as follows:
-          <codeblock>cd ~/helion/hlm/ansible
+          <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           The configuration processor output is placed onto the following two private branches of
           the git repo: <ul>
@@ -179,7 +179,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
             any error is triggered when you validate the object storage, refer to <xref
               href="swift/troubleshooting_beta1.dita#topic_sl2_nht_dt"
             >Swift-Troubleshooting</xref></p></li>
-        <li>Modify the ./helion/hlm/ansible/hlm-deploy.yml to comment out the line containing
+        <li>Modify the ./helion/hos/ansible/hlm-deploy.yml to comment out the line containing
           horizon.</li>
         <li>Run the following command:
           <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeblock>
