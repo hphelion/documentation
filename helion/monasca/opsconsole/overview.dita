@@ -13,16 +13,22 @@
         <li>General <ul>
             <li><xref href="dashboard.dita">Dashboard</xref></li>
             <li><xref href="logging.dita">Logging</xref></li>
-            <li><xref href="alarm_explorer.dita">Alarm Explorer</xref></li>
-            <li><xref href="alarm_creation.dita">Alarm Creation</xref></li>
+            <li><xref href="alarm_definitions.dita">Alarm Definitions</xref></li>
+            <li><xref href="alarm_explorer.dita">Alarms</xref></li>
             <li><xref href="notification_methods.dita">Notification Methods</xref></li>
           </ul></li>
         <li>Compute <ul>
             <li><xref href="compute_summary.dita">Compute - Alarm Summary</xref></li>
             <li><xref href="compute_hosts.dita">Compute Hosts</xref></li>
-            <li><xref href="compute_instances.dita">Compute Instances</xref></li>
           </ul>
         </li>
+        <li>Networking <ul>
+            <li><xref href="networking_summary.dita">Networking - Alarm Summary</xref></li>
+          </ul>
+        </li>
+        <li>Storage <ul>
+            <li><xref href="storage_summary.dita">Storage - Storage Alarm Summary</xref></li>
+          </ul></li>
       </ul>
     </section>
   </body>
