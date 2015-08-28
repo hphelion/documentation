@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0FWaaS">
-  <title>HP Helion OpenStack 2.0 FWaaS Configuration</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 FWaaS Configuration</title>
   <body>
     <p>HP Helion OpenStack 2.0 FWaaS Configuration</p>
     <p>This document describes the configuration process and requirements for the HP Helion
@@ -16,7 +16,7 @@
     
     <section id="Prerequisites">
       <title>Prerequisites</title>
-      <p>HP Helion <tm tmtype="reg">OpenStack</tm> must be installed. </p>
+      <p>HP Helion OpenStack must be installed. </p>
       
     </section>
     <section id="Configuration">

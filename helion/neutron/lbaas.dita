@@ -3,9 +3,9 @@
 <topic id="HP2.0LBaaS">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 LBaaS Configuration</title>
   <body>
-    <p>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 LBaaS Configuration</p>
-    <p>This document describes the configuration process and requirements for the HP Helion
-      <tm tmtype="reg">OpenStack</tm> 2.0 Load Balancing as a Service module.</p>
+    <p>HP Helion OpenStack 2.0 LBaaS Configuration</p>
+    <p>This document describes the configuration process and requirements for the HP Helion OpenStack 2.0 
+      Load Balancing as a Service module.</p>
     <p>
       <ul id="LBaaSlist">
         <li><xref href="lbaas.dita#HP2.0LBaaS/Prerequisites">Prerequisites</xref></li>
@@ -16,11 +16,11 @@
     
     <section id="Prerequisites">
       <title>Prerequisites</title>
-      <p>HP Helion <tm tmtype="reg">OpenStack</tm> must be installed. </p>
+      <p>HP Helion OpenStack must be installed. </p>
     </section>
     <section id="Configuration">
       <title>Configuration</title>
-      <p>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 LBaaS Configuration</p>
+      <p>HP Helion OpenStack 2.0 LBaaS Configuration</p>
       <note>If you need to run LBaaS version 1 instead of the default LBaaS version 2, you'll need to configure the ccp.yml
       files and neutron.conf.j2 file to use version 1.</note>
       
