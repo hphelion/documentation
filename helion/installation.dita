@@ -87,7 +87,7 @@ helion/hlm/                    Directory contains files used by the installer
 </codeblock>
     </section>
     <section id="Configuration">
-      <title>Configure your Environment</title>
+      <title>Configure Your Environment</title>
       <ol>
         <li>Setup your configuration files, as follows: <ol>
             <li>See the sample set of configuration files in the
@@ -119,27 +119,10 @@ helion/hlm/                    Directory contains files used by the installer
               </ul></li>
             <li>Commit your configuration into git, as follows:
               <codeblock>git add –A
-git commit –m “My config”
+git commit –m "My config"
 </codeblock></li>
-          </ol></li>
-        <li>Run the configuration processor, as follows: <codeblock>cd ~/helion/hlm/ansible</codeblock>
-          <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>The CP
-          output is placed on to the following two private branches of the git repo: <ul>
-            <li>staging-ansible</li>
-            <li>staging-cp-persistent</li>
-          </ul>
-        </li>
-        <li><ol>
-            <li>Check the generated host files in
-                <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct
-              IPs are included. You can review the ansible change by running the following command:
-              <codeblock>git show staging-ansible</codeblock></li>
-            <li>Use the
-              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> file
-              to create a deployment directory. Run your "verb_host" commands from the following
-              directory: <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
-          </ol></li>
-      </ol>
+          </ol></li></ol>
+
     </section>
     <section id="CobblerDeploy">
       <title>Deploy Cobbler </title>
@@ -155,6 +138,29 @@ git commit –m “My config”
         <li>Run the following command, which will reimage all the nodes using PXE:
           <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
         <li>The script will wait for the nodes to install and come back up.</li>
+      </ol>
+    </section>
+    <section><title>Run the Configuration Processor</title>
+      <ol>
+        <li>Run the configuration processor, as follows:
+          <codeblock>cd ~/helion/hlm/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+          The configuration processor output is placed onto the following two private branches of
+          the git repo: <ul>
+            <li>staging-ansible</li>
+            <li>staging-cp-persistent</li>
+          </ul>
+        </li>
+        <li><ol>
+          <li>Check the generated host files in
+            <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct
+            IPs are included. You can review the ansible change by running the following command:
+            <codeblock>git show staging-ansible</codeblock></li>
+          <li>Use the
+            <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> file
+            to create a deployment directory. Run your "verb_host" commands from the following
+            directory: <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
+        </ol></li>
       </ol>
     </section>
     <section id="CloudDeploy"><title>Deploy the Cloud</title>
