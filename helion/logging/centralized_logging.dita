@@ -42,16 +42,18 @@
         </ul>
       </li>
       <li>
-        <xref type="section" href="#logging/troubleshooting">Using Centralized Logging to Troubleshoot Issues</xref>
+        <xref type="section" href="#logging/troubleshooting">Using Centralized Logging to
+          Troubleshoot Issues</xref>
       </li>
       <li>
         <xref type="section" href="#logging/monitor">Monitoring Centralized Logging</xref>
       </li>
       <li>
-        <xref type="section" href="#logging/troubleshooting_issues">Troubleshooting Centralized Logging Issues</xref>
+        <xref type="section" href="#logging/troubleshooting_issues">Troubleshooting Centralized
+          Logging Issues</xref>
       </li>
       <li>
-        <xref type="section" href="#logging/info">For more information</xref>
+        <xref type="section" href="#logging/info">For More Information</xref>
       </li>
     </ul>
     <section id="install">
@@ -61,7 +63,8 @@
         to the amount of RAM allocated to your control plane nodes to ensure optimum
         performance.</p>
       <p>No specific configuration is required to use Centralized Logging. However, you can tune or
-        configure the individual components as needed for your environment as detailed in the <xref href="#logging/config">Logging Configuration</xref> section.</p>
+        configure the individual components as needed for your environment as detailed in the <xref
+          href="#logging/config">Logging Configuration</xref> section.</p>
     </section>
     <section id="components">
       <title>Centralized Logging Components</title>
@@ -212,7 +215,7 @@
       </table>
     </section>
     <section id="config">
-      <title>Configuration</title>
+      <title>Centralized Logging Configuration</title>
       <p>To configure logging, modify the <codeph>/roles/logging-common/defaults/main.yml</codeph>
         file as needed, then reconfigure. Here is a snippet of this file showing the logging
         settings for the Keystone service. An explanation of this file is below.</p>
@@ -251,7 +254,7 @@
       <p/>
     </section>
     <section id="kibana">
-      <title>Kibana configuration</title>
+      <title>Kibana Configuration</title>
       <p>You can use the Kibana dashboards to view log data. Kibana is a tool developed to create
         charts, graphs, tables, and histograms based on logs send to Elasticsearch by logstash.</p>
       <p>While creating Kibana dashboards is beyond the scope of this document, it is important to
@@ -317,7 +320,7 @@
           scope="external" format="html"
           >https://www.elastic.co/guide/en/kibana/3.0/working-with-queries-and-filters.html</xref></p>
     </section>
-    <section id="monitoring"><title>Monitoring</title>
+    <section id="monitoring"><title>Monitoring Centralized Logging</title>
       <p>To help keep abreast of potential logging issues and resolve issues before they affect
         logging, you may wish to monitor the Centralized Logging Alarms. To do so:</p>
       <ol>
@@ -348,7 +351,7 @@
       <p>To look for sufficient Disk space, filter for "Disk"</p>
       <p>To look for sufficient RAM Memory, filter for "Memory"</p>
     </section>
-    <section id="troubleshooting_issues"><title>Troubleshooting Logging Issues</title>
+    <section id="troubleshooting_issues"><title>Troubleshooting Centralized Logging Issues</title>
       <p>If centralized logging is not working, go through the following steps to
         troubleshooting:</p>
       <ul>
@@ -403,7 +406,7 @@ yellow logstash-2015.02.11 5 1 27471823 0 13.6gb 13.6gb</codeblock>
         sure the queue size is reducing.</p>
     </section>
     <section id="info">
-      <title>For more information</title>
+      <title>For More Information</title>
       <p>For information the centralized logging components, use the following links:</p>
       <ul>
         <li><xref href="http://logstash.net/" scope="external" format="html">Logstash</xref></li>
