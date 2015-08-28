@@ -131,7 +131,7 @@ git commit –m "My config"
         <li>Run the following command:
           <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
         <li>Run the following playbook:
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock><codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+          <codeblock>cd ~/helion/hos/ansible</codeblock><codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
       </ol>
     </section>
     <section id="NodeProvision"><title>Provision the Nodes</title>
