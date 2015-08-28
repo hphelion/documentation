@@ -97,17 +97,10 @@ helion/hlm/                    Directory contains files used by the installer
         <li>Setup your configuration files, as follows: <ol>
             <li>See the sample set of configuration files in the
               ~/helion/examples/one-region-poc-with-vsa directory. The accompanying README.md file
-              explains the contents of each of the configuration files. <p><b>OR</b></p>If you are
-              deploying <b>ESX</b>, see the sample set of configuration files in the
-                <codeph>~/helion/examples/one-region-poc-with-esx</codeph> directory. The
-              accompanying README.md file explains the contents of each of the configuration
-              files.</li>
+              explains the contents of each of the configuration files. </li>
             <li>Copy the example configuration files into the required setup directory and edit them
               as required: <codeblock>cp -r ~/helion/examples/one-region-poc-with-vsa/* </codeblock>
-              <b>OR</b><p>For ESX, copy the example configuration files into the required setup
-                directory and edit them as
-                required:<codeblock>cp -r ~/helion/examples/one-region-poc-with-esx/* ~/helion/my_cloud/definition/</codeblock></p><p>Note:
-                There have been changes to some of the files since Beta 0.</p> The configuration
+              Note: There have been changes to some of the files since Beta 0. The configuration
               files for editing can be found at the following location:
                 <codeblock>~/helion/my_cloud/definition/data</codeblock><ul id="ul_wwn_rtx_bt">
                 <li>The baremetalConfig.yml file should specify the server information for your
@@ -191,9 +184,6 @@ git commit –m “My config”
         </li>
       </ol>
     </section>
-    <section><b>Install and Configure ESX Compute and OVSvAPP on vCenter</b><p>You can configure the
-        ESX compute and OVSvAPP on vCenter using the instructions on the following page: <xref
-          href="esx/esx_compute_ovsvapp_install.dita#topic_iys_5k1_2t"/>.</p></section>
     <section id="VSA">
       <title>Install and Configure VSA (optional).</title>
       <p>You can set up Virtual Storage Appliance (VSA) using the instructions on the following
