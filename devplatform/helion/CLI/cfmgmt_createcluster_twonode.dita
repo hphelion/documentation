@@ -20,15 +20,16 @@
             >downloaded</xref> and installed.</li>
 </ul></section>
 
-     <section>  <ol><li>Create a text file named <i>bootstrap.yml </i> with the following content and save it in the
-          same folder where the <i>cf-mgmt </i>tool is
-            installed.<codeblock>constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
+     <section>  <ol>
+        <li>Download the latest <i>bootstrap.yml</i> and save it in the same folder where the
+            <i>cf-mgmt </i>tool is installed.</li><li> Open and configure the <i>bootstrap.yml </i>file to match your environment. Here is an
+            example:<codeblock>constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
 constructor-flavor: standard.xsmall 
 seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
 core-flavor: standard.medium 
 cluster-title: &lt;My Cluster Title&gt; 
 cluster-prefix: &lt;My Cluster Prefix&gt;
-dea-count: 2 
+dea-count: 1 
 dea-flavor: standard.medium 
 services: mysql 
 services-on-core: false 
@@ -38,7 +39,7 @@ az: &lt;My Availability Zones&gt;</codeblock><note>Please
             for your current configuration.</note></li>
         <li>Run the following set of commands.
           <codeblock> cf-mgmt.exe ^
-        --os-auth-url <xref href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/" format="html" scope="external">https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/</xref> ^
+        --os-auth-url [OpenStack authentication URL] ^
         --os-username &lt;username&gt; ^
         --os-password &lt;password&gt; ^
         --os-tenant-id &lt;id&gt; ^
