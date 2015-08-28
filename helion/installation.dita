@@ -71,7 +71,7 @@
           the install media at /media/cdrom, for example,
           <codeblock>sudo mount /media/cdrom</codeblock></li>
         <li> Unpack the following tarball:
-          <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz</codeblock>
+          <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-1-20150827T092008Z.tgz</codeblock>
         </li>
         <li>Run the following included script:
           <codeblock>~/hlm-deployer/hos-init.bash </codeblock></li>
