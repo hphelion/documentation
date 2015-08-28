@@ -109,6 +109,48 @@
       <p>For more information, see <xref href="carrier-grade.services-overview.dita">Services
           Overview</xref>.</p>
     </section>
+    <section><title>Installation Options</title>HP Helion OpenStack Carreir Grade has two baremetal
+      installation options depending on your system configuration. It allows you to manage the KVM
+      and VMware ESX<tm tmtype="reg"/> hypervisors and provision virtual machines.<p>You can find
+        more information on the hypervisor options in the <xref
+          href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
+          Overview</xref>.</p></section>
+  <section id="kvm-Hypervisor">
+    <title>KVM Topology</title>
+    <p>If you install the KVM deployment, you can integrate either HP Storevirtual (VSA) or HP
+      StoreServ (3PAR) storage in the KVM region.</p>
+    <ul>
+      <li>With HP StoreVirtual VSA storage <p>HP StoreVirtual VSA software is a Virtual Storage
+        Appliance that provides the complete array functionality on top of a Linux KVM
+        environment without external hardware. VSA eliminates the need for external shared
+        storage required to implement Block Storage features.</p></li>
+      
+      <li>With HP StoreServ (3PAR) storage <p>HP 3PAR StoreServ is a storage array that supports
+        Fibre Channel (FC) as well as iSCSI protocol.</p></li>
+    </ul>
+    <p>You must install 3PAR or VSA before starting the HP Helion OpenStack installation and are
+        independent of HP Helion OpenStack Carrier Grade. </p>
+  </section>
+  <section id="esx-hypervisor"><title>KVM + ESX Topology</title>The ESXi/DCN integration enables
+      data-center-to-data-center communications through DCN, which connects to the KVM region
+      through a gateway (VRS-G). <p>HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX
+        integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute
+        driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX
+        clusters in a vCenter through Compute proxy nodes.</p><p>Virtual networking between HP
+        Helion Carrier Grade and the ESX servers is handled by HP Distributed Cloud Networking (DCN)
+        is a software-defined networking (SDN) solution that enhances data center (DC) network
+        virtualization by automatically establishing connectivity between compute resources upon
+        their creation. </p><p>The ESX integration uses the OVSvApp application to connect the
+        vCenter networking to the Network Operations controller to manage workload networks.
+        </p><p>You can also integrate HP Storevirtual (VSA) or HP StoreServ (3PAR) storage in the
+        KVM region. </p><p>You must install ESX, 3PAR or VSA before starting the HP Helion OpenStack
+        installation and are independent of HP Helion OpenStack Carrier Grade. </p></section>
+  
+  <section id="nic"><title>Unbonded or Bonded NIC configuration</title>
+    <p>The HP Helion OpenStack Carrier Grade installation allows for network interface card bonding
+        (bonded NIC). </p>
+  </section>
+  
     <!-- 
   <section id="distributed-cloud-networking-dcn"> <title>Distributed Cloud Networking (DCN)</title>
 <p>Distributed Cloud Networking (DCN) is a Software-Defined Networking (SDN) solution that provides data center (DC) network virtualization and automatically establishes connectivity between compute resources upon their creation.</p>

@@ -355,7 +355,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
                   </tbody>
                 </tgroup>
               </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select
-                both if you have respective storage arrays </p><p><b>For 3PAR storage </b>: Edit the
+                both if you have respective storage arrays </p><p id="storage"><b>For 3PAR storage </b>: Edit the
                   <codeph>cinder_conf.hp3parSample</codeph> file to configure the 3PAR settings. For
                 example:</p><codeblock>[DEFAULT]
 enabled_backends=hp3par

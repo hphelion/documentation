@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Create an OSadmin User for
+    VSD</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><i>Return to the Installing the <xref
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+        Deployment</xref>.</i></p>
+    <section id="create-user-for-plugin-login">
+      <p>You must create an administrative user called OSadmin and add it to CMS Group.</p>
+      <ol id="ol_e14_rkw_dt">
+        <li>From VSD Dashboard, click the <b>Open VSP Configuration</b> tab on the top right corner
+          of the dashboard.</li>
+        <li>Click the <b>CSP Users</b> tab and click <b>+</b>.</li>
+        <li>Create a user named <codeph>OSadmin</codeph> with the password <codeph>OSadmin</codeph>.
+          The name and password are case-sensitive. Do not copy and paste from here into the field.
+              <p><image href="../../media/CGH-Install-VSD-create-user.png" id="image_pjz_wy3_bt"
+              width="600"/></p></li>
+        <li>Add the user to the <codeph>CMS Group</codeph>.<p><image
+              href="../../media/CGH-install-VSD-user-to-group.png" width="600" id="image_q4m_sz3_bt"
+            /></p></li>
+      </ol>
+    </section>
+    <section>
+      <p><i>Return to the Installing the <xref
+            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+            Deployment</xref>.</i></p>
+    </section>
+  </body>
+</topic>

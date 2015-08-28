@@ -28,7 +28,7 @@
           host and extract the files.</li>
         <li>From the HLM VM, SSH into any controller node using the default credentials: <p>
           <codeblock>User Name: cghelion
-            Password: cghelion</codeblock>
+Password: cghelion</codeblock>
         </p></li>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
@@ -119,9 +119,9 @@
     
     <section id="next-step">
       <title>Next Step</title>
-      <p>
-        <xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref>
-      </p>
+      <p>For KVM-only deployments, proceed to <xref href="carrier-grade-install-kvm-cloud-GA.dita"
+          >Deploying the KVM Region</xref>.</p>
+      <p>For KVM + ESX deployments, proceed to  </p>
     </section>
   </body>
 </topic>

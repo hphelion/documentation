@@ -84,6 +84,8 @@
       navtitle="Administrator Guide" locktitle="yes"/>
     <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
       locktitle="yes"/>
+    <topicref href="CarrierGrade/Installation/carrier-grade-backup-restore.dita" toc="yes"
+      navtitle="Backup and Restore the HLM Node and MySQL Cluster" locktitle="yes"/>
     <topichead navtitle=" License Files">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
         navtitle="Open Source and Third-Party Software License Agreement" locktitle="yes"/>

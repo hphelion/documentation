@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the ESX Compute Proxy
+    Patch</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--Based on https://wiki.hpcloud.net/display/HCG/.Helion+CG+1.1+GA+Patch+Instructions--></p>
+    <section>
+      <p><i>Return to the <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/proxy-patch"
+            >the KVM + ESX installation</xref>.</i></p>
+      <p>This patch fixes an intermittent issue where the ESX compute proxy is not configured after
+        the <codeph>hprovision</codeph> completes successfully. The patch increase the timeout to
+        allow enough time for the proxy VM to boot. <ol id="ol_n4h_mxm_bt">
+          <li>On the HLM host, execute the following command to create directory for the patch
+            <codeblock>mkdir ~/patch_cghelion1.1 </codeblock></li>
+          <li>Copy the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> to the
+              <codeph>~/patch_cghelion1.1</codeph> directory. </li>
+          <li>Use the following command to extract the
+              <codeph>compute_proxy_patch_1.1.tar.gz</codeph>:
+            <codeblock>tar -zxvf compute_proxy_patch_1.1.tar.gz</codeblock></li>
+          <li>Use the following command to install the Ubuntu patch
+            utility:<codeblock>apt-get install patch </codeblock></li>
+          <li>Change to the <codeph>~/cg-hlm </codeph>
+            directory:<codeblock>cd ~/cg-hlm</codeblock></li>
+          <li>You can confirm that the patch will execute properly before performing the patch
+            operation by executing the following
+            command:<codeblock>patch -p1 --dry-run &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock></li>
+          <li>The command shoild result in the following
+            message:<codeblock>checking file node-provision/hlm_provisionproxy.py</codeblock></li>
+          <li>Execute the following command to perform tha patching operation:
+            <codeblock>patch -p1 &lt; ~/patch_cghelion_1.1/ compute-proxy-timeout.patch</codeblock>The
+            patch application returns the following message, if
+            successful:<codeblock> patching file node-provision/hlm_provisionproxy.py</codeblock></li>
+          <li>Change to the <codeph>~/cg-hlm/hlm-build</codeph>
+            folder:<codeblock>cd ~/cg-hlm/hlm-build</codeblock></li>
+          <li>Execute the following command to synch the patch
+            file:<codeblock>./hlm_prepare-env.sh</codeblock></li>
+        </ol></p>
+    </section>
+    <p>Return to the <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/proxy-patch">the
+        KVM + ESX installation</xref>.</p>
+    </body>
+</topic>

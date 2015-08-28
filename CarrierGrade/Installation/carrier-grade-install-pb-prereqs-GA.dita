@@ -246,10 +246,10 @@ StrictHostKeyChecking no </codeblock></li>
                 </section>
                 <section>
                         <title>Integrating LDAP</title>
-                        <p>OPTIONAL The HP Helion OpenStack Identity service can use Lightweight
-                                Directory Access Protocol (LDAP) to integrate your organization's
-                                existing directory service and user account management
-                                processes.</p>
+                        <p><b>OPTIONAL:</b> The HP Helion OpenStack Identity service can use
+                                Lightweight Directory Access Protocol (LDAP) to integrate your
+                                organization's existing directory service and user account
+                                management processes.</p>
                 </section>
                 <section id="getinstall">
                         <title>Download and unpack the installation packages</title>
@@ -305,6 +305,10 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <codeph>random-password.tar.gz</codeph> file.</li>
                                                 <li>Helion Dynamic Password patch. Download the
                                                   <codeph>horizon_web_patch_1.1.tar.gz</codeph>
+                                                  file.</li>
+                                                <li>NIC Bonding Patch. If you are using bonded NIC,
+                                                  download the
+                                                  <codeph>cg-hos-nic-bonding.patch</codeph>
                                                   file.</li>
                                                 <li><b>GPG keys to verify signature files</b>. This
                                                   file is named
@@ -401,12 +405,12 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                         <li>Compare the output of the checksum tool to the
                                                   <codeph>hcg_1.1.0.tar.sha256</codeph> file.
                                                 <codeblock>sha256sum.exe hcg_1.1.0.tar
-                                                        97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock>Note
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock>Note
                                                 that the chechsum file contains the date that the
                                                 file was generated, the checksum string, and the
                                                 name of the file that was
                                                 used:<codeblock>Fri Jul 31 10:55:37 EDT 2015
-                                                        97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar</codeblock></li>
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar</codeblock></li>
                                         <li>Run the checksum tool against the
                                                   <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>
                                                 file.
@@ -472,13 +476,6 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   host</entry>
                                                   </row>
                                                   <row>
-                                                  <entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/root</codeph> on
-                                                  <codeph>controller-0</codeph> in the KVM
-                                                  region.</entry>
-                                                  </row>
-                                                  <row>
                                                   <entry><codeph>TEMPL-CPV9.ova</codeph></entry>
                                                   <entry><codeph>hcg_1.1.0.tar</codeph></entry>
                                                   <entry>Any location on any server that can be
@@ -506,7 +503,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   this directory.</entry>
                                                   </row>
                                                 <row>
-                                                  <entry>secure_HLM_ports_patch_1.1.tar.gz</entry>
+                                                  <entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
                                                   directory on the HML host. You must first create
@@ -525,6 +522,30 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
                                                   directory on the HML host. You must first create
                                                   this directory.</entry>
+                                                </row>
+                                                <row>
+                                                  <entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry>
+                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
+                                                  <entry><codeph>/root</codeph> on
+                                                  <codeph>controller-0</codeph> in the KVM
+                                                  region.</entry>
+                                                </row>
+                                                <row>
+                                                  <entry><codeph>WR/extras/HP-HCG-SDK-15.05-b10.tgz
+                                                  WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5</codeph></entry>
+                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
+                                                  <entry><codeph>/root</codeph> on
+                                                  <codeph>controller-0</codeph> in the KVM region.
+                                                  SDK files to be used as needed.</entry>
+                                                </row>
+                                                <row>
+                                                  <entry><codeph>WR/extras/HP-HCG-sample-guest-15.05-b9.img
+                                                  WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeph></entry>
+                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
+                                                  <entry><codeph>/root</codeph> on
+                                                  <codeph>controller-0</codeph> in the KVM region.
+                                                  Sample guestt OS files to be used as
+                                                  needed.</entry>
                                                 </row>
                                                   </tbody>
                                                 </tgroup>
@@ -684,9 +705,8 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                 <section id="next-step">
                         <title>Next Step</title>
                         <p>
-                                <xref href="carrier-grade-install-hlm-vm.dita#topic10581"
-                                        >Bootstrapping the HP Helion Lifecycle Management virtual
-                                        machine and installation services</xref>. </p>
+                                <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Deploying
+                                        the HLM VM and installation services</xref>. </p>
                 </section>
         </body>
 </topic>
