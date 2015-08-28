@@ -6,12 +6,11 @@
     <p>Not all cluster management and creation features are available through the Horizon console.
         The<i> cf-mgmt</i> tool can take direct input or leverage a bootstrap file to simplify
       cluster creation and expansion. </p>
-    <p>The first example <xref href="cfmgmt_createcluster_microcloud.dita">creates a micro-cloud</xref> where all roles are installed on one VM. This example does not require installing the Helion Development Platform; it runs in the Helion Public Cloud.</p>
-    <p>The second example <xref href="cfmgmt_createcluster_twonode.dita">creates a cluster</xref>
-      with one core node and two DEAs and then adds the MySQL service.</p>
-    <p>The third example demonstrates how to <xref href="cfmgmt_createcluster_large.dita">grow a
-        cluster</xref> once it has been created. To minimize the risk of error, avoid creating huge
-      clusters all at once. Best practice is to create a core and then expand it.</p>
+    <p>To minimize the risk of error, avoid creating huge clusters all at once. Best practice is to create a core and then expand it. The following are examples on how to create a cluster and grow it:</p>
+    <p><xref href="cfmgmt_createcluster_starter.dita">Create small cluster</xref>
+      with one core node and one DEAs</p>
+    <p><xref href="cfmgmt_createcluster_addDEA.dita">Add a DEA</xref> to existng cluster. </p>
+    <p><xref href="cfmgmt_createcluster_addService.dita">Add a service</xref> to existng cluster. </p>
     <section>
       <note type="tip"> For convenience, copy the code blocks and paste them into a text editor. You
         can edit them there and then copy and paste back into the <varname>cf-mgmt</varname> tool as
