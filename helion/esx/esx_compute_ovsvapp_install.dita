@@ -15,27 +15,28 @@
         <li><xref href="#topic_iys_5k1_2t/deploy-cloud" format="dita">Deploy a cloud</xref></li>
       </ul>
     </p>
-    <section id="deploy-template"><b>Deploy a template</b><p>Perform the following steps to deploy a template:</p><ol
-        id="ol_ofw_fl1_2t">
+    <section id="deploy-template"><b>Deploy a template</b><p>Perform the following steps to deploy a template:</p><ol>
         <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the vSphere client. </li>
         <li>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF Template</b>.</li>
         <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
           install. Refer to the VMWare vSphere documentation as needed. </li>
       </ol></section>
-    <section id="deploy-service"><b>Deploy a Service</b><p>Execute the following steps form the deployer to deploy a
-        service using the EON CLI.<ol>
-          <li>Source <codeph>service.osrc</codeph></li>
-          <li>Add a vCenter to the eon
-              database.<codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:</p><p>
-              <ul>
-                <li>vCenter Name - the name of the vCenter server where the service will be
-                  deployed.</li>
-                <li>vCenter IP address - the IP address of the vCenter server where the service will
-                  be deployed.</li>
-                <li>vCenter Username - the username for the vCenter administrator.</li>
-                <li>vCenter Password - the password for the vCenter administrator.</li>
-                <li>vCenter Port - the vCenter server port.<p>Sample
-                    Output<codeblock>+------------+--------------------------------------+
+    <section id="deploy-service"><b>Deploy a Service</b><p>Execute the following steps from the
+                deployer to deploy a service using the EON CLI.<ol>
+                    <li>Source <codeph>service.osrc</codeph></li>
+                    <li>Add a vCenter to the eon
+                            database.<codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:</p><p>
+                            <ul>
+                                <li>vCenter Name - the name of the vCenter server where the service
+                                    will be deployed.</li>
+                                <li>vCenter IP address - the IP address of the vCenter server where
+                                    the service will be deployed.</li>
+                                <li>vCenter Username - the username for the vCenter
+                                    administrator.</li>
+                                <li>vCenter Password - the password for the vCenter
+                                    administrator.</li>
+                                <li>vCenter Port - the vCenter server port.<p>Sample
+                                        Output<codeblock>+------------+--------------------------------------+
 | Property   | Value                                |
 +------------+--------------------------------------+
 | created_at | 2015-08-20T12:08:09.000000           |
@@ -50,13 +51,13 @@
 | updated_at | 2015-08-20T12:08:09.000000           |
 | username   | administrator@vsphere.local          |
 +------------+--------------------------------------+</codeblock></p></li>
-              </ul>
-            </p></li>
-          <li>Run the following command to update the network
-              configuration:<codeblock><codeph>eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
-              example:<codeblock>eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
-              file of <codeph>net_conf.json</codeph> is shown
-              below:<codeblock>{
+                            </ul>
+                        </p></li>
+                    <li>Run the following command to update the network
+                            configuration:<codeblock><codeph>eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+                            example:<codeblock>eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
+                            file of <codeph>net_conf.json</codeph> is shown
+                            below:<codeblock>{
     "network": {
         # Deployer Network details
         "deployer_network": {
@@ -162,33 +163,35 @@
     "new_host_mo_ids": ""
 }
 </codeblock></p></li>
-          <li>Modify the json file as per your
-              environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
-              example:<codeblock>vi net_conf.json</codeblock></p></li>
-          <li>Set the network information for a vCenter which is used to deploy and configure
-            compute proxy and OvsvApp VMs during the cluster activation.
-              <codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
-              example:
-              <codeblock>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json net_conf.json</codeblock></p><p>
-              <note>The vcenter ID is generated when you execute the above (<b>step 2</b>)
-                command.</note>
-            </p></li>
-          <li> Execute the following command to view the list of clusters for the given
-                vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><p><b>Sample
-                Output</b><codeblock>+------------+----------+------------+---------------+
+                    <li>Modify the json file as per your
+                            environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
+                            example:<codeblock>vi net_conf.json</codeblock></p></li>
+                    <li>Set the network information for a vCenter which is used to deploy and
+                        configure compute proxy and OvsvApp VMs during the cluster activation.
+                            <codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+                            example:
+                            <codeblock>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json net_conf.json</codeblock></p><p>
+                            <note>The vcenter ID is generated when you execute the above (<b>step
+                                    2</b>) command.</note>
+                        </p></li>
+                    <li> Execute the following command to view the list of clusters for the given
+                                vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><p><b>Sample
+                                Output</b><codeblock>+------------+----------+------------+---------------+
 | MOID       | Name     | Datacenter | Import Status |
 +------------+----------+------------+---------------+
 | domain-c21 | Cluster1 | DC1        | not_imported  |
 +------------+----------+------------+---------------+</codeblock></p></li>
-          <li>Import the cluster for the EON database under the given vCenter.
-              <codeblock><codeph>eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock><p>where:</p><p>
-              <ul>
-                <li>vCenter ID: ID of the vcenter containing the cluster.</li>
-                <li>Cluster Name: the name of the cluster that needs to be imported.</li>
-                <li>cluster Moid: Moid of the cluster that needs to be imported.</li>
-              </ul>
-            </p><p><b>Sample
-              Output</b><codeblock>+--------------+-----------+
+                    <li>Import the cluster for the EON database under the given vCenter.
+                            <codeblock><codeph>eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock><p>where:</p><p>
+                            <ul>
+                                <li>vCenter ID: ID of the vcenter containing the cluster.</li>
+                                <li>Cluster Name: the name of the cluster that needs to be
+                                    imported.</li>
+                                <li>cluster Moid: Moid of the cluster that needs to be
+                                    imported.</li>
+                            </ul>
+                        </p><p><b>Sample
+                            Output</b><codeblock>+--------------+-----------+
 | Property     | Value     |
 +--------------+-----------+
 | cpu_free     | 83071.73  |
@@ -205,11 +208,11 @@
 | state        | importing |
 | switches     | []        |
 +--------------+-----------+</codeblock></p>One
-            vCenter can have multiple clusters. But it allows you to import only one cluster at a
-            time.</li>
-          <li>Activate the cluster for the selected
-                vCenter.<codeblock><codeph>eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock><p><b>Sample
-                Output</b><codeblock>+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+                        vCenter can have multiple clusters. But it allows you to import only one
+                        cluster at a time.</li>
+                    <li>Activate the cluster for the selected
+                                vCenter.<codeblock><codeph>eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock><p><b>Sample
+                                Output</b><codeblock>+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Property      | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | node_info     | {u'computeproxy': {u'pxe-mac-addr': u'00:50:56:b6:ce:1b', u'pxe-ip-addr': u'172.170.2.4', u'name': u'COMPUTEPROXY_Cluster1', u'cluster-moid': u'domain-c21'}, u'network_driver': {u'cluster_dvs_mapping': u'DC1/host/Cluster1:hlm-Trunk', u'Cluster1': [{u'host-moid': u'host-29', u'pxe-ip-addr': u'172.170.2.3', u'esx_hostname': u'10.1.200.33', u'ovsvapp_node': u'ovsvapp-10-1-200-33', u'pxe-mac-addr': u'00:50:56:b6:5e:9a'}, {u'host-moid': u'host-25', u'pxe-ip-addr': u'172.170.2.2', u'esx_hostname': u'10.1.200.66', u'ovsvapp_node': u'ovsvapp-10-1-200-66', u'pxe-mac-addr': u'00:50:56:b6:56:e6'}]}} |
@@ -217,7 +220,7 @@
 | resource_name | Cluster1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | state         | activated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock></p></li>
-        </ol></p></section>
+                </ol></p></section>
     <section id="run-config-processor"><b>Run the config processor</b><p>Execute the following
         commands:</p><p>
         <codeblock><codeph>cd ~/helion/hlm/ansible</codeph>
