@@ -31,8 +31,8 @@
         </ul></p>
       <p>You can create a restore using mandatory values, as in the following example:
         <codeblock>  - freezerc --action restore --mode fs --storage swift --restore-abs-path /home/user/tmp --container tmp_backups --backup-name backup1 --restore-from-host ubuntu</codeblock></p>
-      <p>The translation to a configuration file for this restore execution would be as
-        follows:<codeblock>
+      <p>The translation to a configuration file for this restore execution would be as follows:
+        <codeblock>
   {
     "job_actions": [
         {
