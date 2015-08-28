@@ -36,7 +36,6 @@
           selected for each node; UEFI support is new in Beta 1.</li>
         <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
         <li>Ensure that the other networks have PXE disabled.</li>
-        <li>Insert the CD ROM in the Virtual Media drive on the iLO.</li>
       </ul>
     </section>
     <section id="DeployerInstall">
@@ -47,7 +46,7 @@
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page after signing up and being
           approved for the program.</li>
-        <li>Boot your deployer from the ISO.</li>
+        <li>Boot your deployer from the ISO. Insert the CD ROM in the Virtual Media drive on the iLO.</li>
         <li>Enter "install" to start installation.</li>
         <li>Select the language.</li>
         <li>Select the location.</li>
