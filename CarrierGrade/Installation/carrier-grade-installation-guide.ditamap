@@ -59,7 +59,7 @@
                 <topicref href="carrier-grade-install-helion-password-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-nic-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-esx-proxy-patch.dita" toc="no"/>
-                <topicref href="carrier-grade-install-gre-patch.dita"/>
+                <topicref href="carrier-grade-install-gre-patch.dita" toc="no"/>
             </topicref>
             <topicref href="carrier-grade-install-launch-horizon.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
@@ -72,6 +72,4 @@
         </topicref>
         <topicref href="carrier-grade-install-config-backend.dita"
             navtitle="Configuring Multi-Backend Support" locktitle="yes" toc="no"/>
-        <topicref href="carrier-grade-install-bonded-nic.dita"
-            navtitle="NIC Bonding and PCI Enumeration" locktitle="yes" toc="no"/>
     </topicref></map>

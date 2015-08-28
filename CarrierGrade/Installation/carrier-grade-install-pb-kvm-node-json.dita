@@ -20,7 +20,7 @@
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
     <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
                 KVM + ESX deployment</xref> requires several JSON file that will be used when
-            deploying the HLM VM.</p>
+            deploying the HP Helion OpenStack.</p>
         <p><i>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the
                     KVM + ESX deployment</xref>.</i></p>
 <p>The <codeph>node-provision.json</codeph> file contains the following fields:</p>

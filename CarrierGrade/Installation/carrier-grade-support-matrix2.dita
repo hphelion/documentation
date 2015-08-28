@@ -115,7 +115,8 @@
                     <li>2 x Intel Xeon® E5-2680v3</li>
                     <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
                     <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                    <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
+                    <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP <b>AND</b> HP Ethernet 10Gb 2-port
+                      560SFP+ Adapter</li>
                     <li>1 x Smart Array P440ar/2G FIO Controller/2 x Ethernet 10Gb 2P 560SFP</li>
                   </ul>
                 </entry>
@@ -131,8 +132,8 @@
                   <ul id="ul_g1f_qyd_ss">
                     <li>2 x Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.6GHz</li>
                     <li>128 GB DDR3 1600 MHz</li>
-                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>OR</b></li>
-                    <li>HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter</li>
+                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>OR</b> HP FlexFabric 10Gb
+                      2port 534FLR-SFP+ Adapter</li>
                   </ul>
                 </entry>
               </row>
@@ -146,8 +147,8 @@
                   <ul>
                     <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz </li>
                     <li>256 GB DDR3 1600 MHz </li>
-                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>AND</b></li>
-                    <li>HP Ethernet 10Gb 2-port 560SFP+ Adapter </li>
+                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>AND</b> HP Ethernet 10Gb
+                      2-port 560SFP+ Adapter </li>
                   </ul>
                 </entry>
               </row>
@@ -169,8 +170,8 @@
                     <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
                     <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
                     <li>1 x Smart Array P244br/1GB FBWC</li>
-                    <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
-                    <li>1 x HP Ethernet 10Gb 2-port 560M Adapter</li>
+                    <li>1 x HP FlexFabric 20Gb 2-port 650FLB <b>AND</b> 1 x HP Ethernet 10Gb 2-port
+                      560M Adapter</li>
                   </ul>
                 </entry>
               </row>
@@ -186,8 +187,8 @@
                     <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz</li>
                     <li>256 GB DDR3 1600 MHz </li>
                     <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                    <li>1 x HP FlexFabric 10Gb 2port 554FLB-SFP+ Adapter <b>and</b></li>
-                    <li>1 x HP Ethernet 10Gb 2-port 560M Adapter</li>
+                    <li>1 x HP FlexFabric 10Gb 2port 554FLB-SFP+ Adapter <b>AND</b> 1 x HP Ethernet
+                      10Gb 2-port 560M Adapter</li>
                   </ul>
                 </entry>
               </row>

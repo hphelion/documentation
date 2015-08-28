@@ -37,8 +37,8 @@ show vswitch-controller xmpp-server
 ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
       </ol>
     </section>
-    <section><p><b>Verify the VRS-G Node</b>
-      </p><p>The installation creates a VRS-G node as part of the cloud deployment. Use the
+    <section><title>Verify the VRS-G Node</title>
+      <p>The installation creates a VRS-G node as part of the cloud deployment. Use the
         following command to verify that the VRS-G is active:
         </p><codeblock>show vswitch-controller vswitches  </codeblock><p>The output for the command
         should appear similar to the following image:</p>
