@@ -16,10 +16,10 @@
       </ul></p>
     <p>These services can be co-located in a number of ways. In the example cloud models distributed
       in HP Helion OpenStack®, the following two general patterns exist:<ul id="ul_myw_kft_dt">
-        <li>The Swift-proxy, Account, Container and Object services run on the same (PACO) node type
-          in the control plane. This is used for smaller clouds or where Swift is a minor element in
-          a larger cloud.</li>
-        <li>The Swift-Proxy, Account and Container services run on one (PAC) node type in a control
+        <li>The Swift-proxy, Account, Container, and Object services run on the same (PACO) node
+          type in the control plane. This is used for smaller clouds or where Swift is a minor
+          element in a larger cloud.</li>
+        <li>The Swift-Proxy, Account, and Container services run on one (PAC) node type in a control
           plane and the Object services run on another (OBJ) node type in a resource pool. This is
           used for in larger clouds or where a larger Swift system is in use or planned.</li>
       </ul></p>

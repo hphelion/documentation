@@ -18,6 +18,7 @@
         <li>Multiple server roles for different services (Compute, Object etc) with different disk
           configuration options</li>
         <?oxy_custom_end?>
+        <li>Compute nodes: can have a minimum of 1, maximum of 100</li>
       </ul>
       <p><b>Configuration details:</b></p>
       <ul id="ul_ovh_r4f_ys">
@@ -76,12 +77,12 @@
         <li>A log partition must be declared and reside on the first disk</li>
       </ul>
     </section>
-    <section><title>Configuration Illustrations</title>
+    <!--<section><title>Configuration Illustrations</title>
       <p>The following diagrams illustrate the proof of concept configuration.</p>
       <p>
         <image href="images/20beta0poc-diagram1.png" width="1000"/></p>
       <p>
         <image href="images/20beta0poc-diagram.png" width="1000" id="image_pl2_d4k_xs"/></p>
-    </section>
+    </section>-->
   </body>
 </topic>

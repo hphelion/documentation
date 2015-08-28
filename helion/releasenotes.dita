@@ -8,6 +8,14 @@
       release:</p>
     <section id="Features">
       <title>Features in HP Helion OpenStack 2.0 Beta 1</title>
+      <b> New UEFI support</b>
+      <p> Beta-1 introduces support for UEFI machines, while continuing to support Legacy BIOS.
+        Select the required mode on each node through its BIOS settings before beginning the install
+        process. HOS 2.0 will detect and use the mode you have selected for each node.</p>
+      <p><b>A local Git repo has been introduced</b>Git is now used locally to keep track of
+        configuration changes. The configuration processor uses the config files stored in the repo
+        to apply configuration settings. An explanation can be found <xref
+          href="using_git.dita#topic_u3v_1yz_ct">in this topic</xref>. </p>
       <p><b>Updated HP Helion OpenStack Services</b> - We have included the core set of OpenStack
         services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
           scope="external" format="html">Kilo release</xref> with the exception of limitations

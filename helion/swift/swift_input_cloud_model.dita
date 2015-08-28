@@ -11,10 +11,8 @@
         <li><b>
             <xref href="#topic_qkg_l4v_bt/configuration-of-swift-vsa-model" format="dita"
               >Entry-scale-with-vsa</xref>
-          </b>- This has a single control plane cluster running all services (Nova, Swift, Glance,
-          etc) with an additional 3 resource nodes used as Nova compute servers. The number and
-          usage of disk drives is fixed in the model. Therefore, Swift is automatically configured
-          for this system and no changes are needed or anticipated for Swift-specific services. </li>
+          </b>-  This has a single control plane cluster running all services (Nova, Swift, Glance,
+          etc) with an additional 3 resource nodes used as Nova compute servers. </li>
         <li>
           <p><b><xref href="#topic_qkg_l4v_bt/config-swift-services" format="dita">mid size
                 cloud</xref>

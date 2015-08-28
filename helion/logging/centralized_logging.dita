@@ -10,8 +10,7 @@
       than leaving the logs scattered across the network. The administrator can use a single Kibana
       interface to view log information in charts, graphs, tables, histograms, and other forms.</p>
     <p>Centralized logging helps the administrator triage and troubleshoot the distributed HP Helion
-      OpenStack cloud deployment from a single location. The admin is not required to access the
-      several remote servers (SSH) to view the individual log files.</p>
+      OpenStack cloud deployment from a single location.</p>
     <p>In addition to each of the HP Helion services, Centralized Logging also processes logs for
       the following HP Helion OpenStack features:</p>
     <ul>
@@ -26,13 +25,16 @@
         <xref type="section" href="#logging/install">Installation</xref>
       </li>
       <li>
-        <xref type="section" href="#logging/components">Centralized Logging components</xref>
+        <xref type="section" href="#logging/components">Centralized Logging Components</xref>
       </li>
       <li>
-        <xref type="section" href="#logging/types">Centralized Logging log types</xref>
+        <xref type="section" href="#logging/types">Centralized Logging Data</xref>
       </li>
       <li>
-        <xref type="section" href="#logging/kibana">Kibana configuration</xref>
+        <xref type="section" href="#logging/config">Centralized Logging Configuration</xref>
+      </li>
+      <li>
+        <xref type="section" href="#logging/kibana">Kibana Configuration</xref>
         <ul>
           <li>
             <xref type="section" href="#logging/interface">Logging into Kibana</xref>
@@ -40,18 +42,32 @@
         </ul>
       </li>
       <li>
-        <xref type="section" href="#logging/info">For more information</xref>
+        <xref type="section" href="#logging/troubleshooting">Using Centralized Logging to
+          Troubleshoot Issues</xref>
+      </li>
+      <li>
+        <xref type="section" href="#logging/monitor">Monitoring Centralized Logging</xref>
+      </li>
+      <li>
+        <xref type="section" href="#logging/troubleshooting_issues">Troubleshooting Centralized
+          Logging Issues</xref>
+      </li>
+      <li>
+        <xref type="section" href="#logging/info">For More Information</xref>
       </li>
     </ul>
     <section id="install">
       <title>Installation</title>
       <p>The Centralized Logging feature is automatically installed as part of the HP Helion
-        OpenStack installation.</p>
+        OpenStack installation. The base logging levels will be tuned during installation according
+        to the amount of RAM allocated to your control plane nodes to ensure optimum
+        performance.</p>
       <p>No specific configuration is required to use Centralized Logging. However, you can tune or
-        configure the individual components as needed for your environment.</p>
+        configure the individual components as needed for your environment as detailed in the <xref
+          href="#logging/config">Logging Configuration</xref> section.</p>
     </section>
     <section id="components">
-      <title>Centralized Logging components</title>
+      <title>Centralized Logging Components</title>
       <p>Centralized logging consists of several components, detailed below:</p>
       <ul>
         <li>
@@ -79,6 +95,7 @@
             Elasticsearch through a web browser. Kibana enables you to create charts and graphs
             using the log data.</p>
         </li>
+        <li><b>Curator</b> is a tool provided by Elasticsearch to manage indices.</li>
       </ul>
       <p>These components are configured to work out-of-the-box and the admin should be able to view
         log data using the default configurations.</p>
@@ -91,11 +108,13 @@
       <p>
         <image href="../images/centralized_logging_diagram.png" placement="break"/>
       </p>
-      <note>Logging requires 4GB of disk space to make sure that all logging messages are
-        retained.</note>
+      <note>The arrows come <b>from</b> the active (requesting) side <b>to</b> the passive
+        (listening) side. The active side is always the one providing credentials, so the arrows may
+        also be seen as coming from the credential holder to the application requiring
+        authentication.</note>
     </section>
     <section id="types">
-      <title>Centralized Logging log types</title>
+      <title>Centralized Logging Data</title>
       <p>The following table lists the types of logs collected by Centralized Logging and provides
         information on how the logs are maintained.</p>
       <table>
@@ -144,15 +163,59 @@
               <entry>Credentials for access to Elasticsearch and RabbitMQ are stored in
                 configuration files owned by root with mode 0600.</entry>
             </row>
+            <row>
+              <entry>Kibana metadata</entry>
+              <entry>Confidential</entry>
+              <entry>High</entry>
+              <entry>High</entry>
+              <entry>No</entry>
+              <entry>Kibana stores its search queries, visualizations and dashboards in the
+                ".kibana" index. This index will be replicated across Elasticsearch cluster nodes
+                and is highly available.</entry>
+            </row>
+            <row>
+              <entry>Monitoring metrics</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>High</entry>
+              <entry>Yes</entry>
+              <entry>Monasca Server stores the various logging metrics and alarm-definitions. These
+                are managed by Monasca.</entry>
+            </row>
+            <row>
+              <entry>Beaver configuration</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>High</entry>
+              <entry>Yes</entry>
+              <entry>These are backed up as part of deployer repo changes maintained by the
+                administrator.</entry>
+            </row>
+            <row>
+              <entry>Logrotate configuration</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>High</entry>
+              <entry>Yes</entry>
+              <entry>These are backed up as part of deployer repo changes maintained by the
+                administrator.</entry>
+            </row>
+            <row>
+              <entry>Curator configuration</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>Medium</entry>
+              <entry>Yes</entry>
+              <entry>Cron job to periodically run and keep the old Elasticsearch indices
+                pruned/closed. These are backed up as part of deployer repos changes maintained by
+                the administrator.</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>
-      <p>Log rotation will happen daily or when the current logfile reaches 2GB, whichever happens
-        sooner. The number of rotations held will be balanced to attempt to cap logs from all
-        services at 200GB.</p>
     </section>
-    <section id="configuration">
-      <title>Configuration</title>
+    <section id="config">
+      <title>Centralized Logging Configuration</title>
       <p>To configure logging, modify the <codeph>/roles/logging-common/defaults/main.yml</codeph>
         file as needed, then reconfigure. Here is a snippet of this file showing the logging
         settings for the Keystone service. An explanation of this file is below.</p>
@@ -188,10 +251,25 @@
         - create 640 keystone keystone
         - copytruncate
 ...</codeblock>
-      <p/>
+      <p>In the above example, here is a description of the options:</p>
+      <ul>
+        <li><b>enabled</b> indicates whether centralized logging is enabled for the file specified.
+          If this value is set to <codeph>false</codeph> then this log will not be sent to
+          elasticsearch.</li>
+        <li><b>format</b> indicates what format the log file will be in. <codeph>rawjson</codeph> is
+          often the choice for centralized logging files because they are easier to parse
+          through.</li>
+        <li><b>file</b> indicates the name and location of the log file.</li>
+        <li><b>options</b> indicate the options selected for this log file. Examples are: <ul>
+            <li><b>daily</b> indicates a 24-hour rotation selection</li>
+            <li><b>maxsize</b> indicates the maximum size for the file before rotation occurs</li>
+            <li><b>rotate</b> indicates the number of files to rotate through</li>
+            <li><b>compress</b> indicates that the file will be compressed</li>
+          </ul></li>
+      </ul>
     </section>
     <section id="kibana">
-      <title>Kibana configuration</title>
+      <title>Kibana Configuration</title>
       <p>You can use the Kibana dashboards to view log data. Kibana is a tool developed to create
         charts, graphs, tables, and histograms based on logs send to Elasticsearch by logstash.</p>
       <p>While creating Kibana dashboards is beyond the scope of this document, it is important to
@@ -222,6 +300,8 @@
         <li>Username: kibana</li>
         <li>Password: 1f3pNxQmXXELJn/MJ4jOHixePSXlu4eZzhi1gJjr7mI=</li>
       </ul>
+      <note>In future releases we will offer a method for retrieving and changing these
+        credentials.</note>
     </section>
     <section id="troubleshooting"><title>Using Centralized Logging to Troubleshoot Issues</title>
       <p>You can troubleshoot service-specific issues by reviewing the logs. After logging into
@@ -257,7 +337,7 @@
           scope="external" format="html"
           >https://www.elastic.co/guide/en/kibana/3.0/working-with-queries-and-filters.html</xref></p>
     </section>
-    <section id="monitoring"><title>Monitoring</title>
+    <section id="monitoring"><title>Monitoring Centralized Logging</title>
       <p>To help keep abreast of potential logging issues and resolve issues before they affect
         logging, you may wish to monitor the Centralized Logging Alarms. To do so:</p>
       <ol>
@@ -288,7 +368,7 @@
       <p>To look for sufficient Disk space, filter for "Disk"</p>
       <p>To look for sufficient RAM Memory, filter for "Memory"</p>
     </section>
-    <section id="troubleshooting_issues"><title>Troubleshooting Logging Issues</title>
+    <section id="troubleshooting_issues"><title>Troubleshooting Centralized Logging Issues</title>
       <p>If centralized logging is not working, go through the following steps to
         troubleshooting:</p>
       <ul>
@@ -343,15 +423,20 @@ yellow logstash-2015.02.11 5 1 27471823 0 13.6gb 13.6gb</codeblock>
         sure the queue size is reducing.</p>
     </section>
     <section id="info">
-      <title>For more information</title>
+      <title>For More Information</title>
       <p>For information the centralized logging components, use the following links:</p>
       <ul>
-        <li><xref href="http://logstash.net/" scope="external" format="html">Logstash</xref></li>
-        <li><xref href="http://www.elasticsearch.org/" scope="external" format="html"
+        <li><xref href="http://logstash.net/docs" scope="external" format="html"
+          >Logstash</xref></li>
+        <li><xref href="http://www.elasticsearch.org/guide" scope="external" format="html"
             >Elasticsearch</xref></li>
+        <li><xref href="http://www.elasticsearch.org/blog/scripting-security" scope="external"
+            format="html">Elasticsearch Scripting and Security</xref></li>
+        <li><xref href="http://beaver.readthedocs.org" scope="external" format="html"
+          >Beaver</xref></li>
         <li><xref href="http://www.rabbitmq.com/" scope="external" format="html"
           >RabbitMQ</xref></li>
-        <li><xref href="http://www.elasticsearch.org/guide/en/kibana/current/_dashboard_schema.html"
+        <li><xref href="http://www.elasticsearch.org/guide/en/kibana/current/index.html"
             scope="external" format="html">Kibana Dashboard</xref></li>
       </ul>
     </section>

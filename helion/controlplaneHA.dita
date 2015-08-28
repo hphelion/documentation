@@ -22,8 +22,8 @@
     </p>
     <section><title>Resource Nodes</title></section>
     <p>Three resource pools are defined:<ul id="ul_mqk_mbc_bt">
-        <li>Compute: Runs nova compute sand associated services.Runs on nodes of role type
-          ROLE-COMPUTE.The example lists 3 nodes, one node is required at a minimum.</li>
+        <li>Compute: Runs nova compute and associated services.Runs on nodes of role type
+          ROLE-COMPUTE. The example lists 3 nodes, one node is required at a minimum.</li>
         <li>VSA: Runs the StoreVirtual VSA appliance.Runs on nodes of role type ROLE-VSA.One node
           minimum is required for demo purposes, three for high availability.The example lists 1
           node.</li>
