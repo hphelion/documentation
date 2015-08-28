@@ -27,8 +27,8 @@
         locktitle="yes"/>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
         locktitle="yes"/>
-      <topicref href="helion/esx/esx_installation.dita" navtitle="Installing on ESX" locktitle="yes"
-        toc="yes"/>
+      <topicref href="helion/esx/esx_installation.dita" navtitle="Deploying ESX Cloud"
+        locktitle="yes" toc="yes"/>
       <topicref href="helion/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
     </topichead>
     <topichead navtitle="Backup and Restore">
