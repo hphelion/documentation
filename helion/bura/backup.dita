@@ -34,10 +34,9 @@
                     <li>Storage (swift by default)</li>
                 </ul></p> For HP Helion OpenStack 2.0, you can create a backup using only mandatory
             values as in the following example:
-            <codeblock>  - freezerc --action backup --mode fs --storage swift --path-to-backup /home/user/tmp --container tmp_backups --backup-name backup1</codeblock>
+            <codeblock>- freezerc --action backup --mode fs --storage swift --path-to-backup /home/user/tmp --container tmp_backups --backup-name backup1</codeblock>
             The translation to a configuration file for this backup execution would be as follows:
             <codeblock>
-
   {
     "job_actions": [
         {

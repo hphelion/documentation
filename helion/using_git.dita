@@ -10,9 +10,9 @@
       configuration settings.</p>
     <p>The git repository, which is installed by the deployer, is local to your cloud servers, but
       in other ways functions like a remote git repository.</p>
-    <note>As of 8/27 the remainder of this doc is not developed or in any way complete and will not
-      be so until 8/28.</note>
-    <p>Below is a representation of the typical git workflow in HP Helion OpenStack 2.0.</p>
+ 
+    <p>Below is a representation of the typical git workflow in HP Helion OpenStack 2.0. Note that
+      initially the </p>
     <p><image href="../media/install/gitWorkflow.png" id="image_cbv_wg4_dt"/></p>
     <p/>
     <p>The git repository provides a way for you to merge changes that you pull down as "upstream"
@@ -44,26 +44,25 @@
               are playing what roles), amongst others. The ready-deployment playbook takes this
               output and assembles a 'scratch' directory containing the ansible playbooks together
               with the variable definitions in this branch; the result is a working ansible
-              directory from which the main deployment playbooks may be successfully run.</dd>
+              directory from which the main deployment playbooks may be successfully run. </dd>
           </dlentry>
           <dlentry>
             <dt>cp-persistent</dt>
             <dd>This branch contains the persistent state that the CP needs to keep hold of. That
-              state is mostly the assignment of IP addresses and roles to particular servers. There
-              are some operational procedures that we will want to support that involve editing the
-              contents of this branch (things like retiring a machine frmo service or repurposing
-              it) </dd>
+              state is mostly the assignment of IP addresses and roles to particular servers. Some
+              operational procedures may involve editing the contents of this brach: for example,
+              retiring a machine from service or repurposing it.</dd>
           </dlentry>
         </dl>Two temporary branches are created and populated at run time: <dl>
           <dlentry>
             <dt>staging-ansible</dt>
-            <dd>This branch holds the most recent commit that will be copied to/merged with the
-              ansible branch.</dd>
+            <dd>This branch hosts the most recent commit that will be appended to the ansible
+              branch.</dd>
           </dlentry>
           <dlentry>
             <dt>staging-cp-persistent</dt>
-            <dd>This branch holds the most recent commit that will be copied to/merged with the
-              cp-persistent branch.</dd>
+            <dd>This branch hosts the most recent commit that will be appended to the cp-persistent
+              branch.</dd>
           </dlentry>
         </dl>
         <note>The information above provides insight into the workings of the configuration
