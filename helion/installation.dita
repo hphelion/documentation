@@ -17,7 +17,7 @@
           machines can net boot from PXE and use the deployer as a DHCP server.</li>
         <li>All machines of a single type should be the same, that is, all computes, all VSAs, and
           so on.</li>
-        <li>The deployer node must be a dedicated node in Beta0.</li>
+        <li>The deployer node must be a dedicated node in Beta1.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO
           subsystem of each baremetal system to enable host reboots as part of the install process.
