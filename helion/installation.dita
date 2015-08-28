@@ -91,10 +91,10 @@ helion/hos/                    Directory contains files used by the installer
       <ol>
         <li>Setup your configuration files, as follows: <ol>
             <li>See the sample set of configuration files in the
-              ~/helion/examples/one-region-poc-with-vsa directory. The accompanying README.md file
+              ~/helion/examples/entry-scale-with-vsa directory. The accompanying README.md file
               explains the contents of each of the configuration files. </li>
             <li>Copy the example configuration files into the required setup directory and edit them
-              as required: <codeblock>cp -r ~/helion/examples/one-region-poc-with-vsa/* </codeblock>
+              as required: <codeblock>cp -r ~/helion/examples/entry-scale-with-vsa/* </codeblock>
               Note: There have been changes to some of the files since Beta 0. The configuration
               files for editing can be found at the following location:
                 <codeblock>~/helion/my_cloud/definition/data</codeblock><ul id="ul_wwn_rtx_bt">
