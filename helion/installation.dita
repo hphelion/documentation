@@ -3,13 +3,11 @@
 <topic id="topic_flx_j2b_ws">
   <title>Beta 1: Installing HP Helion <tm tmtype="reg">OpenStack</tm> on Baremetal</title>
   <body>
-    <section><title>Known Restrictions</title>
+    <section><title>Important Notes</title>
       <ul>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
-        <li>Make sure all disks on the system(s) are wiped before you begin the install. /dev/sda
-          will be used for the OS.  Disks (other than sda) that are not blank will be skipped
-          (because the system is afraid you might have valuable data on them). Other disks will be
-          used for whatever you configure them to be used for in your model.</li>
+        <li>Make sure all disks on the system(s) are wiped before you begin the install. </li>
+        <li>/dev/sda will be used for the OS.  </li>
         <li>Both HP Linux for HP Helion OpenStack and HP Helion OpenStack are part of the ISO you
           will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
