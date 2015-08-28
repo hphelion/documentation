@@ -31,9 +31,8 @@
       <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
       <ul>
         <li>Setup the iLO Advanced license in the iLO configuration.</li>
-        <li>Select the required mode (legacy BIOS or UEFI ) on each node through its BIOS settings
-          before beginning the install process. HOS 2.0 will detect and use the mode you have
-          selected for each node; UEFI support is new in Beta 1.</li>
+        <li> HP Helion OpenStack 2.0 Beta 1 will detect and use the "BIOS" mode you have selected
+          for each node; UEFI or legacy BIOS. UEFI support is new in Beta 1.</li>
         <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
         <li>Ensure that the other networks have PXE disabled.</li>
       </ul>
@@ -74,8 +73,8 @@
         <li> Unpack the following tarball:
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-1-20150827T092008Z.tgz</codeblock>
         </li>
-        <li>Run the following included script:
-          <codeblock>~/hos-2.0.0-1/hos-init.bash </codeblock></li>
+        <li>Run the following included script: <codeblock>~/hos-2.0.0-1/hos-init.bash </codeblock>
+          see comment inside this file  <!--~/hos-deployer/hos-init.bash --></li>
       </ol>
       <p>At the end of this section you should have a local directory structure, as described
         below:</p>
