@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic12031">
+<topic xml:lang="en-us" id="monitoring">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monitoring Guide</title>
   <body>
     <section id="about">
       <p>The HP Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
         scalable, fault-tolerant OpenStack monitoring service.</p>
-      <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca"
-          format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></p>
+      <p>This document describes the Monasca service and contains the following sections:</p>
+      <ul>
+        <li>
+          <xref type="section" href="#monitoring/install">Installation</xref>
+        </li>
+        <li>
+          <xref type="section" href="#monitoring/differences">Differences Between Upstream and
+            Helion OpenStack Implementations</xref>
+        </li>
+        <li>
+          <xref type="section" href="#monitoring/diagram">Diagram of Monasca Service</xref>
+        </li>
+        <li>
+          <xref type="section" href="#monitoring/config">Configuring Monasca</xref>
+        </li>
+        <li>
+          <xref type="section" href="#monitoring/working">Working with Monasca</xref>
+        </li>
+        <li>
+          <xref type="section" href="#monitoring/service_alarms">Service Alarm Definitions</xref>
+        </li>
+        <li>
+          <xref type="section" href="#monitoring/info">For More Information</xref>
+        </li>
+      </ul>
+    </section>
+    <section id="installation"><title>Installation</title>
+      <p>The Monasca service is automatically installed as part of the HP Helion OpenStack
+        installation.</p>
+      <p>No specific configuration is required to use Monasca. However, you can configure the
+        database for your environment as detailed in the <xref href="#monitoring/config">Configuring
+          Monasca</xref> section.</p>
     </section>
     <section id="differences"><title>Differences Between Upstream and Helion OpenStack
         Implementations</title>
@@ -26,7 +56,7 @@
       <title>Diagram of Monasca Service</title>
       <p><image placement="break" href="../images/monasca_diagram.png"/></p>
     </section>
-    <section id="configuration"><title>Configuring Monasca</title>
+    <section id="config"><title>Configuring Monasca</title>
       <p>In Beta 1 you will have the option to specify which database platform you want to use for
         the Metrics Database</p>
       <p>Monasca supports two different database options. The default metrics database is
@@ -83,11 +113,12 @@
       <p>Full details of all service alarms can be found here: <xref href="alarms.dita">Service
           Alarm Definitions</xref>.</p>
       <p>When alarms are triggered it is helpful to review the service logs. Details on how to use
-        the logging UI built into the Operations Console can be found here: <xref
+        the logging UI built into the Operations Console can be found here: <xref type="section"
           href="../logging/logging_overview.dita#interface">Logging Interface</xref></p>
     </section>
-    <section id="workflow"><title>Service Alarm Workflows</title>
-    <p>TBD</p>
+    <section id="info"><title>For More Information</title>
+      <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca"
+          format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></p>
     </section>
   </body>
 </topic>
