@@ -113,13 +113,13 @@ helion/hlm/                    Directory contains files used by the installer
         <li> To continue installation copy your cloud layout to
             <codeph>/home/stack/helion/my_cloud/definition</codeph></li>
         <li>Add the cloud deployment definition to the git
-          :<codeblock>cd /home/stack/helion/hlm/ansible;
+          :<codeblock>cd /home/stack/helion/hos/ansible;
 git add -A;
 git commit -m 'My config';</codeblock></li>
         <li>Prepare your environment for deployment:
           <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml;
 ansible-playbook -i hosts/localhost ready-deployment.yml;
-cd /home/stack/scratch/ansible/next/hlm/ansible;
+cd /home/stack/scratch/ansible/next/hos/ansible;
 ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
         <li>Check the generated host files in
             <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs
@@ -385,7 +385,7 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
     <section id="run-processor"><b>Run the config processor</b></section>
          <p>Execute the following commands:</p>
       <p>
-        <codeblock><codeph>cd ~/helion/hlm/ansible</codeph>
+        <codeblock><codeph>cd ~/helion/hos/ansible</codeph>
 <codeph>ansible-playbook -i hosts/localhost config-processor-run.yml</codeph></codeblock>
       </p>
         <section id="deploy-cloud"><b>Deploy a cloud</b></section>
