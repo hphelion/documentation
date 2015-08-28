@@ -117,7 +117,8 @@ helion/hlm/                    Directory contains files used by the installer
                 <li>In the <codeph>net_interfaces.yml</codeph> file, replace all instances of
                   “bond-mode: 1” to “bond-mode: active-backup”.</li>
               </ul></li>
-            <li>Commit your configuration into git, as follows:
+            <li>Commit your configuration to the <xref href="using_git.dita#topic_u3v_1yz_ct">local
+                git repo</xref>, as follows:
               <codeblock>git add –A
 git commit –m "My config"
 </codeblock></li>
