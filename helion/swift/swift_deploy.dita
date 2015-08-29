@@ -21,9 +21,8 @@
               -Builder Node</xref></li>
           <li><xref href="#topic_pgx_vcg_5s/ring-specification" format="dita">Ring
               specifications</xref></li>
-          <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-          <li>Making site-specific changes to configuration parameters (<b>can we exclude this for
-              beta?</b>)</li>
+                   <li>Making site-specific changes to configuration parameters
+   <!--(<b>can we exclude this for beta?</b>)--></li>
         </ul>
       </p>
     </section>
@@ -111,10 +110,10 @@
     <p>In the above example <codeph>/dev/sdc</codeph> is allocated to account and container rings,
       whereas <codeph>/dev/sdd</codeph> and<codeph>dev/sde</codeph> are devoted to object storage
       using two different storage policies (object-0 and object-1).</p>
-    <section id="allocate-network"><b>Allocate networks
-        </b><p><?oxy_insert_start author="sharmabi" timestamp="20150819T150739+0530"?>It is
-        recommended not the change the network configuration.<?oxy_insert_end?></p></section>
-    <section id="allocate-ring-builder"><b>Allocate a Ring -Builder Node</b><p>Information is
+    <section id="allocate-network"><title>Allocate networks
+        </title><p>It is
+        recommended not the change the network configuration.</p></section>
+    <section id="allocate-ring-builder"><b>Allocate a Ring-Builder Node</b><p>Information is
         required for beta 0?</p></section>
     <section id="ring-specification"><b>Ring Specification</b><p>The ring maps the logical names of
         data to locations on a particular disks. There is a separate ring for account database,
@@ -242,4 +241,5 @@
       </ul></p>
   </body>
 </topic>
+
 <?oxy_options track_changes="on"?>

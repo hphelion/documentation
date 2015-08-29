@@ -1,52 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_dlv_54t_dt">
-  <title>Label on Partition</title>
+  <title>Check Device or Filesystem Labels</title>
   <body>
-    <p>This page explains the procedure to check whether a device has labels on partition..<ul
-        id="ul_yx2_4st_dt">
-        <li><xref href="#topic_dlv_54t_dt/filesystem-label" format="dita">Filesytem
-          label</xref></li>
-      </ul></p>
-    <section id="label-partition">
-      <p> To check whether a device has labels on a partition, log on to the server (<b>server
-          means- disk/devices?</b>) and use the parted command as
-        follows:<codeblock>sudo parted -l</codeblock>The output lists all of the block devices.
-        Following is an example output for <codeph>/dev/sdc.</codeph> with a single partition and a
-        label of <b>c0a8f502h000</b>. Therefore the device has a
-        label.<codeblock>.
-.
-.
-Model: QEMU QEMU HARDDISK (scsi)
+    <p>This procedure checks a <xref href="#topic_dlv_54t_dt/label-partition">device</xref> or <xref href="#topic_dlv_54t_dt/filesystem-label">filesytem</xref> for labels on its
+      partitions.</p>
+    <section id="label-partition"><title>Check a Device for Partition Labels</title><p> To check
+        whether a device has labels on a partition, log on to the
+        server<!-- (server means- disk/devices?) -->and use the <codeph>parted</codeph> command as
+        follows:</p><codeblock>sudo parted -l</codeblock>The output lists all of the block devices.
+      Following is an example output for <codeph>/dev/sdc.</codeph> with a single partition. Note
+      the label, which appears in the Name column as <b>c0a8f502h000</b>.
+      <codeblock>Model: QEMU QEMU HARDDISK (scsi)
 Disk /dev/sdc: 20.0GB
 Sector size (logical/physical): 512B/512B
 Partition Table: gpt
 Disk Flags: 
 
 Number  Start   End     Size    File system  Name          Flags
-1      1049kB  20.0GB  20.0GB  xfs          c0a8f502h000
+1      1049kB  20.0GB  20.0GB  xfs          c0a8f502h000</codeblock></section>
 
-.
-.
-.</codeblock></p>
-    </section>
-    <section id="filesystem-label"><b>Filesytem label</b><p>To check whether a filesystem has labels
-        on a partition, log on to the server and execute the <codeph>xfs_admin</codeph> command as
-        follows (where <codeph>/dev/sdc1</codeph> is the partition where the filesystem is
-        located).<codeblock>--code--
-sudo xfs_admin -l /dev/sdc1
- --end-code</codeblock></p></section>
-    <p>The output shows if a filesystem has a label. For exampe, this shows a label of
-        <b>c0a8f502h000</b>.<codeblock>--code--
-$ sudo xfs_admin -l /dev/sdc1
-label = "c0a8f502h000"
---end-code---</codeblock></p>
-    <p>If no filesystem exists, the result is similar as
-      follows:<codeblock>--code--
-$ sudo xfs_admin -l /dev/sde1
-xfs_admin: /dev/sde is not a valid XFS filesystem (unexpected SB magic number 0x00000000)
---end-code--</codeblock></p>
-    <p>In this example, <codeph>/dev/sde1</codeph> does not have a filesystem label.</p>
-    <p> </p>
-  </body>
+    <section id="filesystem-label"><title>Check a Filesytem for Partition Labels</title>
+      <p>To check whether a filesystem has labels on a partition, log on to the server and execute the
+          <codeph>xfs_admin</codeph> command.</p>
+      
+      <p>In this example, <codeph>/dev/sdc1</codeph> is the partition where the filesystem is
+        located.</p>
+      <p>Run this command:</p>
+      
+      <p>
+        <codeblock>sudo xfs_admin -l /dev/sdc1</codeblock>
+      </p>
+      <ul id="ul_ux4_vtg_2t">
+        <li>If the filesystem exists and has a label, the result
+          is:<codeblock>label = "c0a8f502h000"</codeblock></li>
+        <li>If the filesystem does not have a label, the result is:
+          <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?><codeblock>need code here<?oxy_custom_end?></codeblock></li>
+        <li>If the filesystem does not exist, the result
+          is:<codeblock>xfs_admin: /dev/sde is not a valid XFS filesystem (unexpected SB magic number 0x00000000)</codeblock></li>
+      </ul></section>
+ </body>
 </topic>
