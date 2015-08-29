@@ -25,6 +25,7 @@
                 navtitle="Preparing the Network for Installation" locktitle="yes"/>
             <topicref href="carrier-grade-install-NTP.dita" toc="no" navtitle="Configuring NTP"
                 locktitle="yes"/>
+            <topicref href="carrier-grade-install-vsd-vm.dita" toc="no"/>
         </topicref>
         <topichead navtitle="Deploying the Non-KVM Region">
             <topicref href="carrier-grade-install-hlm-vm.dita"
