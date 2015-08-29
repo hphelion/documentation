@@ -17,46 +17,57 @@
             command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report </codeblock><p>
             The command will report any errors or problems (see List of errors) with the input
             model. It also prints a summary of the ring create actions that are planned (i.e., that
-            will occur) for the deploy phase of the process.</p><p><b>List of errors</b></p><p>You
-            can see the list of errors and the resolution as follows:</p><p><note>To resolve an
-              error by changing the input, you <b>must</b></note>must re-run the configuration
-            processor as describe in “Run the Configuration Processor” (in <xref
-              href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/installation.html"
-              format="html" scope="external"
-              >http://docs-staging.hpcloud.com/hos2.0beta1/#helion/installation.html</xref>) and
-            continue with the deploy.</p><p> </p><p>Example Message:<b> Model Missmatch: Cannot find
-              drive /dev/sdt on padawan-ccp-c1-m2 (192.168.245.3)</b></p><p>Description:</p><p>The
-            disk model used for node padawan-ccp-c1-m2 has drive /dev/sdt listed in the devices list
-            of a device-group where Swift is the consumer. However, the dev/sdt device does not
-            exist on that node.</p><p>Resolution:</p><p>If a drive or controller is failed on a
-            node, the drive may not be seen by the operating system and hence the corresponding
-            block device might not exist. Sometimes this is transitory and a reboot may resolve the
-            problem. The problem might not be with /dev/sdt, but with another drive. For example, if
-            /dev/sds is failed, when you boot the node, the drive that you expect to be called
-            /dev/sdt is actually called /dev/sds. Alternatively, you may simply not have enough
-            drives installed in the server. You can add drives. Another option is to remove /dev/sdt
-            from the appropriate disk model. However, this removes the drive for all servers using
-            the disk model .</p><p> </p><p>Example message: Model Missmatch: Cannot find drive
-            /dev/sdd2 on padawan-ccp-c1-m2 (192.168.245.3)</p><p>Description:</p><p>The disk model
-            used for node padawan-ccp-c1-m2 has drive /dev/sdt listed in the devices list of a
-            device-group where Swift is the consumer. However, the partition number (2) has been
-            specified in the model. This is not supported – only specify the block device name (for
-            example /dev/sdd), not partition names in disk models.</p><p>Resolution:</p><p>Remove
-            the partition number from the disk model.</p><p> </p><p>Example message: Cannot find ip
-            address of padawan-ccp-c1-m3-swift for ring: account host:
-            padawan-ccp-c1-m3-mgmt</p><p>Description:</p><p>The service (in this example,
-            swift-account) is running on the node padawan-ccp-c1-m3. However, this node does not
-            have a</p><p>Connection to the network designated for the swift-account service (i.e.,
-            the SWIFT network.</p><p>Resolution:</p><p>Check the input model for which networks are
-            configured for each node type.</p><p/><p>Example message: Ring:object-2 has specified
-            replication-policy erasure-coding-policy. Only may be
-            specified.</p><p>Description:</p><p>Only one of replication-policy or
-            erasure-coding-policy may be used in a
-            ring-specification.</p><p>Resolution:</p><p>Remove one of the policy types.</p><p
-            > </p><p>Example message: Ring: object-3 is missing a policy type (replication-policy
-            erasure-coding-policy)</p><p>Description:</p><p>There is no replication-policy or
-            erasure-coding-policy section in the ring-specifications for the object-0
-            ring.</p><p>Resolution:</p><p>Add a policy type to the input model file. </p></li>
+            will occur) for the deploy phase of the process.</p></li>
       </ol></p>
+    <section><b>List of errors</b></section>
+    <p>You can see the list of errors and the resolution as follows:</p>
+    <p>
+      <note>To resolve an error by changing the input, you <b>must</b> re-run the configuration
+        processor as describe in <xref
+          href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run the Configuration
+          Processor</xref> and continue with the deploy.</note>
+    </p>
+    <p>
+      <ol id="ol_x3b_5zh_2t">
+        <li><b>Example Message</b>:<b> Model Missmatch: Cannot find drive /dev/sdt on
+            padawan-ccp-c1-m2 (192.168.245.3)</b>
+          <p><b>Description</b></p><p>The disk model used for node padawan-ccp-c1-m2 has drive
+              <codeph>/dev/sdt</codeph> listed in the devices list of a device-group where Swift is
+            the consumer. However, the <codeph>dev/sdt</codeph>  device does not exist on that
+            node.</p><p><b>Resolution</b></p><p>If a drive or controller is failed on a node, the
+            drive may not be seen by the operating system and hence the corresponding block device
+            might not exist. Sometimes this is transitory and a reboot may resolve the problem. The
+            problem might not be with <codeph>/dev/sdt</codeph>, but with another drive. For
+            example, if <codeph>/dev/sds</codeph> is failed, when you boot the node, the drive that
+            you expect to be called <codeph>/dev/sdt</codeph> is actually called
+              <codeph>/dev/sds</codeph> . Alternatively, you may simply not have enough drives
+            installed in the server. You can add drives. Another option is to remove <codeph>
+              /dev/sdt</codeph> from the appropriate disk model. However, this removes the drive for
+            all servers using the disk model .</p></li>
+        <li><b>Example message: Model Missmatch: Cannot find drive /dev/sdd2 on padawan-ccp-c1-m2
+            (192.168.245.3)</b><p><b>Description</b></p><p>The disk model used for node
+            padawan-ccp-c1-m2 has drive /dev/sdt listed in the devices list of a device-group where
+            Swift is the consumer. However, the partition number (2) has been specified in the
+            model. This is not supported – only specify the block device name (for example
+            /dev/sdd), not partition names in disk models.</p><p><b>Resolution</b></p><p>Remove the
+            partition number from the disk model.</p></li>
+        <li><b>Example message: Cannot find ip address of padawan-ccp-c1-m3-swift for ring: account
+            host: padawan-ccp-c1-m3-mgmt</b><p><b>Description</b>:</p><p>The service (in this
+            example, swift-account) is running on the node padawan-ccp-c1-m3. However, this node
+            does not have a</p><p>Connection to the network designated for the swift-account service
+            (i.e., the SWIFT network.</p><p><b>Resolution</b>:</p><p>Check the input model for which
+            networks are configured for each node type.</p></li>
+        <li><b>Example message: Ring:object-2 has specified replication-policy
+            erasure-coding-policy. Only may be specified.</b><p><b>Description</b>:</p><p>Only one
+            of replication-policy or erasure-coding-policy may be used in a
+              ring-specification.</p><p><b>Resolution</b>:</p><p>Remove one of the policy
+          types.</p></li>
+        <li><b>Example message: Ring: object-3 is missing a policy type (replication-policy
+            erasure-coding-policy)</b><p><b>Description</b></p><p>There is no replication-policy or
+            erasure-coding-policy section in the ring-specifications for the object-0
+              ring.</p><p><b>Resolution</b></p><p>Add a policy type to the input model file.
+          </p></li>
+      </ol>
+    </p>
   </body>
 </topic>
