@@ -12,8 +12,21 @@
               >Entry-scale-with-vsa</xref>
           </b>This has a single control plane cluster running all services (Nova, Swift, Glance,
           etc) with an additional 3 resource nodes used as Nova compute servers. </li>
+        <li><b>mid size cloud</b> (<b>NOTE : This model is not supported in Beta1</b>)This example
+          model describes a system using multiple servers and networks. It provides an example for
+          the configuration of the mid sized cloud. You must use this example model as the basis for
+          building a cloud model for your actual cloud by configuring the server and network that
+          you plan to deploy. To deploy Swift using this model you must make Swift -specific changes
+          to the provided example.</li>
       </ul>
  </section>
+    <section>Entry-scale-with-vsa<p><!--This section describes configuration of Swift services in th entry-scale-with-vsa--></p><p>The
+        entry-scale-with-vsa is relatively simple and constrained so other than checking that the
+        disk drives exist and are correctly assigned, you probably do not need to make any
+        Swift-related changes to this model before using it. You are expected to use the mid-size
+        cloud example model as the basis for building a cloud model for your actual cloud – using
+        the servers and networks you plan to deploy.</p><p>Before starting the deploy, you must
+        validate, and possibly update the data in the cloud model files as follows:</p></section>
   </body>
 </topic>
 
