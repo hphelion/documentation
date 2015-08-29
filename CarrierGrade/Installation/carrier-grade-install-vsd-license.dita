@@ -18,23 +18,31 @@
           href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
         Deployment</xref>.</i></p>
     <p>You should have recevied a license file when you purchased DCN. You need to apply that
-      license on the HLM host. </p>
+      license on the HLM host. If you do not have the license file, through the DCN post-sales
+      process, you received a confirmation email. Use a browser and go to the link in the email to
+      obtain the license.</p>
     <p>To apply the VSD license, on the HLM host:</p>
     <ol id="ol_oyq_vjw_dt">
-      <li>If you do not have the license file, through the DCN post-sales process, you received a
-        confirmation email. Use a browser and go to the link in the email to obtain the
-        license.</li>
-      <li>After you have obtained the license, use a browser to navigate to the VSD dashboard using
-        the VSD URI.</li>
-      <li>In the login page, enter the default
-        credentials:<codeblock>User Name: Csproot 
-Password: csproot 
+      <li>Use a web browser such as Chrome/FireFox to launch the VSD Architect dashboard using the
+        DCM IP and port 8443. For example:
+          <codeblock>https://10.x.x.x:8443/
+Default credentials: 
+User Name: csproot 
+Password: csproot
 Org: csp 
-VSD Server : auto </codeblock></li>
-      <li>From VSD Dashboard, click the <b>Open VSP Configuration</b> tab on the top right corner of
-        the dashboard.</li>
-      <li>Click the <b>Licenses</b> tab and click <b>+</b>.</li>
-      <li>Copy and paste your DCN license key into the dialog box.</li>
+VSD Server : auto</codeblock><p>The
+          main page appears, similar to the following. If you see the following message, you need to
+          apply the VSD license.</p><p><image href="../../media/CGH-2-vsd-launch.png"
+            id="image_ptd_b1l_2t" width="650"/></p></li>
+    </ol>
+    <ol id="ol_afn_fnl_2t">
+      <li>To apply the licnese click the <b>Open Platform Configuration</b> tab on the top right
+        corner of the dashboard. </li>
+      <li>Click the <b>Settings</b> tab. <p><image href="../../media/CGH-2-vsd_license2.png"
+            id="image_zl1_tjl_2t" width="650"/></p></li>
+      <li>Click the license icon in the left panel.<p><image
+            href="../../media/CGH-2-vsd_license3.png" id="image_tjy_dkl_2t" width="350"/></p></li>
+      <li>Copy and paste the license that you have received.</li>
     </ol>
     <section>
       <p><i>Return to the Installing the <xref
