@@ -262,7 +262,7 @@
           <topicref href="devplatform/helion/CLI/cfmgmt_growcluster_addDEANode.dita"
             navtitle="Example: Add a DEA Node" locktitle="yes"/>
           <topicref href="devplatform/helion/CLI/cfmgmt_growcluster_addservice.dita"
-            navtitle="Add a Service" locktitle="yes"/>
+            navtitle="Example: Add a Service" locktitle="yes"/>
         </topicref>
         <topichead navtitle="ALS Management Console">
           <topicref href="devplatform/helion/admin/console/console_intro.dita"
