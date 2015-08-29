@@ -3,7 +3,7 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="compute_hosts">
   <title>Compute Hosts</title>
-  <shortdesc>This page allows you to activate and deactivate Compute Host resources.</shortdesc>
+  <shortdesc>This page allows you to view your Compute Host resources.</shortdesc>
   <conbody>
     <section>
       <title>Search and Sort</title>

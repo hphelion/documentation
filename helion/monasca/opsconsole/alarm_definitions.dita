@@ -59,26 +59,29 @@
           Methods help page for further instructions.</li>
         <li>To turn the notifications on for the alarm, click to select <uicontrol>Enable
             Notifications</uicontrol>. </li>
-        <li>Apply the following rules to your alarm by using the Alarm Expressions form: <ul>
+        <li>Apply the following rules to your alarm by using the Alarm Expression form: <ul>
             <li><uicontrol>Function</uicontrol>: determines the output value from a supplied input
               value. </li>
             <li><uicontrol>Metric</uicontrol>: applies a pre-defined means of measuring whatever
               aspect of the alarm.</li>
+            <li><uicontrol>Dimension(s)</uicontrol>: identifies which aspect (Hostname, Region, and
+              Service) of the alarm you want to monitor.</li>
             <li><uicontrol>Relational Operator</uicontrol>: specifies the operator for how you want
               the alarm to trigger.</li>
             <li><uicontrol>Value</uicontrol>: determines the numeric threshold associated with the
               operator you specified.</li>
-            <li><uicontrol>Dimensions</uicontrol>: identifies which aspect (Hostname, Region, and
-              Service) of the alarm you want to monitor.</li>
           </ul></li>
-
-        <li>Select whether you want to apply the expressions individually or as a group to the
-          previously selected dimension(s). </li>
-        <li>When done creating the alarm, click <uicontrol>Create Alarm</uicontrol>. If you want to
+        <li>Select whether you want to apply the expressions <uicontrol>Individually</uicontrol> or
+            <uicontrol>As a group</uicontrol> to the previously selected dimension(s).</li>
+        <li>When done creating the alarm, click <uicontrol>Create Alarm</uicontrol>.
+          <!-- If you want to
           create multiple expressions for the alarm, or use the Alarm Expression Editor instead,
-          proceed to the next section.</li>
+          proceed to the next section. --></li>
       </ol>
+      <p>After the alarm definition saves, it can take roughly one minute for the alarm definition
+        to appear in the chart.</p>
     </section>
+    <!-- removed
     <section>
       <title>Alarm Expression Editor</title>
       <p>The Alarm Expression Editor is particularly useful if you already know the string syntax of
@@ -114,9 +117,6 @@
         <li>Click <uicontrol>Add New Expression</uicontrol> to add another expression to your alarm.
             <p>A new blank form is inserted for creating a new expression.</p></li>
         <li>Repeat for each new expression you want to add.</li>
-
-
-
         <li>If there are multiple expressions, the following options are available: <ul>
             <li>To edit an expression, locate the one you want to edit, change its values and then
               click the <uicontrol>Update Expression</uicontrol> button.</li>
@@ -153,8 +153,7 @@
           close the Alarm Expression Editor form.</li>
         <li>When done creating the alarm, click <uicontrol>Create Alarm</uicontrol>. </li>
       </ol>
-      <p>After the alarm definition saves, the Alarm Definitions window refreshes with the new alarm
-        definition populates in the table.</p>
     </section>
+    -->
   </conbody>
 </concept>

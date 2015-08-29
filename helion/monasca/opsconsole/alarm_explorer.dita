@@ -62,14 +62,12 @@
     <li><uicontrol>View Details</uicontrol>, which opens a separate window that shows all the
      information from the table view and the alarm history. This window also allows you set the
      condition on the alarm to another condition. Note, the condition the alarm is currently set to
-     is not selectable, as indicated by the grayed-out button. </li>
+     is not selectable, as indicated by the grayed-out button. You also have the ability to add a
+     comment to the alarm.</li>
     <li><uicontrol>Set Condition</uicontrol>, which opens a separate window that allows you to
      directly apply a condition (<i>Open</i>, <i>Acknowledged</i>, or <i>Resolved</i>) to that
      alarm, which can be used for tracking and sorting purposes.</li>
    </ul>
-  </section>
-  <section id="workflow"><title>Workflow</title>
-  <p>TBD</p>
   </section>
  </conbody>
 </concept>

@@ -9,8 +9,10 @@
     <section><title>New Alarms</title>
       <p>The New Alarms section shows you the alarms that have triggered since the timeframe
         indicated. You can select the timeframe using the <uicontrol>View</uicontrol> control with
-        options ranging from the Last Minute to Last 30 Days.  This section refreshes every ??
+        options ranging from the Last Minute to Last 30 Days. This section refreshes every 60
         seconds.</p>
+      <note>In later releases the refresh rate will vary based on the selected interval but it is a
+        static time in this beta release.</note>
       <p>The new alarms will be separated into the following categories:</p>
       <ul>
         <li><uicontrol>Critical</uicontrol> - Open alarms, identified by red indicator</li>

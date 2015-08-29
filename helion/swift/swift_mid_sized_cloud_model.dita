@@ -129,8 +129,8 @@
     <p>You can increase the <b>member-count</b> value so that more Proxy, Account, Container nodes
       are used. When you increase the <b>member-count</b> you must also increase the number of nodes
       with the <codeph>ROLE-SWPAC</codeph> role in the <codeph>data/baremetalConfig.yml</codeph> (or
-        <codeph>data/servers.yml</codeph>) file. &lt;<b>if we dont increase the nodes in the
-        data/barementalconfig.yml file then what error message do we get?</b>></p>
+        <codeph>data/servers.yml</codeph>) file.
+      &lt;<!--<b>if we dont increase the nodes in the data/barementalconfig.yml file then what error message do we get?</b>>--></p>
     <p>A Swift Object (OBJ) node is specified in <codeph>data/baremetalConfig.yml</codeph> file as
       shown in the following
       example:<codeblock>baremetal_servers:
@@ -211,54 +211,75 @@
             - account
             - container</codeblock></p><p>In
         the above example, Swift uses <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> disk
-        drives and  operating system uses <codeph>/dev/sda</codeph> disk drives.</p><p>The disk
-        model has the following fields:</p><ul>
-        <li><b>device-groups</b>: There can be several device groups. This allows different sets of
+        drives and operating system uses <codeph>/dev/sda</codeph> disk drives.</p><p>The disk model
+        has the following fields:</p>
+      <dl>
+        <dlentry>
+          <dt>device-groups</dt>
+          <dd>There can be several device groups. This allows different sets of
           disks to be used for different purposes. In this example, there is only one entry in the
-          device groups list.</li>
-        <li><b>name</b>: This is an arbitrary name for the device group. The name must be unique,
-          but is not otherwise used.</li>
-        <li><b>devices</b>: This is a list of devices allocated to the device group. For Swift,
-          these devices must meet the criteria as explained in <i><xref
-              href="#topic_qkg_l4v_bt/requirement-disk-device" format="dita">Requirements for a disk
-              device</xref></i></li>
-        <li><b>consumer</b>: This specifies the service that uses the device group. A
+          device groups list.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>name</dt>
+          <dd>This is an arbitrary name for the device group. The name must be unique,
+            but is not otherwise used.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>devices</dt>
+          <dd>This is a list of devices allocated to the device group. For Swift,
+            these devices must meet the criteria as explained in <xref
+              href="#topic_qkg_l4v_bt/requirement-disk-device">Requirements for a disk
+              device</xref></dd>
+        </dlentry>
+        <dlentry>
+          <dt>consumer</dt>
+          <dd>This specifies the service that uses the device group. A
             <codeph>name</codeph> field containing <b>swift</b> indicates that the device group is
-          used by Swift. If the name field contains other values, the Swift system will ignore the
-          device group.</li>
-        <li><b>attrs.rings</b>: This lists the rings that the devices are allocated to. In this
-          example, the disk model is used by Proxy, Account, Container nodes, so the <b>account</b>
-          and <b>container</b> rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model,
+            used by Swift. If the name field contains other values, the Swift system will ignore the
+            device group.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>attrs.rings</dt>
+          <dd>This lists the rings that the devices are allocated to. In this
+            example, the disk model is used by Proxy, Account, Container nodes, so the <b>account</b>
+            and <b>container</b> rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model,
             <codeph>object-0</codeph> ring is listed. It would be an error to add the
             <codeph>object-0</codeph> ring to the <codeph>DISK_SET_SWPAC</codeph> disk model because
-          the Swift-object service does not run on PAC node.</li>
-      </ul><p>You should review the disk devices in the disk model before making any changes to the
+            the Swift-object service does not run on PAC node.</dd>
+        </dlentry>
+      </dl>
+<p>You should review the disk devices in the disk model before making any changes to the
         existing model. See <i><xref href="#topic_qkg_l4v_bt/making-changes-to-swift" format="dita"
-            >Making Changes to a Swift Disk Model</xref></i>. </p><p id="requirement-disk-device"
-            ><b><i>Requirements for a Disk Device</i></b></p><p>Disk devices listed in the
-          <b>devices</b> list must meet the following criteria:</p><ul>
-        <li>The disk device must exist on the server. For example, if you add
-            <codeph>/dev/sdx</codeph> to a server with only 3 devices then the deploy process
-          fails.</li>
-        <li>The disk device must be unpartitioned or have a single partition that uses the whole
-          drive.</li>
-        <li>Do not have a label on the partition. &lt;<b>is there any example we can
-          provide?</b>></li>
-        <li>Do not have an XFS filesystem that contains a filesystem label. &lt;<b>is there any
-            example we can provide?</b>></li>
-        <li>If the disk drive is already labeled as described above, the
-            <codeph>swiftlm-drive-provision</codeph> process will assume that the drive has valuable
-          data and refuses to use or modify the drive. &lt;<b>any procedure we should include in the
-            troubleshooting section so that the user can clean the drives and run install the
-            process? </b>></li>
-      </ul><p id="making-changes-to-swift"><i><b>Making Changes to a Swift Disk Model</b></i></p><p>
-        There are several reasons for changing the disk model as follows:</p><ul>
+            >Making Changes to a Swift Disk Model</xref></i>. </p>
+      
+      <sectiondiv id="requirement-disk-device"><b><i> Requirements
+            for a Disk Device </i></b><p>Disk devices listed in the <b>devices</b> list must meet
+          the following criteria:</p><ul id="ul_awk_kmg_2t">
+          <li>The disk device must exist on the server. For example, if you add
+              <codeph>/dev/sdx</codeph> to a server with only 3 devices then the deploy process
+            fails.</li>
+          <li>The disk device must be unpartitioned or have a single partition that uses the whole
+            drive.</li>
+          <li>Do not have a label on the partition.
+            <!--&lt;<b>is there any example we can provide?</b>>--></li>
+          <li>Do not have an XFS filesystem that contains a filesystem
+            label.<!-- &lt;<b>is there any example we can provide?</b>>--></li>
+          <li>If the disk drive is already labeled as described above, the
+              <codeph>swiftlm-drive-provision</codeph> process will assume that the drive has
+            valuable data and refuses to use or modify the drive.
+            <!--&lt;<b>any procedure we should include in the troubleshooting section so that the user can clean the drives and run install the process? </b>>--></li>
+        </ul></sectiondiv>
+      <sectiondiv id="making-changes-to-swift"><p><i><b>Making Changes to a Swift Disk
+            Model</b></i></p><p> There are several reasons for changing the disk model as
+        follows:</p><ul>
         <li>It is advisable that if you have additional drives available then you can add the drives
           to the devices list.</li>
         <li>The disk devices listed in the example disk model have different names on your servers.
           This may be due different harware drives. Edit the disk model
             (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) and change the
-          device names to the correct names.<!--<table frame="all" rowsep="0" colsep="0"
+          device names to the correct
+          names.<!--<table frame="all" rowsep="0" colsep="0"
             id="table_rwv_rpm_dt">
             <tgroup cols="1">
               <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -274,10 +295,10 @@
           have SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In
           this case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace with
             <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.</li>
-      </ul></section>
-    <section id="allocation-network"><b>Allocating Network</b><p>It is recommended not to change a
+      </ul></sectiondiv></section>
+    <section id="allocation-network"><title>Changing Network Allocations</title><p>Changing network configurations is not recommended.
         network configurations.</p></section>
-    <section id="ring-specification"><b> Ring Specifications </b><p>The ring maps the logical names
+    <section id="ring-specification"><title>Ring Specifications</title><p>The ring maps the logical names
         of data to locations on a particular disks. There is a separate ring for account database,
         account database, and individual objects, but each ring works similarly. Ring-builder is a
         utility which builts and manually manages the rings. The ring-builder also keeps its own
@@ -309,30 +330,41 @@
           partition-power: 17
           replication-policy:
             replica-count: 3</codeblock>
-      </p><p>The above smaple file shows that the <b>region1</b> has three rings as follows: </p><p>
-        <ul>
-          <li><b>Account ring</b> - You must always specify a ring called <b>account</b>. The
+      </p><p>The above smaple file shows that the <b>region1</b> has three rings as follows: </p>
+      <dl>
+        <dlentry>
+          <dt>Account ring</dt>
+          <dd>You must always specify a ring called <b>account</b>. The
             account ring is used by Swift to store metadata about the projects in your system. In
             Swift, a Keystone project maps to a Swift account. The <codeph>display-name</codeph> is
-            informational and not used. </li>
-          <li><b>Container ring</b> -You must always specify a ring called "container". The
-              <codeph>display-name</codeph> is informational and not used.</li>
-          <li><b>Object ring</b> - It is also known as Storage Policy. You must always specify a
+            informational and not used. </dd>
+        </dlentry>
+        <dlentry>
+          <dt>Container ring</dt>
+          <dd>You must always specify a ring called "container". The
+            <codeph>display-name</codeph> is informational and not used.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Object ring</dt>
+          <dd>It is also known as Storage Policy. You must always specify a
             ring called "object-0". It is possible to have multiple object rings, which is known as
-              <i>storage policies</i>. But in this release we support only one storage policy, i.e.
+            <i>storage policies</i>. But in this release we support only one storage policy, i.e.
             object-0. The <codeph>display-name</codeph> is the name of the storage policy and can be
             used by users of the Swift system when they create containers. It allows them to specify
             the storage policy that the container uses. In the example, the storage policy is called
-              <b>General</b>.</li>
-          <li>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</li>
-          <li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph>
+            <b>General</b>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Replica count</dt>
+          <dd>The recommended value for the <codeph>replica-count</codeph>
             attribute is 3. Three copies of data are kept to provide resiliency and
-              availability.<p>The purpose of the <b>min-part-time, partition-power,
-                replication-policy</b> and<b>replica-count</b> are described in the following
-              section. </p></li>
-        </ul>
-      </p><p id="making-changes-ring-specification"><b>Making Changes to the Ring Specifications</b>
-      </p><p>The ring specification provided in the example model contains adequate configuration
+            availability.<p>The purpose of the <b>min-part-time, partition-power,
+              replication-policy</b> and<b>replica-count</b> are described in the following
+              section.</p></dd>
+        </dlentry></dl>
+        <note>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</note></section>
+      <section id="making-changes-ring-specification"><title>Making Changes to the Ring Specifications</title>
+    <p>The ring specification provided in the example model contains adequate configuration
         details to deploy Swift. However, there may be reasons for changing the model as
         follows:</p><ul>
         <li>Your system has more servers and disks than in the mid sized cloud example. Therefore,
@@ -341,7 +373,7 @@
           container storage. We recommend that you use the same drives for both the account and
           container rings. Hence, the <codeph>partition-power</codeph> value should be the same. For
           more information about selecting an appropriate value, refer to <i><xref
-              href="#topic_qkg_l4v_bt/selecting-a-partition-power" format="dita">Selecting a
+              href="#topic_qkg_l4v_bt/selecting-a-partition-power">Selecting a
               Partition Power</xref></i>.</li>
         <li>You require high resiliency or availability and want a higher replica count. The
             <codeph>replica-count</codeph>  is normally 3 (i.e., Swift will keep three copies of
@@ -395,11 +427,11 @@
       number of drives and add drives as your required for storage grows. However, you cannot change
       the value of the partition power. Hence you must select a value that is a compromise between
       current and planned capacity. </p>
-    <p><b>Important</b>: If you are installing a small capacity system and you need to grow to a
+  <note type="important">If you are installing a small capacity system and you need to grow to a
       very large capacity but you cannot fit within any of the ranges in the table, please seek help
-      from Professional Services to plan your system.</p>
+      from Professional Services to plan your system.</note>
     <p>There are a few additional factors that can help or mitigate the fixed nature of the
-      partition power, as follows:</p>
+      partition power:</p>
     <ul>
       <li>Account and container storage represents a small fraction (typically 1%) of your object
         storage needs. Hence, you can select a smaller partition power (relative to object ring
@@ -433,7 +465,7 @@
         <ul id="ul_nlg_zgg_dt">
           <li>You use the total number of drives. For example, if you have 3 servers, each with two
             drives, the total number of drives is 6.</li>
-          <li>The lookup should be done separably for each of the account, container and object
+          <li>The lookup should be done separately for each of the account, container and object
             rings. Since account and containers represent approximately 1-2% of object storage, you
             will probably use fewer drives for the account and container rings (i.e., you will have
             fewer Proxy, Account, Container (PAC) servers) – hence you your object rings may have a
@@ -520,8 +552,7 @@
         partition, for a replica count of 3, there are three <i>partition directories</i>. The
         partition directories are then evenly scattered over all drives. We can calculate the number
         of partition directories as
-        follows:<codeblock>number-partition-directories-per-drive = ( (2 ** partition-power) * replica-count ) / number-of-drives
-</codeblock></p>
+        follows:<codeblock>number-partition-directories-per-drive = ( (2 ** partition-power) * replica-count ) / number-of-drives</codeblock></p>
     </section>
     <p>An ideal number of partition directories per drive is 100. However, the system operate
       normally with a wide range of number of partition directories per drive. The table <i><b>

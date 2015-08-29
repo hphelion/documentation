@@ -7,8 +7,61 @@
     <note>While the hardware requirements are similar to those of HP Helion <tm tmtype="reg"
         >OpenStack</tm> 1.1, this is a completely new installation, not an upgrade or update
       operation.</note>
-    <section><title>Entry Scale Cloud</title>
-      <ul>
+    <section><title>Entry Scale Cloud</title> This is very similar to the Beta0 example but has a
+      more complex network configuration. At minimum scale it can be used as a POC (3-4 nodes) but
+      can also be scaled up to HP Helion OpenStack 1.1 levels, that is, up to 100 compute nodes. The
+      network configuration supports separation of networks for: <ul>
+        <li>Management</li>
+        <li>External API</li>
+        <li>External VM communications</li>
+      </ul> It also supports the physical bonding of Network Interafaces, and it can be configured
+      with VSA as a Cinder storage back-end. <simpletable>
+        <strow/>
+        <strow>
+          <stentry><b>Control Plane</b></stentry>
+          <stentry>3 nodes, hosts all management and ancillary services</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Object Store</b></stentry>
+          <stentry>All Swift services in control plane</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Block Storage</b></stentry>
+          <stentry>0 or 3 VSA nodes</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Compute Nodes</b></stentry>
+          <stentry>Min 1; Max 100</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Physical Network</b></stentry>
+          <stentry>1 pair of bonded NICs</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Network Separation</b>
+          </stentry>
+          <stentry>EXTERNAL_API, EXTERNAL_VM, GUEST (vxlan), MGMT on separate VLANs</stentry>
+        </strow>
+      </simpletable> Possible variations on this model will be documented to show: Use a 3PAR
+      (separately installed) back-end for Cinder this is done by removing the VSA resource pool from
+      the control plane and configuring the cinder.conf.j2 wih 3PAR details Two node cloud:
+      documentation will show how to configure for one node control plane and one node compute use
+      CEPH (deployed by HLM) as a Cinder back end instead of VSA </section>
+    <section><title>Entry Scale Storage Depot</title>
+      	<simpletable>
+      	  <strow><stentry><b>Control Plane</b></stentry><stentry>3 Nodes: Keystone, Swift Proxy, account and container services</stentry></strow>
+      	  <strow><stentry><b>Object Store</b></stentry><stentry>3-99 nodes</stentry></strow>
+      	  <strow><stentry><b>Physical Network</b></stentry><stentry>1 pair of bonded NICs</stentry></strow>
+      	  <strow><stentry><b>Network Separation</b></stentry><stentry>EXTERNAL_API, SWIFT, MGMT on separate VLANs</stentry></strow>
+      	</simpletable>
+  </section>
+      	
+      
+      
+      
+      <section>
+     
+      <!--<ul>
         <li>Single control plane for
           <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all control plane
           services<?oxy_custom_end?></li>
@@ -76,6 +129,7 @@
           following this pattern)</li>
         <li>A log partition must be declared and reside on the first disk</li>
       </ul>
+      -->
     </section>
     <!--<section><title>Configuration Illustrations</title>
       <p>The following diagrams illustrate the proof of concept configuration.</p>

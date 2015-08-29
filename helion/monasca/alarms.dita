@@ -500,6 +500,27 @@
             </row>
             <row>
               <entry>Process Check</entry>
+              <entry>neutron-lbaas-agent</entry>
+              <entry>local node</entry>
+              <entry>Processed crashed.</entry>
+              <entry>Restart service on affected node. Review logs. </entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>neutron-lbaasv2-agent</entry>
+              <entry>local node</entry>
+              <entry>Processed crashed.</entry>
+              <entry>Restart service on affected node. Review logs. </entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>neutron-vpn-agent</entry>
+              <entry>local node</entry>
+              <entry>Processed crashed.</entry>
+              <entry>Restart service on affected node. Review logs. </entry>
+            </row>
+            <row>
+              <entry>Process Check</entry>
               <entry>neutron-server pid check</entry>
               <entry>local node</entry>
               <entry>Process crashed.</entry>

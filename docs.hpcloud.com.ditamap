@@ -27,16 +27,17 @@
         locktitle="yes"/>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
         locktitle="yes"/>
-      <topicref href="helion/esx/esx_installation.dita" navtitle="Installing on ESX" locktitle="yes" toc="no"/>
+      <topicref href="helion/esx/esx_installation.dita" navtitle="Installing on ESX" locktitle="yes"
+        toc="no"/>
       <topicref href="helion/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
     </topichead>
+    <!-- BURA -->
     <topichead navtitle="Backup and Restore">
       <topicref href="helion/bura/bura_overview.dita"/>
       <topicref href="helion/bura/backup.dita"/>
       <topicref href="helion/bura/restore.dita"/>
     </topichead>
     <topicref href="helion/eula.dita" toc="no"/>
-
     <!-- keystone identity -->
     <topichead navtitle="Identity">
       <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Overview"
@@ -52,7 +53,7 @@
       <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Notes and Limitations"
         locktitle="yes"> </topicref>
     </topichead>
-    <!-- Monitoring and Logging -->
+    <!-- Monasca / Centralized Logging -->
     <topichead navtitle="Monitoring">
       <topicref href="helion/monasca/monasca.dita" locktitle="yes">
         <topicmeta>
@@ -96,6 +97,7 @@
         <navtitle>Centralized Logging</navtitle>
       </topicmeta>
     </topicref>
+    <!-- Neutron -->
     <topichead navtitle="Networking">
       <topicref href="helion/neutron/lbaas.dita" locktitle="yes">
         <topicmeta>
@@ -125,14 +127,14 @@
       <topicref href="helion/ceilometer/metering_bestpractice.dita"
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
     </topichead>
-    <topichead navtitle="Object Storage">
-      <topicref href="helion/swift/swift_overview.dita"/>
-      <topicref href="helion/swift/swift_input_cloud_model.dita"/>
-      <topicref href="helion/swift/allocate_disk_drives.dita"/>
-      <topicref href="helion/swift/ring_parameters.dita"/>
-      <topicref href="helion/swift/label_on_partition.dita"/>
-      <topicref href="helion/swift/filesystem_label.dita"/>
-      <topicref href="helion/swift/troubleshooting_beta1.dita"/>
+    <topichead navtitle="Object Storage" toc="no">
+      <topicref href="helion/swift/swift_overview.dita" toc="no"/>
+      <topicref href="helion/swift/swift_input_cloud_model.dita" toc="no"/>
+      <topicref href="helion/swift/allocate_disk_drives.dita" toc="no"/>
+      <topicref href="helion/swift/ring_parameters.dita" toc="no"/>
+      <topicref href="helion/swift/label_on_partition.dita" toc="no"/>
+      <topicref href="helion/swift/filesystem_label.dita" toc="no"/>
+      <topicref href="helion/swift/troubleshooting_beta1.dita" toc="no"/>
     </topichead>
 
   </topicref>
