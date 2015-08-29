@@ -6,27 +6,151 @@
     <p>This page describes the configuration of Swift services with the various types of input
       models supported in this release. </p>
  <section><title>Types of Input Models</title>
-      <ul id="ul_l4q_31v_dt">
+      <ul>
         <li><b>
             <xref href="#topic_qkg_l4v_bt/configuration-of-swift-vsa-model" format="dita"
               >Entry-scale-with-vsa</xref>
           </b>This has a single control plane cluster running all services (Nova, Swift, Glance,
           etc) with an additional 3 resource nodes used as Nova compute servers. </li>
-        <li><b>mid size cloud</b> (<b>NOTE : This model is not supported in Beta1</b>)This example
-          model describes a system using multiple servers and networks. It provides an example for
-          the configuration of the mid sized cloud. You must use this example model as the basis for
-          building a cloud model for your actual cloud by configuring the server and network that
-          you plan to deploy. To deploy Swift using this model you must make Swift -specific changes
-          to the provided example.</li>
+        <li>
+          <p><b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref>
+            </b>- (<b>NOTE : This model is not supported in Beta1)</b>This example model describes a
+            system using multiple servers and networks. It provides an example for the configuration
+            of the mid sized cloud. You must use this example model as the basis for building a
+            cloud model for your actual cloud by configuring the server and network that you plan to
+            deploy. To deploy Swift using this model you must make Swift -specific changes to the
+            provided example.</p>
+        </li>
       </ul>
- </section>
-    <section>Entry-scale-with-vsa<p><!--This section describes configuration of Swift services in th entry-scale-with-vsa--></p><p>The
-        entry-scale-with-vsa is relatively simple and constrained so other than checking that the
-        disk drives exist and are correctly assigned, you probably do not need to make any
+    </section>
+    
+    <section id="configuration-of-swift-vsa-model"><title>Entry-scale-with-vsa</title>
+      <p>The entry-scale-with-vsa is relatively simple and constrained so other than checking that
+        the disk drives exist and are correctly assigned, you probably do not need to make any
         Swift-related changes to this model before using it. You are expected to use the mid-size
         cloud example model as the basis for building a cloud model for your actual cloud – using
-        the servers and networks you plan to deploy.</p><p>Before starting the deploy, you must
-        validate, and possibly update the data in the cloud model files as follows:</p></section>
+        the servers and networks you plan to deploy.</p>
+      <p>Before starting the deploy, you must validate, and possibly update the data in the cloud
+        model files as follows:<ul id="ul_nvy_rz3_2t">
+          <li>Examine the <codeph>data/disks_controller.yml</codeph> file and validate that the
+            drives exist and have the appropriate preconditions as described in <xref
+              href="allocate_disk_drives.dita#topic_twv_b55_dt/requirement-disk-device">Requirements
+              for a disk device</xref></li>
+          <li> If you plan to add more Swift storage nodes or drives, you should read the
+            information about partition power in <xref href="ring_parameters.dita#topic_efw_k55_dt"
+              >Specifying the rings (ring specifications)</xref>. However, in most cases you do not
+            need to change the <codeph>config/swift/rings.yml</codeph> file.</li>
+        </ul></p>
+  <p>The Swift-proxy, Account, Container and Object services run on the same Proxy, Container, Account, Object (PACO) node
+      type in the control plane. This is used for smaller clouds or where Swift is a minor element
+      in a larger cloud.</p></section>
+    <section><title>Node Type</title><b>Proxy, Container, Account, Object (PACO) Node</b>: The
+      Swift-proxy, Account, Container and Object services run on the same (PACO) node type in the
+      control plane. All other control services also run on this node type.
+      <!--This is used for smaller clouds or where Swift is a minor element in a larger cloud.--></section>
+    <section><title>YML files associated with Swift Services</title>
+      <p>The following <codeph>yml</codeph> files are configured for <b>entry-scale-with-vsa</b>
+          model:</p>
+        <simpletable>
+          <strow><stentry><codeph>data/control_plane.yml</codeph></stentry><stentry>This<b> ROLE-CONTROLLER</b> node type runs on the <b>c1</b> cluster as specified in this
+            file.</stentry></strow>
+          <strow><stentry><codeph>data/disk_controller.yml</codeph></stentry><stentry>The controller node type allocates two disk drives for use by Swift. </stentry></strow>
+          <strow><stentry><codeph>config/swift/rings.yml</codeph></stentry><stentry>Swift account, container, and object storage
+            are managed by Swift using a data structure known as a <i>ring</i>. This
+            <codeph>yml</codeph> file provides the specification of the rings. For more
+            information on ring specification, refer to<xref
+              href="ring_parameters.dita#topic_efw_k55_dt"> ring specification</xref>.</stentry></strow>
+          <strow><stentry><codeph>data/network_groups.yml</codeph></stentry><stentry>This <codeph>yml</codeph> file specifies the MGMT and Swift networks. The Swift-proxy
+            service uses the Swift network to communicate with the other Swift services and among
+            themselves.</stentry></strow>
+        </simpletable>
+    </section>
+    <section id="mid-size">
+      <title>Mid Size Cloud Model</title>
+      <p><!--This section describes configuration of Swift services in the mid size cloud model.--></p>
+      <p>This example model describes a system using multiple servers and networks. It is
+        representative of how a mid sized cloud is configured. You are expected to use the example
+        model as the basis for building a cloud model for your actual cloud – using the servers and
+        networks you plan to deploy. This document describes the Swift-specific changes you need to
+        make to the provided example. </p>
+      <p>Before starting the deploy, you must validate, and possibly update the data in the cloud
+        model files as follows:</p>
+      <p>
+        <ul id="ul_i1s_rbj_2t">
+          <li>You need to assign servers for use by Swift. See Allocating Servers for use by
+            Swift</li>
+          <li>These servers have disk drives. See Allocating disk drives for use by Swift</li>
+          <li>You need to specify the rings for your system. See Specifying the rings (ring
+            specifications)</li>
+        </ul>
+      </p>
+    </section>
+    <section>
+      <title>Node Types</title>
+      <ul id="ul_wfg_ybj_2t">
+        <li><b>Proxy, Container, Account (PAC) Node</b>: This node runs the Swift-proxy,
+          Swift-account, and Swift-container services. The Swift-proxy service processes API
+          requests and directs them to the Swift-account, Swift-container or Swift-object services
+          for processing. The Swift-account and Swift-container handle requests to accounts and
+          containers respectively.</li>
+        <li><b>Object (OBJ) Node</b>: This node runs the Swift-object service. The Swift-object
+          service handles requests for objects.</li>
+      </ul>
+    </section>
+        <section id="config-swift-services"
+      ><!--<title>Configuration of Swift Services in the </title><p></p><sectiondiv id="node-type"><b>Node Type</b> <p>There are two type of nodes that is associated with Swift services. They are as follows:</p><ul><li><b>Proxy, Container, Account (PAC) Node</b>: This node runs the Swift-proxy, Swift-account, and Swift-container services. The Swift-proxy service processes API requests and directs them to the Swift-account, Swift-container or Swift-object services for processing. The Swift-account and Swift-container handle requests to accounts and containers respectively.</li><li><b>Object (OBJ) Node</b>: This node runs the Swift-object service. The Swift-object service handles requests for objects.</li></ul> </sectiondiv>
+--></section>
+    <section><sectiondiv>
+        <b>YML files associated with Swift Services</b>
+        <p>In the example mid sized cloud model, the Swift services are configured using the
+          following <codeph>yml</codeph> files:</p><simpletable id="simpletable_sks_gcj_2t">
+          <strow>
+            <stentry>data/control_plane.yml</stentry>
+            <stentry>
+              <p>The Proxy, Container, and Account node types are assigned to a dedicated <i>cluster
+                  of nodes</i> as specified in the <b>swpac</b> cluster in <codeph>yml</codeph>
+                file. These nodes are dedicated only to Swift services. </p>
+              <p>The Object node type is assigned to a dedicated <i>resource nodes</i> group as
+                specified in the <b>swobj</b> group in <codeph>yml</codeph> file. Requests to Swift
+                are directed to a virtual IP address (VIP) that is managed by a cluster as specified
+                in the <b>core</b> cluster in <codeph>data/control_plane.yml</codeph> file. The
+                requests are then directed on the MGMT network to the Swift-proxy service on one of
+                the Proxy, Container, Account nodes.</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry>data/disks_swpac.yml</stentry>
+            <stentry>The Proxy, Container, Account node type uses two disk drives to store account
+              and container databases which is specified in this file. For more information about
+              allocating a disk drives, refer to <xref
+                href="allocate_disk_drives.dita#topic_twv_b55_dt"/></stentry>
+          </strow>
+          <strow>
+            <stentry>data/disks_swobj.yml</stentry>
+            <stentry>The Object node type uses two disk drives to store account and container
+              databases which is specified in this file. For more information about allocating a
+              disk drives, refer to <xref href="allocate_disk_drives.dita#topic_twv_b55_dt"
+              />.</stentry>
+          </strow>
+          <strow>
+            <stentry>config/swift/rings.yml</stentry>
+            <stentry>Swift account, container, and object storage are managed by Swift using a data
+              structure known as a <i>ring</i>. This <codeph>yml</codeph> file provides the
+              specification of the rings. For more information on ring specification, refer to <xref
+                href="ring_parameters.dita#topic_efw_k55_dt">ring specification</xref>.</stentry>
+          </strow>
+          <strow>
+            <stentry>data/network_groups.yml</stentry>
+            <stentry>This <codeph>yml</codeph> file specifies the MGMT and Swift networks. The
+              Swift-proxy service uses the Swift network to communicate with the other Swift
+              services and among themselves. For more information about allocating a disk drives,
+              refer to</stentry>
+          </strow>
+        </simpletable>  The Swift-proxy service uses two other cloud services. Both of these are
+        configured in the example to run on the <b>core</b> cluster: <ul id="ul_uns_gcj_2t">
+          <li>Swift validates tokens by making requests to the Keystone service</li>
+          <li>Swift caches tokens and other data using the memcached service</li>
+        </ul>
+      </sectiondiv></section>
   </body>
 </topic>
-
