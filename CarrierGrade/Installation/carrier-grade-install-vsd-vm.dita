@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic7646">
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Bringing Up Single VSD VM
+        Manually</title>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+        </metadata>
+    </prolog>
+    <body>
+        <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.md--><!--permalink: /helion/openstack/carrier/install/pb/network/prepare/--></p>
+        <section><b>Launch the VSD VM</b><p>Use the following steps to launch the virtual machine
+                for the required HP DCN Virtualized Services Directory (<i>VSD</i>):</p><ol
+                id="ol_gtd_b1l_2t">
+                <li>Log into the HLM host.</li>
+                <li>Copy the VSD qcow image, named <codeph>VSD-3.2.2_74-hp.qcow2</codeph> and
+                        <codeph>vsd.xml</codeph>, to the <codeph>var/lib/libvirt/images</codeph>
+                    directory.</li>
+                <li>Execute the following
+                    commands:<codeblock> virsh define vsd.xml
+ virsh autostart vsd
+ virsh start vsd</codeblock></li>
+                <li>Start a console session to the VSD VM from HLM host using the following command: <p>
+                        <codeblock>virsh console &lt;vsdname&gt;
+Login creds  
+Login: root
+Password: Alcateldc</codeblock>
+                    </p>Where &lt;vsdname&gt; is the name of your VSD. </li>
+                <li>Edit <i>/etc/sysconfig/network-scripts/ifcfg-eth0</i> file to configure a static
+                    IP address. <p>Use the DCM IP for the VSD that is already configured by your lab
+                        admin.</p><p><u>For
+                        example</u><codeblock>BOOTPROTO=”static”
+IPADDR=10.20.5.21
+NETMASK=255.255.255.0
+GATEWAY=10.20.5.1</codeblock></p></li>
+                <li>Restart Networking using the following command:
+                    <codeblock>service network restart</codeblock></li>
+                <li>Edit the <i>/etc/resolv.conf</i> file with the IP address of the DNS name
+                    server:<codeblock>nameserver &lt;ip-address&gt;</codeblock></li>
+                <li>Update <i>/etc/hosts</i> file with your VSD name. The name must be the same that
+                    is configured on the DNS server:<p><image
+                            href="../../media/CGH-2-hosts-file-temp.png" id="image_e4j_42l_2t"
+                    /></p></li>
+                <li>Execute the following command in order for the VSD VM hostname to be reflected
+                    in the <i>/etc/hosts</i> file:
+                    <codeblock>service network restart </codeblock></li>
+                <li>Exit the VSD VM console session, then log back in. You should see the VSD name
+                    in the <i>/etc/hosts</i> file.</li>
+                <li>Configure an NTP Server for the VSD VM by editing the <i>/etc/ntp.conf</i> file.
+                    Commenting out other server list and add your DNS servers. For
+                            example:<codeblock>server 10.1.64.20
+server 16.110.135.113 </codeblock><p><image
+                            href="../../media/CGH-2-ntp-vsd.png" id="image_tth_w2l_2t"/></p></li>
+                <li>Execute the following commands to set the NTP
+                        time:<codeblock>service ntpd stop
+ntpdate &lt;ip-address&gt;
+service ntpd start</codeblock><p>Where
+                        &lt;ip-address&gt; is the address of your NTP server.</p></li>
+                <li> Execute the following command to verify that the NTP servers are
+                    listed:<codeblock>ntpq –p</codeblock>
+                <p>
+                    <image href="../../media/CGH-2-ntp-verify.png" id="image_ltd_b1l_2t" width="500"
+                    /></p></li>
+                <li>Verify that NTP is synchronized. The synchronization process usually takes 10 to
+                    15 minutes. <image href="../../media/CGH-2-ntp-verify-time.png" height="68"
+                        width="328" id="image_ntd_b1l_2t"/></li>
+                <li>After NTP is properly synchronized,execute the Install
+                    script:<codeblock> /opt/vsd/install.sh xmpp.dcn-two.helion.cg -t s -y</codeblock></li>
+            </ol>
+            <b>Verify that VSD is installed</b>
+            <ol id="ol_mgf_hgl_2t">
+                <li>Start a console session to the VSD VM from HLM host using the following command:
+                        <codeblock><i>virsh console &lt;vsdname&gt;</i> </codeblock><p>Where
+                        &lt;vsdname&gt; is the name of your VSD.</p></li>
+                <li>Execute the following command to confirm that you can access VSD.
+                        <codeblock>service vsd status </codeblock><p>You should see the status as
+                        shown:</p><p><image href="../../media/CGH-2-vsd-verify.png"
+                            id="image_wty_ygl_2t"/></p></li>
+            </ol>
+        </section>
+            <section>
+            <title>Logging into VSD node, creating user and applying License</title>
+            <ol>
+                <li>Use a web browser such as Chrome/FireFox to launch the VSD Architect dashboard
+                    using the DCM IP and port 8443. For example:
+                        <codeblock>https://10.x.x.x:8443/
+Default credentials: 
+User Name: csproot 
+Password: csproot
+Org: csp 
+VSD Server : auto</codeblock><p>The
+                        main page appears, similar to the following. If you see the following
+                        message, you need to apply the VSD license.</p><p><image
+                            href="../../media/CGH-2-vsd-launch.png" id="image_ptd_b1l_2t"
+                            width="650"/></p></li>
+                <li>To apply the licnese click the <b>Open Platform Configuration</b> tab on the top
+                    right corner of the dashboard. </li>
+                <li>Click the <b>Settings</b> tab. <p><image
+                            href="../../media/CGH-2-vsd_license2.png" id="image_zl1_tjl_2t"
+                            width="650"/></p></li>
+                <li>Click the license icon in the left panel.<p><image
+                            href="../../media/CGH-2-vsd_license3.png" id="image_tjy_dkl_2t"
+                            width="350"/></p></li>
+                <li>Copy and paste the license that you have received.</li></ol>
+                <p><b>Create an OSAdmin user and plug-in user</b></p>
+                <ol>
+                <li>To create the OSadmin user, click the <b>Open Platform Configuration</b> tab on
+                    the top right corner of the dashboard.</li>
+                <li>Click the <b>Settings</b> tab. </li>
+                <li>Click the User icon on the left panel. <p><image
+                            href="../../media/CGH-2vsd-user.png" id="image_dzw_dll_2t" width="350"
+                        /></p></li>
+                <li>Right-click the <i>csproot</i> user and click <b>Add</b>.</li>
+                <li>To create a user for the plug-in , click the <b>Open VSP Configuration </b>tab
+                    on the top right corner of the dashboard.</li>
+                <li>Click the <b>CSP Users </b>tab and click <b>+</b>.</li>
+                <li>Create a user named <i>OSadmin</i> with the password <i>OSadmin</i>. The name
+                    and password are case-sensitive. Do not copy and paste from here into the
+                            field.<p><image href="../../media/CGH-2-vsd-user.png"
+                            id="image_vgl_xkl_2t" width="350"/></p></li>
+                <li>Click <b>Create</b>.</li>
+                <li>Click the Groups icon to add the user to the CMS Group</li>
+                <li>Select the <b>CMS Group</b>, then click the link icon click <b>OSadmin</b>.</li>
+            </ol>
+            <p> </p>
+        </section>
+    </body>
+</topic>

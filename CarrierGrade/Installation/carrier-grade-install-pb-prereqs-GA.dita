@@ -257,74 +257,22 @@ StrictHostKeyChecking no </codeblock></li>
                                 installation package(s).</p>
                         <p><b>Note:</b> When downloading installation files, always download and
                                 verify the signature file before installing. </p>
-                        <ol>
-                                <li>In a browser, navigate to <xref
-                                                href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-                                                format="html" scope="external">Helion Download
-                                                Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs">
-                                                <li>Click <b>Sign In</b> to log in using your
-                                                  account. </li>
-                                                <li>After signing in, click the <b>Downloads</b>
-                                                  link in the menu on the left side of the
-                                                  page.</li>
-                                                <li>On the <b>Downloads</b> page, locate HP Helion
-                                                  OpenStack Carrier Grade and click
-                                                  <b>Download</b>.</li>
-                                        </ul></li>
-                                <li>Download the following files: <ul>
-                                                <li><b>Helion Carrier Grade 2.0.0</b>. The file is
-                                                  named <codeph>hcg_1.1.0.tar</codeph>. Also
-                                                  download the <b>Helion Carrier Grade 2.0.0
-                                                  Checksum</b> and <b>Helion Carrier Grade 2.0.0
-                                                  Signature</b> files.</li>
-                                                <li><b>Horizon Patch Tar File for Helion Carrier
-                                                  Grade</b>. The file is named
-                                                  <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>.
-                                                  Also download the <b>Horizon Patch Tar File for
-                                                  Helion Carrier Grade Checksum</b> and <b>Horizon
-                                                  Patch Tar File for Helion Carrier Grade
-                                                  Signature</b> files.</li>
-                                                <li><b id="productShow_appName">Helion Carrier Grade
-                                                  1.1.0 Windriver License patch signature file</b>
-                                                  and the <b>Helion Carrier Grade 2.0.0 Windriver
-                                                  License patch</b> signature file signature and
-                                                  <b>Helion Carrier Grade 2.0.0 Windriver License
-                                                  patch</b> signature file checksum files.</li>
-                                                <li>LDAP patch. Download the
-                                                  <codeph>ldap_patch_1.1.tar.gz and
-                                                  hoscg-update.tgz</codeph> file. </li>
-                                                <li>Compute Proxy patch. Dowload the
-                                                  <codeph>compute_proxy_patch_1.1.tar.gz</codeph>
-                                                  file.</li>
-                                                <li>GRE tunnel. Download the
-                                                  <codeph>gre_patch_1.1.tar.gz</codeph> file. </li>
-                                                <li>HLM port security patch. Download the
-                                                  <codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph>
-                                                  file.</li>
-                                                <li>Rabbit MQ Random Password patch. Download the
-                                                  <codeph>random-password.tar.gz</codeph> file.</li>
-                                                <li>Helion Dynamic Password patch. Download the
-                                                  <codeph>horizon_web_patch_1.1.tar.gz</codeph>
-                                                  file.</li>
-                                                <li>NIC Bonding Patch. If you are using bonded NIC,
-                                                  download the
-                                                  <codeph>cg-hos-nic-bonding.patch</codeph>
-                                                  file.</li>
-                                                <li><b>GPG keys to verify signature files</b>. This
-                                                  file is named
-                                                  <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li>
-                                                <!--<li><b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment, download this file, named <codeph>overcloud_vcenter_compute_proxy.tar</codeph>. Also download the Signature files. This file will need to be moved to the system that hosts the VMware vCenter client. You can move the file to that system or download the file later.</li><li><b id="productShow_appName">VCN OVSvApp Appliance</b>.  For the KVM + ESX deployment, download this file, named   Also download the Signature files. HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</li>-->
-                                        </ul></li>
-                                <li><xref href="#topic7148/verify" format="dita">Verify the
+                        <!--<ol>
+                                
+                                <li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download the following files: <ul><li><b>Helion Carrier Grade 2.0.0</b>. The file is named <codeph>hcg_1.1.0.tar</codeph>. Also download the <b>Helion Carrier Grade 2.0.0 Checksum</b> and <b>Helion Carrier Grade 2.0.0 Signature</b> files.</li><li><b>Horizon Patch Tar File for Helion Carrier Grade</b>. The file is named <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>. Also download the <b>Horizon Patch Tar File for Helion Carrier Grade Checksum</b> and <b>Horizon Patch Tar File for Helion Carrier Grade Signature</b> files.</li><li><b id="productShow_appName">Helion Carrier Grade 1.1.0 Windriver License patch signature file</b> and the <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file signature and <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file checksum files.</li><li>LDAP patch. Download the <codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz</codeph> file. </li><li>Compute Proxy patch. Dowload the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> file.</li><li>GRE tunnel. Download the <codeph>gre_patch_1.1.tar.gz</codeph> file. </li><li>HLM port security patch. Download the <codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph> file.</li><li>Rabbit MQ Random Password patch. Download the <codeph>random-password.tar.gz</codeph> file.</li><li>Helion Dynamic Password patch. Download the <codeph>horizon_web_patch_1.1.tar.gz</codeph> file.</li><li>NIC Bonding Patch. If you are using bonded NIC, download the <codeph>cg-hos-nic-bonding.patch</codeph> file.</li><li><b>GPG keys to verify signature files</b>. This file is named <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li></ul></li>
+                        -->        
+                                        <!--<li><b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment, download this file, named <codeph>overcloud_vcenter_compute_proxy.tar</codeph>. Also download the Signature files. This file will need to be moved to the system that hosts the VMware vCenter client. You can move the file to that system or download the file later.</li><li><b id="productShow_appName">VCN OVSvApp Appliance</b>.  For the KVM + ESX deployment, download this file, named   Also download the Signature files. HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</li>-->
+                                
+                              <!--  <li><xref href="#topic7148/verify" format="dita">Verify the
                                                 signature and checksums</xref>. </li>
-                        </ol>
+                        </ol>-->
                 </section>
                 <section id="verify">
                         <title>Verify the downloaded signature</title>
                         <p>After downloading the installation packages, you should verify the
                                 signature of the download. You can use the GPG utility, which is
                                 already installed on the HLM node. Signed by the signature file.</p>
-                        <p>A set of GPG public keys are available on <xref
+                        <!--<p>A set of GPG public keys are available on <xref
                                         href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
                                         format="html" scope="external">Helion Download
                                         Network(HDN)</xref> . If you did not download the public
@@ -350,22 +298,22 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <li>hpPublicKey2048.pub</li>
                                         </ul></li>
                                 <li>Execute the following command to import the keys:
-                                                <codeblock>gpg --import "&lt;filename>"</codeblock><p>Where
+                                                <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where
                                                 &lt;filename> is the name of the extracted
                                                 file.</p><p>The keys are then imported into the gpgp
                                                 key share:
-                                                <codeblock>gpg --import hpPublicKey.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-1.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-2.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-3.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-4.pub 
-gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-5.pub 
-gpg --import hpPublicKey2048.pub </codeblock></p></li>
+                                                <codeblock>gpg -\-import hpPublicKey.pub 
+gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-1.pub 
+gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-2.pub 
+gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-3.pub 
+gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-4.pub 
+gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-5.pub 
+gpg -\-import hpPublicKey2048.pub </codeblock></p></li>
                                 <li>Use the following command to view the keys in the key store:
-                                                <codeblock>gpg --list-keys</codeblock><p>The key
+                                                <codeblock>gpg -\-list-keys</codeblock><p>The key
                                                 store appears similar to the
                                         following:</p><codeblock>/home/sad/.gnupg/pubring.gpg
-  ----------------------------
+  -\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 pub   2048R/F7191CB9 2014-12-19
 pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
 uid                  Hewlett-Packard Company (HP Codesigning Service)
@@ -382,7 +330,7 @@ uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 5
 pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
 uid                  Hewlett-Packard Company RSA (HP Codesigning Service)        </codeblock></li>
                                 <li>Use the following command to verify the signature:
-                                                <codeblock>gpg --verify ./hcg_1.1.0.tar.sig ./hcg_1.1.0.tar  </codeblock><p>The
+                                                <codeblock>gpg -\-verify ./hcg_1.1.0.tar.sig ./hcg_1.1.0.tar  </codeblock><p>The
                                                 output for the command appears similar to the
                                                 following. This indicates the signature is verified:
                                                   <b>Good signature from "Hewlett-Packard Company
@@ -393,12 +341,13 @@ gpg: WARNING: This key is not certified with a trusted signature!
 gpg: There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li>
                                 <li>Perform this verification for each file you downloaded.</li>
-                        </ol>
+                        </ol>-->
                 </section>
                 <section id="checksum">
                         <title>Verify the downloaded checksums</title>
                         <p>You should also use a checksum verification tool, such as sha256sum,
-                                which should come installed with Ubuntu.<ol id="ol_icb_k4f_xs">
+                                which should come installed with Ubuntu.</p>
+                                <!--<ol id="ol_icb_k4f_xs">
                                         <li>Run the checksum tool against the
                                                   <codeph>hcg_1.1.0.tar</codeph> file.
                                                 <codeblock>sha256sum &lt;path-to-file>/hcg_1.1.0.tar</codeblock></li>
@@ -419,11 +368,83 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <codeph>hcg_1.1.0.tar.sha256</codeph> file.
                                                 <codeblock>sha256sum.exe hcg_1.1.0.tar
 97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock></li>
-                                </ol></p>
+                                </ol>-->
                 </section>
                 <section id="extract">
                         <title>Extract and copy the installation files and patches</title>
-                        <ol>
+                        <p><image href="../../media/CGH-file-list-2-temp.png" id="image_orr_wyk_2t"
+                                /></p>
+                        <table id="table_rkj_yyk_2t">
+                                <tgroup cols="4">
+                                        <colspec colnum="1" colname="col1"/>
+                                        <colspec colnum="2" colname="col2"/>
+                                        <colspec colnum="3" colname="col3"/>
+                                        <colspec colnum="4" colname="col4"/>
+                                        <tbody>
+                                                <row>
+                                                  <entry><b>S.No</b></entry>
+                                                  <entry><b>File Name</b></entry>
+                                                  <entry><b>To be copied in the Base HLM KVM
+                                                  Host</b></entry>
+                                                  <entry><b>Description</b></entry>
+                                                </row>
+                                                <row>
+                                                  <entry>1</entry>
+                                                  <entry><xref
+                                                  href="http://15.214.241.88/cg-hos-builds/cg-hlm.qcow2"
+                                                  format="html" scope="external"
+                                                  >cg-hlm.qcow2</xref></entry>
+                                                  <entry>
+                                                  <p>/var/lib/libvirt/images</p>
+                                                  <p> </p>
+                                                  <p>Can copy this to any other directory and update
+                                                  the group_vars/all file with that dir folder
+                                                  path</p>
+                                                  <p> </p>
+                                                  </entry>
+                                                  <entry/>
+                                                </row>
+                                                <row>
+                                                  <entry>2</entry>
+                                                  <entry>
+                                                  <p>cg-hos-misc.tar.gz.gpg</p>
+                                                  <p>cg-hos-src.tar.gz.gpg</p>
+                                                  </entry>
+                                                  <entry>
+                                                  <p>/root/cg</p>
+                                                  <p> </p>
+                                                  <p><b>Create cg folder if you don’t have in the
+                                                  KVM Host</b></p>
+                                                  </entry>
+                                                  <entry> </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>3</entry>
+                                                  <entry> cg-infra-src.tar.gz.gpg</entry>
+                                                  <entry>
+                                                  <p>/root </p>
+                                                  <p>Step 1: Decrypt and untar using “gpg -d
+                                                  cg-infra-playbooks.tar.gz.gpg | tar -xzvf –“</p>
+                                                  <p>Password: cghelion</p>
+                                                  <p> </p>
+                                                  </entry>
+                                                  <entry> </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>4</entry>
+                                                  <entry>
+                                                  <p>TEMPL-CPV9.ova</p>
+                                                  <p> </p>
+                                                  <p>Note:
+                                                  <b>E:\sFTP\HCG2.0\DCN3.2bits-For-build9\compute-proxy</b></p>
+                                                  </entry>
+                                                  <entry>Will be uploaded to ESX Cluster</entry>
+                                                  <entry> </entry>
+                                                </row>
+                                        </tbody>
+                                </tgroup>
+                        </table>
+                        <!--<ol>
                                 <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file. The following
                                         list of files is extracted:
                                         <codeblock>cg-hlm.qcow2 
@@ -439,120 +460,8 @@ WR/extras/HP-HCG-SDK-15.05-b10.tgz
 WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5
 WR/extras/HP-HCG-sample-guest-15.05-b9.img
 WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
-                                <li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images
-                                        folder: <codeph>/var/lib/libvirt/images</codeph>. </li>
-                                <li>Copy the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file
-                                        from the <codeph>hcg_1.1.0.tar</codeph> files to the
-                                                <codeph>/root</codeph> directory.</li>
-                        </ol>
-                                <p>The following table lists the installation and patch files and
-                                indicates where you need to copy those files.</p>        
-                                <table
-                                                id="table_yhb_zny_zs">
-                                                <tgroup cols="3">
-                                                  <colspec colnum="1" colname="col2" colwidth="1*"/>
-                                                  <colspec colnum="2" colname="col3"
-                                                  colwidth="1.11*"/>
-                                                  <colspec colnum="3" colname="col4"
-                                                  colwidth="1.11*"/>
-                                                  <thead>
-                                                  <row>
-                                                  <entry>File Name</entry>
-                                                  <entry>Extracted from</entry>
-                                                  <entry>Copy the file to: </entry>
-                                                  </row>
-                                                  </thead>
-                                                  <tbody>
-                                                  <row>
-                                                  <entry><codeph>cg-hlm.qcow2</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/var/lib/libvirt/images</codeph> on
-                                                  the HLM host</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry><codeph>cg-infra-playbooks.tar.gz.gpg</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/root</codeph> on the HLM
-                                                  host</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry><codeph>TEMPL-CPV9.ova</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry>Any location on any server that can be
-                                                  accessed by the VMware vCenter client.</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry><codeph>ldap_patch_1.1.tar.gz and
-                                                  hoscg-update.tgz </codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry><codeph>~/patch_cghelion1.1/</codeph>
-                                                  directory on the HML host. You must first create
-                                                  this directory.</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry><codeph>gre_patch_1.1.tar.gz</codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry>Any directory on the HLM host. Make note of
-                                                  the location.</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry><codeph>compute_proxy_patch_1.1.tar.gz</codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
-                                                  this directory.</entry>
-                                                  </row>
-                                                <row>
-                                                  <entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
-                                                  this directory.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>random-password.tar.gz</codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
-                                                  this directory.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>horizon_web_patch_1.1.tar.gz</codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
-                                                  this directory.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/root</codeph> on
-                                                  <codeph>controller-0</codeph> in the KVM
-                                                  region.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>WR/extras/HP-HCG-SDK-15.05-b10.tgz
-                                                  WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/root</codeph> on
-                                                  <codeph>controller-0</codeph> in the KVM region.
-                                                  SDK files to be used as needed.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>WR/extras/HP-HCG-sample-guest-15.05-b9.img
-                                                  WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/root</codeph> on
-                                                  <codeph>controller-0</codeph> in the KVM region.
-                                                  Sample guestt OS files to be used as
-                                                  needed.</entry>
-                                                </row>
-                                                  </tbody>
-                                                </tgroup>
-                                        </table>
-                        
-                </section>
-                <section id="download-esx">
+                        </ol>-->
+                        <!--<section id="extract"><ol><li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images folder: <codeph>/var/lib/libvirt/images</codeph>. </li><li>Copy the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file from the <codeph>hcg_1.1.0.tar</codeph> files to the <codeph>/root</codeph> directory.</li></ol><p>The following table lists the installation and patch files and indicates where you need to copy those files.</p><table id="table_yhb_zny_zs"><tgroup cols="3"><colspec colnum="1" colname="col2" colwidth="1*"/><colspec colnum="2" colname="col3" colwidth="1.11*"/><colspec colnum="3" colname="col4" colwidth="1.11*"/><thead><row><entry>File Name</entry><entry>Extracted from</entry><entry>Copy the file to: </entry></row></thead><tbody><row><entry><codeph>cg-hlm.qcow2</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/var/lib/libvirt/images</codeph> on the HLM host</entry></row><row><entry><codeph>cg-infra-playbooks.tar.gz.gpg</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on the HLM host</entry></row><row><entry><codeph>TEMPL-CPV9.ova</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry>Any location on any server that can be accessed by the VMware vCenter client.</entry></row><row><entry><codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz </codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1/</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>gre_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry>Any directory on the HLM host. Make note of the location.</entry></row><row><entry><codeph>compute_proxy_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>random-password.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>horizon_web_patch_1.1.tar.gz</codeph></entry><entry>N/A</entry><entry><codeph>~/patch_cghelion1.1</codeph> directory on the HML host. You must first create this directory.</entry></row><row><entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region.</entry></row><row><entry><codeph>WR/extras/HP-HCG-SDK-15.05-b10.tgz WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. SDK files to be used as needed.</entry></row><row><entry><codeph>WR/extras/HP-HCG-sample-guest-15.05-b9.img WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeph></entry><entry><codeph>hcg_1.1.0.tar</codeph></entry><entry><codeph>/root</codeph> on <codeph>controller-0</codeph> in the KVM region. Sample guestt OS files to be used as needed.</entry></row></tbody></tgroup></table></section><section id="download-esx"/>-->
                         <title>Download the DCN and ESX packages for KVM + ESX</title>
                         <p><b>Note:</b> This is applicable only for KVM + ESX Cloud Deployment. </p>
                         <p>To integrate VMware ESX<tm tmtype="reg"/> storage, deploy the KVM + ESX
@@ -564,13 +473,13 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                         <p><b>DCN components</b></p>
                         <p>Download all required DCN packages needed to deploy the DCN
                                 environment.</p>
-                        <ol>
+                        <ol id="ol_b4b_pyk_2t">
                                 <li> DCN has a well-defined process for Pre-Sales and Post-Sales
                                         process to download DCN bits and obtain license. Use one of
                                         the following processes to to download DCN bits and obtain
-                                        license: <ul>
+                                        license: <ul id="ul_c4b_pyk_2t">
                                                 <li>External customers will follow the DCN
-                                                  Post-Sales Process:<ol>
+                                                  Post-Sales Process:<ol id="ol_d4b_pyk_2t">
                                                   <li>You purchase a DCN license through the
                                                   Post-Sales process.</li>
                                                   <li>After you purchase the license, you will
@@ -602,7 +511,8 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                         </ul></li>
                                 <li>Create the <codeph>~/cg/dcn</codeph> directory on the HLM
                                         host.</li>
-                                <li>Extract the compressed download packages. <table>
+                                <li>Extract the compressed download packages. <table
+                                                id="table_e4b_pyk_2t">
                                                 <tgroup cols="3">
                                                   <colspec colnum="1" colname="col2"
                                                   colwidth="1.89*"/>
@@ -668,8 +578,16 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                         </table></li>
                         </ol>
                 </section>
+                <section>
+                        <title>Bring Up Single VSD VM Manually</title>
+                        <p>You must launch a virtual machine for the required HP DCN Virtualized
+                                Services Directory (<i>VSD</i>) and create required users.</p>
+                        <p>For more information, see <xref
+                                        href="carrier-grade-install-vsd-vm.dita#topic7646">Bringing
+                                        Up Single VSD VM Manually</xref>.</p>
+                </section>
                 <section id="prepbare">
-                        <title>Preparing the baremetal systems</title>
+                        <title>Prepare the baremetal systems</title>
                         <p>Perform the following tasks on each server you will use as a compute
                                 server or controller in the non-KVM and KVM regions:</p>
                         <ul id="ul_jy1_tvp_rs">
