@@ -22,16 +22,36 @@
             cloud model for your actual cloud by configuring the server and network that you plan to
             deploy. To deploy Swift using this model you must make Swift -specific changes to the
             provided example.</p>
+          <p/>
         </li>
       </ul>
     </p>
-    <section id="configuration-of-swift-vsa-model"><b>Configuration of Swift Services in the
-        Entry-scale-with-vsa</b><p>This section describes configuration of Swift services in th
-        entry-scal-with-vsa.</p></section>
+    <section id="configuration-of-swift-vsa-model"
+        ><b>Entry-scale-with-vsa</b><p><!--This section describes configuration of Swift services in th entry-scale-with-vsa.--></p><p>The
+        entry-scale-with-vsa is relatively simple and constrained so other than checking that the
+        disk drives exist and are correctly assigned, you probably do not need to make any
+        Swift-related changes to this model before using it. You are expected to use the mid-size
+        cloud example model as the basis for building a cloud model for your actual cloud – using
+        the servers and networks you plan to deploy.</p><p>Before starting the deploy, you must
+        validate, and possibly update the data in the cloud model files as follows:</p><ul
+        id="ul_gsp_gqh_2t">
+        <li>
+          <?oxy_delete author="sharmabi" timestamp="20150829T100711+0530" content="entry-scale-with-vsa:"?>
+          <ul id="ul_y5p_gqh_2t">
+            <li>Examine the <u>data/disks_controller.yml</u> file and validate that the drives exist
+              and have the appropriate preconditions as described in <i>Requirements for a disk
+                device.</i></li>
+            <li>If you plan to add more Swift storage nodes or drives, you should read the
+              information about partition power in <i>Specifying the rings (ring specifications).
+              </i>However, in most cases you do not need to change the config/swift/rings.yml
+              file.</li>
+          </ul>
+        </li>
+      </ul></section>
     <section><b>Node Type</b><p><b>Proxy, Container, Account, Object (PACO) Node</b>: The
         Swift-proxy, Account, Container and Object services run on the same (PACO) node type in the
-        control plane. This is used for smaller clouds or where Swift is a minor element in a larger
-        cloud.</p></section>
+        control plane. All other control services also run on this node
+        type.<!--This is used for smaller clouds or where Swift is a minor element in a larger cloud.--></p></section>
     <section><b>YML files associated with Swift Services</b></section>
     <section>
       <p>The following <codeph>yml</codeph> files are configured for <b>entry-scale-with-vsa</b>
@@ -39,12 +59,10 @@
     </section>
     <p>
       <ul>
-        <li><codeph>data/control_plane.yml</codeph><p/></li>
-        <li><codeph>data/disk_controller.yml</codeph><p>This <codeph>yml</codeph> file contains the
-            Swift information (swiftobj disk-group). This describes what disks on each of the
-            servers are assigned to Swift and the rings that uses those drives. For more information
-            about allocating a disk drives, refer to <xref
-              href="allocate_disk_drives.dita#topic_twv_b55_dt"/></p></li>
+        <li><codeph>data/control_plane.yml</codeph><p>This<b> ROLE-CONTROLLER</b> node type runs on
+            the <b>c1</b> cluster as specified in </p></li>
+        <li><codeph>data/disk_controller.yml</codeph><p>The controller node type allocates two disk
+            drives for use by Swift. This is specified in the </p></li>
         <li><codeph>config/swift/rings.yml</codeph><p>Swift account, container, and object storage
             are managed by Swift using a data structure known as a <i>ring</i>. This
               <codeph>yml</codeph> file provides the specification of the rings. For more
@@ -60,8 +78,23 @@
       </ul>
     </p>
     <section id="config-swift-services"><b><b>Configuration of Swift Services in the Mid Size Cloud
-          Model</b></b><p>This section describes configuration of Swift services  in the mid size
-        cloud model.</p></section>
+          Model</b></b><p><!--This section describes configuration of Swift services in the mid size cloud model.--></p><?oxy_insert_start author="sharmabi" timestamp="20150829T100724+0530"?><p>Before
+        starting the deploy, you must validate, and possibly update the data in the cloud model
+        files as follows:</p><p>
+        <ul id="ul_n1x_crh_2t">
+          <li>
+            <ul id="ul_x1x_crh_2t">
+              <li>You need to assign servers for use by Swift. See <i>Allocating Servers for use by
+                  Swift</i></li>
+              <li>These servers have disk drives. See <i>Allocating disk drives for use by
+                Swift</i></li>
+              <li>You need to specify the rings for your system. See<i> Specifying the rings (ring
+                  specifications</i></li>
+            </ul>
+          </li>
+        </ul>
+      </p><?oxy_insert_end?><p>Before starting the deploy, you must validate, and possibly update
+        the data in the cloud model files as follows:</p></section>
     <section id="node-type"><b>Node Type</b></section>
     <p>There are two type of nodes that is associated with Swift services. They are as follows:</p>
     <ul>
@@ -125,3 +158,4 @@
     </ul>
   </body>
 </topic>
+<?oxy_options track_changes="on"?>

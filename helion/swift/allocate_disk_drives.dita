@@ -88,6 +88,10 @@
         >Making Changes to a Swift Disk Model</xref>. </p>
     <p id="requirement-disk-device"><b><i>Requirements for a Disk Device</i></b></p>
     <p>Disk devices listed in the <b>devices</b> list must meet the following criteria:</p>
+    <p>
+      <note>To avoid any confusion on devices list, please refer to <xref href="#topic_twv_b55_dt"
+          format="dita">Allocating Disk Drives</xref></note>
+    </p>
     <ul id="ul_fsy_255_dt">
       <li>The disk device must exist on the server. For example, if you add
           <codeph>/dev/sdx</codeph> to a server with only 3 devices then the deploy process
@@ -103,7 +107,7 @@
           <codeph>swiftlm-drive-provision</codeph> process will assume that the drive has valuable
         data and refuses to use or modify the drive.</li>
     </ul>
-    <p id="making-changes-to-swift"><i><b>Making Changes to a Swift Disk Model</b></i></p>
+    <p id="making-changes-to-swift"><i><b>When to Make Changes to a Swift Disk Model</b></i></p>
     <p> There are several reasons for changing the disk model as follows:</p>
     <ul id="ul_d5y_255_dt">
       <li>It is advisable that if you have additional drives available then you can add the drives
