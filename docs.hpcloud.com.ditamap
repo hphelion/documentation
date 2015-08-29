@@ -27,8 +27,8 @@
         locktitle="yes"/>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
         locktitle="yes"/>
-      <topicref href="helion/esx/esx_installation.dita" navtitle="Installing on ESX" locktitle="yes"
-        toc="no"/>
+      <topicref href="helion/esx/deploy_esx_cloud.dita" navtitle="Deploying ESX Cloud"
+        locktitle="yes" toc="no"/>
       <topicref href="helion/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
     </topichead>
     <!-- BURA -->
@@ -129,9 +129,10 @@
     </topichead>
     <topichead navtitle="Object Storage" toc="no">
       <topicref href="helion/swift/swift_overview.dita" toc="no"/>
-      <topicref href="helion/swift/swift_input_cloud_model.dita" toc="no"/>
-      <topicref href="helion/swift/allocate_disk_drives.dita" toc="no"/>
-      <topicref href="helion/swift/ring_parameters.dita" toc="no"/>
+      <topicref href="helion/swift/swift_input_cloud_model.dita" toc="no">
+        <topicref href="helion/swift/allocate_disk_drives.dita" toc="no"/>
+        <topicref href="helion/swift/ring_parameters.dita" toc="no"/>
+      </topicref>
       <topicref href="helion/swift/label_on_partition.dita" toc="no"/>
       <topicref href="helion/swift/filesystem_label.dita" toc="no"/>
       <topicref href="helion/swift/troubleshooting_beta1.dita" toc="no"/>
