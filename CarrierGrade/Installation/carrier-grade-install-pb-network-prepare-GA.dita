@@ -142,24 +142,20 @@ ovs_version: "2.0.2"
 <li>Launch a terminal and log in to your KVM host as root:<p>sudo su -</p></li>
 <li>Create the <codeph>br-clm</codeph> network by creating an XML definition file:<p>a. Manually
                         create the XML
-                        file:</p><codeblock>
-<codeph>cat br-clm.xml
+                        file:</p><codeblock><codeph>cat br-clm.xml
     &lt;network&gt;
         &lt;name&gt;br-clm&lt;/name&gt;
         &lt;forward mode='bridge'/&gt;
         &lt;bridge name='br-clm'/&gt;
         &lt;virtualport type='openvswitch'/&gt;
     &lt;/network&gt;
-</codeph>
-</codeblock><p>b.
+</codeph></codeblock><p>b.
                         Execute the following commands to create and start the network and configure
                         the network to
-                    auto-start:</p><codeblock>
-<codeph>virsh net-define <systemoutput>br-clm.xml</systemoutput>
+                    auto-start:</p><codeblock><codeph>virsh net-define <systemoutput>br-clm.xml</systemoutput>
 virsh net-start br-clm
 virsh net-autostart br-clm
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
 <li>Create the <codeph>br-bls</codeph> network by creating an XML definition file:<p>a. Manually
                         create the XML
                         file:</p><codeblock><codeph>cat br-bls.xml
@@ -244,8 +240,7 @@ ifup &lt;yourinterface&gt;
 
                 <li>Execute the following command to make sure the VLAN ID is as expected.
                         <codeblock>ovs-vsctl show</codeblock><p>The output should appear similar to
-                        the following:</p><codeblock>
-<codeph>Bridge br-clm
+                        the following:</p><codeblock><codeph>Bridge br-clm
     Port "vnet2"
         Interface "vnet2"
     Port "em1.1551"
@@ -276,16 +271,13 @@ Bridge br-bls
         Interface br-bls
             type: internal
 ovs_version: "2.0.2"
-</codeph>
-</codeblock><p>
+</codeph></codeblock><p>
                         <b>Note:</b> If <codeph>ovs-vsctl show</codeph> does not show all the
                         required bridges, bring up the interface where the bridge does not
-                        appear:</p><codeblock>
-<codeph>ifup br-bls
+                        appear:</p><codeblock><codeph>ifup br-bls
 ifup br-dcm
 ifup br-clm
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
 </ol>
 </section>
 <section id="networking-issues-ubuntu-1404"> <title>Networking Issues Ubuntu 14.04</title>
