@@ -204,18 +204,7 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
           <li><xref href="#topic_flx_j2b_ws/deploy-template" format="dita">Deploy Helion Linux Shell
               VM Templates</xref></li>
           <li><xref href="#topic_flx_j2b_ws/deploy-service" format="dita">Preparation for ESX
-              Cloud</xref><ul id="ul_gjh_bcc_2t">
-              <li><xref href="#topic_flx_j2b_ws/modify-the-volume" format="dita">Modify the Volume
-                  Configuration File</xref></li>
-              <li><xref href="#topic_flx_j2b_ws/run-processor" format="dita">Modify the Neutron
-                  Service Configuration File</xref></li>
-              <li><xref href="#topic_flx_j2b_ws/commit-change" format="dita">Commit the Changes and
-                  Prepare your Environment for Deployment</xref></li>
-              <li><xref href="#topic_flx_j2b_ws/run-processor" format="dita">Run the config
-                  processor</xref></li>
-              <li><xref href="#topic_flx_j2b_ws/deploy-cloud" format="dita">Initiate Deploy ESX
-                  Compute Proxy and OVSvApps</xref></li>
-            </ul></li>
+              Cloud</xref></li>
         </ul></p>
     </section>
     <section id="deploy-template"><b>Deploy Helion Linux Shell VM Templates</b><p>The first step in
