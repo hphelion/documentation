@@ -256,11 +256,13 @@
         <topicref href="devplatform/helion/CLI/cf_mgmt_createcluster.dita"
           navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
           <topicref href="devplatform/helion/CLI/cfmgmt_createcluster_microcloud.dita"
-            navtitle="Microcloud Creation Example" locktitle="yes"/>
-          <topicref href="devplatform/helion/CLI/cfmgmt_createcluster_twonode.dita"
-            navtitle="Cluster Creation Example" locktitle="yes"/>
-          <topicref href="devplatform/helion/CLI/cfmgmt_createcluster_large.dita"
-            navtitle="Cluster Expansion Example" locktitle="yes"/>
+            navtitle="Example: Create a Micro Cloud" locktitle="yes"/>
+          <topicref href="devplatform/helion/CLI/cfmgmt_createcluster_starter.dita"
+            navtitle="Example: Create a Starter Cluster" locktitle="yes"/>
+          <topicref href="devplatform/helion/CLI/cfmgmt_growcluster_addDEANode.dita"
+            navtitle="Example: Add a DEA Node" locktitle="yes"/>
+          <topicref href="devplatform/helion/CLI/cfmgmt_growcluster_addservice.dita"
+            navtitle="Add a Service" locktitle="yes"/>
         </topicref>
         <topichead navtitle="ALS Management Console">
           <topicref href="devplatform/helion/admin/console/console_intro.dita"

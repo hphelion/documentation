@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_pcj_mz1_dt">
-  <title><i>cf-mgmt</i> Tool Example 1: Create a Micro Cloud</title>
-  <body>    <simpletable><strow><stentry><xref href="cfmgmt_createcluster_twonode.dita">&lt;- create a cluster example</xref> </stentry><stentry>
-      <xref href="cfmgmt_createcluster_large.dita">grow a cluster example -&gt;</xref></stentry></strow></simpletable>
+  <title><i>cf-mgmt</i> Tool Example: Create a Micro-Cloud</title>
+  <body>    
     <p>In this example, all roles are installed on a single virtual machine. To avoid requiring a
       complete installation, this example runs in the Helion Public Cloud.</p>
-    <p>
-      <note type="tip"> For convenience, copy the code blocks and paste them into a text editor. You
-        can edit them there and then copy and paste back into the <varname>cf-mgmt</varname> tool as
-        necessary. You may also want to refer to the full <i>cf-mgmt </i>tool <xref
-          href="1.2ALS_Client_Reference.dita">command reference documentation</xref>. </note>
-    </p>
-
     <ol id="ol_gtt_nz1_dt">
       <li><xref href="1.2ALS_Client_Downloads.dita#topic843">Download </xref>and install the 
           <varname>cf-mgmt</varname>
@@ -71,9 +63,14 @@ create-cluster ^
       </li>
       <li>Enter the Console URL in your web browser to navigate to the Management Console.<note>You
           may be "warned" that the Console has a self-signed certificate or that the site is "not
-          trusted". These "warnings" can be safely ignored.</note> Log in to the Console using the
+          trusted". These "warnings" can be safely ignored.</note></li><li>You can now log in to the Console using the
           <codeph>admin-email</codeph> and <codeph>admin-password</codeph> values you specified when
         you created the cluster.</li>
     </ol>
   </body>
+  <related-links>
+    <link href="cfmgmt_createcluster_starter.dita" />
+    <link href="cfmgmt_growcluster_addDEANode.dita" />
+    <link href="cfmgmt_growcluster_addservice.dita" />
+  </related-links>
 </topic>
