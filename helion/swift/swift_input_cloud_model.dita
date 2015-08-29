@@ -12,7 +12,7 @@
               >Entry-scale-with-vsa</xref>
           </b>This has a single control plane cluster running all services (Nova, Swift, Glance,
           etc) with an additional 3 resource nodes used as Nova compute servers. </li>
-        <li>
+       <!--  <li>
           <p><b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref>
             </b>- (<b>NOTE : This model is not supported in Beta1)</b>This example model describes a
             system using multiple servers and networks. It provides an example for the configuration
@@ -20,30 +20,26 @@
             cloud model for your actual cloud by configuring the server and network that you plan to
             deploy. To deploy Swift using this model you must make Swift -specific changes to the
             provided example.</p>
-        </li>
+        </li> -->
       </ul>
     </section>
     
     <section id="configuration-of-swift-vsa-model"><title>Entry-scale-with-vsa</title>
-      <p>The entry-scale-with-vsa is relatively simple and constrained so other than checking that
-        the disk drives exist and are correctly assigned, you probably do not need to make any
-        Swift-related changes to this model before using it. You are expected to use the mid-size
-        cloud example model as the basis for building a cloud model for your actual cloud – using
-        the servers and networks you plan to deploy.</p>
-      <p>Before starting the deploy, you must validate, and possibly update the data in the cloud
-        model files as follows:<ul id="ul_nvy_rz3_2t">
+      <p>The <codeph>entry-scale-with-vsa</codeph> is relatively simple and constrained. You can
+        ensure that the disk drives exists and are correctly assigned to swift nodes. Hence, you
+        need not modify this model for any Swift-related changes before implementing it.
+        <!--You are expected to use the mid-size cloud example model as the basis for building a cloud model for your actual cloud – using the servers and networks you plan to deploy.--></p>
+      <p>Before starting the deployment, you must validate, and possibly update the data in the
+        cloud model files as follows:<ul id="ul_nvy_rz3_2t">
           <li>Examine the <codeph>data/disks_controller.yml</codeph> file and validate that the
             drives exist and have the appropriate preconditions as described in <xref
               href="allocate_disk_drives.dita#topic_twv_b55_dt/requirement-disk-device">Requirements
-              for a disk device</xref></li>
+              for a disk device</xref>.</li>
           <li> If you plan to add more Swift storage nodes or drives, you should read the
             information about partition power in <xref href="ring_parameters.dita#topic_efw_k55_dt"
               >Specifying the rings (ring specifications)</xref>. However, in most cases you do not
             need to change the <codeph>config/swift/rings.yml</codeph> file.</li>
-        </ul></p>
-  <p>The Swift-proxy, Account, Container and Object services run on the same Proxy, Container, Account, Object (PACO) node
-      type in the control plane. This is used for smaller clouds or where Swift is a minor element
-      in a larger cloud.</p></section>
+        </ul></p></section>
     <section><title>Node Type</title><b>Proxy, Container, Account, Object (PACO) Node</b>: The
       Swift-proxy, Account, Container and Object services run on the same (PACO) node type in the
       control plane. All other control services also run on this node type.
@@ -73,15 +69,19 @@
         model as the basis for building a cloud model for your actual cloud – using the servers and
         networks you plan to deploy. This document describes the Swift-specific changes you need to
         make to the provided example. </p>
-      <p>Before starting the deploy, you must validate, and possibly update the data in the cloud
-        model files as follows:</p>
+      <p>Before starting the deployment, you must validate, and possibly update the data in the
+        cloud model files as follows:</p>
       <p>
         <ul id="ul_i1s_rbj_2t">
-          <li>You need to assign servers for use by Swift. See Allocating Servers for use by
-            Swift</li>
-          <li>These servers have disk drives. See Allocating disk drives for use by Swift</li>
-          <li>You need to specify the rings for your system. See Specifying the rings (ring
-            specifications)</li>
+          <li>You need to assign servers for use by Swift. See<xref
+              href="allocating_server.dita#topic_tq1_xt5_dt"> Allocating Servers for use by
+              Swift</xref></li>
+          <li>These servers have disk drives. See <xref
+              href="allocate_disk_drives.dita#topic_twv_b55_dt">Allocating disk drives for use by
+              Swift</xref></li>
+          <li>You need to specify the rings for your system. See <xref
+              href="ring_parameters.dita#topic_efw_k55_dt">Specifying the rings (ring
+              specifications)</xref></li>
         </ul>
       </p>
     </section>
