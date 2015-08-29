@@ -61,28 +61,42 @@
             - container</codeblock></p>
     <p>In the above example, Swift uses <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> disk
       drives and operating system uses <codeph>/dev/sda</codeph> disk drives.</p>
-    <p>The disk model has the following fields:</p>
-    <ul id="ul_xpy_255_dt">
-      <li><b>device-groups</b>: There can be several device groups. This allows different sets of
-        disks to be used for different purposes. In this example, there is only one entry in the
-        device groups list.</li>
-      <li><b>name</b>: This is an arbitrary name for the device group. The name must be unique, but
-        is not otherwise used.</li>
-      <li><b>devices</b>: This is a list of devices allocated to the device group. For Swift, these
-        devices must meet the criteria as explained in <xref
-          href="#topic_twv_b55_dt/requirement-disk-device" format="dita">Requirements for a disk
-          device</xref>.</li>
-      <li><b>consumer</b>: This specifies the service that uses the device group. A
-          <codeph>name</codeph> field containing <b>swift</b> indicates that the device group is
-        used by Swift. If the name field contains other values, the Swift system will ignore the
-        device group.</li>
-      <li><b>attrs.rings</b>: This lists the rings that the devices are allocated to. In this
-        example, the disk model is used by Proxy, Account, Container nodes, so the <b>account</b>
-        and <b>container</b> rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model,
-          <codeph>object-0</codeph> ring is listed. It would be an error to add the
-          <codeph>object-0</codeph> ring to the <codeph>DISK_SET_SWPAC</codeph> disk model because
-        the Swift-object service does not run on PAC node.</li>
-    </ul>
+    <p>The disk model has the following fields: </p>
+    <simpletable id="simpletable_qyp_lnj_2t">
+      <strow>
+        <stentry><b>device-groups</b></stentry>
+        <stentry>There can be several device groups. This allows different sets of disks to be used
+          for different purposes. In this example, there is only one entry in the device groups
+          list.</stentry>
+      </strow>
+      <strow>
+        <stentry><b>name</b></stentry>
+        <stentry>This is an arbitrary name for the device group. The name must be unique, but is not
+          otherwise used.</stentry>
+      </strow>
+      <strow>
+        <stentry><b>devices</b></stentry>
+        <stentry>This is a list of devices allocated to the device group. For Swift, these devices
+          must meet the criteria as explained in <xref
+            href="#topic_twv_b55_dt/requirement-disk-device" format="dita">Requirements for a disk
+            device</xref>.</stentry>
+      </strow>
+      <strow>
+        <stentry><b>consumer</b></stentry>
+        <stentry>This specifies the service that uses the device group. A <codeph>name</codeph>
+          field containing <b>swift</b> indicates that the device group is used by Swift. If the
+          name field contains other values, the Swift system will ignore the device group.</stentry>
+      </strow>
+      <strow>
+        <stentry><b>attrs.rings</b></stentry>
+        <stentry>This lists the rings that the devices are allocated to. In this example, the disk
+          model is used by Proxy, Account, Container nodes, so the <b>account</b> and
+            <b>container</b> rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model,
+            <codeph>object-0</codeph> ring is listed. It would be an error to add the
+            <codeph>object-0</codeph> ring to the <codeph>DISK_SET_SWPAC</codeph> disk model because
+          the Swift-object service does not run on PAC node.</stentry>
+      </strow>
+    </simpletable>
     <p>You should review the disk devices in the disk model before making any changes to the
       existing model. See <xref href="#topic_twv_b55_dt/making-changes-to-swift" format="dita"
         >Making Changes to a Swift Disk Model</xref>. </p>

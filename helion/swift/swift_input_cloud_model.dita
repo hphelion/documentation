@@ -51,16 +51,16 @@
           <strow><stentry><codeph>data/control_plane.yml</codeph></stentry><stentry>This<b> ROLE-CONTROLLER</b> node type runs on the <b>c1</b> cluster as specified in this
             file.</stentry></strow>
           <strow><stentry><codeph>data/disk_controller.yml</codeph></stentry><stentry>The controller node type allocates two disk drives for use by Swift. </stentry></strow>
-          <strow><stentry><codeph>config/swift/rings.yml</codeph></stentry><stentry>Swift account, container, and object storage
-            are managed by Swift using a data structure known as a <i>ring</i>. This
-            <codeph>yml</codeph> file provides the specification of the rings. For more
-            information on ring specification, refer to<xref
+          <strow><stentry><codeph>config/swift/rings.yml</codeph></stentry><stentry>Swift account, container, and object storage are managed by Swift using a data structure
+            known as a <i>ring</i>. This <codeph>yml</codeph> file provides the specification of the
+            rings. For more information on ring specification, refer to <xref
               href="ring_parameters.dita#topic_efw_k55_dt"> ring specification</xref>.</stentry></strow>
           <strow><stentry><codeph>data/network_groups.yml</codeph></stentry><stentry>This <codeph>yml</codeph> file specifies the MGMT and Swift networks. The Swift-proxy
             service uses the Swift network to communicate with the other Swift services and among
             themselves.</stentry></strow>
         </simpletable>
     </section>
+
     <section id="mid-size">
       <title>Mid Size Cloud Model</title>
       <p><!--This section describes configuration of Swift services in the mid size cloud model.--></p>

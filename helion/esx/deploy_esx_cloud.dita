@@ -417,7 +417,7 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
       </p></section>
     <section><b>Activate Clusters</b><p>When you execute the active cluster command, the
           <codeph>server.yml</codeph> of the input model is updated with IP Addresses of compute
-        proxy and OVSvApp
+        proxy and OVSvApp.
       <!--VMs correspesponding to the clusters are being activated.--></p></section>
     <section>
       <p>
@@ -446,7 +446,7 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
     </section>
     <section id="modify-volume-config"><b>Modify the Volume Configuration File</b></section>
     <p>Once the cluster is activated you must configure the volume.</p>
-    <p>Perfrom the following steps to modify the volume configuration files:</p>
+    <p>Perform the following steps to modify the volume configuration files:</p>
     <p>
       <ol>
         <li>Execute the following
