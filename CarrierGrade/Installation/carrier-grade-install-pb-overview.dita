@@ -2,9 +2,9 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic1925">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation Guide</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation Guide</title>
   <titlealts>
-    <searchtitle>HP Helion Openstack Carrier Grade 1.1: Installation Overivew</searchtitle>
+    <searchtitle>HP Helion Openstack Carrier Grade 2.0: Installation Overivew</searchtitle>
   </titlealts>
   <prolog>
     <metadata>

@@ -146,7 +146,7 @@ hp3par_snapshot_expiration=72</codeblock>
 
         <section><title>Cinder Volume Backup is not working upon cloud deployment</title>
             <!-- CG-410 -->
-            <p>Cinder Volume Backup is not working upon installation of HP Helion OpenStack Carrier Grade 1.1 
+            <p>Cinder Volume Backup is not working upon installation of HP Helion OpenStack Carrier Grade 2.0 
                 The  <codeph>cinder.backup.driver</codeph> file is not present in /etc/cinder/cinder.conf.</p>
        </section>
         

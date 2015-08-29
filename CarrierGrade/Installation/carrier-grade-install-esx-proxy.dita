@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the ESX<tm
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the ESX<tm
       tmtype="reg"/> Compute Proxy</title>
 <prolog>
   <metadata>
@@ -45,7 +45,7 @@
             <li>Click <b>Sign In</b> to log in using your account. </li>
             <li>After signing in, click the <b>Downloads</b> link in the menu on the left side of
               the page.</li>
-            <li>On the <b>Downloads</b> page, locate <b>Helion Carrier Grade 1.1.0</b> and click
+            <li>On the <b>Downloads</b> page, locate <b>Helion Carrier Grade 2.0.0</b> and click
                 <b>Download</b>.</li>
           </ul></li>
         <li>Download the Checksum and Signature files. Refer to the Prerequisites for information on

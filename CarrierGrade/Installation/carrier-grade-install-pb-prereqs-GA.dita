@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148">
-        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation
                 Prerequisites</title>
         <titlealts>
                 <searchtitle>HP Helion Openstack Installation Prerequisites</searchtitle>
@@ -272,10 +272,10 @@ StrictHostKeyChecking no </codeblock></li>
                                                   <b>Download</b>.</li>
                                         </ul></li>
                                 <li>Download the following files: <ul>
-                                                <li><b>Helion Carrier Grade 1.1.0</b>. The file is
+                                                <li><b>Helion Carrier Grade 2.0.0</b>. The file is
                                                   named <codeph>hcg_1.1.0.tar</codeph>. Also
-                                                  download the <b>Helion Carrier Grade 1.1.0
-                                                  Checksum</b> and <b>Helion Carrier Grade 1.1.0
+                                                  download the <b>Helion Carrier Grade 2.0.0
+                                                  Checksum</b> and <b>Helion Carrier Grade 2.0.0
                                                   Signature</b> files.</li>
                                                 <li><b>Horizon Patch Tar File for Helion Carrier
                                                   Grade</b>. The file is named
@@ -286,9 +286,9 @@ StrictHostKeyChecking no </codeblock></li>
                                                   Signature</b> files.</li>
                                                 <li><b id="productShow_appName">Helion Carrier Grade
                                                   1.1.0 Windriver License patch signature file</b>
-                                                  and the <b>Helion Carrier Grade 1.1.0 Windriver
+                                                  and the <b>Helion Carrier Grade 2.0.0 Windriver
                                                   License patch</b> signature file signature and
-                                                  <b>Helion Carrier Grade 1.1.0 Windriver License
+                                                  <b>Helion Carrier Grade 2.0.0 Windriver License
                                                   patch</b> signature file checksum files.</li>
                                                 <li>LDAP patch. Download the
                                                   <codeph>ldap_patch_1.1.tar.gz and

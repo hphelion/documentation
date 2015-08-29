@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4032">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Managing Hosts on an Active System</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing Hosts on an Active System</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -60,7 +60,7 @@ You can change the resource pool in several ways:
 Caution:
 When replacing or adjusting a host, ensure that the overall resource pool still meets the requirements for your
 system.
-HP Helion OpenStack Carrier Grade 1.1 Administration Guide | Managing Hardware Resources | 99
+HP Helion OpenStack Carrier Grade 2.0 Administration Guide | Managing Hardware Resources | 99
 Complete instructions for adding a compute node are provided in the HP Helion OpenStack Carrier Grade Software
 Installation Guide: Initializing and Configuring Compute Nodes.
 Removing Compute Nodes

@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring Multi-backend
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Configuring Multi-backend
     Storage Support</title>
   <prolog>
     <metadata>
@@ -15,7 +15,7 @@
     </metadata>
   </prolog>
   <body>
-    <p>During the installation of HP Helion OpenStack Carrier Grade 1.1, you configured a
+    <p>During the installation of HP Helion OpenStack Carrier Grade 2.0, you configured a
       combination of storage types: VMDK, 3PAR, and/or VSA.</p>
     <p>You can now use the Horizon dashbaord to create volume types, which are required for
       launching virtual machine instances. </p>
