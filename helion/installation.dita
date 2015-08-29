@@ -148,7 +148,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
         <li>The script will wait for the nodes to install and come back up.</li>
       </ol>
     </section>
-    <section><title>Run the Configuration Processor</title>
+    <section id="run-config-processor"><title>Run the Configuration Processor</title>
       <ol>
         <li>Run the configuration processor, as follows:
           <codeblock>cd ~/helion/hos/ansible
