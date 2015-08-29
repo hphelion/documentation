@@ -105,8 +105,8 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
               </tbody>
             </tgroup>
           </table><p>To see a sample <codeph>node-provision.json</codeph> file, see<xref
-              href="carrier-grade-install-pb-hlm-vm-json.dita#topic4797">Sample JSON File for the
-              HLM Virtual Machine Installation</xref>.</p></li>
+            href="carrier-grade-install-pb-kvm-only-json.dita">Sample JSON File for the
+              HLM Virtual Machine Installation</xref>. </p></li>
         <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network
           addresses as appropriate for your environment. Set the following for the CLM, CAN, and BLS
           network:<codeblock>"cidr": 
@@ -424,28 +424,31 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
       </ol></section>
     <section id="patches">
       <title>Apply the Rabbit MQ Random Password patch</title>
-      <p>For information, see <xref href="carrier-grade-install-rabbitmq-patch.dita#topic10581"
-        >Applying the Random RabbitMQ Password Patch</xref>.</p>
+      <p>For information, see the README in the download or  <xref
+          href="carrier-grade-install-rabbitmq-patch.dita#topic10581">Applying the Random RabbitMQ
+          Password Patch</xref>.</p>
     </section>
     
     <section><title>Apply the Reverse Path Filter Patch</title>After deploying the HP OpenStack
       cloud, you might not be able to access the Horizon interface and the OpenStack services cannot
       be accessed over the CAN network. <p>To prevent this problem, install a patch to configure the
-        kernel to set the reverse path filter (<codeph>rp_filter</codeph>)  to 1 in the
-        <codeph>all</codeph> and <codeph>default</codeph> configuration files. </p><p>For more
-          information, see <xref href="carrier-grade-install-rp-filter.dita#topic10581"
-            >Applying the Reverse Path Filter Patch</xref>.</p></section>
+        kernel to set the reverse path filter (<codeph>rp_filter</codeph>) to 1 in the
+          <codeph>all</codeph> and <codeph>default</codeph> configuration files. </p><p>For more
+        information, see the README in the download or  <xref
+          href="carrier-grade-install-rp-filter.dita#topic10581">Applying the Reverse Path Filter
+          Patch</xref>.</p></section>
     
     <section><title>Apply the Helion Dynamic Password Patch</title>The HP Helion OpenStack cloud
-      deployment creates a default password to log into the Helion interface.  You can deploy a
-      patch to configure the installer to generate a dynamic user name and password for the Helion
+      deployment creates a default password to log into the Helion interface. You can deploy a patch
+      to configure the installer to generate a dynamic user name and password for the Helion
       interface. The user name can password can be retrieved from a configuration files. <p>For more
-        information, see <xref href="carrier-grade-install-helion-password-patch.dita#topic10581"
-          >Applying the Helion Dynamic Password Patch</xref>.</p></section>
+        information, see the README in the download or  <xref
+          href="carrier-grade-install-helion-password-patch.dita#topic10581">Applying the Helion
+          Dynamic Password Patch</xref>.</p></section>
     
-    <section><title>Apply the NIC bonding patch</title><p>HP Helion OpenStack Carrier Grade environments using NIC bonding, see <xref
-      href="carrier-grade-install-nic-patch.dita#topic10581">Applying the NIC Bonding
-      Patch</xref> to install a required patch.</p></section>
+    <section><title>Apply the NIC bonding patch</title><p>HP Helion OpenStack Carrier Grade environments using NIC bonding, see the README in the download
+        or <xref href="carrier-grade-install-nic-patch.dita#topic10581">Applying the NIC Bonding
+          Patch</xref> to install a required patch.</p></section>
     
     <section><title>Deploy the HP Helion OpenStack cloud</title>
       <ol>
@@ -479,30 +482,18 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
     <section><title>Applying the HLM Port Security Patch</title>This patch secures all ports on the
       HLM VM. The standard protocol ports will allow inbound access only and the only the cloud
       nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see
-        <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port
-          Security Patch</xref>.</p></section>
-<!--    <section>        
-      <title>  Apply the Horizon interface patch:</title> 
-      <ol><li>Locate the <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file you downloaded to the HLM host and
-        extract the files.</li>
-        <li>From the HLM VM, SSH into any controller node using the default credentials: <p>
-          <codeblock>User Name: cghelion
-            Password: cghelion</codeblock>
-        </p></li>
-        <li>Execute the following command to switch to the root
-          user:<codeblock>sudo su -</codeblock></li> 
-        <li>Copy the <codeph>user.py</codeph> file to first controller node in the
-          <codeph>/opt/stack/venvs/horizon/lib/python2.7/site-packages/openstack_auth/</codeph>
-          directory.</li>
-        <li>Use the following command to restart the Horizon service on that node:
-          <codeblock>sudo service apache2 restart</codeblock></li>
-        <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
-        <li>Log into each of the other two controller nodes in the non-KVM region and repeat
-          above steps to copy the <codeph>user.py</codeph> to each controller .</li> 
-      </ol>
+        the README in the download or <xref
+          href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port
+          Security Patch</xref>.</p></section>    
+    <section>
+      <title>Disable the Root User</title>
+      <p>For security purposes, we strongly recommend disabling root. After the
+        <codeph>root</codeph> user is disabled, you can use another default user account,
+        <codeph>cghelion</codeph> to access the HLM VM and any actions that require root access
+        should be done using <codeph>sudo</codeph>.</p>
+      <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581"
+        >Disabling the Root User</xref>.</p>
     </section>
--->    
-    
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>

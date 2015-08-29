@@ -52,7 +52,28 @@ Password: cghelion</codeblock>
           href="https://wiki.openstack.org/wiki/Horizon/BrowserSupport" format="html"
           scope="external">https://wiki.openstack.org/wiki/Horizon/BrowserSupport</xref>.</p>
       <p>Also, clear the cache from the browser.</p>
+      <p/>
     </section>
+    <section><title>Disabling the root user</title>
+      <p>For security purposes, we strongly recommend disabling root. After the <codeph>root</codeph>
+        user is disabled, you can use another default user account, <codeph>cghelion</codeph> to
+        access the HLM VM and any actions that require root access should be done using
+        <codeph>sudo</codeph>.</p>
+      <p>Execute the following command to run a script that disables the <codeph>root</codeph> user. </p>
+      <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock>
+      <p>This command will disable the <codeph>root</codeph> user and performs the following tasks:</p>
+      <ul>
+        <li>removes password for root from the /etc/shadow file</li>
+        <li>removes any and all keys in /root/.ssh/authorized_keys file</li>
+        <li>changes PermitRootLogin in /etc/ssh/sshd_config file from "yes" back to default of
+          "without-password"</li>
+        <li>restarts the ssh service so the above config change takes effect immediately</li>
+      </ul>
+      <p>Once this command complete, the <codeph>cghelion</codeph> user should be used .</p>
+      
+    </section>
+    
+    
     <section>
       <title>Login to Horizon</title>
       <p>At this point, you can log into the Horizon interface, a web-interface you can use to
