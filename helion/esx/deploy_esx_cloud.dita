@@ -363,8 +363,8 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
     "new_host_mo_ids": ""
 }
 </codeblock></p></li>
-          <li>Fill in the details of the
-              template<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
+          <li>Modify the template (json file) as per your
+              environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
               example:<codeblock>vi net_conf.json</codeblock></p></li>
           <li>Use the template to register Cloud Network Configuration. This sets the network
             information for a vCenter which is used to deploy and configure compute proxy and
@@ -384,9 +384,8 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
 +------------+----------+------------+---------------+</codeblock></li>
         </ol>
       </p><p><b>Import Cluster</b>
-      </p><p>Using Import Clusters one or more “ESX Clusters” can be prep’d for using it with ESX
-        Cloud Deployment. When a Import Cluster is invoked, required ESX Compute Proxy and OVSvApp
-        nodes are deployed.</p><p>
+      </p><p>You can use one or more ESX clusters for ESX Cloud Deployment. When a Import Cluster is
+        invoked, required ESX Compute Proxy and OVSvApp nodes are deployed.</p><p>
         <ol id="ol_lyt_cfc_2t">
           <li> Import the cluster for the EON database under the given vCenter. <codeblock><codeph>eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock>where:<p>
               <ul id="ul_ttl_ncc_2t">
@@ -416,9 +415,10 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
               time.</p></li>
         </ol>
       </p></section>
-    <section><b>Activate Clusters</b><p>Using Activate Cluster Cloud Input model's server.yml is
-        updated with IP Addresses of compute proxy and OVSvApp VMs correspesponding to the clusters
-        being activated.</p></section>
+    <section><b>Activate Clusters</b><p>When you execute the active cluster command, the
+          <codeph>server.yml</codeph> of the input model is updated with IP Addresses of compute
+        proxy and OVSvApp
+      <!--VMs correspesponding to the clusters are being activated.--></p></section>
     <section>
       <p>
         <ol id="ol_nsc_tb3_2t">

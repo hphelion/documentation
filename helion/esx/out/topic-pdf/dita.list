@@ -1,9 +1,9 @@
-#Tue Aug 25 13:50:51 IST 2015
+#Sat Aug 29 15:48:24 IST 2015
 relflagimagelist=
 user.input.dir=C\:\\Users\\sharmabi\\git\\documentation\\helion
 copytotarget2sourcemaplist=
 uplevels=..\\
-user.input.file=esx\\esx_installation.dita
+user.input.file=esx\\deploy_esx_cloud.dita
 user.input.file.listfile=usr.input.file.list
 tempdirToinputmapdir.relative.value=esx[\\\\|/]
 relflagimagefile=relflagimage.list
