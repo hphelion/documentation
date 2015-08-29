@@ -202,12 +202,12 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
       <p>The following sections describe the procedure to install and configure ESX compute and
         OVSvAPP on vCenter.<ul id="ul_jqm_zjx_ct">
           <li><xref href="#topic_flx_j2b_ws/deploy-template" format="dita">Deploy Helion Linux Shell
-              VM Templates</xref></li>
-          <li><xref href="#topic_flx_j2b_ws/deploy-service" format="dita">Preparation for ESX
-              Cloud</xref></li>
+              VM Template</xref></li>
+          <li><xref href="#topic_flx_j2b_ws/deploy-service" format="dita">Preparation for ESX Cloud
+              Deployment</xref></li>
         </ul></p>
     </section>
-    <section id="deploy-template"><b>Deploy Helion Linux Shell VM Templates</b><p>The first step in
+    <section id="deploy-template"><b>Deploy Helion Linux Shell VM Template</b><p>The first step in
         deploying the ESX compute proxy and OVSvApps is to create a VM template that will make it
         easier to deploy the ESX compute proxy for each Cluster and OVSvApps on each ESX
       server.</p></section>
@@ -218,8 +218,8 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
       <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
         install. Refer to the VMWare vSphere documentation as needed. </li>
     </ol>
-    <section id="deploy-service"><b>Preparation for ESX Cloud</b><p>This section descibes the
-        procedures to prepare the ESX cloud for deployment. </p><p>
+    <section id="deploy-service"><b>Preparation for ESX Cloud Deployment</b><p>This section descibes
+        the procedures to prepare the ESX cloud for deployment. </p><p>
         <note> Source <codeph>service.osrc</codeph> before you perform the following
           procedure.</note>
       </p><p><b>Register a vCenter Server</b></p><p>vCenter provides centralized management of
