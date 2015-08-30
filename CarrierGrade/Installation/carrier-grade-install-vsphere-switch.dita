@@ -26,21 +26,20 @@
       <p>Before starting, make sure your VSD server is up and running.</p>
       <p> To install the VDS:</p>
       <ol id="ol_z24_nvy_zs">
+        <li>Log into your VSD server.</li>
         <li>Copy the downloaded and extracted <codeph>CloudMgmt-vmware.tar.gz</codeph> file from HLM
           host to VSD node in the <codeph>/opt/vsd</codeph> directory. For more information on
           downloading DCN files, see <xref
             href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/download-esx">Download packages
             for KVM + ESX</xref>.</li>
-        <li>Log into your VSD server</li>
         <li>Extract the contents of the <codeph>CloudMgmt-vmware.tar.gz</codeph> file into the
             <codeph>/opt/vsd/ </codeph>directory. </li>
         <li>Change to the directory created by extracting the
-          files:<codeblock>cd /opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeblock></li>
-        <li>Change the permissions on that
-          directory:<codeblock>Chmod -R 777 /opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeblock></li>
+          files:<codeblock>cd /opt/vsd/CloudMgmt-vmware-working/</codeblock></li>
+        <!--<li>Change the permissions on that directory:<codeblock>Chmod -R 777 /opt/vsdCloudMgmt-vmware-working/</codeblock></li>-->
         <li>Execute the following command, using appropriate values for the vCenter IP address, the
           vCenter user and password, and the ESX cluster name. The other values are
-          static.<codeblock>./cli.bash create_dvswitch --add-hosts true --num-portgroups 1 --provider-vdc-id 1 --url https://&lt;vcenter-ip> /sdk -u &lt;vcenter user&gt; -p &lt;vcenter password&gt; -r  &lt;cluster name&gt;</codeblock></li>
+          static.<codeblock>./cli.bash create_dvswitch --add-hosts true --num-portgroups 1 --provider-vdc-id 1 --url https://&lt;vcenter ip&gt;/sdk -u &lt;vcenter user&gt; -p &lt;vcenter password&gt; -r  &lt;cluster-name&gt;</codeblock></li>
       
       <li>After the command completes successfully, launch the vCenter client and navigate to the
           <b>Network Inventory</b> page, as shown: 

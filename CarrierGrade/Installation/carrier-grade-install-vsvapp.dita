@@ -36,31 +36,31 @@
     <section>
       <p> To install the VRSvApp:</p>
       <ol id="ol_hf4_nvy_zs">
-        <li>Copy the downloaded <codeph>DCN-VRS-VMware-3.0R7.zip</codeph> file from HLM host to VSD
-          node in the <codeph>/opt/vsd</codeph> directory. For more information on downloading DCN
-          files, see <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/download-esx"
-            >Download packages for KVM + ESX</xref>.</li>
+        <li>Copy the downloaded <codeph>VRS_3.2.2-74.ovf</codeph> and
+            <codeph>VRS_3.2.2-74-disk1.vmdk</codeph>  files from HLM host to VSD node in the
+            <codeph>/opt/vsd</codeph> directory. For more information on downloading DCN files, see
+            <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/download-esx">Download
+            packages for KVM + ESX</xref>.</li>
         <li>Extract <codeph>DCN-VRS-VMware-3.0R7.zip</codeph> file to the
             <codeph>/opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeph> directory. </li>
         <li>Change to the directory where you extracted the files, for
             example:<codeblock>cd /opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeblock><p>The
               <codeph>vrs-metafile.config</codeph> file is in the extracted files. </p></li>
         <li>Modify the <codeph>vrs-metafile.config</codeph> using values appropriate for your
-          environment. An example has been provided below.<p><b>Important:</b> The values in this
-            files are case sensitive and errors will cause the installation to stop.</p></li>
+          environment. See the <xref href="#topic10581/example" format="dita">example config
+            file</xref>.<p><b>Important:</b> The values in this files are case sensitive and errors
+            will cause the installation to stop.</p></li>
         <li>Run the command to deploy the template using the example below after making changes to
           file paths to match your environment, vCenter username, vCenter password and vCenter IP
           address:
-            <codeblock>./cli.bash deploy_vrs -f /opt/vsd/CloudMgmt-vmware/&lt;VRS-Template.ovf> -m /opt/vsd/CloudMgmt-vmware/vrs-metafile.config -p &lt;vcenter password> -u &lt;vcenter user> --url https://&lt;vecenter IP>/sdk</codeblock><p>Where:</p><codeblock>usage: 
+            <codeblock>./cli.bash deploy_vrs -f /opt/vsd/CloudMgmt-vmware/&lt;VRS-Template.ovf&gt; -m /opt/vsd/CloudMgmt-vmware/vrs-metafile.config -p &lt;vcenter password&gt; -u &lt;vcenter user&gt; --url https://&lt;vecenter IP&gt;/sdk</codeblock><p>Where:</p><codeblock>usage: 
 -f,--path &lt;PATH>                   VRS template path.
 -m,--metafile &lt;FILE>               Meta file defining VRS property values.
 -p,--password &lt;PASSWORD>           vCenter password.
 -r,--resourcepool &lt;RESOURCEPOOL>   Resource pool name or moref. (Optional)
 -u,--username &lt;USRNAME>            vCenter user name.
---url &lt;URL>                     vCenter url (example: https://localhost/sdk)          </codeblock>
-          <p> </p>
-          <p><b>Syntax Help</b></p>
-          <codeblock>usage: deploy_vrs [-d &lt;DATASTORE&gt;] -f &lt;PATH&gt; -m &lt;FILE&gt; -p &lt;PASSWORD&gt; [-r &lt;RESOURCEPOOL&gt;] –u &lt;USRNAME&gt; --url &lt;URL&gt;
+--url &lt;URL>                     vCenter url (example: https://localhost/sdk)          </codeblock><p><b>Syntax
+              Help</b></p><codeblock>usage: deploy_vrs [-d &lt;DATASTORE&gt;] -f &lt;PATH&gt; -m &lt;FILE&gt; -p &lt;PASSWORD&gt; [-r &lt;RESOURCEPOOL&gt;] –u &lt;USRNAME&gt; --url &lt;URL&gt;
 -d,--datastore &lt;DATASTORE&gt; Datastore name or moref. (Optional)
 -f,--path &lt;PATH&gt; VRS template path.
 -m,--metafile &lt;FILE&gt; Meta file defining VRS property values.
@@ -72,69 +72,72 @@
             each ESX host.</p></li>
       </ol>
           
-          <p><b>Example <codeph>vrs-metafile.config</codeph> file</b></p>
+          <p id="example"><b>Example <codeph>vrs-metafile.config</codeph> file</b></p>
       <p>The following is a sample <codeph>vrs-metafile.config</codeph> that you can use to create a
         file on your local system. Note that the IP addresses have been masked for security
         purposes. You must use proper IP addresses in your file.</p>
-      <codeblock>      {
-          "servers":{
-            "vcenter":{
-              "ip":"10.x.x.x",
-              "user":"root",
-              "password":"vmware"
-            },
-            "hypervisor1":{
-              "ip":"10.x.x.x",
-              "user":"root",
-              "password":"vmware"
-            }
-          },
-          "subnets":{
-            "mgmtSubnet1":{
-              "ip":"10.x.x.x",
-              "netmask":"255.255.255.0",
-              "gateway":"10.x.x.x"
-              },
-              "dataSubNet1":{
-                "ip":"192.x.x.x",
-                "netmask":"255.255.255.0",
-                "gateway":"192.x.x.x"
-              }
-            },
-            "ipMappings":{
-              "controller":"192.x.x.x",
-                "dns1":"10..x.x.x",
-                "dns2":"16..x.x.x",
-                "ntpServer":"10.x.x.x"
-            },
-            "properties":[
-              {
-                "vcenter_":"vcenter",
-                "hypervisor_":"hypervisor1",
-                "primaryController_":"controller",
-                "secondaryController_":"controller",
-                "powerOn": "false",
-                "allowMgmtDhcp": "false",
-                "mgmtDns1_":"dns1",
-                "mgmtDns2_":"dns2",
-                "mgmtNetwork_":"mgmtSubnet1",
-                "separateDataNetwork":"true",
-                "allowDataDhcp":"false",
-                "dataNetwork_":"dataSubNet1",
-                "dataDns1_":"dns1",
-                "dataDns2_":"dns2",
-                "dataNetworkPortgroup":"DVRS Datapath",
-                "mgmtNetworkPortgroup":"Cloud Lab Management",
-                "vmNetworkPortgroup":"dvPortGroup",
-                "ntpServer1_":"ntpServer",
-                "ntpServer2_":"ntpServer",
-                "multicastSourcePortgroup":"DVRS Datapath",
-                "requireNuageMetadata":"false",
-                "personality":"VRS"
-            }
-          ]
+      <codeblock>  {
+    "servers":{
+        "vcenter":{
+            "ip":"10.x.x.x",
+            "user":"root",
+            "password":"xxxx"
+        },
+        "hypervisor1":{
+            "ip":"10.x.x.x",
+            "user":"root",
+            "password":"xxxx"
         }
-        </codeblock>
+    },
+    "subnets":{
+        "mgmtSubnet1":{
+            "ip":"192.168.1.168",
+            "netmask":"255.255.255.0",
+            "gateway":"192.168.1.1"
+        },
+        "dataSubNet1":{
+            "ip":"192.168.10.1",
+            "netmask":"255.255.255.0",
+            "gateway":"192.168.10.1"
+        }
+    },
+    "ipMappings":{
+        "controller":"192.168.1.123",
+        "dns1":"192.168.1.123",
+        "dns2":"192.168.1.123",
+        "ntpServer":"192.168.1.123"
+        
+    },
+    "properties":[
+        {
+            "vcenter_":"vcenter",
+            "hypervisor_":"hypervisor1",
+            "primaryController_":"controller",
+            "secondaryController_":"controller",
+            "powerOn": "false",
+            "allowMgmtDhcp": "false",
+            "mgmtDns1_":"dns1",
+            "mgmtDns2_":"dns2",
+            "mgmtNetwork_":"mgmtSubnet1",
+            "separateDataNetwork":"true",
+            "allowDataDhcp":"false",
+            "dataNetwork_":"dataSubNet1",
+            "dataDns1_":"dns1",
+            "dataDns2_":"dns2",
+            "dataNetworkPortgroup":"DVRS Datapath",
+            "mgmtNetworkPortgroup":"Cloud Lab Management",
+            "vmNetworkPortgroup":"dvPortGroup",
+            "ntpServer1_":"ntpServer",
+            "ntpServer2_":"ntpServer",
+            "staticRoute":"0.0.0.0",
+            "staticRouteGateway":"0.0.0.0",
+            "requireNuageMetadata":"false",
+            "multiVMSupport":"false",
+            "mtu":"1500",
+            "personality":"VRS"
+        }
+    ]
+} </codeblock>
       <p><b>Notes and definitions regarding VRSvApp</b></p>
       <ul id="ul_if4_nvy_zs">
         <li>vCenter=vcenter Ip address</li>

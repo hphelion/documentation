@@ -28,37 +28,62 @@
           environment. For information on each variable, refer to the comments in the file with each
           variable. <p>The <codeph>group_vars/all</codeph> file should appear similar to the
             following for a KVM + ESX
-          deployment:</p><codeblock>
-    ############################################# Variables for HLM  #################################################################
-    #These variables are relevant in both All Virtual and BareMetal scenarios.
-    
-    #Set this to 1 if you will not deploy a dcn cloud via this HLM node and will deploy only ovs cloud
-    ovs_cloud_only:  0
-    
-    #Set this to 'bm' if cloud is being deployed over baremetal.
-    #Set this to 'av' if the cloud is all virtual
-    cloud_type: 'bm'
-    
-    #These are hlm related variables that must be changed according to your Baremetal Env
-    hlm_login_id:       root
-    hlm_password:       cghelion
-    
-    #The following variables are for CLM network IP details for HLM
-    hlm_clmstaticip:    10.20.x.x
-    hlm_clmnetmask:     255.255.255.0
-    hlm_clmgateway:     10.20.x.x
-    
-    #The variables starting with cobbler_ are inputs that are usually given to initcobbler.sh. Set accordingly.
-    cobbler_pxestartip: 10.20.x.x
-    cobbler_pxeendip:   10.20.x.x
-    cobbler_pxestaticip: 10.20.x.x
-    cobbler_pxenetmask: 255.255.255.0
-    
-    #Set the location of your images that will be used by libvirt
-    imagelocation: /var/lib/libvirt/images
-    
-    #Set the location of your infra-ansible-playbooks
-    ansible_dir: ~/infra-ansible-playbooks</codeblock></li>
+          deployment:</p><codeblock>############################################# Variables for HLM  #################################################################
+#These variables are relevant in both All Virtual and BareMetal scenarios.
+              
+#Set this to 1 if you will not deploy a dcn cloud via this HLM node and will deploy only ovs cloud
+ovs_cloud_only:  0
+              
+#Set this to 'bm' if cloud is being deployed over baremetal.
+#Set this to 'av' if the cloud is all virtual
+cloud_type: 'bm'
+              
+#These are hlm related variables that must be changed according to your Baremetal Env
+hlm_login_id:       root
+hlm_password:       cghelion
+              
+#The following variables are for CLM network IP details for HLM
+hlm_clmstaticip:    10.x.x.x
+hlm_clmnetmask:     255.255.255.0
+hlm_clmgateway:     10.x.x.x
+              
+#The variables starting with cobbler_ are inputs that are usually given to initcobbler.sh. Set accordingly.
+cobbler_pxestartip: 10.x.x.x
+cobbler_pxeendip:   10.x.x.x
+cobbler_pxestaticip: 10.x.x.x
+cobbler_pxenetmask: 255.255.255.0
+              
+#Set the location of your images that will be used by libvirt
+imagelocation: /var/lib/libvirt/images
+              
+#Set the location of your infra-ansible-playbooks
+ansible_dir: ~/infra-ansible-playbooks
+              
+##################################################################################################################################
+              
+############################################# Variables for DCN ##################################################################
+#Set the location of dcn bits on KVM
+#There must be 4 debs, 2 tar.gz files, 1 vsc qcow2
+#You must copy your VSD qcow2 to the imagelocation on the KVM if you want to provision it on the same KVM as the HLM
+dcn_dir: ~/cg/dcn
+##################################################################################################################################
+              
+############################################# Variables for VSD ##################################################################
+#Ignore these variables if VSD is created manually. This section is relevant only for DCN cloud - in both BM and All Virtual cases
+#These variables are used for VSD Configuration
+#If you have already configured a VSD and ignore the following variables
+              
+dns_domain_name: dcn-one.helion.cg
+dns_address: 10.x.x.x
+vsd_address: 10.x.x.x
+vsd_gateway: 10.x.x.x
+vsd_netmask: 255.255.255.0
+vsd_name: vsd1
+vsdimagename: VSD-3.0.0_HP_r3.0_36
+upstream_ntp_servers:
+- 10.x.x.x
+- 16.x.x.x
+###################################################################################################################################</codeblock></li>
   <li id="hosts">Check the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to enter the IP
           address of the <codeph>vibr0</codeph> interface in the <codeph>hlm_kvm_host</codeph>
           field, as shown in the following example. </li>

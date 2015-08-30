@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Build 9 Workarounds</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <section>
+      <title>Workarounds to be followed when hdeploy with Build#9 fails</title>
+      <p>If the hdeploy script in build 9 fails, review the topics in this section for
+        troubleshooting.</p>
+    </section>
+    <section>
+      <title>Apache2 Failure During hdeploy</title>
+    <p>If the <codeph>hdeploy</codeph> script fails to restart the Apache v2 web server, the problem
+        can be with the configuration of the Attis role. </p>
+    <p>You can fix this problem by manually editing the following files, removing a specific file on
+      each controller, and then restarting the <codeph>hdeploy</codeph> script with a
+        <codeph>-t</codeph> option.</p> 
+    <ol>
+        <li>Log into the HLM VM.</li>
+        <li>Edit the <codeph>roles/ATTIS/templates/etc/apache2/sites-available/attis.conf</codeph>
+          file to replace the following text: <ol>
+            <li>Replace:
+                <codeblock>Listen {{ ATTIS.consumes_KEY_API.vips.admin[0].host }}:9898 </codeblock><p>with
+                the following:
+              </p><codeblock>Listen {{ host.vars.my_network_name }}:9898</codeblock></li>
+            <li>Replace:
+                <codeblock>&lt;VirtualHost {{ ATTIS.consumes_KEY_API.vips.admin[0].host }}:9898&gt; </codeblock><p>with:
+              </p><codeblock>&lt;VirtualHost {{ host.vars.my_network_name }}:9898&gt;</codeblock></li>
+          </ol></li><li>In the <codeph>roles/ATTIS/tasks/start.yml</codeph> file, comment out each of the following
+          lines:
+          <codeblock># Start Attis service
+    
+#- name: Start Attis service
+# service: name=attis-server state=started</codeblock></li>
+          <li>Log onto each of the three (3) controllers in the non-KVM region and remove the
+            <codeph>rm /etc/apache2/sites-available/attis.conf</codeph> file.</li>
+    <li>Execute the <codeph>hdeploy</codeph> script on the HLM VM using the <codeph>-t</codeph>
+          option: <codeblock>hdeploy –t &lt;cloudname&gt;</codeblock></li>
+        </ol>
+      <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">the KVM +
+          ESX installation</xref>.</p>
+    </section>
+    <section><title>VRG Failure During hdeploy</title>
+    
+    <p>If the DCN installation packages fail to install, do the following:</p>
+      <ol>
+        <li>Log onto the HLM VM.</li>
+        <li>Comment out following lines from the <codeph>&lt;clouddir path to
+          ansible&gt;\ansible\roles\DCN-VRG\tasks\install.yml</codeph>:
+<codeblock>
+#- name: Install packages
+# apt: name={{ item }} force=yes
+# with_items:
+# - qemu-kvm
+# - libvirt-bin
+# - libjson-perl
+# - python-twisted-core
+# - vlan
+# - module-init-tools
+# - uuid-runtime
+# - libprotobuf-c1
+# - python-setproctitle
+# - nuage-python-openvswitch
+# - nuage-openvswitch-common
+# - nuage-openvswitch-switch
+</codeblock></li>
+    <li>Execute the <codeph>hdeploy</codeph> script on the HLM VM using the <codeph>-t</codeph>
+          option: <codeblock>hdeploy –t &lt;cloudname&gt;</codeblock></li></ol>
+      <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">the KVM + ESX installation</xref>.</p>
+    </section>
+    </body>
+</topic>

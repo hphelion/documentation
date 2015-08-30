@@ -82,114 +82,83 @@
 <section id="sample-node-provisionjson-file"> <title>Sample node-provision.json file</title>
     <p>The following represents a sample <codeph>node-provision.json</codeph> file.  The IP addresses are masked for security purposes.
         Use values appropriate for your environment.</p>
-<codeblock>
-[
-  {
-    
-    "name": "ccn1",
-    "pxe_mac_address": "d0:bf:9c:f1:85:00",
-    "pxe_interface": "auto",
-    "pm_type": "ipmilan",
-    "pm_ip": "10.1.x.x",
-    "pm_user": "cghelion",
-    "pm_pass": "cghelion#",
-    "failure_zone": "fz1",
-    "node_group": "CCN-001-001",
-    "vendor": "HP",
-    "model": "DL680",
-    "os_partition_size": "20",
-    "data_partition_size": "80"
-  },
-  {
-    "name": "ccn2",
-    "pxe_mac_address": "5c:b9:01:7a: 00: 00",
-    "pxe_interface": "auto",
-    "pm_type": "ipmilan",
-    "pm_ip": "10.1.x.x",
-    "pm_user": "cghelion",
-    "pm_pass": "cghelion#",
-    "failure_zone": "fz2",
-    "node_group": "CCN-001-001",
-    "vendor": "HP",
-    "model": "DL680",
-    "os_partition_size": "20",
-    "data_partition_size": "80"
-  },
-  {
-    "name": "ccn3",
-    "pxe_mac_address": "5c:b9:01:7a: 00: 00",
-    "pxe_interface": "auto",
-    "pm_type": "ipmilan",
-    "pm_ip": "10.1.x.x",
-    "pm_user": "cghelion",
-    "pm_pass": "cghelion#",
-    "failure_zone": "fz3",
-    "node_group": "CCN-001-001",
-    "vendor": "HP",
-    "model": "DL680",
-    "os_partition_size": "20",
-    "data_partition_size": "80"
-  },
-  {
-    "name": "dcn1",
-    "pxe_mac_address": "d0:bf:9c:c0: 00: 00",
-    "pxe_interface": "auto",
-    "pm_type": "ipmilan",
-    "pm_ip": "10.1.x.x",
-    "pm_user": "cghelion",
-    "pm_pass": "cghelion#",
-    "failure_zone": "fz1",
-    "node_group": "DCN-001-001",
-    "vendor": "HP",
-    "model": "DL680",
-    "os_partition_size": "20",
-    "data_partition_size": "80"
-  },
-  {
-    "name": "dcn2",
-    "pxe_mac_address": "d0:bf:9c:c0: 00: 00",
-    "pxe_interface": "auto",
-    "pm_type": "ipmilan",
-    "pm_ip": "10.1.x.x",
-    "pm_user": "cghelion",
-    "pm_pass": "cghelion#",
-    "failure_zone": "fz2",
-    "node_group": "DCN-001-001",
-    "vendor": "HP",
-    "model": "DL680",
-    "os_partition_size": "20",
-    "data_partition_size": "80"
-  },
-  {
-    "name": "vrg1",
-    "pxe_mac_address": "d0:bf:9c:c0: 00: 00",
-    "pxe_interface": "auto",
-    "pm_type": "ipmilan",
-    "pm_ip": "10.1.x.x",
-    "pm_user": "cghelion",
-    "pm_pass": "cghelion#",
-    "failure_zone": "fz1",
-    "node_group": "VRG-001-001",
-    "vendor": "HP",
-    "model": "DL680",
-    "os_partition_size": "20",
-    "data_partition_size": "80"
-  },
-  {
-    "name": "vrg2",
-    "pxe_mac_address": "d0:bf:9c:c0:00:00",
-    "pxe_interface": "auto",
-    "pm_type": "ipmilan",
-    "pm_ip": "10.1.x.x",
-    "pm_user": "cghelion",
-    "pm_pass": "cghelion#",
-    "failure_zone": "fz2",
-    "node_group": "VRG-001-001",
-    "vendor": "HP",
-    "model": "DL680",
-    "os_partition_size": "20",
-    "data_partition_size": "80"
-  }    
+<codeblock>    [
+    {
+
+        "name": "ccn1",
+        "pxe_mac_address": "d0:bf:9c:f1:85:a0",
+        "pxe_interface": "auto",
+        "pm_type": "ipmilan",
+        "pm_ip": "10.1.3.81",
+        "pm_user": "cghelion",
+        "pm_pass": "cghelion#",
+        "failure_zone": "fz1",
+        "node_group": "CCN-001-001",
+        "vendor": "HP",
+        "model": "DL680",
+        "os_partition_size": "20",
+        "data_partition_size": "80"
+    },
+    {
+        "name": "ccn2",
+        "pxe_mac_address": "5c:b9:01:7a:13:e0",
+        "pxe_interface": "auto",
+        "pm_type": "ipmilan",
+        "pm_ip": "10.1.3.82",
+        "pm_user": "cghelion",
+        "pm_pass": "cghelion#",
+        "failure_zone": "fz2",
+        "node_group": "CCN-001-001",
+        "vendor": "HP",
+        "model": "DL680",
+        "os_partition_size": "20",
+        "data_partition_size": "80"
+    },
+    {
+  "name": "ccn3",
+        "pxe_mac_address": "5c:b9:01:7a:a3:70",
+        "pxe_interface": "auto",
+        "pm_type": "ipmilan",
+        "pm_ip": "10.1.3.83",
+        "pm_user": "cghelion",
+        "pm_pass": "cghelion#",
+        "failure_zone": "fz3",
+        "node_group": "CCN-001-001",
+        "vendor": "HP",
+        "model": "DL680",
+        "os_partition_size": "20",
+        "data_partition_size": "80"
+    },
+    {
+        "name": "dcn1",
+        "pxe_mac_address": "d0:bf:9c:c0:e7:b0",
+        "pxe_interface": "auto",
+        "pm_type": "ipmilan",
+        "pm_ip": "10.1.3.53",
+        "pm_user": "cghelion",
+        "pm_pass": "cghelion#",
+        "failure_zone": "fz1",
+        "node_group": "DCN-001-001",
+        "vendor": "HP",
+        "model": "DL680",
+        "os_partition_size": "20",
+        "data_partition_size": "80"
+    },
+    {
+        "name": "vrg1",
+        "pxe_mac_address": "d0:bf:9c:c0:ba:18",
+        "pxe_interface": "auto",
+        "pm_type": "ipmilan",
+        "pm_ip": "10.1.3.55",
+        "pm_user": "cghelion",
+        "pm_pass": "cghelion#",
+        "failure_zone": "fz1",
+        "node_group": "VRG-001-001",
+        "vendor": "HP",
+        "model": "DL680",
+        "os_partition_size": "20",
+        "data_partition_size": "80"
+    }
 ]</codeblock>
 </section>
         <p><i>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the

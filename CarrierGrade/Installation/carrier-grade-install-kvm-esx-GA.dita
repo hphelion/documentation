@@ -112,7 +112,9 @@
         href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HP Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
       <ol>
         <li>Login to HLM VM. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
-            IP of the HLM VM. </p><p>Use the default credentials: </p><p>
+            IP of the HLM VM.  Locate the IP address for the HLM VM in the
+              <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file under
+              <codeph>hlm_clmstaticip</codeph> field.</p><p>Use the default credentials: </p><p>
             <codeblock>User Name: cghelion
 Password: cghelion</codeblock>
           </p><p><b>Important:</b> After logging in with the default password, make sure you change
@@ -220,9 +222,12 @@ Password: cghelion</codeblock>
       <p><b>Note:</b> To see a sample <codeph>definition.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-def-json.dita#topic4797">Sample definition.json File
           for Installing the KVM + ESX Topology</xref>.<ol id="ol_zzr_khl_zs">
-          <li>Set the number of compute systems to 2 for  an HA VRS-G
-            installation.<codeblock>"file": ".hos/ccp-vrsg.json",
-"count": 2</codeblock></li>
+          <li>Set the number of compute systems to
+            1<!--2 for an HA VRS-G installation-->.<codeblock>"file": ".hos/ccp-vrsg.json",
+"count": 1
+...
+"file":  ".hos/ccp-vrsg.json",
+"count": 1</codeblock></li>
         </ol></p>
     </section>
     <section id="configure-env-json">
@@ -273,14 +278,8 @@ Password: cghelion</codeblock>
           href="carrier-grade-install-pb-kvm-ldap-json.dita">Sample ldap.json File for Installing
           the KVM + ESX Topology</xref>. </p>
     </section>
-    <section id="configure-wr-json">
-      <title>Configure the wr.json file</title>
-      <p>Modify the <codeph>wr.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph>
-        directory on the HLM VM.</p>
-      <p>To see a sample <codeph>wr.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the
-          KVM + ESX Topology</xref>. </p>
-    </section>
+    <section id="configure-wr-json"
+      ><!--Hide for 8/28 release <title>Configure the wr.json file</title><p>Modify the <codeph>wr.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph> directory on the HLM VM.</p><p>To see a sample <codeph>wr.json</codeph> file, see <xref href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the KVM + ESX Topology</xref>. </p>--></section>
     <section>
       <title>Configure the dcn.json file</title>
       <p>Modify the <codeph>dcn.json</codeph> file in the
@@ -296,6 +295,13 @@ Password: cghelion</codeblock>
             "scope": "private"
       },    </codeblock></p>
     </section>
+    <section><title>Configure the <codeph>.hos ccp-dcn-esx.json</codeph> file</title>Update the
+        <codeph>~/&lt;cloudname&gt;/.hos/ccp-dcn-esx.json</codeph> file. Change the field to 1. By
+      default it will be
+      2.<codeblock>"tiers": [
+  {
+    "id": "1",
+    "member-count": 1,      </codeblock></section>
     <section id="configure-mach-json">
       <title>Configure the machine_architecture.json file</title>
       <p><b>For bonded NIC environments</b>, modify the <codeph>machine_architecture.json</codeph>
@@ -506,7 +512,7 @@ The configuration processor completed successfully.
             output for the command should appear similar to the following:</p><p><image
               href="../../media/CGH-install-hnetinit-output.png" id="image_tft_r11_1t"/></p></li></ol>
     </section>
-    <section><title>Deploy HP Helion OpenStack</title>
+    <section id="hdeploy"><title>Deploy HP Helion OpenStack</title>
       <ol>
         <li>Use the following command to deploy the HP Helion OpenStack cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>This command takes a
@@ -515,6 +521,9 @@ The configuration processor completed successfully.
             configure networking, and configure the ESX environment. </p></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
+      <p><b>Note:</b> If the <codeph>hdeploy</codeph> script fails, review the topics in <xref
+          href="carrier-grade-install-build9-workarounds.dita#topic10581">this section for
+          troubleshooting</xref>.</p>
     </section>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
