@@ -112,7 +112,7 @@
         href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HP Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
       <ol>
         <li>Login to HLM VM. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
-            IP of the HLM VM. </p><p>Use the default credentials: </p><p>
+            IP of the HLM VM. Locate the IP address for the HLM VM in the /root/infra-ansible-playbooks/group_vars/all file under hlm_clmstaticip field.</p><p>Use the default credentials: </p><p>
             <codeblock>User Name: cghelion
 Password: cghelion</codeblock>
           </p><p><b>Important:</b> After logging in with the default password, make sure you change
