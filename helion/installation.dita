@@ -113,12 +113,12 @@ helion/hos/                    Directory contains files used by the installer
                   (swiftobj disk-group). This describes what disks on each of the servers are
                   assigned to Swift and the rings that uses those drives. To know more about the
                   disk drives, refer to <xref
-                    href="swift/swift_input_cloud_model.dita#topic_qkg_l4v_bt">cloud model
+                    href="swift/swift_input_cloud_model.dita#modify-input-model">cloud model
                     modification</xref>.</li>
                 <li>The <codeph>config/swift/rings.yml</codeph> specifies the ring which maps the
                   logical names of data to locations on a particular disks. To know more about the
-                  rings, refer to <xref href="swift/ring_parameters.dita#topic_efw_k55_dt">ring
-                    specification</xref>.</li>
+                  rings, refer to <xref href="swift/ring_specifications.dita#ring-specification"
+                    >ring specification</xref>.</li>
                 <li>In the <codeph>data/net_interfaces.yml</codeph> file, replace all instances of
                   “bond-mode: 1” to “bond-mode: active-backup”.</li>
               </ul></li>
