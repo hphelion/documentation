@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333804266" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
-    <!-- Modification History
-
- -->
-    <title ixia_locid="1">Managing Stacks</title>
-    <shortdesc ixia_locid="2">You can create and manage collections of resources, or <term ixia_locid="3">services</term> (also known as <term ixia_locid="4">stacks</term>), using
-        Heat, the OpenStack orchestration service. HP Helion OpenStack Carrier Grade extensions are included for
-        enhanced scope and reliability.</shortdesc>
-    <prolog>
-        <author ixia_locid="5">Jim Owens</author>
-    </prolog>
-    <conbody>
-        <p ixia_locid="6">With Heat, you can define a service configuration in a<term ixia_locid="7"> template</term> file, and then apply the template to create or modify the service
-            resources and connections. The Heat orchestration layer includes life-cycle management
-            features to simplify the addition, modification, and deletion of services.</p>
-    </conbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333804266" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title ixia_locid="1">Managing Stacks</title>
+    <shortdesc ixia_locid="2">You can create and manage collections of resources, or <term ixia_locid="3">services</term> (also known as <term ixia_locid="4">stacks</term>), using
+        Heat, the OpenStack orchestration service. HP Helion OpenStack Carrier Grade extensions are included for
+        enhanced scope and reliability.</shortdesc>
+    <prolog>
+        <author ixia_locid="5">Jim Owens</author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="6">With Heat, you can define a service configuration in a<term ixia_locid="7"> template</term> file, and then apply the template to create or modify the service
+            resources and connections. The Heat orchestration layer includes life-cycle management
+            features to simplify the addition, modification, and deletion of services.</p>
+    </conbody>
 </concept-wr>

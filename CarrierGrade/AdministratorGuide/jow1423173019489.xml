@@ -1,120 +1,120 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1423173019489" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
-<!-- Modification History
-
- -->
- <title ixia_locid="1">Shared (VLAN) Ethernet Interfaces</title>
- <shortdesc ixia_locid="2">The management, OAM, infrastructure, and data networks can share Ethernet
-    or aggregated Ethernet interfaces using VLAN tagging.</shortdesc>
- <prolog>
-  <author ixia_locid="3">Jim Owens</author>
- </prolog>
- <conbody>
-    <p ixia_locid="4">As explained in <xref href="jow1404333674324.xml" ixia_locid="5"/>, the
-      internal management network cannot use VLAN tagging. However, the OAM, infrastructure, and
-      data networks can use VLAN tagging, allowing them to share an Ethernet or aggregated Ethernet
-      interface with other networks.</p>
-    <note id="note_N1002C_N1001F_N10001" ixia_locid="70">
-      <p ixia_locid="71">You cannot configure a data VLAN or add a data network on an aggregated
-        Ethernet interface.</p>
-    </note>
-    <p ixia_locid="6">For a system using all four networks, the following arrangements are
-      possible:</p>
-    <ul id="ul_y5k_zg2_zq">
-      <li ixia_locid="7">
-        <p ixia_locid="8">One interface for the management network, another interface for the OAM
-          network, a third for the infrastructure network, and one or more additional interfaces for
-          data networks.</p>
-      </li>
-      <li ixia_locid="9">
-        <p ixia_locid="10">One interface for the management network, and a second interface for
-          either the OAM or infrastructure network, with the remaining networks implemented using
-          VLAN tagging on either interface.</p>
-      </li>
-      <li ixia_locid="11">
-        <p ixia_locid="12">One interface for the management network, and a second carrying the OAM
-          and infrastructure networks, both implemented using VLAN tagging, with data networks
-          implemented on either or both interfaces using VLAN tagging.</p>
-      </li>
-      <li ixia_locid="13">
-        <p ixia_locid="14">One interface for the management network, with the OAM, infrastructure,
-          and data networks also implemented on it using VLAN tagging.</p>
-      </li>
-    </ul>
-    <note id="note_N100E6_N1001F_N10001" ixia_locid="66">
-      <p ixia_locid="67">Data networks implemented using VLAN tagging are not compatible with
-        VLAN-based provider networks. (Stacked VLANs are not supported.). To support VLAN provider
-        networks, you can configure a data network on a management or infrastructure interface by
-        editing the interface and selecting both types of network, ane then selecting the VLAN
-        provider network.  </p>
-    </note>
-    <p ixia_locid="69">You can also use the command line by logging into the active controller and
-      becoming the Keystone <nameliteral ixia_locid="17">admin</nameliteral> user, and then using a
-      command such as the following for each node:</p>
-    <codeblock ixia_locid="25"><systemoutput ixia_locid="56">~(keystone_admin)$ </systemoutput><userinput ixia_locid="29">system host-if-add infra0 -V 22 -nt infra vlan eth1</userinput>
-<systemoutput ixia_locid="57">+------------------+--------------------------------------+
-| Property         | Value                                |
-+------------------+--------------------------------------+
-| ifname           | infra0                               |
-| networktype      | infra                                |
-| iftype           | vlan                                 |
-| ports            | []                                   |
-| providernetworks | None                                 |
-| imac             | 08:00:27:f2:0d:68                    |
-| imtu             | 1500                                 |
-| aemode           | None                                 |
-| schedpolicy      | None                                 |
-| txhashpolicy     | None                                 |
-| uuid             | 8ca9854e-a18e-4a3c-8afe-f050da702fdf |
-| ihost_uuid       | 3d207384-7d30-4bc0-affe-d68ab6a00a5b |
-| vlan_id          | 22                                   |
-| uses             | [u'eth1']                            |
-| used_by          | []                                   |
-| created_at       | 2015-02-04T16:23:28.917084+00:00     |
-| updated_at       | None                                 |
-+------------------+--------------------------------------+
-</systemoutput></codeblock>
-    <p ixia_locid="22">This example configures the <nameliteral ixia_locid="23">eth1</nameliteral>
-      interface on <nameliteral ixia_locid="24">compute-0</nameliteral> to connect to the
-      infrastructure network using VLAN ID 22.</p>
-    <p ixia_locid="31">To display VLAN information as well as dependencies, use a command such as
-      the following:</p>
-    <codeblock ixia_locid="48"><systemoutput ixia_locid="58">~(keystone_admin)$ </systemoutput><userinput ixia_locid="44">system host-if-list controller-0</userinput>
-<systemoutput ixia_locid="59">...+--------+------...+----------+---------+-----------+------------+-------------+...
-...| name   | netwo...| type     | vlan id | ports     | uses i/f   | used by i/f |...
-...+--------+------...+----------+---------+-----------+------------+-------------+...
-...| infra0 | infra...| vlan     | 22      | []        | [u'mgmt0'] | []          |...
-...| oam0   | oam  ...| ethernet | None    | [u'eth0'] | []         | []          |...
-...| mgmt0  | mgmt ...| ethernet | None    | [u'eth1'] | []         | [u'infra0'] |...
-...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput>
-</codeblock>
-    <p ixia_locid="37">The output lists all interfaces and associated networks. For each network
-      that uses VLAN tagging, the <nameliteral ixia_locid="33">vlan id</nameliteral> is shown, as
-      well as the shared interface used (in the <nameliteral ixia_locid="34">uses i/f</nameliteral>
-      column). For shared interfaces, the names of the networks that use VLAN tagging on the
-      interface are shown (in the <nameliteral ixia_locid="35">used by i/f</nameliteral>
-      column).</p>
-    <p ixia_locid="52">For a LAG interface, the dependencies are shown as follows.</p>
-    <codeblock ixia_locid="49"><systemoutput ixia_locid="60">...+--------+------...+----------+---------+-----------+------------+-------------+...
-...| name   | netwo...| type     | vlan id | ports     | uses i/f   | used by i/f |...
-...+--------+------...+----------+---------+-----------+------------+-------------+...
-...| oam0   | oam  ...| ethernet | None    | [u'eth0'] | []         | []          |...
-...| bond0  | mgmt ...| ae       | None    | []        | [u'eth1']  | []          |...
-...| eth1   | None ...| ethernet | None    | [u'eth1'] | []         | [u'bond0']  |...
-...| infra0 | infra...| ethernet | None    | [u'eth3'] | []         | []          |...
-...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput>
-</codeblock>
-    <p ixia_locid="38"> To see all available interfaces, add the <option ixia_locid="55">-a</option> flag.</p>
-    <codeblock ixia_locid="41"><systemoutput ixia_locid="61">~(keystone_admin)$ </systemoutput><userinput ixia_locid="45">system host-if-list -a controller-0</userinput>
-<systemoutput ixia_locid="62">...+--------+------...+----------+---------+-----------+------------+-------------+...
-...| name   | netwo...| type     | vlan id | ports     | uses i/f   | used by i/f |...
-...+--------+------...+----------+---------+-----------+------------+-------------+...
-...| eth3   | None ...| ethernet | None    | [u'eth3'] | []         | []          |...
-...| infra0 | infra...| vlan     | 22      | []        | [u'mgmt0'] | []          |...
-...| eth2   | None ...| ethernet | None    | [u'eth2'] | []         | []          |...
-...| oam0   | oam  ...| ethernet | None    | [u'eth0'] | []         | []          |...
-...| mgmt0  | mgmt ...| ethernet | None    | [u'eth1'] | []         | [u'infra0'] |...
-...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput></codeblock>
-  </conbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1423173019489" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">Shared (VLAN) Ethernet Interfaces</title>
+ <shortdesc ixia_locid="2">The management, OAM, infrastructure, and data networks can share Ethernet
+    or aggregated Ethernet interfaces using VLAN tagging.</shortdesc>
+ <prolog>
+  <author ixia_locid="3">Jim Owens</author>
+ </prolog>
+ <conbody>
+    <p ixia_locid="4">As explained in <xref href="jow1404333674324.xml" ixia_locid="5"/>, the
+      internal management network cannot use VLAN tagging. However, the OAM, infrastructure, and
+      data networks can use VLAN tagging, allowing them to share an Ethernet or aggregated Ethernet
+      interface with other networks.</p>
+    <note id="note_N1002C_N1001F_N10001" ixia_locid="70">
+      <p ixia_locid="71">You cannot configure a data VLAN or add a data network on an aggregated
+        Ethernet interface.</p>
+    </note>
+    <p ixia_locid="6">For a system using all four networks, the following arrangements are
+      possible:</p>
+    <ul id="ul_y5k_zg2_zq">
+      <li ixia_locid="7">
+        <p ixia_locid="8">One interface for the management network, another interface for the OAM
+          network, a third for the infrastructure network, and one or more additional interfaces for
+          data networks.</p>
+      </li>
+      <li ixia_locid="9">
+        <p ixia_locid="10">One interface for the management network, and a second interface for
+          either the OAM or infrastructure network, with the remaining networks implemented using
+          VLAN tagging on either interface.</p>
+      </li>
+      <li ixia_locid="11">
+        <p ixia_locid="12">One interface for the management network, and a second carrying the OAM
+          and infrastructure networks, both implemented using VLAN tagging, with data networks
+          implemented on either or both interfaces using VLAN tagging.</p>
+      </li>
+      <li ixia_locid="13">
+        <p ixia_locid="14">One interface for the management network, with the OAM, infrastructure,
+          and data networks also implemented on it using VLAN tagging.</p>
+      </li>
+    </ul>
+    <note id="note_N100E6_N1001F_N10001" ixia_locid="66">
+      <p ixia_locid="67">Data networks implemented using VLAN tagging are not compatible with
+        VLAN-based provider networks. (Stacked VLANs are not supported.). To support VLAN provider
+        networks, you can configure a data network on a management or infrastructure interface by
+        editing the interface and selecting both types of network, ane then selecting the VLAN
+        provider network.  </p>
+    </note>
+    <p ixia_locid="69">You can also use the command line by logging into the active controller and
+      becoming the Keystone <nameliteral ixia_locid="17">admin</nameliteral> user, and then using a
+      command such as the following for each node:</p>
+    <codeblock ixia_locid="25"><systemoutput ixia_locid="56">~(keystone_admin)$ </systemoutput><userinput ixia_locid="29">system host-if-add infra0 -V 22 -nt infra vlan eth1</userinput>
+<systemoutput ixia_locid="57">+------------------+--------------------------------------+
+| Property         | Value                                |
++------------------+--------------------------------------+
+| ifname           | infra0                               |
+| networktype      | infra                                |
+| iftype           | vlan                                 |
+| ports            | []                                   |
+| providernetworks | None                                 |
+| imac             | 08:00:27:f2:0d:68                    |
+| imtu             | 1500                                 |
+| aemode           | None                                 |
+| schedpolicy      | None                                 |
+| txhashpolicy     | None                                 |
+| uuid             | 8ca9854e-a18e-4a3c-8afe-f050da702fdf |
+| ihost_uuid       | 3d207384-7d30-4bc0-affe-d68ab6a00a5b |
+| vlan_id          | 22                                   |
+| uses             | [u'eth1']                            |
+| used_by          | []                                   |
+| created_at       | 2015-02-04T16:23:28.917084+00:00     |
+| updated_at       | None                                 |
++------------------+--------------------------------------+
+</systemoutput></codeblock>
+    <p ixia_locid="22">This example configures the <nameliteral ixia_locid="23">eth1</nameliteral>
+      interface on <nameliteral ixia_locid="24">compute-0</nameliteral> to connect to the
+      infrastructure network using VLAN ID 22.</p>
+    <p ixia_locid="31">To display VLAN information as well as dependencies, use a command such as
+      the following:</p>
+    <codeblock ixia_locid="48"><systemoutput ixia_locid="58">~(keystone_admin)$ </systemoutput><userinput ixia_locid="44">system host-if-list controller-0</userinput>
+<systemoutput ixia_locid="59">...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| name   | netwo...| type     | vlan id | ports     | uses i/f   | used by i/f |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| infra0 | infra...| vlan     | 22      | []        | [u'mgmt0'] | []          |...
+...| oam0   | oam  ...| ethernet | None    | [u'eth0'] | []         | []          |...
+...| mgmt0  | mgmt ...| ethernet | None    | [u'eth1'] | []         | [u'infra0'] |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput>
+</codeblock>
+    <p ixia_locid="37">The output lists all interfaces and associated networks. For each network
+      that uses VLAN tagging, the <nameliteral ixia_locid="33">vlan id</nameliteral> is shown, as
+      well as the shared interface used (in the <nameliteral ixia_locid="34">uses i/f</nameliteral>
+      column). For shared interfaces, the names of the networks that use VLAN tagging on the
+      interface are shown (in the <nameliteral ixia_locid="35">used by i/f</nameliteral>
+      column).</p>
+    <p ixia_locid="52">For a LAG interface, the dependencies are shown as follows.</p>
+    <codeblock ixia_locid="49"><systemoutput ixia_locid="60">...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| name   | netwo...| type     | vlan id | ports     | uses i/f   | used by i/f |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| oam0   | oam  ...| ethernet | None    | [u'eth0'] | []         | []          |...
+...| bond0  | mgmt ...| ae       | None    | []        | [u'eth1']  | []          |...
+...| eth1   | None ...| ethernet | None    | [u'eth1'] | []         | [u'bond0']  |...
+...| infra0 | infra...| ethernet | None    | [u'eth3'] | []         | []          |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput>
+</codeblock>
+    <p ixia_locid="38"> To see all available interfaces, add the <option ixia_locid="55">-a</option> flag.</p>
+    <codeblock ixia_locid="41"><systemoutput ixia_locid="61">~(keystone_admin)$ </systemoutput><userinput ixia_locid="45">system host-if-list -a controller-0</userinput>
+<systemoutput ixia_locid="62">...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| name   | netwo...| type     | vlan id | ports     | uses i/f   | used by i/f |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| eth3   | None ...| ethernet | None    | [u'eth3'] | []         | []          |...
+...| infra0 | infra...| vlan     | 22      | []        | [u'mgmt0'] | []          |...
+...| eth2   | None ...| ethernet | None    | [u'eth2'] | []         | []          |...
+...| oam0   | oam  ...| ethernet | None    | [u'eth0'] | []         | []          |...
+...| mgmt0  | mgmt ...| ethernet | None    | [u'eth1'] | []         | [u'infra0'] |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput></codeblock>
+  </conbody>
 </concept-wr>

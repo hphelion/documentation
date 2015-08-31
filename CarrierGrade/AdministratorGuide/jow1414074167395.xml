@@ -1,52 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1414074167395" xml:lang="en-us">
-<!-- Modification History
-        
--->
-    <title ixia_locid="164">Removing Compute Nodes</title>
-    <shortdesc ixia_locid="165">You can remove a compute node from the pool of available
-        resources.</shortdesc>
-    <prolog>
-        <author ixia_locid="166">Jim Owens</author>
-    </prolog>
-    <taskbody>
-        <context id="context_N10022_N1001F_N10001" ixia_locid="189">
-            <p ixia_locid="190">You may need to remove a compute node in order to replace a failed host, or to change
-                the configuration of a host. If the host is active, you can migrate instances on it
-                by locking the host. </p>
-        </context>
-        <prereq id="prereq_N10034_N1001C_N10001" ixia_locid="172">
-            <note id="note_N101C5_N101C2_N101BB_N1003F_N1001F_N10001" ixia_locid="161" type="caution">
-                <p ixia_locid="163">Before locking a host, ensure that sufficient resources are
-                    available on other hosts to migrate any running instances.</p>
-            </note>
-        </prereq>
-        <steps>
-            <step id="step_N10048_N10045_N1001C_N10001" ixia_locid="173">
-                <cmd ixia_locid="174">Lock the host to be removed.</cmd>
-                <info ixia_locid="76">
-                    <p ixia_locid="77">Open the <wintitle ixia_locid="143">Hosts</wintitle> list by
-                        clicking <uicontrol ixia_locid="78">Inventory</uicontrol> on the<wintitle ixia_locid="79"> System Panel</wintitle> section of the <wintitle ixia_locid="80">Admin</wintitle> menu, and then selecting the <uicontrol ixia_locid="81">Hosts</uicontrol> tab.</p>
-                    <p ixia_locid="175">Click <menucascade ixia_locid="178">
-                            <uicontrol ixia_locid="179">More</uicontrol>
-                            <uicontrol ixia_locid="181">Lock Host</uicontrol>
-                        </menucascade> for the host. </p>
-                    <p ixia_locid="176">Wait for the procedure to be completed.</p>
-                </info>
-            </step>
-            <step id="step_N1008B_N10045_N1001C_N10001" ixia_locid="182">
-                <cmd ixia_locid="183">Delete the host from the HP Helion OpenStack Carrier Grade system.</cmd>
-                <info ixia_locid="184">
-                    <p ixia_locid="177">Click <menucascade ixia_locid="185">
-                            <uicontrol ixia_locid="180">More</uicontrol>
-                            <uicontrol ixia_locid="186">Delete Host</uicontrol>
-                        </menucascade> for the host. </p>
-                </info>
-            </step>
-            <step id="step_N100AA_N10045_N1001C_N10001" ixia_locid="187">
-                <cmd ixia_locid="188">Power down the host and remove the hardware from the cluster.</cmd>
-            </step>
-        </steps>
-    </taskbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1414074167395" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="164">Removing Compute Nodes</title>
+    <shortdesc ixia_locid="165">You can remove a compute node from the pool of available
+        resources.</shortdesc>
+    <prolog>
+        <author ixia_locid="166">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001" ixia_locid="189">
+            <p ixia_locid="190">You may need to remove a compute node in order to replace a failed host, or to change
+                the configuration of a host. If the host is active, you can migrate instances on it
+                by locking the host. </p>
+        </context>
+        <prereq id="prereq_N10034_N1001C_N10001" ixia_locid="172">
+            <note id="note_N101C5_N101C2_N101BB_N1003F_N1001F_N10001" ixia_locid="161" type="caution">
+                <p ixia_locid="163">Before locking a host, ensure that sufficient resources are
+                    available on other hosts to migrate any running instances.</p>
+            </note>
+        </prereq>
+        <steps>
+            <step id="step_N10048_N10045_N1001C_N10001" ixia_locid="173">
+                <cmd ixia_locid="174">Lock the host to be removed.</cmd>
+                <info ixia_locid="76">
+                    <p ixia_locid="77">Open the <wintitle ixia_locid="143">Hosts</wintitle> list by
+                        clicking <uicontrol ixia_locid="78">Inventory</uicontrol> on the<wintitle ixia_locid="79"> System Panel</wintitle> section of the <wintitle ixia_locid="80">Admin</wintitle> menu, and then selecting the <uicontrol ixia_locid="81">Hosts</uicontrol> tab.</p>
+                    <p ixia_locid="175">Click <menucascade ixia_locid="178">
+                            <uicontrol ixia_locid="179">More</uicontrol>
+                            <uicontrol ixia_locid="181">Lock Host</uicontrol>
+                        </menucascade> for the host. </p>
+                    <p ixia_locid="176">Wait for the procedure to be completed.</p>
+                </info>
+            </step>
+            <step id="step_N1008B_N10045_N1001C_N10001" ixia_locid="182">
+                <cmd ixia_locid="183">Delete the host from the HP Helion OpenStack Carrier Grade system.</cmd>
+                <info ixia_locid="184">
+                    <p ixia_locid="177">Click <menucascade ixia_locid="185">
+                            <uicontrol ixia_locid="180">More</uicontrol>
+                            <uicontrol ixia_locid="186">Delete Host</uicontrol>
+                        </menucascade> for the host. </p>
+                </info>
+            </step>
+            <step id="step_N100AA_N10045_N1001C_N10001" ixia_locid="187">
+                <cmd ixia_locid="188">Power down the host and remove the hardware from the cluster.</cmd>
+            </step>
+        </steps>
+    </taskbody>
 </task-wr>

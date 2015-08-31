@@ -1,153 +1,153 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1426183480976" xml:lang="en-us">
-<!-- Modification History
-        
--->
-    <title ixia_locid="1">Configuring a Compute Host to Provide Local  Storage</title>
-    <shortdesc ixia_locid="2">You can configure a compute host to provide local storage for use by
-        VMs. </shortdesc>
-    <prolog>
-        <author ixia_locid="3">Jim Owens</author>
-    </prolog>
-    <taskbody>
-        <context id="context_N10022_N1001F_N10001" ixia_locid="87">
-            <p ixia_locid="101">Local storage can be used to provide improved disk access
-                performance for VMs instantiated on the host.</p>
-            <note conref="jow1426942555025.xml#jow1426942555025/note_local_storage_ephemeral" id="note_N1002C_N10022_N1001F_N10001" ixia_locid="102"/>
-            <p ixia_locid="88">To provide local storage on a compute host, add a local volume group
-                called <nameliteral ixia_locid="90">nova-local</nameliteral> to the host. This
-                automatically includes the host in the <nameliteral ixia_locid="91">local_storage_hosts</nameliteral> host aggregate. The Nova scheduler draws from
-                this host aggregate to instantiate VMs that require local storage. </p>
-            <p ixia_locid="92">To populate the <nameliteral ixia_locid="93">nova-local</nameliteral>
-                group with storage resources, you must also add physical volumes created on local
-                disks.</p>
-            <p ixia_locid="95">As an alternative to the web administration interface, you can use
-                the CLI to configure the host for local storage. For more information, see <xref href="jow1426181291481.xml" ixia_locid="96"/> and <xref href="jow1426182435441.xml" ixia_locid="97"/>.</p>
-        </context>
-        <steps>
-            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N1002A_N10027_N1001F_N10001" ixia_locid="76">
-                <cmd ixia_locid="77"/>
-            </step>
-            <step conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N10033_N10027_N1001F_N10001" ixia_locid="78">
-                <cmd ixia_locid="79"/>
-            </step>
-            <step id="step_N1002B_N10028_N1001C_N10001" ixia_locid="6">
-                <cmd ixia_locid="7">Select the <uicontrol ixia_locid="10">Storage</uicontrol> tab.</cmd>
-                <info ixia_locid="21">
-                    <p ixia_locid="22">For a compute node, the storage tab displays three lists:</p>
-                    <dl>
-                        <dlentry ixia_locid="23">
-                            <dt ixia_locid="24">Disks</dt>
-                            <dd ixia_locid="25">
-                                <p ixia_locid="26">Physical disks installed in the compute node.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry ixia_locid="31">
-                            <dt ixia_locid="32">Local Volume Groups</dt>
-                            <dd ixia_locid="33">
-                                <p ixia_locid="34">Groups of physical volumes available for VM
-                                    storage.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry ixia_locid="27">
-                            <dt ixia_locid="28">Physical Volumes</dt>
-                            <dd ixia_locid="29">
-                                <p ixia_locid="30">Partitions that have been initialized for logical
-                                    volume management (LVM) and assigned to a local volume
-                                    group.</p>
-                            </dd>
-                        </dlentry>
-                    </dl>
-                    <fig id="fig_atv_4s5_jr" ixia_locid="35">
-                        <image href="jow1426459038579.image" id="image_rhh_ps5_jr" ixia_locid="36" width="6in">
-                            <alt ixia_locid="37">Compute Node Storage tab</alt>
-                        </image>
-                    </fig>
-                </info>
-            </step>
-            <step id="step_N10042_N10027_N1001F_N10001" ixia_locid="11">
-                <cmd ixia_locid="12">If required, add the <nameliteral ixia_locid="13">nova-local</nameliteral> group to the <nameliteral ixia_locid="14">Local
-                        Volume Groups</nameliteral> list.</cmd>
-                <info ixia_locid="15">
-                    <p ixia_locid="16">The <nameliteral ixia_locid="17">Local Volume
-                            Groups</nameliteral> list displays groups of physical volumes designated
-                        for use as local storage.</p>
-                    <p ixia_locid="18">The default group for use by VMs is called <nameliteral ixia_locid="19">nova-local</nameliteral>. If this group is not listed,
-                        you can create it by clicking <nameliteral ixia_locid="20">Add Local Volume
-                            Group</nameliteral>, and then accepting the defaults in the dialog box
-                        that appears.</p>
-                    <fig id="fig_wrr_vs5_jr" ixia_locid="38">
-                        <image href="jow1426459253956.image" id="image_ask_bt5_jr" ixia_locid="39" width="5in">
-                            <alt ixia_locid="40">Create Local Volume Group</alt>
-                        </image>
-                    </fig>
-                </info>
-                <stepresult ixia_locid="41">
-                    <p ixia_locid="42">The <nameliteral ixia_locid="43">nova-local</nameliteral> group is shown in the list.</p>
-                    <fig id="fig_i4s_p1z_jr" ixia_locid="44">
-                        <image href="jow1426510376255.image" id="image_w1l_z1z_jr" ixia_locid="45" width="6in">
-                            <alt ixia_locid="46">Local Volume Groups</alt>
-                        </image>
-                    </fig>
-                </stepresult>
-            </step>
-            <step id="step_N10107_N10027_N1001F_N10001" ixia_locid="47">
-                <cmd ixia_locid="48">Add a physical volume to the <nameliteral ixia_locid="49">nova-local</nameliteral> group.</cmd>
-                <info ixia_locid="50">
-                    <p ixia_locid="51">The <nameliteral ixia_locid="52">Physical
-                            Volumes</nameliteral> list displays LVM volumes that have been created
-                        and added to a Local Volume Group. To add a new one, click <nameliteral ixia_locid="53">Add Physical Volume</nameliteral> and complete the
-                        dialog box that appears.</p>
-                    <fig id="fig_myv_tdz_jr" ixia_locid="54">
-                        <image href="jow1426511807740.image" id="image_dhp_12z_jr" ixia_locid="55" width="5in">
-                            <alt ixia_locid="56">Create Physical Volume dialog box</alt>
-                        </image>
-                    </fig>
-                    <note id="note_N1013A_N10112_N10107_N10027_N1001F_N10001" ixia_locid="59">
-                        <p ixia_locid="60">The <uicontrol ixia_locid="61">Local Volume
-                                Group</uicontrol> drop-down selection is automatically set to
-                                <nameliteral ixia_locid="62">nova-local</nameliteral>, and cannot be
-                            changed.</p>
-                    </note>
-                    <p ixia_locid="57">Use the <uicontrol ixia_locid="58">Disks</uicontrol>
-                        drop-down menu to select a disk to provide storage. For the root disk, a
-                        designated partition  (<nameliteral ixia_locid="98">local_pv</nameliteral>) is used.</p>
-                    <p ixia_locid="63">You can add any number of physical volumes to the
-                            <nameliteral ixia_locid="64">nova-local</nameliteral> group, limited
-                        only by the number of available disks.</p>
-                </info>
-                <stepresult ixia_locid="65">
-                    <p ixia_locid="66">A physical volume is created and added to the
-                            <nameliteral ixia_locid="67">nova-local</nameliteral> group.</p>
-                    <fig id="fig_ajv_p2z_jr" ixia_locid="68">
-                        <image href="jow1426512224610.image" id="image_c4b_w2z_jr" ixia_locid="69" width="6in">
-                            <alt ixia_locid="70">Physical Volumes list</alt>
-                        </image>
-                    </fig>
-                </stepresult>
-            </step>
-            <step id="step_N1019C_N10027_N1001F_N10001" ixia_locid="80">
-                <cmd ixia_locid="81">Unlock the host to make the changes take effect.</cmd>
-            </step>
-        </steps>
-        <result id="result_N10172_N1001F_N10001" ixia_locid="71">
-            <p ixia_locid="72">The compute host is ready to provide local  storage for use by VMs.
-                Because a <nameliteral ixia_locid="82">nova-local</nameliteral> local volume group
-                has been added, the host is automatically included in the <nameliteral ixia_locid="83">local_storage_hosts</nameliteral> host aggregate.</p>
-            <p ixia_locid="84">To return a host to the <nameliteral ixia_locid="85">remote_storage_hosts</nameliteral> host aggregate, so that it is used to
-                instantiate VMs configured for remote Cinder-based storage, delete the <nameliteral ixia_locid="86">nova-local</nameliteral> local volume group.</p>
-            <note id="note_N10204_N101E1_N1001F_N10001" ixia_locid="103" type="caution">
-                <p ixia_locid="104">VMs instantiated on the compute node must be migrated or terminated before the
-                    host is reconfigured for remote storage.</p>
-            </note>
-        </result>
-        <postreq id="postreq_N1017B_N1001F_N10001" ixia_locid="73">
-            <p ixia_locid="74">To configure a VM to use local storage or remote Cinder-based
-                storage, or to be instantiated on any compute host regardless of storage type, see
-                    <xref href="jow1426181040008.xml" ixia_locid="75"/>. </p>
-            <p ixia_locid="99">To add disks to a compute node for extra local storage, see <xref href="jow1418924302353.xml" ixia_locid="100"/>
-            </p>
-        </postreq>
-    </taskbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1426183480976" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">Configuring a Compute Host to Provide Local  Storage</title>
+    <shortdesc ixia_locid="2">You can configure a compute host to provide local storage for use by
+        VMs. </shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001" ixia_locid="87">
+            <p ixia_locid="101">Local storage can be used to provide improved disk access
+                performance for VMs instantiated on the host.</p>
+            <note conref="jow1426942555025.xml#jow1426942555025/note_local_storage_ephemeral" id="note_N1002C_N10022_N1001F_N10001" ixia_locid="102"/>
+            <p ixia_locid="88">To provide local storage on a compute host, add a local volume group
+                called <nameliteral ixia_locid="90">nova-local</nameliteral> to the host. This
+                automatically includes the host in the <nameliteral ixia_locid="91">local_storage_hosts</nameliteral> host aggregate. The Nova scheduler draws from
+                this host aggregate to instantiate VMs that require local storage. </p>
+            <p ixia_locid="92">To populate the <nameliteral ixia_locid="93">nova-local</nameliteral>
+                group with storage resources, you must also add physical volumes created on local
+                disks.</p>
+            <p ixia_locid="95">As an alternative to the web administration interface, you can use
+                the CLI to configure the host for local storage. For more information, see <xref href="jow1426181291481.xml" ixia_locid="96"/> and <xref href="jow1426182435441.xml" ixia_locid="97"/>.</p>
+        </context>
+        <steps>
+            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N1002A_N10027_N1001F_N10001" ixia_locid="76">
+                <cmd ixia_locid="77"/>
+            </step>
+            <step conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N10033_N10027_N1001F_N10001" ixia_locid="78">
+                <cmd ixia_locid="79"/>
+            </step>
+            <step id="step_N1002B_N10028_N1001C_N10001" ixia_locid="6">
+                <cmd ixia_locid="7">Select the <uicontrol ixia_locid="10">Storage</uicontrol> tab.</cmd>
+                <info ixia_locid="21">
+                    <p ixia_locid="22">For a compute node, the storage tab displays three lists:</p>
+                    <dl>
+                        <dlentry ixia_locid="23">
+                            <dt ixia_locid="24">Disks</dt>
+                            <dd ixia_locid="25">
+                                <p ixia_locid="26">Physical disks installed in the compute node.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="31">
+                            <dt ixia_locid="32">Local Volume Groups</dt>
+                            <dd ixia_locid="33">
+                                <p ixia_locid="34">Groups of physical volumes available for VM
+                                    storage.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="27">
+                            <dt ixia_locid="28">Physical Volumes</dt>
+                            <dd ixia_locid="29">
+                                <p ixia_locid="30">Partitions that have been initialized for logical
+                                    volume management (LVM) and assigned to a local volume
+                                    group.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                    <fig id="fig_atv_4s5_jr" ixia_locid="35">
+                        <image href="jow1426459038579.image" id="image_rhh_ps5_jr" ixia_locid="36" width="6in">
+                            <alt ixia_locid="37">Compute Node Storage tab</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+            <step id="step_N10042_N10027_N1001F_N10001" ixia_locid="11">
+                <cmd ixia_locid="12">If required, add the <nameliteral ixia_locid="13">nova-local</nameliteral> group to the <nameliteral ixia_locid="14">Local
+                        Volume Groups</nameliteral> list.</cmd>
+                <info ixia_locid="15">
+                    <p ixia_locid="16">The <nameliteral ixia_locid="17">Local Volume
+                            Groups</nameliteral> list displays groups of physical volumes designated
+                        for use as local storage.</p>
+                    <p ixia_locid="18">The default group for use by VMs is called <nameliteral ixia_locid="19">nova-local</nameliteral>. If this group is not listed,
+                        you can create it by clicking <nameliteral ixia_locid="20">Add Local Volume
+                            Group</nameliteral>, and then accepting the defaults in the dialog box
+                        that appears.</p>
+                    <fig id="fig_wrr_vs5_jr" ixia_locid="38">
+                        <image href="jow1426459253956.image" id="image_ask_bt5_jr" ixia_locid="39" width="5in">
+                            <alt ixia_locid="40">Create Local Volume Group</alt>
+                        </image>
+                    </fig>
+                </info>
+                <stepresult ixia_locid="41">
+                    <p ixia_locid="42">The <nameliteral ixia_locid="43">nova-local</nameliteral> group is shown in the list.</p>
+                    <fig id="fig_i4s_p1z_jr" ixia_locid="44">
+                        <image href="jow1426510376255.image" id="image_w1l_z1z_jr" ixia_locid="45" width="6in">
+                            <alt ixia_locid="46">Local Volume Groups</alt>
+                        </image>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N10107_N10027_N1001F_N10001" ixia_locid="47">
+                <cmd ixia_locid="48">Add a physical volume to the <nameliteral ixia_locid="49">nova-local</nameliteral> group.</cmd>
+                <info ixia_locid="50">
+                    <p ixia_locid="51">The <nameliteral ixia_locid="52">Physical
+                            Volumes</nameliteral> list displays LVM volumes that have been created
+                        and added to a Local Volume Group. To add a new one, click <nameliteral ixia_locid="53">Add Physical Volume</nameliteral> and complete the
+                        dialog box that appears.</p>
+                    <fig id="fig_myv_tdz_jr" ixia_locid="54">
+                        <image href="jow1426511807740.image" id="image_dhp_12z_jr" ixia_locid="55" width="5in">
+                            <alt ixia_locid="56">Create Physical Volume dialog box</alt>
+                        </image>
+                    </fig>
+                    <note id="note_N1013A_N10112_N10107_N10027_N1001F_N10001" ixia_locid="59">
+                        <p ixia_locid="60">The <uicontrol ixia_locid="61">Local Volume
+                                Group</uicontrol> drop-down selection is automatically set to
+                                <nameliteral ixia_locid="62">nova-local</nameliteral>, and cannot be
+                            changed.</p>
+                    </note>
+                    <p ixia_locid="57">Use the <uicontrol ixia_locid="58">Disks</uicontrol>
+                        drop-down menu to select a disk to provide storage. For the root disk, a
+                        designated partition  (<nameliteral ixia_locid="98">local_pv</nameliteral>) is used.</p>
+                    <p ixia_locid="63">You can add any number of physical volumes to the
+                            <nameliteral ixia_locid="64">nova-local</nameliteral> group, limited
+                        only by the number of available disks.</p>
+                </info>
+                <stepresult ixia_locid="65">
+                    <p ixia_locid="66">A physical volume is created and added to the
+                            <nameliteral ixia_locid="67">nova-local</nameliteral> group.</p>
+                    <fig id="fig_ajv_p2z_jr" ixia_locid="68">
+                        <image href="jow1426512224610.image" id="image_c4b_w2z_jr" ixia_locid="69" width="6in">
+                            <alt ixia_locid="70">Physical Volumes list</alt>
+                        </image>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N1019C_N10027_N1001F_N10001" ixia_locid="80">
+                <cmd ixia_locid="81">Unlock the host to make the changes take effect.</cmd>
+            </step>
+        </steps>
+        <result id="result_N10172_N1001F_N10001" ixia_locid="71">
+            <p ixia_locid="72">The compute host is ready to provide local  storage for use by VMs.
+                Because a <nameliteral ixia_locid="82">nova-local</nameliteral> local volume group
+                has been added, the host is automatically included in the <nameliteral ixia_locid="83">local_storage_hosts</nameliteral> host aggregate.</p>
+            <p ixia_locid="84">To return a host to the <nameliteral ixia_locid="85">remote_storage_hosts</nameliteral> host aggregate, so that it is used to
+                instantiate VMs configured for remote Cinder-based storage, delete the <nameliteral ixia_locid="86">nova-local</nameliteral> local volume group.</p>
+            <note id="note_N10204_N101E1_N1001F_N10001" ixia_locid="103" type="caution">
+                <p ixia_locid="104">VMs instantiated on the compute node must be migrated or terminated before the
+                    host is reconfigured for remote storage.</p>
+            </note>
+        </result>
+        <postreq id="postreq_N1017B_N1001F_N10001" ixia_locid="73">
+            <p ixia_locid="74">To configure a VM to use local storage or remote Cinder-based
+                storage, or to be instantiated on any compute host regardless of storage type, see
+                    <xref href="jow1426181040008.xml" ixia_locid="75"/>. </p>
+            <p ixia_locid="99">To add disks to a compute node for extra local storage, see <xref href="jow1418924302353.xml" ixia_locid="100"/>
+            </p>
+        </postreq>
+    </taskbody>
 </task-wr>

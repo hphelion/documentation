@@ -1,50 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333806620" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
-    <!-- Modification History
-
- -->
-    <title ixia_locid="1">Parameters</title>
-    <shortdesc ixia_locid="2">You can specify parameters for a service, such as authentication,
-        networking, and so on, when you invoke a template.</shortdesc>
-    <prolog>
-        <author ixia_locid="3">Jim Owens</author>
-    </prolog>
-    <conbody>
-        <p ixia_locid="4">You can supply parameter values by:</p>
-        <ul id="ul_iqc_bgq_34">
-            <li ixia_locid="5">
-                <p ixia_locid="6">including them in the template as defaults</p>
-            </li>
-            <li ixia_locid="7">
-                <p ixia_locid="8">specifying each one using a form in the web administration
-                    interface, or using the<option ixia_locid="9"> -parameters</option> option on
-                    the <cmdname ixia_locid="10">heat create-stack</cmdname> command line</p>
-            </li>
-            <li ixia_locid="11">
-                <p ixia_locid="12">saving them in an environment file, which you can specify using the<option ixia_locid="13"> -e</option>
-     option on the <cmdname ixia_locid="14">heat create-stack</cmdname> command line</p>
-            </li>
-        </ul>
-        <p ixia_locid="15">This enables you to customize the behavior of a common service template when the service is
-   created or modified.</p>
-        <p ixia_locid="16">You can use environment files or command-line entries to supplement parameters in the template,
-   or to override them if they already exist. Environment-file values override existing values in
-   the template. Command-line values override existing values in the environment file or the
-   template.</p>
-        <p ixia_locid="17">The syntax for specifying parameters is as follows:</p>
-        <ul id="ul_b45_s1v_34">
-            <li ixia_locid="18">
-                <p ixia_locid="19">on the command line, using the<option ixia_locid="20"> -P
-                    </option>option. Multiple <option ixia_locid="31">-P</option> arguments are supported.</p>
-                <codeblock ixia_locid="21"><systemoutput ixia_locid="36">~(keystone_admin)$ </systemoutput><userinput ixia_locid="22">heat stack-create -P <varname ixia_locid="32">key1</varname>=<varname ixia_locid="34">val1</varname> -P <varname ixia_locid="33">key2</varname>=<varname ixia_locid="35">val2</varname></userinput></codeblock>
-            </li>
-            <li ixia_locid="25">
-                <p ixia_locid="26">in an environment file:</p>
-                <codeblock ixia_locid="27">parameters:
-    <varname ixia_locid="28">key:value</varname>
-    <varname ixia_locid="29">key:value</varname></codeblock>
-            </li>
-        </ul>
-    </conbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333806620" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title ixia_locid="1">Parameters</title>
+    <shortdesc ixia_locid="2">You can specify parameters for a service, such as authentication,
+        networking, and so on, when you invoke a template.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="4">You can supply parameter values by:</p>
+        <ul id="ul_iqc_bgq_34">
+            <li ixia_locid="5">
+                <p ixia_locid="6">including them in the template as defaults</p>
+            </li>
+            <li ixia_locid="7">
+                <p ixia_locid="8">specifying each one using a form in the web administration
+                    interface, or using the<option ixia_locid="9"> -parameters</option> option on
+                    the <cmdname ixia_locid="10">heat create-stack</cmdname> command line</p>
+            </li>
+            <li ixia_locid="11">
+                <p ixia_locid="12">saving them in an environment file, which you can specify using the<option ixia_locid="13"> -e</option>
+     option on the <cmdname ixia_locid="14">heat create-stack</cmdname> command line</p>
+            </li>
+        </ul>
+        <p ixia_locid="15">This enables you to customize the behavior of a common service template when the service is
+   created or modified.</p>
+        <p ixia_locid="16">You can use environment files or command-line entries to supplement parameters in the template,
+   or to override them if they already exist. Environment-file values override existing values in
+   the template. Command-line values override existing values in the environment file or the
+   template.</p>
+        <p ixia_locid="17">The syntax for specifying parameters is as follows:</p>
+        <ul id="ul_b45_s1v_34">
+            <li ixia_locid="18">
+                <p ixia_locid="19">on the command line, using the<option ixia_locid="20"> -P
+                    </option>option. Multiple <option ixia_locid="31">-P</option> arguments are supported.</p>
+                <codeblock ixia_locid="21"><systemoutput ixia_locid="36">~(keystone_admin)$ </systemoutput><userinput ixia_locid="22">heat stack-create -P <varname ixia_locid="32">key1</varname>=<varname ixia_locid="34">val1</varname> -P <varname ixia_locid="33">key2</varname>=<varname ixia_locid="35">val2</varname></userinput></codeblock>
+            </li>
+            <li ixia_locid="25">
+                <p ixia_locid="26">in an environment file:</p>
+                <codeblock ixia_locid="27">parameters:
+    <varname ixia_locid="28">key:value</varname>
+    <varname ixia_locid="29">key:value</varname></codeblock>
+            </li>
+        </ul>
+    </conbody>
 </concept-wr>

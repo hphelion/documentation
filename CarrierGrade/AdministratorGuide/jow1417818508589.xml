@@ -1,40 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
-<concept-wr id="jow1417818508589" xml:lang="en-us">
-<!-- Modification History
-
- -->
- <title ixia_locid="1">Resource Scaling (Autoscaling)</title>
- <shortdesc ixia_locid="2">You can use Heat to reassign stack resources automatically to meet changing
-  conditions.</shortdesc>
- <prolog>
-  <author ixia_locid="3">Jim Owens</author>
- </prolog>
- <conbody>
-  <p ixia_locid="5">You can define and monitor performance thresholds for metrics such as memory
-   usage or CPU activity, and then add or remove resources when the thresholds are crossed. This
-   allows you to make efficient use of the hardware in the cluster, by allocating resources only
-   when they are needed, and assigning them where they are most required.</p>
-  <p ixia_locid="6">HP Helion OpenStack Carrier Grade supports two types of scaling:</p>
-  <dl>
-   <dlentry ixia_locid="7">
-    <dt ixia_locid="8">In/Out</dt>
-    <dd ixia_locid="9">
-     <p ixia_locid="10">This type of scaling (also known as <term ixia_locid="11">horizontal scaling</term>) adds or removes
-      instances as needed.</p>
-    </dd>
-   </dlentry>
-   <dlentry ixia_locid="12">
-    <dt ixia_locid="13">Up/Down</dt>
-    <dd ixia_locid="14">
-     <p ixia_locid="15">This type of scaling (also known as <term ixia_locid="16">vertical
-       scaling</term>) increases or decreases resources (for example, vCPUs) for individual
-      instances as needed. For more about up/down scaling, see <xref href="jow1417813748326.xml" ixia_locid="18"/>.</p>
-    </dd>
-   </dlentry>
-  </dl>
-  <p ixia_locid="17">Performance metrics can be collected and reported by the HP Helion OpenStack Carrier Grade
-   platform, or by the guests using guest metrics. For more information about guest metrics, see
-    <xref href="jow1404916152577.xml" ixia_locid="19"/>. </p>
- </conbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1417818508589" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">Resource Scaling (Autoscaling)</title>
+ <shortdesc ixia_locid="2">You can use Heat to reassign stack resources automatically to meet changing
+  conditions.</shortdesc>
+ <prolog>
+  <author ixia_locid="3">Jim Owens</author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="5">You can define and monitor performance thresholds for metrics such as memory
+   usage or CPU activity, and then add or remove resources when the thresholds are crossed. This
+   allows you to make efficient use of the hardware in the cluster, by allocating resources only
+   when they are needed, and assigning them where they are most required.</p>
+  <p ixia_locid="6">HP Helion OpenStack Carrier Grade supports two types of scaling:</p>
+  <dl>
+   <dlentry ixia_locid="7">
+    <dt ixia_locid="8">In/Out</dt>
+    <dd ixia_locid="9">
+     <p ixia_locid="10">This type of scaling (also known as <term ixia_locid="11">horizontal scaling</term>) adds or removes
+      instances as needed.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="12">
+    <dt ixia_locid="13">Up/Down</dt>
+    <dd ixia_locid="14">
+     <p ixia_locid="15">This type of scaling (also known as <term ixia_locid="16">vertical
+       scaling</term>) increases or decreases resources (for example, vCPUs) for individual
+      instances as needed. For more about up/down scaling, see <xref href="jow1417813748326.xml" ixia_locid="18"/>.</p>
+    </dd>
+   </dlentry>
+  </dl>
+  <p ixia_locid="17">Performance metrics can be collected and reported by the HP Helion OpenStack Carrier Grade
+   platform, or by the guests using guest metrics. For more information about guest metrics, see
+    <xref href="jow1404916152577.xml" ixia_locid="19"/>. </p>
+ </conbody>
 </concept-wr>

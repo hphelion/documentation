@@ -1,74 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333738594" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
-    <title ixia_locid="1">Provider Networks</title>
-    <shortdesc ixia_locid="2">Provider networks are the payload-carrying networks used implicitly by end users when
-  they move traffic over their tenant networks.</shortdesc>
-    <prolog>
-        <author ixia_locid="3">Pedro Sanchez</author>
-    </prolog>
-    <conbody>
-        <p ixia_locid="4">You must consider the following guidelines:</p>
-        <ul id="ul_cmp_rl2_4n">
-            <li ixia_locid="5">
-                <p ixia_locid="6">From the point of view of the tenants, all networking happens over the tenant networks
-     created by them, or by the <nameliteral ixia_locid="7">admin</nameliteral> user on their behalf. Tenants are
-     not necessarily aware of the available provider networks. In fact, they cannot create tenant
-     networks over provider networks not already accessible to them. For this reason, the system
-     administrator must ensure that proper communication mechanisms are in place for tenants to
-     request access to specific provider networks when required.</p>
-                <p ixia_locid="8">For example, a tenant may be interested in creating a new tenant
-                    network with access to a specific network access device in the data center, such
-                    as an access point for a wireless transport. In this case, the system
-                    administrator must create a new tenant network on behalf of the tenant, using  a
-                    VLAN ID in the provider network's segmentation range that provides connectivity
-                    to the said network access point.</p>
-            </li>
-            <li ixia_locid="9">
-                <p ixia_locid="10">Consider how different offerings of bandwidth, throughput commitments, and class-of-service,
-     can be used by your users. Having different provider network offerings available to your
-     tenants enables end users to diversify their own portfolio of services. This in turn gives the
-     HP Helion OpenStack Carrier Grade administration an opportunity to put different revenue models in place.</p>
-            </li>
-            <li ixia_locid="11">
-                <p ixia_locid="12">For the IPv4 address plan, consider the following:</p>
-                <ul id="ul_ixv_ct2_4n">
-                    <li ixia_locid="13">
-                        <p ixia_locid="14">Tenant networks attached to a public network, such as the
-                            Internet, have to have external addresses assigned to them. Therefore
-                            you must plan for valid definitions of their IPv4 subnets and default
-                            gateways.</p>
-                    </li>
-                    <li ixia_locid="15">
-                        <p ixia_locid="16">As with the OAM network, you must ensure that suitable
-                            firewall services are in place on any tenant network with a public
-                            address.</p>
-                    </li>
-                </ul>
-            </li>
-            <li ixia_locid="17">
-                <p ixia_locid="18">Segmentation ranges defined on a provider network may be owned by
-                    the administrator, a specific tenant, or may be shared by all tenants. With this
-                    ownership model:</p>
-                <ul id="ul_kgw_jdl_hp">
-                    <li ixia_locid="19">
-                        <p ixia_locid="20">A base deployment scenario has each compute node using a
-                            single data interface defined over a single provider network. In this
-                            scenario, all required tenant networks can be instantiated making use of
-                            the available VLANs or VNIs in each corresponding segmentation range.
-                            You may need more than one provider network when the underlying physical
-                            networks demand different MTU sizes, or when boundaries between provider
-                            networks are dictated by policy or other non-technical
-                            considerations.</p>
-                    </li>
-                    <li ixia_locid="21">
-                        <p ixia_locid="22">Segmentation ranges can be reserved and assigned on-demand without having
-                            to lock and unlock the compute nodes. This facilitates day-to-day
-                            operations which can be performed without any disruption to the running
-                            environment.</p>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </conbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333738594" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title ixia_locid="1">Provider Networks</title>
+    <shortdesc ixia_locid="2">Provider networks are the payload-carrying networks used implicitly by end users when
+  they move traffic over their tenant networks.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Pedro Sanchez</author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="4">You must consider the following guidelines:</p>
+        <ul id="ul_cmp_rl2_4n">
+            <li ixia_locid="5">
+                <p ixia_locid="6">From the point of view of the tenants, all networking happens over the tenant networks
+     created by them, or by the <nameliteral ixia_locid="7">admin</nameliteral> user on their behalf. Tenants are
+     not necessarily aware of the available provider networks. In fact, they cannot create tenant
+     networks over provider networks not already accessible to them. For this reason, the system
+     administrator must ensure that proper communication mechanisms are in place for tenants to
+     request access to specific provider networks when required.</p>
+                <p ixia_locid="8">For example, a tenant may be interested in creating a new tenant
+                    network with access to a specific network access device in the data center, such
+                    as an access point for a wireless transport. In this case, the system
+                    administrator must create a new tenant network on behalf of the tenant, using  a
+                    VLAN ID in the provider network's segmentation range that provides connectivity
+                    to the said network access point.</p>
+            </li>
+            <li ixia_locid="9">
+                <p ixia_locid="10">Consider how different offerings of bandwidth, throughput commitments, and class-of-service,
+     can be used by your users. Having different provider network offerings available to your
+     tenants enables end users to diversify their own portfolio of services. This in turn gives the
+     HP Helion OpenStack Carrier Grade administration an opportunity to put different revenue models in place.</p>
+            </li>
+            <li ixia_locid="11">
+                <p ixia_locid="12">For the IPv4 address plan, consider the following:</p>
+                <ul id="ul_ixv_ct2_4n">
+                    <li ixia_locid="13">
+                        <p ixia_locid="14">Tenant networks attached to a public network, such as the
+                            Internet, have to have external addresses assigned to them. Therefore
+                            you must plan for valid definitions of their IPv4 subnets and default
+                            gateways.</p>
+                    </li>
+                    <li ixia_locid="15">
+                        <p ixia_locid="16">As with the OAM network, you must ensure that suitable
+                            firewall services are in place on any tenant network with a public
+                            address.</p>
+                    </li>
+                </ul>
+            </li>
+            <li ixia_locid="17">
+                <p ixia_locid="18">Segmentation ranges defined on a provider network may be owned by
+                    the administrator, a specific tenant, or may be shared by all tenants. With this
+                    ownership model:</p>
+                <ul id="ul_kgw_jdl_hp">
+                    <li ixia_locid="19">
+                        <p ixia_locid="20">A base deployment scenario has each compute node using a
+                            single data interface defined over a single provider network. In this
+                            scenario, all required tenant networks can be instantiated making use of
+                            the available VLANs or VNIs in each corresponding segmentation range.
+                            You may need more than one provider network when the underlying physical
+                            networks demand different MTU sizes, or when boundaries between provider
+                            networks are dictated by policy or other non-technical
+                            considerations.</p>
+                    </li>
+                    <li ixia_locid="21">
+                        <p ixia_locid="22">Segmentation ranges can be reserved and assigned on-demand without having
+                            to lock and unlock the compute nodes. This facilitates day-to-day
+                            operations which can be performed without any disruption to the running
+                            environment.</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </conbody>
 </concept-wr>

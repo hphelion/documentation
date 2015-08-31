@@ -1,282 +1,282 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446976545" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
-<!-- Modification History
-        
--->
-    <title ixia_locid="1">Installing Patches</title>
-    <shortdesc ixia_locid="2">Patches in the patch storage area can be selected to be installed to
-        the cluster, one, several, or all patches at a time. When selected, they are moved into the
-        software updates repository from where they must be subsequently installed on each impacted
-        host in the cluster.</shortdesc>
-    <prolog>
-        <author ixia_locid="3">Pedro Sanchez</author>
-    </prolog>
-    <taskbody>
-        <context id="context_N1001E_N1001B_N10001" ixia_locid="4">
-            <p ixia_locid="5">Installing a patch to the cluster means installing it to each and
-                every host of the type where the patch is relevant. For example, one patch can be
-                installed on the controller nodes only, while another can be installed on all host
-                types. Since a patch is not necessarily installed on all applicable hosts
-                simultaneously, patching the entire cluster can take some time.</p>
-            <p ixia_locid="8">As a patch is installed to the cluster, it goes through the following
-                state transitions:</p>
-            <dl>
-                <dlentry ixia_locid="9">
-                    <dt ixia_locid="10"><i ixia_locid="11">Available</i> to <i ixia_locid="12">Partial-Apply</i></dt>
-                    <dd ixia_locid="13">
-                        <p ixia_locid="16">A patch in the <i ixia_locid="39">Partial-Apply</i> state
-                            indicates that it has been installed on zero or more, but not all, the
-                            applicable hosts.</p>
-                        <p ixia_locid="14">Use the command <cmdname ixia_locid="15">wrs-patch
-                                apply</cmdname> to trigger this transition. The patch moves from the
-                            patch storage area to the software updates repository and becomes ready
-                            to be installed on the applicable hosts.</p>
-                    </dd>
-                </dlentry>
-                <dlentry ixia_locid="18">
-                    <dt ixia_locid="19"><i ixia_locid="20">Partial-Apply</i> to <i ixia_locid="21">Applied</i></dt>
-                    <dd ixia_locid="22">
-                        <p ixia_locid="41">A patch in the <i ixia_locid="40">Applied</i> state
-                            indicates that it has been installed on all applicable hosts.</p>
-                        <p ixia_locid="23">Use the command <cmdname ixia_locid="24">wrs-patch
-                                host-install</cmdname> repeatedly targeting each time one of the
-                            applicable hosts in the cluster. The transition to the <i ixia_locid="25">Applied</i> state is complete when the patch is
-                            installed on all target hosts.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-            <p ixia_locid="26">The following example illustrates the process of installing a single
-                patch on the cluster. It assumes that the patch is in the <i ixia_locid="27">Available</i> state already, as described in <xref href="psa1410446807133.xml" ixia_locid="28"/>, and that only the controller nodes must be patched.</p>
-        </context>
-        <steps>
-            <step conref="psa1410446807133.xml#psa1410446807133/cli-admin-login" id="step_N10084_N10081_N1001F_N10001" ixia_locid="29">
-                <cmd ixia_locid="30"/>
-            </step>
-            <step id="step_N1002A_N10027_N1001B_N10001" ixia_locid="6">
-                <cmd ixia_locid="7">Verify that the patches are available using the command <cmdname ixia_locid="31">wrs-patch query</cmdname>.</cmd>
-                <stepxmp ixia_locid="32">
-                    <codeblock ixia_locid="33"><systemoutput ixia_locid="210">~(keystone_admin)$ </systemoutput><userinput ixia_locid="35">sudo wrs-patch query</userinput>
-<systemoutput ixia_locid="211">﻿       Patch ID             Patch State
-=========================   ===========
-PATCH_0001   Available
-PATCH_0002   Available
-PATCH_0003   Available</systemoutput></codeblock>
-                </stepxmp>
-            </step>
-            <step id="step_N100AD_N10081_N1001F_N10001" ixia_locid="37">
-                <cmd ixia_locid="38">Apply the patch.</cmd>
-                <stepxmp ixia_locid="42">
-                    <codeblock ixia_locid="43"><systemoutput ixia_locid="212">~(keystone_admin)$ </systemoutput><userinput ixia_locid="45">sudo wrs-patch apply PATCH_0001</userinput>
-<systemoutput ixia_locid="213">PATCH_0001 is now in the repo</systemoutput></codeblock>
-                </stepxmp>
-                <stepresult ixia_locid="47">
-                    <p ixia_locid="48">The patch is now in the <i ixia_locid="49">Partial-Apply</i>
-                        state, ready for installation from the software updates repository on the
-                        impacted hosts.</p>
-                </stepresult>
-            </step>
-            <step id="step_N100FB_N1009F_N1001F_N10001" importance="optional" ixia_locid="50">
-                <cmd ixia_locid="51">Apply all available patches in a single operation.</cmd>
-                <stepxmp ixia_locid="52">
-                    <codeblock ixia_locid="53"><systemoutput ixia_locid="214">~(keystone_admin)$ </systemoutput><userinput ixia_locid="55">sudo wrs-patch apply --all</userinput>
-<systemoutput ixia_locid="215">PATCH_0001 is now in the repo</systemoutput>
-<systemoutput ixia_locid="216">PATCH_0002 is now in the repo</systemoutput>
-<systemoutput ixia_locid="217">PATCH_0003 is now in the repo</systemoutput></codeblock>
-                </stepxmp>
-                <info ixia_locid="59">
-                    <p ixia_locid="60">In this example there are three patches ready now for
-                        installation from the software updates repository.</p>
-                </info>
-            </step>
-            <step id="step_N1012A_N1009F_N1001F_N10001" ixia_locid="62">
-                <cmd ixia_locid="63">Query the patching status of all hosts in the cluster.</cmd>
-                <info ixia_locid="64">
-                    <p ixia_locid="65">You can query the patching status of all hosts at any time as
-                        illustrated below. Note that the reported status is the accumulated result
-                        of all applied and removed patches in the software updates repository, and
-                        not just the status due to a particular patch.</p>
-                </info>
-                <stepxmp ixia_locid="66">
-                    <codeblock ixia_locid="67"><systemoutput ixia_locid="218">~(keystone_admin)$ </systemoutput><userinput ixia_locid="69">sudo wrs-patch query-hosts</userinput>
-<systemoutput ixia_locid="219">﻿  Hostname      IP Address    Patch Current  Reboot Required
-============  ==============  =============  ===============
-compute-0     192.168.204.15       Yes             No
-controller-0  192.168.204.3        No              Yes
-controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
-                </stepxmp>
-                <stepresult ixia_locid="71">
-                    <p ixia_locid="72">For each host in the cluster, the following patch status
-                        fields are displayed:</p>
-                    <dl>
-                        <dlentry ixia_locid="73">
-                            <dt ixia_locid="74">Patch Current</dt>
-                            <dd ixia_locid="75">
-                                <p ixia_locid="76">Indicates whether there are patches pending for
-                                    installation or removal on the host or not. If <i ixia_locid="77">Yes</i>, then all relevant patches in the
-                                    software updates repository have been installed on, or removed
-                                    from, the host already. If <i ixia_locid="78">No</i>, then there
-                                    is at least one patch in either the <i ixia_locid="79">Partial-Apply</i> or <i ixia_locid="80">Partial-Remove</i>
-                                    states that has not been applied to the host.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry ixia_locid="81">
-                            <dt ixia_locid="82">Reboot Required </dt>
-                            <dd ixia_locid="83">
-                                <p ixia_locid="84">Indicates whether the host has to be rebooted or
-                                    not as a result of one or more patches that have been either
-                                    applied or removed, or because it is not patch current.</p>
-                            </dd>
-                        </dlentry>
-                    </dl>
-                    <p ixia_locid="85">In this example, <nameliteral ixia_locid="86">compute-0</nameliteral> is up to date, no patches need to be installed
-                        and no reboot is required. By contrast, the controllers are not patch
-                        current, and therefore a reboot is required to install the patch.</p>
-                </stepresult>
-            </step>
-            <step id="step_N10190_N1009F_N1001F_N10001" ixia_locid="157">
-                <cmd ixia_locid="159">Install all pending patches on <nameliteral ixia_locid="161">controller-0</nameliteral>.</cmd>
-                <substeps id="substeps_kzv_x13_pp">
-                    <substep ixia_locid="163">
-                        <cmd ixia_locid="165">Swact controller services.</cmd>
-                        <stepxmp ixia_locid="167">
-                            <codeblock ixia_locid="169"><systemoutput ixia_locid="220">~(keystone_admin)$ </systemoutput><userinput ixia_locid="173">system host-swact controller-0</userinput></codeblock>
-                        </stepxmp>
-                        <info ixia_locid="175">
-                            <p ixia_locid="177">Before patching a controller node, you must transfer
-                                any active services running on the host to the other controller.
-                                Only then it is safe to lock the host.</p>
-                        </info>
-                    </substep>
-                    <substep ixia_locid="179">
-                        <cmd ixia_locid="181">Run the patching sequence.</cmd>
-                        <info ixia_locid="183">
-                            <p ixia_locid="184">The patching sequence locks the host, installs the
-                                patches, and forces a host reboot.</p>
-                        </info>
-                        <stepxmp ixia_locid="185">
-                            <codeblock ixia_locid="187"><systemoutput ixia_locid="221">~(keystone_admin)$ </systemoutput><userinput ixia_locid="191">system host-patch-reboot controller-0</userinput>
-<systemoutput ixia_locid="222">host-patch-reboot controller-0 may take several minutes to complete.
- 
-2014-10-17-20-39-59_host-patch-reboot start.
-...
- 
-2014-10-17-20-39-59_host-patch-reboot host-lock.
-waiting for host controller-0 to transition to locked-disabled-online ...
-waiting for host controller-0 to transition to locked-disabled-online ...
-2014-10-17-20-40-14_Host controller-0 is locked-disabled-online.
- 
-2014-10-17-20-40-14_Patch install request
-Installing patch for host controller-0 ...
- 
-2014-10-17-20-40-16_Patch install response
-Patch response Info: Patch installation was successful on controller-0.
- 
-2014-10-17-20-40-16_host-patch-reboot host-unlock
-Restoring initial administrative state: unlocked. Unlocking host controller-0 to return to initial administrative state.</systemoutput></codeblock>
-                        </stepxmp>
-                    </substep>
-                </substeps>
-                <stepresult ixia_locid="194">
-                    <p ixia_locid="196">All patches are now installed on <nameliteral ixia_locid="198">controller-0</nameliteral>. Querying the current patch
-                        status displays the following information:</p>
-                    <codeblock ixia_locid="200"><systemoutput ixia_locid="223">~(keystone_admin)$ </systemoutput><userinput ixia_locid="204">sudo wrs-patch query-hosts</userinput>
-<systemoutput ixia_locid="224">﻿  Hostname      IP Address    Patch Current  Reboot Required
-============  ==============  =============  ===============
-compute-0     192.168.204.15       Yes             No
-controller-0  192.168.204.3        Yes             No
-controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
-                </stepresult>
-            </step>
-            <step id="step_N1023A_N100A0_N1001F_N10001" importance="optional" ixia_locid="158">
-                <cmd ixia_locid="160">Manually install all pending patches on <nameliteral ixia_locid="162">controller-0</nameliteral>.</cmd>
-                <info ixia_locid="207">
-                    <p ixia_locid="208">You may want to have finer control of the patching steps
-                        executed by the <cmdname ixia_locid="209">system host-patch-reboot</cmdname>
-                        command to determine when to install the patches and unlock the host.</p>
-                </info>
-                <substeps id="substeps_ck5_3qx_5p">
-                    <substep ixia_locid="164">
-                        <cmd ixia_locid="166">Swact controller services.</cmd>
-                        <stepxmp ixia_locid="168">
-                            <codeblock ixia_locid="170"><systemoutput ixia_locid="225">~(keystone_admin)$ </systemoutput><userinput ixia_locid="174">system host-swact controller-0</userinput></codeblock>
-                        </stepxmp>
-                        <info ixia_locid="176">
-                            <p ixia_locid="178">Before patching a controller node, you must transfer
-                                any active services running on the host to the other controller.
-                                Only then it is safe to lock the host.</p>
-                        </info>
-                    </substep>
-                    <substep ixia_locid="180">
-                        <cmd ixia_locid="182">Lock the host.</cmd>
-                        <stepxmp ixia_locid="186">
-                            <codeblock ixia_locid="188"><systemoutput ixia_locid="226">~(keystone_admin)$ </systemoutput><userinput ixia_locid="192">system host-lock controller-0</userinput></codeblock>
-                        </stepxmp>
-                        <info ixia_locid="104">
-                            <p ixia_locid="105">You must lock the target host, controller, compute,
-                                or storage, before installing patches.</p>
-                        </info>
-                    </substep>
-                    <substep ixia_locid="106">
-                        <cmd ixia_locid="107">Install the pending patches.</cmd>
-                        <stepxmp ixia_locid="108">
-                            <codeblock ixia_locid="109"><systemoutput ixia_locid="227">~(keystone_admin)$ </systemoutput><userinput ixia_locid="111">sudo wrs-patch host-install controller-0</userinput>
-<systemoutput ixia_locid="228">Patch installation was successful on controller-0</systemoutput></codeblock>
-                        </stepxmp>
-                        <stepresult ixia_locid="113">
-                            <p ixia_locid="114">All patches are now installed on <nameliteral ixia_locid="115">controller-0</nameliteral>. Querying the
-                                current patching status displays the following information:</p>
-                            <codeblock ixia_locid="116"><systemoutput ixia_locid="229">~(keystone_admin)$ </systemoutput><userinput ixia_locid="118">sudo wrs-patch query-hosts</userinput>
-<systemoutput ixia_locid="230">﻿  Hostname      IP Address    Patch Current  Reboot Required
-============  ==============  =============  ===============
-compute-0     192.168.204.15       Yes             No
-controller-0  192.168.204.3        Yes             Yes
-controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
-                            <p ixia_locid="120">For illustration purposes in this section, the
-                                command <cmdname ixia_locid="121">wrs-patch host-install</cmdname>
-                                is presented as the tool to <i ixia_locid="122">install</i> patches.
-                                But in fact, this command also <i ixia_locid="123">removes</i>
-                                patches as well, as described in <xref href="psa1410446902796.xml" ixia_locid="124"/>. The command is better described then as the
-                                tool to install and remove all patches in the <i ixia_locid="125">Partial-Apply</i> and <i ixia_locid="126">Partial-Remove</i>
-                                states on a host.</p>
-                        </stepresult>
-                    </substep>
-                    <substep ixia_locid="127">
-                        <cmd ixia_locid="128">Unlock the target host.</cmd>
-                        <stepxmp ixia_locid="129">
-                            <codeblock ixia_locid="130"><systemoutput ixia_locid="231">~(keystone_admin)$ </systemoutput><userinput ixia_locid="132">system host-unlock controller-0</userinput></codeblock>
-                        </stepxmp>
-                        <stepresult ixia_locid="133">
-                            <p ixia_locid="134">Unlocking the host forces a reset of the host
-                                followed by a reboot. This ensures that the host is restarted in a
-                                known state.</p>
-                        </stepresult>
-                    </substep>
-                </substeps>
-                <stepresult ixia_locid="195">
-                    <p ixia_locid="197">All patches are now installed on <nameliteral ixia_locid="199">controller-0</nameliteral>.</p>
-                </stepresult>
-            </step>
-            <step id="step_N10260_N1009F_N1001F_N10001" ixia_locid="142">
-                <cmd ixia_locid="143">Install all pending patches on <nameliteral ixia_locid="144">controller-1</nameliteral>.</cmd>
-                <info ixia_locid="145">
-                    <p ixia_locid="146">Repeat the previous step targeting <nameliteral ixia_locid="147">controller-1</nameliteral>
-                        this time.</p>
-                </info>
-                <stepresult ixia_locid="148">
-                    <p ixia_locid="149">All patches are now installed on <nameliteral ixia_locid="150">controller-1</nameliteral> as well. Querying the
-                        current patching status displays the following information:</p>
-                    <codeblock ixia_locid="151"><systemoutput ixia_locid="232">~(keystone_admin)$ </systemoutput><userinput ixia_locid="153">sudo wrs-patch query-hosts</userinput>
-<systemoutput ixia_locid="233">﻿  Hostname      IP Address    Patch Current  Reboot Required
-============  ==============  =============  ===============
-compute-0     192.168.204.15       Yes             No
-controller-0  192.168.204.3        Yes             No
-controller-1  192.168.204.4        Yes             No</systemoutput></codeblock>
-                </stepresult>
-            </step>
-        </steps>
-        <result id="result_N1028F_N1001F_N10001" ixia_locid="155">
-            <p ixia_locid="156">The cluster is up to date now. All patches are installed.</p>
-        </result>
-    </taskbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446976545" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">Installing Patches</title>
+    <shortdesc ixia_locid="2">Patches in the patch storage area can be selected to be installed to
+        the cluster, one, several, or all patches at a time. When selected, they are moved into the
+        software updates repository from where they must be subsequently installed on each impacted
+        host in the cluster.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Pedro Sanchez</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001E_N1001B_N10001" ixia_locid="4">
+            <p ixia_locid="5">Installing a patch to the cluster means installing it to each and
+                every host of the type where the patch is relevant. For example, one patch can be
+                installed on the controller nodes only, while another can be installed on all host
+                types. Since a patch is not necessarily installed on all applicable hosts
+                simultaneously, patching the entire cluster can take some time.</p>
+            <p ixia_locid="8">As a patch is installed to the cluster, it goes through the following
+                state transitions:</p>
+            <dl>
+                <dlentry ixia_locid="9">
+                    <dt ixia_locid="10"><i ixia_locid="11">Available</i> to <i ixia_locid="12">Partial-Apply</i></dt>
+                    <dd ixia_locid="13">
+                        <p ixia_locid="16">A patch in the <i ixia_locid="39">Partial-Apply</i> state
+                            indicates that it has been installed on zero or more, but not all, the
+                            applicable hosts.</p>
+                        <p ixia_locid="14">Use the command <cmdname ixia_locid="15">wrs-patch
+                                apply</cmdname> to trigger this transition. The patch moves from the
+                            patch storage area to the software updates repository and becomes ready
+                            to be installed on the applicable hosts.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="18">
+                    <dt ixia_locid="19"><i ixia_locid="20">Partial-Apply</i> to <i ixia_locid="21">Applied</i></dt>
+                    <dd ixia_locid="22">
+                        <p ixia_locid="41">A patch in the <i ixia_locid="40">Applied</i> state
+                            indicates that it has been installed on all applicable hosts.</p>
+                        <p ixia_locid="23">Use the command <cmdname ixia_locid="24">wrs-patch
+                                host-install</cmdname> repeatedly targeting each time one of the
+                            applicable hosts in the cluster. The transition to the <i ixia_locid="25">Applied</i> state is complete when the patch is
+                            installed on all target hosts.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+            <p ixia_locid="26">The following example illustrates the process of installing a single
+                patch on the cluster. It assumes that the patch is in the <i ixia_locid="27">Available</i> state already, as described in <xref href="psa1410446807133.xml" ixia_locid="28"/>, and that only the controller nodes must be patched.</p>
+        </context>
+        <steps>
+            <step conref="psa1410446807133.xml#psa1410446807133/cli-admin-login" id="step_N10084_N10081_N1001F_N10001" ixia_locid="29">
+                <cmd ixia_locid="30"/>
+            </step>
+            <step id="step_N1002A_N10027_N1001B_N10001" ixia_locid="6">
+                <cmd ixia_locid="7">Verify that the patches are available using the command <cmdname ixia_locid="31">wrs-patch query</cmdname>.</cmd>
+                <stepxmp ixia_locid="32">
+                    <codeblock ixia_locid="33"><systemoutput ixia_locid="210">~(keystone_admin)$ </systemoutput><userinput ixia_locid="35">sudo wrs-patch query</userinput>
+<systemoutput ixia_locid="211">﻿       Patch ID             Patch State
+=========================   ===========
+PATCH_0001   Available
+PATCH_0002   Available
+PATCH_0003   Available</systemoutput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N100AD_N10081_N1001F_N10001" ixia_locid="37">
+                <cmd ixia_locid="38">Apply the patch.</cmd>
+                <stepxmp ixia_locid="42">
+                    <codeblock ixia_locid="43"><systemoutput ixia_locid="212">~(keystone_admin)$ </systemoutput><userinput ixia_locid="45">sudo wrs-patch apply PATCH_0001</userinput>
+<systemoutput ixia_locid="213">PATCH_0001 is now in the repo</systemoutput></codeblock>
+                </stepxmp>
+                <stepresult ixia_locid="47">
+                    <p ixia_locid="48">The patch is now in the <i ixia_locid="49">Partial-Apply</i>
+                        state, ready for installation from the software updates repository on the
+                        impacted hosts.</p>
+                </stepresult>
+            </step>
+            <step id="step_N100FB_N1009F_N1001F_N10001" importance="optional" ixia_locid="50">
+                <cmd ixia_locid="51">Apply all available patches in a single operation.</cmd>
+                <stepxmp ixia_locid="52">
+                    <codeblock ixia_locid="53"><systemoutput ixia_locid="214">~(keystone_admin)$ </systemoutput><userinput ixia_locid="55">sudo wrs-patch apply --all</userinput>
+<systemoutput ixia_locid="215">PATCH_0001 is now in the repo</systemoutput>
+<systemoutput ixia_locid="216">PATCH_0002 is now in the repo</systemoutput>
+<systemoutput ixia_locid="217">PATCH_0003 is now in the repo</systemoutput></codeblock>
+                </stepxmp>
+                <info ixia_locid="59">
+                    <p ixia_locid="60">In this example there are three patches ready now for
+                        installation from the software updates repository.</p>
+                </info>
+            </step>
+            <step id="step_N1012A_N1009F_N1001F_N10001" ixia_locid="62">
+                <cmd ixia_locid="63">Query the patching status of all hosts in the cluster.</cmd>
+                <info ixia_locid="64">
+                    <p ixia_locid="65">You can query the patching status of all hosts at any time as
+                        illustrated below. Note that the reported status is the accumulated result
+                        of all applied and removed patches in the software updates repository, and
+                        not just the status due to a particular patch.</p>
+                </info>
+                <stepxmp ixia_locid="66">
+                    <codeblock ixia_locid="67"><systemoutput ixia_locid="218">~(keystone_admin)$ </systemoutput><userinput ixia_locid="69">sudo wrs-patch query-hosts</userinput>
+<systemoutput ixia_locid="219">﻿  Hostname      IP Address    Patch Current  Reboot Required
+============  ==============  =============  ===============
+compute-0     192.168.204.15       Yes             No
+controller-0  192.168.204.3        No              Yes
+controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
+                </stepxmp>
+                <stepresult ixia_locid="71">
+                    <p ixia_locid="72">For each host in the cluster, the following patch status
+                        fields are displayed:</p>
+                    <dl>
+                        <dlentry ixia_locid="73">
+                            <dt ixia_locid="74">Patch Current</dt>
+                            <dd ixia_locid="75">
+                                <p ixia_locid="76">Indicates whether there are patches pending for
+                                    installation or removal on the host or not. If <i ixia_locid="77">Yes</i>, then all relevant patches in the
+                                    software updates repository have been installed on, or removed
+                                    from, the host already. If <i ixia_locid="78">No</i>, then there
+                                    is at least one patch in either the <i ixia_locid="79">Partial-Apply</i> or <i ixia_locid="80">Partial-Remove</i>
+                                    states that has not been applied to the host.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="81">
+                            <dt ixia_locid="82">Reboot Required </dt>
+                            <dd ixia_locid="83">
+                                <p ixia_locid="84">Indicates whether the host has to be rebooted or
+                                    not as a result of one or more patches that have been either
+                                    applied or removed, or because it is not patch current.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                    <p ixia_locid="85">In this example, <nameliteral ixia_locid="86">compute-0</nameliteral> is up to date, no patches need to be installed
+                        and no reboot is required. By contrast, the controllers are not patch
+                        current, and therefore a reboot is required to install the patch.</p>
+                </stepresult>
+            </step>
+            <step id="step_N10190_N1009F_N1001F_N10001" ixia_locid="157">
+                <cmd ixia_locid="159">Install all pending patches on <nameliteral ixia_locid="161">controller-0</nameliteral>.</cmd>
+                <substeps id="substeps_kzv_x13_pp">
+                    <substep ixia_locid="163">
+                        <cmd ixia_locid="165">Swact controller services.</cmd>
+                        <stepxmp ixia_locid="167">
+                            <codeblock ixia_locid="169"><systemoutput ixia_locid="220">~(keystone_admin)$ </systemoutput><userinput ixia_locid="173">system host-swact controller-0</userinput></codeblock>
+                        </stepxmp>
+                        <info ixia_locid="175">
+                            <p ixia_locid="177">Before patching a controller node, you must transfer
+                                any active services running on the host to the other controller.
+                                Only then it is safe to lock the host.</p>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="179">
+                        <cmd ixia_locid="181">Run the patching sequence.</cmd>
+                        <info ixia_locid="183">
+                            <p ixia_locid="184">The patching sequence locks the host, installs the
+                                patches, and forces a host reboot.</p>
+                        </info>
+                        <stepxmp ixia_locid="185">
+                            <codeblock ixia_locid="187"><systemoutput ixia_locid="221">~(keystone_admin)$ </systemoutput><userinput ixia_locid="191">system host-patch-reboot controller-0</userinput>
+<systemoutput ixia_locid="222">host-patch-reboot controller-0 may take several minutes to complete.
+ 
+2014-10-17-20-39-59_host-patch-reboot start.
+...
+ 
+2014-10-17-20-39-59_host-patch-reboot host-lock.
+waiting for host controller-0 to transition to locked-disabled-online ...
+waiting for host controller-0 to transition to locked-disabled-online ...
+2014-10-17-20-40-14_Host controller-0 is locked-disabled-online.
+ 
+2014-10-17-20-40-14_Patch install request
+Installing patch for host controller-0 ...
+ 
+2014-10-17-20-40-16_Patch install response
+Patch response Info: Patch installation was successful on controller-0.
+ 
+2014-10-17-20-40-16_host-patch-reboot host-unlock
+Restoring initial administrative state: unlocked. Unlocking host controller-0 to return to initial administrative state.</systemoutput></codeblock>
+                        </stepxmp>
+                    </substep>
+                </substeps>
+                <stepresult ixia_locid="194">
+                    <p ixia_locid="196">All patches are now installed on <nameliteral ixia_locid="198">controller-0</nameliteral>. Querying the current patch
+                        status displays the following information:</p>
+                    <codeblock ixia_locid="200"><systemoutput ixia_locid="223">~(keystone_admin)$ </systemoutput><userinput ixia_locid="204">sudo wrs-patch query-hosts</userinput>
+<systemoutput ixia_locid="224">﻿  Hostname      IP Address    Patch Current  Reboot Required
+============  ==============  =============  ===============
+compute-0     192.168.204.15       Yes             No
+controller-0  192.168.204.3        Yes             No
+controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
+                </stepresult>
+            </step>
+            <step id="step_N1023A_N100A0_N1001F_N10001" importance="optional" ixia_locid="158">
+                <cmd ixia_locid="160">Manually install all pending patches on <nameliteral ixia_locid="162">controller-0</nameliteral>.</cmd>
+                <info ixia_locid="207">
+                    <p ixia_locid="208">You may want to have finer control of the patching steps
+                        executed by the <cmdname ixia_locid="209">system host-patch-reboot</cmdname>
+                        command to determine when to install the patches and unlock the host.</p>
+                </info>
+                <substeps id="substeps_ck5_3qx_5p">
+                    <substep ixia_locid="164">
+                        <cmd ixia_locid="166">Swact controller services.</cmd>
+                        <stepxmp ixia_locid="168">
+                            <codeblock ixia_locid="170"><systemoutput ixia_locid="225">~(keystone_admin)$ </systemoutput><userinput ixia_locid="174">system host-swact controller-0</userinput></codeblock>
+                        </stepxmp>
+                        <info ixia_locid="176">
+                            <p ixia_locid="178">Before patching a controller node, you must transfer
+                                any active services running on the host to the other controller.
+                                Only then it is safe to lock the host.</p>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="180">
+                        <cmd ixia_locid="182">Lock the host.</cmd>
+                        <stepxmp ixia_locid="186">
+                            <codeblock ixia_locid="188"><systemoutput ixia_locid="226">~(keystone_admin)$ </systemoutput><userinput ixia_locid="192">system host-lock controller-0</userinput></codeblock>
+                        </stepxmp>
+                        <info ixia_locid="104">
+                            <p ixia_locid="105">You must lock the target host, controller, compute,
+                                or storage, before installing patches.</p>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="106">
+                        <cmd ixia_locid="107">Install the pending patches.</cmd>
+                        <stepxmp ixia_locid="108">
+                            <codeblock ixia_locid="109"><systemoutput ixia_locid="227">~(keystone_admin)$ </systemoutput><userinput ixia_locid="111">sudo wrs-patch host-install controller-0</userinput>
+<systemoutput ixia_locid="228">Patch installation was successful on controller-0</systemoutput></codeblock>
+                        </stepxmp>
+                        <stepresult ixia_locid="113">
+                            <p ixia_locid="114">All patches are now installed on <nameliteral ixia_locid="115">controller-0</nameliteral>. Querying the
+                                current patching status displays the following information:</p>
+                            <codeblock ixia_locid="116"><systemoutput ixia_locid="229">~(keystone_admin)$ </systemoutput><userinput ixia_locid="118">sudo wrs-patch query-hosts</userinput>
+<systemoutput ixia_locid="230">﻿  Hostname      IP Address    Patch Current  Reboot Required
+============  ==============  =============  ===============
+compute-0     192.168.204.15       Yes             No
+controller-0  192.168.204.3        Yes             Yes
+controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
+                            <p ixia_locid="120">For illustration purposes in this section, the
+                                command <cmdname ixia_locid="121">wrs-patch host-install</cmdname>
+                                is presented as the tool to <i ixia_locid="122">install</i> patches.
+                                But in fact, this command also <i ixia_locid="123">removes</i>
+                                patches as well, as described in <xref href="psa1410446902796.xml" ixia_locid="124"/>. The command is better described then as the
+                                tool to install and remove all patches in the <i ixia_locid="125">Partial-Apply</i> and <i ixia_locid="126">Partial-Remove</i>
+                                states on a host.</p>
+                        </stepresult>
+                    </substep>
+                    <substep ixia_locid="127">
+                        <cmd ixia_locid="128">Unlock the target host.</cmd>
+                        <stepxmp ixia_locid="129">
+                            <codeblock ixia_locid="130"><systemoutput ixia_locid="231">~(keystone_admin)$ </systemoutput><userinput ixia_locid="132">system host-unlock controller-0</userinput></codeblock>
+                        </stepxmp>
+                        <stepresult ixia_locid="133">
+                            <p ixia_locid="134">Unlocking the host forces a reset of the host
+                                followed by a reboot. This ensures that the host is restarted in a
+                                known state.</p>
+                        </stepresult>
+                    </substep>
+                </substeps>
+                <stepresult ixia_locid="195">
+                    <p ixia_locid="197">All patches are now installed on <nameliteral ixia_locid="199">controller-0</nameliteral>.</p>
+                </stepresult>
+            </step>
+            <step id="step_N10260_N1009F_N1001F_N10001" ixia_locid="142">
+                <cmd ixia_locid="143">Install all pending patches on <nameliteral ixia_locid="144">controller-1</nameliteral>.</cmd>
+                <info ixia_locid="145">
+                    <p ixia_locid="146">Repeat the previous step targeting <nameliteral ixia_locid="147">controller-1</nameliteral>
+                        this time.</p>
+                </info>
+                <stepresult ixia_locid="148">
+                    <p ixia_locid="149">All patches are now installed on <nameliteral ixia_locid="150">controller-1</nameliteral> as well. Querying the
+                        current patching status displays the following information:</p>
+                    <codeblock ixia_locid="151"><systemoutput ixia_locid="232">~(keystone_admin)$ </systemoutput><userinput ixia_locid="153">sudo wrs-patch query-hosts</userinput>
+<systemoutput ixia_locid="233">﻿  Hostname      IP Address    Patch Current  Reboot Required
+============  ==============  =============  ===============
+compute-0     192.168.204.15       Yes             No
+controller-0  192.168.204.3        Yes             No
+controller-1  192.168.204.4        Yes             No</systemoutput></codeblock>
+                </stepresult>
+            </step>
+        </steps>
+        <result id="result_N1028F_N1001F_N10001" ixia_locid="155">
+            <p ixia_locid="156">The cluster is up to date now. All patches are installed.</p>
+        </result>
+    </taskbody>
 </task-wr>

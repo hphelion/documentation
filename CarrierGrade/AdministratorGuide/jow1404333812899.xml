@@ -1,211 +1,211 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333812899" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
-    <!-- Modification History
-        
--->
-    <title ixia_locid="1">Creating an In/Out Autoscaling Resource</title>
-    <shortdesc ixia_locid="2">The <filepath ixia_locid="3">CPUScale.yaml</filepath> template
-        illustrates the use of a template to create an in/out autoscaling resource. It also shows
-        how to customize VM instance images at startup, and how to use custom performance monitoring
-        on the guest.</shortdesc>
-    <prolog>
-        <author ixia_locid="4">Jim Owens</author>
-    </prolog>
-    <taskbody>
-        <context id="context_N10023_N10020_N10001" ixia_locid="5">
-            <p ixia_locid="6">This CFN template creates a server group based on a standard instance
-                type, specified as a parameter.  The template includes a <nameliteral ixia_locid="7">UserData</nameliteral> section that customizes each instance at launch by
-                defining a CPU meter and setting it to push information to the controller at regular
-                intervals. Instances are added or removed based on this information.</p>
-            <p ixia_locid="165">For in/out scaling, the CPU measurement uses a <nameliteral ixia_locid="166">cpu_util</nameliteral>
-                meter, which takes into account the total number of available vCPUS for the instance
-                when measuring usage.</p>
-            <p ixia_locid="9">Use an <nameliteral ixia_locid="10">admin</nameliteral> account to run
-                this template.</p>
-        </context>
-        <prereq id="prereq_N10030_N10020_N10001" ixia_locid="8">
-            <p ixia_locid="85">To use the autoscaling resource in this example, the following
-                requirements must be satisfied:</p>
-            <ul id="ul_q4q_5kg_w4">
-                <li ixia_locid="86">
-                    <p ixia_locid="87"><libraryname ixia_locid="167">cloud-init</libraryname> must be
-                        available on the guest image. This is required so that the guest can process
-                        the <nameliteral ixia_locid="13">UserData</nameliteral> configuration
-                        supplied at launch. The example image provided with HP Helion OpenStack Carrier Grade includes
-                            <libraryname ixia_locid="168">cloud-init</libraryname>. </p>
-                </li>
-                <li ixia_locid="88">
-                    <p ixia_locid="14"><libraryname ixia_locid="169">heat-cfntools</libraryname>
-                        must be available on the guest image. This is required so that the guest can
-                        push information to Ceilometer on the controller. The example image provided
-                        with HP Helion OpenStack Carrier Grade includes <libraryname ixia_locid="170">heat-cfntools</libraryname>.</p>
-                </li>
-                <li ixia_locid="89">
-                    <p ixia_locid="16">the guest can send data to the controller using the IP
-                        address specified in <filepath ixia_locid="17">/etc/heat/heat.conf</filepath>.</p>
-                </li>
-            </ul>
-        </prereq>
-        <steps>
-            <step id="step_N1005C_N10059_N10020_N10001" ixia_locid="18">
-                <cmd ixia_locid="19">Collect the required parameter values for this template.</cmd>
-                <substeps id="substeps_wqc_mlv_34">
-                    <substep ixia_locid="23">
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor" ixia_locid="24"/>
-                    </substep>
-                    <substep ixia_locid="25">
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair" ixia_locid="26"/>
-                    </substep>
-                    <substep ixia_locid="27">
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image" ixia_locid="28"/>
-                    </substep>
-                    <substep ixia_locid="171">
-                        <cmd ixia_locid="172">On the <menucascade ixia_locid="173">
-                                <uicontrol ixia_locid="175">Admin</uicontrol>
-                                <uicontrol ixia_locid="41">System Panel</uicontrol>
-                                <uicontrol ixia_locid="177">Networks</uicontrol>
-                            </menucascade> page, click the <uicontrol ixia_locid="179">Name</uicontrol> of each required network in turn, in order to open
-                            the Network Overview page and obtain the network <uicontrol ixia_locid="181">ID</uicontrol>. For this template, a public network
-                            ID and an internal network ID are required.</cmd>
-                    </substep>
-                </substeps>
-            </step>
-            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001" ixia_locid="180"><cmd ixia_locid="32"/></step>
-            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001" ixia_locid="33"><cmd ixia_locid="34"/></step>
-            
-            <step id="step_N100A4_N10059_N10020_N10001" ixia_locid="35">
-                <cmd ixia_locid="36">Select<uicontrol ixia_locid="174"> File</uicontrol>, then click <uicontrol ixia_locid="38">Browse</uicontrol>
-                    and select <filepath ixia_locid="176">CPUScale.yaml</filepath> from the local disk.</cmd>
-            </step>
-            <step id="step_N100CA_N10059_N10020_N10001" ixia_locid="178">
-                <cmd ixia_locid="44">Use the <wintitle ixia_locid="182">Launch Stack</wintitle> form to provide the required
-                    parameter values for the template. </cmd>
-                <info ixia_locid="46">
-                    <fig id="fig_N100D4_N100D1_N100C6_N10059_N10020_N10001" ixia_locid="47">
-                        <image alt="CPUScale Launch Stack form" href="jow1404333811339.image" id="image_dvz_1wj_j4" ixia_locid="48" width="4in"/>
-                    </fig>
-                    <note id="note_N100E1_N100D1_N100C6_N10059_N10020_N10001" ixia_locid="49">
-                        <p ixia_locid="50">The parameters are presented in a single column. This image has been
-                            edited to present them in two columns.</p>
-                    </note>
-                </info>
-            </step>
-            <step id="step_N100F1_N10059_N10020_N10001" importance="optional" ixia_locid="51">
-                <cmd ixia_locid="52">Adjust existing values to meet your requirements.</cmd>
-                <choicetable id="choicetable_nqn_msw_34" keycol="1" relcolwidth="1.0* 2.0*">
-                    <chrow>
-                        <choption ixia_locid="90">
-                            <p ixia_locid="92"><uicontrol ixia_locid="94">KeyName</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="96">
-                            <p ixia_locid="98">The <uicontrol ixia_locid="100">KeyPair</uicontrol>
-                                name from the<wintitle ixia_locid="101"> Access &amp;
-                                    Security</wintitle> page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption ixia_locid="102">
-                            <p ixia_locid="104"><uicontrol ixia_locid="106">ViFModel</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="108">
-                            <p ixia_locid="110">The virtual interface model to use. For valid
-                                choices, see <cite ixia_locid="164">Multiple NIC Support</cite> in
-                                    <xref href="jow1404333807231.xml" ixia_locid="163"/>.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption ixia_locid="118">
-                            <p ixia_locid="120"><uicontrol ixia_locid="122">InstanceType</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="124">
-                            <p ixia_locid="126">The <uicontrol ixia_locid="131">Flavor
-                                    Name</uicontrol> from the <wintitle ixia_locid="132">Flavors</wintitle> page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption ixia_locid="133">
-                            <p ixia_locid="135"><uicontrol ixia_locid="137">ImageId</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="139">
-                            <p ixia_locid="127">The <uicontrol ixia_locid="141">Image
-                                    Name</uicontrol> from the <wintitle ixia_locid="142">Images</wintitle> page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption ixia_locid="143">
-                            <p ixia_locid="145"><uicontrol ixia_locid="147">PublicNetId</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="149">
-                            <p ixia_locid="128">The <uicontrol ixia_locid="151">ID</uicontrol> from
-                                the <wintitle ixia_locid="152">Network Overview</wintitle> page.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption ixia_locid="153">
-                            <p ixia_locid="155"><uicontrol ixia_locid="157">InternalNetId</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="159">
-                            <p ixia_locid="129">The <uicontrol ixia_locid="161">ID</uicontrol> from
-                                the <wintitle ixia_locid="162">Network Overview</wintitle> page.
-                                <!-- this and the similar entry above need attention. We need two network IDs (or are the Names enough?) when we collect the parameters. --></p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption ixia_locid="91">
-                            <p ixia_locid="93"><uicontrol ixia_locid="95">MinClusterSize</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="97">
-                            <p ixia_locid="99">The minimum number of VMs to launch. The stack cannot
-                                autoscale below this value.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption ixia_locid="103">
-                            <p ixia_locid="105"><uicontrol ixia_locid="107">MaxClusterSize</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="109">
-                            <p ixia_locid="111">The maximum number of VMs that can be launched.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption ixia_locid="119">
-                            <p ixia_locid="121"><uicontrol ixia_locid="123">CustomMeterName</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="125">
-                            <p ixia_locid="130">The name of a custom Ceilometer metric to store. For
-                                information about custom metrics, see <xref href="jow1404916152577.xml" ixia_locid="84"/>.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption ixia_locid="134">
-                            <p ixia_locid="136"><uicontrol ixia_locid="138">CustomMeterUnit</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="140">
-                            <p ixia_locid="73">The unit of measurement to display for the custom
-                                metric; for example, 'Percent'.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption ixia_locid="144">
-                            <p ixia_locid="146"><uicontrol ixia_locid="148">MetricHighWaterMark</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="150">
-                            <p ixia_locid="78">The value that triggers autoscaling to add
-                                resources.</p>
-                        </chdesc>
-                    </chrow>
-                    <chrow>
-                        <choption ixia_locid="154">
-                            <p ixia_locid="156"><uicontrol ixia_locid="158">MetricLowWaterMark</uicontrol></p>
-                        </choption>
-                        <chdesc ixia_locid="160">
-                            <p ixia_locid="83">The value that triggers autoscaling to remove
-                                resources.</p>
-                        </chdesc>
-                    </chrow>
-                </choicetable>
-            </step>
-        </steps>
-    </taskbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333812899" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Creating an In/Out Autoscaling Resource</title>
+    <shortdesc ixia_locid="2">The <filepath ixia_locid="3">CPUScale.yaml</filepath> template
+        illustrates the use of a template to create an in/out autoscaling resource. It also shows
+        how to customize VM instance images at startup, and how to use custom performance monitoring
+        on the guest.</shortdesc>
+    <prolog>
+        <author ixia_locid="4">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10023_N10020_N10001" ixia_locid="5">
+            <p ixia_locid="6">This CFN template creates a server group based on a standard instance
+                type, specified as a parameter.  The template includes a <nameliteral ixia_locid="7">UserData</nameliteral> section that customizes each instance at launch by
+                defining a CPU meter and setting it to push information to the controller at regular
+                intervals. Instances are added or removed based on this information.</p>
+            <p ixia_locid="165">For in/out scaling, the CPU measurement uses a <nameliteral ixia_locid="166">cpu_util</nameliteral>
+                meter, which takes into account the total number of available vCPUS for the instance
+                when measuring usage.</p>
+            <p ixia_locid="9">Use an <nameliteral ixia_locid="10">admin</nameliteral> account to run
+                this template.</p>
+        </context>
+        <prereq id="prereq_N10030_N10020_N10001" ixia_locid="8">
+            <p ixia_locid="85">To use the autoscaling resource in this example, the following
+                requirements must be satisfied:</p>
+            <ul id="ul_q4q_5kg_w4">
+                <li ixia_locid="86">
+                    <p ixia_locid="87"><libraryname ixia_locid="167">cloud-init</libraryname> must be
+                        available on the guest image. This is required so that the guest can process
+                        the <nameliteral ixia_locid="13">UserData</nameliteral> configuration
+                        supplied at launch. The example image provided with HP Helion OpenStack Carrier Grade includes
+                            <libraryname ixia_locid="168">cloud-init</libraryname>. </p>
+                </li>
+                <li ixia_locid="88">
+                    <p ixia_locid="14"><libraryname ixia_locid="169">heat-cfntools</libraryname>
+                        must be available on the guest image. This is required so that the guest can
+                        push information to Ceilometer on the controller. The example image provided
+                        with HP Helion OpenStack Carrier Grade includes <libraryname ixia_locid="170">heat-cfntools</libraryname>.</p>
+                </li>
+                <li ixia_locid="89">
+                    <p ixia_locid="16">the guest can send data to the controller using the IP
+                        address specified in <filepath ixia_locid="17">/etc/heat/heat.conf</filepath>.</p>
+                </li>
+            </ul>
+        </prereq>
+        <steps>
+            <step id="step_N1005C_N10059_N10020_N10001" ixia_locid="18">
+                <cmd ixia_locid="19">Collect the required parameter values for this template.</cmd>
+                <substeps id="substeps_wqc_mlv_34">
+                    <substep ixia_locid="23">
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor" ixia_locid="24"/>
+                    </substep>
+                    <substep ixia_locid="25">
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair" ixia_locid="26"/>
+                    </substep>
+                    <substep ixia_locid="27">
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image" ixia_locid="28"/>
+                    </substep>
+                    <substep ixia_locid="171">
+                        <cmd ixia_locid="172">On the <menucascade ixia_locid="173">
+                                <uicontrol ixia_locid="175">Admin</uicontrol>
+                                <uicontrol ixia_locid="41">System Panel</uicontrol>
+                                <uicontrol ixia_locid="177">Networks</uicontrol>
+                            </menucascade> page, click the <uicontrol ixia_locid="179">Name</uicontrol> of each required network in turn, in order to open
+                            the Network Overview page and obtain the network <uicontrol ixia_locid="181">ID</uicontrol>. For this template, a public network
+                            ID and an internal network ID are required.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001" ixia_locid="180"><cmd ixia_locid="32"/></step>
+            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001" ixia_locid="33"><cmd ixia_locid="34"/></step>
+            
+            <step id="step_N100A4_N10059_N10020_N10001" ixia_locid="35">
+                <cmd ixia_locid="36">Select<uicontrol ixia_locid="174"> File</uicontrol>, then click <uicontrol ixia_locid="38">Browse</uicontrol>
+                    and select <filepath ixia_locid="176">CPUScale.yaml</filepath> from the local disk.</cmd>
+            </step>
+            <step id="step_N100CA_N10059_N10020_N10001" ixia_locid="178">
+                <cmd ixia_locid="44">Use the <wintitle ixia_locid="182">Launch Stack</wintitle> form to provide the required
+                    parameter values for the template. </cmd>
+                <info ixia_locid="46">
+                    <fig id="fig_N100D4_N100D1_N100C6_N10059_N10020_N10001" ixia_locid="47">
+                        <image alt="CPUScale Launch Stack form" href="jow1404333811339.image" id="image_dvz_1wj_j4" ixia_locid="48" width="4in"/>
+                    </fig>
+                    <note id="note_N100E1_N100D1_N100C6_N10059_N10020_N10001" ixia_locid="49">
+                        <p ixia_locid="50">The parameters are presented in a single column. This image has been
+                            edited to present them in two columns.</p>
+                    </note>
+                </info>
+            </step>
+            <step id="step_N100F1_N10059_N10020_N10001" importance="optional" ixia_locid="51">
+                <cmd ixia_locid="52">Adjust existing values to meet your requirements.</cmd>
+                <choicetable id="choicetable_nqn_msw_34" keycol="1" relcolwidth="1.0* 2.0*">
+                    <chrow>
+                        <choption ixia_locid="90">
+                            <p ixia_locid="92"><uicontrol ixia_locid="94">KeyName</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="96">
+                            <p ixia_locid="98">The <uicontrol ixia_locid="100">KeyPair</uicontrol>
+                                name from the<wintitle ixia_locid="101"> Access &amp;
+                                    Security</wintitle> page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption ixia_locid="102">
+                            <p ixia_locid="104"><uicontrol ixia_locid="106">ViFModel</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="108">
+                            <p ixia_locid="110">The virtual interface model to use. For valid
+                                choices, see <cite ixia_locid="164">Multiple NIC Support</cite> in
+                                    <xref href="jow1404333807231.xml" ixia_locid="163"/>.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption ixia_locid="118">
+                            <p ixia_locid="120"><uicontrol ixia_locid="122">InstanceType</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="124">
+                            <p ixia_locid="126">The <uicontrol ixia_locid="131">Flavor
+                                    Name</uicontrol> from the <wintitle ixia_locid="132">Flavors</wintitle> page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption ixia_locid="133">
+                            <p ixia_locid="135"><uicontrol ixia_locid="137">ImageId</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="139">
+                            <p ixia_locid="127">The <uicontrol ixia_locid="141">Image
+                                    Name</uicontrol> from the <wintitle ixia_locid="142">Images</wintitle> page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption ixia_locid="143">
+                            <p ixia_locid="145"><uicontrol ixia_locid="147">PublicNetId</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="149">
+                            <p ixia_locid="128">The <uicontrol ixia_locid="151">ID</uicontrol> from
+                                the <wintitle ixia_locid="152">Network Overview</wintitle> page.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption ixia_locid="153">
+                            <p ixia_locid="155"><uicontrol ixia_locid="157">InternalNetId</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="159">
+                            <p ixia_locid="129">The <uicontrol ixia_locid="161">ID</uicontrol> from
+                                the <wintitle ixia_locid="162">Network Overview</wintitle> page.
+                                <!-- this and the similar entry above need attention. We need two network IDs (or are the Names enough?) when we collect the parameters. --></p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption ixia_locid="91">
+                            <p ixia_locid="93"><uicontrol ixia_locid="95">MinClusterSize</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="97">
+                            <p ixia_locid="99">The minimum number of VMs to launch. The stack cannot
+                                autoscale below this value.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption ixia_locid="103">
+                            <p ixia_locid="105"><uicontrol ixia_locid="107">MaxClusterSize</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="109">
+                            <p ixia_locid="111">The maximum number of VMs that can be launched.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption ixia_locid="119">
+                            <p ixia_locid="121"><uicontrol ixia_locid="123">CustomMeterName</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="125">
+                            <p ixia_locid="130">The name of a custom Ceilometer metric to store. For
+                                information about custom metrics, see <xref href="jow1404916152577.xml" ixia_locid="84"/>.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption ixia_locid="134">
+                            <p ixia_locid="136"><uicontrol ixia_locid="138">CustomMeterUnit</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="140">
+                            <p ixia_locid="73">The unit of measurement to display for the custom
+                                metric; for example, 'Percent'.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption ixia_locid="144">
+                            <p ixia_locid="146"><uicontrol ixia_locid="148">MetricHighWaterMark</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="150">
+                            <p ixia_locid="78">The value that triggers autoscaling to add
+                                resources.</p>
+                        </chdesc>
+                    </chrow>
+                    <chrow>
+                        <choption ixia_locid="154">
+                            <p ixia_locid="156"><uicontrol ixia_locid="158">MetricLowWaterMark</uicontrol></p>
+                        </choption>
+                        <chdesc ixia_locid="160">
+                            <p ixia_locid="83">The value that triggers autoscaling to remove
+                                resources.</p>
+                        </chdesc>
+                    </chrow>
+                </choicetable>
+            </step>
+        </steps>
+    </taskbody>
 </task-wr>

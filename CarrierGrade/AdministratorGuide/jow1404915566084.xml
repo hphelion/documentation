@@ -1,488 +1,488 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
-<reference-wr domains="(topic reference reference-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404915566084" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
-<!-- Modification History
-    
--->
-  <title ixia_locid="26">Sample Templates for HP Helion OpenStack Carrier Grade</title>
-  <shortdesc ixia_locid="2">You can evaluate selected features of Heat using sample templates
-    included with HP Helion OpenStack Carrier Grade. The samples also demonstrate some HP Helion OpenStack Carrier Grade
-    extensions.</shortdesc>
-  <prolog>
-    <author ixia_locid="27">Jim Owens</author>
-  </prolog>
-  <refbody>
-    <section id="section_N10022_N1001F_N10001" ixia_locid="34">
-<!-- <p ixia_locid="25">The templates are available on WindShare as part of the HP Helion OpenStack Carrier Grade
-        release. To use them, download and expand the SDK archive, and then untar the
-          <nameliteral ixia_locid="333">wrs-heat-templates</nameliteral> tarball.</p> -->
-    </section>
-    <section id="section_N1002D_N1001F_N10001" ixia_locid="205">
-      <title ixia_locid="207">HOT Templates—Simple</title>
-      <p ixia_locid="209">The templates in the <filepath ixia_locid="211">hot/simple</filepath>
-        directory use the OpenStack HOT Template File Format. Each template in this directory
-        provides a simple example for an OpenStack Resource type, indicated by the
-        filename.<!-- Is this a comprehensive list of available resource types? --></p>
-      <table id="table_zq4_5nm_fp">
-        <tgroup cols="2">
-          <thead>
-            <row>
-              <entry ixia_locid="213">
-                <p ixia_locid="215">Template file</p>
-              </entry>
-              <entry ixia_locid="217">
-                <p ixia_locid="219">Description</p>
-              </entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry ixia_locid="221">
-                <p ixia_locid="226"><filepath ixia_locid="231">AWS_CloudFormation_Stack.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="236">
-                <p ixia_locid="241">Specifies the URL of another Heat template that describes
-                  additional resources. This allows Heat templates to be nested.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="48">
-                <p ixia_locid="49"><filepath ixia_locid="50">OS_Ceilometer_Alarm.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="51">
-                <p ixia_locid="52">Creates a Ceilometer threshold alarm. This example illustrates
-                  how to specify the name of an alarm meter, and how to set parameters such as the
-                  threshold for triggering an alarm, the comparison operator to use, the evaluation
-                  period for the comparison, and so on.</p>
-                
-              </entry>
-            </row>
-            
-            <row>
-              <entry ixia_locid="53">
-                <p ixia_locid="54"><filepath ixia_locid="55">OS_Cinder_Volume.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="56">
-                <p ixia_locid="57">Creates a Cinder volume of a particular size (in gigabytes).</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="58">
-                <p ixia_locid="59"><filepath ixia_locid="60">OS_Cinder_VolumeAttachment.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="61">
-                <p ixia_locid="62">Creates an attachment, or mount point, for a Cinder volume within a VM instance.</p>
-                
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="246">
-                <p ixia_locid="248"><filepath ixia_locid="250">OS_Glance_Image.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="252">
-                <p ixia_locid="254">Creates a Glance image, specifying the image file, container
-                  format, disk format, and so on.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="247">
-                <p ixia_locid="249"><filepath ixia_locid="251">OS_Heat_AccessPolicy.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="253">
-                <p ixia_locid="255">Specifies which types of resource to include in the results for <userinput ixia_locid="68">heat
-                    stack-show <varname ixia_locid="69">stackname</varname></userinput> and <userinput ixia_locid="70">heat
-                    resource-show <varname ixia_locid="71">stackname</varname>
-                    <varname ixia_locid="72">resourcename</varname></userinput>.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="73">
-                <p ixia_locid="74"><filepath ixia_locid="75">OS_Heat_CWLiteAlarm.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="76">
-                <p ixia_locid="77">Creates a threshold alarm using OS::Heat::CWLiteAlarm. 
-                  This is an older and less capable alarm resource than OS::Ceilometer::Alarm. 
-                  If possible, use OS::Ceilometer::Alarm instead. <!-- why might it not be possible? --></p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="78">
-                <p ixia_locid="79"><filepath ixia_locid="80">OS_Heat_InstanceGroup.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="81">
-                <p ixia_locid="197">Creates a specified number of instances using a specified launch configuration.
-                  The number of instances is controlled by the <parmname ixia_locid="198">size</parmname> property.
-                  This invokes AWS::AutoScaling::LaunchConfiguration, which effectively restricts
-                  the launched instances to AWS::EC2::Instance resources.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="83">
-                <p ixia_locid="84"><filepath ixia_locid="85">OS_Neutron_FloatingIP.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="86"><p ixia_locid="87">Creates a floating IP address for an external tenant network, in order to represent an internal port IP address using NAT.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="89">
-                <p ixia_locid="90"><filepath ixia_locid="91">OS_Neutron_Net.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="92">
-                <p ixia_locid="93">Creates a tenant network, to which other resources such as 
-                  OS::Neutron::Port, OS::Neutron::Subnet, and OS::Nova::Server
-                  can refer.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="94">
-                <p ixia_locid="95"><filepath ixia_locid="96">OS_Neutron_Port.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="97">
-                <p ixia_locid="98">Creates a port for a VM instance on a tenant network. The VM
-                  instance can use this to attach to the tenant network.</p>
-              </entry>
-            </row>
-            
-            <row>
-              <entry ixia_locid="256">
-                <p ixia_locid="260"><filepath ixia_locid="264">OS_Neutron_ProviderNet.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="268">
-                <p ixia_locid="272">Creates a provider network, specifying the name and type (flat
-                  or vlan).</p>
-              </entry>
-            </row>
-            
-            <row>
-              <entry ixia_locid="257">
-                <p ixia_locid="261"><filepath ixia_locid="265">OS_Neutron_ProviderNetRange.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="269">
-                <p ixia_locid="273">Creates a segmentation range for a provider network, specifying
-                  the provider network, and the minimum and maximum  values of the range.</p>
-              </entry>
-            </row>
-            
-            <row>
-              <entry ixia_locid="258">
-                <p ixia_locid="262"><filepath ixia_locid="266">OS_Neutron_QoSPolicy.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="270">
-                <p ixia_locid="274">Creates a Neutron QoS policy, which specifies a packet
-                  scheduling weight. The policy can be referenced by a tenant network to modify the
-                  scheduling weight of AVS ingress traffic from VMs for the tenant network.</p>
-              </entry>
-            </row>
-            
-            <row>
-              <entry ixia_locid="259">
-                <p ixia_locid="263"><filepath ixia_locid="267">OS_Neutron_Router.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="271">
-                <p ixia_locid="275">Creates an IP router for tenant networks. The router's IP interfaces
-                  to tenant network subnets are established as shown in
-                  OS_Neutron_RouterInterface.yaml.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="105">
-                <p ixia_locid="106"><filepath ixia_locid="107">OS_Neutron_RouterGateway.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="108">
-                <p ixia_locid="109">Creates a router gateway interface for the specified router on
-                  the specified external network. The IP address for the interface is allocated from
-                  the external network’s subnet, and a default IP route is created using the
-                    <parmname ixia_locid="110">gateway_ip</parmname> of the subnet.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="313">
-                <p ixia_locid="112"><filepath ixia_locid="113">OS_Neutron_RouterInterface.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="315">
-                <p ixia_locid="115">Creates an IP interface on an existing router for an existing IP subnet.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="314">
-                <p ixia_locid="317"><filepath ixia_locid="318">OS_Neutron_SecurityGroup.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="316">
-                <p ixia_locid="319">Creates a Security Group that defines a stateless IP Filter.
-                  This Security Group can be referenced by a Server (VM) resource that requires a
-                  stateless IP Filter for ingress and egress traffic to or from the VM.</p>
-              </entry>
-            </row>
-            
-            <row>
-              <entry ixia_locid="116">
-                <p ixia_locid="117"><filepath ixia_locid="118">OS_Neutron_Subnet.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="119">
-                <p ixia_locid="120">Creates an IP subnet on a specified tenant network. 
-                  The IP subnet and mask are required, 
-                  and the DHCP support status (enabled or disabled) must be specified
-                  <!-- double-check that it can be in the disabled state -->. DNS
-                  nameservers can optionally be specified.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="222">
-                <p ixia_locid="227"><filepath ixia_locid="232">OS_Nova_Flavor.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="237">
-                <p ixia_locid="242">Creates a Nova flavor that describes the resource requirements
-                  for a VM, such as the required RAM, number of vCPUs, disk size, and so on.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="223">
-                <p ixia_locid="228"><filepath ixia_locid="233">OS_Nova_KeyPair.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="238">
-                <p ixia_locid="243">Creates a secure shell (SSH) key pair to enable secure login to
-                  a launched VM. The created key pair is referenced in OS::Nova::Server.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="224">
-                <p ixia_locid="229"><filepath ixia_locid="234">OS_Nova_Server.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="239">
-                <p ixia_locid="244">Creates a VM Instance, specifying flavor, image and network attachments.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="126">
-                <p ixia_locid="127"><filepath ixia_locid="128">OS_Nova_ServerGroup.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="129">
-                <p ixia_locid="130">Creates a <term ixia_locid="131">server group</term>, which is a
-                  set of VM instances (OS::Nova::Server) that can be assigned group attributes such
-                  as compute-node-affinity or anti-affinity. To assign a VM instance to a server
-                  group, use NovaSchedulerHints within the OS::Nova::Server resource; for example,
-                    <userinput ixia_locid="132">NovaSchedulerHints: [{Key: 'group', Value: {Ref:
-                      <varname ixia_locid="133">server_group_name</varname>}}]</userinput>.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="225">
-                <p ixia_locid="230"><filepath ixia_locid="235">OS_SysInv_HostInterface.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="240">
-                <p ixia_locid="245">Creates a Layer 2 interface on a compute node, specifying the
-                  compute node, the interface type (eth or lag), the port or ports, the network type
-                  (mgmt, oam, infra, or data), and for a data network, the provider networks. </p>
-              </entry>
-            </row>
-            
-          </tbody>
-        </tgroup>
-      </table>
-    </section>
-    <section id="section_N10235_N1001F_N10001" ixia_locid="206">
-      <title ixia_locid="208">HOT Templates—Scenarios</title>
-      <p ixia_locid="210">The templates in the <filepath ixia_locid="212">hot/scenarios</filepath>
-        directory use the OpenStack HOT Template File Format. Each template in this directory
-        provides an example scenario involving several Resource types.</p>
-      <table id="table_ghj_nh5_fp">
-        <tgroup cols="2">
-          <thead>
-            <row>
-              <entry ixia_locid="214">
-                <p ixia_locid="216">Template file</p>
-              </entry>
-              <entry ixia_locid="218">
-                <p ixia_locid="220">Description</p>
-              </entry>
-            </row>
-          </thead>
-          <tbody>
-            
-            <row>
-              <entry ixia_locid="276">
-                <p ixia_locid="280"><filepath ixia_locid="284">BootFromCinder.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="288">
-                <p ixia_locid="292">Creates a bootable Cinder volume, and uses it to launch a VM
-                  instance. The Cinder volume is used as the VM's virtual boot disk.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="277">
-                <p ixia_locid="281"><filepath ixia_locid="285">DPDK_Flavors.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="289">
-                <p ixia_locid="293">Creates four different flavors for DPDK-type guest
-                  applications.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="144">
-                <p ixia_locid="145"><filepath ixia_locid="146">Launch2NamedVMs.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="147">
-                <p ixia_locid="148">Creates a static service containing two virtual machines
-                  attached to the same network. This template illustrates the HP Helion OpenStack Carrier Grade
-                  extension for simplified VM instance naming, as described in <xref href="jow1404333807231.xml" ixia_locid="149"/>. The template is used as an
-                  example in <xref href="jow1404333810324.xml" ixia_locid="150"/>.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="278">
-                <p ixia_locid="282"><filepath ixia_locid="286">LabSetup.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="290">
-                <p ixia_locid="294">Similar to <filepath ixia_locid="296">Provisioning.yaml</filepath>, but also
-                  creates IP subnets on the tenant networks, routers on the tenant networks, and
-                  router gateways.<!-- needs rewording? review the template when available --></p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="151">
-                <p ixia_locid="152"><filepath ixia_locid="153">NetworkSetup.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="154">
-                <p ixia_locid="155">Creates three tenant networks, five subnets, and two routers,
-                  each with an external gateway interface and an internal interface.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="279">
-                <p ixia_locid="283"><filepath ixia_locid="287">Provisioning.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="291">
-                <p ixia_locid="295">Provisions a variety of resources, including provider networks,
-                  segmentation ranges, tenant networks, key pairs, Glance images, and flavors, some
-                  of which are implemented as a nested stack (by referencing another Heat template). </p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="156">
-                <p ixia_locid="157"><filepath ixia_locid="158">SimpleServer.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="159">
-                <p ixia_locid="161">Creates a single VM instance. This template illustrates several
-                  HP Helion OpenStack Carrier Grade extensions, incuding support for multiple
-                  network attachments, the use of ‘name’ or subnet_name’ to refer to the network,
-                  and the ability to specify the vif-model per network attachment (or NIC).</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="306">
-                <p ixia_locid="163"><filepath ixia_locid="164">DemoAutoScaling.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="308">
-                <p ixia_locid="167">Creates a single Load Balancer VM, and an AutoScalingGroup of
-                  server VMs that scales based on link utilization. This demonstrates a typical
-                  in/out autoscaling use case. The template also illustrates the use of the RAW
-                  UserDataType to pass user data that does not require <libraryname ixia_locid="297">cf_init</libraryname> for parsing. </p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="320">
-                <p ixia_locid="310"><filepath ixia_locid="311">VMAutoScaling.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="323">
-                <p ixia_locid="312">Creates an up/down autoscaling service that responds to CPU load by adding or
-                  removing vCPUs for a VM instance.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="321">
-                <p ixia_locid="326"><filepath ixia_locid="327">NestedStack.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="324">
-                <p ixia_locid="328">Creates an OS::Cinder::Volume, and an OS::Nova::Server resource that uses the
-                  volume. This stack is used as a nested stack within the
-                    <filepath ixia_locid="329">NestedAutoScale.yaml</filepath> template.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="322">
-                <p ixia_locid="330"><filepath ixia_locid="331">NestedAutoScale.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="325">
-                <p ixia_locid="332">Creates an autoscaling stack, using a nested stack. The stack NestedStack.yaml,
-                  which contains a VM and its Cinder Volume, is scaled in and out.</p>
-              </entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-    </section>
-    <section id="section_N10285_N1001F_N10001" ixia_locid="168">
-      <title ixia_locid="169">CFN Templates</title>
-      <p ixia_locid="170">The templates in the <filepath ixia_locid="171">cfn</filepath> directory
-        use the AWS Cloud Formation Template File Format.</p>
-      <table id="table_uvt_sqm_fp">
-        <tgroup cols="2">
-          <thead>
-            <row>
-              <entry ixia_locid="172">
-                <p ixia_locid="173">Template file</p>
-              </entry>
-              <entry ixia_locid="174">
-                <p ixia_locid="175">Description</p>
-              </entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry ixia_locid="298">
-                <p ixia_locid="300"><filepath ixia_locid="302">AutoScaleWithNamePattern.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="304">
-                <p ixia_locid="24">Creates an in/out autoscaling service with simplified names for
-                  VM instances, using a HP Helion OpenStack Carrier Grade extension. The service responds to CPU load
-                  as reported by a platform-generated metric.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="299">
-                <p ixia_locid="301"><filepath ixia_locid="303">ComputeScale.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="305">
-                <p ixia_locid="16">Creates an in/out autoscaling service that responds to CPU load
-                  as reported by the compute node hosting the VM.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="181">
-                <p ixia_locid="182"><filepath ixia_locid="183">CPUScale.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="184">
-                <p ixia_locid="12">Creates an in/out autoscaling service that responds to CPU load
-                  as reported by the guest VM, using a custom metric generated within the guest. For
-                  more about this template, see <xref href="jow1404333812899.xml" ixia_locid="185"/>.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="187">
-                <p ixia_locid="188"><filepath ixia_locid="189">MemScale.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="190">
-                <p ixia_locid="20">Creates an in/out autoscaling service that responds to memory
-                  usage as reported by the guest VM, using a custom metric generated within the
-                  guest. To push the metric to the HP Helion OpenStack Carrier Grade platform, the guest must contain
-                    <libraryname ixia_locid="201">cloud-init</libraryname> and <libraryname ixia_locid="202">heat-cfntools</libraryname>.</p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="192">
-                <p ixia_locid="193"><filepath ixia_locid="194">TenantScale.yaml</filepath></p>
-              </entry>
-              <entry ixia_locid="195">
-                <p ixia_locid="196">Demonstrates the use of a parameter to supply user credentials.
-                  This template can be run by a tenant user. It creates an in/out autoscaling
-                  service that responds to CPU load as reported by the guest VM. To push the metric
-                  to the HP Helion OpenStack Carrier Grade platform, the guest must contain <libraryname ixia_locid="203">cloud-init</libraryname> and <libraryname ixia_locid="204">heat-cfntools</libraryname>.</p>
-              </entry>
-            </row>
-            
-          </tbody>
-        </tgroup>
-      </table>
-    </section>
-  </refbody>
-</reference-wr>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
+<reference-wr domains="(topic reference reference-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404915566084" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+    
+-->
+  <title ixia_locid="26">Sample Templates for HP Helion OpenStack Carrier Grade</title>
+  <shortdesc ixia_locid="2">You can evaluate selected features of Heat using sample templates
+    included with HP Helion OpenStack Carrier Grade. The samples also demonstrate some HP Helion OpenStack Carrier Grade
+    extensions.</shortdesc>
+  <prolog>
+    <author ixia_locid="27">Jim Owens</author>
+  </prolog>
+  <refbody>
+    <section id="section_N10022_N1001F_N10001" ixia_locid="34">
+<!-- <p ixia_locid="25">The templates are available on WindShare as part of the HP Helion OpenStack Carrier Grade
+        release. To use them, download and expand the SDK archive, and then untar the
+          <nameliteral ixia_locid="333">wrs-heat-templates</nameliteral> tarball.</p> -->
+    </section>
+    <section id="section_N1002D_N1001F_N10001" ixia_locid="205">
+      <title ixia_locid="207">HOT Templates—Simple</title>
+      <p ixia_locid="209">The templates in the <filepath ixia_locid="211">hot/simple</filepath>
+        directory use the OpenStack HOT Template File Format. Each template in this directory
+        provides a simple example for an OpenStack Resource type, indicated by the
+        filename.<!-- Is this a comprehensive list of available resource types? --></p>
+      <table id="table_zq4_5nm_fp">
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry ixia_locid="213">
+                <p ixia_locid="215">Template file</p>
+              </entry>
+              <entry ixia_locid="217">
+                <p ixia_locid="219">Description</p>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry ixia_locid="221">
+                <p ixia_locid="226"><filepath ixia_locid="231">AWS_CloudFormation_Stack.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="236">
+                <p ixia_locid="241">Specifies the URL of another Heat template that describes
+                  additional resources. This allows Heat templates to be nested.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="48">
+                <p ixia_locid="49"><filepath ixia_locid="50">OS_Ceilometer_Alarm.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="51">
+                <p ixia_locid="52">Creates a Ceilometer threshold alarm. This example illustrates
+                  how to specify the name of an alarm meter, and how to set parameters such as the
+                  threshold for triggering an alarm, the comparison operator to use, the evaluation
+                  period for the comparison, and so on.</p>
+                
+              </entry>
+            </row>
+            
+            <row>
+              <entry ixia_locid="53">
+                <p ixia_locid="54"><filepath ixia_locid="55">OS_Cinder_Volume.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="56">
+                <p ixia_locid="57">Creates a Cinder volume of a particular size (in gigabytes).</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="58">
+                <p ixia_locid="59"><filepath ixia_locid="60">OS_Cinder_VolumeAttachment.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="61">
+                <p ixia_locid="62">Creates an attachment, or mount point, for a Cinder volume within a VM instance.</p>
+                
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="246">
+                <p ixia_locid="248"><filepath ixia_locid="250">OS_Glance_Image.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="252">
+                <p ixia_locid="254">Creates a Glance image, specifying the image file, container
+                  format, disk format, and so on.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="247">
+                <p ixia_locid="249"><filepath ixia_locid="251">OS_Heat_AccessPolicy.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="253">
+                <p ixia_locid="255">Specifies which types of resource to include in the results for <userinput ixia_locid="68">heat
+                    stack-show <varname ixia_locid="69">stackname</varname></userinput> and <userinput ixia_locid="70">heat
+                    resource-show <varname ixia_locid="71">stackname</varname>
+                    <varname ixia_locid="72">resourcename</varname></userinput>.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="73">
+                <p ixia_locid="74"><filepath ixia_locid="75">OS_Heat_CWLiteAlarm.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="76">
+                <p ixia_locid="77">Creates a threshold alarm using OS::Heat::CWLiteAlarm. 
+                  This is an older and less capable alarm resource than OS::Ceilometer::Alarm. 
+                  If possible, use OS::Ceilometer::Alarm instead. <!-- why might it not be possible? --></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="78">
+                <p ixia_locid="79"><filepath ixia_locid="80">OS_Heat_InstanceGroup.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="81">
+                <p ixia_locid="197">Creates a specified number of instances using a specified launch configuration.
+                  The number of instances is controlled by the <parmname ixia_locid="198">size</parmname> property.
+                  This invokes AWS::AutoScaling::LaunchConfiguration, which effectively restricts
+                  the launched instances to AWS::EC2::Instance resources.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="83">
+                <p ixia_locid="84"><filepath ixia_locid="85">OS_Neutron_FloatingIP.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="86"><p ixia_locid="87">Creates a floating IP address for an external tenant network, in order to represent an internal port IP address using NAT.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="89">
+                <p ixia_locid="90"><filepath ixia_locid="91">OS_Neutron_Net.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="92">
+                <p ixia_locid="93">Creates a tenant network, to which other resources such as 
+                  OS::Neutron::Port, OS::Neutron::Subnet, and OS::Nova::Server
+                  can refer.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="94">
+                <p ixia_locid="95"><filepath ixia_locid="96">OS_Neutron_Port.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="97">
+                <p ixia_locid="98">Creates a port for a VM instance on a tenant network. The VM
+                  instance can use this to attach to the tenant network.</p>
+              </entry>
+            </row>
+            
+            <row>
+              <entry ixia_locid="256">
+                <p ixia_locid="260"><filepath ixia_locid="264">OS_Neutron_ProviderNet.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="268">
+                <p ixia_locid="272">Creates a provider network, specifying the name and type (flat
+                  or vlan).</p>
+              </entry>
+            </row>
+            
+            <row>
+              <entry ixia_locid="257">
+                <p ixia_locid="261"><filepath ixia_locid="265">OS_Neutron_ProviderNetRange.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="269">
+                <p ixia_locid="273">Creates a segmentation range for a provider network, specifying
+                  the provider network, and the minimum and maximum  values of the range.</p>
+              </entry>
+            </row>
+            
+            <row>
+              <entry ixia_locid="258">
+                <p ixia_locid="262"><filepath ixia_locid="266">OS_Neutron_QoSPolicy.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="270">
+                <p ixia_locid="274">Creates a Neutron QoS policy, which specifies a packet
+                  scheduling weight. The policy can be referenced by a tenant network to modify the
+                  scheduling weight of AVS ingress traffic from VMs for the tenant network.</p>
+              </entry>
+            </row>
+            
+            <row>
+              <entry ixia_locid="259">
+                <p ixia_locid="263"><filepath ixia_locid="267">OS_Neutron_Router.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="271">
+                <p ixia_locid="275">Creates an IP router for tenant networks. The router's IP interfaces
+                  to tenant network subnets are established as shown in
+                  OS_Neutron_RouterInterface.yaml.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="105">
+                <p ixia_locid="106"><filepath ixia_locid="107">OS_Neutron_RouterGateway.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="108">
+                <p ixia_locid="109">Creates a router gateway interface for the specified router on
+                  the specified external network. The IP address for the interface is allocated from
+                  the external network’s subnet, and a default IP route is created using the
+                    <parmname ixia_locid="110">gateway_ip</parmname> of the subnet.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="313">
+                <p ixia_locid="112"><filepath ixia_locid="113">OS_Neutron_RouterInterface.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="315">
+                <p ixia_locid="115">Creates an IP interface on an existing router for an existing IP subnet.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="314">
+                <p ixia_locid="317"><filepath ixia_locid="318">OS_Neutron_SecurityGroup.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="316">
+                <p ixia_locid="319">Creates a Security Group that defines a stateless IP Filter.
+                  This Security Group can be referenced by a Server (VM) resource that requires a
+                  stateless IP Filter for ingress and egress traffic to or from the VM.</p>
+              </entry>
+            </row>
+            
+            <row>
+              <entry ixia_locid="116">
+                <p ixia_locid="117"><filepath ixia_locid="118">OS_Neutron_Subnet.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="119">
+                <p ixia_locid="120">Creates an IP subnet on a specified tenant network. 
+                  The IP subnet and mask are required, 
+                  and the DHCP support status (enabled or disabled) must be specified
+                  <!-- double-check that it can be in the disabled state -->. DNS
+                  nameservers can optionally be specified.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="222">
+                <p ixia_locid="227"><filepath ixia_locid="232">OS_Nova_Flavor.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="237">
+                <p ixia_locid="242">Creates a Nova flavor that describes the resource requirements
+                  for a VM, such as the required RAM, number of vCPUs, disk size, and so on.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="223">
+                <p ixia_locid="228"><filepath ixia_locid="233">OS_Nova_KeyPair.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="238">
+                <p ixia_locid="243">Creates a secure shell (SSH) key pair to enable secure login to
+                  a launched VM. The created key pair is referenced in OS::Nova::Server.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="224">
+                <p ixia_locid="229"><filepath ixia_locid="234">OS_Nova_Server.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="239">
+                <p ixia_locid="244">Creates a VM Instance, specifying flavor, image and network attachments.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="126">
+                <p ixia_locid="127"><filepath ixia_locid="128">OS_Nova_ServerGroup.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="129">
+                <p ixia_locid="130">Creates a <term ixia_locid="131">server group</term>, which is a
+                  set of VM instances (OS::Nova::Server) that can be assigned group attributes such
+                  as compute-node-affinity or anti-affinity. To assign a VM instance to a server
+                  group, use NovaSchedulerHints within the OS::Nova::Server resource; for example,
+                    <userinput ixia_locid="132">NovaSchedulerHints: [{Key: 'group', Value: {Ref:
+                      <varname ixia_locid="133">server_group_name</varname>}}]</userinput>.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="225">
+                <p ixia_locid="230"><filepath ixia_locid="235">OS_SysInv_HostInterface.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="240">
+                <p ixia_locid="245">Creates a Layer 2 interface on a compute node, specifying the
+                  compute node, the interface type (eth or lag), the port or ports, the network type
+                  (mgmt, oam, infra, or data), and for a data network, the provider networks. </p>
+              </entry>
+            </row>
+            
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="section_N10235_N1001F_N10001" ixia_locid="206">
+      <title ixia_locid="208">HOT Templates—Scenarios</title>
+      <p ixia_locid="210">The templates in the <filepath ixia_locid="212">hot/scenarios</filepath>
+        directory use the OpenStack HOT Template File Format. Each template in this directory
+        provides an example scenario involving several Resource types.</p>
+      <table id="table_ghj_nh5_fp">
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry ixia_locid="214">
+                <p ixia_locid="216">Template file</p>
+              </entry>
+              <entry ixia_locid="218">
+                <p ixia_locid="220">Description</p>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            
+            <row>
+              <entry ixia_locid="276">
+                <p ixia_locid="280"><filepath ixia_locid="284">BootFromCinder.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="288">
+                <p ixia_locid="292">Creates a bootable Cinder volume, and uses it to launch a VM
+                  instance. The Cinder volume is used as the VM's virtual boot disk.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="277">
+                <p ixia_locid="281"><filepath ixia_locid="285">DPDK_Flavors.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="289">
+                <p ixia_locid="293">Creates four different flavors for DPDK-type guest
+                  applications.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="144">
+                <p ixia_locid="145"><filepath ixia_locid="146">Launch2NamedVMs.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="147">
+                <p ixia_locid="148">Creates a static service containing two virtual machines
+                  attached to the same network. This template illustrates the HP Helion OpenStack Carrier Grade
+                  extension for simplified VM instance naming, as described in <xref href="jow1404333807231.xml" ixia_locid="149"/>. The template is used as an
+                  example in <xref href="jow1404333810324.xml" ixia_locid="150"/>.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="278">
+                <p ixia_locid="282"><filepath ixia_locid="286">LabSetup.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="290">
+                <p ixia_locid="294">Similar to <filepath ixia_locid="296">Provisioning.yaml</filepath>, but also
+                  creates IP subnets on the tenant networks, routers on the tenant networks, and
+                  router gateways.<!-- needs rewording? review the template when available --></p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="151">
+                <p ixia_locid="152"><filepath ixia_locid="153">NetworkSetup.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="154">
+                <p ixia_locid="155">Creates three tenant networks, five subnets, and two routers,
+                  each with an external gateway interface and an internal interface.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="279">
+                <p ixia_locid="283"><filepath ixia_locid="287">Provisioning.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="291">
+                <p ixia_locid="295">Provisions a variety of resources, including provider networks,
+                  segmentation ranges, tenant networks, key pairs, Glance images, and flavors, some
+                  of which are implemented as a nested stack (by referencing another Heat template). </p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="156">
+                <p ixia_locid="157"><filepath ixia_locid="158">SimpleServer.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="159">
+                <p ixia_locid="161">Creates a single VM instance. This template illustrates several
+                  HP Helion OpenStack Carrier Grade extensions, incuding support for multiple
+                  network attachments, the use of ‘name’ or subnet_name’ to refer to the network,
+                  and the ability to specify the vif-model per network attachment (or NIC).</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="306">
+                <p ixia_locid="163"><filepath ixia_locid="164">DemoAutoScaling.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="308">
+                <p ixia_locid="167">Creates a single Load Balancer VM, and an AutoScalingGroup of
+                  server VMs that scales based on link utilization. This demonstrates a typical
+                  in/out autoscaling use case. The template also illustrates the use of the RAW
+                  UserDataType to pass user data that does not require <libraryname ixia_locid="297">cf_init</libraryname> for parsing. </p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="320">
+                <p ixia_locid="310"><filepath ixia_locid="311">VMAutoScaling.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="323">
+                <p ixia_locid="312">Creates an up/down autoscaling service that responds to CPU load by adding or
+                  removing vCPUs for a VM instance.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="321">
+                <p ixia_locid="326"><filepath ixia_locid="327">NestedStack.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="324">
+                <p ixia_locid="328">Creates an OS::Cinder::Volume, and an OS::Nova::Server resource that uses the
+                  volume. This stack is used as a nested stack within the
+                    <filepath ixia_locid="329">NestedAutoScale.yaml</filepath> template.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="322">
+                <p ixia_locid="330"><filepath ixia_locid="331">NestedAutoScale.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="325">
+                <p ixia_locid="332">Creates an autoscaling stack, using a nested stack. The stack NestedStack.yaml,
+                  which contains a VM and its Cinder Volume, is scaled in and out.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="section_N10285_N1001F_N10001" ixia_locid="168">
+      <title ixia_locid="169">CFN Templates</title>
+      <p ixia_locid="170">The templates in the <filepath ixia_locid="171">cfn</filepath> directory
+        use the AWS Cloud Formation Template File Format.</p>
+      <table id="table_uvt_sqm_fp">
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry ixia_locid="172">
+                <p ixia_locid="173">Template file</p>
+              </entry>
+              <entry ixia_locid="174">
+                <p ixia_locid="175">Description</p>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry ixia_locid="298">
+                <p ixia_locid="300"><filepath ixia_locid="302">AutoScaleWithNamePattern.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="304">
+                <p ixia_locid="24">Creates an in/out autoscaling service with simplified names for
+                  VM instances, using a HP Helion OpenStack Carrier Grade extension. The service responds to CPU load
+                  as reported by a platform-generated metric.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="299">
+                <p ixia_locid="301"><filepath ixia_locid="303">ComputeScale.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="305">
+                <p ixia_locid="16">Creates an in/out autoscaling service that responds to CPU load
+                  as reported by the compute node hosting the VM.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="181">
+                <p ixia_locid="182"><filepath ixia_locid="183">CPUScale.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="184">
+                <p ixia_locid="12">Creates an in/out autoscaling service that responds to CPU load
+                  as reported by the guest VM, using a custom metric generated within the guest. For
+                  more about this template, see <xref href="jow1404333812899.xml" ixia_locid="185"/>.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="187">
+                <p ixia_locid="188"><filepath ixia_locid="189">MemScale.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="190">
+                <p ixia_locid="20">Creates an in/out autoscaling service that responds to memory
+                  usage as reported by the guest VM, using a custom metric generated within the
+                  guest. To push the metric to the HP Helion OpenStack Carrier Grade platform, the guest must contain
+                    <libraryname ixia_locid="201">cloud-init</libraryname> and <libraryname ixia_locid="202">heat-cfntools</libraryname>.</p>
+              </entry>
+            </row>
+            <row>
+              <entry ixia_locid="192">
+                <p ixia_locid="193"><filepath ixia_locid="194">TenantScale.yaml</filepath></p>
+              </entry>
+              <entry ixia_locid="195">
+                <p ixia_locid="196">Demonstrates the use of a parameter to supply user credentials.
+                  This template can be run by a tenant user. It creates an in/out autoscaling
+                  service that responds to CPU load as reported by the guest VM. To push the metric
+                  to the HP Helion OpenStack Carrier Grade platform, the guest must contain <libraryname ixia_locid="203">cloud-init</libraryname> and <libraryname ixia_locid="204">heat-cfntools</libraryname>.</p>
+              </entry>
+            </row>
+            
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference-wr>
