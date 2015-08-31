@@ -44,9 +44,6 @@ Gateway: 10.241.103.1
         <li>On the deployer, edit the following file: <codeblock>helion/hlm/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeblock><ol>
             <li>Change the enabled_backends line to:
               <codeblock>enabled_backends=vsa-1</codeblock></li>
-            <li>Change the following line, if
-              present:<codeblock>{% if cinder_enabled_backends == 'lvm-1' %}</codeblock> to
-              <codeblock>{% if cinder_enabled_backends == 'no-backends' %}</codeblock></li>
           </ol></li>
         <li>Copy the VSA section, uncomment it, and fill the values as in the following example: <codeblock>
 [vsa-1]
