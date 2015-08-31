@@ -40,6 +40,9 @@ Gateway: 10.241.103.1
           <codeblock>ssh –X to the deployer node</codeblock><codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
         <li>Select <codeph>Find</codeph> and enter the IP addresses of the VSA virtual
           machines.</li>
+        <li>ssh -X to the first control plane node
+          <codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
+        <li>Manully add the IPs of those VMs.</li>
         <li>Choose Tasks -&gt; Management Group -&gt; New Management Group from the menu above.</li>
         <li>Enter the following name for the management group, for example: hlm003-vsa-mg</li>
         <li>Enter the following username and password: stack / stack</li>
