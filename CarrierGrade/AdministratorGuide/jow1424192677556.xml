@@ -24,9 +24,9 @@
             </li>
         </ol>
         Carrier Grade 2.0
-        <postreq id="postreq_N10057_N10029_N10001" 
+        <section id="section_N10057_N10029_N10001" 
             <p 
                 VLAN IDs. Segmentation ranges are required in order to set up tenant networks.</p>
-        </postreq>
+        </section>
     </body>
 </topic>

@@ -1,1 +1,661 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1413402160578" xml:lang="en-us"><!-- Modification History        -->    <title >PCI Passthrough Ethernet Interfaces</title>    <shortdesc >A <term >passthrough</term> Ethernet interface is a physical PCI Ethernet NIC on a        compute node to which a virtual machine is granted direct access. This minimizes packet        processing delays but at the same time demands special operational        considerations.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <section id="section_N10023_N10020_N10001" >            <p >For all purposes, a PCI passthrough interface behaves as if it were                physically attached to the virtual machine. Therefore any potential throughput                limitations coming from the virtualized environment, such as the ones introduced by                internal copying of data buffers, are eliminated. However, by bypassing the                virtualized environment, the use of PCI passthrough Ethernet devices introduces                several restrictions that must be taken into consideration. They include:</p>            <ul id="ul_mjs_m52_tp">                <li >                    <p >no support for LAG, QoS, ACL, or host interface monitoring</p>                </li>                <li >                    <p >no support for live migration</p>                </li>                <li >                    <p >no access the compute node's AVS switch</p>                </li>            </ul>            <p >A passthrough interface bypasses the compute node's AVS switch                completely, and is attached instead directly to the provider network's access                switch. Therefore, proper routing of traffic to connect the passthrough interface to                a particular tenant network depends entirely on the VLAN tagging options configured                on both the passthrough interface and the access port on the switch.</p>            <p >The access switch routes incoming traffic based on a VLAN ID, which ultimately                determines the tenant network to which the traffic belongs. The VLAN ID is either                explicit, as found in incoming tagged packets, or implicit, as defined by the access                port's default VLAN ID when the incoming packets are untagged. In both cases the                access switch must be configured to process the proper VLAN ID, which therefore has                to be known in advance.</p>            <p >In the following example a new virtual machine is launched by user                    <b >user1</b> on tenant <b >tenant1</b>, with a passthrough interface connected to                the tenant network <b >net0</b> identified with                VLAN ID 10.</p>        </section>        <section id="section_N10065_N10020_N10001" >            <p >The exercise assumes that the underlying provider network                    <b >group0-data0</b> exists already, and that VLAN ID 10 is a                valid segmentation ID assigned to <b >tenant1</b>.</p>        </section>        <ol>            <li id="li_N10079_N10076_N10020_N10001" >                <p >Log in as the <b >admin</b> user to the web management                    interface.</p>            </li>            <li id="li_N1009B_N10088_N10024_N10001" >                <p >Lock the compute node you want to configure.</p>            </li>            <li id="li_N10086_N10076_N10020_N10001" >                <p >Configure the Ethernet interface to be used as a PCI                    passthrough interface.</p>                                    <p >Select the <wintitle >System                            Inventory</wintitle> window from the <uicontrol >Admin</uicontrol> panel, click the <uicontrol >Hosts</uicontrol> tab, click the name of the compute node where the PCI                        interface is available, click the <uicontrol >Interfaces</uicontrol> tab, and finally click the <uicontrol >Edit Interface</uicontrol> button associated with the                        interface you want to configure. Fill in the window as illustrated                        below:</p>                    <fig id="fig_hfk_cfh_rr" >                        <image href="psa1428772332800.image" id="image_whc_5kh_rr"  width="4in">                            <alt >Edit PCI Passthrough Interface</alt>                        </image>                    </fig>                    <p >In this example, Ethernet interface <b >eth8</b> is assigned the network type <term >pci-passthrough</term>, and configured as connected to provider network                            <b >group0-data0</b>. Click the                            <uicontrol >Save</uicontrol> button to proceed.</p>                    <p >The interface can also be configured from the CLI as                        illustrated below:</p>                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-if-modify \-nt pci-passthrough -p group0-data0 compute-0 eth8</userinput></codeblock>                            </li>            <li id="li_N100E9_N10076_N10020_N10001" >                <p >Create the <b >net0</b>                    tenant network</p>                                    <p >Select the <wintitle >Networks</wintitle>                        window from the <uicontrol >Admin</uicontrol> panel, click                        the <uicontrol >Networks</uicontrol> tab, and then click the                            <uicontrol >Create Network</uicontrol> button. Fill in                        the <wintitle >Create Network</wintitle> window as                        illustrated below. You must ensure that:</p>                    <ul id="ul_pcn_vb4_tp">                        <li >                            <p >The <b >tenant1</b> tenant has access to the tenant network,                                either assigning it as the owner, as in the illustration (using                                    <uicontrol >Project</uicontrol>), or by enabling the shared                                flag.</p>                        </li>                        <li >                            <p >The segmentation ID is set to 10. </p>                        </li>                    </ul>                    <fig id="fig_kwr_hd4_tp" >                        <image href="psa1413406273455.image" id="image_ofd_kd4_tp"  placement="inline" width="4in">                            <alt >Creating a tenant network for use with PCI                                passthrough devices</alt>                        </image>                    </fig>                    <p >Click the <uicontrol >Create Network</uicontrol> button to proceed.</p>                            </li>            <li id="li_N10144_N10076_N10020_N10001" >                <p >Configure the access switch.</p>                                    <p >Configure the physical port on the access switch used to                        connect to Ethernet interface <b >eth8</b> as an access port with default VLAN ID of 10.                        Traffic across the connection is therefore untagged, and effectively                        integrated into the targeted tenant network.</p>                    <p >You can also use a trunk port on the access switch so that it                        handles tagged packets as well. However, this opens the possibility for                        guest applications to join other tenant networks using tagged packets with                        different VLAN IDs, which might compromise the security of the system. See                            <xref href="jow1404333739778.xml" /> for other details regarding the                        configuration of the access switch.</p>                            </li>            <li id="li_N101A0_N10088_N10024_N10001" >                <p >Unlock the compute node.</p>            </li>            <li id="li_N1015D_N10076_N10020_N10001" >                <p >Launch the virtual machine.</p>                <ol id="ol_snp_klt_tp">                    <li >                        <p >Log in as user <b >user1</b> to the web management                            interface.</p>                    </li>                    <li >                        <p >Configure the network interfaces for the new virtual machine.</p>                                                    <p >Open the <wintitle >Launch                                    Instance</wintitle> dialog by clicking the <uicontrol >Launch Interface</uicontrol> button on the                                    <wintitle >Instances</wintitle> window. Configure                                the necessary options for the new virtual machine. In particular,                                click the <uicontrol >Networking</uicontrol> tab and                                add a PCI passthrough interface on the tenant network <b >net0</b>, as illustrated below. Add                                other network interfaces as needed.</p>                            <fig id="fig_yxy_t1g_tp" >                                <image href="psa1413311389905.image" id="image_dbb_4dg_tp"  placement="inline" width="5.5in">                                    <alt >Assigning Passthrough PCI Ethernet                                        Devices</alt>                                </image>                            </fig>                            <p >Click the <uicontrol >Launch</uicontrol> button to proceed.</p>                            <p >Passthrough interfaces can be attached from the CLI when booting a                                new virtual machine, as illustrated below:</p>                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova boot \--nic net-id=704e9f3b,vif-model=pci-passthrough my-new-vm</userinput></codeblock>                                            </li>                </ol>            </li>        </ol>        Carrier Grade 2.0            <p >The new virtual machine instance is up now. It has a PCI passthrough                connection to the <b >net0</b> tenant network                identified with VLAN ID 10.</p>        </result>        <postreq id="postreq_N1023B_N10024_N10001" >            <p >Access switches must be properly configured to ensure that virtual                machines using PCI-passthrough or SR-IOV Ethernet interfaces (the latter discussed                in <xref href="psa1428687672712.xml" />) have the expected                connectivity. In a common scenario, the virtual machine using these interfaces                connects to external end points only, that is, it does not connect to other virtual                machines in the same cluster. In this case:</p>            <ul id="ul_pz2_w4w_rr">                <li >                    <p >Traffic between the virtual machine and the access switch                        can be tagged or untagged.</p>                </li>                <li >                    <p >The connecting port on the access switch is part of a                        port-based VLAN.</p>                </li>                <li >                    <p >If the port is tagged, the allowed VLAN ID range must not                        overlap with VLAN ID ranges used by the AVS ports. </p>                </li>                <li >                    <p >The port-based VLAN provides the required connectivity to external switching                        and routing equipment needed by guest applications to establish connections                        to the intended end points.</p>                </li>            </ul>            <p >For connectivity to other virtual machines in the cluster the                following configuration is also required:</p>            <ul id="ul_ngs_nvw_rr">                <li >                    <p >The VLAN ID used for the tenant network, 10 in this example, and the default                        port VLAN ID of the access port on the switch are the same. This ensures                        that incoming traffic from the virtual machine is tagged internally by the                        switch as belonging to VLAN ID 10, and switched to the appropriate exit                        ports.</p>                </li>                <li >                    <p >The target virtual machines are reachable through another port on the compute                        node, which is managed by the AVS.</p>                </li>                <li >                    <p >That other port is configured as usual, as a VLAN trunk                        port, and the tenant network's VLAN ID (10) is included in the tagged range.                        This ensures that VLAN 10 is common to both the passthrough/SR-IOV interface                        and the AVS port.</p>                </li>            </ul>        </postreq>    </body></topic>
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1413402160578" xml:lang="en-us">
+
+
+<!-- Modification History
+
+
+        
+
+
+-->
+
+
+    <title >PCI Passthrough Ethernet Interfaces</title>
+
+
+    <shortdesc >A <term >passthrough</term> Ethernet interface is a physical PCI Ethernet NIC on a
+
+
+        compute node to which a virtual machine is granted direct access. This minimizes packet
+
+
+        processing delays but at the same time demands special operational
+
+
+        considerations.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Pedro Sanchez</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <section id="section_N10023_N10020_N10001" >
+
+
+            <p >For all purposes, a PCI passthrough interface behaves as if it were
+
+
+                physically attached to the virtual machine. Therefore any potential throughput
+
+
+                limitations coming from the virtualized environment, such as the ones introduced by
+
+
+                internal copying of data buffers, are eliminated. However, by bypassing the
+
+
+                virtualized environment, the use of PCI passthrough Ethernet devices introduces
+
+
+                several restrictions that must be taken into consideration. They include:</p>
+
+
+            <ul id="ul_mjs_m52_tp">
+
+
+                <li >
+
+
+                    <p >no support for LAG, QoS, ACL, or host interface monitoring</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >no support for live migration</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >no access the compute node's AVS switch</p>
+
+
+                </li>
+
+
+            </ul>
+
+
+            <p >A passthrough interface bypasses the compute node's AVS switch
+
+
+                completely, and is attached instead directly to the provider network's access
+
+
+                switch. Therefore, proper routing of traffic to connect the passthrough interface to
+
+
+                a particular tenant network depends entirely on the VLAN tagging options configured
+
+
+                on both the passthrough interface and the access port on the switch.</p>
+
+
+            <p >The access switch routes incoming traffic based on a VLAN ID, which ultimately
+
+
+                determines the tenant network to which the traffic belongs. The VLAN ID is either
+
+
+                explicit, as found in incoming tagged packets, or implicit, as defined by the access
+
+
+                port's default VLAN ID when the incoming packets are untagged. In both cases the
+
+
+                access switch must be configured to process the proper VLAN ID, which therefore has
+
+
+                to be known in advance.</p>
+
+
+            <p >In the following example a new virtual machine is launched by user
+
+
+                    <b >user1</b> on tenant <b >tenant1</b>, with a passthrough interface connected to
+
+
+                the tenant network <b >net0</b> identified with
+
+
+                VLAN ID 10.</p>
+
+
+        </section>
+
+
+        <section id="section_N10065_N10020_N10001" >
+
+
+            <p >The exercise assumes that the underlying provider network
+
+
+                    <b >group0-data0</b> exists already, and that VLAN ID 10 is a
+
+
+                valid segmentation ID assigned to <b >tenant1</b>.</p>
+
+
+        </section>
+
+
+        <ol>
+
+
+            <li id="li_N10079_N10076_N10020_N10001" >
+
+
+                <p >Log in as the <b >admin</b> user to the web management
+
+
+                    interface.</p>
+
+
+            </li>
+
+
+            <li id="li_N1009B_N10088_N10024_N10001" >
+
+
+                <p >Lock the compute node you want to configure.</p>
+
+
+            </li>
+
+
+            <li id="li_N10086_N10076_N10020_N10001" >
+
+
+                <p >Configure the Ethernet interface to be used as a PCI
+
+
+                    passthrough interface.</p>
+
+
+                
+
+
+                    <p >Select the <wintitle >System
+
+
+                            Inventory</wintitle> window from the <uicontrol >Admin</uicontrol> panel, click the <uicontrol >Hosts</uicontrol> tab, click the name of the compute node where the PCI
+
+
+                        interface is available, click the <uicontrol >Interfaces</uicontrol> tab, and finally click the <uicontrol >Edit Interface</uicontrol> button associated with the
+
+
+                        interface you want to configure. Fill in the window as illustrated
+
+
+                        below:</p>
+
+
+                    <fig id="fig_hfk_cfh_rr" >
+
+
+                        <image href="psa1428772332800.image" id="image_whc_5kh_rr"  width="4in">
+
+
+                            <alt >Edit PCI Passthrough Interface</alt>
+
+
+                        </image>
+
+
+                    </fig>
+
+
+                    <p >In this example, Ethernet interface <b >eth8</b> is assigned the network type <term >pci-passthrough</term>, and configured as connected to provider network
+
+
+                            <b >group0-data0</b>. Click the
+
+
+                            <uicontrol >Save</uicontrol> button to proceed.</p>
+
+
+                    <p >The interface can also be configured from the CLI as
+
+
+                        illustrated below:</p>
+
+
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-if-modify \
+
+
+-nt pci-passthrough -p group0-data0 compute-0 eth8</userinput></codeblock>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N100E9_N10076_N10020_N10001" >
+
+
+                <p >Create the <b >net0</b>
+
+
+                    tenant network</p>
+
+
+                
+
+
+                    <p >Select the <wintitle >Networks</wintitle>
+
+
+                        window from the <uicontrol >Admin</uicontrol> panel, click
+
+
+                        the <uicontrol >Networks</uicontrol> tab, and then click the
+
+
+                            <uicontrol >Create Network</uicontrol> button. Fill in
+
+
+                        the <wintitle >Create Network</wintitle> window as
+
+
+                        illustrated below. You must ensure that:</p>
+
+
+                    <ul id="ul_pcn_vb4_tp">
+
+
+                        <li >
+
+
+                            <p >The <b >tenant1</b> tenant has access to the tenant network,
+
+
+                                either assigning it as the owner, as in the illustration (using
+
+
+                                    <uicontrol >Project</uicontrol>), or by enabling the shared
+
+
+                                flag.</p>
+
+
+                        </li>
+
+
+                        <li >
+
+
+                            <p >The segmentation ID is set to 10. </p>
+
+
+                        </li>
+
+
+                    </ul>
+
+
+                    <fig id="fig_kwr_hd4_tp" >
+
+
+                        <image href="psa1413406273455.image" id="image_ofd_kd4_tp"  placement="inline" width="4in">
+
+
+                            <alt >Creating a tenant network for use with PCI
+
+
+                                passthrough devices</alt>
+
+
+                        </image>
+
+
+                    </fig>
+
+
+                    <p >Click the <uicontrol >Create Network</uicontrol> button to proceed.</p>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N10144_N10076_N10020_N10001" >
+
+
+                <p >Configure the access switch.</p>
+
+
+                
+
+
+                    <p >Configure the physical port on the access switch used to
+
+
+                        connect to Ethernet interface <b >eth8</b> as an access port with default VLAN ID of 10.
+
+
+                        Traffic across the connection is therefore untagged, and effectively
+
+
+                        integrated into the targeted tenant network.</p>
+
+
+                    <p >You can also use a trunk port on the access switch so that it
+
+
+                        handles tagged packets as well. However, this opens the possibility for
+
+
+                        guest applications to join other tenant networks using tagged packets with
+
+
+                        different VLAN IDs, which might compromise the security of the system. See
+
+
+                            <xref href="jow1404333739778.xml" /> for other details regarding the
+
+
+                        configuration of the access switch.</p>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N101A0_N10088_N10024_N10001" >
+
+
+                <p >Unlock the compute node.</p>
+
+
+            </li>
+
+
+            <li id="li_N1015D_N10076_N10020_N10001" >
+
+
+                <p >Launch the virtual machine.</p>
+
+
+                <ol id="ol_snp_klt_tp">
+
+
+                    <li >
+
+
+                        <p >Log in as user <b >user1</b> to the web management
+
+
+                            interface.</p>
+
+
+                    </li>
+
+
+                    <li >
+
+
+                        <p >Configure the network interfaces for the new virtual machine.</p>
+
+
+                        
+
+
+                            <p >Open the <wintitle >Launch
+
+
+                                    Instance</wintitle> dialog by clicking the <uicontrol >Launch Interface</uicontrol> button on the
+
+
+                                    <wintitle >Instances</wintitle> window. Configure
+
+
+                                the necessary options for the new virtual machine. In particular,
+
+
+                                click the <uicontrol >Networking</uicontrol> tab and
+
+
+                                add a PCI passthrough interface on the tenant network <b >net0</b>, as illustrated below. Add
+
+
+                                other network interfaces as needed.</p>
+
+
+                            <fig id="fig_yxy_t1g_tp" >
+
+
+                                <image href="psa1413311389905.image" id="image_dbb_4dg_tp"  placement="inline" width="5.5in">
+
+
+                                    <alt >Assigning Passthrough PCI Ethernet
+
+
+                                        Devices</alt>
+
+
+                                </image>
+
+
+                            </fig>
+
+
+                            <p >Click the <uicontrol >Launch</uicontrol> button to proceed.</p>
+
+
+                            <p >Passthrough interfaces can be attached from the CLI when booting a
+
+
+                                new virtual machine, as illustrated below:</p>
+
+
+                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova boot \
+
+
+--nic net-id=704e9f3b,vif-model=pci-passthrough my-new-vm</userinput></codeblock>
+
+
+                        
+
+
+                    </li>
+
+
+                </ol>
+
+
+            </li>
+
+
+        </ol>
+
+
+       
+
+
+            <p >The new virtual machine instance is up now. It has a PCI passthrough
+
+
+                connection to the <b >net0</b> tenant network
+
+
+                identified with VLAN ID 10.</p>
+
+
+        
+
+
+        <section id="section_N1023B_N10024_N10001" >
+
+
+            <p >Access switches must be properly configured to ensure that virtual
+
+
+                machines using PCI-passthrough or SR-IOV Ethernet interfaces (the latter discussed
+
+
+                in <xref href="psa1428687672712.xml" />) have the expected
+
+
+                connectivity. In a common scenario, the virtual machine using these interfaces
+
+
+                connects to external end points only, that is, it does not connect to other virtual
+
+
+                machines in the same cluster. In this case:</p>
+
+
+            <ul id="ul_pz2_w4w_rr">
+
+
+                <li >
+
+
+                    <p >Traffic between the virtual machine and the access switch
+
+
+                        can be tagged or untagged.</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >The connecting port on the access switch is part of a
+
+
+                        port-based VLAN.</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >If the port is tagged, the allowed VLAN ID range must not
+
+
+                        overlap with VLAN ID ranges used by the AVS ports. </p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >The port-based VLAN provides the required connectivity to external switching
+
+
+                        and routing equipment needed by guest applications to establish connections
+
+
+                        to the intended end points.</p>
+
+
+                </li>
+
+
+            </ul>
+
+
+            <p >For connectivity to other virtual machines in the cluster the
+
+
+                following configuration is also required:</p>
+
+
+            <ul id="ul_ngs_nvw_rr">
+
+
+                <li >
+
+
+                    <p >The VLAN ID used for the tenant network, 10 in this example, and the default
+
+
+                        port VLAN ID of the access port on the switch are the same. This ensures
+
+
+                        that incoming traffic from the virtual machine is tagged internally by the
+
+
+                        switch as belonging to VLAN ID 10, and switched to the appropriate exit
+
+
+                        ports.</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >The target virtual machines are reachable through another port on the compute
+
+
+                        node, which is managed by the AVS.</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >That other port is configured as usual, as a VLAN trunk
+
+
+                        port, and the tenant network's VLAN ID (10) is included in the tagged range.
+
+
+                        This ensures that VLAN 10 is common to both the passthrough/SR-IOV interface
+
+
+                        and the AVS port.</p>
+
+
+                </li>
+
+
+            </ul>
+
+
+        </section>
+
+
+    </body>
+
+
+</topic>

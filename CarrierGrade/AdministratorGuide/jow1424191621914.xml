@@ -193,7 +193,7 @@
                     </image>
                 </fig>
             </result>
-            <postreq id="postreq_N1020B_N10029_N10001" 
+            <section id="section_N1020B_N10029_N10001" 
                 <p id="assign_seg_ranges" 
                     VLAN or VXLAN type, you can assign one or more <term 
                     VLANs) or VNIs (for VXLANs). Segmentation ranges are required in order to set up
@@ -204,7 +204,7 @@
                         Networks</cite>. For more information about creating segmentation ranges or
                     setting up tenant networks, see the <cite 
                         Reference Deployment Scenarios</cite>.</p>
-            </postreq>
+            </section>
         </body>
     </body>
 </referable-content>
