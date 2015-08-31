@@ -42,7 +42,7 @@ IP Address: 10.241.103.11
 Subnet Mark: 255.255.255.0
 Gateway: 10.241.103.1</codeblock></li>
         <li>Set your X display and launch CMC:
-          <codeblock>ssh -X to the deployer node</codeblock><codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
+          <codeblock>ssh -X to the first control plane node</codeblock><codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
         <li>Select <codeph>Find</codeph> and enter the IP addresses of the VSA virtual
           machines.</li>
         <li>ssh -X to the first control plane node
