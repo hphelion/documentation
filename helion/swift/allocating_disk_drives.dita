@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_twv_b55_dt">
+<topic id="allocating-disk-drives">
   <title>Allocating Disk Drives</title>
   <body>
     <p>The disk model describes the number of disk present on a particular server and its usage. The

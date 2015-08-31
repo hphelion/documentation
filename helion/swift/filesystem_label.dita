@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_j15_fx5_dt">
+<topic id="verify-the-filesystem-label">
   <title>How to Verify the Filesystem Label</title>
   <body>
     <p>This page explains the procedure to check whether a filesystem in a partition has a

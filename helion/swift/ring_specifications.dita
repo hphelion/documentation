@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_efw_k55_dt">
+<topic id="ring-specification">
   <title>Ring Specifications</title>
   <body>
     <p>The ring maps the logical names of data to locations on a particular disks. There is a
