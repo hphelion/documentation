@@ -107,6 +107,8 @@
     </section>
     <section id="KnownIssues">
       <title>Known Issues in this Release</title>
+      <p><b>TLS is not supported</b></p>
+      <p>TLS is not supported for any traffic in Beta1.</p>
       <p><b>HP Helion Development Platform</b></p>
       <p>Helion Development Platform is not supported on Beta 1.</p>
       <p><b>Installing Swift</b></p>
