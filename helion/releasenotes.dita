@@ -157,7 +157,7 @@
           </ul></li>
         <li>Logging Dashboard <ul>
             <li>There is no auto-logon function, users must use the credentials in the <xref
-              href="logging/centralized_logging.dita#logging/interface">Logging Overview</xref> to
+                href="logging/centralized_logging.dita#logging/interface">Logging Overview</xref> to
               access the UI.</li>
           </ul></li>
         <li>Alarms <ul>
@@ -241,6 +241,10 @@
       <p><b>Horizon Installation Workaround Needed</b></p>
       <ul>
         <li>See workaround in the installation guide.</li>
+      </ul>
+      <p><b>Cinder Limitations</b></p>
+      <ul>
+        <li>3Par storage is not supported in Beta 1</li>
       </ul>
     </section>
   </body>
