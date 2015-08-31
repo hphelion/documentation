@@ -89,7 +89,7 @@
           <!--
 <p><b>Backup and Restore Capabilities for the Control Plane</b> &#154; Allows you to backup and recover your Helion OpenStack</tm> environment with RPO=0.</p>
 --><p><b>NIC
-          Mapping Feature</b></p><p> The new NIC mappings feature in HP Helion OpenStack Beta 1
+          Mapping Feature</b></p><p>The new NIC mappings feature in HP Helion OpenStack Beta 1
         allows the cloud administrator to map network interface names to PCI bus addresses. This is
         important because for well-understood reasons, Linux can sometimes name the network
         interfaces in a pseudo-random order. So in a cluster of identical machines, the <b>eth3</b>
@@ -241,21 +241,19 @@
       </ul>
       
       <p><b>Wait for SSH phase in bm-reimage.yml hangs </b></p>
-     <p> This is relevant to any Qlogic based 53X controller utilizing the bnx2x driver. The symptom
-        you will see is that the "wait for SSH" phase in bm-reimage.yml will hang and eventually
-        timeout and the baremetal install will fail. You can confirm the diagnosis by using the iLO
-        to look at the server in question’s console where you will see a number of bnx2 messages on
-        the screen. The issue is occurs during deploy only and is observed on cold boot. The issue
-        is indicated by the following messages in the dmesg log and the absence of network
-        connectivity to the NIC:
-        <codeblock> bnx2x: [bnx2x_prev_unload_common:10433(eth%d)]Failed to empty BRB, hope for the best
- ...
- bnx2x: [bnx2x_stats_update:1268(eth0)]storm stats were not updated for 3 times
- bnx2x: [bnx2x_stats_update:1269(eth0)]driver assert
- bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------
- .....
- bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------
-      </codeblock>
+      <p>This issue has been observed during deployment to systems configured with Qlogic based
+        BCM578XX network adapters utilizing the bnx2x driver and is currently under investigation.
+        The symptom manifests following a cold boot during deployment at the "wait for SSH" phase in
+        bm-reimage.yml which will result in a hang and eventually timeout, causing the baremetal
+        install to fail. The presence of this particular issue can further confirmed by connecting
+        to the remote console of the server via iLO or checking the dmesg file for the presence of
+        bnx2_panic_dump messages, similar to the following:
+        <codeblock>bnx2x: [bnx2x_prev_unload_common:10433(eth%d)]Failed to empty BRB, hope for the best  ...
+bnx2x: [bnx2x_stats_update:1268(eth0)]storm stats were not updated for 3 times
+bnx2x: [bnx2x_stats_update:1269(eth0)]driver assert
+bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------  .....
+bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump ----------------- 
+</codeblock>
         This issue is resolved by rebooting the server. </p>
       
     </section>
