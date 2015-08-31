@@ -52,13 +52,11 @@
           object-0. The <codeph>display-name</codeph> is the name of the storage policy and can be
           used by users of the Swift system when they create containers. It allows them to specify
           the storage policy that the container uses. In the example, the storage policy is called
-            <b>General</b>.</li>
-        <li>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</li>
-        <li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph>
-          attribute is 3. Three copies of data are kept to provide resiliency and
-            availability.<p>The purpose of the <b>min-part-time, partition-power,
-              replication-policy</b> and<b>replica-count</b> are described in the following section.
-          </p></li>
+            <b>General</b>.<!--<li>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</li><li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph> attribute is 3. Three copies of data are kept to provide resiliency and availability.</li>--></li>
+        <li>
+          <p>The purpose of the <b>min-part-time, partition-power, replication-policy</b>
+              and<b>replica-count</b> are described in the following section. </p>
+        </li>
       </ul>
     </p>
     <section><b>Ring Parameters</b><simpletable id="simpletable_qyp_lnj_2t">
@@ -74,8 +72,8 @@
           <stentry>This is the number of hours that the swift-ring-builder tool will enforce between
             ring rebuilds. On a small system, this can be as low as one hour. The value can be
             different for each ring. <p>The swift-ring-builder will enforce a minimum of 16 hours
-              between ring rebuilds.  However, this time is system-dependent so you will be unable
-              to figure out the appropriate value for <codeph>min-part-power</codeph> until you have
+              between ring rebuilds. However, this time is system-dependent so you will be unable to
+              figure out the appropriate value for <codeph>min-part-power</codeph> until you have
               more experience with your system.</p></stentry>
         </strow>
         <strow>
@@ -89,13 +87,11 @@
         </strow>
         <strow>
           <stentry><b>replication-policy</b></stentry>
-          <stentry>
-            <p>The <b>replication-policy</b> attribute is used to specify that a ring uses
-              replicated storage. The duplicate copies of the object are created and stored on
-              different disk drives. All replicas are identical. If one is lost or corrupted, the
-              system automatically copies one of the remaining replicas to restore the missing
-              replica.</p>
-          </stentry>
+          <stentry>The <b>replication-policy</b> attribute is used to specify that a ring uses
+            replicated storage. The duplicate copies of the object are created and stored on
+            different disk drives. All replicas are identical. If one is lost or corrupted, the
+            system automatically copies one of the remaining replicas to restore the missing
+            replica.</stentry>
         </strow>
         <strow>
           <stentry><b>Storage Policy</b></stentry>
