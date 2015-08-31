@@ -103,8 +103,8 @@
     <p id="requirement-disk-device"><b><i>Requirements for a Disk Device</i></b></p>
     <p>Disk devices listed in the <b>devices</b> list must meet the following criteria:</p>
     <p>
-      <note>To avoid any confusion on devices list, please refer to <xref href="#topic_twv_b55_dt"
-          format="dita">Allocating Disk Drives</xref></note>
+      <note>Please refer to <xref href="#topic_twv_b55_dt" format="dita">Allocating Disk
+          Drives</xref> before reading the following information.</note>
     </p>
     <ul id="ul_fsy_255_dt">
       <li>The disk device must exist on the server. For example, if you add
@@ -112,10 +112,10 @@
         fails.</li>
       <li>The disk device must be unpartitioned or have a single partition that uses the whole
         drive.</li>
-      <li>Do not have a label on the partition.  To check whether your disk is lable, execute the
-        procedure mentioned  in <xref href="label_on_partition.dita#topic_dlv_54t_dt"/></li>
+      <li>Do not have a label on the partition. To check whether your disk is label, execute the
+        procedure mentioned in <xref href="label_on_partition.dita#topic_dlv_54t_dt"/></li>
       <li>Do not have an XFS filesystem that contains a filesystem label. To check the filesytem
-        with a lable, execute the procedure mentioned in <xref
+        with a lable, execute the procedure descirbed in <xref
           href="filesystem_label.dita#topic_j15_fx5_dt"/></li>
       <li>If the disk drive is already labeled as described above, the
           <codeph>swiftlm-drive-provision</codeph> process will assume that the drive has valuable
@@ -127,7 +127,7 @@
       <li>It is advisable that if you have additional drives available then you can add the drives
         to the devices list.</li>
       <li>The disk devices listed in the example disk model have different names on your servers.
-        This may be due different harware drives. Edit the disk model
+        This may be due different hardware drives. Edit the disk model
           (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) and change the device
         names to the correct
         names.<!--<table frame="all" rowsep="0" colsep="0"
