@@ -44,7 +44,8 @@ Gateway: 10.241.103.1
           <codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
         <li>Manully add the IPs of those VMs.</li>
         <li>Choose Tasks -&gt; Management Group -&gt; New Management Group from the menu above.</li>
-        <li>Enter the following name for the management group, for example: hlm003-vsa-mg</li>
+        <li>Enter the following name for the management group, for example:
+            <codeph>hlm003-vsa-mg</codeph>.</li>
         <li>Enter the following username and password: stack / stack</li>
         <li>Add NTP servers information.</li>
         <li>Skip the DNS and SMTP sections.</li>
