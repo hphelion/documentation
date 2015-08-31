@@ -21,37 +21,23 @@
       launching virtual machine instances. </p>
     <p>From Horizon Admin -&gt;volumes create all 3 volume types as below.</p>
     <p>Add extra Specs for vmdktype</p>
-    <p><image
-        href="file:///C:\Users\burkmich\AppData\OICE_15_974FA576_32C1D314_3DFB\msohtmlclip1\01\clip_image004.jpg"
-        height="447" width="792" id="image_sv4_4hd_bt"/></p>
+    <p/>
     <p> </p>
     <p>Add extra Specs for HP3par</p>
     <p> </p>
-    <p><image
-        href="file:///C:\Users\burkmich\AppData\OICE_15_974FA576_32C1D314_3DFB\msohtmlclip1\01\clip_image006.jpg"
-        height="630" width="800" id="image_tv4_4hd_bt"/></p>
+    <p/>
     <p>Add extra Specs for HPlefthand</p>
-    <p><image
-        href="file:///C:\Users\burkmich\AppData\OICE_15_974FA576_32C1D314_3DFB\msohtmlclip1\01\clip_image008.jpg"
-        height="630" width="798" id="image_uv4_4hd_bt"/></p>
+    <p/>
     <p>Attach volume to Instance</p>
-    <p><image
-        href="file:///C:\Users\burkmich\AppData\OICE_15_974FA576_32C1D314_3DFB\msohtmlclip1\01\clip_image010.jpg"
-        height="571" width="806" id="image_vv4_4hd_bt"/></p>
+    <p/>
     <p> </p>
-    <p><image
-        href="file:///C:\Users\burkmich\AppData\OICE_15_974FA576_32C1D314_3DFB\msohtmlclip1\01\clip_image012.jpg"
-        height="631" width="808" id="image_wv4_4hd_bt"/></p>
-    <p><image
-        href="file:///C:\Users\burkmich\AppData\OICE_15_974FA576_32C1D314_3DFB\msohtmlclip1\01\clip_image014.jpg"
-        height="630" width="810" id="image_xv4_4hd_bt"/></p>
+    <p/>
+    <p/>
     <p>The attached volume can be discovered by running </p>
     <p>echo " - - -" &gt; /sys/class/scsi_host/host0/scan</p>
     <p>do it for all scsi_host directories</p>
     <p> </p>
-    <p><image
-        href="file:///C:\Users\burkmich\AppData\OICE_15_974FA576_32C1D314_3DFB\msohtmlclip1\01\clip_image016.jpg"
-        height="411" width="667" id="image_yv4_4hd_bt"/></p>
+    <p/>
     <section>
       <ol id="ol_sg3_2pk_bt">
         <li> </li>

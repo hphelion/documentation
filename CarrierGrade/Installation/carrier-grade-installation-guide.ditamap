@@ -71,6 +71,4 @@
             locktitle="yes">
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
         </topicref>
-        <topicref href="carrier-grade-install-config-backend.dita"
-            navtitle="Configuring Multi-Backend Support" locktitle="yes" toc="no"/>
     </topicref></map>
