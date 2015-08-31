@@ -18,14 +18,10 @@ Cannot open: No such file or directory</codeblock>
             <li>The file can be found at http://10.1.56.95/helion-vsa-11.5.01.0079.tgz.</li>
             <li>This is a temporary issue and should be fixed by the next release.</li>
           </ul></li>
-
         <li>Configure Apt by adding the following line to the bottom of <b>/etc/apt/sources.list</b>
           on your CMC node (only). Use the correct numeric IP for your deployer.
           <codeblock>deb [arch=i386] http://&lt;<i>deployer ip</i>>:79/hlm/cmc32 cattleprod main </codeblock>
           This is a workaround for an issue in Beta-1 and will be fixed in Beta-2. </li>
-
-
-
         <li>Deploy CMC by running the following
             command:<p><codeblock>ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></p></li>
         <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
@@ -34,8 +30,7 @@ NIC 1:
 Virtual Network: vsa-network 
 IP Address: 10.241.103.11
 Subnet Mark: 255.255.255.0
-Gateway: 10.241.103.1
-</codeblock></li>
+Gateway: 10.241.103.1</codeblock></li>
         <li>Set your X display and launch CMC:
           <codeblock>ssh –X to the deployer node</codeblock><codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
         <li>Select <codeph>Find</codeph> and enter the IP addresses of the VSA virtual
@@ -54,7 +49,7 @@ Gateway: 10.241.103.1
             <codeph>~helion/my_cloud/stage/info/net_info.yml</codeph> file</li>
         <li>Select the checkbox to skip volume creation.</li>
         <li>Wait for completion.</li>
-        <li>On the deployer, edit the following file: <codeblock>helion/hlm/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeblock><ol>
+        <li>On the deployer, edit the following file: <codeblock>helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeblock><ol>
             <li>Change the enabled_backends line to:
               <codeblock>enabled_backends=vsa-1</codeblock></li>
           </ol></li>
@@ -67,8 +62,7 @@ hplefthand_username: stack
 hplefthand_iscsi_chap_enabled: true
 volume_backend_name: vsa-backend-hlm003
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
-hplefthand_debug: false
-</codeblock>
+hplefthand_debug: false</codeblock>
           <note>Until horizon is enabled, the <codeph>volume_backend_name</codeph> is not
             used.</note></li>
         <li>Run the following command:
