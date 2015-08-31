@@ -33,12 +33,12 @@
         cloud model files as follows:<ul id="ul_nvy_rz3_2t">
           <li>Examine the <codeph>data/disks_controller.yml</codeph> file and validate that the
             drives exist and have the appropriate preconditions as described in <xref
-              href="allocate_disk_drives.dita#topic_twv_b55_dt/requirement-disk-device">Requirements
-              for a disk device</xref>.</li>
+              href="allocating_disk_drives.dita#topic_twv_b55_dt/requirement-disk-device"
+              >Requirements for a disk device</xref>.</li>
           <li> If you plan to add more Swift storage nodes or drives, you should read the
             information about partition power in <xref
-              href="ring_parameters.dita#topic_efw_k55_dt/selection-partition">Specifying the rings
-              (ring specifications)</xref>. However, in most cases you do not need to change the
+              href="ring_specifications.dita#topic_efw_k55_dt">Specifying the rings (ring
+              specifications)</xref>. However, in most cases you do not need to change the
               <codeph>config/swift/rings.yml</codeph> file.</li>
         </ul></p></section>
     <section><title>Node Type</title><b>Proxy, Container, Account, Object (PACO) Node</b>: The
