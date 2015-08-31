@@ -1,379 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-
-<!DOCTYPE topic PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "topic.dtd">
-
-
-<topic id="jow1429631834947" xml:lang="en-us">
-
-
-<!-- Modification History
-
-
-        
-
-
--->
-
-
-    <title >Configuring Virtual Routers</title>
-
-
-    <shortdesc >You can create router interfaces to tenant networks using the web
-
-
-        administration interface or the CLI.</shortdesc>
-
-
-    <prolog>
-
-
-        <author >Jim Owens</author>
-
-
-    </prolog>
-
-
-    <body>
-
-
-        <section id="section_N10022_N1001F_N10001" >
-
-
-            <p > For more information about virtual routers, see <xref href="jow1429628777191.xml" />.</p>
-
-
-        </section>
-
-
-        <section>
-
-
-            <p >Before you can create interfaces to tenant networks, you must create
-
-
-                the tenant networks and associated subnets. For examples, see the <cite >HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</cite>. For more
-
-
-                information about tenant networks and subnets, see <xref href="jow1404333739174.xml" /> and <xref href="psa1412702861873.xml" />. </p>
-
-
-        </section>
-
-
-        <section id="section_N1001F_N1001C_N10001" >
-
-
-            <p >As an alternative to the web administration interface, you can use
-
-
-                CLI commands to add router interfaces. First, become the appropriate keystone user
-
-
-                (this example sources the <b >admin</b>
-
-
-                user):</p>
-
-
-            <codeblock ><systemoutput >$ </systemoutput><userinput >source etc/nova/openrc</userinput>
-
-
-</codeblock>
-
-
-            <p >Then use the <i >neutron
-
-
-                    router-interface-add</i> command to add interfaces. For example: </p>
-
-
-            <codeblock >
-
-
-<systemoutput >~(keystone_admin)$ </systemoutput><userinput >neutron router-interface-add <varname >router_id</varname> <varname >subnet-id</varname></userinput></codeblock>
-
-
-            <p >where <varname >router_id</varname> is the name or
-
-
-                UUID of the router, and <varname >subnet_id</varname> is the name or
-
-
-                UUID of the subnet to which you want to attach an interface. By default, the
-
-
-                interface is assigned the gateway address on the subnet.</p>
-
-
-            <p >To add an interface to an external network:</p>
-
-
-            <codeblock >
-
-
-<systemoutput >~(keystone_admin)$ </systemoutput><userinput >neutron router-gateway-set <varname >router_id</varname> <varname >externalnet-id</varname></userinput></codeblock>
-
-
-            <p >where <varname >router_id</varname> is the name or
-
-
-                UUID of the router, and <varname >externalnet_id</varname> is the
-
-
-                name or UUID of a tenant network configured to provide external connections.</p>
-
-
-        </section>
-
-
-        <ol>
-
-
-            <li id="li_N10066_N10063_N1001C_N10001" >
-
-
-                <p >Log in as the user associated with the tenant.</p>
-
-
-            </li>
-
-
-            <li id="li_N1006F_N10063_N1001C_N10001" >
-
-
-                <p >Select <menucascade >
-
-
-                        <uicontrol >Project</uicontrol>
-
-
-                        <uicontrol >Network</uicontrol>
-
-
-                        <uicontrol >Routers</uicontrol>
-
-
-                    </menucascade>.</p>
-
-
-            </li>
-
-
-            <li id="li_N1008B_N10063_N1001C_N10001" >
-
-
-                <p >In the list of existing routers, click the name of the router to be
-
-
-                    configured.</p>
-
-
-                
-
-
-                    <p >The <wintitle >Router Overview</wintitle> page appears.</p>
-
-
-                    <fig id="fig_N100C4_N100B5_N100AE_N100AA_N100A3_N10034_N1001C_N10001" >
-
-
-                        <image href="jow1404333604053.image" id="image_kr5_jz2_yn"  placement="inline" width="5.5in"/>
-
-
-                    </fig>
-
-
-                
-
-
-            </li>
-
-
-            <li id="li_N100AE_N10063_N1001C_N10001" >
-
-
-                <p >Click <uicontrol >Add Interface</uicontrol>.</p>
-
-
-                
-
-
-                    <p >The <wintitle >Add Interface</wintitle> dialog box appears.</p>
-
-
-                    <fig id="fig_N100E4_N100D9_N100D2_N100AA_N100A3_N10034_N1001C_N10001" >
-
-
-                        <image href="jow1404333605539.image" id="image_yrl_qbf_yn"  placement="inline" width="4in"/>
-
-
-                    </fig>
-
-
-                    <dl>
-
-
-                        <dlentry >
-
-
-                            <dt >Subnet</dt>
-
-
-                            <dd >
-
-
-                                <p >Use the drop-down list to select from existing subnets defined
-
-
-                                    for the tenant. Each subnet is identified by a tenant network
-
-
-                                    name, followed by a subnet address and mask created for the
-
-
-                                    tenant network.</p>
-
-
-                            </dd>
-
-
-                        </dlentry>
-
-
-                        <dlentry >
-
-
-                            <dt >IP Address (optional)</dt>
-
-
-                            <dd >
-
-
-                                <p >You can optionally specify an IP address for the
-
-
-                                    interface. By default, the gateway address for the subnet is
-
-
-                                    used (for example, 192.168.102.1).</p>
-
-
-                            </dd>
-
-
-                        </dlentry>
-
-
-                        <dlentry >
-
-
-                            <dt >Router Name</dt>
-
-
-                            <dd >
-
-
-                                <p >This field is shown for information only.</p>
-
-
-                            </dd>
-
-
-                        </dlentry>
-
-
-                        <dlentry >
-
-
-                            <dt >Router ID</dt>
-
-
-                            <dd >
-
-
-                                <p >This field is shown for information only.</p>
-
-
-                            </dd>
-
-
-                        </dlentry>
-
-
-                    </dl>
-
-
-                
-
-
-                
-
-
-                    <p >The new interface is shown in the <wintitle >Router Overview</wintitle>.</p>
-
-
-                
-
-
-            </li>
-
-
-            <li id="li_N101A2_N100BA_N1001F_N10001" importance="optional" >
-
-
-                <p >To create an interface to a tenant network configured for external access,
-
-
-                    click <uicontrol >Set Gateway</uicontrol> for the new interface.</p>
-
-
-                
-
-
-                    <p >The <wintitle >Set Gateway</wintitle> dialog
-
-
-                        box appears.</p>
-
-
-                    <fig id="fig_N10159_N1014A_N10143_N1011B_N10114_N10034_N1001C_N10001" >
-
-
-                        <image href="jow1404333610032.image" id="image_mmw_z2f_yn"  placement="inline" width="4in"/>
-
-
-                    </fig>
-
-
-                    <p >From the <uicontrol >External Network</uicontrol> drop-down
-
-
-                        menu, select a tenant network configured to provide external access.</p>
-
-
-                
-
-
-            </li>
-
-
-            <li id="li_N10129_N10063_N1001C_N10001" >
-
-
-                <p >To save your settings and close the dialog box, click <uicontrol >Add
-
-
-                        Interface</uicontrol>.</p>
-
-
-            </li>
-
-
-        </ol>
-
-
-    </body>
-
-
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic id="jow1429631834947" xml:lang="en-us"><!-- Modification History        -->    <title >Configuring Virtual Routers</title>    <shortdesc >You can create router interfaces to tenant networks using the web        administration interface or the CLI.</shortdesc>    <prolog>        <author >Jim Owens</author>    </prolog>    <body>        <section id="section_N10022_N1001F_N10001" >            <p > For more information about virtual routers, see <xref href="jow1429628777191.xml" />.</p>        </section>        <section id="section_N10022_N1001F_N10001" >            <p >Before you can create interfaces to tenant networks, you must create                the tenant networks and associated subnets. For examples, see the <cite >HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</cite>. For more                information about tenant networks and subnets, see <xref href="jow1404333739174.xml" /> and <xref href="psa1412702861873.xml" />. </p>        </section>        <section id="section_N1001F_N1001C_N10001" >            <p >As an alternative to the web administration interface, you can use                CLI commands to add router interfaces. First, become the appropriate keystone user                (this example sources the <b >admin</b>                user):</p>            <codeblock ><systemoutput >$ </systemoutput><userinput >source etc/nova/openrc</userinput></codeblock>            <p >Then use the <i >neutron                    router-interface-add</i> command to add interfaces. For example: </p>            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >neutron router-interface-add <varname >router_id</varname> <varname >subnet-id</varname></userinput></codeblock>            <p >where <varname >router_id</varname> is the name or                UUID of the router, and <varname >subnet_id</varname> is the name or                UUID of the subnet to which you want to attach an interface. By default, the                interface is assigned the gateway address on the subnet.</p>            <p >To add an interface to an external network:</p>            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >neutron router-gateway-set <varname >router_id</varname> <varname >externalnet-id</varname></userinput></codeblock>            <p >where <varname >router_id</varname> is the name or                UUID of the router, and <varname >externalnet_id</varname> is the                name or UUID of a tenant network configured to provide external connections.</p>        </section>        <ol>            <li id="li_N10066_N10063_N1001C_N10001" >                <p >Log in as the user associated with the tenant.</p>            </li>            <li id="li_N1006F_N10063_N1001C_N10001" >                <p >Select <menucascade >                        <uicontrol >Project</uicontrol>                        <uicontrol >Network</uicontrol>                        <uicontrol >Routers</uicontrol>                    </menucascade>.</p>            </li>            <li id="li_N1008B_N10063_N1001C_N10001" >                <p >In the list of existing routers, click the name of the router to be                    configured.</p>                                    <p >The <wintitle >Router Overview</wintitle> page appears.</p>                    <fig id="fig_N100C4_N100B5_N100AE_N100AA_N100A3_N10034_N1001C_N10001" >                        <image href="jow1404333604053.image" id="image_kr5_jz2_yn"  placement="inline" width="5.5in"/>                    </fig>                            </li>            <li id="li_N100AE_N10063_N1001C_N10001" >                <p >Click <uicontrol >Add Interface</uicontrol>.</p>                                    <p >The <wintitle >Add Interface</wintitle> dialog box appears.</p>                    <fig id="fig_N100E4_N100D9_N100D2_N100AA_N100A3_N10034_N1001C_N10001" >                        <image href="jow1404333605539.image" id="image_yrl_qbf_yn"  placement="inline" width="4in"/>                    </fig>                    <dl>                        <dlentry >                            <dt >Subnet</dt>                            <dd >                                <p >Use the drop-down list to select from existing subnets defined                                    for the tenant. Each subnet is identified by a tenant network                                    name, followed by a subnet address and mask created for the                                    tenant network.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >IP Address (optional)</dt>                            <dd >                                <p >You can optionally specify an IP address for the                                    interface. By default, the gateway address for the subnet is                                    used (for example, 192.168.102.1).</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >Router Name</dt>                            <dd >                                <p >This field is shown for information only.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >Router ID</dt>                            <dd >                                <p >This field is shown for information only.</p>                            </dd>                        </dlentry>                    </dl>                                                    <p >The new interface is shown in the <wintitle >Router Overview</wintitle>.</p>                            </li>            <li id="li_N101A2_N100BA_N1001F_N10001" importance="optional" >                <p >To create an interface to a tenant network configured for external access,                    click <uicontrol >Set Gateway</uicontrol> for the new interface.</p>                                    <p >The <wintitle >Set Gateway</wintitle> dialog                        box appears.</p>                    <fig id="fig_N10159_N1014A_N10143_N1011B_N10114_N10034_N1001C_N10001" >                        <image href="jow1404333610032.image" id="image_mmw_z2f_yn"  placement="inline" width="4in"/>                    </fig>                    <p >From the <uicontrol >External Network</uicontrol> drop-down                        menu, select a tenant network configured to provide external access.</p>                            </li>            <li id="li_N10129_N10063_N1001C_N10001" >                <p >To save your settings and close the dialog box, click <uicontrol >Add                        Interface</uicontrol>.</p>            </li>        </ol>    </body></topic>
