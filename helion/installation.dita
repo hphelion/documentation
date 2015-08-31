@@ -125,7 +125,7 @@ helion/hos/                    Directory contains files used by the installer
                   rings, refer to <xref href="swift/ring_specifications.dita#ring-specification"
                     >ring specification</xref>.</li>
                 <li>In the <codeph>data/net_interfaces.yml</codeph> file, replace all instances of
-                  “bond-mode: 1” to “bond-mode: active-backup”.</li>
+                  "bond-mode: 1" to "bond-mode: active-backup".</li>
               </ul></li>
             <li>Commit your configuration to the <xref href="using_git.dita#topic_u3v_1yz_ct">local
                 git repo</xref>, as follows:
@@ -149,8 +149,10 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
     </section>
     <section id="NodeProvision"><title>Provision the Nodes</title>
       <ol>
-        <li>Run the following command, which will reimage all the nodes using PXE:
-          <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
+        <li>Run the following command, which will reimage all the nodes using PXE. Note: change
+          directories to /helion/hos/ansible if not already
+          there:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
         <li>The script will wait for the nodes to install and come back up.</li>
       </ol>
     </section>
