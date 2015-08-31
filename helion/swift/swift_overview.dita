@@ -7,11 +7,9 @@
       Storage service provides a highly available, resilient, and scalable storage pool for
       unstructured data. It is highly durable architecture with no single point of failure.</p>
     <p>In addition, HP Helion OpenStack introduces the concept of cloud input models. In this
-      release (<b>beta1</b>) we are supporting <b><xref
-          href="swift_input_cloud_model.dita#topic_qkg_l4v_bt/configuration-of-swift-vsa-model"
-          >entry-scale-with-vsa</xref></b> of cloud model. To know more about configuration of the
-        <b>entry-scale-with-vsa</b> cloud model, refer to <xref
-        href="swift_input_cloud_model.dita#topic_qkg_l4v_bt"/>.</p>
+      release (<b>beta1</b>) we are supporting <b>entry-scale-with-vsa</b> of cloud model. To know
+      more about configuration of the <b>entry-scale-with-vsa</b> cloud model, refer to <xref
+        href="swift_input_cloud_model.dita#modify-input-model"/>.</p>
     <p>Object Storage (Swift) is Software Defined Storage (SDS) architecture layered on top of
       industry-standard servers using native storage devices. Swift presents an object paradigm
       using an underlying set of disk drives. The disk drives are managed by a data structure called

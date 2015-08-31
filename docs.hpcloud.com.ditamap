@@ -130,8 +130,8 @@
     <topichead navtitle="Object Storage" toc="no">
       <topicref href="helion/swift/swift_overview.dita" toc="no"/>
       <topicref href="helion/swift/swift_input_cloud_model.dita" toc="no">
-        <topicref href="helion/swift/allocate_disk_drives.dita" toc="no"/>
-        <topicref href="helion/swift/ring_parameters.dita" toc="no"/>
+        <topicref href="helion/swift/allocating_disk_drives.dita"/>
+        <topicref href="helion/swift/ring_specifications.dita"/>
       </topicref>
       <topicref href="helion/swift/label_on_partition.dita" toc="no"/>
       <topicref href="helion/swift/filesystem_label.dita" toc="no"/>
