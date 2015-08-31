@@ -26,6 +26,8 @@ Cannot open: No such file or directory</codeblock>
               The deployer ip address can be obtained by looking at the existing hlinux apt source
               file in that directory. This is a workaround for an issue in Beta-1 and will be fixed
               in Beta-2. </li>
+            <li>Next, to update the apt cache with the new info you just added, run
+              <codeblock>sudo apt-get update</codeblock></li>
           </ul>
         </li>
         <!--<li>Configure Apt by adding the following line to the bottom of <b>/etc/apt/sources.list</b>
