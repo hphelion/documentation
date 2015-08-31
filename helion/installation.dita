@@ -124,8 +124,9 @@ helion/hos/                    Directory contains files used by the installer
               </ul></li>
             <li>Commit your configuration to the <xref href="using_git.dita#topic_u3v_1yz_ct">local
                 git repo</xref>, as follows:
-              <codeblock>git add –A
-git commit –m "My config"
+              <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config"
 </codeblock></li>
           </ol></li>
       </ol>
