@@ -5,7 +5,7 @@
   <body>
     <p>The ring maps the logical names of data to locations on a particular disks. There is a
       separate ring for account database, account database, and individual objects, but each ring
-      works similarly. Ring-builder is a utility which builts and manually manages the rings. The
+      works similarly. Ring-builder is a utility which built and manually manages the rings. The
       ring-builder also keeps its own builder file with the ring information and additional data
       required to build future rings.</p>
     <p>The rings are specified in the input model using the <b>ring-specifications</b> key. There is
