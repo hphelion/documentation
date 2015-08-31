@@ -24,6 +24,9 @@
           The HP Helion OpenStack architecture requires that the IPMI network is a separate network
           and that a route exists from the management network to the IPMI network for iLO
           access.</li>
+        <li>Note that the requirement to have a dedicated network for OS-install and system
+          deployment has been removed in Beta 1. More information can be found on the<xref
+            href="supportedconfigs.dita#topic_ckw_kbc_ws"> supported configuration page</xref>.</li>
       </ul>
     </section>
     <section id="Prereqs">
