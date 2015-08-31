@@ -59,8 +59,9 @@ Gateway: 10.241.103.1</codeblock></li>
             <codeph>~helion/my_cloud/stage/info/net_info.yml</codeph> file</li>
         <li>Select the checkbox to skip volume creation.</li>
         <li>Wait for completion.</li>
-        <li>On the deployer, change the
-            <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> file as
+        <li>On the deployer, change to the following directory:
+          <codeblock>cd ~/helion</codeblock></li>
+        <li>Edit the <codeph>hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> file as
           follows: <ol>
             <li>Change the enabled_backends line to:
               <codeblock>enabled_backends=vsa-1</codeblock></li>
