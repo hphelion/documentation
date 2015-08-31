@@ -55,6 +55,11 @@
       	  <strow><stentry><b>Network Separation</b></stentry><stentry>EXTERNAL_API, SWIFT, MGMT on separate VLANs</stentry></strow>
       	</simpletable>
   </section>
+    <section>
+      <title>Configuration Illustrations</title>
+      <p>The following diagram depicts a  deployment scenario using ESX for Beta1.</p>
+      <p><image href="../media/esx/network_diagram_beta1.png" id="image_knm_4vw_2t"/></p>
+    </section>
       	
       
       

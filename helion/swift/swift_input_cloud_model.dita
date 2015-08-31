@@ -10,7 +10,7 @@
         <li><b>
             <xref href="#topic_qkg_l4v_bt/configuration-of-swift-vsa-model" format="dita"
               >Entry-scale-with-vsa</xref>
-          </b>This has a single control plane cluster running all services (Nova, Swift, Glance,
+          </b>This has a single control plane cluster which runs all services (Nova, Swift, Glance,
           etc) with an additional 3 resource nodes used as Nova compute servers. </li>
        <!--  <li>
           <p><b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref>
@@ -25,10 +25,10 @@
     </section>
     
     <section id="configuration-of-swift-vsa-model"><title>Entry-scale-with-vsa</title>
-      <p>The <codeph>entry-scale-with-vsa</codeph> is relatively simple and constrained. You can
-        ensure that the disk drives exists and are correctly assigned to swift nodes. Hence, you
-        need not modify this model for any Swift-related changes before implementing it.
-        <!--You are expected to use the mid-size cloud example model as the basis for building a cloud model for your actual cloud – using the servers and networks you plan to deploy.--></p>
+      <p>The <codeph>entry-scale-with-vsa</codeph> input model is relatively simple and constrained.
+        Ensure that the disk drives exists and are correctly assigned to Swift nodes. Therefore, no
+        Swift-specific modification is required for this model before implementing it.</p>
+      <p><!--you need not modify this model for any Swift-related changes before implementing it. You are expected to use the mid-size cloud example model as the basis for building a cloud model for your actual cloud – using the servers and networks you plan to deploy.--></p>
       <p>Before starting the deployment, you must validate, and possibly update the data in the
         cloud model files as follows:<ul id="ul_nvy_rz3_2t">
           <li>Examine the <codeph>data/disks_controller.yml</codeph> file and validate that the
@@ -42,7 +42,7 @@
         </ul></p></section>
     <section><title>Node Type</title><b>Proxy, Container, Account, Object (PACO) Node</b>: The
       Swift-proxy, Account, Container and Object services run on the same (PACO) node type in the
-      control plane. All other control services also run on this node type.
+      control plane. All other control services also run in this node type.
       <!--This is used for smaller clouds or where Swift is a minor element in a larger cloud.--></section>
     <section><title>YML files associated with Swift Services</title>
       <p>The following <codeph>yml</codeph> files are configured for <b>entry-scale-with-vsa</b>
