@@ -79,7 +79,7 @@
         configuration. You will have the ability to disable per-service logging as needed.</p>
       <p>Logging is integrated for the following services: Nova, Glance, Swift, Neutron, Ceilometer,
         Monasca, Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p>
-      <p>Learn more about Centralized Logging here: <xref href="logging/logging_overview.dita"
+      <p>Learn more about Centralized Logging here: <xref href="logging/centralized_logging.dita"
           >Centralized Logging Overview</xref></p>
       <p><b>New Installer</b></p>
       <ul>
@@ -157,7 +157,7 @@
           </ul></li>
         <li>Logging Dashboard <ul>
             <li>There is no auto-logon function, users must use the credentials in the <xref
-                href="logging/logging_overview.dita#logging/interface">Logging Overview</xref> to
+              href="logging/centralized_logging.dita#logging/interface">Logging Overview</xref> to
               access the UI.</li>
           </ul></li>
         <li>Alarms <ul>

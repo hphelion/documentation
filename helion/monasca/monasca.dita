@@ -10,7 +10,7 @@
       <p>This document describes the Monasca service and contains the following sections:</p>
       <ul>
         <li>
-          <xref type="section" href="#monitoring/install">Installation</xref>
+          <xref type="section" href="#monitoring/installation">Installation</xref>
         </li>
         <li>
           <xref type="section" href="#monitoring/differences">Differences Between Upstream and
@@ -26,7 +26,7 @@
           <xref type="section" href="#monitoring/working">Working with Monasca</xref>
         </li>
         <li>
-          <xref type="section" href="#monitoring/service_alarms">Service Alarm Definitions</xref>
+          <xref type="section" href="#monitoring/servicealarms">Service Alarm Definitions</xref>
         </li>
         <li>
           <xref type="section" href="#monitoring/info">For More Information</xref>
@@ -104,8 +104,6 @@
       <p>Full details of the Monasca API can be found <xref
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">on GitHub</xref></p>
-      <p>In Beta 1 there are some API functions that are not available, please see the Release Notes
-        for more details.</p>
     </section>
     <section id="servicealarms"><title>Service Alarm Definitions</title>
       <p>Helion OpenStack comes with some predefined monitoring alarms for the services
@@ -114,7 +112,7 @@
           Alarm Definitions</xref>.</p>
       <p>When alarms are triggered it is helpful to review the service logs. Details on how to use
         the logging UI built into the Operations Console can be found here: <xref type="section"
-          href="../logging/logging_overview.dita#interface">Logging Interface</xref></p>
+          href="../logging/centralized_logging.dita#logging/interface">Logging Interface</xref></p>
     </section>
     <section id="info"><title>For More Information</title>
       <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca"

@@ -34,7 +34,7 @@
       metrics are available. Developers interested in monitoring use cases should refer to the <xref
         href="https://wiki.openstack.org/wiki/Monasca" scope="external" format="html">OpenStack
         Monasca service</xref> and the HP Helion-specific <xref
-        href="../monasca/monasca.dita#topic12031">Monasca documentation</xref>.</note>
+        href="../monasca/monasca.dita">Monasca documentation</xref>.</note>
     <p>The HP Helion OpenStack Metering service leverages the OpenStack Ceilometer service. A
       metering service takes specified measurements of both physical and virtual resources,
       including physical servers and network devices such as switches and firewalls. No matter what

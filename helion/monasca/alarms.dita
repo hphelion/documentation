@@ -7,7 +7,7 @@
   <body>
     <p>When alarms are triggered it is helpful to review the service logs. Details on how to use the
       logging UI built into the Operations Console can be found here: <xref
-        href="../logging/logging_overview.dita#interface">Logging Interface</xref></p>
+        href="../logging/centralized_logging.dita#logging/interface">Logging Interface</xref></p>
     <section id="services"><title>Services</title>
       <p>Alarms for these services are included:</p>
       <ul>
