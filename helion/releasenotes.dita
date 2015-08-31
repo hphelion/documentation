@@ -107,6 +107,8 @@
     </section>
     <section id="KnownIssues">
       <title>Known Issues in this Release</title>
+      <p><b>TLS is not supported</b></p>
+      <p>TLS is not supported for any traffic in Beta1.</p>
       <p><b>HP Helion Development Platform</b></p>
       <p>Helion Development Platform is not supported on Beta 1.</p>
       <p><b>Installing Swift</b></p>
@@ -217,12 +219,7 @@
             steps to be defined later may be required to complete installation.</p>
         </li>
       </ul>-->
-      <p><b>TLS Support</b></p>
-      <ul>
-        <li>The server certificate is currently hard coded. If an operator wishes to provide their
-          own, they need to edit the defaults in the TLS playbook.</li>
-      </ul>
-      <p><b>Installation and NIC Numbering</b></p>
+      <!--<p><b>Installation and NIC Numbering</b></p>
       <ul>
         <li>The assignment of eth interface numbers to your physical network interfaces may vary,
           and therefore your network interface naming (eth0, eth1, etc) may not be what you
@@ -231,7 +228,29 @@
           interface names (eg. ethX) to specific MAC addresses by either directly modifying the udev
           rule or modifying the script which creates them (/lib/udev/write_net_rules).</li>
         <li>You may want to disable the network interfaces that you are not planning to use.</li>
-      </ul>
+      </ul>-->
+      <p><b>NIC Mapping Feature</b></p>
+     <p> The new NIC mappings feature in HP Helion OpenStack Beta 1 allows the cloud administrator
+        to map network interface names to PCI bus addresses. This is important because for
+        well-understood reasons, Linux can sometimes name the network interfaces in a pseudo-random
+        order. So in a cluster of identical machines, the <b>eth3</b> device can appear as
+          <b>eth4</b> on one or more machines in the cluster. Once this erroneous name is determined
+        by the operating system, it will use persistence rules to ensure that the NIC device is
+        called <b>eth4</b> thereafter. This makes cluster configuration using Helion quite difficult
+        if not impossible, if most machines understand the Management Network to be <b>eth3</b>, but
+        some subset of machines understand that network to be on<b> eth4 </b>(and whatever was on
+        eth4 is similarly swapped to <b>eth3</b>). </p>
+     <p> To resolve this, and to ensure that all NIC devices have consistent naming across the
+        entire cloud, Beta 1 includes NIC Mapping facilities. This is a mechanism in the Input Model
+        to define a specific NIC interface for a given PCI address for a given class of machine.
+        Generally, when all of the network interfaces are defined in the Input Model, it is
+        advisable to use the traditional naming, ie <b>ethN</b>. However, if one or more interfaces
+        are not defined in the Input Model (perhaps because the Ansible network is not defined, or
+        because there is a customer-specific network which is outside the scope of Helion), then it
+        is recommended that a different naming convention is used, to prevent the definitions from
+        colliding with existing configuration data. For example, the NIC mapping definitions could
+        use <b>hos0 </b>through <b>hosN</b> rather than <b>eth0</b> through <b>ethN</b>. Bearing in
+        mind that the new naming must be consistent across the entire Input Model.</p>
       <p><b>Network Interface Bonding changes needed during installation</b></p>
       <ul>
         <li>The bond mode in the network interface definition needs to be specified by name
