@@ -6,23 +6,20 @@
     <p>This document provides an overview of the features contained within HP Helion <tm
         tmtype="reg">OpenStack</tm> 2.0 Beta 1, including known issues and workarounds for this
       release:</p>
-    <section id="Features">
-      <title>Features in HP Helion OpenStack 2.0 Beta 1</title>
-      <p><b>New UEFI support</b></p>
-      <p> Beta-1 introduces support for UEFI machines, while continuing to support Legacy BIOS.
-        Select the required mode on each node through its BIOS settings before beginning the install
-        process. HOS 2.0 will detect and use the mode you have selected for each node.</p>
-      <p><b>A local Git repo has been introduced</b>Git is now used locally to keep track of
-        configuration changes. The configuration processor uses the config files stored in the repo
-        to apply configuration settings. An explanation can be found <xref
-          href="using_git.dita#topic_u3v_1yz_ct">in this topic</xref>. </p>
-      <p><b>Updated HP Helion OpenStack Services</b> - We have included the core set of OpenStack
-        services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
-          scope="external" format="html">Kilo release</xref> with the exception of limitations
-        notated in this document.</p>
-      <p><b>Neutron LBaaS and FWaaS Extensions</b> - We have implemented networking extensions for
-        load balancing and firewalls. Here is a description of each of these:</p>
-      <ul>
+    <section id="Features"><title>Features in HP Helion OpenStack 2.0 Beta 1</title><p><b>New UEFI
+          support</b> &#151; Beta-1 introduces support for UEFI machines, while continuing to
+        support Legacy BIOS. Select the required mode on each node through its BIOS settings before
+        beginning the install process. HOS 2.0 will detect and use the mode you have selected for
+        each node.</p>
+   
+      
+      <p><b>Updated HP Helion
+          OpenStack Services</b> &#151; We have included the core set of OpenStack services from the
+          <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external"
+          format="html">Kilo release</xref> with the exception of limitations notated in this
+        document.</p><p><b>Neutron LBaaS and FWaaS Extensions</b> &#151; We have implemented
+        networking extensions for load balancing and firewalls. Here is a description of each of
+        these:</p><ul>
         <li>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
           balancing feature set. Helion OpenStack 2.0 includes the V2 version which allows
           implementation uses haproxy but third-party Load Balancers can be integrated as well. In
@@ -48,9 +45,7 @@
 </ul>
 </li>
 -->
-      </ul>
-      <p><b>New Network Configuration Options</b></p>
-      <ul>
+      </ul><p><b>New Network Configuration Options</b></p><ul>
         <li>Network interface bonding with multiple modes will allow you to set up a highly
           available and performant network infrastructure.</li>
         <li>Multi-network support will allow you to bridge multiple external physical networks to a
@@ -59,40 +54,31 @@
         <li>Network separation (both physical and VLAN) will allow you to segregate traffic by type.
           For example, traffic can be separated into management, tenant, external, and services
           neworks.</li>
-      </ul>
-      <p><b>Monasca-based Monitoring</b> - Monasca is a multi-tenant, scalable, fault-tolerant,
-        monitoring service. It uses a REST API for high-speed metrics processing and querying, and
-        has a streaming alarm and notification engine. In the Helion OpenStack 2.0 release, the
-        OpenStack monitoring standard, Monasca, is supported as the Helion OpenStack monitoring
-        solution with the following exceptions (which are not implemented):</p>
-      <ul>
+      </ul><p><b>Monasca-based Monitoring</b> &#151; Monasca is a multi-tenant, scalable,
+        fault-tolerant, monitoring service. It uses a REST API for high-speed metrics processing and
+        querying, and has a streaming alarm and notification engine. In the Helion OpenStack 2.0
+        release, the OpenStack monitoring standard, Monasca, is supported as the Helion OpenStack
+        monitoring solution with the following exceptions (which are not implemented):</p><ul>
         <li>Transform Engine</li>
         <li>Events Engine </li>
         <li>Anomaly and Prediction Engine</li>
-      </ul>
-      <p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer,
-        Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP
-        Helion OpenStack.</p>
-      <p>Learn more about Monasca here: <xref href="monasca/monasca.dita">Monasca
-        Overview</xref></p>
-      <p><b>Centralized Logging</b> - Logging for the services below is enabled in the default
-        configuration. You will have the ability to disable per-service logging as needed.</p>
-      <p>Logging is integrated for the following services: Nova, Glance, Swift, Neutron, Ceilometer,
-        Monasca, Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p>
-      <p>Learn more about Centralized Logging here: <xref href="logging/centralized_logging.dita"
-          >Centralized Logging Overview</xref></p>
-      <p><b>New Installer</b></p>
-      <ul>
+      </ul><p>Monitoring is integrated for the following services: Logging, Neutron, Swift,
+        Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP
+        Linux for HP Helion OpenStack.</p><p>Learn more about Monasca here: <xref
+          href="monasca/monasca.dita">Monasca Overview</xref></p><p><b>Centralized Logging</b>
+        &#151; Logging for the services below is enabled in the default configuration. You will have
+        the ability to disable per-service logging as needed.</p><p>Logging is integrated for the
+        following services: Nova, Glance, Swift, Neutron, Ceilometer, Monasca, Horizon, Keystone,
+        Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p><p>Learn more about
+        Centralized Logging here: <xref href="logging/centralized_logging.dita">Centralized Logging
+          Overview</xref></p><p><b>New Installer</b></p><ul>
         <li>You supply the cloud configuration you want based on our <xref
             href="supportedconfigs.dita">Supported Configurations</xref> and the installer will set
           up your environment.</li>
         <li>Manage the different phases of your cloud deployment with ease.</li>
-      </ul>
-      <p><b>Git repository for config tracking</b></p>
-      <p>In HP Helion OpenStack 2.0 versions, a local git repository is used to track configuration
-        changes and for the config processor to gather configuration settings from. The operations
-        work as explained below:</p>
-      <ul>
+      </ul><p><b>Local Git repository for config tracking</b></p><p>In HP Helion OpenStack 2.0
+        versions, a local git repository is used to track configuration changes and for the config
+        processor to gather configuration settings from. The operations work as explained below:</p><ul>
         <li>Operatiosn under ~/helion are under the aegis of git. You’ll need to commit any config
           into git (on the "site" branch) before the CP can run over it. The script that runs the
           config processor now guards against uncommitted changes. </li>
@@ -100,33 +86,33 @@
           parts (the ansible output of the CP and the playbooks). The directory is created using
           "ready-deployment.yml". </li>
         <li>All deployment operations should be run from ~/scratch/ansible/next/hos/ansible.</li>
-      </ul>
-      <!--
-<p><b>Backup and Restore Capabilities for the Control Plane</b> - Allows you to backup and recover your Helion OpenStack</tm> environment with RPO=0.</p>
--->
-      <p><b>NIC Mapping Feature</b></p>
-      <p> The new NIC mappings feature in HP Helion OpenStack Beta 1 allows the cloud administrator
-        to map network interface names to PCI bus addresses. This is important because for
-        well-understood reasons, Linux can sometimes name the network interfaces in a pseudo-random
-        order. So in a cluster of identical machines, the <b>eth3</b> device can appear as
-        <b>eth4</b> on one or more machines in the cluster. Once this erroneous name is determined
-        by the operating system, it will use persistence rules to ensure that the NIC device is
-        called <b>eth4</b> thereafter. This makes cluster configuration using Helion quite difficult
-        if not impossible, if most machines understand the Management Network to be <b>eth3</b>, but
-        some subset of machines understand that network to be on<b> eth4 </b>(and whatever was on
-        eth4 is similarly swapped to <b>eth3</b>). </p>
-      <p> To resolve this, and to ensure that all NIC devices have consistent naming across the
-        entire cloud, Beta 1 includes NIC Mapping facilities. This is a mechanism in the Input Model
-        to define a specific NIC interface for a given PCI address for a given class of machine.
-        Generally, when all of the network interfaces are defined in the Input Model, it is
-        advisable to use the traditional naming, ie <b>ethN</b>. However, if one or more interfaces
-        are not defined in the Input Model (perhaps because the Ansible network is not defined, or
-        because there is a customer-specific network which is outside the scope of Helion), then it
-        is recommended that a different naming convention is used, to prevent the definitions from
-        colliding with existing configuration data. For example, the NIC mapping definitions could
-        use <b>hos0 </b>through <b>hosN</b> rather than <b>eth0</b> through <b>ethN</b>. Bearing in
-        mind that the new naming must be consistent across the entire Input Model.</p>
-    </section>
+      </ul>The configuration processor uses the config files stored in the repo to apply
+      configuration settings. An explanation can be found <xref
+        href="using_git.dita#topic_u3v_1yz_ct">in this topic</xref>.
+          <!--
+<p><b>Backup and Restore Capabilities for the Control Plane</b> &#154; Allows you to backup and recover your Helion OpenStack</tm> environment with RPO=0.</p>
+--><p><b>NIC
+          Mapping Feature</b></p><p> The new NIC mappings feature in HP Helion OpenStack Beta 1
+        allows the cloud administrator to map network interface names to PCI bus addresses. This is
+        important because for well-understood reasons, Linux can sometimes name the network
+        interfaces in a pseudo-random order. So in a cluster of identical machines, the <b>eth3</b>
+        device can appear as <b>eth4</b> on one or more machines in the cluster. Once this erroneous
+        name is determined by the operating system, it will use persistence rules to ensure that the
+        NIC device is called <b>eth4</b> thereafter. This makes cluster configuration using Helion
+        quite difficult if not impossible, if most machines understand the Management Network to be
+          <b>eth3</b>, but some subset of machines understand that network to be on<b> eth4 </b>(and
+        whatever was on eth4 is similarly swapped to <b>eth3</b>). </p><p> To resolve this, and to
+        ensure that all NIC devices have consistent naming across the entire cloud, Beta 1 includes
+        NIC Mapping facilities. This is a mechanism in the Input Model to define a specific NIC
+        interface for a given PCI address for a given class of machine. Generally, when all of the
+        network interfaces are defined in the Input Model, it is advisable to use the traditional
+        naming, ie <b>ethN</b>. However, if one or more interfaces are not defined in the Input
+        Model (perhaps because the Ansible network is not defined, or because there is a
+        customer-specific network which is outside the scope of Helion), then it is recommended that
+        a different naming convention is used, to prevent the definitions from colliding with
+        existing configuration data. For example, the NIC mapping definitions could use <b>hos0
+        </b>through <b>hosN</b> rather than <b>eth0</b> through <b>ethN</b>. Bearing in mind that
+        the new naming must be consistent across the entire Input Model.</p></section>
     <section id="KnownIssues">
       <title>Known Issues in this Release</title>
       <p><b>TLS is not supported</b></p>
