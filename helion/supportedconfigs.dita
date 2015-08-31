@@ -42,30 +42,43 @@
           </stentry>
           <stentry>EXTERNAL_API, EXTERNAL_VM, GUEST (vxlan), MGMT on separate VLANs</stentry>
         </strow>
-      </simpletable> Possible variations on this model will be documented to show: Use a 3PAR
+      </simpletable> 
+      <!--REMOVED PER DOCS-1573
+        Possible variations on this model will be documented to show: Use a 3PAR
       (separately installed) back-end for Cinder this is done by removing the VSA resource pool from
       the control plane and configuring the cinder.conf.j2 wih 3PAR details Two node cloud:
       documentation will show how to configure for one node control plane and one node compute use
-      CEPH (deployed by HLM) as a Cinder back end instead of VSA </section>
+      CEPH (deployed by HLM) as a Cinder back end instead of VSA --></section>
     <section><title>Entry Scale Storage Depot</title>
-      	<simpletable>
-      	  <strow><stentry><b>Control Plane</b></stentry><stentry>3 Nodes: Keystone, Swift Proxy, account and container services</stentry></strow>
-      	  <strow><stentry><b>Object Store</b></stentry><stentry>3-99 nodes</stentry></strow>
-      	  <strow><stentry><b>Physical Network</b></stentry><stentry>1 pair of bonded NICs</stentry></strow>
-      	  <strow><stentry><b>Network Separation</b></stentry><stentry>EXTERNAL_API, SWIFT, MGMT on separate VLANs</stentry></strow>
-      	</simpletable>
-  </section>
+      <simpletable>
+        <strow>
+          <stentry><b>Control Plane</b></stentry>
+          <stentry>3 Nodes: Keystone, Swift Proxy, account and container services</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Object Store</b></stentry>
+          <stentry>3-99 nodes</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Physical Network</b></stentry>
+          <stentry>1 pair of bonded NICs</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Network Separation</b></stentry>
+          <stentry>EXTERNAL_API, SWIFT, MGMT on separate VLANs</stentry>
+        </strow>
+      </simpletable>
+    </section>
     <section>
       <title>Configuration Illustrations</title>
-      <p>The following diagram depicts a  deployment scenario using ESX for Beta1.</p>
+      <p>The following diagram depicts a deployment scenario using ESX for Beta1.</p>
       <p><image href="../media/esx/network_diagram_beta1.png" id="image_knm_4vw_2t"/></p>
     </section>
-      	
-      
-      
-      
-      <section>
-     
+
+
+
+
+    <section>
       <!--<ul>
         <li>Single control plane for
           <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all control plane
