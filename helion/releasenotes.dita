@@ -267,7 +267,7 @@
         <li>3Par storage is not supported in Beta 1</li>
       </ul>
       
-      <p><b>Wait for SSH" phase in bm-reimage.yml hangs </b></p>
+      <p><b>Wait for SSH phase in bm-reimage.yml hangs </b></p>
      <p> The symptom you will see is that the "wait for SSH" phase in bm-reimage.yml will hang and
         eventually timeout and the baremetal install will fail. You can confirm the diagnosis by
         using the iLO to look at the server in question’s console where you will see a number of
