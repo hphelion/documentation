@@ -1,1 +1,331 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446902796" xml:lang="en-us">    <!-- Modification History        -->    <title >Removing Patches</title>    <shortdesc >Patches in the <i >Applied</i> or <i             >Partial-Apply</i> states can be removed if necessary, for example, when they trigger        undesired or unplanned effects on the cluster.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <section id="section_N1001D_N1001A_N10001" >            <p >Rolling back patches is conceptually identical to installing patches.                A roll-back operation can be commanded for a patch in either the <i >Applied</i> or the <i >Partial-Apply</i> states. As the patch is                removed, it goes through the following state transitions:</p>            <dl>                <dlentry >                    <dt ><i >Applied</i> or <i >Partial-Apply</i> to <i >Partial-Remove</i></dt>                    <dd >                        <p >A patch in the <i >Partial-Remove</i>                            state indicates that it has been removed from zero or more, but not from                            all, the applicable hosts.</p>                        <p >Use the command <pname >wrs-patch                                remove</pname> to trigger this transition.</p>                    </dd>                </dlentry>                <dlentry >                    <dt ><i >Partial-Remove</i> to <i >Available</i></dt>                    <dd >                        <p >Use the command <pname >wrs-patch                                host-install</pname> repeatedly targeting each time one of the                            applicable hosts in the cluster. The transition to the <i >Available</i> state is complete when the patch is                            removed from all target hosts. The patch remains in the patch storage                            area as if it had just been uploaded.</p>                    </dd>                </dlentry>            </dl>            <p >The following example is basically a copy of the workflow used in                    <xref href="psa1410446976545.xml" />, but this time removing                instead of installing the patch. The ol are therefore presented in simplified                form.</p>        </section>        <ol>            <li id="li_N10029_N10026_N1001A_N10001" >                <p >Log in as Keystone user <b >admin</b> to the active controller.</p>            </li>            <li id="li_N100B2_N1009F_N10027_N10001" >                <p >Verify the state of the patch.</p>                <lixmp >                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query</userinput><systemoutput >﻿       Patch ID             Patch State=========================   ===========PATCH_0001   Applied</systemoutput></codeblock>                    <p >In this example the patch is listed in the <i >Applied</i> state, but it could                        be in the <i >Partial-Apply</i> state as well.</p>                </lixmp>            </li>            <li id="li_N100DD_N1009F_N10027_N10001" >                <p >Remove the patch.</p>                <lixmp >                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch remove PATCH_0001</userinput><systemoutput >PATCH_0001 has been removed from the repo</systemoutput></codeblock>                </lixmp>                                    <p >The patch is now in the <i >Partial-Remove</i>                        state, ready to be removed from the impacted hosts where it was already                        installed.</p>                            </li>            <li id="li_N10103_N1009F_N10027_N10001" >                <p >Query the patching status of all hosts in the cluster.</p>                <lixmp >                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query-hosts</userinput><systemoutput >﻿  Hostname      IP Address    Patch Current  Reboot Required============  ==============  =============  ===============compute-0     192.168.204.15       Yes             Nocontroller-0  192.168.204.3        No              Yescontroller-1  192.168.204.4        No              Yes</systemoutput></codeblock>                    <p >In this example, the controllers have patches ready to be                        removed, and therefore must be rebooted.</p>                </lixmp>            </li>            <li id="li_N10121_N1009F_N10027_N10001" >                <p >Remove all pending-for-removal patches from <b >controller-0</b>.</p>                <ol id="ol_kzv_x13_pp">                    <li >                        <p >Swact controller services.</p>                    </li>                    <li >                        <p >Run the patching sequence.</p>                        <lixmp >                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-patch-reboot controller-0</userinput></codeblock>                        </lixmp>                    </li>                </ol>            </li>            <li id="li_N1017D_N1009F_N10027_N10001" >                <p >Remove all pending patches from <b >controller-1</b>.</p>            </li>        </ol>        Carrier Grade 2.0            <p >The cluster is up to date now. All patches have been removed, and the                patch PATCH_0001 can be deleted from the patch storage area if necessary.</p>            <p >It is important to note the role of the command <pname >wrs-path                    host-install</pname> as a tool that both installs and removes patches as                necessary.</p>        </result>    </body></topic>
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic id="psa1410446902796" xml:lang="en-us">
+
+
+    <!-- Modification History
+
+
+        
+
+
+-->
+
+
+    <title >Removing Patches</title>
+
+
+    <shortdesc >Patches in the <i >Applied</i> or <i 
+
+
+            >Partial-Apply</i> states can be removed if necessary, for example, when they trigger
+
+
+        undesired or unplanned effects on the cluster.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Pedro Sanchez</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <section id="section_N1001D_N1001A_N10001" >
+
+
+            <p >Rolling back patches is conceptually identical to installing patches.
+
+
+                A roll-back operation can be commanded for a patch in either the <i >Applied</i> or the <i >Partial-Apply</i> states. As the patch is
+
+
+                removed, it goes through the following state transitions:</p>
+
+
+            <dl>
+
+
+                <dlentry >
+
+
+                    <dt ><i >Applied</i> or <i >Partial-Apply</i> to <i >Partial-Remove</i></dt>
+
+
+                    <dd >
+
+
+                        <p >A patch in the <i >Partial-Remove</i>
+
+
+                            state indicates that it has been removed from zero or more, but not from
+
+
+                            all, the applicable hosts.</p>
+
+
+                        <p >Use the command <i>wrs-patch
+
+
+                                remove</i> to trigger this transition.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><i >Partial-Remove</i> to <i >Available</i></dt>
+
+
+                    <dd >
+
+
+                        <p >Use the command <i>wrs-patch
+
+
+                                host-install</i> repeatedly targeting each time one of the
+
+
+                            applicable hosts in the cluster. The transition to the <i >Available</i> state is complete when the patch is
+
+
+                            removed from all target hosts. The patch remains in the patch storage
+
+
+                            area as if it had just been uploaded.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+            </dl>
+
+
+            <p >The following example is basically a copy of the workflow used in
+
+
+                    <xref href="psa1410446976545.xml" />, but this time removing
+
+
+                instead of installing the patch. The ol are therefore presented in simplified
+
+
+                form.</p>
+
+
+        </section>
+
+
+        <ol>
+
+
+            <li id="li_N10029_N10026_N1001A_N10001" >
+
+
+                <p >Log in as Keystone user <b >admin</b> to the active controller.</p>
+
+
+            </li>
+
+
+            <li id="li_N100B2_N1009F_N10027_N10001" >
+
+
+                <p >Verify the state of the patch.</p>
+
+
+                
+
+
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query</userinput>
+
+
+<systemoutput >﻿       Patch ID             Patch State
+
+
+=========================   ===========
+
+
+PATCH_0001   Applied</systemoutput></codeblock>
+
+
+                    <p >In this example the patch is listed in the <i >Applied</i> state, but it could
+
+
+                        be in the <i >Partial-Apply</i> state as well.</p>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N100DD_N1009F_N10027_N10001" >
+
+
+                <p >Remove the patch.</p>
+
+
+                              <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch remove PATCH_0001</userinput>
+
+
+<systemoutput >PATCH_0001 has been removed from the repo</systemoutput></codeblock>
+
+
+                
+
+
+                
+
+
+                    <p >The patch is now in the <i >Partial-Remove</i>
+
+
+                        state, ready to be removed from the impacted hosts where it was already
+
+
+                        installed.</p>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N10103_N1009F_N10027_N10001" >
+
+
+                <p >Query the patching status of all hosts in the cluster.</p>
+
+
+                
+
+
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query-hosts</userinput>
+
+
+<systemoutput >﻿  Hostname      IP Address    Patch Current  Reboot Required
+
+
+============  ==============  =============  ===============
+
+
+compute-0     192.168.204.15       Yes             No
+
+
+controller-0  192.168.204.3        No              Yes
+
+
+controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
+
+
+                    <p >In this example, the controllers have patches ready to be
+
+
+                        removed, and therefore must be rebooted.</p>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N10121_N1009F_N10027_N10001" >
+
+
+                <p >Remove all pending-for-removal patches from <b >controller-0</b>.</p>
+
+
+                <ol id="ol_kzv_x13_pp">
+
+
+                    <li >
+
+
+                        <p >Swact controller services.</p>
+
+
+                    </li>
+
+
+                    <li >
+
+
+                        <p >Run the patching sequence.</p>
+
+
+                        
+
+
+                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-patch-reboot controller-0</userinput></codeblock>
+
+
+                        
+
+
+                    </li>
+
+
+                </ol>
+
+
+            </li>
+
+
+            <li id="li_N1017D_N1009F_N10027_N10001" >
+
+
+                <p >Remove all pending patches from <b >controller-1</b>.</p>
+
+
+            </li>
+
+
+        </ol>
+
+
+
+
+
+            <p >The cluster is up to date now. All patches have been removed, and the
+
+
+                patch PATCH_0001 can be deleted from the patch storage area if necessary.</p>
+
+
+            <p >It is important to note the role of the command <i>wrs-path
+
+
+                    host-install</i> as a tool that both installs and removes patches as
+
+
+                necessary.</p>
+
+
+        
+
+
+    </body>
+
+
+</topic>
