@@ -95,7 +95,8 @@ helion/hos/                    Directory contains files used by the installer
               ~/helion/examples/entry-scale-with-vsa directory. The accompanying README.md file
               explains the contents of each of the configuration files. </li>
             <li>Copy the example configuration files into the required setup directory and edit them
-              as required: <codeblock>cp -r ~/helion/examples/entry-scale-with-vsa/* ~/helion/my_cloud/definition/</codeblock>
+              as required:
+              <codeblock>cp -r ~/helion/examples/entry-scale-with-vsa/* ~/helion/my_cloud/definition/</codeblock>
               Note: There have been changes to some of the files since Beta 0. The configuration
               files for editing can be found at the following location:
                 <codeblock>~/helion/my_cloud/definition/data</codeblock><ul id="ul_wwn_rtx_bt">
@@ -200,7 +201,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
         page: <xref href="vsa.dita#topic_hjr_4x1_dt">Install and Configure VSA
         (optional)</xref>.</p>
     </section>
-    <section id="Post-Installation"><title>Verification Steps - Optional</title>
+    <section id="Post-Installation"><title>Verification Steps (optional)</title>
       <ol>
         <li>This step may be used to verify that your cloud is up and running. However, note that
           running the command below will download a cirros image from the internet, upload it to
