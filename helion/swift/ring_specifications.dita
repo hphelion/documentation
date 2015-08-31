@@ -84,8 +84,8 @@
             the account and container storage. We recommend that you use the same drives for both
             the account and container rings. Therefore, the <b>partition-power</b> value should be
             the same. For more detailed information on partition-power, refer to <xref
-              href="ring_parameters.dita#topic_efw_k55_dt/selection-partition">selecting
-              partition-power.</xref></stentry>
+              href="#ring-specification/selecting-partition-power" format="dita">selecting
+              partition-power</xref>.</stentry>
         </strow>
         <strow>
           <stentry><b>replication-policy</b></stentry>
@@ -134,11 +134,11 @@
             system.<p>Therefore, during the initial deployment of Swift, we suggest not to make
             changes in <b>min-part-time</b>. </p></li>
       </ul></section>-->
-    <section>
+    <section id="selecting-partition-power">
       <title>Selecting a Partition Power</title>
     </section>
     <p>
-      <ul id="ul_oy4_t3x_2t">
+      <ul>
         <li>
           <p>Partition power is used to distribute the data uniformly across drives in a Swift
             nodes. It also defines the storage cluster capacity. You must set the part partition
@@ -178,13 +178,13 @@
       from Professional Services to plan your system.</p>
     <p>There are a few additional factors that can help or mitigate the fixed nature of the
       partition power, as follows:</p>
-    <ul id="ul_cpb_gv5_dt">
+    <ul>
       <li>Account and container storage represents a small fraction (typically 1%) of your object
         storage needs. Hence, you can select a smaller partition power (relative to object ring
         partition power) for the account and container rings. </li>
     </ul>
     <p>
-      <ul id="ul_shv_s2g_dt">
+      <ul>
         <li>For object storage, you can add additional storage policies (i.e., another object ring).
           When you have reached capacity in an existing storage policy, you can add a new storage
           policy with a higher partition power (because you now have more disk drives in your
@@ -207,7 +207,7 @@
       (the minimum column in the table) and later you add drives. </p>
     <p>
       <note>
-        <ul id="ul_wq4_hv5_dt">
+        <ul>
           <li>You use the total number of drives. For example, if you have 3 servers, each with two
             drives, the total number of drives is 6.</li>
           <li>The lookup should be done separably for each of the account, container and object

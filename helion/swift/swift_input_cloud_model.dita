@@ -5,23 +5,7 @@
   <body>
     <p>This page describes the configuration of Swift services with the various types of input
       models supported in this release. </p>
-    <section>
-      <title>Types of Input Model(s)</title>
-      <ul>
-        <li><b> Entry-scale-with-vsa</b><p>This has a single control plane cluster which runs all
-            services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova
-            compute servers. </p></li> 
-        <!--  <li>
-          <p><b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref>
-            </b>- (<b>NOTE : This model is not supported in Beta1)</b>This example model describes a
-            system using multiple servers and networks. It provides an example for the configuration
-            of the mid sized cloud. You must use this example model as the basis for building a
-            cloud model for your actual cloud by configuring the server and network that you plan to
-            deploy. To deploy Swift using this model you must make Swift -specific changes to the
-            provided example.</p>
-        </li> -->
-      </ul>
-    </section>
+    <!--<section><title>Types of Input Model(s)</title><ul><li><b> Entry-scale-with-vsa</b><p>This has a single control plane cluster which runs all services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova compute servers. </p></li><li><p><b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref> </b>- (<b>NOTE : This model is not supported in Beta1)</b>This example model describes a system using multiple servers and networks. It provides an example for the configuration of the mid sized cloud. You must use this example model as the basis for building a cloud model for your actual cloud by configuring the server and network that you plan to deploy. To deploy Swift using this model you must make Swift -specific changes to the provided example.</p></li></ul></section>-->
     <section id="entry-scale-with-vsa">
       <title>Entry-scale-with-vsa</title>
       <p>This has a single control plane cluster which runs all services (Nova, Swift, Glance, etc)
