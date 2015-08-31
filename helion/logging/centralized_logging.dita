@@ -402,9 +402,9 @@ yellow logstash-2015.02.10 5 1 33758082 0 16.5gb 16.5gb
 yellow logstash-2015.02.11 5 1 27471823 0 13.6gb 13.6gb</codeblock>
       <p>You can delete older data using following command:</p>
       <codeblock>curl -X DELETE http://localhost:9200/[index name]</codeblock>
-      <b>The number of logstash processes might not be sufficient</b>
+      <p><b>The number of logstash processes might not be sufficient</b></p>
       <p>On larger installations, logstash may not be able to process logs as they are produced. In
-        this case unprocessed logs are stored in RabbitMQ queue and this queue is increasing.</p>
+        this case unprocessed logs are stored in RabbitMQ queue and this queue increases.</p>
       <p>To check size of queue, use the following command:</p>
       <codeblock>rabbitmqctl list_queues | grep logs</codeblock>
       <p>The output of the command is similar to the following:</p>
@@ -415,7 +415,7 @@ yellow logstash-2015.02.11 5 1 27471823 0 13.6gb 13.6gb</codeblock>
       <p>To increase logstash processes:</p>
       <ol>
         <li>Stop logstash using command <codeph>service logstash stop</codeph></li>
-        <li>In the <codeph>/etc/default/logstash</codeph> file, find the
+        <li>In the <codeph>/roles/logging-common/defaults/main.yml</codeph> file, find the
             <codeph>LS_NUM_INSTANCES</codeph> line and change the value to a larger number.</li>
         <li>Restart logstash using the command <codeph>service logstash start</codeph></li>
       </ol>
