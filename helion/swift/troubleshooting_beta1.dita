@@ -21,10 +21,10 @@
             will occur) for the deploy phase of the process.</p></li>
       </ol></p>
     <section><b>List of errors</b></section>
-    <p>You can see the list of errors and the resolution as follows: <note>To resolve an error by
-        changing the input, you <b>must</b> re-run the configuration processor as describe in <xref
-          href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run the Configuration
-          Processor</xref> and continue with the deploy.</note></p>
+    <p>The following example provides an error message, description, and the resolution.<note>To
+        resolve an error by changing the input, you <b>must</b> re-run the configuration processor
+        as describe in <xref href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run
+          the Configuration Processor</xref> and continue with the deploy.</note></p>
     <p>
       <ol id="ol_qwr_zpx_2t">
         <li><b>Example Message</b>:<b><b> Model Missmatch: Cannot find drive /dev/sdt on
