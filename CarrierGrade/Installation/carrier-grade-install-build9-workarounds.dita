@@ -16,8 +16,8 @@
   <body>
     <section>
       <title>Workarounds to be followed when hdeploy with Build#9 fails</title>
-      <p>If the hdeploy script in build 9 fails, review the topics in this section for
-        troubleshooting.</p>
+      <p>If the <codeph>hdeploy</codeph> script in build 9 fails, review the topics in this section
+        for troubleshooting.</p>
     </section>
     <section>
       <title>Apache2 Failure During hdeploy</title>
@@ -78,6 +78,51 @@
     <li>Execute the <codeph>hdeploy</codeph> script on the HLM VM using the <codeph>-t</codeph>
           option: <codeblock>hdeploy –t &lt;cloudname&gt;</codeblock></li></ol>
       <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">the KVM + ESX installation</xref>.</p>
+    </section>
+    <section><title>nova-compute is down after cloud deploy</title> As a workaround, comment the
+      line <codeph>log_config_append = /etc/nova/logging.conf</codeph> in
+        <codeph>/etc/nova/nova.conf </codeph>on compute node. Restart <codeph>nova-compute</codeph>
+      service on the compute-proxy node and all nova servcies on controllers. </section>
+    <section><title>icinga2 status appears to be in down state on one of the controller node
+      </title><p>Shut down the Icinga2 service on controllers M2 and M3 On Controller M1 do the following:. </p>
+      <p>Edit the
+          <codeph>/etc/icinga2/zones.d/&lt;cloudname>-CCP/services/&lt;cloudname>-CCP-T1-services.conf
+        </codeph> file to remove following blocks:</p>
+      <codeblock>apply Service "elk-sch-healthy" {
+import "generic-service"
+check_command = "elk-sch-healthy"
+vars.apply_to_services = [ "ELK-SCH" ]
+assign where ("BUILD9-CCP-T2" in host.groups || "BUILD9-CCP-T2-VIP" in host.groups) &amp;&amp; "ELK-SCH" in host.vars.services
+}
+apply Service "elk-kib-healthy" {
+import "generic-service"
+check_command = "elk-kib-healthy"
+vars.apply_to_services = [ "ELK-KIB" ]
+assign where ("BUILD9-CCP-T2" in host.groups || "BUILD9-CCP-T2-VIP" in host.groups) &amp;&amp; "ELK-KIB" in host.vars.services
+}
+apply Service "attis-healthy" {
+import "generic-service"
+check_command = "attis-healthy"
+vars.apply_to_services = [ "ATTIS" ]
+assign where ("BUILD9-CCP-T2" in host.groups || "BUILD9-CCP-T2-VIP" in host.groups) &amp;&amp; "ATTIS" in host.vars.services
+}
+Restart Icinga2 service ==> service icinga2 restart.
+Access Icinga-Web
+http://&lt;CLM-VIP>/icinga-web
+  Credentials: root / password        </codeblock></section>
+    <section><title>stackrc should have right variable names with unset command</title>
+      <p>Remove all the values highlighted below and source stackrc again</p>
+      <codeblock>export OS_PASSWORD=0nOIyeQTy
+export OS_USERNAME=admin
+export OS_TENANT_NAME=admin
+export OS_AUTH_URL=https://10.200.191.120:5000/v2.0
+export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
+export OS_REGION_NAME=memphis
+unset OS_PROJECT_DOMAIN_NAME=Default
+unset OS_PROJECT_NAME=admin
+unset OS_USER_DOMAIN_ID=default
+unset OS_IDENTITY_API_VERSION=3
+unset OS_AUTH_VERSION=3</codeblock>
     </section>
     </body>
 </topic>

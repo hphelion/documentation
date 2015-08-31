@@ -137,12 +137,20 @@ Password: cghelion</codeblock>
       <p>Once the images are uploaded, you are ready to launch the instance with different flavors.
       </p>
     </section>
+    <section>
+      <title>Troubleshooting</title>
+      <p>If you have issues with the installation, see <xref
+          href="carrier-grade-install-build9-workarounds.dita#topic10581">Build 9
+        Workarounds</xref>.</p>
+    </section>
     
     <section id="next-step">
       <title>Next Step</title>
       <p>For KVM-only deployments, proceed to <xref href="carrier-grade-install-kvm-cloud-GA.dita"
           >Deploying the KVM Region</xref>.</p>
-      <p>For KVM + ESX deployments, proceed to  </p>
+      <p>For KVM + ESX deployments, proceed to <xref
+          href="carrier-grade-install-config-dcn.dita#topic10581">Configuring the DCN
+          Components</xref>.</p>
     </section>
   </body>
 </topic>

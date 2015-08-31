@@ -62,11 +62,13 @@
                 <topicref href="carrier-grade-install-esx-proxy-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-gre-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-disable-root.dita" toc="no"/>
+                <topicref href="carrier-grade-install-build9-workarounds.dita" toc="no"/>
             </topicref>
             <topicref href="carrier-grade-install-launch-horizon.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
             <topicref href="carrier-grade-install-config-dcn.dita"
                 navtitle="Configuring the DCN Components" locktitle="yes"/>
+            <topicref href="carrier-grade-install-access-kibana.dita" toc="no"/>
         </topichead>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita" navtitle="Deploying the KVM Region"
             locktitle="yes">

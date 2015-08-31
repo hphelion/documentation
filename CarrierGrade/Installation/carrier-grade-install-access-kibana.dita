@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Accessing Kibana</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>Kibana is available on the CLM network on all the controllers. </p>
+    <p>In order to access Kibana, you must update the
+        <codeph>/etc/apache2/sites-available/openstack-dashboard.conf</codeph>file as show
+      controllers. Then, restart Apache2.</p>
+    <ol id="ol_awb_ypv_2t">
+      <li>Log into each of the three (3) controllers in the non-KVM region.</li>
+      <li>Edit the <codeph>/etc/apache2/sites-available/openstack-dashboard.conf </codeph> file:
+        <codeblock>&lt;VirtualHost *:80&gt;
+ WSGIScriptAlias /
+      /opt/stack/venvs/horizon/lib/python2.7/site-packages/openstack_dashboard/wsgi/django.wsgi
+WSGIDaemonProcess horizon user=horizon group=horizon processes=3 threads=10
+      home=/opt/stack/venvs/horizon
+      python-path=/opt/stack/venvs/horizon:/opt/stack/venvs/horizon/lib/python2.7/site-packages/
+WSGIProcessGroup horizon
+Alias /static /usr/share/openstack-dashboard/openstack_dashboard/static/
+&lt;Directory
+      /opt/stack/venvs/horizon/lib/python2.7/site-packages/openstack_dashboard&gt;
+Options Indexes FollowSymLinks MultiViews
+Require all granted
+AllowOverride None
+Order allow,deny
+Allow from all
+&lt;/Directory&gt;
+RequestHeader set X-Forwarded-Protocol https
+&lt;/VirtualHost&gt;</codeblock></li>
+      <li>Restart Apache.</li></ol>
+          <p>Kibana can be accessed using the URL : http://&lt;controller_clm_ip&gt;:81/ and credentials
+      kibana/kibana</p>
+  </body>
+</topic>

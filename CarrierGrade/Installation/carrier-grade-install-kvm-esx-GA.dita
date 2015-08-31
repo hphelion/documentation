@@ -523,7 +523,7 @@ The configuration processor completed successfully.
       </ol>
       <p><b>Note:</b> If the <codeph>hdeploy</codeph> script fails, review the topics in <xref
           href="carrier-grade-install-build9-workarounds.dita#topic10581">this section for
-          troubleshooting</xref>.</p>
+          troubleshooting</xref>. </p>
     </section>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
@@ -548,7 +548,8 @@ The configuration processor completed successfully.
       <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581"
           >Disabling the Root User</xref>.</p>
     </section>
-    
+    <section> To launch Kibana, see <xref href="carrier-grade-install-access-kibana.dita#topic10581"
+        >Accessing Kibana</xref>.</section>
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>

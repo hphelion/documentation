@@ -22,7 +22,7 @@
       Carrier Grade and HP Distributed Cloud Networking (DCN) environments. </p>
     <p><b>Note:</b> If you are deploying the the <xref
         href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM
-      deployment</xref>, you do not need to perform these tasks.</p>  
+      deployment</xref>, you do not need to perform these tasks. </p>  
     <section>
       <title>Verify the VSC VMs</title>
       <p>The installation process creates virtual machines for VSC. Use the following steps to
@@ -37,12 +37,12 @@ show vswitch-controller xmpp-server
 ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
       </ol>
     </section>
-    <section><title>Verify the VRS-G Node</title>
-      <p>The installation creates a VRS-G node as part of the cloud deployment. Use the
-        following command to verify that the VRS-G is active:
-        </p><codeblock>show vswitch-controller vswitches  </codeblock><p>The output for the command
+    <section><title>Verify the VRS-G Node</title> The installation creates a VRS-G node as part of
+      the cloud deployment. Use the following command to verify that the VRS-G is active:
+        <codeblock>show vswitch-controller vswitches  </codeblock><p>The output for the command
         should appear similar to the following image:</p>
-      <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/>
+      <image href="../../media/CGH-2-verify-vrsg.png"/>
+      <!-- <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/> -->
       <p>Verify that the domain name and DNS server are listed in the
           <codeph>/etc/resolv.conf</codeph> file on all the cloud
         nodes,.</p><codeblock>cat etc/resolv.conf          </codeblock><image
@@ -53,17 +53,32 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
     <section><title>Prerequisite to be performed on switch for the uplink subnet </title>You need to
       create the static IP route for external network/FIP to point to point IP subnet from Gateway
       Example from main Lab Router.<p>The output for the command is similar to the following;</p><codeblock>#
-interface Vlan-interface 1553
-description  EXT UPLINK SUBNET
-ip address 10.200.70.1 255.255.255.192
-#
-IP Packet Frame Type: PKTFMT_ETHNT_2,  Hardware Address: abcd-1234-lmno
+
+[FTC-R3N6340-TG01-Vlan-interface1553]dis int vlan 1553
+Vlan-interface1553 current state: UP
+Line protocol current state: UP
+Description: NFV TestBed Vlad Marinkovic - EXT UPLINK SUBNET
+The Maximum Transmit Unit is 1500
+Internet Address is 10.200.53.1/26 Primary
+IP Packet Frame Type: PKTFMT_ETHNT_2,  Hardware Address: b8af-67bd-f516
+IPv6 Packet Frame Type: PKTFMT_ETHNT_2,  Hardware Address: b8af-67bd-f516
+Last clearing of counters:  Never
+    Last 300 seconds input rate: 0 bytes/sec, 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bytes/sec, 0 bits/sec, 0 packets/sec
+    0 packets input, 0 bytes, 0 drops
+    54 packets output, 2268 bytes, 0 drops
+
+[FTC-R3N6340-TG01]dis ip routing-table | include 10.200.53
+Routing Tables: Public
+
 Destination/Mask    Proto  Pre  Cost         NextHop         Interface
-10.200.70.0/26      Direct 0    0            10.200.70.1     Vlan1553
-10.200.70.1/32      Direct 0    0            127.0.0.1       InLoop0
-10.200.70.64/26     Static 60   0            10.200.70.2     Vlan1553
-10.200.70.128/26    Static 60   0            10.200.70.2     Vlan1553
-10.200.70.192/26    Static 60   0            10.200.70.2     Vlan1553</codeblock><ol>
+
+10.200.53.0/26      Direct 0    0            10.200.53.1     Vlan1553
+10.200.53.1/32      Direct 0    0            127.0.0.1       InLoop0
+10.200.53.64/26     Static 60   0            10.200.53.2     Vlan1553
+10.200.53.128/26    Static 60   0            10.200.53.2     Vlan1553
+10.200.53.192/26    Static 60   0            10.200.53.2     Vlan1553
+</codeblock><ol>
         <li>From the HLM VM, SSH into any controller node using the default credentials: <p>
             <codeblock>User Name: cghelion
 Password: cghelion</codeblock>
@@ -116,8 +131,9 @@ Password: cghelion</codeblock>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
         <li>Execute the following command, using your VLAN ID.
-            <codeblock>nuage-vlan-config mod eth0 Access &lt;vlad-id-range></codeblock><p>For
-            example, if your VLAN ID is
+              <codeblock>nuage-vlan-config mod eth0 Access &lt;vlad-id-range></codeblock><p><image
+              href="../../media/CGH-2-vlan-configure.png" id="image_p2c_s4v_2t"/></p><p>For example,
+            if your VLAN ID is
           1508:</p><codeblock>nuage-vlan-config mod eth0 Access 1500-2000</codeblock></li>
       </ol>
     </section>
