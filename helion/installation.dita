@@ -69,14 +69,14 @@
     </section>
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
-      <note>Run as the user you just created (or stack if you left the default of "stack", but do
-        not run as root.</note>
+      <note>It's critical that you don't run as root. Run as the user you just created (or stack if
+        you left the default of "stack", but do not run as root.</note>
       <ol>
         <li>Log in to the deployer node as the user you created during the setup phase, and mount
           the install media at /media/cdrom, for example,
-          <codeblock>sudo mount /media/cdrom</codeblock></li>
-        <li> Unpack the following tarball:
-          <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-20150827T092008Z.tgz</codeblock>
+          <codeblock>sudo mount &lt;xxx.iso> /media/cdrom</codeblock></li>
+        <li> Unpack the following tarball:  Note this file name will
+          change<codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-20150827T092008Z.tgz </codeblock>
         </li>
         <li>Run the following included script: <codeblock>~/hos-2.0.0-b.1/hos-init.bash </codeblock>
          <!-- was ~/hos-deployer/hos-init.bash --></li>
