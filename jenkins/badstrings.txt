@@ -1,3 +1,4 @@
+%ÎíÎñ%=this is an en-dash.  Use only dashes.
 % are have%= incorrect word grouping.
 % a [oO]bject%= object requires the article an.
 % a [iI]nstance%= instance requires the article an.
