@@ -266,7 +266,7 @@
       .....
       bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------
       </codeblock>
-        Issue is resolved by rebooting the server. </p>
+        This issue is resolved by rebooting the server. </p>
       
     </section>
   </body>
