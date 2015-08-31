@@ -55,7 +55,7 @@ ifconfig eth0 up</codeblock></li>
             <li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click
               <b>Download</b>.</li>
           </ul></li>
-        <li>Download and extract the <b id="productShow_appName">Helion Carrier Grade 2.0.0
+        <li>Download and extract the <b id="productShow_apcodeph">Helion Carrier Grade 2.0.0
           Windriver License patch signature file</b> and the associated signature and checksum
           files.  For information on performing verifications of the download, see the
           Prerequistues. </li>

@@ -1,110 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333660893" xml:lang="en-us">
-    <!-- Modification History
-   -->
-    <title >Server Groups</title>
-    <shortdesc ><i >Server Groups</i> is a mechanism to group virtual
-        machines to which a common set of attributes is applied.</shortdesc>
-    <prolog>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <p >Select the option <option >Server Groups</option> from
-            either the <uicontrol >Project</uicontrol> or the <uicontrol >Admin</uicontrol> tabs on the web administration interface to display
-            the <wintitle >Server Groups</wintitle> window illustrated in the
-            following figure:</p>
-        <fig id="fig_N1003B_N1001C_N10001" >
-            <image href="jow1404333656422.image" id="image_up4_5m2_14"  placement="inline" width="6in"/>
-        </fig>
-        <p >Click the button <uicontrol >Create Server Group</uicontrol> to create a new server group, as
-      illustrated below:</p>
-        <fig id="fig_N1004F_N1001C_N10001" >
-            <image href="jow1404333657930.image" id="image_wfj_pn2_14"  placement="inline" width="4in"/>
-        </fig>
-        <p >The following parameters can be defined for the new server group:</p>
-        <dl>
-            <dlentry >
-                <dt >Project</dt>
-                <dd >
-                    <p >Identifies the tenant the new service group should be
-                        associated with. This field is only available as part of the
-                            <codeph >Admin</codeph> operations; the project identity is
-                        implicit within the context of a specific tenant.</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Server Group Name</dt>
-                <dd >
-                    <p >The name for the new server group.</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Policy</dt>
-                <dd >
-                    <p >The following scheduling policy options are available:</p>
-                    <dl>
-                        <dlentry >
-                            <dt >affinity</dt>
-                            <dd >
-                                <p >When this option is selected, new instances launched as part of this server group
-                  are scheduled to run on the same compute node. </p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt >anti-affinity</dt>
-                            <dd >
-                                <p >When this option is selected, new instances launched as part of this server group
-                  are scheduled to run on different compute nodes. For example, you can use the
-                  anti-affinity option when you have two virtual machines that run in 1:1 HA
-                  protection mode, and you want them to be protected against hardware failures.</p>
-                            </dd>
-                        </dlentry>
-                    </dl>
-                    <p >See <xref href="jow1404333800588.xml" /> and <xref href="jow1404333655771.xml" /> for additional considerations on scheduling and live migration for each
-                        of these policies.</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Best Effort</dt>
-                <dd >
-                    <p >When selected, the policy in place, affinity, or
-                        anti-affinity, is enforced whenever possible, on a best-effort basis. If for
-                        any reason the policy cannot be enforced, then the deployment of the new
-                        instance proceeds using the regular scheduling.</p>
-                    <p >When cleared, the policy in place must be executable for the
-                        new instance to be scheduled. Launching of a new virtual machine fails if
-                        there are no resources to comply with the selected policy.</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Max Group Size (Instances)</dt>
-                <dd >
-                    <p >Determines the maximum number of instances that can co-exist
-                        as part of this server group.</p>
-                </dd>
-            </dlentry>
-        </dl>
-        <p >The new service group is displayed as follows:</p>
-        <fig id="fig_N100DF_N1001C_N10001" >
-            <image href="jow1404333659426.image" id="image_jmp_5v5_14"  placement="inline" width="5in"/>
-        </fig>
-        <p >Once a server group is defined, you can add virtual machines to it at launch time. This is
-      done by selecting the desired server group from the tab <uicontrol >Server Group</uicontrol> on
-      the launch window.</p>
-        <section id="section_N1019F_N10023_N10001" >
-            <title >Server Groups and the CLI</title>
-            <p >Server groups can be created and deleted using the CLI as illustrated in the
-                following examples:</p>
-            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova server-group-create --policy affinity \ 
---metadata best_effort=true --metadata group_size=2 ht-group-test</userinput>
-<systemoutput >+--------------+---------------+----------------+---------+------------+
-| Id           | Name          | Policies       | Members | Metadata   |
-+--------------+---------------+----------------+---------+------------+
-| 63752c24-... | ht-group-test | [u'affinity... | []      | {u'best... |
-+--------------+---------------+----------------+---------+------------+
-~(keystone_admin)$ </systemoutput><userinput >nova server-group-delete 63752c24-...</userinput>
-<systemoutput >Server group 63752c24-... has been successfully deleted.</systemoutput></codeblock>
-        </section>
-    </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333660893" xml:lang="en-us">    <!-- Modification History   -->    <title >Server Groups</title>    <shortdesc ><i >Server Groups</i> is a mechanism to group virtual        machines to which a common set of attributes is applied.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <p >Select the option <option >Server Groups</option> from            either the <uicontrol >Project</uicontrol> or the <uicontrol >Admin</uicontrol> tabs on the web administration interface to display            the <wintitle >Server Groups</wintitle> window illustrated in the            following figure:</p>        <fig id="fig_N1003B_N1001C_N10001" >            <image href="jow1404333656422.image" id="image_up4_5m2_14"  placement="inline" width="6in"/>        </fig>        <p >Click the button <uicontrol >Create Server Group</uicontrol> to create a new server group, as      illustrated below:</p>        <fig id="fig_N1004F_N1001C_N10001" >            <image href="jow1404333657930.image" id="image_wfj_pn2_14"  placement="inline" width="4in"/>        </fig>        <p >The following parameters can be defined for the new server group:</p>        <dl>            <dlentry >                <dt >Project</dt>                <dd >                    <p >Identifies the tenant the new service group should be                        associated with. This field is only available as part of the                            <b >Admin</b> operations; the project identity is                        implicit within the section of a specific tenant.</p>                </dd>            </dlentry>            <dlentry >                <dt >Server Group Name</dt>                <dd >                    <p >The name for the new server group.</p>                </dd>            </dlentry>            <dlentry >                <dt >Policy</dt>                <dd >                    <p >The following scheduling policy options are available:</p>                    <dl>                        <dlentry >                            <dt >affinity</dt>                            <dd >                                <p >When this option is selected, new instances launched as part of this server group                  are scheduled to run on the same compute node. </p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >anti-affinity</dt>                            <dd >                                <p >When this option is selected, new instances launched as part of this server group                  are scheduled to run on different compute nodes. For example, you can use the                  anti-affinity option when you have two virtual machines that run in 1:1 HA                  protection mode, and you want them to be protected against hardware failures.</p>                            </dd>                        </dlentry>                    </dl>                    <p >See <xref href="jow1404333800588.xml" /> and <xref href="jow1404333655771.xml" /> for additional considerations on scheduling and live migration for each                        of these policies.</p>                </dd>            </dlentry>            <dlentry >                <dt >Best Effort</dt>                <dd >                    <p >When selected, the policy in place, affinity, or                        anti-affinity, is enforced whenever possible, on a best-effort basis. If for                        any reason the policy cannot be enforced, then the deployment of the new                        instance proceeds using the regular scheduling.</p>                    <p >When cleared, the policy in place must be executable for the                        new instance to be scheduled. Launching of a new virtual machine fails if                        there are no resources to comply with the selected policy.</p>                </dd>            </dlentry>            <dlentry >                <dt >Max Group Size (Instances)</dt>                <dd >                    <p >Determines the maximum number of instances that can co-exist                        as part of this server group.</p>                </dd>            </dlentry>        </dl>        <p >The new service group is displayed as follows:</p>        <fig id="fig_N100DF_N1001C_N10001" >            <image href="jow1404333659426.image" id="image_jmp_5v5_14"  placement="inline" width="5in"/>        </fig>        <p >Once a server group is defined, you can add virtual machines to it at launch time. This is      done by selecting the desired server group from the tab <uicontrol >Server Group</uicontrol> on      the launch window.</p>        <section id="section_N1019F_N10023_N10001" >            <title >Server Groups and the CLI</title>            <p >Server groups can be created and deleted using the CLI as illustrated in the                following examples:</p>            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova server-group-create --policy affinity \ --metadata best_effort=true --metadata group_size=2 ht-group-test</userinput><systemoutput >+--------------+---------------+----------------+---------+------------+| Id           | Name          | Policies       | Members | Metadata   |+--------------+---------------+----------------+---------+------------+| 63752c24-... | ht-group-test | [u'affinity... | []      | {u'best... |+--------------+---------------+----------------+---------+------------+~(keystone_admin)$ </systemoutput><userinput >nova server-group-delete 63752c24-...</userinput><systemoutput >Server group 63752c24-... has been successfully deleted.</systemoutput></codeblock>        </section>    </body></topic>

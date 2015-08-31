@@ -1,329 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333759364" xml:lang="en-us">
-    <!-- Modification History
-   -->
-    <title >System Alarms</title>
-    <shortdesc >HP Helion OpenStack Carrier Grade can generate system alarms when operational conditions
-        change on any of the hosts in the cluster.</shortdesc>
-    <prolog>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <p >The supported interfaces to the alarms subsystem are the command line
-            interface (see <xref href="psa1419970253127.xml" />), the web interface
-            (click the <uicontrol >Fault Management</uicontrol> menu on the
-                <uicontrol >Admin</uicontrol> tab), SNMP, and the system REST
-            API.</p>
-        <section id="section_N10027_N1001F_N10001" >
-            <title >About SNMP Support</title>
-            <p >Support for SNMP is implemented as follows:</p>
-            <ul id="ul_bjv_cjd_cp">
-                <li >
-                    <p >access is disabled by default, must be enabled manually from the command line
-                        interface</p>
-                </li>
-                <li >
-                    <p >available using the controller's node floating OAM IP address, over the
-                        standard UDP port 161</p>
-                </li>
-                <li >
-                    <p >supported version is SNMPv2c</p>
-                </li>
-                <li >
-                    <p >access is read-only for all SNMP communities</p>
-                </li>
-                <li >
-                    <p >all SNMP communities have access to the entire OID tree, there is not support
-                        for <term >VIEWS</term></p>
-                </li>
-                <li >
-                    <p >supported SNMP operations are <term >GET</term>, <term >GETNEXT</term>, <term >GETBULK</term>,
-                        and <term >SNMPv2C-TRAP2</term></p>
-                </li>
-                <li >
-                    <p >the SNMP <term >SET</term> operation is not supported</p>
-                </li>
-            </ul>
-        </section>
-        <section id="section_N10099_N1001F_N10001" >
-            <title >SNMPv2-MIB (RFC 3418)</title>
-            <p >Support for the basic standard MIB for SNMP entities is limited to
-                the System and SNMP groups, as follows:</p>
-            <ul id="ul_ulb_ypl_hp">
-                <li >
-                    <p >System Group, <codeph >.iso.org.dod.internet.mgmt.mib-2.system</codeph></p>
-                </li>
-                <li >
-                    <p >SNMP Group, <codeph >.iso.org.dod.internet.mgmt.mib-2.snmp</codeph></p>
-                </li>
-                <li >
-                    <p >coldStart and warmStart Traps</p>
-                </li>
-            </ul>
-            <p >The following system attributes are used in support of the SNMP implementation. They
-                can be displayed using the <cmdname >system show</cmdname> command.</p>
-            <dl>
-                <dlentry >
-                    <dt >contact</dt>
-                    <dd >
-                        <p >A read-write system attribute used to populate the
-                            <codeph >sysContact</codeph> attribute of the SNMP System
-                            group. The contact value can be set with the following command:</p>
-                        <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system modify contact="the-site-contact"</userinput></codeblock>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >location</dt>
-                    <dd >
-                        <p >A read-write system attribute used to populate the
-                                <codeph >sysLocation</codeph> attribute of the SNMP System
-                            group. The location value can be set with the following command:</p>
-                        <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system modify location="some-location"</userinput></codeblock>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >name</dt>
-                    <dd >
-                        <p >A read-write system attribute used to populate the
-                                <codeph >sysName</codeph> attribute of the
-                            SNMP System group. The name value can be set with the following
-                            command:</p>
-                        <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system modify name="the-system-name"</userinput></codeblock>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >software_version</dt>
-                    <dd >
-                        <p >A read-only system attribute set automatically by the system. Its value
-                            is used to populate the <codeph >sysDescr</codeph> attribute of
-                            the SNMP System group.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-            <p >The following SNMP attributes are used as follows:</p>
-            <dl>
-                <dlentry >
-                    <dt >sysObjectId</dt>
-                    <dd >
-                        <p >Set to
-                                <codeph >iso.org.dod.internet.private.enterprise.wrs.titanium</codeph>
-                            (1.3.6.1.4.1.1.2).</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >sysUpTime</dt>
-                    <dd >
-                        <p >Set to the up time of the active controller.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >sysServices</dt>
-                    <dd >
-                        <p >Set to the nominal value of 72 to indicate that the host
-                            provides services at layers 1 to 7.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-        </section>
-        <section id="section_N100C9_N1001F_N10001" >
-            <title >Enterprise MIBs</title>
-            <p >The HP Helion OpenStack Carrier Grade supports the following <term
-                    >Enterprise Registration</term> and <term 
-                    >Alarm</term> MIBs.</p>
-            <dl>
-                <dlentry >
-                    <dt >Enterprise Registration MIB, wrsEnterpriseReg.mib</dt>
-                    <dd >
-                        <p >Defines the hierarchy underneath the <codeph
-                                
-                                >iso(1).org(3).dod(6).internet(1).private(4).enterprise(1)</codeph>.
-                            This hierarchy is administered as follows:</p>
-                        <ul id="ul_twp_s5l_hp">
-                            <li >
-                                <p ><codeph 
-                                        >.wrs(731)</codeph>, the IANA-registered enterprise
-                                    code for HP Helion OpenStack Carrier Grade</p>
-                            </li>
-                            <li >
-                                <p ><codeph >.wrs(731).wrsCommon(1).wrs&lt;Module&gt;(1-...)</codeph>,
-                                    defined in <filepath >wrsCommon&lt;Module&gt;.mib</filepath>.</p>
-                            </li>
-                            <li >
-                                <p ><codeph >.wrs(731).wrsProduct(2-...)</codeph>, defined
-                                    in <filepath >wrs&lt;Product&gt;.mib</filepath>.</p>
-                            </li>
-                        </ul>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Alarm MIB, wrsAlarmMib.mib</dt>
-                    <dd >
-                        <p >Defines the common TRAP and ALARM MIBs. The definition
-                            includes <term >textual conventions</term>, an <term
-                                >active alarm table</term>, a <term 
-                                >historical alarm table</term>, and <term 
-                                >traps</term>.</p>
-                        <dl>
-                            <dlentry >
-                                <dt >Textual Conventions</dt>
-                                <dd >
-                                    <p >Semantic statements used to simplify definitions in the
-                                        active alarm table and traps components of the MIB.</p>
-                                </dd>
-                            </dlentry>
-                            <dlentry >
-                                <dt >Active Alarm Table</dt>
-                                <dd >
-                                    <p >A list of all <term >active</term> or <term >set</term>
-                                        alarms in the system. Each entry in the table includes the
-                                        following variables:</p>
-                                    <ul id="ul_y1w_4lk_qq">
-                                        <li >
-                                            <p ><varname >UUID</varname></p>
-                                        </li>
-                                        <li >
-                                            <p ><varname >AlarmID</varname></p>
-                                        </li>
-                                        <li >
-                                            <p ><varname >EntityInstanceID</varname></p>
-                                        </li>
-                                        <li >
-                                            <p ><varname >DateAndTime</varname></p>
-                                        </li>
-                                        <li >
-                                            <p ><varname >AlarmSeverity</varname></p>
-                                        </li>
-                                        <li >
-                                            <p ><varname >ReasonText</varname></p>
-                                        </li>
-                                        <li >
-                                            <p ><varname >EventType</varname></p>
-                                        </li>
-                                        <li >
-                                            <p ><varname >ProbableCause</varname></p>
-                                        </li>
-                                        <li >
-                                            <p ><varname >ProposedRepairAction</varname></p>
-                                        </li>
-                                        <li >
-                                            <p ><varname >ServiceAffecting</varname></p>
-                                        </li>
-                                        <li >
-                                            <p ><varname >SuppressionAllowed</varname></p>
-                                        </li>
-                                    </ul>
-                                    <p >On the web interface, click the <uicontrol >Fault
-                                            Management</uicontrol> menu on the
-                                            <uicontrol >Admin</uicontrol> tab, and then select the
-                                            <uicontrol >Active Alarms</uicontrol> tab. Active alarms
-                                        are displayed as illustrated below:</p>
-                                    <fig id="fig_bgh_ldl_qq" >
-                                        <image href="psa1420475905055.image" id="image_cqk_xdl_qq"  placement="inline" width="550">
-                                            <alt >Active Alarms</alt>
-                                        </image>
-                                    </fig>
-                                </dd>
-                            </dlentry>
-                            <dlentry >
-                                <dt >Historical Alarm Table</dt>
-                                <dd >
-                                    <p >A history of set and clear alarm operations
-                                        in the system. The table includes the same variables as the
-                                        active alarm table, plus the variable
-                                            <varname >AlarmState</varname> used to indicate whether
-                                        the table entry is a SET or a CLEAR operation.</p>
-                                    <p >On the web interface, click the <uicontrol >Fault
-                                            Management</uicontrol> menu on the
-                                            <uicontrol >Admin</uicontrol> tab, and then select the
-                                            <uicontrol >Historical Alarms</uicontrol> tab. The alarm
-                                        history is displayed as illustrated below:</p>
-                                    <fig id="fig_mwl_12l_qq" >
-                                        <image href="psa1420476170224.image" id="image_lzp_22l_qq"  placement="inline" width="550">
-                                            <alt >Historical Alarms</alt>
-                                        </image>
-                                    </fig>
-                                </dd>
-                            </dlentry>
-                            <dlentry >
-                                <dt >Customer Log Table</dt>
-                                <dd >
-                                    <p >A list of all customer logs in the system.
-                                        The table includes the same variables as the Active Alarm
-                                        Table, with the exception that <varname >ProposedRepairAction</varname> and  <varname >SuppressionAllowed</varname> are
-                                        excluded.</p>
-                                    <p >On the web interface, click the <uicontrol >Fault Management</uicontrol> menu on
-                                        the <uicontrol >Admin</uicontrol> tab, and
-                                        then select the <uicontrol >Customer
-                                            Logs</uicontrol> tab. Logs are displayed as illustrated
-                                        below:</p>
-                                    <fig id="fig_cyy_xqx_bs" >
-                                        <image href="jow1432054510610.image" id="image_ixf_drx_bs"  width="5in">
-                                            <alt >TiS Customer Logs</alt>
-                                        </image>
-                                    </fig>
-                                </dd>
-                            </dlentry>
-                            <dlentry >
-                                <dt >Traps</dt>
-                                <dd >
-                                    <p >Defines the following generic traps:</p>
-                                    <ul id="ul_clc_vyl_hp">
-                                        <li >
-                                            <p ><codeph >wrsAlarmCritical</codeph></p>
-                                        </li>
-                                        <li >
-                                            <p ><codeph >wrsAlarmMajor</codeph></p>
-                                        </li>
-                                        <li >
-                                            <p ><codeph >wrsAlarmMinor</codeph></p>
-                                        </li>
-                                        <li >
-                                            <p ><codeph >wrsAlarmWarning</codeph></p>
-                                        </li>
-                                        <li >
-                                            <p ><codeph >wrsAlarmMessage</codeph></p>
-                                        </li>
-                                        <li >
-                                            <p ><codeph >wrsAlarmClear</codeph></p>
-                                        </li>
-                                        <li >
-                                            <p ><codeph >wrsAlarmHierarchicalClear</codeph></p>
-                                        </li>
-                                    </ul>
-                                </dd>
-                            </dlentry>
-                        </dl>
-                        <p >For all alarms, the Notification Type is based on the
-                            severity of the trap or alarm. This is done to facilitate the
-                            interaction with most SNMP trap viewers which typically use the
-                            Notification Type to drive the coloring of traps, that is, red for
-                            critical, yellow for minor, and so on. </p>
-                        <p >Customer Logs always result in <codeph >wrsAlarmMessage</codeph> traps.</p>
-                        <p >For Critical, Major, Minor, Warning, and Message traps, all
-                            variables in the active alarm table are included as <term >varbinds</term>.</p>
-                        <p >For the Clear trap, <term >varbinds</term> include
-                            only the <varname >AlarmID</varname>, <varname >EntityInstanceID</varname>, <varname >DateAndTime</varname>,
-                            and <varname >ReasonText</varname> variables.</p>
-                        <p >For the HierarchicalClear trap, <term >varbinds</term> include only the <varname >EntityInstanceID</varname>, <varname >DateAndTime</varname>,
-                            and <varname >ReasonText</varname> variables.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-        </section>
-        <section id="section_N10272_N1001F_N10001" >
-            <title >Enabling SNMP Support</title>
-            <p >In order to have a workable SNMP configuration you must use the
-                command line interface on the active controller to:</p>
-            <ol id="ol_amx_tql_hp">
-                <li >
-                    <p >Define at least one SNMP community string. See <xref href="psa1408039460152.xml" /> for details.</p>
-                </li>
-                <li >
-                    <p >Configure at least one SNMP trap destination so that alarms
-                        can be reported as they happen. See <xref href="psa1408040130437.xml" /> for details.</p>
-                </li>
-            </ol>
-        </section>
-    </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333759364" xml:lang="en-us">    <!-- Modification History   -->    <title >System Alarms</title>    <shortdesc >HP Helion OpenStack Carrier Grade can generate system alarms when operational conditions        change on any of the hosts in the cluster.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <p >The supported interfaces to the alarms subsystem are the command line            interface (see <xref href="psa1419970253127.xml" />), the web interface            (click the <uicontrol >Fault Management</uicontrol> menu on the                <uicontrol >Admin</uicontrol> tab), SNMP, and the system REST            API.</p>        <section id="section_N10027_N1001F_N10001" >            <title >About SNMP Support</title>            <p >Support for SNMP is implemented as follows:</p>            <ul id="ul_bjv_cjd_cp">                <li >                    <p >access is disabled by default, must be enabled manually from the command line                        interface</p>                </li>                <li >                    <p >available using the controller's node floating OAM IP address, over the                        standard UDP port 161</p>                </li>                <li >                    <p >supported version is SNMPv2c</p>                </li>                <li >                    <p >access is read-only for all SNMP communities</p>                </li>                <li >                    <p >all SNMP communities have access to the entire OID tree, there is not support                        for <term >VIEWS</term></p>                </li>                <li >                    <p >supported SNMP operations are <term >GET</term>, <term >GETNEXT</term>, <term >GETBULK</term>,                        and <term >SNMPv2C-TRAP2</term></p>                </li>                <li >                    <p >the SNMP <term >SET</term> operation is not supported</p>                </li>            </ul>        </section>        <section id="section_N10099_N1001F_N10001" >            <title >SNMPv2-MIB (RFC 3418)</title>            <p >Support for the basic standard MIB for SNMP entities is limited to                the System and SNMP groups, as follows:</p>            <ul id="ul_ulb_ypl_hp">                <li >                    <p >System Group, <b >.iso.org.dod.internet.mgmt.mib-2.system</b></p>                </li>                <li >                    <p >SNMP Group, <b >.iso.org.dod.internet.mgmt.mib-2.snmp</b></p>                </li>                <li >                    <p >coldStart and warmStart Traps</p>                </li>            </ul>            <p >The following system attributes are used in support of the SNMP implementation. They                can be displayed using the <i >system show</i> command.</p>            <dl>                <dlentry >                    <dt >contact</dt>                    <dd >                        <p >A read-write system attribute used to populate the                            <b >sysContact</b> attribute of the SNMP System                            group. The contact value can be set with the following command:</p>                        <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system modify contact="the-site-contact"</userinput></codeblock>                    </dd>                </dlentry>                <dlentry >                    <dt >location</dt>                    <dd >                        <p >A read-write system attribute used to populate the                                <b >sysLocation</b> attribute of the SNMP System                            group. The location value can be set with the following command:</p>                        <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system modify location="some-location"</userinput></codeblock>                    </dd>                </dlentry>                <dlentry >                    <dt >name</dt>                    <dd >                        <p >A read-write system attribute used to populate the                                <b >sysName</b> attribute of the                            SNMP System group. The name value can be set with the following                            command:</p>                        <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system modify name="the-system-name"</userinput></codeblock>                    </dd>                </dlentry>                <dlentry >                    <dt >software_version</dt>                    <dd >                        <p >A read-only system attribute set automatically by the system. Its value                            is used to populate the <b >sysDescr</b> attribute of                            the SNMP System group.</p>                    </dd>                </dlentry>            </dl>            <p >The following SNMP attributes are used as follows:</p>            <dl>                <dlentry >                    <dt >sysObjectId</dt>                    <dd >                        <p >Set to                                <b >iso.org.dod.internet.private.enterprise.wrs.titanium</b>                            (1.3.6.1.4.1.1.2).</p>                    </dd>                </dlentry>                <dlentry >                    <dt >sysUpTime</dt>                    <dd >                        <p >Set to the up time of the active controller.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >sysServices</dt>                    <dd >                        <p >Set to the nominal value of 72 to indicate that the host                            provides services at layers 1 to 7.</p>                    </dd>                </dlentry>            </dl>        </section>        <section id="section_N100C9_N1001F_N10001" >            <title >Enterprise MIBs</title>            <p >The HP Helion OpenStack Carrier Grade supports the following <term                    >Enterprise Registration</term> and <term                     >Alarm</term> MIBs.</p>            <dl>                <dlentry >                    <dt >Enterprise Registration MIB, wrsEnterpriseReg.mib</dt>                    <dd >                        <p >Defines the hierarchy underneath the <b                                                                >iso(1).org(3).dod(6).internet(1).private(4).enterprise(1)</b>.                            This hierarchy is administered as follows:</p>                        <ul id="ul_twp_s5l_hp">                            <li >                                <p ><b                                         >.wrs(731)</b>, the IANA-registered enterprise                                    code for HP Helion OpenStack Carrier Grade</p>                            </li>                            <li >                                <p ><b >.wrs(731).wrsCommon(1).wrs&lt;Module&gt;(1-...)</b>,                                    defined in <filepath >wrsCommon&lt;Module&gt;.mib</filepath>.</p>                            </li>                            <li >                                <p ><b >.wrs(731).wrsProduct(2-...)</b>, defined                                    in <filepath >wrs&lt;Product&gt;.mib</filepath>.</p>                            </li>                        </ul>                    </dd>                </dlentry>                <dlentry >                    <dt >Alarm MIB, wrsAlarmMib.mib</dt>                    <dd >                        <p >Defines the common TRAP and ALARM MIBs. The definition                            includes <term >textual conventions</term>, an <term                                >active alarm table</term>, a <term                                 >historical alarm table</term>, and <term                                 >traps</term>.</p>                        <dl>                            <dlentry >                                <dt >Textual Conventions</dt>                                <dd >                                    <p >Semantic statements used to simplify definitions in the                                        active alarm table and traps components of the MIB.</p>                                </dd>                            </dlentry>                            <dlentry >                                <dt >Active Alarm Table</dt>                                <dd >                                    <p >A list of all <term >active</term> or <term >set</term>                                        alarms in the system. Each entry in the table includes the                                        following variables:</p>                                    <ul id="ul_y1w_4lk_qq">                                        <li >                                            <p ><varname >UUID</varname></p>                                        </li>                                        <li >                                            <p ><varname >AlarmID</varname></p>                                        </li>                                        <li >                                            <p ><varname >EntityInstanceID</varname></p>                                        </li>                                        <li >                                            <p ><varname >DateAndTime</varname></p>                                        </li>                                        <li >                                            <p ><varname >AlarmSeverity</varname></p>                                        </li>                                        <li >                                            <p ><varname >ReasonText</varname></p>                                        </li>                                        <li >                                            <p ><varname >EventType</varname></p>                                        </li>                                        <li >                                            <p ><varname >ProbableCause</varname></p>                                        </li>                                        <li >                                            <p ><varname >ProposedRepairAction</varname></p>                                        </li>                                        <li >                                            <p ><varname >ServiceAffecting</varname></p>                                        </li>                                        <li >                                            <p ><varname >SuppressionAllowed</varname></p>                                        </li>                                    </ul>                                    <p >On the web interface, click the <uicontrol >Fault                                            Management</uicontrol> menu on the                                            <uicontrol >Admin</uicontrol> tab, and then select the                                            <uicontrol >Active Alarms</uicontrol> tab. Active alarms                                        are displayed as illustrated below:</p>                                    <fig id="fig_bgh_ldl_qq" >                                        <image href="psa1420475905055.image" id="image_cqk_xdl_qq"  placement="inline" width="550">                                            <alt >Active Alarms</alt>                                        </image>                                    </fig>                                </dd>                            </dlentry>                            <dlentry >                                <dt >Historical Alarm Table</dt>                                <dd >                                    <p >A history of set and clear alarm operations                                        in the system. The table includes the same variables as the                                        active alarm table, plus the variable                                            <varname >AlarmState</varname> used to indicate whether                                        the table entry is a SET or a CLEAR operation.</p>                                    <p >On the web interface, click the <uicontrol >Fault                                            Management</uicontrol> menu on the                                            <uicontrol >Admin</uicontrol> tab, and then select the                                            <uicontrol >Historical Alarms</uicontrol> tab. The alarm                                        history is displayed as illustrated below:</p>                                    <fig id="fig_mwl_12l_qq" >                                        <image href="psa1420476170224.image" id="image_lzp_22l_qq"  placement="inline" width="550">                                            <alt >Historical Alarms</alt>                                        </image>                                    </fig>                                </dd>                            </dlentry>                            <dlentry >                                <dt >Customer Log Table</dt>                                <dd >                                    <p >A list of all customer logs in the system.                                        The table includes the same variables as the Active Alarm                                        Table, with the exception that <varname >ProposedRepairAction</varname> and  <varname >SuppressionAllowed</varname> are                                        excluded.</p>                                    <p >On the web interface, click the <uicontrol >Fault Management</uicontrol> menu on                                        the <uicontrol >Admin</uicontrol> tab, and                                        then select the <uicontrol >Customer                                            Logs</uicontrol> tab. Logs are displayed as illustrated                                        below:</p>                                    <fig id="fig_cyy_xqx_bs" >                                        <image href="jow1432054510610.image" id="image_ixf_drx_bs"  width="5in">                                            <alt >TiS Customer Logs</alt>                                        </image>                                    </fig>                                </dd>                            </dlentry>                            <dlentry >                                <dt >Traps</dt>                                <dd >                                    <p >Defines the following generic traps:</p>                                    <ul id="ul_clc_vyl_hp">                                        <li >                                            <p ><b >wrsAlarmCritical</b></p>                                        </li>                                        <li >                                            <p ><b >wrsAlarmMajor</b></p>                                        </li>                                        <li >                                            <p ><b >wrsAlarmMinor</b></p>                                        </li>                                        <li >                                            <p ><b >wrsAlarmWarning</b></p>                                        </li>                                        <li >                                            <p ><b >wrsAlarmMessage</b></p>                                        </li>                                        <li >                                            <p ><b >wrsAlarmClear</b></p>                                        </li>                                        <li >                                            <p ><b >wrsAlarmHierarchicalClear</b></p>                                        </li>                                    </ul>                                </dd>                            </dlentry>                        </dl>                        <p >For all alarms, the Notification Type is based on the                            severity of the trap or alarm. This is done to facilitate the                            interaction with most SNMP trap viewers which typically use the                            Notification Type to drive the coloring of traps, that is, red for                            critical, yellow for minor, and so on. </p>                        <p >Customer Logs always result in <b >wrsAlarmMessage</b> traps.</p>                        <p >For Critical, Major, Minor, Warning, and Message traps, all                            variables in the active alarm table are included as <term >varbinds</term>.</p>                        <p >For the Clear trap, <term >varbinds</term> include                            only the <varname >AlarmID</varname>, <varname >EntityInstanceID</varname>, <varname >DateAndTime</varname>,                            and <varname >ReasonText</varname> variables.</p>                        <p >For the HierarchicalClear trap, <term >varbinds</term> include only the <varname >EntityInstanceID</varname>, <varname >DateAndTime</varname>,                            and <varname >ReasonText</varname> variables.</p>                    </dd>                </dlentry>            </dl>        </section>        <section id="section_N10272_N1001F_N10001" >            <title >Enabling SNMP Support</title>            <p >In order to have a workable SNMP configuration you must use the                command line interface on the active controller to:</p>            <ol id="ol_amx_tql_hp">                <li >                    <p >Define at least one SNMP community string. See <xref href="psa1408039460152.xml" /> for details.</p>                </li>                <li >                    <p >Configure at least one SNMP trap destination so that alarms                        can be reported as they happen. See <xref href="psa1408040130437.xml" /> for details.</p>                </li>            </ol>        </section>    </body></topic>

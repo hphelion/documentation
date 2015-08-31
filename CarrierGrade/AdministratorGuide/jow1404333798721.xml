@@ -1,130 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333798721" xml:lang="en-us">
-    <!-- Modification History
-   -->
-    <title >Controller Nodes and High Availability</title>
-    <shortdesc >Services in the controller nodes run constantly in active/standby mode
-        to provide continuity in the event of a controller failure.</shortdesc>
-    <prolog>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <p >Controller services are organized internally into the following groups:</p>
-        <table frame="all" id="table_vph_fyt_vp">
-            <title >Controller Service Groups</title>
-            <tgroup cols="2">
-                <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-                <colspec colname="c2" colnum="2" colwidth="3.0*"/>
-                <thead>
-                    <row>
-                        <entry >
-                            <p >Group</p>
-                        </entry>
-                        <entry >
-                            <p >Description</p>
-                        </entry>
-                    </row>
-                </thead>
-                <tbody>
-                    <row>
-                        <entry >
-                            <p >Cloud Services</p>
-                        </entry>
-                        <entry >
-                            <p >The enhanced OpenStack components, including Nova,
-                                Neutron, Cinder, Ceilometer, and Heat</p>
-                        </entry>
-                    </row>
-                    <row>
-                        <entry >
-                            <p >Controller Services</p>
-                        </entry>
-                        <entry >
-                            <p >Core HP Helion OpenStack Carrier Grade services such as maintenance and
-                                inventory</p>
-                        </entry>
-                    </row>
-                    <row>
-                        <entry >
-                            <p >Directory Services</p>
-                        </entry>
-                        <entry >
-                            <p >LDAP services</p>
-                        </entry>
-                    </row>
-                    <row>
-                        <entry >
-                            <p >OAM Services</p>
-                        </entry>
-                        <entry >
-                            <p >OAM access services</p>
-                        </entry>
-                    </row>
-                    <row>
-                        <entry >
-                            <p >Patching Services</p>
-                        </entry>
-                        <entry >
-                            <p >Patching alarm services</p>
-                        </entry>
-                    </row>
-                    <row>
-                        <entry >
-                            <p >Storage Monitoring Services</p>
-                        </entry>
-                        <entry >
-                            <p >Storage alarm services</p>
-                        </entry>
-                    </row>
-                    <row>
-                        <entry >
-                            <p >Storage Services</p>
-                        </entry>
-                        <entry >
-                            <p >Storage REST API services</p>
-                        </entry>
-                    </row>
-                    <row>
-                        <entry >
-                            <p >Web Services</p>
-                        </entry>
-                        <entry >
-                            <p >The HP Helion OpenStack Carrier Grade OpenStack Horizon service and web server</p>
-                        </entry>
-                    </row>
-                </tbody>
-            </tgroup>
-        </table>
-        <p >Each of these groups is run in 1:1 HA mode by the controllers. This means that while some
-      service groups can be active on controller-0, and in standby on controller-1, others are
-      active on controller-1, and in standby on controller-0.</p>
-        <p >The high-availability framework constantly monitors and reports on the health of the
-      individual services within each of the service groups on both controllers. When a service
-      fails, a decision is made on whether to restart it on the same controller, or to switch the
-      corresponding service group to the other controller. This decision depends on the criticality
-      and the dependencies of the affected service.</p>
-        <p >For maintenance purposes, when one of the controller nodes needs to be powered down for
-      service, it is necessary to force all currently active service groups in one controller to
-      switch to the other. This can be done from the <uicontrol >Hosts</uicontrol> tab on the
-        <wintitle >Inventory</wintitle> page, by selecting the option <option >swact</option> (switch
-      active) in the <uicontrol >More</uicontrol> menu of the controller you want to take out of
-      service.</p>
-        <section id="section_N100EE_N1001F_N10001" >
-            <title >The Active Controller</title>
-            <p >Services in the <codeph >Controller
-                    Services</codeph> group drive core functionality in the HP Helion OpenStack Carrier Grade.
-                The controller where they are running is referred to as the <term >active</term> controller. The <uicontrol >Hosts</uicontrol> tab
-                in the <wintitle >System Inventory</wintitle> page of the <uicontrol >Admin</uicontrol> panel lists the status of all hosts in the
-                cluster; it reports the active controller as having the <term >Controller-Active</term> personality.</p>
-            <p >When working from the CLI on a controller node it is often important
-                to ensure that you are working on the active controller, for example, to execute
-                OpenStack <codeph >admin</codeph> operations, or to change
-                the password of the <codeph >wrsroot</codeph> user account.
-                See <xref href="jow1404333563834.xml" /> for further details on the
-                    <codeph >wrsroot</codeph> account.</p>
-            <p >You can ensure you are working on the active controller by using the
-                OAM floating IP address as the destination address in the SSH command.</p>
-        </section>
-    </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333798721" xml:lang="en-us">    <!-- Modification History   -->    <title >Controller Nodes and High Availability</title>    <shortdesc >Services in the controller nodes run constantly in active/standby mode        to provide continuity in the event of a controller failure.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <p >Controller services are organized internally into the following groups:</p>        <table frame="all" id="table_vph_fyt_vp">            <title >Controller Service Groups</title>            <tgroup cols="2">                <colspec colname="c1" colnum="1" colwidth="1.0*"/>                <colspec colname="c2" colnum="2" colwidth="3.0*"/>                <thead>                    <row>                        <entry >                            <p >Group</p>                        </entry>                        <entry >                            <p >Description</p>                        </entry>                    </row>                </thead>                <tbody>                    <row>                        <entry >                            <p >Cloud Services</p>                        </entry>                        <entry >                            <p >The enhanced OpenStack components, including Nova,                                Neutron, Cinder, Ceilometer, and Heat</p>                        </entry>                    </row>                    <row>                        <entry >                            <p >Controller Services</p>                        </entry>                        <entry >                            <p >Core HP Helion OpenStack Carrier Grade services such as maintenance and                                inventory</p>                        </entry>                    </row>                    <row>                        <entry >                            <p >Directory Services</p>                        </entry>                        <entry >                            <p >LDAP services</p>                        </entry>                    </row>                    <row>                        <entry >                            <p >OAM Services</p>                        </entry>                        <entry >                            <p >OAM access services</p>                        </entry>                    </row>                    <row>                        <entry >                            <p >Patching Services</p>                        </entry>                        <entry >                            <p >Patching alarm services</p>                        </entry>                    </row>                    <row>                        <entry >                            <p >Storage Monitoring Services</p>                        </entry>                        <entry >                            <p >Storage alarm services</p>                        </entry>                    </row>                    <row>                        <entry >                            <p >Storage Services</p>                        </entry>                        <entry >                            <p >Storage REST API services</p>                        </entry>                    </row>                    <row>                        <entry >                            <p >Web Services</p>                        </entry>                        <entry >                            <p >The HP Helion OpenStack Carrier Grade OpenStack Horizon service and web server</p>                        </entry>                    </row>                </tbody>            </tgroup>        </table>        <p >Each of these groups is run in 1:1 HA mode by the controllers. This means that while some      service groups can be active on controller-0, and in standby on controller-1, others are      active on controller-1, and in standby on controller-0.</p>        <p >The high-availability framework constantly monitors and reports on the health of the      individual services within each of the service groups on both controllers. When a service      fails, a decision is made on whether to restart it on the same controller, or to switch the      corresponding service group to the other controller. This decision depends on the criticality      and the dependencies of the affected service.</p>        <p >For maintenance purposes, when one of the controller nodes needs to be powered down for      service, it is necessary to force all currently active service groups in one controller to      switch to the other. This can be done from the <uicontrol >Hosts</uicontrol> tab on the        <wintitle >Inventory</wintitle> page, by selecting the option <option >swact</option> (switch      active) in the <uicontrol >More</uicontrol> menu of the controller you want to take out of      service.</p>        <section id="section_N100EE_N1001F_N10001" >            <title >The Active Controller</title>            <p >Services in the <b >Controller                    Services</b> group drive core functionality in the HP Helion OpenStack Carrier Grade.                The controller where they are running is referred to as the <term >active</term> controller. The <uicontrol >Hosts</uicontrol> tab                in the <wintitle >System Inventory</wintitle> page of the <uicontrol >Admin</uicontrol> panel lists the status of all hosts in the                cluster; it reports the active controller as having the <term >Controller-Active</term> personality.</p>            <p >When working from the CLI on a controller node it is often important                to ensure that you are working on the active controller, for example, to execute                OpenStack <b >admin</b> operations, or to change                the password of the <b >wrsroot</b> user account.                See <xref href="jow1404333563834.xml" /> for further details on the                    <b >wrsroot</b> account.</p>            <p >You can ensure you are working on the active controller by using the                OAM floating IP address as the destination address in the SSH command.</p>        </section>    </body></topic>

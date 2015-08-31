@@ -1,448 +1,448 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
-<reference-wr id="jow1419271369349" xml:lang="en-us">
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1419271369349" xml:lang="en-us">
 <!-- This version is for use with the 15.x stream.
     
 -->
-  <title ixia_locid="376">The Controller Configuration Script</title>
-  <shortdesc conref="jow1419271183630.xml#jow1419271183630/shortdesc" ixia_locid="377"/>
+  <title 
+  <shortdesc conref="jow1419271183630.xml#jow1419271183630/shortdesc" 
   <prolog>
-    <author ixia_locid="378">Jim Owens</author>
+    <author 
   </prolog>
-  <refbody>
-    <section id="section_N1001F_N1001C_N10001" ixia_locid="379">
-      <p ixia_locid="6">The script is used to configure the first controller in the HP Helion OpenStack Carrier Grade
-        cluster as <nameliteral ixia_locid="370">controller-0</nameliteral> (see <xref href="jow1404333496222.xml" ixia_locid="8"/>). The prompts are grouped by configuration
+  <body>
+    <section id="section_N1001F_N1001C_N10001" 
+      <p 
+        cluster as <nameliteral 
         area. Details for each area are described in the following tables. Review them carefully
         before committing configuration changes to the controller. For configuration planning
-        information, see the <cite ixia_locid="375">HP Helion OpenStack Carrier Grade System Engineering
+        information, see the <cite 
           Guidelines</cite>.</p>
-      <note conref="jow1419271183630.xml#jow1419271183630/note_N1003D_N10027_N10024_N10001" id="note_N10037_N1001F_N1001C_N10001" ixia_locid="380"/>
-      <p conref="jow1419271183630.xml#jow1419271183630/apply_or_abort" ixia_locid="381"/>
+      <note conref="jow1419271183630.xml#jow1419271183630/note_N1003D_N10027_N10024_N10001" id="note_N10037_N1001F_N1001C_N10001" 
+      <p conref="jow1419271183630.xml#jow1419271183630/apply_or_abort" 
       <table id="table_vs3_pcb_3p">
         <tgroup cols="2">
           <colspec colname="prompts" colwidth="1.07*"/>
           <colspec colname="comments" colwidth="1*"/>
           <thead>
             <row>
-              <entry colname="prompts" ixia_locid="253">
-                <p ixia_locid="254">Prompt</p>
+              <entry colname="prompts" 
+                <p 
               </entry>
-              <entry colname="comments" ixia_locid="255">
-                <p ixia_locid="256">Comment</p>
+              <entry colname="comments" 
+                <p 
               </entry>
             </row>
           </thead>
           <tbody>
             <row>
-              <entry ixia_locid="16">
-                <p conref="jow1419271183630.xml#jow1419271183630/date_time_prompt" ixia_locid="382"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/date_time_prompt" 
               </entry>
-              <entry ixia_locid="18">
-                <p conref="jow1419271183630.xml#jow1419271183630/date_time" ixia_locid="383"/>
-                <p conref="jow1419271183630.xml#jow1419271183630/date_time_Install" ixia_locid="384"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="269" nameend="comments" namest="prompt">
-                <p conref="jow1419271183630.xml#jow1419271183630/storage_section" ixia_locid="385"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/date_time" 
+                <p conref="jow1419271183630.xml#jow1419271183630/date_time_Install" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="26">
-                <p conref="jow1419271183630.xml#jow1419271183630/backend_prompt" ixia_locid="481"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/storage_section" 
               </entry>
-              <entry ixia_locid="374">
-                <p conref="jow1419271183630.xml#jow1419271183630/backend" ixia_locid="387"/>
-                <note conref="jow1419271183630.xml#jow1419271183630/note_N10109_N100AF_N100A2_N1006D_N10041_N1003D_N10027_N10024_N10001" id="note_N100B0_N100A8_N1009C_N10070_N10044_N10040_N1001F_N1001C_N10001" ixia_locid="388"/>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/backend_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/backend" 
+                <note conref="jow1419271183630.xml#jow1419271183630/note_N10109_N100AF_N100A2_N1006D_N10041_N1003D_N10027_N10024_N10001" id="note_N100B0_N100A8_N1009C_N10070_N10044_N10040_N1001F_N1001C_N10001" 
                 <dl conref="jow1419271183630.xml#jow1419271183630/backend_Install">
-                  <dlentry ixia_locid="389">
-                    <dt ixia_locid="390"/>
-                    <dd ixia_locid="391"/>
+                  <dlentry 
+                    <dt 
+                    <dd 
                   </dlentry>
                 </dl>
-                <note conref="jow1419271183630.xml#jow1419271183630/note_N1012D_N100C7_N100BA_N10086_N1005A_N10056_N10027_N10024_N10001" id="note_N100C4_N100A8_N1009C_N10070_N10044_N10040_N1001F_N1001C_N10001" ixia_locid="392"/>
-                <p conref="jow1419271183630.xml#jow1419271183630/local_storage" ixia_locid="505"/>
+                <note conref="jow1419271183630.xml#jow1419271183630/note_N1012D_N100C7_N100BA_N10086_N1005A_N10056_N10027_N10024_N10001" id="note_N100C4_N100A8_N1009C_N10070_N10044_N10040_N1001F_N1001C_N10001" 
+                <p conref="jow1419271183630.xml#jow1419271183630/local_storage" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="318">
-                <p conref="jow1419271183630.xml#jow1419271183630/db_storage_prompt" ixia_locid="393"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/db_storage_prompt" 
               </entry>
-              <entry ixia_locid="322">
+              <entry 
                 
-                <p ixia_locid="324"><ph conref="jow1419271183630.xml#jow1419271183630/db_storage" ixia_locid="394"/><ph conref="jow1419271183630.xml#jow1419271183630/db_storage_Install" ixia_locid="395"/></p>
+                <p 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="46">
-                <p conref="jow1419271183630.xml#jow1419271183630/image_storage_prompt" ixia_locid="396"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/image_storage_prompt" 
               </entry>
-              <entry ixia_locid="48">
-                <p conref="jow1419271183630.xml#jow1419271183630/image_storage" ixia_locid="397"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="319">
-                <p conref="jow1419271183630.xml#jow1419271183630/backup_storage_prompt" ixia_locid="398"/>
-              </entry>
-              <entry ixia_locid="323">
-                <p ixia_locid="399"><ph conref="jow1419271183630.xml#jow1419271183630/backup_storage" ixia_locid="400"/><ph conref="jow1419271183630.xml#jow1419271183630/backup_storage_Install" ixia_locid="401"/></p>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/image_storage" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="205">
-                <p conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_prompt" ixia_locid="402"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/backup_storage_prompt" 
               </entry>
-              <entry ixia_locid="209">
-                <p ixia_locid="403"><ph conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_1" ixia_locid="404"/>
-                  <ph conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_Install_1" ixia_locid="405"/>
-                  <ph conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_2" ixia_locid="406"/>
-                  <ph conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_Install_2" ixia_locid="407"/>
+              <entry 
+                <p 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_prompt" 
+              </entry>
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_Install_1" 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_2" 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_Install_2" 
                 </p>
               </entry>
             </row>
             <row>
-              <entry ixia_locid="206">
-                <p conref="jow1419271183630.xml#jow1419271183630/vol_storage_prompt" ixia_locid="408"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/vol_storage_prompt" 
               </entry>
-              <entry ixia_locid="210">
-                <p conref="jow1419271183630.xml#jow1419271183630/vol_storage" ixia_locid="409"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="270" nameend="comments" namest="prompt">
-                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_network_section" ixia_locid="410"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/vol_storage" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="55">
-                <p ixia_locid="56">Management interface link aggregation [y/N]*</p>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_network_section" 
               </entry>
-              <entry ixia_locid="57">
-                <p ixia_locid="411"><ph conref="jow1419271183630.xml#jow1419271183630/mgmt_network_LAG" ixia_locid="412"/>
+            </row>
+            <row>
+              <entry 
+                <p 
+              </entry>
+              <entry 
+                <p 
                 </p>
-                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_network_LAG_Install" ixia_locid="413"/>
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_network_LAG_Install" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="213">
-                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_prompt" ixia_locid="414"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_prompt" 
               </entry>
-              <entry ixia_locid="221">
-                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_Install" ixia_locid="415"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="214">
-                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_MTU_prompt" ixia_locid="416"/>
-              </entry>
-              <entry ixia_locid="222">
-                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_MTU" ixia_locid="417"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_Install" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="65">
-                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_subnet_prompt" ixia_locid="418"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_MTU_prompt" 
               </entry>
-              <entry ixia_locid="67">
-                <p ixia_locid="68"><ph conref="jow1419271183630.xml#jow1419271183630/mgmt_subnet" ixia_locid="419"/>
-                  <ph conref="jow1419271183630.xml#jow1419271183630/mgmt_subnet_Install" ixia_locid="420"/></p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="271" nameend="comments" namest="prompt">
-                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_network_section" ixia_locid="421"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_MTU" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="235">
-                <p conref="jow1419271183630.xml#jow1419271183630/config_bd_mgmt_prompt" ixia_locid="422"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_subnet_prompt" 
               </entry>
-              <entry ixia_locid="237">
-                <p conref="jow1419271183630.xml#jow1419271183630/config_bd_mgmt_Install" ixia_locid="423"/>
-                <note conref="jow1419271183630.xml#jow1419271183630/config_bd_mgmt_OAM_note" id="note_N10221_N10218_N1020B_N10076_N1004A_N10046_N10022_N1001F_N10001" ixia_locid="531"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="239">
-                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_vlan_prompt" ixia_locid="424"/>
-              </entry>
-              <entry ixia_locid="241">
-                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_vlan_Install" ixia_locid="425"/>
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/mgmt_subnet_Install" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="243">
-                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_MTU_prompt" ixia_locid="426"/>
-              </entry>
-              <entry ixia_locid="245">
-                <p ixia_locid="227"><ph conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_MTU" ixia_locid="427"/>
-                  <ph conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_Install" ixia_locid="428"/>
-                </p>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_network_section" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="246">
-                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_subnet_prompt" ixia_locid="429"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/config_bd_mgmt_prompt" 
               </entry>
-              <entry ixia_locid="248">
-                <p ixia_locid="249"><ph conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_subnet" ixia_locid="430"/><ph conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_subnet_Install" ixia_locid="431"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/config_bd_mgmt_Install" 
+                <note conref="jow1419271183630.xml#jow1419271183630/config_bd_mgmt_OAM_note" id="note_N10221_N10218_N1020B_N10076_N1004A_N10046_N10022_N1001F_N10001" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_vlan_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_vlan_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_MTU_prompt" 
+              </entry>
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_Install" 
                 </p>
               </entry>
             </row>
             <row>
-              <entry ixia_locid="272" nameend="comments" namest="prompt">
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_network_section" ixia_locid="432"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_subnet_prompt" 
               </entry>
-            </row>
-            <row>
-              <entry ixia_locid="94">
-                <p conref="jow1419271183630.xml#jow1419271183630/config_infra_if_prompt" ixia_locid="433"/>
-              </entry>
-              <entry ixia_locid="96">
-                <p conref="jow1419271183630.xml#jow1419271183630/config_infra_if_Install" ixia_locid="434"/>
-                <p conref="jow1419271183630.xml#jow1419271183630/config_infra_if" ixia_locid="435"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="100">
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_LAG_prompt" ixia_locid="437"/>
-              </entry>
-              <entry ixia_locid="102">
-                <p ixia_locid="298"><ph conref="jow1419271183630.xml#jow1419271183630/infra_if_LAG" ixia_locid="438"/>
+              <entry 
+                <p 
                 </p>
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_LAG_Install" ixia_locid="439"/>
               </entry>
             </row>
             <row>
-              <entry ixia_locid="485">
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_prompt" ixia_locid="440"/>
-              </entry>
-              <entry ixia_locid="488">
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_Install" ixia_locid="441"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_network_section" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="486">
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_vlan_prompt" ixia_locid="491"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/config_infra_if_prompt" 
               </entry>
-              <entry ixia_locid="489">
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_vlan" ixia_locid="492"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="487">
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_vlan_id_prompt" ixia_locid="493"/>
-              </entry>
-              <entry ixia_locid="490">
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_vlan_id" ixia_locid="494"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/config_infra_if_Install" 
+                <p conref="jow1419271183630.xml#jow1419271183630/config_infra_if" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="215">
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_MTU_prompt" ixia_locid="442"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_LAG_prompt" 
               </entry>
-              <entry ixia_locid="223">
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_MTU" ixia_locid="443"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="110">
-                <p conref="jow1419271183630.xml#jow1419271183630/infra_subnet_prompt" ixia_locid="444"/>
-              </entry>
-              <entry ixia_locid="112">
-                <p ixia_locid="113"><ph conref="jow1419271183630.xml#jow1419271183630/infra_subnet" ixia_locid="445"/>
-                  <ph conref="jow1419271183630.xml#jow1419271183630/infra_subnet_Install" ixia_locid="446"/></p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="273" nameend="comments" namest="prompt">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_section" ixia_locid="447"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="135">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_LAG_prompt" ixia_locid="448"/>
-              </entry>
-              <entry ixia_locid="137">
-                <p ixia_locid="302"><ph conref="jow1419271183630.xml#jow1419271183630/ext_OAM_LAG" ixia_locid="449"/>
+              <entry 
+                <p 
                 </p>
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_LAG_Install" ixia_locid="450"/>
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_LAG_Install" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="495">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_if_prompt" ixia_locid="451"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_prompt" 
               </entry>
-              <entry ixia_locid="498">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_if_Install" ixia_locid="452"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="496">
-                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan_prompt" ixia_locid="501"/>
-              </entry>
-              <entry ixia_locid="499">
-                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan" ixia_locid="502"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_Install" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="497">
-                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan_id_prompt" ixia_locid="503"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_vlan_prompt" 
               </entry>
-              <entry ixia_locid="500">
-                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan_id" ixia_locid="504"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="216">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_MTU_prompt" ixia_locid="453"/>
-              </entry>
-              <entry ixia_locid="224">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_MTU" ixia_locid="454"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_vlan" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="145">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_subnet_prompt" ixia_locid="455"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_vlan_id_prompt" 
               </entry>
-              <entry ixia_locid="147">
-                <p ixia_locid="148"><ph conref="jow1419271183630.xml#jow1419271183630/ext_OAM_subnet" ixia_locid="456"/>
-                  <ph conref="jow1419271183630.xml#jow1419271183630/ext_OAM_subnet_Install" ixia_locid="457"/></p>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="149">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_gateway_prompt" ixia_locid="458"/>
-              </entry>
-              <entry ixia_locid="151">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_gateway" ixia_locid="459"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_vlan_id" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="153">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_floating_prompt" ixia_locid="460"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_MTU_prompt" 
               </entry>
-              <entry ixia_locid="155">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_floating" ixia_locid="461"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="157">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c1_prompt" ixia_locid="462"/>
-              </entry>
-              <entry ixia_locid="159">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c1_Install" ixia_locid="463"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_MTU" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="161">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c2_prompt" ixia_locid="464"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_subnet_prompt" 
               </entry>
-              <entry ixia_locid="163">
-                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c2_Install" ixia_locid="465"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="330" nameend="comments" namest="prompt">
-                <p conref="jow1419271183630.xml#jow1419271183630/DNS_section" ixia_locid="466"/>
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/infra_subnet_Install" 
               </entry>
             </row>
             <row>
-              <entry conref="jow1419271183630.xml#jow1419271183630/nameservers_prompts" ixia_locid="467"/>
-              <entry ixia_locid="174">
-                <p conref="jow1419271183630.xml#jow1419271183630/nameservers" ixia_locid="468"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_section" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="331" nameend="comments" namest="prompt">
-                <p conref="jow1419271183630.xml#jow1419271183630/NTP_section" ixia_locid="469"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_LAG_prompt" 
+              </entry>
+              <entry 
+                <p 
+                </p>
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_LAG_Install" 
               </entry>
             </row>
             <row>
-              <entry conref="jow1419271183630.xml#jow1419271183630/timeservers_prompts" ixia_locid="470"/>
-              <entry ixia_locid="185">
-                <p ixia_locid="482"><ph conref="jow1419271183630.xml#jow1419271183630/timeservers" ixia_locid="483"/>
-                  <ph conref="jow1419271183630.xml#jow1419271183630/timeservers_ntp_pool" ixia_locid="484"/></p>
-                <p conref="jow1419271183630.xml#jow1419271183630/timeservers_Install" ixia_locid="472"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_if_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_if_Install" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="343" nameend="comments" namest="prompt">
-                <p conref="jow1419271183630.xml#jow1419271183630/license_section" ixia_locid="473"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="506">
-                <p conref="jow1419271183630.xml#jow1419271183630/license_prompt" ixia_locid="474"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan_id_prompt" 
               </entry>
-              <entry ixia_locid="509">
-                <p conref="jow1419271183630.xml#jow1419271183630/license" ixia_locid="475"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="507">
-                <p conref="jow1419271183630.xml#jow1419271183630/api_https_section" ixia_locid="512"/>
-              </entry>
-              <entry ixia_locid="510"/>
-            </row>
-            <row>
-              <entry ixia_locid="517">
-                <p conref="jow1419271183630.xml#jow1419271183630/api_https_prompt" ixia_locid="516"/>
-              </entry>
-              <entry ixia_locid="521">
-                <p conref="jow1419271183630.xml#jow1419271183630/api_https_desc" ixia_locid="514"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan_id" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="518">
-                <p conref="jow1419271183630.xml#jow1419271183630/api_https_self-signed_prompt" ixia_locid="525"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_MTU_prompt" 
               </entry>
-              <entry ixia_locid="522">
-                <p conref="jow1419271183630.xml#jow1419271183630/api_https_self-signed" ixia_locid="526"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="519">
-                <p conref="jow1419271183630.xml#jow1419271183630/api_https_CA-signed_prompt" ixia_locid="527"/>
-              </entry>
-              <entry ixia_locid="523">
-                <p conref="jow1419271183630.xml#jow1419271183630/api_https_CA-signed" ixia_locid="528"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_MTU" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="520">
-                <p conref="jow1419271183630.xml#jow1419271183630/api_https_passphrase_prompt" ixia_locid="529"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_subnet_prompt" 
               </entry>
-              <entry ixia_locid="524">
-                <p conref="jow1419271183630.xml#jow1419271183630/api_https_passphrase" ixia_locid="530"/>
-              </entry>
-            </row>
-            <row>
-              <entry ixia_locid="344" nameend="comments" namest="prompt">
-                <p conref="jow1419271183630.xml#jow1419271183630/auth_section" ixia_locid="476"/>
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/ext_OAM_subnet_Install" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="193">
-                <p conref="jow1419271183630.xml#jow1419271183630/password_prompt" ixia_locid="477"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_gateway_prompt" 
               </entry>
-              <entry ixia_locid="195">
-                <p conref="jow1419271183630.xml#jow1419271183630/password" ixia_locid="478"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_gateway" 
               </entry>
             </row>
             <row>
-              <entry ixia_locid="199">
-                <p conref="jow1419271183630.xml#jow1419271183630/password_confirm_prompt" ixia_locid="479"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_floating_prompt" 
               </entry>
-              <entry ixia_locid="201">
-                <p conref="jow1419271183630.xml#jow1419271183630/password_confirm" ixia_locid="480"/>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_floating" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c1_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c1_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c2_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c2_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/DNS_section" 
+              </entry>
+            </row>
+            <row>
+              <entry conref="jow1419271183630.xml#jow1419271183630/nameservers_prompts" 
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/nameservers" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/NTP_section" 
+              </entry>
+            </row>
+            <row>
+              <entry conref="jow1419271183630.xml#jow1419271183630/timeservers_prompts" 
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/timeservers_ntp_pool" 
+                <p conref="jow1419271183630.xml#jow1419271183630/timeservers_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/license_section" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/license_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/license" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_section" 
+              </entry>
+              <entry 
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_desc" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_self-signed_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_self-signed" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_CA-signed_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_CA-signed" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_passphrase_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_passphrase" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/auth_section" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/password_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/password" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/password_confirm_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/password_confirm" 
               </entry>
             </row>
           </tbody>
         </tgroup>
       </table>
     </section>
-  </refbody>
-</reference-wr>
+  </body>
+</topic>

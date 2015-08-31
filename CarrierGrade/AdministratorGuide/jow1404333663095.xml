@@ -1,114 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333663095" xml:lang="en-us">
-    <!-- Modification History
-   -->
-    <title >Virtual Machine Flavors</title>
-    <shortdesc >A flavor is a list of attributes applied to a virtual machine when a
-        new instance is created. It specifies resources to be allocated by the system, such as size
-        of RAM, number of cores, storage resources, and so on.</shortdesc>
-    <prolog>
-        <author >Jim Owens</author>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <p >You can create and edit flavors using the <wintitle >Flavors</wintitle>
-            page of the web administration interface. To access this page, open the
-                <uicontrol >Admin</uicontrol> menu, expand the <uicontrol >System</uicontrol> section,
-            and then select <uicontrol >Flavors</uicontrol>.</p>
-        <ul id="ul_iln_ycv_tr">
-            <li >
-                <p >To create a flavor, click the <uicontrol >Create
-                        Flavor</uicontrol> button. The <wintitle >Create
-                        Flavor</wintitle> window appears, as illustrated below:</p>
-                <fig id="fig_N10027_N1001C_N10001" >
-                    <image href="jow1404333661555.image" id="image_tl3_33x_zn"  placement="inline"/>
-                </fig>
-                <p >The <wintitle >Create Flavor</wintitle> window
-                    has two tabs.</p>
-                <dl>
-                    <dlentry >
-                        <dt ><uicontrol >Flavor
-                                Information</uicontrol></dt>
-                        <dd >
-                            <p >Defines basic information for the flavor.</p>
-                            <dl>
-                                <dlentry >
-                                    <dt >Name</dt>
-                                    <dd >
-                                        <p >The name to be associated with the
-                                            flavor.</p>
-                                    </dd>
-                                </dlentry>
-                                <dlentry >
-                                    <dt >ID</dt>
-                                    <dd >
-                                        <p >The object ID to associate with the
-                                            flavor. In most situations you should leave the default
-                                            value of <codeph >auto</codeph>
-                                            for the system to auto-generate a unique ID.</p>
-                                    </dd>
-                                </dlentry>
-                                <dlentry >
-                                    <dt >VCPUs</dt>
-                                    <dd >
-                                        <p >Number of virtual CPUs to be allocated to
-                                            the virtual machine.</p>
-                                    </dd>
-                                </dlentry>
-                                <dlentry >
-                                    <dt >RAM MB</dt>
-                                    <dd >
-                                        <p >Memory, in megabytes, to be allocated to
-                                            the virtual machine.</p>
-                                    </dd>
-                                </dlentry>
-                                <dlentry >
-                                    <dt >Root Disk GB</dt>
-                                    <dd >
-                                        <p >Specifies the virtual root disk size in
-                                            gigabytes. This is an ephemeral disk to which the base
-                                            image is copied. Use the value <codeph >0</codeph> to set the
-                                            ephemeral disk size equal to the base image size. </p>
-                                        <note id="note_N10144_N1001F_N10001" >
-                                            <p >Booting the VM from the ephemeral
-                                                root disk is not recommended. Always boot from
-                                                persistent storage by launching the instance from a
-                                                Cinder volume.</p>
-                                        </note>
-                                    </dd>
-                                </dlentry>
-                                <dlentry >
-                                    <dt >Ephemeral Disk GB</dt>
-                                    <dd >
-                                        <p >Specifies the size, in gigabytes, of a
-                                            secondary ephemeral data disk. This is an empty,
-                                            unformatted disk that exists only for the life time of
-                                            the instance.</p>
-                                    </dd>
-                                </dlentry>
-                                <dlentry >
-                                    <dt >Swap Disk MB</dt>
-                                    <dd >
-                                        <p >Ephemeral swap space, in megabytes, to be
-                                            allocated to the instance.</p>
-                                    </dd>
-                                </dlentry>
-                            </dl>
-                        </dd>
-                    </dlentry>
-                    <dlentry >
-                        <dt ><uicontrol >Flavor Access</uicontrol></dt>
-                        <dd >
-                            <p >Controls which projects can see and use the flavor. </p>
-                        </dd>
-                    </dlentry>
-                </dl>
-            </li>
-            <li >
-                <p >To edit an existing flavor, click its name in the <codeph >Flavor Name</codeph> column. For more information
-                    about editing flavors, see <xref href="jow1429538642910.xml" />.</p>
-            </li>
-        </ul>
-    </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333663095" xml:lang="en-us">    <!-- Modification History   -->    <title >Virtual Machine Flavors</title>    <shortdesc >A flavor is a list of attributes applied to a virtual machine when a        new instance is created. It specifies resources to be allocated by the system, such as size        of RAM, number of cores, storage resources, and so on.</shortdesc>    <prolog>        <author >Jim Owens</author>        <author >Pedro Sanchez</author>    </prolog>    <body>        <p >You can create and edit flavors using the <wintitle >Flavors</wintitle>            page of the web administration interface. To access this page, open the                <uicontrol >Admin</uicontrol> menu, expand the <uicontrol >System</uicontrol> section,            and then select <uicontrol >Flavors</uicontrol>.</p>        <ul id="ul_iln_ycv_tr">            <li >                <p >To create a flavor, click the <uicontrol >Create                        Flavor</uicontrol> button. The <wintitle >Create                        Flavor</wintitle> window appears, as illustrated below:</p>                <fig id="fig_N10027_N1001C_N10001" >                    <image href="jow1404333661555.image" id="image_tl3_33x_zn"  placement="inline"/>                </fig>                <p >The <wintitle >Create Flavor</wintitle> window                    has two tabs.</p>                <dl>                    <dlentry >                        <dt ><uicontrol >Flavor                                Information</uicontrol></dt>                        <dd >                            <p >Defines basic information for the flavor.</p>                            <dl>                                <dlentry >                                    <dt >Name</dt>                                    <dd >                                        <p >The name to be associated with the                                            flavor.</p>                                    </dd>                                </dlentry>                                <dlentry >                                    <dt >ID</dt>                                    <dd >                                        <p >The object ID to associate with the                                            flavor. In most situations you should leave the default                                            value of <b >auto</b>                                            for the system to auto-generate a unique ID.</p>                                    </dd>                                </dlentry>                                <dlentry >                                    <dt >VCPUs</dt>                                    <dd >                                        <p >Number of virtual CPUs to be allocated to                                            the virtual machine.</p>                                    </dd>                                </dlentry>                                <dlentry >                                    <dt >RAM MB</dt>                                    <dd >                                        <p >Memory, in megabytes, to be allocated to                                            the virtual machine.</p>                                    </dd>                                </dlentry>                                <dlentry >                                    <dt >Root Disk GB</dt>                                    <dd >                                        <p >Specifies the virtual root disk size in                                            gigabytes. This is an ephemeral disk to which the base                                            image is copied. Use the value <b >0</b> to set the                                            ephemeral disk size equal to the base image size. </p>                                        <note id="note_N10144_N1001F_N10001" >                                            <p >Booting the VM from the ephemeral                                                root disk is not recommended. Always boot from                                                persistent storage by launching the instance from a                                                Cinder volume.</p>                                        </note>                                    </dd>                                </dlentry>                                <dlentry >                                    <dt >Ephemeral Disk GB</dt>                                    <dd >                                        <p >Specifies the size, in gigabytes, of a                                            secondary ephemeral data disk. This is an empty,                                            unformatted disk that exists only for the life time of                                            the instance.</p>                                    </dd>                                </dlentry>                                <dlentry >                                    <dt >Swap Disk MB</dt>                                    <dd >                                        <p >Ephemeral swap space, in megabytes, to be                                            allocated to the instance.</p>                                    </dd>                                </dlentry>                            </dl>                        </dd>                    </dlentry>                    <dlentry >                        <dt ><uicontrol >Flavor Access</uicontrol></dt>                        <dd >                            <p >Controls which projects can see and use the flavor. </p>                        </dd>                    </dlentry>                </dl>            </li>            <li >                <p >To edit an existing flavor, click its name in the <b >Flavor Name</b> column. For more information                    about editing flavors, see <xref href="jow1429538642910.xml" />.</p>            </li>        </ul>    </body></topic>

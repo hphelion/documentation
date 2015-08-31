@@ -1,536 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333790046" xml:lang="en-us">
-    <!-- Modification History
-   -->
-    <title >Host Inventory</title>
-    <shortdesc >The <uicontrol >Hosts</uicontrol> tab on the <wintitle >System Inventory</wintitle> page provides an overview of the current
-        state of all hosts in the HP Helion OpenStack Carrier Grade cluster. From this tab, you can obtain detailed
-        information about the hosts, and execute maintenance operations.</shortdesc>
-    <prolog>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <p >A sample hosts tab is illustrated below:</p>
-        <fig id="fig_N1002B_N10024_N10001" >
-            <image href="Fig_1_page_86.JPG" id="image_fkn_nbs_l4"  placement="inline" width="6in"/>
-        </fig>
-        <p >The information is refreshed periodically to reflect the ongoing changes
-            on the cluster. It consists of the following columns:</p>
-        <dl>
-            <dlentry >
-                <dt >Host Name</dt>
-                <dd >
-                    <p >The name assigned to the host. This is an active link
-                        pointing to the detailed inventory page for the host. See <xref href="jow1404333758794.xml" /> for details.</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Personality</dt>
-                <dd >
-                    <p >The personality of the host (controller, compute, or
-                        storage).</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Admin State</dt>
-                <dd >
-                    <p >The administrative state of the host. It can be in one of two
-                        states:</p>
-                    <dl>
-                        <dlentry >
-                            <dt >Locked</dt>
-                            <dd >
-                                <p >The host is administratively prohibited from
-                                    performing services. This is the initial state for hosts
-                                    auto-discovered in the cluster.</p>
-                                <p >A controller node in this state is not functioning in HA mode, and it is not
-                  running any active controller services.</p>
-                                <p >Compute nodes in this state do not provide any
-                                    service. In particular, a locked compute node is not running any
-                                    virtual machine instances, and no new ones will be scheduled to
-                                    run on it.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt >Unlocked</dt>
-                            <dd >
-                                <p >The host is administratively in service.</p>
-                                <p >A controller node in this state, and not in the
-                                    failed state, is active in its HA role, and is running the
-                                    assigned controller services.</p>
-                                <p >A compute node in this state, and not in the
-                                    failed state, is eligible for regular scheduling and maintenance
-                                    operations on virtual machines.</p>
-                                <p >A storage node in this state, and not in the failed state,
-                                    provides storage services.</p>
-                            </dd>
-                        </dlentry>
-                    </dl>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Operational State</dt>
-                <dd >
-                    <p >The operational state of the host. It can be in one of two
-                        states:</p>
-                    <dl>
-                        <dlentry >
-                            <dt >Disabled</dt>
-                            <dd >
-                                <p >Indicates that the host is not providing the
-                                    expected services. This may be due to the fact that it is in the
-                                    process of being unlocked, a failure has occurred, or it is
-                                    being automatically recovered due to a failure.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt >Enabled</dt>
-                            <dd >
-                                <p >Indicates that the host is providing the expected
-                                    services, even if its operational environment is compromised. In
-                                    the latter case, the host is reported to be in the <i >degraded</i> availability state, in which
-                                    case, state maintenance is constantly trying to recover the host
-                                    to fully <i >available</i> state through
-                                    in-service testing.</p>
-                            </dd>
-                        </dlentry>
-                    </dl>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Availability State</dt>
-                <dd >
-                    <p >The availability state of the host. It can be in one of the
-                        following states:</p>
-                    <dl>
-                        <dlentry >
-                            <dt >Offline</dt>
-                            <dd >
-                                <p >The host is known to the HP Helion OpenStack Carrier Grade, but is
-                                    not reachable for maintenance purposes.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt >Online</dt>
-                            <dd >
-                                <p >The host is reachable and ready to be
-                                    unlocked.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt >InTest</dt>
-                            <dd >
-                                <p >A transient state that occurs when transitioning
-                                    from locked, or from a <i >failed</i> operational
-                                    state, to unlocked states. While in this state, the host is
-                                    executing a series of tests to validate its hardware and
-                                    software integrity.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt >Available</dt>
-                            <dd >
-                                <p >The host is fully operational and providing
-                                    services.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt >Degraded</dt>
-                            <dd >
-                                <p >The host is experiencing compromised operational
-                                    conditions, such as low memory, but is still providing the
-                                    expected services. Details about the compromised conditions are
-                                    available through the alarms subsystem. See <xref href="jow1404333759364.xml" /> for
-                                    details.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt >Failed</dt>
-                            <dd >
-                                <p >A major fault has occurred and the host is no
-                                    longer providing any services. The HP Helion OpenStack Carrier Grade maintenance
-                                    system automatically tries to recover hosts in this state.</p>
-                                <p >In the case of a compute node, any virtual
-                                    machines that were running before are immediately evacuated to
-                                    another enabled compute node with sufficient available
-                                    resources.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt >Power-off</dt>
-                            <dd >
-                                <p >The host is known to have been powered off by a
-                                    previous maintenance action. </p>
-                            </dd>
-                        </dlentry>
-                    </dl>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Uptime</dt>
-                <dd >
-                    <p >The uptime of the host, as reported by the system maintenance
-                        service.</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Status</dt>
-                <dd >
-                    <p >An indicator of the immediate activity occurring on the host.
-                        It reports transitory steps such as booting, initializing, configuration out
-                        of date, and in-test, which a host goes through as it transitions from one
-                        administrative or availability state to another.</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Actions</dt>
-                <dd >
-                    <p >The actions columns presents two buttons, as follows:</p>
-                    <dl>
-                        <dlentry >
-                            <dt ><uicontrol >Edit Host</uicontrol></dt>
-                            <dd >
-                                <p >Clicking this button displays the <wintitle >Edit Host</wintitle> window as
-                  illustrated below for a compute node:</p>
-                                <fig id="fig_N101C5_N101BA_N101B1_N101AE_N101A7_N101A0_N1003B_N10024_N10001" >
-                                    <image href="jow1404333759894.image" id="image_bnc_dty_l4"  placement="inline" width="4in"/>
-                                </fig>
-                                <p >From this window you can modify the host name
-                                    (compute nodes only), and apply profiles as needed.
-                                    For more about profiles, see <xref href="jow1404333787693.xml" />.</p>
-                                <p >The <uicontrol >Board
-                                        Management</uicontrol> tab gives you access to the
-                                    configuration of the management board, if available on the host.
-                                    See <xref href="jow1406727863674.xml" /> for details.</p>
-                                <p >Note that this is the same window you use to
-                                    assign the host's personality when installing HP Helion
-                                    OpenStack on the host.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt ><uicontrol >More</uicontrol> (when
-                                host is locked)</dt>
-                            <dd >
-                                <p >This button gives you access to the list of
-                                    maintenance operations that can be initiated on the host. The
-                                    list is context sensitive whereby only permissible command
-                                    operations are displayed.</p>
-                                <dl>
-                                    <dlentry >
-                                        <dt >Unlock Host</dt>
-                                        <dd >
-                                            <p >Used to bring a host into service.
-                                                The first step is to reset the target host to ensure
-                                                that it starts from a well-known state. The host is
-                                                automatically configured, and any required software
-                                                patches are applied.</p>
-                                            <p >The state transition only succeeds
-                                                if all the necessary configuration components for
-                                                the host are already in place. For example, the
-                                                state transition is rejected on a compute node for
-                                                which no data interfaces are defined.</p>
-                                            <p >You can unlock a host from the
-                                                controller's command line, as follows:</p>
-                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-unlock <varname >hostname</varname></userinput></codeblock>
-                                        </dd>
-                                    </dlentry>
-                                    <dlentry >
-                                        <dt >Power Off Host</dt>
-                                        <dd >
-                                            <p >Gracefully powers off the host,
-                                                ensuring that all system processes are properly shut
-                                                off first. This selection is available if board
-                                                management is configured on the system, the host is
-                                                equipped with an iLO module, and the host is in a
-                                                powered-on state. </p>
-                                            <p >You can power off a host from the
-                                                controller's command line, as follows:</p>
-                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-power-off <varname >hostname</varname></userinput></codeblock>
-                                        </dd>
-                                    </dlentry>
-                                    <dlentry >
-                                        <dt >Power On Host</dt>
-                                        <dd >
-                                            <p >Powers on the host. This selection
-                                                is available if board management is configured on
-                                                the system, the host is equipped with an iLO module,
-                                                and the host is in a powered-off state.</p>
-                                            <p >You can power on a host from the
-                                                controller's command line, as follows:</p>
-                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-power-on <varname >hostname</varname></userinput></codeblock>
-                                        </dd>
-                                    </dlentry>
-                                    <dlentry >
-                                        <dt >Reboot Host</dt>
-                                        <dd >
-                                            <p >Gracefully shuts down the host,
-                                                ensuring that all system processes are properly shut
-                                                off first. The host then reboots automatically.</p>
-                                            <p >You can reboot a host from the
-                                                controller's command line, as follows:</p>
-                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-reboot <varname >hostname</varname></userinput></codeblock>
-                                        </dd>
-                                    </dlentry>
-                                    <dlentry >
-                                        <dt >Reset Host</dt>
-                                        <dd >
-                                            <p >Use this selection only if
-                                                  <uicontrol >Reboot Host</uicontrol> fails.  It
-                                                performs an out-of-band reset, stopping and
-                                                restarting the host without ensuring that all system
-                                                processes are shut off first.</p>
-                                            <p >This selection is available if board
-                                                management is configured on the system, the host is
-                                                equipped with an iLO module, and the host is in a
-                                                powered-on state. </p>
-                                            <p >You can reset a host from the
-                                                controller's command line, as follows:</p>
-                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-reset <varname >hostname</varname></userinput></codeblock>
-                                        </dd>
-                                    </dlentry>
-                                    <dlentry >
-                                        <dt >Reinstall Host</dt>
-                                        <dd >
-                                            <p >Forces a full re-installation of the
-                                                HP Helion OpenStack Carrier Grade software on the host. The host's
-                                                hard drive is erased, and the installation process
-                                                is started afresh.</p>
-                                            <note conref="rst1432737677834.xml#rst1432737677834/note_N10195_N10154_N1001F_N10001" id="note_N10195_N10154_N1001F_N10001" />                                            
-                                        </dd>
-                                    </dlentry>
-                                    <dlentry >
-                                        <dt >Delete Host</dt>
-                                        <dd >
-                                            <p >Removes the host from the inventory database, and its hard drive is
-                        erased.</p>
-                                            <p >You can delete a host from the
-                                                controller's command line, as follows:</p>
-                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-delete <varname >hostname</varname></userinput></codeblock>
-                                        </dd>
-                                    </dlentry>
-                                    <dlentry >
-                                        <dt >Install Patches</dt>
-                                        <dd >
-                                            <p >Initiates any pending patching operations. Once
-                                                successfully executed, the host returns back to the
-                                                locked state. See <xref href="psa1410446455735.xml" /> for details.</p>
-                                            <p >This option is only available if there are patching
-                                                operations pending for the host.</p>
-                                        </dd>
-                                    </dlentry>
-                                </dl>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt ><uicontrol >More</uicontrol> (when
-                                host is unlocked)</dt>
-                            <dd >
-                                <p >This button gives you access to the list of
-                                    maintenance operations that can be initiated on the host. The
-                                    list is context sensitive whereby only permissible command
-                                    operations are displayed.</p>
-                                <dl>
-                                    <dlentry >
-                                        <dt >Lock Host</dt>
-                                        <dd >
-                                            <p >Attempts to bring the host out of
-                                                service.</p>
-                                            <p >On a controller node, the state
-                                                transition only succeeds if there are no services
-                                                running in active mode on the host.</p>
-                                            <p >On a compute node, the state
-                                                transition only succeeds if all currently running
-                                                instances on the host can be migrated to alternative
-                                                compute nodes. Migration of the virtual machine
-                                                instances is initiated automatically as soon as the
-                                                state transition is requested.</p>
-                                            <note id="note_N103DD_N103CA_N103C1_N103BE_N103B5_N103A8_N10204_N101FB_N101F2_N10044_N10029_N10001" >
-                                                <p conref="jow1426942555025.xml#jow1426942555025/local-storage-cold-migration" />
-                                            </note>
-                                            <p >You can lock a host from the
-                                                controller's command line, as follows:</p>
-                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-lock <varname >hostname</varname></userinput></codeblock>
-                                        </dd>
-                                    </dlentry>
-                                    <dlentry >
-                                        <dt >Forced Lock Host</dt>
-                                        <dd >
-                                            <p >Forces the host to be out of
-                                                service. Use this option only if for some reason you
-                                                cannot bring the host out of service using the
-                                                  <option >Lock Host</option>
-                                                option. When selected, the system displays a warning
-                                                message appropriate to the personality of the host.
-                                                Use this option with caution.</p>
-                                            <p >You can force lock a host from the
-                                                controller's command line, as follows:</p>
-                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-lock --force <varname >hostname</varname></userinput></codeblock>
-                                            <p >Note that a force lock operation on a
-                                                compute node causes an immediate service outage on
-                                                all hosted virtual machines.</p>
-                                        </dd>
-                                    </dlentry>
-                                    <dlentry >
-                                        <dt >Swact Host</dt>
-                                        <dd >
-                                            <p >This operation is available on
-                                                controller nodes only, and should be run on the
-                                                active controller to initiate a switch of the
-                                                active/standby roles.</p>
-                                            <p ><codeph >Swact</codeph> is an abbreviated form of the
-                                                term <codeph >Switch
-                                                  Active</codeph> (host). When selected, this
-                                                option forces the other controller to become the
-                                                active one in the HA cluster. This means that all
-                                                active system services on this controller move to
-                                                standby operation, and that the corresponding
-                                                services on the other controller become active.</p>
-                                            <p >Use this option when you need to
-                                                lock the currently active controller, or do any kind
-                                                of maintenance procedures, for example, when
-                                                updating hardware or replacing faulty
-                                                components.</p>
-                                            <p >You can swact a host from the
-                                                controller's command line, as follows:</p>
-                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-swact --force <varname >hostname</varname></userinput></codeblock>
-                                        </dd>
-                                    </dlentry>
-                                    <dlentry >
-                                        <dt >Install Patches</dt>
-                                        <dd >
-                                            <p >Initiates any pending patching operations. Once
-                                                successfully executed, the host returns back to the
-                                                unlocked state. See <xref href="psa1410446455735.xml" /> for details.</p>
-                                            <p >This option is only available if there are patching
-                                                operations pending for the host.</p>
-                                        </dd>
-                                    </dlentry>
-                                </dl>
-                            </dd>
-                        </dlentry>
-                    </dl>
-                </dd>
-            </dlentry>
-        </dl>
-        <section id="section_N1028E_N10024_N10001" >
-            <title >The Life Cycle of a host</title>
-            <p >The life cycle of a host is the set of state transitions the host
-                goes through as its current state changes. The host states in the HP Helion OpenStack Carrier Grade
-                are based on the <cite >ITU X.731 State Management Function
-                    Specification for Open Systems</cite>.</p>
-            <p >The current state of a host is determined by the allowed
-                combinations of the administrative, operational, and availability states at any
-                given time. The following figure illustrates the life cycle of a host.</p>
-            <fig id="fig_N1029C_N10290_N10024_N10001" >
-                <title >The Life Cycle of a Host</title>
-                <image href="jow1404333788253.image" id="image_szm_1lq_n4"  placement="inline" width="4in"/>
-            </fig>
-            <p >In this figure:</p>
-            <ul id="ul_opf_4lq_n4">
-                <li >
-                    <p >the administrative states, locked and unlocked, are presented in two columns</p>
-                </li>
-                <li >
-                    <p >the operational states, disabled and enabled, are presented in two rows</p>
-                </li>
-                <li >
-                    <p >the availability states are presented as elements inside the administrative/operational
-            matrix</p>
-                </li>
-            </ul>
-            <p >The description that follows uses the availability states only, since for each state the
-        corresponding administrative and operational states can be read directly from the
-        figure.</p>
-            <p >The life cycle of a new host starts when it is discovered by the
-                active controller on the internal management network. A new host is initially
-                reported as <i >Offline</i>. As an exception, the first controller,
-                    <codeph >controller-0</codeph>, is automatically set
-                to <i >available</i> during initial commissioning. The following are
-                the available transitions. Numbers are attached to them for easier reference:</p>
-            <dl>
-                <dlentry >
-                    <dt >(1) 
-                        <i >Offline</i> to 
-                        <i >Online</i>
-                    </dt>
-                    <dd >
-                        <p >This transition takes place once the administrator
-                            configures the host name and personality of the host. During the
-                            transition, the HP Helion OpenStack Carrier Grade software is installed and the host
-                            reboots. The transition concludes when the controller establishes
-                            maintenance and inventory connectivity with the new host.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >(2) 
-                        <i >Online</i> to 
-                        <i >InTest</i>
-                    </dt>
-                    <dd >
-                        <p >This transition takes place when the administrator
-                            requests to move the host from the locked to the unlocked administrative
-                            states. The host reboots first. After it finishes booting, it
-                            establishes maintenance communication and enters the transient
-                                <codeph >InTest</codeph> state. While in
-                            this state, the configuration is applied, and a set of hardware and
-                            software tests are executed to ensure the integrity of the host.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >(3) 
-                        <i >InTest</i> to 
-                        <i >Available</i>, 
-                        <i >Degraded</i>, or 
-                        <i >Failed</i>
-                    </dt>
-                    <dd >
-                        <p >The transition is initiated automatically after the
-                            activities in the transient state <codeph >inTest</codeph> are complete. Depending on the outcome, the
-                            host goes into one the three states.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >(4) 
-                        <i >Failed</i> to 
-                        <i >InTest</i>
-                    </dt>
-                    <dd >
-                        <p >This is a value-added maintenance transition that the HA
-                            framework executes automatically to recover failed hosts.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >(5) 
-                        <i >Available</i> to/from 
-                        <i >Degraded</i>, 
-                        <i >Available</i> to 
-                        <i >Failed</i>, and
-              
-                        <i >Degraded</i> to 
-                        <i >Failed</i>
-                    </dt>
-                    <dd >
-                        <p >These are transitions that may occur at any time due to
-                            changes on the operational state and faults on unlocked hosts.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >(6) 
-                        <i >Available</i>, 
-                        <i >Degraded</i>, or 
-                        <i >Failed</i>, to 
-                        <i >Offline</i>
-                    </dt>
-                    <dd >
-                        <p >These are maintenance transitions that take place
-                            automatically to reflect the operational state of a host.</p>
-                        <p >On a compute node in <i >Available</i>
-                            or <i >Degraded</i> state, the transition triggers the
-                            migration of the active instances to another available compute node.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-        </section>
-    </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333790046" xml:lang="en-us">    <!-- Modification History   -->    <title >Host Inventory</title>    <shortdesc >The <uicontrol >Hosts</uicontrol> tab on the <wintitle >System Inventory</wintitle> page provides an overview of the current        state of all hosts in the HP Helion OpenStack Carrier Grade cluster. From this tab, you can obtain detailed        information about the hosts, and execute maintenance operations.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <p >A sample hosts tab is illustrated below:</p>        <fig id="fig_N1002B_N10024_N10001" >            <image href="Fig_1_page_86.JPG" id="image_fkn_nbs_l4"  placement="inline" width="6in"/>        </fig>        <p >The information is refreshed periodically to reflect the ongoing changes            on the cluster. It consists of the following columns:</p>        <dl>            <dlentry >                <dt >Host Name</dt>                <dd >                    <p >The name assigned to the host. This is an active link                        pointing to the detailed inventory page for the host. See <xref href="jow1404333758794.xml" /> for details.</p>                </dd>            </dlentry>            <dlentry >                <dt >Personality</dt>                <dd >                    <p >The personality of the host (controller, compute, or                        storage).</p>                </dd>            </dlentry>            <dlentry >                <dt >Admin State</dt>                <dd >                    <p >The administrative state of the host. It can be in one of two                        states:</p>                    <dl>                        <dlentry >                            <dt >Locked</dt>                            <dd >                                <p >The host is administratively prohibited from                                    performing services. This is the initial state for hosts                                    auto-discovered in the cluster.</p>                                <p >A controller node in this state is not functioning in HA mode, and it is not                  running any active controller services.</p>                                <p >Compute nodes in this state do not provide any                                    service. In particular, a locked compute node is not running any                                    virtual machine instances, and no new ones will be scheduled to                                    run on it.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >Unlocked</dt>                            <dd >                                <p >The host is administratively in service.</p>                                <p >A controller node in this state, and not in the                                    failed state, is active in its HA role, and is running the                                    assigned controller services.</p>                                <p >A compute node in this state, and not in the                                    failed state, is eligible for regular scheduling and maintenance                                    operations on virtual machines.</p>                                <p >A storage node in this state, and not in the failed state,                                    provides storage services.</p>                            </dd>                        </dlentry>                    </dl>                </dd>            </dlentry>            <dlentry >                <dt >Operational State</dt>                <dd >                    <p >The operational state of the host. It can be in one of two                        states:</p>                    <dl>                        <dlentry >                            <dt >Disabled</dt>                            <dd >                                <p >Indicates that the host is not providing the                                    expected services. This may be due to the fact that it is in the                                    process of being unlocked, a failure has occurred, or it is                                    being automatically recovered due to a failure.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >Enabled</dt>                            <dd >                                <p >Indicates that the host is providing the expected                                    services, even if its operational environment is compromised. In                                    the latter case, the host is reported to be in the <i >degraded</i> availability state, in which                                    case, state maintenance is constantly trying to recover the host                                    to fully <i >available</i> state through                                    in-service testing.</p>                            </dd>                        </dlentry>                    </dl>                </dd>            </dlentry>            <dlentry >                <dt >Availability State</dt>                <dd >                    <p >The availability state of the host. It can be in one of the                        following states:</p>                    <dl>                        <dlentry >                            <dt >Offline</dt>                            <dd >                                <p >The host is known to the HP Helion OpenStack Carrier Grade, but is                                    not reachable for maintenance purposes.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >Online</dt>                            <dd >                                <p >The host is reachable and ready to be                                    unlocked.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >InTest</dt>                            <dd >                                <p >A transient state that occurs when transitioning                                    from locked, or from a <i >failed</i> operational                                    state, to unlocked states. While in this state, the host is                                    executing a series of tests to validate its hardware and                                    software integrity.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >Available</dt>                            <dd >                                <p >The host is fully operational and providing                                    services.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >Degraded</dt>                            <dd >                                <p >The host is experiencing compromised operational                                    conditions, such as low memory, but is still providing the                                    expected services. Details about the compromised conditions are                                    available through the alarms subsystem. See <xref href="jow1404333759364.xml" /> for                                    details.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >Failed</dt>                            <dd >                                <p >A major fault has occurred and the host is no                                    longer providing any services. The HP Helion OpenStack Carrier Grade maintenance                                    system automatically tries to recover hosts in this state.</p>                                <p >In the case of a compute node, any virtual                                    machines that were running before are immediately evacuated to                                    another enabled compute node with sufficient available                                    resources.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >Power-off</dt>                            <dd >                                <p >The host is known to have been powered off by a                                    previous maintenance action. </p>                            </dd>                        </dlentry>                    </dl>                </dd>            </dlentry>            <dlentry >                <dt >Uptime</dt>                <dd >                    <p >The uptime of the host, as reported by the system maintenance                        service.</p>                </dd>            </dlentry>            <dlentry >                <dt >Status</dt>                <dd >                    <p >An indicator of the immediate activity occurring on the host.                        It reports transitory ol such as booting, initializing, configuration out                        of date, and in-test, which a host goes through as it transitions from one                        administrative or availability state to another.</p>                </dd>            </dlentry>            <dlentry >                <dt >Actions</dt>                <dd >                    <p >The actions columns presents two buttons, as follows:</p>                    <dl>                        <dlentry >                            <dt ><uicontrol >Edit Host</uicontrol></dt>                            <dd >                                <p >Clicking this button displays the <wintitle >Edit Host</wintitle> window as                  illustrated below for a compute node:</p>                                <fig id="fig_N101C5_N101BA_N101B1_N101AE_N101A7_N101A0_N1003B_N10024_N10001" >                                    <image href="jow1404333759894.image" id="image_bnc_dty_l4"  placement="inline" width="4in"/>                                </fig>                                <p >From this window you can modify the host name                                    (compute nodes only), and apply profiles as needed.                                    For more about profiles, see <xref href="jow1404333787693.xml" />.</p>                                <p >The <uicontrol >Board                                        Management</uicontrol> tab gives you access to the                                    configuration of the management board, if available on the host.                                    See <xref href="jow1406727863674.xml" /> for details.</p>                                <p >Note that this is the same window you use to                                    assign the host's personality when installing HP Helion                                    OpenStack on the host.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt ><uicontrol >More</uicontrol> (when                                host is locked)</dt>                            <dd >                                <p >This button gives you access to the list of                                    maintenance operations that can be initiated on the host. The                                    list is section sensitive whereby only permissible command                                    operations are displayed.</p>                                <dl>                                    <dlentry >                                        <dt >Unlock Host</dt>                                        <dd >                                            <p >Used to bring a host into service.                                                The first li is to reset the target host to ensure                                                that it starts from a well-known state. The host is                                                automatically configured, and any required software                                                patches are applied.</p>                                            <p >The state transition only succeeds                                                if all the necessary configuration components for                                                the host are already in place. For example, the                                                state transition is rejected on a compute node for                                                which no data interfaces are defined.</p>                                            <p >You can unlock a host from the                                                controller's command line, as follows:</p>                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-unlock <varname >hostname</varname></userinput></codeblock>                                        </dd>                                    </dlentry>                                    <dlentry >                                        <dt >Power Off Host</dt>                                        <dd >                                            <p >Gracefully powers off the host,                                                ensuring that all system processes are properly shut                                                off first. This selection is available if board                                                management is configured on the system, the host is                                                equipped with an iLO module, and the host is in a                                                powered-on state. </p>                                            <p >You can power off a host from the                                                controller's command line, as follows:</p>                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-power-off <varname >hostname</varname></userinput></codeblock>                                        </dd>                                    </dlentry>                                    <dlentry >                                        <dt >Power On Host</dt>                                        <dd >                                            <p >Powers on the host. This selection                                                is available if board management is configured on                                                the system, the host is equipped with an iLO module,                                                and the host is in a powered-off state.</p>                                            <p >You can power on a host from the                                                controller's command line, as follows:</p>                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-power-on <varname >hostname</varname></userinput></codeblock>                                        </dd>                                    </dlentry>                                    <dlentry >                                        <dt >Reboot Host</dt>                                        <dd >                                            <p >Gracefully shuts down the host,                                                ensuring that all system processes are properly shut                                                off first. The host then reboots automatically.</p>                                            <p >You can reboot a host from the                                                controller's command line, as follows:</p>                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-reboot <varname >hostname</varname></userinput></codeblock>                                        </dd>                                    </dlentry>                                    <dlentry >                                        <dt >Reset Host</dt>                                        <dd >                                            <p >Use this selection only if                                                  <uicontrol >Reboot Host</uicontrol> fails.  It                                                performs an out-of-band reset, stopping and                                                restarting the host without ensuring that all system                                                processes are shut off first.</p>                                            <p >This selection is available if board                                                management is configured on the system, the host is                                                equipped with an iLO module, and the host is in a                                                powered-on state. </p>                                            <p >You can reset a host from the                                                controller's command line, as follows:</p>                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-reset <varname >hostname</varname></userinput></codeblock>                                        </dd>                                    </dlentry>                                    <dlentry >                                        <dt >Reinstall Host</dt>                                        <dd >                                            <p >Forces a full re-installation of the                                                HP Helion OpenStack Carrier Grade software on the host. The host's                                                hard drive is erased, and the installation process                                                is started afresh.</p>                                            <note conref="rst1432737677834.xml#rst1432737677834/note_N10195_N10154_N1001F_N10001" id="note_N10195_N10154_N1001F_N10001" />                                                                                    </dd>                                    </dlentry>                                    <dlentry >                                        <dt >Delete Host</dt>                                        <dd >                                            <p >Removes the host from the inventory database, and its hard drive is                        erased.</p>                                            <p >You can delete a host from the                                                controller's command line, as follows:</p>                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-delete <varname >hostname</varname></userinput></codeblock>                                        </dd>                                    </dlentry>                                    <dlentry >                                        <dt >Install Patches</dt>                                        <dd >                                            <p >Initiates any pending patching operations. Once                                                successfully executed, the host returns back to the                                                locked state. See <xref href="psa1410446455735.xml" /> for details.</p>                                            <p >This option is only available if there are patching                                                operations pending for the host.</p>                                        </dd>                                    </dlentry>                                </dl>                            </dd>                        </dlentry>                        <dlentry >                            <dt ><uicontrol >More</uicontrol> (when                                host is unlocked)</dt>                            <dd >                                <p >This button gives you access to the list of                                    maintenance operations that can be initiated on the host. The                                    list is section sensitive whereby only permissible command                                    operations are displayed.</p>                                <dl>                                    <dlentry >                                        <dt >Lock Host</dt>                                        <dd >                                            <p >Attempts to bring the host out of                                                service.</p>                                            <p >On a controller node, the state                                                transition only succeeds if there are no services                                                running in active mode on the host.</p>                                            <p >On a compute node, the state                                                transition only succeeds if all currently running                                                instances on the host can be migrated to alternative                                                compute nodes. Migration of the virtual machine                                                instances is initiated automatically as soon as the                                                state transition is requested.</p>                                            <note id="note_N103DD_N103CA_N103C1_N103BE_N103B5_N103A8_N10204_N101FB_N101F2_N10044_N10029_N10001" >                                                <p conref="jow1426942555025.xml#jow1426942555025/local-storage-cold-migration" />                                            </note>                                            <p >You can lock a host from the                                                controller's command line, as follows:</p>                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-lock <varname >hostname</varname></userinput></codeblock>                                        </dd>                                    </dlentry>                                    <dlentry >                                        <dt >Forced Lock Host</dt>                                        <dd >                                            <p >Forces the host to be out of                                                service. Use this option only if for some reason you                                                cannot bring the host out of service using the                                                  <option >Lock Host</option>                                                option. When selected, the system displays a warning                                                message appropriate to the personality of the host.                                                Use this option with caution.</p>                                            <p >You can force lock a host from the                                                controller's command line, as follows:</p>                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-lock --force <varname >hostname</varname></userinput></codeblock>                                            <p >Note that a force lock operation on a                                                compute node causes an immediate service outage on                                                all hosted virtual machines.</p>                                        </dd>                                    </dlentry>                                    <dlentry >                                        <dt >Swact Host</dt>                                        <dd >                                            <p >This operation is available on                                                controller nodes only, and should be run on the                                                active controller to initiate a switch of the                                                active/standby roles.</p>                                            <p ><b >Swact</b> is an abbreviated form of the                                                term <b >Switch                                                  Active</b> (host). When selected, this                                                option forces the other controller to become the                                                active one in the HA cluster. This means that all                                                active system services on this controller move to                                                standby operation, and that the corresponding                                                services on the other controller become active.</p>                                            <p >Use this option when you need to                                                lock the currently active controller, or do any kind                                                of maintenance procedures, for example, when                                                updating hardware or replacing faulty                                                components.</p>                                            <p >You can swact a host from the                                                controller's command line, as follows:</p>                                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput> <userinput >system host-swact --force <varname >hostname</varname></userinput></codeblock>                                        </dd>                                    </dlentry>                                    <dlentry >                                        <dt >Install Patches</dt>                                        <dd >                                            <p >Initiates any pending patching operations. Once                                                successfully executed, the host returns back to the                                                unlocked state. See <xref href="psa1410446455735.xml" /> for details.</p>                                            <p >This option is only available if there are patching                                                operations pending for the host.</p>                                        </dd>                                    </dlentry>                                </dl>                            </dd>                        </dlentry>                    </dl>                </dd>            </dlentry>        </dl>        <section id="section_N1028E_N10024_N10001" >            <title >The Life Cycle of a host</title>            <p >The life cycle of a host is the set of state transitions the host                goes through as its current state changes. The host states in the HP Helion OpenStack Carrier Grade                are based on the <cite >ITU X.731 State Management Function                    Specification for Open Systems</cite>.</p>            <p >The current state of a host is determined by the allowed                combinations of the administrative, operational, and availability states at any                given time. The following figure illustrates the life cycle of a host.</p>            <fig id="fig_N1029C_N10290_N10024_N10001" >                <title >The Life Cycle of a Host</title>                <image href="jow1404333788253.image" id="image_szm_1lq_n4"  placement="inline" width="4in"/>            </fig>            <p >In this figure:</p>            <ul id="ul_opf_4lq_n4">                <li >                    <p >the administrative states, locked and unlocked, are presented in two columns</p>                </li>                <li >                    <p >the operational states, disabled and enabled, are presented in two rows</p>                </li>                <li >                    <p >the availability states are presented as elements inside the administrative/operational            matrix</p>                </li>            </ul>            <p >The description that follows uses the availability states only, since for each state the        corresponding administrative and operational states can be read directly from the        figure.</p>            <p >The life cycle of a new host starts when it is discovered by the                active controller on the internal management network. A new host is initially                reported as <i >Offline</i>. As an exception, the first controller,                    <b >controller-0</b>, is automatically set                to <i >available</i> during initial commissioning. The following are                the available transitions. Numbers are attached to them for easier reference:</p>            <dl>                <dlentry >                    <dt >(1)                         <i >Offline</i> to                         <i >Online</i>                    </dt>                    <dd >                        <p >This transition takes place once the administrator                            configures the host name and personality of the host. During the                            transition, the HP Helion OpenStack Carrier Grade software is installed and the host                            reboots. The transition concludes when the controller establishes                            maintenance and inventory connectivity with the new host.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >(2)                         <i >Online</i> to                         <i >InTest</i>                    </dt>                    <dd >                        <p >This transition takes place when the administrator                            requests to move the host from the locked to the unlocked administrative                            states. The host reboots first. After it finishes booting, it                            establishes maintenance communication and enters the transient                                <b >InTest</b> state. While in                            this state, the configuration is applied, and a set of hardware and                            software tests are executed to ensure the integrity of the host.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >(3)                         <i >InTest</i> to                         <i >Available</i>,                         <i >Degraded</i>, or                         <i >Failed</i>                    </dt>                    <dd >                        <p >The transition is initiated automatically after the                            activities in the transient state <b >inTest</b> are complete. Depending on the outcome, the                            host goes into one the three states.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >(4)                         <i >Failed</i> to                         <i >InTest</i>                    </dt>                    <dd >                        <p >This is a value-added maintenance transition that the HA                            framework executes automatically to recover failed hosts.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >(5)                         <i >Available</i> to/from                         <i >Degraded</i>,                         <i >Available</i> to                         <i >Failed</i>, and                                      <i >Degraded</i> to                         <i >Failed</i>                    </dt>                    <dd >                        <p >These are transitions that may occur at any time due to                            changes on the operational state and faults on unlocked hosts.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >(6)                         <i >Available</i>,                         <i >Degraded</i>, or                         <i >Failed</i>, to                         <i >Offline</i>                    </dt>                    <dd >                        <p >These are maintenance transitions that take place                            automatically to reflect the operational state of a host.</p>                        <p >On a compute node in <i >Available</i>                            or <i >Degraded</i> state, the transition triggers the                            migration of the active instances to another available compute node.</p>                    </dd>                </dlentry>            </dl>        </section>    </body></topic>

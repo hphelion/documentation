@@ -310,7 +310,7 @@
             <p >The LVM/iSCSCI and Ceph-based storage backend options are exclusive.
 
 
-                You select one or another when configuring <codeph >controller-0</codeph> by selecting the appropriate storage option. Select
+                You select one or another when configuring <b >controller-0</b> by selecting the appropriate storage option. Select
 
 
                     <uicontrol >lvm</uicontrol> for the LVM/iSCSCI backend, or

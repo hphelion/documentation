@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" >
+<topic xml:lang="en-us" id="m" >
 
 
     <title >Security Groups</title>
@@ -78,10 +78,10 @@
         </fig>
 
 
-        <p >You can then drag and drop security groups from the section <codeph >All Security
+        <p >You can then drag and drop security groups from the section <b >All Security
 
 
-    Groups</codeph> to the section <codeph >Instance Security Groups</codeph>. The
+    Groups</b> to the section <b >Instance Security Groups</b>. The
 
 
    selected security groups are applied immediately once the configuration is saved.</p>

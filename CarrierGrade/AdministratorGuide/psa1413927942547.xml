@@ -1,1136 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
-<reference-wr id="psa1413927942547" xml:lang="en-us">
-<!-- Modification History
-    
--->
-  <title >Alarms Reference Table</title>
-  <shortdesc >The system inventory and maintenance service reports system changes with different
-    degrees of severity. Use the reported alarms to monitor the overall health of the
-    system.</shortdesc>
-  <prolog>
-        <author >Jim Owens</author>
-    <author >Pedro Sanchez</author>
-  </prolog>
-  <refbody>
-        <section id="section_N10022_N1001F_N10001" >
-            <p >In the following tables the severity of the alarms is represented
-                 by one or more letters, as follows:</p>
-            <ul id="ul_jsd_jkg_vp">
-                <li >
-                    <p >C: Critical</p>
-                </li>
-                <li >
-                    <p >M: Major</p>
-                </li>
-                <li >
-                    <p >m: Minor</p>
-                </li>
-                <li >
-                    <p >W: Warning</p>
-                </li>
-            </ul>
-            <p >A comma-separated list of letters is used when the alarm can be triggered with one of
-                several severity levels.</p>
-        </section>
-        <section id="section_N10050_N1001F_N10001" >
-            <title >Resource Alarms</title>
-        <simpletable outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
-            <sthead>
-                <stentry >
-                    <p >Alarm ID</p>
-                </stentry>
-                <stentry >
-                    <p >Reason Text</p>
-                </stentry>
-                <stentry >
-                    <p >Entity Instance ID</p>
-                </stentry>
-                <stentry >
-                    <p >Severity</p>
-                </stentry>
-                <stentry >
-                    <p >Proposed Repair Action</p>
-                </stentry>
-            </sthead>
-            <strow>
-                <stentry >
-                    <p >100.101</p>
-                </stentry>
-                <stentry >
-                    <p >Platform CPU threshold exceeded; threshold x%, actual y%</p>
-                </stentry>
-                <stentry >
-                    <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                </stentry>
-                <stentry >
-                    <p >C, M, m</p>
-                </stentry>
-                <stentry >
-                    <p >Monitor, and if condition persists, contact next level of
-                            support.</p>
-                </stentry>
-            </strow>
-            <strow>
-                <stentry >
-                    <p >100.102</p>
-                </stentry>
-                <stentry >
-                    <p >AVS CPU threshold exceeded; threshold x%, actual y%</p>
-                </stentry>
-                <stentry >
-                    <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                </stentry>
-                <stentry >
-                    <p >C, M, m</p>
-                </stentry>
-                <stentry >
-                    <p >Monitor, and if condition persists, contact next level of
-                            support.</p>
-                </stentry>
-            </strow>
-            <strow>
-                <stentry >
-                    <p >100.103</p>
-                </stentry>
-                <stentry >
-                    <p >Memory threshold exceeded; threshold x%, actual y%</p>
-                </stentry>
-                <stentry >
-                    <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                </stentry>
-                <stentry >
-                    <p >C, M, m</p>
-                </stentry>
-                <stentry >
-                    <p >Monitor, and if condition persists, contact next level of
-                            support; may require additional memory on host.</p>
-                </stentry>
-            </strow>
-            <strow>
-                <stentry >
-                    <p >100.104</p>
-                </stentry>
-                <stentry >
-                    <p >File System threshold exceeded; threshold x%, actual y%</p>
-                </stentry>
-                <stentry >
-                    <p >host=&lt;<varname >hostname</varname>&gt;.filesystem=&lt;<varname >mount-dir</varname>&gt;</p>
-                        <p >or</p>
-                        <p >filesystem=&lt;<varname >mount-dir</varname>&gt;</p>
-                        <p >or</p>
-                        <p >host=&lt;<varname >hostname</varname>&gt;.volumegroup=&lt;<varname >volumegroup-name</varname>&gt;</p>
-                </stentry>
-                <stentry >
-                    <p >C, M, m</p>
-                </stentry>
-                <stentry >
-                    <p >(for filesystem) Monitor, and if condition persists, contact
-                            next level of support.</p>
-                        <p >(for volumegroup) Monitor, and if condition persists,
-                            consider adding additional physical volumes to the volume group</p>
-                </stentry>
-            </strow>
-        </simpletable>
-        </section>
-        <section id="section_N1016C_N1001F_N10001" >
-            <title >Maintenance Alarms</title>
-            <simpletable id="simpletable_vk1_qhg_vp2" outputclass="wide" relcolwidth="1.22* 2.28* 2.5* 1.0* 3.33*">
-                <sthead>
-                    <stentry >
-                        <p >Alarm ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Reason Text</p>
-                    </stentry>
-                    <stentry >
-                        <p >Entity Instance ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Severity</p>
-                    </stentry>
-                    <stentry >
-                        <p >Proposed Repair Action</p>
-                    </stentry>
-                </sthead>
-                <strow>
-                    <stentry >
-                        <p >100.105</p>
-                    </stentry>
-                    <stentry >
-                        <p >No access to remote VM volumes.</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Check management and infrastructure networks. Check
-                            controller nodes.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >100.106</p>
-                    </stentry>
-                    <stentry >
-                        <p >OAM Port failed</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;.port=&lt;<varname >port-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Check cabling, far-end port configuration, and status on
-                            adjacent equipment.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >100.107</p>
-                    </stentry>
-                    <stentry >
-                        <p >OAM Interface failed</p>
-                        <p >or</p>
-                        <p >OAM Interface degraded</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;.interface=&lt;<varname >if-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C, M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Check cabling, far-end port configuration, and status on
-                            adjacent equipment.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >100.108</p>
-                    </stentry>
-                    <stentry >
-                        <p >MGMT Port failed</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;.port=&lt;<varname >port-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Check cabling, far-end port configuration, and status on
-                            adjacent equipment.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >100.109</p>
-                    </stentry>
-                    <stentry >
-                        <p >MGMT Interface failed</p>
-                        <p >or</p>
-                        <p >MGMT Interface degraded</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;.interface=&lt;<varname >if-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C, M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Check cabling, far-end port configuration, and status on
-                            adjacent equipment.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >100.110</p>
-                    </stentry>
-                    <stentry >
-                        <p >INFRA Port failed</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;.port=&lt;<varname >port-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Check cabling, far-end port configuration, and status on
-                            adjacent equipment.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >100.111</p>
-                    </stentry>
-                    <stentry >
-                        <p >INFRA Interface failed</p>
-                        <p >or</p>
-                        <p >INFRA Interface degraded</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;.interface=&lt;<varname >if-name</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C, M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Check cabling, far-end port configuration, and status on
-                            adjacent equipment.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >200.001</p>
-                    </stentry>
-                    <stentry >
-                        <p >Host was administratively locked to take it
-                            out-of-service</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >W</p>
-                    </stentry>
-                    <stentry >
-                        <p >Administratively unlock host to bring it back
-                            in-service.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >200.004</p>
-                    </stentry>
-                    <stentry >
-                        <p >Host experienced a service-affecting failure.</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C</p>
-                    </stentry>
-                    <stentry >
-                        <p >If problem consistently occurs after host is reset,
-                            contact next level of support, or lock and replace failing host.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >200.005</p>
-                    </stentry>
-                    <stentry >
-                        <p >Degrade: Host is experiencing an intermittent
-                            infrastructure network communication failure that has exceeded its lower
-                            alarming threshold.</p>
-                        <p >Failure: Host is experiencing a persistent critical
-                            infrastructure Network communication failure. Resetting Host.</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C, M</p>
-                    </stentry>
-                    <stentry >
-                        <p >If problem consistently occurs after host is reset,
-                            contact next level of support, or lock and replace failing host.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >200.006</p>
-                    </stentry>
-                    <stentry >
-                        <p >One or more critical processes on host have failed and
-                            can not be recovered. Resetting host</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C, M</p>
-                    </stentry>
-                    <stentry >
-                        <p >If problem consistently occurs after host is reset,
-                            contact next level of support or lock and replace failing host.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >200.007</p>
-                    </stentry>
-                    <stentry >
-                        <p >Degrade: Host is degraded due to out-of-tolerance
-                            readings from sensors: '&lt;<varname >sensor
-                                list</varname>&gt;'</p>
-                        <p >Critical: One or more sensors: '&lt;<varname >sensor list</varname>&gt;' on Host are reporting
-                            persistent critical failure</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C, M</p>
-                    </stentry>
-                    <stentry >
-                        <p >If problem consistently occurs after Host is power cycled and or reset,
-                            contact next level of support or lock and replace failing host.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >200.008</p>
-                    </stentry>
-                    <stentry >
-                        <p ><i >ntpd</i> process has failed on
-                            host</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >m</p>
-                    </stentry>
-                    <stentry >
-                        <p ><i >ntpd</i> is a process that can not
-                            be auto recovered. The host must be re-enabled (locked and then
-                            unlocked) to clear this alarm. If the alarm persists then contact next
-                            level of support to investigate and recover.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >200.009</p>
-                    </stentry>
-                    <stentry >
-                        <p >Degrade: Host is experiencing an intermittent
-                            infrastructure network communication failure that has exceeded its lower
-                            alarming threshold.</p>
-                        <p >Failure: Host is experiencing a persistent critical
-                            infrastructure Network communication failure. Resetting Host.</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C, M</p>
-                    </stentry>
-                    <stentry >
-                        <p >If problem consistently occurs after host is reset,
-                            contact next level of support, or lock and replace failing host.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >200.010</p>
-                    </stentry>
-                    <stentry >
-                        <p >Access to board management module has failed</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >W</p>
-                    </stentry>
-                    <stentry >
-                        <p >Check host's board management configuration and
-                            connectivity.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >200.011</p>
-                    </stentry>
-                    <stentry >
-                        <p >Host encountered a critical configuration failure during initialization.
-                            Resetting Host.</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >If problem consistently occurs after Host is reset, contact next level of
-                            support or lock and replace failing host.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >200.012</p>
-                    </stentry>
-                    <stentry >
-                        <p >In-Service failure of host's controller function while compute services
-                            remain healthy.</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Lock and then Unlock host to recover. Avoid using 'Force Lock' action as
-                            that will impact compute services running on this host. If lock action
-                            fails then contact next level of support to investigate and recover.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >200.013</p>
-                    </stentry>
-                    <stentry >
-                        <p >In-Service failure of host's compute function on host with only available
-                            and healthy controller service.</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Enable second controller as soon as possible and then optionally Lock and
-                            Unlock host to recover local compute services on this host.</p>
-                    </stentry>
-                </strow>
-            </simpletable>
-        </section>
-        <section id="section_N10457_N1001F_N10001" >
-            <title >Storage Alarms</title>
-            <simpletable id="simpletable_vk1_qhg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
-                <sthead>
-                    <stentry >
-                        <p >Alarm ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Reason Text</p>
-                    </stentry>
-                    <stentry >
-                        <p >Entity Instance ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Severity</p>
-                    </stentry>
-                    <stentry >
-                        <p >Proposed Repair Action</p>
-                    </stentry>
-                </sthead>
-                <strow>
-                    <stentry >
-                        <p >800.001</p>
-                    </stentry>
-                    <stentry >
-                        <p >Storage alarm condition: &lt;<varname >failure
-                                reason</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >cluster=&lt;<varname >dist-fs-uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C, M</p>
-                    </stentry>
-                    <stentry >
-                        <p >If problem persists, contact next level of support.</p>
-                    </stentry>
-                </strow>
-            </simpletable>
-        </section>
-        <section id="section_N104D2_N1001F_N10001" >
-            <title >Data Networking Alarms</title>
-            <simpletable id="simpletable_igr_n3g_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
-                <sthead>
-                    <stentry >
-                        <p >Alarm ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Reason Text</p>
-                    </stentry>
-                    <stentry >
-                        <p >Entity Instance ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Severity</p>
-                    </stentry>
-                    <stentry >
-                        <p >Proposed Repair Action</p>
-                    </stentry>
-                </sthead>
-                <strow>
-                    <stentry >
-                        <p >300.001</p>
-                    </stentry>
-                    <stentry >
-                        <p >Data port failed</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;.port=&lt;<varname >port-uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Check cabling, far-end port configuration, and status on
-                            adjacent equipment.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >300.002</p>
-                    </stentry>
-                    <stentry >
-                        <p >Data interface failed</p>
-                        <p >or</p>
-                        <p >Data interface degraded</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;.interface=&lt;<varname >if-uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C, M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Check cabling, far-end port configuration, and status on
-                            adjacent equipment.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >300.003</p>
-                    </stentry>
-                    <stentry >
-                        <p >Networking agent not responding</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;.agent=&lt;<varname >agent-uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >If condition persists, attempt to clear issue by
-                            administratively locking and unlocking the host.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >300.004</p>
-                    </stentry>
-                    <stentry >
-                        <p >No enabled compute node with connectivity to provider
-                            network</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;.providernet=&lt;<varname >pnet-uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Enable compute nodes with required provider network
-                            connectivity.</p>
-                    </stentry>
-                </strow>
-            </simpletable>
-        </section>
-        <section id="section_N105EF_N1001F_N10001" >
-            <title >Controller HA Alarms</title>
-            <simpletable id="simpletable_m4b_v3g_vp" outputclass="wide" relcolwidth="1.2* 4.0* 3.0* 1.2* 4.0*">
-                <sthead>
-                    <stentry >
-                        <p >Alarm ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Reason Text</p>
-                    </stentry>
-                    <stentry >
-                        <p >Entity Instance ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Severity</p>
-                    </stentry>
-                    <stentry >
-                        <p >Proposed Repair Action</p>
-                    </stentry>
-                </sthead>
-                <strow>
-                    <stentry >
-                        <p >400.001</p>
-                    </stentry>
-                    <stentry >
-                        <p >Service group failure; &lt;<varname >list of affected
-                                services</varname>&gt;</p>
-                        <p >or</p>
-                        <p >Service group degraded; &lt;<varname >list of affected
-                                services</varname>&gt;</p>
-                        <p >or</p>
-                        <p >Service group warning; &lt;<varname >list of affected
-                                services</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >service_domain=&lt;<varname >domain_name</varname>&gt;.service_group=&lt;<varname >group_name</varname>&gt;.host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C, M, m</p>
-                    </stentry>
-                    <stentry >
-                        <p >Contact next level of support.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >400.002</p>
-                    </stentry>
-                    <stentry >
-                        <p >Service group loss of redundancy; expected
-                                &lt;<varname >num</varname>&gt; standby
-                                member&lt;<varname >s</varname>&gt; but only
-                                &lt;<varname >num</varname>&gt; standby
-                                member&lt;<varname >s</varname>&gt; available</p>
-                        <p >or</p>
-                        <p >Service group loss of redundancy; expected
-                                &lt;<varname >num</varname>&gt; standby
-                                member&lt;<varname >s</varname>&gt; but only
-                                &lt;<varname >num</varname>&gt; standby
-                                member&lt;<varname >s</varname>&gt; available</p>
-                        <p >or</p>
-                        <p >Service group loss of redundancy; expected
-                                &lt;<varname >num</varname>&gt; active
-                            member&lt;<varname >s</varname>&gt; but no active members available</p>
-                        <p >or</p>
-                        <p >Service group loss of redundancy; expected
-                                &lt;<varname >num</varname>&gt; active
-                            member&lt;<varname >s</varname>&gt; but only
-                            &lt;<varname >num</varname>&gt; active member&lt;<varname >s</varname>&gt;
-                            available</p>
-                    </stentry>
-                    <stentry >
-                        <p >service_domain=&lt;<varname >domain_name</varname>&gt;.service_group=&lt;<varname >group_name</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Bring a controller node back into service, otherwise
-                            contact next level of support.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >400.003</p>
-                    </stentry>
-                    <stentry >
-                        <p >License key has expired or is invalid; a valid license
-                            key is required for operation</p>
-                        <p >or</p>
-                        <p >Evaluation license key will expire on &lt;<varname >date</varname>&gt;; there are only 7 or less days
-                            remaining in this evaluation</p>
-                        <p >or</p>
-                        <p >Evaluation license key will expire on &lt;<varname >date</varname>&gt;; there are &lt;<varname >num_days</varname>&gt; days remaining in this
-                            evaluation</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C, M, m</p>
-                    </stentry>
-                    <stentry >
-                        <p >Contact next level of support to obtain a new license key.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >400.004</p>
-                    </stentry>
-                    <stentry >
-                        <p >Service group software modification detected;
-                                &lt;<varname >list of affected files</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;&lt;<varname >hostname</varname>&gt;&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Contact next level of support.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >400.005</p>
-                    </stentry>
-                    <stentry >
-                        <p >Communication failure detected with peer over interface
-                                &lt;<varname >linux-ifname</varname>&gt;</p>
-                        <p >or</p>
-                        <p >Communication failure detected with peer over interface
-                                &lt;<varname >linux-ifname</varname>&gt; within the last 30
-                            seconds</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;.network=&lt;<varname >mgmt</varname>
-                            | <varname >oam</varname> | <varname >infra</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Check cabling, far-end port configuration, and status on
-                            adjacent equipment.</p>
-                    </stentry>
-                </strow>
-            </simpletable>
-        </section>
-        <section id="section_N10792_N1001F_N10001" >
-            <title >Backup and Restore Alarms</title>
-            <simpletable id="simpletable_ews_bjg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
-                <sthead>
-                    <stentry >
-                        <p >Alarm ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Reason Text</p>
-                    </stentry>
-                    <stentry >
-                        <p >Entity Instance ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Severity</p>
-                    </stentry>
-                    <stentry >
-                        <p >Proposed Repair Action</p>
-                    </stentry>
-                </sthead>
-                <strow>
-                    <stentry >
-                        <p >210.001</p>
-                    </stentry>
-                    <stentry >
-                        <p >System Backup in progress</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=controller</p>
-                    </stentry>
-                    <stentry >
-                        <p >m</p>
-                    </stentry>
-                    <stentry >
-                        <p >No action required.</p>
-                    </stentry>
-                </strow>
-            </simpletable>
-        </section>
-        <section id="section_N10A1E_N1001F_N10001" >
-            <title >System Configuration</title>
-            <simpletable id="simpletable_q5m_hh4_wq" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
-                <sthead>
-                    <stentry >
-                        <p >Alarm ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Reason Text</p>
-                    </stentry>
-                    <stentry >
-                        <p >Entity Instance ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Severity</p>
-                    </stentry>
-                    <stentry >
-                        <p >Proposed Repair Action</p>
-                    </stentry>
-                </sthead>
-                <strow>
-                    <stentry >
-                        <p >250.001</p>
-                    </stentry>
-                    <stentry >
-                        <p >Configuration is out of date</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;hostname&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Administratively lock and unlock &lt;hostname&gt; to update
-                            config.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >250.010</p>
-                    </stentry>
-                    <stentry >
-                        <p >&lt;hostname&gt; Provisioning compute required. (This alarm only applies in
-                            the 2-Server/Combined load).</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;hostname&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Administratively lock and unlock &lt;hostname&gt; to update provisioning of
-                            Compute functionality.</p>
-                    </stentry>
-                </strow>
-            </simpletable>
-        </section>
-        <section id="section_N1080D_N1001F_N10001" >
-            <title >Software Management Alarms</title>
-            <simpletable id="simpletable_mrt_hjg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
-                <sthead>
-                    <stentry >
-                        <p >Alarm ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Reason Text</p>
-                    </stentry>
-                    <stentry >
-                        <p >Entity Instance ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Severity</p>
-                    </stentry>
-                    <stentry >
-                        <p >Proposed Repair Action</p>
-                    </stentry>
-                </sthead>
-                <strow>
-                    <stentry >
-                        <p >900.001</p>
-                    </stentry>
-                    <stentry >
-                        <p >Patching operation in progress</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=controller</p>
-                    </stentry>
-                    <stentry >
-                        <p >m</p>
-                    </stentry>
-                    <stentry >
-                        <p >Complete reboots of affected hosts.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >900.002</p>
-                    </stentry>
-                    <stentry >
-                        <p >Obsolete patch in system</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=controller</p>
-                    </stentry>
-                    <stentry >
-                        <p >W</p>
-                    </stentry>
-                    <stentry >
-                        <p >Remove and delete obsolete patches.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >900.003</p>
-                    </stentry>
-                    <stentry >
-                        <p >Patch host install failure</p>
-                    </stentry>
-                    <stentry >
-                        <p >host=&lt;<varname >hostname</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >M</p>
-                    </stentry>
-                    <stentry >
-                        <p >Undo patching operation.</p>
-                    </stentry>
-                </strow>
-            </simpletable>
-        </section>
-        <section id="section_N108F4_N1001F_N10001" >
-            <title >Virtual Machine Instance Alarms</title>
-            <simpletable id="simpletable_qbs_njg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
-                <sthead>
-                    <stentry >
-                        <p >Alarm ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Reason Text</p>
-                    </stentry>
-                    <stentry >
-                        <p >Entity Instance ID</p>
-                    </stentry>
-                    <stentry >
-                        <p >Severity</p>
-                    </stentry>
-                    <stentry >
-                        <p >Proposed Repair Action</p>
-                    </stentry>
-                </sthead>
-                <strow>
-                    <stentry >
-                        <p >700.001</p>
-                    </stentry>
-                    <stentry >
-                        <p >Instance has encountered a non-recoverable error</p>
-                    </stentry>
-                    <stentry >
-                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C</p>
-                    </stentry>
-                    <stentry >
-                        <p >The system will automatically attempt to re-start the
-                            instance at regular intervals. No repair action required.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >700.002</p>
-                    </stentry>
-                    <stentry >
-                        <p >Instance is stopped or shutoff</p>
-                    </stentry>
-                    <stentry >
-                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C</p>
-                    </stentry>
-                    <stentry >
-                        <p >Restart the instance (<cmdname >nova start
-                                    &lt;instance&gt;</cmdname>)</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >700.003</p>
-                    </stentry>
-                    <stentry >
-                        <p >Instance is rebooting</p>
-                    </stentry>
-                    <stentry >
-                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C</p>
-                    </stentry>
-                    <stentry >
-                        <p >Wait for reboot completion. If problem persists contact next level of support.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >700.004</p>
-                    </stentry>
-                    <stentry >
-                        <p >Instance is paused</p>
-                    </stentry>
-                    <stentry >
-                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C</p>
-                    </stentry>
-                    <stentry >
-                        <p >Unpause the instance (<cmdname >nova unpause
-                                &lt;instance&gt;</cmdname>)</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >700.005</p>
-                    </stentry>
-                    <stentry >
-                        <p >Instance is suspended</p>
-                    </stentry>
-                    <stentry >
-                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C</p>
-                    </stentry>
-                    <stentry >
-                        <p >Resume the instance (<cmdname >nova
-                                resume &lt;instance&gt;</cmdname>)</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >700.006</p>
-                    </stentry>
-                    <stentry >
-                        <p >Instance is evacuating or rebuilding</p>
-                    </stentry>
-                    <stentry >
-                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C</p>
-                    </stentry>
-                    <stentry >
-                        <p >Wait for evacuate completion. Check health of compute
-                            nodes and network. If problem persists contact next level of
-                            support.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >700.007</p>
-                    </stentry>
-                    <stentry >
-                        <p >Instance is live migrating</p>
-                    </stentry>
-                    <stentry >
-                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >W</p>
-                    </stentry>
-                    <stentry >
-                        <p >Wait for live migration completion. If problem persists contact next level of support.</p>
-                    </stentry>
-                </strow>
-                <strow>
-                    <stentry >
-                        <p >700.008</p>
-                    </stentry>
-                    <stentry >
-                        <p >Instance is cold migrating or resizing</p>
-                    </stentry>
-                    <stentry >
-                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-                    </stentry>
-                    <stentry >
-                        <p >C</p>
-                    </stentry>
-                    <stentry >
-                        <p >Wait for cold migration or resize completion. If
-                                (<cmdname >nova show &lt;instance&gt;</cmdname>) reports a STATUS of
-                            VERIFY_RESIZE, then a resize confirmation is required (<cmdname >nova
-                                resize-confirm &lt;instance&gt;</cmdname>). If problem persists
-                            contact next level of support.</p>
-                    </stentry>
-                </strow>
-            </simpletable>
-        </section>
-  </refbody>
-</reference-wr>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic id="psa1413927942547" xml:lang="en-us"><!-- Modification History    -->  <title >Alarms Reference Table</title>  <shortdesc >The system inventory and maintenance service reports system changes with different    degrees of severity. Use the reported alarms to monitor the overall health of the    system.</shortdesc>  <prolog>        <author >Jim Owens</author>    <author >Pedro Sanchez</author>  </prolog>  <body>        <section id="section_N10022_N1001F_N10001" >            <p >In the following tables the severity of the alarms is represented                 by one or more letters, as follows:</p>            <ul id="ul_jsd_jkg_vp">                <li >                    <p >C: Critical</p>                </li>                <li >                    <p >M: Major</p>                </li>                <li >                    <p >m: Minor</p>                </li>                <li >                    <p >W: Warning</p>                </li>            </ul>            <p >A comma-separated list of letters is used when the alarm can be triggered with one of                several severity levels.</p>        </section>        <section id="section_N10050_N1001F_N10001" >            <title >Resource Alarms</title>        <simpletable outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">            <sthead>                <stentry >                    <p >Alarm ID</p>                </stentry>                <stentry >                    <p >Reason Text</p>                </stentry>                <stentry >                    <p >Entity Instance ID</p>                </stentry>                <stentry >                    <p >Severity</p>                </stentry>                <stentry >                    <p >Proposed Repair Action</p>                </stentry>            </sthead>            <strow>                <stentry >                    <p >100.101</p>                </stentry>                <stentry >                    <p >Platform CPU threshold exceeded; threshold x%, actual y%</p>                </stentry>                <stentry >                    <p >host=&lt;<varname >hostname</varname>&gt;</p>                </stentry>                <stentry >                    <p >C, M, m</p>                </stentry>                <stentry >                    <p >Monitor, and if condition persists, contact next level of                            support.</p>                </stentry>            </strow>            <strow>                <stentry >                    <p >100.102</p>                </stentry>                <stentry >                    <p >AVS CPU threshold exceeded; threshold x%, actual y%</p>                </stentry>                <stentry >                    <p >host=&lt;<varname >hostname</varname>&gt;</p>                </stentry>                <stentry >                    <p >C, M, m</p>                </stentry>                <stentry >                    <p >Monitor, and if condition persists, contact next level of                            support.</p>                </stentry>            </strow>            <strow>                <stentry >                    <p >100.103</p>                </stentry>                <stentry >                    <p >Memory threshold exceeded; threshold x%, actual y%</p>                </stentry>                <stentry >                    <p >host=&lt;<varname >hostname</varname>&gt;</p>                </stentry>                <stentry >                    <p >C, M, m</p>                </stentry>                <stentry >                    <p >Monitor, and if condition persists, contact next level of                            support; may require additional memory on host.</p>                </stentry>            </strow>            <strow>                <stentry >                    <p >100.104</p>                </stentry>                <stentry >                    <p >File System threshold exceeded; threshold x%, actual y%</p>                </stentry>                <stentry >                    <p >host=&lt;<varname >hostname</varname>&gt;.filesystem=&lt;<varname >mount-dir</varname>&gt;</p>                        <p >or</p>                        <p >filesystem=&lt;<varname >mount-dir</varname>&gt;</p>                        <p >or</p>                        <p >host=&lt;<varname >hostname</varname>&gt;.volumegroup=&lt;<varname >volumegroup-name</varname>&gt;</p>                </stentry>                <stentry >                    <p >C, M, m</p>                </stentry>                <stentry >                    <p >(for filesystem) Monitor, and if condition persists, contact                            next level of support.</p>                        <p >(for volumegroup) Monitor, and if condition persists,                            consider adding additional physical volumes to the volume group</p>                </stentry>            </strow>        </simpletable>        </section>        <section id="section_N1016C_N1001F_N10001" >            <title >Maintenance Alarms</title>            <simpletable id="simpletable_vk1_qhg_vp2" outputclass="wide" relcolwidth="1.22* 2.28* 2.5* 1.0* 3.33*">                <sthead>                    <stentry >                        <p >Alarm ID</p>                    </stentry>                    <stentry >                        <p >Reason Text</p>                    </stentry>                    <stentry >                        <p >Entity Instance ID</p>                    </stentry>                    <stentry >                        <p >Severity</p>                    </stentry>                    <stentry >                        <p >Proposed Repair Action</p>                    </stentry>                </sthead>                <strow>                    <stentry >                        <p >100.105</p>                    </stentry>                    <stentry >                        <p >No access to remote VM volumes.</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Check management and infrastructure networks. Check                            controller nodes.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >100.106</p>                    </stentry>                    <stentry >                        <p >OAM Port failed</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;.port=&lt;<varname >port-name</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Check cabling, far-end port configuration, and status on                            adjacent equipment.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >100.107</p>                    </stentry>                    <stentry >                        <p >OAM Interface failed</p>                        <p >or</p>                        <p >OAM Interface degraded</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;.interface=&lt;<varname >if-name</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C, M</p>                    </stentry>                    <stentry >                        <p >Check cabling, far-end port configuration, and status on                            adjacent equipment.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >100.108</p>                    </stentry>                    <stentry >                        <p >MGMT Port failed</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;.port=&lt;<varname >port-name</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Check cabling, far-end port configuration, and status on                            adjacent equipment.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >100.109</p>                    </stentry>                    <stentry >                        <p >MGMT Interface failed</p>                        <p >or</p>                        <p >MGMT Interface degraded</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;.interface=&lt;<varname >if-name</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C, M</p>                    </stentry>                    <stentry >                        <p >Check cabling, far-end port configuration, and status on                            adjacent equipment.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >100.110</p>                    </stentry>                    <stentry >                        <p >INFRA Port failed</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;.port=&lt;<varname >port-name</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Check cabling, far-end port configuration, and status on                            adjacent equipment.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >100.111</p>                    </stentry>                    <stentry >                        <p >INFRA Interface failed</p>                        <p >or</p>                        <p >INFRA Interface degraded</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;.interface=&lt;<varname >if-name</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C, M</p>                    </stentry>                    <stentry >                        <p >Check cabling, far-end port configuration, and status on                            adjacent equipment.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >200.001</p>                    </stentry>                    <stentry >                        <p >Host was administratively locked to take it                            out-of-service</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >W</p>                    </stentry>                    <stentry >                        <p >Administratively unlock host to bring it back                            in-service.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >200.004</p>                    </stentry>                    <stentry >                        <p >Host experienced a service-affecting failure.</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C</p>                    </stentry>                    <stentry >                        <p >If problem consistently occurs after host is reset,                            contact next level of support, or lock and replace failing host.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >200.005</p>                    </stentry>                    <stentry >                        <p >Degrade: Host is experiencing an intermittent                            infrastructure network communication failure that has exceeded its lower                            alarming threshold.</p>                        <p >Failure: Host is experiencing a persistent critical                            infrastructure Network communication failure. Resetting Host.</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C, M</p>                    </stentry>                    <stentry >                        <p >If problem consistently occurs after host is reset,                            contact next level of support, or lock and replace failing host.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >200.006</p>                    </stentry>                    <stentry >                        <p >One or more critical processes on host have failed and                            can not be recovered. Resetting host</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C, M</p>                    </stentry>                    <stentry >                        <p >If problem consistently occurs after host is reset,                            contact next level of support or lock and replace failing host.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >200.007</p>                    </stentry>                    <stentry >                        <p >Degrade: Host is degraded due to out-of-tolerance                            readings from sensors: '&lt;<varname >sensor                                list</varname>&gt;'</p>                        <p >Critical: One or more sensors: '&lt;<varname >sensor list</varname>&gt;' on Host are reporting                            persistent critical failure</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C, M</p>                    </stentry>                    <stentry >                        <p >If problem consistently occurs after Host is power cycled and or reset,                            contact next level of support or lock and replace failing host.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >200.008</p>                    </stentry>                    <stentry >                        <p ><i >ntpd</i> process has failed on                            host</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >m</p>                    </stentry>                    <stentry >                        <p ><i >ntpd</i> is a process that can not                            be auto recovered. The host must be re-enabled (locked and then                            unlocked) to clear this alarm. If the alarm persists then contact next                            level of support to investigate and recover.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >200.009</p>                    </stentry>                    <stentry >                        <p >Degrade: Host is experiencing an intermittent                            infrastructure network communication failure that has exceeded its lower                            alarming threshold.</p>                        <p >Failure: Host is experiencing a persistent critical                            infrastructure Network communication failure. Resetting Host.</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C, M</p>                    </stentry>                    <stentry >                        <p >If problem consistently occurs after host is reset,                            contact next level of support, or lock and replace failing host.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >200.010</p>                    </stentry>                    <stentry >                        <p >Access to board management module has failed</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >W</p>                    </stentry>                    <stentry >                        <p >Check host's board management configuration and                            connectivity.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >200.011</p>                    </stentry>                    <stentry >                        <p >Host encountered a critical configuration failure during initialization.                            Resetting Host.</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >If problem consistently occurs after Host is reset, contact next level of                            support or lock and replace failing host.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >200.012</p>                    </stentry>                    <stentry >                        <p >In-Service failure of host's controller function while compute services                            remain healthy.</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Lock and then Unlock host to recover. Avoid using 'Force Lock' action as                            that will impact compute services running on this host. If lock action                            fails then contact next level of support to investigate and recover.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >200.013</p>                    </stentry>                    <stentry >                        <p >In-Service failure of host's compute function on host with only available                            and healthy controller service.</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Enable second controller as soon as possible and then optionally Lock and                            Unlock host to recover local compute services on this host.</p>                    </stentry>                </strow>            </simpletable>        </section>        <section id="section_N10457_N1001F_N10001" >            <title >Storage Alarms</title>            <simpletable id="simpletable_vk1_qhg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">                <sthead>                    <stentry >                        <p >Alarm ID</p>                    </stentry>                    <stentry >                        <p >Reason Text</p>                    </stentry>                    <stentry >                        <p >Entity Instance ID</p>                    </stentry>                    <stentry >                        <p >Severity</p>                    </stentry>                    <stentry >                        <p >Proposed Repair Action</p>                    </stentry>                </sthead>                <strow>                    <stentry >                        <p >800.001</p>                    </stentry>                    <stentry >                        <p >Storage alarm condition: &lt;<varname >failure                                reason</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >cluster=&lt;<varname >dist-fs-uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C, M</p>                    </stentry>                    <stentry >                        <p >If problem persists, contact next level of support.</p>                    </stentry>                </strow>            </simpletable>        </section>        <section id="section_N104D2_N1001F_N10001" >            <title >Data Networking Alarms</title>            <simpletable id="simpletable_igr_n3g_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">                <sthead>                    <stentry >                        <p >Alarm ID</p>                    </stentry>                    <stentry >                        <p >Reason Text</p>                    </stentry>                    <stentry >                        <p >Entity Instance ID</p>                    </stentry>                    <stentry >                        <p >Severity</p>                    </stentry>                    <stentry >                        <p >Proposed Repair Action</p>                    </stentry>                </sthead>                <strow>                    <stentry >                        <p >300.001</p>                    </stentry>                    <stentry >                        <p >Data port failed</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;.port=&lt;<varname >port-uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Check cabling, far-end port configuration, and status on                            adjacent equipment.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >300.002</p>                    </stentry>                    <stentry >                        <p >Data interface failed</p>                        <p >or</p>                        <p >Data interface degraded</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;.interface=&lt;<varname >if-uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C, M</p>                    </stentry>                    <stentry >                        <p >Check cabling, far-end port configuration, and status on                            adjacent equipment.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >300.003</p>                    </stentry>                    <stentry >                        <p >Networking agent not responding</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;.agent=&lt;<varname >agent-uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >If condition persists, attempt to clear issue by                            administratively locking and unlocking the host.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >300.004</p>                    </stentry>                    <stentry >                        <p >No enabled compute node with connectivity to provider                            network</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;.providernet=&lt;<varname >pnet-uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Enable compute nodes with required provider network                            connectivity.</p>                    </stentry>                </strow>            </simpletable>        </section>        <section id="section_N105EF_N1001F_N10001" >            <title >Controller HA Alarms</title>            <simpletable id="simpletable_m4b_v3g_vp" outputclass="wide" relcolwidth="1.2* 4.0* 3.0* 1.2* 4.0*">                <sthead>                    <stentry >                        <p >Alarm ID</p>                    </stentry>                    <stentry >                        <p >Reason Text</p>                    </stentry>                    <stentry >                        <p >Entity Instance ID</p>                    </stentry>                    <stentry >                        <p >Severity</p>                    </stentry>                    <stentry >                        <p >Proposed Repair Action</p>                    </stentry>                </sthead>                <strow>                    <stentry >                        <p >400.001</p>                    </stentry>                    <stentry >                        <p >Service group failure; &lt;<varname >list of affected                                services</varname>&gt;</p>                        <p >or</p>                        <p >Service group degraded; &lt;<varname >list of affected                                services</varname>&gt;</p>                        <p >or</p>                        <p >Service group warning; &lt;<varname >list of affected                                services</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >service_domain=&lt;<varname >domain_name</varname>&gt;.service_group=&lt;<varname >group_name</varname>&gt;.host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C, M, m</p>                    </stentry>                    <stentry >                        <p >Contact next level of support.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >400.002</p>                    </stentry>                    <stentry >                        <p >Service group loss of redundancy; expected                                &lt;<varname >num</varname>&gt; standby                                member&lt;<varname >s</varname>&gt; but only                                &lt;<varname >num</varname>&gt; standby                                member&lt;<varname >s</varname>&gt; available</p>                        <p >or</p>                        <p >Service group loss of redundancy; expected                                &lt;<varname >num</varname>&gt; standby                                member&lt;<varname >s</varname>&gt; but only                                &lt;<varname >num</varname>&gt; standby                                member&lt;<varname >s</varname>&gt; available</p>                        <p >or</p>                        <p >Service group loss of redundancy; expected                                &lt;<varname >num</varname>&gt; active                            member&lt;<varname >s</varname>&gt; but no active members available</p>                        <p >or</p>                        <p >Service group loss of redundancy; expected                                &lt;<varname >num</varname>&gt; active                            member&lt;<varname >s</varname>&gt; but only                            &lt;<varname >num</varname>&gt; active member&lt;<varname >s</varname>&gt;                            available</p>                    </stentry>                    <stentry >                        <p >service_domain=&lt;<varname >domain_name</varname>&gt;.service_group=&lt;<varname >group_name</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Bring a controller node back into service, otherwise                            contact next level of support.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >400.003</p>                    </stentry>                    <stentry >                        <p >License key has expired or is invalid; a valid license                            key is required for operation</p>                        <p >or</p>                        <p >Evaluation license key will expire on &lt;<varname >date</varname>&gt;; there are only 7 or less days                            remaining in this evaluation</p>                        <p >or</p>                        <p >Evaluation license key will expire on &lt;<varname >date</varname>&gt;; there are &lt;<varname >num_days</varname>&gt; days remaining in this                            evaluation</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C, M, m</p>                    </stentry>                    <stentry >                        <p >Contact next level of support to obtain a new license key.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >400.004</p>                    </stentry>                    <stentry >                        <p >Service group software modification detected;                                &lt;<varname >list of affected files</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >host=&lt;&lt;<varname >hostname</varname>&gt;&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Contact next level of support.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >400.005</p>                    </stentry>                    <stentry >                        <p >Communication failure detected with peer over interface                                &lt;<varname >linux-ifname</varname>&gt;</p>                        <p >or</p>                        <p >Communication failure detected with peer over interface                                &lt;<varname >linux-ifname</varname>&gt; within the last 30                            seconds</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;.network=&lt;<varname >mgmt</varname>                            | <varname >oam</varname> | <varname >infra</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Check cabling, far-end port configuration, and status on                            adjacent equipment.</p>                    </stentry>                </strow>            </simpletable>        </section>        <section id="section_N10792_N1001F_N10001" >            <title >Backup and Restore Alarms</title>            <simpletable id="simpletable_ews_bjg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">                <sthead>                    <stentry >                        <p >Alarm ID</p>                    </stentry>                    <stentry >                        <p >Reason Text</p>                    </stentry>                    <stentry >                        <p >Entity Instance ID</p>                    </stentry>                    <stentry >                        <p >Severity</p>                    </stentry>                    <stentry >                        <p >Proposed Repair Action</p>                    </stentry>                </sthead>                <strow>                    <stentry >                        <p >210.001</p>                    </stentry>                    <stentry >                        <p >System Backup in progress</p>                    </stentry>                    <stentry >                        <p >host=controller</p>                    </stentry>                    <stentry >                        <p >m</p>                    </stentry>                    <stentry >                        <p >No action required.</p>                    </stentry>                </strow>            </simpletable>        </section>        <section id="section_N10A1E_N1001F_N10001" >            <title >System Configuration</title>            <simpletable id="simpletable_q5m_hh4_wq" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">                <sthead>                    <stentry >                        <p >Alarm ID</p>                    </stentry>                    <stentry >                        <p >Reason Text</p>                    </stentry>                    <stentry >                        <p >Entity Instance ID</p>                    </stentry>                    <stentry >                        <p >Severity</p>                    </stentry>                    <stentry >                        <p >Proposed Repair Action</p>                    </stentry>                </sthead>                <strow>                    <stentry >                        <p >250.001</p>                    </stentry>                    <stentry >                        <p >Configuration is out of date</p>                    </stentry>                    <stentry >                        <p >host=&lt;hostname&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Administratively lock and unlock &lt;hostname&gt; to update                            config.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >250.010</p>                    </stentry>                    <stentry >                        <p >&lt;hostname&gt; Provisioning compute required. (This alarm only applies in                            the 2-Server/Combined load).</p>                    </stentry>                    <stentry >                        <p >host=&lt;hostname&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Administratively lock and unlock &lt;hostname&gt; to update provisioning of                            Compute functionality.</p>                    </stentry>                </strow>            </simpletable>        </section>        <section id="section_N1080D_N1001F_N10001" >            <title >Software Management Alarms</title>            <simpletable id="simpletable_mrt_hjg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">                <sthead>                    <stentry >                        <p >Alarm ID</p>                    </stentry>                    <stentry >                        <p >Reason Text</p>                    </stentry>                    <stentry >                        <p >Entity Instance ID</p>                    </stentry>                    <stentry >                        <p >Severity</p>                    </stentry>                    <stentry >                        <p >Proposed Repair Action</p>                    </stentry>                </sthead>                <strow>                    <stentry >                        <p >900.001</p>                    </stentry>                    <stentry >                        <p >Patching operation in progress</p>                    </stentry>                    <stentry >                        <p >host=controller</p>                    </stentry>                    <stentry >                        <p >m</p>                    </stentry>                    <stentry >                        <p >Complete reboots of affected hosts.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >900.002</p>                    </stentry>                    <stentry >                        <p >Obsolete patch in system</p>                    </stentry>                    <stentry >                        <p >host=controller</p>                    </stentry>                    <stentry >                        <p >W</p>                    </stentry>                    <stentry >                        <p >Remove and delete obsolete patches.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >900.003</p>                    </stentry>                    <stentry >                        <p >Patch host install failure</p>                    </stentry>                    <stentry >                        <p >host=&lt;<varname >hostname</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >M</p>                    </stentry>                    <stentry >                        <p >Undo patching operation.</p>                    </stentry>                </strow>            </simpletable>        </section>        <section id="section_N108F4_N1001F_N10001" >            <title >Virtual Machine Instance Alarms</title>            <simpletable id="simpletable_qbs_njg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">                <sthead>                    <stentry >                        <p >Alarm ID</p>                    </stentry>                    <stentry >                        <p >Reason Text</p>                    </stentry>                    <stentry >                        <p >Entity Instance ID</p>                    </stentry>                    <stentry >                        <p >Severity</p>                    </stentry>                    <stentry >                        <p >Proposed Repair Action</p>                    </stentry>                </sthead>                <strow>                    <stentry >                        <p >700.001</p>                    </stentry>                    <stentry >                        <p >Instance has encountered a non-recoverable error</p>                    </stentry>                    <stentry >                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C</p>                    </stentry>                    <stentry >                        <p >The system will automatically attempt to re-start the                            instance at regular intervals. No repair action required.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >700.002</p>                    </stentry>                    <stentry >                        <p >Instance is stopped or shutoff</p>                    </stentry>                    <stentry >                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C</p>                    </stentry>                    <stentry >                        <p >Restart the instance (<i >nova start                                    &lt;instance&gt;</i>)</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >700.003</p>                    </stentry>                    <stentry >                        <p >Instance is rebooting</p>                    </stentry>                    <stentry >                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C</p>                    </stentry>                    <stentry >                        <p >Wait for reboot completion. If problem persists contact next level of support.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >700.004</p>                    </stentry>                    <stentry >                        <p >Instance is paused</p>                    </stentry>                    <stentry >                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C</p>                    </stentry>                    <stentry >                        <p >Unpause the instance (<i >nova unpause                                &lt;instance&gt;</i>)</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >700.005</p>                    </stentry>                    <stentry >                        <p >Instance is suspended</p>                    </stentry>                    <stentry >                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C</p>                    </stentry>                    <stentry >                        <p >Resume the instance (<i >nova                                resume &lt;instance&gt;</i>)</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >700.006</p>                    </stentry>                    <stentry >                        <p >Instance is evacuating or rebuilding</p>                    </stentry>                    <stentry >                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C</p>                    </stentry>                    <stentry >                        <p >Wait for evacuate completion. Check health of compute                            nodes and network. If problem persists contact next level of                            support.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >700.007</p>                    </stentry>                    <stentry >                        <p >Instance is live migrating</p>                    </stentry>                    <stentry >                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >W</p>                    </stentry>                    <stentry >                        <p >Wait for live migration completion. If problem persists contact next level of support.</p>                    </stentry>                </strow>                <strow>                    <stentry >                        <p >700.008</p>                    </stentry>                    <stentry >                        <p >Instance is cold migrating or resizing</p>                    </stentry>                    <stentry >                        <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>                    </stentry>                    <stentry >                        <p >C</p>                    </stentry>                    <stentry >                        <p >Wait for cold migration or resize completion. If                                (<i >nova show &lt;instance&gt;</i>) reports a STATUS of                            VERIFY_RESIZE, then a resize confirmation is required (<i >nova                                resize-confirm &lt;instance&gt;</i>). If problem persists                            contact next level of support.</p>                    </stentry>                </strow>            </simpletable>        </section>  </body></topic>

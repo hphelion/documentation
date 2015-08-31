@@ -1,259 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333787180" xml:lang="en-us">
-    <!-- Modification History
-   -->
-    <title >Storage</title>
-    <shortdesc >The <uicontrol >Storage</uicontrol> tab on the <wintitle >Inventory Detail</wintitle> page presents storage details for a
-        host.</shortdesc>
-    <prolog>
-        <author >Jim Owens</author>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <fig id="fig_N10027_N10024_N10001" >
-            <image href="jow1404333782424.image" id="image_z11_xvg_m4"  width="6in"/>
-        </fig>
-        <p >The information is presented in one or more lists, as determined by the
-            host type.</p>
-        <section id="section_N10043_N1002D_N10001" >
-            <title >Disks</title>
-            <p >This list is presented for all host types. It lists all available
-                hardware devices used for storage. For each device, the following information is
-                included:</p>
-            <dl>
-                <dlentry >
-                    <dt >UUID</dt>
-                    <dd >
-                        <p >The unique identifier for the device.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Node</dt>
-                    <dd >
-                        <p >The Linux device name.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Type</dt>
-                    <dd >
-                        <p >The type of storage device, typically a hard drive
-                            (disk). </p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Size</dt>
-                    <dd >
-                        <p >The capacity of the device in MiB.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Serial ID</dt>
-                    <dd >
-                        <p >The device's serial ID number.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Model</dt>
-                    <dd >
-                        <p >The manufacturer's model for the device.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-        </section>
-        <section id="section_N100CC_N1002D_N10001" >
-            <title >Storage Volumes</title>
-            <p >This list is presented for storage hosts. It shows a list of logical
-                storage volumes defined on available disks. For each volume, the following
-                information is included:</p>
-            <dl>
-                <dlentry >
-                    <dt >UUID</dt>
-                    <dd >
-                        <p >The unique identifier for the storage volume.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Name</dt>
-                    <dd >
-                        <p >The name assigned to the volume, if any.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Function</dt>
-                    <dd >
-                        <p >The type of storage backend handling the storage volume. </p>
-                    </dd>
-                </dlentry>
-            </dl>
-        </section>
-        <section id="section_N10126_N1002D_N10001" >
-            <title >Local Volume Groups</title>
-            <p >This list is presented for compute nodes. It shows groups that
-                provide local storage for use by VMs. For more information, see <xref href="jow1426181291481.xml" />.</p>
-            <p >For each group, the following information is provided:</p>
-            <dl>
-                <dlentry >
-                    <dt >Name</dt>
-                    <dd >
-                        <p >The name assigned to the local volume group.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >State</dt>
-                    <dd >
-                        <p >The availability of the local volume group.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Access</dt>
-                    <dd >
-                        <p >The access status of the volume group (<b >w</b>riteable,
-                                <b >r</b>eadonly, resi<b >z</b>eable, e<b >x</b>ported, <b >p</b>artial,
-                            or <b >c</b>lustered).</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Size</dt>
-                    <dd >
-                        <p >The capacity of the device in bytes.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Current Physical Volumes</dt>
-                    <dd >
-                        <p >The number of physical volumes that define the local
-                            volume group.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Current Logical Volumes</dt>
-                    <dd >
-                        <p >the number of logical volumes contained by the local
-                            volume group.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Actions</dt>
-                    <dd >
-                        <p >Available actions that can be performed on the local
-                            volume group.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-        </section>
-        <section id="section_N101C9_N1002D_N10001" >
-            <title >Physical Volumes</title>
-            <p >This list is presented for compute nodes. It shows physical volumes
-                that provide local storage for use by VMs. For more information, see <xref href="jow1426182435441.xml" />.</p>
-            <p >For each group, the following information is provided:</p>
-            <dl>
-                <dlentry >
-                    <dt >Name</dt>
-                    <dd >
-                        <p >The device name associated with the physical volume.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >State</dt>
-                    <dd >
-                        <p >The availability of the physical volume.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Type</dt>
-                    <dd >
-                        <p >The device type used for the physical volume.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Disk UUID</dt>
-                    <dd >
-                        <p >the unique identifier of the disk used to implement the
-                            physical volume.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Disk Device Node</dt>
-                    <dd >
-                        <p >The device used to implement the physical volume. </p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >LVM Logical Group Name</dt>
-                    <dd >
-                        <p >The name of the local volume group to which the physical
-                            volume belongs.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Actions</dt>
-                    <dd >
-                        <p >Available actions that can be performed on the physical
-                            volume.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-        </section>
-        <!--JO  2015-03-16 The next two sections duplicate tasks in the Installation Guide.
-
-        <section id="section_N100F6_N10024_N10001" >
-            <title >Creating a Storage Profile</title>
-            <p >Use the button <uicontrol >Create Storage Profile</uicontrol> on the
-          <uicontrol >Storage</uicontrol> tab to display the <wintitle >Create Storage
-          Profile</wintitle> window. From there you can create a new storage profile out of the
-        currently defined storage volumes. An example for a storage node is illustrated below.</p>
-            <fig id="fig_N1010F_N100F7_N10024_N10001" >
-                <image href="jow1404333784081.image" id="image_vyp_lyg_m4"  width="4in"/>
-            </fig>
-            <p >In this window you enter the name of the new profile,
-          <codeph >hp-360-storage-profile</codeph> in this case, and then click the button
-          <uicontrol >Create Storage Profile</uicontrol> to execute. Available storage profiles are
-        listed, and can be removed, from the <wintitle >System Inventory</wintitle> page, as
-        described in <xref href="jow1404333787693.xml" />.</p>
-        </section>
-         
-        <section id="creating-storage-volume" >
-            <title >Creating a Storage Volume</title>
-            <p >Use the button <uicontrol >Create Storage
-                    Volume</uicontrol> on the <uicontrol >Storage</uicontrol> tab to
-                display the <wintitle >Create Storage Volume</wintitle> window, as
-                illustrated below.</p>
-            <fig id="fig_N10148_N10130_N10024_N10001" >
-                <image href="jow1404333785750.image" id="image_ndm_yyg_m4"  width="4in"/>
-            </fig>
-            <p >The following fields are available:</p>
-            <dl>
-                <dlentry >
-                    <dt >Hostname</dt>
-                    <dd >
-                        <p >A read-only filed displaying the name of the host.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Function</dt>
-                    <dd >
-                        <p >The type of storage backend to use. At this time,
-                                <codeph >OSD</codeph> is the only supported
-                            option.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Storage Volume Name</dt>
-                    <dd >
-                        <p >An optional field used to assign a name to the new
-                            storage volume.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Disks</dt>
-                    <dd >
-                        <p >A drop-down menu to select the hard drive (disk) to use.
-                            Only available disks, with no storage volume, are listed</p>
-                    </dd>
-                </dlentry>
-            </dl>
-        </section>
-        -->
-    </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333787180" xml:lang="en-us">    <!-- Modification History   -->    <title >Storage</title>    <shortdesc >The <uicontrol >Storage</uicontrol> tab on the <wintitle >Inventory Detail</wintitle> page presents storage details for a        host.</shortdesc>    <prolog>        <author >Jim Owens</author>        <author >Pedro Sanchez</author>    </prolog>    <body>        <fig id="fig_N10027_N10024_N10001" >            <image href="jow1404333782424.image" id="image_z11_xvg_m4"  width="6in"/>        </fig>        <p >The information is presented in one or more lists, as determined by the            host type.</p>        <section id="section_N10043_N1002D_N10001" >            <title >Disks</title>            <p >This list is presented for all host types. It lists all available                hardware devices used for storage. For each device, the following information is                included:</p>            <dl>                <dlentry >                    <dt >UUID</dt>                    <dd >                        <p >The unique identifier for the device.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Node</dt>                    <dd >                        <p >The Linux device name.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Type</dt>                    <dd >                        <p >The type of storage device, typically a hard drive                            (disk). </p>                    </dd>                </dlentry>                <dlentry >                    <dt >Size</dt>                    <dd >                        <p >The capacity of the device in MiB.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Serial ID</dt>                    <dd >                        <p >The device's serial ID number.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Model</dt>                    <dd >                        <p >The manufacturer's model for the device.</p>                    </dd>                </dlentry>            </dl>        </section>        <section id="section_N100CC_N1002D_N10001" >            <title >Storage Volumes</title>            <p >This list is presented for storage hosts. It shows a list of logical                storage volumes defined on available disks. For each volume, the following                information is included:</p>            <dl>                <dlentry >                    <dt >UUID</dt>                    <dd >                        <p >The unique identifier for the storage volume.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Name</dt>                    <dd >                        <p >The name assigned to the volume, if any.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Function</dt>                    <dd >                        <p >The type of storage backend handling the storage volume. </p>                    </dd>                </dlentry>            </dl>        </section>        <section id="section_N10126_N1002D_N10001" >            <title >Local Volume Groups</title>            <p >This list is presented for compute nodes. It shows groups that                provide local storage for use by VMs. For more information, see <xref href="jow1426181291481.xml" />.</p>            <p >For each group, the following information is provided:</p>            <dl>                <dlentry >                    <dt >Name</dt>                    <dd >                        <p >The name assigned to the local volume group.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >State</dt>                    <dd >                        <p >The availability of the local volume group.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Access</dt>                    <dd >                        <p >The access status of the volume group (<b >w</b>riteable,                                <b >r</b>eadonly, resi<b >z</b>eable, e<b >x</b>ported, <b >p</b>artial,                            or <b >c</b>lustered).</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Size</dt>                    <dd >                        <p >The capacity of the device in bytes.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Current Physical Volumes</dt>                    <dd >                        <p >The number of physical volumes that define the local                            volume group.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Current Logical Volumes</dt>                    <dd >                        <p >the number of logical volumes contained by the local                            volume group.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Actions</dt>                    <dd >                        <p >Available actions that can be performed on the local                            volume group.</p>                    </dd>                </dlentry>            </dl>        </section>        <section id="section_N101C9_N1002D_N10001" >            <title >Physical Volumes</title>            <p >This list is presented for compute nodes. It shows physical volumes                that provide local storage for use by VMs. For more information, see <xref href="jow1426182435441.xml" />.</p>            <p >For each group, the following information is provided:</p>            <dl>                <dlentry >                    <dt >Name</dt>                    <dd >                        <p >The device name associated with the physical volume.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >State</dt>                    <dd >                        <p >The availability of the physical volume.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Type</dt>                    <dd >                        <p >The device type used for the physical volume.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Disk UUID</dt>                    <dd >                        <p >the unique identifier of the disk used to implement the                            physical volume.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Disk Device Node</dt>                    <dd >                        <p >The device used to implement the physical volume. </p>                    </dd>                </dlentry>                <dlentry >                    <dt >LVM Logical Group Name</dt>                    <dd >                        <p >The name of the local volume group to which the physical                            volume belongs.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Actions</dt>                    <dd >                        <p >Available actions that can be performed on the physical                            volume.</p>                    </dd>                </dlentry>            </dl>        </section>        <!--JO  2015-03-16 The next two sections duplicate tasks in the Installation Guide.        <section id="section_N100F6_N10024_N10001" >            <title >Creating a Storage Profile</title>            <p >Use the button <uicontrol >Create Storage Profile</uicontrol> on the          <uicontrol >Storage</uicontrol> tab to display the <wintitle >Create Storage          Profile</wintitle> window. From there you can create a new storage profile out of the        currently defined storage volumes. An example for a storage node is illustrated below.</p>            <fig id="fig_N1010F_N100F7_N10024_N10001" >                <image href="jow1404333784081.image" id="image_vyp_lyg_m4"  width="4in"/>            </fig>            <p >In this window you enter the name of the new profile,          <b >hp-360-storage-profile</b> in this case, and then click the button          <uicontrol >Create Storage Profile</uicontrol> to execute. Available storage profiles are        listed, and can be removed, from the <wintitle >System Inventory</wintitle> page, as        described in <xref href="jow1404333787693.xml" />.</p>        </section>                 <section id="creating-storage-volume" >            <title >Creating a Storage Volume</title>            <p >Use the button <uicontrol >Create Storage                    Volume</uicontrol> on the <uicontrol >Storage</uicontrol> tab to                display the <wintitle >Create Storage Volume</wintitle> window, as                illustrated below.</p>            <fig id="fig_N10148_N10130_N10024_N10001" >                <image href="jow1404333785750.image" id="image_ndm_yyg_m4"  width="4in"/>            </fig>            <p >The following fields are available:</p>            <dl>                <dlentry >                    <dt >Hostname</dt>                    <dd >                        <p >A read-only filed displaying the name of the host.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Function</dt>                    <dd >                        <p >The type of storage backend to use. At this time,                                <b >OSD</b> is the only supported                            option.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Storage Volume Name</dt>                    <dd >                        <p >An optional field used to assign a name to the new                            storage volume.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Disks</dt>                    <dd >                        <p >A drop-down menu to select the hard drive (disk) to use.                            Only available disks, with no storage volume, are listed</p>                    </dd>                </dlentry>            </dl>        </section>        -->    </body></topic>

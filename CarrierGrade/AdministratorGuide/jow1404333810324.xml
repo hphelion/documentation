@@ -1,65 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333810324" xml:lang="en-us">
-    <!-- Modification History
-        
--->
-    <title >Creating a Static Resource</title>
-    <shortdesc >The <filepath >Launch2NamedVMs.yaml</filepath> template
-        illustrates the use of templates to create static resources.</shortdesc>
-    <prolog>
-        <author >Jim Owens</author>
-    </prolog>
-    <taskbody>
-        <context id="context_N10023_N10020_N10001" >
-            <p >This HOT template creates two VM instances named <codeph >guest-1</codeph> and <codeph >guest-2</codeph>. These names are specified as parameters in the template,
-                illustrating the use of HP Helion OpenStack Carrier Grade extensions to simplify VM instance naming.
-                They are used by the <codeph >OS::Nova::Server</codeph>
-                resources, which define the construction of the VMs.</p>
-            <p >The template also defines networking ports for the VMs. Each VM has a single network
-                port (<codeph >OS::Neutron::Port</codeph>). Both ports are attached to the
-                same existing tenant network.</p>
-        </context>
-        <steps>
-            <step id="step_N10043_N10040_N10020_N10001" >
-                <cmd >Collect the required parameter values for this template.</cmd>
-                <info >
-                    <p >For information about flavors, keypairs, images, or tenant networks, see the <cite >HP Helion OpenStack Carrier Grade Reference Deployment Scenarios: User Tasks</cite>.</p>
-                </info>
-                <substeps id="substeps_wqc_mlv_34">
-                    <substep >
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor" />
-                    </substep>
-                    <substep >
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair" />
-                    </substep>
-                    <substep >
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image" />
-                    </substep>
-                    <substep >
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-tenant" />
-                    </substep>
-                    <substep >
-                        <cmd >On the same page, locate and record an internal network to provide
-                            connectivity for the stack.</cmd>
-                    </substep>
-                </substeps>
-            </step>
-            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N1009F_N1004B_N10024_N10001" ><cmd /></step>
-            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N100A6_N1004B_N10024_N10001" ><cmd /></step>
-            
-            <step id="step_N10093_N10040_N10020_N10001" >
-                <cmd >Select the template, then click <uicontrol >Browse</uicontrol> and select <filepath >Launch2NamedVMs.yaml</filepath> from the local disk.</cmd>
-            </step>
-            <step id="step_N100B9_N10040_N10020_N10001" >
-                <cmd >Use the <wintitle >Launch Stack</wintitle> form to provide the required
-                    parameter values for the template.</cmd>
-                <info >
-                    <fig id="fig_N100C3_N100C0_N100B5_N10040_N10020_N10001" >
-                        <image alt="2NamedVMs Launch Stack form" href="jow1404333626947.image" id="image_pw4_5vj_j4"  width="1.5in"/>
-                    </fig>
-                </info>
-            </step>
-        </steps>
-    </taskbody>
-</task-wr>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "topic.dtd"><topic ditaarch:DITAArchVersion="1.2" domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333810324" xml:lang="en-us">    <!-- Modification History        -->    <title >Creating a Static Resource</title>    <shortdesc >The <filepath >Launch2NamedVMs.yaml</filepath> template        illustrates the use of templates to create static resources.</shortdesc>    <prolog>        <author >Jim Owens</author>    </prolog>    <body>        <section id="section_N10023_N10020_N10001" >            <p >This HOT template creates two VM instances named <b >guest-1</b> and <b >guest-2</b>. These names are specified as parameters in the template,                illustrating the use of HP Helion OpenStack Carrier Grade extensions to simplify VM instance naming.                They are used by the <b >OS::Nova::Server</b>                resources, which define the construction of the VMs.</p>            <p >The template also defines networking ports for the VMs. Each VM has a single network                port (<b >OS::Neutron::Port</b>). Both ports are attached to the                same existing tenant network.</p>        </section>        <ol>            <li id="li_N10043_N10040_N10020_N10001" >                <p >Collect the required parameter values for this template.</p>                                    <p >For information about flavors, keypairs, images, or tenant networks, see the <cite >HP Helion OpenStack Carrier Grade Reference Deployment Scenarios: User Tasks</cite>.</p>                                <ol id="ol_wqc_mlv_34">                    <li >                        <p conref="jow1404333809730.xml#jow1404333809730/locate-flavor" />                    </li>                    <li >                        <p conref="jow1404333809730.xml#jow1404333809730/locate-keypair" />                    </li>                    <li >                        <p conref="jow1404333809730.xml#jow1404333809730/locate-image" />                    </li>                    <li >                        <p conref="jow1404333809730.xml#jow1404333809730/locate-tenant" />                    </li>                    <li >                        <p >On the same page, locate and record an internal network to provide                            connectivity for the stack.</p>                    </li>                </ol>            </li>            <li conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="li_N1009F_N1004B_N10024_N10001" ><p /></li>            <li conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="li_N100A6_N1004B_N10024_N10001" ><p /></li>                        <li id="li_N10093_N10040_N10020_N10001" >                <p >Select the template, then click <uicontrol >Browse</uicontrol> and select <filepath >Launch2NamedVMs.yaml</filepath> from the local disk.</p>            </li>            <li id="li_N100B9_N10040_N10020_N10001" >                <p >Use the <wintitle >Launch Stack</wintitle> form to provide the required                    parameter values for the template.</p>                                    <fig id="fig_N100C3_N100C0_N100B5_N10040_N10020_N10001" >                        <image alt="2NamedVMs Launch Stack form" href="jow1404333626947.image" id="image_pw4_5vj_j4"  width="1.5in"/>                    </fig>                            </li>        </ol>    </body></topic>

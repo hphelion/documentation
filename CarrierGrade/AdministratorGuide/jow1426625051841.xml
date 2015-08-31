@@ -1,40 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1426625051841" xml:lang="en-us">
-<!-- Modification History
-        
--->
-    <title >Pinning a vCPU to a Shared Physical CPU</title>
-    <shortdesc >You can pin a vCPU to a shared physical CPU by using a flavor with the required extra
-        specification.</shortdesc>
-    <prolog>
-        <author >Jim Owens</author>
-    </prolog>
-    <taskbody>
-        <context id="context_N1001F_N1001C_N10001" >
-            <p >You can set up a shared physical CPU on the host to run low-load or
-                non-real-time tasks for multiple VMs, freeing other cores on the host for dedicated
-                high-load tasks. You can then use an extra spec to pin a specified vCPU to the
-                shared physical CPU.</p>
-        </context>
-        <prereq id="prereq_N1002D_N1001C_N10001" >
-            <p >To use this extra spec, you must define a shared physical CPU on at least
-                one host. For more information, see <xref href="jow1426618822854.xml" />. To support migration, shared physical CPUs on multiple hosts are
-                recommended.</p>
-            <p >You must also set the <codeph >CPU
-                    Policy</codeph> extra specification for the flavor to <codeph >Dedicated</codeph>. This enables the high-load vCPUs for
-                the instance to be pinned.</p>
-        </prereq>
-        <context id="context_N1004A_N1001C_N10001" >
-            <p >To add the required extra specification to a flavor using the web
-                administration interface, use the <uicontrol >Shared VCPU
-                    ID</uicontrol> selection in the <uicontrol >Create Flavor Extra
-                    Spec</uicontrol> drop-down menu. To access this menu, see <xref href="jow1429538642910.xml" />.</p>
-            <p >To set the Shared VCPU ID from the CLI, use a command of the
-                following form:</p>
-            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova flavor-key <varname >flavor_name</varname> set hw:wrs:shared_vcpu=<varname >vcpu_id</varname></userinput></codeblock>
-            <p >where <codeph >vcpu_id</codeph> is an
-                integer that identifies the vcpu (starting from 0).</p>
-        </context>
-    </taskbody>
-</task-wr>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "topic.dtd"><topic id="jow1426625051841" xml:lang="en-us"><!-- Modification History        -->    <title >Pinning a vCPU to a Shared Physical CPU</title>    <shortdesc >You can pin a vCPU to a shared physical CPU by using a flavor with the required extra        specification.</shortdesc>    <prolog>        <author >Jim Owens</author>    </prolog>    <body>        <section id="section_N1001F_N1001C_N10001" >            <p >You can set up a shared physical CPU on the host to run low-load or                non-real-time tasks for multiple VMs, freeing other cores on the host for dedicated                high-load tasks. You can then use an extra spec to pin a specified vCPU to the                shared physical CPU.</p>        </section>        <section id="section_N1002D_N1001C_N10001" >            <p >To use this extra spec, you must define a shared physical CPU on at least                one host. For more information, see <xref href="jow1426618822854.xml" />. To support migration, shared physical CPUs on multiple hosts are                recommended.</p>            <p >You must also set the <b >CPU                    Policy</b> extra specification for the flavor to <b >Dedicated</b>. This enables the high-load vCPUs for                the instance to be pinned.</p>        </section>        <section id="section_N1004A_N1001C_N10001" >            <p >To add the required extra specification to a flavor using the web                administration interface, use the <uicontrol >Shared VCPU                    ID</uicontrol> selection in the <uicontrol >Create Flavor Extra                    Spec</uicontrol> drop-down menu. To access this menu, see <xref href="jow1429538642910.xml" />.</p>            <p >To set the Shared VCPU ID from the CLI, use a command of the                following form:</p>            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova flavor-key <varname >flavor_name</varname> set hw:wrs:shared_vcpu=<varname >vcpu_id</varname></userinput></codeblock>            <p >where <b >vcpu_id</b> is an                integer that identifies the vcpu (starting from 0).</p>        </section>    </body></topic>

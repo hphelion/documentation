@@ -133,13 +133,13 @@ information, see <xref type="section" href="#topic6164/local">Managing Local Vol
 <p>To configure a compute host to provide local storage for use by VMs, add a local volume group with the name novalocal.</p>
 <p>The following CLI commands are available for managing local volume groups.</p>
 <codeblock>
-  <codeph>host-lvg-add hostname groupname
+  <codeph>host-lvg-add hostname groucodeph
 
 where 
-* groupname is the name of the local volume group to which the physical volume is added
+* groucodeph is the name of the local volume group to which the physical volume is added
 * where hostname is the name of the host system``
 
-**Note:** The only valid groupname is nova-local.
+**Note:** The only valid groucodeph is nova-local.
 
 host-lvg-delete hostname nova-local
 host-lvg-list hostname
@@ -162,10 +162,10 @@ where hostname is the name of the host system
 <p>Before you can add a physical volume, a local volume group must exist on the host. To create one, see <xref type="section" href="#topic6164/local">Managing Local Volume Groups</xref>.</p>
 <p>The following CLI commands are available for managing physical volumes.</p>
 <codeblock>
-  <codeph>host-pv-add hostname &lt;groupname&gt; disk_uuid
+  <codeph>host-pv-add hostname &lt;groucodeph&gt; disk_uuid
 
 where 
-* groupname is the name of the local volume group to which the physical volume is added
+* groucodeph is the name of the local volume group to which the physical volume is added
 * where hostname is the name of the host system``
 </codeph>
 </codeblock>

@@ -1,68 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
-<reference-wr domains="(topic reference reference-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1432757989702" xml:lang="en-us">
-    <!-- Modification History
-    
--->
-    <title >The Identity Menu</title>
-    <shortdesc > The <uicontrol >Identity</uicontrol> menu contains
-        selections for managing tenants (projects) and users. It is available when <uicontrol >admin</uicontrol> is selected as the <codeph >Current
-            Tenant</codeph>.</shortdesc>
-    <prolog>
-        <author >Jim Owens</author>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <refbody>
-        <section id="section_N10027_N10024_N10001" >
-            <fig id="fig_N1002B_N10027_N10024_N10001" >
-                <image href="Fig_1_page_20.JPG" id="image_zmy_jbf_2s" >
-                    <alt >HP Helion OpenStack Carrier Grade Menu Identity Panel</alt>
-                </image>
-            </fig>
-            <p >The menu contains one section.</p>
-        </section>
-        <section id="section_N1022F_N10024_N10001" >
-            <title >Identity</title>
-            <table id="table_ipm_r3f_44">
-                <tgroup cols="3">
-                    <colspec colname="col1" colwidth="14*"/>
-                    <colspec colname="col2" colwidth="60*"/>
-                    <colspec colname="col3" colwidth="26*"/>
-                    <thead>
-                        <row>
-                            <entry colname="col1" >
-                                <p >Menu item</p>
-                            </entry>
-                            <entry colname="col2" >
-                                <p >Description</p>
-                            </entry>
-                            <entry colname="col3" >
-                                <p >Reference</p>
-                            </entry>
-                        </row>
-                    </thead>
-                    <tbody>
-                        <row>
-                            <entry >
-                                <p >Projects</p>
-                            </entry>
-                            <entry >
-                                <p >Controls for managing tenants.</p>
-                            </entry>
-                            <entry />
-                        </row>
-                        <row>
-                            <entry >
-                                <p >Users</p>
-                            </entry>
-                            <entry >
-                                <p >Controls for managing user accounts.</p>
-                            </entry>
-                            <entry />
-                        </row>
-                    </tbody>
-                </tgroup>
-            </table>
-        </section>
-    </refbody>
-</reference-wr>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1432757989702" xml:lang="en-us">    <!-- Modification History    -->    <title >The Identity Menu</title>    <shortdesc > The <uicontrol >Identity</uicontrol> menu contains        selections for managing tenants (projects) and users. It is available when <uicontrol >admin</uicontrol> is selected as the <b >Current            Tenant</b>.</shortdesc>    <prolog>        <author >Jim Owens</author>        <author >Pedro Sanchez</author>    </prolog>    <body>        <section id="section_N10027_N10024_N10001" >            <fig id="fig_N1002B_N10027_N10024_N10001" >                <image href="Fig_1_page_20.JPG" id="image_zmy_jbf_2s" >                    <alt >HP Helion OpenStack Carrier Grade Menu Identity Panel</alt>                </image>            </fig>            <p >The menu contains one section.</p>        </section>        <section id="section_N1022F_N10024_N10001" >            <title >Identity</title>            <table id="table_ipm_r3f_44">                <tgroup cols="3">                    <colspec colname="col1" colwidth="14*"/>                    <colspec colname="col2" colwidth="60*"/>                    <colspec colname="col3" colwidth="26*"/>                    <thead>                        <row>                            <entry colname="col1" >                                <p >Menu item</p>                            </entry>                            <entry colname="col2" >                                <p >Description</p>                            </entry>                            <entry colname="col3" >                                <p >Reference</p>                            </entry>                        </row>                    </thead>                    <tbody>                        <row>                            <entry >                                <p >Projects</p>                            </entry>                            <entry >                                <p >Controls for managing tenants.</p>                            </entry>                            <entry />                        </row>                        <row>                            <entry >                                <p >Users</p>                            </entry>                            <entry >                                <p >Controls for managing user accounts.</p>                            </entry>                            <entry />                        </row>                    </tbody>                </tgroup>            </table>        </section>    </body></topic>

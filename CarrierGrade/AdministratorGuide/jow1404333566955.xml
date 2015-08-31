@@ -71,7 +71,7 @@
                 <p>The <uicontrol>Project</uicontrol> (tenant) tab is
 
 
-                    available for users assigned to one or more tenants as a <codeph>member</codeph>. </p>
+                    available for users assigned to one or more tenants as a <b>member</b>. </p>
 
 
             </li>
@@ -83,7 +83,7 @@
                 <p> The <uicontrol>Admin</uicontrol> tab is available for users assigned as
 
 
-      <codeph>admin</codeph> for the HP Helion OpenStack Carrier Grade.</p>
+      <b>admin</b> for the HP Helion OpenStack Carrier Grade.</p>
 
 
             </li>

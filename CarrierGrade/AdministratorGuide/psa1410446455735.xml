@@ -1,96 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446455735" xml:lang="en-us">
- <!-- Modification History
-
- -->
- <title >Managing Software Patches</title>
- <shortdesc >Patches to the system software become available as needed to address
-  issues associated with a current HP Helion OpenStack Carrier Grade software release. They must be uploaded to the
-  active controller and applied to all required hosts in the cluster.</shortdesc>
- <prolog>
-  <author >Pedro Sanchez</author>
- </prolog>
- <body>
-  <p >The patching system is implemented using the following components:</p>
-  <dl>
-   <dlentry >
-    <dt >Patch Controller</dt>
-    <dd >
-     <p >This is a daemon running on the active controller. The daemon queries the
-      patch agents to collect information about the state of patches on every host in the cluster.
-      It also communicates with the patch agents to command patch operations to take place.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt >Patch Agent</dt>
-    <dd >
-     <p >These are daemons running on the cluster hosts, one agent per host. Each
-      patch agent maintains up-to-date information about the status of patches on the host, and
-      responds to queries and commands from the patch controller.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt >Patching Commands</dt>
-    <dd >
-     <p >The <cmdname >wrs-patch</cmdname> command is available on the
-      active controller. It provides the user interface to process the patches, including querying
-      the state of a patch, listing affected hosts, and applying, installing, and removing
-      patches.</p>
-     <p >The <cmdname >system host-patch-reboot</cmdname> command
-      provides a convenient way to lock a host, install all pending patches, reboot, and bring the
-      host back to the unlock-available state.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt >Patch Storage Area</dt>
-    <dd >
-     <p >A central storage area maintained by the patch controller. Patches are
-      initially uploaded to the patch storage area and remain there until they are deleted.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt >Software Updates Repository</dt>
-    <dd >
-     <p >A central repository of software updates associated with patches applied to
-      the system. This repository is used by all hosts in the cluster to identify the software
-      updates and rollbacks required on each host.</p>
-    </dd>
-   </dlentry>
-  </dl>
-  <p >The overall flow for installing a patch from the command line interface on a
-   working HP Helion OpenStack Carrier Grade cluster is the following:</p>
-  <ol id="ol_vgf_yzz_jp">
-   <li >
-    <p >Download the patch to a workstation that can reach the active controller
-     through the OAM network. </p>
-   </li>
-   <li >
-    <p >Copy the patch to the active controller using the cluster's OAM floating IP
-     address as the destination point. You can use a command such as <cmdname >scp</cmdname> to copy the patch. The patching workflows presented in this document assume
-     that this step is complete already, that is, they assume that the patch is already available
-     from the file system of the active controller.</p>
-   </li>
-   <li >
-    <p >Upload the new patch to the patching storage area. This step makes the new
-     patch available within the patching system, but does not install it to the cluster yet. For all
-     purposes, the patch is dormant.</p>
-   </li>
-   <li >
-    <p >Apply the patch, and install it on each of the affected hosts in the
-     cluster.</p>
-   </li>
-  </ol>
-  <p >Patching the system can be done using the web administration interface or the
-   command line interface on the active controller. When using the web administration interface you
-   upload the patch directly from your workstation using a file browser window provided by the patch
-   upload facility.</p>
-  <p >A special case occurs during the initial provisioning of a cluster, when you
-   want to patch <codeph >controller-0</codeph> before the system software
-   is configured. This can only be done from the command line interface. See <xref href="psa1414084582159.xml" /> for details.</p>
-  <p >The following sections introduce the core patching concepts using the command
-   line interface. It is therefore advised that you read this content before reading the section
-    <xref href="psa1420733173602.xml" />, which assumes you are already familiar with
-   the patching workflow.</p>
- </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446455735" xml:lang="en-us"> <!-- Modification History --> <title >Managing Software Patches</title> <shortdesc >Patches to the system software become available as needed to address  issues associated with a current HP Helion OpenStack Carrier Grade software release. They must be uploaded to the  active controller and applied to all required hosts in the cluster.</shortdesc> <prolog>  <author >Pedro Sanchez</author> </prolog> <body>  <p >The patching system is implemented using the following components:</p>  <dl>   <dlentry >    <dt >Patch Controller</dt>    <dd >     <p >This is a daemon running on the active controller. The daemon queries the      patch agents to collect information about the state of patches on every host in the cluster.      It also communicates with the patch agents to command patch operations to take place.</p>    </dd>   </dlentry>   <dlentry >    <dt >Patch Agent</dt>    <dd >     <p >These are daemons running on the cluster hosts, one agent per host. Each      patch agent maintains up-to-date information about the status of patches on the host, and      responds to queries and commands from the patch controller.</p>    </dd>   </dlentry>   <dlentry >    <dt >Patching Commands</dt>    <dd >     <p >The <i >wrs-patch</i> command is available on the      active controller. It provides the user interface to process the patches, including querying      the state of a patch, listing affected hosts, and applying, installing, and removing      patches.</p>     <p >The <i >system host-patch-reboot</i> command      provides a convenient way to lock a host, install all pending patches, reboot, and bring the      host back to the unlock-available state.</p>    </dd>   </dlentry>   <dlentry >    <dt >Patch Storage Area</dt>    <dd >     <p >A central storage area maintained by the patch controller. Patches are      initially uploaded to the patch storage area and remain there until they are deleted.</p>    </dd>   </dlentry>   <dlentry >    <dt >Software Updates Repository</dt>    <dd >     <p >A central repository of software updates associated with patches applied to      the system. This repository is used by all hosts in the cluster to identify the software      updates and rollbacks required on each host.</p>    </dd>   </dlentry>  </dl>  <p >The overall flow for installing a patch from the command line interface on a   working HP Helion OpenStack Carrier Grade cluster is the following:</p>  <ol id="ol_vgf_yzz_jp">   <li >    <p >Download the patch to a workstation that can reach the active controller     through the OAM network. </p>   </li>   <li >    <p >Copy the patch to the active controller using the cluster's OAM floating IP     address as the destination point. You can use a command such as <i >scp</i> to copy the patch. The patching workflows presented in this document assume     that this li is complete already, that is, they assume that the patch is already available     from the file system of the active controller.</p>   </li>   <li >    <p >Upload the new patch to the patching storage area. This li makes the new     patch available within the patching system, but does not install it to the cluster yet. For all     purposes, the patch is dormant.</p>   </li>   <li >    <p >Apply the patch, and install it on each of the affected hosts in the     cluster.</p>   </li>  </ol>  <p >Patching the system can be done using the web administration interface or the   command line interface on the active controller. When using the web administration interface you   upload the patch directly from your workstation using a file browser window provided by the patch   upload facility.</p>  <p >A special case occurs during the initial provisioning of a cluster, when you   want to patch <b >controller-0</b> before the system software   is configured. This can only be done from the command line interface. See <xref href="psa1414084582159.xml" /> for details.</p>  <p >The following sections introduce the core patching concepts using the command   line interface. It is therefore advised that you read this content before reading the section    <xref href="psa1420733173602.xml" />, which assumes you are already familiar with   the patching workflow.</p> </body></topic>

@@ -1,33 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333756314" xml:lang="en-us">
-    <!-- Modification History
-   -->
-    <title >The Cluster System</title>
-    <shortdesc >The HP Helion OpenStack Carrier Grade cluster is represented internally by a unique object referred to as
-    the <codeph >system</codeph>.</shortdesc>
-    <prolog>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <p >Information about this object is available from the <uicontrol >Systems</uicontrol> tab on the
-        <wintitle >System Inventory</wintitle> page, as illustrated below.</p>
-        <fig id="fig_N1002F_N10020_N10001" >
-            <image href="jow1404333751864.image" id="image_htj_rx4_k4"  width="6in"/>
-        </fig>
-        <p >By default, the name of the system object is its internal UUID, and it
-            has no description. This can be changed from the <wintitle >Edit
-                Host</wintitle> window, accessible by clicking <uicontrol >Edit
-                System</uicontrol>, as follows:</p>
-        <fig id="fig_N10047_N10020_N10001" >
-            <image href="jow1404333753420.image" id="image_hn2_cy4_k4"  width="4in"/>
-        </fig>
-        <p >After committing the changes, the <uicontrol >Systems</uicontrol> tab is displayed with the updated information:</p>
-        <fig id="fig_N1005B_N10020_N10001" >
-            <image href="jow1404333754858.image" id="image_c2y_qy4_k4"  width="4in"/>
-        </fig>
-        <p >The new name displays on the top left corner of the web management
-            interface, and on the welcome message when logging in to the nodes using an SSH
-            client.</p>
-    </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333756314" xml:lang="en-us">    <!-- Modification History   -->    <title >The Cluster System</title>    <shortdesc >The HP Helion OpenStack Carrier Grade cluster is represented internally by a unique object referred to as    the <b >system</b>.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <p >Information about this object is available from the <uicontrol >Systems</uicontrol> tab on the        <wintitle >System Inventory</wintitle> page, as illustrated below.</p>        <fig id="fig_N1002F_N10020_N10001" >            <image href="jow1404333751864.image" id="image_htj_rx4_k4"  width="6in"/>        </fig>        <p >By default, the name of the system object is its internal UUID, and it            has no description. This can be changed from the <wintitle >Edit                Host</wintitle> window, accessible by clicking <uicontrol >Edit                System</uicontrol>, as follows:</p>        <fig id="fig_N10047_N10020_N10001" >            <image href="jow1404333753420.image" id="image_hn2_cy4_k4"  width="4in"/>        </fig>        <p >After committing the changes, the <uicontrol >Systems</uicontrol> tab is displayed with the updated information:</p>        <fig id="fig_N1005B_N10020_N10001" >            <image href="jow1404333754858.image" id="image_c2y_qy4_k4"  width="4in"/>        </fig>        <p >The new name displays on the top left corner of the web management            interface, and on the welcome message when logging in to the nodes using an SSH            client.</p>    </body></topic>

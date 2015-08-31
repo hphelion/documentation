@@ -1,133 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic id="jow1429538642910" xml:lang="en-us">
-<!-- Modification History
-
- -->
- <title >Flavor Extra Specifications</title>
- <shortdesc >You can edit an existing flavor to include additional attributes using
-   <term >extra specifications</term>.</shortdesc>
- <prolog>
-  <author >Jim Owens</author>
- </prolog>
- <body>
-  <p >Extra specifications are key-value pairs you can add to an existing flavor to
-   be included when the flavor is used with a new virtual machine. The HP Helion OpenStack Carrier Grade <uicontrol >Extra Specs</uicontrol> tab for a flavor includes extensions specific to
-   HP Helion OpenStack Carrier Grade.</p>
-  <p >To access the extra specifications settings for a flavor, open the <wintitle >Flavors</wintitle> window and click the flavor name. For help accessing the
-   Flavors window, see <xref href="jow1404333663095.xml" />.</p>
-  <fig id="fig_z2v_2lw_5p" >
-   <title >Flavor extra specs</title>
-   <image href="psa1413822186171.image" id="image_o42_g2x_5p"  placement="inline" width="4in">
-    <alt >VM Flavor Extra Specs Tab</alt>
-   </image>
-  </fig>
-  <p >The <uicontrol >Extra Specs</uicontrol> tab lists extra
-   specifications that have been added for the flavor. To modify an existing entry, use the
-    <uicontrol >Edit</uicontrol> button. To remove a single entry, open the
-   drop-down menu associated with the extra spec, and select <uicontrol >Delete
-    extra spec</uicontrol> from the menu. You can also remove all extra specs at once using the
-    <uicontrol >Delete extra specs</uicontrol> button.</p>
-  <p >To add a new extra specification, click <uicontrol >Create</uicontrol>. This opens the <wintitle >Create Flavor Extra
-    Spec</wintitle> window, as illustrated below:</p>
-  <fig id="fig_wyg_ylw_5p" >
-   <title >Creating a flavor extra specification</title>
-   <image href="psa1413822561872.image" id="image_a2g_h2x_5p"  placement="inline">
-    <alt >Create VM Flavor Extra Spec</alt>
-   </image>
-  </fig>
-  <p >Use the <uicontrol >Extra Spec</uicontrol> drop-down list to
-   add specifications. The following options are available:</p>
-  <dl>
-   <dlentry >
-    <dt ><option >Custom Extra Spec</option></dt>
-    <dd >
-     <p >Available for internal use only.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt ><option >VCPU Model</option></dt>
-    <dd >
-     <p >The CPU model to use with the virtual machine. For more information, see
-       <xref href="jow1429544114897.xml" />.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt ><option >CPU Policy</option></dt>
-    <dd >
-     <p >The policy for assigning dedicated physical or logical CPU resources to the VM. For more
-      information, see <xref href="jow1429544935360.xml" />.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt ><option >NUMA node</option></dt>
-    <dd >
-     <p >The NUMA node to use when launching a virtual machine. For more
-      information, see <xref href="jow1425236723556.xml" />.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt ><option >Shared VCPU ID</option></dt>
-    <dd >
-     <p >The ID of a virtual CPU scheduled to run on a shared physical CPU in the
-      compute host. For more information, see <xref href="jow1426618822854.xml" />
-      and <xref href="jow1426625051841.xml" />.</p>
-     <note id="note_N102CA_N102BE_N102B5_N101CC_N10154_N1001F_N10001" >
-      <p >To use this extra specification, you must also set the <codeph >CPU Policy</codeph> extra specification for the flavor to <option >Dedicated</option>. This enables the VM to run a single house-keeping
-       virtual CPU on a shared physical core, while keeping all its high-performance virtual CPUs on
-       dedicated physical cores.</p>
-     </note>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt ><option >Memory Page Size</option></dt>
-    <dd >
-     <p >Sets the page size for VM memory. For more information, see <xref href="jow1424723681500.xml" />.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt ><option >Guest Heartbeat</option></dt>
-    <dd >
-     <p >Enables the Heartbeat API for use by guests on the VM. For more information,
-      see <xref href="jow1429546712705.xml" />.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt ><option >VCPU Scheduler Policy</option></dt>
-    <dd >
-     <p >Sets the scheduling priority for non-boot virtual CPUs. For more information, see <xref href="jow1429547742880.xml" />.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt ><option >Minimum Number of CPUs</option></dt>
-    <dd >
-     <p >Sets the minimum number of virtual CPUs for the flavor. For more
-      information, see <xref href="jow1417817540528.xml" />.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt ><option >Server Group Messaging</option></dt>
-    <dd >
-     <p >Enables the VM to communicate with other VMs in the same server group using
-      a messaging API. For more information, see <xref href="jow1432240580490.xml" />.</p>
-    </dd>
-   </dlentry>
-   <dlentry >
-    <dt ><option >Local Storage</option></dt>
-    <dd >
-     <p >Specifies whether to use local or remote ephemeral storage resources. For
-      more information, see <xref href="jow1426181040008.xml" />.</p>
-    </dd>
-   </dlentry>
-  </dl>
-  <note id="note_N101D4_N10024_N10001" >
-   <p >Some extra specifications are available using the command line only. For more information,
-    see:</p>
-   <ul id="ul_exl_mvd_cs">
-    <li >
-     <p ><xref href="jow1425236666266.xml" /></p>
-    </li>
-   </ul>
-  </note>
- </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic id="jow1429538642910" xml:lang="en-us"><!-- Modification History --> <title >Flavor Extra Specifications</title> <shortdesc >You can edit an existing flavor to include additional attributes using   <term >extra specifications</term>.</shortdesc> <prolog>  <author >Jim Owens</author> </prolog> <body>  <p >Extra specifications are key-value pairs you can add to an existing flavor to   be included when the flavor is used with a new virtual machine. The HP Helion OpenStack Carrier Grade <uicontrol >Extra Specs</uicontrol> tab for a flavor includes extensions specific to   HP Helion OpenStack Carrier Grade.</p>  <p >To access the extra specifications settings for a flavor, open the <wintitle >Flavors</wintitle> window and click the flavor name. For help accessing the   Flavors window, see <xref href="jow1404333663095.xml" />.</p>  <fig id="fig_z2v_2lw_5p" >   <title >Flavor extra specs</title>   <image href="psa1413822186171.image" id="image_o42_g2x_5p"  placement="inline" width="4in">    <alt >VM Flavor Extra Specs Tab</alt>   </image>  </fig>  <p >The <uicontrol >Extra Specs</uicontrol> tab lists extra   specifications that have been added for the flavor. To modify an existing entry, use the    <uicontrol >Edit</uicontrol> button. To remove a single entry, open the   drop-down menu associated with the extra spec, and select <uicontrol >Delete    extra spec</uicontrol> from the menu. You can also remove all extra specs at once using the    <uicontrol >Delete extra specs</uicontrol> button.</p>  <p >To add a new extra specification, click <uicontrol >Create</uicontrol>. This opens the <wintitle >Create Flavor Extra    Spec</wintitle> window, as illustrated below:</p>  <fig id="fig_wyg_ylw_5p" >   <title >Creating a flavor extra specification</title>   <image href="psa1413822561872.image" id="image_a2g_h2x_5p"  placement="inline">    <alt >Create VM Flavor Extra Spec</alt>   </image>  </fig>  <p >Use the <uicontrol >Extra Spec</uicontrol> drop-down list to   add specifications. The following options are available:</p>  <dl>   <dlentry >    <dt ><option >Custom Extra Spec</option></dt>    <dd >     <p >Available for internal use only.</p>    </dd>   </dlentry>   <dlentry >    <dt ><option >VCPU Model</option></dt>    <dd >     <p >The CPU model to use with the virtual machine. For more information, see       <xref href="jow1429544114897.xml" />.</p>    </dd>   </dlentry>   <dlentry >    <dt ><option >CPU Policy</option></dt>    <dd >     <p >The policy for assigning dedicated physical or logical CPU resources to the VM. For more      information, see <xref href="jow1429544935360.xml" />.</p>    </dd>   </dlentry>   <dlentry >    <dt ><option >NUMA node</option></dt>    <dd >     <p >The NUMA node to use when launching a virtual machine. For more      information, see <xref href="jow1425236723556.xml" />.</p>    </dd>   </dlentry>   <dlentry >    <dt ><option >Shared VCPU ID</option></dt>    <dd >     <p >The ID of a virtual CPU scheduled to run on a shared physical CPU in the      compute host. For more information, see <xref href="jow1426618822854.xml" />      and <xref href="jow1426625051841.xml" />.</p>     <note id="note_N102CA_N102BE_N102B5_N101CC_N10154_N1001F_N10001" >      <p >To use this extra specification, you must also set the <b >CPU Policy</b> extra specification for the flavor to <option >Dedicated</option>. This enables the VM to run a single house-keeping       virtual CPU on a shared physical core, while keeping all its high-performance virtual CPUs on       dedicated physical cores.</p>     </note>    </dd>   </dlentry>   <dlentry >    <dt ><option >Memory Page Size</option></dt>    <dd >     <p >Sets the page size for VM memory. For more information, see <xref href="jow1424723681500.xml" />.</p>    </dd>   </dlentry>   <dlentry >    <dt ><option >Guest Heartbeat</option></dt>    <dd >     <p >Enables the Heartbeat API for use by guests on the VM. For more information,      see <xref href="jow1429546712705.xml" />.</p>    </dd>   </dlentry>   <dlentry >    <dt ><option >VCPU Scheduler Policy</option></dt>    <dd >     <p >Sets the scheduling priority for non-boot virtual CPUs. For more information, see <xref href="jow1429547742880.xml" />.</p>    </dd>   </dlentry>   <dlentry >    <dt ><option >Minimum Number of CPUs</option></dt>    <dd >     <p >Sets the minimum number of virtual CPUs for the flavor. For more      information, see <xref href="jow1417817540528.xml" />.</p>    </dd>   </dlentry>   <dlentry >    <dt ><option >Server Group Messaging</option></dt>    <dd >     <p >Enables the VM to communicate with other VMs in the same server group using      a messaging API. For more information, see <xref href="jow1432240580490.xml" />.</p>    </dd>   </dlentry>   <dlentry >    <dt ><option >Local Storage</option></dt>    <dd >     <p >Specifies whether to use local or remote ephemeral storage resources. For      more information, see <xref href="jow1426181040008.xml" />.</p>    </dd>   </dlentry>  </dl>  <note id="note_N101D4_N10024_N10001" >   <p >Some extra specifications are available using the command line only. For more information,    see:</p>   <ul id="ul_exl_mvd_cs">    <li >     <p ><xref href="jow1425236666266.xml" /></p>    </li>   </ul>  </note> </body></topic>

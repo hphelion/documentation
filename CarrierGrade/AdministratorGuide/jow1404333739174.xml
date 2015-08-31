@@ -1,94 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333739174" xml:lang="en-us">
-    <title >Tenant Networks</title>
-    <shortdesc >Tenant networks are logical networking entities visible to tenant users, and around
-  which working network topologies are built.</shortdesc>
-    <prolog>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <p >Tenant networks need support from the physical layers to work as
-            intended. This means that the access L2 switches, providers' networks, and data
-            interface definitions on the compute nodes, must all be properly configured. In
-            particular, when using provider networks of the VLAN or VXLAN type, getting the proper
-            configuration in place requires additional planning. </p>
-        <p >For provider networks of the VLAN type, consider the following
-            guidelines:</p>
-        <ul id="ul_hqm_n2s_4n">
-            <li >
-                <p >All ports on the access L2 switches must be statically configured to support all the VLANs
-     defined on the provider networks they provide access to. The dynamic nature of the cloud might
-     force the set of VLANs in use by a particular L2 switch to change at any moment.</p>
-            </li>
-            <li >
-                <p >The set of VLANs used by each compute node is not fixed; it
-                    changes over time. The current VLAN set in use is determined by the
-                    configuration details of the tenant networks, and the scheduling on the compute
-                    nodes of the virtual machines that use them. This information is provided to the
-                    Neutron's AVS plugin, which then uses it to configure the AVS as required.</p>
-                <p >When a tenant creates a new network, the Neutron segmentation
-                    allocation strategy is to look first for an available segmentation identifier
-                    owned by the tenant. If none is available, the search continues over the
-                    available shared segmentation identifiers. The allocation process returns an
-                    error if no segmentation identifiers are available.</p>
-                <p >The VLAN ID assigned to a tenant network is fixed for as long as the tenant
-                    network is defined in the system. If for some reason the VLAN ID has to change,
-                    the tenant network must be deleted and recreated again.</p>
-            </li>
-            <li >
-                <p >Configuring a tenant network to have access to external networks
-                    (not just providing local networking) requires the following elements:</p>
-                <ul id="ul_vmr_tfs_4n">
-                    <li >
-                        <p >A physical router, and the provider network's access L2 switch, must be part of the same
-       Layer-2 network. Because this Layer 2 network uses a unique VLAN ID, this means also that the
-       router's port used in the connection must be statically configured to support the
-       corresponding VLAN ID.</p>
-                    </li>
-                    <li >
-                        <p >The router must be configured to be part of the same IP subnet that the tenant network is
-       intending to use.</p>
-                    </li>
-                    <li >
-                        <p >When configuring the IP subnet, the tenant must use the router's port IP address as its
-       external gateway.</p>
-                    </li>
-                    <li >
-                        <p >The tenant network must have the <codeph >external</codeph> flag set. Only the
-                                <codeph >admin</codeph> user can set this
-                            flag when the tenant network is created.</p>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-       <p >For provider networks of the VXLAN type, consider the following
-            guidelines:</p>
-        <ul id="ul_gwl_5fh_hr">
-            <li >
-                <p >Layer 3 routers used to interconnect compute nodes must be
-                    multicast-enabled, as required by the VXLAN protocol.</p>
-            </li>
-            <li >
-                <p >To minimize flooding of multicast packets, IGMP and MLD snooping
-                    is recommended on all Layer 2 switches. The AVS switch supports IGMP V1, V2 and
-                    V3, and MLD V1 and V2.</p>
-            </li>
-            <li >
-                <p >To support IGMP and MDL snooping, Layer 3 routers must be
-                    configured for IGMP and MDL querying.</p>
-            </li>
-            <li >
-                <p >To accommodate VXLAN encapsulation, the MTU values for Layer 2
-                    switches and compute node data interfaces must allow for additional headers. For
-                    more information, see <xref href="jow1404333732592.xml" />.</p>
-            </li>
-            <li >
-                <p >To participate in a VXLAN network, the data interfaces on the
-                    compute nodes must be configured with IP addresses, and with route table entries
-                    for the destination subnets or the local gateway. For more information, see
-                        <xref href="jow1425584170078.xml" />, and <xref href="jow1425584215069.xml" />.</p>
-            </li>
-        </ul>
-   </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333739174" xml:lang="en-us">    <title >Tenant Networks</title>    <shortdesc >Tenant networks are logical networking entities visible to tenant users, and around  which working network topologies are built.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <p >Tenant networks need support from the physical layers to work as            intended. This means that the access L2 switches, providers' networks, and data            interface definitions on the compute nodes, must all be properly configured. In            particular, when using provider networks of the VLAN or VXLAN type, getting the proper            configuration in place requires additional planning. </p>        <p >For provider networks of the VLAN type, consider the following            guidelines:</p>        <ul id="ul_hqm_n2s_4n">            <li >                <p >All ports on the access L2 switches must be statically configured to support all the VLANs     defined on the provider networks they provide access to. The dynamic nature of the cloud might     force the set of VLANs in use by a particular L2 switch to change at any moment.</p>            </li>            <li >                <p >The set of VLANs used by each compute node is not fixed; it                    changes over time. The current VLAN set in use is determined by the                    configuration details of the tenant networks, and the scheduling on the compute                    nodes of the virtual machines that use them. This information is provided to the                    Neutron's AVS plugin, which then uses it to configure the AVS as required.</p>                <p >When a tenant creates a new network, the Neutron segmentation                    allocation strategy is to look first for an available segmentation identifier                    owned by the tenant. If none is available, the search continues over the                    available shared segmentation identifiers. The allocation process returns an                    error if no segmentation identifiers are available.</p>                <p >The VLAN ID assigned to a tenant network is fixed for as long as the tenant                    network is defined in the system. If for some reason the VLAN ID has to change,                    the tenant network must be deleted and recreated again.</p>            </li>            <li >                <p >Configuring a tenant network to have access to external networks                    (not just providing local networking) requires the following elements:</p>                <ul id="ul_vmr_tfs_4n">                    <li >                        <p >A physical router, and the provider network's access L2 switch, must be part of the same       Layer-2 network. Because this Layer 2 network uses a unique VLAN ID, this means also that the       router's port used in the connection must be statically configured to support the       corresponding VLAN ID.</p>                    </li>                    <li >                        <p >The router must be configured to be part of the same IP subnet that the tenant network is       intending to use.</p>                    </li>                    <li >                        <p >When configuring the IP subnet, the tenant must use the router's port IP address as its       external gateway.</p>                    </li>                    <li >                        <p >The tenant network must have the <b >external</b> flag set. Only the                                <b >admin</b> user can set this                            flag when the tenant network is created.</p>                    </li>                </ul>            </li>        </ul>       <p >For provider networks of the VXLAN type, consider the following            guidelines:</p>        <ul id="ul_gwl_5fh_hr">            <li >                <p >Layer 3 routers used to interconnect compute nodes must be                    multicast-enabled, as required by the VXLAN protocol.</p>            </li>            <li >                <p >To minimize flooding of multicast packets, IGMP and MLD snooping                    is recommended on all Layer 2 switches. The AVS switch supports IGMP V1, V2 and                    V3, and MLD V1 and V2.</p>            </li>            <li >                <p >To support IGMP and MDL snooping, Layer 3 routers must be                    configured for IGMP and MDL querying.</p>            </li>            <li >                <p >To accommodate VXLAN encapsulation, the MTU values for Layer 2                    switches and compute node data interfaces must allow for additional headers. For                    more information, see <xref href="jow1404333732592.xml" />.</p>            </li>            <li >                <p >To participate in a VXLAN network, the data interfaces on the                    compute nodes must be configured with IP addresses, and with route table entries                    for the destination subnets or the local gateway. For more information, see                        <xref href="jow1425584170078.xml" />, and <xref href="jow1425584215069.xml" />.</p>            </li>        </ul>   </body></topic>

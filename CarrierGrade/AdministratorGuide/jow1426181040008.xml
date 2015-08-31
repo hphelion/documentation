@@ -1,62 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1426181040008" xml:lang="en-us">
-<!-- Modification History
-        
--->
-    <title >Specifying Local Storage for a VM</title>
-    <shortdesc >You can specify instantiation on a host with local storage by using a
-        flavor with the required extra specification.</shortdesc>
-    <prolog>
-        <author >Jim Owens</author>
-    </prolog>
-    <taskbody>
-        <context id="context_N10022_N1001F_N10001" >
-            <p >When this extra spec is used, ephemeral disks defined for the flavor
-                use local storage, allocated from the Local Volume Group on the host.  Note that the
-                default is to use remote storage, but you can change the extra spec to use local
-                storage. </p>
-            <p >If the instance is booted from an image, then the root disk also
-                uses local storage. If the instance is booted from a volume, the root disk uses
-                Cinder-based storage allocated from the controller (for a system using LVM) or from
-                storage hosts (for a system using 3PAR).</p>
-        </context>
-        <prereq id="prereq_N10022_N1001F_N10001" >
-            <p >Before you can use local storage for a VM, you must configure at least
-                one compute node to provide local storage. For more information, see <xref href="jow1426183480976.xml" />.</p>
-        </prereq>
-        <context id="context_N1002F_N1001F_N10001" >
-            <note conref="jow1426942555025.xml#jow1426942555025/note_local_storage_ephemeral" id="note_N10037_N10032_N1001F_N10001" />
-            <p >To add the required extra specification to a flavor using the web
-                administration interface, click <uicontrol >Storage  Type</uicontrol>
-                in the <uicontrol >Create Flavor Extra Spec</uicontrol> drop-down
-                menu, and then select the <uicontrol >Local Storage</uicontrol>
-                check box. To access this menu, see <xref href="jow1429538642910.xml" />. </p>
-            <p >You can also specify the extra spec from the CLI by setting the
-                following parameter for a flavor:</p>
-            <codeblock ><userinput >aggregate_instance_extra_specs:local_storage=<varname >loc_storage</varname></userinput></codeblock>
-            <p >where <varname >loc_storage</varname> is one of the
-                following:</p>
-            <dl>
-                <dlentry >
-                    <dt >true</dt>
-                    <dd >
-                        <p >Specifies ephemeral local storage for use by the VM.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >false</dt>
-                    <dd >
-                        <p >Specifies persistent Cinder-based storage for use by the
-                            VM.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-            <p >For example:</p>
-            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova flavor-key <varname >flavor_name</varname> \
-set aggregate_instance_extra_specs=<varname >integer_value</varname></userinput></codeblock>
-            <p >The local storage key is added by default on flavor creation and set to false (remote
-                storage).</p>
-        </context>
-    </taskbody>
-</task-wr>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "topic.dtd"><topic id="jow1426181040008" xml:lang="en-us"><!-- Modification History        -->    <title >Specifying Local Storage for a VM</title>    <shortdesc >You can specify instantiation on a host with local storage by using a        flavor with the required extra specification.</shortdesc>    <prolog>        <author >Jim Owens</author>    </prolog>    <body>        <section id="section_N10022_N1001F_N10001" >            <p >When this extra spec is used, ephemeral disks defined for the flavor                use local storage, allocated from the Local Volume Group on the host.  Note that the                default is to use remote storage, but you can change the extra spec to use local                storage. </p>            <p >If the instance is booted from an image, then the root disk also                uses local storage. If the instance is booted from a volume, the root disk uses                Cinder-based storage allocated from the controller (for a system using LVM) or from                storage hosts (for a system using 3PAR).</p>        </section>        <section id="section_N10022_N1001F_N10001" >            <p >Before you can use local storage for a VM, you must configure at least                one compute node to provide local storage. For more information, see <xref href="jow1426183480976.xml" />.</p>        </section>        <section id="section_N1002F_N1001F_N10001" >            <note conref="jow1426942555025.xml#jow1426942555025/note_local_storage_ephemeral" id="note_N10037_N10032_N1001F_N10001" />            <p >To add the required extra specification to a flavor using the web                administration interface, click <uicontrol >Storage  Type</uicontrol>                in the <uicontrol >Create Flavor Extra Spec</uicontrol> drop-down                menu, and then select the <uicontrol >Local Storage</uicontrol>                check box. To access this menu, see <xref href="jow1429538642910.xml" />. </p>            <p >You can also specify the extra spec from the CLI by setting the                following parameter for a flavor:</p>            <codeblock ><userinput >aggregate_instance_extra_specs:local_storage=<varname >loc_storage</varname></userinput></codeblock>            <p >where <varname >loc_storage</varname> is one of the                following:</p>            <dl>                <dlentry >                    <dt >true</dt>                    <dd >                        <p >Specifies ephemeral local storage for use by the VM.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >false</dt>                    <dd >                        <p >Specifies persistent Cinder-based storage for use by the                            VM.</p>                    </dd>                </dlentry>            </dl>            <p >For example:</p>            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova flavor-key <varname >flavor_name</varname> \set aggregate_instance_extra_specs=<varname >integer_value</varname></userinput></codeblock>            <p >The local storage key is added by default on flavor creation and set to false (remote                storage).</p>        </section>    </body></topic>

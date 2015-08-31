@@ -1,92 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1424723681500" xml:lang="en-us">
-<!-- Modification History
-        
--->
-    <title >Specifying a Page Size for a VM </title>
-    <shortdesc >You can request a specific page size for a VM by using a flavor with the required
-        extra spec when you launch the VM, or by defining an image with the required metadata
-        property.</shortdesc>
-    <prolog>
-        <author >Jim Owens</author>
-    </prolog>
-    <taskbody>
-        <prereq id="prereq_N10022_N1001F_N10001" >
-            <p >Before you can request huge pages for a VM, you must define the
-                available page sizes on the hosts in the cluster. For details, see <xref href="jow1423087781001.xml" />.</p>
-        </prereq>
-        <context id="context_N1001F_N1001C_N10001" >
-            <p >Memory required by a guest is allocated as one or more pages of the
-                requested size. Once allocated, the memory is unavailable for use by other guests
-                until the instance is terminated.</p>
-            <p >To add this extra spec to a flavor using the web administration
-                interface, use the <uicontrol >Memory Page Size</uicontrol> selection
-                in the <uicontrol >Create Flavor Extra Spec</uicontrol> drop-down
-                menu. To access this menu, see <xref href="jow1429538642910.xml" />.</p>
-            <p >You can also specify the extra spec from the CLI by setting the
-                following parameter for a flavor:</p>
-            <codeblock ><userinput >hw:mem_page_size=<varname >pagesize</varname></userinput></codeblock>
-            <p >where <varname >pagesize</varname> is one of the
-                following:</p>
-            <dl>
-                <dlentry >
-                    <dt >small</dt>
-                    <dd >
-                        <p >Requests the smallest available size on the compute
-                            node.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >large</dt>
-                    <dd >
-                        <p >Requests the largest available huge page size (1GiB, then
-                            2MiB). <i >This setting is not recommended</i> (see note).</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >any</dt>
-                    <dd >
-                        <p >Requests any available size, including smaller pages. The
-                            actual size used depends on the compute driver implementation. For
-                            HP Helion OpenStack Carrier Grade, the largest available size is used (1 GiB, then 2MiB,
-                            then 4KiB). <i >This setting is not recommended</i> (see note). </p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >2048</dt>
-                    <dd >
-                        <p >Requests a 2MiB page.</p>
-                    </dd>
-                </dlentry>
-                 <dlentry >
-                    <dt >1048576</dt>
-                    <dd >
-                        <p >requests a 1GiB page.</p>
-                    </dd>
-                </dlentry> 
-            </dl>
-            <p >If no page size is specified, small pages are used by default.</p>
-            <note id="note_N100BD_N10032_N1001F_N10001" >
-                <p >The use of <codeph >large</codeph> or
-                        <codeph >any</codeph> is not recommended. These settings can cause
-                    migration issues if the largest available size varies from host to host. For
-                    reliable results, use <codeph >small</codeph> <!-- for VMs that use shared
-                    host memory resources,-->or a specific page size<!--for VMs that use dedicated host
-                    resources-->.</p>
-            </note>
-            <p > </p>
-            <p >For example, to set a 2MiB page size on a flavor that has already
-                been created, use the following command:</p>
-            <codeblock ><systemoutput >~(keystone)admin)$ </systemoutput><userinput >nova flavor-key hw:mem_page_size=2048</userinput></codeblock>
-            <p >You can also define an image with the required property by including
-                the <parmname >hw_mem_page_size</parmname> parameter, as in the
-                following example:</p>
-            <codeblock ><systemoutput >~(keystone)admin)$ </systemoutput><userinput >nova image-meta <varname >image</varname> hw_mem_page_size=<varname >pagesize</varname></userinput></codeblock>
-            <p >Note that if you use image metadata to request a page size, the image
-                is unable to access a <codeph >large</codeph> page unless the setting for
-                the flavor is also <codeph >large</codeph> or
-                    <codeph >any</codeph>.</p>
-        </context>
-    </taskbody>
-</task-wr>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "topic.dtd"><topic id="jow1424723681500" xml:lang="en-us"><!-- Modification History        -->    <title >Specifying a Page Size for a VM </title>    <shortdesc >You can request a specific page size for a VM by using a flavor with the required        extra spec when you launch the VM, or by defining an image with the required metadata        property.</shortdesc>    <prolog>        <author >Jim Owens</author>    </prolog>    <body>        <section id="section_N10022_N1001F_N10001" >            <p >Before you can request huge pages for a VM, you must define the                available page sizes on the hosts in the cluster. For details, see <xref href="jow1423087781001.xml" />.</p>        </section>        <section id="section_N1001F_N1001C_N10001" >            <p >Memory required by a guest is allocated as one or more pages of the                requested size. Once allocated, the memory is unavailable for use by other guests                until the instance is terminated.</p>            <p >To add this extra spec to a flavor using the web administration                interface, use the <uicontrol >Memory Page Size</uicontrol> selection                in the <uicontrol >Create Flavor Extra Spec</uicontrol> drop-down                menu. To access this menu, see <xref href="jow1429538642910.xml" />.</p>            <p >You can also specify the extra spec from the CLI by setting the                following parameter for a flavor:</p>            <codeblock ><userinput >hw:mem_page_size=<varname >pagesize</varname></userinput></codeblock>            <p >where <varname >pagesize</varname> is one of the                following:</p>            <dl>                <dlentry >                    <dt >small</dt>                    <dd >                        <p >Requests the smallest available size on the compute                            node.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >large</dt>                    <dd >                        <p >Requests the largest available huge page size (1GiB, then                            2MiB). <i >This setting is not recommended</i> (see note).</p>                    </dd>                </dlentry>                <dlentry >                    <dt >any</dt>                    <dd >                        <p >Requests any available size, including smaller pages. The                            actual size used depends on the compute driver implementation. For                            HP Helion OpenStack Carrier Grade, the largest available size is used (1 GiB, then 2MiB,                            then 4KiB). <i >This setting is not recommended</i> (see note). </p>                    </dd>                </dlentry>                <dlentry >                    <dt >2048</dt>                    <dd >                        <p >Requests a 2MiB page.</p>                    </dd>                </dlentry>                 <dlentry >                    <dt >1048576</dt>                    <dd >                        <p >requests a 1GiB page.</p>                    </dd>                </dlentry>             </dl>            <p >If no page size is specified, small pages are used by default.</p>            <note id="note_N100BD_N10032_N1001F_N10001" >                <p >The use of <b >large</b> or                        <b >any</b> is not recommended. These settings can cause                    migration issues if the largest available size varies from host to host. For                    reliable results, use <b >small</b> <!-- for VMs that use shared                    host memory resources,-->or a specific page size<!--for VMs that use dedicated host                    resources-->.</p>            </note>            <p > </p>            <p >For example, to set a 2MiB page size on a flavor that has already                been created, use the following command:</p>            <codeblock ><systemoutput >~(keystone)admin)$ </systemoutput><userinput >nova flavor-key hw:mem_page_size=2048</userinput></codeblock>            <p >You can also define an image with the required property by including                the <parmname >hw_mem_page_size</parmname> parameter, as in the                following example:</p>            <codeblock ><systemoutput >~(keystone)admin)$ </systemoutput><userinput >nova image-meta <varname >image</varname> hw_mem_page_size=<varname >pagesize</varname></userinput></codeblock>            <p >Note that if you use image metadata to request a page size, the image                is unable to access a <b >large</b> page unless the setting for                the flavor is also <b >large</b> or                    <b >any</b>.</p>        </section>    </body></topic>

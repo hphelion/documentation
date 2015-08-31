@@ -1,34 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1429546712705" xml:lang="en-us">
-<!-- Modification History
-        
--->
-    <title >Enabling the Heartbeat API for a VM</title>
-    <shortdesc >You can accommodate the use of guest heartbeats on a VM using an extra specification. </shortdesc>
-    <prolog>
-        <author />
-    </prolog>
-    <taskbody>
-        <context id="context_N1001E_N1001B_N10001" >
-            <p >Select this option when you expect one or more of the guest
-                applications running on the virtual machine to make use of the HP Helion OpenStack Carrier Grade
-                Heartbeat client API. For more information about the Heartbeat API, refer to the
-                    <cite >HP Helion OpenStack Carrier Grade Software Development Kit</cite>. The
-                controller node starts heartbeat application-level polling cycles on virtual
-                machines launched using a flavor with this option selected.</p>
-            <p >A guest application modified to use the HP Helion OpenStack Carrier Grade Heartbeat
-                client API can be more accurately monitored by internal messaging within the virtual
-                machine.  For more about application monitoring, see <xref href="jow1404333802962.xml" />.</p>
-            <p >To add this extra spec to a flavor using the web administration
-                interface, use the <uicontrol >Guest Heartbeat</uicontrol> selection
-                in the <uicontrol >Create Flavor Extra Spec</uicontrol> drop-down
-                menu. To access this menu, see <xref href="jow1429538642910.xml" />.</p>
-            <p >To enable the heartbeat API using the CLI, use the following
-                command:</p>
-            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova flavor-key <varname >flavor_name</varname> set sw:wrs:guest:heartbeat=<varname >integer_value</varname></userinput></codeblock>
-            <p >where <varname >integer_value</varname> is either 0
-                or 1.</p>
-        </context>
-    </taskbody>
-</task-wr>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "topic.dtd"><topic id="jow1429546712705" xml:lang="en-us"><!-- Modification History        -->    <title >Enabling the Heartbeat API for a VM</title>    <shortdesc >You can accommodate the use of guest heartbeats on a VM using an extra specification. </shortdesc>    <prolog>        <author />    </prolog>    <body>        <section id="section_N1001E_N1001B_N10001" >            <p >Select this option when you expect one or more of the guest                applications running on the virtual machine to make use of the HP Helion OpenStack Carrier Grade                Heartbeat client API. For more information about the Heartbeat API, refer to the                    <cite >HP Helion OpenStack Carrier Grade Software Development Kit</cite>. The                controller node starts heartbeat application-level polling cycles on virtual                machines launched using a flavor with this option selected.</p>            <p >A guest application modified to use the HP Helion OpenStack Carrier Grade Heartbeat                client API can be more accurately monitored by internal messaging within the virtual                machine.  For more about application monitoring, see <xref href="jow1404333802962.xml" />.</p>            <p >To add this extra spec to a flavor using the web administration                interface, use the <uicontrol >Guest Heartbeat</uicontrol> selection                in the <uicontrol >Create Flavor Extra Spec</uicontrol> drop-down                menu. To access this menu, see <xref href="jow1429538642910.xml" />.</p>            <p >To enable the heartbeat API using the CLI, use the following                command:</p>            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova flavor-key <varname >flavor_name</varname> set sw:wrs:guest:heartbeat=<varname >integer_value</varname></userinput></codeblock>            <p >where <varname >integer_value</varname> is either 0                or 1.</p>        </section>    </body></topic>

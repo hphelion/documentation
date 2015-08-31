@@ -1,44 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410807758201" xml:lang="en-us">
-<!-- Modification History
-
- -->
- <title >System Backups</title>
- <shortdesc >The HP Helion OpenStack Carrier Grade provides tools to back up <term
-      >system data</term> so that they can be stored in external storage resources and
-    used to restore a full cluster.</shortdesc>
- <prolog>
-  <author >Pedro Sanchez</author>
- </prolog>
- <body>
-  <p >The backup and restore procedures can be summarized as follows:</p>
-  <ul id="ul_at2_h3y_lp">
-   <li >
-    <p >Log in as user <codeph >wrsroot</codeph> to the
-          console of the active controller.</p>
-   </li>
-   <li >
-    <p >Execute the backup procedures from the CLI. The backup files are stored in the directory
-      <filepath >/opt/backups</filepath> on the current controller node.</p>
-   </li>
-   <li >
-    <p >Copy the backup files to an external storage resource.</p>
-   </li>
-   <li >
-    <p >Shut down the cluster, and proceed with any maintenance operations that might
-     be required. Ensure that all hosts are powered down.</p>
-   </li>
-   <li >
-    <p >Restore the cluster one host at a time. Start with the first controller, then
-          the second controller, then compute nodes.</p>
-   </li>
-  </ul>
-    <p >It is important to note that a restore operation must be executed on the same
-      cluster hardware where the backups were created, otherwise, the operation fails. Hardware
-      differences affect the restore operation in multiple ways. For example, differences in
-      Ethernet MAC addresses impact the networking metadata stored in the system data backup files. </p>
-  <p >The backup and restore tools are designed to operate on an entire cluster. They
-      are not suitable as a tool to back up and restore individual hosts.</p>
- </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410807758201" xml:lang="en-us"><!-- Modification History --> <title >System Backups</title> <shortdesc >The HP Helion OpenStack Carrier Grade provides tools to back up <term      >system data</term> so that they can be stored in external storage resources and    used to restore a full cluster.</shortdesc> <prolog>  <author >Pedro Sanchez</author> </prolog> <body>  <p >The backup and restore procedures can be summarized as follows:</p>  <ul id="ul_at2_h3y_lp">   <li >    <p >Log in as user <b >wrsroot</b> to the          console of the active controller.</p>   </li>   <li >    <p >Execute the backup procedures from the CLI. The backup files are stored in the directory      <filepath >/opt/backups</filepath> on the current controller node.</p>   </li>   <li >    <p >Copy the backup files to an external storage resource.</p>   </li>   <li >    <p >Shut down the cluster, and proceed with any maintenance operations that might     be required. Ensure that all hosts are powered down.</p>   </li>   <li >    <p >Restore the cluster one host at a time. Start with the first controller, then          the second controller, then compute nodes.</p>   </li>  </ul>    <p >It is important to note that a restore operation must be executed on the same      cluster hardware where the backups were created, otherwise, the operation fails. Hardware      differences affect the restore operation in multiple ways. For example, differences in      Ethernet MAC addresses impact the networking metadata stored in the system data backup files. </p>  <p >The backup and restore tools are designed to operate on an entire cluster. They      are not suitable as a tool to back up and restore individual hosts.</p> </body></topic>

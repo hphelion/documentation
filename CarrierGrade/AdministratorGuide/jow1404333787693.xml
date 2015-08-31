@@ -1,271 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333787693" xml:lang="en-us">
-    <!-- Modification History
-   -->
-    <title >Hardware Profiles</title>
-    <shortdesc >A hardware profile is a named object that captures a particular host
-        configuration. The profile can be applied to any other host with a similar hardware
-        configuration.</shortdesc>
-    <prolog>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <p >The following types of hardware profiles are available from the <wintitle >Systems Inventory</wintitle> page, each presented on a separate
-            tab:</p>
-        <ul id="ul_lrp_w4q_l4">
-            <li >
-                <p >CPU profiles</p>
-            </li>
-            <li >
-                <p >interface profiles</p>
-            </li>
-            <li >
-                <p >storage profiles</p>
-            </li>
-            <li >
-                <p >memory profiles</p>
-            </li>
-        </ul>
-        <p >Once a hardware profile is defined, it can be applied to any host where it makes sense to be
-      applied to change its configuration.</p>
-        <section id="cpu-profiles" >
-            <title >CPU Profiles</title>
-            <p >A CPU profile is a named assignment of processors and cores to one or more of the following
-        types of processing threads:</p>
-            <dl>
-                <dlentry >
-                    <dt >Platform</dt>
-                    <dd >
-                        <p >System threads handling the core hosting functionality of
-                            the host. Platform threads are always present on all types of hosts in
-                            the cluster.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >vSwitch</dt>
-                    <dd >
-                        <p >AVS threads dedicated to handling network traffic and
-                            packet processing tasks. They exists on the compute nodes only.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Shared</dt>
-                    <dd >
-                        <p >Threads handling low-load or non-real-time virtual
-                            machine tasks, implemented on a shared physical CPU in a compute
-                            node.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Virtual Machines</dt>
-                    <dd >
-                        <p >Threads handling virtual machines. They exists on the compute nodes only.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-            <p >On controller nodes, all processors and cores are automatically
-                assigned to platform threads, as they are the only ones available. On compute nodes,
-                which always run a number of threads of all types, a default CPU allocation is done
-                automatically when the system software is initially installed.</p>
-            <p >A list of the currently defined CPU profiles is available from the <uicontrol >CPU
-          Profiles</uicontrol> tab on the <wintitle >System Inventory</wintitle> page, as illustrated
-        below.</p>
-            <fig id="fig_N1009C_N1004C_N10020_N10001" >
-                <image href="jow1404333761616.image" id="image_a1p_t2r_l4"  width="6in"/>
-            </fig>
-            <p >This example lists one CPU profile, named <codeph >HP-360-C1</codeph>, with the
-        following processor and core allocation:</p>
-            <table frame="all" id="table_s32_fdr_l4">
-                <title >CPU Allocation Example</title>
-                <tgroup cols="2">
-                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-                    <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-                    <thead>
-                        <row>
-                            <entry >
-                                <p >Thread Type</p>
-                            </entry>
-                            <entry >
-                                <p >CPU Allocation</p>
-                            </entry>
-                        </row>
-                    </thead>
-                    <tbody>
-                        <row>
-                            <entry >
-                                <p >Platform</p>
-                            </entry>
-                            <entry >
-                                <p >Processor 0, core 0</p>
-                            </entry>
-                        </row>
-                        <row>
-                            <entry >
-                                <p >vSwitch</p>
-                            </entry>
-                            <entry >
-                                <p >Processor 0, cores 1 and 2</p>
-                            </entry>
-                        </row>
-                        <row>
-                            <entry >
-                                <p >Virtual Machines</p>
-                            </entry>
-                            <entry >
-                                <p >Processor 0, cores 3 to 7</p>
-                                <p >Processor 1, cores 8 to 15</p>
-                            </entry>
-                        </row>
-                    </tbody>
-                </tgroup>
-            </table>
-            <p >CPU profiles can be deleted using the button <uicontrol >Delete CPU Profiles</uicontrol> on this page. When clicked, it
-                deletes all check-marked profiles in the list. The delete operation does not affect
-                CPU profiles already applied.</p>
-            <p >See <xref href="jow1404333768530.xml" /> for more information of how to change
-        the CPU allocation for a compute node, and on how to define  CPU profiles.</p>
-        </section>
-        <section id="section_N10137_N10020_N10001" >
-            <title >Interface Profiles</title>
-            <p >An interface profile is a named configuration of Ethernet ports and
-                interfaces on a host, as follows:</p>
-            <dl>
-                <dlentry >
-                    <dt >Ethernet Ports</dt>
-                    <dd >
-                        <p >The list of physical Ethernet ports that have been allocated to connect to a
-              network.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Interfaces</dt>
-                    <dd >
-                        <p >Logical L2 interfaces defined on top of physical Ethernet ports.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-            <p >A list of the currently defined interface profiles is available from the
-          <uicontrol >Interface Profiles</uicontrol> tab on the <wintitle >System Inventory</wintitle>
-        page, as illustrated below.</p>
-            <fig id="fig_N10174_N10138_N10020_N10001" >
-                <image href="jow1404333769085.image" id="image_svc_jgr_l4"  width="6in"/>
-            </fig>
-            <p >This example lists two interface profiles, as follows:</p>
-            <table frame="all" id="table_gxd_hmr_l4">
-                <title >Interface Profiles</title>
-                <tgroup cols="3">
-                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-                    <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-                    <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-                    <thead>
-                        <row>
-                            <entry >
-                                <p >Profile Name</p>
-                            </entry>
-                            <entry >
-                                <p >Ports</p>
-                            </entry>
-                            <entry >
-                                <p >Interfaces</p>
-                            </entry>
-                        </row>
-                    </thead>
-                    <tbody>
-                        <row>
-                            <entry >
-                                <p >HP-360-cmpt-iface-profile</p>
-                            </entry>
-                            <entry >
-                                <p >eth1, eth4, eth6</p>
-                            </entry>
-                            <entry >
-                                <p >eth1 on internal management network</p>
-                                <p >data0 (eth6 on physnet0)</p>
-                                <p >data1 (eth4 on physnet1)</p>
-                            </entry>
-                        </row>
-                        <row>
-                            <entry >
-                                <p >HP-360-ctrl-iface-profile</p>
-                            </entry>
-                            <entry >
-                                <p >eth0, eth1</p>
-                            </entry>
-                            <entry >
-                                <p >eth0 on OAM network</p>
-                                <p >eth1 on internal management network</p>
-                            </entry>
-                        </row>
-                    </tbody>
-                </tgroup>
-            </table>
-            <p >The interface profile <codeph >HP-360-cmpt-iface-profile</codeph> belongs to a
-        compute node. It lists three physical ports, eth1, eth4, and eth6, allocated to connect to a
-        network. It also lists three logical L2 interfaces:</p>
-            <ul id="ul_evb_d4r_l4">
-                <li >
-                    <p >eth1, allocated to connect to the internal management network</p>
-                </li>
-                <li >
-                    <p >data0, a data interface associating physical port eth6 with the provider network
-            physnet0.</p>
-                </li>
-                <li >
-                    <p >data1, a data interface associating physical port eth4 with the provider network
-            physnet1.</p>
-                </li>
-            </ul>
-            <p >The interface profile <codeph >HP-360-ctrl-iface-profile</codeph> belongs to a
-        controller node. It lists two physical ports, eth0, and eth1, and two logical L2 interfaces
-        connecting these ports to the OAM and internal management networks.</p>
-            <p >Interface profiles can be deleted using the button <uicontrol >Delete Interface Profiles</uicontrol> on this page. When
-                clicked, it deletes all check-marked profiles in the list.  The delete operation
-                does not affect interface profiles already applied.</p>
-            <p >See <xref href="jow1404333777760.xml" /> for more
-                information on how to create interface profiles.</p>
-        </section>
-        <section id="section_N10249_N10020_N10001" >
-            <title >Storage Profiles</title>
-            <p >A storage profile is a named configuration for a list of storage
-                resources on a computing node. Each storage resource consists of the following
-                elements:</p>
-            <dl>
-                <dlentry >
-                    <dt >Disks</dt>
-                    <dd >
-                        <p >A Linux block storage device, such as <filepath >/dev/sdd</filepath>, identifying an
-              entire hard drive.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Storage Volumes</dt>
-                    <dd >
-                        <p >A storage volume consisting of a name and a storage
-                            function. The name is used as a human-readable version of the native
-                            storage device UUID. The storage function indicates the type of storage
-                            backend, such as <codeph >OSD</codeph> for a
-                            storage system.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-            <p >A list of the currently defined storage profiles is available from the <uicontrol >Storage
-          Profiles</uicontrol> tab on the <wintitle >System Inventory</wintitle> page, as illustrated
-        below.</p>
-            <fig id="fig_N1028F_N1024B_N10020_N10001" >
-                <image href="jow1404333778322.image" id="image_bny_1vg_m4"  width="6in"/>
-            </fig>
-            <p >This example lists one storage profile named <codeph >storprofile-1</codeph> with
-        three storage resources on the hard drives <filepath >/dev/sdc</filepath>,
-          <filepath >/dev/sdd</filepath>, and <filepath >/dev/sde</filepath>. All storage resources
-        are of the <codeph >OSD</codeph> type.</p>
-            <p >See <xref href="jow1404333787180.xml" /> for more
-                information on how to create storage profiles.</p>
-        </section>
-        <section id="section_N10363_N1001F_N10001" >
-            <title >Memory Profiles</title>
-            <p >A memory profile is a named assignment of huge pages for use as VM
-                memory. For more information, see <xref href="jow1429811350849.xml" />.</p>
-        </section>
-    </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333787693" xml:lang="en-us">    <!-- Modification History   -->    <title >Hardware Profiles</title>    <shortdesc >A hardware profile is a named object that captures a particular host        configuration. The profile can be applied to any other host with a similar hardware        configuration.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <p >The following types of hardware profiles are available from the <wintitle >Systems Inventory</wintitle> page, each presented on a separate            tab:</p>        <ul id="ul_lrp_w4q_l4">            <li >                <p >CPU profiles</p>            </li>            <li >                <p >interface profiles</p>            </li>            <li >                <p >storage profiles</p>            </li>            <li >                <p >memory profiles</p>            </li>        </ul>        <p >Once a hardware profile is defined, it can be applied to any host where it makes sense to be      applied to change its configuration.</p>        <section id="cpu-profiles" >            <title >CPU Profiles</title>            <p >A CPU profile is a named assignment of processors and cores to one or more of the following        types of processing threads:</p>            <dl>                <dlentry >                    <dt >Platform</dt>                    <dd >                        <p >System threads handling the core hosting functionality of                            the host. Platform threads are always present on all types of hosts in                            the cluster.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >vSwitch</dt>                    <dd >                        <p >AVS threads dedicated to handling network traffic and                            packet processing tasks. They exists on the compute nodes only.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Shared</dt>                    <dd >                        <p >Threads handling low-load or non-real-time virtual                            machine tasks, implemented on a shared physical CPU in a compute                            node.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Virtual Machines</dt>                    <dd >                        <p >Threads handling virtual machines. They exists on the compute nodes only.</p>                    </dd>                </dlentry>            </dl>            <p >On controller nodes, all processors and cores are automatically                assigned to platform threads, as they are the only ones available. On compute nodes,                which always run a number of threads of all types, a default CPU allocation is done                automatically when the system software is initially installed.</p>            <p >A list of the currently defined CPU profiles is available from the <uicontrol >CPU          Profiles</uicontrol> tab on the <wintitle >System Inventory</wintitle> page, as illustrated        below.</p>            <fig id="fig_N1009C_N1004C_N10020_N10001" >                <image href="jow1404333761616.image" id="image_a1p_t2r_l4"  width="6in"/>            </fig>            <p >This example lists one CPU profile, named <b >HP-360-C1</b>, with the        following processor and core allocation:</p>            <table frame="all" id="table_s32_fdr_l4">                <title >CPU Allocation Example</title>                <tgroup cols="2">                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>                    <colspec colname="c2" colnum="2" colwidth="1.0*"/>                    <thead>                        <row>                            <entry >                                <p >Thread Type</p>                            </entry>                            <entry >                                <p >CPU Allocation</p>                            </entry>                        </row>                    </thead>                    <tbody>                        <row>                            <entry >                                <p >Platform</p>                            </entry>                            <entry >                                <p >Processor 0, core 0</p>                            </entry>                        </row>                        <row>                            <entry >                                <p >vSwitch</p>                            </entry>                            <entry >                                <p >Processor 0, cores 1 and 2</p>                            </entry>                        </row>                        <row>                            <entry >                                <p >Virtual Machines</p>                            </entry>                            <entry >                                <p >Processor 0, cores 3 to 7</p>                                <p >Processor 1, cores 8 to 15</p>                            </entry>                        </row>                    </tbody>                </tgroup>            </table>            <p >CPU profiles can be deleted using the button <uicontrol >Delete CPU Profiles</uicontrol> on this page. When clicked, it                deletes all check-marked profiles in the list. The delete operation does not affect                CPU profiles already applied.</p>            <p >See <xref href="jow1404333768530.xml" /> for more information of how to change        the CPU allocation for a compute node, and on how to define  CPU profiles.</p>        </section>        <section id="section_N10137_N10020_N10001" >            <title >Interface Profiles</title>            <p >An interface profile is a named configuration of Ethernet ports and                interfaces on a host, as follows:</p>            <dl>                <dlentry >                    <dt >Ethernet Ports</dt>                    <dd >                        <p >The list of physical Ethernet ports that have been allocated to connect to a              network.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Interfaces</dt>                    <dd >                        <p >Logical L2 interfaces defined on top of physical Ethernet ports.</p>                    </dd>                </dlentry>            </dl>            <p >A list of the currently defined interface profiles is available from the          <uicontrol >Interface Profiles</uicontrol> tab on the <wintitle >System Inventory</wintitle>        page, as illustrated below.</p>            <fig id="fig_N10174_N10138_N10020_N10001" >                <image href="jow1404333769085.image" id="image_svc_jgr_l4"  width="6in"/>            </fig>            <p >This example lists two interface profiles, as follows:</p>            <table frame="all" id="table_gxd_hmr_l4">                <title >Interface Profiles</title>                <tgroup cols="3">                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>                    <colspec colname="c2" colnum="2" colwidth="1.0*"/>                    <colspec colname="c3" colnum="3" colwidth="1.0*"/>                    <thead>                        <row>                            <entry >                                <p >Profile Name</p>                            </entry>                            <entry >                                <p >Ports</p>                            </entry>                            <entry >                                <p >Interfaces</p>                            </entry>                        </row>                    </thead>                    <tbody>                        <row>                            <entry >                                <p >HP-360-cmpt-iface-profile</p>                            </entry>                            <entry >                                <p >eth1, eth4, eth6</p>                            </entry>                            <entry >                                <p >eth1 on internal management network</p>                                <p >data0 (eth6 on physnet0)</p>                                <p >data1 (eth4 on physnet1)</p>                            </entry>                        </row>                        <row>                            <entry >                                <p >HP-360-ctrl-iface-profile</p>                            </entry>                            <entry >                                <p >eth0, eth1</p>                            </entry>                            <entry >                                <p >eth0 on OAM network</p>                                <p >eth1 on internal management network</p>                            </entry>                        </row>                    </tbody>                </tgroup>            </table>            <p >The interface profile <b >HP-360-cmpt-iface-profile</b> belongs to a        compute node. It lists three physical ports, eth1, eth4, and eth6, allocated to connect to a        network. It also lists three logical L2 interfaces:</p>            <ul id="ul_evb_d4r_l4">                <li >                    <p >eth1, allocated to connect to the internal management network</p>                </li>                <li >                    <p >data0, a data interface associating physical port eth6 with the provider network            physnet0.</p>                </li>                <li >                    <p >data1, a data interface associating physical port eth4 with the provider network            physnet1.</p>                </li>            </ul>            <p >The interface profile <b >HP-360-ctrl-iface-profile</b> belongs to a        controller node. It lists two physical ports, eth0, and eth1, and two logical L2 interfaces        connecting these ports to the OAM and internal management networks.</p>            <p >Interface profiles can be deleted using the button <uicontrol >Delete Interface Profiles</uicontrol> on this page. When                clicked, it deletes all check-marked profiles in the list.  The delete operation                does not affect interface profiles already applied.</p>            <p >See <xref href="jow1404333777760.xml" /> for more                information on how to create interface profiles.</p>        </section>        <section id="section_N10249_N10020_N10001" >            <title >Storage Profiles</title>            <p >A storage profile is a named configuration for a list of storage                resources on a computing node. Each storage resource consists of the following                elements:</p>            <dl>                <dlentry >                    <dt >Disks</dt>                    <dd >                        <p >A Linux block storage device, such as <filepath >/dev/sdd</filepath>, identifying an              entire hard drive.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Storage Volumes</dt>                    <dd >                        <p >A storage volume consisting of a name and a storage                            function. The name is used as a human-readable version of the native                            storage device UUID. The storage function indicates the type of storage                            backend, such as <b >OSD</b> for a                            storage system.</p>                    </dd>                </dlentry>            </dl>            <p >A list of the currently defined storage profiles is available from the <uicontrol >Storage          Profiles</uicontrol> tab on the <wintitle >System Inventory</wintitle> page, as illustrated        below.</p>            <fig id="fig_N1028F_N1024B_N10020_N10001" >                <image href="jow1404333778322.image" id="image_bny_1vg_m4"  width="6in"/>            </fig>            <p >This example lists one storage profile named <b >storprofile-1</b> with        three storage resources on the hard drives <filepath >/dev/sdc</filepath>,          <filepath >/dev/sdd</filepath>, and <filepath >/dev/sde</filepath>. All storage resources        are of the <b >OSD</b> type.</p>            <p >See <xref href="jow1404333787180.xml" /> for more                information on how to create storage profiles.</p>        </section>        <section id="section_N10363_N1001F_N10001" >            <title >Memory Profiles</title>            <p >A memory profile is a named assignment of huge pages for use as VM                memory. For more information, see <xref href="jow1429811350849.xml" />.</p>        </section>    </body></topic>

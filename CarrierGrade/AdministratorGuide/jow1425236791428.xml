@@ -1,21 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1425236791428" xml:lang="en-us">
-<!-- Modification History
-        
--->
-    <title >Viewing the NUMA Node Configuration for a VM</title>
-    <shortdesc >You can use the CLI <!-- or the GUI -->to display the NUMA node
-        configuration for a VM.</shortdesc>
-    <prolog>
-        <author >Jim Owens</author>
-    </prolog>
-    <taskbody>
-        <context id="context_N1001F_N1001C_N10001" >
-            <p >Use the following command:</p>
-            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput>nova show <varname >instance</varname></codeblock>
-            <p >where <codeph >instance</codeph> is the name or UUID of the instance.</p>
-            <!-- need sample output, plus an explanation of it -->
-        </context>
-    </taskbody>
-</task-wr>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "topic.dtd"><topic id="jow1425236791428" xml:lang="en-us"><!-- Modification History        -->    <title >Viewing the NUMA Node Configuration for a VM</title>    <shortdesc >You can use the CLI <!-- or the GUI -->to display the NUMA node        configuration for a VM.</shortdesc>    <prolog>        <author >Jim Owens</author>    </prolog>    <body>        <section id="section_N1001F_N1001C_N10001" >            <p >Use the following command:</p>            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput>nova show <varname >instance</varname></codeblock>            <p >where <b >instance</b> is the name or UUID of the instance.</p>            <!-- need sample output, plus an explanation of it -->        </section>    </body></topic>

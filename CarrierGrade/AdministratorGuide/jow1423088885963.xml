@@ -1,88 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1423088885963" xml:lang="en-us">
-<!-- Modification History
-        
--->
-    <title >Provisioning Huge Pages </title>
-    <shortdesc >You can edit the huge page attributes for a NUMA node from the web admin interface
-        using the <wintitle >Memory</wintitle> tab on the <wintitle >Inventory</wintitle>
-        pane.</shortdesc>
-    <prolog>
-        <author >Jim Owens</author>
-    </prolog>
-    <taskbody>
-        <prereq id="prereq_N1002C_N10029_N10001" >
-            <p >Before requesting huge pages on a host, ensure that the host has enough available
-                memory. For details, see <xref href="jow1423087781001.xml" />.</p>
-        </prereq>
-        <steps>
-            <step id="step_N10033_N10030_N10024_N10001" >
-                <cmd >On the <uicontrol >Inventory</uicontrol> pane, lock the host you
-                    want to edit.</cmd>
-            </step>
-            <step id="step_N1004B_N10039_N10029_N10001" >
-                <cmd >Click the <uicontrol >Host Name</uicontrol> to
-                    open the settings for the host.</cmd>
-            </step>
-            <step id="step_N10058_N10039_N10029_N10001" >
-                <cmd >On the <uicontrol >Memory</uicontrol> tab, click
-                        <uicontrol >Update Hugepage
-                    Memory</uicontrol>.</cmd>
-                <info >
-                    <fig id="fig_gcz_rdf_2r" >
-                        <image href="jow1424729372811.image" id="image_kg3_sdf_2r"  width="5in">
-                            <alt >i-ccs-hugepage-memory-button</alt>
-                        </image>
-                    </fig>
-                </info>
-            </step>
-            <step id="step_N1006A_N10039_N10029_N10001" >
-                <cmd >Use the <wintitle >Update Hugepage Memory</wintitle> dialog box to set the
-                    desired huge pages for each NUMA node.
-                </cmd>
-                <info >
-                    <p >For each available NUMA node, two fields are supplied, as
-                        illustrated in the following example screen for two NUMA nodes.</p>
-                    <fig id="fig_u13_tdf_2r" >
-                        <image href="jow1424729464258.image" id="image_tcp_tdf_2r"  width="5in">
-                            <alt >tis-hugepage-memory-dialog</alt>
-                        </image>
-                    </fig>
-                    <dl>
-                        <dlentry >
-                            <dt ># of VM 2M Hugepages Node <i >n</i></dt>
-                            <dd >
-                                <p >The number of 2MiB pages to reserve for VM use on
-                                    the NUMA Node. If no 2MiB pages are required, type 0.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt ># of VM 1G Hugepages Node <i >n</i></dt>
-                            <dd >
-                                <p >The number of 1GiB pages to reserve for VM use on
-                                    the NUMA Node. If no 1GiB pages are required, type 0.</p>
-                            </dd>
-                        </dlentry>
-                    </dl>
-                    <p >To see how many pages of a given size you can successfully
-                        request on a node (assuming that pages of another size are not also
-                        requested), hover over the Information icon next to the field.</p>
-                    <fig id="fig_zdt_vzd_cs" >
-                        <image href="jow1432129731308.image" id="image_blt_xzd_cs"  width="2.5in">
-                            <alt >TiS Update Hugepage Memory: Maximum Pages info</alt>
-                        </image>
-                    </fig>
-                    <p >Any unused memory is automatically allocated as 4K pages.</p>
-                </info>
-            </step>
-            <step id="step_N100D6_N10039_N10029_N10001" >
-                <cmd >Click <uicontrol >Save</uicontrol>.</cmd>
-            </step>
-            <step id="step_N100EB_N10039_N10029_N10001" >
-                <cmd >Unlock the host and wait for it to be reported as
-                        <codeph >Available</codeph>.</cmd>
-            </step>
-        </steps>
-    </taskbody>
-</task-wr>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "topic.dtd"><topic id="jow1423088885963" xml:lang="en-us"><!-- Modification History        -->    <title >Provisioning Huge Pages </title>    <shortdesc >You can edit the huge page attributes for a NUMA node from the web admin interface        using the <wintitle >Memory</wintitle> tab on the <wintitle >Inventory</wintitle>        pane.</shortdesc>    <prolog>        <author >Jim Owens</author>    </prolog>    <body>        <section id="section_N1002C_N10029_N10001" >            <p >Before requesting huge pages on a host, ensure that the host has enough available                memory. For details, see <xref href="jow1423087781001.xml" />.</p>        </section>        <ol>            <li id="li_N10033_N10030_N10024_N10001" >                <p >On the <uicontrol >Inventory</uicontrol> pane, lock the host you                    want to edit.</p>            </li>            <li id="li_N1004B_N10039_N10029_N10001" >                <p >Click the <uicontrol >Host Name</uicontrol> to                    open the settings for the host.</p>            </li>            <li id="li_N10058_N10039_N10029_N10001" >                <p >On the <uicontrol >Memory</uicontrol> tab, click                        <uicontrol >Update Hugepage                    Memory</uicontrol>.</p>                                    <fig id="fig_gcz_rdf_2r" >                        <image href="jow1424729372811.image" id="image_kg3_sdf_2r"  width="5in">                            <alt >i-ccs-hugepage-memory-button</alt>                        </image>                    </fig>                            </li>            <li id="li_N1006A_N10039_N10029_N10001" >                <p >Use the <wintitle >Update Hugepage Memory</wintitle> dialog box to set the                    desired huge pages for each NUMA node.                </p>                                    <p >For each available NUMA node, two fields are supplied, as                        illustrated in the following example screen for two NUMA nodes.</p>                    <fig id="fig_u13_tdf_2r" >                        <image href="jow1424729464258.image" id="image_tcp_tdf_2r"  width="5in">                            <alt >tis-hugepage-memory-dialog</alt>                        </image>                    </fig>                    <dl>                        <dlentry >                            <dt ># of VM 2M Hugepages Node <i >n</i></dt>                            <dd >                                <p >The number of 2MiB pages to reserve for VM use on                                    the NUMA Node. If no 2MiB pages are required, type 0.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt ># of VM 1G Hugepages Node <i >n</i></dt>                            <dd >                                <p >The number of 1GiB pages to reserve for VM use on                                    the NUMA Node. If no 1GiB pages are required, type 0.</p>                            </dd>                        </dlentry>                    </dl>                    <p >To see how many pages of a given size you can successfully                        request on a node (assuming that pages of another size are not also                        requested), hover over the Information icon next to the field.</p>                    <fig id="fig_zdt_vzd_cs" >                        <image href="jow1432129731308.image" id="image_blt_xzd_cs"  width="2.5in">                            <alt >TiS Update Hugepage Memory: Maximum Pages info</alt>                        </image>                    </fig>                    <p >Any unused memory is automatically allocated as 4K pages.</p>                            </li>            <li id="li_N100D6_N10039_N10029_N10001" >                <p >Click <uicontrol >Save</uicontrol>.</p>            </li>            <li id="li_N100EB_N10039_N10029_N10001" >                <p >Unlock the host and wait for it to be reported as                        <b >Available</b>.</p>            </li>        </ol>    </body></topic>

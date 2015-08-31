@@ -1,282 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446976545" xml:lang="en-us">
-<!-- Modification History
-        
--->
-    <title >Installing Patches</title>
-    <shortdesc >Patches in the patch storage area can be selected to be installed to
-        the cluster, one, several, or all patches at a time. When selected, they are moved into the
-        software updates repository from where they must be subsequently installed on each impacted
-        host in the cluster.</shortdesc>
-    <prolog>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <taskbody>
-        <context id="context_N1001E_N1001B_N10001" >
-            <p >Installing a patch to the cluster means installing it to each and
-                every host of the type where the patch is relevant. For example, one patch can be
-                installed on the controller nodes only, while another can be installed on all host
-                types. Since a patch is not necessarily installed on all applicable hosts
-                simultaneously, patching the entire cluster can take some time.</p>
-            <p >As a patch is installed to the cluster, it goes through the following
-                state transitions:</p>
-            <dl>
-                <dlentry >
-                    <dt ><i >Available</i> to <i >Partial-Apply</i></dt>
-                    <dd >
-                        <p >A patch in the <i >Partial-Apply</i> state
-                            indicates that it has been installed on zero or more, but not all, the
-                            applicable hosts.</p>
-                        <p >Use the command <cmdname >wrs-patch
-                                apply</cmdname> to trigger this transition. The patch moves from the
-                            patch storage area to the software updates repository and becomes ready
-                            to be installed on the applicable hosts.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt ><i >Partial-Apply</i> to <i >Applied</i></dt>
-                    <dd >
-                        <p >A patch in the <i >Applied</i> state
-                            indicates that it has been installed on all applicable hosts.</p>
-                        <p >Use the command <cmdname >wrs-patch
-                                host-install</cmdname> repeatedly targeting each time one of the
-                            applicable hosts in the cluster. The transition to the <i >Applied</i> state is complete when the patch is
-                            installed on all target hosts.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-            <p >The following example illustrates the process of installing a single
-                patch on the cluster. It assumes that the patch is in the <i >Available</i> state already, as described in <xref href="psa1410446807133.xml" />, and that only the controller nodes must be patched.</p>
-        </context>
-        <steps>
-            <step conref="psa1410446807133.xml#psa1410446807133/cli-admin-login" id="step_N10084_N10081_N1001F_N10001" >
-                <cmd />
-            </step>
-            <step id="step_N1002A_N10027_N1001B_N10001" >
-                <cmd >Verify that the patches are available using the command <cmdname >wrs-patch query</cmdname>.</cmd>
-                <stepxmp >
-                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query</userinput>
-<systemoutput >﻿       Patch ID             Patch State
-=========================   ===========
-PATCH_0001   Available
-PATCH_0002   Available
-PATCH_0003   Available</systemoutput></codeblock>
-                </stepxmp>
-            </step>
-            <step id="step_N100AD_N10081_N1001F_N10001" >
-                <cmd >Apply the patch.</cmd>
-                <stepxmp >
-                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch apply PATCH_0001</userinput>
-<systemoutput >PATCH_0001 is now in the repo</systemoutput></codeblock>
-                </stepxmp>
-                <stepresult >
-                    <p >The patch is now in the <i >Partial-Apply</i>
-                        state, ready for installation from the software updates repository on the
-                        impacted hosts.</p>
-                </stepresult>
-            </step>
-            <step id="step_N100FB_N1009F_N1001F_N10001" importance="optional" >
-                <cmd >Apply all available patches in a single operation.</cmd>
-                <stepxmp >
-                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch apply --all</userinput>
-<systemoutput >PATCH_0001 is now in the repo</systemoutput>
-<systemoutput >PATCH_0002 is now in the repo</systemoutput>
-<systemoutput >PATCH_0003 is now in the repo</systemoutput></codeblock>
-                </stepxmp>
-                <info >
-                    <p >In this example there are three patches ready now for
-                        installation from the software updates repository.</p>
-                </info>
-            </step>
-            <step id="step_N1012A_N1009F_N1001F_N10001" >
-                <cmd >Query the patching status of all hosts in the cluster.</cmd>
-                <info >
-                    <p >You can query the patching status of all hosts at any time as
-                        illustrated below. Note that the reported status is the accumulated result
-                        of all applied and removed patches in the software updates repository, and
-                        not just the status due to a particular patch.</p>
-                </info>
-                <stepxmp >
-                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query-hosts</userinput>
-<systemoutput >﻿  Hostname      IP Address    Patch Current  Reboot Required
-============  ==============  =============  ===============
-compute-0     192.168.204.15       Yes             No
-controller-0  192.168.204.3        No              Yes
-controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
-                </stepxmp>
-                <stepresult >
-                    <p >For each host in the cluster, the following patch status
-                        fields are displayed:</p>
-                    <dl>
-                        <dlentry >
-                            <dt >Patch Current</dt>
-                            <dd >
-                                <p >Indicates whether there are patches pending for
-                                    installation or removal on the host or not. If <i >Yes</i>, then all relevant patches in the
-                                    software updates repository have been installed on, or removed
-                                    from, the host already. If <i >No</i>, then there
-                                    is at least one patch in either the <i >Partial-Apply</i> or <i >Partial-Remove</i>
-                                    states that has not been applied to the host.</p>
-                            </dd>
-                        </dlentry>
-                        <dlentry >
-                            <dt >Reboot Required </dt>
-                            <dd >
-                                <p >Indicates whether the host has to be rebooted or
-                                    not as a result of one or more patches that have been either
-                                    applied or removed, or because it is not patch current.</p>
-                            </dd>
-                        </dlentry>
-                    </dl>
-                    <p >In this example, <codeph >compute-0</codeph> is up to date, no patches need to be installed
-                        and no reboot is required. By contrast, the controllers are not patch
-                        current, and therefore a reboot is required to install the patch.</p>
-                </stepresult>
-            </step>
-            <step id="step_N10190_N1009F_N1001F_N10001" >
-                <cmd >Install all pending patches on <codeph >controller-0</codeph>.</cmd>
-                <substeps id="substeps_kzv_x13_pp">
-                    <substep >
-                        <cmd >Swact controller services.</cmd>
-                        <stepxmp >
-                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-swact controller-0</userinput></codeblock>
-                        </stepxmp>
-                        <info >
-                            <p >Before patching a controller node, you must transfer
-                                any active services running on the host to the other controller.
-                                Only then it is safe to lock the host.</p>
-                        </info>
-                    </substep>
-                    <substep >
-                        <cmd >Run the patching sequence.</cmd>
-                        <info >
-                            <p >The patching sequence locks the host, installs the
-                                patches, and forces a host reboot.</p>
-                        </info>
-                        <stepxmp >
-                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-patch-reboot controller-0</userinput>
-<systemoutput >host-patch-reboot controller-0 may take several minutes to complete.
- 
-2014-10-17-20-39-59_host-patch-reboot start.
-...
- 
-2014-10-17-20-39-59_host-patch-reboot host-lock.
-waiting for host controller-0 to transition to locked-disabled-online ...
-waiting for host controller-0 to transition to locked-disabled-online ...
-2014-10-17-20-40-14_Host controller-0 is locked-disabled-online.
- 
-2014-10-17-20-40-14_Patch install request
-Installing patch for host controller-0 ...
- 
-2014-10-17-20-40-16_Patch install response
-Patch response Info: Patch installation was successful on controller-0.
- 
-2014-10-17-20-40-16_host-patch-reboot host-unlock
-Restoring initial administrative state: unlocked. Unlocking host controller-0 to return to initial administrative state.</systemoutput></codeblock>
-                        </stepxmp>
-                    </substep>
-                </substeps>
-                <stepresult >
-                    <p >All patches are now installed on <codeph >controller-0</codeph>. Querying the current patch
-                        status displays the following information:</p>
-                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query-hosts</userinput>
-<systemoutput >﻿  Hostname      IP Address    Patch Current  Reboot Required
-============  ==============  =============  ===============
-compute-0     192.168.204.15       Yes             No
-controller-0  192.168.204.3        Yes             No
-controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
-                </stepresult>
-            </step>
-            <step id="step_N1023A_N100A0_N1001F_N10001" importance="optional" >
-                <cmd >Manually install all pending patches on <codeph >controller-0</codeph>.</cmd>
-                <info >
-                    <p >You may want to have finer control of the patching steps
-                        executed by the <cmdname >system host-patch-reboot</cmdname>
-                        command to determine when to install the patches and unlock the host.</p>
-                </info>
-                <substeps id="substeps_ck5_3qx_5p">
-                    <substep >
-                        <cmd >Swact controller services.</cmd>
-                        <stepxmp >
-                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-swact controller-0</userinput></codeblock>
-                        </stepxmp>
-                        <info >
-                            <p >Before patching a controller node, you must transfer
-                                any active services running on the host to the other controller.
-                                Only then it is safe to lock the host.</p>
-                        </info>
-                    </substep>
-                    <substep >
-                        <cmd >Lock the host.</cmd>
-                        <stepxmp >
-                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-lock controller-0</userinput></codeblock>
-                        </stepxmp>
-                        <info >
-                            <p >You must lock the target host, controller, compute,
-                                or storage, before installing patches.</p>
-                        </info>
-                    </substep>
-                    <substep >
-                        <cmd >Install the pending patches.</cmd>
-                        <stepxmp >
-                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch host-install controller-0</userinput>
-<systemoutput >Patch installation was successful on controller-0</systemoutput></codeblock>
-                        </stepxmp>
-                        <stepresult >
-                            <p >All patches are now installed on <codeph >controller-0</codeph>. Querying the
-                                current patching status displays the following information:</p>
-                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query-hosts</userinput>
-<systemoutput >﻿  Hostname      IP Address    Patch Current  Reboot Required
-============  ==============  =============  ===============
-compute-0     192.168.204.15       Yes             No
-controller-0  192.168.204.3        Yes             Yes
-controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
-                            <p >For illustration purposes in this section, the
-                                command <cmdname >wrs-patch host-install</cmdname>
-                                is presented as the tool to <i >install</i> patches.
-                                But in fact, this command also <i >removes</i>
-                                patches as well, as described in <xref href="psa1410446902796.xml" />. The command is better described then as the
-                                tool to install and remove all patches in the <i >Partial-Apply</i> and <i >Partial-Remove</i>
-                                states on a host.</p>
-                        </stepresult>
-                    </substep>
-                    <substep >
-                        <cmd >Unlock the target host.</cmd>
-                        <stepxmp >
-                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-unlock controller-0</userinput></codeblock>
-                        </stepxmp>
-                        <stepresult >
-                            <p >Unlocking the host forces a reset of the host
-                                followed by a reboot. This ensures that the host is restarted in a
-                                known state.</p>
-                        </stepresult>
-                    </substep>
-                </substeps>
-                <stepresult >
-                    <p >All patches are now installed on <codeph >controller-0</codeph>.</p>
-                </stepresult>
-            </step>
-            <step id="step_N10260_N1009F_N1001F_N10001" >
-                <cmd >Install all pending patches on <codeph >controller-1</codeph>.</cmd>
-                <info >
-                    <p >Repeat the previous step targeting <codeph >controller-1</codeph>
-                        this time.</p>
-                </info>
-                <stepresult >
-                    <p >All patches are now installed on <codeph >controller-1</codeph> as well. Querying the
-                        current patching status displays the following information:</p>
-                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query-hosts</userinput>
-<systemoutput >﻿  Hostname      IP Address    Patch Current  Reboot Required
-============  ==============  =============  ===============
-compute-0     192.168.204.15       Yes             No
-controller-0  192.168.204.3        Yes             No
-controller-1  192.168.204.4        Yes             No</systemoutput></codeblock>
-                </stepresult>
-            </step>
-        </steps>
-        <result id="result_N1028F_N1001F_N10001" >
-            <p >The cluster is up to date now. All patches are installed.</p>
-        </result>
-    </taskbody>
-</task-wr>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "topic.dtd"><topic ditaarch:DITAArchVersion="1.2" domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446976545" xml:lang="en-us"><!-- Modification History        -->    <title >Installing Patches</title>    <shortdesc >Patches in the patch storage area can be selected to be installed to        the cluster, one, several, or all patches at a time. When selected, they are moved into the        software updates repository from where they must be subsequently installed on each impacted        host in the cluster.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <section id="section_N1001E_N1001B_N10001" >            <p >Installing a patch to the cluster means installing it to each and                every host of the type where the patch is relevant. For example, one patch can be                installed on the controller nodes only, while another can be installed on all host                types. Since a patch is not necessarily installed on all applicable hosts                simultaneously, patching the entire cluster can take some time.</p>            <p >As a patch is installed to the cluster, it goes through the following                state transitions:</p>            <dl>                <dlentry >                    <dt ><i >Available</i> to <i >Partial-Apply</i></dt>                    <dd >                        <p >A patch in the <i >Partial-Apply</i> state                            indicates that it has been installed on zero or more, but not all, the                            applicable hosts.</p>                        <p >Use the command <pname >wrs-patch                                apply</pname> to trigger this transition. The patch moves from the                            patch storage area to the software updates repository and becomes ready                            to be installed on the applicable hosts.</p>                    </dd>                </dlentry>                <dlentry >                    <dt ><i >Partial-Apply</i> to <i >Applied</i></dt>                    <dd >                        <p >A patch in the <i >Applied</i> state                            indicates that it has been installed on all applicable hosts.</p>                        <p >Use the command <pname >wrs-patch                                host-install</pname> repeatedly targeting each time one of the                            applicable hosts in the cluster. The transition to the <i >Applied</i> state is complete when the patch is                            installed on all target hosts.</p>                    </dd>                </dlentry>            </dl>            <p >The following example illustrates the process of installing a single                patch on the cluster. It assumes that the patch is in the <i >Available</i> state already, as described in <xref href="psa1410446807133.xml" />, and that only the controller nodes must be patched.</p>        </section>        <ol>            <li conref="psa1410446807133.xml#psa1410446807133/cli-admin-login" id="li_N10084_N10081_N1001F_N10001" >                <p />            </li>            <li id="li_N1002A_N10027_N1001B_N10001" >                <p >Verify that the patches are available using the command <pname >wrs-patch query</pname>.</p>                <lixmp >                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query</userinput><systemoutput >﻿       Patch ID             Patch State=========================   ===========PATCH_0001   AvailablePATCH_0002   AvailablePATCH_0003   Available</systemoutput></codeblock>                </lixmp>            </li>            <li id="li_N100AD_N10081_N1001F_N10001" >                <p >Apply the patch.</p>                <lixmp >                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch apply PATCH_0001</userinput><systemoutput >PATCH_0001 is now in the repo</systemoutput></codeblock>                </lixmp>                                    <p >The patch is now in the <i >Partial-Apply</i>                        state, ready for installation from the software updates repository on the                        impacted hosts.</p>                            </li>            <li id="li_N100FB_N1009F_N1001F_N10001" importance="optional" >                <p >Apply all available patches in a single operation.</p>                <lixmp >                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch apply --all</userinput><systemoutput >PATCH_0001 is now in the repo</systemoutput><systemoutput >PATCH_0002 is now in the repo</systemoutput><systemoutput >PATCH_0003 is now in the repo</systemoutput></codeblock>                </lixmp>                                    <p >In this example there are three patches ready now for                        installation from the software updates repository.</p>                            </li>            <li id="li_N1012A_N1009F_N1001F_N10001" >                <p >Query the patching status of all hosts in the cluster.</p>                                    <p >You can query the patching status of all hosts at any time as                        illustrated below. Note that the reported status is the accumulated result                        of all applied and removed patches in the software updates repository, and                        not just the status due to a particular patch.</p>                                <lixmp >                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query-hosts</userinput><systemoutput >﻿  Hostname      IP Address    Patch Current  Reboot Required============  ==============  =============  ===============compute-0     192.168.204.15       Yes             Nocontroller-0  192.168.204.3        No              Yescontroller-1  192.168.204.4        No              Yes</systemoutput></codeblock>                </lixmp>                                    <p >For each host in the cluster, the following patch status                        fields are displayed:</p>                    <dl>                        <dlentry >                            <dt >Patch Current</dt>                            <dd >                                <p >Indicates whether there are patches pending for                                    installation or removal on the host or not. If <i >Yes</i>, then all relevant patches in the                                    software updates repository have been installed on, or removed                                    from, the host already. If <i >No</i>, then there                                    is at least one patch in either the <i >Partial-Apply</i> or <i >Partial-Remove</i>                                    states that has not been applied to the host.</p>                            </dd>                        </dlentry>                        <dlentry >                            <dt >Reboot Required </dt>                            <dd >                                <p >Indicates whether the host has to be rebooted or                                    not as a result of one or more patches that have been either                                    applied or removed, or because it is not patch current.</p>                            </dd>                        </dlentry>                    </dl>                    <p >In this example, <b >compute-0</b> is up to date, no patches need to be installed                        and no reboot is required. By contrast, the controllers are not patch                        current, and therefore a reboot is required to install the patch.</p>                            </li>            <li id="li_N10190_N1009F_N1001F_N10001" >                <p >Install all pending patches on <b >controller-0</b>.</p>                <ol id="ol_kzv_x13_pp">                    <li >                        <p >Swact controller services.</p>                        <lixmp >                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-swact controller-0</userinput></codeblock>                        </lixmp>                                                    <p >Before patching a controller node, you must transfer                                any active services running on the host to the other controller.                                Only then it is safe to lock the host.</p>                                            </li>                    <li >                        <p >Run the patching sequence.</p>                                                    <p >The patching sequence locks the host, installs the                                patches, and forces a host reboot.</p>                                                <lixmp >                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-patch-reboot controller-0</userinput><systemoutput >host-patch-reboot controller-0 may take several minutes to complete. 2014-10-17-20-39-59_host-patch-reboot start.... 2014-10-17-20-39-59_host-patch-reboot host-lock.waiting for host controller-0 to transition to locked-disabled-online ...waiting for host controller-0 to transition to locked-disabled-online ...2014-10-17-20-40-14_Host controller-0 is locked-disabled-online. 2014-10-17-20-40-14_Patch install requestInstalling patch for host controller-0 ... 2014-10-17-20-40-16_Patch install responsePatch response Info: Patch installation was successful on controller-0. 2014-10-17-20-40-16_host-patch-reboot host-unlockRestoring initial administrative state: unlocked. Unlocking host controller-0 to return to initial administrative state.</systemoutput></codeblock>                        </lixmp>                    </li>                </ol>                                    <p >All patches are now installed on <b >controller-0</b>. Querying the current patch                        status displays the following information:</p>                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query-hosts</userinput><systemoutput >﻿  Hostname      IP Address    Patch Current  Reboot Required============  ==============  =============  ===============compute-0     192.168.204.15       Yes             Nocontroller-0  192.168.204.3        Yes             Nocontroller-1  192.168.204.4        No              Yes</systemoutput></codeblock>                            </li>            <li id="li_N1023A_N100A0_N1001F_N10001" importance="optional" >                <p >Manually install all pending patches on <b >controller-0</b>.</p>                                    <p >You may want to have finer control of the patching ol                        executed by the <pname >system host-patch-reboot</pname>                        command to determine when to install the patches and unlock the host.</p>                                <ol id="ol_ck5_3qx_5p">                    <li >                        <p >Swact controller services.</p>                        <lixmp >                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-swact controller-0</userinput></codeblock>                        </lixmp>                                                    <p >Before patching a controller node, you must transfer                                any active services running on the host to the other controller.                                Only then it is safe to lock the host.</p>                                            </li>                    <li >                        <p >Lock the host.</p>                        <lixmp >                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-lock controller-0</userinput></codeblock>                        </lixmp>                                                    <p >You must lock the target host, controller, compute,                                or storage, before installing patches.</p>                                            </li>                    <li >                        <p >Install the pending patches.</p>                        <lixmp >                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch host-install controller-0</userinput><systemoutput >Patch installation was successful on controller-0</systemoutput></codeblock>                        </lixmp>                                                    <p >All patches are now installed on <b >controller-0</b>. Querying the                                current patching status displays the following information:</p>                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query-hosts</userinput><systemoutput >﻿  Hostname      IP Address    Patch Current  Reboot Required============  ==============  =============  ===============compute-0     192.168.204.15       Yes             Nocontroller-0  192.168.204.3        Yes             Yescontroller-1  192.168.204.4        No              Yes</systemoutput></codeblock>                            <p >For illustration purposes in this section, the                                command <pname >wrs-patch host-install</pname>                                is presented as the tool to <i >install</i> patches.                                But in fact, this command also <i >removes</i>                                patches as well, as described in <xref href="psa1410446902796.xml" />. The command is better described then as the                                tool to install and remove all patches in the <i >Partial-Apply</i> and <i >Partial-Remove</i>                                states on a host.</p>                                            </li>                    <li >                        <p >Unlock the target host.</p>                        <lixmp >                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-unlock controller-0</userinput></codeblock>                        </lixmp>                                                    <p >Unlocking the host forces a reset of the host                                followed by a reboot. This ensures that the host is restarted in a                                known state.</p>                                            </li>                </ol>                                    <p >All patches are now installed on <b >controller-0</b>.</p>                            </li>            <li id="li_N10260_N1009F_N1001F_N10001" >                <p >Install all pending patches on <b >controller-1</b>.</p>                                    <p >Repeat the previous li targeting <b >controller-1</b>                        this time.</p>                                                    <p >All patches are now installed on <b >controller-1</b> as well. Querying the                        current patching status displays the following information:</p>                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query-hosts</userinput><systemoutput >﻿  Hostname      IP Address    Patch Current  Reboot Required============  ==============  =============  ===============compute-0     192.168.204.15       Yes             Nocontroller-0  192.168.204.3        Yes             Nocontroller-1  192.168.204.4        Yes             No</systemoutput></codeblock>                            </li>        </ol>        Carrier Grade 2.0            <p >The cluster is up to date now. All patches are installed.</p>        </result>    </body></topic>

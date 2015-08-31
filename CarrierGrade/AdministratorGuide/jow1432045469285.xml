@@ -1,130 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
-<reference-wr id="jow1432045469285" xml:lang="en-us">
-<!-- Modification History
-    
--->
-  <title >Customer Logs Reference Table</title>
-  <shortdesc > The Customer Logs include events that do not require immediate user
-    action.</shortdesc>
-  <prolog>
-    <author >Jim Owens</author>
-  </prolog>
-  <refbody>
-    <section id="section_N1001F_N1001C_N10001" >
-      <p >The following types of events are included in the Customer Logs. The
-        severity of the events is represented in the table by one or more letters, as follows:</p>
-      <p />
-      <ul id="ul_jsd_jkg_vp">
-        <li >
-          <p >C: Critical</p>
-        </li>
-        <li >
-          <p >M: Major</p>
-        </li>
-        <li >
-          <p >m: Minor</p>
-        </li>
-        <li >
-          <p >W: Warning</p>
-        </li>
-      </ul>
-      <table id="table_vkl_3gy_bs">
-        <tgroup cols="4">
-          <colspec colname="logid" colwidth="15"/>
-          <colspec colname="reason" colwidth="40"/>
-          <colspec colname="entity" colwidth="40"/>
-          <colspec colname="severity" colwidth="15"/>
-          <thead>
-            <row>
-              <entry colname="logid" >
-                <p >Log ID</p>
-              </entry>
-              <entry colname="reason" >
-                <p >Reason</p>
-              </entry>
-              <entry colname="entity" >
-                <p >Entity Instance ID</p>
-              </entry>
-              <entry colname="severity" >
-                <p >Severity</p>
-              </entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry >
-                <p >700.002</p>
-              </entry>
-              <entry >
-                <p >Instance STOP command issued</p>
-              </entry>
-              <entry >
-                <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-              </entry>
-              <entry >
-                <p >C</p>
-              </entry>
-            </row>
-            <row>
-              <entry >
-                <p >700.004</p>
-              </entry>
-              <entry >
-                <p >Instance PAUSE command issued</p>
-              </entry>
-              <entry >
-                <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-              </entry>
-              <entry >
-                <p >C</p>
-              </entry>
-            </row>
-            <row>
-              <entry >
-                <p >700.005</p>
-              </entry>
-              <entry >
-                <p >Instance SUSPEND command issued</p>
-              </entry>
-              <entry >
-                <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-              </entry>
-              <entry >
-                <p >C</p>
-              </entry>
-            </row>
-            <row>
-              <entry >
-                <p >700.011</p>
-              </entry>
-              <entry >
-                <p >Instance DELETE command issued</p>
-              </entry>
-              <entry >
-                <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-              </entry>
-              <entry >
-                <p >C</p>
-              </entry>
-            </row>
-            <row>
-              <entry >
-                <p >700.012</p>
-              </entry>
-              <entry >
-                <p >Instance was not able to cold or live migrate</p>
-              </entry>
-              <entry >
-                <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>
-              </entry>
-              <entry >
-                <p >C</p>
-              </entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-    </section>
-  </refbody>
-</reference-wr>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic id="jow1432045469285" xml:lang="en-us"><!-- Modification History    -->  <title >Customer Logs Reference Table</title>  <shortdesc > The Customer Logs include events that do not require immediate user    action.</shortdesc>  <prolog>    <author >Jim Owens</author>  </prolog>  <body>    <section id="section_N1001F_N1001C_N10001" >      <p >The following types of events are included in the Customer Logs. The        severity of the events is represented in the table by one or more letters, as follows:</p>      <p />      <ul id="ul_jsd_jkg_vp">        <li >          <p >C: Critical</p>        </li>        <li >          <p >M: Major</p>        </li>        <li >          <p >m: Minor</p>        </li>        <li >          <p >W: Warning</p>        </li>      </ul>      <table id="table_vkl_3gy_bs">        <tgroup cols="4">          <colspec colname="logid" colwidth="15"/>          <colspec colname="reason" colwidth="40"/>          <colspec colname="entity" colwidth="40"/>          <colspec colname="severity" colwidth="15"/>          <thead>            <row>              <entry colname="logid" >                <p >Log ID</p>              </entry>              <entry colname="reason" >                <p >Reason</p>              </entry>              <entry colname="entity" >                <p >Entity Instance ID</p>              </entry>              <entry colname="severity" >                <p >Severity</p>              </entry>            </row>          </thead>          <tbody>            <row>              <entry >                <p >700.002</p>              </entry>              <entry >                <p >Instance STOP command issued</p>              </entry>              <entry >                <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>              </entry>              <entry >                <p >C</p>              </entry>            </row>            <row>              <entry >                <p >700.004</p>              </entry>              <entry >                <p >Instance PAUSE command issued</p>              </entry>              <entry >                <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>              </entry>              <entry >                <p >C</p>              </entry>            </row>            <row>              <entry >                <p >700.005</p>              </entry>              <entry >                <p >Instance SUSPEND command issued</p>              </entry>              <entry >                <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>              </entry>              <entry >                <p >C</p>              </entry>            </row>            <row>              <entry >                <p >700.011</p>              </entry>              <entry >                <p >Instance DELETE command issued</p>              </entry>              <entry >                <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>              </entry>              <entry >                <p >C</p>              </entry>            </row>            <row>              <entry >                <p >700.012</p>              </entry>              <entry >                <p >Instance was not able to cold or live migrate</p>              </entry>              <entry >                <p >instance=&lt;<varname >instance_uuid</varname>&gt;</p>              </entry>              <entry >                <p >C</p>              </entry>            </row>          </tbody>        </tgroup>      </table>    </section>  </body></topic>

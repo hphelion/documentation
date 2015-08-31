@@ -1,116 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333800588" xml:lang="en-us">
-    <!-- Modification History
-   -->
-    <title >The Virtual Machine Scheduler</title>
-    <shortdesc >The virtual machine scheduler in the HP Helion OpenStack Carrier Grade is a modified
-        version of the OpenStack Nova scheduler. It allows for better placement of virtual machines
-        in order to exploit hardware and network resources, and for a better distribution of the
-        system workload overall.</shortdesc>
-    <prolog>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <p >In addition to the scheduler actions taken based upon the virtual machine
-            flavor in use, as discussed in <xref href="jow1404333663095.xml" />, the
-            following are enhancements integrated into the HP Helion OpenStack Carrier Grade Nova scheduler:</p>
-        <dl>
-            <dlentry >
-                <dt >Memory over-commit policy</dt>
-                <dd >
-                    <p >There is no support for memory over-commit when scheduling
-                        virtual machines. When launching a virtual machine, the Nova scheduler
-                        reserves the requested memory block from the system in its entirety. The
-                        launch operation fails if not enough memory can be allocated from the
-                        compute cluster.</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Network load balancing across processor nodes</dt>
-                <dd >
-                    <p >When scheduling threads for new virtual CPUs, the Nova
-                        scheduler selects the target core taking into account the load average of
-                        the running AVS cores on each processor node. In a common scenario, the AVS
-                        is deployed on two cores, not necessarily part of the same processor. When a
-                        new virtual machine is launched, the Nova scheduler looks at the average
-                        load incurred by AVS cores on each processor, and then selects the processor
-                        with the lighter load as the target for the new virtual CPUs.</p>
-                    <p >This scheduling approach aims at balancing the switching load
-                        on the AVS across virtual machines as they are deployed, and minimizing the
-                        cross-NUMA inefficiencies for AVS switching.</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >Provider networks access verification</dt>
-                <dd >
-                    <p >When scheduling a virtual machine, the Nova scheduler
-                        verifies that the target compute node has data interfaces on all needed
-                        provider networks, as determined by the list of tenant networks the virtual
-                        NICs are attached to. This verification helps prevent unnecessary debugging
-                        steps incurred when the networking services on a guest application fail to
-                        operate due to the lack of proper network access.</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >NUMA node pinning</dt>
-                <dd >
-                    <p >When scheduling a virtual machine, the Nova scheduler
-                        selects a host on which the virtual NUMA nodes can be affined to specific
-                        host NUMA nodes according to the flavor extra specifications or image
-                        properties.</p>
-                </dd>
-            </dlentry>
-        </dl>
-        <section id="section_N10081_N1001F_N10001" >
-            <title >The Nova Scheduler and Server Group Policies</title>
-            <p >Virtual machines launched as part of a Server Group are subject to scheduling actions
-                determined by the selection of scheduling policy. See <xref href="jow1404333660893.xml" /> for details.</p>
-            <dl>
-                <dlentry >
-                    <dt >Affinity policy</dt>
-                    <dd >
-                        <p >The goal of this policy is to schedule all virtual
-                            machines in the Server Group to execute on the same host. The target
-                            compute node is selected by the Nova scheduler when the first instance
-                            in the Server Group is launched, in compliance with its corresponding
-                            flavor, network, and system requirements.</p>
-                        <p ><!--The Nova scheduler takes no special considerations regarding the nature of the target host, HT-enabled or not. If an HT-enabled compute node is selected, then the instance is scheduled to run on any available logical processors as needed. You must live-migrate the instance if you prefer to use a different host.--></p>
-                        <p >If the <codeph >Best
-                                Effort</codeph> flag of the Server Group is clear, then the
-                            scheduling policy is strictly enforced. Any new instance in the Server
-                            Group will fail to launch if any run-time requirements cannot be
-                            satisfied by the selected compute node.</p>
-                        <p >If the <codeph >Best
-                                Effort</codeph> flag of the Server Group is set, then the
-                            scheduling policy is relaxed. New instances are scheduled to run on the
-                            selected compute node whenever possible, but are scheduled on a
-                            different host if otherwise necessary.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Anti-affinity policy</dt>
-                    <dd >
-                        <p >The goal of this policy is to schedule each virtual
-                            machine in the Server Group to execute on a different host. The target
-                            compute node for each instance is selected by the Nova scheduler in
-                            compliance with the corresponding flavor, network, and system
-                            requirements. As with the affinity policy, the Nova scheduler takes no
-                            special considerations regarding the nature of the target host,
-                            HT-enabled or not.</p>
-                        <p >If the <codeph >Best
-                                Effort</codeph> flag of the Server Group is clear, then the
-                            scheduling policy is strictly enforced. Any new instance in the Server
-                            Group will fail to launch if its run-time requirements can not be
-                            satisfied by any newly selected compute node.</p>
-                        <p >If the <codeph >Best
-                                Effort</codeph> flag of the Server Group is set, then the
-                            scheduling policy is relaxed. New instances are scheduled to run on a
-                            different compute node whenever possible, but are scheduled on any
-                            already selected host if otherwise necessary.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-        </section>
-    </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333800588" xml:lang="en-us">    <!-- Modification History   -->    <title >The Virtual Machine Scheduler</title>    <shortdesc >The virtual machine scheduler in the HP Helion OpenStack Carrier Grade is a modified        version of the OpenStack Nova scheduler. It allows for better placement of virtual machines        in order to exploit hardware and network resources, and for a better distribution of the        system workload overall.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <p >In addition to the scheduler actions taken based upon the virtual machine            flavor in use, as discussed in <xref href="jow1404333663095.xml" />, the            following are enhancements integrated into the HP Helion OpenStack Carrier Grade Nova scheduler:</p>        <dl>            <dlentry >                <dt >Memory over-commit policy</dt>                <dd >                    <p >There is no support for memory over-commit when scheduling                        virtual machines. When launching a virtual machine, the Nova scheduler                        reserves the requested memory block from the system in its entirety. The                        launch operation fails if not enough memory can be allocated from the                        compute cluster.</p>                </dd>            </dlentry>            <dlentry >                <dt >Network load balancing across processor nodes</dt>                <dd >                    <p >When scheduling threads for new virtual CPUs, the Nova                        scheduler selects the target core taking into account the load average of                        the running AVS cores on each processor node. In a common scenario, the AVS                        is deployed on two cores, not necessarily part of the same processor. When a                        new virtual machine is launched, the Nova scheduler looks at the average                        load incurred by AVS cores on each processor, and then selects the processor                        with the lighter load as the target for the new virtual CPUs.</p>                    <p >This scheduling approach aims at balancing the switching load                        on the AVS across virtual machines as they are deployed, and minimizing the                        cross-NUMA inefficiencies for AVS switching.</p>                </dd>            </dlentry>            <dlentry >                <dt >Provider networks access verification</dt>                <dd >                    <p >When scheduling a virtual machine, the Nova scheduler                        verifies that the target compute node has data interfaces on all needed                        provider networks, as determined by the list of tenant networks the virtual                        NICs are attached to. This verification helps prevent unnecessary debugging                        ol incurred when the networking services on a guest application fail to                        operate due to the lack of proper network access.</p>                </dd>            </dlentry>            <dlentry >                <dt >NUMA node pinning</dt>                <dd >                    <p >When scheduling a virtual machine, the Nova scheduler                        selects a host on which the virtual NUMA nodes can be affined to specific                        host NUMA nodes according to the flavor extra specifications or image                        properties.</p>                </dd>            </dlentry>        </dl>        <section id="section_N10081_N1001F_N10001" >            <title >The Nova Scheduler and Server Group Policies</title>            <p >Virtual machines launched as part of a Server Group are subject to scheduling actions                determined by the selection of scheduling policy. See <xref href="jow1404333660893.xml" /> for details.</p>            <dl>                <dlentry >                    <dt >Affinity policy</dt>                    <dd >                        <p >The goal of this policy is to schedule all virtual                            machines in the Server Group to execute on the same host. The target                            compute node is selected by the Nova scheduler when the first instance                            in the Server Group is launched, in compliance with its corresponding                            flavor, network, and system requirements.</p>                        <p ><!--The Nova scheduler takes no special considerations regarding the nature of the target host, HT-enabled or not. If an HT-enabled compute node is selected, then the instance is scheduled to run on any available logical processors as needed. You must live-migrate the instance if you prefer to use a different host.--></p>                        <p >If the <b >Best                                Effort</b> flag of the Server Group is clear, then the                            scheduling policy is strictly enforced. Any new instance in the Server                            Group will fail to launch if any run-time requirements cannot be                            satisfied by the selected compute node.</p>                        <p >If the <b >Best                                Effort</b> flag of the Server Group is set, then the                            scheduling policy is relaxed. New instances are scheduled to run on the                            selected compute node whenever possible, but are scheduled on a                            different host if otherwise necessary.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Anti-affinity policy</dt>                    <dd >                        <p >The goal of this policy is to schedule each virtual                            machine in the Server Group to execute on a different host. The target                            compute node for each instance is selected by the Nova scheduler in                            compliance with the corresponding flavor, network, and system                            requirements. As with the affinity policy, the Nova scheduler takes no                            special considerations regarding the nature of the target host,                            HT-enabled or not.</p>                        <p >If the <b >Best                                Effort</b> flag of the Server Group is clear, then the                            scheduling policy is strictly enforced. Any new instance in the Server                            Group will fail to launch if its run-time requirements can not be                            satisfied by any newly selected compute node.</p>                        <p >If the <b >Best                                Effort</b> flag of the Server Group is set, then the                            scheduling policy is relaxed. New instances are scheduled to run on a                            different compute node whenever possible, but are scheduled on any                            already selected host if otherwise necessary.</p>                    </dd>                </dlentry>            </dl>        </section>    </body></topic>

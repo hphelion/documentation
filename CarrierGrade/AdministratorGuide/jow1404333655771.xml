@@ -1,120 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333655771" xml:lang="en-us">
-    <!-- Modification History
-   -->
-    <title >Live Migration of Virtual Machines</title>
-    <shortdesc >Live migration occurs when a virtual machine is transferred to execute
-        on a different compute node with minimal disruption of the guest applications. This can
-        happen automatically, or upon request by the system administrator.</shortdesc>
-    <prolog>
-        <author >Jim Owens</author>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <note id="note_N10026_N10023_N10001" >
-            <p >Live migration is not currently supported for instances using the following:</p>
-            <ul id="ul_ccz_fjc_gs">
-                <li >
-                    <p >PCI passthrough</p>
-                </li>
-                <li >
-                    <p >SR-IOV</p>
-                </li>
-                <li >
-                    <p >Local storage</p>
-                </li>
-            </ul>
-        </note>
-        <p >While executing a live migration operation, the HP Helion OpenStack Carrier Grade manages
-            the virtual machine's state in such a way that it appears unmodified on the migrated
-            instance. This includes:</p>
-        <ul id="ul_e3n_drn_j4">
-            <li >
-                <p >system memory, both kernel and user space</p>
-            </li>
-            <li >
-                <p >access to all non-local storage resources, including LVM/iSCSI and
-                    Cinder</p>
-            </li>
-            <li >
-                <p >all the virtual machine networking options (unmodified/virtio, AVP kernel driver, AVP
-          DPDK Poll Mode Driver), and AVS</p>
-            </li>
-        </ul>
-        <p >Automatic migration of virtual machines occurs whenever the administrator initiates a locking
-      operation on a compute node. In this case, the HP Helion OpenStack Carrier Grade first live-migrates all virtual
-      machine instances off of the compute node before administratively locking it.</p>
-        <p >The <codeph >admin</codeph> user can also
-            initiate live migrations manually from the <wintitle >Instances</wintitle> page available by clicking the option <option >Instances</option> on the <uicontrol >Admin</uicontrol> side pane of
-            the web management interface. The <option >More</option> button of the
-            selected instance provides the option <option >Live Migrate
-                Instance</option>. When selected, the <wintitle >Live
-                Migrate</wintitle> window is displayed as illustrated below:</p>
-        <fig id="fig_N1005C_N1001C_N10001" >
-            <image href="jow1404333654305.image" id="image_klp_d5n_j4"  width="4in"/>
-        </fig>
-        <p >The following fields are available:</p>
-        <dl>
-            <dlentry >
-                <dt >Current Host</dt>
-                <dd >
-                    <p >A read-only field displaying the compute node the selected instance is currently
-            running on.</p>
-                </dd>
-            </dlentry>
-            <dlentry >
-                <dt >New Host</dt>
-                <dd >
-                    <p >The target compute node for the migration. The default value
-                        is to let the HP Helion OpenStack Carrier Grade auto-schedule the virtual machine following
-                        the current scheduling guidelines and constraints. Optionally, you can
-                        manually select the target compute node.</p>
-                    <p >Note that the set of available target compute nodes for the
-                        migration is still subject to the scheduler constraints from the virtual
-                        machine flavor and other systems options that might be in place.</p>
-                </dd>
-            </dlentry>
-        </dl>
-        <section id="section_N100B6_N1001F_N10001" >
-            <title >Live Migration and Server Group Policies</title>
-            <p >Virtual machines launched as part of a Server Group are subject to additional live
-                migration restrictions determined by the selection of scheduling policy. See <xref href="jow1404333660893.xml" /> for details.</p>
-            <dl>
-                <dlentry >
-                    <dt >Affinity policy</dt>
-                    <dd >
-                        <p >The goal of this policy is to schedule all virtual machines in the Server
-                            Group to execute on the same host.</p>
-                        <p >If the <codeph >Best
-                                Effort</codeph> flag of the Server Group is clear, then the
-                            individual instances cannot be migrated since this would break the
-                            affinity policy.</p>
-                        <p >Note that this means that a compute node running
-                            instances in a Server Group with affinity policy in strict mode cannot
-                            be locked. An alternative mode of operation is to always set the
-                                <codeph >Best Effort</codeph> flag and then
-                            manually migrate the instances to a common host.</p>
-                        <p >If the <codeph >Best Effort</codeph> flag of the Server Group is
-                            set, then any individual instances can migrate to any other available
-                            host.</p>
-                    </dd>
-                </dlentry>
-                <dlentry >
-                    <dt >Anti-affinity policy</dt>
-                    <dd >
-                        <p >The goal of this policy is to schedule each virtual machine in the Server
-                            Group to execute on a different host.</p>
-                        <p >If the <codeph >Best
-                                Effort</codeph> flag of the Server Group is clear, then the
-                            individual instances can migrate provided that there are suitable hosts
-                            where no other Server Group instance is running.</p>
-                        <p >If the <codeph >Best Effort</codeph> flag of the Server Group is
-                            set, then any individual instances can migrate to any other available
-                            host.</p>
-                    </dd>
-                </dlentry>
-            </dl>
-        </section>
-    </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333655771" xml:lang="en-us">    <!-- Modification History   -->    <title >Live Migration of Virtual Machines</title>    <shortdesc >Live migration occurs when a virtual machine is transferred to execute        on a different compute node with minimal disruption of the guest applications. This can        happen automatically, or upon request by the system administrator.</shortdesc>    <prolog>        <author >Jim Owens</author>        <author >Pedro Sanchez</author>    </prolog>    <body>        <note id="note_N10026_N10023_N10001" >            <p >Live migration is not currently supported for instances using the following:</p>            <ul id="ul_ccz_fjc_gs">                <li >                    <p >PCI passthrough</p>                </li>                <li >                    <p >SR-IOV</p>                </li>                <li >                    <p >Local storage</p>                </li>            </ul>        </note>        <p >While executing a live migration operation, the HP Helion OpenStack Carrier Grade manages            the virtual machine's state in such a way that it appears unmodified on the migrated            instance. This includes:</p>        <ul id="ul_e3n_drn_j4">            <li >                <p >system memory, both kernel and user space</p>            </li>            <li >                <p >access to all non-local storage resources, including LVM/iSCSI and                    Cinder</p>            </li>            <li >                <p >all the virtual machine networking options (unmodified/virtio, AVP kernel driver, AVP          DPDK Poll Mode Driver), and AVS</p>            </li>        </ul>        <p >Automatic migration of virtual machines occurs whenever the administrator initiates a locking      operation on a compute node. In this case, the HP Helion OpenStack Carrier Grade first live-migrates all virtual      machine instances off of the compute node before administratively locking it.</p>        <p >The <b >admin</b> user can also            initiate live migrations manually from the <wintitle >Instances</wintitle> page available by clicking the option <option >Instances</option> on the <uicontrol >Admin</uicontrol> side pane of            the web management interface. The <option >More</option> button of the            selected instance provides the option <option >Live Migrate                Instance</option>. When selected, the <wintitle >Live                Migrate</wintitle> window is displayed as illustrated below:</p>        <fig id="fig_N1005C_N1001C_N10001" >            <image href="jow1404333654305.image" id="image_klp_d5n_j4"  width="4in"/>        </fig>        <p >The following fields are available:</p>        <dl>            <dlentry >                <dt >Current Host</dt>                <dd >                    <p >A read-only field displaying the compute node the selected instance is currently            running on.</p>                </dd>            </dlentry>            <dlentry >                <dt >New Host</dt>                <dd >                    <p >The target compute node for the migration. The default value                        is to let the HP Helion OpenStack Carrier Grade auto-schedule the virtual machine following                        the current scheduling guidelines and constraints. Optionally, you can                        manually select the target compute node.</p>                    <p >Note that the set of available target compute nodes for the                        migration is still subject to the scheduler constraints from the virtual                        machine flavor and other systems options that might be in place.</p>                </dd>            </dlentry>        </dl>        <section id="section_N100B6_N1001F_N10001" >            <title >Live Migration and Server Group Policies</title>            <p >Virtual machines launched as part of a Server Group are subject to additional live                migration restrictions determined by the selection of scheduling policy. See <xref href="jow1404333660893.xml" /> for details.</p>            <dl>                <dlentry >                    <dt >Affinity policy</dt>                    <dd >                        <p >The goal of this policy is to schedule all virtual machines in the Server                            Group to execute on the same host.</p>                        <p >If the <b >Best                                Effort</b> flag of the Server Group is clear, then the                            individual instances cannot be migrated since this would break the                            affinity policy.</p>                        <p >Note that this means that a compute node running                            instances in a Server Group with affinity policy in strict mode cannot                            be locked. An alternative mode of operation is to always set the                                <b >Best Effort</b> flag and then                            manually migrate the instances to a common host.</p>                        <p >If the <b >Best Effort</b> flag of the Server Group is                            set, then any individual instances can migrate to any other available                            host.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Anti-affinity policy</dt>                    <dd >                        <p >The goal of this policy is to schedule each virtual machine in the Server                            Group to execute on a different host.</p>                        <p >If the <b >Best                                Effort</b> flag of the Server Group is clear, then the                            individual instances can migrate provided that there are suitable hosts                            where no other Server Group instance is running.</p>                        <p >If the <b >Best Effort</b> flag of the Server Group is                            set, then any individual instances can migrate to any other available                            host.</p>                    </dd>                </dlentry>            </dl>        </section>    </body></topic>

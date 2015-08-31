@@ -1,39 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic id="jow1423087781001" xml:lang="en-us">
-<!-- Modification History
-
- -->
- <title >Huge Page Provisioning</title>
- <shortdesc >You can adjust the number and size of pages to allocate on a host for use
-  as VM memory. For individual VMs, you can specify the page size to use.</shortdesc>
- <prolog>
-  <author >Jim Owens</author>
- </prolog>
- <body>
-  <p >In each NUMA node on a host, a fixed amount of memory is reserved for use by
-   VMs. By default, this memory is managed using 2 MiB huge pages. You can change this for
-   individual NUMA nodes to use a combination of 2 MiB and 1 GiB huge pages. Using larger pages can
-   reduce page management overhead and improve system performance for systems with large amounts of
-   virtual memory and many running processes.</p>
-  <p >You can use the <cmdname >system host-memory-list</cmdname> and
-    <cmdname >system host-memory-show</cmdname> commands to see how much memory is
-   available for VMs. This information is also shown on the <uicontrol >Memory</uicontrol> tab of the <wintitle >Host Inventory</wintitle> page (see
-    <xref href="jow1404333795559.xml" />). To see how many pages of a given size you
-   can successfully request on a node (assuming that pages of another size are not also requested),
-   click the Information icon next to each field on the <wintitle >Update Hugepage
-    Memory</wintitle> dialog box.</p>
-  <fig id="fig_zdt_vzd_cs" >
-   <image href="jow1432129731308.image" id="image_blt_xzd_cs"  width="2.5in">
-    <alt >TiS Update Hugepage Memory: Maximum Pages info</alt>
-   </image>
-  </fig>
-  <p >If the huge page request cannot be allocated from the available memory, an
-   informative message is displayed. If the available memory is greater than the amount required by
-   the huge page request, unallocated memory is automatically assigned as 4K pages.</p>
-  <p >After setting the memory allocations for a compute node, you can save them as a <term >memory
-    profile</term>, and then apply the profile to other compute nodes. For more information, see
-    <xref href="jow1429811350849.xml" />.</p>
-  <p >To specify the page size to use for a VM, see <xref href="jow1424723681500.xml" />.</p>
- </body>
-</topic>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic id="jow1423087781001" xml:lang="en-us"><!-- Modification History --> <title >Huge Page Provisioning</title> <shortdesc >You can adjust the number and size of pages to allocate on a host for use  as VM memory. For individual VMs, you can specify the page size to use.</shortdesc> <prolog>  <author >Jim Owens</author> </prolog> <body>  <p >In each NUMA node on a host, a fixed amount of memory is reserved for use by   VMs. By default, this memory is managed using 2 MiB huge pages. You can change this for   individual NUMA nodes to use a combination of 2 MiB and 1 GiB huge pages. Using larger pages can   reduce page management overhead and improve system performance for systems with large amounts of   virtual memory and many running processes.</p>  <p >You can use the <i >system host-memory-list</i> and    <i >system host-memory-show</i> commands to see how much memory is   available for VMs. This information is also shown on the <uicontrol >Memory</uicontrol> tab of the <wintitle >Host Inventory</wintitle> page (see    <xref href="jow1404333795559.xml" />). To see how many pages of a given size you   can successfully request on a node (assuming that pages of another size are not also requested),   click the Information icon next to each field on the <wintitle >Update Hugepage    Memory</wintitle> dialog box.</p>  <fig id="fig_zdt_vzd_cs" >   <image href="jow1432129731308.image" id="image_blt_xzd_cs"  width="2.5in">    <alt >TiS Update Hugepage Memory: Maximum Pages info</alt>   </image>  </fig>  <p >If the huge page request cannot be allocated from the available memory, an   informative message is displayed. If the available memory is greater than the amount required by   the huge page request, unallocated memory is automatically assigned as 4K pages.</p>  <p >After setting the memory allocations for a compute node, you can save them as a <term >memory    profile</term>, and then apply the profile to other compute nodes. For more information, see    <xref href="jow1429811350849.xml" />.</p>  <p >To specify the page size to use for a VM, see <xref href="jow1424723681500.xml" />.</p> </body></topic>
