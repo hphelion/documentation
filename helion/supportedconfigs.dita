@@ -14,7 +14,36 @@
         <li>Management</li>
         <li>External API</li>
         <li>External VM communications</li>
-      </ul> It also supports the physical bonding of Network Interafaces, and it can be configured
+      </ul> 
+      
+     <note> The requirement to have a dedicated network for OS-install and system deployment has been removed in Beta 1. 
+       
+       To re-use this network as part of  of the operational network the following conditions must be adhered to:</note>
+      <ol>
+      <li>The network IP addresses used for OS install (i.e. baremetalConfig.yml and servers.yml) must belong to a 
+        Network that is used for your cloud infrastructure (e.g. in networks.yml).</li>
+        <li>The Network that re-uses those addresses must be un-tagged.</li>
+      </ol>
+      In the example <b>entry-scale model</b> the following networks are used:
+     <ul><li>Mgmt          10.2.1.0/24      VLAN: 100 (untagged)</li></ul>
+      In the baremetalConfig file servers are listed as:
+     <codeblock> baremetal_servers:
+      - node_name: controller1
+      node_type: CCN-001-001
+      pxe_mac_addr: b2:72:8d:ac:7c:6f
+      pxe_interface: eth2
+      pxe_ip_addr: 192.168.10.3
+      ilo_ip: 192.168.9.3
+      </codeblock>
+      in the servers.yml file servers will show as:
+      <codeblock>- id: controller1
+      role: ROLE-CCN
+      ip-addr: 192.168.10.3</codeblock>
+      
+      The values in the bare-metal and servers definition need to members of the CIDR used  for the untagged network, (in this case Mgmt network).
+      
+      
+      It also supports the physical bonding of Network Interafaces, and it can be configured
       with VSA as a Cinder storage back-end. <simpletable>
         <strow/>
         <strow>
