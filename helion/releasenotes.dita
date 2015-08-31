@@ -7,19 +7,16 @@
         tmtype="reg">OpenStack</tm> 2.0 Beta 1, including known issues and workarounds for this
       release:</p>
     <section id="Features"><title>Features in HP Helion OpenStack 2.0 Beta 1</title><p><b>New UEFI
-          support</b> &#151; Beta-1 introduces support for UEFI machines, while continuing to
+          support</b> &#151; Beta 1 introduces support for UEFI machines, while continuing to
         support Legacy BIOS. Select the required mode on each node through its BIOS settings before
         beginning the install process. HOS 2.0 will detect and use the mode you have selected for
         each node.</p>
-   
-      
-      <p><b>Updated HP Helion
-          OpenStack Services</b> &#151; We have included the core set of OpenStack services from the
-          <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external"
-          format="html">Kilo release</xref> with the exception of limitations notated in this
-        document.</p><p><b>Neutron LBaaS and FWaaS Extensions</b> &#151; We have implemented
-        networking extensions for load balancing and firewalls. Here is a description of each of
-        these:</p><ul>
+      <p><b>Updated HP Helion OpenStack Services</b> &#151; We have included the core set of
+        OpenStack services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
+          scope="external" format="html">Kilo release</xref> with the exception of limitations
+        notated in this document.</p><p><b>Neutron LBaaS and FWaaS Extensions</b> &#151; We have
+        implemented networking extensions for load balancing and firewalls. Here is a description of
+        each of these:</p><ul>
         <li>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
           balancing feature set. Helion OpenStack 2.0 includes the V2 version which allows
           implementation uses haproxy but third-party Load Balancers can be integrated as well. In
