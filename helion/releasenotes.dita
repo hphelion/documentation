@@ -219,11 +219,6 @@
             steps to be defined later may be required to complete installation.</p>
         </li>
       </ul>-->
-      <p><b>TLS Support</b></p>
-      <ul>
-        <li>The server certificate is currently hard coded. If an operator wishes to provide their
-          own, they need to edit the defaults in the TLS playbook.</li>
-      </ul>
       <p><b>Installation and NIC Numbering</b></p>
       <ul>
         <li>The assignment of eth interface numbers to your physical network interfaces may vary,
