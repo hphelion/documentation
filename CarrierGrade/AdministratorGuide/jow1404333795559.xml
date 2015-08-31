@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333795559" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333795559" xml:lang="en-us">
     <!-- Modification History
    -->
-    <title ixia_locid="1">Memory</title>
-    <shortdesc ixia_locid="2">The tab <uicontrol ixia_locid="3">Memory</uicontrol> on the <wintitle ixia_locid="4">Inventory Detail</wintitle> page presents memory details for a host, as
+    <title >Memory</title>
+    <shortdesc >The tab <uicontrol >Memory</uicontrol> on the <wintitle >Inventory Detail</wintitle> page presents memory details for a host, as
         illustrated below.</shortdesc>
     <prolog>
-        <author ixia_locid="5">Pedro Sanchez</author>
+        <author >Pedro Sanchez</author>
     </prolog>
-    <conbody>
-        <fig id="fig_N10027_N10024_N10001" ixia_locid="6">
-            <image href="jow1404333794155.image" id="image_zbk_dwz_l4" ixia_locid="7"/>
+    <body>
+        <fig id="fig_N10027_N10024_N10001" >
+            <image href="jow1404333794155.image" id="image_zbk_dwz_l4" />
         </fig>
-        <p ixia_locid="8">The information is presented in three columns, as follows:</p>
+        <p >The information is presented in three columns, as follows:</p>
         <dl>
-            <dlentry ixia_locid="9">
-                <dt ixia_locid="10">Memory</dt>
-                <dd ixia_locid="11">
-                    <p ixia_locid="12">Overall memory on the host.</p>
-                    <p ixia_locid="13">For a controller node it displays the total and available memory figures.</p>
-                    <p ixia_locid="14">For a compute node, as in the example above, it displays the amount reserved for the
+            <dlentry >
+                <dt >Memory</dt>
+                <dd >
+                    <p >Overall memory on the host.</p>
+                    <p >For a controller node it displays the total and available memory figures.</p>
+                    <p >For a compute node, as in the example above, it displays the amount reserved for the
             platform (system software), and the total and available figures for use by virtual
             machines.</p>
                 </dd>
             </dlentry>
-            <dlentry ixia_locid="15">
-                <dt ixia_locid="16">VSwitch Huge Pages</dt>
-                <dd ixia_locid="17">
-                    <p ixia_locid="18">This column is relevant on compute nodes only.</p>
-                    <p ixia_locid="19">The size of the huge pages, and the total and available huge page figures.</p>
+            <dlentry >
+                <dt >VSwitch Huge Pages</dt>
+                <dd >
+                    <p >This column is relevant on compute nodes only.</p>
+                    <p >The size of the huge pages, and the total and available huge page figures.</p>
                 </dd>
             </dlentry>
-            <dlentry ixia_locid="20">
-                <dt ixia_locid="21">VM Pages</dt>
-                <dd ixia_locid="22">
-                    <p ixia_locid="23">This column is relevant on compute nodes only.</p>
-                    <p ixia_locid="24">The size of the pages, and the total and available page
+            <dlentry >
+                <dt >VM Pages</dt>
+                <dd >
+                    <p >This column is relevant on compute nodes only.</p>
+                    <p >The size of the pages, and the total and available page
                         figures. If changes to the huge page allocations have been requested for a
-                        locked host, they are shown as <nameliteral ixia_locid="25">Pending</nameliteral>.</p>
+                        locked host, they are shown as <codeph >Pending</codeph>.</p>
                 </dd>
             </dlentry>
         </dl>
-    </conbody>
-</concept-wr>
+    </body>
+</topic>

@@ -4,111 +4,111 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Installing Patches Locally</title>
-    <shortdesc ixia_locid="2"/>
+    <title >Installing Patches Locally</title>
+    <shortdesc />
     <prolog>
-        <author ixia_locid="3">Pedro Sanchez</author>
+        <author >Pedro Sanchez</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001E_N1001B_N10001" ixia_locid="4">
-            <p ixia_locid="5">When installing the HP Helion OpenStack Carrier Grade software on new
+        <context id="context_N1001E_N1001B_N10001" >
+            <p >When installing the HP Helion OpenStack Carrier Grade software on new
                 hardware, it is recommended that you install the latest available patches on
-                    <nameliteral ixia_locid="6">controller-0</nameliteral> before running the
-                    <cmdname ixia_locid="87">region_config</cmdname> script, and before installing
+                    <codeph >controller-0</codeph> before running the
+                    <cmdname >region_config</cmdname> script, and before installing
                 the software on other hosts. This ensures that:</p>
             <ul id="ul_gsq_1ht_vp">
-                <li ixia_locid="7">
-                    <p ixia_locid="8">The software on <nameliteral ixia_locid="9">controller-0</nameliteral>, and all other hosts, is up to date when the
+                <li >
+                    <p >The software on <codeph >controller-0</codeph>, and all other hosts, is up to date when the
                         cluster comes alive.</p>
                 </li>
-                <li ixia_locid="10">
-                    <p ixia_locid="11">You reduce installation time by avoiding patching the system
+                <li >
+                    <p >You reduce installation time by avoiding patching the system
                         right after an out-of-date software installation is complete.</p>
                 </li>
             </ul>
-            <p ixia_locid="12">This exercise assumes that the patches to install are available on a USB flash drive,
-                or from a server reachable by <nameliteral ixia_locid="13">controller-0</nameliteral>.</p>
+            <p >This exercise assumes that the patches to install are available on a USB flash drive,
+                or from a server reachable by <codeph >controller-0</codeph>.</p>
         </context>
         <steps>
-            <step id="step_N1004F_N1004C_N1001B_N10001" ixia_locid="14">
-                <cmd ixia_locid="15">Initialize <nameliteral ixia_locid="16">controller-0</nameliteral>.</cmd>
-                <info ixia_locid="17">
-                    <p ixia_locid="18">Use the HP Helion OpenStack Carrier Grade bootable ISO image
-                        to initialize <nameliteral ixia_locid="19">controller-0</nameliteral>. </p>
+            <step id="step_N1004F_N1004C_N1001B_N10001" >
+                <cmd >Initialize <codeph >controller-0</codeph>.</cmd>
+                <info >
+                    <p >Use the HP Helion OpenStack Carrier Grade bootable ISO image
+                        to initialize <codeph >controller-0</codeph>. </p>
                 </info>
-                <stepresult ixia_locid="21">
-                    <p ixia_locid="22">This step takes you to the point where you use the console
-                        port to log in to <nameliteral ixia_locid="23">controller-0</nameliteral> as
-                        user <nameliteral ixia_locid="85">wrsroot</nameliteral>.</p>
+                <stepresult >
+                    <p >This step takes you to the point where you use the console
+                        port to log in to <codeph >controller-0</codeph> as
+                        user <codeph >wrsroot</codeph>.</p>
                 </stepresult>
             </step>
-            <step id="step_N1007C_N1004C_N1001B_N10001" ixia_locid="25">
-                <cmd ixia_locid="26">Copy the patches to the local file system.</cmd>
-                <info ixia_locid="27">
-                    <p ixia_locid="28">If the patches are on a USB flash drive, copy them from the
+            <step id="step_N1007C_N1004C_N1001B_N10001" >
+                <cmd >Copy the patches to the local file system.</cmd>
+                <info >
+                    <p >If the patches are on a USB flash drive, copy them from the
                         appropriate mount point to some directory in the local file system. For
                         example:</p>
                 </info>
-                <stepxmp ixia_locid="29">
-                    <codeblock ixia_locid="30"><systemoutput ixia_locid="31">$ </systemoutput><userinput ixia_locid="32">mkdir /tmp/patches</userinput>
-<systemoutput ixia_locid="33">$ </systemoutput><userinput ixia_locid="34">cp /media/wrsroot/data/PATCH_0001.patch /tmp/patches</userinput></codeblock>
+                <stepxmp >
+                    <codeblock ><systemoutput >$ </systemoutput><userinput >mkdir /tmp/patches</userinput>
+<systemoutput >$ </systemoutput><userinput >cp /media/wrsroot/data/PATCH_0001.patch /tmp/patches</userinput></codeblock>
                 </stepxmp>
-                <info ixia_locid="35">
-                    <p ixia_locid="36">If the patches are available from a remote server, you need
+                <info >
+                    <p >If the patches are available from a remote server, you need
                         to manually initialize a suitable Ethernet interface first, and then
                         transfer them to the local file system. For example:</p>
-                    <codeblock ixia_locid="37"><systemoutput ixia_locid="38">$ </systemoutput><userinput ixia_locid="39">mkdir /tmp/patches</userinput>
-<systemoutput ixia_locid="40">$ </systemoutput><userinput ixia_locid="41">sudo ifconfig eth3 192.168.1.100 netmask 255.255.255.0 up</userinput>
-<systemoutput ixia_locid="42">$ </systemoutput><userinput ixia_locid="43">scp \
+                    <codeblock ><systemoutput >$ </systemoutput><userinput >mkdir /tmp/patches</userinput>
+<systemoutput >$ </systemoutput><userinput >sudo ifconfig eth3 192.168.1.100 netmask 255.255.255.0 up</userinput>
+<systemoutput >$ </systemoutput><userinput >scp \
 me@192.168.1.150:/usr/local/patches/PATCH_0001.patch \
 /tmp/patches</userinput></codeblock>
                 </info>
-                <stepresult ixia_locid="44">
-                    <p ixia_locid="45">All patches are now in the directory <filepath ixia_locid="46">/tmp/patches</filepath>.</p>
+                <stepresult >
+                    <p >All patches are now in the directory <filepath >/tmp/patches</filepath>.</p>
                 </stepresult>
             </step>
-            <step id="step_N100CC_N1004C_N1001B_N10001" ixia_locid="47">
-                <cmd ixia_locid="48">Populate the patch storage area.</cmd>
-                <info ixia_locid="49">
-                    <p ixia_locid="50">Upload the patches using the command <cmdname ixia_locid="51">wrs-patch upload</cmdname> or
-                            <cmdname ixia_locid="52">wrs-patch upload-dir</cmdname> as described in <xref href="psa1410446807133.xml" ixia_locid="53"/>.</p>
+            <step id="step_N100CC_N1004C_N1001B_N10001" >
+                <cmd >Populate the patch storage area.</cmd>
+                <info >
+                    <p >Upload the patches using the command <cmdname >wrs-patch upload</cmdname> or
+                            <cmdname >wrs-patch upload-dir</cmdname> as described in <xref href="psa1410446807133.xml" />.</p>
                 </info>
             </step>
-            <step id="step_N1011E_N10059_N1001E_N10001" ixia_locid="78">
-                <cmd ixia_locid="79">Apply the patches.</cmd>
-                <info ixia_locid="80">
-                    <p ixia_locid="81">Apply the patches using the command <cmdname ixia_locid="82">wrs-patch apply
+            <step id="step_N1011E_N10059_N1001E_N10001" >
+                <cmd >Apply the patches.</cmd>
+                <info >
+                    <p >Apply the patches using the command <cmdname >wrs-patch apply
                         --all</cmdname>.</p>
                 </info>
-                <stepresult ixia_locid="83">
-                    <p ixia_locid="84">The patches are now in the software updates repository, ready to be
+                <stepresult >
+                    <p >The patches are now in the software updates repository, ready to be
                         installed.</p>
                 </stepresult>
             </step>
-            <step id="step_N100E9_N1004C_N1001B_N10001" ixia_locid="54">
-                <cmd ixia_locid="55">Install the patches locally.</cmd>
-                <stepxmp ixia_locid="56">
-                    <codeblock ixia_locid="57"><systemoutput ixia_locid="58">$ </systemoutput><userinput ixia_locid="59">sudo wrs-patch install-local</userinput>
-<systemoutput ixia_locid="77">Patch installation is complete.
+            <step id="step_N100E9_N1004C_N1001B_N10001" >
+                <cmd >Install the patches locally.</cmd>
+                <stepxmp >
+                    <codeblock ><systemoutput >$ </systemoutput><userinput >sudo wrs-patch install-local</userinput>
+<systemoutput >Patch installation is complete.
 Please reboot before continuing with configuration.</systemoutput></codeblock>
                 </stepxmp>
-                <stepresult ixia_locid="60">
-                    <p ixia_locid="61">This command installs all applied patches on <nameliteral ixia_locid="62">controller-0</nameliteral>.</p>
+                <stepresult >
+                    <p >This command installs all applied patches on <codeph >controller-0</codeph>.</p>
                 </stepresult>
             </step>
-            <step id="step_N1010B_N1004C_N1001B_N10001" ixia_locid="63">
-                <cmd ixia_locid="64">Reboot <nameliteral ixia_locid="65">controller-0</nameliteral>.</cmd>
-                <info ixia_locid="66">
-                    <p ixia_locid="67">You must reboot the controller to ensure that it is running with the software
+            <step id="step_N1010B_N1004C_N1001B_N10001" >
+                <cmd >Reboot <codeph >controller-0</codeph>.</cmd>
+                <info >
+                    <p >You must reboot the controller to ensure that it is running with the software
                         fully patched.</p>
                 </info>
             </step>
-            <step id="step_N10120_N1004C_N1001B_N10001" ixia_locid="68">
-                <cmd ixia_locid="69">Continue with the HP Helion OpenStack Carrier Grade software installation.</cmd>
-                <info ixia_locid="70">
-                    <p ixia_locid="71">Log in again as <nameliteral ixia_locid="86"
-                            >wrsroot</nameliteral> and continue with the software installation by
-                        running the <cmdname ixia_locid="73">region_config</cmdname> script. See
+            <step id="step_N10120_N1004C_N1001B_N10001" >
+                <cmd >Continue with the HP Helion OpenStack Carrier Grade software installation.</cmd>
+                <info >
+                    <p >Log in again as <codeph 
+                            >wrsroot</codeph> and continue with the software installation by
+                        running the <cmdname >region_config</cmdname> script. See
                             <xref
                             href="http://docs-staging.hpcloud.com/DRAFT/#CarrierGrade/Installation/carrier-grade-install-pb-overview.html"
                             format="html" scope="external">Installing HP Helion OpenStack Carrier
@@ -116,8 +116,8 @@ Please reboot before continuing with configuration.</systemoutput></codeblock>
                 </info>
             </step>
         </steps>
-        <result id="result_N10138_N1001B_N10001" ixia_locid="75">
-            <p ixia_locid="76">Once all hosts in the cluster are initialized, they are all running
+        <result id="result_N10138_N1001B_N10001" >
+            <p >Once all hosts in the cluster are initialized, they are all running
                 fully patched software. The HP Helion OpenStack Carrier Grade cluster is up to date.</p>
         </result>
     </taskbody>

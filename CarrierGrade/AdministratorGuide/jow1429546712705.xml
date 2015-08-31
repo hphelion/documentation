@@ -4,30 +4,30 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="370">Enabling the Heartbeat API for a VM</title>
-    <shortdesc ixia_locid="371">You can accommodate the use of guest heartbeats on a VM using an extra specification. </shortdesc>
+    <title >Enabling the Heartbeat API for a VM</title>
+    <shortdesc >You can accommodate the use of guest heartbeats on a VM using an extra specification. </shortdesc>
     <prolog>
-        <author ixia_locid="372"/>
+        <author />
     </prolog>
     <taskbody>
-        <context id="context_N1001E_N1001B_N10001" ixia_locid="373">
-            <p ixia_locid="54">Select this option when you expect one or more of the guest
+        <context id="context_N1001E_N1001B_N10001" >
+            <p >Select this option when you expect one or more of the guest
                 applications running on the virtual machine to make use of the HP Helion OpenStack Carrier Grade
                 Heartbeat client API. For more information about the Heartbeat API, refer to the
-                    <cite ixia_locid="56">HP Helion OpenStack Carrier Grade Software Development Kit</cite>. The
+                    <cite >HP Helion OpenStack Carrier Grade Software Development Kit</cite>. The
                 controller node starts heartbeat application-level polling cycles on virtual
                 machines launched using a flavor with this option selected.</p>
-            <p ixia_locid="55">A guest application modified to use the HP Helion OpenStack Carrier Grade Heartbeat
+            <p >A guest application modified to use the HP Helion OpenStack Carrier Grade Heartbeat
                 client API can be more accurately monitored by internal messaging within the virtual
-                machine.  For more about application monitoring, see <xref href="jow1404333802962.xml" ixia_locid="374"/>.</p>
-            <p ixia_locid="17">To add this extra spec to a flavor using the web administration
-                interface, use the <uicontrol ixia_locid="314">Guest Heartbeat</uicontrol> selection
-                in the <uicontrol ixia_locid="316">Create Flavor Extra Spec</uicontrol> drop-down
-                menu. To access this menu, see <xref href="jow1429538642910.xml" ixia_locid="318"/>.</p>
-            <p ixia_locid="312">To enable the heartbeat API using the CLI, use the following
+                machine.  For more about application monitoring, see <xref href="jow1404333802962.xml" />.</p>
+            <p >To add this extra spec to a flavor using the web administration
+                interface, use the <uicontrol >Guest Heartbeat</uicontrol> selection
+                in the <uicontrol >Create Flavor Extra Spec</uicontrol> drop-down
+                menu. To access this menu, see <xref href="jow1429538642910.xml" />.</p>
+            <p >To enable the heartbeat API using the CLI, use the following
                 command:</p>
-            <codeblock ixia_locid="319"><systemoutput ixia_locid="326">~(keystone_admin)$ </systemoutput><userinput ixia_locid="333">nova flavor-key <varname ixia_locid="340">flavor_name</varname> set sw:wrs:guest:heartbeat=<varname ixia_locid="351">integer_value</varname></userinput></codeblock>
-            <p ixia_locid="368">where <varname ixia_locid="369">integer_value</varname> is either 0
+            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova flavor-key <varname >flavor_name</varname> set sw:wrs:guest:heartbeat=<varname >integer_value</varname></userinput></codeblock>
+            <p >where <varname >integer_value</varname> is either 0
                 or 1.</p>
         </context>
     </taskbody>

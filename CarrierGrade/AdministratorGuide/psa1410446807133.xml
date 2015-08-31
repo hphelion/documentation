@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446807133" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446807133" xml:lang="en-us">
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Populating the Patch Storage Area</title>
-    <shortdesc ixia_locid="2">Patches have to be uploaded to the HP Helion OpenStack Carrier Grade patch storage area
+    <title >Populating the Patch Storage Area</title>
+    <shortdesc >Patches have to be uploaded to the HP Helion OpenStack Carrier Grade patch storage area
         before they can be applied.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Pedro Sanchez</author>
+        <author >Pedro Sanchez</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" ixia_locid="4"/>
+        <context id="context_N1001F_N1001C_N10001" />
         <steps>
-            <step id="cli-admin-login" ixia_locid="18">
-                <cmd ixia_locid="19">Log in as Keystone user <nameliteral ixia_locid="20">admin</nameliteral> to the active controller.</cmd>
-                <info ixia_locid="60">
-                    <p ixia_locid="61">Log in as user <nameliteral ixia_locid="23">wrsroot</nameliteral> to the active controller and source the script
-                            <filepath ixia_locid="62">/etc/nova/openrc</filepath> to obtain
-                        administrative privileges as described in <xref href="jow1404333563834.xml" ixia_locid="63"/>.</p>
+            <step id="cli-admin-login" >
+                <cmd >Log in as Keystone user <codeph >admin</codeph> to the active controller.</cmd>
+                <info >
+                    <p >Log in as user <codeph >wrsroot</codeph> to the active controller and source the script
+                            <filepath >/etc/nova/openrc</filepath> to obtain
+                        administrative privileges as described in <xref href="jow1404333563834.xml" />.</p>
                 </info>
             </step>
-            <step id="step_N1002B_N10028_N1001C_N10001" ixia_locid="6">
-                <cmd ixia_locid="7">Upload the patch file to the patch storage area.</cmd>
-                <stepxmp ixia_locid="11">
-                    <codeblock ixia_locid="12"><systemoutput ixia_locid="64">~(keystone_admin)$ </systemoutput><userinput ixia_locid="14">sudo wrs-patch upload /tmp/patches/</userinput></codeblock>
+            <step id="step_N1002B_N10028_N1001C_N10001" >
+                <cmd >Upload the patch file to the patch storage area.</cmd>
+                <stepxmp >
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch upload /tmp/patches/</userinput></codeblock>
                 </stepxmp>
-                <info ixia_locid="8">
-                    <p ixia_locid="9">This example uploads a single patch to the storage area. You
+                <info >
+                    <p >This example uploads a single patch to the storage area. You
                         can specify multiple patch files on the same command separating their names
                         with spaces.</p>
-                    <p ixia_locid="32">Alternatively, you can upload all patch files stored in a directory using a
+                    <p >Alternatively, you can upload all patch files stored in a directory using a
                         single command, as illustrated in the following example:</p>
-                    <codeblock ixia_locid="33"><systemoutput ixia_locid="66">~(keystone_admin)$ </systemoutput><userinput ixia_locid="35">sudo wrs-patch upload-dir /tmp/patches</userinput></codeblock>
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch upload-dir /tmp/patches</userinput></codeblock>
                 </info>
-                <stepresult ixia_locid="36">
-                    <p ixia_locid="37">The patch files are available now in the patch storage area, but they have
+                <stepresult >
+                    <p >The patch files are available now in the patch storage area, but they have
                         not yet been applied to the cluster.</p>
                 </stepresult>
             </step>
-            <step id="step_N10051_N10028_N1001C_N10001" ixia_locid="16">
-                <cmd ixia_locid="17">Verify the status of the patch.</cmd>
-                <stepxmp ixia_locid="38">
-                    <codeblock ixia_locid="39"><systemoutput ixia_locid="67">~(keystone_admin)$ </systemoutput><userinput ixia_locid="41">sudo wrs-patch query</userinput>
-<systemoutput ixia_locid="68">﻿       Patch ID             Patch State
+            <step id="step_N10051_N10028_N1001C_N10001" >
+                <cmd >Verify the status of the patch.</cmd>
+                <stepxmp >
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query</userinput>
+<systemoutput >﻿       Patch ID             Patch State
 =========================   ===========
 PATCH_0001   Available</systemoutput></codeblock>
-                    <p ixia_locid="43">The patch state is <i ixia_locid="44">Available</i> now, indicating that it is included in
+                    <p >The patch state is <i >Available</i> now, indicating that it is included in
                         the patch storage area. Further details about the patch can be retrieved as
                         follows:</p>
-                    <codeblock ixia_locid="45"><systemoutput ixia_locid="69">~(keystone_admin)$ </systemoutput><userinput ixia_locid="47">sudo wrs-patch show PATCH_0001</userinput>
-<systemoutput ixia_locid="70">PATCH_0001:
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch show PATCH_0001</userinput>
+<systemoutput >PATCH_0001:
     Patch State:    Available
     Release Status: Released
     Summary:        Add logs to hbsClient and libalarm-clock
@@ -73,16 +73,16 @@ PATCH_0001   Available</systemoutput></codeblock>
                     libalarm-clock-1.0-r1.x86_64.rpm</systemoutput></codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N100D8_N1002D_N1001F_N10001" ixia_locid="49">
-                <cmd importance="optional" ixia_locid="50">Delete a patch from the patch storage area.</cmd>
-                <info ixia_locid="51">
-                    <p ixia_locid="52">Patches in the <i ixia_locid="53">Available</i> state can be
+            <step id="step_N100D8_N1002D_N1001F_N10001" >
+                <cmd importance="optional" >Delete a patch from the patch storage area.</cmd>
+                <info >
+                    <p >Patches in the <i >Available</i> state can be
                         deleted as illustrated in the following command:</p>
                 </info>
-                <stepxmp ixia_locid="54">
-                    <codeblock ixia_locid="55"><systemoutput ixia_locid="71">~(keystone_admin)$ </systemoutput><userinput ixia_locid="57">sudo wrs-patch delete PATCH_0001</userinput></codeblock>
-                    <p ixia_locid="58">The patch to delete from the patch storage area is identified
-                        by the patch ID reported by the <cmdname ixia_locid="59">wrs-patch
+                <stepxmp >
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch delete PATCH_0001</userinput></codeblock>
+                    <p >The patch to delete from the patch storage area is identified
+                        by the patch ID reported by the <cmdname >wrs-patch
                             query</cmdname> command. You can provide multiple patch IDs to the
                         delete command separated by spaces.</p>
                 </stepxmp>

@@ -4,71 +4,71 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Creating and Using Memory Profiles</title>
-    <shortdesc ixia_locid="2">You can optionally save the huge pages configuration for a host as a profile, and
+    <title >Creating and Using Memory Profiles</title>
+    <shortdesc >You can optionally save the huge pages configuration for a host as a profile, and
         apply the profile to other hosts.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Jim Owens</author>
+        <author >Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
-            <p ixia_locid="5">For more information about huge page configurations, see <xref href="jow1423087781001.xml" ixia_locid="6"/>.</p>
-            <p ixia_locid="26">As an alternative to the web administration interface, you can use the following CLI
+        <context id="context_N1001F_N1001C_N10001" >
+            <p >For more information about huge page configurations, see <xref href="jow1423087781001.xml" />.</p>
+            <p >As an alternative to the web administration interface, you can use the following CLI
                 command to create a memory profile:</p>
-            <codeblock ixia_locid="27"><systemoutput ixia_locid="28">~(keystone-admin)$ </systemoutput><userinput ixia_locid="29">system memprofile-add <varname ixia_locid="30">memoryprofile</varname> <varname ixia_locid="31">hostid</varname></userinput></codeblock>
-            <p ixia_locid="32">where <varname ixia_locid="33">memoryprofile</varname> is the name or UUID of the memory profile, and
-                    <varname ixia_locid="34">hostid</varname> is the name or UUID of the host from which to create
+            <codeblock ><systemoutput >~(keystone-admin)$ </systemoutput><userinput >system memprofile-add <varname >memoryprofile</varname> <varname >hostid</varname></userinput></codeblock>
+            <p >where <varname >memoryprofile</varname> is the name or UUID of the memory profile, and
+                    <varname >hostid</varname> is the name or UUID of the host from which to create
                 the profile.</p>
         </context>
         <steps>
-            <step conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N1002F_N1002C_N1001C_N10001" ixia_locid="7">
-                <cmd ixia_locid="8"/>
+            <step conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N1002F_N1002C_N1001C_N10001" >
+                <cmd />
             </step>
-            <step id="step_N10038_N1002C_N1001C_N10001" ixia_locid="9">
-                <cmd ixia_locid="10">On the Memory tab, click <uicontrol ixia_locid="11">Create Memory Profile</uicontrol>.</cmd>
-                <info ixia_locid="12">
-                    <p ixia_locid="13">The <wintitle ixia_locid="14">Create Memory Profile</wintitle> dialog box appears.</p>
-                    <fig id="fig_cj1_byq_5r" ixia_locid="15">
-                        <image href="jow1429812100638.image" id="image_bk3_byq_5r" ixia_locid="16" width="4in">
-                            <alt ixia_locid="17">Create Memory Profile</alt>
+            <step id="step_N10038_N1002C_N1001C_N10001" >
+                <cmd >On the Memory tab, click <uicontrol >Create Memory Profile</uicontrol>.</cmd>
+                <info >
+                    <p >The <wintitle >Create Memory Profile</wintitle> dialog box appears.</p>
+                    <fig id="fig_cj1_byq_5r" >
+                        <image href="jow1429812100638.image" id="image_bk3_byq_5r"  width="4in">
+                            <alt >Create Memory Profile</alt>
                         </image>
                     </fig>
                 </info>
             </step>
-            <step id="step_N10062_N1002C_N1001C_N10001" ixia_locid="18">
-                <cmd ixia_locid="19">Type a name for the memory profile.</cmd>
+            <step id="step_N10062_N1002C_N1001C_N10001" >
+                <cmd >Type a name for the memory profile.</cmd>
             </step>
-            <step id="step_N1006B_N1002C_N1001C_N10001" ixia_locid="20">
-                <cmd ixia_locid="21">Click <uicontrol ixia_locid="22">Create Memory
+            <step id="step_N1006B_N1002C_N1001C_N10001" >
+                <cmd >Click <uicontrol >Create Memory
                         Profile</uicontrol> to save the profile and close the dialog box.</cmd>
             </step>
         </steps>
-        <result id="result_N10075_N1001C_N10001" ixia_locid="23">
-            <p ixia_locid="24">You can apply this profile to other hosts by editing the host
+        <result id="result_N10075_N1001C_N10001" >
+            <p >You can apply this profile to other hosts by editing the host
                 settings in the web administration interface. For information about editing a host,
-                see <xref href="jow1404333790046.xml" ixia_locid="25"/>. You can also use the
+                see <xref href="jow1404333790046.xml" />. You can also use the
                 following CLI command to apply a memory profile to a host:</p>
-            <codeblock ixia_locid="35"><systemoutput ixia_locid="36">~(keystone-admin)$ </systemoutput><userinput ixia_locid="37">system host-apply-memprofile <varname ixia_locid="38">memoryprofile</varname> <varname ixia_locid="39">hostid</varname></userinput></codeblock>
-            <p ixia_locid="40">where <varname ixia_locid="41">memoryprofile</varname> is the name or UUID of the memory profile, and
-                    <varname ixia_locid="42">hostid</varname> is the name or UUID of the host.</p>
-            <p ixia_locid="43">To manage memory profiles, you can use the <wintitle ixia_locid="44">Memory Profiles</wintitle> tab
-                on the <wintitle ixia_locid="45">System Inventory</wintitle> page, or you can use the following CLI
+            <codeblock ><systemoutput >~(keystone-admin)$ </systemoutput><userinput >system host-apply-memprofile <varname >memoryprofile</varname> <varname >hostid</varname></userinput></codeblock>
+            <p >where <varname >memoryprofile</varname> is the name or UUID of the memory profile, and
+                    <varname >hostid</varname> is the name or UUID of the host.</p>
+            <p >To manage memory profiles, you can use the <wintitle >Memory Profiles</wintitle> tab
+                on the <wintitle >System Inventory</wintitle> page, or you can use the following CLI
                 commands:</p>
             <ul id="ul_x1x_plr_5r">
-                <li ixia_locid="46">
-                    <p ixia_locid="47">To list memory profiles:</p>
-                    <codeblock ixia_locid="48"><systemoutput ixia_locid="49">~(keystone-admin)$ </systemoutput><userinput ixia_locid="50">system memprofile-list</userinput></codeblock>
+                <li >
+                    <p >To list memory profiles:</p>
+                    <codeblock ><systemoutput >~(keystone-admin)$ </systemoutput><userinput >system memprofile-list</userinput></codeblock>
                 </li>
-                <li ixia_locid="51">
-                    <p ixia_locid="52">To show details for a memory profile:</p>
-                    <codeblock ixia_locid="53"><systemoutput ixia_locid="54">~(keystone-admin)$ </systemoutput><userinput ixia_locid="55">system memprofile-show <varname ixia_locid="56">memoryprofile</varname></userinput></codeblock>
-                    <p ixia_locid="57">where <varname ixia_locid="58">memoryprofile</varname> is the name or UUID of the memory
+                <li >
+                    <p >To show details for a memory profile:</p>
+                    <codeblock ><systemoutput >~(keystone-admin)$ </systemoutput><userinput >system memprofile-show <varname >memoryprofile</varname></userinput></codeblock>
+                    <p >where <varname >memoryprofile</varname> is the name or UUID of the memory
                         profile.</p>
                 </li>
-                <li ixia_locid="59">
-                    <p ixia_locid="60">To delete a memory profile:</p>
-                    <codeblock ixia_locid="61"><systemoutput ixia_locid="62">~(keystone-admin)$ </systemoutput><userinput ixia_locid="63">system memprofile-delete <varname ixia_locid="64">memoryprofile</varname></userinput></codeblock>
-                    <p ixia_locid="65">where <varname ixia_locid="66">memoryprofile</varname> is the name or UUID of the memory
+                <li >
+                    <p >To delete a memory profile:</p>
+                    <codeblock ><systemoutput >~(keystone-admin)$ </systemoutput><userinput >system memprofile-delete <varname >memoryprofile</varname></userinput></codeblock>
+                    <p >where <varname >memoryprofile</varname> is the name or UUID of the memory
                         profile.</p>
                 </li>
             </ul>

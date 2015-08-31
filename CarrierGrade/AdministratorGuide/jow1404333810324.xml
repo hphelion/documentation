@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333810324" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333810324" xml:lang="en-us">
     <!-- Modification History
         
 -->
-    <title ixia_locid="1">Creating a Static Resource</title>
-    <shortdesc ixia_locid="2">The <filepath ixia_locid="3">Launch2NamedVMs.yaml</filepath> template
+    <title >Creating a Static Resource</title>
+    <shortdesc >The <filepath >Launch2NamedVMs.yaml</filepath> template
         illustrates the use of templates to create static resources.</shortdesc>
     <prolog>
-        <author ixia_locid="4">Jim Owens</author>
+        <author >Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N10023_N10020_N10001" ixia_locid="5">
-            <p ixia_locid="6">This HOT template creates two VM instances named <nameliteral ixia_locid="7">guest-1</nameliteral> and <nameliteral ixia_locid="8">guest-2</nameliteral>. These names are specified as parameters in the template,
+        <context id="context_N10023_N10020_N10001" >
+            <p >This HOT template creates two VM instances named <codeph >guest-1</codeph> and <codeph >guest-2</codeph>. These names are specified as parameters in the template,
                 illustrating the use of HP Helion OpenStack Carrier Grade extensions to simplify VM instance naming.
-                They are used by the <nameliteral ixia_locid="9">OS::Nova::Server</nameliteral>
+                They are used by the <codeph >OS::Nova::Server</codeph>
                 resources, which define the construction of the VMs.</p>
-            <p ixia_locid="10">The template also defines networking ports for the VMs. Each VM has a single network
-                port (<nameliteral ixia_locid="11">OS::Neutron::Port</nameliteral>). Both ports are attached to the
+            <p >The template also defines networking ports for the VMs. Each VM has a single network
+                port (<codeph >OS::Neutron::Port</codeph>). Both ports are attached to the
                 same existing tenant network.</p>
         </context>
         <steps>
-            <step id="step_N10043_N10040_N10020_N10001" ixia_locid="12">
-                <cmd ixia_locid="13">Collect the required parameter values for this template.</cmd>
-                <info ixia_locid="14">
-                    <p ixia_locid="15">For information about flavors, keypairs, images, or tenant networks, see the <cite ixia_locid="49">HP Helion OpenStack Carrier Grade Reference Deployment Scenarios: User Tasks</cite>.</p>
+            <step id="step_N10043_N10040_N10020_N10001" >
+                <cmd >Collect the required parameter values for this template.</cmd>
+                <info >
+                    <p >For information about flavors, keypairs, images, or tenant networks, see the <cite >HP Helion OpenStack Carrier Grade Reference Deployment Scenarios: User Tasks</cite>.</p>
                 </info>
                 <substeps id="substeps_wqc_mlv_34">
-                    <substep ixia_locid="17">
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor" ixia_locid="18"/>
+                    <substep >
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor" />
                     </substep>
-                    <substep ixia_locid="19">
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair" ixia_locid="20"/>
+                    <substep >
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair" />
                     </substep>
-                    <substep ixia_locid="21">
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image" ixia_locid="22"/>
+                    <substep >
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image" />
                     </substep>
-                    <substep ixia_locid="23">
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-tenant" ixia_locid="24"/>
+                    <substep >
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-tenant" />
                     </substep>
-                    <substep ixia_locid="25">
-                        <cmd ixia_locid="26">On the same page, locate and record an internal network to provide
+                    <substep >
+                        <cmd >On the same page, locate and record an internal network to provide
                             connectivity for the stack.</cmd>
                     </substep>
                 </substeps>
             </step>
-            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N1009F_N1004B_N10024_N10001" ixia_locid="45"><cmd ixia_locid="46"/></step>
-            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N100A6_N1004B_N10024_N10001" ixia_locid="47"><cmd ixia_locid="48"/></step>
+            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N1009F_N1004B_N10024_N10001" ><cmd /></step>
+            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N100A6_N1004B_N10024_N10001" ><cmd /></step>
             
-            <step id="step_N10093_N10040_N10020_N10001" ixia_locid="31">
-                <cmd ixia_locid="32">Select the template, then click <uicontrol ixia_locid="34">Browse</uicontrol> and select <filepath ixia_locid="35">Launch2NamedVMs.yaml</filepath> from the local disk.</cmd>
+            <step id="step_N10093_N10040_N10020_N10001" >
+                <cmd >Select the template, then click <uicontrol >Browse</uicontrol> and select <filepath >Launch2NamedVMs.yaml</filepath> from the local disk.</cmd>
             </step>
-            <step id="step_N100B9_N10040_N10020_N10001" ixia_locid="39">
-                <cmd ixia_locid="40">Use the <wintitle ixia_locid="41">Launch Stack</wintitle> form to provide the required
+            <step id="step_N100B9_N10040_N10020_N10001" >
+                <cmd >Use the <wintitle >Launch Stack</wintitle> form to provide the required
                     parameter values for the template.</cmd>
-                <info ixia_locid="42">
-                    <fig id="fig_N100C3_N100C0_N100B5_N10040_N10020_N10001" ixia_locid="43">
-                        <image alt="2NamedVMs Launch Stack form" href="jow1404333626947.image" id="image_pw4_5vj_j4" ixia_locid="44" width="1.5in"/>
+                <info >
+                    <fig id="fig_N100C3_N100C0_N100B5_N10040_N10020_N10001" >
+                        <image alt="2NamedVMs Launch Stack form" href="jow1404333626947.image" id="image_pw4_5vj_j4"  width="1.5in"/>
                     </fig>
                 </info>
             </step>

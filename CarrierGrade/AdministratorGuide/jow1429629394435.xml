@@ -4,99 +4,99 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Adding Virtual Routers</title>
-    <shortdesc ixia_locid="2">You can add virtual routers to a tenant using the web administration interface or the
+    <title >Adding Virtual Routers</title>
+    <shortdesc >You can add virtual routers to a tenant using the web administration interface or the
         CLI.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Jim Owens</author>
+        <author >Jim Owens</author>
     </prolog>
     <taskbody>
-        <prereq id="prereq_N1001F_N1001C_N10001" ixia_locid="4">
-            <p ixia_locid="5">To add a router to a tenant, you must be logged in as the user associated with the
+        <prereq id="prereq_N1001F_N1001C_N10001" >
+            <p >To add a router to a tenant, you must be logged in as the user associated with the
                 tenant.</p>
         </prereq>
-        <context id="context_N10028_N1001C_N10001" ixia_locid="6">
-            <p ixia_locid="7">As an alternative to the web administration interface, you can use CLI
+        <context id="context_N10028_N1001C_N10001" >
+            <p >As an alternative to the web administration interface, you can use CLI
                 commands to add a router. First, become the appropriate keystone user (this example
-                sources the <nameliteral ixia_locid="8">admin</nameliteral> user):</p>
-            <codeblock ixia_locid="9"><systemoutput ixia_locid="10">$ </systemoutput><userinput ixia_locid="11">source etc/nova/openrc</userinput>
+                sources the <codeph >admin</codeph> user):</p>
+            <codeblock ><systemoutput >$ </systemoutput><userinput >source etc/nova/openrc</userinput>
 </codeblock>
-            <p ixia_locid="12">To create a router from the CLI, use the <cmdname ixia_locid="13">neutron router-create</cmdname> command. For example: </p>
-            <codeblock ixia_locid="14">
-<systemoutput ixia_locid="15">~(keystone_admin)$ </systemoutput><userinput ixia_locid="16">neutron router-create <varname ixia_locid="17">router_name</varname> --distributed=True</userinput></codeblock>
-            <p ixia_locid="18">where <varname ixia_locid="19">router_name</varname> is a name
+            <p >To create a router from the CLI, use the <cmdname >neutron router-create</cmdname> command. For example: </p>
+            <codeblock >
+<systemoutput >~(keystone_admin)$ </systemoutput><userinput >neutron router-create <varname >router_name</varname> --distributed=True</userinput></codeblock>
+            <p >where <varname >router_name</varname> is a name
                 assigned to the router. This example creates a distributed virtual router. If the
-                    <option ixia_locid="20">--distributed</option> option is omitted, the default
+                    <option >--distributed</option> option is omitted, the default
                 setting (centralized) is used.</p>
         </context>
         <steps>
-            <step id="step_N10064_N10061_N1001C_N10001" ixia_locid="21">
-                <cmd ixia_locid="22">Log in as the user associated with the tenant.</cmd>
+            <step id="step_N10064_N10061_N1001C_N10001" >
+                <cmd >Log in as the user associated with the tenant.</cmd>
             </step>
-            <step id="step_N1006D_N10061_N1001C_N10001" ixia_locid="23">
-                <cmd ixia_locid="24">Select <menucascade ixia_locid="25">
-                        <uicontrol ixia_locid="26">Project</uicontrol>
-                        <uicontrol ixia_locid="27">Network</uicontrol>
-                        <uicontrol ixia_locid="28">Routers</uicontrol>
+            <step id="step_N1006D_N10061_N1001C_N10001" >
+                <cmd >Select <menucascade >
+                        <uicontrol >Project</uicontrol>
+                        <uicontrol >Network</uicontrol>
+                        <uicontrol >Routers</uicontrol>
                     </menucascade>.</cmd>
             </step>
-            <step id="step_N10089_N10061_N1001C_N10001" ixia_locid="30">
-                <cmd ixia_locid="31">On the <wintitle ixia_locid="32">Routers</wintitle> page, click <uicontrol ixia_locid="33">Create
+            <step id="step_N10089_N10061_N1001C_N10001" >
+                <cmd >On the <wintitle >Routers</wintitle> page, click <uicontrol >Create
                         Router</uicontrol>.</cmd>
-                <stepresult ixia_locid="34">
-                    <p ixia_locid="35">The Create Router dialog box appears.</p>
-                    <fig id="fig_zbr_vgc_5r" ixia_locid="36">
-                        <image href="jow1429637898140.image" id="image_dmc_wgc_5r" ixia_locid="37" width="4in">
-                            <alt ixia_locid="38">Create Router (Admin tenant)</alt>
+                <stepresult >
+                    <p >The Create Router dialog box appears.</p>
+                    <fig id="fig_zbr_vgc_5r" >
+                        <image href="jow1429637898140.image" id="image_dmc_wgc_5r"  width="4in">
+                            <alt >Create Router (Admin tenant)</alt>
                         </image>
                     </fig>
                 </stepresult>
             </step>
-            <step id="step_N100B3_N10061_N1001C_N10001" ixia_locid="39">
-                <cmd ixia_locid="40">Provide a <uicontrol ixia_locid="41">Router Name</uicontrol>.</cmd>
+            <step id="step_N100B3_N10061_N1001C_N10001" >
+                <cmd >Provide a <uicontrol >Router Name</uicontrol>.</cmd>
             </step>
-            <step id="step_N100C0_N10061_N1001C_N10001" ixia_locid="42">
-                <cmd ixia_locid="43">Select the <uicontrol ixia_locid="44">Router Type</uicontrol>.</cmd>
-                <info ixia_locid="45">
-                    <note id="note_N100CA_N100C7_N100BC_N10061_N1001C_N10001" ixia_locid="46">
-                        <p ixia_locid="47">The <uicontrol ixia_locid="48">Router Type</uicontrol>
-                            field is shown only for the <nameliteral ixia_locid="70">admin</nameliteral> user. For
+            <step id="step_N100C0_N10061_N1001C_N10001" >
+                <cmd >Select the <uicontrol >Router Type</uicontrol>.</cmd>
+                <info >
+                    <note id="note_N100CA_N100C7_N100BC_N10061_N1001C_N10001" >
+                        <p >The <uicontrol >Router Type</uicontrol>
+                            field is shown only for the <codeph >admin</codeph> user. For
                             other tenants, a centralized router is added. The
-                                <nameliteral ixia_locid="71">admin</nameliteral> user can change this setting on
-                            behalf of another tenant after the router has been added (see <xref href="jow1429637676342.xml" ixia_locid="72"/>).</p>
+                                <codeph >admin</codeph> user can change this setting on
+                            behalf of another tenant after the router has been added (see <xref href="jow1429637676342.xml" />).</p>
                     </note>
                     <dl>
-                        <dlentry ixia_locid="50">
-                            <dt ixia_locid="51">Use Server Default</dt>
-                            <dd ixia_locid="52">
-                                <p ixia_locid="53">Use the default setting specified on the
+                        <dlentry >
+                            <dt >Use Server Default</dt>
+                            <dd >
+                                <p >Use the default setting specified on the
                                     controller (for a standard HP Helion OpenStack Carrier Grade installation,
                                     centralized).</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="54">
-                            <dt ixia_locid="55">Centralized</dt>
-                            <dd ixia_locid="56">
-                                <p ixia_locid="57">Add a centralized virtual router.</p>
+                        <dlentry >
+                            <dt >Centralized</dt>
+                            <dd >
+                                <p >Add a centralized virtual router.</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="58">
-                            <dt ixia_locid="59">Distributed</dt>
-                            <dd ixia_locid="60">
-                                <p ixia_locid="61">Add a distributed virtual router (DVR).</p>
+                        <dlentry >
+                            <dt >Distributed</dt>
+                            <dd >
+                                <p >Add a distributed virtual router (DVR).</p>
                             </dd>
                         </dlentry>
                     </dl>
-                    <p ixia_locid="62">For more information about these choices, see <xref href="jow1429628777191.xml" ixia_locid="63"/>.</p>
+                    <p >For more information about these choices, see <xref href="jow1429628777191.xml" />.</p>
                 </info>
             </step>
-            <step id="step_N10120_N10061_N1001C_N10001" ixia_locid="64">
-                <cmd ixia_locid="65">To save your settings and close the dialog box, click
-                        <uicontrol ixia_locid="66">Create Router</uicontrol>.</cmd>
+            <step id="step_N10120_N10061_N1001C_N10001" >
+                <cmd >To save your settings and close the dialog box, click
+                        <uicontrol >Create Router</uicontrol>.</cmd>
             </step>
         </steps>
-        <postreq id="postreq_N10127_N1001C_N10001" ixia_locid="67">
-            <p ixia_locid="68">To attach router interfaces to tenant networks, see <xref href="jow1429631834947.xml" ixia_locid="69"/>.</p>
+        <postreq id="postreq_N10127_N1001C_N10001" >
+            <p >To attach router interfaces to tenant networks, see <xref href="jow1429631834947.xml" />.</p>
         </postreq>
     </taskbody>
 </task-wr>

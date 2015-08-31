@@ -1,110 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446902796" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410446902796" xml:lang="en-us">
     <!-- Modification History
         
 -->
-    <title ixia_locid="1">Removing Patches</title>
-    <shortdesc ixia_locid="2">Patches in the <i ixia_locid="38">Applied</i> or <i ixia_locid="37"
+    <title >Removing Patches</title>
+    <shortdesc >Patches in the <i >Applied</i> or <i 
             >Partial-Apply</i> states can be removed if necessary, for example, when they trigger
         undesired or unplanned effects on the cluster.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Pedro Sanchez</author>
+        <author >Pedro Sanchez</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001D_N1001A_N10001" ixia_locid="4">
-            <p ixia_locid="5">Rolling back patches is conceptually identical to installing patches.
-                A roll-back operation can be commanded for a patch in either the <i ixia_locid="39">Applied</i> or the <i ixia_locid="40">Partial-Apply</i> states. As the patch is
+        <context id="context_N1001D_N1001A_N10001" >
+            <p >Rolling back patches is conceptually identical to installing patches.
+                A roll-back operation can be commanded for a patch in either the <i >Applied</i> or the <i >Partial-Apply</i> states. As the patch is
                 removed, it goes through the following state transitions:</p>
             <dl>
-                <dlentry ixia_locid="9">
-                    <dt ixia_locid="10"><i ixia_locid="41">Applied</i> or <i ixia_locid="42">Partial-Apply</i> to <i ixia_locid="43">Partial-Remove</i></dt>
-                    <dd ixia_locid="13">
-                        <p ixia_locid="16">A patch in the <i ixia_locid="17">Partial-Remove</i>
+                <dlentry >
+                    <dt ><i >Applied</i> or <i >Partial-Apply</i> to <i >Partial-Remove</i></dt>
+                    <dd >
+                        <p >A patch in the <i >Partial-Remove</i>
                             state indicates that it has been removed from zero or more, but not from
                             all, the applicable hosts.</p>
-                        <p ixia_locid="14">Use the command <cmdname ixia_locid="15">wrs-patch
+                        <p >Use the command <cmdname >wrs-patch
                                 remove</cmdname> to trigger this transition.</p>
                     </dd>
                 </dlentry>
-                <dlentry ixia_locid="18">
-                    <dt ixia_locid="19"><i ixia_locid="44">Partial-Remove</i> to <i ixia_locid="21">Available</i></dt>
-                    <dd ixia_locid="22">
-                        <p ixia_locid="23">Use the command <cmdname ixia_locid="24">wrs-patch
+                <dlentry >
+                    <dt ><i >Partial-Remove</i> to <i >Available</i></dt>
+                    <dd >
+                        <p >Use the command <cmdname >wrs-patch
                                 host-install</cmdname> repeatedly targeting each time one of the
-                            applicable hosts in the cluster. The transition to the <i ixia_locid="25">Available</i> state is complete when the patch is
+                            applicable hosts in the cluster. The transition to the <i >Available</i> state is complete when the patch is
                             removed from all target hosts. The patch remains in the patch storage
                             area as if it had just been uploaded.</p>
                     </dd>
                 </dlentry>
             </dl>
-            <p ixia_locid="46">The following example is basically a copy of the workflow used in
-                    <xref href="psa1410446976545.xml" ixia_locid="47"/>, but this time removing
+            <p >The following example is basically a copy of the workflow used in
+                    <xref href="psa1410446976545.xml" />, but this time removing
                 instead of installing the patch. The steps are therefore presented in simplified
                 form.</p>
         </context>
         <steps>
-            <step id="step_N10029_N10026_N1001A_N10001" ixia_locid="6">
-                <cmd ixia_locid="7">Log in as Keystone user <nameliteral ixia_locid="45">admin</nameliteral> to the active controller.</cmd>
+            <step id="step_N10029_N10026_N1001A_N10001" >
+                <cmd >Log in as Keystone user <codeph >admin</codeph> to the active controller.</cmd>
             </step>
-            <step id="step_N100B2_N1009F_N10027_N10001" ixia_locid="48">
-                <cmd ixia_locid="49">Verify the state of the patch.</cmd>
-                <stepxmp ixia_locid="32">
-                    <codeblock ixia_locid="33"><systemoutput ixia_locid="101">~(keystone_admin)$ </systemoutput><userinput ixia_locid="35">sudo wrs-patch query</userinput>
-<systemoutput ixia_locid="102">﻿       Patch ID             Patch State
+            <step id="step_N100B2_N1009F_N10027_N10001" >
+                <cmd >Verify the state of the patch.</cmd>
+                <stepxmp >
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query</userinput>
+<systemoutput >﻿       Patch ID             Patch State
 =========================   ===========
 PATCH_0001   Applied</systemoutput></codeblock>
-                    <p ixia_locid="50">In this example the patch is listed in the <i ixia_locid="51">Applied</i> state, but it could
-                        be in the <i ixia_locid="52">Partial-Apply</i> state as well.</p>
+                    <p >In this example the patch is listed in the <i >Applied</i> state, but it could
+                        be in the <i >Partial-Apply</i> state as well.</p>
                 </stepxmp>
             </step>
-            <step id="step_N100DD_N1009F_N10027_N10001" ixia_locid="53">
-                <cmd ixia_locid="54">Remove the patch.</cmd>
-                <stepxmp ixia_locid="55">
-                    <codeblock ixia_locid="56"><systemoutput ixia_locid="103">~(keystone_admin)$ </systemoutput><userinput ixia_locid="58">sudo wrs-patch remove PATCH_0001</userinput>
-<systemoutput ixia_locid="104">PATCH_0001 has been removed from the repo</systemoutput></codeblock>
+            <step id="step_N100DD_N1009F_N10027_N10001" >
+                <cmd >Remove the patch.</cmd>
+                <stepxmp >
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch remove PATCH_0001</userinput>
+<systemoutput >PATCH_0001 has been removed from the repo</systemoutput></codeblock>
                 </stepxmp>
-                <stepresult ixia_locid="60">
-                    <p ixia_locid="61">The patch is now in the <i ixia_locid="62">Partial-Remove</i>
+                <stepresult >
+                    <p >The patch is now in the <i >Partial-Remove</i>
                         state, ready to be removed from the impacted hosts where it was already
                         installed.</p>
                 </stepresult>
             </step>
-            <step id="step_N10103_N1009F_N10027_N10001" ixia_locid="63">
-                <cmd ixia_locid="64">Query the patching status of all hosts in the cluster.</cmd>
-                <stepxmp ixia_locid="65">
-                    <codeblock ixia_locid="66"><systemoutput ixia_locid="105">~(keystone_admin)$ </systemoutput><userinput ixia_locid="68">sudo wrs-patch query-hosts</userinput>
-<systemoutput ixia_locid="106">﻿  Hostname      IP Address    Patch Current  Reboot Required
+            <step id="step_N10103_N1009F_N10027_N10001" >
+                <cmd >Query the patching status of all hosts in the cluster.</cmd>
+                <stepxmp >
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >sudo wrs-patch query-hosts</userinput>
+<systemoutput >﻿  Hostname      IP Address    Patch Current  Reboot Required
 ============  ==============  =============  ===============
 compute-0     192.168.204.15       Yes             No
 controller-0  192.168.204.3        No              Yes
 controller-1  192.168.204.4        No              Yes</systemoutput></codeblock>
-                    <p ixia_locid="70">In this example, the controllers have patches ready to be
+                    <p >In this example, the controllers have patches ready to be
                         removed, and therefore must be rebooted.</p>
                 </stepxmp>
             </step>
-            <step id="step_N10121_N1009F_N10027_N10001" ixia_locid="71">
-                <cmd ixia_locid="72">Remove all pending-for-removal patches from <nameliteral ixia_locid="73">controller-0</nameliteral>.</cmd>
+            <step id="step_N10121_N1009F_N10027_N10001" >
+                <cmd >Remove all pending-for-removal patches from <codeph >controller-0</codeph>.</cmd>
                 <substeps id="substeps_kzv_x13_pp">
-                    <substep ixia_locid="74">
-                        <cmd ixia_locid="75">Swact controller services.</cmd>
+                    <substep >
+                        <cmd >Swact controller services.</cmd>
                     </substep>
-                    <substep ixia_locid="78">
-                        <cmd ixia_locid="79">Run the patching sequence.</cmd>
-                        <stepxmp ixia_locid="80">
-                            <codeblock ixia_locid="81"><systemoutput ixia_locid="107">~(keystone_admin)$ </systemoutput><userinput ixia_locid="83">system host-patch-reboot controller-0</userinput></codeblock>
+                    <substep >
+                        <cmd >Run the patching sequence.</cmd>
+                        <stepxmp >
+                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-patch-reboot controller-0</userinput></codeblock>
                         </stepxmp>
                     </substep>
                 </substeps>
             </step>
-            <step id="step_N1017D_N1009F_N10027_N10001" ixia_locid="94">
-                <cmd ixia_locid="95">Remove all pending patches from <nameliteral ixia_locid="96">controller-1</nameliteral>.</cmd>
+            <step id="step_N1017D_N1009F_N10027_N10001" >
+                <cmd >Remove all pending patches from <codeph >controller-1</codeph>.</cmd>
             </step>
         </steps>
-        <result id="result_N10186_N10027_N10001" ixia_locid="97">
-            <p ixia_locid="98">The cluster is up to date now. All patches have been removed, and the
+        <result id="result_N10186_N10027_N10001" >
+            <p >The cluster is up to date now. All patches have been removed, and the
                 patch PATCH_0001 can be deleted from the patch storage area if necessary.</p>
-            <p ixia_locid="99">It is important to note the role of the command <cmdname ixia_locid="100">wrs-path
+            <p >It is important to note the role of the command <cmdname >wrs-path
                     host-install</cmdname> as a tool that both installs and removes patches as
                 necessary.</p>
         </result>

@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1409240700100" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1409240700100" xml:lang="en-us">
 <!-- Modification History
 
  -->
- <title ixia_locid="1">Customizing Guest Images with User Data</title>
- <shortdesc ixia_locid="2">You can provide bootstrap configuration for an instance at launch by including user data
+ <title >Customizing Guest Images with User Data</title>
+ <shortdesc >You can provide bootstrap configuration for an instance at launch by including user data
   in the template.</shortdesc>
  <prolog>
-  <author ixia_locid="3">Jim Owens</author>
+  <author >Jim Owens</author>
  </prolog>
- <conbody>
-  <p ixia_locid="4">You can include user data by defining a <nameliteral ixia_locid="5">UserData</nameliteral> property for an instance. This sends configuration instructions to
-      the instance at launch. For an example of user data, see the <filepath ixia_locid="6">CPUScale.yaml</filepath> template included with the HP Helion OpenStack Carrier Grade.</p>
-  <p ixia_locid="7">Normally, this requires <libraryname ixia_locid="8">cloud-init</libraryname> to
+ <body>
+  <p >You can include user data by defining a <codeph >UserData</codeph> property for an instance. This sends configuration instructions to
+      the instance at launch. For an example of user data, see the <filepath >CPUScale.yaml</filepath> template included with the HP Helion OpenStack Carrier Grade.</p>
+  <p >Normally, this requires <libraryname >cloud-init</libraryname> to
       be installed in the guest, because the user data is converted to MIME format and then
-      interpreted by <libraryname ixia_locid="9">cloud-init</libraryname>. For instances that do not
-      include <libraryname ixia_locid="10">cloud-init</libraryname>, you can bypass the MIME
+      interpreted by <libraryname >cloud-init</libraryname>. For instances that do not
+      include <libraryname >cloud-init</libraryname>, you can bypass the MIME
       conversion of user data by invoking a HP Helion OpenStack Carrier Grade extension property and
-      assigning the value <nameliteral ixia_locid="14">'RAW'</nameliteral>. This allows the VM to
+      assigning the value <codeph >'RAW'</codeph>. This allows the VM to
       retrieve the specified user data in unaltered format through a simple REST API call to the
       metadata server. The name of the property follows the convention for the associated resource
-      type. For an AWS resource (for example, <nameliteral ixia_locid="15"
-        >AWS::EC2::Instance</nameliteral>), use <parmname ixia_locid="11">UserDataType</parmname>.
-      For an OpenStack resource (for example, <nameliteral ixia_locid="16"
-        >OS::Nova::Server</nameliteral>), use <parmname ixia_locid="17">user_data_type</parmname>.
+      type. For an AWS resource (for example, <codeph 
+        >AWS::EC2::Instance</codeph>), use <parmname >UserDataType</parmname>.
+      For an OpenStack resource (for example, <codeph 
+        >OS::Nova::Server</codeph>), use <parmname >user_data_type</parmname>.
       The following code fragment shows the property used with an AWS resource.</p>
-  <codeblock ixia_locid="13">type : AWS::EC2::Instance
+  <codeblock >type : AWS::EC2::Instance
 . . .
 UserDataType: 'RAW'
 UserData:
@@ -38,11 +38,11 @@ UserData:
             'AWS::SecretKey': {"Fn::GetAtt": [WebServerKeys, SecretAccessKey]}
           - |
 . . .</codeblock>
-    <note id="note_N10063_N1001F_N10001" ixia_locid="18">
-      <p ixia_locid="19">For a VM to access user data, it must have a DHCP-enabled interface on a
+    <note id="note_N10063_N1001F_N10001" >
+      <p >For a VM to access user data, it must have a DHCP-enabled interface on a
         tenant network that has a Neutron router. Typically, this is the interface to the VM's OAM
         network or an internal network. The Neutron router provides a route to the metadata server,
         which provides instances with access to user data.</p>
     </note>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

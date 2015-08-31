@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
-<concept-wr id="jow1432045388521" xml:lang="en-us">
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1432045388521" xml:lang="en-us">
 <!-- Modification History
 
  -->
- <title ixia_locid="1">Customer Logs</title>
- <shortdesc ixia_locid="2">You can obtain information about transient events using Customer
+ <title >Customer Logs</title>
+ <shortdesc >You can obtain information about transient events using Customer
   Logs.</shortdesc>
  <prolog>
-  <author ixia_locid="3">Jim Owens</author>
+  <author >Jim Owens</author>
  </prolog>
- <conbody>
-  <p ixia_locid="8">Certain system events that do not result in node state changes and typically do not require
+ <body>
+  <p >Certain system events that do not result in node state changes and typically do not require
    immediate customer action, such as instance deletions or failed migration attempts, are recorded
    in Customer Logs. Each log describes a single event. The logs are held in a buffer, with older
    logs discarded as needed to release logging space.</p>
-  <p ixia_locid="5">The logs are displayed in a list, along with summary information. For each
-   individual log, you can view detailed information. For more information, see <xref href="jow1432045421799.xml" ixia_locid="6"/>.</p>
-  <p ixia_locid="7"/>
- </conbody>
-</concept-wr>
+  <p >The logs are displayed in a list, along with summary information. For each
+   individual log, you can view detailed information. For more information, see <xref href="jow1432045421799.xml" />.</p>
+  <p />
+ </body>
+</topic>

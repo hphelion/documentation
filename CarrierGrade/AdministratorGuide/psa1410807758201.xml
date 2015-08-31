@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410807758201" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="psa1410807758201" xml:lang="en-us">
 <!-- Modification History
 
  -->
- <title ixia_locid="1">System Backups</title>
- <shortdesc ixia_locid="2">The HP Helion OpenStack Carrier Grade provides tools to back up <term
-      ixia_locid="3">system data</term> so that they can be stored in external storage resources and
+ <title >System Backups</title>
+ <shortdesc >The HP Helion OpenStack Carrier Grade provides tools to back up <term
+      >system data</term> so that they can be stored in external storage resources and
     used to restore a full cluster.</shortdesc>
  <prolog>
-  <author ixia_locid="5">Pedro Sanchez</author>
+  <author >Pedro Sanchez</author>
  </prolog>
- <conbody>
-  <p ixia_locid="6">The backup and restore procedures can be summarized as follows:</p>
+ <body>
+  <p >The backup and restore procedures can be summarized as follows:</p>
   <ul id="ul_at2_h3y_lp">
-   <li ixia_locid="7">
-    <p ixia_locid="8">Log in as user <nameliteral ixia_locid="9">wrsroot</nameliteral> to the
+   <li >
+    <p >Log in as user <codeph >wrsroot</codeph> to the
           console of the active controller.</p>
    </li>
-   <li ixia_locid="10">
-    <p ixia_locid="11">Execute the backup procedures from the CLI. The backup files are stored in the directory
-      <filepath ixia_locid="12">/opt/backups</filepath> on the current controller node.</p>
+   <li >
+    <p >Execute the backup procedures from the CLI. The backup files are stored in the directory
+      <filepath >/opt/backups</filepath> on the current controller node.</p>
    </li>
-   <li ixia_locid="13">
-    <p ixia_locid="14">Copy the backup files to an external storage resource.</p>
+   <li >
+    <p >Copy the backup files to an external storage resource.</p>
    </li>
-   <li ixia_locid="15">
-    <p ixia_locid="16">Shut down the cluster, and proceed with any maintenance operations that might
+   <li >
+    <p >Shut down the cluster, and proceed with any maintenance operations that might
      be required. Ensure that all hosts are powered down.</p>
    </li>
-   <li ixia_locid="17">
-    <p ixia_locid="18">Restore the cluster one host at a time. Start with the first controller, then
+   <li >
+    <p >Restore the cluster one host at a time. Start with the first controller, then
           the second controller, then compute nodes.</p>
    </li>
   </ul>
-    <p ixia_locid="20">It is important to note that a restore operation must be executed on the same
+    <p >It is important to note that a restore operation must be executed on the same
       cluster hardware where the backups were created, otherwise, the operation fails. Hardware
       differences affect the restore operation in multiple ways. For example, differences in
       Ethernet MAC addresses impact the networking metadata stored in the system data backup files. </p>
-  <p ixia_locid="19">The backup and restore tools are designed to operate on an entire cluster. They
+  <p >The backup and restore tools are designed to operate on an entire cluster. They
       are not suitable as a tool to back up and restore individual hosts.</p>
- </conbody>
-</concept-wr>
+ </body>
+</topic>

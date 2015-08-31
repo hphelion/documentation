@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
-<reference-wr domains="(topic reference reference-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333729535" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<reference-wr domains="(topic reference reference-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333729535" xml:lang="en-us">
     <!-- Modification History
     
 -->
-    <title ixia_locid="1">The Admin Menu</title>
-    <shortdesc ixia_locid="2"> The <uicontrol ixia_locid="3">Admin</uicontrol> menu contains
+    <title >The Admin Menu</title>
+    <shortdesc > The <uicontrol >Admin</uicontrol> menu contains
         selections for managing tenants (projects), tenant resources, and users. It is available
-        when <uicontrol ixia_locid="4">admin</uicontrol> is selected as the <nameliteral ixia_locid="170">Current
-            Tenant</nameliteral>.</shortdesc>
+        when <uicontrol >admin</uicontrol> is selected as the <codeph >Current
+            Tenant</codeph>.</shortdesc>
     <prolog>
-        <author ixia_locid="5">Jim Owens</author>
-        <author ixia_locid="144">Pedro Sanchez</author>
+        <author >Jim Owens</author>
+        <author >Pedro Sanchez</author>
     </prolog>
     <refbody>
-        <section id="section_N10027_N10024_N10001" ixia_locid="6">
-            <fig id="fig_N1002B_N10027_N10024_N10001" ixia_locid="7">
-                <image href="Fig_1_page_19.JPG" id="image_mbv_4sl_44" ixia_locid="8"/>
+        <section id="section_N10027_N10024_N10001" >
+            <fig id="fig_N1002B_N10027_N10024_N10001" >
+                <image href="Fig_1_page_19.JPG" id="image_mbv_4sl_44" />
             </fig>
-            <p ixia_locid="9">The menu  contains one section.</p>
+            <p >The menu  contains one section.</p>
         </section>
-        <section id="section_N1003B_N10024_N10001" ixia_locid="10">
-            <title ixia_locid="11">System</title>
+        <section id="section_N1003B_N10024_N10001" >
+            <title >System</title>
             <table id="table_u3h_gmf_44">
                 <tgroup cols="3">
                     <colspec colname="col1" colwidth="18*"/>
@@ -29,214 +29,214 @@
                     <colspec colname="col3" colwidth="26*"/>
                     <thead>
                         <row>
-                            <entry colname="col1" ixia_locid="12">
-                                <p ixia_locid="13">Menu item</p>
+                            <entry colname="col1" >
+                                <p >Menu item</p>
                             </entry>
-                            <entry colname="col2" ixia_locid="14">
-                                <p ixia_locid="15">Description</p>
+                            <entry colname="col2" >
+                                <p >Description</p>
                             </entry>
-                            <entry colname="col3" ixia_locid="16">
-                                <p ixia_locid="17">Reference</p>
+                            <entry colname="col3" >
+                                <p >Reference</p>
                             </entry>
                         </row>
                     </thead>
                     <tbody>
                         <row>
-                            <entry ixia_locid="18">
-                                <p ixia_locid="19">Overview</p>
+                            <entry >
+                                <p >Overview</p>
                             </entry>
-                            <entry ixia_locid="20">
-                                <p ixia_locid="21">Performance charts for system health monitoring,
+                            <entry >
+                                <p >Performance charts for system health monitoring,
                                     including hosts status, provider-network port utilization, and
                                     compute node processing, memory, and disk usage.</p>
                             </entry>
-                            <entry ixia_locid="22">
-                                <p ixia_locid="23"><xref href="jow1404333640333.xml" ixia_locid="24"/></p>
+                            <entry >
+                                <p ><xref href="jow1404333640333.xml" /></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="25">
-                                <p ixia_locid="26">Resource Usage</p>
+                            <entry >
+                                <p >Resource Usage</p>
                             </entry>
-                            <entry ixia_locid="27">
-                                <p ixia_locid="28">Tools for performing Ceilometer database queries using real-time or collected
+                            <entry >
+                                <p >Tools for performing Ceilometer database queries using real-time or collected
                   data, to support detailed performance analysis.</p>
                             </entry>
-                            <entry ixia_locid="29">
-                                <p ixia_locid="30"><xref href="jow1404333645456.xml" ixia_locid="31"/></p>
+                            <entry >
+                                <p ><xref href="jow1404333645456.xml" /></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="171">
-                                <p ixia_locid="33">Inventory</p>
+                            <entry >
+                                <p >Inventory</p>
                             </entry>
-                            <entry ixia_locid="173">
-                                <p ixia_locid="35">Controls for managing systems, hosts, and
+                            <entry >
+                                <p >Controls for managing systems, hosts, and
                                     standardized CPU, port, or storage profiles that can be applied
                                     to hosts.</p>
                             </entry>
-                            <entry ixia_locid="175">
-                                <p ixia_locid="37"><xref href="jow1404333646078.xml" ixia_locid="38"/></p>
+                            <entry >
+                                <p ><xref href="jow1404333646078.xml" /></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="172">
-                                <p ixia_locid="177">Host Aggregates</p>
+                            <entry >
+                                <p >Host Aggregates</p>
                             </entry>
-                            <entry ixia_locid="174">
-                                <p ixia_locid="178">Controls for managing host aggregates and availability zones.</p>
+                            <entry >
+                                <p >Controls for managing host aggregates and availability zones.</p>
                             </entry>
-                            <entry ixia_locid="176">
-                                <p ixia_locid="179"><xref href="jow1426182913166.xml" ixia_locid="180"/></p>
+                            <entry >
+                                <p ><xref href="jow1426182913166.xml" /></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="41">
-                                <p ixia_locid="42">Hypervisors</p>
+                            <entry >
+                                <p >Hypervisors</p>
                             </entry>
-                            <entry ixia_locid="43">
-                                <p ixia_locid="44">Charts for monitoring hypervisor resource usage on compute nodes.</p>
+                            <entry >
+                                <p >Charts for monitoring hypervisor resource usage on compute nodes.</p>
                             </entry>
-                            <entry ixia_locid="45"/>
+                            <entry />
                         </row>
 <!--                        <row>
-                            <entry ixia_locid="46">
-                                <p ixia_locid="47">Power</p>
+                            <entry >
+                                <p >Power</p>
                             </entry>
-                            <entry ixia_locid="48">
-                                <p ixia_locid="49">Information about host capacities and resource
+                            <entry >
+                                <p >Information about host capacities and resource
                                     fragmentation across hosts, for use in manually consolidating
                                     resources to reduce power requirements.</p>
                             </entry>
-                            <entry ixia_locid="50">
-                                <p ixia_locid="51"><xref href="jow1404333653614.xml" ixia_locid="52"/></p>
+                            <entry >
+                                <p ><xref href="jow1404333653614.xml" /></p>
                             </entry>
                         </row>
 -->                        <row>
-                            <entry ixia_locid="53">
-                                <p ixia_locid="54">Instances</p>
+                            <entry >
+                                <p >Instances</p>
                             </entry>
-                            <entry ixia_locid="55">
-                                <p ixia_locid="56">Controls for managing virtual-machine instances.</p>
+                            <entry >
+                                <p >Controls for managing virtual-machine instances.</p>
                             </entry>
-                            <entry ixia_locid="57">
-                                <p ixia_locid="58"><xref href="jow1404333800036.xml" ixia_locid="145"/></p>
+                            <entry >
+                                <p ><xref href="jow1404333800036.xml" /></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="60">
-                                <p ixia_locid="61">Server Groups</p>
+                            <entry >
+                                <p >Server Groups</p>
                             </entry>
-                            <entry ixia_locid="62">
-                                <p ixia_locid="63">Controls for managing server groups across all tenants. Server groups are
+                            <entry >
+                                <p >Controls for managing server groups across all tenants. Server groups are
                   collections of instances sharing common attributes.</p>
                             </entry>
-                            <entry ixia_locid="64">
-                                <p ixia_locid="65"><xref href="jow1404333660893.xml" ixia_locid="66"/></p>
+                            <entry >
+                                <p ><xref href="jow1404333660893.xml" /></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="67">
-                                <p ixia_locid="68">Volumes</p>
+                            <entry >
+                                <p >Volumes</p>
                             </entry>
-                            <entry ixia_locid="69">
-                                <p ixia_locid="70">Controls for managing virtual disk volumes
+                            <entry >
+                                <p >Controls for managing virtual disk volumes
                                     available for use with instances. The virtual volumes are
-                                    implemented using <term ixia_locid="71">storage volumes</term>
+                                    implemented using <term >storage volumes</term>
                                     defined in the system. </p>
                             </entry>
-                            <entry ixia_locid="72">
-                                <p ixia_locid="146"><xref href="jow1404333749994.xml" ixia_locid="147"/></p>
+                            <entry >
+                                <p ><xref href="jow1404333749994.xml" /></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="73">
-                                <p ixia_locid="74">Flavors</p>
+                            <entry >
+                                <p >Flavors</p>
                             </entry>
-                            <entry ixia_locid="75">
-                                <p ixia_locid="76">Controls for managing standardized processor, disk, and memory complements
+                            <entry >
+                                <p >Controls for managing standardized processor, disk, and memory complements
                   (flavors) that can be applied to virtual machines.</p>
                             </entry>
-                            <entry ixia_locid="77">
-                                <p ixia_locid="78"><xref href="jow1404333663095.xml" ixia_locid="79"/></p>
+                            <entry >
+                                <p ><xref href="jow1404333663095.xml" /></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="82">
-                                <p ixia_locid="83">Images</p>
+                            <entry >
+                                <p >Images</p>
                             </entry>
-                            <entry ixia_locid="84">
-                                <p ixia_locid="85">Controls for managing disk images used to initialize and configure virtual
+                            <entry >
+                                <p >Controls for managing disk images used to initialize and configure virtual
                   machines.</p>
                             </entry>
-                            <entry ixia_locid="86"/>
+                            <entry />
                         </row>
                         <row>
-                            <entry ixia_locid="89">
-                                <p ixia_locid="90">Networks</p>
+                            <entry >
+                                <p >Networks</p>
                             </entry>
-                            <entry ixia_locid="91">
-                                <p ixia_locid="92">Controls for managing tenant networks, provider networks, and QoS (Quality of
+                            <entry >
+                                <p >Controls for managing tenant networks, provider networks, and QoS (Quality of
                   Service) policies or tenant weightings.</p>
                             </entry>
-                            <entry ixia_locid="93">
-                                <p ixia_locid="94"><xref href="jow1404333674324.xml" ixia_locid="95"/></p>
+                            <entry >
+                                <p ><xref href="jow1404333674324.xml" /></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="100">
-                                <p ixia_locid="101">Routers</p>
+                            <entry >
+                                <p >Routers</p>
                             </entry>
-                            <entry ixia_locid="102">
-                                <p ixia_locid="103">Controls for managing virtual routers. Administrators can list the virtual
+                            <entry >
+                                <p >Controls for managing virtual routers. Administrators can list the virtual
                   routers created for tenants, view router and interface details, and delete
                   routers.</p>
                             </entry>
-                            <entry ixia_locid="104">
-                                <p ixia_locid="105"><xref href="jow1429637676342.xml" ixia_locid="168"/></p>
+                            <entry >
+                                <p ><xref href="jow1429637676342.xml" /></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="149">
-                                <p ixia_locid="108">Defaults</p>
+                            <entry >
+                                <p >Defaults</p>
                             </entry>
-                            <entry ixia_locid="152">
-                                <p ixia_locid="110">Controls for viewing and setting the default quota values for new tenants. </p>
+                            <entry >
+                                <p >Controls for viewing and setting the default quota values for new tenants. </p>
                             </entry>
-                            <entry ixia_locid="155"/>
+                            <entry />
                         </row>
                         <row>
-                            <entry ixia_locid="150">
-                                <p ixia_locid="158">Fault Management</p>
+                            <entry >
+                                <p >Fault Management</p>
                             </entry>
-                            <entry ixia_locid="153">
-                                <p ixia_locid="159">System alarms and customer logs</p>
+                            <entry >
+                                <p >System alarms and customer logs</p>
                             </entry>
-                            <entry ixia_locid="156">
-                                <p ixia_locid="160"><xref href="jow1432045490465.xml" ixia_locid="169"/></p>
-                            </entry>
-                        </row>
-                        <row>
-                            <entry ixia_locid="151">
-                                <p ixia_locid="162">System Configuration</p>
-                            </entry>
-                            <entry ixia_locid="154">
-                                <p ixia_locid="163">System configuration updates</p>
-                            </entry>
-                            <entry ixia_locid="157">
-                                <p ixia_locid="166"><xref href="jow1413726521641.xml" ixia_locid="167"/></p>
+                            <entry >
+                                <p ><xref href="jow1432045490465.xml" /></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="114">
-                                <p ixia_locid="115">System Information</p>
+                            <entry >
+                                <p >System Configuration</p>
                             </entry>
-                            <entry ixia_locid="116">
-                                <p ixia_locid="117">Status information for services and network agent processes, availability zones,
+                            <entry >
+                                <p >System configuration updates</p>
+                            </entry>
+                            <entry >
+                                <p ><xref href="jow1413726521641.xml" /></p>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry >
+                                <p >System Information</p>
+                            </entry>
+                            <entry >
+                                <p >Status information for services and network agent processes, availability zones,
                   and host aggregates.</p>
                             </entry>
-                            <entry ixia_locid="118">
-                                <p ixia_locid="164"><xref href="jow1404333798721.xml" ixia_locid="165"/></p>
+                            <entry >
+                                <p ><xref href="jow1404333798721.xml" /></p>
                             </entry>
                         </row>
                     </tbody>

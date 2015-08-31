@@ -4,154 +4,154 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="90">Creating an Up/Down Autoscaling Resource</title>
-    <shortdesc ixia_locid="91">The <filepath ixia_locid="3">VMAutoscaling.yaml</filepath> template illustrates the
+    <title >Creating an Up/Down Autoscaling Resource</title>
+    <shortdesc >The <filepath >VMAutoscaling.yaml</filepath> template illustrates the
         use of a template to create an up/down autoscaling resource.</shortdesc>
     <prolog>
-        <author ixia_locid="92"/>
+        <author />
     </prolog>
     <taskbody>
-        <context id="context_N10023_N10020_N10001" ixia_locid="93">
-            <p ixia_locid="94">This HOT template creates a VM instance with vCPU autoscaling. The number of online
+        <context id="context_N10023_N10020_N10001" >
+            <p >This HOT template creates a VM instance with vCPU autoscaling. The number of online
                 vCPUS for the instance is scaled up or down depending on vCPU utilization. The
                 scaling range (minimum and maximum number of vCPUs) is determined by the launch
                 flavor. </p>
-            <p ixia_locid="179">For up/down scaling, the CPU measurement uses a <nameliteral ixia_locid="180">vcpu_util</nameliteral> meter, which takes into account the
+            <p >For up/down scaling, the CPU measurement uses a <codeph >vcpu_util</codeph> meter, which takes into account the
                 current number of online vCPUs when measuring usage. This is in contrast to the
-                    <nameliteral ixia_locid="181">cpu_util</nameliteral> meter, which always uses
-                the maximum number of vCPUs. Using <nameliteral ixia_locid="182">cpu_util</nameliteral> for up/down scaling would produce an inaccurate
+                    <codeph >cpu_util</codeph> meter, which always uses
+                the maximum number of vCPUs. Using <codeph >cpu_util</codeph> for up/down scaling would produce an inaccurate
                 usage/availability ratio if any vCPUs were offline, since it assumes all VCPUs are
                 available.</p>
-            <p ixia_locid="95">The VM image selected for launch must be capable of scaling. For more information
-                about VM scaling, see <xref href="jow1417813748326.xml" ixia_locid="96"/>.</p>
+            <p >The VM image selected for launch must be capable of scaling. For more information
+                about VM scaling, see <xref href="jow1417813748326.xml" />.</p>
         </context>
         <steps>
-            <step id="step_N10077_N10074_N10020_N10001" ixia_locid="97">
-                <cmd ixia_locid="98">Collect the required parameters.</cmd>
+            <step id="step_N10077_N10074_N10020_N10001" >
+                <cmd >Collect the required parameters.</cmd>
                 <substeps id="substeps_wqc_mlv_34">
-                    <substep ixia_locid="23">
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor" ixia_locid="24"/>
+                    <substep >
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-flavor" />
                     </substep>
-                    <substep ixia_locid="25">
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair" ixia_locid="26"/>
+                    <substep >
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-keypair" />
                     </substep>
-                    <substep ixia_locid="27">
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image" ixia_locid="28"/>
+                    <substep >
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-image" />
                     </substep>
-                    <substep ixia_locid="183">
-                        <cmd ixia_locid="184">On the <menucascade ixia_locid="185">
-                                <uicontrol ixia_locid="187">Admin</uicontrol>
-                                <uicontrol ixia_locid="41">System Panel</uicontrol>
-                                <uicontrol ixia_locid="43">Networks</uicontrol>
-                            </menucascade> page, obtain the <uicontrol ixia_locid="189">Name</uicontrol> of the private network.</cmd>
+                    <substep >
+                        <cmd >On the <menucascade >
+                                <uicontrol >Admin</uicontrol>
+                                <uicontrol >System Panel</uicontrol>
+                                <uicontrol >Networks</uicontrol>
+                            </menucascade> page, obtain the <uicontrol >Name</uicontrol> of the private network.</cmd>
                     </substep>
-                    <substep ixia_locid="100">
-                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-user" ixia_locid="102"/>
+                    <substep >
+                        <cmd conref="jow1404333809730.xml#jow1404333809730/locate-user" />
                     </substep>
                 </substeps>
             </step>
-            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001" ixia_locid="190">
-                <cmd ixia_locid="32"/>
+            <step conref="jow1404832975002.xml#jow1404832975002/open-stack-list" id="step_N10096_N10059_N10020_N10001" >
+                <cmd />
             </step>
-            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001" ixia_locid="33">
-                <cmd ixia_locid="34"/>
+            <step conref="jow1404833049288.xml#jow1404833049288/launch-stack" id="step_N1009D_N10059_N10020_N10001" >
+                <cmd />
             </step>
-            <step id="step_N100A4_N10059_N10020_N10001" ixia_locid="35">
-                <cmd ixia_locid="36">Select<uicontrol ixia_locid="186"> File</uicontrol>, then click
-                        <uicontrol ixia_locid="38">Browse</uicontrol> and select <filepath ixia_locid="188">VMAutoScaling.yaml</filepath> from the local disk.</cmd>
+            <step id="step_N100A4_N10059_N10020_N10001" >
+                <cmd >Select<uicontrol > File</uicontrol>, then click
+                        <uicontrol >Browse</uicontrol> and select <filepath >VMAutoScaling.yaml</filepath> from the local disk.</cmd>
             </step>
-            <step id="step_N100DC_N10074_N10020_N10001" ixia_locid="103">
-                <cmd ixia_locid="104">Adjust the parameters in the <wintitle ixia_locid="105">Launch Stack</wintitle> form to meet
+            <step id="step_N100DC_N10074_N10020_N10001" >
+                <cmd >Adjust the parameters in the <wintitle >Launch Stack</wintitle> form to meet
                     your requirements.</cmd>
                 <choicetable id="choicetable_nqn_msw_34" keycol="1" relcolwidth="30* 70*">
                     <chrow>
-                        <choption ixia_locid="106">
-                            <p ixia_locid="108"><uicontrol ixia_locid="110">KeyName</uicontrol></p>
+                        <choption >
+                            <p ><uicontrol >KeyName</uicontrol></p>
                         </choption>
-                        <chdesc ixia_locid="112">
-                            <p ixia_locid="114">The <uicontrol ixia_locid="116">KeyPair</uicontrol> name from
-                                    the<wintitle ixia_locid="117"> Access &amp; Security</wintitle> page.</p>
+                        <chdesc >
+                            <p >The <uicontrol >KeyPair</uicontrol> name from
+                                    the<wintitle > Access &amp; Security</wintitle> page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
-                        <choption ixia_locid="118">
-                            <p ixia_locid="120"><uicontrol ixia_locid="122">TenantUserID</uicontrol></p>
+                        <choption >
+                            <p ><uicontrol >TenantUserID</uicontrol></p>
                         </choption>
-                        <chdesc ixia_locid="124">
-                            <p ixia_locid="126">The tenant user ID associated with the instance
+                        <chdesc >
+                            <p >The tenant user ID associated with the instance
                                 launch. Scaling of the  instance resources can only be performed by
                                 the tenant associated with the launch.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
-                        <choption ixia_locid="134">
-                            <p ixia_locid="136"><uicontrol ixia_locid="138">FlavorName</uicontrol></p>
+                        <choption >
+                            <p ><uicontrol >FlavorName</uicontrol></p>
                         </choption>
-                        <chdesc ixia_locid="140">
-                            <p ixia_locid="142">The <uicontrol ixia_locid="147">Flavor Name</uicontrol> from the
-                                    <wintitle ixia_locid="148">Flavors</wintitle> page.</p>
+                        <chdesc >
+                            <p >The <uicontrol >Flavor Name</uicontrol> from the
+                                    <wintitle >Flavors</wintitle> page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
-                        <choption ixia_locid="149">
-                            <p ixia_locid="151"><uicontrol ixia_locid="153">ImageName</uicontrol></p>
+                        <choption >
+                            <p ><uicontrol >ImageName</uicontrol></p>
                         </choption>
-                        <chdesc ixia_locid="155">
-                            <p ixia_locid="143">The <uicontrol ixia_locid="157">Image Name</uicontrol> from the
-                                    <wintitle ixia_locid="158">Images</wintitle> page.</p>
+                        <chdesc >
+                            <p >The <uicontrol >Image Name</uicontrol> from the
+                                    <wintitle >Images</wintitle> page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
-                        <choption ixia_locid="159">
-                            <p ixia_locid="161"><uicontrol ixia_locid="163">PrivateNetName</uicontrol></p>
+                        <choption >
+                            <p ><uicontrol >PrivateNetName</uicontrol></p>
                         </choption>
-                        <chdesc ixia_locid="165">
-                            <p ixia_locid="144">The <uicontrol ixia_locid="167">Name</uicontrol>
-                                from the <wintitle ixia_locid="168">Network Overview</wintitle>
+                        <chdesc >
+                            <p >The <uicontrol >Name</uicontrol>
+                                from the <wintitle >Network Overview</wintitle>
                                 page.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
-                        <choption ixia_locid="107">
-                            <p ixia_locid="109"><uicontrol ixia_locid="111">InstanceName</uicontrol></p>
+                        <choption >
+                            <p ><uicontrol >InstanceName</uicontrol></p>
                         </choption>
-                        <chdesc ixia_locid="113">
-                            <p ixia_locid="115">The name of the instance to create.</p>
+                        <chdesc >
+                            <p >The name of the instance to create.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
-                        <choption ixia_locid="135">
-                            <p ixia_locid="137"><uicontrol ixia_locid="139">CustomMeterName</uicontrol></p>
+                        <choption >
+                            <p ><uicontrol >CustomMeterName</uicontrol></p>
                         </choption>
-                        <chdesc ixia_locid="141">
-                            <p ixia_locid="146">The name of a custom Ceilometer metric to store. For
-                                information about custom metrics, see <xref href="jow1404916152577.xml" ixia_locid="84"/>.</p>
+                        <chdesc >
+                            <p >The name of a custom Ceilometer metric to store. For
+                                information about custom metrics, see <xref href="jow1404916152577.xml" />.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
-                        <choption ixia_locid="150">
-                            <p ixia_locid="152"><uicontrol ixia_locid="154">CustomMeterUnit</uicontrol></p>
+                        <choption >
+                            <p ><uicontrol >CustomMeterUnit</uicontrol></p>
                         </choption>
-                        <chdesc ixia_locid="156">
-                            <p ixia_locid="73">The unit of measurement to display for the custom
+                        <chdesc >
+                            <p >The unit of measurement to display for the custom
                                 metric; for example, 'Percent'.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
-                        <choption ixia_locid="160">
-                            <p ixia_locid="162"><uicontrol ixia_locid="164">MetricHighWaterMark</uicontrol></p>
+                        <choption >
+                            <p ><uicontrol >MetricHighWaterMark</uicontrol></p>
                         </choption>
-                        <chdesc ixia_locid="166">
-                            <p ixia_locid="78">The value that triggers autoscaling to add
+                        <chdesc >
+                            <p >The value that triggers autoscaling to add
                                 resources.</p>
                         </chdesc>
                     </chrow>
                     <chrow>
-                        <choption ixia_locid="170">
-                            <p ixia_locid="172"><uicontrol ixia_locid="174">MetricLowWaterMark</uicontrol></p>
+                        <choption >
+                            <p ><uicontrol >MetricLowWaterMark</uicontrol></p>
                         </choption>
-                        <chdesc ixia_locid="176">
-                            <p ixia_locid="83">The value that triggers autoscaling to remove
+                        <chdesc >
+                            <p >The value that triggers autoscaling to remove
                                 resources.</p>
                         </chdesc>
                     </chrow>

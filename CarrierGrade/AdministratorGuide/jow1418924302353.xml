@@ -4,47 +4,47 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Adjusting Resources on a Compute Node</title>
-    <shortdesc ixia_locid="2">You can adjust the resources of a compute node while it is offline.</shortdesc>
+    <title >Adjusting Resources on a Compute Node</title>
+    <shortdesc >You can adjust the resources of a compute node while it is offline.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Jim Owens</author>
+        <author >Jim Owens</author>
     </prolog>
     <taskbody>
         <steps>
-            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N10025_N10022_N1001F_N10001" ixia_locid="37">
-                <cmd ixia_locid="38"/>
+            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N10025_N10022_N1001F_N10001" >
+                <cmd />
             </step>
-            <step id="step_N1004C_N10028_N1001C_N10001" ixia_locid="14">
-                <cmd ixia_locid="15">Power off the host.</cmd>
+            <step id="step_N1004C_N10028_N1001C_N10001" >
+                <cmd >Power off the host.</cmd>
             </step>
-            <step id="step_N10055_N10028_N1001C_N10001" ixia_locid="16">
-                <cmd ixia_locid="17">Make any required resource changes (for example, BIOS changes
+            <step id="step_N10055_N10028_N1001C_N10001" >
+                <cmd >Make any required resource changes (for example, BIOS changes
                     required for proper operation).</cmd>
-                <info ixia_locid="39">
-                    <p ixia_locid="40">If you are adding a disk to provide additional local storage for VMs, you can
+                <info >
+                    <p >If you are adding a disk to provide additional local storage for VMs, you can
                         install an unpartitioned disk.  New disks are detected by the compute node
                         operating system and automatically configured with a single partition.</p>
                 </info>
             </step>
-            <step id="step_N1005E_N10028_N1001C_N10001" ixia_locid="18">
-                <cmd ixia_locid="19">Power on the host, and wait for it to reboot fully.</cmd>
-                <info ixia_locid="20">
-                    <p ixia_locid="21">When the host is fully rebooted, it is shown as <nameliteral ixia_locid="22">Locked</nameliteral>, <nameliteral ixia_locid="23">Enabled</nameliteral>, and <nameliteral ixia_locid="24">Available</nameliteral> in the <wintitle ixia_locid="25">Hosts</wintitle> list.</p>
-                    <note id="note_N10079_N10062_N1005B_N10028_N1001C_N10001" ixia_locid="26">
-                        <p ixia_locid="27">Do not unlock the host until it is fully rebooted.</p>
+            <step id="step_N1005E_N10028_N1001C_N10001" >
+                <cmd >Power on the host, and wait for it to reboot fully.</cmd>
+                <info >
+                    <p >When the host is fully rebooted, it is shown as <codeph >Locked</codeph>, <codeph >Enabled</codeph>, and <codeph >Available</codeph> in the <wintitle >Hosts</wintitle> list.</p>
+                    <note id="note_N10079_N10062_N1005B_N10028_N1001C_N10001" >
+                        <p >Do not unlock the host until it is fully rebooted.</p>
                     </note>
                 </info>
             </step>
-            <step id="step_N10088_N10028_N1001C_N10001" ixia_locid="28">
-                <cmd ixia_locid="29">Unlock the host.</cmd>
-                <info ixia_locid="30">
-                    <p ixia_locid="31">The host is rebooted a second time.</p>
+            <step id="step_N10088_N10028_N1001C_N10001" >
+                <cmd >Unlock the host.</cmd>
+                <info >
+                    <p >The host is rebooted a second time.</p>
                 </info>
             </step>
         </steps>
-        <result id="result_N10094_N1001C_N10001" ixia_locid="32">
-            <p ixia_locid="33">When the host is reported as <nameliteral ixia_locid="34">Unlocked</nameliteral>,
-                    <nameliteral ixia_locid="35">Enabled</nameliteral>, and <nameliteral ixia_locid="36">Available</nameliteral>, it
+        <result id="result_N10094_N1001C_N10001" >
+            <p >When the host is reported as <codeph >Unlocked</codeph>,
+                    <codeph >Enabled</codeph>, and <codeph >Available</codeph>, it
                 is ready for use with the adjusted resources.</p>
         </result>
     </taskbody>

@@ -3,7 +3,7 @@
 <map
     domains="(map bookmap bookmap-wr)                          (topic delay-d)                          (map mapgroup-d)                          (topic indexing-d)                           (topic xnal-d)                          (topic hi-d)                           (topic pr-d)                           (topic sw-d)                          (topic ui-d)                          (topic wr-sw-d)                          (topic xml-d)                          a(loc  ixia_locid)                         "
     id="jow1404333828882" xml:lang="en-us"
-    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" title="Administrator Guide">
+    title="Administrator Guide">
     <!-- Modification History
  -->
     <topicmeta>

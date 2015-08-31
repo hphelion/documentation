@@ -1,62 +1,184 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
-<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333731990" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
-    <title ixia_locid="1">Ethernet Interfaces</title>
-    <shortdesc ixia_locid="2">Ethernet interfaces, both physical and virtual, play a key role in the overall
-  performance of the virtualized network. Therefore, it is important to understand the available
-  interface types, their configuration options, and their impact on network design.</shortdesc>
-    <prolog>
-        <author ixia_locid="3">Pedro Sanchez</author>
-    </prolog>
-    <conbody>
-        <p ixia_locid="4">On compute node data interfaces, the HP Helion OpenStack Carrier Grade supports Ethernet Network Interface Cards
-   (NIC) based on the following chip sets:</p>
-        <ul id="ul_bx4_xz4_n4">
-            <li ixia_locid="34">
-                <p ixia_locid="36">Intel 82599 (NIANTIC) 10 G</p>
-            </li>
-            <li ixia_locid="7">
-                <p ixia_locid="8">Intel I350 (Powerville) 1G </p>
-            </li>
-            <li ixia_locid="33">
-                <p ixia_locid="35">Mellanox Technologies MT27500 Family [ConnectX-3]</p>
-            </li>
-        </ul>
-        <p ixia_locid="9">The following is the list of supported virtual network interfaces:</p>
-        <ul id="ul_gh2_dy4_n4">
-            <li ixia_locid="12">
-                <p ixia_locid="13">Accelerated Virtual Port (AVP)</p>
-            </li>
-            <li ixia_locid="14">
-                <p ixia_locid="15">Intel e1000 emulation (e1000)</p>
-            </li>
-            <li ixia_locid="16">
-                <p ixia_locid="17">NE2000 emulation (ne2k_pci)</p>
-            </li>
-            <li ixia_locid="18">
-                <p ixia_locid="19">AMD PCNet/PCI Emulation (pcnet)</p>
-            </li>
-            <li ixia_locid="20">
-                <p ixia_locid="21">Realtek 8139 emulation (rtl8139)</p>
-            </li>
-            <li ixia_locid="10">
-                <p ixia_locid="11">VirtIO Network (virtio)</p>
-            </li>
-            <li ixia_locid="31">
-                <p ixia_locid="32">PCI Passthrough Device</p>
-            </li>
-            <li ixia_locid="37">
-                <p ixia_locid="38">SR-IOV</p>
-            </li>
-        </ul>
-        <section id="section_N1006F_N1001A_N10001" ixia_locid="22">
-            <title ixia_locid="23">About LAG/AE Interfaces</title>
-            <p ixia_locid="24">Ethernet interfaces in a LAG group should be attached to the same L2
-                switch to provide link protection. For more information about the different LAG
-                modes see <xref
-                    href="http://docs-staging.hpcloud.com/DRAFT/#CarrierGrade/Installation/carrier-grade-install-pb-overview.html"
-                    format="html" scope="external">Installing HP Helion OpenStack Carrier
-                    Grade</xref>..</p>
-        </section>
-    </conbody>
-</concept-wr>
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333731990" xml:lang="en-us">
+
+
+    <title >Ethernet Interfaces</title>
+
+
+    <shortdesc >Ethernet interfaces, both physical and virtual, play a key role in the overall
+
+
+  performance of the virtualized network. Therefore, it is important to understand the available
+
+
+  interface types, their configuration options, and their impact on network design.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Pedro Sanchez</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <p >On compute node data interfaces, the HP Helion OpenStack Carrier Grade supports Ethernet Network Interface Cards
+
+
+   (NIC) based on the following chip sets:</p>
+
+
+        <ul id="ul_bx4_xz4_n4">
+
+
+            <li >
+
+
+                <p >Intel 82599 (NIANTIC) 10 G</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >Intel I350 (Powerville) 1G </p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >Mellanox Technologies MT27500 Family [ConnectX-3]</p>
+
+
+            </li>
+
+
+        </ul>
+
+
+        <p >The following is the list of supported virtual network interfaces:</p>
+
+
+        <ul id="ul_gh2_dy4_n4">
+
+
+            <li >
+
+
+                <p >Accelerated Virtual Port (AVP)</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >Intel e1000 emulation (e1000)</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >NE2000 emulation (ne2k_pci)</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >AMD PCNet/PCI Emulation (pcnet)</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >Realtek 8139 emulation (rtl8139)</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >VirtIO Network (virtio)</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >PCI Passthrough Device</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >SR-IOV</p>
+
+
+            </li>
+
+
+        </ul>
+
+
+        <section id="section_N1006F_N1001A_N10001" >
+
+
+            <title >About LAG/AE Interfaces</title>
+
+
+            <p >Ethernet interfaces in a LAG group should be attached to the same L2
+
+
+                switch to provide link protection. For more information about the different LAG
+
+
+                modes see <xref
+
+
+                    href="http://docs-staging.hpcloud.com/DRAFT/#CarrierGrade/Installation/carrier-grade-install-pb-overview.html"
+
+
+                    format="html" scope="external">Installing HP Helion OpenStack Carrier
+
+
+                    Grade</xref>..</p>
+
+
+        </section>
+
+
+    </body>
+
+
+</topic>

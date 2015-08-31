@@ -4,97 +4,97 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Viewing Customer Logs</title>
-    <shortdesc ixia_locid="2">You can use the web administration interface or the CLI to examine
+    <title >Viewing Customer Logs</title>
+    <shortdesc >You can use the web administration interface or the CLI to examine
         customer logs.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Jim Owens</author>
+        <author >Jim Owens</author>
     </prolog>
     <taskbody>
-        <prereq id="prereq_N1001F_N1001C_N10001" ixia_locid="4">
-            <p ixia_locid="5">To view customer logs, you must be logged in with administrative
+        <prereq id="prereq_N1001F_N1001C_N10001" >
+            <p >To view customer logs, you must be logged in with administrative
                 privileges.</p>
         </prereq>
-        <context id="context_N10028_N1001C_N10001" ixia_locid="6">
-            <p ixia_locid="8">You can use the command-line interface to view customer logs by
-                acquiring Keystone credentials and using the <cmdname ixia_locid="70">system
-                    log-list</cmdname> and <cmdname ixia_locid="71">system log-show</cmdname>
+        <context id="context_N10028_N1001C_N10001" >
+            <p >You can use the command-line interface to view customer logs by
+                acquiring Keystone credentials and using the <cmdname >system
+                    log-list</cmdname> and <cmdname >system log-show</cmdname>
                 commands. Alternatively, you can use the web administration interface using the
                 steps given later in this section.</p>
             <ul id="ul_agw_zby_bs">
-                <li ixia_locid="72">
-                    <p ixia_locid="73">To acquire Keystone <nameliteral ixia_locid="74">admin</nameliteral> credentials, type the following command:</p>
-                    <codeblock ixia_locid="9"><systemoutput ixia_locid="10">$ </systemoutput><userinput ixia_locid="11">source /etc/nova/openrc</userinput></codeblock>
+                <li >
+                    <p >To acquire Keystone <codeph >admin</codeph> credentials, type the following command:</p>
+                    <codeblock ><systemoutput >$ </systemoutput><userinput >source /etc/nova/openrc</userinput></codeblock>
                 </li>
-                <li ixia_locid="12">
-                    <p ixia_locid="13">To list logs, use the following command:</p>
-                    <codeblock ixia_locid="14"><systemoutput ixia_locid="15">~(keystone_admin)$ </systemoutput><userinput ixia_locid="16">system log-list [-q <varname ixia_locid="17">query</varname>] [-l <varname ixia_locid="18">limit</varname>]</userinput></codeblock>
-                    <p ixia_locid="19">where</p>
+                <li >
+                    <p >To list logs, use the following command:</p>
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system log-list [-q <varname >query</varname>] [-l <varname >limit</varname>]</userinput></codeblock>
+                    <p >where</p>
                     <dl>
-                        <dlentry ixia_locid="20">
-                            <dt ixia_locid="21"><varname ixia_locid="75">query</varname></dt>
-                            <dd ixia_locid="22">
-                                <p ixia_locid="23">is a list of one or more key-value pairs with comparison
+                        <dlentry >
+                            <dt ><varname >query</varname></dt>
+                            <dd >
+                                <p >is a list of one or more key-value pairs with comparison
                                     operators, separated by semicolons.</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="24">
-                            <dt ixia_locid="25"><varname ixia_locid="76">limit</varname></dt>
-                            <dd ixia_locid="26">
-                                <p ixia_locid="27">is the maximum number of logs to return, beginning with the most
+                        <dlentry >
+                            <dt ><varname >limit</varname></dt>
+                            <dd >
+                                <p >is the maximum number of logs to return, beginning with the most
                                     recent.</p>
                             </dd>
                         </dlentry>
                     </dl>
-                    <p ixia_locid="28">For example:</p>
-                    <codeblock ixia_locid="29"><systemoutput ixia_locid="30">~(keystone_admin)$ </systemoutput><userinput ixia_locid="31">system log-list -q severity=critical -l 20</userinput></codeblock>
-                    <p ixia_locid="32">returns the 20 most recent logs with <nameliteral ixia_locid="33">critical</nameliteral> severity.</p>
+                    <p >For example:</p>
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system log-list -q severity=critical -l 20</userinput></codeblock>
+                    <p >returns the 20 most recent logs with <codeph >critical</codeph> severity.</p>
                 </li>
-                <li ixia_locid="34">
-                    <p ixia_locid="35">To view details for an individual log, use the following
+                <li >
+                    <p >To view details for an individual log, use the following
                         command:</p>
-                    <codeblock ixia_locid="36"><systemoutput ixia_locid="37">~(keystone_admin)$ </systemoutput><userinput ixia_locid="38">system log-show <varname ixia_locid="39">uuid</varname></userinput></codeblock>
-                    <p ixia_locid="40">where <varname ixia_locid="41">uuid</varname> is the unique
-                        identifier for the log (obtained using the <cmdname ixia_locid="77">system
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system log-show <varname >uuid</varname></userinput></codeblock>
+                    <p >where <varname >uuid</varname> is the unique
+                        identifier for the log (obtained using the <cmdname >system
                             log-list</cmdname> command).</p>
                 </li>
             </ul>
         </context>
         <steps>
-            <step id="step_N100BC_N100B9_N1001C_N10001" ixia_locid="43">
-                <cmd ixia_locid="44">In the main menu, select <menucascade ixia_locid="45">
-                        <uicontrol ixia_locid="46">Admin</uicontrol>
-                        <uicontrol ixia_locid="47">System</uicontrol>
-                        <uicontrol ixia_locid="48">Fault Management</uicontrol>
+            <step id="step_N100BC_N100B9_N1001C_N10001" >
+                <cmd >In the main menu, select <menucascade >
+                        <uicontrol >Admin</uicontrol>
+                        <uicontrol >System</uicontrol>
+                        <uicontrol >Fault Management</uicontrol>
                     </menucascade>.</cmd>
             </step>
-            <step id="step_N100D5_N100B9_N1001C_N10001" ixia_locid="49">
-                <cmd ixia_locid="50">On the Fault Management page, select the <uicontrol ixia_locid="51">Customer Logs</uicontrol>
+            <step id="step_N100D5_N100B9_N1001C_N10001" >
+                <cmd >On the Fault Management page, select the <uicontrol >Customer Logs</uicontrol>
                     tab.</cmd>
-                <info ixia_locid="52">
-                    <p ixia_locid="53">The logs are displayed in chronological order, beginning with
+                <info >
+                    <p >The logs are displayed in chronological order, beginning with
                         the most recent.</p>
-                    <fig id="fig_cyy_xqx_bs" ixia_locid="54">
-                        <image href="jow1432054510610.image" id="image_ixf_drx_bs" ixia_locid="55" width="4in">
-                            <alt ixia_locid="56">TiS Customer Logs</alt>
+                    <fig id="fig_cyy_xqx_bs" >
+                        <image href="jow1432054510610.image" id="image_ixf_drx_bs"  width="4in">
+                            <alt >TiS Customer Logs</alt>
                         </image>
                     </fig>
-                    <p ixia_locid="57">By default, 20 items are shown per page. To see older items,
-                        scroll to the bottom of the list and click <uicontrol ixia_locid="58">Next</uicontrol>. You can change the number of items displayed per page
-                        using the <uicontrol ixia_locid="60">Default Limit</uicontrol> drop-down
+                    <p >By default, 20 items are shown per page. To see older items,
+                        scroll to the bottom of the list and click <uicontrol >Next</uicontrol>. You can change the number of items displayed per page
+                        using the <uicontrol >Default Limit</uicontrol> drop-down
                         list.</p>
-                    <p ixia_locid="61">You can also filter the items using the <uicontrol ixia_locid="62">Filter</uicontrol> text box. Type the filter string, and
+                    <p >You can also filter the items using the <uicontrol >Filter</uicontrol> text box. Type the filter string, and
                         then click the magnifying-glass icon. The results include only those logs
                         that contain the string in the Customer Log Detail.</p>
                 </info>
             </step>
-            <step id="step_N10113_N100B9_N1001C_N10001" ixia_locid="63">
-                <cmd ixia_locid="64">To see the Customer Log Detail, click the <uicontrol ixia_locid="65">Timestamp</uicontrol>
+            <step id="step_N10113_N100B9_N1001C_N10001" >
+                <cmd >To see the Customer Log Detail, click the <uicontrol >Timestamp</uicontrol>
                     identifier for the log.</cmd>
-                <info ixia_locid="66">
-                    <fig id="fig_hs4_gsx_bs" ixia_locid="67">
-                        <image href="jow1432055065375.image" id="image_fq4_msx_bs" ixia_locid="68" width="3in">
-                            <alt ixia_locid="69">TiS Customer Log Detail</alt>
+                <info >
+                    <fig id="fig_hs4_gsx_bs" >
+                        <image href="jow1432055065375.image" id="image_fq4_msx_bs"  width="3in">
+                            <alt >TiS Customer Log Detail</alt>
                         </image>
                     </fig>
                 </info>
