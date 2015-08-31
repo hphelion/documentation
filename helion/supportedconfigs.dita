@@ -10,24 +10,24 @@
     <section><title>Entry Scale Cloud</title> This is very similar to the Beta0 example but has a
       more complex network configuration. At minimum scale it can be used as a POC (3-4 nodes) but
       can also be scaled up to HP Helion OpenStack 1.1 levels, that is, up to 100 compute nodes. The
-      network configuration supports separation of networks for: <ul>
+      network configuration supports separation of networks for: <ul id="ul_l1v_nbz_2t">
         <li>Management</li>
         <li>External API</li>
         <li>External VM communications</li>
-      </ul> 
-      
-     <note> The requirement to have a dedicated network for OS-install and system deployment has been removed in Beta 1. 
-       
-       To re-use this network as part of  of the operational network the following conditions must be adhered to:</note>
-      <ol>
-      <li>The network IP addresses used for OS install (i.e. baremetalConfig.yml and servers.yml) must belong to a 
-        Network that is used for your cloud infrastructure (e.g. in networks.yml).</li>
+      </ul>
+      <note> The requirement to have a dedicated network for OS-install and system deployment has
+        been removed in Beta 1. To re-use the deployment network as part of of the operational
+        network the following conditions must be adhered to:</note>
+      <ol id="ol_gdv_nbz_2t">
+        <li>The network IP addresses used for OS install (i.e. baremetalConfig.yml and servers.yml)
+          must belong to a Network that is used for your cloud infrastructure (e.g. in
+          networks.yml).</li>
         <li>The Network that re-uses those addresses must be un-tagged.</li>
-      </ol>
-      In the example <b>entry-scale model</b> the following networks are used:
-     <ul><li>Mgmt          10.2.1.0/24      VLAN: 100 (untagged)</li></ul>
-      In the baremetalConfig file servers are listed as:
-     <codeblock> baremetal_servers:
+      </ol> In the example <b>entry-scale model</b> the management network as:  <ul
+        id="ul_yfv_nbz_2t">
+        <li>Mgmt 10.2.1.0/24 VLAN: 100 (untagged) </li>
+      </ul> In the baremetalConfig file servers are listed as:
+      <codeblock> baremetal_servers:
       - node_name: controller1
       node_type: CCN-001-001
       pxe_mac_addr: b2:72:8d:ac:7c:6f
@@ -38,13 +38,12 @@
       in the servers.yml file servers will show as:
       <codeblock>- id: controller1
       role: ROLE-CCN
-      ip-addr: 192.168.10.3</codeblock>
-      
-      The values in the bare-metal and servers definition need to members of the CIDR used  for the untagged network, (in this case Mgmt network).
-      
-      
-      It also supports the physical bonding of Network Interafaces, and it can be configured
-      with VSA as a Cinder storage back-end. <simpletable>
+      ip-addr: 192.168.10.3</codeblock> The
+      values in the bare-metal and servers definition need to members of the CIDR used for the
+      untagged network, (in this case Mgmt network). </section>
+    <section>Note, the entry-scale cloud model also supports the physical bonding of Network
+      Interafaces, and it can be configured with VSA as a Cinder storage back-end. <simpletable
+        id="simpletable_t3v_nbz_2t">
         <strow/>
         <strow>
           <stentry><b>Control Plane</b></stentry>
@@ -71,7 +70,7 @@
           </stentry>
           <stentry>EXTERNAL_API, EXTERNAL_VM, GUEST (vxlan), MGMT on separate VLANs</stentry>
         </strow>
-      </simpletable> 
+      </simpletable>
       <!--REMOVED PER DOCS-1573
         Possible variations on this model will be documented to show: Use a 3PAR
       (separately installed) back-end for Cinder this is done by removing the VSA resource pool from

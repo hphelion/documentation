@@ -131,7 +131,7 @@ helion/hos/                    Directory contains files used by the installer
                 git repo</xref>, as follows:
               <codeblock>cd ~/helion/hos/ansible
 git add -A
-git commit -m "My config"
+git commit -m "My config or other commit message"
 </codeblock></li>
           </ol></li>
       </ol>
