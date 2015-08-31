@@ -5,7 +5,7 @@
   <body>
     <p>This page explains the procedure to check whether a device has label on partition.</p>
     <section id="label-partition">
-      <p> To check whether a device has labels on a partition, perform the folowing step:<ul
+      <p> To check whether a device has label on a partition, perform the folowing step:<ul
           id="ul_tjw_1z5_dt">
           <li>Log on to the Node and use the parted command as follows:</li>
         </ul><codeblock>sudo parted -l</codeblock>The output lists all of the block devices.
