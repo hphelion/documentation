@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
+<reference-wr domains="(topic reference reference-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333813579" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+    
+-->
+    <title ixia_locid="1">Further Reading</title>
+    <shortdesc ixia_locid="2">Additional resources are available for understanding and working with
+        OpenStack Heat Orchestration and templates.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+    </prolog>
+    <refbody>
+        <section id="section_N1001F_N1001C_N10001" ixia_locid="4">
+            <p ixia_locid="29">The following online resources are suggested.</p>
+            <ul id="ul_psj_gg1_k4">
+                <li ixia_locid="5">
+                    <p ixia_locid="6"><xref format="html" href="http://docs.openstack.org/user-guide/content/heat-stack-create.html" ixia_locid="7" scope="external">Create and manage stacks</xref> (from the
+              <cite ixia_locid="8">OpenStack End User Guide</cite>)</p>
+                </li>
+                <li ixia_locid="9">
+                    <p ixia_locid="10"><xref format="html" href="https://wiki.openstack.org/wiki/Heat" ixia_locid="11" scope="external">Heat</xref> (from the OpenStack wiki)</p>
+                </li>
+                <li ixia_locid="12">
+                    <p ixia_locid="13"><xref format="html" href="http://docs.openstack.org/user-guide/content/heat_client_commands.html" ixia_locid="14" scope="external">Heat commands</xref> (from the <cite ixia_locid="15">OpenStack End User
+              Guide</cite>)</p>
+                </li>
+                <li ixia_locid="19">
+                    <p ixia_locid="20"><xref format="html" href="http://docs.openstack.org/developer/heat/template_guide/hot_guide.html" ixia_locid="21" scope="external">Heat Orchestration Template (HOT) Guide</xref></p>
+                </li>
+                <li ixia_locid="22">
+                    <p ixia_locid="23"><xref format="html" href="http://www.slideshare.net/mirantis/an-introduction-to-openstack-heat" ixia_locid="24" scope="external">An Introduction to OpenStack Heat</xref> (slide show
+            from Mirantis)</p>
+                </li>
+                <li ixia_locid="25">
+                    <p ixia_locid="26"><xref format="xml" href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html" ixia_locid="27">AWS::CloudFromation::Init</xref> (from Amazon's <cite ixia_locid="28">AWS Documentation</cite>; discusses metadata options for
+                        an EC2 instance)</p>
+                </li>
+            </ul>
+        </section>
+    </refbody>
+</reference-wr>

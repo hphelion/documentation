@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map
+    domains="(map bookmap bookmap-wr)                          (topic delay-d)                          (map mapgroup-d)                          (topic indexing-d)                           (topic xnal-d)                          (topic hi-d)                           (topic pr-d)                           (topic sw-d)                          (topic ui-d)                          (topic wr-sw-d)                          (topic xml-d)                          a(loc  ixia_locid)                         "
+    id="jow1404333828882" xml:lang="en-us"
+    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" title="Administrator Guide">
+    <!-- Modification History
+ -->
+    <topicmeta>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>HP Helion</copyrholder>
+        </copyright>
+        <prodinfo>
+            <prodname>HP Helion</prodname>
+            <vrmlist>
+                <vrm version="4.1.0"/>
+            </vrmlist>
+        </prodinfo>
+    </topicmeta>
+    <topicref href="jow1404333560080.xml">
+        <topicmeta>
+            <navtitle>HP Helion OpenStack Carrier Grade 1.1: Administrator Guide</navtitle>
+        </topicmeta>
+        <topicref href="jow1404333563170.xml"/>
+        <topicref href="jow1404333563834.xml"/>
+        <topicref href="jow1404333564380.xml"/>
+        <topicref href="jow1404333566955.xml">
+            <topicref href="jow1404333629232.xml"/>
+            <topicref href="jow1404333729535.xml"/>
+            <topicref href="jow1432757989702.xml"/>
+        </topicref>
+    </topicref>
+    <topicref href="jow1404333731418.xml">
+        <topicmeta>
+            <navtitle>Configuration Planning</navtitle>
+        </topicmeta>
+        <topicref collection-type="family" href="jow1404333731990.xml">
+            <topicref href="jow1423169316542.xml"/>
+            <topicref href="jow1423173019489.xml"/>
+            <topicref href="jow1404333732592.xml"/>
+            <topicref href="jow1404333736207.xml"/>
+            <topicref href="psa1413402160578.xml"/>
+            <topicref href="psa1428687672712.xml"/>
+        </topicref>
+        <topicref collection-type="unordered" href="jow1404333674324.xml">
+            <topicref href="jow1404333738594.xml"/>
+            <!-- Tenant Networks -->
+            <topicref href="jow1404333739174.xml"/>
+            <topicref href="jow1429628777191.xml">
+                <topicref href="jow1429629394435.xml"/>
+                <topicref href="jow1429631834947.xml"/>
+                <topicref href="jow1429637676342.xml"/>
+            </topicref>
+            <topicref href="psa1412702861873.xml"/>
+            <topicref href="psa1428328539397.xml"/>
+            <topicref href="jow1404333739778.xml"/>
+            <topicref href="jow1404333745550.xml"/>
+            <topicref href="jow1404333744498.xml"/>
+            <topicref href="jow1404333749374.xml"/>
+        </topicref>
+        <topicref href="jow1432395626956.xml"/>
+        <topicref href="jow1404333749994.xml">
+            <!-- Local Storage for VMs -->
+            <!-- topicref href="jow1426183574960.xml"/ -->
+            <topicref href="jow1426183480976.xml"/>
+        </topicref>
+        <mapref format="ditamap" href="jow1425584355871.ditamap"/>
+    </topicref>
+    <topicref href="jow1413726521641.xml">
+        <topicmeta>
+            <navtitle>System Configuration Management</navtitle>
+        </topicmeta>
+        <topicref href="jow1413726817770.xml"/>
+        <topicref href="jow1413726916641.xml"/>
+        <topicref href="jow1413727006955.xml"/>
+        <topicref href="jow1413727043334.xml"/>
+        <topicref href="jow1413727075983.xml"/>
+        <topicref href="jow1413729179585.xml">
+            <!-- Adding an Infrastructure Network Using the CLI : ToC entry suppressed -->
+            <topicref href="jow1420473404578.xml" toc="no"/>
+        </topicref>
+    </topicref>
+    <topicref href="jow1404333751142.xml">
+        <topicmeta>
+            <navtitle>Managing Hardware Resources</navtitle>
+        </topicmeta>
+        <topicref href="jow1404333640333.xml"/>
+        <topicref href="jow1404333645456.xml"/>
+        <topicref collection-type="family" href="jow1404333646078.xml">
+            <topicref href="jow1404333756314.xml"/>
+            <topicref href="jow1404333790046.xml"/>
+            <topicref href="jow1404333787693.xml"/>
+        </topicref>
+        <topicref href="jow1409782480559.xml">
+            <topicref href="jow1414074190480.xml"/>
+            <topicref href="jow1418931203210.xml">
+                <topicref href="jow1414074167395.xml"/>
+                <topicref href="jow1418924302353.xml"/>
+            </topicref>
+        </topicref>
+        <topicref collection-type="family" href="jow1404333758794.xml">
+            <topicref href="jow1404333793412.xml"/>
+            <!-- Viewing NUMA Node Resources on a Host -->
+            <topicref href="jow1404333768530.xml">
+                <topicref href="jow1425236831500.xml"/>
+                <topicref href="jow1426618822854.xml"/>
+            </topicref>
+            <!-- Huge Page Provisioning -->
+            <topicref href="jow1404333795559.xml">
+                <topicref href="jow1423087781001.xml">
+                    <!-- Provisioning Huge Pages in Horizon -->
+                    <topicref href="jow1423088885963.xml"/>
+                    <topicref href="jow1423089015252.xml"/>
+                    <topicref href="jow1429811350849.xml"/>
+                </topicref>
+            </topicref>
+            <topicref href="jow1404333787180.xml">
+                <topicref href="jow1426181291481.xml"/>
+                <topicref href="jow1426182435441.xml"/>
+            </topicref>
+            <topicref href="jow1404333798087.xml"/>
+            <topicref href="jow1404333777760.xml"/>
+        </topicref>
+        <!--<topicref href="jow1404333653614.xml"/> CGTS-1564 -->
+        <topicref href="jow1404333798721.xml"/>
+        <topicref href="jow1426182913166.xml"
+            ><!-- Managing Host Aggregates --><!-- topicref href="jow1426182838839.xml"/ --></topicref>
+    </topicref>
+    <topicref href="jow1404333800036.xml">
+        <topicmeta>
+            <navtitle>Managing Virtual Machines</navtitle>
+        </topicmeta>
+        <topicref href="jow1404333663095.xml"/>
+        <topicref href="jow1429538642910.xml">
+            <topicref href="jow1429544114897.xml"/>
+            <topicref href="jow1429544935360.xml"/>
+            <topicref href="jow1425236666266.xml">
+                <!-- Viewing the NUMA Node Configuration for a VM -->
+                <topicref href="jow1425236791428.xml" toc="no"/>
+            </topicref>
+            <topicref href="jow1425236723556.xml"/>
+            <topicref href="jow1426625051841.xml"/>
+            <topicref href="jow1424723681500.xml"/>
+            <topicref href="jow1429546712705.xml"/>
+            <topicref href="jow1429547742880.xml"/>
+            <topicref href="jow1432240580490.xml"/>
+            <topicref href="jow1426181040008.xml"/>
+        </topicref>
+        <topicref href="jow1404333660893.xml"/>
+        <topicref href="jow1404333800588.xml"/>
+        <topicref href="jow1404333655771.xml"/>
+        <topicref href="jow1417813748326.xml">
+            <topicref href="jow1418073771294.xml"/>
+            <topicref href="jow1417817887208.xml">
+                <topicref href="jow1417817540528.xml"/>
+            </topicref>
+        </topicref>
+        <topicref href="jow1404333802962.xml"/>
+    </topicref>
+    <topicref href="jow1432045490465.xml">
+        <topicmeta>
+            <navtitle>Fault Management</navtitle>
+        </topicmeta>
+        <topicref href="jow1404333759364.xml">
+            <!-- System Alarms -->
+            <topicref href="psa1408039460152.xml"/>
+            <topicref href="psa1408040130437.xml"/>
+            <topicref href="psa1419970253127.xml"/>
+            <topicref href="psa1413927942547.xml"/>
+        </topicref>
+        <topicref href="jow1432045388521.xml">
+            <topicref href="jow1432045421799.xml"/>
+            <topicref href="jow1432045469285.xml"/>
+        </topicref>
+    </topicref>
+    <topicref href="psa1410446455735.xml">
+        <topicmeta>
+            <navtitle>Managing Software Patches</navtitle>
+        </topicmeta>
+        <topicref href="psa1410446807133.xml"/>
+        <topicref href="psa1410446976545.xml"/>
+        <topicref href="psa1414084582159.xml"/>
+        <topicref href="psa1410446902796.xml"/>
+        <topicref href="psa1420733173602.xml"/>
+    </topicref>
+    <topicref href="psa1410807758201.xml">
+        <topicmeta>
+            <navtitle>System Backups</navtitle>
+        </topicmeta>
+        <topicref href="psa1410807811981.xml"/>
+        <topicref href="psa1410807838150.xml"/>
+    </topicref>
+    <topicref href="jow1404333804266.xml">
+        <topicmeta>
+            <navtitle>Managing Stacks</navtitle>
+        </topicmeta>
+        <topicref href="jow1404333804837.xml"/>
+        <topicref href="jow1404333806049.xml"/>
+        <topicref href="jow1404333806620.xml"/>
+        <topicref href="jow1404333807231.xml"/>
+        <topicref href="jow1404333628570.xml"/>
+        <topicref href="jow1409240700100.xml"/>
+        <topicref href="jow1417818508589.xml"/>
+        <topicref href="jow1404916152577.xml"/>
+        <topicref href="jow1404915566084.xml">
+            <topicref href="jow1404333810324.xml"/>
+            <topicref href="jow1404333812899.xml"/>
+            <topicref href="jow1418228891859.xml"/>
+        </topicref>
+        <topicref href="jow1409777224536.xml"/>
+        <topicref href="jow1404333813579.xml"/>
+    </topicref>
+</map>

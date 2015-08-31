@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333777760" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Interfaces</title>
+    <shortdesc ixia_locid="2">The <uicontrol ixia_locid="3">Interfaces</uicontrol> tab on the
+            <wintitle ixia_locid="4">Inventory Detail</wintitle> page presents details about the
+        logical L2 network interfaces on a node, as illustrated below for an unlocked controller
+        node.</shortdesc>
+    <prolog>
+        <author ixia_locid="5">Pedro Sanchez</author>
+    </prolog>
+    <conbody>
+        <fig id="fig_N10027_N10024_N10001" ixia_locid="6">
+            <image href="jow1404333771094.image" id="image_v3c_dc1_m4" ixia_locid="7" width="6in"/>
+        </fig>
+        <p ixia_locid="8"><!-- screen shot needs to match text! -->In this example the node has two allocated interfaces,
+                <nameliteral ixia_locid="135">eth0</nameliteral> connecting to the OAM network, and
+                <nameliteral ixia_locid="136">eth1</nameliteral> connecting to the internal management network. These
+            interfaces are mandatory and therefore cannot be deleted. They reflect the allocation
+            given when the node was provisioned. See the <cite ixia_locid="10">HP Helion OpenStack Carrier Grade
+                Software Installation Guide</cite> for details.</p>
+        <p ixia_locid="11">On a properly configured compute node, the <uicontrol ixia_locid="12">Interfaces</uicontrol> tab presents additional logical interfaces, as illustrated
+            below for a locked node:</p>
+        <fig id="fig_N10047_N10024_N10001" ixia_locid="13">
+            <image href="jow1404333772968.image" id="image_xyx_c21_m4" ixia_locid="14" width="6in"/>
+        </fig>
+        <p ixia_locid="15"><!-- screen shot needs to match text! -->In this example the node has three allocated interfaces, <nameliteral ixia_locid="16">eth1</nameliteral> connecting to the internal management network,
+            and <nameliteral ixia_locid="17">data0</nameliteral> and <nameliteral ixia_locid="18">data1</nameliteral> connecting to the provider networks <nameliteral ixia_locid="19">group0-data0</nameliteral> and <nameliteral ixia_locid="20">group0-data1</nameliteral> respectively. The interface <nameliteral ixia_locid="21">eth1</nameliteral> is auto-provisioned as part of the automated software
+            installation process on the compute node. It can be modified but not deleted.</p>
+        <p ixia_locid="22">Information about interfaces is presented in several columns, as follows:</p>
+        <dl>
+            <dlentry ixia_locid="23">
+                <dt ixia_locid="24">Name</dt>
+                <dd ixia_locid="25">
+                    <p ixia_locid="26">The name given to the logical L2 interface.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="31">
+                <dt ixia_locid="32">Network Type</dt>
+                <dd ixia_locid="33">
+                    <p ixia_locid="34">The type of network the logical network interface is connected to. The options are:</p>
+                    <ul id="ul_rtx_4g1_m4">
+                        <li ixia_locid="35">
+                            <p ixia_locid="36"><nameliteral ixia_locid="37">data</nameliteral>, for a compute node data interface</p>
+                        </li>
+                        <li ixia_locid="41">
+                            <p ixia_locid="42"><nameliteral ixia_locid="43">infra</nameliteral>, for
+                                the optional infrastructure network</p>
+                        </li>
+                        <li ixia_locid="38">
+                            <p ixia_locid="39"><nameliteral ixia_locid="40">mgmt</nameliteral>, for
+                                the internal management network</p>
+                        </li>
+                        <li ixia_locid="44">
+                            <p ixia_locid="45"><nameliteral ixia_locid="46">oam</nameliteral>, for the OAM network</p>
+                        </li>
+                        <li ixia_locid="131">
+                            <p ixia_locid="132"><nameliteral ixia_locid="133">pci-passthrough</nameliteral>, for a PCI passthrough
+                                interface</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="47">
+                <dt ixia_locid="48">Type</dt>
+                <dd ixia_locid="49">
+                    <p ixia_locid="50">Ethernet, or aggregated Ethernet (LAG).</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="137">
+                <dt ixia_locid="139">Vlan ID</dt>
+                <dd ixia_locid="141">
+                    <p ixia_locid="143">The VLAN ID of the network listed in the
+                            <nameliteral ixia_locid="153">Network Type</nameliteral> column,  if the network uses a
+                        shared interface. For more information about shared interfaces, see <xref href="jow1423173019489.xml" ixia_locid="154"/>.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="138">
+                <dt ixia_locid="140">Port(s)</dt>
+                <dd ixia_locid="142">
+                    <p ixia_locid="144">The physical ports on top of which the logical interface is
+                        built. Multiple ports are displayed when the logical interface uses LAG.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="145">
+                <dt ixia_locid="146">Uses</dt>
+                <dd ixia_locid="147">
+                    <p ixia_locid="148">The interface used by the network listed in the
+                            <nameliteral ixia_locid="155">Network Type</nameliteral> column, if the network uses a
+                        shared interface. The VLAN ID of the network is shown in the
+                            <nameliteral ixia_locid="156">Vlan ID</nameliteral> field.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="149">
+                <dt ixia_locid="150">Used By</dt>
+                <dd ixia_locid="151">
+                    <p ixia_locid="152">The networks that share the interface using VLAN tagging, if
+                        the interface is shared. For more information about shared interfaces, see
+                            <xref href="jow1423173019489.xml" ixia_locid="157"/>.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="55">
+                <dt ixia_locid="56">Provider Networks</dt>
+                <dd ixia_locid="57">
+                    <p ixia_locid="58">This option is relevant for compute nodes only, and for interfaces of the
+              <nameliteral ixia_locid="59">data</nameliteral> network type. It lists the provider networks
+            associated with the data interface.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="60">
+                <dt ixia_locid="61">Attributes</dt>
+                <dd ixia_locid="62">
+                    <p ixia_locid="63">The current MTU size for the interface.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="64">
+                <dt ixia_locid="65">Actions</dt>
+                <dd ixia_locid="66">
+                    <p ixia_locid="67">On a locked node, you can modify a logical interface, and execute management operations
+            on it. This is implemented using the buttons <uicontrol ixia_locid="68">Edit Interface</uicontrol> and
+              <uicontrol ixia_locid="69">More</uicontrol>. These buttons are not available when the node is
+            unlocked.</p>
+                </dd>
+            </dlentry>
+        </dl>
+        <section id="section_N10133_N10024_N10001" ixia_locid="70">
+            <title ixia_locid="71">Creating an Interface Profile</title>
+            <p ixia_locid="72">Use the <uicontrol ixia_locid="73">Create Interface
+                    Profile</uicontrol> button on the <uicontrol ixia_locid="74">Interfaces</uicontrol> tab to display the <wintitle ixia_locid="75">Create
+                    Interface Profile</wintitle> window. From there you can create a new interface
+                profile out of the currently defined node interfaces. An example for a compute node
+                is illustrated below.</p>
+            <fig id="fig_N1014D_N10135_N10024_N10001" ixia_locid="76">
+                <image href="jow1404333774522.image" id="image_gpp_pp1_m4" ixia_locid="77" width="4in"/>
+            </fig>
+            <p ixia_locid="78">In this window you enter the name of the new profile,
+          <nameliteral ixia_locid="79">HP-360-cmpt-iface-profile</nameliteral> in this case, and then click the
+        button <uicontrol ixia_locid="80">Create Interface Profile</uicontrol> to execute. Available interface
+        profiles are listed, and can be removed, from the <wintitle ixia_locid="81">System Inventory</wintitle>
+        page, as described in <xref href="jow1404333787693.xml" ixia_locid="82"/>.</p>
+        </section>
+        <section id="section_N1016B_N10024_N10001" ixia_locid="83">
+            <title ixia_locid="84">Managing Interfaces</title>
+            <p ixia_locid="85">New logical interfaces can be created using the <uicontrol ixia_locid="86">Create Interface</uicontrol> button on the <uicontrol ixia_locid="87">Interfaces</uicontrol> tab. This button is available only on
+                nodes in the locked state. When the button is clicked, the window <wintitle ixia_locid="88">Create Interface</wintitle> is displayed, as illustrated
+                below.</p>
+            <fig id="fig_N10186_N1016E_N10024_N10001" ixia_locid="89">
+                <image href="jow1404333776177.image" id="image_dz4_jr1_m4" ixia_locid="90" width="4in"/>
+            </fig>
+            <p ixia_locid="91">The following fields are available:</p>
+            <dl>
+                <dlentry ixia_locid="92">
+                    <dt ixia_locid="93">Interface Name</dt>
+                    <dd ixia_locid="94">
+                        <p ixia_locid="95">The name to be assigned to the new logical interface.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="96">
+                    <dt ixia_locid="97">Interface Type</dt>
+                    <dd ixia_locid="98">
+                        <p ixia_locid="99">The type of network interface, Ethernet or aggregated
+                            Ethernet (LAG).</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="100">
+                    <dt ixia_locid="101">Ports</dt>
+                    <dd ixia_locid="102">
+                        <p ixia_locid="103">A list of physical ports available to the new logical
+                            interface, with corresponding check-mark boxes. Physical ports already
+                            allocated to other interfaces are not listed.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="104">
+                    <dt ixia_locid="105">Network Type</dt>
+                    <dd ixia_locid="106">
+                        <p ixia_locid="107">The type of network to attach the new logical interface
+                            to (<nameliteral ixia_locid="108">data</nameliteral> or <nameliteral ixia_locid="109">infra</nameliteral>, for compute node data
+                            interfaces and infrastructure network connections respectively). Note
+                            that connections to the OAM and internal management networks are
+                            auto-provisioned during the software installation process. </p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="110">
+                    <dt ixia_locid="111">Provider Network(s)</dt>
+                    <dd ixia_locid="112">
+                        <p ixia_locid="113">A list of provider networks available to the new logical
+                            interface, with corresponding check-mark boxes. They can be selected for
+                            networks of type <nameliteral ixia_locid="114">data</nameliteral>, to
+                            which multiple provider networks can be attached. Provider networks
+                            already allocated to other data interfaces are not listed, since no
+                            provider network can be associated with more than a single data
+                            interface.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="115">
+                    <dt ixia_locid="116">MTU</dt>
+                    <dd ixia_locid="117">
+                        <p ixia_locid="118">The MTU size in bytes for the interface. For compute
+                            nodes, values between 1500 and 9000 are supported. For controller nodes,
+                            the MTU size cannot exceed 1500.</p>
+                    </dd>
+                </dlentry>
+            </dl>
+        </section>
+        <section id="section_N10203_N10024_N10001" ixia_locid="119">
+            <p ixia_locid="134">To edit or remove a logical interface of network type <nameliteral ixia_locid="121">data</nameliteral> or <nameliteral ixia_locid="122">infra</nameliteral> you
+                must first lock the target node. You can then use the <uicontrol ixia_locid="124">Edit Interface</uicontrol> and <uicontrol ixia_locid="126">More</uicontrol>
+                buttons to perform these maintenance actions.</p>
+            <p ixia_locid="128">Logical interfaces of network types <nameliteral ixia_locid="129">oam</nameliteral> and <nameliteral ixia_locid="130">mgmt</nameliteral> cannot
+                be deleted. They can only be modified to use different physical ports when required. </p>
+        </section>
+    </conbody>
+</concept-wr>

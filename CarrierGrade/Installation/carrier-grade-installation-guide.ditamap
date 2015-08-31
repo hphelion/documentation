@@ -13,9 +13,6 @@
                 <vrm release="1.1" version=""/>
             </vrmlist>
         </prodinfo>
-        <!-- bookid ixia_locid="133">
-            <edition ixia_locid="134">Patch 0003</edition>
-        </bookid -->
     </topicmeta>
     <topicref href="carrier-grade-install-pb-overview.dita" navtitle="Installation Guide"
         locktitle="yes">
@@ -44,11 +41,11 @@
                 <topicref href="carrier-grade-install-pb-kvm-env-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-machine-json-bonded.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-esx-json.dita" toc="no"/>
-                <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-wr-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-ldap-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-hcfgproc-output.dita" toc="no"/>
                 <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
+                <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
                 <topicref href="carrier-grade-install-vsvapp.dita" toc="no"/>
                 <topicref href="carrier-grade-install-vsd-license.dita" toc="no"/>
                 <topicref href="carrier-grade-install-vsd-user.dita" toc="no"/>

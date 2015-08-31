@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Reference//EN" "reference-wr.dtd">
+<reference-wr id="psa1413927942547" xml:lang="en-us">
+<!-- Modification History
+    
+-->
+  <title ixia_locid="1">Alarms Reference Table</title>
+  <shortdesc ixia_locid="2">The system inventory and maintenance service reports system changes with different
+    degrees of severity. Use the reported alarms to monitor the overall health of the
+    system.</shortdesc>
+  <prolog>
+        <author ixia_locid="770">Jim Owens</author>
+    <author ixia_locid="3">Pedro Sanchez</author>
+  </prolog>
+  <refbody>
+        <section id="section_N10022_N1001F_N10001" ixia_locid="503">
+            <p ixia_locid="504">In the following tables the severity of the alarms is represented
+                 by one or more letters, as follows:</p>
+            <ul id="ul_jsd_jkg_vp">
+                <li ixia_locid="505">
+                    <p ixia_locid="506">C: Critical</p>
+                </li>
+                <li ixia_locid="507">
+                    <p ixia_locid="508">M: Major</p>
+                </li>
+                <li ixia_locid="509">
+                    <p ixia_locid="510">m: Minor</p>
+                </li>
+                <li ixia_locid="511">
+                    <p ixia_locid="512">W: Warning</p>
+                </li>
+            </ul>
+            <p ixia_locid="699">A comma-separated list of letters is used when the alarm can be triggered with one of
+                several severity levels.</p>
+        </section>
+        <section id="section_N10050_N1001F_N10001" ixia_locid="513">
+            <title ixia_locid="514">Resource Alarms</title>
+        <simpletable outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
+            <sthead>
+                <stentry ixia_locid="515">
+                    <p ixia_locid="523">Alarm ID</p>
+                </stentry>
+                <stentry ixia_locid="531">
+                    <p ixia_locid="539">Reason Text</p>
+                </stentry>
+                <stentry ixia_locid="547">
+                    <p ixia_locid="555">Entity Instance ID</p>
+                </stentry>
+                <stentry ixia_locid="563">
+                    <p ixia_locid="571">Severity</p>
+                </stentry>
+                <stentry ixia_locid="579">
+                    <p ixia_locid="587">Proposed Repair Action</p>
+                </stentry>
+            </sthead>
+            <strow>
+                <stentry ixia_locid="24">
+                    <p ixia_locid="25">100.101</p>
+                </stentry>
+                <stentry ixia_locid="26">
+                    <p ixia_locid="27">Platform CPU threshold exceeded; threshold x%, actual y%</p>
+                </stentry>
+                <stentry ixia_locid="28">
+                    <p ixia_locid="29">host=&lt;<varname ixia_locid="612">hostname</varname>&gt;</p>
+                </stentry>
+                <stentry ixia_locid="30">
+                    <p ixia_locid="31">C, M, m</p>
+                </stentry>
+                <stentry ixia_locid="32">
+                    <p ixia_locid="33">Monitor, and if condition persists, contact next level of
+                            support.</p>
+                </stentry>
+            </strow>
+            <strow>
+                <stentry ixia_locid="34">
+                    <p ixia_locid="35">100.102</p>
+                </stentry>
+                <stentry ixia_locid="36">
+                    <p ixia_locid="37">AVS CPU threshold exceeded; threshold x%, actual y%</p>
+                </stentry>
+                <stentry ixia_locid="38">
+                    <p ixia_locid="39">host=&lt;<varname ixia_locid="613">hostname</varname>&gt;</p>
+                </stentry>
+                <stentry ixia_locid="40">
+                    <p ixia_locid="41">C, M, m</p>
+                </stentry>
+                <stentry ixia_locid="42">
+                    <p ixia_locid="43">Monitor, and if condition persists, contact next level of
+                            support.</p>
+                </stentry>
+            </strow>
+            <strow>
+                <stentry ixia_locid="44">
+                    <p ixia_locid="45">100.103</p>
+                </stentry>
+                <stentry ixia_locid="46">
+                    <p ixia_locid="47">Memory threshold exceeded; threshold x%, actual y%</p>
+                </stentry>
+                <stentry ixia_locid="48">
+                    <p ixia_locid="49">host=&lt;<varname ixia_locid="614">hostname</varname>&gt;</p>
+                </stentry>
+                <stentry ixia_locid="50">
+                    <p ixia_locid="51">C, M, m</p>
+                </stentry>
+                <stentry ixia_locid="52">
+                    <p ixia_locid="53">Monitor, and if condition persists, contact next level of
+                            support; may require additional memory on host.</p>
+                </stentry>
+            </strow>
+            <strow>
+                <stentry ixia_locid="54">
+                    <p ixia_locid="55">100.104</p>
+                </stentry>
+                <stentry ixia_locid="56">
+                    <p ixia_locid="57">File System threshold exceeded; threshold x%, actual y%</p>
+                </stentry>
+                <stentry ixia_locid="58">
+                    <p ixia_locid="696">host=&lt;<varname ixia_locid="615">hostname</varname>&gt;.filesystem=&lt;<varname ixia_locid="616">mount-dir</varname>&gt;</p>
+                        <p ixia_locid="697">or</p>
+                        <p ixia_locid="698">filesystem=&lt;<varname ixia_locid="617">mount-dir</varname>&gt;</p>
+                        <p ixia_locid="771">or</p>
+                        <p ixia_locid="772">host=&lt;<varname ixia_locid="773">hostname</varname>&gt;.volumegroup=&lt;<varname ixia_locid="774">volumegroup-name</varname>&gt;</p>
+                </stentry>
+                <stentry ixia_locid="60">
+                    <p ixia_locid="61">C, M, m</p>
+                </stentry>
+                <stentry ixia_locid="62">
+                    <p ixia_locid="775">(for filesystem) Monitor, and if condition persists, contact
+                            next level of support.</p>
+                        <p ixia_locid="776">(for volumegroup) Monitor, and if condition persists,
+                            consider adding additional physical volumes to the volume group</p>
+                </stentry>
+            </strow>
+        </simpletable>
+        </section>
+        <section id="section_N1016C_N1001F_N10001" ixia_locid="595">
+            <title ixia_locid="596">Maintenance Alarms</title>
+            <simpletable id="simpletable_vk1_qhg_vp2" outputclass="wide" relcolwidth="1.22* 2.28* 2.5* 1.0* 3.33*">
+                <sthead>
+                    <stentry ixia_locid="516">
+                        <p ixia_locid="524">Alarm ID</p>
+                    </stentry>
+                    <stentry ixia_locid="532">
+                        <p ixia_locid="540">Reason Text</p>
+                    </stentry>
+                    <stentry ixia_locid="548">
+                        <p ixia_locid="556">Entity Instance ID</p>
+                    </stentry>
+                    <stentry ixia_locid="564">
+                        <p ixia_locid="572">Severity</p>
+                    </stentry>
+                    <stentry ixia_locid="580">
+                        <p ixia_locid="588">Proposed Repair Action</p>
+                    </stentry>
+                </sthead>
+                <strow>
+                    <stentry ixia_locid="701">
+                        <p ixia_locid="702">100.105</p>
+                    </stentry>
+                    <stentry ixia_locid="703">
+                        <p ixia_locid="704">No access to remote VM volumes.</p>
+                    </stentry>
+                    <stentry ixia_locid="705">
+                        <p ixia_locid="706">host=&lt;<varname ixia_locid="707">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="709">
+                        <p ixia_locid="710">M</p>
+                    </stentry>
+                    <stentry ixia_locid="711">
+                        <p ixia_locid="712">Check management and infrastructure networks. Check
+                            controller nodes.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="74">
+                        <p ixia_locid="75">100.106</p>
+                    </stentry>
+                    <stentry ixia_locid="76">
+                        <p ixia_locid="77">OAM Port failed</p>
+                    </stentry>
+                    <stentry ixia_locid="78">
+                        <p ixia_locid="79">host=&lt;<varname ixia_locid="618">hostname</varname>&gt;.port=&lt;<varname ixia_locid="619">port-name</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="80">
+                        <p ixia_locid="81">M</p>
+                    </stentry>
+                    <stentry ixia_locid="82">
+                        <p ixia_locid="83">Check cabling, far-end port configuration, and status on
+                            adjacent equipment.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="84">
+                        <p ixia_locid="85">100.107</p>
+                    </stentry>
+                    <stentry ixia_locid="86">
+                        <p ixia_locid="474">OAM Interface failed</p>
+                        <p ixia_locid="475">or</p>
+                        <p ixia_locid="476">OAM Interface degraded</p>
+                    </stentry>
+                    <stentry ixia_locid="88">
+                        <p ixia_locid="89">host=&lt;<varname ixia_locid="708">hostname</varname>&gt;.interface=&lt;<varname ixia_locid="621">if-name</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="90">
+                        <p ixia_locid="91">C, M</p>
+                    </stentry>
+                    <stentry ixia_locid="92">
+                        <p ixia_locid="93">Check cabling, far-end port configuration, and status on
+                            adjacent equipment.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="94">
+                        <p ixia_locid="95">100.108</p>
+                    </stentry>
+                    <stentry ixia_locid="96">
+                        <p ixia_locid="97">MGMT Port failed</p>
+                    </stentry>
+                    <stentry ixia_locid="98">
+                        <p ixia_locid="99">host=&lt;<varname ixia_locid="622">hostname</varname>&gt;.port=&lt;<varname ixia_locid="623">port-name</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="100">
+                        <p ixia_locid="101">M</p>
+                    </stentry>
+                    <stentry ixia_locid="102">
+                        <p ixia_locid="103">Check cabling, far-end port configuration, and status on
+                            adjacent equipment.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="104">
+                        <p ixia_locid="105">100.109</p>
+                    </stentry>
+                    <stentry ixia_locid="106">
+                        <p ixia_locid="479">MGMT Interface failed</p>
+                        <p ixia_locid="478">or</p>
+                        <p ixia_locid="477">MGMT Interface degraded</p>
+                    </stentry>
+                    <stentry ixia_locid="108">
+                        <p ixia_locid="109">host=&lt;<varname ixia_locid="624">hostname</varname>&gt;.interface=&lt;<varname ixia_locid="625">if-name</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="110">
+                        <p ixia_locid="111">C, M</p>
+                    </stentry>
+                    <stentry ixia_locid="112">
+                        <p ixia_locid="113">Check cabling, far-end port configuration, and status on
+                            adjacent equipment.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="114">
+                        <p ixia_locid="115">100.110</p>
+                    </stentry>
+                    <stentry ixia_locid="116">
+                        <p ixia_locid="117">INFRA Port failed</p>
+                    </stentry>
+                    <stentry ixia_locid="118">
+                        <p ixia_locid="119">host=&lt;<varname ixia_locid="626">hostname</varname>&gt;.port=&lt;<varname ixia_locid="627">port-name</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="120">
+                        <p ixia_locid="121">M</p>
+                    </stentry>
+                    <stentry ixia_locid="122">
+                        <p ixia_locid="123">Check cabling, far-end port configuration, and status on
+                            adjacent equipment.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="124">
+                        <p ixia_locid="125">100.111</p>
+                    </stentry>
+                    <stentry ixia_locid="126">
+                        <p ixia_locid="482">INFRA Interface failed</p>
+                        <p ixia_locid="481">or</p>
+                        <p ixia_locid="480">INFRA Interface degraded</p>
+                    </stentry>
+                    <stentry ixia_locid="128">
+                        <p ixia_locid="129">host=&lt;<varname ixia_locid="628">hostname</varname>&gt;.interface=&lt;<varname ixia_locid="629">if-name</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="130">
+                        <p ixia_locid="131">C, M</p>
+                    </stentry>
+                    <stentry ixia_locid="132">
+                        <p ixia_locid="133">Check cabling, far-end port configuration, and status on
+                            adjacent equipment.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="134">
+                        <p ixia_locid="135">200.001</p>
+                    </stentry>
+                    <stentry ixia_locid="136">
+                        <p ixia_locid="137">Host was administratively locked to take it
+                            out-of-service</p>
+                    </stentry>
+                    <stentry ixia_locid="138">
+                        <p ixia_locid="139">host=&lt;<varname ixia_locid="630">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="140">
+                        <p ixia_locid="141">W</p>
+                    </stentry>
+                    <stentry ixia_locid="142">
+                        <p ixia_locid="143">Administratively unlock host to bring it back
+                            in-service.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="144">
+                        <p ixia_locid="145">200.004</p>
+                    </stentry>
+                    <stentry ixia_locid="146">
+                        <p ixia_locid="147">Host experienced a service-affecting failure.</p>
+                    </stentry>
+                    <stentry ixia_locid="148">
+                        <p ixia_locid="149">host=&lt;<varname ixia_locid="632">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="150">
+                        <p ixia_locid="151">C</p>
+                    </stentry>
+                    <stentry ixia_locid="152">
+                        <p ixia_locid="153">If problem consistently occurs after host is reset,
+                            contact next level of support, or lock and replace failing host.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="154">
+                        <p ixia_locid="155">200.005</p>
+                    </stentry>
+                    <stentry ixia_locid="777">
+                        <p ixia_locid="780">Degrade: Host is experiencing an intermittent
+                            infrastructure network communication failure that has exceeded its lower
+                            alarming threshold.</p>
+                        <p ixia_locid="783">Failure: Host is experiencing a persistent critical
+                            infrastructure Network communication failure. Resetting Host.</p>
+                    </stentry>
+                    <stentry ixia_locid="158">
+                        <p ixia_locid="159">host=&lt;<varname ixia_locid="633">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="160">
+                        <p ixia_locid="161">C, M</p>
+                    </stentry>
+                    <stentry ixia_locid="162">
+                        <p ixia_locid="163">If problem consistently occurs after host is reset,
+                            contact next level of support, or lock and replace failing host.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="164">
+                        <p ixia_locid="165">200.006</p>
+                    </stentry>
+                    <stentry ixia_locid="166">
+                        <p ixia_locid="167">One or more critical processes on host have failed and
+                            can not be recovered. Resetting host</p>
+                    </stentry>
+                    <stentry ixia_locid="168">
+                        <p ixia_locid="786">host=&lt;<varname ixia_locid="788">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="170">
+                        <p ixia_locid="790">C, M</p>
+                    </stentry>
+                    <stentry ixia_locid="172">
+                        <p ixia_locid="173">If problem consistently occurs after host is reset,
+                            contact next level of support or lock and replace failing host.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="792">
+                        <p ixia_locid="793">200.007</p>
+                    </stentry>
+                    <stentry ixia_locid="778">
+                        <p ixia_locid="781">Degrade: Host is degraded due to out-of-tolerance
+                            readings from sensors: '&lt;<varname ixia_locid="794">sensor
+                                list</varname>&gt;'</p>
+                        <p ixia_locid="784">Critical: One or more sensors: '&lt;<varname ixia_locid="795">sensor list</varname>&gt;' on Host are reporting
+                            persistent critical failure</p>
+                    </stentry>
+                    <stentry ixia_locid="797">
+                        <p ixia_locid="787">host=&lt;<varname ixia_locid="789">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="798">
+                        <p ixia_locid="791">C, M</p>
+                    </stentry>
+                    <stentry ixia_locid="799">
+                        <p ixia_locid="800">If problem consistently occurs after Host is power cycled and or reset,
+                            contact next level of support or lock and replace failing host.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="174">
+                        <p ixia_locid="175">200.008</p>
+                    </stentry>
+                    <stentry ixia_locid="176">
+                        <p ixia_locid="177"><i ixia_locid="635">ntpd</i> process has failed on
+                            host</p>
+                    </stentry>
+                    <stentry ixia_locid="178">
+                        <p ixia_locid="179">host=&lt;<varname ixia_locid="713">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="180">
+                        <p ixia_locid="181">m</p>
+                    </stentry>
+                    <stentry ixia_locid="182">
+                        <p ixia_locid="183"><i ixia_locid="637">ntpd</i> is a process that can not
+                            be auto recovered. The host must be re-enabled (locked and then
+                            unlocked) to clear this alarm. If the alarm persists then contact next
+                            level of support to investigate and recover.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="715">
+                        <p ixia_locid="716">200.009</p>
+                    </stentry>
+                    <stentry ixia_locid="779">
+                        <p ixia_locid="782">Degrade: Host is experiencing an intermittent
+                            infrastructure network communication failure that has exceeded its lower
+                            alarming threshold.</p>
+                        <p ixia_locid="785">Failure: Host is experiencing a persistent critical
+                            infrastructure Network communication failure. Resetting Host.</p>
+                    </stentry>
+                    <stentry ixia_locid="720">
+                        <p ixia_locid="721">host=&lt;<varname ixia_locid="714">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="722">
+                        <p ixia_locid="723">C, M</p>
+                    </stentry>
+                    <stentry ixia_locid="724">
+                        <p ixia_locid="725">If problem consistently occurs after host is reset,
+                            contact next level of support, or lock and replace failing host.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="184">
+                        <p ixia_locid="185">200.010</p>
+                    </stentry>
+                    <stentry ixia_locid="186">
+                        <p ixia_locid="187">Access to board management module has failed</p>
+                    </stentry>
+                    <stentry ixia_locid="188">
+                        <p ixia_locid="805">host=&lt;<varname ixia_locid="809">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="190">
+                        <p ixia_locid="191">W</p>
+                    </stentry>
+                    <stentry ixia_locid="192">
+                        <p ixia_locid="193">Check host's board management configuration and
+                            connectivity.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="813">
+                        <p ixia_locid="814">200.011</p>
+                    </stentry>
+                    <stentry ixia_locid="815">
+                        <p ixia_locid="816">Host encountered a critical configuration failure during initialization.
+                            Resetting Host.</p>
+                    </stentry>
+                    <stentry ixia_locid="817">
+                        <p ixia_locid="806">host=&lt;<varname ixia_locid="810">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="818">
+                        <p ixia_locid="819">M</p>
+                    </stentry>
+                    <stentry ixia_locid="820">
+                        <p ixia_locid="821">If problem consistently occurs after Host is reset, contact next level of
+                            support or lock and replace failing host.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="822">
+                        <p ixia_locid="823">200.012</p>
+                    </stentry>
+                    <stentry ixia_locid="824">
+                        <p ixia_locid="825">In-Service failure of host's controller function while compute services
+                            remain healthy.</p>
+                    </stentry>
+                    <stentry ixia_locid="826">
+                        <p ixia_locid="807">host=&lt;<varname ixia_locid="811">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="827">
+                        <p ixia_locid="828">M</p>
+                    </stentry>
+                    <stentry ixia_locid="829">
+                        <p ixia_locid="830">Lock and then Unlock host to recover. Avoid using 'Force Lock' action as
+                            that will impact compute services running on this host. If lock action
+                            fails then contact next level of support to investigate and recover.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="831">
+                        <p ixia_locid="832">200.013</p>
+                    </stentry>
+                    <stentry ixia_locid="833">
+                        <p ixia_locid="834">In-Service failure of host's compute function on host with only available
+                            and healthy controller service.</p>
+                    </stentry>
+                    <stentry ixia_locid="835">
+                        <p ixia_locid="808">host=&lt;<varname ixia_locid="812">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="836">
+                        <p ixia_locid="837">M</p>
+                    </stentry>
+                    <stentry ixia_locid="838">
+                        <p ixia_locid="839">Enable second controller as soon as possible and then optionally Lock and
+                            Unlock host to recover local compute services on this host.</p>
+                    </stentry>
+                </strow>
+            </simpletable>
+        </section>
+        <section id="section_N10457_N1001F_N10001" ixia_locid="597">
+            <title ixia_locid="598">Storage Alarms</title>
+            <simpletable id="simpletable_vk1_qhg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
+                <sthead>
+                    <stentry ixia_locid="517">
+                        <p ixia_locid="525">Alarm ID</p>
+                    </stentry>
+                    <stentry ixia_locid="533">
+                        <p ixia_locid="541">Reason Text</p>
+                    </stentry>
+                    <stentry ixia_locid="549">
+                        <p ixia_locid="557">Entity Instance ID</p>
+                    </stentry>
+                    <stentry ixia_locid="565">
+                        <p ixia_locid="573">Severity</p>
+                    </stentry>
+                    <stentry ixia_locid="581">
+                        <p ixia_locid="589">Proposed Repair Action</p>
+                    </stentry>
+                </sthead>
+                <strow>
+                    <stentry ixia_locid="204">
+                        <p ixia_locid="205">800.001</p>
+                    </stentry>
+                    <stentry ixia_locid="206">
+                        <p ixia_locid="207">Storage alarm condition: &lt;<varname ixia_locid="796">failure
+                                reason</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="208">
+                        <p ixia_locid="209">cluster=&lt;<varname ixia_locid="639">dist-fs-uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="210">
+                        <p ixia_locid="211">C, M</p>
+                    </stentry>
+                    <stentry ixia_locid="212">
+                        <p ixia_locid="213">If problem persists, contact next level of support.</p>
+                    </stentry>
+                </strow>
+            </simpletable>
+        </section>
+        <section id="section_N104D2_N1001F_N10001" ixia_locid="599">
+            <title ixia_locid="600">Data Networking Alarms</title>
+            <simpletable id="simpletable_igr_n3g_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
+                <sthead>
+                    <stentry ixia_locid="518">
+                        <p ixia_locid="526">Alarm ID</p>
+                    </stentry>
+                    <stentry ixia_locid="534">
+                        <p ixia_locid="542">Reason Text</p>
+                    </stentry>
+                    <stentry ixia_locid="550">
+                        <p ixia_locid="558">Entity Instance ID</p>
+                    </stentry>
+                    <stentry ixia_locid="566">
+                        <p ixia_locid="574">Severity</p>
+                    </stentry>
+                    <stentry ixia_locid="582">
+                        <p ixia_locid="590">Proposed Repair Action</p>
+                    </stentry>
+                </sthead>
+                <strow>
+                    <stentry ixia_locid="224">
+                        <p ixia_locid="225">300.001</p>
+                    </stentry>
+                    <stentry ixia_locid="226">
+                        <p ixia_locid="227">Data port failed</p>
+                    </stentry>
+                    <stentry ixia_locid="228">
+                        <p ixia_locid="229">host=&lt;<varname ixia_locid="640">hostname</varname>&gt;.port=&lt;<varname ixia_locid="641">port-uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="230">
+                        <p ixia_locid="231">M</p>
+                    </stentry>
+                    <stentry ixia_locid="232">
+                        <p ixia_locid="233">Check cabling, far-end port configuration, and status on
+                            adjacent equipment.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="234">
+                        <p ixia_locid="235">300.002</p>
+                    </stentry>
+                    <stentry ixia_locid="236">
+                        <p ixia_locid="611">Data interface failed</p>
+                        <p ixia_locid="610">or</p>
+                        <p ixia_locid="609">Data interface degraded</p>
+                    </stentry>
+                    <stentry ixia_locid="238">
+                        <p ixia_locid="239">host=&lt;<varname ixia_locid="642">hostname</varname>&gt;.interface=&lt;<varname ixia_locid="643">if-uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="240">
+                        <p ixia_locid="241">C, M</p>
+                    </stentry>
+                    <stentry ixia_locid="242">
+                        <p ixia_locid="243">Check cabling, far-end port configuration, and status on
+                            adjacent equipment.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="244">
+                        <p ixia_locid="245">300.003</p>
+                    </stentry>
+                    <stentry ixia_locid="246">
+                        <p ixia_locid="247">Networking agent not responding</p>
+                    </stentry>
+                    <stentry ixia_locid="248">
+                        <p ixia_locid="249">host=&lt;<varname ixia_locid="644">hostname</varname>&gt;.agent=&lt;<varname ixia_locid="645">agent-uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="250">
+                        <p ixia_locid="251">M</p>
+                    </stentry>
+                    <stentry ixia_locid="252">
+                        <p ixia_locid="253">If condition persists, attempt to clear issue by
+                            administratively locking and unlocking the host.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="254">
+                        <p ixia_locid="255">300.004</p>
+                    </stentry>
+                    <stentry ixia_locid="256">
+                        <p ixia_locid="257">No enabled compute node with connectivity to provider
+                            network</p>
+                    </stentry>
+                    <stentry ixia_locid="258">
+                        <p ixia_locid="259">host=&lt;<varname ixia_locid="646">hostname</varname>&gt;.providernet=&lt;<varname ixia_locid="647">pnet-uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="260">
+                        <p ixia_locid="261">M</p>
+                    </stentry>
+                    <stentry ixia_locid="262">
+                        <p ixia_locid="263">Enable compute nodes with required provider network
+                            connectivity.</p>
+                    </stentry>
+                </strow>
+            </simpletable>
+        </section>
+        <section id="section_N105EF_N1001F_N10001" ixia_locid="601">
+            <title ixia_locid="602">Controller HA Alarms</title>
+            <simpletable id="simpletable_m4b_v3g_vp" outputclass="wide" relcolwidth="1.2* 4.0* 3.0* 1.2* 4.0*">
+                <sthead>
+                    <stentry ixia_locid="519">
+                        <p ixia_locid="527">Alarm ID</p>
+                    </stentry>
+                    <stentry ixia_locid="535">
+                        <p ixia_locid="543">Reason Text</p>
+                    </stentry>
+                    <stentry ixia_locid="551">
+                        <p ixia_locid="559">Entity Instance ID</p>
+                    </stentry>
+                    <stentry ixia_locid="567">
+                        <p ixia_locid="575">Severity</p>
+                    </stentry>
+                    <stentry ixia_locid="583">
+                        <p ixia_locid="591">Proposed Repair Action</p>
+                    </stentry>
+                </sthead>
+                <strow>
+                    <stentry ixia_locid="274">
+                        <p ixia_locid="275">400.001</p>
+                    </stentry>
+                    <stentry ixia_locid="276">
+                        <p ixia_locid="483">Service group failure; &lt;<varname ixia_locid="648">list of affected
+                                services</varname>&gt;</p>
+                        <p ixia_locid="484">or</p>
+                        <p ixia_locid="485">Service group degraded; &lt;<varname ixia_locid="649">list of affected
+                                services</varname>&gt;</p>
+                        <p ixia_locid="486">or</p>
+                        <p ixia_locid="487">Service group warning; &lt;<varname ixia_locid="650">list of affected
+                                services</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="278">
+                        <p ixia_locid="279">service_domain=&lt;<varname ixia_locid="651">domain_name</varname>&gt;.service_group=&lt;<varname ixia_locid="652">group_name</varname>&gt;.host=&lt;<varname ixia_locid="653">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="280">
+                        <p ixia_locid="281">C, M, m</p>
+                    </stentry>
+                    <stentry ixia_locid="282">
+                        <p ixia_locid="283">Contact next level of support.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="284">
+                        <p ixia_locid="285">400.002</p>
+                    </stentry>
+                    <stentry ixia_locid="286">
+                        <p ixia_locid="488">Service group loss of redundancy; expected
+                                &lt;<varname ixia_locid="654">num</varname>&gt; standby
+                                member&lt;<varname ixia_locid="655">s</varname>&gt; but only
+                                &lt;<varname ixia_locid="656">num</varname>&gt; standby
+                                member&lt;<varname ixia_locid="657">s</varname>&gt; available</p>
+                        <p ixia_locid="489">or</p>
+                        <p ixia_locid="490">Service group loss of redundancy; expected
+                                &lt;<varname ixia_locid="658">num</varname>&gt; standby
+                                member&lt;<varname ixia_locid="659">s</varname>&gt; but only
+                                &lt;<varname ixia_locid="660">num</varname>&gt; standby
+                                member&lt;<varname ixia_locid="661">s</varname>&gt; available</p>
+                        <p ixia_locid="491">or</p>
+                        <p ixia_locid="492">Service group loss of redundancy; expected
+                                &lt;<varname ixia_locid="662">num</varname>&gt; active
+                            member&lt;<varname ixia_locid="663">s</varname>&gt; but no active members available</p>
+                        <p ixia_locid="493">or</p>
+                        <p ixia_locid="494">Service group loss of redundancy; expected
+                                &lt;<varname ixia_locid="664">num</varname>&gt; active
+                            member&lt;<varname ixia_locid="665">s</varname>&gt; but only
+                            &lt;<varname ixia_locid="666">num</varname>&gt; active member&lt;<varname ixia_locid="667">s</varname>&gt;
+                            available</p>
+                    </stentry>
+                    <stentry ixia_locid="288">
+                        <p ixia_locid="289">service_domain=&lt;<varname ixia_locid="668">domain_name</varname>&gt;.service_group=&lt;<varname ixia_locid="669">group_name</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="290">
+                        <p ixia_locid="291">M</p>
+                    </stentry>
+                    <stentry ixia_locid="292">
+                        <p ixia_locid="293">Bring a controller node back into service, otherwise
+                            contact next level of support.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="294">
+                        <p ixia_locid="295">400.003</p>
+                    </stentry>
+                    <stentry ixia_locid="296">
+                        <p ixia_locid="495">License key has expired or is invalid; a valid license
+                            key is required for operation</p>
+                        <p ixia_locid="496">or</p>
+                        <p ixia_locid="499">Evaluation license key will expire on &lt;<varname ixia_locid="672">date</varname>&gt;; there are only 7 or less days
+                            remaining in this evaluation</p>
+                        <p ixia_locid="498">or</p>
+                        <p ixia_locid="497">Evaluation license key will expire on &lt;<varname ixia_locid="670">date</varname>&gt;; there are &lt;<varname ixia_locid="671">num_days</varname>&gt; days remaining in this
+                            evaluation</p>
+                    </stentry>
+                    <stentry ixia_locid="298">
+                        <p ixia_locid="299">host=&lt;<varname ixia_locid="673">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="300">
+                        <p ixia_locid="301">C, M, m</p>
+                    </stentry>
+                    <stentry ixia_locid="302">
+                        <p ixia_locid="303">Contact next level of support to obtain a new license key.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="304">
+                        <p ixia_locid="305">400.004</p>
+                    </stentry>
+                    <stentry ixia_locid="306">
+                        <p ixia_locid="307">Service group software modification detected;
+                                &lt;<varname ixia_locid="674">list of affected files</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="308">
+                        <p ixia_locid="309">host=&lt;&lt;<varname ixia_locid="675">hostname</varname>&gt;&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="310">
+                        <p ixia_locid="311">M</p>
+                    </stentry>
+                    <stentry ixia_locid="312">
+                        <p ixia_locid="313">Contact next level of support.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="314">
+                        <p ixia_locid="315">400.005</p>
+                    </stentry>
+                    <stentry ixia_locid="316">
+                        <p ixia_locid="500">Communication failure detected with peer over interface
+                                &lt;<varname ixia_locid="676">linux-ifname</varname>&gt;</p>
+                        <p ixia_locid="501">or</p>
+                        <p ixia_locid="502">Communication failure detected with peer over interface
+                                &lt;<varname ixia_locid="677">linux-ifname</varname>&gt; within the last 30
+                            seconds</p>
+                    </stentry>
+                    <stentry ixia_locid="318">
+                        <p ixia_locid="319">host=&lt;<varname ixia_locid="678">hostname</varname>&gt;.network=&lt;<varname ixia_locid="679">mgmt</varname>
+                            | <varname ixia_locid="680">oam</varname> | <varname ixia_locid="681">infra</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="320">
+                        <p ixia_locid="321">M</p>
+                    </stentry>
+                    <stentry ixia_locid="322">
+                        <p ixia_locid="323">Check cabling, far-end port configuration, and status on
+                            adjacent equipment.</p>
+                    </stentry>
+                </strow>
+            </simpletable>
+        </section>
+        <section id="section_N10792_N1001F_N10001" ixia_locid="726">
+            <title ixia_locid="728">Backup and Restore Alarms</title>
+            <simpletable id="simpletable_ews_bjg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
+                <sthead>
+                    <stentry ixia_locid="730">
+                        <p ixia_locid="732">Alarm ID</p>
+                    </stentry>
+                    <stentry ixia_locid="734">
+                        <p ixia_locid="736">Reason Text</p>
+                    </stentry>
+                    <stentry ixia_locid="738">
+                        <p ixia_locid="740">Entity Instance ID</p>
+                    </stentry>
+                    <stentry ixia_locid="742">
+                        <p ixia_locid="744">Severity</p>
+                    </stentry>
+                    <stentry ixia_locid="746">
+                        <p ixia_locid="748">Proposed Repair Action</p>
+                    </stentry>
+                </sthead>
+                <strow>
+                    <stentry ixia_locid="750">
+                        <p ixia_locid="752">210.001</p>
+                    </stentry>
+                    <stentry ixia_locid="754">
+                        <p ixia_locid="756">System Backup in progress</p>
+                    </stentry>
+                    <stentry ixia_locid="758">
+                        <p ixia_locid="760">host=controller</p>
+                    </stentry>
+                    <stentry ixia_locid="762">
+                        <p ixia_locid="764">m</p>
+                    </stentry>
+                    <stentry ixia_locid="766">
+                        <p ixia_locid="768">No action required.</p>
+                    </stentry>
+                </strow>
+            </simpletable>
+        </section>
+        <section id="section_N10A1E_N1001F_N10001" ixia_locid="727">
+            <title ixia_locid="729">System Configuration</title>
+            <simpletable id="simpletable_q5m_hh4_wq" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
+                <sthead>
+                    <stentry ixia_locid="731">
+                        <p ixia_locid="733">Alarm ID</p>
+                    </stentry>
+                    <stentry ixia_locid="735">
+                        <p ixia_locid="737">Reason Text</p>
+                    </stentry>
+                    <stentry ixia_locid="739">
+                        <p ixia_locid="741">Entity Instance ID</p>
+                    </stentry>
+                    <stentry ixia_locid="743">
+                        <p ixia_locid="745">Severity</p>
+                    </stentry>
+                    <stentry ixia_locid="747">
+                        <p ixia_locid="749">Proposed Repair Action</p>
+                    </stentry>
+                </sthead>
+                <strow>
+                    <stentry ixia_locid="751">
+                        <p ixia_locid="753">250.001</p>
+                    </stentry>
+                    <stentry ixia_locid="755">
+                        <p ixia_locid="757">Configuration is out of date</p>
+                    </stentry>
+                    <stentry ixia_locid="759">
+                        <p ixia_locid="840">host=&lt;hostname&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="763">
+                        <p ixia_locid="765">M</p>
+                    </stentry>
+                    <stentry ixia_locid="767">
+                        <p ixia_locid="769">Administratively lock and unlock &lt;hostname&gt; to update
+                            config.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="842">
+                        <p ixia_locid="843">250.010</p>
+                    </stentry>
+                    <stentry ixia_locid="844">
+                        <p ixia_locid="845">&lt;hostname&gt; Provisioning compute required. (This alarm only applies in
+                            the 2-Server/Combined load).</p>
+                    </stentry>
+                    <stentry ixia_locid="846">
+                        <p ixia_locid="841">host=&lt;hostname&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="847">
+                        <p ixia_locid="848">M</p>
+                    </stentry>
+                    <stentry ixia_locid="849">
+                        <p ixia_locid="850">Administratively lock and unlock &lt;hostname&gt; to update provisioning of
+                            Compute functionality.</p>
+                    </stentry>
+                </strow>
+            </simpletable>
+        </section>
+        <section id="section_N1080D_N1001F_N10001" ixia_locid="605">
+            <title ixia_locid="606">Software Management Alarms</title>
+            <simpletable id="simpletable_mrt_hjg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
+                <sthead>
+                    <stentry ixia_locid="521">
+                        <p ixia_locid="529">Alarm ID</p>
+                    </stentry>
+                    <stentry ixia_locid="537">
+                        <p ixia_locid="545">Reason Text</p>
+                    </stentry>
+                    <stentry ixia_locid="553">
+                        <p ixia_locid="561">Entity Instance ID</p>
+                    </stentry>
+                    <stentry ixia_locid="569">
+                        <p ixia_locid="577">Severity</p>
+                    </stentry>
+                    <stentry ixia_locid="585">
+                        <p ixia_locid="593">Proposed Repair Action</p>
+                    </stentry>
+                </sthead>
+                <strow>
+                    <stentry ixia_locid="354">
+                        <p ixia_locid="355">900.001</p>
+                    </stentry>
+                    <stentry ixia_locid="356">
+                        <p ixia_locid="357">Patching operation in progress</p>
+                    </stentry>
+                    <stentry ixia_locid="358">
+                        <p ixia_locid="359">host=controller</p>
+                    </stentry>
+                    <stentry ixia_locid="360">
+                        <p ixia_locid="361">m</p>
+                    </stentry>
+                    <stentry ixia_locid="362">
+                        <p ixia_locid="363">Complete reboots of affected hosts.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="364">
+                        <p ixia_locid="365">900.002</p>
+                    </stentry>
+                    <stentry ixia_locid="366">
+                        <p ixia_locid="367">Obsolete patch in system</p>
+                    </stentry>
+                    <stentry ixia_locid="368">
+                        <p ixia_locid="369">host=controller</p>
+                    </stentry>
+                    <stentry ixia_locid="370">
+                        <p ixia_locid="371">W</p>
+                    </stentry>
+                    <stentry ixia_locid="372">
+                        <p ixia_locid="373">Remove and delete obsolete patches.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="374">
+                        <p ixia_locid="375">900.003</p>
+                    </stentry>
+                    <stentry ixia_locid="376">
+                        <p ixia_locid="377">Patch host install failure</p>
+                    </stentry>
+                    <stentry ixia_locid="378">
+                        <p ixia_locid="379">host=&lt;<varname ixia_locid="682">hostname</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="380">
+                        <p ixia_locid="381">M</p>
+                    </stentry>
+                    <stentry ixia_locid="382">
+                        <p ixia_locid="383">Undo patching operation.</p>
+                    </stentry>
+                </strow>
+            </simpletable>
+        </section>
+        <section id="section_N108F4_N1001F_N10001" ixia_locid="607">
+            <title ixia_locid="608">Virtual Machine Instance Alarms</title>
+            <simpletable id="simpletable_qbs_njg_vp" outputclass="wide" relcolwidth="1.2* 3.0* 3.0* 1.2* 4.0*">
+                <sthead>
+                    <stentry ixia_locid="522">
+                        <p ixia_locid="530">Alarm ID</p>
+                    </stentry>
+                    <stentry ixia_locid="538">
+                        <p ixia_locid="546">Reason Text</p>
+                    </stentry>
+                    <stentry ixia_locid="554">
+                        <p ixia_locid="562">Entity Instance ID</p>
+                    </stentry>
+                    <stentry ixia_locid="570">
+                        <p ixia_locid="578">Severity</p>
+                    </stentry>
+                    <stentry ixia_locid="586">
+                        <p ixia_locid="594">Proposed Repair Action</p>
+                    </stentry>
+                </sthead>
+                <strow>
+                    <stentry ixia_locid="394">
+                        <p ixia_locid="395">700.001</p>
+                    </stentry>
+                    <stentry ixia_locid="396">
+                        <p ixia_locid="397">Instance has encountered a non-recoverable error</p>
+                    </stentry>
+                    <stentry ixia_locid="398">
+                        <p ixia_locid="399">instance=&lt;<varname ixia_locid="683">instance_uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="400">
+                        <p ixia_locid="401">C</p>
+                    </stentry>
+                    <stentry ixia_locid="402">
+                        <p ixia_locid="403">The system will automatically attempt to re-start the
+                            instance at regular intervals. No repair action required.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="404">
+                        <p ixia_locid="405">700.002</p>
+                    </stentry>
+                    <stentry ixia_locid="406">
+                        <p ixia_locid="407">Instance is stopped or shutoff</p>
+                    </stentry>
+                    <stentry ixia_locid="408">
+                        <p ixia_locid="409">instance=&lt;<varname ixia_locid="684">instance_uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="410">
+                        <p ixia_locid="411">C</p>
+                    </stentry>
+                    <stentry ixia_locid="412">
+                        <p ixia_locid="413">Restart the instance (<cmdname ixia_locid="685">nova start
+                                    &lt;instance&gt;</cmdname>)</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="414">
+                        <p ixia_locid="415">700.003</p>
+                    </stentry>
+                    <stentry ixia_locid="416">
+                        <p ixia_locid="417">Instance is rebooting</p>
+                    </stentry>
+                    <stentry ixia_locid="418">
+                        <p ixia_locid="419">instance=&lt;<varname ixia_locid="686">instance_uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="420">
+                        <p ixia_locid="421">C</p>
+                    </stentry>
+                    <stentry ixia_locid="422">
+                        <p ixia_locid="423">Wait for reboot completion. If problem persists contact next level of support.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="424">
+                        <p ixia_locid="425">700.004</p>
+                    </stentry>
+                    <stentry ixia_locid="426">
+                        <p ixia_locid="427">Instance is paused</p>
+                    </stentry>
+                    <stentry ixia_locid="428">
+                        <p ixia_locid="429">instance=&lt;<varname ixia_locid="687">instance_uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="430">
+                        <p ixia_locid="431">C</p>
+                    </stentry>
+                    <stentry ixia_locid="432">
+                        <p ixia_locid="433">Unpause the instance (<cmdname ixia_locid="688">nova unpause
+                                &lt;instance&gt;</cmdname>)</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="434">
+                        <p ixia_locid="435">700.005</p>
+                    </stentry>
+                    <stentry ixia_locid="436">
+                        <p ixia_locid="437">Instance is suspended</p>
+                    </stentry>
+                    <stentry ixia_locid="438">
+                        <p ixia_locid="439">instance=&lt;<varname ixia_locid="689">instance_uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="440">
+                        <p ixia_locid="441">C</p>
+                    </stentry>
+                    <stentry ixia_locid="442">
+                        <p ixia_locid="443">Resume the instance (<cmdname ixia_locid="690">nova
+                                resume &lt;instance&gt;</cmdname>)</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="444">
+                        <p ixia_locid="445">700.006</p>
+                    </stentry>
+                    <stentry ixia_locid="446">
+                        <p ixia_locid="447">Instance is evacuating or rebuilding</p>
+                    </stentry>
+                    <stentry ixia_locid="448">
+                        <p ixia_locid="449">instance=&lt;<varname ixia_locid="691">instance_uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="450">
+                        <p ixia_locid="451">C</p>
+                    </stentry>
+                    <stentry ixia_locid="452">
+                        <p ixia_locid="453">Wait for evacuate completion. Check health of compute
+                            nodes and network. If problem persists contact next level of
+                            support.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="454">
+                        <p ixia_locid="455">700.007</p>
+                    </stentry>
+                    <stentry ixia_locid="456">
+                        <p ixia_locid="457">Instance is live migrating</p>
+                    </stentry>
+                    <stentry ixia_locid="458">
+                        <p ixia_locid="801">instance=&lt;<varname ixia_locid="804">instance_uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="460">
+                        <p ixia_locid="461">W</p>
+                    </stentry>
+                    <stentry ixia_locid="462">
+                        <p ixia_locid="463">Wait for live migration completion. If problem persists contact next level of support.</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="464">
+                        <p ixia_locid="465">700.008</p>
+                    </stentry>
+                    <stentry ixia_locid="466">
+                        <p ixia_locid="467">Instance is cold migrating or resizing</p>
+                    </stentry>
+                    <stentry ixia_locid="468">
+                        <p ixia_locid="469">instance=&lt;<varname ixia_locid="693">instance_uuid</varname>&gt;</p>
+                    </stentry>
+                    <stentry ixia_locid="470">
+                        <p ixia_locid="471">C</p>
+                    </stentry>
+                    <stentry ixia_locid="472">
+                        <p ixia_locid="473">Wait for cold migration or resize completion. If
+                                (<cmdname ixia_locid="694">nova show &lt;instance&gt;</cmdname>) reports a STATUS of
+                            VERIFY_RESIZE, then a resize confirmation is required (<cmdname ixia_locid="695">nova
+                                resize-confirm &lt;instance&gt;</cmdname>). If problem persists
+                            contact next level of support.</p>
+                    </stentry>
+                </strow>
+            </simpletable>
+        </section>
+  </refbody>
+</reference-wr>

@@ -82,6 +82,7 @@
       format="ditamap" navtitle="Installation Guide" locktitle="yes"/>
     <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
       navtitle="Administrator Guide" locktitle="yes"/>
+    <mapref href="CarrierGrade/AdministratorGuide/carrier-grade-admin-guide.ditamap"/>
     <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
       locktitle="yes"/>
     <topicref href="CarrierGrade/Installation/carrier-grade-backup-restore.dita" toc="yes"
