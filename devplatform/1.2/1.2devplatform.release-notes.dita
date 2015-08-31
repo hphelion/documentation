@@ -65,7 +65,8 @@ Administrators can now run even more operations from the HP Helion <tm tmtype="r
 <p>
   <b>Windows Nodes do not support Linux services</b>
 </p>
-<p>Linux services -- for example, redis or mysql -- can not be added to <tm tmtype="reg">Windows</tm> nodes.</p>
+<p>Linux services - for example, Redis or MySQL - can not be added to <tm tmtype="reg">Windows</tm>
+        nodes.</p>
   <p><b>An ALS cluster cannot be created with an existing MySQL database.</b></p>
   <p>Attempting to create an ALS cluster with an existing MySQL database triggers the error message:
           <codeph>"validating 'services' failed, reason: The EnabledServices flag does not specify
