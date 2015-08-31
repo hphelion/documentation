@@ -259,12 +259,12 @@
         is indicated by the following messages in the dmesg log and the absence of network
         connectivity to the NIC:
         <codeblock> bnx2x: [bnx2x_prev_unload_common:10433(eth%d)]Failed to empty BRB, hope for the best
-      ...
-      bnx2x: [bnx2x_stats_update:1268(eth0)]storm stats were not updated for 3 times
-      bnx2x: [bnx2x_stats_update:1269(eth0)]driver assert
-      bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------
-      .....
-      bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------
+ ...
+ bnx2x: [bnx2x_stats_update:1268(eth0)]storm stats were not updated for 3 times
+ bnx2x: [bnx2x_stats_update:1269(eth0)]driver assert
+ bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------
+ .....
+ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------
       </codeblock>
         This issue is resolved by rebooting the server. </p>
       
