@@ -111,7 +111,7 @@
         </b>through <b>hosN</b> rather than <b>eth0</b> through <b>ethN</b>. Bearing in mind that
         the new naming must be consistent across the entire Input Model.</p></section>
     <section id="KnownIssues">
-      <title>Known Issues in this Release</title>
+      <title>Limitations in this Release</title>
       <p><b>TLS is not supported</b></p>
       <p>TLS is not supported for any traffic in Beta1.</p>
       <p><b>HP Helion Development Platform</b></p>
@@ -235,7 +235,8 @@
       <ul>
         <li>3Par storage is not supported in Beta 1</li>
       </ul>
-      
+    </section>
+    <section id="troubleshooting"><title>Troubleshooting</title>
       <p><b>Wait for SSH phase in bm-reimage.yml hangs </b></p>
       <p>This issue has been observed during deployment to systems configured with Qlogic based
         BCM578XX network adapters utilizing the bnx2x driver and is currently under investigation.
