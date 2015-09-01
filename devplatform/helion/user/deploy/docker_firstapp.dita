@@ -3,9 +3,7 @@
 <topic id="topic_yw1_w3r_dt">
   <title>Create Your First Docker App</title>
   <body><section>
-    <p>This Helion Development Platform release introduces the ability to deploy Docker images. This
-      provides an alternative to the usual method of application deployment used by Cloud Foundry
-      and Heroku, which is driven by buildpacks. This example takes an existing app and creates a
+    <p>This Helion Development Platform release introduces the ability to deploy Docker images. This example takes an existing app and creates a
       Docker image that will run in ALS and take advantage of the provisioned services. </p></section><section><title>Start With a New "Stack" </title>
     <p>One of the advantages to using Docker is the ability to run different flavors of Linux. While ALS is based on Ubuntu 12.04 LTS, Docker images can be based on a
       different distro, such as Debian, CentOS, or even Alpine Linux images.</p><p>
