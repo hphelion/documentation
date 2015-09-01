@@ -33,8 +33,8 @@
       <title>Before you Start</title>
       <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
       <ul>
-        <li>Setup the iLO Advanced license in the iLO configuration. Make sure the iLO user has admin
-          privileges.</li>
+        <li>Setup the iLO Advanced license in the iLO configuration. Make sure the iLO user has
+          admin privileges.</li>
         <li> HP Helion OpenStack 2.0 Beta 1 will detect and use the "BIOS" mode you have selected
           for each node; UEFI or legacy BIOS. UEFI support is new in Beta 1.</li>
         <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
@@ -75,11 +75,12 @@
         <li>Log in to the deployer node as the user you created during the setup phase, and mount
           the install media at /media/cdrom, for example,
           <codeblock>sudo mount &lt;xxx.iso> /media/cdrom</codeblock></li>
-        <li> Unpack the following tarball:  Note this file name will
-          change<codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-20150827T092008Z.tgz </codeblock>
+        <li> Unpack the following tarball: Note this file name will change<codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-xxx.tgz</codeblock>
+          <note>Your filename may vary, you can use <codeph>ls /media/cdrom/hos-2.0.0</codeph> to
+            confirm.</note>
         </li>
-        <li>Run the following included script: <codeblock>~/hos-2.0.0-b.1/hos-init.bash </codeblock>
-         <!-- was ~/hos-deployer/hos-init.bash --></li>
+        <li>Run the following included script: <codeblock>~/hos-2.0.0-b.1/hos-init.bash</codeblock>
+          <!-- was ~/hos-deployer/hos-init.bash --></li>
       </ol>
       <p>At the end of this section you should have a local directory structure, as described
         below:</p>
@@ -112,8 +113,10 @@ helion/hos/                    Directory contains files used by the installer
                   is recommended that you set your <codeph>start-address</codeph> at .10 in your
                   subnet range as to avoid conflicts with the virtual IPs being used by the rest of
                   your environment.</li>
+                <li>The <codeph>data/net_interfaces.yml</codeph> file contains information related
+                  to your network interfaces.</li>
                 <li>The <codeph>data/control_plane.yml</codeph> file contains information about the
-                  services that will be installed.</li>
+                  services that will be installed. No edits should be needed for this file.</li>
                 <li>The <codeph>/data/disks_controller.yml</codeph> contains the Swift information
                   (swiftobj disk-group). This describes what disks on each of the servers are
                   assigned to Swift and the rings that uses those drives. To know more about the
@@ -124,8 +127,6 @@ helion/hos/                    Directory contains files used by the installer
                   logical names of data to locations on a particular disks. To know more about the
                   rings, refer to <xref href="swift/ring_specifications.dita#ring-specification"
                     >ring specification</xref>.</li>
-                <li>In the <codeph>data/net_interfaces.yml</codeph> file, replace all instances of
-                  "bond-mode: 1" to "bond-mode: active-backup".</li>
               </ul></li>
             <li>Commit your configuration to the <xref href="using_git.dita#topic_u3v_1yz_ct">local
                 git repo</xref>, as follows:
