@@ -25,7 +25,7 @@
 debugging, but most require a connection between the running application
 code and the debugging tool or IDE on a port and protocol other than
 standard HTTP(S).</p>
-<p>Application Lifecycle Service makes this possible through the <xref href="../services/1.2port-service.dita">Harbor port service</xref>, and the
+<p>Application Lifecycle Service makes this possible through the <xref href="../services/port-service.dita">Harbor port service</xref>, and the
   <xref href="../reference/client-ref-management.dita#topic50918/command-push" type="section"><i>push</i></xref> command has
 a <codeph>-d</codeph> option to set up port forwarding for a remote
 debugging session automatically.</p>

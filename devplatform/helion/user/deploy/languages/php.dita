@@ -156,7 +156,7 @@ directives to correct the server name or port in URLs.</p>
 <section id="persistent-sessions-php"> <title>Persistent Sessions (PHP)</title>
 <p>One of the issues with managing a PHP application running multiple
 instances is dealing with user sessions.</p>
-  <p>If your application uses a <xref href="../../services/1.2filesystem.dita"><i>shared filesystem
+  <p>If your application uses a <xref href="../../services/filesystem.dita"><i>shared filesystem
             service</i></xref>, you can store user sessions there. The following <i>manifest.yml</i>
         snippet creates a persistent filesystem service, creates a directory for sessions, and
         writes a PHP config file to set the path to the session directory:</p>
@@ -166,7 +166,7 @@ hooks:
   post-staging:
   - mkdir -p "$HELION_FILESYSTEM"/sessions
   - echo "session.save_path = $HELION_FILESYSTEM/sessions" &gt; "$HELION_APP_ROOT"/apache/php/sessions.ini</codeblock>
-<p>For better performance, use a <xref href="../../services/1.2memcached.dita">
+<p>For better performance, use a <xref href="../../services/memcached.dita">
 <i>Memcached</i>
 </xref> service for
 session storage instead:</p>

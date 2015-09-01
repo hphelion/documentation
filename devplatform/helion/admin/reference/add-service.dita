@@ -31,7 +31,7 @@
 <li>
 <b>Provisioned Services</b>: <i>Instances</i> of the System Services created for use by end-user applications.</li>
 <li>
-<xref href="../../user/services/1.2user-provided.dita" >
+<xref href="../../user/services/user-provided.dita" >
 <b>User-Provided Service Instances</b>
 </xref>: Credentials and connection information for <i>external</i> services.</li>
 </ul>

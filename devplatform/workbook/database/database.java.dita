@@ -172,7 +172,7 @@ applications:
 <li>You interact with and deploy your app using the Helion CLI or the Eclipse <xref href="../../1.2devplatform.eclipse.dita" >plugin</xref>.</li>
 </ol>
 <p>
-<xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/1.2helloworld.java.dita" >Previous Sample</xref> | <xref href="../messaging/1.2messaging.java.dita" >Next Sample</xref>
+<xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/helloworld.java.dita" >Previous Sample</xref> | <xref href="../messaging/messaging.java.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

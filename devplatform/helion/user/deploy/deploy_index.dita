@@ -123,20 +123,20 @@ web server, application dependencies, databases, and other services.</p>
 <section id="services"> <title>Services</title>
 <ul>
 <li>
-          <xref href="../services/1.2data-services.dita#topic19772" type="section"  >Data Services</xref>
+          <xref href="../services/data-services.dita#topic19772" type="section"  >Data Services</xref>
         </li>
 <li>
-          <xref href="../services/1.2filesystem.dita#topic4410" type="section"  >Persistent File System</xref>
+          <xref href="../services/filesystem.dita#topic4410" type="section"  >Persistent File System</xref>
         </li>
 <li>
-          <xref href="../services/1.2memcached.dita#topic2514" type="section"  >Memcached Service</xref>
+          <xref href="../services/memcached.dita#topic2514" type="section"  >Memcached Service</xref>
         </li>
 <li>
-          <xref href="../services/1.2port-service.dita#topic7511/requesting-a-port" type="section"  >Port
+          <xref href="../services/port-service.dita#topic7511/requesting-a-port" type="section"  >Port
             Service</xref>
         </li>
 <li>
-          <xref href="../services/1.2user-provided.dita#topic4060/creating" type="section"  >User-Provided
+          <xref href="../services/user-provided.dita#topic4060/creating" type="section"  >User-Provided
             Services</xref>
         </li>
 </ul>

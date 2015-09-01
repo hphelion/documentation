@@ -40,7 +40,7 @@
       user applications require other protocols, consider setting up Harbor.</p>
 <p>The Harbor service provisions ports to user applications. Information on using the Harbor port
       service with deployed applications is in the <xref
-        href="../../user/services/1.2port-service.dita">Port Service (Harbor)
+        href="../../user/services/port-service.dita">Port Service (Harbor)
       documentation</xref>.</p>
 <section id="architecture"> <title>Architecture</title>
 <p>A Harbor node is designed to sit on the edge of the cluster network

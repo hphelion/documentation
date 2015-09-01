@@ -59,7 +59,7 @@ if (helion_services != null &amp;&amp; helion_services.length() &gt; 0) {
 }</codeblock>
 </section>
 <section id="example"> <title>Example</title>
-<p>The <xref href="../../../../workbook/database/1.2database.java.dita" >Java database sample</xref> sample
+<p>The <xref href="../../../../workbook/database/database.java.dita" >Java database sample</xref> sample
 demonstrates a simple Java application using a MySQL service.</p>
 </section>
 <section id="catalina-opts"> <title>CATALINA_OPTS</title>

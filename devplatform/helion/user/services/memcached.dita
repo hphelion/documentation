@@ -25,7 +25,7 @@
 applications and frameworks. It is available in Application Lifecycle Service as a service
 which can be shared by application instances.</p>
 <section id="using-the-service"> <title>Using the Service</title>
-    <p>As with other <xref href="1.2data-services.dita#topic19772">data services</xref>, the
+    <p>As with other <xref href="data-services.dita#topic19772">data services</xref>, the
                 location and port of the memcached service is exposed to the application via
                 environment variables: MEMCACHED_URL or VCAP_SERVICES.</p>
 <p>The easiest way to connect an application to a Memcached service is to
@@ -39,7 +39,7 @@ port of the service created for the application. For example:</p>
 <codeblock>kato config set memcached_node sasl_enabled true
 kato restart memcached</codeblock>
     <p>With SASL enabled, applications must parse the <xref
-                    href="1.2data-services.dita#topic19772/vcap-services"
+                    href="data-services.dita#topic19772/vcap-services"
                     ><i>VCAP_SERVICES</i></xref> environment variables to extract the
                     <codeph>name</codeph>, <codeph>user</codeph>, and <codeph>password</codeph>
                 strings from the memcached <codeph>credentials</codeph> list. Using SASL with

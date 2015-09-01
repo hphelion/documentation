@@ -144,7 +144,7 @@ take on one or more of the following roles:</p>
 </li>
 <li>mdns (intended for micro clouds)</li>
 <li>
-  <xref href="../../user/services/1.2filesystem.dita#topic4410/creating-a-persistent-file-system" type="section"   >filesystem</xref>
+  <xref href="../../user/services/filesystem.dita#topic4410/creating-a-persistent-file-system" type="section"   >filesystem</xref>
 </li>
 <li>
   <xref href="../../user/reference/glossary.dita#topic6187/term-mysql" type="section"   >mysql</xref>
@@ -159,7 +159,7 @@ take on one or more of the following roles:</p>
   <xref href="../../user/reference/glossary.dita#topic6187/term-Redis" type="section"   >redis</xref>
 </li>
 <li>
-<xref href="../../user/services/1.2memcached.dita" >memcached</xref>
+<xref href="../../user/services/memcached.dita" >memcached</xref>
 </li>
 <li>
 <xref href="../cluster/harbor.dita" >Harbor</xref> (TCP/UDP port service)</li>

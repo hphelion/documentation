@@ -39,10 +39,10 @@
           format="html" scope="external">URL encode</xref> the username or password strings as
         needed.</note></section> <section><title>Docker Apps and Data Services</title>
                     
-         <p>Docker apps can be bound to <xref href="../../services/1.2data-services.dita">data services</xref> just
+         <p>Docker apps can be bound to <xref href="../../services/data-services.dita">data services</xref> just
             like staged apps. $VCAP_SERVICES and the URL-based
             environment variables are injected in the container and can be read by
-            the application. See the <xref href="../../services/1.2data-services.dita">data services</xref> 
+            the application. See the <xref href="../../services/data-services.dita">data services</xref> 
               documentation for instructions on creating data service instances and
               binding them to applications.</p><p>
               

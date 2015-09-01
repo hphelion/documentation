@@ -52,9 +52,9 @@ var host = process.env.VCAP_APP_HOST || "127.0.0.1";</codeblock>
 <section id="using-data-services"> <title>Using Data Services</title>
 <p>Data services need to be configured with values from VCAP_SERVICES, DATABASE_URL, or a
         database-specific environment variable (see also <xref
-          href="../../services/1.2data-services.dita#topic19772/using-database-services">Using
+          href="../../services/data-services.dita#topic19772/using-database-services">Using
           Database Services</xref>).</p>
-<p>If the database module you use supports URL-formatted connection strings, using the <xref href="../../services/1.2data-services.dita#topic19772/database-specific-urls">database-specific</xref> URL variable (REDIS_URL, MONGODB_URL, etc.) is often
+<p>If the database module you use supports URL-formatted connection strings, using the <xref href="../../services/data-services.dita#topic19772/database-specific-urls">database-specific</xref> URL variable (REDIS_URL, MONGODB_URL, etc.) is often
         the simplest option.</p>
 <p>Use the variable in your code to connect your application to the
 database. For example:</p>

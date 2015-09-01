@@ -702,7 +702,7 @@ list</i>
         security implications. See the <xref
           href="../server/docker.dita#topic7767/docker-privileged-containers" type="section"
           >Privileged Containers</xref> section for details.</note>
-<p>By default, application containers are unable to mount external filesystems (other than the built-in <xref href="../../user/services/1.2filesystem.dita" >Filesystem Service</xref> via network protocols such as NFS.</p>
+<p>By default, application containers are unable to mount external filesystems (other than the built-in <xref href="../../user/services/filesystem.dita" >Filesystem Service</xref> via network protocols such as NFS.</p>
   <p>If the system has been configured to use <xref href="../server/docker.dita#topic7767/docker-privileged-containers" type="section" >privileged containers</xref> and <i>sudo</i> permissions have been explicitly allowed in the quota, NFS partitions can be mounted in application containers using application configuration similar to the following manifest.yml excerpt:
 requirements:</p>
 <codeblock>ubuntu:

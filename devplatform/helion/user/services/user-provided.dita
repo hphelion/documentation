@@ -24,7 +24,7 @@
 <p>User-provided service instances allow you connect applications running
 on Application Lifecycle Service to specified external data services, without hard coding the
 credentials into the application. The service instance provides the
-connection information to the application via the VCAP_SERVICES environment variables, just like the <xref href="1.2data-services.dita#topic19772/configuring-helion-data-services" >built-in data services</xref>.</p>
+connection information to the application via the VCAP_SERVICES environment variables, just like the <xref href="data-services.dita#topic19772/configuring-helion-data-services" >built-in data services</xref>.</p>
 <p>Think of user-provided services as a credentials database for your Application Lifecycle Service application space. You provide the connection information and ALS stores it in a <xref type="section" href="#topic4060/using">
 <i>JSON object</i>
 </xref> which can then be bound any applications in the space.</p>
@@ -73,7 +73,7 @@ prod-db-int
 |              |                              |
 | Applications | django-cms                   |
 +--------------+------------------------------+</codeblock>
-  <p>The <xref href="1.2data-services.dita#topic19772/vcap-services" type="section"   >
+  <p>The <xref href="data-services.dita#topic19772/vcap-services" type="section"   >
 <i>VCAP_SERVICES</i>
 </xref>
 variables will expose the connection information within the application

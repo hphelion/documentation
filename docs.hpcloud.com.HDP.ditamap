@@ -183,27 +183,27 @@
         navtitle="Eclipse Deployment Plugin"/>
       <!--permalink: /helion/devplatform/workbook/database/java/-->
       <topichead navtitle="JAVA Code Samples">
-        <topicref href="devplatform/workbook/helloworld/1.2helloworld.java.dita" locktitle="yes"
+        <topicref href="devplatform/workbook/helloworld/helloworld.java.dita" locktitle="yes"
           navtitle="Java Hello World Sample"/>
-        <topicref href="devplatform/workbook/database/1.2database.java.dita" locktitle="yes"
+        <topicref href="devplatform/workbook/database/database.java.dita" locktitle="yes"
           navtitle="Java MySQL Database Sample"/>
-        <topicref href="devplatform/workbook/messaging/1.2messaging.java.dita" locktitle="yes"
+        <topicref href="devplatform/workbook/messaging/messaging.java.dita" locktitle="yes"
           navtitle="Java RabbitMQ Messaging Sample"/>
       </topichead>
       <topichead navtitle="Node Code Samples">
-        <topicref href="devplatform/workbook/helloworld/1.2helloworld.node.dita" locktitle="yes"
+        <topicref href="devplatform/workbook/helloworld/helloworld.node.dita" locktitle="yes"
           navtitle="Node Hello World Sample"/>
-        <topicref href="devplatform/workbook/database/1.2database.node.dita" locktitle="yes"
+        <topicref href="devplatform/workbook/database/database.node.dita" locktitle="yes"
           navtitle="Node MySQL Database Sample"/>
-        <topicref href="devplatform/workbook/messaging/1.2messaging.node.dita" locktitle="yes"
+        <topicref href="devplatform/workbook/messaging/messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample"/>
       </topichead>
       <topichead navtitle="PHP Code Samples">
-        <topicref href="devplatform/workbook/helloworld/1.2helloworld.php.dita" locktitle="yes"
+        <topicref href="devplatform/workbook/helloworld/helloworld.php.dita" locktitle="yes"
           navtitle="PHP Hello World Sample "/>
-        <topicref href="devplatform/workbook/database/1.2database.php.dita" locktitle="yes"
+        <topicref href="devplatform/workbook/database/database.php.dita" locktitle="yes"
           navtitle="PHP MySQL Database Sample"/>
-        <topicref href="devplatform/workbook/messaging/1.2messaging.php.dita" locktitle="yes"
+        <topicref href="devplatform/workbook/messaging/messaging.php.dita" locktitle="yes"
           navtitle="PHP RabbitMQ Messaging Sample"/>
       </topichead>
       <!--permalink: /helion/devplatform/workbook/database/node/-->
@@ -307,23 +307,23 @@
       <!--permalink: /helion/devplatform/connectdatabase/-->
       <!--permalink: /helion/devplatform/databaseservice/-->
       <!--permalink: /helion/devplatform/als/user/services/data-services/-->
-      <topicref href="devplatform/helion/user/services/1.2data-services.dita" locktitle="yes"
+      <topicref href="devplatform/helion/user/services/data-services.dita" locktitle="yes"
         navtitle="Application Lifecycle Service Data Services"/>
       <topicref href="devplatform/helion/admin/cluster/external-db.dita" locktitle="yes"
         navtitle="External Data Services"/>
-      <topicref href="devplatform/helion/user/services/1.2memcached.dita" locktitle="yes"
+      <topicref href="devplatform/helion/user/services/memcached.dita" locktitle="yes"
         navtitle="Memcached Service"/>
       <!--permalink: /helion/devplatform/als/user/services/filesystem/-->
-      <topicref href="devplatform/helion/user/services/1.2filesystem.dita" locktitle="yes"
+      <topicref href="devplatform/helion/user/services/filesystem.dita" locktitle="yes"
         navtitle="Persistent File System"/>
       <!--permalink: /helion/devplatform/als/user/services/memcached/-->
       <!--permalink: /helion/devplatform/als/user/services/port-service/-->
-      <topicref href="devplatform/helion/user/services/1.2port-service.dita" locktitle="yes"
+      <topicref href="devplatform/helion/user/services/port-service.dita" locktitle="yes"
         navtitle="Port Service (Harbor)"/>
       <topicref href="devplatform/helion/admin/cluster/harbor.dita" locktitle="yes"
         navtitle="Harbor TCP/UDP Port Service "/>
       <!--permalink: /helion/devplatform/als/user/services/user-provided/-->
-      <topicref href="devplatform/helion/user/services/1.2user-provided.dita" locktitle="yes"
+      <topicref href="devplatform/helion/user/services/user-provided.dita" locktitle="yes"
         navtitle="User-Provided Services"/>
     </topicref>
     <topicref href="devplatform/helion/helion_index.dita" locktitle="yes"

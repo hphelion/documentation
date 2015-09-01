@@ -120,19 +120,19 @@ web server, application dependencies, databases, and other services.</p>
 <section id="services"> <title>Services</title>
 <ul>
 <li>
-<xref href="../user/services/1.2data-services.dita">Data Services</xref>
+<xref href="../user/services/data-services.dita">Data Services</xref>
 </li>
 <li>
-<xref href="../user/services/1.2filesystem.dita">Persistent File System</xref>
+<xref href="../user/services/filesystem.dita">Persistent File System</xref>
 </li>
 <li>
-<xref href="../user/services/1.2memcached.dita">Memcached Service</xref>
+<xref href="../user/services/memcached.dita">Memcached Service</xref>
 </li>
 <li>
-<xref href="../user/services/1.2port-service.dita">Port Service</xref>
+<xref href="../user/services/port-service.dita">Port Service</xref>
 </li>
 <li>
-<xref href="../user/services/1.2user-provided.dita">User-Provided Services</xref>
+<xref href="../user/services/user-provided.dita">User-Provided Services</xref>
 </li>
 </ul>
 </section>

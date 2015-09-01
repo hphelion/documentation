@@ -38,7 +38,7 @@ least the <codeph>django</codeph> project:</p>
 django==1.4
 mysql-python</codeblock>
 <section id="configuring-database"> <title>Configuring the Database</title>
-  <p>See <xref href="../../../services/1.2data-services.dita#topic19772/using-external-databases" type="section">Using Configured Database Services</xref> for more information on connecting with database services.</p>
+  <p>See <xref href="../../../services/data-services.dita#topic19772/using-external-databases" type="section">Using Configured Database Services</xref> for more information on connecting with database services.</p>
 <ol>
 <li> You must modify the <codeph>DATABASES</codeph> variable of your project's <i>settings.py</i> as
           shown below to detect the database service provisioned by Helion:<codeblock>import urlparse

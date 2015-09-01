@@ -152,7 +152,7 @@ public class HelloServlet extends HttpServlet {
 <li>You can deploy your app using either the Helion CLI or the <xref href="../../1.2devplatform.eclipse.dita" >Eclipse plugin</xref>.</li>
 </ol>
 <p>
-<xref href="../../1.2devplatform.appdev.dita">Exit Samples</xref>/ | <xref href="../messaging/1.2messaging.java.dita">Previous Sample</xref> | <xref href="../database/1.2database.java.dita">Next Sample</xref>
+<xref href="../../1.2devplatform.appdev.dita">Exit Samples</xref>/ | <xref href="../messaging/messaging.java.dita">Previous Sample</xref> | <xref href="../database/database.java.dita">Next Sample</xref>
 </p>
 </section>
 </body>

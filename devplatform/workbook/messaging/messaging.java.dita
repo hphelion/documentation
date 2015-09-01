@@ -212,8 +212,8 @@ applications:
                         href="../../1.2devplatform.eclipse.dita">Eclipse deployment
                     plugin</xref>.</li>
             </ol>
-            <xref href="../database/1.2database.java.dita">Previous Sample</xref> | <xref
-                href="../helloworld/1.2helloworld.java.dita">Next Sample</xref>
+            <xref href="../database/database.java.dita">Previous Sample</xref> | <xref
+                href="../helloworld/helloworld.java.dita">Next Sample</xref>
         </section>
 </body>
 </topic>

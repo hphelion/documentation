@@ -47,17 +47,17 @@
 <section id="java"> <title>Java</title>
 <ol>
 <li>
-          <xref href="workbook/helloworld/1.2helloworld.java.dita">Hello
+          <xref href="workbook/helloworld/helloworld.java.dita">Hello
             World</xref>
           <!--A BR tag was used here in the original source.--> The Hello World sample is as simple
           as it gets: Hello World!</li>
 <li>
-          <xref href="workbook/database/1.2database.java.dita">Working with
+          <xref href="workbook/database/database.java.dita">Working with
             Databases</xref>
           <!--A BR tag was used here in the original source.--> Create a database and execute a
           query against it. </li>
 <li>
-          <xref href="workbook/messaging/1.2messaging.java.dita">Working with
+          <xref href="workbook/messaging/messaging.java.dita">Working with
             Messaging</xref>
           <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
           message.</li>
@@ -67,17 +67,17 @@
 <section id="node"> <title>Node</title>
 <ol>
 <li>
-          <xref href="workbook/helloworld/1.2helloworld.node.dita">Hello
+          <xref href="workbook/helloworld/helloworld.node.dita">Hello
             World</xref>
           <!--A BR tag was used here in the original source.--> The Hello World sample is as simple
           as it gets: Hello World!</li>
 <li>
-          <xref href="workbook/database/1.2database.node.dita">Working with
+          <xref href="workbook/database/database.node.dita">Working with
             Databases</xref>
           <!--A BR tag was used here in the original source.--> Create a database and execute a
           query against it.</li>
 <li>
-          <xref href="workbook/messaging/1.2messaging.node.dita">Working with
+          <xref href="workbook/messaging/messaging.node.dita">Working with
             Messaging</xref>
           <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
           message.</li>
@@ -87,17 +87,17 @@
 <section id="PHP"> <title>PHP</title>
 <ol>
 <li>
-          <xref href="workbook/helloworld/1.2helloworld.php.dita">Hello
+          <xref href="workbook/helloworld/helloworld.php.dita">Hello
             World</xref>
           <!--A BR tag was used here in the original source.--> The Hello World sample is as simple
           as it gets: Hello World!</li>
 <li>
-          <xref href="workbook/database/1.2database.php.dita">Working with
+          <xref href="workbook/database/database.php.dita">Working with
             Databases</xref>
           <!--A BR tag was used here in the original source.--> Create a database and execute a
           query against it.</li>
 <li>
-          <xref href="workbook/messaging/1.2messaging.php.dita">Working with
+          <xref href="workbook/messaging/messaging.php.dita">Working with
             Messaging</xref>
           <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
           message.</li>

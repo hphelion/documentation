@@ -154,7 +154,7 @@ applications:
 <li>You interact with and deploy your app using the <xref href="../../helion/user/reference/client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
 </ul>
 <p>
-<xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/1.2helloworld.node.dita" >Previous Sample</xref> | <xref href="../messaging/1.2messaging.node.dita" >Next Sample</xref>
+<xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/helloworld.node.dita" >Previous Sample</xref> | <xref href="../messaging/messaging.node.dita" >Next Sample</xref>
 </p>
 </section>
 </body>
