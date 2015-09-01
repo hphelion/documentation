@@ -134,45 +134,45 @@
       <topichead navtitle="Language Specific Application Deployment">
         <topicref href="devplatform/helion/user/deploy/languages/docker_apps.dita"
           navtitle="Docker Apps" locktitle="yes"/>
-        <topicref href="devplatform/helion/user/deploy/languages/1.2clojure.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/languages/clojure.dita" locktitle="yes"
           navtitle="Clojure"/>
-        <topicref href="devplatform/helion/user/deploy/languages/1.2go.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/languages/go.dita" locktitle="yes"
           navtitle="Go"/>
-        <topicref href="devplatform/helion/user/deploy/languages/1.2java.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/languages/java.dita" locktitle="yes"
           navtitle="Java"/>
-        <topicref href="devplatform/helion/user/deploy/languages/1.2node.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/languages/node.dita" locktitle="yes"
           navtitle="Node"/>
-        <topicref href="devplatform/helion/user/deploy/languages/perl/1.2index.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/languages/perl/perl_index.dita" locktitle="yes"
           navtitle="Perl">
           <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/catalyst/-->
-          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2catalyst.dita"
+          <topicref href="devplatform/helion/user/deploy/languages/perl/catalyst.dita"
             locktitle="yes" navtitle="Catalyst"/>
           <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/cgiapppsgi/-->
-          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2cgiapppsgi.dita"
+          <topicref href="devplatform/helion/user/deploy/languages/perl/cgiapppsgi.dita"
             locktitle="yes" navtitle="CGI Application"/>
           <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/dancer/-->
-          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2dancer.dita"
+          <topicref href="devplatform/helion/user/deploy/languages/perl/dancer.dita"
             locktitle="yes" navtitle="Dancer"/>
           <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/mason/-->
-          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2mason.dita"
+          <topicref href="devplatform/helion/user/deploy/languages/perl/mason.dita"
             locktitle="yes" navtitle="Mason"/>
           <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/mojo/-->
-          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2mojo.dita"
+          <topicref href="devplatform/helion/user/deploy/languages/perl/mojo.dita"
             locktitle="yes" navtitle="Mojolicious"/>
           <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/perlcgi/-->
-          <topicref href="devplatform/helion/user/deploy/languages/perl/1.2perlcgi.dita"
+          <topicref href="devplatform/helion/user/deploy/languages/perl/perlcgi.dita"
             locktitle="yes" navtitle="Perl CGI"/>
           <!--permalink: /helion/devplatform/als/user/deploy/languages/php/-->
         </topicref>
-        <topicref href="devplatform/helion/user/deploy/languages/1.2php.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/languages/php.dita" locktitle="yes"
           navtitle=" PHP"/>
-        <topicref href="devplatform/helion/user/deploy/languages/python/1.2index.dita"
+        <topicref href="devplatform/helion/user/deploy/languages/python/python_index.dita"
           locktitle="yes" navtitle="Python">
           <!--permalink: /helion/devplatform/als/user/deploy/languages/python/django/-->
-          <topicref href="devplatform/helion/user/deploy/languages/python/1.2django.dita"
+          <topicref href="devplatform/helion/user/deploy/languages/python/django.dita"
             locktitle="yes" navtitle="Deploying Django Apps"/>
         </topicref>
-        <topicref href="devplatform/helion/user/deploy/languages/1.2ruby.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/languages/ruby.dita" locktitle="yes"
           navtitle="Ruby"/>
       </topichead>
       <topicref href="devplatform/helion/user/reference/1.2environment.dita" locktitle="yes"

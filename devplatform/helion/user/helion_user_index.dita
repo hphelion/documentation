@@ -100,19 +100,19 @@ web server, application dependencies, databases, and other services.</p>
               </ul></li>
             <li>Languages <ul>
                 <li>
-                  <xref href="../user/deploy/languages/1.2java.dita">Java</xref>
+                  <xref href="../user/deploy/languages/java.dita">Java</xref>
                 </li>
                 <li>
-                  <xref href="../user/deploy/languages/1.2node.dita">Node.js</xref>
+                  <xref href="../user/deploy/languages/node.dita">Node.js</xref>
                 </li>
                 <li>
-                  <xref href="../user/deploy/languages/1.2php.dita">PHP</xref>
+                  <xref href="../user/deploy/languages/php.dita">PHP</xref>
                 </li>
-                <li><xref href="deploy/languages/perl/1.2index.dita">Perl</xref></li>
-                <li><xref href="deploy/languages/python/1.2index.dita">Python</xref></li>
-                <li><xref href="deploy/languages/1.2clojure.dita">Clojure</xref></li>
-                <li><xref href="deploy/languages/1.2go.dita">Go</xref></li>
-                <li><xref href="deploy/languages/1.2ruby.dita">Ruby</xref></li>
+                <li><xref href="deploy/languages/perl/perl_index.dita">Perl</xref></li>
+                <li><xref href="deploy/languages/python/python_index.dita">Python</xref></li>
+                <li><xref href="deploy/languages/clojure.dita">Clojure</xref></li>
+                <li><xref href="deploy/languages/go.dita">Go</xref></li>
+                <li><xref href="deploy/languages/ruby.dita">Ruby</xref></li>
               </ul></li>
           </ul></li>
 </ul>

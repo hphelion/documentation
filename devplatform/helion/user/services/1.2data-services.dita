@@ -577,7 +577,7 @@ Redis:         'redis-2.x' -&gt; 'redis'</codeblock>
 variable. See the following language-specific documentation:</p>
 <ul>
 <li>
-          <xref href="../deploy/languages/1.2php.dita#topic5845/database-services">PHP Data Services
+          <xref href="../deploy/languages/php.dita#topic5845/database-services">PHP Data Services
           </xref></li>
 </ul>
 <p>The following changes to sample applications show this modification:</p>

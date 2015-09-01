@@ -38,7 +38,7 @@ could rename <codeph>app.pl</codeph> to <codeph>app.psgi</codeph> instead, but u
 allows you to set PSGI-specific configurations in a separate file.</p>
 <p>It is possible to <xref href="#topic8895/serving-static-files-with-uwsgi" format="dita">serve
         static files with uWSGI</xref>.</p>
-<p>The <xref href="1.2perlcgi.dita"   >
+<p>The <xref href="perlcgi.dita"   >
 <i>perlcgi</i>
 </xref> framework is also available for
 running traditional Perl CGI applications without PSGI.</p>
@@ -47,22 +47,22 @@ running traditional Perl CGI applications without PSGI.</p>
 application types.</p>
 <ul>
 <li>
-<xref href="1.2cgiapppsgi.dita" >CGI:Application:PSGI</xref>
+<xref href="cgiapppsgi.dita" >CGI:Application:PSGI</xref>
 </li>
 <li>
-<xref href="1.2perlcgi.dita" >Perl CGI</xref>
+<xref href="perlcgi.dita" >Perl CGI</xref>
 </li>
 <li>
-<xref href="1.2catalyst.dita" >Catalyst</xref>
+<xref href="catalyst.dita" >Catalyst</xref>
 </li>
 <li>
-<xref href="1.2mason.dita" >Mason</xref>
+<xref href="mason.dita" >Mason</xref>
 </li>
 <li>
-<xref href="1.2mojo.dita" >Mojolicious</xref>
+<xref href="mojo.dita" >Mojolicious</xref>
 </li>
 <li>
-<xref href="1.2dancer.dita" >Dancer</xref>
+<xref href="dancer.dita" >Dancer</xref>
 </li>
 </ul>
 </section>

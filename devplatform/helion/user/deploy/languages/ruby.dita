@@ -45,7 +45,7 @@ processes:
 To learn more see:</p>
 <ul>
 <li>
-<xref href="1.2ruby.dita" >Working with applications in Ruby</xref>
+<xref href="ruby.dita" >Working with applications in Ruby</xref>
 </li>
 <li>The <xref href="../manifestyml.dita" >manifest.yml</xref> reference.</li>
 </ul>

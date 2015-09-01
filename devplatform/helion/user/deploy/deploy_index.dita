@@ -103,21 +103,21 @@ web server, application dependencies, databases, and other services.</p>
   <section id="languages"><title>Deploying Applications (by Language)</title>
          <ul>
         <li><xref href="languages/docker_apps.dita">Docker apps</xref></li>
-            <li><xref href="languages/1.2clojure.dita">Clojure</xref></li>
-            <li><xref href="languages/1.2go.dita">Go</xref></li>
+            <li><xref href="languages/clojure.dita">Clojure</xref></li>
+            <li><xref href="languages/go.dita">Go</xref></li>
             <li>
-              <xref href="languages/1.2java.dita#topic2811" type="section" scope="local">Java</xref>
+              <xref href="languages/java.dita#topic2811" type="section" scope="local">Java</xref>
             </li>
             <li>
-              <xref href="languages/1.2node.dita#topic3629/node-npm" type="section" scope="local"
+              <xref href="languages/node.dita#topic3629/node-npm" type="section" scope="local"
                 >Node.js</xref>
             </li>
-            <li><xref href="languages/perl/1.2index.dita">Perl</xref></li>
+            <li><xref href="languages/perl/perl_index.dita">Perl</xref></li>
             <li>
-              <xref href="languages/1.2php.dita#topic5845" type="section" scope="local">PHP</xref>
+              <xref href="languages/php.dita#topic5845" type="section" scope="local">PHP</xref>
             </li>
-            <li><xref href="languages/python/1.2index.dita">Python</xref></li>
-            <li><xref href="languages/1.2ruby.dita">Ruby</xref></li>
+            <li><xref href="languages/python/python_index.dita">Python</xref></li>
+            <li><xref href="languages/ruby.dita">Ruby</xref></li>
           </ul>
 </section>
 <section id="services"> <title>Services</title>

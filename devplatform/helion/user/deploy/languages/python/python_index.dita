@@ -158,22 +158,22 @@ application object. For a minimal sample application, see
           <ul>
             <li>
               <xref
-                href="1.2django.dita"
+                href="django.dita"
                 >Getting started</xref>
             </li>
             <li>
               <xref
-                href="1.2django.dita#topic3654/configuring-database"
+                href="django.dita#topic3654/configuring-database"
                 >Configuring database</xref>
             </li>
             <li>
               <xref
-                href="1.2django.dita#topic3654/configuring-static-media"
+                href="django.dita#topic3654/configuring-static-media"
                 >Configuring static media</xref>
             </li>
             <li>
               <xref
-                href="1.2django.dita#topic3654/configuring-project-location"
+                href="django.dita#topic3654/configuring-project-location"
                 >Configuring project location</xref>
             </li>
           </ul></li>

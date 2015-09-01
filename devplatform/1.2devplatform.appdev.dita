@@ -62,7 +62,7 @@
           <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
           message.</li>
 </ol>
-<p>More Helion <xref href="helion/user/deploy/languages/1.2java.dita" >Java</xref> references.</p>
+<p>More Helion <xref href="helion/user/deploy/languages/java.dita" >Java</xref> references.</p>
 </section>
 <section id="node"> <title>Node</title>
 <ol>
@@ -82,7 +82,7 @@
           <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
           message.</li>
 </ol>
-<p>More Helion <xref href="helion/user/deploy/languages/1.2node.dita" >Node</xref> references.</p>
+<p>More Helion <xref href="helion/user/deploy/languages/node.dita" >Node</xref> references.</p>
 </section>
 <section id="PHP"> <title>PHP</title>
 <ol>
@@ -102,7 +102,7 @@
           <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
           message.</li>
 </ol>
-<p>More Helion <xref href="helion/user/deploy/languages/1.2php.dita" >PHP</xref> references.</p>
+<p>More Helion <xref href="helion/user/deploy/languages/php.dita" >PHP</xref> references.</p>
 </section>
 <section id="other-references"> <title>Other references</title>
 <ul>
