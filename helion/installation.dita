@@ -30,7 +30,7 @@
       </ul>
     </section>
     <section id="Prereqs">
-      <title>Before you Start</title>
+      <title>Before You Start</title>
       <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
       <ul>
         <li>Setup the iLO Advanced license in the iLO configuration. Make sure the iLO user has
