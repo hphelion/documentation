@@ -97,7 +97,7 @@
           <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
             install. Refer to the VMWare vSphere documentation as needed. </li>
         </ol></p></section>
-    <section><b>Preparation for ESX Cloud Deployment</b><p>This section descibes the procedures to
+    <section><b>Preparation for ESX Cloud Deployment</b><p>This section describes the procedures to
         prepare the ESX cloud for deployment. </p><p>
         <note> Source <codeph>service.osrc</codeph> before you perform the following
           procedure.</note>
@@ -129,7 +129,7 @@
 +------------+--------------------------------------+</codeblock></li>
         </ul>
       </p><p><b>Register ESX Cloud Network Configuration</b></p><p>This involve getting a sample
-        network infomation template. Fill the details of the template and use that template to
+        network information template. Fill the details of the template and use that template to
         register cloud network configuration for the vCenter.</p><p>
         <ol id="ol_y51_z22_ft">
           <li>Execute the following command to get the network information

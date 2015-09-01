@@ -6,8 +6,8 @@
     <p>This page describes the troubleshooting scenarios for Swift service.<ul id="ul_ac4_s5d_ft">
         <li><xref href="#topic_sl2_nht_dt/interpreting-swift-validate-input-model" format="dita"
             >Interpreting _swift-validate-input-model.yml Errors</xref></li>
-        <li><xref href="#topic_sl2_nht_dt/deploy-fails" format="dita">Deploy fails with : msdos
-            disks labels do not support partition names</xref></li>
+        <li><xref href="#topic_sl2_nht_dt/deploy-fails" format="dita">Deploy fails with: msdos disks
+            labels do not support partition names</xref></li>
       </ul></p>
     <section id="interpreting-swift-validate-input-model">
       <title>Interpreting _swift-validate-input-model.yml Errors</title>
@@ -143,8 +143,8 @@
                 command<codeblock>sudo apt-get install gdisk</codeblock></li>
               <li>Convert to GPT partition type. This is an example for converting GTP partition
                 type.<codeblock>sudo sgdisk –g /dev/sdd</codeblock></li>
-              <li> To take effect, you must reboot the node. You may then resume the deploy (repeat
-                the playbook that reported the error).  </li>
+              <li> Reboot the node to take effect. You may then resume the deploy (repeat the
+                playbook that reported the error). </li>
             </ol></stentry>
         </strow>
       </simpletable>

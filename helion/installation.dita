@@ -3,7 +3,7 @@
 <topic id="topic_flx_j2b_ws">
   <title>Beta 1: Installing HP Helion <tm tmtype="reg">OpenStack</tm> on Baremetal</title>
   <body>
-    <section><title>Important Notes</title>
+    <section id="important-notes"><title>Important Notes</title>
       <ul>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
         <li>Make sure all disks on the system(s) are wiped before you begin the install. </li>
