@@ -48,6 +48,13 @@
         </ul>
       </p>
     </section>
+    <section>Deploy ESX cloud<ul id="ul_hft_mp2_ft">
+        <li>Set up the Deployer node</li>
+        <li>Prepare  cloud controllers</li>
+        <li>Deploy  cloud controllers</li>
+        <li>Prepare ESX computes</li>
+        <li>Deploy ESX compute and OVSAVAPP</li>
+      </ul></section>
     <section>
       <title>Procedure to deploy ESX cloud</title>
       <p>The following topics in this section explain how to deploy ESX cloud.</p>

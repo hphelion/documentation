@@ -30,12 +30,12 @@
     <section><b>List of errors</b></section>
     <p>The following example provides an error message, description, and the resolution.<note>To
         resolve an error by changing the input, you <b>must</b> re-run the configuration processor
-        as describe in <xref href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run
+        as described in <xref href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run
           the Configuration Processor</xref> and continue with the deploy.</note></p>
     <p>
       <ol>
-        <li><b>Example Message</b>:<b><b> Model Missmatch: Cannot find drive /dev/sdt on
-              padawan-ccp-c1-m2 (192.168.245.3)</b>)</b><simpletable id="simpletable_crn_x2j_2t">
+        <li><b>Example Message - Model Missmatch: Cannot find drive /dev/sdt on padawan-ccp-c1-m2
+            (192.168.245.3))</b><simpletable id="simpletable_crn_x2j_2t">
             <strow>
               <stentry><b>Description</b>
               </stentry>
@@ -58,8 +58,8 @@
                   the drive for all servers using the disk model .</p></stentry>
             </strow>
           </simpletable></li>
-        <li><b>Example Message</b>: <b>Model Missmatch: Cannot find drive /dev/sdd2 on
-            padawan-ccp-c1-m2 (192.168.245.3)</b><simpletable id="simpletable_wz4_jgj_2t">
+        <li><b>Example Message - Model Missmatch: Cannot find drive /dev/sdd2 on padawan-ccp-c1-m2
+            (192.168.245.3)</b><simpletable id="simpletable_wz4_jgj_2t">
             <strow>
               <stentry><b>Description</b>
               </stentry>
@@ -74,8 +74,8 @@
               <stentry>Remove the partition number from the disk model.</stentry>
             </strow>
           </simpletable></li>
-        <li><b>Example Message</b>:<b>Cannot find IP address of padawan-ccp-c1-m3-swift for ring:
-            account host: padawan-ccp-c1-m3-mgmt</b><simpletable id="simpletable_j3n_lfj_2t">
+        <li><b>Example Message - Cannot find IP address of padawan-ccp-c1-m3-swift for ring: account
+            host: padawan-ccp-c1-m3-mgmt</b><simpletable id="simpletable_j3n_lfj_2t">
             <strow>
               <stentry><b>Description</b></stentry>
               <stentry>The service (in this example, swift-account) is running on the node
@@ -90,8 +90,8 @@
             </strow>
           </simpletable></li>
         <li>
-          <b>Example Message</b>:<b>Ring:object-2 has specified replication-policy
-            erasure-coding-policy. Only may be specified. </b><simpletable
+          <b>Example Message - Ring: object-2 has specified replication_policy and
+            erasure_coding_policy. Only one may be specified. </b><simpletable
             id="simpletable_jxv_lfj_2t">
             <strow>
               <stentry><b>Description</b>
@@ -101,10 +101,10 @@
             </strow>
             <strow>
               <stentry><b>Resolution</b></stentry>
-              <stentry>Remove one of the policy type.</stentry>
+              <stentry>Remove one of the policy types.</stentry>
             </strow>
           </simpletable></li>
-        <li><b>Example Message</b>:<b>Ring: object-3 is missing a policy type (replication-policy
+        <li><b>Example Message - Ring: object-3 is missing a policy type (replication-policy or
             erasure-coding-policy) </b><simpletable id="simpletable_e3b_mfj_2t">
             <strow>
               <stentry><b>Description</b>
@@ -120,7 +120,7 @@
       </ol>
     </p>
     <section id="deploy-fails">
-      <title>Deploy fails with : msdos disks labels do not support partition names</title>
+      <title>Deploy fails with - msdos disks labels do not support partition names</title>
       <note>This process only applies to Swift drives. It does not apply to the operating system or
         boot drive.</note>
       <simpletable id="simpletable_nh3_ptd_ft">
@@ -137,15 +137,16 @@
         </strow>
         <strow>
           <stentry><b>Resolution</b></stentry>
-          <stentry>You must install <codeph>sgdisk</codeph>, before using it.<p>Perform the
-              following steps to install <codeph>sgdisk</codeph></p><ol>
-              <li>Execute the following
-                command<codeblock>sudo apt-get install gdisk</codeblock></li>
-              <li>Convert to GPT partition type. This is an example for converting GTP partition
+          <stentry>You must install <codeph>gdisk</codeph>, before using <codeph>sgdisk</codeph>.
+              <ul id="ul_fqc_1hf_ft">
+              <li>Execute the following command to install
+                <codeph>gdisk</codeph>,<codeblock>sudo apt-get install gdisk</codeblock></li>
+              <li>Convert to GPT partition type. This is an example for converting
+                  <codeph>/dev/sdd</codeph> to the GPT partition
                 type.<codeblock>sudo sgdisk –g /dev/sdd</codeblock></li>
               <li> Reboot the node to take effect. You may then resume the deploy (repeat the
                 playbook that reported the error). </li>
-            </ol></stentry>
+            </ul></stentry>
         </strow>
       </simpletable>
     </section>
