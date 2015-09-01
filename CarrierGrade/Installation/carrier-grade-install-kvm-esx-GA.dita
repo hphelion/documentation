@@ -258,9 +258,9 @@ Password: cghelion</codeblock>
     </section>
     <section id="configure-esx-json">
       <title>Configure the esx.json file</title>
-      <p>Modify the <codeph>esx.json</codeph> file in the <codeph>&lt;cloudname></codeph> directory
-        on the HLM VM. This file is called by the script that installs the HP Helion OpenStack
-        cloud, later in the installation. </p>
+      <p>Modify the <codeph>esx.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph>
+        directory on the HLM VM. This file is called by the script that installs the HP Helion
+        OpenStack cloud, later in the installation. </p>
       <p>To see a sample <codeph>esx.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-esx-json.dita">Sample esx.json File for Installing the
           KVM + ESX Topology</xref>.</p>

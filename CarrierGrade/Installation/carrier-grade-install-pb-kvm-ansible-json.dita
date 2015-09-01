@@ -151,8 +151,10 @@ _vars.vsc_dcm_ip_subnet}}
             </tgroup>
         </table>
         <section id="sample-node-provisionjson-file">
-            <p>The following represents a sample <codeph>ansible.json</codeph> file. Use values
-                appropriate for your environment. The IP addresses are masked for security purposes.</p>
+            <p>The following represents a sample <codeph>ansible.json</codeph> file in the
+                    <codeph>&lt;cloudname>/vars</codeph> directory of the HLM VM. Use values
+                appropriate for your environment. The IP addresses are masked for security
+                purposes.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
 <codeblock>
