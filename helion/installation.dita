@@ -168,9 +168,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
             <li>staging-cp-persistent</li>
           </ul>
         </li>
-        <li>Check the generated host files in
-            <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs
-          are included. <ol>
+        <li>Check your configuration: <ol>
             <li>You can review the ansible change by running the following command:
               <codeblock>git show staging-ansible</codeblock></li>
             <li>Use the playbook below to create a deployment directory:
