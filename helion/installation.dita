@@ -178,7 +178,8 @@ cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
               <note>The step above runs osconfig to configure the cloud and hlm-deploy, to deploy
                 the cloud. Therefore, this step may run for quite some time while all the nodes are
-                configured (perhaps an hour or more).</note>
+                configured (perhaps  45 minutes or more, depending on the number of nodes, to a
+                degree).</note>
             </li>
           <li>Verify that the network is working correctly. Ping each IP (excluding VSA-BLK and
               VIPs) from the /etc/hosts file from one of the controller nodes.</li>
