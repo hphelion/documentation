@@ -194,7 +194,7 @@ can also include additional roles.</p>
 the other nodes and assign roles.</p>
 </section>
 <section id="core-ip"> <title>CORE_IP</title>
-  <p>A <xref href="../server/1.2configuration.dita#topic31232/setting-a-static-ip" type="section"   >static IP address</xref> is
+  <p>A <xref href="../server/configuration.dita#topic31232/setting-a-static-ip" type="section"   >static IP address</xref> is
 necessary to provide a consistent network interface for other nodes to connect to. This address is called the MBUS IP. If your IaaS or cloud orchestration software provides IP addresses which persist indefinitely and are not reset on reboot you may not have to set this explicitly.</p>
 <p>Take note of the internal IP address of the Core node. It will be required in the following steps to configure additional nodes to attach to the Core node.</p>
 <p>Make sure that the IP address of its <codeph>eth0</codeph> interface is registering the correct address, which may not be the case if you have set a static IP and not yet rebooted or restarted
@@ -207,7 +207,7 @@ networking. To check the IP address, run:</p>
   <note>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-migrate" >kato node migrate</xref> on the Core node, then <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref> on all other cluster nodes.</note>
 </section>
 <section id="hostname"> <title>Hostname</title>
-  <p>Next, set the <b>fully qualified hostname</b> of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" type="section"   >DNS record</xref> created for
+  <p>Next, set the <b>fully qualified hostname</b> of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the <xref href="../server/configuration.dita#topic31232/server-config-dns" type="section"   >DNS record</xref> created for
 this system.</p>
 <p>To set the hostname, run:</p>
 <codeblock>kato node rename hostname.example.com --no-restart</codeblock>
@@ -221,7 +221,7 @@ used by clients (e.g. "https://api.hostname.example.com").</p>
 <section id="wildcard-dns"> <title>Wildcard DNS</title>
 <p>A wildcard DNS record is necessary to resolve not only the API endpoint,
 but all applications which will subsequently be deployed on the PaaS.
-  <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" type="section"   >Create a wildcard DNS record</xref> for the <xref type="section" href="#topic18326/core-node">Core node</xref> or <xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer/Router</xref>.</p>
+  <xref href="../server/configuration.dita#topic31232/server-config-dns" type="section"   >Create a wildcard DNS record</xref> for the <xref type="section" href="#topic18326/core-node">Core node</xref> or <xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer/Router</xref>.</p>
 </section>
 <section id="core-node"> <title>Core Node</title>
 <p>On the Core node, execute the following command:</p>
@@ -284,7 +284,7 @@ following command on the Core node:</p>
 </section>
 <section id="role-configuration-using-the-management-console"> <title>Role Configuration using the Management Console</title>
 <p>Once cluster nodes are connected to the Core node, roles can be enabled
-  or disabled using the <xref href="../1.2index.dita#topic2276/cluster-configuration" type="section"   >manual cluster configuration</xref> options in the Management
+  or disabled using the <xref href="../helion_admin_index.dita#topic2276/cluster-configuration" type="section"   >manual cluster configuration</xref> options in the Management
 Console.</p>
 </section>
 <section id="example-clusters"> <title>Example Clusters</title>
@@ -517,7 +517,7 @@ configuration instructions.</note>
       repositories, then user application staging, patching, and upgrades can fail because of
       timeouts or dropped packets. Gateway devices and software should be configured to whitelist
       the upstream sources listed in the <xref
-        href="../server/1.2upgrade.dita#topic13180/proxy-settings">Proxy Settings</xref> as well as
+        href="../server/upgrade.dita#topic13180/proxy-settings">Proxy Settings</xref> as well as
       any package repositories or download sources required by buildpacks. If packet inspection of
       all inbound traffic is a requirement in your network, consider setting up <xref
         href="../../user/deploy/1.2adding-buildpack.dita">offline buildpacks</xref> or creating
@@ -570,7 +570,7 @@ multiple Routers:</p>
 <section id="rename-the-load-balancer"> <title>Rename the Load Balancer</title>
 <p>The Load Balancer is the primary point of entry to the cluster. It must
 have a public-facing IP address and take on the primary hostname for the
-system as <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" type="section"   >configured in DNS</xref>. Run the following on Load Balancer node:</p>
+system as <xref href="../server/configuration.dita#topic31232/server-config-dns" type="section"   >configured in DNS</xref>. Run the following on Load Balancer node:</p>
 <codeblock>kato node rename *hostname.example.com*</codeblock>
 </section>
 <section id="set-up-the-core-node"> <title>Set up the Core Node</title>

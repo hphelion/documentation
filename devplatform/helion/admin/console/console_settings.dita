@@ -78,7 +78,7 @@
           users can install additional packages (e.g. with apt-get or aptitude) only from these
           repositories. When adding new repositories, GPG keys for each new repo must also be added
           to the Docker base container See <xref
-            href="../server/1.2configuration.dita#topic31232/allowed-repositories" type="section"
+            href="../server/configuration.dita#topic31232/allowed-repositories" type="section"
             >Allowed Repositories</xref>.</li>
       </ul>
     </section>
@@ -157,7 +157,7 @@
       <b>Allowed Repos</b>: Debian package repositories allowed in application containers. End users
       can install additional packages (e.g. with apt-get or aptitude) only from these repositories.
       When adding new repositories, GPG keys for each new repo must also be added to the Docker base
-      container See <xref href="../server/1.2configuration.dita#topic31232/allowed-repositories"
+      container See <xref href="../server/configuration.dita#topic31232/allowed-repositories"
         type="section">Allowed Repositories</xref>. </section>
     <section id="console-settings-applications">
       <title>Applications</title>
@@ -256,7 +256,7 @@
     </section>
     <section id="logyard">
       <title>Logyard</title>
-      <p>Lists current log <xref href="../server/1.2logging.dita#topic11928/drains" type="section"
+      <p>Lists current log <xref href="../server/logging.dita#topic11928/drains" type="section"
           >drains</xref> and the log drain retry limits. Drains and limits cannot be changed in this
         interface; use the <codeph><xref
             href="../reference/kato-ref.dita#topic39432/kato-command-ref-log-drain-add"

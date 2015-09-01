@@ -32,29 +32,29 @@
         maintaining the platform.</p>
       <ul>
         <li>
-          <xref href="admin/1.2index.dita">Application Lifecycle Service Admin Guide</xref>
+          <xref href="admin/helion_admin_index.dita">Application Lifecycle Service Admin Guide</xref>
           <ul>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/wizard-based-cluster-creation" type="section"  >Wizard-Based
+              <xref href="admin/helion_admin_index.dita#topic2276/wizard-based-cluster-creation" type="section"  >Wizard-Based
                 Cluster Creation</xref>
             </li>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/management-console" type="section"  >Management
+              <xref href="admin/helion_admin_index.dita#topic2276/management-console" type="section"  >Management
                 Console</xref>
             </li>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/server-configuration" type="section"  >Server
+              <xref href="admin/helion_admin_index.dita#topic2276/server-configuration" type="section"  >Server
                 Configuration</xref>
             </li>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/cluster-configuration" type="section"  >Cluster
+              <xref href="admin/helion_admin_index.dita#topic2276/cluster-configuration" type="section"  >Cluster
                 Configuration</xref>
             </li>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/best-practices" type="section"  >Best Practices</xref>
+              <xref href="admin/helion_admin_index.dita#topic2276/best-practices" type="section"  >Best Practices</xref>
             </li>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/reference" type="section"  >Reference</xref>
+              <xref href="admin/helion_admin_index.dita#topic2276/reference" type="section"  >Reference</xref>
             </li>
           </ul></li>
       </ul>

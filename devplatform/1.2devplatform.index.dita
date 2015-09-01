@@ -42,7 +42,7 @@
   <p>The Application Lifecycle Service is <xref
           href="installation/devplatform_commercial_install.dita#topic24073/install-als">installed</xref> as
         part of the Helion Development Platform. You can easily <xref
-          href="helion/admin/1.2index.dita#topic2276/wizard-based-cluster-creation" type="section">create and configure</xref> Application Lifecycle Service clusters from
+          href="helion/admin/helion_admin_index.dita#topic2276/wizard-based-cluster-creation" type="section">create and configure</xref> Application Lifecycle Service clusters from
         the Horizon management console, or explore this service by setting up a <xref
           href="1.2devplatform.ALS-developer-trial-quick-start.dita">Quick
           Start Developer Trial</xref> in the public cloud.</p>

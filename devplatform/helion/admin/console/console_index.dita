@@ -133,9 +133,9 @@ https://helion-xxxx.local</codeblock>
           href="../../user/reference/1.2glossary.dita#topic6187/term-multicast-dns" type="section"
           >multicast DNS</xref>, the hostname will be <codeph>helion-xxxx.local</codeph>. If you
         have configured the <xref
-          href="../../admin/server/1.2configuration.dita#topic31232/server-config-hostname"
+          href="../../admin/server/configuration.dita#topic31232/server-config-hostname"
           type="section">hostname</xref> and <xref
-          href="../../admin/server/1.2configuration.dita#topic31232/server-config-dns"
+          href="../../admin/server/configuration.dita#topic31232/server-config-dns"
           type="section">DNS</xref> of the Application Lifecycle Service server manually, or are
         connecting to a server administered by someone else, supply the assigned hostname instead
         (ex: <i>api.helion-test.example.com</i>).</p>

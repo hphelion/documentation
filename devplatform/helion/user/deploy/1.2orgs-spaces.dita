@@ -32,7 +32,7 @@
 Application Lifecycle Service admins (accounts with global superuser privileges) can manage
 Organizations.</p>
   <p>Each organization is assigned a <xref
-          href="../../admin/server/1.2configuration.dita#topic31232/quota-definitions">Quota
+          href="../../admin/server/configuration.dita#topic31232/quota-definitions">Quota
           Definition</xref>, a set of limits on memory, applications, and service instances which is
         shares between all members of the organization.</p>
 </section>

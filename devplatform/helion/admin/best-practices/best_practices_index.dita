@@ -281,7 +281,7 @@ some shell operations performed in the export require <codeph>sudo</codeph> when
 </section>
 <section id="upgrade"> <title>Upgrading</title>
 <p>The <i>kato node upgrade</i> command was added in this version to allow upgrading Application Lifecycle Service clusters in place. See
-<xref href="../server/1.2upgrade.dita">Upgrading Application Lifecycle Service</xref> for full
+<xref href="../server/upgrade.dita">Upgrading Application Lifecycle Service</xref> for full
 instructions.</p>
 <p>The <i>kato data import</i> command automatically detects if you are upgrading from version 2.x to 3.x and does some special processing to account for differences in the two versions:</p>
 <ul>

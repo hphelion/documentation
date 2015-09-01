@@ -53,7 +53,7 @@
         <topicref href="devplatform/installation/devplatform.vertica.install.dita" toc="no"
           navtitle="Install the Vertica Application" locktitle="yes"/>
       </topicref>
-      <topicref href="devplatform/helion/admin/server/1.2upgrade.dita" locktitle="yes"
+      <topicref href="devplatform/helion/admin/server/upgrade.dita" locktitle="yes"
         navtitle="Upgrade Existing ALS Nodes and Clusters"/>
       <topicref href="devplatform/devplatform.troubleshooting.dita" locktitle="yes"
         navtitle="Installation Troubleshooting"/>
@@ -393,7 +393,7 @@
         <topicref href="devplatform/helion/admin/reference/kato-ref.dita" locktitle="yes"
           navtitle="Kato Command Reference"/>
       </topichead>
-      <topicref href="devplatform/helion/admin/1.2index.dita" locktitle="yes"
+      <topicref href="devplatform/helion/admin/helion_admin_index.dita" locktitle="yes"
         navtitle="ALS Admin Guide">
         <!--permalink: /helion/devplatform/als/admin/best-practices/-->
         <topicref href="devplatform/helion/user/deploy/1.2adding-buildpack.dita"
@@ -419,23 +419,23 @@
         <!--permalink: /helion/devplatform/als/admin/reference/known-issues/-->
         <!--permalink: /helion/devplatform/als/admin/reference/troubleshoot/-->
         <!--permalink: /helion/devplatform/als/admin/server/-->
-        <topicref href="devplatform/helion/admin/server/1.2index.dita" locktitle="yes"
+        <topicref href="devplatform/helion/admin/server/server_index.dita" locktitle="yes"
           navtitle="Server Configuration">
-          <topicref href="devplatform/helion/admin/server/1.2operations.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/server/operations.dita" locktitle="yes"
             navtitle="Common Server Operations"/>
-          <topicref href="devplatform/helion/admin/server/1.2configuration.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/server/configuration.dita" locktitle="yes"
             navtitle="Detailed Configuration"/>
           <topicref href="devplatform/helion/admin/server/https_and_ssl.dita"
             navtitle="HTTP and SSL Configuration" locktitle="yes"/>
-          <topicref href="devplatform/helion/admin/server/1.2aok.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/server/aok.dita" locktitle="yes"
             navtitle="AOK Authentication Server"/>
           <topicref href="devplatform/helion/admin/server/docker.dita" locktitle="yes"
             navtitle="Docker and Fence"/>
           <topicref href="devplatform/helion/admin/best-practices/logging-examples.dita"
             locktitle="yes" navtitle="Log Drain Examples"/>
-          <topicref href="devplatform/helion/admin/server/1.2logging.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/server/logging.dita" locktitle="yes"
             navtitle="Log Streams"/>
-          <topicref href="devplatform/helion/admin/server/1.2router.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/server/router.dita" locktitle="yes"
             navtitle="ALS Router"/>
         </topicref>
         <!--permalink: /helion/devplatform/als/admin/server/aok/-->

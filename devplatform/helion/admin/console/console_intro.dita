@@ -9,8 +9,8 @@
       machines<!--. After startup, the VM displays:: <codeblock>Helion Management Console at 
 https://helion-xxxx.local  </codeblock>--><!-- On a <xref href="../reference/1.2glossary.dita#topic6187/term-micro-cloud">micro cloud</xref> VM where the local network supports <xref href="../reference/1.2glossary.dita#topic6187/term-multicast-dns">multicast DNS</xref>, the hostname will be <codeph>horixon-xxxx.local</codeph>.-->
       If you have configured the <xref
-        href="../server/1.2configuration.dita#topic31232/server-config-hostname">hostname</xref> and
-        <xref href="../server/1.2configuration.dita#topic31232/server-config-hostname">DNS</xref> of
+        href="../server/configuration.dita#topic31232/server-config-hostname">hostname</xref> and
+        <xref href="../server/configuration.dita#topic31232/server-config-hostname">DNS</xref> of
       the server manually, or are connecting to a server administered by someone else, supply the
       assigned hostname [Example: <codeph>api.helion-test.example.com</codeph>] Enter that URL into
       your web browser and the Management Console will load. </p>    <p>The Console is supported on the following browsers:  

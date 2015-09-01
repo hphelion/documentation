@@ -44,31 +44,31 @@
 <p>This section covers advanced configuration settings that allow you to modify default cluster component behavior.</p>
 <ul>
 <li>
-          <xref href="server/1.2index.dita">Server Configuration</xref>
+          <xref href="server/server_index.dita">Server Configuration</xref>
           <ul>
             <li>
-              <xref href="server/1.2index.dita#topic3007/accessing-server-via-the-command-line" type="section"
+              <xref href="server/server_index.dita#topic3007/accessing-server-via-the-command-line" type="section"
                 >Accessing Server via the Command Line</xref>
             </li>
             <li>
-              <xref href="server/1.2index.dita#topic3007/common-operations" type="section"  >Common Operations</xref>
+              <xref href="server/server_index.dita#topic3007/common-operations" type="section"  >Common Operations</xref>
             </li>
             <li>
-              <xref href="server/1.2index.dita#topic3007/detailed-configuration" type="section"  >Detailed
+              <xref href="server/server_index.dita#topic3007/detailed-configuration" type="section"  >Detailed
                 Configuration</xref>
             </li>
           </ul></li>
 <li>
-          <xref href="server/1.2router.dita">Router</xref>
+          <xref href="server/router.dita">Router</xref>
           <ul>
             <li>
-              <xref href="server/1.2router.dita#topic3030/settings" type="section"  >Settings</xref>
+              <xref href="server/router.dita#topic3030/settings" type="section"  >Settings</xref>
             </li>
             <li>
-              <xref href="server/1.2router.dita#topic3030/websockets" type="section"  >WebSockets</xref>
+              <xref href="server/router.dita#topic3030/websockets" type="section"  >WebSockets</xref>
             </li>
             <li>
-              <xref href="server/1.2router.dita#topic3030/router-spdy" type="section"  >SPDY</xref>
+              <xref href="server/router.dita#topic3030/router-spdy" type="section"  >SPDY</xref>
             </li>
           </ul></li>
 <li>
@@ -87,19 +87,19 @@
             </li>
           </ul></li>
 <li>
-          <xref href="server/1.2logging.dita">Log Streams</xref>
+          <xref href="server/logging.dita">Log Streams</xref>
           <ul>
             <li>
-              <xref href="server/1.2logging.dita#topic11928/logyard" type="section"  >Logyard</xref>
+              <xref href="server/logging.dita#topic11928/logyard" type="section"  >Logyard</xref>
             </li>
             <li>
-              <xref href="server/1.2logging.dita#topic11928/drains" type="section"  >Drains</xref>
+              <xref href="server/logging.dita#topic11928/drains" type="section"  >Drains</xref>
             </li>
             <li>
-              <xref href="server/1.2logging.dita#topic11928/configuration" type="section"  >Configuration</xref>
+              <xref href="server/logging.dita#topic11928/configuration" type="section"  >Configuration</xref>
             </li>
             <li>
-              <xref href="server/1.2logging.dita#topic11928/debugging-logyard" type="section"  >Debugging
+              <xref href="server/logging.dita#topic11928/debugging-logyard" type="section"  >Debugging
                 Logyard</xref></li>
             <li>
               <xref
@@ -108,38 +108,38 @@
             </li>
           </ul></li>
 <li>
-          <xref href="server/1.2aok.dita">AOK Authentication Server</xref>
+          <xref href="server/aok.dita">AOK Authentication Server</xref>
           <ul>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/web" type="section"  >End User Login</xref>
+              <xref href="server/aok.dita#topic8359/web" type="section"  >End User Login</xref>
             </li>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/strategies" type="section"  >Strategies</xref>
+              <xref href="server/aok.dita#topic8359/strategies" type="section"  >Strategies</xref>
             </li>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/configuration" type="section"  >Configuration</xref>
+              <xref href="server/aok.dita#topic8359/configuration" type="section"  >Configuration</xref>
             </li>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/user-management" type="section"  >User Management</xref>
+              <xref href="server/aok.dita#topic8359/user-management" type="section"  >User Management</xref>
             </li>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/first-admin-user-setup" type="section"  >First Admin User
+              <xref href="server/aok.dita#topic8359/first-admin-user-setup" type="section"  >First Admin User
                 Setup</xref>
             </li>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/regular-ldap-user-setup" type="section"  >Regular LDAP User
+              <xref href="server/aok.dita#topic8359/regular-ldap-user-setup" type="section"  >Regular LDAP User
                 Setup</xref>
             </li>
           </ul></li>
 <li>
-          <xref href="server/1.2upgrade.dita">Upgrading Application Lifecycle Service</xref>
+          <xref href="server/upgrade.dita">Upgrading Application Lifecycle Service</xref>
           <ul>
             <li>
-              <xref href="server/1.2upgrade.dita#topic13180/before-an-upgrade" type="section"  >Before an
+              <xref href="server/upgrade.dita#topic13180/before-an-upgrade" type="section"  >Before an
                 upgrade</xref>
             </li>
             <li>
-              <xref href="server/1.2upgrade.dita#topic13180/executing-the-upgrade" type="section"  >Executing the
+              <xref href="server/upgrade.dita#topic13180/executing-the-upgrade" type="section"  >Executing the
                 upgrade</xref>
             </li>
           </ul></li>
