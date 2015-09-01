@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3949">
-<title>HP Helion 1.2 Development Platform: Upgrading from HP Helion Development Platform 1.1</title>
+<title>HP Helion 1.3 Development Platform: Upgrading from HP Helion Development Platform 1.1</title>
 <titlealts>
-<searchtitle>HP Helion 1.2 Development Platform: Commercial Installation and Configuration</searchtitle>
+<searchtitle>How to Preserve the Helion Development Platform when Upgrading from Helion OpenStack 1.1 to 1.1.1</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
@@ -24,21 +24,31 @@
 </metadata>
 </prolog>
 <body>
-    <p>If the Helion Development Platform was not previously installed, upgrade Helion  <tm tmtype="reg">OpenStack</tm> from version 1.1 to 1.1.1 and then <xref href="installation/devplatform_commercial_install.dita">install Helion Development Platform 1.2.</xref>.</p>
+        <ul id="ul_slg_chc_ft">
+            <li>
+                <p>If the Helion Development Platform was <b>not</b> previously installed, simply
+                    upgrade Helion <tm tmtype="reg">OpenStack</tm> from version 1.1 to 1.1.1 and
+                    then <xref href="installation/devplatform_commercial_install.dita">install
+                        Helion Development Platform 1.3.</xref>.</p>
+            </li>
+            <li>
+                <p>If the Helion Development Platform <b>was</b> previously installed:<ol
+                        id="ol_w3z_tgc_ft">
+                        <li><xref type="section" href="#topic3949/HDPstop">Stop the Helion
+                                Development Platform services</xref> and the control plane virtual
+                            machines.</li>
+                        <li>Perform the Helion OpenStack update. This will update the Marketplace,
+                            Messaging, and Database services.</li>
+                        <li>Install the new version of the Application Lifecycle Service.</li>
+                        <li><xref type="section" href="#topic3949/HDPstart">Restart the Helion
+                            Development Platform services</xref> and the control plane VMs.</li>
+                    </ol></p>
+            </li>
+        </ul>
 
-    <p>If the Helion Development Platform was previously installed, the Helion Development Platform services must be stopped before beginning the Helion OpenStack update. During the Helion OpenStack update, the Marketplace, Messaging, and Database services will automatically update to version 1.2. Version 1.2 of the Application Lifecycle Service must then be downloaded and installed separately. Once the update and installation is finished, the Helion Development Platform services and the control plane VMs must be restarted.</p>
-
-<ul>
-<li>
-<xref type="section" href="#topic3949/HDPstop">Stopping Helion Development Platform services</xref>
-</li>
-<li>
-<xref type="section" href="#topic3949/HDPstart">Restarting Helion Development Platform control plane VMs</xref>
-</li>
-</ul>
-<section id="HDPstop"> <title>Stopping Helion Development Platform services<!--Removed anchor point HDPstop--><!-- id="HDPstop" --></title>
+<section id="HDPstop"> <title>Stopping the Services and VMs</title>
 <p>Before stopping services, check that the service control plane is in healthy state (this is required for trove and marketplace).</p>
-<p>To run the Helion Devleopment Platform scripts, perform the following steps:</p>
+<p>To run the Helion Development Platform scripts, perform the following steps:</p>
 <ol>
 <li>Set <codeph>dev_plat_service</codeph> to the name of the service (trove/marketplace).</li>
 <li>Set <codeph>skip_ha_checks</codeph> if the service control plane is not running in HA mode. </li>
@@ -71,7 +81,7 @@ ansible-playbook \
 </ol>
 <p>You can now run the update script.</p>
 </section>
-<section id="HDPstart"> <title>Restarting Helion Development Platform control plane VMs<!--Removed anchor point HDPstart--><!-- id="HDPstart" --></title>
+<section id="HDPstart"> <title>Restarting the Services and VMs</title>
 <p>After running update on the overcloud, the VMs running on the Compute hosts are in a shutdown state, so you need to first start the Helion Development Platform service control plane VMs. To do this:</p>
 <ol>
 <li> Source the credentials for the Nova account which was used to set up the Helion Developer

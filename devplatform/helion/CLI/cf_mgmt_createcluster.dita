@@ -11,9 +11,9 @@
   <ul>
     <li><xref href="cfmgmt_createcluster_starter.dita">Create a small cluster</xref> with one core
       node and one DEA.</li>
-    <li><xref href="cfmgmt_createcluster_addDEA.dita">Add a DEA</xref> to an existing cluster. </li>
-    <li><xref href="cfmgmt_createcluster_addService.dita">Add a service</xref> to an existing
-      cluster. </li></ul></section>
+    <li><xref href="cfmgmt_growcluster_addDEANode.dita">Add a DEA node</xref> to an existing
+          cluster. </li>
+    <li><xref href="cfmgmt_growcluster_addservice.dita">Add a service</xref> to an existing cluster. </li></ul></section>
     <section><title>Prerequisites</title>
       <ul><li>The Helion Development Platform must be installed.</li>
         <li>The <i>cf-mgmt</i> tool must be <xref
