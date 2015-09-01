@@ -31,15 +31,15 @@
 
                     <strow>
                         <stentry>1. <b>Register for your Helion Public Cloud Account</b><p>2. <xref
-                            href="1.2devplatform.ALS-developer-trial-quick-start2.dita">Download
+                            href="devplatform.ALS-developer-trial-quick-start2.dita">Download
                             Tools</xref></p><p>3. <xref
-                            href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the
+                            href="devplatform.ALS-developer-trial-quick-start3.dita">Create the
                             Sandbox Environment</xref></p><p>4. <xref
-                            href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
+                            href="devplatform.ALS-developer-trial-quick-start4.dita">Create a
                             Cluster</xref></p><p>5. <xref
-                            href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add Windows
+                            href="devplatform.ALS-developer-trial-quick-start5.dita">Add Windows
                             DEA and SQL Server (Optional Step)</xref></p><p>6. <xref
-                            href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore
+                            href="devplatform.ALS-developer-trial-quick-start6.dita">Explore
                             Sample Applications</xref></p></stentry>
                         <stentry>Register for a <xref href="http://www.hpcloud.com/cloud-credit"
                         scope="external" format="html"> Helion Public Cloud</xref> account.<p>Keep
@@ -53,7 +53,7 @@
                             scope="external" format="html">HP Public Cloud pricing</xref> to
                         understand what charges may be incurred if the use limits of the free credit
                         offer are exceeded.</note><xref
-                        href="1.2devplatform.ALS-developer-trial-quick-start2.dita">
+                        href="devplatform.ALS-developer-trial-quick-start2.dita">
                         <image href="../media/NextButton.png" id="image_gqc_sgp_js"
                             placement="break"/>
                     </xref></stentry>

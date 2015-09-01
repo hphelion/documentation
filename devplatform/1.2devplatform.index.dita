@@ -44,7 +44,7 @@
         part of the Helion Development Platform. You can easily <xref
           href="helion/admin/helion_admin_index.dita#topic2276/wizard-based-cluster-creation" type="section">create and configure</xref> Application Lifecycle Service clusters from
         the Horizon management console, or explore this service by setting up a <xref
-          href="1.2devplatform.ALS-developer-trial-quick-start.dita">Quick
+          href="devplatform.ALS-developer-trial-quick-start.dita">Quick
           Start Developer Trial</xref> in the public cloud.</p>
 <p>Helion Development Platform version 1.2 includes a full end-to-end solution for creating and deploying .NET  applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of the Helion Development Platform. For more information on Windows and .NET support, see the <xref href="windows/windows_overview.dita" >Windows Overview</xref>.</p>
 </section>
@@ -100,7 +100,7 @@
 <p>Most of the Helion Development Platform documentation assumes that you've already provisioned an environment where you can deploy your apps. There are two ways to deploy Development Platform technology:</p>
 <ul>
 <li>
-<b>Quick Start Developer Trial</b>: The fastest way to set up a functional Helion Development Platform environment is the <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> (sandbox) on the public cloud.</li>
+<b>Quick Start Developer Trial</b>: The fastest way to set up a functional Helion Development Platform environment is the <xref href="devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> (sandbox) on the public cloud.</li>
 <li>
   <b>Standard Installation</b>: Install an <xref
     href="../../commercial/GA1/1.1commercial.index.dita#topic2448">HP Helion OpenStack</xref> cloud and then <xref href="installation/devplatform_commercial_install.dita" >install</xref> the Helion Development Platform.  </li>

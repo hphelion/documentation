@@ -32,7 +32,7 @@ web server, application dependencies, databases, and other services.</p>
 <section id="quick-start"> <title>Quick Start</title>
 <ul>
 <li>
-          <xref href="../quick-start/quickstart_index.dita">ALS Quick Start Guide</xref> [Not the same as the <xref href="../../../1.2devplatform.ALS-developer-trial-quick-start.dita">Developer Trial Quick Start</xref>].
+          <xref href="../quick-start/quickstart_index.dita">ALS Quick Start Guide</xref> [Not the same as the <xref href="../../../devplatform.ALS-developer-trial-quick-start.dita">Developer Trial Quick Start</xref>].
         </li>
 <li>
           <xref href="../quick-start/quickstart_index.dita#topic4745/management-console" type="section"  >Management Console

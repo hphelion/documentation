@@ -26,15 +26,15 @@
       <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/troubleshooting/--></p>
     <p>Here are some tips for troubleshooting issues with the Quick Start Trial. If problems
       persist, the quickest solution is to just <xref
-        href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita">terminate the
+        href="devplatform.ALS-developer-trial-quick-start-termination.dita">terminate the
         cluster</xref> and repeat the installation process. To ensure all resources are properly
       released, terminate the cluster from the Horizon console.</p>
     <simpletable>
 <strow>
-            <stentry><xref href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita"
+            <stentry><xref href="devplatform.ALS-developer-trial-quick-start-termination.dita"
             >Termination</xref>
           <p><b>Troubleshooting</b>
-          </p><p><xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Back to Quick
+          </p><p><xref href="devplatform.ALS-developer-trial-quick-start6.dita">Back to Quick
               Start</xref></p></stentry>
             <stentry>
           <ul>

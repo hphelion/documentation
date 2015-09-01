@@ -29,17 +29,17 @@
             management console.</p>
 <simpletable>
                  <strow>
-                        <stentry>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita"
+                        <stentry>1. <xref href="devplatform.ALS-developer-trial-quick-start.dita"
                         >Register for your Helion Public Cloud Account</xref>
                     <p>2. <xref
-                            href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743"
+                            href="devplatform.ALS-developer-trial-quick-start2.dita#topic1743"
                             >Download Tools</xref>
-                    </p><p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita"
+                    </p><p>3. <xref href="devplatform.ALS-developer-trial-quick-start3.dita"
                             >Create the Sandbox Environment</xref></p><p>4. <b>Create a
                         Cluster</b></p><p>5. <xref
-                            href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add Windows
+                            href="devplatform.ALS-developer-trial-quick-start5.dita">Add Windows
                             DEA and SQL Server (Optional Step)</xref></p><p>6. <xref
-                            href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore
+                            href="devplatform.ALS-developer-trial-quick-start6.dita">Explore
                             Sample Applications</xref></p></stentry>
                         <stentry>For convenience, copy the command sets and paste them into a text
                     editor. You can edit them there and then paste that information into the <xref
@@ -55,7 +55,7 @@
                                 <varname>cf-mgmt</varname>
                             </xref> tool to create the cluster. In the unlikely event that the
                             cluster creation fails, refer to the <xref
-                                href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
+                                href="devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
                                 >Troubleshooting</xref> section for further instructions.<p>
                                 <note> It may take about 15 minutes to deploy each cluster image in
                                     this and the following step. </note>
@@ -99,7 +99,7 @@ cf-mgmt create-cluster \
                             you created the cluster.</li>
                     </ol> Congratulations! You are now ready to begin deploying apps to your new
                     micro-cloud environment. <xref
-                        href="1.2devplatform.ALS-developer-trial-quick-start5.dita">
+                        href="devplatform.ALS-developer-trial-quick-start5.dita">
                         <image href="../media/NextButton.png" id="image_i4h_mjp_js"
                             placement="break"/>
                     </xref></stentry>

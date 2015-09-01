@@ -18,22 +18,22 @@
       navtitle="Upgrading from the Previous Version" locktitle="yes"/>
     <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/-->
     <topichead navtitle="Developer Quick Start Trial Guide">
-      <topicref href="devplatform/1.2devplatform.ALS-developer-trial-quick-start.dita"
+      <topicref href="devplatform/devplatform.ALS-developer-trial-quick-start.dita"
         navtitle="Quick Start Step 1: Register" locktitle="yes"/>
-      <topicref href="devplatform/1.2devplatform.ALS-developer-trial-quick-start2.dita"
+      <topicref href="devplatform/devplatform.ALS-developer-trial-quick-start2.dita"
         navtitle="Quick Start Step 2: Download Tools" locktitle="yes"/>
-      <topicref href="devplatform/1.2devplatform.ALS-developer-trial-quick-start3.dita"
+      <topicref href="devplatform/devplatform.ALS-developer-trial-quick-start3.dita"
         navtitle="Quick Start Step 3: Create Sandbox" locktitle="yes"/>
-      <topicref href="devplatform/1.2devplatform.ALS-developer-trial-quick-start4.dita"
+      <topicref href="devplatform/devplatform.ALS-developer-trial-quick-start4.dita"
         navtitle="Quick Start Step 4: Create Cluster" locktitle="yes"/>
-      <topicref href="devplatform/1.2devplatform.ALS-developer-trial-quick-start5.dita"
+      <topicref href="devplatform/devplatform.ALS-developer-trial-quick-start5.dita"
         locktitle="yes" navtitle="Quick Start Step 5: Windows (optional)"/>
-      <topicref href="devplatform/1.2devplatform.ALS-developer-trial-quick-start6.dita"
+      <topicref href="devplatform/devplatform.ALS-developer-trial-quick-start6.dita"
         locktitle="yes" navtitle="Quick Start Step 6: Explore More"/>
-      <topicref href="devplatform/1.2devplatform.ALS-developer-trial-quick-start-termination.dita"
+      <topicref href="devplatform/devplatform.ALS-developer-trial-quick-start-termination.dita"
         locktitle="yes" navtitle="Quick Start Termination"/>
       <topicref
-        href="devplatform/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
+        href="devplatform/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
         locktitle="yes" navtitle="Quick Start Troubleshooting"/>
     </topichead>
     <!--installation-->

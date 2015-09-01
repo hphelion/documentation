@@ -28,7 +28,7 @@ web server, application dependencies, databases, and other services.</p>
 <section id="quick-start"> <title>Quick Start</title>
 <ul>
 <li>
-  <xref href="quick-start/quickstart_index.dita">ALS Quick Start </xref>(Not to be confused with the <xref href="../../1.2devplatform.ALS-developer-trial-quick-start.dita">Developer Quick Start Trial</xref>.</li>
+  <xref href="quick-start/quickstart_index.dita">ALS Quick Start </xref>(Not to be confused with the <xref href="../../devplatform.ALS-developer-trial-quick-start.dita">Developer Quick Start Trial</xref>.</li>
 <li>
   <xref href="quick-start/quickstart_index.dita#topic4745/management-console" type="section"  >Management Console</xref>
 </li>

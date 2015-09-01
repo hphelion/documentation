@@ -133,7 +133,7 @@
         </section>
         <section id="publiccloud"> <title>Method #4: Boot Without a Configuration File (Helion public cloud)</title>
             <p>This is the process used for the <xref
-                    href="../../1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952"
+                    href="../../devplatform.ALS-developer-trial-quick-start.dita#topic1952"
                     >Developer Quick-Start trial</xref>. During the boot process the CVM will detect
                 that a configuration file is not present. When the user logs in, the CVM will prompt
                 the user to run a script which will create a configuration file specifically
