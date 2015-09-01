@@ -231,10 +231,6 @@
           (active-backup) rather than by number (1).</li>
         <li>This workaround is included in the installation instructions.</li>
       </ul>
-      <p><b>Horizon Installation Workaround Needed</b></p>
-      <ul>
-        <li>See workaround in the installation guide.</li>
-      </ul>
       <p><b>Cinder Limitations</b></p>
       <ul>
         <li>3Par storage is not supported in Beta 1</li>
