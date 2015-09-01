@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic_amr_q3w_js">
+  <title>HP Helion 1.3 Development Platform: Deploying your first .NET Application</title>
+<prolog>
+      <metadata>
+        <othermeta name="layout" content="default-devplatform"/>
+        <othermeta name="product-version" content="HP Helion Development Platform"/>
+        <othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
+        <othermeta name="role" content="Systems Administrator"/>
+        <othermeta name="role" content="System Engineer"/>
+        <othermeta name="role" content="Cloud Administrator"/>
+        <othermeta name="role" content="Network Administrator"/>
+        <othermeta name="role" content="Application Developer"/>
+        <othermeta name="role" content="ISV Developer"/>
+        <othermeta name="role" content="Service Developer"/>
+        <othermeta name="role" content="Patrick F"/>
+        <othermeta name="product-version1" content="HP Helion Development Platform"/>
+        <othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
+      </metadata>
+    </prolog>
+    <body>
+<!--permalink: /helion/devplatform/windows/deployingnet/-->
+<section><title>HP Helion 1.3 Development Platform: Deploying your first .NET Application</title>
+      <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
+          Microsoft Corporation in the United States and/or other countries.</i></ph>
+      <p>This tutorial demonstrates how to deploy an application to a Windows Server instance
+        running in an HP Helion <tm tmtype="reg">OpenStack</tm> environment using the toolset provided. For the purposes
+        of this tutorial, you'll deploy Microsoft's Contoso University sample
+      application.</p></section>
+<section><title>System requirements</title>
+
+  <p>This tutorial requires the following software components:</p>
+
+<ul>
+  <li>Visual Studio 2013. Any edition is supported, including the Community (Free) edition.</li>
+  <li>Cloud Foundry Extensions and Cloud Foundry MSBuild tasks. See 
+    <xref href="windows_tools_guide.dita#topic_w5z_kcw_js/cloudfoundryextensions" type="section"> Windows and .NET Tools Guide: Cloud Foundry Explorer</xref> and 
+    <xref href="windows_tools_guide.dita#topic_w5z_kcw_js/msbuild" type="section">Windows and .NET Tools Guide: MSBuild Tasks</xref> for more details. </li>
+  <li>Download and extract the <xref scope="external" format="html" href="https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8">Contoso University Sample Application</xref>.</li>
+</ul>
+</section>
+      
+<section><title>Deploy the sample application from Visual Studio</title><ol>
+        <li>Open <codeph>&lt;sample directory&gt;/C#/ContosoUniversity.sln</codeph> in Visual
+          Studio.</li>
+        <li>Install the <b>Cloud Foundry MSBuild Tasks</b> following these directions here: <xref href="windows_tools_guide.dita#topic_w5z_kcw_js/msbuild"/>
+          Windows and .NET Tools Guide: Cloud Foundry Explorer</li>
+        <li>In Visual Studio, open <codeph>web.config</codeph>.</li>
+        <li>Change the following configuration line (this will pull the connection string parameters
+          from environment variables, rather than using hardcoded values):
+          <codeblock>  &lt;add name="SchoolContext"
+    connectionString= 
+      "Data Source=(LocalDb)\v11.0; 
+      Initial Catalog=ContosoUniversity2; 
+      Integrated Security=SSPI;" 
+    providerName="System.Data.SqlClient" 
+  /&gt;</codeblock>
+          to:
+          <codeblock>&lt;add name="DefaultConnection" 
+  connectionString="{ContosoUniversity-db#connectionString}" 
+  providerName="System.Data.SqlClient" /&gt;</codeblock></li>
+        <li>Save <codeph>web.config</codeph>.</li>
+        <li>Build the project locally to verify that it builds correctly, and all NuGet packages
+          successfully install. Once the project builds successfully, go to the next step. <image
+            href="../../../media/windows_build.png" placement="break"/></li>
+        <li>Right click the project and select <b>Publish to Cloud Foundry</b>. <image
+            href="../../../media/windows_deploy_contextmenu.png" placement="break"/>
+        </li>
+        
+  <li>In the first <b>Publish to Cloud Foundry</b> dialog (<b>Target</b>), enter the following values and click <b>Next</b>:
+  <ul>
+    <li><b>Profile</b>: A friendly name to use to store this publish profile.</li>
+    <li><b>Target</b>: The URL of the ALS cluster</li>
+    <li><b>Organization and Space</b>: Select from one of the provided options.</li>
+  </ul>
+    <image href="../../../media/windows_publish_step1_version_1_3.png" placement="break"/></li>
+  <li>In the second <b>Publish to Cloud Foundry</b> dialog (<b>Application</b>), enter the following values and click <b>Next</b>:
+  <ul>
+    <li><b>Name</b>: The friendly name for the application</li>
+    <li><b>Buildpack</b>: Select from one of the provided options. The default is <b>&lt;&lt;Auto-Detect&gt;&gt;</b>.</li>
+    <li><b>Stack</b>: Leave as <codeph>win2012r2</codeph>.</li>
+    <li><b>Memory</b>: The amount of memory the application will use (e.g. 512 MB).</li>
+    <li><b>Instances</b>: The number of separate installations of the application.</li>
+  </ul><image href="../../../media/windows_publish_step2_version_1_3.png" placement="break"/></li>
+  <li>In the third <b>Publish to Cloud Foundry</b> dialog (<b>Routes</b>), enter the following values and click <b>Next</b>:
+  <ul><li><b>Hosts</b>: Add the host name that the application will use. This host name will be added to the cluster domain; for instance, in the image below, the URL to access the application will be <b>mygeekquiz.15.125.64.221.xip.io</b></li>
+  <li><b>Shared Domains</b>: Select from one of the available options.</li>
+  <li><b>Private Domains</b>: Select from one of the available options.</li></ul>
+    <image href="../../../media/windows_publish_step3_version_1_3.png" placement="break" /></li>
+  <li>In the fourth <b>Publish to Cloud Foundry</b> dialog (<b>Services</b>), if a service is needed for your application, either select from one of the available services, or select <b>Create Service</b>.
+   <image href="../../../media/windows_publish_step4_version_1_3.png"/></li>
+  <li>If you clicked <b>Create Service</b> in the previous step, enter the following values in the <b>Create Service Instance</b> dialog and click <b>OK</b>:
+    <ul>
+      <li><b>Service Name</b>: The friendly name for the service you are creating.</li>
+      <li><b>Service Type</b>: Select from the list of available options. <note>Creating custom services is not supported.</note></li>
+      <li><b>Service Plan</b>: Select from the list of available options.</li>
+    </ul><image href="../../../media/windows_publish_step5_version_1_3.png" placement="break"/>
+  The new service will appear in the Services dialog:
+    <image href="../../../media/windows_publish_step6_version_1_3.png" placement="break"/>
+  </li>
+  <li>In the next <b>Publish to Cloud Foundry</b> dialog (<b>Environment Variables</b>), enter key-value pairs that can be read by the application using the VCAP_APPLICATION environment variable. In the screenshot below, an environment variable called <b>isDebug</b>
+  is created with a value of <b>True</b>.
+    
+    <image href="../../../media/windows_publish_step7_version_1_3.png" placement="break"/></li>
+  <li>Click <b>Finish</b>. The application will be deployed to the selected Helion environment.</li>
+  <!--<li>In the <b>Login Wizard</b> dialog, enter the URL for the ALS cluster, and a user and
+          password with sufficient privileges. Check the <b>Skip SSL Validation</b> checkbox if your
+          Helion OpenStack installation uses self-signed certificates (as it does in HP Helion
+          Public Cloud): <image href="../../../media/windows_publish_credentials.png" placement="break"
+          />
+        </li>
+        <li> In the <b>Cloud Foundry Publish Profile</b> dialog, enter the following values and
+          click <b>Publish</b>: <ul>
+            <li><b>Organization and Space:</b> Select from one of the provided options.</li>
+            <li><b>Name:</b> The default value is the name of the application.</li>
+            <li><b>Stack:</b> Leave as <codeph>win2012r2</codeph></li>
+            <li><b>Routes</b>: Typically the same as the **Name** entry.</li>
+            <li><b>Memory</b>: The amount of memory the application will use (e.g. 512 MB).</li>
+            <li><b>Instances</b>: The number of separate installations of the application.</li>
+            <li><b>Services</b>: Enter the services to bind to the application, in the form
+                <codeph>Name, service type, quota</codeph>, with separate services separated by
+              semicolons. Example: <codeph>ContosoUniversity-db,mssql2014,default</codeph>
+              <b>Note:</b> If you are adding a SQL server service, ensure that the name matches the
+              value set in the config file. Example:
+                <codeph>ContosoUniversity-db,mssql2014,free</codeph>
+            </li>
+            <li>
+              <b>Build Locally</b>: Check to test the build by building the application locally
+              before deployment.</li>
+            <li>
+              <b>Configuration</b>: Set the build configuration (e.g. Debug). This is only available
+              if the application is built on the server.</li>
+            <li>
+              <b>Platform</b>: Set the target CPU platform (e.g. Any CPU). This is only available if
+              the application is built on the server.</li>
+          </ul>
+          <image href="../../../media/windows_deploy_cf.png" placement="break"/>
+        </li>-->
+        <li>Open or refresh Cloud Foundry Explorer. You can open Cloud Foundry Explorer under
+            <b>View-&gt;Other Windows-&gt;Cloud Foundry Explorer</b>. <image
+            href="../../../media/windows_refresh.png" placement="break"/>
+        </li>
+        <li>Right click the "Contoso" application and select <b>View in Browser</b>: <image
+            href="../../../media/windows_viewbrowser.png" placement="break"/>
+        </li>
+      </ol> That's it! You are ready to use your application. </section><section><title>Deploy the sample application from the command line</title>
+
+If you are deploying your application from the command line, you do not need Visual Studio to deploy your application. You can deploy it using the Helion client tool. For more information about using the Helion client tool with Windows applications, see "/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide.
+
+
+One advantage of using the command line is that you can use Mac or Linux as well as Windows to deploy your application. Typically, a push is run with the tool in the solution directory, the client tool uploads the application, and the application is built on the server.
+<ol>
+<li> Open <codeph>Web.config</codeph> with a text editor</li>
+<li> Change the following configuration line (this will pull the connection string parameters from
+          environment variables, rather than using hardcoded values):
+       
+<codeblock>  &lt;add name="SchoolContext" 
+    connectionString="Data Source=(LocalDb)\v11.0;
+    Initial Catalog=ContosoUniversity2;
+    Integrated Security=SSPI;"
+  providerName="System.Data.SqlClient" /&gt;</codeblock>
+          to:
+          <codeblock>  &lt;add name="DefaultConnection" 
+  connectionString="{ContosoUniversity-db#connectionString}" 
+  providerName="System.Data.SqlClient" /&gt;</codeblock>
+        </li>
+<li> Create a new file called <codeph>manifest.yml</codeph> in the same directory as your solution
+          file, with the following contents. This is the application manifest file, which the
+          deployment tool will use to determine what to do with the application.
+          <codeblock>---
+applications:
+  -name: ContosoUniversity
+  mem: 512M
+  services:
+    ${name}-db:
+      type: mssql2014</codeblock></li>
+<li> Use the "http://docs.hpcloud.com/helion/devplatform/windows/tools_guide/#helion" Helion ALS
+          Client (Helion.exe) to deploy the application. Run this command in the same directory as
+            <codeph>manifest.yml</codeph> (The <codeph>-n</codeph> parameter suppresses prompts
+          about defaults that the script uses):
+          <codeblock>helion target &lt;cluster URL>
+helion login
+helion push --stack win2012r2 -n</codeblock></li>
+<li> When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).
+</li>
+<li> Browse to the application URL to verify the deployment. </li>
+</ol>
+    
+</section>
+      <section id="view_apps"><title>Configure Windows DEA to view application files in the management console</title>
+      <p>When the new DEA is created, applications can only be viewed on the command line. Follow these steps to view applications in the management console:</p>
+      <ol>
+        <li>Connect to the DEA through the application console:
+        <ol>
+          <li>In the Horizon interface, select <b>Project</b>, <b>Instances</b>. </li>
+          <li>Select your Windows DEA instance from the Instances list. Select the <b>Console</b> tab to open the instance console.</li>
+          <li>Click <b>Ctrl+Alt+Delete</b>. Select the <b>Administrator account.</b> Assign a new password.</li>
+        </ol></li>
+        <li>From the command line, execute <codeph>taskmgr</codeph>.</li>
+        <li>Select <b>More Details...</b> Select <b>File</b>, <b>Run new task</b>. Enter <b>powershell</b> as the new task and click <b>OK</b>.</li>
+        <li>Run <b>cd c:\windea</b></li>
+        <li>Run <b>notepad dea.config</b></li>
+        <li>Verify that the value for <b>directoryserver v2port</b> is <b>5678</b>. Save and close the file.</li>
+        <li>Run <b>netsh advfirewall firewall add rule name="v2 DirectoryServer" protocol=TCP dir=in localport=5678 action=allow</b></li>
+        <li>Run <b>net stop windea</b></li>
+        <li>Run <b>net start windea</b></li>
+        <li>Sign out of the instance console.</li>
+        <li>Log into the instance's management console (e.g. https://api.15.126.136.34.xip.io/console/).</li>
+        <li>Select Applications.</li>
+        <li>Your deployed application will appear in the list of applications.</li>
+      </ol></section>
+</body>
+</topic>

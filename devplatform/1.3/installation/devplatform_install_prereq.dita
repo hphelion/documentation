@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_x54_njh_ts">
+  <title>HP Helion Development Platform Installation Prerequisites</title>
+  <body>
+    <section id="prerequisites"> <title>Prerequisites</title>
+      <p>The HP Helion Development Platform is installed in the overcloud of HP Helion <tm tmtype="reg">OpenStack</tm></p>
+      <note>Helion OpenStack version 1.1.1 is <b>required</b> for Helion Development Platform 1.2.
+        Installing Helion Development Platform 1.2 on Helion OpenStack versions 1.1 or 1.0 is not
+        supported. If you currently have Helion OpenStack version 1.1 with Helion Development
+        Platform 1.1 installed, you will need to perform a fresh <xref
+          href="../../../commercial/GA1/1.1commercial.index.dita">install</xref> of
+        Helion OpenStack version 1.1.1 and then install Helion Development Platform 1.2.</note>
+      <p>Before you begin installation:</p>
+      <ul>
+        <li>
+          <p>The Cinder block storage service must be configured with either <xref href="../../../commercial/GA1/1.1commercial.-vsa-overview.dita" >VSA</xref> or <xref href="../../../commercial/GA1/1.1commercial.install-3par.dita" >3Par</xref>.</p>
+        </li>
+        <li>
+          <p>If you installed HP Helion OpenStack with <b>KVM</b> hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</p>
+        </li>
+        <li>
+          <p>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements.</p>
+        </li>
+        
+      </ul>
+    </section>
+  </body>
+</topic>
