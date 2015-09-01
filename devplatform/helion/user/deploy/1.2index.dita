@@ -189,7 +189,7 @@ web server, application dependencies, databases, and other services.</p>
           <xref href="../reference/1.2glossary.dita#topic6187" type="section"  >Glossary</xref>
         </li>
 <li>
-          <xref href="../reference/1.2troubleshoot.dita#topic2774" type="section"  >Troubleshooting</xref>
+          <xref href="../reference/reference_troubleshoot.dita#topic2774" type="section"  >Troubleshooting</xref>
         </li>
 <li>
           <xref href="1.2manifestyml.dita#topic20922/applications" type="section">Manifest.yml

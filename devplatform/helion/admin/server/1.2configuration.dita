@@ -24,7 +24,7 @@
  <!--./devplatform/helion/admin/server/1.2configuration.md-->
  <!--permalink: /helion/devplatform/als/admin/server/configuration/--></p>
 <p>After booting the VM, run <i>kato process ready all</i> before starting the following configuration steps. This command returns <b>READY</b> when all configured system processes have started, and is particularly important when using <i>kato</i> commands in automated configuration scripts which run immediately after boot (the
-<xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-process-ready" type="section" >
+<xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-process-ready" type="section" >
 <i>--block</i>
 </xref>
 option is useful in this scenario).</p>
@@ -114,7 +114,7 @@ manually with the <i>passwd</i> command.</p>
 <section id="network-setup"> <title>Network Setup</title>
 </section>
 <section id="server-config-hostname"> <title>Changing the Hostname</title>
-  <p>You may want or need to change the hostname of the Application Lifecycle Service system, either to match a DNS record you've created or just to make the system URLs more convenient. This can be done using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-rename" type="section" >kato node rename</xref> command:</p>
+  <p>You may want or need to change the hostname of the Application Lifecycle Service system, either to match a DNS record you've created or just to make the system URLs more convenient. This can be done using the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-rename" type="section" >kato node rename</xref> command:</p>
 <codeblock>kato node rename mynewname.example.com</codeblock>
   <p>This command will change the system hostname in <i>/etc/hostname</i> and <i>/etc/hosts,</i> as well as performing some internal configuration for Application Lifecycle Service such as generating a new server certificate for the <xref href="../../user/console/console_index.dita#topic8844" >Management Console</xref>.</p>
 <p>mDNS is only supported with ".local" hostnames. If you want to give the
@@ -196,7 +196,7 @@ router and DNS server for this subnet. Check with your network
 administrator for their addresses.</p>
 </section>
 <section id="setting-a-static-ip"> <title>Setting a Static IP</title>
-  <p>The easiest way to configure an Application Lifecycle Service VM with a static IP address is to use the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-op-static_ip" type="section" >kato op static_ip</xref> command.</p>
+  <p>The easiest way to configure an Application Lifecycle Service VM with a static IP address is to use the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-op-static_ip" type="section" >kato op static_ip</xref> command.</p>
 <p>This command will prompt for the following inputs:</p>
 <ul>
 <li>static IP address (e.g. 10.0.0.1)</li>
@@ -221,7 +221,7 @@ prompt for the <i>sudo</i> password to write the changes.</p>
 <li>--dns-search-domains (set empty "" to skip)</li>
 <li>--restart-network</li>
 </ul>
-<p>If the IP address provided differs from the previous one, and the node isn't configured as a micro cloud, <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-migrate" type="section" >kato node migrate</xref> is run automatically.</p>
+<p>If the IP address provided differs from the previous one, and the node isn't configured as a micro cloud, <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-migrate" type="section" >kato node migrate</xref> is run automatically.</p>
 <p>As a precaution, the command does not automatically restart networking
 services. To do so, run the following commands:</p>
 <codeblock>sudo /etc/init.d/networking restart</codeblock>
@@ -229,7 +229,7 @@ services. To do so, run the following commands:</p>
 <p>
         <note>If you are setting a new static IP <i>after</i> having configured a cluster, you must
           reconfigure all other nodes in the cluster to use the new MBUS IP address. Run <xref
-            href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach"
+            href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach"
             type="section">kato node attach</xref> on all non-Core nodes.</note>
       </p>
 <p>Alternatively, these changes could be made by editing the <i>/etc/network/interfaces</i> file manually. For example:</p>
@@ -383,7 +383,7 @@ but which do not merit the effort of manually configuring a DNS record
 <xref href="http://xip.io/" scope="external" format="html" >xip.io</xref> service.  This is the approach taken on clusters created with the Horizon Management Console panel or Application Lifecycle Service Installer CLI, and is done as part of the setup process.</p>
 <p>
         <xref href="#topic31232/server-config-hostname" format="dita">Change your hostname</xref>
-        using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach"
+        using <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach"
           type="section">kato node rename</xref> to match the external IP address with the 'xip.io'
         domain appended. For example:</p>
 <codeblock>kato node rename 10.9.8.7.xip.io</codeblock>
@@ -623,7 +623,7 @@ code instead of using the credentials from the
   <xref href="../../user/reference/1.2environment.dita#topic7631/vcap-services" type="section" >VCAP_SERVICES</xref>
 environment variable.</p>
 <p>To tie external databases to Application Lifecycle Service as a data service, see the
-  examples in the <xref href="../reference/1.2add-service.dita">Adding System
+  examples in the <xref href="../reference/add-service.dita">Adding System
 Services</xref> section.</p>
 </section>
 
@@ -678,7 +678,7 @@ list</i>
 </section>
 <section id="allowed-repositories"> <title>Allowed Repositories</title>
 <p>Users (with our without <i>sudo</i> permissions) can install Ubuntu packages in application containers by requesting them in the requirements section of an application's <i>manifest.yml</i> file. The system allows package installation only from those repositories specified in the <b>Allowed Repos</b> list in the Management Console.</p>
-<p>This list can also be viewed and modified at the command line using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section" >kato config</xref>. For example, to view the 
+<p>This list can also be viewed and modified at the command line using <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section" >kato config</xref>. For example, to view the 
  current list:</p>
 <codeblock>  kato config get cloud_controller_ng allowed_repos 
     - deb mirror://mirrors.ubuntu.com/mirrors.txt precise main restricted universe multiverse 

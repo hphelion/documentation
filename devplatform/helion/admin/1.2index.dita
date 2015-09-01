@@ -200,7 +200,7 @@
               <xref href="cluster/external-db.dita#topic4533/troubleshooting" type="section"  
                 >Troubleshooting</xref>
             </li>
-            <li><xref href="reference/1.2add-service.dita">Adding System Services</xref>
+            <li><xref href="reference/add-service.dita">Adding System Services</xref>
             </li>
           </ul></li>
 <li>
@@ -244,7 +244,7 @@
 <section id="reference"> <title>Reference</title>
 <ul>
 <li>
-<xref href="reference/1.2kato-ref.dita" >Kato Command Reference</xref>
+<xref href="reference/kato-ref.dita" >Kato Command Reference</xref>
 </li>
 <li>
           <xref href="../user/reference/1.2client-ref.dita">ALS Client Command Reference</xref>
@@ -253,13 +253,13 @@
 <xref href="../user/deploy/1.2orgs-spaces.dita" >Managing Groups, Users &amp; Limits</xref>
 </li>
 <li>
-<xref href="reference/1.2architecture.dita" >Architectural Design</xref>
+<xref href="reference/architecture.dita" >Architectural Design</xref>
 </li>
 <li>
 <xref href="../user/reference/1.2glossary.dita" >Glossary</xref>
 </li>
 <li>
-<xref href="reference/1.2troubleshoot.dita" >Troubleshooting</xref>
+<xref href="reference/reference_troubleshoot.dita" >Troubleshooting</xref>
 </li>
 </ul>
 </section>

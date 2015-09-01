@@ -47,7 +47,7 @@ between multiple instances (containers) as required.</p>
     <p>For Router SSL/TLS information, see the <xref href="https_and_ssl.dita">HTTPS and SSL
       Configuration</xref> documentation.</p>
 <section id="settings"> <title>Settings</title>
- <p>The Router is configured using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"  >
+ <p>The Router is configured using <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"  >
       <i>kato config</i>
     </xref>. The following settings are configurable:</p>
 <dl>
@@ -138,7 +138,7 @@ connection consumers (the application server and browser) support it.</p>
       <p>The default settings for the router are loaded from a <b>router.yml</b> file in the
           <codeph>/s/code/stackato-router/config/</codeph> directory during first boot (only). You
         can use this file to configure the router, but the changes must be manually re-imported with
-        the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-op-import_from_yaml_file">kato-command-ref-op-import_from_yaml_file</xref>command.</p>
+        the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-op-import_from_yaml_file">kato-command-ref-op-import_from_yaml_file</xref>command.</p>
       <codeblock>kato op import_from_yaml_file router2g 
 kato restart router </codeblock>
       <p>This approach is often easier than manipulating the settings individually. </p>

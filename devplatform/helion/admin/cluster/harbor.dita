@@ -81,7 +81,7 @@ details to the users service credentials.</p>
 </section>
 <section id="troubleshooting"> <title>Troubleshooting</title>
 <p>If you have problems with the Harbor service, first check the status using the <codeph><xref
-            href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-status">kato
+            href="../reference/kato-ref.dita#topic39432/kato-command-ref-status">kato
             status</xref></codeph> command.</p>
 <p>The Harbor service can be safely restarted; any ports and routes
 provisioned are automatically added and the backends are re-validated on

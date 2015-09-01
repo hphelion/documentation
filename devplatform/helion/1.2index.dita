@@ -101,7 +101,7 @@
           <xref href="user/reference/1.2client-ref.dita">ALS Command-Line Client Reference</xref>
         </li>
         <li>
-          <xref href="admin/reference/1.2kato-ref.dita"><i>kato</i> Command Reference</xref>
+          <xref href="admin/reference/kato-ref.dita"><i>kato</i> Command Reference</xref>
         </li>
         <li>
           <xref href="user/deploy/1.2manifestyml.dita"><i>manifest.yml</i> Reference</xref>
@@ -110,13 +110,13 @@
           <xref href="user/reference/1.2environment.dita">Environment Variables</xref>
         </li>
         <li>
-          <xref href="admin/reference/1.2known-issues.dita">Known Issues</xref>
+          <xref href="admin/reference/known-issues.dita">Known Issues</xref>
         </li>
         <li>
           <xref href="user/reference/1.2glossary.dita">Glossary</xref>
         </li>
         <li>
-          <xref href="user/reference/1.2troubleshoot.dita">Troubleshooting</xref>
+          <xref href="user/reference/reference_troubleshoot.dita">Troubleshooting</xref>
         </li>
       </ul>
     </section>

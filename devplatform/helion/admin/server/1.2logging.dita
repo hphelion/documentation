@@ -133,7 +133,7 @@ application-specific events from the <b>logyard_sieve</b> stream.</p>
 </section>
 <section id="system-drains"> <title>System Drains</title>
 <p>Drains for system log and cloud event streams can be added by admins
-  with the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-drain-add" type="section"   >kato log
+  with the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-log-drain-add" type="section"   >kato log
 drain</xref>
 command. For example:</p>
 <codeblock>kato log drain add --prefix systail.kato mydrain udp://logs.papertrailapp.com:12345</codeblock>
@@ -146,7 +146,7 @@ all nodes in the cluster) and forwards them to
 prefix as its argument.</p>
 <p>To delete the drain:</p>
 <codeblock>kato log drain delete mydrain</codeblock>
-  <p>The <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-history" type="section"><i>kato history</i></xref> command
+  <p>The <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-history" type="section"><i>kato history</i></xref> command
 uses a built-in drain which forwards to a Redis server on the Primary
 node.</p>
 <p>The 'file' drain type will append to a local file. To overwrite the file
@@ -216,7 +216,7 @@ streams</i>
 <li>syslog.priority: syslog priority</li>
 <li>syslog.time: syslog formatted time</li>
 </ul>
-  <p>You can see a list of the default drain formats using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
+  <p>You can see a list of the default drain formats using <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato config
 get</i>
 </xref>:</p>
@@ -246,7 +246,7 @@ shorter command for creating the <b>all-apps</b> drain would be:</p>
 <p>You can also change the default apptail, event, and systail drain
 formats to modify the output of any drains using these prefixes (e.g.
   <xref href="../../user/reference/1.2client-ref-management.dita#topic50918/command-drain-add" type="section"   >helion drain</xref>, Cloud
-  Events in the Management Console, and <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-tail" type="section">kato log tail</xref>
+  Events in the Management Console, and <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-log-tail" type="section">kato log tail</xref>
 respectively).</p>
 </section>
 <section id="custom-drains"> <title>Custom Drains</title>
@@ -279,7 +279,7 @@ builtin.katohistory     192.168.68.5    RUNNING[3]</codeblock>
 <p>Each message in a log stream is prefixed with a key, identifying what type of message it is or to
         which log stream it belongs. The following keys are available for use in defining drains
         using the <codeph>--prefix</codeph> flag for <xref
-          href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-drain-add"><i>kato log
+          href="../reference/kato-ref.dita#topic39432/kato-command-ref-log-drain-add"><i>kato log
             drain add</i></xref> ).</p>
 <p>Systail keys are <xref href="#topic11928/managing-the-systail-stream" format="dita"
             ><i>configurable</i></xref> .</p>
@@ -359,7 +359,7 @@ builtin.katohistory     192.168.68.5    RUNNING[3]</codeblock>
 </section>
 <section id="managing-the-systail-stream"> <title>Managing the systail stream</title>
 <p>The list above shows the default systail keys. These can keys can be
-  modified with the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
+  modified with the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato
 config</i>
 </xref> command to
@@ -392,7 +392,7 @@ removing log files:</p>
 <section id="configuration"> <title>Configuration</title>
 <p>Application Lifecycle Service has a number of configurable limits on application log drains
 to help prevent performance problems the logging subsystems. These
-settings can all be viewed and set with <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
+settings can all be viewed and set with <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato
 config</i>
 </xref> commands as
@@ -420,7 +420,7 @@ re-establish their connections within (at most) 5 minutes.</p>
 other drains will retry indefinitely.</p>
 
 <p>These timeouts can be configured. To see a list of the configured
-  timeouts, use <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
+  timeouts, use <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato config
 get</i>
 </xref>. For
@@ -430,7 +430,7 @@ example:</p>
 appdrain.: 24h
 tmp.: 25m</codeblock>
 
-  <p>To set a time-out (minimum 21m), use <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
+  <p>To set a time-out (minimum 21m), use <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato config
 set</i>
 </xref>. For

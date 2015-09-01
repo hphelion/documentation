@@ -166,7 +166,7 @@ https://helion-xxxx.local</codeblock>
       <p>Basic Application Lifecycle Service administration can be done through the Management
         Console, but some maintenance and configuration tasks may need to be done at the command
         line using the <i>kato</i> command. See the <xref
-          href="../../admin/reference/1.2kato-ref.dita">Kato Command Reference</xref> for a full
+          href="../../admin/reference/kato-ref.dita">Kato Command Reference</xref> for a full
         list of options.</p>
       <p>The Application Lifecycle Service Management Console will periodically send non-identifying
         pingbacks (Application Lifecycle Service version number and UUID) to HP servers to help
@@ -252,8 +252,8 @@ https://helion-xxxx.local</codeblock>
         the Node Settings, showing a list of all available roles and checkboxes to enable or disable
         each one. Click Save to apply changes.</p>
       <p>See also the <xref
-          href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-role-add">kato role</xref>
-        and <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-info">kato
+          href="../reference/kato-ref.dita#topic39432/kato-command-ref-role-add">kato role</xref>
+        and <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-info">kato
           info</xref> command documentation for the CLI equivalents, and the <xref
           href="../cluster/cluster_index.dita">Cluster Setup</xref> documentation for information on
         adding nodes to the cluster.</p>

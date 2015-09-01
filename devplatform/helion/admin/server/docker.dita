@@ -24,7 +24,7 @@
 <body>
     <p><!--PUBLISHED--><!--./devplatform/1.2/helion/admin/server/1.2docker.md--><!--permalink: /helion/devplatform/1.2/als/admin/server/docker/--></p>
     <p>Application Lifecycle Service's <xref
-        href="../reference/1.2architecture.dita#topic4407/architecture-droplet-execution-agents"
+        href="../reference/architecture.dita#topic4407/architecture-droplet-execution-agents"
         type="section">DEA role</xref> runs Linux containers to isolate user applications during
       staging and at runtime. Management of these application containers is handled by the
         <i>fence</i> process, which in turn uses <xref href="http://docs.docker.io/en/latest/"
@@ -68,7 +68,7 @@
       </ul>
       <p>The <xref href="../console/console_index.dita">Settings</xref> view in the web management console exposes
         these settings, but you can also set them using the <xref
-          href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config">kato config</xref>
+          href="../reference/kato-ref.dita#topic39432/kato-command-ref-config">kato config</xref>
         command. The following settings are available in the <codeph>cloud_controller_ng</codeph>
         group:</p>
       <dl>

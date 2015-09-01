@@ -41,7 +41,7 @@ framework:
   runtime: python32</codeblock>
 <p>
   <note type="restriction"> When using the <xref
-    href="../../admin/reference/1.2known-issues.dita#topic6051/legacy-buildpack-and-environment-variables"
+    href="../../admin/reference/known-issues.dita#topic6051/legacy-buildpack-and-environment-variables"
     type="section">Legacy buildpack</xref>, config-defined environment variable values can only
           be updated by re-pushing the entire application with the new settings.</note>
       </p>

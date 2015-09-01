@@ -39,11 +39,11 @@
 </section>
 <section id="changing-the-mbus-ip-core-node"> <title>Changing the MBUS IP (Core node)</title>
 <p>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS
-        IP address. Run <xref href="1.2kato-ref.dita#topic39432/kato-command-ref-node-migrate">kato
+        IP address. Run <xref href="kato-ref.dita#topic39432/kato-command-ref-node-migrate">kato
           node migrate</xref> or <xref
-          href="1.2kato-ref.dita#topic39432/kato-command-ref-op-static_ip">kato op static ip</xref>
+          href="kato-ref.dita#topic39432/kato-command-ref-op-static_ip">kato op static ip</xref>
         on the Core node, then <xref
-          href="1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" >kato node attach</xref> on all other cluster nodes to set
+          href="kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" >kato node attach</xref> on all other cluster nodes to set
         the new MBUS IP.</p>
 </section>
 <section id="adding-new-relic-repositories"> <title>Adding New Relic Repositories</title>
@@ -65,9 +65,9 @@
 <section id="kato-data-users-exportimport-broken"> <title>Kato data users export/import broken</title>
 <p>The <b>kato data users export</b> and <b>kato data users import</b> commands, which save and load
         lists of users to and from CSV files, are non-functional in the current release. The <xref
-          href="1.2kato-ref.dita#topic39432/kato-command-ref-data-import">kato data import</xref>
+          href="kato-ref.dita#topic39432/kato-command-ref-data-import">kato data import</xref>
         and <xref
-          href="1.2kato-ref.dita#topic39432/kato-command-ref-data-export"
+          href="kato-ref.dita#topic39432/kato-command-ref-data-export"
           type="section" >kato data export</xref> commands are still available for
         migrating users from one ALS installation to another.</p>
 </section>

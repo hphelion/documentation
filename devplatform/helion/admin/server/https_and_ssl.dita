@@ -74,7 +74,7 @@
           href="http://en.wikipedia.org/wiki/Server_Name_Indication" scope="external" format="html"
           >SNI</xref>, and custom SSL certificates for domains resolving to the system can be added
         using the <xref
-          href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-op-custom_ssl_cert"
+          href="../reference/kato-ref.dita#topic39432/kato-command-ref-op-custom_ssl_cert"
           type="section">kato op custom_ssl_cert install</xref> command. Usage:</p>
       <codeblock>kato op custom_ssl_cert install &lt;key-path&gt; &lt;cert-path&gt; &lt;domain&gt; [--wildcard-subdomains]</codeblock>
       <p>This must be run on all router nodes in a cluster: the first one as above, subsequent
@@ -175,7 +175,7 @@ socksProxyType=socks4a | OR | socks5;</codeblock></li>
       <p>To remove the proxy setting:</p>
       <codeblock>kato op upstream_proxy delete</codeblock>
       <p>To set an HTTP proxy exclusively for apps, add an <b>environment\app_http_proxy</b> setting in the dea_ng
-        config using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section" >kato config set</xref>. For example:</p>
+        config using <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section" >kato config set</xref>. For example:</p>
       <codeblock>kato config set dea_ng environment/app_http_proxy 10.0.0.47:3000</codeblock>
       <p>Adding this configuration sets the 'http_proxy' environment variable
         within all subsequently created application containers.</p>

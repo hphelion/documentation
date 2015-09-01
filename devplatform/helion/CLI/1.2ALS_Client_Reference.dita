@@ -617,8 +617,8 @@
       <codeblock>cf-mgmt help list-clusters</codeblock>      <table>
         <tgroup cols="3">
           <colspec colname="col1" colwidth="1*"/>
-          <colspec colname="col2" colwidth="2.68*"/>
-          <colspec colname="newCol3" colwidth="4.72*"/>
+          <colspec colname="col2" colwidth="2.43*"/>
+          <colspec colname="newCol3" colwidth="1.63*"/>
           <thead>
             <row>
               <entry>Command Options</entry>
@@ -637,14 +637,14 @@
       </table>
     </section>
   <section id="show">
-    <title>Show Details</title><p>Displays detailed information about a the target cluster. (<i>show-cluster</i>)</p>
+    <title>Show Details</title><p>Displays detailed information about the target cluster. (<i>show-cluster</i>)</p>
       <p>For help with this command within the command-line interface, enter</p>
       <codeblock>cf-mgmt help show-cluster</codeblock>
     <table>
       <tgroup cols="3">
           <colspec colname="col1" colwidth="1*"/>
-          <colspec colname="col2" colwidth="3.09*"/>
-          <colspec colname="newCol3" colwidth="4.31*"/>
+          <colspec colname="col2" colwidth="2.47*"/>
+          <colspec colname="newCol3" colwidth="1.59*"/>
           <thead>
             <row>
               <entry>Command Options</entry>

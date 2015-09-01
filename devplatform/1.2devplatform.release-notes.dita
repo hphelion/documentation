@@ -54,7 +54,7 @@
         <dlentry>
           <dt>New Kato command</dt>
           <dd><codeph>op regenerate <xref
-                href="helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-op-regenerate"
+                href="helion/admin/reference/kato-ref.dita#topic39432/kato-command-ref-op-regenerate"
                 >authorized_keys</xref></codeph></dd>
         </dlentry>
       </dl>

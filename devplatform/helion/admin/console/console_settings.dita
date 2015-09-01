@@ -259,9 +259,9 @@
       <p>Lists current log <xref href="../server/1.2logging.dita#topic11928/drains" type="section"
           >drains</xref> and the log drain retry limits. Drains and limits cannot be changed in this
         interface; use the <codeph><xref
-            href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-drain-add"
+            href="../reference/kato-ref.dita#topic39432/kato-command-ref-log-drain-add"
             type="section">kato log drain</xref></codeph> commands and <codeph><xref
-            href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"
+            href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"
             >kato config</xref></codeph> commands.</p>
     </section>
     <section id="file-system">

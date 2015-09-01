@@ -26,7 +26,7 @@
  <!--./devplatform/1.2/helion/admin/cluster/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/cluster/--></p>
   <p>This process begins with an installed <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" >micro cloud</xref>, which must then be cloned across several <xref href="../../user/reference/1.2glossary.dita#topic6187/term-node" >nodes</xref>. You connect to each node in turn and tell it which <xref href="../../user/reference/1.2glossary.dita#topic6187/term-role" type="section"   >role</xref>s it is to serve, thereby distributing the processing load for maximum performance.</p>
-<p>In HP Helion, the Clusters Panel in the <xref href="../../user/console/console_index.dita" >ALS management console</xref> makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the <xref href="../../CLI/1.2ALS_Client_Reference.dita" >Cluster Configuration tool</xref> or <xref href="../reference/1.2kato-ref.dita" >
+<p>In HP Helion, the Clusters Panel in the <xref href="../../user/console/console_index.dita" >ALS management console</xref> makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the <xref href="../../CLI/1.2ALS_Client_Reference.dita" >Cluster Configuration tool</xref> or <xref href="../reference/kato-ref.dita" >
 <i>kato</i>
 </xref> commands.</p>
 <ul>
@@ -131,16 +131,16 @@
 take on one or more of the following roles:</p>
 <ul>
 <li>
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-primary" type="section"   >primary</xref>
+  <xref href="../reference/architecture.dita#topic4407/architecture-primary" type="section"   >primary</xref>
 </li>
 <li>
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-cloud-controller" type="section"   >controller</xref>
+  <xref href="../reference/architecture.dita#topic4407/architecture-cloud-controller" type="section"   >controller</xref>
 </li>
 <li>
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-router" type="section"   >router</xref>
+  <xref href="../reference/architecture.dita#topic4407/architecture-router" type="section"   >router</xref>
 </li>
 <li>
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-droplet-execution-agents" type="section"   >dea</xref>
+  <xref href="../reference/architecture.dita#topic4407/architecture-droplet-execution-agents" type="section"   >dea</xref>
 </li>
 <li>mdns (intended for micro clouds)</li>
 <li>
@@ -165,13 +165,13 @@ take on one or more of the following roles:</p>
 <xref href="../cluster/harbor.dita" >Harbor</xref> (TCP/UDP port service)</li>
 </ul>
 <p>The command line tool used to configure Application Lifecycle Service servers is called
-  <xref href="../reference/1.2kato-ref.dita">kato</xref>. You can see a
-list of the available roles at the command line by running the <xref href="../reference/1.2kato-ref.dita" >kato
+  <xref href="../reference/kato-ref.dita">kato</xref>. You can see a
+list of the available roles at the command line by running the <xref href="../reference/kato-ref.dita" >kato
 info</xref> command.</p>
-  <p>Setup of cluster nodes is done using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato
+  <p>Setup of cluster nodes is done using the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato
 node</xref> setup,
 add, attach, and remove sub-commands.</p>
-  <p>The <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-info" type="section"   >kato info</xref>
+  <p>The <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-info" type="section"   >kato info</xref>
 command will show:</p>
 <ul>
 <li>
@@ -185,10 +185,10 @@ command will show:</p>
 <section id="preparing-the-core-node"> <title>Preparing the Core Node</title>
 <p>In an Application Lifecycle Service cluster, one node is dedicated as the Core node. This node
 will have a
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-cloud-controller" type="section"   >controller</xref>,
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-primary" type="section"   >primary</xref>,
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-base" type="section"   >base</xref>, and
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-router" type="section"   >router</xref> role but
+  <xref href="../reference/architecture.dita#topic4407/architecture-cloud-controller" type="section"   >controller</xref>,
+  <xref href="../reference/architecture.dita#topic4407/architecture-primary" type="section"   >primary</xref>,
+  <xref href="../reference/architecture.dita#topic4407/architecture-base" type="section"   >base</xref>, and
+  <xref href="../reference/architecture.dita#topic4407/architecture-router" type="section"   >router</xref> role but
 can also include additional roles.</p>
 <p>Boot an Application Lifecycle Service VM and set up the Core node as described below, then add
 the other nodes and assign roles.</p>
@@ -200,11 +200,11 @@ necessary to provide a consistent network interface for other nodes to connect t
 <p>Make sure that the IP address of its <codeph>eth0</codeph> interface is registering the correct address, which may not be the case if you have set a static IP and not yet rebooted or restarted
 networking. To check the IP address, run:</p>
 <codeblock>ifconfig eth0</codeblock>
-  <p>If necessary, use the kato <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-op-static_ip" type="section"   >
+  <p>If necessary, use the kato <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-op-static_ip" type="section"   >
 <i>op static_ip</i>
 </xref> command to set the static IP address:</p>
 <codeblock>kato op static_ip</codeblock>
-  <note>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-migrate" >kato node migrate</xref> on the Core node, then <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref> on all other cluster nodes.</note>
+  <note>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-migrate" >kato node migrate</xref> on the Core node, then <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref> on all other cluster nodes.</note>
 </section>
 <section id="hostname"> <title>Hostname</title>
   <p>Next, set the <b>fully qualified hostname</b> of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" type="section"   >DNS record</xref> created for
@@ -239,11 +239,11 @@ node and assigning their particular roles.</p>
 </section>
 <section id="attaching-nodes-and-enabling-roles"> <title>Attaching Nodes and Enabling Roles</title>
 <p>Adding nodes to the cluster involves attaching the new VMs to the Core
-  node's IP address using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref>
+  node's IP address using the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref>
 command. This command will check that the new node has a version number
 compatible with the Core node before attaching it.</p>
 <p>Roles can be added (or removed) on the new node after attaching using
-  the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-role-add" type="section"   >kato role</xref>
+  the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-role-add" type="section"   >kato role</xref>
 command, but it is generally preferable to enable roles during the
 <codeph>kato attach</codeph> step using the <codeph>-e</codeph> (enable) option as described below for each of the node types.</p>
 </section>
@@ -267,7 +267,7 @@ run the following command on the data services node:</p>
       </p>
 </section>
 <section id="dea-nodes"> <title>DEA Nodes</title>
-  <p>Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref> command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:</p>
+  <p>Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref> command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:</p>
 <codeblock>kato node attach -e dea CORE_IP</codeblock>
 <p>Continue this process until you have added all the desired DEA nodes.</p>
 </section>
@@ -277,7 +277,7 @@ following command on the Core node:</p>
 <codeblock>kato status --all</codeblock>
 </section>
 <section id="removing-nodes"> <title>Removing Nodes</title>
-  <p>Use the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-detach" type="section"  >kato
+  <p>Use the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-detach" type="section"  >kato
           node detach</xref> to remove a node from the cluster. Run the following command on the
         core node.</p>
 <codeblock>kato node remove NODE_IP</codeblock>
@@ -560,7 +560,7 @@ balancer must be configured to distribute connections between the
 Routers. Though most users will prefer to use a hardware load balancer
 or elastic load balancing service provided by the cloud hosting
 provider, an Application Lifecycle Service VM can be configured to take on this role.</p>
-  <p>The <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-setup-load_balancer" type="section"   >kato node setup load_balancer</xref>
+  <p>The <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-setup-load_balancer" type="section"   >kato node setup load_balancer</xref>
 command retrieves IP addresses of every router in the cluster and
 configures an nginx process to distribute load (via round-robin) among a
 pool of Routers and handle SSL termination.</p>

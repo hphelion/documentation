@@ -29,7 +29,7 @@ https://helion-xxxx.local  </codeblock>--><!-- On a <xref href="../reference/1.2
       generally set up the system to meet your requirements. note that advanced maintenance and
       configuration tasks may need to be done at the command line using the <codeph>kato</codeph>
       command utility or the <codeph>cf-mgmt</codeph> cluster creation tool. See the command-line
-      tool references (<xref href="../reference/1.2kato-ref.dita#topic39432">kato</xref>, <xref
+      tool references (<xref href="../reference/kato-ref.dita#topic39432">kato</xref>, <xref
         href="../../CLI/1.2ALS_Client_Reference.dita#topic13234">cf-mgmt</xref>, or the <xref
         href="../../user/reference/1.2client-ref.dita#topic13355">helion client</xref>) for a full
       list of options. </p>

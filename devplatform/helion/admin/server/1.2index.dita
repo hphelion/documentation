@@ -61,7 +61,7 @@ helion ssh api</codeblock>
 <p>On the server, the control command for Application Lifecycle Service is called
 <codeph>kato</codeph>. It is used for configuration and node
 management procedures such as start, stop, role specialization, and
-status checks. For a complete list of options, see the <xref href="../reference/1.2kato-ref.dita" >Kato Command Reference</xref>.</p>
+status checks. For a complete list of options, see the <xref href="../reference/kato-ref.dita" >Kato Command Reference</xref>.</p>
 </section>
 <section id="common-operations"> <title>Common Operations</title>
 <p>Instructions for common operations on the Application Lifecycle Service VM can be found here:</p>

@@ -32,7 +32,7 @@
         availability and disaster recovery. If an entire availability zone goes offline, the app
         will remain running with little or no down time. By default, all DEAs are part of the
           <i>default</i> availability zone. To set a zone, use the <xref type="section"
-          href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-availabilityzone"
+          href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-availabilityzone"
             ><codeph>kato node availabilityzone</codeph></xref> command. </p>For example, to see the
       current availability zone of a DEA:
       <codeblock>kato node availabilityzone
@@ -52,7 +52,7 @@ Availability zone on node 10.0.0.41 is 'region-b'.</codeblock></section>
         
    <p>DEAs have a <codeph>placement_properties/zones</codeph> key in their node-specific config
         where placement zones are specified. These are set with the <codeph><xref type="section"
-            href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-placementzones-add"
+            href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-placementzones-add"
             >node placementzones</xref></codeph> command. The relevant sub-commands are:
         <codeblock>kato node placementzones list
 kato node placementzones add [zone]

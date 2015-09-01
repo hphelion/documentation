@@ -285,6 +285,8 @@
         <topicref href="devplatform/CICD/cicd_inital_configuration.dita"/>
         <topicref href="devplatform/CICD/cicd_troubleshooting.dita"/>
         <topicref href="devplatform/CICD/cicd_users_guide.dita"/>
+        <topicref href="devplatform/CICD/cicd_walkthrough.dita"
+          navtitle="Walkthrough: Create a Project and Deploy an App" locktitle="yes"/>
       </topichead>
       <topicref href="devplatform/helion/admin/server/network_port_configuration.dita"/>
       <topicref href="devplatform/helion/admin/server/docker.dita" navtitle="Docker and Fence"
@@ -388,7 +390,7 @@
         </topicref>
         <topicref href="devplatform/helion/CLI/1.2ALS_Client_Reference.dita" locktitle="yes"
           navtitle="Cluster Management Tool Installation and Reference"/>
-        <topicref href="devplatform/helion/admin/reference/1.2kato-ref.dita" locktitle="yes"
+        <topicref href="devplatform/helion/admin/reference/kato-ref.dita" locktitle="yes"
           navtitle="Kato Command Reference"/>
       </topichead>
       <topicref href="devplatform/helion/admin/1.2index.dita" locktitle="yes"
@@ -444,15 +446,15 @@
         <!--permalink: /helion/devplatform/als/admin/server/router/-->
         <!--permalink: /helion/devplatform/als/admin/server/upgrade/-->
         <topichead navtitle="Reference">
-          <topicref href="devplatform/helion/admin/reference/1.2groups.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/reference/groups.dita" locktitle="yes"
             navtitle="Managing Groups, Users and Limits (DEPRECATED)"/>
-          <topicref href="devplatform/helion/admin/reference/1.2known-issues.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/reference/known-issues.dita" locktitle="yes"
             navtitle="Known Issues"/>
-          <topicref href="devplatform/helion/admin/reference/1.2architecture.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/reference/architecture.dita" locktitle="yes"
             navtitle="Architectural Design"/>
-          <topicref href="devplatform/helion/admin/reference/1.2add-service.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/reference/add-service.dita" locktitle="yes"
             navtitle="Adding System Services"/>
-          <topicref href="devplatform/helion/admin/reference/1.2troubleshoot.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/reference/reference_troubleshoot.dita" locktitle="yes"
             navtitle="Troubleshooting"/>
         </topichead>
       </topicref>
@@ -473,7 +475,7 @@
         <topicref href="devplatform/helion/user/reference/1.2glossary.dita" locktitle="yes"
           navtitle="Glossary"/>
         <!--permalink: /helion/devplatform/als/user/reference/troubleshoot/-->
-        <topicref href="devplatform/helion/user/reference/1.2troubleshoot.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/reference/reference_troubleshoot.dita" locktitle="yes"
           navtitle="Troubleshooting "/>
         <topicref href="devplatform/helion/user/deploy/1.2app-logs.dita" locktitle="yes"
           navtitle="Application Logs "/>
