@@ -53,13 +53,13 @@
         >fine-grained Admin permission controls</xref> are now available.</dd>
     </dlentry>
     <dlentry>
-      <dt>Improved Windows Server stack updates</dt>
-      <dd>Windows server stack has been updated to improve customer experience
-•	.NET buildpack streamlined with a Java workflow
-•	.NET buildpack packaged as an Admin buildpack providing updatability 
-•	Support for Microsft SQL Server tunneling
-•	General performance improvements
-</dd>
+      <dt>Improved <tm tmtype="reg">Windows</tm> Server stack updates</dt>
+      <dd><tm tmtype="reg">Windows</tm> server stack has been updated to improve customer experience <ul>
+              <li>.NET buildpack streamlined with a Java workflow</li>
+              <li>.NET buildpack packaged as an Admin buildpack providing updatability</li>
+              <li>Support for <tm tmtype="reg">Microsoft SQL Server</tm> tunneling</li>
+              <li>General performance improvements </li>
+            </ul></dd>
     </dlentry>
     <dlentry>
       <dt>Improved Windows development tools</dt>
