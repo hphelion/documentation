@@ -255,7 +255,15 @@ bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------  .....
 bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump ----------------- 
 </codeblock>
         This issue is resolved by rebooting the server. </p>
-      
+      <p><b>Freezer installation fails if an independent network is used for the External_API.</b></p>
+      <p> Currently the Freezer installation fails if an independent network is used for the
+        External_API. If you intend to deploy the External API in Beta 1 on an independent network,
+        the following changes need to be made: </p>
+      <p>In <b>roles/freezer-agent/defaults/main.yml</b> add the following line:
+        <codeblock>backup_freezer_api_url: "{{ FRE_API | item('advertises.vips.private[0].url', default=' ') }}"</codeblock>
+        In <b>roles/freezer-agent/templates/backup.osrc.j2</b> add the following line:
+        <codeblock>export OS_FREEZER_URL={{ backup_freezer_api_url }}</codeblock>
+      </p>
     </section>
   </body>
 </topic>
