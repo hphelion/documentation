@@ -20,7 +20,7 @@
         href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM + ESX
         deployment</xref>, you must perform the following tasks to integrate the HP Helion OpenStack
       Carrier Grade and HP Distributed Cloud Networking (DCN) environments. </p>
-    <p><b>Note:</b> If you are deploying the the <xref
+    <p><b>Note:</b> If you are deploying the <xref
         href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM
       deployment</xref>, you do not need to perform these tasks.</p>  
     <section>

@@ -41,7 +41,7 @@
 cp ~/patch_cghelion1.1/secureHLM.yml ~/&lt;cloudname&gt;/clouds/&lt;cloudname&gt;/001/stage/ansible/</codeblock></li>
       <li>Edit the
           <codeph>~/&lt;cloudname&gt;/clouds/&lt;cloudname&gt;/001/stage/ansible/group_vars/all</codeph>
-        file to add a the following varible before the line that contains <codeph>global</codeph>.
+        file to add the following varible before the line that contains <codeph>global</codeph>.
         Specify the cloud name in all capital letters:
           <codeblock>cloud_nodes_hostgroup: &lt;cloudname></codeblock><p>where &lt;cloudname> is the
           name of the cloud you created.</p><p><b>Example:</b> The first lines of your
