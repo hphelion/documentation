@@ -53,7 +53,7 @@ instructions further down. But before you push the button, ensure that you have 
 <li>Click <b>Save</b>.</li>
 </ol>
 <p>
-<b>NOTE:</b> If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to <xref href="../../1.2devplatform.using-the-messaging-service.dita" >create and manage a RabbitMQ cluster</xref> in the Messaging Service, and link that instance to your <xref href="../../1.2devplatform.using-messaging-service-with-ALS.dita" >ALS cluster</xref>.</p>
+<b>NOTE:</b> If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to <xref href="../../devplatform.using-the-messaging-service.dita" >create and manage a RabbitMQ cluster</xref> in the Messaging Service, and link that instance to your <xref href="../../devplatform.using-messaging-service-with-ALS.dita" >ALS cluster</xref>.</p>
 </section>
 <section id="download-the-application-files"> <title>Download the Application Files</title>
 <p>
@@ -170,7 +170,7 @@ type: rabbitmq3
 <li>You interact with and deploy your app using the <xref href="../../helion/user/reference/client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
 </ul>
 <p>
-<xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../database/database.php.dita" >Previous Sample</xref> | <xref href="../helloworld/helloworld.php.dita" >Next Sample</xref>
+<xref href="../../devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../database/database.php.dita" >Previous Sample</xref> | <xref href="../helloworld/helloworld.php.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

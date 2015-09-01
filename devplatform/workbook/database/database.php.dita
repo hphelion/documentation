@@ -54,7 +54,7 @@ instructions further down. But before you push the button, ensure that you have 
 </ol>
 <p>
 <b>Note</b>: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer 
-    to <xref href="../../1.2devplatform.database-instance.dita" >Using the Database Service</xref> and <xref href="../../1.2devplatform.database-ALS.dita" >Connecting the Database Service with ALS</xref>.</p>
+    to <xref href="../../devplatform.database-instance.dita" >Using the Database Service</xref> and <xref href="../../devplatform.database-ALS.dita" >Connecting the Database Service with ALS</xref>.</p>
 </section>
 <section id="download-the-application-files"> <title>Download the Application Files</title>
 <p>
@@ -69,7 +69,7 @@ instructions further down. But before you push the button, ensure that you have 
                     href="../../helion/admin/server/https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
                     >made aware of the proxy</xref>. The sample applications require access to the
                 Internet in order to download dependent packages.</p>
-<p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../1.2devplatform.eclipse.dita" >plugin</xref>.</p>
+<p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../devplatform.eclipse.dita" >plugin</xref>.</p>
 <ol>
 <li>Open the <xref href="../../helion/user/reference/client-ref.dita" >Helion command-line interface (CLI)</xref>
 </li>
@@ -160,7 +160,7 @@ applications:
 <li>You interact with and deploy your app using the <xref href="../../helion/user/reference/client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
 </ul>
 <p>
-<xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/helloworld.php.dita" >Previous Sample</xref> | <xref href="../messaging/messaging.php.dita" >Next Sample</xref>
+<xref href="../../devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/helloworld.php.dita" >Previous Sample</xref> | <xref href="../messaging/messaging.php.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

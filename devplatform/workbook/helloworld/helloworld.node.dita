@@ -23,7 +23,7 @@
  <!--permalink: /helion/devplatform/workbook/helloworld/node/--></p>
 <p>This very simple Node.js web app displays the text "Hello World!". This sample is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>If you are missing any of these items, you must <xref href="../../1.2devplatform.appdev.dita" >install them</xref>.</p>
+<p>If you are missing any of these items, you must <xref href="../../devplatform.appdev.dita" >install them</xref>.</p>
 <ul>
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita">Cluster</xref>
 </li>
@@ -56,7 +56,7 @@
           href="../../helion/admin/server/https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
           >made aware of the proxy</xref>. The sample applications require access to the Internet in
         order to download dependent packages.</p>
-<p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../1.2devplatform.eclipse.dita" >plugin</xref>.</p>
+<p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../devplatform.eclipse.dita" >plugin</xref>.</p>
 <ol>
 <li>Open the <xref href="../../helion/user/reference/client-ref.dita" >Helion command-line interface (CLI)</xref>
 </li>
@@ -123,7 +123,7 @@ Note that <b>name</b> is always required while other fields are optional.</p>
 </li>
 </ul>
 <p>
-<xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../messaging/messaging.node.dita" >Previous Sample</xref> | <xref href="../database/database.node.dita" >Next Sample</xref>
+<xref href="../../devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../messaging/messaging.node.dita" >Previous Sample</xref> | <xref href="../database/database.node.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

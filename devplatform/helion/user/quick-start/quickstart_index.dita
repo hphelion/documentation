@@ -42,7 +42,7 @@ been set up for you on the system.</p>
 <p>The interface should be mostly self-explanatory. It exposes most of the
 functionality you have access to as an end user, but to deploy your own
 applications from source code on your local machine you will need to install and use the Helion <xref href="../client/client_index.dita" >Application Lifestyle Service client</xref>.</p>
-<p>There is also an <xref href="../../../1.2devplatform.eclipse.dita" >Eclipse plugin</xref> available for the Management Console to facilitate pushing applications.</p>
+<p>There is also an <xref href="../../../devplatform.eclipse.dita" >Eclipse plugin</xref> available for the Management Console to facilitate pushing applications.</p>
 </section>
 <section id="helion-client"> <title>Application Lifecycle Service Client</title>
 <p>The Helion client pushes applications and provides access to the system from the command line.</p>
@@ -110,7 +110,7 @@ language or framework used, but the basic command is:</p>
 working directory and push it to Application Lifecycle Service for further staging and configuration, prompting for additional configuration information as necessary.</p>
 </section>
 <section id="sample-applications"> <title>Sample Applications</title>
-<p>Small <xref href="../../../1.2devplatform.appdev.dita" >sample applications</xref> in various  programming languages are available. These applications demonstrate the basics of ALS deployment (hello world), connect to a database, and exercise the messaging service.</p>
+<p>Small <xref href="../../../devplatform.appdev.dita" >sample applications</xref> in various  programming languages are available. These applications demonstrate the basics of ALS deployment (hello world), connect to a database, and exercise the messaging service.</p>
 <p>Additional more advanced sample applications are available from <xref href="https://github.com/Stackato-Apps" scope="external" format="html" >Application Lifecycle Service-Apps</xref> on Github, each with a
 README.md file showing how to deploy it on Application Lifecycle Service.</p>
 <p>Many of these have a <xref href="../deploy/manifestyml.dita" >

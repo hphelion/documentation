@@ -27,7 +27,7 @@
 <p>In order to download and deploy these sample applications, you must have the necessary framework installed and configured.</p>
 <ul>
 <li>HP Helion <tm tmtype="reg">OpenStack</tm> <xref href="../commercial/GA1/1.1.1commercial.helion_update.dita" >cloud deployed</xref>. Note that the Helion Development Platform version 1.2 will only run on Helion OpenStack version 1.1.1.</li>
-<li>Application Lifecycle Service <xref href="1.2devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
+<li>Application Lifecycle Service <xref href="devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
 
 <ul>
 <li>You can also quickly setup a cluster in the free and publicly available Helion cloud as part of
@@ -38,7 +38,7 @@
 <li>Logon and password credentials for the cluster.</li>
 <li>Access to the <xref href="helion/user/client/client_index.dita" >Helion command-line interface (CLI)</xref>
 </li>
-<li>(Optional) Access to the <xref href="1.2devplatform.eclipse.dita" >Eclipse</xref> deployment plugin for JAVA applications.</li>
+<li>(Optional) Access to the <xref href="devplatform.eclipse.dita" >Eclipse</xref> deployment plugin for JAVA applications.</li>
 </ul>
 </section>
 <section id="sample"> <title>Sample code</title>

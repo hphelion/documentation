@@ -25,7 +25,7 @@
 <section id="prerequisites"> <title>Prerequisites</title>
 <p>If you are missing any of these items, please install them.</p>
 <ol>
-<li>You must have access to an <xref href="../../1.2devplatform.deploy-ALS.dita">ALS
+<li>You must have access to an <xref href="../../devplatform.deploy-ALS.dita">ALS
                     cluster</xref>.</li>
 <li>The <xref href="../../helion/CLI/ALS_Client_Downloads.dita">Helion command-line
                         interface</xref> (CLI) must be installed.</li>
@@ -44,7 +44,7 @@
 <li>Click <b>Save</b>.</li>
 </ol>
 <p>
-<b>Note</b>: If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow <xref href="../../1.2devplatform.using-the-messaging-service.dita" >these instructions</xref> to create and manage a RabbitMQ cluster in the Messaging Service and link that instance to your ALS cluster.</p>
+<b>Note</b>: If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow <xref href="../../devplatform.using-the-messaging-service.dita" >these instructions</xref> to create and manage a RabbitMQ cluster in the Messaging Service and link that instance to your ALS cluster.</p>
 </section>
 <section id="jdk"> <title>JDK</title>
 <p>Install the Java Development Kit (JDK) before installing other prerequisites.</p>
@@ -87,7 +87,7 @@
                     href="../../helion/admin/server/https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
                     >made aware of the proxy</xref>. The sample applications require access to the
                 Internet in order to download dependent packages.</p>
-<p>Use the Helion client to deploy your app to Helion Development Platform. If you are using Eclipse, you have the option to use the <xref href="../../1.2devplatform.eclipse.dita" >plugin</xref>.</p>
+<p>Use the Helion client to deploy your app to Helion Development Platform. If you are using Eclipse, you have the option to use the <xref href="../../devplatform.eclipse.dita" >plugin</xref>.</p>
 <ol>
 <li>Open the <xref href="../../helion/CLI/ALS_Client_Reference.dita" >Helion command-line interface (CLI)</xref>
 </li>
@@ -209,7 +209,7 @@ applications:
                 <li>You need to retrieve connection information for RabbitMQ from the application's
                     environment variables.</li>
                 <li>You interact with and deploy your app using the Helion CLI or the <xref
-                        href="../../1.2devplatform.eclipse.dita">Eclipse deployment
+                        href="../../devplatform.eclipse.dita">Eclipse deployment
                     plugin</xref>.</li>
             </ol>
             <xref href="../database/database.java.dita">Previous Sample</xref> | <xref

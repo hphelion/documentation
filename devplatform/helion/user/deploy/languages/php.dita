@@ -24,7 +24,7 @@
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
 advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools
 to enable successful development are available in PHP.</p>
-  <p>Deployable <xref href="../../../../1.2devplatform.appdev.dita#topic2457/PHP">sample
+  <p>Deployable <xref href="../../../../devplatform.appdev.dita#topic2457/PHP">sample
         applications</xref> are available in this language.</p>
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
 <p>Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying

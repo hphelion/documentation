@@ -27,7 +27,7 @@
 <p>To use the Messaging Service ALS, you need to:</p>
 <ol>
 <li>
-  <xref href="1.2devplatform.using-the-messaging-service.dita#topic3880/create" type="section">Create a RabbitMQ cluster</xref> from the OpenStack Dashboard if a cluster does not already exist. </li>
+  <xref href="devplatform.using-the-messaging-service.dita#topic3880/create" type="section">Create a RabbitMQ cluster</xref> from the OpenStack Dashboard if a cluster does not already exist. </li>
 <li>Once a cluster has been created, you can connect an application deployed to ALS with the Messaging Service.</li>
 <li>
 <p>To connect, you must create an environment variable in the <i>manifest.yml</i> file of the application you wish to connect to the Messaging Service. This will tell your application how to connect to the cluster using AMQP. The environment variable can be named anything you prefer. We will use <b>MQ_URL</b> in this example.</p>

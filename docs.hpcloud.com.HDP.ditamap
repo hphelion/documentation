@@ -3,18 +3,18 @@
  
 <map xml:lang="en" linking="none" locktitle="no">
 <title>HP Helion Development Platform</title>
-  <topicref href="devplatform/1.2devplatform.index.dita"
+  <topicref href="devplatform/devplatform.index.dita"
     navtitle="HP Helion Development Platform 1.3" locktitle="yes">
-    <topicref href="devplatform/1.2devplatform.thirdparty.licensing.dita"
+    <topicref href="devplatform/devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
     <!--permalink: /helion/devplatform/eula/-->
-    <topicref href="devplatform/1.2devplatform.eula.dita" navtitle="Software License Terms"
+    <topicref href="devplatform/devplatform.eula.dita" navtitle="Software License Terms"
       locktitle="yes"/>
     <!--permalink: /helion/devplatform/whatsnew/-->
-    <topicref href="devplatform/1.2devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
-    <topicref href="devplatform/1.2devplatform.release-notes.dita" locktitle="yes"
+    <topicref href="devplatform/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
+    <topicref href="devplatform/devplatform.release-notes.dita" locktitle="yes"
       navtitle="Release Notes"/>
-    <topicref href="devplatform/1.2devplatform_upgrade.dita"
+    <topicref href="devplatform/devplatform_upgrade.dita"
       navtitle="Upgrading from the Previous Version" locktitle="yes"/>
     <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/-->
     <topichead navtitle="Developer Quick Start Trial Guide">
@@ -100,7 +100,7 @@
       <topicref href="devplatform/uninstallation/devplatform_uninstall_vertica.dita"
         navtitle="Uninstall the Vertica Application" locktitle="yes"/>
     </topichead>
-    <topicref href="devplatform/1.2devplatform.appdev.dita" locktitle="yes"
+    <topicref href="devplatform/devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers ">
       <topicref href="devplatform/helion/user/deploy/deploy_index.dita" locktitle="yes"
         navtitle="General Deployment">
@@ -179,7 +179,7 @@
         navtitle="Environment Variables "/>
       <!--permalink: /helion/devplatform/deploy/-->
       <!--permalink: /helion/devplatform/eclipse/-->
-      <topicref href="devplatform/1.2devplatform.eclipse.dita" locktitle="yes"
+      <topicref href="devplatform/devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin"/>
       <!--permalink: /helion/devplatform/workbook/database/java/-->
       <topichead navtitle="JAVA Code Samples">
@@ -247,11 +247,11 @@
         navtitle="Deploying Non-NET Applications" locktitle="yes"/>
     </topichead>
     <!--permalink: /helion/devplatform/als/-->
-    <topicref href="devplatform/1.2devplatform.sysadmin.dita" locktitle="yes"
+    <topicref href="devplatform/devplatform.sysadmin.dita" locktitle="yes"
       navtitle="Resources for IT Ops">
       <!--permalink: /helion/devplatform/connectdatabase/-->
       <topichead navtitle="Cluster Creation and Management">
-        <topicref href="devplatform/1.2devplatform.deploy-ALS.dita" locktitle="yes"
+        <topicref href="devplatform/devplatform.deploy-ALS.dita" locktitle="yes"
           navtitle="Create a Cluster using the Horizon UI"/>
         <topicref href="devplatform/helion/CLI/cf_mgmt_createcluster.dita"
           navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
@@ -293,16 +293,16 @@
         locktitle="yes"/>
       <topicref href="devplatform/helion/user/deploy/docker_firstapp.dita"
         navtitle="Create a Docker Image from an App" locktitle="yes"/>
-      <topicref href="devplatform/1.2devplatform.database-ALS.dita" locktitle="yes"
+      <topicref href="devplatform/devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
       <!--permalink: /helion/devplatform/databaseservice/-->
-      <topicref href="devplatform/1.2devplatform.database-instance.dita" locktitle="yes"
+      <topicref href="devplatform/devplatform.database-instance.dita" locktitle="yes"
         navtitle="Using the Database Service"/>
       <!--permalink: /helion/devplatform/messageservice/-->
-      <topicref href="devplatform/1.2devplatform.using-the-messaging-service.dita" locktitle="yes"
+      <topicref href="devplatform/devplatform.using-the-messaging-service.dita" locktitle="yes"
         navtitle="Using the RabbitMQ Messaging Service"/>
       <!--permalink: /helion/devplatform/msgaas/als/-->
-      <topicref href="devplatform/1.2devplatform.using-messaging-service-with-ALS.dita"
+      <topicref href="devplatform/devplatform.using-messaging-service-with-ALS.dita"
         locktitle="yes" navtitle="Using the Messaging Service with ALS"/>
       <!--permalink: /helion/devplatform/connectdatabase/-->
       <!--permalink: /helion/devplatform/databaseservice/-->

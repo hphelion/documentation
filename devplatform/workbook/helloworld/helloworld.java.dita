@@ -74,7 +74,7 @@ sudo apt-get install default-jdk
                     href="../../helion/admin/server/https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
                     >made aware of the proxy</xref>. The sample applications require access to the
                 Internet in order to download dependent packages.</p>
-<p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to <xref href="../../1.2devplatform.eclipse.dita" >use the plugin</xref> to deploy.</p>
+<p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to <xref href="../../devplatform.eclipse.dita" >use the plugin</xref> to deploy.</p>
 <ol>
 <li>Open the <xref href="../../helion/user/reference/client-ref.dita" >Helion command-line interface (CLI)</xref>
 </li>
@@ -149,10 +149,10 @@ public class HelloServlet extends HttpServlet {
 <section id="key-learnings"> <title>Key Learnings</title>
 <ol>
 <li>ALS requires configuration information to create an environment for your app. Configuration information is contained in the <i>pom.xml</i> file. Tools like Maven can generate this configuration file for you.</li>
-<li>You can deploy your app using either the Helion CLI or the <xref href="../../1.2devplatform.eclipse.dita" >Eclipse plugin</xref>.</li>
+<li>You can deploy your app using either the Helion CLI or the <xref href="../../devplatform.eclipse.dita" >Eclipse plugin</xref>.</li>
 </ol>
 <p>
-<xref href="../../1.2devplatform.appdev.dita">Exit Samples</xref>/ | <xref href="../messaging/messaging.java.dita">Previous Sample</xref> | <xref href="../database/database.java.dita">Next Sample</xref>
+<xref href="../../devplatform.appdev.dita">Exit Samples</xref>/ | <xref href="../messaging/messaging.java.dita">Previous Sample</xref> | <xref href="../database/database.java.dita">Next Sample</xref>
 </p>
 </section>
 </body>

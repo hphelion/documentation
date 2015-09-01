@@ -38,7 +38,7 @@
           Applications</b></p></stentry>
                         <stentry>Congratulations! You are now ready to begin deploying apps to your
                                         new micro-cloud environment. We have provided some <xref
-                                                href="1.2devplatform.appdev.dita#topic2457">sample
+                                                href="devplatform.appdev.dita#topic2457">sample
                                                 applications </xref>in multiple programming
                                         languages for you to examine and deploy. These very simple
                                         applications provide insight on how to push applications and
@@ -58,7 +58,7 @@
                                                   >termination instructions</xref>.</li>
                                                 <li>If you are <b>done with the Quick-Start
                                                   guide</b>, return to the <xref
-                                                  href="1.2devplatform.index.dita#topic5490">Helion
+                                                  href="devplatform.index.dita#topic5490">Helion
                                                   Development Platform Documentation</xref>.</li>
                                         </ul></stentry>
                     </strow>
