@@ -16,10 +16,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/deploy/languages/perl/1.2mason.md-->
- <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/mason/--></p>
 <p>Mason is a templating system that can handle web requests directly via
 PSGI, or act as the view layer for web frameworks such as Catalyst or
 Dancer. In the example below, it is used on its own to create a simple

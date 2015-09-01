@@ -16,10 +16,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/deploy/languages/perl/1.2mojo.md-->
- <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/mojo/--></p>
 <p>Mojolicious is a web framework with a native PSGI interface which is
 easy to build and run on Application Lifecycle Service.</p>
 <p>A simple app using the Mojolicious framework needs four files:</p>

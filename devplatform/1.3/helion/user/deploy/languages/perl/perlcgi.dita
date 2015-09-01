@@ -16,9 +16,6 @@
 </metadata>
 </prolog>
 <body>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/deploy/languages/perl/1.2perlcgi.md-->
- <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/perlcgi/-->
 <p>The <i>perlcgi</i> framework can be used to run any CGI script. Like the <xref
         href="perl_index.dita#topic8895">perl</xref> framework, it provides ActivePerl in the default
       PATH and supports module installation via <xref type="section"
