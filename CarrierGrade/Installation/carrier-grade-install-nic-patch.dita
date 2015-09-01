@@ -28,8 +28,9 @@
     <section>
       <p>To apply the patch:</p>
       <ol id="ol_nbz_1hb_ct">
+        <li>Log into the HLM host.</li>
         <li>Copy the <codeph>cg-hos-nic-bonding.patch</codeph> file to <codeph>/root/</codeph>
-          directory on the HLM host.</li>
+          directory.</li>
         <li>Change to the <codeph>root/kenobi-configuration-processor</codeph> directory:
           <codeblock>cd /root/kenobi-configuration-processor </codeblock></li>
         <li>Execute the following command to launch the patch installation:

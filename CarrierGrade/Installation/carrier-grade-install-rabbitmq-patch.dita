@@ -37,6 +37,7 @@ rmq_service_user: guest          </codeblock><p>The
       have the utility installed, use the following
         command:<codeblock>apt-get install patch</codeblock><p>To apply the patch:</p><ol
         id="ol_dhy_1pj_dt">
+        <li>Log into the HLM host.</li>
         <li>Copy the <codeph>random-password.tar.gz</codeph> to the
             <codeph>~/patch_cghelion1.1</codeph> directory.
           <codeblock>cp random-password.tar.gz ~/patch_cghelion1.1</codeblock></li>

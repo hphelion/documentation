@@ -31,6 +31,7 @@
       >Prerequisites</xref>.</p>
     <p>Use the following steps to apply this patch:</p>
     <ol>
+      <li>Log into the HLM host.</li>
       <li>Copy the <codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph> file to the
           <codeph>~/patch_cghelion1.1</codeph> directory.
         <codeblock>cp secure_HLM_ports_patch_1.1.tar.gz ~/patch_cghelion1.1</codeblock></li>

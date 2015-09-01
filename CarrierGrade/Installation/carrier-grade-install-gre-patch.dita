@@ -29,8 +29,8 @@
         If not, execute the following command:<codeblock>apt-get install patch</codeblock></p>
       <p>
         <ol id="ol_kjd_hvm_bt">
-          <li>Extract the <codeph>gre_patch_1.1.tar.gz</codeph> file on the HLM host to any
-            directory.</li>
+          <li>Log into the HLM host.</li>
+          <li>Extract the <codeph>gre_patch_1.1.tar.gz</codeph> file to any directory.</li>
           <li> Change to the following directory:
             <codeblock>cd /root/kenobi-configuration-processor</codeblock></li>
           <li> Execute the following command:

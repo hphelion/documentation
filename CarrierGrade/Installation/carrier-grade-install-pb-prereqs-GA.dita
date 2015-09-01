@@ -306,6 +306,9 @@ StrictHostKeyChecking no </codeblock></li>
                                                 <li>Helion Dynamic Password patch. Download the
                                                   <codeph>horizon_web_patch_1.1.tar.gz</codeph>
                                                   file.</li>
+                                                <li>Ceilometer Patch. Downloaf the
+                                                  <codeph>hoscg-patchCG-1345.tar.gz</codeph>
+                                                  patch.</li>
                                                 <li>NIC Bonding Patch. If you are using bonded NIC,
                                                   download the
                                                   <codeph>cg-hos-nic-bonding.patch</codeph>
@@ -486,7 +489,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   hoscg-update.tgz </codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1/</codeph>
-                                                  directory on the HML host. You must first create
+                                                  directory on the HLM host. You must first create
                                                   this directory.</entry>
                                                   </row>
                                                   <row>
@@ -499,29 +502,35 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <entry><codeph>compute_proxy_patch_1.1.tar.gz</codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
+                                                  directory on the HLM host. You must first create
                                                   this directory.</entry>
                                                   </row>
                                                 <row>
                                                   <entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
+                                                  directory on the HLM host. You must first create
                                                   this directory.</entry>
                                                 </row>
                                                 <row>
                                                   <entry><codeph>random-password.tar.gz</codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
+                                                  directory on the HLM host. You must first create
                                                   this directory.</entry>
                                                 </row>
                                                 <row>
                                                   <entry><codeph>horizon_web_patch_1.1.tar.gz</codeph></entry>
                                                   <entry>N/A</entry>
                                                   <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
+                                                  directory on the HLM host. You must first create
                                                   this directory.</entry>
+                                                </row>
+                                                <row>
+                                                  <entry><codeph>hoscg-patchCG-1345.tar.gz</codeph></entry>
+                                                  <entry>N/A</entry>
+                                                  <entry>~/&lt;cloud_name&gt; on the HLM
+                                                  host.</entry>
                                                 </row>
                                                 <row>
                                                   <entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry>

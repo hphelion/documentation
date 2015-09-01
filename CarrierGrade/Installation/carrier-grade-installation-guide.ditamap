@@ -61,6 +61,7 @@
                 <topicref href="carrier-grade-install-esx-proxy-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-gre-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-disable-root.dita" toc="no"/>
+                <topicref href="carrier-grade-install-ceilometer-patch.dita"/>
             </topicref>
             <topicref href="carrier-grade-install-launch-horizon.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
