@@ -80,6 +80,13 @@
           <dd>Use only the Horizon UI or the <i>cf-mgmt</i> command line tool to create ALS
             clusters. Using <codeph>kato node attach</codeph> or other methods are unsupported and
             will not function properly.</dd>
+        </dlentry><dlentry>
+          <dt>An ALS cluster cannot be created with an existing MySQL database.</dt>
+          <dd>Attempting to create an ALS cluster with an existing MySQL database triggers the error
+              message:<codeph> "validating 'services' failed, reason: The EnabledServices flag does
+              not specify the database service used by the trove database. 'mysql' was expected to
+              be specified if a trove database is used.".</codeph> The cluster will not be created.
+            This is a current limitation in the Helion Development Platform.</dd>
         </dlentry>
       </dl>
     </section>
