@@ -16,10 +16,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/deploy/languages/1.2go.md-->
- <!--permalink: /helion/devplatform/als/user/deploy/languages/go/--></p>
 <p>Go applications (<xref href="http://golang.org/" scope="external" format="html" >golang</xref>) are supported through a
 BuildPack framework and can be pushed using the Application Lifecycle Service.</p>
 <section id="local-install"> <title>Local Installation</title>

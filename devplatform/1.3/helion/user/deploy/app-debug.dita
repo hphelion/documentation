@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/deploy/1.2app-debug.md-->
- <!--permalink: /helion/devplatform/als/user/deploy/app-debug/--></p>
 <p>Different languages have different tools and protocols for remote
 debugging, but most require a connection between the running application
 code and the debugging tool or IDE on a port and protocol other than

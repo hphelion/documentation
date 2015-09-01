@@ -16,10 +16,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/deploy/languages/1.2clojure.md-->
- <!--permalink: /helion/devplatform/als/user/deploy/languages/clojure/--></p>
 <p>Application Lifecycle Service supports deploying Clojure applications using
 <xref href="https://github.com/technomancy/leiningen" scope="external" format="html" >leiningen</xref>.</p>
 <p>To create a new Clojure web application, install leiningen and

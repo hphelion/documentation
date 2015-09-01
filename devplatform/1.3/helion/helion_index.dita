@@ -20,7 +20,6 @@
 </metadata>
 </prolog>
 <body>
-    <p><!--PUBLISHED--><!--./devplatform/helion/1.2index.md--><!--permalink: /helion/devplatform/als/--></p>
     <p>The <b>Application Lifecycle Service (ALS)</b> is a &lt;tm tmtype="tm"&gt;Cloud
       Foundry&lt;/tm&gt; -based, managed runtime environment for applications. It is polyglot
       Platform-as-a-Service (PaaS) software. Whether you run it in your own data center using the

@@ -16,10 +16,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/deploy/languages/1.2node.md-->
- <!--permalink: /helion/devplatform/als/user/deploy/languages/node/--></p>
 <p>Application Lifecycle Service has a built in Node framework with multiple versions of the
   <xref href="http://nodejs.org/" scope="external" format="html" >Node.js</xref> runtime. <xref href="https://npmjs.org/" scope="external" format="html" >NPM</xref> is used
 to install Node packages automatically.</p>

@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/client/1.2index.md-->
- <!--permalink: /helion/devplatform/als/user/client/--></p>
 <p>The Helion ALS client is the command-line interface for the Application Lifecycle Service. You can use it to push application code up to the server, start and stop applications, create data services and link them to
 applications, and a number of other application management operations.</p>
   <p>The <xref href="../reference/client-ref.dita">Command Reference</xref> has full

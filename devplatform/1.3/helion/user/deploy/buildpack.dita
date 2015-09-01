@@ -18,10 +18,6 @@
 </prolog>
 <body>
 <p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/deploy/1.2buildpack.md-->
- <!--permalink: /helion/devplatform/als/user/deploy/buildpack/--></p>
-<p>
 <xref href="https://devcenter.heroku.com/articles/buildpacks" scope="external" format="html" >Buildpacks</xref> are
 bundles of detection and configuration scripts which set up containers
 to run applications.</p>

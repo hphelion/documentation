@@ -19,10 +19,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/admin/server/1.2index.md-->
- <!--permalink: /helion/devplatform/als/admin/server/--></p>
 <p>This page covers the initial setup and configuration of the Application Lifecycle Service
 Server in a virtual machine under control of a hypervisor running on a
 virtualization host.</p>
