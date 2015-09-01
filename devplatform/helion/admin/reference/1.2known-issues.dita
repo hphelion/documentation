@@ -29,7 +29,7 @@
     <dt>UTM Gateways</dt>
     <dd>UTM gateways may interfere with upgrades, patches, or normal application staging if they are
             configured to inspect all HTTP(S) traffic between ALS nodes and upstream package
-            repositories. <xref href="../cluster/1.2index.dita#topic18326/utm">See the full
+            repositories. <xref href="../cluster/cluster_index.dita#topic18326/utm">See the full
               documentation</xref> for a detailed explanation and suggested solutions. </dd>
   </dlentry></dl>
 

@@ -131,7 +131,7 @@ kato node setup micro</codeblock>
         services, and restart or stop services as necessary.</p>
 </section>
 <section id="new-relic"> <title>New Relic</title>
-  <p>Please see <xref href="../best-practices/1.2index.dita#topic16169"><i>New Relic Server
+  <p>Please see <xref href="../best-practices/best_practices_index.dita#topic16169"><i>New Relic Server
             Monitoring</i></xref> . New Relic can also be used to <xref
           href="../../user/deploy/1.2newrelic.dita" type="section">monitor apps</xref>.</p>
 </section>
@@ -148,16 +148,16 @@ helion register superuser@example.net</codeblock>
 </section>
 <section id="system-monitoring-with-nagios"> <title>System Monitoring with Nagios</title>
 <p>If Nagios is installed on your server nodes, you can use it to monitor and report resource
-        utilization. See the <xref href="../best-practices/1.2index.dita#topic16169">Best Practices
+        utilization. See the <xref href="../best-practices/best_practices_index.dita#topic16169">Best Practices
           documentation</xref> for details.</p>
 </section>
 <section id="server-backup-import-and-export"> <title>Server Backup, Import, and Export</title>
 <p>The import and export functionality can be used to do regular backups,
 or to move the Application Lifecycle Service configuration from one server to another. It is also a means of upgrading the Application Lifecycle Service VM without having to install everything from the ground up.</p>
-  <p>Please see the <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-migration"
+  <p>Please see the <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration"
           >Best Practices</xref> documentation for details on how to <xref
-          href="../best-practices/1.2index.dita#topic16169/bestpractices-migration">export</xref>
-        and <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-migration"
+          href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration">export</xref>
+        and <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration"
           >import</xref> your data.</p>
 </section>
 </body>

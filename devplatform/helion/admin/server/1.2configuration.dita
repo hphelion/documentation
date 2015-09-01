@@ -108,7 +108,7 @@ option is useful in this scenario).</p>
         Orchestration tools (the Horizon Management Console and Installer CLI VM), access after
         cluster setup is only available by SSH key pair.</p>
 <p>This password is changed to match the one set for the first administrative user created in the Management Console. Once you've set up the primary Application Lifecycle Service admin account, use that account's password when logging in to the VM at the command line.</p>
-  <p>In an Application Lifecycle Service cluster, this change only happens on the node serving the Management Console pages (which could be one of <xref href="../cluster/1.2index.dita#topic18326/multiple-controllers" type="section" >multiple Controller nodes</xref>). In this case, it's best to log in to each node in the cluster to change the password
+  <p>In an Application Lifecycle Service cluster, this change only happens on the node serving the Management Console pages (which could be one of <xref href="../cluster/cluster_index.dita#topic18326/multiple-controllers" type="section" >multiple Controller nodes</xref>). In this case, it's best to log in to each node in the cluster to change the password
 manually with the <i>passwd</i> command.</p>
 </section>
 <section id="network-setup"> <title>Network Setup</title>
@@ -149,7 +149,7 @@ organizational use only, it must still integrate fully with your network
 services, DHCP and DNS in particular. Finally, in the rare case that
 such services are not available, the Application Lifecycle Service can be configured with static IP addresses and hostnames.</p>
 <p>Before we examine these scenarios in detail, let's review the separation
-  of roles in a <xref href="../cluster/1.2index.dita#topic18326" type="section" >cluster</xref>:</p>
+  of roles in a <xref href="../cluster/cluster_index.dita#topic18326" type="section" >cluster</xref>:</p>
 <ul>
 <li>The <b>core</b> node which we conventionally call <codeph>api.helion-xxxx.local</codeph> in a micro cloud will be given its own hostname and IP address in a cluster so that you can reach it from both the <xref href="../../user/console/1.2index.dita#topic8844" >Management Console</xref> and the command line.</li>
 <li>At the same time, the other nodes in the cluster will also need to reach the core node, so whatever address is configured on its network interface will have to be known to the network, the primary node, and all the other nodes. This can be the same as the primary address assigned to the core, or a secondary address used purely within the cluster.</li>
@@ -277,7 +277,7 @@ in general <i>not</i> have to edit <codeph>/etc/hosts</codeph> manually,
 but when troubleshooting network issues it never hurts to verify that
 the file is configured correctly.</p>
 <p>As well, various components in a
-<xref href="../cluster/1.2index.dita#topic18326" type="section" >Cluster</xref> rely on finding the
+<xref href="../cluster/cluster_index.dita#topic18326" type="section" >Cluster</xref> rely on finding the
 cluster nodes in <codeph>/etc/hosts</codeph>: the Cloud Controller
 and the RabbitMQ service in particular.</p>
 <p>Application Lifecycle Service will automatically configure <codeph>/etc/hosts</codeph>
@@ -610,7 +610,7 @@ on external block storage for:</p>
 <li>containers (DEA and Stager nodes)</li>
 </ul>
 <p>Suggestions for mounting block storage and instructions for relocating
-  data can be found in the <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-persistent-storage" type="section" >Persistent Storage</xref>
+  data can be found in the <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-persistent-storage" type="section" >Persistent Storage</xref>
 section.</p>
 </section>
 <section id="helion-data-services-vs-high-availability-databases"> <title>Application Lifecycle Service Data Services vs. High Availability Databases</title>

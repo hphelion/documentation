@@ -56,7 +56,7 @@ automatically provision ports from a pre-configured range.</p>
         the externally facing port.</p>
 </section>
 <section id="requirements-setup"> <title>Requirements &amp; Setup</title>
-  <p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other <xref href="1.2index.dita#topic18326/data-services-nodes" type="section" >data service roles</xref>.
+  <p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other <xref href="cluster_index.dita#topic18326/data-services-nodes" type="section" >data service roles</xref>.
 For example:</p>
 <codeblock>kato node attach -e harbor CORE_IP</codeblock>
 <p>The node must be routable both externally by connecting clients, and the

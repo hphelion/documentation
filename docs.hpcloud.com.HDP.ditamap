@@ -307,7 +307,7 @@
       <!--permalink: /helion/devplatform/als/user/services/data-services/-->
       <topicref href="devplatform/helion/user/services/1.2data-services.dita" locktitle="yes"
         navtitle="Application Lifecycle Service Data Services"/>
-      <topicref href="devplatform/helion/admin/cluster/1.2external-db.dita" locktitle="yes"
+      <topicref href="devplatform/helion/admin/cluster/external-db.dita" locktitle="yes"
         navtitle="External Data Services"/>
       <topicref href="devplatform/helion/user/services/1.2memcached.dita" locktitle="yes"
         navtitle="Memcached Service"/>
@@ -318,7 +318,7 @@
       <!--permalink: /helion/devplatform/als/user/services/port-service/-->
       <topicref href="devplatform/helion/user/services/1.2port-service.dita" locktitle="yes"
         navtitle="Port Service (Harbor)"/>
-      <topicref href="devplatform/helion/admin/cluster/1.2harbor.dita" locktitle="yes"
+      <topicref href="devplatform/helion/admin/cluster/harbor.dita" locktitle="yes"
         navtitle="Harbor TCP/UDP Port Service "/>
       <!--permalink: /helion/devplatform/als/user/services/user-provided/-->
       <topicref href="devplatform/helion/user/services/1.2user-provided.dita" locktitle="yes"
@@ -396,11 +396,11 @@
         <!--permalink: /helion/devplatform/als/admin/best-practices/-->
         <topicref href="devplatform/helion/user/deploy/1.2adding-buildpack.dita"
           navtitle="Adding Buildpacks" locktitle="yes"/>
-        <topicref href="devplatform/helion/admin/best-practices/1.2index.dita" locktitle="yes"
-          navtitle="Best Practices"/>
+        <topicref href="devplatform/helion/admin/best-practices/best_practices_index.dita"
+          locktitle="yes" navtitle="Best Practices"/>
         <!--permalink: /helion/devplatform/als/admin/best-practices/logging-examples/-->
         <!--permalink: /helion/devplatform/als/admin/cluster/-->
-        <topicref href="devplatform/helion/admin/cluster/1.2index.dita" locktitle="yes"
+        <topicref href="devplatform/helion/admin/cluster/cluster_index.dita" locktitle="yes"
           navtitle="Cluster Setup"/>
         <topicref href="devplatform/helion/admin/cluster/zones.dita"
           navtitle="Configure Availability and Placement Zones" locktitle="yes"/>
@@ -429,7 +429,7 @@
             navtitle="AOK Authentication Server"/>
           <topicref href="devplatform/helion/admin/server/docker.dita" locktitle="yes"
             navtitle="Docker and Fence"/>
-          <topicref href="devplatform/helion/admin/best-practices/1.2logging-examples.dita"
+          <topicref href="devplatform/helion/admin/best-practices/logging-examples.dita"
             locktitle="yes" navtitle="Log Drain Examples"/>
           <topicref href="devplatform/helion/admin/server/1.2logging.dita" locktitle="yes"
             navtitle="Log Streams"/>

@@ -120,7 +120,7 @@
       <p>Application containers are created from a base Docker image (a template used to create
         Linux containers). Admins can create new images to add specific software required by
         applications or update operating system packages.</p>
-      <p>See also <xref href="../best-practices/1.2index.dita#topic16169/upgrade-docker"
+      <p>See also <xref href="../best-practices/best_practices_index.dita#topic16169/upgrade-docker"
           type="section">Upgrade the Docker Image</xref> to modify the Docker base image
           <b>without</b> changing <i>kato config</i>.</p>
       <p>To create a new base image for Application Lifecycle Service to use for application
@@ -154,7 +154,7 @@ RUN apt-get -y install libgraphite2-dev</codeblock><ul>
             image is simply an updated version of the default base image, you can tag the image
             <codeblock>helion/stack-alsek:latest</codeblock> as described in the <xref
               type="section"
-              href="../best-practices/1.2index.dita#topic16169/bestpractices-ubuntu-security">Ubuntu
+              href="../best-practices/best_practices_index.dita#topic16169/bestpractices-ubuntu-security">Ubuntu
               Security Updates</xref>, and skip the following step.</note></li><li>Configure Application Lifecycle Service to use the new image. This step only needs to be done
           once, as the configuration change is shared with all
           nodes.<codeblock>kato config set fence docker/images exampleco/newimg
@@ -235,7 +235,7 @@ WARNING: Assumed type struct
 - registry.example.com:5000/exampleco/newimg                         
 - helion/stack-alsek                                                      
 - helion/stack/alsek                          </codeblock></li>
-      </ol> The <xref href="../best-practices/1.2index.dita#topic16169/upgrade-docker"
+      </ol> The <xref href="../best-practices/best_practices_index.dita#topic16169/upgrade-docker"
         type="section">Upgrade the Docker Image</xref> documentation explains how to modify the
       Docker base image without changing <i>kato config</i>. </section>
        <section id="docker-privileged-containers">

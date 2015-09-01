@@ -255,7 +255,7 @@ https://helion-xxxx.local</codeblock>
           href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-role-add">kato role</xref>
         and <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-info">kato
           info</xref> command documentation for the CLI equivalents, and the <xref
-          href="../cluster/1.2index.dita">Cluster Setup</xref> documentation for information on
+          href="../cluster/cluster_index.dita">Cluster Setup</xref> documentation for information on
         adding nodes to the cluster.</p>
     </section>
     <section id="patches">

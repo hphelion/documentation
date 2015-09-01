@@ -67,11 +67,11 @@
           <dd>UTM (Unified Threat Management) or Gateway firewalls may interfere with upgrades,
             patches, or normal application staging if they are configured to inspect all HTTP(S)
             traffic between ALS nodes and upstream package repositories. <xref
-              href="helion/admin/cluster/1.2index.dita#topic18326/utm">See the full
+              href="helion/admin/cluster/cluster_index.dita#topic18326/utm">See the full
               documentation</xref> for a detailed explanation and suggested solutions.</dd>
         </dlentry><dlentry>
           <dt>Harbor (Port Service) Node Configuration </dt>
-          <dd>The optional <xref href="helion/admin/cluster/1.2harbor.dita">Harbor TCP/UDP port
+          <dd>The optional <xref href="helion/admin/cluster/harbor.dita">Harbor TCP/UDP port
             service</xref> must be set up on a node with a public network interface if you wish to enable
             port forwarding for user applications. The security group or firewall settings for this
             node should make the configured port range accessible publicly.</dd>

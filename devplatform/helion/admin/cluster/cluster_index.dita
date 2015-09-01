@@ -162,7 +162,7 @@ take on one or more of the following roles:</p>
 <xref href="../../user/services/1.2memcached.dita" >memcached</xref>
 </li>
 <li>
-<xref href="../cluster/1.2harbor.dita" >Harbor</xref> (TCP/UDP port service)</li>
+<xref href="../cluster/harbor.dita" >Harbor</xref> (TCP/UDP port service)</li>
 </ul>
 <p>The command line tool used to configure Application Lifecycle Service servers is called
   <xref href="../reference/1.2kato-ref.dita">kato</xref>. You can see a
@@ -259,10 +259,10 @@ available data services on a single node and attach it to the Core node,
 run the following command on the data services node:</p>
 <codeblock>kato node attach -e data-services CORE_IP</codeblock>
 <p>
-        <note>The <xref href="../cluster/1.2harbor.dita">Harbor</xref> port service needs a publicly
+        <note>The <xref href="../cluster/harbor.dita">Harbor</xref> port service needs a publicly
           routable IP and exposed port range if you want to provide externally accessible TCP and
           UDP ports for user applications. See the <xref
-            href="../cluster/1.2harbor.dita#topic4009/requirements-setup">Harbor Requirements &amp;
+            href="../cluster/harbor.dita#topic4009/requirements-setup">Harbor Requirements &amp;
             Setup</xref> documentation for details.</note>
       </p>
 </section>
@@ -375,7 +375,7 @@ and easy snapshotting. Nodes with the following roles should have their
 data is stored on disk, so backing them with a persistent filesystem is
 recommended.</p>
   <p>In clusters with multiple Cloud Controllers, the nodes <b>must</b> share a common <i>/home/helion/helion/data</i> mount point as described <xref type="section" href="#topic18326/multiple-controllers">below</xref> in order to work together properly.</p>
-  <p>See the <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-persistent-storage" type="section"   >Persistent Storage</xref> documentation for instructions on relocating service data, application
+  <p>See the <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-persistent-storage" type="section"   >Persistent Storage</xref> documentation for instructions on relocating service data, application
 droplets, and containers.</p>
 </section>
 <section id="port-configuration"> <title>Port Configuration</title>
@@ -503,11 +503,11 @@ nodes (via SSHFS).</li>
 <li>The optional Harbor port service has a configurable port range
 (default 41000 - 61000) which can be exposed externally if required.</li>
 </ul>
-<note>The optional <xref href="../cluster/1.2harbor.dita" >Harbor</xref> TCP/UDP port service must be
+<note>The optional <xref href="../cluster/harbor.dita" >Harbor</xref> TCP/UDP port service must be
 set up on a node with a public network interface if you wish to enable
 port forwarding for user applications. The security group or firewall
 settings for this node should make the configured port range accessible
-publicly. See <xref href="1.2harbor.dita#topic4009/requirements-setup" type="section"   >Harbor Setup</xref> for full
+publicly. See <xref href="harbor.dita#topic4009/requirements-setup" type="section"   >Harbor Setup</xref> for full
 configuration instructions.</note>
 </section>
   <section id="utm"><title>UTM / Gateway Firewalls</title>Upgrades, patches, and the staging of user

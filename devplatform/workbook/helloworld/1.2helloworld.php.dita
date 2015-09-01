@@ -25,7 +25,7 @@
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
 <li>An installation of the <xref href="../../installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>.</li>
-<li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/1.2index.dita" >Cluster</xref>
+<li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita" >Cluster</xref>
 </li>
 <li>Access to the <xref href="../../helion/CLI/1.2ALS_Client_Downloads.dita" >Helion command-line client (CLI)</xref>.</li>
 <li>Access to the web-based <xref href="../../helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>

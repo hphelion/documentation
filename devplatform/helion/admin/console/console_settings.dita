@@ -305,8 +305,8 @@
     </section>
     <section id="harbor">
       <title>Harbor</title>
-      <p>Settings for the <xref href="../cluster/1.2harbor.dita#topic4009">Harbor </xref>TCP/UDP
-        port service. See <xref href="../cluster/1.2harbor.dita#topic4009/requirements-setup"
+      <p>Settings for the <xref href="../cluster/harbor.dita#topic4009">Harbor </xref>TCP/UDP
+        port service. See <xref href="../cluster/harbor.dita#topic4009/requirements-setup"
           >Harbor: Requirements</xref> &amp; Setup for more information.</p>
       <ul>
         <li>

@@ -83,7 +83,7 @@
 </section>
 <section id="free-disk-space"> <title>Free Disk Space</title>
 <p>Each node in the cluster to be upgraded requires at least 4GB free disk space except for the cache node, which needs at least 10GB free.</p>
-  <p>If sufficient disk space cannot be reserved in the existing cluster for an upgrade, consider creating a new cluster and <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-migration">migrating the data</xref> rather than upgrading in place.</p>
+  <p>If sufficient disk space cannot be reserved in the existing cluster for an upgrade, consider creating a new cluster and <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration">migrating the data</xref> rather than upgrading in place.</p>
 <p>To add additional space on the cache node specifically for the upgrade:</p>
 <ul>
 <li>mount an external filesystem on the cache node</li>
@@ -106,7 +106,7 @@
 <p>This shuts down API requests but continues to serve web requests. The Management Console becomes "read only" with the exception of this toggle so that it can be brought back online. Remember to disable maintenance mode once the upgrade has been completed.</p>
 </section>
 <section id="backup-snapshot"> <title>Backups or Snapshots</title>
-  <p>Back up all system and user data by performing a <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-migration" >data export</xref> (recommended) or create <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-snapshots" type="section">snapshots</xref> of all nodes in your hypervisor.</p>
+  <p>Back up all system and user data by performing a <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration" >data export</xref> (recommended) or create <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-snapshots" type="section">snapshots</xref> of all nodes in your hypervisor.</p>
 </section>
 <section id="proxy-settings"> <title>Proxy settings for Upgrades</title>
 <p>The systems being upgraded will need to be able to access the following
@@ -135,7 +135,7 @@ sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
 <p>With passwordless sudo in effect on all nodes, <i>kato node upgrade</i> should run without intervention. Obviously, this change has security implications, and is left to the discretion of the admin. Enable it only for the duration of the upgrade.</p>
 </section>
 <section id="extraDEA"> <title>Extra DEA Nodes</title>
-  <p>While the upgrade is in progress, DEAs will be <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" >retired</xref> one at a time and the hosted applications will be moved to other DEAs. If the system is operating at or close to capacity (all DEAs are fully populated) it will be necessary to add at least one <xref href="../cluster/1.2index.dita#topic18326/dea-nodes" type="section"   >DEA node</xref> to the cluster before proceeding. Customers are typically permitted to exceed their node/memory license allocation during an upgrade.</p>
+  <p>While the upgrade is in progress, DEAs will be <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" >retired</xref> one at a time and the hosted applications will be moved to other DEAs. If the system is operating at or close to capacity (all DEAs are fully populated) it will be necessary to add at least one <xref href="../cluster/cluster_index.dita#topic18326/dea-nodes" type="section"   >DEA node</xref> to the cluster before proceeding. Customers are typically permitted to exceed their node/memory license allocation during an upgrade.</p>
 </section>
 <section id="executing-the-upgrade"> <title>Executing the upgrade</title>
 </section>
