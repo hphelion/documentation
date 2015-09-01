@@ -36,9 +36,9 @@
         {
             "name": "wr-vars",
             "properties": {
-                "database_storage":  , # The storage allotment for the OpenStack databases. As a reference point, a system with six hosts, 40 VMs and 120 tenant networks requires about 9 GiB.
-                "backup_storage": , # The storage allotment for backup operations. To ensure enough space for at least one backup, this should be equal to or greater than the sum of "database storage" and "image storage"
-                "image_storage": , # The size of the partition to use for nova instances (root and ephemeral storage for an instance accounted under this). So please specify the value (in GB) per your requirement
+                "database_storage":, # The storage allotment for the OpenStack databases. As a reference point, a system with six hosts, 40 VMs and 120 tenant networks requires about 9 GiB.
+                "backup_storage":, # The storage allotment for backup operations. To ensure enough space for at least one backup, this should be equal to or greater than the sum of "database storage" and "image storage"
+                "image_storage":, # The size of the partition to use for nova instances (root and ephemeral storage for an instance accounted under this). So please specify the value (in GB) per your requirement
                 "region_name": "", # Specify a custom name of the KVM region
                 "logical_interface": [
                     {

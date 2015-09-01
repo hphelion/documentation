@@ -118,7 +118,7 @@ VSD Server : auto</codeblock><p>The
                             href="../../media/CGH-2vsd-user.png" id="image_dzw_dll_2t" width="350"
                         /></p></li>
                 <li>Right-click the <i>csproot</i> user and click <b>Add</b>.</li>
-                <li>To create a user for the plug-in , click the <b>Open VSP Configuration </b>tab
+                <li>To create a user for the plug-in, click the <b>Open VSP Configuration </b>tab
                     on the top right corner of the dashboard.</li>
                 <li>Click the <b>CSP Users </b>tab and click <b>+</b>.</li>
                 <li>Create a user named <i>OSadmin</i> with the password <i>OSadmin</i>. The name

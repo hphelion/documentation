@@ -305,7 +305,7 @@ Password: cghelion</codeblock>
     <section id="configure-mach-json">
       <title>Configure the machine_architecture.json file</title>
       <p><b>For bonded NIC environments</b>, modify the <codeph>machine_architecture.json</codeph>
-        file in the <codeph>/opt/share/hlm/1/site/</codeph> directory of the HLM VM to to fit your
+        file in the <codeph>/opt/share/hlm/1/site/</codeph> directory of the HLM VM to fit your
         hardware model. You have to gather the correct PCI SLOT INFO and add ports accordingly on
         the hardware slots or cards used for networking.</p>
       <p><b>Note:</b> To see a sample <codeph>machine_architecture.json</codeph> file, see <xref
