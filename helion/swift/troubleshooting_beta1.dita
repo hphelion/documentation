@@ -18,6 +18,8 @@
         <li>Log onto the first node in the system that is running the swift-proxy-server process.
             <note> You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as
             mentioned in step <b>2</b> in <xref
+              href="../installation.dita#topic_flx_j2b_ws/CloudDeploy"/> or run the
+              <codeph>hlm-deploy.yml</codeph> playbook as described in step <b>4</b> in <xref
               href="../installation.dita#topic_flx_j2b_ws/CloudDeploy"/> otherwise the files needed
             to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node.
           </note></li>
@@ -29,9 +31,10 @@
       </ol></p>
     <section><b>List of errors</b></section>
     <p>The following example provides an error message, description, and the resolution.<note>To
-        resolve an error by changing the input, you <b>must</b> re-run the configuration processor
-        as described in <xref href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run
-          the Configuration Processor</xref> and continue with the deploy.</note></p>
+        resolve an error, you must first modify the cloud model and re-run the configuration
+        processor as described in <xref
+          href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run the Configuration
+          Processor</xref> and continue with the deploy.</note></p>
     <p>
       <ol>
         <li><b>Example Message - Model Missmatch: Cannot find drive /dev/sdt on padawan-ccp-c1-m2
