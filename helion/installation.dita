@@ -171,9 +171,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
         <li>Check the generated host files in
             <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs
           are included. <ol>
-            <li>Check the generated host files in
-                <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct
-              IPs are included. You can review the ansible change by running the following command:
+            <li>You can review the ansible change by running the following command:
               <codeblock>git show staging-ansible</codeblock></li>
             <li>Use the
               <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> file
