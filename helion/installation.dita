@@ -180,7 +180,7 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
           </ol></li>
       </ol>
     </section>
-    <section id="CloudDeploy"><title>Validate Storage (Optional)</title>
+    <section id="CloudDeploy"><title>Validate Storage (optional)</title>
       <ol>
         <!--<li>Run the following command:
             <codeblock>cd ~/scratch/ansible/next/hos/ansible
