@@ -47,9 +47,6 @@ Gateway: 10.241.103.1</codeblock></li>
           <codeblock>ssh -X to the first control plane node</codeblock><codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
         <li>Select <codeph>Find</codeph> and enter the IP addresses of the VSA virtual
           machines.</li>
-        <li>ssh -X to the first control plane node
-          <codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
-        <li>Manully add the IPs of those VMs.</li>
         <li>Choose Tasks -&gt; Management Group -&gt; New Management Group from the menu above.</li>
         <li>Enter the following name for the management group, for example:
             <codeph>hlm003-vsa-mg</codeph>.</li>
@@ -68,14 +65,15 @@ Gateway: 10.241.103.1</codeblock></li>
             <li>Change the enabled_backends line to:
               <codeblock>enabled_backends=vsa-1</codeblock></li>
           </ol></li>
-        <li>Copy the VSA section, uncomment it, and fill the values as in the following example: <codeblock>
-[vsa-1]
+        <li>Copy the VSA section, uncomment it, and fill the values as in the following example.
+          Note that the ames assigned (in bold) are only examples. Please enter your specific values here.<codeblock>
+[vsa-1]<b>
 hplefthand_password: stack
 hplefthand_clustername: hlm003-vsa-cluster
 hplefthand_api_url: https://10.241.103.7:8081/lhos
-hplefthand_username: stack
-hplefthand_iscsi_chap_enabled: true
-volume_backend_name: vsa-backend-hlm003
+hplefthand_username: stack</b>
+hplefthand_iscsi_chap_enabled: true<b>
+volume_backend_name: vsa-backend-hlm003</b>
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false</codeblock>
           <note>Until horizon is enabled, the <codeph>volume_backend_name</codeph> is not
@@ -90,8 +88,21 @@ ansible-playbook -i hosts/localhost ready-deployment.yml
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
         <li>Create a volume to verify the VSA is correctly configured, then delete the created
-          volume.</li>
-      </ol>
+          volume. <ol>
+            <li>Create a test volume from a user account and verify that the volume is successfully
+              created in the "available" state.</li>
+            <li>Using a session with the admin creds, show the details for the test volume created
+              in a) above <codeblock>cinder show &lt;volumeId></codeblock> and verify that the
+              volume was created on the correct backend, e.g.
+              <codeblock>os-vol-host-attr:host                                                                         
+ha-volume-manager@vsa-1#vsa-backend-hlm003</codeblock>
+            </li>
+            <li>Delete the test volume</li>
+          </ol>
+        </li>
+        
+        </ol>
+      
     </section>
   </body>
 </topic>
