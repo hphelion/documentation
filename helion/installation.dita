@@ -173,10 +173,10 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           are included. <ol>
             <li>You can review the ansible change by running the following command:
               <codeblock>git show staging-ansible</codeblock></li>
-            <li>Use the
-              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> file
-              to create a deployment directory. Run your "verb_host" commands from the following
-              directory: <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
+            <li>Use the playbook below to create a deployment directory:
+              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+              <li>Run your "verb_host" commands from the following
+              directory: <codeblock>~/scratch/ansible/next/hos/ansible</codeblock></li>
           </ol></li>
       </ol>
     </section>
