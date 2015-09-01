@@ -3,8 +3,15 @@
 <topic id="topic_sl2_nht_dt">
   <title>Swift- Troubleshooting </title>
   <body>
-    <p>This page describes the troubleshooting scenarios for Swift service.</p>
-    <section><b>Interpreting _swift-validate-input-model.yml Errors</b></section>
+    <p>This page describes the troubleshooting scenarios for Swift service.<ul id="ul_ac4_s5d_ft">
+        <li><xref href="#topic_sl2_nht_dt/interpreting-swift-validate-input-model" format="dita"
+            >Interpreting _swift-validate-input-model.yml Errors</xref></li>
+        <li><xref href="#topic_sl2_nht_dt/deploy-fails" format="dita">Deploy fails with : msdos
+            disks labels do not support partition names</xref></li>
+      </ul></p>
+    <section id="interpreting-swift-validate-input-model">
+      <title>Interpreting _swift-validate-input-model.yml Errors</title>
+    </section>
     <p>When you execute the <codeph>_swift-validate-input-model.yml</codeph> playbook it can be hard
       to pick out the errors being reported. If so, you view the error messages as follows:<ol
         id="ol_szd_tht_dt">
@@ -26,7 +33,7 @@
         as describe in <xref href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run
           the Configuration Processor</xref> and continue with the deploy.</note></p>
     <p>
-      <ol id="ol_qwr_zpx_2t">
+      <ol>
         <li><b>Example Message</b>:<b><b> Model Missmatch: Cannot find drive /dev/sdt on
               padawan-ccp-c1-m2 (192.168.245.3)</b>)</b><simpletable id="simpletable_crn_x2j_2t">
             <strow>
@@ -112,5 +119,35 @@
           </simpletable></li>
       </ol>
     </p>
+    <section id="deploy-fails">
+      <title>Deploy fails with : msdos disks labels do not support partition names</title>
+      <note>This process only applies to Swift drives. It does not apply to the operating system or
+        boot drive.</note>
+      <simpletable id="simpletable_nh3_ptd_ft">
+        <strow>
+          <stentry><b>Description</b>
+          </stentry>
+          <stentry>If a disk drive allocated to Swift uses the MBR partition table type, the deploy
+            process refuses to label and format the drive. This is to prevent potential data loss as
+            explained in <xref
+              href="allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
+              >Requirements for a Disk Drive</xref>. If you intend to use the disk drive for Swift,
+            you must convert the MBR partition table to GPT on the drive using
+              <codeph>/sbin/sgdisk</codeph>.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Resolution</b></stentry>
+          <stentry>You must install <codeph>sgdisk</codeph>, before using it.<p>Perform the
+              following steps to install <codeph>sgdisk</codeph></p><ol>
+              <li>Execute the following
+                command<codeblock>sudo apt-get install gdisk</codeblock></li>
+              <li>Convert to GPT partition type. This is an example for converting GTP partition
+                type.<codeblock>sudo sgdisk –g /dev/sdd</codeblock></li>
+              <li> To take effect, you must reboot the node. You may then resume the deploy (repeat
+                the playbook that reported the error).  </li>
+            </ol></stentry>
+        </strow>
+      </simpletable>
+    </section>
   </body>
 </topic>
