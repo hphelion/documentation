@@ -75,7 +75,7 @@
         <li>Log in to the deployer node as the user you created during the setup phase, and mount
           the install media at /media/cdrom, for example,
           <codeblock>sudo mount &lt;xxx.iso> /media/cdrom</codeblock></li>
-        <li> Unpack the following tarball: Note this file name will change<codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-xxx.tgz</codeblock>
+        <li> Unpack the following tarball: Note this file name will change<codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-*T*Z.tgz</codeblock>
           <note>Your filename may vary, you can use <codeph>ls /media/cdrom/hos-2.0.0</codeph> to
             confirm.</note>
         </li>
