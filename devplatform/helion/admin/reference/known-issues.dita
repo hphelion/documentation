@@ -153,7 +153,7 @@ change with cluster configuration.</p>
 <p>If the VM instance can locally resolve a hostname rather than an IP
 address, it's generally best practice to use the hostname.</p>
 <p>If not, Application Lifecycle Service provides various <xref
-          href="../../user/reference/1.2environment.dita#topic7631">environment</xref> variables so
+          href="../../user/reference/environment.dita#topic7631">environment</xref> variables so
         that applications do not need to hardcode them at install time. Some examples are
           <codeph>VCAP_SERVICES</codeph> and <codeph>DATABASE_URL</codeph>. We strongly encourage
         their use.</p>

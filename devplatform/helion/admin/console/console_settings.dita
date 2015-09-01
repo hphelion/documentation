@@ -221,7 +221,7 @@
       <p>Organization managers and developers can be granted permission to perform certain tasks
         using feature flags. If a task's feature flag is disabled, only admins can perform these
         tasks. These options can also be managed using the CLI client with the <xref
-          href="../../user/reference/1.2client-ref-flags.dita">feature flag</xref> commands.</p>
+          href="../../user/reference/client-ref-flags.dita">feature flag</xref> commands.</p>
       <dl>
         <dlentry>
           <dt>Enable App Bits Upload </dt>
@@ -279,7 +279,7 @@
       <title>Quota Plans</title>
       <p>Lists the Quota Plans available to apply to Organizations on the system. To edit a
         definition, click the edit button on the right. To create a new definition, use the <xref
-          href="../../user/reference/1.2client-ref-quotas.dita#topic5727/command-quota-create"
+          href="../../user/reference/client-ref-quotas.dita#topic5727/command-quota-create"
           type="section">
           <i>quota create</i>
         </xref> command.</p>

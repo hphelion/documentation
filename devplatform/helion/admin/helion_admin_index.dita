@@ -247,7 +247,7 @@
 <xref href="reference/kato-ref.dita" >Kato Command Reference</xref>
 </li>
 <li>
-          <xref href="../user/reference/1.2client-ref.dita">ALS Client Command Reference</xref>
+          <xref href="../user/reference/client-ref.dita">ALS Client Command Reference</xref>
         </li>
 <li>
 <xref href="../user/deploy/orgs-spaces.dita" >Managing Groups, Users &amp; Limits</xref>
@@ -256,7 +256,7 @@
 <xref href="reference/architecture.dita" >Architectural Design</xref>
 </li>
 <li>
-<xref href="../user/reference/1.2glossary.dita" >Glossary</xref>
+<xref href="../user/reference/glossary.dita" >Glossary</xref>
 </li>
 <li>
 <xref href="reference/reference_troubleshoot.dita" >Troubleshooting</xref>

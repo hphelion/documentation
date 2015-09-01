@@ -84,7 +84,7 @@
 <section id="platform-tools"> <title>Platform Tools</title>
 <p>The Helion Development Platform is accessible via the following tools:</p>
 <p>
-        <b><xref href="helion/user/reference/1.2client-ref.dita#topic13355" type="section" >Helion Command-Line
+        <b><xref href="helion/user/reference/client-ref.dita#topic13355" type="section" >Helion Command-Line
             Interface (CLI)</xref></b>
       </p>
 <p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref

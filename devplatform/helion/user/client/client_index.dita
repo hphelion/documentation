@@ -23,7 +23,7 @@
  <!--permalink: /helion/devplatform/als/user/client/--></p>
 <p>The Helion ALS client is the command-line interface for the Application Lifecycle Service. You can use it to push application code up to the server, start and stop applications, create data services and link them to
 applications, and a number of other application management operations.</p>
-  <p>The <xref href="../reference/1.2client-ref.dita">Command Reference</xref> has full
+  <p>The <xref href="../reference/client-ref.dita">Command Reference</xref> has full
 descriptions of all client commands and options. These details are also
 available at the command line via the <i>helion help</i> command.</p>
 <ul>
@@ -43,7 +43,7 @@ available at the command line via the <i>helion help</i> command.</p>
 <xref type="section" href="#topic3165/getting-help">Getting Help from Within the Client</xref>
 </li>
 <li>
-  <xref href="../reference/1.2client-ref.dita">Full Command Reference</xref>
+  <xref href="../reference/client-ref.dita">Full Command Reference</xref>
 </li>
 </ul>
 <section id="helion-client-setup"> <title>Application Lifecycle Service Client Installation</title>
@@ -85,7 +85,7 @@ available at the command line via the <i>helion help</i> command.</p>
 </section>
 <section id="targeting-the-api-endpoint"> <title>Target the API endpoint</title>
 <p>Before you can use the client, you must <xref
-          href="../reference/1.2client-ref-getting-started.dita#topic2439/command-target">set the
+          href="../reference/client-ref-getting-started.dita#topic2439/command-target">set the
           target URL</xref>, which is also known as the API Endpoint. This tells the client the
         location where it will push applications to. For example:</p>
 <codeblock>helion target api.helion.example.com</codeblock>
@@ -113,7 +113,7 @@ the Application Lifecycle Service API endpoint, set the following environment va
 <section id="getting-help"> <title>Getting Help</title>
 <p>To get a list of available commands or help on a particular command, enter:</p>
 <codeblock>helion help [COMMAND]</codeblock>
-  <p>See also the <xref href="../reference/1.2client-ref.dita">Command Reference</xref> for a full
+  <p>See also the <xref href="../reference/client-ref.dita">Command Reference</xref> for a full
 list of commands.</p>
 </section>
 </body>

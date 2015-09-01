@@ -175,7 +175,7 @@
         <topicref href="devplatform/helion/user/deploy/languages/ruby.dita" locktitle="yes"
           navtitle="Ruby"/>
       </topichead>
-      <topicref href="devplatform/helion/user/reference/1.2environment.dita" locktitle="yes"
+      <topicref href="devplatform/helion/user/reference/environment.dita" locktitle="yes"
         navtitle="Environment Variables "/>
       <!--permalink: /helion/devplatform/deploy/-->
       <!--permalink: /helion/devplatform/eclipse/-->
@@ -337,55 +337,55 @@
         <topicref href="devplatform/helion/user/client/client_index.dita" locktitle="yes"
           navtitle="ALS Client Installation"
           ><!--permalink: /helion/devplatform/als/client/download/--><!--permalink: /helion/devplatform/als/client/reference/--></topicref>
-        <topicref href="devplatform/helion/user/reference/1.2client-ref.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/reference/client-ref.dita" locktitle="yes"
           navtitle="ALS Client Command Reference">
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-administration.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-administration.dita"
             locktitle="yes" navtitle="Administration"/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-applications.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-applications.dita"
             locktitle="yes" navtitle="Applications"/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-buildpacks.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-buildpacks.dita"
             locktitle="yes" navtitle="Buildpacks"/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-control.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-control.dita"
             locktitle="yes" navtitle="Control"/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-domains.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-domains.dita"
             locktitle="yes" navtitle="Domains"/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-flags.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-flags.dita"
             locktitle="yes" navtitle="Feature Flags"/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-getting-started.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-getting-started.dita"
             locktitle="yes" navtitle="Getting Started"/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-history.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-history.dita"
             locktitle="yes" navtitle="History"/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-information.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-information.dita"
             locktitle="yes" navtitle="Information "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-management.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-management.dita"
             locktitle="yes" navtitle="Management "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-miscellaneous.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-miscellaneous.dita"
             locktitle="yes" navtitle="Miscellaneous "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-organizations.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-organizations.dita"
             locktitle="yes" navtitle="Organizations "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-placement.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-placement.dita"
             locktitle="yes" navtitle="Placement Zones "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-quotas.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-quotas.dita"
             locktitle="yes" navtitle="Quotas "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-routes.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-routes.dita"
             locktitle="yes" navtitle="Routes "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-securitygroups.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-securitygroups.dita"
             locktitle="yes" navtitle="Security Groups "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-brokers.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-brokers.dita"
             locktitle="yes" navtitle="Service Brokers "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-service-management.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-service-management.dita"
             locktitle="yes" navtitle="Service Management "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-serviceplans.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-serviceplans.dita"
             locktitle="yes" navtitle="Service Plans "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-services.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-services.dita"
             locktitle="yes" navtitle="Services "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-spacequotas.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-spacequotas.dita"
             locktitle="yes" navtitle="Space Quotas "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-spaces.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-spaces.dita"
             locktitle="yes" navtitle="Spaces "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-tokens.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-tokens.dita"
             locktitle="yes" navtitle="Authentication Tokens "/>
-          <topicref href="devplatform/helion/user/reference/1.2client-ref-user-management.dita"
+          <topicref href="devplatform/helion/user/reference/client-ref-user-management.dita"
             locktitle="yes" navtitle="User Management "/>
         </topicref>
         <topicref href="devplatform/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
@@ -464,15 +464,15 @@
         <!--permalink: /helion/devplatform/als/user/client/-->
         <!--permalink: /helion/devplatform/als/user/console/-->
         <!--permalink: /helion/devplatform/als/user/deploy/-->
-        <topicref href="devplatform/helion/user/quick-start/1.2index.dita"
+        <topicref href="devplatform/helion/user/quick-start/quickstart_index.dita"
           navtitle="ALS Quick Start" locktitle="yes"/>
-        <topicref href="devplatform/helion/user/reference/1.2api.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/reference/api.dita" locktitle="yes"
           navtitle="Application Lifecycle Service API"
           ><!--permalink: /helion/devplatform/als/user/reference/client-ref/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/administration/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/applications/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/brokers/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/buildpacks/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/control/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/domains/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/flags/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/gettingstarted/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/history/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/information/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/management/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/miscellaneous/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/organizations/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/placement/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/quotas/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/routes/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/securitygroups/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/servicemanagement/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/serviceplans/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/services/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/spacequotas/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/spaces/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/tokens/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/usermanagement/--></topicref>
         <!--permalink: /helion/devplatform/als/user/reference/api/-->
         <!--permalink: /helion/devplatform/als/user/reference/environment/-->
         <!--permalink: /helion/devplatform/als/user/reference/glossary/-->
-        <topicref href="devplatform/helion/user/reference/1.2glossary.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/reference/glossary.dita" locktitle="yes"
           navtitle="Glossary"/>
         <!--permalink: /helion/devplatform/als/user/reference/troubleshoot/-->
         <topicref href="devplatform/helion/user/reference/reference_troubleshoot.dita" locktitle="yes"
@@ -482,7 +482,6 @@
       </topicref>
     </topicref>
   </topicref>
-  
-  <!-- shim files to be removed when 1.3 ships -->
+ 
  </map>
 

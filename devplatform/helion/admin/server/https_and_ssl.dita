@@ -5,7 +5,7 @@
   <body>
     <section>
       <p>HTTPS mode provides access to the provisioned apps using wild card SSL certificates through
-        the router or <xref href="../../user/reference/1.2glossary.dita#topic6187/term-Nginx"
+        the router or <xref href="../../user/reference/glossary.dita#topic6187/term-Nginx"
           type="section">Nginx</xref> web server.</p>
       <p>The ALS VM generates self-signed wildcard SSL certificates to match the unique
           <codeph>.local</codeph> hostname it assigns itself at first boot. These certificates can
@@ -150,7 +150,7 @@ chmod 400 host.key host.crt</codeblock>
       <p>In some cases, it may be a requirement that any HTTP request is first
         handled through an upstream or parent proxy (HTTP requests may not be
         directly routable otherwise).</p>
-      <p>In this case it is necessary to tell <xref href="../../user/reference/1.2glossary.dita#topic6187/term-Polipo" type="section" >Polipo</xref> about the proxy so it knows how to handle this correctly.</p>
+      <p>In this case it is necessary to tell <xref href="../../user/reference/glossary.dita#topic6187/term-Polipo" type="section" >Polipo</xref> about the proxy so it knows how to handle this correctly.</p>
       <ol id="ol_ljh_bkq_ms">
         <li>Open the Polipo config file <codeph>/etc/polipo/config</codeph> and add the
           lines:<codeblock>parentProxy = &lt;IP&gt;:&lt;PORT&gt;
@@ -166,7 +166,7 @@ socksProxyType=socks4a | OR | socks5;</codeblock></li>
         Application Lifecycle Service server in <codeph>/var/log/polipo/polipo.log</codeph>.</p>
     </section>
     <section id="staging-cache-app-http-proxy"> <title>Staging Cache &amp; App HTTP Proxy</title>
-      <p>Application Lifecycle Service caches all application dependencies that are downloaded by module managers that support the <xref href="../../user/reference/1.2environment.dita#topic7631/http-proxy" type="section" >HTTP_PROXY</xref> environment variable (e.g. pip, PyPM, PPM, NPM, etc). This is limited to 100MB of in-memory cache.</p>
+      <p>Application Lifecycle Service caches all application dependencies that are downloaded by module managers that support the <xref href="../../user/reference/environment.dita#topic7631/http-proxy" type="section" >HTTP_PROXY</xref> environment variable (e.g. pip, PyPM, PPM, NPM, etc). This is limited to 100MB of in-memory cache.</p>
       <p>If you have an upstream HTTP proxy that deployed applications and the
         staging system need to traverse to access the internet, use the
         <codeph>kato op upstream_proxy ...</codeph> command on all DEA

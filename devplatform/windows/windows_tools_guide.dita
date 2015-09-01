@@ -253,7 +253,7 @@
 		helion login
 		helion push --stack win2012r2 </codeblock>
 
-  <p>For more information on the Helion client, see <xref format="dita"  href="../helion/user/reference/1.2client-ref.dita#topic13355" type="section">HP Helion 1.2 Development Platform: Application Lifecycle Service Client Command Reference</xref></p>
+  <p>For more information on the Helion client, see <xref format="dita"  href="../helion/user/reference/client-ref.dita#topic13355" type="section">HP Helion 1.2 Development Platform: Application Lifecycle Service Client Command Reference</xref></p>
 
   <p>The Helion client tool can be downloaded from the following locations: </p>
 

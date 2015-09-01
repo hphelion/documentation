@@ -27,8 +27,8 @@
       <ol>
       <li><p>To create a Microsoft SQL Server service instance, use the <xref href="../helion/CLI/ALS_Client_Downloads.dita">Helion ALS Client</xref>. To create a service
         instance, first connect the Helion ALS client to your ALS cluster using 
-        <xref type="section" href="../helion/user/reference/1.2client-ref-getting-started.dita#topic2439/command-login">helion login</xref>
-        and <xref type="section" href="../helion/user/reference/1.2client-ref-getting-started.dita#topic2439/command-target">helion target</xref>.</p></li>
+        <xref type="section" href="../helion/user/reference/client-ref-getting-started.dita#topic2439/command-login">helion login</xref>
+        and <xref type="section" href="../helion/user/reference/client-ref-getting-started.dita#topic2439/command-target">helion target</xref>.</p></li>
         <li><p>The following command creates an instance of a Microsoft SQL Server 2012 service called <b>MSSQL2012Service</b> (the command will request the service plan to use):</p>
     <codeblock>helion create-service mssql2012 MSSQL2012Service</codeblock></li>
     <li><p>The output from this command may look like the following (in this example, the Free service plan is selected):</p>

@@ -71,7 +71,7 @@ instructions further down. But before you push the button, ensure that you have 
         order to download dependent packages.</p>
 <p>Use the Helion client to deploy your app to Helion Development Platform.</p>
 <ol>
-<li>Open the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command-line interface (CLI)</xref>
+<li>Open the <xref href="../../helion/user/reference/client-ref.dita" >ALS command-line interface (CLI)</xref>
 </li>
 <li>
 <p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
@@ -167,7 +167,7 @@ type: rabbitmq3
 <li>You need to provide configuration information so that ALS can bind to the RabbitMQ service. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You will need to retrieve connection information for RabbitMQ from the application's environment variables.</li>
-<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
+<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
 </ul>
 <p>
 <xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../database/1.2database.php.dita" >Previous Sample</xref> | <xref href="../helloworld/1.2helloworld.php.dita" >Next Sample</xref>

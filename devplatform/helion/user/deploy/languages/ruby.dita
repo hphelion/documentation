@@ -181,7 +181,7 @@ Include <codeph>gem 'thin'</codeph> in your <i>Gemfile</i>.</p>
 <p>Generally, <codeph>bundle exec</codeph> must be used when running any commands that are installed through Gemfile/bundler.</p>
 <p>To run <codeph>rake stats</codeph>, for instance, use the <codeph>helion run</codeph> command:</p>
 <codeblock>helion run *appname* bundle exec rake stats</codeblock>
-  <p>See the <xref href="../../reference/1.2client-ref.dita">ALS Command Reference</xref> for details on the use of <codeph>helion run</codeph>.</p>
+  <p>See the <xref href="../../reference/client-ref.dita">ALS Command Reference</xref> for details on the use of <codeph>helion run</codeph>.</p>
 </section>
 <section id="references"> <title>References</title>
 <ul>

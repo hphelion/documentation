@@ -56,7 +56,7 @@
             href="https://github.com/Stackato-Apps/go-env" format="html" scope="external"
             >go-env</xref>] to find the service instance credentials. Once found, set the
           environment variables the Docker app expects through the web console, the client's <xref
-            href="../../reference/1.2environment.dita#topic7631"><codeph>--env</codeph>
+            href="../../reference/environment.dita#topic7631"><codeph>--env</codeph>
             options</xref>, or in the manifest.yml file. </li>
                 </ul>   
    </section> <section><title>Web Process and Exposed Ports</title><p>The <codeph>$PORT</codeph> environment

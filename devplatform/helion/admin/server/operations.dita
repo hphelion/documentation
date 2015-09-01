@@ -139,7 +139,7 @@ kato node setup micro</codeblock>
 <p>The easiest way to add admin users to Application Lifecycle Service is via the Management Console
         under <xref href="../console/console_index.dita#topic13823/users">Users</xref>. The Management
         Console will prompt to create the initial admin user the first time you use it.</p>
-  <p>If you do not have access to the Management Console, create a user by logging in to the micro cloud or Core node controller via SSH or through the VM <xref href="../../user/reference/1.2glossary.dita#topic6187/term-tty-console" type="section"   >tty console</xref> as the <i>helion</i> user and run <i>helion register</i>:</p>
+  <p>If you do not have access to the Management Console, create a user by logging in to the micro cloud or Core node controller via SSH or through the VM <xref href="../../user/reference/glossary.dita#topic6187/term-tty-console" type="section"   >tty console</xref> as the <i>helion</i> user and run <i>helion register</i>:</p>
 <codeblock>helion target api.helion-xxxx.local
 helion register superuser@example.net</codeblock>
 <p>Grant administrative privileges using <i>kato config</i>:</p>

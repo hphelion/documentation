@@ -71,7 +71,7 @@ instructions further down. But before you push the button, ensure that you have 
                 Internet in order to download dependent packages.</p>
 <p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../1.2devplatform.eclipse.dita" >plugin</xref>.</p>
 <ol>
-<li>Open the <xref href="../../helion/user/reference/1.2client-ref.dita" >Helion command-line interface (CLI)</xref>
+<li>Open the <xref href="../../helion/user/reference/client-ref.dita" >Helion command-line interface (CLI)</xref>
 </li>
 <li> Ensure that you are targeting your desired environment.
                     <!--A BR tag was used here in the original source.--> If you are not,
@@ -157,7 +157,7 @@ applications:
 <li>ALS requires configuration information so that it can bind to a MySQL service. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You will need to provide information about which build pack to use for PHP so that ALS can create an environment for your app. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You will need to retrieve connection information for MySQL from the application's environment variables and then parse that information into a connection string that can be used by PHP.</li>
-<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
+<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
 </ul>
 <p>
 <xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/1.2helloworld.php.dita" >Previous Sample</xref> | <xref href="../messaging/1.2messaging.php.dita" >Next Sample</xref>

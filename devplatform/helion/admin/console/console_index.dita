@@ -123,14 +123,14 @@
     <section id="setup">
       <title>Management Console Setup and Access</title>
       <p>Your hypervisor provides <xref
-          href="../../user/reference/1.2glossary.dita#topic6187/term-tty-console" type="section">tty
+          href="../../user/reference/glossary.dita#topic6187/term-tty-console" type="section">tty
           console</xref> access to each of its virtual machines. After startup, an Application
         Lifecycle Service VM displays:</p>
       <codeblock>Application Lifecycle Service Management Console at
 https://helion-xxxx.local</codeblock>
-      <p>On a <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud">micro
+      <p>On a <xref href="../../user/reference/glossary.dita#topic6187/term-micro-cloud">micro
           cloud</xref> VM where the local network supports <xref
-          href="../../user/reference/1.2glossary.dita#topic6187/term-multicast-dns" type="section"
+          href="../../user/reference/glossary.dita#topic6187/term-multicast-dns" type="section"
           >multicast DNS</xref>, the hostname will be <codeph>helion-xxxx.local</codeph>. If you
         have configured the <xref
           href="../../admin/server/configuration.dita#topic31232/server-config-hostname"
@@ -295,7 +295,7 @@ https://helion-xxxx.local</codeblock>
       <title>Quota Plans</title>
       <p>Lists the Quota Plans available to apply to Organizations on the system. To edit a
         definition, click the edit button on the right. To create a new definition, use the <xref
-          href="../../user/reference/1.2client-ref-quotas.dita#topic5727/command-quota-create"
+          href="../../user/reference/client-ref-quotas.dita#topic5727/command-quota-create"
           type="section">
           <i>quota create</i>
         </xref> command.</p>

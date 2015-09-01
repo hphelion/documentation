@@ -4,10 +4,10 @@
   <title>HP Helion 1.2 Development Platform Management Console: Introduction</title>
   <body>
     <p>The Management Console is a web interface that allows the  administration and management of the ALS Server.</p>
-    <p>Your hypervisor provides <xref href="../../user/reference/1.2glossary.dita#topic6187/term-tty-console">tty console</xref> access to
+    <p>Your hypervisor provides <xref href="../../user/reference/glossary.dita#topic6187/term-tty-console">tty console</xref> access to
       each of its virtual
       machines<!--. After startup, the VM displays:: <codeblock>Helion Management Console at 
-https://helion-xxxx.local  </codeblock>--><!-- On a <xref href="../reference/1.2glossary.dita#topic6187/term-micro-cloud">micro cloud</xref> VM where the local network supports <xref href="../reference/1.2glossary.dita#topic6187/term-multicast-dns">multicast DNS</xref>, the hostname will be <codeph>horixon-xxxx.local</codeph>.-->
+https://helion-xxxx.local  </codeblock>--><!-- On a <xref href="../reference/glossary.dita#topic6187/term-micro-cloud">micro cloud</xref> VM where the local network supports <xref href="../reference/glossary.dita#topic6187/term-multicast-dns">multicast DNS</xref>, the hostname will be <codeph>horixon-xxxx.local</codeph>.-->
       If you have configured the <xref
         href="../server/configuration.dita#topic31232/server-config-hostname">hostname</xref> and
         <xref href="../server/configuration.dita#topic31232/server-config-hostname">DNS</xref> of
@@ -31,7 +31,7 @@ https://helion-xxxx.local  </codeblock>--><!-- On a <xref href="../reference/1.2
       command utility or the <codeph>cf-mgmt</codeph> cluster creation tool. See the command-line
       tool references (<xref href="../reference/kato-ref.dita#topic39432">kato</xref>, <xref
         href="../../CLI/ALS_Client_Reference.dita#topic13234">cf-mgmt</xref>, or the <xref
-        href="../../user/reference/1.2client-ref.dita#topic13355">helion client</xref>) for a full
+        href="../../user/reference/client-ref.dita#topic13355">helion client</xref>) for a full
       list of options. </p>
   </body>
 </topic>

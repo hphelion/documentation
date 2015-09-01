@@ -44,10 +44,10 @@ virtualization host.</p>
 <p>Command access to the Application Lifecycle Service server is available in several ways:</p>
 <ul>
 <li>
-  <p>Over the hypervisor's <xref href="../../user/reference/1.2glossary.dita#topic6187/term-tty-console" type="section"   >tty console</xref>.</p>
+  <p>Over the hypervisor's <xref href="../../user/reference/glossary.dita#topic6187/term-tty-console" type="section"   >tty console</xref>.</p>
 </li>
 <li>
-  <p>The <xref href="../../user/reference/1.2client-ref.dita">Application Lifecycle Service Client</xref> command, which in addition to specialized functions can provide remote shell access to the server:</p>
+  <p>The <xref href="../../user/reference/client-ref.dita">Application Lifecycle Service Client</xref> command, which in addition to specialized functions can provide remote shell access to the server:</p>
 
 <codeblock>helion target helion@helion-xxxx.local
 helion ssh api</codeblock>

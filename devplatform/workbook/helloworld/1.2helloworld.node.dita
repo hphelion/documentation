@@ -58,7 +58,7 @@
         order to download dependent packages.</p>
 <p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../1.2devplatform.eclipse.dita" >plugin</xref>.</p>
 <ol>
-<li>Open the <xref href="../../helion/user/reference/1.2client-ref.dita" >Helion command-line interface (CLI)</xref>
+<li>Open the <xref href="../../helion/user/reference/client-ref.dita" >Helion command-line interface (CLI)</xref>
 </li>
 <li>Ensure that you are targeting your desired environment.
           <!--A BR tag was used here in the original source.--> If you are not,
@@ -116,7 +116,7 @@ Note that <b>name</b> is always required while other fields are optional.</p>
 <section id="key-learnings"> <title>Key Learnings</title>
 <ul>
 <li>
-<p>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >Helion command line client</xref> or the web-based <xref href="../../helion/admin/console/console_index.dita" >ALS Management Console</xref>.</p>
+<p>You interact with and deploy your app using the <xref href="../../helion/user/reference/client-ref.dita" >Helion command line client</xref> or the web-based <xref href="../../helion/admin/console/console_index.dita" >ALS Management Console</xref>.</p>
 </li>
 <li>
 <p>ALS requires configuration information to create an environment for your app. Configuration information is contained in the <i>manifest.yml</i> file.</p>

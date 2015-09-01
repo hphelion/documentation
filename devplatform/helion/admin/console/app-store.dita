@@ -51,7 +51,7 @@ config</xref>.</p>
 </section>
 <section id="app-store-definition"> <title>Sample Applications Definition File</title>
 <p>
-  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-YAML" type="section"   >YAML</xref> files describe the settings for each set of apps, including the container and a link to the source  repository for
+  <xref href="../../user/reference/glossary.dita#topic6187/term-YAML" type="section"   >YAML</xref> files describe the settings for each set of apps, including the container and a link to the source  repository for
 each app. For example:</p>
 <codeblock>store:
   title: Third Party Apps for Application Lifecycle Service Development Platform

@@ -22,7 +22,7 @@
  <!--./devplatform/helion/user/deploy/1.2manifestyml.md-->
  <!--permalink: /helion/devplatform/als/user/deploy/manifestyml/--></p>
   <p>The <i>manifest.yml</i> file sets application configuration options which are then passed to
-      ALS during the <xref href="../reference/1.2client-ref-management.dita#topic50918/command-push"
+      ALS during the <xref href="../reference/client-ref-management.dita#topic50918/command-push"
         >helion push</xref> command.</p>
 <p>This file is the standard application configuration file format for all Cloud Foundry systems, allowing for portability from those systems to Application Lifecycle Service without configuration changes. See <xref href="http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html" scope="external" format="html" >Application Manifests</xref> for the complete canonical documentation.</p>
 <p>The client uses the keys to determine values that are otherwise passed by the user as arguments or as answers to prompts.</p>
@@ -336,10 +336,10 @@ Application Lifecycle Service. For example:</p>
 <codeblock>  framework:
   start-file: temp.py</codeblock>
 <p>This value will be used by the <xref
-          href="../reference/1.2environment.dita#topic7631/processes-web">PROCESSES_WEB</xref> and
+          href="../reference/environment.dita#topic7631/processes-web">PROCESSES_WEB</xref> and
         HELION_START_FILE environment variables. Any changes to HELION_START_FILE at runtime will
         not change the value of <xref
-          href="../reference/1.2environment.dita#topic7631/processes-web">PROCESSES_WEB</xref> as the macro is expanded before the pre-running hooks
+          href="../reference/environment.dita#topic7631/processes-web">PROCESSES_WEB</xref> as the macro is expanded before the pre-running hooks
         are run.</p>
 </section>
 <section id="app-dir"> <title>app-dir</title>
@@ -378,7 +378,7 @@ allowing you to create service names based on the specified application
 name. For example:</p>
 <codeblock>  services:
   ${name}-db: mysql</codeblock>
-  <p>The application name can be set as an option to the <xref type="section" href="../../user/reference/1.2client-ref-management.dita#topic50918/command-push">helion push</xref> command, overriding
+  <p>The application name can be set as an option to the <xref type="section" href="../../user/reference/client-ref-management.dita#topic50918/command-push">helion push</xref> command, overriding
 the <b>name</b> value defined in <i>manifest.yml</i>. Use this technique when
 pushing multiple versions of the same application (using different
 names) if you want them to use separate databases. For example:</p>
@@ -505,7 +505,7 @@ helion push <codeph>--instances 2</codeph>).</p>
   <section id="placement-zone"><title>Placement Zones</title> The DEA <xref type="section"
         href="../../admin/cluster/zones.dita#topic_u3c_rtd_5s/dea-zones-placement">placement
         zone</xref> to run the app in (optional). Use the <xref
-        href="../reference/1.2client-ref-placement.dita">placement-zones</xref> command to see which
+        href="../reference/client-ref-placement.dita">placement-zones</xref> command to see which
       placement zones are available on the current target. </section>
 <section id="url-or-urls"> <title>url (or urls):</title>
 <p>List of URLs mapped to the application. For example:</p>
@@ -530,8 +530,8 @@ such as API keys and passwords.</p>
 </section>
 <section id="env-attributes"> <title>env Attributes</title>
 <p>Each environment variable can have attributes which modify the
-  interactive behavior of the <xref href="../../user/reference/1.2client-ref.dita" >ALS client</xref> when using the
-  <xref type="section" href="../../user/reference/1.2client-ref-management.dita#topic50918/command-push">push</xref> command. These
+  interactive behavior of the <xref href="../../user/reference/client-ref.dita" >ALS client</xref> when using the
+  <xref type="section" href="../../user/reference/client-ref-management.dita#topic50918/command-push">push</xref> command. These
 attributes are set with the following keys:</p>
 <ul>
 <li>
@@ -571,7 +571,7 @@ is set but no value is given (via "default", "inherit" or the
 <codeph>--env</codeph> option).</p>
 <p>
         <note>These attributes are only recognized by the <xref
-          href="../../user/reference/1.2client-ref.dita">ALS
+          href="../../user/reference/client-ref.dita">ALS
             client</xref>.</note>
       </p>
 </section>

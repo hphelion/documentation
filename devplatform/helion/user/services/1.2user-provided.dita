@@ -96,7 +96,7 @@ object:</p>
 <section id="user-provided-URL-env"> <title>Other Environment Variables</title>
 <p>User-provided service instances do not set <b>DATABASE_URL</b> or 
 database-specific URL environment variables.</p>
-  <p>If your application uses variables in URL format, you can add them manually to the application with the <xref href="../reference/1.2client-ref-management.dita#topic50918/command-set-env" type="section"   >
+  <p>If your application uses variables in URL format, you can add them manually to the application with the <xref href="../reference/client-ref-management.dita#topic50918/command-set-env" type="section"   >
 <i>set-env</i>
 </xref> command. For example:</p>
 <codeblock>helion set-env appname MYSQL_URL mysql:

@@ -32,10 +32,10 @@ web server, application dependencies, databases, and other services.</p>
 <section id="quick-start"> <title>Quick Start</title>
 <ul>
 <li>
-          <xref href="../quick-start/1.2index.dita">ALS Quick Start Guide</xref> [Not the same as the <xref href="../../../1.2devplatform.ALS-developer-trial-quick-start.dita">Developer Trial Quick Start</xref>].
+          <xref href="../quick-start/quickstart_index.dita">ALS Quick Start Guide</xref> [Not the same as the <xref href="../../../1.2devplatform.ALS-developer-trial-quick-start.dita">Developer Trial Quick Start</xref>].
         </li>
 <li>
-          <xref href="../quick-start/1.2index.dita#topic4745/management-console" type="section"  >Management Console
+          <xref href="../quick-start/quickstart_index.dita#topic4745/management-console" type="section"  >Management Console
           </xref></li>
 <li>
           <xref
@@ -43,18 +43,18 @@ web server, application dependencies, databases, and other services.</p>
               Service Client</xref>
         </li>
 <li>
-          <xref href="../quick-start/1.2index.dita#topic4745/setting-organization-and-space" type="section"  >Setting
+          <xref href="../quick-start/quickstart_index.dita#topic4745/setting-organization-and-space" type="section"  >Setting
             Organization and Space</xref>
         </li>
 <li>
-          <xref href="../quick-start/1.2index.dita#topic4745/deploying-apps" type="section"  >Deploying Apps</xref>
+          <xref href="../quick-start/quickstart_index.dita#topic4745/deploying-apps" type="section"  >Deploying Apps</xref>
         </li>
 </ul>
 </section>
 <section id="helion-client"> <title>Application Lifecycle Service Client</title>
 <ul>
 <li>
-          <xref href="../reference/1.2client-ref.dita#topic13355/getting-started" type="section"  >Application
+          <xref href="../reference/client-ref.dita#topic13355/getting-started" type="section"  >Application
             Lifecycle Service Client Command Reference</xref>
         </li>
 <li>
@@ -81,7 +81,7 @@ web server, application dependencies, databases, and other services.</p>
               <xref href="../client/client_index.dita#topic3165/removing-the-client" type="section"
                 >Removing the Client</xref>
             </li>
-            <li><xref href="../reference/1.2api.dita#topic455/related-documentation" type="section"
+            <li><xref href="../reference/api.dita#topic455/related-documentation" type="section"
                 >Application Lifecycle Service Client API</xref>
             </li>
           </ul></li>
@@ -183,10 +183,10 @@ web server, application dependencies, databases, and other services.</p>
 <section id="reference"> <title>Reference</title>
 <ul>
 <li>
-          <xref href="../reference/1.2environment.dita#topic7631" type="section"  >Environment Variables</xref>
+          <xref href="../reference/environment.dita#topic7631" type="section"  >Environment Variables</xref>
         </li>
 <li>
-          <xref href="../reference/1.2glossary.dita#topic6187" type="section"  >Glossary</xref>
+          <xref href="../reference/glossary.dita#topic6187" type="section"  >Glossary</xref>
         </li>
 <li>
           <xref href="../reference/reference_troubleshoot.dita#topic2774" type="section"  >Troubleshooting</xref>

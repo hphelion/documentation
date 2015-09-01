@@ -98,7 +98,7 @@
           <xref href="CLI/ALS_Client_Downloads.dita">ALS Cluster Management Tool</xref>
         </li>
         <li>
-          <xref href="user/reference/1.2client-ref.dita">ALS Command-Line Client Reference</xref>
+          <xref href="user/reference/client-ref.dita">ALS Command-Line Client Reference</xref>
         </li>
         <li>
           <xref href="admin/reference/kato-ref.dita"><i>kato</i> Command Reference</xref>
@@ -107,13 +107,13 @@
           <xref href="user/deploy/manifestyml.dita"><i>manifest.yml</i> Reference</xref>
         </li>
         <li>
-          <xref href="user/reference/1.2environment.dita">Environment Variables</xref>
+          <xref href="user/reference/environment.dita">Environment Variables</xref>
         </li>
         <li>
           <xref href="admin/reference/known-issues.dita">Known Issues</xref>
         </li>
         <li>
-          <xref href="user/reference/1.2glossary.dita">Glossary</xref>
+          <xref href="user/reference/glossary.dita">Glossary</xref>
         </li>
         <li>
           <xref href="user/reference/reference_troubleshoot.dita">Troubleshooting</xref>

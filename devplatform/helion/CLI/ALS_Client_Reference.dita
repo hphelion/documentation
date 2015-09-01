@@ -52,7 +52,7 @@
       <p>There are three ways to pass configuration values into ALS:</p>
       <ul>
         <li>Direct entry through the <codeph>cf-mgmt</codeph> tool</li>
-        <li>Defined in an <xref href="../user/reference/1.2environment.dita">environment
+        <li>Defined in an <xref href="../user/reference/environment.dita">environment
             variable</xref></li>
         <li>Recorded in a <xref href="#topic13234/downloadfile" format="dita">configuration
             file</xref>

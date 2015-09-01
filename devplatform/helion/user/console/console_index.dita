@@ -215,7 +215,7 @@
 <li>the service instance name (not the canonical database name)</li>
 <li>its current state</li>
 </ul>
-  <p>For more information on a service instance, such as its credentials, use the <xref href="../reference/1.2client-ref-services.dita#topic3675/command-service" type="section"   >helion service</xref> command.</p>
+  <p>For more information on a service instance, such as its credentials, use the <xref href="../reference/client-ref-services.dita#topic3675/command-service" type="section"   >helion service</xref> command.</p>
 <p>
   <b>Credentials</b>
 </p>

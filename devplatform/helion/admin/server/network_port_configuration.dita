@@ -3,7 +3,7 @@
 <topic id="topic_l51_22v_xs">
   <title>Network Port Configuration</title>
   <body>
-    <p>The ALS <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud"
+    <p>The ALS <xref href="../../user/reference/glossary.dita#topic6187/term-micro-cloud"
         >micro-cloud</xref> runs with the following ports exposed: <table>
         <tgroup cols="3">
           <tbody>
@@ -106,7 +106,7 @@
           <stentry>tcp</stentry>
           <stentry> all nodes</stentry>
           <stentry> controller</stentry>
-          <stentry><xref href="../../user/reference/1.2glossary.dita#topic6187/term-NATS">NATS</xref></stentry>
+          <stentry><xref href="../../user/reference/glossary.dita#topic6187/term-NATS">NATS</xref></stentry>
         </strow>
         <strow>
           <stentry>3306</stentry>
@@ -162,7 +162,7 @@
           <stentry> tcp </stentry>
           <stentry>controller</stentry>
           <stentry> all nodes</stentry>
-          <stentry><xref href="../../user/reference/1.2glossary.dita#topic6187/term-supervisord">supervisord</xref></stentry>
+          <stentry><xref href="../../user/reference/glossary.dita#topic6187/term-supervisord">supervisord</xref></stentry>
         </strow>
         <strow>
           <stentry>9022</stentry>
@@ -208,7 +208,7 @@
          <ul>  
            <li>Ports 80 and 443 need only be open to the world on router nodes.</li>
             
-           <li>Port 4222 should be open on all nodes for <xref href="../../user/reference/1.2glossary.dita#topic6187/term-NATS">NATS</xref> communication with the MBUS IP
+           <li>Port 4222 should be open on all nodes for <xref href="../../user/reference/glossary.dita#topic6187/term-NATS">NATS</xref> communication with the MBUS IP
         (core Cloud Controller)</li>
             
              <li>Port 9022 should be open to allow transfer of droplets to and

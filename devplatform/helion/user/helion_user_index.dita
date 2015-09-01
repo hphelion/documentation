@@ -28,25 +28,25 @@ web server, application dependencies, databases, and other services.</p>
 <section id="quick-start"> <title>Quick Start</title>
 <ul>
 <li>
-  <xref href="quick-start/1.2index.dita">ALS Quick Start </xref>(Not to be confused with the <xref href="../../1.2devplatform.ALS-developer-trial-quick-start.dita">Developer Quick Start Trial</xref>.</li>
+  <xref href="quick-start/quickstart_index.dita">ALS Quick Start </xref>(Not to be confused with the <xref href="../../1.2devplatform.ALS-developer-trial-quick-start.dita">Developer Quick Start Trial</xref>.</li>
 <li>
-  <xref href="quick-start/1.2index.dita#topic4745/management-console" type="section"  >Management Console</xref>
+  <xref href="quick-start/quickstart_index.dita#topic4745/management-console" type="section"  >Management Console</xref>
 </li>
 <li>
-  <xref href="quick-start/1.2index.dita#topic4745/helion-client" type="section"  >Application Lifecycle Service Client</xref>
+  <xref href="quick-start/quickstart_index.dita#topic4745/helion-client" type="section"  >Application Lifecycle Service Client</xref>
 </li>
 <li>
-  <xref href="quick-start/1.2index.dita#topic4745/setting-organization-and-space" type="section"  >Setting Organization and Space</xref>
+  <xref href="quick-start/quickstart_index.dita#topic4745/setting-organization-and-space" type="section"  >Setting Organization and Space</xref>
 </li>
 <li>
-  <xref href="quick-start/1.2index.dita#topic4745/deploying-apps" type="section"  >Deploying Apps</xref>
+  <xref href="quick-start/quickstart_index.dita#topic4745/deploying-apps" type="section"  >Deploying Apps</xref>
 </li>
 </ul>
 </section>
 <section id="helion-client"> <title>Application Lifecycle Service Client</title>
 <ul>
 <li>
-<xref href="../user/reference/1.2client-ref.dita">Application Lifecycle Service Client Command Reference</xref>
+<xref href="../user/reference/client-ref.dita">Application Lifecycle Service Client Command Reference</xref>
 </li>
 <li>
           <xref href="../user/client/client_index.dita">Application Lifecycle Service Client</xref>

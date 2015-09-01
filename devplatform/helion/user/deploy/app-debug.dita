@@ -26,13 +26,13 @@ debugging, but most require a connection between the running application
 code and the debugging tool or IDE on a port and protocol other than
 standard HTTP(S).</p>
 <p>Application Lifecycle Service makes this possible through the <xref href="../services/1.2port-service.dita">Harbor port service</xref>, and the
-  <xref href="../reference/1.2client-ref-management.dita#topic50918/command-push" type="section"><i>push</i></xref> command has
+  <xref href="../reference/client-ref-management.dita#topic50918/command-push" type="section"><i>push</i></xref> command has
 a <codeph>-d</codeph> option to set up port forwarding for a remote
 debugging session automatically.</p>
 <section id="helion-debug-command"> <title>HELION_DEBUG_COMMAND</title>
 <p>The command-line client can automatically start a local debugger client or IDE instance with connection information for a newly pushed application.</p>
 <p>When the <codeph>-d</codeph> debugging option is given to
-  <xref href="../reference/1.2client-ref-management.dita#topic50918/command-push" type="section"   >
+  <xref href="../reference/client-ref-management.dita#topic50918/command-push" type="section"   >
 <i>push</i>
 </xref> command,
 the client looks for a HELION_DEBUG_COMMAND environment variable. If

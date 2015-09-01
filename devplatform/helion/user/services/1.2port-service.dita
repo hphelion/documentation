@@ -112,7 +112,7 @@ port.</li>
 <p>
         <note type="tip">To remotely check the settings and credentials of any Application Lifecycle Service
           service, use the <xref
-            href="../reference/1.2client-ref-services.dita">
+            href="../reference/client-ref-services.dita">
             <b>helion service</b>
           </xref> command.</note>
       </p>

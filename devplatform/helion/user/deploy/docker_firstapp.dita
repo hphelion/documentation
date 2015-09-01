@@ -94,7 +94,7 @@ WORKDIR /home/www</codeblock>This
       contacting the server" will appear. The conversion app does not function yet because it
       requires a Redis data service. <p>Push the new image to the Docker Hub:
       </p><codeblock>sudo docker push troytop/bottle-currency-suse</codeblock></section><section><title>Attaching Services</title><p> The bottle-currency app looks for a Redis data service exposed by a REDIS_URL environment
-        variable. <xref href="../reference/1.2environment.dita#topic7631">Environment
+        variable. <xref href="../reference/environment.dita#topic7631">Environment
           variables</xref> (VCAP_SERVICES) are injected into the Docker containers to provide
         connection information for any services that have been bound to the app. This is the <xref
           href="http://12factor.net/config" format="html" scope="external">12-Factor method</xref>,

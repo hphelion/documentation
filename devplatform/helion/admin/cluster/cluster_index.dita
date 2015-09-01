@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/cluster/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/cluster/--></p>
-  <p>This process begins with an installed <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" >micro cloud</xref>, which must then be cloned across several <xref href="../../user/reference/1.2glossary.dita#topic6187/term-node" >nodes</xref>. You connect to each node in turn and tell it which <xref href="../../user/reference/1.2glossary.dita#topic6187/term-role" type="section"   >role</xref>s it is to serve, thereby distributing the processing load for maximum performance.</p>
+  <p>This process begins with an installed <xref href="../../user/reference/glossary.dita#topic6187/term-micro-cloud" >micro cloud</xref>, which must then be cloned across several <xref href="../../user/reference/glossary.dita#topic6187/term-node" >nodes</xref>. You connect to each node in turn and tell it which <xref href="../../user/reference/glossary.dita#topic6187/term-role" type="section"   >role</xref>s it is to serve, thereby distributing the processing load for maximum performance.</p>
 <p>In HP Helion, the Clusters Panel in the <xref href="../../user/console/console_index.dita" >ALS management console</xref> makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the <xref href="../../CLI/ALS_Client_Reference.dita" >Cluster Configuration tool</xref> or <xref href="../reference/kato-ref.dita" >
 <i>kato</i>
 </xref> commands.</p>
@@ -127,7 +127,7 @@
         </ul></li>
 </ul>
 <section id="roles"> <title>Node Roles</title>
-  <p>An Application Lifecycle Service <xref href="../../user/reference/1.2glossary.dita#topic6187/term-node" type="section"   >node</xref> can
+  <p>An Application Lifecycle Service <xref href="../../user/reference/glossary.dita#topic6187/term-node" type="section"   >node</xref> can
 take on one or more of the following roles:</p>
 <ul>
 <li>
@@ -147,16 +147,16 @@ take on one or more of the following roles:</p>
   <xref href="../../user/services/1.2filesystem.dita#topic4410/creating-a-persistent-file-system" type="section"   >filesystem</xref>
 </li>
 <li>
-  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-mysql" type="section"   >mysql</xref>
+  <xref href="../../user/reference/glossary.dita#topic6187/term-mysql" type="section"   >mysql</xref>
 </li>
 <li>
-  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-postgresql" type="section"   >postgresql</xref>
+  <xref href="../../user/reference/glossary.dita#topic6187/term-postgresql" type="section"   >postgresql</xref>
 </li>
 <li>
-  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-RabbitMQ" type="section"   >rabbit</xref>
+  <xref href="../../user/reference/glossary.dita#topic6187/term-RabbitMQ" type="section"   >rabbit</xref>
 </li>
 <li>
-  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-Redis" type="section"   >redis</xref>
+  <xref href="../../user/reference/glossary.dita#topic6187/term-Redis" type="section"   >redis</xref>
 </li>
 <li>
 <xref href="../../user/services/1.2memcached.dita" >memcached</xref>
@@ -379,7 +379,7 @@ recommended.</p>
 droplets, and containers.</p>
 </section>
 <section id="port-configuration"> <title>Port Configuration</title>
-  <p>The Application Lifecycle Service <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" type="section"   >micro cloud</xref> runs with the following ports exposed:</p>
+  <p>The Application Lifecycle Service <xref href="../../user/reference/glossary.dita#topic6187/term-micro-cloud" type="section"   >micro cloud</xref> runs with the following ports exposed:</p>
 <table>
 <tgroup cols="3">
           <colspec colname="col1" colwidth="99.75pt"/>
@@ -474,7 +474,7 @@ port.</p>
           </tbody>
         </tgroup>
 </table>
-  <p>More information about <xref href="../../user/reference/1.2glossary.dita#topic6187/term-NATS" type="section"   >NATS</xref> is available in the Glossary.</p>
+  <p>More information about <xref href="../../user/reference/glossary.dita#topic6187/term-NATS" type="section"   >NATS</xref> is available in the Glossary.</p>
 <p>Each node can be internally firewalled using
   <xref href="http://manpages.ubuntu.com/manpages/utopic/en/man8/iptables.8.html" scope="external" format="html" >iptables</xref> to
 apply the above rules.</p>
@@ -483,7 +483,7 @@ apply the above rules.</p>
 <ul>
 <li>Ports 80 and 443 need only be open to the world on router nodes.</li>
 <li>Port 4222 should be open on all nodes for
-  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-NATS" type="section"   >NATS</xref> communication
+  <xref href="../../user/reference/glossary.dita#topic6187/term-NATS" type="section"   >NATS</xref> communication
 with the MBUS IP (core Cloud Controller)</li>
 <li>Port 9022 should be open to allow transfer of droplets to and from
 the DEAs, and Cloud Controllers.</li>

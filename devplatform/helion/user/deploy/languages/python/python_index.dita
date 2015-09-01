@@ -310,15 +310,15 @@ for an example.</p>
           environment variables
         .</p>
 <p>Application dependencies such as web frameworks or modules from PyPI can
-  be installed using <xref href="../../../reference/1.2glossary.dita#topic6187/term-pypm" type="section"   >
+  be installed using <xref href="../../../reference/glossary.dita#topic6187/term-pypm" type="section"   >
 <i>PyPM</i>
 </xref>
-  and/or <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" type="section"   >
+  and/or <xref href="../../../reference/glossary.dita#topic6187/term-pip" type="section"   >
 <i>pip</i>
 </xref>.</p>
 </section>
 <section id="pypm"> <title>PyPM</title>
-  <p>Definition <xref href="../../../reference/1.2glossary.dita#topic6187/term-pypm" type="section"   >
+  <p>Definition <xref href="../../../reference/glossary.dita#topic6187/term-pypm" type="section"   >
 <i>PyPM</i>
 </xref>
 </p>
@@ -340,17 +340,17 @@ setting the <codeph>PYPM_REQUIREMENTS_FILE</codeph> environment
 variable.</p>
 </section>
 <section id="pip"> <title>pip</title>
-  <p>Definition <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" type="section"   >
+  <p>Definition <xref href="../../../reference/glossary.dita#topic6187/term-pip" type="section"   >
 <i>pip</i>
 </xref>
 </p>
 <p>In addition - or as alternative - to
-  <xref href="../../../reference/1.2glossary.dita#topic6187/term-pypm" type="section"   >
+  <xref href="../../../reference/glossary.dita#topic6187/term-pypm" type="section"   >
 <i>PyPM</i>
 </xref>, your application
 can also make use of pip to install certain dependencies. The above
 tornado-chat-mongo sample installs "pycurl" using
-  <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" type="section"   >
+  <xref href="../../../reference/glossary.dita#topic6187/term-pip" type="section"   >
 <i>pip</i>
 </xref>:</p>
 <codeblock>requirements:

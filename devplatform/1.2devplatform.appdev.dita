@@ -110,7 +110,7 @@
 <xref href="installation/devplatform_install_marketplace.dita" >Installing the Marketplace</xref>
 </li>
 <li>
-  <xref href="helion/user/reference/1.2client-ref.dita" type="section" >ALS command-line interface (CLI) reference</xref>
+  <xref href="helion/user/reference/client-ref.dita" type="section" >ALS command-line interface (CLI) reference</xref>
 </li>
 <li>
 <xref href="helion/user/helion_user_index.dita" >Application Lifecycle Service (ALS) User's Guide</xref>

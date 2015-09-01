@@ -43,15 +43,15 @@
                             Sample Applications</xref></p></stentry>
                         <stentry>For convenience, copy the command sets and paste them into a text
                     editor. You can edit them there and then paste that information into the <xref
-                        href="helion/user/reference/1.2client-ref.dita">
+                        href="helion/user/reference/client-ref.dita">
                         <varname>cf-mgmt</varname>
                     </xref> tool as necessary. <ol>
                         <li>Open a terminal window and change directory to the location where you
-                            installed the <xref href="helion/user/reference/1.2client-ref.dita">
+                            installed the <xref href="helion/user/reference/client-ref.dita">
                                 <varname>cf-mgmt</varname>
                             </xref> command-line tool. </li>
                         <li>Run the following set of commands using the <xref
-                                href="helion/user/reference/1.2client-ref.dita">
+                                href="helion/user/reference/client-ref.dita">
                                 <varname>cf-mgmt</varname>
                             </xref> tool to create the cluster. In the unlikely event that the
                             cluster creation fails, refer to the <xref

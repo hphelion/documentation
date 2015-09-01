@@ -64,7 +64,7 @@
 <xref type="section" href="#topic4407/architecture-role-groups">Role Groups</xref>
 </li>
 </ul>
-  <p>The Application Lifecycle Service VM is a stand-alone <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" type="section"   >micro cloud</xref> virtual machine with all the components necessary for running a test environment in one instance. For use on a larger scale, the VM can be cloned and assigned specific roles: Router, Cloud Controller, Droplet Execution
+  <p>The Application Lifecycle Service VM is a stand-alone <xref href="../../user/reference/glossary.dita#topic6187/term-micro-cloud" type="section"   >micro cloud</xref> virtual machine with all the components necessary for running a test environment in one instance. For use on a larger scale, the VM can be cloned and assigned specific roles: Router, Cloud Controller, Droplet Execution
 Agents (DEAs, or worker nodes), or specific database services.</p>
 <p>
       <image href="../../../../media/helion-architecture-diagram.png"/>

@@ -71,7 +71,7 @@ kato node placementzones remove [zone]</codeblock></p>
    <p>Users can set the placement zone for an app using the <xref type="section"
           href="../../user/deploy/manifestyml.dita#topic20922/placement-zone"
           >manifest_yml-placement-zone</xref> key or using the <xref type="section"
-          href="../../user/reference/1.2client-ref-placement.dita#topic4565/command-set-placement-zone"
+          href="../../user/reference/client-ref-placement.dita#topic4565/command-set-placement-zone"
           >helion set-placement-zone </xref> command. </p>        
    <p>Zones are strictly enforced. If an application requests the <i>production</i> zone, and the
         DEA doesn't advertise it, then the app will never be deployed to that DEA. If an app

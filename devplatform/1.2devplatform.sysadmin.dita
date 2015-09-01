@@ -51,9 +51,9 @@
       <title>Administration</title>
       <p>Access control is role-based, with each role granting permissions in either an organization
         or an application space. To create users and manage user roles, use the ALS <xref
-          href="helion/user/reference/1.2client-ref.dita">Command Line
+          href="helion/user/reference/client-ref.dita">Command Line
           Interface (CLI)</xref>. For more information, see <xref
-          href="helion/user/reference/1.2client-ref-organizations.dita">Organizations</xref>.</p>
+          href="helion/user/reference/client-ref-organizations.dita">Organizations</xref>.</p>
       <ul>
         <li>
           <xref href="helion/admin/helion_admin_index.dita">Application Lifecycle
