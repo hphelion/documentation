@@ -154,27 +154,27 @@ web server, application dependencies, databases, and other services.</p>
 <section id="management-console"> <title>Management Console</title>
 <ul>
 <li>
-          <xref href="../../admin/console/1.2customize.dita#topic5029" type="section"  >Customize the Management
+          <xref href="../../admin/console/customize.dita#topic5029" type="section"  >Customize the Management
             Console</xref>
         </li>
 <li>
-          <xref href="../../admin/console/1.2customize.dita#topic5029/welcome-page" type="section"  >Welcome</xref>
+          <xref href="../../admin/console/customize.dita#topic5029/welcome-page" type="section"  >Welcome</xref>
         </li>
 <li>
-          <xref href="../console/1.2index.dita#topic8844/organization-view" type="section"  >Organization View</xref>
+          <xref href="../console/console_index.dita#topic8844/organization-view" type="section"  >Organization View</xref>
         </li>
 <li>
-          <xref href="../console/1.2index.dita#topic8844/space-view" type="section"  >Space View</xref>
+          <xref href="../console/console_index.dita#topic8844/space-view" type="section"  >Space View</xref>
         </li>
 <li>
-          <xref href="../console/1.2index.dita#topic8844/application-view" type="section"  >Application View</xref>
+          <xref href="../console/console_index.dita#topic8844/application-view" type="section"  >Application View</xref>
         </li>
 <li>
-          <xref href="../console/1.2index.dita#topic8844/service-instance-view" type="section"  >Service Instance
+          <xref href="../console/console_index.dita#topic8844/service-instance-view" type="section"  >Service Instance
             View</xref>
         </li>
 <li>
-          <xref href="../../admin/console/1.2app-store.dita#topic5271" type="section" scope="local"
+          <xref href="../../admin/console/app-store.dita#topic5271" type="section" scope="local"
             >Sample Applications</xref>
         </li>
         <li><xref href="../../admin/console/console_settings.dita"/></li>

@@ -71,7 +71,7 @@
           encountered. Use an address which is monitored by administrators.</li>
         <li>
           <b>Sample App URLs</b>: URIs for URIs for JSON files which populate the <xref
-            href="1.2app-store.dita">Sample Applications</xref> The URIs need not be public, but
+            href="app-store.dita">Sample Applications</xref> The URIs need not be public, but
           must be accessible from the controller node.</li>
         <li>
           <b>Allowed Repos</b>: Debian package repositories allowed in application containers. End
@@ -189,7 +189,7 @@
           Developer Tools to see the class names and IDs.</li>
       </ul>
       <p>Detailed instructions for customizing the Console can be found in the <xref
-          href="1.2customize.dita#topic5029">Customization</xref> documentation.</p>
+          href="customize.dita#topic5029">Customization</xref> documentation.</p>
     </section>
     <section id="dea">
       <title>DEA</title>

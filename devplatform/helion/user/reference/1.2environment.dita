@@ -28,7 +28,7 @@
 <li>in an <codeph>env</codeph> block in <xref href="../deploy/1.2manifestyml.dita">
           <i>manifest.yml</i>
         </xref>,</li>
-<li>via the application's Details page in the <xref href="../../admin/console/1.2customize.dita">Management
+<li>via the application's Details page in the <xref href="../../admin/console/customize.dita">Management
 Console</xref>, or</li>
   <li>using the <xref href="../reference/1.2client-ref-management.dita#topic50918/command-env-add" type="section"   >env-add</xref>
 command.</li>

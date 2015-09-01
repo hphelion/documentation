@@ -23,7 +23,7 @@
  <!--permalink: /helion/devplatform/als/user/deploy/app-logs/--></p>
 <p>Logs for applications running on Application Lifecycle Service are aggregated into streams so that data from multiple instances can be viewed together and filtered. Application log streams can be accessed via:</p>
 <ul>
-<li>the <xref href="../../admin/console/1.2customize.dita">
+<li>the <xref href="../../admin/console/customize.dita">
 <i>Management Console</i>
 </xref>
 using the <b>View Logs</b> button on the application Details page, or</li>
@@ -40,7 +40,7 @@ container, which are generally found in the <i>/home/helion/logs/</i> directory.
 <i>helion
 files</i>
 </xref> command or from the
-Application details page of the <xref href="../../admin/console/1.2customize.dita">
+Application details page of the <xref href="../../admin/console/customize.dita">
 <i>Management
 Console</i>
 </xref>.</p>

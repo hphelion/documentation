@@ -126,7 +126,7 @@ kato node setup micro</codeblock>
 <section id="monitoring-the-application-lifecycle-service-server"> <title>Monitoring The Application Lifecycle Service Server</title>
 </section>
 <section id="management-console"> <title>Management Console</title>
-<p>The <xref href="../../user/console/1.2index.dita#topic8844"><i>Management Console</i>
+<p>The <xref href="../../user/console/console_index.dita#topic8844"><i>Management Console</i>
         </xref>has a Settings page that allows an administrator to monitor the server component and
         services, and restart or stop services as necessary.</p>
 </section>
@@ -137,7 +137,7 @@ kato node setup micro</codeblock>
 </section>
 <section id="creating-an-admin-user"> <title>Creating an Admin User</title>
 <p>The easiest way to add admin users to Application Lifecycle Service is via the Management Console
-        under <xref href="../console/1.2index.dita#topic13823/users">Users</xref>. The Management
+        under <xref href="../console/console_index.dita#topic13823/users">Users</xref>. The Management
         Console will prompt to create the initial admin user the first time you use it.</p>
   <p>If you do not have access to the Management Console, create a user by logging in to the micro cloud or Core node controller via SSH or through the VM <xref href="../../user/reference/1.2glossary.dita#topic6187/term-tty-console" type="section"   >tty console</xref> as the <i>helion</i> user and run <i>helion register</i>:</p>
 <codeblock>helion target api.helion-xxxx.local

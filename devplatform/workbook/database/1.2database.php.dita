@@ -28,7 +28,7 @@
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita" >Cluster</xref>
 </li>
 <li>Access to the <xref href="../../helion/user/client/1.2index.dita" >Helion command-line client (CLI)</xref>.</li>
-<li>Access to the web-based <xref href="../../helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
+<li>Access to the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
 <li>The MySQL service is not enabled by default. Check and <xref type="section" href="#topic6918/enablemysql">make sure it is enabled</xref>.</li>
 <li>Register for access to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" type="section" scope="external" format="html" >HP Helion Development Platform</xref> (HDN).</li>
 </ul>
@@ -157,7 +157,7 @@ applications:
 <li>ALS requires configuration information so that it can bind to a MySQL service. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You will need to provide information about which build pack to use for PHP so that ALS can create an environment for your app. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You will need to retrieve connection information for MySQL from the application's environment variables and then parse that information into a connection string that can be used by PHP.</li>
-<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
+<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
 </ul>
 <p>
 <xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/1.2helloworld.php.dita" >Previous Sample</xref> | <xref href="../messaging/1.2messaging.php.dita" >Next Sample</xref>

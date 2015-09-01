@@ -172,14 +172,14 @@ https://helion-xxxx.local</codeblock>
         pingbacks (Application Lifecycle Service version number and UUID) to HP servers to help
         improve the web console experience. You can disable this option by setting</p>
       <codeblock>theme_settings['pingback_allowed'] = false;</codeblock>
-      <p>in the <i>settings.js</i> file as described in the <xref href="1.2customize.dita#topic5029"
+      <p>in the <i>settings.js</i> file as described in the <xref href="customize.dita#topic5029"
           >Customization</xref> documentation.</p>
     </section>
     <section id="welcome">
       <title>Welcome Page</title>
       <p>The top-level page of the Management Console displays quick links to the most used
         resources and views. The blue buttons are for features also available to regular end users.
-        See <xref href="../../user/console/1.2index.dita#topic8844/welcome">Management
+        See <xref href="../../user/console/console_index.dita#topic8844/welcome">Management
           Console</xref> (User View).</p>
       <p>Available patches for the system, new releases, and the latest news are also displayed on
         this page.</p>
@@ -212,7 +212,7 @@ https://helion-xxxx.local</codeblock>
       <p>The top level Organizations page allows Admins to add and delete <xref
           href="#topic13823/organizations" format="dita">Organizations</xref>. Clicking on an
         organization name opens its details. This view is the same as a regular user's <xref
-          href="../../user/console/1.2index.dita#topic8844/organization-view">Organizations</xref>
+          href="../../user/console/console_index.dita#topic8844/organization-view">Organizations</xref>
         view, but admin users can also edit quotas and add/remove domains, spaces, and users.</p>
     </section>
     <section id="support">
@@ -264,7 +264,7 @@ https://helion-xxxx.local</codeblock>
     </section>
     <section id="app-org">
       <title>Applications &amp; Organizations</title>
-      <p>Links to the <xref href="../../user/console/1.2index.dita#topic8844/application-view"
+      <p>Links to the <xref href="../../user/console/console_index.dita#topic8844/application-view"
           >Applications</xref> and <xref href="../../user/deploy/1.2orgs-spaces.dita" type="section"
           >Organizations</xref> lists.</p>
     </section>

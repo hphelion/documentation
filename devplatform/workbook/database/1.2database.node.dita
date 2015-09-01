@@ -28,7 +28,7 @@
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita" >Cluster</xref>
 </li>
 <li>The  <xref href="../../helion/user/client/1.2index.dita" >Helion command-line interface (CLI)</xref> must be installed.</li>
-<li>Access to the web-based <xref href="../../helion/user/console/1.2index.dita" >Helion Management Console</xref>.</li>
+<li>Access to the web-based <xref href="../../helion/user/console/console_index.dita" >Helion Management Console</xref>.</li>
 </ul>
 </section>
 <section id="mysql"> <title>MySQL</title>
@@ -151,7 +151,7 @@ applications:
 <ul>
 <li>You need to provide configuration information so that ALS can bind to a MySQL service. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You need to retrieve connection information for MySQL from the application's environment variables, and parse the information into a JDBC compliant connection string.</li>
-<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
+<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
 </ul>
 <p>
 <xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/1.2helloworld.node.dita" >Previous Sample</xref> | <xref href="../messaging/1.2messaging.node.dita" >Next Sample</xref>

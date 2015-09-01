@@ -68,7 +68,7 @@ view the current port range on the Harbor node by entering:</p>
 <codeblock>kato config get harbor_node port_range</codeblock>
 <p>For each new service provisioned, Harbor will chose a random unassigned
 port from this range. This range can be set in the Management Console's
-  <xref href="../console/1.2customize.dita#topic5029/console-settings" type="section"  >Settings</xref> section, or by
+  <xref href="../console/customize.dita#topic5029/console-settings" type="section"  >Settings</xref> section, or by
 using the <codeph>kato config set ...</codeph> command.</p>
 <p>A Harbor node can run standalone, or on the same node as your router. This may be the preferred option if you wish to use the same DNS name for Harbor and Router services. Otherwise, create a new DNS entry for the Harbor node so that consumers of the port do not have to address it by its external IP.</p>
 <p>If you are setting a different IP / DNS name for this port you should

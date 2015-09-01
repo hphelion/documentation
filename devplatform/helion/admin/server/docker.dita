@@ -66,7 +66,7 @@
         <li>a trusted list of Docker images, namespaces, or registry servers</li>
         <li>a trusted group deploying from a trusted list</li>
       </ul>
-      <p>The <xref href="../console/1.2index.dita">Settings</xref> view in the web management console exposes
+      <p>The <xref href="../console/console_index.dita">Settings</xref> view in the web management console exposes
         these settings, but you can also set them using the <xref
           href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config">kato config</xref>
         command. The following settings are available in the <codeph>cloud_controller_ng</codeph>

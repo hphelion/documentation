@@ -116,7 +116,7 @@ manually with the <i>passwd</i> command.</p>
 <section id="server-config-hostname"> <title>Changing the Hostname</title>
   <p>You may want or need to change the hostname of the Application Lifecycle Service system, either to match a DNS record you've created or just to make the system URLs more convenient. This can be done using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-rename" type="section" >kato node rename</xref> command:</p>
 <codeblock>kato node rename mynewname.example.com</codeblock>
-  <p>This command will change the system hostname in <i>/etc/hostname</i> and <i>/etc/hosts,</i> as well as performing some internal configuration for Application Lifecycle Service such as generating a new server certificate for the <xref href="../../user/console/1.2index.dita#topic8844" >Management Console</xref>.</p>
+  <p>This command will change the system hostname in <i>/etc/hostname</i> and <i>/etc/hosts,</i> as well as performing some internal configuration for Application Lifecycle Service such as generating a new server certificate for the <xref href="../../user/console/console_index.dita#topic8844" >Management Console</xref>.</p>
 <p>mDNS is only supported with ".local" hostnames. If you want to give the
 VM a canonical hostname on an existing network, <xref type="section" href="#topic31232/server-config-dns">configure DNS</xref> and disable the <b>mdns</b> role:</p>
 <codeblock>kato role remove mdns</codeblock>
@@ -151,7 +151,7 @@ such services are not available, the Application Lifecycle Service can be config
 <p>Before we examine these scenarios in detail, let's review the separation
   of roles in a <xref href="../cluster/cluster_index.dita#topic18326" type="section" >cluster</xref>:</p>
 <ul>
-<li>The <b>core</b> node which we conventionally call <codeph>api.helion-xxxx.local</codeph> in a micro cloud will be given its own hostname and IP address in a cluster so that you can reach it from both the <xref href="../../user/console/1.2index.dita#topic8844" >Management Console</xref> and the command line.</li>
+<li>The <b>core</b> node which we conventionally call <codeph>api.helion-xxxx.local</codeph> in a micro cloud will be given its own hostname and IP address in a cluster so that you can reach it from both the <xref href="../../user/console/console_index.dita#topic8844" >Management Console</xref> and the command line.</li>
 <li>At the same time, the other nodes in the cluster will also need to reach the core node, so whatever address is configured on its network interface will have to be known to the network, the primary node, and all the other nodes. This can be the same as the primary address assigned to the core, or a secondary address used purely within the cluster.</li>
 <li>The <b>router</b> nodes, if separate from the primary, will each require IP addresses of their own, reachable from any load balancer and through any firewall that you put in front of them.</li>
 </ul>

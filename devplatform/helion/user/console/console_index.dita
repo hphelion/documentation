@@ -22,7 +22,7 @@
  <!--./devplatform/helion/user/console/1.2index.md-->
  <!--permalink: /helion/devplatform/als/user/console/--></p>
 <p>The Management Console is a web interface for Application Lifecycle Service (ALS). Using the same API as the Helion CLI client, it provides access to a subset of features for deploying, scaling, and configuring applications as well as monitoring quota usage, and viewing logs.</p>
-<p>The interface differs for Admin and non-Admin users. The features described below are available and visible to end users. For information on the Management Console view for Admins, see the <xref href="../../admin/console/1.2index.dita" >Console Admin Guide</xref>.</p>
+<p>The interface differs for Admin and non-Admin users. The features described below are available and visible to end users. For information on the Management Console view for Admins, see the <xref href="../../admin/console/console_index.dita" >Console Admin Guide</xref>.</p>
 <ul>
 <li>
 <xref type="section" href="#topic8844/welcome">Welcome Page</xref>
@@ -224,7 +224,7 @@
 <p>
   <b>App Bindings</b>
 </p>
-  <p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../admin/console/1.2index.dita#topic13823/applications" type="section"   >administrative view of that application</xref>.</p>
+  <p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../admin/console/console_index.dita#topic13823/applications" type="section"   >administrative view of that application</xref>.</p>
 </section>
 <section id="sample-apps"> <title>Sample Applications</title>
 <p>The Sample Apps are collection of ready-to-run applications which can be deployed to Application Lifecycle Service by fetching the source code from the repository.</p>

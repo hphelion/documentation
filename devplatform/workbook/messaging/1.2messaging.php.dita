@@ -28,7 +28,7 @@
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita" >Cluster</xref>
 </li>
 <li>Access to the <xref href="../../helion/CLI/1.2ALS_Client_Downloads.dita" >Helion command-line client (CLI)</xref>.</li>
-<li>Access to the web-based <xref href="../../helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
+<li>Access to the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
 <li>The Messaging service is not enabled by default. Check and <xref href="../../installation/devplatform_install_messaging.dita">make sure it is enabled</xref>.</li>
 <li>Register for access to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" type="section" scope="external" format="html" >HP Helion Development Platform</xref> (HDN).</li>
 </ul>
@@ -167,7 +167,7 @@ type: rabbitmq3
 <li>You need to provide configuration information so that ALS can bind to the RabbitMQ service. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You will need to retrieve connection information for RabbitMQ from the application's environment variables.</li>
-<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
+<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>
 </ul>
 <p>
 <xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../database/1.2database.php.dita" >Previous Sample</xref> | <xref href="../helloworld/1.2helloworld.php.dita" >Next Sample</xref>

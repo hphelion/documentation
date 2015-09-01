@@ -267,15 +267,15 @@
         <topichead navtitle="ALS Management Console">
           <topicref href="devplatform/helion/admin/console/console_intro.dita"
             navtitle="Introduction and First Use" locktitle="yes"/>
-          <topicref href="devplatform/helion/admin/console/1.2index.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/console/console_index.dita" locktitle="yes"
             navtitle="Management Console (Admin View)"/>
-          <topicref href="devplatform/helion/user/console/1.2index.dita"
+          <topicref href="devplatform/helion/user/console/console_index.dita"
             navtitle="Management Console (User View)" locktitle="yes"/>
           <topicref href="devplatform/helion/admin/console/console_settings.dita"
             navtitle="Management Console Settings" locktitle="yes"/>
-          <topicref href="devplatform/helion/admin/console/1.2customize.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/console/customize.dita" locktitle="yes"
             navtitle="Management Console Customization"/>
-          <topicref href="devplatform/helion/admin/console/1.2app-store.dita" locktitle="yes"
+          <topicref href="devplatform/helion/admin/console/app-store.dita" locktitle="yes"
             navtitle="Sample Applications"/>
         </topichead>
       </topichead>

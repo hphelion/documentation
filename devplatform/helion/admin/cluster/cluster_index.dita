@@ -26,7 +26,7 @@
  <!--./devplatform/1.2/helion/admin/cluster/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/cluster/--></p>
   <p>This process begins with an installed <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" >micro cloud</xref>, which must then be cloned across several <xref href="../../user/reference/1.2glossary.dita#topic6187/term-node" >nodes</xref>. You connect to each node in turn and tell it which <xref href="../../user/reference/1.2glossary.dita#topic6187/term-role" type="section"   >role</xref>s it is to serve, thereby distributing the processing load for maximum performance.</p>
-<p>In HP Helion, the Clusters Panel in the <xref href="../../user/console/1.2index.dita" >ALS management console</xref> makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the <xref href="../../CLI/1.2ALS_Client_Reference.dita" >Cluster Configuration tool</xref> or <xref href="../reference/1.2kato-ref.dita" >
+<p>In HP Helion, the Clusters Panel in the <xref href="../../user/console/console_index.dita" >ALS management console</xref> makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the <xref href="../../CLI/1.2ALS_Client_Reference.dita" >Cluster Configuration tool</xref> or <xref href="../reference/1.2kato-ref.dita" >
 <i>kato</i>
 </xref> commands.</p>
 <ul>

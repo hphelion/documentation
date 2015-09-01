@@ -28,7 +28,7 @@
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita" >Cluster</xref>
 </li>
 <li>The  <xref href="../../helion/CLI/1.2ALS_Client_Downloads.dita" >Helion command-line interface (CLI)</xref> must be installed.</li>
-<li>Access to the web-based <xref href="../../helion/user/console/1.2index.dita" >Helion Management Console</xref>.</li>
+<li>Access to the web-based <xref href="../../helion/user/console/console_index.dita" >Helion Management Console</xref>.</li>
 </ul>
 </section>
 <section id="jdk"> <title>JDK</title>

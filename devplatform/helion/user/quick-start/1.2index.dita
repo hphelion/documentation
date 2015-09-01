@@ -30,7 +30,7 @@ you will need:</p>
 <li>a web browser</li>
 </ul>
 <section id="management-console"> <title>Management Console</title>
-<p>The web interface for Application Lifecycle Service is called the <xref href="../../admin/console/1.2customize.dita" >Management Console</xref>. You can use it to:</p>
+<p>The web interface for Application Lifecycle Service is called the <xref href="../../admin/console/customize.dita" >Management Console</xref>. You can use it to:</p>
 <ul>
 <li>see your current usage and quota</li>
 <li>monitor and manage applications you have deployed</li>
@@ -96,7 +96,7 @@ Organization: test-org
 Space:        dev</codeblock>
       <note> If your account is not a member of a Space, you will need an Organization Manager to
         add you as a Developer. If you are an Organization Manager or Admin, you can create new
-        Spaces in the <xref href="../../admin/console/1.2customize.dita">
+        Spaces in the <xref href="../../admin/console/customize.dita">
           <i>Management Console</i>
         </xref> or with the <xref href="../reference/1.2client-ref-spaces.dita">
           <i>helion create-space</i>

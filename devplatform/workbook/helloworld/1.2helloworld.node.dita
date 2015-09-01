@@ -28,7 +28,7 @@
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita">Cluster</xref>
 </li>
 <li>The  <xref href="../../helion/CLI/1.2ALS_Client_Downloads.dita" >Helion command-line interface (CLI)</xref> must be installed.</li>
-<li>Access to the web-based <xref href="../../helion/user/console/1.2index.dita" >Helion Management Console</xref>.</li>
+<li>Access to the web-based <xref href="../../helion/user/console/console_index.dita" >Helion Management Console</xref>.</li>
 </ul>
 </section>
 <section id="download-the-application-files"> <title>Download the Application Files</title>
@@ -116,7 +116,7 @@ Note that <b>name</b> is always required while other fields are optional.</p>
 <section id="key-learnings"> <title>Key Learnings</title>
 <ul>
 <li>
-<p>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >Helion command line client</xref> or the web-based <xref href="../../helion/admin/console/1.2index.dita" >ALS Management Console</xref>.</p>
+<p>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >Helion command line client</xref> or the web-based <xref href="../../helion/admin/console/console_index.dita" >ALS Management Console</xref>.</p>
 </li>
 <li>
 <p>ALS requires configuration information to create an environment for your app. Configuration information is contained in the <i>manifest.yml</i> file.</p>

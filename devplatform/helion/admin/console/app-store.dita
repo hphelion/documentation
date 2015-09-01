@@ -198,7 +198,7 @@ any web server at a URL accessible from the Cloud Controller.</p>
 </section>
 <section id="adding-the-app-store-to-helion"> <title>Adding the Sample Applications to Application Lifecycle Service</title>
 <ol>
-<li>Log into the <xref href="1.2index.dita">Management
+<li>Log into the <xref href="console_index.dita">Management
 Console</xref>,</li>
 <li>Select <b>Settings &gt; Cloud Controller</b> from the menu.</li>
 <li>In the <b>Sample Applications URLs</b> section, enter a name and content URL for

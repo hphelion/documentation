@@ -119,7 +119,7 @@
 <xref href="helion/user/deploy/1.2app-debug.dita" >Remote Debugging</xref>
 </li>
 <li>
-<xref href="helion/user/console/1.2index.dita" >The Management Console</xref>
+<xref href="helion/user/console/console_index.dita" >The Management Console</xref>
 </li>
 <li>
 <xref href="helion/user/deploy/1.2app-logs.dita" >Logs, Streams, and Drains</xref>

@@ -101,7 +101,7 @@
 <p>Use the <b>free</b> or <b>vmstat</b> commands to determine how much memory is available on each VM and use <b>kato stop</b> to temporarily stop roles if more memory is required.</p>
 </section>
 <section id="maintenance-mode"> <title>Maintenance Mode</title>
-  <p>Before beginning an upgrade, put Application Lifecycle Service in maintenance mode using the <xref href="../console/1.2customize.dita#topic5029/console-settings" >Cloud Controller Settings</xref> or the following <i>kato</i> command:</p>
+  <p>Before beginning an upgrade, put Application Lifecycle Service in maintenance mode using the <xref href="../console/customize.dita#topic5029/console-settings" >Cloud Controller Settings</xref> or the following <i>kato</i> command:</p>
 <codeblock>kato config set cloud_controller_ng maintenance_mode true</codeblock>
 <p>This shuts down API requests but continues to serve web requests. The Management Console becomes "read only" with the exception of this toggle so that it can be brought back online. Remember to disable maintenance mode once the upgrade has been completed.</p>
 </section>
@@ -244,7 +244,7 @@ stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ </codeblock></li>
   <p>Proxy settings for the App Store may be lost during an upgrade. If the App Store cannot fetch data after an upgrade, and your system is behind an HTTP(S) proxy, <xref href="https_and_ssl.dita#topic_gwr_qgd_ws/http-proxy" type="section"   >reset the proxy information</xref> for your network.</p>
 </section>
 <section id="upgrading-with-customizations"> <title>Upgrading with Customizations</title>
-<p>Many files and directories in the ALS VM are overwritten during an upgrade. The <xref href="../console/1.2customize.dita" >Customization instructions</xref> document best practices which are safe for upgrades, but some customers may have modified the system further.</p>
+<p>Many files and directories in the ALS VM are overwritten during an upgrade. The <xref href="../console/customize.dita" >Customization instructions</xref> document best practices which are safe for upgrades, but some customers may have modified the system further.</p>
 <p>Customizations made within the following directories <b>will</b> be deleted or undone during an upgrade:</p>
 <ul>
 <li>
