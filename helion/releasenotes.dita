@@ -224,13 +224,6 @@
             steps to be defined later may be required to complete installation.</p>
         </li>
       </ul>-->
-     
-      <p><b>Network Interface Bonding changes needed during installation</b></p>
-      <ul>
-        <li>The bond mode in the network interface definition needs to be specified by name
-          (active-backup) rather than by number (1).</li>
-        <li>This workaround is included in the installation instructions.</li>
-      </ul>
       <p><b>Cinder Limitations</b></p>
       <ul>
         <li>3Par storage is not supported in Beta 1</li>
