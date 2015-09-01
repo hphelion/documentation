@@ -18,10 +18,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2devplatform.ALS-developer-trial-quick-start2.md-->
- <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/2/--></p>
 <p>During this step, you will download and install the configuration tool, named <varname>cf-mgmt</varname>. This tool provides a quick way to pass configuration parameters to the Helion Development Platform. <!--A BR tag was used here in the original source.-->The download links and instructions will open in a separate page so you don't lose your place.
 </p>
 <simpletable>

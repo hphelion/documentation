@@ -17,16 +17,12 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2devplatform.appdev.md-->
- <!--permalink: /helion/devplatform/appdev/--></p>
 <p>HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.</p>
 <p>Each sample builds on the previous one and all source code is provided for you to build, deploy, and take apart. Each sample is provided in multiple languages.</p>
 <section id="prerequisites-before-you-begin"> <title>Prerequisites - Before you begin</title>
 <p>In order to download and deploy these sample applications, you must have the necessary framework installed and configured.</p>
 <ul>
-<li>HP Helion <tm tmtype="reg">OpenStack</tm> <xref href="../../commercial/GA1/1.1.1commercial.helion_update.dita" >cloud deployed</xref>. Note that the Helion Development Platform version 1.2 will only run on Helion OpenStack version 1.1.1.</li>
+<li>HP Helion <tm tmtype="reg">OpenStack</tm> <xref href="../../commercial/GA1/1.1.1commercial.helion_update.dita" >cloud [version 1.1.1]deployed</xref>.</li>
 <li>Application Lifecycle Service <xref href="devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
 
 <ul>

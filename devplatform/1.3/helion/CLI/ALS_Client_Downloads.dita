@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic843">
-<title>HP Helion Developer Platform 1.2: Client Downloads</title>
+<title>HP Helion Developer Platform 1.3: Client Downloads</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/CLI/1.2ALS_Client_Downloads.md-->
- <!--permalink: /helion/devplatform/als/client/download/--></p>
 <section id="hp-helion-application-lifecycle-service-als-client"> <title>HP Helion Application Lifecycle Service (ALS) Client</title>
 <p>Click the download link that is appropriate for your operating system.</p>
   <ul> 

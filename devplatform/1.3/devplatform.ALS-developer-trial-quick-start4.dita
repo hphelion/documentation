@@ -18,10 +18,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2devplatform.ALS-developer-trial-quick-start4.md-->
- <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/4/--></p>
 <p>An ALS cluster provides the support infrastructure necessary to deploy and manage applications. </p>
         <p>During this step, you will send a set of commands and variables to the
                 <varname>cf-mgmt</varname> tool. The tool will use those parameters to create the

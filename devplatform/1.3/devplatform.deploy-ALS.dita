@@ -20,10 +20,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2devplatform.deploy-ALS.md-->
- <!--permalink: /helion/devplatform/deploy/--></p>
 <p>This document explains the process to configure and deploy an Application Lifecycle Service (ALS) cluster from the Horizon user interface.</p>
 <p>The document covers the following sections:</p>
 <ul>

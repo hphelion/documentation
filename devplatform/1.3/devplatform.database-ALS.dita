@@ -20,7 +20,6 @@
 </metadata>
 </prolog>
 <body>
-    <p><!--PUBLISHED--><!--./devplatform/1.2devplatform.database-ALS.md--><!--permalink: /helion/devplatform/connectdatabase/--></p>
     <p>If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is
       configured to use a database instance or master/slave pair provided by the Database Service.
       This is an option at cluster create time.</p>

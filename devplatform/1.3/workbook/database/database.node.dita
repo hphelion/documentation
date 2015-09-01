@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/workbook/database/1.2database.node.md-->
- <!--permalink: /helion/devplatform/workbook/database/node/--></p>
 <p>This very simple Node.js app displays the text "Executed query "SELECT "Hello World!"".", and then the result of that query: "Hello World". This is a demonstration of the minimum requirements to build an application that can connect to a MySQL database provided by ALS and run queries against it. Use this sample to ensure that you have set up your environment for connecting to and working with MySQL on the Helion Development Platform.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <p>If you are missing any of these items, you will need to <xref href="../../devplatform.appdev.dita" >install them</xref>.</p>

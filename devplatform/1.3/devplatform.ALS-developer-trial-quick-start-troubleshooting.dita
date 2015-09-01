@@ -20,10 +20,6 @@
     </metadata>
   </prolog>
   <body>
-    <p>
-      <!--PUBLISHED-->
-      <!--./devplatform/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.md-->
-      <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/troubleshooting/--></p>
     <p>Here are some tips for troubleshooting issues with the Quick Start Trial. If problems
       persist, the quickest solution is to just <xref
         href="devplatform.ALS-developer-trial-quick-start-termination.dita">terminate the

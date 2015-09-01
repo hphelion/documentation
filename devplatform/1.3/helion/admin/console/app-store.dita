@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/admin/console/1.2app-store.md-->
- <!--permalink: /helion/devplatform/als/admin/console/app-store/--></p>
 <p>The Sample Applications are a collection of ready-to-run applications which can be
 deployed with a couple of clicks. This interface uses the same API as the CLI client to pull the source code from a Git repository rather than push an archive from the user's local
 filesystem.</p>

@@ -21,7 +21,6 @@
 </metadata>
 </prolog>
 <body>
-    <p><!--PUBLISHED--><!--./devplatform/helion/admin/console/1.2index.md--><!--permalink: /helion/devplatform/als/admin/console/--></p>
     <p>The Application Lifecycle Service Management Console is a web interface that allows the
       administration and management of the Application Lifecycle Service Server. Many of the
       features described below are only available to Administrator users from the Admin view.</p>

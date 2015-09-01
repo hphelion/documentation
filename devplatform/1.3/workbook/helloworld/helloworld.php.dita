@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/workbook/helloworld/1.2helloworld.php.md-->
- <!--permalink: /helion/devplatform/workbook/helloworld/php/--></p>
 <p>This very simple PHP web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>

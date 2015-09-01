@@ -21,10 +21,7 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2devplatform.using-the-messaging-service.md-->
- <!--permalink: /helion/devplatform/messageservice/--></p>
+
 <p>The Messaging service is a key aspect of applications architected for the cloud as it helps to create scalable and distributed applications. This is achieved by enabling your software applications and services to communicate with each other as sub-components of a larger-scale application while allowing you to incorporate data from users, devices, and data streams.</p>
 <p>The Messaging service (beta) provisions RabbitMQ clusters that can be used for robust messaging in applications.</p>
 <p>The following topics explain how to create and manage a RabbitMQ instance:</p>

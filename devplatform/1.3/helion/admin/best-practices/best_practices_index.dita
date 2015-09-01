@@ -21,10 +21,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/best-practices/1.2index.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/best-practices/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic16169/passwordless">Passwordless SSH Authentication</xref>

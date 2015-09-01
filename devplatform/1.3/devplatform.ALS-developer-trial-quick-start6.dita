@@ -18,10 +18,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2devplatform.ALS-developer-trial-quick-start6.md-->
- <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/6/--></p>
 <p>We have provided several sample applications in multiple programming languages. Exploring and deploying these simple apps will help you understand how the push process works and how applications can be connected to the other HP Helion <tm tmtype="reg">OpenStack</tm> services.</p>
 <simpletable>
 <strow>

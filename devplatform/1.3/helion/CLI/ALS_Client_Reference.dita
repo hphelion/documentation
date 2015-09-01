@@ -17,7 +17,6 @@
 </metadata>
 </prolog>
 <body>
-    <p><!--PUBLISHED--><!--./devplatform/helion/CLI/1.2ALS_Client_Reference.md--><!--permalink: /helion/devplatform/als/client/reference/--></p>
     <p>The ALS command-line interface client (<codeph>cf-mgmt.exe</codeph>) provides an option for
       executing commands that construct, manage, update, or delete ALS clusters. Use the command
       line when the Horizon management console is unavailable or when direct access is

@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2devplatform.eclipse.md-->
- <!--permalink: /helion/devplatform/eclipse/--></p>
 <p>If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to HP Helion Development Platform.</p>
 <p>Follow the steps outlined in this document to get the plugin up and running and to deploy one of the sample apps.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
