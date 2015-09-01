@@ -165,7 +165,7 @@ exampleco/newimg</codeblock></li>
     <section id="admin-hooks"><title>Admin Hooks</title><p>If an administrator wants to run
         arbitrary commands in all application containers, global admin hooks can be set to run
         immediately after corresponding user-specified deployment hooks (pre-staging, post-staging,
-        pre-running) set in application <xref href="../../user/deploy/1.2manifestyml.dita"
+        pre-running) set in application <xref href="../../user/deploy/manifestyml.dita"
           >manifest.yml</xref> files.</p><p>These hooks must be:</p><ul>
         <li>plain bash scripts with the executable bit set (<codeph>chmod +x</codeph>)</li>
         <li>named <i>pre-staging</i>, <i>post-staging</i>, or <i>pre-running</i>

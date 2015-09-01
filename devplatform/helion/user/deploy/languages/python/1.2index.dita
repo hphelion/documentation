@@ -99,7 +99,7 @@ def posted(self, username, password, project, url, region, name):
 <p>That example used the unified OpenStack CLI.  A similar thing would work for
 the network or object store clients.</p>
 <p>By default, Application Lifecycle Service uses the built-in Python
-<xref href="../../1.2buildpack.dita" >
+<xref href="../../buildpack.dita" >
 <i>Buildpack</i>
 </xref> to deploy Python
 applications. To deploy applications using this buildpack, your
@@ -108,7 +108,7 @@ application:</p>
 <ul>
 <li>
 <p>a list of module requirements in a
-<xref href="../../1.2manifestyml.dita" >
+<xref href="../../manifestyml.dita" >
 <i>manifest.yml</i>
 </xref>,
 <xref href="http://www.pip-installer.org/en/latest/cookbook.html#requirements-files" type="section" scope="external" format="html" >requirements.txt
@@ -134,7 +134,7 @@ Procfile <codeph>web:</codeph> command. For example:</p>
 </section>
 <section id="python-with-the-legacy-buildpack"> <title>Python with the Legacy Buildpack</title>
 <p>If your Python application has configuration for running on Application Lifecycle Service
-  2.10 or earlier, you can deploy it using the <xref href="../../1.2buildpack.dita#topic3370/legacy-buildpack" type="section"  >
+  2.10 or earlier, you can deploy it using the <xref href="../../buildpack.dita#topic3370/legacy-buildpack" type="section"  >
 <i>Legacy
 Buildpack</i>
 </xref>, which provides an
@@ -241,10 +241,10 @@ DATABASES = {
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-  <xref href="../../1.2manifestyml.dita#topic20922/command" type="section"   >
+  <xref href="../../manifestyml.dita#topic20922/command" type="section"   >
 <i>command</i>
 </xref> key and set the
-  <xref href="../../1.2manifestyml.dita#topic20922/web" type="section"   >
+  <xref href="../../manifestyml.dita#topic20922/web" type="section"   >
 <i>processes:
 web</i>
 </xref> key to
@@ -262,7 +262,7 @@ processes:
 <section id="serving-static-files-with-uwsgi"> <title>Serving Static Files with uWSGI</title>
 <p>It is possible to serve static files with uWSGI using
 <codeph>processes: web:</codeph> in the
-<xref href="../../1.2manifestyml.dita" >
+<xref href="../../manifestyml.dita" >
 <i>manifest.yml</i>
 </xref> file to specify
 folders that will be served statically and not by the app.</p>

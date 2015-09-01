@@ -250,7 +250,7 @@
           <xref href="../user/reference/1.2client-ref.dita">ALS Client Command Reference</xref>
         </li>
 <li>
-<xref href="../user/deploy/1.2orgs-spaces.dita" >Managing Groups, Users &amp; Limits</xref>
+<xref href="../user/deploy/orgs-spaces.dita" >Managing Groups, Users &amp; Limits</xref>
 </li>
 <li>
 <xref href="reference/architecture.dita" >Architectural Design</xref>

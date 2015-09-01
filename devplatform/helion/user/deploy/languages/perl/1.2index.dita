@@ -108,10 +108,10 @@ else {
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-  <xref href="../../1.2manifestyml.dita#topic20922/command" type="section"   >
+  <xref href="../../manifestyml.dita#topic20922/command" type="section"   >
 <i>command</i>
 </xref> key and set the
-  <xref href="../../1.2manifestyml.dita#topic20922/web" type="section"   >
+  <xref href="../../manifestyml.dita#topic20922/web" type="section"   >
 <i>processes:
 web</i>
 </xref> key to
@@ -138,7 +138,7 @@ installing CPAN modules in the Application Lifecycle Service application droplet
 versions of most CPAN modules and frameworks are available.</p>
 <p>Modules required by your app can be specified by adding a
 <codeph>requirements:</codeph> section to the
-<xref href="../../1.2manifestyml.dita" >
+<xref href="../../manifestyml.dita" >
 <i>manifest.yml</i>
 </xref> file. For example:</p>
 <codeblock>requirements:
@@ -227,7 +227,7 @@ with numerous module dependencies, especially if those dependencies have
 large test suites.</p>
 <p>To disable testing for cpanm in staging, set
 <xref href="http://search.cpan.org/dist/App-cpanminus/bin/cpanm#OPTIONS" type="section" scope="external" format="html" >PERL_CPANM_OPT</xref>
-to '--notest' in <xref href="../../1.2manifestyml.dita" >
+to '--notest' in <xref href="../../manifestyml.dita" >
 <i>manifest.yml</i>
 </xref>:</p>
 <codeblock>name: myapp
@@ -245,7 +245,7 @@ options in PERL_CPANM_OPT:</p>
 <section id="serving-static-files-with-uwsgi"> <title>Serving Static Files with uWSGI</title>
 <p><note type="restriction">Serving static files via uWSGI is only available for Perl and Python frameworks.</note>It
         is possible to serve static files with uWSGI using <codeph>processes: web:</codeph> in the
-          <xref href="../../1.2manifestyml.dita">
+          <xref href="../../manifestyml.dita">
           <i>manifest.yml</i>
         </xref> file to specify folders that will be served statically and not by the app.</p>
 <p>To make a single folder serve statically, use <codeph>--check-static</codeph>:</p>

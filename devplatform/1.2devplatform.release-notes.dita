@@ -37,7 +37,7 @@
         </dlentry><dlentry><dt>In-Place Node Upgrades</dt><dd>After installing Helion Development Platform 1.3, you may upgrade existing ALS clusters to use the new images. You do not have to re-create them. Images created in version 1.2 will continue to function, but will not support new features available in version 1.3</dd></dlentry>
         <dlentry>
           <dt>Updated Buildpacks</dt>
-          <dd> The <xref href="helion/user/deploy/1.2index.dita#topic1693/languages"
+          <dd> The <xref href="helion/user/deploy/deploy_index.dita#topic1693/languages"
               >buildpacks</xref> have all been updated, including Ruby (2.1.5) and Docker
             (1.5).</dd>
         </dlentry>

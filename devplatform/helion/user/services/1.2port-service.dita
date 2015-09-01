@@ -23,7 +23,7 @@
  <!--permalink: /helion/devplatform/als/user/services/port-service/--></p>
   <p>HTTP and HTTPS ports and routing are provided automatically for all web applications deployed
       to Application Lifecycle Service (unless <xref
-        href="../deploy/1.2manifestyml.dita#topic20922/web" type="section">processes: web:</xref> is
+        href="../deploy/manifestyml.dita#topic20922/web" type="section">processes: web:</xref> is
       set to Null "\~").</p>
 <p>If your application requires additional TCP or UDP ports, use the Harbor service to allocate them.</p>
 <ul>
@@ -53,7 +53,7 @@
 <p>Additional ports are provisioned like any other data service. To request a port with the Helion command-line client:</p>
 <codeblock>helion create-service harbor debug-port</codeblock>
 <p>To request a port from Harbor in the <b>manifest.yml</b> file, add it in the <xref
-          href="../deploy/1.2manifestyml.dita#topic20922/services"><b>services</b></xref> block. For
+          href="../deploy/manifestyml.dita#topic20922/services"><b>services</b></xref> block. For
         example:</p>
 <codeblock>name: port-test
 mem: 256
@@ -144,7 +144,7 @@ container with a construct such as:</p>
 UDP_SERVICE_PORT=${!UDP_SERVICE_NAME}</codeblock>
 <p>
         <note>To use declarations like these in <xref
-            href="../deploy/1.2manifestyml.dita#topic20922/hooks"><i>hooks</i></xref>, put them in a
+            href="../deploy/manifestyml.dita#topic20922/hooks"><i>hooks</i></xref>, put them in a
           separate bash script. Brace expansion and grouping cannot be used directly in YAML
           files.</note>
       </p>

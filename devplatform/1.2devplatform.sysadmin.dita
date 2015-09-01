@@ -38,7 +38,7 @@
             (ALS) Information</xref>
         </li>
         <li>
-          <xref href="helion/CLI/1.2ALS_Client_Downloads.dita">Application Lifecycle
+          <xref href="helion/CLI/ALS_Client_Downloads.dita">Application Lifecycle
             Service Client installation</xref>
         </li>
         <li>
@@ -64,7 +64,7 @@
             Console</xref>
         </li>
         <li>
-          <xref href="helion/user/deploy/1.2app-logs.dita">Logs, Streams, and
+          <xref href="helion/user/deploy/app-logs.dita">Logs, Streams, and
             Drains</xref>
         </li>
       </ul>

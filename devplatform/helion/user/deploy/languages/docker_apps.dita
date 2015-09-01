@@ -46,7 +46,7 @@
               documentation for instructions on creating data service instances and
               binding them to applications.</p><p>
               
-              Docker apps do not have <xref href="../1.2manifestyml.dita#topic20922/hooks">staging hooks</xref>, so
+              Docker apps do not have <xref href="../manifestyml.dita#topic20922/hooks">staging hooks</xref>, so
                 there is no opportunity to extract and reformat credentials into
                 whatever format is expected by the Docker app. To work around this
                 problem you can:</p>

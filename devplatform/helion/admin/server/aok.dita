@@ -61,7 +61,7 @@
 <section id="client"> <title>End User Login: Client</title>
 <p>If the strategy has been changed to something other than <b>builtin</b> (see <xref
           href="#topic8359/strategies" format="dita">Strategies</xref>) then users connecting with
-        the <xref href="../../user/client/1.2index.dita">ALS
+        the <xref href="../../user/client/client_index.dita">ALS
           command-line client</xref> should be aware that:</p>
 <ul>
 <li>The user must enter identifiers in the format expected by the <xref type="section" href="#topic8359/strategies">strategy</xref> used by AOK (e.g. username or email

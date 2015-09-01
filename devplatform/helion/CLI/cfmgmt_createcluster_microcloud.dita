@@ -6,7 +6,7 @@
     <p>In this example, all roles are installed on a single virtual machine. To avoid requiring a
       complete installation, this example runs in the Helion Public Cloud.</p>
     <ol id="ol_gtt_nz1_dt">
-      <li><xref href="1.2ALS_Client_Downloads.dita#topic843">Download </xref>and install the 
+      <li><xref href="ALS_Client_Downloads.dita#topic843">Download </xref>and install the 
           <varname>cf-mgmt</varname>
         configuration tool.</li>
       <li>Register for a <xref href="http://www.hpcloud.com/cloud-credit" scope="external"

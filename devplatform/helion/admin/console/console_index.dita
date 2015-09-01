@@ -265,13 +265,13 @@ https://helion-xxxx.local</codeblock>
     <section id="app-org">
       <title>Applications &amp; Organizations</title>
       <p>Links to the <xref href="../../user/console/console_index.dita#topic8844/application-view"
-          >Applications</xref> and <xref href="../../user/deploy/1.2orgs-spaces.dita" type="section"
+          >Applications</xref> and <xref href="../../user/deploy/orgs-spaces.dita" type="section"
           >Organizations</xref> lists.</p>
     </section>
     <section id="domains">
       <title>Domains</title>
       <p>A filterable list of all domains configured on the system, showing whether they are <xref
-          href="../../user/deploy/1.2orgs-spaces.dita#topic2729/domains" type="section">Shared or
+          href="../../user/deploy/orgs-spaces.dita#topic2729/domains" type="section">Shared or
           Owned domains</xref>.</p>
     </section>
     <section id="routes">

@@ -49,7 +49,7 @@
 <section id="adding-new-relic-repositories"> <title>Adding New Relic Repositories</title>
 <p>The New Relic system monitoring (<b>newrelic-sysmond</b>) and PHP application monitoring (<b>newrelic-php5</b>) packages are no longer pre-installed in the ALS default Docker base container.</p>
 <p>To allow end users to install these packages in the <xref
-          href="../../user/deploy/1.2manifestyml.dita#topic20922/requirements">requirements</xref>
+          href="../../user/deploy/manifestyml.dita#topic20922/requirements">requirements</xref>
         section of their application config, admins should <xref
           href="../server/configuration.dita#topic31232/allowed-repositories"
           type="section" >add New Relic repository URLS and keys</xref> to the
@@ -121,7 +121,7 @@
 set environment variables. This mechanism is fully supported by the Application Lifecycle Service and is used by all of the built-in buildpacks.</p>
 </section>
 <section id="legacy-buildpack-and-environment-variables"> <title>Legacy Buildpack and Environment Variables</title>
-  <p>When using the <xref href="../../user/deploy/1.2buildpack.dita#topic3370/legacy-buildpack"
+  <p>When using the <xref href="../../user/deploy/buildpack.dita#topic3370/legacy-buildpack"
           >Legacy Buildpack</xref>, environment variable values defined in <i>manifest.yml</i>
         cannot be updated without re-pushing the application with new settings. Changes to variables
         made in the Management Console will be overwritten by the original ones defined at push when

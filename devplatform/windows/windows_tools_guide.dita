@@ -235,11 +235,11 @@
   <codeblock>cf-mgmt add-service mssql2014 --load &lt;filename>.yml</codeblock>
 
   <p>For more information on the ALS cluster management tool, see <xref
-     href="../helion/CLI/1.2ALS_Client_Reference.dita#topic13234"  format="dita">Helion ALS Cluster Management Tool
+     href="../helion/CLI/ALS_Client_Reference.dita#topic13234"  format="dita">Helion ALS Cluster Management Tool
      Reference</xref>.</p>
 
   <p>The ALS cluster management tool can be downloaded from the following location: <xref
-     href="../helion/CLI/1.2ALS_Client_Downloads.dita#topic843" format="dita" >Download</xref>.</p>
+     href="../helion/CLI/ALS_Client_Downloads.dita#topic843" format="dita" >Download</xref>.</p>
 
  </section>
  <section id="helion"><title>Helion Client</title>

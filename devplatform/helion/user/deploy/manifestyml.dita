@@ -270,25 +270,25 @@ provide a name. The name can also be specified on the command line (eg.
         characters and hyphens).</note>
 </section>
 <section id="buildpack"> <title>buildpack:</title>
-<p>The Git repository URL for the specific <xref href="1.2buildpack.dita#topic3370">buildpack</xref>
+<p>The Git repository URL for the specific <xref href="buildpack.dita#topic3370">buildpack</xref>
         used to deploy the application. For example:</p>
 <codeblock>  name: java-app
 mem: 512M
 buildpack: https://github.com/heroku/heroku-buildpack-java.git</codeblock>
 <p>If unset, Application Lifecycle Service will check to see if the application triggers the
-  <codeph>detect</codeph> scripts in any of its <xref href="1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >built-in
+  <codeph>detect</codeph> scripts in any of its <xref href="buildpack.dita#topic3370/built-in-buildpacks" type="section"   >built-in
 buildpacks</xref>.</p>
 </section>
 <section id="framework"> <title>framework:</title>
 <p>Allows the app to specify a framework and runtime to be used. Specifying a value for the
           <codeph>framework</codeph> key triggers the use of the <xref
-          href="1.2buildpack.dita#topic3370/legacy-buildpack">Legacy Buildpack</xref>.</p>
+          href="buildpack.dita#topic3370/legacy-buildpack">Legacy Buildpack</xref>.</p>
 <p>The keys in the <codeph>framework</codeph> section are used with the <xref
-  href="1.2buildpack.dita#topic3370/built-in-buildpacks"  type="section" >Legacy Buildpack</xref> only. Applications using language
+  href="buildpack.dita#topic3370/built-in-buildpacks"  type="section" >Legacy Buildpack</xref> only. Applications using language
         or framework-specific buildpacks do not require these values, and should instead specify the
           <xref href="#topic20922/buildpack" format="dita">buildpack</xref> or rely on the detection
         scripts of the <xref
-          href="1.2buildpack.dita#topic3370/built-in-buildpacks"
+          href="buildpack.dita#topic3370/built-in-buildpacks"
           type="section" >built-in buildpacks</xref>.</p>
 </section>
 <section id="type"> <title>type:</title>
@@ -578,7 +578,7 @@ is set but no value is given (via "default", "inherit" or the
 <section id="processes"> <title>processes:</title>
 </section>
 <section id="web"> <title>web:</title>
-  <note> Used with the <xref href="1.2buildpack.dita#topic3370/legacy-buildpack">Legacy</xref>
+  <note> Used with the <xref href="buildpack.dita#topic3370/legacy-buildpack">Legacy</xref>
         buildpack only. When using other buildpacks, create a <xref
           href="https://devcenter.heroku.com/articles/procfile" scope="external" format="html"
           >Procfile</xref> in the application's root directory.</note>
@@ -586,7 +586,7 @@ is set but no value is given (via "default", "inherit" or the
 custom arguments to uWSGI. For example:</p>
 <codeblock>  processes:
   web: python3.2 app.py</codeblock>
-<p>This key is required when using the <xref href="1.2other-frameworks.dita#topic2413/generic"
+<p>This key is required when using the <xref href="other-frameworks.dita#topic2413/generic"
           >generic framework</xref>, but is optionally available for all other frameworks.</p>
 <p>
 <b>If defined</b>, this process is expected to launch a HTTP server bound
@@ -619,7 +619,7 @@ uWSGI options to the command.</p>
 </section>
 <section id="command"> <title>command:</title>
 <p>Used for worker applications to start a background process. Below is an example using the <xref
-          href="1.2other-frameworks.dita#topic2413/standalone">standalone framework</xref>:</p>
+          href="other-frameworks.dita#topic2413/standalone">standalone framework</xref>:</p>
 <codeblock>  name: helion-worker
 instances: 1
 framework:
@@ -734,7 +734,7 @@ is not needed and can be included on the same line:</p>
 <section id="drain"> <title>drain:</title>
 <p>
         <xref
-            href="1.2app-logs.dita#topic5165/helion-drain">Application log drains</xref> can
+            href="app-logs.dita#topic5165/helion-drain">Application log drains</xref> can
         be added to an application when it is deployed by describing them in a
           <codeph>drain:</codeph> block with a drain name and URL:</p>
 <codeblock>  drain:

@@ -95,7 +95,7 @@ Console</i>
 (while running).</p>
 <p>You can add up to five additional files to the log stream by modifying
 the <b>HELION_LOG_FILES</b> environment variable in the
-<xref href="1.2manifestyml.dita">
+<xref href="manifestyml.dita">
 <i>manifest.yml</i>
 </xref> file or using <xref href="../reference/1.2client-ref-management.dita#topic50918/command-set-env" type="section"   >
 <i>helion set-env</i>

@@ -116,7 +116,7 @@ number of ways:</p>
 <p>The manifest.yml file can define a lot of application-specific details
 that tell the Application Lifecycle Service Client what to do without having to enter them
 when you run <codeph>helion push</codeph>. For complete details
-for using the <i>manifest.yml</i> file, please see <xref href="../deploy/1.2manifestyml.dita" >Configuration With
+for using the <i>manifest.yml</i> file, please see <xref href="../deploy/manifestyml.dita" >Configuration With
 <i>manifest.yml</i>
 </xref>.</p>
 <p>A simple example telling the Application Lifecycle Service Client to request a MySQL database named
@@ -250,7 +250,7 @@ the <xref href="../reference/1.2client-ref-service-management.dita" >ALS Service
 </section>
 <section id="using-database-services"> <title>Using Database Service Environment Variables</title>
   <p>When you bind a database service to an application, <xref href="../reference/1.2environment.dita#topic7631/helion-app-env" type="section" >environment variables</xref> containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.</p>
-  <p>Examples of how to parse and use these variables can be found in the <xref href="../deploy/1.2index.dita#topic1693/languages" type="section" >language-specific</xref> documentation.</p>
+  <p>Examples of how to parse and use these variables can be found in the <xref href="../deploy/deploy_index.dita#topic1693/languages" type="section" >language-specific</xref> documentation.</p>
 </section>
 <section id="database-url"> <title>DATABASE_URL<!--Removed anchor point database-url--><!-- id="database-url" --></title>
 <p>

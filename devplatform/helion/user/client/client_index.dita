@@ -53,7 +53,7 @@ available at the command line via the <i>helion help</i> command.</p>
       </p>
 </section>
 <section id="download"> <title>Download</title>
-<p>You may <xref href="../../CLI/1.2ALS_Client_Downloads.dita" >download the ALS client</xref> appropriate for your operating system.</p>
+<p>You may <xref href="../../CLI/ALS_Client_Downloads.dita" >download the ALS client</xref> appropriate for your operating system.</p>
 <p>Or you may download the client from within the Horizon console:</p>
 <ol>
 <li>Click the <b>ALS</b> tab to expand it.</li>

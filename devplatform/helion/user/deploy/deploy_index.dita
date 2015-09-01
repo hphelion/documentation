@@ -27,8 +27,8 @@
 web server, application dependencies, databases, and other services.</p>
     <note>"Worker Applications" are non-HTTP apps, such as background scripts, which run as ALS
       applications. To deploy worker applications, you need to use the <xref
-        href="1.2manifestyml.dita#topic20922/command">command</xref>key and set the <xref
-        href="1.2manifestyml.dita#topic20922/web">proceses: web</xref> key to Null ("~").</note>
+        href="manifestyml.dita#topic20922/command">command</xref>key and set the <xref
+        href="manifestyml.dita#topic20922/web">proceses: web</xref> key to Null ("~").</note>
 <section id="quick-start"> <title>Quick Start</title>
 <ul>
 <li>
@@ -39,7 +39,7 @@ web server, application dependencies, databases, and other services.</p>
           </xref></li>
 <li>
           <xref
-              href="../client/1.2index.dita#topic3165/helion-client-setup">Application Lifecycle
+              href="../client/client_index.dita#topic3165/helion-client-setup">Application Lifecycle
               Service Client</xref>
         </li>
 <li>
@@ -58,27 +58,27 @@ web server, application dependencies, databases, and other services.</p>
             Lifecycle Service Client Command Reference</xref>
         </li>
 <li>
-          <xref href="../client/1.2index.dita#topic3165" type="section">Download the Application
+          <xref href="../client/client_index.dita#topic3165" type="section">Download the Application
             Lifecycle Service Client</xref>
           <ul>
             <li>
-              <xref href="../client/1.2index.dita#topic3165/helion-client-setup" type="section"
+              <xref href="../client/client_index.dita#topic3165/helion-client-setup" type="section"
                 >Application Lifecycle Service Client Setup</xref>
             </li>
             <li>
-              <xref href="../client/1.2index.dita#topic3165/getting-help" type="section">Getting
+              <xref href="../client/client_index.dita#topic3165/getting-help" type="section">Getting
                 Help</xref>
             </li>
             <li>
-              <xref href="../client/1.2index.dita#topic3165/targeting-the-api-endpoint"
+              <xref href="../client/client_index.dita#topic3165/targeting-the-api-endpoint"
                 type="section">Targeting the API Endpoint</xref>
             </li>
             <li>
-              <xref href="../client/1.2index.dita#topic3165/http-proxies" type="section">HTTP
+              <xref href="../client/client_index.dita#topic3165/http-proxies" type="section">HTTP
                 Proxies</xref>
             </li>
             <li>
-              <xref href="../client/1.2index.dita#topic3165/removing-the-client" type="section"
+              <xref href="../client/client_index.dita#topic3165/removing-the-client" type="section"
                 >Removing the Client</xref>
             </li>
             <li><xref href="../reference/1.2api.dita#topic455/related-documentation" type="section"
@@ -91,13 +91,13 @@ web server, application dependencies, databases, and other services.</p>
 
           <ul>
                 <li>
-                  <xref href="1.2orgs-spaces.dita#topic2729" type="section" scope="local" >Organizations &amp; Spaces</xref>
+                  <xref href="orgs-spaces.dita#topic2729" type="section" scope="local" >Organizations &amp; Spaces</xref>
                 </li>
                 <li>
-                  <xref href="1.2buildpack.dita#topic3370" type="section" scope="local" >Buildpacks</xref>
+                  <xref href="buildpack.dita#topic3370" type="section" scope="local" >Buildpacks</xref>
                 </li>
                 <li>
-                  <xref href="1.2other-frameworks.dita#topic2413" type="section" scope="local" format="dita" >Generic &amp; Standalone Frameworks</xref>
+                  <xref href="other-frameworks.dita#topic2413" type="section" scope="local" format="dita" >Generic &amp; Standalone Frameworks</xref>
                 </li>
                 </ul></section>
   <section id="languages"><title>Deploying Applications (by Language)</title>
@@ -144,10 +144,10 @@ web server, application dependencies, databases, and other services.</p>
 <section id="logging-monitoring"> <title>Logging &amp; Monitoring</title>
 <ul>
 <li>
-          <xref href="1.2app-logs.dita#topic5165" type="section"  >Application Logs</xref>
+          <xref href="app-logs.dita#topic5165" type="section"  >Application Logs</xref>
         </li>
 <li>
-          <xref href="1.2newrelic.dita#topic5392" type="section"  >New Relic Monitoring</xref>
+          <xref href="newrelic.dita#topic5392" type="section"  >New Relic Monitoring</xref>
         </li>
 </ul>
 </section>
@@ -192,10 +192,10 @@ web server, application dependencies, databases, and other services.</p>
           <xref href="../reference/reference_troubleshoot.dita#topic2774" type="section"  >Troubleshooting</xref>
         </li>
 <li>
-          <xref href="1.2manifestyml.dita#topic20922/applications" type="section">Manifest.yml
+          <xref href="manifestyml.dita#topic20922/applications" type="section">Manifest.yml
             Options</xref>
         </li>
-        <li><xref href="1.2app-debug.dita#topic1398" type="section">Remote Debugging</xref>
+        <li><xref href="app-debug.dita#topic1398" type="section">Remote Debugging</xref>
         </li>
 </ul>
 </section>

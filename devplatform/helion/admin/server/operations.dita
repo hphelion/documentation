@@ -133,7 +133,7 @@ kato node setup micro</codeblock>
 <section id="new-relic"> <title>New Relic</title>
   <p>Please see <xref href="../best-practices/best_practices_index.dita#topic16169"><i>New Relic Server
             Monitoring</i></xref> . New Relic can also be used to <xref
-          href="../../user/deploy/1.2newrelic.dita" type="section">monitor apps</xref>.</p>
+          href="../../user/deploy/newrelic.dita" type="section">monitor apps</xref>.</p>
 </section>
 <section id="creating-an-admin-user"> <title>Creating an Admin User</title>
 <p>The easiest way to add admin users to Application Lifecycle Service is via the Management Console

@@ -41,14 +41,14 @@ you will need:</p>
 been set up for you on the system.</p>
 <p>The interface should be mostly self-explanatory. It exposes most of the
 functionality you have access to as an end user, but to deploy your own
-applications from source code on your local machine you will need to install and use the Helion <xref href="../client/1.2index.dita" >Application Lifestyle Service client</xref>.</p>
+applications from source code on your local machine you will need to install and use the Helion <xref href="../client/client_index.dita" >Application Lifestyle Service client</xref>.</p>
 <p>There is also an <xref href="../../../1.2devplatform.eclipse.dita" >Eclipse plugin</xref> available for the Management Console to facilitate pushing applications.</p>
 </section>
 <section id="helion-client"> <title>Application Lifecycle Service Client</title>
 <p>The Helion client pushes applications and provides access to the system from the command line.</p>
 <ol>
 <li>
-<xref href="../../CLI/1.2ALS_Client_Downloads.dita" >Download the client for your platform</xref>.</li>
+<xref href="../../CLI/ALS_Client_Downloads.dita" >Download the client for your platform</xref>.</li>
 <li>Unzip the archive in a convenient directory.</li>
 <li>Add the executable to your system/shell \$PATH by: <ul>
             <li>moving it to a directory in your \$PATH,</li>
@@ -79,7 +79,7 @@ Successfully logged into [https://api.example.hphelion.com]</codeblock>
 </section>
 <section id="setting-organization-and-space"> <title>Setting Organization and Space</title>
 <p>If you are logging in for the first time, your user account will not
-automatically choose an <xref href="../deploy/1.2orgs-spaces.dita" >Organization and Space</xref> for deployment. You will need to set these manually.</p>
+automatically choose an <xref href="../deploy/orgs-spaces.dita" >Organization and Space</xref> for deployment. You will need to set these manually.</p>
 <p>To set the Organization you belong to:</p>
 <codeblock>helion switch-org *org-name*
 Switching to organization *org-name* ... OK
@@ -113,7 +113,7 @@ working directory and push it to Application Lifecycle Service for further stagi
 <p>Small <xref href="../../../1.2devplatform.appdev.dita" >sample applications</xref> in various  programming languages are available. These applications demonstrate the basics of ALS deployment (hello world), connect to a database, and exercise the messaging service.</p>
 <p>Additional more advanced sample applications are available from <xref href="https://github.com/Stackato-Apps" scope="external" format="html" >Application Lifecycle Service-Apps</xref> on Github, each with a
 README.md file showing how to deploy it on Application Lifecycle Service.</p>
-<p>Many of these have a <xref href="../deploy/1.2manifestyml.dita" >
+<p>Many of these have a <xref href="../deploy/manifestyml.dita" >
 <i>manifest.yml</i>
 </xref> configuration
 file, so you can skip the interactive prompts by using the
@@ -126,7 +126,7 @@ the running application. Paste this URL into a web browser to try the
 application or run:</p>
 <codeblock>helion open [appname]</codeblock>
 <p>Documentation on configuring applications in specific languages and
-frameworks is available in the <xref href="../deploy/1.2index.dita" >
+frameworks is available in the <xref href="../deploy/deploy_index.dita" >
 <i>Deploying Apps</i>
 </xref> section.</p>
 </section>

@@ -102,16 +102,16 @@
     </topichead>
     <topicref href="devplatform/1.2devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers ">
-      <topicref href="devplatform/helion/user/deploy/1.2index.dita" locktitle="yes"
+      <topicref href="devplatform/helion/user/deploy/deploy_index.dita" locktitle="yes"
         navtitle="General Deployment">
         <!--permalink: /helion/devplatform/als/user/deploy/app-debug/-->
-        <topicref href="devplatform/helion/user/deploy/1.2app-debug.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/app-debug.dita" locktitle="yes"
           navtitle="Remote Debugging"/>
-        <topicref href="devplatform/helion/user/deploy/1.2other-frameworks.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/other-frameworks.dita" locktitle="yes"
           navtitle="Generic and Standalone Frameworks"/>
         <!--permalink: /helion/devplatform/als/user/deploy/app-logs/-->
         <!--permalink: /helion/devplatform/als/user/deploy/buildpack/-->
-        <topicref href="devplatform/helion/user/deploy/1.2buildpack.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/buildpack.dita" locktitle="yes"
           navtitle="Buildpacks"/>
         <!--permalink: /helion/devplatform/als/user/deploy/languages/clojure/-->
         <!--permalink: /helion/devplatform/als/user/deploy/languages/go/-->
@@ -121,13 +121,13 @@
         <!--permalink: /helion/devplatform/als/user/deploy/languages/python/-->
         <!--permalink: /helion/devplatform/als/user/deploy/languages/ruby/-->
         <!--permalink: /helion/devplatform/als/user/deploy/manifestyml/-->
-        <topicref href="devplatform/helion/user/deploy/1.2manifestyml.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/manifestyml.dita" locktitle="yes"
           navtitle="Manifest.yml Options"/>
         <!--permalink: /helion/devplatform/als/user/deploy/newrelic/-->
-        <topicref href="devplatform/helion/user/deploy/1.2newrelic.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/newrelic.dita" locktitle="yes"
           navtitle="New Relic Monitoring"/>
         <!--permalink: /helion/devplatform/als/user/deploy/orgs-spaces/-->
-        <topicref href="devplatform/helion/user/deploy/1.2orgs-spaces.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/orgs-spaces.dita" locktitle="yes"
           navtitle="Organizations and Spaces"/>
         <!--permalink: /helion/devplatform/als/user/deploy/other-frameworks/-->
       </topicref>
@@ -326,15 +326,15 @@
       <topicref href="devplatform/helion/user/services/1.2user-provided.dita" locktitle="yes"
         navtitle="User-Provided Services"/>
     </topicref>
-    <topicref href="devplatform/helion/1.2index.dita" locktitle="yes"
+    <topicref href="devplatform/helion/helion_index.dita" locktitle="yes"
       navtitle="Application Lifecycle Service Documentation">
       <!--permalink: /helion/devplatform/als/admin/-->
-      <topicref href="devplatform/helion/CLI/1.2constructor_vm.dita" navtitle="ALS Constructor VM"
+      <topicref href="devplatform/helion/CLI/constructor_vm.dita" navtitle="ALS Constructor VM"
         locktitle="yes"/>
       <topichead navtitle="ALS Command Line Clients">
-        <topicref href="devplatform/helion/CLI/1.2ALS_Client_Downloads.dita"
+        <topicref href="devplatform/helion/CLI/ALS_Client_Downloads.dita"
           navtitle="Command Line Client Downloads" locktitle="yes"/>
-        <topicref href="devplatform/helion/user/client/1.2index.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/client/client_index.dita" locktitle="yes"
           navtitle="ALS Client Installation"
           ><!--permalink: /helion/devplatform/als/client/download/--><!--permalink: /helion/devplatform/als/client/reference/--></topicref>
         <topicref href="devplatform/helion/user/reference/1.2client-ref.dita" locktitle="yes"
@@ -388,7 +388,7 @@
           <topicref href="devplatform/helion/user/reference/1.2client-ref-user-management.dita"
             locktitle="yes" navtitle="User Management "/>
         </topicref>
-        <topicref href="devplatform/helion/CLI/1.2ALS_Client_Reference.dita" locktitle="yes"
+        <topicref href="devplatform/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
           navtitle="Cluster Management Tool Installation and Reference"/>
         <topicref href="devplatform/helion/admin/reference/kato-ref.dita" locktitle="yes"
           navtitle="Kato Command Reference"/>
@@ -396,7 +396,7 @@
       <topicref href="devplatform/helion/admin/helion_admin_index.dita" locktitle="yes"
         navtitle="ALS Admin Guide">
         <!--permalink: /helion/devplatform/als/admin/best-practices/-->
-        <topicref href="devplatform/helion/user/deploy/1.2adding-buildpack.dita"
+        <topicref href="devplatform/helion/user/deploy/adding-buildpack.dita"
           navtitle="Adding Buildpacks" locktitle="yes"/>
         <topicref href="devplatform/helion/admin/best-practices/best_practices_index.dita"
           locktitle="yes" navtitle="Best Practices"/>
@@ -459,7 +459,7 @@
         </topichead>
       </topicref>
       <!--permalink: /helion/devplatform/als/user/-->
-      <topicref href="devplatform/helion/user/1.2index.dita" locktitle="yes"
+      <topicref href="devplatform/helion/user/helion_user_index.dita" locktitle="yes"
         navtitle="ALS User Guide">
         <!--permalink: /helion/devplatform/als/user/client/-->
         <!--permalink: /helion/devplatform/als/user/console/-->
@@ -477,7 +477,7 @@
         <!--permalink: /helion/devplatform/als/user/reference/troubleshoot/-->
         <topicref href="devplatform/helion/user/reference/reference_troubleshoot.dita" locktitle="yes"
           navtitle="Troubleshooting "/>
-        <topicref href="devplatform/helion/user/deploy/1.2app-logs.dita" locktitle="yes"
+        <topicref href="devplatform/helion/user/deploy/app-logs.dita" locktitle="yes"
           navtitle="Application Logs "/>
       </topicref>
     </topicref>

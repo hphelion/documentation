@@ -35,7 +35,7 @@
        </li> 
     </ul> 
   
-<p>For more information, see the full Application Lifecycle Service (ALS) Client <xref href="1.2ALS_Client_Reference.dita" >command reference</xref>.</p>
+<p>For more information, see the full Application Lifecycle Service (ALS) Client <xref href="ALS_Client_Reference.dita" >command reference</xref>.</p>
 </section>
 <section id="hp-helion-als-cluster-management-tool-cf-mgmt"> <title>HP Helion ALS Cluster Management Tool (<i>cf-mgmt</i>)</title>
 <p>Click the download link that is appropriate for your operating system.</p>
@@ -49,7 +49,7 @@
 <li>
 <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-osx-x86_64.zip" scope="external" format="html" >Mac OS X</xref> </li>
 </ul>
-<p>For more information, see the full ALS Cluster Management Tool <xref href="1.2ALS_Client_Reference.dita" >command reference</xref>.</p>
+<p>For more information, see the full ALS Cluster Management Tool <xref href="ALS_Client_Reference.dita" >command reference</xref>.</p>
 <p>Click to download a sample configuration file for use with the <i>cf-mgmt</i> tool.</p>
 <ul>
 <li>

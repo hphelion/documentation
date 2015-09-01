@@ -31,7 +31,7 @@ to install Node packages automatically.</p>
 automatically installs packages listed in the "dependencies" section
 before starting the server.</p>
 <p>Alternatively, you can call NPM directly using <xref
-          href="../1.2manifestyml.dita#topic20922/hooks"><i>hooks</i></xref> in the
+          href="../manifestyml.dita#topic20922/hooks"><i>hooks</i></xref> in the
           <i>manifest.yml</i> file.</p>
 <p>For NPM packages which include callable scripts or binaries, executable components are automatically added to the container's \$PATH, so a "global install" (<codeph>npm install -g</codeph>) is not required.</p>
 </section>

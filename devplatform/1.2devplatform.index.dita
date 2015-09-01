@@ -88,7 +88,7 @@
             Interface (CLI)</xref></b>
       </p>
 <p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref
-  href="helion/user/client/1.2index.dita#topic3165/helion-client-setup"
+  href="helion/user/client/client_index.dita#topic3165/helion-client-setup"
           >Setup</xref> instructions are available for here both <tm tmtype="reg">Windows</tm> and
         Unix/Mac operating systems.</p>
 <p>

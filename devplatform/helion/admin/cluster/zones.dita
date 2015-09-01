@@ -20,7 +20,7 @@
     Both zone types are set in the  <codeph>placement_properties</codeph> configuration on each
     DEA node, which can be set with  <codeph>kato node</codeph> sub-commands.
     
-    See also <xref href="../../user/deploy/1.2index.dita">Availability and Placement Zones</xref>in the User Guide.
+    See also <xref href="../../user/deploy/deploy_index.dita">Availability and Placement Zones</xref>in the User Guide.
       
 </p>  </section>
   <section id="dea-zones-availability"><title>Availability Zones</title><p>Setting availability
@@ -69,7 +69,7 @@ kato node placementzones remove [zone]</codeblock></p>
         backwards compatibility.</p>
           
    <p>Users can set the placement zone for an app using the <xref type="section"
-          href="../../user/deploy/1.2manifestyml.dita#topic20922/placement-zone"
+          href="../../user/deploy/manifestyml.dita#topic20922/placement-zone"
           >manifest_yml-placement-zone</xref> key or using the <xref type="section"
           href="../../user/reference/1.2client-ref-placement.dita#topic4565/command-set-placement-zone"
           >helion set-placement-zone </xref> command. </p>        

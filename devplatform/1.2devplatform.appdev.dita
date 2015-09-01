@@ -36,7 +36,7 @@
 </ul>
 </li>
 <li>Logon and password credentials for the cluster.</li>
-<li>Access to the <xref href="helion/user/client/1.2index.dita" >Helion command-line interface (CLI)</xref>
+<li>Access to the <xref href="helion/user/client/client_index.dita" >Helion command-line interface (CLI)</xref>
 </li>
 <li>(Optional) Access to the <xref href="1.2devplatform.eclipse.dita" >Eclipse</xref> deployment plugin for JAVA applications.</li>
 </ul>
@@ -113,16 +113,16 @@
   <xref href="helion/user/reference/1.2client-ref.dita" type="section" >ALS command-line interface (CLI) reference</xref>
 </li>
 <li>
-<xref href="helion/user/1.2index.dita" >Application Lifecycle Service (ALS) User's Guide</xref>
+<xref href="helion/user/helion_user_index.dita" >Application Lifecycle Service (ALS) User's Guide</xref>
 </li>
 <li>
-<xref href="helion/user/deploy/1.2app-debug.dita" >Remote Debugging</xref>
+<xref href="helion/user/deploy/app-debug.dita" >Remote Debugging</xref>
 </li>
 <li>
 <xref href="helion/user/console/console_index.dita" >The Management Console</xref>
 </li>
 <li>
-<xref href="helion/user/deploy/1.2app-logs.dita" >Logs, Streams, and Drains</xref>
+<xref href="helion/user/deploy/app-logs.dita" >Logs, Streams, and Drains</xref>
 </li>
 </ul>
 </section>

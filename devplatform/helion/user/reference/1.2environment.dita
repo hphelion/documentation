@@ -25,7 +25,7 @@
 <p>Some environment variables are also available during application <xref type="section" href="#topic7631/staging">staging</xref>.</p>
 <p>You can set your own environment variables:</p>
 <ul>
-<li>in an <codeph>env</codeph> block in <xref href="../deploy/1.2manifestyml.dita">
+<li>in an <codeph>env</codeph> block in <xref href="../deploy/manifestyml.dita">
           <i>manifest.yml</i>
         </xref>,</li>
 <li>via the application's Details page in the <xref href="../../admin/console/customize.dita">Management
@@ -79,7 +79,7 @@ command.</li>
 <p>Application Lifecycle Service alternative for VCAP_APP_PORT.</p>
 </section>
 <section id="processes-web"> <title>PROCESSES_WEB</title>
-<p>This variable contains the default start command that would be used when <xref href="../deploy/1.2manifestyml.dita" >
+<p>This variable contains the default start command that would be used when <xref href="../deploy/manifestyml.dita" >
 <i>manifest.yml</i>
 </xref> doesn't override it. It is provided so that users can specify a wrapper around the default command.
 For example:</p>
@@ -97,7 +97,7 @@ For example:</p>
 <section id="helion-app-env"> <title>HELION_APP_ENV</title>
 <p><note>Subject to change.</note> Contains a list of all environment variables set with <xref
           href="1.2client-ref-management.dita#topic50918/command-env-add">env-add</xref> or through
-        the <xref href="../deploy/1.2manifestyml.dita">manifest.yml</xref> file.</p>
+        the <xref href="../deploy/manifestyml.dita">manifest.yml</xref> file.</p>
 </section>
 <section id="helion-app-name"> <title>HELION_APP_NAME</title>
 <p>Contains the application name as specified during application push (or in <i>manifest.yml</i>). Available during staging as well as in the application instance.</p>
@@ -129,7 +129,7 @@ For example:</p>
 <p>Can be set in the local shell to specify the API endpoint target for the <codeph>helion</codeph> client. When set, the <codeph>helion target</codeph> command is ignored until the variable is explicitly unset. Can be overridden with the <codeph>--target</codeph> option.</p>
 </section>
 <section id="helion-uwsgi"> <title>HELION_UWSGI</title>
-<p>Set by the Perl and Python frameworks only. It contains the default uswgi start command to run the application via uwsgi. It is provided in case the user wants to add additional uwsgi options in <xref href="../deploy/1.2manifestyml.dita" >
+<p>Set by the Perl and Python frameworks only. It contains the default uswgi start command to run the application via uwsgi. It is provided in case the user wants to add additional uwsgi options in <xref href="../deploy/manifestyml.dita" >
 <i>manifest.yml</i>
 </xref>:</p>
 <codeblock>   processes:

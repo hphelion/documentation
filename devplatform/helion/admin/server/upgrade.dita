@@ -280,7 +280,7 @@ stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ </codeblock></li>
 <p>
         <note type="warning">Any custom buildpacks added to the system prior to the upgrade will be lost. Custom
           buildpacks must be <xref
-            href="../../user/deploy/1.2buildpack.dita#topic3370/custom-buildpacks" type="section"
+            href="../../user/deploy/buildpack.dita#topic3370/custom-buildpacks" type="section"
             >restored</xref> to the system after an upgrade.</note>
       </p>
 </section>

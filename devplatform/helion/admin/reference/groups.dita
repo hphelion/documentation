@@ -23,7 +23,7 @@
  <!--permalink: /helion/devplatform/als/admin/reference/groups/--></p>
 <section>
 <note type="notice">Application Lifecycle Service Groups have been deprecated. See  <xref
-    href="../../user/deploy/1.2orgs-spaces.dita">Organizations and Spaces</xref></note>
+    href="../../user/deploy/orgs-spaces.dita">Organizations and Spaces</xref></note>
       
 </section>
 </body>

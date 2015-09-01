@@ -58,13 +58,13 @@
 <p>The top-level page of the Management Console displays quick links to the most commonly used resources:</p>
 <ul>
 <li>
-<b>Read the Documentation</b>: By default, this links to the ALS documentation at <xref href="../../1.2index.dita" >docs.hpcloud.com</xref>
+<b>Read the Documentation</b>: By default, this links to the documentation at <xref href="http://docs.hpcloud.com" scope="external" format="html">docs.hpcloud.com</xref>
 </li>
 <li>
           <b>Contact Support</b>: Link to the <xref href="#topic8844/support" format="dita"
             >Support</xref> page.</li>
 <li>
-  <b>Download the Client</b>: Link to the locally hosted <xref href="../../CLI/1.2ALS_Client_Downloads.dita">CLI client</xref> download.</li>
+  <b>Download the Client</b>: Link to the locally hosted <xref href="../../CLI/ALS_Client_Downloads.dita">CLI client</xref> download.</li>
 <li>
           <b>Deploy Sample Applications</b>: Link to the <xref href="#topic8844/sample-apps"
             format="dita">Sample Applications</xref>.</li>
@@ -132,11 +132,11 @@
 </ul>
 </section>
 <section id="organization-list"> <title>Organizations List</title>
-  <p>The Organizations list is accessible from the top menu. It shows all <xref href="../../user/deploy/1.2orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> which the current user is a member of. The list is searchable by name.</p>
+  <p>The Organizations list is accessible from the top menu. It shows all <xref href="../../user/deploy/orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> which the current user is a member of. The list is searchable by name.</p>
 <p>Clicking on any Organization name opens the Organization view.</p>
 </section>
 <section id="organization-view"> <title>Organization View</title>
-  <p>The Organizations page shows a list of all <xref href="../../user/deploy/1.2orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.</p>
+  <p>The Organizations page shows a list of all <xref href="../../user/deploy/orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.</p>
 <p>Clicking on the Organization's name opens a view of that organization, including the following tabs:</p>
 <ul>
 <li>
@@ -144,7 +144,7 @@
 <li>
           <b>Users</b>: A list of Users who are members of the Organization, showing the Email
           address and Organization <xref
-            href="../../user/deploy/1.2orgs-spaces.dita#topic2729/org-roles"
+            href="../../user/deploy/orgs-spaces.dita#topic2729/org-roles"
             type="section">Roles</xref> of each. <ul>
             <li>
               <b>Users</b>: can view organization quotas, domains, spaces and users.</li>
@@ -162,7 +162,7 @@
               <b>Services</b>: The number of deployed / allotted services.</li>
           </ul></li>
 <li>
-  <b>Domains</b>: Domains belonging to the Organization that can be used by applications deployed to <xref href="../deploy/1.2orgs-spaces.dita#topic2729/spaces" type="section"   >Spaces</xref> in the Organization. Typically, these will be a subdomain of the Application Lifecycle Service system itself. For example, an Organization called <i>acme</i> on a PaaS with the address <i>api.example.org</i> might have the domain <i>*.acme.example.org</i>.</li>
+  <b>Domains</b>: Domains belonging to the Organization that can be used by applications deployed to <xref href="../deploy/orgs-spaces.dita#topic2729/spaces" type="section"   >Spaces</xref> in the Organization. Typically, these will be a subdomain of the Application Lifecycle Service system itself. For example, an Organization called <i>acme</i> on a PaaS with the address <i>api.example.org</i> might have the domain <i>*.acme.example.org</i>.</li>
 </ul>
 <p>
         <note> There is currently no interface in the Management Console for Managers, Auditors, or

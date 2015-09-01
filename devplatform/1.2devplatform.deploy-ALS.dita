@@ -104,7 +104,7 @@
           cluster, which can be reached in the <b>Clusters</b> view or by the <b>Cluster Details</b>
           page. <image href="../media/ALSConfig7.png" placement="break" id="image_hyv_tzc_ks"/>
         </li>
-<li>The <xref href="helion/1.2index.dita">Application Lifecycle Service
+<li>The <xref href="helion/helion_index.dita">Application Lifecycle Service
             Documentation </xref> provides an overview of how to administer and use the configured
           cluster, which opens up in a separate tab and requires the admin credentials set in step 3
           to access and provision.</li>

@@ -41,7 +41,7 @@ filesystem.</p>
 <xref type="section" href="#topic5271/adding-the-app-store-to-helion">Adding the Sample Applications to the Application Lifecycle Service</xref>
 </li>
 </ul>
-<p>Users have access to the main Sample Applications interface (see the <xref href="../../user/1.2index.dita" >Application Lifecycle Service User Guide</xref>, but do not have access to add new applications or add/modify the definition file.</p>
+<p>Users have access to the main Sample Applications interface (see the <xref href="../../user/helion_user_index.dita" >Application Lifecycle Service User Guide</xref>, but do not have access to add new applications or add/modify the definition file.</p>
 <section id="creating-an-app-store"> <title>Creating Sample Applications</title>
 <p>The Sample Applications interface exposes multiple "stores" which specify the
 available applications. These stores are sourced from definition files
@@ -137,7 +137,7 @@ and <b>apps</b>.</p>
 <dt>
 <b>framework</b>
 </dt>
-  <dd>The framework the app uses, if the app is deployed using the <xref href="../../user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref>(e.g. perl, python, node, rails3).</dd>
+  <dd>The framework the app uses, if the app is deployed using the <xref href="../../user/deploy/buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref>(e.g. perl, python, node, rails3).</dd>
 </dlentry>
 
 
@@ -180,7 +180,7 @@ URL, <b>default</b>, or other variable value.</dd>
 <dt>
 <b>runtime</b>
 </dt>
-  <dd>The runtime, if the app is deployed using the <xref href="../../user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref> (e.g. java, python32, ruby19, php, perl518).
+  <dd>The runtime, if the app is deployed using the <xref href="../../user/deploy/buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref> (e.g. java, python32, ruby19, php, perl518).
 <b>services</b>
 </dd>
 <dd>Data services required by the app.</dd>

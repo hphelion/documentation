@@ -27,7 +27,7 @@
 <ol>
 <li>You must have access to an <xref href="../../1.2devplatform.deploy-ALS.dita">ALS
                     cluster</xref>.</li>
-<li>The <xref href="../../helion/CLI/1.2ALS_Client_Downloads.dita">Helion command-line
+<li>The <xref href="../../helion/CLI/ALS_Client_Downloads.dita">Helion command-line
                         interface</xref> (CLI) must be installed.</li>
 <li>You must have access to the web-based <xref href="../../helion/user/console/console_index.dita"
                         >Helion Management console</xref>.</li>
@@ -89,7 +89,7 @@
                 Internet in order to download dependent packages.</p>
 <p>Use the Helion client to deploy your app to Helion Development Platform. If you are using Eclipse, you have the option to use the <xref href="../../1.2devplatform.eclipse.dita" >plugin</xref>.</p>
 <ol>
-<li>Open the <xref href="../../helion/CLI/1.2ALS_Client_Reference.dita" >Helion command-line interface (CLI)</xref>
+<li>Open the <xref href="../../helion/CLI/ALS_Client_Reference.dita" >Helion command-line interface (CLI)</xref>
 </li>
 <li> Ensure that you are targeting your desired environment. If you are not,
                     execute<codeblock>helion target https://api.xx.xx.xx.xx.xip.io</codeblock></li>
