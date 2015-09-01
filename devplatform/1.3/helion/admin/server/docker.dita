@@ -22,7 +22,6 @@
 </metadata>
 </prolog>
 <body>
-    <p><!--PUBLISHED--><!--./devplatform/1.2/helion/admin/server/1.2docker.md--><!--permalink: /helion/devplatform/1.2/als/admin/server/docker/--></p>
     <p>Application Lifecycle Service's <xref
         href="../reference/architecture.dita#topic4407/architecture-droplet-execution-agents"
         type="section">DEA role</xref> runs Linux containers to isolate user applications during

@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-services.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/services/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic3675/command-marketplace">helion marketplace</xref>: List the supported service plans of the target for the current or specified space.</li>

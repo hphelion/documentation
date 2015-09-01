@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-tokens.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/tokens/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic3706/command-create-service-auth-token">helion create-service-auth-token</xref>: Create a new service authentication token.</li>

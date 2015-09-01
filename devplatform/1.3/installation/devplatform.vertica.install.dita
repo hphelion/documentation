@@ -21,10 +21,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2devplatform.marketplace.install.md-->
- <!--permalink: /helion/devplatform/marketplace/--></p>
 <p>The Marketplace, currently in beta, is a repository where teams can download the latest services they need to accelerate development of their applications. In its beta incarnation, the Marketplace has a single application: the Vertica 7 Community Edition.</p>
 <p>The following topics explain how to install and deploy an instance of Vertica 7 Community Edition:</p>
 <ul>

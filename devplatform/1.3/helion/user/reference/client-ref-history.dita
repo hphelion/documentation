@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-history.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/history/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic958/command-history-clear">helion history clear</xref>: Clear the saved history.</li>

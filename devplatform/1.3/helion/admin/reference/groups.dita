@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/admin/reference/1.2groups.md-->
- <!--permalink: /helion/devplatform/als/admin/reference/groups/--></p>
 <section>
 <note type="notice">Application Lifecycle Service Groups have been deprecated. See  <xref
     href="../../user/deploy/orgs-spaces.dita">Organizations and Spaces</xref></note>

@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2api.md-->
- <!--permalink: /helion/devplatform/als/user/reference/api/--></p>
 <p>HP Helion Development Platform Application Lifecycle Service is fully compatible with the <xref href="http://docs.cloudfoundry.org/services/api-v2.0.html" scope="external" format="html" >Cloud Foundry v2 API</xref>.</p>
 <section id="related-documentation"> <title>Related Documentation </title>
 <ul>

@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-management.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/management/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic50918/command-create-app">helion create-app</xref>: Create an empty application with the specified configuration.</li>

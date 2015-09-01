@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-administration.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/administration/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic11202/command-admin-grant">helion admin grant</xref>: Grant the named user administrator privileges for the current or specified target.</li>

@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-user-management.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/usermanagement/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic7058/command-add-user">helion add-user</xref>: Register a new user in the current or specified target. This operation requires administrator privileges.</li>

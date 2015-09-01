@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/deploy/1.2manifestyml.md-->
- <!--permalink: /helion/devplatform/als/user/deploy/manifestyml/--></p>
   <p>The <i>manifest.yml</i> file sets application configuration options which are then passed to
       ALS during the <xref href="../reference/client-ref-management.dita#topic50918/command-push"
         >helion push</xref> command.</p>

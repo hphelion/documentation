@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-service-management.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/servicemanagement/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic10567/command-bind-service">helion bind-service</xref>: Bind the named service to the specified application.</li>

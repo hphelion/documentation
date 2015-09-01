@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-getting-started.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/gettingstarted/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic2439/command-login">helion login</xref> Logs in to the current or specified target with the named user.</li>

@@ -17,13 +17,7 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/deploy/1.2other-frameworks.md-->
- <!--permalink: /helion/devplatform/als/user/deploy/other-frameworks/--></p>
-<p>===============================================================================================</p>
-<p>The Generic and Standalone frameworks are for applications that might
-not fit any of the other frameworks available in Application Lifecycle Service.</p>
+<p>The Generic and Standalone frameworks are for applications that might not fit any of the other frameworks available in Application Lifecycle Service.</p>
 <ul>
 <li>
 <b>Generic</b> is for web applications.</li>

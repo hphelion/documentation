@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-spaces.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/spaces/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic9898/command-create-space">helion create-space</xref>: Create a new space.</li>

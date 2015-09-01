@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2glossary.md-->
- <!--permalink: /helion/devplatform/als/user/reference/glossary/--></p>
 <section id="term-AMQP"> <title>AMQP</title>
 <p>Acronym for <xref href="http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol" scope="external" format="html" >Advanced Message Queuing Protocol</xref>.</p>
 </section>

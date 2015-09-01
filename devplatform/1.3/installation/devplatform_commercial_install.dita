@@ -24,13 +24,10 @@
 </metadata>
 </prolog>
 <body>
-<!--PUBLISH-->
- <!--./devplatform/1.2devplatform_commercial_install.md-->
- <!--permalink: /helion/devplatform/install/-->
 <section>
-<p>HP Helion Development Platform version 1.2 currently contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
+<p>HP Helion Development Platform contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
 <p>The following topics explain how to install and configure a new deployment of the HP Helion
-        Development Platform version 1.2. There is also <xref
+        Development Platform. There is also <xref
           href="../devplatform.troubleshooting.dita">Troubleshooting</xref> documentation to handle
         issues that may occur.</p>
 <ul>

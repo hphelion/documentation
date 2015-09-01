@@ -19,10 +19,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/admin/reference/1.2known-issues.md-->
- <!--permalink: /helion/devplatform/als/admin/reference/known-issues/--></p>
 <p>Please keep up to date with the latest Known Issues, FAQs and announcements in our <xref href="https://community.dev.hp.com/t5/Helion-Developer-Network/bd-p/cloud" scope="external" format="html" >Helion Developer Network forums</xref>.</p>
 <section id="13"><title>1.3</title>
   <dl><dlentry>

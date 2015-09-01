@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/services/1.2user-provided.md-->
- <!--permalink: /helion/devplatform/als/user/services/user-provided/--></p>
 <p>User-provided service instances allow you connect applications running
 on Application Lifecycle Service to specified external data services, without hard coding the
 credentials into the application. The service instance provides the

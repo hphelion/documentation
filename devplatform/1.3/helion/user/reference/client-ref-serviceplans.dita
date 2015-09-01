@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-serviceplans.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/serviceplans/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic4355/command-hide-service-plan">helion hide-service-plan</xref>: Hide the specified service-plan from the named organization.</li>

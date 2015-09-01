@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2environment.md-->
- <!--permalink: /helion/devplatform/als/user/reference/environment/--></p>
 <p>Application Lifecycle Service exposes a number of predefined <xref href="http://manpages.ubuntu.com/manpages/utopic/en/man7/environ.7.html" scope="external" format="html" >environment variables</xref> during runtime, including hook processing, cron jobs and ssh commands.</p>
 <p>Some environment variables are also available during application <xref type="section" href="#topic7631/staging">staging</xref>.</p>
 <p>You can set your own environment variables:</p>

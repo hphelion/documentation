@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/services/1.2filesystem.md-->
- <!--permalink: /helion/devplatform/als/user/services/filesystem/--></p>
 <p>The file system of application containers are ephemeral. Any application
 data or files stored locally within these containers is lost when the
 instance is stopped or restarted. To solve this, Application Lifecycle Service provides a filesystem type of service that can be shared between application instances,

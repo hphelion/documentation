@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-routes.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/routes/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic2750/command-delete-route">helion delete-route</xref>: Delete the named route.</li>

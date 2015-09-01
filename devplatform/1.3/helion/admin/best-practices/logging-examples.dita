@@ -19,10 +19,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/best-practices/1.2logging-examples.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/best-practices/logging-examples/--></p>
 <p>Detailed instructions on how to use drains with third party log analysis
 software or services.</p>
 <ul>

@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/services/1.2memcached.md-->
- <!--permalink: /helion/devplatform/als/user/services/memcached/--></p>
 <p>Memcached is an in-memory key-value store used for caching by many web
 applications and frameworks. It is available in Application Lifecycle Service as a service
 which can be shared by application instances.</p>

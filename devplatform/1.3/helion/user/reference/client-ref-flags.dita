@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-flags.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/flags/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic2298/command-disable-feature-flag">helion disable-feature-flag</xref>: Deactivate the specified feature. </li>

@@ -17,10 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/helion/user/reference/1.2client-ref-quotas.md-->
- <!--permalink: /helion/devplatform/als/user/reference/client-ref/quotas/--></p>
 <ul>
 <li>
         <xref href="#topic5727/command-quota-configure" format="dita">helion quota configure</xref>:
