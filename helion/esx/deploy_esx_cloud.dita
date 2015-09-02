@@ -50,8 +50,8 @@
       </p>
     </section>
     <section><b>Deploy ESX Cloud</b><p>At a high level, here are the steps to configure and deploy
-        ESX cloud:</p><p><image href="../../media/esx/esx_deploy.jpg" id="image_w31_fnl_ft"/><image
-          href="../../media/esx_deploy.jpg" id="image_pbk_wnl_ft"/></p></section>
+        ESX cloud:</p><p><image href="../../media/esx_deploy.jpg" id="image_pbk_wnl_ft"
+      /></p></section>
     <section>
       <title>Procedure to Deploy ESX cloud</title>
     </section>
