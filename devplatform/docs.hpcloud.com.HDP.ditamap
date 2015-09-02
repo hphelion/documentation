@@ -230,8 +230,6 @@
         navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
       <topicref href="1.3/windows/windows_tools_guide.dita" locktitle="yes"
         navtitle="Windows and .NET Applications Tools Guide"/>
-      <topicref href="1.3/windows/windows_custom_buildpacks.dita" locktitle="yes"
-        navtitle="Deploying Windows Applications with the IIS Buildpack"/>
       <topicref href="1.3/windows/windows_glazier_reference_guide.dita" locktitle="yes"
         navtitle="Glazier Reference Guide"/>
       <topicref href="1.3/windows/windows_remoting.dita" navtitle="Remote Desktop Access"
