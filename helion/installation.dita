@@ -101,7 +101,7 @@ helion/hos/                    Directory contains files used by the installer
               explains the contents of each of the configuration files. </li>
             <li>Copy the example configuration files into the required setup directory and edit them
               as required: <codeblock>cp -r ~/helion/examples/entry-scale-with-vsa/* ~/helion/my_cloud/definition/</codeblock>
-              <note>There have been changes to some of the files since Beta 0. The configuration
+              <note id="note">There have been changes to some of the files since Beta 0. The configuration
                 files for editing can be found at the following location:
                 <codeblock>~/helion/my_cloud/definition/</codeblock></note>
               <ul>
