@@ -112,7 +112,7 @@
     --os-key-name &lt;os key pair name&gt; 
     --os-security-group &lt;os security group; e.g Default&gt; \
     --os-flavor &lt;os flavor name: e.g. m1.small&gt; \</codeblock>
-<note>If you are deploying to an environment that uses the VMWare ESXi hypervisor, such as Cloud Services, you must add the <codeph>--hypervisor esxi</codeph> switch.</note></li>
+<note>If you are deploying to Cloud System, which uses the VMWare ESXi hypervisor, you must add the <codeph>--hypervisor esxi</codeph> switch.</note></li>
 <li>When the tool finishes, you will see a command prompt open in a Virtual Box instance. </li>
 </ol>
 </section>
