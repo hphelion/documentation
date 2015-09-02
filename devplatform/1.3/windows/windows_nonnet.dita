@@ -106,7 +106,9 @@
           <image placement="break" href="windows_nonnet_pub_6.png"></image></li>
         <li>This sample application does not use any environment variables, so click <b>Finish</b> in the next <b>Publish to Cloud Foundry</b> window.
           <image placement="break" href="windows_nonnet_pub_7.png"></image></li>
-        <li>You can monitor progress of the deployment in the <b>Output</b> pane of the </li>
+        <li>You can monitor progress of the deployment in the <b>Output</b> pane (select <b>View</b>, <b>Output</b>.)</li>
+        <li>When the deployment is complete, navigate to the application URL (e.g. <b>http://nodeonhelion.15.126.140.115.xip.io/</b>) to verify that the deployment succeeded:
+          <image placement="break" href="windows_nonnet_pub_8.png"></image></li>
       </ol></section>
   </body>
 </topic>
