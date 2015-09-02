@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6788">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Working with Host CPUs</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-processor.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/processor/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>The <b>Processor</b> tab on the <b>Inventory Detail</b> page presents processor details for a host.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in regionone.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>You access the <b>Inventory Detail</b> page by clicking the host name on the <b>Hosts</b> tab of the <b>Systems Inventory</b> page. The inventory detail for a host consists of multiple tabs, each addressing a different aspect of the host.</p>
+<p>This page details:</p>
+<ul>
+<li>
+<xref type="section" href="#topic6788/view">Viewing details of host CPUs</xref>
+</li>
+<li>
+<xref type="section" href="#topic6788/create">Creating CPU profiles</xref>
+</li>
+<li>
+<xref type="section" href="#topic6788/edit">Editing CPU assignments</xref>
+</li>
+<li>
+<xref type="section" href="#topic6788/shared">Designating shared physical CPUs on a compute host</xref>
+</li>
+<li>
+<xref type="section" href="#topic6788/numa">Viewing NUMA node resources on a host</xref>
+</li>
+</ul>
+<section id="view"> <title>Viewing details of a host CPUs</title>
+<p>To view the host CPUs:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
+</li>
+<li>
+<p>Select the Processor tab.</p>
+</li>
+</ol>
+<p>The Processor tab includes the following items:</p>
+<ul>
+<li>processor model </li>
+<li>number of processors</li>
+<li>number of cores per processor</li>
+<li>Hyper-Threading status (enabled or disabled)</li>
+<li>CPU assignments </li>
+</ul>
+</section>
+<section id="create"> <title>Creating CPU profiles</title>
+<p>To create a CPU profile:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
+</li>
+<li>
+<p>Click the <b>Processor</b> tab.</p>
+</li>
+<li>
+<p>Click the <b>Create CPU Profile</b> button.</p>
+
+<p>Clicking this button displays the <b>Create CPU Profile</b> window, where the current CPU assignment can be given a name.</p>
+</li>
+</ol>
+</section>
+<section id="edit"> <title>Editing CPU Assignments</title>
+<p>Currently, the number of platform cores is limited to one for each host. This is indicated by the read-only platform fields that allocate one core from processor 0.</p>
+<p>AVS cores can be configured for each processor independently. This means that the single logical vSwitch running on a compute node can make use of cores in multiple processors, or NUMA nodes. Optimal data path performance is achieved however, when all AVS cores, the physical ports, and the virtual machines that use them, are all running on the same processor. However, having AVS cores on all processors ensures that all virtual machines, regardless of the core they run on, are efficiently serviced. The example allocates two cores from processor 0 to the AVS threads.</p>
+<p>One physical core per processor can be configured as a shared CPU, which can be used by multiple VMs for low-load tasks. To use the shared physical CPU, each VM must be configured with a shared vCPU ID. For more information, see Pinning a vCPU to a Shared Physical CPU.</p>
+<p>All other cores are automatically available for allocation to virtual machine threads.</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
+
+<p>Wait for the host to be reported as Locked.</p>
+</li>
+<li>
+<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
+</li>
+<li>
+<p>Click the <b>Processor</b> tab.</p>
+</li>
+<li>
+<p>Click the <b>Edit CPU Assignments</b> button.</p>
+
+<p>This button is available only when the host is in the locked state.</p>
+
+<p>Clicking this button displays the <b>Edit CPU Assignments</b> window, where the current CPU assignment can be changed.</p>
+</li>
+</ol>
+</section>
+<section id="shared"> <title>Designating Shared Physical CPUs on a Compute Host</title>
+<p>You can designate one shared physical CPU per physical processor on a compute host to run low-load or non-realtime tasks for multiple VMs, freeing other cores on the host for dedicated high-load tasks.
+You can use the web administration interface or the CLI to set up shared physical CPUs.</p>
+<p>To designate shared CPUs:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
+
+<p>Wait for the host to be reported as Locked.</p>
+</li>
+<li>
+<p>In the <b>Host Name</b> column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
+</li>
+<li>
+<p>Click the <b>Processor</b> tab.</p>
+</li>
+<li>
+<p>Click <b>Edit CPU Assignments</b>.</p>
+
+<p>This control is available only if the host is locked.</p>
+</li>
+<li>
+<p>In the <b>Edit CPU Assignments</b> screen, use the <b>Shared Function</b> section to enable shared physical CPUs.</p>
+
+<p>You can designate one core on each physical processor for use as a shared physical CPU. The actual core is assigned from the pool of available cores for the processor.</p>
+
+<p>For example, to use a core on processor 0 as a shared physical CPU, set the # of Shared Physical Cores on Processor 0 to 1. Valid values are 1 (to assign a core as a shared physical CPU) or 0 (if a shared physical CPU is not required on the processor.)</p>
+</li>
+</ol>
+<p>To configure a VM to use a shared physical CPU, see Pinning a vCPU to a Shared Physical CPU.</p>
+<p>To add or remove a shared physical CPU from the CLI, use a command of the following form:</p>
+<codeblock>
+  <codeph>system host-cpu-modify -f shared -p&lt;processor&gt; use_shared &lt;hostname&gt;
+
+where: 
+* `processor` is the number of the physical processor (0 or 1)
+* `use_shared` specifies whether to use a shared physical CPU (0 for no, 1 for yes)
+* `hostname` is the name of the compute host
+</codeph>
+</codeblock>
+<p>For example, to set up a shared physical CPU on processor 0 of compute-0:</p>
+<p>~(keystone_admin)$ system host-cpu-modify -f shared -p0 1 compute-0</p>
+</section>
+<section id="numa"> <title>Viewing NUMA Node Resources on a Host</title>
+<p>You can use the CLI to display the NUMA node resources for a host.</p>
+<p>Host NUMA nodes can be pinned, or assigned for use by VMs.</p>
+<p>For example, a VM can be configured to use NUMA node 0, so that when the VM is launched or migrated, the virtual machine scheduler locates a host node with an available NUMA node 0, and dedicates that NUMA node for use by the VM. For more about pinning NUMA nodes, see Pinning a Guest NUMA Node to a Host NUMA Node.</p>
+<p>The resources of the pinned NUMA node, including the number of available CPUS and the available memory, must be sufficient to meet the requirements of the VM, which can be specified independently. For more about specifying NUMA node requirements for a VM, see Configuring the NUMA Node Allocations for a VM.</p>
+<p>To ensure that a given host NUMA node can support the VM requirements, you can review the CPU and memory complements for host NUMA nodes.</p>
+<p>To view the CPU complement for a NUMA Node (that is, for a socketed physical processor), use the vm-topology command.</p>
+<p>
+  <xref type="section" href="#topic6788"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

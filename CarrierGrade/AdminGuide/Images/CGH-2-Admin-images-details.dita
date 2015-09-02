@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic788">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Viewing Image Details</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Images/1.1commercial.dashboard.images.details.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/images/details/--></p>
+<p>To view image details:
+1. <xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+<ol>
+<li>
+<p>Click the <b>Images</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>Click the name of the image.</p>
+</li>
+</ol>
+<p>**Note:** When your cursor is on the image name, the name is underlined.</p>
+<ol>
+<li>
+<p>The Image Details screen shows detailed information about the image, including:</p>
+
+<ul>
+<li>name and ID</li>
+<li>status</li>
+<li>creation and modification date(s)</li>
+<li>size</li>
+<li>formats</li>
+<li>size</li>
+</ul>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic788"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

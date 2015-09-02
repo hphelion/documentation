@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2091">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Creating, Editing, and Deleting Volumes</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Volumes/1.1commercial.dashboard.volume.create.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/volume/create/--></p>
+<p>Volumes are block devices that can be attached to instances.</p>
+<section id="create-a-volume"> <title>Create a volume</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Compute</b> tab on the dashboard <b>Project</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Compute</b> panel, click <b>Volumes</b>.</p>
+</li>
+<li>
+<p>Click <b>Create Volume</b>.</p>
+</li>
+<li>
+<p>In the <b>Create Volume</b> dialog box, enter the relevant information for the volume:</p>
+
+<ul>
+<li>
+<p>
+<b>Volume Name:</b> Enter a name for the volume</p>
+</li>
+<li>
+<p>
+<b>Description:</b> Provide a brief description (optional).</p>
+</li>
+<li>
+<p>
+<b>Type:</b> Leave this field blank</p>
+</li>
+<li>
+<p>
+<b>Size:</b> Enter the size of the volume in gigabytes</p>
+</li>
+<li>
+<p>
+<b>Volume Source:</b> Select one of the following options:</p>
+
+<ul>
+<li>No source, empty volume - creates an empty volume and does not contain a file system or a partition table  </li>
+<li>Image - a new field for Use image as a source displays. You can select the image from the list.  </li>
+</ul>
+</li>
+<li>
+<b>Availability Zone:</b> Select the availability zone. By default, this value is set to 'any availability zone'.  </li>
+</ul>
+</li>
+<li>
+<p>Click <b>Create Volume</b> to confirm.</p>
+</li>
+</ol>
+</section>
+<section id="edit-a-volume"> <title>Edit a volume</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Compute</b> tab on the dashboard <b>Project</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Compute</b> panel, click <b>Volumes</b>.</p>
+</li>
+<li>
+<p>Under the <b>Actions</b> column, click <b>Edit Volume</b>, next to the volume you want to edit.    .</p>
+</li>
+<li>
+<p>In the <b>Edit Volume</b> dialog box, modify the name and description.</p>
+</li>
+<li>
+<p>Click <b>Edit Volume</b> to confirm.</p>
+
+<p>
+<b>Note:</b> You can <xref href="../../../UseCases/TasksforUsers/Volumes/1.1commercial.dashboard.volume.extend.dita" >extend a volume</xref> by using the <b>Extend Volume</b> option available in the <b>More</b> drop-down list and entering the new value for volume size.</p>
+</li>
+</ol>
+</section>
+<section id="delete-a-volume"> <title>Delete a volume</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Compute</b> tab on the dashboard <b>Project</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Compute</b> panel, click <b>Volumes</b>.</p>
+</li>
+<li>
+<p>Select the volume(s) that you want to delete.</p>
+</li>
+<li>
+<p>Click <b>Delete Volume</b> to confirm.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic2091"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

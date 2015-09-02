@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic id="psa1420733173602" xml:lang="en-us">
+
+
+<!-- Modification History
+
+
+  Draft template 08/07/2014      
+
+
+-->
+
+
+    <title >Patching Using the Web Administration Interface</title>
+
+
+    <shortdesc >Use the web management interface to upload, delete, apply, and remove
+
+
+        patches.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Pedro Sanchez</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <section id="section_N1001F_N1001C_N10001" >
+
+
+            <p >This section presents a example patching workflow using the single
+
+
+                patch PATCH_0001. </p>
+
+
+        </section>
+
+
+        <ol>
+
+
+            <li id="li_N1002B_N10028_N1001C_N10001" >
+
+
+                <p >Log in to the web administration interface as the
+
+
+                        <b >admin</b> user.</p>
+
+
+            </li>
+
+
+            <li id="li_N10038_N10028_N1001C_N10001" >
+
+
+                <p >Visit the <wintitle >Patches</wintitle> page to see the current patch
+
+
+                    status.</p>
+
+
+                
+
+
+                    <p >Click the <uicontrol >Admin</uicontrol> tab on the System Panel, select
+
+
+                            <uicontrol >Inventory</uicontrol> to display the <wintitle >System
+
+
+                            Inventory</wintitle> page, and then click the
+
+
+                            <uicontrol >Patches</uicontrol> tab.</p>
+
+
+                
+
+
+                
+
+
+                    <p >The <wintitle >Patches</wintitle> page is
+
+
+                        displayed presenting the current status of all patches uploaded to the
+
+
+                        system. If there are no patches, an empty page is displayed as illustrated
+
+
+                        below.</p>
+
+
+                    <fig id="fig_bgj_f23_rq" >
+
+
+                        <image href="psa1420749412637.image" id="image_hrp_h23_rq"  width="550">
+
+
+                            <alt >TiS patches page</alt>
+
+
+                        </image>
+
+
+                    </fig>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N1007A_N10028_N1001C_N10001" >
+
+
+                <p >Upload the patch file to the patch storage area.</p>
+
+
+                
+
+
+                    <p >Click the <uicontrol >Upload
+
+
+                            Patch</uicontrol> button to display an upload window from which you can
+
+
+                        browse your workstation's file system to select the patch file. Press the
+
+
+                            <uicontrol >Upload Patch</uicontrol> button once the
+
+
+                        selection is done.</p>
+
+
+                
+
+
+                
+
+
+                    <p >The patch file is available now in the patch storage area, but it has yet to
+
+
+                        be applied to the cluster. This is reflected in the
+
+
+                            <wintitle >Patches</wintitle> page as illustrated below.</p>
+
+
+                    <fig id="fig_yrl_jf3_rq" >
+
+
+                        <image href="psa1420750069946.image" id="image_uv3_4f3_rq"  width="550">
+
+
+                            <alt >TiS patches available</alt>
+
+
+                        </image>
+
+
+                    </fig>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N100B0_N10028_N1001C_N10001" >
+
+
+                <p >Apply the patch.</p>
+
+
+                
+
+
+                    <p >Click the <uicontrol >Apply
+
+
+                            Patch</uicontrol> button associated with the patch. Alternatively,
+
+
+                        select the patch first using the selection boxes on the left, and then click
+
+
+                        the <uicontrol >Apply Patches</uicontrol> button at the top.
+
+
+                        You can use this selection process to apply all patches, or a selected
+
+
+                        subset, in a single operation.</p>
+
+
+                
+
+
+                
+
+
+                    <p >The <wintitle >Patches</wintitle> page is updated to report the patch to be in
+
+
+                        the <i >Partial-Apply</i> state.</p>
+
+
+                    <fig id="fig_kmj_ng3_rq" >
+
+
+                        <image href="psa1420750565559.image" id="image_z2n_qg3_rq"  width="550">
+
+
+                            <alt >TiS patches partial-apply</alt>
+
+
+                        </image>
+
+
+                    </fig>
+
+
+                    <p >The <uicontrol >Hosts</uicontrol> tab on the <wintitle >System
+
+
+                            Inventory</wintitle> page is also updated to reflect the new status of
+
+
+                        the hosts with respect to the new patch state. As illustrated in the
+
+
+                        following image, both controllers are now reported as not patch current and
+
+
+                        requiring reboot.</p>
+
+
+                    <fig id="fig_ix5_dh3_rq" >
+
+
+                        <image href="psa1420750853151.image" id="image_lvt_gh3_rq"  width="550">
+
+
+                            <alt >TiS patch host not patch current</alt>
+
+
+                        </image>
+
+
+                    </fig>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N10107_N10028_N1001C_N10001" >
+
+
+                <p >Install the patch on <b >controller-0</b>.</p>
+
+
+                <ol id="ol_gvv_wh3_rq">
+
+
+                    <li >
+
+
+                        <p >Transfer active services to the standby controller.</p>
+
+
+                        
+
+
+                            <p >Swact <b >controller-0</b> using the <option >Swact
+
+
+                                    Host</option> option from the <uicontrol >More</uicontrol> button
+
+
+                                associated with the host.</p>
+
+
+                            <fig id="fig_rm4_533_rq" >
+
+
+                                <image href="psa1420751608971.image" id="image_pfy_x33_rq"  width="150">
+
+
+                                    <alt >TiS swact option</alt>
+
+
+                                </image>
+
+
+                            </fig>
+
+
+                            <note id="note_N1013D_N10119_N10112_N1010E_N10103_N10028_N1001C_N10001" >
+
+
+                                <p >Access to the web administration interface may be lost briefly
+
+
+                                    during the active controller transition. You may have to log in
+
+
+                                    as user <b >admin</b> again.</p>
+
+
+                            </note>
+
+
+                        
+
+
+                        
+
+
+                            <p >After a suitable delay, <b >controller-1</b>
+
+
+                                becomes the active controller and
+
+
+                                    <b >controller-0</b> is the standby
+
+
+                                controller. It is safe then to install the patch.</p>
+
+
+                            <fig id="fig_uww_tj3_rq" >
+
+
+                                <image href="psa1420752134726.image" id="image_wdr_bk3_rq"  width="550">
+
+
+                                    <alt >TiS patch swact active controller</alt>
+
+
+                                </image>
+
+
+                            </fig>
+
+
+                        
+
+
+                    </li>
+
+
+                    <li >
+
+
+                        <p >Install the patch.</p>
+
+
+                        
+
+
+                            <p >Select the <option >Install Patches</option> option from the
+
+
+                                    <uicontrol >More</uicontrol> button associated with
+
+
+                                    <b >controller-0</b>. </p>
+
+
+                            <fig id="fig_cxx_hl3_rq" >
+
+
+                                <image href="psa1420752753002.image" id="image_mh4_kl3_rq"  width="150">
+
+
+                                    <alt >TiS install patches option</alt>
+
+
+                                </image>
+
+
+                            </fig>
+
+
+                            <p >A confirmation window is presented giving you a last
+
+
+                                opportunity to cancel the operation before proceeding. Note that the
+
+
+                                patching sequence reboots the host in order to install the
+
+
+                                patches.</p>
+
+
+                            <fig id="fig_jbq_y43_rq" >
+
+
+                                <image href="psa1420754416884.image" id="image_bs4_cp3_rq"  width="450">
+
+
+                                    <alt >TiS patches confirm installation</alt>
+
+
+                                </image>
+
+
+                            </fig>
+
+
+                        
+
+
+                        
+
+
+                            <p >The patch is now installed on <b >controller-0</b> which resumes operation as the
+
+
+                                standby controller.</p>
+
+
+                            <fig id="fig_el2_4p3_rq" >
+
+
+                                <image href="psa1420754739770.image" id="image_nd4_tp3_rq"  width="550">
+
+
+                                    <alt >TiS patch installed controller-0</alt>
+
+
+                                </image>
+
+
+                            </fig>
+
+
+                        
+
+
+                    </li>
+
+
+                    <li >
+
+
+                        <p >Let <b >controller-0</b> resume the active controller role.</p>
+
+
+                        
+
+
+                            <p >Select the <option >Swact
+
+
+                                    Host</option> option again on either controller to transition
+
+
+                                    <b >controller-0</b> to the
+
+
+                                active controller role. </p>
+
+
+                        
+
+
+                        
+
+
+                            <p >The updated host list looks then as follows:</p>
+
+
+                            <fig id="fig_grm_ys3_rq" >
+
+
+                                <image href="psa1420756289090.image" id="image_qxb_2t3_rq"  width="550">
+
+
+                                    <alt >TiS patch installed acrive
+
+
+                                        controller-0</alt>
+
+
+                                </image>
+
+
+                            </fig>
+
+
+                        
+
+
+                    </li>
+
+
+                </ol>
+
+
+            </li>
+
+
+            <li id="li_N1020A_N10028_N1001C_N10001" >
+
+
+                <p >Install the patch on <b >controller-1</b>.</p>
+
+
+                
+
+
+                    <p >Select the <option >Install Patches</option>
+
+
+                        option from the <uicontrol >More</uicontrol> button
+
+
+                        associated with <b >controller-1</b> in
+
+
+                        the <wintitle >Hosts</wintitle> window, and wait for the host to resume its
+
+
+                        standby controller role.</p>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N1022B_N10028_N1001C_N10001" >
+
+
+                <p >Verify the state of the patch.</p>
+
+
+                
+
+
+                    <p >Visit the <wintitle >Patches</wintitle> page again. The patch is now in the
+
+
+                            <i >Applied</i> state as illustrated below.</p>
+
+
+                    <fig id="fig_mvq_153_rq" >
+
+
+                        <image href="psa1420756752042.image" id="image_bld_f53_rq"  width="550">
+
+
+                            <alt >TiS patches applied</alt>
+
+
+                        </image>
+
+
+                    </fig>
+
+
+                
+
+
+            </li>
+
+
+        </ol>
+
+
+
+
+
+            <p >The patch is applied now, all affected hosts have been updated.</p>
+
+
+            <p >Patches can be removed using the <uicontrol >Remove
+
+
+                    Patches</uicontrol> button from the <wintitle >Patches</wintitle> page. The workflow is similar to the one presented in this
+
+
+                section, with the exception that patches are being removed from each host instead of
+
+
+                being applied.</p>
+
+
+
+
+
+    </body>
+
+
+</topic>

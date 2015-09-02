@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic804">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing Instances</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Instances/1.1commercial.managing.instances.users.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/instances/users/--></p>
+<p>You can use the dashboards to manage instances created by other users.</p>
+<p>Use the <b>Compute</b> panel on the <b>Project</b> dashboard to:</p>
+<ul>
+<li>
+<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.create.dita" >Create a new instance</xref>
+</li>
+<li>
+<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.terminate.dita" >Terminate an instance</xref>
+</li>
+<li>
+<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.reboot.dita" >Reboot an instance</xref>
+</li>
+<li>
+<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.rebuild.dita" >Rebuild an instance</xref>
+</li>
+<li>
+<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.suspend.dita" >Suspend and resume an instance</xref>
+</li>
+<li>
+<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.pause.dita" >Pause and resume an instance</xref>
+</li>
+<li>
+<xref href="../../../UseCases/TasksforAdmins/Images/1.1commercial.dashboard.snapshot.public.dita" >Create an instance snapshot</xref>
+</li>
+</ul>
+<p>You can also <xref href="../../../UseCases/TasksforUsers/IP_Addresses/1.1commercial.managing.ipaddress.dita" >associate, or assign, a floating IP address</xref> to an instance. A floating IP address makes the instance available on the external network.</p>
+<p>
+  <xref type="section" href="#topic804"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: How to use the Helion
+    Dashboard</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Michael B"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.md-->
+ <!--permalink: /helion/openstack/carrier/dashboard/how-works/--></p>
+<p>The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Carrier Grade.</p>
+<p>The interface, based on OpenStack Horizon, is grouped into tabs, including <xref type="section"
+        href="#topic6108/DashProject">Project</xref>, <xref type="section"
+        href="#topic6108/DashAdmin">Admin</xref> and <xref type="section"
+        href="#topic6108/DashIdent">Identity</xref>. The tabs expand and contract to show available
+      commands grouped into <b>panels</b>.</p>
+<p>Across the top are menus to switch between projects and menus where you can access user settings.</p>
+<!-- 
+  <p>
+      <image href="../../../media/CGH-Helion-Window-RC.png"></image></p>
+   -->
+<p>How you interact with your network environment depends upon your user type, either an administrative user or a non-administrative user (user). In general, a non-admin user can make changes to projects to which that user is associated. Admin users can make changes throughout the domain.</p>
+<p>To access the dashboard, <xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >enter the dashboard URL in a supported browser and log in</xref>.</p>
+<p>At the bottom of this page, you can see some of the services you can manage right from the dashboard.</p>
+<section id="DashProject"> <title>Project tab</title>
+<p>Use the <b>Project</b> tab to implement and build out your cloud. This dashboard contains tools
+        to create virtual server instances, create and configure your network, configure access
+        tools (such as key pairs and security groups) and cloud resource templates (stacks).</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>Menu item</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="col1" nameend="col2">System Panel</entry>
+            </row>
+            <row>
+              <entry> Instances</entry>
+              <entry>Controls for managing instances associated with the tenant, including controls
+                for creating snapshots. </entry>
+            </row>
+            <row>
+              <entry>Server Groups</entry>
+              <entry>Controls for managing server groups associated with the tenant. KVM region
+                only.</entry>
+            </row>
+            <row>
+              <entry>Volumes</entry>
+              <entry>Controls for managing virtual disk volumes associated with the tenant's
+                instances. </entry>
+            </row>
+            <row>
+              <entry>Images &amp; Snapshots</entry>
+              <entry>Controls for managing images, and information about available snapshots created
+                from instances.</entry>
+            </row>
+            <row>
+              <entry>Access &amp; Security</entry>
+              <entry>Controls for network protocol and port security, SSH-based access to virtual
+                machines, API access to services, and floating IP address allocations. </entry>
+            </row>
+            <row>
+              <entry namest="col1" nameend="col2">Network Panel</entry>
+            </row>
+            <row>
+              <entry>Topology</entry>
+              <entry>Configuration charts depicting system networks, instances, and network
+                connections between instances. </entry>
+            </row>
+            <row>
+              <entry>Networks</entry>
+              <entry>Controls for managing networks for the current tenant, and viewing QoS (Quality
+                of Service) policies or weightings for tenants of which the user is a member.
+              </entry>
+            </row>
+            <row>
+              <entry>Routers</entry>
+              <entry>Controls for managing virtual routers. Tenant members can create and delete
+                virtual routers, view router details and delete interfaces, and clear gateways.
+              </entry>
+            </row>
+            <row>
+              <entry namest="col1" nameend="col2">Object Store</entry>
+            </row>
+            <row>
+              <entry> Containers</entry>
+              <entry>Controls for mamaging storage containers. A container is a storage compartment
+                for your data and provides a way for you to organize your data. </entry>
+            </row>
+            <row>
+              <entry namest="col1" nameend="col2">Orchestration Panel</entry>
+            </row>
+            <row>
+              <entry> Stacks</entry>
+              <entry>Details for existing services (stacks), and controls for creating new services
+                (launching stacks). Service details include topologies, resource allocations, and
+                event histories. </entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="DashAdmin"> <title>Admin tab</title>
+<p>Use the <b>Admin</b> tab to view, allocate, and manage all resources within the cloud.</p>
+<p>The Admin tab allows you to manage instances, define flavors, create and configure images, manage
+        networks, view system resources, manage projects, and manage users.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <thead>
+            <row rowsep="1">
+              <entry>Menu item</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="col1" nameend="col2">System Panel</entry>
+            </row>
+            <row>
+              <entry>Overview</entry>
+              <entry>Performance charts for system health monitoring, including hosts status,
+                provider-network port utilization, and compute node processing, memory, and disk
+                usage. </entry>
+            </row>
+            <row>
+              <entry>Resource Usage</entry>
+              <entry> Tools for performing Ceilometer database queries using real-time or collected
+                data, to support detailed performance analysis. *KVM servers only*
+              </entry>
+            </row>
+            <row>
+              <entry>Inventory</entry>
+              <entry>Controls for managing systems, hosts, and standardized CPU, port, or storage
+                profiles that can be applied to hosts. *KVM servers only* </entry>
+            </row>
+            <row>
+              <entry>Host Aggregates</entry>
+              <entry>Charts for monitoring hypervisor resource usage on compute nodes. *Non-KVM
+                servers only* </entry>
+            </row>
+            <row>
+              <entry>Hypervisors</entry>
+              <entry>Charts for monitoring hypervisor resource usage on compute nodes. </entry>
+            </row>
+            <row>
+              <entry>Instances</entry>
+              <entry>Controls for managing virtual-machine instances. </entry>
+            </row>
+            <row>
+              <entry>Server Groups</entry>
+              <entry>Controls for managing server groups across all tenants. Server groups are
+                collections of instances sharing common attributes. *KVM servers only*
+              </entry>
+            </row>
+            <row>
+              <entry>Volumes</entry>
+              <entry>Controls for managing virtual disk volumes available for use with instances.
+                The virtual volumes are implemented using storage volumes defined for the storage
+                nodes in the system. </entry>
+            </row>
+            <row>
+              <entry>Flavors</entry>
+              <entry>Controls for managing standardized processor, disk, and memory complements
+                (flavors) that can be applied to virtual machines. </entry>
+            </row>
+            <row>
+              <entry>Images</entry>
+              <entry>Controls for managing disk images used to initialize and configure virtual
+                machines. </entry>
+            </row>
+            <row>
+              <entry>Networks</entry>
+              <entry>Controls for managing tenant networks, provider networks, and QoS (Quality of
+                Service) policies or tenant weightings. </entry>
+            </row>
+            <row>
+              <entry>Routers</entry>
+              <entry>Controls for managing virtual routers. Administrators can list the virtual
+                routers created for tenants, view router and interface details, and delete routers.
+              </entry>
+            </row>
+            <row>
+              <entry>Defaults</entry>
+              <entry>Controls for viewing and setting the default quota values for new tenants.
+              </entry>
+            </row>
+            <row>
+              <entry>Fault Management</entry>
+              <entry>System alarms. *KVM servers only* </entry>
+            </row>
+            <row>
+              <entry>System Configuration</entry>
+              <entry>System configuration updates. *KVM servers only* </entry>
+            </row>
+            <row>
+              <entry>System Info</entry>
+              <entry>Status information for services and network agent processes, availability
+                zones, and host aggregates. </entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="DashIdent"> <title>Identity tab</title>
+<p>Use the <b>Identity</b> tab to create and delete users, change user passwords, assign users to
+        projects, and other tasks.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>Menu item</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Projects</entry>
+              <entry>Controls for managing tenants. </entry>
+            </row>
+            <row>
+              <entry>Users</entry>
+              <entry>Controls for managing user accounts. </entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+<!--
+## Settings dashboard<a name="DashSettings"></a>
+
+Use the **Settings** dashboard to change your display language and settings, your time zone, and your password.
+ 
+Click **Settings** in the user menu to display the Settings dashboard. 
+
+For a look at the dashboard options, see [Horizon Overview](/helion/openstack/1.1/services/horizon/overview/)
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top </a>
+-->
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

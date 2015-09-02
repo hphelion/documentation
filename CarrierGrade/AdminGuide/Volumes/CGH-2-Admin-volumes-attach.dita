@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1625">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Attaching and Detaching Volume Instances</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Volumes/1.1commercial.dashboard.volume.attach.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/volume/attach/--></p>
+<p>After you've created one or more volumes, you can attach them to instances, one instance at a time.</p>
+<section id="attach-a-volume-to-an-instance"> <title>Attach a volume to an instance</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Compute</b> tab on the dashboard <b>Project</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Compute</b> panel, click <b>Volumes</b>.</p>
+</li>
+<li>
+<p>Select the volume to add to an instance and click <b>Edit Attachments</b>.</p>
+</li>
+<li>
+<p>In the <b>Manage Volume Attachments</b> dialog box, select an instance.</p>
+</li>
+<li>
+<p>Enter the name of the device from which the volume is accessible by the instance. (<b>Note:</b> The actual device name might differ from the volume name because of hypervisor settings.)</p>
+</li>
+<li>
+<p>Click <b>Attach Volume</b>.</p>
+</li>
+</ol>
+<p>The dashboard shows the instance to which the volume is now attached and the device name. You can view the status of a volume in the Volumes tab of the dashboard. The volume is either Available or In-use. Now you can log in to the instance and mount, format, and use the disk.</p>
+</section>
+<section id="detach-a-volume-from-a-vm-instance"> <title>Detach a volume from a VM instance</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Compute</b> tab on the dashboard <b>Project</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Compute</b> panel, click <b>Volumes</b>.</p>
+</li>
+<li>
+<p>Select the volume you want to detach and click <b>Edit Attachments</b>.</p>
+</li>
+<li>
+<p>Click <b>Detach Volume</b> to confirm your changes.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1625"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

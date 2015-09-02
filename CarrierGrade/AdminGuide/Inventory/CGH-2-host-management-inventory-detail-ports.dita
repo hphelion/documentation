@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1730">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Viewing Host Port Details</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-ports.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/ports/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>The tab Ports on the Inventory Detail page presents information about the physical ports on a host, as illustrated below.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in regionone.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>Currently none of the port attributes is configurable; they are all read directly from the hardware.</p>
+<p>To view the host ports:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
+</li>
+<li>
+<p>Click the <b>Ports</b> tab.</p>
+</li>
+</ol>
+<p>Port information is presented in several columns, as follows:</p>
+<ul>
+<li>Name - The name of the physical port, as identified by the host's Linux kernel.</li>
+<li>MAC Address - The port's unique MAC address.</li>
+<li>PCI Address - The port's unique address on the PCI bus. Together with the MAC address, this field can be used to uniquely identify a port on the host's hardware platform.</li>
+<li>Processor - The processor node that the port's IO controller is connected to.</li>
+<li>Auto Negotiation - The status of the Ethernet auto-negotiation flag. Currently, auto-negotiation is always enabled.</li>
+<li>Boot Interface - The boot flag, whether or not PXE booting is enabled.</li>
+<li>Device Type - Hardware information about the port type, manufacturer, and model.</li>
+</ul>
+<p>
+  <xref type="section" href="#topic1730"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

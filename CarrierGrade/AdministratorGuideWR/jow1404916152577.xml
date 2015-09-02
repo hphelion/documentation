@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic id="jow1404916152577" xml:lang="en-us">
+
+
+<!-- Modification History
+
+
+        
+
+
+-->
+
+
+    <title >Reporting a Guest Metric</title>
+
+
+    <shortdesc >You can collect and report performance metrics from individual guest
+
+
+        instances.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Jim Owens</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <section id="section_N1003D_N10024_N10001" >
+
+
+            <p >To enable the guest to push information to Ceilometer, <i>heat-cfntools</i> must be installed on the guest.</p>
+
+
+            <p >To send data to Ceilometer on the controller, the guest must have the
+
+
+                correct controller IP address specified in the file <filepath >/etc/heat/heat.conf</filepath>.</p>
+
+
+            <note id="note_N1005A_N1004B_N1001F_N10001"  type="caution">
+
+
+                <p >If the controller IP address changes after an instance is
+
+
+                    launched (because the HP Helion OpenStack Carrier Grade's external OAM network address has been
+
+
+                    manually reconfigured), the instance will be unable to send metrics. To update
+
+
+                    the controller IP address, restart the instance.</p>
+
+
+            </note>
+
+
+        </section>
+
+
+        <section id="section_N10027_N10024_N10001" >
+
+
+            <p >Ceilometer can accept data from meters that run directly on guest
+
+
+                instances, integrating it with data from meters that run on the server and
+
+
+                periodically query the instances. The data is pushed to the controller using
+
+
+                CloudWatch and <i>heat-cfntools</i>.</p>
+
+
+            <p >Guest-based metrics can offload platform processors and improve
+
+
+                real-time monitoring for services such as thresholding, alarms, CSV file generation,
+
+
+                and heat triggers. This example draws on the sample file <filepath >CPUScale.yaml</filepath> to develop a guest-based metric that scales a service
+
+
+                based on CPU usage.</p>
+
+
+            <p >To launch an example of guest-based performance monitoring from the
+
+
+                web administration interface, see <xref href="jow1404333812899.xml" />. For more information about Ceilometer, see <xref href="jow1404333645456.xml" />. </p>
+
+
+        </section>
+
+
+        <ol>
+
+
+            <li id="li_N1005C_N10059_N1001F_N10001" >
+
+
+                <p >In the Parameters section, define any parameters to be used in the
+
+
+                    template.</p>
+
+
+                
+
+
+                    <p >The use of parameters is optional. You can use them as required to improve
+
+
+                        readability and modularity. This example shows the parameters used in the
+
+
+                        remaining ol. </p>
+
+
+                
+
+
+              
+
+
+                    <codeblock >Parameters
+
+
+...
+
+
+    CustomMeterName:
+
+
+        Description: Ceilometer meter to store 
+
+
+        Type: String
+
+
+        Default: 'guest_cpu_avg'
+
+
+    CustomMeterUnit:
+
+
+        Description: Ceilometer meter unit
+
+
+        Type: String
+
+
+        Default: '%'
+
+
+    MetricHighWaterMark:
+
+
+        Description: Metric value that will trigger a scale out if exceeded
+
+
+        Type: String
+
+
+        Default: '60'
+
+
+    MetricLowWaterMark:
+
+
+        Description: Metric value that will trigger a scale in if below
+
+
+        Type: String
+
+
+        Default: '5'</codeblock>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N10076_N10059_N1001F_N10001" >
+
+
+                <p >Initialize the service with a script that takes a measurement and returns a
+
+
+                    result.</p>
+
+
+                
+
+
+                    <p >In this example, drawn from the sample file
+
+
+                            <filepath >CPUScale.yaml</filepath>, the file /etc/cfn/get_cpu_load is
+
+
+                        created to retrieve the current CPU load average and perform an averaging
+
+
+                        calculation.</p>
+
+
+                
+
+
+                
+
+
+                    <codeblock >AWS::CloudFormation::Init :
+
+
+    config:
+
+
+        files:
+
+
+. . .
+
+
+            /etc/cfn/get_cpu_load:
+
+
+              content:
+
+
+                Fn::Base64:
+
+
+                  Fn::Replace:
+
+
+                  - 'AWS::StackName': {Ref: 'AWS::StackName'}
+
+
+                  - |
+
+
+                    #!/usr/bin/python
+
+
+                    # Get the 1 minute CPU load average and divide by num cores
+
+
+                    import os
+
+
+                    num_cores = 1
+
+
+                    ncpus = os.sysconf("SC_NPROCESSORS_ONLN")
+
+
+                    if isinstance(ncpus, int) and ncpus &gt; 0:
+
+
+                        num_cores = ncpus
+
+
+                    loadavg = os.getloadavg()[0]
+
+
+                    # convert to a percentage
+
+
+                    percent = (100 * float(loadavg)) / float(num_cores)
+
+
+                    print percent
+
+
+              mode: '000700'
+
+
+              owner: root
+
+
+              group: root</codeblock>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N10093_N10059_N1001F_N10001" >
+
+
+                <p >Add a script that pushes the result to the Ceilometer service.</p>
+
+
+                
+
+
+                    <codeblock >/etc/cfn/send_guest_metrics:
+
+
+              content:
+
+
+                Fn::Base64:
+
+
+                  Fn::Replace:
+
+
+                  - 'METRIC_NAME': {Ref: 'CustomMeterName'}
+
+
+                    'METRIC_UNIT': {Ref: 'CustomMeterUnit'}
+
+
+                  - |
+
+
+                    #!/bin/sh
+
+
+                    METRIC=`/etc/cfn/get_cpu_load`
+
+
+                    /opt/aws/bin/cfn-push-stats --metric METRIC_NAME --value ${METRIC} --units METRIC_UNIT
+
+
+              mode: '000700'
+
+
+              owner: root
+
+
+              group: root </codeblock>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N100A4_N10059_N1001F_N10001" >
+
+
+                <p >Add a cron job to push the result at regular intervals.</p>
+
+
+                
+
+
+                    <codeblock >/etc/cron.d/cfn_cron:
+
+
+              content:
+
+
+                Fn::Base64:
+
+
+                  Fn::Replace:
+
+
+                  - 'AWS::StackName': {Ref: 'AWS::StackName'}
+
+
+                  - |
+
+
+                    * * * * * root /etc/cfn/send_guest_metrics
+
+
+              mode: '000600'
+
+
+              owner: root
+
+
+              group: root  </codeblock>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N10030_N1002D_N10021_N10001" >
+
+
+                <p >Define an alarm to take action if the pushed measurements meet
+
+
+                    specified criteria.</p>
+
+
+                
+
+
+                    <p >In this example, two alarms
+
+
+                            (<b >OS::Ceilometer::Alarm</b>) are defined. One is
+
+
+                        triggered if the average measurement over a given evaluation period exceeds
+
+
+                        a threshold. The other is triggered if the average measurement falls below a
+
+
+                        threshold. In each case, an action is defined to execute a scaling policy,
+
+
+                        defined separately in the template.</p>
+
+
+                    <codeblock >CPUGuestAlarmHigh:
+
+
+    Type: OS::Ceilometer::Alarm
+
+
+    Properties:
+
+
+      description: Scale-out if the 1 minute avg for the meter is above the threshold
+
+
+      meter_name: {Ref: CustomMeterName}
+
+
+      statistic: avg
+
+
+      period: '60'
+
+
+      evaluation_periods: '1'
+
+
+      threshold: {Ref: MetricHighWaterMark}
+
+
+      alarm_actions: 
+
+
+      - {"Fn::GetAtt": [ServerScaleOutPolicy, AlarmUrl]}
+
+
+      #matching_metadata: {'metadata.user_metadata.groui': {Ref: 'WebServerGroup'}}
+
+
+      comparison_operator: gt
+
+
+CPUGuestAlarmLow:
+
+
+    Type: OS::Ceilometer::Alarm
+
+
+    Properties:
+
+
+      description: Scale-in if the 1 minute avg for the meter is below the threshold
+
+
+      meter_name: {Ref: CustomMeterName}
+
+
+      statistic: avg
+
+
+      period: '60'
+
+
+      evaluation_periods: '1'
+
+
+      threshold: {Ref: MetricLowWaterMark}
+
+
+      repeat_actions: True
+
+
+      alarm_actions: 
+
+
+      - {"Fn::GetAtt": [ServerScaleInPolicy, AlarmUrl]}
+
+
+      #matching_metadata: {'metadata.user_metadata.groui': {Ref: 'WebServerGroup'}}
+
+
+      comparison_operator: lt</codeblock>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N100D3_N10059_N1001F_N10001" >
+
+
+                <p >Define the scaling policies.</p>
+
+
+                
+
+
+                    <codeblock >ServerScaleOutPolicy:
+
+
+    Type: AWS::AutoScaling::ScalingPolicy
+
+
+    Properties:
+
+
+      AdjustmentType: ChangeInCapacity
+
+
+      AutoScalingGroui: {Ref: WebServerGroup}
+
+
+      Cooldown: '60'
+
+
+      ScalingAdjustment: '1'
+
+
+  ServerScaleInPolicy:
+
+
+    Type: AWS::AutoScaling::ScalingPolicy
+
+
+    Properties:
+
+
+      AdjustmentType: ChangeInCapacity
+
+
+      AutoScalingGroui: {Ref: WebServerGroup}
+
+
+      Cooldown: '60'
+
+
+      ScalingAdjustment: '-1'</codeblock>
+
+
+                
+
+
+            </li>
+
+
+        </ol>
+
+
+    </body>
+
+
+</topic>

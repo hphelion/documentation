@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic902">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Making an Image Public</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforAdmins/Images/1.1commercial.dashboard.snapshot.public.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/images/public/--></p>
+<p>When you <xref href="../../../UseCases/TasksforUsers/Images/1.1commercial.dashboard.images.create.dita" >create an image</xref> or an <xref href="../../../UseCases/TasksforUsers/Images/1.1commercial.dashboard.snapshot.protect.dita" >image snapshot</xref>, as an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.</p>
+<section id="make-an-image-public"> <title>Make an image public</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Images</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Images</b> screen, for the image you want to protect, click <b>More &gt; Edit</b>.</p>
+</li>
+<li>In the <b>Update Image</b> screen, select <b>Public</b>.</li>
+<li>Click <b>Update Image</b>.</li>
+</ol>
+<p>The image is public and available to all projects in the domain.</p>
+<p>
+  <xref type="section" href="#topic902"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4214">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Working with Hardware Profiles</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/hardware/--></p>
+<p>A hardware profile is a named object that captures a particular host configuration. The profile can be applied to any other host with a similar hardware configuration.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in regionone.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>The following types of hardware profiles are available from the Systems Inventory page, each presented on a separate tab:</p>
+<ul>
+<li>
+<xref type="section" href="#topic4214/cpu">Viewing CPU Profiles</xref>
+</li>
+<li>
+<xref type="section" href="#topic4214/interface">Viewing Interface Profiles</xref>
+</li>
+<li>
+<xref type="section" href="#topic4214/storage">Viewing Storage Profiles</xref>
+</li>
+<li>
+<xref type="section" href="#topic4214/memory">Memory Profiles</xref>
+</li>
+</ul>
+<p>Once a hardware profile is defined, it can be applied to any host where it makes sense to be applied to change its configuration.</p>
+<section id="cpu"> <title>Viewing CPU Profiles</title>
+<p>A CPU profile is a named assignment of processors and cores to one or more of the following types of processing threads:</p>
+<ul>
+<li>
+<b>Platform</b> - System threads handling the core hosting functionality of the host. Platform threads are always present on all types of hosts in the cluster.</li>
+<li>
+<b>vSwitch</b> - AVS threads dedicated to handling network traffic and packet processing tasks. They exists on the compute nodes only.</li>
+<li>
+<b>Shared</b> - Threads handling low-load or non-real-time virtual machine tasks, implemented on a shared physical CPU in a compute node.</li>
+<li>
+<b>Virtual Machines</b> - Threads handling virtual machines. They exists on the compute nodes only.</li>
+</ul>
+<p>On controller and storage nodes, all processors and cores are automatically assigned to platform threads, as they are the only ones available. On compute nodes, which always run a number of threads of all types, a default CPU allocation is done automatically when the system software is initially installed.</p>
+<p>To view information on CPU profiles:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>CPU Profiles</b> tab.</p>
+
+<p>A list of the currently defined CPU profiles displays.</p>
+</li>
+</ol>
+<p>CPU profiles can be deleted using the button Delete CPU Profiles on this page. When clicked, it deletes all selected profiles in the list.</p>
+<p>The delete operation does not affect CPU profiles already applied.</p>
+</section>
+<section id="interface"> <title>Viewing Interface Profiles</title>
+<p>An interface profile is a named configuration of Ethernet ports and interfaces on a host.</p>
+<ul>
+<li>
+<b>Ethernet Ports</b> - The list of physical Ethernet ports that have been allocated to connect to a network.</li>
+<li>
+<b>Interfaces</b> - Logical L2 interfaces defined on top of physical Ethernet ports.</li>
+</ul>
+<p>To view information on interface profiles:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Interface Profiles</b> tab.</p>
+
+<p>A list of the currently defined interface profiles displays.</p>
+</li>
+</ol>
+<p>Interface profiles can be deleted using the button Delete Interface Profiles on this page. When clicked, it deletes all selected profiles in the list. The delete operation does not affect interface profiles already applied.</p>
+</section>
+<section id="storage"> <title>Viewing Storage Profiles</title>
+<p>A storage profile is a named configuration for a list of storage resources on a computing node. Each storage resource
+consists of the following elements:</p>
+<ul>
+<li>
+<b>Disks</b> - A Linux block storage device, such as /dev/sdd, identifying an entire hard drive.</li>
+<li>
+<b>Storage Volumes</b> - A Ceph storage volume consisting of a name and a storage function. The name is used as a human-readable version of the native storage device UUID. The storage function indicates the type of storage backend, such as OSD for a Ceph storage system.</li>
+</ul>
+<p>To view information on storage profiles:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Storage Profiles</b> tab.</p>
+
+<p>A list of the currently defined storage profiles displays.</p>
+</li>
+</ol>
+</section>
+<section id="memory"> <title>Memory Profiles</title>
+<p>A memory profile is a named assignment of huge pages for use as VM memory. For more information, see Creating and Using Memory Profiles.</p>
+<p>
+  <xref type="section" href="#topic4214"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

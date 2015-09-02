@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1853">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Managing project quotas</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.quotas.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/projects/quotas/--></p>
+<p>Quotas are operational limits enforced on each project.</p>
+<p>To prevent system capacities from being exhausted without notification, you can set up quotas.</p>
+<p>For example, the number of gigabytes allowed per project can be controlled to make sure that a single project does not consume all of the disk space.</p>
+<section id="quotamod"> <title>Modify a quotas</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Projects</b> link on the <b>Admin</b> dashboard <b>Identity</b> panel.</p>
+</li>
+<li>
+<p>For the project you want to modify, click <b>More &gt; Modify Quotas</b>.</p>
+</li>
+<li>
+<p>In the <b>Edit Project</b> screen, click the <b>Quota</b> tab (should be active).</p>
+</li>
+<li>
+<p>Edit and of the following fields:</p>
+
+<ul>
+<li>Metadata Items - Enter the maximum number of metadata items allowed for the project.</li>
+<li>VCPUs - Enter the maximum number of instance cores allowed for the project.</li>
+<li>Instances - Enter the maximum number of instances allowed for the project.</li>
+<li>Injected Files - Enter the maximum number of injected files allowed for the project.</li>
+<li>Injected File Content Bytes - Enter the maximum number of content bytes allowed per injected file  for the project.</li>
+<li>Volumes - Enter the maximum number of volumes allowed for the project.</li>
+<li>Volume Snapshots - Enter the maximum number of volume snapshots allowed for the project.</li>
+<li>Total Size of Volumes and Snapshots- Enter the maximum total size for all volumes and snapshots allowed for the project.</li>
+<li>RAM - Enter the maximum megabytes of instance RAM allowed  for the project.</li>
+</ul>
+</li>
+<li>
+<p>Click <b>Save</b>.</p>
+
+<p>A message is displayed on successful modification.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1853"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

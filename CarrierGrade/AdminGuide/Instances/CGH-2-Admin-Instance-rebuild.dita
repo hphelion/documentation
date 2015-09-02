@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1314">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Rebuilding Instances</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.rebuild.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/instances/rebuild/--></p>
+<p>The rebuild operation removes all data on the server and replaces it with the specified image.</p>
+<p>A rebuild operation always removes data injected into the file system through server personality. You can reinsert data into the file system during the rebuild.</p>
+<section id="rebuilding-an-instance"> <title>Rebuilding an instance</title>
+<p>To rebuild an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to rebuild, click <b>Menu &gt; Rebuild Instance</b>.</p>
+</li>
+<li>
+<p>In the <b>Rebuild Instances</b> screen:</p>
+
+<ul>
+<li>Select the image to use to rebuild the instance. You can select the same image or rebuild using a different image.</li>
+<li>Specify whether the instance will automatically partition, based on the image, or you will manually partition the instance.</li>
+</ul>
+</li>
+<li>
+<p>In the confirmation screen, click <b>Rebuild Instance</b>.</p>
+
+<p>The progress of the reboot is displayed in the <b>Task</b> column on the <b>Instances</b> screen.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1314"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

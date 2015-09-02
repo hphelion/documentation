@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8785">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Resource Usage</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-resource.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/resources/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>Usage of system resources is monitored by Ceilometer, the standard OpenStack mechanism for collecting and distributing performance monitoring samples from the cluster. The HP Helion OpenStack Carrier Grade cluster extends Ceilometer with improved reports and new tools to facilitate offline analysis of the collected data.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>Performance Monitor (PM) samples are periodically collected from different resources such as hosts, virtual machine instances, AVS, and others. They include CPU and memory utilization, network traffic counters, storage space, and several more. By default the samples are stored in a database which is used for reporting activities such as:</p>
+<ul>
+<li>command line queries and graphical charts</li>
+<li>triggering of threshold alarms</li>
+<li>triggering of threshold actions. The most common example is Heat actions to scale up and down a resource.</li>
+</ul>
+<p>The Ceilometer database is periodically cleaned in order to contain its size and prevent the overuse of storage resources on the controller nodes.</p>
+<p>The Ceilometer implementation in the HP Helion OpenStack Carrier Grade improves on several aspects. They are described in the following sections:</p>
+<ul>
+<li>
+<xref type="section" href="#topic8785/filters">Optimized Ceilometer Filters</xref>
+</li>
+<li>
+<xref type="section" href="#topic8785/reports">On-Line Ceilometer Reports</xref>
+</li>
+<li>
+<xref type="section" href="#topic8785/backend">CSV Performance Monitoring Backend</xref>
+</li>
+<li>
+<xref type="section" href="#topic8785/retention">Retention Period</xref>
+</li>
+</ul>
+<section id="filters"> <title>Optimized Ceilometer Filters</title>
+<p>The Ceilometer implementation in the HP Helion OpenStack Carrier Grade is specially tuned to allow time-sensitive actions, such as Heat autoscaling, to take place in response to relatively high-frequency sample rates of system events.</p>
+<p>The size of both the Ceilometer database and the CSV files are maintained under control at all times, while still enabling the required system actions to take place in real-time.</p>
+</section>
+<section id="reports"> <title>On-Line Ceilometer Reports</title>
+<p>On-line, on-demand, Ceilometer reports in the HP Helion OpenStack Carrier Grade benefit from several improvements over the stock OpenStack reporting tool, including:</p>
+<ul>
+<li>optimized Ceilometer database queries</li>
+<li>improved naming of menu entries on pull-down menus</li>
+<li>use of brief meter descriptions and human-readable legends on the charts</li>
+</ul>
+<p>Additionally, all database queries are user-initiated, as opposed to event-initiated. This provides a different user workflow, whereby all required report parameters and filters are configured first, before the database query is executed.</p>
+<p>Access to Ceilometer reports is available from the Stats tab on the Resource Usage Overview page. This page can be accessed from the web management interface by selecting the option <b>Resource Usage</b> on the <b>Admin</b> tab of the <b>System</b> panel.</p>
+<p>The <b>Stats</b> tab contains the following fields:</p>
+<ul>
+<li>
+<p>
+<b>Metric</b> - The Ceilometer metric you want to query. Metrics are grouped by service, as follows:</p>
+
+<ul>
+<li>Compute (Nova)</li>
+<li>Network (Neutron)</li>
+<li>Image (Glance)</li>
+<li>Volume (Cinder)</li>
+<li>Switching (AVS)</li>
+</ul>
+<p>On the CLI, use the following command to list the available metrics, and find their resource IDs:</p>
+
+<codeblock>
+<codeph>ceilometer meter-list
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<b>Value</b> - The particular statistic you want to visualize. Select among Average, Minimum, Maximum, and Summation.</p>
+</li>
+<li>
+<p>
+<b>Group by</b> - How to group the displayed charts, as follows:</p>
+
+<ul>
+<li>
+<b>None</b> - The selected statistic is presented as a single line chart reporting the aggregate over all resources and projects (tenants).</li>
+<li>
+<b>Projects (Tenants)</b> - The selected statistic is presented as a multiple line charts over all resources, one line per tenant.</li>
+<li>
+<b>Resource</b> - The selected statistic is presented as a multiple line charts over all resources, one line per resource (hosts, instances, and so on).</li>
+</ul>
+</li>
+<li>
+<p>
+<b>Period</b> - The period of time to be covered by the report.  When selecting other, two new fields become available, <b>Date From</b> and <b>Date To</b>, allowing you to specify a specific time period.</p>
+</li>
+<li>
+<p>
+<b>Metadata</b> - Metadata represents additional attributes collected with a metric. In this menu, you can select the specific attribute you want the report on.</p>
+
+<p>The pull-down menu is auto-populated with the corresponding attributes for the selected metric.</p>
+
+<p>On the CLI, use the following command to list the metadata associated with a metric identified with its resource ID:</p>
+
+<codeblock>
+<codeph>ceilometer resource-show -r &lt;resource_id&gt;
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<b>Filter</b> - Use this field to limit the report to show metric samples whose metadata attribute equals the specified value. The
+filter field is applied only when a specific metadata attribute is selected.</p>
+
+<p>Once the selections are in place, click the Report button to display the report.</p>
+</li>
+</ul>
+</section>
+<section id="backend"> <title>CSV Performance Monitoring Backend</title>
+<p>The HP Helion OpenStack Carrier Grade provides access to performance measurement samples in the form of comma-separated values (CSV) files. They provide the following benefits:</p>
+<ul>
+<li>off-line permanent storage of large samples history</li>
+<li>enables the use of off-line tools for data analysis, accounting, and archiving</li>
+</ul>
+<p>The CSV files are expected to be retrieved from the controllers using any suitable file transfer client application such as SFTP or SCP. This can be done manually by the system administrator, or automatically by an operations and support server (OSS/BSS) configured with the appropriate login credentials.</p>
+<p>Recording of samples and management of CSV files is done through special Ceilometer pipelines available from the Pipelines tab, as illustrated below:</p>
+<p>The csv pipeline collects system information with the exception of AVS switching meters. The latter are collected by the <codeph>vswitch_avg</codeph> pipeline.</p>
+<p>Click the <b>Update Settings</b> button to configure the behavior of a pipeline. The <b>Edit Pipeline</b> window is presented as follows:</p>
+<p>The following fields are available:</p>
+<ul>
+<li>
+<p>
+<b>Name</b> - A read-only field displaying the name of the pipeline.</p>
+</li>
+<li>
+<p>
+<b>Meters</b> - An editable field displaying the list of comma-separated meters included in the pipeline. The list must be enclosed in square brackets, as follows:</p>
+
+<codeblock>
+<codeph>[meter1,meter2,...]
+</codeph>
+</codeblock>
+</li>
+</ul>
+<p>The following syntax rules apply to the specified meters:</p>
+<ul>
+<li>A meter specification is a text string of the form <codeph>metergroup.metersubgroup.meter</codeph>, for example, <codeph>disk.read.bytes</codeph>.</li>
+<li>A meter specification supports a trailing wild-card to include all meters within a <codeph>metergroup</codeph>. For example, the text <codeph>disk.*</codeph> matches the meters <codeph>disk.read.bytes</codeph> and <codeph>disk.write.bytes</codeph>.</li>
+<li>A meter specification supports a trailing wild-card to include all <codeph>metersubgroups</codeph> within a <codeph>metergroup</codeph>. For example, the text <codeph>disk.read.*</codeph> matches the meter <codeph>disk.read.bytes</codeph>.</li>
+<li>
+<p>Meter specifications support a leading exclamation mark to exclude the specified meter, as follows:</p>
+
+<codeblock>
+<codeph>[!meter1,!meter2,...]
+</codeph>
+</codeblock>
+
+<p>Such a pipeline includes all meters but the ones in the list.</p>
+
+<p>Exclamation marks cannot be applied selectively in a list of meters. Either all meters use them or none at all.</p>
+
+<p>The following list is therefore invalid:
+[meter1,!meter2,meter3]</p>
+</li>
+<li>
+<p>
+<b>Location</b> - The absolute path to the CSV file on the controller.</p>
+</li>
+<li>
+<b>Enabled</b> -  A check box used to enable or disable the pipeline.</li>
+<li>
+<b>Max Bytes</b> - The maximum size, in bytes, of a CSV file. The default value is 10 MB.</li>
+<li>
+<b>Backup Count</b> - The number of concurrent backup CSV files to maintain in a rotation ring, including the currently active file. When a CSV file reaches its maximum size, it is renamed as a backup file, and a new CSV file is opened for writing. Backup files older than the size of the rotation ring are automatically removed.</li>
+<li>
+<b>Compress Backups</b> - A check box used to select whether or not to compress backup files in the rotation ring.</li>
+<li/>
+</ul>
+</section>
+<section id="retention"> <title>Retention Period</title>
+<p>Performance samples are kept in the database for a limited period of time known as the retention period. Its default value is 86400 seconds, or 24 hours.</p>
+<p>Click the <b>Edit Retention Period</b> button in the <b>Retention Period</b> tab to modify the current value. You must verify that the configured value is equal or higher than the period over which you intend to gather statistics.</p>
+<p>You can also control the retention period from the CLI. To view the current settings, use the following command.</p>
+<codeblock>
+  <codeph>system pm-show
+</codeph>
+</codeblock>
+<p>To change the retention period from the CLI, use the following command syntax.</p>
+<codeblock>
+  <codeph>system pm-modify retention_secs=retention_period
+</codeph>
+</codeblock>
+<p>
+<b>Note:</b> Changes to the retention period cause 250.001 Configuration out-of-date alarms to be raised briefly for the controller nodes. During this period, the status Config out-of-date is displayed for the controller nodes on the <b>Host</b> tab of the <b>Inventory</b> pane. These alarms are resolved and cleared automatically after a few seconds.</p>
+<p>
+  <xref type="section" href="#topic8785"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

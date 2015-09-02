@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1594">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Suspending and Resuming Instances</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.suspend.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/instances/suspend/--></p>
+<p>When a user <i>suspends</i> an instance, the contents of the instance are stored on disk and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available to create other instances.</p>
+<p>Users can suspend an instance, for example, to free up the resources used by an instance that is used infrequently or to perform system maintenance.</p>
+<p>
+<b>Note:</b> Suspending is different from <xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.pause.dita" >pausing an instance</xref>. Pausing keeps the instance running, (in a "frozen" state) and stores the content of the instance in memory (RAM).</p>
+<section id="suspend-an-instance"> <title>Suspend an instance</title>
+<p>To suspend an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to modify, click <b>More &gt; Suspend Instance</b>.</p>
+
+<p>The status of the instance reports <i>Suspended</i>.</p>
+</li>
+</ol>
+</section>
+<section id="resume-an-instance"> <title>Resume an instance</title>
+<p>To resume an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to modify, click <b>More &gt; Resume Instance</b>.</p>
+
+<p>The status of the instance reports <i>Running</i>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1594"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>
