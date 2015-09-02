@@ -22,7 +22,7 @@
 <xref href="devplatform.release-notes.dita" >Release Notes and Known Issues</xref>
 </li>
 </ul>
-<p>These features and functionality are new in the HP Helion Development Platform 1.3</p>
+<p>For this release only the Application Lifecycle Service was updated to 1.3. The rest of the services remain in the 1.2 versions. The following features and functionality are new in the HP Helion Application Lifecyscle Service 1.3</p>
 <section id="updates">
   <dl>
     <dlentry>
