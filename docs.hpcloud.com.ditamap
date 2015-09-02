@@ -25,7 +25,7 @@
 </topichead>
 </topichead>
 <!--Dev Plat-->  
-<topicref format="ditamap" href="docs.hpcloud.com.HDP.ditamap" navtitle="Helion Development Platform"/>
+<topicref format="ditamap" href="devplatform/docs.hpcloud.com.HDP.ditamap" navtitle="Helion Development Platform"/>
 <!-- Euca -->
   <topicref href="euca/euca-landing-page.dita" navtitle="HP Helion Eucalyptus" locktitle="yes">
     <topicref href="euca/euca.thirdparty.licensing.dita"

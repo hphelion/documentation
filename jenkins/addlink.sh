@@ -3,6 +3,8 @@
 for i in `find . -name "1\.0*"` 
 
 
+
+
 do
 
 newversion=`echo $i | sed 's/1\.0/1\.1/'`
