@@ -25,8 +25,8 @@
     <topichead navtitle="Installation">
       <topicref href="helion/installation.dita" navtitle="Installing HP Helion OpenStack"
         locktitle="yes"/>
-      <topichead navtitle="Configuration Files">
-        <topicref href="helion/config/entryscalewithvsa.dita"/>
+      <topichead navtitle="Configuration Files" toc="no">
+        <topicref href="helion/config/entryscalewithvsa.dita" toc="no"/>
       </topichead>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
         locktitle="yes"/>
