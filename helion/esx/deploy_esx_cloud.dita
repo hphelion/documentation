@@ -81,7 +81,7 @@ enable_distributed_routing = False</codeblock><note>
               <li>Refer to the installation guide and perform the steps <b>b </b> and <b>c</b> from
                   <xref href="../installation.dita#topic_flx_j2b_ws/Configuration">Configure your
                   Environment</xref>.</li>
-              <li>REfer to the installation guide and execute the steps mentioned in <xref
+              <li>Refer to the installation guide and execute the steps mentioned in <xref
                   href="../installation.dita#topic_flx_j2b_ws/CobblerDeploy">Deploy Cobbler</xref>,
                   <xref href="../installation.dita#topic_flx_j2b_ws/NodeProvision"/>,  and <xref
                   href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run the
@@ -97,19 +97,21 @@ enable_distributed_routing = False</codeblock><note>
                   Cloud Deployment</xref></li>
             </ul></p></li>
       </ol></p>
-    <section><b>Deploy Helion Linux Shell VM Template</b><p>The first step in deploying the ESX
-        compute proxy and OVSvApps is to create a VM template that will make it easier to deploy the
-        ESX compute proxy for each Cluster and OVSvApps on each ESX server. </p><p>Perform the
-        following steps to deploy a template:<ol id="ol_sym_3jl_ft">
+    <p>
+      <b>Deploy Helion Linux Shell VM Template</b></p>
+    <section>
+      <p>The first step in deploying the ESX compute proxy and OVSvApps is to create a VM template
+        that will make it easier to deploy the ESX compute proxy for each Cluster and OVSvApps on
+        each ESX server. </p>
+      <p>Perform the following steps to deploy a template:<ol id="ol_sym_3jl_ft">
           <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the vSphere client. </li>
           <li>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF
             Template</b>.</li>
           <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
             install. Refer to the VMWare vSphere documentation as needed. </li>
-        </ol></p></section>
-    <section>
-      <title>Preparation For ESX Cloud Deployment</title>
+        </ol></p>
     </section>
+    <p><b>Preparation For ESX Cloud Deployment</b></p>
     <section id="deploy-service"><b>Manage vCenters and Clusters</b><p>This section describes the
         procedures to prepare the ESX cloud for deployment. </p><p>
         <note> Source <codeph>service.osrc</codeph> before you perform the following
