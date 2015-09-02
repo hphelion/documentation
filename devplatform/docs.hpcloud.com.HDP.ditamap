@@ -238,8 +238,8 @@
         locktitle="yes"/>
       <topicref href="1.3/windows/windows_password.dita"
         navtitle="Retrieving the Admin Password for Windows Instances" locktitle="yes"/>
-      <topicref href="1.3/windows/windows_wcf.dita"
-        navtitle=" Deploy a WCF app to a Windows DEA Cluster" locktitle="yes"/>
+      <topicref href="1.3/windows/windows_wcf.dita" navtitle=" Deploying a WCF service"
+        locktitle="yes"/>
       <topicref href="1.3/windows/windows_troubleshooting.dita" navtitle="Troubleshooting"
         locktitle="yes"/>
       <topicref href="1.3/windows/windows_creating_sql.dita"/>
