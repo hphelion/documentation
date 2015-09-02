@@ -39,7 +39,6 @@ az: &lt;My Availability Zones&gt;</codeblock><note>Please
     </section>
   </body>
   <related-links>
-    <link href="cfmgmt_createcluster_microcloud.dita" />
     <link href="cfmgmt_growcluster_addDEANode.dita" />
     <link href="cfmgmt_growcluster_addservice.dita" />
   </related-links>

@@ -34,7 +34,6 @@ add-role dea ^
 </section>
   </body>
   <related-links>
-    <link href="cfmgmt_createcluster_microcloud.dita" />
     <link href="cfmgmt_createcluster_starter.dita" />
     <link href="cfmgmt_growcluster_addservice.dita" />
   </related-links>

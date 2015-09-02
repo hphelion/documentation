@@ -30,7 +30,6 @@ add-service mysql ^
    --keypair-name &lt;keypair name&gt; ^
    --load bootstrap_service.yml ^</codeblock></li>
     </ol> </section></body>  <related-links>
-      <link href="cfmgmt_createcluster_microcloud.dita" />
       <link href="cfmgmt_createcluster_starter.dita" />
       <link href="cfmgmt_growcluster_addDEANode.dita" />
     </related-links>
