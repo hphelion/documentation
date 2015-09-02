@@ -261,6 +261,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
       <title>SAS</title>
       <ul>
         <li>Cisco UCSC 12G SAS Modular RAID controller</li>
+        <li>Dell PowerEdge RAID Controller H710P</li>
         <li>HP Smart Array P222/512 FBWC 6Gb 1-port Int/1-port Ext SAS Controller</li>
         <li>HP Smart Array P420/2GB FBWC 6Gb 2-ports Int SAS Controller</li>
         <li>HP Smart Array P421/2GB FBWC 6Gb 2-ports Ext SAS Controller</li>
@@ -277,6 +278,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
         <li>HP H240ar 12Gb 1-port Int Smart Host Bus Adapter</li>
         <li>HP H241 12Gb 2-ports Ext Smart Host Bus Adapter</li>
         <li>HP H244br 12Gb 2-ports Int Smart Host Bus Adapter </li>
+        <li>IBM ServeRAID M5210 SAS/SATA Controller</li>
       </ul>
     </section>
     <section id="fc">
