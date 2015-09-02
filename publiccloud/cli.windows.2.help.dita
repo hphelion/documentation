@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3134">
-<title>HP Helion Public Cloud CLI Software for Windows PowerShell: Getting Help</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-</metadata>
-</prolog>
-<body>
-<!--PUBLISHED-->
-<!--./publiccloud/cli.windows.2.help.md-->
-<!--permalink: /publiccloud/cli/windows/help/-->
-<p>After module registration is complete you can view a list of available cmdlets and get detailed examples of their usage with a few commands.</p>
-<codeblock>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic3134">
+    <title>HP Helion Public Cloud CLI Software for Windows PowerShell: Getting Help</title>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+        </metadata>
+    </prolog>
+    <body>
+        <!--PUBLISHED-->
+        <!--./publiccloud/cli.windows.2.help.md-->
+        <!--permalink: /publiccloud/cli/windows/help/-->
+        <p>After module registration is complete you can view a list of available cmdlets and get
+            detailed examples of their usage with a few commands.</p>
+        <codeblock>
 PS HPCS:\\&gt; get-command -module CLIManifest
 
 CommandType     Name                                               ModuleName
@@ -85,15 +87,17 @@ Cmdlet          Update-Server                                      CLIManifest
 Cmdlet          Update-Subnet                                      CLIManifest
 </codeblock>
 
-<p>Here we have a list of every Powershell Cmdlet exposed from the CLIManifest module that we previously registered.  For additional help on a specific command listed try the following.</p>
-<codeblock>
+        <p>Here we have a list of every Powershell Cmdlet exposed from the CLIManifest module that
+            we previously registered. For additional help on a specific command listed try the
+            following.</p>
+        <codeblock>
 PS HPCS:\\&gt; Get-Help Get-Metadata -detailed
 
 NAME
 Get-Metadata
 
 SYNOPSIS
-This Cmdlet will list out the Metadata entries assigned to the supplied resource. You can currently list metadata assigned to Servers, Storage Objects , Containers and CDN Containers.
+This Cmdlet will list out the Metadata entries assigned to the supplied resource. You can currently list metadata assigned to Servers, Storage Objects, Containers and CDN Containers.
 
 SYNTAX
 [&lt;CommonParameters&gt;]
@@ -157,8 +161,9 @@ SYNTAX
     For more information, type: "get-help Get-Metadata -detailed".
     For technical information, type: "get-help Get-Metadata -full".
 </codeblock>
-<p>For more robust help with examples you can also issue the command with the examples argument.</p>
-<codeblock>
+        <p>For more robust help with examples you can also issue the command with the examples
+            argument.</p>
+        <codeblock>
 PS HPCS:\\&gt; Get-Help Get-Metadata -examples
                 
 NAME
@@ -177,9 +182,10 @@ This command will print out a list of name value pairs assigned to the supplied 
 
 PS HPCS:\\&gt; get-help get-metadata
 </codeblock>
-<p>Finally if you would like to get extensive help for all available Cmdlets in one shot, issue the following</p>
-<codeblock>
+        <p>Finally if you would like to get extensive help for all available Cmdlets in one shot,
+            issue the following</p>
+        <codeblock>
 Get-Command -module CLIManifest | Get-Help
 </codeblock>
-</body>
+    </body>
 </topic>
