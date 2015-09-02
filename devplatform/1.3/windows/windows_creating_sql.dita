@@ -10,7 +10,7 @@
     <ul>
       <li><xref type="section" href="#topic_rbs_ysb_bt/requirements">System requirements</xref></li>
       <li><xref type="section" href="#topic_rbs_ysb_bt/create">Create a Microsoft SQL Server service instance</xref></li>
-      <li><xref type="section" href="#topic_rbs_ysb_bt/deploy">Deploy a Helion tunneling application</xref></li>
+      <li><xref type="section" href="#topic_rbs_ysb_bt/tunnel">Create a tunnel to the Microsoft SQL Server service</xref></li>
       <li><xref type="section" href="#topic_rbs_ysb_bt/connect">Connect to the service instance</xref></li>
     </ul>
     <section id="requirements"><title>System Requirements</title>
@@ -34,7 +34,7 @@
     <li><p>The output from this command may look like the following (in this example, the Free service plan is selected):</p>
       <image placement="break" href="../../../media/windows_sql_create.png"></image></li></ol></section>
       
-    <section id="deploy"><title>Deploy a Helion tunneling application</title>
+    <section id="tunnel"><title>Create a tunnel to the Microsoft SQL Server service</title>
       
     <ol><li><p>Once the service instance is created, in order to connect to the instance, you must first run a tunneling application using the <b>helion tunnel</b> command.</p></li>
       <li><p>The following command creates a tunneling application to the <b>MSSQL2012Service</b> service in the connected cluster, binds the tunneling application to the requested service, 

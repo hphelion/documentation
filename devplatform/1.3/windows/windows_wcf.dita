@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_u2d_gxj_bt">
-  <title>Deploying a WCF Service to a Windows DEA Cluster</title>
+  <title>Deploying a WCF Service</title>
   <body>
     <section><ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
       Microsoft Corporation in the United States and/or other countries.</i></ph>
-    <p>This topic describes how to deploy a basic Windows Communication Foundation (WCF) service to a Helion Windows DEA cluster. For the purposes of this tutorial, you will create
-    a WCF web service with one method, deploy it to a Windows DEA cluster, and create a basic client application to test the service.</p>
+    <p>This topic describes how to deploy a basic Windows Communication Foundation (WCF) service. For the purposes of this tutorial, you will create
+    and deploy a WCF web service with one method, and create a basic client application to test the service.</p>
     <p>This topic contains the following sections:</p>
     <ul>
       <li><xref type="section" href="#topic_u2d_gxj_bt/prerequisites">Prerequisites</xref></li>
@@ -66,7 +66,7 @@ namespace HelionWCF
       </ol>
     </section>
     <section id="deploy"><title>Deploying the web service application</title>
-      <p>Now that you've created a WCF service hosted in a Web application, you'll deploy the application to a Helion Windows DEA node.</p>
+      <p>Now that you've created a WCF service hosted in a Web application, you'll deploy the application.</p>
       <p>For this section, you'll need the connection information for a Windows DEA cluster running in Helion OpenStack or Helion Public Cloud. For the purposes of this tutorial, you'll use 
       a Public Cloud account. For information on creating a Windows DEA node on Public Cloud, see <xref href="windows_firstapp.dita">Building and deploying your first Windows application</xref>.</p>
       <ol>
