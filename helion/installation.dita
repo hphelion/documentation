@@ -74,10 +74,10 @@
       <ol>
         <li>Log in to the deployer node as the user you created during the setup phase, and mount
           the install media at /media/cdrom, for example,
-          <codeblock>sudo mount &lt;xxx.iso> /media/cdrom</codeblock></li>
+          <codeblock>sudo mount &lt;hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-31T16:48:07_340c639.iso> /media/cdrom</codeblock></li>
         <li> Unpack the following tarball: Note this file name will change<codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-*T*Z.tgz</codeblock>
           <note>Your filename may vary, you can do a directory listing to get the file name
-            <codeblock>ls /media/cdrom/hos-2.0.0</codeblock>
+            <codeblock>ls /media/cdrom/hos-2.0.0-b.1</codeblock>
           </note></li>
         <li>Run the following included script: <codeblock>~/hos-2.0.0-b.1/hos-init.bash</codeblock>
           <!-- was ~/hos-deployer/hos-init.bash --></li>
