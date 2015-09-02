@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="entry_scale_with_vsa">
+  <title>Entry Scale with VSA</title>
+  <shortdesc>This page describes the Entry Scale with VSA model and how to use the configuration
+    files to achieve your cloud deployment goals.</shortdesc>
+  <conbody>
+    <section>
+      <title>cloudConfig.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/cloudConfig.yml</codeblock></p>
+      <p>Here is the sample file included with the install:</p>
+      <codeblock>
+---
+  product:
+  version: 2
+  
+  cloud:
+  name: helion-entry-scale
+  
+  # The following values are used when
+  # building hostnames
+  hostname-data:
+  host-prefix: helion
+  member-prefix: -m
+  
+  # Path to the rest of the input model
+  data-dir: data
+  
+  # List of ntp servers for your site
+  ntp-servers:
+  #    - "ntp-server1"
+  #    - "ntp-server2"
+  
+  # dns resolving configuration for your site
+  # refer to resolv.conf for details on each option
+  dns-settings:
+  #  nameservers:
+  #    - name-server1
+  #    - name-server2
+  #    - name-server3
+  #
+  #  domain: sub1.example.net
+  #
+  #  search:
+  #    - sub1.example.net
+  #    - sub2.example.net
+  #
+  #  sortlist:
+  #    - 192.168.160.0/255.255.240.0
+  #    - 192.168.0.0
+  #
+  #  # option flags are '&lt;name&gt;:' to enable, remove to unset
+  #  # options with values are '&lt;name&gt;:&lt;value&gt;' to set
+  #
+  #  options:
+  #    debug:
+  #    ndots: 2
+  #    timeout: 30
+  #    attempts: 5
+  #    rotate:
+  #    no-check-names:
+  #    inet6:
+</codeblock>
+      <p>The key values to enter into this document are the values for your local NTP servers and
+        DNS namesevers.</p>
+      <p>Your local NTP server(s) would go into this part:</p>
+      <codeblock>
+  # List of ntp servers for your site
+  ntp-servers:
+       - "ntp-server1"
+       - "ntp-server2"</codeblock>
+      <p>Your local DNS nameserver(s) would go into this part:</p>
+      <codeblock>
+   # dns resolving configuration for your site
+   # refer to resolv.conf for details on each option
+   dns-settings:
+      #  nameservers:
+      #    - name-server1
+      #    - name-server2
+      #    - name-server3</codeblock>
+      <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
+        are recognized.</note>
+    </section>
+  </conbody>
+</concept>
