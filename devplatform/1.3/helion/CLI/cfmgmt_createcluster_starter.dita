@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_a4c_11b_dt">
+  <title><i>cf-mgmt</i> Tool Example: Create a Starter Cluster</title>
+  <body>
+   
+            <p>The following is an example on how to create a small starter cluster with a core node
+      and one DEA.</p>
+
+     <section>  <ol>
+        <li>Download the latest <i>bootstrap.yml</i> and save it in the same folder where the
+            <i>cf-mgmt </i>tool is installed.</li><li> Open and configure the <i>bootstrap.yml </i>file to match your environment. Here is an
+            example:<codeblock>constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
+constructor-flavor: standard.xsmall 
+seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
+core-flavor: standard.medium 
+cluster-title: &lt;My Cluster Title&gt; 
+cluster-prefix: &lt;My Cluster Prefix&gt;
+dea-count: 1 
+dea-flavor: standard.large
+az: &lt;My Availability Zones&gt;</codeblock><note>Please
+            ensure the values for image names, image sizes and availability zones ("az") are valid
+            for your current configuration.</note></li>
+        <li>Run the following set of commands.
+          <codeblock> cf-mgmt.exe ^
+        --os-auth-url &lt;OpenStack authentication URL&gt; ^
+        --os-username &lt;username&gt; ^
+        --os-password &lt;password&gt; ^
+        --os-tenant-id &lt;id&gt; ^
+        --os-tenant-name "&lt;tenant-name&gt;" ^
+        --os-region-name "&lt;region-name&gt;" ^
+ create-cluster ^
+        --keypair-name &lt;keypair name&gt; ^
+        --admin-email &lt;admin email&gt; ^
+        --admin-password &lt;admin password&gt; ^
+        --max-cluster-wait-duration -1 ^
+        --max-corenode-wait-duration -1 ^
+        --load bootstrap.yml</codeblock></li></ol><note>A value of -1 indicates an infinite duration.</note>
+    </section>
+  </body>
+  <related-links>
+    <link href="cfmgmt_createcluster_microcloud.dita" />
+    <link href="cfmgmt_growcluster_addDEANode.dita" />
+    <link href="cfmgmt_growcluster_addservice.dita" />
+  </related-links>
+</topic>

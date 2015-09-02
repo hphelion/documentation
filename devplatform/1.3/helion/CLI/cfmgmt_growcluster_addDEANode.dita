@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_mrh_h1b_dt">
+  <title><i>cf-mgmt</i> Tool Example: Add a DEA Node to an Existing Cluster</title>
+  <body>
+    <p>This example demonstrates how to add a DEA node to a cluster that already exists.</p>
+<section>    <ol id="ol_ccd_l1b_dt">
+      <li> Save this content in a text file named
+          <i>bootstrap.yml</i><codeblock>file version: 1.2 
+constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282
+constructor-flavor: standard.xsmall 
+seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
+core-flavor: standard.medium 
+cluster-title: &lt;My Cluster Title&gt;
+cluster-prefix: &lt;My Cluster Prefix&gt; 
+dea-count: 1 
+dea-flavor: standard.medium 
+az: &lt;My Availability Zone&gt; </codeblock><note>Please
+          ensure the values for image names, image sizes and availability zones ("az") are valid for
+          your current configuration.</note></li>
+      <li> Run the following set of
+        commands.<codeblock>cf-mgmt.exe ^ 
+  --os-auth-url <xref href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/" format="html" scope="external">https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/</xref> ^
+  --os-username &lt;username&gt; ^
+  --os-password &lt;password&gt; ^
+  --os-tenant-id &lt;id&gt; ^
+  --os-tenant-name "&lt;tenant-name&gt;" ^ 
+  --os-region-name "&lt;region-name&gt;" ^ 
+  --skip-ssl-validation ^
+add-role dea ^
+  --keypair-name &lt;keypair name&gt; ^
+  --load bootstrap_service.yml ^   </codeblock></li>
+    </ol>
+</section>
+  </body>
+  <related-links>
+    <link href="cfmgmt_createcluster_microcloud.dita" />
+    <link href="cfmgmt_createcluster_starter.dita" />
+    <link href="cfmgmt_growcluster_addservice.dita" />
+  </related-links>
+</topic>

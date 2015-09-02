@@ -588,7 +588,9 @@
   </topicref>
 
 
-  <!--Dev Plat-->
+  <!--Dev Plat--> 
+ 
+ <mapref href="devplatform/docs.hpcloud.com.HDP.ditamap"/>
 
 
 

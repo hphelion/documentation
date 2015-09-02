@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_txg_cnh_ts">
+  <title>Install the Application Lifecycle Service (ALS)</title>
+  <body>
+
+<section id="install-als"> 
+<p>The following section demonstrates how to perform the initial installation and configuration of ALS.</p>
+</section>
+<section id="step-1-retrieve-the-als-service-update-from-hdn"> <title>Step 1: Retrieve the ALS Service Update from HDN</title>
+</section>
+<section id="preparation"> <title>Preparation</title>
+<p>Be sure that the <i>Admin</i> project is checked from the Project selector before you check for service updates. The Project selector is located at the top of the page to the right of the OpenStack logo. This process will fail if a tenant/project other than "Admin" is selected.</p>
+<p>
+        <image href="../../../media/DevPlatInstallAdminCheck.png"/>
+      </p>
+</section>
+<section id="retrieve-the-update"> <title>Retrieve the Update</title>
+<p>Use the <b>Helion Development Platform UI</b> to check HDN for a new Service Update for ALS.</p>
+<p>If there is a new Service Update for ALS, retrieve it from HDN. This will retrieve the ALS package from HDN and push it to a container in Swift within your local cloud.</p>
+</section>
+<section id="step-2-configure-the-service"> <title>Step 2: Configure the Service</title>
+<p>Return to the <b>Helion Development Platform UI</b> and click <i>Configure Services</i> to configure the service.</p>
+<p>
+        <image href="../../../media/devplat_configure_services.png"/>
+      </p>
+</section>
+
+  </body>
+</topic>
