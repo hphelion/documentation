@@ -19,11 +19,16 @@
 </metadata>
 </prolog>
 <body>
-  <p>Application Lifecycle Service provides the ability to upgrade a node or cluster in place via <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-upgrade">kato node upgrade</xref> without the need to rebuild the entire cluster. This section covers how the upgrade process works.</p>
+  <p>Application Lifecycle Service provides the ability to upgrade a node or cluster in place
+      without the need to rebuild the entire cluster. <note type="important">These upgrade
+        procedures will only upgrade nodes and clusters created in Helion Development Platform
+        version 1.2 to version 1.3. Previous versions do not support in-place upgrading.</note></p>
 <ul>
 <li>
         <xref type="section" href="#topic13180/before-an-upgrade">Before an upgrade</xref>
         <ul>
+          <li><xref type="section" href="#topic13180/free-disk-space">Check Free Disk Space</xref></li>
+          <li><xref type="section" href="#topic13180/free-memory">Check Free Memory</xref></li>
           <li>
             <xref type="section" href="#topic13180/maintenance-mode">Maintenance Mode</xref>
           </li>
@@ -40,7 +45,7 @@
             <xref type="section" href="#topic13180/pwless-sudo">Passwordless sudo</xref>
           </li>
           <li>
-            <xref type="section" href="#topic13180/extraDEA">Extra DEA Nodes</xref>
+            <xref type="section" href="#topic13180/extraDEA">Temporary Extra DEA Nodes</xref>
           </li>
         </ul></li>
 <li>
@@ -50,6 +55,7 @@
             <xref type="section" href="#topic13180/upgrading-an-individual-node">Upgrading an
               individual node</xref>
           </li>
+          <li> <xref type="section" href="#topic13180/move-dea">Moving <tm tmtype="reg">Windows</tm> DEAs</xref> </li>
           <li>
             <xref type="section" href="#topic13180/upgrading-a-cluster">Upgrading a cluster</xref>
           </li>
@@ -59,10 +65,8 @@
           <li>
             <xref type="section" href="#topic13180/node-upgrade-process">Node Upgrade Process</xref>
           </li>
+          <li><xref type="section" href="#topic13180/zero">Zero-downtime Upgrades</xref></li>
         </ul></li>
-<li>
-<xref type="section" href="#topic13180/upgrade-node-upgrade-offline">Offline Upgrade Process</xref>
-</li>
 <li>
 <xref type="section" href="#topic13180/troubleshooting">Troubleshooting</xref>
 </li>
@@ -71,22 +75,19 @@
 <p>Ensure that you have the latest version of the Application Lifecycle Service installed before updating any nodes or clusters.</p>
   <p>If <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-patch" >kato patch</xref> has not been applied consistently, <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach">kato node upgrade</xref> can still be executed. It will first upgrade the node to the latest release, which will include all of the interim patches.</p>
 </section>
-<section id="free-disk-space"> <title>Free Disk Space</title>
+<section id="free-disk-space"> <title>Check Free Disk Space</title>
 <p>Each node in the cluster to be upgraded requires at least 4GB free disk space except for the cache node, which needs at least 10GB free.</p>
   <p>If sufficient disk space cannot be reserved in the existing cluster for an upgrade, consider creating a new cluster and <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration">migrating the data</xref> rather than upgrading in place.</p>
 <p>To add additional space on the cache node specifically for the upgrade:</p>
-<ul>
-<li>mount an external filesystem on the cache node</li>
-<li>create a temporary directory on the drive (e.g. <i>/mnt/sda2/tmp</i>)</li>
-<li>change the  cache_dir  setting in <i>/s/code/sentinel/daemon/config/config.yml</i> to point to the new temporary directory</li>
-<li>
-<p>on the cache node, run</p>
-
-<codeblock>sudo service sentinel-d restart </codeblock>
-</li>
-</ul>
+<ol>
+<li>Mount an external filesystem on the cache node</li>
+<li>Create a temporary directory on the drive (e.g. <i>/mnt/sda2/tmp</i>)</li>
+<li>Change the cache_dir setting in <i>/s/code/sentinel/daemon/config/config.yml</i> to point to the
+          new temporary directory</li>
+<li>On the cache node, run <codeblock>sudo service sentinel-d restart </codeblock></li>
+</ol>
 </section>
-<section id="free-memory"> <title>Free Memory</title>
+  <section id="free-memory"><title>Check Free Memory</title>
 <p>Core/cache nodes require at least 1GB of free memory for upgrades to run successfully. Other nodes require at least 512MB.</p>
 <p>Use the <b>free</b> or <b>vmstat</b> commands to determine how much memory is available on each VM and use <b>kato stop</b> to temporarily stop roles if more memory is required.</p>
 </section>
@@ -124,15 +125,32 @@ between the Core node and all other cluster nodes. Without this configuration, y
 sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
 <p>With passwordless sudo in effect on all nodes, <i>kato node upgrade</i> should run without intervention. Obviously, this change has security implications, and is left to the discretion of the admin. Enable it only for the duration of the upgrade.</p>
 </section>
-<section id="extraDEA"> <title>Extra DEA Nodes</title>
+<section id="extraDEA"> <title>Temporary Extra DEA Nodes</title>
   <p>While the upgrade is in progress, DEAs will be <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" >retired</xref> one at a time and the hosted applications will be moved to other DEAs. If the system is operating at or close to capacity (all DEAs are fully populated) it will be necessary to add at least one <xref href="../cluster/cluster_index.dita#topic18326/dea-nodes" type="section"   >DEA node</xref> to the cluster before proceeding. Customers are typically permitted to exceed their node/memory license allocation during an upgrade.</p>
 </section>
-<section id="executing-the-upgrade"> <title>Executing the upgrade</title>
+  <section id="executing-the-upgrade"> <title>Executing the Upgrade</title> <note type="important">These upgrade
+    procedures will only upgrade nodes and clusters created in Helion Development Platform
+    version 1.2 to version 1.3. Previous versions do not support in-place upgrading.</note>
 </section>
+  <section id="move-dea"><title>Moving Windows DEAs</title>
+    <p>Microsoft <tm tmtype="reg">Windows</tm> DEAs cannot be upgraded. To upgrade Windows DEA
+        clusters, you will add new DEAs and then remove the old ones.</p>
+    <p>Follow this procedure so that your cluster will automatically load balance to the new nodes. <ol>
+          <li> Make a note of all your Windows DEA IPs .</li>
+          <li><xref href="../../../windows/windows_building_and_deploying.dita#topic7321">Create new
+              images</xref> using the latest <xref
+              href="../../../windows/windows_glazier_reference_guide.dita#topic6720">Glazier</xref>
+            tool.</li>
+          <li>Add the new Windows DEAs to your cluster.</li>
+          <li>Run this command on the core node of your cluster to remove the old
+            DEAs.<codeblock>kato node remove --skip-detach &lt;ip&gt; </codeblock></li>
+        </ol></p></section>
+    <p>All other nodes can be upgraded using the following procedure.</p>
 <section id="upgrading-an-individual-node"> <title>Upgrading an individual node</title>
 <p>To upgrade an individual node, log into the node and run:</p>
 <codeblock>kato node upgrade</codeblock>
-<p>This will start the <b>Node Upgrade Process</b> as described below.</p>
+<p>This will start the <xref href="#topic13180/node-upgrade-process" format="dita">Node Upgrade
+          Process</xref> as described below.</p>
 </section>
 <section id="upgrading-a-cluster">
       <title>Upgrading a cluster</title>
@@ -201,11 +219,6 @@ option.</p>
 </section>
 <section id="network-connectivity"> <title>Network Connectivity</title>
 <p>Network connectivity errors during the upgrade process can cause it to fail. In such cases, it is possible to resume the upgrade once connectivity to the upstream resources is restored.</p>
-<p>
-        <note>If network connectivity is a concern, use the <xref type="section"
-            href="#topic13180/download-only">--download-only</xref> option described above to limit
-          the possibility of a network error during an upgrade.</note>
-      </p>
 </section>
 <section id="app-store-proxy-settings"> <title>App Store Proxy Settings</title>
   <p>Proxy settings for the App Store may be lost during an upgrade. If the App Store cannot fetch data after an upgrade, and your system is behind an HTTP(S) proxy, <xref href="https_and_ssl.dita#topic_gwr_qgd_ws/http-proxy" type="section"   >reset the proxy information</xref> for your network.</p>
@@ -265,7 +278,9 @@ option.</p>
           type="section">built-in proxy</xref>.</p>
 </section>
 <section id="missing-kato"> <title>Missing Kato Utility</title>
-<p>If the <b>kato upgrade</b> command exits during the installation of the kato package, it is possible that <i>kato</i> itself can "go missing". It is removed before the upgraded package is fully installed.</p>
+<p>If the <codeph>kato upgrade </codeph>command exits during the installation of the kato package,
+        it is possible that <i>kato</i> itself can "go missing". It is removed before the upgraded
+        package is fully installed.</p>
 <p>To recover from this state:</p>
 <ol>
 <li> Find the command and options that <i>kato</i> used to initiate the upgrade. For

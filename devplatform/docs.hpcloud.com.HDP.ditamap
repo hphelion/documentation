@@ -279,16 +279,7 @@
             navtitle="Sample Applications"/>
         </topichead>
       </topichead>
-      <topichead navtitle="Continuous Integration and Deployment">
-        <topicref href="1.3/CICD/cicd_overview.dita" navtitle="Overview" locktitle="yes"/>
-        <topicref href="1.3/CICD/cicd_installation.dita"/>
-        <topicref href="1.3/CICD/cicd_inital_configuration.dita"/>
-        <topicref href="1.3/CICD/cicd_troubleshooting.dita"/>
-        <topicref href="1.3/CICD/cicd_users_guide.dita"/>
-        <topicref href="1.3/CICD/cicd_walkthrough.dita"
-          navtitle="Walkthrough: Create a Project and Deploy an App" locktitle="yes"/>
-      </topichead>
-      <topicref href="1.3/helion/admin/server/network_port_configuration.dita"/>
+           <topicref href="1.3/helion/admin/server/network_port_configuration.dita"/>
       <topicref href="1.3/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
       <topicref href="1.3/helion/user/deploy/docker_firstapp.dita"
