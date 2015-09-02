@@ -44,9 +44,9 @@
             <li>Select <b>Tools</b>, <b>Extensions and Updates</b></li>
             <li>In the <b>Online</b> panel, select <b>Visual Studio Gallery</b>, use the box in the upper right to search for <b>node.js tools</b>.</li>
             <li>In the <b>Node Tools 1.1 RC</b> item, click <b>Install</b>.
-              <image placement="break" href="../../media/windows_nonnet_installnode.png"></image></li>
+              <image placement="break" href="../../../media/windows_nonnet_installnode.png"></image></li>
             <li>The tools will download and install. Click <b>I accept the terms in the License Agreement</b>, and click <b>Install</b>.
-              <image placement="break" href="../../media/windows_nonnet_installnode_1.png"></image></li>
+              <image placement="break" href="../../../media/windows_nonnet_installnode_1.png"></image></li>
             <li>Click <b>Finish</b> when the install completes.</li>
           </ol>
         </li>
@@ -56,9 +56,9 @@
           <li>In the <b>Online</b> panel, select <b>Visual Studio Gallery</b>, use the box in the upper right to search for <b>cloud foundry extensions</b>.
             </li>
           <li>In the <b>Cloud Foundry Extensions for Visual Studio</b> item, click <b>Install</b>.
-            <image placement="break" href="windows_nonnet_installcfe.png"></image></li>
+            <image placement="break" href="../../../media/windows_nonnet_installcfe.png"></image></li>
           <li>In the <b>Download and Install</b> window, click <b>Install</b>.
-            <image placement="break" href="windows_nonnet_installcfe_1.png"></image></li>
+            <image placement="break" href="../../../media/windows_nonnet_installcfe_1.png"></image></li>
         </ol></li>
         <li><b>MSBuild Tasks</b>: This package can be installed through NuGet Package Manager after the project is created (see below).</li>
     </ol></section>
@@ -67,13 +67,13 @@
       <ol>
           <li>In Visual Studio 2013, select <b>File</b>, <b>New</b>, <b>Project</b>. In the <b>Templates</b> pane, select <b>Other Languages</b>, <b>JavaScript</b>, <b>Node.js</b>. Select <b>Blank Node.js Web Application</b>, name the
             project <b>NodeJSOnHelion</b>, and click <b>OK</b>.
-            <image href="../../media/windows_nonnet_newproject.png" placement="break" ></image></li>
+            <image href="../../../media/windows_nonnet_newproject.png" placement="break" ></image></li>
         <li>Deploying the project requires <b>MSBuild Tasks for Cloud Foundry</b>. To install this package, do the following:
         <ol>
           <li>Right-click the solution in <b>Solution Explorer</b> and select <b>Manage NuGet Packages for Solution</b></li>
           <li>Select <b>Online</b>, and use the upper right box to search for <b>msbuild cloud foundry</b>.</li>
           <li>In the <b>Cloud Foundry MSBuild Tasks</b> item, select <b>Install</b>.
-            <image placement="break" href="windows_nonnet_installcfmsb.png"></image></li>
+            <image placement="break" href="../../../media/windows_nonnet_installcfmsb.png"></image></li>
         </ol></li>
         <li>Open <b>server.js</b> from <b>Solution Explorer</b>. Change the following line:
         <codeblock>var port = process.env.port || 1337;</codeblock>
@@ -87,28 +87,28 @@
         <li>Right-click the project and select <b>Publish to Cloud Foundry</b>. If this option does not appear, see <b>Cloud Foundry Extensions</b> under 
           <xref type="section" format="dita" href="windows_nonnet.dita#topic_amr_q3w_js/prerequisites">Prerequisites</xref> above.</li>
         <li>In the first <b>Publish to Cloud Foundry</b> dialog, click the <b>...</b> button in the <b>Target</b> line.
-          <image placement="break" href="windows_nonnet_pub_1.png"></image></li>
+          <image placement="break" href="../../../media/windows_nonnet_pub_1.png"></image></li>
         <li>In the <b>Cloud Foundry target login</b> window, enter the following:
           <ol><li>In the Description field, enter a description for your target environment (e.g. <b>Public Cloud</b>.</li>
               <li>In the Target URL field, enter the address of your ALS cluster, in the format <b>http://api.xx.xx.xx.xx.xip.io</b>.</li>
               <li>In the Username and Password fields, provide the credentials for your cluster.</li>
               <li>Select <b>Skip SSL Validation</b> if your target environment does not use SSL (e.g. Public Cloud).</li>
           </ol>
-          <image placement="break" href="windows_nonnet_pub_2.png"></image>
+          <image placement="break" href="../../../media/windows_nonnet_pub_2.png"></image>
         </li>
         <li>In the <b>Pulish to Cloud Foundry</b> window, click <b>Next&gt;</b>.
-          <image placement="break" href="windows_nonnet_pub_3.png"></image></li>
+          <image placement="break" href="../../../media/windows_nonnet_pub_3.png"></image></li>
         <li>In the next <b>Publish to Cloud Foundry</b> window, select <b>nodejs</b> from the <b>Buildpack</b> dropdown and click <b>Next&gt;</b>.
-          <image placement="break" href="windows_nonnet_pub_4.png"></image></li>
+          <image placement="break" href="../../../media/windows_nonnet_pub_4.png"></image></li>
         <li>In the next <b>Publish to Cloud Foundry</b> window, select the target URL in the <b>Shared Domains</b> section and click <b>Next</b>.
-          <image placement="break" href="windows_nonnet_pub_5.png"></image></li>
+          <image placement="break" href="../../../media/windows_nonnet_pub_5.png"></image></li>
         <li>This sample application does not use any services, so click <b>Next</b> in the next <b>Publish to Cloud Foundry</b> window.
-          <image placement="break" href="windows_nonnet_pub_6.png"></image></li>
+          <image placement="break" href="../../../media/windows_nonnet_pub_6.png"></image></li>
         <li>This sample application does not use any environment variables, so click <b>Finish</b> in the next <b>Publish to Cloud Foundry</b> window.
-          <image placement="break" href="windows_nonnet_pub_7.png"></image></li>
+          <image placement="break" href="../../../media/windows_nonnet_pub_7.png"></image></li>
         <li>You can monitor progress of the deployment in the <b>Output</b> pane (select <b>View</b>, <b>Output</b>.)</li>
         <li>When the deployment is complete, navigate to the application URL (e.g. <b>http://nodeonhelion.15.126.140.115.xip.io/</b>) to verify that the deployment succeeded:
-          <image placement="break" href="windows_nonnet_pub_8.png"></image></li>
+          <image placement="break" href="../../../media/windows_nonnet_pub_8.png"></image></li>
       </ol></section>
   </body>
 </topic>
