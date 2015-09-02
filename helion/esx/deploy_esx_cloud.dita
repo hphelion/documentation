@@ -54,13 +54,13 @@
     <section>
       <p>The following topics in this section explain how to deploy ESX cloud.<ol id="ol_ctc_gzk_ft">
           <li><b>Set up the Deployer Node</b>
-            <p>For the detailed instructions on setting up the deployer node, refer to <xref
-                href="../../../../../../../Users/sharmabi/git/documentation/helion/installation.dita#topic_flx_j2b_ws/DeployerInstall"
-                >Set up the Deployer node</xref> in the installation guide.</p></li>
-          <li><b>Configure and Run the Deployer</b><p>For the detailed instructions on configuring
-              and running deployer node, refer to <xref
-                href="../../../../../../../Users/sharmabi/git/documentation/helion/installation.dita#topic_flx_j2b_ws/HLM_Node_Personalization"
-                >Configure and Run the Deployer</xref> in the installation guide.</p></li>
+            <p>       For the detailed instructions on setting up the deployer node, refer to <xref
+                href="../installation.dita#topic_flx_j2b_ws/DeployerInstall">Set up the Deployer
+                node</xref> in the installation guide.</p></li>
+          <li><b>Configure and Run the Deployer</b><p>       For the detailed instructions on
+              configuring and running deployer node, refer to <xref
+                href="../installation.dita#topic_flx_j2b_ws/HLM_Node_Personalization">Configure and
+                Run the Deployer</xref> in the installation guide.</p></li>
           <li><b>Prepare Cloud Controllers</b><p>
               <ol id="ol_c1w_pfl_ft">
                 <li>See a sample set of configuration files in the
@@ -74,10 +74,9 @@
             </p></li>
           <li><b>Provision Controller Nodes</b><p>For the detailed instructions on provisioning the
               controller nodes, refer to <xref
-                href="../../../../../../../Users/sharmabi/git/documentation/helion/installation.dita#topic_flx_j2b_ws/CobblerDeploy"
-              /> and <xref
-                href="../../../../../../../Users/sharmabi/git/documentation/helion/installation.dita#topic_flx_j2b_ws/NodeProvision"
-              /> in the installation guide.</p></li>
+                href="../installation.dita#topic_flx_j2b_ws/CobblerDeploy">Deploy Cobbler</xref> and
+                <xref href="../installation.dita#topic_flx_j2b_ws/NodeProvision"/> in the
+              installation guide.</p></li>
           <li><b>Temp: (Run the Configuration Processor)</b><p>For the detailed instructions on
               running the configuration processor, refer to steps <b>1</b> and <b>2 </b>(<b>a</b>
               and <b>b</b>) from <xref
@@ -121,7 +120,7 @@
         virtual host and virtual machines from a single console.<ol id="ol_atw_n2c_2t">
           <li> Add a vCenter using EON CLI.</li>
         </ol></p><codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:</p><p>
-        <ul id="ul_stl_ncc_2t">
+        <ul>
           <li>vCenter Name - the name of the vCenter server where the service is deployed.</li>
           <li>vCenter IP address - the IP address of the vCenter server where the service is
             deployed.</li>
@@ -283,7 +282,7 @@
         invoked, required ESX Compute Proxy and OVSvApp nodes are deployed.</p><p>
         <ol id="ol_lyt_cfc_2t">
           <li> Import the cluster for the EON database under the given vCenter. <codeblock><codeph>eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock>where:<p>
-              <ul id="ul_ttl_ncc_2t">
+              <ul>
                 <li>vCenter ID - ID of the vcenter containing the cluster.</li>
                 <li>Cluster Name - the name of the cluster that needs to be imported.</li>
                 <li>cluster Moid - Moid of the cluster that needs to be imported.</li>
