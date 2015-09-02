@@ -104,9 +104,9 @@ enable_distributed_routing = False</codeblock><note>
                   Cloud Deployment</xref></li>
             </ul></p></li>
       </ol></p>
-    <section>Deploy Helion Linux Shell VM Template<p>The first step in deploying the ESX compute
-        proxy and OVSvApps is to create a VM template that will make it easier to deploy the ESX
-        compute proxy for each Cluster and OVSvApps on each ESX server. </p></section>
+    <section><b>Deploy Helion Linux Shell VM Template</b><p>The first step in deploying the ESX
+        compute proxy and OVSvApps is to create a VM template that will make it easier to deploy the
+        ESX compute proxy for each Cluster and OVSvApps on each ESX server. </p></section>
     <section>
       <p>Perform the following steps to deploy a template:<ol id="ol_sym_3jl_ft">
           <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the vSphere client. </li>
