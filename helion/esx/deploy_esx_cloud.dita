@@ -66,6 +66,13 @@
                   <codeph>~/helion/examples/one-region-poc-with-esx</codeph> directory. The
                 accompanying README.md file explains the contents of each of the configuration
                 files. </li>
+              <li>Copy the example configuration files into the required setup directory and edit
+                them as required:
+                <codeblock>cp -r ~/helion/examples/one-region-poc-with-esx/* ~/helion/my_cloud/definition/</codeblock></li>
+              <li>The configuration files for editing are available at
+                  <codeph>~/helion/my_cloud/definition/</codeph>. Refer to <b><xref
+                    href="../installation.dita#topic_flx_j2b_ws/note">Note</xref></b> for the list
+                configuration files.</li>
               <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the
                 line containing <codeph>eon.yml</codeph>.</li>
               <li>Modify the <codeph>neutron.conf.j2</codeph> with the following
@@ -78,8 +85,8 @@ mechanism_drivers = ovsvapp, openvswitch, l2population
 enable_distributed_routing = False</codeblock><note>
                   You modify the mechanism_drvivers  = ovsvapp in the
                     <codeph>neutron.conf.j2</codeph>.</note></li>
-              <li>Refer to the installation guide and perform the steps <b>b </b> and <b>c</b> from
-                  <xref href="../installation.dita#topic_flx_j2b_ws/Configuration">Configure your
+              <li>Refer to the installation guide and perform the <b>c</b> from <xref
+                  href="../installation.dita#topic_flx_j2b_ws/Configuration">Configure your
                   Environment</xref>.</li>
               <li>Refer to the installation guide and execute the steps mentioned in <xref
                   href="../installation.dita#topic_flx_j2b_ws/CobblerDeploy">Deploy Cobbler</xref>,
@@ -97,12 +104,10 @@ enable_distributed_routing = False</codeblock><note>
                   Cloud Deployment</xref></li>
             </ul></p></li>
       </ol></p>
-    <p>
-      <b>Deploy Helion Linux Shell VM Template</b></p>
+    <section>Deploy Helion Linux Shell VM Template<p>The first step in deploying the ESX compute
+        proxy and OVSvApps is to create a VM template that will make it easier to deploy the ESX
+        compute proxy for each Cluster and OVSvApps on each ESX server. </p></section>
     <section>
-      <p>The first step in deploying the ESX compute proxy and OVSvApps is to create a VM template
-        that will make it easier to deploy the ESX compute proxy for each Cluster and OVSvApps on
-        each ESX server. </p>
       <p>Perform the following steps to deploy a template:<ol id="ol_sym_3jl_ft">
           <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the vSphere client. </li>
           <li>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF
@@ -307,12 +312,20 @@ enable_distributed_routing = False</codeblock><note>
 +--------------+-----------+</codeblock></p><p>One
               vCenter can have multiple clusters. But it allows you to import only one cluster at a
               time.</p></li>
+          <li> Execute the following command to view the list of clusters for the given
+              vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
+              Output</b><codeblock>+------------+----------+------------+---------------+
+| MOID       | Name     | Datacenter | Import Status |
++------------+----------+------------+---------------+
+| domain-c22 | Cluster2 | DC1        | imported  |
++------------+----------+------------+---------------+</codeblock></li>
         </ol>
       </p></section>
-    <section><b>Activate Clusters</b><p>When you execute the active cluster command, the
-          <codeph>server.yml</codeph> of the input model is updated with IP Addresses of compute
-        proxy and OVSvApp.
-      <!--VMs correspesponding to the clusters are being activated.--></p></section>
+    <section><b>Activate Clusters</b><note>You can activate the cluster only afte the import status
+        of the cluster is changed to <b>imported</b>.</note><p>When you execute the active cluster
+        command, the <codeph>server.yml</codeph> of the input model is updated with IP Addresses of
+        compute proxy and OVSvApp.
+        <!--VMs correspesponding to the clusters are being activated.--></p></section>
     <section>
       <p>
         <ol id="ol_nsc_tb3_2t">
@@ -328,13 +341,6 @@ enable_distributed_routing = False</codeblock><note>
 | state         | activated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock>
             </p></li>
-          <li>Execute the following command to view the list of clusters for the given
-              vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
-              Output</b><codeblock>+------------+----------+------------+---------------+
-| MOID       | Name     | Datacenter | Import Status |
-+------------+----------+------------+---------------+
-| domain-c22 | Cluster2 | DC1        | imported  |
-+------------+----------+------------+---------------+</codeblock></li>
         </ol>
       </p>
     </section>
