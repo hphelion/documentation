@@ -6,10 +6,16 @@
   <shortdesc>This page describes the Entry Scale with VSA model and how to use the configuration
     files to achieve your cloud deployment goals.</shortdesc>
   <conbody>
+    <section><title>About</title>
+      <p>The location of the example files is:</p>
+      <p><codeblock>~/helion/examples/entry-scale-with-vsa/</codeblock></p>
+    </section>
     <section>
       <title>cloudConfig.yml</title>
       <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/cloudConfig.yml</codeblock></p>
+      <p><codeblock>~/helion/my_cloud/definition/cloudConfig.yml</codeblock></p>
+      <p>The key values to enter into this document are the values for your local NTP servers and
+        DNS namesevers.</p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -63,8 +69,6 @@
   #    no-check-names:
   #    inet6:
 </codeblock>
-      <p>The key values to enter into this document are the values for your local NTP servers and
-        DNS namesevers.</p>
       <p>Your local NTP server(s) would go into this part:</p>
       <codeblock>
   # List of ntp servers for your site
@@ -82,6 +86,50 @@
       #    - name-server3</codeblock>
       <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
         are recognized.</note>
+    </section>
+    <section><title>baremetalConfig.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/baremetalConfig.yml</codeblock></p>
+    </section>
+    <section><title>control_plane.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/control_plane.yml</codeblock></p>
+    </section>
+    <section><title>disks_compute.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/disks_compute.yml</codeblock></p>
+    </section>
+    <section><title>disks_controller.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/disks_controller.yml</codeblock></p>
+    </section>
+    <section><title>disks_vsa.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/disks_vsa.yml</codeblock></p>
+    </section>
+    <section><title>net_interfaces.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/net_interfaces.yml</codeblock></p>
+    </section>
+    <section><title>network_groups.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/network_groups.yml</codeblock></p>
+    </section>
+    <section><title>networks.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/networks.yml</codeblock></p>
+    </section>
+    <section><title>nic_mappings.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/nic_mappings.yml</codeblock></p>
+    </section>
+    <section><title>server_roles.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/server_roles.yml</codeblock></p>
+    </section>
+    <section><title>servers.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/servers.yml</codeblock></p>
     </section>
   </conbody>
 </concept>
