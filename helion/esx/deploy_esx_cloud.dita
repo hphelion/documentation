@@ -18,19 +18,15 @@
     </section>
     <section id="Prereqs">
       <title>Prerequisite</title>
-      <p>
-        <ol id="ol_nrm_x4b_2t">
-          <li>ESX/vCenter integration is not fully automatic, vCenter administrators are advised of
-            the following responsibilities to ensure secure operation:</li>
-        </ol>
-      </p>
+      <p>ESX/vCenter integration is not fully automatic, vCenter administrators are advised of the
+        following responsibilities to ensure secure operation:</p>
       <p>
         <ul id="ul_shv_s4b_2t">
           <li>The VMware administrator is responsible for administration of the vCenter servers and
             the ESX nodes using the VMware administration tools. These responsibilities include: <ul
-              id="ul_r5r_t4b_2t">
+              id="ul_py3_j5l_ft">
               <li>Installing and configuring vCenter Server</li>
-              <li> Installing and configuring ESX server and ESX cluster</li>
+              <li>Installing and configuring ESX server and ESX cluster</li>
               <li>Installing and configuring shared datastores</li>
               <li>Establishing network connectivity between the ESX network and the HP Helion
                 management network</li>
@@ -378,7 +374,7 @@ MwareVcVmdkDriver
 #
 # End of section for VMDK block storage</codeblock>
     </p>
-    <section id="neutron-file"><b>Modify the Neutron Service Configuration File</b><p>Perfrom the
+    <section id="neutron-file"><b>Modify the Neutron Service Configuration File</b><p>Perform the
         following steps to modify the neutron service configuration files:<ol id="ol_ajx_c1c_2t">
           <li>Execute the following
             command:<codeblock>cd /home/stack/helion/hos/ansible/roles/neutron-common/templates</codeblock></li>
