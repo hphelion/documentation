@@ -21,7 +21,7 @@
 </metadata>
 </prolog>
 <body>
-  <p>This document shows how to install the Horizon UI for the <xref href="../../devplatform/helion/helion_index.dita" >Application Lifetime Service (ALS)</xref>, <xref href="devplatform_install_database.dita" >Database as a Service (DBaaS)</xref>, and <xref href="devplatform_install_marketplace.dita" >Marketplace</xref> Services.</p>
+  <p>This document shows how to install the Horizon UI for the <xref href="../helion/helion_index.dita" >Application Lifetime Service (ALS)</xref>, <xref href="devplatform_install_database.dita" >Database as a Service (DBaaS)</xref>, and <xref href="devplatform_install_marketplace.dita" >Marketplace</xref> Services.</p>
 <p>
       <note>You will need to download and install the Horizon UI separately for each service you
         wish to upgrade.</note>

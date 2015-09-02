@@ -15,7 +15,7 @@
 <othermeta name="product-version1" content="HP Helion Development Platform"/>
 <othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
 </metadata>
-</prolog>
+</prolog><body>
   <p>HTTP and HTTPS ports and routing are provided automatically for all web applications deployed
       to Application Lifecycle Service (unless <xref
         href="../deploy/manifestyml.dita#topic20922/web" type="section">processes: web:</xref> is
@@ -222,5 +222,5 @@ naming scheme:</p>
         harbor-https-custom-2.key
     ...</codeblock>
 <p>The proxy will look for these certs before reverting to <codeph>harbor.crt</codeph> and <codeph>harbor.key</codeph>.</p>
-</section>
+</section></body>
 </topic>

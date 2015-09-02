@@ -151,7 +151,7 @@ web server, application dependencies, databases, and other services.</p>
           <xref href="../admin/console/console_index.dita#topic13823/welcome">Welcome</xref>
         </li>
 <li>
-  <xref href="../admin/console/console_index.dita#topic8844/space-view" type="section">Space View</xref>
+  <xref href="../admin/console/console_index.dita" type="section">Space View</xref>
 </li>
 <li>
   <xref href="../admin/console/console_index.dita#topic8844/application-view" type="section"  >Application View</xref>
@@ -160,7 +160,7 @@ web server, application dependencies, databases, and other services.</p>
   <xref href="../admin/console/console_index.dita#topic8844/service-instance-view" type="section"  >Service Instance View</xref>
 </li>
 <li>
-  <xref href="../admin/console/console_index.dita#topic8844/sample-apps">Sample Applications</xref>
+  <xref href="../admin/console/app-store.dita">Sample Applications</xref>
 </li>
 <li>
   <xref href="../admin/console/console_index.dita#topic8844/support" type="section"  >Support</xref>
