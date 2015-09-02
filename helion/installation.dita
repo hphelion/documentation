@@ -114,7 +114,8 @@ helion/hos/                    Directory contains files used by the installer
                   subnet range as to avoid conflicts with the virtual IPs being used by the rest of
                   your environment.</li>
                 <li>The <codeph>data/net_interfaces.yml</codeph> file contains information related
-                  to your network interfaces.</li>
+                  to your network interfaces. If you are going to use NIC bonding this is where you
+                  would do that.</li>
                 <li>The <codeph>data/control_plane.yml</codeph> file contains information about the
                   services that will be installed. No edits should be needed for this file.</li>
                 <li>The <codeph>/data/disks_controller.yml</codeph> contains the Swift information
