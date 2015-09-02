@@ -43,7 +43,7 @@
 </li>
 <li>
         <xref href="#topic14660/verifying-deployed-Swift-nodes" format="dita"/></li>
-<li><xref href="#topic14660/preparing-disks-on-swift-nodes" format="dita"/>
+<li><xref href="#topic1466850/preparing-disks-on-swift-nodes" format="dita"/>
       </li>
 <li>
 <xref type="section" href="#topic14660/creating-scale-out-object-ring">Create a New Scale-out Object Ring</xref>
