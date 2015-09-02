@@ -9,6 +9,21 @@
     <section><title>About</title>
       <p>The location of the example files is:</p>
       <p><codeblock>~/helion/examples/entry-scale-with-vsa/</codeblock></p>
+      <p>Here are shortcuts to each of the files for full descriptions and syntax:</p>
+      <ul>
+        <li><xref href="#entry_scale_with_vsa/cloudConfig.yml">cloudConfig.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/baremetalConfig.yml">baremetalConfig.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/control_plane.yml">control_plane.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/disks_compute.yml">disks_compute.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/disks_controller.yml">disks_controller.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/disks_vsa.yml">disks_vsa.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/net_interfaces.yml">net_interfaces.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/network_groups.yml">network_groups.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/networks.yml">networks.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/nic_mappings.yml">nic_mappings.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/server_roles.yml">server_roles.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/servers.yml">servers.yml</xref></li>
+      </ul>
     </section>
     <section>
       <title>cloudConfig.yml</title>
@@ -90,46 +105,68 @@
     <section><title>baremetalConfig.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/baremetalConfig.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>Here is the sample file included with the install:</p>
     </section>
     <section><title>control_plane.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/control_plane.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>Here is the sample file included with the install:</p>
     </section>
     <section><title>disks_compute.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/disks_compute.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>Here is the sample file included with the install:</p>
     </section>
     <section><title>disks_controller.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/disks_controller.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>Here is the sample file included with the install:</p>
     </section>
     <section><title>disks_vsa.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/disks_vsa.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>Here is the sample file included with the install:</p>
     </section>
     <section><title>net_interfaces.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/net_interfaces.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>Here is the sample file included with the install:</p>
     </section>
     <section><title>network_groups.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/network_groups.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>Here is the sample file included with the install:</p>
     </section>
     <section><title>networks.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/networks.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>Here is the sample file included with the install:</p>
     </section>
     <section><title>nic_mappings.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/nic_mappings.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>Here is the sample file included with the install:</p>
     </section>
     <section><title>server_roles.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/server_roles.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>Here is the sample file included with the install:</p>
     </section>
     <section><title>servers.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/servers.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>Here is the sample file included with the install:</p>
     </section>
   </conbody>
 </concept>
