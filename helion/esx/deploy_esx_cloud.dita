@@ -46,59 +46,57 @@
       </p>
     </section>
     <section><b>Deploy ESX Cloud</b><p>At a high level, here are the steps to configure and deploy
-        ESX cloud:</p><p><image href="../../media/esx_deploy.jpg" id="image_pbk_wnl_ft"
+        ESX cloud:</p><p><image href="../../media/esx/esx_deploy.jpg" id="image_kjt_zlm_ft"
       /></p></section>
     <section>
       <title>Procedure to Deploy ESX cloud</title>
     </section>
-    <section>
-      <p>The following topics in this section explain how to deploy ESX cloud.<ol id="ol_ctc_gzk_ft">
-          <li><b>Set up the Deployer Node</b>
-            <p>       For the detailed instructions on setting up the deployer node, refer to <xref
-                href="../installation.dita#topic_flx_j2b_ws/DeployerInstall">Set up the Deployer
-                node</xref> in the installation guide.</p></li>
-          <li><b>Configure and Run the Deployer</b><p>       For the detailed instructions on
-              configuring and running deployer node, refer to <xref
-                href="../installation.dita#topic_flx_j2b_ws/HLM_Node_Personalization">Configure and
-                Run the Deployer</xref> in the installation guide.</p></li>
-          <li><b>Prepare Cloud Controllers</b><p>
-              <ol id="ol_c1w_pfl_ft">
-                <li>See a sample set of configuration files in the
-                    <codeph>~/helion/examples/one-region-poc-with-esx</codeph> directory. The
-                  accompanying README.md file explains the contents of each of the configuration
-                  files. </li>
-                <li>Perform the steps <b>b </b> and <b>c</b> from <xref
-                    href="../installation.dita#topic_flx_j2b_ws/Configuration">Configure your
-                    Environment</xref> in the installation guide.</li>
-              </ol>
-            </p></li>
-          <li><b>Provision Controller Nodes</b><p>For the detailed instructions on provisioning the
-              controller nodes, refer to <xref
-                href="../installation.dita#topic_flx_j2b_ws/CobblerDeploy">Deploy Cobbler</xref> and
-                <xref href="../installation.dita#topic_flx_j2b_ws/NodeProvision"/> in the
-              installation guide.</p></li>
-          <li><b>Temp: (Run the Configuration Processor)</b><p>For the detailed instructions on
-              running the configuration processor, refer to steps <b>1</b> and <b>2 </b>(<b>a</b>
-              and <b>b</b>) from <xref
-                href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run the
-                configuration Processor</xref> in the installation guide.</p></li>
-          <li><b>Deploy Cloud Controllers</b><p>Perform the following steps to deploy cloud
-                controllers:<ol id="ol_csf_q3l_ft">
-                <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the
-                  line containing <codeph>eon.yml</codeph>.</li>
-                <li>Run the following command:
-                  <codeblock>ansible-playbook -i hosts/verb_hosts site.yml </codeblock></li>
-              </ol></p></li>
-          <li><b>Prepare and Deploy ESX Computes and OVSvAPP</b><p>The following sections describe
-              the procedure to install and configure ESX compute and OVSvAPP on vCenter.<ul
-                id="ul_lns_fjl_ft">
-                <li><xref href="#topic_flx_j2b_ws/deploy-template" format="dita">Deploy Helion Linux
-                    Shell VM Template</xref></li>
-                <li><xref href="#topic_flx_j2b_ws/deploy-service" format="dita">Preparation for ESX
-                    Cloud Deployment</xref></li>
-              </ul></p></li>
-        </ol></p>
-    </section>
+    <p>The following topics in this section explain how to deploy ESX cloud.<ol id="ol_ctc_gzk_ft">
+        <li><b>Set up the Deployer Node</b>
+          <p> For the detailed instructions on setting up the deployer node, refer to <xref
+              href="../installation.dita#topic_flx_j2b_ws/DeployerInstall">Set up the Deployer
+              node</xref> in the installation guide.</p></li>
+        <li><b>Configure and Run the Deployer</b><p> For the detailed instructions on configuring
+            and running deployer node, refer to <xref
+              href="../installation.dita#topic_flx_j2b_ws/HLM_Node_Personalization">Configure and
+              Run the Deployer</xref> in the installation guide.</p></li>
+        <li><b>Prepare and Deploy Cloud Controllers</b><p>
+            <ol id="ol_c1w_pfl_ft">
+              <li>See a sample set of configuration files in the
+                  <codeph>~/helion/examples/one-region-poc-with-esx</codeph> directory. The
+                accompanying README.md file explains the contents of each of the configuration
+                files. </li>
+              <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the
+                line containing <codeph>eon.yml</codeph>.</li>
+              <li>Modify the <codeph>neutron.conf.j2</codeph> with the following
+                  values:<codeblock>router_distributed = False
+modify ml2_conf.ini.j2
+with the below values
+[ml2]
+mechanism_drivers = ovsvapp, openvswitch, l2population
+[agent]
+enable_distributed_routing = False</codeblock><note>
+                  You modify the mechanism_drvivers  = ovsvapp in the
+                    <codeph>neutron.conf.j2</codeph>.</note></li>
+              <li>Refer to the installation guide and perform the steps <b>b </b> and <b>c</b> from
+                  <xref href="../installation.dita#topic_flx_j2b_ws/Configuration">Configure your
+                  Environment</xref>.</li>
+              <li>REfer to the installation guide and execute the steps mentioned in <xref
+                  href="../installation.dita#topic_flx_j2b_ws/CobblerDeploy">Deploy Cobbler</xref>,
+                  <xref href="../installation.dita#topic_flx_j2b_ws/NodeProvision"/>,  and <xref
+                  href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run the
+                  Configuration Processor</xref> to deploy cloud controller.</li>
+            </ol>
+          </p></li>
+        <li><b>Prepare and Deploy ESX Computes and OVSvAPP</b><p>The following sections describe the
+            procedure to install and configure ESX compute and OVSvAPP on vCenter.<ul
+              id="ul_lns_fjl_ft">
+              <li><xref href="#topic_flx_j2b_ws/deploy-template" format="dita">Deploy Helion Linux
+                  Shell VM Template</xref></li>
+              <li><xref href="#topic_flx_j2b_ws/deploy-service" format="dita">Preparation for ESX
+                  Cloud Deployment</xref></li>
+            </ul></p></li>
+      </ol></p>
     <section><b>Deploy Helion Linux Shell VM Template</b><p>The first step in deploying the ESX
         compute proxy and OVSvApps is to create a VM template that will make it easier to deploy the
         ESX compute proxy for each Cluster and OVSvApps on each ESX server. </p><p>Perform the
@@ -373,18 +371,6 @@ MwareVcVmdkDriver
 #
 # End of section for VMDK block storage</codeblock>
     </p>
-    <section id="neutron-file"><b>Modify the Neutron Service Configuration File</b><p>Perform the
-        following steps to modify the neutron service configuration files:<ol id="ol_ajx_c1c_2t">
-          <li>Execute the following
-            command:<codeblock>cd /home/stack/helion/hos/ansible/roles/neutron-common/templates</codeblock></li>
-          <li>Modify the <codeph>neutron.conf.j2</codeph> with the following values:</li>
-        </ol></p><codeblock>router_distributed = False
-modify ml2_conf.ini.j2
-with the below values
-[ml2]
-mechanism_drivers = ovsvapp, openvswitch, l2population
-[agent]
-enable_distributed_routing = False</codeblock></section>
     <section id="commit-change"><b>Commit your Cloud Definition</b></section>
     <section>
       <p>
