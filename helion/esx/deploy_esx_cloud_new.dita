@@ -48,8 +48,14 @@
         </ul>
       </p>
     </section>
-    <section><b>Deploy ESX Cloud</b><p>The following topics in this section explain how to deploy
-        ESX cloud.<ol id="ol_ctc_gzk_ft">
+    <section><b>Deploy ESX Cloud</b><p>At a high level, here are the steps to configure and deploy
+        ESX cloud:</p><p><image href="../../media/esx/esx_deploy.jpg" id="image_w31_fnl_ft"/><image
+          href="../../media/esx_deploy.jpg" id="image_pbk_wnl_ft"/></p></section>
+    <section>
+      <title>Procedure to Deploy ESX cloud</title>
+    </section>
+    <section>
+      <p>The following topics in this section explain how to deploy ESX cloud.<ol id="ol_ctc_gzk_ft">
           <li><b>Set up the Deployer Node</b>
             <p>For the detailed instructions on setting up the deployer node, refer to <xref
                 href="../../../../../../../Users/sharmabi/git/documentation/helion/installation.dita#topic_flx_j2b_ws/DeployerInstall"
@@ -95,7 +101,8 @@
                 <li><xref href="#topic_flx_j2b_ws/deploy-service" format="dita">Preparation for ESX
                     Cloud Deployment</xref></li>
               </ul></p></li>
-        </ol></p></section>
+        </ol></p>
+    </section>
     <section><b>Deploy Helion Linux Shell VM Template</b><p>The first step in deploying the ESX
         compute proxy and OVSvApps is to create a VM template that will make it easier to deploy the
         ESX compute proxy for each Cluster and OVSvApps on each ESX server. </p><p>Perform the
