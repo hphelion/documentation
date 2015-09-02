@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic_amr_q3w_js">
-  <title>HP Helion 1.3 Development Platform: Deploying Non-.NET Applications</title>
+  <title>HP Helion 1.3 Development Platform: Deploying a Node.js Application</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default-devplatform"/>
@@ -20,11 +20,11 @@
     </metadata>
   </prolog>
   <body>
-    <section><title>HP Helion 1.3 Development Platform: Deploying Non-.NET Applications</title>
+    <section><title>HP Helion 1.3 Development Platform: Deploying a Node.js Application</title>
       <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
         Microsoft Corporation in the United States and/or other countries.</i></ph>
-      <p>This tutorial demonstrates how to deploy a non- .NET application. For the purposes
-        of this tutorial, you'll deploy a Hello World NodeJS application.</p></section>
+      <p>This tutorial demonstrates how to deploy a a Node.js Application application. For the purposes
+        of this tutorial, you'll deploy the Hello World application created with the Node.js Web Application template.</p></section>
     <section><title>Contents</title>
     <p>This tutorial contains the following sections:</p>
     <ul>
@@ -45,8 +45,7 @@
             <li>In the <b>Online</b> panel, select <b>Visual Studio Gallery</b>. Use the search box in the upper right to search for <b>node.js tools</b>.</li>
             <li>In the <b>Node Tools 1.1 RC</b> item, click <b>Install</b>.
               <image placement="break" href="../../../media/windows_nonnet_installnode.png"></image></li>
-            <li>The tools will download and install. Click <b>I accept the terms in the License Agreement</b>, and click <b>Install</b>.
-              <image placement="break" href="../../../media/windows_nonnet_installnode_1.png"></image></li>
+            <li>The tools will download and install. Click <b>I accept the terms in the License Agreement</b>, and click <b>Install</b>.</li>
             <li>Click <b>Finish</b> when the install completes.</li>
           </ol>
         </li>
@@ -98,7 +97,7 @@
         </li>
         <li>In the <b>Pulish to Cloud Foundry</b> window, click <b>Next&gt;</b>.
           <image placement="break" href="../../../media/windows_nonnet_pub_3.png"></image></li>
-        <li>In the next <b>Publish to Cloud Foundry</b> window, select <b>nodejs</b> from the <b>Buildpack</b> dropdown and click <b>Next&gt;</b>.
+        <li>In the next <b>Publish to Cloud Foundry</b> window, select <b>nodejs</b> from the <b>Buildpack</b> dropdown, and verify that the <b>Stack</b> pulldown is set to <b>lucid64</b>. Click <b>Next&gt;</b>.
           <image placement="break" href="../../../media/windows_nonnet_pub_4.png"></image></li>
         <li>In the next <b>Publish to Cloud Foundry</b> window, select the target URL in the <b>Shared Domains</b> section and click <b>Next</b>.
           <image placement="break" href="../../../media/windows_nonnet_pub_5.png"></image></li>
