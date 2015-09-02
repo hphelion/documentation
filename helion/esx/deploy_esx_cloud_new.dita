@@ -11,8 +11,9 @@
       <ul id="ul_x1p_ps2_ft">
         <li>Refer to <b><xref href="../installation.dita#topic_flx_j2b_ws/important-notes">Important
               Notes</xref></b> in the Installation Guide.</li>
-        <li>Prepare your baremetal hardware on all nodes. For instruction, please refer to <xref
-            href="../installation.dita#topic_flx_j2b_ws/Prereqs"/>.</li>
+        <li>Prepare your baremetal hardware on all nodes. For instruction, please refer to  <xref
+            href="../installation.dita#topic_flx_j2b_ws/Prereqs"><b>Before You
+          Start</b></xref>.</li>
       </ul>
     </section>
     <section id="Prereqs">
