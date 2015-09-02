@@ -89,7 +89,7 @@
   <li><b>Private Domains</b>: Select from one of the available options.</li></ul>
     <image href="../../../media/windows_publish_step3_version_1_3.png" placement="break" /></li>
   <li>In the fourth <b>Publish to Cloud Foundry</b> dialog (<b>Services</b>), if a service is needed for your application, either select from one of the available services, or select <b>Create Service</b>.
-   <image href="../../../media/windows_publish_step4_version_1_3.png"/></li>
+    <image href="../../../media/windows_publish_step4_version_1_3.png"  placement="break" /></li>
   <li>If you clicked <b>Create Service</b> in the previous step, enter the following values in the <b>Create Service Instance</b> dialog and click <b>OK</b>:
     <ul>
       <li><b>Service Name</b>: The friendly name for the service you are creating.</li>
