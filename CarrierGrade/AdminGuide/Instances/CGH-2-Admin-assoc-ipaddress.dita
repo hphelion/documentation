@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2995">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Allocating and Associating
+    Floating IP Addresses</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/IP_Addresses/1.1commercial.dashboard.ipaddress.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/ipaddresses/associate/--></p>
+<p>Floating IP addresses allow external access to the instances in your network.</p>
+<ul>
+<li>
+<xref type="section" href="#topic2995/associate">Associate a floating IP address</xref>
+</li>
+<li>
+<xref type="section" href="#topic2995/allocate">Allocate floating IP addresses</xref>
+</li>
+<li>
+<xref type="section" href="#topic2995/disassociate">Disassociate a floating IP address</xref>
+</li>
+</ul>
+<p>
+<b>Note:</b> You must have an external network configured for the project. Without an external network, a floating IP address is not available. When you create an external network, a pool of IP addresses is created, which you can associate to the instances on a network.</p>
+<section id="associate"> <title>Associate a floating IP address to a network.</title>
+<p>To assign a floating IP address to an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>For the network you want to associate the IP address, click <b>More &gt; Associate Floating IP</b>.</p>
+
+<p>
+<b>Note:</b> Instances that are in error cannot be assigned a floating IP address.</p>
+</li>
+<li>
+<p>In the <b>Manage Floating IP Associations</b> screen, select an address from the <b>IP Address</b>. This list contains the currently allocated IP addresses.</p>
+</li>
+</ol>
+<p>
+<b>Note:</b> If the list is empty, you will need to <xref type="section" href="#topic2995/allocate">allocate an IP address</xref> before you can associate an address to a network. Click <b>Cancel</b> and see</p>
+<ol>
+<li>
+<p>In the <b>Port to be Associated</b> list, select the instance and port that you want to associate with the floating IP address.</p>
+</li>
+<li>
+<p>Click <b>Associate</b>.</p>
+</li>
+</ol>
+</section>
+<section id="allocate"> <title>Allocate a floating IP address</title>
+<p>Before associating a floating IP address to an instance, the floating IP address must be allocated for use.</p>
+<p>To allocate a floating IP address:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>For the network you want to associate the IP address, click <b>More &gt; Associate Floating IP</b>.</p>
+</li>
+<li>
+<p>In the <b>Manage Floating IP Associations</b> screen, click the <b>+</b> button next to the <b>IP Address</b> list.</p>
+</li>
+<li>
+<p>In the <b>Allocate Floating IP</b> screen, select the appropriate external network in the <b>Pool</b> list. Select the network to which the instance connects.</p>
+</li>
+<li>
+<p>Click <b>Allocate IP</b>.</p>
+</li>
+</ol>
+<p>A floating IP address is added to the <b>IP Address</b> list in the <b>Manage Floating IP Associations</b> screen.</p>
+<p>The floating address can be <xref type="section" href="#topic2995/associate">associated</xref> to an instance.</p>
+</section>
+<section id="disassociate"> <title>Disassociate a floating IP address from a network.</title>
+<p>To remove a floating IP address from an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>For the network you want to disassociate the IP address, click <b>More &gt; Disassociate Floating IP</b>.</p>
+</li>
+<li>
+<p>In the confirmation screen, click <b>Disassociate Floating IP</b>.</p>
+</li>
+</ol>
+<p>The floating IP address is removed and the instance is no longer accessible from the external network.</p>
+<p>
+  <xref type="section" href="#topic2995"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

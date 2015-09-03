@@ -12,7 +12,9 @@
 <!--UNDER REVISION-->
  <!--./UseCases/TasksforAdmins/Network/1.1commercial.dashboard.network.subnet.md-->
  <!--permalink: /helion/commercial/1.1/dashboard/managing/network/subnet/--></p>
-<p>When a <xref href="../../../UseCases/TasksforUsers/Networks/1.1commercial.dashboard.network.create.dita" >network is created</xref>, a subnet (short for <i>subnetwork</i>) can be assigned upon creation. However, you might need to add a subnet to a network at a later time.</p>
+<p>When a  <xref href="CGH-2-Admin-network-create.dita#topic3372">network is created</xref>, a
+      subnet (short for <i>subnetwork</i>) can be assigned upon creation. However, you might need to
+      add a subnet to a network at a later time.</p>
 <p>A subnet is a logically visible subdivision of a network. A subnet enables you to group instances logically, while maintaining a single network address to connect to the Internet.</p>
 <p>An admin user can create and delete subnets as needed.</p>
 <codeblock>
@@ -69,7 +71,8 @@
 </ol>
 </section>
 <section id="deleteport"> <title>Delete a subnet</title>
-<p>Before you delete a subnet, you must first <xref href="../../../UseCases/TasksforAdmins/Network/1.1commercial.dashboard.network.ports.dita" >delete all ports</xref> associated with the subnet.</p>
+<p>Before you delete a subnet, you must first <xref href="CGH-2-Admin-network-ports.dita#topic3171"
+          >delete all ports</xref> associated with the subnet.</p>
 <ol>
 <li>
 <p>

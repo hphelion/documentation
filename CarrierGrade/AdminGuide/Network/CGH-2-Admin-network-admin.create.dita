@@ -54,12 +54,12 @@
 </ol>
 <p>To configure a subnet and ports for the network, see:</p>
 <ul>
-<li>
-<xref href="../../../UseCases/TasksforAdmins/Network/1.1commercial.dashboard.network.subnet.dita" >Add, Remove, or Modify a subnet</xref>
-</li>
-<li>
-<xref href="../../../UseCases/TasksforAdmins/Network/1.1commercial.dashboard.network.ports.dita" >Create, Modify, or Delete a port</xref>
-</li>
+        <li>
+          <xref href="CGH-2-Admin-network-subnet.dita#topic3262">Add or remove a subnet to/from a
+            Network</xref></li>
+        <li>
+          <xref href="CGH-2-Admin-network-ports.dita#topic3171">Create, Modify, or Delete a port on
+            a Network</xref></li>
 </ul>
 <p>
   <xref type="section" href="#topic1681"> Return to Top </xref>

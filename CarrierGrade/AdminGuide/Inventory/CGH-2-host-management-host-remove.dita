@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3241">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deleting a System</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/lock/--></p>
+<p>You can lock and unlock a system, for example when you need to make a change to the system.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in regionone.</p>
+<!-- ===================== horizontal rule ===================== -->
+    <p>You can remove a compute node from the pool of available resources. You may need to remove a
+      compute node in order to replace a failed host, or to change the configuration of a host. If
+      the host is active, you can migrate instances on it by locking the host. </p>
+    <p><b>Caution:</b> Before locking a host, ensure that sufficient resources are available on
+      other hosts to migrate any running instances. </p>
+<section id="lock">
+      <title>Delete a host</title>
+      <p>To delete a host system from the HP Helion OpenStack Carrier Grade system:</p>
+      <ol>
+        <li>
+          <p>
+            <xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160">Launch the HP
+              Helion OpenStack Horizon Dashboard</xref>.</p>
+        </li>
+        <li>
+          <p>Click <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and
+            then selecting the <b>Hosts</b> tab.</p>
+        </li>
+        <li>
+          <xref href="CGH-2-host-management-host-lock.dita#topic3241">Lock the standby
+            controller</xref> by clicking <b>More</b> then <b>Lock Host</b> for the
+            controller.<p>Wait for the host to be reported as Locked</p></li>
+        <li>Click <b>More &gt; Delete Host</b> for the host you want to delete. </li>
+        <li>Power down the host and remove the hardware from the cluster. </li>
+      </ol>
+      <p>
+        <xref type="section" href="#topic3241"> Return to Top </xref>
+      </p>
+      <!-- ===================== horizontal rule ===================== -->
+    </section>
+</body>
+</topic>

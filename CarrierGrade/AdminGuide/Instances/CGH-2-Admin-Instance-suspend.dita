@@ -15,7 +15,9 @@
 <p>When a user <i>suspends</i> an instance, the contents of the instance are stored on disk and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available to create other instances.</p>
 <p>Users can suspend an instance, for example, to free up the resources used by an instance that is used infrequently or to perform system maintenance.</p>
 <p>
-<b>Note:</b> Suspending is different from <xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.pause.dita" >pausing an instance</xref>. Pausing keeps the instance running, (in a "frozen" state) and stores the content of the instance in memory (RAM).</p>
+      <b>Note:</b> Suspending is different from <xref
+        href="CGH-2-Admin-Instance-pause.dita#topic1643">pausing an instance</xref>. Pausing keeps the instance running, (in a "frozen" state) and
+      stores the content of the instance in memory (RAM).</p>
 <section id="suspend-an-instance"> <title>Suspend an instance</title>
 <p>To suspend an instance:</p>
 <ol>

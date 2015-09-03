@@ -55,7 +55,9 @@
 <li>
 <p>Select the volume, snapshot, or image from the list that appears.</p>
 
-<p>Additonal fields appear for the boot source option that create a new volume. For more information, refer to <xref href="../../../UseCases/TasksforUsers/Volumes/1.1commercial.managing.volumes.dita" >Managing Block Storage Volumes</xref>.</p>
+<p>Additonal fields appear for the boot source option that create a new volume. For more
+                information, refer to 
+  <xref href="../Volumes/CGH-2-Admin-volumes-managing.dita#topic1382">Managing Block Storage Volumes</xref></p>
 </li>
 </ul>
 </li>

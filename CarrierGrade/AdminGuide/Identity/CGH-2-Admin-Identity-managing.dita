@@ -34,12 +34,11 @@
         project:</p>
       <ul id="ul_k32_nkp_ft">
         <li>
-          <xref
-            href="../../../UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.create.dita"
-            ></xref>
-          <xref href="CGH-2-Admin-Identity-projects-create.dita#topic2004">Create and delete projects</xref></li>
+          <xref href="CGH-2-Admin-Identity-projects-create.dita#topic2004">Create and delete
+            projects</xref></li>
         <li><xref href="CGH-2-Admin-Identity-projects-primary.dita#topic1138">Specifying a Primary Project for a User</xref></li>
-        <li><xref href="CGH-2-Admin-Identity-projects-view.dita#topic1218">>View details on a project</xref></li>
+        <li><xref href="CGH-2-Admin-Identity-projects-view.dita#topic1218">View details on a
+            project</xref></li>
       </ul>
     </section>
     <section id="managing-quotas">
@@ -50,8 +49,8 @@
         metadata, instances, CPUs, memory, and other settings for each project.</p>
       <ul id="ul_l32_nkp_ft">
         <li>
-        
-          <xref href="CGH-2-Admin-Identity-quotas.dita#topic1853">>Modify the quota of a project</xref></li>
+          <xref href="CGH-2-Admin-Identity-quotas.dita#topic1853">Modify the quota of a
+            project</xref></li>
       </ul>
     </section>
 

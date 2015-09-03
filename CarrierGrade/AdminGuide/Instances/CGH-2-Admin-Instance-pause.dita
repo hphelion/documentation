@@ -15,7 +15,10 @@
 <p>When a user <i>pauses</i> an instance, the instance  remains running, but, in a frozen state. The contents of the instance are stored in memory (RAM). Memory and vCPUs are not released.</p>
 <p>Users can suspend an instance, for example, in order to make a back up of an instance to prevent the instance  from being used during the process.</p>
 <p>
-<b>Note:</b> Pausing is different from <xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.suspend.dita" >suspending an instance</xref>. Suspending stops the instance, stores the contents on the disk. the memory and vCPUs become available to create other instances.</p>
+      <b>Note:</b> Pausing is different from 
+  <xref href="CGH-2-Admin-Instance-suspend.dita#topic1594">suspending an instance</xref>. Suspending stops the instance,
+      stores the contents on the disk. the memory and vCPUs become available to create other
+      instances.</p>
 <section id="pause-an-instance"> <title>Pause an instance</title>
 <p>To pause an instance:</p>
 <ol>

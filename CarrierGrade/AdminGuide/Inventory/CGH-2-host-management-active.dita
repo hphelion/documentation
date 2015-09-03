@@ -55,29 +55,19 @@
         <li>Replace a failed compute node host with an equivalent. </li>
       </ul><b> Caution:</b> When replacing or adjusting a host, ensure that the overall resource
       pool still meets the requirements for your system.  </p>
-    <p>Removing Compute Nodes You can remove a compute node from the pool of available resources.
-      You may need to remove a compute node in order to replace a failed host, or to change the
-      configuration of a host. If the host is active, you can migrate instances on it by locking the
-      host. </p>
-    <p><b>Caution:</b> Before locking a host, ensure that sufficient resources are available on
-      other hosts to migrate any running instances. </p>
-    <p>1. Lock the host to be removed. Open the Hosts list by clicking Inventory on the System Panel
-      section of the Admin menu, and then selecting the Hosts tab. Click More &gt; Lock Host for the
-      host. Wait for the procedure to be completed. 2. Delete the host from the HP Helion OpenStack
-      Carrier Grade system. Click More &gt; Delete Host for the host. 3. Power down the host and
-      remove the hardware from the cluster. Adjusting Resources on a Compute Node You can adjust the
-      resources of a compute node while it is offline. 1. Lock the host to make changes. a) On the
-      Admin pane of the web administration interface, in the System Panel section, select Inventory.
-      b) Select the Hosts tab. c) Open the More drop-down list for the host, and then select Lock
-      Host. d) Wait for the host to be reported as Locked. 2. Power off the host. 3. Make any
-      required resource changes (for example, BIOS changes required for proper operation). If you
-      are adding a disk to provide additional local storage for VMs, you can install an
-      unpartitioned disk. New disks are detected by the compute node operating system and
-      automatically configured with a single partition. 4. Power on the host, and wait for it to
-      reboot fully. When the host is fully rebooted, it is shown as Locked, Enabled, and Available
-      in the Hosts list. Note: Do not unlock the host until it is fully rebooted. 5. Unlock the
-      host. The host is rebooted a second time. When the host is reported as Unlocked, Enabled, and
-      Available, it is ready for use with the adjusted resources.</p>
+    <p>Adjusting Resources on a Compute Node You can adjust the resources of a compute node while it
+      is offline. 1. Lock the host to make changes. a) On the Admin pane of the web administration
+      interface, in the System Panel section, select Inventory. b) Select the Hosts tab. c) Open the
+      More drop-down list for the host, and then select Lock Host. d) Wait for the host to be
+      reported as Locked. 2. Power off the host. 3. Make any required resource changes (for example,
+      BIOS changes required for proper operation). If you are adding a disk to provide additional
+      local storage for VMs, you can install an unpartitioned disk. New disks are detected by the
+      compute node operating system and automatically configured with a single partition. 4. Power
+      on the host, and wait for it to reboot fully. When the host is fully rebooted, it is shown as
+      Locked, Enabled, and Available in the Hosts list. Note: Do not unlock the host until it is
+      fully rebooted. 5. Unlock the host. The host is rebooted a second time. When the host is
+      reported as Unlocked, Enabled, and Available, it is ready for use with the adjusted
+      resources.</p>
 <p>
   <xref type="section" href="#topic4032"> Return to Top </xref>
 </p>

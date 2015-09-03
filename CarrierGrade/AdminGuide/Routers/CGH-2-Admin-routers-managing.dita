@@ -23,14 +23,14 @@
 <p>The Network panel contains commands to view a visual representation of your network and to enable you to work with your router.</p>
 <ul>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Routers/1.1commercial.dashboard.router.create.dita" >Create a Router</xref>
-</li>
+    
+  <xref href="CGH-2-Admin-routers-create.dita#topic1054">Create a Router</xref></li>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Routers/1.1commercial.dashboard.router.delete.dita" >Delete a Router</xref>
-</li>
+
+  <xref href="CGH-2-Admin-routers-delete.dita#topic1247">Delete a Router</xref></li>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Routers/1.1commercial.dashboard.router.connect.dita" >Connect a network to a router</xref>
-</li>
+  <xref href="CGH-2-Admin-routers-connect.dita#topic1321">Connect a network to a router</xref>
+        </li>
 <li>Add / Remove an external network to/from a Router</li>
 </ul>
 </section>
@@ -39,11 +39,9 @@
 <p>An admin can create a shared network, which can be seen in every project in the domain. You can also create an external network.</p>
 <ul>
 <li>
-<xref href="../../../UseCases/TasksforAdmins/Network/1.1commercial.dashboard.network.shared.dita" >Create a shared network</xref>
-</li>
+  <xref href="../Network/CGH-2-Admin-network-shared.dita#topic1239">Create a shared network</xref></li>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Networks/1.1commercial.dashboard.network.create.dita" >Create an external network</xref>
-</li>
+  <xref href="../Network/CGH-2-Admin-network-admin.create.dita#topic1681">Create an external network</xref></li>
 </ul>
 <p>Access the router commands using the System panel on the Admin dashboard.</p>
 <p>

@@ -50,7 +50,8 @@
 <p>Click <b>Create Image</b> to launch the image.</p>
 </li>
 <li>
-<p>Optionally, you can click <b>Launch</b> to <xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.create.dita" >create a running instance</xref> based on this image.</p>
+<p>Optionally, you can click <b>Launch</b> to <xref
+  href="../Instances/CGH-2-Admin-Instance-create.dita#topic2817">create a running instance</xref> based on this image.</p>
 </li>
 </ol>
 <p>

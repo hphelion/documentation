@@ -16,24 +16,21 @@
 <section id="creating-projects"> <title>Creating projects</title>
 <p>As an admin, you can use create projects and allow specific users to access each project:</p>
 <ul>
-<li>
-<xref href="../../../UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.create.dita" >Create and delete projects</xref>
-</li>
-<li>
-<xref href="../../../UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.view.dita" >View details on a project</xref>
-</li>
-<li>
-<xref href="../../../UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.users.dita" >Add and remove users to a project</xref>
-</li>
-</ul>
+        <li>
+          <xref href="CGH-2-Admin-Identity-projects-create.dita#topic2004">Create and delete
+            projects</xref></li>
+        <li><xref href="CGH-2-Admin-Identity-projects-primary.dita#topic1138">Specifying a Primary
+            Project for a User</xref></li>
+        <li><xref href="CGH-2-Admin-Identity-projects-view.dita#topic1218">View details on a
+            project</xref></li>
+      </ul>
 </section>
 <section id="managing-quotas"> <title>Managing quotas</title>
 <p>Quotas are operational limits that you can configure to prevent system capacities from being exhausted without notification.</p>
 <p>Use the <b>Identity</b> panel on the <b>Admin</b> dashboard to set maximum limits for metadata, instances, CPUs, memory, and other settings for each project.</p>
 <ul>
-<li>
-<xref href="../../../UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.quotas.dita" >Modify the quota of a project</xref>
-</li>
+<li><xref href="CGH-2-Admin-Identity-quotas.dita#topic1853">Modify the quota of a
+          project</xref></li>
 </ul>
 <!-- ===================== horizontal rule ===================== -->
 </section>

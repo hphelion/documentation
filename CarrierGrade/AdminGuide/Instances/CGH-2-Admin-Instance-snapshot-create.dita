@@ -36,7 +36,10 @@
 </li>
 </ol>
 <p>When you create a snapshot, by default the snapshot image can be used only with the current project and it can be deleted.</p>
-<p>You can <xref href="../../../UseCases/TasksforAdmins/Images/1.1commercial.dashboard.snapshot.public.dita" >make the snapshot public</xref> for use in all projects in the domain and you can <xref href="../../../UseCases/TasksforUsers/Images/1.1commercial.dashboard.snapshot.protect.dita" >protect the image</xref> from being deleted.</p>
+<p>You can 
+  <xref href="../Images/CGH-2-Admin-images-snapshot-public.dita#topic902">make the snapshot public</xref>for use in all
+        projects in the domain and you can 
+  <xref href="../Images/CGH-2-Admin-images-protect.dita#topic1019">protect the image</xref>from being deleted.</p>
 <p>
   <xref type="section" href="#topic1162"> Return to Top </xref>
 </p>

@@ -23,12 +23,13 @@
 <li>
 <p>Click the <b>Network Topology</b> link on the <b>Project</b> dashboard <b>Network</b> panel.</p>
 
-<p>Determine if the router is connected to a network using the <xref href="../../../UseCases/TasksforUsers/Networks/1.1commercial.dashboard.network.viewing.dita" >Network Topology screen</xref>:</p>
+<p>Determine if the router is connected to a network using the <xref
+  href="../Network/CGH-2-Admin-network-viewing.dita#topic868">Network Topology screen</xref>:</p>
 
 <p>
-<!--A BR tag was used here in the original source.-->
-<image href="../../../documentation/media/NetworkConnections.png" placement="break"/>
-</p>
+            <!--A BR tag was used here in the original source.-->
+            <image href="../../../media/NetworkConnections.png" placement="break"/>
+          </p>
 </li>
 <li>
 <p>Click the <b>Routers</b> link on the <b>Project</b> dashboard <b>Network</b> panel.</p>

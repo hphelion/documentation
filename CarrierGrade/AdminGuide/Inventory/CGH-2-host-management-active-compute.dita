@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3709">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing Active Compute Nodes</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Adjusting Resources on a Compute
+    Node</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -31,111 +32,74 @@
 <p>
 <b>Note:</b> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>You can change the resource pool in several ways:
-* You can add or remove hosts to increase or decrease the size of the pool.
-* You can replace a host with another that has different resources (for example, memory, or number of CPU cores).
-* You can adjust the resources on an existing host.
-* You can replace a failed compute node host with an equivalent.</p>
-<p>
-<b>Caution:</b> When replacing or adjusting a host, ensure that the overall resource pool still meets the requirements for your system.</p>
-<p>Complete instructions for adding a compute node are provided in <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-initialize-compute.dita" >Initializing and Configuring Compute Nodes</xref>.</p>
-<p>In this topic:</p>
-<ul>
-<li>
-<xref type="section" href="#topic3709/removing">Removing Compute Nodes</xref>
-</li>
-<li>
-<xref type="section" href="#topic3709/adjust">Adjusting Resources on a Compute Node</xref>
-</li>
-</ul>
-<section id="removing"> <title>Removing Compute Nodes</title>
-<p>You can remove a compute node from the pool of available resources.</p>
-<p>You may need to remove a compute node in order to replace a failed host, or to change the configuration of a host. If the host is active, you can migrate instances on it by locking the host.</p>
-<p>Caution: Before locking a host, ensure that sufficient resources are available on other hosts to migrate any running instances.</p>
-<p>To remove a compute node on an active system:</p>
-<ol>
-<li>
-<p>
-<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-
-<ul>
-<li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>
-</ul>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host to be removed</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
-
-<p>Wait for the procedure to be completed.</p>
-</li>
-<li>
-<p>
-  <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita" >Delete the host</xref> from the HP Helion OpenStack Carrier Grade system. Click <b>More</b> then <b>Delete Host</b> for the host.</p>
-</li>
-<li>
-<p>Power down the host and remove the hardware from the cluster.</p>
-</li>
-</ol>
-</section>
-<section id="adjust"> <title>Adjusting Resources on a Compute Node</title>
-<p>You can adjust the resources of a compute node while it is offline.</p>
-<p>To adjust compute node resources on an active system:</p>
-<ol>
-<li>
-<p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-
-<ul>
-<li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>
-</ul>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host to be modified</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
-
-<p>Wait for the procedure to be completed.</p>
-</li>
-<li>
-<p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section"  >Power down the host</xref>.</p>
-</li>
-<li>
-<p>Make any required resource changes (for example, BIOS changes required for proper operation).</p>
-
-<p>If you are adding a disk to provide additional local storage for VMs, you can install an unpartitioned disk. New disks are detected by the compute node operating system and automatically configured with a single partition.</p>
-</li>
-<li>
-<p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section"  >Power on the host</xref> and wait for it to reboot fully.</p>
-
-<p>When the host is fully rebooted, it is shown as Locked, Enabled, and Available in the Hosts list.</p>
-
-<p>Note: Do not unlock the host until it is fully rebooted.</p>
-</li>
-<li>
-<p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the host</xref>.</p>
-
-<p>The host is rebooted a second time.</p>
-</li>
-</ol>
-<p>The host is ready for use  with the adjusted resources when reported as <codeph>Unlocked</codeph>, <codeph>Enabled</codeph>.</p>
-<p>
-  <xref type="section" href="#topic3709"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
-</section>
+<section id="adjust">
+      <p>You can adjust the resources of a compute node while it is offline.</p>
+      <p>
+        <b>Caution:</b> When replacing or adjusting a host, ensure that the overall resource pool
+        still meets the requirements for your system.</p>
+      <p>To adjust compute node resources on an active system:</p>
+      <ol>
+        <li>
+          <p>
+            <xref
+              href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+              >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+          <ul>
+            <li>Use the IP address for the appropriate region where you want to make the change,
+              either: the Non-KVM region or the KVM region.</li>
+          </ul>
+        </li>
+        <li>
+          <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System
+              Inventory</b> link.</p>
+        </li>
+        <li>
+          <p>Click the <b>Hosts</b> tab.</p>
+        </li>
+        <li>
+          <p>
+            <xref
+              href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
+              >Lock the host to be modified</xref> by clicking <b>More</b> then <b>Lock Host</b> for
+            the controller.</p>
+          <p>Wait for the procedure to be completed.</p>
+        </li>
+        <li>
+          <p>
+            <xref
+              href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power"
+              type="section">Power down the host</xref>.</p>
+        </li>
+        <li>
+          <p>Make any required resource changes (for example, BIOS changes required for proper
+            operation).</p>
+          <p>If you are adding a disk to provide additional local storage for VMs, you can install
+            an unpartitioned disk. New disks are detected by the compute node operating system and
+            automatically configured with a single partition.</p>
+        </li>
+        <li>
+          <p>
+            <xref
+              href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power"
+              type="section">Power on the host</xref> and wait for it to reboot fully.</p>
+          <p>When the host is fully rebooted, it is shown as Locked, Enabled, and Available in the
+            Hosts list.</p>
+          <p>Note: Do not unlock the host until it is fully rebooted.</p>
+        </li>
+        <li>
+          <p>
+            <xref
+              href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
+              >Unlock the host</xref>.</p>
+          <p>The host is rebooted a second time.</p>
+        </li>
+      </ol>
+      <p>The host is ready for use with the adjusted resources when reported as
+          <codeph>Unlocked</codeph>, <codeph>Enabled</codeph>.</p>
+      <p>
+        <xref type="section" href="#topic3709"> Return to Top </xref>
+      </p>
+      <!-- ===================== horizontal rule ===================== -->
+    </section>
 </body>
 </topic>

@@ -110,20 +110,22 @@
                 <topicref href="Inventory/CGH-2-host-management-lifecycle.dita"
                     navtitle="Life Cycle of a Host System" locktitle="yes"/>
             </topicref>
-            <topichead navtitle="Working with Patches"/>
-            <topicref href="Inventory/CGH-2-host-management-inventory-detail-storage.dita"
-                navtitle="Working with Storage Profiles" locktitle="yes"/>
-            <topicref href="Inventory/CGH-2-host-management-detail-memory.dita"
-                navtitle="Working with Memory Profiles" locktitle="yes"/>
             <topicref href="Inventory/CGH-2-host-management-active.dita"
                 navtitle="Managing Hosts on an Active System" locktitle="yes">
                 <topicref href="Inventory/CGH-2-host-management-active-storage.dita"
                     navtitle="Replacing Active Storage Nodes" locktitle="yes"/>
                 <topicref href="Inventory/CGH-2-host-management-active-controller.dita"
                     navtitle="Replacing Active Controller Nodes" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-host-management-host-remove.dita"
+                    navtitle="Deleting an Active Host System" locktitle="yes"/>
                 <topicref href="Inventory/CGH-2-host-management-active-compute.dita"
-                    navtitle="Managing Active Compute Nodes" locktitle="yes"/>
+                    navtitle="Adjusting Resources on a Compute Node" locktitle="yes"/>
             </topicref>
+            <topichead navtitle="Working with Patches"/>
+            <topicref href="Inventory/CGH-2-host-management-inventory-detail-storage.dita"
+                navtitle="Working with Storage Profiles" locktitle="yes"/>
+            <topicref href="Inventory/CGH-2-host-management-detail-memory.dita"
+                navtitle="Working with Memory Profiles" locktitle="yes"/>
             <topicref href="Inventory/CGH-2-host-management-detail.dita"
                 navtitle="Working with Inventory Details" locktitle="yes">
                 <topicref href="Inventory/CGH-2-host-management-host-hardware.dita"

@@ -16,29 +16,32 @@
 <p>Use the <b>Compute</b> panel on the <b>Project</b> dashboard to:</p>
 <ul>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.create.dita" >Create a new instance</xref>
-</li>
+  <xref href="CGH-2-Admin-Instance-create.dita#topic2817">Create a new instance
+  </xref></li>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.terminate.dita" >Terminate an instance</xref>
-</li>
+  
+  <xref href="CGH-2-Admin-Instance-terminate.dita#topic811">Terminate an instance</xref></li>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.reboot.dita" >Reboot an instance</xref>
-</li>
+
+  <xref href="CGH-2-Admin-Instance-reboot.dita#topic1036">Reboot an instance</xref></li>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.rebuild.dita" >Rebuild an instance</xref>
-</li>
+
+  <xref href="CGH-2-Admin-Instance-rebuild.dita#topic1314">Rebuild an instance</xref></li>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.suspend.dita" >Suspend and resume an instance</xref>
-</li>
+
+  <xref href="CGH-2-Admin-Instance-suspend.dita#topic1594">Suspend and resume an instance</xref></li>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.pause.dita" >Pause and resume an instance</xref>
-</li>
+
+  <xref href="CGH-2-Admin-Instance-pause.dita#topic1643">Pause and resume an instance</xref>
+      </li>
 <li>
-<xref href="../../../UseCases/TasksforAdmins/Images/1.1commercial.dashboard.snapshot.public.dita" >Create an instance snapshot</xref>
-</li>
+
+  <xref href="CGH-2-Admin-Instance-snapshot-create.dita#topic1162">Create an instance snapshot</xref></li>
 </ul>
-<p>You can also <xref href="../../../UseCases/TasksforUsers/IP_Addresses/1.1commercial.managing.ipaddress.dita" >associate, or assign, a floating IP address</xref> to an instance. A floating IP address makes the instance available on the external network.</p>
-<p>
+<p>You can also <xref href="CGH-2-Admin-assoc-ipaddress.dita#topic2995">associate, or assign, a floating IP address</xref> to an instance. A floating IP address
+      makes the instance available on the external network.</p>
+
+  <p>
   <xref type="section" href="#topic804"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
