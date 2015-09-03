@@ -40,11 +40,11 @@
         openstack command line utility. The utility is installed by the deployer onto deployer node.
         Also, HLM installs convenient *.osrc files which contain exports of environment variables
         used by openstack CLI.</p><p>
-        <note/>Keystone administration tasks should be performed by an <i>admin</i> user with a
+        <note>Keystone administration tasks should be performed by an <i>admin</i> user with a
         token scoped to the <i>default</i> domain via the Keystone v3 identity API. These settings
         are preconfigured in the <i>keystone.osrc</i> file. By default, keystone.osrc is configured
         with the admin endpoint of keystone. If  the admin endpoint is not accessible from your
-        network, please change OS_AUTH_URL to point to the public endpoint.</p></section>
+        network, please change OS_AUTH_URL to point to the public endpoint.</note></p></section>
 
     <section> Here are some examples:
       <codeblock>
