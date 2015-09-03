@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_hjr_4x1_dt">
-  <title>Install and Configure VSA (optional)</title>
+  <title>Install and Configure VSA (Optional)</title>
   <body>
     <section id="VSA">
-      <title>Install and Configure VSA (optional)</title>
+      <title>Install and Configure VSA (Optional)</title>
       <p>You can set up Virtual Storage Appliance (VSA) using the following instructions:</p>
       <ol>
         <li>Deploy VSA by running the following command: <codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml </codeblock>
