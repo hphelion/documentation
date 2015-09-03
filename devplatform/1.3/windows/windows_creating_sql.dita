@@ -32,14 +32,14 @@
     <p>The following command creates an instance of a Microsoft SQL Server 2012 service called <b>MSSQL2012Service</b> (the command will request the service plan to use):</p>
     <codeblock>helion create-service mssql2012 MSSQL2012Service</codeblock>
     <p>The output from this command may look like the following (in this example, the Free service plan is selected):</p>
-      <image placement="break" href="../../media/windows_sql_create.png"></image></section>
+      <image placement="break" href="../../../media/windows_sql_create.png"></image></section>
     <section id="deploy"><title>Deploy a Helion tunneling application</title>
     <p>Once the service instance is created, in order to connect to the instance, you must first deploy a tunneling application using the <b>helion tunnel</b> command.</p>
       <p>The following command creates a tunneling application to the <b>MSSQL2012Service</b> service in the connected cluster, binds the tunneling application to the requested service, and returns the credentials
         <b>username</b>, <b>password</b>, <b>(database) name</b>, and <b>connectionString</b> required to connect to the service:</p>
       <codeblock>helion tunnel MSSQL2012Service</codeblock>
       <p>The output from this command may look like the following:</p>
-      <image placement="break" href="../../media/helion_sql_tunnel.png"></image></section>
+      <image placement="break" href="../../../media/helion_sql_tunnel.png"></image></section>
     
     <section id="connect"><title>Connect to the service instance</title>
       
@@ -47,10 +47,10 @@
       <p>In the login dialog for SQL Management Studio, click <b>Options</b> to access database options. Enter the hostname (localhost or 127.0.0.1) and port (10000 by default) in 
         the format <b>&lt;hostname&gt;,&lt;port&gt;</b> for the tunneling application, and provide the login credentials from the previous section 
         (these values are given as output from the tunneling application):</p>
-      <image placement="break" href="../../media/windows_sql_connect_1.png"></image>
+      <image placement="break" href="../../../media/windows_sql_connect_1.png"></image>
       <p>In the next dialog, provide the database name from the previous section: </p>
-      <image placement="break" href="../../media/windows_sql_connect_2.png"></image>
+      <image placement="break" href="../../../media/windows_sql_connect_2.png"></image>
       <p>When the connection is complete, you will be connected to the database service in SQL Management Studio:</p>
-      <image placement="break" href="../../media/windows_sql_connect_3.png"></image></section>
+      <image placement="break" href="../../../media/windows_sql_connect_3.png"></image></section>
   </body>
 </topic>
