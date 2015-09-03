@@ -21,7 +21,7 @@ Cannot open: No such file or directory</codeblock>
           Before running the next step, Deploy CMC, do the following on the first control plane
           node. <ul>
             <li> Look in <b>/etc/apt/sources.list.d/</b> for a file called
-                <b>cmc_hlinux_32bit_lib</b> with the following content:
+                <b>cmc_hlinux_32bit_lib.list</b> with the following content:
               <codeblock>deb [arch=i386] http://&lt;deployer ip>:79/hlm/cmc32 cattleprod main </codeblock>
               If the file is not there or does not have the above content, please create it as
               described. The deployer ip address can be obtained by looking at the existing hlinux
@@ -31,19 +31,20 @@ Cannot open: No such file or directory</codeblock>
               <codeblock>sudo apt-get update</codeblock></li>
           </ul>
         </li>
+        <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
+          <codeblock>
+            NIC 1: 
+            Virtual Network: vsa-network 
+            IP Address: 10.241.103.11
+            Subnet Mark: 255.255.255.0
+            Gateway: 10.241.103.1</codeblock></li>
+        <!-- need to get an actual output for the above codeblock -->
         <!--<li>Configure Apt by adding the following line to the bottom of <b>/etc/apt/sources.list</b>
           on your CMC node (only). Use the correct numeric IP for your deployer.
           <codeblock>deb [arch=i386] http://&lt;<i>deployer ip</i>>:79/hlm/cmc32 cattleprod main </codeblock>
           This is a workaround for an issue in Beta-1 and will be fixed in Beta-2. </li>-->
         <li>Deploy CMC by running the following
             command:<p><codeblock>ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></p></li>
-        <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
-          <codeblock>
-NIC 1: 
-Virtual Network: vsa-network 
-IP Address: 10.241.103.11
-Subnet Mark: 255.255.255.0
-Gateway: 10.241.103.1</codeblock></li>
         <li>Set your X display and launch CMC:
           <codeblock>ssh -X to the first control plane node</codeblock><codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
         <li>Select <codeph>Find</codeph> and enter the IP addresses of the VSA virtual
@@ -56,7 +57,8 @@ Gateway: 10.241.103.1</codeblock></li>
         <li>Skip the DNS and SMTP sections.</li>
         <li>Add the following cluster name: hlm003-vsa-cluster</li>
         <li>Enter the VIP IP which can be found as the cluster IP value in the
-            <codeph>~helion/my_cloud/stage/info/net_info.yml</codeph> file</li>
+            <codeph>~/helion/my_cloud/stage/info/net_info.yml</codeph> file</li>
+        <!-- ./scratch/cp/my_cloud/stage/info/net_info.yml and this step may need to go up -->
         <li>Select the checkbox to skip volume creation.</li>
         <li>Wait for completion.</li>
         <li>On the deployer, change to the following directory:
@@ -76,9 +78,7 @@ hplefthand_username: stack</b>
 hplefthand_iscsi_chap_enabled: true<b>
 volume_backend_name: vsa-backend-hlm003</b>
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
-hplefthand_debug: false</codeblock>
-          <note>Until horizon is enabled, the <codeph>volume_backend_name</codeph> is not
-            used.</note></li>
+hplefthand_debug: false</codeblock></li>
         <li>Run the following commands to commit and deploy the change:
           <codeblock>
 git add -A
