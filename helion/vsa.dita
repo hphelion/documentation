@@ -84,10 +84,12 @@ ansible-playbook -i hosts/localhost config-processor-run.yml
 ansible-playbook -i hosts/localhost ready-deployment.yml
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
-        <li>Create a volume to verify the VSA is correctly configured, then delete the created
-          volume. <ol>
+        <li>From the Control Plane, use the Cinder command-line client to create a volume so you can
+          verify that VSA is correctly configured. You can delete the created volume afterwards, if
+          desired. <ol>
             <li>Create a test volume from a user account and verify that the volume is successfully
-              created in the "available" state.</li>
+              created in the "available" state:
+              <codeblock>cinder create --display-name NAME SIZE</codeblock></li>
             <li>Using a session with the admin creds, show the details for the test volume created
               in a) above <codeblock>cinder show &lt;volumeId></codeblock> and verify that the
               volume was created on the correct backend, e.g.
