@@ -101,38 +101,39 @@ enable_distributed_routing = False</codeblock><note>
               <li><xref href="#topic_flx_j2b_ws/deploy-template" format="dita">Deploy Helion Linux
                   Shell VM Template</xref></li>
               <li><xref href="#topic_flx_j2b_ws/deploy-service" format="dita">Preparation for ESX
-                  Cloud Deployment</xref></li>
+                  Cloud Deployment</xref><p><b>Deploy Helion Linux Shell VM Template</b></p><p>The
+                  first step in deploying the ESX compute proxy and OVSvApps is to create a VM
+                  template that will make it easier to deploy the ESX compute proxy for each Cluster
+                  and OVSvApps on each ESX server. </p><p>Perform the following steps to deploy a
+                    template:<ol id="ol_qdt_ljs_ft">
+                    <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the
+                      vSphere client. </li>
+                    <li>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF
+                        Template</b></li>
+                    <li>Follow the instructions in the wizard to specify the data center, cluster,
+                      and node to install. Refer to the VMWare vSphere documentation as
+                          needed.<p><b>Manage vCenters and Clusters</b></p><p>This section describes
+                        the procedures to prepare the ESX cloud for deployment. </p></li>
+                  </ol></p></li>
             </ul></p></li>
       </ol></p>
-    <section><b>Deploy Helion Linux Shell VM Template</b><p>The first step in deploying the ESX
-        compute proxy and OVSvApps is to create a VM template that will make it easier to deploy the
-        ESX compute proxy for each Cluster and OVSvApps on each ESX server. </p></section>
-    <section>
-      <p>Perform the following steps to deploy a template:<ol id="ol_sym_3jl_ft">
-          <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the vSphere client. </li>
-          <li>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF
-            Template</b>.</li>
-          <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
-            install. Refer to the VMWare vSphere documentation as needed. </li>
-        </ol></p>
-    </section>
-    <p><b>Preparation For ESX Cloud Deployment</b></p>
-    <section id="deploy-service"><b>Manage vCenters and Clusters</b><p>This section describes the
-        procedures to prepare the ESX cloud for deployment. </p><p>
-        <note> Source <codeph>service.osrc</codeph> before you perform the following
-          procedure.</note>
-      </p><p><b>Register a vCenter Server</b></p><p>vCenter provides centralized management of
-        virtual host and virtual machines from a single console.<ol id="ol_atw_n2c_2t">
-          <li> Add a vCenter using EON CLI.</li>
-        </ol></p><codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:</p><p>
-        <ul>
-          <li>vCenter Name - the name of the vCenter server where the service is deployed.</li>
-          <li>vCenter IP address - the IP address of the vCenter server where the service is
-            deployed.</li>
-          <li>vCenter Username - the username for the vCenter administrator.</li>
-          <li>vCenter Password - the password for the vCenter administrator.</li>
-          <li>vCenter Port - the vCenter server port.<p><b>Sample
-            Output</b>:</p><codeblock>+------------+--------------------------------------+
+    <p>
+      <note> Source <codeph>service.osrc</codeph> before you perform the following
+            procedure.<p><b>Register a vCenter Server</b></p><p>vCenter provides centralized
+          management of virtual host and virtual machines from a single console.<ol
+            id="ol_xdj_5js_ft">
+            <li>Add a vCenter using EON
+                CLI.<codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:
+                  <ul id="ul_bp3_yjs_ft">
+                  <li>vCenter Name - the name of the vCenter server where the service is
+                    deployed.</li>
+                  <li>vCenter IP address - the IP address of the vCenter server where the service is
+                    deployed.</li>
+                  <li>vCenter Username - the username for the vCenter administrator.</li>
+                  <li>vCenter Password - the password for the vCenter administrator.</li>
+                  <li>vCenter Port - the vCenter server port.</li>
+                </ul></p><p><b>Sample
+                Output:</b><codeblock>+------------+--------------------------------------+
 | Property   | Value                                |
 +------------+--------------------------------------+
 | created_at | 2015-08-20T12:08:09.000000           |
@@ -146,17 +147,19 @@ enable_distributed_routing = False</codeblock><note>
 | type       | vcenter                              |
 | updated_at | 2015-08-20T12:08:09.000000           |
 | username   | administrator@vsphere.local          |
-+------------+--------------------------------------+</codeblock></li>
-        </ul>
-      </p><p><b>Register ESX Cloud Network Configuration</b></p><p>This involve getting a sample
-        network information template. Fill the details of the template and use that template to
-        register cloud network configuration for the vCenter.</p><p>
-        <ol id="ol_esl_ncc_2t">
-          <li>Execute the following command to get the network information
-              template:<codeblock><codeph>eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
-              example:<codeblock>eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
-              file of <codeph>net_conf.json</codeph> is shown
-              below:<codeblock>{
++------------+--------------------------------------+</codeblock></p></li>
+          </ol></p></note>
+    </p>
+    <p><b>Register ESX Cloud Network Configuration</b></p>
+    <p>This involve getting a sample network information template. Fill the details of the template
+      and use that template to register cloud network configuration for the vCenter.</p>
+    <p>
+      <ol id="ol_esl_ncc_2t">
+        <li>Execute the following command to get the network information
+            template:<codeblock><codeph>eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+            example:<codeblock>eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
+            file of <codeph>net_conf.json</codeph> is shown
+            below:<codeblock>{
     "network": {
         # Deployer Network details
         "deployer_network": {
@@ -262,38 +265,41 @@ enable_distributed_routing = False</codeblock><note>
     "new_host_mo_ids": ""
 }
 </codeblock></p></li>
-          <li>Modify the template (json file) as per your
-              environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
-              example:<codeblock>vi net_conf.json</codeblock></p></li>
-          <li>Use the template to register Cloud Network Configuration. This sets the network
-            information for a vCenter which is used to deploy and configure compute proxy and
-            OVSvAPP VMs during the cluster activation.
-              <codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
-              example:
-              <codeblock>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json net_conf.json</codeblock></p><p>
-              <note>The vcenter ID is generated when you execute the above (<b>step 2</b>)
-                command.</note>
-            </p></li>
-          <li>Execute the following command to view the list of clusters for the given
-              vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
-              Output</b><codeblock>+------------+----------+------------+---------------+
+        <li>Modify the template (json file) as per your
+            environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
+            example:<codeblock>vi net_conf.json</codeblock></p></li>
+        <li>Use the template to register Cloud Network Configuration. This sets the network
+          information for a vCenter which is used to deploy and configure compute proxy and OVSvAPP
+          VMs during the cluster activation.
+            <codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+            example:
+            <codeblock>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json net_conf.json</codeblock></p><p>
+            <note>The vcenter ID is generated when you execute the above (<b>step 2</b>)
+              command.</note>
+          </p></li>
+        <li>Execute the following command to view the list of clusters for the given
+            vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
+            Output</b><codeblock>+------------+----------+------------+---------------+
 | MOID       | Name     | Datacenter | Import Status |
 +------------+----------+------------+---------------+
 | domain-c21 | Cluster1 | DC1        | not_imported  |
 +------------+----------+------------+---------------+</codeblock></li>
-        </ol>
-      </p><p><b>Import Cluster</b>
-      </p><p>You can use one or more ESX clusters for ESX Cloud Deployment. When a Import Cluster is
-        invoked, required ESX Compute Proxy and OVSvApp nodes are deployed.</p><p>
-        <ol id="ol_lyt_cfc_2t">
-          <li> Import the cluster for the EON database under the given vCenter. <codeblock><codeph>eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock>where:<p>
-              <ul>
-                <li>vCenter ID - ID of the vcenter containing the cluster.</li>
-                <li>Cluster Name - the name of the cluster that needs to be imported.</li>
-                <li>cluster Moid - Moid of the cluster that needs to be imported.</li>
-              </ul>
-            </p><p><b>Sample
-              Output</b><codeblock>+--------------+-----------+
+      </ol>
+    </p>
+    <p><b>Import Cluster</b>
+    </p>
+    <p>You can use one or more ESX clusters for ESX Cloud Deployment. When a Import Cluster is
+      invoked, required ESX Compute Proxy and OVSvApp nodes are deployed.</p>
+    <p>
+      <ol id="ol_lyt_cfc_2t">
+        <li> Import the cluster for the EON database under the given vCenter. <codeblock><codeph>eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock>where:<p>
+            <ul id="ul_r4g_rjs_ft">
+              <li>vCenter ID - ID of the vcenter containing the cluster.</li>
+              <li>Cluster Name - the name of the cluster that needs to be imported.</li>
+              <li>cluster Moid - Moid of the cluster that needs to be imported.</li>
+            </ul>
+          </p><p><b>Sample
+            Output</b><codeblock>+--------------+-----------+
 | Property     | Value     |
 +--------------+-----------+
 | cpu_free     | 83071.73  |
@@ -310,17 +316,17 @@ enable_distributed_routing = False</codeblock><note>
 | state        | importing |
 | switches     | []        |
 +--------------+-----------+</codeblock></p><p>One
-              vCenter can have multiple clusters. But it allows you to import only one cluster at a
-              time.</p></li>
-          <li> Execute the following command to view the list of clusters for the given
-              vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
-              Output</b><codeblock>+------------+----------+------------+---------------+
+            vCenter can have multiple clusters. But it allows you to import only one cluster at a
+            time.</p></li>
+        <li> Execute the following command to view the list of clusters for the given
+            vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
+            Output</b><codeblock>+------------+----------+------------+---------------+
 | MOID       | Name     | Datacenter | Import Status |
 +------------+----------+------------+---------------+
 | domain-c22 | Cluster2 | DC1        | imported  |
 +------------+----------+------------+---------------+</codeblock></li>
-        </ol>
-      </p></section>
+      </ol>
+    </p>
     <section><b>Activate Clusters</b><note>You can activate the cluster only afte the import status
         of the cluster is changed to <b>imported</b>.</note><p>When you execute the active cluster
         command, the <codeph>server.yml</codeph> of the input model is updated with IP Addresses of
