@@ -133,8 +133,8 @@ sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
     version 1.2 to version 1.3. Previous versions do not support in-place upgrading.</note>
 </section>
   <section id="move-dea"><title>Moving Windows DEAs</title>
-    <p>Microsoft <tm tmtype="reg">Windows</tm> DEAs cannot be upgraded. To upgrade Windows DEA
-        clusters, you will add new DEAs and then remove the old ones.</p>
+    <p>Microsoft <tm tmtype="reg">Windows</tm> DEAs cannot be upgraded; you will add new DEAs and
+        then remove the old ones.</p>
     <p>Follow this procedure so that your cluster will automatically load balance to the new nodes. <ol>
           <li> Make a note of all your Windows DEA IPs .</li>
           <li><xref href="../../../windows/windows_building_and_deploying.dita#topic7321">Create new
@@ -144,6 +144,7 @@ sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
           <li>Add the new Windows DEAs to your cluster.</li>
           <li>Run this command on the core node of your cluster to remove the old
             DEAs.<codeblock>kato node remove --skip-detach &lt;ip&gt; </codeblock></li>
+          <li>Terminate the old DEAs.</li>
         </ol></p></section>
     <p>All other nodes can be upgraded using the following procedure.</p>
 <section id="upgrading-an-individual-node"> <title>Upgrading an individual node</title>

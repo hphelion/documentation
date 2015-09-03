@@ -144,28 +144,8 @@ web server, application dependencies, databases, and other services.</p>
 </section>
 <section id="management-console"> <title>Management Console</title>
 <ul>
-<li>
-  <xref href="../admin/console/customize.dita">Customize the Management Console</xref>
-</li>
-<li>
-          <xref href="../admin/console/console_index.dita#topic13823/welcome">Welcome</xref>
-        </li>
-<li>
-  <xref href="../admin/console/console_index.dita#topic8844/space-view" type="section">Space View</xref>
-</li>
-<li>
-  <xref href="../admin/console/console_index.dita#topic8844/application-view" type="section"  >Application View</xref>
-</li>
-<li>
-  <xref href="../admin/console/console_index.dita#topic8844/service-instance-view" type="section"  >Service Instance View</xref>
-</li>
-<li>
-  <xref href="../admin/console/console_index.dita#topic8844/sample-apps">Sample Applications</xref>
-</li>
-<li>
-  <xref href="../admin/console/console_index.dita#topic8844/support" type="section"  >Support</xref>
-</li>
-</ul>
+        <li><xref href="console/console_index.dita">Management Console User View</xref></li>
+      </ul>
 </section>
 </body>
 </topic>

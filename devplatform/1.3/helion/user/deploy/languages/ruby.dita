@@ -47,7 +47,7 @@ To learn more see:</p>
 </ul>
 </section>
 <section id="hp-helion-sdk"> <title>HP Helion SDK</title>
-<p>Ruby applications can communicate directly with the <xref href="../../../../../publiccloud/api.dita" >Helion APIs</xref> through a REST client or use the SDK. The SDK is designed to have a simple well documented API to simplify working with the services.
+<p>Ruby applications can communicate directly with the <xref href="../../../../../../publiccloud/api.dita" >Helion APIs</xref> through a REST client or use the SDK. The SDK is designed to have a simple well documented API to simplify working with the services.
 To understand how it works, here is an example of writing and reading from object storage:</p>
 <codeblock>def credentials_hash
   {

@@ -4,7 +4,8 @@
   <title>Install the Database Service</title>
   <body>
 <section id="install-database">
-<p>This section provides details on installing the Database Service from the Development Platform.</p>
+<p>This section provides details on installing the Database Service for the Development
+        Platform.</p>
 </section>
 
 <section id="availability-zones"> <title>Availability Zones</title>
@@ -125,7 +126,8 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
 </section>
 <section id="db-connect-to-the-download-service"> <title>Connect to the Download Service</title>
 <ol>
-<li>Open Horizon and login as the "admin" user. You must run the entire install logged in as "admin". </li>
+<li>Open Horizon and login as an Admin or user with Admin privileges. You must run the entire
+          install logged in as "admin". </li>
 <li> Click on the Admin panel in Horizon and select the <b>Development Platform</b> panel under
           Admin. Then click on the <b>Configure Services</b> sub-panel.</li>
 <li> Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username
@@ -136,7 +138,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
 <section id="download-the-database-service"> <title>Download the Database Service</title>
 <ol>
 <li> In the <b>Configure Services</b> panel locate the Database Service item in the Configure
-          Services table and select <b>Download Service</b> and wait for the download to complete.<p>
+          Services table. Click <b>Download Service</b> and wait for the download to complete.<p>
             <image href="../../../media/HDP_1.2_install_database.png"/>
           </p><p>
             <note> Downloading multiple services simultaneously is not supported, and will leave the

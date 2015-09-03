@@ -6,6 +6,10 @@
    
             <p>The following is an example on how to create a small starter cluster with a core node
       and one DEA.</p>
+    <p>You can create any number of identical clusters using the same bootstrap file. However, each
+      configuration requires its own file. For example, if you need five medium and five small
+      clusters, you would need two boostrap files; one to create five identical medium clusters, and
+      one to create five small.</p>
 
      <section>  <ol>
         <li>Download the latest <i>bootstrap.yml</i> and save it in the same folder where the
@@ -35,12 +39,12 @@ az: &lt;My Availability Zones&gt;</codeblock><note>Please
         --admin-password &lt;admin password&gt; ^
         --max-cluster-wait-duration -1 ^
         --max-corenode-wait-duration -1 ^
-        --load bootstrap.yml</codeblock></li></ol><note>A value of -1 indicates an infinite duration.</note>
+        --load bootstrap.yml</codeblock><note>A value of -1 indicates an infinite duration.</note></li></ol>
     </section>
   </body>
   <related-links>
-    <link href="cfmgmt_createcluster_microcloud.dita" />
     <link href="cfmgmt_growcluster_addDEANode.dita" />
     <link href="cfmgmt_growcluster_addservice.dita" />
+    <link href="ALS_Client_Reference.dita" />
   </related-links>
 </topic>
