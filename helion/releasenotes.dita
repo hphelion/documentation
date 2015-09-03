@@ -76,7 +76,7 @@
       </ul><p><b>Local Git repository for config tracking</b></p><p>In HP Helion OpenStack 2.0
         versions, a local git repository is used to track configuration changes and for the config
         processor to gather configuration settings from. The operations work as explained below:</p><ul>
-        <li>Operatiosn under ~/helion are under the aegis of git. You’ll need to commit any config
+        <li>Operations under ~/helion are under the aegis of git. You’ll need to commit any config
           into git (on the "site" branch) before the CP can run over it. The script that runs the
           config processor now guards against uncommitted changes. </li>
         <li>Deployment operations are run from a scratch directory that's assembled from various
@@ -116,10 +116,6 @@
       <p> The examples directly shipped with Beta1 inadvertently include a directory named
         "mid-size." This example is known not to work with the Beta 1 version of HP Helion OpenStack
         and should not be deployed.</p>
-     
-      
-      
-      
       <p><b>TLS is not supported</b></p>
       <p>TLS is not supported for any traffic in Beta1.</p>
       <p><b>HP Helion Development Platform</b></p>
@@ -157,14 +153,14 @@
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
       </ul>
       <p><b>Operations Console (Ops Console)</b></p>
-      <p>The Operations Console is available on port 9095 on the Control Plane. There are some
-        limitations to note and they are listed below by menu:</p>
+      <p>The Operations Console is available on port 9095 on the Control Plane IP. There are some
+        limitations to note and they are listed below by menu option in the console:</p>
       <ul>
         <li>Dashboard <ul>
             <li>There are two notification sections for the Storage services. The one in the upper
               left is the Compute service mislabeled as Storage.</li>
             <li>The New Alarms section uses the UTC timezone to determine timeframes regardless of
-              what timezone set in the settings.</li>
+              what timezone is in the settings.</li>
             <li>The New Alarms section will only display alarms that have a service dimension
               defined.</li>
             <li>Platform Services (HDP Summary) alarm panels are not yet implemented but appear in
@@ -239,21 +235,22 @@
     </section>
     <section id="troubleshooting"><title>Troubleshooting</title>
       <p><b>Wait for SSH phase in bm-reimage.yml hangs </b></p>
-      <p>This issue has been observed during deployment to systems configured with Qlogic based
+      <p>This issue has been observed during deployment to systems configured with QLogic based
         BCM578XX network adapters utilizing the bnx2x driver and is currently under investigation.
         The symptom manifests following a cold boot during deployment at the "wait for SSH" phase in
         bm-reimage.yml which will result in a hang and eventually timeout, causing the baremetal
-        install to fail. The presence of this particular issue can further confirmed by connecting
-        to the remote console of the server via iLO or checking the dmesg file for the presence of
-        bnx2_panic_dump messages, similar to the following:
+        install to fail. The presence of this particular issue can be further confirmed by
+        connecting to the remote console of the server via iLO or by checking the server's dmesg
+        output for the presence of bnx2_panic_dump messages, similar to the following:
         <codeblock>bnx2x: [bnx2x_prev_unload_common:10433(eth%d)]Failed to empty BRB, hope for the best  ...
 bnx2x: [bnx2x_stats_update:1268(eth0)]storm stats were not updated for 3 times
 bnx2x: [bnx2x_stats_update:1269(eth0)]driver assert
 bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------  .....
 bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump ----------------- 
 </codeblock>
-        This issue is resolved by rebooting the server. </p>
-      <p><b>Freezer installation fails if an independent network is used for the External_API.</b></p>
+        This workaround is completed by rebooting the server. </p>
+      <p><b>Freezer installation fails if an independent network is used for the
+        External_API.</b></p>
       <p> Currently the Freezer installation fails if an independent network is used for the
         External_API. If you intend to deploy the External API in Beta 1 on an independent network,
         the following changes need to be made: </p>
