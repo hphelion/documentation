@@ -20,13 +20,11 @@ Cannot open: No such file or directory</codeblock>
           </ul>-->
           Before running the next step, Deploy CMC, do the following on the first control plane
           node. <ul>
-            <li> Look in <b>/etc/apt/sources.list.d/</b> for a file called
-                <b>cmc_hlinux_32bit_lib.list</b> with the following content:
-              <codeblock>deb [arch=i386] http://&lt;deployer ip>:79/hlm/cmc32 cattleprod main </codeblock>
-              If the file is not there or does not have the above content, please create it as
-              described. The deployer ip address can be obtained by looking at the existing hlinux
-              apt source file in that directory. This is a workaround for an issue in Beta-1 and
-              will be fixed in Beta-2. </li>
+            <li>Look in <b>/etc/apt/sources.list.d/</b> and verify that it contains the line below:
+              <codeblock>deb [arch=i386] http://&lt;deployer ip>:79/hlm/cmc32.lists cattleprod main</codeblock>
+              If the line is not there, please create it as described. The deployer ip address can
+              be obtained by looking at the existing hlinux apt source file in that directory. This
+              is a workaround for an issue in Beta-1 and will be fixed in Beta-2.</li>
             <li>Next, to re-synchronize the package index files, run
               <codeblock>sudo apt-get update</codeblock></li>
           </ul>
@@ -69,7 +67,8 @@ Cannot open: No such file or directory</codeblock>
               <codeblock>enabled_backends=vsa-1</codeblock></li>
           </ol></li>
         <li>Copy the VSA section, uncomment it, and fill the values as in the following example.
-          Note that the ames assigned (in bold) are only examples. Please enter your specific values here.<codeblock>
+          Note that the ames assigned (in bold) are only examples. Please enter your specific values
+          here.<codeblock>
 [vsa-1]<b>
 hplefthand_password: stack
 hplefthand_clustername: hlm003-vsa-cluster
@@ -101,8 +100,7 @@ ha-volume-manager@vsa-1#vsa-backend-hlm003</codeblock>
             <li>Delete the test volume</li>
           </ol>
         </li>
-        </ol>
-      
+      </ol>
     </section>
   </body>
 </topic>
