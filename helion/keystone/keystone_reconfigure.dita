@@ -11,7 +11,9 @@
           Fernet Tokens.</li>
         <li>Domain-specific configuration files:
             <b>/etc/keystone/domains/keystone.&lt;domain_name&gt;.conf</b>. Here you can integrate
-          Keystone with one or more external authentication sources, such as an LDAP server. </li>
+          Keystone with one or more external authentication sources, such as an LDAP server. See the
+            <xref href="keystone_ldap.dita#topic_ifg_n33_bt">LDAP Integration page</xref> for more
+          information.</li>
         <li>Certain content in the logging configuration file: <b>/etc/keystone/logging.conf</b>. In
           this file you can adjust the verbosity of the output written to Keystone log files. </li>
         <li> The Apache2 WSGI module configuration file:

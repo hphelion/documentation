@@ -49,9 +49,9 @@
         navtitle="Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Identity Configuration"
         locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
-        locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_reconfigure.dita" navtitle="Reconfiguring Keystone"
+        locktitle="yes"/>
+      <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Notes and Limitations"
         locktitle="yes"> </topicref>
