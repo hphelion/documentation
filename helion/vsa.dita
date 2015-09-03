@@ -20,11 +20,13 @@ Cannot open: No such file or directory</codeblock>
           </ul>-->
           Before running the next step, Deploy CMC, do the following on the first control plane
           node. <ul>
-            <li>Look in <b>/etc/apt/sources.list.d/</b> and verify that it contains the line below:
+            <li>Look in <b>/etc/apt/sources.list.d/</b> for a file called
+                <b>cmc_hlinux_32bit_lib</b> and verify that it contains the line below:
               <codeblock>deb [arch=i386] http://&lt;deployer ip>:79/hlm/cmc32.lists cattleprod main</codeblock>
-              If the line is not there, please create it as described. The deployer ip address can
-              be obtained by looking at the existing hlinux apt source file in that directory. This
-              is a workaround for an issue in Beta-1 and will be fixed in Beta-2.</li>
+              If the file is not there or if the line is not there, please create it as described.
+              The deployer ip address can be obtained by looking at the existing hlinux apt source
+              file in that directory. This is a workaround for an issue in Beta-1 and will be fixed
+              in Beta-2.</li>
             <li>Next, to re-synchronize the package index files, run
               <codeblock>sudo apt-get update</codeblock></li>
           </ul>
