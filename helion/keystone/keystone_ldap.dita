@@ -19,8 +19,8 @@
       <ol>
 
         <li>Ensure that the <b>domain_specific_drivers_enabled</b> option is set to <b>True</b> in
-          the main configuration file template (<b>/home/stack/helion/hlm/ansible/roles/KEY-API/templates/keystone.conf.j2</b>). You'll see a
-          sample file at the end of this topic.</li>
+          the main configuration file template (<b>roles/KEY-API/templates/keystone.conf.j2</b>).
+          You'll see a sample file at the end of this topic.</li>
         <li>Create a YAML file that contains the definition of the LDAP server connection. Use
             <b>roles/KEY-API/files/samples/keystone_configure_ldap_sample.yml</b> as an example.
           Save the file, as, for example, /tmp/myldap.yml. Please refer to the LDAP section of the
