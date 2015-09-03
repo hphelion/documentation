@@ -92,6 +92,8 @@
         <topicref href="1.3/uninstallation/devplatform_uninstall_marketplace.dita" toc="no"/>
         <topicref href="1.3/uninstallation/devplatform_uninstall_vertica.dita" toc="no"/>
       </topicref> -->
+      <topicref href="1.3/uninstallation/devplatform_uninstall_platform.dita"
+        navtitle="Uninstall the Development Platform" locktitle="yes"/>
       <topicref href="1.3/uninstallation/devplatform_uninstall_ALS.dita"
         navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>
       <topicref href="1.3/uninstallation/devplatform_uninstall_database.dita"
@@ -250,6 +252,8 @@
       </topichead>
       <topicref href="1.3/windows/windows_troubleshooting.dita" navtitle="Troubleshooting"
         locktitle="yes"/>
+      <topicref href="1.3/windows/windows_custom_buildpacks.dita" navtitle="Custom Buildpacks"
+        locktitle="yes" toc="no"/>
     </topichead>
     <!--permalink: /helion/devplatform/als/-->
     <topicref href="1.3/devplatform.sysadmin.dita" locktitle="yes"

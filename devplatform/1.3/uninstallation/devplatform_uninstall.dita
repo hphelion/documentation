@@ -26,15 +26,19 @@
 <p>Each of these services can be uninstalled using the appropriate process.</p>
   <note type="restriction">These services cannot be uninstalled from the Horizon console.</note>
 <ul>
-  <li> <xref href="#id_pjb_4zw_ft" format="dita">Uninstall the Application Lifecycle Service</xref></li>
-  <li> <xref href="#id_aqx_4zw_ft" format="dita">Uninstall the Database Service</xref></li>
-  <li> <xref href="#id_szv_vzw_ft" format="dita">Uninstall the Messaging Service</xref></li>
-  <li> <xref href="#id_vyh_wzw_ft" format="dita">Uninstall the Marketplace Service</xref></li>
-  <li> <xref href="#id_nkw_wzw_ft" format="dita">Uninstall the Vertica Application</xref></li>
+  <li><xref href="#id_ixh_hrx_ft" format="dita">Uninstall the HP Helion Development Platform</xref></li>
+  <li><xref href="#id_pjb_4zw_ft" format="dita">Uninstall the Application Lifecycle Service</xref></li>
+  <li><xref href="#id_aqx_4zw_ft" format="dita">Uninstall the Database Service</xref></li>
+  <li><xref href="#id_szv_vzw_ft" format="dita">Uninstall the Messaging Service</xref></li>
+  <li><xref href="#id_vyh_wzw_ft" format="dita">Uninstall the Marketplace Service</xref></li>
+  <li><xref href="#id_nkw_wzw_ft" format="dita">Uninstall the Vertica Application</xref></li>
 </ul>
 
 
 </body>
+  <topic id="id_ixh_hrx_ft" conref="devplatform_uninstall_platform.dita#topic_blf_xdh_ts">
+    <title/>
+  </topic>
 
   <topic id="id_pjb_4zw_ft" conref="devplatform_uninstall_ALS.dita#topic_yx2_fkh_ts">
     <title>Uninstall the Application Lifecycle Service</title>
