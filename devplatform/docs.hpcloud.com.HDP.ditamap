@@ -7,8 +7,6 @@
     navtitle="HP Helion Development Platform 1.3" locktitle="yes">
     <!--permalink: /helion/devplatform/eula/-->
     <!--permalink: /helion/devplatform/whatsnew/-->
-    <topicref href="1.3/installation/devplatform_upgrade_to_1.3.dita" navtitle="Upgrading from 1.2"
-      locktitle="yes"/>
     <topicref href="1.3/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
     <topicref href="1.3/devplatform.release-notes.dita" locktitle="yes"
       navtitle="Release Notes"/>
@@ -37,10 +35,28 @@
     </topichead>
     <!--installation-->
     <topichead navtitle="Installation">
-      <topicref href="1.3/installation/devplatform_upgrade_to_1.3.dita"
-        navtitle="Upgrading from 1.2" locktitle="yes"/>
       <topicref href="1.3/installation/devplatform_commercial_install.dita"
         navtitle="Full Platform Installation - All Services" locktitle="yes"></topicref>
+      <topichead navtitle="Individual Service Installation">
+        <topicref href="1.3/installation/devplatform_install_prereq.dita"
+          navtitle="Installation Prerequisites" locktitle="yes"/>
+        <topicref href="1.3/installation/devplatform.horizonui.install.dita"
+          navtitle="Install the Horizon UI Panels" locktitle="yes"/>
+        <topicref href="1.3/installation/devplatform_install_platform.dita"
+          navtitle="Install the HP Helion Development Platform (no services)" locktitle="yes"/>
+        <topicref href="1.3/installation/devplatform_install_ALS.dita"
+          navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
+        <topicref href="1.3/installation/devplatform_install_database.dita"
+          navtitle="Install the Database Service" locktitle="yes"/>
+        <topicref href="1.3/installation/devplatform_install_messaging.dita"
+          navtitle="Install the Messaging Service" locktitle="yes"/>
+        <topicref href="1.3/installation/devplatform_install_marketplace.dita"
+          navtitle="Install the Marketplace Service" locktitle="yes"/>
+        <topicref href="1.3/installation/devplatform.vertica.install.dita"
+          navtitle="Install the Vertica Application" locktitle="yes"/>
+      </topichead>
+      <topicref href="1.3/installation/devplatform_upgrade_to_1.3.dita"
+        navtitle="Upgrading ALS from 1.2 to 1.3" locktitle="yes"/>
         
         
  <!-- pulling chunking in favor of conref testing do not delete
@@ -63,24 +79,6 @@
         navtitle="Installation Troubleshooting"/>
       <topicref href="1.3/devplatform.related-topics.dita" locktitle="yes"
         navtitle="Related Documentation "/>
-      <topichead navtitle="Individual Service Installation">
-        <topicref href="1.3/installation/devplatform_install_prereq.dita"
-          navtitle="Installation Prerequisites" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform.horizonui.install.dita"
-          navtitle="Install the Horizon UI Panels" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform_install_platform.dita"
-          navtitle="Install the HP Helion Development Platform (no services)" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform_install_ALS.dita"
-          navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform_install_database.dita"
-          navtitle="Install the Database Service" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform_install_messaging.dita"
-          navtitle="Install the Messaging Service" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform_install_marketplace.dita"
-          navtitle="Install the Marketplace Service" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform.vertica.install.dita"
-          navtitle="Install the Vertica Application" locktitle="yes"/>
-      </topichead>
     </topichead>
     <!--uninstallation -->
     <topichead navtitle="Uninstallation">  <topicref href="1.3/uninstallation/devplatform_uninstall.dita"
@@ -138,7 +136,7 @@
       </topicref>
       <topichead navtitle="Language Specific Application Deployment">
         <topicref href="1.3/helion/user/deploy/docker_firstapp.dita"
-          navtitle="Create a Docker Image from an App" locktitle="yes"/>
+          navtitle="Creating and Deploying Your First Docker App" locktitle="yes"/>
         <topicref href="1.3/helion/user/deploy/languages/docker_apps.dita"
           navtitle="Docker Apps" locktitle="yes"/>
         <topicref href="1.3/helion/user/deploy/languages/clojure.dita" locktitle="yes"
@@ -227,29 +225,31 @@
     <topichead navtitle="Windows Reference">
       <topicref href="1.3/windows/windows_overview.dita" locktitle="yes"
         navtitle="Windows Overview"/>
-      <topicref href="1.3/windows/windows_firstapp.dita" locktitle="yes"
-        navtitle="Deploying your first .NET Application"/>
-      <topicref href="1.3/windows/windows_adding_services.dita" locktitle="yes"
-        navtitle="Adding Services to Windows Applications"/>
-      <topicref href="1.3/windows/windows_building_and_deploying.dita" locktitle="yes"
-        navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
-      <topicref href="1.3/windows/windows_growcluster.dita"
-        navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
-      <topicref href="1.3/windows/windows_tools_guide.dita" locktitle="yes"
-        navtitle="Windows and .NET Applications Tools Guide"/>
-      <topicref href="1.3/windows/windows_glazier_reference_guide.dita" locktitle="yes"
-        navtitle="Glazier Reference Guide"/>
-      <topicref href="1.3/windows/windows_remoting.dita" navtitle="Remote Desktop Access"
-        locktitle="yes"/>
-      <topicref href="1.3/windows/windows_password.dita"
-        navtitle="Retrieving the Admin Password for Windows Instances" locktitle="yes"/>
-      <topicref href="1.3/windows/windows_wcf.dita" navtitle=" Deploying a WCF service"
-        locktitle="yes"/>
+      <topichead navtitle="Administrator Reference">
+        <topicref href="1.3/windows/windows_building_and_deploying.dita" locktitle="yes"
+          navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
+        <topicref href="1.3/windows/windows_adding_services.dita" locktitle="yes"
+          navtitle="Adding Services to Windows Applications"/>
+        <topicref href="1.3/windows/windows_password.dita"
+          navtitle="Retrieving the Admin Password for Windows Instances" locktitle="yes"/>
+        <topicref href="1.3/windows/windows_remoting.dita" navtitle="Remote Desktop Access"
+          locktitle="yes"/>
+        <topicref href="1.3/windows/windows_glazier_reference_guide.dita" locktitle="yes"
+          navtitle="Glazier Reference Guide"/>
+      </topichead>
+      <topichead navtitle="Developer Reference">
+        <topicref href="1.3/windows/windows_firstapp.dita" locktitle="yes"
+          navtitle="Deploying your first .NET Application"/>
+        <topicref href="1.3/windows/windows_tools_guide.dita" locktitle="yes"
+          navtitle="Windows and .NET Applications Tools Guide"/>
+        <topicref href="1.3/windows/windows_wcf.dita" navtitle=" Deploying a WCF service"
+          locktitle="yes"/>
+        <topicref href="1.3/windows/windows_creating_sql.dita"/>
+        <topicref href="1.3/windows/windows_nonnet.dita"
+          navtitle="Deploying a Node.js Application with Visual Studio" locktitle="yes"/>
+      </topichead>
       <topicref href="1.3/windows/windows_troubleshooting.dita" navtitle="Troubleshooting"
         locktitle="yes"/>
-      <topicref href="1.3/windows/windows_creating_sql.dita"/>
-      <topicref href="1.3/windows/windows_nonnet.dita"
-        navtitle="Deploying a Node.js Application with Visual Studio" locktitle="yes"/>
     </topichead>
     <!--permalink: /helion/devplatform/als/-->
     <topicref href="1.3/devplatform.sysadmin.dita" locktitle="yes"
@@ -259,7 +259,9 @@
         locktitle="yes"/>
       <topichead navtitle="Cluster Creation and Management">
         <topicref href="1.3/devplatform.deploy-ALS.dita" locktitle="yes"
-          navtitle="Create a Cluster using the Horizon UI"/>
+          navtitle="Create a Cluster Using Horizon"/>
+        <topicref href="1.3/windows/windows_growcluster.dita"
+          navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
         <topicref href="1.3/helion/CLI/cf_mgmt_createcluster.dita"
           navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
           <topicref href="1.3/helion/CLI/cfmgmt_createcluster_starter.dita"
@@ -268,6 +270,7 @@
             navtitle="Example: Add a DEA Node" locktitle="yes"/>
           <topicref href="1.3/helion/CLI/cfmgmt_growcluster_addservice.dita"
             navtitle="Example: Add a Service" locktitle="yes"/>
+          <topicref href="1.3/helion/CLI/devplatform_downloadRCFile.dita" toc="no"/>
         </topicref>
         <topichead navtitle="ALS Management Console">
           <topicref href="1.3/helion/admin/console/console_intro.dita"
