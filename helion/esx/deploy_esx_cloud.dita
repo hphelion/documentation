@@ -380,9 +380,8 @@ git commit -m "My config or other commit message"</codeblock></li>
       <ol>
         <li>Execute the following
           command:<codeblock>cd /home/stack/helion/hos/ansible/roles/_CND-CMN/templates</codeblock></li>
-        <li>Modify the <codeph>cinder.conf.j2</codeph> as follows:</li>
-      </ol>
-      <codeblock># Start of section for VMDK block storage
+        <li>Modify the <codeph>cinder.conf.j2</codeph> as
+          follows:<codeblock># Start of section for VMDK block storage
 #
 # If you have configured VMDK Block storage for cinder you must
 # uncomment this section, and replace all strings in angle brackets
@@ -406,7 +405,8 @@ MwareVcVmdkDriver
 #
 #volume_backend_name = &lt;vmdk-backend-name>
 #
-# End of section for VMDK block storage</codeblock>
+# End of section for VMDK block storage</codeblock></li>
+      </ol>
     </p>
     <p id="commit-your-cloud"><b>Commit your Cloud Definition</b></p>
    
