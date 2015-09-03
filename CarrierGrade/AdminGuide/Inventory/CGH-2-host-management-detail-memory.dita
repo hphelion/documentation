@@ -6,7 +6,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -17,7 +17,7 @@
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -64,7 +64,7 @@ After setting the memory allocations for a compute node, you can save them as a 
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
@@ -104,7 +104,7 @@ After setting the memory allocations for a compute node, you can save them as a 
 </li>
 <li>
 <p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the host</xref> and wait for it to be reported as <codeph>Available</codeph>.</p>
+<xref href="CGH-2-host-management-host-lock.dita#topic3241" >Unlock the host</xref> and wait for it to be reported as <codeph>Available</codeph>.</p>
 </li>
 </ol>
 <p>You can edit the huge page attributes for a NUMA node from the CLI.</p>
@@ -167,7 +167,7 @@ After setting the memory allocations for a compute node, you can save them as a 
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
@@ -198,7 +198,10 @@ where
 * `hostid` is the name or UUID of the host from which to create the profile.
 </codeph>
 </codeblock>
-<p>You can apply this profile to other hosts by editing the host settings in the web administration interface. For information about editing a host, see  <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita" >Working with Hosts</xref>.</p>
+<p>You can apply this profile to other hosts by editing the host settings in the web administration
+        interface. For information about editing a host, see <xref
+          href="CGH-2-host-management-active.dita#topic4032">Working with
+          Hosts</xref>.</p>
 <p>You can also use the following CLI command to apply a memory profile to a host:</p>
 <codeblock>
   <codeph>system host-apply-memprofile &lt;memoryprofile&gt; &lt;hostid&gt;

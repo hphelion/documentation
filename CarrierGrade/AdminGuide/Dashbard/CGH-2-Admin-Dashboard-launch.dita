@@ -7,7 +7,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,7 +18,7 @@
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -36,7 +36,7 @@
           trustworthy by default. Verify the certificate or add an exception in the browser to
           bypass the warning.</p></li>
 <li>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign In</b>.<p>
-  <image href="../../../media/CGH-Horizon-Login.png"/>
+  <image href="../../../documentation/media/CGH-Horizon-Login.png"/>
         </p></li>
 <li>If you are a non-admin user, you will only be able to select a project from the list at the top
         of the screen.<p>

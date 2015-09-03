@@ -6,7 +6,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -17,7 +17,7 @@
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -56,7 +56,7 @@
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>

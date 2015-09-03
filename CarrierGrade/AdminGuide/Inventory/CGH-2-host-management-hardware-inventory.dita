@@ -7,7 +7,7 @@
             <othermeta name="layout" content="default"/>
              <othermeta name="product" content="carrier-grade"/>
             <othermeta name="product-version1" content="HP Helion OpenStack"/>
-            <othermeta name="product-version2" content="HP Helion OpenStack 1.1"/>
+            <othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
             <othermeta name="role1" content="Systems Administrator "/>
             <othermeta name="role2" content="Cloud Architect "/>
             <othermeta name="role3" content="Storage Administrator "/>

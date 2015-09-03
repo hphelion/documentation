@@ -31,30 +31,14 @@
             Tenant</b>.</shortdesc>
 
 
-    <prolog>
-
-
-        <author >Jim Owens</author>
-
-
-        <author >Pedro Sanchez</author>
-
-
-    </prolog>
-
-
     <body>
 
 
         <section id="section_N10027_N10024_N10001" >
 
 
-            <fig id="fig_N1002B_N10027_N10024_N10001" >
-
-
-                <image href="Fig_1_page_19.JPG" id="image_mbv_4sl_44" />
-
-
+            <fig id="fig_N1002B_N10027_N10024_N10001">
+                <image href="../../../media/Fig_1_page_19.JPG" id="image_wbm_3dr_ft"/>
             </fig>
 
 
@@ -157,7 +141,7 @@
                             <entry >
 
 
-                                <p ><xref href="jow1404333640333.xml" /></p>
+                                <p/>
 
 
                             </entry>
@@ -190,13 +174,9 @@
                             </entry>
 
 
-                            <entry >
-
-
-                                <p ><xref href="jow1404333645456.xml" /></p>
-
-
-                            </entry>
+                            <entry><xref
+                                        href="../HostManagement/CGH-2-host-management-resource.dita#topic8785">
+                                            Resource Usage</xref></entry>
 
 
                         </row>
@@ -232,7 +212,9 @@
                             <entry >
 
 
-                                <p ><xref href="jow1404333646078.xml" /></p>
+                                <p><xref
+                                        href="../Inventory/CGH-2-host-management-inventory.dita#topic44621"
+                                    >Managing Inventory</xref></p>
 
 
                             </entry>
@@ -265,7 +247,9 @@
                             <entry >
 
 
-                                <p ><xref href="jow1426182913166.xml" /></p>
+                                <p><xref
+                                        href="../HostAggregates/CGH-2-Admin-Aggregate-Managing.dita#topic2563"
+                                    >Managing Host Aggregates</xref></p>
 
 
                             </entry>
@@ -364,7 +348,9 @@
                             <entry >
 
 
-                                <p ><xref href="jow1404333800036.xml" /></p>
+                                <p><xref
+                                        href="../Instances/CGH-2-Admin-Instance-Overview.dita#topic804"
+                                    >Managing Instances</xref></p>
 
 
                             </entry>
@@ -400,7 +386,7 @@
                             <entry >
 
 
-                                <p ><xref href="jow1404333660893.xml" /></p>
+                                <p/>
 
 
                             </entry>
@@ -442,7 +428,9 @@
                             <entry >
 
 
-                                <p ><xref href="jow1404333749994.xml" /></p>
+                                <p><xref
+                                        href="../Volumes/CGH-2-Admin-volumes-managing.dita#topic1382"
+                                    >Managing Volumes</xref></p>
 
 
                             </entry>
@@ -478,7 +466,7 @@
                             <entry >
 
 
-                                <p ><xref href="jow1404333663095.xml" /></p>
+                                <p><xref href="../Flavor/CGH-2-Admin-flavors.dita#topic3041">Managing Flavors</xref></p>
 
 
                             </entry>
@@ -511,7 +499,7 @@
                             </entry>
 
 
-                            <entry />
+                            <entry><xref href="../Images/CGH-2-Admin-image.dita#topic1827">Managing Images</xref></entry>
 
 
                         </row>
@@ -541,13 +529,8 @@
                             </entry>
 
 
-                            <entry >
-
-
-                                <p ><xref href="jow1404333674324.xml" /></p>
-
-
-                            </entry>
+                            <entry><xref href="../Network/CGH-2-Admin-network.dita#topic1741">Managing Networks
+                                </xref></entry>
 
 
                         </row>
@@ -583,7 +566,9 @@
                             <entry >
 
 
-                                <p ><xref href="jow1429637676342.xml" /></p>
+                                <p><xref
+                                        href="../Routers/CGH-2-Admin-routers-managing.dita#topic1681"
+                                    >Managing Routers</xref></p>
 
 
                             </entry>
@@ -643,7 +628,7 @@
                             <entry >
 
 
-                                <p ><xref href="jow1432045490465.xml" /></p>
+                                <p/>
 
 
                             </entry>
@@ -676,7 +661,7 @@
                             <entry >
 
 
-                                <p ><xref href="jow1413726521641.xml" /></p>
+                                <p/>
 
 
                             </entry>
@@ -712,7 +697,7 @@
                             <entry >
 
 
-                                <p ><xref href="jow1404333798721.xml" /></p>
+                                <p/>
 
 
                             </entry>
@@ -737,5 +722,4 @@
 
 
 </topic>
-
 

@@ -105,21 +105,12 @@
                 locktitle="yes">
                 <topicref href="Inventory/CGH-2-host-management-controller-HA.dita"
                     navtitle="Working with Highly Available Controller Nodes" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-host-management-inventory-detail-storage.dita"
-                    navtitle="Working with Host Storage" locktitle="yes"/>
                 <topicref href="Inventory/CGH-2-host-management-host-lock.dita"
                     navtitle="Locking and Unloacking a Host" locktitle="yes"/>
                 <topicref href="Inventory/CGH-2-host-management-lifecycle.dita"
                     navtitle="Life Cycle of a Host System" locktitle="yes"/>
             </topicref>
             <topichead navtitle="Working with Patches"/>
-            <topicref href="Inventory/CGH-2-host-management-host-hardware.dita"
-                navtitle="Managing CPU Profiles" locktitle="yes">
-                <topicref href="Inventory/CGH-2-host-management-inventory-detail-processor.dita"
-                    navtitle="Working with CPU Profiles" locktitle="yes"/>
-            </topicref>
-            <topicref href="Inventory/CGH-2-host-management-detail-interfaces.dita"
-                navtitle="Working with Interface Details" locktitle="yes"/>
             <topicref href="Inventory/CGH-2-host-management-inventory-detail-storage.dita"
                 navtitle="Working with Storage Profiles" locktitle="yes"/>
             <topicref href="Inventory/CGH-2-host-management-detail-memory.dita"
@@ -135,6 +126,14 @@
             </topicref>
             <topicref href="Inventory/CGH-2-host-management-detail.dita"
                 navtitle="Working with Inventory Details" locktitle="yes">
+                <topicref href="Inventory/CGH-2-host-management-host-hardware.dita"
+                    navtitle="Managing CPU Profiles" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-host-management-inventory-detail-processor.dita"
+                    navtitle="Working with CPU Profiles" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-host-management-detail-interfaces.dita"
+                    navtitle="Working with Interface Details" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-host-management-inventory-detail-storage.dita"
+                    navtitle="Working with Host Storage" locktitle="yes"/>
                 <topicref href="Inventory/CGH-2-host-management-inventory-detail-ports.dita"
                     navtitle="Viewing Port Details" locktitle="yes"/>
             </topicref>
@@ -231,7 +230,7 @@
                 <topicref href="Identity/CGH-2-Admin-Identity-users-password.dita"
                     navtitle="Changing a User Password" locktitle="yes"/>
             </topicref>
-            <topicref href="Identity/CGH-2-Admin-Identity-quotas-managing-projects.dita"
+            <topicref href="Identity/CGH-2-Admin-Identity-managing-projects.dita"
                 navtitle="Managing Projects" locktitle="yes">
                 <topicref href="Identity/CGH-2-Admin-Identity-projects-primary.dita"
                     navtitle="Specifying a Primary Project for a User" locktitle="yes"/>

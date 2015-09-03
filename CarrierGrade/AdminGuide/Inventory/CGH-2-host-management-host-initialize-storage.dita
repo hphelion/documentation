@@ -6,7 +6,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -17,7 +17,7 @@
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -49,7 +49,7 @@
 </li>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
@@ -73,8 +73,8 @@
 <p>The node is restarted automatically, and a display-device menu appears on the node console.</p>
 
 <p>
-<image href="../../../media/CGH-WR-Node-Console.png"/>
-</p>
+          <image href="../../../media/CGH-WR-Node-Console.png" id="image_owx_ghr_ft"/>
+        </p>
 </li>
 <li>
 <p>Optional: Select the display device to use during initialization.

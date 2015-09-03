@@ -4,7 +4,9 @@
 <!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 
 
-<topic domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1432757989702" xml:lang="en-us">
+<topic
+    domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   "
+    id="jow1432757989702" xml:lang="en-us">
 
 
     <!-- Modification History
@@ -16,25 +18,21 @@
 -->
 
 
-    <title >The Identity Menu</title>
+    <title>The Identity Menu</title>
 
 
-    <shortdesc > The <uicontrol >Identity</uicontrol> menu contains
-
-
-        selections for managing tenants (projects) and users. It is available when <uicontrol >admin</uicontrol> is selected as the <b >Current
-
-
-            Tenant</b>.</shortdesc>
+    <shortdesc> The <uicontrol>Identity</uicontrol> menu contains selections for managing tenants
+        (projects) and users. It is available when <uicontrol>admin</uicontrol> is selected as the
+            <b>Current Tenant</b>.</shortdesc>
 
 
     <prolog>
 
 
-        <author >Jim Owens</author>
+        <author>Jim Owens</author>
 
 
-        <author >Pedro Sanchez</author>
+        <author>Pedro Sanchez</author>
 
 
     </prolog>
@@ -43,36 +41,16 @@
     <body>
 
 
-        <section id="section_N10027_N10024_N10001" >
-
-
-            <fig id="fig_N1002B_N10027_N10024_N10001" >
-
-
-                <image href="Fig_1_page_20.JPG" id="image_zmy_jbf_2s" >
-
-
-                    <alt >HP Helion OpenStack Carrier Grade Menu Identity Panel</alt>
-
-
-                </image>
-
-
+        <section id="section_N10027_N10024_N10001">
+            <fig id="fig_N1002B_N10027_N10024_N10001">
+                <image href="../../../media/Fig_1_page_20.JPG" id="image_xfj_cfr_ft"/>
             </fig>
-
-
-            <p >The menu contains one section.</p>
-
-
+            <p>The menu contains one section.</p>
         </section>
 
 
-        <section id="section_N1022F_N10024_N10001" >
-
-
-            <title >Identity</title>
-
-
+        <section id="section_N1022F_N10024_N10001">
+            <title>Identity</title>
             <table id="table_ipm_r3f_44">
 
 
@@ -94,30 +72,18 @@
                         <row>
 
 
-                            <entry colname="col1" >
-
-
-                                <p >Menu item</p>
-
-
+                            <entry colname="col1">
+                                <p>Menu item</p>
                             </entry>
 
 
-                            <entry colname="col2" >
-
-
-                                <p >Description</p>
-
-
+                            <entry colname="col2">
+                                <p>Description</p>
                             </entry>
 
 
-                            <entry colname="col3" >
-
-
-                                <p >Reference</p>
-
-
+                            <entry colname="col3">
+                                <p>Reference</p>
                             </entry>
 
 
@@ -133,25 +99,19 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Projects</p>
-
-
+                            <entry>
+                                <p>Projects</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing tenants.</p>
-
-
+                            <entry>
+                                <p>Controls for managing projects (tenants).</p>
                             </entry>
 
 
-                            <entry />
+                            <entry><xref
+                                    href="../Identity/CGH-2-Admin-Identity-managing-projects.dita#topic994"
+                                >Managing Projects</xref></entry>
 
 
                         </row>
@@ -160,27 +120,28 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Users</p>
-
-
+                            <entry>
+                                <p>Users</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing user accounts.</p>
-
-
+                            <entry>
+                                <p>Controls for managing user accounts.</p>
                             </entry>
 
 
-                            <entry />
+                            <entry><xref
+                                    href="../Identity/CGH-2-Admin-Identity-managing-users.dita#topic585"
+                                >Managing Users</xref></entry>
 
 
+                        </row>
+                        <row>
+                            <entry>Quotas</entry>
+                            <entry>Controls for managing project quotas.</entry>
+                            <entry><xref
+                                    href="../Identity/CGH-2-Admin-Identity-quotas.dita#topic1853"
+                                >Managing Project Quotas</xref></entry>
                         </row>
 
 
@@ -191,8 +152,6 @@
 
 
             </table>
-
-
         </section>
 
 
@@ -200,5 +159,3 @@
 
 
 </topic>
-
-

@@ -7,7 +7,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,7 +18,7 @@
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Michael B"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -35,7 +35,7 @@
 <p>Across the top are menus to switch between projects and menus where you can access user settings.</p>
 <!-- 
   <p>
-      <image href="../../../media/CGH-Helion-Window-RC.png"></image></p>
+      <image href="../../../documentation/media/CGH-Helion-Window-RC.png"></image></p>
    -->
 <p>How you interact with your network environment depends upon your user type, either an administrative user or a non-administrative user (user). In general, a non-admin user can make changes to projects to which that user is associated. Admin users can make changes throughout the domain.</p>
 <p>To access the dashboard, <xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >enter the dashboard URL in a supported browser and log in</xref>.</p>
@@ -151,13 +151,13 @@
             <row>
               <entry>Resource Usage</entry>
               <entry> Tools for performing Ceilometer database queries using real-time or collected
-                data, to support detailed performance analysis. *KVM servers only*
+                data, to support detailed performance analysis. *regionone servers only*
               </entry>
             </row>
             <row>
               <entry>Inventory</entry>
               <entry>Controls for managing systems, hosts, and standardized CPU, port, or storage
-                profiles that can be applied to hosts. *KVM servers only* </entry>
+                profiles that can be applied to hosts. *regionone servers only* </entry>
             </row>
             <row>
               <entry>Host Aggregates</entry>
@@ -175,7 +175,7 @@
             <row>
               <entry>Server Groups</entry>
               <entry>Controls for managing server groups across all tenants. Server groups are
-                collections of instances sharing common attributes. *KVM servers only*
+                collections of instances sharing common attributes. *regionone servers only*
               </entry>
             </row>
             <row>
@@ -212,11 +212,11 @@
             </row>
             <row>
               <entry>Fault Management</entry>
-              <entry>System alarms. *KVM servers only* </entry>
+              <entry>System alarms. *regionone servers only* </entry>
             </row>
             <row>
               <entry>System Configuration</entry>
-              <entry>System configuration updates. *KVM servers only* </entry>
+              <entry>System configuration updates. *regionone servers only* </entry>
             </row>
             <row>
               <entry>System Info</entry>

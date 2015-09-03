@@ -6,7 +6,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -17,7 +17,7 @@
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -35,20 +35,21 @@
 <p>They include:</p>
 <ul>
 <li>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-processor.dita" >Working with Host CPUs</xref>
-</li>
+        <xref href="CGH-2-host-management-inventory-detail-processor.dita#topic6788">Working with
+          Host CPUs </xref></li>
 <li>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-inventory.dita" >Working with Host Memory</xref>
-</li>
+        
+  <xref href="CGH-2-host-management-detail-memory.dita#topic6841">Working
+    with Host Memory</xref></li>
 <li>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-storage.dita" >Working with Host Storage</xref>
-</li>
+        
+  <xref href="CGH-2-host-management-inventory-detail-storage.dita#topic6164">Working with Host Storage</xref></li>
 <li>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-ports.dita" >Viewing Host Port Details</xref>
-</li>
+        
+  <xref href="CGH-2-host-management-inventory-detail-ports.dita#topic1730">Viewing Host Port Details</xref></li>
 <li>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita" >Working with Host Interfaces</xref>
-</li>
+        
+  <xref href="CGH-2-host-management-detail-interfaces.dita#topic6151">Working with Host Interfaces</xref></li>
 </ul>
 <section id="overview"> <title>Overview</title>
 <p>The <b>Overview</b> tab on the <b>Inventory Detail</b> page summarizes core details about a host object.</p>
@@ -56,7 +57,7 @@
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
@@ -73,8 +74,10 @@
 <li>host name, personality, and the internal UUID and host ID reference numbers</li>
 <li>MAC and IP addresses on the internal management network</li>
 <li>serial ID, if known. Use the command system host-modify &lt;hostname&gt; serialid=xxx to update it.</li>
-<li>location, as entered by the operator using the Edit Host window. For more information, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita" >Host Inventory</xref>
-</li>
+<li>location, as entered by the operator using the Edit Host window. For more information, see <xref
+            href="CGH-2-host-management.dita#topic11233">Host
+            Inventory</xref>
+        </li>
 <li>time stamps of when the host was created and last updated</li>
 <li>the host's state</li>
 <li>board management (iLO) information, if available, including controller type, MAC address, and IP address.</li>

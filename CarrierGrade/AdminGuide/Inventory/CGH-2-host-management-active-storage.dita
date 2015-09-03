@@ -6,7 +6,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -17,7 +17,7 @@
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -39,7 +39,7 @@ resources to meet the operational requirements of the system.</p>
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>
@@ -53,29 +53,33 @@ resources to meet the operational requirements of the system.</p>
 </li>
 <li>
 <p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the standby controller</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
+<xref href="CGH-2-host-management-host-lock.dita#topic3241" >Lock the standby controller</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
 
 <p>Wait for the procedure to be completed.</p>
 </li>
 <li>
-<p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section"  >Power down the standby controller</xref> and make any required hardware changes.</p>
+<p><xref href="CGH-2-host-management.dita#topic11233/poweroff" type="section">Power down the standby
+            controller</xref> and make any required hardware changes.</p>
 
 <p>This may involve replacing disks, or replacing the host completely.</p>
 </li>
 <li>
 <p>Place the new or modified controller into service.</p>
 
-<p>To begin using the new disk, <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section"  >power up the host</xref> and <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >unlock</xref> the host.</p>
+<p>To begin using the new disk, <xref href="CGH-2-host-management.dita#topic11233/poweroff" type="section"  >power up the host</xref> and <xref href="CGH-2-host-management-host-lock.dita#topic3241" >unlock</xref> the host.</p>
 
 <ul>
 <li>For disk replacement, no additional configuration changes are needed. </li>
 <li>For disk addition, you must create a new storage volume (OSD) before you can use the new disk. For more information, see the HP Helion OpenStack Carrier Grade Software Installation Guide: Creating Storage Volumes.</li>
-<li>For host replacement, you must <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#delete" type="section"  >delete the existing host</xref> using <b>More</b> then <b>Delete Host</b>. Then you must initialize the new host with a personality as a storage node, configure its interfaces, and create storage volumes. </li>
+<li>For host replacement, you must <xref href="CGH-2-host-management.dita#topic11233/delete"
+              type="section">delete the existing host</xref> using <b>More</b> then <b>Delete
+              Host</b>. Then you must initialize the new host with a personality as a storage node,
+            configure its interfaces, and create storage volumes. </li>
 </ul>
 </li>
 </ol>
-<p>For more information on initializing and configuring a storage node, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-initialize-storage.dita" >Initializing and Configuring Storage Nodes</xref>.</p>
+<p>For more information on initializing and configuring a storage node, see <xref
+        href="CGH-2-host-management-host-initialize-storage.dita#topic4226">Initializing and Configuring Storage Nodes</xref>.</p>
 <p>
   <xref type="section" href="#topic2639"> Return to Top </xref>
 </p>

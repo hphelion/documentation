@@ -4,7 +4,9 @@
 <!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 
 
-<topic domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333629232" xml:lang="en-us">
+<topic
+    domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   "
+    id="jow1404333629232" xml:lang="en-us">
 
 
     <!-- Modification History
@@ -16,22 +18,20 @@
 -->
 
 
-    <title >The Project Menu</title>
+    <title>The Project Menu</title>
 
 
-    <shortdesc >The <uicontrol >Project</uicontrol> menu contains selections for managing the currently
-
-
-    selected tenant (project).</shortdesc>
+    <shortdesc>The <uicontrol>Project</uicontrol> menu contains selections for managing the
+        currently selected tenant (project).</shortdesc>
 
 
     <prolog>
 
 
-        <author >Jim Owens</author>
+        <author>Jim Owens</author>
 
 
-        <author >Pedro Sanchez</author>
+        <author>Pedro Sanchez</author>
 
 
     </prolog>
@@ -40,45 +40,19 @@
     <body>
 
 
-        <section id="section_N10023_N10020_N10001" >
-
-
-            <p >The <b >Current Tenant</b> is identified at the top
-
-
-                of the <wintitle >Information Pane</wintitle>. Users with membership in more than one
-
-
-                tenant can select a different tenant using a drop-down list.</p>
-
-
-            <fig id="fig_N1002B_N10023_N10020_N10001" >
-
-
-                <image align="" href="Fig_1_page_18.JPG" />
-
-
-                <image align="" href="Fig_2_page_18.JPG" />
-
-
-                <image align="" href="Fig_3_page_18.JPG" /> 
-
-
-            </fig>
-
-
-            <p >The menu is divided into three sections.</p>
-
-
+        <section id="section_N10023_N10020_N10001">
+            <p>The <b>Current Tenant</b> is identified at the top of the <wintitle>Information
+                    Pane</wintitle>. Users with membership in more than one tenant can select a
+                different tenant using a drop-down list.</p>
+            <p><image href="../../../media/Fig_1_page_18.JPG" id="image_o5t_5cr_ft"/><image
+                    href="../../../media/Fig_2_page_18.JPG" id="image_m5w_vcr_ft"/><image
+                    href="../../../media/Fig_3_page_18.JPG" id="image_hks_wcr_ft"/></p>
+            <p>The menu is divided into three sections.</p>
         </section>
 
 
-        <section id="section_N1003C_N10020_N10001" >
-
-
-            <title >Compute</title>
-
-
+        <section id="section_N1003C_N10020_N10001">
+            <title>Compute</title>
             <table id="table_ipm_r3f_44">
 
 
@@ -100,30 +74,18 @@
                         <row>
 
 
-                            <entry colname="col1" >
-
-
-                                <p >Menu item</p>
-
-
+                            <entry colname="col1">
+                                <p>Menu item</p>
                             </entry>
 
 
-                            <entry colname="col2" >
-
-
-                                <p >Description</p>
-
-
+                            <entry colname="col2">
+                                <p>Description</p>
                             </entry>
 
 
-                            <entry colname="col3" >
-
-
-                                <p >Reference</p>
-
-
+                            <entry colname="col3">
+                                <p>Reference</p>
                             </entry>
 
 
@@ -139,31 +101,18 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Overview</p>
-
-
+                            <entry>
+                                <p>Overview</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Charts and statistics for monitoring compute node
-
-
-                                    resource usage for instances associated with the tenant
-
-
-                                    (project).</p>
-
-
+                            <entry>
+                                <p>Charts and statistics for monitoring compute node resource usage
+                                    for instances associated with the tenant (project).</p>
                             </entry>
 
 
-                            <entry />
+                            <entry/>
 
 
                         </row>
@@ -172,33 +121,19 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Instances</p>
-
-
+                            <entry>
+                                <p>Instances</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing instances associated with the tenant, including controls
-
-
-                  for creating snapshots.</p>
-
-
+                            <entry>
+                                <p>Controls for managing instances associated with the tenant,
+                                    including controls for creating snapshots.</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p ><xref href="jow1404333800036.xml" /></p>
-
-
+                            <entry>
+                                <p/>
                             </entry>
 
 
@@ -208,30 +143,19 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Server Groups</p>
-
-
+                            <entry>
+                                <p>Server Groups</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing server groups associated with the tenant.</p>
-
-
+                            <entry>
+                                <p>Controls for managing server groups associated with the
+                                    tenant.</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p ><xref href="jow1404333660893.xml" /></p>
-
-
+                            <entry>
+                                <p/>
                             </entry>
 
 
@@ -241,33 +165,19 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Volumes</p>
-
-
+                            <entry>
+                                <p>Volumes</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing virtual disk volumes associated with the tenant's
-
-
-                  instances.</p>
-
-
+                            <entry>
+                                <p>Controls for managing virtual disk volumes associated with the
+                                    tenant's instances.</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p ><xref href="jow1404333749994.xml" /></p>
-
-
+                            <entry>
+                                <p/>
                             </entry>
 
 
@@ -277,28 +187,18 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Images</p>
-
-
+                            <entry>
+                                <p>Images</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing and launching images, and
-
-
-                                    creating volumes for images. </p>
-
-
+                            <entry>
+                                <p>Controls for managing and launching images, and creating volumes
+                                    for images. </p>
                             </entry>
 
 
-                            <entry />
+                            <entry/>
 
 
                         </row>
@@ -307,28 +207,19 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Access &amp; Security</p>
-
-
+                            <entry>
+                                <p>Access &amp; Security</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for network protocol and port security, SSH-based access to virtual
-
-
-                  machines, API access to services, and floating IP address allocations. </p>
-
-
+                            <entry>
+                                <p>Controls for network protocol and port security, SSH-based access
+                                    to virtual machines, API access to services, and floating IP
+                                    address allocations. </p>
                             </entry>
 
 
-                            <entry />
+                            <entry/>
 
 
                         </row>
@@ -341,17 +232,11 @@
 
 
             </table>
-
-
         </section>
 
 
-        <section id="section_N1011D_N10020_N10001" >
-
-
-            <title >Network</title>
-
-
+        <section id="section_N1011D_N10020_N10001">
+            <title>Network</title>
             <table id="table_u3h_gmf_44">
 
 
@@ -373,30 +258,18 @@
                         <row>
 
 
-                            <entry colname="col1" >
-
-
-                                <p >Menu item</p>
-
-
+                            <entry colname="col1">
+                                <p>Menu item</p>
                             </entry>
 
 
-                            <entry colname="col2" >
-
-
-                                <p >Description</p>
-
-
+                            <entry colname="col2">
+                                <p>Description</p>
                             </entry>
 
 
-                            <entry colname="col3" >
-
-
-                                <p >Reference</p>
-
-
+                            <entry colname="col3">
+                                <p>Reference</p>
                             </entry>
 
 
@@ -412,28 +285,18 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Network Topology</p>
-
-
+                            <entry>
+                                <p>Network Topology</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Configuration charts depicting system networks, instances, and network
-
-
-                  connections between instances.</p>
-
-
+                            <entry>
+                                <p>Configuration charts depicting system networks, instances, and
+                                    network connections between instances.</p>
                             </entry>
 
 
-                            <entry />
+                            <entry/>
 
 
                         </row>
@@ -442,33 +305,20 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Networks</p>
-
-
+                            <entry>
+                                <p>Networks</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing networks for the current tenant, and viewing QoS (Quality
-
-
-                  of Service) policies or weightings for tenants of which the user is a member.</p>
-
-
+                            <entry>
+                                <p>Controls for managing networks for the current tenant, and
+                                    viewing QoS (Quality of Service) policies or weightings for
+                                    tenants of which the user is a member.</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p ><xref href="jow1404333674324.xml" /></p>
-
-
+                            <entry>
+                                <p/>
                             </entry>
 
 
@@ -478,36 +328,20 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Routers</p>
-
-
+                            <entry>
+                                <p>Routers</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing virtual routers. Tenant members can create and delete
-
-
-                  virtual routers, view router details and delete interfaces, and clear
-
-
-                  gateways.</p>
-
-
+                            <entry>
+                                <p>Controls for managing virtual routers. Tenant members can create
+                                    and delete virtual routers, view router details and delete
+                                    interfaces, and clear gateways.</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p ><xref href="jow1429628777191.xml" /></p>
-
-
+                            <entry>
+                                <p/>
                             </entry>
 
 
@@ -521,17 +355,11 @@
 
 
             </table>
-
-
         </section>
 
 
-        <section id="section_N101BF_N10020_N10001" >
-
-
-            <title >Orchestration</title>
-
-
+        <section id="section_N101BF_N10020_N10001">
+            <title>Orchestration</title>
             <table id="table_ecs_dnf_44">
 
 
@@ -553,30 +381,18 @@
                         <row>
 
 
-                            <entry colname="col1" >
-
-
-                                <p >Menu item</p>
-
-
+                            <entry colname="col1">
+                                <p>Menu item</p>
                             </entry>
 
 
-                            <entry colname="col2" >
-
-
-                                <p >Description</p>
-
-
+                            <entry colname="col2">
+                                <p>Description</p>
                             </entry>
 
 
-                            <entry colname="col3" >
-
-
-                                <p >Reference</p>
-
-
+                            <entry colname="col3">
+                                <p>Reference</p>
                             </entry>
 
 
@@ -592,36 +408,20 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Stacks</p>
-
-
+                            <entry>
+                                <p>Stacks</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Details for existing services (stacks), and controls for creating new services
-
-
-                  (launching stacks). Service details include topologies, resource allocations, and
-
-
-                  event histories.</p>
-
-
+                            <entry>
+                                <p>Details for existing services (stacks), and controls for creating
+                                    new services (launching stacks). Service details include
+                                    topologies, resource allocations, and event histories.</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p ><xref href="jow1404333804266.xml" /></p>
-
-
+                            <entry>
+                                <p/>
                             </entry>
 
 
@@ -635,8 +435,6 @@
 
 
             </table>
-
-
         </section>
 
 
@@ -644,5 +442,3 @@
 
 
 </topic>
-
-
