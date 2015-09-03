@@ -40,9 +40,13 @@
       <codeblock>helion tunnel MSSQL2012Service</codeblock>
       <p>The output from this command may look like the following:</p>
       <image placement="break" href="../../media/helion_sql_tunnel.png"></image></section>
+    
     <section id="connect"><title>Connect to the service instance</title>
+      
     <p>Once the tunneling application is deployed and bound to the service, you can connect to the service using SQL Server Management Studio.</p>
-      <p>In the login dialog for SQL Management Studio, enter the hostname (localhost or 127.0.0.1) and port (10000 by default) for the ALS cluster, and provide the login credentials from the previous section:</p>
+      <p>In the login dialog for SQL Management Studio, click <b>Options</b> to access database options. Enter the hostname (localhost or 127.0.0.1) and port (10000 by default) in 
+        the format <b>&lt;hostname&gt;,&lt;port&gt;</b> for the tunneling application, and provide the login credentials from the previous section 
+        (these values are given as output from the tunneling application):</p>
       <image placement="break" href="../../media/windows_sql_connect_1.png"></image>
       <p>In the next dialog, provide the database name from the previous section: </p>
       <image placement="break" href="../../media/windows_sql_connect_2.png"></image>
