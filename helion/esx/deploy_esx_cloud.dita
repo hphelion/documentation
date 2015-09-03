@@ -142,7 +142,7 @@ git commit -m "My config or other commit message"</codeblock></li>
     <p>vCenter provides centralized management of virtual host and virtual machines from a single
         console.<ol id="ol_xdj_5js_ft">
         <li>Add a vCenter using EON python
-            client.<codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:
+            client.<codeblock><codeph># eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:
               <ul id="ul_bp3_yjs_ft">
               <li>vCenter Name - the identical name of the vCenter server.</li>
               <li>vCenter IP address - the IP address of the vCenter server.</li>
@@ -174,8 +174,8 @@ git commit -m "My config or other commit message"</codeblock></li>
     <p>
       <ol>
         <li>Execute the following command to get the network information
-            template:<codeblock><codeph>eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
-            example:<codeblock>eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
+            template:<codeblock><codeph># eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+            example:<codeblock># eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
             file of <codeph>net_conf.json</codeph> is shown
             below:<codeblock>{
     "network": {
@@ -289,13 +289,14 @@ git commit -m "My config or other commit message"</codeblock></li>
         <li>Use the template to register Cloud Network Configuration. This sets the network
           information for a vCenter which is used to deploy and configure compute proxy and OVSvAPP
           VMs during the cluster activation.
-            <codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For example:
-            <codeblock>eon set-network-info --vcenter-id &lt;BC9DED4E-1639-481D-B190-2B54A2BF5674> --config-json net_conf.json</codeblock></p><p>
+            <codeblock><codeph># eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+            example:
+            <codeblock># eon set-network-info --vcenter-id &lt;BC9DED4E-1639-481D-B190-2B54A2BF5674> --config-json net_conf.json</codeblock></p><p>
             <note>The vcenter ID is generated when you execute the above (<b>step 2</b>)
               command.</note>
           </p></li>
         <li>Execute the following command to view the list of clusters for the given
-            vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
+            vCenter.<codeblock><codeph># eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
             Output</b><codeblock>+------------+----------+------------+---------------+
 | MOID       | Name     | Datacenter | Import Status |
 +------------+----------+------------+---------------+
@@ -309,7 +310,7 @@ git commit -m "My config or other commit message"</codeblock></li>
       invoked, required ESX Compute Proxy and OVSvApp nodes are deployed.</p>
     <p>
       <ol>
-        <li> Import the cluster for the EON database under the given vCenter. <codeblock><codeph>eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock>where:<p>
+        <li> Import the cluster for the EON database under the given vCenter. <codeblock><codeph># eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock>where:<p>
             <ul id="ul_r4g_rjs_ft">
               <li>vCenter ID - ID of the vcenter containing the cluster.</li>
               <li>Cluster Name - the name of the cluster that needs to be imported.</li>
@@ -336,7 +337,7 @@ git commit -m "My config or other commit message"</codeblock></li>
             vCenter can have multiple clusters. But it allows you to import only one cluster at a
             time.</p></li>
         <li> Execute the following command to view the list of clusters for the given
-            vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
+            vCenter.<codeblock><codeph># eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
             Output</b><codeblock>+------------+----------+------------+---------------+
 | MOID       | Name     | Datacenter | Import Status |
 +------------+----------+------------+---------------+
@@ -353,9 +354,9 @@ git commit -m "My config or other commit message"</codeblock></li>
       <p>
         <ol>
           <li>Activate the cluster for the selected
-                vCenter.<codeblock><codeph>eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock><p><b>Sample
-                Output</b></p><p>
-              <codeblock>+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+              vCenter.<codeblock><codeph># eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock><p><b>Sample
+              Output</b></p><p>
+            <codeblock>+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Property      | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | node_info     | {u'computeproxy': {u'pxe-mac-addr': u'00:50:56:b6:ce:1b', u'pxe-ip-addr': u'172.170.2.4', u'name': u'COMPUTEPROXY_Cluster1', u'cluster-moid': u'domain-c21'}, u'network_driver': {u'cluster_dvs_mapping': u'DC1/host/Cluster1:hlm-Trunk', u'Cluster1': [{u'host-moid': u'host-29', u'pxe-ip-addr': u'172.170.2.3', u'esx_hostname': u'10.1.200.33', u'ovsvapp_node': u'ovsvapp-10-1-200-33', u'pxe-mac-addr': u'00:50:56:b6:5e:9a'}, {u'host-moid': u'host-25', u'pxe-ip-addr': u'172.170.2.2', u'esx_hostname': u'10.1.200.66', u'ovsvapp_node': u'ovsvapp-10-1-200-66', u'pxe-mac-addr': u'00:50:56:b6:56:e6'}]}} |
@@ -363,7 +364,7 @@ git commit -m "My config or other commit message"</codeblock></li>
 | resource_name | Cluster1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | state         | activated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock>
-            </p></li>
+          </p></li>
         </ol>
       </p>
     <p id="modify-volume-config"><b>Modify  the Volume Configuration File</b></p>
@@ -375,7 +376,7 @@ git commit -m "My config or other commit message"</codeblock></li>
           command:<codeblock>cd /home/stack/helion/hos/ansible/roles/_CND-CMN/templates</codeblock></li>
         <li>Modify the <codeph>cinder.conf.j2</codeph> as follows:</li>
       </ol>
-      <codeblock> # Start of section for VMDK block storage
+      <codeblock># Start of section for VMDK block storage
 #
 # If you have configured VMDK Block storage for cinder you must
 # uncomment this section, and replace all strings in angle brackets
