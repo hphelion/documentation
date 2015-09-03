@@ -3,14 +3,23 @@
 <topic id="topic_sl2_nht_dt">
   <title>Swift- Troubleshooting </title>
   <body>
-    <p>This page describes the troubleshooting scenarios for Swift service.</p>
-    <section><b>Interpreting _swift-validate-input-model.yml Errors</b></section>
+    <p>This page describes the troubleshooting scenarios for Swift service.<ul id="ul_ac4_s5d_ft">
+        <li><xref href="#topic_sl2_nht_dt/interpreting-swift-validate-input-model" format="dita"
+            >Interpreting _swift-validate-input-model.yml Errors</xref></li>
+        <li><xref href="#topic_sl2_nht_dt/deploy-fails" format="dita">Deploy fails with: msdos disks
+            labels do not support partition names</xref></li>
+      </ul></p>
+    <section id="interpreting-swift-validate-input-model">
+      <title>Interpreting _swift-validate-input-model.yml Errors</title>
+    </section>
     <p>When you execute the <codeph>_swift-validate-input-model.yml</codeph> playbook it can be hard
       to pick out the errors being reported. If so, you view the error messages as follows:<ol
         id="ol_szd_tht_dt">
         <li>Log onto the first node in the system that is running the swift-proxy-server process.
             <note> You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as
             mentioned in step <b>2</b> in <xref
+              href="../installation.dita#topic_flx_j2b_ws/CloudDeploy"/> or run the
+              <codeph>hlm-deploy.yml</codeph> playbook as described in step <b>4</b> in <xref
               href="../installation.dita#topic_flx_j2b_ws/CloudDeploy"/> otherwise the files needed
             to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node.
           </note></li>
@@ -22,13 +31,14 @@
       </ol></p>
     <section><b>List of errors</b></section>
     <p>The following example provides an error message, description, and the resolution.<note>To
-        resolve an error by changing the input, you <b>must</b> re-run the configuration processor
-        as describe in <xref href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run
-          the Configuration Processor</xref> and continue with the deploy.</note></p>
+        resolve an error, you must first modify the cloud model and re-run the configuration
+        processor as described in <xref
+          href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run the Configuration
+          Processor</xref> and continue with the deploy.</note></p>
     <p>
-      <ol id="ol_qwr_zpx_2t">
-        <li><b>Example Message</b>:<b><b> Model Missmatch: Cannot find drive /dev/sdt on
-              padawan-ccp-c1-m2 (192.168.245.3)</b>)</b><simpletable id="simpletable_crn_x2j_2t">
+      <ol>
+        <li><b>Example Message - Model Missmatch: Cannot find drive /dev/sdt on padawan-ccp-c1-m2
+            (192.168.245.3))</b><simpletable id="simpletable_crn_x2j_2t">
             <strow>
               <stentry><b>Description</b>
               </stentry>
@@ -51,8 +61,8 @@
                   the drive for all servers using the disk model .</p></stentry>
             </strow>
           </simpletable></li>
-        <li><b>Example Message</b>: <b>Model Missmatch: Cannot find drive /dev/sdd2 on
-            padawan-ccp-c1-m2 (192.168.245.3)</b><simpletable id="simpletable_wz4_jgj_2t">
+        <li><b>Example Message - Model Missmatch: Cannot find drive /dev/sdd2 on padawan-ccp-c1-m2
+            (192.168.245.3)</b><simpletable id="simpletable_wz4_jgj_2t">
             <strow>
               <stentry><b>Description</b>
               </stentry>
@@ -67,8 +77,8 @@
               <stentry>Remove the partition number from the disk model.</stentry>
             </strow>
           </simpletable></li>
-        <li><b>Example Message</b>:<b>Cannot find IP address of padawan-ccp-c1-m3-swift for ring:
-            account host: padawan-ccp-c1-m3-mgmt</b><simpletable id="simpletable_j3n_lfj_2t">
+        <li><b>Example Message - Cannot find IP address of padawan-ccp-c1-m3-swift for ring: account
+            host: padawan-ccp-c1-m3-mgmt</b><simpletable id="simpletable_j3n_lfj_2t">
             <strow>
               <stentry><b>Description</b></stentry>
               <stentry>The service (in this example, swift-account) is running on the node
@@ -83,8 +93,8 @@
             </strow>
           </simpletable></li>
         <li>
-          <b>Example Message</b>:<b>Ring:object-2 has specified replication-policy
-            erasure-coding-policy. Only may be specified. </b><simpletable
+          <b>Example Message - Ring: object-2 has specified replication_policy and
+            erasure_coding_policy. Only one may be specified. </b><simpletable
             id="simpletable_jxv_lfj_2t">
             <strow>
               <stentry><b>Description</b>
@@ -94,10 +104,10 @@
             </strow>
             <strow>
               <stentry><b>Resolution</b></stentry>
-              <stentry>Remove one of the policy type.</stentry>
+              <stentry>Remove one of the policy types.</stentry>
             </strow>
           </simpletable></li>
-        <li><b>Example Message</b>:<b>Ring: object-3 is missing a policy type (replication-policy
+        <li><b>Example Message - Ring: object-3 is missing a policy type (replication-policy or
             erasure-coding-policy) </b><simpletable id="simpletable_e3b_mfj_2t">
             <strow>
               <stentry><b>Description</b>
@@ -112,5 +122,36 @@
           </simpletable></li>
       </ol>
     </p>
+    <section id="deploy-fails">
+      <title>Deploy fails with - msdos disks labels do not support partition names</title>
+      <note>This process only applies to Swift drives. It does not apply to the operating system or
+        boot drive.</note>
+      <simpletable id="simpletable_nh3_ptd_ft">
+        <strow>
+          <stentry><b>Description</b>
+          </stentry>
+          <stentry>If a disk drive allocated to Swift uses the MBR partition table type, the deploy
+            process refuses to label and format the drive. This is to prevent potential data loss as
+            explained in <xref
+              href="allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
+              >Requirements for a Disk Drive</xref>. If you intend to use the disk drive for Swift,
+            you must convert the MBR partition table to GPT on the drive using
+              <codeph>/sbin/sgdisk</codeph>.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Resolution</b></stentry>
+          <stentry>You must install <codeph>gdisk</codeph>, before using <codeph>sgdisk</codeph>.
+              <ul id="ul_fqc_1hf_ft">
+              <li>Execute the following command to install
+                <codeph>gdisk</codeph>,<codeblock>sudo apt-get install gdisk</codeblock></li>
+              <li>Convert to GPT partition type. This is an example for converting
+                  <codeph>/dev/sdd</codeph> to the GPT partition
+                type.<codeblock>sudo sgdisk –g /dev/sdd</codeblock></li>
+              <li> Reboot the node to take effect. You may then resume the deploy (repeat the
+                playbook that reported the error). </li>
+            </ul></stentry>
+        </strow>
+      </simpletable>
+    </section>
   </body>
 </topic>

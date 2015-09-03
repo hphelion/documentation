@@ -1,53 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_flx_j2b_ws">
-  <title>Deploy ESX Cloud </title>
+  <title>Deploying ESX Cloud </title>
   <body>
+    <p>This page describes the procedure to deploy ESX cloud using input model.</p>
     <section>
-      <title>Known Restrictions</title>
-      <ul>
-        <li>Ensure the <xref href="../hardware.dita#topic_omx_srg_ws">minimum hardware
-            requirements</xref> are met.</li>
-        <li>All disks on the system(s) will be wiped: /dev/sda will be used for the OS but all other
-          disks will be wiped.</li>
-        <li>The deployer node must use the HP Linux for HP Helion OpenStack ISO, which can be
-          downloaded from the <xref
-            href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
-            format="html" scope="external">Helion Downloads</xref> page.</li>
-        <li>Three NIC are tested, one 1G used for PXE and two bonded 10G for everything else. All
-          machines can net boot from PXE and use the deployer as a DHCP server.</li>
-        <li>All machines of a single type should be the same, that is, all computes, and so on.</li>
-        <li>The deployer node must be a dedicated node in Beta1.</li>
-        <li>The machine hosting the deployer and all baremetal systems must be connected to a
-          management network. Nodes on this management network must be able to reach the iLO
-          subsystem of each baremetal system to enable host reboots as part of the install process.
-          The HP Helion OpenStack architecture requires that the IPMI network is a separate network
-          and that a route exists from the management network to the IPMI network for iLO
-          access.</li>
-      </ul>
+      <note type="important">
+        <p>Before you start your ESX cloud deployment ensure that you read the following
+          instructions carefully. <ul id="ul_h4l_m5s_ft">
+            <li>Refer to <b><xref href="../installation.dita#topic_flx_j2b_ws/important-notes"
+                  >Important Notes</xref></b> in the Installation Guide.</li>
+            <li>Prepare your baremetal hardware on all nodes. For instruction, please refer to <xref
+                href="../installation.dita#topic_flx_j2b_ws/Prereqs"><b>Before You
+              Start</b></xref>.</li>
+          </ul></p>
+      </note>
     </section>
     <section id="Prereqs">
-      <title>Before You Start</title>
-      <p>
-        <ol id="ol_nrm_x4b_2t">
-          <li> Prepare your baremetal hardware, as follows, on all nodes: <ul id="ul_efg_1pb_2t">
-              <li>Set up the iLO Advanced license in the iLO configuration.</li>
-              <li>Switch from UEFI to Legacy BIOS.</li>
-              <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
-              <li>Ensure that the other networks have PXE disabled.</li>
-              <li>Insert the CD ROM in the Virtual Media drive on the iLO.</li>
-            </ul></li>
-          <li>ESX/vCenter integration is not fully automatic, vCenter administrators are advised of
-            the following responsibilities to ensure secure operation:</li>
-        </ol>
-      </p>
+      <title>Prerequisite</title>
+      <p>ESX/vCenter integration is not fully automatic, vCenter administrators are advised of the
+        following responsibilities to ensure secure operation:</p>
       <p>
         <ul id="ul_shv_s4b_2t">
           <li>The VMware administrator is responsible for administration of the vCenter servers and
             the ESX nodes using the VMware administration tools. These responsibilities include: <ul
-              id="ul_r5r_t4b_2t">
+              id="ul_py3_j5l_ft">
               <li>Installing and configuring vCenter Server</li>
-              <li> Installing and configuring ESX server and ESX cluster</li>
+              <li>Installing and configuring ESX server and ESX cluster</li>
               <li>Installing and configuring shared datastores</li>
               <li>Establishing network connectivity between the ESX network and the HP Helion
                 management network</li>
@@ -66,174 +45,117 @@
         </ul>
       </p>
     </section>
-    <section id="DeployerInstall">
-      <title>Set up the Deployer</title>
-      <ol>
-        <li>Create LUN(s), if required.</li>
-        <li>Download the HP Linux for HP Helion OpenStack Deployer ISO from the <xref
-            href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
-            format="html" scope="external">Helion Downloads</xref> page.</li>
-        <li>Boot your deployer from the ISO.</li>
-        <li>Enter "install" to start installation.</li>
-        <li>Select the language.</li>
-        <li>Select the location.</li>
-        <li>Select the keyboard layout.</li>
-        <li>Select the primary network interface, if prompted:<ul>
-            <li>Assign IP address, netmask</li>
-          </ul></li>
-        <li>Create a new account:<ul>
-            <li>Enter a username.</li>
-            <li>Enter a password.</li>
-            <li>Enter time zone, if prompted to do so.</li>
-            <li>Synchronize the time on all nodes manually. NTP will be installed later.</li>
-          </ul></li>
-      </ol>
-      <p>At the end of this section you should have a deployer node set up with hLinux on it.</p>
+    <section><b>Deploy ESX Cloud</b><p>At a high level, here are the steps to configure and deploy
+        ESX cloud:</p><p><image href="../../media/esx/esx_deploy.jpg" id="image_kjt_zlm_ft"
+      /></p></section>
+    <section>
+      <title>Procedure to Deploy ESX cloud</title>
     </section>
-    <section id="HLM_Node_Personalization">
-      <title>Configure and Run the Deployer</title>
-      <ol>
-        <li>On the deployer node, enter the following command to create the SSH keypair. Please do
-          not create the SSH Keypair if it is already
-          present.<codeblock>ssh-keygen -t rsa</codeblock></li>
-        <li>Add <codeph>~/.ssh/id_rsa.pub</codeph> to <codeph>~/.ssh/authorized_keys</codeph> file:
-          <codeblock>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</codeblock></li>
-        <li>Confirm that ssh localhost works without a password and that you can get from external
-          sources, both with and without sudo.</li>
-        <li>Mount the install media at <codeph>/media/cdrom</codeph>, for example,
-          <codeblock>sudo mount /media/cdrom</codeblock></li>
-        <li>Unpack the following tarball:
-          <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hlm-deployer-2.0.0-20150805T115313Z.tgz</codeblock></li>
-        <li>Run the following included script:
-          <codeblock>~/hlm-deployer/hlm-init-2.0.0.bash</codeblock></li>
-      </ol>
-      <p>At the end of this section you should have a local directory structure, as described
-        below:</p>
-      <codeblock>helion/                        Top level directory
-helion/examples/               Directory contains the config input files of the example clouds
-helion/my_cloud/definition/    Directory contains the config input files
-helion/my_cloud/config/        Directory contains .j2 files which are symlinks to the /hlm/ansible directory
-helion/hlm/                    Directory contains files used by the installer
-</codeblock>
-    </section>
-    <section id="Configuration">
-      <title>Configure Your Environment</title>
-      <ol>
-        <li>Set up your configuration files, as follows: <ol>
-            <li>See the sample set of configuration files in the
-                <codeph>~/helion/examples/one-region-poc-with-esx</codeph> directory. The
-              accompanying README.md file explains the contents of each of the configuration
-              files.</li>
-            <li>Copy the example configuration files in the required setup directory and edit them
-              as required:
-              <codeblock>cp -r ~/helion/examples/one-region-poc-with-esx/* ~/helion/my_cloud/definition/</codeblock>
-              The configuration files for editing are available at the following location: <codeblock>~/helion/my_cloud/definition/data</codeblock><ul>
-                <li>The <codeph>baremetalConfig.yml</codeph> file should specify the server
-                  information for your environment.</li>
-                <li>The <codeph>servers.yml</codeph> file contains the IP address information for
-                  the hardware for controller nodes.</li>
-                <li>The <codeph>networks.yml</codeph> file contains networking information.</li>
-                <li>The <codeph>control_plane.yml</codeph> file contains information about the
-                  services that will be installed.</li>
-                <li>In the <codeph>net_interfaces.yml</codeph> file, replace all instances of
-                  “bond-mode: 1” to “bond-mode: active-backup”.</li>
-              </ul></li>
-          </ol></li>
-        <li> To continue installation copy your cloud layout to
-            <codeph>/home/stack/helion/my_cloud/definition</codeph></li>
-        <li>Add the cloud deployment definition to the git
-          :<codeblock>cd /home/stack/helion/hos/ansible;
-git add -A;
-git commit -m 'My config';</codeblock></li>
-        <li>Prepare your environment for deployment:
-          <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml;
-ansible-playbook -i hosts/localhost ready-deployment.yml;
-cd /home/stack/scratch/ansible/next/hos/ansible;
-ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
-        <li>Check the generated host files in
-            <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct IPs
-          are included. <ol id="ol_j1m_4bb_2t">
-            <li>Execute the following command to review the ansible
-              changes:<codeblock>git show staging-ansible</codeblock></li>
-            <li>Use the <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph>
-              file to create a deployment directory.</li>
-            <li>Run <codeph>verb_host</codeph> command from the following
-              directory:<codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
-          </ol></li>
-      </ol>
-    </section>
-    <section id="CobblerDeploy">
-      <title>Deploy Cobbler </title>
-      <ol>
-        <li>Run the following command:
-          <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
-        <li>Run the following playbook:
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock><codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
-      </ol>
-    </section>
-    <section id="NodeProvision">
-      <title>Provision the Nodes</title>
-      <ol id="ol_n3r_sfm_dt">
-        <li>Run the following command, which reimages all the nodes using PXE:
-          <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
-        <li>Wait for the nodes to install and come back up.</li>
-      </ol>
-    </section>
-    <section id="CloudDeploy">
-      <title>Deploy the ESX  Cloud Controller</title>
-      <ol>
-        <li>Run the following command:
-            <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
-            id="ol_tkl_dgm_dt">
-            <li>Verify the network is working correctly. Ping each IP  from the
-                <codeph>/etc/hosts</codeph> file from one of the controller nodes.</li>
-          </ol>
-        </li>
-        <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to comment out the line
-          containing horizon.</li>
-        <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncommentthe line
-          containing <codeph>eon.yml</codeph>.</li>
-        <li>Run the following command:
-          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeblock></li>
-      </ol>
-    </section>
-    <section id="VSA">
-      <title> Deploy ESX Compute and OVSvAPP </title>
-      <p>The following sections describe the procedure to install and configure ESX compute and
-        OVSvAPP on vCenter.<ul id="ul_jqm_zjx_ct">
-          <li><xref href="#topic_flx_j2b_ws/deploy-template" format="dita">Deploy Helion Linux Shell
-              VM Template</xref></li>
-          <li><xref href="#topic_flx_j2b_ws/deploy-service" format="dita">Preparation for ESX Cloud
-              Deployment</xref></li>
-        </ul></p>
-    </section>
-    <section id="deploy-template"><b>Deploy Helion Linux Shell VM Template</b><p>The first step in
-        deploying the ESX compute proxy and OVSvApps is to create a VM template that will make it
-        easier to deploy the ESX compute proxy for each Cluster and OVSvApps on each ESX
-      server.</p></section>
-    <p>Perform the following steps to deploy a template:</p>
-    <ol>
-      <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the vSphere client. </li>
-      <li>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF Template</b>.</li>
-      <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
-        install. Refer to the VMWare vSphere documentation as needed. </li>
-    </ol>
-    <section id="deploy-service"><b>Preparation for ESX Cloud Deployment</b><p>This section descibes
-        the procedures to prepare the ESX cloud for deployment. </p><p>
-        <note> Source <codeph>service.osrc</codeph> before you perform the following
-          procedure.</note>
-      </p><p><b>Register a vCenter Server</b></p><p>vCenter provides centralized management of
-        virtual host and virtual machines from a single console.<ol id="ol_atw_n2c_2t">
-          <li> Add a vCenter using EON CLI.</li>
-        </ol></p><codeblock><codeph>eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:</p><p>
-        <ul id="ul_stl_ncc_2t">
-          <li>vCenter Name - the name of the vCenter server where the service is deployed.</li>
-          <li>vCenter IP address - the IP address of the vCenter server where the service is
-            deployed.</li>
-          <li>vCenter Username - the username for the vCenter administrator.</li>
-          <li>vCenter Password - the password for the vCenter administrator.</li>
-          <li>vCenter Port - the vCenter server port.<p><b>Sample
-            Output</b>:</p><codeblock>+------------+--------------------------------------+
+    <p>The following topics in this section explain how to deploy ESX cloud.<ol id="ol_ctc_gzk_ft">
+        <li><b>Set up the Deployer Node</b>
+          <p> For the detailed instructions on setting up the deployer node, refer to <xref
+              href="../installation.dita#topic_flx_j2b_ws/DeployerInstall">Set up the Deployer
+              node</xref> in the installation guide.</p></li>
+        <li><b>Configure and Run the Deployer</b><p> For the detailed instructions on configuring
+            and running deployer node, refer to <xref
+              href="../installation.dita#topic_flx_j2b_ws/HLM_Node_Personalization">Configure and
+              Run the Deployer</xref> in the installation guide.</p></li>
+        <li><b>Prepare and Deploy Cloud Controllers</b><p>
+            <ol id="ol_c1w_pfl_ft">
+              <li>See a sample set of configuration files in the
+                  <codeph>~/helion/examples/one-region-poc-with-esx</codeph> directory. The
+                accompanying README.md file explains the contents of each of the configuration
+                files. </li>
+              <li>Copy the example configuration files into the required setup directory and edit
+                them as required:
+                <codeblock>cp -r ~/helion/examples/one-region-poc-with-esx/* ~/helion/my_cloud/definition/</codeblock></li>
+              <li>The configuration files for editing are available at
+                  <codeph>~/helion/my_cloud/definition/</codeph>. Refer to <b><xref
+                    href="../installation.dita#topic_flx_j2b_ws/note">Note</xref></b> for the list
+                of configuration files.</li>
+              <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the
+                line containing <codeph>eon.yml</codeph>.</li>
+              <li>Modify the <codeph>neutron.conf.j2</codeph> at
+                    <codeph>~/helion/my_cloud/config/<codeph>neutron/neutron.conf.j2</codeph></codeph>with
+                the following
+                  values:<codeblock>router_distributed = False
+modify ml2_conf.ini.j2
+with the below values
+[ml2]
+mechanism_drivers = ovsvapp, openvswitch, l2population
+[agent]
+enable_distributed_routing = False</codeblock><note>
+                  You modify the mechanism_drivers = ovsvapp in the
+                  <codeph>neutron.conf.j2</codeph>.</note></li>
+              <li>Commit your cloud deploy configuration to the<xref
+                  href="../using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows:
+                <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</codeblock></li>
+              <li>Refer to the installation guide and execute the steps mentioned in sections <xref
+                  href="../installation.dita#topic_flx_j2b_ws/CobblerDeploy">Deploy Cobbler</xref>,
+                  <xref href="../installation.dita#topic_flx_j2b_ws/NodeProvision"/>, and <xref
+                  href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run the
+                  Configuration Processor</xref> to deploy cloud controller.</li>
+            </ol>
+          </p></li>
+        <li><b>Prepare and Deploy ESX Computes and OVSvAPPs</b><p>The following sections describe
+            the procedure to install and configure ESX compute and OVSvAPPs on vCenter.<ul
+              id="ul_lns_fjl_ft">
+              <li><xref href="#topic_flx_j2b_ws/deploy-template" format="dita">Deploy Helion Linux
+                  Shell VM Template</xref></li>
+              <li><xref href="#topic_flx_j2b_ws/prepare-esx-cloud-deployment" format="dita"
+                  >Preparation for ESX Cloud Deployment</xref></li>
+            </ul></p></li>
+      </ol></p>
+    <section><b>Deploy Helion Linux Shell VM Template</b><p>The first step in deploying the ESX
+        compute proxy and OVSvAPPs is to create a VM template that will make it easier to deploy the
+        ESX compute proxy for each Cluster and OVSvAPPs on each ESX server. </p><p>Perform the
+        following steps to deploy a template:<ol id="ol_qdt_ljs_ft">
+          <li>Import the <codeph>hlm-shell-vm.ova</codeph> in the vCenter using the vSphere client. </li>
+          <li>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF
+            Template</b></li>
+          <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
+            install. Refer to the VMWare vSphere documentation as needed.</li>
+        </ol></p></section>
+    <section id="prepare-esx-cloud-deployment"><b>Preparation for ESX Cloud Deployment</b><p>This section describes the procedures to
+        prepare and deploy the ESX computes and OVSvAPPs for deployment. <ol id="ol_xpc_zqs_ft">
+          <li>Login to the deployer node.</li>
+          <li>Source <codeph>service.osrc</codeph>.</li>
+          <li><xref href="#topic_flx_j2b_ws/register-vcenter" format="dita">Register a vCenter
+              Server</xref></li>
+          <li><xref href="#topic_flx_j2b_ws/register-network" format="dita">Register ESX Cloud
+              Network Configuration</xref></li>
+          <li><xref href="#topic_flx_j2b_ws/import-cluster" format="dita">Import
+            Clusters</xref></li>
+          <li><xref href="#topic_flx_j2b_ws/activate-cluster" format="dita">Activate
+            Clusters</xref></li>
+          <li><xref href="#topic_flx_j2b_ws/modify-volume-config" format="dita">Modify the Volume
+              Configuration File</xref></li>
+          <li><xref href="#topic_flx_j2b_ws/commit-your-cloud" format="dita">Commit your Cloud
+              Definition</xref></li>
+          <li><xref href="#topic_flx_j2b_ws/deploy-compute-proxy-ovsvapps" format="dita">Deploy ESX
+              Compute Proxy and OVSvApps</xref></li>
+        </ol></p></section>
+    <p><b>Manage vCenters and Clusters</b></p>
+    <p>The following section describes the detailed procedure on managing the vCenters and
+      clusters.</p>
+    <p id="register-vcenter"><b>Register a vCenter Server</b></p>
+    <p>vCenter provides centralized management of virtual host and virtual machines from a single
+        console.<ol id="ol_xdj_5js_ft">
+        <li>Add a vCenter using EON python
+            client.<codeblock><codeph># eon vcenter-add --name &lt;vCenter Name> --ip-address &lt;vCenter IP address> --username &lt;vCenter Username> --password &lt;vCenter Password> --port &lt;vCenter Port></codeph></codeblock><p>where:
+              <ul id="ul_bp3_yjs_ft">
+              <li>vCenter Name - the identical name of the vCenter server.</li>
+              <li>vCenter IP address - the IP address of the vCenter server.</li>
+              <li>vCenter Username - the admin privilege username for the vCenter.</li>
+              <li>vCenter Password - the password for the above username.</li>
+              <li>vCenter Port - the vCenter server port. By default it is 443. <note
+                  type="important">Please do not change the port unless you are sure about the
+                  vCenter Port.</note></li>
+            </ul></p><p><b>Sample
+            Output:</b><codeblock><codeph># eon vcenter-add --name vc01 --ip-address 10.1.200.41 --username administrator@vsphere.local --password password --port 443</codeph>
++------------+--------------------------------------+
 | Property   | Value                                |
 +------------+--------------------------------------+
 | created_at | 2015-08-20T12:08:09.000000           |
@@ -242,22 +164,23 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
 | id         | BC9DED4E-1639-481D-B190-2B54A2BF5674 |
 | ip_address | 10.1.200.41                          |
 | name       | vc01                                 |
-| password   | &lt;SANITIZED>                          |
+| password   | &lt;password>                          |
 | port       | 443                                  |
 | type       | vcenter                              |
 | updated_at | 2015-08-20T12:08:09.000000           |
 | username   | administrator@vsphere.local          |
-+------------+--------------------------------------+</codeblock></li>
-        </ul>
-      </p><p><b>Register ESX Cloud Network Configuration</b></p><p>This involve getting a sample
-        network infomation template. Fill the details of the template and use that template to
-        register cloud network configuration for the vCenter.</p><p>
-        <ol id="ol_esl_ncc_2t">
-          <li>Execute the following command to get the network information
-              template:<codeblock><codeph>eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
-              example:<codeblock>eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
-              file of <codeph>net_conf.json</codeph> is shown
-              below:<codeblock>{
++------------+--------------------------------------+</codeblock></p></li>
+      </ol></p>
+    <p  id="register-network"><b>Register ESX Cloud Network Configuration</b></p>
+    <p>This involve getting a sample network information template. Fill the details of the template
+      and use that template to register cloud network configuration for the vCenter.</p>
+    <p>
+      <ol>
+        <li>Execute the following command to get the network information
+            template:<codeblock><codeph># eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+            example:<codeblock># eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
+            file of <codeph>net_conf.json</codeph> is shown
+            below:<codeblock>{
     "network": {
         # Deployer Network details
         "deployer_network": {
@@ -363,38 +286,42 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
     "new_host_mo_ids": ""
 }
 </codeblock></p></li>
-          <li>Modify the template (json file) as per your
-              environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
-              example:<codeblock>vi net_conf.json</codeblock></p></li>
-          <li>Use the template to register Cloud Network Configuration. This sets the network
-            information for a vCenter which is used to deploy and configure compute proxy and
-            OVSvAPP VMs during the cluster activation.
-              <codeblock><codeph>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
-              example:
-              <codeblock>eon set-network-info --vcenter-id &lt;vCenter ID> --config-json net_conf.json</codeblock></p><p>
-              <note>The vcenter ID is generated when you execute the above (<b>step 2</b>)
-                command.</note>
-            </p></li>
-          <li>Execute the following command to view the list of clusters for the given
-              vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
-              Output</b><codeblock>+------------+----------+------------+---------------+
+        <li>Modify the template (json file) as per your
+            environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
+            example:<codeblock>vi net_conf.json</codeblock></p></li>
+        <li>Use the template to register Cloud Network Configuration. This sets the network
+          information for a vCenter which is used to deploy and configure compute proxy and OVSvAPP
+          VMs during the cluster activation.
+            <codeblock><codeph># eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For example:
+            <codeblock># eon set-network-info --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --config-json net_conf.json</codeblock></p><p>
+            <note>The vcenter ID is generated when you execute the above (<b>step 2</b>)
+              command.</note>
+          </p></li>
+        <li>Execute the following command to view the list of clusters for the given
+            vCenter.<codeblock><codeph># eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
+            Output</b><codeblock># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
++------------+----------+------------+---------------+
 | MOID       | Name     | Datacenter | Import Status |
 +------------+----------+------------+---------------+
 | domain-c21 | Cluster1 | DC1        | not_imported  |
 +------------+----------+------------+---------------+</codeblock></li>
-        </ol>
-      </p><p><b>Import Cluster</b>
-      </p><p>You can use one or more ESX clusters for ESX Cloud Deployment. When a Import Cluster is
-        invoked, required ESX Compute Proxy and OVSvApp nodes are deployed.</p><p>
-        <ol id="ol_lyt_cfc_2t">
-          <li> Import the cluster for the EON database under the given vCenter. <codeblock><codeph>eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock>where:<p>
-              <ul id="ul_ttl_ncc_2t">
-                <li>vCenter ID - ID of the vcenter containing the cluster.</li>
-                <li>Cluster Name - the name of the cluster that needs to be imported.</li>
-                <li>cluster Moid - Moid of the cluster that needs to be imported.</li>
-              </ul>
-            </p><p><b>Sample
-              Output</b><codeblock>+--------------+-----------+
+      </ol>
+    </p>
+    <p id="import-cluster"><b>Import Cluster</b>
+    </p>
+    <p>You can use one or more ESX clusters for ESX Cloud Deployment. When a Import Cluster is
+      invoked, required ESX Compute Proxy and OVSvApp nodes are deployed.</p>
+    <p>
+      <ol>
+        <li> Import the cluster for the EON database under the given vCenter. <codeblock><codeph># eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock>where:<p>
+            <ul id="ul_r4g_rjs_ft">
+              <li>vCenter ID - ID of the vcenter containing the cluster.</li>
+              <li>Cluster Name - the name of the cluster that needs to be imported.</li>
+              <li>cluster Moid - Moid of the cluster that needs to be imported.</li>
+            </ul>
+          </p><p><b>Sample
+            Output</b><codeblock># eon cluster-import --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-name Cluster1 --cluster-moid domain-c21
++--------------+-----------+
 | Property     | Value     |
 +--------------+-----------+
 | cpu_free     | 83071.73  |
@@ -411,21 +338,31 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
 | state        | importing |
 | switches     | []        |
 +--------------+-----------+</codeblock></p><p>One
-              vCenter can have multiple clusters. But it allows you to import only one cluster at a
-              time.</p></li>
-        </ol>
-      </p></section>
-    <section><b>Activate Clusters</b><p>When you execute the active cluster command, the
-          <codeph>server.yml</codeph> of the input model is updated with IP Addresses of compute
-        proxy and OVSvApp.
-      <!--VMs correspesponding to the clusters are being activated.--></p></section>
-    <section>
+            vCenter can have multiple clusters. But it allows you to import only one cluster at a
+            time.</p></li>
+        <li> Execute the following command to view the list of clusters for the given
+            vCenter.<codeblock><codeph># eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
+            Output</b><codeblock># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
++------------+----------+------------+---------------+
+| MOID       | Name     | Datacenter | Import Status |
++------------+----------+------------+---------------+
+| domain-c22 | Cluster2 | DC1        | imported      |
++------------+----------+------------+---------------+</codeblock></li>
+      </ol>
+    </p>
+    <p id="activate-cluster"><b>Activate Clusters</b><note>You can activate the cluster only after
+        the import status of the cluster is changed to <b>imported</b>.<p>When you execute the
+          active cluster command, the <codeph>server.yml</codeph> of the input model is updated with
+          IP Addresses of compute proxy and OVSvApp.
+          <!--VMs correspesponding to the clusters are being activated.--></p></note></p>
+   
       <p>
-        <ol id="ol_nsc_tb3_2t">
+        <ol>
           <li>Activate the cluster for the selected
-                vCenter.<codeblock><codeph>eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock><p><b>Sample
-                Output</b></p><p>
-              <codeblock>+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+              vCenter.<codeblock><codeph># eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock><p><b>Sample
+              Output</b></p><p>
+            <codeblock># eon cluster-activate --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c22 
++---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Property      | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | node_info     | {u'computeproxy': {u'pxe-mac-addr': u'00:50:56:b6:ce:1b', u'pxe-ip-addr': u'172.170.2.4', u'name': u'COMPUTEPROXY_Cluster1', u'cluster-moid': u'domain-c21'}, u'network_driver': {u'cluster_dvs_mapping': u'DC1/host/Cluster1:hlm-Trunk', u'Cluster1': [{u'host-moid': u'host-29', u'pxe-ip-addr': u'172.170.2.3', u'esx_hostname': u'10.1.200.33', u'ovsvapp_node': u'ovsvapp-10-1-200-33', u'pxe-mac-addr': u'00:50:56:b6:5e:9a'}, {u'host-moid': u'host-25', u'pxe-ip-addr': u'172.170.2.2', u'esx_hostname': u'10.1.200.66', u'ovsvapp_node': u'ovsvapp-10-1-200-66', u'pxe-mac-addr': u'00:50:56:b6:56:e6'}]}} |
@@ -433,27 +370,18 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
 | resource_name | Cluster1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | state         | activated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock>
-            </p></li>
-          <li>Execute the following command to view the list of clusters for the given
-              vCenter.<codeblock><codeph>eon cluster-list --vcenter-id &lt;vCenter ID></codeph></codeblock><b>Sample
-              Output</b><codeblock>+------------+----------+------------+---------------+
-| MOID       | Name     | Datacenter | Import Status |
-+------------+----------+------------+---------------+
-| domain-c22 | Cluster2 | DC1        | imported  |
-+------------+----------+------------+---------------+</codeblock></li>
+          </p></li>
         </ol>
       </p>
-    </section>
-    <section id="modify-volume-config"><b>Modify the Volume Configuration File</b></section>
+    <p id="modify-volume-config"><b>Modify  the Volume Configuration File</b></p>
     <p>Once the cluster is activated you must configure the volume.</p>
     <p>Perform the following steps to modify the volume configuration files:</p>
     <p>
       <ol>
         <li>Execute the following
           command:<codeblock>cd /home/stack/helion/hos/ansible/roles/_CND-CMN/templates</codeblock></li>
-        <li>Modify the <codeph>cinder.conf.j2</codeph>  as follows:</li>
-      </ol>
-      <codeblock> # Start of section for VMDK block storage
+        <li>Modify the <codeph>cinder.conf.j2</codeph> as
+          follows:<codeblock># Start of section for VMDK block storage
 #
 # If you have configured VMDK Block storage for cinder you must
 # uncomment this section, and replace all strings in angle brackets
@@ -469,49 +397,38 @@ ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
 #vmware_task_poll_interval = 0.5
 #vmware_max_objects_retrieval = 100
 #vmware_volume_folder = cinder-volumes
-#volume_driver = cinder.volume.drivers.vmware.vmdk.V
-MwareVcVmdkDriver
+#volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
 #vmware_host_ip = &lt;ip_address_of_vcenter>
 #vmware_host_username = &lt;vcenter_username>
 #vmware_host_password = &lt;password>
 #
-#volume_backend_name: &lt;vmdk-backend-name>
+#volume_backend_name = &lt;vmdk-backend-name>
 #
-# End of section for VMDK block storage</codeblock>
+# End of section for VMDK block storage</codeblock></li>
+      </ol>
     </p>
-    <section id="neutron-file"><b>Modify the Neutron Service Configuration File</b><p>Perfrom the
-        following steps to modify the neutron service configuration files:<ol id="ol_ajx_c1c_2t">
-          <li>Execute the following
-            command:<codeblock>cd /home/stack/helion/hos/ansible/roles/neutron-common/templates</codeblock></li>
-          <li>Modify the <codeph>neutron.conf.j2</codeph> with the following values:</li>
-        </ol></p><codeblock>router_distributed = False
-modify ml2_conf.ini.j2
-with the below values
-[ml2]
-mechanism_drivers = ovsvapp, openvswitch, l2population
-[agent]
-enable_distributed_routing = False</codeblock></section>
-    <section id="commit-change"><b>Commit the Changes and Prepare your Environment for Deployment</b><p>
-        <ol id="ol_vk2_f1c_2t">
+    <p id="commit-your-cloud"><b>Commit your Cloud Definition</b></p>
+   
+      <p>
+        <ol>
           <li> Add the cloud deployment definition to the git
-            :<codeblock>cd /home/stack/helion/hos/ansible;
+          :<codeblock>cd /home/stack/helion/hos/ansible;
 git add -A;
-git commit -m 'My config';</codeblock></li>
+git commit -m 'Adding ESX Configurations';</codeblock></li>
           <li>Prepare your environment for deployment:
             <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml;
 ansible-playbook -i hosts/localhost ready-deployment.yml;
-cd /home/stack/scratch/ansible/next/hos/ansible;
-ansible-playbook -i hosts/verb_hosts site.yml;</codeblock></li>
+cd /home/stack/scratch/ansible/next/hos/ansible;</codeblock></li>
         </ol>
-      </p></section>
-    <section><b>Run the Config Processor</b></section>
-    <p>Execute the following commands:</p>
-    <p>
-      <codeblock><codeph>cd ~/helion/hos/ansible</codeph>
-<codeph>ansible-playbook -i hosts/localhost config-processor-run.yml</codeph></codeblock>
-    </p>
-    <section id="deploy-cloud"><b>Initiate Deploy ESX Compute Proxy and OVSvApps</b></section>
-    <p>Execute the following command to deploy a
-      cloud:<codeblock><codeph>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeph></codeblock></p>
+      </p>
+    <p id="deploy-compute-proxy-ovsvapps"><b>Deploy ESX Compute Proxy and OVSvApps</b></p>
+    <p>Execute the following command to deploy a esx compute and
+      OVSvApps:<codeblock>ansible-playbook -i hosts/verb_hosts guard-deployment.yml
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit '*<b>esx-ovsvapp:*esx-compute</b>' 
+ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit NOV-ESX:NEU-OVSVAPP</codeblock></p>
+    <note>The variable <b>esx-ovsvapp</b> and <b>esx-compute</b> must be taken from the <b>name</b>
+      key in the <codeph>resource-nodes</codeph> section in the
+        <codeph>/data/control_plane.yml</codeph> file
+        (<codeph>/home/stack/helion/my_cloud/definition/data/control_plane.yml</codeph>). </note>
   </body>
 </topic>

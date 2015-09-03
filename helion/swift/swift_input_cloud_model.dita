@@ -53,12 +53,6 @@
               href="ring_specifications.dita#ring-specification">ring
             specification</xref>.</stentry>
         </strow>
-        <strow>
-          <stentry><codeph>data/network_groups.yml</codeph></stentry>
-          <stentry>This <codeph>yml</codeph> file specifies the MGMT and Swift networks. The
-            Swift-proxy service uses the Swift network to communicate with the other Swift services
-            and among themselves.</stentry>
-        </strow>
       </simpletable>
     </section>
     <!--<section id="mid-size"><title>Mid Size Cloud Model</title><p>This section describes configuration of Swift services in the mid size cloud model.</p><p>This example model describes a system using multiple servers and networks. It is representative of how a mid sized cloud is configured. You are expected to use the example model as the basis for building a cloud model for your actual cloud – using the servers and networks you plan to deploy. This document describes the Swift-specific changes you need to make to the provided example. </p><p>Before starting the deployment, you must validate, and possibly update the data in the cloud model files as follows:</p><p><ul id="ul_i1s_rbj_2t"><li>You need to assign servers for use by Swift. See <xref href="allocating_server.dita#topic_tq1_xt5_dt"> Allocating Servers for use by Swift</xref></li><li>These servers have disk drives. See <xref href="allocate_disk_drives.dita#topic_twv_b55_dt">Allocating disk drives for use by Swift</xref></li><li>You need to specify the rings for your system. See <xref href="ring_parameters.dita#topic_efw_k55_dt">Specifying the rings (ring specifications)</xref></li></ul></p></section>
