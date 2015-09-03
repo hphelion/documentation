@@ -36,13 +36,15 @@
       </ul><p>These are required accounts and are used by the underlying OpenStack services. These
         accounts should not be removed or reassigned to a different domain. The "default" domain
         should only be used for these service accounts.</p><p/><b>Post-Installation Verification and
-        Administration</b><p>Keystone query and administration tasks can be performed using the
-        OpenStack command line utility. The utility is installed by the installer onto the deployer
-        node. Also, the installer installs convenient *.osrc files which contain exports of
-        environment variables used by OpenStack CLI.</p><p>
+        Administration</b><p>Keystone query and administration tasks can be performed using
+        openstack command line utility. The utility is installed by the deployer onto deployer node.
+        Also, HLM installs convenient *.osrc files which contain exports of environment variables
+        used by openstack CLI.</p><p>
         <note/>Keystone administration tasks should be performed by an <i>admin</i> user with a
         token scoped to the <i>default</i> domain via the Keystone v3 identity API. These settings
-        are preconfigured in the <i>keystone.osrc</i> file. </p></section>
+        are preconfigured in the <i>keystone.osrc</i> file. By default, keystone.osrc is configured
+        with the admin endpoint of keystone. If  the admin endpoint is not accessible from your
+        network, please change OS_AUTH_URL to point to the public endpoint.</p></section>
 
     <section> Here are some examples:
       <codeblock>
