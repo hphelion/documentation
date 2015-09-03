@@ -254,8 +254,6 @@
           navtitle="Create a Cluster using the Horizon UI"/>
         <topicref href="1.3/helion/CLI/cf_mgmt_createcluster.dita"
           navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
-          <topicref href="1.3/helion/CLI/cfmgmt_createcluster_microcloud.dita"
-            navtitle="Example: Create a Micro Cloud" locktitle="yes"/>
           <topicref href="1.3/helion/CLI/cfmgmt_createcluster_starter.dita"
             navtitle="Example: Create a Starter Cluster" locktitle="yes"/>
           <topicref href="1.3/helion/CLI/cfmgmt_growcluster_addDEANode.dita"

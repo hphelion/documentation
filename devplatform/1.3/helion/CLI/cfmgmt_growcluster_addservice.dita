@@ -3,34 +3,66 @@
 <topic id="topic_mrh_h1b_dt">
   <title><i>cf-mgmt</i> Tool Example: Add a Service to an Existing Cluster</title>
   <body>
-    <p>This example demonstrates how to add a MySQL service to a cluster that already exists. </p>
-<section>    <ol id="ol_ccd_l1b_dt">
-      <li>The code block provided below is an example of the <i>bootstrap.yml</i> text file that the
-          <i>cf-mgmt </i>tool can use to import parameter values.
-          <!--You can download the latest from (need link) --><note>To add an existing Trove
-          database, include a value for the <codeph>--database-instance-id</codeph>
-          parameter.</note><!--Ensure the values for image names, image sizes and availability zones ("az") are valid for your current configuration.--><codeblock>file version: 1.2 
-constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
+    <p>This example demonstrates how to add a service to a cluster that already exists. </p>
+<section><title>Create a Bootstrap Configuration File</title><p>The code block provided below is an example of the <i>bootstrap.yml</i> text file that the
+          <i>cf-mgmt </i>tool can use to import parameter values. You can download a <xref
+          href="http://clients.als.hpcloud.com/1.3/config/bootstrap.yml" format="html"
+          scope="external">sample file</xref>. Edit the file to fit your needs and save it in the
+        same directory where the cf-mgmt tool is installed. </p><codeblock>constructor-image-name: HP Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
 constructor-flavor: standard.xsmall 
 seed-node-image-name: HP Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
 core-flavor: standard.medium 
 cluster-title: &lt;My Cluster Title&gt; 
 cluster-prefix: &lt;My Cluster Prefix&gt;
 services-on-core: false 
-flavor: standard.medium </codeblock></li>
-      <li>Run the following set of commands.
+flavor: standard.medium </codeblock>
+  <note>To add an existing Trove database, also include a value for the
+          <codeph>--database-instance-id</codeph> parameter.</note>
+</section>
+    
+    <section><title>Linux Cluster: Add a MySQL Service</title>Run the following set of commands.
+      <codeblock>cf-mgmt.exe \
+   --os-auth-url &lt;auth-url&gt; \
+   --os-username &lt;username&gt; \
+   --os-password &lt;password&gt; \ 
+   --os-tenant-id &lt;id&gt; \ 
+   --os-tenant-name "&lt;tenant-name&gt;" \
+   --os-region-name "&lt;region-name&gt;" \
+add-service mysql \
+   --keypair-name &lt;keypair name&gt; \
+   --load bootstrap_service.yml </codeblock></section>
+  <section><title>Windows Cluster: Add a SQL Server Service</title>
+    <ol>
+      <li>Add the Windows DEA Role
         <codeblock>cf-mgmt.exe ^
-   --os-auth-url &lt;auth-url&gt; ^
-   --os-username &lt;username&gt; ^
-   --os-password &lt;password&gt; ^ 
-   --os-tenant-id &lt;id&gt; ^ 
-   --os-tenant-name "&lt;tenant-name&gt;" ^
-   --os-region-name "&lt;region-name&gt;" ^
-add-service mysql ^
-   --keypair-name &lt;keypair name&gt; ^
-   --load bootstrap_service.yml ^</codeblock></li>
-    </ol> </section></body>  <related-links>
+ --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
+ --os-username &lt;OS_USERNAME from openstackrc&gt; ^
+ --os-password &lt;Openstack password&gt; ^
+ --os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
+ --os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
+ --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
+add-role dea ^
+ --keypair-name &lt;name of keypair created earlier&gt; ^
+ --load http://clients.als.hpcloud.com/config/trial-windea.yml </codeblock></li>
+      <li>Add the SQL Server 2014 Service
+        <codeblock>cf-mgmt.exe ^
+ --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
+ --os-username &lt;OS_USERNAME from openstackrc&gt; ^
+ --os-password &lt;Openstack password&gt; ^
+ --os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
+ --os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
+ --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
+add-service mssql2014 ^
+ --keypair-name &lt;name of keypair created earlier&gt; ^
+ --load http://clients.als.hpcloud.com/config/trial-mssql2014.yml</codeblock></li>
+    </ol>
+  
+  
+  </section>
+  
+  </body>  <related-links>
       <link href="cfmgmt_createcluster_starter.dita" />
       <link href="cfmgmt_growcluster_addDEANode.dita" />
+    <link href="ALS_Client_Reference.dita" />
     </related-links>
 </topic>

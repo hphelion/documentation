@@ -2,28 +2,27 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_txg_cnh_ts">
   <title>Install the Application Lifecycle Service (ALS)</title>
-  <body>  <ol id="ol_jkm_hbq_ft">
+  <body> <ol id="ol_jkm_hbq_ft">
       <li>Log in to the Horizon web console as an Admin or user with Admin privileges.</li>
       <li> Select the <i>Admin</i> project in the <b>Project</b> selector. <note type="important"
           >This installation will fail if a tenant/project other than "Admin" is selected.</note>
         <image href="../../../media/DevPlatInstallAdminCheck.png" id="image_syj_2bq_ft"/>
       </li>
-      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-      <li>Check HDN for a new Service Update for ALS. If there is a new Service Update for ALS,
-        retrieve it from HDN. This will retrieve the ALS package from HDN and push it to a container
-        in Swift within your local cloud. <?oxy_custom_end?></li>
-      <li>Click the <b>Admin</b> panel in Horizon, select <b>Development Platform</b>, and then
-        click <b>Configure Services</b>.<image href="../../../media/devplat_configure_services.png"
-          id="image_klm_hbq_ft" placement="break"/></li>
+      <li>Click on the Admin panel in Horizon, select the <b>Development Platform</b> panel, and
+        then click <b>Configure Services</b>.<image
+          href="../../../media/devplat_configure_services.png" id="image_klm_hbq_ft"
+          placement="break"/></li>
+      <li>If you are not already connected to the HP Download Network (HDN), click <b>Connect</b> in
+        the Configure Services panel and enter your username and password. If you don't have a
+        username and pasword yet, click <b>Sign-up</b> and follow the prompts.</li>
       <li>In the <b>Configure Services</b> table, locate the <b>Application Lifecycle Service</b>
-        item.  </li>
-      <li>Select <b>Download Service</b> and wait for the download to complete. <note type="caution"
-          >Do not download multiple services at the same time. This is unsupported and will cause
-          errors.</note></li>
+        item. </li>
+      <li>Select <b>Download Service</b> and wait for the download to complete. <note
+          type="important">Do not download multiple services at the same time. This is unsupported
+          and will cause errors.</note></li>
       <li>When the download is complete, click <b>Project</b> > <b>Compute</b> > <b>Images</b> and
         verify that two images with the prefix "HP Helion Development Platform - Application
         Lifecycle Service" are now available for use.</li>
-    </ol>
-
+      </ol>
   </body>
 </topic>
