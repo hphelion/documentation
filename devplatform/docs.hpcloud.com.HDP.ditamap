@@ -81,16 +81,17 @@
       </topichead>
     </topichead>
     <!--uninstallation -->
-    <topichead navtitle="Uninstallation">
-      <topicref href="1.3/uninstallation/devplatform_uninstall.dita"
-        navtitle="Full Uninstallation - All Services" locktitle="yes" chunk="to-content">
+    <topichead navtitle="Uninstallation">  <topicref href="1.3/uninstallation/devplatform_uninstall.dita"
+        navtitle="Full Uninstallation - All Services" locktitle="yes" ></topicref>
+      <!--removing chunking testing conrefs do not delete
+        chunk="to-content">
         <topicref href="1.3/uninstallation/devplatform_uninstall_platform.dita" toc="no"/>
         <topicref href="1.3/uninstallation/devplatform_uninstall_ALS.dita" toc="no"/>
         <topicref href="1.3/uninstallation/devplatform_uninstall_database.dita" toc="no"/>
         <topicref href="1.3/uninstallation/devplatform_uninstall_messaging.dita" toc="no"/>
         <topicref href="1.3/uninstallation/devplatform_uninstall_marketplace.dita" toc="no"/>
         <topicref href="1.3/uninstallation/devplatform_uninstall_vertica.dita" toc="no"/>
-      </topicref>
+      </topicref> -->
       <topicref href="1.3/uninstallation/devplatform_uninstall_ALS.dita"
         navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>
       <topicref href="1.3/uninstallation/devplatform_uninstall_database.dita"
