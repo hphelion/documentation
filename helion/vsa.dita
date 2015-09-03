@@ -33,11 +33,11 @@ Cannot open: No such file or directory</codeblock>
         </li>
         <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
           <codeblock>
-            NIC 1: 
-            Virtual Network: vsa-network 
-            IP Address: 10.241.103.11
-            Subnet Mark: 255.255.255.0
-            Gateway: 10.241.103.1</codeblock></li>
+NIC 1: 
+Virtual Network: vsa-network 
+IP Address: 10.241.103.11
+Subnet Mark: 255.255.255.0
+Gateway: 10.241.103.1</codeblock></li>
         <!-- need to get an actual output for the above codeblock -->
         <!--<li>Configure Apt by adding the following line to the bottom of <b>/etc/apt/sources.list</b>
           on your CMC node (only). Use the correct numeric IP for your deployer.
