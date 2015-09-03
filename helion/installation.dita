@@ -15,8 +15,7 @@
           it includes both the OS and the Beta1 installer in one ISO.</li>
         <li>Three NICs are tested, one 1Gb used for PXE and two bonded 10Gb for everything else. All
           machines can net boot from PXE and use the deployer as a DHCP server.</li>
-        <li>All machines of a single type should be the same, that is, all compute nodes, all VSA
-          nodes, and so on.</li>
+        <li>All machines of a given role should be the same configuration.</li>
         <li>The deployer node must be a dedicated node in Beta1.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO
@@ -37,14 +36,16 @@
           admin privileges.</li>
         <li> HP Helion OpenStack 2.0 Beta 1 will detect and use the "BIOS" mode you have selected
           for each node; UEFI or legacy BIOS. UEFI support is new in Beta 1.</li>
-        <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
-        <li>Ensure that the other networks have PXE disabled.</li>
+        <li>Ensure that the network interface to be used for PXE installation has PXE enabled.</li>
+        <li>Ensure that the other network interfaces have PXE disabled.</li>
+        <li>Ensure that any logical drives (LUN) for the servers you will be using are created to
+          meet the disk requirements outlined in the <xref href="hardware.dita">Minimum Hardware
+            Requirements</xref>.</li>
       </ul>
     </section>
     <section id="DeployerInstall">
       <title>Set up the Deployer</title>
       <ol>
-        <li>Create LUN(s), if required.</li>
         <li>Download the HP Helion OpenStack Deployer ISO from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page after signing up and being
@@ -169,6 +170,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
             <li>staging-ansible</li>
             <li>staging-cp-persistent</li>
           </ul>
+          <note>See <xref href="using_git.dita">Using Git for Configuration Management</xref> for
+            more information.</note>
         </li>
         <li>Check your configuration: <ol>
             <li>You can review the ansible change by running the following command:
