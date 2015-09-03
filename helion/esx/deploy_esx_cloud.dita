@@ -5,16 +5,16 @@
   <body>
     <p>This page describes the procedure to deploy ESX cloud using input model.</p>
     <section>
-      <title>Important</title>
-      <p>Before you start your ESX cloud deployment ensure that you read the following instructions
-        carefully. </p>
-      <ul id="ul_x1p_ps2_ft">
-        <li>Refer to <b><xref href="../installation.dita#topic_flx_j2b_ws/important-notes">Important
-              Notes</xref></b> in the Installation Guide.</li>
-        <li>Prepare your baremetal hardware on all nodes. For instruction, please refer to  <xref
-            href="../installation.dita#topic_flx_j2b_ws/Prereqs"><b>Before You
-          Start</b></xref>.</li>
-      </ul>
+      <note type="important">
+        <p>Before you start your ESX cloud deployment ensure that you read the following
+          instructions carefully. <ul id="ul_h4l_m5s_ft">
+            <li>Refer to <b><xref href="../installation.dita#topic_flx_j2b_ws/important-notes"
+                  >Important Notes</xref></b> in the Installation Guide.</li>
+            <li>Prepare your baremetal hardware on all nodes. For instruction, please refer to <xref
+                href="../installation.dita#topic_flx_j2b_ws/Prereqs"><b>Before You
+              Start</b></xref>.</li>
+          </ul></p>
+      </note>
     </section>
     <section id="Prereqs">
       <title>Prerequisite</title>
@@ -72,7 +72,7 @@
               <li>The configuration files for editing are available at
                   <codeph>~/helion/my_cloud/definition/</codeph>. Refer to <b><xref
                     href="../installation.dita#topic_flx_j2b_ws/note">Note</xref></b> for the list
-                configuration files.</li>
+                of configuration files.</li>
               <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the
                 line containing <codeph>eon.yml</codeph>.</li>
               <li>Modify the <codeph>neutron.conf.j2</codeph> with the following
@@ -83,8 +83,8 @@ with the below values
 mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
 enable_distributed_routing = False</codeblock><note>
-                  You modify the mechanism_drvivers = ovsvapp in the
-                    <codeph>neutron.conf.j2</codeph>.</note></li>
+                  You modify the mechanism_drivers = ovsvapp in the
+                  <codeph>neutron.conf.j2</codeph>.</note></li>
               <li>Commit your configuration to the<xref href="../using_git.dita#topic_u3v_1yz_ct">
                   local git repo</xref>, as follows:
                 <codeblock>cd ~/helion/hos/ansible
@@ -136,7 +136,7 @@ git commit -m "My config or other commit message"</codeblock></li>
               Compute Proxy and OVSvApps</xref></li>
         </ol></p></section>
     <p><b>Manage vCenters and Clusters</b></p>
-    <p>The following section descibes the detailed procedure on managing the vCenters and
+    <p>The following section describes the detailed procedure on managing the vCenters and
       clusters.</p>
     <p id="register-vcenter"><b>Register a vCenter Server</b></p>
     <p>vCenter provides centralized management of virtual host and virtual machines from a single
@@ -146,7 +146,7 @@ git commit -m "My config or other commit message"</codeblock></li>
               <ul id="ul_bp3_yjs_ft">
               <li>vCenter Name - the identical name of the vCenter server.</li>
               <li>vCenter IP address - the IP address of the vCenter server.</li>
-              <li>vCenter Username - the admin priviledge username for the vCenter.</li>
+              <li>vCenter Username - the admin privilege username for the vCenter.</li>
               <li>vCenter Password - the password for the above username.</li>
               <li>vCenter Port - the vCenter server port. By default it is 443. <note
                   type="important">Please do not change the port unless you are sure about the
@@ -344,11 +344,11 @@ git commit -m "My config or other commit message"</codeblock></li>
 +------------+----------+------------+---------------+</codeblock></li>
       </ol>
     </p>
-    <p id="activate-cluster"><b>Activate Clusters</b><note>You can activate the cluster only afte the import status of the
-        cluster is changed to <b>imported</b>.<p>When you execute the active cluster command, the
-            <codeph>server.yml</codeph> of the input model is updated with IP Addresses of compute
-          proxy and OVSvApp.
-        <!--VMs correspesponding to the clusters are being activated.--></p></note></p>
+    <p id="activate-cluster"><b>Activate Clusters</b><note>You can activate the cluster only after
+        the import status of the cluster is changed to <b>imported</b>.<p>When you execute the
+          active cluster command, the <codeph>server.yml</codeph> of the input model is updated with
+          IP Addresses of compute proxy and OVSvApp.
+          <!--VMs correspesponding to the clusters are being activated.--></p></note></p>
    
       <p>
         <ol>
