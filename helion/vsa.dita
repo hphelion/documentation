@@ -19,7 +19,7 @@ Cannot open: No such file or directory</codeblock>
             <li>This is a temporary issue and should be fixed by the next release.</li>
           </ul>-->
           Before running the next step, Deploy CMC, do the following on the first control plane
-          node. <ul>
+          node. <ol>
             <li>Look in <b>/etc/apt/sources.list.d/</b> for a file called
                 <b>cmc_hlinux_32bit_lib</b> and verify that it contains the line below:
               <codeblock>deb [arch=i386] http://&lt;deployer ip>:79/hlm/cmc32.lists cattleprod main</codeblock>
@@ -29,7 +29,7 @@ Cannot open: No such file or directory</codeblock>
               in Beta-2.</li>
             <li>Next, to re-synchronize the package index files, run
               <codeblock>sudo apt-get update</codeblock></li>
-          </ul>
+          </ol>
         </li>
         <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
           <codeblock>
