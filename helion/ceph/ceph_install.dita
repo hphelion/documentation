@@ -3,7 +3,9 @@
 <topic id="topic_cw2_xcg_bt">
   <title>Configure and Install Ceph</title>
   <body>
-    <p>This section describes the procedure to configure and  install Ceph services.</p>
+    <p>This section describes the procedure to configure and install Ceph services. <note
+        type="important">You mush uncomment CEPH in <codeph>hlm-deploy.yml</codeph> file before
+        executing <codeph>site.yml</codeph> file.</note></p>
     <p><b>Limitation</b></p>
     <p>
       <ol id="ol_b4j_dng_bt">
