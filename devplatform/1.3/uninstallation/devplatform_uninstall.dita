@@ -22,31 +22,33 @@
 </prolog>
 <body>
 <!--DOCS1299 and HPES197-->
-<section><p>HP Helion Development Platform contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
+<p>HP Helion Development Platform contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
 <p>Each of these services can be uninstalled using the appropriate process.</p>
   <note type="restriction">These services cannot be uninstalled from the Horizon console.</note>
 <ul>
-<li>
-  <xref type="section" href="devplatform_uninstall.dita#topic_blf_xdh_ts/uninstall-devplatform">Uninstall the HP Helion Development Platform</xref>
-</li>
-<li>
-  <xref type="section" href="devplatform_uninstall.dita#topic_yx2_fkh_ts/uninstall-als">Uninstall the Application Lifecycle Service</xref>
-</li>
-<li>
-  <xref type="section" href="devplatform_uninstall.dita#concept_vrb_bgj_rs/uninstall-database">Uninstall the Database
-            Service</xref>
-        </li>
-  <li><xref type="section" href="devplatform_uninstall.dita#concept_iqy_2gj_rs/uninstall-messaging">Uninstall the Messaging
-            Service</xref></li>
-<li>
-  <xref type="section" href="devplatform_uninstall.dita#concept_yqc_xfj_rs/uninstall-marketplace">Uninstall the Marketplace
-            Service</xref>
-        </li>
-<li>
-  <xref type="section" href="devplatform_uninstall.dita#concept_bsx_rfj_rs/uninstall-vertica">Uninstall the Vertica
-            Application</xref>
-        </li>
+  <li> <xref href="#id_pjb_4zw_ft" format="dita">Uninstall the Application Lifecycle Service</xref></li>
+  <li> <xref href="#id_aqx_4zw_ft" format="dita">Uninstall the Database Service</xref></li>
+  <li> <xref href="#id_szv_vzw_ft" format="dita">Uninstall the Messaging Service</xref></li>
+  <li> <xref href="#id_vyh_wzw_ft" format="dita">Uninstall the Marketplace Service</xref></li>
+  <li> <xref href="#id_nkw_wzw_ft" format="dita">Uninstall the Vertica Application</xref></li>
 </ul>
-</section>
+
+
 </body>
-</topic>
+
+  <topic id="id_pjb_4zw_ft" conref="devplatform_uninstall_ALS.dita#topic_yx2_fkh_ts">
+    <title>Uninstall the Application Lifecycle Service</title>
+  </topic>
+  <topic id="id_aqx_4zw_ft" conref="devplatform_uninstall_database.dita#concept_vrb_bgj_rs">
+    <title>Uninstall the Database Service</title>
+  </topic>
+  <topic id="id_szv_vzw_ft" conref="devplatform_uninstall_messaging.dita#concept_iqy_2gj_rs">
+    <title>Uninstall the Messaging Service</title>
+  </topic>
+  <topic id="id_vyh_wzw_ft" conref="devplatform_uninstall_marketplace.dita#concept_yqc_xfj_rs">
+    <title>Uninstall the Marketplace Service</title>
+  </topic>
+  <topic id="id_nkw_wzw_ft" conref="devplatform_uninstall_vertica.dita#concept_bsx_rfj_rs">
+    <title>Uninstall the Vertica Application</title>
+  </topic>
+</topic>  

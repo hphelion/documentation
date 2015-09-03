@@ -32,29 +32,59 @@
         issues that may occur.</p>
 <ul>
 <li>
-  <xref type="section" href="devplatform_commercial_install.dita#topic_x54_njh_ts/prerequisites">Prerequisites</xref>
-</li>
-  <li> <xref type="section" href="devplatform_commercial_install.dita#topic4029">Install the Horizon UI Panels</xref></li>
-<li>
-  <xref type="section" href="devplatform_commercial_install.dita#topic_gly_xmh_ts/downloading-the-latest-version-of-hp-helion-development-platform">Install the HP Helion Development Platform</xref>
-</li>
-<li>
-  <xref type="section" href="devplatform_commercial_install.dita#topic_txg_cnh_ts/install-als">Install the Application Lifecycle Service</xref>
-</li>
+          <xref href="#id_tfs_4qv_ft" format="dita">Prerequisites </xref></li>
   <li>
-    <xref type="section" href="devplatform_commercial_install.dita#topic_vsf_hnh_ts/install-database">Install the Database Service</xref>
-  </li>
-  <li>
-    <xref type="section" href="devplatform_commercial_install.dita#topic_t3w_fnh_ts/install-messaging">Install the Messaging Service</xref>
+  <xref href="#id_l4p_cxw_ft" format="dita">Install the HP Helion Development Platform</xref>
 </li>
+  <li> <xref href="#id_jbr_5qv_ft" format="dita">Install the Horizon UI Panels</xref></li>
+<li>
+  <xref href="#id_o3f_zww_ft" format="dita">Install the Application Lifecycle Service</xref></li>
 
-<li>
-  <xref type="section" href="devplatform_commercial_install.dita#topic_z1r_3nh_ts/install-the-marketplace-service">Install the Marketplace Service</xref>
-</li>
   <li>
-    <xref type="section" href="devplatform_commercial_install.dita#topic6367">Install the Vertica Application for the Marketplace</xref>
+    <xref href="#id_xn3_1xw_ft" format="dita">Install the Database Service</xref> </li>
+  <li>
+    <xref href="#id_hm5_bxw_ft" format="dita">Install the Messaging Service</xref>
+</li>
+<li>
+  <xref href="#id_o5g_bxw_ft" format="dita">Install the Marketplace Service</xref>
+</li>
+  <li>  <xref href="#id_mwp_hxw_ft" format="dita">Install the Vertica Application for the Marketplace</xref>
   </li>
 </ul>
 </section>
+  
 </body>
+  <topic id="id_tfs_4qv_ft" conref="devplatform_install_prereq.dita#topic_x54_njh_ts">
+    <title>Prerequisites</title>
+  </topic>
+  <topic id="id_l4p_cxw_ft" conref="devplatform_install_platform.dita#topic_gly_xmh_ts">
+    <title/>
+  </topic>
+  <topic id="id_jbr_5qv_ft" conref="devplatform.horizonui.install.dita#topic4029">
+    <title>Install the Horizon UI Panels</title>
+  </topic>
+  <topic id="id_o3f_zww_ft" conref="devplatform_install_ALS.dita#topic_txg_cnh_ts">
+    <title>Install the Application Lifecycle Service</title>
+  </topic>
+  <topic id="id_xn3_1xw_ft" conref="devplatform_install_database.dita#topic_vsf_hnh_ts">
+    <title>Install the Database Service</title>
+  </topic>
+  <topic id="id_hm5_bxw_ft" conref="devplatform_install_messaging.dita#topic_t3w_fnh_ts">
+    <title>Install the Message Service</title>
+  </topic>
+  <topic id="id_o5g_bxw_ft" conref="devplatform_install_marketplace.dita#topic_z1r_3nh_ts">
+    <title>Install the Marketplace</title>
+  </topic>
+  <topic id="id_mwp_hxw_ft" conref="devplatform.vertica.install.dita#topic6367">
+    <title>Install the Vertica Application in the Marketplace</title>
+  </topic>
+ 
+ 
+ 
+  
+  
+  
+  
+  
+  
 </topic>

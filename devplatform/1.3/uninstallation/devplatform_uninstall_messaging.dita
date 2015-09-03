@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_iqy_2gj_rs">
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="concept_iqy_2gj_rs">
  <title>Uninstall the Messaging Service</title>
  <shortdesc>Process for uninstalling the Messaging Service from the HP Helion Development Platform.</shortdesc>
- <conbody>  <note type="restriction">These services cannot be uninstalled from the Horizon console.</note><note type="notice">The uninstall instructions listed here do not delete existing database
+ <body>  <note type="restriction">These services cannot be uninstalled from the Horizon console.</note><note type="notice">The uninstall instructions listed here do not delete existing database
   instances. Perform all backups as necessary and then delete your existing database instances
   as applicable. </note>
   <section id="uninstall-messaging"> 
@@ -30,5 +31,5 @@ glance image-list</codeblock></li>
      cache.<codeblock>swift delete sherpa-cache &lt;ITEM&gt;</codeblock></li>
    </ol>
   </section>
- </conbody>
-</concept>
+ </body>
+</topic>
