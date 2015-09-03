@@ -19,8 +19,7 @@
       <ol>
 
         <li>Ensure that the <b>domain_specific_drivers_enabled</b> option is set to <b>True</b> in
-          the main configuration file template (<b>/home/&lt;your user
-            name&gt;/helion/hlm/ansible/roles/KEY-API/templates/keystone.conf.j2</b>). You'll see a
+          the main configuration file template (<b>/home/stack/helion/hlm/ansible/roles/KEY-API/templates/keystone.conf.j2</b>). You'll see a
           sample file at the end of this topic.</li>
         <li>Create a YAML file that contains the definition of the LDAP server connection. Use
             <b>roles/KEY-API/files/samples/keystone_configure_ldap_sample.yml</b> as an example.
@@ -86,8 +85,7 @@ stack@hLinux:~$ openstack role assignment list --user 05f107e4b1645c52c24a529e3f
             record in it. </note>
         </li>
         <li>Once an LDAP user is granted the appropriate role, he or she can authenticate within the
-          specified domain by setting the appropriate OS_* environment variables for the OpenStack
-          CLI.</li>
+          specified domain.</li>
       </ol>
     </section>
 
