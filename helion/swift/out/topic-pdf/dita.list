@@ -1,9 +1,9 @@
-#Tue Sep 01 13:35:16 IST 2015
+#Thu Sep 03 17:52:54 IST 2015
 relflagimagelist=
-user.input.dir=C\:\\Users\\sharmabi\\git\\documentation
+user.input.dir=C\:\\Users\\sharmabi\\git\\documentation\\helion\\swift
 copytotarget2sourcemaplist=
-uplevels=..\\..\\
-user.input.file=helion\\swift\\troubleshooting_beta1.dita
+uplevels=
+user.input.file=swift_overview.dita
 user.input.file.listfile=usr.input.file.list
-tempdirToinputmapdir.relative.value=helion[\\\\|/]swift[\\\\|/]
+tempdirToinputmapdir.relative.value=
 relflagimagefile=relflagimage.list

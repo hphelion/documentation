@@ -3,26 +3,31 @@
 <topic id="object-storage">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Object Storage (Swift)</title>
   <body>
+    <section><b>What is the Object Storage (Swift)?</b><p>Object Storage (Swift) is Software Defined
+        Storage (SDS) architecture layered on top of industry-standard servers using native storage
+        devices. Swift presents an object paradigm using an underlying set of disk drives. The disk
+        drives are managed by a data structure called a "ring". Swift also enable you to store,
+        retrieve, and delete objects in a containers through RESTful API.</p></section>
+    <section><b>Object Storage (Swift) Services</b><p>A Swift system comprises a number of services:
+          <ul id="ul_sfz_gft_dt">
+          <li>Swift-Proxy provides the API for all requests to the Swift system.</li>
+          <li>Account and Container services provide storage management of the accounts and
+            containers.</li>
+          <li>Object services provide storage management for object storage.</li>
+        </ul></p></section>
+    <section><b> HP Helion <tm tmtype="reg">OpenStack</tm> Object
+      Storage</b>(<b>Swift</b>)</section>
     <p>Based on <tm tmtype="reg">OpenStack</tm> Object Storage, the HP Helion OpenStack Object
       Storage service provides a highly available, resilient, and scalable storage pool for
       unstructured data. It is highly durable architecture with no single point of failure.</p>
-    <p>In addition, HP Helion OpenStack introduces the concept of cloud input models. In this
-      release (<b>beta1</b>) we are supporting <b>entry-scale-with-vsa</b> of cloud model. To know
-      more about configuration of the <b>entry-scale-with-vsa</b> cloud model, refer to <xref
-        href="swift_input_cloud_model.dita#modify-input-model"/>.</p>
-    <p>Object Storage (Swift) is Software Defined Storage (SDS) architecture layered on top of
-      industry-standard servers using native storage devices. Swift presents an object paradigm
-      using an underlying set of disk drives. The disk drives are managed by a data structure called
-      a "ring". Swift also enable you to store, retrieve, and delete objects in a containers through
-      RESTful API.</p>
-    <p>A Swift system comprises a number of services: <ul id="ul_sfz_gft_dt">
-        <li>Swift-Proxy provides the API for all requests to the Swift system.</li>
-        <li>Account and Container services provide storage management of the accounts and
-          containers.</li>
-        <li>Object services provide storage management for object storage.</li>
+    <p>In addition, HP Helion OpenStack introduces the concept of example cloud  models. This model
+      allows the user to install swift as per your requirement. </p>
+    <p>In this release we are supporting the following cloud input models:<ul id="ul_u4k_4h5_ft">
+        <li>entry-scale-with-vsa of cloud model</li>
+        <li>mid-size cloud model</li>
       </ul></p>
-    <p>These services can be co-located in a number of ways. In the example cloud models distributed
-      in HP Helion OpenStack®, the following two general patterns exist:<ul id="ul_myw_kft_dt">
+    <p>The Swift system services can be co-located in a number of ways. In the example cloud models
+      the following two general patterns exist:<ul id="ul_myw_kft_dt">
         <li>The Swift-proxy, Account, Container, and Object services run on the same (PACO) node
           type in the control plane. This is used for smaller clouds or where Swift is a minor
           element in a larger cloud.</li>
@@ -34,7 +39,5 @@
       requirements. The storage service can be scaled up as necessary. It can also scaled
       horizontally to handle an increased number of simultaneous connections and a larger number of
       objects.</p>
-    <p><!--Based on OpenStack® Object Storage, the HP Helion OpenStack® Object Storage service provides a highly available, resilient, and scalable storage pool for unstructured data. It is highly durable architecture with no single point of failure.--></p>
-    <p><!--HP Helion OpenStack® Object Storage introduces a concept of cloud input models. In this release (beta1) we are supporting entry-scale-with-vsa of cloud model. --></p>
   </body>
 </topic>
