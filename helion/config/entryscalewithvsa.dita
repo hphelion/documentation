@@ -90,7 +90,9 @@
     <section id="baremetalConfig.yml"><title>baremetalConfig.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/baremetalConfig.yml</codeblock></p>
-      <p>The key values to enter into this document are the details about each of the servers in your environment. Most of these values will be gathered from the iLO console or from your vlan setup information.</p>
+      <p>The key values to enter into this document are the details about each of the servers in
+        your environment. Most of these values will be gathered from the iLO console or from your
+        vlan setup information.</p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -766,6 +768,9 @@
       <p>The key values to enter into this document are the IP addresses for each of the servers for
         your environment. They should also be in the <codeph>baremetalConfig.yml</codeph> file as
         the <codeph>pxe_ip_addr</codeph> value so you can copy them from there.</p>
+      <p>If you are going to be using network interface (nic) mapping then the definitions will
+        exist in the <codeph>nic_mappings.yml</codeph> file but you will specify which value to use
+        for each of your servers in this file.</p>
       <note>The entries in this file are examples, if you have more or less nodes you can copy and
         paste to include your entire environment.</note>
       <p>Here is the sample file included with the install:</p>
