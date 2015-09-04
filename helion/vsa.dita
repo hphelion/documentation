@@ -90,9 +90,27 @@ hplefthand_debug: false</codeblock></li>
         <li>Create a test volume from a user account and verify that the volume is successfully
           created in the "available" state:
           <codeblock>cinder create --display-name &lt;name> &lt;size></codeblock>
-        <p>Example: <codeph>cinder create --display-name test_volume 2</codeph></p></li>
-        <li>Retrieve your Volume ID with this command:
-        <codeblock>cinder list</codeblock></li>
+        <p>Example: 
+          <codeblock>
+$ cinder create --display-name test_volume 2
++---------------------+--------------------------------------+
+|       Property      |                Value                 |
++---------------------+--------------------------------------+
+|     attachments     |                  []                  |
+|  availability_zone  |                 nova                 |
+|       bootable      |                false                 |
+|      created_at     |      2015-02-15T23:53:51.409872      |
+| display_description |                 None                 |
+|     display_name    |             test_volume              |
+|      encrypted      |                False                 |
+|          id         | d3df3fce-929d-4e64-bf24-bbe9ed867d46 |
+|       metadata      |                  {}                  |
+|         size        |                  1                   |
+|     snapshot_id     |                 None                 |
+|     source_volid    |                 None                 |
+|        status       |               creating               |
+|     volume_type     |                 None                 |
++---------------------+--------------------------------------+</codeblock></p></li>
         <li>Using a session with the admin creds, show the details for the test volume created
           using: <codeblock>cinder show &lt;volumeId></codeblock> and verify that the volume was
           created on the correct backend, e.g.
