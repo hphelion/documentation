@@ -52,7 +52,7 @@ Cannot open: No such file or directory</codeblock>
         <li>Skip the DNS and SMTP sections.</li>
         <li>Add the following cluster name: hlm003-vsa-cluster</li>
         <li>Enter the VIP IP which can be found as the cluster IP value in the
-            <codeph>~/helion/my_cloud/stage/info/net_info.yml</codeph> file</li>
+            <codeph>~/scratch/cp/my_cloud/stage/info/net_info.yml</codeph> file</li>
         <!-- ./scratch/cp/my_cloud/stage/info/net_info.yml and this step may need to go up -->
         <li>Select the checkbox to skip volume creation.</li>
         <li>Wait for completion.</li>
