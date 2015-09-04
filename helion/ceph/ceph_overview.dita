@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jrc_5lz_ft">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph</title>
+  <body>
+    <section>
+      <title>What is Ceph?</title>
+      <p>Ceph is a Software Defined Storage (SDS) system which comprised of a block storage, object
+        storage, and file system. It is is designed to deliver different types of storage interfaces
+        to the end user in the same storage platform. Therefore ceph is termed as unified storage
+        platform.</p>
+    </section>
+    <section><title>HP Helion <tm tmtype="reg">OpenStack</tm> Ceph Overview</title><p>Based on <tm
+          tmtype="reg">OpenStack</tm> Ceph, HP Helion <tm tmtype="reg">OpenStack</tm>2.0 Ceph
+        Storage Solution provides an unified scaleable and stable storage solution for the
+        management of Helion OpenStack Volume Storage (Cinder persistent Volumes) service.
+        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>The solution also
+        supports user backup to the Object Storage (Swift) API service writing to the same unified
+        Ceph storage platform.<?oxy_custom_end?></p>This release supports Ceph Firefly 0.80.7
+      version, which runs on the hlinux kernel 3.14.44-1. <p>In addition, HP Helion <tm tmtype="reg"
+          >OpenStack</tm>2.0 introduces the concept of  example cloud  models. This model allows the
+        user to  provide the configuration details, based on hardware requirment, to build a ceph
+        storage system. </p><p>This page describes the integration of Ceph Block with HP Helion
+        OpenStack 2.0 (cloud input model).</p></section>
+    <section>
+      <p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>This guide focuses on
+        installation, configuration and integration between HP Helion OpenStack: 2.0 and Ceph
+        Firefly 0.80.7 running on the hlinux kernel 3.14.44-1.<?oxy_custom_end?></p>
+      <p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>This guide assumes that
+        you are familiar with the concepts of OpenStack and Ceph. The main purpose of this guide is
+        describe the integration of Ceph Block Storage with HP Helion OpenStack 2.0, detail steps to
+        install dependencies, configure HP Helion OpenStack and Ceph Firefly, and provide
+        troubleshooting guidance.<?oxy_custom_end?></p>
+    </section>
+    <section>
+      <title>Installation</title>
+      <p>This section describes the integration of Ceph Block Storage with HP Helion OpenStack 2.0,
+        detailed procedure to install dependencies, and configure HP Helion OpenStack and Ceph
+        Firefly.</p>
+    </section>
+    <section>Prerequisites<p>
+        <ol id="ol_evc_k11_gt">
+          <li>Copy  <codeph>HP-CI</codeph> in the Deployed node. (<b>where is the HP-CI present? is
+              it in the same tar file of entry scale
+            vsa?</b><codeblock>cp HP-CI ~/helion-input/my_cloud/definition</codeblock></li>
+          <li>Input model for Ceph has to be copied onto the Deployer node at the following
+            location:~/helion-input/my_cloud/definition</li>
+        </ol>
+      </p></section>
+  </body>
+</topic>

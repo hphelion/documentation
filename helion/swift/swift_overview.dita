@@ -15,8 +15,8 @@
             containers.</li>
           <li>Object services provide storage management for object storage.</li>
         </ul></p></section>
-    <section><b> HP Helion <tm tmtype="reg">OpenStack</tm> Object
-      Storage</b>(<b>Swift</b>)</section>
+    <section><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?><b> HP Helion <tm
+          tmtype="reg">OpenStack</tm> Object Storage</b>(<b>Swift</b>)<?oxy_custom_end?></section>
     <p>Based on <tm tmtype="reg">OpenStack</tm> Object Storage, the HP Helion OpenStack Object
       Storage service provides a highly available, resilient, and scalable storage pool for
       unstructured data. It is highly durable architecture with no single point of failure.</p>
@@ -39,5 +39,12 @@
       requirements. The storage service can be scaled up as necessary. It can also scaled
       horizontally to handle an increased number of simultaneous connections and a larger number of
       objects.</p>
+    <section>
+      <title>Installation</title>
+      <p>The swift service is automatically installed as part of the HP Helion OpenStack
+        installation. However, you can modify the configuration of yml files as per your environment
+        as detailed in the <xref href="swift_input_cloud_model.dita#modify-input-model">how to
+          modify example cloud input model</xref> page.</p>
+    </section>
   </body>
 </topic>
