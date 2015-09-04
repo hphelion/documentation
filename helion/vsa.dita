@@ -89,13 +89,17 @@ hplefthand_debug: false</codeblock></li>
       <ol>
         <li>Create a test volume from a user account and verify that the volume is successfully
           created in the "available" state:
-          <codeblock>cinder create --display-name &lt;name> &lt;size></codeblock></li>
+          <codeblock>cinder create --display-name &lt;name> &lt;size></codeblock>
+        <p>Example: <codeph>cinder create --display-name test_volume 2</codeph></p></li>
+        <li>Retrieve your Volume ID with this command:
+        <codeblock>cinder list</codeblock></li>
         <li>Using a session with the admin creds, show the details for the test volume created
           using: <codeblock>cinder show &lt;volumeId></codeblock> and verify that the volume was
           created on the correct backend, e.g.
           <codeblock>os-vol-host-attr:host ha-volume-manager@vsa-1#vsa-backend-hlm003</codeblock>
         </li>
-        <li>Delete the test volume</li>
+        <li>Delete the test volume with this command:
+          <codeblock>cinder delete &lt;volumeId></codeblock></li>
       </ol>
     </section>
   </body>
