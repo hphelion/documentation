@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic972">
+<title>HP Helion 1.0 Development Platform: Adding System Services</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.0"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/helion/admin/reference/1.0add-service.md-->
+ <!--permalink: /als/v1/admin/reference/add-service/--></p>
+<p>
+
+</p>
+<p>Application Lifecycle Service has two Service definitions:</p>
+<ul>
+<li>System Services: Service types (e.g. MySQL, RabbitMQ, Filesystem)
+available for use on the system</li>
+<li>Provisioned Services: Instances of the System Services created for
+end user applications</li>
+</ul>
+<p>The <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-services" type="section"  >
+<i>helion
+services</i>
+</xref>
+command will show a list of all System Services available on the current
+target, as well as a list of Provisioned Services allocated to the
+authenticated user.</p>
+<p>Administrators can configure external data services to work in the same
+way as core Application Lifecycle Service System Services, exposing existing software and
+infrastructure for use by Application Lifecycle Service and its users.</p>
+</body>
+</topic>

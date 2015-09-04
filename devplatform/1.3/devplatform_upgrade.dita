@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3949">
+<title>HP Helion 1.3 Development Platform: Upgrading from HP Helion Development Platform 1.1</title>
+<titlealts>
+<searchtitle>How to Preserve the Helion Development Platform when Upgrading from Helion OpenStack 1.1 to 1.1.1</searchtitle>
+</titlealts><shortdesc>The process for upgrading Helion OpenStack without affecting the Helion Development Platform. You do not need to un/reinstall.</shortdesc>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P, Patrick F"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
+</metadata>
+</prolog>
+<body>
+        <ul id="ul_slg_chc_ft">
+            <li>
+                <p>If the Helion Development Platform was <b>not</b> previously installed, simply
+                    upgrade Helion <tm tmtype="reg">OpenStack</tm> from version 1.1 to 1.1.1 and
+                    then <xref href="installation/devplatform_commercial_install.dita">install
+                        Helion Development Platform 1.3</xref>.</p>
+            </li>
+            <li>
+                <p>If the Helion Development Platform <b>was</b> previously installed:<ol
+                        id="ol_w3z_tgc_ft">
+                        <li><xref type="section" href="#topic3949/HDPstop">Stop the Helion
+                                Development Platform services</xref> and the control plane virtual
+                            machines.</li>
+                        <li>Perform the Helion OpenStack update. This will update the Marketplace,
+                            Messaging, and Database services.</li>
+                        <li>Install the new version of the Application Lifecycle Service.</li>
+                        <li><xref type="section" href="#topic3949/HDPstart">Restart the Helion
+                            Development Platform services</xref> and the control plane VMs.</li>
+                    </ol></p>
+            </li>
+        </ul>
+
+<section id="HDPstop"> <title>Stopping the Services and VMs</title>
+<p>Before stopping services, check that the service control plane is in healthy state (this is required for trove and marketplace).</p>
+<p>To run the Helion Development Platform scripts, perform the following steps:</p>
+<ol>
+<li>Set <codeph>dev_plat_service</codeph> to the name of the service (trove/marketplace).</li>
+<li>Set <codeph>skip_ha_checks</codeph> if the service control plane is not running in HA mode. </li>
+<li>Provide path to the SSH private key that can be used to connect to the service control plane VMs.</li>
+<li> Back up the ansible folder and move the latest build to its
+                    location:<codeblock>mv /opt/stack/tripleo-ansible /opt/stack/tripleo-ansible-old
+mv /opt/stack/tripleo-ansible-build-81 /opt/stack/tripleo-ansible</codeblock></li>
+<li> Source credentials for the Nova account which was used to set up the Helion Developer Platform
+                    service by
+                    entering:<codeblock>cd /opt/stack/tripleo-ansible 
+source overcloud.stackrc
+source /opt/stack/venvs/openstack/bin/activate
+ansible-playbook \
+    --extra-vars dev_plat_service=&lt;service&gt; \
+    --private-key &lt;path to SSH private key&gt; \
+    --skip_ha_checks=True \
+    -u heat-admin \
+    -i plugins/inventory/dev_platform_heat.py \
+    playbooks/dev-platform/dev_platform_pre_check.yml </codeblock></li>
+<li> If the service is in a healthy state, stop it using the following commands. (If the service is
+                    not in a healthy state, contact customer
+                    support.)<codeblock>ansible-playbook \
+    --extra-vars dev_plat_service=&lt;service&gt; \
+    --private-key &lt;path to SSH private key&gt; \
+    -u heat-admin \
+    -i plugins/inventory/dev_platform_heat.py \
+    playbooks/dev-platform/dev_platform_stop.yml</codeblock></li>
+<li> Stop the control plane
+                    VMs.<codeblock>scripts/dev-platform/stop_dev_platform_instances.bash </codeblock></li>
+</ol>
+<p>You can now run the update script.</p>
+</section>
+<section id="HDPstart"> <title>Restarting the Services and VMs</title>
+<p>After running update on the overcloud, the VMs running on the Compute hosts are in a shutdown state, so you need to first start the Helion Development Platform service control plane VMs. To do this:</p>
+<ol>
+<li> Source the credentials for the Nova account which was used to set up the Helion Developer
+                    Platform service by
+                    entering:<codeblock>cd /opt/stack/tripleo-ansible 
+scripts/dev-platform/restart_dev_platform_instances.bash </codeblock></li>
+<li> Since you have already sourced correct overcloud Nova credentials, you can simply verify the
+                    status of Helion Developer Platform service VMs by running the <codeph>nova
+                        list</codeph> command and checking the status field.</li>
+<li>To start the Helion Development Platform service,
+                    enter:<codeblock>ansible-playbook \
+    --extra-vars dev_plat_service=&lt;service&gt; \
+    --private-key &lt;path to SSH private key&gt; \
+    -u heat-admin \
+    -i plugins/inventory/dev_platform_heat.py \
+    playbooks/dev-platform/dev_platform_start.yml </codeblock></li>
+</ol>
+</section>
+</body>
+</topic>

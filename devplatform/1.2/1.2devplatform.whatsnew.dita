@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1268">
+<title>HP Helion 1.2 Development Platform: What's New</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/1.2/1.2devplatform.whatsnew.md-->
+ <!--permalink: /helion/devplatform/1.2/whatsnew/--></p>
+<ul>
+  <li><xref href="../../commercial/GA1/1.1.1commercial.release-notes.dita#topic18834/111">What's
+    New in Helion <tm tmtype="reg">OpenStack</tm> 1.1.1</xref></li>
+<li><xref href="../../devplatform/1.2/1.2devplatform.release-notes.dita">Release Notes and Known
+          Issues</xref>
+      </li>
+</ul>
+<p>These features and functionality are new in the HP Helion Development Platform 1.2</p>
+<section id="updates"> <title>Updates</title>
+<p>Helion Development Platform service updates can be downloaded from the Content Delivery Network (CODN),  installed from the command line, and configured using the Horizon UI. See the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >Installation Guide</xref> for details.</p>
+<p>The <xref href="../../devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" >ALS command line client</xref> (cfmgmt.exe) can be updated by running the <i>cf-mgmt update</i> command.</p>
+</section>
+<section id="new-features"> <title>New Features</title>
+<p>
+  <b>.NET and Windows support</b>
+</p>
+<p>Helion Development Platform version 1.2 includes a full end-to-end solution for creating and
+        deploying .NET applications. Windows developers can now leverage their knowledge and use the
+        tools they are accustomed to in order to leverage the power of the Helion Development
+        Platform. For more information on Windows and .NET support, see <xref
+          href="windows/windows_overview.dita#topic24073_2">Windows Overview.</xref></p>
+<p>
+<b>Updated Command Line Client</b> <!--A BR tag was used here in the original source.-->
+The <xref href="../../devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" >ALS command line client</xref> (cfmgmt.exe) has been updated to provide options for creating and managing <tm tmtype="reg">Windows</tm> DEA clusters.</p>
+</section>
+</body>
+</topic>

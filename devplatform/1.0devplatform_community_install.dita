@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15079">
+<title>HP Helion 1.0 Development Platform: Community Installation and Configuration</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/1.0devplatform_community_install.md-->
+ <!--permalink: /helion/devplatform/install/community/--></p>
+<p>
+<b>NOTE</b>: This is the most current release of Helion Development Platform Community edition. <!--A BR tag was used here in the original source.-->
+If you are installing the HP Helion Development Platform <b>Commercial</b> edition, follow the <xref href="../devplatform/1.0devplatform_commercial_install.dita" >HP Helion Development Commercial Installation and Configuration</xref> instructions instead.</p>
+<p>The HP Helion Development Platform currently contains four products: <xref href="../devplatform/1.0devplatform.index.dita" >Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service</xref>.</p>
+<p>The following topics explain how to install and configure the HP Helion Development Platform.</p>
+<ul>
+<li>
+<xref type="section" href="#topic15079/prerequisites">Prerequisites</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/installing-the-hp-helion-development-platform">Installing the HP Helion Development Platform</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/messaging-install">Install the Messaging Service</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/als-install">Install the Application Lifecycle Service</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/database-install">Install the Database Service</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/marketplace-install">Install the Marketplace Service</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/troubleshooting">Troubleshooting</xref>
+</li>
+</ul>
+<section id="prerequisites"> <title>Prerequisites</title>
+<p>The HP Helion Development Platform is installed in the overcloud of HP Helion <tm tmtype="reg">OpenStack</tm></p>
+<p>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements used in this document.</p>
+<p>The installer requires the following packages. If they are not found, it will prompt you to install them.</p>
+<ul>
+<li>python-dev </li>
+<li>libffi-dev </li>
+<li>libssl-dev </li>
+<li>python-virtualenv</li>
+<li>python-pip</li>
+</ul>
+<p>Use the following command:</p>
+<codeblock>
+  <codeph>sudo apt-get install -y python-dev libffi-dev libssl-dev python-virtualenv python-pip
+</codeph>
+</codeblock>
+</section>
+<section id="installing-the-hp-helion-development-platform"> <title>Installing the HP Helion Development Platform</title>
+<p>This section describes how to download and install the HP Helion Development Platform.</p>
+<ul>
+<li>
+<xref type="section" href="#topic15079/download">Downloading and unpacking the installation file</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/prepare">Preparing to run the installer</xref>
+</li>
+</ul>
+</section>
+<section id="download"> <title>Downloading and unpacking the installation file</title>
+<p>The installation of the HP Helion Development Platform for the HP Helion OpenStack Community Edition is provided as a small compressed TAR file.  The images for the actual services will be downloaded by the installer.</p>
+<p>
+<b>Note</b>: Should you need more assistance during installation, the install script also has a help feature.</p>
+<codeblock>
+  <codeph>./DevelopmentPlatform_Setup.sh -h
+</codeph>
+</codeblock>
+<ol>
+<li>
+<p>Register and download the package from the following URL: <xref href="https://helion.hpwsportal.com#/Product/%7B%22productId%22%3A%221245%22%7D/Show" type="section" scope="external" format="html" >HP Helion Development Platform</xref>
+</p>
+</li>
+<li>
+<p>Before you begin the installation, unpack the tar file.</p>
+
+<codeblock>
+<codeph>tar -zxvf hp_helion_devplatform_community.tar.gz.csu
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Run this command to create and populate a <i>dev-platform-installer</i> directory.</p>
+
+<codeblock>
+<codeph>cd dev-platform-installer
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>If your network uses a proxy, it may be necessary to set the proxy shell variable.</p>
+
+<codeblock>
+<codeph>export https_proxy=&lt;ip address or url of http proxy&gt;
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Run this command to prepare the installer and ensure prerequisites are met.</p>
+
+<codeblock>
+<codeph>./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Optionally, you can specify the Username, Tenant and Region at this time.<!--A BR tag was used here in the original source.--> By default the Username is <i>admin</i>, the Tenant Name is <i>admin</i> and the Region is <i>regionOne</i>.</p>
+
+<codeblock>
+<codeph>./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region_name}
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Once the installation is complete, you should see output similar to the following:</p>
+
+<codeblock>
+<codeph>2014-06-17 16:53:19.765       INFO Install Complete
+</codeph>
+</codeblock>
+</li>
+</ol>
+</section>
+<section id="messaging-install"> <title>Install the Messaging Service</title>
+<p>This section provides details on installing the HP Helion Development Platform Messaging service.</p>
+<ul>
+<li>
+<xref type="section" href="#topic15079/marketplace-connect">Connect to the Download Service</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/messaging-download">Download and Configure the Messaging Service</xref>
+</li>
+</ul>
+</section>
+<section id="marketplace-connect"> <title>Connect to the Download Service</title>
+<ol>
+<li>
+<p>Open Horizon and login as the <i>Admin</i> user. Then click on the <b>Admin</b> panel in Horizon and select <b>Development Platform</b>. Finally, click <b>Configure Services</b>.</p>
+</li>
+<li>
+<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HP Cloud OS Content Delivery Network.</p>
+
+<p>If you do not have an account, click the <b>Sign-up</b> button.</p>
+</li>
+</ol>
+</section>
+<section id="messaging-download"> <title>Download and Configure the Messaging Service</title>
+<ol>
+<li>
+<p>As the <i>Admin</i> user, in the <b>Configure Services</b> panel locate the <b>Messaging</b> item in the <b>Configure Services</b> table and select <b>Download Service</b> and wait for the download to complete.</p>
+</li>
+<li>
+<p>After the download is complete, click the <b>Configure Service</b> button to configure the Messaging service and wait for the configuration step to complete.</p>
+</li>
+<li>
+<p>Log out of the Horizon dashboard.</p>
+</li>
+<li>
+<p>Log back into the Horizon dashboard as a non-admin user and click on the <b>Messaging</b> panel under the current project to begin using the Messaging Service.</p>
+</li>
+</ol>
+</section>
+<section id="als-install"> <title>Install the Application Lifecycle Service (ALS)</title>
+<p>This section provides details on installing the HP Helion Development Platform Application Lifecycle service.</p>
+<ul>
+<li>
+<xref type="section" href="#topic15079/als-pre">Prerequisites</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/als-connect">Connect to the Download Service</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/als-download">Download and Configure the Application Lifecycle Service</xref>
+</li>
+</ul>
+</section>
+<section id="als-pre"> <title>Prerequisites</title>
+<p>For the Application Lifecycle service to install dependencies for deployed applications, you must provide Application Lifecycle service with outbound Internet connectivity.</p>
+<p>This process is documented in Step 7 of <xref href="../community/community.install.baremetal.dita#startseed" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="../devplatform/helion/admin/server/1.0configuration.dita#http-proxy" type="section">Administration Guide</xref>.</p>
+</section>
+<section id="als-connect"> <title>Connect to the Download Service</title>
+<ol>
+<li>
+<p>Open Horizon and login as the <i>Admin</i> user. Then click on the <b>Admin</b> panel in Horizon and select <b>Development Platform</b>. Finally, click the <b>Configure Services</b> sub-panel.</p>
+</li>
+<li>
+<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your user name and password for the HP Cloud OS Content Delivery Network.</p>
+
+<p>If you do not have an account, click the <b>Sign-up</b> button.</p>
+</li>
+</ol>
+</section>
+<section id="als-download"> <title>Download and Configure the Application Lifecycle Service</title>
+<ol>
+<li>
+<p>In the <b>Configure Services</b> panel locate the Application Lifecycle Service item in the <b>Configure Services</b> table and select <b>Download Service</b> and wait for the download to complete.</p>
+</li>
+<li>
+<p>After the download is complete, click <b>Configure Service</b> to configure the Application Lifecycle service and wait for the configuration step to complete.</p>
+</li>
+<li>
+<p>Log out from the Horizon dashboard.</p>
+</li>
+<li>
+<p>Log back into the Horizon dashboard as a non-admin user and click the <b>Application Lifecycle Service</b> panel under the current project to being using Application Lifecycle services.</p>
+</li>
+</ol>
+</section>
+<section id="databse-install"> <title>Install the Database Service</title>
+<p>This section provides details on installing the HP Helion Development Platform Database service.</p>
+<ul>
+<li>
+<xref type="section" href="#topic15079/database-pre">Prerequisites</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/database-connect">Connect to the Download Service</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/database-connect">Download and Configure the Database Service</xref>
+</li>
+</ul>
+</section>
+<section id="database-pre"> <title>Prerequisites</title>
+<p>Before installing, make sure the following prerequisites are met:</p>
+<ul>
+<li>
+<xref type="section" href="#topic15079/databse-service">Configure the Service Network</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/database-quota">Check Project Quotas</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/database-connect">Connect to the Download Service</xref>
+</li>
+</ul>
+</section>
+<section id="databse-service"> <title>Configure the Service Network</title>
+<p>The Database service needs an additional network for administrative purposes. This network is currently not used in Community edition but must exist in order for Database Service to properly install.</p>
+<ol>
+<li>
+<p>Open Horizon and login as the <i>Admin</i> user.</p>
+</li>
+<li>
+<p>Click <b>Project</b>.</p>
+</li>
+<li>
+<p>Click <b>Network</b> and then the <b>Networks</b> tab.</p>
+</li>
+<li>
+<p>Click <b>Create Network</b>.</p>
+</li>
+<li>
+<p>In <b>Network Name</b> field, enter <codeph>SVC</codeph> for the name of the network.</p>
+</li>
+<li>
+<p>Click <b>Next</b>.</p>
+</li>
+<li>
+<p>In the <b>Network Address</b> field, enter a CIDR that does not conflict with other services (such as: 172.10.0.0/24).</p>
+</li>
+<li>
+<p>Click <b>Next</b>.</p>
+</li>
+<li>
+<p>Click <b>Create</b>.</p>
+</li>
+</ol>
+</section>
+<section id="database-quota"> <title>Check Project Quotas</title>
+<p>The Database service will be installed into the <b>Admin</b>project of the Helion OpenStack overcloud. The <b>Admin</b> project must have sufficient quotas available for the service to use. To check existing quota availability, log in to Horizon as the <b>Admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>For the Community edition, the Database service requires that the Admin project have the following quotas available:</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<thead>
+<row>
+<entry>Resource</entry>
+  <entry align="right">Usage</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Floating IPs</entry>
+  <entry align="right">6</entry>
+</row>
+<row>
+<entry>Instances</entry>
+  <entry align="right">6</entry>
+</row>
+<row>
+<entry>Networks</entry>
+  <entry align="right">2</entry>
+</row>
+<row>
+<entry>RAM (GB)</entry>
+  <entry align="right">24</entry>
+</row>
+<row>
+<entry>Routers</entry>
+  <entry align="right">2</entry>
+</row>
+<row>
+<entry>Security Groups</entry>
+  <entry align="right">6</entry>
+</row>
+<row>
+<entry>Volumes</entry>
+  <entry align="right">4</entry>
+</row>
+<row>
+<entry>Volume Storage (GB)</entry>
+  <entry align="right">160</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>In addition to the quotas mentioned above, for every database instance that is created by a user, the necessary resources to create that instance will be deducted from the Admin project quota. The users Database service quota will also be affected.</p>
+</section>
+<section id="database-connect"> <title>Connect to the Download Service</title>
+<ol>
+<li>
+<p>Open Horizon and login as the <i>Admin</i> user. Then click on the <b>Admin</b> panel in Horizon and select the <b>Development Platform</b> panel under Admin. Then click the <b>Configure Services</b> sub-panel.</p>
+</li>
+<li>
+<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HP Cloud OS Content Delivery Network.</p>
+
+<p>If you do not have an account, click <b>Sign-up</b>.</p>
+</li>
+</ol>
+</section>
+<section id="database-download"> <title>Download and Configure the Database Service</title>
+<p>In the <b>Configure Services</b> panel locate the <b>Database Service</b> item in the <b>Configure Services</b> table and select <b>Download Service</b> and wait for the download to complete.</p>
+<ol>
+<li>
+<p>Once the download is complete, click the <b>Configure Service</b> button to begin configuration of the service. In the configuration dialog, specify the following configuration options:</p>
+
+<p>
+<b>Key Pair (Required)</b> - Enter the name of the key pair to install on all instances created as part of the Database service. The public key can be used by an admin to get SSH access to all instances.</p>
+
+<p>
+<b>External Network (Required)</b> - Enter the name of the network of the network that has external network access. For HP Helion OpenStack Community edition this network is named 'ext-net'</p>
+
+<p>
+<b>NTP Server IP</b> - Enter the IP Address to an NTP server to use if instances will not have outbound access to the internet.</p>
+
+<p>
+<b>Service User Password (Required)</b> - Enter the password for the Admin user that is currently logged in. This password <b>MUST</b> match the password used to login to Horizon.</p>
+
+<p>
+<b>Icinga User Password (Required)</b> - Icinga is not available in HP Helion Development Platform Community Edition. However, a value must be specified. Enter any value.</p>
+
+<p>
+<b>Volume Type (Required)</b> - Enter the volume type to use when creating database instances.</p>
+
+<p>
+<b>Service Network (Required)</b> - Select the 'SVC' network created in <xref type="section" href="#topic15079/databse-service">Configure the Service Network</xref>.</p>
+
+<p>
+<b>RabbitMQ IP Address (Required)</b> - Enter '127.0.0.1' for this parameter.</p>
+</li>
+<li>
+<p>After all configuration options have been provided, select the <b>Configure</b> button to complete the configuration step. Wait for the configuration step to complete and the status to change to <b>Configured</b>.</p>
+</li>
+<li>
+<p>Attach a Floating IP to API Service:</p>
+
+<p>a. As the <i>Admin</i> user, in Horizon click <b>Compute</b>.</p>
+
+<p>b. Click <b>Instances</b>.</p>
+
+<p>c. Click <b>More/Associate Floating IP</b> for the <codeph>trove-trove0_api...</codeph> Instance.</p>
+
+<p>d. Select an available IP or allocate a new one from the <codeph>ext-net</codeph> Network.</p>
+
+<p>e. Select the port for <codeph>trove-trove0_api...</codeph> on the <codeph>trove_mgmt_network</codeph>
+</p>
+
+<p>f. Click <b>Associate</b>
+</p>
+</li>
+<li>
+<p>Recreate the service endpoint for Database service. This step should be performed from the command line on the controller management node or the base node.  You will need the admin credentials and network connectivity to the overcloud.</p>
+
+<p>Delete the old service endpoint and create a new service endpoint with a floating IP address from above using the following command:</p>
+
+<codeblock>
+<codeph>floating_ip=replace_with_floating_ip_allocated_above; service_id=`keystone service-get database | grep id | awk '{print $4}'`; endpoint_id=`keystone endpoint-list | grep $service_id | awk '{print $2}'`;keystone endpoint-delete $endpoint_id; keystone endpoint-create --service-id $service_id --region regionOne --publicurl "http://$floating_ip:8779/v1.0/\$(tenant_id)s" --adminurl "http://$floating_ip:8779/v1.0/\$(tenant_id)s" --internalurl "http://$floating_ip:8779/v1.0/\$(tenant_id)s"
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Log out from the Horizon dashboard.</p>
+</li>
+<li>
+<p>Log back into the Horizon dashboard as a non-admin user and click on the <b>Database</b> panel under the current Project to being using Database Service.</p>
+</li>
+</ol>
+</section>
+<section id="marketplace-install"> <title>Install the Marketplace Service</title>
+<p>This section provides details on installing the HP Helion Development Platform Marketplace service.</p>
+<ul>
+<li>
+<xref type="section" href="#topic15079/marketplace-install">Prerequisites</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/marketplace-download-c">Connect to the Marketplace Service</xref>
+</li>
+<li>
+<xref type="section" href="#topic15079/marketplace-config">Configuring the Marketplace Service</xref>
+</li>
+</ul>
+</section>
+<section id="marketplace-prereq"> <title>Prerequisites</title>
+<p>Before installing, make sure the following prerequisites are met:</p>
+</section>
+<section id="marketplace-quota"> <title>Check Project Quotas</title>
+<p>The Marketplace service will be installed into the Admin project of the Helion OpenStack overcloud. The Admin project must have sufficient quota available and unused for the resources the service uses.</p>
+<p>To check existing quota availability:</p>
+<ol>
+<li>
+<p>Log in to Horizon as the <b>admin</b> user.</p>
+</li>
+<li>
+<p>Open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+
+<p>The quotas should meet or exceed the following:</p>
+
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<thead>
+<row>
+<entry>Resource</entry>
+<entry align="right">Usage</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Floating IPs</entry>
+<entry align="right">16</entry>
+</row>
+<row>
+<entry>Instances</entry>
+<entry align="right">4</entry>
+</row>
+<row>
+<entry>Networks</entry>
+<entry align="right">1</entry>
+</row>
+<row>
+<entry>RAM (GB)</entry>
+<entry align="right">8</entry>
+</row>
+<row>
+<entry>Routers</entry>
+<entry align="right">2</entry>
+</row>
+<row>
+<entry>Security Groups</entry>
+<entry align="right">4</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</li>
+</ol>
+</section>
+<section id="marketplace-download-c"> <title>Connect to the Marketplace Service</title>
+<ol>
+<li>
+<p>Open Horizon and login as the "admin" user. Then click on the admin panel in Horizon and select the <b>Development Platform</b> Panel under <b>Admin</b>. Then click on the <b>Configure Services</b> sub-panel.</p>
+</li>
+<li>
+<p>Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.</p>
+</li>
+</ol>
+</section>
+<section id="marketplace-download"> <title>Download and Configure the Marketplace Service</title>
+<p>In the <b>Configure Services</b> panel locate the Marketplace item in the Configure Services table and select <b>Download Service</b> and wait for the download to complete.</p>
+<ol>
+<li>
+<p>Once the download is complete, click the <b>Configure Service</b> button to begin configuration of the service. In the configuration dialog, specify the following configuration options:</p>
+
+<p>
+<b>Key Pair (Required)</b> - Enter the name of the key pair to install on all instances created as part of the marketplace service. The public key can be used by an admin to get SSH access to all instances.</p>
+
+<p>
+<b>External Network (Required)</b> - Enter the name of the network of the network that has external network access. For HP Helion OpenStack Community Edition this network is named 'ext-net'.</p>
+
+<p>
+<b>NTP Server IP</b> - Enter the IP Address to an NTP server to use if instances will not have outbound access to the internet.</p>
+
+<p>
+<b>Service User Password (Required)</b> - Enter the password for the Admin user that is currently logged in. This password <b>MUST</b> match the password used to login to Horizon.</p>
+
+<p>
+<b>Subnet Range</b> - Enter the subnet to use for Marketplace.</p>
+</li>
+<li>
+<p>Do not attempt to install any Marketplace packages yet. Log out from the Horizon dashboard.</p>
+</li>
+<li>
+<p>Log back into the Horizon dashboard and click on the <b>Marketplace</b> panel under the current Project to begin using the Marketplace Service. You may now install <xref href="../devplatform/1.0devplatform.marketplace.install.dita#install" type="section">Marketplace packages</xref>.</p>
+</li>
+</ol>
+</section>
+<section id="troubleshooting"> <title>Troubleshooting</title>
+<p>Refer to the following topics if you experience problems with the installation.</p>
+</section>
+<section id="troubleshooting-service"> <title>Service is stuck in download</title>
+<p>There are situations in which a download will not complete.  One cause which is documented, is because the <codeph>tmp</codeph> directory ran out of space. There is a prerequisite to mount the <codeph>tmp</codeph> directory to a larger partition.  If you have completed this step and the download is still failing, then we will need to reset the download. In the current release, this requires a manual process.</p>
+<p>As the <i>admin</i> user, in the Admin project, click on <b>Project</b>, then <b>Object Store</b>. Open the <codeph>sherpa-cache</codeph> folder and delete the <codeph>wscatalog.&lt;id&gt;</codeph> folder which contains the cached download. The service should now be available to download again.</p>
+<p>
+  <xref href="#topic15079"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

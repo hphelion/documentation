@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6625">
+<title>HP Helion 1.0 Development Platform: The Marketplace (Beta)</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.0"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/1.0devplatform.marketplace.install.md-->
+ <!--permalink: /helion/devplatform/marketplace/--></p>
+<p>
+
+The Marketplace, currently in beta, is a repository where teams can download the latest services they need to accelerate development of their applications. In its beta incarnation, the Marketplace has a single application: the Vertica 7 Community Edition.</p>
+<p>The following topics explain how to install and deploy an instance of Vertica 7 Community Edition:</p>
+<ul>
+<li>
+<xref type="section" href="#topic6625/concepts">Marketplace concepts</xref>
+</li>
+<li>
+<xref type="section" href="#topic6625/prereq">Prerequisites</xref>
+</li>
+<li>
+<xref type="section" href="#topic6625/install">Installing a package</xref>
+</li>
+<li>
+<xref type="section" href="#topic6625/create">Deploying an environment</xref>
+</li>
+<li>
+<xref type="section" href="#topic6625/deploy">Creating a Deployed Instance of an Application</xref>
+</li>
+<li>
+<xref type="section" href="#topic6625/notes">Deployment Notes</xref>
+</li>
+</ul>
+<section id="marketplace-concepts"> <title>
+<!--Removed anchor point concepts-->
+<!-- id="concepts" -->Marketplace Concepts</title>
+<p>The Marketplace deploys packages of services and applications to specified environments.</p>
+<ul>
+<li>The term <b>Application</b> covers both applications and services that can reside in the Marketplace. For the purposes of this documentation, we will use the term Application even though we are deploying a database, which is a service. </li>
+<li>
+<b>Packages</b> are zip files that contain instructions for Application deployment.</li>
+<li>
+<b>Environments</b> are groups of Applications managed by a single tenant. Applications within a single Environment <i>may</i> be logically related to one another, but do not have to be.  Applications in different Environments are always independent from one another. </li>
+</ul>
+</section>
+<section id="prerequisites"> <title>
+<!--Removed anchor point prereq-->
+<!-- id="prereq" -->Prerequisites</title>
+<p>Install the Marketplace component of the <xref href="../devplatform/1.0devplatform_commercial_install.dita" >HP Helion Development Platform</xref> during the Development Platform install process.</p>
+</section>
+<section id="installing-a-package"> <title>
+<!--Removed anchor point install-->
+<!-- id="install" -->Installing a Package</title>
+<p>In this example, the package being installed is the Vertica 7 Community Edition package.</p>
+<p>Note that you must log out of the Horizon dashboard and then log back in at least once after Marketplace installation before installing any Marketplace packages. This will ensure that Horizon has properly loaded all Marketplace services prior to package installation.</p>
+</section>
+<section id="create-a-target-environment"> <title>
+<!--Removed anchor point create-->
+<!-- id="create" -->Create a Target Environment</title>
+<ol>
+<li>
+<p>Log into Horizon and open the <b>Marketplace</b> panel under your Project. Click on <b>Application Catalog</b>, and then click on the Environments tab.</p>
+
+<p>
+<image href="../media/marketplace1.png"/>
+</p>
+</li>
+<li>
+<p>Click the <b>Create Environment</b> button.</p>
+
+<p>
+<image href="../media/marketplace2.png"/>
+</p>
+</li>
+<li>
+<p>After the environment has been created, your view should look like this:</p>
+
+<p>
+<image href="../media/marketplace3.png"/>
+</p>
+</li>
+</ol>
+</section>
+<section id="create-a-deployed-instance-of-an-application"> <title>
+<!--Removed anchor point deploy-->
+<!-- id="deploy" -->Create a Deployed Instance of an Application</title>
+<p>The following section will show how to create an instance of Vertica 7 Community Edition in the environment created above.</p>
+<ol>
+<li>
+<p>Log in to the Horizon console and open the <b>Marketplace</b> panel under your Project. Click on <b>Application Catalog</b> and then click on the <b>Applications</b> tab. You will see the Vertica 7 Community Edition package.</p>
+
+<p>
+<image href="../media/marketplace4.png"/>
+</p>
+</li>
+<li>
+<p>Click the Add to Env button from within the Vertica 7 Community Edition section. You will see an <b>Add Application to &lt;selected environment name&gt;</b> dialog. Agree to the Terms and Conditions, then scroll down to the bottom of the dialog and click on the Next button.</p>
+
+<p>
+<image href="../media/marketplace5.png"/>
+</p>
+</li>
+<li>
+<p>The <b>Add Application to &lt;selected environment&gt;</b> dialog will come up. Fill out</p>
+
+<ul>
+<li>
+<p>
+<b>Application name</b> - can be anything</p>
+</li>
+<li>
+<p>
+<b>Flavor</b> for instances, can be:</p>
+
+<ul>
+<li>m1.medium</li>
+<li>m1.large</li>
+<li>m1.xlarge</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Select the <b>image</b> to use. In this case there is only one image, the Vertica 7 Community Edition (Debian) image. </li>
+<li>Add a keypair if you don't have one already, by selecting the <b>+</b> link. If you are adding a keypair, you will be prompted to supply a name and a public key. You can generate a public key in *nix using <xref href="http://linux.die.net/man/1/ssh-keygen" scope="external" format="html" >ssh-keygen</xref> or <tm tmtype="reg">Windows</tm> using <xref href="http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter8.html#pubkey-puttygen" type="section" scope="external" format="html" >puTTYgen</xref>. Insert public key text and click the <b>Import Key Pair</b> button.</li>
+</ol>
+<p>
+<image href="../media/marketplace6.png"/>
+</p>
+</li>
+<li>
+<p>Supply a database name and a password, complying with the on-page instructions and then click the <b>Next</b> button.</p>
+
+<p>
+<image href="../media/marketplace7.png"/>
+</p>
+</li>
+<li>
+<p>You will be prompted to add the Application you have created to the environment you selected. Click <b>Create</b> to continue.</p>
+
+<p>
+<image href="../media/marketplace8.png"/>
+</p>
+</li>
+<li>
+<p>You will see that Vertica 7 Community Edition has been installed in the test1 environment. Note that the Environment has <b>not</b> been deployed yet. That is the next step.</p>
+
+<p>
+<image href="../media/marketplace9.png"/>
+</p>
+</li>
+<li>
+<p>To deploy the environment, click on the  <b>Deploy This Environment</b> button. Expect deployment to take between 5 and 10 minutes.</p>
+
+<p>
+<image href="../media/marketplace10.png"/>
+</p>
+</li>
+<li>
+<p>When this process has completed, you will see that the Vertica 7 Community Edition is available for consumption. Connection information is given in the <b>last operation</b> column.</p>
+
+<p>
+<image href="../media/marketplace11.png"/>
+</p>
+</li>
+<li>
+<p>Take the following steps to ensure that your newly deployed instance of Vertica is secure by modifying its default key pair:</p>
+
+<ol>
+<li>
+<p>Log into the instance using the private key you used during database creation.</p>
+
+<codeblock>
+<codeph>ssh dbadmin@&lt;ip&gt; -i &lt;path to private key&gt;
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Remove the existing default key from the keys file.</p>
+
+<codeblock>
+<codeph>cd ~/.ssh
+grep -v "`cat id_rsa.pub`" authorized_keys &gt; authorized_keys.tmp
+mv authorized_keys.tmp authorized_keys
+chmod 0600 authorized_keys
+rm authorized_keys.tmp
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Remove the existing default key:</p>
+
+<codeblock>
+<codeph>rm ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Generate a new, unique default key pair:</p>
+
+<codeblock>
+<codeph>ssh-keygen -b 2048 -t rsa -f /home/dbadmin/.ssh/id_rsa -q -N ""
+</codeph>
+</codeblock>
+</li>
+</ol>
+</li>
+<li>
+<p>You can also implement additional security by modifying the access rules for the security group associated with the environment that the Vertica instance was deployed into. In the example above, the environment name is <b>Test1</b>. The associated security group can be accessed from the Horizon panel as follows:</p>
+
+<ol>
+<li>In the Horizon console under <b>Compute</b> -&gt; <b>Access &amp; Security</b>, go to the <b>Security Groups</b> tab.</li>
+<li>Search for a group with the <b>Test1</b> string in the group name. Group names are auto-generated to ensure that they are unique.</li>
+<li>Click <b>Manage Rules</b>.
+
+<ul>
+<li>To change the access rules for SSH, add a new security group allowing access on port 22 from the IP range you wish to grant access to.</li>
+<li>To allow access to Vertica, add a new rule on port 5433 that specifies the IP range you wish to grant access to. You can then remove the corresponding default rule.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="deployment-notes"> <title>
+<!--Removed anchor point notes-->
+<!-- id="notes" -->Deployment Notes</title>
+<p>This section discusses some of the details of deployment that you may encounter.</p>
+<ol>
+<li>Environments cannot be deployed unless there is at least one Application in the Environment. </li>
+<li>Deploying an Application to an Environment that has already been deployed follows the same flow as above.
+
+<ul>
+<li>In order to instantiate a newly-configured application, re-deploy its Environment.</li>
+<li>When an Environment is re-deployed, all applications it contains will be re-deployed. </li>
+</ul>
+</li>
+<li>
+<p>If a Vertica instance is restarted or power cycled, the Vertica database must be restarted manually once the instance is reachable. This is by design to avoid potential database corruption in the event of a power event. Note that <b>all</b> VMs are shut down and then restarted during the Helion upgrade process.</p>
+
+<ol>
+<li>SSH into your instance</li>
+<li>
+<p>Become the dbadmin user:</p>
+
+<codeblock>
+<codeph>sudo su - dbadmin
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Run the following command:</p>
+
+<codeblock>
+<codeph>admintools -t stop_db --database=DB_NAME --password=DB_PASSWORD
+</codeph>
+</codeblock>
+</li>
+</ol>
+</li>
+</ol>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

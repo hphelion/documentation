@@ -1,0 +1,1312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic25021">
+<title>HP Helion 1.0 Development Platform: Kato Command Reference</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.0"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/helion/admin/reference/1.0kato-ref.md-->
+ <!--permalink: /als/v1/admin/reference/kato-ref/--></p>
+<p>
+
+</p>
+<p>Kato is the Application Lifecycle Service command line administration utility.</p>
+<section id="usage"> <title>Syntax</title>
+<p>
+<b>kato</b> <i>command</i> [--help] [arguments] [command-options]</p>
+</section>
+<section id="commands"> <title>List of Commands</title>
+<ul>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-config">config</xref> Manipulate configuration values
+of Application Lifecycle Service components.</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-data">data</xref> Import or export Application Lifecycle Service
+system data to or from clusters/nodes.
+
+<ul>
+<li>data export</li>
+<li>data import</li>
+<li>data users</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-debug-configwatch">debug</xref> Commands for
+debugging for Application Lifecycle Service internals.
+
+<ul>
+<li>debug configwatch</li>
+<li>debug redis</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-history">history</xref> Show the kato commands that
+have been run</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-info">info</xref> Show information about this node or cluster.</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-inspect">inspect</xref> Detect common problems with your Application Lifecycle Service installation.</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-log-stream">log</xref> Logging utilities for Application Lifecycle Service
+
+<ul>
+<li>log drain</li>
+<li>log stream</li>
+<li>log tail</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-node-attach">node</xref> Node management
+
+<ul>
+<li>node attach</li>
+<li>node detach</li>
+<li>node list</li>
+<li>node migrate</li>
+<li>node remove</li>
+<li>node rename</li>
+<li>node reset</li>
+<li>node retire</li>
+<li>node setup</li>
+<li>node upgrade</li>
+<li>node version</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-op">op</xref> Various operational commands</li>
+<li>
+<xref type="section" href="#topic25021/other">other commands</xref>
+
+<ul>
+<li>custom_ssl_cert</li>
+<li>dhcp</li>
+<li>defer</li>
+<li>max_client_upload</li>
+<li>regenerate</li>
+<li>remap_hosts</li>
+<li>run_deferred</li>
+<li>set_timezone</li>
+<li>static_ip</li>
+<li>upstream_proxy</li>
+<li>update_hostsfile</li>
+<li>generate_service_tokens</li>
+<li>help</li>
+<li>user</li>
+<li>pass</li>
+<li>no-restart</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-patch">patch</xref> Update an Application Lifecycle Service cluster with
+post-release fixes.</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-process-list">process</xref> Start, stop, or restart
+individual processes. Generally not required.
+
+<ul>
+<li>process list</li>
+<li>process ready</li>
+<li>process restart</li>
+<li>process start</li>
+<li>process stop</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-relocate">relocate</xref> Move containers, application droplets, or services to a new mount point</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-report">report</xref> Generate a report that can be
+sent to Application Lifecycle Service support.</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-restart">restart</xref> Restart Application Lifecycle Service or
+individual roles.</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-role-add">role</xref> Management of node roles
+
+<ul>
+<li>role add</li>
+<li>role info</li>
+<li>role remove</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-shell">shell</xref> Interactive shell for kato</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-start">start</xref> Start Application Lifecycle Service or individual
+roles.</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-status">status</xref> List configured roles and their
+current status across the cluster.</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-stop">stop</xref> Stop Application Lifecycle Service or individual roles.</li>
+<li>
+<xref type="section" href="#topic25021/kato-command-ref-version">version</xref> Display the version of Application Lifecycle Service being run.</li>
+</ul>
+</section>
+<section id="command-usage-details"> <title>Command Usage Details</title>
+</section>
+<section id="kato-command-ref-config"> <title>Config</title>
+<p>Manipulate configuration values  of Application Lifecycle Service components.</p>
+<p>
+<i>\&lt;value&gt;</i> If value is not given for "set", then it read from STDIN.</p>
+<p>
+<i>\&lt;component&gt;</i> Can be "cluster", "local" or the name of a process.</p>
+<p>
+<b>config</b> <b>get</b> [<b>options</b>] [<i>\&lt;component&gt;</i>] [<i>\&lt;key-path&gt;</i>]</p>
+<p>
+<b>config</b> <b>set</b> [<b>options</b>] <i>\&lt;component&gt;</i> <i>\&lt;key-path&gt;</i>
+[<i>\&lt;value&gt;</i>]</p>
+<p>
+<b>config</b> <b>del</b> [<b>options</b>] <i>\&lt;component&gt;</i> <i>\&lt;key-path&gt;</i>
+</p>
+<p>
+<b>config</b> <b>push</b> [<b>options</b>] <i>\&lt;component&gt;</i> <i>\&lt;key-path&gt;</i>
+<i>\&lt;value&gt;</i>
+</p>
+<p>
+<b>config</b> <b>pop</b> [<b>options</b>] <i>\&lt;component&gt;</i> <i>\&lt;key-path&gt;</i>
+<i>\&lt;value&gt;</i>
+</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-j</b> <b>--json</b> For "set", use JSON format when setting config key values.
+    For "get", use JSON format for displaying output.</p>
+<p>
+<b>-y</b> <b>--yaml</b> Use YAML format when retrieving or setting config key values. YAML is the default output format.</p>
+<p>
+<b>-f</b> <b>--flat</b> Use a flat output format <i>\&lt;full-config-path&gt;&gt; \&lt;value&gt;</i>
+</p>
+<p>
+<b>--force</b> Force updating value to different type.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-data"> <title>Data</title>
+<p>Import or export Application Lifecycle Service system data to or from clusters/nodes.</p>
+</section>
+<section id="data-export"> <title>Data Export</title>
+<p>Exports Application Lifecycle Service system data to or from clusters/nodes. With no options specified, includes all data except 'resources' and 'aok-config'.</p>
+<p>
+<i>\&lt;filename&gt;</i> The filename the export will be written to</p>
+<p>
+<b>data</b> <b>export</b> <b>--only-this-node</b> [<b>options</b>] [<i>\&lt;filename&gt;</i>]</p>
+<p>
+<b>data</b> <b>export</b> <b>--cluster</b> [<b>options</b>] [<i>\&lt;filename&gt;</i>]</p>
+<p>
+<b>data</b> <b>export</b> <b>--manual</b> [<b>options</b>] [<i>\&lt;filename&gt;</i>]</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>--cluster</b> Operate on the entire cluster</p>
+<p>
+<b>--only-this-node</b> Only affect this node</p>
+<p>
+<b>--manual</b> Only import/export roles specified on the command line</p>
+<p>
+<b>--force</b> Force import/export of specified roles even if they are not enabled. Requires <codeph>--manual</codeph>. Implies <codeph>--only-this-node</codeph>
+</p>
+<p>
+<b>--remote</b> Remote import/export (internal use only)</p>
+<p>
+<b>--base-dir</b> <i>\&lt;base-dir&gt;</i> Base directory for extracting temporary files</p>
+<p>
+<b>--droplets</b> Include droplets (uploaded apps)</p>
+<p>
+<b>--exclude-droplets</b> Do not include droplets (uploaded apps)</p>
+<p>
+<b>--packages</b> Include app packages</p>
+<p>
+<b>--exclude-packages</b> Do not include app packages</p>
+<p>
+<b>--resources</b> Include the upload cache</p>
+<p>
+<b>--exclude-resources</b> Do not include the upload cache (default)</p>
+<p>
+<b>--license</b> Include the Application Lifecycle Service license</p>
+<p>
+<b>--exclude-license</b> Do not include the Application Lifecycle Service license</p>
+<p>
+<b>--exclude-db-encryption-key</b> Do not include the key</p>
+<p>
+<b>--main-db</b> Include the cloud controller's main database</p>
+<p>
+<b>--exclude-main-db</b> Do not include the cloud controller's main
+database</p>
+<p>
+<b>--aok-db</b> Include AOK's database</p>
+<p>
+<b>--exclude-aok-db</b> Do not include AOK's database</p>
+<p>
+<b>--aok-config</b> Include AOK's configuration</p>
+<p>
+<b>--exclude-aok-config</b> Do not include AOK's configuration (default)</p>
+<p>
+<b>--helion-rest-db</b> Include Application Lifecycle Service Rest's database</p>
+<p>
+<b>--exclude-helion-rest-db</b> Do not include Application Lifecycle Service Rest's database</p>
+<p>
+<b>--filesystem</b> Include the filesystem service</p>
+<p>
+<b>--exclude-filesystem</b> Do not include the filesystem service</p>
+<p>
+<b>--exclude-filesystem-data</b> Do not include the filesystem service's
+user data</p>
+<p>
+<b>--exclude-filesystem-user-creation</b> Do not include the filesystem
+service's user creation/quota</p>
+<p>
+<b>--harbor</b> Include the harbor service</p>
+<p>
+<b>--exclude-harbor</b> Do not include the harbor service</p>
+<p>
+<b>--exclude-harbor-data</b> Do not include the harbor service's user
+data</p>
+<p>
+<b>--exclude-harbor-metadata</b> Do not include the harbor service's
+metadata</p>
+<p>
+<b>--mysql</b> Include the MySQL service</p>
+<p>
+<b>--exclude-mysql</b> Do not include the MySQL service</p>
+<p>
+<b>--exclude-mysql-data</b> Do not include the MySQL service's data</p>
+<p>
+<b>--exclude-mysql-metadata</b> Do not include the MySQL service's
+ metadata</p>
+<p>
+<b>--postgresql</b> Include the PostgreSQL service</p>
+<p>
+<b>--exclude-postgresql</b> Do not include the PostgreSQL service</p>
+<p>
+<b>--exclude-postgresql-data</b> Do not include the PostgreSQL service's
+ data</p>
+<p>
+<b>--exclude-postgresql-metadata</b> Do not include the PostgreSQL
+ service's metadata</p>
+<p>
+<b>--mongodb</b> Include the MongoDB service</p>
+<p>
+<b>--exclude-mongodb</b> Do not include the MongoDB service</p>
+<p>
+<b>--exclude-mongodb-data</b> Do not include the MongoDB service's data</p>
+<p>
+<b>--exclude-mongodb-metadata</b> Do not include the MongoDB service's
+ metadata</p>
+<p>
+<b>--memcached</b> Include the memcached service</p>
+<p>
+<b>--exclude-memcached</b> Do not include the memcached service</p>
+<p>
+<b>--exclude-memcached-data</b> Do not include the memcached service's
+ data</p>
+<p>
+<b>--exclude-memcached-metadata</b> Do not include the memcached
+ service's metadata</p>
+<p>
+<b>--redis</b> Include the Redis service</p>
+<p>
+<b>--exclude-redis</b> Do not include the Redis service</p>
+<p>
+<b>--exclude-redis-data</b> Do not include the Redis service's data</p>
+<p>
+<b>--exclude-redis-metadata</b> Do not include the Redis service's
+ metadata</p>
+<p>
+<b>--rabbit</b> Include the RabbitMQ service</p>
+<p>
+<b>--exclude-rabbit</b> Do not include the RabbitMQ service</p>
+<p>
+<b>--exclude-rabbit-data</b> Do not include the RabbitMQ service's data</p>
+<p>
+<b>--exclude-rabbit-metadata</b> Do not include the RabbitMQ service's
+ metadata</p>
+<p>
+<b>--rabbit3</b> Include the RabbitMQ service</p>
+<p>
+<b>--exclude-rabbit3</b> Do not include the RabbitMQ service</p>
+<p>
+<b>--exclude-rabbit3-data</b> Do not include the RabbitMQ service's data</p>
+<p>
+<b>--exclude-rabbit3-metadata</b> Do not include the RabbitMQ service's
+ metadata</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="data-import"> <title>Data Import</title>
+<p>Imports Application Lifecycle Service system data to or from clusters/nodes. With no options
+specified, includes all data except 'resources' and 'aok-config'.</p>
+<p>
+<i>\&lt;source&gt;</i> This can be a hostname or a filename to import from.</p>
+<p>
+<b>data</b> <b>import</b> <b>--only-this-node</b> [<b>options</b>] <i>\&lt;source&gt;</i>
+</p>
+<p>
+<b>data</b> <b>import</b> <b>--cluster</b> [<b>options</b>] <i>\&lt;source&gt;</i>
+</p>
+<p>
+<b>data</b> <b>import</b> <b>--manual</b> [<b>options</b>] <i>\&lt;source&gt;</i>
+</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>--cluster</b> Operate on the entire cluster</p>
+<p>
+<b>--only-this-node</b> Only affect this node</p>
+<p>
+<b>--manual</b> Only import/export roles specified on the command line</p>
+<p>
+<b>--force</b> Force import/export of specified roles even if they are
+not enabled. - Requires <codeph>--manual</codeph> - Implies <codeph>--only-this-node</codeph>
+</p>
+<p>
+<b>--remote</b> Remote import/export (internal use only)</p>
+<p>
+<b>--base-dir</b> <i>\&lt;base-dir&gt;</i> Base directory for extracting temporary
+files</p>
+<p>
+<b>--legacy</b> Treat import as a legacy services import (internal use
+only)</p>
+<p>
+<b>--droplets</b> Include droplets (uploaded apps)</p>
+<p>
+<b>--exclude-droplets</b> Do not include droplets (uploaded apps)</p>
+<p>
+<b>--packages</b> Include app packages</p>
+<p>
+<b>--exclude-packages</b> Do not include app packages</p>
+<p>
+<b>--resources</b> Include the upload cache</p>
+<p>
+<b>--exclude-resources</b> Do not include the upload cache (default)</p>
+<p>
+<b>--license</b> Include the Application Lifecycle Service license</p>
+<p>
+<b>--exclude-license</b> Do not include the Application Lifecycle Service license</p>
+<p>
+<b>--db-encryption-key</b> Include the key used to encrypt the Application Lifecycle Service
+DB (recommended)</p>
+<p>
+<b>--exclude-db-encryption-key</b> Do not include the key</p>
+<p>
+<b>--main-db</b> Include the cloud controller's main database</p>
+<p>
+<b>--exclude-main-db</b> Do not include the cloud controller's main
+database</p>
+<p>
+<b>--aok-db</b> Include AOK's database</p>
+<p>
+<b>--exclude-aok-db</b> Do not include AOK's database</p>
+<p>
+<b>--aok-config</b> Include AOK's configuration</p>
+<p>
+<b>--exclude-aok-config</b> Do not include AOK's configuration (default)</p>
+<p>
+<b>--helion-rest-db</b> Include Application Lifecycle Service Rest's database</p>
+<p>
+<b>--exclude-helion-rest-db</b> Do not include Application Lifecycle Service Rest's database</p>
+<p>
+<b>--filesystem</b> Include the filesystem service</p>
+<p>
+<b>--exclude-filesystem</b> Do not include the filesystem service</p>
+<p>
+<b>--exclude-filesystem-data</b> Do not include the filesystem service's
+user data</p>
+<p>
+<b>--exclude-filesystem-user-creation</b> Do not include the filesystem
+service's user creation/quota</p>
+<p>
+<b>--harbor</b> Include the harbor service</p>
+<p>
+<b>--exclude-harbor</b> Do not include the harbor service</p>
+<p>
+<b>--exclude-harbor-data</b> Do not include the harbor service's user
+data</p>
+<p>
+<b>--exclude-harbor-metadata</b> Do not include the harbor service's
+metadata</p>
+<p>
+<b>--mysql</b> Include the MySQL service</p>
+<p>
+<b>--exclude-mysql</b> Do not include the MySQL service</p>
+<p>
+<b>--exclude-mysql-data</b> Do not include the MySQL service's data</p>
+<p>
+<b>--exclude-mysql-metadata</b> Do not include the MySQL service's
+metadata</p>
+<p>
+<b>--postgresql</b> Include the PostgreSQL service</p>
+<p>
+<b>--exclude-postgresql</b> Do not include the PostgreSQL service</p>
+<p>
+<b>--exclude-postgresql-data</b> Do not include the PostgreSQL service's
+data</p>
+<p>
+<b>--exclude-postgresql-metadata</b> Do not include the PostgreSQL
+service's metadata</p>
+<p>
+<b>--mongodb</b> Include the MongoDB service</p>
+<p>
+<b>--exclude-mongodb</b> Do not include the MongoDB service</p>
+<p>
+<b>--exclude-mongodb-data</b> Do not include the MongoDB service's data</p>
+<p>
+<b>--exclude-mongodb-metadata</b> Do not include the MongoDB service's
+metadata</p>
+<p>
+<b>--memcached</b> Include the memcached service</p>
+<p>
+<b>--exclude-memcached</b> Do not include the memcached service</p>
+<p>
+<b>--exclude-memcached-data</b> Do not include the memcached service's
+data</p>
+<p>
+<b>--exclude-memcached-metadata</b> Do not include the memcached
+service's metadata</p>
+<p>
+<b>--redis</b> Include the Redis service</p>
+<p>
+<b>--exclude-redis</b> Do not include the Redis service</p>
+<p>
+<b>--exclude-redis-data</b> Do not include the Redis service's data</p>
+<p>
+<b>--exclude-redis-metadata</b> Do not include the Redis service's
+metadata</p>
+<p>
+<b>--rabbit</b> Include the RabbitMQ service</p>
+<p>
+<b>--exclude-rabbit</b> Do not include the RabbitMQ service</p>
+<p>
+<b>--exclude-rabbit-data</b> Do not include the RabbitMQ service's data</p>
+<p>
+<b>--exclude-rabbit-metadata</b> Do not include the RabbitMQ service's
+metadata</p>
+<p>
+<b>--rabbit3</b> Include the RabbitMQ service</p>
+<p>
+<b>--exclude-rabbit3</b> Do not include the RabbitMQ service</p>
+<p>
+<b>--exclude-rabbit3-data</b> Do not include the RabbitMQ service's data</p>
+<p>
+<b>--exclude-rabbit3-metadata</b> Do not include the RabbitMQ service's
+metadata</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="data-users"> <title>Data Users</title>
+<p>Import or export a list of Application Lifecycle Service users (CSV format).</p>
+<p>
+<b>data</b> <b>users</b> <b>import</b> [<b>options</b>] <i>\&lt;filename&gt;</i>
+</p>
+<p>
+<b>data</b> <b>users</b> <b>export</b> [<b>options</b>]
+[<b>--exclude-password-hashes</b>] [<i>\&lt;filename&gt;</i>]</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-p</b> <b>--exclude-password-hashes</b> Do not include hashed passwords
+ in export</p>
+<p>
+<b>-d</b> <b>--dry-run</b> Do not import/export anything, just show what will be done</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-debug-configwatch"> <title>Debug</title>
+<p>Commands for debugging for Application Lifecycle Service internals.</p>
+<p>
+<b>debug</b> <b>configwatch</b> [<b>options</b>] [<i>\&lt;process-name&gt;...</i>]</p>
+<p>Watch changes to cluster config</p>
+<p>
+<b>-d</b> <b>--dump-tree</b> Dump the config tree seen since starting</p>
+<p>
+<b>-s</b> <b>--no-value</b> Do not print the value of path</p>
+<p>
+<b>debug</b> <b>redis</b>
+</p>
+<p>Connect to the Redis server used for cluster config via redis-cli</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-history"> <title>History</title>
+<p>Show the kato commands that have been run.</p>
+<p>
+<b>history</b> [<b>--help</b>] [<b>-n</b> <i>\&lt;node-IP&gt;</i>] [<b>--json</b>]</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Get command history from a specific
+cluster node</p>
+<p>
+<b>-j</b> <b>--json</b> Output as JSON</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-info"> <title>Info</title>
+<p>Show information about this node or cluster including assigned and available roles.</p>
+<p>
+<b>info</b> [<b>--help</b>] [<b>-n</b> <i>\&lt;node-IP&gt;</i>] [<b>--json</b>] [<b>--yaml</b>]</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Show info on a specific cluster node</p>
+<p>
+<b>-j</b> <b>--json</b> Output as JSON</p>
+<p>
+<b>-y</b> <b>--yaml</b> Output as YAML</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-inspect"> <title>Inspect</title>
+<p>Detect common problems with your Application Lifecycle Service installation.</p>
+<p>
+<b>inspect</b> [<b>options</b>]</p>
+<p>
+<b>inspect</b> [<b>options</b>] [<b>all</b>]</p>
+<p>
+<b>inspect</b> [<b>options</b>] <b>group</b> <i>\&lt;group-name&gt;</i>
+</p>
+<p>
+<b>inspect</b> [<b>options</b>] <b>tests</b> <i>\&lt;test-name&gt;...</i>
+</p>
+<p>To run all tests, run:</p>
+<codeblock>
+  <codeph>kato inspect
+</codeph>
+</codeblock>
+<p>To use a specific group of tests, run:</p>
+<codeblock>
+  <codeph>kato inspect group \&lt;name of group\&gt;
+</codeph>
+</codeblock>
+<p>To run specific tests, run:</p>
+<codeblock>
+  <codeph>kato inspect tests \&lt;test1\&gt; \&lt;test2\&gt; \&lt;test3\&gt;
+</codeph>
+</codeblock>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-v</b> <b>--verbose</b> Verbose output</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-log-stream"> <title>Log</title>
+<p>Logging utilities for Application Lifecycle Service.</p>
+<p>
+<b>log</b> <b>drain</b> <b>add</b> [<b>options</b>] <i>\&lt;name&gt;</i> <i>\&lt;uri&gt;</i>
+[<i>\&lt;param&gt;...</i>]</p>
+<p>Add a new log drain.</p>
+</section>
+<section id="drain-examples"> <title>Examples:</title>
+<ul>
+<li>
+<p>Add a drain to receive system logs</p>
+
+<codeblock>
+<codeph> kato log drain add system\_splunk udp://logs.splunk.com:1234/
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Add a drain to forward all application and system logs as json</p>
+
+<codeblock>
+<codeph>    kato log drain add -f json -p apptail,systail app\_sys\_splunk
+    udp://logs.splunk.com:1235/
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Add a drain with a custom or named format,</p>
+
+<codeblock>
+<codeph>kato log drain add -f ": " system\_splunk\_2
+udp://logs.splunk.com:1236/ kato log drain add -f systail-syslog
+system\_splunk\_2 udp://logs.splunk.com:1236/
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Passing custom parameters to a drain</p>
+
+<codeblock>
+<codeph>kato log drain add mydrain redis://localhost:6379 key=logdata
+</codeph>
+</codeblock>
+</li>
+</ul>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-f</b> <b>--format</b> <i>\&lt;format&gt;</i> Message format</p>
+<p>
+<b>-p</b> <b>--prefix</b> <i>\&lt;prefix&gt;</i> Message key prefix; possible values:
+systail, event, apptail (comma-separated, no spaces)</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>log</b> <b>drain</b> <b>delete</b> [<b>options</b>] <i>\&lt;name&gt;</i>
+</p>
+<p>Delete a drain</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>log</b> <b>drain</b> <b>list</b> [<b>options</b>]</p>
+<p>List all log drains</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-y</b> <b>--yaml</b> Output at YAML</p>
+<p>
+<b>-j</b> <b>--json</b> Output at JSON</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>log</b> <b>drain</b> <b>status</b> [<b>options</b>] [<i>\&lt;drain&gt;...</i>]</p>
+<p>Show the status of all or specified log drains</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-n</b> <b>--not-running</b> Show only drains not running</p>
+<p>
+<b>-y</b> <b>--yaml</b> Output at YAML</p>
+<p>
+<b>-j</b> <b>--json</b> Output at JSON</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>log</b> <b>stream</b> [<b>options</b>] <i>\&lt;key&gt;...</i>
+</p>
+</section>
+<section id="log-examples"> <title>Examples:</title>
+<ul>
+<li>
+<p>stream cloud events</p>
+
+<codeblock>
+<codeph>kato log stream event
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>stream DEA and app log stream</p>
+
+<codeblock>
+<codeph>kato log stream systail.dea systail.stager apptail
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>stream system logs (equivalent to 'kato log tail')</p>
+
+<codeblock>
+<codeph>kato log stream systail
+</codeph>
+</codeblock>
+</li>
+</ul>
+<p>
+<i>\&lt;key&gt;</i> Logyard stream key prefix (eg: systail.dea)</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>--no-color</b> Turn off color</p>
+<p>
+<b>--raw</b> Show unformatted logs, including logyard INFO records
+(skipped by default)</p>
+<p>
+<b>--json</b> Show the original JSON</p>
+<p>
+<b>--time</b> Show timestamp</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Only show logs from a specific cluster
+ node</p>
+<p>
+<b>-l</b> <b>--local</b> Only show logs from the current node</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>log</b> <b>tail</b> [<b>options</b>] [<i>\&lt;component&gt;...</i>]</p>
+<p>
+<i>\&lt;component&gt;</i> Can be a process name, role name or role group name</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>--no-color</b> Turn off color</p>
+<p>
+<b>--raw</b> Show unformatted logs, including logyard INFO records
+(skipped by default)</p>
+<p>
+<b>--time</b> Show timestamp</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Only show logs from a specific cluster
+node</p>
+<p>
+<b>-l</b> <b>--local</b> Only show logs from the current node</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-attach"> <title>Node</title>
+<p>Node management commands.</p>
+<p>
+<b>node</b> <b>attach</b> [<b>options</b>] <i>\&lt;core-ip&gt;</i>
+</p>
+<p>Attach this node to a core node</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-e</b> <b>--enable</b> <i>\&lt;roles&gt;</i> Enable the specified roles
+(comma-separated, no spaces)</p>
+<p>
+<b>-s</b> <b>--no-start</b> Do not auto start processes</p>
+<p>
+<b>-v</b> <b>--verbose</b> Show process information when starting/stopping
+roles</p>
+<p>
+<b>-f</b> <b>--force</b> Forces this node to attach to a core node, ignoring
+any version mismatches</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>detach</b> [<b>options</b>]</p>
+<p>Detach this node from a core node</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-s</b> <b>--start</b> Automatically start processes after detaching</p>
+<p>
+<b>-v</b> <b>--verbose</b> Show process information when starting/stopping
+roles</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>list</b> [<b>options</b>]</p>
+<p>List all nodes known to this cluster</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-j</b> <b>--json</b> Use JSON format for displaying output</p>
+<p>
+<b>-y</b> <b>--yaml</b> Use YAML format for displaying output</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>migrate</b> <i>\&lt;old-node-IP&gt;</i> <i>\&lt;new-node-IP&gt;</i>
+</p>
+<p>Migrate the node configuration from old node to a new node</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-r</b> <b>--no-restart</b> Do not restart roles after migration</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>remove</b> <i>\&lt;node-IP&gt;</i>
+</p>
+<p>Remove the node from the cluster</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>rename</b> [<b>options</b>] <i>\&lt;hostname&gt;</i>
+</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information.</p>
+<p>
+<b>-s</b> <b>--skip-remap-hosts</b> Skip the remapping of existing app URLS
+to the new domain.</p>
+<p>
+<b>-l</b> <b>--skip-ssl-regeneration</b> Skip regenerating the SSL keys</p>
+<p>
+<b>-r</b> <b>--no-restart</b> Do not restart roles.</p>
+<p>
+<b>-v</b> <b>--verbose</b> Show process information when restarting roles.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>reset</b> <b>soft</b>
+</p>
+<p>
+<b>node</b> <b>reset</b> <b>factory</b>
+</p>
+<p>
+<b>node</b> <b>reset</b> <b>--help</b>
+</p>
+<p>Reset the Application Lifecycle Service VM to its default configuration.</p>
+<ul>
+<li>soft: clears all data and resets the VM to its state immediately
+after first boot.</li>
+<li>factory: returns the VM to its state prior to first boot.</li>
+</ul>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>retire</b> [<b>options</b>]</p>
+<p>Gracefully retires a DEA node from the cluster. New instances of the
+apps are started on other available DEAs before the retiring DEA is
+shut down.</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-id&gt;</i> Retire the specified DEA node, local
+node is used if not specified</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>setup</b> <b>core</b> [<i>\&lt;endpoint&gt;</i>]</p>
+<p>
+<b>node</b> <b>setup</b> <b>core</b> <b>--help</b>
+</p>
+<p>Configure the core node of your Application Lifecycle Service cluster</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-v</b> <b>--verbose</b> Show process information</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>setup</b> <b>firstuser</b> [<b>options</b>] <i>\&lt;email&gt;</i> <i>\&lt;org&gt;</i>
+</p>
+<p>First user setup.</p>
+<p>
+<i>\&lt;email&gt;</i> First user's email.</p>
+<p>
+<i>\&lt;org&gt;</i> First user's organization.</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-p</b> <b>--password</b> <i>\&lt;password&gt;</i> First user's password. If your unix password has not been updated, then
+your unix password will be updated to this. Will be prompted for if not given.</p>
+<p>
+<b>-u</b> <b>--username</b> <i>\&lt;username&gt;</i> First user's username. Will be the provided email if not given.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>setup</b> <b>load_balancer</b> [<i>\&lt;IP&gt;...</i>] [<b>--force</b>]</p>
+<p>
+<b>node</b> <b>setup</b> <b>load_balancer</b> <b>--help</b>
+</p>
+<p>Configure this node as a HTTP/S load balancer</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>setup</b> <b>micro</b> [<b>options</b>] [<i>\&lt;role&gt;...</i>]</p>
+<p>
+<b>node</b> <b>setup</b> <b>micro</b> <b>--help</b>
+</p>
+<p>Configure this instance as a micro cloud</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-d</b> <b>--delete</b> Delete old configuration and re-initialize
+everything</p>
+<p>
+<b>-s</b> <b>--no-start</b> Do not auto start processes</p>
+<p>
+<b>-v</b> <b>--verbose</b> Show process information</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>upgrade</b> [<b>options</b>]</p>
+<p>Upgrades Application Lifecycle Service</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node&gt;</i> Targets the provided node.</p>
+<p>
+<b>-v</b> <b>--version</b> <i>\&lt;version&gt;</i> The version of Application Lifecycle Service to upgrade
+to. The latest version is used if this isn't supplied.</p>
+<p>
+<b>--rollback</b> Rolls Application Lifecycle Service back to the previous version.</p>
+<p>
+<b>--skip-confirmation</b> Skips initial confirmation of upgrade.</p>
+<p>
+<b>--resume</b> Resumes an upgrade process, used internally by Kato and
+should only be called manually when requested.</p>
+<p>
+<b>--cluster</b> Performs an upgrade of all nodes in the cluster.</p>
+<p>
+<b>--status</b> Shows the status of upgrades on a node.</p>
+<p>
+<b>--force</b> Forces an upgrade to run.</p>
+<p>
+<b>-j</b> <b>--json</b> Shows the status in json format.</p>
+<p>
+<b>-u</b> <b>--update-kato</b> Updates kato node upgrade to the latest
+codebase.</p>
+<p>
+<b>--role-order</b> <i>\&lt;role-order&gt;</i> Comma separated list of roles
+defining the order that roles should be upgraded in a cluster.</p>
+<p>
+<b>--ignore-inspect-failures</b> Display pre/post upgrade 'kato inspect'
+tests as warnings instead of upgrade failures.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>node</b> <b>version</b> [<b>options</b>] [<i>\&lt;node-IP&gt;</i>]</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op"> <title>Op</title>
+<p>Various operational commands.</p>
+<p>
+<b>op</b> <b>--help</b>
+</p>
+<p>
+<b>op</b> <b>custom_ssl_cert</b> <b>install</b> <i>\&lt;key-path&gt;</i> <i>\&lt;cert-path&gt;</i>
+<i>\&lt;domain&gt;</i> [<b>--wildcard-subdomains</b>] [<b>--update</b>]</p>
+<p>
+<b>op</b> <b>custom_ssl_cert</b> <b>remove</b> <i>\&lt;domain&gt;</i>
+</p>
+<p>
+<b>op</b> <b>custom_ssl_cert</b> <b>list</b>
+</p>
+<p>
+<b>op</b> <b>dhcp</b>
+</p>
+<p>
+<b>op</b> <b>defer</b> <i>\&lt;command&gt;</i> [<b>--run-as-root</b>] [<b>--reset</b>]</p>
+<p>
+<b>op</b> <b>import_from_yaml_files</b> [<b>--upgrade</b>]</p>
+<p>
+<b>op</b> <b>max_client_upload</b> <i>\&lt;max-size&gt;</i>
+</p>
+<p>
+<b>op</b> <b>regenerate</b> <b>ssl_cert</b>
+</p>
+<p>
+<b>op</b> <b>regenerate</b> <b>mysql</b>
+</p>
+<p>
+<b>op</b> <b>regenerate</b> <b>postgresql</b> [<b>--no-restart</b>]</p>
+<p>
+<b>op</b> <b>regenerate</b> <b>helion-rest-auth</b>
+</p>
+<p>
+<b>op</b> <b>regenerate</b> <b>cloud-controller-client-auth</b>
+</p>
+<p>
+<b>op</b> <b>regenerate</b> <b>token-signing-secret</b>
+</p>
+<p>
+<b>op</b> <b>remap_hosts</b> <i>\&lt;old-hostname&gt;</i> <i>\&lt;new-hostname&gt;</i>
+</p>
+<p>
+<b>op</b> <b>run_deferred</b>
+</p>
+<p>
+<b>op</b> <b>set_timezone</b> [<b>--timezone</b> <i>\&lt;TZ&gt;</i>]</p>
+<p>
+<b>op</b> <b>static_ip</b> [<b>--no-restart</b>]</p>
+<p>
+<b>op</b> <b>upstream_proxy</b> <b>set</b> <i>\&lt;proxy-address&gt;</i> [<b>-u</b>
+<i>\&lt;user&gt;</i>] [<b>-p</b> <i>\&lt;pass&gt;</i>]</p>
+<p>
+<b>op</b> <b>upstream_proxy</b> <b>delete</b>
+</p>
+<p>
+<b>op</b> <b>update_hostsfile</b>
+</p>
+<p>
+<b>op</b> <b>generate_service_tokens</b>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="other"> <title>Other commands</title>
+<p>
+<b>custom_ssl_cert</b> Allows admin configuration of custom SSL
+certificates to be used in conjunction with router2g and deployed applications.</p>
+<p>
+<b>dhcp</b> Configures this node's networking to use DHCP</p>
+<p>
+<b>defer</b> Defers a kato command to be run by 'op run_deferred'</p>
+<p>
+<b>max_client_upload</b> Set the maximum upload size in MB</p>
+<p>
+<b>regenerate</b> Regenerate the configuration for a process</p>
+<p>
+<b>remap_hosts</b> Change the hostname to look for when remapping</p>
+<p>
+<b>run_deferred</b> Runs any previously deferred kato commands</p>
+<p>
+<b>set_timezone</b> Change the default system timezone for the host
+machine</p>
+<p>
+<b>static_ip</b> Configures this node to use a static IP</p>
+<p>
+<b>upstream_proxy</b> Configure Application Lifecycle Service to use an external or upstream
+proxy server and deployed apps.</p>
+<p>
+<b>update_hostsfile</b> Updates the /etc/hosts file with the endpoint
+URI mapped to the CC's internal IP</p>
+<p>
+<b>generate_service_tokens</b> Generates service auth tokens.</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-u</b> <b>--user</b> <i>\&lt;user&gt;</i> Proxy username</p>
+<p>
+<b>-p</b> <b>--pass</b> <i>\&lt;pass&gt;</i> Proxy password</p>
+<p>
+<b>-r</b> <b>--no-restart</b> Do not restart processes.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-patch"> <title>Patch</title>
+<p>Update an Application Lifecycle Service cluster with post-release fixes.</p>
+<p>
+<b>patch</b> <b>status</b> [<b>--all</b>]</p>
+<p>
+<b>patch</b> <b>install</b> [<b>--only-this-node</b>] [<b>--no-restart</b>]
+<i>\&lt;patchname&gt;</i>
+</p>
+<p>
+<b>patch</b> <b>reset</b>
+</p>
+<p>
+<b>patch</b> <b>update</b>
+</p>
+<p>
+<b>patch</b> <b>reinstall</b> [<b>--only-this-node</b>] [<b>--no-restart</b>]
+<i>\&lt;patchname&gt;</i>
+</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-a</b> <b>--all</b> Show status for all patches</p>
+<p>
+<b>-n</b> <b>--only-this-node</b> Only patch this node (otherwise entire
+cluster will be patched)</p>
+<p>
+<b>-r</b> <b>--no-restart</b> Don't restart any roles during patching</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-process-list"> <title>Process</title>
+<p>Start, stop, or restart individual processes. Generally not required.</p>
+<p>
+<b>process</b> <b>list</b> [<b>options</b>] [<i>\&lt;process&gt;...</i>]</p>
+<p>Lists configured processes and their current running status.</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Get status for a specific cluster node
+(defaults to local node)</p>
+<p>
+<b>-c</b> <b>--cluster</b> Includes process status over all cluster nodes</p>
+<p>
+<b>-j</b> <b>--json</b> Use JSON format for displaying output</p>
+<p>
+<b>-y</b> <b>--yaml</b> Use YAML format for displaying output</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>process</b> <b>ready</b> [<b>options</b>] <i>\&lt;process&gt;</i>
+</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-b</b> <b>--block</b> <i>\&lt;seconds&gt;</i> Block until ready, for max \&lt;seconds&gt; seconds. If \&lt;seconds&gt; is 0, then block forever.</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Check process on a specific cluster node</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>process</b> <b>restart</b> [<b>options</b>] [<i>\&lt;process&gt;...</i>]</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Restart process on a specific cluster
+node</p>
+<p>
+<b>-c</b> <b>--cluster</b> Restarts process on all nodes in the cluster</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>process</b> <b>start</b> [<b>options</b>] [<i>\&lt;process&gt;...</i>]</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Start process on a specific cluster node</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>process</b> <b>stop</b> [<b>options</b>] [<i>\&lt;process&gt;...</i>]</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Stop process on a specific cluster
+node</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-relocate"> <title>Relocate</title>
+<p>Move containers, application droplets, or services to a new mount point or filesystem location.</p>
+<p>
+<b>relocate</b> [<b>-h</b>] <b>containers</b> <i>\&lt;new_location&gt;</i>
+</p>
+<p>
+<b>relocate</b> [<b>-h</b>] <b>droplets</b> <i>\&lt;new_location&gt;</i>
+</p>
+<p>
+<b>relocate</b> [<b>-h</b>] <b>services</b> <i>\&lt;new_location&gt;</i>
+</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-report"> <title>Report</title>
+<p>Generate a report that can be sent to Application Lifecycle Service support.</p>
+<p>
+<b>report</b> <b>--node</b> <i>\&lt;node-IP&gt;</i>
+</p>
+<p>
+<b>report</b> <b>--cluster</b>
+</p>
+<p>
+<b>report</b> <b>--help</b>
+</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-c</b> <b>--cluster</b> Gather reports from entire cluster into one tarball</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Gather report from a specific cluster node</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-restart"> <title>Restart</title>
+<p>Restart the Application Lifecycle Service or individual roles.</p>
+<p>
+<b>restart</b> [<b>options</b>] [<i>\&lt;role&gt;...</i>]</p>
+<p>
+<b>restart</b> <b>--help</b>
+</p>
+<p>
+<b>-a</b> <b>--all</b> Also restart core processes</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Restart a specific cluster node</p>
+<p>
+<b>-v</b> <b>--verbose</b> Show process information</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-role-add"> <title>Role</title>
+<p>Management of node roles.</p>
+<p>
+<b>role</b> <b>add</b> <b>--help</b>
+</p>
+<p>
+<b>role</b> <b>add</b> [<b>-v</b>] [<b>--node</b> <i>\&lt;node-IP&gt;</i>] [<b>--no-start</b>]
+<i>\&lt;role&gt;...</i>
+</p>
+<p>
+<b>role</b> <b>add</b> [<b>-v</b>] [<b>--node</b> <i>\&lt;node-IP&gt;</i>] [<b>--no-start</b>]
+<b>--all</b>
+</p>
+<p>
+<b>role</b> <b>add</b> [<b>-v</b>] [<b>--node</b> <i>\&lt;node-IP&gt;</i>] [<b>--no-start</b>]
+<b>--all-but</b> <i>\&lt;role&gt;...</i>
+</p>
+<p>
+<b>role</b> <b>add</b> [<b>-v</b>] [<b>--node</b> <i>\&lt;node-IP&gt;</i>] <b>--only</b>
+<i>\&lt;role&gt;...</i>
+</p>
+<p>Enable roles on a node</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-a</b> <b>--all</b> Enable all available roles</p>
+<p>
+<b>-b</b> <b>--all-but</b> Enable all available roles except these</p>
+<p>
+<b>-o</b> <b>--only</b> Enable only these roles, while disabling others</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Add a role on a specific cluster node</p>
+<p>
+<b>-s</b> <b>--no-start</b> Do not start processes</p>
+<p>
+<b>-v</b> <b>--verbose</b> Show process information</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>role</b> <b>info</b> <b>--help</b>
+</p>
+<p>
+<b>role</b> <b>info</b> [<i>\&lt;role&gt;...</i>]</p>
+<p>Display info on roles</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>role</b> <b>remove</b> <b>--help</b>
+</p>
+<p>
+<b>role</b> <b>remove</b> [<b>-v</b>] [<b>--node</b> <i>\&lt;node-IP&gt;</i>] <i>\&lt;role&gt;...</i>
+</p>
+<p>
+<b>role</b> <b>remove</b> [<b>-v</b>] [<b>--node</b> <i>\&lt;node-IP&gt;</i>] <b>--all</b>
+</p>
+<p>
+<b>role</b> <b>remove</b> [<b>-v</b>] [<b>--node</b> <i>\&lt;node-IP&gt;</i>] <b>--all-but</b>
+<i>\&lt;role&gt;...</i>
+</p>
+<p>Disable roles for a node</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-a</b> <b>--all</b> Disable all available roles</p>
+<p>
+<b>-b</b> <b>--all-but</b> Disable all available roles except these</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Remove a role on a specific cluster
+node</p>
+<p>
+<b>-v</b> <b>--verbose</b> Show process information</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-shell"> <title>Shell</title>
+<p>Interactive shell for kato.</p>
+<p>
+<b>shell</b> [<b>--help</b>]</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-start"> <title>Start</title>
+<p>Start Application Lifecycle Service or individual roles.</p>
+<p>
+<b>start</b> [<b>options</b>] [<i>\&lt;role&gt;...</i>]</p>
+<p>
+<b>start</b> <b>--help</b>
+</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Start a specific cluster node</p>
+<p>
+<b>-e</b> <b>--ephemeral</b> Try not to regenerate/modify any config items</p>
+<p>
+<b>-v</b> <b>--verbose</b> Show process information</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-status"> <title>Status</title>
+<p>List configured roles and their current status across the cluster.</p>
+<p>
+<b>status</b> [<b>options</b>]</p>
+<p>List configured roles and their current status across the cluster.</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+<p>
+<b>-a</b> <b>--all</b> Show all roles, including roles not configured on
+cluster</p>
+<p>
+<b>-j</b> <b>--json</b> Use JSON format for displaying output.</p>
+<p>
+<b>-y</b> <b>--yaml</b> Use YAML format for displaying output.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-stop"> <title>Stop</title>
+<p>Stop Application Lifecycle Service or individual roles.</p>
+<p>
+<b>stop</b> [<b>options</b>] [<i>\&lt;role&gt;...</i>]</p>
+<p>
+<b>stop</b> <b>--help</b>
+</p>
+<p>
+<b>-n</b> <b>--node</b> <i>\&lt;node-IP&gt;</i> Stop a specific cluster node</p>
+<p>
+<b>-v</b> <b>--verbose</b> Show process information</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-version"> <title>Version</title>
+<p>Display the version of Application Lifecycle Service being run.</p>
+<p>
+<b>version</b> [<b>--help</b>]</p>
+<p>
+<b>-h</b> <b>--help</b> Show help information</p>
+</section>
+</body>
+</topic>

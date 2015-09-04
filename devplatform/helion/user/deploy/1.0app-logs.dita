@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5206">
+<title>HP Helion 1.0 Development Platform: Application Logs</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/helion/user/deploy/1.0app-logs.md-->
+ <!--permalink: /als/v1/user/deploy/app-logs/--></p>
+<p>
+
+</p>
+<p>Logs for applications running on Application Lifecycle Service are aggregated into streams
+so that data from multiple instances can be viewed together and
+filtered. Application log streams can be accessed via:</p>
+<ul>
+<li>the <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#management-console" type="section"  >
+<i>Management Console</i>
+</xref>
+using the <b>View Logs</b> button on the application Details page, or</li>
+<li>the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-logs" type="section"  >
+<i>helion logs</i>
+</xref>
+command</li>
+<li>application log <xref type="section" href="#topic5206/application-logs-drain">
+<i>drains</i>
+</xref>
+</li>
+</ul>
+<p>Log streams are tailed output from actual log files in each application
+container, which are generally found in the <i>/home/helion/logs/</i> directory.
+These files can be accessed with the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-files" type="section"  >
+<i>helion
+files</i>
+</xref> command or from the
+Application details page of the <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#management-console" type="section"  >
+<i>Management
+Console</i>
+</xref>.</p>
+<p>
+  <b>Note</b>
+</p>
+<p>These files are not automatically rotated. For long-running applications
+or verbose logs, you should <xref type="section" href="#topic5206/application-logs-rotate">
+<i>rotate them</i>
+</xref> to
+avoid filling up the application container's filesystem.</p>
+<section id="helion-logs"> <title>helion logs</title>
+<p>To view an application log stream, use the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-logs" type="section"  >
+<i>helion
+logs</i>
+</xref> command.</p>
+<codeblock>
+  <codeph>helion logs myapp
+</codeph>
+</codeblock>
+<p>To limit the number of lines displayed, use the <codeph>--num</codeph> option:</p>
+<codeblock>
+  <codeph>helion logs myapp --num 50
+</codeph>
+</codeblock>
+<p>To view log stream as it is updated, use the <codeph>--follow</codeph> option:</p>
+<codeblock>
+  <codeph>helion logs myapp --follow
+</codeph>
+</codeblock>
+<p>Log streams can be filtered on a number of parameters:</p>
+<ul>
+<li>
+<b>--text</b> does a glob pattern match on the log message</li>
+<li>
+<b>--instance</b> shows only logs from the specified application
+instances (starting at instance 0).</li>
+<li>
+<b>--filename</b> filters based on the log filename (e.g. 'stderr.log')</li>
+<li>
+<b>--source</b> shows only logs from the specified source ('app' or
+'staging'). Without a source specified, the log stream includes
+staging and application logs as well as cloud events relevant to
+app.</li>
+</ul>
+<p>The <codeph>--json</codeph> flag can be used to return each log
+line as a JSON object.</p>
+<p>
+  <b>Note</b>
+</p>
+<p>
+<codeph>helion logs</codeph> buffers only 400 lines of the log
+stream history (i.e. lines generated prior to it being run). If you need
+earlier log lines, use the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-files" type="section"  >
+<i>helion
+files</i>
+</xref> command to fetch the
+relevant log file from the <i>logs/</i> directory or create a log
+<xref type="section" href="#topic5206/application-logs-drain">
+<i>drain</i>
+</xref> preemptively (where possible).</p>
+</section>
+<section id="adding-files-to-the-stream"> <title>Adding Files to the Stream</title>
+<p>By default, <codeph>helion logs</codeph> streams log data from
+<i>staging_tasks.log</i> (while staging), <i>stdout.log</i> and <i>stderr.log</i>
+(while running).</p>
+<p>You can add up to five additional files to the log stream by modifying
+the <b>HELION_LOG_FILES</b> environment variable (in
+<xref href="../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#env" type="section"  >
+<i>manifest.yml</i>
+</xref> or using <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-set-env" type="section"  >
+<i>helion
+set-env</i>
+</xref>.</p>
+<p>The variable should contain a list of named files separated with ":" in
+the following format:</p>
+<codeblock>
+  <codeph>name=/path/to/file.log:name=/path/to/another.log
+</codeph>
+</codeblock>
+<p>The <i>name</i> used in the value or individual variable name becomes part of
+each log line, and can be used for filtering the stream.</p>
+<p>For example, to add a specific Tomcat log file to the default
+\$HELION_LOG_FILES variable, you might set the following in
+<i>manifest.yml</i>:</p>
+<codeblock>
+  <codeph>env:
+  HELION_LOG_FILES: tomcat=/home/helion/tomcat/logs/catalina.2013-11-04.log:$HELION_LOG_FILES
+</codeph>
+</codeblock>
+<p>Paths can be specified fully or specified relative to \$HELION_APP_ROOT.</p>
+</section>
+<section id="helion-drain"> <title>helion drain</title>
+<p>The <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-drain-add" type="section"  >
+<i>helion drain
+add</i>
+</xref> command is used to
+create a log drain which forwards application logs to external log
+aggregation services, log analysis tools, or Redis databases. For
+example:</p>
+<codeblock>
+  <codeph>$ helion drain add myapp appdrain udp://logs.loggly.com:12345
+</codeph>
+</codeblock>
+<p>This creates a UDP drain called "appdrain" for the application "myapp"
+which forwards all log messages and events for that application to
+<xref href="http://loggly.com/" scope="external" format="html" >Loggly</xref> on port 12345.</p>
+<p>The log drain URL can contain only:</p>
+<ul>
+<li>
+<b>scheme</b>: <codeph>udp://</codeph> or <codeph>tcp://</codeph>
+</li>
+<li>
+<b>host</b>: IP address or hostname</li>
+<li>
+<b>port</b>: number</li>
+</ul>
+<p>Any additional parameters are discarded.</p>
+<p>To delete the drain:</p>
+<codeblock>
+  <codeph>$ helion drain delete appdrain
+</codeph>
+</codeblock>
+<p>Use the --json option send the log lines in JSON format:</p>
+<codeblock>
+  <codeph>$ helion drain add myapp jsondrain --json udp://logs.loggly.com:12346
+</codeph>
+</codeblock>
+<p>To check the status of your application drains, use the
+<codeph>helion drain list</codeph> command.</p>
+<p>
+  <b>Note</b>
+</p>
+<p>If the service at the receiving end of the drain goes offline or becomes
+disconnected, Application Lifecycle Service will retry the connection at increasing
+intervals.
+<!--
+###Log Drain Examples[](#log-drain-examples "Permalink to this headline")
+
+Detailed instructions on how to use drains with third party log analysis
+software or services:
+
+-   [*Papertrail*](#app-logging-examples-papertrail)
+-   [*Loggly*](#app-logging-examples-loggly)
+-   [*Splunk*](#app-logging-examples-splunk)
+
+### Papertrail[](#papertrail "Permalink to this headline")
+
+1.  [Create an account for Papertrail](https://papertrailapp.com/plans)
+2.  In the Dashboard screen, click **Add Systems**.
+    <img src="/media/ppt11.png">
+    <img src="/media/logo.png">
+ 
+3.  In the Setup Systems screen under *Other log methods*, click
+    *Alternatives*.
+    <img src="/media/ppt21w.png" />
+ 
+4.  Choose option C: *My system's hostname changes* and give it a
+    suitable name.
+    <img src="/media/ppt31.png" />
+
+5.  Note the **port number**.
+    <img src="/media/ppt41.png" />
+
+6.  Enable application logging (via udp) by executing the following client command:
+
+    `helion drain add drain-name udp://logs.papertrailapp.com:port#`
+
+### Loggly[](#app-logging-examples-loggly "Permalink to this headline")
+Loggly supports JSON format with minor configuration changes as shown below.
+
+1. [Create an account for Loggly](https://app.loggly.com/)
+1. Under *Incoming Data* tab, click *Add Input*.
+<image src="media/loggly11.png">
+1. In the Add Input screen:
+    - Choose *Syslog UDP or TCP*
+    - Choose *Combination Log Type*
+    - [Optional] For JSON Logging, Choose UDP or TCP **with Stripe** and enable **JSON Logging**. (for system logs)
+    <img src="/media/loggly21.png">
+1.  If we want to accept logs from any Application Lifecycle Service nodes or applications, modify the Allowed Devices section:
+    - Click *Add device*
+    <img src="/media/loggly31.png">
+    -   Add IP Address 0.0.0.0/0 when prompted
+    <img src="/media/loggly41.png" />
+1.  Turn off discovery since we allowed all devices. Also note down the **port number**.
+    <img src="/media/loggly51.png" />
+1. Run **one** of the following client commands to create the log drain:
+
+
+    `helion drain add drain-name udp://logs.loggly.com:port#`
+
+    `helion drain add drain-name tcp://logs.loggly.com:port#`
+
+### Splunk[](#splunk "Permalink to this headline")
+Splunk supports JSON format without further configuration.
+
+1.  [Set up Splunk Server](http://www.splunk.com/download).
+2.  In the welcome screen, click *Add data*
+    <img src="/media/splunk11.png" />
+3.  Under **Choose a Data Source**, click **From a TCP port** (or UDP).
+    <img src="/media/splunk21.png" />
+4.  In the Add new Source screen:
+    -   Select a TCP/UDP port greater than **9999**
+    -   Give it a suitable **Source name**.
+    -   Set sourcetype to **Manual**
+    -   Leave Source Type **empty**
+    <img src="/media/splunk31.png" />
+
+5.  Run the following client command to create the log drain: 
+`helion drain add drain-name udp://splunk-server-address:port#`
+OR
+helion drain add drain-name tcp://splunk-server-address:port#
+
+
+
+### Hello World Custom Drain[](#hello-world-custom-drain "Permalink to this headline")
+
+The command below starts a drain target server on a node, piping to a
+local file:
+
+    nc -lk 0.0.0.0 10000 > log-output.txt
+
+As long as that nc command runs, this will funnel logs from all drains
+targeting it into the file *log-output.txt*
+
+Run one of the following client commands to create the log drain:
+
+
+    helion drain add drain-name udp://server-address:port#
+
+OR
+
+    helion drain add drain-name tcp://server-address:port#
+--></p>
+</section>
+<section id="rotating-application-log-files"> <title>Rotating Application Log Files</title>
+<p>Application Lifecycle Service does not automatically rotate application log files in
+<i>/home/helion/logs/</i>. However, you can add log rotation for these
+files yourself using <codeph>cron</codeph> and
+<codeph>logrotate</codeph>. Programming languages, frameworks, and utilities handle logging
+operations in different ways. Check for incompatibilities with
+<codeph>logrotate</codeph> before implementing log rotation scheme using it.</p>
+<ol>
+<li>
+<p>Add a cron key in <i>manifest.yml</i> to run <codeph>logrotate</codeph>. Set HELION_CRON_INSTANCES to "all" to specify that
+the job should be run in all application instances. For example:</p>
+
+<codeblock>
+<codeph>env:
+  HELION_CRON_INSTANCES: all
+cron:
+  - 0 1 * * * /usr/sbin/logrotate --state /home/helion/app/logrotate-state /home/helion/app/app-logrotate.conf
+</codeph>
+</codeblock>
+
+<p>The <codeph>--state</codeph> option must be set because the
+<codeph>helion</codeph> user does not have permission to
+update the default state file.</p>
+</li>
+<li>
+<p>Add an <i>app-logrotate.conf</i> file to the base directory of your application to specify which log files to rotate, and which <codeph>logrotate</codeph> options to use. For example:</p>
+
+<codeblock>
+<codeph>/home/helion/logs/\*.log {
+  daily
+  compress
+  copytruncate
+  dateext
+  missingok
+  notifempty
+  rotate 3
+  maxage 7
+  size 3M
+}
+</codeph>
+</codeblock>
+</li>
+</ol>
+</section>
+</body>
+</topic>

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5382">
+<title>HP Helion Development Platform: Developing In Ruby</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.0"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/helion/user/deploy/languages/1.0ruby.md-->
+ <!--permalink: /als/v1/user/deploy/languages/ruby/--></p>
+<p>Whether you're deploying an application to the HP Helion Development Platform, a
+Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
+advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools
+to enable successful development are available in Ruby.</p>
+<!-- id="application-lifecycle-services" -->
+<section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
+</section>
+<p>Application Lifecycle Services (ALS), a cloud foundry based Platform as a Service,
+provides a means to execute ruby applications on a managed platform. Deploying applications
+to the platform is as simple as adding configuration to a YAML configuration file and using
+a console application to push the application to ALS.</p>
+<p>At its simplest form the configuration file, <codeph outputclass="docutils literal">
+<!--Original: <span @class=pre>-->
+<ph outputclass="pre">manifest.yml</ph>
+</codeph>, at the root of a project would like:</p>
+<codeblock>name: ruby-web-app
+framework:
+    type: ruby20
+</codeblock>
+<p>This will tell ALS to have a ruby web application.</p>
+<p>To create a worker non-http application set the web process to null (~) and specify
+the command to run. For example,</p>
+<codeblock>
+<!--Original: <span @class=l-Scalar-Plain>-->
+<ph outputclass="l-Scalar-Plain">name</ph>
+<!--Original: <span @class=p-Indicator>-->
+<ph outputclass="p-Indicator">:</ph> <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">ruby-app</ph>
+<!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">framework</ph>
+<!--Original: <span @class=p-Indicator>-->
+<ph outputclass="p-Indicator">:</ph>
+  <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">type</ph>
+<!--Original: <span @class=p-Indicator>-->
+<ph outputclass="p-Indicator">:</ph> <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">rails3</ph>
+  <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">runtime</ph>
+<!--Original: <span @class=p-Indicator>-->
+<ph outputclass="p-Indicator">:</ph> <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">ruby19</ph>
+<!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">command</ph>
+<!--Original: <span @class=p-Indicator>-->
+<ph outputclass="p-Indicator">:</ph> <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">ruby worker.rb</ph>
+<!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">processes</ph>
+<!--Original: <span @class=p-Indicator>-->
+<ph outputclass="p-Indicator">:</ph>
+    <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">web</ph>
+<!--Original: <span @class=p-Indicator>-->
+<ph outputclass="p-Indicator">:</ph> <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">~</ph>
+</codeblock>
+<p>Management of the deployed application and its services happens through a web application or
+a console application.</p>
+<p>To learn more see:</p>
+<ul outputclass="simple">
+<li>
+  <xref href="1.0ruby.dita" >Working with applications in ruby</xref>
+</li>
+<li>The [manifest.yml](/als/v1/user/deploy/manifestyml/) reference</li>
+</ul>
+<p>&lt;</p>
+<p>div class="section" id="hp-helion-sdk"&gt;</p>
+<section id="hp-helion-sdk"> <title>HP Helion SDK</title>
+  <p>Ruby applications can communicate directly with the <xref href="../../../../../publiccloud/api.dita" >Helion APIs</xref> through a REST client
+or use the SDK. The SDK is designed to have a simple well documented API to simplify working with the
+services.</p>
+<p>To understand how it works, here is an example of writing and reading from object storage:</p>
+<codeblock>
+<!--Original: <span @class=k>-->
+<ph outputclass="k">def</ph> <!--Original: <span @class=nf>--><ph outputclass="nf">credentials_hash</ph>
+  <!--Original: <span @class=p>--><ph outputclass="p">{</ph>
+    <!--Original: <span @class=ss>--><ph outputclass="ss">:provider</ph> <!--Original: <span @class=o>--><ph outputclass="o">=&gt;</ph> <!--Original: <span @class=ss>--><ph outputclass="ss">:openstack</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">,</ph>
+    <!--Original: <span @class=ss>--><ph outputclass="ss">:openstack_auth_url</ph> <!--Original: <span @class=o>--><ph outputclass="o">=&gt;</ph> <!--Original: <span @class=no>--><ph outputclass="no">ENV</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">[</ph>
+<!--Original: <span @class=s1>-->
+<ph outputclass="s1">'OS_AUTH_URL'</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">]</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">,</ph>
+    <!--Original: <span @class=ss>--><ph outputclass="ss">:openstack_username</ph> <!--Original: <span @class=o>--><ph outputclass="o">=&gt;</ph> <!--Original: <span @class=no>--><ph outputclass="no">ENV</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">[</ph>
+<!--Original: <span @class=s1>-->
+<ph outputclass="s1">'OS_USER'</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">]</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">,</ph>
+    <!--Original: <span @class=ss>--><ph outputclass="ss">:openstack_api_key</ph> <!--Original: <span @class=o>--><ph outputclass="o">=&gt;</ph> <!--Original: <span @class=no>--><ph outputclass="no">ENV</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">[</ph>
+<!--Original: <span @class=s1>-->
+<ph outputclass="s1">'OS_API_KEY'</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">]</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">,</ph>
+    <!--Original: <span @class=ss>--><ph outputclass="ss">:openstack_tenant</ph> <!--Original: <span @class=o>--><ph outputclass="o">=&gt;</ph>  <!--Original: <span @class=no>--><ph outputclass="no">ENV</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">[</ph>
+<!--Original: <span @class=s1>-->
+<ph outputclass="s1">'OS_TENANT'</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">]</ph> <!--Original: <span @class=p>--><ph outputclass="p">,</ph>
+    <!--Original: <span @class=ss>--><ph outputclass="ss">:openstack_region</ph> <!--Original: <span @class=o>--><ph outputclass="o">=&gt;</ph> <!--Original: <span @class=no>--><ph outputclass="no">ENV</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">[</ph>
+<!--Original: <span @class=s1>-->
+<ph outputclass="s1">'OS_REGION'</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">]</ph>
+  <!--Original: <span @class=p>--><ph outputclass="p">}</ph>
+<!--Original: <span @class=k>--><ph outputclass="k">end</ph>
+
+<!--Original: <span @class=n>--><ph outputclass="n">storage</ph> <!--Original: <span @class=o>--><ph outputclass="o">=</ph> <!--Original: <span @class=no>--><ph outputclass="no">Fog</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">::</ph>
+<!--Original: <span @class=no>-->
+<ph outputclass="no">Storage</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">new</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">(</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">credentials_hash</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">)</ph>
+
+<!--Original: <span @class=c1>, c1=}--><ph>#list directories</ph>
+<!--Original: <span @class=n>--><ph outputclass="n">storage</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">directories</ph>
+
+<!--Original: <span @class=c1>, c1=}--><ph>#create a directory</ph>
+<!--Original: <span @class=n>--><ph outputclass="n">storage</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">directories</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">create</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">(</ph>
+<!--Original: <span @class=ss>-->
+<ph outputclass="ss">:key</ph> <!--Original: <span @class=o>--><ph outputclass="o">=&gt;</ph> <!--Original: <span @class=s2>--><ph outputclass="s2">"Example"</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">)</ph>
+
+<!--Original: <span @class=c1>, c1=}--><ph>#create an object</ph>
+<!--Original: <span @class=n>--><ph outputclass="n">dir</ph> <!--Original: <span @class=o>--><ph outputclass="o">=</ph> <!--Original: <span @class=n>--><ph outputclass="n">storage</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">directories</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">get</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">(</ph>
+<!--Original: <span @class=s2>-->
+<ph outputclass="s2">"Example"</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">)</ph>
+<!--Original: <span @class=n>--><ph outputclass="n">dir</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">files</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">create</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">(</ph>
+<!--Original: <span @class=ss>-->
+<ph outputclass="ss">:key</ph> <!--Original: <span @class=o>--><ph outputclass="o">=&gt;</ph> <!--Original: <span @class=s2>--><ph outputclass="s2">"sample.txt"</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">,</ph> <!--Original: <span @class=ss>--><ph outputclass="ss">:body</ph> <!--Original: <span @class=o>--><ph outputclass="o">=&gt;</ph> <!--Original: <span @class=no>--><ph outputclass="no">File</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">open</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">(</ph>
+<!--Original: <span @class=s2>-->
+<ph outputclass="s2">"/path/to/sample.txt"</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">))</ph>
+
+<!--Original: <span @class=c1>, c1=}--><ph>#get the same object out</ph>
+<!--Original: <span @class=n>--><ph outputclass="n">dir</ph> <!--Original: <span @class=o>--><ph outputclass="o">=</ph> <!--Original: <span @class=n>--><ph outputclass="n">conn</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">directories</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">get</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">(</ph>
+<!--Original: <span @class=s2>-->
+<ph outputclass="s2">"Example"</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">)</ph>
+<!--Original: <span @class=n>--><ph outputclass="n">file</ph> <!--Original: <span @class=o>--><ph outputclass="o">=</ph> <!--Original: <span @class=n>--><ph outputclass="n">dir</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">files</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">get</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">(</ph>
+<!--Original: <span @class=s2>-->
+<ph outputclass="s2">"sample.txt"</ph>
+<!--Original: <span @class=p>-->
+<ph outputclass="p">)</ph>
+<!--Original: <span @class=n>--><ph outputclass="n">file</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">key</ph>   <!--Original: <span @class=c1>, c1=}--><ph># =&gt; sample.txt</ph>
+<!--Original: <span @class=n>--><ph outputclass="n">file</ph>
+<!--Original: <span @class=o>-->
+<ph outputclass="o">.</ph>
+<!--Original: <span @class=n>-->
+<ph outputclass="n">content_type</ph> <!--Original: <span @class=c1>, c1=}--><ph># =&gt; text/plain</ph>
+</codeblock>
+<p>
+  <b>Note</b>
+</p>
+<p>See <xref href="../../../../../devplatform/helion/user/deploy/1.0buildpack.dita#buildpacks" type="section"  >Buildpacks</xref> for an alternative way
+to deploy Ruby on Rails applications.</p>
+</section>
+<section id="using-ruby-20"> <title>Using Ruby 2.0</title>
+<p>The <i>manifest.yml</i> file must specify the Ruby runtime version and Rails as the
+framework type:</p>
+<codeblock>
+  <codeph>framework:
+  runtime: ruby20
+</codeph>
+</codeblock>
+<p>Default Ruby version is Ruby 1.9</p>
+</section>
+<section id="known-issues"> <title>Known Issues</title>
+<ul>
+<li>
+<p>Rmagick gem currently not supported.</p>
+</li>
+<li>
+<p>PostgreSQL Gem (pg) version must be pinned to 0.12.2 (if used):</p>
+
+<codeblock>
+<codeph>gem 'pg', '0.12.2'
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Must specify Rake Gem immediately before the line loading rails.
+This happens because when Rails loads, it finds version 0.9.2 of
+Rake, and that becomes the only version of Rake in the process.
+Later code wants version 0.9.2.2, and fails:</p>
+
+<codeblock>
+<codeph>gem 'rake', '0.9.2.2'
+gem 'rails'
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>For Ruby 1.9, Cloud Foundry requires a tweak to the jquery-rails gem.</p>
+
+<lq>
+  <p>gem 'cloudfoundry-jquery-rails'</p>
+</lq>
+</li>
+</ul>
+</section>
+<section id="ruby-on-rails-31"> <title>Ruby on Rails 3.1+</title>
+<p>To get the asset pipeline working on Application Lifecycle Service, precompile your assets in
+your development environment, which compiles them into public/assets:</p>
+<codeblock>
+  <codeph>bundle exec rake assets:precompile
+</codeph>
+</codeblock>
+</section>
+<section id="gems-and-libraries"> <title>Gems and Libraries</title>
+<p>A <i>Gemfile</i> must be included in your app that lists all required gems.
+Run:</p>
+<codeblock>
+  <codeph>$ bundle install
+$ bundle package
+</codeph>
+</codeblock>
+<p>any time you modify the <i>Gemfile</i> and prior to pushing an app to
+Application Lifecycle Service.</p>
+<p>If VCAP sees a Gemfile.lock in the application, it will ensure the
+needed gems are packaged, and set the BUNDLE_PATH environment variable
+to point at them.</p>
+</section>
+<section id="unsupported-gemfile-features"> <title>Unsupported <i>Gemfile</i> features</title>
+<ol>
+<li>git urls or branch dependencies</li>
+<li>gem :path =&gt; "some/path"</li>
+<li>platform-conditional gems</li>
+</ol>
+</section>
+<section id="database-services"> <title>Database Services</title>
+<p>Cloud Foundry supports database auto-reconfiguration for Rails
+applications.</p>
+</section>
+<section id="worker-applications"> <title>Worker Applications</title>
+<p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
+the Health Manager.</p>
+<p>To deploy worker applications, you need to use the
+<xref href="../../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#command" type="section"  >
+<i>command</i>
+</xref> key and set the
+<xref href="../../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#web" type="section"  >
+<i>processes: web</i>
+</xref>
+key to Null ("\~").</p>
+</section>
+<section id="example"> <title>Example</title>
+<codeblock>
+  <codeph>name: ruby-app
+framework:
+  type: rails3
+  runtime: ruby19
+command: ruby worker.rb
+processes:
+  web: ~
+</codeph>
+</codeblock>
+</section>
+<section id="general-guidelines"> <title>General Guidelines</title>
+</section>
+<section id="appweb-servers"> <title>App/Web Servers</title>
+<p>For the best performance, using Thin Ruby web server is recommended.
+Include <codeph>gem 'thin'</codeph> in your <i>Gemfile</i>.</p>
+<ul>
+<li>
+<xref href="https://devcenter.heroku.com/articles/ruby#webserver" type="section" scope="external" format="html" >Using Thin
+Webserver</xref>:
+Heroku Dev Center.</li>
+</ul>
+</section>
+<section id="bundler"> <title>Bundler</title>
+<p>First, you need bundler and rails installed locally. This can be done
+via:</p>
+<codeblock>
+  <codeph>$ sudo gem install rails bundler --no-ri --no-rdoc
+</codeph>
+</codeblock>
+</section>
+<section id="running-rake-commands"> <title>Running rake commands</title>
+<p>Generally, <codeph>bundle exec</codeph> must be used when running
+any commands that are installed through Gemfile/bundler.</p>
+<p>To run <codeph>rake stats</codeph>, for instance, use the
+<codeph>helion run</codeph> command:</p>
+<codeblock>
+  <codeph>$ helion run *appname* bundle exec rake stats
+</codeph>
+</codeblock>
+<p>See the <xref href="../../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" type="section"  >Command
+Reference</xref> for
+details on the use of <codeph>helion run</codeph>.</p>
+</section>
+<section id="references"> <title>References</title>
+<ul>
+<li>
+<xref href="http://blog.cloudfoundry.com/2012/03/12/using-cloud-foundry-services-with-ruby-part-1-auto-reconfiguration/" scope="external" format="html" >Auto-Reconfiguration Part
+I</xref>:
+Cloud Foundry Blog.</li>
+<li>
+<xref href="http://blog.cloudfoundry.com/2012/03/15/using-cloud-foundry-services-with-ruby-part-2-run-time-support-for-ruby-applications" scope="external" format="html" >Auto-Reconfiguration Part
+II</xref>:
+Cloud Foundry Blog.</li>
+<li>
+<xref href="http://docs.cloudfoundry.org/buildpacks/ruby/ruby-tips.html" scope="external" format="html" >Working with Ruby, Rails and Sinatra: Things to
+know</xref>:
+Cloud Foundry Documentation.</li>
+</ul>
+</section>
+</body>
+</topic>

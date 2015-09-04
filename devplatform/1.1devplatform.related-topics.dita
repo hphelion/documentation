@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic592">
+<title>HP Helion 1.1 Development Platform: Related Documentation</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/1.1devplatform.related-topics.md-->
+ <!--permalink: /helion/devplatform/1.1/related-topics/--></p>
+<p>
+
+</p>
+  <p>The HP Helion Development Platform is based on <tm tmtype="tm">Cloud Foundry</tm> and <tm tmtype="reg">OpenStack</tm>) technology along with an HP-configured Linux operating system.</p>
+<p>You can find related information on the following sites:</p>
+<ul>
+<li>
+  <xref href="http://docs.cloudfoundry.org/" scope="external" format="html" ><tm tmtype="tm">Cloud Foundry</tm></xref>
+</li>
+  <li>OpenStack <xref href="https://wiki.openstack.org/wiki/Trove" scope="external" format="html" >Trove</xref>
+</li>
+</ul>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

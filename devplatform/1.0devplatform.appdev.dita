@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2368">
+<title>HP Helion 1.0 Development Platform: Resources for Application Developers</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/1.0devplatform.appdev.md-->
+ <!--permalink: /helion/devplatform/appdev/--></p>
+<p>
+
+</p>
+<p>HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.</p>
+<p>Each sample builds on the previous one and all source code is provided for you to build, deploy, and take apart. Each sample is provided in multiple languages.</p>
+<section id="prerequisites-before-you-begin"> <title>Prerequisites - Before you begin</title>
+<p>In order to download and deploy these sample applications, you must have the necessary framework installed and configured.</p>
+<ul>
+<li>HP Helion <tm tmtype="reg">OpenStack</tm> <xref href="../commercial/GA1/1.0commercial.install-GA-overview.dita" >cloud deployed</xref>
+</li>
+<li>Application Lifecycle Service <xref href="../devplatform/1.0devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
+
+<ul>
+<li>You can also quickly set up a cluster in the free and publicly available Helion cloud as part ofthe <xref href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita">
+                >Quick Start Developer Trial</xref>: </li>
+</ul>
+</li>
+<li>Logon and password credentials for the cluster.</li>
+<li>Access to the <xref href="../devplatform/helion/user/client/1.0index.dita" >Helion command-line interface (CLI)</xref>
+</li>
+<li>(Optional) Access to the <xref href="../devplatform/1.0devplatform.eclipse.dita" >Eclipse</xref> deployment plugin.</li>
+</ul>
+</section>
+<section id="sample"> <title>Sample code</title>
+<p>For best results, work with each sample in the order in which they are provided, as each one builds on the knowledge provided in the previous sample.</p>
+</section>
+<section id="java"> <title>Java</title>
+<ol>
+<li>
+<p>
+<xref href="../devplatform/workbook/helloworld/1.0helloworld.java.dita" >Hello World</xref> <!--A BR tag was used here in the original source.-->
+The Hello World sample is as simple as it gets: Hello World!</p>
+</li>
+<li>
+<p>
+<xref href="../devplatform/workbook/database/1.0database.java.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
+Create a database and execute a query against it. </p>
+</li>
+<li>
+<p>
+<xref href="../devplatform/workbook/messaging/1.0messaging.java.dita" >Working with Messaging</xref>
+<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
+</li>
+</ol>
+<p>More Helion <xref href="../devplatform/helion/user/deploy/languages/1.0java.dita" >Java</xref> references.</p>
+</section>
+<section id="node"> <title>Node</title>
+<ol>
+<li>
+<p>
+<xref href="../devplatform/workbook/helloworld/1.0helloworld.node.dita" >Hello World</xref>
+<!--A BR tag was used here in the original source.-->
+The Hello World sample is as simple as it gets: Hello World!</p>
+</li>
+<li>
+<p>
+<xref href="../devplatform/workbook/database/1.0database.node.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
+Create a database and execute a query against it.</p>
+</li>
+<li>
+<p>
+<xref href="../devplatform/workbook/messaging/1.0messaging.node.dita" >Working with Messaging</xref>
+<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
+</li>
+</ol>
+<p>More Helion <xref href="../devplatform/helion/user/deploy/languages/1.0node.dita" >Node</xref> references.</p>
+</section>
+<section id="PHP"> <title>PHP</title>
+<ol>
+<li>
+<p>
+<xref href="../devplatform/workbook/helloworld/1.0helloworld.php.dita" >Hello World</xref> <!--A BR tag was used here in the original source.-->
+The Hello World sample is as simple as it gets: Hello World!</p>
+</li>
+<li>
+<p>
+<xref href="../devplatform/workbook/database/1.0database.php.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
+Create a database and execute a query against it.</p>
+</li>
+<li>
+<p>
+<xref href="../devplatform/workbook/messaging/1.0messaging.php.dita" >Working with Messaging</xref>
+<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
+</li>
+</ol>
+<p>More Helion <xref href="../devplatform/helion/user/deploy/languages/1.0php.dita" >PHP</xref> references.</p>
+</section>
+<section id="other-references"> <title>Other references</title>
+<ul>
+<li>
+<xref href="../devplatform/1.0devplatform.marketplace.install.dita" >Installing the Marketplace</xref>
+</li>
+<li>
+<xref href="../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" type="section">ALS command-line interface (CLI) reference</xref>
+</li>
+<li>
+<xref href="../devplatform/helion/user/1.0index.dita" >Application Lifecycle Service (ALS) User's Guide</xref>
+</li>
+<li>
+<xref href="../devplatform/helion/user/deploy/1.0app-debug.dita" >Remote Debugging</xref>
+</li>
+<li>
+<xref href="../devplatform/helion/user/console/1.0index.dita" >The Management Console</xref>
+</li>
+<li>
+<xref href="../devplatform/helion/user/deploy/1.0app-logs.dita" >Logs, Streams, and Drains</xref>
+</li>
+</ul>
+</section>
+<section id="best-practices"> <title>Best practices</title>
+<ul>
+<li>
+<xref href="http://12factor.net/" scope="external" format="html" >The 12-Factor App</xref>
+</li>
+<li>
+  <xref href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html" scope="external" format="html" >Tips from <tm tmtype="tm">Cloud Foundry</tm>.</xref>
+</li>
+</ul>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2469">
+<title>HP Helion 1.0 Development Platform: Release Notes</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/1.0devplatform.release-notes.md-->
+ <!--permalink: /helion/devplatform/release-notes/--></p>
+<p>
+
+</p>
+<p>The following release notes are for the HP Helion Development Platform 1.0 released on 10/14/2014. We hope you enjoy the release!
+Known Issues:</p>
+<ol>
+<li>
+<p>
+<b>Intermittent Authentication Errors from Keystone</b>. Some requests to keystone will intermittently fail to authenticate. Retrying the request will generally succeed. This is a known issue and will be fixed in the next release.</p>
+</li>
+<li>
+<p>
+<b>Database Service will not install if there are more than three availability zones</b>. You need to have only three availability zones to install the database service.</p>
+</li>
+<li>
+<p>
+<b>Database Instance and backup deletion not available from the Horizon UI</b>. The Horizon UI is not able to delete database instances and backups. This is a known issue and will be fixed in the next release.</p>
+</li>
+<li>
+<p>
+<b>Password Field is not used when creating a RabbitMQ cluster</b>. The password field in the Horizon panel is not necessary when creating a RabbitMQ cluster, and will be ignored. This is a known issue and will be fixed in the next release.</p>
+</li>
+<li>
+<p>
+<b>Download PEM not working in the RabbitMQ Panel for the Messaging Service</b>. In Safari browsers the download PEM button results in an error.</p>
+</li>
+<li>
+<p>
+<b>RabbitMQ cluster creation fails when a floating IP pool has not been selected</b>. You must select a floating IP pool when creating a RabbitMQ cluster in the messaging service.</p>
+</li>
+<li>
+<p>
+<b>Using the correct network to connect to an ALS cluster</b>. When pushing applications to ALS, you will be presented with two domains for the new application (unless additional domains have been added by the ALS cluster administrator): a xip.io address such as 10.0.0.1.xip.io, and a local domain such as hphelion-xyz.local. When connecting to the ALS Cluster over a network only the xip.io domain will allow clients to connect to the deployed application, choose this option you they have assigned custom domains to you cluster.</p>
+</li>
+<li>
+<p>
+<b>Small DEAs can run out of disk space</b>. The ALS Seed Node Images in 1.0 are shipped in a frozen 10 gigabyte size, resulting in a limited amount of disk space available for applications and services. This can result in highly active clusters failing over time due to a lack of disk space. It is recommended to allocate more 4 gigabyte DEAs rather than fewer larger DEAs.</p>
+</li>
+</ol>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

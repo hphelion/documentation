@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15975">
+<title>HP Helion 1.0 Development Platform: General Deployment</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/helion/user/deploy/1.0index.md-->
+ <!--permalink: /als/v1/user/deploy/--></p>
+<section id="see-the-helion-11-development-platform-version-of-this-page"> <title>
+
+</title>
+<p>Applications are typically deployed to Application Lifecycle Service by pushing source code
+and configuration to the system's API endpoint using the <xref href="../../../../devplatform/helion/user/client/1.0index.dita#client" type="section"  >
+<i>helion client</i>
+</xref> or other clients that use the
+Application Lifecycle Service or Cloud Foundry API.</p>
+<p>The steps for deploying applications will be slightly different
+depending on the application and its requirements.</p>
+<p>
+  <b>Note</b>
+</p>
+<p>In Application Lifecycle Service 1.0 and later (Cloud Foundry v2 API), application deployment
+is done primarily using <xref href="../../../../devplatform/helion/user/deploy/1.0buildpack.dita" >Buildpacks</xref>. A
+special built-in 'Legacy' buildpack handles Cloud Foundry V1 frameworks for
+existing application configurations.</p>
+</section>
+<section id="targeting-authenticating"> <title>Targeting &amp; Authenticating</title>
+<p>Before deploying an app, the client must first target Application Lifecycle Service's API
+endpoint URL. This will generally be the same URL that exposes the
+Management Console. For example:</p>
+<codeblock>
+  <codeph>$ helion target api.example.com
+Successfully targeted to [https://api.example.hphelion.com]
+...
+</codeph>
+</codeblock>
+<p>Use the <codeph>helion login</codeph> command to authenticate
+with your username and password:</p>
+<codeblock>
+  <codeph>$ helion login &lt;username&gt;
+Attempting login to [https://api.example.hphelion.com]
+Password: ******
+Successfully logged into [https://api.example.hphelion.com]
+</codeph>
+</codeblock>
+</section>
+<section id="selecting-org-space"> <title>Selecting Org &amp; Space</title>
+<p>If your account is a member of multiple
+<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" type="section"  >
+<i>organizations</i>
+</xref>, choose which one you
+want to operate under:</p>
+<codeblock>
+  <codeph>$ helion switch-org exampleco
+</codeph>
+</codeblock>
+<p>Likewise, if you are a member of more than one space, choose a default
+space:</p>
+<codeblock>
+  <codeph>$ helion switch-space devel-example
+</codeph>
+</codeblock>
+</section>
+<section id="pushing-application-code"> <title>Pushing Application Code</title>
+<p>Change to the root directory of your source code project, and use the
+<codeph>helion push</codeph> command to deploy your application.
+If you have a <xref href="../../../../devplatform/helion/user/deploy/1.0manifestyml.dita" >
+<i>manifest.yml</i>
+</xref> config file in this
+directory, you can use just:</p>
+<codeblock>
+  <codeph>$ helion push -n
+</codeph>
+</codeblock>
+<p>The "-n" option is an alias for "--no-prompt", which takes options from
+the config YAML file instead of prompting for them.</p>
+<p>The output of the push command will be something like:</p>
+<codeblock>
+  <codeph>$ helion push -n
+Using manifest file "manifest.yml"
+Application Url: env.example.hphelion.com
+Creating Application [env] as [https://api.example.hphelion.com -&gt; exampleco -&gt; devel-example -&gt; env] ... OK
+  Map env.stacka.to ... OK
+Uploading Application [env] ...
+  Checking for bad links ... 80 OK
+  Copying to temp space ... 79 OK
+  Checking for available resources ...  OK
+  Processing resources ... OK
+  Packing application ... OK
+  Uploading (223K) ... 100% OK
+Push Status: OK
+...
+helion.dea_ng: [STAGED_APP] Completed staging application
+helion.dea_ng.0: [SPAWNING_APP] Spawning app web process: node server.js
+app.0: Server running at
+app.0:   =&gt; http://0.0.0.0:50932/
+app.0: CTRL + C to shutdown
+OK
+http://env.heli.on/ deployed
+</codeph>
+</codeblock>
+<p>The Helion client will show staging and running
+logs for the deployment process. To inspect these logs after deployment
+has finished, use the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-logs" type="section"  >
+<i>helion
+logs</i>
+</xref> command.</p>
+</section>
+<section id="language-specific-deployment"> <title>Language Specific Deployment</title>
+<p>See each of these sections for language specific deployment details and
+examples:</p>
+<ul>
+<li>
+<xref href="../../../../devplatform/helion/user/deploy/languages/1.0java.dita" >Java</xref>
+</li>
+<li>
+<xref href="../../../../devplatform/helion/user/deploy/languages/1.0node.dita" >Node</xref>
+</li>
+<li>
+<xref href="../../../../devplatform/helion/user/deploy/languages/1.0php.dita" >PHP</xref>
+<!---   [Clojure](/als/v1/user/deploy/languages/clojure/)
+-   [Go](/als/v1/user/deploy/languages/go/)
+-   [Perl](/als/v1/user/deploy/languages/perl/)
+-   [Python](/als/v1/user/deploy/languages/python/)
+-   [Ruby](/als/v1/user/deploy/languages/ruby/)
+--></li>
+</ul>
+</section>
+<section id="configuring-your-application-for-application-lifecycle-service"> <title>Configuring Your Application For Application Lifecycle Service</title>
+<p>Most applications should be able to run under Application Lifecycle Service with only a few
+changes.</p>
+<dl>
+<dlentry>
+<dt>
+<b>manifest.yml</b>
+</dt>
+<dd>
+<p>A manifest.yml file should be added to the root of
+your application to hold installation details as well as setup
+configuration instructions for your app.</p>
+
+<p>
+<xref href="../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#manifest-yml" type="section"  >
+<i>manifest.yml</i>
+</xref>
+</p>
+</dd>
+</dlentry>
+
+
+<dlentry>
+<dt>
+<b>Data Services</b>
+</dt>
+<dd>
+<p>If you want to use Application Lifecycle Service's data services, your code will need to
+use the connection details provided by special environment variables
+(e.g. DATABASE_URL). The code should generally check for the
+existence of these environment variables, use them if they exist,
+and otherwise fall back to some default setting.</p>
+
+<p>See the <xref href="../../../../devplatform/helion/user/services/1.0data-services.dita#data-services" type="section"  >
+<i>Data
+Services</i>
+</xref> section for
+further details.</p>
+</dd>
+</dlentry>
+
+
+<dlentry>
+<dt>
+<b>Environment Variables</b>
+</dt>
+<dd>
+<p>A number of special environment variables are available during
+staging and runtime. These can be used in
+<xref href="../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#hooks" type="section"  >
+<i>hooks</i>
+</xref> or application code
+(for setting up databases, filesystem services, web server options,
+and cron jobs) in places where you would normally use hard-coded
+paths, credentials, or host-specific values.</p>
+
+<p>See the <xref href="../../../../devplatform/helion/user/reference/1.0environment.dita#environment-variables" type="section"  >
+<i>Environment
+Variables</i>
+</xref>
+section for a complete list.</p>
+</dd>
+</dlentry>
+
+</dl>
+</section>
+<section id="application-lifecycle-service-push"> <title>Application Lifecycle Service push</title>
+<p>The <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-push" type="section"  >
+<i>helion push</i>
+</xref> command
+creates (or updates) applications on Application Lifecycle Service. It negotiates with the
+API endpoint to reserve application URLs, allocate application
+instances, provision data services, upload application code, and
+optionally stage and start the application.</p>
+<p>The command will prompt for options or use those specified in a <xref href="../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#manifest-yml" type="section"  >
+<i>manifest.yml</i>
+</xref> file.</p>
+<p>
+  <b>Note</b>
+</p>
+<p>The application name must be a valid <xref href="http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names" type="section" scope="external" format="html" >hostname
+label</xref>
+(i.e. containing only alphanumeric characters and hyphens).</p>
+<p>The <codeph>push</codeph> command implicitly stages and starts the
+application unless the <codeph>--no-start</codeph> option is used.
+With this option, applications are pushed in a pre-staged, stopped state
+where variables can be added (e.g. for use in staging hooks). The
+application can then be staged and started with the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-start" type="section"  >
+<i>helion
+start</i>
+</xref> command or the Start
+button in the <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#user-console-welcome" type="section"  >
+<i>Management
+Console</i>
+</xref>.</p>
+<p>The client will display staging logs while pushing the application but
+will generally exit before any application logs are visible. To view the
+application logs, use the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-logs" type="section"  >
+<i>helion
+logs</i>
+</xref> command.</p>
+</section>
+<section id="allowed-file-types"> <title>Allowed File Types</title>
+<p>During the push process, Application Lifecycle Service includes only three file types:</p>
+<ol>
+<li>Files</li>
+<li>Folders</li>
+<li>Links</li>
+</ol>
+<p>All other special file types are ignored.</p>
+</section>
+<section id="naming-and-urls"> <title>Naming and URLs</title>
+<p>To prevent confusion or collisions, Application Lifecycle Service enforces uniqueness for
+URLs, application names, and service names:</p>
+<ul>
+<li>
+<b>URLs</b> (auto-generated or <xref type="section" href="#topic15975/deploy-map-url">
+<i>manually mapped</i>
+</xref>)
+must be globally unique, and are allocated on a "first come, first
+serve" basis.</li>
+<li>
+<b>Application names</b> must be unique within the scope of the
+<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" type="section"  >
+<i>space</i>
+</xref>. Applications deployed in
+different spaces can have the same name, but the full application
+URL must be globally unique URL.</li>
+<li>
+<b>Service names</b> must be unique within the scope of the
+<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" type="section"  >
+<i>space</i>
+</xref>. The name given to a service
+during creation is a pointer to a globally unique string (i.e. the
+<i>actual</i> database name in the system as shown by
+VCAP_SERVICES), so there is no possibility of naming conflicts
+with services created in other orgs and spaces.</li>
+</ul>
+</section>
+<section id="crontab-support"> <title>Crontab Support</title>
+<p>
+  <b>Note</b>
+</p>
+<p>Cron commands are only executed on instance #0 of the app.</p>
+<p>Cron commands can be provided either in a regular crontab file in the
+root directory of the app, or via the <codeph>cron:</codeph>
+section in <i>manifest.yml</i> (See <xref href="../../../../devplatform/helion/user/deploy/1.0manifestyml.dita" >
+<i>manifest.yml
+Options</i>
+</xref>.</p>
+<p>The <codeph>HOME</codeph> and <codeph>PATH</codeph>
+environment variables, as well as all variables that start with
+<codeph>PERL</codeph>, <codeph>PYTHON</codeph>,
+<codeph>VCAP</codeph>,
+<codeph>BUNDLE</codeph>, <codeph>LEIN</codeph>,
+<codeph>GEM</codeph>, <codeph>RACK</codeph>, <codeph>RAILS</codeph>, <codeph>RUBY</codeph> or <codeph>http</codeph>
+are exported to the top of the crontab file. When applicable, the
+following database related environment variables are also added:
+<codeph>DATABASE_URL</codeph>, <codeph>MYSQL_URL</codeph>,
+<codeph>POSTGRESQL_URL</codeph>, <codeph>REDIS_URL</codeph>,
+<codeph>MONGODB_URL</codeph>, and <codeph>RABBITMQ_URL</codeph>.</p>
+<p>This happens after the <codeph>pre-running</codeph> hook has
+executed, so any changes made by those commands will be included in the
+crontab file.</p>
+<p>After setting up environment variables, we copy the <i>\$HOME/crontab</i>
+file, and finally the commands from the <codeph>cron:</codeph>
+section in <i>manifest.yml</i>. The resulting file is stored at
+<i>\$HELION_APP_ROOT/crontab</i>.</p>
+</section>
+<section id="whitespace-newlines-in-environment-variables"> <title>Whitespace &amp; Newlines in Environment Variables</title>
+<p>To prevent breakage in cron, embedded newlines ("\n") in environment
+variable values will be replaced with "\\n" when generating the
+crontab. Any leading and trailing spaces in environment variable values
+are also stripped.</p>
+</section>
+<section id="mapping-app-urls"> <title>Mapping App URLs</title>
+<p>Application Lifecycle Service automatically assigns to each application a URL made up of the
+application's name and the base URL for the system. An application named
+"myblog" deployed to an Application Lifecycle Service system at "api.example.com" would be given
+the URL "myblog.example.com".</p>
+<p>In addition to this default URL, additional URLs can be set for an
+application using the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-map" type="section"  >
+<i>helion
+map</i>
+</xref> command. The application
+will respond to requests on the mapped URL, provided a DNS record has
+been set up resolving to Application Lifecycle Service's external IP or hostname.</p>
+<p>For example, to map a URL to an existing application on Application Lifecycle Service:</p>
+<codeblock>
+  <codeph>$ helion apps
+
++--------------+---+--------+----------------------------------+------------+
+| Application  | # | Health | URLS                             | Services   |
++--------------+---+--------+----------------------------------+------------+
+| myapp        | 1 | 100%   | myapp.example.com                  |            |
++--------------+---+--------+----------------------------------+------------+
+
+$ helion map myapp example.com
+
++--------------+---+--------+----------------------------------+------------+
+| Application  | # | Health | URLS                             | Services   |
++--------------+---+--------+----------------------------------+------------+
+| myapp        | 1 | 100%   | myapp.example.com                  |            |
+|              |   |        | example.com                     |            |
++--------------+---+--------+----------------------------------+------------+
+</codeph>
+</codeblock>
+<p>If DNS is configured correctly, requests to "example.com" will resolve
+transparently to "myapp.example.com".</p>
+<p>
+  <b>Note</b>
+</p>
+<p>Application URLs are allocated on a "first come, first serve" basis, and
+are reserved for the user who created the URL.</p>
+<p>URLs can be mapped to multiple applications owned by the same user,
+which can be useful for A/B testing. Application Lifecycle Service routes requests to the
+mapped URL randomly between all available app instances.</p>
+<p>Using the 'myapp.example.com' example above, you could push 'myapp-v2'
+(e.g. a more recent revision) then map 'example.com' to that app as
+well. You can access the specific versions directly using
+'myapp.example.com' and 'myapp-v2.example.com', and use 'example.com' to
+round robin between available instances of both versions:</p>
+<codeblock>
+  <codeph>+-------------+---+---------+--------------------+-------------+
+| Application | # | Health  | URLS               | Services    |
++-------------+---+---------+--------------------+-------------+
+| myapp       | 5 | RUNNING | myapp.example.com    |             |
+|             |   |         | example.com       |             |
+| myapp-v2    | 1 | RUNNING | myapp-v2.example.com |             |
+|             |   |         | example.com       |             |
++-------------+---+---------+--------------------+-------------+
+</codeph>
+</codeblock>
+<p>As you gain confidence with the new revision, you can increase the
+number of instances of 'myapp-v2' (i.e. phasing that version into
+production rather than cutting over) and eventually
+<xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-unmap" type="section"  >
+<i>unmap</i>
+</xref> 'example.com'
+from the original 'myapp'.</p>
+</section>
+<section id="best-practices"> <title>Best Practices</title>
+</section>
+<section id="reducing-downtime-during-app-updates"> <title>Reducing downtime during app updates</title>
+<p>Updating an app can create downtime while the new code is being staged.
+URL mapping can be used to reduce this downtime by switching between two
+running versions of an app.</p>
+<p>For example, we have an application called "customertracker". The pushed
+application name will include a version or build number, but it is
+mapped to a "production" URL as well:</p>
+<codeblock>
+  <codeph>$ helion apps
+
++--------------------+---+---------+------------------------------+------------+
+| Application        | # | Health  | URLS                         | Services   |
++--------------------+---+---------+------------------------------+------------+
+| customertracker-v1 | 1 | RUNNING | customertracker-v1.example.com | customerdb |
+|                    |   |         | customertracker.example.com  |            |
++--------------------+---+---------+------------------------------+------------+
+</codeph>
+</codeblock>
+<p>Push the updated code with a new application name:</p>
+<codeblock>
+  <codeph>$ helion push --as customertracker-v2
+
+...
+
+$ helion apps
+
++--------------------+---+---------+------------------------------+------------+
+| Application        | # | Health  | URLS                         | Services   |
++--------------------+---+---------+------------------------------+------------+
+| customertracker-v1 | 1 | RUNNING | customertracker-v1.example.com | customerdb |
+|                    |   |         | customertracker.example.com  |            |
+| customertracker-v2 | 1 | RUNNING | customertracker-v2.example.com | customerdb |
++--------------------+---+---------+------------------------------+------------+
+</codeph>
+</codeblock>
+<p>
+  <b>Note</b>
+</p>
+<p>In this example, the configured service has the same name, so it is
+bound to both versions of the application. This will only work if there
+are no database schema changes or differences in the filesystem layout
+on a persistent filesystem service. If there are such differences, use
+distinct data services for the new version.</p>
+<p>Map the "production" URL to the new app:</p>
+<codeblock>
+  <codeph>$ helion map customertracker-v2 customertracker.example.com
+
+$ helion apps
+
++--------------------+---+---------+------------------------------+------------+
+| Application        | # | Health  | URLS                         | Services   |
++--------------------+---+---------+------------------------------+------------+
+| customertracker-v1 | 1 | RUNNING | customertracker-v1.stacka.to | customerdb |
+|                    |   |         | customertracker.example.com  |            |
+| customertracker-v2 | 1 | RUNNING | customertracker-v2.stacka.to | customerdb |
+|                    |   |         | customertracker.example.com  |            |
++--------------------+---+---------+------------------------------+------------+
+</codeph>
+</codeblock>
+<p>While both versions of the application are live and mapped to the same
+production URL, the router will round-robin web requests to this URL
+between both versions.</p>
+<p>Next, unmap the production URL from the first app:</p>
+<codeblock>
+  <codeph>$ helion unmap customertracker-v1 customertracker.example.com
+</codeph>
+</codeblock>
+<p>The old version is still available in case it's needed for rollback. If
+everything works as expected with the newer code, delete the old app:</p>
+<codeblock>
+  <codeph>$ helion delete customertracker-v1
+
+$ helion apps
+
++--------------------+---+---------+------------------------------+------------+
+| Application        | # | Health  | URLS                         | Services   |
++--------------------+---+---------+------------------------------+------------+
+| customertracker-v2 | 1 | RUNNING | customertracker-v2.stacka.to | customerdb |
+|                    |   |         | customertracker.example.com  |            |
++--------------------+---+---------+------------------------------+------------+
+</codeph>
+</codeblock>
+</section>
+<section id="managing-multiple-targets"> <title>Managing Multiple Targets</title>
+<p>The Application Lifecycle Service client targets a single location with the command
+<codeph>helion target</codeph>.</p>
+<p>If you need to target two or more instances at the same time, use one of
+the following methods:</p>
+<ol>
+<li>
+<p>Use the <codeph>--target &lt;target&gt;</codeph> option. This sets
+the specified target for the current command only, and does not set
+it as the default:</p>
+
+<codeblock>
+<codeph>$ helion apps --target api.helion-xxx1.local
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Use two or more terminals to access multiple targets. Within each
+terminal, set the <codeph>HELION_TARGET</codeph> environment
+variable for the API endpoint URL you want to work with in that
+terminal. The client will use this URL, overriding any target set
+with the <codeph>helion target</codeph> command:</p>
+
+<codeblock>
+<codeph>$ export HELION_TARGET='api.helion-xxx2.local'
+</codeph>
+</codeblock>
+
+<p>This target is used until the variable is unset or the terminal is
+closed. To unset it:</p>
+
+<p>$ unset HELION_TARGET</p>
+</li>
+</ol>
+</section>
+<section id="persistent-sessions"> <title>Persistent Sessions</title>
+<p>With multi-instance applications on Application Lifecycle Service, the Router will distribute
+requests among all instances. Without session management, the end user
+could access different application instances with each HTTP request
+instead of connecting to the same instance that started their session. Application Lifecycle Service's default router does no special handling of
+<codeph>JSESSIONID</codeph> or <codeph>SESSIONID</codeph>
+cookies.</p>
+<p>Cloud-enabled applications should use a shared database (e.g. Redis),
+cache (e.g. Memcached), or filesystem as a back end for session
+management. Some examples of this approach are:</p>
+<ul>
+<li>Java:
+
+<ul>
+<li>
+<xref href="http://tomcat.apache.org/tomcat-6.0-doc/config/manager" scope="external" format="html" >Tomcat session
+manager</xref>
+</li>
+<li>
+<xref href="http://code.google.com/p/memcached-session-manager/" scope="external" format="html" >memcached-session-manager</xref>
+</li>
+<li>
+<xref href="https://github.com/jcoleman/tomcat-redis-session-manager" scope="external" format="html" >tomcat-redis-session-manager</xref>
+</li>
+</ul>
+</li>
+<li>Node.js:
+<xref href="https://github.com/balor/connect-memcached#connect-memcached" type="section" scope="external" format="html" >connect-memcached</xref>,
+a session store that uses Memcached</li>
+<li>PHP:
+
+<ul>
+<li>
+<xref href="../../../../devplatform/helion/user/deploy/languages/1.0php.dita#php-persistent-sessions-filesystem" type="section"  >Persistent Sessions</xref>
+</li>
+<li>
+<xref href="http://php.net/manual/en/memcached.sessions.php" scope="external" format="html" >Memcached session support</xref>
+</li>
+</ul>
+</li>
+<li>Python: <xref href="https://docs.djangoproject.com/en/dev/topics/http/sessions/" scope="external" format="html" >Django "How to use
+sessions"</xref>
+</li>
+</ul>
+</section>
+</body>
+</topic>

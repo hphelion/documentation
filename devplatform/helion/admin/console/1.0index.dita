@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10170">
+<title>HP Helion 1.0 Development Platform: Management Console (Admin View)</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.0"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/helion/admin/console/1.0index.md-->
+ <!--permalink: /als/v1/admin/console/--></p>
+<p>
+
+</p>
+<p>Application Lifecycle Service's web interface is called the Management Console.</p>
+<p>Note that users with Admin-level privileges have access to more options and settings than regular end-users. Some features documented here are available only from the Admin view.</p>
+<ul>
+<li>
+<xref type="section" href="#topic10170/about">About the Admin Console</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/welcome">Welcome</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/system-information">System Information</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/cluster-nodes">Cluster Nodes</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/organizations">Organizations</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/users">Users</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/applications">Applications</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/cloud-events">Cloud Events</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/dashboard">Dashboard</xref>
+
+<ul>
+<li>
+<xref type="section" href="#topic10170/router">Router</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/primary-node-status-graphs">Primary Node Status Graphs</xref>
+</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic10170/settings">Settings</xref>
+
+<ul>
+<li>
+<xref type="section" href="#topic10170/console">Console</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/quota-definitions">Quota Definitions</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/cloud-controller">Cloud Controller</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/console-settings-applications">Applications</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/dea">DEA</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/logyard">Logyard</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/harbor">Harbor</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/data-services">Data Services</xref>
+</li>
+<li>
+<xref type="section" href="#topic10170/file-system">File System</xref>
+</li>
+</ul>
+</li>
+</ul>
+<section id="about-the-admin-console"> <title>About the Admin Console</title>
+<p>The Application Lifecycle Service Management Console is a web interface that allows the
+administration and management of the Application Lifecycle Service Server.</p>
+<p>Your hypervisor provides <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-tty-console" type="section"  >
+<i>tty
+console</i>
+</xref> access to
+each of its virtual machines. After startup, an Application Lifecycle Service VM displays:</p>
+<codeblock>
+  <codeph>Application Lifecycle Service Management Console at
+
+https://helion-xxxx.local
+</codeph>
+</codeblock>
+<p>On a <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-micro-cloud" type="section"  >
+<i>micro
+cloud</i>
+</xref> VM where
+the local network supports <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-multicast-dns" type="section"  >
+<i>multicast
+DNS</i>
+</xref>, the
+hostname will be <codeph>helion-xxxx.local</codeph>. If you have
+configured the
+<xref href="../../../../devplatform/helion/admin/server/1.0configuration.dita#server-config-hostname" type="section"  >
+<i>hostname</i>
+</xref> and
+<xref href="../../../../devplatform/helion/admin/server/1.0configuration.dita#server-config-dns" type="section"  >
+<i>DNS</i>
+</xref> of the Application Lifecycle Service
+server manually, or are connecting to a server administered by someone
+else, supply the assigned hostname instead (e.g.
+<codeph>api.helion-test.example.com</codeph>).</p>
+<p>Enter the URL into your web browser, and the Management Console will
+load. The Console is supported on the following browsers:</p>
+<ul>
+<li>Chrome 30+ (WebKit)</li>
+<li>Firefox 20+</li>
+<li>IE 10+</li>
+</ul>
+<p>Using a browser which fully support WebSockets is recommended.</p>
+<p>
+  <b>Note</b>
+</p>
+<p>The SSL certificate for the Application Lifecycle Service Management Console is self-signed.
+You will need to manually accept this certificate in your browser. See
+the <xref href="../../../../devplatform/helion/admin/server/1.0configuration.dita#server-config-https" type="section"  >
+<i>HTTPS section</i>
+</xref>
+for information on using your own certificate.</p>
+<p>When you first access the Management Console, you will be prompted to
+create a primary administrative user for Application Lifecycle Service. Enter an email
+address as the username, set a secure password, then review and accept
+the license agreement.</p>
+<p>
+  <b>Note</b>
+</p>
+<p>
+<b>The password you choose here becomes the login password for the</b>
+<codeph>helion</codeph> <b>user on the VM</b> (e.g. for
+<codeph>ssh</codeph> access).</p>
+<p>Once you've logged in, you can begin to add other users and admins,
+enable and disable services, and generally set up the system to your
+requirements.</p>
+<p>Basic Application Lifecycle Service administration can be done through the Management
+Console, but some maintenance and configuration tasks may need to be
+done at the command line using the <codeph>kato</codeph> command.
+See <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref" type="section"  >
+<i>Kato Command
+Reference</i>
+</xref> for a full list
+of options.</p>
+<p>The Application Lifecycle Service Management Console will periodically send non-identifying pingbacks (Application Lifecycle Service version number and UUID) to HP servers to help improve the web console experience. You can disable this option by setting <codeph>theme_settings['pingback_allowed'] = false;</codeph> in the <i>settings.js</i> file described in the <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#customize" type="section"  >
+<i>Theming and
+Customization</i>
+</xref> section.</p>
+</section>
+<section id="welcome"> <title>Welcome</title>
+<p>The top-level page of the Management Console displays quick links to the
+most used resources and views. The blue buttons are for features also
+available for regular end users (see <xref href="../../../../devplatform/helion/user/console/1.0index.dita#user-console-welcome" type="section"  >
+<i>Management Console (User
+View)</i>
+</xref>).</p>
+<p>Green buttons expose Admin-only functionality:</p>
+<ul>
+<li>
+<b>Configure Available Services</b>: Opens the <xref type="section" href="#topic10170/console-cluster-nodes">
+<i>Cluster
+Nodes</i>
+</xref> view showing which roles are running
+on which nodes. From this view you can add or remove Service roles
+on the various nodes in the cluster (or on 127.0.0.1 for micro
+clouds).</li>
+<li>
+<b>Manage Organizations</b>: Opens the
+<xref type="section" href="#topic10170/console-organizations">
+<i>Organizations</i>
+</xref> view.</li>
+<li>
+<b>Manage Users</b>: Opens the <xref type="section" href="#topic10170/console-users">
+<i>Users</i>
+</xref> view.</li>
+<li>
+<b>View All Deployed Applications</b>: Opens the <xref type="section" href="#topic10170/applications">Applications</xref> view.</li>
+<li>
+<b>View Cloud Events</b>: Opens the <xref type="section" href="#topic10170/cloud-events">Cloud Events</xref> view.</li>
+<li>
+<b>View Dashboard</b>: Opens the <xref type="section" href="#topic10170/dashboard">Dashboard</xref>.</li>
+</ul>
+</section>
+<section id="system-information"> <title>System Information</title>
+<ul>
+<li>
+<b>Version</b>: Version (release) number of the system.</li>
+<li>
+<b>MBUS IP</b>: The IP address that hosts the primary node. Cluster
+nodes (if any) will connect via this IP address. In a micro cloud
+setting, it will be 127.0.0.1.</li>
+<li>
+<b>API Endpoint</b>: The URL for helion clients to target. Normally
+also the URL for the Management Console.</li>
+</ul>
+</section>
+<section id="cluster-nodes"> <title>Cluster Nodes</title>
+<p>Displays a list of nodes in the current cluster, and what services are
+running on each node. In a micro cloud configuration, only the current
+local node ('127.0.0.1') is shown.</p>
+<p>To enable or disable services on a node, click the <b>Configure Roles</b>
+button (cog icon) to see the <b>Node Settings</b>, showing a list of all
+available roles and checkboxes to enable or disable each one. Click
+<b>Save</b> to apply changes.</p>
+<p>See also the <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-role-add" type="section"  >
+<i>kato
+role</i>
+</xref> and <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-info" type="section"  >
+<i>kato
+info</i>
+</xref> command
+documentation for the CLI equivalents, and the <xref href="../../../../devplatform/helion/admin/cluster/1.0index.dita#cluster-setup" type="section"  >
+<i>Cluster
+Setup</i>
+</xref> section for information on
+adding nodes to the cluster.</p>
+</section>
+<section id="organizations"> <title>Organizations</title>
+<p>The top level Organizations page allows Admins to add and delete
+  <xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#topic2792/organizations" type="section"  >
+<i>Organizations</i>
+</xref>.
+Clicking on an organization name opens its details. This view is the
+same as a regular <xref href="../../user/deploy/1.0orgs-spaces.dita#topic8908/user-console-organizations" type="section"  >
+<i>user's Organizations
+view</i>
+</xref>, but
+admin users can edit quotas, and add/remove domains, spaces, and users.</p>
+</section>
+<section id="users"> <title>Users</title>
+<p>The Users section displays a list of users and admins.</p>
+<ul>
+<li>Click <b>+ Add User</b> to add users.</li>
+<li>Click on the user name or email address to view account details or
+change the password.</li>
+</ul>
+</section>
+<section id="applications"> <title>Applications</title>
+<p>The Applications section displays a list of all apps on the server. Click anywhere on the line
+        for an app to view its details. Admins have the same permissions in the <xref
+          href="../../user/console/1.0index.dita#topic6037/user-console-app">
+          <i>Application View</i>
+        </xref> as a Developer of the space it was deployed to. It also lists the <b>Reserved</b>
+        URIs; these cannot be used for end user applications.</p>
+</section>
+<section id="cloud-events"> <title>Cloud Events</title>
+<p>The Cloud Events section displays a list of events (including errors and
+warnings) on the Application Lifecycle Service server. The events can be filtered by Severity
+or Type, or by using a substring match in the Search field.</p>
+</section>
+<section id="dashboard"> <title>Dashboard</title>
+</section>
+<section id="router"> <title>Router</title>
+<p>Shows realtime results for incoming requests (connections per second),
+routing errors (errors per second), and an overview of the cumulative
+requests to the system.</p>
+</section>
+<section id="primary-node-status-graphs"> <title>Primary Node Status Graphs</title>
+<p>Displays graphs for server statistics: CPU, Load, Memory, Disk
+Operations, Disk Space, Processes, and Swap (primary node or micro cloud
+only).</p>
+</section>
+<section id="settings"> <title>Settings</title>
+<p>The Settings menu gives access to the following Console and system
+settings:</p>
+</section>
+<section id="console"> <title>Console</title>
+<p>Various settings and templates to customize the look and feel of the
+Management Console. The settings are divided into the following
+categories:</p>
+<ul>
+<li>
+<b>Product</b>: Options to rename and reversion Application Lifecycle Service for OEM
+deployments, change the default locale (currently only 'en' and 'de'
+available), choose a different URL for documentation, or disable
+console pingbacks.</li>
+<li>
+<b>Look and Feel</b>: Change the favicon, header, footer, or background
+color.</li>
+<li>
+<b>Welcome Page</b>: EJS templated HTML to display on the Welcome page
+(see above).</li>
+<li>
+<b>Support Page</b>: EJS templated HTML to display on the Support page.
+Change this if you are supporting your end users directly.</li>
+<li>
+<b>Eula Content</b>: End User License Agreement. Change this if you are
+exposing Application Lifecycle Service to end users under specific terms.</li>
+<li>
+<b>Custom Stylesheet</b>: A single CSS file used to override any
+existing styling in the Management Console. Inspect the Console with
+browser tools such as Firebug or Chrome Developer Tools to see the
+class names and IDs.</li>
+</ul>
+</section>
+<section id="quota-definitions"> <title>Quota Definitions</title>
+<p>Lists the Quota Definitions available to apply to Organizations on the
+system.</p>
+<ul>
+<li>To edit a definition, click the edit button on the right.</li>
+  <li>To create a new definition use the <xref href="../../user/reference/1.0client-ref.dita#topic203269/helion-quota-create-name" type="section"  >
+<i>helion quota
+create</i>
+</xref>
+command.</li>
+</ul>
+</section>
+<section id="cloud-controller"> <title>Cloud Controller</title>
+<ul>
+<li>
+<b>Maintenance Mode</b>: Shuts down API requests but continues to serve
+web requests, useful when performing system operations such as
+importing and exporting data for upgrades. When the primary node
+enters maintenance mode, the Management Console becomes "read only"
+with the exception of this toggle (to bring it back online).</li>
+<li>
+<b>Logging Level</b>: Changes the verbosity of Application Lifecycle Service logs from
+'debug2' (most verbose) through 'off' (silent).</li>
+<li>
+<b>Support Email</b>: The email address displayed to end users when
+errors are encountered. Use an address which is monitored by
+Application Lifecycle Service administrators.</li>
+<li>
+<b>Sample Applications URLs</b>: URIs for JSON files which populate the <xref href="1.0app-store.dita"  >
+<i>App
+Store</i>
+</xref>. The URIs need not be public, but
+must be accessible from the controller node.</li>
+<li>
+<b>Allowed Repos</b>: Debian package repositories allowed in
+application containers. End users can install additional packages
+(e.g. with <codeph>apt-get</codeph> or <codeph>aptitude</codeph>) only from these repositories.</li>
+</ul>
+</section>
+<section id="dea"> <title>DEA</title>
+<ul>
+<li>
+<b>Max Memory Percentage</b>: The percentage of physical memory each
+DEA node can use for hosted applications. The 80% default setting
+leaves enough memory for the OS and DEA processes on a node with 4GB
+of RAM. This can be increased on nodes with more memory available
+(e.g. to 90% on a node with 8GB of RAM). Do not exceed 100% unless
+the system correctly supports swap space and has it enabled. Restart
+all DEA roles/nodes to apply the change.</li>
+<li>
+<b>Max Staging Duration</b>: The maximum time allowed for application
+staging.</li>
+</ul>
+</section>
+<section id="logyard"> <title>Logyard</title>
+<p>Lists current log
+<xref href="../../../../devplatform/helion/admin/server/1.0logging.dita#logging-drains-system" type="section"  >
+<i>Drains</i>
+</xref> and the log
+drain retry limits. Drains and limits cannot be changed in this
+interface; use the <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-log-drain-add" type="section"  >
+<i>kato log drain
+...</i>
+</xref>
+commands and <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-config" type="section"  >
+<i>kato config
+...</i>
+</xref> commands.</p>
+</section>
+<section id="harbor"> <title>Harbor</title>
+<p>Settings for the <xref href="../../../../devplatform/helion/admin/cluster/1.0harbor.dita#harbor" type="section"  >
+<i>Harbor</i>
+</xref> TCP/UDP port
+service.</p>
+<ul>
+<li>
+<b>External Host</b>: The public IP (if configured) for the Harbor
+node.</li>
+<li>
+<b>External Hostname</b>: The public hostname for the Harbor node.</li>
+<li>
+<b>Port Range Minimum</b>: Sets the minimum for the exposed port range
+(default: 35000).</li>
+<li>
+<b>Port Range Maximum</b>: Sets the maximum for the exposed port range
+(default: 40000).</li>
+</ul>
+<p>See <xref href="../../../../devplatform/helion/admin/cluster/1.0harbor.dita#harbor-setup" type="section"  >
+<i>Harbor: Requirements &amp;
+Setup</i>
+</xref> for more information.</p>
+</section>
+<section id="data-services"> <title>Data Services</title>
+<ul>
+<li>
+<b>Allow Over-provisioning</b>: Ignore the Capacity setting.</li>
+<li>
+<b>Capacity</b>: Maximum number of service slots to allocate.</li>
+<li>
+<b>Max DB size</b>: Maximum size on disk for database services.</li>
+<li>
+<b>Max Memory</b>: Maximum amount of physical memory to allocate the
+service.</li>
+<li>
+<b>Memcached Memory</b>: Maximum amount of physical memory to allocate
+for memcached instances.</li>
+<li>
+<b>Max FS Size</b>: Maximum size on disk for filesystem services.</li>
+</ul>
+</section>
+<section id="file-system"> <title>File System</title>
+<ul>
+<li>
+<b>Capacity</b>: Maximum number of service slots to allocate.</li>
+<li>
+<b>Max FS Size</b>: Maximum size on disk for filesystem services in MB.</li>
+<li>
+<b>Allow Over-provisioning</b>: Ignore the Capacity setting.</li>
+</ul>
+</section>
+</body>
+</topic>
