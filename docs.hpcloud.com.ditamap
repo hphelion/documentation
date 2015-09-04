@@ -127,15 +127,15 @@
       <topicref href="helion/ceilometer/metering_bestpractice.dita"
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
     </topichead>
-    <topichead navtitle="Object Storage" toc="no">
-      <topicref href="helion/swift/swift_overview.dita" toc="no"/>
-      <topicref href="helion/swift/swift_input_cloud_model.dita" toc="no">
+    <topichead navtitle="Object Storage" toc="yes">
+      <topicref href="helion/swift/swift_overview.dita" toc="yes"/>
+      <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes">
         <topicref href="helion/swift/allocating_disk_drives.dita"/>
         <topicref href="helion/swift/ring_specifications.dita"/>
       </topicref>
-      <topicref href="helion/swift/label_on_partition.dita" toc="no"/>
-      <topicref href="helion/swift/filesystem_label.dita" toc="no"/>
-      <topicref href="helion/swift/troubleshooting_beta1.dita" toc="no"/>
+      <topicref href="helion/swift/label_on_partition.dita" toc="yes"/>
+      <topicref href="helion/swift/filesystem_label.dita" toc="yes"/>
+      <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"/>
     </topichead>
 
   </topicref>
