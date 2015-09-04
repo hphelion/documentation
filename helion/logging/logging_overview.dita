@@ -45,6 +45,7 @@
     </ul>
     <section id="install">
       <title>Installation</title>
+      <image placement="break" href="../images/Drawing2.svg" id="image_g3r_jkc_gt"/>
       <p>The Centralized Logging feature is automatically installed as part of the HP Helion
         OpenStack installation.</p>
       <p>No specific configuration is required to use Centralized Logging. However, you can tune or
