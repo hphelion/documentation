@@ -20,9 +20,9 @@
     <p>Based on <tm tmtype="reg">OpenStack</tm> Object Storage, the HP Helion OpenStack Object
       Storage service provides a highly available, resilient, and scalable storage pool for
       unstructured data. It is highly durable architecture with no single point of failure.</p>
-    <p>In addition, HP Helion OpenStack introduces the concept of example cloud  models. This model
-      allows the user to install swift as per your requirement. </p>
-    <p>In this release we are supporting the following cloud input models:<ul id="ul_u4k_4h5_ft">
+    <p>In addition, HP Helion OpenStack introduces the concept of example cloud models. This model
+      allows the user to install Swift as per your requirement. </p>
+    <p>The following cloud input models are supported in this release:<ul id="ul_u4k_4h5_ft">
         <li>entry-scale-with-vsa of cloud model</li>
         <li>mid-size cloud model</li>
       </ul></p>
