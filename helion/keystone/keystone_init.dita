@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qmz_fg3_bt">
-  <title>Initial Installation</title>
+  <title>Keystone Installation</title>
   <body>
-    <section><p>Keystone is a vital part of HP Helion OpenStack&#174;, and as such it is installed
+    <section id="installation"><title>Installing Keystone</title>
+      <p>Keystone is a vital part of HP Helion OpenStack&#174;, and as such it is installed
         automatically by the Helion OpenStack installer (just after MySQL and RabbitMQ). The
-        recommended way of installing Keystone is to allow the installer to install it with the
-        default configuration. Once your cloud is up and running, you can customize Keystone in a
-        number of ways, including integration with LDAP servers. </p>
+        recommended way of installing Keystone is to allow the default configuration used by the
+        installer. Once your cloud is up and running, you can customize Keystone in a number of
+        ways, including integration with LDAP servers. </p>
     </section>
     <section><title>Default Settings</title>
       <b>Keystone Configuration Settings</b> The Keystone identity service configuration options are

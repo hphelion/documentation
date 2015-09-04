@@ -3,7 +3,7 @@
 <topic id="topic_qmz_fg3_bt">
   <title>Keystone Administration</title>
   <body>
-    <section id="administration">
+    <section id="administration"><title>Post-Installation Verification and Administration</title>
       <p>Keystone query and administration tasks can be performed using openstack command line
         utility. The utility is installed by the deployer onto deployer node. Also, HLM installs
         convenient *.osrc files which contain exports of environment variables used by openstack
@@ -12,11 +12,10 @@
           scoped to the <i>default</i> domain via the Keystone v3 identity API. These settings are
           preconfigured in the <i>keystone.osrc</i> file. By default, keystone.osrc is configured
           with the admin endpoint of keystone. If the admin endpoint is not accessible from your
-          network, please change OS_AUTH_URL to point to the public endpoint.</note></p></section>
-
+          network, please change OS_AUTH_URL to point to the public endpoint.</note></p>
+    </section>
     <section> Here are some examples:
       <codeblock>
-      
 # Set environment variables needed for Keystone administration
 stack@hLinux:~$ source keystone.osrc 
  
@@ -101,11 +100,7 @@ stack@hLinux:~$ openstack role assignment list --user testuser --domain default
 +----------------------------------+----------------------------------+-------+---------+---------+
 | b398322103504546a070d607d02618ad | 8aad69acacf0457e9690abf8c557754b |       |         | default |
 +----------------------------------+----------------------------------+-------+---------+---------+
- 
 </codeblock>
     </section>
-
-
-
   </body>
 </topic>
