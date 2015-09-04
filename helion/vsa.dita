@@ -30,7 +30,7 @@
             <li>Install Xming on a Windows machine that you can reach the deployer node on</li>
             <li>Enable X11 forwarding on PuTTy session for deployer node</li>
             <li>ssh -X to the first control plane node</li>
-            <li>execute /opt/HP/StoreVirtual/UI/jre/bin/java-jar /opt/HP/StoreVirtual/UI/UI.jar
+            <li>execute <codeph>/opt/HP/StoreVirtual/UI/jre/bin/java-jar /opt/HP/StoreVirtual/UI/UI.jar</codeph>
                 <note>At this point the CMC UI should launch successfully</note></li>
           </ol>
         </li>
