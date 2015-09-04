@@ -49,18 +49,18 @@
   # Path to the rest of the input model
   data-dir: data
   
-  # List of ntp servers for your site
+  <b># List of ntp servers for your site
   ntp-servers:
   #    - "ntp-server1"
-  #    - "ntp-server2"
+  #    - "ntp-server2"</b>
   
-  # dns resolving configuration for your site
+  <b># dns resolving configuration for your site
   # refer to resolv.conf for details on each option
   dns-settings:
   #  nameservers:
   #    - name-server1
   #    - name-server2
-  #    - name-server3
+  #    - name-server3</b>
   #
   #  domain: sub1.example.net
   #
@@ -84,119 +84,104 @@
   #    no-check-names:
   #    inet6:
 </codeblock>
-      <p>Your local NTP server(s) would go into this part:</p>
-      <codeblock>
-  # List of ntp servers for your site
-  ntp-servers:
-       - "ntp-server1"
-       - "ntp-server2"</codeblock>
-      <p>Your local DNS nameserver(s) would go into this part:</p>
-      <codeblock>
-   # dns resolving configuration for your site
-   # refer to resolv.conf for details on each option
-   dns-settings:
-      #  nameservers:
-      #    - name-server1
-      #    - name-server2
-      #    - name-server3</codeblock>
       <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
         are recognized.</note>
     </section>
     <section id="baremetalConfig.yml"><title>baremetalConfig.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/baremetalConfig.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
+      <p>The key values to enter into this document are the details about each of the servers in your environment. Most of these values will be gathered from the iLO console or from your vlan setup information.</p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
   product:
     version: 2
-  baremetal_network:
+  <b>baremetal_network:
     subnet: 192.168.10.0
     netmask: 255.255.255.0
-    server_interface: eth2
+    server_interface: eth2</b>
    baremetal_servers:
      -
         node_name: controller1
         node_type: ROLE-CONTROLLER
-        pxe_mac_addr: b2:72:8d:ac:7c:6f
+        <b>pxe_mac_addr: b2:72:8d:ac:7c:6f
         pxe_interface: eth2
         pxe_ip_addr: 192.168.10.3
         ilo_ip: 192.168.9.3
         ilo_user: admin
-        ilo_password: password
+        ilo_password: password</b>
      -
         node_name: controller2
         node_type: ROLE-CONTROLLER
-        pxe_mac_addr: 8a:8e:64:55:43:76
+        <b>pxe_mac_addr: 8a:8e:64:55:43:76
         pxe_interface: eth2
         pxe_ip_addr: 192.168.10.4
         ilo_ip: 192.168.9.4
         ilo_user: admin
-        ilo_password: password
+        ilo_password: password</b>
      -
         node_name: controller3
         node_type: ROLE-CONTROLLER
-        pxe_mac_addr: 26:67:3e:49:5a:a7
+        <b>pxe_mac_addr: 26:67:3e:49:5a:a7
         pxe_interface: eth2
         pxe_ip_addr: 192.168.10.5
         ilo_ip: 192.168.9.5
         ilo_user: admin
-        ilo_password: password
+        ilo_password: password</b>
      -
         node_name: compute1
         node_type: ROLE-COMPUTE
-        pxe_mac_addr: d6:70:c1:36:43:f7
+        <b>pxe_mac_addr: d6:70:c1:36:43:f7
         pxe_interface: eth2
         pxe_ip_addr: 192.168.10.6
         ilo_ip: 192.168.9.6
         ilo_user: admin
-        ilo_password: password
+        ilo_password: password</b>
      -
         node_name: compute2
         node_type: ROLE-COMPUTE
-        pxe_mac_addr: 8e:8e:62:a6:ce:76
+        <b>pxe_mac_addr: 8e:8e:62:a6:ce:76
         pxe_interface: eth2
         pxe_ip_addr: 192.168.10.7
         ilo_ip: 192.168.9.7
         ilo_user: admin
-        ilo_password: password
+        ilo_password: password</b>
      -
         node_name: compute3
         node_type: ROLE-COMPUTE
-        pxe_mac_addr: 22:f1:9d:ba:2c:2d
+        <b>pxe_mac_addr: 22:f1:9d:ba:2c:2d
         pxe_interface: eth2
         pxe_ip_addr: 192.168.10.8
         ilo_ip: 192.168.9.8
         ilo_user: admin
-        ilo_password: password
+        ilo_password: password</b>
      -
         node_name: vsa1
         node_type: ROLE-VSA
-        pxe_mac_addr: 8b:f6:9e:ca:3b:78
+        <b>pxe_mac_addr: 8b:f6:9e:ca:3b:78
         pxe_interface: eth2
         pxe_ip_addr: 192.168.10.9
         ilo_ip: 192.168.9.9
         ilo_user: admin
-        ilo_password: password
+        ilo_password: password</b>
      -
         node_name: vsa2
         node_type: ROLE-VSA
-        pxe_mac_addr: 8b:f6:9e:ca:3b:79
+        <b>pxe_mac_addr: 8b:f6:9e:ca:3b:79
         pxe_interface: eth2
         pxe_ip_addr: 192.168.10.10
         ilo_ip: 192.168.9.10
         ilo_user: admin
-        ilo_password: password
+        ilo_password: password</b>
      -
         node_name: vsa3
         node_type: ROLE-VSA
-        pxe_mac_addr: 8b:f6:9e:ca:3b:7a
+        <b>pxe_mac_addr: 8b:f6:9e:ca:3b:7a
         pxe_interface: eth2
         pxe_ip_addr: 192.168.10.11
         ilo_ip: 192.168.9.11
         ilo_user: admin
-        ilo_password: password</codeblock>
+        ilo_password: password</b></codeblock>
     </section>
     <section id="control_plane.yml"><title>control_plane.yml</title>
       <p>The path to this file is:</p>
@@ -778,7 +763,11 @@
     <section id="servers.yml"><title>servers.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/servers.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
+      <p>The key values to enter into this document are the IP addresses for each of the servers for
+        your environment. They should also be in the <codeph>baremetalConfig.yml</codeph> file as
+        the <codeph>pxe_ip_addr</codeph> value so you can copy them from there.</p>
+      <note>The entries in this file are examples, if you have more or less nodes you can copy and
+        paste to include your entire environment.</note>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -797,39 +786,39 @@
         
     # Controllers
     - id: controller1
-   <b>ip-addr: 192.168.10.3</b>
+      <b>ip-addr: 192.168.10.3</b>
       role: ROLE-CONTROLLER
     # nic-mapping: HP_DL360_4PORT
         
     - id: controller2
-      ip-addr: 192.168.10.4
+      <b>ip-addr: 192.168.10.4</b>
       role: ROLE-CONTROLLER
     # nic-mapping: HP_DL360_4PORT
         
     - id: controller3
-      ip-addr: 192.168.10.5
+      <b>ip-addr: 192.168.10.5</b>
       role: ROLE-CONTROLLER
     # nic-mapping: HP_DL360_4PORT
         
     # Compute Nodes
     - id: compute1
-      ip-addr: 192.168.10.6
+      <b>ip-addr: 192.168.10.6</b>
       role: ROLE-COMPUTE
     # nic-mapping: MY_2PORT_SERVER
         
     # VSA Storage Nodes
     - id: vsa1
-      ip-addr: 192.168.10.9
+      <b>ip-addr: 192.168.10.9</b>
       role: ROLE-VSA
     # nic-mapping: MY_2PORT_SERVER  
       
     - id: vsa2
-      ip-addr: 192.168.10.10
+      <b>ip-addr: 192.168.10.10</b>
       role: ROLE-VSA
     # nic-mapping: MY_2PORT_SERVER
       
     - id: vsa2
-      ip-addr: 192.168.10.11
+      <b>ip-addr: 192.168.10.11</b>
       role: ROLE-VSA
     # nic-mapping: MY_2PORT_SERVER</codeblock>
     </section>
