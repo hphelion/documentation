@@ -18,8 +18,8 @@
         supports user backup to the Object Storage (Swift) API service writing to the same unified
         Ceph storage platform.<?oxy_custom_end?></p>This release supports Ceph Firefly 0.80.7
       version, which runs on the hlinux kernel 3.14.44-1. <p>In addition, HP Helion <tm tmtype="reg"
-          >OpenStack</tm>2.0 introduces the concept of  example cloud  models. This model allows the
-        user to  provide the configuration details, based on hardware requirment, to build a ceph
+          >OpenStack</tm>2.0 introduces the concept of example cloud models. This model allows the
+        user to provide the configuration details, based on hardware requirment, to build a ceph
         storage system. </p><p>This page describes the integration of Ceph Block with HP Helion
         OpenStack 2.0 (cloud input model).</p></section>
     <section>
@@ -38,14 +38,177 @@
         detailed procedure to install dependencies, and configure HP Helion OpenStack and Ceph
         Firefly.</p>
     </section>
-    <section>Prerequisites<p>
+    <section>
+      <p>
         <ol id="ol_evc_k11_gt">
-          <li>Copy  <codeph>HP-CI</codeph> in the Deployed node. (<b>where is the HP-CI present? is
-              it in the same tar file of entry scale
-            vsa?</b><codeblock>cp HP-CI ~/helion-input/my_cloud/definition</codeblock></li>
-          <li>Input model for Ceph has to be copied onto the Deployer node at the following
-            location:~/helion-input/my_cloud/definition</li>
+          <li>Login to the Deployer node.</li>
+          <li>Copy <codeph>helion/examples/</codeph> in the Deployed node.
+            <codeblock>cp -r ~/helion/examples/ ~/helion-input/my_cloud/definition</codeblock></li>
+          <li>List the folder in <codeph>~/helion-input/my_cloud/definition</codeph>. <p>The
+              configuration files for editing are available at
+                <codeph>~/helion/my_cloud/definition/data</codeph>.</p></li>
+          <li>Edit the configuration files, based on your environment, to implement Ceph servers. </li>
+          <li>Execute the following command to ensure that the additional disks are available on the
+            servers marked for OSD as specified in the
+            <codeph>disks_osd.yml</codeph>.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock>The
+            sample file of <codeph>disks_osd.yml</codeph> is as
+              follows:<codeblock>  disk-models:
+  - name: DISK_SET_OSD
+    # two disk node; remainder of disk 1 and all of disk 2 combined in single VG
+    # VG is used to create three logical vols for /var, /var/log, and /var/crash
+    device-groups:
+      - name: ceph-osd-data-and-journal
+        devices:
+          - name: /dev/sdb
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdc
+      - name: ceph-osd-data-and-shared-journal-set-1
+        devices:
+          - name: /dev/sdd
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdf
+      - name: ceph-osd-data-and-shared-journal-set-2
+        devices:
+          - name: /dev/sde
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdf</codeblock><p>In
+              the above sample file contains three OSD nodes and two journal disk. </p><p>The disk
+              model has the following fields: </p><p>
+              <simpletable>
+                <strow>
+                  <stentry><b>device-groups</b></stentry>
+                  <stentry>There can be several device groups. This allows different sets of disks
+                    to be used for different purposes.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>name</b></stentry>
+                  <stentry>This is an arbitrary name for the device group. The name must be
+                    unique.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>devices</b></stentry>
+                  <stentry>This is a list of devices allocated to the device group. A
+                      <codeph>name</codeph> field containing <codeph>/dev/sdb</codeph>,
+                      <codeph>/dev/sdd</codeph>, and <codeph>/dev/sde</codeph> indicates that the
+                    device group is used by Ceph.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>consumer</b></stentry>
+                  <stentry>This specifies the service that uses the device group. A
+                      <codeph>name</codeph> field containing <b>ceph</b> indicates that the device
+                    group is used by Ceph.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>attrs<?oxy_custom_end?></b></stentry>
+                  <stentry/>
+                </strow>
+                <strow>
+                  <stentry><b>usage</b></stentry>
+                  <stentry>There can be several use of devices for a particular service.In the above
+                    sample, <codeph>usage</codeph> field contians <b>data</b> which indicates that
+                    the device is used for data storage.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>journal_disk</b></stentry>
+                  <stentry>
+                    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>what is its
+                    usage??<?oxy_custom_end?> You can share the journal disk between two
+                    nodes.</stentry>
+                </strow>
+              </simpletable>
+            </p><p>
+              <note><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>a minimum of
+                3 nodes are required to be used as OSD nodes.<?oxy_custom_end?>
+              </note>
+            </p></li>
+          <li> Commit your configuration to a <xref href="../using_git.dita#topic_u3v_1yz_ct">local
+              repo</xref>:<codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock><note>
+              Enter your commit message  &lt;commit message></note></li>
+          <li>Run the configuration
+            procesor<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Use <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph> file to
+            create a deployment directory.</li>
+          <li>Run <codeph>verb_host</codeph> commands from the following directory:
+            <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
+          <li>Modify <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the line
+            containing <codeph>ceph-deploy.yml</codeph>.</li>
+          <li>Run the following ansible
+            playbook:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
         </ol>
-      </p></section>
+      </p>
+    </section>
+    <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
+      nodes (Resource Nodes).</p>
+    <p><b>Run Ceph Client Packages</b></p>
+    <p>Execute the following command to install the ceph client packages on controller nodes and
+      create users and ceph pools on the resource nodes:</p>
+    <p>
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
+    </p>
+    <p><b>Configure Ceph as a Cinder backend</b></p>
+    <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
+        backend:<ol id="ol_scj_1cb_gt">
+        <li>Edit <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to
+          add ceph configuration data as shown
+          below:<codeblock>enabled_backends=ceph1</codeblock></li>
+        <li>Copy the following
+            configurations:<codeblock>[ceph1]
+rbd_max_clone_depth = 5
+rbd_flatten_volume_from_snapshot = False
+rbd_uuid = 457eb676-33da-42ec-9a8c-9293d545c337
+rbd_user = cinder
+rbd_pool = volumes
+rbd_ceph_conf = /etc/ceph/ceph.conf
+volume_driver = cinder.volume.drivers.rbd.RBDDriver
+volume_backend_name = ceph</codeblock><note><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>The
+            rbd_uuid is available in
+            "/home/stack/helion/hos/ansible/roles/ceph-client-prepare/vars/ceph_user_model.yml"</note></li>
+        <?oxy_custom_end?>
+        <li>Modify <codeph>cinder.conf.j2</codeph> at
+            <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> with the
+          following values:
+          <codeblock>backup_driver = cinder.backup.drivers.ceph
+backup_ceph_conf = /etc/ceph/ceph.conf
+backup_ceph_user = cinder-backup
+backup_ceph_chunk_size = 134217728
+backup_ceph_pool = backups
+backup_ceph_stripe_unit = 0
+backup_ceph_stripe_count = 0
+restore_discard_excess_bytes = true</codeblock><p/></li>
+        <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
+            id="ol_ndr_y2b_gt">
+            <li>Login as a root user on the controller nodes and execute the following
+                  command.<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p><p>You
+                can execute the following command from the deployer
+                node.<codeblock>cp /etc/ceph/ceph.client.cinder.keyring to the /etc/ceph folder on the controller nodes.</codeblock></p></li>
+          </ol></li>
+        <li>Commit your confiugration to the local repo to configure cinder on the deployer node<p>
+            <codeblock>cd /home/stack/helion/hos/ansible
+git add -A
+git commit -m "&lt;your commit message>"</codeblock>
+          </p><note> Enter your commit message &lt;commit message></note></li>
+        <li>Use <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph> file to
+          create a deployment directory.</li>
+        <li>Run <codeph>verb_host</codeph> commands from the following directory:
+          <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
+        <li>Run the following ansible
+          playbook:<codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><codeblock>cd /home/stack/helion/hos/ansible
+git add -A
+git commit -m "&lt;your commit message>"</codeblock></li>
+      </ol></p>
+    <note> Enter your commit message &lt;commit message></note>
   </body>
 </topic>
