@@ -47,7 +47,9 @@
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_roles.dita"
         navtitle="Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Identity Configuration"
+      <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Installation"
+        locktitle="yes"> </topicref>
+      <topicref href="helion/keystone/keystone_admin.dita" navtitle="Keystone Administration"
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_reconfigure.dita" navtitle="Reconfiguring Keystone"
         locktitle="yes"/>
@@ -132,13 +134,17 @@
     </topichead>
     <topichead navtitle="Object Storage" toc="yes">
       <topicref href="helion/swift/swift_overview.dita" toc="yes"/>
-      <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes" navtitle="Modifying the Input Model" locktitle="yes">
+      <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes"
+        navtitle="Modifying the Input Model" locktitle="yes">
         <topicref href="helion/swift/allocating_disk_drives.dita"/>
         <topicref href="helion/swift/ring_specifications.dita"/>
       </topicref>
-      <topicref href="helion/swift/label_on_partition.dita" toc="yes" navtitle="Verifying the Partition Label" locktitle="yes"/>
-        <topicref href="helion/swift/filesystem_label.dita" toc="yes" navtitle="Verifying the Filesystem Label" locktitle="yes"/>
-          <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes" navtitle="Swift Troubleshooting" locktitle="yes"/>
+      <topicref href="helion/swift/label_on_partition.dita" toc="yes"
+        navtitle="Verifying the Partition Label" locktitle="yes"/>
+      <topicref href="helion/swift/filesystem_label.dita" toc="yes"
+        navtitle="Verifying the Filesystem Label" locktitle="yes"/>
+      <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"
+        navtitle="Swift Troubleshooting" locktitle="yes"/>
     </topichead>
 
   </topicref>
