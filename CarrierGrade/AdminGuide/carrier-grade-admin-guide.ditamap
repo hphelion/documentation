@@ -34,10 +34,12 @@
             <topicref href="Dashbard/CGH-2-Admin-Dasboard-Identity.dita"
                 navtitle=" Helion Dashboard Identity Panel" locktitle="yes"/>
         </topicref>
+        <!-- 
         <topicref href="jow1404333731418.xml">
             <topicmeta>
                 <navtitle>Configuration Planning</navtitle>
             </topicmeta>
+            
             <topicref collection-type="family" href="jow1404333731990.xml">
                 <topicref href="jow1423169316542.xml"/>
                 <topicref href="jow1423173019489.xml"/>
@@ -48,7 +50,7 @@
             </topicref>
             <topicref collection-type="unordered" href="jow1404333674324.xml">
                 <topicref href="jow1404333738594.xml"/>
-                <!-- Tenant Networks -->
+                Tenant Networks
                 <topicref href="jow1404333739174.xml"/>
                 <topicref href="jow1429628777191.xml">
                     <topicref href="jow1429629394435.xml"/>
@@ -64,8 +66,8 @@
             </topicref>
             <topicref href="jow1432395626956.xml"/>
             <topicref href="jow1404333749994.xml">
-                <!-- Local Storage for VMs -->
-                <!-- topicref href="jow1426183574960.xml"/ -->
+                 Local Storage for VMs 
+                topicref href="jow1426183574960.xml"
                 <topicref href="jow1426183480976.xml"/>
             </topicref>
             <mapref format="ditamap" href="jow1425584355871.ditamap"/>
@@ -80,10 +82,10 @@
             <topicref href="jow1413727043334.xml"/>
             <topicref href="jow1413727075983.xml"/>
             <topicref href="jow1413729179585.xml">
-                <!-- Adding an Infrastructure Network Using the CLI : ToC entry suppressed -->
+                Adding an Infrastructure Network Using the CLI : ToC entry suppressed
                 <topicref href="jow1420473404578.xml" toc="no"/>
             </topicref>
-        </topicref>
+        </topicref> -->
         <topicref href="Overview/CGH-2-system-overview.dita" navtitle="Viewing System Status"
             locktitle="yes"/>
         <topicref href="Inventory/CGH-2-host-management-resource.dita"
