@@ -39,8 +39,8 @@
     </section>
     <section id="kvm-Hypervisor">
       <title>KVM Topology</title>
-      <p>If you install the KVM deployment, you can integrate either HP Storevirtual (VSA) or HP
-        StoreServ (3PAR) storage in the KVM region.</p>
+      <p>If you install the KVM deployment (also called the <codeph>denver</codeph> region), you can
+        integrate either HP Storevirtual (VSA) or HP StoreServ (3PAR) storage in the KVM region.</p>
       <p>You must install 3PAR or VSA before starting the HP Helion OpenStack installation and are
         independent of HP Helion OpenStack Carrier Grade. During the installation, you will
         integrate the storage into HP Helion OpenStack Carrier Grade. See the <xref
@@ -49,8 +49,9 @@
     </section>
     <section id="esx-hypervisor">
       <title>KVM + ESX Topology</title>
-      <p>If installing the KVM + ESX deployment, you will need to perform tasks to integrate ESX and
-        DCN with HP Helion OpenStack Carrier Grade. </p>
+      <p>If installing the KVM + ESX deployment (also called the <codeph>memphis</codeph> region),
+        you will need to perform tasks to integrate ESX and DCN with HP Helion OpenStack Carrier
+        Grade. </p>
       <p>You can also integrate HP Storevirtual (VSA) or HP StoreServ (3PAR) storage in the KVM
         region. </p>
       <p>You must install ESX, 3PAR or VSA before starting the HP Helion OpenStack installation and

@@ -25,6 +25,8 @@
                 navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
             <topicref href="Dashbard/CGH-2-Admin-Dashboard-how-works.dita"
                 navtitle="How to Use the Helion Dashboard" locktitle="yes"/>
+            <topicref href="Dashbard/CGH-2-Admin-region-selector.dita" navtitle="Selecting a Region"
+                locktitle="yes"/>
             <topicref href="Dashbard/CGH-2-Admin-Dasboard-Project.dita"
                 navtitle=" Helion Dashboard Project Panel" locktitle="yes"/>
             <topicref href="Dashbard/CGH-2-Admin-Dasboard-Admin.dita"
@@ -82,6 +84,8 @@
                 <topicref href="jow1420473404578.xml" toc="no"/>
             </topicref>
         </topicref>
+        <topicref href="Overview/CGH-2-system-overview.dita" navtitle="Viewing System Status"
+            locktitle="yes"/>
         <topicref href="Inventory/CGH-2-host-management-resource.dita"
             navtitle="Managing Resource Usage" locktitle="yes"/>
         <topicref href="Inventory/CGH-2-host-management-inventory.dita"

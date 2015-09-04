@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8785">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Resource Usage</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Viewing System Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -66,35 +66,25 @@
 </ul>
 <p>Additionally, all database queries are user-initiated, as opposed to event-initiated. This provides a different user workflow, whereby all required report parameters and filters are configured first, before the database query is executed.</p>
 <p>Access to Ceilometer reports is available from the Stats tab on the Resource Usage Overview page. This page can be accessed from the web management interface by selecting the option <b>Resource Usage</b> on the <b>Admin</b> tab of the <b>System</b> panel.</p>
-</section>
-    <section>
-      <title>Daily Report</title>
-      <p>View a daily usage report per project across services through the OpenStack Dashboard to
-        better understand how system resources are being consumed by individual projects.</p>
-      <p>Select the date range and a limit for the number of projects, and click <b>Generate
-          Report</b>; the daily usage report displays. </p>
-      <p><image href="../../../media/CGH-2-resource-usage-daily.png" id="image_rnj_rxc_gt"
-          width="600"/></p>
-    </section>
-  <section><title>Stats</title>
-      <p>You can view project metrics by selecting the required values and time period using the
-        menus and click Report. </p>
-      <p><image href="../../../media/CGH-2-resource-usage-stats.png" id="image_f24_4xc_gt"
-          width="600"/></p>
-  <p>The <b>Stats</b> tab contains the following fields:</p>
+<p>The <b>Stats</b> tab contains the following fields:</p>
 <ul>
 <li>
 <p>
 <b>Metric</b> - The Ceilometer metric you want to query. Metrics are grouped by service, as follows:</p>
 
 <ul>
-<li>Average Engine CPU Utilization </li>
-<li>Average Port Receive Utilization</li>
-<li>Port Receive Byte Count</li>
-<li>Port Transmit Byte Count</li>
-<li>Port Receive Packet Count</li>
-            <li>Port Transmit Packet Count</li>
+<li>Compute (Nova)</li>
+<li>Network (Neutron)</li>
+<li>Image (Glance)</li>
+<li>Volume (Cinder)</li>
+<li>Switching (AVS)</li>
 </ul>
+<p>On the CLI, use the following command to list the available metrics, and find their resource IDs:</p>
+
+<codeblock>
+<codeph>ceilometer meter-list
+</codeph>
+</codeblock>
 </li>
 <li>
 <p>
@@ -122,15 +112,24 @@
 <b>Metadata</b> - Metadata represents additional attributes collected with a metric. In this menu, you can select the specific attribute you want the report on.</p>
 
 <p>The pull-down menu is auto-populated with the corresponding attributes for the selected metric.</p>
+
+<p>On the CLI, use the following command to list the metadata associated with a metric identified with its resource ID:</p>
+
+<codeblock>
+<codeph>ceilometer resource-show -r &lt;resource_id&gt;
+</codeph>
+</codeblock>
 </li>
 <li>
 <p>
 <b>Filter</b> - Use this field to limit the report to show metric samples whose metadata attribute equals the specified value. The
 filter field is applied only when a specific metadata attribute is selected.</p>
+
+<p>Once the selections are in place, click the Report button to display the report.</p>
 </li>
 </ul>
 </section>
-<section id="backend"> <title>Pipeline (CSV Performance Monitoring Backend)</title>
+<section id="backend"> <title>CSV Performance Monitoring Backend</title>
 <p>The HP Helion OpenStack Carrier Grade provides access to performance measurement samples in the form of comma-separated values (CSV) files. They provide the following benefits:</p>
 <ul>
 <li>off-line permanent storage of large samples history</li>
@@ -140,8 +139,6 @@ filter field is applied only when a specific metadata attribute is selected.</p>
 <p>Recording of samples and management of CSV files is done through special Ceilometer pipelines available from the Pipelines tab, as illustrated below:</p>
 <p>The csv pipeline collects system information with the exception of AVS switching meters. The latter are collected by the <codeph>vswitch_avg</codeph> pipeline.</p>
 <p>Click the <b>Update Settings</b> button to configure the behavior of a pipeline. The <b>Edit Pipeline</b> window is presented as follows:</p>
-      <p><image href="../../../media/CGH-2-resource-usage-pipeline.png" id="image_h4k_wxc_gt"
-          width="600"/></p>
 <p>The following fields are available:</p>
 <ul>
 <li>
@@ -152,8 +149,10 @@ filter field is applied only when a specific metadata attribute is selected.</p>
 <p>
 <b>Meters</b> - An editable field displaying the list of comma-separated meters included in the pipeline. The list must be enclosed in square brackets, as follows:</p>
 
-<codeblock><codeph>[meter1,meter2,...]
-</codeph></codeblock>
+<codeblock>
+<codeph>[meter1,meter2,...]
+</codeph>
+</codeblock>
 </li>
 </ul>
 <p>The following syntax rules apply to the specified meters:</p>
@@ -164,8 +163,10 @@ filter field is applied only when a specific metadata attribute is selected.</p>
 <li>
 <p>Meter specifications support a leading exclamation mark to exclude the specified meter, as follows:</p>
 
-<codeblock><codeph>[!meter1,!meter2,...]
-</codeph></codeblock>
+<codeblock>
+<codeph>[!meter1,!meter2,...]
+</codeph>
+</codeblock>
 
 <p>Such a pipeline includes all meters but the ones in the list.</p>
 
@@ -186,19 +187,24 @@ filter field is applied only when a specific metadata attribute is selected.</p>
 <b>Backup Count</b> - The number of concurrent backup CSV files to maintain in a rotation ring, including the currently active file. When a CSV file reaches its maximum size, it is renamed as a backup file, and a new CSV file is opened for writing. Backup files older than the size of the rotation ring are automatically removed.</li>
 <li>
 <b>Compress Backups</b> - A check box used to select whether or not to compress backup files in the rotation ring.</li>
+<li/>
 </ul>
 </section>
 <section id="retention"> <title>Retention Period</title>
 <p>Performance samples are kept in the database for a limited period of time known as the retention period. Its default value is 86400 seconds, or 24 hours.</p>
 <p>Click the <b>Edit Retention Period</b> button in the <b>Retention Period</b> tab to modify the current value. You must verify that the configured value is equal or higher than the period over which you intend to gather statistics.</p>
+<p>You can also control the retention period from the CLI. To view the current settings, use the following command.</p>
+<codeblock>
+  <codeph>system pm-show
+</codeph>
+</codeblock>
+<p>To change the retention period from the CLI, use the following command syntax.</p>
+<codeblock>
+  <codeph>system pm-modify retention_secs=retention_period
+</codeph>
+</codeblock>
 <p>
-        <b>Note:</b> Changes to the retention period cause 250.001 Configuration out-of-date alarms
-        to be raised briefly for the controller nodes. During this period, the status Config
-        out-of-date is displayed for the controller nodes on the <b>Host</b> tab of the
-          <b>Inventory</b> pane. These alarms are resolved and cleared automatically after a few
-        seconds.</p>
-      <p><image href="../../../media/CGH-2-resource-usage-retention.png" width="600"
-          id="image_ocq_1yc_gt"/></p>
+<b>Note:</b> Changes to the retention period cause 250.001 Configuration out-of-date alarms to be raised briefly for the controller nodes. During this period, the status Config out-of-date is displayed for the controller nodes on the <b>Host</b> tab of the <b>Inventory</b> pane. These alarms are resolved and cleared automatically after a few seconds.</p>
 <p>
   <xref type="section" href="#topic8785"> Return to Top </xref>
 </p>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic
+    domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   "
+    id="jow1432757989702" xml:lang="en-us">
+
+
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Selecting a Region</title>
+
+
+    <body>
+
+
+        <section>
+            <p>When working in HP Helion OpenStack Carrier Grade, you can work in one of two regions: </p>
+            <ul>
+                <li>the non-KVM region, also called <codeph>memphis</codeph> or
+                        <codeph>denver</codeph> (based on the <xref
+                        href="../../Installation/carrier-grade-install-pb-overview.dita#topic1925"
+                        >deployment template used during the installation</xref>)</li>
+                <li>the KVM region, also called <codeph>regionone</codeph></li>
+            </ul>
+            <p>In the Horizon interface, you can use a selector to move between the two regions.</p>
+            <p><image href="../../../media/CGH-2-region-selector.png" id="image_iyh_rsw_ft"
+                    width="350" height="141"/></p>
+            <p>For more information on the regions, see the <xref
+                    href="../../Installation/carrier-grade-technical-overview.dita#topic3485"
+                    >Technical Overview</xref>.</p>
+        </section>
+
+
+    </body>
+
+
+</topic>
