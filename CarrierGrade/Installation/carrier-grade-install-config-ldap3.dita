@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring LDAP CLI
+    Support</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+  </metadata>
+</prolog>
+<body>
+    <p><!--Based on https://wiki.hpcloud.net/pages/viewpage.action?pageId=53516567--></p>
+  <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone v2
+      authorization. The services need to be modified to use Keystone v3. You will not be able to
+      execute OpenStack CLI commands until the following changes are made on all three controller
+      nodes in the non-KVM region. </p>
+    <p>You should have downloaded the patch files in the <xref
+        href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/getinstall"
+      >Prerequisites</xref>.</p>
+  <p>To configure HP Helion OpenStack Carrier Grade services to use Keystone v3: </p>
+  <ol>
+      <li>Copy the <codeph>ldap_patch_1.1.tar.gz</codeph> and <codeph>hoscg-update.tgz</codeph>
+        files to the <codeph>~/patch_cghelion1.1</codeph> directory.
+        <codeblock>cp ldap_patch_1.1.tar.gz ~/patch_cghelion1.1
+cp hoscg-update.tgz ~/patch_cghelion1.1</codeblock></li>
+      <li>Use the following command to extract the patches:
+        <codeblock>tar -zxvf ldap_patch_1.1.tar.gz
+tar -zxvf hoscg-update.tgz</codeblock></li></ol>
+
+  <section><title>Modify the <codeph>stackrc</codeph> files</title>
+    <p>The <codeph>stackrc</codeph> file is a configuration file that contains all of the settings
+        that control the supported services and the repositories used to download the source for
+        those services.</p>
+    <ol>
+      <li>On the HLM host, use the following commands to modify the <codeph>/root/stackrc</codeph>
+          file with values appropriate to your environment, using the following example.
+          <codeblock>export OS_PASSWORD=admin
+export OS_USERNAME=admin
+export OS_TENANT_NAME=admin
+export OS_AUTH_URL=https://10.200.52.100:5000/v2.0
+export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
+export OS_REGION_NAME=memphis
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_USER_DOMAIN_ID
+unset OS_IDENTITY_API_VERSION
+unset OS_AUTH_VERSION
+unset OS_PROJECT_NAME</codeblock></li>
+    <li>Execute the following commands to source the <codeph>- /root/stackrcv3</codeph> file:
+          <codeblock>source stackrcv3</codeblock></li>
+    <li>Execute the following OpenStack CLI command to create a new project:
+              <codeblock>openstack project create ldapdemo --domain americas </codeblock><p><image
+              href="../../media/CGH-install-ldap-id.png" id="image_qst_sky_bt"/></p></li>
+    <li>Make note of the <codeph>domain-id</codeph>.</li>
+    <li>Execute the following command to list all user names:
+              <codeblock>openstack user list --domain Americas</codeblock><p><image
+              href="../../media/CGH-install-ldap-user.png" id="image_fzy_2ly_bt"/></p></li>
+    <li>Make note of the ID number for the <codeph>cg-ldap-admin</codeph> user.</li>
+    <li>Execute the following command to add the <codeph>cg-ldap-admin</codeph> user (from the
+          previous step) as an admin to the project you created as an admin.
+          <codeblock>openstack role add --user &lt;user id> --project ldapdemo admin</codeblock></li>
+    <li>Create a text file with the LDAP username/password, project/tenant name, domain name and ID,
+          Identity service API version, and other values as shown:
+            <codeblock>export OS_USERNAME=&lt;ldapusername>
+export OS_PASSWORD=&lt;ldapuserpassword>
+export OS_PROJECT_NAME=ldapdemo
+export OS_TENANT_NAME=ldapdemo
+export OS_PROJECT_DOMAIN_NAME=americas
+export OS_USER_DOMAIN_ID=&lt;DOMAIN_GUID>
+export OS_IDENTITY_API_VERSION=3 
+export OS_AUTH_VERSION=3
+export OS_AUTH_URL=&lt;CAN_AUTH_URL> 
+#export OS_AUTH_URL=&lt;CLM_AUTH_URL>
+export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
+export OS_REGION_NAME=memphis         </codeblock><p>The
+            file should appears similar to the
+            following:<codeblock>export OS_USERNAME=cg-ldap
+export OS_PASSWORD=cg-ldap
+export OS_PROJECT_NAME=ldapdemo
+export OS_TENANT_NAME=ldapdemo
+export OS_PROJECT_DOMAIN_NAME=americas
+export OS_USER_DOMAIN_ID=48b0aac906394e99855af16bfdbd9d32
+export OS_IDENTITY_API_VERSION=3
+export OS_AUTH_VERSION=3
+export OS_AUTH_URL=https://10.20.4.100:5000/v3
+#export OS_AUTH_URL=http://10.20.3.103:35357/v3
+export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
+export OS_REGION_NAME=regionone </codeblock></p></li>
+        <li> Save the files as <codeph>stackrcv3</codeph>, replacing the existing file. </li>
+    </ol>
+  </section>
+  <section><title>Install the HP Identity Operations (Keystone) package on all the
+        controllers</title>
+      <ol>
+        <li>On the HLM host, change to the to the <codeph>~/&lt;cloudname></codeph>
+          directory.<codeblock>cd ~/&lt;cloudname&gt; </codeblock></li>
+        <li>Execute the following command, using your cloudname and failure-zone:
+            <codeblock>hupdate -c &lt;cloudname> -f &lt;failureZone> hoscg-update.tgz</codeblock><p>Where:&lt;ul
+            id="ul_lcw_gbs_bt"></p><ul>
+            <li>&lt;cloudname> is the name of your cloud;</li>
+            <li>&lt;failurezone> is controller mapping can be obtained from
+              &lt;cloud-directory&gt;/nodes.json file on HLM node.</li>
+          </ul></li>
+      </ol> Execute this command on all three non-KVM controllers, using a different failure zone
+      for each. The command output ends with the following upon
+      completion:<codeblock>PLAY RECAP ********************************************************************      
+B53DEMO-CCP-CPN-N0001-NETCLM : ok=10   changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-T1-M1-NETCLM     : ok=4    changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-T1-M2-NETCLM     : ok=4    changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-T2-M1-NETCLM     : ok=25   changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-T2-M2-NETCLM     : ok=52   changed=47   unreachable=0    failed=0      
+B53DEMO-CCP-T2-M3-NETCLM     : ok=25   changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-VRG-N0001-NETCLM : ok=4    changed=0    unreachable=0    failed=0      
+B53DEMO-CCP-VRG-N0002-NETCLM : ok=4    changed=0    unreachable=0    failed=0      
+localhost                    : ok=6    changed=2    unreachable=0    failed=0        </codeblock></section>
+  <section><title>Configure Controllers</title>
+ <p>On each of the three non-KVM region conrollers, you meed to perform the following tasks:</p>    
+  <ol>
+        <li>Replace the <codeph>/etc/keystone/keystone-paste.ini</codeph> file on all three
+          controllers. From the HLM host, execute the following command for each
+            controller:<codeblock>scp ~/~/patch_cghelion1.1/keystone-paste.ini cghelion@&lt;controller-ip&gt;</codeblock><p>Where:
+              <codeph>&lt;controller-ip&gt;</codeph> is the IP address for each controller.</p></li>
+  <li>Edit the <codeph>/etc/nova/nova.conf</codeph> file to comment out the following line:
+          <codeblock>#auth_version = 2.0</codeblock></li>
+        <li>Edit the <codeph>/etc/ceilometer/ceilometer.conf</codeph> file to comment out the
+          following line: <codeblock>#auth_version = 2.0</codeblock></li>
+    <li>Modify Cinder and Glance INI files by making the following change: <p>Replace
+              <codeph>paste.filter_factory =
+              keystoneclient.middleware.auth_token:filter_factory</codeph></p><p>With:
+              <codeph>paste.filter_factory =
+            keystonemiddleware.auth_token:filter_factory</codeph></p><p>In the following files:<ul
+              id="ul_axl_kst_bt">
+              <li>/etc/cinder/api-paste.ini</li>
+              <li>/etc/glance/glance-api-paste.ini</li>
+              <li>/etc/glance/glance-registry-paste.ini</li>
+              <li>/etc/glance/glance-registry.conf</li>
+            </ul></p></li>
+    <li>Execute the following commands to restart affected OpenStack services:
+          <codeblock>service glance-registry restart
+service glance-api restart
+service cinder-api restart
+service nova-api restart</codeblock></li>
+      <li>Execute a <codeph>glance image-list</codeph>
+            command.<codeblock>glance image-list</codeblock><p>The output of the command appears
+            similar to the
+          following:</p><codeblock>/opt/stack/venvs/python-glanceclient/local/lib/python2.7/site-packages/requests/packages/urllib3/connection.py:251: SecurityWarning: Certificate has no `subjectAltName`, falling back to check for a `commonName` for now. This feature is being removed by major browsers and deprecated by RFC 2818. (See https://github.com/shazow/urllib3/issues/497 for details.)
+SecurityWarning
+/opt/stack/venvs/python-glanceclient/local/lib/python2.7/site-packages/requests/packages/urllib3/connection.py:251: SecurityWarning: Certificate has no `subjectAltName`, falling back to check for a `commonName` for now. This feature is being removed by major browsers and deprecated by RFC 2818. (See https://github.com/shazow/urllib3/issues/497 for details.)
+SecurityWarning
++--------------------------------------+-------------+-------------+------------------+------------+--------+
+| ID                                   | Name        | Disk Format | Container Format | Size       | Status |
++--------------------------------------+-------------+-------------+------------------+------------+--------+
+| 46ffcdbb-e393-4730-8e4e-8592394bbc15 | cirros      | vmdk        | bare             | 18743296   | active |
+| e25e8f97-c130-4a82-8988-05483cd7701d | cirros-qcow | qcow2       | bare             | 13200896   | active |
+| 49ee2a3a-eb0e-4e14-a7aa-24e459f4497e | cirros-test | qcow2       | bare             | 13147648   | active |
+| 57fc3e34-910f-49e6-9277-a46ed8156b42 | rhel65vmdk  | vmdk        | bare             | 1001783296 | active |
++--------------------------------------+-------------+-------------+------------------+------------+--------+
+</codeblock>
+        </li>
+  </ol>
+</section>
+  <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patch-after">KVM
+    installation</xref>.</p>
+  <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/patch-after">the KVM + ESX
+    installation</xref>.</p>
+  </body>
+</topic>

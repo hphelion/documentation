@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15959">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 Carrier Grade: Administrator Guide</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+      <othermeta name="role" content="All"/>
+      <othermeta name="role" content="Amanda F"/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <section><p>Click 
+      <xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
+          format="pdf" scope="external">here to launch the HP Helion OpenStack Carrier Grade
+          Administrator Guide</xref>.</p>The Administrator Guide is addressed to HP Helion OpenStack
+      Carrier Grade administrators responsible for the following areas:<ul id="ul_vzg_qph_ws">
+        <li>
+          <p>Creating and maintaining resources used by end users (tenants), such as virtual
+            machines, storage pools, network objects, and access credentials.</p>
+        </li>
+        <li>
+          <p>Operating and maintaining components of the HP Helion OpenStack Carrier Grade product,
+            such as clusters, nodes, system software, licensing files, and backup and restore
+            facilities</p>
+        </li>
+      </ul></section>
+
+  </body>
+</topic>

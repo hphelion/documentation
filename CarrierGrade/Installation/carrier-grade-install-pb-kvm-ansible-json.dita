@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic4797">
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample ansible.json File for
+        Installing the KVM + ESX Topology</title>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+        </metadata>
+    </prolog>
+    <body>
+        <p>
+            <!--UNDER REVISION-->
+            <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
+            <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
+        <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing
+                the KVM + ESX deployment</xref> requires several JSON files that will be used when
+            deploying the HLM VM.</p>
+        <p>The <codeph>ansible.json</codeph> file contains the following fields:</p>
+        <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
+            <tgroup cols="2">
+                <colspec colnum="1" colname="col1"/>
+                <colspec colnum="2" colname="col2"/>
+                <thead>
+                    <row>
+                        <entry><b><u>Variable Name</u></b></entry>
+                        <entry><b><u>Description</u></b></entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>dns_domain_name</entry>
+                        <entry>The DNS domain name, for example: <codeph>helion.cg</codeph>.</entry>
+                    </row>
+                    <row>
+                        <entry>ext_dns_ip</entry>
+                        <entry>The IP address of the domain server, for example:
+                                <codeph>10.10.10.25</codeph>. </entry>
+                    </row>
+                    <row>
+                        <entry>vsc_dcm_ip</entry>
+                        <entry><p>The management IP address of VSC VM, for example:
+                                    <codeph>10.10.10.20</codeph>. This address is in the
+                                    <codeph>bof.cfg</codeph> file. </p>
+                            <p>Open the <codeph>bof.cfg</codeph> file and look for the
+                                following:</p>
+                            <codeblock>address {{ global.ansible_vars.vsc_dcm_ip }}/{{global.ansible_vars.vsc_dcm_ip_subnet}}
+_vars.vsc_dcm_ip_subnet}}
+                                </codeblock></entry>
+                    </row>
+                    <row>
+                        <entry>vsc_dcm_ip_ha</entry>
+                        <entry>
+                            <p>The management IP of <b>HA (High Availability)</b> VSC VM, for
+                                example: <codeph>10.10.10.20</codeph>. This address is in the
+                                    <codeph>bof.cfg</codeph> file. </p>
+                            <p>Open the <codeph>bof.cfg</codeph> file and look for the
+                                following:</p>
+                            <codeblock>address {{ global.ansible_vars.vsc_dcm_ip }}/{{global.ansible_vars.vsc_dcm_ip_subnet}}
+_vars.vsc_dcm_ip_subnet}}
+                            </codeblock>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>vsc_dcm_ip_subnet</entry>
+                        <entry>The subnet associated with the management, for example:
+                                <codeph>/24</codeph>.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_tul_cidr</entry>
+                        <entry>The data management IP address and subnet, for example:
+                                <codeph>192.168.200.20/24</codeph>.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_tul_cidr_ha</entry>
+                        <entry>The high availability (HA) data management IP address and subnet, for
+                            example: <codeph>192.168.200.20/24</codeph>.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_user_name</entry>
+                        <entry>The VSC VM user name to create; for example:
+                            <codeph>admin</codeph>.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_user_pass</entry>
+                        <entry>The VSC VM password to assign to the user name, for example:
+                                <codeph>admin</codeph>.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_xmpp_name</entry>
+                        <entry>The user name for the XMPP server, for example:
+                                <codeph>vsc:password@vsd.helion.cg</codeph>.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_xmpp_name_ha</entry>
+                        <entry>The user name for the high availability (HA) XMPP server, for
+                            example: <codeph>vsc:password@vsd.helion.cg</codeph>.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_route_mgmt_cidr</entry>
+                        <entry>
+                            <p>The static routes (with /subnet) for subnets reachable through the
+                                management IP ie</p>
+                            <codeblock> vsc_route_mgmt_cidr": ["10.20.20.0/24", "10.1.33.0/24" ]</codeblock>
+                            <p>The first address corresponds to the DNS server and the second
+                                corresponds to the CLM Network.</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>vsc_route_mgmt_gw</entry>
+                        <entry>
+                            <p>The Gateway IP address used while setting the static routes after
+                                next-hop, for example:</p>
+                            <codeblock> static-route vsc_route_mgmt_cidr[0] next-hop vsc_route_mgmt_gw </codeblock>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>vsc_image_name</entry>
+                        <entry>The name of the Image to be used for the deployment of the VSC
+                            VM.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_host_name</entry>
+                        <entry>The system name of the VSC VM used in the VCS configuration.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_host_name_ha</entry>
+                        <entry>The system name of the high availability (HA) VSC VM used in the VSC
+                            configuration.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_ha_enabled</entry>
+                        <entry>A flag to set the high availability (HA) functionality for VSC.
+                                <p>Use 1 for HA and 0 for non-HA.</p>By default this value is set to
+                                <codeph>1</codeph>.</entry>
+                    </row>
+                    <row>
+                        <entry>vsc_bgp_required</entry>
+                        <entry><p>A flag to set if the BGP configuration setup is required for the
+                                Federation of VSC Nodes.</p>
+                            <p>By default this value is set to <codeph>1</codeph> 1. Set to 0 if BGP
+                                configuration setup is not required.</p></entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <section id="sample-node-provisionjson-file">
+            <p>The following represents a sample <codeph>ansible.json</codeph> file in the
+                    <codeph>&lt;cloudname>/vars</codeph> directory of the HLM VM. Use values
+                appropriate for your environment. The IP addresses are masked for security
+                purposes.</p>
+            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
+                    the KVM + ESX Deployment</xref>.</p>
+<codeblock>
+    {
+        "product": {
+            "version": 1
+           },
+    
+        "property-groups": [
+            {
+                "name": "ansible-vars",
+                "properties": {
+                    "nuagenetlib_tar_name": "nuage-openstack-nuagenetlib-juno.tar.gz",
+                    "nuageneutron_tar_name": "nuage-openstack-neutron-juno-plugin.tar.gz",
+                    "dns_domain_name": "dcn-two.helion.cg",
+                    "ext_dns_ip": "10.1.x.x",
+                    "dns_address": "10.1.x.x",
+                    "vsc_dcm_ip": "10.20.x.x",
+                    "vsc_dcm_ip_ha": "10.20.x.x",
+                    "vsc_dcm_ip_subnet": "24",
+                    "vsc_tul_cidr": "10.10.x.x/24",
+                    "vsc_tul_cidr_ha": "10.10.x.x/24",
+                    "vsc_tul_ip": "10.10.x.x",
+                    "vsc_tul_ip_ha": "10.10.x.x",
+                    "vsc_user_name": "admin",
+                    "vsc_user_pass": "admin",
+                    "vsc_xmpp_name": "vscha1:password@vsd1.dcn-two.helion.cg",
+                "vsc_xmpp_name_ha": "vscha2:password@vsd1.dcn-two.helion.cg",
+                    "vsc_route_mgmt_cidr": [
+                        "10.1.x.x/24",
+                        "10.10.x.x/24"
+                        ],
+                    "vsc_route_mgmt_gw": "10.10.x.x",
+                    "vsd_address": "10.10.x.x",
+                    "vsd_name": "vsd1",
+                    "vsc_image_name": "vsc_singledisk",
+                    "vsc_host_name": "vscha1",
+                "vsc_host_name_ha": "vscha2",
+                    "vsc_ha_enabled": 1,
+                "vsc_bgp_required": 1,
+                    "vsd_image_name": "VSD-3.0.0_HP_r3.0_36",
+                    "vsd_gateway": "10.10.x.x",
+                    "vsd_netmask": "255.255.255.0",
+                    "upstream_ntp_servers": [
+                        "10.1.x.x",
+                        "16.110.x.x
+                        ],
+                    "compute_virt_type": "kvm",
+                    "ssl_cert_file": "ca.crt",
+                    "ssl_key_file": "cakey.pem",
+                    "ssl_passphrase": "cghelion"
+                }
+            }
+        ]
+    }
+</codeblock>
+           
+        
+        </section>
+    </body>
+</topic>

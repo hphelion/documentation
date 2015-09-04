@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the VMware vSphere
+    Distributed Switch</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+  </metadata>
+</prolog>
+<body>
+  <p><i>Return to the Installing the <xref
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+        Deployment</xref>.</i></p>
+  
+  <p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VMWare vSphere
+      Distributed Switch (VDS). The VDS provides a centralized interface from which you can
+      configure, monitor and administer virtual machine access switching for the entire data center.
+      You should have obtained the VDS installation package from VMware.</p>
+    <section>
+      <p>Before starting, make sure your VSD server is up and running.</p>
+      <p> To install the VDS:</p>
+      <ol id="ol_z24_nvy_zs">
+        <li>Copy the downloaded and extracted <codeph>CloudMgmt-vmware.tar.gz</codeph> file from HLM
+          host to VSD node in the <codeph>/opt/vsd</codeph> directory. For more information on
+          downloading DCN files, see <xref
+            href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/download-esx">Download packages
+            for KVM + ESX</xref>.</li>
+        <li>Log into your VSD server</li>
+        <li>Extract the contents of the <codeph>CloudMgmt-vmware.tar.gz</codeph> file into the
+            <codeph>/opt/vsd/ </codeph>directory. </li>
+        <li>Change to the directory created by extracting the
+          files:<codeblock>cd /opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeblock></li>
+        <li>Change the permissions on that
+          directory:<codeblock>Chmod -R 777 /opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeblock></li>
+        <li>Execute the following command, using appropriate values for the vCenter IP address, the
+          vCenter user and password, and the ESX cluster name. The other values are
+          static.<codeblock>./cli.bash create_dvswitch --add-hosts true --num-portgroups 1 --provider-vdc-id 1 --url https://&lt;vcenter-ip> /sdk -u &lt;vcenter user&gt; -p &lt;vcenter password&gt; -r  &lt;cluster name&gt;</codeblock></li>
+      
+      <li>After the command completes successfully, launch the vCenter client and navigate to the
+          <b>Network Inventory</b> page, as shown: 
+            <p><image href="../../media/CGH-install-vcenter-network-inv.png" id="image_y1g_rfz_zs"
+            /></p></li>  
+    <li>Change the name of the port group ending in <codeph>-OVSPG</codeph> to
+            <codeph>dvPortGroup</codeph>, as shown:<p><image
+              href="../../media/CGH-install-portgroup-name.png" id="image_eqm_ngz_zs"/></p></li>
+      </ol>
+      <p><i>Return to the Installing the <xref
+            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+            Deployment</xref>.</i></p>
+    </section>
+</body>
+</topic>

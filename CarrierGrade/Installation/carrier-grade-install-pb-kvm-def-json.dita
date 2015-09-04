@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample definition.json File for
+        Installing the KVM + ESX Topology</title>
+<prolog>
+    <metadata>
+        <othermeta name="layout" content="default"/>
+        <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+        <othermeta name="role" content="Storage Administrator"/>
+        <othermeta name="role" content="Storage Architect"/>
+        <othermeta name="role" content="Michael B"/>
+        <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
+    <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
+                KVM + ESX deployment</xref> requires several JSON files that will be used when
+            deploying the HLM VM.</p>
+<section id="sample-node-provisionjson-file">
+    <p>The following represents a sample <codeph>definition.json</codeph> file in the
+                    <codeph>&lt;cloudname></codeph> directory of the HLM VM. The IP addresses are
+                masked for security purposes. Use values appropriate for your environment.</p>
+            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
+                    the KVM + ESX Deployment</xref>.</p>
+<codeblock>
+{
+                "product": {
+                    "version": 1
+                    },
+                
+                    "cloud": {
+                        "name": "b51",
+                        "nickname": "b51",
+                        "server-config": "nodes.json",
+                        "environment": "environment.json",
+                        "network-config": ".hos/lnet-control-data.json",
+                        "properties": "vars"
+                    },
+                
+                    "failure-zones": [
+                        {
+                            "name": "fz1"
+                        },
+                        {
+                            "name": "fz2"
+                        },
+                        {
+                            "name": "fz3"
+                        }
+                        ],
+                
+                    "control-planes": [
+                        {
+                            "file": ".hos/ccp-dcn-esx.json",
+                            "resource-nodes": [
+                                {
+                                    "type": "cpn",
+                                    "count": 1,
+                                    "services": [
+                                        "FND-IPT",
+                                        "NTP-SVR",
+                                        "NOV-CPX",
+                                        "CPX-CFG",
+                                        "CEI-CMP"
+                                        ]
+                       },
+                       {
+                            "file":  ".hos/ccp-vrsg.json",
+                            "count": 2
+                        }
+                    ]
+                }
+             ]
+         }
+                
+</codeblock>
+        </section>
+</body>
+</topic>
