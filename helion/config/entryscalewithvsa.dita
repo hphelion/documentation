@@ -756,12 +756,82 @@
       <p><codeblock>~/helion/my_cloud/definition/data/server_roles.yml</codeblock></p>
       <p>The key values to enter into this document are ....</p>
       <p>Here is the sample file included with the install:</p>
+      <codeblock>
+---
+  product:
+    version: 2
+        
+  server-roles:
+        
+    - name: ROLE-CONTROLLER
+      interface-model: INTERFACE_SET_CONTROLLER
+      disk-model: DISK_SET_CONTROLLER
+        
+    - name: ROLE-COMPUTE
+      interface-model: INTERFACE_SET_COMPUTE
+      disk-model: DISK_SET_COMPUTE
+        
+    - name: ROLE-VSA
+      interface-model: INTERFACE_SET_VSA
+      disk-model: DISK_SET_VSA</codeblock>
     </section>
     <section id="servers.yml"><title>servers.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/servers.yml</codeblock></p>
       <p>The key values to enter into this document are ....</p>
       <p>Here is the sample file included with the install:</p>
+      <codeblock>
+---
+  product:
+    version: 2
+        
+  servers:
+    # NOTE: Addresses of servers need to be
+    #       changed to match your environment.
+    #
+    #       Add additional servers as required
+    #
+    #       nic-mapping is optional.  The value specified is the name
+    #       of an entry in the nic-mappings list from nic_mappings.yml.
+    #       To use, uncomment and modify to match your environment.
+        
+    # Controllers
+    - id: controller1
+   <b>ip-addr: 192.168.10.3</b>
+      role: ROLE-CONTROLLER
+    # nic-mapping: HP_DL360_4PORT
+        
+    - id: controller2
+      ip-addr: 192.168.10.4
+      role: ROLE-CONTROLLER
+    # nic-mapping: HP_DL360_4PORT
+        
+    - id: controller3
+      ip-addr: 192.168.10.5
+      role: ROLE-CONTROLLER
+    # nic-mapping: HP_DL360_4PORT
+        
+    # Compute Nodes
+    - id: compute1
+      ip-addr: 192.168.10.6
+      role: ROLE-COMPUTE
+    # nic-mapping: MY_2PORT_SERVER
+        
+    # VSA Storage Nodes
+    - id: vsa1
+      ip-addr: 192.168.10.9
+      role: ROLE-VSA
+    # nic-mapping: MY_2PORT_SERVER  
+      
+    - id: vsa2
+      ip-addr: 192.168.10.10
+      role: ROLE-VSA
+    # nic-mapping: MY_2PORT_SERVER
+      
+    - id: vsa2
+      ip-addr: 192.168.10.11
+      role: ROLE-VSA
+    # nic-mapping: MY_2PORT_SERVER</codeblock>
     </section>
   </conbody>
 </concept>
