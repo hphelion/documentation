@@ -21,70 +21,13 @@
     <topicref href="helion/releasenotes.dita"/>
     <!--  <topicref href="helion/supportedconfigs.dita"/> -->
     <topicref href="helion/hardware.dita"/>
-    <topichead navtitle="Installation">
-    <topicref href="helion/installation.dita"/>
-    <topicref href="helion/esx/esx_installation.dita" navtitle="Installing on ESX" locktitle="yes"/>
-    <topicref  href="helion/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
-    </topichead>
     <topicref href="helion/backup_and_restore.dita"/>
     <topicref href="helion/faq.dita"/>
     <topicref href="helion/eula.dita" toc="no"/>
 
 
     <!-- keystone identity -->
-    <topichead navtitle="Identity">
-      <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Overview"
-        locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_roles.dita"
-        navtitle="Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_installation.dita"
-        navtitle="Installing Keystone Identity" locktitle="yes"> </topicref>
-     <!--  <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
-        locktitle="yes"> </topicref>--> 
-      <topicref href="helion/keystone/keystone_update.dita" navtitle="Updating Keystone"
-        locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Current Limitations"
-        locktitle="yes"> </topicref>
-    </topichead>
     <!-- Monitoring and Logging -->
-    <topichead navtitle="Monitoring">
-       <topicref href="helion/monasca/monasca.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Monitoring Overview</navtitle>
-        </topicmeta>
-      </topicref> 
-      <topicref href="helion/monasca/alarms.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Service Alarm Definitions</navtitle>
-        </topicmeta>
-      </topicref>
-      <topichead navtitle="Operations Console">
-        <topicref href="helion/monasca/opsconsole/overview.dita" locktitle="yes">
-          <topicmeta>
-            <navtitle>Operations Console Overview</navtitle>
-          </topicmeta>
-        </topicref>
-        <topichead navtitle="General">
-          <topicref href="helion/monasca/opsconsole/dashboard.dita"/>
-          <topicref href="helion/monasca/opsconsole/logging.dita"/>
-          <topicref href="helion/monasca/opsconsole/alarm_explorer.dita"/>
-          <topicref href="helion/monasca/opsconsole/alarm_creation.dita"/>
-          <topicref href="helion/monasca/opsconsole/notification_methods.dita"/>
-          <topicref href="helion/monasca/opsconsole/metric_monitoring.dita" toc="no"/>
-        </topichead>
-        <topichead navtitle="Compute">
-          <topicref href="helion/monasca/opsconsole/compute_summary.dita"/>
-          <topicref href="helion/monasca/opsconsole/compute_hosts.dita"/>
-          <topicref href="helion/monasca/opsconsole/compute_instances.dita"/>
-        </topichead>
-        <topichead navtitle="Storage">
-          <topicref href="helion/monasca/opsconsole/storage_summary.dita"/>
-        </topichead>
-        <topichead navtitle="Networking">
-          <topicref href="helion/monasca/opsconsole/networking_summary.dita"/>
-        </topichead>
-      </topichead>
-    </topichead>
     <topichead navtitle="Centralized Logging">
          <topicref href="helion/logging/logging_overview.dita" locktitle="yes"> 
         <topicmeta>
@@ -98,26 +41,6 @@
       </topicref>
     </topichead>
     <!-- reporting = metering = ceilomter -->
-    <topichead navtitle="Metering">
-      <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Overview"
-        locktitle="yes"/>
-      <topicref href="helion/ceilometer/metering_components.dita"
-        navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
-      <topicref href="helion/ceilometer/metering_metertypes.dita" navtitle="Available Meter Types"
-        locktitle="yes"/>
-      <topicref href="helion/ceilometer/metering_rbac.dita" navtitle="Role-based Access Control"
-        locktitle="yes"/>
-      <topicref href="helion/ceilometer/metering_troubleshoot.dita"
-        navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
-      <topicref href="helion/ceilometer/metering_apiextensions.dita"
-        navtitle="Ceilometer API Extensions" locktitle="yes"/>
-      <topicref href="helion/ceilometer/metering_bestpractice.dita"
-        navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
-    </topichead>
-    <topichead navtitle="Object Storage">
-      <topicref href="helion/swift/swift_overview.dita"/>
-      <topicref href="helion/swift/swift_mid_sized_cloud_model.dita" toc="no"/>
-    </topichead>
 
   </topicref>
 </map>
