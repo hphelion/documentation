@@ -24,7 +24,7 @@
     </section>
     <section id="diagram">
       <title>Diagram of Monasca Service</title>
-      <p><image placement="break" href="../images/monasca_diagram.png" scalefit="yes"/></p>
+      <p><image placement="break" href="../images/monasca_diagram.png" width="6in"/></p>
     </section>
     <section id="configuration"><title>Configuring Monasca</title>
       <p>In Beta 1 you will have the option to specify which database platform you want to use for
