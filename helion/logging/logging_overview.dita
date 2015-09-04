@@ -88,7 +88,7 @@
         configuration file. Logstash then forwards the processed log files in Elasticsearch. Users
         can use the Kibana interface to view and analyze the information, as shown in the following
         figure:</p>
-      <p><image href="../images/centralized_logging_diagram.png" width="6 in"/></p>
+      <p><image href="../images/centralized_logging_diagram.png"/></p>
       <note>Logging requires 4GB of disk space to make sure that all logging messages are
         retained.</note>
     </section>
