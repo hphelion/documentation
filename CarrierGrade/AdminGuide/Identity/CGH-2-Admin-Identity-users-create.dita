@@ -16,8 +16,9 @@
 <section id="createuser"> <title>Create a user</title>
 <p>To create a user:</p>
 <p>
-        <b>Note:</b> At least <xref
-          href="CGH-2-Admin-Identity-quotas-managing-projects.dita#topic994">one project must exist</xref> before you can create users.</p>
+  <b>Note:</b> At least <xref href="CGH-2-Admin-Identity-projects-create.dita#topic2004">one project must
+    exist</xref> before you
+        can create users.</p>
 <ol>
 <li>
 <p>

@@ -61,7 +61,7 @@
 <ol>
 <li>
 <p>
-<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>
@@ -140,7 +140,7 @@ columns:</p>
 <ol>
 <li>
 <p>
-<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
@@ -164,7 +164,7 @@ Where &lt;hostname&gt; is the name of the system.
 <ol>
 <li>
 <p>
-<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
@@ -187,7 +187,7 @@ Where &lt;hostname&gt; is the name of the system.
 <ol>
 <li>
 <p>
-<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
@@ -213,7 +213,7 @@ Where &lt;hostname&gt; is the name of the system.
 <ol>
 <li>
 <p>
-<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
@@ -229,7 +229,7 @@ Where &lt;hostname&gt; is the name of the system.
 <ol>
 <li>
 <p>
-<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
@@ -254,7 +254,7 @@ Use this option when you need to lock the currently active controller, or do any
 <ol>
 <li>
 <p>
-<xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/CGH-2-Admin-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>

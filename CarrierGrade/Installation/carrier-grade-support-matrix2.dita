@@ -24,7 +24,6 @@
             Configuration</xref></li>
         <li><xref href="#topic1773/software" format="dita">Software Requirements</xref></li>
         <li><xref href="#topic1773/guestOS" format="dita">Supported Guest Operating Systems</xref></li>
-        <li><xref href="#topic1773/typical" format="dita">Typical Configurations</xref></li>
       </ul></p>
     <p>The hardware requirements and configurations are different, depending upon the topology: KVM
       or KVM + ESX<tm tmtype="reg"/>. See the <xref

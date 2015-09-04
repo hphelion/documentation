@@ -35,7 +35,7 @@
     </p>
     <section id="regionone"><title>Overview of the <codeph>regionone</codeph> region</title><p>To
         view information on the servers in the regionone region, click <xref
-          href="../Dashbard/CGH-2-Admin-region-selector.dita#jow1432757989702">regionone in the
+          href="../Dashboard/CGH-2-Admin-region-selector.dita#jow1432757989702">regionone in the
           region selector</xref>.</p><image href="../../../media/CGH-2-regionone-overview.png"
         id="image_wyq_wyw_ft"/>
       <p>The page includes the following features:</p><ul>
@@ -142,7 +142,7 @@
   <section id="memphis">
     <title>Overview of the <codeph>memphis</codeph>/<codeph>denver</codeph> region</title>
     <p>To view information on the servers in the <codeph>memphis</codeph> or <codeph>denver</codeph>
-        region, click <xref href="../Dashbard/CGH-2-Admin-region-selector.dita#jow1432757989702"
+        region, click <xref href="../Dashboard/CGH-2-Admin-region-selector.dita#jow1432757989702"
       >memphis or denver in the region selector</xref>.</p>
     <p>The following information appears. </p>
     <p><image href="../../../media/CGH-2-memphis-overview.png" id="image_hwj_xyw_ft"/></p>

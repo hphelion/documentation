@@ -67,7 +67,7 @@
         <li>
           <p>
             <xref
-              href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power"
+              href="../HostManagement/CGH-2-host-management.dita#topic11233/poweroff"
               type="section">Power down the host</xref>.</p>
         </li>
         <li>
@@ -80,7 +80,7 @@
         <li>
           <p>
             <xref
-              href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power"
+              href="../HostManagement/CGH-2-host-management.dita#topic11233/poweroff"
               type="section">Power on the host</xref> and wait for it to reboot fully.</p>
           <p>When the host is fully rebooted, it is shown as Locked, Enabled, and Available in the
             Hosts list.</p>

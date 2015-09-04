@@ -20,18 +20,18 @@
     <topicref href="CGH-2-Admin-Overview.dita">
         <topicref href="CGH-2-Admin-Network-Reqs.dita"/>
         <topicref href="CGH-2-Linux-Accounts.dita"/>
-        <topicref href="Dashbard/CGH-2-Admin-Dasboard-Controls.dita">
-            <topicref href="Dashbard/CGH-2-Admin-Dashboard-launch.dita"
+        <topicref href="Dashboard/CGH-2-Admin-Dasboard-Controls.dita">
+            <topicref href="Dashboard/CGH-2-Admin-Dashboard-launch.dita"
                 navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
-            <topicref href="Dashbard/CGH-2-Admin-Dashboard-how-works.dita"
+            <topicref href="Dashboard/CGH-2-Admin-Dashboard-how-works.dita"
                 navtitle="How to Use the Helion Dashboard" locktitle="yes"/>
-            <topicref href="Dashbard/CGH-2-Admin-region-selector.dita" navtitle="Selecting a Region"
+            <topicref href="Dashboard/CGH-2-Admin-region-selector.dita" navtitle="Selecting a Region"
                 locktitle="yes"/>
-            <topicref href="Dashbard/CGH-2-Admin-Dasboard-Project.dita"
+            <topicref href="Dashboard/CGH-2-Admin-Dasboard-Project.dita"
                 navtitle=" Helion Dashboard Project Panel" locktitle="yes"/>
-            <topicref href="Dashbard/CGH-2-Admin-Dasboard-Admin.dita"
+            <topicref href="Dashboard/CGH-2-Admin-Dasboard-Admin.dita"
                 navtitle=" Helion Dashboard Admin Panel" locktitle="yes"/>
-            <topicref href="Dashbard/CGH-2-Admin-Dasboard-Identity.dita"
+            <topicref href="Dashboard/CGH-2-Admin-Dasboard-Identity.dita"
                 navtitle=" Helion Dashboard Identity Panel" locktitle="yes"/>
         </topicref>
         <!-- 

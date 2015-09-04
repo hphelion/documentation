@@ -29,8 +29,9 @@
 
 <p>The project name and details; users associated with the project, and project quotas are displayed.</p>
 
-<p>For information on modifying these settings, see <xref
-              href="CGH-2-Admin-Identity-quotas-managing-projects.dita#topic994">Managing Projects</xref>.</p>
+<p>For information on modifying these settings, see <xref href="CGH-2-Admin-Identity-managing-projects.dita#topic994"
+  >Managing
+  Projects</xref>.</p>
 </li>
 <li>
 <p>Click <b>Cancel</b> to exit the screen.</p>

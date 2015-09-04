@@ -104,8 +104,6 @@
                             prompt instead:</p>
                         <codeblock><systemoutput>~(keystone_admin)$ </systemoutput></codeblock>
                     </note>
-                    <p>For more information on the active controller, see <xref
-                            href="jow1404333798721.xml"/>.</p>
                 </li>
 
 
@@ -126,9 +124,6 @@
                     <i>visudo</i> command. They can also source the script
                     <filepath>/etc/nova/openrc</filepath> to become OpenStack administrators when
                 working on the active controller. </p>
-            <p>Backup and restore operations of home directories and passwords must be done
-                manually. They are ignored by the system backup and restore utilities. See <xref
-                    href="psa1410807758201.xml"/> for further details.</p>
         </section>
 
 

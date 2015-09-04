@@ -19,17 +19,17 @@
 <p>As a user, you can work with any volume associated with the active project.</p>
 <ul>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Volumes/1.1commercial.dashboard.volume.create.dita" >Create, edit and delete a volume</xref>
-</li>
+    
+  <xref href="CGH-2-Admin-volumes-create.dita#topic2091">Create, edit and delete a volume</xref></li>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Instances/1.1commercial.dashboard.snapshot.create.dita" >Create and delete a snapshot from a volume</xref>
-</li>
+
+  <xref href="../Instances/CGH-2-Admin-Instance-snapshot-create.dita#topic1162">Create and delete a snapshot from a volume</xref></li>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Volumes/1.1commercial.dashboard.volume.extend.dita" >Extend the size of a volume</xref>
-</li>
+
+  <xref href="CGH-2-Admin-volumes-extend.dita#topic797">Extend the size of a volume</xref></li>
 <li>
-<xref href="../../../UseCases/TasksforUsers/Volumes/1.1commercial.dashboard.volume.attach.dita" >Attach a volume to a VM instance and detach a volume from VM instance</xref>
-</li>
+
+  <xref href="CGH-2-Admin-volumes-attach.dita#topic1625">Attach a volume to a VM instance and detach a volume from VM instance</xref></li>
 </ul>
 </section>
 <section id="managing-volumes-as-an-admin"> <title>Managing volumes as an admin</title>
@@ -37,12 +37,11 @@
 <b>Note:</b> The administrative user can perform all of the user tasks in addition to the admin tasks.</p>
 <ul>
 <li>
-<xref type="section" href="#topic1382/create_volume_type">Creating and deleting a volume type</xref>
-</li>
+  <xref href="CGH-2-Admin-volumes-admin.dita#topic1357">Creating and deleting a volume
+    type</xref>
+        </li>
 </ul>
-<p>
-  <xref type="section" href="#topic1382"> Return to Top </xref>
-</p>
+
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

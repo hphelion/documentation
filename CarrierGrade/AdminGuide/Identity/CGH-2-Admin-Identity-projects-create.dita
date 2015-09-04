@@ -12,7 +12,8 @@
 <!--UNDER REVISION-->
  <!--./UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.create.md-->
  <!--permalink: /helion/commercial/1.1/dashboard/managing/projects/creating/--></p>
-<p>As an admin, you can <xref type="section" href="#topic2004/projectcreate">create</xref> and <xref type="section" href="#topic2004/projectsdel">delete</xref> projects.</p>
+<p>As an admin user can <xref href="../Network/CGH-2-Admin-network-create.dita#topic3372">create</xref> and <xref
+        href="../Network/CGH-2-Admin-network-create.dita#topic3372">delete</xref> networks as needed..</p>
 <section id="projectcreate"> <title>Create a project</title>
 <ol>
 <li>

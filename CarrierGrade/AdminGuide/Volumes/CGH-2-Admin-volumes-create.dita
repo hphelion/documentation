@@ -88,7 +88,9 @@
 <p>Click <b>Edit Volume</b> to confirm.</p>
 
 <p>
-<b>Note:</b> You can <xref href="../../../UseCases/TasksforUsers/Volumes/1.1commercial.dashboard.volume.extend.dita" >extend a volume</xref> by using the <b>Extend Volume</b> option available in the <b>More</b> drop-down list and entering the new value for volume size.</p>
+            <b>Note:</b> You can <xref href="CGH-2-Admin-volumes-extend.dita#topic797">extend a volume</xref> by
+            using the <b>Extend Volume</b> option available in the <b>More</b> drop-down list and
+            entering the new value for volume size.</p>
 </li>
 </ol>
 </section>

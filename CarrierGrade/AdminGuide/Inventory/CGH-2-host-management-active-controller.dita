@@ -39,7 +39,7 @@ However, you can replace the primary or secondary disks, and you can replace fau
 <ol>
       <li>
         <p>
-          <xref href="../Dashbard/CGH-2-Admin-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-Admin-Dashboard-launch.dita#topic1160">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</p>
         <ul>
           <li>Use the IP address for the appropriate region where you want to make the change,
