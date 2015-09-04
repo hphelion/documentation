@@ -335,7 +335,7 @@ StrictHostKeyChecking no </codeblock></li>
                                         signature files</b> link in HDN to download the
                                         <codeph>cg-hos.tar.gz.gpg</codeph> file. </p>
                         <ol>
-                                <li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file to the
+                                <li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the
                                                 <codeph>/root/cg/</codeph> directory. You wlll need
                                         to create this
                                         directory:<codeblock>mkdir /root/cg/</codeblock></li>
@@ -367,7 +367,7 @@ gpg --import hpPublicKey2048.pub </codeblock></p></li>
                                 <li>Use the following command to view the keys in the key store:
                                                 <codeblock>gpg --list-keys</codeblock><p>The key
                                                 store appears similar to the
-                                        following:</p><codeblock>/home/sad/.gnupg/pubring.gpg
+                                        following:</p><codeblock>/home/cghelion/.gnupg/pubring.gpg
   ----------------------------
 pub   2048R/F7191CB9 2014-12-19
 pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
