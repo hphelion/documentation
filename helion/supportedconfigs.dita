@@ -101,7 +101,7 @@
     <section>
       <title>Configuration Illustrations</title>
       <p>The following diagram depicts a deployment scenario using KVM for Beta1.</p>
-      <p><image href="../media/networking/network_kvm_diag.png" width="500"/></p>
+      <p><image href="../media/networking/network_kvm_diag.png" width="1000"/></p>
       <p>The following diagram depicts a deployment scenario using ESX for Beta1.</p>
       <p><image href="../media/networking/HOS_ESX.png"/></p>
     </section>
