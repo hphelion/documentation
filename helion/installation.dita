@@ -130,6 +130,11 @@ helion/hos/                    Directory contains files used by the installer
                   rings, refer to <xref href="swift/ring_specifications.dita#ring-specification"
                     >ring specification</xref>.</li>
               </ul></li>
+            <li>Edit the <codeph>~/stack/helion/my_cloud/config/logging/main.yml</codeph> file and
+              under the <b>Elasticsearch defaults</b> section, change the value of the string below
+              to something other than <codeph>elasticsearch</codeph>:
+              <codeblock>vars.elasticsearch_cluster_name</codeblock> Example:
+                <codeph>helioncloud</codeph></li>
             <li>Commit your configuration to the <xref href="using_git.dita#topic_u3v_1yz_ct">local
                 git repo</xref>, as follows:
               <codeblock>cd ~/helion/hos/ansible
