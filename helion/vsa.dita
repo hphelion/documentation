@@ -23,7 +23,7 @@
           </ol>
         </li>
         <li>Deploy CMC by running the following command: <ol>
-            <li><codeblock>a.	ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
+            <li><codeblock>ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
           </ol>
         </li>
         <li>Set your X display and launch CMC: <ol>
@@ -70,33 +70,32 @@ hplefthand_iscsi_chap_enabled: true
 <b>volume_backend_name: vsa-backend-hlm003</b>
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 hplefthand_debug: false</codeblock></li>
-            <li>Run the following commands to commit and deploy the change: <ol>
-                <li><codeph>git add -A</codeph></li>
-                <li><codeph>git commit -m "your commit message goes here"</codeph></li>
-                <li><codeph>cd ~/helion/hos/ansible</codeph></li>
-                <li><codeph>ansible-playbook -i hosts/localhost
-                  config-processor-run.yml</codeph></li>
-                <li><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></li>
-                <li><codeph>cd ~/scratch/ansible/next/hos/ansible</codeph></li>
-                <li><codeph>ansible-playbook -i hosts/verb_hosts
-                  cinder-reconfigure.yml</codeph></li>
-              </ol></li>
-            <li>From the Control Plane, use the Cinder command-line client to create a volume so you
-              can verify that VSA is correctly configured. You can delete the created volume
-              afterwards, if desired. <ol>
-                <li>Create a test volume from a user account and verify that the volume is
-                  successfully created in the "available" state:
-                  <codeblock>cinder create --display-name &lt;name> &lt;size></codeblock></li>
-                <li>Using a session with the admin creds, show the details for the test volume
-                  created using: <codeblock>cinder show &lt;volumeId></codeblock> and verify that
-                  the volume was created on the correct backend, e.g.
-                  <codeblock>os-vol-host-attr:host                                                                         
-                  ha-volume-manager@vsa-1#vsa-backend-hlm003</codeblock>
-                </li>
-                <li>Delete the test volume</li>
-              </ol></li>
+            <li>Run the following commands to commit and deploy the change: <codeblock>git add -A</codeblock>
+              <codeblock>git commit -m "your commit message goes here"</codeblock>
+              <codeblock>cd ~/helion/hos/ansible</codeblock>
+              <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
+              <codeblock>>cd ~/scratch/ansible/next/hos/ansible</codeblock>
+              <codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
+            </li>
           </ol>
         </li>
+      </ol>
+    </section>
+    <section id="verify"><title>Verifying the Installation</title>
+      <p>From the Control Plane, use the Cinder command-line client to create a volume so you can
+        verify that VSA is correctly configured. You can delete the created volume afterwards, if
+        desired.</p>
+      <ol>
+        <li>Create a test volume from a user account and verify that the volume is successfully
+          created in the "available" state:
+          <codeblock>cinder create --display-name &lt;name> &lt;size></codeblock></li>
+        <li>Using a session with the admin creds, show the details for the test volume created
+          using: <codeblock>cinder show &lt;volumeId></codeblock> and verify that the volume was
+          created on the correct backend, e.g.
+          <codeblock>os-vol-host-attr:host ha-volume-manager@vsa-1#vsa-backend-hlm003</codeblock>
+        </li>
+        <li>Delete the test volume</li>
       </ol>
     </section>
   </body>
