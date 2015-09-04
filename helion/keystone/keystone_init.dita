@@ -11,14 +11,16 @@
         ways, including integration with LDAP servers. </p>
     </section>
     <section><title>Default Settings</title>
-      <b>Keystone Configuration Settings</b> The Keystone identity service configuration options are
-      described in the OpenStack documentation on the <xref
-        href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
-        format="html" scope="external">identity service configuration file (for Kilo) page</xref> on
-      the OpenStack site. <p> </p>
-      <b>Default Domain and Service Accounts</b><p>The "default" domain is automatically created
-        during the Keystone installation to contain the various, required OpenStack service accounts
-        including the following:</p><ul id="ul_tzb_lpd_bt">
+      <p><b>Keystone Configuration Settings</b></p>
+      <p>The Keystone identity service configuration options are described in the OpenStack
+        documentation on the <xref
+          href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
+          format="html" scope="external">identity service configuration file (for Kilo) page</xref>
+        on the OpenStack site.</p>
+      <p><b>Default Domain and Service Accounts</b></p>
+      <p>The "default" domain is automatically created during the Keystone installation to contain
+        the various, required OpenStack service accounts including the following:</p>
+      <ul>
         <li>neutron</li>
         <li>glance</li>
         <li>swift-monitor</li>
@@ -34,7 +36,8 @@
         <li>heat</li>
         <li>cinder</li>
         <li>admin</li>
-      </ul><p>These are required accounts and are used by the underlying OpenStack services. These
+      </ul>
+      <p>These are required accounts and are used by the underlying OpenStack services. These
         accounts should not be removed or reassigned to a different domain. The "default" domain
         should only be used for these service accounts.</p>
     </section>
