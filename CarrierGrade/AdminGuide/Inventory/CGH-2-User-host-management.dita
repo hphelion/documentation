@@ -6,7 +6,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -17,7 +17,7 @@
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -47,8 +47,8 @@
 <xref type="section" href="#topic11233/reinstall">Reinstall a Host</xref>
 </li>
 <li>
-<xref type="section" href="#topic11233/delete">Delete Host</xref>
-</li>
+        <xref type="section" href="#topic11233/delete">Delete Host</xref>
+      </li>
 <li>
 <xref type="section" href="#topic11233/swact">Swact a Host</xref>
 </li>
@@ -61,8 +61,7 @@
 <ol>
 <li>
 <p>
-  <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
-              Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>
@@ -132,7 +131,7 @@ columns:</p>
 <p>Unlocking a host brings the host into service. The first step is to reset the target host to ensure that it starts from a wellknown state.</p>
 <p>Locking a host brings the host out of service.</p>
 <p>Force locking a host takes the host out of service if for the Lock Host option does not work.</p>
-<p>For more information, see <xref href="#topic11233/unlock" format="dita"/>.</p>
+<p>For more information, see <xref href="CGH-2-User-host-management-host-lock.dita#topic3241" >Locking and Unlocking a System</xref>.</p>
 </section>
 <section id="poweroff"> <title>Power Off and On a Host</title>
 <p>You can use the Hosts page to power on or gracefully power off a host, ensuring that all system processes are properly shut off first.</p>

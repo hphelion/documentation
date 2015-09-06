@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2491">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Creating Images</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Images/1.1commercial.dashboard.images.create.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/images/create/--></p>
+<p>Creating a new image for use in HP Helion OpenStack requires two general steps.</p>
+<p>The first step is to create an ISO image file outside of your HP Helion OpenStack</p>
+<p>When the ISO image file is complete and ready for use, you use HP Helion OpenStack to upload the image to your cloud.</p>
+<p>
+<b>Note:</b> After you upload an image, it is considered <i>golden</i> and you cannot change it.</p>
+<section id="create-an-image"> <title>Create an image</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Images</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Images</b> screen, click <b>Create Image</b>.</p>
+</li>
+<li>
+<p>In the <b>Create an Image</b> screen, provide the image information:</p>
+
+<ul>
+<li>Name - Enter a name for the image.</li>
+<li>Description - Optionally, enter a brief description of the image.</li>
+<li>Image Source - Choose the image source from the list. Your choices are Image Location and Image File.</li>
+<li>Image File or Image Location - Based on your selection for Image Source, you either enter the location URL of the image in the Image Location field. or browse to the image file on your system and add it.
+<b>Note:</b> The Image Location field must be a valid and direct URL to the image binary. URLs that redirect or serve error pages will result in unusable images.</li>
+<li>Format - Select the correct format (for example, QCOW2) for the image.</li>
+<li>Architecture - Specify the architecture. For example, i386 for a 32-bit architecture or x86-64 for a 64-bit architecture.</li>
+<li>Minimum Disk - Enter the minimum disk size required to boot the image. Leave the field blank to specify no minimum. </li>
+<li>Minimum RAM (MB) - Enter the minimum memory size required to boot the image. Leave the field blank to specify no minimum.</li>
+<li>Public - Select this option to make the image public to all users with access to the current project. Leave the option clear to allow the image to be used in all projects in the domain.</li>
+<li>Protected - Select this option to prevent the image from being deleted.  Leave the option clear to allow the image to be deleted.</li>
+</ul>
+</li>
+<li>
+<p>Click <b>Create Image</b> to launch the image.</p>
+</li>
+<li>
+<p>Optionally, you can click <b>Launch</b> to <xref
+  href="../Instances/CGH-2-User-Instance-create.dita#topic2817">create a running instance</xref> based on this image.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic2491"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

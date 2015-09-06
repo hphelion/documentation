@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2639">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Replacing Active Storage Nodes</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-storage.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/active/storage/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>On systems that use a Ceph backend for Cinder storage, you can add or replace storage disks or swap a storage node while the system is running, even if the storage resources are in active use.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in regionone.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>A HP Helion OpenStack Carrier Grade system with a Ceph storage backend uses exactly two storage nodes; you cannot add or remove storage nodes. However, you can add disks to a storage node to increase capacity, and you can replace a faulty host.</p>
+<p>
+<b>Note:</b> The storage node pair in a HP Helion OpenStack Carrier Grade system provides redundancy for High Availability. A balanced storage capacity is recommended, in which each host has sufficient independent
+resources to meet the operational requirements of the system.</p>
+<p>To replace a storage node on an active system:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+
+<ul>
+<li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>
+</ul>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+</li>
+<li>
+<p>Click the <b>Hosts</b> tab.</p>
+</li>
+<li>
+<p>
+<xref href="CGH-2-User-host-management-host-lock.dita#topic3241" >Lock the standby controller</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
+
+<p>Wait for the procedure to be completed.</p>
+</li>
+<li>
+<p><xref href="CGH-2-User-host-management.dita#topic11233/poweroff" type="section">Power down the standby
+            controller</xref> and make any required hardware changes.</p>
+
+<p>This may involve replacing disks, or replacing the host completely.</p>
+</li>
+<li>
+<p>Place the new or modified controller into service.</p>
+
+<p>To begin using the new disk, <xref href="CGH-2-User-host-management.dita#topic11233/poweroff" type="section"  >power up the host</xref> and <xref href="CGH-2-User-host-management-host-lock.dita#topic3241" >unlock</xref> the host.</p>
+
+<ul>
+<li>For disk replacement, no additional configuration changes are needed. </li>
+<li>For disk addition, you must create a new storage volume (OSD) before you can use the new disk. For more information, see the HP Helion OpenStack Carrier Grade Software Installation Guide: Creating Storage Volumes.</li>
+<li>For host replacement, you must <xref href="CGH-2-User-host-management.dita#topic11233/delete"
+              type="section">delete the existing host</xref> using <b>More</b> then <b>Delete
+              Host</b>. Then you must initialize the new host with a personality as a storage node,
+            configure its interfaces, and create storage volumes. </li>
+</ul>
+</li>
+</ol>
+<p>For more information on initializing and configuring a storage node, see <xref
+        href="CGH-2-User-host-management-host-initialize-storage.dita#topic4226">Initializing and Configuring Storage Nodes</xref>.</p>
+<p>
+  <xref type="section" href="#topic2639"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

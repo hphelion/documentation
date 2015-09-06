@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic
+    domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   "
+    id="jow1432757989702" xml:lang="en-us">
+
+
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Using the Identity
+        Menu</title>
+
+
+    <shortdesc> The <uicontrol>Identity</uicontrol> menu contains selections for managing tenants
+        (projects) and users. It is available when <uicontrol>admin</uicontrol> is selected as the
+            <b>Current Tenant</b>.</shortdesc>
+
+
+    <prolog>
+
+
+        <author>Jim Owens</author>
+
+
+        <author>Pedro Sanchez</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <section id="section_N10027_N10024_N10001">
+            <fig id="fig_N1002B_N10027_N10024_N10001">
+                <image href="../../../media/Fig_1_page_20.JPG" id="image_xfj_cfr_ft"/>
+            </fig>
+            <p>The menu contains one section.</p>
+        </section>
+
+
+        <section id="section_N1022F_N10024_N10001">
+            <title>Identity</title>
+            <table id="table_ipm_r3f_44">
+
+
+                <tgroup cols="3">
+
+
+                    <colspec colname="col1" colwidth="14*"/>
+
+
+                    <colspec colname="col2" colwidth="60*"/>
+
+
+                    <colspec colname="col3" colwidth="26*"/>
+
+
+                    <thead>
+
+
+                        <row>
+
+
+                            <entry colname="col1">
+                                <p>Menu item</p>
+                            </entry>
+
+
+                            <entry colname="col2">
+                                <p>Description</p>
+                            </entry>
+
+
+                            <entry colname="col3">
+                                <p>Reference</p>
+                            </entry>
+
+
+                        </row>
+
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <row>
+
+
+                            <entry>
+                                <p>Projects</p>
+                            </entry>
+
+
+                            <entry>
+                                <p>Controls for managing projects (tenants).</p>
+                            </entry>
+
+
+                            <entry><xref
+                                    href="../Identity/CGH-2-User-Identity-managing-projects.dita#topic994"
+                                >Managing Projects</xref></entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry>
+                                <p>Users</p>
+                            </entry>
+
+
+                            <entry>
+                                <p>Controls for managing user accounts.</p>
+                            </entry>
+
+
+                            <entry><xref
+                                    href="../Identity/CGH-2-User-Identity-managing-users.dita#topic585"
+                                >Managing Users</xref></entry>
+
+
+                        </row>
+                        <row>
+                            <entry>Quotas</entry>
+                            <entry>Controls for managing project quotas.</entry>
+                            <entry><xref
+                                    href="../Identity/CGH-2-User-Identity-quotas.dita#topic1853"
+                                >Managing Project Quotas</xref></entry>
+                        </row>
+
+
+                    </tbody>
+
+
+                </tgroup>
+
+
+            </table>
+        </section>
+
+
+    </body>
+
+
+</topic>

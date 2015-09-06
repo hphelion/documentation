@@ -1,0 +1,1874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic id="jow1404333560080" xml:lang="en-us">
+
+
+    <!-- Modification History
+
+
+
+
+
+ -->
+
+
+    <title>HP Helion OpenStack Carrier Grade 2.0: User Guide</title>
+
+
+    <shortdesc >HP Helion OpenStack Carrier Grade is a high-performance, high-availability,
+
+
+        cloud operating system that enables telecommunications operators to use
+
+
+        Commercial-off-the-shelf (COTS) hardware to manage Virtualized Network Functions (VNF)
+
+
+        within a carrier grade Network Function Virtualization (NFV) architecture.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Jim Owens</author>
+
+
+        <author >Pedro Sanchez</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <p >HP Helion OpenStack Carrier Grade brings together the flexibility and scalability of the IT
+
+
+            cloud, and the high-availability and performance demanded by the Telecommunications
+
+
+            industry, into a unique carrier grade, industry-leading solution to deliver a
+
+
+            price-performance ratio well above alternative solutions. HP Helion OpenStack Carrier Grade is aligned
+
+
+            with the ETSI-NFV architecture.</p>
+
+
+        <section id="section_N10027_N1001C_N10001" >
+
+
+            <title >Core HP Helion OpenStack Carrier Grade Capabilities</title>
+
+
+            <p >HP Helion OpenStack Carrier Grade leverages core Wind River virtualization and
+
+
+                carrier-grade technologies, Intel DPDK high-performance packet processing, open
+
+
+                architectures, and the OpenStack software suite. It extends the OpenStack software
+
+
+                suite to implement a unique carrier-grade, high-availability architecture, on which
+
+
+                high-performance production systems can be deployed.</p>
+
+
+            <p >Core capabilities unique to HP Helion OpenStack Carrier Grade include:</p>
+
+
+            <dl>
+
+
+                <!--<dlentry >
+
+
+                    <dt ><b >Supported Guest
+
+
+                            OSs</b></dt>
+
+
+                    <dd >
+
+
+                        <p >HP Helion OpenStack Carrier Grade is designed to work with any Linux
+
+
+                            Distribution. Wind River Linux, Red Hat Enterprise Linux, CentOS, and
+
+
+                            Ubuntu have been sanity tested as OSs in the Guest virtual machines.</p>
+
+
+                    </dd>
+
+
+                </dlentry>--><!-- 2014-12-18 moved to Release Notes -->
+
+
+                <dlentry >
+
+
+                    <dt ><b >High-Performance
+
+
+                            Networking</b></dt>
+
+
+                    <dd >
+
+
+                        <p >HP Helion OpenStack Carrier Grade provides significantly improved network
+
+
+                            performance over the default open source OpenStack solution, up to 20
+
+
+                            Gbps throughput through a guest application on a virtual machine.</p>
+
+
+                        <p >At the center of the HP Helion OpenStack Carrier Grade Networking is a
+
+
+                            DPDK-Accelerated Virtual L2 Switch (AVS), running on the compute node
+
+
+                            hosts. It provides connectivity between virtual machines on the same
+
+
+                            compute node, and between virtual machines and external networks. AVS
+
+
+                            supports a variety of network connectivity options with the hosted
+
+
+                            virtual machines, as follows: </p>
+
+
+                        <ul id="ul_mgc_xnp_nn">
+
+
+                            <li >
+
+
+                                <p >Unmodified guests can use Linux networking and
+
+
+                                    virtio drivers. This provides a mechanism to bring existing
+
+
+                                    applications into the production environment immediately.</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Guest applications can be modified to leverage
+
+
+                                    the Accelerated Virtual Port (AVP) drivers provided with the
+
+
+                                    HP Helion OpenStack Carrier Grade. AVP ports provide increased throughput over
+
+
+                                    plain virtio drivers when connected to the AVS.</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >For the highest performance, guest applications
+
+
+                                    can also be modified to make use of the Intel DPDK libraries and
+
+
+                                    the AVP poll-mode drivers provided by the HP Helion OpenStack Carrier Grade to
+
+
+                                    connect with the AVS Switch.</p>
+
+
+                            </li>
+
+
+                        </ul>
+
+
+                        <p >In addition to AVS, HP Helion OpenStack Carrier Grade incorporates DPDK-Accelerated Neutron
+
+
+                            Virtual Router L3 Forwarding (AVR). Accelerated forwarding is used
+
+
+                            between directly attached tenant networks and subnets, as well as for
+
+
+                            gateway, SNAT, and floating IP functionality.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >High-Availability</b></dt>
+
+
+                    <dd >
+
+
+                        <p >HP Helion OpenStack Carrier Grade provides a number of extensions to
+
+
+                            OpenStack to deliver highly available hosting of virtual machines,
+
+
+                            including:</p>
+
+
+                        <dl>
+
+
+                            <dlentry >
+
+
+                                <dt >1:1 OpenStack controller services</dt>
+
+
+                                <dd >
+
+
+                                    <p >Automatic configuration of the OpenStack
+
+
+                                        controller services in 1:1 active/standby mode across two
+
+
+                                        controller nodes. </p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Fast detection of compute host failures</dt>
+
+
+                                <dd >
+
+
+                                    <p >Implemented by using a highly efficient and
+
+
+                                        highly scalable heartbeat protocol between the controller
+
+
+                                        and compute nodes.</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Fast recovery of virtual machines instances upon
+
+
+                                    detection of a compute node failure</dt>
+
+
+                                <dd >
+
+
+                                    <p >Extensions to Nova services that
+
+
+                                        automatically re-schedule impacted virtual machine instances
+
+
+                                        to available alternative compute nodes in the cluster.</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Fast recovery of tenant network services upon
+
+
+                                    detection of a compute node failure</dt>
+
+
+                                <dd >
+
+
+                                    <p >Extensions to Neutron that automatically
+
+
+                                        re-schedule impacted network services such as DHCP, L3
+
+
+                                        Routing, and User/Meta data server, for all affected tenant
+
+
+                                        networks. This covers tenant networks spanning multiple
+
+
+                                        compute nodes.</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Fast and enhanced detection of virtual machines
+
+
+                                    failures</dt>
+
+
+                                <dd >
+
+
+                                    <p >Failure of any KVM/QEMU instance is
+
+
+                                        automatically reported by the death process
+
+
+                                        notification.</p>
+
+
+                                    <p >Additionally, modified guests can make use of
+
+
+                                        the HP Helion OpenStack Carrier Grade Guest Heartbeat Library to register
+
+
+                                        application-specific health check callbacks with the virtual
+
+
+                                        machine. This registration allows Nova compute extensions on
+
+
+                                        the host compute node to monitor the health of the guest
+
+
+                                        application. The frequency of the health checks is
+
+
+                                        determined at registration time. The semantics of the health
+
+
+                                        check, that is, determining when the application is in a
+
+
+                                        good or a bad state, is under the control of the application
+
+
+                                        itself.</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Automatic recovery of failed virtual machine
+
+
+                                    instances</dt>
+
+
+                                <dd >
+
+
+                                    <p >Extensions to Nova that automatically
+
+
+                                        re-start a failed virtual machine on the same compute node.
+
+
+                                        If the re-start operation fails, the virtual machine is
+
+
+                                        re-scheduled to use an alternative compute node.</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Virtual machine server groups</dt>
+
+
+                                <dd >
+
+
+                                    <p >Named groups of virtual machines instances to
+
+
+                                        which a common set of attributes are applied, including:</p>
+
+
+                                    <ul id="ul_s5y_kbq_nn">
+
+
+                                        <li >
+
+
+                                            <p >compute node affinity or
+
+
+                                                anti-affinity</p>
+
+
+                                        </li>
+
+
+                                        <li >
+
+
+                                            <p >maximum number of virtual machine
+
+
+                                                instances</p>
+
+
+                                        </li>
+
+
+                                        <li >
+
+
+                                            <p >best effort or strict affinity
+
+
+                                                policy</p>
+
+
+                                        </li>
+
+
+                                    </ul>
+
+
+                                    <p >Virtual machines in the same server group can use a server
+
+
+                                        group messaging API for low-bandwidth communications.</p>
+
+
+                                    <p >In a typical use of a virtual machine server
+
+
+                                        group, guest applications in active/standby pairs are
+
+
+                                        deployed on different compute nodes to protect them from
+
+
+                                        hardware failures.</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Live migration support with DPDK-accelerated
+
+
+                                    networking</dt>
+
+
+                                <dd >
+
+
+                                    <p >Live migration support for virtual machines
+
+
+                                        using the HP Helion OpenStack Carrier Grade high-performance networking
+
+
+                                        options.</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Graceful shutdown (and other operations) of
+
+
+                                    virtual machines</dt>
+
+
+                                <dd >
+
+
+                                    <p >Nova extensions that turn the default
+
+
+                                        shutdown operation of virtual machines into an ACPI
+
+
+                                        shutdown. Guest applications can therefore register shutdown
+
+
+                                        scripts using standard ACPI mechanisms to execute operations
+
+
+                                        such as closing files, updating persistent databases, or
+
+
+                                        cleanly disconnecting from subscribed services.</p>
+
+
+                                    <p >Optionally, guest applications can use the
+
+
+                                        HP Helion OpenStack Carrier Grade Guest Heartbeat Library to register to
+
+
+                                        receive process management requests such as shutdown,
+
+
+                                        live-migrate, pause, auto-scale, and others. The guest
+
+
+                                        applications can then reject the requests based
+
+
+                                        upon application-specific state directives, or prepare for a
+
+
+                                        graceful execution.</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Link Aggregation (LAG) support</dt>
+
+
+                                <dd >
+
+
+                                    <p >Support for LAG, also known as Aggregate
+
+
+                                        Ethernet, on controller and compute nodes for link
+
+
+                                        protection.</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Protected HA Middleware</dt>
+
+
+                                <dd >
+
+
+                                    <p >HP Helion OpenStack Carrier Grade HA
+
+
+                                        middleware is protected by a process monitor that uses death
+
+
+                                        process notification to detect and respawn critical HA
+
+
+                                        processes.</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                        </dl>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >Virtual Machine
+
+
+                            Performance</b></dt>
+
+
+                    <dd >
+
+
+                        <p >HP Helion OpenStack Carrier Grade provides an improved execution
+
+
+                            environment for virtual machines that contributes to their overall
+
+
+                            performance when deployed on the compute nodes. Enhancements to the
+
+
+                            execution environment include:</p>
+
+
+                        <ul id="ul_rx5_gfs_nn">
+
+
+                            <li >
+
+
+                                <p >Low-latency, bounded delivery of virtual
+
+
+                                    interrupts, and availability of low-latency high resolution
+
+
+                                    timers. </p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Option to allocate 2 MB or 1 GB huge memory pages
+
+
+                                    to reduce swapping and TLB lookup misses.</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Improved resource tracking of VMs that use
+
+
+                                    dedicated CPUs, to ensure successful migration and
+
+
+                                    evacuation.</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Support for affining guest NUMA nodes to
+
+
+                                    specific host NUMA nodes.</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Capability to specify specific CPU models to be used by a virtual
+
+
+                                    machine in order to leverage advanced features of the CPU
+
+
+                                    architecture.</p>
+
+
+                            </li>
+
+
+                        </ul>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >Guest VLANs</b></dt>
+
+
+                    <dd >
+
+
+                        <p >HP Helion OpenStack Carrier Grade guests can make use of VLANs to
+
+
+                            encapsulate IP traffic from a single or multiple IP subnets on a virtual
+
+
+                            Ethernet interface. This capability facilitates the porting of current
+
+
+                            user applications running on dedicated physical servers using VLANs to a
+
+
+                            virtualized environment.</p>
+
+
+                        <p >HP Helion OpenStack Carrier Grade tenants can define multiple IP subnets
+
+
+                            on a single tenant network, get their traffic encapsulated on VLAN IDs
+
+
+                            of their choice, and still benefit from the underlying functionality
+
+
+                            provided by the AVS and the overall virtualized network
+
+
+                            infrastructure.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >Inventory
+
+
+                            Management</b></dt>
+
+
+                    <dd >
+
+
+                        <p >HP Helion OpenStack Carrier Grade provides complete inventory management
+
+
+                            of hosts in the OpenStack cloud, allowing the system administrator to
+
+
+                            install, configure, and maintain the individual servers. The inventory
+
+
+                            service gives the system administrator the following capabilities:</p>
+
+
+                        <ul id="ul_xyb_2bt_nn">
+
+
+                            <li >
+
+
+                                <p >Host management</p>
+
+
+                                <ul id="ul_afq_fbt_nn">
+
+
+                                    <li >
+
+
+                                        <p >discovery of new hosts in the
+
+
+                                            cluster</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >installation of the appropriate load,
+
+
+                                            controller, compute, or storage images</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >configuration of the management, OAM,
+
+
+                                            infrastructure, and provider network interfaces on each
+
+
+                                            host</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >creation and use of data interface and
+
+
+                                            CPU profiles to simplify host configuration</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >configuration of the number of CPUs
+
+
+                                            allocated to the Accelerated Virtual Switch (AVS) on
+
+
+                                            each compute node</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >configuration of huge memory page allocations for VM
+
+
+                                            use</p>
+
+
+                                    </li>
+
+
+                                </ul>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Administrative operations</p>
+
+
+                                <ul id="ul_px4_nms_nn">
+
+
+                                    <li >
+
+
+                                        <p >lock/unlock</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >switch active controller host or
+
+
+                                            service</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >reboot and reset host</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >power-on and power-off</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >software re-installation</p>
+
+
+                                    </li>
+
+
+                                </ul>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Status reporting</p>
+
+
+                                <ul id="ul_qgg_rms_nn">
+
+
+                                    <li >
+
+
+                                        <p >admin state</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >operational state</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >availability state</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >uptime</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >real-time command execution reports,
+
+
+                                            such as booting and testing</p>
+
+
+                                    </li>
+
+
+                                </ul>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Host resources</p>
+
+
+                                <ul id="ul_x3s_xms_nn">
+
+
+                                    <li >
+
+
+                                        <p >processor, sockets, cores</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >memory</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >disk</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >network interfaces</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >additional hardware devices, such as
+
+
+                                            cryptographic and compression devices</p>
+
+
+                                    </li>
+
+
+                                </ul>
+
+
+                            </li>
+
+
+                        </ul>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <!--<dlentry ><dt ><b >Power Management</b></dt><dd ><p >A cloud orchestration service that monitors and manages the resource usage on the compute nodes to power down servers during periods of low usage. This service contributes to saving power and operational costs.</p><p >By continuously monitoring the resource usage, the power management service can de-fragment the service cloud by live-migrating virtual machine instances onto a smaller set of compute nodes. Unused hosts can then be manually powered down.</p><p >As the cloud usage levels rise, unused compute nodes can be manually powered on to host new virtual machine instances.</p></dd></dlentry>-->
+
+
+                <dlentry >
+
+
+                    <dt ><b >Performance Management
+
+
+                            Extensions</b></dt>
+
+
+                    <dd >
+
+
+                        <p >The Ceilometer service in the HP Helion OpenStack Carrier Grade features
+
+
+                            improved performance, scalability, and usability. It has been extended
+
+
+                            to support a CSV-formatted file backend that provides a more traditional
+
+
+                            Telco Northbound interface for performance management.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >Improved Web Administration
+
+
+                            Interface</b></dt>
+
+
+                    <dd >
+
+
+                        <p >HP Helion OpenStack Carrier Grade web administration interface is an
+
+
+                            enhanced version of the Horizon web interface provided by OpenStack. The
+
+
+                            enhancements include:</p>
+
+
+                        <ul id="ul_xyt_r1t_nn">
+
+
+                            <li >
+
+
+                                <p >Automatic page refresh for immediate
+
+
+                                    notification of status changes. This eliminates the need for
+
+
+                                    manual reloading of web pages to access up-to-date information
+
+
+                                    about the cloud</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Admin Overview page with charts and tables
+
+
+                                    providing a high-level overview of cloud resources</p>
+
+
+                                <ul id="ul_kcf_qbt_nn">
+
+
+                                    <li >
+
+
+                                        <p >avg/max/min compute vCPU usage</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >avg/max/min compute memory usage</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >avg/max/min compute disk usage</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >avg/max/min AVS CPU utilization</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >avg/max/min provider network port
+
+
+                                            utilization</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >current host status (available,
+
+
+                                            unavailable, locked, unlocked)</p>
+
+
+                                    </li>
+
+
+                                </ul>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Improved performance management resource usage
+
+
+                                    web page</p>
+
+
+                                <ul id="ul_cr2_kct_nn">
+
+
+                                    <li >
+
+
+                                        <p >optimized performance management sample
+
+
+                                            DB queries for improved usability</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >capability to filter on fields in the
+
+
+                                            performance management sample’s metadata</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >human-readable legends and chart labels
+
+
+                                            using object names instead of long UUID text strings</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >performance management meters can be
+
+
+                                            selected using their brief descriptions</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >meters for CPU, memory, and disk utilization</p>
+
+
+                                    </li>
+
+
+                                </ul>
+
+
+                            </li>
+
+
+                        </ul>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >Heat Extensions</b></dt>
+
+
+                    <dd >
+
+
+                        <p >The OpenStack Heat orchestration service is enhanced to include:</p>
+
+
+                        <ul id="ul_n5s_kbh_tp">
+
+
+                            <li >
+
+
+                                <p >Support for several missing resource types in the public
+
+
+                                    reference implementation</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Helpful example templates illustrating real reference
+
+
+                                    scenarios</p>
+
+
+                            </li>
+
+
+                        </ul>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >Backup and Restore</b></dt>
+
+
+                    <dd >
+
+
+                        <p >Tools and procedures to backup and restore system data
+
+
+                            and virtual machines.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >Patching</b></dt>
+
+
+                    <dd >
+
+
+                        <p >Tools and procedures to patch system images to ensure they are always up
+
+
+                            to date with the latest release and security fixes.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >Alarms Generation and
+
+
+                        Reporting</b></dt>
+
+
+                    <dd >
+
+
+                        <ul id="ul_ltp_xch_tp">
+
+
+                            <li >
+
+
+                                <p >alarms on performance management thresholds and cloud-level
+
+
+                                    services and equipment</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >SNMPv2c support</p>
+
+
+                            </li>
+
+
+                        </ul>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >Supported OpenStack
+
+
+                            Services</b></dt>
+
+
+                    <dd >
+
+
+                        <p >HP Helion OpenStack Carrier Grade integrates the
+
+
+                            following OpenStack services into its cloud solution: Nova, Neutron,
+
+
+                            Keystone, Glance, Cinder, Horizon, Ceilometer, Heat and Swift.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >REST API</b></dt>
+
+
+                    <dd >
+
+
+                        <p >HP Helion OpenStack Carrier Grade supports the following external REST
+
+
+                            APIs through its OAM floating IP address:</p>
+
+
+                        <ul id="ul_ylk_dcv_ds">
+
+
+                            <li >
+
+
+                                <p >OpenStack REST APIs</p>
+
+
+                                <ul id="ul_jry_kvz_cs">
+
+
+                                    <li>
+
+
+                                        <p>Object Storage API</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >Block Storage API (with HP Helion OpenStack Carrier Grade
+
+
+                                            extensions)</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >Compute API  (with HP Helion OpenStack Carrier Grade
+
+
+                                            extensions)</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >Identity API</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >Image Service API</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >Networking API  (with HP Helion OpenStack Carrier Grade
+
+
+                                            extensions)</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >Orchestration API</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >Telemetry API (with HP Helion OpenStack Carrier Grade
+
+
+                                            extensions)</p>
+
+
+                                    </li>
+
+
+                                </ul>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >HP Helion OpenStack Carrier Grade REST APIs</p>
+
+
+                                <ul id="ul_xgp_scv_ds">
+
+
+                                    <li >
+
+
+                                        <p >SysInv API</p>
+
+
+                                    </li>
+
+
+                                    <li >
+
+
+                                        <p >Patching API</p>
+
+
+                                    </li>
+
+
+                                </ul>
+
+
+                            </li>
+
+
+                        </ul>
+
+
+                        <note id="note_N1053E_N104EC_N104E8_N104DF_N104D3_N10040_N1002C_N10024_N10001" >
+
+
+                            <p >HP Helion OpenStack Carrier Grade extensions use the OpenStack
+
+
+                                Extension Mechanism to ensure compatibility with existing
+
+
+                                clients.</p>
+
+
+                        </note>
+
+
+                        <p >HTTP or HTTPS protocol can be supported for these
+
+
+                            external REST APIs.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt ><b >HP Helion OpenStack Carrier Grade SDK</b></dt>
+
+
+                    <dd >
+
+
+                        <p >The HP Helion OpenStack Carrier Grade Software Development Kit (SDK) provides drivers,
+
+
+                            daemons, API libraries, and configuration files that you can include in
+
+
+                            a guest image to leverage the extended capabilities of HP Helion OpenStack Carrier Grade.
+
+
+                            Available components include:</p>
+
+
+                        <ul id="ul_zdh_d51_ds">
+
+
+                            <li >
+
+
+                                <p >Accelerated Kernel Network Drivers—Drivers for improved
+
+
+                                    performance of kernel-based networking VNFs</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Accelerated DPDK Network Drivers—Drivers for
+
+
+                                    high-performance DPDK-based networking VNFs</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >VM Resource Scaling—A service for scaling the capacity of a
+
+
+                                    guest server on demand</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Guest Heartbeat—A service for health monitoring of guest
+
+
+                                    applications</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Server Group Messaging—A service for low-bandwidth peer
+
+
+                                    messaging between servers in the same group</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >SNMP MIB—Resources for system alarms management</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Sample Heat Orchestration Templates—Resources for deploying
+
+
+                                    and managing stacks of applications or application services</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >OpenStack REST API Documentation—Documentation
+
+
+                                    for HP Helion OpenStack Carrier Grade REST APIs and HP Helion OpenStack Carrier Grade extensions to
+
+
+                                    OpenStack REST APIs</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Custom Branding—Resources for customizing the Horizon
+
+
+                                    GUI</p>
+
+
+                            </li>
+
+
+                        </ul>
+
+
+                        <p >For more information, see the <cite >HP Helion OpenStack Carrier Grade Software Development Kit</cite>.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+            </dl>
+
+
+        </section>
+
+
+    </body>
+
+
+</topic>
+

@@ -1,7 +1,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
     
-    <title> HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Administrator Guide</title>
+    <title> HP Helion  OpenStack  Carrier Grade 2.0: Userr Guide</title>
     <topicmeta>
         <copyright>
             <copyryear year="2015"/>
@@ -17,7 +17,7 @@
             <edition ixia_locid="134">Patch 0003</edition>
         </bookid -->
     </topicmeta>
-    <topicref href="CGH-2-User-Overview.dita">
+    <topicref href="CGH-2-User-Overview.dita" navtitle="User Guide" locktitle="yes">
         <topicref href="CGH-2-User-Network-Reqs.dita"/>
         <topicref href="CGH-2-Linux-Accounts.dita"/>
         <topicref href="Dashboard/CGH-2-User-Dasboard-Controls.dita">
@@ -102,7 +102,8 @@
                     navtitle="Working with Host Aggregates" locktitle="yes"/>
                 <topicref href="Inventory/CGH-2-User-host-management-host-initialize-compute.dita"
                     navtitle="Initializing and Configuring Compute Nodes" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-host-initialize-controller.dita"
+                <topicref
+                    href="Inventory/CGH-2-User-host-management-host-initialize-controller.dita"
                     navtitle="Initializing and Configuring Controller1" locktitle="yes"/>
                 <topicref href="Inventory/CGH-2-User-host-management-host-initialize-storage.dita"
                     navtitle="Initializing and Configuring Storage Nodes" locktitle="yes"/>
@@ -136,7 +137,8 @@
                 navtitle="Working with Inventory Details" locktitle="yes">
                 <topicref href="Inventory/CGH-2-User-host-management-host-hardware.dita"
                     navtitle="Managing CPU Profiles" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-inventory-detail-processor.dita"
+                <topicref
+                    href="Inventory/CGH-2-User-host-management-inventory-detail-processor.dita"
                     navtitle="Working with CPU Profiles" locktitle="yes"/>
                 <topicref href="Inventory/CGH-2-User-host-management-detail-interfaces.dita"
                     navtitle="Working with Interface Details" locktitle="yes"/>
@@ -151,8 +153,8 @@
             navtitle="Managing Host Aggregates" locktitle="yes"/>
         <topicref href="Instances/CGH-2-User-Instance-Overview.dita" navtitle="Managing Instances"
             locktitle="yes">
-            <topicref href="Instances/CGH-2-User-Instance-create.dita"
-                navtitle="Creating Instances" locktitle="yes"/>
+            <topicref href="Instances/CGH-2-User-Instance-create.dita" navtitle="Creating Instances"
+                locktitle="yes"/>
             <topicref href="Instances/CGH-2-User-Instance-pause.dita"
                 navtitle="Pausing and Un-pausing Instances" locktitle="yes"/>
             <topicref href="Instances/CGH-2-User-Instance-reboot.dita"

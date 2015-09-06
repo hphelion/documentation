@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4078">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Initializing and Configuring Compute Nodes</title>
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3884">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Initializing and Configuring Controller1</title>
+<titlealts>
+<searchtitle>HP Helion Openstack Carrier Grade 2.0: Initializing and Configuring Controller-1</searchtitle>
+</titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -17,19 +20,19 @@
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
 <p>
 <!--UNDER REVISION-->
- <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-initialize-compute.md-->
- <!--permalink: /helion/openstack/carrier/admin/host/initialize/compute/--></p>
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-initialize-controller.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/initialize/controller1/--></p>
 <!-- From the Titanium Software Install Guide -->
-<p>You can assign a new host as a compute node to support virtual machines.</p>
+<p>You must assign a host as a second controller to provide redundancy for controller-0.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<b>Note:</b> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>Before initializing a node, ensure that the following conditions are satisfied:</p>
 <ul>
@@ -39,10 +42,10 @@
 <li>The node must be connected to the internal management network using an Ethernet interface configured for PXE boot.</li>
 <li>The node must be configured in the BIOS to boot from the internal management network.</li>
 </ul>
-<p>To install and configure a compute node:</p>
+<p>To install and configure <codeph>Controller-1</codeph>:</p>
 <ol>
 <li>
-<p>Power on the node to be configured as a compute host.</p>
+<p>Power on the node to be configured as <codeph>Controller-1</codeph>.</p>
 
 <p>
 <b>Note:</b> To ensure you can correctly identify hosts as you install them, power on and configure each new node one at a time.</p>
@@ -73,8 +76,7 @@
 <p>The node is restarted automatically, and a display-device menu appears on the node console.</p>
 
 <p>
-<image href="../../../media/CGH-WR-Node-Console.png"/>
-</p>
+          <image href="../../../media/CGH-WR-Node-Console.png" id="image_zjx_fhr_ft"/></p>
 </li>
 <li>
 <p>Optional: Select the display device to use during initialization.
@@ -94,16 +96,16 @@ The personality (Controller, Compute, or Storage) is confirmed in the menu. If y
 <p>
 <b>Caution:</b> To ensure a successful installation, wait for the node to be reported as Locked, Disabled, and Online, and ensure that the login prompt appears on the host console. If the process is interrupted prematurely, the host installation can fail.</p>
 
-<p>The new host is initialized with an operating system, rebooted, and configured as a storage node. It is automatically assigned the next available consecutive name (<codeph>storage-0</codeph> or <codeph>storage-1</codeph>).</p>
+<p>The time required to configure and reboot controller-1 depends on the secondary disk partition size. Larger partitions require more time for synchronization with controller-0.</p>
 
-<p>After a few minutes, the host is shown as <codeph>Locked</codeph>, <codeph>Disabled</codeph>, and <codeph>Online</codeph> in the <b>Hosts</b> list.</p>
+<p>The host is now configured with a personality.</p>
 </li>
 <li>
 <p>Configure the host so that it can be unlocked.</p>
 
 <p>Before you can unlock a storage node, you must do the following:</p>
 
-<p>a, Create storage volumes. For details, see Creating Storage Volumes.</p>
+<p>a. Create storage volumes. For details, see Creating Storage Volumes.</p>
 
 <p>b. If using LAG to attach to the management network, change the Interface Type for the management network interface to aggregated ethernet For more information, see Editing Interface Settings.</p>
 
@@ -111,16 +113,13 @@ The personality (Controller, Compute, or Storage) is confirmed in the menu. If y
 </li>
 <li>
 <p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the node</xref> to make it available for use. Click <b>More</b> then <b>Unlock Host</b>.</p>
+<xref href="CGH-2-User-host-management-host-lock.dita#topic3241" >Unlock the node</xref> to make it available for use. Click <b>More</b> then <b>Unlock Host</b>.</p>
 
-<p>The node is rebooted, and its Availability State is reported as In-Test. After a few minutes, it is reported as <codeph>Unlocked</codeph>, <codeph>Enabled</codeph>, and <codeph>Available</codeph>.</p>
-
-<p>
-<b>Note:</b> Ensure that you install two storage nodes, as required by the HP Helion OpenStack Carrier Grade architecture.</p>
+<p>The node is rebooted, and its Availability State is reported as <codeph>In-Test</codeph>. After a few minutes, it is reported as <codeph>Unlocked</codeph>, <codeph>Enabled</codeph>, and <codeph>Available</codeph>.</p>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic4078"> Return to Top </xref>
+  <xref type="section" href="#topic3884"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

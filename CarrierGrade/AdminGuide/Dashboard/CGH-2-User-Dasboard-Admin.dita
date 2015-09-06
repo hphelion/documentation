@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333729535" xml:lang="en-us">
+
+
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Using the Admin Menu</title>
+
+
+    <shortdesc > The <uicontrol >Admin</uicontrol> menu contains
+
+
+        selections for managing tenants (projects), tenant resources, and users. It is available
+
+
+        when <uicontrol >admin</uicontrol> is selected as the <b >Current
+
+
+            Tenant</b>.</shortdesc>
+
+
+    <body>
+
+
+        <section id="section_N10027_N10024_N10001" >
+
+
+            <fig id="fig_N1002B_N10027_N10024_N10001">
+                <image href="../../../media/Fig_1_page_19.JPG" id="image_wbm_3dr_ft"/>
+            </fig>
+
+
+            <p >The menu  contains one section.</p>
+
+
+        </section>
+
+
+        <section id="section_N1003B_N10024_N10001" >
+
+
+            <title >System</title>
+
+
+            <table id="table_u3h_gmf_44">
+
+
+                <tgroup cols="3">
+
+
+                    <colspec colname="col1" colwidth="18*"/>
+
+
+                    <colspec colname="col2" colwidth="60*"/>
+
+
+                    <colspec colname="col3" colwidth="26*"/>
+
+
+                    <thead>
+
+
+                        <row>
+
+
+                            <entry colname="col1" >
+
+
+                                <p >Menu item</p>
+
+
+                            </entry>
+
+
+                            <entry colname="col2" >
+
+
+                                <p >Description</p>
+
+
+                            </entry>
+
+
+                            <entry colname="col3" >
+
+
+                                <p >Reference</p>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Overview</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Performance charts for system health monitoring,
+
+
+                                    including hosts status, provider-network port utilization, and
+
+
+                                    compute node processing, memory, and disk usage.</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p/>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Resource Usage</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Tools for performing Ceilometer database queries using real-time or collected
+
+
+                  data, to support detailed performance analysis.</p>
+
+
+                            </entry>
+
+
+                            <entry><xref
+                                        href="../HostManagement/CGH-2-host-management-resource.dita#topic8785">
+                                            Resource Usage</xref></entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Inventory</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Controls for managing systems, hosts, and
+
+
+                                    standardized CPU, port, or storage profiles that can be applied
+
+
+                                    to hosts.</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p><xref
+                                        href="../Inventory/CGH-2-User-host-management-inventory.dita#topic44621"
+                                    >Managing Inventory</xref></p>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Host Aggregates</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Controls for managing host aggregates and availability zones.</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p><xref
+                                        href="../HostAggregates/CGH-2-User-Aggregate-Managing.dita#topic2563"
+                                    >Managing Host Aggregates</xref></p>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Hypervisors</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Charts for monitoring hypervisor resource usage on compute nodes.</p>
+
+
+                            </entry>
+
+
+                            <entry />
+
+
+                        </row>
+
+
+<!--                        <row>
+
+
+                            <entry >
+
+
+                                <p >Power</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Information about host capacities and resource
+
+
+                                    fragmentation across hosts, for use in manually consolidating
+
+
+                                    resources to reduce power requirements.</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p ><xref href="jow1404333653614.xml" /></p>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+-->                        <row>
+
+
+                            <entry >
+
+
+                                <p >Instances</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Controls for managing virtual-machine instances.</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p><xref
+                                        href="../Instances/CGH-2-User-Instance-Overview.dita#topic804"
+                                    >Managing Instances</xref></p>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Server Groups</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Controls for managing server groups across all tenants. Server groups are
+
+
+                  collections of instances sharing common attributes.</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p/>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Volumes</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Controls for managing virtual disk volumes
+
+
+                                    available for use with instances. The virtual volumes are
+
+
+                                    implemented using <term >storage volumes</term>
+
+
+                                    defined in the system. </p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p><xref
+                                        href="../Volumes/CGH-2-User-volumes-managing.dita#topic1382"
+                                    >Managing Volumes</xref></p>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Flavors</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Controls for managing standardized processor, disk, and memory complements
+
+
+                  (flavors) that can be applied to virtual machines.</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p><xref href="../Flavor/CGH-2-User-flavors.dita#topic3041">Managing Flavors</xref></p>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Images</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Controls for managing disk images used to initialize and configure virtual
+
+
+                  machines.</p>
+
+
+                            </entry>
+
+
+                            <entry><xref href="../Images/CGH-2-User-image.dita#topic1827">Managing Images</xref></entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Networks</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Controls for managing tenant networks, provider networks, and QoS (Quality of
+
+
+                  Service) policies or tenant weightings.</p>
+
+
+                            </entry>
+
+
+                            <entry><xref href="../Network/CGH-2-User-network.dita#topic1741">Managing Networks
+                                </xref></entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Routers</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Controls for managing virtual routers. Administrators can list the virtual
+
+
+                  routers created for tenants, view router and interface details, and delete
+
+
+                  routers.</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p><xref
+                                        href="../Routers/CGH-2-User-routers-managing.dita#topic1681"
+                                    >Managing Routers</xref></p>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Defaults</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Controls for viewing and setting the default quota values for new tenants. </p>
+
+
+                            </entry>
+
+
+                            <entry />
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >Fault Management</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >System alarms and customer logs</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p/>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >System Configuration</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >System configuration updates</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p/>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                        <row>
+
+
+                            <entry >
+
+
+                                <p >System Information</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p >Status information for services and network agent processes, availability zones,
+
+
+                  and host aggregates.</p>
+
+
+                            </entry>
+
+
+                            <entry >
+
+
+                                <p/>
+
+
+                            </entry>
+
+
+                        </row>
+
+
+                    </tbody>
+
+
+                </tgroup>
+
+
+            </table>
+
+
+        </section>
+
+
+    </body>
+
+
+</topic>
+

@@ -6,7 +6,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -17,7 +17,7 @@
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -29,7 +29,7 @@
 <p>The <b>Interfaces</b> tab on the <b>Inventory Detail</b> page presents details about the logical L2 network interfaces on a node, as illustrated below for an unlocked controller node.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<b>Note:</b> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>On a properly configured compute node, the Interfaces tab presents additional logical interfaces, for a locked node.</p>
 <p>This topic covers the following:</p>
@@ -131,7 +131,9 @@
 <li>
 <p>Enter a name for the new profile.</p>
 
-<p>Available interface profiles are listed, and can be removed, from the System Inventory page, as described in <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita" >Working with Hardware Profiles</xref>.</p>
+<p>Available interface profiles are listed, and can be removed, from the System Inventory page, as
+            described in <xref href="CGH-2-User-host-management-inventory-detail-storage.dita#topic6164">
+              Working with Hardware Profiles</xref>.</p>
 </li>
 <li>
 <p>Click <b>Create Interface Profile</b> to create the profile based on the interface and port configuration of the selected host.</p>
@@ -154,7 +156,7 @@
 </li>
 <li>
 <p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
+<xref href="CGH-2-User-host-management-host-lock.dita#topic3241" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
 
 <p>Wait for the host to be reported as Locked.</p>
 </li>
@@ -210,7 +212,7 @@
 </li>
 <li>
 <p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
+<xref href="CGH-2-User-host-management-host-lock.dita#topic3241" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
 
 <p>Wait for the host to be reported as Locked.</p>
 </li>
