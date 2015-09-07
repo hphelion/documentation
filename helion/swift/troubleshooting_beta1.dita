@@ -153,13 +153,13 @@
         </strow>
       </simpletable>
     </section>
-    <section><p><b>Ring Creation Fails Repeatedly (Ansible play fails in swiftlm-ring-supervisor |
-          build-rings )</b></p><p><b>Description</b>: An ansible playbook fails as follows:
+    <section><p><b>Ring Creation Fails Repeatedly </b></p><p><b>Description</b>:  Ansible play fails
+        in swiftlm-ring-supervisor | build-rings</p><p>An ansible playbook fails as follows:
         <codeblock>TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] *** 
-failed: [hlm002-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor", "--make-delta", "--rebalance", ....</codeblock></p>If
-      the ansible fails as shown above then examine the output and see if the output generate in
-      your environment contains one of the following example messages:<p><b>Example Message
-        1</b></p><codeblock>-------------------------------------------------------------------------------
+failed: [hlm002-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor", "--make-delta", "--rebalance", ....</codeblock></p>Examine
+      the output and see if the output generated in your environment contains one of the following
+      example messages:<p><b>Example Message
+          1</b></p><codeblock>-------------------------------------------------------------------------------
 NOTE: Dispersion of 11.718750 indicates some parts are not
       optimally dispersed.
 
@@ -171,13 +171,14 @@ NOTE: Dispersion of 11.718750 indicates some parts are not
         3</b><codeblock>Cowardly refusing to save rebalance as it did not change at least 1%</codeblock></p><p>
         <b>Example Message
         4</b><codeblock>NOTE: Balance of %.02f indicates you should push this ring, wait at least 16 hours, and rebalance/repush.</codeblock></p><p><b>Example
-          Message 5</b><codeblock>Worst tier is 3.0 (2.4)</codeblock></p><p>If any one of the ab
-        then it is certain that the Swift ring was created. </p><p> </p><p>As a workaround, you must
-        run the following command at least two times:</p><p>{code}</p><p>ansible-playbook -i
-        hosts/verb_hosts _swift-make-delta-rebalance.yml {code}</p><p> </p><p>Each may fail with
-        similar messages -- however, each fails with a different ring.</p><p> </p><p>Once the
-        account, container and object-0 rings have "failed" in this way, you may now re-run the
-        original playbook -- this time the play should not stop at the "swiftlm-ring-supervisor |
-        build-rings" task.</p><p> </p><p> </p></section>
+          Message 5</b><codeblock>Worst tier is 3.0 (2.4)</codeblock></p><p>If any one of the above
+        message is displayed in your environment then it is certain that the Swift ring was created.
+          </p><p><b> Resolution</b></p><p>Run the following command at least
+        twice:<codeblock>ansible-playbook -i hosts/verb_hosts _swift-make-delta-rebalance.yml</codeblock></p><p>
+        Each may fail with similar messages but each  fails with a different ring.</p><p> Once the
+        account, container, and object-O rings have failed, you can re-run the folllowing
+        command:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml</codeblock></p><p>Now, the
+        ansible playbook will not stop at the "swiftlm-ring-supervisor | build-rings" task and the
+        rings will be created successfully.</p><p> </p><p> </p></section>
   </body>
 </topic>
