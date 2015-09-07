@@ -404,6 +404,52 @@ ring-specifications:
             mkfs-opts: -O large_file
         consumer:
            name: os</codeblock></p></section>
+    <p>The above sample file contains three OSD disks and two journal disks. One journal disk is
+      shared by two OSD disks.</p>
+    <p>The disk model has the following fields: </p>
+    <p>
+      <simpletable id="simpletable_lrq_gyw_gt">
+        <strow>
+          <stentry><b>device-groups</b></stentry>
+          <stentry>There can be several device groups. This allows different sets of disks to be
+            used for different purposes.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>name</b></stentry>
+          <stentry>This is an arbitrary name for the device group. The name must be
+            unique.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>devices</b></stentry>
+          <stentry>This is a list of devices allocated to the device group.
+            <!--A name field containing /dev/sdb, /dev/sdd, and /dev/sde indicates that the device group is used by Ceph.-->
+            We need to specify the list of devices needed for Ceph.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>consumer</b></stentry>
+          <stentry>This specifies the service that uses the device group. A <codeph>name</codeph>
+            field containing <b>ceph</b> indicates that the device group is used by Ceph.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>attrs</b></stentry>
+          <stentry>This is the list of attributes.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>usage</b></stentry>
+          <stentry>There can be several use of devices for a particular service. In the above
+            sample, <codeph>usage</codeph> field contains <b>data</b> which indicates that the
+            device is used for data storage.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>journal_disk</b></stentry>
+          <stentry>It is to used to capture journal data. You can share the journal disk between two
+            OSD disks.</stentry>
+        </strow>
+      </simpletable>
+    </p>
+    <p>
+      <note type="important">Minimum 3 OSD disks are required to configure Ceph. </note>
+    </p>
     <section id="interfaces-set"><b>interfaces_set.yml</b></section>
     <section>
       <p><!--Copy <codeph>interface_set.yml</codeph> without modification.--></p>
@@ -505,7 +551,7 @@ ring-specifications:
         your servers in this file.</p><note>The entries in this file are examples, if you have more
         or less nodes you can copy and paste to include your entire environment.</note><p>In the
         following example file three servers are assigned as OSD nodes, which is the minimum
-        requirement for ceph
+        requirement for Ceph
         deployment.<codeblock>---
   product:
     version: 2

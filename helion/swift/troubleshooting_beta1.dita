@@ -155,9 +155,35 @@
         </strow>
       </simpletable>
     </section>
-    <section id="failure-ring"><p><b>Repeated Failure of Ring Creation</b></p><p><b>Description</b>:
-        Ansible playbook fails in swiftlm-ring-supervisor | build-rings</p><p>An ansible playbook
-        fails as follows:
+    <section id="failure-ring"><p><b>Ansible playbook fails in swiftlm-ring-supervisor |
+          build-rings"</b></p><p>
+        <simpletable id="simpletable_k1g_ycx_gt">
+          <strow>
+            <stentry><b>Description</b>
+            </stentry>
+            <stentry>If a disk drive allocated to Swift uses the MBR partition table type, the
+              deploy process refuses to label and format the drive. This is to prevent potential
+              data loss as explained in <xref
+                href="allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
+                >Requirements for a Disk Drive</xref>. If you intend to use the disk drive for
+              Swift, you must convert the MBR partition table to GPT on the drive using
+                <codeph>/sbin/sgdisk</codeph>.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>Resolution</b></stentry>
+            <stentry>You must install <codeph>gdisk</codeph>, before using <codeph>sgdisk</codeph>.
+                <ul id="ul_cdg_ycx_gt">
+                <li>Execute the following command to install
+                  <codeph>gdisk</codeph>,<codeblock>sudo apt-get install gdisk</codeblock></li>
+                <li>Convert to GPT partition type. This is an example for converting
+                    <codeph>/dev/sdd</codeph> to the GPT partition
+                  type.<codeblock>sudo sgdisk –g /dev/sdd</codeblock></li>
+                <li> Reboot the node to take effect. You may then resume the deploy (repeat the
+                  playbook that reported the error). </li>
+              </ul></stentry>
+          </strow>
+        </simpletable>
+      </p><p>An ansible playbook fails as follows:
         <codeblock>TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] *** 
 failed: [hlm002-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor", "--make-delta", "--rebalance", ....</codeblock></p>Examine
       the output and see if the output generated in your environment contains one of the following
@@ -175,11 +201,11 @@ NOTE: Dispersion of 11.718750 indicates some parts are not
         <b>Example Message
         4</b><codeblock>NOTE: Balance of %.02f indicates you should push this ring, wait at least 16 hours, and rebalance/repush.</codeblock></p><p><b>Example
           Message 5</b><codeblock>Worst tier is 3.0 (2.4)</codeblock></p><p>If any one of the above
-        message is displayed in your environment then it is certain that the Swift ring was created.
-          </p><p><b> Resolution</b></p><p>Run the following command at least
+        message is displayed in your environment then it is probable that the Swift ring was
+        created. </p><p><b> Resolution</b></p><p>Run the following command at least
         twice:<codeblock>ansible-playbook -i hosts/verb_hosts _swift-make-delta-rebalance.yml</codeblock></p><p>
         Each may fail with similar messages but each fails with a different ring.</p><p> Once the
-        account, container, and object-O rings have failed, you can re-run the folllowing
+        account, container, and object-0 rings have failed, you can re-run the folllowing
         command:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml</codeblock></p><p>Now, the
         ansible playbook will not stop at the "swiftlm-ring-supervisor | build-rings" task and the
         rings will be created successfully.</p><p> </p><p> </p></section>

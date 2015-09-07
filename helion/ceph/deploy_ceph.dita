@@ -11,12 +11,11 @@
       <simpletable frame="all" relcolwidth="1.0*" id="simpletable_ab3_fwv_gt">
         <strow>
           <stentry>
-            <note type="attention"><b>Beta1 Workaround </b><p>You must perform the following step
-                after Step <b>3</b> in the section <b><xref
+            <note type="attention"><b>Beta1 Workaround </b><p>You must perform the following step after Step <b>3</b> in the section <b><xref
                     href="#topic_jrc_5lz_ft/configure-ceph-as-cinder-backend" format="dita"
                     >Configure Ceph as a Cinder
-                backend</xref></b>.<codeblock>cp /usr/lib/python2.7/dist-packages/rbd.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/
-cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/</codeblock></p><p><b>The
+                backend</xref></b>.<codeblock>cp /usr/lib/python2.7/dist-packages/rbd.py /opt/stack/venv/cinder-&lt;time>/lib/python2.7/site-packages/
+cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-&lt;time>/lib/python2.7/site-packages/</codeblock></p><p><b>The
                   functionality to attach RBD volume to a Nova instance is not
               working.</b></p></note>
           </stentry>
@@ -39,88 +38,19 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030
       <p>
         <ol id="ol_evc_k11_gt">
           <li>Login to the Deployer node.</li>
-          <li>Copy the Ceph configuration files (<b>manually</b>) to
-              <codeph>~/helion-input/my_cloud/definition</codeph>. The configuration files are
-            available at <xref href="configuration_files.dita#topic_trz_pgw_gt">Ceph Configuration
-              files</xref>.<!--<p>The configuration files for editing will be available at <codeph>~/helion/my_cloud/definition/data</codeph>.</p>--></li>
-          <li>Edit the configuration files, based on your environment, to implement Ceph servers. </li>
-          <li>Execute the following command to ensure that the additional disks are available on the
-            servers marked for OSD as specified in the
-            <codeph>disks_osd.yml</codeph>.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock>The
-            sample file of <codeph>disks_osd.yml</codeph> is as
-              follows:<codeblock>  disk-models:
-  - name: DISK_SET_OSD
-    # two disk node; remainder of disk 1 and all of disk 2 combined in single VG
-    # VG is used to create three logical vols for /var, /var/log, and /var/crash
-    device-groups:
-      - name: ceph-osd-data-and-journal
-        devices:
-          - name: /dev/sdb
-        consumer:
-           name: ceph
-           attrs:
-             usage: data
-             journal_disk: /dev/sdc
-      - name: ceph-osd-data-and-shared-journal-set-1
-        devices:
-          - name: /dev/sdd
-        consumer:
-           name: ceph
-           attrs:
-             usage: data
-             journal_disk: /dev/sdf
-      - name: ceph-osd-data-and-shared-journal-set-2
-        devices:
-          - name: /dev/sde
-        consumer:
-           name: ceph
-           attrs:
-             usage: data
-             journal_disk: /dev/sdf</codeblock><p>The
-              above sample file contains three OSD nodes and two journal disks. One journal disk can
-              be shared by two OSD nodes.</p><p>The disk model has the following fields: </p><p>
-              <simpletable>
-                <strow>
-                  <stentry><b>device-groups</b></stentry>
-                  <stentry>There can be several device groups. This allows different sets of disks
-                    to be used for different purposes.</stentry>
-                </strow>
-                <strow>
-                  <stentry><b>name</b></stentry>
-                  <stentry>This is an arbitrary name for the device group. The name must be
-                    unique.</stentry>
-                </strow>
-                <strow>
-                  <stentry><b>devices</b></stentry>
-                  <stentry>This is a list of devices allocated to the device group.
-                    <!--A name field containing /dev/sdb, /dev/sdd, and /dev/sde indicates that the device group is used by Ceph.-->
-                    We need to specify the list of devices needed for Ceph.</stentry>
-                </strow>
-                <strow>
-                  <stentry><b>consumer</b></stentry>
-                  <stentry>This specifies the service that uses the device group. A
-                      <codeph>name</codeph> field containing <b>ceph</b> indicates that the device
-                    group is used by Ceph.</stentry>
-                </strow>
-                <strow>
-                  <stentry><b>attrs</b></stentry>
-                  <stentry>This is the list of attributes.</stentry>
-                </strow>
-                <strow>
-                  <stentry><b>usage</b></stentry>
-                  <stentry>There can be several use of devices for a particular service. In the
-                    above sample, <codeph>usage</codeph> field contains <b>data</b> which indicates
-                    that the device is used for data storage.</stentry>
-                </strow>
-                <strow>
-                  <stentry><b>journal_disk</b></stentry>
-                  <stentry>It is to used to capture journal data. You can share the journal disk
-                    between two OSD nodes.</stentry>
-                </strow>
-              </simpletable>
-            </p><p>
-              <note type="important">Minimum 3 OSD nodes are required to configure Ceph. </note>
-            </p></li>
+          <li>Create the Ceph configuration files (<b>manually</b>) at
+              <codeph>~/helion-input/my_cloud/definition</codeph>. The example configuration files
+            are available at <xref href="configuration_files.dita#topic_trz_pgw_gt">Ceph
+              Configuration
+            files</xref>.<!--<p>The configuration files for editing will be available at <codeph>~/helion/my_cloud/definition/data</codeph>.</p>--></li>
+          <li>Copy the configuration files as shown in the screeshot below.<p/><image
+              href="../../media/ceph/screenshot-path.png" id="image_arv_dcx_gt"/><p>You must copy
+              the <b>yml</b> files in the appropriate folder. For example:  Copy the ring.yml file
+              in <codeph>config/swift/</codeph>.</p></li>
+          <li>Edit the configuration files, based on your environment, to deploy Ceph. </li>
+          <li>Edit  the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
+            disks meant for OSD data and journal
+            filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock></li>
           <li> Commit your configuration to a <xref href="../using_git.dita#topic_u3v_1yz_ct">local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
 git add -A
@@ -129,12 +59,11 @@ git commit -m "&lt;commit message>"</codeblock><note>
           <li>Run the configuration
             processor<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-          <li>Use <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph> file to
-            create a deployment directory.</li>
-          <li>Run <codeph>verb_host</codeph> commands from the following directory:
-            <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
-          <li>Modify <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the line
-            containing <codeph>ceph-deploy.yml</codeph>.</li>
+          <li>Change the directory to <codeph>~/scratch/ansible/next/hos/ansible</codeph> and run
+            the following command to create a deployment
+            directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+          <li>Modify <codeph>~/helion/hlm/ansible/hlm-deploy.yml</codeph> and uncomment the line
+            containing <codeph>ceph-deploy.yml</codeph> to enable deployment of ceph.</li>
           <li>Run the following ansible
             playbook:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
         </ol>
@@ -143,15 +72,14 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
     <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
       nodes (Resource Nodes).</p>
     <p id="run-ceph-client-package"><b>Run Ceph Client Packages</b></p>
-    <p>Execute the following command to install the ceph client packages on controller nodes and
-      create users and ceph pools on the resource nodes:</p>
+    <p>Execute the following command to install the Ceph client packages on controller nodes.  </p>
     <p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
     </p>
+    <p>This will also create ceph users and Ceph pools on the resource nodes:</p>
     <p id="configure-ceph-as-cinder-backend"><b>Configure Ceph as a Cinder backend</b></p>
-    <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
-        backend:<ol>
+    <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder backend:<ol>
         <li>Edit <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to
           add ceph configuration data as shown
           below:<codeblock>enabled_backends=ceph1</codeblock></li>
@@ -168,7 +96,7 @@ volume_backend_name = ceph</codeblock><note>The
               <b>rbd_uuid </b>is available in
               <codeph>/home/stack/helion/hos/ansible/roles/ceph-client-prepare/vars/ceph_user_model.yml</codeph><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
         <?oxy_custom_end?>
-        <li>To enable cinder configuration backup, modify <codeph>cinder.conf.j2</codeph> at
+        <li>To enable cinder backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
             <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> with the
           following values:
           <codeblock>backup_driver = cinder.backup.drivers.ceph
@@ -179,27 +107,22 @@ backup_ceph_pool = backups
 backup_ceph_stripe_unit = 0
 backup_ceph_stripe_count = 0
 restore_discard_excess_bytes = true</codeblock></li>
-        <li> On all the Controller nodes copy the following packages:<codeblock>cp /usr/lib/python2.7/dist-packages/rbd.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/
-cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/</codeblock><p>
-            <note type="important">Beta1 does not support the  RBD volume attachment to a Nova
-              instance.</note>
-          </p></li>
-        <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol>
+        <li> Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
+            id="ol_xx5_51x_gt">
             <li>Login to controller node as a root user and execute the following
                   command.<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p><p>You
-                can copy the keyring from the deployer node  <codeph>scp
-                  /etc/ceph/ceph.client.cinder.keyring</codeph> to <codeph>/etc/ceph</codeph> folder
-                on all the controller nodes.</p></li>
+                can copy the keyring from the deployer
+                node<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock> to
+                  <codeph>/etc/ceph</codeph> folder on all the controller nodes.</p></li>
           </ol></li>
         <li>Commit your configuration to the local repository to configure cinder on the deployer node<p>
             <codeblock>cd /home/stack/helion/hos/ansible
 git add -A
 git commit -m "&lt;your commit message>"</codeblock>
           </p><note> Enter your commit message &lt;commit message></note></li>
-        <li>Use <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph> file to
-          create a deployment directory.</li>
-        <li>Run <codeph>verb_host</codeph> commands from the following directory:
-          <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
+        <li>Change the directory to <codeph>~/scratch/ansible/next/hos/ansible</codeph> and run the
+          following command to create a deployment
+          directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
         <li>Run the following ansible
             playbook:<codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p>Once
             cinder is configured, launch the Horizon dashboard to create a cinder volume
@@ -239,27 +162,26 @@ git commit -m "&lt;your commit message>"</codeblock>
       <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate the
         volume type. For example:<i>ceph</i>.</li>
       <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type is
-          mapped to the backend, you can create volumes.</note></li>
+          mapped to the backend, you can create volumes with this volume type.</note></li>
     </ol>
     <section>
       <title id="ceph-operation">
         <b>Ceph Operations</b></title>
-      <p>After the successful deployment of Ceph, you can perform the following ceph operations:<ul>
+      <p>After the successful deployment of Ceph, you can perform the following Ceph operations:<ul>
           <li>Check the status of Ceph OSD and Monitor Services</li>
           <li>Start OSD Nodes and Monitor Services</li>
           <li>Stop OSD Nodes and Monitor Services<p><b>Check the status of Ceph OSD and Monitor
                 Services</b>
-            </p><p>Perform the following steps to check the stays of Ceph OSD Nodes and Monitor
-                Services:<ol>
+            </p><p>Perform the following steps to check the stays of Ceph OSD Nodes and Monitor Services:<ol>
                 <li>Login to Deployer Node.</li>
-                <li>Change the
-                  directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
+                <li>Change to the following
+                  directory:<codeblock>~/scratch/ansible/next/hos/ansible</codeblock></li>
                 <li>Run the ansible
                   playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-status.yml</codeblock></li>
               </ol></p><p><b>Start OSD and Monitor Services</b></p><p>Perform the following steps to
               start OSD Nodes and Monitor Services:<ol>
                 <li>Login to Deployer Node.</li>
-                <li>Change the
+                <li>Change to the following
                   directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
                 <li>Run the ansible
                   playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-start.yml</codeblock></li>
@@ -267,7 +189,7 @@ git commit -m "&lt;your commit message>"</codeblock>
               steps to stop OSD Nodes and Monitor Services:</p><p>
               <ol>
                 <li>Login to Deployer Node.</li>
-                <li>Change the
+                <li>Change to the following
                   directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
                 <li>Run the ansible
                   playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-stop.yml</codeblock></li>
