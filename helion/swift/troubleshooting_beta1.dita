@@ -155,8 +155,10 @@
         </strow>
       </simpletable>
     </section>
-    <section id="failure-ring">
-      <p><b>Ansible playbook fails in swiftlm-ring-supervisor | build-rings</b></p>
+    <section>
+      <title><b>Ansible playbook fails in swiftlm-ring-supervisor | build-rings</b></title>
+    </section>
+    <section>
       <p>
         <simpletable id="simpletable_k1g_ycx_gt">
           <strow>
