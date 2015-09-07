@@ -6,8 +6,8 @@
     <section id="important-notes"><title>Important Notes</title>
       <ul>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
-        <li>Make sure <b>all disks on the system(s) are wiped</b> before you begin the install. </li>
-        <li>/dev/sda will be used for the OS. </li>
+        <li>Make sure <b>all disks on the system(s) are wiped</b> before you begin the install.</li>
+        <li>/dev/sda will be used for the OS.</li>
         <li>Both HP Linux for HP Helion OpenStack and HP Helion OpenStack are part of the ISO you
           will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
@@ -217,11 +217,20 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
         </li>-->
       </ol>
     </section>
-    <section id="VSA">
-      <title>Install and Configure VSA (optional).</title>
-      <p>You can set up Virtual Storage Appliance (VSA) using the instructions on the following
-        page: <xref href="vsa.dita#topic_hjr_4x1_dt">Install and Configure VSA
-        (optional)</xref>.</p>
+    <section id="cinder"><title>Install and Configure Block Storage Backend</title>
+      <p>There are two options for the Block Storage backend: VSA and Ceph. Without a valid backend
+        your Block Storage (Cinder) implementation will not be usable. These documents will assist
+        you in installing and configuring a backend solution.</p>
+      <b>Ceph</b>
+      <ul>
+        <li><xref href="cinder/ceph/ceph_overview.dita">Ceph Overview</xref></li>
+        <li><xref href="cinder/ceph/ceph_install.dita">Ceph Installation and
+          Configuration</xref></li>
+      </ul>
+      <b>VSA</b>
+      <ul>
+        <li><xref href="cinder/vsa.dita">VSA Installation and Configuration</xref></li>
+      </ul>
     </section>
     <section id="Post-Installation"><title>Verification Steps (optional)</title>
       <ol>

@@ -61,12 +61,14 @@
     <!-- Cinder -->
     <topichead navtitle="Block Storage">
       <topichead navtitle="Ceph ">
-        <topicref href="helion/ceph/ceph_overview.dita" navtitle="Ceph Overview" locktitle="yes"/>
-        <topicref href="helion/ceph/deploy_ceph.dita" navtitle="Ceph Configuration" locktitle="yes">
-          <topicref href="helion/ceph/configuration_files.dita"/>
+        <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
+          locktitle="yes"/>
+        <topicref href="helion/cinder/ceph/deploy_ceph.dita" navtitle="Ceph Configuration"
+          locktitle="yes">
+          <topicref href="helion/cinder/ceph/configuration_files.dita"/>
         </topicref>
       </topichead>
-      <topicref href="helion/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
+      <topicref href="helion/cinder/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
     </topichead>
     <!-- Monasca / Centralized Logging -->
     <topichead navtitle="Monitoring">
