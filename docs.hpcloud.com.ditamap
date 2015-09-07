@@ -68,7 +68,9 @@
           <topicref href="helion/cinder/ceph/configuration_files.dita"/>
         </topicref>
       </topichead>
-      <topicref href="helion/cinder/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
+      <topichead navtitle="VSA">
+        <topicref href="helion/cinder/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
+      </topichead>
     </topichead>
     <!-- Monasca / Centralized Logging -->
     <topichead navtitle="Monitoring">
