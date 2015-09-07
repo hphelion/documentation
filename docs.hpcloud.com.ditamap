@@ -72,6 +72,21 @@
         <topicref href="helion/cinder/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
       </topichead>
     </topichead>
+    <!-- Object Storage -->
+    <topichead navtitle="Object Storage" toc="yes">
+      <topicref href="helion/swift/swift_overview.dita" toc="yes"/>
+      <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes"
+        navtitle="Modifying the Input Model" locktitle="yes">
+        <topicref href="helion/swift/allocating_disk_drives.dita"/>
+        <topicref href="helion/swift/ring_specifications.dita"/>
+      </topicref>
+      <topicref href="helion/swift/label_on_partition.dita" toc="yes"
+        navtitle="Verifying the Partition Label" locktitle="yes"/>
+      <topicref href="helion/swift/filesystem_label.dita" toc="yes"
+        navtitle="Verifying the Filesystem Label" locktitle="yes"/>
+      <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"
+        navtitle="Swift Troubleshooting" locktitle="yes"/>
+    </topichead>
     <!-- Monasca / Centralized Logging -->
     <topichead navtitle="Monitoring">
       <topicref href="helion/monasca/monasca.dita" locktitle="yes">
@@ -145,20 +160,6 @@
         navtitle="Ceilometer API Extensions" locktitle="yes" toc="no"/>
       <topicref href="helion/ceilometer/metering_bestpractice.dita"
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
-    </topichead>
-    <topichead navtitle="Object Storage" toc="yes">
-      <topicref href="helion/swift/swift_overview.dita" toc="yes"/>
-      <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes"
-        navtitle="Modifying the Input Model" locktitle="yes">
-        <topicref href="helion/swift/allocating_disk_drives.dita"/>
-        <topicref href="helion/swift/ring_specifications.dita"/>
-      </topicref>
-      <topicref href="helion/swift/label_on_partition.dita" toc="yes"
-        navtitle="Verifying the Partition Label" locktitle="yes"/>
-      <topicref href="helion/swift/filesystem_label.dita" toc="yes"
-        navtitle="Verifying the Filesystem Label" locktitle="yes"/>
-      <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"
-        navtitle="Swift Troubleshooting" locktitle="yes"/>
     </topichead>
   </topicref>
 </map>
