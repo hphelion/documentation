@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_jrc_5lz_ft">
-  <title> Installing Ceph </title>
+  <title id="install-ceph"> Installing Ceph </title>
   <body>
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
-      with HP Helion OpenStack 2.0. It also provides the procedure to perform cinder operation after
-      Ceph deployment.</p>
+      with HP Helion OpenStack 2.0. After the installation of Ceph you can perform the cinder
+      operation as documented in this page.
+      <!--It also provides the procedure to perform cinder operation after Ceph deployment.--></p>
     <p>
       <simpletable frame="all" relcolwidth="1.0*" id="simpletable_ab3_fwv_gt">
         <strow>
           <stentry>
-            <note type="attention">Beta1 Workaround <p>You must perform the following steps after
-                Step <b>3</b> in the section <b>Configure Ceph as a Cinder
+            <note type="attention"><b>Beta1 Workaround </b><p>You must perform the following step
+                after Step <b>3</b> in the section <b>Configure Ceph as a Cinder
                 backend</b>.<codeblock>cp /usr/lib/python2.7/dist-packages/rbd.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/
-cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/</codeblock></p><p><b>Beta
-                  1 does not support the RBD volume attachment to a Nova instance.</b></p></note>
+cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/</codeblock></p><p><b>The
+                  functionality to attach RBD volume to a Nova instance is not
+              working.</b></p></note>
           </stentry>
         </strow>
       </simpletable>
     </p>
     <section>
-      <title>Prerequisite</title>
+      <title id="preq">Prerequisite</title>
       <p>
-        <ul id="ul_dmn_b5v_gt">
+        <ul>
           <li>The deployer node must be setup before deploying Ceph. For more details on the
             installation of deployer node, refer to <xref
               href="../installation.dita#topic_flx_j2b_ws/DeployerInstall"> installation
@@ -31,7 +33,7 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030
       </p>
     </section>
     <section>
-      <title>Installation Procedure</title>
+      <title id="install-procedure">Installation Procedure</title>
       <p>Perform the following procedures to configure, install, and the integrate the Ceph Block
         Storage with HP Helion OpenStack 2.0</p>
     </section>
@@ -143,16 +145,16 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
     </section>
     <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
       nodes (Resource Nodes).</p>
-    <p><b>Run Ceph Client Packages</b></p>
+    <p id="run-ceph-client-package"><b>Run Ceph Client Packages</b></p>
     <p>Execute the following command to install the ceph client packages on controller nodes and
       create users and ceph pools on the resource nodes:</p>
     <p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
     </p>
-    <p><b>Configure Ceph as a Cinder backend</b></p>
+    <p id="configure-ceph-as-cinder-backend"><b>Configure Ceph as a Cinder backend</b></p>
     <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
-        backend:<ol id="ol_scj_1cb_gt">
+        backend:<ol>
         <li>Edit <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to
           add ceph configuration data as shown
           below:<codeblock>enabled_backends=ceph1</codeblock></li>
@@ -185,8 +187,7 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030
             <note type="important">Beta1 does not support the  RBD volume attachment to a Nova
               instance.</note>
           </p></li>
-        <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
-            id="ol_ndr_y2b_gt">
+        <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol>
             <li>Login to controller node as a root user and execute the following
                   command.<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p><p>You
                 can copy the keyring from the deployer node  <codeph>scp
@@ -207,7 +208,7 @@ git commit -m "&lt;your commit message>"</codeblock>
             cinder is configured, launch the Horizon dashboard to create a cinder volume
           type.</p></li>
       </ol></p>
-    <p><b>Creating Cinder Volume Type</b></p>
+    <p id="create-cinder-vol"><b>Creating Cinder Volume Type</b></p>
     <p>To create a volume type using the Horizon dashboard, do the following:<ol id="ol_ldf_fxc_gt">
         <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
           left panel.</li>
@@ -223,9 +224,9 @@ git commit -m "&lt;your commit message>"</codeblock>
               page.<p><image href="../../media/ceph/create-ceph-volumetype.png"
               id="image_ilf_wzc_gt"/></p></li>
       </ol></p>
-    <p><b>Associate the volume type to a backend</b></p>
+    <p id="associate-volume-type-backend"><b>Associate the volume type to a backend</b></p>
     <p>To map a volume type to a backend, do the following:</p>
-    <ol id="ol_nvn_xbd_gt">
+    <ol>
       <li>Login to the Overcloud Horizon dashboard. The Overcloud dashboard displays with the
         options in the left panel.</li>
       <li> From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab to
@@ -244,31 +245,30 @@ git commit -m "&lt;your commit message>"</codeblock>
           mapped to the backend, you can create volumes.</note></li>
     </ol>
     <section>
-      <title>
+      <title id="ceph-operation">
         <b>Ceph Operations</b></title>
-      <p>After the successful deployment of Ceph, you can perform the following ceph operations:<ul
-          id="ol_cnq_ckh_gt">
+      <p>After the successful deployment of Ceph, you can perform the following ceph operations:<ul>
           <li>Check the status of Ceph OSD and Monitor Services</li>
           <li>Start OSD Nodes and Monitor Services</li>
           <li>Stop OSD Nodes and Monitor Services<p><b>Check the status of Ceph OSD and Monitor
                 Services</b>
             </p><p>Perform the following steps to check the stays of Ceph OSD Nodes and Monitor
-                Services:<ol id="ol_xbb_nlh_gt">
+                Services:<ol>
                 <li>Login to Deployer Node.</li>
                 <li>Change the
                   directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
                 <li>Run the ansible
                   playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-status.yml</codeblock></li>
               </ol></p><p><b>Start OSD and Monitor Services</b></p><p>Perform the following steps to
-              start OSD Nodes and Monitor Services:<ol id="ol_llv_gmh_gt">
+              start OSD Nodes and Monitor Services:<ol>
                 <li>Login to Deployer Node.</li>
-                <li>Chnage the
+                <li>Change the
                   directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
                 <li>Run the ansible
                   playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-start.yml</codeblock></li>
               </ol></p><p><b>Stop OSD Nodes and Monitor Services</b></p><p>Perform the following
               steps to stop OSD Nodes and Monitor Services:</p><p>
-              <ol id="ol_e2d_zmh_gt">
+              <ol>
                 <li>Login to Deployer Node.</li>
                 <li>Change the
                   directory:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
