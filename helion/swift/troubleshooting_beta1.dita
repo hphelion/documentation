@@ -8,8 +8,8 @@
             >Interpreting _swift-validate-input-model.yml Errors</xref></li>
         <li><xref href="#topic_sl2_nht_dt/deploy-fails" format="dita">Deploy fails with: msdos disks
             labels do not support partition names</xref></li>
-        <li><xref href="#topic_sl2_nht_dt/failure-ring" format="dita">Repeated Failure of Ring
-            Creation</xref></li>
+        <li><xref href="#topic_sl2_nht_dt/failure-ring" format="dita">Ansible playbook fails in
+            swiftlm-ring-supervisor | build-rings</xref></li>
       </ul></p>
     <section id="interpreting-swift-validate-input-model">
       <title>Interpreting _swift-validate-input-model.yml Errors</title>
@@ -155,59 +155,52 @@
         </strow>
       </simpletable>
     </section>
-    <section id="failure-ring"><p><b>Ansible playbook fails in swiftlm-ring-supervisor |
-          build-rings"</b></p><p>
+    <section id="failure-ring">
+      <p><b>Ansible playbook fails in swiftlm-ring-supervisor | build-rings</b></p>
+      <p>
         <simpletable id="simpletable_k1g_ycx_gt">
           <strow>
             <stentry><b>Description</b>
             </stentry>
-            <stentry>If a disk drive allocated to Swift uses the MBR partition table type, the
-              deploy process refuses to label and format the drive. This is to prevent potential
-              data loss as explained in <xref
-                href="allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
-                >Requirements for a Disk Drive</xref>. If you intend to use the disk drive for
-              Swift, you must convert the MBR partition table to GPT on the drive using
-                <codeph>/sbin/sgdisk</codeph>.</stentry>
-          </strow>
-          <strow>
-            <stentry><b>Resolution</b></stentry>
-            <stentry>You must install <codeph>gdisk</codeph>, before using <codeph>sgdisk</codeph>.
-                <ul id="ul_cdg_ycx_gt">
-                <li>Execute the following command to install
-                  <codeph>gdisk</codeph>,<codeblock>sudo apt-get install gdisk</codeblock></li>
-                <li>Convert to GPT partition type. This is an example for converting
-                    <codeph>/dev/sdd</codeph> to the GPT partition
-                  type.<codeblock>sudo sgdisk –g /dev/sdd</codeblock></li>
-                <li> Reboot the node to take effect. You may then resume the deploy (repeat the
-                  playbook that reported the error). </li>
-              </ul></stentry>
-          </strow>
-        </simpletable>
-      </p><p>An ansible playbook fails as follows:
-        <codeblock>TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] *** 
-failed: [hlm002-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor", "--make-delta", "--rebalance", ....</codeblock></p>Examine
-      the output and see if the output generated in your environment contains one of the following
-      example messages:<p><b>Example Message
-          1</b></p><codeblock>-------------------------------------------------------------------------------
+            <stentry>An ansible playbook fails as follows:
+              <codeblock>TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] *** 
+failed: [hlm002-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor", "--make-delta", "--rebalance", ....</codeblock>Examine
+              the output and see if the output generated in your environment contains one of the
+              following example messages:<p><b>Example Message
+                  1</b></p><codeblock>-------------------------------------------------------------------------------
 NOTE: Dispersion of 11.718750 indicates some parts are not
       optimally dispersed.
 
       You may want to adjust some device weights, increase
       the overload or review the dispersion report.
 -------------------------------------------------------------------------------</codeblock><p><b>Example
-          Message 2</b><codeblock>No partitions could be reassigned.</codeblock></p><p><b>Example
-          Message
-        3</b><codeblock>Cowardly refusing to save rebalance as it did not change at least 1%</codeblock></p><p>
-        <b>Example Message
-        4</b><codeblock>NOTE: Balance of %.02f indicates you should push this ring, wait at least 16 hours, and rebalance/repush.</codeblock></p><p><b>Example
-          Message 5</b><codeblock>Worst tier is 3.0 (2.4)</codeblock></p><p>If any one of the above
-        message is displayed in your environment then it is probable that the Swift ring was
-        created. </p><p><b> Resolution</b></p><p>Run the following command at least
-        twice:<codeblock>ansible-playbook -i hosts/verb_hosts _swift-make-delta-rebalance.yml</codeblock></p><p>
-        Each may fail with similar messages but each fails with a different ring.</p><p> Once the
-        account, container, and object-0 rings have failed, you can re-run the folllowing
-        command:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml</codeblock></p><p>Now, the
-        ansible playbook will not stop at the "swiftlm-ring-supervisor | build-rings" task and the
-        rings will be created successfully.</p><p> </p><p> </p></section>
+                  Message
+                  2</b><codeblock>No partitions could be reassigned.</codeblock></p><p><b>Example
+                  Message
+                3</b><codeblock>Cowardly refusing to save rebalance as it did not change at least 1%</codeblock></p><p><b>Example
+                  Message
+                4</b><codeblock>NOTE: Balance of %.02f indicates you should push this ring, wait at least 16 hours, and rebalance/repush.</codeblock></p><p><b>Example
+                  Message 5</b><codeblock>Worst tier is 3.0 (2.4)</codeblock></p><p>If any one of
+                the above message is displayed in your environment then it is probable that the
+                Swift ring was created. </p></stentry>
+          </strow>
+          <strow>
+            <stentry><b>Resolution</b></stentry>
+            <stentry>
+              <p>Run the following command at least
+                twice:<codeblock>ansible-playbook -i hosts/verb_hosts _swift-make-delta-rebalance.yml</codeblock></p>
+              <p> Each may fail with similar messages but each fails with a different ring.</p>
+              <p> Once the account, container, and object-0 rings have failed, you can re-run the
+                folllowing
+                command:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml</codeblock></p>
+              <p>Now, the ansible playbook will not stop at the "swiftlm-ring-supervisor |
+                build-rings" task and the rings will be created successfully.</p>
+            </stentry>
+          </strow>
+        </simpletable>
+      </p>
+      <p> </p>
+      <p> </p>
+    </section>
   </body>
 </topic>
