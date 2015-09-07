@@ -18,7 +18,8 @@
           <li><xref href="#topic_trz_pgw_gt/disk-controller" format="dita"
               >disks_controller.yml</xref></li>
           <li><xref href="#topic_trz_pgw_gt/disk-osd" format="dita">disks_osd.yml</xref></li>
-          <li>interfaces_set_1.yml</li>
+          <li><xref href="#topic_trz_pgw_gt/interfaces-set" format="dita"
+              >interfaces_set_1.yml</xref></li>
           <li><xref href="#topic_trz_pgw_gt/network-group" format="dita"
             >network_groups.yml</xref></li>
           <li><xref href="#topic_trz_pgw_gt/net-global" format="dita">net_global.yml</xref></li>
