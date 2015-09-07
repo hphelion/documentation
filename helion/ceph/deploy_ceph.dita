@@ -4,8 +4,8 @@
   <title id="install-ceph"> Installing Ceph </title>
   <body>
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
-      with HP Helion OpenStack 2.0. After the installation of Ceph you can perform the cinder
-      operation as documented in this page.
+      with HP Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
+      perform the cinder operation as documented in this page.
       <!--It also provides the procedure to perform cinder operation after Ceph deployment.--></p>
     <p>
       <simpletable frame="all" relcolwidth="1.0*" id="simpletable_ab3_fwv_gt">
@@ -32,7 +32,7 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-&lt;time>/li
     <section>
       <title id="install-procedure">Installation Procedure</title>
       <p>Perform the following procedures to configure, install, and the integrate the Ceph Block
-        Storage with HP Helion OpenStack 2.0</p>
+        Storage with HP Helion OpenStack 2.0.</p>
     </section>
     <section>
       <p>

@@ -7,8 +7,9 @@
       to <b>manually</b> copy the following files in to the cloud definition (
         <codeph>~/helion-input/my_cloud/definition</codeph>) directory before starting the ceph
       deployment.</p>
-    <section>List of Configuration files:<p>The configuration files are as follows:<ul
-          id="ul_vr3_dqw_gt">
+    <section>
+      <title>List of Configuration Files </title>
+      <p>The configuration files are as follows:<ul id="ul_vr3_dqw_gt">
           <li><xref href="#topic_trz_pgw_gt/ring" format="dita">ring.yml</xref></li>
           <li><xref href="#topic_trz_pgw_gt/baremetalConfig.yml" format="dita"
               >baremetalConfig.yml</xref></li>
@@ -25,7 +26,8 @@
           <li><xref href="#topic_trz_pgw_gt/net-global" format="dita">net_global.yml</xref></li>
           <li><xref href="#topic_trz_pgw_gt/server" format="dita">servers.yml</xref></li>
           <li><xref href="#topic_trz_pgw_gt/server-role" format="dita">server_roles.yml</xref></li>
-        </ul></p></section>
+        </ul></p>
+    </section>
     <section id="ring"><b>ring.yml</b><p><!--Copy the following <codeph>ring.yml</codeph> file without any modification.--></p><p>The
         example file is as follows:</p><p>
         <codeblock>---
