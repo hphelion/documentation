@@ -39,8 +39,10 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030
       <p>
         <ol id="ol_evc_k11_gt">
           <li>Login to the Deployer node.</li>
-          <li>Copy the example cloud model in the Deployer node at the following
-            location:<codeblock>cp -r ~/helion/examples/ ~/helion-input/my_cloud/definition</codeblock></li>
+          <li>Copy the Ceph configuration files (<b>manually</b>) to
+              <codeph>~/helion-input/my_cloud/definition</codeph>. The configuration files are
+            available at <xref href="configuration_files.dita#topic_trz_pgw_gt">Ceph configuration
+              files</xref></li>
           <li>List the folder in <codeph>~/helion-input/my_cloud/definition</codeph>. <p>The
               configuration files for editing are available at
                 <codeph>~/helion/my_cloud/definition/data</codeph>.</p></li>
