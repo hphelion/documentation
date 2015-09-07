@@ -216,7 +216,7 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
         </li>-->
       </ol>
     </section>
-    <section id="cinder"><title>Install and Configure Block Storage Backend</title>
+    <section id="cinder"><title>Install and Configure a Block Storage Backend (Optional)</title>
       <p>There are two options for the Block Storage backend: VSA and Ceph. Without a valid backend
         your Block Storage (Cinder) implementation will not be usable. These documents will assist
         you in installing and configuring a backend solution.</p>
@@ -231,7 +231,7 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
         <li><xref href="cinder/vsa.dita">VSA Installation and Configuration</xref></li>
       </ul>
     </section>
-    <section id="Post-Installation"><title>Verification Steps (optional)</title>
+    <section id="Post-Installation"><title>Verification Steps (Optional)</title>
       <ol>
         <li>This step may be used to verify that your cloud is up and running. However, note that
           running the command below will download a cirros image from the internet, upload it to
