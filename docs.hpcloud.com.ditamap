@@ -148,7 +148,7 @@
     </topichead>
     <topichead navtitle="Ceph ">
       <topicref href="helion/ceph/ceph_overview.dita" navtitle="Ceph Overview" locktitle="yes"/>
-      <topicref href="helion/ceph/deploy_ceph.dita"/>
+      <topicref href="helion/ceph/deploy_ceph.dita" navtitle="Installing Ceph" locktitle="yes"/>
     </topichead>
 
   </topicref>
