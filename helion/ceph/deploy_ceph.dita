@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_jrc_5lz_ft">
-  <title id="install-ceph"> Installing Ceph </title>
+  <title id="install-ceph"> Ceph Configuration </title>
   <body>
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
       with HP Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
@@ -77,7 +77,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
     </p>
-    <p>This will also create Ceph users and Ceph pools on the resource nodes:</p>
+    <p>This will also create Ceph users and Ceph pools on the resource nodes.</p>
     <p id="configure-ceph-as-cinder-backend"><b>Configure Ceph as a Cinder backend</b></p>
     <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder backend:<ol>
         <li>Edit <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to
@@ -94,7 +94,7 @@ rbd_ceph_conf = /etc/ceph/ceph.conf
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
 volume_backend_name = ceph</codeblock><note>The
               <b>rbd_uuid </b>is available at
-              <codeph>/home/stack/helion/hos/ansible/roles/ceph-client-prepare/vars/ceph_user_model.yml</codeph><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
+              <codeph>/home/stack/helion/hos/ansible/roles/ceph-client-prepare/vars/ceph_user_model.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
         <?oxy_custom_end?>
         <li>To enable cinder backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
             <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> with the
@@ -118,7 +118,7 @@ restore_discard_excess_bytes = true</codeblock></li>
         <li>Commit your configuration to the local repository to configure cinder on the deployer node.<p>
             <codeblock>cd /home/stack/helion/hos/ansible
 git add -A
-git commit -m "&lt;your commit message>"</codeblock>
+git commit -m "&lt;commit message>"</codeblock>
           </p><note> Enter your commit message &lt;commit message></note></li>
         <li>Change the directory to <codeph>~/scratch/ansible/next/hos/ansible</codeph> and run the
           following command to create a deployment
