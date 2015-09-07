@@ -138,6 +138,10 @@
       <topicref href="helion/swift/filesystem_label.dita" toc="yes"/>
       <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"/>
     </topichead>
+    <topichead navtitle="Ceph Overview">
+      <topicref href="helion/ceph/ceph_overview.dita" navtitle="Ceph Overview" locktitle="yes"/>
+      <topicref href="helion/ceph/deploy_ceph.dita" navtitle="Installing Ceph" locktitle="yes"/>
+    </topichead>
 
   </topicref>
 </map>

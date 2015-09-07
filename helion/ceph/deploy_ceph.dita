@@ -5,7 +5,7 @@
   <body>
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
       with HP Helion OpenStack 2.0. It also provides the procedure to perform Ceph operation after
-      the deployment of ceph.</p>
+      Ceph deployment.</p>
     <section>
       <title>Prerequisite</title>
       <p>The deployer node must be setup before deploying Ceph.</p>
