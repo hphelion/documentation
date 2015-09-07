@@ -5,10 +5,7 @@
   <body>
     <section>
       <title>Ceph Overview</title>
-      <p>Ceph is a Software Defined Storage (SDS) system which comprised of a block storage, object
-        storage, and file system. It is is designed to deliver different types of storage interfaces
-        to the end user in the same storage platform. Therefore ceph is termed as unified storage
-        platform.</p>
+      <p><!--Ceph is a Software Defined Storage (SDS) system which comprised of a block storage, object storage, and file system. It is is designed to deliver different types of storage interfaces to the end user in the same storage platform. Therefore ceph is termed as unified storage platform.--></p>
     </section>
     <section><p>The HP Helion OpenStack 2.0 Ceph Storage Solution provides an unified scaleable and
         stable storage solution for the management of Helion OpenStack Volume Storage (Cinder
