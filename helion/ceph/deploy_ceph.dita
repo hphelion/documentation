@@ -12,8 +12,10 @@
         <strow>
           <stentry>
             <note type="attention"><b>Beta1 Workaround </b><p>You must perform the following step
-                after Step <b>3</b> in the section <b>Configure Ceph as a Cinder
-                backend</b>.<codeblock>cp /usr/lib/python2.7/dist-packages/rbd.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/
+                after Step <b>3</b> in the section <b><xref
+                    href="#topic_jrc_5lz_ft/configure-ceph-as-cinder-backend" format="dita"
+                    >Configure Ceph as a Cinder
+                backend</xref></b>.<codeblock>cp /usr/lib/python2.7/dist-packages/rbd.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/
 cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/</codeblock></p><p><b>The
                   functionality to attach RBD volume to a Nova instance is not
               working.</b></p></note>
@@ -23,14 +25,10 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030
     </p>
     <section>
       <title id="preq">Prerequisite</title>
-      <p>
-        <ul>
-          <li>The deployer node must be setup before deploying Ceph. For more details on the
-            installation of deployer node, refer to <xref
-              href="../installation.dita#topic_flx_j2b_ws/DeployerInstall"> installation
-              guide</xref>.</li>
-        </ul>
-      </p>
+      <p>The deployer node must be setup before deploying Ceph. For more details on the installation
+        of deployer node, refer to <xref
+          href="../installation.dita#topic_flx_j2b_ws/DeployerInstall"> installation
+        guide</xref>.</p>
     </section>
     <section>
       <title id="install-procedure">Installation Procedure</title>
