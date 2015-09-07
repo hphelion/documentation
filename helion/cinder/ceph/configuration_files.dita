@@ -28,7 +28,8 @@
           <li><xref href="#topic_trz_pgw_gt/server-role" format="dita">server_roles.yml</xref></li>
         </ul></p>
     </section>
-    <section id="ring"><b>ring.yml</b><p><!--Copy the following <codeph>ring.yml</codeph> file without any modification.--></p><p>The
+    <section id="ring"
+        ><b>ring.yml</b><p><!--Copy the following <codeph>ring.yml</codeph> file without any modification.--></p><p>The
         example file is as follows:</p><p>
         <codeblock>---
 product:
@@ -525,7 +526,8 @@ ring-specifications:
         - neutron.l3_agent.external_network_bridge
 
 </codeblock></p></section>
-    <section id="net-global"><b>net_global.yml</b><p><!--The value you enter in the <codeph>net_global.yml</codeph> are--></p><p>The
+    <section id="net-global"
+        ><b>net_global.yml</b><p><!--The value you enter in the <codeph>net_global.yml</codeph> are--></p><p>The
         example file is as
         follows:<codeblock>---
   product:

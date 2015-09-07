@@ -11,7 +11,8 @@
       <simpletable frame="all" relcolwidth="1.0*" id="simpletable_ab3_fwv_gt">
         <strow>
           <stentry>
-            <note type="attention"><b>Beta1 Workaround </b><p>You must perform the following step after Step <b>3</b> in the section <b><xref
+            <note type="attention"><b>Beta1 Workaround </b><p>You must perform the following step
+                after Step <b>3</b> in the section <b><xref
                     href="#topic_jrc_5lz_ft/configure-ceph-as-cinder-backend" format="dita"
                     >Configure Ceph as a Cinder
                 backend</xref></b>.<codeblock>cp /usr/lib/python2.7/dist-packages/rbd.py /opt/stack/venv/cinder-&lt;time>/lib/python2.7/site-packages/
@@ -26,7 +27,7 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-&lt;time>/li
       <title id="preq">Prerequisite</title>
       <p>The deployer node must be setup before deploying Ceph. For more details on the installation
         of deployer node, refer to <xref
-          href="../installation.dita#topic_flx_j2b_ws/DeployerInstall"> installation
+          href="../../installation.dita#topic_flx_j2b_ws/DeployerInstall"> installation
         guide</xref>.</p>
     </section>
     <section>
@@ -44,14 +45,15 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-&lt;time>/li
               Configuration
             files</xref>.<!--<p>The configuration files for editing will be available at <codeph>~/helion/my_cloud/definition/data</codeph>.</p>--></li>
           <li>Copy the configuration files in the respective folder as shown in the screeshot
-              below.<p/><image href="../../media/ceph/screenshot-path.png" id="image_arv_dcx_gt"
-              /><p>You must copy the <b>yml</b> files in the appropriate folder. For example:  Copy
+              below.<p/><image href="../../../media/ceph/screenshot-path.png" id="image_arv_dcx_gt"
+              /><p>You must copy the <b>yml</b> files in the appropriate folder. For example: Copy
               the ring.yml file in <codeph>config/swift/</codeph>.</p></li>
           <li>Edit the configuration files, based on your environment, to deploy Ceph. </li>
-          <li>Edit  the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
+          <li>Edit the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
             disks meant for OSD data and journal
             filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock></li>
-          <li> Commit your configuration to a <xref href="../using_git.dita#topic_u3v_1yz_ct">local
+          <li> Commit your configuration to a <xref href="../../using_git.dita#topic_u3v_1yz_ct"
+              >local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock><note>
@@ -72,7 +74,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
     <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
       nodes (Resource Nodes).</p>
     <p id="run-ceph-client-package"><b>Run Ceph Client Packages</b></p>
-    <p>Execute the following command to install the Ceph client packages on controller nodes.  </p>
+    <p>Execute the following command to install the Ceph client packages on controller nodes. </p>
     <p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
@@ -134,14 +136,14 @@ git commit -m "&lt;commit message>"</codeblock>
           left panel.</li>
         <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab to
           display the Volumes page.<p><image
-              href="../../media/ceph/create-ceph-volumetype%20-%201.png" id="image_nrn_sxc_gt"
+              href="../../../media/ceph/create-ceph-volumetype%20-%201.png" id="image_nrn_sxc_gt"
           /></p></li>
         <li>Click <b>Create Volume Type</b> to display a dialog box.<p><image
-              href="../../media/ceph/create-ceph-volumetype%20(2).png" id="image_vww_tyc_gt"
+              href="../../../media/ceph/create-ceph-volumetype%20(2).png" id="image_vww_tyc_gt"
           /></p></li>
         <li>Enter the name of the volume type.</li>
         <li>Click<b> Create Volume Type</b>. The newly created volume displays in the Volumes
-              page.<p><image href="../../media/ceph/create-ceph-volumetype.png"
+              page.<p><image href="../../../media/ceph/create-ceph-volumetype.png"
               id="image_ilf_wzc_gt"/></p></li>
       </ol></p>
     <p id="associate-volume-type-backend"><b>Associate the volume type to a backend</b></p>
@@ -150,13 +152,13 @@ git commit -m "&lt;commit message>"</codeblock>
       <li>Login to the Overcloud Horizon dashboard. The Overcloud dashboard displays with the
         options in the left panel.</li>
       <li> From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab to
-        display the Volumes page.<p/><image href="../../media/ceph/create-ceph-volumetype.png"
+        display the Volumes page.<p/><image href="../../../media/ceph/create-ceph-volumetype.png"
           id="image_izx_2cd_gt"/></li>
       <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
         associate to the backend.<p/><image
-          href="../../media/ceph/create-ceph-volumetype%20-%20extra-specs.png" id="image_cgv_dcd_gt"
+          href="../../../media/ceph/create-ceph-volumetype%20-%20extra-specs.png" id="image_cgv_dcd_gt"
           /><p>The <b>Create Volume Type Extra Specs</b> dialog box displays.</p><p><image
-            href="../../media/ceph/volume-extra-specs-ceph.png" id="image_clm_rcd_gt"/></p></li>
+            href="../../../media/ceph/volume-extra-specs-ceph.png" id="image_clm_rcd_gt"/></p></li>
       <li>In the <b>Key</b> box, enter <i>ceph</i> as volume backend name. This is the name of the
         key used to specify the storage backend when provisioning volumes of this volume type. </li>
       <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate the
