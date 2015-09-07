@@ -8,8 +8,8 @@
             >Interpreting _swift-validate-input-model.yml Errors</xref></li>
         <li><xref href="#topic_sl2_nht_dt/deploy-fails" format="dita">Deploy fails with: msdos disks
             labels do not support partition names</xref></li>
-        <li><xref href="#topic_sl2_nht_dt/failure-ring" format="dita">Ansible playbook fails in
-            swiftlm-ring-supervisor | build-rings</xref></li>
+        <li><xref href="#topic_sl2_nht_dt/swift-ring-failure" format="dita">Ansible playbook fails
+            in swiftlm-ring-supervisor | build-rings</xref></li>
       </ul></p>
     <section id="interpreting-swift-validate-input-model">
       <title>Interpreting _swift-validate-input-model.yml Errors</title>
@@ -155,7 +155,7 @@
         </strow>
       </simpletable>
     </section>
-    <section>
+    <section id="swift-ring-failure">
       <title><b>Ansible playbook fails in swiftlm-ring-supervisor | build-rings</b></title>
     </section>
     <section>
