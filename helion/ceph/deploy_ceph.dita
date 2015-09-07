@@ -43,10 +43,10 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-&lt;time>/li
             are available at <xref href="configuration_files.dita#topic_trz_pgw_gt">Ceph
               Configuration
             files</xref>.<!--<p>The configuration files for editing will be available at <codeph>~/helion/my_cloud/definition/data</codeph>.</p>--></li>
-          <li>Copy the configuration files as shown in the screeshot below.<p/><image
-              href="../../media/ceph/screenshot-path.png" id="image_arv_dcx_gt"/><p>You must copy
-              the <b>yml</b> files in the appropriate folder. For example:  Copy the ring.yml file
-              in <codeph>config/swift/</codeph>.</p></li>
+          <li>Copy the configuration files in the respective folder as shown in the screeshot
+              below.<p/><image href="../../media/ceph/screenshot-path.png" id="image_arv_dcx_gt"
+              /><p>You must copy the <b>yml</b> files in the appropriate folder. For example:  Copy
+              the ring.yml file in <codeph>config/swift/</codeph>.</p></li>
           <li>Edit the configuration files, based on your environment, to deploy Ceph. </li>
           <li>Edit  the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
             disks meant for OSD data and journal
@@ -57,7 +57,7 @@ git add -A
 git commit -m "&lt;commit message>"</codeblock><note>
               Enter your commit message &lt;commit message></note></li>
           <li>Run the configuration
-            processor<codeblock>cd ~/helion/hos/ansible
+            processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Change the directory to <codeph>~/scratch/ansible/next/hos/ansible</codeph> and run
             the following command to create a deployment
@@ -77,7 +77,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
     </p>
-    <p>This will also create ceph users and Ceph pools on the resource nodes:</p>
+    <p>This will also create Ceph users and Ceph pools on the resource nodes:</p>
     <p id="configure-ceph-as-cinder-backend"><b>Configure Ceph as a Cinder backend</b></p>
     <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder backend:<ol>
         <li>Edit <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to
@@ -93,7 +93,7 @@ rbd_pool = volumes
 rbd_ceph_conf = /etc/ceph/ceph.conf
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
 volume_backend_name = ceph</codeblock><note>The
-              <b>rbd_uuid </b>is available in
+              <b>rbd_uuid </b>is available at
               <codeph>/home/stack/helion/hos/ansible/roles/ceph-client-prepare/vars/ceph_user_model.yml</codeph><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
         <?oxy_custom_end?>
         <li>To enable cinder backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
@@ -115,7 +115,7 @@ restore_discard_excess_bytes = true</codeblock></li>
                 node<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock> to
                   <codeph>/etc/ceph</codeph> folder on all the controller nodes.</p></li>
           </ol></li>
-        <li>Commit your configuration to the local repository to configure cinder on the deployer node<p>
+        <li>Commit your configuration to the local repository to configure cinder on the deployer node.<p>
             <codeblock>cd /home/stack/helion/hos/ansible
 git add -A
 git commit -m "&lt;your commit message>"</codeblock>
