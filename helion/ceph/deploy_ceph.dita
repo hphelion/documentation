@@ -41,11 +41,8 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030
           <li>Login to the Deployer node.</li>
           <li>Copy the Ceph configuration files (<b>manually</b>) to
               <codeph>~/helion-input/my_cloud/definition</codeph>. The configuration files are
-            available at <xref href="configuration_files.dita#topic_trz_pgw_gt">Ceph configuration
-              files</xref></li>
-          <li>List the folder in <codeph>~/helion-input/my_cloud/definition</codeph>. <p>The
-              configuration files for editing are available at
-                <codeph>~/helion/my_cloud/definition/data</codeph>.</p></li>
+            available at <xref href="configuration_files.dita#topic_trz_pgw_gt">Ceph Configuration
+              files</xref>.<!--<p>The configuration files for editing will be available at <codeph>~/helion/my_cloud/definition/data</codeph>.</p>--></li>
           <li>Edit the configuration files, based on your environment, to implement Ceph servers. </li>
           <li>Execute the following command to ensure that the additional disks are available on the
             servers marked for OSD as specified in the
