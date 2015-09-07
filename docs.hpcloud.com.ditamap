@@ -32,7 +32,7 @@
         locktitle="yes"/>
       <topicref href="helion/esx/deploy_esx_cloud.dita" navtitle="Deploying ESX Cloud"
         locktitle="yes" toc="yes"/>
-      <topicref href="helion/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
+
     </topichead>
     <!-- BURA -->
     <topichead navtitle="Backup and Restore">
@@ -57,6 +57,16 @@
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Notes and Limitations"
         locktitle="yes"> </topicref>
+    </topichead>
+    <!-- Cinder -->
+    <topichead navtitle="Block Storage">
+      <topichead navtitle="Ceph ">
+        <topicref href="helion/ceph/ceph_overview.dita" navtitle="Ceph Overview" locktitle="yes"/>
+        <topicref href="helion/ceph/deploy_ceph.dita" navtitle="Ceph Configuration" locktitle="yes">
+          <topicref href="helion/ceph/configuration_files.dita"/>
+        </topicref>
+      </topichead>
+      <topicref href="helion/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
     </topichead>
     <!-- Monasca / Centralized Logging -->
     <topichead navtitle="Monitoring">
@@ -146,12 +156,5 @@
       <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"
         navtitle="Swift Troubleshooting" locktitle="yes"/>
     </topichead>
-    <topichead navtitle="Ceph ">
-      <topicref href="helion/ceph/ceph_overview.dita" navtitle="Ceph Overview" locktitle="yes"/>
-      <topicref href="helion/ceph/deploy_ceph.dita" navtitle="Ceph Configuration" locktitle="yes">
-        <topicref href="helion/ceph/configuration_files.dita"/>
-      </topicref>
-    </topichead>
-
   </topicref>
 </map>
