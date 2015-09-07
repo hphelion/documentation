@@ -1,9 +1,9 @@
-#Tue Aug 25 13:54:24 IST 2015
+#Mon Sep 07 11:24:38 IST 2015
 relflagimagelist=
-user.input.dir=C\:\\Users\\sharmabi\\git\\documentation\\helion\\ceph
+user.input.dir=C\:\\Users\\sharmabi\\git\\documentation
 copytotarget2sourcemaplist=
-uplevels=
-user.input.file=ceph_install.dita
+uplevels=..\\..\\
+user.input.file=helion\\ceph\\deploy_ceph.dita
 user.input.file.listfile=usr.input.file.list
-tempdirToinputmapdir.relative.value=
+tempdirToinputmapdir.relative.value=helion[\\\\|/]ceph[\\\\|/]
 relflagimagefile=relflagimage.list

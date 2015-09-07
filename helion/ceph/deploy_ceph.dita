@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jrc_5lz_ft">
+  <title> Installing Ceph </title>
+  <body>
+    <p>This page describes configuration, installation, and the integration of Ceph Block Storage
+      with HP Helion OpenStack 2.0. It also provides the procedure to perform Ceph operation after
+      Ceph deployment.</p>
+    <section>
+      <title>Prerequisite</title>
+      <p>The deployer node must be setup before deploying Ceph. For more details on the installation
+        of deployer node, refer to <xref
+          href="../installation.dita#topic_flx_j2b_ws/DeployerInstall"> installation
+        guide</xref>.</p>
+    </section>
+    <section>
+      <title>Installation Procedure</title>
+      <p>Perform the following procedures to configuration, installation, and the integration of
+        Ceph Block Storage with HP Helion OpenStack 2.0</p>
+    </section>
+    <section>
+      <p>
+        <ol id="ol_evc_k11_gt">
+          <li>Login to the Deployer node.</li>
+          <li>Copy <codeph>helion/examples/</codeph> in the Deployed node.
+            <codeblock>cp -r ~/helion/examples/ ~/helion-input/my_cloud/definition</codeblock></li>
+          <li>List the folder in <codeph>~/helion-input/my_cloud/definition</codeph>. <p>The
+              configuration files for editing are available at
+                <codeph>~/helion/my_cloud/definition/data</codeph>.</p></li>
+          <li>Edit the configuration files, based on your environment, to implement Ceph servers. </li>
+          <li>Execute the following command to ensure that the additional disks are available on the
+            servers marked for OSD as specified in the
+            <codeph>disks_osd.yml</codeph>.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock>The
+            sample file of <codeph>disks_osd.yml</codeph> is as
+              follows:<codeblock>  disk-models:
+  - name: DISK_SET_OSD
+    # two disk node; remainder of disk 1 and all of disk 2 combined in single VG
+    # VG is used to create three logical vols for /var, /var/log, and /var/crash
+    device-groups:
+      - name: ceph-osd-data-and-journal
+        devices:
+          - name: /dev/sdb
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdc
+      - name: ceph-osd-data-and-shared-journal-set-1
+        devices:
+          - name: /dev/sdd
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdf
+      - name: ceph-osd-data-and-shared-journal-set-2
+        devices:
+          - name: /dev/sde
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdf</codeblock><p>The
+              above sample file contains three OSD nodes and two journal disk. </p><p>The disk model
+              has the following fields: </p><p>
+              <simpletable>
+                <strow>
+                  <stentry><b>device-groups</b></stentry>
+                  <stentry>There can be several device groups. This allows different sets of disks
+                    to be used for different purposes.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>name</b></stentry>
+                  <stentry>This is an arbitrary name for the device group. The name must be
+                    unique.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>devices</b></stentry>
+                  <stentry>This is a list of devices allocated to the device group. A
+                      <codeph>name</codeph> field containing <codeph>/dev/sdb</codeph>,
+                      <codeph>/dev/sdd</codeph>, and <codeph>/dev/sde</codeph> indicates that the
+                    device group is used by Ceph.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>consumer</b></stentry>
+                  <stentry>This specifies the service that uses the device group. A
+                      <codeph>name</codeph> field containing <b>ceph</b> indicates that the device
+                    group is used by Ceph.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>attrs</b></stentry>
+                  <stentry>This is the list of attributes.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>usage</b></stentry>
+                  <stentry>There can be several use of devices for a particular service. In the
+                    above sample, <codeph>usage</codeph> field contains <b>data</b> which indicates
+                    that the device is used for data storage.</stentry>
+                </strow>
+                <strow>
+                  <stentry><b>journal_disk</b></stentry>
+                  <stentry>It is to used to capture journal data. You can share the journal disk
+                    between two nodes.</stentry>
+                </strow>
+              </simpletable>
+            </p><p>
+              <note type="important">Minimum 3 OSD nodes are required to configure Ceph. </note>
+            </p></li>
+          <li> Commit your configuration to a <xref href="../using_git.dita#topic_u3v_1yz_ct">local
+              repository</xref>:<codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock><note>
+              Enter your commit message &lt;commit message></note></li>
+          <li>Run the configuration
+            processor<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Use <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph> file to
+            create a deployment directory.</li>
+          <li>Run <codeph>verb_host</codeph> commands from the following directory:
+            <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
+          <li>Modify <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the line
+            containing <codeph>ceph-deploy.yml</codeph>.</li>
+          <li>Run the following ansible
+            playbook:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
+        </ol>
+      </p>
+    </section>
+    <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
+      nodes (Resource Nodes).</p>
+    <p><b>Run Ceph Client Packages</b></p>
+    <p>Execute the following command to install the ceph client packages on controller nodes and
+      create users and ceph pools on the resource nodes:</p>
+    <p>
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
+    </p>
+    <p><b>Configure Ceph as a Cinder backend</b></p>
+    <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
+        backend:<ol id="ol_scj_1cb_gt">
+        <li>Edit <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to
+          add ceph configuration data as shown
+          below:<codeblock>enabled_backends=ceph1</codeblock></li>
+        <li>Copy the following
+            configurations:<codeblock>[ceph1]
+rbd_max_clone_depth = 5
+rbd_flatten_volume_from_snapshot = False
+rbd_uuid = 457eb676-33da-42ec-9a8c-9293d545c337
+rbd_user = cinder
+rbd_pool = volumes
+rbd_ceph_conf = /etc/ceph/ceph.conf
+volume_driver = cinder.volume.drivers.rbd.RBDDriver
+volume_backend_name = ceph</codeblock><note>The
+              <b>rbd_uuid </b>is available in
+              <codeph>/home/stack/helion/hos/ansible/roles/ceph-client-prepare/vars/ceph_user_model.yml</codeph><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
+        <?oxy_custom_end?>
+        <li>Modify <codeph>cinder.conf.j2</codeph> at
+            <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> with the
+          following values:
+          <codeblock>backup_driver = cinder.backup.drivers.ceph
+backup_ceph_conf = /etc/ceph/ceph.conf
+backup_ceph_user = cinder-backup
+backup_ceph_chunk_size = 134217728
+backup_ceph_pool = backups
+backup_ceph_stripe_unit = 0
+backup_ceph_stripe_count = 0
+restore_discard_excess_bytes = true</codeblock></li>
+        <li> On all the Controller nodes copy the following packages:<codeblock>cp /usr/lib/python2.7/dist-packages/rbd.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/
+cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/</codeblock><p>
+            <note type="important">Beta1 does not support the  RBD volume attachment to a Nova
+              instance.</note>
+          </p></li>
+        <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
+            id="ol_ndr_y2b_gt">
+            <li>Login to controller node as a root user and execute the following
+                  command.<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p><p>You
+                can execute the following command from the deployer
+                node.<codeblock>cp /etc/ceph/ceph.client.cinder.keyring to the /etc/ceph folder on the controller nodes.</codeblock></p></li>
+          </ol></li>
+        <li>Commit your configuration to the local repository to configure cinder on the deployer node<p>
+            <codeblock>cd /home/stack/helion/hos/ansible
+git add -A
+git commit -m "&lt;your commit message>"</codeblock>
+          </p><note> Enter your commit message &lt;commit message></note></li>
+        <li>Use <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph> file to
+          create a deployment directory.</li>
+        <li>Run <codeph>verb_host</codeph> commands from the following directory:
+          <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
+        <li>Run the following ansible
+            playbook:<codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p>Once
+            cinder is configured, launch the Horizon dashboard to create a cinder volume
+          type.</p></li>
+      </ol></p>
+    <p><b>Creating Cinder Volume Type</b></p>
+    <p>To create a volume type using the Horizon dashboard, do the following:<ol id="ol_ldf_fxc_gt">
+        <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+          left panel.</li>
+        <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab to
+          display the Volumes page.<p><image
+              href="../../media/ceph/create-ceph-volumetype%20-%201.png" id="image_nrn_sxc_gt"
+          /></p></li>
+        <li>Click <b>Create Volume Type</b> to display a dialog box.<p><image
+              href="../../media/ceph/create-ceph-volumetype%20(2).png" id="image_vww_tyc_gt"
+          /></p></li>
+        <li>Enter the name of the volume type.</li>
+        <li>Click<b> Create Volume Type</b>. The newly created volume displays in the Volumes
+              page.<p><image href="../../media/ceph/create-ceph-volumetype.png"
+              id="image_ilf_wzc_gt"/></p></li>
+      </ol></p>
+    <p><b>Associate the volume type to a backend</b></p>
+    <p>To map a volume type to a backend, do the following:</p>
+    <ol id="ol_nvn_xbd_gt">
+      <li>Login to the Overcloud Horizon dashboard. The Overcloud dashboard displays with the
+        options in the left panel.</li>
+      <li> From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab to
+        display the Volumes page.<p/><image href="../../media/ceph/create-ceph-volumetype.png"
+          id="image_izx_2cd_gt"/></li>
+      <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
+        associate to the backend.<p/><image
+          href="../../media/ceph/create-ceph-volumetype%20-%20extra-specs.png" id="image_cgv_dcd_gt"
+          /><p>The <b>Create Volume Type Extra Specs</b> dialog box displays.</p><p><image
+            href="../../media/ceph/volume-extra-specs-ceph.png" id="image_clm_rcd_gt"/></p></li>
+      <li>In the <b>Key</b> box, enter <i>volume_backend_name</i>. This is the name of the key used
+        to specify the storage backend when provisioning volumes of this volume type.</li>
+      <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate the
+        volume type. For example:<i>helion-ceph-cinder</i>.</li>
+      <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type is
+          mapped to the backend, you can create volumes.</note></li>
+    </ol>
+    <section>
+      <title>
+        <b>Ceph Operations</b></title>
+      <p>After the successful deployment of Ceph, you can perform the following ceph operations:<ul
+          id="ol_cnq_ckh_gt">
+          <li>Check the status of Ceph OSD and Monitor Services</li>
+          <li>Start OSD Nodes and Monitor Services</li>
+          <li>Stop OSD Nodes and Monitor Services<p><b>Check the status of Ceph OSD and Monitor
+                Services</b>
+            </p><p>Perform the following steps to check the stays of Ceph OSD Nodes and Monitor
+                Services:<ol id="ol_xbb_nlh_gt">
+                <li>Login to Deployer Node.</li>
+                <li>Execute the following
+                  command:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
+                <li>Run the ansible
+                  playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-status.yml</codeblock></li>
+              </ol></p><p><b>Start OSD and Monitor Services</b></p><p>Perform the following steps to
+              start OSD Nodes and Monitor Services:<ol id="ol_llv_gmh_gt">
+                <li>Login to Deployer Node.</li>
+                <li>Execute the following
+                  command:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
+                <li>Run the ansible
+                  playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-start.yml</codeblock></li>
+              </ol></p><p><b>Stop OSD Nodes and Monitor Services</b></p><p>Perform the following
+              steps to stop OSD Nodes and Monitor Services:</p><p>
+              <ol id="ol_e2d_zmh_gt">
+                <li>Login to Deployer Node.</li>
+                <li>Execute the following
+                  command:<codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
+                <li>Run the ansible
+                  playbook:<codeblock>ansible-playbook -i hosts/verb_hosts ceph-stop.yml</codeblock></li>
+              </ol>
+            </p>
+          </li>
+        </ul></p>
+    </section>
+  </body>
+</topic>
+
