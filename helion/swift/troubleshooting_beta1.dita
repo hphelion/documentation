@@ -193,7 +193,7 @@ NOTE: Dispersion of 11.718750 indicates some parts are not
                 twice:<codeblock>ansible-playbook -i hosts/verb_hosts _swift-make-delta-rebalance.yml</codeblock></p>
               <p> Each may fail with similar messages but each fails with a different ring.</p>
               <p> Once the account, container, and object-0 rings have failed, you can re-run the
-                folllowing
+                following
                 command:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml</codeblock></p>
               <p>Now, the ansible playbook will not stop at the "swiftlm-ring-supervisor |
                 build-rings" task and the rings will be created successfully.</p>
