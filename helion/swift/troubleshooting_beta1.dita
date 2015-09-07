@@ -153,5 +153,57 @@
         </strow>
       </simpletable>
     </section>
+    <section>
+      <p><b>Ansible play fails in swiftlm-ring-supervisor | build-rings </b></p>
+      <p/>
+      <p>An ansible play may with as follows:</p>
+      <p>{code}</p>
+      <p>TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] ***</p>
+      <p>failed: [hlm002-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor",
+        "--make-delta", "--rebalance", ....</p>
+      <p>{code}</p>
+      <p> </p>
+      <p>If this happens, examine the output and see if the output contains one of the following
+        example messages:</p>
+      <p>{code}</p>
+      <p>-------------------------------------------------------------------------------</p>
+      <p>NOTE: Dispersion of 11.718750 indicates some parts are not</p>
+      <p> optimally dispersed.</p>
+      <p> </p>
+      <p> You may want to adjust some device weights, increase</p>
+      <p> the overload or review the dispersion report.</p>
+      <p>-------------------------------------------------------------------------------</p>
+      <p>{code}</p>
+      <p> </p>
+      <p>{code}</p>
+      <p>No partitions could be reassigned.</p>
+      <p>{code}</p>
+      <p> </p>
+      <p>{code}</p>
+      <p>Cowardly refusing to save rebalance as it did not change at least 1% {code}</p>
+      <p> </p>
+      <p>{code}</p>
+      <p>NOTE: Balance of %.02f indicates you should push this ring, wait at least 16 hours, and
+        rebalance/repush.</p>
+      <p>{code}</p>
+      <p> </p>
+      <p>{code}</p>
+      <p>Worst tier is 3.0 (2.4)</p>
+      <p>{code}</p>
+      <p> </p>
+      <p>If this happens, the Swift ring was actually created.</p>
+      <p> </p>
+      <p>As a workaround, you must run the following command at least two times:</p>
+      <p>{code}</p>
+      <p>ansible-playbook -i hosts/verb_hosts _swift-make-delta-rebalance.yml {code}</p>
+      <p> </p>
+      <p>Each may fail with similar messages -- however, each fails with a different ring.</p>
+      <p> </p>
+      <p>Once the account, container and object-0 rings have "failed" in this way, you may now
+        re-run the original playbook -- this time the play should not stop at the
+        "swiftlm-ring-supervisor | build-rings" task.</p>
+      <p> </p>
+      <p> </p>
+    </section>
   </body>
 </topic>
