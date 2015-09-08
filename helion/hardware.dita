@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_omx_srg_ws">
-  <title>Beta 2: Minimum Hardware Requirements</title>
+  <title>Beta 1: Minimum Hardware Requirements</title>
   <body>
     <section id="SupportedConfigs"> <title>Supported Configurations</title>
       <p>HP supports the following configurations for HP Helion <tm tmtype="reg">OpenStack</tm> deployment:</p>
@@ -51,8 +51,8 @@
               <entry>1 GB</entry>
               <entry>
                 <ul id="ul_i21_xqh_ws">
-                  <li>1 x 1 GB with PXE Support</li>
-                  <li>2 x 1 GB or 2 x10 GB</li>
+                  <li>1 x 1 Gb with PXE Support</li>
+                  <li>2 x 1 Gb or 2 x10 Gb</li>
                 </ul>
               </entry>
               <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
@@ -65,8 +65,8 @@
               <entry>32 GB</entry>
               <entry>
                 <ul id="ul_vzb_1rh_ws">
-                  <li>1 x 1 GB with PXE Support</li>
-                  <li>2 x 1 GB or 2 x10 GB</li>
+                  <li>1 x 1 Gb with PXE Support</li>
+                  <li>2 x 1 Gb or 2 x10 Gb</li>
                 </ul>
               </entry>
               <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
@@ -80,8 +80,8 @@
                 node)</entry>
               <entry>
                 <ul>
-                  <li>1 x 1 GB with PXE Support</li>
-                  <li>2 x 1 GB or 2 x10 GB</li>
+                  <li>1 x 1 Gb with PXE Support</li>
+                  <li>2 x 1 Gb or 2 x10 Gb</li>
                 </ul>
               </entry>
               <entry>
@@ -98,8 +98,8 @@
               <entry>32 GB</entry>
               <entry>
                 <ul>
-                  <li>1 x 1 GB with PXE Support</li>
-                  <li>2 x 1 GB or 2 x10 GB</li>
+                  <li>1 x 1 Gb with PXE Support</li>
+                  <li>2 x 1 Gb or 2 x10 Gb</li>
                 </ul>
               </entry>
               <entry>

@@ -25,11 +25,14 @@
     <topichead navtitle="Installation">
       <topicref href="helion/installation.dita" navtitle="Installing HP Helion OpenStack"
         locktitle="yes"/>
+      <topichead navtitle="Configuration Files">
+        <topicref href="helion/config/entryscalewithvsa.dita"/>
+      </topichead>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
         locktitle="yes"/>
       <topicref href="helion/esx/deploy_esx_cloud.dita" navtitle="Deploying ESX Cloud"
-        locktitle="yes" toc="no"/>
-      <topicref href="helion/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
+        locktitle="yes" toc="yes"/>
+
     </topichead>
     <!-- BURA -->
     <topichead navtitle="Backup and Restore">
@@ -44,14 +47,45 @@
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_roles.dita"
         navtitle="Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Identity Configuration"
+      <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Installation"
         locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
+      <topicref href="helion/keystone/keystone_admin.dita" navtitle="Keystone Administration"
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_reconfigure.dita" navtitle="Reconfiguring Keystone"
+        locktitle="yes"/>
+      <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Notes and Limitations"
         locktitle="yes"> </topicref>
+    </topichead>
+    <!-- Cinder -->
+    <topichead navtitle="Block Storage">
+      <topichead navtitle="Ceph ">
+        <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
+          locktitle="yes"/>
+        <topicref href="helion/cinder/ceph/deploy_ceph.dita" navtitle="Ceph Configuration"
+          locktitle="yes">
+          <topicref href="helion/cinder/ceph/configuration_files.dita"/>
+        </topicref>
+      </topichead>
+      <topichead navtitle="VSA">
+        <topicref href="helion/cinder/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
+      </topichead>
+    </topichead>
+    <!-- Object Storage -->
+    <topichead navtitle="Object Storage" toc="yes">
+      <topicref href="helion/swift/swift_overview.dita" toc="yes"/>
+      <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes"
+        navtitle="Modifying the Input Model" locktitle="yes">
+        <topicref href="helion/swift/allocating_disk_drives.dita"/>
+        <topicref href="helion/swift/ring_specifications.dita"/>
+      </topicref>
+      <topicref href="helion/swift/label_on_partition.dita" toc="yes"
+        navtitle="Verifying the Partition Label" locktitle="yes"/>
+      <topicref href="helion/swift/filesystem_label.dita" toc="yes"
+        navtitle="Verifying the Filesystem Label" locktitle="yes"/>
+      <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"
+        navtitle="Swift Troubleshooting" locktitle="yes"/>
     </topichead>
     <!-- Monasca / Centralized Logging -->
     <topichead navtitle="Monitoring">
@@ -127,21 +161,5 @@
       <topicref href="helion/ceilometer/metering_bestpractice.dita"
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
     </topichead>
-    <topichead navtitle="Object Storage" toc="yes">
-      <topicref href="helion/swift/swift_overview.dita" toc="yes" navtitle="Object Storage Overview"
-        locktitle="yes"/>
-      <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes">
-        <topicref href="helion/swift/allocating_disk_drives.dita"/>
-        <topicref href="helion/swift/ring_specifications.dita"/>
-      </topicref>
-      <topicref href="helion/swift/label_on_partition.dita" toc="yes"/>
-      <topicref href="helion/swift/filesystem_label.dita" toc="yes"/>
-      <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"/>
-    </topichead>
-    <topichead navtitle="Ceph Overview">
-      <topicref href="helion/ceph/ceph_overview.dita" navtitle="Ceph Overview" locktitle="yes"/>
-      <topicref href="helion/ceph/deploy_ceph.dita" navtitle="Installing Ceph" locktitle="yes"/>
-    </topichead>
-
   </topicref>
 </map>

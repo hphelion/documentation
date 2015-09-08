@@ -3,11 +3,11 @@
 <topic id="topic_flx_j2b_ws">
   <title>Beta 1: Installing HP Helion <tm tmtype="reg">OpenStack</tm> on Baremetal</title>
   <body>
-    <section><title>Important Notes</title>
+    <section id="important-notes"><title>Important Notes</title>
       <ul>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
-        <li>Make sure all disks on the system(s) are wiped before you begin the install. </li>
-        <li>/dev/sda will be used for the OS. </li>
+        <li>Make sure <b>all disks on the system(s) are wiped</b> before you begin the install.</li>
+        <li>/dev/sda will be used for the OS.</li>
         <li>Both HP Linux for HP Helion OpenStack and HP Helion OpenStack are part of the ISO you
           will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
@@ -15,8 +15,7 @@
           it includes both the OS and the Beta1 installer in one ISO.</li>
         <li>Three NICs are tested, one 1Gb used for PXE and two bonded 10Gb for everything else. All
           machines can net boot from PXE and use the deployer as a DHCP server.</li>
-        <li>All machines of a single type should be the same, that is, all compute nodes, all VSA
-          nodes, and so on.</li>
+        <li>All machines of a given role should be the same configuration.</li>
         <li>The deployer node must be a dedicated node in Beta1.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO
@@ -24,23 +23,29 @@
           The HP Helion OpenStack architecture requires that the IPMI network is a separate network
           and that a route exists from the management network to the IPMI network for iLO
           access.</li>
+        <li>Note that the requirement to have a dedicated network for OS-install and system
+          deployment has been removed in Beta 1. More information can be found on the<xref
+            href="supportedconfigs.dita#topic_ckw_kbc_ws"> supported configuration page</xref>.</li>
       </ul>
     </section>
     <section id="Prereqs">
-      <title>Before you Start</title>
+      <title>Before You Start</title>
       <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
       <ul>
-        <li>Setup the iLO Advanced license in the iLO configuration.</li>
+        <li>Set up the iLO Advanced license in the iLO configuration. Make sure the iLO user has
+          admin privileges.</li>
         <li> HP Helion OpenStack 2.0 Beta 1 will detect and use the "BIOS" mode you have selected
           for each node; UEFI or legacy BIOS. UEFI support is new in Beta 1.</li>
-        <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
-        <li>Ensure that the other networks have PXE disabled.</li>
+        <li>Ensure that the network interface to be used for PXE installation has PXE enabled.</li>
+        <li>Ensure that the other network interfaces have PXE disabled.</li>
+        <li>Ensure that any logical drives (LUN) for the servers you will be using are created to
+          meet the disk requirements outlined in the <xref href="hardware.dita">Minimum Hardware
+            Requirements</xref>.</li>
       </ul>
     </section>
     <section id="DeployerInstall">
       <title>Set up the Deployer</title>
       <ol>
-        <li>Create LUN(s), if required.</li>
         <li>Download the HP Helion OpenStack Deployer ISO from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page after signing up and being
@@ -65,17 +70,16 @@
     </section>
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
-      <note>Run as the user you just created (or stack if you left the default of "stack", but do
-        not run as root.</note>
+      <note>It's critical that you don't run as root. Run as the user you just created (or stack if
+        you left the default of "stack"), but do not run as root.</note>
       <ol>
         <li>Log in to the deployer node as the user you created during the setup phase, and mount
           the install media at /media/cdrom, for example,
-          <codeblock>sudo mount /media/cdrom</codeblock></li>
-        <li> Unpack the following tarball:
-          <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-20150827T092008Z.tgz</codeblock>
-        </li>
-        <li>Run the following included script: <codeblock>~/hos-2.0.0-b.1/hos-init.bash </codeblock>
-          see comment inside this file <!--~/hos-deployer/hos-init.bash --></li>
+          <codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-31T16:48:07_340c639.iso /media/cdrom</codeblock></li>
+        <li> Unpack the following tarball: Note this file name will
+          change<codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-20150831T154315Z.tgz</codeblock></li>
+        <li>Run the following included script:
+          <codeblock>~/hos-2.0.0-b.1/hos-init.bash</codeblock></li>
       </ol>
       <p>At the end of this section you should have a local directory structure, as described
         below:</p>
@@ -96,9 +100,12 @@ helion/hos/                    Directory contains files used by the installer
               explains the contents of each of the configuration files. </li>
             <li>Copy the example configuration files into the required setup directory and edit them
               as required: <codeblock>cp -r ~/helion/examples/entry-scale-with-vsa/* ~/helion/my_cloud/definition/</codeblock>
-              Note: There have been changes to some of the files since Beta 0. The configuration
-              files for editing can be found at the following location:
-                <codeblock>~/helion/my_cloud/definition/data</codeblock><ul id="ul_wwn_rtx_bt">
+              <note id="note">There have been changes to some of the files since Beta 0. The
+                configuration files for editing can be found at the following location:
+                <codeblock>~/helion/my_cloud/definition/</codeblock></note>
+              <ul>
+                <li>The <codeph>cloudConfig.yml</codeph> file should contain the NTP and DNS
+                  nameserver information for your environment.</li>
                 <li>The <codeph>data/baremetalConfig.yml</codeph> file should specify the server
                   information for your environment.</li>
                 <li>The <codeph>data/servers.yml</codeph> file contains the IP address information
@@ -107,8 +114,11 @@ helion/hos/                    Directory contains files used by the installer
                   is recommended that you set your <codeph>start-address</codeph> at .10 in your
                   subnet range as to avoid conflicts with the virtual IPs being used by the rest of
                   your environment.</li>
+                <li>The <codeph>data/net_interfaces.yml</codeph> file contains information related
+                  to your network interfaces. If you are going to use NIC bonding this is where you
+                  would do that.</li>
                 <li>The <codeph>data/control_plane.yml</codeph> file contains information about the
-                  services that will be installed.</li>
+                  services that will be installed. No edits should be needed for this file.</li>
                 <li>The <codeph>/data/disks_controller.yml</codeph> contains the Swift information
                   (swiftobj disk-group). This describes what disks on each of the servers are
                   assigned to Swift and the rings that uses those drives. To know more about the
@@ -119,14 +129,17 @@ helion/hos/                    Directory contains files used by the installer
                   logical names of data to locations on a particular disks. To know more about the
                   rings, refer to <xref href="swift/ring_specifications.dita#ring-specification"
                     >ring specification</xref>.</li>
-                <li>In the <codeph>data/net_interfaces.yml</codeph> file, replace all instances of
-                  “bond-mode: 1” to “bond-mode: active-backup”.</li>
               </ul></li>
+            <li>Edit the <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file and under
+              the <b>Elasticsearch defaults</b> section, change the value of the string below to
+              something other than <codeph>elasticsearch</codeph>:
+              <codeblock>vars.elasticsearch_cluster_name</codeblock> Example:
+                <codeph>helioncloud</codeph></li>
             <li>Commit your configuration to the <xref href="using_git.dita#topic_u3v_1yz_ct">local
                 git repo</xref>, as follows:
               <codeblock>cd ~/helion/hos/ansible
 git add -A
-git commit -m "My config"
+git commit -m "My config or other commit message"
 </codeblock></li>
           </ol></li>
       </ol>
@@ -144,12 +157,15 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
     </section>
     <section id="NodeProvision"><title>Provision the Nodes</title>
       <ol>
-        <li>Run the following command, which will reimage all the nodes using PXE:
-          <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
+        <li>Run the following command, which will reimage all the nodes using PXE. Note: change
+          directories to /helion/hos/ansible if not already
+          there:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
         <li>The script will wait for the nodes to install and come back up.</li>
       </ol>
     </section>
-    <section id="run-config-processor"><title>Run the Configuration Processor</title>
+    <section id="run-config-processor"><title>Run the Configuration Processor and Deploy the
+        Cloud</title>
       <ol>
         <li>Run the configuration processor, as follows:
           <codeblock>cd ~/helion/hos/ansible
@@ -159,48 +175,63 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
             <li>staging-ansible</li>
             <li>staging-cp-persistent</li>
           </ul>
+          <note>See <xref href="using_git.dita">Using Git for Configuration Management</xref> for
+            more information.</note>
         </li>
-        <li><ol>
-            <li>Check the generated host files in
-                <codeph>~/helion/my_cloud/stage/ansible/host_vars/</codeph> to ensure the correct
-              IPs are included. You can review the ansible change by running the following command:
+        <li>Check your configuration: <ol>
+            <li>You can review the ansible change by running the following command:
               <codeblock>git show staging-ansible</codeblock></li>
-            <li>Use the
-              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> file
-              to create a deployment directory. Run your "verb_host" commands from the following
-              directory: <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
+            <li>Use the playbook below to create a deployment directory:
+              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+            <li>Run your "verb_host" commands using the following steps: <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
+              <note>The step above runs osconfig to configure the cloud and hlm-deploy, to deploy
+                the cloud. Therefore, this step may run for quite some time while all the nodes are
+                configured (perhaps 45 minutes or more, depending on the number of nodes, to a
+                degree).</note>
+            </li>
+            <li>Verify that the network is working correctly. Ping each IP (excluding VSA-BLK and
+              VIPs) from the /etc/hosts file from one of the controller nodes.</li>
           </ol></li>
       </ol>
     </section>
-    <section id="CloudDeploy"><title>Deploy the Cloud</title>
+    <section id="validate_swift"><title>Validate Object Storage (Optional)</title>
       <ol>
-        <li>Run the following command:
-            <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
+        <!--<li>Run the following command:
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
             id="ol_rqv_xmm_dt">
             <li>Verify the network is working correctly. Ping each IP (excluding VSA-BLK and VIPs)
               from the /etc/hosts file from one of the controller nodes.</li>
           </ol>
-        </li>
-        <li> (<b>Optional</b>) To validate object storage cloud model, execute the following command
-          on the deployer
-            :<codeblock>ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock><p>If
-            any error is triggered when you validate the object storage, refer to <xref
+        </li>-->
+        <li><p>To validate object storage cloud model, execute the following command on the
+            deployer:</p>
+          <codeblock>ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>
+          <p>If any error is raised when you validate the object storage, refer to <xref
               href="swift/troubleshooting_beta1.dita#topic_sl2_nht_dt"
             >Swift-Troubleshooting</xref></p></li>
-        <li>Modify the ./helion/hos/ansible/hlm-deploy.yml to comment out the line containing
-          horizon.</li>
-        <li>Run the following command:
+        <!-- <li>Run the following command:
           <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeblock>
-        </li>
+        </li>-->
       </ol>
     </section>
-    <section id="VSA">
-      <title>Install and Configure VSA (optional).</title>
-      <p>You can set up Virtual Storage Appliance (VSA) using the instructions on the following
-        page: <xref href="vsa.dita#topic_hjr_4x1_dt">Install and Configure VSA
-        (optional)</xref>.</p>
+    <section id="cinder"><title>Install and Configure a Block Storage Backend (Optional)</title>
+      <p>There are two options for the Block Storage backend: VSA and Ceph. Without a valid backend
+        your Block Storage (Cinder) implementation will not be usable. These documents will assist
+        you in installing and configuring a backend solution.</p>
+      <b>Ceph</b>
+      <ul>
+        <li><xref href="cinder/ceph/ceph_overview.dita">Ceph Overview</xref></li>
+        <li><xref href="cinder/ceph/ceph_install.dita">Ceph Installation and
+          Configuration</xref></li>
+      </ul>
+      <b>VSA</b>
+      <ul>
+        <li><xref href="cinder/vsa.dita">VSA Installation and Configuration</xref></li>
+      </ul>
     </section>
-    <section id="Post-Installation"><title>Verification Steps - Optional</title>
+    <section id="Post-Installation"><title>Verification Steps (Optional)</title>
       <ol>
         <li>This step may be used to verify that your cloud is up and running. However, note that
           running the command below will download a cirros image from the internet, upload it to
