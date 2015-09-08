@@ -228,7 +228,7 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
       </ul>
       <b>VSA</b>
       <ul>
-        <li><xref href="cinder/vsa.dita">VSA Installation and Configuration</xref></li>
+        <li><xref href="cinder/vsa/vsa.dita">VSA Installation and Configuration</xref></li>
       </ul>
     </section>
     <section id="Post-Installation"><title>Verification Steps (Optional)</title>
