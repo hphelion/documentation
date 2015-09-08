@@ -32,7 +32,6 @@
         locktitle="yes"/>
       <topicref href="helion/esx/deploy_esx_cloud.dita" navtitle="Deploying ESX Cloud"
         locktitle="yes" toc="yes"/>
-
     </topichead>
     <!-- BURA -->
     <topichead navtitle="Backup and Restore">
@@ -60,18 +59,20 @@
     </topichead>
     <!-- Cinder -->
     <topichead navtitle="Block Storage">
-      <topicref href="helion/cinder/cinder_overview.dita" navtitle="Block Storage Overview" locktitle="yes"/>
+      <topicref href="helion/cinder/cinder_overview.dita" navtitle="Block Storage Overview"
+        locktitle="yes"/>
       <topichead navtitle="Ceph ">
         <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
           locktitle="yes"/>
         <topicref href="helion/cinder/ceph/ceph_install.dita" navtitle="Ceph Installation"/>
-        <topicref href="helion/cinder/ceph/deploy_ceph.dita" navtitle="Ceph Installation and Configuration"
-          locktitle="yes">
+        <topicref href="helion/cinder/ceph/deploy_ceph.dita"
+          navtitle="Ceph Installation and Configuration" locktitle="yes">
           <topicref href="helion/cinder/ceph/configuration_files.dita"/>
         </topicref>
       </topichead>
       <topichead navtitle="VSA">
-        <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration" locktitle="yes"/>
+        <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration"
+          locktitle="yes"/>
       </topichead>
     </topichead>
     <!-- Object Storage -->
@@ -135,7 +136,8 @@
     </topicref>
     <!-- Neutron -->
     <topichead navtitle="Networking">
-      <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Overview" locktitle="yes"/>
+      <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Overview"
+        locktitle="yes"/>
       <topicref href="helion/neutron/lbaas.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Load Balancer (LBaaS)</navtitle>
