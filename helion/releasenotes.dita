@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic12031">
-  <title>Beta 1: Release Notes</title>
+  <title>Beta 2: Release Notes</title>
   <body>
     <p>This document provides an overview of the features contained within HP Helion <tm
         tmtype="reg">OpenStack</tm> 2.0 Beta 1, including known issues and workarounds for this
