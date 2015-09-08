@@ -49,19 +49,19 @@
 <section id="create_security"> <title>Create an RDP Security Group</title>
   <ol>
     <li>In the Horizon console, select <b>Project</b>, <b>Access &amp; Security</b>.
-      <image placement="break" href="../../../media/windows_remoting_access.PNG"></image></li>
+      <image placement="break" href="../../../media/windows_remoting_access.png"></image></li>
     <li>Select <b>Security Groups</b> if it is not already selected.
-      <image placement="break" href="../../../media/windows_remoting_security.PNG"></image></li>
+      <image placement="break" href="../../../media/windows_remoting_security.png"></image></li>
     <li>Click <b>+ Create Security Group</b>.
-      <image placement="break" href="../../../media/windows_remoting_create_security.PNG"></image></li>
+      <image placement="break" href="../../../media/windows_remoting_create_security.png"></image></li>
     <li>Give the security group an appropriate name (such as <b>cluster1-rdp</b>), and an appropriate description (sucn as <b>Remote Desktop Access</b>).
-      <image placement="break" href="../../../media/windows_remoting_create_security_2.PNG"></image></li>
+      <image placement="break" href="../../../media/windows_remoting_create_security_2.png"></image></li>
   </ol>
 </section>
   <section id="add_security"><title>Add the RDP security group to the instance</title>
     <ol>
       <li>Select <b>Project</b>, <b>Instances</b>. In the Actions column for your instance, select <b>Edit Security Groups</b> from the pull-down.
-        <image placement="break" href="../../../media/windows_remoting_add_security_1.png"></image></li>
+        <image placement="break" href="../../../media/windows_remoting_add_security_1.PNG"></image></li>
       <li>Click the <b>+</b> button next to the RDP security group you created to add it to the instance. Click <b>Save</b>.
         <image placement="break" href="../../../media/windows_remoting_add_security_2.png"></image></li>
     </ol>
