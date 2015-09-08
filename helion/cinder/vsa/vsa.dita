@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_hjr_4x1_dt">
+<topic id="vsa_install">
   <title>Install and Configure VSA (Optional)</title>
   <body>
     <section id="prereqs"><title>Pre-requisites</title>
@@ -8,7 +8,7 @@
       <ul>
         <li>Helion OpenStack 2.0 Cloud must be setup with: <ul>
             <li>Three VSA nodes according to specifications outlined in the <xref
-                href="../hardware.dita">Minimum Hardware Requirements</xref></li>
+                href="../../hardware.dita">Minimum Hardware Requirements</xref></li>
           </ul>
         </li>
         <li>Have the VSA node IP information from the

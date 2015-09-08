@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_trz_pgw_gt">
+<topic id="config_files">
   <title>Ceph Configuration Files</title>
   <body>
     <p>This page describes the configuration files that are required to deploy Ceph. The user needs
@@ -10,22 +10,20 @@
     <section>
       <title>List of Configuration Files </title>
       <p>The configuration files are as follows:<ul id="ul_vr3_dqw_gt">
-          <li><xref href="#topic_trz_pgw_gt/ring" format="dita">ring.yml</xref></li>
-          <li><xref href="#topic_trz_pgw_gt/baremetalConfig.yml" format="dita"
+          <li><xref href="#config_files/ring" format="dita">ring.yml</xref></li>
+          <li><xref href="#config_files/baremetalConfig.yml" format="dita"
               >baremetalConfig.yml</xref></li>
-          <li><xref href="#topic_trz_pgw_gt/ccpl" format="dita">ccp.yml</xref></li>
-          <li><xref href="#topic_trz_pgw_gt/disk-compute" format="dita"
-            >disks_compute.yml</xref></li>
-          <li><xref href="#topic_trz_pgw_gt/disk-controller" format="dita"
-              >disks_controller.yml</xref></li>
-          <li><xref href="#topic_trz_pgw_gt/disk-osd" format="dita">disks_osd.yml</xref></li>
-          <li><xref href="#topic_trz_pgw_gt/interfaces-set" format="dita"
-              >interfaces_set_1.yml</xref></li>
-          <li><xref href="#topic_trz_pgw_gt/network-group" format="dita"
-            >network_groups.yml</xref></li>
-          <li><xref href="#topic_trz_pgw_gt/net-global" format="dita">net_global.yml</xref></li>
-          <li><xref href="#topic_trz_pgw_gt/server" format="dita">servers.yml</xref></li>
-          <li><xref href="#topic_trz_pgw_gt/server-role" format="dita">server_roles.yml</xref></li>
+          <li><xref href="#config_files/ccpl" format="dita">ccp.yml</xref></li>
+          <li><xref href="#config_files/disk-compute" format="dita">disks_compute.yml</xref></li>
+          <li><xref href="#config_files/disk-controller" format="dita"
+            >disks_controller.yml</xref></li>
+          <li><xref href="#config_files/disk-osd" format="dita">disks_osd.yml</xref></li>
+          <li><xref href="#config_files/interfaces-set" format="dita"
+            >interfaces_set_1.yml</xref></li>
+          <li><xref href="#config_files/network-group" format="dita">network_groups.yml</xref></li>
+          <li><xref href="#config_files/net-global" format="dita">net_global.yml</xref></li>
+          <li><xref href="#config_files/server" format="dita">servers.yml</xref></li>
+          <li><xref href="#config_files/server-role" format="dita">server_roles.yml</xref></li>
         </ul></p>
     </section>
     <section id="ring"
