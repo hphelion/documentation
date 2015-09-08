@@ -11,16 +11,20 @@
             <li>VSA</li>
             <li>3PAR FC</li>
             <li>3PAR iSCSI</li>
+            <!--  
             <li>VMDK</li>
             <li>Ceph</li>
+            -->
           </ul></li>
         <li>Backup <ul>
             <li>Swift</li>
             <li>Ceph</li>
           </ul></li>
+        <!--
         <li>Zone Driver <ul>
             <li>Brocade Zone Manager</li>
           </ul></li>
+         -->
       </ul>
     </section>
     <section id="volume_vsa"><title>How to Configure VSA as a Storage Backend</title>
@@ -29,9 +33,19 @@
     </section>
     <section id="volume_3pariscsi"><title>How to Configure 3PAR iSCSI as a Storage Backend</title>
     </section>
+    <!--
     <section id="volume_vmdk"><title>How to Configure VMDK as a Storage Backend</title>
     </section>
     <section id="volume_ceph"><title>How to Configure Ceph as a Storage Backend</title>
     </section>
+    -->
+    <section id="backup_swift"><title>How to Configure Swift as a Cinder Backup Datastore</title>
+    </section>
+    <section id="backup_ceph"><title>How to Configure Ceph as a Cinder Backup Datastore</title>
+    </section>
+    <!--
+    <section id="brocade"><title>How to Configure Brocade Zone Manager as a zoning driver</title>
+    </section>
+    -->
   </body>
 </topic>
