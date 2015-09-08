@@ -117,7 +117,7 @@
     <topicref href="helion/logging/centralized_logging.dita" navtitle="Centralized Logging Service"
       locktitle="yes">
       <topicref href="helion/logging/logging_settings.dita" navtitle="Logging Settings"
-        locktitle="yes"/>
+        locktitle="yes"></topicref>
     </topicref>
     <!-- Neutron -->
     <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Service"

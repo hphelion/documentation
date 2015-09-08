@@ -6,13 +6,13 @@
     <p>
       <table frame="all" rowsep="1" colsep="1" id="table_itd_tjh_ht">
         <tgroup cols="7">
-          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
-          <colspec colname="c5" colnum="5" colwidth="1.0*"/>
-          <colspec colname="c6" colnum="6" colwidth="1.0*"/>
-          <colspec colname="c7" colnum="7" colwidth="1.0*"/>
+          <colspec colname="c1" colnum="1" colwidth="1.13*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.03*"/>
+          <colspec colname="c3" colnum="3" colwidth="3.1*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.39*"/>
+          <colspec colname="c5" colnum="5" colwidth="1*"/>
+          <colspec colname="c6" colnum="6" colwidth="1.33*"/>
+          <colspec colname="c7" colnum="7" colwidth="3.21*"/>
           <thead>
             <row>
               <entry>Service</entry>
