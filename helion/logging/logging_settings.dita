@@ -26,8 +26,8 @@
           </thead>
           <tbody>
             <row>
-              <entry>Heat</entry>
-              <entry>Control</entry>
+              <entry><p>Heat</p></entry>
+              <entry><p>Control</p></entry>
               <entry>
                 <p>/var/log/heat/heat-engine.log</p>
                 <p>/var/log/heat/heat-engine-json.log</p>
@@ -38,9 +38,9 @@
                 <p>/var/log/heat/heat-api-cloudwatch.log</p>
                 <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
               </entry>
-              <entry>Daily</entry>
-              <entry>45M</entry>
-              <entry>7</entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
               <entry>
                 <p>/var/log/heat/heat-engine-json.log</p>
                 <p>/var/log/heat/heat-api-json.log</p>
@@ -49,19 +49,55 @@
               </entry>
             </row>
             <row>
+              <entry>Ceilometer</entry>
+              <entry>Control</entry>
+              <entry>
+                <p>/var/log/ceilometer/ceilometer.log</p>
+                <p>/var/log/ceilometer/ceilometer-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-collector.log</p>
+                <p>/var/log/ceilometer/ceilometer-collector-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-api.log</p>
+                <p>/var/log/ceilometer/ceilometer-api-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-alarm-notifier.log</p>
+                <p>/var/log/ceilometer/ceilometer-alarm-notifier-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-alarm-evaluator.log</p>
+                <p>/var/log/ceilometer/ceilometer-alarm-evaluator-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-agent-notification.log</p>
+                <p>/var/log/ceilometer/ceilometer-agent-notification-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-agent-compute.log</p>
+                <p>/var/log/ceilometer/ceilometer-agent-compute-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-agent-central.log</p>
+                <p>/var/log/ceilometer/ceilometer-agent-central-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-preparation.log</p>
+                <p>/var/log/ceilometer/ceilometer-preparation-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-expirer.log</p>
+                <p>/var/log/ceilometer/ceilometer-expirer-json.log</p>
+                <p>/var/log/ceilometer/ceilometer_modwsgi.log</p>
+              </entry>
               <entry/>
               <entry/>
               <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry>
+                <p>/var/log/ceilometer/ceilometer-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-collector-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-api-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-alarm-notifier-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-agent-notification-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-agent-compute-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-agent-central-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-preparation-json.log</p>
+                <p>/var/log/ceilometer/ceilometer-expirer-json.log</p>
+              </entry>
             </row>
             <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry>Horizon</entry>
+              <entry>Control</entry>
+              <entry>
+                <p>/var/log/horizon/horizon_access.log</p>
+                <p>/var/log/horizon/horizon_error.log</p>
+                <p>/var/log/horizon/horizon-json.log</p>
+              </entry>
+              <entry>Daily</entry>
               <entry/>
               <entry/>
               <entry/>
