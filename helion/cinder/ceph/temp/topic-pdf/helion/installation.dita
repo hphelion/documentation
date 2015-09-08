@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\cinder\ceph\temp\topic-pdf\helion?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/cinder/ceph/temp/topic-pdf/helion/?><?path2project out\topic-pdf\?><?path2project-uri out/topic-pdf/?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="topic_flx_j2b_ws" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="topic:1;3:30">
+  <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:1;4:10">Beta 1: Installing HP Helion <tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="tm:1;4:56">OpenStack</tm> on Baremetal</title>
+  <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="body:1;5:9">
+    <section id="important-notes" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="section:1;6:35"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:2;6:42">Important Notes</title>
+      <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ul:1;7:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:1;8:13">Ensure the <xref href="hardware.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:1;8:51" type="topic"><?ditaot usertext?>minimum hardware requirements</xref> are met.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:2;9:13">Make sure <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="b:1;9:26">all disks on the system(s) are wiped</b> before you begin the install.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:3;10:13">/dev/sda will be used for the OS.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:4;11:13">Both HP Linux for HP Helion OpenStack and HP Helion OpenStack are part of the ISO you
+          will download from the <xref href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show" format="html" scope="external" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:2;14:44"><?ditaot usertext?>Helion Downloads</xref> page. There is only one download;
+          it includes both the OS and the Beta1 installer in one ISO.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:5;16:13">Three NICs are tested, one 1Gb used for PXE and two bonded 10Gb for everything else. All
+          machines can net boot from PXE and use the deployer as a DHCP server.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:6;18:13">All machines of a given role should be the same configuration.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:7;19:13">The deployer node must be a dedicated node in Beta1.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:8;20:13">The machine hosting the deployer and all baremetal systems must be connected to a
+          management network. Nodes on this management network must be able to reach the iLO
+          subsystem of each baremetal system to enable host reboots as part of the install process.
+          The HP Helion OpenStack architecture requires that the IPMI network is a separate network
+          and that a route exists from the management network to the IPMI network for iLO
+          access.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:9;26:13">Note that the requirement to have a dedicated network for OS-install and system
+          deployment has been removed in Beta 1. More information can be found on the<xref href="supportedconfigs.dita#topic_ckw_kbc_ws" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:3;28:59" type="topic"><?ditaot usertext?> supported configuration page</xref>.</li>
+      </ul>
+    </section>
+    <section id="Prereqs" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="section:2;31:27">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:3;32:14">Before You Start</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="p:1;33:10">Prepare your baremetal hardware, as follows, on all nodes:</p>
+      <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ul:2;34:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:10;35:13">Set up the iLO Advanced license in the iLO configuration. Make sure the iLO user has
+          admin privileges.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:11;37:13"> HP Helion OpenStack 2.0 Beta 1 will detect and use the "BIOS" mode you have selected
+          for each node; UEFI or legacy BIOS. UEFI support is new in Beta 1.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:12;39:13">Ensure that the network interface to be used for PXE installation has PXE enabled.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:13;40:13">Ensure that the other network interfaces have PXE disabled.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:14;41:13">Ensure that any logical drives (LUN) for the servers you will be using are created to
+          meet the disk requirements outlined in the <xref href="hardware.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:4;42:81" type="topic"><?ditaot usertext?>Minimum Hardware
+            Requirements</xref>.</li>
+      </ul>
+    </section>
+    <section id="DeployerInstall" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="section:3;46:35">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:4;47:14">Set up the Deployer</title>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ol:1;48:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:15;49:13">Download the HP Helion OpenStack Deployer ISO from the <xref href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show" format="html" scope="external" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:5;51:44"><?ditaot usertext?>Helion Downloads</xref> page after signing up and being
+          approved for the program.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:16;53:13">Boot your deployer from the ISO. Insert the CD ROM in the Virtual Media drive on the
+          iLO.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:17;55:13">Enter "install" to start installation. (note "install" all lower case)</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:18;56:13">Select the language.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:19;57:13">Select the location.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:20;58:13">Select the keyboard layout.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:21;59:13">Select the primary network interface, if prompted:<ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ul:3;59:67">
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:22;60:17">Assign IP address, netmask</li>
+          </ul></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:23;62:13">Create new account:<ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ul:4;62:36">
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:24;63:17">Enter a username.</li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:25;64:17">Enter a password.</li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:26;65:17">Enter time zone if prompted to do so.</li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:27;66:17">Synchronize the time on all nodes manually. NTP will be installed later.</li>
+          </ul></li>
+      </ol>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="p:2;69:10">At the end of this section you should have a deployer node set up with hLinux on it.</p>
+    </section>
+    <section id="HLM_Node_Personalization" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="section:4;71:44">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:5;72:14">Configure and Run the Deployer</title>
+      <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="note:1;73:13">It's critical that you don't run as root. Run as the user you just created (or stack if
+        you left the default of "stack"), but do not run as root.</note>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ol:2;75:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:28;76:13">Log in to the deployer node as the user you created during the setup phase, and mount
+          the install media at /media/cdrom, for example,
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:1;78:22">sudo mount hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-31T16:48:07_340c639.iso /media/cdrom</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:29;79:13"> Unpack the following tarball: Note this file name will
+          change<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:2;80:28">tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-20150831T154315Z.tgz</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:30;81:13">Run the following included script:
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:3;82:22">~/hos-2.0.0-b.1/hos-init.bash</codeblock></li>
+      </ol>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="p:3;84:10">At the end of this section you should have a local directory structure, as described
+        below:</p>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:4;86:18">
+helion/                        Top level directory
+helion/examples/               Directory contains the config input files of the example clouds
+helion/my_cloud/definition/    Directory contains the config input files
+helion/my_cloud/config/        Directory contains .j2 files which are symlinks to the /hos/ansible directory
+helion/hos/                    Directory contains files used by the installer
+</codeblock>
+    </section>
+    <section id="Configuration" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="section:5;94:33">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:6;95:14">Configure Your Environment</title>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ol:3;96:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:31;97:13">Setup your configuration files, as follows: <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ol:4;97:61">
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:32;98:17">See the sample set of configuration files in the
+              ~/helion/examples/entry-scale-with-vsa directory. The accompanying README.md file
+              explains the contents of each of the configuration files. </li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:33;101:17">Copy the example configuration files into the required setup directory and edit them
+              as required: <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:5;102:39">cp -r ~/helion/examples/entry-scale-with-vsa/* ~/helion/my_cloud/definition/</codeblock>
+              <note id="note" class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="note:2;103:31">There have been changes to some of the files since Beta 0. The
+                configuration files for editing can be found at the following location:
+                <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:6;105:28">~/helion/my_cloud/definition/</codeblock></note>
+              <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ul:5;106:19">
+                <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:34;107:21">The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:1;107:33">cloudConfig.yml</codeph> file should contain the NTP and DNS
+                  nameserver information for your environment.</li>
+                <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:35;109:21">The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:2;109:33">data/baremetalConfig.yml</codeph> file should specify the server
+                  information for your environment.</li>
+                <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:36;111:21">The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:3;111:33">data/servers.yml</codeph> file contains the IP address information
+                  for the hardware.</li>
+                <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:37;113:21">The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:4;113:33">data/networks.yml</codeph> file contains networking information. It
+                  is recommended that you set your <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:5;114:60">start-address</codeph> at .10 in your
+                  subnet range as to avoid conflicts with the virtual IPs being used by the rest of
+                  your environment.</li>
+                <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:38;117:21">The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:6;117:33">data/net_interfaces.yml</codeph> file contains information related
+                  to your network interfaces. If you are going to use NIC bonding this is where you
+                  would do that.</li>
+                <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:39;120:21">The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:7;120:33">data/control_plane.yml</codeph> file contains information about the
+                  services that will be installed. No edits should be needed for this file.</li>
+                <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:40;122:21">The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:8;122:33">/data/disks_controller.yml</codeph> contains the Swift information
+                  (swiftobj disk-group). This describes what disks on each of the servers are
+                  assigned to Swift and the rings that uses those drives. To know more about the
+                  disk drives, refer to <xref href="swift/swift_input_cloud_model.dita#modify-input-model" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:6;126:82" type="topic"><?ditaot usertext?>cloud model
+                    modification</xref>.</li>
+                <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:41;128:21">The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:9;128:33">config/swift/rings.yml</codeph> specifies the ring which maps the
+                  logical names of data to locations on a particular disks. To know more about the
+                  rings, refer to <xref href="swift/ring_specifications.dita#ring-specification" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:7;131:22" type="topic"><?ditaot usertext?>ring specification</xref>.</li>
+              </ul></li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:42;133:17">Edit the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:10;133:34">~/helion/my_cloud/config/logging/main.yml</codeph> file and under
+              the <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="b:2;134:22">Elasticsearch defaults</b> section, change the value of the string below to
+              something other than <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:11;135:44">elasticsearch</codeph>:
+              <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:7;136:26">vars.elasticsearch_cluster_name</codeblock> Example:
+                <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:12;137:25">helioncloud</codeph></li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:43;138:17">Commit your configuration to the <xref href="using_git.dita#topic_u3v_1yz_ct" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:8;138:95" type="topic"><?ditaot usertext?>local
+                git repo</xref>, as follows:
+              <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:8;140:26">cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"
+</codeblock></li>
+          </ol></li>
+      </ol>
+    </section>
+    <section id="CobblerDeploy" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="section:6;147:33">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:7;148:14">Deploy Cobbler </title>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ol:5;149:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:44;150:13">Run the following command:
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:9;151:22">export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:45;152:13">Run the following playbook:
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:10;153:22">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost cobbler-power-status.yml
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+      </ol>
+    </section>
+    <section id="NodeProvision" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="section:7;158:33"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:8;158:40">Provision the Nodes</title>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ol:6;159:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:46;160:13">Run the following command, which will reimage all the nodes using PXE. Note: change
+          directories to /helion/hos/ansible if not already
+          there:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:11;162:28">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:47;164:13">The script will wait for the nodes to install and come back up.</li>
+      </ol>
+    </section>
+    <section id="run-config-processor" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="section:8;167:40"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:9;167:47">Run the Configuration Processor and Deploy the
+        Cloud</title>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ol:7;169:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:48;170:13">Run the configuration processor, as follows:
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:12;171:22">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+          The configuration processor output is placed onto the following two private branches of
+          the git repo: <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ul:6;174:29">
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:49;175:17">staging-ansible</li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:50;176:17">staging-cp-persistent</li>
+          </ul>
+          <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="note:3;178:17">See <xref href="using_git.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:9;178:49" type="topic"><?ditaot usertext?>Using Git for Configuration Management</xref> for
+            more information.</note>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:51;181:13">Check your configuration: <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ol:8;181:43">
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:52;182:17">You can review the ansible change by running the following command:
+              <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:13;183:26">git show staging-ansible</codeblock></li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:53;184:17">Use the playbook below to create a deployment directory:
+              <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:14;185:26">ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:54;186:17">Run your "verb_host" commands using the following steps: <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:15;186:85">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
+              <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="note:4;188:21">The step above runs osconfig to configure the cloud and hlm-deploy, to deploy
+                the cloud. Therefore, this step may run for quite some time while all the nodes are
+                configured (perhaps 45 minutes or more, depending on the number of nodes, to a
+                degree).</note>
+            </li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:55;193:17">Verify that the network is working correctly. Ping each IP (excluding VSA-BLK and
+              VIPs) from the /etc/hosts file from one of the controller nodes.</li>
+          </ol></li>
+      </ol>
+    </section>
+    <section id="validate_swift" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="section:9;198:34"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:10;198:41">Validate Object Storage (Optional)</title>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ol:9;199:11">
+        <!--<li>Run the following command:
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
+            id="ol_rqv_xmm_dt">
+            <li>Verify the network is working correctly. Ping each IP (excluding VSA-BLK and VIPs)
+              from the /etc/hosts file from one of the controller nodes.</li>
+          </ol>
+        </li>-->
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:56;208:13"><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="p:4;208:16">To validate object storage cloud model, execute the following command on the
+            deployer:</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:16;210:22">ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="p:5;211:14">If any error is raised when you validate the object storage, refer to <xref href="swift/troubleshooting_beta1.dita#topic_sl2_nht_dt" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:10;213:14" type="topic"><?ditaot usertext?>Swift-Troubleshooting</xref></p></li>
+        <!-- <li>Run the following command:
+          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeblock>
+        </li>-->
+      </ol>
+    </section>
+    <section id="cinder" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="section:10;219:26"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:11;219:33">Install and Configure a Block Storage Backend (Optional)</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="p:6;220:10">There are two options for the Block Storage backend: VSA and Ceph. Without a valid backend
+        your Block Storage (Cinder) implementation will not be usable. These documents will assist
+        you in installing and configuring a backend solution.</p>
+      <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="b:3;223:10">Ceph</b>
+      <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ul:7;224:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:57;225:13"><xref href="cinder/ceph/ceph_overview.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:11;225:57" type="topic"><?ditaot usertext?>Ceph Overview</xref></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:58;226:13"><xref href="cinder/ceph/ceph_install.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:12;226:56" type="topic"><?ditaot usertext?>Ceph Installation and
+          Configuration</xref></li>
+      </ul>
+      <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="b:4;229:10">VSA</b>
+      <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ul:8;230:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:59;231:13"><xref href="cinder/vsa.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="xref:13;231:42" type="topic"><?ditaot usertext?>VSA Installation and Configuration</xref></li>
+      </ul>
+    </section>
+    <section id="Post-Installation" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="section:11;234:37"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="title:12;234:44">Verification Steps (Optional)</title>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="ol:10;235:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:60;236:13">This step may be used to verify that your cloud is up and running. However, note that
+          running the command below will download a cirros image from the internet, upload it to
+          Glance, and create a Neutron external
+            network.<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:17;239:32">ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="note:5;239:110">You
+            can optionally specify the external network CIDR here too. If you choose not to
+            excercise this option or use a wrong value, the VMs will not be accessible over the
+            network.</note><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:18;242:39">ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="li:61;243:13">Run the following command, which will replace <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeph:13;243:67">/etc/hosts</codeph> on the
+          deployer:
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:19;245:22">ansible-playbook -i hosts/localhost cloud-client-setup.yml</codeblock> As the
+          /etc/hosts file no longer has entries for HLM, sudo commands may become a bit slower. To
+          fix this issue, once this step is complete, add "hlm" after "127.0.0.1 localhost". The
+          result will look like
+          this:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation.dita" xtrc="codeblock:20;249:27">...
+# Localhost Information
+127.0.0.1 localhost hlm
+</codeblock></li>
+      </ol>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\cinder\ceph\temp\topic-pdf\helion\swift?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/cinder/ceph/temp/topic-pdf/helion/swift/?><?path2project ..\out\topic-pdf\?><?path2project-uri ../out/topic-pdf/?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="allocating-disk-drives" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="topic:1;3:36">
+  <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="title:1;4:10">Allocating Disk Drives</title>
+  <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="body:1;5:9">
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:1;6:8">The disk model describes the number of disk present on a particular server and its usage. The
+      examples include several disk models. The disk model used by any given server is determined as
+      follows:</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:2;9:8">
+      <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="ul:1;10:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:1;11:13">The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:1;11:25">node_type</codeph> of server as specified in
+            <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:2;12:21">data/baremetalConfig.yml</codeph> (or <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:3;12:67">data/servers.yml</codeph>)
+          determines the role of the server.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:2;14:13">There is a specification for each sever role in the
+            <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:4;15:21">data/server_roles.yml</codeph> file. This specifies a disk model for a given
+          server role. For example, for the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:5;16:53">ROLE-SWOBJ</codeph>, the disk model is called
+            <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:6;17:21">DISK_SET_SWOBJ</codeph>. <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:3;17:49"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:7;17:57">data/server_roles.yml</codeph> file
+            specifies the disk model as
+          follows:</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeblock:1;19:34">server-roles:   
+
+
+    - name: ROLE-SWPAC  
+      interface-model: INTERFACE_SET_SWPAC  
+      disk-model: DISK_SET_SWPAC  
+
+
+    - name: ROLE-SWOBJ  
+      interface-model: INTERFACE_SET_SWOBJ  
+      disk-model: DISK_SET_SWOBJ 
+</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:3;31:13">The Object server uses the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:8;31:48">DISK_SET_SWOBJ</codeph> disk model in the
+            <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:9;32:21">data/disks_swobj.yml</codeph> file.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:4;33:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:4;34:14">The Proxy, Account, Container servers use the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:10;34:68">DISK_SET_SWPAC</codeph> disk
+            model in the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:11;35:34">data/disks_swpac.yml</codeph> file.</p>
+        </li>
+      </ul>
+    </p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:5;39:8">The structure of the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:12;39:37">DISK_SET_SWOBJ</codeph> and <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:13;39:73">DISK_SET_SWPAC</codeph> disk
+      models are similar. The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:14;40:39">data/disks_swpac.yml</codeph> file specifies the disk mode as
+      follows:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeblock:2;41:26">disk-models:
+- name: DISK_SET_SWPAC
+  volume-groups:
+    - name: hlm-vg
+      physical-volumes:
+        - /dev/sda5
+      ...
+      consumer:
+         name: os
+ 
+  device-groups:
+    - name: swiftpac
+      devices:
+        - name: /dev/sdb
+        - name: /dev/sdc
+      consumer:
+        name: swift
+        attrs:
+          rings:
+            - account
+            - container</codeblock></p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:6;62:8">In the above example, Swift uses <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:15;62:49">/dev/sdb</codeph> and <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:16;62:79">/dev/sdc</codeph> disk
+      drives and operating system uses <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:17;63:48">/dev/sda</codeph> disk drives.</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:7;64:8">The disk model has the following fields: </p>
+    <simpletable id="simpletable_qyp_lnj_2t" class="- topic/simpletable " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="simpletable:1;65:46">
+      <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="strow:1;66:14">
+        <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="stentry:1;67:18"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="b:1;67:21">device-groups</b></stentry>
+        <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="stentry:2;68:18">There can be several device groups. This allows different sets of disks to be used
+          for different purposes. In this example, there is only one entry in the device groups
+          list.</stentry>
+      </strow>
+      <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="strow:2;72:14">
+        <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="stentry:3;73:18"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="b:2;73:21">name</b></stentry>
+        <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="stentry:4;74:18">This is an arbitrary name for the device group. The name must be unique, but is not
+          otherwise used.</stentry>
+      </strow>
+      <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="strow:3;77:14">
+        <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="stentry:5;78:18"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="b:3;78:21">devices</b></stentry>
+        <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="stentry:6;79:18">This is a list of devices allocated to the device group. For Swift, these devices
+          must meet the criteria as explained in <xref href="#allocating-disk-drives/requirement-disk-device" format="dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="xref:1;81:82" type="p"><?ditaot usertext?>Requirements for a
+            disk device</xref>.</stentry>
+      </strow>
+      <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="strow:4;84:14">
+        <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="stentry:7;85:18"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="b:4;85:21">consumer</b></stentry>
+        <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="stentry:8;86:18">This specifies the service that uses the device group. A <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:18;86:83">name</codeph>
+          field containing <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="b:5;87:31">swift</b> indicates that the device group is used by Swift. If the
+          name field contains other values, the Swift system will ignore the device group.</stentry>
+      </strow>
+      <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="strow:5;90:14">
+        <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="stentry:9;91:18"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="b:6;91:21">attrs.rings</b></stentry>
+        <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="stentry:10;92:18">This lists the rings that the devices are allocated to. In this example, the disk
+          model is used by Proxy, Account, Container nodes, so the <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="b:7;93:71">account</b> and
+            <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="b:8;94:16">container</b> rings are listed. In the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:19;94:63">DISK_SET_SWOBJ</codeph> disk model,
+            <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:20;95:21">object-0</codeph> ring is listed. It would be an error to add the
+            <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:21;96:21">object-0</codeph> ring to the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:22;96:59">DISK_SET_SWPAC</codeph> disk model because
+          the Swift-object service does not run on PAC node.</stentry>
+      </strow>
+    </simpletable>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:8;100:8">You should review the disk devices in the disk model before making any changes to the
+      existing model. See <xref href="#allocating-disk-drives/making-changes-to-swift" format="dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="xref:2;102:10" type="p"><?ditaot usertext?>Making Changes to a Swift Disk Model</xref>. </p>
+    <p id="requirement-disk-device" class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:9;103:37"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="b:9;103:40"><i class="+ topic/ph hi-d/i " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="i:1;103:43">Requirements for a Disk Device</i></b></p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:10;104:8">Disk devices listed in the <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="b:10;104:38">devices</b> list must meet the following criteria:</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:11;105:8">
+      <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="note:1;106:13">Please refer to <xref href="#allocating-disk-drives" format="dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="xref:3;106:80" type="topic"><?ditaot usertext?>Allocating Disk
+          Drives</xref> before reading the following information.</note>
+    </p>
+    <ul id="ul_fsy_255_dt" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="ul:2;109:28">
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:5;110:11">The disk device must exist on the server. For example, if you add
+          <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:23;111:19">/dev/sdx</codeph> to a server with only 3 devices then the deploy process
+        fails.</li>
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:6;113:11">The disk device must be unpartitioned or have a single partition that uses the whole
+        drive.</li>
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:7;115:11">Do not have a label on the partition. To check whether your disk is label, execute the
+        procedure mentioned in <xref href="label_on_partition.dita#verify-partition-label" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="xref:4;116:93" type="topic"><?ditaot gentext?>How to Verify the Partition Label</xref></li>
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:8;117:11">Do not have an XFS filesystem that contains a filesystem label. To check the filesytem
+        with a lable, execute the procedure descirbed in <xref href="filesystem_label.dita#verify-the-filesystem-label" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="xref:5;119:69" type="topic"><?ditaot gentext?>How to Verify the Filesystem Label</xref></li>
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:9;120:11">If the disk drive is already labeled as described above, the
+          <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:24;121:19">swiftlm-drive-provision</codeph> process will assume that the drive has valuable
+        data and refuses to use or modify the drive.</li>
+    </ul>
+    <p id="making-changes-to-swift" class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:12;124:37"><i class="+ topic/ph hi-d/i " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="i:2;124:40"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="b:11;124:43">When to Make Changes to a Swift Disk Model</b></i></p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="p:13;125:8"> There are several reasons for changing the disk model as follows:</p>
+    <ul id="ul_d5y_255_dt" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="ul:3;126:28">
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:10;127:11">It is advisable that if you have additional drives available then you can add the drives
+        to the devices list.</li>
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:11;129:11">The disk devices listed in the example disk model have different names on your servers.
+        This may be due different hardware drives. Edit the disk model
+          (<codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:25;131:20">DISK_SET_SWPAC</codeph> or <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:26;131:55">DISK_SET_SWOBJ</codeph>) and change the device
+        names to the correct
+        names.<!--<table frame="all" rowsep="0" colsep="0"
+            id="table_rwv_rpm_dt">
+            <tgroup cols="1">
+              <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+              <tbody>
+                <row>
+                  <entry>Useful tips:</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>--></li>
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="li:12;144:11">If you prefer a different disk drive than the one listed in the model. For example, if
+          <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:27;145:19">/dev/sdb</codeph> and <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:28;145:49">/dev/sdc</codeph> are slow hard drives and you have
+        SDD drives available in <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:29;146:41">/dev/sdd</codeph> and <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:30;146:71">/dev/sde</codeph>. In this
+        case, delete <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:31;147:30">/dev/sdb</codeph> and <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:32;147:60">/dev/sdc</codeph> and replace with
+          <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:33;148:19">/dev/sdd</codeph> and <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\allocating_disk_drives.dita" xtrc="codeph:34;148:49">/dev/sde</codeph>.</li>
+    </ul>
+  </body>
+</topic>

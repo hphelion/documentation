@@ -1,9 +1,9 @@
-#Wed Aug 26 19:30:21 IST 2015
+#Tue Sep 08 12:07:44 IST 2015
 relflagimagelist=
-user.input.dir=C\:\\Users\\sharmabi\\git\\documentation\\helion
+user.input.dir=C\:\\Users\\sharmabi\\git\\documentation
 copytotarget2sourcemaplist=
-uplevels=
-user.input.file=installation.dita
+uplevels=..\\
+user.input.file=helion\\using_git.dita
 user.input.file.listfile=usr.input.file.list
-tempdirToinputmapdir.relative.value=
+tempdirToinputmapdir.relative.value=helion[\\\\|/]
 relflagimagefile=relflagimage.list

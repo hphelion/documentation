@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\cinder\ceph\temp\topic-pdf\helion?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/cinder/ceph/temp/topic-pdf/helion/?><?path2project out\topic-pdf\?><?path2project-uri out/topic-pdf/?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="topic_ckw_kbc_ws" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="topic:1;3:30">
+  <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="title:1;4:10">Beta 1: Supported Configuration</title>
+  <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="body:1;5:9">
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="p:1;6:8">The following list summaries the qualified configurations and their purpose.</p>
+    <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="note:1;7:11">While the hardware requirements are similar to those of HP Helion <tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="tm:1;8:10">OpenStack</tm> 1.1, this is a completely new installation, not an upgrade or update
+      operation.</note>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="section:1;10:14"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="title:2;10:21">Entry Scale Cloud</title> This is very similar to the Beta0 example but has a
+      more complex network configuration. At minimum scale it can be used as a POC (3-4 nodes) but
+      can also be scaled up to HP Helion OpenStack 1.1 levels, that is, up to 100 compute nodes. The
+      network configuration supports separation of networks for: <ul id="ul_l1v_nbz_2t" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="ul:1;13:89">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="li:1;14:13">Management</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="li:2;15:13">External API</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="li:3;16:13">External VM communications</li>
+      </ul>
+      <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="note:2;18:13"> The requirement to have a dedicated network for OS-install and system deployment has
+        been removed in Beta 1. To re-use the deployment network as part of the operational network
+        the following conditions must be adhered to:</note>
+      <ol id="ol_gdv_nbz_2t" class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="ol:1;21:30">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="li:4;22:13">The network IP addresses used for OS install (i.e. baremetalConfig.yml and servers.yml)
+          must belong to a Network that is used for your cloud infrastructure (e.g. in
+          networks.yml).</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="li:5;25:13">The Network that re-uses those addresses must be un-tagged.</li>
+      </ol> In the example <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="b:1;26:31">entry-scale model</b> the management network is: <ul id="ul_yfv_nbz_2t" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="ul:2;27:28">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="li:6;28:13">Mgmt 10.2.1.0/24 VLAN: 100 (untagged) </li>
+      </ul> In the baremetalConfig file servers are listed as:
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="codeblock:1;30:18"> baremetal_servers:
+      - node_name: controller1
+      node_type: CCN-001-001
+      pxe_mac_addr: b2:72:8d:ac:7c:6f
+      pxe_interface: eth2
+      pxe_ip_addr: 192.168.10.3
+      ilo_ip: 192.168.9.3
+      </codeblock>
+      in the servers.yml file servers will show as:
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="codeblock:2;39:18">- id: controller1
+      role: ROLE-CCN
+      ip-addr: 192.168.10.3</codeblock> The
+      values in the baremetal and servers definition need to members of the CIDR used for the
+      untagged network, (in this case Mgmt network). </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="section:2;44:14">Note, the entry-scale cloud model also supports the physical bonding of Network
+      Interafaces, and it can be configured with VSA as a Cinder storage back-end. <simpletable id="simpletable_t3v_nbz_2t" class="- topic/simpletable " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="simpletable:1;46:37">
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="strow:1;47:17"/>
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="strow:2;48:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:1;49:20"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="b:2;49:23">Control Plane</b></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:2;50:20">3 nodes, hosts all management and ancillary services</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="strow:3;52:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:3;53:20"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="b:3;53:23">Object Store</b></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:4;54:20">All Swift services in control plane</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="strow:4;56:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:5;57:20"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="b:4;57:23">Block Storage</b></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:6;58:20">0 or 3 VSA nodes</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="strow:5;60:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:7;61:20"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="b:5;61:23">Compute Nodes</b></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:8;62:20">Min 1; Max 100</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="strow:6;64:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:9;65:20"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="b:6;65:23">Physical Network</b></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:10;66:20">1 pair of bonded NICs</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="strow:7;68:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:11;69:20"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="b:7;69:23">Network Separation</b>
+          </stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="stentry:12;71:20">EXTERNAL_API, EXTERNAL_VM, GUEST (vxlan), MGMT on separate VLANs</stentry>
+        </strow>
+      </simpletable>
+      <!--REMOVED PER DOCS-1573
+        Possible variations on this model will be documented to show: Use a 3PAR
+      (separately installed) back-end for Cinder this is done by removing the VSA resource pool from
+      the control plane and configuring the cinder.conf.j2 wih 3PAR details Two node cloud:
+      documentation will show how to configure for one node control plane and one node compute use
+      CEPH (deployed by HLM) as a Cinder back end instead of VSA --></section>
+    <!-- REMOVED PER DOC 1593 <section><title>Entry Scale Storage Depot</title>
+      <simpletable>
+        <strow>
+          <stentry><b>Control Plane</b></stentry>
+          <stentry>3 Nodes: Keystone, Swift Proxy, account and container services</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Object Store</b></stentry>
+          <stentry>3-99 nodes</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Physical Network</b></stentry>
+          <stentry>1 pair of bonded NICs</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Network Separation</b></stentry>
+          <stentry>EXTERNAL_API, SWIFT, MGMT on separate VLANs</stentry>
+        </strow>
+      </simpletable>
+    </section>
+     -->
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="section:3;101:14">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="title:3;102:14">Configuration Illustrations</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="p:2;103:10">The following diagram depicts a deployment scenario using KVM for Beta1.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="p:3;104:10"><image href="../media/networking/network_kvm_diag.png" width="1000" placement="inline" class="- topic/image " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="image:1;104:79"/></p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="p:4;105:10">The following diagram depicts a deployment scenario using ESX for Beta1.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="p:5;106:10"><image href="../media/networking/network_esx_diag.png" width="1000" placement="inline" class="- topic/image " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="image:2;106:79"/></p>
+    </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\supportedconfigs.dita" xtrc="section:4;108:14">
+      <!--<ul>
+        <li>Single control plane for
+          <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>all control plane
+          services<?oxy_custom_end?></li>
+        <li>Single bond of two network interfaces</li>
+        <li>Network traffic separation providing for different services on different VLANs</li>
+        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+        <li>Multiple server roles for different services (Compute, Object etc) with different disk
+          configuration options</li>
+        <?oxy_custom_end?>
+        <li>Compute nodes: can have a minimum of 1, maximum of 100</li>
+      </ul>
+      <p><b>Configuration details:</b></p>
+      <ul id="ul_ovh_r4f_ys">
+        <li>Scaled down example, optimized for reduced server count </li>
+        <li>Dedicated deployer node needed </li>
+        <li>Control Plane with one cluster </li>
+        <li>Cloud controllers (minimum of 3 nodes for database quorum) <ul>
+            <li>Monitoring/Logging</li>
+            <li>Neutron network services (centralized routers, DHCP, metadata, default SNAT, VPN
+              agent)</li>
+            <li>Swift Object</li>
+            <li>MySQL, RabbitMQ, API, Other Services</li>
+          </ul></li>
+        <li>Resource pool <ul id="ul_jyg_fyf_ys">
+            <li>Compute (minimum of one node) </li>
+            <li>VSA Cluster (minimum of one node, no high availability)</li>
+          </ul></li>
+      </ul>
+      <p><b>Minimum server count</b></p>
+      <ul id="ul_lrv_gyf_ys">
+        <li>6 with VSA (1 deployer, 3 control plane, 1 compute, 1 VSA)</li>
+        <li>5 without VSA (1 deployer, 3 control plane, 1 compute)</li>
+        <li> VSA can be 0, 1 or 3 nodes. </li>
+      </ul>
+      <p><b>Server Roles</b></p>
+      <ul id="ul_zc4_hyf_ys">
+        <li>Controller </li>
+        <li>Compute </li>
+        <li>VSA</li>
+      </ul>
+      <p><b>Networking</b></p>
+      <ul id="ul_bfh_3yf_ys">
+        <li>A dedicated network for IPMI/iLO must be connected to all the nodes</li>
+        <li>Dedicated network interface for operating system installation and Ansible<ul>
+            <li>Configured as part of os-deploy, used by Ansible, not further configured by the
+              deployer</li>
+          </ul></li>
+        <li>One pair of bonded network interfaces <ul>
+            <li>Bond0: Management, External API, External VMs, Vxlan, Provider VLANs</li>
+          </ul></li>
+        <li>Each network is a single L3 segment</li>
+        <li>Load-balancers for control plane APIs are provided by haproxy</li>
+        <li>TLS only on external API, using customer supplied certificate</li>
+        <li>VLAN IDs and IP addressing provided by customer</li>
+      </ul>
+      <p><b>Storage</b></p>
+      <ul id="ul_e4q_myf_ys">
+        <li>All servers assume single OS disc protected by a RAID controller (to be set up before OS
+          deploy)</li>
+        <li>Compute node adds one additional disc and LV for Nova (you can add other discs following
+          this pattern)</li>
+        <li>VSA adds one additional disc dedicated to VSA (you can add other discs following this
+          pattern)</li>
+        <li>Controller adds one additional disc dedicated to object storage (you can add other discs
+          following this pattern)</li>
+        <li>A log partition must be declared and reside on the first disk</li>
+      </ul>
+      -->
+    </section>
+    <!--<section><title>Configuration Illustrations</title>
+      <p>The following diagrams illustrate the proof of concept configuration.</p>
+      <p>
+        <image href="images/20beta0poc-diagram1.png" width="1000"/></p>
+      <p>
+        <image href="images/20beta0poc-diagram.png" width="1000" id="image_pl2_d4k_xs"/></p>
+    </section>-->
+  </body>
+</topic>
