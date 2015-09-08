@@ -37,12 +37,15 @@
           </li>
           <li><xref type="section" href="#topic13234/list">List Clusters in a Tenant</xref></li>
           <li><xref type="section" href="#topic13234/show">Display Detailed Cluster Information</xref></li>
-          <li>
-            <xref type="section" href="#topic13234/addrole">Add a Role to an Existing Cluster</xref>
-          </li>
-          <li>
-            <xref type="section" href="#topic13234/addservice">Add a Service to an Existing
+          <li><xref type="section" href="#topic13234/addrole">Add a Role to an Existing
               Cluster</xref>
+          </li>
+          <li><xref type="section" href="#topic13234/removerole">Remove a Role from an Existing
+              Cluster</xref></li>
+          <li><xref type="section" href="#topic13234/addservice">Add a Service to an Existing
+              Cluster</xref></li>
+          <li><xref type="section" href="#topic13234/removeservice">Remove a Service from an
+              Existing Cluster</xref>
           </li>
         </ul></li>
     </ul>
@@ -207,7 +210,7 @@
             </row>
             <row>
               <entry>list-clusters, lc</entry>
-              <entry> List clusters within a tenant. </entry>
+              <entry>Lists clusters within a tenant. </entry>
             </row>
             <row>
               <entry>show-cluster, sc </entry>
@@ -220,6 +223,14 @@
             <row>
               <entry>add-role, ar</entry>
               <entry>Add node of the specified role to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>remove service, rs</entry>
+              <entry>Remove services from an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>remove role, rr</entry>
+              <entry>Remove node of the specified role from an existing cluster.</entry>
             </row>
             <row>
               <entry>update, up</entry>
@@ -889,7 +900,7 @@
     <section id="subcommand-options">
       <title>Subcommand Options</title>
       <p>Each subcommand in the Add-Service command has these following options available. The
-          <varname>mysql</varname> subcommand has <xref href="#topic13234/subcommand-options"
+          <varname>mysql</varname> subcommand has <xref href="#topic13234/mysqlcommand"
           format="dita">additional options</xref>.</p>
       <codeblock>cf-mgmt [global options] add-service [subcommand] <b>[subcommand options]</b> [arguments..]</codeblock>
       <table>
@@ -1080,5 +1091,364 @@
         </tgroup>
       </table>
     </section>
-  </body>
+  
+  <section id="removeservice">
+      <title>Remove Services from an Existing Cluster</title>
+      <p>This command removes services from an existing cluster (<i>add-service</i>).</p>
+    </section>
+  <section id="remove-service-use-syntax">
+    <title>Use Syntax</title>
+    <codeblock>cf-mgmt [global options] <b>remove-service</b> [subcommand] [subcommand options] [arguments..]</codeblock>
+    <p>For help with each subcommand, enter</p>
+    <codeblock>cf-mgmt remove-service <b>[subcommand]</b> --help</codeblock>
+  </section>
+  <section id="remove-service-subcommands">
+    <title>Subcommands</title>
+    <codeblock>cf-mgmt [global options] remove-service <b>[subcommand]</b> [subcommand options] [arguments..]</codeblock>
+    <table>
+      <tgroup cols="2">
+        <colspec colname="col1" colwidth="119.25pt"/>
+        <colspec colname="col2" colwidth="445.5pt"/>
+        <thead>
+          <row>
+            <entry>Subcommand</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>mysql</entry>
+            <entry>Remove a MySQL service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>filesystem</entry>
+            <entry>Remove a filesystem service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>memcached</entry>
+            <entry>Remove a memcached service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>redis </entry>
+            <entry>Remove a redis service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>postgresql</entry>
+            <entry>Remove a postgresql service from an existing cluster.</entry>
+          </row>
+            <row>
+              <entry>harbor</entry>
+              <entry>Remove a Harbor service from an existing cluster.</entry>
+            </row>
+          <row>
+            <entry>rabbit</entry>
+            <entry>Remove a RabbitMQ service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>mongodb</entry>
+            <entry>Remove a MongoDB service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>mssql2012</entry>
+            <entry>Remove a Microsoft SQL 2012 service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>mssql2014 </entry>
+            <entry>Remove a Microsoft SQL 2014 service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>help, h</entry>
+            <entry>Shows a list of commands or help for one command.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </section>
+  <section id="remove-subcommand-options">
+    <title>Subcommand Options</title>
+    <p>Each subcommand in the Remove-Service command has these following options available. The
+          <varname>mysql</varname> subcommand has <xref href="#topic13234/remove-mysqlcommand"
+          format="dita">additional options</xref>.</p>
+    <codeblock>cf-mgmt [global options] remove-service [subcommand] <b>[subcommand options]</b> [arguments..]</codeblock>
+    <table>
+      <tgroup cols="3">
+        <colspec colname="col1" colwidth="1*"/>
+        <colspec colname="col2" colwidth="2.13*"/>
+        <colspec colname="newCol3" colwidth="1.56*"/>
+        <thead>
+          <row>
+            <entry>Subcommand Options</entry>
+            <entry>Description</entry>
+            <entry>Required</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>--load</entry>
+            <entry>Load flags from the specified file</entry>
+            <entry>No</entry>
+          </row>
+          <row>
+            <entry>--save</entry>
+            <entry>Save flag values to the specified file</entry>
+            <entry>No</entry>
+          </row>
+          <row>
+            <entry>--cluster-prefix</entry>
+            <entry>Prefix to affix to cluster instance names.</entry>
+            <entry>Yes</entry>
+          </row>
+            <row>
+              <entry>--keypair-name</entry>
+              <entry>The name of the key pair on instances</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-name</entry>
+              <entry>Name of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>constructor-node-image-id</codeph> is undefined.
+                Optional if <codeph>constructor-node-image-id</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-id</entry>
+              <entry>ID of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>constructor-node-image-name</codeph> is undefined.
+                Optional if <codeph>constructor-node-image-name</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--constructor-flavor</entry>
+              <entry>Flavor name reference to use when creating a constructor server.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--max-cluster-wait-duration '-1'</entry>
+              <entry>Maximum time to wait for addition of node or service to cluster; defaults to an
+                infinite wait.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--network-id</entry>
+              <entry>ID of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--network-name </entry>
+              <entry>Name of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--external-network-id</entry>
+              <entry>ID of the external network for the public created nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--external-network-name </entry>
+              <entry>Name of the external network for the public created nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--max-constructor-wait-duration '10m'</entry>
+              <entry>Duration to wait for the constructor machine to come up. Default is 10
+                minutes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--private-key</entry>
+              <entry>The private key file needed to connect to cluster nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--delete-instance</entry>
+              <entry>Delete the server instance.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--keep-constructor </entry>
+              <entry>Keep the constructor VM up and running after command completion.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--backup-to-volume</entry>
+              <entry>Create a service backup to the volume previously attached.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--delete-volume</entry>
+              <entry>On deleting the cluster also include deleting the cluster volumes</entry>
+              <entry>No</entry>
+            </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p>The <varname>mysql</varname> subcommand has additional options.</p>
+    <table id="remove-mysqlcommand">
+      <tgroup cols="3">
+        <colspec colname="col1"/>
+        <colspec colname="col2"/>
+        <colspec colname="newCol3" colwidth="1*"/>
+        <thead>
+          <row>
+            <entry>MySQL Subcommand Options</entry>
+            <entry>Description</entry>
+            <entry>Required</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>--delete-database</entry>
+            <entry>On deleting the cluster, also delete the database.</entry>
+            <entry>No</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </section> 
+  
+  <section id="removerole">
+    <title>Remove Roles From an Existing Cluster</title>
+  </section>
+  <section id="remove-role-use-syntax">
+    <title>Use Syntax</title>
+    <codeblock>cf-mgmt [global options] <b>remove-role</b> [subcommand] [subcommand options] [arguments...]</codeblock>
+    <p>For help with this command within the command-line interface, enter</p>
+    <codeblock>cf-mgmt remove-role --help</codeblock>
+  </section>
+  <section id="remove-role-subcommands">
+    <title>Subcommands</title>
+    <codeblock>cf-mgmt [global options] remove-role <b>[subcommand]</b> [subcommand options] [arguments...]</codeblock>
+    <table>
+      <tgroup cols="2">
+        <colspec colname="col1" colwidth="1*"/>
+        <colspec colname="col2" colwidth="7.33*"/>
+        <thead>
+          <row>
+            <entry>Subcommand</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>dea</entry>
+            <entry>Remove DEA nodes from an existing cluster.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </section>
+  <section id="remove-role-sub-command-options">
+    <title>Sub-Command Options</title>
+    <codeblock>cf-mgmt [global options] remove-role [subcommand] <b>[subcommand options]</b> [arguments...]</codeblock>
+    <table>
+      <tgroup cols="3">
+        <colspec colname="col1" colwidth="1*"/>
+        <colspec colname="col2" colwidth="2.13*"/>
+        <colspec colname="newCol3" colwidth="1.56*"/>
+        <thead>
+          <row>
+            <entry>Options (with default input)</entry>
+            <entry>Description</entry>
+            <entry>Required</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>--load</entry>
+            <entry>Load flags from the specified file</entry>
+            <entry>No</entry>
+          </row>
+          <row>
+            <entry>--save</entry>
+            <entry>Save flag values to the specified file</entry>
+            <entry>No</entry>
+          </row>
+          <row>
+            <entry>--cluster-prefix</entry>
+            <entry>Prefix to affix to cluster instance names.</entry>
+            <entry>Yes</entry>
+          </row>
+            <row>
+              <entry>--keypair-name</entry>
+              <entry>The name of the key pair on instances</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-name</entry>
+              <entry>Name of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>constructor-node-image-id</codeph> is undefined.
+                Optional if <codeph>constructor-node-image-id</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-id</entry>
+              <entry>ID of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>constructor-node-image-name</codeph> is undefined.
+                Optional if <codeph>constructor-node-image-name</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--max-cluster-wait-duration '-1'</entry>
+              <entry>Maximum time to wait for addition of node or service to cluster; defaults to an
+                infinite wait.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--constructor-flavor</entry>
+              <entry>Flavor name reference to use when creating a constructor server</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--network-id</entry>
+              <entry>ID of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--network-name </entry>
+              <entry>Name of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--external-network-name </entry>
+              <entry>Name of the external network for the public created nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--external-network-id</entry>
+              <entry>ID of the external network for the public created nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--max-constructor-wait-duration '10m'</entry>
+              <entry>Duration to wait for the constructor machine to come up. Default is 10
+                minutes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--keep-constructor </entry>
+              <entry>Keep the constructor VM up and running after command completion.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--private-key </entry>
+              <entry>The private key file needed to connect to cluster nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--delete-instance </entry>
+              <entry>Delete the server instance.</entry>
+              <entry>No</entry>
+            </row>
+          <row>
+            <entry>--role-instance [--role-instance option --role-instance option</entry>
+            <entry>The instance number of the role to be removed from the cluster.</entry>
+            <entry>No</entry>
+          </row>
+          <row>
+            <entry>--stack 'lucid64'</entry>
+            <entry>Stack indicates the platform to use when adding DEAs. Valid values are lucid64
+              or win2012r2. Default is lucid64</entry>
+            <entry>No</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </section>
+   </body>
 </topic>
