@@ -8,7 +8,7 @@
       <ul>
         <li>Helion OpenStack 2.0 Cloud must be setup with: <ul>
             <li>Three VSA nodes according to specifications outlined in the <xref
-                href="hardware.dita">Minimum Hardware Requirements</xref></li>
+                href="../hardware.dita">Minimum Hardware Requirements</xref></li>
           </ul>
         </li>
         <li>Have the VSA node IP information from the
@@ -22,6 +22,13 @@
             <li><codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock></li>
           </ol>
         </li>
+        <li>Look in <b>/etc/apt/sources.list.d/</b> for a file called
+            <b>cmc_hlinux_32bit_lib.list</b> and verify that it contains the line below:
+          <codeblock>deb [arch=i386] http://&lt;deployer ip>:79/hlm/cmc32 cattleprod main</codeblock>
+          If the file is not there or if the line is not there, please create it as described. The
+          deployer ip address can be obtained by looking at the existing hlinux apt source file in
+          that directory. This is a workaround for an issue in Beta-1 and will be fixed in
+          Beta-2.</li>
         <li>Deploy CMC by running the following command: <ol>
             <li><codeblock>ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
           </ol>
@@ -30,8 +37,9 @@
             <li>Install Xming on a Windows machine that you can reach the deployer node on</li>
             <li>Enable X11 forwarding on PuTTy session for deployer node</li>
             <li>ssh -X to the first control plane node</li>
-            <li>execute <codeph>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeph>
-                <note>At this point the CMC UI should launch successfully</note></li>
+            <li>execute <codeph>/opt/HP/StoreVirtual/UI/jre/bin/java -jar
+                /opt/HP/StoreVirtual/UI/UI.jar</codeph>
+              <note>At this point the CMC UI should launch successfully</note></li>
           </ol>
         </li>
         <li>Create a Cluster using CMC: <ol>
@@ -88,10 +96,9 @@ hplefthand_debug: false</codeblock></li>
         desired.</p>
       <ol>
         <li>Create a test volume from a user account and verify that the volume is successfully
-          created in the "available" state:
-          <codeblock>cinder create --display-name &lt;name> &lt;size></codeblock>
-        <p>Example: 
-          <codeblock>
+          created in the "available" state: <codeblock>cinder create --display-name &lt;name> &lt;size></codeblock>
+          <p>Example:
+            <codeblock>
 $ cinder create --display-name test_volume 2
 +---------------------+--------------------------------------+
 |       Property      |                Value                 |
