@@ -135,7 +135,7 @@
     </topicref>
     <!-- Neutron -->
     <topichead navtitle="Networking">
-      <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Overview" />
+      <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Overview" locktitle="yes"/>
       <topicref href="helion/neutron/lbaas.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Load Balancer (LBaaS)</navtitle>
