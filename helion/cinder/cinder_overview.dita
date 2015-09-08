@@ -2,5 +2,36 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_e5g_z3h_gt">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Block Storage Overview</title>
-  <body> </body>
+  <body>
+    <section id="about"><title>About Block Storage</title>
+      <p>Helion OpenStack 2.0 supports the following storage backends for Volume, Backup, and Zoning
+        Configuration:</p>
+      <ul>
+        <li>Volumes <ul>
+            <li>VSA</li>
+            <li>3PAR FC</li>
+            <li>3PAR iSCSI</li>
+            <li>VMDK</li>
+            <li>Ceph</li>
+          </ul></li>
+        <li>Backup <ul>
+            <li>Swift</li>
+            <li>Ceph</li>
+          </ul></li>
+        <li>Zone Driver <ul>
+            <li>Brocade Zone Manager</li>
+          </ul></li>
+      </ul>
+    </section>
+    <section id="volume_vsa"><title>How to Configure VSA as a Storage Backend</title>
+    </section>
+    <section id="volume_3parfc"><title>How to Configure 3PAR FC as a Storage Backend</title>
+    </section>
+    <section id="volume_3pariscsi"><title>How to Configure 3PAR iSCSI as a Storage Backend</title>
+    </section>
+    <section id="volume_vmdk"><title>How to Configure VMDK as a Storage Backend</title>
+    </section>
+    <section id="volume_ceph"><title>How to Configure Ceph as a Storage Backend</title>
+    </section>
+  </body>
 </topic>
