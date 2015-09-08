@@ -22,9 +22,8 @@
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
     <topicref href="helion/faq.dita"/>
-    <topichead navtitle="Installation">
-      <topicref href="helion/installation.dita" navtitle="Installing HP Helion OpenStack"
-        locktitle="yes"/>
+    <topicref href="helion/installation.dita" navtitle="Installing HP Helion OpenStack"
+      locktitle="yes">
       <topichead navtitle="Configuration Files">
         <topicref href="helion/config/entryscalewithvsa.dita"/>
       </topichead>
@@ -32,13 +31,12 @@
         locktitle="yes"/>
       <topicref href="helion/esx/deploy_esx_cloud.dita" navtitle="Deploying ESX Cloud"
         locktitle="yes" toc="yes"/>
-    </topichead>
+    </topicref>
     <!-- BURA -->
-    <topichead navtitle="Backup and Restore">
-      <topicref href="helion/bura/bura_overview.dita"/>
+    <topicref href="helion/bura/bura_overview.dita" navtitle="Backup and Restore">
       <topicref href="helion/bura/backup.dita"/>
       <topicref href="helion/bura/restore.dita"/>
-    </topichead>
+    </topicref>
     <topicref href="helion/eula.dita" toc="no"/>
     <!-- keystone identity -->
     <topichead navtitle="Identity">
