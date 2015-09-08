@@ -7,19 +7,13 @@
 <topic domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333729535" xml:lang="en-us">
 
 
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Using the Admin Menu</title>
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Using the Admin
+        Panel</title>
 
 
-    <shortdesc > The <uicontrol >Admin</uicontrol> menu contains
-
-
-        selections for managing tenants (projects), tenant resources, and users. It is available
-
-
-        when <uicontrol >admin</uicontrol> is selected as the <b >Current
-
-
-            Tenant</b>.</shortdesc>
+    <shortdesc> The <uicontrol>Admin</uicontrol> menu contains selections for managing tenants
+        (projects), tenant resources, and users. It is available when an
+            <uicontrol>admin</uicontrol> user is logged in.</shortdesc>
 
 
     <body>
@@ -69,7 +63,7 @@
                             <entry colname="col1" >
 
 
-                                <p >Menu item</p>
+                                <p>Tab</p>
 
 
                             </entry>
@@ -132,7 +126,9 @@
                             <entry >
 
 
-                                <p/>
+                                <p><xref
+                                        href="../Overview/CGH-2-User-system-overview.dita#topic8785"
+                                    >Viewing System Status</xref></p>
 
 
                             </entry>
@@ -156,10 +152,9 @@
                             <entry >
 
 
-                                <p >Tools for performing Ceilometer database queries using real-time or collected
-
-
-                  data, to support detailed performance analysis.</p>
+                                <p>Tools for performing Ceilometer database queries using real-time
+                                    or collected data, to support detailed performance analysis.
+                                    *regionone servers only* </p>
 
 
                             </entry>
@@ -188,13 +183,9 @@
                             <entry >
 
 
-                                <p >Controls for managing systems, hosts, and
-
-
-                                    standardized CPU, port, or storage profiles that can be applied
-
-
-                                    to hosts.</p>
+                                <p>Controls for managing systems, hosts, and standardized CPU, port,
+                                    or storage profiles that can be applied to hosts. *regionone
+                                    servers only* </p>
 
 
                             </entry>
@@ -211,6 +202,16 @@
                             </entry>
 
 
+                        </row>
+                        <row>
+                            <entry>
+                                <p>Hypervisors</p>
+                            </entry>
+                            <entry>
+                                <p>Charts for monitoring hypervisor resource usage on compute
+                                    nodes.</p>
+                            </entry>
+                            <entry/>
                         </row>
 
 
@@ -244,33 +245,6 @@
 
 
                             </entry>
-
-
-                        </row>
-
-
-                        <row>
-
-
-                            <entry >
-
-
-                                <p >Hypervisors</p>
-
-
-                            </entry>
-
-
-                            <entry >
-
-
-                                <p >Charts for monitoring hypervisor resource usage on compute nodes.</p>
-
-
-                            </entry>
-
-
-                            <entry />
 
 
                         </row>
@@ -365,10 +339,9 @@
                             <entry >
 
 
-                                <p >Controls for managing server groups across all tenants. Server groups are
-
-
-                  collections of instances sharing common attributes.</p>
+                                <p>Controls for managing server groups across all tenants. Server
+                                    groups are collections of instances sharing common attributes.
+                                    *regionone servers only* </p>
 
 
                             </entry>
@@ -610,7 +583,7 @@
                             <entry >
 
 
-                                <p >System alarms and customer logs</p>
+                                <p>System alarms and customer logs. *regionone servers only* </p>
 
 
                             </entry>
@@ -643,7 +616,7 @@
                             <entry >
 
 
-                                <p >System configuration updates</p>
+                                <p>System configuration updates. *regionone servers only* </p>
 
 
                             </entry>
@@ -713,4 +686,3 @@
 
 
 </topic>
-

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic8785">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Viewing memphis Region System
+    Status (Overview)</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-resource.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/resources/--></p>
+    <p>When you first log into the Helion interface, the Overview page appears. </p>
+    <p>The information in the page depends upon which region you are using. </p>
+    <p>
+      <ul id="ul_f35_tqw_ft">
+        <li><xref href="#topic8785/memphis" format="dita">memphis/denver</xref></li>
+        <li><xref href="CGH-2-User-system-overview-regionone.dita#topic8785">regionone</xref></li>
+      </ul>
+    </p>
+  <section id="memphis">
+    <p>To view information on the servers in the <codeph>memphis</codeph> or <codeph>denver</codeph>
+        region, click <xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702"
+      >memphis or denver in the region selector</xref>.</p>
+    <p>The following information appears. </p>
+    <p><image href="../../../media/CGH-2-memphis-overview.png" id="image_hwj_xyw_ft"/></p>
+  </section>
+    <p>The Usage Summary displays information over the specified period of time for the current
+        project.:<ul id="ul_ug1_lmc_gt">
+        <li><b>VCPUs</b>. The number of virtual CPUs allocated to the project. </li>
+        <li><b>Disk GB</b>. The virtual root disk size in gigabytes.</li>
+        <li><b>RAM GB</b> Memory allocated to the project.  </li>
+        <li><b>VCPU Hours</b>. The VCPU hours for the project.</li>
+        <li><b>Disk GB Hours</b>. The total GB-hours for the project.  </li>
+      </ul></p>
+  
+
+
+</body>
+</topic>

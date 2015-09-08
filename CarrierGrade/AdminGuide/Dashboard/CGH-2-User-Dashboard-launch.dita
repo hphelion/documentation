@@ -35,9 +35,9 @@
           time, a self-signed certificate is in use. These certificates are not considered
           trustworthy by default. Verify the certificate or add an exception in the browser to
           bypass the warning.</p></li>
-<li>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign In</b>.<p>
-  <image href="../../../documentation/media/CGH-Horizon-Login.png"/>
-        </p></li>
+<li>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign
+            In</b>.<p><image href="../../../media/CGH-Horizon-Login.png" width="400"
+            id="image_b1v_dcf_ht"/></p></li>
 <li>If you are a non-admin user, you will only be able to select a project from the list at the top
         of the screen.<p>
           <xref type="section" href="#topic1160"> Return to Top </xref>

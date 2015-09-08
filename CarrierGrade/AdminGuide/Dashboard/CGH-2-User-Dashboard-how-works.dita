@@ -35,16 +35,19 @@
 <p>Across the top are menus to switch between projects and menus where you can access user settings.</p>
 <!-- 
   <p>
-      <image href="../../../documentation/media/CGH-Helion-Window-RC.png"></image></p>
+      <image href="../../../media/CGH-Helion-Window-RC.png"></image></p>
    -->
 <p>How you interact with your network environment depends upon your user type, either an administrative user or a non-administrative user (user). In general, a non-admin user can make changes to projects to which that user is associated. Admin users can make changes throughout the domain.</p>
 <p>To access the dashboard, enter the dashboard URL in a supported browser and log in.<xref
         href="CGH-2-User-Dashboard-launch.dita#topic1160"/></p>
-<p>At the bottom of this page, you can see some of the services you can manage right from the dashboard.</p>
-<section id="DashProject"> <title>Project tab</title>
-<p>Use the <b>Project</b> tab to implement and build out your cloud. This dashboard contains tools
-        to create virtual server instances, create and configure your network, configure access
-        tools (such as key pairs and security groups) and cloud resource templates (stacks).</p>
+<p>The layout of a typical Helion page contains dashboards, panels, tabs, and tables, as shown in
+      the following diagram:</p>
+    <p><image href="../../../media/CGH-Horizon-Map.png" id="image_vw5_djf_ht" width="600"/></p>
+<section id="DashProject"> <title>Project dashboard</title>
+<p>Use the <b>Project</b> dashboard to implement and build out your cloud. This dashboard contains
+        tools to create virtual server instances, create and configure your network, configure
+        access tools (such as key pairs and security groups) and cloud resource templates
+        (stacks).</p>
 <table>
 <tgroup cols="2">
           <colspec colname="col1" colsep="1" rowsep="1"/>
@@ -60,27 +63,31 @@
               <entry namest="col1" nameend="col2">System Panel</entry>
             </row>
             <row>
-              <entry> Instances</entry>
+              <entry> Overview tab</entry>
+              <entry>Limit Summary and Uage Summary</entry>
+            </row>
+            <row>
+              <entry> Instances tab</entry>
               <entry>Controls for managing instances associated with the tenant, including controls
                 for creating snapshots. </entry>
             </row>
             <row>
-              <entry>Server Groups</entry>
+              <entry>Server Groups tab</entry>
               <entry>Controls for managing server groups associated with the tenant. KVM region
                 only.</entry>
             </row>
             <row>
-              <entry>Volumes</entry>
+              <entry>Volumes tab</entry>
               <entry>Controls for managing virtual disk volumes associated with the tenant's
                 instances. </entry>
             </row>
             <row>
-              <entry>Images &amp; Snapshots</entry>
+              <entry>Images &amp; Snapshots tab</entry>
               <entry>Controls for managing images, and information about available snapshots created
                 from instances.</entry>
             </row>
             <row>
-              <entry>Access &amp; Security</entry>
+              <entry>Access &amp; Security tab</entry>
               <entry>Controls for network protocol and port security, SSH-based access to virtual
                 machines, API access to services, and floating IP address allocations. </entry>
             </row>
@@ -88,18 +95,18 @@
               <entry namest="col1" nameend="col2">Network Panel</entry>
             </row>
             <row>
-              <entry>Topology</entry>
+              <entry>Network Topology tab</entry>
               <entry>Configuration charts depicting system networks, instances, and network
                 connections between instances. </entry>
             </row>
             <row>
-              <entry>Networks</entry>
+              <entry>Networks tab</entry>
               <entry>Controls for managing networks for the current tenant, and viewing QoS (Quality
                 of Service) policies or weightings for tenants of which the user is a member.
               </entry>
             </row>
             <row>
-              <entry>Routers</entry>
+              <entry>Routers tab</entry>
               <entry>Controls for managing virtual routers. Tenant members can create and delete
                 virtual routers, view router details and delete interfaces, and clear gateways.
               </entry>
@@ -108,7 +115,7 @@
               <entry namest="col1" nameend="col2">Object Store</entry>
             </row>
             <row>
-              <entry> Containers</entry>
+              <entry> Containers tab</entry>
               <entry>Controls for mamaging storage containers. A container is a storage compartment
                 for your data and provides a way for you to organize your data. </entry>
             </row>
@@ -116,7 +123,7 @@
               <entry namest="col1" nameend="col2">Orchestration Panel</entry>
             </row>
             <row>
-              <entry> Stacks</entry>
+              <entry> Stacks tab</entry>
               <entry>Details for existing services (stacks), and controls for creating new services
                 (launching stacks). Service details include topologies, resource allocations, and
                 event histories. </entry>
@@ -125,8 +132,8 @@
         </tgroup>
 </table>
 </section>
-<section id="DashAdmin"> <title>Admin tab</title>
-<p>Use the <b>Admin</b> tab to view, allocate, and manage all resources within the cloud.</p>
+<section id="DashAdmin"> <title>Admin dashboard</title>
+<p>Use the <b>Admin</b> dashboard to view, allocate, and manage all resources within the cloud.</p>
 <p>The Admin tab allows you to manage instances, define flavors, create and configure images, manage
         networks, view system resources, manage projects, and manage users.</p>
 <table>
@@ -144,83 +151,81 @@
               <entry namest="col1" nameend="col2">System Panel</entry>
             </row>
             <row>
-              <entry>Overview</entry>
+              <entry>Overview tab</entry>
               <entry>Performance charts for system health monitoring, including hosts status,
                 provider-network port utilization, and compute node processing, memory, and disk
                 usage. </entry>
             </row>
             <row>
-              <entry>Resource Usage</entry>
+              <entry>Resource Usage tab</entry>
               <entry> Tools for performing Ceilometer database queries using real-time or collected
                 data, to support detailed performance analysis. *regionone servers only*
               </entry>
             </row>
             <row>
-              <entry>Inventory</entry>
+              <entry>Inventory tab</entry>
               <entry>Controls for managing systems, hosts, and standardized CPU, port, or storage
                 profiles that can be applied to hosts. *regionone servers only* </entry>
             </row>
             <row>
-              <entry>Host Aggregates</entry>
-              <entry>Charts for monitoring hypervisor resource usage on compute nodes. *Non-KVM
-                servers only* </entry>
-            </row>
-            <row>
-              <entry>Hypervisors</entry>
+              <entry>Hypervisors tab</entry>
               <entry>Charts for monitoring hypervisor resource usage on compute nodes. </entry>
             </row>
             <row>
-              <entry>Instances</entry>
+              <entry>Host Aggregates tab</entry>
+              <entry>Charts for monitoring hypervisor resource usage on compute nodes.  </entry>
+            </row>
+            <row>
+              <entry>Instances tab</entry>
               <entry>Controls for managing virtual-machine instances. </entry>
             </row>
             <row>
-              <entry>Server Groups</entry>
+              <entry>Server Groups tab</entry>
               <entry>Controls for managing server groups across all tenants. Server groups are
                 collections of instances sharing common attributes. *regionone servers only*
               </entry>
             </row>
             <row>
-              <entry>Volumes</entry>
+              <entry>Volumes tab</entry>
               <entry>Controls for managing virtual disk volumes available for use with instances.
                 The virtual volumes are implemented using storage volumes defined for the storage
                 nodes in the system. </entry>
             </row>
             <row>
-              <entry>Flavors</entry>
+              <entry>Flavors tab</entry>
               <entry>Controls for managing standardized processor, disk, and memory complements
                 (flavors) that can be applied to virtual machines. </entry>
             </row>
             <row>
-              <entry>Images</entry>
+              <entry>Images tab</entry>
               <entry>Controls for managing disk images used to initialize and configure virtual
                 machines. </entry>
             </row>
             <row>
-              <entry>Networks</entry>
+              <entry>Networks tab</entry>
               <entry>Controls for managing tenant networks, provider networks, and QoS (Quality of
                 Service) policies or tenant weightings. </entry>
             </row>
             <row>
-              <entry>Routers</entry>
+              <entry>Routers tab</entry>
               <entry>Controls for managing virtual routers. Administrators can list the virtual
                 routers created for tenants, view router and interface details, and delete routers.
               </entry>
             </row>
             <row>
-              <entry>Defaults</entry>
-              <entry>Controls for viewing and setting the default quota values for new tenants.
-              </entry>
+              <entry>Defaults tab</entry>
+              <entry>Controls for viewing and setting the default quota values for new tenants. </entry>
             </row>
             <row>
-              <entry>Fault Management</entry>
+              <entry>Fault Management tab</entry>
               <entry>System alarms. *regionone servers only* </entry>
             </row>
             <row>
-              <entry>System Configuration</entry>
+              <entry>System Configuration tab</entry>
               <entry>System configuration updates. *regionone servers only* </entry>
             </row>
             <row>
-              <entry>System Info</entry>
+              <entry>System Info tab</entry>
               <entry>Status information for services and network agent processes, availability
                 zones, and host aggregates. </entry>
             </row>
@@ -228,7 +233,7 @@
         </tgroup>
 </table>
 </section>
-<section id="DashIdent"> <title>Identity tab</title>
+<section id="DashIdent"> <title>Identity dashboard</title>
 <p>Use the <b>Identity</b> tab to create and delete users, change user passwords, assign users to
         projects, and other tasks.</p>
 <table>
@@ -243,11 +248,11 @@
           </thead>
           <tbody>
             <row>
-              <entry>Projects</entry>
+              <entry>Projects tab</entry>
               <entry>Controls for managing tenants. </entry>
             </row>
             <row>
-              <entry>Users</entry>
+              <entry>Users tab</entry>
               <entry>Controls for managing user accounts. </entry>
             </row>
           </tbody>

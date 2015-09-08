@@ -10,7 +10,7 @@
 
 
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Using the Project
-        Menu</title>
+        Panel</title>
 
 
     <shortdesc>The <uicontrol>Project</uicontrol> menu contains selections for managing the
@@ -49,177 +49,58 @@
 
 
                 <tgroup cols="3">
-
-
-                    <colspec colname="col1" colwidth="14*"/>
-
-
-                    <colspec colname="col2" colwidth="60*"/>
-
-
-                    <colspec colname="col3" colwidth="26*"/>
-
-
+                    <colspec colname="col1" colwidth="1*"/>
+                    <colspec colname="col2" colwidth="4.37*"/>
+                    <colspec colname="col3" colwidth="1.88*"/>
                     <thead>
-
-
                         <row>
-
-
-                            <entry colname="col1">
-                                <p>Menu item</p>
-                            </entry>
-
-
+                            <entry colname="col1">Tab</entry>
                             <entry colname="col2">
                                 <p>Description</p>
                             </entry>
-
-
                             <entry colname="col3">
                                 <p>Reference</p>
                             </entry>
-
-
                         </row>
-
-
                     </thead>
-
-
                     <tbody>
-
-
                         <row>
-
-
-                            <entry>
-                                <p>Overview</p>
-                            </entry>
-
-
-                            <entry>
-                                <p>Charts and statistics for monitoring compute node resource usage
-                                    for instances associated with the tenant (project).</p>
-                            </entry>
-
-
-                            <entry/>
-
-
+                            <entry> Overview </entry>
+                            <entry>Limit Summary and Uage Summary</entry>
+                            <entry></entry>
                         </row>
-
-
                         <row>
-
-
-                            <entry>
-                                <p>Instances</p>
-                            </entry>
-
-
-                            <entry>
-                                <p>Controls for managing instances associated with the tenant,
-                                    including controls for creating snapshots.</p>
-                            </entry>
-
-
-                            <entry>
-                                <p/>
-                            </entry>
-
-
+                            <entry> Instances </entry>
+                            <entry>Controls for managing instances associated with the tenant,
+                                including controls for creating snapshots. </entry>
+                            <entry></entry>
                         </row>
-
-
                         <row>
-
-
-                            <entry>
-                                <p>Server Groups</p>
-                            </entry>
-
-
-                            <entry>
-                                <p>Controls for managing server groups associated with the
-                                    tenant.</p>
-                            </entry>
-
-
-                            <entry>
-                                <p/>
-                            </entry>
-
-
+                            <entry>Server Groups </entry>
+                            <entry>Controls for managing server groups associated with the tenant.
+                                KVM region only.</entry>
+                            <entry></entry>
                         </row>
-
-
                         <row>
-
-
-                            <entry>
-                                <p>Volumes</p>
-                            </entry>
-
-
-                            <entry>
-                                <p>Controls for managing virtual disk volumes associated with the
-                                    tenant's instances.</p>
-                            </entry>
-
-
-                            <entry>
-                                <p/>
-                            </entry>
-
-
+                            <entry>Volumes </entry>
+                            <entry>Controls for managing virtual disk volumes associated with the
+                                tenant's instances. </entry>
+                            <entry></entry>
                         </row>
-
-
                         <row>
-
-
-                            <entry>
-                                <p>Images</p>
-                            </entry>
-
-
-                            <entry>
-                                <p>Controls for managing and launching images, and creating volumes
-                                    for images. </p>
-                            </entry>
-
-
-                            <entry/>
-
-
+                            <entry>Images &amp; Snapshots</entry>
+                            <entry>Controls for managing images, and information about available
+                                snapshots created from instances.</entry>
+                            <entry></entry>
                         </row>
-
-
                         <row>
-
-
-                            <entry>
-                                <p>Access &amp; Security</p>
-                            </entry>
-
-
-                            <entry>
-                                <p>Controls for network protocol and port security, SSH-based access
-                                    to virtual machines, API access to services, and floating IP
-                                    address allocations. </p>
-                            </entry>
-
-
-                            <entry/>
-
-
+                            <entry>Access &amp; Security</entry>
+                            <entry>Controls for network protocol and port security, SSH-based access
+                                to virtual machines, API access to services, and floating IP address
+                                allocations. </entry>
+                            <entry></entry>
                         </row>
-
-
                     </tbody>
-
-
                 </tgroup>
 
 
@@ -251,7 +132,7 @@
 
 
                             <entry colname="col1">
-                                <p>Menu item</p>
+                                <p>Tab</p>
                             </entry>
 
 
@@ -374,7 +255,7 @@
 
 
                             <entry colname="col1">
-                                <p>Menu item</p>
+                                <p>Tab</p>
                             </entry>
 
 

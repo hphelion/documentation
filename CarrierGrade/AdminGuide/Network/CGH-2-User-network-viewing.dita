@@ -18,7 +18,7 @@
 <xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref> and select the <b>Network Topology</b> link on the <b>Project</b> dashboard <b>Network</b> panel.</p>
 <p>
   <!--A BR tag was used here in the original source.-->
-  <image href="../../../documentation/media/compute-network-topology-def-crop.png" placement="break">
+  <image href="../../../media/compute-network-topology-def-crop.png" placement="break">
 <alt/>
 </image>
 </p>

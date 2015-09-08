@@ -502,8 +502,8 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                         <p>Download all required ESX packages needed to deploy the ESX environment,
                                 including the VMware vSphere Distributed Switch (VDS) .</p>
                         <p><b>DCN components</b></p>
-                        <p>Download all required DCN packages needed to deploy the DCN
-                                environment.</p>
+                        <p>Download all required DCN packages needed to deploy the DCN environment.
+                                The current supported version is DCN version 3.2 R3.</p>
                         <ol id="ol_b4b_pyk_2t">
                                 <li> DCN has a well-defined process for Pre-Sales and Post-Sales
                                         process to download DCN bits and obtain license. Use one of

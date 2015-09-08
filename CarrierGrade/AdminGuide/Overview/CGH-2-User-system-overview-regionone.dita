@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic8785">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Viewing regionone System Status
+    (Overview)</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-resource.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/resources/--></p>
+    <p>When you first log into the Helion interface, the Overview page appears. </p>
+    <p>The information in the page depends upon which region you are using. </p>
+    <p>
+      <ul id="ul_f35_tqw_ft">
+        <li><xref href="#topic8785/regionone" format="dita">regionone</xref></li>
+        <li><xref href="CGH-2-User-system-overview-memphis.dita#topic8785"
+          >memphis/denver</xref></li>
+      </ul>
+    </p>
+    <section id="regionone"><p>To view information on the servers in the regionone region, click
+          <xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">regionone in
+          the region selector</xref>.</p><image href="../../../media/CGH-2-regionone-overview.png"
+        id="image_wyq_wyw_ft"/>
+      <p>The page includes the following features:</p><ul>
+        <li>
+          <p>dynamically updated, relocatable resource charts. Click the top of any chart, and drag
+            it to the desired location to customize the presentation as desired. The layout changes
+            are persistent across logins.</p>
+        </li>
+        <li>
+          <p>dynamically updated, relocatable Host Server Status summary table. Presents the total
+            number of hosts currently in one of the following states:</p>
+          <ul id="ul_t4l_vwh_34">
+            <li>
+              <p>locked</p>
+            </li>
+            <li>
+              <p>unlocked</p>
+            </li>
+            <li>
+              <p>available</p>
+            </li>
+            <li>
+              <p>unavailable</p>
+            </li>
+            <li>
+              <p>degraded</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>dynamically updated, relocatable Alarms summary table. Lists the current count of
+            critical, major, minor, and warning alarms.</p>
+        </li>
+      </ul><p>Common attributes of the resource pages are:</p><ul id="ul_hns_wm3_34">
+        <li>
+          <p>All resource charts display resource information in real-time, spanning over a
+            time-window of ten minutes.</p>
+        </li>
+        <li>
+          <p>Labels along the X-axis present the number of minutes elapsed since the last full-time
+            hour of the system clock.</p>
+        </li>
+        <li>
+          <p>Hovering the mouse over the charts overlays information windows with detailed
+            values.</p>
+        </li>
+        <li>
+          <p>History information is lost when the <wintitle>Overview</wintitle> page is no longer
+            displayed.</p>
+        </li>
+      </ul><p>The following information appears:</p><b>Compute vCPU Usage</b>. Presents information
+      about the number of virtual CPUs across the entire cluster, available and allocated to virtual
+      machines, and their average level of utilization. Elements in this chart are as follows:<ul>
+        <li>Y-axis is in units vCPUs. </li>
+        <li>A solid black line tracking the number of available vCPUs. This line settles at a
+          constant value at the top of the chart, unless the number of compute nodes changes over
+          time.</li>
+        <li>Light blue bars indicating the number of allocated vCPUs, that is, the number of vCPUs
+          in use by virtual machines (one in the example). </li>
+        <li>Dark blue bars indicating the average level of utilization of the allocated vCPUs
+          (varies from 30 to 83% in the example), presented as a relative height with respect to the
+          light blue bars.</li>
+      </ul><p><b>Instance CPU Utilization.</b> Presents information about virtual CPU utilization
+        levels on virtual machines, across the entire cluster or for individual instances. Elements
+        in this chart are as follows:</p><ul>
+        <li>Y-axis displays the virtual CPU utilization level, from 0 to 100%.</li>
+        <li>A solid black line tracking the maximum utilization level.</li>
+        <li>Dark blue bars indicating the average utilization level.</li>
+        <li>A gray line tracking the minimum utilization level.</li>
+        <li>A filter drop-down menu to select the virtual machines on which to report utilization
+          levels. The default value for this filter is <codeph>All Instances</codeph>, and therefore
+          it reports the same utilization levels indicated by the dark blue bars in the Compute vCPU
+          Usage chart.</li>
+      </ul><p><b>Compute Memory Usage</b>. Presents information about memory usage levels on the
+        compute nodes across the entire cluster. Elements in this chart are as follows: </p><ul>
+        <li>Y-axis is in units of bytes.</li>
+        <li>A solid black line tracking the available aggregated compute memory. This line usually
+          settles as a constant value at the top of the chart, unless the number of compute nodes
+          changes over time.</li>
+        <li>Dark blue bars indicating the amount of memory allocated to virtual machines (less than
+          1 GB in the example). </li>
+      </ul><p><b>Compute Disk Usage</b>. Presents information about disk usage levels on the compute
+        nodes across the entire cluster. Elements in this chart are as follows:</p><ul>
+        <li>Y-axis is in units of bytes.</li>
+        <li>A solid black line tracking the available aggregated storage capacity. This line usually
+          settles as a constant value at the top of the chart.</li>
+        <li>Dark blue bars indicating the amount of disk space allocated to virtual machines (about
+          1 GB in the example).</li>
+      </ul><p><b>AVS CPU Utilization</b>. Presents information about AVS CPU utilization levels on
+        the compute nodes across the entire cluster. Elements in this chart are as follows: </p><ul>
+        <li>Y-axis displays the AVS CPU utilization level, from 0 to 100%.</li>
+        <li>A solid black line tracking the maximum utilization level.</li>
+        <li>Dark blue bars indicating the average utilization level. </li>
+      </ul><p><b>Provider Network Port Utilization</b>. Presents information about network traffic
+        levels on provider networks across the entire cluster. Elements in this chart are as
+        follows:</p><ul>
+        <li>Y-axis displays the port utilization level, from 0 to 100%.</li>
+        <li>A solid black line tracking the maximum utilization level.</li>
+        <li>Pairs of dark blue and dark green bars indicating the average utilization level, egress
+          and ingress (Tx and Rx) traffic respectively.</li>
+        <li>A gray line tracking the minimum utilization level.</li>
+      </ul><p><b>Usage Summary</b></p><p>See <xref
+          href="CGH-2-User-system-overview-memphis.dita#topic8785">Overview of the
+            <codeph>memphis</codeph>/<codeph>denver</codeph> region</xref></p></section>
+  
+
+
+</body>
+</topic>
