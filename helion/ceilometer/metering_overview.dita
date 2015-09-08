@@ -34,7 +34,7 @@
       metrics are available. Developers interested in monitoring use cases should refer to the <xref
         href="https://wiki.openstack.org/wiki/Monasca" scope="external" format="html">OpenStack
         Monasca service</xref> and the HP Helion-specific <xref
-        href="../monasca/monasca.dita#topic12031">Monasca documentation</xref>.</note>
+        href="../monasca/monasca.dita#monitoring">Monasca documentation</xref>.</note>
     <p>The HP Helion OpenStack Metering service leverages the OpenStack Ceilometer service. A
       metering service takes specified measurements of both physical and virtual resources,
       including physical servers and network devices such as switches and firewalls. No matter what
@@ -60,7 +60,7 @@
         as well as other application and platform services, are targeted for future HP Helion
         OpenStack releases.</p>
     </section>
-    <section id="working-with-ceilometer">
+    <section id="working_with_ceilometer">
       <title>Working with Ceilometer</title>
       <p>All the Ceilometer processes have a unified configuration file that can be found at
           <i>______________</i> on the ____________.</p>
@@ -88,8 +88,8 @@
                 >Logging</xref>
             </li>
             <li>
-              <xref href="metering_troubleshoot.dita#topic1976/qerrors" type="section">Messaging and Queuing
-                Errors</xref>
+              <xref href="metering_troubleshoot.dita#topic1976/qerrors" type="section">Messaging and
+                Queuing Errors</xref>
             </li>
           </ul>
         </li>
@@ -101,20 +101,19 @@
             Notifications from the Nova Service</xref>
         </li>
         <li>
-          <xref href="metering_bestpractice.dita">Best Practices and Performance
-            Optimization</xref>
+          <xref href="metering_bestpractice.dita">Best Practices and Performance Optimization</xref>
           <ul>
             <li>
-              <xref href="metering_bestpractice.dita#topic11470/webserverapi" type="section">Configuring the
-                Web Server for API Performance</xref>
+              <xref href="metering_bestpractice.dita#topic11470/webserverapi" type="section"
+                >Configuring the Web Server for API Performance</xref>
             </li>
             <li>
-              <xref href="metering_bestpractice.dita#topic11470/meterlist" type="section">Modifying the List
-                of Active Meters</xref>
+              <xref href="metering_bestpractice.dita#topic11470/meterlist" type="section">Modifying
+                the List of Active Meters</xref>
             </li>
             <li>
-              <xref href="metering_bestpractice.dita#topic11470/pollinterval" type="section">Modifying Polling
-                Intervals</xref>
+              <xref href="metering_bestpractice.dita#topic11470/pollinterval" type="section"
+                >Modifying Polling Intervals</xref>
             </li>
             <li>
               <xref href="metering_bestpractice.dita#topic11470/swift" type="section">Swift Service

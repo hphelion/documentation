@@ -106,7 +106,7 @@
         can use the Kibana interface to view and analyze the information, as shown in the following
         figure:</p>
       <p>
-        <image href="../images/centralized_logging_diagram.png" placement="break"/>
+        <image href="../../media/centralized_logging_diagram.png" placement="break"/>
       </p>
       <note>The arrows come <b>from</b> the active (requesting) side <b>to</b> the passive
         (listening) side. The active side is always the one providing credentials, so the arrows may

@@ -10,20 +10,28 @@
     <section>
       <title>List of Configuration Files </title>
       <p>The configuration files are as follows:<ul id="ul_vr3_dqw_gt">
-          <li><xref href="#config_files/ring" format="dita">ring.yml</xref></li>
-          <li><xref href="#config_files/baremetalConfig.yml" format="dita"
+          <li><xref href="configuration_files.dita#config_files/ring" type="section"
+            >ring.yml</xref></li>
+          <li><xref href="configuration_files.dita#config_files/baremetalConfig.yml" type="section"
               >baremetalConfig.yml</xref></li>
-          <li><xref href="#config_files/ccpl" format="dita">ccp.yml</xref></li>
-          <li><xref href="#config_files/disk-compute" format="dita">disks_compute.yml</xref></li>
-          <li><xref href="#config_files/disk-controller" format="dita"
-            >disks_controller.yml</xref></li>
-          <li><xref href="#config_files/disk-osd" format="dita">disks_osd.yml</xref></li>
-          <li><xref href="#config_files/interfaces-set" format="dita"
-            >interfaces_set_1.yml</xref></li>
-          <li><xref href="#config_files/network-group" format="dita">network_groups.yml</xref></li>
-          <li><xref href="#config_files/net-global" format="dita">net_global.yml</xref></li>
-          <li><xref href="#config_files/server" format="dita">servers.yml</xref></li>
-          <li><xref href="#config_files/server-role" format="dita">server_roles.yml</xref></li>
+          <li><xref href="configuration_files.dita#config_files/ccp" type="section"
+            >ccp.yml</xref></li>
+          <li><xref href="configuration_files.dita#config_files/disks-compute.yml" type="section"
+              >disks_compute.yml</xref></li>
+          <li><xref href="configuration_files.dita#config_files/disks-controller.yml" type="section"
+              >disks_controller.yml</xref></li>
+          <li><xref href="configuration_files.dita#config_files/disks-osd" type="section"
+              >disks_osd.yml</xref></li>
+          <li><xref href="configuration_files.dita#config_files/interfaces-set" type="section"
+              >interfaces_set_1.yml</xref></li>
+          <li><xref href="configuration_files.dita#config_files/network-group" type="section"
+              >network_groups.yml</xref></li>
+          <li><xref href="configuration_files.dita#config_files/net-global" type="section"
+              >net_global.yml</xref></li>
+          <li><xref href="configuration_files.dita#config_files/servers" type="section"
+              >servers.yml</xref></li>
+          <li><xref href="configuration_files.dita#config_files/servers-role" type="section"
+              >server_roles.yml</xref></li>
         </ul></p>
     </section>
     <section id="ring"
@@ -250,8 +258,8 @@ ring-specifications:
             - <b>ceph-osd</b>
 
 </codeblock></section>
-    <section id="disks-compute"
-        ><b>disks_compute.yml</b><p><!--Copy the <codeph>disk_compute.yml</codeph> file without modification.--></p><p>The
+    <section id="disks-compute">
+      <b>disks_compute.yml</b><p><!--Copy the <codeph>disk_compute.yml</codeph> file without modification.--></p><p>The
         example file is as
         follows:<codeblock>---
   product:
