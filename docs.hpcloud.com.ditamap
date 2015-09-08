@@ -39,7 +39,7 @@
     </topicref>
     <topicref href="helion/eula.dita" toc="no"/>
     <!-- keystone identity -->
-    <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Overview"
+    <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Service"
       locktitle="yes">
       <topicref href="helion/keystone/keystone_roles.dita"
         navtitle="Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
@@ -55,7 +55,7 @@
         locktitle="yes"> </topicref>
     </topicref>
     <!-- Cinder -->
-    <topicref href="helion/cinder/cinder_overview.dita" navtitle="Block Storage Overview"
+    <topicref href="helion/cinder/cinder_overview.dita" navtitle="Block Storage Service"
       locktitle="yes">
       <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
         locktitle="yes">
@@ -68,7 +68,8 @@
         locktitle="yes"/>
     </topicref>
     <!-- Object Storage -->
-    <topicref href="helion/swift/swift_overview.dita" toc="yes">
+    <topicref href="helion/swift/swift_overview.dita" navtitle="Object Storage Service"
+      locktitle="yes">
       <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes"
         navtitle="Modifying the Input Model" locktitle="yes">
         <topicref href="helion/swift/allocating_disk_drives.dita"/>
@@ -82,18 +83,16 @@
         navtitle="Swift Troubleshooting" locktitle="yes"/>
     </topicref>
     <!-- Monasca / Centralized Logging -->
-    <topicref href="helion/monasca/monasca.dita" navtitle="Monitoring Overview" locktitle="yes">
+    <topicref href="helion/monasca/monasca.dita" navtitle="Monitoring Service" locktitle="yes">
       <topicref href="helion/monasca/alarms.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Service Alarm Definitions</navtitle>
         </topicmeta>
       </topicref>
-      <topichead navtitle="Operations Console">
-        <topicref href="helion/monasca/opsconsole/overview.dita" locktitle="yes">
-          <topicmeta>
-            <navtitle>Operations Console Overview</navtitle>
-          </topicmeta>
-        </topicref>
+      <topicref href="helion/monasca/opsconsole/overview.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>Operations Console Overview</navtitle>
+        </topicmeta>
         <topichead navtitle="General">
           <topicref href="helion/monasca/opsconsole/dashboard.dita"/>
           <topicref href="helion/monasca/opsconsole/logging.dita"/>
@@ -113,15 +112,15 @@
         <topichead navtitle="Storage">
           <topicref href="helion/monasca/opsconsole/storage_summary.dita"/>
         </topichead>
-      </topichead>
+      </topicref>
     </topicref>
     <topicref href="helion/logging/centralized_logging.dita" locktitle="yes">
       <topicmeta>
-        <navtitle>Centralized Logging</navtitle>
+        <navtitle>Centralized Logging Service</navtitle>
       </topicmeta>
     </topicref>
     <!-- Neutron -->
-    <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Overview"
+    <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Service"
       locktitle="yes">
       <topicref href="helion/neutron/lbaas.dita" locktitle="yes">
         <topicmeta>
@@ -135,7 +134,7 @@
       </topicref>
     </topicref>
     <!-- reporting = metering = ceilomter -->
-    <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Overview"
+    <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Service"
       locktitle="yes">
       <topicref href="helion/ceilometer/metering_components.dita"
         navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
