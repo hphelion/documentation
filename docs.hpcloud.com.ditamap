@@ -25,8 +25,8 @@
     <topichead navtitle="Installation">
       <topicref href="helion/installation.dita" navtitle="Installing HP Helion OpenStack"
         locktitle="yes"/>
-      <topichead navtitle="Configuration Files">
-        <topicref href="helion/config/entryscalewithvsa.dita"/>
+      <topichead navtitle="Configuration Files" toc="no">
+        <topicref href="helion/config/entryscalewithvsa.dita" toc="no"/>
       </topichead>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
         locktitle="yes"/>
@@ -60,12 +60,12 @@
     </topichead>
     <!-- Cinder -->
     <topichead navtitle="Block Storage">
-      <topichead navtitle="Ceph ">
+      <topichead navtitle="Ceph" toc="no">
         <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
-          locktitle="yes"/>
+          locktitle="yes" toc="no"/>
         <topicref href="helion/cinder/ceph/deploy_ceph.dita" navtitle="Ceph Configuration"
-          locktitle="yes">
-          <topicref href="helion/cinder/ceph/configuration_files.dita"/>
+          locktitle="yes" toc="no">
+          <topicref href="helion/cinder/ceph/configuration_files.dita" toc="no"/>
         </topicref>
       </topichead>
       <topichead navtitle="VSA">
