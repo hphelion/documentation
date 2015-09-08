@@ -10,7 +10,7 @@
 
 
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Using the Project
-        Panel</title>
+        Dashboard</title>
 
 
     <shortdesc>The <uicontrol>Project</uicontrol> menu contains selections for managing the
@@ -33,13 +33,14 @@
 
 
         <section id="section_N10023_N10020_N10001">
-            <p>The <b>Current Tenant</b> is identified at the top of the <wintitle>Information
-                    Pane</wintitle>. Users with membership in more than one tenant can select a
-                different tenant using a drop-down list.</p>
+            <p>The <b>Current Project</b> is identified at the top of the <wintitle>Information
+                    Pane</wintitle>. Users with membership in more than one project can <xref
+                    href="CGH-2-User-region-selector.dita#jow1432757989702">select a different
+                    project using a drop-down list</xref>.</p>
             <p><image href="../../../media/Fig_1_page_18.JPG" id="image_o5t_5cr_ft"/><image
                     href="../../../media/Fig_2_page_18.JPG" id="image_m5w_vcr_ft"/><image
                     href="../../../media/Fig_3_page_18.JPG" id="image_hks_wcr_ft"/></p>
-            <p>The menu is divided into three sections.</p>
+            <p>The dashboard contains the following panels and tabs.</p>
         </section>
 
 

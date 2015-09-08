@@ -11,8 +11,8 @@
         Panel</title>
 
 
-    <shortdesc> The <uicontrol>Admin</uicontrol> menu contains selections for managing tenants
-        (projects), tenant resources, and users. It is available when an
+    <shortdesc> The <uicontrol>Admin</uicontrol> dashboard contains panels for managing projects
+        (tenants), project resources, and users. It is available when an
             <uicontrol>admin</uicontrol> user is logged in.</shortdesc>
 
 
@@ -27,7 +27,7 @@
             </fig>
 
 
-            <p >The menu  contains one section.</p>
+            <p>The dashboard contains the following panels and tabs.</p>
 
 
         </section>

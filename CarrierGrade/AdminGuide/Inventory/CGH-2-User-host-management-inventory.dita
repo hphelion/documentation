@@ -26,17 +26,9 @@
         <p>The maintenance and inventory component of HP Helion OpenStack Carrier Grade allows the
             administrator to install, configure, and manage the hosts of the HP Helion OpenStack
             Carrier Grade cluster. </p>
-        <p>To access the System Inventory page on the web management interface, click the Inventory
+        <p>To access the System Inventory panel, on the Horizon interface, click the Inventory
             option of the Admin tab on the side panel. </p>
-        <ul id="ul_vbx_q12_js">
-            <li>Working with Cluster
-                Systems(/helion/openstack/carrier/admin/host/management/inventory/clusters/) </li>
-            <li>Working with Hosts(/helion/openstack/carrier/admin/host/management/inventory/host/) </li>
-            <li>The Life Cycle of a Host
-                System(/helion/openstack/carrier/admin/host/management/lifecycle/) </li>
-            <li>Working with Hardware
-                Profiles(/helion/openstack/carrier/admin/host/management/inventory/hardware/)</li>
-        </ul>
+        <ul id="ul_vbx_q12_js"/>
        
     </body>
 </topic>

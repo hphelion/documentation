@@ -25,14 +25,14 @@
                 navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
             <topicref href="Dashboard/CGH-2-User-Dashboard-how-works.dita"
                 navtitle="How to Use the Helion Dashboard" locktitle="yes"/>
-            <topicref href="Dashboard/CGH-2-User-region-selector.dita" navtitle="Selecting a Region"
-                locktitle="yes"/>
+            <topicref href="Dashboard/CGH-2-User-region-selector.dita"
+                navtitle="Selecting a Region and Project" locktitle="yes"/>
             <topicref href="Dashboard/CGH-2-User-Dasboard-Project.dita"
-                navtitle=" Helion Dashboard Project Panel" locktitle="yes"/>
+                navtitle=" Helion Dashboard Project Dashboard" locktitle="yes"/>
             <topicref href="Dashboard/CGH-2-User-Dasboard-Admin.dita"
-                navtitle=" Helion Dashboard Admin Panel" locktitle="yes"/>
+                navtitle=" Helion Dashboard Admin Dashboard" locktitle="yes"/>
             <topicref href="Dashboard/CGH-2-User-Dasboard-Identity.dita"
-                navtitle=" Helion Dashboard Identity Panel" locktitle="yes"/>
+                navtitle=" Helion Dashboard Identity Dashboard" locktitle="yes"/>
         </topicref>
         <!-- 
         <topicref href="jow1404333731418.xml">

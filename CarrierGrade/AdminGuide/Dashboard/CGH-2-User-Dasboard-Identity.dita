@@ -10,12 +10,12 @@
 
 
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Using the Identity
-        Panel</title>
+        Dashboard</title>
 
 
-    <shortdesc> The <uicontrol>Identity</uicontrol> menu contains selections for managing tenants
-        (projects) and users. It is available when an <uicontrol>admin</uicontrol> user is logged
-        in.</shortdesc>
+    <shortdesc> The <uicontrol>Identity</uicontrol> dashboard contains selections for managing
+        projects (tenants) and users. It is available when an <uicontrol>admin</uicontrol> user is
+        logged in.</shortdesc>
 
 
     <prolog>
@@ -37,7 +37,7 @@
             <fig id="fig_N1002B_N10027_N10024_N10001">
                 <image href="../../../media/Fig_1_page_20.JPG" id="image_xfj_cfr_ft"/>
             </fig>
-            <p>The menu contains one section.</p>
+            <p>The dashboard contains the following panels and tabs.</p>
         </section>
 
 
