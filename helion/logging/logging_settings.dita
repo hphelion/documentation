@@ -26,7 +26,7 @@
           </thead>
           <tbody>
             <row>
-              <entry><p>Heat</p></entry>
+              <entry><p>heat-engine</p></entry>
               <entry><p>Control</p></entry>
               <entry>
                 <p>/var/log/heat/heat-engine.log</p>
@@ -49,8 +49,8 @@
               </entry>
             </row>
             <row>
-              <entry>Ceilometer</entry>
-              <entry>Control</entry>
+              <entry><p>Ceilometer</p></entry>
+              <entry><p>Control</p></entry>
               <entry>
                 <p>/var/log/ceilometer/ceilometer.log</p>
                 <p>/var/log/ceilometer/ceilometer-json.log</p>
@@ -90,116 +90,251 @@
               </entry>
             </row>
             <row>
-              <entry>Horizon</entry>
-              <entry>Control</entry>
+              <entry><p>Horizon</p></entry>
+              <entry><p>Control</p></entry>
               <entry>
                 <p>/var/log/horizon/horizon_access.log</p>
                 <p>/var/log/horizon/horizon_error.log</p>
                 <p>/var/log/horizon/horizon-json.log</p>
               </entry>
-              <entry>Daily</entry>
-              <entry/>
-              <entry/>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/horizon/horizon-json.log</p>
+              </entry>
+            </row>
+            <row>
+              <entry><p>Keepalived</p></entry>
+              <entry><p>Control</p></entry>
+              <entry><p>/var/log/keepalived/keepalived.log</p></entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
               <entry/>
             </row>
             <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry><p>Nova</p></entry>
+              <entry><p>Control, Resource</p></entry>
+              <entry>
+                <p>/var/log/nova/nova-api.log</p>
+                <p>/var/log/nova/nova-api-json.log</p>
+                <p>/var/log/nova/nova-compute.log</p>
+                <p>/var/log/nova/nova-compute-json.log</p>
+                <p>/var/log/nova/nova-cert.log</p>
+                <p>/var/log/nova/nova-cert-json.log</p>
+                <p>/var/log/nova/nova-consoleauth.log</p>
+                <p>/var/log/nova/nova-consoleauth-json.log</p>
+                <p>/var/log/nova/nova-conductor.log</p>
+                <p>/var/log/nova/nova-conductor-json.log</p>
+                <p>/var/log/nova/nova-scheduler.log</p>
+                <p>/var/log/nova/nova-scheduler-json.log</p>
+                <p>/var/log/nova/nova-novncproxy.log</p>
+                <p>/var/log/nova/nova-novncproxy-json.log</p>
+                <p>/var/log/nova/nova-baremetal-deploy-helper.log</p>
+                <p>/var/log/nova/nova-baremetal-deploy-helper-json.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/nova/nova-api-json.log</p>
+                <p>/var/log/nova/nova-compute-json.log</p>
+                <p>/var/log/nova/nova-cert-json.log</p>
+                <p>/var/log/nova/nova-consoleauth-json.log</p>
+                <p>/var/log/nova/nova-conductor-json.log</p>
+                <p>/var/log/nova/nova-scheduler-json.log</p>
+                <p>/var/log/nova/nova-novncproxy-json.log</p>
+                <p>/var/log/nova/nova-baremetal-deploy-helper-json.log</p>
+              </entry>
+            </row>
+            <row>
+              <entry><p>Keystone</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/keystone/keystone.log</p>
+                <p>/var/log/keystone/keystone-json.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/keystone/keystone-json.log</p>
+              </entry>
               <entry/>
             </row>
             <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry><p>rsyslog</p></entry>
+              <entry><p>Control, Resource</p></entry>
+              <entry>
+                <p>/var/log/syslog</p>
+                <p>/var/log/os-collect-config.log</p>
+                <p>/var/log/mail.info</p>
+                <p>/var/log/mail.warn</p>
+                <p>/var/log/mail.err</p>
+                <p>/var/log/mail.log</p>
+                <p>/var/log/daemon.log</p>
+                <p>/var/log/kern.log</p>
+                <p>/var/log/auth.log</p>
+                <p>/var/log/user.log</p>
+                <p>/var/log/lpr.log</p>
+                <p>/var/log/cron.log</p>
+                <p>/var/log/debug</p>
+                <p>/var/log/messages</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/syslog</p>
+                <p>/var/log/os-collect-config.log</p>
+                <p>/var/log/mail.info</p>
+                <p>/var/log/mail.warn</p>
+                <p>/var/log/mail.err</p>
+                <p>/var/log/mail.log</p>
+                <p>/var/log/daemon.log</p>
+                <p>/var/log/kern.log</p>
+                <p>/var/log/auth.log</p>
+                <p>/var/log/user.log</p>
+                <p>/var/log/lpr.log</p>
+                <p>/var/log/cron.log</p>
+                <p>/var/log/debug</p>
+                <p>/var/log/messages</p>
+              </entry>
+            </row>
+            <row>
+              <entry><p>MySQL</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/mysql/*.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
               <entry/>
             </row>
             <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry><p>Cinder</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/cinder/cinder-api.log</p>
+                <p>/var/log/cinder/cinder-api-json.log</p>
+                <p>/var/log/cinder/cinder-backup.log</p>
+                <p>/var/log/cinder/cinder-backup-json.log</p>
+                <p>/var/log/cinder/cinder-scheduler.log</p>
+                <p>/var/log/cinder/cinder-scheduler-json.log</p>
+                <p>/var/log/cinder/cinder-volume.log</p>
+                <p>/var/log/cinder/cinder-volume-json.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/cinder/cinder-api-json.log</p>
+                <p>/var/log/cinder/cinder-backup-json.log</p>
+                <p>/var/log/cinder/cinder-scheduler-json.log</p>
+                <p>/var/log/cinder/cinder-volume-json.log</p>
+              </entry>
             </row>
             <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry><p>Glance</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/glance/api.log</p>
+                <p>/var/log/glance/registry.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>1G</p></entry>
+              <entry><p>14</p></entry>
+              <entry>
+                <p>/var/log/glance/glance-api-json.log</p>
+                <p>/var/log/glance/glance-registry-json.log</p>
+              </entry>
             </row>
             <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry><p>Swift</p></entry>
+              <entry><p>Control, Resource</p></entry>
+              <entry>
+                <p>/var/log/swift/swift.log</p>
+                <p>/var/log/swift/swift-json.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/swift/swift-json.log</p>
+              </entry>
             </row>
             <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry><p>heat-api</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/heat/heat-api.log</p>
+                <p>/var/log/heat/heat-api-json.log</p>
+                <p>/var/log/heat/heat-api-cfn.log</p>
+                <p>/var/log/heat/heat-api-cfn-json.log</p>
+                <p>/var/log/heat/heat-api-cloudwatch.log</p>
+                <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/heat/heat-api-json.log</p>
+                <p>/var/log/heat/heat-api-cfn-json.log</p>
+                <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
+              </entry>
             </row>
             <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry><p>Neutron</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/neutron/neutron-server.log</p>
+                <p>/var/log/neutron/neutron-server-json.log</p>
+                <p>/var/log/neutron/neutron-dhcp-agent.log</p>
+                <p>/var/log/neutron/neutron-dhcp-agent-json.log</p>
+                <p>/var/log/neutron/neutron-l3-agent.log</p>
+                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
+                <p>/var/log/neutron/neutron-openvswitch-agent.log</p>
+                <p>/var/log/neutron/neutron-openvswitch-agent-json.log</p>
+                <p>/var/log/neutron/neutron-metadata-agent.log</p>
+                <p>/var/log/neutron/neutron-metadata-agent-json.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/neutron/neutron-server-json.log</p>
+                <p>/var/log/neutron/neutron-dhcp-agent-json.log</p>
+                <p>/var/log/neutron/neutron-openvswitch-agent-json.log</p>
+                <p>/var/log/neutron/neutron-metadata-agent-json.log</p>
+                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
+              </entry>
             </row>
             <row>
+              <entry><p>Monasca</p></entry>
+              <entry><p>Control, Resource</p></entry>
               <entry/>
               <entry/>
               <entry/>
               <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry>
+                <p>/var/log/monasca/notification/notification.log</p>
+                <p>/var/log/monasca/agent/collector.log</p>
+                <p>/var/log/monasca/agent/forwarder.log</p>
+                <p>/var/log/monasca/agent/statsd.log</p>
+                <p>/var/log/monasca/agent/supervisord.log</p>
+                <p>/var/log/monasca/api/monasca-api.log</p>
+                <p>/var/log/monasca/persister/monasca-persister.log</p>
+                <p>/var/log/kafka/controller.log</p>
+                <p>/var/log/kafka/server/log</p>
+                <p>/var/log/zookeeper/zookeeper.log</p>
+                <p>/var/log/storm/nimbus.log</p>
+                <p>/var/log/storm/supervisor.log</p>
+                <p>/var/log/storm/worker*.log</p>
+                <p>/var/log/influxdb/influxd.log</p>
+                <p>/opt/vertica/log/adminTools-dbadmin.log</p>
+              </entry>
             </row>
             <row>
               <entry/>
