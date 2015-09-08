@@ -4,17 +4,16 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Block Storage Overview</title>
   <body>
     <section id="about"><title>About Block Storage</title>
-      <p>Helion OpenStack 2.0 supports the following storage backends for Volume, Backup, and Zoning
-        Configuration:</p>
+      <p>Helion OpenStack 2.0 supports the following storage backends for Block Storage Volumes and Backup Datastore Configuration:</p>
       <ul>
         <li>Volumes <ul>
-            <li>VSA</li>
+            <li><xref href="vsa/vsa.dita">VSA</xref></li>
             <li>3PAR FC</li>
             <li>3PAR iSCSI</li>
             <!--  
             <li>VMDK</li>
-            <li>Ceph</li>
             -->
+            <li><xref href="ceph/ceph_overview.dita">Ceph</xref></li>
           </ul></li>
         <li>Backup <ul>
             <li>Swift</li>
@@ -27,25 +26,5 @@
          -->
       </ul>
     </section>
-    <section id="volume_vsa"><title>How to Configure VSA as a Storage Backend</title>
-    </section>
-    <section id="volume_3parfc"><title>How to Configure 3PAR FC as a Storage Backend</title>
-    </section>
-    <section id="volume_3pariscsi"><title>How to Configure 3PAR iSCSI as a Storage Backend</title>
-    </section>
-    <!--
-    <section id="volume_vmdk"><title>How to Configure VMDK as a Storage Backend</title>
-    </section>
-    <section id="volume_ceph"><title>How to Configure Ceph as a Storage Backend</title>
-    </section>
-    -->
-    <section id="backup_swift"><title>How to Configure Swift as a Cinder Backup Datastore</title>
-    </section>
-    <section id="backup_ceph"><title>How to Configure Ceph as a Cinder Backup Datastore</title>
-    </section>
-    <!--
-    <section id="brocade"><title>How to Configure Brocade Zone Manager as a zoning driver</title>
-    </section>
-    -->
   </body>
 </topic>
