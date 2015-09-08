@@ -33,7 +33,7 @@
         locktitle="yes" toc="yes"/>
     </topicref>
     <!-- BURA -->
-    <topicref href="helion/bura/bura_overview.dita" navtitle="Backup and Restore">
+    <topicref href="helion/bura/bura_overview.dita" navtitle="Backup and Restore" locktitle="yes">
       <topicref href="helion/bura/backup.dita"/>
       <topicref href="helion/bura/restore.dita"/>
     </topicref>
@@ -56,23 +56,18 @@
         locktitle="yes"> </topicref>
     </topichead>
     <!-- Cinder -->
-    <topichead navtitle="Block Storage">
-      <topicref href="helion/cinder/cinder_overview.dita" navtitle="Block Storage Overview"
-        locktitle="yes"/>
-      <topichead navtitle="Ceph ">
-        <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
-          locktitle="yes"/>
+    <topicref href="helion/cinder/cinder_overview.dita" navtitle="Block Storage Overview"
+      locktitle="yes">
+      <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
+        locktitle="yes">
         <topicref href="helion/cinder/ceph/ceph_install.dita" navtitle="Ceph Installation"/>
         <topicref href="helion/cinder/ceph/deploy_ceph.dita"
-          navtitle="Ceph Installation and Configuration" locktitle="yes">
-          <topicref href="helion/cinder/ceph/configuration_files.dita"/>
-        </topicref>
-      </topichead>
-      <topichead navtitle="VSA">
-        <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration"
-          locktitle="yes"/>
-      </topichead>
-    </topichead>
+          navtitle="Ceph Installation and Configuration" locktitle="yes"/>
+        <topicref href="helion/cinder/ceph/configuration_files.dita"/>
+      </topicref>
+      <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration"
+        locktitle="yes"/>
+    </topicref>
     <!-- Object Storage -->
     <topichead navtitle="Object Storage" toc="yes">
       <topicref href="helion/swift/swift_overview.dita" toc="yes"/>
@@ -89,12 +84,7 @@
         navtitle="Swift Troubleshooting" locktitle="yes"/>
     </topichead>
     <!-- Monasca / Centralized Logging -->
-    <topichead navtitle="Monitoring">
-      <topicref href="helion/monasca/monasca.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Monitoring Overview</navtitle>
-        </topicmeta>
-      </topicref>
+    <topicref href="helion/monasca/monasca.dita" navtitle="Monitoring Overview" locktitle="yes">
       <topicref href="helion/monasca/alarms.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Service Alarm Definitions</navtitle>
@@ -126,7 +116,7 @@
           <topicref href="helion/monasca/opsconsole/storage_summary.dita"/>
         </topichead>
       </topichead>
-    </topichead>
+    </topicref>
     <topicref href="helion/logging/centralized_logging.dita" locktitle="yes">
       <topicmeta>
         <navtitle>Centralized Logging</navtitle>
