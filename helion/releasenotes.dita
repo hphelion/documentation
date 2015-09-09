@@ -235,7 +235,7 @@
       </ul>-->
       <p><b>Cinder Limitations</b></p>
       <ul>
-        <li>Ceph and 3Par storage is not supported in Beta 1</li>
+        <li>3Par storage is not supported in Beta 1</li>
       </ul>
     </section>
     <section id="troubleshooting"><title>Troubleshooting</title>
