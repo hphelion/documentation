@@ -6,23 +6,23 @@
     <p>This page describes the configuration of Swift services with the various types of input
       models supported in this release. </p>
     <section><title>Types of Input Model(s)</title>
-      <ul><li><b> Entry-scale-with-vsa</b>: This has a single control plane cluster which runs all services
-          (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova compute
-          servers. </li><li><p><b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref>
-            </b>: This example model describes a system using multiple servers and networks. It
-            provides an example for the configuration of the mid sized cloud. You must use this
+      <ul><li><b>
+            <xref href="#modify-input-model/entry-scale-with-vsa" format="dita"
+              >Entry-scale-with-vsa</xref></b>: This has a single control plane cluster which runs
+          all services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova
+          compute servers. </li><li><p><b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref>
+            </b>: This example cloud model describes a system using multiple servers and networks.
+            It provides an example for the configuration of the mid sized cloud. You must use this
             example model as the basis for building a cloud model for your actual cloud by
             configuring the server and network that you plan to deploy. To deploy Swift using this
             model you must make Swift -specific changes to the provided example.</p></li></ul></section>
     <section id="entry-scale-with-vsa">
       <title>Entry-scale-with-vsa</title>
-      <p/>
       <p>The <codeph>entry-scale-with-vsa</codeph> input model is relatively simple and constrained.
         Ensure that the disk drives exists and are correctly assigned to Swift nodes. Therefore, no
         Swift-specific modification is required for this model before implementing it.</p>
-      <p><!--you need not modify this model for any Swift-related changes before implementing it. You are expected to use the mid-size cloud example model as the basis for building a cloud model for your actual cloud – using the servers and networks you plan to deploy.--></p>
       <p>Before starting the deployment, you must validate, and possibly update the data in the
-        cloud model files as follows:<ul>
+        example cloud model files as follows:<ul>
           <li>Examine the <codeph>data/disks_controller.yml</codeph> file and validate that the
             drives exist and have the appropriate preconditions as described in <xref
               href="allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"

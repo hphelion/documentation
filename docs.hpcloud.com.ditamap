@@ -59,9 +59,8 @@
       locktitle="yes">
       <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
         locktitle="yes">
-        <topicref href="helion/cinder/ceph/ceph_install.dita" navtitle="Ceph Installation"/>
-        <topicref href="helion/cinder/ceph/deploy_ceph.dita"
-          navtitle="Ceph Installation and Configuration" locktitle="yes"/>
+        <topicref href="helion/cinder/ceph/deploy_ceph.dita" navtitle="Ceph Configuration"
+          locktitle="yes"/>
         <topicref href="helion/cinder/ceph/configuration_files.dita"/>
       </topicref>
       <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration"
@@ -71,14 +70,14 @@
     <topicref href="helion/swift/swift_overview.dita" navtitle="Object Storage Service"
       locktitle="yes">
       <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes"
-        navtitle="Modifying the Input Model" locktitle="yes">
+        navtitle="Modify the Example Cloud Model" locktitle="yes">
         <topicref href="helion/swift/allocating_disk_drives.dita"/>
         <topicref href="helion/swift/ring_specifications.dita"/>
       </topicref>
       <topicref href="helion/swift/label_on_partition.dita" toc="yes"
-        navtitle="Verifying the Partition Label" locktitle="yes"/>
+        navtitle="Verify the Partition Label" locktitle="yes"/>
       <topicref href="helion/swift/filesystem_label.dita" toc="yes"
-        navtitle="Verifying the Filesystem Label" locktitle="yes"/>
+        navtitle="Verify the Filesystem Label" locktitle="yes"/>
       <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"
         navtitle="Swift Troubleshooting" locktitle="yes"/>
     </topicref>
