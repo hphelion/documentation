@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_r1s_4d4_ht">
+  <title>Entry Scale Model with VSA Installation Checklist</title>
+  <body>
+    <section id="bios"><title>BIOS and iLO Settings</title>
+      <p>Ensure that the following BIOS and iLO settings are applied to each baremetal server, with
+        the exception of the Deployer.</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_ckx_rd4_ht">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="25pt"/>
+            <colspec colname="c2" colnum="2" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>&#9744;</entry>
+                <entry>Item</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>Setup the iLO Advanced license in the iLO configuration</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>Switch from UEFI to Legacy BIOS</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>Ensure that the NIC port to be used for PXE insatllation has PXE
+                  enabled</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>Ensure that all other NIC ports have PXE disabled</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>Ensure all hardware in the server not directly used by Helion is
+                  disabled</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>Disable SR-IOV in the NIC BIOS</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    <section id="deployer"><title>Deployer</title>
+      <p>This server contains the Helion OpenStack installer, which is based on Git, Ansible, and
+        Cobbler.</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_d2v_mk4_ht">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1" colwidth="25pt"/>
+            <colspec colname="c2" colnum="2" colwidth="600pt"/>
+            <colspec colname="c3" colnum="3" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>&#9744;</entry>
+                <entry>Item</entry>
+                <entry>Value</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>Disk Requirement: Single 8GB disk needed per the <xref href="hardware.dita"
+                    >Minimum Hardware Requirements</xref></entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry><xref href="bare_installation_kvm.dita#install_kvm/DeployerInstall">Set up
+                    the Deployer using the hLinux ISO</xref></entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Ensure your local DNS nameserver is placed into your /etc/resolv.conf
+                  file</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Install NTP</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Ensure your NTP server is placed into your /etc/ntp.conf file</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    <section id="control_plane"><title>Control Plane</title>
+      <p>The Control Plane consists of three servers, in a highly available cluster, that host the
+        core Helion OpenStack services including Nova, Keystone, Glance, Cinder, Heat, Neutron,
+        Swift, Ceilometer, and Horizon. Additional services include mysql, ip-cluster, apache2,
+        rabbitmq, memcached, zookeeper, kafka, influxDB, storm, monasca, logging, and cmc.</p>
+      <p><b>Control Plane 1</b></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="cp_1">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1" colwidth="25pt"/>
+            <colspec colname="c2" colnum="2" colwidth="600pt"/>
+            <colspec colname="c3" colnum="3" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>&#9744;</entry>
+                <entry>Item</entry>
+                <entry>Value</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>Disk Requirement: 3x 512 GB disks (or enough space to create three logical
+                  drives with that amount of space)</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>MAC address of first NIC</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>A second NIC, or a set of bonded NICs are required</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>iLO IP address</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>iLO Username/Password</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p><b>Control Plane 2</b></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="cp_2">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1" colwidth="25pt"/>
+            <colspec colname="c2" colnum="2" colwidth="600pt"/>
+            <colspec colname="c3" colnum="3" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>&#9744;</entry>
+                <entry>Item</entry>
+                <entry>Value</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>Disk Requirement: 3x 512 GB disks (or enough space to create three logical
+                  drives with that amount of space)</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>MAC address of first NIC</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>A second NIC, or a set of bonded NICs are required</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>iLO IP address</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>iLO Username/Password</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p><b>Control Plane 3</b></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="cp_3">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1" colwidth="25pt"/>
+            <colspec colname="c2" colnum="2" colwidth="600pt"/>
+            <colspec colname="c3" colnum="3" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>&#9744;</entry>
+                <entry>Item</entry>
+                <entry>Value</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>Disk Requirement: 3x 512 GB disks (or enough space to create three logical
+                  drives with that amount of space)</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>MAC address of first NIC</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>A second NIC, or a set of bonded NICs are required</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>iLO IP address</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>iLO Username/Password</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    <section id="compute"><title>Compute Hosts</title>
+    <p>One or more KVM Compute servers will be used as the compute host targets for instances.</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_m3w_32p_ht">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="25pt"/>
+            <colspec colname="c2" colnum="2" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>&#9744;</entry>
+                <entry>Item</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>Disk Requirement: 2x 512 GB disks (or enough space to create three logical
+                  drives with that amount of space)</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>A NIC for PXE boot and a second NIC, or a NIC for PXE ad a set of bonded NICs
+                  are required</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Table to record your Compute host details:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_odl_z2p_ht">
+          <tgroup cols="5">
+            <colspec colname="c1" colnum="1" colwidth="75pt"/>
+            <colspec colname="c2" colnum="2" colwidth="75pt"/>
+            <colspec colname="c3" colnum="3" colwidth="75pt"/>
+            <colspec colname="c4" colnum="4" colwidth="75pt"/>
+            <colspec colname="c5" colnum="5" colwidth="75pt"/>
+            <thead>
+              <row>
+                <entry>ID</entry>
+                <entry>NIC MAC Address</entry>
+                <entry>iLO Username/Password</entry>
+                <entry>iLO IP Address</entry>
+                <entry>CPU/Mem/Disk</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    <section id="vsa"><title>VSA Hosts</title>
+    <p>One or more servers with local disk volumes running HP StoreVirtual VSA to provide Cinder block storage resources.</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="vsa_reqs">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="25pt"/>
+            <colspec colname="c2" colnum="2" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>&#9744;</entry>
+                <entry>Item</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>Disk Requirement: 3x 512 GB disks (or enough space to create three logical
+                  drives with that amount of space)</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>A NIC for PXE boot and a second NIC, or a NIC for PXE ad a set of bonded NICs
+                  are required</entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Table to record your VSA host details:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="vsa_loc">
+          <tgroup cols="6">
+            <colspec colname="c1" colnum="1" colwidth="75pt"/>
+            <colspec colname="c2" colnum="2" colwidth="75pt"/>
+            <colspec colname="c3" colnum="3" colwidth="75pt"/>
+            <colspec colname="c4" colnum="4" colwidth="75pt"/>
+            <colspec colname="c5" colnum="5" colwidth="75pt"/>
+            <colspec colname="newCol6" colnum="6" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>ID</entry>
+                <entry>NIC MAC Address</entry>
+                <entry>iLO Username/Password</entry>
+                <entry>iLO IP Address</entry>
+                <entry>CPU/Mem/Disk</entry>
+                <entry>VSA Data Volume</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+  </body>
+</topic>
