@@ -11,10 +11,10 @@
         stable storage solution for the management of Helion OpenStack Volume Storage (Cinder
         persistent Volumes) service. The solution also supports user backup to the Object Storage
         (Swift) API service writing to the same unified Ceph storage platform.
-        </p><p><!--Based on <tm tmtype="reg">OpenStack</tm> Ceph, HP Helion <tm tmtype="reg">OpenStack</tm>2.0 Ceph Storage Solution provides an unified scaleable and stable storage solution for the management of Helion OpenStack Volume Storage (Cinder persistent Volumes) service. &lt;<b>didnot understand this line-please clarify</b>><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>The solution also supports user backup to the Object Storage (Swift) API service writing to the same unified Ceph storage platform.<?oxy_custom_end?>This release supports Ceph Firefly 0.80.7 version, which runs on the hlinux kernel 3.14.44-1.--></p>
-      The installation, configuration, and integration between HP Helion OpenStack: 2.0 and Ceph
-      Firefly 0.80.7 running on the hlinux kernel 3.14.44-1 is detailed in <xref
-        href="deploy_ceph.dita#topic_jrc_5lz_ft"/>
+        </p><p><!--Based on <tm tmtype="reg">OpenStack</tm> Ceph, HP Helion <tm tmtype="reg">OpenStack</tm>2.0 Ceph Storage Solution provides an unified scaleable and stable storage solution for the management of Helion OpenStack Volume Storage (Cinder persistent Volumes) service. &lt;<b>didnot understand this line-please clarify</b>><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>The solution also supports user backup to the Object Storage (Swift) API service writing to the same unified Ceph storage platform.<?oxy_custom_end?>This release supports Ceph Firefly 0.80.7 version, which runs on the hlinux kernel 3.14.44-1.--></p>The
+      installation, configuration, and integration between HP Helion OpenStack: 2.0 and Ceph Firefly
+      0.80.7 running on the hlinux kernel 3.14.44-1 is detailed in <xref
+        href="deploy_ceph.dita#topic_jrc_5lz_ft">Ceph Configuration</xref>
         page.<p><!--In addition, HP Helion OpenStack2.0 introduces the concept of example cloud models. This model allows the user to provide the configuration details, based on hardware requirment, to build a ceph storage system. --></p></section>
   </body>
 </topic>
