@@ -4,13 +4,13 @@
 <topic xml:lang="en-us" id="logging">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Centralized Logging</title>
   <body>
-    <p>Because a typical HP Helion OpenStack cloud consists of multiple servers, locating a specific
-      log from a specific server can be difficult.</p>
-    <p>The HP Helion OpenStack Centralized Logging feature collects logs on a central system, rather
-      than leaving the logs scattered across the network. The administrator can use a single Kibana
-      interface to view log information in charts, graphs, tables, histograms, and other forms.</p>
-    <p>Centralized logging helps the administrator triage and troubleshoot the distributed HP Helion
-      OpenStack cloud deployment from a single location.</p>
+    <p>A typical HP Helion OpenStack cloud consists of multiple servers which makes locating a
+      specific log from a specific server difficult. The HP Helion OpenStack Centralized Logging
+      feature helps the administrator triage and troubleshoot the distributed HP Helion OpenStack
+      cloud deployment from a single location.</p>
+    <p>The Centralized Logging feature collects logs on a central system, rather than leaving the
+      logs scattered across the network. The administrator can use a single Kibana interface to view
+      log information in charts, graphs, tables, histograms, and other forms.</p>
     <p>In addition to each of the HP Helion services, Centralized Logging also processes logs for
       the following HP Helion OpenStack features:</p>
     <ul>
@@ -87,7 +87,7 @@
         </li>
         <li>
           <p>
-            <b>Elasticsearch</b> is data store offering fast indexing and querying.</p>
+            <b>Elasticsearch</b> is a data store offering fast indexing and querying.</p>
         </li>
         <li>
           <p>
