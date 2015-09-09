@@ -73,26 +73,18 @@
           transparent delivery of secure compliant services for the hybrid cloud. </stentry>
       </strow>
       <strow>
-        <stentry>
-          <xref href="codar-landing-page.dita">HP Codar </xref>
+        <stentry><xref href="codar-landing-page.dita">HP Codar </xref>
         </stentry>
         <stentry>A continuous delivery solution that provides automated deployment and release
           management of complex multi-tier applications across the application lifecycle. </stentry>
       </strow>
       <strow>
         <stentry>
-          <xref href="cloudsystem.landingpage.dita">HP CloudSystem Foundation</xref>
-        </stentry>
+          <xref href="cloudsystem/cloudsystem.landingpage.dita">HP Helion CloudSystem</xref></stentry>
         <stentry>Integrates hardware and software to deliver core Infrastructure as a Service
-          provisioning and lifecycle management of compute, network and storage resources.
-        </stentry>
-      </strow>
-      <strow>
-        <stentry>
-          <xref href="cloudsystem.landingpage.dita">HP CloudSystem Enterprise</xref>
-        </stentry>
-        <stentry>Expands on CloudSystem Foundation to integrate servers, storage, networking,
-          security, and management to automate the lifecycle for hybrid service delivery. </stentry>
+          provisioning and lifecycle management of compute, network and storage resources. Integrate
+          servers, storage, networking, security, and management to automate the lifecycle for
+          hybrid service delivery. </stentry>
       </strow>
       <strow>
         <stentry>

@@ -1882,8 +1882,12 @@
 
   <topicref href="automation/csa.index.dita"/>
   <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
-  <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
-  <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
+  <topicref href="cloudsystem/cloudsystem.landingpage.dita" navtitle="HP Helion CloudSystem"
+    locktitle="yes">
+    <topicref href="cloudsystem/eula.dita" navtitle="Software License Terms" locktitle="yes"/>
+    <topicref href="cloudsystem/thirdparty.licensing.dita"
+      navtitle="Open-Source and Third-Party Licensing" locktitle="yes"/>
+  </topicref>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
 
 </map>
