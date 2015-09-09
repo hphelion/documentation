@@ -153,6 +153,10 @@
           cluster.</li>
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
       </ul>
+      <p>If Vertica fails to start after a system reboot</p>
+      <p>The issue is that the max number of files is set too low and on startup a test for Vertica
+        fails. To resolve this issue run the command below and then restart Vertica:
+        <codeblock>echo 65536 > /proc/sys/fs/file-max</codeblock></p>
       <p><b>Operations Console (Ops Console)</b></p>
       <p>The Operations Console is available on port 9095 on the Control Plane IP. There are some
         limitations to note and they are listed below by menu option in the console:</p>
@@ -231,7 +235,7 @@
       </ul>-->
       <p><b>Cinder Limitations</b></p>
       <ul>
-        <li>Ceph and 3Par storage is not supported in Beta 1</li>
+        <li>3Par storage is not supported in Beta 1</li>
       </ul>
     </section>
     <section id="troubleshooting"><title>Troubleshooting</title>

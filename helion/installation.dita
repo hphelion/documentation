@@ -93,6 +93,8 @@ helion/hos/                    Directory contains files used by the installer
     </section>
     <section id="Configuration">
       <title>Configure Your Environment</title>
+      <note>There are changes to the configuration files from Beta 0 so ensure you use the example
+        files included with the Beta 1 setup.</note>
       <ol>
         <li>Setup your configuration files, as follows: <ol>
             <li>See the sample set of configuration files in the
@@ -220,14 +222,12 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
       <p>Without a valid backend for your Block Storage (Cinder) implementation it will not be
         usable. These documents will assist you in installing and configuring VSA, which is the
         currently supported backend solution for Beta 1.</p>
-      <!--
       <b>Ceph</b>
       <ul>
         <li><xref href="cinder/ceph/ceph_overview.dita">Ceph Overview</xref></li>
-        <li><xref href="cinder/ceph/ceph_install.dita">Ceph Installation and
+        <li><xref href="cinder/ceph/deploy_ceph.dita">Ceph Installation and
           Configuration</xref></li>
       </ul>
-      -->
       <b>VSA</b>
       <ul>
         <li><xref href="cinder/vsa.dita">VSA Installation and Configuration</xref></li>
