@@ -32,7 +32,6 @@
         locktitle="yes"/>
       <topicref href="helion/esx/deploy_esx_cloud.dita" navtitle="Deploying ESX Cloud"
         locktitle="yes" toc="yes"/>
-
     </topichead>
     <!-- BURA -->
     <topichead navtitle="Backup and Restore">
@@ -62,10 +61,10 @@
     <topichead navtitle="Block Storage">
       <topichead navtitle="Ceph" toc="no">
         <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
-          locktitle="yes" toc="no"/>
+          locktitle="yes"/>
         <topicref href="helion/cinder/ceph/deploy_ceph.dita" navtitle="Ceph Configuration"
-          locktitle="yes" toc="no">
-          <topicref href="helion/cinder/ceph/configuration_files.dita" toc="no"/>
+          locktitle="yes">
+          <topicref href="helion/cinder/ceph/configuration_files.dita"/>
         </topicref>
       </topichead>
       <topichead navtitle="VSA">
