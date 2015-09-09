@@ -62,10 +62,9 @@
       <topichead navtitle="Ceph">
         <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
           locktitle="yes"/>
-        <topicref href="helion/cinder/ceph/deploy_ceph.dita" navtitle="Ceph Installation and Configuration"
-          locktitle="yes">
-          <topicref href="helion/cinder/ceph/configuration_files.dita"/>
-        </topicref>
+        <topicref href="helion/cinder/ceph/ceph_deploy.dita"
+          navtitle="Ceph Installation and Configuration" locktitle="yes"/>
+        <topicref href="helion/cinder/ceph/configuration_files.dita"/>
       </topichead>
       <topichead navtitle="VSA">
         <topicref href="helion/cinder/vsa.dita" navtitle="Installing VSA" locktitle="yes"/>
