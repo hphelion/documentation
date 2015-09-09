@@ -8,6 +8,8 @@
             >Interpreting _swift-validate-input-model.yml Errors</xref></li>
         <li><xref href="#topic_sl2_nht_dt/deploy-fails" format="dita">Deploy fails with: msdos disks
             labels do not support partition names</xref></li>
+        <li><xref href="#topic_sl2_nht_dt/swift-ring-failure" format="dita">Ansible playbook fails
+            in swiftlm-ring-supervisor | build-rings</xref></li>
       </ul></p>
     <section id="interpreting-swift-validate-input-model">
       <title>Interpreting _swift-validate-input-model.yml Errors</title>
@@ -17,12 +19,13 @@
         id="ol_szd_tht_dt">
         <li>Log onto the first node in the system that is running the swift-proxy-server process.
             <note> You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as
-            mentioned in step <b>2</b> in <xref
-              href="../installation.dita#topic_flx_j2b_ws/CloudDeploy"/> or run the
-              <codeph>hlm-deploy.yml</codeph> playbook as described in step <b>4</b> in <xref
-              href="../installation.dita#topic_flx_j2b_ws/CloudDeploy"/> otherwise the files needed
-            to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node.
-          </note></li>
+            mentioned in step <b>1</b> in <b> </b><xref
+              href="../installation.dita#topic_flx_j2b_ws/validate_swift">Validate Object
+              Storage</xref> or run the <codeph>hlm-deploy.yml</codeph> playbook as described in
+            step <b>2 c</b> in <xref
+              href="../installation.dita#topic_flx_j2b_ws/run-config-processor"/>otherwise the files
+            needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the
+            node. </note></li>
         <li>Execute the following
             command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report </codeblock><p>
             The command will report any errors or problems (see List of errors) with the input
@@ -153,57 +156,110 @@
         </strow>
       </simpletable>
     </section>
+    <section id="swift-ring-failure">
+      <title><b>Ansible playbook fails in swiftlm-ring-supervisor | build-rings</b></title>
+    </section>
     <section>
-      <p><b>Ansible play fails in swiftlm-ring-supervisor | build-rings </b></p>
+      <p>
+        <simpletable id="simpletable_k1g_ycx_gt">
+          <strow>
+            <stentry><b>Description</b>
+            </stentry>
+            <stentry>An ansible playbook fails as follows:
+              <codeblock>TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] *** 
+failed: [hlm002-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor", "--make-delta", "--rebalance", ....</codeblock>Examine
+              the output and see if the output generated in your environment contains one of the
+              following example messages:<p><b>Example Message
+                  1</b></p><codeblock>-------------------------------------------------------------------------------
+NOTE: Dispersion of 11.718750 indicates some parts are not
+      optimally dispersed.
+
+      You may want to adjust some device weights, increase
+      the overload or review the dispersion report.
+-------------------------------------------------------------------------------</codeblock><p><b>Example
+                  Message
+                  2</b><codeblock>No partitions could be reassigned.</codeblock></p><p><b>Example
+                  Message
+                3</b><codeblock>Cowardly refusing to save rebalance as it did not change at least 1%</codeblock></p><p><b>Example
+                  Message
+                4</b><codeblock>NOTE: Balance of %.02f indicates you should push this ring, wait at least 16 hours, and rebalance/repush.</codeblock></p><p><b>Example
+                  Message 5</b><codeblock>Worst tier is 3.0 (2.4)</codeblock></p><p>If any one of
+                the above message is displayed in your environment then it is probable that the
+                Swift ring was created. </p></stentry>
+          </strow>
+          <strow>
+            <stentry><b>Resolution</b></stentry>
+            <stentry>
+              <p>Run the following command at least
+                twice:<codeblock>ansible-playbook -i hosts/verb_hosts _swift-make-delta-rebalance.yml</codeblock></p>
+              <p> Each may fail with similar messages but each fails with a different ring.</p>
+              <p> Once the account, container, and object-0 rings have failed, you can repeat the
+                ansible playbook command that failed. Refer to <xref
+                  href="../installation.dita#topic_flx_j2b_ws">installation guide</xref> for the
+                command.</p>
+              <p>Now, the ansible playbook will not stop at the "swiftlm-ring-supervisor |
+                build-rings" task and the rings will be created successfully.</p>
+            </stentry>
+          </strow>
+        </simpletable>
+      </p>
+      <p> </p>
+    </section>
+    <section>
+      <title><b><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Examine the
+          ring-delta File</b></title>
+      <p>Note: you must have run the swift-ring-validate playbook as described above otherwise the
+        files needed to run the swiftlm-ring-supervisor will not be in place on the node.<ul
+          id="ul_wrw_pnl_ht">
+          <li>Log onto the node that has been designated as the Ring-Builder (see "Allocate a
+            Ring-Builder Node" above).</li>
+          <li>You can get a full listing of all drives and the actions planned for the rings by
+            adding the --detail option as
+            follows:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report --detail detail</codeblock></li>
+          <li>The output is verbose so you should redirect the output to a file so it is easier to
+            examine.</li>
+          <li>You should validate:<ul id="ul_cq3_c4l_ht">
+              <li>Drives are being added to all rings in the ring specifications.</li>
+              <li>Servers are being used as expected (for example, you may have a different set of
+                servers for the account/container rings than the object rings.</li>
+              <li>The weight value is as expected. The weight value is the drive size expressed in
+                GB (i.e., a 1 TB drive has a weight of 1024).</li>
+            </ul></li>
+        </ul></p>
+    </section>
+    <?oxy_custom_end?>
+    <section>
+      <title><b>Resetting Builder Files</b></title>
       <p/>
-      <p>An ansible play may with as follows:</p>
-      <p>{code}</p>
-      <p>TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] ***</p>
-      <p>failed: [hlm002-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor",
-        "--make-delta", "--rebalance", ....</p>
-      <p>{code}</p>
-      <p> </p>
-      <p>If this happens, examine the output and see if the output contains one of the following
-        example messages:</p>
-      <p>{code}</p>
-      <p>-------------------------------------------------------------------------------</p>
-      <p>NOTE: Dispersion of 11.718750 indicates some parts are not</p>
-      <p> optimally dispersed.</p>
-      <p> </p>
-      <p> You may want to adjust some device weights, increase</p>
-      <p> the overload or review the dispersion report.</p>
-      <p>-------------------------------------------------------------------------------</p>
-      <p>{code}</p>
-      <p> </p>
-      <p>{code}</p>
-      <p>No partitions could be reassigned.</p>
-      <p>{code}</p>
-      <p> </p>
-      <p>{code}</p>
-      <p>Cowardly refusing to save rebalance as it did not change at least 1% {code}</p>
-      <p> </p>
-      <p>{code}</p>
-      <p>NOTE: Balance of %.02f indicates you should push this ring, wait at least 16 hours, and
-        rebalance/repush.</p>
-      <p>{code}</p>
-      <p> </p>
-      <p>{code}</p>
-      <p>Worst tier is 3.0 (2.4)</p>
-      <p>{code}</p>
-      <p> </p>
-      <p>If this happens, the Swift ring was actually created.</p>
-      <p> </p>
-      <p>As a workaround, you must run the following command at least two times:</p>
-      <p>{code}</p>
-      <p>ansible-playbook -i hosts/verb_hosts _swift-make-delta-rebalance.yml {code}</p>
-      <p> </p>
-      <p>Each may fail with similar messages -- however, each fails with a different ring.</p>
-      <p> </p>
-      <p>Once the account, container and object-0 rings have "failed" in this way, you may now
-        re-run the original playbook -- this time the play should not stop at the
-        "swiftlm-ring-supervisor | build-rings" task.</p>
-      <p> </p>
-      <p> </p>
+      <p>WARNING: this process should only be used during the initial deployment process when you
+        want to restart a deploy from scratch. If you use this process after the initial deploy is
+        complete, you risk loosing critical system data</p>
+      <p>The structure of a ring is built in incremental stages. When you modify a ring, the new
+        ring is uses the state of the old ring as a basis for the new ring. This state is kept in a
+        file called the builder file. The swiftlm-ring-supervisor stores builder files in the
+        /etc/swiftlm/builder_dir directory/ on the Ring-Builder node.The builder files are named
+        &lt;ring-name&gt;.builder. Prior versions of the builder files are stored in the
+        /etc/swiftlm/builder_dir/backups directory.</p>
+      <p>Normally, you would use an existing builder file as the basis for changes to a ring.
+        However, when creating a ring from scratch, no builder file exists. Instead, the first step
+        in the process is to build a builder file. The swiftlm-ring-supervisor does this for you as
+        part of the deployment process. However, if the Cloud Model contains errors, you may wish to
+        start from scratch. When swiftlm-ring-supervisor finds existing builder files it assumes you
+        are <i>modifying</i> a ring and will behave differently than when it is creating a ring from
+        scratch. To start from scratch, follow this process:</p>
+      <ul id="ul_zhk_24l_ht">
+        <li>You must know your Keystone region name. Each distinct Swift system uses a different
+          Keystone region. If you have several Keystone regions and you are trying to return to the
+          start state for region2, you do not want to delete the builder files of region1 as this is
+          presumably running normally).</li>
+        <li>
+          <p>Delete the builder files in the /etc/swiftlm/builder-dir/region-&lt;region-name&gt;/
+            directory. For example, for the region2 Keystone region, use this
+            command:<codeblock>sudo rm /etc/swiftlm/builder_dir/region-region2/*.builder</codeblock></p>
+          <p>Note: If you have successfully deployed a system and accidentally delete the builder
+            files, you can recover to the correct state using Recovering Builder Files process.</p>
+        </li>
+      </ul>
     </section>
   </body>
 </topic>
