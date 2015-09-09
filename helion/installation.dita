@@ -225,7 +225,7 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
       <b>Ceph</b>
       <ul>
         <li><xref href="cinder/ceph/ceph_overview.dita">Ceph Overview</xref></li>
-        <li><xref href="cinder/ceph/deploy_ceph.dita">Ceph Installation and
+        <li><xref href="cinder/ceph/ceph_deploy.dita">Ceph Installation and
           Configuration</xref></li>
       </ul>
       <b>VSA</b>
