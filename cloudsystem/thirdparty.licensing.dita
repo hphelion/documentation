@@ -22,8 +22,12 @@
           href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/OO_OpenSource_ThirdParty-10_20.pdf"
           format="pdf" scope="external">Operations Orchestration 10.20</xref></li>
   <li><xref
-          href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Vertica_71_OSRB_Licensing.pdf"
-          format="pdf" scope="external">Vertica Analytic Database</xref></li>
+                    href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Vertica_71_OSRB_Licensing.pdf"
+                    format="pdf" scope="external">Vertica Analytic Database</xref></li>
+            <li><xref
+                    href="http://h20564.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04647291"
+                    format="html" scope="external">VAN SDN Controller and HP Converged Control SDN
+                    Application</xref></li>
 <li>Codar 1.5: There are no additional license requirements for this product.</li>
 </ul> 
 <p>Please allow sufficient time for the document to fully load. </p>
