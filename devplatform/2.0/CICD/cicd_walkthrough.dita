@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task id="task_sw4_1zq_dt">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="task_sw4_1zq_dt">
     <title>CICD Walkthrough: Create a Project and Deploy an App</title>
-    <abstract>This walkthrough starts with creating a new project and ends with your app deployed to the target of your choice. </abstract>      <taskbody><prereq>You will need:<ul><li>an application [if they don't have one, can they use one of our toy apps?] to deploy</li>
+    <body>
+    <p>This walkthrough starts with creating a new project and ends with your app deployed to the target of your choice. </p>
+    
+    <p>You will need:
+        <ul>
+        <li>an application [if they don't have one, can they use one of our toy apps?] to deploy</li>
         <li>an instance of the CICD tool</li>
-        <li>the information [TBD as we move on] from a target environment</li></ul> </prereq>
-        <context/>
-        <steps>
-            <step>
-                <cmd></cmd>
-            </step>
-        </steps>
-    </taskbody>
-</task>
+        <li>the information [TBD as we move on] from a target environment</li>
+        </ul>
+    </p>
+   
+     
+            <conref="cicd_environment_create.dita#task_mf4_fh4_ht"></taskconref>
+            <conref="cicd_project_create.dita#task_s45_4m4_ht"></taskconref>   </body>
+</topic>

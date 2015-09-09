@@ -5,6 +5,32 @@
   <body>
     <p>"How Do I" answers. May encompass multiple topics.</p>
     <p>Keep in mind the mandate to move to task-based documentation, not just providing reference
-      material.</p>
+        material.</p>
+      
+      
+      <ul id="ul_dqz_j24_ht">
+                <li>Projects
+          <ul>
+            <li>Create new</li>
+            <li>Delete?</li>
+            <li>Filter?</li>
+            <li>(understand build messages)</li>
+          </ul>
+        </li>
+         <li>Builds
+            <ul>
+            <li>Create a new Build</li>
+            <li>Filter Builds</li>
+            <li>(understand build messages)</li>
+            </ul>
+          </li>
+        <li>Environments
+          <ul>
+            <li><xref href="cicd_environment_create.dita">Create a New Environment</xref></li>
+            <li>Filter</li>
+            <li>(understand messages)</li>
+          </ul>
+        </li>
+      </ul>
   </body>
 </topic>

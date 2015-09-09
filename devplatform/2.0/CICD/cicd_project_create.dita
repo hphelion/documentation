@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_s45_4m4_ht">
+    <title>Create a New Project</title>
+    <shortdesc>Procedure for creating a new Project.</shortdesc>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>Log into the Helion CICD tool and begin.</cmd><choices>
+                    <choice>If there are no projects, click <b>New Project</b>.</choice>
+                    <choice>If some projects have already been created, click <b>Projects</b> at the
+                        top of the page and then click <b>New Project</b>.</choice>
+                </choices>
+            </step>
+            <step>
+                <cmd>Click to select your Git source.</cmd>
+                <choices>
+                    <choice><b>Use GitHub</b>: Connect to a repository hosted on GitHub .</choice>
+                    <choice><b>Use Git</b>: Connect to a repository hosted locally.</choice>
+                </choices>
+            </step><step>
+                <cmd>Click a repository in the list to select it.</cmd>
+            </step>
+            <step>
+                <cmd>Provide values:</cmd>
+                <choices>
+                    <choice><b>Branch</b>: Select the branch containing the code to build.</choice>
+                    <choice><b>Environment</b>: Select the target environment to deploy to. If the
+                        target environment has not yet been created, click Create New
+                        Environment.</choice>
+                    <choice>P<b>roject Type</b>: Select the appropriate development language. </choice>
+                    <choice><b>Project Name</b>: Enter a name for this project. (any restrictions?
+                        long/short/unique/special chars?)</choice>
+                </choices>
+            </step>
+            <step><cmd>Click <b>Save</b>.</cmd></step>
+        </steps>
+    </taskbody>
+</task>
