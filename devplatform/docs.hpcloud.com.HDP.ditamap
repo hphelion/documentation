@@ -94,12 +94,15 @@
       navtitle="Resources for Application Developers ">
       
         <topicref href="2.0/CICD/cicd_overview.dita" navtitle="Continuous Integration and Deployment" locktitle="yes">
+        <topicref href="2.0/CICD/cicd_walkthrough.dita" navtitle="Step-by-Step Walkthrough"
+          locktitle="yes"/>
         <topicref href="2.0/CICD/cicd_installation.dita"/>
           <topicref href="2.0/CICD/cicd_initial_configuration.dita"/>
           <topicref href="2.0/CICD/cicd_troubleshooting.dita"/>
-          <topicref href="2.0/CICD/cicd_users_guide.dita"/>
-          <topicref href="2.0/CICD/cicd_walkthrough.dita"
-          navtitle="Walkthrough: Create a Project and Deploy an App" locktitle="yes"/></topicref>
+          <topicref href="2.0/CICD/cicd_users_guide.dita">
+          <topicref href="2.0/CICD/cicd_environment_create.dita"/>
+          <topicref href="2.0/CICD/cicd_project_create.dita"/>
+        </topicref></topicref>
       
       <topicref href="2.0/helion/user/deploy/deploy_index.dita" locktitle="yes"
         navtitle="General Deployment">
