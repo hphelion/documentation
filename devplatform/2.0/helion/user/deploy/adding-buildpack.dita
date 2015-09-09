@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_pg2_qbl_ls">
-  <title>HP Helion 1.3 Development Platform: Adding Buildpacks</title>
+  <title>HP Helion 2.0 Development Platform: Adding Buildpacks</title>
   <body>
     <section>
       <p> The Application Lifecycle Service (ALS) has a number of built-in buildpacks installed by
