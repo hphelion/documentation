@@ -24,8 +24,7 @@
       configure it for your end users.</p>
 <section id="wizard-based-cluster-creation"> <title>Wizard-Based Cluster Creation</title>
 <p>You can easily create and access Application Lifecycle Service clusters from the <xref
-          href="../../devplatform.deploy-ALS.dita">Horizon Dashboard</xref>
-      </p>
+          href="../../devplatform.deploy-ALS.dita">Horizon Dashboard</xref>. </p>
 </section>
 <section id="management-console"> <title>Helion Development Platform Management Console</title>
 <ul>
