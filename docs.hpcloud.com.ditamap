@@ -59,7 +59,7 @@
     </topichead>
     <!-- Cinder -->
     <topichead navtitle="Block Storage">
-      <topichead navtitle="Ceph" toc="no">
+      <topichead navtitle="Ceph">
         <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
           locktitle="yes"/>
         <topicref href="helion/cinder/ceph/ceph_install.dita" navtitle="Ceph Installation"
