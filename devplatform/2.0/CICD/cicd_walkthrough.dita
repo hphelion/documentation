@@ -5,15 +5,15 @@
     <body>
     <p>This walkthrough starts with creating a new project and ends with your app deployed to the target of your choice. </p>
     
-    <p>You will need:
-        <ul>
-        <li>an application [if they don't have one, can they use one of our toy apps?] to deploy</li>
-        <li>an instance of the CICD tool</li>
-        <li>the information [TBD as we move on] from a target environment</li>
-        </ul>
-    </p>
-   
+    <p>You will need: <ul>
+                <li>an application [if they don't have one, can they use one of our toy apps?] to
+                    deploy</li>
+                <li>an instance of the CICD tool</li>
+                <li>the information [TBD as we move on] from a target environment</li>
+            </ul></p>
      
-            <conref="cicd_environment_create.dita#task_mf4_fh4_ht"></taskconref>
-            <conref="cicd_project_create.dita#task_s45_4m4_ht"></taskconref>   </body>
+    
+    </body> 
+    <topic id="task_mf4_fh4_ht" conref="cicd_environment_create.dita"><title>Create a New Environment</title>
+    </topic>   
 </topic>
