@@ -8,8 +8,8 @@
     <p>
       <table frame="all" rowsep="1" colsep="1" id="table_ckx_rd4_ht">
         <tgroup cols="2">
-          <colspec colname="c1" colnum="1"/>
-          <colspec colname="c2" colnum="2"/>
+          <colspec colname="c1" colnum="1" colwidth="25pt"/>
+          <colspec colname="c2" colnum="2" colwidth="1*"/>
           <thead>
             <row>
               <entry>[]</entry>
@@ -54,7 +54,7 @@
     <table frame="all" rowsep="1" colsep="1" id="table_d2v_mk4_ht">
       <tgroup cols="3">
         <colspec colname="c1" colnum="1" colwidth="25pt"/>
-        <colspec colname="c2" colnum="2" colwidth="300pt"/>
+        <colspec colname="c2" colnum="2" colwidth="600pt"/>
         <colspec colname="c3" colnum="3" colwidth="1*"/>
         <thead>
           <row>
