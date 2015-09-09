@@ -3,6 +3,20 @@
 <topic id="topic_bkr_qjh_ht">
   <title>Default Logging Settings</title>
   <body>
+    <p>The table below describes the default logging policies for each service. Here is a
+      description of each column:</p>
+    <p>
+      <ul>
+        <li><b>Service</b> - The name of the service the logs belong to.</li>
+        <li><b>Rotated Log Files</b> - These files are kept locally on the server and will be
+          rotated out but will only be centrally logged if notated in the last column.</li>
+        <li><b>Frequency</b> - The timing of when the logs are rotated.</li>
+        <li><b>Max Size</b> - The maximum file size the log can be before it is rotated out.</li>
+        <li><b>Rotation</b> - The number of log files that are rotated.</li>
+        <li><b>Centrally Logged Files</b> - These files will be indexed by elasticsearch and will be
+          available for searching in the Kibana UI.</li>
+      </ul>
+    </p>
     <p>
       <table frame="all" rowsep="1" colsep="1" id="table_itd_tjh_ht">
         <tgroup cols="7">
