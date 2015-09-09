@@ -24,11 +24,11 @@
     <topicref href="helion/faq.dita"/>
     <topicref href="helion/installation_overview.dita" navtitle="Installation"
       locktitle="yes">
-      <topicref href="helion/install_prereq_checklist.dita" navtitle="Pre-Installation Checklist" locktitle="yes"/>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
         locktitle="yes"/>
       <topicref href="helion/bare_installation_kvm.dita"
         navtitle="Baremetal Install for KVM Hypervisor" locktitle="yes">
+        <topicref href="helion/install_prereq_checklist.dita"/>
         <topicref href="helion/config/entryscalewithvsa.dita"
           navtitle="Configuration Files for Entry Scale Model"/>
       </topicref>
