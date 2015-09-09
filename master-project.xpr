@@ -18,5 +18,6 @@
         <folder path="devplatform/"/>
         <folder path="media/"/>
         <folder path="publiccloud/"/>
+        <file name="devplatform/2.0/CICD/cicd_inital_configuration.dita"/>
     </projectTree>
 </project>

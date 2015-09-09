@@ -3,510 +3,447 @@
  
 <map xml:lang="en" linking="none" locktitle="no">
 <title>HP Helion Development Platform</title>
-  <topicref href="1.3/devplatform.index.dita"
-    navtitle="HP Helion Development Platform 1.3" locktitle="yes">
-    <!--permalink: /helion/devplatform/eula/-->
-    <!--permalink: /helion/devplatform/whatsnew/-->
-    <topicref href="1.3/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
-    <topicref href="1.3/devplatform.release-notes.dita" locktitle="yes"
+  <topicref href="2.0/devplatform.index.dita"
+    navtitle="HP Helion Development Platform 2.0" locktitle="yes">
+    
+    <!--root level-->
+    <topicref href="2.0/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
+    <topicref href="2.0/devplatform.release-notes.dita" locktitle="yes"
       navtitle="Release Notes"/>
-    <topicref href="1.3/devplatform.thirdparty.licensing.dita"
+    <topicref href="2.0/devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
-    <topicref href="1.3/devplatform.eula.dita" navtitle="Software License Terms" locktitle="yes"/>
-    <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/-->
+    <topicref href="2.0/devplatform.eula.dita" navtitle="Software License Terms" locktitle="yes"/>
+    
+    
+    
+    <!--quick start-->
     <topichead navtitle="Developer Quick Start Trial Guide">
-      <topicref href="1.3/devplatform.ALS-developer-trial-quick-start.dita"
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start.dita"
         navtitle="Quick Start Step 1: Register" locktitle="yes"/>
-      <topicref href="1.3/devplatform.ALS-developer-trial-quick-start2.dita"
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start2.dita"
         navtitle="Quick Start Step 2: Download Tools" locktitle="yes"/>
-      <topicref href="1.3/devplatform.ALS-developer-trial-quick-start3.dita"
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start3.dita"
         navtitle="Quick Start Step 3: Create Sandbox" locktitle="yes"/>
-      <topicref href="1.3/devplatform.ALS-developer-trial-quick-start4.dita"
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start4.dita"
         navtitle="Quick Start Step 4: Create Cluster" locktitle="yes"/>
-      <topicref href="1.3/devplatform.ALS-developer-trial-quick-start5.dita"
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start5.dita"
         locktitle="yes" navtitle="Quick Start Step 5: Windows (optional)"/>
-      <topicref href="1.3/devplatform.ALS-developer-trial-quick-start6.dita"
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start6.dita"
         locktitle="yes" navtitle="Quick Start Step 6: Explore More"/>
-      <topicref href="1.3/devplatform.ALS-developer-trial-quick-start-termination.dita"
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start-termination.dita"
         locktitle="yes" navtitle="Quick Start Termination"/>
       <topicref
-        href="1.3/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
+        href="2.0/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
         locktitle="yes" navtitle="Quick Start Troubleshooting"/>
     </topichead>
+    
+    
     <!--installation-->
     <topichead navtitle="Installation">
-      <topicref href="1.3/installation/devplatform_commercial_install.dita"
+      <topicref href="2.0/installation/devplatform_commercial_install.dita"
         navtitle="Full Platform Installation - All Services" locktitle="yes"></topicref>
       <topichead navtitle="Individual Service Installation">
-        <topicref href="1.3/installation/devplatform_install_prereq.dita"
+        <topicref href="2.0/installation/devplatform_install_prereq.dita"
           navtitle="Installation Prerequisites" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform.horizonui.install.dita"
+        <topicref href="2.0/installation/devplatform.horizonui.install.dita"
           navtitle="Install the Horizon UI Panels" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform_install_platform.dita"
+        <topicref href="2.0/installation/devplatform_install_platform.dita"
           navtitle="Install the HP Helion Development Platform (no services)" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform_install_ALS.dita"
+        <topicref href="2.0/installation/devplatform_install_ALS.dita"
           navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform_install_database.dita"
+        <topicref href="2.0/installation/devplatform_install_database.dita"
           navtitle="Install the Database Service" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform_install_messaging.dita"
+        <topicref href="2.0/installation/devplatform_install_messaging.dita"
           navtitle="Install the Messaging Service" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform_install_marketplace.dita"
+        <topicref href="2.0/installation/devplatform_install_marketplace.dita"
           navtitle="Install the Marketplace Service" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform.vertica.install.dita"
+        <topicref href="2.0/installation/devplatform.vertica.install.dita"
           navtitle="Install the Vertica Application" locktitle="yes"/>
       </topichead>
-      <topicref href="1.3/installation/devplatform_upgrade_to_1.3.dita"
-        navtitle="Upgrading ALS from 1.2 to 1.3" locktitle="yes"/>
-        
-        
- <!-- pulling chunking in favor of conref testing do not delete
-          chunk="to-content">
-        <topicref href="1.3/installation/devplatform.horizonui.install.dita" toc="no"
-          navtitle="Install the Horizon UI Panels" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform_install_prereq.dita" toc="no"/>
-        <topicref href="1.3/installation/devplatform_install_platform.dita" toc="no"/>
-        <topicref href="1.3/installation/devplatform_install_ALS.dita" toc="no"/>
-        <topicref href="1.3/installation/devplatform_install_database.dita" toc="no"/>
-        <topicref href="1.3/installation/devplatform_install_messaging.dita" toc="no"/>
-        <topicref href="1.3/installation/devplatform_install_marketplace.dita" toc="no"
-          navtitle="Install the Marketplace Service (Beta)" locktitle="yes"/>
-        <topicref href="1.3/installation/devplatform.vertica.install.dita" toc="no"
-          navtitle="Install the Vertica Application" locktitle="yes"/>
-</topicref> -->
-      <topicref href="1.3/helion/admin/server/upgrade.dita" locktitle="yes"
+      <topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita"
+        navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>
+        <topicref href="2.0/helion/admin/server/upgrade.dita" locktitle="yes"
         navtitle="Upgrade Existing ALS Clusters"/>
-      <topicref href="1.3/devplatform.troubleshooting.dita" locktitle="yes"
+      <topicref href="2.0/devplatform.troubleshooting.dita" locktitle="yes"
         navtitle="Installation Troubleshooting"/>
-      <topicref href="1.3/devplatform.related-topics.dita" locktitle="yes"
+      <topicref href="2.0/devplatform.related-topics.dita" locktitle="yes"
         navtitle="Related Documentation "/>
     </topichead>
+    
+    
     <!--uninstallation -->
-    <topichead navtitle="Uninstallation">  <topicref href="1.3/uninstallation/devplatform_uninstall.dita"
+    <topichead navtitle="Uninstallation">  <topicref href="2.0/uninstallation/devplatform_uninstall.dita"
         navtitle="Full Uninstallation - All Services" locktitle="yes" ></topicref>
-      <!--removing chunking testing conrefs do not delete
-        chunk="to-content">
-        <topicref href="1.3/uninstallation/devplatform_uninstall_platform.dita" toc="no"/>
-        <topicref href="1.3/uninstallation/devplatform_uninstall_ALS.dita" toc="no"/>
-        <topicref href="1.3/uninstallation/devplatform_uninstall_database.dita" toc="no"/>
-        <topicref href="1.3/uninstallation/devplatform_uninstall_messaging.dita" toc="no"/>
-        <topicref href="1.3/uninstallation/devplatform_uninstall_marketplace.dita" toc="no"/>
-        <topicref href="1.3/uninstallation/devplatform_uninstall_vertica.dita" toc="no"/>
-      </topicref> -->
-      <topicref href="1.3/uninstallation/devplatform_uninstall_platform.dita"
+          <topicref href="2.0/uninstallation/devplatform_uninstall_platform.dita"
         navtitle="Uninstall the Development Platform" locktitle="yes"/>
-      <topicref href="1.3/uninstallation/devplatform_uninstall_ALS.dita"
+      <topicref href="2.0/uninstallation/devplatform_uninstall_ALS.dita"
         navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>
-      <topicref href="1.3/uninstallation/devplatform_uninstall_database.dita"
+      <topicref href="2.0/uninstallation/devplatform_uninstall_database.dita"
         navtitle="Uninstall the Database Service" locktitle="yes"/>
-      <topicref href="1.3/uninstallation/devplatform_uninstall_messaging.dita"
+      <topicref href="2.0/uninstallation/devplatform_uninstall_messaging.dita"
         navtitle="Uninstall the Messaging Service" locktitle="yes"/>
-      <topicref href="1.3/uninstallation/devplatform_uninstall_marketplace.dita"
+      <topicref href="2.0/uninstallation/devplatform_uninstall_marketplace.dita"
         navtitle="Uninstall the Marketplace Service" locktitle="yes"/>
-      <topicref href="1.3/uninstallation/devplatform_uninstall_vertica.dita"
+      <topicref href="2.0/uninstallation/devplatform_uninstall_vertica.dita"
         navtitle="Uninstall the Vertica Application" locktitle="yes"/>
     </topichead>
-    <topicref href="1.3/devplatform.appdev.dita" locktitle="yes"
+    
+    
+    <!--application developers-->
+    <topicref href="2.0/devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers ">
-      <topicref href="1.3/helion/user/deploy/deploy_index.dita" locktitle="yes"
+      
+        <topicref href="2.0/CICD/cicd_overview.dita" navtitle="Continuous Integration and Deployment" locktitle="yes">
+        <topicref href="2.0/CICD/cicd_installation.dita"/>
+          <topicref href="2.0/CICD/cicd_inital_configuration.dita"/>
+          <topicref href="2.0/CICD/cicd_troubleshooting.dita"/>
+          <topicref href="2.0/CICD/cicd_users_guide.dita"/>
+          <topicref href="2.0/CICD/cicd_walkthrough.dita"
+          navtitle="Walkthrough: Create a Project and Deploy an App" locktitle="yes"/></topicref>
+      
+      <topicref href="2.0/helion/user/deploy/deploy_index.dita" locktitle="yes"
         navtitle="General Deployment">
-        <!--permalink: /helion/devplatform/als/user/deploy/app-debug/-->
-        <topicref href="1.3/helion/user/deploy/app-debug.dita" locktitle="yes"
+           <topicref href="2.0/helion/user/deploy/app-debug.dita" locktitle="yes"
           navtitle="Remote Debugging"/>
-        <topicref href="1.3/helion/user/deploy/other-frameworks.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/other-frameworks.dita" locktitle="yes"
           navtitle="Generic and Standalone Frameworks"/>
-        <!--permalink: /helion/devplatform/als/user/deploy/app-logs/-->
-        <!--permalink: /helion/devplatform/als/user/deploy/buildpack/-->
-        <topicref href="1.3/helion/user/deploy/buildpack.dita" locktitle="yes"
+           <topicref href="2.0/helion/user/deploy/buildpack.dita" locktitle="yes"
           navtitle="Buildpacks"/>
-        <!--permalink: /helion/devplatform/als/user/deploy/languages/clojure/-->
-        <!--permalink: /helion/devplatform/als/user/deploy/languages/go/-->
-        <!--permalink: /helion/devplatform/als/user/deploy/languages/java/-->
-        <!--permalink: /helion/devplatform/als/user/deploy/languages/node/-->
-        <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/-->
-        <!--permalink: /helion/devplatform/als/user/deploy/languages/python/-->
-        <!--permalink: /helion/devplatform/als/user/deploy/languages/ruby/-->
-        <!--permalink: /helion/devplatform/als/user/deploy/manifestyml/-->
-        <topicref href="1.3/helion/user/deploy/manifestyml.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/manifestyml.dita" locktitle="yes"
           navtitle="Manifest.yml Options"/>
-        <!--permalink: /helion/devplatform/als/user/deploy/newrelic/-->
-        <topicref href="1.3/helion/user/deploy/newrelic.dita" locktitle="yes"
+                <topicref href="2.0/helion/user/deploy/newrelic.dita" locktitle="yes"
           navtitle="New Relic Monitoring"/>
-        <!--permalink: /helion/devplatform/als/user/deploy/orgs-spaces/-->
-        <topicref href="1.3/helion/user/deploy/orgs-spaces.dita" locktitle="yes"
+                <topicref href="2.0/helion/user/deploy/orgs-spaces.dita" locktitle="yes"
           navtitle="Organizations and Spaces"/>
-        <!--permalink: /helion/devplatform/als/user/deploy/other-frameworks/-->
-      </topicref>
+              </topicref>
       <topichead navtitle="Language Specific Application Deployment">
-        <topicref href="1.3/helion/user/deploy/docker_firstapp.dita"
+        <topicref href="2.0/helion/user/deploy/docker_firstapp.dita"
           navtitle="Creating and Deploying Your First Docker App" locktitle="yes"/>
-        <topicref href="1.3/helion/user/deploy/languages/docker_apps.dita"
+        <topicref href="2.0/helion/user/deploy/languages/docker_apps.dita"
           navtitle="Docker Apps" locktitle="yes"/>
-        <topicref href="1.3/helion/user/deploy/languages/clojure.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/languages/clojure.dita" locktitle="yes"
           navtitle="Clojure"/>
-        <topicref href="1.3/helion/user/deploy/languages/go.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/languages/go.dita" locktitle="yes"
           navtitle="Go"/>
-        <topicref href="1.3/helion/user/deploy/languages/java.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/languages/java.dita" locktitle="yes"
           navtitle="Java"/>
-        <topicref href="1.3/helion/user/deploy/languages/node.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/languages/node.dita" locktitle="yes"
           navtitle="Node"/>
-        <topicref href="1.3/helion/user/deploy/languages/perl/perl_index.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/languages/perl/perl_index.dita" locktitle="yes"
           navtitle="Perl">
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/catalyst/-->
-          <topicref href="1.3/helion/user/deploy/languages/perl/catalyst.dita"
+                    <topicref href="2.0/helion/user/deploy/languages/perl/catalyst.dita"
             locktitle="yes" navtitle="Catalyst"/>
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/cgiapppsgi/-->
-          <topicref href="1.3/helion/user/deploy/languages/perl/cgiapppsgi.dita"
+                    <topicref href="2.0/helion/user/deploy/languages/perl/cgiapppsgi.dita"
             locktitle="yes" navtitle="CGI Application"/>
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/dancer/-->
-          <topicref href="1.3/helion/user/deploy/languages/perl/dancer.dita"
+                    <topicref href="2.0/helion/user/deploy/languages/perl/dancer.dita"
             locktitle="yes" navtitle="Dancer"/>
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/mason/-->
-          <topicref href="1.3/helion/user/deploy/languages/perl/mason.dita"
+          
+          <topicref href="2.0/helion/user/deploy/languages/perl/mason.dita"
             locktitle="yes" navtitle="Mason"/>
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/mojo/-->
-          <topicref href="1.3/helion/user/deploy/languages/perl/mojo.dita"
+          
+          <topicref href="2.0/helion/user/deploy/languages/perl/mojo.dita"
             locktitle="yes" navtitle="Mojolicious"/>
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/perlcgi/-->
-          <topicref href="1.3/helion/user/deploy/languages/perl/perlcgi.dita"
+          
+          <topicref href="2.0/helion/user/deploy/languages/perl/perlcgi.dita"
             locktitle="yes" navtitle="Perl CGI"/>
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/php/-->
+          
         </topicref>
-        <topicref href="1.3/helion/user/deploy/languages/php.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/languages/php.dita" locktitle="yes"
           navtitle=" PHP"/>
-        <topicref href="1.3/helion/user/deploy/languages/python/python_index.dita"
+        <topicref href="2.0/helion/user/deploy/languages/python/python_index.dita"
           locktitle="yes" navtitle="Python">
-          <!--permalink: /helion/devplatform/als/user/deploy/languages/python/django/-->
-          <topicref href="1.3/helion/user/deploy/languages/python/django.dita"
+         
+          <topicref href="2.0/helion/user/deploy/languages/python/django.dita"
             locktitle="yes" navtitle="Deploying Django Apps"/>
         </topicref>
-        <topicref href="1.3/helion/user/deploy/languages/ruby.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/languages/ruby.dita" locktitle="yes"
           navtitle="Ruby"/>
       </topichead>
-      <topicref href="1.3/helion/user/reference/environment.dita" locktitle="yes"
+      <topicref href="2.0/helion/user/reference/environment.dita" locktitle="yes"
         navtitle="Environment Variables "/>
-      <!--permalink: /helion/devplatform/deploy/-->
-      <!--permalink: /helion/devplatform/eclipse/-->
-      <topicref href="1.3/devplatform.eclipse.dita" locktitle="yes"
+    
+      <topicref href="2.0/devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin"/>
-      <!--permalink: /helion/devplatform/workbook/database/java/-->
+      
+      <!--workbook-->
       <topichead navtitle="JAVA Code Samples">
-        <topicref href="1.3/workbook/helloworld/helloworld.java.dita" locktitle="yes"
+        <topicref href="2.0/workbook/helloworld/helloworld.java.dita" locktitle="yes"
           navtitle="Java Hello World Sample"/>
-        <topicref href="1.3/workbook/database/database.java.dita" locktitle="yes"
+        <topicref href="2.0/workbook/database/database.java.dita" locktitle="yes"
           navtitle="Java MySQL Database Sample"/>
-        <topicref href="1.3/workbook/messaging/messaging.java.dita" locktitle="yes"
+        <topicref href="2.0/workbook/messaging/messaging.java.dita" locktitle="yes"
           navtitle="Java RabbitMQ Messaging Sample"/>
       </topichead>
       <topichead navtitle="Node Code Samples">
-        <topicref href="1.3/workbook/helloworld/helloworld.node.dita" locktitle="yes"
+        <topicref href="2.0/workbook/helloworld/helloworld.node.dita" locktitle="yes"
           navtitle="Node Hello World Sample"/>
-        <topicref href="1.3/workbook/database/database.node.dita" locktitle="yes"
+        <topicref href="2.0/workbook/database/database.node.dita" locktitle="yes"
           navtitle="Node MySQL Database Sample"/>
-        <topicref href="1.3/workbook/messaging/messaging.node.dita" locktitle="yes"
+        <topicref href="2.0/workbook/messaging/messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample"/>
       </topichead>
       <topichead navtitle="PHP Code Samples">
-        <topicref href="1.3/workbook/helloworld/helloworld.php.dita" locktitle="yes"
+        <topicref href="2.0/workbook/helloworld/helloworld.php.dita" locktitle="yes"
           navtitle="PHP Hello World Sample "/>
-        <topicref href="1.3/workbook/database/database.php.dita" locktitle="yes"
+        <topicref href="2.0/workbook/database/database.php.dita" locktitle="yes"
           navtitle="PHP MySQL Database Sample"/>
-        <topicref href="1.3/workbook/messaging/messaging.php.dita" locktitle="yes"
+        <topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes"
           navtitle="PHP RabbitMQ Messaging Sample"/>
       </topichead>
-      <!--permalink: /helion/devplatform/workbook/database/node/-->
-      <!--permalink: /helion/devplatform/workbook/database/php/-->
-      <!--permalink: /helion/devplatform/workbook/helloworld/java/-->
-      <!--permalink: /helion/devplatform/workbook/helloworld/node/-->
-      <!--permalink: /helion/devplatform/workbook/helloworld/php/-->
-      <!--permalink: /helion/devplatform/workbook/messaging/java/-->
-      <!--permalink: /helion/devplatform/workbook/messaging/node/-->
-      <!--permalink: /helion/devplatform/workbook/messaging/php/-->
+
     </topicref>
-    <!--permalink: /helion/devplatform/install/-->
-    <!--permalink: /helion/devplatform/sysadmin/-->
+    
+    <!--windows stuff-->
     <topichead navtitle="Windows Reference">
-      <topicref href="1.3/windows/windows_overview.dita" locktitle="yes"
+      <topicref href="2.0/windows/windows_overview.dita" locktitle="yes"
         navtitle="Windows Overview"/>
       <topichead navtitle="Administrator Reference">
-        <topicref href="1.3/windows/windows_building_and_deploying.dita" locktitle="yes"
+        <topicref href="2.0/windows/windows_building_and_deploying.dita" locktitle="yes"
           navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
-        <topicref href="1.3/windows/windows_adding_services.dita" locktitle="yes"
+        <topicref href="2.0/windows/windows_adding_services.dita" locktitle="yes"
           navtitle="Adding Services to Windows Applications"/>
-        <topicref href="1.3/windows/windows_password.dita"
+        <topicref href="2.0/windows/windows_password.dita"
           navtitle="Retrieving the Admin Password for Windows Instances" locktitle="yes"/>
-        <topicref href="1.3/windows/windows_remoting.dita" navtitle="Remote Desktop Access"
+        <topicref href="2.0/windows/windows_remoting.dita" navtitle="Remote Desktop Access"
           locktitle="yes"/>
-        <topicref href="1.3/windows/windows_glazier_reference_guide.dita" locktitle="yes"
+        <topicref href="2.0/windows/windows_glazier_reference_guide.dita" locktitle="yes"
           navtitle="Glazier Reference Guide"/>
       </topichead>
       <topichead navtitle="Developer Reference">
-        <topicref href="1.3/windows/windows_firstapp.dita" locktitle="yes"
+        <topicref href="2.0/windows/windows_firstapp.dita" locktitle="yes"
           navtitle="Deploying your first .NET Application"/>
-        <topicref href="1.3/windows/windows_tools_guide.dita" locktitle="yes"
+        <topicref href="2.0/windows/windows_tools_guide.dita" locktitle="yes"
           navtitle="Windows and .NET Applications Tools Guide"/>
-        <topicref href="1.3/windows/windows_wcf.dita" navtitle=" Deploying a WCF service"
+        <topicref href="2.0/windows/windows_wcf.dita" navtitle=" Deploying a WCF service"
           locktitle="yes"/>
-        <topicref href="1.3/windows/windows_creating_sql.dita"/>
-        <topicref href="1.3/windows/windows_nonnet.dita"
+        <topicref href="2.0/windows/windows_creating_sql.dita"/>
+        <topicref href="2.0/windows/windows_nonnet.dita"
           navtitle="Deploying a Node.js Application with Visual Studio" locktitle="yes"/>
       </topichead>
-      <topicref href="1.3/windows/windows_troubleshooting.dita" navtitle="Troubleshooting"
+      <topicref href="2.0/windows/windows_troubleshooting.dita" navtitle="Troubleshooting"
         locktitle="yes"/>
-      <topicref href="1.3/windows/windows_custom_buildpacks.dita" navtitle="Custom Buildpacks"
+      <topicref href="2.0/windows/windows_custom_buildpacks.dita" navtitle="Custom Buildpacks"
         locktitle="yes" toc="no"/>
     </topichead>
-    <!--permalink: /helion/devplatform/als/-->
-    <topicref href="1.3/devplatform.sysadmin.dita" locktitle="yes"
+    
+    <!--IT Ops-->
+    
+    <topicref href="2.0/devplatform.sysadmin.dita" locktitle="yes"
       navtitle="Resources for IT Ops">
-      <!--permalink: /helion/devplatform/connectdatabase/-->
-      <topicref href="1.3/devplatform_upgrade.dita" navtitle="Upgrading Helion OpenStack"
+    
+      <topicref href="2.0/devplatform_upgrade.dita" navtitle="Upgrading Helion OpenStack"
         locktitle="yes"/>
       <topichead navtitle="Cluster Creation and Management">
-        <topicref href="1.3/devplatform.deploy-ALS.dita" locktitle="yes"
+        <topicref href="2.0/devplatform.deploy-ALS.dita" locktitle="yes"
           navtitle="Create a Cluster Using Horizon"/>
-        <topicref href="1.3/windows/windows_growcluster.dita"
+        <topicref href="2.0/windows/windows_growcluster.dita"
           navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
-        <topicref href="1.3/helion/CLI/cf_mgmt_createcluster.dita"
+        <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
           navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
-          <topicref href="1.3/helion/CLI/cfmgmt_createcluster_starter.dita"
+          <topicref href="2.0/helion/CLI/cfmgmt_createcluster_starter.dita"
             navtitle="Example: Create a Starter Cluster" locktitle="yes"/>
-          <topicref href="1.3/helion/CLI/cfmgmt_growcluster_addDEANode.dita"
+          <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addDEANode.dita"
             navtitle="Example: Add a DEA Node" locktitle="yes"/>
-          <topicref href="1.3/helion/CLI/cfmgmt_growcluster_addservice.dita"
+          <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addservice.dita"
             navtitle="Example: Add a Service" locktitle="yes"/>
-          <topicref href="1.3/helion/CLI/devplatform_downloadRCFile.dita" toc="no"/>
+          <topicref href="2.0/helion/CLI/devplatform_downloadRCFile.dita" toc="no"/>
         </topicref>
         <topichead navtitle="ALS Management Console">
-          <topicref href="1.3/helion/admin/console/console_intro.dita"
+          <topicref href="2.0/helion/admin/console/console_intro.dita"
             navtitle="Introduction and First Use" locktitle="yes"/>
-          <topicref href="1.3/helion/admin/console/console_index.dita" locktitle="yes"
+          <topicref href="2.0/helion/admin/console/console_index.dita" locktitle="yes"
             navtitle="Management Console (Admin View)"/>
-          <topicref href="1.3/helion/user/console/console_index.dita"
+          <topicref href="2.0/helion/user/console/console_index.dita"
             navtitle="Management Console (User View)" locktitle="yes"/>
-          <topicref href="1.3/helion/admin/console/console_settings.dita"
+          <topicref href="2.0/helion/admin/console/console_settings.dita"
             navtitle="Management Console Settings" locktitle="yes"/>
-          <topicref href="1.3/helion/admin/console/customize.dita" locktitle="yes"
+          <topicref href="2.0/helion/admin/console/customize.dita" locktitle="yes"
             navtitle="Management Console Customization"/>
-          <topicref href="1.3/helion/admin/console/app-store.dita" locktitle="yes"
+          <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
             navtitle="Sample Applications"/>
         </topichead>
       </topichead>
-           <topicref href="1.3/helion/admin/server/network_port_configuration.dita"/>
-      <topicref href="1.3/helion/admin/server/docker.dita" navtitle="Docker and Fence"
+           <topicref href="2.0/helion/admin/server/network_port_configuration.dita"/>
+      <topicref href="2.0/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
-      <topicref href="1.3/devplatform.database-ALS.dita" locktitle="yes"
+      <topicref href="2.0/devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
-      <!--permalink: /helion/devplatform/databaseservice/-->
-      <topicref href="1.3/devplatform.database-instance.dita" locktitle="yes"
+            <topicref href="2.0/devplatform.database-instance.dita" locktitle="yes"
         navtitle="Using the Database Service"/>
-      <!--permalink: /helion/devplatform/messageservice/-->
-      <topicref href="1.3/devplatform.using-the-messaging-service.dita" locktitle="yes"
+            <topicref href="2.0/devplatform.using-the-messaging-service.dita" locktitle="yes"
         navtitle="Using the RabbitMQ Messaging Service"/>
-      <!--permalink: /helion/devplatform/msgaas/als/-->
-      <topicref href="1.3/devplatform.using-messaging-service-with-ALS.dita"
+      
+      <topicref href="2.0/devplatform.using-messaging-service-with-ALS.dita"
         locktitle="yes" navtitle="Using the Messaging Service with ALS"/>
-      <!--permalink: /helion/devplatform/connectdatabase/-->
-      <!--permalink: /helion/devplatform/databaseservice/-->
-      <!--permalink: /helion/devplatform/als/user/services/data-services/-->
-      <topicref href="1.3/helion/user/services/data-services.dita" locktitle="yes"
+
+      <topicref href="2.0/helion/user/services/data-services.dita" locktitle="yes"
         navtitle="Application Lifecycle Service Data Services"/>
-      <topicref href="1.3/helion/admin/cluster/external-db.dita" locktitle="yes"
+      <topicref href="2.0/helion/admin/cluster/external-db.dita" locktitle="yes"
         navtitle="External Data Services"/>
-      <topicref href="1.3/helion/user/services/memcached.dita" locktitle="yes"
+      <topicref href="2.0/helion/user/services/memcached.dita" locktitle="yes"
         navtitle="Memcached Service"/>
-      <!--permalink: /helion/devplatform/als/user/services/filesystem/-->
-      <topicref href="1.3/helion/user/services/filesystem.dita" locktitle="yes"
+            <topicref href="2.0/helion/user/services/filesystem.dita" locktitle="yes"
         navtitle="Persistent File System"/>
-      <!--permalink: /helion/devplatform/als/user/services/memcached/-->
-      <!--permalink: /helion/devplatform/als/user/services/port-service/-->
-      <topicref href="1.3/helion/user/services/port-service.dita" locktitle="yes"
+
+      <topicref href="2.0/helion/user/services/port-service.dita" locktitle="yes"
         navtitle="Port Service (Harbor)"/>
-      <topicref href="1.3/helion/admin/cluster/harbor.dita" locktitle="yes"
+      <topicref href="2.0/helion/admin/cluster/harbor.dita" locktitle="yes"
         navtitle="Harbor TCP/UDP Port Service "/>
-      <!--permalink: /helion/devplatform/als/user/services/user-provided/-->
-      <topicref href="1.3/helion/user/services/user-provided.dita" locktitle="yes"
+            <topicref href="2.0/helion/user/services/user-provided.dita" locktitle="yes"
         navtitle="User-Provided Services"/>
-      <topicref href="1.3/helion/helion_index.dita" locktitle="yes"
+      <topicref href="2.0/helion/helion_index.dita" locktitle="yes"
         navtitle="Application Lifecycle Service Documentation">
-        <!--permalink: /helion/devplatform/als/admin/-->
-        <topicref href="1.3/helion/CLI/constructor_vm.dita" navtitle="ALS Constructor VM"
+                <topicref href="2.0/helion/CLI/constructor_vm.dita" navtitle="ALS Constructor VM"
           locktitle="yes"/>
         <topichead navtitle="ALS Command Line Clients">
-          <topicref href="1.3/helion/CLI/ALS_Client_Downloads.dita"
+          <topicref href="2.0/helion/CLI/ALS_Client_Downloads.dita"
             navtitle="Command Line Client Downloads" locktitle="yes"/>
-          <topicref href="1.3/helion/admin/reference/kato-ref.dita" locktitle="yes"
+          <topicref href="2.0/helion/admin/reference/kato-ref.dita" locktitle="yes"
             navtitle="Kato Command Reference"/>
           <topichead navtitle="ALS Helion Client">
-            <topicref href="1.3/helion/user/client/client_index.dita" locktitle="yes"
-              navtitle="ALS Client Installation"
-              ><!--permalink: /helion/devplatform/als/client/download/--><!--permalink: /helion/devplatform/als/client/reference/--></topicref>
-            <topicref href="1.3/helion/user/reference/client-ref.dita" locktitle="yes"
+            <topicref href="2.0/helion/user/client/client_index.dita" locktitle="yes"
+              navtitle="ALS Client Installation">
+              </topicref>
+            <topicref href="2.0/helion/user/reference/client-ref.dita" locktitle="yes"
               navtitle="ALS Client Command Reference">
-              <topicref href="1.3/helion/user/reference/client-ref-administration.dita"
+              <topicref href="2.0/helion/user/reference/client-ref-administration.dita"
                 locktitle="yes" navtitle="Administration"/>
-              <topicref href="1.3/helion/user/reference/client-ref-applications.dita"
+              <topicref href="2.0/helion/user/reference/client-ref-applications.dita"
                 locktitle="yes" navtitle="Applications"/>
-              <topicref href="1.3/helion/user/reference/client-ref-buildpacks.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-buildpacks.dita" locktitle="yes"
                 navtitle="Buildpacks"/>
-              <topicref href="1.3/helion/user/reference/client-ref-control.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-control.dita" locktitle="yes"
                 navtitle="Control"/>
-              <topicref href="1.3/helion/user/reference/client-ref-domains.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-domains.dita" locktitle="yes"
                 navtitle="Domains"/>
-              <topicref href="1.3/helion/user/reference/client-ref-flags.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-flags.dita" locktitle="yes"
                 navtitle="Feature Flags"/>
-              <topicref href="1.3/helion/user/reference/client-ref-getting-started.dita"
+              <topicref href="2.0/helion/user/reference/client-ref-getting-started.dita"
                 locktitle="yes" navtitle="Getting Started"/>
-              <topicref href="1.3/helion/user/reference/client-ref-history.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-history.dita" locktitle="yes"
                 navtitle="History"/>
-              <topicref href="1.3/helion/user/reference/client-ref-information.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-information.dita" locktitle="yes"
                 navtitle="Information "/>
-              <topicref href="1.3/helion/user/reference/client-ref-management.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-management.dita" locktitle="yes"
                 navtitle="Management "/>
-              <topicref href="1.3/helion/user/reference/client-ref-miscellaneous.dita"
+              <topicref href="2.0/helion/user/reference/client-ref-miscellaneous.dita"
                 locktitle="yes" navtitle="Miscellaneous "/>
-              <topicref href="1.3/helion/user/reference/client-ref-organizations.dita"
+              <topicref href="2.0/helion/user/reference/client-ref-organizations.dita"
                 locktitle="yes" navtitle="Organizations "/>
-              <topicref href="1.3/helion/user/reference/client-ref-placement.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-placement.dita" locktitle="yes"
                 navtitle="Placement Zones "/>
-              <topicref href="1.3/helion/user/reference/client-ref-quotas.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-quotas.dita" locktitle="yes"
                 navtitle="Quotas "/>
-              <topicref href="1.3/helion/user/reference/client-ref-routes.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-routes.dita" locktitle="yes"
                 navtitle="Routes "/>
-              <topicref href="1.3/helion/user/reference/client-ref-securitygroups.dita"
+              <topicref href="2.0/helion/user/reference/client-ref-securitygroups.dita"
                 locktitle="yes" navtitle="Security Groups "/>
-              <topicref href="1.3/helion/user/reference/client-ref-brokers.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-brokers.dita" locktitle="yes"
                 navtitle="Service Brokers "/>
-              <topicref href="1.3/helion/user/reference/client-ref-service-management.dita"
+              <topicref href="2.0/helion/user/reference/client-ref-service-management.dita"
                 locktitle="yes" navtitle="Service Management "/>
-              <topicref href="1.3/helion/user/reference/client-ref-serviceplans.dita"
+              <topicref href="2.0/helion/user/reference/client-ref-serviceplans.dita"
                 locktitle="yes" navtitle="Service Plans "/>
-              <topicref href="1.3/helion/user/reference/client-ref-services.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-services.dita" locktitle="yes"
                 navtitle="Services "/>
-              <topicref href="1.3/helion/user/reference/client-ref-spacequotas.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-spacequotas.dita" locktitle="yes"
                 navtitle="Space Quotas "/>
-              <topicref href="1.3/helion/user/reference/client-ref-spaces.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-spaces.dita" locktitle="yes"
                 navtitle="Spaces "/>
-              <topicref href="1.3/helion/user/reference/client-ref-tokens.dita" locktitle="yes"
+              <topicref href="2.0/helion/user/reference/client-ref-tokens.dita" locktitle="yes"
                 navtitle="Authentication Tokens "/>
-              <topicref href="1.3/helion/user/reference/client-ref-user-management.dita"
+              <topicref href="2.0/helion/user/reference/client-ref-user-management.dita"
                 locktitle="yes" navtitle="User Management "/>
             </topicref>
           </topichead>
           <topichead navtitle="Cluster Management Tool">
-            <topicref href="1.3/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
+            <topicref href="2.0/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
               navtitle="Cluster Management Tool Installation and Reference"/>
-            <topicref href="1.3/helion/CLI/cf_mgmt_createcluster.dita"
+            <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
               navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
-              <topicref href="1.3/helion/CLI/cfmgmt_createcluster_starter.dita"
+              <topicref href="2.0/helion/CLI/cfmgmt_createcluster_starter.dita"
                 navtitle="Example: Create a Starter Cluster" locktitle="yes"/>
-              <topicref href="1.3/helion/CLI/cfmgmt_growcluster_addDEANode.dita"
+              <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addDEANode.dita"
                 navtitle="Example: Add a DEA Node" locktitle="yes"/>
-              <topicref href="1.3/helion/CLI/cfmgmt_growcluster_addservice.dita"
+              <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addservice.dita"
                 navtitle="Example: Add a Service" locktitle="yes"/>
             </topicref>
           </topichead>
           <topichead navtitle="ALS Management Console">
-            <topicref href="1.3/helion/admin/console/console_intro.dita"
+            <topicref href="2.0/helion/admin/console/console_intro.dita"
               navtitle="Introduction and First Use" locktitle="yes"/>
-            <topicref href="1.3/helion/admin/console/console_index.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/console/console_index.dita" locktitle="yes"
               navtitle="Management Console (Admin View)"/>
-            <topicref href="1.3/helion/user/console/console_index.dita"
+            <topicref href="2.0/helion/user/console/console_index.dita"
               navtitle="Management Console (User View)" locktitle="yes"/>
-            <topicref href="1.3/helion/admin/console/console_settings.dita"
+            <topicref href="2.0/helion/admin/console/console_settings.dita"
               navtitle="Management Console Settings" locktitle="yes"/>
-            <topicref href="1.3/helion/admin/console/customize.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/console/customize.dita" locktitle="yes"
               navtitle="Management Console Customization"/>
-            <topicref href="1.3/helion/admin/console/app-store.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
               navtitle="Sample Applications"/>
           </topichead>
         </topichead>
-        <topicref href="1.3/helion/admin/helion_admin_index.dita" locktitle="yes"
+        <topicref href="2.0/helion/admin/helion_admin_index.dita" locktitle="yes"
           navtitle="ALS Admin Guide">
-          <!--permalink: /helion/devplatform/als/admin/best-practices/-->
-          <topicref href="1.3/helion/user/deploy/adding-buildpack.dita" navtitle="Adding Buildpacks"
+          
+          <topicref href="2.0/helion/user/deploy/adding-buildpack.dita" navtitle="Adding Buildpacks"
             locktitle="yes"/>
-          <topicref href="1.3/helion/admin/best-practices/best_practices_index.dita" locktitle="yes"
+          <topicref href="2.0/helion/admin/best-practices/best_practices_index.dita" locktitle="yes"
             navtitle="Best Practices"/>
-          <!--permalink: /helion/devplatform/als/admin/best-practices/logging-examples/-->
-          <!--permalink: /helion/devplatform/als/admin/cluster/-->
-          <topicref href="1.3/helion/admin/cluster/cluster_index.dita" locktitle="yes"
+
+          <topicref href="2.0/helion/admin/cluster/cluster_index.dita" locktitle="yes"
             navtitle="Cluster Setup"/>
-          <topicref href="1.3/devplatform.deploy-ALS.dita" locktitle="yes"
+          <topicref href="2.0/devplatform.deploy-ALS.dita" locktitle="yes"
             navtitle="Create a Cluster using the Horizon UI"/>
-          <topicref href="1.3/helion/admin/cluster/zones.dita"
+          <topicref href="2.0/helion/admin/cluster/zones.dita"
             navtitle="Configure Availability and Placement Zones" locktitle="yes"/>
-          <!--permalink: /helion/devplatform/als/admin/cluster/cloud-init/-->
-          <!--permalink: /helion/devplatform/als/admin/cluster/external-db/-->
-          <!--permalink: /helion/devplatform/als/admin/cluster/harbor/-->
-          <!--permalink: /helion/devplatform/als/admin/console/-->
-          <!--permalink: /helion/devplatform/als/admin/console/app-store/-->
-          <!--permalink: /helion/devplatform/als/admin/console/customize/-->
-          <!--permalink: /helion/devplatform/als/admin/reference/add-service/-->
-          <!--permalink: /helion/devplatform/als/admin/reference/architecture/-->
-          <!--permalink: /helion/devplatform/als/admin/reference/groups/-->
-          <!--permalink: /helion/devplatform/als/admin/reference/kato-ref/-->
-          <!--permalink: /helion/devplatform/als/admin/reference/known-issues/-->
-          <!--permalink: /helion/devplatform/als/admin/reference/troubleshoot/-->
-          <!--permalink: /helion/devplatform/als/admin/server/-->
-          <topicref href="1.3/helion/admin/server/server_index.dita" locktitle="yes"
+          <topicref href="2.0/helion/admin/server/server_index.dita" locktitle="yes"
             navtitle="Server Configuration">
-            <topicref href="1.3/helion/admin/server/operations.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/server/operations.dita" locktitle="yes"
               navtitle="Common Server Operations"/>
-            <topicref href="1.3/helion/admin/server/configuration.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/server/configuration.dita" locktitle="yes"
               navtitle="Detailed Configuration"/>
-            <topicref href="1.3/helion/admin/server/https_and_ssl.dita"
+            <topicref href="2.0/helion/admin/server/https_and_ssl.dita"
               navtitle="HTTP and SSL Configuration" locktitle="yes"/>
-            <topicref href="1.3/helion/admin/server/aok.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/server/aok.dita" locktitle="yes"
               navtitle="AOK Authentication Server"/>
-            <topicref href="1.3/helion/admin/server/docker.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/server/docker.dita" locktitle="yes"
               navtitle="Docker and Fence"/>
-            <topicref href="1.3/helion/admin/best-practices/logging-examples.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/best-practices/logging-examples.dita" locktitle="yes"
               navtitle="Log Drain Examples"/>
-            <topicref href="1.3/helion/admin/server/logging.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/server/logging.dita" locktitle="yes"
               navtitle="Log Streams"/>
-            <topicref href="1.3/helion/admin/server/router.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/server/router.dita" locktitle="yes"
               navtitle="ALS Router"/>
           </topicref>
-          <!--permalink: /helion/devplatform/als/admin/server/aok/-->
-          <!--permalink: /helion/devplatform/als/admin/server/configuration/-->
-          <!--permalink: /helion/devplatform/als/admin/server/docker/-->
-          <!--permalink: /helion/devplatform/als/admin/server/logging/-->
-          <!--permalink: /helion/devplatform/als/admin/server/operations/-->
-          <!--permalink: /helion/devplatform/als/admin/server/router/-->
-          <!--permalink: /helion/devplatform/als/admin/server/upgrade/-->
+
           <topichead navtitle="Reference">
-            <topicref href="1.3/helion/admin/reference/groups.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/reference/groups.dita" locktitle="yes"
               navtitle="Managing Groups, Users and Limits (DEPRECATED)"/>
-            <topicref href="1.3/helion/admin/reference/known-issues.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/reference/known-issues.dita" locktitle="yes"
               navtitle="Known Issues"/>
-            <topicref href="1.3/helion/admin/reference/architecture.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/reference/architecture.dita" locktitle="yes"
               navtitle="Architectural Design"/>
-            <topicref href="1.3/helion/admin/reference/add-service.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/reference/add-service.dita" locktitle="yes"
               navtitle="Adding System Services"/>
-            <topicref href="1.3/helion/admin/reference/reference_troubleshoot.dita" locktitle="yes"
+            <topicref href="2.0/helion/admin/reference/reference_troubleshoot.dita" locktitle="yes"
               navtitle="Troubleshooting"/>
           </topichead>
         </topicref>
-        <!--permalink: /helion/devplatform/als/user/-->
-        <topicref href="1.3/helion/user/helion_user_index.dita" locktitle="yes"
+        
+        <topicref href="2.0/helion/user/helion_user_index.dita" locktitle="yes"
           navtitle="ALS User Guide">
-          <!--permalink: /helion/devplatform/als/user/client/-->
-          <!--permalink: /helion/devplatform/als/user/console/-->
-          <!--permalink: /helion/devplatform/als/user/deploy/-->
-          <topicref href="1.3/helion/user/quick-start/quickstart_index.dita"
+
+          <topicref href="2.0/helion/user/quick-start/quickstart_index.dita"
             navtitle="ALS Quick Start" locktitle="yes"/>
-          <topicref href="1.3/helion/user/reference/api.dita" locktitle="yes"
-            navtitle="Application Lifecycle Service API"
-            ><!--permalink: /helion/devplatform/als/user/reference/client-ref/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/administration/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/applications/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/brokers/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/buildpacks/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/control/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/domains/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/flags/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/gettingstarted/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/history/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/information/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/management/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/miscellaneous/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/organizations/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/placement/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/quotas/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/routes/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/securitygroups/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/servicemanagement/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/serviceplans/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/services/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/spacequotas/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/spaces/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/tokens/--><!--permalink: /helion/devplatform/als/user/reference/client-ref/usermanagement/--></topicref>
-          <!--permalink: /helion/devplatform/als/user/reference/api/-->
-          <!--permalink: /helion/devplatform/als/user/reference/environment/-->
-          <!--permalink: /helion/devplatform/als/user/reference/glossary/-->
-          <topicref href="1.3/helion/user/reference/glossary.dita" locktitle="yes"
+          <topicref href="2.0/helion/user/reference/api.dita" locktitle="yes"
+            navtitle="Application Lifecycle Service API" />
+          <topicref href="2.0/helion/user/reference/glossary.dita" locktitle="yes"
             navtitle="Glossary"/>
-          <!--permalink: /helion/devplatform/als/user/reference/troubleshoot/-->
-          <topicref href="1.3/helion/user/reference/reference_troubleshoot.dita" locktitle="yes"
+                    <topicref href="2.0/helion/user/reference/reference_troubleshoot.dita" locktitle="yes"
             navtitle="Troubleshooting "/>
-          <topicref href="1.3/helion/user/deploy/app-logs.dita" locktitle="yes"
+          <topicref href="2.0/helion/user/deploy/app-logs.dita" locktitle="yes"
             navtitle="Application Logs "/>
         </topicref>
       </topicref>
