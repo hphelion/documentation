@@ -30,7 +30,7 @@
         at the same directory level as hlm-dev-tool.  Once you have cloned the files, modify the ccp.yml and neutron.conf.j2 files.</p>
       <ol>
         <li>Replace LBaaS version 2 with LBaaS version 1 in the <i>ccp.yml</i> file. Depending on
-            whether you are in a mulit node or single node environment, the location of the ccp.yml
+            whether you are in a multi node or single node environment, the location of the ccp.yml
             will differ slightly. </li>
         <li>In hlm-input-model, edit <i>2.0/hp-ci/&lt;single or multi node&gt;/data/ccp.yml</i></li>
         <li>Replace <i>neutron-lbaasv2-agent</i> with <i>neutron-lbaas-agent</i>.</li>
@@ -57,17 +57,20 @@ neutron router-gateway-set router ext-net</codeblock></li>
           <codeblock>ssh controller1 'ip netns'         
 ssh controller2 'ip netns'
 ssh controller3 'ip netns'</codeblock></li>
-        <li>You will need to enable routing for the controller nodes so they can reach the private network directly.
-          <codeblock>## Get the router gateway address. Note the 172.16.0.* IP address.
+        <li>You will need to enable routing for the controller nodes so they can reach the private network directly.  In the example
+          below, the external network is 172.16.0.0/24 and br-ex is the external bridge interface configured in the OpenStack environment
+          to connect to the external network.  You will need to replace the external network subnet and bridge interface to match your 
+          environment.
+          <codeblock>## Get the router gateway address. 
 neutron router-port-list router
             
 ## SSH into the controller node containing snat-* namespace. Assuming controller1 is the one.
 ssh controller1
             
 ## Configure routing. Assuming the router gateway address above is 172.16.0.2
-sudo ip addr add 172.16.0.30/24 dev br-vlan103
-sudo ip link set br-vlan103 up
-sudo ip route add 10.1.0.0/24 via 172.16.0.2 dev br-vlan103</codeblock></li>
+sudo ip addr add 172.16.0.30/24 dev br-ex
+sudo ip link set br-ex up
+sudo ip route add 10.1.0.0/24 via 172.16.0.2 dev br-ex</codeblock></li>
       </ol>
       </sectiondiv>
       
@@ -93,18 +96,18 @@ nova boot --flavor 1 --image cirros-0.3.3-x86_64 --nic net-id=$(neutron net-list
       <sectiondiv id="CreateLoadBalancer">
       <p>Create Load Balancer V2</p>
       <ol>
-        <li>Create the new load balancer using the <codeph>lbass-loadbalancer-create</codeph> command and giving the load balancer a name and network.
-          <codeblock>neutron lbass-loadbalancer-create --name lb sub</codeblock></li>
-        <li>Create a new listener for the load balancer using the <codeph>lbass-listener-create</codeph> command and giving the listener
+        <li>Create the new load balancer using the <codeph>lbaas-loadbalancer-create</codeph> command and giving the load balancer a name and network.
+          <codeblock>neutron lbaas-loadbalancer-create --name lb sub</codeblock></li>
+        <li>Create a new listener for the load balancer using the <codeph>lbaas-listener-create</codeph> command and giving the listener
           the name of the load balancer, the protocol, the protocol port and a name for the listener.
-          <codeblock>neutron lbass-listener-create --loadbalancer lb --protocol HTTP --protocol-port=80 --name listener</codeblock></li>
-        <li>Create a new pool for the load balancer using the <codeph>lbass-pool-create</codeph> command.  Creating a new pool requires
+          <codeblock>neutron lbaas-listener-create --loadbalancer lb --protocol HTTP --protocol-port=80 --name listener</codeblock></li>
+        <li>Create a new pool for the load balancer using the <codeph>lbaas-pool-create</codeph> command.  Creating a new pool requires
           the load balancing algorithm, the name of the listener, the protocol and a name for the pool.
-          <codeblock>neutron lbass-pool-create --lb-algorithm ROUND_ROBIN --listener listener --protocol HTTP --name pool</codeblock></li>
-        <li>You can add members to the load balancer pool by running the <codeph>lbass-member-create</codeph> command. The command requires the
+          <codeblock>neutron lbaas-pool-create --lb-algorithm ROUND_ROBIN --listener listener --protocol HTTP --name pool</codeblock></li>
+        <li>You can add members to the load balancer pool by running the <codeph>lbaas-member-create</codeph> command. The command requires the
           subnet, IP address, protocol port and the name of the pool for each virtual machine you'd like to include into the load balancer pool.
-          <codeblock>neutron lbaas-member-create --subnet sub --address 10.0.0.5 --protocol-port 80 pool</codeblock></li>
-        <li>Display the current state of the load balancer and values with <codeph>lbass-loadbalancer-show</codeph>.
+          <codeblock>neutron lbaas-member-create --subnet sub --address 10.1.0.5 --protocol-port 80 pool</codeblock></li>
+        <li>Display the current state of the load balancer and values with <codeph>lbaas-loadbalancer-show</codeph>.
           <codeblock>neutron lbaas-loadbalancer-show lb</codeblock></li>
       </ol>
         
@@ -113,8 +116,8 @@ nova boot --flavor 1 --image cirros-0.3.3-x86_64 --nic net-id=$(neutron net-list
           <li>Create the load balancer pool with <codeph>lb-pool-create</codeph> giving it a method, name, protocol and subnet.
           <codeblock>neutron lb-pool-create --lb-method ROUND_ROBIN --name pool --protocol HTTP --subnet-id $(neutron subnet-list | awk '/sub/ {print $2}')</codeblock></li>
           <li>Create load balancing members with <codeph>lb-member-create</codeph> providing the IP address, protocol and load balancing pool name to each member.
-          <codeblock>neutron lb-member-create --address 10.0.0.4 --protocol-port 80 pool
-neutron lb-member-create --address 10.0.0.5 --protocol-port 80 pool</codeblock></li>
+          <codeblock>neutron lb-member-create --address 10.1.0.4 --protocol-port 80 pool
+neutron lb-member-create --address 10.1.0.5 --protocol-port 80 pool</codeblock></li>
           <li>Create the vip  with <codeph>lb-vip-create</codeph> giving it a name, protocol, protocol port and a subnet.
           <codeblock>neutron lb-vip-create --name vip --protocol-port 80 --protocol HTTP --subnet-id $(neutron subnet-list | awk '/sub/ {print $2}')</codeblock></li>
           <li>You can check to see if the load balancer is active with <codeph>lb-vip-list</codeph>
