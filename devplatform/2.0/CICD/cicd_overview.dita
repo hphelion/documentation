@@ -4,11 +4,12 @@
   <title>Continuous Integration and Deployment Overview</title>
   <body>
     <p> "Greenfield" software development provides new functionality for new infrastructure, new
-      customers, new owners, or new ideas. Writing enterprise apps in such an undefined arena is
-      fundamentally risky, and best practice is to take an agile, iteritave approach. With
-      Continuous Integration and Deployment (CICD), small project teams can build, test, and deploy
-      each functional iteration with little effort, allowing them to focus on the code, not the
-      process.</p>
+      customers, new owners, or new ideas. </p>
+    <p>Writing enterprise apps in such an undefined arena is fundamentally risky, and best practice
+      is to take an agile, iteritave approach. </p>
+    <p>With Continuous Integration and Deployment (CICD), small project teams can build, test, and
+      deploy each functional iteration with little effort, allowing developers to focus on the code,
+      not the process.</p>
     <section><title>Highlights</title>
       <ul>
         <li>Automates testing through integration with popular testing frameworks.</li>

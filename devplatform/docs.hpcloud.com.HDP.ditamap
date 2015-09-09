@@ -95,7 +95,7 @@
       
         <topicref href="2.0/CICD/cicd_overview.dita" navtitle="Continuous Integration and Deployment" locktitle="yes">
         <topicref href="2.0/CICD/cicd_installation.dita"/>
-          <topicref href="2.0/CICD/cicd_inital_configuration.dita"/>
+          <topicref href="2.0/CICD/cicd_initial_configuration.dita"/>
           <topicref href="2.0/CICD/cicd_troubleshooting.dita"/>
           <topicref href="2.0/CICD/cicd_users_guide.dita"/>
           <topicref href="2.0/CICD/cicd_walkthrough.dita"
