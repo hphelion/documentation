@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_flx_j2b_ws">
+<topic id="install_esx">
   <title>Deploying ESX Cloud </title>
   <body>
     <p>This page describes the procedure to deploy ESX cloud using input model.</p>
     <section>
       <note type="important">
         <p>Before you start your ESX cloud deployment ensure that you read the following
-          instructions carefully. <ul id="ul_h4l_m5s_ft">
-            <li>Refer to <b><xref href="../installation.dita#topic_flx_j2b_ws/important-notes"
+          instructions carefully. <ul>
+            <li>Refer to <b><xref href="bare_installation_kvm.dita#install_kvm/important-notes"
                   >Important Notes</xref></b> in the Installation Guide.</li>
             <li>Prepare your baremetal hardware on all nodes. For instruction, please refer to <xref
-                href="../installation.dita#topic_flx_j2b_ws/Prereqs"><b>Before You
+                href="bare_installation_kvm.dita#install_kvm/Prereqs"><b>Before You
               Start</b></xref>.</li>
           </ul></p>
       </note>
@@ -46,7 +46,7 @@
       </p>
     </section>
     <section><b>Deploy ESX Cloud</b><p>At a high level, here are the steps to configure and deploy
-        ESX cloud:</p><p><image href="../../media/esx/esx_deploy.jpg" id="image_kjt_zlm_ft"
+        ESX cloud:</p><p><image href="../media/esx/esx_deploy.jpg" id="image_kjt_zlm_ft"
       /></p></section>
     <section>
       <title>Procedure to Deploy ESX cloud</title>
@@ -54,11 +54,11 @@
     <p>The following topics in this section explain how to deploy ESX cloud.<ol id="ol_ctc_gzk_ft">
         <li><b>Set up the Deployer Node</b>
           <p> For the detailed instructions on setting up the deployer node, refer to <xref
-              href="../installation.dita#topic_flx_j2b_ws/DeployerInstall">Set up the Deployer
+              href="bare_installation_kvm.dita#install_kvm/DeployerInstall">Set up the Deployer
               node</xref> in the installation guide.</p></li>
         <li><b>Configure and Run the Deployer</b><p> For the detailed instructions on configuring
             and running deployer node, refer to <xref
-              href="../installation.dita#topic_flx_j2b_ws/HLM_Node_Personalization">Configure and
+              href="bare_installation_kvm.dita#install_kvm/HLM_Node_Personalization">Configure and
               Run the Deployer</xref> in the installation guide.</p></li>
         <li><b>Prepare and Deploy Cloud Controllers</b><p>
             <ol id="ol_c1w_pfl_ft">
@@ -71,7 +71,7 @@
                 <codeblock>cp -r ~/helion/examples/one-region-poc-with-esx/* ~/helion/my_cloud/definition/</codeblock></li>
               <li>The configuration files for editing are available at
                   <codeph>~/helion/my_cloud/definition/</codeph>. Refer to <b><xref
-                    href="../installation.dita#topic_flx_j2b_ws/note">Note</xref></b> for the list
+                    href="bare_installation_kvm.dita#install_kvm/note">Note</xref></b> for the list
                 of configuration files.</li>
               <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the
                 line containing <codeph>eon.yml</codeph>.</li>
@@ -88,27 +88,27 @@ enable_distributed_routing = False</codeblock><note>
                   You modify the mechanism_drivers = ovsvapp in the
                   <codeph>neutron.conf.j2</codeph>.</note></li>
               <li>Commit your cloud deploy configuration to the<xref
-                  href="../using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows:
+                  href="using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows:
                 <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock></li>
               <li>Refer to the installation guide and execute the steps mentioned in sections <xref
-                  href="../installation.dita#topic_flx_j2b_ws/CobblerDeploy">Deploy Cobbler</xref>,
-                  <xref href="../installation.dita#topic_flx_j2b_ws/NodeProvision"/>, and <xref
-                  href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run the
+                  href="bare_installation_kvm.dita#install_kvm/CobblerDeploy">Deploy Cobbler</xref>,
+                  <xref href="bare_installation_kvm.dita#install_kvm/NodeProvision"/>, and <xref
+                  href="bare_installation_kvm.dita#install_kvm/run-config-processor">Run the
                   Configuration Processor</xref> to deploy cloud controller.</li>
             </ol>
           </p></li>
         <li><b>Prepare and Deploy ESX Computes and OVSvAPPs</b><p>The following sections describe
             the procedure to install and configure ESX compute and OVSvAPPs on vCenter.<ul
               id="ul_lns_fjl_ft">
-              <li><xref href="#topic_flx_j2b_ws/deploy-template" format="dita">Deploy Helion Linux
-                  Shell VM Template</xref></li>
-              <li><xref href="#topic_flx_j2b_ws/prepare-esx-cloud-deployment" format="dita"
-                  >Preparation for ESX Cloud Deployment</xref></li>
+              <li><xref href="#install_esx/deploy-template" format="dita">Deploy Helion Linux Shell
+                  VM Template</xref></li>
+              <li><xref href="#install_esx/prepare-esx-cloud-deployment" format="dita">Preparation
+                  for ESX Cloud Deployment</xref></li>
             </ul></p></li>
       </ol></p>
-    <section><b>Deploy Helion Linux Shell VM Template</b><p>The first step in deploying the ESX
+    <section id="deploy-template"><b>Deploy Helion Linux Shell VM Template</b><p>The first step in deploying the ESX
         compute proxy and OVSvAPPs is to create a VM template that will make it easier to deploy the
         ESX compute proxy for each Cluster and OVSvAPPs on each ESX server. </p><p>Perform the
         following steps to deploy a template:<ol id="ol_qdt_ljs_ft">
@@ -118,23 +118,22 @@ git commit -m "My config or other commit message"</codeblock></li>
           <li>Follow the instructions in the wizard to specify the data center, cluster, and node to
             install. Refer to the VMWare vSphere documentation as needed.</li>
         </ol></p></section>
-    <section id="prepare-esx-cloud-deployment"><b>Preparation for ESX Cloud Deployment</b><p>This section describes the procedures to
-        prepare and deploy the ESX computes and OVSvAPPs for deployment. <ol id="ol_xpc_zqs_ft">
+    <section id="prepare-esx-cloud-deployment"><b>Preparation for ESX Cloud Deployment</b><p>This
+        section describes the procedures to prepare and deploy the ESX computes and OVSvAPPs for
+        deployment. <ol id="ol_xpc_zqs_ft">
           <li>Login to the deployer node.</li>
           <li>Source <codeph>service.osrc</codeph>.</li>
-          <li><xref href="#topic_flx_j2b_ws/register-vcenter" format="dita">Register a vCenter
+          <li><xref href="#install_esx/register-vcenter" format="dita">Register a vCenter
               Server</xref></li>
-          <li><xref href="#topic_flx_j2b_ws/register-network" format="dita">Register ESX Cloud
-              Network Configuration</xref></li>
-          <li><xref href="#topic_flx_j2b_ws/import-cluster" format="dita">Import
-            Clusters</xref></li>
-          <li><xref href="#topic_flx_j2b_ws/activate-cluster" format="dita">Activate
-            Clusters</xref></li>
-          <li><xref href="#topic_flx_j2b_ws/modify-volume-config" format="dita">Modify the Volume
+          <li><xref href="#install_esx/register-network" format="dita">Register ESX Cloud Network
+              Configuration</xref></li>
+          <li><xref href="#install_esx/import-cluster" format="dita">Import Clusters</xref></li>
+          <li><xref href="#install_esx/activate-cluster" format="dita">Activate Clusters</xref></li>
+          <li><xref href="#install_esx/modify-volume-config" format="dita">Modify the Volume
               Configuration File</xref></li>
-          <li><xref href="#topic_flx_j2b_ws/commit-your-cloud" format="dita">Commit your Cloud
+          <li><xref href="#install_esx/commit-your-cloud" format="dita">Commit your Cloud
               Definition</xref></li>
-          <li><xref href="#topic_flx_j2b_ws/deploy-compute-proxy-ovsvapps" format="dita">Deploy ESX
+          <li><xref href="#install_esx/deploy-compute-proxy-ovsvapps" format="dita">Deploy ESX
               Compute Proxy and OVSvApps</xref></li>
         </ol></p></section>
     <p><b>Manage vCenters and Clusters</b></p>
@@ -171,7 +170,7 @@ git commit -m "My config or other commit message"</codeblock></li>
 | username   | administrator@vsphere.local          |
 +------------+--------------------------------------+</codeblock></p></li>
       </ol></p>
-    <p  id="register-network"><b>Register ESX Cloud Network Configuration</b></p>
+    <p id="register-network"><b>Register ESX Cloud Network Configuration</b></p>
     <p>This involve getting a sample network information template. Fill the details of the template
       and use that template to register cloud network configuration for the vCenter.</p>
     <p>
@@ -292,7 +291,8 @@ git commit -m "My config or other commit message"</codeblock></li>
         <li>Use the template to register Cloud Network Configuration. This sets the network
           information for a vCenter which is used to deploy and configure compute proxy and OVSvAPP
           VMs during the cluster activation.
-            <codeblock><codeph># eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For example:
+            <codeblock><codeph># eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+            example:
             <codeblock># eon set-network-info --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --config-json net_conf.json</codeblock></p><p>
             <note>The vcenter ID is generated when you execute the above (<b>step 2</b>)
               command.</note>
@@ -355,10 +355,10 @@ git commit -m "My config or other commit message"</codeblock></li>
           active cluster command, the <codeph>server.yml</codeph> of the input model is updated with
           IP Addresses of compute proxy and OVSvApp.
           <!--VMs correspesponding to the clusters are being activated.--></p></note></p>
-   
-      <p>
-        <ol>
-          <li>Activate the cluster for the selected
+
+    <p>
+      <ol>
+        <li>Activate the cluster for the selected
               vCenter.<codeblock><codeph># eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock><p><b>Sample
               Output</b></p><p>
             <codeblock># eon cluster-activate --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c22 
@@ -371,9 +371,9 @@ git commit -m "My config or other commit message"</codeblock></li>
 | state         | activated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock>
           </p></li>
-        </ol>
-      </p>
-    <p id="modify-volume-config"><b>Modify  the Volume Configuration File</b></p>
+      </ol>
+    </p>
+    <p id="modify-volume-config"><b>Modify the Volume Configuration File</b></p>
     <p>Once the cluster is activated you must configure the volume.</p>
     <p>Perform the following steps to modify the volume configuration files:</p>
     <p>
@@ -408,19 +408,19 @@ git commit -m "My config or other commit message"</codeblock></li>
       </ol>
     </p>
     <p id="commit-your-cloud"><b>Commit your Cloud Definition</b></p>
-   
-      <p>
-        <ol>
-          <li> Add the cloud deployment definition to the git
+
+    <p>
+      <ol>
+        <li> Add the cloud deployment definition to the git
           :<codeblock>cd /home/stack/helion/hos/ansible;
 git add -A;
 git commit -m 'Adding ESX Configurations';</codeblock></li>
-          <li>Prepare your environment for deployment:
-            <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml;
+        <li>Prepare your environment for deployment:
+          <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml;
 ansible-playbook -i hosts/localhost ready-deployment.yml;
 cd /home/stack/scratch/ansible/next/hos/ansible;</codeblock></li>
-        </ol>
-      </p>
+      </ol>
+    </p>
     <p id="deploy-compute-proxy-ovsvapps"><b>Deploy ESX Compute Proxy and OVSvApps</b></p>
     <p>Execute the following command to deploy a esx compute and
       OVSvApps:<codeblock>ansible-playbook -i hosts/verb_hosts guard-deployment.yml

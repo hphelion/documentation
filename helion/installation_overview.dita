@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="install_overview">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Installation Overview</title>
+  <body>
+    <section id="about"><title>Installation Steps</title>
+      <ul>
+        <li>Installation Pre-requisites</li>
+        <li>Baremetal Install for KVM Hypervisor</li>
+        <li>Baremetal Install for ESX Hypervisor</li>
+      </ul>
+    </section>
+  </body>
+</topic>

@@ -22,15 +22,17 @@
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
     <topicref href="helion/faq.dita"/>
-    <topicref href="helion/installation.dita" navtitle="Installing HP Helion OpenStack"
+    <topicref href="helion/installation_overview.dita" navtitle="Installation Overview"
       locktitle="yes">
+      <topicref href="helion/bare_installation_kvm.dita" navtitle="Baremetal Install for KVM Hypervisor"
+        locktitle="yes"/>
       <topichead navtitle="Configuration Files">
         <topicref href="helion/config/entryscalewithvsa.dita"/>
       </topichead>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
         locktitle="yes"/>
-      <topicref href="helion/esx/deploy_esx_cloud.dita" navtitle="Deploying ESX Cloud"
-        locktitle="yes" toc="yes"/>
+      <topicref href="helion/bare_installation_esx.dita"
+        navtitle="Baremetal Install for ESX Hypervisor" locktitle="yes"/>
     </topicref>
     <!-- BURA -->
     <topicref href="helion/bura/bura_overview.dita" navtitle="Backup and Restore" locktitle="yes">
@@ -59,7 +61,7 @@
       locktitle="yes">
       <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
         locktitle="yes">
-        <topicref href="helion/cinder/ceph/deploy_ceph.dita" navtitle="Ceph Configuration"
+        <topicref href="helion/cinder/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
           locktitle="yes"/>
         <topicref href="helion/cinder/ceph/configuration_files.dita"/>
       </topicref>
@@ -116,7 +118,7 @@
     <topicref href="helion/logging/centralized_logging.dita" navtitle="Centralized Logging Service"
       locktitle="yes">
       <topicref href="helion/logging/logging_settings.dita" navtitle="Logging Settings"
-        locktitle="yes"></topicref>
+        locktitle="yes"/>
     </topicref>
     <!-- Neutron -->
     <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Service"
