@@ -98,59 +98,62 @@
         <topicref href="Inventory/CGH-2-User-host-management-inventory.dita"
             navtitle="Managing Inventory" locktitle="yes">
             <topicref href="Inventory/CGH-2-User-host-management-hardware-inventory.dita"
-                navtitle="Managing Systems" locktitle="yes">
-                <topicref href="Inventory/CGH-2-User-host-management-clusters.dita"
-                    navtitle="About Clusters" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-inventory.cluster.dita"
-                    navtitle="Working with Clusters" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-hostaggregate.dita"
-                    navtitle="Working with Host Aggregates" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-host-initialize-compute.dita"
+                navtitle="Managing Systems" locktitle="yes"/>
+            <topicref href="HostManagement/CGH-2-User-host-management.dita"
+                navtitle="Managing Hosts" locktitle="yes">
+                <topicref href="HostManagement/CGH-2-User-host-management-lifecycle.dita"
+                    navtitle="Life Cycle of a Host System" locktitle="yes"/>
+                <topicref
+                    href="HostManagement/CGH-2-User-host-management-host-initialize-compute.dita"
                     navtitle="Initializing and Configuring Compute Nodes" locktitle="yes"/>
                 <topicref
-                    href="Inventory/CGH-2-User-host-management-host-initialize-controller.dita"
+                    href="HostManagement/CGH-2-User-host-management-host-initialize-controller.dita"
                     navtitle="Initializing and Configuring Controller1" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-host-initialize-storage.dita"
+                <topicref
+                    href="HostManagement/CGH-2-User-host-management-host-initialize-storage.dita"
                     navtitle="Initializing and Configuring Storage Nodes" locktitle="yes"/>
-            </topicref>
-            <topicref href="Inventory/CGH-2-User-host-management.dita" navtitle="Managing Hosts"
-                locktitle="yes">
-                <topicref href="Inventory/CGH-2-User-host-management-controller-HA.dita"
+                <topicref href="HostManagement/CGH-2-User-host-management-controller-HA.dita"
                     navtitle="Working with Highly Available Controller Nodes" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-host-lock.dita"
+                <topicref href="HostManagement/CGH-2-User-host-management-host-lock.dita"
                     navtitle="Locking and Unloacking a Host" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-lifecycle.dita"
-                    navtitle="Life Cycle of a Host System" locktitle="yes"/>
             </topicref>
-            <topicref href="Inventory/CGH-2-User-host-management-active.dita"
+            <topicref href="HostManagement/CGH-2-User-host-management-active.dita"
                 navtitle="Managing Hosts on an Active System" locktitle="yes">
-                <topicref href="Inventory/CGH-2-User-host-management-active-storage.dita"
+                <topicref href="HostManagement/CGH-2-User-host-management-active-storage.dita"
                     navtitle="Replacing Active Storage Nodes" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-active-controller.dita"
+                <topicref href="HostManagement/CGH-2-User-host-management-active-controller.dita"
                     navtitle="Replacing Active Controller Nodes" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-host-remove.dita"
+                <topicref href="HostManagement/CGH-2-User-host-management-host-remove.dita"
                     navtitle="Deleting an Active Host System" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-active-compute.dita"
+                <topicref href="HostManagement/CGH-2-User-host-management-active-compute.dita"
                     navtitle="Adjusting Resources on a Compute Node" locktitle="yes"/>
             </topicref>
-            <topichead navtitle="Working with Patches"/>
-            <topicref href="Inventory/CGH-2-User-host-management-inventory-detail-storage.dita"
-                navtitle="Working with Storage Profiles" locktitle="yes"/>
-            <topicref href="Inventory/CGH-2-User-host-management-detail-memory.dita"
-                navtitle="Working with Memory Profiles" locktitle="yes"/>
+            <topicref href="HostManagement/CGH-2-User-host-management-patches.dita"
+                navtitle="Applying Patches to the KVM Region" locktitle="yes"/>
+            <topicref href="HostManagement/CGH-2-User-host-management-profiles.dita"
+                navtitle="Viewing Hardware Profiles" locktitle="yes">
+                <topicref href="HostManagement/CGH-2-User-host-management-profiles-cpu.dita"
+                    navtitle="Viewing CPU Profiles" locktitle="yes"/>
+                <topicref href="HostManagement/CGH-2-User-host-management-profiles-intf.dita"
+                    navtitle="Viewing Interface Profiles" locktitle="yes"/>
+                <topicref href="HostManagement/CGH-2-User-host-management-profiles-storage.dita"
+                    navtitle="Viewing Storage Profiles" locktitle="yes"/>
+                <topicref href="HostManagement/CGH-2-User-host-management-profiles-memory.dita"
+                    navtitle="Viewing Memory Profiles" locktitle="yes"/>
+            </topicref>
             <topicref href="Inventory/CGH-2-User-host-management-detail.dita"
                 navtitle="Working with Inventory Details" locktitle="yes">
-                <topicref href="Inventory/CGH-2-User-host-management-host-hardware.dita"
-                    navtitle="Managing CPU Profiles" locktitle="yes"/>
                 <topicref
                     href="Inventory/CGH-2-User-host-management-inventory-detail-processor.dita"
                     navtitle="Working with CPU Profiles" locktitle="yes"/>
-                <topicref href="Inventory/CGH-2-User-host-management-detail-interfaces.dita"
-                    navtitle="Working with Interface Details" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-detail-memory.dita"
+                    navtitle="Working with Memory  Profiles" locktitle="yes"/>
                 <topicref href="Inventory/CGH-2-User-host-management-inventory-detail-storage.dita"
-                    navtitle="Working with Host Storage" locktitle="yes"/>
+                    navtitle="Working with Storage Profiles" locktitle="yes"/>
                 <topicref href="Inventory/CGH-2-User-host-management-inventory-detail-ports.dita"
-                    navtitle="Viewing Port Details" locktitle="yes"/>
+                    navtitle="Working wth Port Details" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-detail-interfaces.dita"
+                    navtitle="Working with Host Interface  Profiles" locktitle="yes"/>
             </topicref>
         </topicref>
         <topichead navtitle="Managing Hypervisors"/>

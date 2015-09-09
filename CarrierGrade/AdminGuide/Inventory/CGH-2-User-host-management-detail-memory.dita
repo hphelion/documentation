@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6841">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Working with Host Memory</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Working with Host Memory
+    Profiles</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -21,232 +22,202 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-memory.md-->
- <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/memory/--></p>
-<!-- From the Titanium Server Admin Guide -->
-<p>The <b>Memory</b> tab on the <b>Inventory Detail</b> page presents memory details for a host.</p>
-<!-- ===================== horizontal rule ===================== -->
-<p>
-<b>Note:</b> This feature applies only to servers in regionone.</p>
-<!-- ===================== horizontal rule ===================== -->
-<p>The information is presented in three columns, as follows:</p>
-<p>You access the <b>Inventory Detail</b> page by clicking the host name on the <b>Hosts</b> tab of the <b>Systems Inventory</b> page. The inventory detail for a host consists of multiple tabs, each addressing a different aspect of the host.</p>
-<ul>
-<li>
-<p>
-<b>Memory</b> - Overall memory on the host. For a controller node it displays the total and available memory figures.</p>
-
-<p>For a compute node, as in the example above, it displays the amount reserved for the platform (system software), and the total and available figures for use by virtual machines.</p>
-</li>
-<li>
-<p>
-<b>vSwitch Huge Pages</b> - This column is relevant on compute nodes only. The size of the huge pages, and the total and available huge page figures.</p>
-</li>
-<li>
-<p>
-<b>VM Huge Pages</b> - This column is relevant on compute nodes only.
-The size of the huge pages, and the total and available huge page figures.</p>
-</li>
-</ul>
-<section id="huge"> <title>Huge Page Provisioning</title>
-<p>You can adjust the number and size of pages to allocate on a host for use as VM memory. For individual VMs, you can specify the page size to use.</p>
-<p>In each NUMA node on a host, a fixed amount of memory is reserved for use by VMs. By default, this memory is managed using 2 MiB huge pages. You can change this for individual NUMA nodes to use a combination of 2 MiB and 1 GiB huge pages. Using larger pages can reduce page management overhead and improve system performancefor systems with large amounts of virtual memory and many running processes.</p>
-<p>To calculate how many pages of each size you can successfully request, you can use the system host-memorylist and system host-memory-show commands to find out approximately how much memory is available
-for VMs. Additional memory not included in these totals may also be available.</p>
-<p>If the huge page request cannot be allocated from the available memory, an informative message is displayed. If the available memory is greater than the amount required by the huge page request, the unallocated memory is not used for VMs, and is not available for other uses.
-After setting the memory allocations for a compute node, you can save them as a memory profile, and then apply the profile to other compute nodes. For more information, see [Creating and Using Memory Profiles]{#profiles}.</p>
-<p>To specify the page size to use for a VM, see Specifying a Page Size for a VM on page 126.</p>
-<p>You can edit the huge page attributes for a NUMA node from the web admin interface using the Memory tab on the Inventory pane.</p>
-<p>Before requesting huge pages on a host, ensure that the host has enough available memory.</p>
-<p>To provision huge memory:</p>
-<ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>In the <b>Host Name</b> column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
-</li>
-<li>
-<p>Click the <b>Memory</b> tab, then click <b>Update Hugepage Memory</b>.</p>
-</li>
-<li>
-<p>Use the <b>Update Hugepage Memory</b> screen to set the desired huge pages for each NUMA node.</p>
-
-<p>For each available NUMA node, two fields are supplied:</p>
-
-<codeblock>
-<codeph># of VM 2M Hugepages Node n
-</codeph>
-</codeblock>
-
-<p>The number of 2MiB pages to reserve for VM use on the NUMA Node. If no 2MiB pages are required, type 0.</p>
-
-<codeblock>
-<codeph># of VM 1G Hugepages Node n
-</codeph>
-</codeblock>
-
-<p>The number of 1GiB pages to reserve for VM use on the NUMA Node. If no 1GiB pages are required, type 0.</p>
-</li>
-<li>
-<p>Click Save.</p>
-
-<p>If there are insufficient resources to support the requested number of huge pages, a message appears. Review your calculations and submit a revised request.</p>
-</li>
-<li>
-<p>
-<xref href="CGH-2-User-host-management-host-lock.dita#topic3241" >Unlock the host</xref> and wait for it to be reported as <codeph>Available</codeph>.</p>
-</li>
-</ol>
-<p>You can edit the huge page attributes for a NUMA node from the CLI.</p>
-<ol>
-<li>
-<p>Lock the affected host.</p>
-
-<codeblock>
-<codeph>system host-lock hostname
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Use the following command to set the huge page attributes.</p>
-
-<codeblock>
-<codeph>system host-hugepage-update &lt;hostname&gt; processor -2M &lt;2Mpages&gt; -1G &lt;1Gpages&gt;
-</codeph>
-</codeblock>
-
-<p>where</p>
-
-<ul>
-<li>
-<codeph>hostname</codeph> - the hostname or id of the compute node processor is the NUMA node of the compute node (0 or 1)</li>
-<li>
-<codeph>2Mpages</codeph> - if the optional -2M argument is included, the number of 2MiB huge pages to make available (if none, use 0).</li>
-<li>
-<codeph>1Gpages</codeph> - if the optional -1G argument is included number of 1GiB huge pages to make available (if none, use 0).</li>
-</ul>
-<p>For example, to allocate four 2 MiB huge pages for use by VMs on NUMA node 1 of compute node compute-0 :</p>
-
-<codeblock>
-<codeph>system host-hugepage-update compute-0 1 -2M 4
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Unlock the host.</p>
-
-<codeblock>
-<codeph>system host-unlock hostname
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Wait for the host to be reported as available.</p>
-
-<codeblock>
-<codeph>system host-list hostname
-</codeph>
-</codeblock>
-</li>
-</ol>
-</section>
-<section id="memory"> <title>Creating and Using Memory Profiles</title>
-<p>You can optionally save the huge pages configuration for a host as a profile, and apply the profile to other hosts.</p>
-<p>For more information about huge page configurations, see [Huge Page Provisioning]{#huge}.</p>
-<p>To create memory profiles:</p>
-<ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>In the <b>Host Name</b> column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
-</li>
-<li>
-<p>Click the <b>Memory</b> tab, then click <b>Create Memory Profile</b>.</p>
-</li>
-<li>
-<p>In the <b>Create Memory Profile</b> screen, enter a name for the memory profile.</p>
-</li>
-<li>
-<p>Click <b>Create Memory Profile</b> to save the profile and close the dialog box.</p>
-</li>
-</ol>
-<p>You can use the following CLI command to create a memory profile:</p>
-<codeblock>
-  <codeph>    system memprofile-add &lt;memoryprofile&gt; &lt;hostid&gt;
-
-where 
-
-* `memoryprofile` is the name or UUID of the memory profile
-* `hostid` is the name or UUID of the host from which to create the profile.
-</codeph>
-</codeblock>
-<p>You can apply this profile to other hosts by editing the host settings in the web administration
-        interface. For information about editing a host, see <xref
-          href="CGH-2-User-host-management-active.dita#topic4032">Working with
-          Hosts</xref>.</p>
-<p>You can also use the following CLI command to apply a memory profile to a host:</p>
-<codeblock>
-  <codeph>system host-apply-memprofile &lt;memoryprofile&gt; &lt;hostid&gt;
-
-where 
-
-* memoryprofile is the name or UUID of the memory profile
-* hostid is the name or UUID of the host.
-</codeph>
-</codeblock>
-<p>To manage memory profiles, you can use the Memory Profiles tab on the System Inventory page, or you can use the following CLI commands:</p>
-<ul>
-<li>
-<p>To list memory profiles:</p>
-
-<codeblock>
-<codeph>$ system memprofile-list
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>To show details for a memory profile:</p>
-
-<codeblock>
-<codeph>system memprofile-show &lt;memoryprofile&gt;
-</codeph>
-</codeblock>
-
-<p>where memoryprofile is the name or UUID of the memory profile.</p>
-</li>
-<li>
-<p>To delete a memory profile:</p>
-
-<codeblock>
-<codeph>system memprofile-delete &lt;memoryprofile&gt;
-</codeph>
-</codeblock>
-
-<p>where memoryprofile is the name or UUID of the memory profile.</p>
-</li>
-</ul>
-<p>
-  <xref type="section" href="#topic6841"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
-</section>
-</body>
+    <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-memory.md--><!--permalink: /helion/openstack/carrier/admin/host/management/inventory/memory/--></p>
+    <!-- From the Titanium Server Admin Guide -->
+    <p>The <b>Memory</b> tab on the <b>Inventory Detail</b> page presents memory details for a
+      host.</p>
+    <p><image href="../../../media/CGH-2-inventory-details-memory.png" width="600"
+        id="image_p2q_224_ht"/></p>
+    <!-- ===================== horizontal rule ===================== -->
+    <p>
+      <b>Note:</b> This feature applies only to servers in regionone.</p>
+    <!-- ===================== horizontal rule ===================== -->
+    <p>To view host memory information:</p>
+    <p>
+      <ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab. </li>
+        <li>In the <b>Host Name</b> column, click the name of the locked host to open the
+            <b>Inventory Detail</b> page for that host</li>
+        <li>Click the <b>Memory</b> tab.</li>
+      </ol>
+    </p>
+    <p>The information is presented in three columns, as follows:</p>
+    <ul>
+      <li>
+        <p>
+          <b>Memory</b> - Overall memory on the host. For a controller node it displays the total
+          and available memory figures.</p>
+        <p>For a compute node, as in the example above, it displays the amount reserved for the
+          platform (system software), and the total and available figures for use by virtual
+          machines.</p>
+      </li>
+      <li>
+        <p>
+          <b>vSwitch Huge Pages</b> - This column is relevant on compute nodes only. The size of the
+          huge pages, and the total and available huge page figures.</p>
+      </li>
+      <li>
+        <p>
+          <b>VM Huge Pages</b> - This column is relevant on compute nodes only. The size of the huge
+          pages, and the total and available huge page figures.</p>
+      </li>
+    </ul>
+    <section id="huge">
+      <title>Huge Page Provisioning</title>
+      <p>You can adjust the number and size of pages to allocate on a host for use as VM memory. For
+        individual VMs, you can specify the page size to use.</p>
+      <p>In each NUMA node on a host, a fixed amount of memory is reserved for use by VMs. By
+        default, this memory is managed using 2 MiB huge pages. You can change this for individual
+        NUMA nodes to use a combination of 2 MiB and 1 GiB huge pages. Using larger pages can reduce
+        page management overhead and improve system performancefor systems with large amounts of
+        virtual memory and many running processes.</p>
+      <p>To calculate how many pages of each size you can successfully request, you can use the
+        system host-memorylist and system host-memory-show commands to find out approximately how
+        much memory is available for VMs. Additional memory not included in these totals may also be
+        available.</p>
+      <p>If the huge page request cannot be allocated from the available memory, an informative
+        message is displayed. If the available memory is greater than the amount required by the
+        huge page request, the unallocated memory is not used for VMs, and is not available for
+        other uses. After setting the memory allocations for a compute node, you can save them as a
+        memory profile, and then apply the profile to other compute nodes. For more information, see
+        [Creating and Using Memory Profiles]{#profiles}.</p>
+      <p>To specify the page size to use for a VM, see Specifying a Page Size for a VM on page
+        126.</p>
+      <p>You can edit the huge page attributes for a NUMA node from the web admin interface using
+        the Memory tab on the Inventory pane.</p>
+      <p>Before requesting huge pages on a host, ensure that the host has enough available
+        memory.</p>
+      <p>To provision huge memory:</p>
+      <ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab. </li>
+        <li>
+          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock
+            the host</xref> to make changes. Click <b>Edit Host</b> then select <b>Lock Host</b>.
+          Wait for the host to be reported as <codeph>Locked</codeph>.</li>
+        <li>In the <b>Host Name</b> column, click the name of the locked host to open the
+            <b>Inventory Detail</b> page for that host.</li>
+        <li>Click the <b>Memory</b> tab.</li>
+        <li>Click <b>Update Hugepage Memory</b> and set the desired huge pages for each NUMA
+            node.<p>For each available NUMA node, two fields are
+            supplied:</p><codeblock><codeph># of VM 2M Hugepages Node n
+</codeph></codeblock><p>The
+            number of 2MiB pages to reserve for VM use on the NUMA Node. If no 2MiB pages are
+            required, type
+            0.</p><codeblock><codeph># of VM 1G Hugepages Node n
+</codeph></codeblock><p>The number
+            of 1GiB pages to reserve for VM use on the NUMA Node. If no 1GiB pages are required,
+            type 0.</p></li>
+        <li>Click <b>Save</b>.<p>If there are insufficient resources to support the requested number
+            of huge pages, a message appears. Review your calculations and submit a revised
+            request.</p></li>
+        <li>
+          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Unlock
+            the host</xref> and wait for it to be reported as <codeph>Available</codeph>.</li>
+      </ol>
+      <p>You can edit the huge page attributes for a NUMA node from the CLI.</p>
+      <ol>
+        <li>Lock the affected
+          host.<codeblock><codeph>system host-lock hostname
+</codeph></codeblock></li>
+        <li>Use the following command to set the huge page
+            attributes.<codeblock><codeph>system host-hugepage-update &lt;hostname&gt; processor -2M &lt;2Mpages&gt; -1G &lt;1Gpages&gt;
+</codeph></codeblock><p>where:</p><ul>
+            <li>
+              <codeph>hostname</codeph> - the hostname or id of the compute node processor is the
+              NUMA node of the compute node (0 or 1)</li>
+            <li>
+              <codeph>2Mpages</codeph> - if the optional -2M argument is included, the number of
+              2MiB huge pages to make available (if none, use 0).</li>
+            <li>
+              <codeph>1Gpages</codeph> - if the optional -1G argument is included number of 1GiB
+              huge pages to make available (if none, use 0).</li>
+          </ul><p>For example, to allocate four 2 MiB huge pages for use by VMs on NUMA node 1 of
+            compute node compute-0
+          :</p><codeblock><codeph>system host-hugepage-update compute-0 1 -2M 4
+</codeph></codeblock></li>
+        <li>Unlock the
+          host.<codeblock><codeph>system host-unlock hostname
+</codeph></codeblock></li>
+        <li>Wait for the host to be reported as
+          available.<codeblock><codeph>system host-list hostname
+</codeph></codeblock></li>
+      </ol>
+    </section>
+    <section id="memory">
+      <title>Creating and Using Memory Profiles</title>
+      <p>You can optionally save the huge pages configuration for a host as a profile, and apply the
+        profile to other hosts.</p>
+      <p>For more information about huge page configurations, see [Huge Page
+        Provisioning]{#huge}.</p>
+      <p>To create memory profiles:</p>
+      <ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab.</li>
+        <li>In the <b>Host Name</b> column, click the name of the host to open the <b>Inventory
+            Detail</b> page for that host.</li>
+        <li>Click the <b>Memory</b> tab.</li>
+        <li>Click <b>Create Memory Profile</b>.</li>
+        <li>In the <b>Create Memory Profile</b> screen, enter a name for the memory profile.</li>
+        <li>Click <b>Create Memory Profile</b> to save the profile and close the dialog box.</li>
+      </ol>
+      <p>You can use the following CLI command to create a memory profile:</p>
+      <codeblock><codeph>    system memprofile-add &lt;memoryprofile&gt; &lt;hostid&gt;
+</codeph></codeblock>
+      <p>where: <ul id="ul_q1v_mhn_ht">
+          <li><codeph>memoryprofile</codeph> is the name or UUID of the memory profile</li>
+          <li><codeph>hostid</codeph> is the name or UUID of the host from which to create the
+            profile.</li>
+        </ul></p>
+      <p>You can apply this profile to other hosts by editing the host settings in the web
+        administration interface. For information about editing a host, see <xref
+          href="../HostManagement/CGH-2-User-host-management.dita#topic11233">Working with Hosts</xref></p>
+        
+      <p>You can also use the following CLI command to apply a memory profile to a host:</p>
+      <codeblock><codeph>system host-apply-memprofile &lt;memoryprofile&gt; &lt;hostid&gt;
+</codeph></codeblock>
+      <p>where: <ul id="ul_lk1_qhn_ht">
+          <li><codeph>memoryprofile</codeph> is the name or UUID of the memory profile</li>
+          <li><codeph>hostid</codeph> is the name or UUID of the host.</li>
+        </ul></p>
+      <p>To manage memory profiles, you can use the Memory Profiles tab on the System Inventory
+        page, or you can use the following CLI commands:</p>
+      <ul>
+        <li>
+          <p>To list memory profiles:</p>
+          <codeblock><codeph>$ system memprofile-list
+</codeph></codeblock>
+        </li>
+        <li>
+          <p>To show details for a memory profile:</p>
+          <codeblock><codeph>system memprofile-show &lt;memoryprofile&gt;
+</codeph></codeblock>
+          <p>where <codeph>memoryprofile</codeph> is the name or UUID of the memory profile.</p>
+        </li>
+        <li>
+          <p>To delete a memory profile:</p>
+          <codeblock><codeph>system memprofile-delete &lt;memoryprofile&gt;
+</codeph></codeblock>
+          <p>where <codeph>memoryprofile</codeph> is the name or UUID of the memory profile.</p>
+        </li>
+      </ul>
+      <p>
+        <xref type="section" href="#topic6841"> Return to Top </xref>
+      </p>
+      <!-- ===================== horizontal rule ===================== -->
+    </section>
+  </body>
 </topic>

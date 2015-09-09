@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2639">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Applying Patches to KVM Region
+    Servers</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+</metadata>
+</prolog>
+<body>
+    <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-storage.md--><!--permalink: /helion/openstack/carrier/admin/host/management/active/storage/--></p>
+    <!-- From the Titanium Server Admin Guide -->
+    <p>If there are any patches required or optional to be installed into the KVM region of HP
+      Helion OpenStack Carrier Grade, you can use the Horizon interface to apply the patches. </p>
+    <p><image href="../../../media/CGH-2-inventory-host-patch.png" width="600" id="image_qbj_dyg_ht"
+      /></p>
+    <!-- ===================== horizontal rule ===================== -->
+    <p>
+      <b>Note:</b> This feature applies only to servers in regionone.</p>
+    <!-- ===================== horizontal rule ===================== -->
+  <section>
+      <title>Apply patches</title>  
+  <p>To apply patches:</p>
+    <ol>
+      <li>
+        <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          OpenStack Horizon Dashboard</xref>.</li>
+      <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+          appropriate region and project</xref>.</li>
+      <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Inventory</b>
+        tab. Click the <b>Hosts</b> table.</li>
+      <li/>
+      <li>Click the <b>Patches</b> table.</li>
+      <li>Click <b>Upload Patches</b> to locate the patch file and import the patch file into the
+        Horizon interface and click <b>Upload Patch</b>.</li>
+      <li>Select the patch in the Patch List and click <b>Apply Patches</b>.<p>The Patches page is
+            updated to report the patch to be in the Partial-Apply state..</p></li>
+        <li>In the <b>Hosts</b> list, for <codeph>controller0</codeph>, select <b>Swact Host</b>
+          from the <b>Edit Hosts</b> menu to transfer active services to the standby
+            controller.<p>Wait for the procedure to be completed.</p></li>
+        <li>For <codeph>controller0</codeph>, select <b>Install Patches</b> from the <codeph>Edit
+            Hosts</codeph> menu.</li>
+        <li>When the patch in installed,  for <codeph>controller0</codeph>, select <b>Swact Host</b>
+          from the <b>Edit Hosts</b> menu to transfer active services back to
+            <codeph>controller0</codeph>.<p>Wait for the procedure to be completed.</p></li>
+        <li>For <codeph>controller1</codeph>, select <b>Install Patches</b> from the <codeph>Edit
+            Hosts</codeph> menu.<p>On the <b>Patches</b> table, the patch is now in the
+              <codeph>Applied</codeph> state. </p></li>
+    </ol>
+  </section>
+  <section><title>Back out a patch</title>
+      <p>If, for some reason, you need to remove, or back out, a patch,  </p>
+    
+    
+  </section>
+  </body>
+</topic>

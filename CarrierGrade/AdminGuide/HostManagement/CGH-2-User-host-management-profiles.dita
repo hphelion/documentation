@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2639">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Viewing Hardware
+    Profiles</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+</metadata>
+</prolog>
+<body>
+    <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-storage.md--><!--permalink: /helion/openstack/carrier/admin/host/management/active/storage/--></p>
+    <!-- From the Titanium Server Admin Guide -->
+    <p>A hardware profile is a named object that captures a particular host configuration. The
+      profile can be applied to any other host with a similar hardware configuration.</p>
+    <p>
+      <ul id="ul_dnl_z2h_ht">
+        <li><b>Cpu Profiles</b>. A CPU profile is a named assignment of processors and cores. </li>
+        <li><b>Interface Profiles</b>. An interface profile is a named configuration of Ethernet
+          ports and interfaces on a host. </li>
+        <li><b>Storage Profiles</b>. A storage profile is a named configuration for a list of
+          storage resources on a computing node. </li>
+        <li><b>Memory Profiles</b> A storage profile is a named configuration for a list of storage
+          resources on a computing node. </li>
+      </ul>
+    </p>
+    <!-- ===================== horizontal rule ===================== -->
+    <p>
+      <b>Note:</b> This feature applies only to servers in regionone.</p>
+    <!-- ===================== horizontal rule ===================== -->
+  <section>To view hardware profles:<ol>
+        <li>
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+            OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab. </li>
+        <li>Click the any of the following tables:<ul id="ul_h5c_3f4_ht">
+            <li>CPU profiles</li>
+            <li>interface profiles</li>
+            <li>storage profiles</li>
+            <li>memory profiles</li>
+          </ul></li>
+      </ol></section>
+  </body>
+</topic>

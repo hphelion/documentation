@@ -9,7 +9,7 @@
 <metadata>
 <othermeta name="layout" content="default"/>
 <othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -20,7 +20,7 @@
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -32,7 +32,7 @@
 <p>You must assign a host as a second controller to provide redundancy for controller-0.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<b>Note:</b> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>Before initializing a node, ensure that the following conditions are satisfied:</p>
 <ul>
@@ -55,7 +55,8 @@
 <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b>
+          link. </p>
 </li>
 <li>
 <p>Click the <b>Hosts</b> tab.</p>
@@ -76,8 +77,7 @@
 <p>The node is restarted automatically, and a display-device menu appears on the node console.</p>
 
 <p>
-<image href="../../../media/CGH-WR-Node-Console.png"/>
-</p>
+          <image href="../../../media/CGH-WR-Node-Console.png" id="image_zjx_fhr_ft"/></p>
 </li>
 <li>
 <p>Optional: Select the display device to use during initialization.
@@ -114,7 +114,7 @@ The personality (Controller, Compute, or Storage) is confirmed in the menu. If y
 </li>
 <li>
 <p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the node</xref> to make it available for use. Click <b>More</b> then <b>Unlock Host</b>.</p>
+<xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241" >Unlock the node</xref> to make it available for use. Click <b>More</b> then <b>Unlock Host</b>.</p>
 
 <p>The node is rebooted, and its Availability State is reported as <codeph>In-Test</codeph>. After a few minutes, it is reported as <codeph>Unlocked</codeph>, <codeph>Enabled</codeph>, and <codeph>Available</codeph>.</p>
 </li>

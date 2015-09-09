@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1730">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Viewing Host Port Details</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Viewing Port Details</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,7 +26,10 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-ports.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/ports/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>The tab Ports on the Inventory Detail page presents information about the physical ports on a host, as illustrated below.</p>
+<p>The <b>Ports</b> tab on the <b>Inventory Detail</b> page presents information about the physical
+      ports on a host.</p>
+    <p><image href="../../../media/CGH-2-inventory-details-ports.png" width="600"
+        id="image_bgt_g24_ht"/></p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in regionone.</p>
@@ -34,22 +37,19 @@
 <p>Currently none of the port attributes is configurable; they are all read directly from the hardware.</p>
 <p>To view the host ports:</p>
 <ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
-</li>
-<li>
-<p>Click the <b>Ports</b> tab.</p>
-</li>
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          OpenStack Horizon Dashboard</xref>.</li>
+      <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+          appropriate region and project</xref>.</li>
+      <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Inventory</b>
+        tab. </li>
+      <li>
+        <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock the
+          host</xref> to make changes. Click <b>Edit Host</b> then select <b>Lock Host</b>. Wait for
+        the host to be reported as <codeph>Locked</codeph>.</li>
+      <li>In the <b>Host Name</b> column, click the name of the locked host to open the <b>Inventory
+          Detail</b> page for that host.</li>
+<li>Click the <b>Ports</b> tab.</li>
 </ol>
 <p>Port information is presented in several columns, as follows:</p>
 <ul>
@@ -61,9 +61,5 @@
 <li>Boot Interface - The boot flag, whether or not PXE booting is enabled.</li>
 <li>Device Type - Hardware information about the port type, manufacturer, and model.</li>
 </ul>
-<p>
-  <xref type="section" href="#topic1730"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

@@ -26,7 +26,10 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>From the <b>Inventory Detail</b> page you can see detailed information about a host, and use it to define hardware profiles that can be used across the cluster.</p>
+<p>From the <b>Inventory Detail</b> page you can see detailed information about a host, and use it
+      to define hardware profiles that can be used across the cluster.</p>
+    <p><image href="../../../media/CGH-2-inventory-details.png" width="600" id="image_y4q_b24_ht"
+      /></p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in regionone.</p>
@@ -55,19 +58,15 @@
 <p>The <b>Overview</b> tab on the <b>Inventory Detail</b> page summarizes core details about a host object.</p>
 <p>To view the host CPUs:</p>
 <ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
-</li>
+        <li>
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+            OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab. </li>
+<li>In the <b>Host Name</b> column, click the name of the locked host to open the <b>Inventory
+            Detail</b> page for that host.</li>
 </ol>
 <p>The following items are included in the summary:</p>
 <ul>
@@ -75,9 +74,7 @@
 <li>MAC and IP addresses on the internal management network</li>
 <li>serial ID, if known. Use the command system host-modify &lt;hostname&gt; serialid=xxx to update it.</li>
 <li>location, as entered by the operator using the Edit Host window. For more information, see <xref
-            href="CGH-2-User-host-management.dita#topic11233">Host
-            Inventory</xref>
-        </li>
+            href="CGH-2-User-host-management-detail-memory.dita#topic6841">Host Memory</xref></li>
 <li>time stamps of when the host was created and last updated</li>
 <li>the host's state</li>
 <li>board management (iLO) information, if available, including controller type, MAC address, and IP address.</li>

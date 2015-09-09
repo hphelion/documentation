@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6151">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Working with Host Interfaces</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Working with Host Interface
+        Profiles</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -27,6 +28,8 @@
  <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/interfaces/--></p>
 <!-- From the Titanium Server Admin Guide -->
 <p>The <b>Interfaces</b> tab on the <b>Inventory Detail</b> page presents details about the logical L2 network interfaces on a node, as illustrated below for an unlocked controller node.</p>
+    <p><image href="../../../media/CGH-2-inventory-details-intf.png" width="600"
+        id="image_emq_f24_ht"/></p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in regionone.</p>
@@ -50,43 +53,34 @@
 <section id="view"> <title>Viewing interface details</title>
 <p>To view host interface information:</p>
 <ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
-</li>
-<li>
-<p>Click the <b>Interfaces</b> tab.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab.</li>
+        <li>In the <b>Host Name</b> column, click the name of the host to open the <b>Inventory
+            Detail</b> page for that host.</li>
+        <li>Click the <b>Interfaces</b> tab.</li>
 </ol>
 <p>Information about interfaces is presented in several columns, as follows:</p>
 <ul>
 <li>
 <b>Name</b> - The name given to the logical L2 interface.</li>
 <li>
-<b>Network Type</b> - The type of network the logical network interface is connected to. The options are:
-
-<ul>
-<li>
-<b>data</b> for a compute node data interface</li>
-<li>
-<b>infra</b> for the optional infrastructure network</li>
-<li>
-<b>mgmt</b> for the internal management network</li>
-<li>
-<b>oam</b> for the OAM network</li>
-<li>
-<b>pci-passthrough</b> for a PCI passthrough interface</li>
-</ul>
-</li>
+          <b>Network Type</b> - The type of network the logical network interface is connected to.
+          The options are: <ul>
+            <li>
+              <b>data</b> for a compute node data interface</li>
+            <li>
+              <b>infra</b> for the optional infrastructure network</li>
+            <li>
+              <b>mgmt</b> for the internal management network</li>
+            <li>
+              <b>oam</b> for the OAM network</li>
+            <li>
+              <b>pci-passthrough</b> for a PCI passthrough interface</li>
+          </ul></li>
 <li>
 <b>Type</b> - Ethernet, or aggregated Ethernet (LAG).</li>
 <li>
@@ -109,89 +103,70 @@
 <p>You can create a new interface profile out of the currently defined node interfaces.</p>
 <p>To create a host interface profile:</p>
 <ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
-</li>
-<li>
-<p>Click the <b>Interfaces</b> tab.</p>
-</li>
-<li>
-<p>Click <b>Create Interface Profile</b>.</p>
-</li>
-<li>
-<p>Enter a name for the new profile.</p>
-
-<p>Available interface profiles are listed, and can be removed, from the System Inventory page, as
-            described in <xref href="CGH-2-User-host-management-inventory-detail-storage.dita#topic6164">
-              Working with Hardware Profiles</xref>.</p>
-</li>
-<li>
-<p>Click <b>Create Interface Profile</b> to create the profile based on the interface and port configuration of the selected host.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab.</li>
+        <li>In the <b>Host Name</b> column, click the name of the host to open the <b>Inventory
+            Detail</b> page for that host.</li>
+        <li>Click the <b>Interfaces</b> tab.</li>
+<li>Click <b>Create Interface Profile</b>.</li>
+<li>Enter a name for the new profile.<p>Available interface profiles are listed, and can be removed,
+            from the System Inventory page, as described in <xref
+              href="CGH-2-User-host-management-inventory-detail-storage.dita#topic6164"> Working
+              with Hardware Profiles</xref>.</p></li>
+<li>Click <b>Create Interface Profile</b> to create the profile based on the interface and port
+          configuration of the selected host.</li>
 </ol>
 </section>
 <section id="create"> <title>Creating a new interface </title>
 <p>You can create new logical interfaces.</p>
 <p>To create a host interface:</p>
 <ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>
-<xref href="CGH-2-User-host-management-host-lock.dita#topic3241" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
-
-<p>Wait for the host to be reported as Locked.</p>
-</li>
-<li>
-<p>In the Host Name column, click the name of the locked host to open the <b>Inventory Detail</b> page for that host.</p>
-</li>
-<li>
-<p>Click the <b>Interfaces</b> tab.</p>
-</li>
-<li>
-<p>Click <b>Create Interface</b>.</p>
-
-<p>This button is available only on nodes in the locked state.</p>
-</li>
-<li>
-<p>Specify the following in the <b>Create Interface</b> screen:</p>
-
-<ul>
-<li>
-<b>Interface Name</b> - Enter the name to be assigned to the new logical interface.</li>
-<li>
-<b>Interface Type</b> - Select the type of network interface: Ethernet or aggregated Ethernet (LAG).</li>
-<li>
-<b>Ports</b> - Select the physical ports for the new logical interface. Physical ports already allocated to other interfaces are not listed.</li>
-<li>
-<b>Network Type</b> - Select the type of network to attach the new logical interface to (<codeph>data</codeph> or <codeph>infra</codeph>, for compute node data interfaces and infrastructure network connections respectively). Note that connections to the OAM and internal management networks are auto-provisioned during the software installation process.</li>
-<li>
-<b>Provider Network(s)</b> - Select one or more provider networks for the new logical interface, for networks of type data. Provider networks already allocated to other data interfaces are not listed, since no provider network can be associated with more than a single data interface.</li>
-<li>
-<b>MTU</b> - Enter the MTU size in bytes for the interface. For compute nodes, values between 1500 and 9000 are supported. For controller and storage nodes, the MTU size cannot exceed 1500.</li>
-</ul>
-</li>
-<li>
-<p>Click <b>Create Interface</b>.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab. </li>
+        <li>
+          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock
+            the host</xref> to make changes. Click <b>Edit Host</b> then select <b>Lock Host</b>.
+          Wait for the host to be reported as <codeph>Locked</codeph>.</li>
+        <li>In the <b>Host Name</b> column, click the name of the locked host to open the
+            <b>Inventory Detail</b> page for that host.</li>
+<li>Click the <b>Interfaces</b> tab.</li>
+<li>Click <b>Create Interface</b>.<p>This button is available only on nodes in the locked
+          state.</p></li>
+<li>Specify the following in the <b>Create Interface</b> screen:<ul>
+            <li>
+              <b>Interface Name</b> - Enter the name to be assigned to the new logical
+              interface.</li>
+            <li>
+              <b>Interface Type</b> - Select the type of network interface: Ethernet or aggregated
+              Ethernet (LAG).</li>
+            <li>
+              <b>Ports</b> - Select the physical ports for the new logical interface. Physical ports
+              already allocated to other interfaces are not listed.</li>
+            <li>
+              <b>Network Type</b> - Select the type of network to attach the new logical interface
+              to (<codeph>data</codeph> or <codeph>infra</codeph>, for compute node data interfaces
+              and infrastructure network connections respectively). Note that connections to the OAM
+              and internal management networks are auto-provisioned during the software installation
+              process.</li>
+            <li>
+              <b>Provider Network(s)</b> - Select one or more provider networks for the new logical
+              interface, for networks of type data. Provider networks already allocated to other
+              data interfaces are not listed, since no provider network can be associated with more
+              than a single data interface.</li>
+            <li>
+              <b>MTU</b> - Enter the MTU size in bytes for the interface. For compute nodes, values
+              between 1500 and 9000 are supported. For controller and storage nodes, the MTU size
+              cannot exceed 1500.</li>
+          </ul></li>
+<li>Click <b>Create Interface</b>.</li>
 </ol>
 <p>
 <b>Note:</b> Logical interfaces of network types <codeph>oam</codeph> and <codeph>mgmt</codeph> cannot be deleted. They can only be <xref type="section" href="#topic6151/editing">modified to use different physical ports</xref> when required.</p>
@@ -200,32 +175,22 @@
 <p>You can edit existing logical interfaces.</p>
 <p>To edit a host interface:</p>
 <ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>
-<xref href="CGH-2-User-host-management-host-lock.dita#topic3241" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
-
-<p>Wait for the host to be reported as Locked.</p>
-</li>
-<li>
-<p>For the interface to change, click <b>More</b> then <b>Edit</b>.</p>
-</li>
-<li>
-<p>In the Edit Interface screen, make changes to the fields, as described in <xref type="section" href="#topic6151/create">Creating a new interface details</xref>.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab. </li>
+        <li>
+          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock
+            the host</xref> to make changes. Click <b>Edit Host</b> then select <b>Lock Host</b>.
+          Wait for the host to be reported as <codeph>Locked</codeph>.</li>
+        <li>In the <b>Host Name</b> column, click the name of the locked host to open the
+            <b>Inventory Detail</b> page for that host.</li>
+<li>For the interface to change, click <b>More</b> then <b>Edit</b>.</li>
+<li>In the <b>Edit Interface</b> screen, make changes to the fields, as described in <xref
+            type="section" href="#topic6151/create">Creating a new interface details</xref>.</li>
 </ol>
-<p>
-  <xref type="section" href="#topic6151"> Return to Top </xref>
-</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
