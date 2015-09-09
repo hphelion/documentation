@@ -82,8 +82,8 @@ sh-4.2# exit </codeblock>
         or other registry server:</p><codeblock>$ sudo docker push &lt;myrepo>/opensuse-python</codeblock></section>
     
     <section><title>Create an Application Container:<i> bottle-currency-suse</i></title><p>First,
-        clone the the Docker version of the example app (bottle-currency). This app is based on
-        Ubuntu 12.04, so the Dockerfile can be adapted to work with an opensuse-python image.</p><p>
+        clone the Docker version of the example app (bottle-currency). This app is based on Ubuntu
+        12.04, so the Dockerfile can be adapted to work with an opensuse-python image.</p><p>
         <codeblock> git clone <xref href="https://github.com/Stackato-Apps/bottle-currency.git" format="html" scope="external">https://github.com/Stackato-Apps/bottle-currency.git</xref></codeblock>
       </p><p> Once the project is cloned, create a Docker file following the steps below
       .</p><codeblock>FROM <i>&lt;myrepo></i>/opensuse-python MAINTAINER <i>&lt;myname> &lt;myemail></i></codeblock>Use
