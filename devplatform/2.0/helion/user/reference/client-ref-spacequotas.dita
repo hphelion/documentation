@@ -17,7 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>These commands are new in in HP Helion <tm tmtype="reg">OpenStack</tm> Development Platform 1.1.</p>
 <ul>
 <li>
 <xref type="section" href="#topic7566/command-create-space-quota">helion create-space-quota</xref>: Create a new space quota. </li>

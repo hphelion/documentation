@@ -22,9 +22,10 @@
   <body>
     <section><title>HP Helion 2.0 Development Platform: Deploying a Node.js Application</title>
       <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
-        Microsoft Corporation in the United States and/or other countries.</i></ph>
-      <p>This tutorial demonstrates how to deploy a a Node.js Application application. For the purposes
-        of this tutorial, you'll deploy the Hello World application created with the Node.js Web Application template.</p></section>
+          Microsoft Corporation in the United States and/or other countries.</i></ph>
+      <p>This tutorial demonstrates how to deploy a Node.js Application application. For the
+        purposes of this tutorial, you'll deploy the Hello World application created with the
+        Node.js Web Application template.</p></section>
     <section><title>Contents</title>
     <p>This tutorial contains the following sections:</p>
     <ul>
