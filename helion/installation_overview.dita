@@ -5,8 +5,11 @@
   <body>
     <section id="about"><title>Installation Steps</title>
       <ul>
-        <li>Installation Pre-requisites</li>
-        <li>Baremetal Install for KVM Hypervisor</li>
+        <li>Baremetal Install for KVM Hypervisor
+        <ul>
+          <li>Entry Scale Model with VSA Installation Checklist</li>
+        </ul>
+        </li>
         <li>Baremetal Install for ESX Hypervisor</li>
       </ul>
     </section>
