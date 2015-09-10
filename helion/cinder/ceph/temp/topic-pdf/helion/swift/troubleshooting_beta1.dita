@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\cinder\ceph\temp\topic-pdf\helion\swift?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/cinder/ceph/temp/topic-pdf/helion/swift/?><?path2project ..\out\topic-pdf\?><?path2project-uri ../out/topic-pdf/?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="topic_sl2_nht_dt" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="topic:1;3:30">
+  <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="title:1;4:10">Swift- Troubleshooting </title>
+  <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="body:1;5:9">
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:1;6:8">This page describes the troubleshooting scenarios for Swift service.<ul id="ul_ac4_s5d_ft" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="ul:1;6:99">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:1;7:13"><xref href="#topic_sl2_nht_dt/interpreting-swift-validate-input-model" format="dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="xref:1;8:14" type="section"><?ditaot usertext?>Interpreting _swift-validate-input-model.yml Errors</xref></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:2;9:13"><xref href="#topic_sl2_nht_dt/deploy-fails" format="dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="xref:2;9:71" type="section"><?ditaot usertext?>Deploy fails with: msdos disks
+            labels do not support partition names</xref></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:3;11:13"><xref href="#topic_sl2_nht_dt/swift-ring-failure" format="dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="xref:3;11:77" type="section"><?ditaot usertext?>Ansible playbook fails
+            in swiftlm-ring-supervisor | build-rings</xref></li>
+      </ul></p>
+    <section id="interpreting-swift-validate-input-model" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="section:1;14:59">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="title:2;15:14">Interpreting _swift-validate-input-model.yml Errors</title>
+    </section>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:2;17:8">When you execute the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:1;17:37">_swift-validate-input-model.yml</codeph> playbook it can be hard
+      to pick out the errors being reported. If so, you view the error messages as follows:<ol id="ol_szd_tht_dt" class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="ol:1;19:28">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:4;20:13">Log onto the first node in the system that is running the swift-proxy-server process.
+            <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="note:1;21:19"> You must run the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:2;21:45">_swift-validate-input-model.yml</codeph> playbook as
+            mentioned in step <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:1;22:34">2</b> in <xref href="../installation.dita#topic_flx_j2b_ws/CloudDeploy" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="xref:4;23:73"/> or run the
+              <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:3;24:23">hlm-deploy.yml</codeph> playbook as described in step <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:2;24:80">4</b> in <xref href="../installation.dita#topic_flx_j2b_ws/CloudDeploy" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="xref:5;25:73"/> otherwise the files needed
+            to run the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:4;26:32">swiftlm-ring-supervisor</codeph> will not be in place on the node.
+          </note></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:5;28:13">Execute the following
+            command:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeblock:1;29:32">sudo swiftlm-ring-supervisor --make-delta --report </codeblock><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:3;29:98">
+            The command will report any errors or problems (see List of errors) with the input
+            model. It also prints a summary of the ring create actions that are planned (i.e., that
+            will occur) for the deploy phase of the process.</p></li>
+      </ol></p>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="section:2;34:14"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:3;34:17">List of errors</b></section>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:4;35:8">The following example provides an error message, description, and the resolution.<note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="note:2;35:95">To
+        resolve an error, you must first modify the cloud model and re-run the configuration
+        processor as described in <xref href="../installation.dita#topic_flx_j2b_ws/run-config-processor" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="xref:6;38:77" type="section"><?ditaot usertext?>Run the Configuration
+          Processor</xref> and continue with the deploy.</note></p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:5;40:8">
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="ol:2;41:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:6;42:13"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:4;42:16">Example Message - Model Missmatch: Cannot find drive /dev/sdt on padawan-ccp-c1-m2
+            (192.168.245.3))</b><simpletable id="simpletable_crn_x2j_2t" class="- topic/simpletable " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="simpletable:1;43:74">
+            <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:1;44:20">
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:1;45:24"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:5;45:27">Description</b>
+              </stentry>
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:2;47:24">The disk model used for node <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:6;47:56">padawan-ccp-c1-m2</b> has drive
+                  <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:5;48:27">/dev/sdt</codeph> listed in the devices list of a device-group where Swift
+                is the consumer. However, the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:6;49:55">dev/sdt</codeph> device does not exist on that
+                node.</stentry>
+            </strow>
+            <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:2;52:20">
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:3;53:24"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:7;53:27">Resolution</b></stentry>
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:4;54:24">If a drive or controller is failed on a node, the operating system does not
+                see the drive and hence the corresponding block device may not exist. Sometimes this
+                is transitory and a reboot may resolve the problem. The problem may not be with
+                  <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:7;57:27">/dev/sdt</codeph>, but with another drive. For example, if
+                  <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:8;58:27">/dev/sds</codeph> is failed, when you boot the node, the drive that you
+                expect to be called <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:9;59:45">/dev/sdt</codeph> is actually called
+                  <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:10;60:27">/dev/sds</codeph>. <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:6;60:49">Alternatively, there may not be enough drives
+                  installed in the server. You can add drives. Another option is to remove
+                    <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:11;62:29">/dev/sdt</codeph> from the appropriate disk model. However, this removes
+                  the drive for all servers using the disk model .</p></stentry>
+            </strow>
+          </simpletable></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:7;66:13"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:8;66:16">Example Message - Model Missmatch: Cannot find drive /dev/sdd2 on padawan-ccp-c1-m2
+            (192.168.245.3)</b><simpletable id="simpletable_wz4_jgj_2t" class="- topic/simpletable " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="simpletable:2;67:73">
+            <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:3;68:20">
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:5;69:24"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:9;69:27">Description</b>
+              </stentry>
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:6;71:24">The disk model used for node<b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:10;71:55"> padawan-ccp-c1-m2</b> has drive
+                  <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:12;72:27">/dev/sdt</codeph> listed in the devices list of a device-group where Swift
+                is the consumer. However, the partition number (2) has been specified in the model.
+                This is not supported – only specify the block device name (for example
+                  <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:13;75:27">/dev/sdd</codeph>), not partition names in disk models.</stentry>
+            </strow>
+            <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:4;77:20">
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:7;78:24"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:11;78:27">Resolution</b></stentry>
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:8;79:24">Remove the partition number from the disk model.</stentry>
+            </strow>
+          </simpletable></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:8;82:13"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:12;82:16">Example Message - Cannot find IP address of padawan-ccp-c1-m3-swift for ring: account
+            host: padawan-ccp-c1-m3-mgmt</b><simpletable id="simpletable_j3n_lfj_2t" class="- topic/simpletable " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="simpletable:3;83:86">
+            <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:5;84:20">
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:9;85:24"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:13;85:27">Description</b></stentry>
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:10;86:24">The service (in this example, swift-account) is running on the node
+                  <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:14;87:22">padawan-ccp-c1-m3</b>. However, this node does not have a connection to the
+                network designated for the swift-account service (i.e., the SWIFT
+                network).</stentry>
+            </strow>
+            <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:6;91:20">
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:11;92:24"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:15;92:27">Resolution</b></stentry>
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:12;93:24">Check the input model for which networks are configured for each node
+                type.</stentry>
+            </strow>
+          </simpletable></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:9;97:13">
+          <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:16;98:14">Example Message - Ring: object-2 has specified replication_policy and
+            erasure_coding_policy. Only one may be specified. </b><simpletable id="simpletable_jxv_lfj_2t" class="- topic/simpletable " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="simpletable:4;100:41">
+            <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:7;101:20">
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:13;102:24"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:17;102:27">Description</b>
+              </stentry>
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:14;104:24">Only one of replication-policy or erasure-coding-policy may be used in a
+                ring-specification.</stentry>
+            </strow>
+            <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:8;107:20">
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:15;108:24"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:18;108:27">Resolution</b></stentry>
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:16;109:24">Remove one of the policy types.</stentry>
+            </strow>
+          </simpletable></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:10;112:13"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:19;112:16">Example Message - Ring: object-3 is missing a policy type (replication-policy or
+            erasure-coding-policy) </b><simpletable id="simpletable_e3b_mfj_2t" class="- topic/simpletable " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="simpletable:5;113:81">
+            <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:9;114:20">
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:17;115:24"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:20;115:27">Description</b>
+              </stentry>
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:18;117:24">There is no replication-policy or erasure-coding-policy section in the
+                ring-specifications for the object-0 ring.</stentry>
+            </strow>
+            <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:10;120:20">
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:19;121:24"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:21;121:27">Resolution</b></stentry>
+              <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:20;122:24">Add a policy type to the input model file. </stentry>
+            </strow>
+          </simpletable></li>
+      </ol>
+    </p>
+    <section id="deploy-fails" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="section:3;127:32">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="title:3;128:14">Deploy fails with - msdos disks labels do not support partition names</title>
+      <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="note:3;129:13">This process only applies to Swift drives. It does not apply to the operating system or
+        boot drive.</note>
+      <simpletable id="simpletable_nh3_ptd_ft" class="- topic/simpletable " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="simpletable:6;131:48">
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:11;132:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:21;133:20"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:22;133:23">Description</b>
+          </stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:22;135:20">If a disk drive allocated to Swift uses the MBR partition table type, the deploy
+            process refuses to label and format the drive. This is to prevent potential data loss as
+            explained in <xref href="allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="xref:7;139:16" type="p"><?ditaot usertext?>Requirements for a Disk Drive</xref>. If you intend to use the disk drive for Swift,
+            you must convert the MBR partition table to GPT on the drive using
+              <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:14;141:23">/sbin/sgdisk</codeph>.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:12;143:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:23;144:20"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:23;144:23">Resolution</b></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:24;145:20">You must install <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:15;145:45">gdisk</codeph>, before using <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:16;145:82">sgdisk</codeph>.
+              <ul id="ul_fqc_1hf_ft" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="ul:2;146:38">
+              <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:11;147:19">Execute the following command to install
+                <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:17;148:25">gdisk</codeph>,<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeblock:2;148:51">sudo apt-get install gdisk</codeblock></li>
+              <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:12;149:19">Convert to GPT partition type. This is an example for converting
+                  <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeph:18;150:27">/dev/sdd</codeph> to the GPT partition
+                type.<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeblock:3;151:33">sudo sgdisk –g /dev/sdd</codeblock></li>
+              <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="li:13;152:19"> Reboot the node to take effect. You may then resume the deploy (repeat the
+                playbook that reported the error). </li>
+            </ul></stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section id="swift-ring-failure" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="section:4;158:38">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="title:4;159:14"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:24;159:17">Ansible playbook fails in swiftlm-ring-supervisor | build-rings</b></title>
+    </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="section:5;161:14">
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:7;162:10">
+        <simpletable id="simpletable_k1g_ycx_gt" class="- topic/simpletable " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="simpletable:7;163:50">
+          <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:13;164:18">
+            <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:25;165:22"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:25;165:25">Description</b>
+            </stentry>
+            <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:26;167:22">An ansible playbook fails as follows:
+              <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeblock:4;168:26">TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] *** 
+failed: [hlm002-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor", "--make-delta", "--rebalance", ....</codeblock>Examine
+              the output and see if the output generated in your environment contains one of the
+              following example messages:<p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:8;171:45"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:26;171:48">Example Message
+                  1</b></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeblock:5;172:39">-------------------------------------------------------------------------------
+NOTE: Dispersion of 11.718750 indicates some parts are not
+      optimally dispersed.
+
+      You may want to adjust some device weights, increase
+      the overload or review the dispersion report.
+-------------------------------------------------------------------------------</codeblock><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:9;178:95"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:27;178:98">Example
+                  Message
+                  2</b><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeblock:6;180:35">No partitions could be reassigned.</codeblock></p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:10;180:88"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:28;180:91">Example
+                  Message
+                3</b><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeblock:7;182:33">Cowardly refusing to save rebalance as it did not change at least 1%</codeblock></p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:11;182:120"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:29;182:123">Example
+                  Message
+                4</b><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeblock:8;184:33">NOTE: Balance of %.02f indicates you should push this ring, wait at least 16 hours, and rebalance/repush.</codeblock></p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:12;184:157"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:30;184:160">Example
+                  Message 5</b><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeblock:9;185:43">Worst tier is 3.0 (2.4)</codeblock></p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:13;185:85">If any one of
+                the above message is displayed in your environment then it is probable that the
+                Swift ring was created. </p></stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="strow:14;189:18">
+            <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:27;190:22"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="b:31;190:25">Resolution</b></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="stentry:28;191:22">
+              <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:14;192:18">Run the following command at least
+                twice:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeblock:10;193:34">ansible-playbook -i hosts/verb_hosts _swift-make-delta-rebalance.yml</codeblock></p>
+              <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:15;194:18"> Each may fail with similar messages but each fails with a different ring.</p>
+              <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:16;195:18"> Once the account, container, and object-0 rings have failed, you can re-run the
+                following
+                command:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="codeblock:11;197:36">ansible-playbook -i hosts/verb_hosts site.yml</codeblock></p>
+              <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:17;198:18">Now, the ansible playbook will not stop at the "swiftlm-ring-supervisor |
+                build-rings" task and the rings will be created successfully.</p>
+            </stentry>
+          </strow>
+        </simpletable>
+      </p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:18;204:10"> </p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\troubleshooting_beta1.dita" xtrc="p:19;205:10"> </p>
+    </section>
+  </body>
+</topic>

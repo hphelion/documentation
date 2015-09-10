@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_hjr_4x1_dt">
-  <title>Install and Configure VSA (optional)</title>
+  <title>Install and Configure VSA (Optional)</title>
   <body>
     <section id="VSA">
-      <title>Install and Configure VSA (optional)</title>
+      <title>Install and Configure VSA (Optional)</title>
       <p>You can set up Virtual Storage Appliance (VSA) using the following instructions:</p>
       <ol>
         <li>Deploy VSA by running the following command: <codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml </codeblock>
@@ -19,31 +19,27 @@ Cannot open: No such file or directory</codeblock>
             <li>This is a temporary issue and should be fixed by the next release.</li>
           </ul>-->
           Before running the next step, Deploy CMC, do the following on the first control plane
-          node. <ul>
-            <li> Look in <b>/etc/apt/sources.list.d/</b> for a file called
-                <b>cmc_hlinux_32bit_lib</b> with the following content:
-              <codeblock>deb [arch=i386] http://&lt;deployer ip>:79/hlm/cmc32 cattleprod main </codeblock>
-              If the file is not there or does not have the above content, please create it as
-              described. The deployer ip address can be obtained by looking at the existing hlinux
-              apt source file in that directory. This is a workaround for an issue in Beta-1 and
-              will be fixed in Beta-2. </li>
+          node. <ol>
+            <li>Look in <b>/etc/apt/sources.list.d/</b> for a file called
+                <b>cmc_hlinux_32bit_lib.list</b> and verify that it contains the line below:
+              <codeblock>deb [arch=i386] http://&lt;deployer ip>:79/hlm/cmc32 cattleprod main</codeblock>
+              If the file is not there or if the line is not there, please create it as described.
+              The deployer ip address can be obtained by looking at the existing hlinux apt source
+              file in that directory. This is a workaround for an issue in Beta-1 and will be fixed
+              in Beta-2.</li>
             <li>Next, to re-synchronize the package index files, run
               <codeblock>sudo apt-get update</codeblock></li>
-          </ul>
+          </ol>
         </li>
+        <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
+          <codeblock>NIC 1: Virtual Network: vsa-network IP Address: 10.241.103.11 Subnet Mark: 255.255.255.0 Gateway: 10.241.103.1</codeblock></li>
+        <!-- need to get an actual output for the above codeblock -->
         <!--<li>Configure Apt by adding the following line to the bottom of <b>/etc/apt/sources.list</b>
           on your CMC node (only). Use the correct numeric IP for your deployer.
           <codeblock>deb [arch=i386] http://&lt;<i>deployer ip</i>>:79/hlm/cmc32 cattleprod main </codeblock>
           This is a workaround for an issue in Beta-1 and will be fixed in Beta-2. </li>-->
         <li>Deploy CMC by running the following
             command:<p><codeblock>ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></p></li>
-        <li>Note that the IP numbers of VSA VMs from ansible output appear as follows:
-          <codeblock>
-NIC 1: 
-Virtual Network: vsa-network 
-IP Address: 10.241.103.11
-Subnet Mark: 255.255.255.0
-Gateway: 10.241.103.1</codeblock></li>
         <li>Set your X display and launch CMC:
           <codeblock>ssh -X to the first control plane node</codeblock><codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock></li>
         <li>Select <codeph>Find</codeph> and enter the IP addresses of the VSA virtual
@@ -56,7 +52,8 @@ Gateway: 10.241.103.1</codeblock></li>
         <li>Skip the DNS and SMTP sections.</li>
         <li>Add the following cluster name: hlm003-vsa-cluster</li>
         <li>Enter the VIP IP which can be found as the cluster IP value in the
-            <codeph>~helion/my_cloud/stage/info/net_info.yml</codeph> file</li>
+            <codeph>~/scratch/cp/my_cloud/stage/info/net_info.yml</codeph> file</li>
+        <!-- ./scratch/cp/my_cloud/stage/info/net_info.yml and this step may need to go up -->
         <li>Select the checkbox to skip volume creation.</li>
         <li>Wait for completion.</li>
         <li>On the deployer, change to the following directory:
@@ -67,7 +64,8 @@ Gateway: 10.241.103.1</codeblock></li>
               <codeblock>enabled_backends=vsa-1</codeblock></li>
           </ol></li>
         <li>Copy the VSA section, uncomment it, and fill the values as in the following example.
-          Note that the ames assigned (in bold) are only examples. Please enter your specific values here.<codeblock>
+          Note that the ames assigned (in bold) are only examples. Please enter your specific values
+          here.<codeblock>
 [vsa-1]<b>
 hplefthand_password: stack
 hplefthand_clustername: hlm003-vsa-cluster
@@ -76,10 +74,8 @@ hplefthand_username: stack</b>
 hplefthand_iscsi_chap_enabled: true<b>
 volume_backend_name: vsa-backend-hlm003</b>
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
-hplefthand_debug: false</codeblock>
-          <note>Until horizon is enabled, the <codeph>volume_backend_name</codeph> is not
-            used.</note></li>
-        <li>Run the following commands to commit and deploy the change:
+hplefthand_debug: false</codeblock></li>
+        <li>Run the following commands to commit and deploy the change: <note/>
           <codeblock>
 git add -A
 git commit -m "your commit message goes here in quotes"
@@ -88,21 +84,24 @@ ansible-playbook -i hosts/localhost config-processor-run.yml
 ansible-playbook -i hosts/localhost ready-deployment.yml
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
-        <li>Create a volume to verify the VSA is correctly configured, then delete the created
-          volume. <ol>
-            <li>Create a test volume from a user account and verify that the volume is successfully
-              created in the "available" state.</li>
-            <li>Using a session with the admin creds, show the details for the test volume created
-              in a) above <codeblock>cinder show &lt;volumeId></codeblock> and verify that the
-              volume was created on the correct backend, e.g.
-              <codeblock>os-vol-host-attr:host                                                                         
+      </ol>
+    </section>
+    <section id="verification"><title>Verifying the Install</title>
+      <p>From the Control Plane, use the Cinder command-line client to create a volume so you can
+        verify that VSA is correctly configured. You can delete the created volume afterwards, if
+        desired.</p>
+      <ol>
+        <li>Create a test volume from a user account and verify that the volume is successfully
+          created in the "available" state:
+          <codeblock>cinder create --display-name &lt;name> &lt;size></codeblock></li>
+        <li>Using a session with the admin creds, show the details for the test volume created using:
+          <codeblock>cinder show &lt;volumeId></codeblock> and verify that the volume was
+          created on the correct backend, e.g.
+          <codeblock>os-vol-host-attr:host                                                                         
 ha-volume-manager@vsa-1#vsa-backend-hlm003</codeblock>
-            </li>
-            <li>Delete the test volume</li>
-          </ol>
         </li>
-        </ol>
-      
+        <li>Delete the test volume</li>
+      </ol>
     </section>
   </body>
 </topic>

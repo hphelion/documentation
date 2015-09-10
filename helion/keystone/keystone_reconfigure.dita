@@ -3,9 +3,10 @@
 <topic id="topic_m43_2j3_bt">
   <title>Reconfiguring Keystone</title>
   <body>
-
-    <section>HP Helion OpenStack&#174; allows you to perform
-      updates on the following parts of the Identity service configuration: <ul>
+    <section>
+      <p>HP Helion OpenStack&#174; allows you to perform updates on the following parts of the
+        Identity service configuration:</p>
+      <ul>
         <li>The main Keystone configuration file: <b>/etc/keystone/keystone.conf</b> Here you can
           manipulate Keystone configuration parameters and enable experimental features, such as
           Fernet Tokens.</li>
@@ -21,10 +22,9 @@
           certain WSGI module parameters (such as process counts). </li>
       </ul>
     </section>
-    <section>
-      <title>Updating the main Keystone configuration file</title> The main Keystone configuration
-      file (<b>/etc/keystone/keystone.conf</b>) is generated from the following template file:
-        <b>roles/KEY-API/templates/keystone.conf.j2</b>
+    <section><title>Updating the main Keystone configuration file</title>
+      <p>The main Keystone configuration file (<b>/etc/keystone/keystone.conf</b>) is generated from
+        the following template file: <b>roles/KEY-API/templates/keystone.conf.j2</b></p>
       <ol>
         <li>Modify this template file as appropriate. Please refer to the Keystone Kilo
           documentation for full descriptions of all settings in the <xref
@@ -34,13 +34,14 @@
             not change values inside double curly braces: {{ }}. </note></li>
         <li>Once the template is modified, run reconfiguration playbook:
           <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock></li>
-      </ol></section>
-
-    <section><title>Adjusting WSGI and logging parameters</title> To modify Web Server Gateway
-      Interface (WSGI) parameters (such as process counts for public and admin Keystone interfaces)
-      and log levels: <ol>
+      </ol>
+    </section>
+    <section><title>Adjusting WSGI and logging parameters</title>
+      <p>To modify Web Server Gateway Interface (WSGI) parameters (such as process counts for public
+        and admin Keystone interfaces) and log levels: </p>
+      <ol>
         <li>Adjust respective parameters in
-          <b>roles/keystone-common/vars/keystone_deploy_config.yml</b>.</li>
+            <b>roles/keystone-common/vars/keystone_deploy_config.yml</b>.</li>
         <li>Run reconfiguration playbook:
           <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
         </li>

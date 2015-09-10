@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_ugs_fnd_bt">
+<topic id="keystone_overview">
   <title>Keystone Identity Service</title>
   <body>
-    <section>
-      <title>What is the Identity service?</title>
+    <section id="about"><title>What is the Identity service?</title>
       <p>The HP Helion OpenStack&#174; Identity service, which is installed automatically with HP
         Helion OpenStack as it is critical to the operation of your cloud, is based on the OpenStack
         Keystone API, is responsible for providing UserID authentication and access authorization to
@@ -12,8 +11,7 @@
         successfully deploy OpenStack. In short, the Identity Service is the gateway to the rest of
         the OpenStack services. </p>
     </section>
-    <section>
-      <title>Authentication</title>
+    <section id="authentication"><title>Authentication</title>
       <p>The authentication function provides the initial login function to OpenStack. Keystone
         supports multiple sources of authentication, including a native or built-in authentication
         system. The Keystone native system can be used for all user management functions for proof
@@ -85,31 +83,36 @@
         fingerprint scanner, etc. Each of these types of MFA are usually specific to a particular
         MFA vendor. The Keystone architecture supports an MFA-based authentication system, but this
         has not yet been certified or documented for HP Helion OpenStack.</p></section>
-    <section>
-      <title>Authorization</title>
+    <section id="auth"><title>Authorization</title>
       <p>The second major function provided by the Keystone service is access authorization that
         determines what resources and actions are available based on the UserID, the role of the
         user, and the projects that a user is provided access to. All of this information is
         created, managed, and stored by Keystone. These functions are applied via the Horizon web
         interface, the OpenStack Command Line Interface (CLI), or the direct Keystone API.
         </p><p>Keystone provides support for organizing users via three entities including:</p>
-      <dl><dlentry>
-        <dt>Domains</dt><dd>Domains provide the highest level of organization. Domains are intended to
-          be used as high-level containers for multiple projects. A domain can represent different
-          tenants, companies or organizations for an OpenStack cloud deployed for public cloud
-          deployments or represent major business units, functions, or any other type of top-level
-          organization unit in an OpenStack private cloud deployment. Each domain has at least one
-          Domain Admin assigned to it. This Domain Admin can then create multiple projects within
-          the domain and assign the project admin role to specific project owners. Each domain
-          created in an OpenStack deployment is unique and the projects assigned to a domain cannot
-          exist in another domain.</dd>
-      </dlentry>
-        <dlentry><dt>Projects</dt> <dd>Projects are entities within a domain that represent groups of users, each
-          user role within that project, and how many underlying infrastructure resources can be
-          consumed by members of the project.</dd>
+      <dl>
+        <dlentry>
+          <dt>Domains</dt>
+          <dd>Domains provide the highest level of organization. Domains are intended to be used as
+            high-level containers for multiple projects. A domain can represent different tenants,
+            companies or organizations for an OpenStack cloud deployed for public cloud deployments
+            or represent major business units, functions, or any other type of top-level
+            organization unit in an OpenStack private cloud deployment. Each domain has at least one
+            Domain Admin assigned to it. This Domain Admin can then create multiple projects within
+            the domain and assign the project admin role to specific project owners. Each domain
+            created in an OpenStack deployment is unique and the projects assigned to a domain
+            cannot exist in another domain.</dd>
         </dlentry>
-        <dlentry><dt>Groups</dt><dd>Groups are an optional function and provide the means of assigning project
-          roles to multiple users at once.</dd>
+        <dlentry>
+          <dt>Projects</dt>
+          <dd>Projects are entities within a domain that represent groups of users, each user role
+            within that project, and how many underlying infrastructure resources can be consumed by
+            members of the project.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Groups</dt>
+          <dd>Groups are an optional function and provide the means of assigning project roles to
+            multiple users at once.</dd>
         </dlentry>
       </dl>
       <p>Keystone also provides the means to create and assign roles to groups of users or
@@ -119,14 +122,13 @@
         about his assigned project membership and role for that project. This role is then matched
         to the service-specific script and the user is allowed to perform functions within that
         service defined by the role mapping.</p>
-      <p>Infrastructure resource quotas are also defined within the OpenStack cloud. Quotas are defined per
-        service but can be assigned via the Horizon user interface in the Projects section; thus, this
-        function is often associated with the Keystone API. <!--Insert screen shot of
+      <p>Infrastructure resource quotas are also defined within the OpenStack cloud. Quotas are
+        defined per service but can be assigned via the Horizon user interface in the Projects
+        section; thus, this function is often associated with the Keystone API.
+        <!--Insert screen shot of
         the Horizon interface used to configure upper limit quotas for specific
-        infrastructure-related functions.--> Quotas are assigned per each project.</p><p/>
+        infrastructure-related functions.-->
+        Quotas are assigned per each project.</p><p/>
     </section>
-
-
   </body>
 </topic>
-<!---->

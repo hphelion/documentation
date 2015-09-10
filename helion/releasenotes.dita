@@ -6,17 +6,18 @@
     <p>This document provides an overview of the features contained within HP Helion <tm
         tmtype="reg">OpenStack</tm> 2.0 Beta 1, including known issues and workarounds for this
       release:</p>
-    <section id="Features"><title>Features in HP Helion OpenStack 2.0 Beta 1</title><p><b>New UEFI
-          support</b> &#151; Beta 1 introduces support for UEFI (which replaces the BIOS on newer
-        servers), while continuing to support Legacy BIOS. Select the required mode on each node
-        through its BIOS settings before beginning the install process. HOS 2.0 will detect and use
-        the mode you have selected for each node.</p>
-      <p><b>Updated HP Helion OpenStack Services</b> &#151; We have included the core set of
-        OpenStack services from the <xref href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo"
-          scope="external" format="html">Kilo release</xref> with the exception of limitations
-        notated in this document.</p><p><b>Neutron LBaaS and FWaaS Extensions</b> &#151; We have
-        implemented networking extensions for load balancing and firewalls. Here is a description of
-        each of these:</p><ul>
+    <section id="Features"><title>Features in HP Helion OpenStack 2.0 Beta 1</title>
+      <p><b>New UEFI support</b></p>
+      <p>Beta 1 introduces support for UEFI (which replaces the BIOS on newer servers), while
+        continuing to support Legacy BIOS. Select the required mode on each node through its BIOS
+        settings before beginning the install process. HOS 2.0 will detect and use the mode you have
+        selected for each node.</p>
+      <p><b>Updated HP Helion OpenStack Services</b></p>
+      <p>We have included the core set of OpenStack services from the <xref
+          href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html"
+          >Kilo release</xref> with the exception of limitations notated in this document.</p>
+      <p><b>Neutron LBaaS and FWaaS Extensions</b> &#151; We have implemented networking extensions
+        for load balancing and firewalls. Here is a description of each of these:</p><ul>
         <li>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
           balancing feature set. Helion OpenStack 2.0 includes the V2 version which allows
           implementation uses haproxy but third-party Load Balancers can be integrated as well. In
@@ -76,7 +77,7 @@
       </ul><p><b>Local Git repository for config tracking</b></p><p>In HP Helion OpenStack 2.0
         versions, a local git repository is used to track configuration changes and for the config
         processor to gather configuration settings from. The operations work as explained below:</p><ul>
-        <li>Operatiosn under ~/helion are under the aegis of git. You’ll need to commit any config
+        <li>Operations under ~/helion are under the aegis of git. You’ll need to commit any config
           into git (on the "site" branch) before the CP can run over it. The script that runs the
           config processor now guards against uncommitted changes. </li>
         <li>Deployment operations are run from a scratch directory that's assembled from various
@@ -116,10 +117,6 @@
       <p> The examples directly shipped with Beta1 inadvertently include a directory named
         "mid-size." This example is known not to work with the Beta 1 version of HP Helion OpenStack
         and should not be deployed.</p>
-     
-      
-      
-      
       <p><b>TLS is not supported</b></p>
       <p>TLS is not supported for any traffic in Beta1.</p>
       <p><b>HP Helion Development Platform</b></p>
@@ -156,15 +153,19 @@
           cluster.</li>
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
       </ul>
+      <p>If Vertica fails to start after a system reboot</p>
+      <p>The issue is that the max number of files is set too low and on startup a test for Vertica
+        fails. To resolve this issue run the command below and then restart Vertica:
+        <codeblock>echo 65536 > /proc/sys/fs/file-max</codeblock></p>
       <p><b>Operations Console (Ops Console)</b></p>
-      <p>The Operations Console is available on port 9095 on the Control Plane. There are some
-        limitations to note and they are listed below by menu:</p>
+      <p>The Operations Console is available on port 9095 on the Control Plane IP. There are some
+        limitations to note and they are listed below by menu option in the console:</p>
       <ul>
         <li>Dashboard <ul>
             <li>There are two notification sections for the Storage services. The one in the upper
               left is the Compute service mislabeled as Storage.</li>
             <li>The New Alarms section uses the UTC timezone to determine timeframes regardless of
-              what timezone set in the settings.</li>
+              what timezone is in the settings.</li>
             <li>The New Alarms section will only display alarms that have a service dimension
               defined.</li>
             <li>Platform Services (HDP Summary) alarm panels are not yet implemented but appear in
@@ -239,21 +240,22 @@
     </section>
     <section id="troubleshooting"><title>Troubleshooting</title>
       <p><b>Wait for SSH phase in bm-reimage.yml hangs </b></p>
-      <p>This issue has been observed during deployment to systems configured with Qlogic based
+      <p>This issue has been observed during deployment to systems configured with QLogic based
         BCM578XX network adapters utilizing the bnx2x driver and is currently under investigation.
         The symptom manifests following a cold boot during deployment at the "wait for SSH" phase in
         bm-reimage.yml which will result in a hang and eventually timeout, causing the baremetal
-        install to fail. The presence of this particular issue can further confirmed by connecting
-        to the remote console of the server via iLO or checking the dmesg file for the presence of
-        bnx2_panic_dump messages, similar to the following:
+        install to fail. The presence of this particular issue can be further confirmed by
+        connecting to the remote console of the server via iLO or by checking the server's dmesg
+        output for the presence of bnx2_panic_dump messages, similar to the following:
         <codeblock>bnx2x: [bnx2x_prev_unload_common:10433(eth%d)]Failed to empty BRB, hope for the best  ...
 bnx2x: [bnx2x_stats_update:1268(eth0)]storm stats were not updated for 3 times
 bnx2x: [bnx2x_stats_update:1269(eth0)]driver assert
 bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------  .....
 bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump ----------------- 
 </codeblock>
-        This issue is resolved by rebooting the server. </p>
-      <p><b>Freezer installation fails if an independent network is used for the External_API.</b></p>
+        This workaround is completed by rebooting the server. </p>
+      <p><b>Freezer installation fails if an independent network is used for the
+        External_API.</b></p>
       <p> Currently the Freezer installation fails if an independent network is used for the
         External_API. If you intend to deploy the External API in Beta 1 on an independent network,
         the following changes need to be made: </p>

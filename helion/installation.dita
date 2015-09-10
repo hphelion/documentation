@@ -6,8 +6,8 @@
     <section id="important-notes"><title>Important Notes</title>
       <ul>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
-        <li>Make sure <b>all disks on the system(s) are wiped</b> before you begin the install. </li>
-        <li>/dev/sda will be used for the OS. </li>
+        <li>Make sure <b>all disks on the system(s) are wiped</b> before you begin the install.</li>
+        <li>/dev/sda will be used for the OS.</li>
         <li>Both HP Linux for HP Helion OpenStack and HP Helion OpenStack are part of the ISO you
           will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
@@ -15,8 +15,7 @@
           it includes both the OS and the Beta1 installer in one ISO.</li>
         <li>Three NICs are tested, one 1Gb used for PXE and two bonded 10Gb for everything else. All
           machines can net boot from PXE and use the deployer as a DHCP server.</li>
-        <li>All machines of a single type should be the same, that is, all compute nodes, all VSA
-          nodes, and so on.</li>
+        <li>All machines of a given role should be the same configuration.</li>
         <li>The deployer node must be a dedicated node in Beta1.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO
@@ -37,14 +36,16 @@
           admin privileges.</li>
         <li> HP Helion OpenStack 2.0 Beta 1 will detect and use the "BIOS" mode you have selected
           for each node; UEFI or legacy BIOS. UEFI support is new in Beta 1.</li>
-        <li>Ensure that the network to be used for PXE installation has PXE enabled.</li>
-        <li>Ensure that the other networks have PXE disabled.</li>
+        <li>Ensure that the network interface to be used for PXE installation has PXE enabled.</li>
+        <li>Ensure that the other network interfaces have PXE disabled.</li>
+        <li>Ensure that any logical drives (LUN) for the servers you will be using are created to
+          meet the disk requirements outlined in the <xref href="hardware.dita">Minimum Hardware
+            Requirements</xref>.</li>
       </ul>
     </section>
     <section id="DeployerInstall">
       <title>Set up the Deployer</title>
       <ol>
-        <li>Create LUN(s), if required.</li>
         <li>Download the HP Helion OpenStack Deployer ISO from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page after signing up and being
@@ -92,6 +93,8 @@ helion/hos/                    Directory contains files used by the installer
     </section>
     <section id="Configuration">
       <title>Configure Your Environment</title>
+      <note>There are changes to the configuration files from Beta 0 so ensure you use the example
+        files included with the Beta 1 setup.</note>
       <ol>
         <li>Setup your configuration files, as follows: <ol>
             <li>See the sample set of configuration files in the
@@ -129,6 +132,11 @@ helion/hos/                    Directory contains files used by the installer
                   rings, refer to <xref href="swift/ring_specifications.dita#ring-specification"
                     >ring specification</xref>.</li>
               </ul></li>
+            <li>Edit the <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file and under
+              the <b>Elasticsearch defaults</b> section, change the value of the string below to
+              something other than <codeph>elasticsearch</codeph>:
+              <codeblock>vars.elasticsearch_cluster_name</codeblock> Example:
+                <codeph>helioncloud</codeph></li>
             <li>Commit your configuration to the <xref href="using_git.dita#topic_u3v_1yz_ct">local
                 git repo</xref>, as follows:
               <codeblock>cd ~/helion/hos/ansible
@@ -169,6 +177,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
             <li>staging-ansible</li>
             <li>staging-cp-persistent</li>
           </ul>
+          <note>See <xref href="using_git.dita">Using Git for Configuration Management</xref> for
+            more information.</note>
         </li>
         <li>Check your configuration: <ol>
             <li>You can review the ansible change by running the following command:
@@ -187,7 +197,7 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
           </ol></li>
       </ol>
     </section>
-    <section id="CloudDeploy"><title>Validate Storage (optional)</title>
+    <section id="validate_swift"><title>Validate Object Storage (Optional)</title>
       <ol>
         <!--<li>Run the following command:
             <codeblock>cd ~/scratch/ansible/next/hos/ansible
@@ -197,25 +207,33 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock><ol
               from the /etc/hosts file from one of the controller nodes.</li>
           </ol>
         </li>-->
-        <li> (<b>Optional</b>) To validate object storage cloud model, execute the following command
-          on the deployer
-            :<codeblock>ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock><p>If
-            any error is raised when you validate the object storage, refer to <xref
+        <li><p>To validate object storage cloud model, execute the following command on the
+            deployer:</p>
+          <codeblock>ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>
+          <p>If any error is raised when you validate the object storage, refer to <xref
               href="swift/troubleshooting_beta1.dita#topic_sl2_nht_dt"
             >Swift-Troubleshooting</xref></p></li>
-
         <!-- <li>Run the following command:
           <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium</codeblock>
         </li>-->
       </ol>
     </section>
-    <section id="VSA">
-      <title>Install and Configure VSA (optional).</title>
-      <p>You can set up Virtual Storage Appliance (VSA) using the instructions on the following
-        page: <xref href="vsa.dita#topic_hjr_4x1_dt">Install and Configure VSA
-        (optional)</xref>.</p>
+    <section id="cinder"><title>Install and Configure a Block Storage Backend (Optional)</title>
+      <p>Without a valid backend for your Block Storage (Cinder) implementation it will not be
+        usable. These documents will assist you in installing and configuring VSA, which is the
+        currently supported backend solution for Beta 1.</p>
+      <b>Ceph</b>
+      <ul>
+        <li><xref href="cinder/ceph/ceph_overview.dita">Ceph Overview</xref></li>
+        <li><xref href="cinder/ceph/ceph_deploy.dita">Ceph Installation and
+          Configuration</xref></li>
+      </ul>
+      <b>VSA</b>
+      <ul>
+        <li><xref href="cinder/vsa.dita">VSA Installation and Configuration</xref></li>
+      </ul>
     </section>
-    <section id="Post-Installation"><title>Verification Steps (optional)</title>
+    <section id="Post-Installation"><title>Verification Steps (Optional)</title>
       <ol>
         <li>This step may be used to verify that your cloud is up and running. However, note that
           running the command below will download a cirros image from the internet, upload it to

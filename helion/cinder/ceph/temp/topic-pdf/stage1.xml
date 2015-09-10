@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><topic xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" class="- topic/topic " ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " id="topic_jrc_5lz_ft" xtrc="topic:1;3:30" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+  <title class="- topic/title " id="install-ceph" xtrc="title:1;4:28" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"> Ceph Configuration </title>
+  <body class="- topic/body " xtrc="body:1;5:9" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+    <p class="- topic/p " xtrc="p:1;6:8" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">This page describes configuration, installation, and the integration of Ceph Block Storage
+      with HP Helion<tm class="- topic/tm " tmtype="reg" xtrc="tm:1;7:38" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">OpenStack</tm>2.0. After the installation of Ceph you can
+      perform the cinder operation as documented in this page.
+      <!--It also provides the procedure to perform cinder operation after Ceph deployment.--></p>
+    <p class="- topic/p " xtrc="p:2;10:8" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+      <simpletable class="- topic/simpletable " frame="all" id="simpletable_ab3_fwv_gt" relcolwidth="1.0*" xtrc="simpletable:1;11:79" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+        <strow class="- topic/strow " xtrc="strow:1;12:16" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+          <stentry class="- topic/stentry " xtrc="stentry:1;13:20" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+            <note class="- topic/note " type="attention" xtrc="note:1;14:36" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><b class="+ topic/ph hi-d/b " xtrc="b:1;14:39" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Beta1 Workaround </b><p class="- topic/p " xtrc="p:3;14:63" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">You must perform the following step
+                after Step <b class="+ topic/ph hi-d/b " xtrc="b:2;15:31" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">3</b> in the section <b class="+ topic/ph hi-d/b " xtrc="b:3;15:55" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><xref class="- topic/xref " format="dita" href="#topic_jrc_5lz_ft/configure-ceph-as-cinder-backend" type="p" xtrc="xref:1;17:22" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><?ditaot usertext?>Configure Ceph as a Cinder
+                backend</xref></b>.<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:1;18:47" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">cp /usr/lib/python2.7/dist-packages/rbd.py /opt/stack/venv/cinder-&lt;time&gt;/lib/python2.7/site-packages/
+cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-&lt;time&gt;/lib/python2.7/site-packages/</codeblock></p><p class="- topic/p " xtrc="p:4;19:126" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><b class="+ topic/ph hi-d/b " xtrc="b:4;19:129" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">The
+                  functionality to attach RBD volume to a Nova instance is not
+              working.</b></p></note>
+          </stentry>
+        </strow>
+      </simpletable>
+    </p>
+    <section class="- topic/section " xtrc="section:1;26:14" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+      <title class="- topic/title " id="preq" xtrc="title:2;27:24" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Prerequisite</title>
+      <p class="- topic/p " xtrc="p:5;28:10" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">The deployer node must be setup before deploying Ceph. For more details on the installation
+        of deployer node, refer to <xref class="- topic/xref " href="../../installation.dita#topic_flx_j2b_ws/DeployerInstall" type="section" xtrc="xref:2;30:75" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><?ditaot usertext?> installation
+        guide</xref>.</p>
+    </section>
+    <section class="- topic/section " xtrc="section:2;33:14" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+      <title class="- topic/title " id="install-procedure" xtrc="title:3;34:37" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Installation Procedure</title>
+      <p class="- topic/p " xtrc="p:6;35:10" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Perform the following procedures to configure, install, and the integrate the Ceph Block
+        Storage with HP Helion OpenStack 2.0.</p>
+    </section>
+    <section class="- topic/section " xtrc="section:3;38:14" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+      <p class="- topic/p " xtrc="p:7;39:10" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+        <ol class="- topic/ol " id="ol_evc_k11_gt" xtrc="ol:1;40:32" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+          <li class="- topic/li " xtrc="li:1;41:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Login to the Deployer node.</li>
+          <li class="- topic/li " xtrc="li:2;42:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Create the Ceph configuration files (<b class="+ topic/ph hi-d/b " xtrc="b:5;42:55" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">manually</b>) at
+              <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:1;43:23" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">~/helion-input/my_cloud/definition</codeph>. The example configuration files
+            are available at <xref class="- topic/xref " href="configuration_files.dita#topic_trz_pgw_gt" type="topic" xtrc="xref:3;44:85" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><?ditaot usertext?>Ceph
+              Configuration
+            files</xref>.<!--<p>The configuration files for editing will be available at <codeph>~/helion/my_cloud/definition/data</codeph>.</p>--></li>
+          <li class="- topic/li " xtrc="li:3;47:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Copy the configuration files in the respective folder as shown in the screeshot
+              below.<p class="- topic/p " xtrc="p:8;48:25" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"/><image class="- topic/image " href="../../../media/ceph/screenshot-path.png" id="image_arv_dcx_gt" placement="inline" xtrc="image:1;49:17" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"/><p class="- topic/p " xtrc="p:9;49:20" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">You must copy the <b class="+ topic/ph hi-d/b " xtrc="b:6;49:41" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">yml</b> files in the appropriate folder. For example: Copy
+              the ring.yml file in <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:2;50:44" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">config/swift/</codeph>.</p></li>
+          <li class="- topic/li " xtrc="li:4;51:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Edit the configuration files, based on your environment, to deploy Ceph. </li>
+          <li class="- topic/li " xtrc="li:5;52:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Edit the file <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:3;52:37" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">disks_osd.yml</codeph> and enter the details for the additional
+            disks meant for OSD data and journal
+            filesystems.<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:2;54:36" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">vi <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:4;54:47" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">disks_osd.yml</codeph></codeblock></li>
+          <li class="- topic/li " xtrc="li:6;55:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"> Commit your configuration to a <xref class="- topic/xref " href="../../using_git.dita#topic_u3v_1yz_ct" type="topic" xtrc="xref:4;56:16" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><?ditaot usertext?>local
+              repository</xref>:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:3;57:44" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message&gt;"</codeblock><note class="- topic/note " xtrc="note:2;59:54" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+              Enter your commit message &lt;commit message&gt;</note></li>
+          <li class="- topic/li " xtrc="li:7;61:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Run the configuration
+            processor:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:4;62:34" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li class="- topic/li " xtrc="li:8;64:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Change the directory to <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:5;64:47" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">~/scratch/ansible/next/hos/ansible</codeph> and run
+            the following command to create a deployment
+            directory.<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:5;66:34" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:6;66:42" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+          <li class="- topic/li " xtrc="li:9;67:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Modify <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:7;67:30" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">~/helion/hlm/ansible/hlm-deploy.yml</codeph> and uncomment the line
+            containing <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:8;68:32" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ceph-deploy.yml</codeph> to enable deployment of ceph.</li>
+          <li class="- topic/li " xtrc="li:10;69:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Run the following ansible
+            playbook:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:6;70:33" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
+        </ol>
+      </p>
+    </section>
+    <p class="- topic/p " xtrc="p:10;74:8" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
+      nodes (Resource Nodes).</p>
+    <p class="- topic/p " id="run-ceph-client-package" xtrc="p:11;76:37" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><b class="+ topic/ph hi-d/b " xtrc="b:7;76:40" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Run Ceph Client Packages</b></p>
+    <p class="- topic/p " xtrc="p:12;77:8" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Execute the following command to install the Ceph client packages on controller nodes. </p>
+    <p class="- topic/p " xtrc="p:13;78:8" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+      <codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:7;79:18" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
+    </p>
+    <p class="- topic/p " xtrc="p:14;82:8" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">This will also create Ceph users and Ceph pools on the resource nodes.</p>
+    <p class="- topic/p " id="configure-ceph-as-cinder-backend" xtrc="p:15;83:46" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><b class="+ topic/ph hi-d/b " xtrc="b:8;83:49" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Configure Ceph as a Cinder backend</b></p>
+    <p class="- topic/p " xtrc="p:16;84:8" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Perform the following procedure on the Deployer node to configure Ceph as a Cinder backend:<ol class="- topic/ol " xtrc="ol:2;84:103" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+        <li class="- topic/li " xtrc="li:11;85:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Edit <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:9;85:26" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to
+          add ceph configuration data as shown
+          below:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:8;87:28" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">enabled_backends=ceph1</codeblock></li>
+        <li class="- topic/li " xtrc="li:12;88:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Copy the following
+            configurations:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:9;89:39" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">[ceph1]
+rbd_max_clone_depth = 5
+rbd_flatten_volume_from_snapshot = False
+rbd_uuid = 457eb676-33da-42ec-9a8c-9293d545c337
+rbd_user = cinder
+rbd_pool = volumes
+rbd_ceph_conf = /etc/ceph/ceph.conf
+volume_driver = cinder.volume.drivers.rbd.RBDDriver
+volume_backend_name = ceph</codeblock><note class="- topic/note " xtrc="note:3;97:45" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">The
+              <b class="+ topic/ph hi-d/b " xtrc="b:9;98:18" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">rbd_uuid </b>is available at
+              <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:10;99:23" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">/home/stack/helion/hos/ansible/roles/ceph-client-prepare/vars/ceph_user_model.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
+        <?oxy_custom_end?>
+        <li class="- topic/li " xtrc="li:13;101:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">To enable cinder backup to Ceph, modify <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:11;101:61" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">cinder.conf.j2</codeph> at
+            <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:12;102:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> with the
+          following values:
+          <codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:10;104:22" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">backup_driver = cinder.backup.drivers.ceph
+backup_ceph_conf = /etc/ceph/ceph.conf
+backup_ceph_user = cinder-backup
+backup_ceph_chunk_size = 134217728
+backup_ceph_pool = backups
+backup_ceph_stripe_unit = 0
+backup_ceph_stripe_count = 0
+restore_discard_excess_bytes = true</codeblock></li>
+        <li class="- topic/li " xtrc="li:14;112:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"> Copy <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:13;112:27" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ceph.client.cinder.keyring</codeph> to the controller nodes:<ol class="- topic/ol " id="ol_xx5_51x_gt" xtrc="ol:3;113:32" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+            <li class="- topic/li " xtrc="li:15;114:17" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Login to controller node as a root user and execute the following
+                  command.<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:11;115:38" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p class="- topic/p " xtrc="p:17;115:133" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><b class="+ topic/ph hi-d/b " xtrc="b:10;115:136" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">OR</b></p><p class="- topic/p " xtrc="p:18;115:149" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">You
+                can copy the keyring from the deployer
+                node<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:12;117:32" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">scp /etc/ceph/ceph.client.cinder.keyring</codeblock> to
+                  <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:14;118:27" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">/etc/ceph</codeph> folder on all the controller nodes.</p></li>
+          </ol></li>
+        <li class="- topic/li " xtrc="li:16;120:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Commit your configuration to the local repository to configure cinder on the deployer node.<p class="- topic/p " xtrc="p:19;120:107" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+            <codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:13;121:24" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">cd /home/stack/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message&gt;"</codeblock>
+          </p><note class="- topic/note " xtrc="note:4;124:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"> Enter your commit message &lt;commit message&gt;</note></li>
+        <li class="- topic/li " xtrc="li:17;125:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Change the directory to <codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:15;125:45" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">~/scratch/ansible/next/hos/ansible</codeph> and run the
+          following command to create a deployment
+          directory.<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:14;127:32" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><codeph class="+ topic/ph pr-d/codeph " xtrc="codeph:16;127:40" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+        <li class="- topic/li " xtrc="li:18;128:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Run the following ansible
+            playbook:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:15;129:33" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p class="- topic/p " xtrc="p:20;129:107" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Once
+            cinder is configured, launch the Horizon dashboard to create a cinder volume
+          type.</p></li>
+      </ol></p>
+    <p class="- topic/p " id="create-cinder-vol" xtrc="p:21;133:31" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><b class="+ topic/ph hi-d/b " xtrc="b:11;133:34" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Creating Cinder Volume Type</b></p>
+    <p class="- topic/p " xtrc="p:22;134:8" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">To create a volume type using the Horizon dashboard, do the following:<ol class="- topic/ol " id="ol_ldf_fxc_gt" xtrc="ol:4;134:101" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+        <li class="- topic/li " xtrc="li:19;135:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+          left panel.</li>
+        <li class="- topic/li " xtrc="li:20;137:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">From the left panel, click the <b class="+ topic/ph hi-d/b " xtrc="b:12;137:47" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Admin</b> tab and then click the <b class="+ topic/ph hi-d/b " xtrc="b:13;137:83" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Volumes</b> tab to
+          display the Volumes page.<p class="- topic/p " xtrc="p:23;138:39" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><image class="- topic/image " href="../../../media/ceph/create-ceph-volumetype%20-%201.png" id="image_nrn_sxc_gt" placement="inline" xtrc="image:2;140:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"/></p></li>
+        <li class="- topic/li " xtrc="li:21;141:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Click <b class="+ topic/ph hi-d/b " xtrc="b:14;141:22" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Create Volume Type</b> to display a dialog box.<p class="- topic/p " xtrc="p:24;141:72" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><image class="- topic/image " href="../../../media/ceph/create-ceph-volumetype%20(2).png" id="image_vww_tyc_gt" placement="inline" xtrc="image:3;143:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"/></p></li>
+        <li class="- topic/li " xtrc="li:22;144:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Enter the name of the volume type.</li>
+        <li class="- topic/li " xtrc="li:23;145:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Click<b class="+ topic/ph hi-d/b " xtrc="b:15;145:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"> Create Volume Type</b>. The newly created volume displays in the Volumes
+              page.<p class="- topic/p " xtrc="p:25;146:23" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><image class="- topic/image " href="../../../media/ceph/create-ceph-volumetype.png" id="image_ilf_wzc_gt" placement="inline" xtrc="image:4;147:38" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"/></p></li>
+      </ol></p>
+    <p class="- topic/p " id="associate-volume-type-backend" xtrc="p:26;149:43" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><b class="+ topic/ph hi-d/b " xtrc="b:16;149:46" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Associate the volume type to a backend</b></p>
+    <p class="- topic/p " xtrc="p:27;150:8" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">To map a volume type to a backend, do the following:</p>
+    <ol class="- topic/ol " xtrc="ol:5;151:9" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+      <li class="- topic/li " xtrc="li:24;152:11" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Login to the Overcloud Horizon dashboard. The Overcloud dashboard displays with the
+        options in the left panel.</li>
+      <li class="- topic/li " xtrc="li:25;154:11" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"> From the left panel, click the <b class="+ topic/ph hi-d/b " xtrc="b:17;154:46" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Admin</b> tab and then click the <b class="+ topic/ph hi-d/b " xtrc="b:18;154:82" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Volumes</b> tab to
+        display the Volumes page.<p class="- topic/p " xtrc="p:28;155:38" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"/><image class="- topic/image " href="../../../media/ceph/create-ceph-volumetype.png" id="image_izx_2cd_gt" placement="inline" xtrc="image:5;156:34" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"/></li>
+      <li class="- topic/li " xtrc="li:26;157:11" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Click <b class="+ topic/ph hi-d/b " xtrc="b:19;157:20" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">View Extra Specs</b> displayed against the volume type which you want to
+        associate to the backend.<p class="- topic/p " xtrc="p:29;158:38" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"/><image class="- topic/image " href="../../../media/ceph/create-ceph-volumetype%20-%20extra-specs.png" id="image_cgv_dcd_gt" placement="inline" xtrc="image:6;160:13" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"/><p class="- topic/p " xtrc="p:30;160:16" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">The <b class="+ topic/ph hi-d/b " xtrc="b:20;160:23" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Create Volume Type Extra Specs</b> dialog box displays.</p><p class="- topic/p " xtrc="p:31;160:85" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><image class="- topic/image " href="../../../media/ceph/volume-extra-specs-ceph.png" id="image_clm_rcd_gt" placement="inline" xtrc="image:7;161:91" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"/></p></li>
+      <li class="- topic/li " xtrc="li:27;162:11" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">In the <b class="+ topic/ph hi-d/b " xtrc="b:21;162:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Key</b> box, enter <i class="+ topic/ph hi-d/i " xtrc="i:1;162:43" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ceph</i> as volume backend name. This is the name of the
+        key used to specify the storage backend when provisioning volumes of this volume type. </li>
+      <li class="- topic/li " xtrc="li:28;164:11" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">In the <b class="+ topic/ph hi-d/b " xtrc="b:22;164:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Value</b> box, enter the name of the backend to which you want to associate the
+        volume type. For example:<i class="+ topic/ph hi-d/i " xtrc="i:2;165:37" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ceph</i>.</li>
+      <li class="- topic/li " xtrc="li:29;166:11" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Click <b class="+ topic/ph hi-d/b " xtrc="b:23;166:20" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Create</b> to create the extra volume type specs. <note class="- topic/note " xtrc="note:5;166:76" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"> Once the volume type is
+          mapped to the backend, you can create volumes with this volume type.</note></li>
+    </ol>
+    <section class="- topic/section " xtrc="section:4;169:14" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+      <title class="- topic/title " id="ceph-operation" xtrc="title:4;170:34" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+        <b class="+ topic/ph hi-d/b " xtrc="b:24;171:12" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Ceph Operations</b></title>
+      <p class="- topic/p " xtrc="p:32;172:10" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">After the successful deployment of Ceph, you can perform the following Ceph operations:<ul class="- topic/ul " xtrc="ul:1;172:101" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+          <li class="- topic/li " xtrc="li:30;173:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Check the status of Ceph OSD and Monitor Services</li>
+          <li class="- topic/li " xtrc="li:31;174:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Start OSD Nodes and Monitor Services</li>
+          <li class="- topic/li " xtrc="li:32;175:15" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Stop OSD Nodes and Monitor Services<p class="- topic/p " xtrc="p:33;175:53" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><b class="+ topic/ph hi-d/b " xtrc="b:25;175:56" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Check the status of Ceph OSD and Monitor
+                Services</b>
+            </p><p class="- topic/p " xtrc="p:34;177:20" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Perform the following steps to check the stays of Ceph OSD Nodes and Monitor Services:<ol class="- topic/ol " xtrc="ol:6;177:110" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+                <li class="- topic/li " xtrc="li:33;178:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Login to Deployer Node.</li>
+                <li class="- topic/li " xtrc="li:34;179:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Change to the following
+                  directory:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:16;180:40" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">~/scratch/ansible/next/hos/ansible</codeblock></li>
+                <li class="- topic/li " xtrc="li:35;181:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Run the ansible
+                  playbook:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:17;182:39" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ansible-playbook -i hosts/verb_hosts ceph-status.yml</codeblock></li>
+              </ol></p><p class="- topic/p " xtrc="p:35;183:27" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><b class="+ topic/ph hi-d/b " xtrc="b:26;183:30" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Start OSD and Monitor Services</b></p><p class="- topic/p " xtrc="p:36;183:71" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Perform the following steps to
+              start OSD Nodes and Monitor Services:<ol class="- topic/ol " xtrc="ol:7;184:56" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+                <li class="- topic/li " xtrc="li:36;185:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Login to Deployer Node.</li>
+                <li class="- topic/li " xtrc="li:37;186:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Change to the following
+                  directory:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:18;187:40" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
+                <li class="- topic/li " xtrc="li:38;188:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Run the ansible
+                  playbook:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:19;189:39" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ansible-playbook -i hosts/verb_hosts ceph-start.yml</codeblock></li>
+              </ol></p><p class="- topic/p " xtrc="p:37;190:27" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita"><b class="+ topic/ph hi-d/b " xtrc="b:27;190:30" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Stop OSD Nodes and Monitor Services</b></p><p class="- topic/p " xtrc="p:38;190:76" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Perform the following
+              steps to stop OSD Nodes and Monitor Services:</p><p class="- topic/p " xtrc="p:39;191:67" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+              <ol class="- topic/ol " xtrc="ol:8;192:19" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">
+                <li class="- topic/li " xtrc="li:39;193:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Login to Deployer Node.</li>
+                <li class="- topic/li " xtrc="li:40;194:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Change to the following
+                  directory:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:20;195:40" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">cd ~/scratch/ansible/next/hos/ansible</codeblock></li>
+                <li class="- topic/li " xtrc="li:41;196:21" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">Run the ansible
+                  playbook:<codeblock class="+ topic/pre pr-d/codeblock " xml:space="preserve" xtrc="codeblock:21;197:39" xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\ceph\deploy_ceph.dita">ansible-playbook -i hosts/verb_hosts ceph-stop.yml</codeblock></li>
+              </ol>
+            </p>
+          </li>
+        </ul></p>
+    </section>
+  </body>
+<opentopic-index:index.groups/></topic>

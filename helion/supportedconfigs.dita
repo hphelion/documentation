@@ -77,7 +77,7 @@
       the control plane and configuring the cinder.conf.j2 wih 3PAR details Two node cloud:
       documentation will show how to configure for one node control plane and one node compute use
       CEPH (deployed by HLM) as a Cinder back end instead of VSA --></section>
-   <!-- REMOVED PER DOC 1593 <section><title>Entry Scale Storage Depot</title>
+    <!-- REMOVED PER DOC 1593 <section><title>Entry Scale Storage Depot</title>
       <simpletable>
         <strow>
           <stentry><b>Control Plane</b></stentry>
@@ -100,13 +100,11 @@
      -->
     <section>
       <title>Configuration Illustrations</title>
+      <p>The following diagram depicts a deployment scenario using KVM for Beta1.</p>
+      <p><image href="../media/networking/network_kvm_diag.png" width="1000"/></p>
       <p>The following diagram depicts a deployment scenario using ESX for Beta1.</p>
-      <p><image href="../media/esx/network_diagram_beta1.png" id="image_knm_4vw_2t"/></p>
+      <p><image href="../media/networking/network_esx_diag.png" width="1000"/></p>
     </section>
-
-
-
-
     <section>
       <!--<ul>
         <li>Single control plane for

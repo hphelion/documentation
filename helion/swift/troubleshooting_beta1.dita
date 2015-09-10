@@ -8,6 +8,8 @@
             >Interpreting _swift-validate-input-model.yml Errors</xref></li>
         <li><xref href="#topic_sl2_nht_dt/deploy-fails" format="dita">Deploy fails with: msdos disks
             labels do not support partition names</xref></li>
+        <li><xref href="#topic_sl2_nht_dt/swift-ring-failure" format="dita">Ansible playbook fails
+            in swiftlm-ring-supervisor | build-rings</xref></li>
       </ul></p>
     <section id="interpreting-swift-validate-input-model">
       <title>Interpreting _swift-validate-input-model.yml Errors</title>
@@ -17,12 +19,13 @@
         id="ol_szd_tht_dt">
         <li>Log onto the first node in the system that is running the swift-proxy-server process.
             <note> You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as
-            mentioned in step <b>2</b> in <xref
-              href="../installation.dita#topic_flx_j2b_ws/CloudDeploy"/> or run the
-              <codeph>hlm-deploy.yml</codeph> playbook as described in step <b>4</b> in <xref
-              href="../installation.dita#topic_flx_j2b_ws/CloudDeploy"/> otherwise the files needed
-            to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node.
-          </note></li>
+            mentioned in step <b>1</b> in <b>
+              <xref href="../installation.dita#topic_flx_j2b_ws/validate_swift">Validate Object
+                Storage</xref></b> or run the <codeph>hlm-deploy.yml</codeph> playbook as described
+            in step <b>2 c</b> in  <xref
+              href="../installation.dita#topic_flx_j2b_ws/run-config-processor"/>otherwise the files
+            needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the
+            node. </note></li>
         <li>Execute the following
             command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report </codeblock><p>
             The command will report any errors or problems (see List of errors) with the input
@@ -152,6 +155,56 @@
             </ul></stentry>
         </strow>
       </simpletable>
+    </section>
+    <section id="swift-ring-failure">
+      <title><b>Ansible playbook fails in swiftlm-ring-supervisor | build-rings</b></title>
+    </section>
+    <section>
+      <p>
+        <simpletable id="simpletable_k1g_ycx_gt">
+          <strow>
+            <stentry><b>Description</b>
+            </stentry>
+            <stentry>An ansible playbook fails as follows:
+              <codeblock>TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] *** 
+failed: [hlm002-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor", "--make-delta", "--rebalance", ....</codeblock>Examine
+              the output and see if the output generated in your environment contains one of the
+              following example messages:<p><b>Example Message
+                  1</b></p><codeblock>-------------------------------------------------------------------------------
+NOTE: Dispersion of 11.718750 indicates some parts are not
+      optimally dispersed.
+
+      You may want to adjust some device weights, increase
+      the overload or review the dispersion report.
+-------------------------------------------------------------------------------</codeblock><p><b>Example
+                  Message
+                  2</b><codeblock>No partitions could be reassigned.</codeblock></p><p><b>Example
+                  Message
+                3</b><codeblock>Cowardly refusing to save rebalance as it did not change at least 1%</codeblock></p><p><b>Example
+                  Message
+                4</b><codeblock>NOTE: Balance of %.02f indicates you should push this ring, wait at least 16 hours, and rebalance/repush.</codeblock></p><p><b>Example
+                  Message 5</b><codeblock>Worst tier is 3.0 (2.4)</codeblock></p><p>If any one of
+                the above message is displayed in your environment then it is probable that the
+                Swift ring was created. </p></stentry>
+          </strow>
+          <strow>
+            <stentry><b>Resolution</b></stentry>
+            <stentry>
+              <p>Run the following command at least
+                twice:<codeblock>ansible-playbook -i hosts/verb_hosts _swift-make-delta-rebalance.yml</codeblock></p>
+              <p> Each may fail with similar messages but each fails with a different ring.</p>
+              <p> Once the account, container, and object-0 rings have failed, you can repeat the
+                ansible playbook command that failed. Refer to <xref
+                  href="../installation.dita#topic_flx_j2b_ws">installation guide</xref> for the
+                command.</p>
+              <p>Now, the ansible playbook will not stop at the "swiftlm-ring-supervisor |
+                build-rings" task and the rings will be created successfully.</p>
+            </stentry>
+          </strow>
+        </simpletable>
+      </p>
+      <p> </p>
+      <p> </p>
     </section>
   </body>
 </topic>
