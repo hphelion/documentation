@@ -11,8 +11,9 @@
       <simpletable frame="all" relcolwidth="1.0*" id="simpletable_ab3_fwv_gt">
         <strow>
           <stentry>
-            <note type="attention"><b>Beta1 Workaround </b><p>You must perform the following step
-                after Step <b>3</b> in the section <b><xref
+            <note type="attention"><b>Beta1 Workaround </b> once the issue for attaching volume is
+              resolved I will remove this. Dev is working on it.<p>You must perform the following
+                step after Step <b>3</b> in the section <b><xref
                     href="#topic_jrc_5lz_ft/configure-ceph-as-cinder-backend" format="dita"
                     >Configure Ceph as a Cinder
                 backend</xref></b>.<codeblock>cp /usr/lib/python2.7/dist-packages/rbd.py /opt/stack/venv/cinder-&lt;time>/lib/python2.7/site-packages/
