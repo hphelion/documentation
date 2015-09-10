@@ -35,18 +35,26 @@
                     href="../HostManagement/CGH-2-User-host-management-hardware-inventory.dita#topic4214XX"
                     >Systems</xref>
             </li>
-            <li><xref href="CGH-2-User-host-management.dita#topic11233">Hosts</xref>
+            <li><xref href="../HostManagement/CGH-2-User-host-management.dita#topic11233">Hosts</xref>
             </li>
-            <li><xref href="CGH-2-User-host-management-active.dita#topic4032">Active
+            <li><xref href="../HostManagement/CGH-2-User-host-management-active.dita#topic4032">Active
                 Hosts</xref></li>
-            <li>Patches </li>
-            <li>CPU Profiles </li>
-            <li>Interface Profiles </li>
-            <li><xref href="CGH-2-User-host-management-inventory-detail-storage.dita#topic6164"
+            <li><xref href="../HostManagement/CGH-2-User-host-management-patches.dita#topic2639"
+                    >Patches </xref></li>
+            <li><xref
+                    href="../HostManagement/CGH-2-User-host-management-profiles-cpu.dita#topic2639"
+                    >CPU Profiles</xref>
+            </li>
+            <li><xref
+                    href="../HostManagement/CGH-2-User-host-management-profiles-intf.dita#topic2639"
+                    >Interface Profiles </xref></li>
+            <li><xref
+                    href="../HostManagement/CGH-2-User-host-management-profiles-storage.dita#topic2639"
                     >Storage Profiles</xref>
             </li>
-            <li><xref href="CGH-2-User-host-management-detail-memory.dita#topic6841">Memory
-                    Profiles</xref></li>
+            <li><xref
+                    href="../HostManagement/CGH-2-User-host-management-profiles-memory.dita#topic2639"
+                    >Memory Profiles</xref></li>
         </ul>
         <p>You can also get <xref href="CGH-2-User-host-management-detail.dita#topic1947">detailed
                 information on these components</xref>.</p>

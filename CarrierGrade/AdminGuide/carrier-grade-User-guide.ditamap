@@ -236,7 +236,6 @@
         <topichead navtitle=" Fault Management"/>
         <topichead navtitle="System Configuration"/>
         <topichead navtitle="System Information"/>
-        <topichead navtitle="Managing Identity"/>
         <topicref href="Identity/CGH-2-User-Identity-managing.dita" navtitle="Managing Identity"
             locktitle="yes">
             <topicref href="Identity/CGH-2-User-Identity-managing-users.dita"

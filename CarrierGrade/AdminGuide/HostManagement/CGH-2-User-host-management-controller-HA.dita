@@ -65,37 +65,31 @@ controller failure.</p>
 <p>You can ensure you are working on the active controller by using the OAM floating IP address as the destination address in the SSH command.</p>
 <p>To determine which host is the active controller:</p>
 <ol>
-<li>
-<p>
-            <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
-              Helion OpenStack Horizon Dashboard</xref>. </p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-</ol>
+        <li>
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+            OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab. </li>
+        <li>Click the <b>Hosts</b> tables</li>
+      </ol>
 <p>The <b>Hosts</b> tab lists the status of all hosts in the cluster; it reports the active controller as having the <codeph>Controller-Active</codeph> personality.</p>
 </section>
 <section id="takeout"> <title>Taking a controller out of service</title>
 <p>For maintenance purposes, when one of the controller nodes needs to be powered down for service, it is necessary to force all currently active service groups in one controller to switch to the other.</p>
 <p>This can be done from the Hosts tab on the Inventory page, by selecting the option swact (switch active) in the More menu of the controller you want to take out of service:</p>
 <ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
-</li>
-<li>
-<p>Click the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>For the host you want to take out of service, click <b>More</b> then <b>Swact Host</b>.</p>
-</li>
+        <li>
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+            OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab. </li>
+        <li>Click the <b>Hosts</b> tables</li>
+        <li>For the host you want to take out of service, click <b>Edit Host</b> then <b>Swact
+            Host</b>.</li>
 </ol>
 <p>
   <xref type="section" href="#topic3847"> Return to Top </xref>

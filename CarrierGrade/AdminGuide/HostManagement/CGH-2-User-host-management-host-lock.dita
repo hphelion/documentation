@@ -46,74 +46,61 @@
 <p>On a controller node, the state transition only succeeds if there are no services running in active mode on the host.</p>
 <p>On a compute node, the state transition only succeeds if all currently running instances on the host can be live-migrated to alternative compute nodes. Live-migration of the virtual machine instances is initiated automatically by the HP Helion OpenStack Carrier Grade as soon as the state transition is requested.</p>
 <ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>In the <b>Hosts</b> list, for the system to lock, select Lock Host from the <b>More</b> menu.</p>
-
-<p>Wait for the host to be reported as Locked</p>
-</li>
+        <li>
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+            OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab. </li>
+        <li>Click the <b>Hosts</b> tables</li>
+<li>In the <b>Hosts</b> list, for the system to lock, select click <b>Edit Host</b> then <b>Lock
+            Host</b>.<p>Wait for the host to be reported as <b>Locked</b>.</p></li>
 </ol>
 <p>You can try to lock a host from the controller's command line, as follows:</p>
-<codeblock>
-  <codeph>system host-lock hostname
-</codeph>
-</codeblock>
+<codeblock><codeph>system host-lock hostname
+</codeph></codeblock>
 </section>
 <section id="unlock"> <title>Unlock a host</title>
 <p>Used to bring a host into service. The first step is to reset the target host to ensure that it starts from a wellknown state. The host is automatically configured, and any required software patches are applied.</p>
 <p>The state transition only succeeds if all the necessary configuration components for the host are already in place. For example, the state transition is rejected on a compute node for which no data interfaces are defined.</p>
 <p>To unlock the host:</p>
 <ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>In the <b>Hosts</b> list, for the system to lock, select <b>Unlock Host</b> from the <b>More</b> menu.</p>
-
-<p>Wait for the host to be reported as unlocked</p>
-</li>
+        <li>
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+            OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab. </li>
+        <li>Click the <b>Hosts</b> tables</li>
+        <li>In the <b>Hosts</b> list, for the system to lock, select click <b>Edit Host</b> then
+            <b>Unlock Host</b>.<p>Wait for the host to be reported as unlocked</p></li>
 </ol>
 <p>You can unlock a host from the controller's command line, as follows:</p>
-<codeblock>
-  <codeph>system host-unlock hostname
-</codeph>
-</codeblock>
+<codeblock><codeph>system host-unlock hostname
+</codeph></codeblock>
 </section>
 <section id="force"> <title>Forcing a Host Lock</title>
 <p>If for some reason, the Lock Host command does not lock the host, you can force a lock. When selected, the system displays a warning message appropriate to the personality of the host. Use this option with caution.</p>
 <p>To force a lock on the host:</p>
 <ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
-</li>
-<li>
-<p>In the <b>Hosts</b> list, for the system to lock, select <b>Force Lock Host</b> from the <b>More</b> menu.</p>
-
-<p>Wait for the host to be reported as Locked</p>
-</li>
+        <li>
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+            OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Inventory</b> tab. </li>
+        <li>Click the <b>Hosts</b> tables</li>
+        <li>In the <b>Hosts</b> list, for the system to lock, select click <b>Edit Host</b> then
+            <b>Force Lock Host</b>.</li>
 </ol>
+      <p>Wait for the host to be reported as <b>Locked</b>.</p>
 <p>You can force lock a host from the controller's command line, as follows:
 ~(keystone_admin)$ system host-lock --force hostname
 Note that a force lock operation on a compute node causes an immediate service outage on all hosted
 virtual machines.</p>
-<p>
-  <xref type="section" href="#topic3241"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

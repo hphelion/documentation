@@ -16,6 +16,11 @@
   </prolog>
   <body>
     <!-- https://wiki.hpcloud.net/pages/viewpage.action?pageId=53513771 -->
+    <p>
+      <pre>Here is the wiki link for Attis. <xref href="https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841" format="html" scope="external">https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841</xref> 
+The high level design needs to be adjusted to more suite with CG(It is reflecting CS in some areas)I will soon update it. 
+But the CLI, REST API etc should all be same </pre>
+    </p>
     <p>This page explains how to backup and restore the HLM VM in the event of catastrophic failure.
       The page also explains how to <xref href="#topic10581/mysql" format="dita">recover the <tm
           tmtype="reg">Percona</tm>
