@@ -13,17 +13,6 @@
       highly durable architecture with no single point of failure. In addition, HP Helion OpenStack
       introduces the concept of example cloud models, where the user can modify the YAML to provide
       the required configuration based on their environment.</section>
-    <section><b>New for HP Helion OpenStack 2.0</b></section>
-    <p>Swift is configured through a number of YAML files in the HP Helion implementation of the
-      OpenStack Object storage (Swift) service. For more details on the configuration of the YAML
-      files, refer to <xref href="swift_input_cloud_model.dita#modify-input-model"/></p>
-    <section>
-      <title>Installation</title>
-      <p>Swift is installed automatically, if your environment meet the basic hardware requirement
-        required for installing Swift. Please refer to <xref
-          href="../supportedconfigs.dita#topic_ckw_kbc_ws">Supported Configuration</xref> for
-        hardware requirement. </p>
-    </section>
     <section><b>Object Storage (Swift) Services</b><p>A Swift system comprises a number of services:
           <ul id="ul_sfz_gft_dt">
           <li>Swift-Proxy provides the API for all requests to the Swift system.</li>
@@ -43,5 +32,20 @@
               also scaled horizontally to handle an increased number of simultaneous connections and
               a larger number of objects.</p></li>
         </ul></p></section>
+    <section>
+      <title>New for HP Helion OpenStack 2.0</title>
+    </section>
+    <p>Swift is configured through a number of YAML files in the HP Helion implementation of the
+      OpenStack Object storage (Swift) service. For more details on the configuration of the YAML
+      files, refer to <xref href="swift_input_cloud_model.dita#modify-input-model"/></p>
+    <section>
+      <title>Installation</title>
+    </section>
+    <section>
+      <p>Swift is installed automatically, if your environment meet the basic hardware requirement
+        required for installing Swift. Please refer to <xref
+          href="../supportedconfigs.dita#topic_ckw_kbc_ws">Supported Configuration</xref> for
+        hardware requirement. </p>
+    </section>
   </body>
 </topic>

@@ -8,7 +8,7 @@
       <ul>
         <li>Volumes <ul>
             <li><xref href="vsa/vsa.dita">VSA</xref></li>
-            <li>3PAR FC</li>
+            <li>3PAR FC </li>
             <li>3PAR iSCSI</li>
             <!--  
             <li>VMDK</li>
