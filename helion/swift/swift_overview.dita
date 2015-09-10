@@ -37,7 +37,7 @@
     </section>
     <p>Swift is configured through a number of YAML files in the HP Helion implementation of the
       OpenStack Object storage (Swift) service. For more details on the configuration of the YAML
-      files, refer to <xref href="swift_input_cloud_model.dita#modify-input-model"/></p>
+      files, refer to <xref href="swift_input_cloud_model.dita#modify-input-model"/>.</p>
     <section>
       <title>Installation</title>
     </section>
