@@ -28,7 +28,7 @@
             <dd>This holds the upstream (ie, from HP) source code - that is, what you'll see under
               the ~/helion directory on a pristine fresh installation. Every source code release
               that's downloaded from us is applied as a fresh commit to this branch. This branch
-              contains no customisation by the end user.</dd>
+              contains no customization by the end user.</dd>
           </dlentry>
           <dlentry>
             <dt>site</dt>
@@ -49,7 +49,7 @@
             <dt>cp-persistent</dt>
             <dd>This branch contains the persistent state that the CP needs to keep hold of. That
               state is mostly the assignment of IP addresses and roles to particular servers. Some
-              operational procedures may involve editing the contents of this brach: for example,
+              operational procedures may involve editing the contents of this branch: for example,
               retiring a machine from service or repurposing it.</dd>
           </dlentry>
         </dl>Two temporary branches are created and populated at run time: <dl>
@@ -146,7 +146,7 @@
     <section>
       <title>Updating any configuration, including the default configuration</title>
       <p>When you need to make updates to a configuration you must <ol>
-          <li>Check out the <b>site</b> branch. You may aready be on that branch. If so, git will
+          <li>Check out the <b>site</b> branch. You may already be on that branch. If so, git will
             tell you that and the command will leave you
             there.<codeblock>git checkout site</codeblock>
           </li>
