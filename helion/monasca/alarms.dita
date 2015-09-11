@@ -23,6 +23,108 @@
         <li><xref href="#alarmdefinitions/swift">Swift</xref></li>
       </ul>
     </section>
+    <section id="ceilometer"><title>Ceilometer</title>
+    <p><table frame="all" rowsep="1" colsep="1" id="ceilometer_table">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=ceilometer-agent-notification</entry>
+                <entry>process crashed</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=ceilometer-collector</entry>
+                <entry>process crashed</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=ceilometer-agent-central</entry>
+                <entry>process crashed</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
+    </section>
+    <section id="cinder"><title>Cinder</title>
+      <p><table frame="all" rowsep="1" colsep="1" id="cinder_table">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Process Check</entry>
+              <entry>process_name=cinder-api</entry>
+              <entry>process crashed</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>process_name=cinder-scheduler</entry>
+              <entry>process crashed</entry>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></p>
+    </section>
+    <section id="glance"><title>Glance</title>
+      <p><table frame="all" rowsep="1" colsep="1" id="glance_table">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Process Check</entry>
+              <entry>component=glance-api</entry>
+              <entry>The API is unresponsive</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>component=glance-registry</entry>
+              <entry>The Glance registry is unresponsive</entry>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></p>
+    </section>
     <section id="haproxy">
       <title>HAProxy</title>
       <table frame="all" rowsep="1" colsep="1" id="table_flj_2tl_zs">
@@ -176,6 +278,74 @@
           </tbody>
         </tgroup>
       </table>
+    </section>
+    <section id="horizon"><title>Horizon</title>
+    <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_vtf_3md_3t">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>Alerts when Horizon's login page isn't returned</entry>
+                <entry>Apache is not running or misconfiguration</entry>
+                <entry>Check that Apache is running; investigate Horizon logs</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    <section id="keystone"><title>Keystone</title>
+    <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_bw1_jmd_3t">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>component-keystone-api</entry>
+                <entry>API is unresponsive</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=keystone-main</entry>
+                <entry>Process crashed</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=keystone-admin</entry>
+                <entry>Process crashed</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
     </section>
     <section id="logging">
       <title>Logging</title>
@@ -623,6 +793,39 @@
         </tgroup>
       </table>
     </section>
+    <section id="opsconsole"><title>Operations Console</title>
+    <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_fdn_hpd_3t">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>service=ops-console</entry>
+                <entry>The Operations Console is unresponsive</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=leia-leia_monitor</entry>
+                <entry>Process crashed</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p></section>
     <section id="rabbitmq">
       <title>RabbitMQ</title>
       <table frame="all" rowsep="1" colsep="1" id="table_rsb_mp5_zs">

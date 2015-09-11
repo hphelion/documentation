@@ -99,12 +99,12 @@
         <topicref href="helion/monasca/opsconsole/alarm_definitions.dita"/>
         <topicref href="helion/monasca/opsconsole/alarm_explorer.dita"/>
         <topicref href="helion/monasca/opsconsole/notification_methods.dita"/>
-        <topicref href="helion/monasca/opsconsole/metric_monitoring.dita" toc="no"/>
+        <topicref href="helion/monasca/opsconsole/metric_monitoring.dita"/>
       </topichead>
       <topichead navtitle="Compute">
         <topicref href="helion/monasca/opsconsole/compute_summary.dita"/>
         <topicref href="helion/monasca/opsconsole/compute_hosts.dita"/>
-        <topicref href="helion/monasca/opsconsole/compute_instances.dita" toc="no"/>
+        <topicref href="helion/monasca/opsconsole/compute_instances.dita"/>
       </topichead>
       <topichead navtitle="Networking">
         <topicref href="helion/monasca/opsconsole/networking_summary.dita"/>
