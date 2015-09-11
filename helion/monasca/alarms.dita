@@ -24,7 +24,7 @@
       </ul>
     </section>
     <section id="ceilometer"><title>Ceilometer</title>
-    <p><table frame="all" rowsep="1" colsep="1" id="ceilometer_table">
+      <p><table frame="all" rowsep="1" colsep="1" id="ceilometer_table">
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1*"/>
             <colspec colname="c2" colnum="2" colwidth="2*"/>
@@ -63,67 +63,67 @@
     </section>
     <section id="cinder"><title>Cinder</title>
       <p><table frame="all" rowsep="1" colsep="1" id="cinder_table">
-        <tgroup cols="4">
-          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
-          <thead>
-            <row>
-              <entry>Alarm Name</entry>
-              <entry>Description</entry>
-              <entry>Likely Cause</entry>
-              <entry>Mitigation Tasks to Perform</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>Process Check</entry>
-              <entry>process_name=cinder-api</entry>
-              <entry>process crashed</entry>
-              <entry/>
-            </row>
-            <row>
-              <entry>Process Check</entry>
-              <entry>process_name=cinder-scheduler</entry>
-              <entry>process crashed</entry>
-              <entry/>
-            </row>
-          </tbody>
-        </tgroup>
-      </table></p>
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=cinder-api</entry>
+                <entry>process crashed</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=cinder-scheduler</entry>
+                <entry>process crashed</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
     </section>
     <section id="glance"><title>Glance</title>
       <p><table frame="all" rowsep="1" colsep="1" id="glance_table">
-        <tgroup cols="4">
-          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
-          <thead>
-            <row>
-              <entry>Alarm Name</entry>
-              <entry>Description</entry>
-              <entry>Likely Cause</entry>
-              <entry>Mitigation Tasks to Perform</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>Process Check</entry>
-              <entry>component=glance-api</entry>
-              <entry>The API is unresponsive</entry>
-              <entry/>
-            </row>
-            <row>
-              <entry>Process Check</entry>
-              <entry>component=glance-registry</entry>
-              <entry>The Glance registry is unresponsive</entry>
-              <entry/>
-            </row>
-          </tbody>
-        </tgroup>
-      </table></p>
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Process Check</entry>
+                <entry>component=glance-api</entry>
+                <entry>The API is unresponsive</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>component=glance-registry</entry>
+                <entry>The Glance registry is unresponsive</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
     </section>
     <section id="haproxy">
       <title>HAProxy</title>
@@ -280,7 +280,7 @@
       </table>
     </section>
     <section id="horizon"><title>Horizon</title>
-    <p>
+      <p>
         <table frame="all" rowsep="1" colsep="1" id="table_vtf_3md_3t">
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -308,7 +308,7 @@
       </p>
     </section>
     <section id="keystone"><title>Keystone</title>
-    <p>
+      <p>
         <table frame="all" rowsep="1" colsep="1" id="table_bw1_jmd_3t">
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -352,9 +352,9 @@
       <table frame="all" rowsep="1" colsep="1" id="table_gc2_ndh_1t">
         <tgroup cols="5">
           <colspec colname="c1" colnum="1" colwidth="0.5*"/>
-          <colspec colname="c2" colnum="2" colwidth="1*"/>
-          <colspec colname="c3" colnum="3" colwidth="1*"/>
-          <colspec colname="c4" colnum="4" colwidth="1*"/>
+          <colspec colname="c2" colnum="2"/>
+          <colspec colname="c3" colnum="3"/>
+          <colspec colname="c4" colnum="4"/>
           <colspec colname="c5" colnum="5" colwidth="2*"/>
           <thead>
             <row>
@@ -794,7 +794,7 @@
       </table>
     </section>
     <section id="opsconsole"><title>Operations Console</title>
-    <p>
+      <p>
         <table frame="all" rowsep="1" colsep="1" id="table_fdn_hpd_3t">
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
