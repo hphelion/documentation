@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
-<task id="task_mf4_fh4_ht">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="mf4_fh4_ht">
     <title>Create a New Environment</title>
-    <shortdesc>Procedure for creating a new Environment.</shortdesc>
-    <taskbody>
-        <steps>
-            <step>
-                <cmd>Select your technology</cmd>
-                <choices>
-                    <choice>Use CloudFoundry: Deploys the application to a Cloud Foundry endpoint.</choice>
-                    <choice>Use Docker: Builds the application and pushes the image to a public or private DockerHub repository.</choice>
-                    <choice>Use Lattice: Deploys the application to a simplified container cluster.</choice>
-                </choices>
-            </step><step><cmd>Provide the required information:</cmd>
-               <choices>
-                   <choice>For Cloud Foundry, provide the Helion Cloud Foundry URL and the username and password for logging in and then click Connect.</choice>
-                   <choice>For Docker Hub: doesn't seem functional yet.</choice>
-                   <choice>For Lattice: doesn't seem functional yet.</choice>
-               </choices>
-            </step>
-        </steps>
-    </taskbody>
-</task>
+    <body>
+    <p>Procedure for creating a new Environment.</p>
+    <ol id="create_environment">
+                <li>Select your technology
+                <ul>
+                    <li>Use CloudFoundry: Deploys the application to a Cloud Foundry endpoint.</li>
+                    <li>Use Docker: Builds the application and pushes the image to a public or private DockerHub repository.</li>
+                    <li>Use Lattice: Deploys the application to a simplified container cluster.</li>
+                </ul></li>
+            <li>Provide the required information:
+               <ul>
+                   <li>For Cloud Foundry, provide the Helion Cloud Foundry URL and the username and password for logging in and then click Connect.</li>
+                   <li>For Docker Hub: doesn't seem functional yet.</li>
+                   <li>For Lattice: doesn't seem functional yet.</li>
+               </ul></li>
+          
+    </ol>
+    </body>
+</topic>
