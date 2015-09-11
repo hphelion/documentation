@@ -3,7 +3,10 @@
 <topic id="task_sw4_1zq_dt">
     <title>CICD Walkthrough: Create a Project and Deploy an App</title>
     <body>
-    <p>This walkthrough starts with creating a new project and ends with your app deployed to the target of your choice. </p>
+    <p>The true advantage of CICD is creating a build-test-deploy cycle which will occur
+            automatically whenever a change is committed.</p>
+        <p>With Helion CICD, you can even preview a temporary deployment before approving a pull
+            request. Approval will then trigger the full build-test-deploy cycle.</p>
     
     <p>You will need: <ul>
                 <li>An application to deploy. If you don't already have one, you can use one of the
@@ -18,11 +21,14 @@
     <topic id="id_yxf_snb_3t" conref="cicd_environment_create.dita#mf4_fh4_ht">
         <title/>
     </topic>
-    <topic id="id_gcd_tnb_3t" conref="cicd_project_create.dita#s45_4m4_ht">
+    <topic id="id_gcd_tnb_3t" conref="cicd_create_project.dita#s45_4m4_ht">
         <title/>
     </topic>
-    <topic id="id_ytj_ltb_3t" conref="cicd_build_create.dita#topic_a34_wqb_3t">
-        <title/>
+    <topic id="id_bck_t4d_3t" conref="cicd_create_notifications.dita#topic_ifw_mxb_3t"><title>Add Notifications</title></topic>
+   
+ 
+    <topic id="id_ytj_ltb_3t" conref="cicd_build_create.dita#topic_a34_wqb_3t"><title/>
+      
     </topic>
 
 

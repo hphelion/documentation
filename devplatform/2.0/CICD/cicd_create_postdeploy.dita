@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_mxf_jxb_3t">
-  <title>Create or Edit Post-Deployment Actions</title>
+  <title>Create Post-Deployment Actions</title>
   <body>
     <p>Post-deployment actions take place automatically right after an application is deployed.</p>
     <note>Currently, only StormRunner integration is supported.</note>
     
-    <section id="actioncreate"><title>Create a New Action</title><ol><li>Click the <b>Projects</b> tab.</li>
+    <ol><li>Click the <b>Projects</b> tab.</li>
       <li>Select the target project and click <b>Edit</b>.</li>
       <li>Scroll down and click <b>New Action</b>.</li>
       <li>Specify the information for the action.
       <ul><li>For StormRunner load testing, you will need the Username, Password, Test Number, Tenant ID, and Action Name.</li></ul></li>
       <li>Click <b>Save</b>.</li>
-    </ol></section>
-    <section><title>Edit an Existing Notification</title><ol><li>Click the <b>Projects</b> tab.</li>
-      <li>Select the target project and click <b>Edit</b>.</li>
-      <li>Scroll down and click the action.</li>
-      <li>Change the information for the action.</li>
-      <li>Click <b>Save</b>.</li>
-    </ol></section>
+    </ol>
   </body>
 </topic>
