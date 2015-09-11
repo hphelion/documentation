@@ -11,7 +11,7 @@
         same storage platform. The integration of HP Helion OpenStack and Ceph is the usage of block
         storage of Ceph's RADOS Block Device (RDB). Also, the integration between User Application
         Archive and Backup Workloads running externally or in Virtual Machines in HP Helion
-        OpenStack is the usage of object storage of the Ceph RADOS Gateway (RADOSGW). </p>
+        OpenStack is the usage of object storage of the Ceph RADOS Gateway (RADOSGW).</p>
       <p>The Ceph RADOSGW provides a REST interface with extensions which offers compatibility with
         the Swift API. Therefore the existing applications with the integration to the HP Helion
         OpenStack Swift API can port seamlessly from a OpenStack Swift backend storage platform to
@@ -20,7 +20,7 @@
     <section><p>The HP Helion OpenStack 2.0 Ceph Storage Solution provides an unified scaleable and
         stable storage solution for the management of Helion OpenStack Volume Storage (Cinder
         persistent Volumes) service. The solution also supports user backup to the Object Storage
-        (Swift) API service writing to the same unified Ceph storage platform. </p>
+        (Swift) API service writing to the same unified Ceph storage platform.</p>
       <p><!--Based on <tm tmtype="reg">OpenStack</tm> Ceph, HP Helion <tm tmtype="reg">OpenStack</tm>2.0 
         Ceph Storage Solution provides an unified scaleable and stable storage solution for the management 
         of Helion OpenStack Volume Storage (Cinder persistent Volumes) service. &lt;<b>didnot understand 
