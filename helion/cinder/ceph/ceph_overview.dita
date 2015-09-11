@@ -5,7 +5,6 @@
   <body>
     <section>
       <title>Ceph Overview</title>
-      <!-- change for Joel -->
       <p>Ceph is an Open Source, scalable, software defined storage running on HP Servers which
         provides block and object storage with unified management.</p>
       <p>Ceph is designed to deliver different types of storage interfaces to the end user in the
