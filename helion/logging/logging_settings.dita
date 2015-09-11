@@ -40,26 +40,42 @@
           </thead>
           <tbody>
             <row>
-              <entry><p>heat-engine</p></entry>
-              <entry><p>Control</p></entry>
+              <entry/>
+              <entry/>
+              <entry/>
+              <entry/>
+              <entry/>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
               <entry>
-                <p>/var/log/heat/heat-engine.log</p>
-                <p>/var/log/heat/heat-engine-json.log</p>
-                <p>/var/log/heat/heat-api.log</p>
-                <p>/var/log/heat/heat-api-json.log</p>
-                <p>/var/log/heat/heat-api-cfn.log</p>
-                <p>/var/log/heat/heat-api-cfn-json.log</p>
-                <p>/var/log/heat/heat-api-cloudwatch.log</p>
-                <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
+                <p>BURA (Backup and Restore)</p>
               </entry>
-              <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
-              <entry><p>7</p></entry>
               <entry>
-                <p>/var/log/heat/heat-engine-json.log</p>
-                <p>/var/log/heat/heat-api-json.log</p>
-                <p>/var/log/heat/heat-api-cfn-json.log</p>
-                <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
+                <p>Control</p>
+              </entry>
+              <entry>
+                <p>/var/log/freezer-agent/freezer-scheduler.log</p>
+                <p>/var/log/freezer-agent/freezer-agent.log</p>
+                <p>/var/log/freezer-api/freezer-api.log</p>
+                <p>/var/log/freezer-api/freezer-api-access.log</p>
+                <p>/var/log/freezer-api/freezer-api-modwsgi.log</p>
+                <p>/var/log/freezer-api/freezer-api-json.log</p>
+                <p>/var/log/freezer-agent/freezer-agent-json.log</p>
+              </entry>
+              <entry>
+                <p>Daily</p>
+              </entry>
+              <entry>
+                <p>32M</p>
+              </entry>
+              <entry>
+                <p>7</p>
+              </entry>
+              <entry>
+                <p>/var/log/freezer-api/freezer-api-json.log</p>
+                <p>/var/log/freezer-agent/freezer-agent-json.log</p>
               </entry>
             </row>
             <row>
@@ -104,6 +120,149 @@
               </entry>
             </row>
             <row>
+              <entry>
+                <p>Ceph</p>
+              </entry>
+              <entry>
+                <p>Control, Resource</p>
+              </entry>
+              <entry>
+                <p>/var/log/ceph/ceph.log</p>
+                <p>/var/log/ceph/ceph-osd.{num}.log</p>
+                <p>/var/log/ceph/ceph-mon.{hosthname}.log</p>
+                <p>/var/log/ceph/ceph.audit.log</p>
+              </entry>
+              <entry>
+                <p>Daily</p>
+              </entry>
+              <entry>
+                <p>1G</p>
+              </entry>
+              <entry>
+                <p>7</p>
+              </entry>
+              <entry>
+                <p>/var/log/ceph/ceph.log</p>
+                <p>/var/log/ceph/ceph-osd-{num}.log</p>
+                <p>/var/log/ceph/ceph-mon.{hosthname}.log</p>
+              </entry>
+            </row>
+            <row>
+              <entry><p>Cinder</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/cinder/cinder-api.log</p>
+                <p>/var/log/cinder/cinder-api-json.log</p>
+                <p>/var/log/cinder/cinder-backup.log</p>
+                <p>/var/log/cinder/cinder-backup-json.log</p>
+                <p>/var/log/cinder/cinder-scheduler.log</p>
+                <p>/var/log/cinder/cinder-scheduler-json.log</p>
+                <p>/var/log/cinder/cinder-volume.log</p>
+                <p>/var/log/cinder/cinder-volume-json.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/cinder/cinder-api-json.log</p>
+                <p>/var/log/cinder/cinder-backup-json.log</p>
+                <p>/var/log/cinder/cinder-scheduler-json.log</p>
+                <p>/var/log/cinder/cinder-volume-json.log</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>DNSaaS</p>
+              </entry>
+              <entry>
+                <p>Control</p>
+              </entry>
+              <entry/>
+              <entry/>
+              <entry/>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry>
+                <p>FWaaS</p>
+              </entry>
+              <entry>
+                <p>Control</p>
+              </entry>
+              <entry>
+                <p>/var/log/neutron/neutron-l3-agent.log</p>
+                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
+                <p>/var/log/neutron/neutron-vpn-agent.log</p>
+                <p>/var/log/neutron/neutron-vpn-agent-json.log</p>
+              </entry>
+              <entry/>
+              <entry/>
+              <entry/>
+              <entry>
+                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
+                <p>/var/log/neutron/neutron-vpn-agent-json.log</p>
+              </entry>
+            </row>
+            <row>
+              <entry><p>Glance</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/glance/api.log</p>
+                <p>/var/log/glance/registry.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>1G</p></entry>
+              <entry><p>14</p></entry>
+              <entry>
+                <p>/var/log/glance/glance-api-json.log</p>
+                <p>/var/log/glance/glance-registry-json.log</p>
+              </entry>
+            </row>
+            <row>
+              <entry><p>heat-api</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/heat/heat-api.log</p>
+                <p>/var/log/heat/heat-api-json.log</p>
+                <p>/var/log/heat/heat-api-cfn.log</p>
+                <p>/var/log/heat/heat-api-cfn-json.log</p>
+                <p>/var/log/heat/heat-api-cloudwatch.log</p>
+                <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/heat/heat-api-json.log</p>
+                <p>/var/log/heat/heat-api-cfn-json.log</p>
+                <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
+              </entry>
+            </row>
+            <row>
+              <entry><p>heat-engine</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/heat/heat-engine.log</p>
+                <p>/var/log/heat/heat-engine-json.log</p>
+                <p>/var/log/heat/heat-api.log</p>
+                <p>/var/log/heat/heat-api-json.log</p>
+                <p>/var/log/heat/heat-api-cfn.log</p>
+                <p>/var/log/heat/heat-api-cfn-json.log</p>
+                <p>/var/log/heat/heat-api-cloudwatch.log</p>
+                <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/heat/heat-engine-json.log</p>
+                <p>/var/log/heat/heat-api-json.log</p>
+                <p>/var/log/heat/heat-api-cfn-json.log</p>
+                <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
+              </entry>
+            </row>
+            <row>
               <entry><p>Horizon</p></entry>
               <entry><p>Control</p></entry>
               <entry>
@@ -126,6 +285,101 @@
               <entry><p>45M</p></entry>
               <entry><p>7</p></entry>
               <entry/>
+            </row>
+            <row>
+              <entry><p>Keystone</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/keystone/keystone.log</p>
+                <p>/var/log/keystone/keystone-json.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/keystone/keystone-json.log</p>
+              </entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>
+                <p>LBaaS</p>
+              </entry>
+              <entry>
+                <p>Control</p>
+              </entry>
+              <entry>
+                <p>/var/log/neutron/neutron-lbaas-agent.log</p>
+                <p>/var/log/neutron/neutron-lbaas-agent-json.log</p>
+              </entry>
+              <entry/>
+              <entry/>
+              <entry/>
+              <entry>
+                <p>/var/log/neutron/neutron-lbaas-agent-json.log</p>
+              </entry>
+            </row>
+            <row>
+              <entry><p>Monasca</p></entry>
+              <entry><p>Control, Resource</p></entry>
+              <entry/>
+              <entry/>
+              <entry/>
+              <entry/>
+              <entry>
+                <p>/var/log/monasca/notification/notification.log</p>
+                <p>/var/log/monasca/agent/collector.log</p>
+                <p>/var/log/monasca/agent/forwarder.log</p>
+                <p>/var/log/monasca/agent/statsd.log</p>
+                <p>/var/log/monasca/agent/supervisord.log</p>
+                <p>/var/log/monasca/api/monasca-api.log</p>
+                <p>/var/log/monasca/persister/monasca-persister.log</p>
+                <p>/var/log/kafka/controller.log</p>
+                <p>/var/log/kafka/server/log</p>
+                <p>/var/log/zookeeper/zookeeper.log</p>
+                <p>/var/log/storm/nimbus.log</p>
+                <p>/var/log/storm/supervisor.log</p>
+                <p>/var/log/storm/worker*.log</p>
+                <p>/var/log/influxdb/influxd.log</p>
+                <p>/opt/vertica/log/adminTools-dbadmin.log</p>
+              </entry>
+            </row>
+            <row>
+              <entry><p>MySQL</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/mysql/*.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry/>
+            </row>
+            <row>
+              <entry><p>Neutron</p></entry>
+              <entry><p>Control</p></entry>
+              <entry>
+                <p>/var/log/neutron/neutron-server.log</p>
+                <p>/var/log/neutron/neutron-server-json.log</p>
+                <p>/var/log/neutron/neutron-dhcp-agent.log</p>
+                <p>/var/log/neutron/neutron-dhcp-agent-json.log</p>
+                <p>/var/log/neutron/neutron-l3-agent.log</p>
+                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
+                <p>/var/log/neutron/neutron-openvswitch-agent.log</p>
+                <p>/var/log/neutron/neutron-openvswitch-agent-json.log</p>
+                <p>/var/log/neutron/neutron-metadata-agent.log</p>
+                <p>/var/log/neutron/neutron-metadata-agent-json.log</p>
+              </entry>
+              <entry><p>Daily</p></entry>
+              <entry><p>45M</p></entry>
+              <entry><p>7</p></entry>
+              <entry>
+                <p>/var/log/neutron/neutron-server-json.log</p>
+                <p>/var/log/neutron/neutron-dhcp-agent-json.log</p>
+                <p>/var/log/neutron/neutron-openvswitch-agent-json.log</p>
+                <p>/var/log/neutron/neutron-metadata-agent-json.log</p>
+                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
+              </entry>
             </row>
             <row>
               <entry><p>Nova</p></entry>
@@ -163,19 +417,27 @@
               </entry>
             </row>
             <row>
-              <entry><p>Keystone</p></entry>
-              <entry><p>Control</p></entry>
               <entry>
-                <p>/var/log/keystone/keystone.log</p>
-                <p>/var/log/keystone/keystone-json.log</p>
+                <p>Operations Console (Ops Console)</p>
               </entry>
-              <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
-              <entry><p>7</p></entry>
               <entry>
-                <p>/var/log/keystone/keystone-json.log</p>
+                <p>Control</p>
+              </entry>
+              <entry>
+                <p>/var/log/ops-console/access.log</p>
+                <p>/var/log/ops-console/error.log</p>
+                <p>/var/log/ops-console/monitor.log</p>
+              </entry>
+              <entry>
+                <p>Weekly</p>
+              </entry>
+              <entry>
+                <p>5M</p>
               </entry>
               <entry/>
+              <entry>
+                <p>TBD</p>
+              </entry>
             </row>
             <row>
               <entry><p>rsyslog</p></entry>
@@ -217,52 +479,21 @@
               </entry>
             </row>
             <row>
-              <entry><p>MySQL</p></entry>
-              <entry><p>Control</p></entry>
               <entry>
-                <p>/var/log/mysql/*.log</p>
+                <p>Sherpa</p>
               </entry>
-              <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
-              <entry><p>7</p></entry>
+              <entry>
+                <p>Control</p>
+              </entry>
+              <entry>
+                <p>/var/log/sherpa/sherpa.log</p>
+                <p>/var/log/sherpa/sherpa-json.log</p>
+              </entry>
               <entry/>
-            </row>
-            <row>
-              <entry><p>Cinder</p></entry>
-              <entry><p>Control</p></entry>
+              <entry/>
+              <entry/>
               <entry>
-                <p>/var/log/cinder/cinder-api.log</p>
-                <p>/var/log/cinder/cinder-api-json.log</p>
-                <p>/var/log/cinder/cinder-backup.log</p>
-                <p>/var/log/cinder/cinder-backup-json.log</p>
-                <p>/var/log/cinder/cinder-scheduler.log</p>
-                <p>/var/log/cinder/cinder-scheduler-json.log</p>
-                <p>/var/log/cinder/cinder-volume.log</p>
-                <p>/var/log/cinder/cinder-volume-json.log</p>
-              </entry>
-              <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
-              <entry><p>7</p></entry>
-              <entry>
-                <p>/var/log/cinder/cinder-api-json.log</p>
-                <p>/var/log/cinder/cinder-backup-json.log</p>
-                <p>/var/log/cinder/cinder-scheduler-json.log</p>
-                <p>/var/log/cinder/cinder-volume-json.log</p>
-              </entry>
-            </row>
-            <row>
-              <entry><p>Glance</p></entry>
-              <entry><p>Control</p></entry>
-              <entry>
-                <p>/var/log/glance/api.log</p>
-                <p>/var/log/glance/registry.log</p>
-              </entry>
-              <entry><p>Daily</p></entry>
-              <entry><p>1G</p></entry>
-              <entry><p>14</p></entry>
-              <entry>
-                <p>/var/log/glance/glance-api-json.log</p>
-                <p>/var/log/glance/glance-registry-json.log</p>
+                <p>/var/log/sherpa/sherpa-json.log</p>
               </entry>
             </row>
             <row>
@@ -277,180 +508,6 @@
               <entry><p>7</p></entry>
               <entry>
                 <p>/var/log/swift/swift-json.log</p>
-              </entry>
-            </row>
-            <row>
-              <entry><p>heat-api</p></entry>
-              <entry><p>Control</p></entry>
-              <entry>
-                <p>/var/log/heat/heat-api.log</p>
-                <p>/var/log/heat/heat-api-json.log</p>
-                <p>/var/log/heat/heat-api-cfn.log</p>
-                <p>/var/log/heat/heat-api-cfn-json.log</p>
-                <p>/var/log/heat/heat-api-cloudwatch.log</p>
-                <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
-              </entry>
-              <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
-              <entry><p>7</p></entry>
-              <entry>
-                <p>/var/log/heat/heat-api-json.log</p>
-                <p>/var/log/heat/heat-api-cfn-json.log</p>
-                <p>/var/log/heat/heat-api-cloudwatch-json.log</p>
-              </entry>
-            </row>
-            <row>
-              <entry><p>Neutron</p></entry>
-              <entry><p>Control</p></entry>
-              <entry>
-                <p>/var/log/neutron/neutron-server.log</p>
-                <p>/var/log/neutron/neutron-server-json.log</p>
-                <p>/var/log/neutron/neutron-dhcp-agent.log</p>
-                <p>/var/log/neutron/neutron-dhcp-agent-json.log</p>
-                <p>/var/log/neutron/neutron-l3-agent.log</p>
-                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
-                <p>/var/log/neutron/neutron-openvswitch-agent.log</p>
-                <p>/var/log/neutron/neutron-openvswitch-agent-json.log</p>
-                <p>/var/log/neutron/neutron-metadata-agent.log</p>
-                <p>/var/log/neutron/neutron-metadata-agent-json.log</p>
-              </entry>
-              <entry><p>Daily</p></entry>
-              <entry><p>45M</p></entry>
-              <entry><p>7</p></entry>
-              <entry>
-                <p>/var/log/neutron/neutron-server-json.log</p>
-                <p>/var/log/neutron/neutron-dhcp-agent-json.log</p>
-                <p>/var/log/neutron/neutron-openvswitch-agent-json.log</p>
-                <p>/var/log/neutron/neutron-metadata-agent-json.log</p>
-                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
-              </entry>
-            </row>
-            <row>
-              <entry><p>Monasca</p></entry>
-              <entry><p>Control, Resource</p></entry>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry>
-                <p>/var/log/monasca/notification/notification.log</p>
-                <p>/var/log/monasca/agent/collector.log</p>
-                <p>/var/log/monasca/agent/forwarder.log</p>
-                <p>/var/log/monasca/agent/statsd.log</p>
-                <p>/var/log/monasca/agent/supervisord.log</p>
-                <p>/var/log/monasca/api/monasca-api.log</p>
-                <p>/var/log/monasca/persister/monasca-persister.log</p>
-                <p>/var/log/kafka/controller.log</p>
-                <p>/var/log/kafka/server/log</p>
-                <p>/var/log/zookeeper/zookeeper.log</p>
-                <p>/var/log/storm/nimbus.log</p>
-                <p>/var/log/storm/supervisor.log</p>
-                <p>/var/log/storm/worker*.log</p>
-                <p>/var/log/influxdb/influxd.log</p>
-                <p>/opt/vertica/log/adminTools-dbadmin.log</p>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <p>Operations Console (Ops Console)</p>
-              </entry>
-              <entry>
-                <p>Control</p>
-              </entry>
-              <entry>
-                <p>/var/log/ops-console/access.log</p>
-                <p>/var/log/ops-console/error.log</p>
-                <p>/var/log/ops-console/monitor.log</p>
-              </entry>
-              <entry>
-                <p>Weekly</p>
-              </entry>
-              <entry>
-                <p>5M</p>
-              </entry>
-              <entry/>
-              <entry>
-                <p>TBD</p>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <p>Ceph</p>
-              </entry>
-              <entry>
-                <p>Control, Resource</p>
-              </entry>
-              <entry>
-                <p>/var/log/ceph/ceph.log</p>
-                <p>/var/log/ceph/ceph-osd.{num}.log</p>
-                <p>/var/log/ceph/ceph-mon.{hosthname}.log</p>
-                <p>/var/log/ceph/ceph.audit.log</p>
-              </entry>
-              <entry>
-                <p>Daily</p>
-              </entry>
-              <entry>
-                <p>1G</p>
-              </entry>
-              <entry>
-                <p>7</p>
-              </entry>
-              <entry>
-                <p>/var/log/ceph/ceph.log</p>
-                <p>/var/log/ceph/ceph-osd-{num}.log</p>
-                <p>/var/log/ceph/ceph-mon.{hosthname}.log</p>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <p>LBaaS</p>
-              </entry>
-              <entry>
-                <p>Control</p>
-              </entry>
-              <entry>
-                <p>/var/log/neutron/neutron-lbaas-agent.log</p>
-                <p>/var/log/neutron/neutron-lbaas-agent-json.log</p>
-              </entry>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry>
-                <p>/var/log/neutron/neutron-lbaas-agent-json.log</p>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <p>DNSaaS</p>
-              </entry>
-              <entry>
-                <p>Control</p>
-              </entry>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry>
-                <p>FWaaS</p>
-              </entry>
-              <entry>
-                <p>Control</p>
-              </entry>
-              <entry>
-                <p>/var/log/neutron/neutron-l3-agent.log</p>
-                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
-                <p>/var/log/neutron/neutron-vpn-agent.log</p>
-                <p>/var/log/neutron/neutron-vpn-agent-json.log</p>
-              </entry>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry>
-                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
-                <p>/var/log/neutron/neutron-vpn-agent-json.log</p>
               </entry>
             </row>
             <row>
@@ -469,36 +526,6 @@
               <entry/>
               <entry>
                 <p>/var/log/neutron/neutron-vpn-agent-json.log</p>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <p>BURA (Backup and Restore)</p>
-              </entry>
-              <entry>
-                <p>Control</p>
-              </entry>
-              <entry>
-                <p>/var/log/freezer-agent/freezer-scheduler.log</p>
-                <p>/var/log/freezer-agent/freezer-agent.log</p>
-                <p>/var/log/freezer-api/freezer-api.log</p>
-                <p>/var/log/freezer-api/freezer-api-access.log</p>
-                <p>/var/log/freezer-api/freezer-api-modwsgi.log</p>
-                <p>/var/log/freezer-api/freezer-api-json.log</p>
-                <p>/var/log/freezer-agent/freezer-agent-json.log</p>
-              </entry>
-              <entry>
-                <p>Daily</p>
-              </entry>
-              <entry>
-                 <p>32M</p>
-              </entry>
-              <entry>
-                <p>7</p>
-              </entry>
-              <entry>
-                <p>/var/log/freezer-api/freezer-api-json.log</p>
-                <p>/var/log/freezer-agent/freezer-agent-json.log</p>
               </entry>
             </row>
             <row>
@@ -524,24 +551,7 @@
                 <p>/var/log/storevirtual-installer.log</p>
               </entry>
             </row>
-            <row>
-              <entry>
-                <p>Sherpa</p>
-              </entry>
-              <entry>
-                <p>Control</p>
-              </entry>
-              <entry>
-                <p>/var/log/sherpa/sherpa.log</p>
-                <p>/var/log/sherpa/sherpa-json.log</p>
-              </entry>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry>
-                <p>/var/log/sherpa/sherpa-json.log</p>
-              </entry>
-            </row>
+
           </tbody>
         </tgroup>
       </table>
