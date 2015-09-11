@@ -12,7 +12,7 @@
         <ul id="ul_pfl_bbz_ht">
           <li>HP Helion Cloud must be successfully deployed. It should be up and running.</li>
           <li>3PAR should available in cloud management network or routed to cloud management
-            network with FC and  iSCSI ports configured.</li>
+            network with FC and iSCSI ports configured.</li>
           <li>3PAR management IP and iSCSI port IP's must have connectivity from controller and
             compute nodes.</li>
         </ul>
@@ -28,7 +28,7 @@
               <codeph>hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to add 3PAR FC
             data as follows:<codeblock>enabled_backends=3par_FC</codeblock><note>Append this change
               with the exiting backend, if you have already added VSA as backend.</note></li>
-          <li>Copy 3PAR FC section , uncomment it, and modify the values in the
+          <li>Copy 3PAR FC section, uncomment it, and modify the values in the
               <codeph>cinder.conf.j2</codeph> file as shown in the following
               example:<codeblock>[3par_FC]
 hp3par_api_url=https://10.1.192.10:8080/api/v1
@@ -63,7 +63,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
     </p>
     <section>
       <title>Configure 3PAR iSCSI as Cinder backend</title>
-      <p>You must modify  <codeph>cinder.conf.j2</codeph> to configure iSCSI details.</p>
+      <p>You must modify <codeph>cinder.conf.j2</codeph> to configure iSCSI details.</p>
       <p>
         <ol>
           <li>Login to deployer node.</li>
@@ -72,7 +72,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
               <codeph>hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to enable 3PAR FC
             as follows:<codeblock>enabled_backends=3par_iSCSI</codeblock><note>Append this change
               with the exiting backend, if you have already added VSA as backend.</note></li>
-          <li>Copy 3PAR iSCSI section , uncomment it, and modify the values in the
+          <li>Copy 3PAR iSCSI section, uncomment it, and modify the values in the
               <codeph>cinder.conf.j2</codeph> file as shown in the following
               example:<codeblock>[3par_iSCSI]
 hp3par_api_url=https://10.1.192.10:8080/api/v1
@@ -89,7 +89,7 @@ hp3par_iscsi_chap_enabled=true</codeblock><note>
               Please enter the values which are specific to your environment. </note></li>
           <li>Execute the steps (<b>5 -7</b>) mentioned in <xref
               href="#topic_vln_2xy_ht/configure-3par-fc" format="dita">Configure 3PAR FC as Cinder
-              backend </xref> and  <xref href="#topic_vln_2xy_ht/run-ceph-client-package"
+              backend </xref> and <xref href="#topic_vln_2xy_ht/run-ceph-client-package"
               format="dita">Run Cinder Reconfigure Packages</xref> as mentioned above.</li>
         </ol>
       </p>
