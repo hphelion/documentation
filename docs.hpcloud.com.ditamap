@@ -73,13 +73,15 @@
       locktitle="yes">
       <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes"
         navtitle="Modify the Example Cloud Model" locktitle="yes">
-        <topicref href="helion/swift/allocating_disk_drives.dita"/>
+        <topicref href="helion/swift/allocating_disk_drives.dita">
+          <topicref href="helion/swift/label_on_partition.dita" toc="yes"
+            navtitle="Verify the Partition Label" locktitle="yes"/>
+          <topicref href="helion/swift/filesystem_label.dita" toc="yes"
+            navtitle="Verify the Filesystem Label" locktitle="yes"/>
+        </topicref>
+        <topicref href="helion/swift/allocating_server.dita"/>
         <topicref href="helion/swift/ring_specifications.dita"/>
       </topicref>
-      <topicref href="helion/swift/label_on_partition.dita" toc="yes"
-        navtitle="Verify the Partition Label" locktitle="yes"/>
-      <topicref href="helion/swift/filesystem_label.dita" toc="yes"
-        navtitle="Verify the Filesystem Label" locktitle="yes"/>
       <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"
         navtitle="Swift Troubleshooting" locktitle="yes"/>
     </topicref>
