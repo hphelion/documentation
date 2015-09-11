@@ -351,8 +351,81 @@
               </entry>
             </row>
             <row>
+              <entry>
+                <p>Operations Console (Ops Console)</p>
+              </entry>
+              <entry>
+                <p>Control</p>
+              </entry>
+              <entry>
+                <p>/var/log/ops-console/access.log</p>
+                <p>/var/log/ops-console/error.log</p>
+                <p>/var/log/ops-console/monitor.log</p>
+              </entry>
+              <entry>
+                <p>Weekly</p>
+              </entry>
+              <entry>
+                <p>5M</p>
+              </entry>
+              <entry/>
+              <entry>
+                <p>TBD</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Ceph</p>
+              </entry>
+              <entry>
+                <p>Control, Resource</p>
+              </entry>
+              <entry>
+                <p>/var/log/ceph/ceph.log</p>
+                <p>/var/log/ceph/ceph-osd.{num}.log</p>
+                <p>/var/log/ceph/ceph-mon.{hosthname}.log</p>
+                <p>/var/log/ceph/ceph.audit.log</p>
+              </entry>
+              <entry>
+                <p>Daily</p>
+              </entry>
+              <entry>
+                <p>1G</p>
+              </entry>
+              <entry>
+                <p>7</p>
+              </entry>
+              <entry>
+                <p>/var/log/ceph/ceph.log</p>
+                <p>/var/log/ceph/ceph-osd-{num}.log</p>
+                <p>/var/log/ceph/ceph-mon.{hosthname}.log</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>LBaaS</p>
+              </entry>
+              <entry>
+                <p>Control</p>
+              </entry>
+              <entry>
+                <p>/var/log/neutron/neutron-lbaas-agent.log</p>
+                <p>/var/log/neutron/neutron-lbaas-agent-json.log</p>
+              </entry>
               <entry/>
               <entry/>
+              <entry/>
+              <entry>
+                <p>/var/log/neutron/neutron-lbaas-agent-json.log</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>DNSaaS</p>
+              </entry>
+              <entry>
+                <p>Control</p>
+              </entry>
               <entry/>
               <entry/>
               <entry/>
@@ -360,49 +433,114 @@
               <entry/>
             </row>
             <row>
+              <entry>
+                <p>FWaaS</p>
+              </entry>
+              <entry>
+                <p>Control</p>
+              </entry>
+              <entry>
+                <p>/var/log/neutron/neutron-l3-agent.log</p>
+                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
+                <p>/var/log/neutron/neutron-vpn-agent.log</p>
+                <p>/var/log/neutron/neutron-vpn-agent-json.log</p>
+              </entry>
               <entry/>
               <entry/>
               <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry>
+                <p>/var/log/neutron/neutron-l3-agent-json.log</p>
+                <p>/var/log/neutron/neutron-vpn-agent-json.log</p>
+              </entry>
             </row>
             <row>
+              <entry>
+                <p>VPNaaS</p>
+              </entry>
+              <entry>
+                <p>Control</p>
+              </entry>
+              <entry>
+                <p>/var/log/neutron/neutron-vpn-agent.log</p>
+                <p>/var/log/neutron/neutron-vpn-agent-json.log</p>
+              </entry>
               <entry/>
               <entry/>
               <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry>
+                <p>/var/log/neutron/neutron-vpn-agent-json.log</p>
+              </entry>
             </row>
             <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry>
+                <p>BURA (Backup and Restore)</p>
+              </entry>
+              <entry>
+                <p>Control</p>
+              </entry>
+              <entry>
+                <p>/var/log/freezer-agent/freezer-scheduler.log</p>
+                <p>/var/log/freezer-agent/freezer-agent.log</p>
+                <p>/var/log/freezer-api/freezer-api.log</p>
+                <p>/var/log/freezer-api/freezer-api-access.log</p>
+                <p>/var/log/freezer-api/freezer-api-modwsgi.log</p>
+                <p>/var/log/freezer-api/freezer-api-json.log</p>
+                <p>/var/log/freezer-agent/freezer-agent-json.log</p>
+              </entry>
+              <entry>
+                <p>Daily</p>
+              </entry>
+              <entry>
+                 <p>32M</p>
+              </entry>
+              <entry>
+                <p>7</p>
+              </entry>
+              <entry>
+                <p>/var/log/freezer-api/freezer-api-json.log</p>
+                <p>/var/log/freezer-agent/freezer-agent-json.log</p>
+              </entry>
             </row>
             <row>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry>
+                <p>VSA</p>
+              </entry>
+              <entry>
+                <p>Resource</p>
+              </entry>
+              <entry>
+                <p>/var/log/storevirtual-installer.log</p>
+              </entry>
+              <entry>
+                <p>Daily</p>
+              </entry>
+              <entry>
+                <p>10M</p>
+              </entry>
+              <entry>
+                <p>7</p>
+              </entry>
+              <entry>
+                <p>/var/log/storevirtual-installer.log</p>
+              </entry>
             </row>
             <row>
+              <entry>
+                <p>Sherpa</p>
+              </entry>
+              <entry>
+                <p>Control</p>
+              </entry>
+              <entry>
+                <p>/var/log/sherpa/sherpa.log</p>
+                <p>/var/log/sherpa/sherpa-json.log</p>
+              </entry>
               <entry/>
               <entry/>
               <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
+              <entry>
+                <p>/var/log/sherpa/sherpa-json.log</p>
+              </entry>
             </row>
           </tbody>
         </tgroup>
