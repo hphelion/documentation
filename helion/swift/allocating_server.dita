@@ -3,8 +3,9 @@
 <topic id="topic_tq1_xt5_dt">
   <title>Allocating Server</title>
   <body>
-    <p>In the <codeph>data/baremetal.yml</codeph> file, you specify the roles for servers. For
-      example, a Swift Proxy, Container, Account (PAC) node is specified as follows:</p>
+    <p>You must alloacte a server for Swift. Therefore, you specify the roles of the servers in
+        <codeph>data/baremetal.yml</codeph> file. For example, a Swift Proxy, Container, Account
+      (PAC) node is specified as follows:</p>
     <p>
       <codeblock>baremetal_servers:
 .
@@ -23,9 +24,10 @@
 .</codeblock>
     </p>
     <p>In the above example a <b>node_type</b> is assigned as <b>ROLE-SWPAC</b>, which indicates
-      that this node is Swift Proxy, Container, Account (PAC) node.</p>
+      that this node is Swift Proxy, Container, and  Account (PAC) node.</p>
     <note>If you don't use Cobbler to install your servers then you must create
-        <codeph>data/servers.yml</codeph> and configure nodes on the file.</note>
+        <codeph>data/servers.yml</codeph> file (<b>manually</b>) and configure nodes on the
+      file.</note>
     <p>The number of servers is specified in the <b>swpac </b>cluster in the
         <codeph>data/control_plane.yml</codeph> file. In the following example, the number of
       servers is set to 3.</p>

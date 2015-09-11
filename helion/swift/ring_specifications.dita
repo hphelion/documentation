@@ -10,7 +10,7 @@
       required to build future rings.</p>
     <p>The rings are specified in the input model using the <b>ring-specifications</b> key. There is
       an entry for each distinct Swift system – hence the Keystone region name is specified in the
-        <b>region-name</b> key of the input model.</p>
+        <b>region-name</b> key of the example cloud model.</p>
     <p>In the example, a ring-specification is mentioned in <codeph>config/swift/rings.yml</codeph>
       file. The sample file of ring-specification is as follows:</p>
     <p>
