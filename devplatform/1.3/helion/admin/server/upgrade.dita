@@ -19,10 +19,15 @@
 </metadata>
 </prolog>
 <body>
-  <p>Application Lifecycle Service provides the ability to upgrade a node or cluster in place
-      without the need to rebuild the entire cluster. <note type="important">These upgrade
-        procedures will only upgrade nodes and clusters created in Helion Development Platform
-        version 1.2 to version 1.3. Previous versions do not support in-place upgrading.</note></p>
+  <p>The Application Lifecycle Service provides the ability to upgrade a node or cluster in place
+      without the need to rebuild the entire cluster. <note>
+        <ul>
+          <li>In-place upgrading is only available for clusters and nodes created using Helion
+            Development Platform version 1.2. It is not supported for previous versions.</li>
+          <li>In-place upgrading is supported in Helion <tm tmtype="reg">OpenStack</tm> environments
+            only. It not supported in Helion CloudSystem environments.</li>
+        </ul>
+      </note></p>
 <ul>
 <li>
         <xref type="section" href="#topic13180/before-an-upgrade">Before an upgrade</xref>
