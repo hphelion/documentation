@@ -24,8 +24,7 @@
         <ul>
           <li>In-place upgrading is only available for clusters and nodes created using Helion
             Development Platform version 1.2. It is not supported for previous versions.</li>
-          <li>In-place upgrading is supported in Helion <tm tmtype="reg">OpenStack</tm> environments
-            only. It not supported in Helion CloudSystem environments.</li>
+          <li>In-place upgrading is not supported in Helion CloudSystem environments.</li>
         </ul>
       </note></p>
 <section><title>Procedures</title><ul>
