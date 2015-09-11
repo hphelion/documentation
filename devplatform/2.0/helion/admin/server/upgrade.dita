@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13180">
-<title>HP Helion 2.0 Development Platform: In-Place Upgrades of ALS Nodes and Clusters</title><shortdesc>Procedures for upgrading clusters and nodes created in the previous version to the current version.</shortdesc>
+<title>HP Helion 2.0 Development Platform: In-Place Upgrades of ALS Nodes and Clusters</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -20,10 +20,9 @@
 </prolog>
 <body>
   <p>Application Lifecycle Service provides the ability to upgrade a node or cluster in place
-      without the need to rebuild the entire cluster. <note type="important">These upgrade
-        procedures will only upgrade nodes and clusters created in Helion Development Platform
-        version 1.2 to version 1.3. Previous versions do not support in-place upgrading.</note></p>
-<ul>
+    without the need to rebuild the entire cluster. <note><sl><sli>In-place upgrading is supported only for clusters and nodes created using Helion Development
+            Platform version 1.2. It is not supported for previous versions.</sli><sli>In-place upgrading is supported in Helion <tm tmtype="reg">OpenStack</tm> environments only. It not supported in Helion CloudSystem environments.</sli></sl></note></p>
+<section><title>Procedures</title><ul>
 <li>
         <xref type="section" href="#topic13180/before-an-upgrade">Before an upgrade</xref>
         <ul>
@@ -70,7 +69,7 @@
 <li>
 <xref type="section" href="#topic13180/troubleshooting">Troubleshooting</xref>
 </li>
-</ul>
+</ul></section>
 <section id="before-an-upgrade"> <title>Before an upgrade</title>
 <p>Ensure that you have the latest version of the Application Lifecycle Service installed before updating any nodes or clusters.</p>
   <p>If <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-patch" >kato patch</xref> has not been applied consistently, <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach">kato node upgrade</xref> can still be executed. It will first upgrade the node to the latest release, which will include all of the interim patches.</p>
@@ -134,7 +133,7 @@ sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
 </section>
   <section id="upgrading-a-cluster"><title>Upgrading a cluster</title><p>To upgrade a cluster:</p>  
     <ol id="ol_axs_cnk_ft"><li>SSH into the Core node in the cluster.</li>  
-      <li>Run this command <codeblock>eval “$(curl -Ls https://goo.gl/v18vo9)”</codeblock></li>  
+      <li>Run this command <codeblock>eval “$(curl -Ls http://bit.ly/1XRoHMV)”</codeblock></li>  
       <li>Update kato itself <codeblock>kato node upgrade --update-kato </codeblock></li>  
       <li>Upgrade the cluster.<codeblock>kato node upgrade</codeblock></li> </ol>  
      <p>This will automatically arrange the nodes in the cluster into an upgrade order (see below)  
