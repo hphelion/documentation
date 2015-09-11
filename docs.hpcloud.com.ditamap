@@ -67,6 +67,7 @@
       </topicref>
       <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration"
         locktitle="yes"/>
+      <topicref href="helion/cinder/3Par/3par_configuration.dita"/>
     </topicref>
     <!-- Object Storage -->
     <topicref href="helion/swift/swift_overview.dita" navtitle="Object Storage Service"
