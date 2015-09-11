@@ -241,7 +241,7 @@
       Deployment can fail on HP Gen9 servers with iLO firmware version 2.2, with the following error
       in the conductor logs: "Invalid Device Choice" while setting the persistent boot device.
         <p>This error is caused by an issue in iLO firmware version 2.2 on HP Gen9 servers. You have
-        two options for working around this issue:: <ol>
+        two options for working around this issue: <ol>
           <li> Manually install proliantutils version greater than or equal to 2.1.3 on the
             undercloud node. Run the following command on the undercloud node to install
             proliantutils: <codeblock>$ pip install "proliantutils>=2.1.3"</codeblock>
