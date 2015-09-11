@@ -32,9 +32,7 @@
 <ul>
 <li>
 <p>Mac/UNIX: the JDK can be installed with the following command.</p>
-<codeblock>
-sudo apt-get install default-jdk
-</codeblock>
+<codeblock>sudo apt-get install default-jdk</codeblock>
 </li>
 <li>
 <p>PC: Navigate to the <xref href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" scope="external" format="html" >JDK installation page</xref> and run the appropriate JDK installer for your chosen platform.</p>

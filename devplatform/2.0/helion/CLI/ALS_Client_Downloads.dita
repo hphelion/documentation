@@ -37,25 +37,25 @@
 <p>Click the download link that is appropriate for your operating system.</p>
 <ul>
 <li>
-<xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-windows-x86_64.zip" scope="external" format="html" >Windows</xref>
+<xref href="http://clients.als.hpcloud.com/cf-mgmt-1.3.0-windows-x86_64.zip" scope="external" format="html" >Windows</xref>
 </li>
 <li>
-<xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-linux-x86_64.zip" scope="external" format="html" >Linux x64</xref>
+<xref href="http://clients.als.hpcloud.com/cf-mgmt-1.3.0-linux-x86_64.zip" scope="external" format="html" >Linux x64</xref>
 </li>
 <li>
-<xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-osx-x86_64.zip" scope="external" format="html" >Mac OS X</xref> </li>
+<xref href="http://clients.als.hpcloud.com/cf-mgmt-1.3.0-osx-x86_64.zip" scope="external" format="html" >Mac OS X</xref> </li>
 </ul>
 <p>For more information, see the full ALS Cluster Management Tool <xref href="ALS_Client_Reference.dita" >command reference</xref>.</p>
 <p>Click to download a sample configuration file for use with the <i>cf-mgmt</i> tool.</p>
 <ul>
 <li>
-<xref href="http://clients.als.hpcloud.com/config/trial.yml" scope="external" format="html" >Create cluster</xref>
+<xref href="http://clients.als.hpcloud.com/1.3/config/trial.yml" scope="external" format="html" >Create cluster</xref>
 </li>
 <li>
-<xref href="http://clients.als.hpcloud.com/config/trial-windea.yml" scope="external" format="html" >Add a Windows DEA</xref>
+  <xref href="http://clients.als.hpcloud.com/1.3/config/trial-windea.yml" scope="external" format="html" >Add a Windows DEA</xref>
 </li>
 <li>
-<xref href="http://clients.als.hpcloud.com/config/trial-mssql2014.yml" scope="external" format="html" >Add a SQL Server Service</xref>
+  <xref href="http://clients.als.hpcloud.com/1.3/config/trial-mssql2014.yml" scope="external" format="html" >Add a SQL Server Service</xref>
 </li>
 </ul>
 </section>

@@ -3,16 +3,11 @@
 <topic id="s45_4m4_ht">
     <title>Create a New Project</title>
     <body>
-    <p>Procedure for creating a new Project.</p>
+        <p>The Project is a workspace where the application is built. </p>
     
         <ol id="project_create">
            
-                <li>Log into the Helion CICD tool and begin.
-            <ul>
-                    <li>If there are no projects, click <b>New Project</b>.</li>
-                    <li>If some projects have already been created, click <b>Projects</b> at the
-                        top of the page and then click <b>New Project</b>.</li>
-                </ul></li>
+                <li>Click the <b>Projects</b> tab tand then click <b>New Project</b>.</li>
             
             
                 <li>Click to select your Git source.
@@ -22,7 +17,6 @@
                 </ul></li>
            
                 <li>Click a repository in the list to select it.</li>
-            
             
                 <li>Provide values:
                 <ul>

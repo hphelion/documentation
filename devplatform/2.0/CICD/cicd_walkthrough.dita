@@ -6,10 +6,12 @@
     <p>This walkthrough starts with creating a new project and ends with your app deployed to the target of your choice. </p>
     
     <p>You will need: <ul>
-                <li>an application [if they don't have one, can they use one of our toy apps?] to
-                    deploy</li>
-                <li>an instance of the CICD tool</li>
-                <li>the information [TBD as we move on] from a target environment</li>
+                <li>An application to deploy. If you don't already have one, you can use one of the
+                    small <xref href="../devplatform.appdev.dita#topic2457/sample">sample
+                        apps</xref>.</li>
+                <li>An instance of the CICD tool <xref
+                        href="cicd_installation.dita#topic_lcx_vtc_dt">installed</xref>.</li>
+                <li>The access credentials for a valid target environment.</li>
                             </ul></p>
   
     </body>
@@ -17,6 +19,9 @@
         <title/>
     </topic>
     <topic id="id_gcd_tnb_3t" conref="cicd_project_create.dita#s45_4m4_ht">
+        <title/>
+    </topic>
+    <topic id="id_ytj_ltb_3t" conref="cicd_build_create.dita#topic_a34_wqb_3t">
         <title/>
     </topic>
 

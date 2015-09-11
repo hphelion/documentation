@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_g2r_w5b_3t">
+  <title>Edit an Existing Project</title>
+  <body>
+    <p>Some elements of an existing project can be changed.</p>
+    
+    <ol id="project_edit">
+      
+      <li>Click the <b>Projects</b> tab.</li>
+      <li>Click the target project and then click <b>Edit</b>. </li>
+      <li/>
+    </ol>
+    
+  </body>
+</topic>

@@ -3,21 +3,34 @@
 <topic id="mf4_fh4_ht">
     <title>Create a New Environment</title>
     <body>
-    <p>Procedure for creating a new Environment.</p>
+        <p>The Environment is a target where the application is deployed. Click the <b>Environments</b> tab to see the list of available environments.</p>
     <ol id="create_environment">
-                <li>Select your technology
-                <ul>
+                <li>Select your technology.<ul>
                     <li>Use CloudFoundry: Deploys the application to a Cloud Foundry endpoint.</li>
-                    <li>Use Docker: Builds the application and pushes the image to a public or private DockerHub repository.</li>
+                    <li>Use Docker: Builds the application and pushes the image to a public or
+                        private DockerHub repository.</li>
                     <li>Use Lattice: Deploys the application to a simplified container cluster.</li>
                 </ul></li>
-            <li>Provide the required information:
-               <ul>
-                   <li>For Cloud Foundry, provide the Helion Cloud Foundry URL and the username and password for logging in and then click Connect.</li>
-                   <li>For Docker Hub: doesn't seem functional yet.</li>
-                   <li>For Lattice: doesn't seem functional yet.</li>
-               </ul></li>
-          
+            <li>Provide the required credentials.<ul>
+                    <li>For Cloud Foundry, provide the Helion Cloud Foundry URL and the username and
+                        password for logging in and then click <b>Connect</b>.</li>
+                    <li>For Docker Hub: doesn't seem functional yet.</li>
+                    <li>For Lattice: doesn't seem functional yet.</li>
+                </ul></li>
+        
+        <li>Define the environment. <ol>
+                    <li>Select the target Organization. If the target Organization does not appear
+                        in the list, you may have to <xref
+                            href="../helion/user/reference/client-ref-organizations.dita#topic6634/command-create-org"
+                            >create it</xref>.</li>
+                    <li>Select the target Space. If the target Space does not appear in the list,
+                        you may have to <xref
+                            href="../helion/user/reference/client-ref-spaces.dita#topic9898/command-create-space"
+                            >create it</xref>.</li>
+                    <li>Provide a unique, descriptive name for this environment.</li>
+                    <li>Click <b>Save</b>.</li>
+                                    </ol>
+            </li><li>Your new environment will now appear in the list.</li>
     </ol>
     </body>
 </topic>

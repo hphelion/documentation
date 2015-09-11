@@ -101,7 +101,13 @@
           <topicref href="2.0/CICD/cicd_troubleshooting.dita"/>
           <topicref href="2.0/CICD/cicd_users_guide.dita">
           <topicref href="2.0/CICD/cicd_environment_create.dita"/>
+          <topicref href="2.0/CICD/cicd_edit_environment.dita"/>
           <topicref href="2.0/CICD/cicd_project_create.dita"/>
+          <topicref href="2.0/CICD/cicd_edit_project.dita"/>
+          <topicref href="2.0/CICD/cicd_build_create.dita" navtitle="Create a New Build"
+            locktitle="yes"/>
+          <topicref href="2.0/CICD/cicd_create_postdeploy.dita"/>
+          <topicref href="2.0/CICD/cicd_create_notifications.dita"/>
         </topicref></topicref>
       
       <topicref href="2.0/helion/user/deploy/deploy_index.dita" locktitle="yes"
@@ -266,6 +272,94 @@
             navtitle="Sample Applications"/>
         </topichead>
       </topichead>
+      <topichead navtitle="ALS Command Line Clients">
+        <topicref href="2.0/helion/CLI/ALS_Client_Downloads.dita"
+          navtitle="Command Line Client Downloads" locktitle="yes"/>
+        <topicref href="2.0/helion/admin/reference/kato-ref.dita" locktitle="yes"
+          navtitle="Kato Command Reference"/>
+        <topichead navtitle="ALS Helion Client">
+          <topicref href="2.0/helion/user/client/client_index.dita" locktitle="yes"
+            navtitle="ALS Client Installation"/>
+          <topicref href="2.0/helion/user/reference/client-ref.dita" locktitle="yes"
+            navtitle="ALS Client Command Reference">
+            <topicref href="2.0/helion/user/reference/client-ref-administration.dita"
+              locktitle="yes" navtitle="Administration"/>
+            <topicref href="2.0/helion/user/reference/client-ref-applications.dita" locktitle="yes"
+              navtitle="Applications"/>
+            <topicref href="2.0/helion/user/reference/client-ref-buildpacks.dita" locktitle="yes"
+              navtitle="Buildpacks"/>
+            <topicref href="2.0/helion/user/reference/client-ref-control.dita" locktitle="yes"
+              navtitle="Control"/>
+            <topicref href="2.0/helion/user/reference/client-ref-domains.dita" locktitle="yes"
+              navtitle="Domains"/>
+            <topicref href="2.0/helion/user/reference/client-ref-flags.dita" locktitle="yes"
+              navtitle="Feature Flags"/>
+            <topicref href="2.0/helion/user/reference/client-ref-getting-started.dita"
+              locktitle="yes" navtitle="Getting Started"/>
+            <topicref href="2.0/helion/user/reference/client-ref-history.dita" locktitle="yes"
+              navtitle="History"/>
+            <topicref href="2.0/helion/user/reference/client-ref-information.dita" locktitle="yes"
+              navtitle="Information "/>
+            <topicref href="2.0/helion/user/reference/client-ref-management.dita" locktitle="yes"
+              navtitle="Management "/>
+            <topicref href="2.0/helion/user/reference/client-ref-miscellaneous.dita" locktitle="yes"
+              navtitle="Miscellaneous "/>
+            <topicref href="2.0/helion/user/reference/client-ref-organizations.dita" locktitle="yes"
+              navtitle="Organizations "/>
+            <topicref href="2.0/helion/user/reference/client-ref-placement.dita" locktitle="yes"
+              navtitle="Placement Zones "/>
+            <topicref href="2.0/helion/user/reference/client-ref-quotas.dita" locktitle="yes"
+              navtitle="Quotas "/>
+            <topicref href="2.0/helion/user/reference/client-ref-routes.dita" locktitle="yes"
+              navtitle="Routes "/>
+            <topicref href="2.0/helion/user/reference/client-ref-securitygroups.dita"
+              locktitle="yes" navtitle="Security Groups "/>
+            <topicref href="2.0/helion/user/reference/client-ref-brokers.dita" locktitle="yes"
+              navtitle="Service Brokers "/>
+            <topicref href="2.0/helion/user/reference/client-ref-service-management.dita"
+              locktitle="yes" navtitle="Service Management "/>
+            <topicref href="2.0/helion/user/reference/client-ref-serviceplans.dita" locktitle="yes"
+              navtitle="Service Plans "/>
+            <topicref href="2.0/helion/user/reference/client-ref-services.dita" locktitle="yes"
+              navtitle="Services "/>
+            <topicref href="2.0/helion/user/reference/client-ref-spacequotas.dita" locktitle="yes"
+              navtitle="Space Quotas "/>
+            <topicref href="2.0/helion/user/reference/client-ref-spaces.dita" locktitle="yes"
+              navtitle="Spaces "/>
+            <topicref href="2.0/helion/user/reference/client-ref-tokens.dita" locktitle="yes"
+              navtitle="Authentication Tokens "/>
+            <topicref href="2.0/helion/user/reference/client-ref-user-management.dita"
+              locktitle="yes" navtitle="User Management "/>
+          </topicref>
+        </topichead>
+        <topichead navtitle="Cluster Management Tool">
+          <topicref href="2.0/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
+            navtitle="Cluster Management Tool Installation and Reference"/>
+          <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
+            navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
+            <topicref href="2.0/helion/CLI/cfmgmt_createcluster_starter.dita"
+              navtitle="Example: Create a Starter Cluster" locktitle="yes"/>
+            <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addDEANode.dita"
+              navtitle="Example: Add a DEA Node" locktitle="yes"/>
+            <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addservice.dita"
+              navtitle="Example: Add a Service" locktitle="yes"/>
+          </topicref>
+        </topichead>
+        <topichead navtitle="ALS Management Console">
+          <topicref href="2.0/helion/admin/console/console_intro.dita"
+            navtitle="Introduction and First Use" locktitle="yes"/>
+          <topicref href="2.0/helion/admin/console/console_index.dita" locktitle="yes"
+            navtitle="Management Console (Admin View)"/>
+          <topicref href="2.0/helion/user/console/console_index.dita"
+            navtitle="Management Console (User View)" locktitle="yes"/>
+          <topicref href="2.0/helion/admin/console/console_settings.dita"
+            navtitle="Management Console Settings" locktitle="yes"/>
+          <topicref href="2.0/helion/admin/console/customize.dita" locktitle="yes"
+            navtitle="Management Console Customization"/>
+          <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
+            navtitle="Sample Applications"/>
+        </topichead>
+      </topichead>
            <topicref href="2.0/helion/admin/server/network_port_configuration.dita"/>
       <topicref href="2.0/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
@@ -298,95 +392,6 @@
         navtitle="Application Lifecycle Service Documentation">
                 <topicref href="2.0/helion/CLI/constructor_vm.dita" navtitle="ALS Constructor VM"
           locktitle="yes"/>
-        <topichead navtitle="ALS Command Line Clients">
-          <topicref href="2.0/helion/CLI/ALS_Client_Downloads.dita"
-            navtitle="Command Line Client Downloads" locktitle="yes"/>
-          <topicref href="2.0/helion/admin/reference/kato-ref.dita" locktitle="yes"
-            navtitle="Kato Command Reference"/>
-          <topichead navtitle="ALS Helion Client">
-            <topicref href="2.0/helion/user/client/client_index.dita" locktitle="yes"
-              navtitle="ALS Client Installation">
-              </topicref>
-            <topicref href="2.0/helion/user/reference/client-ref.dita" locktitle="yes"
-              navtitle="ALS Client Command Reference">
-              <topicref href="2.0/helion/user/reference/client-ref-administration.dita"
-                locktitle="yes" navtitle="Administration"/>
-              <topicref href="2.0/helion/user/reference/client-ref-applications.dita"
-                locktitle="yes" navtitle="Applications"/>
-              <topicref href="2.0/helion/user/reference/client-ref-buildpacks.dita" locktitle="yes"
-                navtitle="Buildpacks"/>
-              <topicref href="2.0/helion/user/reference/client-ref-control.dita" locktitle="yes"
-                navtitle="Control"/>
-              <topicref href="2.0/helion/user/reference/client-ref-domains.dita" locktitle="yes"
-                navtitle="Domains"/>
-              <topicref href="2.0/helion/user/reference/client-ref-flags.dita" locktitle="yes"
-                navtitle="Feature Flags"/>
-              <topicref href="2.0/helion/user/reference/client-ref-getting-started.dita"
-                locktitle="yes" navtitle="Getting Started"/>
-              <topicref href="2.0/helion/user/reference/client-ref-history.dita" locktitle="yes"
-                navtitle="History"/>
-              <topicref href="2.0/helion/user/reference/client-ref-information.dita" locktitle="yes"
-                navtitle="Information "/>
-              <topicref href="2.0/helion/user/reference/client-ref-management.dita" locktitle="yes"
-                navtitle="Management "/>
-              <topicref href="2.0/helion/user/reference/client-ref-miscellaneous.dita"
-                locktitle="yes" navtitle="Miscellaneous "/>
-              <topicref href="2.0/helion/user/reference/client-ref-organizations.dita"
-                locktitle="yes" navtitle="Organizations "/>
-              <topicref href="2.0/helion/user/reference/client-ref-placement.dita" locktitle="yes"
-                navtitle="Placement Zones "/>
-              <topicref href="2.0/helion/user/reference/client-ref-quotas.dita" locktitle="yes"
-                navtitle="Quotas "/>
-              <topicref href="2.0/helion/user/reference/client-ref-routes.dita" locktitle="yes"
-                navtitle="Routes "/>
-              <topicref href="2.0/helion/user/reference/client-ref-securitygroups.dita"
-                locktitle="yes" navtitle="Security Groups "/>
-              <topicref href="2.0/helion/user/reference/client-ref-brokers.dita" locktitle="yes"
-                navtitle="Service Brokers "/>
-              <topicref href="2.0/helion/user/reference/client-ref-service-management.dita"
-                locktitle="yes" navtitle="Service Management "/>
-              <topicref href="2.0/helion/user/reference/client-ref-serviceplans.dita"
-                locktitle="yes" navtitle="Service Plans "/>
-              <topicref href="2.0/helion/user/reference/client-ref-services.dita" locktitle="yes"
-                navtitle="Services "/>
-              <topicref href="2.0/helion/user/reference/client-ref-spacequotas.dita" locktitle="yes"
-                navtitle="Space Quotas "/>
-              <topicref href="2.0/helion/user/reference/client-ref-spaces.dita" locktitle="yes"
-                navtitle="Spaces "/>
-              <topicref href="2.0/helion/user/reference/client-ref-tokens.dita" locktitle="yes"
-                navtitle="Authentication Tokens "/>
-              <topicref href="2.0/helion/user/reference/client-ref-user-management.dita"
-                locktitle="yes" navtitle="User Management "/>
-            </topicref>
-          </topichead>
-          <topichead navtitle="Cluster Management Tool">
-            <topicref href="2.0/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
-              navtitle="Cluster Management Tool Installation and Reference"/>
-            <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
-              navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
-              <topicref href="2.0/helion/CLI/cfmgmt_createcluster_starter.dita"
-                navtitle="Example: Create a Starter Cluster" locktitle="yes"/>
-              <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addDEANode.dita"
-                navtitle="Example: Add a DEA Node" locktitle="yes"/>
-              <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addservice.dita"
-                navtitle="Example: Add a Service" locktitle="yes"/>
-            </topicref>
-          </topichead>
-          <topichead navtitle="ALS Management Console">
-            <topicref href="2.0/helion/admin/console/console_intro.dita"
-              navtitle="Introduction and First Use" locktitle="yes"/>
-            <topicref href="2.0/helion/admin/console/console_index.dita" locktitle="yes"
-              navtitle="Management Console (Admin View)"/>
-            <topicref href="2.0/helion/user/console/console_index.dita"
-              navtitle="Management Console (User View)" locktitle="yes"/>
-            <topicref href="2.0/helion/admin/console/console_settings.dita"
-              navtitle="Management Console Settings" locktitle="yes"/>
-            <topicref href="2.0/helion/admin/console/customize.dita" locktitle="yes"
-              navtitle="Management Console Customization"/>
-            <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
-              navtitle="Sample Applications"/>
-          </topichead>
-        </topichead>
         <topicref href="2.0/helion/admin/helion_admin_index.dita" locktitle="yes"
           navtitle="ALS Admin Guide">
           
