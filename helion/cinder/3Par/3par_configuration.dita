@@ -18,9 +18,9 @@
         </ul>
       </p>
     </section>
-    <section>
+    <section id="configure-3par-fc">
       <title>Configure 3PAR FC as Cinder backend</title>
-      <p>You must modify  <codeph>cinder.conf.j2</codeph> to configure FC driver details.</p>
+      <p>You must modify <codeph>cinder.conf.j2</codeph> to configure FC driver details.</p>
       <p>Perform the following steps to configure 3PAR FC as Cinder backend:<ol id="ol_dj2_qcz_ht">
           <li>Login to deployer node.</li>
           <li>Change the directory as shown below:<codeblock>cd ~/helion</codeblock></li>
@@ -41,8 +41,26 @@ san_password=helion
 volume_driver=cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver
 volume_backend_name=3par_FC</codeblock><note>
               Please enter the values which are specific to your environment. </note></li>
+          <li>Commit your configuration to a <xref href="../../using_git.dita#topic_u3v_1yz_ct"
+              >local
+              repository</xref>:<codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock><note>
+              Enter your commit message &lt;commit message></note></li>
+          <li>Run the configuration
+            processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Change the directory to <codeph>~/scratch/ansible/next/hos/ansible</codeph> and run
+            the following command to create a deployment
+            directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
         </ol></p>
     </section>
+    <p id="run-ceph-client-package"><b>Run Cinder Reconfigure Packages</b></p>
+    <p>Execute the following command to configure 3PAR FC. </p>
+    <p>
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
+    </p>
     <section>
       <title>Configure 3PAR iSCSI as Cinder backend</title>
       <p>You must modify  <codeph>cinder.conf.j2</codeph> to configure iSCSI details.</p>
@@ -69,8 +87,27 @@ volume_backend_name=3par_iSCSI
 iscsi_ip_address=172.32.0.9
 hp3par_iscsi_chap_enabled=true</codeblock><note>
               Please enter the values which are specific to your environment. </note></li>
+          <li>Execute the steps (<b>5 -7</b>) mentioned in <xref
+              href="#topic_vln_2xy_ht/configure-3par-fc" format="dita">Configure 3PAR FC as Cinder
+              backend </xref> and  <xref href="#topic_vln_2xy_ht/run-ceph-client-package"
+              format="dita">Run Cinder Reconfigure Packages</xref> as mentioned above.</li>
         </ol>
       </p>
+    </section>
+    <section>
+      <title>Create Volume to Verify the Configuration of 3PAR iSCSI and FC</title>
+      <p>You must create a volume to verify the configuration of 3PAR iSCSI and FC. Once you are
+        able to create the volume then delete the created volume.</p>
+      <p>Perform the following steps to create a volume:
+        &lt;<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Need to modify the
+          following<?oxy_custom_end?>><ol id="ol_ljx_211_3t">
+          <li>Login to Horizon dashboard. </li>
+          <li>Create volume type and associate a extra-spec for the volume type with the defined
+            volume_backend_name in the cinder.conf.</li>
+          <li>Create a test volume from a user account and verify that the volume is successfully
+            created in the "available" state</li>
+          <li>Delete the test volume.</li>
+        </ol></p>
     </section>
   </body>
 </topic>
