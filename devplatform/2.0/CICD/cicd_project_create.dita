@@ -31,7 +31,7 @@
                         target environment has not yet been created, click <xref
                             href="cicd_environment_create.dita#task_mf4_fh4_ht">Create New
                             Environment</xref>.</li>
-                    <li>P<b>roject Type</b>: Select the appropriate development language. </li>
+                    <li><b>Project Type</b>: Select the appropriate development language. </li>
                     <li><b>Project Name</b>: Enter a name for this project. </li>
                 </ul></li>
             

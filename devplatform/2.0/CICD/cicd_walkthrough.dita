@@ -11,15 +11,15 @@
                 <li>an instance of the CICD tool</li>
                 <li>the information [TBD as we move on] from a target environment</li>
                             </ul></p>
-   
-    </body>
-
-    <topic id="id_ktt_gkb_3t" conref="cicd_environment_create.dita#mf4_fh4_ht/create_environment">
-        <title>Create a New Environment</title>
-    </topic>     
-    <topic id="id_evz_4kb_3t" conref="cicd_project_create.dita#s45_4m4_ht/project_create">
-        <title>Create a New Project</title>
-    </topic>
   
+    </body>
+    <topic id="id_yxf_snb_3t" conref="cicd_environment_create.dita#mf4_fh4_ht">
+        <title/>
+    </topic>
+    <topic id="id_gcd_tnb_3t" conref="cicd_project_create.dita#s45_4m4_ht">
+        <title/>
+    </topic>
+
+
 
  </topic>
