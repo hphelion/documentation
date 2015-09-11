@@ -18,12 +18,11 @@
            
                 <li>Click a repository in the list to select it.</li>
             
-                <li>Provide values:
-                <ul>
-                    <li><b>Branch</b>: Select the branch containing the code to build.</li>
+                <li>Provide values: <ul id="ul_i32_rlc_3t">
+                    <li><b>Branch</b>: Select the branch containing the code to build. </li>
                     <li><b>Environment</b>: Select the target environment to deploy to. If the
                         target environment has not yet been created, click <xref
-                            href="cicd_environment_create.dita#task_mf4_fh4_ht">Create New
+                            href="cicd_environment_create.dita">Create New
                             Environment</xref>.</li>
                     <li><b>Project Type</b>: Select the appropriate development language. </li>
                     <li><b>Project Name</b>: Enter a name for this project. </li>

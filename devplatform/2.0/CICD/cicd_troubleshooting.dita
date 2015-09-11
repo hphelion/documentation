@@ -3,6 +3,34 @@
 <topic id="topic_lt4_cvc_dt">
   <title>Troubleshooting</title>
   <body>
-    <p>Troubleshooting information for installation, configuration, and/or administration.</p>
+    <p>Troubleshooting information for installation, configuration, administration, and use.</p>
+    
+    <section><title>Environments</title>
+    <dl>
+      <dlentry>
+        <dt>Desired Organization doesn't appear in the list.</dt>
+        <dd>Organization doesn't exist. <xref
+          href="../helion/user/reference/client-ref-organizations.dita#topic6634/command-create-org"
+          >Create it</xref>.</dd>
+      </dlentry>
+      <dlentry>
+        <dt>Desired Space doesn't appear in the list.</dt>
+        <dd>Space doesn't exist. <xref
+          href="../helion/user/reference/client-ref-spaces.dita#topic9898/command-create-space"
+          >Create it.</xref>.</dd>
+      </dlentry>
+    </dl></section>
+    <section><title>Projects</title>
+      <dl>
+        <dlentry>
+          <dt>Desired Project doesn't appear in the list.</dt>
+          <dd>You may not be a User on this project. Have someone <xref
+              href="cicd_edit_project.dita#topic_g2r_w5b_3t/invite_user">add you to the
+              project</xref>.</dd>
+        </dlentry>
+      </dl></section>
+      <section><title>Builds</title></section>
+        <section><title>Installation</title></section>
+          <section><title>Configuration</title></section>
   </body>
 </topic>

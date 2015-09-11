@@ -4,13 +4,41 @@
   <title>Edit an Existing Project</title>
   <body>
     <p>Some elements of an existing project can be changed.</p>
-    
+    <section><title>Edit Project Specifications</title>
     <ol id="project_edit">
       
       <li>Click the <b>Projects</b> tab.</li>
-      <li>Click the target project and then click <b>Edit</b>. </li>
-      <li/>
+      <li>Click the target project and then click <b>Edit</b>. <note>The target Repository cannot be
+          changed. If the Repository is wrong, delete this project and create a new one.</note></li>
+      <li>Click <b>Save</b>.</li>
+          </ol>
+  </section>
+    <section id="addmore">
+      <title>Add More Deployment Targets</title>
+      <ol>
+        <li>Select the target build and click <b>Edit</b>.</li>
+        <li>Scroll down and click <b>Add Targets</b>.</li>
+        <li>Specify the environments this build should be deployed to.</li>
+        <li>Click <b>Save</b>.</li>
+      </ol>
+    </section>
+    <section conref="cicd_create_notifications.dita#topic_ifw_mxb_3t/noticecreate"/>
+    <section conref="cicd_create_postdeploy.dita#topic_mxf_jxb_3t/actioncreate"/>
+    <section><title>Delete a Project</title>
+    <ol id="project_delete">
+      
+      <li>Click the <b>Projects</b> tab.</li>
+      <li>Click the trash-can icon to the right of the target project in the list.</li>
+      <li>Click <b>Delete</b> to confirm.</li>
+    </ol></section>
+    <section><title>Iniviting Users to a Project</title>
+      Only individuals assigned to a project as a User can work on that project. 
+    <ol id="invite_user">
+      
+      <li>Click the <b>Projects</b> tab.</li>
+      <li>Note the URL listed after Invite.</li>
+      <li>Copy and send this URL to the person you want to add as a User.</li>
     </ol>
-    
+    </section>
   </body>
 </topic>

@@ -3,6 +3,26 @@
 <topic id="topic_ifw_mxb_3t">
   <title>Create or Edit Notifications</title>
   <body>
-    <p></p>
+    <p>Notifications can be added to Builds. They can be sent via email, to HipChat, or through
+      FlowDocks.</p>
+    <section id="noticecreate"><title>Create a New Notification</title><ol><li>Click the <b>Builds</b> tab.</li>
+      <li>Select the target build and click <b>Edit</b>.</li>
+      <li>Scroll down and click <b>New Target</b>.</li>
+      <li>Specify the information for the notification. <ul>
+            <li>Notification Target Name</li>
+        <li>Type<ul><li>HTTP post </li>
+                <li>HipChat </li>
+                <li>Flowdock</li></ul></li>
+            <li>HTTP Endpoint or HipChat Room Number</li>
+            <li>Token (optional)</li>
+          </ul></li>
+        <li>Click <b>Save</b>.</li>
+          </ol></section>
+    <section><title>Edit an Existing Notification</title><ol><li>Click the <b>Builds</b> tab.</li>
+      <li>Select the target build and click <b>Edit</b>.</li>
+      <li>Scroll down and click the notification.</li>
+      <li>Change the information for the notification. </li>
+        <li>Click <b>Save</b>.</li>
+    </ol></section>
   </body>
 </topic>
