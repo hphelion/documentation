@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2448">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta 1: Documentation Home</title>
-<titlealts>
-  <searchtitle>HP Helion OpenStack 2.0 Beta 0: Documentation Home</searchtitle>
-</titlealts>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 2.0"/>
-<othermeta name="role" content="All"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 2.0"/>
-</metadata>
-</prolog>
-<body>
-<section id="top" />
-  <p>HP Helion <tm tmtype="reg">OpenStack</tm> is a commercial-grade distribution of <tm tmtype="reg">OpenStack</tm> the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion <tm tmtype="reg">OpenStack</tm> enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
-  <!--<p>HP Helion <tm tmtype="reg">OpenStack</tm> offers many services based on the different <tm tmtype="reg">OpenStack</tm> 
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic2448">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta 2: Documentation Home</title>
+  <titlealts>
+    <searchtitle>HP Helion OpenStack 2.0 Beta 2: Documentation Home</searchtitle>
+  </titlealts>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion Openstack 2.0"/>
+      <othermeta name="role" content="All"/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion Openstack 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <section id="top"/>
+    <p>HP Helion <tm tmtype="reg">OpenStack</tm> is a commercial-grade distribution of <tm
+        tmtype="reg">OpenStack</tm> the leading open source cloud computing platform. This
+      distribution, backed by HP, enables customers to more easily build, manage, and use
+      open-source based hybrid clouds in a resilient, maintainable platform. HP Helion <tm
+        tmtype="reg">OpenStack</tm> enables cost-effective scalability of IT services and business
+      agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud
+      products, services, and professional support.</p>
+    <!--<p>HP Helion <tm tmtype="reg">OpenStack</tm> offers many services based on the different <tm tmtype="reg">OpenStack</tm> 
     projects to provide the functionality you need. Visit the HP Helion OpenStack Services Overview page for a complete list of services.</p>-->
-  <section id="getstart"> <title>Get Started with HP Helion <tm tmtype="reg">OpenStack</tm></title>
-    <p>Use the following links and tools to begin working with HP Helion <tm tmtype="reg">OpenStack</tm></p>
-<ul>
-  <li><xref href="releasenotes.dita">Beta 1 Release Notes</xref></li>
-  <li><xref href="supportedconfigs.dita">Supported Configurations</xref></li>
-  <li><xref href="hardware.dita">Minimum Hardware Requirements</xref></li>
-  <li><xref href="installation_overview.dita">Installation</xref></li>
-  <li><xref href="faq.dita">Frequently Asked Questions</xref></li>
-  <li>Identity</li>
-  <li>Monitoring</li>
-  <li>Logging</li>
-  <li>Metering</li>
-  <li>Storage</li>
-  <li>LBaaS</li>
-  <li>FWaaS</li>
-</ul>
-</section>
-</body>
+    <section id="getstart">
+      <title>Get Started with HP Helion <tm tmtype="reg">OpenStack</tm></title>
+      <p>Use the following links and tools to begin working with HP Helion <tm tmtype="reg"
+          >OpenStack</tm></p>
+      <ul>
+        <li><xref href="releasenotes.dita">Beta 2 Release Notes</xref></li>
+        <li><xref href="supportedconfigs.dita">Supported Configurations</xref></li>
+        <li><xref href="hardware.dita">Minimum Hardware Requirements</xref></li>
+        <li><xref href="installation_overview.dita">Installation</xref></li>
+        <li><xref href="faq.dita">Frequently Asked Questions</xref></li>
+        <li>Identity</li>
+        <li>Monitoring</li>
+        <li>Logging</li>
+        <li>Metering</li>
+        <li>Storage</li>
+        <li>LBaaS</li>
+        <li>FWaaS</li>
+      </ul>
+    </section>
+  </body>
 </topic>
