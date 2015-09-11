@@ -113,10 +113,10 @@
       <li>The disk device must be unpartitioned or have a single partition that uses the whole
         drive.</li>
       <li>Do not have a label on the partition. To check whether your disk is label, execute the
-        procedure mentioned in <xref href="label_on_partition.dita#verify-partition-label"/></li>
+        procedure mentioned in <xref href="label_on_partition.dita#verify-partition-label"/>.</li>
       <li>Do not have an XFS filesystem that contains a filesystem label. To check the filesytem
         with a label, execute the procedure described in <xref
-          href="filesystem_label.dita#verify-the-filesystem-label"/></li>
+          href="filesystem_label.dita#verify-the-filesystem-label"/>.</li>
       <li>If the disk drive is already labeled as described above, the
           <codeph>swiftlm-drive-provision</codeph> process will assume that the drive has valuable
         data and refuses to use or modify the drive.</li>
@@ -129,19 +129,10 @@
       <li>The disk devices listed in the example disk model have different names on your servers.
         This may be due different hardware drives. Edit the disk model
           (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) and change the device
-        names to the correct
-        names.<!--<table frame="all" rowsep="0" colsep="0"
-            id="table_rwv_rpm_dt">
-            <tgroup cols="1">
-              <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-              <tbody>
-                <row>
-                  <entry>Useful tips:</entry>
-                </row>
-              </tbody>
-            </tgroup>
-          </table>--></li>
-      <li>If you prefer a different disk drive than the one listed in the model. For example, if
+        names to the correct names.<note type="tip">The term <b>add</b> and <b>delete</b> in the
+          document means editing the respective YAML files to add or delete the
+          configurations/values.</note></li>
+      <li>You may prefer a different disk drive than the one listed in the model. For example, if
           <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you have
         SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In this
         case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace with
