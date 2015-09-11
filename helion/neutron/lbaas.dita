@@ -21,11 +21,17 @@
     <section id="Configuration">
       <title>Configuration</title>
       <p>HP Helion OpenStack 2.0 LBaaS Configuration</p>
-      <note>If you need to run LBaaS version 1 instead of the default LBaaS version 2, you'll need to configure the ccp.yml
-      files and neutron.conf.j2 file to use version 1.</note>
+      <note type="important">It is not recommended that LBaaS v1 is used in a production environment.  
+        It is recommended you use LBaaS v2. If you do deploy LBaaS v1, the upgrade to LBaaS v2 is non-trivial and may 
+        require the use of professional services</note>
+      
+      <note>If you need to run LBaaS v1 instead of the default LBaaS v2, you'll need to configure
+        the ccp.yml files and neutron.conf.j2 file to use version 1.</note>
+      
       
       <sectiondiv id="ConfiguringLBaaSV1">
       <p>Configuring LBaaS V1</p>
+        
       <p>Before you modify the ccp.yml and neutron.conf.j2 files, it is recommended that you clone the hlm-input-model and neutron-ansible
         at the same directory level as hlm-dev-tool.  Once you have cloned the files, modify the ccp.yml and neutron.conf.j2 files.</p>
       <ol>
