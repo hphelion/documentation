@@ -65,9 +65,9 @@
       <p><table frame="all" rowsep="1" colsep="1" id="cinder_table">
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
             <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="2*"/>
             <thead>
               <row>
                 <entry>Alarm Name</entry>
@@ -97,9 +97,9 @@
       <p><table frame="all" rowsep="1" colsep="1" id="glance_table">
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
             <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="2*"/>
             <thead>
               <row>
                 <entry>Alarm Name</entry>
@@ -130,9 +130,9 @@
       <table frame="all" rowsep="1" colsep="1" id="table_flj_2tl_zs">
         <tgroup cols="4" align="left">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="2.0*"/>
           <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="2.0*"/>
           <thead>
             <row>
               <entry>Alarm Name</entry>
@@ -157,9 +157,9 @@
       <table frame="all" rowsep="1" colsep="1" id="table_k33_xcq_bt">
         <tgroup cols="4">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="2.0*"/>
           <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="2.0*"/>
           <thead>
             <row>
               <entry>Alarm Name</entry>
@@ -226,9 +226,9 @@
       <table frame="all" rowsep="1" colsep="1" id="table_ik5_3km_zs">
         <tgroup cols="4">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="2.0*"/>
           <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="2.0*"/>
           <thead>
             <row>
               <entry>Alarm Name</entry>
@@ -347,70 +347,6 @@
         </table>
       </p>
     </section>
-    <section><b>Logging test</b>
-    <table frame="all" rowsep="1" colsep="1" id="table_z3n_n12_3t">
-      <tgroup cols="5" align="left">
-        <colspec colname="c1" colnum="1" colwidth="1"/>
-        <colspec colname="c2" colnum="2" colwidth=".75"/>
-        <colspec colname="c3" colnum="3"/>
-        <colspec colname="c4" colnum="4"/>
-        <colspec colname="c5" colnum="5" colwidth="2"/>
-        <thead>
-          <row>
-            <entry>Alarm Name</entry>
-            <entry>Component</entry>
-            <entry>Description</entry>
-            <entry>Likely Cause</entry>
-            <entry>Mitigation Tasks to Perform</entry>
-          </row>
-        </thead>
-        <tbody>
-          <row>
-            <entry>Elasticsearch Unassigned Shards</entry>
-            <entry>Elasticsearch</entry>
-            <entry>Elasticsearch unassigned shards count &gt; 0</entry>
-            <entry>Environment could be misconfigured</entry>
-            <entry>
-              <ul id="ul_okg_p12_3t">
-                <li>If you have unassigned shards, make sure that all servers are at the same
-                  version of Elasticsearch.</li>
-                <li>Make sure local (true) is set.</li>
-                <li>You may need to change the number_of_replicas to a different value, then back
-                  (e.g. from 2 to 1 and back to 2)</li>
-              </ul>
-            </entry>
-          </row>
-          <row>
-            <entry>Elasticsearch Field Data Evictions</entry>
-            <entry>Elasticsearch</entry>
-            <entry>Elasticsearch Field Data Evictions count &gt; 0</entry>
-            <entry>Field Data Evictions may be found even though it is nowhere near the limit
-              set.</entry>
-            <entry>Field Data Evictions may be found even though it is nowhere near the limit set.
-              This could be because the maximum cache size specified is split between the
-              partitions, so for 16 partitions, any given field data inserted would actually have a
-              maximum size of indices.fielddata.cache.size / 16. This value may need to be
-              increased.</entry>
-          </row>
-          <row>
-            <entry>Process Check</entry>
-            <entry>Elasticsearch</entry>
-            <entry>Process not running.</entry>
-            <entry>Process crashed.</entry>
-            <entry>If the Elasticsearch process goes down, try restarting it with:
-              <codeblock>sudo systemctl restart elasticsearch</codeblock>
-            </entry>
-          </row>
-          <row>
-            <entry/>
-            <entry/>
-            <entry/>
-            <entry/>
-            <entry/>
-          </row>
-        </tbody>
-      </tgroup>
-    </table></section>
     <section id="logging">
       <title>Logging</title>
       <table frame="all" rowsep="1" colsep="1" id="table_gc2_ndh_1t">
