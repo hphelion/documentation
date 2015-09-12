@@ -437,7 +437,7 @@
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
               <entry>If the Elasticsearch process goes down, try restarting it with:
-                <codeblock>sudo systemctl restart elasticsearch</codeblock>
+                <codeph>sudo systemctl restart elasticsearch</codeph>
               </entry>
             </row>
             <row>
@@ -446,7 +446,7 @@
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
               <entry>If the Logstash process goes down, try restarting it with:
-                <codeblock>sudo systemctl restart logstash</codeblock>
+                <codeph>sudo systemctl restart logstash</codeph>
               </entry>
             </row>
             <row>
@@ -455,7 +455,7 @@
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
               <entry>If the Logstash process goes down, try restarting it with:
-                <codeblock>sudo systemctl restart beaver</codeblock>
+                <codeph>sudo systemctl restart beaver</codeph>
               </entry>
             </row>
             <row>
@@ -464,7 +464,7 @@
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
               <entry>If the Logstash process goes down, try restarting it with:
-                <codeblock>sudo systemctl restart apache2</codeblock>
+                <codeph>sudo systemctl restart apache2</codeph>
               </entry>
             </row>
             <row>
@@ -473,7 +473,7 @@
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
               <entry>If the Logstash process goes down, try restarting it with:
-                <codeblock>sudo systemctl restart kibana</codeblock>
+                <codeph>sudo systemctl restart kibana</codeph>
               </entry>
             </row>
           </tbody>
