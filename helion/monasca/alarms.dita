@@ -347,8 +347,8 @@
         </table>
       </p>
     </section>
-    <section id="logging2"><title>logging 2</title>
-      <table frame="all" rowsep="1" colsep="1" id="table_qqc_342_3t">
+    <section id="logging"><title>Logging</title>
+      <table frame="all" rowsep="1" colsep="1" id="logging_table">
         <tgroup cols="5">
           <colspec colname="c1" colnum="1"/>
           <colspec colname="c2" colnum="2"/>
@@ -376,133 +376,6 @@
                 <p>Make sure local (true) is set.</p>
                 <p>You may need to change the number_of_replicas to a different value, then back
                   (e.g. from 2 to 1 and back to 2)</p>
-              </entry>
-            </row>
-            <row>
-              <entry>Elasticsearch Field Data Evictions</entry>
-              <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Field Data Evictions count is greater than 0</entry>
-              <entry>Field Data Evictions may be found even though it is nowhere near the limit
-                set.</entry>
-              <entry>Field Data Evictions may be found even though it is nowhere near the limit set.
-                This could be because the maximum cache size specified is split between the
-                partitions, so for 16 partitions, any given field data inserted would actually have
-                a maximum size of indices.fielddata.cache.size / 16. This value may need to be
-                increased.</entry>
-            </row>
-            <row>
-              <entry>Elasticsearch Bulk Pool Rejected</entry>
-              <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Bulk Pool Rejected count is greater than 0</entry>
-              <entry>Thread pool size could be too small.</entry>
-              <entry>You may need to increase the threadpool.bulk.queue_size (from 50 to 100, for
-                example).</entry>
-            </row>
-            <row>
-              <entry>Elasticsearch Number of Log Entries</entry>
-              <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Number of Log Entries</entry>
-              <entry>The number of log entries may get too large</entry>
-              <entry>Kibana may hang if the number of log entries is too large (e.g. above 40,000).
-                You may need to keep the page size small enough (about 20,000 results), because if
-                it is larger (e.g. 200,000), it may hang the browser.</entry>
-            </row>
-            <row>
-              <entry>Elasticsearch Open File Descriptors </entry>
-              <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Open File Descriptors is greater than 90%</entry>
-              <entry>Configured to allow too many file descriptors to be opened.</entry>
-              <entry>Make sure that the limits.conf settings are being used, and adjust them if
-                needed. A "ulimit" statement could cause this value to be ignored (overwriting the
-                value passed by the ulimit statement).</entry>
-            </row>
-            <row>
-              <entry>Elasticsearch Max Total Indices Size</entry>
-              <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Total Indices size is greater than
-                elasticsearch_max_total_indices_size_in_bytesdefined by user</entry>
-              <entry>elasticsearch_max_total_indices_size_in_bytes may be set too low, or you may
-                have insufficient resources.</entry>
-              <entry>If the total size of all the indices exceeds the size of the
-                elasticsearch_max_total_indices_size_in_bytes as you have defined it, you can adjust
-                the value if you want to give more space and you have the resources. If not, you may
-                need to adjust the Curator to remove indices sooner.</entry>
-            </row>
-            <row>
-              <entry>Process Check</entry>
-              <entry>Elasticsearch</entry>
-              <entry>Process not running.</entry>
-              <entry>Process crashed.</entry>
-              <entry>If the Elasticsearch process goes down, try restarting it with: <codeph>sudo
-                  systemctl restart elasticsearch</codeph>
-              </entry>
-            </row>
-            <row>
-              <entry>Process Check</entry>
-              <entry>Logstash</entry>
-              <entry>Process not running.</entry>
-              <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                  systemctl restart logstash</codeph>
-              </entry>
-            </row>
-            <row>
-              <entry>Process Check</entry>
-              <entry>Beaver</entry>
-              <entry>Process not running.</entry>
-              <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                  systemctl restart beaver</codeph>
-              </entry>
-            </row>
-            <row>
-              <entry>Process Check</entry>
-              <entry>Apache</entry>
-              <entry>Process not running.</entry>
-              <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                  systemctl restart apache2</codeph>
-              </entry>
-            </row>
-            <row>
-              <entry>Process Check</entry>
-              <entry>Kibana</entry>
-              <entry>Process not running.</entry>
-              <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                  systemctl restart kibana</codeph>
-              </entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table></section>
-    <section id="logging">
-      <title>Logging</title>
-      <table frame="all" rowsep="1" colsep="1" id="logging_table">
-        <tgroup cols="5">
-          <thead>
-            <row>
-              <entry>Alarm Name</entry>
-              <entry>Component</entry>
-              <entry>Description</entry>
-              <entry>Likely Cause</entry>
-              <entry>Mitigation Tasks to Perform</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>Elasticsearch Unassigned Shards</entry>
-              <entry>Elasticsearch</entry>
-              <entry>Elasticsearch unassigned shards count is greater than 0</entry>
-              <entry>Environment could be misconfigured</entry>
-              <entry>
-                <ul>
-                  <li>If you have unassigned shards, make sure that all servers are at the same
-                    version of Elasticsearch.</li>
-                  <li>Make sure local (true) is set.</li>
-                  <li>You may need to change the number_of_replicas to a different value, then back
-                    (e.g. from 2 to 1 and back to 2)</li>
-                </ul>
               </entry>
             </row>
             <row>
