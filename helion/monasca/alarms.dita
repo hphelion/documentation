@@ -369,7 +369,7 @@
             <row>
               <entry>Elasticsearch Unassigned Shards</entry>
               <entry>Elasticsearch</entry>
-              <entry>Elasticsearch unassigned shards count &gt; 0</entry>
+              <entry>Elasticsearch unassigned shards count is greater than 0</entry>
               <entry>Environment could be misconfigured</entry>
               <entry>
                 <ul>
@@ -384,7 +384,7 @@
             <row>
               <entry>Elasticsearch Field Data Evictions</entry>
               <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Field Data Evictions count &gt; 0</entry>
+              <entry>Elasticsearch Field Data Evictions count is greater than 0</entry>
               <entry>Field Data Evictions may be found even though it is nowhere near the limit
                 set.</entry>
               <entry>Field Data Evictions may be found even though it is nowhere near the limit set.
@@ -396,7 +396,7 @@
             <row>
               <entry>Elasticsearch Bulk Pool Rejected</entry>
               <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Bulk Pool Rejected count &gt; 0</entry>
+              <entry>Elasticsearch Bulk Pool Rejected count is greater than 0</entry>
               <entry>Thread pool size could be too small.</entry>
               <entry>You may need to increase the threadpool.bulk.queue_size (from 50 to 100, for
                 example).</entry>
@@ -413,7 +413,7 @@
             <row>
               <entry>Elasticsearch Open File Descriptors </entry>
               <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Open File Descriptors &gt; 90%</entry>
+              <entry>Elasticsearch Open File Descriptors is greater than 90%</entry>
               <entry>Configured to allow too many file descriptors to be opened.</entry>
               <entry>Make sure that the limits.conf settings are being used, and adjust them if
                 needed. A "ulimit" statement could cause this value to be ignored (overwriting the
@@ -422,8 +422,8 @@
             <row>
               <entry>Elasticsearch Max Total Indices Size</entry>
               <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Total Indices size
-                &gt;elasticsearch_max_total_indices_size_in_bytesdefined by user</entry>
+              <entry>Elasticsearch Total Indices size is greater than
+                elasticsearch_max_total_indices_size_in_bytesdefined by user</entry>
               <entry>elasticsearch_max_total_indices_size_in_bytes may be set too low, or you may
                 have insufficient resources.</entry>
               <entry>If the total size of all the indices exceeds the size of the
@@ -436,8 +436,8 @@
               <entry>Elasticsearch</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Elasticsearch process goes down, try restarting it with:
-                <codeph>sudo systemctl restart elasticsearch</codeph>
+              <entry>If the Elasticsearch process goes down, try restarting it with: <codeph>sudo
+                  systemctl restart elasticsearch</codeph>
               </entry>
             </row>
             <row>
@@ -445,8 +445,8 @@
               <entry>Logstash</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with:
-                <codeph>sudo systemctl restart logstash</codeph>
+              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
+                  systemctl restart logstash</codeph>
               </entry>
             </row>
             <row>
@@ -454,8 +454,8 @@
               <entry>Beaver</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with:
-                <codeph>sudo systemctl restart beaver</codeph>
+              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
+                  systemctl restart beaver</codeph>
               </entry>
             </row>
             <row>
@@ -463,8 +463,8 @@
               <entry>Apache</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with:
-                <codeph>sudo systemctl restart apache2</codeph>
+              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
+                  systemctl restart apache2</codeph>
               </entry>
             </row>
             <row>
@@ -472,8 +472,8 @@
               <entry>Kibana</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with:
-                <codeph>sudo systemctl restart kibana</codeph>
+              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
+                  systemctl restart kibana</codeph>
               </entry>
             </row>
           </tbody>
