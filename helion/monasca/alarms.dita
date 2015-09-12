@@ -371,13 +371,11 @@
               <entry>Elasticsearch unassigned shards count is greater than 0</entry>
               <entry>Environment could be misconfigured</entry>
               <entry>
-                <ul>
-                  <li>If you have unassigned shards, make sure that all servers are at the same
-                    version of Elasticsearch.</li>
-                  <li>Make sure local (true) is set.</li>
-                  <li>You may need to change the number_of_replicas to a different value, then back
-                    (e.g. from 2 to 1 and back to 2)</li>
-                </ul>
+                <p>If you have unassigned shards, make sure that all servers are at the same version
+                  of Elasticsearch.</p>
+                <p>Make sure local (true) is set.</p>
+                <p>You may need to change the number_of_replicas to a different value, then back
+                  (e.g. from 2 to 1 and back to 2)</p>
               </entry>
             </row>
             <row>
@@ -436,7 +434,7 @@
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
               <entry>If the Elasticsearch process goes down, try restarting it with: <codeph>sudo
-                systemctl restart elasticsearch</codeph>
+                  systemctl restart elasticsearch</codeph>
               </entry>
             </row>
             <row>
@@ -445,7 +443,7 @@
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
               <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                systemctl restart logstash</codeph>
+                  systemctl restart logstash</codeph>
               </entry>
             </row>
             <row>
@@ -454,7 +452,7 @@
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
               <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                systemctl restart beaver</codeph>
+                  systemctl restart beaver</codeph>
               </entry>
             </row>
             <row>
@@ -463,7 +461,7 @@
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
               <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                systemctl restart apache2</codeph>
+                  systemctl restart apache2</codeph>
               </entry>
             </row>
             <row>
@@ -472,7 +470,7 @@
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
               <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
-                systemctl restart kibana</codeph>
+                  systemctl restart kibana</codeph>
               </entry>
             </row>
           </tbody>
