@@ -353,8 +353,8 @@
         <tgroup cols="5">
           <colspec colname="c1" colnum="1" colwidth="50pt"/>
           <colspec colname="c2" colnum="2" colwidth="70pt"/>
-          <colspec colname="c3" colnum="3" colwidth="200pt"/>
-          <colspec colname="c4" colnum="4" colwidth="200pt"/>
+          <colspec colname="c3" colnum="3" colwidth="175pt"/>
+          <colspec colname="c4" colnum="4" colwidth="175pt"/>
           <colspec colname="c5" colnum="5" colwidth="300pt"/>
           <thead>
             <row>
