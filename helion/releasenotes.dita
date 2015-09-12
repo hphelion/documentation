@@ -262,7 +262,7 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------
       <p>In <b>roles/freezer-agent/defaults/main.yml</b> add the following line:
         <codeblock>backup_freezer_api_url: "{{ FRE_API | item('advertises.vips.private[0].url', default=' ') }}"</codeblock>
         In <b>roles/freezer-agent/templates/backup.osrc.j2</b> add the following line:
-        <codeblock>export OS_FREEZER_URL={{ backup_freezer_api_url }}</codeblock>
+        <codeblock>export OS_BACKUP_URL={{ backup_freezer_api_url }}</codeblock>
       </p>
     </section>
   </body>
