@@ -70,9 +70,9 @@
           format="html">REST API</xref>. A Ceilometer Horizon dashboard panel is not available at
         this time.</p>
       <ul>
-        <li>
+        <!--<li>
           <xref href="metering_components.dita">Configuration and Architecture Overview</xref>
-        </li>
+        </li>-->
         <li>
           <xref href="metering_metertypes.dita">Available Meter Types</xref>
         </li>
