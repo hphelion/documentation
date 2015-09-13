@@ -269,7 +269,7 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start
             <p>Reducing the amount of unnecessary data sent to storage reduces the load on the
                 SQL-based cluster, which increases performance. Ceilometer data collection is
                 configured by modifying the <i>pipeline.yml</i> file. This configuration file is
-                located in the <i>_____________</i> folder on all of the controller nodes.</p>
+                located on all of the controller nodes.</p>
             <p>
                 <ul id="ul_qnk_lmy_dt">
                     <li>In HOS 2.0 Ceilometer Central Agent and Ceilometer Notification agent use
