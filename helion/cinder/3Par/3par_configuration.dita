@@ -94,20 +94,89 @@ hp3par_iscsi_chap_enabled=true</codeblock><note>
         </ol>
       </p>
     </section>
-    <section>
-      <title>Create Volume to Verify the Configuration of 3PAR iSCSI and FC</title>
-      <p>You must create a volume to verify the configuration of 3PAR iSCSI and FC. Once you are
+    <section id="create-volume-config-fc">
+      <title>Create Volume to Verify the Configuration of 3PAR FC and iSCSI</title>
+      <p>You must create a volume to verify the configuration of 3PAR FC. and iSCSI Once you are
         able to create the volume then delete the created volume.</p>
-      <p>Perform the following steps to create a volume:
-        &lt;<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Need to modify the
-          following<?oxy_custom_end?>><ol id="ol_ljx_211_3t">
-          <li>Login to Horizon dashboard. </li>
-          <li>Create volume type and associate a extra-spec for the volume type with the defined
-            volume_backend_name in the cinder.conf.</li>
-          <li>Create a test volume from a user account and verify that the volume is successfully
-            created in the "available" state</li>
-          <li>Delete the test volume.</li>
+      <p>Perform the following steps to create a volume using Horizon dashboard:</p>
+      <p>
+        <ol id="ol_ldf_fxc_gt">
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel.</li>
+          <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
+            to display the Volumes page.<p><image
+                href="../../../media/3par/create-ceph-volumetype%20-%201.png" id="image_tlw_gpv_3t"
+              /></p></li>
+          <li>Cick <b>Create Volume Type</b> to display a dialog box.<p><image
+                href="../../../media/3par/create-ceph-volumetype%20(2).png" id="image_rpt_3pv_3t"
+              /></p></li>
+          <li>Enter a unique name for the volume. </li>
+          <li>Click<b> Create Volume Type</b> to complete the action. Clicking <b>Cancel</b> returns
+            to the Volumes screen without completing the action.<p><image
+                href="../../../media/3par/create-ceph-volumetype.png" id="image_bg1_ksv_3t"
+              /></p><p>The newly created volume displays in the Volumes page.</p></li>
+        </ol>
+      </p>
+    </section>
+    <section id="associate-volume-backend">
+      <title>Associate the volume type to a backend</title>
+      <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
+          <li>Login to the Overcloud Horizon dashboard. The Overcloud dashboard displays with the
+            options in the left panel.</li>
+          <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
+            to display the Volumes page.<image href="../../../media/3par/create-ceph-volumetype.png"
+              id="image_ccc_lsv_3t"/></li>
+          <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
+            associate to the backend. <image
+              href="../../../media/3par/create-ceph-volumetype%20-%20extra-specs.png"
+              id="image_d2h_qsv_3t"/><p>The <b>Create Volume Type Extra Specs</b> dialog box
+              displays. Now map the volume type to the associate backend.</p><p><b>For 3PAR
+                FC</b><ol id="ol_jml_sxv_3t">
+                <li>In the <b>Key</b> box, enter <i>3par_FC</i> as volume backend name. This is the
+                  name of the key used to specify the storage backend when provisioning volumes of
+                  this volume type. The volume backend name must match the backend name mentioned in
+                  the <codeph>cinder.conf</codeph> file.</li>
+                <li>In the <b>Value</b> box, enter the name of the backend to which you want to
+                  associate the volume type. For example:<i>3par_fc</i>.<p><image
+                      href="../../../media/3par/volume-extra-specs-3par_fc.png"
+                      id="image_am3_35v_3t"/></p></li>
+              </ol></p>
+            <b>For 3PAR iSCSI  </b><ol>
+              <li> In the <b>Key</b> box, enter <i>3par_iSCSI</i> as volume backend name. This is
+                the name of the key used to specify the storage backend when provisioning volumes of
+                this volume type. The volume backend name must match the backend name mentioned in
+                the <codeph>cinder.conf</codeph> file. </li>
+              <li>In the <b>Value</b> box, enter the name of the backend to which you want to
+                associate the volume type. For example:<i>3par_iSCSI</i>.<image
+                  href="../../../media/3par/volume-extra-specs-iscsi.png" id="image_vtl_fzv_3t"
+                /></li>
+            </ol>
+          </li>
+          <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type
+              is mapped to the backend, you can create volumes with this volume type.</note></li>
         </ol></p>
     </section>
+    <section>
+      <title>Delete volume</title>
+      <p/>
+      <p>Perform the following steps to create a volume using Horizon dashboard:</p>
+      <p>
+        <ol id="ol_czt_l1w_3t">
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel.</li>
+          <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
+            to display the Volumes page.<image href="../../../media/3par/create-ceph-volumetype.png"
+              id="image_gvm_v1w_3t"/></li>
+          <li>Check the box in the row of the volume to to delete.<p><image
+                href="../../../media/3par/delete-volumetype.png" id="image_dyz_s1w_3t"/></p></li>
+          <li>Click <b>Delete Volume Types</b>.</li>
+          <li>To confirm and <b>Delete the Volume</b>. To exit without deleting the volume and to
+            close the screen, click <b>Cancel</b> before deleting. </li>
+        </ol>
+      </p>
+    </section>
+    <p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Create a test volume from
+      a user account and verify that the volume is successfully created in the "available"
+      state<?oxy_custom_end?></p>
   </body>
 </topic>
