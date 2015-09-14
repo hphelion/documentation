@@ -134,7 +134,7 @@
                   
                 </codeblock></entry>
               </row>
-              <row>
+              <row outputclass="bgcolor(#696969)">
                 <entry/>
                 <entry>Switch PVID used to map any "internal" VLANs to untagged</entry>
                 <entry outputclass="bgcolor(#696969)"><codeblock> </codeblock></entry>
