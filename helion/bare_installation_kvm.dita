@@ -154,6 +154,8 @@ git commit -m "My config or other commit message"
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost cobbler-power-status.yml
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+        <li>You will be prompted to enter a password that will be used to access the provisioned
+          nodes.</li>
       </ol>
     </section>
     <section id="NodeProvision"><title>Provision the Nodes</title>
