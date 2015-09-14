@@ -57,7 +57,7 @@
     providerName="System.Data.SqlClient" 
   /&gt;</codeblock>
           to:
-          <codeblock>&lt;add name=<ph outputclass="codehighlight">"DefaultConnection" </ph> 
+          <codeblock>&lt;add name="DefaultConnection"  
   connectionString="{ContosoUniversity-db#connectionString}" 
   providerName="System.Data.SqlClient" /&gt;</codeblock></li>
         <li>Save <codeph>web.config</codeph>.</li>
