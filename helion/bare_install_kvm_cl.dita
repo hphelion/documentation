@@ -50,7 +50,7 @@
       </p>
     </section>
     <section id="network"><title>Network Setup and Configuration</title>
-      <b>Management Network</b>
+      <p><b>Management Network</b></p>
       <p>The management network is the backbone used for the majority of Helion OpenStack management
         communications. Control messages are exchanged between the Controllers, Compute hosts, and
         Cinder backends through this network. In addition to the control flows, the management
@@ -137,7 +137,10 @@
               <row>
                 <entry/>
                 <entry>IP Range (Usable IPs)</entry>
-                <entry>begin: end:</entry>
+                <entry>
+                  <p>begin:</p>
+                  <p>end:</p>
+                </entry>
               </row>
               <row>
                 <entry/>
