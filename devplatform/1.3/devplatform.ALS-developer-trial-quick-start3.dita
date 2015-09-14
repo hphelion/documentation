@@ -38,6 +38,8 @@
             <li>In the <b>US West section</b>, in the <b>Compute</b> row, click <b>Activate</b> to
                             activate the Compute service.Activating the Compute service is required
                             for creating VM instances.<image href="../../media/quickstartWestActivate.png" id="image_dlk_hxc_ks" placement="break"/>
+              <note>Due to load balancing, your account may be provisioned to use USEast instead of USWest. If you see the <b>Launch Instance</b> button in the <b>Instances</b> pane disabled, try the other region.
+              </note>
                         </li>
             <li>Click the <b>Project</b> panel and then the <b>Compute</b> sub-panel.<image href="../../media/quickstartC11.png" placement="break"/>
                         </li>
