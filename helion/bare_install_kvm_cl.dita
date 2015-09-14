@@ -50,7 +50,232 @@
       </p>
     </section>
     <section id="network"><title>Network Setup and Configuration</title>
-    <p>vlan info</p>
+      <p><b>Management Network</b></p>
+      <p>The management network is the backbone used for the majority of Helion OpenStack management
+        communications. Control messages are exchanged between the Controllers, Compute hosts, and
+        Cinder backends through this network. In addition to the control flows, the management
+        network is also used to transport Swift and iSCSI based Cinder block storage traffic between
+        servers. Also implemented on this network are VxLAN tunnels that are used for enabling
+        tenant networking for the instances.</p>
+      <p>When provisioning the IP Range, allocate sufficient IP addresses to cover both the current
+        number of servers and any planned expansion. Use the following table to help calculate the
+        requirements:</p>
+      <p><table frame="all" rowsep="1" colsep="1" id="mgmt_net_ip">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+              <row>
+                <entry>Instance</entry>
+                <entry>Description</entry>
+                <entry>IPs</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Controller server O/S (x3)</entry>
+                <entry/>
+                <entry>3</entry>
+              </row>
+              <row>
+                <entry>Controller VIP</entry>
+                <entry/>
+                <entry>1</entry>
+              </row>
+              <row>
+                <entry>Compute servers (2nd thru 100th)</entry>
+                <entry>single IP per server</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>VSA VM servers</entry>
+                <entry>single IP per server</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>VSA VIP per cluster</entry>
+                <entry/>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="mgmt_net_checklist">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1" colwidth="25pt"/>
+            <colspec colname="c2" colnum="2" colwidth="600pt"/>
+            <colspec colname="c3" colnum="3" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>&#9744;</entry>
+                <entry>Item</entry>
+                <entry>Value</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>Network is untagged</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>No DHCP servers other than Helion are on the network</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Switch PVID used to map any "internal" VLANs to untagged</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>IP CIDR</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>IP Range (Usable IPs)</entry>
+                <entry>
+                  <p>begin:</p>
+                  <p>end:</p>
+                </entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>Default IP Gateway</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>VLAN ID</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p><b>IPMI Network</b></p>
+      <p>The IPMI network is used to connect the IPMI interfaces on the servers that are assigned
+        for use with implementing the cloud. For HP ProLiant servers, the IPMI network connects to
+        the HP iLO management device port for the server. This network is used by Cobbler to control
+        the state of the servers during baremetal deployments.</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="ipmi_net_checklist">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1" colwidth="25pt"/>
+            <colspec colname="c2" colnum="2" colwidth="600pt"/>
+            <colspec colname="c3" colnum="3" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>&#9744;</entry>
+                <entry>Item</entry>
+                <entry>Value</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>Network is untagged</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Routable to the Managemenet Network</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>IP Subnet</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>Default IP Gateway</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p><b>External API Network</b></p>
+      <p>The External network is used to connect OpenStack endpoints to an external public network
+        such as a company’s intranet or the public internet in the case of a public cloud
+        provider.</p>
+      <p>When provisioning the IP Range, allocate sufficient IP addresses to cover both the current
+        number of servers and any planned expansion. Use the following table to help calculate the
+        requirements.</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="extapi_net_ip">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+              <row>
+                <entry>Instance</entry>
+                <entry>Description</entry>
+                <entry>IPs</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Controller server O/S (x3)</entry>
+                <entry/>
+                <entry>3</entry>
+              </row>
+              <row>
+                <entry>Controller VIP</entry>
+                <entry/>
+                <entry>1</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="extapi_net_checklist">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1" colwidth="25pt"/>
+            <colspec colname="c2" colnum="2" colwidth="600pt"/>
+            <colspec colname="c3" colnum="3" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>&#9744;</entry>
+                <entry>Item</entry>
+                <entry>Value</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry>VLAN Tag assigned:</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>IP CIDR</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry>IP Range (Usable IPs)</entry>
+                <entry>
+                  <p>begin:</p>
+                  <p>end:</p>
+                </entry>
+              </row>
+              <row>
+                <entry/>
+                <entry>Default IP Gateway</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
     </section>
     <section id="deployer"><title>Deployer</title>
       <p>This server contains the Helion OpenStack installer, which is based on Git, Ansible, and
@@ -89,7 +314,7 @@
               </row>
               <row>
                 <entry/>
-                <entry>Install NTP</entry>
+                <entry>Install and configure NTP for your environment</entry>
                 <entry/>
               </row>
               <row>
@@ -269,7 +494,7 @@
       </p>
     </section>
     <section id="compute"><title>Compute Hosts</title>
-    <p>One or more KVM Compute servers will be used as the compute host targets for instances.</p>
+      <p>One or more KVM Compute servers will be used as the compute host targets for instances.</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_m3w_32p_ht">
           <tgroup cols="2">
@@ -350,7 +575,8 @@
       </p>
     </section>
     <section id="vsa"><title>VSA Hosts</title>
-    <p>One or more servers with local disk volumes running HP StoreVirtual VSA to provide Cinder block storage resources.</p>
+      <p>One or more servers with local disk volumes running HP StoreVirtual VSA to provide Cinder
+        block storage resources.</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="vsa_reqs">
           <tgroup cols="2">
