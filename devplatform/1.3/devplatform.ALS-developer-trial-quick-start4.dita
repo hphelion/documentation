@@ -64,13 +64,13 @@
     --os-username &lt;OS_USERNAME from openstackrc&gt; ^
     --os-password &lt;Openstack password&gt; ^
     --os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
-   <ph props="highlight">--os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^</ph>
+    --os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
 --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
 create-cluster ^
     --keypair-name &lt;name of keypair created earlier&gt; ^
     --admin-email &lt;your login for the quick-start&gt; ^
     --admin-password &lt;your password for the quick-start&gt; ^
-    --load http://clients.als.hpcloud.com/config/trial.yml</codeblock>
+    --load http://clients.als.hpcloud.com/1.3/config/trial.yml</codeblock>
                                 </li>
                                 <li>For Mac/Unix: You do not need to open the RC file; the
                                         <varname>source</varname> command will retrieve the
@@ -80,7 +80,7 @@ cf-mgmt create-cluster \
    --keypair-name &lt;name of keypair created earlier&gt; \
    --admin-email &lt;your login for the quick-start&gt; \
    --admin-password &lt;your password for the quick-start&gt; \
-   --load http://clients.als.hpcloud.com/config/trial.yml</codeblock></li>
+   --load http://clients.als.hpcloud.com/1.3/config/trial.yml</codeblock></li>
                             </ul></li>
                         <li>After the <varname>cf-mgmt</varname> tool creates the cluster, it
                             displays the ALS Console URL. This URL will have the form
@@ -101,7 +101,5 @@ cf-mgmt create-cluster \
                     </xref></stentry>
                     </strow>
 </simpletable>
-    <p><ph props="highlight">Here's another highlighting test</ph>.</p>
-    <p>Here's another <ph props="highlight">highlighting</ph> test.</p>
 </body>
 </topic>
