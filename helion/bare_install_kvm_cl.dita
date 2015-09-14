@@ -49,6 +49,9 @@
         </table>
       </p>
     </section>
+    <section id="network"><title>Network Setup and Configuration</title>
+    <p>vlan info</p>
+    </section>
     <section id="deployer"><title>Deployer</title>
       <p>This server contains the Helion OpenStack installer, which is based on Git, Ansible, and
         Cobbler.</p>
@@ -91,77 +94,7 @@
               </row>
               <row>
                 <entry/>
-                <entry>Ensure your NTP server is placed into your /etc/ntp.conf file</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
+                <entry>Ensure your NTP server(s) is placed into your /etc/ntp.conf file</entry>
                 <entry/>
               </row>
               <row>
@@ -356,8 +289,8 @@
               </row>
               <row>
                 <entry/>
-                <entry>A NIC for PXE boot and a second NIC, or a NIC for PXE ad a set of bonded NICs
-                  are required</entry>
+                <entry>A NIC for PXE boot and a second NIC, or a NIC for PXE and a set of bonded
+                  NICs are required</entry>
               </row>
               <row>
                 <entry/>
