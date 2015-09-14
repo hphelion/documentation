@@ -90,14 +90,8 @@
 <li>Delete the directory <i>/var/cache/sherpa/ws.xxxx</i>
 </li>
 <li>Delete the contents of the <i>/var/lib/Sherpa/data</i> folder.</li>
-<li>
-<p>Apache must be restarted before this change will take effect. <!--A BR tag was used here in the original source.-->Run:</p>
-
-<codeblock>
-<codeph>service apache2 restart 
-</codeph>
-</codeblock>
-</li>
+<li> Apache must be restarted before this change will take effect.
+          <!--A BR tag was used here in the original source.-->Run:<codeblock>service apache2 restart </codeblock></li>
 </ol>
 </section>
 <section id="horizon"> <title>Horizon</title>
@@ -109,10 +103,7 @@
 <section id="deleted-service-still-appears-in-horizon"> <title>Deleted service still appears in Horizon</title>
 <p>Even though the Development Platform stack has been deleted, the service still shows up in Horizon.</p>
 <p>Resolution: Delete the service manually from the Keystone endpoint list. <!--A BR tag was used here in the original source.--> Start the command line client and enter:</p>
-<codeblock>
-  <codeph>keystone endpoint-delete $&lt;id&gt;
-</codeph>
-</codeblock>
+<codeblock>keystone endpoint-delete $&lt;id&gt;</codeblock>
 </section>
 <section id="dbaas"> <title>DBaaS</title>
 </section>
@@ -146,7 +137,8 @@
 <p>Resolution: This Nova error could have multiple causes. Do not assume that  it is out of compute resources. Check the <i>nova-scheduler</i> logs on the overcloud controllers to find the actual reason why Nova failed to schedule the instance; correct the issue; and then attempt the DNSaaS deployment again.</p>
 </section>
 <section id="entity-too-large"><title>413 Request Entity Too Large Error</title><p>Actual Error Message: <codeph>Creating constructor server failed - Error: status code != 200,
-  201, 202, or 300 , actual status code '413 Request Entity Too Large' Error has occurred creating the cluster</codeph></p>
+          201, 202, or 300, actual status code '413 Request Entity Too Large' Error has occurred
+          creating the cluster</codeph></p>
       <p>This error occurs when there isn't enough free quota in your tenant for the VM to be
         created. Check for free space and, if necessary, free up sufficient space for the VM you are
         attempting to create. If your tenant is empty, you may not have instance creation
