@@ -145,6 +145,6 @@
 <section id="issue-no-valid-host-was-found-error-received-during-installation-of-the-development-platform-and-dnaas"> <title>Issue: "No valid host was found" Error Received During Installation of the Development Platform and DNaaS</title>
 <p>Resolution: This Nova error could have multiple causes. Do not assume that  it is out of compute resources. Check the <i>nova-scheduler</i> logs on the overcloud controllers to find the actual reason why Nova failed to schedule the instance; correct the issue; and then attempt the DNSaaS deployment again.</p>
 </section>
-  <section id="entity-too-large">413 Request Entity Too Large</section><p>This error occurs when there isn't enough free quota in your tenant for the VM to be created. Check for free space and, if necessary, free up sufficient space for the VM you are attempting to create.</p>
-</body>
+  <section id="entity-too-large"><title>413 Request Entity Too Large</title><p>This error occurs when there isn't enough free quota in your tenant for the VM to be created. Check for free space and, if necessary, free up sufficient space for the VM you are attempting to create.</p>
+</section></body>
 </topic>
