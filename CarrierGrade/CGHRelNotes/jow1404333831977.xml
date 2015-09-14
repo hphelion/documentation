@@ -24,7 +24,7 @@
                 a well-known side-effect of Ethernet flow control, which could affect other VMs as
                 well as the Hypervisor itself.</p>
             <p>For more information, see <xref
-                    href="Potential Vulnerability with Intel® LAN Products with SR-IOV"
+                    href="https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00046&languageid=en-fr"
                     format="html" scope="external">the bulletin in the Intel Security
                 Center</xref>.</p>
         </section>

@@ -54,17 +54,6 @@
 </ul>
 <p>The subsequent sections provide the detailed instructions on  the integration workflow.</p>
 </section>
-<section id="multipath-support"> <title>Multipath Support</title>
-<p>HP Helion OpenStack 1.1 release supports mutipath for HP 3PAR FC. You can enable multipath for HP 3PAR FC volumes only.</p>
-<p>To enable multipath move the <codeph>/etc/multipath.conf</codeph> to  <codeph>/tmp</codeph>.</p>
-<codeblock>
-  <codeph>    mv /etc/multipath.conf /tmp
-</codeph>
-</codeblock>
-<p>Restart the multipath daemon <codeph>service multipath-tools restart</codeph> on all compute and controller nodes. The <codeph>multipath -ll</codeph> command  lists the devices and path.</p>
-      <note> With HP Helion OpenStack 1.1 release, 3PAR native multipath is enabled by
-        default.</note>
-</section>
 <section id="working-with-hp-storeserv"> <title>Working with HP StoreServ</title>
 <p>HP 3PAR StoreServ can be configured for the cloud using the Horizon dashboard or using HP Sirius CLI</p>
 </section>
