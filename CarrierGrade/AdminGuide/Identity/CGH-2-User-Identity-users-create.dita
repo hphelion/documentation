@@ -20,58 +20,40 @@
     exist</xref> before you
         can create users.</p>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the Users link on the Admin dashboard Identity panel.</p>
-</li>
-<li>
-<p>In the Users screen, click Create User.</p>
-</li>
-<li>
-<p>In the Create User screen, enter the following:</p>
-
-<ul>
-<li>User Name - Enter a name for the user. The user will need this name to log in.</li>
-<li>Email - Enter an email associated with this user.</li>
-<li>Password - Enter a password for the user. The user will need the password to log in.</li>
-<li>Confirm Password - Re-enter the password to confirm.</li>
-<li>Primary Project - Select a primary project for the user. The primary project is simply the first project the user is associated with.</li>
-<li>Role - Select a role for the user. The role determines many of the tasks that the user can perform.</li>
-</ul>
-</li>
-<li>
-<p>Click Create User.</p>
-
-<p>The user is created and appears in the user list.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Identity</b> dashboard, then the <b>Users</b> panel.</li>
+<li>In the <b>Users</b> table, click <b>Create User</b>.</li>
+<li>In the <b>Create User</b> screen, enter the following:<ul>
+            <li><b>User Name</b> - Enter a name for the user. The user will need this name to log
+              in.</li>
+            <li><b>Email</b> - Enter an email associated with this user.</li>
+            <li><b>Password</b> - Enter a password for the user. The user will need the password to
+              log in.</li>
+            <li><b>Confirm Password</b> - Re-enter the password to confirm.</li>
+            <li><b>Primary Project</b> - Select a primary project for the user. The primary project
+              is simply the first project the user is associated with.</li>
+            <li><b>Role</b> - Select a role for the user. The role determines many of the tasks that
+              the user can perform.</li>
+          </ul></li>
+<li>Click <b>Create User</b>.<p>The user is created and appears in the user list.</p></li>
 </ol>
 </section>
 <section id="deleteuser"> <title>Delete a user</title>
 <p>To delete a user:</p>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the Users link on the Admin dashboard Identity panel.</p>
-</li>
-<li>
-<p>In the Users screen, for the user you want to deleite, click More &gt; Delete User.</p>
-</li>
-<li>
-<p>In the confirmation dialog that appears, click Delete User.</p>
-
-<p>The user is removed and no longer available in the domain.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Identity</b> dashboard, then the <b>Users</b> panel.</li>
+<li>In the <b>Users</b> table, for the user you want to deleite, click <b>Edit User</b> then
+            <b>Delete User</b>.</li>
+<li>In the confirmation dialog that appears, click <b>Delete User</b>.<p>The user is removed and no
+            longer available in the domain.</p></li>
 </ol>
-<p>
-  <xref type="section" href="#topic1688"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

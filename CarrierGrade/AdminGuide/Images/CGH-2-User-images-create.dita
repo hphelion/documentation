@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2491">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Creating Images</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Creating and Deleting Images</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,52 +12,71 @@
 <!--UNDER REVISION-->
  <!--./UseCases/TasksforUsers/Images/1.1commercial.dashboard.images.create.md-->
  <!--permalink: /helion/commercial/1.1/dashboard/managing/images/create/--></p>
-<p>Creating a new image for use in HP Helion OpenStack requires two general steps.</p>
-<p>The first step is to create an ISO image file outside of your HP Helion OpenStack</p>
-<p>When the ISO image file is complete and ready for use, you use HP Helion OpenStack to upload the image to your cloud.</p>
-<p>
-<b>Note:</b> After you upload an image, it is considered <i>golden</i> and you cannot change it.</p>
-<section id="create-an-image"> <title>Create an image</title>
-<ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Images</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
-</li>
-<li>
-<p>In the <b>Images</b> screen, click <b>Create Image</b>.</p>
-</li>
-<li>
-<p>In the <b>Create an Image</b> screen, provide the image information:</p>
+<section id="create-an-image"><p>You can create and delete virthal machine images as needed.</p><ul
+        id="ul_tkv_rwx_3t">
+        <li><xref href="#topic2491/create-an-image" format="dita">Create an image</xref></li>
+        <li><xref href="#topic2491/delete-an-image" format="dita">Delete an image</xref></li>
+      </ul><title>Create an image</title>Creating a new image for use in HP Helion OpenStack
+      requires two general steps.<p>The first step is to create an ISO image file outside of your HP
+        Helion OpenStack</p><p>When the ISO image file is complete and ready for use, you use HP
+        Helion OpenStack to upload the image to your cloud.</p><p>
+        <b>Note:</b> After you upload an image, it is considered <i>golden</i> and you cannot change
+        it.</p><ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Images</b>
+          tab. <p>The images in the domain are listed.</p></li>
+        <li>In the <b>Images</b> table, click <b>Create Image</b>.</li>
+        <li>In the <b>Create an Image</b> screen, provide the image information:<ul>
+            <li><b>Name</b> - Enter a name for the image.</li>
+            <li><b>Description</b> - Optionally, enter a brief description of the image.</li>
+            <li><b>Image Source</b> - Choose the image source from the list. Your choices are Image
+              Location and Image File.</li>
+            <li><b>Image File or Image Location</b> - Based on your selection for Image Source, you
+              either enter the location URL of the image in the Image Location field. or browse to
+              the image file on your system and add it. <b>Note:</b> The Image Location field must
+              be a valid and direct URL to the image binary. URLs that redirect or serve error pages
+              will result in unusable images.</li>
+            <li><b>Format</b> - Select the correct format (for example, QCOW2) for the image.</li>
+            <li><b>Architecture</b> - Specify the architecture. For example, i386 for a 32-bit
+              architecture or x86-64 for a 64-bit architecture.</li>
+            <li><b>Minimum Disk</b> - Enter the minimum disk size required to boot the image. Leave
+              the field blank to specify no minimum. </li>
+            <li><b>Minimum RAM (MB)</b> - Enter the minimum memory size required to boot the image.
+              Leave the field blank to specify no minimum.</li>
+            <li><b>Public</b> - Select this option to make the image public to all users with access
+              to the current project. Leave the option clear to allow the image to be used in all
+              projects in the domain.</li>
+            <li><b>Protected</b> - Select this option to prevent the image from being deleted. Leave
+              the option clear to allow the image to be deleted.</li>
+          </ul></li>
+        <li>Click <b>Create Image</b> to launch the image.</li>
+        <li>Optionally, you can click <b>Launch</b> to <xref
+            href="../Instances/CGH-2-User-Instance-create.dita#topic2817">create a running
+            instance</xref> based on this image.</li>
+      </ol></section>
+  <section id="delete-an-image"> <title>Delete an image</title>
+    <p>You can delete images, as needed. A deleted image is no longer available. Any instances launched from the deleted instance are not affected.</p>
 
-<ul>
-<li>Name - Enter a name for the image.</li>
-<li>Description - Optionally, enter a brief description of the image.</li>
-<li>Image Source - Choose the image source from the list. Your choices are Image Location and Image File.</li>
-<li>Image File or Image Location - Based on your selection for Image Source, you either enter the location URL of the image in the Image Location field. or browse to the image file on your system and add it.
-<b>Note:</b> The Image Location field must be a valid and direct URL to the image binary. URLs that redirect or serve error pages will result in unusable images.</li>
-<li>Format - Select the correct format (for example, QCOW2) for the image.</li>
-<li>Architecture - Specify the architecture. For example, i386 for a 32-bit architecture or x86-64 for a 64-bit architecture.</li>
-<li>Minimum Disk - Enter the minimum disk size required to boot the image. Leave the field blank to specify no minimum. </li>
-<li>Minimum RAM (MB) - Enter the minimum memory size required to boot the image. Leave the field blank to specify no minimum.</li>
-<li>Public - Select this option to make the image public to all users with access to the current project. Leave the option clear to allow the image to be used in all projects in the domain.</li>
-<li>Protected - Select this option to prevent the image from being deleted.  Leave the option clear to allow the image to be deleted.</li>
-</ul>
-</li>
-<li>
-<p>Click <b>Create Image</b> to launch the image.</p>
-</li>
-<li>
-<p>Optionally, you can click <b>Launch</b> to <xref
-  href="../Instances/CGH-2-User-Instance-create.dita#topic2817">create a running instance</xref> based on this image.</p>
-</li>
-</ol>
-<p>
-  <xref type="section" href="#topic2491"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
-</section>
+    <p>To delete a private image:</p>
+    <ol>
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        Helion OpenStack Horizon Dashboard</xref>.</li>
+      <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+        appropriate region and project</xref>.</li>
+      <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Images</b>
+        tab. <p>The images in the domain are listed.</p></li>
+      <li>In the <b>Images</b> screen, click the check box next to the image name you want to delete. To
+        select all images, click the check box next to <b>Image Name</b> the top row of the image
+        list.</li>
+      <li>Click <b>Delete</b> to delete the image.</li>
+      <li>The image is no longer available. Any instances launched from the deleted instance are not
+        affected.</li>
+    </ol>
+    
+  </section>
+
 </body>
 </topic>

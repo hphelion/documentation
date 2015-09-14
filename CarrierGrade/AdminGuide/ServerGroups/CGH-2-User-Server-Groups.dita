@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic804">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing Server Groups</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--UNDER REVISION--><!--./UseCases/TasksforUsers/Instances/1.1commercial.managing.instances.users.md--><!--permalink: /helion/commercial/1.1/dashboard/managing/instances/users/--></p>
+    <p>From the Titanium Server Admin Guide </p>
+    <p>Server Groups is a mechanism to group virtual machines to which a common set of attributes is
+      applied.</p>
+    <p>
+      <b>Note:</b> This feature applies only to servers in regionone.</p>
+    <p><image href="../../../media/CGH-2-server-group.png" width="600" id="image_cr5_csv_ht"/></p>
+    <p>To create a server group:</p>
+
+      <ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Server
+            Groups</b> tab. </li>
+        <li>In the <b>Server Group</b> table, click <b>Create Server Group</b>.</li>
+        <li>In the <b>Create Server Group</b> dialog, specify the following information:<ul
+          id="ul_ewj_3sv_ht">
+          <li><b>Project</b> Select a project to associate the server group.</li>
+          <li><b>Server Group Name</b> Specify a name for the new server group. </li>
+          <li><b>Policy</b> Select a scheduling policy: <ul>
+              <li><b>affinity</b>. When this option is selected, new instances launched as part of
+                this server group are scheduled to run on the same compute node. </li>
+              <li><b>anti-affinity</b>. When this option is selected, new instances launched as part
+                of this server group are scheduled to run on different compute nodes. For example,
+                you can use the anti-affinity option when you have two virtual machines that run in
+                1:1 HA protection mode, and you want them to be protected against hardware
+                failures.</li>
+            </ul></li>
+          <li><b>Best Effort</b>. Select this option to enforce the policy in place, affinity, or
+            anti-affinity, on a best-effort basis. If for any reason the policy cannot be enforced,
+            then the deployment of the new instance proceeds using the regular scheduling. When
+            cleared, the policy in place must be executable for the new instance to be scheduled.
+            Launching of a new virtual machine fails if there are no resources to comply with the
+            selected policy. </li>
+          <li><b>Max Group Size (Instances)</b>. Determines the maximum number of instances that can
+            co-exist as part of this server group. </li>
+        </ul></li>
+        <li>Click <b>Create Server Group</b>. </li>
+</ol>
+    
+    <p>You can add instance to a server group as you <xref
+        href="../Instances/CGH-2-User-Instance-create.dita#topic2817">create the
+      instance</xref>.</p>
+  </body>
+</topic>

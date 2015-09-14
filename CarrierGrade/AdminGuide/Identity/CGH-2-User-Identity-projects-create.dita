@@ -16,68 +16,49 @@
         href="../Network/CGH-2-User-network-create.dita#topic3372">delete</xref> networks as needed..</p>
 <section id="projectcreate"> <title>Create a project</title>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Projects</b> link on the <b>Admin</b> dashboard <b>Identity</b> panel.</p>
-</li>
-<li>
-<p>In the <b>Projects</b> panel, click <b>Create Project</b>.</p>
-</li>
-<li>
-<p>On the <b>Project Info</b> tab of the <b>Create Project</b> screen:</p>
-
-<p>a. Enter a unique name for the project.
-b, Enter an identifying description for the project.
-c. Leave <b>Enabled</b> selected to create an active project or clear the option to create a</p>
-</li>
-<li>
-<p>Click the <b>Project Members</b> tab.</p>
-</li>
-<li>
-<p>On the <b>Project Members</b> tab select the users who can access the project by clicking the <b>+</b> icon for each user.</p>
-</li>
-<li>
-<p>Click the <b>Quotas</b> tab.</p>
-</li>
-<li>
-<p>Optionally, specify operational quotas for the project.     Metadata Items - Enter the maximum number of metadata items allowed per instance.</p>
-
-<ul>
-<li>VCPUs Enter the maximum number of instance cores allowed for the project.</li>
-<li>Instances Enter the maximum number of instances allowed for the project.</li>
-<li>Injected Files Enter the maximum number of injected files allowed for the project.</li>
-<li>Injected File Content Bytes Enter the maximum number of content bytes allowed per injected file.</li>
-<li>RAM Enter the maximum megabytes of instance RAM allowed for the project.</li>
-</ul>
-</li>
-<li>
-<p>Click <b>Create Project</b>.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Identity</b> dashboard, then the <b>Projects</b> panel.</li>
+<li>In the <b>Projects</b> table, click <b>Create Project</b>.</li>
+<li>On the <b>Project Info</b> tab of the <b>Create Project</b> screen:<p>
+            <ol id="ol_fsy_msy_3t">
+              <li>Enter a unique name for the project. </li>
+              <li>Enter an identifying description for the project. </li>
+              <li>Leave <b>Enabled</b> selected to create an active project or clear the option to
+                create a non-active project</li>
+            </ol>
+          </p></li>
+<li>Click the <b>Project Members</b> tab.</li>
+<li>On the <b>Project Members</b> tab select the users who can access the project by clicking the
+            <b>+</b> icon for each user.</li>
+<li>Click the <b>Quotas</b> tab.</li>
+<li>Optionally, specify operational quotas for the project. Metadata Items - Enter the maximum
+          number of metadata items allowed per instance.<ul>
+            <li>VCPUs Enter the maximum number of instance cores allowed for the project.</li>
+            <li>Instances Enter the maximum number of instances allowed for the project.</li>
+            <li>Injected Files Enter the maximum number of injected files allowed for the
+              project.</li>
+            <li>Injected File Content Bytes Enter the maximum number of content bytes allowed per
+              injected file.</li>
+            <li>RAM Enter the maximum megabytes of instance RAM allowed for the project.</li>
+          </ul></li>
+<li>Click <b>Create Project</b>.</li>
 </ol>
 </section>
 <section id="projectdel"> <title>Delete a project</title>
 <p>As an admin, you can delete projects. Compute instances associated with a project will not be deleted.</p>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Projects</b> link on the <b>Admin</b> dashboard <b>Identity</b> panel.</p>
-</li>
-<li>
-<p>For the project you want to delete, click <b>More &gt; Delete Project</b>.</p>
-</li>
-<li>
-<p>In the confirmation screen, click <b>Delete Project</b>.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Identity</b> dashboard, then the <b>Projects</b> panel.</li>
+        <li>In the <b>Projects</b> table, for the project you want to delete, click <b>Edit
+            Project</b> then <b>Delete Project</b>.</li>
+<li>In the confirmation screen, click <b>Delete Project</b>.</li>
 </ol>
-<p>The project is no longer available.  <xref type="section" href="#topic2004"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

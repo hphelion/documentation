@@ -16,34 +16,23 @@
 <section id="creating-a-snapshot"> <title>Creating a snapshot</title>
 <p>To create a snapshot:</p>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
-</li>
-<li>
-<p>In the <b>Instances</b> screen, for the instance you want to create a snapshot, click <b>Create Snapshot</b>.</p>
-</li>
-<li>
-<p>On the <b>Create Snapshot</b> tab, enter a name for the snapshot.</p>
-</li>
-<li>
-<p>Click <b>Launch</b> to launch the instance.</p>
-
-<p>A snapshot image is created on the <b>Images</b> link.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Instances</b> tab. </li>
+        <li>In the <b>Instances</b> table, for the instance you want to rebuild, click <b>Edit
+            Instance</b> then <b>Create Snapshot</b>.</li>
+<li>On the <b>Create Snapshot</b> tab, enter a name for the snapshot.</li>
+<li>Click <b>Create Snapshot</b> to launch the instance.<p>A snapshot image is created on <xref
+              href="../Images/CGH-2-User-image.dita#topic1827">the <b>Images</b>
+          list</xref>.</p></li>
 </ol>
-<p>When you create a snapshot, by default the snapshot image can be used only with the current project and it can be deleted.</p>
 <p>You can 
   <xref href="../Images/CGH-2-User-images-snapshot-public.dita#topic902">make the snapshot public</xref>for use in all
         projects in the domain and you can 
   <xref href="../Images/CGH-2-User-images-protect.dita#topic1019">protect the image</xref>from being deleted.</p>
-<p>
-  <xref type="section" href="#topic1162"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

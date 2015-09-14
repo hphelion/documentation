@@ -17,27 +17,15 @@
 <p>As an admin, you can specify a <i>primary</i> project for each user.</p>
 <section id="specify-a-primary-project"> <title>Specify a primary project</title>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the Users link on the Admin dashboard Identity panel.</p>
-</li>
-<li>
-<p>For the user you want to modify, click the Edit button.</p>
-</li>
-<li>
-<p>In the Update User screen, select a project from the Primary Project list.</p>
-</li>
-<li>
-<p>Click Update User.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Identity</b> dashboard, then the <b>Users</b> panel.</li>
+        <li>In the <b>Users</b> table, for the user you want to delete, click <b>Edit User</b>.</li>
+<li>In the <b>Update User</b> screen, select a project from the <b>Primary Project</b> list.</li>
+<li>Click <b>Update User</b>.</li>
 </ol>
-<p>
-  <xref type="section" href="#topic1138"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

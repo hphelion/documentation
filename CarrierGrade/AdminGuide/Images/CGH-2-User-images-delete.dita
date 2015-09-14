@@ -16,30 +16,20 @@
 <section id="delete-an-image"> <title>Delete an image</title>
 <p>To delete a private image:</p>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Images</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
-</li>
-<li>
-<p>In the <b>Images</b> screen, click <b>Project</b> to display all images associated with your project.</p>
-</li>
-<li>
-<p>In the <b>Images</b> screen, click the check box next to the image name you want to delete. To select all images, click the check box next to <b>Image Name</b> the top row of the image list.</p>
-</li>
-<li>
-<p>Click <b>Delete</b> to delete the image.</p>
-</li>
-<li>
-<p>The image is no longer available. Any instances launched from the deleted instance are not affected.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Images</b>
+          tab. <p>The images in the domain are listed.</p></li>
+<li>In the <b>Images</b> screen, click the check box next to the image name you want to delete. To
+          select all images, click the check box next to <b>Image Name</b> the top row of the image
+          list.</li>
+<li>Click <b>Delete</b> to delete the image.</li>
+<li>The image is no longer available. Any instances launched from the deleted instance are not
+          affected.</li>
 </ol>
-<p>
-  <xref type="section" href="#topic1078"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
+
 </section>
 </body>
 </topic>

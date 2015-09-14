@@ -12,7 +12,6 @@
 <!--UNDER REVISION-->
  <!--./UseCases/TasksforUsers/Networks/1.1commercial.managing.network.md-->
  <!--permalink: /helion/commercial/1.1/dashboard/managing/networks/--></p>
-<p>A network is a pluggable, scalable and API-driven system for managing networks and IP addresses.</p>
 <p>You can use the dashboards to create, delete, and configure your HP Helion OpenStack network and subnet(s). You can also manage the ports in your network.</p>
 <p>How you interact with your network environment depends upon your user type, either an administrative user (admin) or a non-administrative user (user).</p>
 <p>
@@ -47,10 +46,6 @@
 <li>
   <xref href="CGH-2-User-network-ports.dita#topic3171">Create, Modify, or Delete a port on a Network</xref></li>
 </ul>
-<p>
-  <xref type="section" href="#topic1741"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

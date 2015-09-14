@@ -21,40 +21,30 @@
 <section id="suspend-an-instance"> <title>Suspend an instance</title>
 <p>To suspend an instance:</p>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
-</li>
-<li>
-<p>In the <b>Instances</b> screen, for the instance you want to modify, click <b>More &gt; Suspend Instance</b>.</p>
-
-<p>The status of the instance reports <i>Suspended</i>.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Instances</b> tab. </li>
+<li>In the <b>Instances</b> screen, for the instance you want to suspend, click <b>Edit Instance</b>
+          then <b>Suspend Instance</b>.<p>The status of the instance reports
+          <i>Suspended</i>.</p></li>
 </ol>
 </section>
 <section id="resume-an-instance"> <title>Resume an instance</title>
 <p>To resume an instance:</p>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
-</li>
-<li>
-<p>In the <b>Instances</b> screen, for the instance you want to modify, click <b>More &gt; Resume Instance</b>.</p>
-
-<p>The status of the instance reports <i>Running</i>.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Instances</b> tab. </li>
+        <li>In the <b>Instances</b> screen, for the instance you want to resume, click <b>Edit
+            Instance</b> then <b>Resume Instance</b>.<p>The status of the instance reports
+              <i>Running</i>.</p></li>
 </ol>
-<p>
-  <xref type="section" href="#topic1594"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

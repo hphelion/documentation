@@ -17,34 +17,23 @@
 <section id="rebuilding-an-instance"> <title>Rebuilding an instance</title>
 <p>To rebuild an instance:</p>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
-</li>
-<li>
-<p>In the <b>Instances</b> screen, for the instance you want to rebuild, click <b>Menu &gt; Rebuild Instance</b>.</p>
-</li>
-<li>
-<p>In the <b>Rebuild Instances</b> screen:</p>
-
-<ul>
-<li>Select the image to use to rebuild the instance. You can select the same image or rebuild using a different image.</li>
-<li>Specify whether the instance will automatically partition, based on the image, or you will manually partition the instance.</li>
-</ul>
-</li>
-<li>
-<p>In the confirmation screen, click <b>Rebuild Instance</b>.</p>
-
-<p>The progress of the reboot is displayed in the <b>Task</b> column on the <b>Instances</b> screen.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Instances</b> tab. </li>
+        <li>In the <b>Instances</b> table, for the instance you want to rebuild, click <b>Edit
+            Instance</b> then <b>Rebuild Instance</b>. </li>
+<li>In the <b>Rebuild Instances</b> screen:<ul>
+            <li>Select the image to use to rebuild the instance. You can select the same image or
+              rebuild using a different image.</li>
+            <li>Specify whether the instance will automatically partition, based on the image, or
+              you will manually partition the instance.</li>
+          </ul></li>
+<li>In the confirmation screen, click <b>Rebuild Instance</b>.<p>The progress of the reboot is
+            displayed in the <b>Task</b> column on the <b>Instances</b> screen.</p></li>
 </ol>
-<p>
-  <xref type="section" href="#topic1314"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

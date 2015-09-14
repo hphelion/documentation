@@ -23,10 +23,9 @@
                 specific conditions, Virtual Machines (VMs) can cause network congestion spreading,
                 a well-known side-effect of Ethernet flow control, which could affect other VMs as
                 well as the Hypervisor itself.</p>
-            <p>For more information, see <xref
-                    href="Potential Vulnerability with Intel® LAN Products with SR-IOV"
-                    format="html" scope="external">the bulletin in the Intel Security
-                Center</xref>.</p>
+            <p>For more information, see the <xref
+                    href="https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00046&amp;languageid=en-fr"
+                    format="html" scope="external">bulletin in the Intel Security Center</xref>.</p>
         </section>
         <section><title>Non-shared services do not work from Horizon dashboard</title>
             <ol><li>1. Go to each controller node in the non-KVM region and replace <codeph>user.py</codeph> file in the following location:

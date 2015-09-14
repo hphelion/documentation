@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2139">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Working with Hypervisors</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+</metadata>
+</prolog>
+<body>
+    <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.md--><!--permalink: /helion/openstack/carrier/admin/host/management/hostaggregate/--></p>
+    <!-- From the Titanium Server Admin Guide -->
+    <p>Hypervisors are the compents in HP Helion OpenStack Carrier Grade that creates and runs
+      virtual machines.</p>
+    <p><image href="../../../media/CGH-2-hypervisors.png" width="600" id="image_fsm_cg5_ht"/></p>
+    <p>To view charts for monitoring hypervisor resource usage on compute nodes:</p>
+    <ol>
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          OpenStack Horizon Dashboard</xref>.</li>
+      <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+          appropriate region and project</xref>.</li>
+      <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+          <b>Hypervisors</b> tab. </li>
+    </ol>
+    <p>For each hypervisor, the following information is displayed:</p>
+    <p>
+      <ul id="ul_xj2_hh5_ht">
+        <li>CPU Type </li>
+        <li>VCPUs (used) </li>
+        <li>VCPUs (total) </li>
+        <li>RAM (used) </li>
+        <li>RAM (total) </li>
+        <li>Storage (used) </li>
+        <li>Storage (total) </li>
+        <li>Instances </li>
+        <li>Status</li>
+      </ul>
+    </p>
+    <section>
+      <title>Compute Hosts</title>
+      <p>Click the <b>Compute Hosts</b> table to view information on the hosts.</p>
+      <p><image href="../../../media/CGH-2-hypervisors-compute-host.png" width="600"
+          id="image_kth_4j5_ht"/></p>
+      <p>The following infromation appears for each host:</p>
+      <p>
+        <ul id="ul_ywt_sj5_ht">
+          <li>Zone </li>
+          <li>Status </li>
+          <li>State </li>
+          <li>Updated At </li>
+          <li>Actions</li>
+        </ul>
+      </p>
+    </section>
+    <section>
+      <title>Hypervisor Instances</title>
+      <p>Click the name of a hypervisor to view instances associated with that hypervisor.</p>
+      <p><image href="../../../media/CGH-2-hypervisors-servers.png" width="600"
+          id="image_ldl_xh5_ht"/></p>
+      <p>In the Hypervisor Instances list, click an instance to see <xref
+          href="../Instances/CGH-2-User-Instance-Overview.dita#topic804">Instance Details</xref>.
+      </p>
+    </section>
+    <p/>
+  </body>
+</topic>

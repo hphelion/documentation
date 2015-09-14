@@ -15,31 +15,25 @@
 <p>To view image details:
 1. <xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
 <ol>
-<li>
-<p>Click the <b>Images</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
-</li>
-<li>
-<p>Click the name of the image.</p>
-</li>
-</ol>
-<p>**Note:** When your cursor is on the image name, the name is underlined.</p>
-<ol>
-<li>
-<p>The Image Details screen shows detailed information about the image, including:</p>
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          OpenStack Horizon Dashboard</xref>.</li>
+      <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+          appropriate region and project</xref>.</li>
+      <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Images</b>
+        tab. <p>The images in the domain are listed.</p></li>
+<li>Click the name of the image.
 
-<ul>
-<li>name and ID</li>
-<li>status</li>
-<li>creation and modification date(s)</li>
-<li>size</li>
-<li>formats</li>
-<li>size</li>
-</ul>
-</li>
+  <p><b>Note:</b> When your cursor is on the image name, the name is underlined.</p></li>
+
+<li>The Image Details screen shows detailed information about the image, including:<ul>
+          <li>name and ID</li>
+          <li>status</li>
+          <li>creation and modification date(s)</li>
+          <li>size</li>
+          <li>formats</li>
+          <li>size</li>
+        </ul></li>
 </ol>
-<p>
-  <xref type="section" href="#topic788"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
+<p> </p>
 </body>
 </topic>

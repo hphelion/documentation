@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic1643">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Launching a Virtual Machine
+    Console</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--UNDER REVISION--><!--./UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.pause.md--><!--permalink: /helion/commercial/1.1/dashboard/managing/instances/pause/--></p>
+    <p>You can launch a console session to a virtual machine directly through the Horizon
+      interface.</p>
+    <p><image href="../../../media/CGH-2-instances-console.png" width="600" id="image_f5q_fp5_ht"
+      /></p>
+    <p>To pause an instance:</p>
+    <ol id="ol_mgl_s45_ht">
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          OpenStack Horizon Dashboard</xref>.</li>
+      <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+          appropriate region and project</xref>.</li>
+      <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Instances</b>
+        tab. </li>
+      <li>In the <b>Instances</b> table, for the instance you want to pause, click <b>Edit
+          Instance</b> then <b>Console</b>.<p>To exit the full-screen mode, click the browser's back
+          button. Note that you might return to the <b>Project</b> dashboard after the console
+          window closes.</p></li>
+    </ol>
+  </body>
+</topic>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3171">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Changing the Admin State of Ports</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+    <p><!--UNDER REVISION--><!--./UseCases/TasksforAdmins/Network/1.1commercial.dashboard.network.ports.md--><!--permalink: /helion/commercial/1.1/dashboard/managing/network/ports/--></p>
+    <p>You can edit the admin state, as needed, to make a port active or non-active.</p>
+    <section id="editport">
+      <ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>Network</b> panel.</li>
+        <li>Click the name of the network you want to work with.</li>
+        <li>On the <b>Network Detail</b> page, for the port you want to delete, click <b>Edit
+            Port</b>.</li>
+        <li>On the <b>Edit Port</b> screen, leave the <b>Admin State</b> field selected to create a
+          port in the active state. Or, clear the field to create a non-active port.</li>
+        <li>Click <b>Save Changes</b>.<p>A message appears indicating if the port was successfully
+            modified.</p></li>
+      </ol>
+    </section>
+  </body>
+</topic>

@@ -1,7 +1,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
     
-    <title> HP Helion  OpenStack  Carrier Grade 2.0: Userr Guide</title>
+    <title> HP Helion OpenStack Carrier Grade 2.0: User Guide</title>
     <topicmeta>
         <copyright>
             <copyryear year="2015"/>
@@ -156,13 +156,18 @@
                     navtitle="Working with Host Interface  Profiles" locktitle="yes"/>
             </topicref>
         </topicref>
-        <topichead navtitle="Managing Hypervisors"/>
+        <topicref href="Inventory/CGH-2-User-hypervisors.dita" navtitle="Managing Hypervisors"
+            locktitle="yes"/>
         <topicref href="Inventory/CGH-2-User-host-management-hostaggregate.dita"
             navtitle="Managing Host Aggregates" locktitle="yes"/>
-        <topicref href="Instances/CGH-2-User-Instance-Overview.dita" navtitle="Managing Instances"
-            locktitle="yes">
-            <topicref href="Instances/CGH-2-User-Instance-create.dita" navtitle="Creating Instances"
-                locktitle="yes"/>
+        <topicref href="Instances/CGH-2-User-Instance-Overview.dita"
+            navtitle="Managing Virtual Machine Instances" locktitle="yes">
+            <topicref href="Instances/CGH-2-User-Instance-create.dita"
+                navtitle="Creating Virtual Machine Instances" locktitle="yes"/>
+            <topicref href="Instances/CGH-2-User-Instance-console.dita"
+                navtitle="Launching a Virtual Machine Console" locktitle="yes"/>
+            <topicref href="Instances/CGH-2-User-Instance-log.dita"
+                navtitle="Viewing a Virtual Machine Log" locktitle="yes"/>
             <topicref href="Instances/CGH-2-User-Instance-pause.dita"
                 navtitle="Pausing and Un-pausing Instances" locktitle="yes"/>
             <topicref href="Instances/CGH-2-User-Instance-reboot.dita"
@@ -176,14 +181,16 @@
             <topicref href="Instances/CGH-2-User-Instance-terminate.dita"
                 navtitle="Terminating Instances" locktitle="yes"/>
         </topicref>
+        <topicref href="ServerGroups/CGH-2-User-Server-Groups.dita"
+            navtitle="Managing Server Groups" locktitle="yes"/>
         <topicref href="Volumes/CGH-2-User-volumes-managing.dita" navtitle="Managing Volumes"
             locktitle="yes">
+            <topicref href="Volumes/CGH-2-User-volumes-create.dita"
+                navtitle="Creating, Editing, and Deleting Volumes" locktitle="yes"/>
             <topicref href="Volumes/CGH-2-User-volumes-admin.dita"
                 navtitle="Creating and Deleting Volume Types" locktitle="yes"/>
             <topicref href="Volumes/CGH-2-User-volumes-attach.dita"
                 navtitle="Attaching and Detaching Volume Instances" locktitle="yes"/>
-            <topicref href="Volumes/CGH-2-User-volumes-create.dita"
-                navtitle="Creating, Editing, and Deleting Volumes" locktitle="yes"/>
             <topicref href="Volumes/CGH-2-User-volumes-extend.dita"
                 navtitle="Extending the Size of a Volume" locktitle="yes"/>
         </topicref>
@@ -195,11 +202,9 @@
         <topicref href="Images/CGH-2-User-image.dita" navtitle="Managing Images" locktitle="yes">
             <topicref href="Images/CGH-2-User-images-create.dita" navtitle="Creating Images"
                 locktitle="yes"/>
-            <topicref href="Images/CGH-2-User-images-delete.dita" navtitle="Deleting Images"
+            <topicref href="Images/CGH-2-User-images-modify.dita" navtitle="Modifying Images"
                 locktitle="yes"/>
             <topicref href="Images/CGH-2-User-images-details.dita" navtitle="Viewing Image Details"
-                locktitle="yes"/>
-            <topicref href="Images/CGH-2-User-images-modify.dita" navtitle="Modifying Images"
                 locktitle="yes"/>
             <topicref href="Images/CGH-2-User-images-protect.dita" navtitle="Protecting Images"
                 locktitle="yes"/>
@@ -208,29 +213,34 @@
         </topicref>
         <topicref href="Network/CGH-2-User-network.dita" navtitle="Managing Networks"
             locktitle="yes">
-            <topicref href="Network/CGH-2-User-network-admin.create.dita"
-                navtitle="Creating Externally Available Networks" locktitle="yes"/>
+            <topicref href="Network/CGH-2-User-network-viewing.dita"
+                navtitle="Viewing Your Networks" locktitle="yes"/>
             <topicref href="Network/CGH-2-User-network-create.dita"
                 navtitle="Creating or Deleting Networks" locktitle="yes"/>
             <topicref href="Network/CGH-2-User-network-disable.dita"
                 navtitle="Enabling or Disabling Networks" locktitle="yes"/>
-            <topicref href="Network/CGH-2-User-network-ports.dita"
-                navtitle="Adding or Removing Ports" locktitle="yes"/>
+            <topicref href="Network/CGH-2-User-network-admin.create.dita"
+                navtitle="Creating Externally Available Networks" locktitle="yes"/>
             <topicref href="Network/CGH-2-User-network-shared.dita"
                 navtitle="Crating a Shared Network" locktitle="yes"/>
             <topicref href="Network/CGH-2-User-network-subnet.dita"
                 navtitle="Adding and Removing Subnets" locktitle="yes"/>
-            <topicref href="Network/CGH-2-User-network-viewing.dita"
-                navtitle="Viewing Your Networks" locktitle="yes"/>
+        </topicref>
+        <topicref href="Network/CGH-2-User-network-ports.dita" navtitle="Managing Ports"
+            locktitle="yes">
+            <topicref href="Network/CGH-2-User-network-ports-create.dita"
+                navtitle="Creating and Deleting Ports" locktitle="yes"/>
+            <topicref href="Network/CGH-2-User-network-ports-state.dita"
+                navtitle="Changing the Admin State of a Port" locktitle="yes"/>
+            <topicref href="Network/CGH-2-User-network-ports-edit.dita"
+                navtitle="Change the Device Associated with a Port" locktitle="yes"/>
         </topicref>
         <topicref href="Routers/CGH-2-User-routers-managing.dita" navtitle="Managing Routers"
             locktitle="yes">
-            <topicref href="Routers/CGH-2-User-routers-create.dita" navtitle="Creating a Router"
-                locktitle="yes"/>
+            <topicref href="Routers/CGH-2-User-routers-create.dita"
+                navtitle="Creating and Deleting Routers" locktitle="yes"/>
             <topicref href="Routers/CGH-2-User-routers-connect.dita"
                 navtitle="Connecting a Network to a Router" locktitle="yes"/>
-            <topicref href="Routers/CGH-2-User-routers-delete.dita" navtitle="Deleting a Router"
-                locktitle="yes"/>
         </topicref>
         <topichead navtitle="Defaults"/>
         <topichead navtitle=" Fault Management"/>

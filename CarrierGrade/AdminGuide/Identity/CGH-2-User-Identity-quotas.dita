@@ -17,44 +17,31 @@
 <p>For example, the number of gigabytes allowed per project can be controlled to make sure that a single project does not consume all of the disk space.</p>
 <section id="quotamod"> <title>Modify a quotas</title>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Projects</b> link on the <b>Admin</b> dashboard <b>Identity</b> panel.</p>
-</li>
-<li>
-<p>For the project you want to modify, click <b>More &gt; Modify Quotas</b>.</p>
-</li>
-<li>
-<p>In the <b>Edit Project</b> screen, click the <b>Quota</b> tab (should be active).</p>
-</li>
-<li>
-<p>Edit and of the following fields:</p>
-
-<ul>
-<li>Metadata Items - Enter the maximum number of metadata items allowed for the project.</li>
-<li>VCPUs - Enter the maximum number of instance cores allowed for the project.</li>
-<li>Instances - Enter the maximum number of instances allowed for the project.</li>
-<li>Injected Files - Enter the maximum number of injected files allowed for the project.</li>
-<li>Injected File Content Bytes - Enter the maximum number of content bytes allowed per injected file  for the project.</li>
-<li>Volumes - Enter the maximum number of volumes allowed for the project.</li>
-<li>Volume Snapshots - Enter the maximum number of volume snapshots allowed for the project.</li>
-<li>Total Size of Volumes and Snapshots- Enter the maximum total size for all volumes and snapshots allowed for the project.</li>
-<li>RAM - Enter the maximum megabytes of instance RAM allowed  for the project.</li>
-</ul>
-</li>
-<li>
-<p>Click <b>Save</b>.</p>
-
-<p>A message is displayed on successful modification.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Identity</b> dashboard, then the <b>Projects</b> panel.</li>
+<li>For the project you want to modify, click <b>Edit Project</b>then <b>Modify Quotas</b>.</li>
+<li>In the <b>Edit Project</b> screen, click the <b>Quota</b> tab (should be active).</li>
+<li>Edit and of the following fields:<ul>
+            <li>Metadata Items - Enter the maximum number of metadata items allowed for the
+              project.</li>
+            <li>VCPUs - Enter the maximum number of instance cores allowed for the project.</li>
+            <li>Instances - Enter the maximum number of instances allowed for the project.</li>
+            <li>Injected Files - Enter the maximum number of injected files allowed for the
+              project.</li>
+            <li>Injected File Content Bytes - Enter the maximum number of content bytes allowed per
+              injected file for the project.</li>
+            <li>Volumes - Enter the maximum number of volumes allowed for the project.</li>
+            <li>Volume Snapshots - Enter the maximum number of volume snapshots allowed for the
+              project.</li>
+            <li>Total Size of Volumes and Snapshots- Enter the maximum total size for all volumes
+              and snapshots allowed for the project.</li>
+            <li>RAM - Enter the maximum megabytes of instance RAM allowed for the project.</li>
+          </ul></li>
+<li>Click <b>Save</b>.<p>A message is displayed on successful modification.</p></li>
 </ol>
-<p>
-  <xref type="section" href="#topic1853"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

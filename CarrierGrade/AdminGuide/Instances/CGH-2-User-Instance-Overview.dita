@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic804">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing Instances</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing Virtual Machine
+    Instances</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,6 +14,7 @@
  <!--./UseCases/TasksforUsers/Instances/1.1commercial.managing.instances.users.md-->
  <!--permalink: /helion/commercial/1.1/dashboard/managing/instances/users/--></p>
 <p>You can use the dashboards to manage instances created by other users.</p>
+    <p><image href="../../../media/CGH-2-instances.png" width="600" id="image_tfv_jp5_ht"/></p>
 <p>Use the <b>Compute</b> panel on the <b>Project</b> dashboard to:</p>
 <ul>
 <li>
@@ -40,10 +42,5 @@
 </ul>
 <p>You can also <xref href="CGH-2-User-assoc-ipaddress.dita#topic2995">associate, or assign, a floating IP address</xref> to an instance. A floating IP address
       makes the instance available on the external network.</p>
-
-  <p>
-  <xref type="section" href="#topic804"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

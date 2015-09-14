@@ -16,100 +16,74 @@
 <p>A non-admin user or admin user can <xref type="section" href="#topic3372/createnet">create</xref> and <xref type="section" href="#topic3372/deletenet">delete</xref> networks as needed.</p>
 <section id="createnet"> <title>Create a network</title>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Networks</b> link on the <b>Project</b> dashboard <b>Network</b> panel.</p>
-
-<p>The network(s) for the selected project appear.</p>
-</li>
-<li>
-<p>Click <b>Create Network</b>.</p>
-</li>
-<li>
-<p>On the <b>Network</b> tab:</p>
-
-<ul>
-<li>Enter a name for the network.</li>
-<li>Leave <b>Admin State</b> selected to launch the network in the enabled state or clear the field to disable the new network.</li>
-</ul>
-</li>
-<li>
-<p>Click <b>Next</b> to configure a subnet for the network.</p>
-</li>
-<li>
-<p>On the <b>Subnet</b> tab:</p>
-
-<ul>
-<li>Enter the subnet name.</li>
-<li>Enter a network address range for the subnet in CIDR (Classless Inter-Domain Routing) format in the <b>Network Address</b> field, for example: 192.168.0.0/24.</li>
-<li>Select IPv4 or IPv6, as appropriate, in the IP Version field.</li>
-<li>Enter a gateway IP address from the subnet or leave the <b>Gateway IP</b> field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.</li>
-<li>Leave <b>Disable Gateway</b> clear to enable the default gateway for this network, or select <b>Disable Gateway</b> to create the network with no default gateway.</li>
-<li>Determine if the network is to be available in all projects in the domain or only the selected project: 
-
-<ul>
-<li>Select <b>Shared</b> to make the network available in all projects.</li>
-<li>Leave the <b>Shared</b> option clear to limit the network to the selected project. </li>
-</ul>
-</li>
-<li>Determine if the network is to be available externally or only internally: 
-
-<ul>
-<li>Select <b>External Network</b> to make the network an externally accessible.</li>
-<li>Leave the <b>External Network</b> option clear to make the network internal, only accessible from the external network through a network router. </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Click <b>Next</b>.</p>
-</li>
-<li>
-<p>On the Subnet Details tab:</p>
-
-<ul>
-<li>Clear the <b>Enable DHCP</b> option, as needed, to not use the network as a DCHP. DHCP is enabled by default. If enabled, the subnet will serve as your DHCP server. Instances associated with the subnet will be assigned an IP address from this pool. .</li>
-<li>Optionally, enter the starting and ending IP addresses you want for your DHCP allocation pool in the <b>Allocation Pools</b> field, in the format IP<i>ADDR,IP</i>ADDR. For example: 192.168.1.10,192.168.1.120. By deafult, the server has an application pool starting with 10.0.0.0/24.</li>
-<li>Optionally, enter the IP Address of your subnet in the <b>DNS Name Servers</b> field. If blank, your subnet will default to using HP's internal DNS which uses DNSMASQ.</li>
-<li>Optionally, enter the Destination CIDR and Next Hop for your subnet in the Host Routes field to create host routes.</li>
-</ul>
-</li>
-<li>
-<p>Click <b>Create</b>.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>Network</b> panel.
+          <p>The network(s) for
+          the selected project appear.</p></li>
+<li>Click <b>Create Network</b>.</li>
+<li>On the <b>Network</b> table:<ul>
+            <li>Enter a name for the network.</li>
+            <li>Leave <b>Admin State</b> selected to launch the network in the enabled state or
+              clear the field to disable the new network.</li>
+          </ul></li>
+<li>Click <b>Next</b> to configure a subnet for the network.</li>
+<li>On the <b>Subnet</b> tab:<ul>
+            <li>Enter the subnet name.</li>
+            <li>Enter a network address range for the subnet in CIDR (Classless Inter-Domain
+              Routing) format in the <b>Network Address</b> field, for example: 192.168.0.0/24.</li>
+            <li>Select IPv4 or IPv6, as appropriate, in the IP Version field.</li>
+            <li>Enter a gateway IP address from the subnet or leave the <b>Gateway IP</b> field
+              blank to use the default value for the gateway IP address; for example, 192.168.0.1
+              for 192.168.0.0/24.</li>
+            <li>Leave <b>Disable Gateway</b> clear to enable the default gateway for this network,
+              or select <b>Disable Gateway</b> to create the network with no default gateway.</li>
+            <li>Determine if the network is to be available in all projects in the domain or only
+              the selected project: <ul>
+                <li>Select <b>Shared</b> to make the network available in all projects.</li>
+                <li>Leave the <b>Shared</b> option clear to limit the network to the selected
+                  project.  </li>
+              </ul></li>
+            <li>Determine if the network is to be available externally or only internally: <ul>
+                <li>Select <b>External Network</b> to make the network an externally
+                  accessible.</li>
+                <li>Leave the <b>External Network</b> option clear to make the network internal,
+                  only accessible from the external network through a network router.  </li>
+              </ul></li>
+          </ul></li>
+<li>Click <b>Next</b>.</li>
+<li>On the <b>Subnet Details</b> tab:<ul>
+            <li>Clear the <b>Enable DHCP</b> option, as needed, to not use the network as a DCHP.
+              DHCP is enabled by default. If enabled, the subnet will serve as your DHCP server.
+              Instances associated with the subnet will be assigned an IP address from this pool.
+              .</li>
+            <li>Optionally, enter the starting and ending IP addresses you want for your DHCP
+              allocation pool in the <b>Allocation Pools</b> field, in the format
+              IP<i>ADDR,IP</i>ADDR. For example: 192.168.1.10,192.168.1.120. By deafult, the server
+              has an application pool starting with 10.0.0.0/24.</li>
+            <li>Optionally, enter the IP Address of your subnet in the <b>DNS Name Servers</b>
+              field. If blank, your subnet will default to using HP's internal DNS which uses
+              DNSMASQ.</li>
+            <li>Optionally, enter the Destination CIDR and Next Hop for your subnet in the Host
+              Routes field to create host routes.</li>
+          </ul></li>
+<li>Click <b>Create</b>.</li>
 </ol>
 </section>
 <section id="deletenet"> <title>Delete a network</title>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Networks</b> link on the <b>Project</b> dashboard <b>Network</b> panel.</p>
-
-<p>The network(s) for the selected project appear.</p>
-</li>
-<li>
-<p>For the network to delete, click <b>More &gt; Delete Network</b>.</p>
-</li>
-<li>
-<p>In the confirmation screen, click <b>Delete Network</b>.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>Network</b> panel. <p>The network(s) for
+            the selected project appear.</p></li>
+<li>For the network to delete, click <b>Edit Network</b> then <b>Delete Network</b>.</li>
+<li>In the confirmation screen, click <b>Delete Network</b>.</li>
 </ol>
 <p>The network is deleted and any instances attached to the networks are disconnected.</p>
-<ol>
-<li>
-<xref type="section" href="#topic3372"> Return to Top </xref>
-</li>
-</ol>
-<p>
-  <xref type="section" href="#topic3372"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

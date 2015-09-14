@@ -12,58 +12,28 @@
 <!--UNDER REVISION-->
  <!--./UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.users.md-->
  <!--permalink: /helion/commercial/1.1/dashboard/managing/projects/users/--></p>
-<p>As an admin, you can <xref type="section" href="#topic1645/useradd">add</xref> and <xref type="section" href="#topic1645/userdel">remove</xref> user access to each project.</p>
-<section id="useradd"> <title>Add a user to a project</title>
+<p>As an admin, you can add and remove user access to each project.</p>
+<section id="useradd"> <title>Editing users associated with a project</title>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Projects</b> link on the <b>Admin</b> dashboard <b>Identity</b> panel.</p>
-</li>
-<li>
-<p>For the project you want to modify, click the <b>Modify Users</b> button.</p>
-
-<p>On the Project Members tab of the Edit Project screen that displays, the users in the <b>Project Members</b> column can access and work with the current project.</p>
-</li>
-<li>
-<p>Add a user to the project by clicking the <b>+</b> icon next to that user name in the <b>All Users</b> column.</p>
-
-<p>The user name is added to the <b>Project Members</b> column and can now access the project.</p>
-</li>
-<li>
-<p>Click <b>Save</b>.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Identity</b> dashboard, then the <b>Projects</b> panel.<p>A list of all
+            projects in the current domain is displayed.</p></li>
+<li>For the project you want to modify, click the <b>Modify Users</b> button.<p>On the <b>Project
+              Members</b> tab of the <b>Edit Project</b> screen that displays, the users in the
+              <b>Project Members</b> column can access and work with the current project.</p><ul
+            id="ul_xpl_25y_3t">
+            <li><b>Add a user to the project</b>. Click the <b>+</b> icon next to that user name in
+              the <b>All Users</b> column. <p>The user name is added to the <b>Project Members</b>
+                column and can now access the project.</p></li>
+            <li><b>Remove a user to the project</b>, click the <b>-</b> icon next to that user name
+              in the <b>Project Members</b> column.<p>The user name is moved to the <b>All Users</b>
+                column and can no longer access the project.</p></li>
+          </ul></li>
+<li>Click <b>Save</b>.</li>
 </ol>
-</section>
-<section id="userdel"> <title>Remove a user from a project</title>
-<ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Projects</b> link on the <b>Admin</b> dashboard <b>Identity</b> panel.</p>
-</li>
-<li>
-<p>For the project you want to modify, click the <b>Modify Users</b> button.</p>
-
-<p>On the Project Members tab of the Edit Project screen that displays, the users in the <b>Project Members</b> column can access and work with the current project.</p>
-</li>
-<li>
-<p>To remove a user to the project, click the <b>-</b> icon next to that user name in the <b>Project Members</b> column.</p>
-
-<p>The user name is moved to the **All Users** column and can no longer access the project.</p>
-</li>
-<li>
-<p>Click <b>Save</b>.</p>
-</li>
-</ol>
-<p>
-  <xref type="section" href="#topic1645"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

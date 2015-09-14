@@ -27,20 +27,17 @@
  <!--permalink: /helion/openstack/carrier/admin/host/management/hostaggregate/--></p>
 <!-- From the Titanium Server Admin Guide -->
 <p>Host aggregates are collections of hosts that share common attributes for the purposes of VM scheduling.</p>
-<!-- ===================== horizontal rule ===================== -->
-<p>
-<b>Note:</b> This feature applies only to servers in regionone.</p>
-<!-- ===================== horizontal rule ===================== -->
+    <p><image href="../../../media/CGH-2-host-aggregates.png" width="600" id="image_jtg_fl5_ht"
+      /></p>
 <p>To view host aggregates, open the Host Aggregates page from the Admin menu.</p>
-<ol>
-<li>
-<p>
-<xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Host Aggregates</b> link.</p>
-</li>
-</ol>
+    <ol id="ol_l3x_xj5_ht">
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          OpenStack Horizon Dashboard</xref>.</li>
+      <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+          appropriate region and project</xref>.</li>
+      <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Host
+          Aggregates</b> tab. </li>
+    </ol>
 <p>When the Nova Scheduler selects a compute node to instantiate a VM, it can use host aggregates to narrow the selection.</p>
 <p>For example:</p>
 <ul>
@@ -54,9 +51,5 @@ the <codeph>remote_storage_hosts</codeph> host aggregate. This ensures that the 
 <b>Caution:</b> Do not make manual changes to host aggregates that are managed automatically.</p>
 <p>The <codeph>local_storage_hosts</codeph> and <codeph>remote_storage_hosts</codeph> memberships are updated automatically whenever a local volume group is added or removed on a compute host. For more information, see Configuring a Compute Host to Provide Local Storage.</p>
 <p>You can use host aggregates to meet special requirements. For example, you can create a pool of compute hosts to offer dedicated resources such as pinned NUMA nodes or specific huge page sizes, while grouping the remaining compute hosts to offer shared resources.</p>
-<p>
-  <xref type="section" href="#topic2139"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

@@ -109,6 +109,30 @@
       <p>For more information, see <xref href="carrier-grade.services-overview.dita">Services
           Overview</xref>.</p>
     </section>
+    <section>
+      <title>Virtual Switching</title>
+      <!--<p>Taken from http://blogs.windriver.com/wind_river_blog/2014/10/wanted-virtual-switching-without-compromise.html. Must rewrite</p>-->
+      <p>Virtual switching is a key function within data centers based on Software Defined
+        Networking (SDN) as well as in telecom infrastructure that leverages Network Functions
+        Virtualization (NFV). </p>
+      <p>In the NFV scenario, for example, the virtual switch (vSwitch) is responsible for switching
+        network traffic between the core network and the virtualized applications or Virtual Network
+        Functions (VNFs) that are running in Virtual Machines (VMs). </p>
+      <p><b>PCI Pass-through</b>.  PCI pass-through is the simplest approach to switching for NFV
+        infrastructure. As explained in detail <xref
+          href="http://libvirt.org/guide/html/Application_Development_Guide-Device_Config-PCI_Pass.html"
+          format="html" scope="external">here</xref>, it allows a physical PCI Network Interface
+        Card (NIC) on the host server to be assigned directly to a guest VM. The guest OS drivers
+        can use the device hardware directly without relying on any driver capabilities from the
+        host OS.</p>
+      <p><b>Single-Root I/O Virtualization (SR-IOV)</b>. Basically, SR-IOV, which is implemented in
+        some but not all NICs, provides a mechanism by which a single Ethernet port can appear to be
+        multiple separate physical devices. This enables a single NIC to be shared between multiple
+        VMs.</p>
+      <p><b> Accelerated vSwitch (AVS)</b>.  AVS is an optimization of Open vSwitch (OVS) technology
+        for NFV environments. Open vSwitch is a multilayer software switch licensed under the open
+        source Apache 2 license.</p>
+    </section>
     <section><title>Installation Options</title>HP Helion OpenStack Carreir Grade has two baremetal
       installation options depending on your system configuration. It allows you to manage the KVM
       and VMware ESX<tm tmtype="reg"/> hypervisors and provision virtual machines.<p>You can find

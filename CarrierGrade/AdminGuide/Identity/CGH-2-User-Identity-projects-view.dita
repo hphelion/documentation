@@ -15,40 +15,24 @@
 <p>As an admin, you can view a list of all projects in a domain and view information on each project.</p>
 <section id="view-projects"> <title>View projects</title>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Projects</b> link on the <b>Admin</b> dashboard <b>Identity</b> panel.</p>
-
-<p>A list of all projects in the current domain is displayed. You can see the name, ID and status (enabled or disabled).</p>
-</li>
-<li>
-<p>To view information on a project, click <b>More &gt; Edit Project</b>.</p>
-
-<p>The project name and details; users associated with the project, and project quotas are displayed.</p>
-
-<p>For information on modifying these settings, see <xref href="CGH-2-User-Identity-managing-projects.dita#topic994"
-  >Managing
-  Projects</xref>.</p>
-</li>
-<li>
-<p>Click <b>Cancel</b> to exit the screen.</p>
-</li>
-<li>
-<p>To view usage information on a project, click <b>More &gt; View Usage</b>.</p>
-
-<p>The instances associated with the project are listed, with memory and uptime information.</p>
-</li>
-<li>
-<p>Click <b>Cancel</b> to exit the screen.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Identity</b> dashboard, then the <b>Projects</b> panel.<p>A list of all
+            projects in the current domain is displayed. You can see the name, ID and status
+            (enabled or disabled).</p></li>
+<li>To view information on a project, click <b>Edit Project</b>.<p>The project name and details;
+            users associated with the project, and project quotas are displayed.</p><p>For
+            information on modifying these settings, see <xref
+              href="CGH-2-User-Identity-managing-projects.dita#topic994">Managing
+            Projects</xref>.</p></li>
+<li>Click <b>Cancel</b> to exit the screen.</li>
+<li>To view usage information on a project, click <b>Edit Projects</b> then <b>View Usage</b>.<p>The
+            instances associated with the project are listed, with memory and uptime
+            information.</p></li>
+<li>Click <b>Cancel</b> to exit the screen.</li>
 </ol>
-<p>
-  <xref type="section" href="#topic1218"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

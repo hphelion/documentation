@@ -19,40 +19,29 @@
   <xref href="CGH-2-User-Instance-suspend.dita#topic1594">suspending an instance</xref>. Suspending stops the instance,
       stores the contents on the disk. the memory and vCPUs become available to create other
       instances.</p>
-<section id="pause-an-instance"> <title>Pause an instance</title>
-<p>To pause an instance:</p>
-<ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
-</li>
-<li>
-<p>In the <b>Instances</b> screen, for the instance you want to modify, click <b>More &gt; Pause Instance</b>.</p>
-</li>
-</ol>
-<p>The status of the instance reports *Paused*.</p>
-<ol>
-<li>Note that many of the commands on the <b>More</b> menu are not available for a paused instance.</li>
-</ol>
-</section>
+<section id="pause-an-instance"><title>Pause an instance</title><p>To pause an instance:</p><ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Instances</b> tab. </li>
+        <li>In the <b>Instances</b> table, for the instance you want to pause, click <b>Edit
+            Instance &gt; Pause Instance</b>.</li>
+      </ol><p>The status of the instance reports *Paused*.</p>Note that many of the commands on the
+        <b>More</b> menu are not available for a paused instance.</section>
 <section id="un-pause-an-instance"> <title>Un-pause an instance</title>
 <p>To unpause an instance:</p>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
-</li>
-<li>
-<p>In the <b>Instances</b> screen, for the instance you want to modify, click <b>More &gt; Resume Instance</b>.</p>
-
-<p>Note that all of the commands on the <b>More</b> menu are available.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+            <b>Instances</b> tab. </li>
+        <li>In the <b>Instances</b> table, for the instance you want to unpause, click <b>Edit
+            Instance &gt; Unpause Instance</b>.<p>Note that all of the commands on the <b>More</b>
+            menu are available.</p></li>
 </ol>
 <p>
   <xref type="section" href="#topic1643"> Return to Top </xref>

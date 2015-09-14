@@ -37,7 +37,8 @@ where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
             <codeblock>User Name: cghelion
 Password: cghelion</codeblock></p><p><b>Important:</b>
             After logging in with the default password, make sure you change the password for the
-              <codeph>cghelion</codeph> user. </p></li>
+              <codeph>cghelion</codeph> user. </p><p><image href="../../media/CGH-2-login-hlm.png"
+              width="400" id="image_nnb_fyb_3t"/></p></li>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
         <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>

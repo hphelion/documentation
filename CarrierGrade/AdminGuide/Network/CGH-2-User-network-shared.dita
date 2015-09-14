@@ -16,35 +16,26 @@
 <p>An admin user can create a shared network as needed.</p>
 <section id="create-a-network"> <title>Create a network</title>
 <ol>
-<li>
-<p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack Helion Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Networks</b> link on the <b>Admin</b> dashboard <b>Network</b> panel.</p>
-
-<p>The network(s) for the selected project appear.</p>
-</li>
-<li>
-<p>Click <b>Create Network</b>.</p>
-</li>
-<li>
-<p>On the <b>Create Network</b> screen:</p>
-
-<p>a. Enter a name for the network.
-b. Select a project to associate with the network.
-c. Leave <b>Admin State</b> selected to launch the network in the enabled state or clear the field to disable the new network.
-d. Select <b>Shared</b> to make the network available to all projects in the domain.
-e. Leave <b>External Network</b> clear to make the network internally accessible only.&lt;</p>
-</li>
-<li>
-<p>Click <b>Create Network</b>.</p>
-</li>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>Network</b> panel. <p>The network(s) for
+            the selected project appear.</p></li>
+<li>Click <b>Create Network</b>.</li>
+<li>On the <b>Create Network</b> screen:<p>
+            <ol id="ol_ds2_g1y_3t">
+              <li>Enter a name for the network. </li>
+              <li>Select a project to associate with the network. </li>
+              <li>Leave <b>Admin State</b> selected to launch the network in the enabled state or
+                clear the field to disable the new network.</li>
+              <li>Select <b>Shared</b> to make the network available to all projects in the domain. </li>
+              <li>Leave <b>External Network</b> clear to make the network internally accessible
+                only.</li>
+            </ol>
+          </p></li>
+<li>Click <b>Create Network</b>.</li>
 </ol>
-<p>
-  <xref type="section" href="#topic1239"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>
