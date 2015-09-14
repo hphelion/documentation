@@ -14,7 +14,6 @@
     </metadata>
   </prolog>
   <body>
-    <!--<p>HP Helion CloudSystem lets you automate end-to-end service lifecycle management for any cloud service, from infrastructure to application. As part of the HP Helion portfolio of hybrid cloud products and delivered as an HP ConvergedSystem, HP CloudSystem integrates all of the hardware, software, and services you need to realize a fully configured, enterprise-grade solution.</p><p>HP CloudSystem software is built on a foundation of enterprise-grade <tm tmtype="reg">OpenStack</tm> technologies, providing a common architecture across private, public, and hybrid clouds. You can be confident that you are using an industry-leading, vendor-neutral, open cloud architecture.</p>-->
     <p>HP Helion CloudSystem delivers an enterprise private cloud in HP Converged Infrastructure environments.  HP Helion CloudSystem is available as standalone software that supports a multiple vendor hardware environment or as an integrated infrastructure with HP ConvergedSystem.</p>
       <section>
       <p>HP Helion CloudSystem consists of two offerings.

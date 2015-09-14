@@ -145,7 +145,14 @@
 <section id="issue-no-valid-host-was-found-error-received-during-installation-of-the-development-platform-and-dnaas"> <title>Issue: "No valid host was found" Error Received During Installation of the Development Platform and DNaaS</title>
 <p>Resolution: This Nova error could have multiple causes. Do not assume that  it is out of compute resources. Check the <i>nova-scheduler</i> logs on the overcloud controllers to find the actual reason why Nova failed to schedule the instance; correct the issue; and then attempt the DNSaaS deployment again.</p>
 </section>
-<section id="entity-too-large"
-      ><!--<title>413 Request Entity Too Large Error</title><p>This error occurs when there isn't enough free quota in your tenant for the VM to be created. Check for free space and, if necessary, free up sufficient space for the VM you are attempting to create.</p>--></section>
+<section id="entity-too-large"><title>413 Request Entity Too Large Error</title><p>Actual Error Message: <codeph>Creating constructor server failed - Error: status code != 200,
+  201, 202, or 300 , actual status code '413 Request Entity Too Large' Error has occurred creating the cluster</codeph></p>
+      <p>This error occurs when there isn't enough free quota in your tenant for the VM to be
+        created. Check for free space and, if necessary, free up sufficient space for the VM you are
+        attempting to create. If your tenant is empty, you may not have instance creation
+        permissions. To check, go to the Horizon dashboard and try to manually deploy a VM. (Project
+        > Compute > Instances > click to check the desired instance > click Launch Instance. If you
+        can't manually create an instance in one region, try again in the other region
+        (East/West).</p></section>
 </body>
 </topic>
