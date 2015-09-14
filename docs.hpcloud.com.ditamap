@@ -1881,9 +1881,9 @@
   <!-- END Public cloud -->
   <topicref href="cloudsystem/cloudsystem.landingpage.dita" navtitle="HP Helion CloudSystem 9.0"
     locktitle="yes">
-    <topicref href="cloudsystem/eula.dita" navtitle="Software License Terms" locktitle="yes"/>
     <topicref href="cloudsystem/thirdparty.licensing.dita"
       navtitle="Open-Source and Third-Party Licensing" locktitle="yes"/>
+    <topicref href="cloudsystem/licensing.dita"/>
   </topicref>
 
   <topicref href="automation/csa.index.dita"/>
