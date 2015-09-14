@@ -123,22 +123,31 @@
               <row>
                 <entry/>
                 <entry>Network is untagged</entry>
-                <entry/>
+                <entry><codeblock>
+                  
+</codeblock></entry>
               </row>
               <row>
                 <entry/>
                 <entry>No DHCP servers other than Helion are on the network</entry>
-                <entry/>
+                <entry><codeblock>
+                  
+                </codeblock></entry>
               </row>
               <row>
                 <entry/>
                 <entry>Switch PVID used to map any "internal" VLANs to untagged</entry>
-                <entry/>
+                <entry><codeblock>
+                    
+                  </codeblock>
+                </entry>
               </row>
               <row>
                 <entry/>
                 <entry>Routable to the IPMI network</entry>
-                <entry/>
+                <entry><codeblock>
+                  
+                </codeblock></entry>
               </row>
               <row>
                 <entry/>
