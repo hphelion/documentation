@@ -167,7 +167,7 @@ hp3par_iscsi_chap_enabled=true</codeblock><note>
           <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
             to display the Volumes page.<image href="../../../media/3par/create-ceph-volumetype.png"
               id="image_gvm_v1w_3t"/></li>
-          <li>Check the box in the row of the volume to to delete.<p><image
+          <li>Check the box in the row of the volume to delete.<p><image
                 href="../../../media/3par/delete-volumetype.png" id="image_dyz_s1w_3t"/></p></li>
           <li>Click <b>Delete Volume Types</b>.</li>
           <li>To confirm and <b>Delete the Volume</b>. To exit without deleting the volume and to
