@@ -61,7 +61,8 @@
         <li>Modify the <codeph>cinder.conf.j2</codeph> file to update the VSA cluster: <ol>
             <li>On the deployer, change to the following directory: <codeph>cd
               ~/helion</codeph></li>
-            <li>Edit the <codeph>/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> file
+            <li>Edit the
+                <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> file
               as follows: <ol>
                 <li>Change the <codeph>enabled_backends</codeph> line to:
                   <codeblock>enabled_backends=vsa-1</codeblock></li>
