@@ -259,14 +259,14 @@
             </topicref>
             <topicref href="Identity/CGH-2-User-Identity-managing-projects.dita"
                 navtitle="Managing Projects" locktitle="yes">
-                <topicref href="Identity/CGH-2-User-Identity-projects-primary.dita"
-                    navtitle="Specifying a Primary Project for a User" locktitle="yes"/>
-                <topicref href="Identity/CGH-2-User-Identity-projects-create.dita"
-                    navtitle="Creating and Deleting Projects" locktitle="yes"/>
                 <topicref href="Identity/CGH-2-User-Identity-projects-view.dita"
                     navtitle="Viewing Projects in a Domain" locktitle="yes"/>
+                <topicref href="Identity/CGH-2-User-Identity-projects-create.dita"
+                    navtitle="Creating and Deleting Projects" locktitle="yes"/>
                 <topicref href="Identity/CGH-2-User-Identity-add-users-projects.dita"
                     navtitle="Adding and Removing Users to a Project" locktitle="yes"/>
+                <topicref href="Identity/CGH-2-User-Identity-projects-primary.dita"
+                    navtitle="Specifying a Primary Project for a User" locktitle="yes"/>
                 <topicref href="Identity/CGH-2-User-Identity-quotas.dita"
                     navtitle="Setting Project Quotas" locktitle="yes"/>
             </topicref>

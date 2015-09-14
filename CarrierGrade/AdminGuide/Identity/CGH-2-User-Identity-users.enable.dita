@@ -22,7 +22,7 @@
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
         <li>Click the <b>Identity</b> dashboard, then the <b>Users</b> panel.</li>
-        <li>In the <b>Users</b> table, for the user you want to deleite, click <b>Edit User</b> then
+        <li>In the <b>Users</b> table, for the user you want to disable, click <b>Edit User</b> then
             <b>Disable User</b>.<p>The user is disabled and cannot be used to log in.</p></li>
 </ol>
 </section>
@@ -34,7 +34,7 @@
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
         <li>Click the <b>Identity</b> dashboard, then the <b>Users</b> panel.</li>
-        <li>In the <b>Users</b> table, for the user you want to deleite, click <b>Edit User</b> then
+        <li>In the <b>Users</b> table, for the user you want to enable, click <b>Edit User</b> then
             <b>Enable User</b>.<p>The user is enabled and can be used to log in.</p></li>
       </ol>
 </section>
