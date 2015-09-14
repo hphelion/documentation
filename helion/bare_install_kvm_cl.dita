@@ -24,16 +24,16 @@
               </row>
               <row>
                 <entry/>
-                <entry>Switch from UEFI to Legacy BIOS</entry>
+                <entry>Choose either UEFI or Legacy BIOS in your BIOS settings</entry>
               </row>
               <row>
                 <entry/>
-                <entry>Ensure that the NIC port to be used for PXE insatllation has PXE
-                  enabled</entry>
+                <entry>Ensure that the NIC port to be used for PXE installation has PXE enabled in
+                  the BIOS</entry>
               </row>
               <row>
                 <entry/>
-                <entry>Ensure that all other NIC ports have PXE disabled</entry>
+                <entry>Ensure that all other NIC ports have PXE disabled in the BIOS</entry>
               </row>
               <row>
                 <entry/>
@@ -42,12 +42,15 @@
               </row>
               <row>
                 <entry/>
-                <entry>Disable SR-IOV in the NIC BIOS</entry>
+                <entry>Disable SR-IOV in the BIOS</entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
+    </section>
+    <section id="network"><title>Network Setup and Configuration</title>
+    <p>vlan info</p>
     </section>
     <section id="deployer"><title>Deployer</title>
       <p>This server contains the Helion OpenStack installer, which is based on Git, Ansible, and
@@ -91,77 +94,7 @@
               </row>
               <row>
                 <entry/>
-                <entry>Ensure your NTP server is placed into your /etc/ntp.conf file</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
+                <entry>Ensure your NTP server(s) is placed into your /etc/ntp.conf file</entry>
                 <entry/>
               </row>
               <row>
@@ -356,8 +289,8 @@
               </row>
               <row>
                 <entry/>
-                <entry>A NIC for PXE boot and a second NIC, or a NIC for PXE ad a set of bonded NICs
-                  are required</entry>
+                <entry>A NIC for PXE boot and a second NIC, or a NIC for PXE and a set of bonded
+                  NICs are required</entry>
               </row>
               <row>
                 <entry/>

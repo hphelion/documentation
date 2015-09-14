@@ -61,10 +61,13 @@
         the Metrics Database</p>
       <p>Monasca supports two different database options. The default metrics database is
           <b>Vertica</b>, which is a highly-scalable analytics database from HP. Vertica is free to
-        use for all paid Helion customers as a Helion operational database (please see <xref
-          href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html" format="html"
+        use, up to 12TB, for all paid Helion customers as a Helion operational database (please see
+          <xref href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html" format="html"
           scope="external">Helion EULA</xref>). Vertica is the recommended database for Helion
         OpenStack.</p>
+      <p>You can learn more about Vertica here: <xref
+          href="https://www.vertica.com/hp-vertica-documentation/" scope="external" format="html"
+          >Vertica Documentation</xref></p>
       <p>The alternative opensource database option is <b>InfluxDB</b>. InfluxDB is an emerging
         opensource monitoring database, however the current release contains the following
         limitations:</p>

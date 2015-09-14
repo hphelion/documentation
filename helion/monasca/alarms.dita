@@ -23,14 +23,116 @@
         <li><xref href="#alarmdefinitions/swift">Swift</xref></li>
       </ul>
     </section>
+    <section id="ceilometer"><title>Ceilometer</title>
+      <p><table frame="all" rowsep="1" colsep="1" id="ceilometer_table">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1*"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <colspec colname="c3" colnum="3" colwidth="1*"/>
+            <colspec colname="c4" colnum="4" colwidth="2*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=ceilometer-agent-notification</entry>
+                <entry>process crashed</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=ceilometer-collector</entry>
+                <entry>process crashed</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=ceilometer-agent-central</entry>
+                <entry>process crashed</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
+    </section>
+    <section id="cinder"><title>Cinder</title>
+      <p><table frame="all" rowsep="1" colsep="1" id="cinder_table">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="2*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=cinder-api</entry>
+                <entry>process crashed</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=cinder-scheduler</entry>
+                <entry>process crashed</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
+    </section>
+    <section id="glance"><title>Glance</title>
+      <p><table frame="all" rowsep="1" colsep="1" id="glance_table">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="2*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Process Check</entry>
+                <entry>component=glance-api</entry>
+                <entry>The API is unresponsive</entry>
+                <entry>Restart process on affected node. Review logs.</entry>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>component=glance-registry</entry>
+                <entry>The Glance registry is unresponsive</entry>
+                <entry>Restart process on affected node. Review logs.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
+    </section>
     <section id="haproxy">
       <title>HAProxy</title>
       <table frame="all" rowsep="1" colsep="1" id="table_flj_2tl_zs">
         <tgroup cols="4" align="left">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="2.0*"/>
           <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="2.0*"/>
           <thead>
             <row>
               <entry>Alarm Name</entry>
@@ -55,9 +157,9 @@
       <table frame="all" rowsep="1" colsep="1" id="table_k33_xcq_bt">
         <tgroup cols="4">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="2.0*"/>
           <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="2.0*"/>
           <thead>
             <row>
               <entry>Alarm Name</entry>
@@ -124,9 +226,9 @@
       <table frame="all" rowsep="1" colsep="1" id="table_ik5_3km_zs">
         <tgroup cols="4">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="2.0*"/>
           <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="2.0*"/>
           <thead>
             <row>
               <entry>Alarm Name</entry>
@@ -177,15 +279,82 @@
         </tgroup>
       </table>
     </section>
-    <section id="logging">
-      <title>Logging</title>
-      <table frame="all" rowsep="1" colsep="1" id="table_gc2_ndh_1t">
+    <section id="horizon"><title>Horizon</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_vtf_3md_3t">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>Alerts when Horizon's login page isn't returned</entry>
+                <entry>Apache is not running or misconfiguration</entry>
+                <entry>Check that Apache is running; investigate Horizon logs</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    <section id="keystone"><title>Keystone</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_bw1_jmd_3t">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>component-keystone-api</entry>
+                <entry>API is unresponsive</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=keystone-main</entry>
+                <entry>Process crashed</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=keystone-admin</entry>
+                <entry>Process crashed</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    <section id="logging"><title>Logging</title>
+      <table frame="all" rowsep="1" colsep="1" id="logging_table">
         <tgroup cols="5">
-          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="1.0*"/>
-          <colspec colname="c5" colnum="5" colwidth="1.0*"/>
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <colspec colname="c3" colnum="3"/>
+          <colspec colname="c4" colnum="4"/>
+          <colspec colname="c5" colnum="5"/>
           <thead>
             <row>
               <entry>Alarm Name</entry>
@@ -199,22 +368,20 @@
             <row>
               <entry>Elasticsearch Unassigned Shards</entry>
               <entry>Elasticsearch</entry>
-              <entry>Elasticsearch unassigned shards count &gt; 0</entry>
+              <entry>Elasticsearch unassigned shards count is greater than 0</entry>
               <entry>Environment could be misconfigured</entry>
               <entry>
-                <ul>
-                  <li>If you have unassigned shards, make sure that all servers are at the same
-                    version of Elasticsearch.</li>
-                  <li>Make sure local (true) is set.</li>
-                  <li>You may need to change the number_of_replicas to a different value, then back
-                    (e.g. from 2 to 1 and back to 2)</li>
-                </ul>
+                <p>If you have unassigned shards, make sure that all servers are at the same version
+                  of Elasticsearch.</p>
+                <p>Make sure local (true) is set.</p>
+                <p>You may need to change the number_of_replicas to a different value, then back
+                  (e.g. from 2 to 1 and back to 2)</p>
               </entry>
             </row>
             <row>
               <entry>Elasticsearch Field Data Evictions</entry>
               <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Field Data Evictions count &gt; 0</entry>
+              <entry>Elasticsearch Field Data Evictions count is greater than 0</entry>
               <entry>Field Data Evictions may be found even though it is nowhere near the limit
                 set.</entry>
               <entry>Field Data Evictions may be found even though it is nowhere near the limit set.
@@ -226,7 +393,7 @@
             <row>
               <entry>Elasticsearch Bulk Pool Rejected</entry>
               <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Bulk Pool Rejected count &gt; 0</entry>
+              <entry>Elasticsearch Bulk Pool Rejected count is greater than 0</entry>
               <entry>Thread pool size could be too small.</entry>
               <entry>You may need to increase the threadpool.bulk.queue_size (from 50 to 100, for
                 example).</entry>
@@ -243,7 +410,7 @@
             <row>
               <entry>Elasticsearch Open File Descriptors </entry>
               <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Open File Descriptors &gt; 90%</entry>
+              <entry>Elasticsearch Open File Descriptors is greater than 90%</entry>
               <entry>Configured to allow too many file descriptors to be opened.</entry>
               <entry>Make sure that the limits.conf settings are being used, and adjust them if
                 needed. A "ulimit" statement could cause this value to be ignored (overwriting the
@@ -252,8 +419,8 @@
             <row>
               <entry>Elasticsearch Max Total Indices Size</entry>
               <entry>Elasticsearch</entry>
-              <entry>Elasticsearch Total Indices size
-                &gt;elasticsearch_max_total_indices_size_in_bytesdefined by user</entry>
+              <entry>Elasticsearch Total Indices size is greater than
+                elasticsearch_max_total_indices_size_in_bytesdefined by user</entry>
               <entry>elasticsearch_max_total_indices_size_in_bytes may be set too low, or you may
                 have insufficient resources.</entry>
               <entry>If the total size of all the indices exceeds the size of the
@@ -266,8 +433,8 @@
               <entry>Elasticsearch</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Elasticsearch process goes down, try restarting it with:
-                <codeblock>sudo systemctl restart elasticsearch</codeblock>
+              <entry>If the Elasticsearch process goes down, try restarting it with: <codeph>sudo
+                  systemctl restart elasticsearch</codeph>
               </entry>
             </row>
             <row>
@@ -275,8 +442,8 @@
               <entry>Logstash</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with:
-                <codeblock>sudo systemctl restart logstash</codeblock>
+              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
+                  systemctl restart logstash</codeph>
               </entry>
             </row>
             <row>
@@ -284,8 +451,8 @@
               <entry>Beaver</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with:
-                <codeblock>sudo systemctl restart beaver</codeblock>
+              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
+                  systemctl restart beaver</codeph>
               </entry>
             </row>
             <row>
@@ -293,8 +460,8 @@
               <entry>Apache</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with:
-                <codeblock>sudo systemctl restart apache2</codeblock>
+              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
+                  systemctl restart apache2</codeph>
               </entry>
             </row>
             <row>
@@ -302,8 +469,8 @@
               <entry>Kibana</entry>
               <entry>Process not running.</entry>
               <entry>Process crashed.</entry>
-              <entry>If the Logstash process goes down, try restarting it with:
-                <codeblock>sudo systemctl restart kibana</codeblock>
+              <entry>If the Logstash process goes down, try restarting it with: <codeph>sudo
+                  systemctl restart kibana</codeph>
               </entry>
             </row>
           </tbody>
@@ -623,6 +790,39 @@
         </tgroup>
       </table>
     </section>
+    <section id="opsconsole"><title>Operations Console</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_fdn_hpd_3t">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>service=ops-console</entry>
+                <entry>The Operations Console is unresponsive</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=leia-leia_monitor</entry>
+                <entry>Process crashed</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p></section>
     <section id="rabbitmq">
       <title>RabbitMQ</title>
       <table frame="all" rowsep="1" colsep="1" id="table_rsb_mp5_zs">

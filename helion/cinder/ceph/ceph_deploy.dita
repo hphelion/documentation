@@ -152,7 +152,7 @@ git commit -m "&lt;commit message>"</codeblock>
       <li>Login to the Overcloud Horizon dashboard. The Overcloud dashboard displays with the
         options in the left panel.</li>
       <li> From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab to
-        display the Volumes page.<p/><image href="../../../media/ceph/create-ceph-volumetype.png"
+        display the Volumes page.<image href="../../../media/ceph/create-ceph-volumetype.png"
           id="image_izx_2cd_gt"/></li>
       <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
         associate to the backend.<p/><image
