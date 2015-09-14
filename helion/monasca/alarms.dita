@@ -113,13 +113,13 @@
                 <entry>Process Check</entry>
                 <entry>component=glance-api</entry>
                 <entry>The API is unresponsive</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
               </row>
               <row>
                 <entry>Process Check</entry>
                 <entry>component=glance-registry</entry>
                 <entry>The Glance registry is unresponsive</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
               </row>
             </tbody>
           </tgroup>
