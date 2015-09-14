@@ -4,8 +4,8 @@
   <title>Troubleshooting the Installation</title>
   <body>
     <section id="troubleshooting"><title>Troubleshooting Tips</title>
-      <b>Change needed to <codeph>baremetalConfig.yml</codeph> file needed after the Cobbler
-        deploy</b>
+      <p><b>Change needed to <codeph>baremetalConfig.yml</codeph> file needed after the Cobbler
+        deploy</b></p>
       <p>If you've made a mistake or wish to change your <codeph>baremetalConfig.yml</codeph>
         configuration file after you've already run the <codeph>cobbler-deploy.yml</codeph>
         playbook, follow these steps to ensure Cobbler gets updated with the new server
