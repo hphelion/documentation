@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_zqb_nk4_xs">
-  <title>HP Helion 1.3 Development Platform Management Console: Introduction</title>
+  <title>HP Helion 1.3 Development Platform Management Console: Introduction</title> 
   <body>
     <p>The Management Console is a web interface that allows the  administration and management of the ALS Server.</p>
     <p>Your hypervisor provides <xref href="../../user/reference/glossary.dita#topic6187/term-tty-console">tty console</xref> access to

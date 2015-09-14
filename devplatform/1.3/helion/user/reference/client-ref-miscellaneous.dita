@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3989">
-<title>HP Helion 1.3 Development Platform: ALS Command Reference: Miscellaneous</title>
+<title>HP Helion 1.3 Development Platform: ALS Command Reference: Miscellaneous</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -42,12 +42,12 @@
 <li>
 <xref type="section" href="#topic3989/command-unalias">helion unalias</xref>: Remove a shortcut by name.</li>
 </ul>
-<section id="syntax"> <title>Syntax</title>
+<section id="syntax"> <title>Syntax</title> 
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="command-admin"> <title>helion admin</title>
+<section id="command-admin"> <title>helion admin</title> 
 <p>A set of administrative tasks.</p>
 <table>
 <tgroup cols="1">
@@ -62,7 +62,7 @@
 </tgroup>
 </table>
 </section>
-<section id="command-alias"> <title>helion alias &lt;<i>name</i>&gt; &lt;<i>command</i>&gt;</title>
+<section id="command-alias"> <title>helion alias &lt;<i>name</i>&gt; &lt;<i>command</i>&gt;</title> 
 <p>Create a shortcut (alias) for a command.</p>
 <table>
 <tgroup cols="1">
@@ -77,7 +77,7 @@
 </tgroup>
 </table>
 </section>
-<section id="command-aliases"> <title>helion aliases</title>
+<section id="command-aliases"> <title>helion aliases</title> 
 <p>List the known aliases (shortcuts).</p>
 <table>
 <tgroup cols="2">
@@ -100,7 +100,7 @@
 </tgroup>
 </table>
 </section>
-<section id="command-color"> <title>helion color</title>
+<section id="command-color"> <title>helion color</title> 
 <p>Management of terminal colors</p>
 <table>
 <tgroup cols="1">
@@ -115,7 +115,7 @@
 </tgroup>
 </table>
 </section>
-<section id="command-curl"> <title>helion curl &lt;<i>operation</i>&gt; &lt;<i>path</i>&gt; &lt;<i>header</i>&gt;</title>
+<section id="command-curl"> <title>helion curl &lt;<i>operation</i>&gt; &lt;<i>path</i>&gt; &lt;<i>header</i>&gt;</title> 
 <p>Run a raw REST request against the chosen target.</p>
 <table>
 <tgroup cols="2">
@@ -176,7 +176,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-drain"> <title>helion drain {command-drain}</title>
+<section id="command-drain"> <title>helion drain {command-drain}</title> 
 <p>Commands for the management of drains attached to applications.</p>
 <table>
 <tgroup cols="1">
@@ -191,7 +191,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-guid"> <title>helion guid &lt;<i>type</i>&gt; &lt;<i>name</i>&gt;</title>
+<section id="command-guid"> <title>helion guid &lt;<i>type</i>&gt; &lt;<i>name</i>&gt;</title> 
 <p>Map the specified name into a uuid, given the type.</p>
 <table>
 <tgroup cols="2">
@@ -226,7 +226,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-help"> <title>helion help &lt;<i>CommandName</i>&gt;</title>
+<section id="command-help"> <title>helion help &lt;<i>CommandName</i>&gt;</title> 
 <p>Retrieve help for a command or command set. Without an argument, help for all commands is given. The default format is <i>--full</i>.</p>
 <table>
 <tgroup cols="2">
@@ -266,7 +266,7 @@ width, or 80 when no terminal is available. </entry>
 </tgroup>
 </table>
 </section>
-<section id="command-named-entities"> <title>helion named-entities</title>
+<section id="command-named-entities"> <title>helion named-entities</title> 
 <p>List the entity types usable for 'guid'. I.e. the types of the
     named entities known to the client.</p>
 <table>
@@ -286,7 +286,7 @@ width, or 80 when no terminal is available. </entry>
 </tgroup>
 </table>
 </section>
-<section id="command-trace"> <title>helion trace</title>
+<section id="command-trace"> <title>helion trace</title> 
 <p>Print the saved REST trace for the last client command to stdout.</p>
 <table>
 <tgroup cols="2">
@@ -309,7 +309,7 @@ width, or 80 when no terminal is available. </entry>
 </tgroup>
 </table>
 </section>
-<section id="command-unalias"> <title>helion unalias &lt;<i>name</i>&gt;</title>
+<section id="command-unalias"> <title>helion unalias &lt;<i>name</i>&gt;</title> 
 <p>Remove a shortcut (alias) by name.</p>
 <table>
 <tgroup cols="1">

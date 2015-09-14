@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_txg_cnh_ts">
-  <title>Install the Application Lifecycle Service (ALS)</title>
+  <title>Install the Application Lifecycle Service (ALS)</title> 
   <body> <ol id="ol_jkm_hbq_ft">
       <li>Log in to the Horizon web console as an Admin or user with Admin privileges.</li>
       <li> Select the <i>Admin</i> project in the <b>Project</b> selector. <note type="important"

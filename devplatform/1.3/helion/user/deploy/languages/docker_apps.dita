@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_l4n_y3n_xs">
-  <title>Deploying Docker Apps</title>
+  <title>Deploying Docker Apps</title> 
   <body>
     <section>
   <p> Docker images can be deployed in much the same way as source code, either directly from the
         Docker Hub or from specific Docker registry servers. The command
         is:<codeblock>helion push -n --docker-image my.registry.com/namespace/app-name:latest</codeblock>
         ALS will fetch the named image from the Docker Hub or specified registry server and deploy
-        it. These are called Docker Apps. </p></section><section><title>Permission to Push Docker Apps</title>
+        it. These are called Docker Apps. </p></section><section><title>Permission to Push Docker Apps</title> 
           
    <p> Since arbitrary Docker images could potentially expose a root user and other escalated
         privileges, administrators will generally restrict the ability to push Docker images to: <ul>
@@ -20,7 +20,7 @@
       <p>Pushing as an unauthorized user:
         <codeblock> Error staging: Need 'allow_sudo' quota to stage and run a Docker app (400)</codeblock>Pushing
         an unauthorized image::
-        <codeblock> Error staging: Docker image example/simple-server is not from an allowed registry (400)</codeblock></p></section><section><title>Pushing Docker Apps</title>Official images in the Docker Hub library can be
+        <codeblock> Error staging: Docker image example/simple-server is not from an allowed registry (400)</codeblock></p></section><section><title>Pushing Docker Apps</title> Official images in the Docker Hub library can be
       specified by <b>name</b>, with or without a tag::
       <codeblock>helion push --docker-image django:1.8-python2 </codeblock>Images from a particular
       user or organization can be specified with the
@@ -37,7 +37,7 @@
         ':' characters, <xref
           href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters"
           format="html" scope="external">URL encode</xref> the username or password strings as
-        needed.</note></section> <section><title>Docker Apps and Data Services</title>
+        needed.</note></section> <section><title>Docker Apps and Data Services</title> 
                     
          <p>Docker apps can be bound to <xref href="../../services/data-services.dita">data services</xref> just
             like staged apps. $VCAP_SERVICES and the URL-based
@@ -59,7 +59,7 @@
             href="../../reference/environment.dita#topic7631"><codeph>--env</codeph>
             options</xref>, or in the manifest.yml file. </li>
                 </ul>   
-   </section> <section><title>Web Process and Exposed Ports</title><p>The <codeph>$PORT</codeph> environment
+   </section> <section><title>Web Process and Exposed Ports</title> <p>The <codeph>$PORT</codeph> environment
         variable exposed in staged apps is also available for Docker apps to use for web
         processes.</p> For example, a <codeph>Dockerfile</codeph> might end with the line:
       <codeblock>      ENTRYPOINT /usr/bin/python manage.py runserver 0.0.0.0:$PORT</codeblock> This

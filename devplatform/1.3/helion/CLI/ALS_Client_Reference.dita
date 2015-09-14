@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13234">
-<title>HP Helion 1.3 Development Platform: ALS Cluster Management Tool Reference</title>
+<title>HP Helion 1.3 Development Platform: ALS Cluster Management Tool Reference</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -50,7 +50,7 @@
         </ul></li>
     </ul>
     <section id="configuration-values">
-      <title>Configuration Values</title>
+      <title>Configuration Values</title> 
       <p>There are three ways to pass configuration values into ALS:</p>
       <ul>
         <li>Direct entry through the <codeph>cf-mgmt</codeph> tool</li>
@@ -62,7 +62,7 @@
       </ul>
     </section>
     <section id="downloadfile">
-      <title>Configuration Files</title>
+      <title>Configuration Files</title> 
       <p>ALS maintains separate configuration files, so configuration values must be included in the
         appropriate file.</p>
       <p>One configuration file contains the values for the global variables. The global
@@ -76,7 +76,7 @@
         that should be passed as arguments to a specific command. </p>
     </section>
     <section id="global">
-      <title>Global Options</title>
+      <title>Global Options</title> 
       <p>These variables affect the entire cluster; they are <b>global</b> in scope. These
         environment variables are configured to work with the <tm tmtype="reg">OpenStack</tm> Python
         tools to enable faster integration.</p>
@@ -180,15 +180,15 @@
       </table>
     </section>
     <section id="commands">
-      <title>Cluster Commands</title>
+      <title>Cluster Commands</title> 
       <p>These commands are available from the command line interface.</p>
     </section>
     <section id="use-syntax">
-      <title>Use Syntax</title>
+      <title>Use Syntax</title> 
       <codeblock>cf-mgmt [global options] <b>command</b> [command options] [arguments...] </codeblock>
     </section>
     <section id="command-options">
-      <title>Command Options</title>
+      <title>Command Options</title> 
       <table>
         <tgroup cols="2">
           <colspec colname="col1" colwidth="109.5pt"/>
@@ -245,7 +245,7 @@
       </table>
     </section>
     <section id="create">
-      <title>Create a Cluster</title>
+      <title>Create a Cluster</title> 
       <p>This command creates a cluster. (<i>create-cluster</i>).</p>
       <codeblock>cf-mgmt [global options] <b>create-cluster</b> [command options] [arguments...] </codeblock>
       <p>For help with this command within the command-line interface, enter</p>
@@ -505,17 +505,17 @@
       </table>
     </section>
     <section id="delete">
-      <title>Delete a Cluster</title>
+      <title>Delete a Cluster</title> 
       <p>This command deletes a cluster (<i>delete-cluster</i>).</p>
     </section>
     <section id="delete-cluster-use-syntax">
-      <title>Use Syntax</title>
+      <title>Use Syntax</title> 
       <codeblock>cf-mgmt [global options] <b>delete-cluster</b> [command options] [arguments...] </codeblock>
       <p>For help with this command within the command-line interface, enter</p>
       <codeblock>cf-mgmt help delete-cluster</codeblock>
     </section>
     <section id="delete-cluster-command-options">
-      <title>Command Options</title>
+      <title>Command Options</title> 
       <table>
         <tgroup cols="3">
           <colspec colname="col1" colwidth="1*"/>
@@ -620,8 +620,8 @@
       </table>
     </section>
     <section id="list">
-      <title>List Clusters</title><p>Lists all clusters that exist on a single tenant. (<i>list-clusters</i>)</p>
-      <title>Use Syntax</title>
+      <title>List Clusters</title> <p>Lists all clusters that exist on a single tenant. (<i>list-clusters</i>)</p>
+      <title>Use Syntax</title> 
       <codeblock>cf-mgmt [global options] <b>list-clusters</b> [arguments...] </codeblock>
       <p>For help with this command within the command-line interface, enter</p>
       <codeblock>cf-mgmt help list-clusters</codeblock>      <table>
@@ -647,7 +647,7 @@
       </table>
     </section>
   <section id="show">
-    <title>Show Details</title><p>Displays detailed information about the target cluster. (<i>show-cluster</i>)</p>
+    <title>Show Details</title> <p>Displays detailed information about the target cluster. (<i>show-cluster</i>)</p>
       <p>For help with this command within the command-line interface, enter</p>
       <codeblock>cf-mgmt help show-cluster</codeblock>
     <table>
@@ -678,7 +678,7 @@
     </table>
   </section>
     <section id="addrole">
-      <title>Add Roles to an Existing Cluster</title>
+      <title>Add Roles to an Existing Cluster</title> 
       <p>Options can be passed when adding roles to an existing cluster (<i>add-role dea</i>). </p>
       <p>
         <note>Adding a role will create one or more additional nodes in the cluster as part of the
@@ -686,13 +686,13 @@
       </p>
     </section>
     <section id="add-role-use-syntax">
-      <title>Use Syntax</title>
+      <title>Use Syntax</title> 
       <codeblock>cf-mgmt [global options] <b>add-role</b> [subcommand] [subcommand options] [arguments...]</codeblock>
       <p>For help with this command within the command-line interface, enter</p>
       <codeblock>cf-mgmt add-role --help</codeblock>
     </section>
     <section id="subcommands">
-      <title>Subcommands</title>
+      <title>Subcommands</title> 
       <codeblock>cf-mgmt [global options] add-role <b>[subcommand]</b> [subcommand options] [arguments...]</codeblock>
       <table>
         <tgroup cols="2">
@@ -714,7 +714,7 @@
       </table>
     </section>
     <section id="sub-command-options">
-      <title>Sub-Command Options</title>
+      <title>Sub-Command Options</title> 
       <codeblock>cf-mgmt [global options] add-role [subcommand] <b>[subcommand options]</b> [arguments...]</codeblock>
       <table>
         <tgroup cols="3">
@@ -826,17 +826,17 @@
       </table>
     </section>
     <section id="addservice">
-      <title>Add Services to an Existing Cluster</title>
+      <title>Add Services to an Existing Cluster</title> 
       <p>This command adds services to an existing cluster (<i>add-service</i>).</p>
     </section>
     <section id="add-service-use-syntax">
-      <title>Use Syntax</title>
+      <title>Use Syntax</title> 
       <codeblock>cf-mgmt [global options] <b>add-service</b> [subcommand] [subcommand options] [arguments..]</codeblock>
       <p>For help with each subcommand, enter</p>
       <codeblock>cf-mgmt add-service <b>[subcommand]</b> --help</codeblock>
     </section>
     <section id="add-service-subcommands">
-      <title>Subcommands</title>
+      <title>Subcommands</title> 
       <codeblock>cf-mgmt [global options] add-service <b>[subcommand]</b> [subcommand options] [arguments..]</codeblock>
       <table>
         <tgroup cols="2">
@@ -898,7 +898,7 @@
       </table>
     </section>
     <section id="subcommand-options">
-      <title>Subcommand Options</title>
+      <title>Subcommand Options</title> 
       <p>Each subcommand in the Add-Service command has these following options available. The
           <varname>mysql</varname> subcommand has <xref href="#topic13234/mysqlcommand"
           format="dita">additional options</xref>.</p>
@@ -1066,7 +1066,7 @@
       </table>
     </section>
     <section id="update-the-cf-mgmt-tool">
-      <title>Update the <codeph>cf-mgmt </codeph>Tool</title>
+      <title>Update the <codeph>cf-mgmt </codeph>Tool</title> 
       <p>This command checks for and downloads the latest version of the
           <varname>cf-mgmt.exe</varname> tool.</p>
       <p>There are no arguments for this command. Passing the <codeph>Help</codeph> option will
@@ -1093,17 +1093,17 @@
     </section>
   
   <section id="removeservice">
-      <title>Remove Services from an Existing Cluster</title>
+      <title>Remove Services from an Existing Cluster</title> 
       <p>This command removes services from an existing cluster (<i>add-service</i>).</p>
     </section>
   <section id="remove-service-use-syntax">
-    <title>Use Syntax</title>
+    <title>Use Syntax</title> 
     <codeblock>cf-mgmt [global options] <b>remove-service</b> [subcommand] [subcommand options] [arguments..]</codeblock>
     <p>For help with each subcommand, enter</p>
     <codeblock>cf-mgmt remove-service <b>[subcommand]</b> --help</codeblock>
   </section>
   <section id="remove-service-subcommands">
-    <title>Subcommands</title>
+    <title>Subcommands</title> 
     <codeblock>cf-mgmt [global options] remove-service <b>[subcommand]</b> [subcommand options] [arguments..]</codeblock>
     <table>
       <tgroup cols="2">
@@ -1165,7 +1165,7 @@
     </table>
   </section>
   <section id="remove-subcommand-options">
-    <title>Subcommand Options</title>
+    <title>Subcommand Options</title> 
     <p>Each subcommand in the Remove-Service command has these following options available. The
           <varname>mysql</varname> subcommand has <xref href="#topic13234/remove-mysqlcommand"
           format="dita">additional options</xref>.</p>
@@ -1305,16 +1305,16 @@
   </section> 
   
   <section id="removerole">
-    <title>Remove Roles From an Existing Cluster</title>
+    <title>Remove Roles From an Existing Cluster</title> 
   </section>
   <section id="remove-role-use-syntax">
-    <title>Use Syntax</title>
+    <title>Use Syntax</title> 
     <codeblock>cf-mgmt [global options] <b>remove-role</b> [subcommand] [subcommand options] [arguments...]</codeblock>
     <p>For help with this command within the command-line interface, enter</p>
     <codeblock>cf-mgmt remove-role --help</codeblock>
   </section>
   <section id="remove-role-subcommands">
-    <title>Subcommands</title>
+    <title>Subcommands</title> 
     <codeblock>cf-mgmt [global options] remove-role <b>[subcommand]</b> [subcommand options] [arguments...]</codeblock>
     <table>
       <tgroup cols="2">
@@ -1336,7 +1336,7 @@
     </table>
   </section>
   <section id="remove-role-sub-command-options">
-    <title>Sub-Command Options</title>
+    <title>Sub-Command Options</title> 
     <codeblock>cf-mgmt [global options] remove-role [subcommand] <b>[subcommand options]</b> [arguments...]</codeblock>
     <table>
       <tgroup cols="3">

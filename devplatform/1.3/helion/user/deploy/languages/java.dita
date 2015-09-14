@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2811">
-<title>HP Helion 1.3 Development Platform: Developing in Java</title>
+<title>HP Helion 1.3 Development Platform: Developing in Java</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,7 +18,7 @@
 <body>
 <p>Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry-based Platform as a Service (PaaS), or writing applications that take advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools to enable successful development are available in Java.</p>
   <p>Deployable <xref href="../../../../devplatform.appdev.dita#topic2457/java" type="section">sample applications</xref> are available in this language.</p>
-<section id="using-jdbc"> <title>Using JDBC</title>
+<section id="using-jdbc"> <title>Using JDBC</title> 
 <p>It is possible to access the database services using the standard JDBC
 API:</p>
 <codeblock>String helion_services = System.getenv("VCAP_SERVICES");
@@ -54,11 +54,11 @@ if (helion_services != null &amp;&amp; helion_services.length() &gt; 0) {
   }
 }</codeblock>
 </section>
-<section id="example"> <title>Example</title>
+<section id="example"> <title>Example</title> 
 <p>The <xref href="../../../../workbook/database/database.java.dita" >Java database sample</xref> sample
 demonstrates a simple Java application using a MySQL service.</p>
 </section>
-<section id="catalina-opts"> <title>CATALINA_OPTS</title>
+<section id="catalina-opts"> <title>CATALINA_OPTS</title> 
 <p>The CATALINA_OPTS environment variable can be set in the
 <codeph>env:</codeph> block of manifest.yml (or set via the
 Management Console) to override Application Lifecycle Service defaults.</p>

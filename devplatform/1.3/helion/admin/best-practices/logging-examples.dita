@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2651">
-<title>HP Helion 1.3 Development Platform: Log Drain Examples</title>
+<title>HP Helion 1.3 Development Platform: Log Drain Examples</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -40,7 +40,7 @@ software or services.</p>
       <note>Do not forward both application and system logs to the same destination.</note>
     </p>
 <section id="logging-examples-papertrail">
-      <title>Papertrail</title>
+      <title>Papertrail</title> 
       <ol>
         <li>
           <xref href="https://papertrailapp.com/plans" scope="external" format="html">Create an
@@ -70,7 +70,7 @@ software or services.</p>
               >Saving Custom Log Formats</xref></i> ).</note>
       </p>
     </section>
-<section id="logging-examples-splunk"> <title>Splunk</title>
+<section id="logging-examples-splunk"> <title>Splunk</title> 
 <ol>
 <li>Set up a  <xref href="http://www.splunk.com/download" scope="external" format="html">Splunk
             Server</xref>.</li>
@@ -98,7 +98,7 @@ kato log drain add drain-name tcp://splunk-server-address:port#</codeblock></li>
 <p>Splunk supports JSON format without further configuration. Enable system JSON logging by executing the following kato command:</p>
 <codeblock>kato log drain add --format json drain-name tcp://splunk-server-address:port#</codeblock>
 </section>
-<section id="logging-examples-logstash"> <title>Logstash</title>
+<section id="logging-examples-logstash"> <title>Logstash</title> 
 <ol>
 <li> Download and install <xref href="http://www.elasticsearch.org/overview/logstash/download/"
             scope="external" format="html">Logstash</xref>.</li>
@@ -113,7 +113,7 @@ kato log drain add drain-name tcp://splunk-server-address:port#</codeblock></li>
           command:<codeblock>kato log drain add *drain-name* udp://logstash-server-address:*port#* </codeblock></li>
 </ol>
 </section>
-<section id="hello-world-custom-drain"> <title>Hello World Custom Drain</title>
+<section id="hello-world-custom-drain"> <title>Hello World Custom Drain</title> 
 <p>The command below starts a drain target server on a node and pipes it to a local file:</p>
 <codeblock>nc -lk 0.0.0.0 10000 &gt; log-output.txt</codeblock>
 <p>As long as that nc command runs, this will funnel logs from all drains, targeting it into the file log-output.txt</p>

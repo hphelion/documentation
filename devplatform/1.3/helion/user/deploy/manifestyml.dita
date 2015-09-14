@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20922">
-<title>HP Helion 1.3 Development Platform: Manifest.yml Options</title>
+<title>HP Helion 1.3 Development Platform: Manifest.yml Options</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -152,7 +152,7 @@
 </ul>
 </li>
 </ul>
-<section id="applications"> <title>applications:</title>
+<section id="applications"> <title>applications:</title> 
 <p>This key contains a list of options corresponding to individual apps to
 be pushed. Each sub-key should match the name of folders where the files
 for each app are contained. For example:</p>
@@ -182,7 +182,7 @@ directory along with the <i>manifest.yml</i> file:</p>
     instances: 1
     mem: 512</codeblock>
 </section>
-<section id="depends-on"> <title>depends-on:</title>
+<section id="depends-on"> <title>depends-on:</title> 
 <p>When deploying multiple applications from a single <i>manifest.yml</i> use
 the <codeph>depends-on:</codeph> key to set the order in which the
 apps are started and stopped. An app with the <codeph>depends-on:</codeph> option will be pushed only after the listed apps have been
@@ -206,7 +206,7 @@ pushed and are running on the server.</p>
 <p>If an app is stopped or restarted, the process happens in the reverse
 order.</p>
 </section>
-<section id="helion"> <title>helion:</title>
+<section id="helion"> <title>helion:</title> 
 <p>The following Application Lifecycle Service-specific options need to be placed in a
 <codeph>helion:</codeph> block within the application block.</p>
 <ul>
@@ -253,7 +253,7 @@ insert values from one key into another.</p>
 <p>The following sections describe the available keys and the values that
 can be assigned to them:</p>
 </section>
-<section id="name"> <title>name:</title>
+<section id="name"> <title>name:</title> 
 <p>This is the name of the application being pushed. If not specified, the
 user will be prompted during <codeph>helion push</codeph> to
 provide a name. The name can also be specified on the command line (eg.
@@ -265,7 +265,7 @@ provide a name. The name can also be specified on the command line (eg.
           scope="external" format="html">hostname label</xref> (i.e. containing only alphanumeric
         characters and hyphens).</note>
 </section>
-<section id="buildpack"> <title>buildpack:</title>
+<section id="buildpack"> <title>buildpack:</title> 
 <p>The Git repository URL for the specific <xref href="buildpack.dita#topic3370">buildpack</xref>
         used to deploy the application. For example:</p>
 <codeblock>  name: java-app
@@ -275,7 +275,7 @@ buildpack: https://github.com/heroku/heroku-buildpack-java.git</codeblock>
   <codeph>detect</codeph> scripts in any of its <xref href="buildpack.dita#topic3370/built-in-buildpacks" type="section"   >built-in
 buildpacks</xref>.</p>
 </section>
-<section id="framework"> <title>framework:</title>
+<section id="framework"> <title>framework:</title> 
 <p>Allows the app to specify a framework and runtime to be used. Specifying a value for the
           <codeph>framework</codeph> key triggers the use of the <xref
           href="buildpack.dita#topic3370/legacy-buildpack">Legacy Buildpack</xref>.</p>
@@ -287,14 +287,14 @@ buildpacks</xref>.</p>
           href="buildpack.dita#topic3370/built-in-buildpacks"
           type="section" >built-in buildpacks</xref>.</p>
 </section>
-<section id="type"> <title>type:</title>
+<section id="type"> <title>type:</title> 
 <p>The framework to use. Check <codeph>helion frameworks</codeph>
 for a complete list of available frameworks. If not specified, user may
 be prompted during <codeph>helion push</codeph>. Can also be
 input with the command line option --framework, -f (eg.
 <codeph>helion push --framework python</codeph>).</p>
 </section>
-<section id="runtime"> <title>runtime:</title>
+<section id="runtime"> <title>runtime:</title> 
 <p>The runtime to use. Check <codeph>helion runtimes</codeph> for a
 complete list of available runtimes. If not specified, server will
 select the best option based on available data. Can also be input with
@@ -305,7 +305,7 @@ the command line option --runtime, -f (eg.
   type: python
   runtime: python32</codeblock>
 </section>
-<section id="document-root"> <title>document-root:</title>
+<section id="document-root"> <title>document-root:</title> 
 <p>Overrides the default document-root setting (\$HOME) for the web server.</p>
       <note type="restriction"> Applies to Node.js, Perl, PHP, and Python frameworks only.</note>
 <p>Setting a deeper document root directory avoids the problem of exposing
@@ -317,7 +317,7 @@ supporting files (e.g. <i>manifest.yml</i>) over HTTP.</p>
 <p>The document-root must always be specified relative to \$HOME
 (/home/helion/app).</p>
 </section>
-<section id="start-file"> <title>start-file:</title>
+<section id="start-file"> <title>start-file:</title> 
 <p>Set the main application filename.</p>
 <p>
         <note type="restriction">Applies to Perl and Python frameworks only.</note>
@@ -338,7 +338,7 @@ Application Lifecycle Service. For example:</p>
           href="../reference/environment.dita#topic7631/processes-web">PROCESSES_WEB</xref> as the macro is expanded before the pre-running hooks
         are run.</p>
 </section>
-<section id="app-dir"> <title>app-dir</title>
+<section id="app-dir"> <title>app-dir</title> 
 <p>The directory containing the application code to be pushed to Application Lifecycle Service
 (if it's not in the top-level directory). This directory becomes the
 \$HOME directory of the application when the application is pushed to
@@ -356,7 +356,7 @@ app-dir: target</codeblock>
 <p>To launch multiple applications from multiple sub-directories use a <xref href="#topic20922"
           format="dita"><i>manifest.yml</i></xref> file.</p>
 </section>
-<section id="services"> <title>services:</title>
+<section id="services"> <title>services:</title> 
 <p>A list of services to create and bind to the application. Each sub key
 is the name of the service to create / bind, and the associated value is
 the type of the new service. If multiple services of the same type are
@@ -418,11 +418,11 @@ helion apps
 | sample-2    | 1 | RUNNING | sample-2.helion-pjw3.local | sample-2-db |
 +-------------+---+---------+------------------------------+-------------+</codeblock>
 </section>
-<section id="requirements"> <title>Requirements</title>
+<section id="requirements"> <title>Requirements</title> 
 <p>Specifies required modules and allows the installation of additional OS
 packages.</p>
 </section>
-<section id="os-packages"> <title>OS Packages</title>
+<section id="os-packages"> <title>OS Packages</title> 
 <p>OS packages can be added in an <codeph>ubuntu:</codeph> block
 within a <codeph>staging:</codeph> and/or <codeph>running:</codeph> block. Plain strings are treated as package names:</p>
 <codeblock>  requirements:
@@ -452,7 +452,7 @@ overriding repository restrictions set by admins.</p>
     ubuntu:
       - libfoo</codeblock>
 </section>
-<section id="language-modules"> <title>Language Modules</title>
+<section id="language-modules"> <title>Language Modules</title> 
 <p>For the installation of language modules, replace the
 <i>requirements.txt</i> file. For Python, <codeph>pypm:</codeph> and <codeph>pip:</codeph> can be specified:</p>
 <codeblock>  requirements:
@@ -472,7 +472,7 @@ requirements:
     - CGI::Application::PSGI
     - Plack::Builder</codeblock>
 </section>
-<section id="mem"> <title>mem:</title>
+<section id="mem"> <title>mem:</title> 
 <p>The amount of memory to allocate for the application.</p>
 <p>Syntax: \&lt;int&gt; or \&lt;int&gt;M - Memory in megabytes. eg. 256M</p>
 <p>Syntax: \&lt;int&gt;G or \&lt;float&gt;G - Memory in gigabytes. eg. 1.5G or 2G</p>
@@ -481,7 +481,7 @@ requirements:
 <p>Example:</p>
 <codeblock>  mem: 64M</codeblock>
 </section>
-<section id="disk"> <title>disk:</title>
+<section id="disk"> <title>disk:</title> 
 <p>The amount of disk space to allocate for the application (minimum
 512MB).</p>
 <p>Syntax: \&lt;int&gt; or \&lt;int&gt;M - Disk in megabytes. eg. 768M</p>
@@ -491,19 +491,19 @@ on the command line (eg. <codeph>helion push --disk 768M</codeph>).</p>
 <p>Example:</p>
 <codeblock>  mem: 3.5GB</codeblock>
 </section>
-<section id="instances"> <title>instances:</title>
+<section id="instances"> <title>instances:</title> 
 <p>The number of instances to allocate for the application. If not
 specified, defaults to 1. Can be specified on the command line (eg.
 helion push <codeph>--instances 2</codeph>).</p>
 <p>Example:</p>
 <codeblock>  instances: 2</codeblock>
 </section>
-  <section id="placement-zone"><title>Placement Zones</title> The DEA <xref type="section"
+  <section id="placement-zone"><title>Placement Zones</title>  The DEA <xref type="section"
         href="../../admin/cluster/zones.dita#topic_u3c_rtd_5s/dea-zones-placement">placement
         zone</xref> to run the app in (optional). Use the <xref
         href="../reference/client-ref-placement.dita">placement-zones</xref> command to see which
       placement zones are available on the current target. </section>
-<section id="url-or-urls"> <title>url (or urls):</title>
+<section id="url-or-urls"> <title>url (or urls):</title> 
 <p>List of URLs mapped to the application. For example:</p>
 <codeblock>  name: cms-platform
 
@@ -515,7 +515,7 @@ url:
 URL assigned as well, add <codeph>${name}.${target-base}</codeph>
 to the list of URLs.</p>
 </section>
-<section id="env"> <title>env:</title>
+<section id="env"> <title>env:</title> 
 <p>A map of environment variables to initialize for the application. Each
 subkey is the name of the variable, with an associated value.</p>
 <p>Example:</p>
@@ -524,7 +524,7 @@ subkey is the name of the variable, with an associated value.</p>
 <p>Avoid using this for values which should not be stored in plain text,
 such as API keys and passwords.</p>
 </section>
-<section id="env-attributes"> <title>env Attributes</title>
+<section id="env-attributes"> <title>env Attributes</title> 
 <p>Each environment variable can have attributes which modify the
   interactive behavior of the <xref href="../../user/reference/client-ref.dita" >ALS client</xref> when using the
   <xref type="section" href="../../user/reference/client-ref-management.dita#topic50918/command-push">push</xref> command. These
@@ -571,9 +571,9 @@ is set but no value is given (via "default", "inherit" or the
             client</xref>.</note>
       </p>
 </section>
-<section id="processes"> <title>processes:</title>
+<section id="processes"> <title>processes:</title> 
 </section>
-<section id="web"> <title>web:</title>
+<section id="web"> <title>web:</title> 
   <note> Used with the <xref href="buildpack.dita#topic3370/legacy-buildpack">Legacy</xref>
         buildpack only. When using other buildpacks, create a <xref
           href="https://devcenter.heroku.com/articles/procfile" scope="external" format="html"
@@ -613,7 +613,7 @@ uWSGI (Perl and Python), and it contains the command to start uWSGI with
 all relevant options. It can be used if you are appending additional
 uWSGI options to the command.</p>
 </section>
-<section id="command"> <title>command:</title>
+<section id="command"> <title>command:</title> 
 <p>Used for worker applications to start a background process. Below is an example using the <xref
           href="other-frameworks.dita#topic2413/standalone">standalone framework</xref>:</p>
 <codeblock>  name: helion-worker
@@ -623,14 +623,14 @@ framework:
   runtime: ruby18
 command: ruby worker.rb</codeblock>
 </section>
-<section id="cron"> <title>cron:</title>
+<section id="cron"> <title>cron:</title> 
 <p>Commands listed here are added to the crontab file. </p>
 <p>Example:</p>
 <codeblock>  cron:
   - PLUGH=xyzzy
   - "*/1 * * * * env &gt; $HOME/env"</codeblock>
 </section>
-<section id="ignores"> <title>ignores:</title>
+<section id="ignores"> <title>ignores:</title> 
 <p>A list of .gitignore-style patterns. Files and directories in the
 application directory matching at least one pattern are ignored during
 "push" and "update".</p>
@@ -647,7 +647,7 @@ folders of various source code control systems).</p>
 *_build, *_darcs, *_sgbak, *autom4te.cache, *blib, *cover_db,
 *\~.dep, *\~.dot, *\~.nib, *\~.plst</p>
 </section>
-<section id="inherit"> <title>inherit:</title>
+<section id="inherit"> <title>inherit:</title> 
 <p>This special key has the effect of treating its value as the name of a
 file to be included into <i>manifest.yml</i>.</p>
 <p>Example:</p>
@@ -666,11 +666,11 @@ env:
   COMPANY: The ABC Company
 mem: 64M</codeblock>
 </section>
-<section id="hooks"> <title>hooks:</title>
+<section id="hooks"> <title>hooks:</title> 
 <p>Hooks are commands that are run at various point of the staging and
 running process of an app.</p>
 </section>
-<section id="pre-push"> <title>pre-push:</title>
+<section id="pre-push"> <title>pre-push:</title> 
 <p>Commands run <b>on the local system</b> before pushing the code to
 Application Lifecycle Service. This can be useful for building source files (e.g. with
 <codeph>make</codeph>) or performing configuration steps that need
@@ -683,17 +683,17 @@ the application is new, or "update" if it detects the application
 already exists. You can use this variable to run hooks differently in
 either context.</p>
 </section>
-<section id="pre-staging"> <title>pre-staging:</title>
+<section id="pre-staging"> <title>pre-staging:</title> 
 <p>A list of commands to be run in the root of the app's directory before
 the staging process is started. The commands are only run a single time
 on push or update.</p>
 </section>
-<section id="post-staging"> <title>post-staging:</title>
+<section id="post-staging"> <title>post-staging:</title> 
 <p>A list of commands to be run in the root of the app's directory after
 the staging process is complete. The commands are only run a single time
 on push or update.</p>
 </section>
-<section id="pre-running"> <title>pre-running:</title>
+<section id="pre-running"> <title>pre-running:</title> 
 <p>A list of commands to be run in the root of the app's directory after
 staging is complete and before the app is started. The commands are run
 sequentially, in the order listed, each time an app is started or
@@ -727,7 +727,7 @@ is not needed and can be included on the same line:</p>
   post-staging: python staging.py
   pre-running:  python running.py</codeblock>
 </section>
-<section id="drain"> <title>drain:</title>
+<section id="drain"> <title>drain:</title> 
 <p>
         <xref
             href="app-logs.dita#topic5165/helion-drain">Application log drains</xref> can
@@ -748,11 +748,11 @@ is not needed and can be included on the same line:</p>
     url: tcp://logs.papertrailapp.com:12345/
     json: true</codeblock>
 </section>
-<section id="min-version"> <title>min_version:</title>
+<section id="min-version"> <title>min_version:</title> 
 <p>Sets requirements for the minimum version of the client and server under
 which the app will run.</p>
 </section>
-<section id="client"> <title>client:</title>
+<section id="client"> <title>client:</title> 
 <p>The minimum version of the Application Lifecycle Service client needed to manage the app.</p>
 <p>To determine the client version, use:</p>
 <codeblock>helion version
@@ -761,11 +761,11 @@ helion 0.3.13.0.18</codeblock>
 <codeblock>  min_version:
   client: 0.3.13.0.18</codeblock>
 </section>
-<section id="server"> <title>server:</title>
+<section id="server"> <title>server:</title> 
 <p>The minimum version of the Application Lifecycle Service server needed to run the app.</p>
 </section>
 <section id="key-substitution">
-      <title>Key Substitution</title>
+      <title>Key Substitution</title> 
       <p>The value of any key in <i>manifest.yml</i> can be inserted in other keys using the
           \${<i>key</i>} syntax. For example:</p>
       <codeblock>  name: example-app

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1342">
-<title>HP Helion 1.3 Development Platform: Clojure</title>
+<title>HP Helion 1.3 Development Platform: Clojure</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -33,7 +33,7 @@ Application Deployed URL: 'myapp.helion-xxxx.local'?
 Starting Application: OK</codeblock>
 <p>Open the application's URL in your browser to see the default Noir welcome
 page.</p>
-<section id="clojure-database-services-example"> <title>Clojure Database Services Example</title>
+<section id="clojure-database-services-example"> <title>Clojure Database Services Example</title> 
 <p>Taken from the <xref href="https://github.com/Stackato-Apps/4clojure/blob/stackato/src/foreclojure/config.clj#L6" type="section" scope="external" format="html" >4clojure sample
 app</xref>:</p>
 <codeblock>(defn assoc-cloud-env

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6720">
-<title>HP Helion 1.3 Development Platform: Glazier Reference Guide</title>
+<title>HP Helion 1.3 Development Platform: Glazier Reference Guide</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -49,11 +49,11 @@
 <xref type="section" href="#topic6720/profile">Glazier Profiles</xref>
 </li>
 </ul>
-<section id="downloading"> <title>Downloading the Glazier tool</title>
+<section id="downloading"> <title>Downloading the Glazier tool</title> 
 <p>The Glazier tool can be found here: <xref href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip" scope="external" format="html" >Download</xref>
 </p>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="prerequisites"> <title>Prerequisites</title> 
 <p>Glazier can run in either Linux (Ubuntu recommended) or OSX.</p>
 <ul>
 <li>
@@ -65,7 +65,7 @@
 </li>
 </ul>
 </section>
-<section id="usage"> <title>Usage</title>
+<section id="usage"> <title>Usage</title> 
 <p>To use the script, you need to have the following OpenStack environment variables set:</p>
 <ul>
 <li>OS_TENANT_NAME</li>
@@ -77,7 +77,7 @@
 </ul>
 <p>It is recommended to set these environment variables using the OpenStack RC file from the target environment. This can be obtained in Horizon, under Project-&gt;Compute-&gt;Access &amp; Security-&gt;API Access-&gt;<b>Download OpenStack RC File</b>.</p>
 </section>
-<section id="commandline"> <title>Command-line arguments</title>
+<section id="commandline"> <title>Command-line arguments</title> 
 <p>Syntax: <codeph>create-glazier</codeph>
 </p>
 <p>Available options:</p>
@@ -151,16 +151,16 @@
 --help                      
     - shows this message</codeblock>
 </section>
-<section id="profile"> <title>Creating a Glazier Profile</title>
+<section id="profile"> <title>Creating a Glazier Profile</title> 
 <p>A profile can be used to configure Glazier. By default we provide the profiles you need to create the images you need to enable working with Windows. However, you can create a custom profile. Create the profile in the following format:</p>
 </section>
-<section id="glazier-profile-directory-structure"> <title>Glazier profile directory structure</title>
+<section id="glazier-profile-directory-structure"> <title>Glazier profile directory structure</title> 
 <p>The directory structure of the profile should match the following:</p>
 <p>
                 <image href="../../../media/windows_glazier_fileformat.png"/>
             </p>
 </section>
-<section id="sample-featurescsv-file"> <title>Sample features.csv file</title>
+<section id="sample-featurescsv-file"> <title>Sample features.csv file</title> 
 <p>The <codeph>features.csv</codeph> file should have the following format:</p>
 <codeblock>  csv
 Feature,Core,Standard,Desired
@@ -179,19 +179,19 @@ IIS-WMICompatibility,Disabled,Disabled,Removed
 IIS-LegacyScripts,Disabled,Disabled,Removed
 IIS-FTPServer,Disabled,Disabled,Removed</codeblock>
 </section>
-<section id="sample-resourcescsv-file"> <title>Sample resources.csv file</title>
+<section id="sample-resourcescsv-file"> <title>Sample resources.csv file</title> 
 <p>The <codeph>resources.csv</codeph> file should have the following format:</p>
 <codeblock>csv
 destination,url
 \installers\product.zip,http://download.domain.com/product.zip</codeblock>
 </section>
-<section id="sample-toolscsv-file"> <title>Sample tools.csv file</title>
+<section id="sample-toolscsv-file"> <title>Sample tools.csv file</title> 
 <p>The <codeph>tools.csv</codeph> file should have the following format:</p>
 <codeblock>csv
 destination,url
 tool.zip,http://download.domain.com/tool.zip</codeblock>
 </section>
-<section id="sample-powershell-script"> <title>Sample PowerShell script</title>
+<section id="sample-powershell-script"> <title>Sample PowerShell script</title> 
 <p>The <codeph>specialize.ps1</codeph> file is a PowerShell script that will run as one of the last steps on the <codeph>temp instance</codeph>.</p>
 <p>Sample <codeph>specialize.ps1</codeph>:</p>
 <codeblock>powershell

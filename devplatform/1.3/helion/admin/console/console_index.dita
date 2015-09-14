@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13823">
-<title>HP Helion 1.3 Development Platform: Management Console (Admin View)</title>
+<title>HP Helion 1.3 Development Platform: Management Console (Admin View)</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -120,7 +120,7 @@
       <li><xref href="console_settings.dita">Console Settings Menu </xref></li>
     </ul>
     <section id="setup">
-      <title>Management Console Setup and Access</title>
+      <title>Management Console Setup and Access</title> 
       <p>Your hypervisor provides <xref
           href="../../user/reference/glossary.dita#topic6187/term-tty-console" type="section">tty
           console</xref> access to each of its virtual machines. After startup, an Application
@@ -175,7 +175,7 @@ https://helion-xxxx.local</codeblock>
           >Customization</xref> documentation.</p>
     </section>
     <section id="welcome">
-      <title>Welcome Page</title>
+      <title>Welcome Page</title> 
       <p>The top-level page of the Management Console displays quick links to the most used
         resources and views. The blue buttons are for features also available to regular end users.
         See <xref href="../../user/console/console_index.dita#topic8844/welcome">Management
@@ -201,13 +201,13 @@ https://helion-xxxx.local</codeblock>
       </ul>
     </section>
     <section id="applications">
-      <title>Applications</title>
+      <title>Applications</title> 
       <p>The Applications section displays a list of all apps on the server. Click anywhere on the
         line for an app to view its details. Admins have the same permissions in the Application
         View as a Developer of the space it was deployed to.</p>
     </section>
     <section id="organizations">
-      <title>Organizations</title>
+      <title>Organizations</title> 
       <p>The top level Organizations page allows Admins to add and delete <xref
           href="#topic13823/organizations" format="dita">Organizations</xref>. Clicking on an
         organization name opens its details. This view is the same as a regular user's <xref
@@ -215,19 +215,19 @@ https://helion-xxxx.local</codeblock>
         view, but admin users can also edit quotas and add/remove domains, spaces, and users.</p>
     </section>
     <section id="support">
-      <title>Support</title>
+      <title>Support</title> 
       <p>The Support menu includes the same options as the regular user's menu.</p>
     </section>
     <section id="admin">
-      <title>Admin</title>
+      <title>Admin</title> 
       <p>Several views that are only available to administrators are in the Admin menu.</p>
     </section>
     <section id="clustermanagement">
-      <title>Cluster Management</title>
+      <title>Cluster Management</title> 
       <p>Commands for managing a cluster as a whole.</p>
     </section>
     <section id="clustersummary">
-      <title>Summary</title>
+      <title>Summary</title> 
       <p>Displays a list of roles and their status in the system. Additionally, the following system
         information is displayed:</p>
       <ul>
@@ -244,7 +244,7 @@ https://helion-xxxx.local</codeblock>
       </ul>
     </section>
     <section id="cluster-nodes">
-      <title>Cluster Nodes</title>
+      <title>Cluster Nodes</title> 
       <p>Displays a list of nodes in the current cluster, and what services are running on each
         node. In a micro cloud configuration, only the current local node (127.0.0.1) is shown.</p>
       <p>To enable or disable services on a node, click the Configure Roles button (cog icon) to see
@@ -258,40 +258,40 @@ https://helion-xxxx.local</codeblock>
         adding nodes to the cluster.</p>
     </section>
     <section id="patches">
-      <title>Available Patches</title>
+      <title>Available Patches</title> 
       <p>Displays a list of available patches for the current cluster.</p>
     </section>
     <section id="app-org">
-      <title>Applications &amp; Organizations</title>
+      <title>Applications &amp; Organizations</title> 
       <p>Links to the <xref href="../../user/console/console_index.dita#topic8844/application-view"
           >Applications</xref> and <xref href="../../user/deploy/orgs-spaces.dita" type="section"
           >Organizations</xref> lists.</p>
     </section>
     <section id="domains">
-      <title>Domains</title>
+      <title>Domains</title> 
       <p>A filterable list of all domains configured on the system, showing whether they are <xref
           href="../../user/deploy/orgs-spaces.dita#topic2729/domains" type="section">Shared or
           Owned domains</xref>.</p>
     </section>
     <section id="routes">
-      <title>Routes</title>
+      <title>Routes</title> 
       <p>A filterable list of routes in the system.</p>
     </section>
     <section id="services">
-      <title>Services</title>
+      <title>Services</title> 
     </section>
     <section id="managed-services">
-      <title>Managed Services Instances</title>
+      <title>Managed Services Instances</title> 
       <p>A filterable list of managed service instances on the system.</p>
     </section>
     <section id="user-services">
-      <title>User-provided Service Instances</title>
+      <title>User-provided Service Instances</title> 
       <p>A filterable list of user provided service instances on the system.</p>
     </section>
     <section id="avail-services">
-      <title>Available Services</title>
+      <title>Available Services</title> 
       <p>A list of available service types (with their version).</p></section><section id="quotaPlans">
-      <title>Quota Plans</title>
+      <title>Quota Plans</title> 
       <p>Lists the Quota Plans available to apply to Organizations on the system. To edit a
         definition, click the edit button on the right. To create a new definition, use the <xref
           href="../../user/reference/client-ref-quotas.dita#topic5727/command-quota-create"
@@ -319,7 +319,7 @@ https://helion-xxxx.local</codeblock>
       </ul>
     </section>
     <section id="users">
-      <title>Users</title>
+      <title>Users</title> 
       <p>The Users section displays a list of users and admins.</p>
       <ul>
         <li>Click <b>+ Add User</b> to add users.</li>
@@ -328,11 +328,11 @@ https://helion-xxxx.local</codeblock>
       </ul>
     </section>
     <section id="dashboards">
-      <title>Dashboards</title>
+      <title>Dashboards</title> 
       <p>A list of available dashboards and their functionality.</p>
     </section>
     <section id="memory-summary">
-      <title>Memory Summary</title>
+      <title>Memory Summary</title> 
       <p>Helion tracks the amount of memory used by applications across all DEA nodes and shows
         various reports. Available memory is calculated based on the system memory of the DEA nodes
         multiplied by the <xref type="section" href="console_settings.dita#topic_od4_byj_rs/console-settings-dea">Max Memory
@@ -349,32 +349,32 @@ https://helion-xxxx.local</codeblock>
       </ul>
     </section>
     <section id="dea-usage">
-      <title>DEA Usage</title>
+      <title>DEA Usage</title> 
       <p>Memory usage statistics and a usage bar graph for each DEA node in the pool.</p>
     </section>
     <section id="zone-usage">
-      <title>Placement Zone Usage</title>
+      <title>Placement Zone Usage</title> 
       <p>Memory usage statistics and a usage bar graph for all configured <xref type="section"
         href="console_settings.dita#topic_od4_byj_rs/dea-zones-placement">Placement Zones</xref>.</p>
     </section>
     <section id="avail-zone-usage">
-      <title>Availability Zone Usage</title>
+      <title>Availability Zone Usage</title> 
       <p>Memory usage statistics and a usage bar graph for all configured <xref
         href="console_settings.dita#topic_od4_byj_rs/dea-zones-available" format="dita">Availability Zones</xref>
       </p>
     </section>
     <section id="router-stats">
-      <title>Router Stats</title>
+      <title>Router Stats</title> 
       <p>Shows realtime results for incoming requests (connections per second), routing errors
         (errors per second), and an overview of the cumulative requests to the system.</p>
     </section>
     <section id="primary-node-status-graphs">
-      <title>Primary Node Status Graphs</title>
+      <title>Primary Node Status Graphs</title> 
       <p>Displays graphs for server statistics: CPU, Load, Memory, Disk Operations, Disk Space,
         Processes, and Swap (primary node or micro cloud only).</p>
     </section>
     <section id="cloud-events">
-      <title>Cloud Events</title>
+      <title>Cloud Events</title> 
       <p>The Cloud Events section displays a list of events (including errors and warnings) on the
         ALS server. The events can be filtered by Severity, Node ID, or Type, or by using a
         substring match in the Search field.</p>

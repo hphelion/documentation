@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_l51_22v_xs">
-  <title>Network Port Configuration</title>
+  <title>Network Port Configuration</title> 
   <body>
     <p>The ALS <xref href="../../user/reference/glossary.dita#topic6187/term-micro-cloud"
         >micro-cloud</xref> runs with the following ports exposed: <table>
@@ -231,7 +231,7 @@
                      <li>The optional Harbor port service has a configurable port range
                        (default 41000 - 61000) which can be exposed externally if required.</li>
          </ul> 
-            <section><title>Service Nodes</title>In addition to the ports listed above for service
+            <section><title>Service Nodes</title> In addition to the ports listed above for service
       nodes and gateways, several service nodes assign a port for each individual user-requested
       service instance. These ranges should be kept open between DEA nodes and their respective
       service nodes. The default ranges are: <ul>
@@ -244,7 +244,7 @@
       </ul><p>You can check the currently configured port range for each service with <codeph>kato
           config</codeph> commands like <codeph>kato config get redis_node
       port_range</codeph>).</p></section>
-          <section id="ports-hosts-allowed"><title>Container Allowed Hosts and Ports</title> For
+          <section id="ports-hosts-allowed"><title>Container Allowed Hosts and Ports</title>  For
       security reasons, Docker application containers restrict access to hosts on the eth0 subnet.
       By default, only ports and hosts for built-in services and components (e.g. service instances
       bound to an application) are explicitly allowed. The following settings are available to allow

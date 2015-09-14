@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1035">
-  <title>HP Helion 1.3 Development Platform: Windows Troubleshooting</title>
+  <title>HP Helion 1.3 Development Platform: Windows Troubleshooting</title> 
   <titlealts>
     <searchtitle>HP Helion 1.3 Development Platform: Windows Troubleshooting</searchtitle>
   </titlealts>
@@ -34,7 +34,7 @@
       <li><xref href="#topic1035/kato_patch">Kato tries to install patches on Windows nodes</xref></li>
       <li><xref href="#topic1035/instances">Windows instances created from the Images page in Horizon do not work</xref></li>
     </ul>
-    <section id="kato_upstream_proxies"><title>Upstream proxies are not set in DEAs added after cluster creation</title>
+    <section id="kato_upstream_proxies"><title>Upstream proxies are not set in DEAs added after cluster creation</title> 
     <p>When DEAs are added to clusters after they have been created, upstream proxies are not automatically configured. To configure upstream proxies for these nodes, do the following:</p>
     <ol>
       <li>Connect to each DEA node using SSH</li>
@@ -44,7 +44,7 @@ kato op upstream_proxy set &lt;proxy server&gt;
 service polipo restart
       </codeblock></li>
     </ol></section>
-    <section id="kato_patch"><title>Kato tries to install patches on Windows nodes</title>
+    <section id="kato_patch"><title>Kato tries to install patches on Windows nodes</title> 
     <p>When <codeph>kato patch install</codeph> is run, the installer will attempt to add patches to Windows nodes. This installation will fail with the following errors:</p>
     <codeblock>stackato@fd-core:~$ kato patch install
  The authenticity of host '10.0.0.36 (10.0.0.36)' can't be established.
@@ -57,7 +57,7 @@ service polipo restart
  ssh: connect to host 10.0.0.40 port 22: Connection timed out
  Updating kato patch on 10.0.0.40...
  ssh: connect to host 10.0.0.40 port 22: Connection timed out</codeblock></section>
-    <section id="instances"><title>Windows instances created from the Images page in Horizon do not work</title>
+    <section id="instances"><title>Windows instances created from the Images page in Horizon do not work</title> 
     <p>This behavior is by design. Windows instances must be created with the <b>cf-mgmt</b> tool or through Horizon.</p></section>
   </body>
 </topic>

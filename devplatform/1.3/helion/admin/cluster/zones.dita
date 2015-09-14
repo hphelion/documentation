@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_u3c_rtd_5s">
-  <title>Availability and Placement Zones</title>
+  <title>Availability and Placement Zones</title> 
   <body>
 <section><p>
     ALS has two mechanisms for allocating application instances on
@@ -23,7 +23,7 @@
     See also <xref href="../../user/deploy/deploy_index.dita">Availability and Placement Zones</xref>in the User Guide.
       
 </p>  </section>
-  <section id="dea-zones-availability"><title>Availability Zones</title><p>Setting availability
+  <section id="dea-zones-availability"><title>Availability Zones</title> <p>Setting availability
         zones allows configuration to respect the physical/logical distribution of servers. In this
         sense, they are similar to availability zones or regions in EC2. </p>If there are multiple
       availability zones, application instances are evenly distributed among zones as much as
@@ -40,7 +40,7 @@ Availability zone on node 10.0.0.41 is 'default'.</codeblock>To
       set the availability zone:
       <codeblock>kato node availabilityzone region-b
 Availability zone on node 10.0.0.41 is 'region-b'.</codeblock></section>     
- <section id="dea-zones-placement"><title>Placement Zones</title>
+ <section id="dea-zones-placement"><title>Placement Zones</title> 
         <p>Placement Zones allow application instances to be limited to a certain set of DEA nodes.
         Admins can tag DEAs with a certain set of security policies or hardware characteristics with
         placement zones, allowing users deploying applications to choose which group of servers to

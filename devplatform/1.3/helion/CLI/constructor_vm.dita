@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11989">
-    <title>HP Helion 1.3 Development Platform: HP Application Lifecycle Service (ALS) Constructor Virtual Machine</title>
+    <title>HP Helion 1.3 Development Platform: HP Application Lifecycle Service (ALS) Constructor Virtual Machine</title> 
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
@@ -30,7 +30,7 @@
                 <xref type="section" href="#topic11989/deanodes">adding DEA nodes</xref> to an existing system.</li>
         </ul>
         <p>The CVM self-terminates by default. This final self-termination action can be <xref type="section" href="#topic11989/disable">overridden</xref> by adding a configuration file option. This allows for system troubleshooting and examination of the construction <xref type="section" href="#topic11989/logfile">log file</xref> on the CVM.</p>
-        <section id="cvm-boot-methodology"> <title>CVM Boot Methodology</title>
+        <section id="cvm-boot-methodology"> <title>CVM Boot Methodology</title> 
             <p>The CVM may be launched using several different methods. This flexibility allows you to choose the best method for initial ALS Helion system construction. The methods are as follows:</p>
             <ol>
                 <li>Use the <xref type="section" href="#topic11989/consoleboot">Horizon wizard</xref>. This is the simplest method.</li>
@@ -39,7 +39,7 @@
                 <li>Boot the CVM without a <i>cloud-init</i> configuration file in Helion  <xref type="section" href="#topic11989/publiccloud">public cloud</xref>. After SSH login to the CVM the user will be prompted to run a command line script that will in turn launch the ALS Helion construction.  This allows a user to produce a Helion ALS system that consumes minimal resources in the public cloud. </li>
             </ol>
         </section>
-        <section id="consoleboot"> <title>Method #1: Using the Helion Wizard</title>
+        <section id="consoleboot"> <title>Method #1: Using the Helion Wizard</title> 
             <p>Creating a cluster via the Horizon wizard is by far the simplest option. The wizard prompts the user for configuration options and passes the configuration and environment variable values to the CVM.</p>
             <ol>
                 <li>The user creates a cluster using the ALS Horizon wizard.</li>
@@ -50,7 +50,7 @@
                 <li>The CVM terminates. (Unless the termination is <xref type="section" href="#topic11989/disable">overridden</xref>.)</li>
             </ol>
         </section>
-        <section id="configfile"> <title>Method #2: Boot the VM using the Configuration File</title>
+        <section id="configfile"> <title>Method #2: Boot the VM using the Configuration File</title> 
             <p>This method passes the configuration and environment variable values via a <xref href="http://cloudinit.readthedocs.org/en/latest/" scope="external" format="html" >
                 <i>cloud-init</i>
             </xref> JSON file created prior to booting the CVM.</p>
@@ -107,7 +107,7 @@
     }
 }</codeblock>
         </section>
-        <section id="privatecloud"> <title>Method #3: Boot Without a <i>cloud-init</i> Configuration File (Helion private cloud)</title>
+        <section id="privatecloud"> <title>Method #3: Boot Without a <i>cloud-init</i> Configuration File (Helion private cloud)</title> 
             <p>During the boot process the CVM will detect that a <xref href="http://cloudinit.readthedocs.org/en/latest/" scope="external" format="html" >
                 <i>cloud-init</i>
             </xref> configuration file is not present. When the user logs in via SSH, the CVM will prompt the user to run a script which will create a configuration file. This prompt is provided by the system's Message of the Day (motd).</p>
@@ -127,7 +127,7 @@
                 <li>The CVM terminates. (Unless the termination is <xref type="section" href="#topic11989/disable">overridden</xref>.)</li>
             </ol>
         </section>
-        <section id="publiccloud"> <title>Method #4: Boot Without a Configuration File (Helion public cloud)</title>
+        <section id="publiccloud"> <title>Method #4: Boot Without a Configuration File (Helion public cloud)</title> 
             <p>This is the process used for the <xref
                     href="../../devplatform.ALS-developer-trial-quick-start.dita#topic1952"
                     >Developer Quick-Start trial</xref>. During the boot process the CVM will detect
@@ -176,7 +176,7 @@ admin_password =
 admin_org = als
 services_on_core = True</codeblock>
         </section>
-        <section id="deanodes"> <title>DEA Growth Configuration File Example</title>
+        <section id="deanodes"> <title>DEA Growth Configuration File Example</title> 
             <p>This example adds more DEA nodes to an existing cluster.</p>
            
                 <note type="caution">The <i>dea_count</i> value is the number of DEAs to be <b>added</b> in this
@@ -202,7 +202,7 @@ services =
 grow_cluster = True
 </codeblock>
         </section>
-        <section id="addservices"> <title>Service Growth Configuration File Example</title>
+        <section id="addservices"> <title>Service Growth Configuration File Example</title> 
             <p>This example adds more services to the cluster.</p>
             <note type="caution">The comma-separated values in the list of services contain only the services to be <b>added</b> in this growth mode. Do not list services that already exist.</note>
             <codeblock>[Openstack
@@ -224,7 +224,7 @@ services = filesystem,redis
 [Control]
 grow_cluster = True</codeblock>
         </section>
-        <section id="troubleshooting"> <title>Troubleshooting</title>
+        <section id="troubleshooting"> <title>Troubleshooting</title> 
             <table>
                 <tgroup cols="3">
                     <colspec colname="col1"/>
@@ -272,13 +272,13 @@ grow_cluster = True</codeblock>
                 </tgroup>
             </table>
         </section>
-        <section id="disable"> <title>Disable Self-destruction</title>
+        <section id="disable"> <title>Disable Self-destruction</title> 
             <p>Add this option to the <i>cloud-init</i> JSON file to prevent the CVM from self-destructing at the end of the Helion ALS construction process.</p>
             <codeblock>"Control": {
     "terminate_constructor": "False"
 }</codeblock>
         </section>
-        <section id="logfile"> <title>CVM Logfile Location</title>
+        <section id="logfile"> <title>CVM Logfile Location</title> 
             <p>The CVM creates a log file during the construction process. To view this log, SSH into the CVM and open the following file:</p>
             <codeblock>/tmp/assemble_log.txt</codeblock>
         </section>

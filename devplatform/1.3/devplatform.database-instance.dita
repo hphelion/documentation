@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5773">
-<title>HP Helion 1.3 Development Platform: Using the Database Service</title>
+<title>HP Helion 1.3 Development Platform: Using the Database Service</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -35,7 +35,7 @@
 <xref type="section" href="#topic5773/floatIP">Attach a Floating IP</xref>
 </li>
 </ul>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="prerequisites"> <title>Prerequisites</title> 
 <ol>
 <li>Install the <xref href="installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
 <li>
@@ -43,7 +43,7 @@
             the database service</xref>.</li>
 </ol>
 </section>
-<section id="create"> <title>Creating a Database Instance</title>
+<section id="create"> <title>Creating a Database Instance</title> 
 <ol>
 <li> Log into the Horizon console.<p>Under your project, open the Database panel and then click the
               <b>Instances</b> tab. <!--A BR tag was used here in the original source.--><image
@@ -80,7 +80,7 @@
 <li>Once the database instance has reached <b>Active</b> status, the instance is ready to use.</li>
 </ol>
 </section>
-<section id="backup"> <title>Creating a Database Backup </title>
+<section id="backup"> <title>Creating a Database Backup </title> 
 <p>The following section will demonstrate how to back up an existing database instance. This will take a backup of the entire database instance. If necessary, the backup can be restored to a new instance at a later time.</p>
 <ol>
 <li>Log in to the Horizon console.</li>
@@ -113,13 +113,13 @@
             href="../../media/createDBinstance8.png" placement="break"/></li>
 </ol>
 </section>
-<section id="replicate"> <title>Replicating a Database</title>
+<section id="replicate"> <title>Replicating a Database</title> 
 <p>Replicating a database creates a slave for your instance that replicates every action on the master. Creating a database instance that is automatically replicated results in more durable data and can prevent data loss in a disaster scenario.</p>
 </section>
-<section id="db-prerequisites"> <title>Prerequisites</title>
+<section id="db-prerequisites"> <title>Prerequisites</title> 
 <p>To follow this guide, you must have already <xref type="section" href="#topic5773/create">created</xref> a database instance that will be the master database.</p>
 </section>
-<section id="steps"> <title>Steps</title>
+<section id="steps"> <title>Steps</title> 
 <ol>
 <li>Log in to the Horizon console.</li>
 <li>Under your project, open the <b>Database</b> panel and then click the <b>Instances</b>
@@ -158,7 +158,7 @@
         </li>
 </ol>
 </section>
-<section id="floatIP"> <title>Attaching a Floating IP to the Database Instance</title>
+<section id="floatIP"> <title>Attaching a Floating IP to the Database Instance</title> 
 <p>It is possible to attach a floating IP address to a database instance - this will make it possible to access your instance from outside of your cloud environment.</p>
 <p>To create a database with a floating IP address follow these steps from the command line. Note the following instructions require that you use the Trove CLI to create a database instance.</p>
 <p>For more information on using the Trove CLI, refer to the <xref type="section" href="#topic5773/more">More Resources</xref> section at the end of this guide.</p>
@@ -174,7 +174,7 @@
 $ neutron floatingip-associate &lt;floating-ip-id&gt; &lt;port-id&gt;</codeblock></li>
 </ol>
 </section>
-<section id="more"> <title>More Resources</title>
+<section id="more"> <title>More Resources</title> 
 <ul>
 <li>More information on <xref href="http://docs.openstack.org/developer/trove/" scope="external" format="html" >Trove</xref>.</li>
 <li>More information on <xref href="https://community.hpcloud.com/article/creating-and-configuring-database-instance" scope="external" format="html" >using the Trove CLI</xref> to create a database instance.</li>

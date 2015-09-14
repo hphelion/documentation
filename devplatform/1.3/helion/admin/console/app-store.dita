@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5271">
-<title>HP Helion 1.3 Development Platform: Sample Applications</title>
+<title>HP Helion 1.3 Development Platform: Sample Applications</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -38,14 +38,14 @@ filesystem.</p>
 </li>
 </ul>
 <p>Users have access to the main Sample Applications interface (see the <xref href="../../user/helion_user_index.dita" >Application Lifecycle Service User Guide</xref>, but do not have access to add new applications or add/modify the definition file.</p>
-<section id="creating-an-app-store"> <title>Creating Sample Applications</title>
+<section id="creating-an-app-store"> <title>Creating Sample Applications</title> 
 <p>The Sample Applications interface exposes multiple "stores" which specify the
 available applications. These stores are sourced from definition files
 specified in the main <xref href="console_settings.dita">Console Settings</xref> page of
   the Management Console or set using <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >kato
 config</xref>.</p>
 </section>
-<section id="app-store-definition"> <title>Sample Applications Definition File</title>
+<section id="app-store-definition"> <title>Sample Applications Definition File</title> 
 <p>
   <xref href="../../user/reference/glossary.dita#topic6187/term-YAML" type="section"   >YAML</xref> files describe the settings for each set of apps, including the container and a link to the source  repository for
 each app. For example:</p>
@@ -95,7 +95,7 @@ apps:
 <p>The YAML string requires two top-level keys: <b>store</b>
 and <b>apps</b>.</p>
 </section>
-<section id="store"> <title>store</title>
+<section id="store"> <title>store</title> 
 <p>Contains entries that define the container for each set of Sample Applications.</p>
 <p>
 <b>title</b>:Text used as a display name for the Sample Applications in the Management Console.</p>
@@ -104,7 +104,7 @@ and <b>apps</b>.</p>
 <p>
 <b>icon</b>: An image used for the Sample Applications icon. Specified as a full URL.</p>
 </section>
-<section id="apps"> <title>apps</title>
+<section id="apps"> <title>apps</title> 
 <p>This is an array of items (see YAML format above), one for each app in the container. Each app is defined by the following fields:</p>
 <p>
 <b>name</b>:   The name of the app as displayed in the Sample Applications list.</p>
@@ -188,11 +188,11 @@ URL, <b>default</b>, or other variable value.</dd>
       <note> The store definition settings do <b>not</b> override settings in the application's
           <i>manifest.yml</i> file.</note>
 </section>
-<section id="hosting-the-store-definition-files"> <title>Hosting the Definition Files</title>
+<section id="hosting-the-store-definition-files"> <title>Hosting the Definition Files</title> 
 <p>The YAML files defining the stores can be served via HTTP or HTTPS by
 any web server at a URL accessible from the Cloud Controller.</p>
 </section>
-<section id="adding-the-app-store-to-helion"> <title>Adding the Sample Applications to Application Lifecycle Service</title>
+<section id="adding-the-app-store-to-helion"> <title>Adding the Sample Applications to Application Lifecycle Service</title> 
 <ol>
 <li>Log into the <xref href="console_index.dita">Management
 Console</xref>,</li>

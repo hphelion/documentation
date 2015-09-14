@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3880">
-<title>HP Helion 1.3 Development Platform: Using the RabbitMQ Messaging Service</title>
+<title>HP Helion 1.3 Development Platform: Using the RabbitMQ Messaging Service</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -35,12 +35,12 @@
 <xref type="section" href="#topic3880/manage">Managing a RabbitMQ cluster</xref>
 </li>
 </ul>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="prerequisites"> <title>Prerequisites</title> 
 <ol>
 <li>Install the <xref href="installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>and configure the services.</li>
 </ol>
 </section>
-<section id="create"> <title>Creating a RabbitMQ Cluster</title>
+<section id="create"> <title>Creating a RabbitMQ Cluster</title> 
 <p>The following guide will demonstrate how to deploy a multi-node RabbitMQ cluster using the Messaging Service.</p>
 <ol>
 <li>Log into Horizon and open the <b>Messaging (Beta)</b> panel under your project. Click on the <b>RabbitMQ</b> tab.</li>
@@ -80,7 +80,7 @@
 </li>
 </ol>
 </section>
-<section id="delete"> <title>Deleting a RabbitMQ Cluster</title>
+<section id="delete"> <title>Deleting a RabbitMQ Cluster</title> 
 <p>The following guide will demonstrate how to delete an existing RabbitMQ cluster.</p>
 <ol>
 <li>Log in to Horizon and open the <b>Messaging (Beta)</b> panel under your project. Click on the <b>RabbitMQ</b> tab.</li>
@@ -88,7 +88,7 @@
 <li>Click the <b>More</b> button and then the <b>Delete Cluster</b> button.</li>
 </ol>
 </section>
-<section id="manage"> <title>Managing a RabbitMQ Cluster</title>
+<section id="manage"> <title>Managing a RabbitMQ Cluster</title> 
 <p>RabbitMQ clusters have a built-in dashboard for managing the cluster; this allows you to view the current state and health of the cluster. The following steps will demonstrate how to manage an existing cluster.</p>
 <ol>
 <li>Log in to Horizon and open the <b>Messaging (Beta)</b> panel under you project. Click on the <b>RabbitMQ</b> tab.</li>
@@ -101,7 +101,7 @@
 </li>
 </ol>
 </section>
-<section id="more-information"> <title>More Information</title>
+<section id="more-information"> <title>More Information</title> 
 <ul>
 <li>
 <p>For more information on using RabbitMQ and managing the RabbitMQ cluster, visit the <xref href="https://www.rabbitmq.com/documentation.html" scope="external" format="html" >RabbitMQ documentation site</xref>.</p>

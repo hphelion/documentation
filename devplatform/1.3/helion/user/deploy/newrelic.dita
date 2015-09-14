@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5392">
-<title>HP Helion 1.3 Development Platform: New Relic Monitoring</title>
+<title>HP Helion 1.3 Development Platform: New Relic Monitoring</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -43,9 +43,9 @@ account</xref>.</p>
 <p>
             <note type="warning">For security reasons, avoid committing your license key to source control.</note>
         </p>
-<section id="new-relic-for-ruby"> <title>New Relic for Ruby</title>
+<section id="new-relic-for-ruby"> <title>New Relic for Ruby</title> 
 </section>
-<section id="the-ruby-gem"> <title>The Ruby Gem</title>
+<section id="the-ruby-gem"> <title>The Ruby Gem</title> 
 <p>New Relic recommends installing the New Relic Ruby gem available on
 gemcutter as <codeph>newrelic_rpm</codeph>:</p>
 <codeblock>sudo gem install newrelic_rpm</codeblock>
@@ -54,7 +54,7 @@ gemcutter as <codeph>newrelic_rpm</codeph>:</p>
 <p>Once the Ruby Gem is installed, add this line to your <i>Gemfile</i>:</p>
 <codeblock> gem 'newrelic_rpm'</codeblock>
 </section>
-<section id="installing-the-ruby-agent-with-the-bundler-gem"> <title>Installing the Ruby agent with the Bundler Gem</title>
+<section id="installing-the-ruby-agent-with-the-bundler-gem"> <title>Installing the Ruby agent with the Bundler Gem</title> 
 <p>Add the gem specification to your <i>Gemfile</i>. It's best to place the New
 Relic gem as low in the list as possible, allowing the frameworks above
 it to be instrumented when the gem initializes:</p>
@@ -62,7 +62,7 @@ it to be instrumented when the gem initializes:</p>
 <p>In the same folder as the <i>Gemfile</i>, run:</p>
 <codeblock> bundle install</codeblock>
 </section>
-<section id="configuration-file"> <title>Configuration File</title>
+<section id="configuration-file"> <title>Configuration File</title> 
 <p>After installing the agent, copy the newrelic.yml file into the config
 subdirectory of your application. You can download a fresh newrelic.yml
 that includes your license key from the Account Settings link when
@@ -74,7 +74,7 @@ that lives in the Agent plugin folder
 (<i>vendor/plugins/newrelic_rpm/newrelic.yml</i>). Look for new
 configuration options that aren't in your <i>config/newrelic.yml</i> file.</p>
 </section>
-<section id="new-relic-for-python"> <title>New Relic for Python</title>
+<section id="new-relic-for-python"> <title>New Relic for Python</title> 
 <p>The New Relic Python agent is pre-installed on Application Lifecycle Service.</p>
 <p>The minimal steps required to integrate New Relic to your Python WSGI
 application:</p>
@@ -95,12 +95,12 @@ newrelic.agent.initialize()</codeblock></li>
 <codeph>$PROCESSES_WEB</codeph> in <i>manifest.yml</i> with
 <xref href="https://newrelic.com/docs/python/python-agent-admin-script" scope="external" format="html" >newrelic-admin</xref>.</p>
 </section>
-<section id="bottle-currency-example"> <title>Bottle Currency Example</title>
+<section id="bottle-currency-example"> <title>Bottle Currency Example</title> 
 <p>
 <xref href="https://github.com/Stackato-Apps/bottle-currency/tree/newrelic" scope="external" format="html" >Bottle Currency with New Relic on
 GitHub</xref>.</p>
 </section>
-<section id="new-relic-for-java"> <title>New Relic for Java</title>
+<section id="new-relic-for-java"> <title>New Relic for Java</title> 
 <p>The New Relic Java agent is <b>not</b> pre-installed on the Application Lifecycle Service VM. To
 add monitoring, you must include the agent with your application.</p>
 <ul>
@@ -135,12 +135,12 @@ directory of your application along with WEB-INF folder.</p>
 </li>
 </ul>
 </section>
-<section id="pet-catalog-example"> <title>Pet Catalog Example</title>
+<section id="pet-catalog-example"> <title>Pet Catalog Example</title> 
 <p>
 <xref href="https://github.com/Stackato-Apps/pet-catalog/tree/newrelic" scope="external" format="html" >Pet Catalog (Java EE) with New Relic on
 GitHub</xref>.</p>
 </section>
-<section id="new-relic-for-php"> <title>New Relic for PHP</title>
+<section id="new-relic-for-php"> <title>New Relic for PHP</title> 
 <p>The New Relic agent PHP libraries are pre-installed on Application Lifecycle Service. To add
 monitoring, you need to add an agent configuration file to the root
 directory of the application and make some modifications to
@@ -182,12 +182,12 @@ documentation</xref>.</p>
 </li>
 </ul>
 </section>
-<section id="wordpress-example"> <title>WordPress Example</title>
+<section id="wordpress-example"> <title>WordPress Example</title> 
 <p>
 <xref href="https://github.com/Stackato-Apps/wordpress/tree/newrelic" scope="external" format="html" >WordPress with New Relic on
 GitHub</xref>.</p>
 </section>
-<section id="results"> <title>Results</title>
+<section id="results"> <title>Results</title> 
 <p>Push the app to the Application Lifecycle Service server, and make a few requests to it in a
 browser. After a few minutes, check the New Relic dashboard to confirm
 the information is being logged correctly.</p>

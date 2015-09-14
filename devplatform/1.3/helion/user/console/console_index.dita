@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8844">
-<title>HP Helion 1.3 Development Platform: Management Console: User View</title>
+<title>HP Helion 1.3 Development Platform: Management Console: User View</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -50,7 +50,7 @@
 <xref type="section" href="#topic8844/support">Support</xref>
 </li>
 </ul>
-<section id="welcome"> <title>Welcome Page</title>
+<section id="welcome"> <title>Welcome Page</title> 
 <p>The top-level page of the Management Console displays quick links to the most commonly used resources:</p>
 <ul>
 <li>
@@ -71,7 +71,7 @@
 <b>Account Details</b>: Shows the account details of the current user. Also accessible from the drop down list at the top left.</li>
 </ul>
 </section>
-<section id="app-list"> <title>Applications List</title>
+<section id="app-list"> <title>Applications List</title> 
 <p>The Applications list is accessible from the top menu. It shows all applications deployed under the current user's Organizations.</p>
 <p>The list shows:</p>
 <ul>
@@ -93,7 +93,7 @@
 <p>The list includes applications deployed to all Spaces in the current user's Organizations, even those for which the user may not have access. Applications in such Spaces are visible, but no changes can be made to them.</p>
 <p>Clicking on the application name opens its Application View.</p>
 </section>
-<section id="application-view"> <title>Application View</title>
+<section id="application-view"> <title>Application View</title> 
 <p>The top navigation of the Application view gives the name and status of the application followed by its organization / space.</p>
 <p>This view also includes the following <b>Tabs</b>:</p>
 <ul>
@@ -127,11 +127,11 @@
 <b>Instances</b>: List of application instances showing the status and host DEA IP address of each.</li>
 </ul>
 </section>
-<section id="organization-list"> <title>Organizations List</title>
+<section id="organization-list"> <title>Organizations List</title> 
   <p>The Organizations list is accessible from the top menu. It shows all <xref href="../../user/deploy/orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> which the current user is a member of. The list is searchable by name.</p>
 <p>Clicking on any Organization name opens the Organization view.</p>
 </section>
-<section id="organization-view"> <title>Organization View</title>
+<section id="organization-view"> <title>Organization View</title> 
   <p>The Organizations page shows a list of all <xref href="../../user/deploy/orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.</p>
 <p>Clicking on the Organization's name opens a view of that organization, including the following tabs:</p>
 <ul>
@@ -165,7 +165,7 @@
           Billing Managers to view or adjust billing/payment info and spending limits.</note>
       </p>
 </section>
-<section id="space-view"> <title>Space View</title>
+<section id="space-view"> <title>Space View</title> 
 <ul>
 <li>
 <b>Apps</b>: A filterable list of applications in the Space. Clicking an app name opens an administrative view of that application.</li>
@@ -199,7 +199,7 @@
 <b>Auditors</b>: Auditors have view-only access to all space information, settings, reports, and logs.</li>
 </ul>
 </section>
-<section id="service-instance-view"> <title>Service Instance View</title>
+<section id="service-instance-view"> <title>Service Instance View</title> 
 <p>Clicking a service instance's name anywhere in the interface brings up a view of that service instance showing the summary.</p>
 <p>The summary of a service displays:</p>
 <ul>
@@ -222,13 +222,13 @@
 </p>
   <p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../admin/console/console_index.dita#topic13823/applications" type="section"   >administrative view of that application</xref>.</p>
 </section>
-<section id="sample-apps"> <title>Sample Applications</title>
+<section id="sample-apps"> <title>Sample Applications</title> 
 <p>The Sample Apps are collection of ready-to-run applications which can be deployed to Application Lifecycle Service by fetching the source code from the repository.</p>
 <p>Click the <b>Deploy App</b> button to start it on Application Lifecycle Service. You will be
 prompted to choose a Space and Domain for the app if there are multiple
 options available.</p>
 </section>
-<section id="support"> <title>Support</title>
+<section id="support"> <title>Support</title> 
 <p>A list of resources for getting support on using the Management Console.</p>
 </section>
 </body>

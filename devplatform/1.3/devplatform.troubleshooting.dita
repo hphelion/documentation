@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4855">
-<title>HP Helion 1.3 Development Platform: Installation Troubleshooting</title>
+<title>HP Helion 1.3 Development Platform: Installation Troubleshooting</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -43,12 +43,12 @@
 <xref type="section" href="#topic4855/instance-create">Creating Instances</xref>
 </li>
 </ul>
-<section id="installation"> <title>Installation</title>
+<section id="installation"> <title>Installation</title> 
 </section>
-<section id="command-line-installer-fails-to-install"> <title>Command line installer fails to install</title>
+<section id="command-line-installer-fails-to-install"> <title>Command line installer fails to install</title> 
 <p>Resolution: <b>Set</b> https_proxy and <b>unset</b> http_proxy values.</p>
 </section>
-<section id="command-line-installer-fails-to-install-with-authentication-error"> <title>Command line installer fails to install with Authentication Error</title>
+<section id="command-line-installer-fails-to-install-with-authentication-error"> <title>Command line installer fails to install with Authentication Error</title> 
 <p>Even after fixing some errors and retrying, the command line installation fails.</p>
 <p>Resolution:</p>
 <ol>
@@ -63,9 +63,9 @@
   <xref href="installation/devplatform_install_platform.dita#topic_gly_xmh_ts/commandline" type="section">Run the install command</xref> again with all command line options.</li>
 </ol>
 </section>
-<section id="download"> <title>Download</title>
+<section id="download"> <title>Download</title> 
 </section>
-<section id="service-is-stuck-in-download"> <title>Service is stuck in download</title>
+<section id="service-is-stuck-in-download"> <title>Service is stuck in download</title> 
 <p>The <i>tmp</i> directory has run out of space. Mount the <i>tmp</i> directory to a larger partition and try again. If it fails again, reset the download.</p>
 <ol>
 <li>Log in to Horizon as an Admin user.</li>
@@ -74,7 +74,7 @@
 <li>Download the service again.</li>
 </ol>
 </section>
-<section id="download-terminates-and-remains-stuck-in-staging-status"> <title>Download terminates and remains stuck in "Staging" status</title>
+<section id="download-terminates-and-remains-stuck-in-staging-status"> <title>Download terminates and remains stuck in "Staging" status</title> 
 <p>Only applies to Development Platform services. After the image download terminates for some reason, the download is reattempted. The status of the service in the Configure Services view remains stuck at "Staging" and does not progress to "Available".</p>
 <p>Resolution: Completely delete the service before reattempting download.</p>
 <ol>
@@ -94,31 +94,31 @@
           <!--A BR tag was used here in the original source.-->Run:<codeblock>service apache2 restart </codeblock></li>
 </ol>
 </section>
-<section id="horizon"> <title>Horizon</title>
+<section id="horizon"> <title>Horizon</title> 
 </section>
-<section id="installed-development-platform-services-do-not-appear-in-horizon"> <title>Installed Development Platform services do not appear in Horizon</title>
+<section id="installed-development-platform-services-do-not-appear-in-horizon"> <title>Installed Development Platform services do not appear in Horizon</title> 
 <p>Even though the service was installed successfully, the service does not appear in the appropriate tab.</p>
 <p>Resolution: After installing any Helion Development Platform service, log out of Horizon and then back in to refresh the UI.</p>
 </section>
-<section id="deleted-service-still-appears-in-horizon"> <title>Deleted service still appears in Horizon</title>
+<section id="deleted-service-still-appears-in-horizon"> <title>Deleted service still appears in Horizon</title> 
 <p>Even though the Development Platform stack has been deleted, the service still shows up in Horizon.</p>
 <p>Resolution: Delete the service manually from the Keystone endpoint list. <!--A BR tag was used here in the original source.--> Start the command line client and enter:</p>
 <codeblock>keystone endpoint-delete $&lt;id&gt;</codeblock>
 </section>
-<section id="dbaas"> <title>DBaaS</title>
+<section id="dbaas"> <title>DBaaS</title> 
 </section>
-<section id="dbaas-configuration-fails"> <title>DbaaS configuration fails</title>
+<section id="dbaas-configuration-fails"> <title>DbaaS configuration fails</title> 
 <p>Resolution: Make sure that you can create a volume and attach it to instances. HP Helion <tm tmtype="reg">OpenStack</tm> supports VSA and 3PAR, but not LVM. Make sure your installation is configured to use either VSA or 3PAR.</p>
 </section>
-<section id="dbaas-instance-fails-to-start"> <title>DbaaS instance fails to start</title>
+<section id="dbaas-instance-fails-to-start"> <title>DbaaS instance fails to start</title> 
 <p>Resolution: Check if you can create and start a Nova instance with the same flavor and verify you can attach a volume to that Nova instance. Verify that the Nova flavors have not been updated to invalid values. Verify that the flavor's ID is correct, as flavor updates cause the flavor IDs to change.</p>
 </section>
-<section id="marketplace"> <title>Marketplace</title>
+<section id="marketplace"> <title>Marketplace</title> 
 </section>
-<section id="vertica-installation-fails-after-successful-marketplace-installation"> <title>Vertica installation fails after successful Marketplace installation</title>
+<section id="vertica-installation-fails-after-successful-marketplace-installation"> <title>Vertica installation fails after successful Marketplace installation</title> 
 <p>Resolution: Immediately after installing Marketplace, log out of Horizon and then back in before beginning the Vertica installation.</p>
 </section>
-<section id="ALS"> <title>ALS</title>
+<section id="ALS"> <title>ALS</title> 
 <p>
   <b>ALS cluster creation fails after successful installation of ALS and DBaaS.</b>
 </p>
@@ -128,15 +128,15 @@
 </p>
 <p>Resolution: Attempt to spin up a Nova instance with <b>Flavor</b> set to <b>Tiny</b>. Verify that the Nova flavors were NOT updated to invalid values. Verify the Flavor IDs, as updates cause flavor IDs to change.</p>
 </section>
-<section id="instance-create"> <title>Creating Instances</title>
+<section id="instance-create"> <title>Creating Instances</title> 
 </section>
-<section id="dbaas-instances-als-clusters-marketplace-and-messaging-clusters-all-fail-to-start"> <title>DbaaS instances, ALS clusters, Marketplace, and Messaging clusters all fail to start.</title>
+<section id="dbaas-instances-als-clusters-marketplace-and-messaging-clusters-all-fail-to-start"> <title>DbaaS instances, ALS clusters, Marketplace, and Messaging clusters all fail to start.</title> 
 <p>Resolution: Nova and Neutron quotas have been exceeded. Increase quotas to support your desired configuration.</p>
 </section>
-<section id="issue-no-valid-host-was-found-error-received-during-installation-of-the-development-platform-and-dnaas"> <title>Issue: "No valid host was found" Error Received During Installation of the Development Platform and DNaaS</title>
+<section id="issue-no-valid-host-was-found-error-received-during-installation-of-the-development-platform-and-dnaas"> <title>Issue: "No valid host was found" Error Received During Installation of the Development Platform and DNaaS</title> 
 <p>Resolution: This Nova error could have multiple causes. Do not assume that  it is out of compute resources. Check the <i>nova-scheduler</i> logs on the overcloud controllers to find the actual reason why Nova failed to schedule the instance; correct the issue; and then attempt the DNSaaS deployment again.</p>
 </section>
-<section id="entity-too-large"><title>413 Request Entity Too Large Error</title><p>Actual Error Message: <codeph>Creating constructor server failed - Error: status code != 200,
+<section id="entity-too-large"><title>413 Request Entity Too Large Error</title> <p>Actual Error Message: <codeph>Creating constructor server failed - Error: status code != 200,
           201, 202, or 300, actual status code '413 Request Entity Too Large' Error has occurred
           creating the cluster</codeph></p>
       <p>This error occurs when there isn't enough free quota in your tenant for the VM to be

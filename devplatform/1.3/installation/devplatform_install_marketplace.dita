@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_z1r_3nh_ts">
-  <title>Installing the Marketplace Service</title>
+  <title>Installing the Marketplace Service</title> 
   <body>
     <section id="install-the-marketplace-service">
       <p>This section provides details on installing the Marketplace service for the Development Platform.</p>
     </section>
-    <section id="marketplace-prerequisites"> <title>Prerequisites</title>
+    <section id="marketplace-prerequisites"> <title>Prerequisites</title> 
       <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
       <table>
         <tgroup cols="2">
@@ -47,13 +47,13 @@
         </tgroup>
       </table>
     </section>
-    <section id="ports"> <title>Ports</title>
+    <section id="ports"> <title>Ports</title> 
       <p>If <b>both</b> the Marketplace and the Database Service are running on a single tenant, the default quota limit for Ports (50) is insufficient and the installation will not complete.</p>
       <p>The Ports quota cannot be set from the Horizon interface. 
         Increase the Ports quota to at least 100 using the following command in the <xref href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" scope="external" format="html" >Networking command line client</xref>:</p>
       <codeblock>neutron quota-update --port 100 --tenant-id &lt;tenant id&gt;"</codeblock>
     </section>
-    <section id="marketplace-connect-to-the-download-service"> <title>Connect to the Download Service</title>
+    <section id="marketplace-connect-to-the-download-service"> <title>Connect to the Download Service</title> 
       <ol>
         <li>Open Horizon and login as the <b>admin</b> user. You must run the entire install logged in as
           <b>admin</b>.</li>
@@ -64,7 +64,7 @@
           have an account.</li>
       </ol>
     </section>
-    <section id="download-the-marketplace-service"> <title>Download the Marketplace Service</title>
+    <section id="download-the-marketplace-service"> <title>Download the Marketplace Service</title> 
       <ol>
         <li> In the <b>Configure Services</b> panel, in the Configure Services table, locate the Marketplace
           Service item. Select <b>Download Service</b> and wait for the download to complete.<p>
@@ -75,7 +75,7 @@
           </p></li>
       </ol>
     </section>
-    <section id="configuring-the-marketplace-service"> <title>Configuring the Marketplace Service</title>
+    <section id="configuring-the-marketplace-service"> <title>Configuring the Marketplace Service</title> 
       <ol>
         <li> Once the download is complete, click the <b>Configure Service</b> button to begin configuration
           of the service. In the configuration dialog, specify the following configuration options:<ul>

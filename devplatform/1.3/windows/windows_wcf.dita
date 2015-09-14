@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_u2d_gxj_bt">
-  <title>Deploying a WCF Service</title>
+  <title>Deploying a WCF Service</title> 
   <body>
     <section><ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
       Microsoft Corporation in the United States and/or other countries.</i></ph>
@@ -15,7 +15,7 @@
       <li><xref type="section" href="#topic_u2d_gxj_bt/client">Creating and running the test client</xref></li>
     </ul>
     </section>
-    <section id="prerequisites"><title>Prerequisites</title>
+    <section id="prerequisites"><title>Prerequisites</title> 
     <p>This tutorial requires the following:</p>
       <ul>
         <li>Visual Studio 2013. Any edition is supported, including the Community (Free) edition.</li>
@@ -24,7 +24,7 @@
           <xref href="windows_tools_guide.dita#topic_w5z_kcw_js/msbuild" type="section">Windows and .NET Tools Guide: MSBuild Tasks</xref> for more details. </li>
       </ul>
     </section>
-    <section id="service"><title>Creating the web service application</title>
+    <section id="service"><title>Creating the web service application</title> 
     <p>In this section, you'll create a Web application and add a WCF service.</p>
       <note>The Cloud Foundry MSBuild tasks only support deploying a Web Application or a Web Site; other application types, such as WCF, are not supported.</note>
       <ol>
@@ -65,7 +65,7 @@ namespace HelionWCF
 </codeblock></li>
       </ol>
     </section>
-    <section id="deploy"><title>Deploying the web service application</title>
+    <section id="deploy"><title>Deploying the web service application</title> 
       <p>Now that you've created a WCF service hosted in a Web application, you'll deploy the application.</p>
       <p>For this section, you'll need the connection information for a Windows DEA cluster running in Helion OpenStack or Helion Public Cloud. For the purposes of this tutorial, you'll use 
       a Public Cloud account. For information on creating a Windows DEA node on Public Cloud, see <xref href="windows_firstapp.dita">Building and deploying your first Windows application</xref>.</p>
@@ -78,7 +78,7 @@ namespace HelionWCF
         <li>To monitor the publish progress, select <b>View</b>, <b>Output</b>.</li>
       </ol>
     </section>
-    <section id="client"><title>Creating and running the test client</title>
+    <section id="client"><title>Creating and running the test client</title> 
       <p>Now that you've developed a WCF service and deployed it to a Helion installation, you'll create a basic console application to test it. You'll use 
         <b>svcutil.exe</b> to create a proxy, then use the proxy to call the web service from the client application.</p>
       <ol>

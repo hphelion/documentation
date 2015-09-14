@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic17778">
-<title>HP Helion 1.3 Development Platform: ALS Command Reference: Information</title>
+<title>HP Helion 1.3 Development Platform: ALS Command Reference: Information</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -45,12 +45,12 @@
 <li>
 <xref type="section" href="#topic17778/command-tail">helion tail</xref> Monitor file for changes and stream the changes.</li>
 </ul>
-<section id="syntax"> <title>Syntax</title>
+<section id="syntax"> <title>Syntax</title> 
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="command-crashes"> <title>helion crashes &lt;<i>application</i>&gt;</title>
+<section id="command-crashes"> <title>helion crashes &lt;<i>application</i>&gt;</title> 
 <p>List recent application crashes.</p>
 <table>
 <tgroup cols="2">
@@ -105,7 +105,7 @@
 </tgroup>
 </table>
 </section>
-<section id="command-crashlogs"> <title>helion crashlogs &lt;<i>application</i>&gt;</title>
+<section id="command-crashlogs"> <title>helion crashlogs &lt;<i>application</i>&gt;</title> 
 <p>Display log information for the application. An alias of 'logs'.</p>
 <table>
 <tgroup cols="2">
@@ -201,7 +201,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-disk"> <title>helion disk &lt;<i>application</i>&gt;</title>
+<section id="command-disk"> <title>helion disk &lt;<i>application</i>&gt;</title> 
 <p>Show the disk reservation for a deployed application.</p>
 <table>
 <tgroup cols="2">
@@ -253,7 +253,7 @@ Defaults to the current working directory.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-drain-list"> <title>helion drain list &lt;<i>application</i>&gt;</title>
+<section id="command-drain-list"> <title>helion drain list &lt;<i>application</i>&gt;</title> 
 <p>Show the list of drains attached to the application.</p>
 <table>
 <tgroup cols="2">
@@ -318,7 +318,7 @@ Defaults to the current working directory.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-drains"> <title>helion drains &lt;<i>application</i>&gt;</title>
+<section id="command-drains"> <title>helion drains &lt;<i>application</i>&gt;</title> 
 <p>Show the list of drains attached to the application.</p>
 <table>
 <tgroup cols="2">
@@ -383,7 +383,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-env"> <title>helion env &lt;<i>application</i>&gt;</title>
+<section id="command-env"> <title>helion env &lt;<i>application</i>&gt;</title> 
 <p>List the application's environment variables.</p>
 <table>
 <tgroup cols="2">
@@ -444,7 +444,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-events"> <title>helion events &lt;<i>application</i>&gt;</title>
+<section id="command-events"> <title>helion events &lt;<i>application</i>&gt;</title> 
 <p>Show recorded application events for an application or space. Without an application given, the current or specified space is used, otherwise the specified application is used.</p>
 <table>
 <tgroup cols="2">
@@ -509,7 +509,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-files"> <title>helion files &lt;<i>application</i>&gt; &lt;<i>path</i>&gt;</title>
+<section id="command-files"> <title>helion files &lt;<i>application</i>&gt; &lt;<i>path</i>&gt;</title> 
 <p>Display directory listing or files. Relative paths are interpreted relative to $HELION_APP_ROOT on the target. Without apath it defaults to $HELION_APP_ROOT on the target.</p>
 <table>
 <tgroup cols="2">
@@ -593,7 +593,7 @@ operation.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-file"> <title>helion file &lt;<i>application</i>&gt; &lt;<i>path</i>&gt;</title>
+<section id="command-file"> <title>helion file &lt;<i>application</i>&gt; &lt;<i>path</i>&gt;</title> 
 <p>Display directory listing or file. Relative paths are interpreted relative to $HELION_APP_ROOT on the target. Without a path it defaults to $HELION_APP_ROOT on the target.</p>
 <table>
 <tgroup cols="2">
@@ -675,7 +675,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-health"> <title>helion health &lt;<i>application</i>&gt;</title>
+<section id="command-health"> <title>helion health &lt;<i>application</i>&gt;</title> 
 <p>Report the health of the specified application(s).</p>
 <table>
 <tgroup cols="2">
@@ -736,7 +736,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-instances"> <title>helion instances &lt;<i>application</i>&gt;</title>
+<section id="command-instances"> <title>helion instances &lt;<i>application</i>&gt;</title> 
 <p>List application instances for a deployed application.</p>
 <table>
 <tgroup cols="2">
@@ -797,7 +797,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-logs"> <title>helion logs &lt;<i>application</i>&gt;</title>
+<section id="command-logs"> <title>helion logs &lt;<i>application</i>&gt;</title> 
 <p>Display the application log stream.</p>
 <table>
 <tgroup cols="2">
@@ -886,7 +886,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-mem"> <title>helion mem &lt;<i>application</i>&gt;</title>
+<section id="command-mem"> <title>helion mem &lt;<i>application</i>&gt;</title> 
 <p>Show the memory reservation for a deployed application.</p>
 <table>
 <tgroup cols="2">
@@ -943,7 +943,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-stats"> <title>helion stats &lt;<i>application</i>&gt;</title>
+<section id="command-stats"> <title>helion stats &lt;<i>application</i>&gt;</title> 
 <p>Display the resource usage for a deployed application.</p>
 <table>
 <tgroup cols="2">
@@ -1004,7 +1004,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-tail"> <title>helion tail &lt;<i>application</i>&gt; &lt;<i>path</i>&gt;</title>
+<section id="command-tail"> <title>helion tail &lt;<i>application</i>&gt; &lt;<i>path</i>&gt;</title> 
 <p>Monitor file for changes and stream the changes.</p>
 <table>
 <tgroup cols="2">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5620">
-<title>HP Helion 1.3 Development Platform: ALS Command Reference: Security Groups</title>
+<title>HP Helion 1.3 Development Platform: ALS Command Reference: Security Groups</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -33,12 +33,12 @@
 <li>
 <xref type="section" href="#topic5620/command-update-security-group">helion update-security-group</xref>: Modify the named security group.</li>
 </ul>
-<section id="syntax"> <title>Syntax</title>
+<section id="syntax"> <title>Syntax</title> 
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="command-bind-security-group"> <title>helion bind-security-group &lt;<i>security_group</i>&gt;</title>
+<section id="command-bind-security-group"> <title>helion bind-security-group &lt;<i>security_group</i>&gt;</title> 
 <p>Bind the named security group to the current space, the specified space, or the running and staging phases.</p>
 <table>
 <tgroup cols="2">
@@ -87,7 +87,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-create-security-group"> <title>helion create-security-group &lt;<i>security_group</i>&gt; &lt;<i>rules</i>&gt;</title>
+<section id="command-create-security-group"> <title>helion create-security-group &lt;<i>security_group</i>&gt; &lt;<i>rules</i>&gt;</title> 
 <p>Create a new security group.</p>
 <table>
 <tgroup cols="2">
@@ -120,7 +120,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-delete-security-group"> <title>helion delete-security-group  &lt;<i>security_group</i>&gt;</title>
+<section id="command-delete-security-group"> <title>helion delete-security-group  &lt;<i>security_group</i>&gt;</title> 
 <p>Delete the named security group.</p>
 <table>
 <tgroup cols="2">
@@ -153,7 +153,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-security-group"> <title>helion security-group &lt;<i>security_group</i>&gt;</title>
+<section id="command-security-group"> <title>helion security-group &lt;<i>security_group</i>&gt;</title> 
 <p>Show the details of the named security group.</p>
 <table>
 <tgroup cols="2">
@@ -190,7 +190,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-security-groups"> <title>helion security-groups</title>
+<section id="command-security-groups"> <title>helion security-groups</title> 
 <p>Show all known security groups or just those assigned to the running and staging phases.</p>
 <table>
 <tgroup cols="2">
@@ -231,7 +231,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-unbind-security-group"> <title>helion unbind-security-group  &lt;<i>security_group</i>&gt;</title>
+<section id="command-unbind-security-group"> <title>helion unbind-security-group  &lt;<i>security_group</i>&gt;</title> 
 <p>Drop the named security group from the current space, the specified space, or the running and staging phases.</p>
 <table>
 <tgroup cols="2">
@@ -280,7 +280,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-update-security-group"> <title>helion update-security-group  &lt;<i>security_group</i>&gt; &lt;<i>rules</i>&gt;</title>
+<section id="command-update-security-group"> <title>helion update-security-group  &lt;<i>security_group</i>&gt; &lt;<i>rules</i>&gt;</title> 
 <p>Modify the named security group by replacing the old set of rules with a new set.</p>
 <table>
 <tgroup cols="2">

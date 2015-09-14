@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5470">
-<title>HP Helion 1.3 Development Platform: ALS Command Reference: Applications</title>
+<title>HP Helion 1.3 Development Platform: ALS Command Reference: Applications</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -29,12 +29,12 @@
 <li>
 <xref type="section" href="#topic5470/command-versions">helion versions</xref>: Show the list of versions for the specified application.</li>
 </ul>
-<section id="syntax"> <title>Syntax</title>
+<section id="syntax"> <title>Syntax</title> 
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="command-app"> <title>helion app &lt;<i>application</i>&gt;</title>
+<section id="command-app"> <title>helion app &lt;<i>application</i>&gt;</title> 
 <p>Shows the information of the specified application.</p>
 <table>
 <tgroup cols="2">
@@ -89,7 +89,7 @@
 </tgroup>
 </table>
 </section>
-<section id="command-apps"> <title>helion apps</title>
+<section id="command-apps"> <title>helion apps</title> 
 <p>Lists the applications deployed to the target.</p>
 <table>
 <tgroup cols="2">
@@ -140,7 +140,7 @@
 </tgroup>
 </table>
 </section>
-<section id="command-list"> <title>helion list</title>
+<section id="command-list"> <title>helion list</title> 
 <p>List the applications deployed to the target.</p>
 <table>
 <tgroup cols="2">
@@ -191,7 +191,7 @@
 </tgroup>
 </table>
 </section>
-<section id="command-releases"> <title>helion releases &lt;<i>application</i>&gt;</title>
+<section id="command-releases"> <title>helion releases &lt;<i>application</i>&gt;</title> 
 <p>Show the list of versions for the specified application. </p>
 <table>
 <tgroup cols="2">
@@ -250,7 +250,7 @@
 </tgroup>
 </table>
 </section>
-<section id="command-versions"> <title>helion versions &lt;<i>application</i>&gt;</title>
+<section id="command-versions"> <title>helion versions &lt;<i>application</i>&gt;</title> 
 <p>Show the list of versions for the specified application. </p>
 <table>
 <tgroup cols="2">
