@@ -216,9 +216,10 @@
     </section>
     <section id="config">
       <title>Centralized Logging Configuration</title>
-      <p>To configure logging, modify the <codeph>/roles/logging-common/defaults/main.yml</codeph>
-        file as needed, then reconfigure. Here is a snippet of this file showing the logging
-        settings for the Keystone service. An explanation of this file is below.</p>
+      <p>To configure logging, modify the specific services setting file in the
+          <codeph>/roles/logging-common/vars/</codeph> directory as needed, then reconfigure. Here
+        is a snippet of the <codeph>keystone.yml</codeph> file showing the logging settings for the
+        Keystone service. An explanation of this file is below.</p>
       <codeblock>
   keystone:
     files:
