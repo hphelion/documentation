@@ -3,20 +3,151 @@
 <topic id="allocating-disk-drives">
   <title>Allocating Disk Drives</title>
   <body>
-    <p>The disk model describes the number of disk present on a particular server and its usage. The
-      examples include several disk models. The disk model used by any given server is determined as
-      follows:</p>
+    <p>The disk model describes the configuration of disk drives
+      <!--number of disk present on a particular server--> and its
+      usage<!-- are specified in the disk-->. The examples include several disk models.
+      <!--The disk model used by any given server is determined as follows:--> You must always
+      review the disk devices before making any changes to the existing the disk model.
+      <!--If you want to make the possible changes in the disk model--> See <i><xref
+          href="#allocating-disk-drives/making-cahnges-disk-model" format="dita">Making Changes to a
+          Swift Disk Model</xref></i> for detail. </p>
+    <p>This page contains the following topics:<ul id="ul_prc_vgc_jt">
+        <li><xref href="#allocating-disk-drives/making-cahnges-disk-model" format="dita">Making
+            Changes to a Swift Disk Model</xref></li>
+        <li><xref href="#allocating-disk-drives/swift-consumer-syntax" format="dita">Swift Consumer
+            Syntax</xref></li>
+        <li><xref href="#allocating-disk-drives/swift-device-groups" format="dita">Swift Device
+            Groups</xref></li>
+        <li><xref href="#allocating-disk-drives/swift-logical-vol" format="dita">Swift Logical
+            Volume</xref></li>
+      </ul></p>
+    <section id="making-changes-disk-model">
+      <title>Making Changes to a Swift Disk Model</title>
+      <p>There are several reasons for changing the disk model as follows:</p>
+      <ul id="ul_d5y_255_dt">
+        <li>It is advisable that if you have additional drives available then you can add the drives
+          to the devices list.</li>
+        <li>The disk devices listed in the example disk model have different names on your servers.
+          This may be due different hardware drives. Edit the disk model
+          <!--(<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) -->and change the
+          device names to the correct names.<note type="tip">The term <b>add</b> and <b>delete</b>
+            in the document means editing the respective YAML files to add or delete the
+            configurations/values.</note></li>
+        <li>You may prefer a different disk drive than the one listed in the model. For example, if
+            <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you
+          have SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In
+          this case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace with
+            <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.</li>
+      </ul>
+    </section>
+    <section id="swift-consumer-syntax">
+      <title><b>Swift Consumer Syntax</b></title>
+      <p>The consumer field determines the usage of a disk drive or logical volume by Swift. The
+        syntax of the consumer field is as
+        follows:<codeblock>consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: &lt;ring-name>
+        - name: &lt;ring-name>
+        - etc...</codeblock></p>
+    </section>
+    <p>The consumer field are as follows:<simpletable id="simpletable_c35_5rb_jt">
+        <strow>
+          <stentry><b>consumer</b></stentry>
+          <stentry>This specifies the service that uses the device group. A <codeph>name</codeph>
+            field containing <b>swift</b> indicates that the drives or logical volumes are used by
+            Swift.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>attrs</b></stentry>
+          <stentry>This lists the rings that the devices are allocated to. It must contain a
+              <codeph>rings</codeph> item.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>ring</b></stentry>
+          <stentry> It contains a list of ring names. In the <codeph>rings</codeph> list, the
+              <codeph>name</codeph> field is optional.</stentry>
+        </strow>
+      </simpletable></p>
+    <!--<p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>There are a number of patterns, corresponding to different configurations of the proxy, account, container and object services.<?oxy_custom_end?> These are as follows:</p>-->
+    <p>The following are the different configurations (pattern) of the proxy, account, container,
+      and object services:</p>
+    <ul id="ul_dvq_kyb_jt">
+      <li>Proxy, account, container and object (PACO) run on same node type.</li>
+      <li>Proxy, account, and container run on a node type (PAC) and the object services run on a
+        dedicated object server (OBJ).</li>
+    </ul>
     <p>
-      <ul>
-        <li>The <codeph>node_type</codeph> of server as specified in
-            <codeph>data/baremetalConfig.yml</codeph> (or <codeph>data/servers.yml</codeph>)
-          determines the role of the server.</li>
-        <li>There is a specification for each sever role in the
-            <codeph>data/server_roles.yml</codeph> file. This specifies a disk model for a given
-          server role. For example, for the <codeph>ROLE-SWOBJ</codeph>, the disk model is called
-            <codeph>DISK_SET_SWOBJ</codeph>. <p><codeph>data/server_roles.yml</codeph> file
-            specifies the disk model as
-          follows:</p><codeblock>server-roles:   
+      <note>The proxy service does not have any rings associated with it.</note>
+    </p>
+    <example>Example:<b>PACO</b> – proxy, account, container and object run on the same node
+      type<codeblock>consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: account
+        - name: container
+        - object-0</codeblock></example>
+    <example>Example:<b>PAC</b> – proxy, account, container run on the same node
+      type<codeblock>consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: account
+        - name: container</codeblock></example>
+    <example>Example:<b>OBJ</b> - Dedicated object server. The following example shows two Storage
+      Policies (object-0 and object-1). See <i><xref href="storage-policies.dita#topic_gm1_4bc_jt"
+          >Designing Storage Policies</xref></i> for more
+      information.<codeblock>consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: object-0
+        - name: object-1</codeblock></example>
+    <section id="swift-device-groups">
+      <title><b>Swift Device Groups</b></title>
+      <p> A device-group is used when the same consumer uses a number of disk drives. </p>
+    </section>
+    <example>In the following example 4 disk drives are used by both the object-0 and object-1
+      rings.<codeblock>device-groups:
+- name: swiftobj
+  devices:
+  - name: /dev/sdb
+  - name: /dev/sdc
+  - name: /dev/sde
+  - name: /dev/sdf
+  consumer:
+      name: swift
+      attrs:
+          rings:
+          - name: object-0
+          - name: object-1</codeblock></example>
+    <p>You may have several device groups if  you have several different uses for different sets of
+      drive. </p>
+    <example>The following example shows a configuration where one drive is used for account and
+      container rings and the other drives are used by the object-0
+      ring:<codeblock>device-groups:
+- name: swiftac
+  devices:
+  - name: /dev/sdb
+  consumer:
+      name: swift
+      attrs:
+      - name: account
+      - name: container
+- name: swiftobj
+  devices:
+  - name: /dev/sdc
+  - name: /dev/sde
+  - name: /dev/sdf
+  consumer:
+      name: swift
+      attrs:
+          rings:
+          - name: object-0 </codeblock></example>
+    <example><!--The <codeph>node_type</codeph> of server as specified in <codeph>data/baremetalConfig.yml</codeph> (or <codeph>data/servers.yml</codeph>) determines the role of the server.--></example>
+    <!--<ul id="ul_yrr_gwb_jt"><li>There is a specification for each sever role in the <codeph>data/server_roles.yml</codeph> file. This specifies a disk model for a given server role. For example, for the <codeph>ROLE-SWOBJ</codeph>, the disk model is called <codeph>DISK_SET_SWOBJ</codeph>. <p><codeph>data/server_roles.yml</codeph> file specifies the disk model as follows:</p><codeblock>server-roles:   
 
 
     - name: ROLE-SWPAC  
@@ -27,18 +158,7 @@
     - name: ROLE-SWOBJ  
       interface-model: INTERFACE_SET_SWOBJ  
       disk-model: DISK_SET_SWOBJ 
-</codeblock></li>
-        <li>The Object server uses the <codeph>DISK_SET_SWOBJ</codeph> disk model in the
-            <codeph>data/disks_swobj.yml</codeph> file.</li>
-        <li>
-          <p>The Proxy, Account, Container servers use the <codeph>DISK_SET_SWPAC</codeph> disk
-            model in the <codeph>data/disks_swpac.yml</codeph> file.</p>
-        </li>
-      </ul>
-    </p>
-    <p>The structure of the <codeph>DISK_SET_SWOBJ</codeph> and <codeph>DISK_SET_SWPAC</codeph> disk
-      models are similar. The <codeph>data/disks_swpac.yml</codeph> file specifies the disk mode as
-      follows:<codeblock>disk-models:
+</codeblock></li><li>The Object server uses the <codeph>DISK_SET_SWOBJ</codeph> disk model in the <codeph>data/disks_swobj.yml</codeph> file.</li><li><p>The Proxy, Account, Container servers use the <codeph>DISK_SET_SWPAC</codeph> disk model in the <codeph>data/disks_swpac.yml</codeph> file.</p></li></ul><p>The structure of the <codeph>DISK_SET_SWOBJ</codeph> and <codeph>DISK_SET_SWPAC</codeph> disk models are similar. The <codeph>data/disks_swpac.yml</codeph> file specifies the disk mode as follows:<codeblock>disk-models:
 - name: DISK_SET_SWPAC
   volume-groups:
     - name: hlm-vg
@@ -58,48 +178,8 @@
         attrs:
           rings:
             - account
-            - container</codeblock></p>
-    <p>In the above example, Swift uses <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> disk
-      drives and operating system uses <codeph>/dev/sda</codeph> disk drives.</p>
-    <p>The disk model has the following fields: </p>
-    <simpletable id="simpletable_qyp_lnj_2t">
-      <strow>
-        <stentry><b>device-groups</b></stentry>
-        <stentry>There can be several device groups. This allows different sets of disks to be used
-          for different purposes. In this example, there is only one entry in the device groups
-          list.</stentry>
-      </strow>
-      <strow>
-        <stentry><b>name</b></stentry>
-        <stentry>This is an arbitrary name for the device group. The name must be unique, but is not
-          otherwise used.</stentry>
-      </strow>
-      <strow>
-        <stentry><b>devices</b></stentry>
-        <stentry>This is a list of devices allocated to the device group. For Swift, these devices
-          must meet the criteria as explained in <xref
-            href="#allocating-disk-drives/requirement-disk-device" format="dita">Requirements for a
-            disk device</xref>.</stentry>
-      </strow>
-      <strow>
-        <stentry><b>consumer</b></stentry>
-        <stentry>This specifies the service that uses the device group. A <codeph>name</codeph>
-          field containing <b>swift</b> indicates that the device group is used by Swift. If the
-          name field contains other values, the Swift system will ignore the device group.</stentry>
-      </strow>
-      <strow>
-        <stentry><b>attrs.rings</b></stentry>
-        <stentry>This lists the rings that the devices are allocated to. In this example, the disk
-          model is used by Proxy, Account, Container nodes, so the <b>account</b> and
-            <b>container</b> rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model,
-            <codeph>object-0</codeph> ring is listed. It would be an error to add the
-            <codeph>object-0</codeph> ring to the <codeph>DISK_SET_SWPAC</codeph> disk model because
-          the Swift-object service does not run on PAC node.</stentry>
-      </strow>
-    </simpletable>
-    <p>You should review the disk devices in the disk model before making any changes to the
-      existing model. See <xref href="#allocating-disk-drives/making-changes-to-swift" format="dita"
-        >Making Changes to a Swift Disk Model</xref>. </p>
+            - container</codeblock></p><p>In the above example, Swift uses <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> disk drives and operating system uses <codeph>/dev/sda</codeph> disk drives.</p><p>The disk model has the following fields: </p><simpletable id="simpletable_qyp_lnj_2t"><strow><stentry><b>device-groups</b></stentry><stentry>There can be several device groups. This allows different sets of disks to be used for different purposes. In this example, there is only one entry in the device groups list.</stentry></strow><strow><stentry><b>name</b></stentry><stentry>This is an arbitrary name for the device group. The name must be unique, but is not otherwise used.</stentry></strow><strow><stentry><b>devices</b></stentry><stentry>This is a list of devices allocated to the device group. For Swift, these devices must meet the criteria as explained in <xref href="#allocating-disk-drives/requirement-disk-device" format="dita">Requirements for a disk device</xref>.</stentry></strow><strow><stentry><b>consumer</b></stentry><stentry>This specifies the service that uses the device group. A <codeph>name</codeph> field containing <b>swift</b> indicates that the device group is used by Swift. If the name field contains other values, the Swift system will ignore the device group.</stentry></strow><strow><stentry><b>attrs.rings</b></stentry><stentry>This lists the rings that the devices are allocated to. In this example, the disk model is used by Proxy, Account, Container nodes, so the <b>account</b> and <b>container</b> rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model, <codeph>object-0</codeph> ring is listed. It would be an error to add the <codeph>object-0</codeph> ring to the <codeph>DISK_SET_SWPAC</codeph> disk model because the Swift-object service does not run on PAC node.</stentry></strow></simpletable>-->
+    <p><!--You should review the disk devices in the disk model before making any changes to the existing model. See <xref href="#allocating-disk-drives/making-changes-to-swift" format="dita">Making Changes to a Swift Disk Model</xref>.--></p>
     <p id="requirement-disk-device"><b><i>Requirements for a Disk Device</i></b></p>
     <p>Disk devices listed in the <b>devices</b> list must meet the following criteria:</p>
     <p>
@@ -121,22 +201,44 @@
           <codeph>swiftlm-drive-provision</codeph> process will assume that the drive has valuable
         data and refuses to use or modify the drive.</li>
     </ul>
-    <p id="making-changes-to-swift"><i><b>When to Make Changes to a Swift Disk Model</b></i></p>
-    <p> There are several reasons for changing the disk model as follows:</p>
-    <ul id="ul_d5y_255_dt">
-      <li>It is advisable that if you have additional drives available then you can add the drives
-        to the devices list.</li>
-      <li>The disk devices listed in the example disk model have different names on your servers.
-        This may be due different hardware drives. Edit the disk model
-          (<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) and change the device
-        names to the correct names.<note type="tip">The term <b>add</b> and <b>delete</b> in the
-          document means editing the respective YAML files to add or delete the
-          configurations/values.</note></li>
-      <li>You may prefer a different disk drive than the one listed in the model. For example, if
-          <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you have
-        SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In this
-        case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace with
-          <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.</li>
-    </ul>
+    <section id="swift-logical-vol">
+      <title>Swift Logical Volumes</title>
+      <note type="caution">Be careful while using logical volumes to store Swift data. The data
+        remains intact during an upgrade, but will be lost if the server is reimaged. If you use
+        logical volumes you must ensure that you do not reimage one server at a time. This is to
+        allow the data from the other replicas to be replicated back to the logical volume once the
+        reimage is complete.</note>
+      <p>Swift may use a logical volume. Ensure you meet the requirements listed in the table below:<simpletable>
+          <strow>
+            <stentry>
+              <ul id="ul_whq_2sc_jt">
+                <li><codeph>fstype</codeph></li>
+                <li><codeph>mount</codeph></li>
+                <li><codeph>mkfs-opts</codeph></li>
+              </ul>
+            </stentry>
+            <stentry>Do not specify any of the these attributes.</stentry>
+          </strow>
+          <strow>
+            <stentry>
+              <ul id="ul_wjz_jsc_jt">
+                <li><codeph>name</codeph></li>
+                <li><codeph>size</codeph></li>
+              </ul>
+            </stentry>
+            <stentry>Specify both of this attributes.</stentry>
+          </strow>
+          <strow>
+            <stentry><codeph>consumer</codeph></stentry>
+            <stentry> This attribute must have <codeph>name</codeph> field containing
+              <b>swift</b>.</stentry>
+          </strow>
+        </simpletable></p>
+      <p>
+        <note>If the operating system of the node is reimaged (re-installed), all data on logical
+          volumes are lost.</note>
+      </p>
+    </section>
+    <p> </p>
   </body>
 </topic>

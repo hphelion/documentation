@@ -93,6 +93,38 @@
           </tgroup>
         </table></p>
     </section>
+    <section id="cue"><title>Cue</title>
+      <p><table frame="all" rowsep="1" colsep="1" id="cue_table">
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="2*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <colspec colname="c4" colnum="4" colwidth="2*"/>
+          <thead>
+            <row>
+              <entry>Alarm Name</entry>
+              <entry>Description</entry>
+              <entry>Likely Cause</entry>
+              <entry>Mitigation Tasks to Perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>HTTP Status</entry>
+              <entry>component=cue-api</entry>
+              <entry>API is unresponsive</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>Process Check</entry>
+              <entry>process_name=cue-api</entry>
+              <entry>Process crashed</entry>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></p>
+    </section>
     <section id="glance"><title>Glance</title>
       <p><table frame="all" rowsep="1" colsep="1" id="glance_table">
           <tgroup cols="4">
