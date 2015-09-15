@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_sl2_nht_dt">
-  <title>Swift- Troubleshooting </title>
+  <title>Troubleshooting </title>
   <body>
     <p>This page describes the troubleshooting scenarios for Swift service.<ul id="ul_ac4_s5d_ft">
         <li><xref href="#topic_sl2_nht_dt/interpreting-swift-validate-input-model" format="dita"
