@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_sl2_nht_dt">
+  <title>Troubleshooting </title>
+  <body>
+    <p>This page describes the troubleshooting scenarios for Swift service.<ul id="ul_ac4_s5d_ft">
+        <li><xref href="#topic_sl2_nht_dt/interpreting-swift-validate-input-model" format="dita"
+            >Interpreting _swift-validate-input-model.yml Errors</xref></li>
+        <li><xref href="#topic_sl2_nht_dt/deploy-fails" format="dita">Deploy fails with: msdos disks
+            labels do not support partition names</xref></li>
+        <li><xref href="#topic_sl2_nht_dt/swift-ring-failure" format="dita">Ansible playbook fails
+            in swiftlm-ring-supervisor | build-rings</xref></li>
+        <li><xref href="#topic_sl2_nht_dt/examine-ring" format="dita">Examine the ring delta
+            file</xref></li>
+      </ul></p>
+    <section id="interpreting-swift-validate-input-model">
+      <title>Interpreting _swift-validate-input-model.yml Errors</title>
+    </section>
+    <p>When you execute the <codeph>_swift-validate-input-model.yml</codeph> playbook it can be hard
+      to pick out the errors being reported. If so, you view the error messages as follows:<ol
+        id="ol_szd_tht_dt">
+        <li>Log onto the first node in the system that is running the swift-proxy-server process.
+            <note> You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as
+            mentioned in step <b>1</b> in <b> </b><xref
+              href="../installation.dita#topic_flx_j2b_ws/validate_swift">Validate Object
+              Storage</xref> or run the <codeph>hlm-deploy.yml</codeph> playbook as described in
+            step <b>2 c</b> in <xref
+              href="../installation.dita#topic_flx_j2b_ws/run-config-processor"/>otherwise the files
+            needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the
+            node. </note></li>
+        <li>Execute the following
+            command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report </codeblock><p>
+            The command will report any errors or problems (see List of errors) with the input
+            model. It also prints a summary of the ring create actions that are planned (i.e., that
+            will occur) for the deploy phase of the process.</p></li>
+      </ol></p>
+    <section><b>List of errors</b></section>
+    <p>The following example provides an error message, description, and the resolution.<note>To
+        resolve an error, you must first modify the cloud model and re-run the configuration
+        processor as described in <xref
+          href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run the Configuration
+          Processor</xref> and continue with the deploy.</note></p>
+    <p>
+      <ol>
+        <li><b>Example Message - Model Missmatch: Cannot find drive /dev/sdt on padawan-ccp-c1-m2
+            (192.168.245.3))</b><simpletable id="simpletable_crn_x2j_2t">
+            <strow>
+              <stentry><b>Description</b>
+              </stentry>
+              <stentry>The disk model used for node <b>padawan-ccp-c1-m2</b> has drive
+                  <codeph>/dev/sdt</codeph> listed in the devices list of a device-group where Swift
+                is the consumer. However, the <codeph>dev/sdt</codeph> device does not exist on that
+                node.</stentry>
+            </strow>
+            <strow>
+              <stentry><b>Resolution</b></stentry>
+              <stentry>If a drive or controller is failed on a node, the operating system does not
+                see the drive and hence the corresponding block device may not exist. Sometimes this
+                is transitory and a reboot may resolve the problem. The problem may not be with
+                  <codeph>/dev/sdt</codeph>, but with another drive. For example, if
+                  <codeph>/dev/sds</codeph> is failed, when you boot the node, the drive that you
+                expect to be called <codeph>/dev/sdt</codeph> is actually called
+                  <codeph>/dev/sds</codeph>. <p>Alternatively, there may not be enough drives
+                  installed in the server. You can add drives. Another option is to remove
+                    <codeph>/dev/sdt</codeph> from the appropriate disk model. However, this removes
+                  the drive for all servers using the disk model .</p></stentry>
+            </strow>
+          </simpletable></li>
+        <li><b>Example Message - Model Missmatch: Cannot find drive /dev/sdd2 on padawan-ccp-c1-m2
+            (192.168.245.3)</b><simpletable id="simpletable_wz4_jgj_2t">
+            <strow>
+              <stentry><b>Description</b>
+              </stentry>
+              <stentry>The disk model used for node<b> padawan-ccp-c1-m2</b> has drive
+                  <codeph>/dev/sdt</codeph> listed in the devices list of a device-group where Swift
+                is the consumer. However, the partition number (2) has been specified in the model.
+                This is not supported – only specify the block device name (for example
+                  <codeph>/dev/sdd</codeph>), not partition names in disk models.</stentry>
+            </strow>
+            <strow>
+              <stentry><b>Resolution</b></stentry>
+              <stentry>Remove the partition number from the disk model.</stentry>
+            </strow>
+          </simpletable></li>
+        <li><b>Example Message - Cannot find IP address of padawan-ccp-c1-m3-swift for ring: account
+            host: padawan-ccp-c1-m3-mgmt</b><simpletable id="simpletable_j3n_lfj_2t">
+            <strow>
+              <stentry><b>Description</b></stentry>
+              <stentry>The service (in this example, swift-account) is running on the node
+                  <b>padawan-ccp-c1-m3</b>. However, this node does not have a connection to the
+                network designated for the swift-account service (i.e., the SWIFT
+                network).</stentry>
+            </strow>
+            <strow>
+              <stentry><b>Resolution</b></stentry>
+              <stentry>Check the input model for which networks are configured for each node
+                type.</stentry>
+            </strow>
+          </simpletable></li>
+        <li>
+          <b>Example Message - Ring: object-2 has specified replication_policy and
+            erasure_coding_policy. Only one may be specified. </b><simpletable
+            id="simpletable_jxv_lfj_2t">
+            <strow>
+              <stentry><b>Description</b>
+              </stentry>
+              <stentry>Only one of replication-policy or erasure-coding-policy may be used in a
+                ring-specification.</stentry>
+            </strow>
+            <strow>
+              <stentry><b>Resolution</b></stentry>
+              <stentry>Remove one of the policy types.</stentry>
+            </strow>
+          </simpletable></li>
+        <li><b>Example Message - Ring: object-3 is missing a policy type (replication-policy or
+            erasure-coding-policy) </b><simpletable id="simpletable_e3b_mfj_2t">
+            <strow>
+              <stentry><b>Description</b>
+              </stentry>
+              <stentry>There is no replication-policy or erasure-coding-policy section in the
+                ring-specifications for the object-0 ring.</stentry>
+            </strow>
+            <strow>
+              <stentry><b>Resolution</b></stentry>
+              <stentry>Add a policy type to the input model file. </stentry>
+            </strow>
+          </simpletable></li>
+      </ol>
+    </p>
+    <section id="deploy-fails">
+      <title>Deploy fails with - msdos disks labels do not support partition names</title>
+      <note>This process only applies to Swift drives. It does not apply to the operating system or
+        boot drive.</note>
+      <simpletable id="simpletable_nh3_ptd_ft">
+        <strow>
+          <stentry><b>Description</b>
+          </stentry>
+          <stentry>If a disk drive allocated to Swift uses the MBR partition table type, the deploy
+            process refuses to label and format the drive. This is to prevent potential data loss as
+            explained in <xref
+              href="allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
+              >Requirements for a Disk Drive</xref>. If you intend to use the disk drive for Swift,
+            you must convert the MBR partition table to GPT on the drive using
+              <codeph>/sbin/sgdisk</codeph>.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>Resolution</b></stentry>
+          <stentry>You must install <codeph>gdisk</codeph>, before using <codeph>sgdisk</codeph>.
+              <ul id="ul_fqc_1hf_ft">
+              <li>Execute the following command to install
+                <codeph>gdisk</codeph>,<codeblock>sudo apt-get install gdisk</codeblock></li>
+              <li>Convert to GPT partition type. This is an example for converting
+                  <codeph>/dev/sdd</codeph> to the GPT partition
+                type.<codeblock>sudo sgdisk –g /dev/sdd</codeblock></li>
+              <li> Reboot the node to take effect. You may then resume the deploy (repeat the
+                playbook that reported the error). </li>
+            </ul></stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section id="swift-ring-failure">
+      <title><b>Ansible playbook fails in swiftlm-ring-supervisor | build-rings</b></title>
+    </section>
+    <section>
+      <p>
+        <simpletable id="simpletable_k1g_ycx_gt">
+          <strow>
+            <stentry><b>Description</b>
+            </stentry>
+            <stentry>An ansible playbook fails as follows:
+              <codeblock>TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] *** 
+failed: [hlm002-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor", "--make-delta", "--rebalance", ....</codeblock>Examine
+              the output and see if the output generated in your environment contains one of the
+              following example messages:<p><b>Example Message
+                  1</b></p><codeblock>-------------------------------------------------------------------------------
+NOTE: Dispersion of 11.718750 indicates some parts are not
+      optimally dispersed.
+
+      You may want to adjust some device weights, increase
+      the overload or review the dispersion report.
+-------------------------------------------------------------------------------</codeblock><p><b>Example
+                  Message
+                  2</b><codeblock>No partitions could be reassigned.</codeblock></p><p><b>Example
+                  Message
+                3</b><codeblock>Cowardly refusing to save rebalance as it did not change at least 1%</codeblock></p><p><b>Example
+                  Message
+                4</b><codeblock>NOTE: Balance of %.02f indicates you should push this ring, wait at least 16 hours, and rebalance/repush.</codeblock></p><p><b>Example
+                  Message 5</b><codeblock>Worst tier is 3.0 (2.4)</codeblock></p><p>If any one of
+                the above message is displayed in your environment then it is probable that the
+                Swift ring was created. </p></stentry>
+          </strow>
+          <strow>
+            <stentry><b>Resolution</b></stentry>
+            <stentry>
+              <p>Run the following command at least
+                twice:<codeblock>ansible-playbook -i hosts/verb_hosts _swift-make-delta-rebalance.yml</codeblock></p>
+              <p> Each may fail with similar messages but each fails with a different ring.</p>
+              <p> Once the account, container, and object-0 rings have failed, you can repeat the
+                ansible playbook command that failed. Refer to <xref
+                  href="../installation.dita#topic_flx_j2b_ws">installation guide</xref> for the
+                command.</p>
+              <p>Now, the ansible playbook will not stop at the "swiftlm-ring-supervisor |
+                build-rings" task and the rings will be created successfully.</p>
+            </stentry>
+          </strow>
+        </simpletable>
+      </p>
+      <p> </p>
+    </section>
+    <section id="examine-ring">
+      <title><b>Examine the ring-delta File</b></title>
+      <note> You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as mentioned
+        in step <b>1</b> in <b> </b><xref
+          href="../installation.dita#topic_flx_j2b_ws/validate_swift">Validate Object Storage</xref>
+        otherwise the files needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be
+        in place on the node. </note>
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+      <p><?oxy_custom_end?><ul id="ul_wrw_pnl_ht">
+          <li>Log onto the node that has been designated as the Ring-Builder.<b> (see "Allocate a
+              Ring-Builder Node" above)</b><b>-could not find this section in wiki.</b></li>
+          <li>Execute the following command to get the entire list drives and the actions planned
+            for the rings by executing the following
+            command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report --detail detail</codeblock></li>
+        </ul> The output is verbose. Redirect the output to a file so that it is easier to
+          examine.<ul id="ul_wbs_zsy_ht">
+          <li>Validate the following in the output:<ul id="ul_cq3_c4l_ht">
+              <li>Drives are being added to all rings in the ring specifications.</li>
+              <li>Servers are being used as expected (for example, you may have a different set of
+                servers for the account/container rings than the object rings.)</li>
+              <li>The weight value is as expected. The weight value is the drive size expressed in
+                GB (i.e., a 1 TB drive has a weight of 1024).</li>
+            </ul></li>
+        </ul></p>
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+    </section>
+    <?oxy_custom_end?>
+    <section><!--<title><b>Resetting Builder Files</b></title><p/><p>WARNING: this process should only be used during the initial deployment process when you want to restart a deploy from scratch. If you use this process after the initial deploy is complete, you risk loosing critical system data</p><p>The structure of a ring is built in incremental stages. When you modify a ring, the new ring is uses the state of the old ring as a basis for the new ring. This state is kept in a file called the builder file. The swiftlm-ring-supervisor stores builder files in the /etc/swiftlm/builder_dir directory/ on the Ring-Builder node.The builder files are named &lt;ring-name&gt;.builder. Prior versions of the builder files are stored in the /etc/swiftlm/builder_dir/backups directory.</p><p>Normally, you would use an existing builder file as the basis for changes to a ring. However, when creating a ring from scratch, no builder file exists. Instead, the first step in the process is to build a builder file. The swiftlm-ring-supervisor does this for you as part of the deployment process. However, if the Cloud Model contains errors, you may wish to start from scratch. When swiftlm-ring-supervisor finds existing builder files it assumes you are <i>modifying</i> a ring and will behave differently than when it is creating a ring from scratch. To start from scratch, follow this process:</p><ul id="ul_zhk_24l_ht"><li>You must know your Keystone region name. Each distinct Swift system uses a different Keystone region. If you have several Keystone regions and you are trying to return to the start state for region2, you do not want to delete the builder files of region1 as this is presumably running normally).</li><li><p>Delete the builder files in the /etc/swiftlm/builder-dir/region-&lt;region-name&gt;/ directory. For example, for the region2 Keystone region, use this command:<codeblock>sudo rm /etc/swiftlm/builder_dir/region-region2/*.builder</codeblock></p><p>Note: If you have successfully deployed a system and accidentally delete the builder files, you can recover to the correct state using Recovering Builder Files process.</p></li></ul>--></section>
+  </body>
+</topic>
