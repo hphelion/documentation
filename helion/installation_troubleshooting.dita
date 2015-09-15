@@ -26,6 +26,14 @@ git commit -m "My config or other commit message"</codeblock></li>
 ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
       </ol>
+      <p><b>Change needed to configuration files after you've run the
+            <codeph>config-processor-run.yml</codeph> playbook</b></p>
+      <p>If you've run the <codeph>config-processor-run.yml</codeph> playbook during the
+        installation and have to go back to re-do your steps, ensure that you run the
+          <codeph>config-processor-clean.yml</codeph> playbook to clear out your previous
+        configuration before proceeding.</p>
+      <p><codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock></p>
     </section>
   </body>
 </topic>
