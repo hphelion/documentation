@@ -10,7 +10,8 @@
             various type of data. For example: You can use 7.5K RPM high-capacity drives for one
             type of data and fast SSD drives for another type of data.</p></li>
       </ul></p>
-    <p><ul id="ul_wtd_zbc_jt">
+    <p>
+      <ul id="ul_wtd_zbc_jt">
         <li>Different redundancy or availability needs<p>You can define the redundancy and
             availability based on your requirement. You can use a replica count of 3 for "normal"
             data and a replica count of 4 for "critical" data. </p><p>If you have several different
@@ -21,37 +22,37 @@
               href="ring_specifications.dita#ring-specification/selecting-partition-power">selecting
               partition power</xref>.</p></li>
         <li>Erasure-coded storage and replicated storage<p>If you use erasure-coded storage for some
-            objects and replicated storage for other objects.</p><p>A storage policies are
-            implemented on per-container basis. Usually storage policy is not explicity specified
-            but  you can specify which storage policy is used by using the <b>default</b> attribute.
-            </p><p>Once you create and assign the storage policy to a container that remains intact,
-            i.e., you cannot change the policy for that contaier but you can always create
-            additional policies and move data from one contianer to another, if you choose to assign
-            a different policy to a new container. </p><p>The disk drives used by storage policies
-            can overlap or be distinct. If the storage policies overlap (i.e., have disks in common
-            between two storage policies), it is recommended to use the same set of disk drives for
-            both policies. But in case there is a partial overlap in disk drives, as one storage
-            policy receives many objects, the drives that are common to both policies must store
-            more objects than drives that are only allocated to one storage policy. This can be
-            appropriate for a situation where the "overlapped" disk drives are larger than the
-            non-overlapped drives.
-            <!--However, in general this situation is harder to balance then a simple topology.--></p></li>
-      </ul><b>Specifying Storage Policies</b></p>
-    <p>You can specify the storage policies in two places in the input model as follows:There are
-      two places where storage policies are specified in the input model:</p>
-    <p>
-      <ul id="ul_q5d_zbc_jt">
+            objects and replicated storage for other objects. </p></li>
+      </ul>
+    </p>
+    <p>A storage policies are implemented on per-container basis. Usually storage policy is not
+      explicity specified but you can specify which storage policy is used by using the
+        <b>default</b> attribute. </p>
+    <p>Once you create and assign the storage policy to a container that remains intact, i.e., you
+      cannot change the policy for that contaier but you can always create additional policies and
+      move data from one contianer to another, if you choose to assign a different policy to a new
+      container. </p>
+    <p>The disk drives used by storage policies can overlap or be distinct. If the storage policies
+      overlap (i.e., have disks in common between two storage policies), it is recommended to use
+      the same set of disk drives for both policies. But in case there is a partial overlap in disk
+      drives, as one storage policy receives many objects, the drives that are common to both
+      policies must store more objects than drives that are only allocated to one storage policy.
+      This can be appropriate for a situation where the "overlapped" disk drives are larger than the
+      non-overlapped drives.
+      <!--However, in general this situation is harder to balance then a simple topology.--></p>
+    <section>
+      <title>Specifying Storage Policies</title>
+    </section>
+    <p> You can specify the storage policies in two places in the input model as follows:There are
+      two places where storage policies are specified in the input model:<ul id="ul_psf_lg2_jt">
         <li>The attribute of the storage policy is specified in ring-specification in
             <codeph>config/swift/rings.yml</codeph> file for a given region. </li>
         <li>When associating disk drives with specific rings. This specifies which drives use the
           storage policy. In other word words, where data associated with a storage policy is
           stored.</li>
-      </ul>
-    </p>
+      </ul></p>
     <p>A storage policy is specified similar to other rings. However, the following features are
-      unique to storage policies:</p>
-    <p>
-      <ul id="ul_zwd_zbc_jt">
+      unique to storage policies:<ul id="ul_k3j_ng2_jt">
         <li>Storage policies is applicable to object rings only. The account or container rings
           cannot have storage policies.</li>
         <li>There is a format for the ring name. object-&lt;index&gt;, where index is a number in
@@ -66,12 +67,10 @@
           policy then the object created in a new container uses the default storage policy.</li>
         <li>If you change the default, only containers created later will have that changed default
           policy.</li>
-      </ul>
-    </p>
-    <p>The following examples shows three storage policies in use. &lt;<b>Please let me know the
-        name of the storage policy in the following diagram??></b></p>
-    <p>
-      <codeblock>rings:
+      </ul></p>
+    <p>The he following examples shows three storage policies in use. &lt;<b>Please let me know the
+        name of the storage policy in the following
+      diagram??></b><codeblock>rings:
 . . . 
 - name: object-0
   display-name: General
@@ -91,7 +90,6 @@
   min-part-time: 16
   partition-power: 20
   replication-policy:
-      replica-count: 4</codeblock>
-    </p>
+      replica-count: 4</codeblock></p>
   </body>
 </topic>

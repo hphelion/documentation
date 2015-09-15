@@ -81,7 +81,7 @@
     <p>
       <note>The proxy service does not have any rings associated with it.</note>
     </p>
-    <example><b>PACO</b> – proxy, account, container and object run on the same node
+    <example>Example:<b>PACO</b> – proxy, account, container and object run on the same node
       type<codeblock>consumer:
     name: swift
     attrs:
@@ -89,16 +89,16 @@
         - name: account
         - name: container
         - object-0</codeblock></example>
-    <example><b>PAC</b> – proxy, account, container run on the same node
+    <example>Example:<b>PAC</b> – proxy, account, container run on the same node
       type<codeblock>consumer:
     name: swift
     attrs:
         rings:
         - name: account
         - name: container</codeblock></example>
-    <example><b>OBJ</b> - Dedicated object server. The following example shows two Storage Policies
-      (object-0 and object-1). See <i><xref href="storage-policies.dita#topic_gm1_4bc_jt">Designing
-          Storage Policies</xref></i> for more
+    <example>Example:<b>OBJ</b> - Dedicated object server. The following example shows two Storage
+      Policies (object-0 and object-1). See <i><xref href="storage-policies.dita#topic_gm1_4bc_jt"
+          >Designing Storage Policies</xref></i> for more
       information.<codeblock>consumer:
     name: swift
     attrs:
