@@ -70,7 +70,7 @@
       </ul></p>
     <p>The he following examples shows three storage policies in use. &lt;<b>Please let me know the
         name of the storage policy in the following
-      diagram?></b><codeblock>rings:
+      example?></b><codeblock>rings:
 . . . 
 - name: object-0
   display-name: General
