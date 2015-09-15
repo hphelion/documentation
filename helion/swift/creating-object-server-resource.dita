@@ -3,14 +3,15 @@
 <topic id="topic_jzk_q1c_jt">
   <title>Creating an Object Server Resource Group</title>
   <body>
-    <p>Create a resource group for Swift object servers as follows:</p>
+    <p>You must identify the control plane and node type/role when creating a resource group for
+      Swift object servers. </p>
     <ul id="ul_r4r_r1c_jt">
-      <li>Identity the control plane that the object serves are associated with (usually
-        data/control_plane.yml)</li>
-      <li>Identity the node type/role used by Swift Object servers. In this document, we have used
-        ROLE_SWOBJ</li>
-      <li>Add an entry to the <b>resources</b> item in the <b>control-plan</b> as
-        follows:<codeblock>control-planes:
+      <li>In the <codeph>data/control_plane.yml</codeph> file, identity the control plane that the
+        object serves are associated with. </li>
+      <li>Identity the node type/role used by the Swift Object servers. In the following example,
+          <b>ROLE_SWOBJ</b> is mentioned as server-role.<p>Add an entry to the <b>resources</b> item
+          in the <b>control-plane</b> as
+        follows:</p><codeblock>control-planes:
 - name: ccp
   region: region1
   . . .
@@ -26,16 +27,15 @@
     - swift-object
  </codeblock></li>
     </ul>
+    <p><b>Service Components</b></p>
     <p>A Swift object server requires the following service components:</p>
     <ul id="ul_fyb_51c_jt">
       <li>ntp-client</li>
       <li>swift-object</li>
-    </ul>
-    <p>The following service components may optionally be added:</p>
-    <ul id="ul_pyb_51c_jt">
-      <li>swift-client. This installs the python-swiftclient package on the server.</li>
+      <li>swift-client is optionally added. This installs the <codeph>python-swiftclient</codeph>
+        package on the server.</li>
     </ul>
     <p>Resource groups do not have a member count attribute. So the number of servers allocated is
-      that the same as the number found with a matching server role.</p>
+      similar to the number found with a matching server role.</p>
   </body>
 </topic>

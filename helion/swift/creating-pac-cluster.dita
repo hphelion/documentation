@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rvj_21c_jt">
-  <title>Creating a Proxy, Account, Container Cluster</title>
+  <title>Creating a Proxy, Account, Container (PAC) Cluster</title>
   <body>
-    <p>Create a cluster for Swift proxy, account, container servers as follows:</p>
-    <ul id="ul_m5s_f1c_jt">
-      <li>Identity the control plane that the object serves are associated with (usually
-        data/control_plane.yml)</li>
-      <li>Identity the node type/role used by Swift Object servers. In this document, we have used
-        ROLE_SWPAC</li>
-      <li>Add an entry to the <b>clusters </b>item in the <b>control-plan</b> as
-        follows:<codeblock>control-planes:
+    <p>You must identify the control plane and node type/role when creating a cluster for Swift
+      proxy, account, container servers. </p>
+    <ul id="ul_r4r_r1c_jt">
+      <li>In the <codeph>data/control_plane.yml</codeph> file, identity the control plane that the
+        object serves are associated with. </li>
+      <li>Identity the node type/role used by the Swift Object servers. In the following example,
+          <b>ROLE_SWPAC</b> is mentioned as server-role.<p>Add an entry to the <b>clusters </b>item
+          in the <b>control-plane</b> as
+          follows:<codeblock>control-planes:
 - name: ccp
   region: region1
   . . .
@@ -27,7 +28,20 @@
       - swift-account
       - swift-container
       - swift-ring-builder
-      - swift-client</codeblock></li>
+      - swift-client</codeblock></p></li>
     </ul>
+    <p><b>Service Componets</b></p>
+    <p>A Swift proxy, account, container server requires the following service components:</p>
+    <ul id="ul_etg_k1c_jt">
+      <li>ntp-client</li>
+      <li>swift-proxy</li>
+      <li>swift-account</li>
+      <li>swift-container</li>
+      <li>swift-ring-builder</li>
+      <li>swift-ring-builder</li>
+      <li>swift-client</li>
+    </ul>
+    <p>You must change the  <b>member-count</b> to match the number of servers, if you have more
+      than 3 servers available and that have the<b> ROLE_SWPAC</b> role assigned to them.</p>
   </body>
 </topic>
