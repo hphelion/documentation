@@ -5,14 +5,14 @@
   <body>
     <p>You can verify the Swift operation using:<ul id="ul_v51_hh2_jt">
         <li>
-          <p> swift-recon</p>
+          <p><xref href="#topic_bvm_yg2_jt/swift-recon" format="dita"> swift-recon</xref></p>
         </li>
         <li>
-          <p>swiftlm-scan</p>
+          <p><xref href="#topic_bvm_yg2_jt/swiftlm-scan" format="dita">swiftlm-scan</xref></p>
         </li>
-        <li>swift utility</li>
+        <li><xref href="#topic_bvm_yg2_jt/swift-utility" format="dita">swift utility</xref></li>
       </ul></p>
-    <section>
+    <section id="swift-recon">
       <title>swift-recon</title>
       <p>The <b>swift-recon</b> command retrieves data from Swift servers and displays the results.
         To use <b>swift-recon</b>, log on as a root user to the node which is running the
@@ -70,7 +70,7 @@ Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4614140152%
       <note>Use <b>--help</b> to see all the available commands.  These two commands (<b>--async</b>
         and <b>--driveaudit</b>)  are not supported in this release.</note>
     </p>
-    <section>
+    <section id="swiftlm-scan">
       <title> swiftlm-scan</title>
       <p>The <b>swiftlm-scan</b> program is the mechanism used to gather metrics for the Monasca
         system. These metrics are used to derive alarms. See <xref
@@ -180,7 +180,7 @@ Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4614140152%
             controller and disk drives.</stentry>
         </strow>
       </simpletable></p>
-    <section>
+    <section id="swift-utility">
       <title>swift utility</title>
       <p>The swift utility (or CLI) is installed on the deployer node and also on all other nodes
         running the swift proxy service. To use the swift utility, set the following environment
