@@ -21,12 +21,16 @@
     <section id="Configuration">
       <title>Configuration</title>
       <p>HP Helion OpenStack 2.0 LBaaS Configuration</p>
+      <note type="important">It is not recommended that LBaaS v1 is used in a production
+        environment. It is recommended you use LBaaS v2. If you do deploy LBaaS v1, the upgrade to
+        LBaaS v2 is non-trivial and may require the use of professional services.</note>
+      
       <note>If you need to run LBaaS version 1 instead of the default LBaaS version 2, you'll need to configure the ccp.yml
       files and neutron.conf.j2 file to use version 1.</note>
-      <note type="important">It is not recommended that LBaaS v1 is used in a production environment.  It is recommended you use LBaaS v2. If you do deploy LBaaS v1, the upgrade to LBaaS v2 is non-trivial and may require the use of professional services</note>
+      
       
       <sectiondiv id="ConfiguringLBaaSV1">
-      <p>Configuring LBaaS V1</p>
+      <p>Installing LBaaS V1</p>
       <p>Before you modify the ccp.yml and neutron.conf.j2 files, it is recommended that you clone the hlm-input-model and neutron-ansible
         at the same directory level as hlm-dev-tools.  Once you have cloned the directories, modify the ccp.yml and neutron.conf.j2 files.</p>
       <ol>
@@ -106,7 +110,7 @@ neutron lbaas-member-create --subnet sub --address 10.1.0.6 --protocol-port 80 p
           <li>Create load balancing members with <codeph>lb-member-create</codeph> providing the IP address, protocol and load balancing pool name to each member.
           <codeblock>neutron lb-member-create --address 10.1.0.4 --protocol-port 80 pool
 neutron lb-member-create --address 10.1.0.5 --protocol-port 80 pool</codeblock></li>
-          <li>Create the vip  with <codeph>lb-vip-create</codeph> giving it a name, protocol, protocol port and a subnet.
+          <li>Create the vip  with <codeph>lb-vip-create</codeph> giving it a name, protocol, protocol port and a subnet.  
           <codeblock>neutron lb-vip-create --name vip --protocol-port 80 --protocol HTTP --subnet-id $(neutron subnet-list | awk '/sub/ {print $2}')</codeblock></li>
           <li>You can check to see if the load balancer is active with <codeph>lb-vip-show</codeph>
           <codeblock>neutron lb-vip-show vip</codeblock></li>
@@ -115,16 +119,18 @@ neutron lb-member-create --address 10.1.0.5 --protocol-port 80 pool</codeblock><
       
       <sectiondiv id="TestLoadBalancer">
       <p>Validate LBaaS Functionality</p>
+        <note>You should perform the following steps from a node that has a route to the private network.  
+          Using the examples from above, 10.1.0.0/24 should be reachable.</note>
         <ol>
-          <li>SSH into both vm1 and vm2 from two windows of the same controller node with snat-* namespace. 
-            This is where we have configured manual routing in the above section to reach the private network.</li>
-          <li>From one window of the controller
-          <codeblock>ssh cirros@10.1.0.4
+          <li>SSH into both vm1 and vm2 in two separate windows and make them listen on port ‘80’.
+            If you configured a different port in the security-group rules, you will need to listen
+            on that configured port to validate the LBaaS functionality. </li>
+          <li>From one window.<codeblock>ssh cirros@10.1.0.4
 pass: &lt;password&gt;</codeblock></li>
-          <li>From another window of the controller
-          <codeblock>ssh cirros@10.1.0.5
+          <li>From another window.
+            <codeblock>ssh cirros@10.1.0.5
 pass: &lt;password&gt;</codeblock></li>
-          <li>Start testing web servers on both of the virtual machines.</li>
+          <li>Start running web servers on both of the virtual machines.</li>
           <li>Create a webserv.sh script with below contents
             <codeblock>$ vi webserv.sh
               
@@ -140,8 +146,10 @@ $ chmod 755 webserv.sh
               
 ## Start webserver
 $ ./webserv.sh</codeblock></li>
-          <li>From the controller node in a different window, add the <i>VIP</i> address to <i>no_proxy</i>. You can get the <i>VIP</i> 
-            from the <codeph>neutron lbaas-listener-list</codeph> for LBaaS V2 and <codeph>neutron lb-vip-list</codeph> for LBaaS V1.</li>
+          <li>Open a separate window.  From the a node with a route to the private network, add the
+              <i>VIP</i> address to <i>no_proxy</i>. You can get the <i>VIP</i> from the
+              <codeph>neutron lbaas-loadbalancer-list</codeph> for LBaaS V2 and <codeph>neutron
+              lb-vip-list</codeph> for LBaaS V1.</li>
           <li>Run the following commands to test load balancing.
             <codeblock>$ export no_proxy=$no_proxy,10.1.0.7
               
