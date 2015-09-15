@@ -10,7 +10,7 @@
         <li>Log on to the server and execute the <codeph>xfs_admin</codeph> command as follows
           (where <codeph>/dev/sdc1</codeph> is the partition where the filesystem is located).</li>
       </ul><codeblock>sudo xfs_admin -l /dev/sdc1</codeblock></p>
-    <p>The output shows if a filesystem has a label. For exampe, this shows a label of
+    <p>The output shows if a filesystem has a label. For example, this shows a label of
         <b>c0a8f502h000</b>.<codeblock>$ sudo xfs_admin -l /dev/sdc1
 label = "<b>c0a8f502h000</b>"</codeblock>If
       no filesystem exists, the result is similar as

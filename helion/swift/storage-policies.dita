@@ -26,11 +26,11 @@
       </ul>
     </p>
     <p>A storage policies are implemented on per-container basis. Usually storage policy is not
-      explicity specified but you can specify which storage policy is used by using the
-        <b>default</b> attribute. </p>
+      specified but you can specify which storage policy is used by using the <b>default</b>
+      attribute. </p>
     <p>Once you create and assign the storage policy to a container that remains intact, i.e., you
-      cannot change the policy for that contaier but you can always create additional policies and
-      move data from one contianer to another, if you choose to assign a different policy to a new
+      cannot change the policy for that container but you can always create additional policies and
+      move data from one container to another, if you choose to assign a different policy to a new
       container. </p>
     <p>The disk drives used by storage policies can overlap or be distinct. If the storage policies
       overlap (i.e., have disks in common between two storage policies), it is recommended to use

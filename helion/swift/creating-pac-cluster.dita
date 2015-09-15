@@ -30,7 +30,7 @@
       - swift-ring-builder
       - swift-client</codeblock></p></li>
     </ul>
-    <p><b>Service Componets</b></p>
+    <p><b>Service Components</b></p>
     <p>A Swift proxy, account, container server requires the following service components:</p>
     <ul id="ul_etg_k1c_jt">
       <li>ntp-client</li>
