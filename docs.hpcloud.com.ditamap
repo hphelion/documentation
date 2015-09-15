@@ -77,10 +77,8 @@
       <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes"
         navtitle="Modify the Example Cloud Model" locktitle="yes">
         <topicref href="helion/swift/allocate-pac.dita"/>
-        <topicref href="helion/swift/allocating_server.dita" navtitle="Allocate Object Server"
-          locktitle="yes"/>
-        <topicref href="helion/swift/allocating_disk_drives.dita" navtitle="Allocate Disk Drives"
-          locktitle="yes">
+        <topicref href="helion/swift/allocating_server.dita" navtitle="Allocating Object Server"/>
+        <topicref href="helion/swift/allocating_disk_drives.dita" navtitle="Allocating Disk Drives">
           <topicref href="helion/swift/label_on_partition.dita" toc="yes"
             navtitle="Verify the Partition Label" locktitle="yes"/>
           <topicref href="helion/swift/filesystem_label.dita" toc="yes"

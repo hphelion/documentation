@@ -12,7 +12,7 @@
       deployed, a different procedure is used to add additional Swift object
       servers.<?oxy_custom_end?> - &lt;<b>What is that procedure? can user do it in Beta2 ?</b>></p>
     <section>
-      <title>Procedure to Allocate Swift PAC servers</title>
+      <title>Procedure to Allocate Swift PAC Servers</title>
       <p>Perform the following steps to allocate to allocate PAC Servers:</p>
     </section>
     <ul>
@@ -28,7 +28,7 @@
         container servers. It is usually mentioned in <codeph>data/control_plane.yml</codeph> file.
         If the cluster is not assigned then add a suitable cluster as described in <i><xref
             href="creating-pac-cluster.dita#topic_rvj_21c_jt">Creating an Proxy, Account, Container
-            Cluster</xref></i></li>
+            Cluster.</xref></i></li>
       <li>Identity the physical servers and their IP address and other detailed information.<ul
           id="ul_tzf_pqb_jt">
           <li>If you use Cobbler, you add these details the baremetal-servers list (usually in
