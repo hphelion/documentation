@@ -187,7 +187,7 @@
           system). This means that you can install your system with a small partition power
           appropriate to a small number of initial disk drives. Later when you have many disk
           drives, the new storage policy can have a higher value appropriate to the larger number of
-            drives.<note>Adding a new storage policy is not supported in Beta1.</note></li>
+          drives.</li>
       </ul>
     </p>
     <p> However, when you continue to add storage capacity you should note that existing containers
