@@ -194,7 +194,7 @@
         drive.</li>
       <li>Do not have a label on the partition. To check whether your disk is label, execute the
         procedure mentioned in <xref href="label_on_partition.dita#verify-partition-label"/>.</li>
-      <li>Do not have an XFS filesystem that contains a filesystem label. To check the filesytem
+      <li>Do not have an XFS filesystem that contains a filesystem label. To check the filesystem
         with a label, execute the procedure described in <xref
           href="filesystem_label.dita#verify-the-filesystem-label"/>.</li>
       <li>If the disk drive is already labeled as described above, the

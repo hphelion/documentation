@@ -89,8 +89,8 @@
         <topicref href="helion/swift/ring_specifications.dita"/>
         <topicref href="helion/swift/storage-policies.dita"/>
       </topicref>
-      <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"
-        navtitle="Swift Troubleshooting" locktitle="yes"/>
+      <topicref href="helion/swift/check-swift-operation.dita"/>
+      <topicref href="helion/swift/troubleshooting.dita"/>
     </topicref>
     <!-- Monasca / Centralized Logging -->
     <topicref href="helion/monasca/monasca.dita" navtitle="Monitoring Service" locktitle="yes">

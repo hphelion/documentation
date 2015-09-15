@@ -4,7 +4,7 @@
   <title>Creating a Proxy, Account, Container (PAC) Cluster</title>
   <body>
     <p>You must identify the control plane and node type/role when creating a cluster for Swift
-      proxy, account, container servers. </p>
+      proxy, account, and container servers. </p>
     <ul id="ul_r4r_r1c_jt">
       <li>In the <codeph>data/control_plane.yml</codeph> file, identity the control plane that the
         object serves are associated with. </li>
@@ -30,7 +30,7 @@
       - swift-ring-builder
       - swift-client</codeblock></p></li>
     </ul>
-    <p><b>Service Componets</b></p>
+    <p><b>Service Components</b></p>
     <p>A Swift proxy, account, container server requires the following service components:</p>
     <ul id="ul_etg_k1c_jt">
       <li>ntp-client</li>

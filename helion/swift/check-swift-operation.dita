@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_bvm_yg2_jt">
+  <title>Checking Swift Operation</title>
+  <body>
+    <p>You can verify the Swift operation using:<ul id="ul_v51_hh2_jt">
+        <li>
+          <p><xref href="#topic_bvm_yg2_jt/swift-recon" format="dita"> swift-recon</xref></p>
+        </li>
+        <li>
+          <p><xref href="#topic_bvm_yg2_jt/swiftlm-scan" format="dita">swiftlm-scan</xref></p>
+        </li>
+        <li><xref href="#topic_bvm_yg2_jt/swift-utility" format="dita">swift utility</xref></li>
+      </ul></p>
+    <section id="swift-recon">
+      <title>swift-recon</title>
+      <p>The <b>swift-recon</b> command retrieves data from Swift servers and displays the results.
+        To use <b>swift-recon</b>, log on as a root user to the node which is running the
+        swift-proxy service. </p>
+      <p>The following command retrieves and displays disk usage
+        information.<codeblock>$ sudo swift-recon --diskusage</codeblock></p>
+      <p>For
+        example:<codeblock>$ sudo swift-recon --diskusage
+===============================================================================
+--> Starting reconnaissance on 3 hosts
+===============================================================================
+[2015-09-14 16:01:40] Checking disk usage now
+Distribution Graph:
+ 10%    3 *********************************************************************
+ 11%    1 ***********************
+ 12%    2 **********************************************
+Disk usage: space used: 13745373184 of 119927734272
+Disk usage: space free: 106182361088 of 119927734272
+Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4613798613%
+===============================================================================</codeblock></p>
+    </section>
+    <p>In the above example, the results for several nodes are combined together. You can also view
+      the results from individual nodes by adding the <b>-v </b>option as shown in the following
+      example:<codeblock>$ sudo swift-recon --diskusage -v
+===============================================================================
+--> Starting reconnaissance on 3 hosts
+===============================================================================
+[2015-09-14 16:12:30] Checking disk usage now
+-> http://192.168.245.3:6000/recon/diskusage: [{'device': 'disk1', 'avail': 17398411264, 'mounted': True, 'used': 2589544448, 'size': 19987955712}, {'device': 'disk0', 'avail': 17904222208, 'mounted': True, 'used': 2083733504, 'size': 19987955712}]
+-> http://192.168.245.2:6000/recon/diskusage: [{'device': 'disk1', 'avail': 17769721856, 'mounted': True, 'used': 2218233856, 'size': 19987955712}, {'device': 'disk0', 'avail': 17793581056, 'mounted': True, 'used': 2194374656, 'size': 19987955712}]
+-> http://192.168.245.4:6000/recon/diskusage: [{'device': 'disk1', 'avail': 17912147968, 'mounted': True, 'used': 2075807744, 'size': 19987955712}, {'device': 'disk0', 'avail': 17404235776, 'mounted': True, 'used': 2583719936, 'size': 19987955712}]
+Distribution Graph:
+ 10%    3 *********************************************************************
+ 11%    1 ***********************
+ 12%    2 **********************************************
+Disk usage: space used: 13745414144 of 119927734272
+Disk usage: space free: 106182320128 of 119927734272
+Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4614140152%
+===============================================================================</codeblock></p>
+    <p>By default, <b>swift-recon</b> uses the object-0 ring for information about nodes and drives.
+      For some commands, it is appropriate to specify either "account", "container" or "object" to
+      indicate the type of ring. For example, to check the checksum of the account ring, use
+        <b>swift-recon</b> as
+      follows:<codeblock>$ sudo swift-recon --md5 account 
+===============================================================================
+--> Starting reconnaissance on 3 hosts
+===============================================================================
+[2015-09-14 16:17:28] Checking ring md5sums
+3/3 hosts matched, 0 error[s] while checking hosts.
+===============================================================================
+[2015-09-14 16:17:28] Checking swift.conf md5sum
+3/3 hosts matched, 0 error[s] while checking hosts.
+===============================================================================</codeblock></p>
+    <p>
+      <note>Use <b>--help</b> to see all the available commands.  These two commands (<b>--async</b>
+        and <b>--driveaudit</b>)  are not supported in this release.</note>
+    </p>
+    <section id="swiftlm-scan">
+      <title> swiftlm-scan</title>
+      <p>The <b>swiftlm-scan</b> program is the mechanism used to gather metrics for the Monasca
+        system. These metrics are used to derive alarms. See <xref
+          href="../monasca/alarms.dita#alarmdefinitions"/> for a list of alarms that can be
+        generated from this data.</p>
+      <p>You execute the <b>swiftlm-scan</b> command directly to view the metrics. Log on to the
+        Swift node as the root user. The following example shows a snipper of the output.
+        <codeblock>$ sudo swiftlm-scan --pretty
+. . .
+  {
+    "dimensions": {
+      "device": "sdc", 
+      "hostname": "padawan-ccp-c1-m2-mgmt", 
+      "service": "object-storage"
+    }, 
+    "metric": "swiftlm.swift.drive_audit", 
+    "timestamp": 1442248083, 
+    "value": 0, 
+    "value_meta": {
+      "msg": "No errors found on device: sdc"
+    }
+  }, 
+. . .</codeblock></p>
+    </section>
+    <note>Use the<b> --pretty</b> option. This makes the JSON file easier to read.<p>The field is as
+        follows:</p><p>
+        <simpletable>
+          <strow>
+            <stentry><b>metric</b></stentry>
+            <stentry>This is the name of the metric.</stentry>
+          </strow>
+          <strow>
+            <stentry><b>dimensions</b></stentry>
+            <stentry>This provides information about the source or location of the metric. The
+              dimensions differ depending on the metric in question. The following dimensions are
+              used by<b> swiftlm-scan</b>:<ul id="ul_vdp_km2_jt">
+                <li><b>service</b> : This is always "object-storage".</li>
+                <li><b>component</b> : This identifies the component. For example,
+                  "swift-object-server" indicates that the metric is about the swift-object-server
+                  process.</li>
+                <li><b>hostname</b> : This is the name of the node the metric relates to. This is
+                  not necessarily the name of the current node.</li>
+                <li><b>url</b> : If the metric is associated with a URL, this is the URL.</li>
+                <li><b>port</b> : If the metric relates to connectivity to a node, this is the port
+                  used.</li>
+                <li><b>device</b> : This is the block device a metric relates to.</li>
+              </ul></stentry>
+          </strow>
+          <strow>
+            <stentry><b>value</b></stentry>
+            <stentry>This is the value of the metric. For many metrics, this is simply the value of
+              the metric. But for other metrics, the value indicates a status. If the
+                <b>value_meta</b> contains a "msg" field, the value is a status. The following
+              status values are used:<ul id="ul_rjy_hm2_jt">
+                <li>0 - no error</li>
+                <li>1 - warning</li>
+                <li>2 - failure</li>
+              </ul></stentry>
+          </strow>
+          <strow>
+            <stentry><b>value_meta</b></stentry>
+            <stentry>This contains additional information. The "msg" field is the most useful of
+              this information. </stentry>
+          </strow>
+        </simpletable>
+      </p></note>
+    <p><b>Optional Parameters</b></p>
+    <p>You can focus on specific sets of metrics by using one of the following optional parameters: <simpletable>
+        <strow>
+          <stentry><b>--replication</b></stentry>
+          <stentry>Checks replication and health status.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>--file-ownership</b></stentry>
+          <stentry>Check that Swift owns its relevant files and directories.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>--drive-audit</b></stentry>
+          <stentry>Checks for logged events about corrupted sectors (unrecoverable read errors) on
+            drives.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>--connectivity</b></stentry>
+          <stentry>Checks connectivity to various servers used by the Swift system, including:<ul
+              id="ul_owk_pp2_jt">
+              <li>Checks this node can connect to all memcachd servers</li>
+              <li>Checks that this node can connect to the Keystone service (only applicable if this
+                is a proxy server node)</li>
+              <li>Checks that this node can ping all other Swift nodes</li>
+            </ul></stentry>
+        </strow>
+        <strow>
+          <stentry><b>--swift-services</b></stentry>
+          <stentry>Check that the relevant Swift processes are running.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>--network-interface</b></stentry>
+          <stentry>Check NIC speed and reports statistics for each interface.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>--check-mounts</b></stentry>
+          <stentry>Checks that the node has correctly mounted drives used by Swift.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>--hpssacli</b></stentry>
+          <stentry>If this server uses a Smart Array Controller, this checks the operation of the
+            controller and disk drives.</stentry>
+        </strow>
+      </simpletable></p>
+    <section id="swift-utility">
+      <title>swift utility</title>
+      <p>The swift utility (or CLI) is installed on the deployer node and also on all other nodes
+        running the swift proxy service. To use the swift utility, set the following environment
+        variables. <note>You do not need to be the root
+        user.</note><codeblock>OS_USERNAME=demo
+OS_PASSWORD=&lt;redacted>
+OS_TENANT_NAME=demo
+OS_AUTH_URL=http://&lt;cluster-name>-vip-admin-KEY-API-mgmt:35357/v2.0
+OS_CACERT=/etc/ssl/certs/ca-certificates.crt</codeblock></p>
+      <p>You must enter the appropriate password for the demo user and select the correct endpoint
+        for the <b>OS_AUTH_URL</b> value. You can then examine the account data as
+        follows:<codeblock>$ swift stat
+        Account: AUTH_205804d000a242d385b8124188284998
+     Containers: 0
+        Objects: 0
+          Bytes: 0
+X-Put-Timestamp: 1442249536.31989
+     Connection: keep-alive
+    X-Timestamp: 1442249536.31989
+     X-Trans-Id: tx5493faa15be44efeac2e6-0055f6fb3f
+   Content-Type: text/plain; charset=utf-8</codeblock></p>
+      <p>In the above stats, there are no containers. Execute the following command and create a
+        container:<codeblock>swift post documents</codeblock></p>
+      <p>The newly created container appears. But there are no
+        objects:<codeblock>$ swift stat documents
+         Account: AUTH_205804d000a242d385b8124188284998
+       Container: documents
+         Objects: 0
+           Bytes: 0
+        Read ACL:
+       Write ACL:
+         Sync To:
+        Sync Key:
+   Accept-Ranges: bytes
+X-Storage-Policy: General
+      Connection: keep-alive
+     X-Timestamp: 1442249637.69486
+      X-Trans-Id: tx1f59d5f7750f4ae8a3929-0055f6fbcc
+    Content-Type: text/plain; charset=utf-8</codeblock></p>
+      <p>Upload a document as
+        follows:<codeblock>$ swift upload documents mydocument
+mydocument</codeblock></p>
+      <p>List objects in the container:<codeblock>$ swift list documents
+mydocument</codeblock></p>
+      <p>
+        <note>This is a brief introduction to the swift CLI. Use<b> --help</b> command for more
+          information.</note>
+      </p>
+    </section>
+  </body>
+</topic>
