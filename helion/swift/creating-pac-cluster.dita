@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rvj_21c_jt">
+  <title>Creating a Proxy, Account, Container Cluster</title>
+  <body>
+    <p>Create a cluster for Swift proxy, account, container servers as follows:</p>
+    <ul id="ul_m5s_f1c_jt">
+      <li>Identity the control plane that the object serves are associated with (usually
+        data/control_plane.yml)</li>
+      <li>Identity the node type/role used by Swift Object servers. In this document, we have used
+        ROLE_SWPAC</li>
+      <li>Add an entry to the <b>clusters </b>item in the <b>control-plan</b> as
+        follows:<codeblock>control-planes:
+- name: ccp
+  region: region1
+  . . .
+  clusters:
+  . . .
+  - id: "4" 
+      name: swpac
+      server-role: ROLE-SWPAC
+      member-count: 3
+      allocation-policy: strict
+      service-components:
+      - ntp-client
+      - swift-proxy
+      - swift-account
+      - swift-container
+      - swift-ring-builder
+      - swift-client</codeblock></li>
+    </ul>
+  </body>
+</topic>

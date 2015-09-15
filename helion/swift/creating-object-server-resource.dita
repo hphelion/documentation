@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jzk_q1c_jt">
+  <title>Creating an Object Server Resource Group</title>
+  <body>
+    <p>Create a resource group for Swift object servers as follows:</p>
+    <ul id="ul_r4r_r1c_jt">
+      <li>Identity the control plane that the object serves are associated with (usually
+        data/control_plane.yml)</li>
+      <li>Identity the node type/role used by Swift Object servers. In this document, we have used
+        ROLE_SWOBJ</li>
+      <li>Add an entry to the <b>resources</b> item in the <b>control-plan</b> as
+        follows:<codeblock>control-planes:
+- name: ccp
+  region: region1
+  . . .
+  resources:
+  . . .
+  - name: swobj
+    resource-prefix: swobj
+    server-role: ROLE-SWOBJ
+    allocation-policy: strict
+    min-count: 0
+    service-components:
+    - ntp-client
+    - swift-object
+ </codeblock></li>
+    </ul>
+    <p>A Swift object server requires the following service components:</p>
+    <ul id="ul_fyb_51c_jt">
+      <li>ntp-client</li>
+      <li>swift-object</li>
+    </ul>
+    <p>The following service components may optionally be added:</p>
+    <ul id="ul_pyb_51c_jt">
+      <li>swift-client. This installs the python-swiftclient package on the server.</li>
+    </ul>
+    <p>Resource groups do not have a member count attribute. So the number of servers allocated is
+      that the same as the number found with a matching server role.</p>
+  </body>
+</topic>

@@ -1,11 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_tq1_xt5_dt">
-  <title>Allocating Server</title>
+  <title>Allocating Object Servers</title>
   <body>
-    <p>You must alloacte a server for Swift. Therefore, you specify the roles of the servers in
-        <codeph>data/baremetal.yml</codeph> file. For example, a Swift Proxy, Container, Account
-      (PAC) node is specified as follows:</p>
+    <p>A Swift object server is a node that runs the swift-object service and used to store object
+      data. It does not run the swift-proxy, swift-account or swift-container services.
+      <!--The Swift object server type is used to store object data.--></p>
+    <p>This section describes the procedured that is used to allocate Swift Object Server during the
+        <b>initial</b> deployment of the system.
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Once the system has been
+      deployed, a different procedure is used to add additional Swift object
+      servers.<?oxy_custom_end?></p>
+    <section>
+      <title>Procedures</title>
+    </section>
+    <p>Perform the following steps to allocate Swift Object Servers:</p>
+    <p>
+      <ul id="ul_sm4_2pb_jt">
+        <li>Verify if the example input model already contains a suitable server role. The server
+          roles are usually described in <u>data/server_roles.yml</u> file. If the server role is
+          not described, you must add a suitable server role as described in <i>Creating Server Role
+            for Swift Object Servers</i>. As part of this process you will also allocate drives to
+          store object data as described in <i>Allocating Disk Drives for use by Swift</i></li>
+        <li>Verify if the example input model has a resource group assigned to Swift object servers.
+          The resource group are usually assigned in <u>data/control_plane.yml</u> file. If it is
+          not assigned, you must add a suitable resource group as described in <i>Creating an Object
+            Sever Resource Group</i></li>
+        <li>Identity the physical servers and their IP address and other detailed information.<ul
+            id="ul_tzf_pqb_jt">
+            <li>If you use Cobbler, you add these details the baremetal-servers list (usually in
+                <u>data/baremetalConfig.yml</u>). Otherwise, you add these details to servers list
+              (usually in data/server.yml)</li>
+            <li>As with all servers, you must also verify and/or modify the server-groups
+              information (usually in <u>data/server_groups.yml</u>)</li>
+          </ul></li>
+      </ul>
+    </p>
+    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+    <p>The only part of this process that is unique to Swift is the allocation of disk drives for
+      use by the object ring as described in <i>Allocating Disk Drives for use by
+      Swift.</i><?oxy_custom_end?></p>
+    <section>
+      <title>Creating Server Role for Swift Object Servers</title>
+    </section>
+    <p>You must edit the <u>data/server_roles.yml</u> and add an entry to the server-roles list
+      using the following
+      syntax:<codeblock>server-roles:
+.
+.
+.
+- name: &lt;pick-a-name>
+  interface-model: &lt;specify-a-name>
+  disk-model: &lt;specify-a-name></codeblock></p>
+    <p>The server roles have the following fields:<simpletable id="simpletable_c35_5rb_jt">
+        <strow>
+          <stentry><b>name</b></stentry>
+          <stentry>This is a name assigned for the role. For example: we have used
+              <b>ROLE_SWPAC</b> as the role name.</stentry>
+        </strow>
+        <strow>
+          <stentry><b>interface-model</b></stentry>
+          <stentry> either select an existing interface model or create one specifically for Swift
+            object servers. In this document, we will use INTERFACE_SET_SWOBJ. See Swift Network and
+            service Requirements more information</stentry>
+        </strow>
+        <strow>
+          <stentry><b>disk-model</b></stentry>
+          <stentry>either select an existing model or create one specifically for Swift object
+            servers. In this document, we will use DISK_SET_SWPAC and DISK_SET_SWOBJ (depending on
+            context). See Allocating Disk Drives for use by Swift for more information.</stentry>
+        </strow>
+      </simpletable></p>
+    <example>
+      <codeblock>server-roles:
+.
+.
+.
+- name: <b>ROLE-SWPAC</b>
+  interface-model: <b>INTERFACE_SET_SWOBJ</b>
+  disk-model: <b>DISK_SET_SWOBJ</b></codeblock>
+    </example>
+    <p><!--You must alloacte a server for Swift. Therefore, you specify the roles of the servers in <codeph>data/baremetal.yml</codeph> file. For example, a Swift Proxy, Container, Account (PAC) node is specified as follows:--></p>
     <p>
       <codeblock>baremetal_servers:
 .
@@ -24,7 +99,7 @@
 .</codeblock>
     </p>
     <p>In the above example a <b>node_type</b> is assigned as <b>ROLE-SWPAC</b>, which indicates
-      that this node is Swift Proxy, Container, and  Account (PAC) node.</p>
+      that this node is Swift Proxy, Container, and Account (PAC) node.</p>
     <note>If you don't use Cobbler to install your servers then you must create
         <codeph>data/servers.yml</codeph> file (<b>manually</b>) and configure nodes on the
       file.</note>

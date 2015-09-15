@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gm1_4bc_jt">
+  <title>Designing Storage Policies</title>
+  <body>
+    <p>Storage policies allow you to differentiate the way objects are stored. There are a number of
+      possible reasons as follows:</p>
+    <p><ul id="ul_wtd_zbc_jt">
+        <li>You have several different types or classes of disk drive. For example, you could use
+          7.5K RPM high-capacity drives for one type of data and fast SSD drives for another type of
+          data.</li>
+        <li>You have different redundancy or availability needs. For example, you could use a
+          replica count of 3 for "normal" data and a replica count of 4 for "critical" data.</li>
+        <li>As described in the discussion of partition power above you are growing your capacity
+          beyond the recommended partition power.</li>
+        <li>You use erasure-coded storage for some objects and replicated storage for other
+            objects.<p>Your end users chose which storage policy they use on a per-container basis.
+            In practice most users will not explicitly specify the storage policy. You can specify
+            which storage policy is then used by using the <b>default</b> attribute. You can change
+            which storage policy is the default. However, this does not affect existing containers.
+            Once the storage policy of a container is set, the policy for that container cannot be
+            changed.</p><p>The disk drives used by storage policies can overlap or be distinct.
+            However, if you overlap (i.e., have disks in common between two storage policies) you
+            are recommended to use the same set of disk drives for both policies. If there is not a
+            complete overlap in disk drives, as one storage policy receives many objects, the drives
+            that are common to both policies must store more objects than drives that are only
+            allocated to one storage policy. This may be appropriate for a situation where the
+            "overlapped" disk drives are larger than the non-overlapped drives. However, in general
+            this situation is harder to balance then a simple topology.</p></li>
+      </ul><b>Specifying Storage Policies</b></p>
+    <p>There are two places where storage policies are specified in the input model:</p>
+    <p>
+      <ul id="ul_q5d_zbc_jt">
+        <li>In the ring-specifications for a given region (usually in
+          <u>config/swift/rings.yml</u>). This is where the attributes of the storage policy is
+          specified</li>
+        <li>When associating disk drives with specific rings. This specified which drives use the
+          storage policy, or put another way, where data associated with a storage policy is
+          stored.</li>
+      </ul>
+    </p>
+    <p>A storage policy is specified in the same way that other rings are specified. However, the
+      following features are unique to storage policies:</p>
+    <p>
+      <ul id="ul_zwd_zbc_jt">
+        <li>Storage policies only apply to object rings – not the account or container rings</li>
+        <li>The ring name has the format: object-&lt;index&gt;, where index is a number in the range
+          0 to (in this release) 9.</li>
+        <li>The object-0 ring must always be specified.</li>
+        <li>Once a storage policy has been deployed, it must never be deleted. You may remove all
+          disk drives fro the storage policy, however the ring specification itself cannot be
+          deleted.</li>
+        <li>The <b>display-name</b> attribute may be used by end users when creating a container to
+          indicate which storage policy they wish to use for that container.</li>
+        <li>One of the storage policies can be the default policy. This means that if your users to
+          not otherwise specify, objects they create in a new container will use the default storage
+          policy.</li>
+        <li>If you change the default, only containers created at a later date will default to that
+          policy.</li>
+      </ul>
+    </p>
+    <p>The following examples shows three storage policies in use.</p>
+    <p>
+      <codeblock>rings:
+. . . 
+- name: object-0
+  display-name: General
+  default:no
+  min-part-time: 16
+  partition-power: 12
+  replication-policy:
+      replica-count: 3
+- name: Working
+  default: yes
+  min-part-time: 16
+  partition-power: 20
+  replication-policy:
+      replica-count: 3
+- name: Resilient
+  default: no
+  min-part-time: 16
+  partition-power: 20
+  replication-policy:
+      replica-count: 4</codeblock>
+    </p>
+  </body>
+</topic>

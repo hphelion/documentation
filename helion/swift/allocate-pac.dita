@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_r3k_v2c_jt">
+  <title>Allocating dedicated proxy, account, container server (PAC) </title>
+  <body>
+    <p>A dedicated proxy, account and container (PAC) server is a node that runs the swift-proxy,
+      swift-account and swift-container services. It is used to respond to API requests and to store
+      account and container data. This type of node does not store object data.</p>
+    <p>The procedure described in this section is used to allocate Swift object servers during the
+      initial deployment of the system. Once the system has been deployed, a different procedure is
+      used to add additional Swift object servers.</p>
+    <p>To allocate Swift proxy, account, container servers, you perform the following steps. The
+      details of each step are described later:</p>
+    <ul id="ul_nhq_z2c_jt">
+      <li>Determine if the example input model already contains a suitable server role (usually in
+          <u>data/server_roles.ym</u>l)</li>
+      <li>If not, you must add a suitable server role as described in <i>Creating Server Role for
+          Swift Server</i>s. As part of this process you will also allocate drives to store object
+        data as described in<i> Allocating Disk Drives for use by Swift</i></li>
+      <li>Determine if the example input model has a cluster assigned to Swift proxy, account,
+        container servers (usually in <u>data/control_plane.yml</u>)</li>
+      <li>If not, you must add a suitable <b>cluster</b> as described in <i>Creating an Proxy,
+          Account, Container Cluster</i></li>
+      <li>Identity the physical servers and their IP address and other detailed information</li>
+      <li>If you use Cobbler, you add these details the baremetal-servers list (usually in
+          <u>data/baremetalConfig.yml</u>). Otherwise, you add these details to servers list
+        (usually in data/server.yml)</li>
+      <li>As with all servers, you must also verify and/or modify the server-groups information
+        (usually in <u>data/server_groups.yml</u>)</li>
+    </ul>
+    <p>The only part of this process that is unique to Swift is the allocation of disk drives for
+      use by the object ring as described in <i>Allocating Disk Drives for use by Swift.</i></p>
+  </body>
+</topic>
