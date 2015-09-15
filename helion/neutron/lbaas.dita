@@ -6,7 +6,15 @@
     <p>HP Helion OpenStack 2.0 LBaaS Configuration</p>
     <p>This document describes the configuration process and requirements for the HP Helion OpenStack 2.0 
       Load Balancing as a Service module.</p>
-    <p>
+    <note type="important">It is not recommended that LBaaS v1 is used in a production
+        environment. It is recommended you use LBaaS v2. If you do deploy LBaaS v1, the upgrade to
+        LBaaS v2 is non-trivial and may require the use of professional services.</note>
+  
+    <note>If you need to run LBaaS v1 instead of the default LBaaS v2, you'll need to configure
+        the ccp.yml files and neutron.conf.j2 file to use version 1.  See Installing LBaaS V1 in the 
+        prerequisites section.</note>
+    <p>  
+      
       <ul id="LBaaSlist">
         <li><xref href="lbaas.dita#HP2.0LBaaS/Prerequisites">Prerequisites</xref></li>
         <li><xref href="lbaas.dita#HP2.0LBaaS/Configuration">Configuration</xref></li>
@@ -17,33 +25,44 @@
     <section id="Prerequisites">
       <title>Prerequisites</title>
       <p>HP Helion OpenStack must be installed. </p>
+      
+      <sectiondiv id="InstallingLBaaSV1">
+        <p>Installing LBaaS V1</p>
+        <p>Before you modify the ccp.yml and neutron.conf.j2 files, it is recommended that you clone the hlm-input-model and neutron-ansible
+          at the same directory level as hlm-dev-tools.  Once you have cloned the directories, modify the ccp.yml and neutron.conf.j2 files.</p>
+        <ol>
+          <li>Replace LBaaS version 2 with LBaaS version 1 in the <i>ccp.yml</i> file. Depending on Helion OpenStack
+            environment, the location of the ccp.yml will differ slightly. </li>
+          <li>In hlm-input-model, edit <i>2.0/hp-ci/&lt;deployment type&gt;/data/ccp.yml</i></li>
+          <li>Replace <i>neutron-lbaasv2-agent</i> with <i>neutron-lbaas-agent</i>.</li>
+          <li>In neutron-ansible, edit <i>roles/neutron-common/templates/neutron.conf.j2</i></li>
+          <li>Comment out the LBaaS V2 <i>service_plugin</i> and <i>service_provider</i> lines.</li>
+          <li>Uncomment the LBaaS V1 lines.</li>
+        </ol>
+      </sectiondiv>
+      
     </section>
     <section id="Configuration">
       <title>Configuration</title>
       <p>HP Helion OpenStack 2.0 LBaaS Configuration</p>
-      <note type="important">It is not recommended that LBaaS v1 is used in a production
-        environment. It is recommended you use LBaaS v2. If you do deploy LBaaS v1, the upgrade to
-        LBaaS v2 is non-trivial and may require the use of professional services.</note>
+    
       
-      <note>If you need to run LBaaS version 1 instead of the default LBaaS version 2, you'll need to configure the ccp.yml
-      files and neutron.conf.j2 file to use version 1.</note>
+  
       
       
-      <sectiondiv id="ConfiguringLBaaSV1">
-      <p>Installing LBaaS V1</p>
-      <p>Before you modify the ccp.yml and neutron.conf.j2 files, it is recommended that you clone the hlm-input-model and neutron-ansible
-        at the same directory level as hlm-dev-tools.  Once you have cloned the directories, modify the ccp.yml and neutron.conf.j2 files.</p>
-      <ol>
-        <li>Replace LBaaS version 2 with LBaaS version 1 in the <i>ccp.yml</i> file. Depending on Helion OpenStack
-          environment, the location of the ccp.yml will differ slightly. </li>
-        <li>In hlm-input-model, edit <i>2.0/hp-ci/&lt;deployment type&gt;/data/ccp.yml</i></li>
-        <li>Replace <i>neutron-lbaasv2-agent</i> with <i>neutron-lbaas-agent</i>.</li>
-        <li>In neutron-ansible, edit <i>roles/neutron-common/templates/neutron.conf.j2</i></li>
-        <li>Comment out the LBaaS V2 <i>service_plugin</i> and <i>service_provider</i> lines.</li>
-        <li>Uncomment the LBaaS V1 lines.</li>
-        <li>Run the playbook on the deployer which registers a Cirros image and creates a public network under Neutron.
-          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock></li>
-      </ol>
+ 
+      
+      <sectiondiv id="CreateExternalNetwork">
+        <p>Create External Network and Register Image</p>
+        <p>You will need to create an external network and register an image to enable LBaaS.  If you have already created
+          an external network and registered and image, this step can be skipped.</p>
+
+         <ol>
+          <li>Run the playbook on the deployer which registers a Cirros image and creates a public
+            network under Neutron. <note>Running this step configures 172.16.0.0/16 by default as
+              the external network with name <i>ext-net</i> and registers a Cirros image.</note>
+            <codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock></li>
+        </ol>
       </sectiondiv>
       
       <sectiondiv id="CreateLBaaSNetwork">
