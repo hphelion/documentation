@@ -10,7 +10,8 @@
             <xref href="#modify-input-model/entry-scale-with-vsa" format="dita"
               >Entry-scale-with-vsa</xref></b>: This has a single control plane cluster which runs
           all services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova
-          compute servers. </li><li><p><!--<b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref> </b>: This example cloud model describes a system using multiple servers and networks. It provides an example for the configuration of the mid sized cloud. --></p></li></ul></section>
+          compute servers.
+            <p><!--<b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref> </b>: This example cloud model describes a system using multiple servers and networks. It provides an example for the configuration of the mid sized cloud. --></p></li></ul></section>
     <section id="entry-scale-with-vsa">
       <title>Entry-scale-with-vsa</title>
       <p>The <codeph>entry-scale-with-vsa</codeph> input model is relatively simple and constrained.
