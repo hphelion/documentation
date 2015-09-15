@@ -508,7 +508,7 @@
         </table>
       </p>
       <p><b>VLAN Information for Troubleshooting</b></p>
-      <p>From your deployer, run the following command and copy the contents:
+      <p>From your deployer, run the following command and use this information for your <codeph>nic_mappings.yml</codeph> file:
         <codeblock>sudo lspci | grep Ethernet</codeblock></p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_vc5_5qz_3t">
@@ -516,7 +516,7 @@
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
             <thead>
               <row>
-                <entry>VLAN Information Output</entry>
+                <entry>NIC Adapter PCI Bus Address Output</entry>
               </row>
             </thead>
             <tbody>
