@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic2139">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Viewing Customer Logs</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Systems Administrator"/>
+      <othermeta name="role" content="Cloud Architect"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Network Administrator"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Cloud Administrator"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="Network Engineer"/>
+      <othermeta name="role" content="Paul F"/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.md--><!--permalink: /helion/openstack/carrier/admin/host/management/hostaggregate/--></p>
+    <!-- From the Titanium Server Admin Guide -->
+    <p>You can obtain information about transient events using Customer Logs. Certain system events
+      that do not result in node state changes and typically do not require immediate customer
+      action, such as instance deletions or failed migration attempts, are recorded in Customer
+      Logs. </p>
+    <image href="../../../media/CGH-2-fault-log.png" width="600" id="image_hsk_hh2_jt"/>
+    <p>
+      <b>Note:</b> This feature applies only to servers in regionone.</p>
+    <p>Each log describes a single event. The logs are held in a buffer, with older logs discarded
+      as needed to release logging space.</p>
+    <p>The following types of events are included in the Customer Logs. The severity of the events
+      is represented in the table by one or more letters, as follows: <ul id="ul_rmt_t32_jt">
+        <li>C: Critical</li>
+        <li>M: Major</li>
+        <li>m: Minor</li>
+        <li>W: Warning</li>
+      </ul></p>
+    <p>To view customer logs:</p>
+    <p>
+      <ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>Fault Management</b> panel.</li>
+        <li>Click the Customer Logs tabs.<p>The logs are displayed in chronological order, beginning
+            with the most recent. </p><p>By default, 20 items are shown per page. To see older
+            items, scroll to the bottom of the list and click <b>Next</b>. You can change the number
+            of items displayed per page using the <b>Default Limit</b> drop-down list. </p><p>You
+            can also filter the items using the <b>Filter</b> text box. Type the filter string, and
+            then click the search icon. The results include only those logs that contain the string
+            in the <b>Customer Log Detail</b>. </p></li>
+        <li>To see specific details on a log, click the time stamp identifier for the log. </li>
+      </ol>
+    </p>
+    <p>For more information on customer logs, see the <i>HP Helion <tm tmtype="reg">OpenStack</tm>
+        2.0 Carrier Grade: Administrator Guide</i>.</p>
+  </body>
+</topic>

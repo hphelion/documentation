@@ -64,7 +64,7 @@
           </ol>
         </p><p>The node is restarted automatically, and a display-device menu appears on the node
           console.</p><p>
-          <image href="../../../media/CGH-WR-Node-Console.png" id="image_ggf_5gr_ft"/>
+          <image href="../../../media/CGH-WR-Node-Console.png" id="image_ggf_5gr_ft" width="400"/>
         </p></li>
 <li><b>Optional:</b> Select the display device to use during initialization. The personality
         (Controller, Compute, or Storage) is confirmed in the menu. If you do not change the

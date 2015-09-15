@@ -80,9 +80,10 @@
       navtitle="Support Matrix" locktitle="yes"/>
     <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
       format="ditamap" navtitle="Installation Guide" locktitle="yes"/>
+    <topicref href="CarrierGrade/AdminGuide/carrier-grade-User-guide.ditamap" format="ditamap"
+      navtitle="User Guide" locktitle="yes"/>
     <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
       navtitle="Administrator Guide" locktitle="yes"/>
-    <topicref href="CarrierGrade/AdminGuide/carrier-grade-admin-guide.ditamap" format="ditamap"/>
     <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
       locktitle="yes"/>
     <topicref href="CarrierGrade/Installation/carrier-grade-backup-restore.dita" toc="yes"

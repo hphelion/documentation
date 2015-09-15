@@ -243,8 +243,24 @@
                 navtitle="Connecting a Network to a Router" locktitle="yes"/>
         </topicref>
         <topichead navtitle="Defaults"/>
-        <topichead navtitle=" Fault Management"/>
-        <topichead navtitle="System Configuration"/>
+        <topicref href="FaultManagement/CGH-2-Userfault-mgmt.dita" navtitle="Managing System Faults"
+            locktitle="yes">
+            <topicref href="FaultManagement/CGH-2-Userfault-mgmt-alarms.dita"
+                navtitle="Viewing System Alarms" locktitle="yes"/>
+            <topicref href="FaultManagement/CGH-2-Userfault-mgmt-logs.dita"
+                navtitle="Viewing Customer Logs" locktitle="yes"/>
+        </topicref>
+        <topicref href="SystemConfig/CGH-2-User-system-config.dita"
+            navtitle="Managing System Configuration" locktitle="yes">
+            <topicref href="SystemConfig/CGH-2-User-system-config-OAM.dita"
+                navtitle="Changing the OAM IP Configuration" locktitle="yes"/>
+            <topicref href="SystemConfig/CGH-2-User-system-config-DNS.dita"
+                navtitle="Changing the DNS Server Configuration" locktitle="yes"/>
+            <topicref href="SystemConfig/CGH-2-User-system-config-NTP.dita"
+                navtitle="Changing the NTP Server Configuration" locktitle="yes"/>
+            <topicref href="SystemConfig/CGH-2-User-system-config-filesyst.dita"
+                navtitle="Changing Storage Space Allotments on the Controller" locktitle="yes"/>
+        </topicref>
         <topichead navtitle="System Information"/>
         <topicref href="Identity/CGH-2-User-Identity-managing.dita" navtitle="Managing Identity"
             locktitle="yes">

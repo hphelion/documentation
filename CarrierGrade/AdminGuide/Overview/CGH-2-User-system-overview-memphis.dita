@@ -39,7 +39,8 @@
         region, click <xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702"
       >memphis or denver in the region selector</xref>.</p>
     <p>The following information appears. </p>
-    <p><image href="../../../media/CGH-2-memphis-overview.png" id="image_hwj_xyw_ft"/></p>
+    <p><image href="../../../media/CGH-2-memphis-overview.png" id="image_hwj_xyw_ft" width="600"
+        /></p>
   </section>
     <p>The Usage Summary displays information over the specified period of time for the current
         project.:<ul id="ul_ug1_lmc_gt">

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic2139">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Changing the OAM IP
+    Configuration</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Systems Administrator"/>
+      <othermeta name="role" content="Cloud Architect"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Network Administrator"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Cloud Administrator"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="Network Engineer"/>
+      <othermeta name="role" content="Paul F"/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.md--><!--permalink: /helion/openstack/carrier/admin/host/management/hostaggregate/--></p>
+    <!-- From the Titanium Server Admin Guide -->
+    <p>You can change the External OAM subnet, floating IP address, controller addresses, and
+      default gateway at any time after installation. </p>
+    <image href="../../../media/CGH-2-config-oam.png" width="600" id="image_lmy_2r2_jt"/>
+    <p>
+      <b>Note:</b> This feature applies only to servers in regionone.</p>
+    <p>During software installation, the HP Helion OpenStack Carrier Grade is configured with an OAM
+      network subnet and related IP addresses. You can change these addresses using the web
+      administration interface or the CLI. </p>
+    <p><b>Caution:</b> Access to the OAM network is interrupted during this procedure. When a swact
+      is performed on the controllers, the newly active controller uses the changed OAM IP
+      addresses. The existing OAM IP addresses are no longer valid, and you must use the new OAM IP
+      addresses to reconnect to the controller. Changes to external OAM access routing settings may
+      also be required. In addition, VNC console access to computenode hosts is interrupted until
+      the hosts are locked and unlocked. </p>
+    <p>Before changing the OAM IP configuration, review the Fault Management page and ensure that
+      any existing system alarms are cleared.</p>
+    <p>To change the OAM IP:</p>
+    <ol>
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          OpenStack Horizon Dashboard</xref>.</li>
+      <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+          appropriate region and project</xref>.</li>
+      <li>Click the <b>Admin</b> dashboard, then the <b>System Configuration</b> panel.</li>
+      <li>Click the <b>OAM IP</b> tab.<p>The OAM IP page displays the currently defined OAM network
+          configuration.</p></li>
+      <li>Click <b>Edit OAM IP</b>. </li>
+      <li>In the <b>Edit OAM IP</b> dialog box, replace the IP addresses with different ones as
+        required. </li>
+      <li>Click Save. <p>Changing this IP raises major alarms against the controllers and services.
+          You can view the alarms on <xref
+            href="../FaultManagement/CGH-2-Userfault-mgmt-alarms.dita#topic2139">the Fault
+            Management page</xref>. </p></li>
+    </ol>
+    <section>
+      <title>Clear the alarms</title>
+    </section>
+    <p>Changing the OAM IP causes major alarms against the controllers and services. </p>
+    <p>Use the Hosts table to determine which hosts requiring attention (indicated with the status
+        <codeph>Config out-of-date</codeph>).  Perform the following steps to lock and unlock the
+      controllers to clear the alarms:</p>
+    <ol id="ol_cgx_2q2_jt">
+      <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Inventory</b>
+        tab. Click the <b>Hosts</b> table.</li>
+      <li><xref href="../HostManagement/CGH-2-User-host-management.dita#topic11233/unlock">Lock the
+          standby controller</xref>. Wait for the lock operation to be completed. </li>
+      <li><xref href="../HostManagement/CGH-2-User-host-management.dita#topic11233/unlock">Unlock
+          the standby controller</xref>. Wait for the host to become available. It is updated with
+        the new OAM configuration, and its error message is cleared. </li>
+      <li><xref href="../HostManagement/CGH-2-User-host-management.dita#topic11233/swact">Perform a
+          swact on the active controller</xref>. <p><b>Note:</b> After the swact, the HP Helion
+          OpenStack Carrier Grade begins using the new OAM network configuration. If you have
+          changed the OAM subnet or the OAM floating IP address, the current web session is
+          terminated. To continue using the web administration interface, you must start a new
+          session and log in using the new IP address. You may also need to update router tables to
+          establish a connection. </p></li>
+      <li><xref href="../HostManagement/CGH-2-User-host-management.dita#topic11233/unlock">Lock the
+          original controller</xref> (now in standby mode). Wait for the lock operation to be
+        completed. e) Unlock the original controller. Wait for it to become available. It is updated
+        with the new OAM configuration, and its error message is cleared. </li>
+      <li><xref href="../HostManagement/CGH-2-User-host-management.dita#topic11233/unlock">Lock and
+          unlock each compute node</xref>.</li>
+    </ol>
+    <p>For more information on system configuration, see the <i>HP Helion <tm tmtype="reg"
+          >OpenStack</tm> 2.0 Carrier Grade: Administrator Guide</i>.</p>
+  </body>
+</topic>

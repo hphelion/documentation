@@ -47,9 +47,8 @@
           <li>Determine if the router is connected to a network using the <xref
               href="../Network/CGH-2-User-network-viewing.dita#topic868">Network Topology
               screen</xref>:<p>
-              <!--A BR tag was used here in the original source.-->
               <image href="../../../media/NetworkConnections.png" placement="break"
-                id="image_k42_bgy_3t"/>
+                id="image_k42_bgy_3t" width="600"/>
             </p></li>
           <li>Click the <b>Routers</b> link on the <b>Project</b> dashboard <b>Network</b>
               panel.<p>The routers for the selected project appear.</p><p>If the router is connected

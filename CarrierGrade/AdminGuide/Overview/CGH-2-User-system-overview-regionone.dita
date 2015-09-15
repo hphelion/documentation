@@ -38,7 +38,7 @@
     <section id="regionone"><p>To view information on the servers in the regionone region, click
           <xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">regionone in
           the region selector</xref>.</p><image href="../../../media/CGH-2-regionone-overview.png"
-        id="image_wyq_wyw_ft"/>
+        id="image_wyq_wyw_ft" width="600"/>
       <p>The page includes the following features:</p><ul>
         <li>
           <p>dynamically updated, relocatable resource charts. Click the top of any chart, and drag

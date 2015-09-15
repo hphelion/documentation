@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic2139">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing System
+    Configuration</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Systems Administrator"/>
+      <othermeta name="role" content="Cloud Architect"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Network Administrator"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Cloud Administrator"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="Network Engineer"/>
+      <othermeta name="role" content="Paul F"/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.md--><!--permalink: /helion/openstack/carrier/admin/host/management/hostaggregate/--></p>
+    <!-- From the Titanium Server Admin Guide -->
+    <p>You can make changes to the HP Helion OpenStack Carrier Grade's initial configuration at any
+      time after installation. The HP Helion OpenStack Carrier Grade's initial configuration is
+      defined during software installation. After installation, you can make changes using the web
+      administration interface or the CLI. For most types of changes, you can do this without
+      interrupting system operations.</p>
+    <p>
+      <b>Note:</b> This feature applies only to servers in regionone.</p>
+    <p>You can change the initial configuration as follows: <ul id="ul_gsk_ql2_jt">
+        <li>Reconfigure aspects of the External OAM network, including the subnet, controller IP
+          addresses, gateway IP address, and floating IP address. </li>
+        <li>Change the DNS server IP addresses.</li>
+        <li>Change the NTP server IP addresses. </li>
+        <li>Change the disk allocations for database storage, image storage, backup storage, and
+          Cinder volume storage. </li>
+        <li>Add an infrastructure network if one is not already configured</li>
+      </ul></p>
+    <p>Immediately before making a change, ensure the following: <ul id="ul_mzz_tl2_jt">
+        <li>All hosts are unlocked. </li>
+        <li>No Major or Critical alarms are shown for the system on <xref
+            href="../FaultManagement/CGH-2-Userfault-mgmt-alarms.dita#topic2139">the Fault
+            Management page</xref>. </li>
+        <li>No 250.001 Configuration out-of-date alarms are shown for the system on <xref
+            href="../FaultManagement/CGH-2-Userfault-mgmt-alarms.dita#topic2139">the Fault
+            Management page</xref>.</li>
+      </ul></p>
+    <p>During these changes, the HP Helion OpenStack Carrier Grade can remain online and
+      operational.</p>
+    <p>You can make the following changes:<ul id="ul_ep5_dn2_jt">
+        <li><xref href="CGH-2-User-system-config-OAM.dita#topic2139">Change the OAM IP
+            address</xref>.</li>
+        <li><xref href="CGH-2-User-system-config-DNS.dita#topic2139">Configure a new DNS
+            server</xref>.</li>
+        <li><xref href="CGH-2-User-system-config-NTP.dita#topic2139">Configure a new NTP
+            server</xref>.</li>
+        <li><xref href="CGH-2-User-system-config-filesyst.dita#topic2139">Change storage space
+            allotments on the controller</xref>. For important information and instructions for
+          changing storage allotments, see the <i>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0
+            Carrier Grade: Administrator Guide</i>.</li>
+      </ul></p>
+    <p>For more information on system configuration, see the <i>HP Helion <tm tmtype="reg"
+          >OpenStack</tm> 2.0 Carrier Grade: Administrator Guide</i>.</p>
+  </body>
+</topic>

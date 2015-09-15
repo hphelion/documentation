@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic2139">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Changing Storage Space
+    Allotments on the Controller</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Systems Administrator"/>
+      <othermeta name="role" content="Cloud Architect"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Network Administrator"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Cloud Administrator"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="Network Engineer"/>
+      <othermeta name="role" content="Paul F"/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.md--><!--permalink: /helion/openstack/carrier/admin/host/management/hostaggregate/--></p>
+    <!-- From the Titanium Server Admin Guide -->
+    <p>You can change the allotments for controller-based storage at any time after installation.
+      This includes the space allotted for database, image, and backup storage, and for clusters
+      using an LVM backend, the space allotted for Cinder volume storage.</p>
+    <image href="../../../media/CGH-2-config-ntp.png" width="600" id="image_lmy_2r2_jt"/>
+    <p>
+      <b>Note:</b> This feature applies only to servers in regionone.</p>
+    <p>During software installation, the HP Helion OpenStack Carrier Grade is configured with the
+      following storage allotments. <ul id="ul_tlj_t1f_jt">
+        <li><b>Database storage</b>. The storage allotment for the OpenStack database. </li>
+        <li><b>Image storage</b>. The size of the partition to use for image storage. </li>
+        <li><b>Backup storage</b>. The storage allotment for backup operations. </li>
+        <li><b>Volume storage</b>. For a system using LVM storage, the storage allotment for all
+          Cinder volumes used by guest instances.</li>
+      </ul></p>
+    <p>For important information and instructions for changing storage allotments, see the <i>HP
+        Helion <tm tmtype="reg">OpenStack</tm> 2.0 Carrier Grade: Administrator Guide</i>.</p>
+  </body>
+</topic>

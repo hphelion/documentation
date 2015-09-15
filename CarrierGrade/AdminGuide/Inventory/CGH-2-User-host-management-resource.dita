@@ -27,10 +27,8 @@
  <!--permalink: /helion/openstack/carrier/admin/host/management/resources/--></p>
 <!-- From the Titanium Server Admin Guide -->
 <p>Usage of system resources is monitored by Ceilometer, the standard OpenStack mechanism for collecting and distributing performance monitoring samples from the cluster. The HP Helion OpenStack Carrier Grade cluster extends Ceilometer with improved reports and new tools to facilitate offline analysis of the collected data.</p>
-<!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in regionone.</p>
-<!-- ===================== horizontal rule ===================== -->
 <p>Performance Monitor (PM) samples are periodically collected from different resources such as hosts, virtual machine instances, AVS, and others. They include CPU and memory utilization, network traffic counters, storage space, and several more. By default the samples are stored in a database which is used for reporting activities such as:</p>
 <ul>
 <li>command line queries and graphical charts</li>
