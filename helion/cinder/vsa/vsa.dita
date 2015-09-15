@@ -18,17 +18,19 @@
     <section id="VSA"><title>Install and Configure VSA</title>
       <p>You can set up Virtual Storage Appliance (VSA) using the following instructions:</p>
       <ol>
-        <li>Deploy VSA by running the following command: <ol>
-            <li><codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock></li>
-          </ol>
-        </li>
-        <li>Look in <b>/etc/apt/sources.list.d/</b> for a file called
+        <li>On your first controller node, look in <b>/etc/apt/sources.list.d/</b> for a file called
             <b>cmc_hlinux_32bit_lib.list</b> and verify that it contains the line below:
           <codeblock>deb [arch=i386] http://&lt;deployer ip>:79/hlm/cmc32 cattleprod main</codeblock>
           If the file is not there or if the line is not there, please create it as described. The
           deployer ip address can be obtained by looking at the existing hlinux apt source file in
           that directory. This is a workaround for an issue in Beta-1 and will be fixed in
           Beta-2.</li>
+        <li>Run an update to ensure all local packages are updated:
+          <codeblock>sudo apt-get update</codeblock></li>
+        <li>On the deployer node, deploy VSA by running the following command: <ol>
+            <li><codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock></li>
+          </ol>
+        </li>
         <li>Deploy CMC by running the following command: <ol>
             <li><codeblock>ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
           </ol>
