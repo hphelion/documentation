@@ -61,72 +61,9 @@
         </strow>
       </simpletable>
     </section>
-    <section id="mid-size"><title>Mid Size Cloud Model</title><p>This section describes configuration of Swift services in the mid size cloud model.</p><p>This example model allows you to modify the YAML files based on your environment. Use this
-        example model as the basis for building a cloud model for your environment by configuring
-        the servers and networks that you plan to deploy. Therefore, Swift -specific changes are
-        required to the provided example while deploying Swift.</p>
-      <p><b>Pre-Deployment</b></p><p> You must <b>validate</b> and <b>update</b> the data in the cloud model files before starting the
-        deployment.</p><p><ul id="ul_i1s_rbj_2t"><li>Assign servers for Swift - You must assign servers before you start to deploy Swift. Refer to
-            the <xref href="allocating_server.dita#topic_tq1_xt5_dt">Allocating Servers</xref> for
-            details.</li><li>Allocate disk drives -  You must allocate disk drives to the server. Refer to the <xref
-              href="allocating_disk_drives.dita#allocating-disk-drives">Allocating disk
-              drives</xref>  for details.</li><li>Specify the rings - You must assign rings for your system. Refer to <xref
-              href="ring_specifications.dita#ring-specification"> Specifying the rings (ring
-              specifications)</xref> for details.</li></ul></p></section>
+    <!--<section id="mid-size"><title>Mid Size Cloud Model</title><p>This section describes configuration of Swift services in the mid size cloud model.</p><p>This example model allows you to modify the YAML files based on your environment. Use this example model as the basis for building a cloud model for your environment by configuring the servers and networks that you plan to deploy. Therefore, Swift -specific changes are required to the provided example while deploying Swift.</p><p><b>Pre-Deployment</b></p><p> You must <b>validate</b> and <b>update</b> the data in the cloud model files before starting the deployment.</p><p><ul id="ul_i1s_rbj_2t"><li>Assign servers for Swift - You must assign servers before you start to deploy Swift. Refer to the <xref href="allocating_server.dita#topic_tq1_xt5_dt">Allocating Servers</xref> for details.</li><li>Allocate disk drives - You must allocate disk drives to the server. Refer to the <xref href="allocating_disk_drives.dita#allocating-disk-drives">Allocating disk drives</xref> for details.</li><li>Specify the rings - You must assign rings for your system. Refer to <xref href="ring_specifications.dita#ring-specification"> Specifying the rings (ring specifications)</xref> for details.</li></ul></p></section><section><title>Node Type</title><p>There are two type of nodes that is associated with Swift services. They are as follows:<ul id="ul_fct_2ps_ht"><li><b>Proxy, Container, Account (PAC) Node</b>: This node runs the Swift-proxy, Swift-account, and Swift-container services. The Swift-proxy service processes API requests and directs them to the Swift-account, Swift-container or Swift-object services for processing. The Swift-account and Swift-container handle requests to accounts and containers respectively.</li><li><b>Object (OBJ) Node</b>: This node runs the Swift-object service. The Swift-object service handles requests for objects. </li></ul></p></section>-->
     <section>
-      <title>Node Type</title>
-      <p>There are two type of nodes that is associated with Swift services. They are as follows:<ul
-          id="ul_fct_2ps_ht">
-          <li><b>Proxy, Container, Account (PAC) Node</b>: This node runs the Swift-proxy,
-            Swift-account, and Swift-container services. The Swift-proxy service processes API
-            requests and directs them to the Swift-account, Swift-container or Swift-object services
-            for processing. The Swift-account and Swift-container handle requests to accounts and
-            containers respectively.</li>
-          <li><b>Object (OBJ) Node</b>: This node runs the Swift-object service. The Swift-object
-            service handles requests for objects. </li>
-        </ul></p>
-    </section>
-    <section>
-      <title>YAML files associated with Swift Services </title>
-      <p>In the example mid sized cloud model, the Swift services are configured using the following
-          <codeph>yml</codeph> files: <simpletable id="simpletable_ww1_kss_ht">
-          <strow>
-            <stentry><codeph>data/control_plane.yml</codeph></stentry>
-            <stentry>
-              <p>The Proxy, Container, and Account node types are assigned to a dedicated <i>cluster
-                  of nodes</i> as specified in the <b>swpac</b> cluster in <codeph>yml</codeph>
-                file. These nodes are dedicated only to Swift services. </p>
-              <p>The Object node type is assigned to a dedicated <i>resource nodes</i> group as
-                specified in the <b>swobj</b> group in <codeph>yml</codeph> file. Requests to Swift
-                are directed to a virtual IP address (VIP) that is managed by a cluster as specified
-                in the <b>core</b> cluster in <codeph>data/control_plane.yml</codeph> file. The
-                requests are then directed on the MGMT network to the Swift-proxy service on one of
-                the Proxy, Container, Account nodes.</p>
-            </stentry>
-          </strow>
-          <strow>
-            <stentry><codeph>data/disks_swpac.yml</codeph></stentry>
-            <stentry>The Proxy, Container, Account node type uses two disk drives to store account
-              and container databases which is specified in this file. For more information about
-              allocating a disk drives, refer to <xref
-                href="allocating_disk_drives.dita#allocating-disk-drives">Allocate disk
-                drives</xref>.</stentry>
-          </strow>
-          <strow>
-            <stentry><codeph>data/disks_swobj.yml</codeph></stentry>
-            <stentry>The Object node type uses two disk drives to store account and container
-              databases which is specified in this file. For more information about allocating a
-              disk drives, refer to <xref href="allocating_disk_drives.dita#allocating-disk-drives"
-                >Allocate disk drives</xref>.</stentry>
-          </strow>
-          <strow>
-            <stentry><codeph>config/swift/rings.yml</codeph></stentry>
-            <stentry>Swift account, container, and object storage are managed by Swift using a data
-              structure known as a <i>ring</i>. This <codeph>yml</codeph> file provides the
-              specification of the rings. For more information on ring specification, refer to <xref
-                href="ring_parameters.dita#topic_efw_k55_dt">ring specification</xref>.</stentry>
-          </strow>
-        </simpletable></p>
+      <!--<title>YAML files associated with Swift Services </title><p>In the example mid sized cloud model, the Swift services are configured using the following <codeph>yml</codeph> files: <simpletable id="simpletable_ww1_kss_ht"><strow><stentry><codeph>data/control_plane.yml</codeph></stentry><stentry><p>The Proxy, Container, and Account node types are assigned to a dedicated <i>cluster of nodes</i> as specified in the <b>swpac</b> cluster in <codeph>yml</codeph> file. These nodes are dedicated only to Swift services. </p><p>The Object node type is assigned to a dedicated <i>resource nodes</i> group as specified in the <b>swobj</b> group in <codeph>yml</codeph> file. Requests to Swift are directed to a virtual IP address (VIP) that is managed by a cluster as specified in the <b>core</b> cluster in <codeph>data/control_plane.yml</codeph> file. The requests are then directed on the MGMT network to the Swift-proxy service on one of the Proxy, Container, Account nodes.</p></stentry></strow><strow><stentry><codeph>data/disks_swpac.yml</codeph></stentry><stentry>The Proxy, Container, Account node type uses two disk drives to store account and container databases which is specified in this file. For more information about allocating a disk drives, refer to <xref href="allocating_disk_drives.dita#allocating-disk-drives">Allocate disk drives</xref>.</stentry></strow><strow><stentry><codeph>data/disks_swobj.yml</codeph></stentry><stentry>The Object node type uses two disk drives to store account and container databases which is specified in this file. For more information about allocating a disk drives, refer to <xref href="allocating_disk_drives.dita#allocating-disk-drives">Allocate disk drives</xref>.</stentry></strow><strow><stentry><codeph>config/swift/rings.yml</codeph></stentry><stentry>Swift account, container, and object storage are managed by Swift using a data structure known as a <i>ring</i>. This <codeph>yml</codeph> file provides the specification of the rings. For more information on ring specification, refer to <xref href="ring_parameters.dita#topic_efw_k55_dt">ring specification</xref>.</stentry></strow></simpletable></p>-->
       <p>The Swift-proxy service uses two other cloud services. Both of these are configured in the
         example to run on the <b>core</b> cluster: <ul id="ul_iyr_gps_ht">
           <li>Swift validates tokens by making requests to the Keystone service</li>

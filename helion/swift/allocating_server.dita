@@ -6,13 +6,14 @@
     <p>A Swift object server is a node that runs the swift-object service and used to store object
       data. It does not run the swift-proxy, swift-account or swift-container services.
       <!--The Swift object server type is used to store object data.--></p>
-    <p>This section describes the procedured that is used to allocate Swift Object Server during the
-        <b>initial</b> deployment of the system.
-      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Once the system has been
+    <p>This section describes the procedure to allocate Swift Object Server during the
+        <b>initial</b> deployment of the system.  </p>
+    <p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Once the system has been
       deployed, a different procedure is used to add additional Swift object
-      servers.<?oxy_custom_end?></p>
+      servers.<?oxy_custom_end?> - &lt;<b>What is that procedure? can user do it in Beta2 ?</b>></p>
+    <p>This page contains the following topics:</p>
     <section>
-      <title>Procedures</title>
+      <title>Procedure to Allocate Swift Object Server</title>
     </section>
     <p>Perform the following steps to allocate Swift Object Servers:</p>
     <p>
@@ -162,5 +163,29 @@
         <codeph>data/servers.yml</codeph>) file. <note>For Swift Object, the
           <codeph>member-count</codeph> is automatically determined. It is recommended not to change
         or increment the <codeph>member count</codeph>.</note></p>
+    <section>
+      <title>Swift Network and Service Requirement</title>
+      <p>This section describes the network configuration for Swift. The network model allows many
+        options and configurations. For smooth Swift to operation, the following must be true:</p>
+      <p>
+        <ul id="ul_ggm_rkc_jt">
+          <li>The following services must have a direct connection to the same network:<ul
+              id="ul_x1c_5kc_jt">
+              <li>swift-proxy</li>
+              <li>swift-account</li>
+              <li>swift-container</li>
+              <li>swift-object</li>
+              <li>swift-ring-builder</li>
+            </ul></li>
+          <li>The swift-proxy service must have a <b>direct</b> connection to the same network as
+            the <codeph>cluster-ip</codeph> service.</li>
+          <li>The swift-proxy and memcached service must be <b>co-located</b> in the same cluster of
+            the control plane.</li>
+          <li>The swift-proxy and<codeph> switf-ring-builder</codeph> service must be
+              <b>co-located</b> in the same cluster of the control plane.</li>
+          <li>The ntp-client service must be <b>present</b> on all Swift nodes.</li>
+        </ul>
+      </p>
+    </section>
   </body>
 </topic>

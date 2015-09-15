@@ -3,25 +3,24 @@
 <topic id="topic_pcj_hzv_dt">
   <title>Swift Network and Service Requirement</title>
   <body>
-    <p>Thie section describes the network configuration for Swift.</p>
-    <p>The network model allows many options and configurations. For Swift to operate correctly, the
-      following must be true:</p>
-    <ul id="ul_rhv_xsb_jt">
-      <li>The following services must have a direct connection to the same network:<ul
-          id="ul_zjv_xsb_jt">
-          <li>swift-proxy</li>
-          <li>swift-account</li>
-          <li>swift-container</li>
-          <li>swift-object</li>
-          <li>swift-ring-builder</li>
-        </ul></li>
-      <li>The swift-proxy service must have a direct connection to the same network as the
-        cluster-ip service.</li>
-      <li>The swift-proxy and memcached service must be co-located in the same cluster of the
-        control plane</li>
-      <li>The swift-proxy and switf-ring-builder service must be co-located in the same cluster of
-        the control plane</li>
-      <li>The ntp-client service must be present on all Swift nodes</li>
-    </ul>
+    <p>This section describes the network configuration for Swift. The network model allows many
+      options and configurations. For smooth Swift to operation, the following must be
+        <b>true</b>:<ul id="ul_ggm_rkc_jt">
+        <li>The following services must have a direct connection to the same network:<ul
+            id="ul_x1c_5kc_jt">
+            <li>swift-proxy</li>
+            <li>swift-account</li>
+            <li>swift-container</li>
+            <li>swift-object</li>
+            <li>swift-ring-builder</li>
+          </ul></li>
+        <li>The swift-proxy service must have a <b>direct</b> connection to the same network as the
+            <codeph>cluster-ip</codeph> service.</li>
+        <li>The swift-proxy and memcached service must be <b>co-located</b> in the same cluster of
+          the control plane.</li>
+        <li>The swift-proxy and<codeph> switf-ring-builder</codeph> service must be
+            <b>co-located</b> in the same cluster of the control plane.</li>
+        <li>The ntp-client service must be <b>present</b> on all Swift nodes.</li>
+      </ul></p>
   </body>
 </topic>

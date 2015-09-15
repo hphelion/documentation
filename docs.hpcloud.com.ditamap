@@ -82,7 +82,8 @@
           <topicref href="helion/swift/filesystem_label.dita" toc="yes"
             navtitle="Verify the Filesystem Label" locktitle="yes"/>
         </topicref>
-        <topicref href="helion/swift/allocating_server.dita"/>
+        <topicref href="helion/swift/allocating_server.dita" navtitle="Allocate Object Server"
+          locktitle="yes"/>
         <topicref href="helion/swift/ring_specifications.dita"/>
       </topicref>
       <topicref href="helion/swift/troubleshooting_beta1.dita" toc="yes"
