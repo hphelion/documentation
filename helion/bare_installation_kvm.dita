@@ -78,9 +78,9 @@
           the install media at /media/cdrom, for example,
           <codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20150729-hlm.2015-08-31T16:48:07_340c639.iso /media/cdrom</codeblock></li>
         <li> Unpack the following tarball: Note this file name will
-          change<codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-20150831T154315Z.tgz</codeblock></li>
+          change<codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.2-20150831T154315Z.tgz</codeblock></li>
         <li>Run the following included script:
-          <codeblock>~/hos-2.0.0-b.1/hos-init.bash</codeblock></li>
+          <codeblock>~/hos-2.0.0-b.2/hos-init.bash</codeblock></li>
         <li>You will be prompted for an SSH passphrase during initialization. Enter a passphrase if
           you want to use one, otherwise hit return for no passphrase. If you've entered a
           passphrase you will need to add a private key to ssh-agent before running Ansible
@@ -160,7 +160,7 @@ git commit -m "My config or other commit message"
           <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
         <li>Run the following playbook:
           <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost cobbler-power-status.yml
+ansible-playbook -i hosts/localhost bm-power-status.yml
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
         <li>You will be prompted to enter a password that will be used to access the provisioned
           nodes.</li>
