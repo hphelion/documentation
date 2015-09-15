@@ -5,7 +5,7 @@
   <body>
     <section id="troubleshooting"><title>Troubleshooting Tips</title>
       <p><b>Change needed to <codeph>baremetalConfig.yml</codeph> file needed after the Cobbler
-        deploy</b></p>
+          deploy</b></p>
       <p>If you've made a mistake or wish to change your <codeph>baremetalConfig.yml</codeph>
         configuration file after you've already run the <codeph>cobbler-deploy.yml</codeph>
         playbook, follow these steps to ensure Cobbler gets updated with the new server
@@ -16,9 +16,10 @@
           <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock></li>
+        <li>Determine which nodes you have entered into Cobbler by using:
+          <codeblock>sudo cobbler system list</codeblock></li>
         <li>Remove the nodes that had the old information from Cobbler using:
-          <codeblock>sudo cobbler system remove --name &lt;nodename></codeblock>
-        <note>Use <codeph>sudo cobbler system list</codeph> for assistance.</note></li>
+          <codeblock>sudo cobbler system remove --name &lt;nodename></codeblock></li>
         <li>Re-run the <codeph>cobbler-deploy.yml</codeph> and <codeph>bm-reimage.yml</codeph>
           ansible scripts to upload the new node definitions to Cobbler and image the nodes:
           <codeblock>cd ~/helion/hos/ansible
