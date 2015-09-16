@@ -150,7 +150,8 @@ helion/hos/                    Directory contains files used by the installer
               <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"
-</codeblock></li>
+</codeblock>
+            <note>This step needs to be repeated any time you make changed to your configuration files.</note></li>
           </ol></li>
       </ol>
     </section>
