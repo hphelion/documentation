@@ -378,10 +378,13 @@ git commit -m "My config or other commit message"</codeblock></li>
     <p>Perform the following steps to modify the volume configuration files:</p>
     <p>
       <ol>
-        <li>Execute the following
-          command:<codeblock>cd /home/stack/helion/hos/ansible/roles/_CND-CMN/templates</codeblock></li>
-        <li>Modify the <codeph>cinder.conf.j2</codeph> as
-          follows:<codeblock># Start of section for VMDK block storage
+        <li>Change the directory. The <codeph>cinder.conf.j2</codeph> is present in following
+          directories
+            :<codeblock>cd /home/stack/helion/hos/ansible/roles/_CND-CMN/templates</codeblock><p>OR<codeblock>cd /home/stack/helion/my_cloud/config/cinder</codeblock></p><p>It
+            is recommended to modify the <codeph>cinder.conf.j2</codeph> present in
+              <codeph>/home/stack/helion/my_cloud/config/cinder</codeph></p></li>
+        <li>Modify the <codeph>cinder.conf.j2</codeph> as follows:
+          <codeblock># Start of section for VMDK block storage
 #
 # If you have configured VMDK Block storage for cinder you must
 # uncomment this section, and replace all strings in angle brackets
