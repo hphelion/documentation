@@ -42,8 +42,7 @@
       <title>cloudConfig.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/cloudConfig.yml</codeblock></p>
-      <p>The key values to enter into this document are the values for your local NTP servers and
-        DNS namesevers.</p>
+      <p>The key values to enter into this document are described in the table below:</p>
       <table frame="all" rowsep="1" colsep="1" id="table_pdl_jb4_jt">
         <tgroup cols="2">
           <colspec colname="c1" colnum="1"/>
@@ -95,11 +94,11 @@
     version: 2
 
    cloud:
-    name: helion-entry-scale
+ <b>name: helion-entry-scale</b>
 
     # The following values are used when
     # building hostnames
-    hostname-data:
+ <b>hostname-data:</b>
         host-prefix: helion
         member-prefix: -m
         
@@ -107,13 +106,13 @@
     data-dir: data
 
     # List of ntp servers for your site
-    ntp-servers:
+ <b>ntp-servers:</b>
     #    - "ntp-server1"
     #    - "ntp-server2"
 
     # dns resolving configuration for your site
     # refer to resolv.conf for details on each option
-    dns-settings:
+ <b>dns-settings:</b>
     #  nameservers:
     #    - name-server1
     #    - name-server2
@@ -140,7 +139,7 @@
     #    rotate:
     #    no-check-names:
     #    inet6:
-    smtp-settings:
+ <b>smtp-settings:</b>
     #  server: smtp1.hp.com
     #  port: 25</codeblock>
       <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
