@@ -25,65 +25,124 @@
         <li><xref href="#entry_scale_with_vsa/servers.yml">servers.yml</xref></li>
       </ul>
     </section>
+    <section id="notes"><title>Important Notes</title>
+      <p>A few things to keep in mind when working with your configuration files:</p>
+      <ul>
+        <li>If you have used earlier beta versions of Helion OpenStack 2.0, be mindful that the
+          contents of these configuration files may have changed. It's considered best practice to
+          copy over the example files per the <xref
+            href="../bare_installation_kvm.dita#install_kvm/Configuration">installation
+            instructions</xref> and edit them with your information.</li>
+        <li>If you need to edit your configuration files after your installation has already begun,
+          there are steps in the <xref href="../installation_troubleshooting.dita">Installation
+            Troubleshooting</xref> document that can assist with the process.</li>
+      </ul>
+    </section>
     <section id="cloudConfig.yml">
       <title>cloudConfig.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/cloudConfig.yml</codeblock></p>
       <p>The key values to enter into this document are the values for your local NTP servers and
         DNS namesevers.</p>
+      <table frame="all" rowsep="1" colsep="1" id="table_pdl_jb4_jt">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <thead>
+            <row>
+              <entry>Key</entry>
+              <entry>Value Explanation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>name</entry>
+              <entry>A user-defined name for the cloud</entry>
+            </row>
+            <row>
+              <entry>hostname-data (optional)</entry>
+              <entry>Provides control over some parts of the generated names. You can leave these as
+                the default values or choose new ones.<p>Consists of two values: <ul>
+                    <li>host-prefix</li>
+                    <li>member-prefix</li>
+                  </ul></p></entry>
+            </row>
+            <row>
+              <entry>ntp-servers (optional)</entry>
+              <entry>A list of external NTP servers your cloud has access to. If specified by name,
+                rather than IP, then the names need to be resolvable via the external DNS
+                nameservers you specify in the next section. All servers running the "ntp-server"
+                component will be configured to use these external NTP servers you specify
+                here.</entry>
+            </row>
+            <row>
+              <entry>dns-settings (optional)</entry>
+              <entry>DNS configuration data that will be applied to all servers. See example
+                configuration for a full list of values.</entry>
+            </row>
+            <row>
+              <entry>smtp-settings (optional)</entry>
+              <entry>SMTP client configuration data that will be applied to all servers. See example
+                configuration for a full list of values.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
   product:
-  version: 2
-  
-  cloud:
-  name: helion-entry-scale
-  
-  # The following values are used when
-  # building hostnames
-  hostname-data:
-  host-prefix: helion
-  member-prefix: -m
-  
-  # Path to the rest of the input model
-  data-dir: data
-  
-  <b># List of ntp servers for your site
-  ntp-servers:
-  #    - "ntp-server1"
-  #    - "ntp-server2"</b>
-  
-  <b># dns resolving configuration for your site
-  # refer to resolv.conf for details on each option
-  dns-settings:
-  #  nameservers:
-  #    - name-server1
-  #    - name-server2
-  #    - name-server3</b>
-  #
-  #  domain: sub1.example.net
-  #
-  #  search:
-  #    - sub1.example.net
-  #    - sub2.example.net
-  #
-  #  sortlist:
-  #    - 192.168.160.0/255.255.240.0
-  #    - 192.168.0.0
-  #
-  #  # option flags are '&lt;name&gt;:' to enable, remove to unset
-  #  # options with values are '&lt;name&gt;:&lt;value&gt;' to set
-  #
-  #  options:
-  #    debug:
-  #    ndots: 2
-  #    timeout: 30
-  #    attempts: 5
-  #    rotate:
-  #    no-check-names:
-  #    inet6:
-</codeblock>
+    version: 2
+
+   cloud:
+    name: helion-entry-scale
+
+    # The following values are used when
+    # building hostnames
+    hostname-data:
+        host-prefix: helion
+        member-prefix: -m
+        
+    # Path to the rest of the input model
+    data-dir: data
+
+    # List of ntp servers for your site
+    ntp-servers:
+    #    - "ntp-server1"
+    #    - "ntp-server2"
+
+    # dns resolving configuration for your site
+    # refer to resolv.conf for details on each option
+    dns-settings:
+    #  nameservers:
+    #    - name-server1
+    #    - name-server2
+    #    - name-server3
+    #
+    #  domain: sub1.example.net
+    #
+    #  search:
+    #    - sub1.example.net
+    #    - sub2.example.net
+    #
+    #  sortlist:
+    #    - 192.168.160.0/255.255.240.0
+    #    - 192.168.0.0
+    #
+    #  # option flags are '&lt;name>:' to enable, remove to unset
+    #  # options with values are '&lt;name>:&lt;value>' to set
+    #
+    #  options:
+    #    debug:
+    #    ndots: 2
+    #    timeout: 30
+    #    attempts: 5
+    #    rotate:
+    #    no-check-names:
+    #    inet6:
+    smtp-settings:
+    #  server: smtp1.hp.com
+    #  port: 25</codeblock>
       <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
         are recognized.</note>
     </section>
