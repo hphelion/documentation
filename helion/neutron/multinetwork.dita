@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="HP2.0LBaaS">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Multiple External Network
+    Configuration</title>
+  <body>
+    <p>HP Helion OpenStack 2.0 Multiple External Network Configuration</p>
+    <p>This document describes the configuration process and requirements for the HP Helion
+      OpenStack 2.0 Multiple External Network.</p>
+    <p>  
+      
+      <ul id="LBaaSlist">
+        <li><xref href="lbaas.dita#HP2.0LBaaS/Prerequisites">Prerequisites</xref></li>
+        <li><xref href="lbaas.dita#HP2.0LBaaS/Configuration">Configuration</xref></li>
+        <li><xref href="lbaas.dita#HP2.0LBaaS/MoreInfo">More Information</xref></li>
+      </ul>
+    </p>
+    
+    <section id="Prerequisites">
+      <title>Prerequisites</title>
+      <p>HP Helion OpenStack must be installed. </p>
+      
+    </section>
+    <section id="Configuration">
+      <title>Configuration</title>
+      <p>HP Helion OpenStack 2.0 Multiple External Network Configuration</p>
+      <p>Neutron provides the ability to have multiple external networks, by using neutron provider
+        networks for external networks. HP Helion OpenStack 2.0 can be configured to allow use of 
+        provider vlans as external neutron networks.
+      </p>
+      <ol>
+        <li>Do not include the neutron.l3_agent.external_network_bridge tag in the network_groups
+          definition for your cloud. This results in the l3_agent.ini external_network_bridge being
+          set to an empty value (rather than the traditional "br-ex").</li>
+        <li>Configure your cloud to use
+        provider VLANs, by specifying the neutron.provider_physical_network tag on one of the
+        network_groups defined for your cloud.</li>
+      </ol>
+
+      <p>
+        For example, to run provider vlans over the GUEST network group.
+        <codeblock>{noformat} network-groups: - name: GUEST &lt;snip&gt; tags: - neutron.provider_physical_network: physnet1 {noformat}</codeblock>
+        After the cloud has been deployed, you can now create external networks
+        using provider vlans. For example: 
+        <codeblock># create external network 1 
+neutron net-create --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id 101 ext-net1 --router:external true 
+# create external network 2 
+neutron net-create --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id 101 ext-net1 --router:external true</codeblock>
+      </p>
+    </section>
+    <section id="MoreInfo">
+      <title>More Information</title>
+    </section>
+  </body>
+</topic>
