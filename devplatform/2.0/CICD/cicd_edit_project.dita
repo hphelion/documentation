@@ -22,8 +22,12 @@
         <li>Click <b>Save</b>.</li>
       </ol>
     </section>
-    <section conref="cicd_create_notifications.dita#topic_ifw_mxb_3t/noticecreate"/>
-    <section conref="cicd_create_postdeploy.dita#topic_mxf_jxb_3t/actioncreate"/>
+   <section><title>Create Post-deployment Actions</title>
+    <p conref="cicd_create_postdeploy.dita#topic_mxf_jxb_3t/createpd"></p></section>
+    
+    <section><title>Create Notifications</title>
+      <p conref="cicd_create_notifications.dita#topic_ifw_mxb_3t/noticecreate"></p></section>
+    
     <section><title>Delete a Project</title>
     <ol id="project_delete">
       

@@ -5,7 +5,7 @@
   <body>
     <p>Notifications can be added to Builds. They can be sent via email, to HipChat, or through
       FlowDocks.</p>
-    <section id="noticecreate"><title/>
+    <p id="noticecreate">
       
       <ol ><li>Click the <b>Builds</b> tab.</li>
       <li>Select the target build and click <b>Edit</b>.</li>
@@ -21,7 +21,7 @@
             <li>Token (optional)</li>
           </ul></li>
         <li>Click <b>Save</b>.</li>
-          </ol></section>
+          </ol></p>
 
   </body>
 </topic>

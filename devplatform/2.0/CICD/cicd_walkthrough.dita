@@ -1,21 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
 <topic id="task_sw4_1zq_dt">
-    <title>CICD Walkthrough: Create a Project and Deploy an App</title>
+    <title>Create an Automated Build-Test-Deploy Cycle</title>
     <body>
     <p>The true advantage of CICD is creating a build-test-deploy cycle which will occur
             automatically whenever a change is committed.</p>
-        <p>With Helion CICD, you can even preview a temporary deployment before approving a pull
-            request. Approval will then trigger the full build-test-deploy cycle.</p>
+        <p>When a pull request is received, developers can <xref
+                href="cicd_preview_tempdeploy.dita#topic_mpz_ypd_3t">preview a temporary
+                deployment</xref> before approving the proposed changes. Approval will then trigger
+            the full build-test-deploy cycle.</p>
     
     <p>You will need: <ul>
-                <li>An application to deploy. If you don't already have one, you can use one of the
-                    small <xref href="../devplatform.appdev.dita#topic2457/sample">sample
-                        apps</xref>.</li>
+                <li>An application to deploy.</li>
                 <li>An instance of the CICD tool <xref
                         href="cicd_installation.dita#topic_lcx_vtc_dt">installed</xref>.</li>
                 <li>The access credentials for a valid target environment.</li>
-                            </ul></p>
+                                            </ul></p>
+     <section><title>Overview</title>
+     <p>Using the CICD tool, specify what will happen each time the application is built: which
+                environment to deploy the application to, which tests should be run, and who should
+                be notified of what and how that notification should be delivered. All this
+                information is contained in a Project.</p>
+            <p>After the cycle is defined, each build will automatically deploy the app to the
+                target environment, run the specified tests, and send relevant notifications along
+                the way. All the developers have to do is write, commit, and build.</p>                                       
+                                            
+                                            </section>
+        <section><title>Steps</title>
+        <ol>
+            <li>Create a New Environment. This defines the deployment target.</li>
+                <li>Create a Project. This defines the target code repository.</li>
+                <li>Create Notifications. This defines who should be notified when, what the
+                    notification contains, and how it is delivered. (optional)</li>
+                <li>Create Post-Deployment Actions. This defines what actions to take, usually
+                    testing, after the build is completed. (optional)</li>
+                <li>Run a Build. This starts the whole cycle.</li>
+            
+        </ol>
+        </section>
   
     </body>
     <topic id="id_yxf_snb_3t" conref="cicd_environment_create.dita#mf4_fh4_ht">
@@ -25,6 +47,9 @@
         <title/>
     </topic>
     <topic id="id_bck_t4d_3t" conref="cicd_create_notifications.dita#topic_ifw_mxb_3t"><title>Add Notifications</title></topic>
+    <topic id="id_adh_314_jt" conref="cicd_create_postdeploy.dita#topic_mxf_jxb_3t">
+        <title/>
+    </topic>
    
  
     <topic id="id_ytj_ltb_3t" conref="cicd_build_create.dita#topic_a34_wqb_3t"><title/>

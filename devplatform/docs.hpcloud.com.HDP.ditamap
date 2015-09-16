@@ -102,12 +102,15 @@
           <topicref href="2.0/CICD/cicd_users_guide.dita">
           <topicref href="2.0/CICD/cicd_environment_create.dita"/>
           <topicref href="2.0/CICD/cicd_edit_environment.dita"/>
-          <topicref href="2.0/CICD/cicd_project_create.dita"/>
+          <topicref href="2.0/CICD/cicd_create_project.dita"/>
           <topicref href="2.0/CICD/cicd_edit_project.dita"/>
           <topicref href="2.0/CICD/cicd_build_create.dita" navtitle="Create a New Build"
             locktitle="yes"/>
           <topicref href="2.0/CICD/cicd_create_postdeploy.dita"/>
-          <topicref href="2.0/CICD/cicd_create_notifications.dita"/>
+          <topicref href="2.0/CICD/cicd_create_notifications.dita">
+            <topicref href="2.0/CICD/cicd_hipchat_data.dita"/>
+          </topicref>
+          <topicref href="2.0/CICD/cicd_preview_tempdeploy.dita"/>
         </topicref></topicref>
       
       <topicref href="2.0/helion/user/deploy/deploy_index.dita" locktitle="yes"
@@ -457,6 +460,13 @@
       </topicref>
     </topicref>
   </topicref>
- 
+  <!-- shim files, remove when publishing-->
+ <topicref href="../commercial/GA1/1.1.13rd-party-license-agreements.dita" toc="no"></topicref>
+ <topicref href="../commercial/GA1/1.1commercial-vsa-overview.dita" toc="no"></topicref>
+  <topicref href="../commercial/GA1/1.1commercial.index.dita" toc="no"></topicref>
+  <topicref href="../commercial/GA1/1.1commercial.install-3par.dita" toc="no"></topicref>
+  <topicref href="../commercial/GA1/1.1commercial.install-GA-overview.dita" toc="no"></topicref>
+  <topicref href="../commercial/GA1/1.1commerical.services-identity-overview.dita" toc="no"></topicref>
+  <topicref href="../publiccloud/api.dita" toc="no"></topicref>
  </map>
 
