@@ -7,6 +7,7 @@ Options +FollowSymLinks
 RewriteEngine on
 #
 #
+RewriteRule ^#helion/devplatform/1.3/als/?$ /#devplatform/1.3/devplatform.index.html
 RewriteRule ^#devplatform/1.1devplatform.ALS-developer-trial-quick-start.html/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html [NE,R=301,L]
 RewriteRule ^helion/devplatform/ALS-developer-trial-quick-start/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html [NE,R=301,L]
 RewriteRule ^helion/devplatform/preview/ALS-developer-trial-quick-start/termination/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-termination.html [NE,R=301,L]
