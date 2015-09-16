@@ -156,7 +156,7 @@ hp3par_iscsi_chap_enabled=true</codeblock><note>
               is mapped to the backend, you can create volumes with this volume type.</note></li>
         </ol></p>Once the Admin has perform the above operations, you can login as a user and create
       a volume.</section>
-    <section><b>Create Volume from user account</b><p>Perform the following steps to create a volume
+    <section><b>Create Volume from User Account</b><p>Perform the following steps to create a volume
         using Horizon dashboard. <ol id="ol_syw_xw3_jt">
           <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
             left panel. </li>
@@ -172,7 +172,7 @@ hp3par_iscsi_chap_enabled=true</codeblock><note>
               volume is successfully created and the status of the volume is available.</p></li>
         </ol></p></section>
     <section>
-      <title>Delete volume from user account</title>
+      <title>Delete volume from User Account</title>
       <p>Perform the following steps to delete a volume using Horizon dashboard:</p>
       <p>
         <ol id="ol_sdl_vy3_jt">
