@@ -127,11 +127,7 @@
       <p><b>Installing Swift</b></p>
       <p>Swift installs with the following limitations: </p>
       <ul>
-        <li>There is no LVM (logical volumes) support. Therefore, dedicated disks are needed for
-          Swift on the 3 controller nodes.</li>
-        <li>In Beta 1 you cannot add or remove Swift servers.</li>
         <li>Only one Swift zone is supported.</li>
-        <li>Only one storage policy, object-0, is supported in this release.</li>
       </ul>
       <!-- <p>
       <b>Deployment of VSA cloud on a separate Node as per the life-cycle management
