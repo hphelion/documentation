@@ -30,6 +30,7 @@
         <topicref href="helion/bare_install_kvm_cl.dita"/>
         <topicref href="helion/config/entryscalewithvsa.dita"
           navtitle="Configuration Files for Entry Scale Model"/>
+        <topicref href="helion/bare_install_kvm_post_cl.dita"/>
       </topicref>
       <topicref href="helion/bare_installation_esx.dita"
         navtitle="Baremetal Install for ESX Hypervisor" locktitle="yes"/>

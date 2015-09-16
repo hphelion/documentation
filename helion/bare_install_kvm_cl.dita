@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_r1s_4d4_ht">
-  <title>Entry Scale Model with VSA Installation Checklist</title>
+<topic id="preinstall_checklist">
+  <title>Entry Scale Model with VSA Pre-Installation Checklist</title>
   <body>
     <section id="bios"><title>BIOS and iLO Settings</title>
       <p>Ensure that the following BIOS and iLO settings are applied to each baremetal server, with
