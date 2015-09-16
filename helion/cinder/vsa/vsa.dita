@@ -1,134 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="vsa_install">
-  <title>Install and Configure VSA (Optional)</title>
+<topic id="topic_gmc_dgk_jt">
+  <title> VSA Configuration (Optional)</title>
   <body>
-    <section id="prereqs"><title>Pre-requisites</title>
-      <p>In order to install and configure VSA you must have the following conditions met:</p>
-      <ul>
-        <li>Helion OpenStack 2.0 Cloud must be setup with: <ul>
-            <li>Three VSA nodes according to specifications outlined in the <xref
-                href="../../hardware.dita">Minimum Hardware Requirements</xref></li>
-          </ul>
-        </li>
-        <li>Have the VSA node IP information from the
-            <codeph>~/scratch/cp/my_cloud/stage/info/net_info.yml</codeph> file, which is generated
-          by the configuration processor.</li>
-      </ul></section>
-    <section id="VSA"><title>Install and Configure VSA</title>
-      <p>You can set up Virtual Storage Appliance (VSA) using the following instructions:</p>
-      <ol>
-        <li>On your <b>first controller node</b>, look in <b>/etc/apt/sources.list.d/</b> for a file called
-            <b>cmc_hlinux_32bit_lib.list</b> and verify that it contains the line below:
-          <codeblock>deb [arch=i386] http://&lt;deployer ip>:79/hlm/cmc32 cattleprod main</codeblock>
-          If the file is not there or if the line is not there, please create it as described. The
-          deployer ip address can be obtained by looking at the existing hlinux apt source file in
-          that directory. This is a workaround for an issue in Beta-1 and will be fixed in
-          Beta-2.</li>
-        <li>Run an update to ensure all local packages are updated:
-          <codeblock>sudo apt-get update</codeblock></li>
-        <li>On the <b>deployer node</b>, deploy VSA by running the following command: <ol>
-            <li><codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock></li>
-          </ol>
-        </li>
-        <li>Deploy CMC by running the following command: <ol>
-            <li><codeblock>ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
-          </ol>
-        </li>
-        <li>Set your X display and launch CMC: <ol>
-            <li>Install Xming on a Windows machine that you can reach the deployer node on</li>
-            <li>Enable X11 forwarding on PuTTy session for deployer node</li>
-            <li>ssh -X to the first control plane node</li>
-            <li>execute <codeph>/opt/HP/StoreVirtual/UI/jre/bin/java -jar
-                /opt/HP/StoreVirtual/UI/UI.jar</codeph>
-              <note>At this point the CMC UI should launch successfully</note></li>
-          </ol>
-        </li>
-        <li>Create a Cluster using CMC: <ol>
-            <li>Choose <codeph>Find -> Find Systems</codeph>, click <codeph>Add</codeph> and enter
-              the IP addresses of the VSA virtual machinees</li>
-            <li>Choose <codeph>Tasks -> Management Group -> New Management Group</codeph></li>
-            <li>Enter the name for the management group, for example:
-              <codeph>hlm003-vsa.mg</codeph></li>
-            <li>Enter the username and password, for example: <codeph>stack / stack</codeph></li>
-            <li>Add the NTP server(s) information</li>
-            <li>Skip the DNS and SMTP sections</li>
-            <li>Add the cluster name, for example: <codeph>hlm003-vsa-cluster</codeph></li>
-            <li>Enter the VIP IP, which can be found as the cluster IP value in the
-                <codeph>~/scratch/cp/my_cloud/stage/info/net_info.yml</codeph> file</li>
-            <li>Select the checkbox to skip volume creation</li>
-          </ol>
-          <note>Wait until the action completes</note>
-        </li>
-        <li>Modify the <codeph>cinder.conf.j2</codeph> file to update the VSA cluster: <ol>
-            <li>On the deployer, change to the following directory: <codeph>cd
-              ~/helion</codeph></li>
-            <li>Edit the
-                <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> file
-              as follows: <ol>
-                <li>Change the <codeph>enabled_backends</codeph> line to:
-                  <codeblock>enabled_backends=vsa-1</codeblock></li>
-              </ol></li>
-            <li>Copy the VSA section, uncomment it, and fill the values in as seen in the following
-              example. Note that the names assigned (in bold) are only examples. Please enter your
-              specific values here:
-              <codeblock>
-<b>hplefthand_password: stack
+    <p>This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes,
+      and their configuration as Cinder backend.</p>
+    <section>
+      <title id="preq">Prerequisite</title>
+      <p>
+        <ul id="ul_pfl_bbz_ht">
+          <li>HP Helion Cloud must be successfully deployed. It should be up and running.</li>
+          <li>Remember the VSA VM IP's and VSA Cluster IP's from <codeph>net_info.yml</codeph>,
+            which is generated by configuration processor. (It is recommended that you write the IP
+            address so that it can be easily accessible).</li>
+        </ul>
+      </p>
+    </section>
+    <section>
+      <title>Install and Configure VSA</title>
+      <p>Perform the following steps to install and configure Virtual Storage Appliance (VSA):<ol
+          id="ol_wgh_djk_jt">
+          <li>Execute the following command to deploy VSA: (<b>do a user need to login to deployer
+              node</b>)??<codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock><p>After
+              deployment of VSA you must deploy CMC.</p></li>
+          <li>Execute the following command to deploy
+            CMC:<codeblock>ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
+        </ol><b> Set X display and launch Centralized Management Console (CMC)</b></p>
+      <p>
+        <ol id="ol_alr_mdl_jt">
+          <li>Install Xming (<b>will this be a part of tar files??)</b> on Windows Box from where
+            you can access the deployer node.</li>
+          <li>Enable X11 forwarding on putty session for deployer node. <b>(i dint understand
+              this?</b>)</li>
+          <li>SSH to first control plane node.<codeblock>ssh -X</codeblock></li>
+          <li>Execute the following command:
+            <codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock>CMC
+            will be launch successfully.</li>
+        </ol>
+      </p>
+    </section>
+    <section>
+      <title>Creating Cluster using CMC</title>
+      <p>
+        <note type="important">Ensure that CMC is installed successfully and HP StoreVirtual VSA
+          (one or more) is deployed in the same management network where CMC is installed.</note>
+      </p>
+      <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
+          <li>Open CMC.<p>By default, the CMC is configured to discover the StoreVirtual nodes in
+              the subnet in which it is installed. You can manually add the nodes also.</p></li>
+          <li>In the CMC UI, click <b>Find</b> and then click <b>Find Systems</b> from the left
+            panel. Find Systems dialogue box is displayed.</li>
+          <li>You can choose <b>Add</b> or <b>Find</b> option to search the system. Find option
+            starts searching for the nodes in the same subnet as that of CMC. Add option displays an
+              <b>Enter IP</b> pop-up box to enter the IP of the StoreVirtual system.</li>
+          <li>In the CMC UI, click <b>Tasks</b> then point to <b>Management Group</b> and click<b>
+              New Management Group</b>.</li>
+          <li>In the <b>New Management Group Name</b> box, enter a name for the management group.
+            For example: hlm003-vsa-mg</li>
+          <li>Click <b>Next</b> to display the Add Administrative User page.</li>
+          <li>Enter the required information (username/password) for the Administrative User. For
+            example: <ul id="ul_cdk_xjl_jt">
+              <li>username- stack </li>
+              <li>password-stack</li>
+            </ul></li>
+          <li>Click <b>Next</b> to display the Management Group Time page. </li>
+          <li>Add NTP server information and click <b>Next</b> to display the Domain Name Server
+            Configuration page.</li>
+          <li>Skip the DNS and SMTP sections.</li>
+          <li>Click <b>Next</b> to display a Wizard in the Create a Cluster page.</li>
+          <li>Select the cluster type as <i>Standard Cluster</i> from the displayed options and
+            click <b>Next</b>.</li>
+          <li>In the <b>Cluster Name</b> box, enter the name of the cluster and click <b>Next</b>.
+            For example: hlm003-vsa-cluster</li>
+          <li>In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the
+            cluster in the respective boxes and click <b>OK</b>. The details are displayed in a
+            tabular format in the page. <note>The VIP IP can be found as the cluster IP value in the
+                <codeph>~helion/my_cloud/stage/info/net_info.yml</codeph> file.</note></li>
+          <li>(Optional) Click the checkbox displayed against <b>Skip Volume Creation</b>.</li>
+          <li>Click <b>Next</b>.The Management Group and Cluster is created and displays in the Home
+            page of CMC.<p>Wait for completion.</p></li>
+        </ol></p>
+    </section>
+    <section>
+      <title>Configure VSA as a Cinder backend</title>
+      <p>You must modify <codeph>cinder.conf.j2</codeph> to update VSA Cluster.</p>
+      <p>Perform the following steps to update the VSA cluster:<ol id="ol_dj2_qcz_ht">
+          <li>Login to deployer node.</li>
+          <li>Change the directory as shown below:<codeblock>cd ~/helion</codeblock></li>
+          <li>Edit <codeph>cinder.conf.j2</codeph> file at
+              <codeph>hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to add VSA data
+            as follows:<codeblock>enabled_backends=vsa-1</codeblock></li>
+          <li>Copy VSA section, uncomment it, and modify the values in the
+              <codeph>cinder.conf.j2</codeph> file as shown in the following
+              example:<codeblock>[vsa-1]
+hplefthand_password: stack
 hplefthand_clustername: hlm003-vsa-cluster
 hplefthand_api_url: https://10.241.103.7:8081/lhos
-hplefthand_username: stack</b>
+hplefthand_username: stack
 hplefthand_iscsi_chap_enabled: true
-<b>volume_backend_name: vsa-backend-hlm003</b>
+volume_backend_name: vsa-backend-hlm003
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
-hplefthand_debug: false</codeblock></li>
-            <li>Run the following commands to commit and deploy the change: <codeblock>git add -A</codeblock>
-              <codeblock>git commit -m "your commit message goes here"</codeblock>
-              <codeblock>cd ~/helion/hos/ansible</codeblock>
-              <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
-              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
-              <codeblock>>cd ~/scratch/ansible/next/hos/ansible</codeblock>
-              <codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
-            </li>
-          </ol>
-        </li>
-      </ol>
+hplefthand_debug: false</codeblock><note>
+              Please enter the values which are specific to your environment. </note></li>
+          <li>Commit your configuration to a <xref href="../../using_git.dita#topic_u3v_1yz_ct"
+              >local
+              repository</xref>:<codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock><note>
+              Enter your commit message &lt;commit message></note></li>
+          <li>Run the configuration
+            processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Change the directory to <codeph>~/scratch/ansible/next/hos/ansible</codeph> and run
+            the following command to create a deployment
+            directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+        </ol></p>
     </section>
-    <section id="verify"><title>Verifying the Installation</title>
-      <p>From the Control Plane, use the Cinder command-line client to create a volume so you can
-        verify that VSA is correctly configured. You can delete the created volume afterwards, if
-        desired.</p>
-      <ol>
-        <li>Create a test volume from a user account and verify that the volume is successfully
-          created in the "available" state: <codeblock>cinder create --display-name &lt;name> &lt;size></codeblock>
-          <p>Example:
-            <codeblock>
-$ cinder create --display-name test_volume 2
-+---------------------+--------------------------------------+
-|       Property      |                Value                 |
-+---------------------+--------------------------------------+
-|     attachments     |                  []                  |
-|  availability_zone  |                 nova                 |
-|       bootable      |                false                 |
-|      created_at     |      2015-02-15T23:53:51.409872      |
-| display_description |                 None                 |
-|     display_name    |             test_volume              |
-|      encrypted      |                False                 |
-|          id         | d3df3fce-929d-4e64-bf24-bbe9ed867d46 |
-|       metadata      |                  {}                  |
-|         size        |                  1                   |
-|     snapshot_id     |                 None                 |
-|     source_volid    |                 None                 |
-|        status       |               creating               |
-|     volume_type     |                 None                 |
-+---------------------+--------------------------------------+</codeblock></p></li>
-        <li>Using a session with the admin creds, show the details for the test volume created
-          using: <codeblock>cinder show &lt;volumeId></codeblock> and verify that the volume was
-          created on the correct backend, e.g.
-          <codeblock>os-vol-host-attr:host ha-volume-manager@vsa-1#vsa-backend-hlm003</codeblock>
-        </li>
-        <li>Delete the test volume with this command:
-          <codeblock>cinder delete &lt;volumeId></codeblock></li>
-      </ol>
-    </section>
+    <p id="run-ceph-client-package"><b>Run Cinder Reconfigure Packages</b></p>
+    <p>Execute the following command to configure 3PAR FC. </p>
+    <p>
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
+    </p>
   </body>
 </topic>
