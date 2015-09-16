@@ -21,10 +21,12 @@
       <p>Perform the following steps to install and configure Virtual Storage Appliance (VSA):<ol
           id="ol_wgh_djk_jt">
           <li>Execute the following command to deploy VSA: (<b>do a user need to login to deployer
-              node</b>)??<codeblock>ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock><p>After
+            node</b>)??<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock><p>After
               deployment of VSA you must deploy CMC.</p></li>
           <li>Execute the following command to deploy
-            CMC:<codeblock>ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
+            CMC:<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
         </ol><b> Set X display and launch Centralized Management Console (CMC)</b></p>
       <p>
         <ol id="ol_alr_mdl_jt">
