@@ -94,11 +94,11 @@
     version: 2
 
    cloud:
- <b>name: helion-entry-scale</b>
+    <b>name: helion-entry-scale</b>
 
     # The following values are used when
     # building hostnames
- <b>hostname-data:</b>
+    <b>hostname-data:</b>
         host-prefix: helion
         member-prefix: -m
         
@@ -106,13 +106,13 @@
     data-dir: data
 
     # List of ntp servers for your site
- <b>ntp-servers:</b>
+    <b>ntp-servers:</b>
     #    - "ntp-server1"
     #    - "ntp-server2"
 
     # dns resolving configuration for your site
     # refer to resolv.conf for details on each option
- <b>dns-settings:</b>
+    <b>dns-settings:</b>
     #  nameservers:
     #    - name-server1
     #    - name-server2
@@ -139,7 +139,7 @@
     #    rotate:
     #    no-check-names:
     #    inet6:
- <b>smtp-settings:</b>
+    <b>smtp-settings:</b>
     #  server: smtp1.hp.com
     #  port: 25</codeblock>
       <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
