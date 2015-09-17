@@ -1442,7 +1442,7 @@ tags:
     <section id="networks.yml"><title>networks.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/networks.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
+      <p>The key values to enter into this document are described in the table below:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_vd3_lzt_jt">
           <tgroup cols="2">
@@ -1450,42 +1450,53 @@ tags:
             <colspec colname="c2" colnum="2"/>
             <thead>
               <row>
-                <entry/>
-                <entry/>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
               </row>
             </thead>
             <tbody>
               <row>
-                <entry/>
-                <entry/>
+                <entry>name</entry>
+                <entry>The name of this network. The network <i>name</i> may be used in a
+                  server-group definition to specify a particular network from within a network
+                  group to be associated with a set of servers.</entry>
               </row>
               <row>
-                <entry/>
-                <entry/>
+                <entry>network-group</entry>
+                <entry>The name of the associated network group.</entry>
               </row>
               <row>
-                <entry/>
-                <entry/>
+                <entry>vlanid (optional)</entry>
+                <entry>The IEEE 802.1Q VLAN Identifier, a value in the range 1 through 4094. A
+                    <i>vlanid</i> must be specified when <i>tagged-vlan</i> is true.</entry>
               </row>
               <row>
-                <entry/>
-                <entry/>
+                <entry>tagged-vlan (optional)</entry>
+                <entry>May be set to “true” or “false”. If true, packets for this network carry the
+                    <i>vlanid </i>in the packet header; such packets are referred to as VLAN-tagged
+                  frames in IEEE 802.1Q.</entry>
               </row>
               <row>
-                <entry/>
-                <entry/>
+                <entry>cidr (optional)</entry>
+                <entry>The IP subnet associated with this network.</entry>
               </row>
               <row>
-                <entry/>
-                <entry/>
+                <entry>start-address (optional)</entry>
+                <entry>An IP address within the <i>cidr</i> which will be used as the start of the
+                  range of IP addresses from which server addresses may be allocated. The default
+                  value is the first host address within the <i>cidr </i>(e.g. the .1
+                  address).</entry>
               </row>
               <row>
-                <entry/>
-                <entry/>
+                <entry>end-address (optional)</entry>
+                <entry>An IP address within the <i>cidr</i> which will be used as the end of the
+                  range of IP addresses from which server addresses may be allocated. The default
+                  value is the last host address within the <i>cidr </i>(e.g. the .254 address of a
+                  /24).</entry>
               </row>
               <row>
-                <entry/>
-                <entry/>
+                <entry>gateway-ip (optional)</entry>
+                <entry>The IP address of the default gateway.</entry>
               </row>
             </tbody>
           </tgroup>
@@ -1519,6 +1530,7 @@ tags:
       cidr: 10.0.1.0/24
       gateway-ip: 10.0.1.1
       network-group: EXTERNAL_API
+     #start-address: 10.0.1.4
         
     - name: NET_EXTERNAL_VM
       vlanid: 102
