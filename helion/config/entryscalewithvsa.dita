@@ -1169,7 +1169,7 @@
         always maps to the same physical device. A NIC mapping is associated to a server in the
         server definition.</p>
       <p>This information comes from your <xref
-          href="../bare_install_kvm_cl.dita#preinstall_checklist/network/nic_mappings"
+          href="../bare_install_kvm_cl.dita#preinstall_checklist/nic_mappings" type="table"
           >pre-installation checklist</xref>.</p>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/nic_mappings.yml</codeblock></p>
