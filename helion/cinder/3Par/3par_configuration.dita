@@ -86,7 +86,8 @@ volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 volume_backend_name=3par_iSCSI
 iscsi_ip_address=172.32.0.9
 hp3par_iscsi_chap_enabled=true</codeblock><note>
-              Please enter the values which are specific to your environment. </note></li>
+              Please enter the values of all the paramters specific to your environment.
+            </note></li>
           <li>Execute the steps (<b>5 -7</b>) mentioned in <xref
               href="#topic_vln_2xy_ht/configure-3par-fc" format="dita">Configure 3PAR FC as Cinder
               backend </xref> and <xref href="#topic_vln_2xy_ht/run-ceph-client-package"
@@ -96,7 +97,7 @@ hp3par_iscsi_chap_enabled=true</codeblock><note>
     </section>
     <section id="create-volume-config-fc">
       <title>Create Volume to Verify the Configuration of 3PAR FC and iSCSI</title>
-      <p>You must create a volume to verify the configuration of 3PAR FC. and iSCSI. Once you are
+      <p>You must create a volume to verify the configuration of 3PAR FC and iSCSI. Once you are
         able to create the volume then delete the created volume.</p>
       <p>Perform the following steps to create a volume using Horizon dashboard:</p>
       <p>
@@ -132,22 +133,21 @@ hp3par_iscsi_chap_enabled=true</codeblock><note>
               id="image_d2h_qsv_3t"/><p>The <b>Create Volume Type Extra Specs</b> dialog box
               displays. Now map the volume type to the associate backend.</p><p><b>For 3PAR
                 FC</b><ol id="ol_jml_sxv_3t">
-                <li>In the <b>Key</b> box, enter <i>3par_FC</i> as volume backend name. This is the
-                  name of the key used to specify the storage backend when provisioning volumes of
-                  this volume type. The volume backend name must match the backend name mentioned in
-                  the <codeph>cinder.conf</codeph> file.</li>
+                <li>In the <b>Key</b> box, enter <i>volume_backend_name</i> as volume backend name.
+                  This is the name of the key used to specify the storage backend when provisioning
+                  volumes of this volume type. The volume backend name must match the backend name
+                  mentioned in the <codeph>cinder.conf</codeph> file.</li>
                 <li>In the <b>Value</b> box, enter the name of the backend to which you want to
                   associate the volume type. For example:<i>3par_fc</i>.<p><image
                       href="../../../media/3par/volume-extra-specs-3par_fc.png"
-                      id="image_am3_35v_3t"/></p></li>
-              </ol></p>
-            <b>For 3PAR iSCSI </b><ol id="ol_n1t_tw3_jt">
+                      id="image_am3_35v_3t"/></p><p><b>For 3PAR iSCSI </b></p></li>
+              </ol></p><ol id="ol_n1t_tw3_jt">
               <li> In the <b>Key</b> box, enter <i>3par_iSCSI</i> as volume backend name. This is
                 the name of the key used to specify the storage backend when provisioning volumes of
                 this volume type. The volume backend name must match the backend name mentioned in
                 the <codeph>cinder.conf</codeph> file. </li>
               <li>In the <b>Value</b> box, enter the name of the backend to which you want to
-                associate the volume type. For example:<i>3par_iSCSI</i>.<image
+                associate the volume type. For example:<i>helion_3par_iscsi</i>.<image
                   href="../../../media/3par/volume-extra-specs-iscsi.png" id="image_vtl_fzv_3t"
                 /></li>
             </ol>
