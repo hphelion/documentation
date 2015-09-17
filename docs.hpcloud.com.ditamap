@@ -48,7 +48,7 @@
       locktitle="yes">
       <topicref href="helion/keystone/keystone_roles.dita"
         navtitle="Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Installation"
+      <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Configuration"
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_admin.dita" navtitle="Keystone Administration"
         locktitle="yes"> </topicref>
@@ -141,6 +141,16 @@
       <topicref href="helion/neutron/fwaas.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Firewall (FWaaS)</navtitle>
+        </topicmeta>
+      </topicref>
+      <topicref href="helion/neutron/vpnaas.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>VPN (VPNaaS)</navtitle>
+        </topicmeta>
+      </topicref>
+      <topicref href="helion/neutron/multinetwork.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>Multiple External Networks</navtitle>
         </topicmeta>
       </topicref>
     </topicref>

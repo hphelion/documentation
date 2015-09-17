@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="modify-input-model">
-  <title>How to Modify Input Model</title>
+  <title>Overview of the entry-scale-with-vsa Example Model</title>
   <body>
     <p>This page describes the configuration of Swift services with the various types of input
       models supported in this release. </p>
