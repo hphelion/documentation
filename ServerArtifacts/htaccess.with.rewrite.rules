@@ -9,11 +9,11 @@ RewriteEngine on
 #
 # Start Temporary rewrite rules for hos beta
 #
-RewriteRule ^#helion/installation_troubleshooting.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/installation_troubleshooting.html [NE,R=301,L]
-RewriteRule ^#helion/cinder/vsa/vsa.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/cinder/vsa/vsa.html [NE,R=301,L]
-RewriteRule ^#helion/bare_installation_esx.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/bare_installation_esx.html [NE,R=301,L] 
-RewriteRule ^#helion/monasca/opsconsole/overview.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/monasca/opsconsole/overview.html [NE,R=301,L] 
-RewriteRule ^#helion/monasca/monasca.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/monasca/monasca.html [NE,R=301,L]
+RewriteRule ^helion/installation_troubleshooting.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/installation_troubleshooting.html [NE,R=301,L]
+RewriteRule ^helion/cinder/vsa/vsa.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/cinder/vsa/vsa.html [NE,R=301,L]
+RewriteRule ^helion/bare_installation_esx.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/bare_installation_esx.html [NE,R=301,L] 
+RewriteRule ^helion/monasca/opsconsole/overview.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/monasca/opsconsole/overview.html [NE,R=301,L] 
+RewriteRule ^helion/monasca/monasca.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/monasca/monasca.html [NE,R=301,L]
 #
 #END Temporary rewrite rules for hos beta
 #
