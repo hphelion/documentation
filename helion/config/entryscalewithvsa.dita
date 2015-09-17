@@ -902,7 +902,7 @@
               </row>
               <row>
                 <entry>bond-data (optional)</entry>
-                <entry>Used to define a bond.  See: __ for details.</entry>
+                <entry>Used to define a bond. See: __ for details.</entry>
               </row>
               <row>
                 <entry>network-groups</entry>
@@ -913,7 +913,8 @@
           </tgroup>
         </table>
       </p>
-      <p>A <codeph>bond-data</codeph> definition is used to configure a bond device, and consists of the following attributes:</p>
+      <p>A <codeph>bond-data</codeph> definition is used to configure a bond device, and consists of
+        the following attributes:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_oft_z4p_jt">
           <tgroup cols="2">
@@ -948,7 +949,11 @@
         </table>
       </p>
       <p>The linux bonding driver supports a large number of parameters that control the operation
-        of the bond, as described in the <xref href="https://www.kernel.org/doc/Documentation/networking/bonding.txt" scope="external" format="html">Linux Ethernet Bonding Driver HOWTO</xref> document.  The parameter names and values may be specified as key-value pairs in the <codeph>options</codeph> section of <codeph>bond-data</codeph>.</p>
+        of the bond, as described in the <xref
+          href="https://www.kernel.org/doc/Documentation/networking/bonding.txt" scope="external"
+          format="html">Linux Ethernet Bonding Driver HOWTO</xref> document. The parameter names and
+        values may be specified as key-value pairs in the <codeph>options</codeph> section of
+          <codeph>bond-data</codeph>.</p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -1160,11 +1165,17 @@
       network-group: MGMT</codeblock>
     </section>
     <section id="nic_mappings.yml"><title>nic_mappings.yml</title>
+      <p>NIC mappings are used to ensure that the network device name used by the operating system
+        always maps to the same physical device. A NIC mapping is associated to a server in the
+        server definition.</p>
+      <p>This information comes from your <xref
+          href="../bare_install_kvm_cl.dita#preinstall_checklist/nic_mappings" type="table"
+          >pre-installation checklist</xref>.</p>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/nic_mappings.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
+      <p>Each entry in the <codeph>nic-mappings</codeph> list has the following attributes:</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_sp4_bqp_jt">
+        <table frame="all" rowsep="1" colsep="1" id="nic_mappings">
           <tgroup cols="2">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -1177,11 +1188,45 @@
             <tbody>
               <row>
                 <entry>name</entry>
-                <entry/>
+                <entry>A user-specified name for the mapping. This name may be used in a server
+                  definition to apply the mapping to that server.</entry>
               </row>
               <row>
                 <entry>physical-ports</entry>
-                <entry/>
+                <entry>A list containing device name to address mapping information.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Each entry in the <codeph>physical-ports</codeph> list has the following attributes:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="physical_ports">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>logical-name</entry>
+                <entry>The network device name that will be associated with the device at the
+                  specified <i>bus-address</i>. The logical-name specified here can be used as a
+                  device name in network interface model definitions.</entry>
+              </row>
+              <row>
+                <entry>type</entry>
+                <entry>The type of port. The current implementation supports only “simple-port”;
+                  other port types may be added in a future release.</entry>
+              </row>
+              <row>
+                <entry>bus-address</entry>
+                <entry>PCI bus address of the port. Enclose the bus address in quotation marks so
+                  yaml does not misinterpret the embedded colon (:) characters.</entry>
               </row>
             </tbody>
           </tgroup>
