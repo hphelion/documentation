@@ -45,7 +45,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
       important to meet the requirements and conform to the recommendations.</p>
     <p>This page provides an overview of the hardware and software that is supported for HP Helion
       OpenStack including setup and configuration information.</p>
-    <ul>
+    <ul> 
       <li>
         <xref type="section" href="#topic12282/os">OpenStack version information</xref>
       </li>
