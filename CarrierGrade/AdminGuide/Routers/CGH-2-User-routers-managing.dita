@@ -8,42 +8,20 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./UseCases/TasksforUsers/Routers/1.1commercial.managing.routers.md-->
- <!--permalink: /helion/commercial/1.1/dashboard/managing/routers/--></p>
-<p>Each network can be assigned a router, which provides a gateway to external networks.</p>
-<p>You can use the dashboards to create, delete, and configure your HP Helion OpenStack network and subnet(s). You can also manage the ports in your network.</p>
-<p>How you interact with your network environment depends upon your user type, either an administrative user (admin) or a non-administrative user (user).</p>
-<p>
-<b>Note:</b> The admin can perform all of the user tasks in addition to the admin tasks.</p>
-<section id="managing-your-router-as-a-user"> <title>Managing your router as a user</title>
-<p>As a user, you can work with the router in the active project.</p>
-<p>Access the router commands using the Networks panel on the Project dashboard.</p>
-<p>The Network panel contains commands to view a visual representation of your network and to enable you to work with your router.</p>
-<ul>
-<li>
-    
-  <xref href="CGH-2-User-routers-create.dita#topic1054">Create a Router</xref></li>
-<li>
-
-  <xref href="CGH-2-User-routers-delete.dita#topic1247">Delete a Router</xref></li>
-<li>
-  <xref href="CGH-2-User-routers-connect.dita#topic1321">Connect a network to a router</xref>
+    <p><!--UNDER REVISION--><!--./UseCases/TasksforUsers/Routers/1.1commercial.managing.routers.md--><!--permalink: /helion/commercial/1.1/dashboard/managing/routers/--></p>
+    <p>Each network can be assigned a router, which provides a gateway to external networks.</p>
+    <section id="managing-your-router-as-a-user">
+      <ul>
+        <li>
+          <xref href="CGH-2-User-routers-create.dita#topic1054">Create a Router</xref></li>
+        <li>
+          <xref href="CGH-2-User-routers-delete.dita#topic1247">Delete a Router</xref></li>
+        <li>
+          <xref href="CGH-2-User-routers-connect.dita#topic1321">Connect a network to a
+            router</xref>
         </li>
-<li>Add / Remove an external network to/from a Router</li>
-</ul>
-</section>
-<section id="managing-your-router-as-an-admin"> <title>Managing your router as an admin</title>
-<p>As an admin user, you can work on all of the network(s) in your domain, regardless of which project the network is associated with.</p>
-<p>An admin can create a shared network, which can be seen in every project in the domain. You can also create an external network.</p>
-<ul>
-<li>
-  <xref href="../Network/CGH-2-User-network-shared.dita#topic1239">Create a shared network</xref></li>
-<li>
-  <xref href="../Network/CGH-2-User-network-admin.create.dita#topic1681">Create an external network</xref></li>
-</ul>
-<p>Access the router commands using the System panel on the Admin dashboard.</p>
-</section>
-</body>
+        <li>Add / Remove an external network to/from a Router</li>
+      </ul>
+    </section>
+  </body>
 </topic>

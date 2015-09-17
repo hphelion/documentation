@@ -19,8 +19,14 @@
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
-        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
-            <b>Instances</b> tab. </li>
+        <li>Based on whether you are <xref
+                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on
+                        a project or the domain</xref>:<ul id="ul_rq1_rft_jt">
+                        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                                <b>Instances</b> tab. </li>
+                        <li>Click the <b>Project</b> dashboard, then the <b>Compute</b> panel, then
+                            the <b>Instances</b> tab. </li>
+                    </ul></li>
 <li>In the <b>Instances</b> screen, for the instance you want to terminate, click <b>Edit
             Instance</b> then <b>Terminate Instance</b>.<p>In the confirmation screen that appears,
             click <b>Terminate Instance</b>.</p><p>The instance is terminated and no longer appears

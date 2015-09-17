@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1853">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Viewing System
+    Information</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+    <p><!--http://docs.openstack.org/user-guide-admin/dashboard_manage_services.html--></p>
+    <p>As an administrative user, you can view information for OpenStack services.</p>
+    <p><image href="../../../media/CGH-2-system-info.png" width="600" id="image_pkz_2qs_jt"/></p>
+<section id="quotamod">
+      <p>To view system information:</p>
+      <ol id="ol_xhx_fvf_jt">
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System
+            Information</b> tab. <p>View the following information on these tabs:</p><ul
+            id="ul_tkf_nqs_jt">
+            <li><b>Services</b> - Displays the internal name and the public OpenStack name for each
+              service, the host on which the service runs, and whether or not the service is
+              enabled.</li>
+            <li><b>Compute Services</b> - Displays information specific to the Compute Service. Both
+              host and zone are listed for each service, as well as its activation status.</li>
+            <li><b>Block Storage Services</b> - Displays information specific to the Block Storage
+              Service. Both host and zone are listed for each service, as well as its activation
+              status.</li>
+            <li><b>Orchestration Services</b> - Displays information specific to the Orchestration
+              Service. Name, engine id, host and topic are listed for each service, as well as its
+              activation status.</li>
+            <!--<li><i>Network Agents</i>: Displays the network agents active within the cluster, such as L3 and DHCP agents, and the status of each agent.</li>-->
+          </ul></li>
+      </ol>
+      <p> </p>
+    </section>
+</body>
+</topic>

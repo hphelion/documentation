@@ -4,7 +4,9 @@
 <!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 
 
-<topic domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333729535" xml:lang="en-us">
+<topic
+    domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   "
+    id="jow1404333729535" xml:lang="en-us">
 
 
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Using the Admin
@@ -19,26 +21,16 @@
     <body>
 
 
-        <section id="section_N10027_N10024_N10001" >
-
-
+        <section id="section_N10027_N10024_N10001">
             <fig id="fig_N1002B_N10027_N10024_N10001">
                 <image href="../../../media/Fig_1_page_19.JPG" id="image_wbm_3dr_ft"/>
             </fig>
-
-
             <p>The dashboard contains the following panels and tabs.</p>
-
-
         </section>
 
 
-        <section id="section_N1003B_N10024_N10001" >
-
-
-            <title >System</title>
-
-
+        <section id="section_N1003B_N10024_N10001">
+            <title>System</title>
             <table id="table_u3h_gmf_44">
 
 
@@ -60,30 +52,18 @@
                         <row>
 
 
-                            <entry colname="col1" >
-
-
+                            <entry colname="col1">
                                 <p>Tab</p>
-
-
                             </entry>
 
 
-                            <entry colname="col2" >
-
-
-                                <p >Description</p>
-
-
+                            <entry colname="col2">
+                                <p>Description</p>
                             </entry>
 
 
-                            <entry colname="col3" >
-
-
-                                <p >Reference</p>
-
-
+                            <entry colname="col3">
+                                <p>Reference</p>
                             </entry>
 
 
@@ -99,38 +79,22 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Overview</p>
-
-
+                            <entry>
+                                <p>Overview</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Performance charts for system health monitoring,
-
-
-                                    including hosts status, provider-network port utilization, and
-
-
-                                    compute node processing, memory, and disk usage.</p>
-
-
+                            <entry>
+                                <p>Performance charts for system health monitoring, including hosts
+                                    status, provider-network port utilization, and compute node
+                                    processing, memory, and disk usage.</p>
                             </entry>
 
 
-                            <entry >
-
-
+                            <entry>
                                 <p><xref
                                         href="../Overview/CGH-2-User-system-overview.dita#topic8785"
-                                    >Viewing System Status</xref></p>
-
-
+                                        >Viewing System Status</xref></p>
                             </entry>
 
 
@@ -140,29 +104,21 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Resource Usage</p>
-
-
+                            <entry>
+                                <p>Resource Usage</p>
                             </entry>
 
 
-                            <entry >
-
-
+                            <entry>
                                 <p>Tools for performing Ceilometer database queries using real-time
                                     or collected data, to support detailed performance analysis.
                                     *regionone servers only* </p>
-
-
                             </entry>
 
 
                             <entry><xref
-                                        href="../HostManagement/CGH-2-User-host-management-resource.dita#topic8785">
-                                            Resource Usage</xref></entry>
+                                    href="../HostManagement/CGH-2-User-host-management-resource.dita#topic8785"
+                                    > Resource Usage</xref></entry>
 
 
                         </row>
@@ -171,34 +127,22 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Inventory</p>
-
-
+                            <entry>
+                                <p>Inventory</p>
                             </entry>
 
 
-                            <entry >
-
-
+                            <entry>
                                 <p>Controls for managing systems, hosts, and standardized CPU, port,
                                     or storage profiles that can be applied to hosts. *regionone
                                     servers only* </p>
-
-
                             </entry>
 
 
-                            <entry >
-
-
+                            <entry>
                                 <p><xref
                                         href="../Inventory/CGH-2-User-host-management-inventory.dita#topic44621"
-                                    >Managing Inventory</xref></p>
-
-
+                                        >Managing Inventory</xref></p>
                             </entry>
 
 
@@ -218,39 +162,27 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Host Aggregates</p>
-
-
+                            <entry>
+                                <p>Host Aggregates</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing host aggregates and availability zones.</p>
-
-
+                            <entry>
+                                <p>Controls for managing host aggregates and availability zones.</p>
                             </entry>
 
 
-                            <entry >
-
-
+                            <entry>
                                 <p><xref
                                         href="../HostAggregates/CGH-2-User-Aggregate-Managing.dita#topic2563"
-                                    >Managing Host Aggregates</xref></p>
-
-
+                                        >Managing Host Aggregates</xref></p>
                             </entry>
 
 
                         </row>
 
 
-<!--                        <row>
+                        <!--                        <row>
 
 
                             <entry >
@@ -289,35 +221,24 @@
                         </row>
 
 
--->                        <row>
+-->
+                        <row>
 
 
-                            <entry >
-
-
-                                <p >Instances</p>
-
-
+                            <entry>
+                                <p>Instances</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing virtual-machine instances.</p>
-
-
+                            <entry>
+                                <p>Controls for managing virtual-machine instances.</p>
                             </entry>
 
 
-                            <entry >
-
-
+                            <entry>
                                 <p><xref
                                         href="../Instances/CGH-2-User-Instance-Overview.dita#topic804"
-                                    >Managing Instances</xref></p>
-
-
+                                        >Managing Instances</xref></p>
                             </entry>
 
 
@@ -327,32 +248,22 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Server Groups</p>
-
-
+                            <entry>
+                                <p>Server Groups</p>
                             </entry>
 
 
-                            <entry >
-
-
+                            <entry>
                                 <p>Controls for managing server groups across all tenants. Server
                                     groups are collections of instances sharing common attributes.
                                     *regionone servers only* </p>
-
-
                             </entry>
 
 
-                            <entry >
-
-
-                                <p/>
-
-
+                            <entry>
+                                <p><xref
+                                        href="../ServerGroups/CGH-2-User-Server-Groups.dita#topic804"
+                                        >Managing Server Groups</xref></p>
                             </entry>
 
 
@@ -362,41 +273,22 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Volumes</p>
-
-
+                            <entry>
+                                <p>Volumes</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing virtual disk volumes
-
-
-                                    available for use with instances. The virtual volumes are
-
-
-                                    implemented using <term >storage volumes</term>
-
-
-                                    defined in the system. </p>
-
-
+                            <entry>
+                                <p>Controls for managing virtual disk volumes available for use with
+                                    instances. The virtual volumes are implemented using
+                                        <term>storage volumes</term> defined in the system. </p>
                             </entry>
 
 
-                            <entry >
-
-
+                            <entry>
                                 <p><xref
                                         href="../Volumes/CGH-2-User-volumes-managing.dita#topic1382"
-                                    >Managing Volumes</xref></p>
-
-
+                                        >Managing Volumes</xref></p>
                             </entry>
 
 
@@ -406,33 +298,21 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Flavors</p>
-
-
+                            <entry>
+                                <p>Flavors</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing standardized processor, disk, and memory complements
-
-
-                  (flavors) that can be applied to virtual machines.</p>
-
-
+                            <entry>
+                                <p>Controls for managing standardized processor, disk, and memory
+                                    complements (flavors) that can be applied to virtual
+                                    machines.</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p><xref href="../Flavor/CGH-2-User-flavors.dita#topic3041">Managing Flavors</xref></p>
-
-
+                            <entry>
+                                <p><xref href="../Flavor/CGH-2-User-flavors.dita#topic3041">Managing
+                                        Flavors</xref></p>
                             </entry>
 
 
@@ -442,28 +322,19 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Images</p>
-
-
+                            <entry>
+                                <p>Images</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing disk images used to initialize and configure virtual
-
-
-                  machines.</p>
-
-
+                            <entry>
+                                <p>Controls for managing disk images used to initialize and
+                                    configure virtual machines.</p>
                             </entry>
 
 
-                            <entry><xref href="../Images/CGH-2-User-image.dita#topic1827">Managing Images</xref></entry>
+                            <entry><xref href="../Images/CGH-2-User-image.dita#topic1827">Managing
+                                    Images</xref></entry>
 
 
                         </row>
@@ -472,29 +343,19 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Networks</p>
-
-
+                            <entry>
+                                <p>Networks</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing tenant networks, provider networks, and QoS (Quality of
-
-
-                  Service) policies or tenant weightings.</p>
-
-
+                            <entry>
+                                <p>Controls for managing tenant networks, provider networks, and QoS
+                                    (Quality of Service) policies or tenant weightings.</p>
                             </entry>
 
 
-                            <entry><xref href="../Network/CGH-2-User-network.dita#topic1741">Managing Networks
-                                </xref></entry>
+                            <entry><xref href="../Network/CGH-2-User-network.dita#topic1741"
+                                    >Managing Networks </xref></entry>
 
 
                         </row>
@@ -503,38 +364,22 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Routers</p>
-
-
+                            <entry>
+                                <p>Routers</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for managing virtual routers. Administrators can list the virtual
-
-
-                  routers created for tenants, view router and interface details, and delete
-
-
-                  routers.</p>
-
-
+                            <entry>
+                                <p>Controls for managing virtual routers. Administrators can list
+                                    the virtual routers created for tenants, view router and
+                                    interface details, and delete routers.</p>
                             </entry>
 
 
-                            <entry >
-
-
+                            <entry>
                                 <p><xref
                                         href="../Routers/CGH-2-User-routers-managing.dita#topic1681"
-                                    >Managing Routers</xref></p>
-
-
+                                        >Managing Routers</xref></p>
                             </entry>
 
 
@@ -544,25 +389,20 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Defaults</p>
-
-
+                            <entry>
+                                <p>Defaults</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Controls for viewing and setting the default quota values for new tenants. </p>
-
-
+                            <entry>
+                                <p>Controls for viewing and setting the default quota values for new
+                                    tenants. </p>
                             </entry>
 
 
-                            <entry />
+                            <entry><xref
+                                    href="../Defaults/CGH-2-User-Identity-quotas.dita#topic1853"
+                                />Managing Default Quotas</entry>
 
 
                         </row>
@@ -571,31 +411,19 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >Fault Management</p>
-
-
+                            <entry>
+                                <p>Fault Management</p>
                             </entry>
 
 
-                            <entry >
-
-
+                            <entry>
                                 <p>System alarms and customer logs. *regionone servers only* </p>
-
-
                             </entry>
 
 
-                            <entry >
-
-
-                                <p/>
-
-
-                            </entry>
+                            <entry><p/><xref
+                                    href="../FaultManagement/CGH-2-Userfault-mgmt.dita#topic2139"
+                                >Managing System Faults</xref></entry>
 
 
                         </row>
@@ -604,31 +432,19 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >System Configuration</p>
-
-
+                            <entry>
+                                <p>System Configuration</p>
                             </entry>
 
 
-                            <entry >
-
-
+                            <entry>
                                 <p>System configuration updates. *regionone servers only* </p>
-
-
                             </entry>
 
 
-                            <entry >
-
-
-                                <p/>
-
-
-                            </entry>
+                            <entry><xref
+                                    href="../SystemConfig/CGH-2-User-system-config.dita#topic2139"
+                                >Managing System Configuration</xref></entry>
 
 
                         </row>
@@ -637,36 +453,31 @@
                         <row>
 
 
-                            <entry >
-
-
-                                <p >System Information</p>
-
-
+                            <entry>
+                                <p>System Information</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p >Status information for services and network agent processes, availability zones,
-
-
-                  and host aggregates.</p>
-
-
+                            <entry>
+                                <p>Status information for services and network agent processes,
+                                    availability zones, and host aggregates.</p>
                             </entry>
 
 
-                            <entry >
-
-
-                                <p/>
-
-
+                            <entry>
+                                <p><xref
+                                        href="../SystemInformation/CGH-2-User-system-info.dita#topic1853"
+                                        >Viewing System Informaton</xref></p>
                             </entry>
 
 
+                        </row>
+                        <row>
+                            <entry>Metadata Definitions</entry>
+                            <entry/>
+                            <entry><xref
+                                    href="../SystemInformation/CGH-2-User-metadata.dita#topic1853"
+                                    >Viewing Metadate Definitions</xref></entry>
                         </row>
 
 
@@ -677,8 +488,6 @@
 
 
             </table>
-
-
         </section>
 
 

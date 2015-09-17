@@ -24,8 +24,14 @@
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
-        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
-            <b>Instances</b> tab. </li>
+        <li>Based on whether you are <xref
+                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on
+                        a project or the domain</xref>:<ul id="ul_ujt_v2t_jt">
+                        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                                <b>Instances</b> tab. </li>
+                        <li>Click the <b>Project</b> dashboard, then the <b>Compute</b> panel, then
+                            the <b>Instances</b> tab. </li>
+                    </ul></li>
         <li>In the <b>Instances</b> table, for the instance you want to pause, click <b>Edit
             Instance &gt; Pause Instance</b>.</li>
       </ol><p>The status of the instance reports *Paused*.</p>Note that many of the commands on the
@@ -37,16 +43,18 @@
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
-        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
-            <b>Instances</b> tab. </li>
+        <li>Based on whether you are <xref
+                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on
+                        a project or the domain</xref>:<ul id="ul_sjk_4ft_jt">
+                        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                                <b>Instances</b> tab. </li>
+                        <li>Click the <b>Project</b> dashboard, then the <b>Compute</b> panel, then
+                            the <b>Instances</b> tab. </li>
+                    </ul></li>
         <li>In the <b>Instances</b> table, for the instance you want to unpause, click <b>Edit
             Instance &gt; Unpause Instance</b>.<p>Note that all of the commands on the <b>More</b>
             menu are available.</p></li>
 </ol>
-<p>
-  <xref type="section" href="#topic1643"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

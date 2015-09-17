@@ -26,8 +26,14 @@
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
-        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Images</b>
-          tab. <p>The images in the domain are listed.</p></li>
+        <li>Based on whether you are <xref
+            href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on a project
+            or the domain</xref>:<ul id="ul_zvj_cgt_jt">
+            <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                <b>Volumes</b> tab. </li>
+            <li>Click the <b>Project</b> dashboard, then the <b>Compute</b> panel, then the
+                <b>Volumes</b> tab. </li>
+          </ul><p>The available images are listed.</p></li>
         <li>In the <b>Images</b> table, click <b>Create Image</b>.</li>
         <li>In the <b>Create an Image</b> screen, provide the image information:<ul>
             <li><b>Name</b> - Enter a name for the image.</li>
@@ -66,8 +72,14 @@
         Helion OpenStack Horizon Dashboard</xref>.</li>
       <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
         appropriate region and project</xref>.</li>
-      <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Images</b>
-        tab. <p>The images in the domain are listed.</p></li>
+      <li>Based on whether you are <xref
+            href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on a project
+            or the domain</xref>:<ul id="ul_btt_cgt_jt">
+            <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                <b>Volumes</b> tab. </li>
+            <li>Click the <b>Project</b> dashboard, then the <b>Compute</b> panel, then the
+                <b>Volumes</b> tab. </li>
+          </ul><p>The available images are listed.</p></li>
       <li>In the <b>Images</b> screen, click the check box next to the image name you want to delete. To
         select all images, click the check box next to <b>Image Name</b> the top row of the image
         list.</li>

@@ -26,8 +26,14 @@
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
-        <li>Click the <b>Admin</b> dashboard, then the <b>Router</b> panel.<p>The routers for the
-            selected project appear.</p></li>
+        <li>Based on whether you are <xref
+            href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on a project
+            or the domain</xref>:<ul id="ul_gt1_f3t_jt">
+            <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                <b>Routers</b> tab. </li>
+            <li>Click the <b>Project</b> dashboard, then the <b>Network</b> panel, then the
+                <b>Routers</b> tab. </li>
+          </ul><p>The available router(s) appear.</p></li>
         <li>Click <b>Create Router</b>.</li>
         <li>On the <b>Create Router</b> tab enter a name for the network.</li>
         <li>Click <b>Create Router</b>.</li>
@@ -42,7 +48,14 @@
               Helion OpenStack Horizon Dashboard</xref>.</li>
           <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
               appropriate region and project</xref>.</li>
-          <li>Click the <b>Admin</b> dashboard, then the <b>Network</b> panel.</li>
+          <li>Based on whether you are <xref
+              href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on a project
+              or the domain</xref>:<ul id="ul_wy4_h3t_jt">
+              <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                  <b>Routers</b> tab. </li>
+              <li>Click the <b>Project</b> dashboard, then the <b>Network</b> panel, then the
+                  <b>Routers</b> tab. </li>
+            </ul><p>The available router(s) appear.</p></li>
         
           <li>Determine if the router is connected to a network using the <xref
               href="../Network/CGH-2-User-network-viewing.dita#topic868">Network Topology

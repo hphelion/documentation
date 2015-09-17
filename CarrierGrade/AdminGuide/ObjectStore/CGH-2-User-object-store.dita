@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic2139">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing Object
+    Storage</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Systems Administrator"/>
+      <othermeta name="role" content="Cloud Architect"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Network Administrator"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Cloud Administrator"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="Network Engineer"/>
+      <othermeta name="role" content="Paul F"/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.md--><!--permalink: /helion/openstack/carrier/admin/host/management/hostaggregate/--></p>
+    <p>With object store, objects and files are written to multiple disk drives spread throughout
+      servers in the data center, with the Helion software responsible for ensuring data replication
+      and integrity across the cluster.</p>
+    <p><image href="../../../media/CGH-2-object-store.png" width="600" id="image_xv3_wkt_jt"/></p>
+    <p>You can use the dashboards to create and configure container store instances and move files
+      in and out of store.</p>
+    <p>How you interact with these store instance depends upon your user type, either an
+      administrative user (admin) or a non-administrative user (user).</p>
+    <p>
+      <b>Note:</b> The administrative user can perform all of the user tasks in addition to the
+      admin tasks, such as <xref
+        href="../../../UseCases/TasksforAdmins/Projects/1.1commercial.managing.projects.dita"
+        >setting a quota for volumes</xref>.</p>
+    <section id="managing-object-storage-as-a-user">
+      <title>Managing object storage as a user</title>
+      <p>As a user, you can work with any object storage container associated with the active
+        project.</p>
+      <ul id="ul_bnb_tjt_jt">
+        <li><xref href="CGH-2-User-container-create.dita#topic1751">Create and delete a
+            container</xref>
+        </li>
+        <li><xref href="CGH-2-User-container-upload.dita#topic1681">Upload an object into or
+            download an object from a container</xref></li>
+        <li><xref href="CGH-2-User-container-edit.dita#topic1631">Edit and delete an object in a
+            container</xref></li>
+      </ul>
+    </section>
+    <section id="managing-object-storage-as-an-admin">
+      <title>Managing object storage as an admin</title>
+      <p>As an admin user, you can work on all of the objects in your domain, regardless of which
+        project the object is associated with.</p>
+      <p>Access the admin object commands using the <b>Object Store</b> panel on the <b>Project</b>
+        dashboard.</p>
+      <p>There are no additional tasks available to the admin user.</p>
+    </section>
+  </body>
+</topic>

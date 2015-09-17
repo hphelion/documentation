@@ -19,8 +19,14 @@
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
-        <li>Click the <b>Admin</b> dashboard, then the <b>Network</b> panel. <p>The network(s) for
-            the selected project appear.</p></li>
+        <li>Based on whether you are <xref
+                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on
+                        a project or the domain</xref>:<ul id="ul_jzt_fht_jt">
+                        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                                <b>Networks</b> tab. </li>
+                        <li>Click the <b>Project</b> dashboard, then the <b>Network</b> panel, then
+                            the <b>Networks</b> tab. </li>
+                    </ul><p>The available network(s) appear.</p></li>
 <li>For the network to enable or disable, click <b>Edit Network</b>.</li>
 <li>In the <b>Edit Network</b> screen, select <b>Admin State</b> to enable the port</li>
 <li>Click <b>Save Changes</b>.</li>
@@ -32,8 +38,14 @@
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
-        <li>Click the <b>Admin</b> dashboard, then the <b>Network</b> panel. <p>The network(s) for
-            the selected project appear.</p></li>
+        <li>Based on whether you are <xref
+                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on
+                        a project or the domain</xref>:<ul id="ul_vtc_ght_jt">
+                        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                                <b>Networks</b> tab. </li>
+                        <li>Click the <b>Project</b> dashboard, then the <b>Network</b> panel, then
+                            the <b>Networks</b> tab. </li>
+                    </ul><p>The available network(s) appear.</p></li>
 <li>For the network to disable, click <b>Edit Network</b>.</li>
 <li>In the <b>Edit Network</b> screen, clear <b>Admin State</b> to disable the port.</li>
 <li>Click <b>Save Changes</b>.</li>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1631">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Creating a Stack</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+    <p><!--UNDER REVISION--><!--./UseCases/TasksforUsers/Object_Storage/1.1commercial.dashboard.container.edit.md--><!--permalink: /helion/commercial/1.1/dashboard/managing/container/edit/--></p>
+    <p>You can create a stack (or service) using the web administration interface, or you can use
+      the command-line interface.</p>
+    <p>Make sure that you have a template for the stack.</p>
+    <p>Depending on the template, you may need to collect some parameters in advance. For details,
+      see the documentation for the specific template, or refer to the Parameters section of the
+      template.</p>
+    <ol id="ol_fsm_24t_jt">
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          OpenStack Horizon Dashboard</xref>.</li>
+      <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+          appropriate region and project</xref>.</li>
+      <li>Click the <b>Project</b> dashboard, then the <b>Orchestrstion</b> panel, then the
+          <b>Stacks</b> tab. <p>The Stacks list appears.</p></li>
+      <li>Click <b>Launch Stack</b>.</li>
+      <li>In the <b>Select Template</b> screen, specify a template from the<b>Template Source</b>
+          list.<ul id="ul_gsm_24t_jt">
+          <li><b>File</b> - Browse to a locally stored template files.</li>
+          <li><b>Direct Input</b> - Enter text to define the template.</li>
+          <li><b>URL</b> - Enter an IP address to a template file content.</li>
+        </ul></li>
+      <li>Specify an environment file in the <b>Environment Source</b> list.<ul id="ul_hsm_24t_jt">
+          <li><b>File</b> - Browse to a locally stored environment files (YML format).</li>
+          <li><b>Direct Input</b> - Enter text to define the environment.</li>
+        </ul></li>
+      <li>Click <b>Next</b>.</li>
+      <li>In the <b>Launch Stack</b> complete the fields.<p><b>Note:</b> The form is created
+          dynamically based on the Parameters section of the template, and varies depending on the
+          template.</p></li>
+    </ol>
+  </body>
+</topic>

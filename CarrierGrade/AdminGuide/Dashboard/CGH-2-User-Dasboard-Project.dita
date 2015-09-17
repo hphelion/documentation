@@ -30,25 +30,24 @@
 
 
     <body>
-
-
         <section id="section_N10023_N10020_N10001">
             <p>The <b>Current Project</b> is identified at the top of the <wintitle>Information
                     Pane</wintitle>. Users with membership in more than one project can <xref
                     href="CGH-2-User-region-selector.dita#jow1432757989702">select a different
                     project using a drop-down list</xref>.</p>
-            <p><image href="../../../media/Fig_1_page_18.JPG" id="image_o5t_5cr_ft"/><image
-                    href="../../../media/Fig_2_page_18.JPG" id="image_m5w_vcr_ft"/><image
-                    href="../../../media/Fig_3_page_18.JPG" id="image_hks_wcr_ft"/></p>
+            <p><image href="../../../media/CGH-2-dashboard-project-compute.png" width="175"
+                    id="image_cwb_jws_jt"/><image
+                    href="../../../media/CGH-2-dashboard-project-network.png" width="175"
+                    id="image_qpn_mws_jt"/><image
+                    href="../../../media/CGH-2-dashboard-project-object.png" width="175"
+                    id="image_bdq_nws_jt"/><image
+                    href="../../../media/CGH-2-dashboard-project-orch.png" width="175"
+                    id="image_imk_4ws_jt"/></p>
             <p>The dashboard contains the following panels and tabs.</p>
         </section>
-
-
         <section id="section_N1003C_N10020_N10001">
             <title>Compute</title>
             <table id="table_ipm_r3f_44">
-
-
                 <tgroup cols="3">
                     <colspec colname="col1" colwidth="1*"/>
                     <colspec colname="col2" colwidth="4.37*"/>
@@ -68,250 +67,184 @@
                         <row>
                             <entry> Overview </entry>
                             <entry>Limit Summary and Uage Summary</entry>
-                            <entry></entry>
+                            <entry><xref
+                                    href="../Overview/CGH-2-User-system-overview.dita#topic8785"
+                                    >Viewing System Status</xref></entry>
                         </row>
                         <row>
                             <entry> Instances </entry>
                             <entry>Controls for managing instances associated with the tenant,
                                 including controls for creating snapshots. </entry>
-                            <entry></entry>
-                        </row>
-                        <row>
-                            <entry>Server Groups </entry>
-                            <entry>Controls for managing server groups associated with the tenant.
-                                KVM region only.</entry>
-                            <entry></entry>
+                            <entry><xref
+                                    href="../Instances/CGH-2-User-Instance-Overview.dita#topic804"
+                                    >Managing Instances</xref></entry>
                         </row>
                         <row>
                             <entry>Volumes </entry>
                             <entry>Controls for managing virtual disk volumes associated with the
                                 tenant's instances. </entry>
-                            <entry></entry>
+                            <entry><xref
+                                    href="../Volumes/CGH-2-User-volumes-managing.dita#topic1382"
+                                    >Managing Volumes</xref></entry>
                         </row>
                         <row>
-                            <entry>Images &amp; Snapshots</entry>
+                            <entry>Images</entry>
                             <entry>Controls for managing images, and information about available
                                 snapshots created from instances.</entry>
-                            <entry></entry>
+                            <entry><xref href="../Images/CGH-2-User-image.dita#topic1827">Managing
+                                    Images</xref></entry>
                         </row>
                         <row>
                             <entry>Access &amp; Security</entry>
                             <entry>Controls for network protocol and port security, SSH-based access
                                 to virtual machines, API access to services, and floating IP address
                                 allocations. </entry>
-                            <entry></entry>
+                            <entry/>
                         </row>
                     </tbody>
                 </tgroup>
-
-
             </table>
         </section>
-
-
         <section id="section_N1011D_N10020_N10001">
             <title>Network</title>
             <table id="table_u3h_gmf_44">
-
-
                 <tgroup cols="3">
-
-
                     <colspec colname="col1" colwidth="14*"/>
-
-
                     <colspec colname="col2" colwidth="60*"/>
-
-
                     <colspec colname="col3" colwidth="26*"/>
-
-
                     <thead>
-
-
                         <row>
-
-
                             <entry colname="col1">
                                 <p>Tab</p>
                             </entry>
-
-
                             <entry colname="col2">
                                 <p>Description</p>
                             </entry>
-
-
                             <entry colname="col3">
                                 <p>Reference</p>
                             </entry>
-
-
                         </row>
-
-
                     </thead>
-
-
                     <tbody>
-
-
                         <row>
-
-
                             <entry>
                                 <p>Network Topology</p>
                             </entry>
-
-
                             <entry>
                                 <p>Configuration charts depicting system networks, instances, and
                                     network connections between instances.</p>
                             </entry>
-
-
                             <entry/>
-
-
                         </row>
-
-
                         <row>
-
-
                             <entry>
                                 <p>Networks</p>
                             </entry>
-
-
                             <entry>
                                 <p>Controls for managing networks for the current tenant, and
                                     viewing QoS (Quality of Service) policies or weightings for
                                     tenants of which the user is a member.</p>
                             </entry>
-
-
                             <entry>
                                 <p/>
                             </entry>
-
-
                         </row>
-
-
                         <row>
-
-
                             <entry>
                                 <p>Routers</p>
                             </entry>
-
-
                             <entry>
                                 <p>Controls for managing virtual routers. Tenant members can create
                                     and delete virtual routers, view router details and delete
                                     interfaces, and clear gateways.</p>
                             </entry>
-
-
                             <entry>
                                 <p/>
                             </entry>
-
-
                         </row>
-
-
                     </tbody>
-
-
                 </tgroup>
-
-
             </table>
         </section>
-
-
-        <section id="section_N101BF_N10020_N10001">
-            <title>Orchestration</title>
-            <table id="table_ecs_dnf_44">
-
-
+        <section>
+            <title>Object Store</title>
+            <table id="table_opp_hxs_jt">
                 <tgroup cols="3">
-
-
                     <colspec colname="col1" colwidth="14*"/>
-
-
                     <colspec colname="col2" colwidth="60*"/>
-
-
                     <colspec colname="col3" colwidth="26*"/>
-
-
                     <thead>
-
-
                         <row>
-
-
                             <entry colname="col1">
                                 <p>Tab</p>
                             </entry>
-
-
                             <entry colname="col2">
                                 <p>Description</p>
                             </entry>
-
-
                             <entry colname="col3">
                                 <p>Reference</p>
                             </entry>
-
-
                         </row>
-
-
                     </thead>
-
-
                     <tbody>
-
-
                         <row>
-
-
+                            <entry>
+                                <p>Containers</p>
+                            </entry>
+                            <entry>
+                                <p/>
+                            </entry>
+                            <entry>
+                                <p/>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section id="section_N101BF_N10020_N10001">
+            <title>Orchestration</title>
+            <table id="table_ecs_dnf_44">
+                <tgroup cols="3">
+                    <colspec colname="col1" colwidth="14*"/>
+                    <colspec colname="col2" colwidth="60*"/>
+                    <colspec colname="col3" colwidth="26*"/>
+                    <thead>
+                        <row>
+                            <entry colname="col1">
+                                <p>Tab</p>
+                            </entry>
+                            <entry colname="col2">
+                                <p>Description</p>
+                            </entry>
+                            <entry colname="col3">
+                                <p>Reference</p>
+                            </entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
                             <entry>
                                 <p>Stacks</p>
                             </entry>
-
-
                             <entry>
                                 <p>Details for existing services (stacks), and controls for creating
                                     new services (launching stacks). Service details include
                                     topologies, resource allocations, and event histories.</p>
                             </entry>
-
-
                             <entry>
                                 <p/>
                             </entry>
-
-
                         </row>
-
-
+                        <row>
+                            <entry>Resource Types</entry>
+                            <entry/>
+                            <entry/>
+                        </row>
                     </tbody>
-
-
                 </tgroup>
-
-
             </table>
         </section>
-
-
     </body>
 
 

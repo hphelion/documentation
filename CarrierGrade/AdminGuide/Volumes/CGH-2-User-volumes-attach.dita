@@ -19,8 +19,14 @@
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
-        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Volumes</b>
-          tab. </li>
+        <li>Based on whether you are <xref
+                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on
+                        a project or the domain</xref>:<ul id="ul_xf1_zft_jt">
+                        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                                <b>Volumes</b> tab. </li>
+                        <li>Click the <b>Project</b> dashboard, then the <b>Compute</b> panel, then
+                            the <b>Volumes</b> tab. </li>
+                    </ul></li>
 <li>Select the volume to add to an instance and click <b>Edit Attachments</b>.</li>
 <li>In the <b>Manage Volume Attachments</b> dialog box, select an instance.</li>
 <li>Enter the name of the device from which the volume is accessible by the instance. (<b>Note:</b>
@@ -36,8 +42,14 @@
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
-        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Volumes</b>
-          tab. </li>
+        <li>Based on whether you are <xref
+                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on
+                        a project or the domain</xref>:<ul id="ul_sq3_zft_jt">
+                        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                                <b>Volumes</b> tab. </li>
+                        <li>Click the <b>Project</b> dashboard, then the <b>Compute</b> panel, then
+                            the <b>Volumes</b> tab. </li>
+                    </ul></li>
 <li>Select the volume you want to detach and click <b>Edit Attachments</b>.</li>
 <li>Click <b>Detach Volume</b> to confirm your changes.</li>
 </ol>

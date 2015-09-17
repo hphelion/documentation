@@ -156,7 +156,18 @@
                     navtitle="Working with Host Interface  Profiles" locktitle="yes"/>
             </topicref>
         </topicref>
-        <topicref href="Inventory/CGH-2-User-hypervisors.dita" navtitle="Managing Hypervisors"
+        <topicref href="Hypervisors/CGH-2-User-hypervisors.dita" navtitle="Managing Hypervisors"
+            locktitle="yes"/>
+        <topicref href="ObjectStore/CGH-2-User-object-store.dita" navtitle="Managing Object Storage"
+            locktitle="yes">
+            <topicref href="ObjectStore/CGH-2-User-container-create.dita"
+                navtitle="Creating and Deleting Containers" locktitle="yes"/>
+            <topicref href="ObjectStore/CGH-2-User-container-upload.dita"
+                navtitle="Uploading and Downloading Objects" locktitle="yes"/>
+            <topicref href="ObjectStore/CGH-2-User-container-edit.dita"
+                navtitle="Editing and Deleting Objects" locktitle="yes"/>
+        </topicref>
+        <topicref href="Stacks/CGH-2-User-stacks.dita" navtitle="Using Stacks (Orchestration)"
             locktitle="yes"/>
         <topicref href="Inventory/CGH-2-User-host-management-hostaggregate.dita"
             navtitle="Managing Host Aggregates" locktitle="yes"/>
@@ -242,7 +253,8 @@
             <topicref href="Routers/CGH-2-User-routers-connect.dita"
                 navtitle="Connecting a Network to a Router" locktitle="yes"/>
         </topicref>
-        <topichead navtitle="Defaults"/>
+        <topicref href="Defaults/CGH-2-User-Identity-quotas.dita" navtitle="Managing Default Quotas"
+            locktitle="yes"/>
         <topicref href="FaultManagement/CGH-2-Userfault-mgmt.dita" navtitle="Managing System Faults"
             locktitle="yes">
             <topicref href="FaultManagement/CGH-2-Userfault-mgmt-alarms.dita"
@@ -261,7 +273,10 @@
             <topicref href="SystemConfig/CGH-2-User-system-config-filesyst.dita"
                 navtitle="Changing Storage Space Allotments on the Controller" locktitle="yes"/>
         </topicref>
-        <topichead navtitle="System Information"/>
+        <topicref href="SystemInformation/CGH-2-User-system-info.dita"
+            navtitle="View Services Information" locktitle="yes"/>
+        <topicref href="SystemInformation/CGH-2-User-metadata.dita"
+            navtitle="Viewing Metadata Definitions" locktitle="yes"/>
         <topicref href="Identity/CGH-2-User-Identity-managing.dita" navtitle="Managing Identity"
             locktitle="yes">
             <topicref href="Identity/CGH-2-User-Identity-managing-users.dita"
