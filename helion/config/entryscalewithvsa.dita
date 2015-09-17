@@ -14,9 +14,7 @@
         <li><xref href="#entry_scale_with_vsa/cloudConfig.yml">cloudConfig.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/baremetalConfig.yml">baremetalConfig.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/control_plane.yml">control_plane.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/disks_compute.yml">disks_compute.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/disks_controller.yml">disks_controller.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/disks_vsa.yml">disks_vsa.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/disks_.yml">disks_*.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/net_interfaces.yml">net_interfaces.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/network_groups.yml">network_groups.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/networks.yml">networks.yml</xref></li>
@@ -560,7 +558,7 @@
           service-components:
         - vsa</codeblock>
     </section>
-    <section id="disks_x.yml"><title>disks_--.yml</title>
+    <section id="disks_.yml"><title>disks_*.yml</title>
       <p>The disk model is used to specify how the directly attached disks on the server should be
         configured. It can also identify which service or service component consumes the disk, e.g.
         Swift object server, and provide service specific information associated with the disk.</p>
@@ -569,14 +567,26 @@
       <p>If the operating system has been installed by the installation process then the root disk
         will already have been set up as a Volume Group with a single logical volume. This logical
         volume will have been created on a partition identified, symbolically, in the configuration
-        files as /dev/sda_root. This is due to the fact that different BIOS systems, (UEFI, Legacy)
+        files as /dev/sda_root. This is due to the fact that different BIOS systems (UEFI, Legacy)
         will result in different partition numbers on the root disk.</p>
       <p>The path to these files are:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/disks_compute.yml
 ~/helion/my_cloud/definition/data/disks_controller.yml
 ~/helion/my_cloud/definition/data/disks_vsa.yml</codeblock></p>
-      <p>The key values to enter into the <codeph>volume-groups</codeph> portion of the file
-        are:</p>
+      <p>The <codeph>volume-groups</codeph> configuration object is used to define volume groups and
+        their constituent logical volumes.</p>
+      <p>Note that the volume groups are not exact analogs of device groups. A volume group
+        specifies a set of physical volumes used to make up a volume group that is then subdivided
+        into multiple logical volumes.</p>
+      <p>The installation process automatically creates a volume group name “hlm-vg” on the first
+        drive in the system. It creates a “root” logical volume on this. The volume group can be
+        expanded by adding more physical volumes (see examples). In addition, it is possible to
+        create more logical volumes on this volume group to provide dedicated capacity for different
+        services or file system mounts.</p>
+      <p>Additional volume groups can also be created using the <codeph>volume-groups</codeph> model
+        specification.</p>
+      <p>Here is a description of the fields in the <codeph>volume-groups</codeph> portion of the
+        disk model files:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="volume_groups">
           <tgroup cols="2">
@@ -639,8 +649,8 @@
           </tgroup>
         </table>
       </p>
-      <p>The key values to enter into the <codeph>device-groups</codeph> portion of the file
-        are:</p>
+      <p>Here is a description of the fields in the <codeph>device-groups</codeph> portion of the
+        disk model files:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="device_groups">
           <tgroup cols="2">
@@ -677,7 +687,8 @@
           </tgroup>
         </table>
       </p>
-      <p>Here is the sample file included with the install:</p>
+      <p>Here is the sample file for <codeph>disks_compute.yml</codeph> included with the
+        install:</p>
       <codeblock>
 ---
   product:
@@ -724,12 +735,8 @@
               mount: /var/lib/nova
               fstype: ext4
               mkfs-opts: -O large_file</codeblock>
-    </section>
-    <section id="disks_controller.yml"><title>disks_controller.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/disks_controller.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
-      <p>Here is the sample file included with the install:</p>
+      <p>Here is the sample file for <codeph>disks_controller.yml</codeph> included with the
+        install:</p>
       <codeblock>
 ---
   product:
@@ -787,12 +794,7 @@
                 - account
                 - container
                 - object-0</codeblock>
-    </section>
-    <section id="disks_vsa.yml"><title>disks_vsa.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/disks_vsa.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
-      <p>Here is the sample file included with the install:</p>
+      <p>Here is the sample file for <codeph>disks_vsa.yml</codeph> included with the install:</p>
       <codeblock>
 ---
   product:
