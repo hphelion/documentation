@@ -1023,7 +1023,334 @@
     <section id="network_groups.yml"><title>network_groups.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/network_groups.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
+      <p>A network group definition has the following attributes:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_jp5_jlt_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the network group. The name is used to make
+                  references from other configuration files.</entry>
+              </row>
+              <row>
+                <entry>component-endpoints (optional)</entry>
+                <entry>The list of service components that will bind to, or need direct access to
+                  networks in this network group.</entry>
+              </row>
+              <row>
+                <entry>hostname (optional)</entry>
+                <entry>If set to true, the name of the address associated with a network in this
+                  group will be used to set the hostname of the server.</entry>
+              </row>
+              <row>
+                <entry>hostname-suffix (optional)</entry>
+                <entry>If supplied, this string will be used in the name generation. If not
+                  specified, the name of the network group will be used.</entry>
+              </row>
+              <row>
+                <entry>load-balancers (optional)</entry>
+                <entry>A list of load balancers to be configured on networks in this network group.
+                  Because load balances need a VIP any network group that contains a load balance
+                  can only have one network associated with it.</entry>
+              </row>
+              <row>
+                <entry>routes (optional)</entry>
+                <entry><p>A list of network groups that networks in this group provide access to via
+                    their gateway. This can include “default” to define the default route. </p> A
+                  network group with no services attached to it can be used to define routes to
+                  external networks.</entry>
+              </row>
+              <row>
+                <entry>tags (optional)</entry>
+                <entry>A list of network tags.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>A load balancer definition has the following attributes:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_gv1_wlt_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the load balancer.</entry>
+              </row>
+              <row>
+                <entry>provider</entry>
+                <entry>The service component that implements the load balancer. Currently only
+                  “ip-cluster” (haproxy) is supported. Future releases will provide support for
+                  external load balancers.</entry>
+              </row>
+              <row>
+                <entry>roles</entry>
+                <entry>The list of endpoint roles that this load balancer provides (see below).
+                  Valid roles are “public”, “internal”, and “admin”. To ensure separation of public
+                  cannot be combined with internal/admin. See 3.8.1.1 for an example of how the role
+                  provides endpoint separation</entry>
+              </row>
+              <row>
+                <entry>components (optional)</entry>
+                <entry>The list of service components the load balancer provides an unencrypted VIP
+                  for.</entry>
+              </row>
+              <row>
+                <entry>tls-components (optional)</entry>
+                <entry>The list of service components the load balancer provides TLS terminated VIP
+                  for.</entry>
+              </row>
+              <row>
+                <entry>external-name (optional)</entry>
+                <entry>The name to be registered in Keystone for the publicURL. If not specified the
+                  IP address of the VIP will be registered.</entry>
+              </row>
+              <row>
+                <entry>cert-file (optional)</entry>
+                <entry>The name of the certificate file to be used for public endpoints.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Helion OpenStack supports a small number of network tags which may be used to convey
+        information between the input model and the service components. A network tag consists
+        minimally of a tag name; some network tags have additional attributes, described below:</p>
+      <p><b>neutron.networks.vxlan</b></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="neutron_networks_vxlan">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Tag</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>neutron.networks.vxlan</entry>
+                <entry>This tag causes Neutron to be configured to use VxLAN as the underlay for
+                  tenant networks. The associated network group will carry the VxLAN
+                  traffic.</entry>
+              </row>
+              <row>
+                <entry>tenant-vxlan-id-range (optional)</entry>
+                <entry>Used to specify the VxLAN identifier range in the format
+                  “&lt;min-id&gt;:&lt;max-id&gt;”. The default range is “1001:65535”. Enclose the
+                  range in quotation marks.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Example using the default ID range:
+        <codeblock>
+tags:
+  - neutron.networks.vxlan</codeblock></p>
+      <p>Example using a user-defined ID range:
+        <codeblock>
+tags:
+  - neutron.networks.vxlan:
+      tenant-vxlan-id-range: “1:20000”</codeblock></p>
+      <p><b>neutron.networks.vlan</b></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="neutron_networks_vlan">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Tag</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>neutron.networks.vlan</entry>
+                <entry>
+                  <p>This tag causes Neutron to be configured for provider VLAN networks, and
+                    optionally be configured to use VLAN as the underlay for tenant networks. The
+                    associated network group will carry the VLAN traffic. This tag can be specified
+                    on multiple network groups.</p>
+                  <p>NOTE: this tag does not cause any Neutron networks to be created, that must be
+                    done in Neutron after the cloud is deployed.</p></entry>
+              </row>
+              <row>
+                <entry>provider-physical-network</entry>
+                <entry>The provider network name. This is the name to be used in the Neutron API for
+                  the <i>provider:physical_network</i> parameter of network objects.</entry>
+              </row>
+              <row>
+                <entry>tenant-vlan-id-range (optional)</entry>
+                <entry>This attribute causes Neutron to use VLAN for tenant networks; omit this
+                  attribute if you are using provider VLANs only. It specifies the VLAN ID range for
+                  tenant networks, in the format “&lt;min-id&gt;:&lt;max-id&gt;”. Enclose the range
+                  in quotation marks.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Example using a provider vlan only (may be used with tenant VxLAN:
+        <codeblock>
+tags:
+  - neutron.networks.vlan:
+      provider-physical-network: physnet1</codeblock></p>
+      <p>Example using a tenant and provider VLAN:
+        <codeblock>
+tags:
+  - neutron.networks.vlan:
+      provider-physical-network: physnet1
+      tenant-vxlan-id-range: “100:200”</codeblock></p>
+      <p><b>neutron.networks.flat</b></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="neutron_networks_flat">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Tag</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>neutron.networks.flat</entry>
+                <entry>
+                  <p>This tag causes Neutron to be configured for provider flat networks. The
+                    associated network group will carry the traffic. This tag can be specified on
+                    multiple network groups.</p>
+                  <p>NOTE: this tag does not cause any Neutron networks to be created, that must be
+                    done in Neutron after the cloud is deployed.</p>
+                </entry>
+              </row>
+              <row>
+                <entry>provider-physical-network</entry>
+                <entry>The provider network name. This is the name to be used in the Neutron API for
+                  the <i>provider:physical_network</i> parameter of network objects. When specified
+                  on multiple network groups, the name must be unique for each network
+                  group.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Example using a provider flat network:
+        <codeblock>
+tags:
+  - neutron.networks.flat:
+       provider-physical-network: flatnet1</codeblock></p>
+      <p><b>neutron.l3_agent.external_network_bridge</b></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="neutron_l3_agent">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Tag</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>neutron.l3_agent.external_network_bridge</entry>
+                <entry>
+                  <p>This tag causes the Neutron L3 Agent to be configured to use the associated
+                    network group as the Neutron external network for floating IP addresses. A CIDR
+                      <b>should not</b> be defined for the associated physical network, as that will
+                    cause addresses from that network to be configured in the hypervisor. When this
+                    tag is used, provider networks cannot be used as external networks.</p>
+                  <p>NOTE: this tag does not cause a Neutron external networks to be created, that
+                    must be done in Neutron after the cloud is deployed.</p>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Example using neutron.l3_agent.external_network_bridge:
+        <codeblock>
+tags:
+  - neutron.l3_agent.external_network_bridge</codeblock></p>
+      <p><b>vsa.iscsi</b></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="vsa_iscsi">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Tag</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>vsa.iscsi (optional)</entry>
+                <entry>
+                  <p>This tag is used to identify the network group to which the VSA virtual machine
+                    will be attached. This tag is required when using VSA as a block storage back
+                    end for Cinder.</p>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Example using neutron.l3_agent.external_network_bridge:
+        <codeblock>
+tags:
+  - vsa.iscsi</codeblock></p>
+      <p><b>nova.compute.iscsi</b></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="nova_compute_iscsi">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Tag</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>nova.compute.iscsi (optional)</entry>
+                <entry>
+                  <p>This tag is used to identify the network group for nova-compute to use for
+                    ISCSI communications with the Cinder block storage back end. This tag is
+                    required when using an ISCSI block storage back end for Cinder.</p>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Example using neutron.l3_agent.external_network_bridge:
+        <codeblock>
+tags:
+  - nova.compute.iscsi</codeblock></p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -1167,10 +1494,11 @@
     <section id="nic_mappings.yml"><title>nic_mappings.yml</title>
       <p>NIC mappings are used to ensure that the network device name used by the operating system
         always maps to the same physical device. A NIC mapping is associated to a server in the
-        server definition.</p>
-      <p>This information comes from your <xref
+          <codeph>servers.yml</codeph> definition file.</p>
+      <p>Your NIC adapter PCI Bus address information that will go into your nic_mappings file was
+        also included in the <xref
           href="../bare_install_kvm_cl.dita#preinstall_checklist/nic_mappings" type="table"
-          >pre-installation checklist</xref>.</p>
+          >pre-installation checklist</xref> steps.</p>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/nic_mappings.yml</codeblock></p>
       <p>Each entry in the <codeph>nic-mappings</codeph> list has the following attributes:</p>
@@ -1284,6 +1612,8 @@
         - logical-name: eth4
           type: simple-port
           bus-address: "0000:04:00.1"</codeblock>
+      <note>You can remove the NIC information examples that do not pertain to your environment from
+        this file.</note>
     </section>
     <section id="server_groups.yml"><title>server_groups.yml</title>
       <p>The path to this file is:</p>

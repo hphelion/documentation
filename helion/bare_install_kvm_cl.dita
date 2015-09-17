@@ -511,7 +511,7 @@
       <p>From your deployer, run the following command and use this information for your <codeph>nic_mappings.yml</codeph> file:
         <codeblock>sudo lspci | grep Ethernet</codeblock></p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_vc5_5qz_3t">
+        <table frame="all" rowsep="1" colsep="1" id="nic_mappings">
           <tgroup cols="1">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
             <thead>
