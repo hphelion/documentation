@@ -143,6 +143,16 @@
           <navtitle>Firewall (FWaaS)</navtitle>
         </topicmeta>
       </topicref>
+      <topicref href="helion/neutron/vpnaas.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>VPN (VPNaaS)</navtitle>
+        </topicmeta>
+      </topicref>
+      <topicref href="helion/neutron/multinetwork.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>Multiple External Networks</navtitle>
+        </topicmeta>
+      </topicref>
     </topicref>
     <!-- reporting = metering = ceilomter -->
     <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Service"
