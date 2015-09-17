@@ -40,10 +40,11 @@
       <p>The physical network infrastructure must be configured to convey the provider VLAN traffic as 
         tagged VLANs to the cloud compute nodes and neutron network nodes. Configuration of the physical 
         network infrastructure is outside the scope of the HP Helion OpenStack 2.0 software.</p>
-      <p>HP Helion OpenStack 2.0 automates the server networking configuration and the Neutron configuration based on information 
-      in the cloud definition. To configure the system for provider VLANs, specify the neutron.networks.vlan 
-      tag with a provider-physical-network attribute on one or more network groups. 
-      For example (some attributes omitted for brevity):</p>
+      <p>HP Helion OpenStack 2.0 automates the server networking configuration and the Neutron
+        configuration based on information in the cloud definition. To configure the system for
+        provider VLANs, specify the<i> neutron.networks.vlan</i> tag with a
+          <i>provider-physical-network</i> attribute on one or more network groups. For example
+        (some attributes omitted for brevity):</p>
       <codeblock>network-groups:
         
   - name: NET_GROUP_A
@@ -85,8 +86,9 @@
     tagged-vlan: false
     network-group: NET_GROUP_B</codeblock>
       
-      <p>When the cloud is deployed, HOS 2.0 will create the appropriate bridges on the servers, and 
-        set the appropriate attributes in the Neutron configuration files (e.g. bridge_mappings).</p>
+      <p>When the cloud is deployed, HP Helion OpenStack 2.0 will create the appropriate bridges on
+        the servers, and set the appropriate attributes in the Neutron configuration files (e.g.
+        bridge_mappings).</p>
       <p>After the cloud has been deployed, create Neutron network objects for each provider VLAN. 
         For example, using the Neutron CLI:</p>
       <codeblock>neutron net-create --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id 101 mynet101
