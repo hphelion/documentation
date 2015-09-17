@@ -227,7 +227,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
     <section>
       <p>The following input/output (I/O) cards are supported:</p>
     </section>
-    <section id="storage-devices"><title>Storage Devices</title>
+    <section id="storage-devices"><title>Storage Systems</title>
     </section>
     <section id="emc-storage"><title>EMC Storage Devices</title>
       <ul>
