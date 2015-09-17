@@ -246,25 +246,230 @@
     <section id="control_plane.yml"><title>control_plane.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/control_plane.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
+      <p>The key values to enter into this document are described in the table below:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_zrw_1z4_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Explanation</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>This name identifies the control plane and will be used as part of the
+                  hostname prefix.</entry>
+              </row>
+              <row>
+                <entry>region-name (optional)</entry>
+                <entry>This name identifies the Keystone region within which services in the control
+                  plane will be registered.</entry>
+              </row>
+              <row>
+                <entry>failure-zones (optional)</entry>
+                <entry>A list of Server Group names that servers for this control plane will be
+                  allocated from. If no failure-zones are specified, only servers not associated
+                  with a Server Group will be used.</entry>
+              </row>
+              <row>
+                <entry>common-service-components (optional)</entry>
+                <entry>This lists a set of service components that run on all servers in the control
+                  plane (clusters and resource pools)</entry>
+              </row>
+              <row>
+                <entry>clusters</entry>
+                <entry>A list of clusters for this control plane</entry>
+              </row>
+              <row>
+                <entry>resource-nodes</entry>
+                <entry>A list of resource nodes for this control plane</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>To further breakdown what the options are in the <codeph>clusters</codeph> portion of this
+        file, here are some field descriptions:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="clusters">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Explanation</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>id</entry>
+                <entry>Each cluster must have a unique ID.</entry>
+              </row>
+              <row>
+                <entry>name</entry>
+                <entry>The cluster name provided is used in the hostname. Cluster and resource-node
+                  names must be unique within a control plane. This value is used to persist server
+                  allocations and cannot be changed once servers have been allocated.</entry>
+              </row>
+              <row>
+                <entry>server-role</entry>
+                <entry>Only servers matching the specified role will be allocated to this
+                  cluster.</entry>
+              </row>
+              <row>
+                <entry>service-components</entry>
+                <entry>The list of service components (together with common-service-components for
+                  the control plane) to be deployed on the servers allocated for the
+                  cluster.</entry>
+              </row>
+              <row>
+                <entry>
+                  <p>member-count</p>
+                  <p>min-count</p>
+                  <p>max-count</p>
+                  <p>(all optional)</p>
+                </entry>
+                <entry>
+                  <p>Defines the number of servers to add to the cluster.</p><p>The number of
+                    servers that can be supported in a cluster depends on the services it is
+                    running. For example MySQL and RabbitMQ can only be deployed on clusters on 1
+                    (non-HA) or 3 (HA) servers. Other services may support different sizes of
+                    cluster.</p>
+                  <p>If min-count is specified that at least that number of servers will be
+                    allocated to the cluster. If min-count is not specified it defaults to a value
+                    of 1.</p>
+                  <p>If max-count is specified then the cluster will be limited to that number of
+                    servers. If max-count is not specified then all servers matching the required
+                    role and failure-zones will be allocated to the cluster.</p>
+                  <p>If member-count is specified then it sets min-count and max-count to the
+                    specified value.</p></entry>
+              </row>
+              <row>
+                <entry>failure-zones (optional)</entry>
+                <entry>A list of Server Groups that servers will be allocated from. If specified,
+                  this overrides the value specified for the control-plane. If not specified, the
+                  control-plane value is used. </entry>
+              </row>
+              <row>
+                <entry>allocation-policy (optional)</entry>
+                <entry>
+                  <p>Defines how failure zones will be used when allocating servers.</p>
+                  <p><b>strict</b>: Server allocations will be distributed across all specified
+                    failure zones. (if max-count is not an exact factor of the number of zones than
+                    some zones may provide one more server than other zones)</p>
+                  <p><b>any</b>: Server allocations will be made from any combination of failure
+                    zones</p>
+                  <p>The default allocation-policy for a cluster is <i>strict</i></p>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>To further breakdown what the options are in the <codeph>resource-nodes</codeph> portion of
+        this file, here are some field descriptions:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="resource_nodes">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Explanation</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry><p>The name of this set of resource-nodes. Cluster names and resource-node
+                    names must mutually be unique within a control plane.</p> This value is used to
+                  persist server allocations, and cannot be changed once servers have been
+                  allocated. </entry>
+              </row>
+              <row>
+                <entry>resource-prefix</entry>
+                <entry>The resource-prefix is used in the name generation.</entry>
+              </row>
+              <row>
+                <entry>server-role</entry>
+                <entry>Only servers matching the specified role will be allocated to this
+                  cluster.</entry>
+              </row>
+              <row>
+                <entry>service-components</entry>
+                <entry>The list of service components (together with common-service-components for
+                  the control plane) to be deployed on the servers in this resource group.</entry>
+              </row>
+              <row>
+                <entry>
+                  <p>member-count</p>
+                  <p>min-count</p>
+                  <p>max-count</p>
+                  <p>(all optional)</p>
+                </entry>
+                <entry>
+                  <p>Defines the number of servers to add to the resource group.</p>
+                  <p>If min-count is specified that at least that number of servers will be
+                    allocated. If min-count is not specified it defaults to a value of 0.</p>
+                  <p>If max-count is specified then the resource group will be limited to that
+                    number of servers. If max-count is not specified then all servers matching the
+                    required role and failure-zones will be allocated to the resource group.</p>
+                  <p>If member-count is specified then it sets min-count and max-count to the
+                    specified value.</p>
+                </entry>
+              </row>
+              <row>
+                <entry>failure-zones (optional)</entry>
+                <entry>A list of Server Groups that servers will be allocated from. If specified,
+                  this overrides the value specified for the control-plane. If not specified, the
+                  control-plane value is used. </entry>
+              </row>
+              <row>
+                <entry>allocation-policy (optional)</entry>
+                <entry>
+                  <p>Defines how failure zones will be used when allocating servers.</p>
+                  <p><b>strict</b>: Server allocations will be distributed across all specified
+                    failure zones. (if max-count is not an exact factor of the number of zones than
+                    some zones may provide one more server than other zones)</p>
+                  <p><b>any</b>: Server allocations will be made from any combination of failure
+                    zones</p>
+                  <p>The default allocation-policy for a cluster is <i>any</i></p>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
   product:
     version: 2
-        
+
   control-planes:
     - name: ccp
       region-name: region1
+      failure-zones:
+        - AZ1
+        - AZ2
+        - AZ3
       common-service-components:
         - logging-producer
         - monasca-agent
+        - freezer-agent
         - stunnel
       clusters:
         - id: "1"
           name: c1
           server-role: ROLE-CONTROLLER
           member-count: 3
+          allocation-policy: strict
           service-components:
             - ntp-server
             - swift-ring-builder
@@ -290,7 +495,7 @@
             - nova-client
             - neutron-server
             - neutron-ml2-plugin
-            - neutron-l3-agent
+            - neutron-vpn-agent
             - neutron-dhcp-agent
             - neutron-metadata-agent
             - neutron-openvswitch-agent
@@ -330,28 +535,29 @@
             - ops-console-monitor
             - cmc-service
             - freezer-api
-            - freezer-agent
         
-        resource-nodes:
-          - name: compute
-            resource-prefix: comp
-            server-role: ROLE-COMPUTE
-            service-components:
-              - ntp-client
-              - nova-kvm
-              - nova-compute
-              - neutron-l3-agent
-              - neutron-metadata-agent
-              - neutron-openvswitch-agent
-              - neutron-lbaasv2-agent
-              - freezer-agent
+    resource-nodes:
+       - name: compute
+         resource-prefix: comp
+         server-role: ROLE-COMPUTE
+         allocation-policy: any
+         min-count: 0
+         service-components:
+            - ntp-client
+            - nova-kvm
+            - nova-compute
+            - neutron-l3-agent
+            - neutron-metadata-agent
+            - neutron-openvswitch-agent
+            - neutron-lbaasv2-agent
         
         - name: vsa
           resource-prefix: vsa
           server-role: ROLE-VSA
+          allocation-policy: strict
+          min-count: 3
           service-components:
-            - vsa
-            - freezer-agent</codeblock>
+        - vsa</codeblock>
     </section>
     <section id="disks_compute.yml"><title>disks_compute.yml</title>
       <p>The path to this file is:</p>
@@ -831,6 +1037,81 @@
         for each of your servers in this file.</p>
       <note>The entries in this file are examples, if you have more or less nodes you can copy and
         paste to include your entire environment.</note>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_rjd_xbp_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Explanation</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Id</entry>
+                <entry>A user defined identifier for the server. Id's must be unique and are used to
+                  track server allocations.</entry>
+              </row>
+              <row>
+                <entry>ip-addr</entry>
+                <entry>
+                  <p>The IP address of the server for installation purposes.</p>
+                  <p>This IP address is used by the config-processor to install and configure the
+                    service components on this server.</p>
+                  <p>When the servers.yml file is being used for operating system installation, this
+                    IP address will be assigned to the node by the installation process.</p>
+                  <p>This IP address (and associated NIC) can be re-used within the cloud
+                    infrastructure. To enable this, the following conditions need to be met: <ol
+                      id="ol_b4b_kcp_jt">
+                      <li>The IP address must be a member of one of the network CIDRs defined in the
+                        networks.yml file.</li>
+                      <li>That network must be on an untagged VLAN.</li>
+                    </ol></p>
+                </entry>
+              </row>
+              <row>
+                <entry>Role</entry>
+                <entry>Identifies the role of the server.</entry>
+              </row>
+              <row>
+                <entry>server-group (optional)</entry>
+                <entry>Identifies the server group that this server belongs to.</entry>
+              </row>
+              <row>
+                <entry>mac-addr (optional)</entry>
+                <entry>Needed when <codeph>servers.yml</codeph> file is being used for the operating
+                  system installation. This identifies the MAC address on the server that will be
+                  used to network install the operating system.</entry>
+              </row>
+              <row>
+                <entry>ilo-ip (optional)</entry>
+                <entry>Needed when the <codeph>servers.yml</codeph> file is being used for the
+                  operating system installation. This provides the IP address of the power
+                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
+              </row>
+              <row>
+                <entry>ilo-user (optional)</entry>
+                <entry>Needed when the <codeph>servers.yml</codeph> file is being used for the
+                  operating system installation. This provides the username of the power management
+                  (e.g. ipmi-ip, iLO) subsystem.</entry>
+              </row>
+              <row>
+                <entry>ilo-password (optional)</entry>
+                <entry>Needed when the <codeph>servers.yml</codeph> file is being used for the
+                  operating system installation. This provides the user password of the power
+                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
+              </row>
+              <row>
+                <entry>nic-mapping (optional)</entry>
+                <entry>Name of the entry from the <codeph>nic-mappings.yml</codeph> file to apply to
+                  this server.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -884,6 +1165,8 @@
       <b>ip-addr: 192.168.10.11</b>
       role: ROLE-VSA
     # nic-mapping: MY_2PORT_SERVER</codeblock>
+      <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
+        are recognized.</note>
     </section>
   </conbody>
 </concept>
