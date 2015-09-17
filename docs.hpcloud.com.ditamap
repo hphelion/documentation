@@ -48,7 +48,7 @@
       locktitle="yes">
       <topicref href="helion/keystone/keystone_roles.dita"
         navtitle="Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Installation"
+      <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Configuration"
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_admin.dita" navtitle="Keystone Administration"
         locktitle="yes"> </topicref>
