@@ -227,6 +227,23 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
     <section>
       <p>The following input/output (I/O) cards are supported:</p>
     </section>
+    <section id="storage-devices"><title>Storage Devices</title>
+    </section>
+    <section id="emc-storage"><title>EMC Storage Devices</title>
+      <ul>
+        <li>Model Name / Number: EMC VNX 5300</li>
+        <li>Firmware Versions: 05.32.000.5.015 (Block)</li>
+        <li>Supported Protocols: iSCSI</li>
+      </ul>
+    </section>
+    <section id="netapp-storage"><title>NetApp Storage Devices</title>
+      <ul>
+        <li>Model Name / Number: NETAPP FAS3220</li>
+        <li>Firmware Versions: 8.2.2</li>
+        <li>Mode of Storage: 7 MODE</li>
+        <li>Supported Protocols: NFS, iSCSI</li>
+      </ul>
+    </section>
     <section id="stand-up-adapters">
       <title>Stand Up Adapters:</title>
     </section>
