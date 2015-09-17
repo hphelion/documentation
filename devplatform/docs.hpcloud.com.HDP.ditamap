@@ -94,8 +94,8 @@
       navtitle="Resources for Application Developers ">
       
         <topicref href="2.0/CICD/cicd_overview.dita" navtitle="Continuous Integration and Deployment" locktitle="yes">
-        <topicref href="2.0/CICD/cicd_walkthrough.dita" navtitle="Step-by-Step Walkthrough"
-          locktitle="yes"/>
+        <topicref href="2.0/CICD/cicd_walkthrough.dita"
+          navtitle="Create an Automated Build-Test-Deploy Cycle" locktitle="yes"/>
         <topicref href="2.0/CICD/cicd_installation.dita"/>
           <topicref href="2.0/CICD/cicd_initial_configuration.dita"/>
           <topicref href="2.0/CICD/cicd_troubleshooting.dita"/>
@@ -104,7 +104,7 @@
           <topicref href="2.0/CICD/cicd_edit_environment.dita"/>
           <topicref href="2.0/CICD/cicd_create_project.dita"/>
           <topicref href="2.0/CICD/cicd_edit_project.dita"/>
-          <topicref href="2.0/CICD/cicd_build_create.dita" navtitle="Create a New Build"
+          <topicref href="2.0/CICD/cicd_create_build.dita" navtitle="Create a New Build"
             locktitle="yes"/>
           <topicref href="2.0/CICD/cicd_create_postdeploy.dita"/>
           <topicref href="2.0/CICD/cicd_create_notifications.dita">

@@ -5,7 +5,9 @@
     <body>
         <p>The Project is a workspace where the application is built. </p>
     
-        <ol id="project_create">
+        <p id="project_create">
+            
+        <ol>
            
                 <li>Click the <b>Projects</b> tab tand then click <b>New Project</b>.</li>
             
@@ -29,6 +31,6 @@
                 </ul></li>
             
             <li>Click <b>Save</b>.</li>
-        </ol>
+        </ol></p>
         </body>
 </topic>

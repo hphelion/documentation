@@ -4,7 +4,7 @@
   <title>Create a New Build</title>
   <body>
     <p>This process selects an available source commit and builds it.</p>
-    <ol id="build_create">
+    <p id="build_create"><ol>
       
       <li>Click the <b>Builds</b> tab tand then click <b>New Build</b>.</li>
       
@@ -13,6 +13,6 @@
       <li>Click the green Play arrow to the right of the commit that should be built.</li>
       <li>When complete, the build results and additional information will appear in the list of
         builds.</li>
-    </ol>
+    </ol></p>
   </body>
 </topic>

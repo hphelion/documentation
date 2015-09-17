@@ -28,34 +28,29 @@
                                             </section>
         <section><title>Steps</title>
         <ol>
-            <li>Create a New Environment. This defines the deployment target.</li>
-                <li>Create a Project. This defines the target code repository.</li>
-                <li>Create Notifications. This defines who should be notified when, what the
+            <li><xref href="cicd_walkthrough.dita#task_sw4_1zq_dt/environment">Create a New Environment</xref>. This defines the deployment target.</li>
+            <li><xref href="cicd_walkthrough.dita#task_sw4_1zq_dt/project">Create a Project</xref>. This defines the target code repository.</li>
+            <li><xref href="cicd_walkthrough.dita#task_sw4_1zq_dt/notify">Create Notifications</xref>. This defines who should be notified when, what the
                     notification contains, and how it is delivered. (optional)</li>
-                <li>Create Post-Deployment Actions. This defines what actions to take, usually
+            <li><xref href="cicd_walkthrough.dita#task_sw4_1zq_dt/post">Create Post-Deployment Actions</xref>. This defines what actions to take, usually
                     testing, after the build is completed. (optional)</li>
-                <li>Run a Build. This starts the whole cycle.</li>
+            <li><xref href="cicd_walkthrough.dita#task_sw4_1zq_dt/build">Run a Build</xref>. Building the code kicks off the whole cycle.</li>
             
         </ol>
         </section>
+<section id="environment"><title>1. Specify an Environment</title>
+    <p conref="cicd_environment_create.dita#mf4_fh4_ht/create_environment"></p>
+</section>
+        
+        <section id="project"><title>2. Create a Project</title>
+        <p conref="cicd_create_project.dita#s45_4m4_ht/project_create"/></section>
   
+        <section id="notify"><title>3. Add Notifications</title>
+    <p conref="cicd_create_notifications.dita#topic_ifw_mxb_3t/noticecreate"></p></section> 
+    
+        <section id="post"><title>4. Add Post-Deployment Tasks</title><p conref="cicd_create_postdeploy.dita#topic_mxf_jxb_3t/createpd"/></section>
+        
+     <section id="build"><title>5. Perform a Build</title><p conref="cicd_create_build.dita#topic_a34_wqb_3t/build_create"> </p></section>
     </body>
-    <topic id="id_yxf_snb_3t" conref="cicd_environment_create.dita#mf4_fh4_ht">
-        <title/>
-    </topic>
-    <topic id="id_gcd_tnb_3t" conref="cicd_create_project.dita#s45_4m4_ht">
-        <title/>
-    </topic>
-    <topic id="id_bck_t4d_3t" conref="cicd_create_notifications.dita#topic_ifw_mxb_3t"><title>Add Notifications</title></topic>
-    <topic id="id_adh_314_jt" conref="cicd_create_postdeploy.dita#topic_mxf_jxb_3t">
-        <title/>
-    </topic>
-   
- 
-    <topic id="id_ytj_ltb_3t" conref="cicd_build_create.dita#topic_a34_wqb_3t"><title/>
-      
-    </topic>
-
-
 
  </topic>

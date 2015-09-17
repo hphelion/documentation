@@ -4,7 +4,9 @@
     <title>Create a New Environment</title>
     <body>
         <p>The Environment is a target where the application is deployed. Click the <b>Environments</b> tab to see the list of available environments.</p>
-    <note>Currently, only Helion Cloud Foundry environments are supported.</note><ol id="create_environment">
+    <note>Currently, only Helion Cloud Foundry environments are supported.</note>
+        
+        <p id="create_environment"><ol>
                 <li>Select your technology.<ul>
                     <li>Use CloudFoundry: Deploys the application to a Cloud Foundry endpoint.</li>
                     <li>Use Docker: Builds the application and pushes the image to a public or
@@ -31,6 +33,6 @@
                     <li>Click <b>Save</b>.</li>
                                     </ol>
             </li><li>Your new environment will now appear in the list.</li>
-    </ol>
+        </ol></p>
     </body>
 </topic>
