@@ -7,6 +7,8 @@ Options +FollowSymLinks
 RewriteEngine on
 #
 #
+RewriteRule ^permalink/helion-openstack/2.0/supportedconfigs.html?$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/supportedconfigs.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/hardware.htm?$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/hardware.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/installation_troubleshooting?$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/installation_troubleshooting.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/cinder_vsa?$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/cinder/vsa/vsa.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/bare_installation_esx?$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/bare_installation_esx.html [NE,R=301,L]
