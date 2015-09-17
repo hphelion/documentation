@@ -50,7 +50,7 @@
           <thead>
             <row>
               <entry>Key</entry>
-              <entry>Value Explanation</entry>
+              <entry>Value Description</entry>
             </row>
           </thead>
           <tbody>
@@ -255,7 +255,7 @@
             <thead>
               <row>
                 <entry>Key</entry>
-                <entry>Value Explanation</entry>
+                <entry>Value Description</entry>
               </row>
             </thead>
             <tbody>
@@ -302,7 +302,7 @@
             <thead>
               <row>
                 <entry>Key</entry>
-                <entry>Value Explanation</entry>
+                <entry>Value Description</entry>
               </row>
             </thead>
             <tbody>
@@ -381,7 +381,7 @@
             <thead>
               <row>
                 <entry>Key</entry>
-                <entry>Value Explanation</entry>
+                <entry>Value Description</entry>
               </row>
             </thead>
             <tbody>
@@ -1002,10 +1002,152 @@
           type: simple-port
           bus-address: "0000:04:00.1"</codeblock>
     </section>
+    <section id="server_groups.yml"><title>server_groups.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/server_groups.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_e2s_z2p_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the server group. The name is used to link
+                  server-groups together, and to identify server-groups to be used as failure zones
+                  in a Control Plane.</entry>
+              </row>
+              <row>
+                <entry>server-groups (optional)</entry>
+                <entry>A list of server group names that are nested below this group in the
+                  hierarchy. Each server group can only be listed in one other server group (i.e. in
+                  a strict tree topology).</entry>
+              </row>
+              <row>
+                <entry>networks (optional)</entry>
+                <entry>A list of network names that will be matched up to the servers via the server
+                  groups.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Here is the sample file included with the install:</p>
+      <codeblock>
+---
+  product:
+    version: 2
+
+  server-groups:
+
+    #
+    # Server Groups provide a mechanism for organizing servers
+    # into a hierarchy that reflected the physical topology.
+    #
+    # When allocating a server the configuration processor
+    # will search down the hierarchy from the list of server
+    # groups identified as the failure-zones for the control
+    # plane until it finds an available server of the requested
+    # role.   If the allocation policy is "strict" servers are
+    # allocated from different failure-zones.
+    #
+    # When determining which network from a network group to
+    # associate with a server the configuration processor will
+    # search up the hierarchy from the server group containing the
+    # server until it finds a network in the required network
+    # group.
+    #
+
+    #
+    # In this example there is only one network in each network
+    # group and so we put all networks in the top level server
+    # group.   Below this we create server groups for three
+    # failure zones, within which servers are grouped by racks.
+    #
+    # Note: the association of servers to server groups is part
+    # of the server definition (servers.yml)
+    #
+
+    #
+    # At the top of the tree we have a
+    # group for the global networks
+    #
+    - name: GROUP_GLOBAL_NET
+      server-groups:
+        - AZ1
+        - AZ2
+        - AZ3
+      networks:
+        - NET_EXTERNAL_API
+        - NET_EXTERNAL_VM
+        - NET_GUEST
+        - NET_MGMT
+        
+    #
+    # Create a group for each failure zone
+    #
+    - name: AZ1
+      server-groups:
+        - RACK1
+        
+    - name: AZ2
+      server-groups:
+        - RACK2
+        
+    - name: AZ3
+      server-groups:
+        - RACK3
+        
+    #
+    # Create a group for each rack
+    #
+    - name: RACK1
+
+    - name: RACK2
+
+    - name: RACK3</codeblock>
+    </section>
     <section id="server_roles.yml"><title>server_roles.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/server_roles.yml</codeblock></p>
       <p>The key values to enter into this document are ....</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_bb3_qfp_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the role.</entry>
+              </row>
+              <row>
+                <entry>interface-model</entry>
+                <entry>A cross reference to the interface model to be used for this server
+                    role.<p>Different server roles can use the same interface model.</p></entry>
+              </row>
+              <row>
+                <entry>disk-model</entry>
+                <entry>A cross reference to the disk model to use for this server role.<p>Different
+                    server roles can use the same disk model.</p></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -1045,7 +1187,7 @@
             <thead>
               <row>
                 <entry>Key</entry>
-                <entry>Value Explanation</entry>
+                <entry>Value Description</entry>
               </row>
             </thead>
             <tbody>
