@@ -851,6 +851,104 @@
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/net_interfaces.yml</codeblock></p>
       <p>The key values to enter into this document are ....</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_vs4_g4p_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the interface model</entry>
+              </row>
+              <row>
+                <entry>network-interfaces</entry>
+                <entry>A list of network interface definitions</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>A network interface is an interface model has the following attributes:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_pwy_j4p_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the interface</entry>
+              </row>
+              <row>
+                <entry>device</entry>
+                <entry>
+                  <p>A dictionary containing the network device name as seen on the associated
+                    server. If a NIC mapping is defined for the server, the name may be the
+                    logical-name specified by the mapping. When configuring a bond, this is used as
+                    the bond device name.</p></entry>
+              </row>
+              <row>
+                <entry>bond-data (optional)</entry>
+                <entry>Used to define a bond.  See: __ for details.</entry>
+              </row>
+              <row>
+                <entry>network-groups</entry>
+                <entry>A list of one or more network groups containing networks that will operate on
+                  this interface.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>A <codeph>bond-data</codeph> definition is used to configure a bond device, and consists of the following attributes:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_oft_z4p_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Descriptions</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>provider</entry>
+                <entry>Identifies the software used to instantiate the bond device. The only
+                  supported value is “linux”, which uses the linux bonding driver. Other providers
+                  may be supported in a future release.</entry>
+              </row>
+              <row>
+                <entry>devices</entry>
+                <entry>A dictionary containing network device names used to form the bond. If a NIC
+                  mapping is defined for the server, a name may be the logical-name specified by the
+                  mapping.</entry>
+              </row>
+              <row>
+                <entry>options</entry>
+                <entry>A dictionary containing bond configuration options. The note below describes
+                  options for the “<i>linux”</i> provider.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>The linux bonding driver supports a large number of parameters that control the operation
+        of the bond, as described in the <xref href="https://www.kernel.org/doc/Documentation/networking/bonding.txt" scope="external" format="html">Linux Ethernet Bonding Driver HOWTO</xref> document.  The parameter names and values may be specified as key-value pairs in the <codeph>options</codeph> section of <codeph>bond-data</codeph>.</p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -1065,6 +1163,30 @@
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/nic_mappings.yml</codeblock></p>
       <p>The key values to enter into this document are ....</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_sp4_bqp_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>physical-ports</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
