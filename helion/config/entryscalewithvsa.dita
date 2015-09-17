@@ -14,76 +14,133 @@
         <li><xref href="#entry_scale_with_vsa/cloudConfig.yml">cloudConfig.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/baremetalConfig.yml">baremetalConfig.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/control_plane.yml">control_plane.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/disks_compute.yml">disks_compute.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/disks_controller.yml">disks_controller.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/disks_vsa.yml">disks_vsa.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/disks_.yml">disks_*.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/net_interfaces.yml">net_interfaces.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/network_groups.yml">network_groups.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/networks.yml">networks.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/nic_mappings.yml">nic_mappings.yml</xref></li>
+        <li><xref href="#entry_scale_with_vsa/server_groups.yml">server_groups.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/server_roles.yml">server_roles.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/servers.yml">servers.yml</xref></li>
+      </ul>
+    </section>
+    <section id="notes"><title>Important Notes</title>
+      <p>A few things to keep in mind when working with your configuration files:</p>
+      <ul>
+        <li>If you have used earlier beta versions of Helion OpenStack 2.0, be mindful that the
+          contents of these configuration files may have changed. It's considered best practice to
+          copy over the example files per the <xref
+            href="../bare_installation_kvm.dita#install_kvm/Configuration">installation
+            instructions</xref> and edit them with your information.</li>
+        <li>If you need to edit your configuration files after your installation has already begun,
+          there are steps in the <xref href="../installation_troubleshooting.dita">Installation
+            Troubleshooting</xref> document that can assist with the process.</li>
       </ul>
     </section>
     <section id="cloudConfig.yml">
       <title>cloudConfig.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/cloudConfig.yml</codeblock></p>
-      <p>The key values to enter into this document are the values for your local NTP servers and
-        DNS namesevers.</p>
+      <p>The key values to enter into this document are described in the table below:</p>
+      <table frame="all" rowsep="1" colsep="1" id="table_pdl_jb4_jt">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <thead>
+            <row>
+              <entry>Key</entry>
+              <entry>Value Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>name</entry>
+              <entry>A user-defined name for the cloud</entry>
+            </row>
+            <row>
+              <entry>hostname-data (optional)</entry>
+              <entry>Provides control over some parts of the generated names. You can leave these as
+                the default values or choose new ones.<p>Consists of two values: <ul>
+                    <li>host-prefix</li>
+                    <li>member-prefix</li>
+                  </ul></p></entry>
+            </row>
+            <row>
+              <entry>ntp-servers (optional)</entry>
+              <entry>A list of external NTP servers your cloud has access to. If specified by name,
+                rather than IP, then the names need to be resolvable via the external DNS
+                nameservers you specify in the next section. All servers running the "ntp-server"
+                component will be configured to use these external NTP servers you specify
+                here.</entry>
+            </row>
+            <row>
+              <entry>dns-settings (optional)</entry>
+              <entry>DNS configuration data that will be applied to all servers. See example
+                configuration for a full list of values.</entry>
+            </row>
+            <row>
+              <entry>smtp-settings (optional)</entry>
+              <entry>SMTP client configuration data that will be applied to all servers. See example
+                configuration for a full list of values.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
   product:
-  version: 2
-  
-  cloud:
-  name: helion-entry-scale
-  
-  # The following values are used when
-  # building hostnames
-  hostname-data:
-  host-prefix: helion
-  member-prefix: -m
-  
-  # Path to the rest of the input model
-  data-dir: data
-  
-  <b># List of ntp servers for your site
-  ntp-servers:
-  #    - "ntp-server1"
-  #    - "ntp-server2"</b>
-  
-  <b># dns resolving configuration for your site
-  # refer to resolv.conf for details on each option
-  dns-settings:
-  #  nameservers:
-  #    - name-server1
-  #    - name-server2
-  #    - name-server3</b>
-  #
-  #  domain: sub1.example.net
-  #
-  #  search:
-  #    - sub1.example.net
-  #    - sub2.example.net
-  #
-  #  sortlist:
-  #    - 192.168.160.0/255.255.240.0
-  #    - 192.168.0.0
-  #
-  #  # option flags are '&lt;name&gt;:' to enable, remove to unset
-  #  # options with values are '&lt;name&gt;:&lt;value&gt;' to set
-  #
-  #  options:
-  #    debug:
-  #    ndots: 2
-  #    timeout: 30
-  #    attempts: 5
-  #    rotate:
-  #    no-check-names:
-  #    inet6:
-</codeblock>
+    version: 2
+
+   cloud:
+    <b>name: helion-entry-scale</b>
+
+    # The following values are used when
+    # building hostnames
+    <b>hostname-data:</b>
+        host-prefix: helion
+        member-prefix: -m
+        
+    # Path to the rest of the input model
+    data-dir: data
+
+    # List of ntp servers for your site
+    <b>ntp-servers:</b>
+    #    - "ntp-server1"
+    #    - "ntp-server2"
+
+    # dns resolving configuration for your site
+    # refer to resolv.conf for details on each option
+    <b>dns-settings:</b>
+    #  nameservers:
+    #    - name-server1
+    #    - name-server2
+    #    - name-server3
+    #
+    #  domain: sub1.example.net
+    #
+    #  search:
+    #    - sub1.example.net
+    #    - sub2.example.net
+    #
+    #  sortlist:
+    #    - 192.168.160.0/255.255.240.0
+    #    - 192.168.0.0
+    #
+    #  # option flags are '&lt;name>:' to enable, remove to unset
+    #  # options with values are '&lt;name>:&lt;value>' to set
+    #
+    #  options:
+    #    debug:
+    #    ndots: 2
+    #    timeout: 30
+    #    attempts: 5
+    #    rotate:
+    #    no-check-names:
+    #    inet6:
+    <b>smtp-settings:</b>
+    #  server: smtp1.hp.com
+    #  port: 25</codeblock>
       <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
         are recognized.</note>
     </section>
@@ -188,25 +245,230 @@
     <section id="control_plane.yml"><title>control_plane.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/control_plane.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
+      <p>The key values to enter into this document are described in the table below:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_zrw_1z4_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>This name identifies the control plane and will be used as part of the
+                  hostname prefix.</entry>
+              </row>
+              <row>
+                <entry>region-name (optional)</entry>
+                <entry>This name identifies the Keystone region within which services in the control
+                  plane will be registered.</entry>
+              </row>
+              <row>
+                <entry>failure-zones (optional)</entry>
+                <entry>A list of Server Group names that servers for this control plane will be
+                  allocated from. If no failure-zones are specified, only servers not associated
+                  with a Server Group will be used.</entry>
+              </row>
+              <row>
+                <entry>common-service-components (optional)</entry>
+                <entry>This lists a set of service components that run on all servers in the control
+                  plane (clusters and resource pools)</entry>
+              </row>
+              <row>
+                <entry>clusters</entry>
+                <entry>A list of clusters for this control plane</entry>
+              </row>
+              <row>
+                <entry>resource-nodes</entry>
+                <entry>A list of resource nodes for this control plane</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>To further breakdown what the options are in the <codeph>clusters</codeph> portion of this
+        file, here are some field descriptions:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="clusters">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>id</entry>
+                <entry>Each cluster must have a unique ID.</entry>
+              </row>
+              <row>
+                <entry>name</entry>
+                <entry>The cluster name provided is used in the hostname. Cluster and resource-node
+                  names must be unique within a control plane. This value is used to persist server
+                  allocations and cannot be changed once servers have been allocated.</entry>
+              </row>
+              <row>
+                <entry>server-role</entry>
+                <entry>Only servers matching the specified role will be allocated to this
+                  cluster.</entry>
+              </row>
+              <row>
+                <entry>service-components</entry>
+                <entry>The list of service components (together with common-service-components for
+                  the control plane) to be deployed on the servers allocated for the
+                  cluster.</entry>
+              </row>
+              <row>
+                <entry>
+                  <p>member-count</p>
+                  <p>min-count</p>
+                  <p>max-count</p>
+                  <p>(all optional)</p>
+                </entry>
+                <entry>
+                  <p>Defines the number of servers to add to the cluster.</p><p>The number of
+                    servers that can be supported in a cluster depends on the services it is
+                    running. For example MySQL and RabbitMQ can only be deployed on clusters on 1
+                    (non-HA) or 3 (HA) servers. Other services may support different sizes of
+                    cluster.</p>
+                  <p>If min-count is specified that at least that number of servers will be
+                    allocated to the cluster. If min-count is not specified it defaults to a value
+                    of 1.</p>
+                  <p>If max-count is specified then the cluster will be limited to that number of
+                    servers. If max-count is not specified then all servers matching the required
+                    role and failure-zones will be allocated to the cluster.</p>
+                  <p>If member-count is specified then it sets min-count and max-count to the
+                    specified value.</p></entry>
+              </row>
+              <row>
+                <entry>failure-zones (optional)</entry>
+                <entry>A list of Server Groups that servers will be allocated from. If specified,
+                  this overrides the value specified for the control-plane. If not specified, the
+                  control-plane value is used. </entry>
+              </row>
+              <row>
+                <entry>allocation-policy (optional)</entry>
+                <entry>
+                  <p>Defines how failure zones will be used when allocating servers.</p>
+                  <p><b>strict</b>: Server allocations will be distributed across all specified
+                    failure zones. (if max-count is not an exact factor of the number of zones than
+                    some zones may provide one more server than other zones)</p>
+                  <p><b>any</b>: Server allocations will be made from any combination of failure
+                    zones</p>
+                  <p>The default allocation-policy for a cluster is <i>strict</i></p>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>To further breakdown what the options are in the <codeph>resource-nodes</codeph> portion of
+        this file, here are some field descriptions:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="resource_nodes">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry><p>The name of this set of resource-nodes. Cluster names and resource-node
+                    names must mutually be unique within a control plane.</p> This value is used to
+                  persist server allocations, and cannot be changed once servers have been
+                  allocated. </entry>
+              </row>
+              <row>
+                <entry>resource-prefix</entry>
+                <entry>The resource-prefix is used in the name generation.</entry>
+              </row>
+              <row>
+                <entry>server-role</entry>
+                <entry>Only servers matching the specified role will be allocated to this
+                  cluster.</entry>
+              </row>
+              <row>
+                <entry>service-components</entry>
+                <entry>The list of service components (together with common-service-components for
+                  the control plane) to be deployed on the servers in this resource group.</entry>
+              </row>
+              <row>
+                <entry>
+                  <p>member-count</p>
+                  <p>min-count</p>
+                  <p>max-count</p>
+                  <p>(all optional)</p>
+                </entry>
+                <entry>
+                  <p>Defines the number of servers to add to the resource group.</p>
+                  <p>If min-count is specified that at least that number of servers will be
+                    allocated. If min-count is not specified it defaults to a value of 0.</p>
+                  <p>If max-count is specified then the resource group will be limited to that
+                    number of servers. If max-count is not specified then all servers matching the
+                    required role and failure-zones will be allocated to the resource group.</p>
+                  <p>If member-count is specified then it sets min-count and max-count to the
+                    specified value.</p>
+                </entry>
+              </row>
+              <row>
+                <entry>failure-zones (optional)</entry>
+                <entry>A list of Server Groups that servers will be allocated from. If specified,
+                  this overrides the value specified for the control-plane. If not specified, the
+                  control-plane value is used. </entry>
+              </row>
+              <row>
+                <entry>allocation-policy (optional)</entry>
+                <entry>
+                  <p>Defines how failure zones will be used when allocating servers.</p>
+                  <p><b>strict</b>: Server allocations will be distributed across all specified
+                    failure zones. (if max-count is not an exact factor of the number of zones than
+                    some zones may provide one more server than other zones)</p>
+                  <p><b>any</b>: Server allocations will be made from any combination of failure
+                    zones</p>
+                  <p>The default allocation-policy for a cluster is <i>any</i></p>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
   product:
     version: 2
-        
+
   control-planes:
     - name: ccp
       region-name: region1
+      failure-zones:
+        - AZ1
+        - AZ2
+        - AZ3
       common-service-components:
         - logging-producer
         - monasca-agent
+        - freezer-agent
         - stunnel
       clusters:
         - id: "1"
           name: c1
           server-role: ROLE-CONTROLLER
           member-count: 3
+          allocation-policy: strict
           service-components:
             - ntp-server
             - swift-ring-builder
@@ -232,7 +494,7 @@
             - nova-client
             - neutron-server
             - neutron-ml2-plugin
-            - neutron-l3-agent
+            - neutron-vpn-agent
             - neutron-dhcp-agent
             - neutron-metadata-agent
             - neutron-openvswitch-agent
@@ -272,34 +534,161 @@
             - ops-console-monitor
             - cmc-service
             - freezer-api
-            - freezer-agent
         
-        resource-nodes:
-          - name: compute
-            resource-prefix: comp
-            server-role: ROLE-COMPUTE
-            service-components:
-              - ntp-client
-              - nova-kvm
-              - nova-compute
-              - neutron-l3-agent
-              - neutron-metadata-agent
-              - neutron-openvswitch-agent
-              - neutron-lbaasv2-agent
-              - freezer-agent
+    resource-nodes:
+       - name: compute
+         resource-prefix: comp
+         server-role: ROLE-COMPUTE
+         allocation-policy: any
+         min-count: 0
+         service-components:
+            - ntp-client
+            - nova-kvm
+            - nova-compute
+            - neutron-l3-agent
+            - neutron-metadata-agent
+            - neutron-openvswitch-agent
+            - neutron-lbaasv2-agent
         
         - name: vsa
           resource-prefix: vsa
           server-role: ROLE-VSA
+          allocation-policy: strict
+          min-count: 3
           service-components:
-            - vsa
-            - freezer-agent</codeblock>
+        - vsa</codeblock>
     </section>
-    <section id="disks_compute.yml"><title>disks_compute.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/disks_compute.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
-      <p>Here is the sample file included with the install:</p>
+    <section id="disks_.yml"><title>disks_*.yml</title>
+      <p>The disk model is used to specify how the directly attached disks on the server should be
+        configured. It can also identify which service or service component consumes the disk, e.g.
+        Swift object server, and provide service specific information associated with the disk.</p>
+      <p>Disks can be used as raw devices or as logical volumes and the disk model provides a
+        configuration item for each.</p>
+      <p>If the operating system has been installed by the installation process then the root disk
+        will already have been set up as a Volume Group with a single logical volume. This logical
+        volume will have been created on a partition identified, symbolically, in the configuration
+        files as /dev/sda_root. This is due to the fact that different BIOS systems (UEFI, Legacy)
+        will result in different partition numbers on the root disk.</p>
+      <p>The path to these files are:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/disks_compute.yml
+~/helion/my_cloud/definition/data/disks_controller.yml
+~/helion/my_cloud/definition/data/disks_vsa.yml</codeblock></p>
+      <p>The <codeph>volume-groups</codeph> configuration object is used to define volume groups and
+        their constituent logical volumes.</p>
+      <p>Note that the volume groups are not exact analogs of device groups. A volume group
+        specifies a set of physical volumes used to make up a volume group that is then subdivided
+        into multiple logical volumes.</p>
+      <p>The installation process automatically creates a volume group name “hlm-vg” on the first
+        drive in the system. It creates a “root” logical volume on this. The volume group can be
+        expanded by adding more physical volumes (see examples). In addition, it is possible to
+        create more logical volumes on this volume group to provide dedicated capacity for different
+        services or file system mounts.</p>
+      <p>Additional volume groups can also be created using the <codeph>volume-groups</codeph> model
+        specification.</p>
+      <p>Here is a description of the fields in the <codeph>volume-groups</codeph> portion of the
+        disk model files:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="volume_groups">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Descriptions</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>The name that will be assigned to the volume group</entry>
+              </row>
+              <row>
+                <entry>physical-volumes</entry>
+                <entry><p>A list of physical disks that make up the volume group.</p> As installed
+                  by the HOS OS install process the volume group “hlm-vg” will use a large partition
+                  (sda_root) on the first disk. This can be expanded by adding additional
+                  disk(s)</entry>
+              </row>
+              <row>
+                <entry>logical-volumes</entry>
+                <entry>A list of logical volume devices to be create from the above named volume
+                  group</entry>
+              </row>
+              <row>
+                <entry>name</entry>
+                <entry>The name to assign to the logical volume</entry>
+              </row>
+              <row>
+                <entry>size</entry>
+                <entry>The size, expressed as a percentage of the entire volume group capacity, to
+                  assign to the logical volume</entry>
+              </row>
+              <row>
+                <entry>fstype (optional)</entry>
+                <entry>The file system type to create on the logical volume. If non specified the
+                  volume is not formatted</entry>
+              </row>
+              <row>
+                <entry>mkfs-opts (optional)</entry>
+                <entry>Options, e.g. “-O large_file” to pass to the mkfs command</entry>
+              </row>
+              <row>
+                <entry>mount (optional)</entry>
+                <entry>Mount point for the file system</entry>
+              </row>
+              <row>
+                <entry>consumer attributes (optional, consumer dependent)</entry>
+                <entry>
+                  <p>These will vary according to the service consuming the device group. The
+                    examples section provides sample content for the different services.</p>
+                  <p>Note, not all services support the use of logical volumes. VSA requires raw
+                    devices.</p></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Here is a description of the fields in the <codeph>device-groups</codeph> portion of the
+        disk model files:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="device_groups">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Descriptions</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the device group</entry>
+              </row>
+              <row>
+                <entry>devices</entry>
+                <entry>A list of named devices to be assigned to this group. There must be at least
+                  one device in the group.</entry>
+              </row>
+              <row>
+                <entry>consumer</entry>
+                <entry>Identifies the name of one of the storage services (e.g. one of the
+                  following: Swift, Cinder, Ceph, VSA, etc) that will consume the disks in this
+                  device group.</entry>
+              </row>
+              <row>
+                <entry>consumer attributes</entry>
+                <entry>These will vary according to the service consuming the device group. The
+                  examples section provides sample content for the different services.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Here is the sample file for <codeph>disks_compute.yml</codeph> included with the
+        install:</p>
       <codeblock>
 ---
   product:
@@ -346,12 +735,8 @@
               mount: /var/lib/nova
               fstype: ext4
               mkfs-opts: -O large_file</codeblock>
-    </section>
-    <section id="disks_controller.yml"><title>disks_controller.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/disks_controller.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
-      <p>Here is the sample file included with the install:</p>
+      <p>Here is the sample file for <codeph>disks_controller.yml</codeph> included with the
+        install:</p>
       <codeblock>
 ---
   product:
@@ -409,12 +794,7 @@
                 - account
                 - container
                 - object-0</codeblock>
-    </section>
-    <section id="disks_vsa.yml"><title>disks_vsa.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/disks_vsa.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
-      <p>Here is the sample file included with the install:</p>
+      <p>Here is the sample file for <codeph>disks_vsa.yml</codeph> included with the install:</p>
       <codeblock>
 ---
   product:
@@ -471,6 +851,104 @@
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/net_interfaces.yml</codeblock></p>
       <p>The key values to enter into this document are ....</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_vs4_g4p_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the interface model</entry>
+              </row>
+              <row>
+                <entry>network-interfaces</entry>
+                <entry>A list of network interface definitions</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>A network interface is an interface model has the following attributes:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_pwy_j4p_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the interface</entry>
+              </row>
+              <row>
+                <entry>device</entry>
+                <entry>
+                  <p>A dictionary containing the network device name as seen on the associated
+                    server. If a NIC mapping is defined for the server, the name may be the
+                    logical-name specified by the mapping. When configuring a bond, this is used as
+                    the bond device name.</p></entry>
+              </row>
+              <row>
+                <entry>bond-data (optional)</entry>
+                <entry>Used to define a bond.  See: __ for details.</entry>
+              </row>
+              <row>
+                <entry>network-groups</entry>
+                <entry>A list of one or more network groups containing networks that will operate on
+                  this interface.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>A <codeph>bond-data</codeph> definition is used to configure a bond device, and consists of the following attributes:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_oft_z4p_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Descriptions</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>provider</entry>
+                <entry>Identifies the software used to instantiate the bond device. The only
+                  supported value is “linux”, which uses the linux bonding driver. Other providers
+                  may be supported in a future release.</entry>
+              </row>
+              <row>
+                <entry>devices</entry>
+                <entry>A dictionary containing network device names used to form the bond. If a NIC
+                  mapping is defined for the server, a name may be the logical-name specified by the
+                  mapping.</entry>
+              </row>
+              <row>
+                <entry>options</entry>
+                <entry>A dictionary containing bond configuration options. The note below describes
+                  options for the “<i>linux”</i> provider.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>The linux bonding driver supports a large number of parameters that control the operation
+        of the bond, as described in the <xref href="https://www.kernel.org/doc/Documentation/networking/bonding.txt" scope="external" format="html">Linux Ethernet Bonding Driver HOWTO</xref> document.  The parameter names and values may be specified as key-value pairs in the <codeph>options</codeph> section of <codeph>bond-data</codeph>.</p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -685,6 +1163,30 @@
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/nic_mappings.yml</codeblock></p>
       <p>The key values to enter into this document are ....</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_sp4_bqp_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>physical-ports</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -738,10 +1240,152 @@
           type: simple-port
           bus-address: "0000:04:00.1"</codeblock>
     </section>
+    <section id="server_groups.yml"><title>server_groups.yml</title>
+      <p>The path to this file is:</p>
+      <p><codeblock>~/helion/my_cloud/definition/data/server_groups.yml</codeblock></p>
+      <p>The key values to enter into this document are ....</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_e2s_z2p_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the server group. The name is used to link
+                  server-groups together, and to identify server-groups to be used as failure zones
+                  in a Control Plane.</entry>
+              </row>
+              <row>
+                <entry>server-groups (optional)</entry>
+                <entry>A list of server group names that are nested below this group in the
+                  hierarchy. Each server group can only be listed in one other server group (i.e. in
+                  a strict tree topology).</entry>
+              </row>
+              <row>
+                <entry>networks (optional)</entry>
+                <entry>A list of network names that will be matched up to the servers via the server
+                  groups.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Here is the sample file included with the install:</p>
+      <codeblock>
+---
+  product:
+    version: 2
+
+  server-groups:
+
+    #
+    # Server Groups provide a mechanism for organizing servers
+    # into a hierarchy that reflected the physical topology.
+    #
+    # When allocating a server the configuration processor
+    # will search down the hierarchy from the list of server
+    # groups identified as the failure-zones for the control
+    # plane until it finds an available server of the requested
+    # role.   If the allocation policy is "strict" servers are
+    # allocated from different failure-zones.
+    #
+    # When determining which network from a network group to
+    # associate with a server the configuration processor will
+    # search up the hierarchy from the server group containing the
+    # server until it finds a network in the required network
+    # group.
+    #
+
+    #
+    # In this example there is only one network in each network
+    # group and so we put all networks in the top level server
+    # group.   Below this we create server groups for three
+    # failure zones, within which servers are grouped by racks.
+    #
+    # Note: the association of servers to server groups is part
+    # of the server definition (servers.yml)
+    #
+
+    #
+    # At the top of the tree we have a
+    # group for the global networks
+    #
+    - name: GROUP_GLOBAL_NET
+      server-groups:
+        - AZ1
+        - AZ2
+        - AZ3
+      networks:
+        - NET_EXTERNAL_API
+        - NET_EXTERNAL_VM
+        - NET_GUEST
+        - NET_MGMT
+        
+    #
+    # Create a group for each failure zone
+    #
+    - name: AZ1
+      server-groups:
+        - RACK1
+        
+    - name: AZ2
+      server-groups:
+        - RACK2
+        
+    - name: AZ3
+      server-groups:
+        - RACK3
+        
+    #
+    # Create a group for each rack
+    #
+    - name: RACK1
+
+    - name: RACK2
+
+    - name: RACK3</codeblock>
+    </section>
     <section id="server_roles.yml"><title>server_roles.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/server_roles.yml</codeblock></p>
       <p>The key values to enter into this document are ....</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_bb3_qfp_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the role.</entry>
+              </row>
+              <row>
+                <entry>interface-model</entry>
+                <entry>A cross reference to the interface model to be used for this server
+                    role.<p>Different server roles can use the same interface model.</p></entry>
+              </row>
+              <row>
+                <entry>disk-model</entry>
+                <entry>A cross reference to the disk model to use for this server role.<p>Different
+                    server roles can use the same disk model.</p></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -773,6 +1417,81 @@
         for each of your servers in this file.</p>
       <note>The entries in this file are examples, if you have more or less nodes you can copy and
         paste to include your entire environment.</note>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_rjd_xbp_jt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Id</entry>
+                <entry>A user defined identifier for the server. Id's must be unique and are used to
+                  track server allocations.</entry>
+              </row>
+              <row>
+                <entry>ip-addr</entry>
+                <entry>
+                  <p>The IP address of the server for installation purposes.</p>
+                  <p>This IP address is used by the config-processor to install and configure the
+                    service components on this server.</p>
+                  <p>When the servers.yml file is being used for operating system installation, this
+                    IP address will be assigned to the node by the installation process.</p>
+                  <p>This IP address (and associated NIC) can be re-used within the cloud
+                    infrastructure. To enable this, the following conditions need to be met: <ol
+                      id="ol_b4b_kcp_jt">
+                      <li>The IP address must be a member of one of the network CIDRs defined in the
+                        networks.yml file.</li>
+                      <li>That network must be on an untagged VLAN.</li>
+                    </ol></p>
+                </entry>
+              </row>
+              <row>
+                <entry>Role</entry>
+                <entry>Identifies the role of the server.</entry>
+              </row>
+              <row>
+                <entry>server-group (optional)</entry>
+                <entry>Identifies the server group that this server belongs to.</entry>
+              </row>
+              <row>
+                <entry>mac-addr (optional)</entry>
+                <entry>Needed when <codeph>servers.yml</codeph> file is being used for the operating
+                  system installation. This identifies the MAC address on the server that will be
+                  used to network install the operating system.</entry>
+              </row>
+              <row>
+                <entry>ilo-ip (optional)</entry>
+                <entry>Needed when the <codeph>servers.yml</codeph> file is being used for the
+                  operating system installation. This provides the IP address of the power
+                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
+              </row>
+              <row>
+                <entry>ilo-user (optional)</entry>
+                <entry>Needed when the <codeph>servers.yml</codeph> file is being used for the
+                  operating system installation. This provides the username of the power management
+                  (e.g. ipmi-ip, iLO) subsystem.</entry>
+              </row>
+              <row>
+                <entry>ilo-password (optional)</entry>
+                <entry>Needed when the <codeph>servers.yml</codeph> file is being used for the
+                  operating system installation. This provides the user password of the power
+                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
+              </row>
+              <row>
+                <entry>nic-mapping (optional)</entry>
+                <entry>Name of the entry from the <codeph>nic-mappings.yml</codeph> file to apply to
+                  this server.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
@@ -826,6 +1545,8 @@
       <b>ip-addr: 192.168.10.11</b>
       role: ROLE-VSA
     # nic-mapping: MY_2PORT_SERVER</codeblock>
+      <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
+        are recognized.</note>
     </section>
   </conbody>
 </concept>

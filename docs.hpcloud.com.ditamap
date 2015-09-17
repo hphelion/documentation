@@ -69,7 +69,10 @@
         <topicref href="helion/cinder/ceph/configuration_files.dita"/>
       </topicref>
       <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration"
-        locktitle="yes"/>
+        locktitle="yes">
+        <topicref href="helion/cinder/vsa/vsa_cloud_model.dita" navtitle="Modifying Cloud Model"
+          locktitle="yes"/>
+      </topicref>
       <topicref href="helion/cinder/3Par/3par_configuration.dita"/>
       <topicref href="helion/cinder/brocade_zone_manager.dita" navtitle="Brocade Zone Manager"
         locktitle="yes"/>

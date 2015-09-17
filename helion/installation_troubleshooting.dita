@@ -4,9 +4,18 @@
   <title>Troubleshooting the Installation</title>
   <body>
     <section id="troubleshooting"><title>Troubleshooting Tips</title>
+      <p><b>Running the <codeph>hos-init.bash</codeph> script when configuring your deployer does
+          not complete</b></p>
+      <p>Part of what the <codeph>hos-init.bash</codeph> script does in <xref
+          href="bare_installation_kvm.dita#install_kvm/HLM_Node_Personalization">step 3 of
+          configuring the Deployer</xref> is install git and so if your DNS nameserver is not
+        configured or is not funcionting properly in your <codeph>/etc/resolv.conf</codeph> file of
+        your deployer node then it won't be able to complete.</p>
+      <p>To resolve this issue, double check your nameserver in your
+          <codeph>/etc/resolv.conf</codeph> file on your deployer.</p>
       <p><b>How to re-image an existing node</b></p>
-      <p>If you've already run the <codeph>bm-reimage.yml</codeph> playbook and needed to make a change to your configuration files</p>
-      
+      <p>If you've already run the <codeph>bm-reimage.yml</codeph> playbook and needed to make a
+        change to your configuration files</p>
       <p><b>Change needed to <codeph>baremetalConfig.yml</codeph> file needed after the Cobbler
           deploy</b></p>
       <p>If you've made a mistake or wish to change your <codeph>baremetalConfig.yml</codeph>
@@ -24,10 +33,11 @@ git commit -m "My config or other commit message"</codeblock></li>
         <li>Remove the nodes that had the old information from Cobbler using:
           <codeblock>sudo cobbler system remove --name &lt;nodename></codeblock></li>
         <li>Re-run the <codeph>cobbler-deploy.yml</codeph> and <codeph>bm-reimage.yml</codeph>
-          ansible scripts to upload the new node definitions to Cobbler and image the nodes:
-          <codeblock>cd ~/helion/hos/ansible
+          ansible scripts to upload the new node definitions to Cobbler and image the nodes: <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost cobbler-deploy.yml
-ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
+ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
+          <note>If you need to re-image your nodes, you can add the <codeph>-e nodelist=all</codeph>
+            switch to the end of your <codeph>bm-reimage.yml</codeph> command.</note></li>
       </ol>
       <p><b>Change needed to configuration files after you've run the
             <codeph>config-processor-run.yml</codeph> playbook</b></p>

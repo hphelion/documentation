@@ -123,8 +123,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
                 id="image_wrm_xfj_jt"/></p></li>
           <li>In the <b>Key</b> box, enter
             <i>brcd_fc_zone</i>.<!-- This is the name of the key used to specify the storage backend when provisioning volumes of this volume type-->.
-            The volume  name must match the name mentioned in the <codeph>cinder.conf</codeph>
-            file.</li>
+            The volume name must match the name mentioned in the <codeph>cinder.conf</codeph>
+              file.<b> &lt;what is the value in conf file></b></li>
           <li>In the <b>Value</b> box, enter the name to which you want to associate the volume
             type. For example:<i>brcd_fc</i>.</li>
           <li>Click <b>Create</b> to create the extra volume type specs.

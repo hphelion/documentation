@@ -159,10 +159,11 @@ git commit -m "&lt;commit message>"</codeblock>
           href="../../../media/ceph/create-ceph-volumetype%20-%20extra-specs.png" id="image_cgv_dcd_gt"
           /><p>The <b>Create Volume Type Extra Specs</b> dialog box displays.</p><p><image
             href="../../../media/ceph/volume-extra-specs-ceph.png" id="image_clm_rcd_gt"/></p></li>
-      <li>In the <b>Key</b> box, enter <i>ceph</i> as volume backend name. This is the name of the
-        key used to specify the storage backend when provisioning volumes of this volume type. </li>
+      <li>In the <b>Key</b> box, enter <i>volume_backend_name</i> as volume backend name. This is
+        the name of the key used to specify the storage backend when provisioning volumes of this
+        volume type. For example : <i>ceph</i></li>
       <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate the
-        volume type. For example:<i>ceph</i>.</li>
+        volume type. For example:<i>helion-ceph</i>.</li>
       <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type is
           mapped to the backend, you can create volumes with this volume type.</note></li>
     </ol>
