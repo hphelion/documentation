@@ -20,7 +20,7 @@
     </section>
     <section id="configure-3par-fc">
       <title>Configure 3PAR FC as Cinder backend</title>
-      <p>You must modify <codeph>cinder.conf.j2</codeph> to configure FC driver details.</p>
+      <p>You must modify <codeph>cinder.conf.j2</codeph> to configure FC details.</p>
       <p>Perform the following steps to configure 3PAR FC as Cinder backend:<ol id="ol_dj2_qcz_ht">
           <li>Login to deployer node.</li>
           <li>Change the directory as shown below:<codeblock>cd ~/helion</codeblock></li>
