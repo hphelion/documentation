@@ -7,16 +7,6 @@ Options +FollowSymLinks
 RewriteEngine on
 #
 #
-# Start Temporary rewrite rules for hos beta
-#
-RewriteRule ^helion/installation_troubleshooting.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/installation_troubleshooting.html [NE,R=301,L]
-RewriteRule ^helion/cinder/vsa/vsa.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/cinder/vsa/vsa.html [NE,R=301,L]
-RewriteRule ^helion/bare_installation_esx.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/bare_installation_esx.html [NE,R=301,L] 
-RewriteRule ^helion/monasca/opsconsole/overview.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/monasca/opsconsole/overview.html [NE,R=301,L] 
-RewriteRule ^helion/monasca/monasca.html$ http://docs-staging.hpcloud.com/hos2.0beta2/#helion/monasca/monasca.html [NE,R=301,L]
-#
-#END Temporary rewrite rules for hos beta
-#
 RewriteRule ^helion/devplatform/1.3/als/client/download?$ /#devplatform/1.3/helion/CLI/ALS_Client_Downloads.html [NE,R=301,L]
 RewriteRule ^helion/devplatform/1.3/als/?$ /#devplatform/1.3/devplatform.index.html [NE,R=301,L]
 RewriteRule ^devplatform/1.1devplatform.ALS-developer-trial-quick-start.html/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html [NE,R=301,L]
