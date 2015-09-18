@@ -69,8 +69,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
           <li>Login to deployer node.</li>
           <li>Change the directory as shown below:<codeblock>cd ~/helion</codeblock></li>
           <li>Edit <codeph>cinder.conf.j2</codeph> file at
-              <codeph>hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to enable 3PAR FC
-            as follows:<codeblock>enabled_backends=3par_iSCSI</codeblock><note>Append this change
+              <codeph>/home/stack/helion/my_cloud/config/cinder</codeph> to enable 3PAR FC as
+              follows:<codeblock>enabled_backends=3par_iSCSI</codeblock><note>Append this change
               with the exiting backend, if you have already added VSA as backend.</note></li>
           <li>Copy 3PAR iSCSI section, uncomment it, and modify the values in the
               <codeph>cinder.conf.j2</codeph> file as shown in the following

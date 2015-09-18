@@ -11,9 +11,12 @@
         <ul id="ul_pfl_bbz_ht">
           <li>HP Helion Cloud must be successfully deployed. It should be up and running.</li>
           <li>Brocade switches must be available in the cloud management network.</li>
-          <li>Block Storage is configured to use a Fibre Channel Volume Driver that supports Zone
-            Manager, <codeph>cinder.conf.j2</codeph> needs the following configuration options to
-            enable Fibre Channel Zone Manager.</li>
+          <li>
+            <p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Block Storage
+              should be configured to use a Fibre Channel Volume Driver that supports Zone Manager
+              and cinder.conf needs the following configuration options to enable Fibre Channel Zone
+              Manage<?oxy_custom_end?>r.</p>
+          </li>
         </ul>
       </p>
     </section>
@@ -26,8 +29,8 @@
           <li>Login to deployer node.</li>
           <li>Change the directory as shown below:<codeblock>cd ~/helion</codeblock></li>
           <li>Edit <codeph>cinder.conf.j2</codeph> file at
-              <codeph>hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to add Brocade
-            Fiber Channel Zone Manager Driver data. <note>
+              <codeph>/home/stack/helion/my_cloud/config/cinder</codeph> to add Brocade Fiber
+            Channel Zone Manager Driver data. <note>
               <ul id="ul_ghm_zbj_jt">
                 <li>The values entered in the following section is an example. You must change the
                   value as per your requirement/environment.</li>

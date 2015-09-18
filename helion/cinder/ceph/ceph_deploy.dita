@@ -99,8 +99,7 @@ volume_backend_name = ceph</codeblock><note>The
               <codeph>/home/stack/helion/hos/ansible/roles/ceph-client-prepare/vars/ceph_user_model.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
         <?oxy_custom_end?>
         <li>To enable cinder backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
-            <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> with the
-          following values:
+            <codeph>/home/stack/helion/my_cloud/config/cinder</codeph> with the following values:
           <codeblock>backup_driver = cinder.backup.drivers.ceph
 backup_ceph_conf = /etc/ceph/ceph.conf
 backup_ceph_user = cinder-backup
