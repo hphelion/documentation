@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="notification_methods">
+  <title>Metric Monitoring</title>
+  <shortdesc>This page allows you to define charts that display data based on the metrics and
+    parameters you choose. </shortdesc>
+  <conbody>
+    <section>
+      <title>Search</title>
+      <p>The search bar allows you to filter the notification methods you want to view. </p>
+    </section>
+    <section>
+      <title>Create Chart</title>
+      <p>The <uicontrol>Create Chart</uicontrol> button beside the search bar allows you to create a
+        new data chart.</p>
+      <p>To create a new chart:</p>
+      <ol>
+        <li>Click the <uicontrol>Create Chart</uicontrol> button to open a separate window that
+          allows you to configure a new chart.</li>
+        <li>Give your chart a <uicontrol>Name</uicontrol>.</li>
+        <li>Select a <uicontrol>Chart Type</uicontrol> in the drop down. Choices are: <ul>
+            <li>Line</li>
+            <li>Bar</li>
+            <li>Stacked Bar</li>
+            <li>Area</li>
+            <li>Stacked Area</li>
+          </ul></li>
+        <li>Select a <uicontrol>Chart Size</uicontrol> in the drop down.  Choices are:
+        <ul>
+          <li>Small</li>
+          <li>Large</li>
+        </ul></li>
+        <li>Select a <uicontrol>Chart Update Rate</uicontrol> in the drop down.  Choices are:
+        <ul>
+          <li>1 Minute</li>
+          <li>5 Minutes</li>
+          <li>10 Minutes</li>
+          <li>30 Minutes</li>
+          <li>1 Hour</li>
+        </ul></li>
+        <li>Select a <uicontrol>Time Range</uicontrol> in the drop down.  Choices are:
+        <ul>
+          <li>Last 60 Minutes</li>
+          <li>Last 2 Hours</li>
+          <li>Last 4 Hours</li>
+          <li>Last 8 Hours</li>
+          <li>Last 24 Hours</li>
+          <li>Last 7 Days</li>
+          <li>Last 30 Days</li>
+          <li>Last 90 Days</li>
+        </ul></li>
+        <li>Select a <uicontrol>Statistical Function</uicontrol> in the drop down.  Choices are:
+        <ul>
+          <li>[ None ]</li>
+          <li>AVG</li>
+          <li>SUM</li>
+          <li>MIN</li>
+          <li>MAX</li>
+          <li>COUNT</li>
+        </ul></li>
+        <li>When done creating the chart, click <uicontrol>Create Chart</uicontrol>. </li>
+      </ol>
+    </section>
+    <section>
+      <p>After the chart saves, the Metric Monitoring window refreshes with the new chart data
+        populated in the view.</p>
+    </section>
+  </conbody>
+</concept>
