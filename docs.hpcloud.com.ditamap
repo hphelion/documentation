@@ -20,6 +20,7 @@
   <topicref href="helion/index.dita">
     <topicref href="helion/releasenotes.dita"/>
     <topicref href="helion/supportedconfigs.dita"/>
+    <topicref href="helion/input_model.dita"/>
     <topicref href="helion/hardware.dita"/>
     <topicref href="helion/faq.dita"/>
     <topicref href="helion/installation_overview.dita" navtitle="Installation" locktitle="yes">
@@ -28,8 +29,6 @@
       <topicref href="helion/bare_installation_kvm.dita"
         navtitle="Baremetal Install for KVM Hypervisor" locktitle="yes">
         <topicref href="helion/bare_install_kvm_cl.dita"/>
-        <topicref href="helion/config/entryscalewithvsa.dita"
-          navtitle="Configuration Files for Entry Scale Model"/>
         <topicref href="helion/bare_install_kvm_post_cl.dita"/>
       </topicref>
       <topicref href="helion/bare_installation_esx.dita"

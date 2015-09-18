@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="entry_scale_with_vsa">
-  <title>Entry Scale with VSA</title>
-  <shortdesc>This page describes the Entry Scale with VSA model and how to use the configuration
+<concept id="input_model">
+  <title>Helion <tm
+    tmtype="reg">OpenStack</tm> 2.0 Input Model</title>
+  <shortdesc>This page describes the Helion OpenStack 2.0 Input Model and how to use the configuration
     files to achieve your cloud deployment goals.</shortdesc>
   <conbody>
     <section><title>About</title>
