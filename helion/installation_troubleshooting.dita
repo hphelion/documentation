@@ -14,8 +14,21 @@
       <p>To resolve this issue, double check your nameserver in your
           <codeph>/etc/resolv.conf</codeph> file on your deployer.</p>
       <p><b>How to re-image an existing node</b></p>
-      <p>If you've already run the <codeph>bm-reimage.yml</codeph> playbook and needed to make a
-        change to your configuration files</p>
+      <p>If you've already run the <codeph>cobbler-deploy.yml</codeph> and
+          <codeph>bm-reimage.yml</codeph> playbooks and needed to make a change to your
+        configuration files or for any other reason need to re-image one of your nodes, you need to
+        notify Cobbler in order to do this. The reason for this is that whenever a node has been
+        imaged, Cobbler sets a flag, <codeph>netboot-enabled</codeph>, to false to indicate that
+        it's already been installed.</p>
+      <p>In order to tell Cobbler that you want to re-image it, you can run these commands: <ol>
+          <li>To get a list of your system names, use:
+            <codeblock>sudo cobbler system list</codeblock></li>
+          <li>Notify Cobbler to set the <codeph>netboot-enabled</codeph> flag to true by using:
+            <codeblock>ansible-playbook -i hosts/localhost cobbler -e nodelist="&lt;node1>,&lt;node2>..."</codeblock></li>
+          <li>Then proceed with your <codeph>cobbler-deploy.yml</codeph> and
+              <codeph>bm-reimage.yml</codeph> playbooks again.</li>
+        </ol>
+      </p>
       <p><b>Change needed to <codeph>baremetalConfig.yml</codeph> file needed after the Cobbler
           deploy</b></p>
       <p>If you've made a mistake or wish to change your <codeph>baremetalConfig.yml</codeph>
