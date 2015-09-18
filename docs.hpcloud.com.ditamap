@@ -78,6 +78,7 @@
         locktitle="yes"/>
     </topicref>
     <topicref href="helion/cinder/verify_backend_configuration.dita"/>
+    <topicref href="helion/cinder/singleton_service_cinder.dita"/>
     <!-- Object Storage -->
     <topicref href="helion/swift/swift_overview.dita" navtitle="Object Storage Service"
       locktitle="yes">
