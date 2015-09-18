@@ -225,8 +225,8 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
           running the command below will download a cirros image from the internet, upload it to
           Glance, and create a Neutron external
             network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
-            can optionally specify the external network CIDR here too. If you choose not to
-            excercise this option or use a wrong value, the VMs will not be accessible over the
+            can optionally specify the external network CIDR here too. If you choose not to exercise
+            this option or use a wrong value, the VMs will not be accessible over the
             network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
         <li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the
           deployer:
