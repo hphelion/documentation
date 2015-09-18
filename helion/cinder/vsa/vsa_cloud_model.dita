@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_q3v_krq_jt">
-  <title>Modifying Cloud Model </title>
+  <title>Modifying Cloud Model to Create Multiple Clusters</title>
   <body>
     <p>You can create multiple VSA clusters of same or different type by specifying the
       configuration in the cloud model. <note type="tip">The term <b>add</b> and <b>update</b> in

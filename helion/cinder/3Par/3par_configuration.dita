@@ -96,7 +96,7 @@ hp3par_iscsi_chap_enabled=true</codeblock><note>
       </p>
     </section>
     <section id="create-volume-config-fc">
-      <title>Create Volume to Verify the Configuration of 3PAR FC and iSCSI</title>
+      <title>Create Volume Type to Verify the Configuration of 3PAR FC and iSCSI</title>
       <p>You must create a volume to verify the configuration of 3PAR FC and iSCSI. Once you are
         able to create the volume then delete the created volume.</p>
       <p>Perform the following steps to create a volume using Horizon dashboard:</p>
@@ -119,8 +119,8 @@ hp3par_iscsi_chap_enabled=true</codeblock><note>
         </ol>
       </p>
     </section>
-    <section id="associate-volume-backend"><title>Associate the volume type to a
-        backend</title><p>To map a volume type to a backend, do the following: <ol
+    <section id="associate-volume-backend"><title>Associate the Volume Type to a
+        Backend</title><p>To map a volume type to a backend, do the following: <ol
           id="ol_owv_krv_3t">
           <li>Login to the Horizon dashboard. The Horizon dashboard displays with the options in the
             left panel.</li>
