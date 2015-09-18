@@ -3,8 +3,8 @@
 <topic id="topic_bcg_pwz_jt">
   <title>Upgrading from Beta1 to Beta2</title>
   <body>
-    <p> Upgrade from Beta1 to Beta2 is now supported. To preform the upgrade, yu must have a working
-      deployment of the Beta1 release. </p>
+    <p> Upgrade from Beta1 to Beta2 is now supported. To preform the upgrade, you must have a
+      working deployment of the Beta1 release. </p>
     <p>To perform the upgrade, follow the steps below. The upgrade will apply necessary changes to
       HP Helion OpenStack services, as well as to the underlying cloud platform. OS kernel updates
       are not performed at this time.<ol id="ol_kyd_rxz_jt">
