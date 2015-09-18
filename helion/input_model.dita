@@ -39,40 +39,94 @@
         requirements.</p>
       <p><image href="../media/config/concept_diag.png"/></p>
     </section>
-      <section id="3.1_Cloud"><title>Cloud</title>
-        <p><i>A cloud consists of one or more control planes.</i></p>
-        <p>The <codeph>cloudConfig.yml</codeph> file will define your Cloud name, NTP server configuration, DNS settings, and your SMTP settings.</p>
-      </section>
+    <section id="3.1_Cloud"><title>Cloud</title>
+      <p><i>A cloud consists of one or more control planes.</i></p>
+      <p>The <codeph>cloudConfig.yml</codeph> file will define your Cloud name, NTP server
+        configuration, DNS settings, and your SMTP settings.</p>
+    </section>
     <section id="3.2_ControlPlanes"><title>Control Planes</title>
-      <p><i>A control plane runs one or more <uicontrol>services</uicontrol> distributed across <uicontrol>clusters</uicontrol> and <uicontrol>resource groups</uicontrol></i></p>
-      <p><i>A control plane uses servers with a particular <uicontrol>server-role</uicontrol></i></p>
-      <p>A Control Plane provides the operating environment for a set of services; normally consisting of set of shared services (MySQL, RabbitMQ, HAproxy, Apache, etc), OpenStack control services (API, schedulers, etc) and the resources they are managing (compute, storage, etc)</p>
-      <p>A simple cloud may have a single control plane which runs all of the services.  A more complex cloud may have multiple control planes with a relationship between them.  Services that need to consume (use) another service (such as Neutron consuming MySql, Nova consuming Neutron) always use the service within the same control plane before looking in any related control planes.  It is the job of the HLM configuration processor to resolve these relationships and make sure that each service is provided with the configuration details to connect to the appropriate service.</p>
-      <p>A Control Plane is structured as <uicontrol>clusters</uicontrol> and <uicontrol>resource-nodes</uicontrol>.  The clusters are typically used to host the OpenStack services used to manage the cloud: such as API servers, Database servers, Neutron agents, Swift Proxies; while the Resource servers are used to host those scale out OpenStack services like Nova-Compute or Swift-Object service. This is a representation convenience rather than a strict rule, for example it is possible to locate the Swift-Object service in the management cluster in a smaller scale cloud that is not designed to scale out object serving.</p>
-      <p>A cluster can be one or more servers, and you can have one or more clusters depending on the scale of the cloud that you are building. Spreading services across multiple clusters is more scalable, but of course it requires more servers.  A common pattern for a large cloud is to run high data volume services such as monitoring and logging on a separate cluster.  A cloud with a high object storage requirement will typically also run the Swift service on its own cluster.</p>
-      <p>Clusters in this context are a mechanism for grouping service components onto physical servers, but all instances of a component in a control plane work collectively.  So for example, if ha-proxy is configured into multiple clusters within the same control plane then all of those instances will work as a single instance of the ha-proxy services.</p>
-      <p>In addition to its cluster, a control plane also has a collection of resource servers which provide compute and storage resources.</p>
+      <p><i>A control plane runs one or more <uicontrol>services</uicontrol> distributed across
+            <uicontrol>clusters</uicontrol> and <uicontrol>resource groups</uicontrol></i></p>
+      <p><i>A control plane uses servers with a particular
+        <uicontrol>server-role</uicontrol></i></p>
+      <p>A Control Plane provides the operating environment for a set of services; normally
+        consisting of set of shared services (MySQL, RabbitMQ, HAproxy, Apache, etc), OpenStack
+        control services (API, schedulers, etc) and the resources they are managing (compute,
+        storage, etc)</p>
+      <p>A simple cloud may have a single control plane which runs all of the services. A more
+        complex cloud may have multiple control planes with a relationship between them. Services
+        that need to consume (use) another service (such as Neutron consuming MySql, Nova consuming
+        Neutron) always use the service within the same control plane before looking in any related
+        control planes. It is the job of the HLM configuration processor to resolve these
+        relationships and make sure that each service is provided with the configuration details to
+        connect to the appropriate service.</p>
+      <p>A Control Plane is structured as <uicontrol>clusters</uicontrol> and
+          <uicontrol>resource-nodes</uicontrol>. The clusters are typically used to host the
+        OpenStack services used to manage the cloud: such as API servers, Database servers, Neutron
+        agents, Swift Proxies; while the Resource servers are used to host those scale out OpenStack
+        services like Nova-Compute or Swift-Object service. This is a representation convenience
+        rather than a strict rule, for example it is possible to locate the Swift-Object service in
+        the management cluster in a smaller scale cloud that is not designed to scale out object
+        serving.</p>
+      <p>A cluster can be one or more servers, and you can have one or more clusters depending on
+        the scale of the cloud that you are building. Spreading services across multiple clusters is
+        more scalable, but of course it requires more servers. A common pattern for a large cloud is
+        to run high data volume services such as monitoring and logging on a separate cluster. A
+        cloud with a high object storage requirement will typically also run the Swift service on
+        its own cluster.</p>
+      <p>Clusters in this context are a mechanism for grouping service components onto physical
+        servers, but all instances of a component in a control plane work collectively. So for
+        example, if ha-proxy is configured into multiple clusters within the same control plane then
+        all of those instances will work as a single instance of the ha-proxy services.</p>
+      <p>In addition to its cluster, a control plane also has a collection of resource servers which
+        provide compute and storage resources.</p>
     </section>
     <section id="3.2.1_ControlPlanesAndRegions"><title>Control Planes and Regions</title>
-      <p>A region in OpenStack terms is a collection of URLs that together provide a set of services (Nova, Neutron, Swift, etc).  As a user you have to explicitly decide which region you want to use.</p>
-      <p>As the owner of a cloud, regions provide a way of segmenting resources for scale, resilience, and isolation. However, each region needs some resources for its control plane.</p>
-      <p>Regions don't have to be disjointed. For example you can have a Swift service shared across more than one region, in which case the Swift URL for both regions will be the same.  Some services do however have to be co-located in the same region (Nova, Neutron and Cinder for example)</p>
-      <p>The way we express this in the cloud model is to talk about a Control Plane providing some or all of the endpoints for one or more Regions.</p>
+      <p>A region in OpenStack terms is a collection of URLs that together provide a set of services
+        (Nova, Neutron, Swift, etc). As a user you have to explicitly decide which region you want
+        to use.</p>
+      <p>As the owner of a cloud, regions provide a way of segmenting resources for scale,
+        resilience, and isolation. However, each region needs some resources for its control
+        plane.</p>
+      <p>Regions don't have to be disjointed. For example you can have a Swift service shared across
+        more than one region, in which case the Swift URL for both regions will be the same. Some
+        services do however have to be co-located in the same region (Nova, Neutron and Cinder for
+        example)</p>
+      <p>The way we express this in the cloud model is to talk about a Control Plane providing some
+        or all of the endpoints for one or more Regions.</p>
     </section>
     <section id="3.3_Services"><title>Services</title>
       <p><i>A control plane runs one or more services</i></p>
-      <p>A service is the collection of <uicontrol>service-components</uicontrol> that provide a particular feature; for example Nova provides the compute service and consists of the following service-components: nova-api, nova-scheduler, nova-conductor, nova-novncproxy, and nova-compute.  Some services, like the authentication service Keystone only consist of a single service-element.</p>
-      <p>All you need to know about services to define your cloud is the names of the service components. The details of the services themselves, and how they interact with each other is captured in service definition files provided by Helion OpenStack.</p>   
-      <p>When specifying your Helion OpenStack cloud you have to decide where components will run, and how they connect to the networks.  For example, should they all run in one control plane sharing common services, or be distributed across multiple control planes to provide separate instances of some services.  The supplied examples provide solutions for some typical configurations.</p>
+      <p>A service is the collection of <uicontrol>service-components</uicontrol> that provide a
+        particular feature; for example Nova provides the compute service and consists of the
+        following service-components: nova-api, nova-scheduler, nova-conductor, nova-novncproxy, and
+        nova-compute. Some services, like the authentication service Keystone only consist of a
+        single service-element.</p>
+      <p>All you need to know about services to define your cloud is the names of the service
+        components. The details of the services themselves, and how they interact with each other is
+        captured in service definition files provided by Helion OpenStack.</p>
+      <p>When specifying your Helion OpenStack cloud you have to decide where components will run,
+        and how they connect to the networks. For example, should they all run in one control plane
+        sharing common services, or be distributed across multiple control planes to provide
+        separate instances of some services. The supplied examples provide solutions for some
+        typical configurations.</p>
       <p>We'll talk more about how to describe how services connect to the network later.</p>
     </section>
     <section id="3.4_ServerRoles"><title>Server Roles</title>
       <p><i>A region uses servers with a particular server role</i></p>
-      <p>Clearly you're going to be running the services on some servers, and you're going to need to way to specify which servers you want to use where - and this is where the server-role comes in.  A server role is just a name you use to identify a particular set of servers.  You'll generally use a different role whenever the servers are physically different (have different disks or network interfaces), or if you want to use some specific servers in a particular role (for example to choose which of a set of identical servers are to be used in the control plane).</p>
-      <p>Each server-role has a relationship to two other entities:
-        <ul>
-          <li>A server-role identifies which disk model to use to control how to configure and use its local storage</li>
-          <li>A server-role identifies an interface model which describes how its network interfaces are to be configured and used.  We'll cover this in more details the networking section.</li>
+      <p>Clearly you're going to be running the services on some servers, and you're going to need
+        to way to specify which servers you want to use where - and this is where the server-role
+        comes in. A server role is just a name you use to identify a particular set of servers.
+        You'll generally use a different role whenever the servers are physically different (have
+        different disks or network interfaces), or if you want to use some specific servers in a
+        particular role (for example to choose which of a set of identical servers are to be used in
+        the control plane).</p>
+      <p>Each server-role has a relationship to two other entities: <ul>
+          <li>A server-role identifies which disk model to use to control how to configure and use
+            its local storage</li>
+          <li>A server-role identifies an interface model which describes how its network interfaces
+            are to be configured and used. We'll cover this in more details the networking
+            section.</li>
         </ul>
       </p>
     </section>
@@ -81,88 +135,219 @@
       <p><i>Device Groups are consumed by services</i></p>
       <p><i>Volume Groups are divided into Logical Volumes</i></p>
       <p><i>Logical Volumes are mounted as file systems or consumed by services</i></p>
-      <p>A disk model defines how local storage is to be configured and presented to services.  Disk models are identified by a name, which can be specified by the user.   The configuration examples provide some typical configurations, although as this is an area that varies both on the services that are hosted on a server and the number of disks available it is hard to cover all permutations, and you may need to modify the examples to meet your requirements.</p>
-      <p>Within a disk model, disks devices are specified as being part of either a <uicontrol>device-group</uicontrol> or a <uicontrol>volume-group</uicontrol>.</p>
+      <p>A disk model defines how local storage is to be configured and presented to services. Disk
+        models are identified by a name, which can be specified by the user. The configuration
+        examples provide some typical configurations, although as this is an area that varies both
+        on the services that are hosted on a server and the number of disks available it is hard to
+        cover all permutations, and you may need to modify the examples to meet your
+        requirements.</p>
+      <p>Within a disk model, disks devices are specified as being part of either a
+          <uicontrol>device-group</uicontrol> or a <uicontrol>volume-group</uicontrol>.</p>
       <p><image href="../media/config/disk_model.png"/></p>
-      <p>A <uicontrol>device-group</uicontrol> is a set of one or more disks that are to be consumed directly by a service - for example, a set of disks to be used by Swift.  The device-group identifies the list of disk devices, the service, and a few service specific attributes that tell the service about the intended use (for example, in the case of Swift this is the ring names).   The service is responsible for the management of the disks, including creating and mounting file systems.  (Swift can provide additional data integrity when it has full control over the filesystems and mount points)</p>
-      <p>A <uicontrol>volume-group</uicontrol> is used to present disk devices as physical volumes in a LVM volume group.  It also contains details of the Logical Volumes to be created, including the file system type and mount point. Logical Volume sizes are expressed as a percentage of the total capacity of the volume group.  A Logical Volume can also be specified to be consumed by a service in the same way as a device-group.  This supports the case of services which expect to manage their own devices on configurations with limited numbers of disk drives (for example single node demo systems).</p>
+      <p>A <uicontrol>device-group</uicontrol> is a set of one or more disks that are to be consumed
+        directly by a service - for example, a set of disks to be used by Swift. The device-group
+        identifies the list of disk devices, the service, and a few service specific attributes that
+        tell the service about the intended use (for example, in the case of Swift this is the ring
+        names). The service is responsible for the management of the disks, including creating and
+        mounting file systems. (Swift can provide additional data integrity when it has full control
+        over the filesystems and mount points)</p>
+      <p>A <uicontrol>volume-group</uicontrol> is used to present disk devices as physical volumes
+        in a LVM volume group. It also contains details of the Logical Volumes to be created,
+        including the file system type and mount point. Logical Volume sizes are expressed as a
+        percentage of the total capacity of the volume group. A Logical Volume can also be specified
+        to be consumed by a service in the same way as a device-group. This supports the case of
+        services which expect to manage their own devices on configurations with limited numbers of
+        disk drives (for example single node demo systems).</p>
     </section>
     <section id="3.6_Servers"><title>Servers</title>
       <p><i>Servers have a role which determines how they will be used in the cloud</i></p>
-      <p>Servers enumerate the resources available for your cloud. A server could be a physical server or a virtual machine, all Helion OpenStack requires is that it is capable of booting a supported operating system and that it has an IP address that can be accessed via SSH.  In addition to this IP address, each server says what its <uicontrol>server-role</uicontrol> is.</p>
+      <p>Servers enumerate the resources available for your cloud. A server could be a physical
+        server or a virtual machine, all Helion OpenStack requires is that it is capable of booting
+        a supported operating system and that it has an IP address that can be accessed via SSH. In
+        addition to this IP address, each server says what its <uicontrol>server-role</uicontrol>
+        is.</p>
     </section>
     <section id="3.7_ServerGroups"><title>Server Groups</title>
       <p><i>A server is associated with a Server Group</i></p>
       <p><i>A control-plane can use Server Groups as failure zones for server allocation</i></p>
       <p><i>A server group may be associated with a list of networks</i></p>
       <p><i>A server group can contain other server groups</i></p>
-      <p>The concept of physical servers located in a number of racks or enclosures in a data center is one that everyone can understand.  Such racks generally provide a degree of physical isolation such as separate power and/or network connectivity.  In a multi-region cloud, individual racks or groups of racks will normally be allocated to a specific region.</p>
-      <p>In the Helion OpenStack model we support this concept by allowing you to define a hierarchy of server groups.  Each server is associated with one server group, normally at the bottom of the hierarchy.</p>
-      <p>Server groups are an optional part of the input model – if you don’t define any then all servers and networks will be allocated as if they are part of the same group.</p>
+      <p>The concept of physical servers located in a number of racks or enclosures in a data center
+        is one that everyone can understand. Such racks generally provide a degree of physical
+        isolation such as separate power and/or network connectivity. In a multi-region cloud,
+        individual racks or groups of racks will normally be allocated to a specific region.</p>
+      <p>In the Helion OpenStack model we support this concept by allowing you to define a hierarchy
+        of server groups. Each server is associated with one server group, normally at the bottom of
+        the hierarchy.</p>
+      <p>Server groups are an optional part of the input model – if you don’t define any then all
+        servers and networks will be allocated as if they are part of the same group.</p>
     </section>
     <section id="3.7.1_ServerGroupsAndFailureZones"><title>Server Groups and Failure Zones</title>
-      <p>A control plane defines a list of server groups as the failure zones it wants to use servers from.  All servers in a server group listed as a failure zone in the control plane, and any server groups they contain, are considered part of that failure zone for allocation purposes.  For example, three levels of server groups could be used to model a failure zone consisting of multiple racks each of which in turn contain a number of enclosures.</p>
+      <p>A control plane defines a list of server groups as the failure zones it wants to use
+        servers from. All servers in a server group listed as a failure zone in the control plane,
+        and any server groups they contain, are considered part of that failure zone for allocation
+        purposes. For example, three levels of server groups could be used to model a failure zone
+        consisting of multiple racks each of which in turn contain a number of enclosures.</p>
       <p><image href="../media/config/server_groups.png"/></p>
-      <p>When allocating servers, the configuration processor will traverse down the hierarchy of server groups listed as failure zones until it can find an available server with the required role. It will allocate servers equally across each of the failure zones.  A cluster or resource group can also independently specify the failure zone(s) it wants to use if needed.</p>
+      <p>When allocating servers, the configuration processor will traverse down the hierarchy of
+        server groups listed as failure zones until it can find an available server with the
+        required role. It will allocate servers equally across each of the failure zones. A cluster
+        or resource group can also independently specify the failure zone(s) it wants to use if
+        needed.</p>
     </section>
     <section id="3.7.2_ServerGroupsAndNetworks"><title>Server Groups and Networks</title>
-      <p>Each L3 network in a cloud needs to be associated with all or some of the servers, normally following a physical pattern (such as having separate networks for each rack or set of racks).  This is also represented in the Helion OpenStack model via server groups, each server group listing zero or more networks that servers associated to server groups at or below this point in the hierarchy are connected to.</p>
-      <p>When the Configuration Processor needs to resolve which specific network a server should be configured to use it traverses up the hierarchy of server groups, starting with the group the server is associated with, until it finds a server group which lists a network in the required network group.</p>
-      <p>The level in the server group hierarchy at which a network is associated will depend on the span of connectivity it has to provide.  In the above example there might be networks in some network groups which are per rack (i.e. Rack 1 and Rack 2 list different networks from the same network group) and networks in a different network group that have to span failure zone (the network used to provide floating IP addresses to VMs for example).</p>
+      <p>Each L3 network in a cloud needs to be associated with all or some of the servers, normally
+        following a physical pattern (such as having separate networks for each rack or set of
+        racks). This is also represented in the Helion OpenStack model via server groups, each
+        server group listing zero or more networks that servers associated to server groups at or
+        below this point in the hierarchy are connected to.</p>
+      <p>When the Configuration Processor needs to resolve which specific network a server should be
+        configured to use it traverses up the hierarchy of server groups, starting with the group
+        the server is associated with, until it finds a server group which lists a network in the
+        required network group.</p>
+      <p>The level in the server group hierarchy at which a network is associated will depend on the
+        span of connectivity it has to provide. In the above example there might be networks in some
+        network groups which are per rack (i.e. Rack 1 and Rack 2 list different networks from the
+        same network group) and networks in a different network group that have to span failure zone
+        (the network used to provide floating IP addresses to VMs for example).</p>
     </section>
     <section id="3.8_Networking"><title>Networking</title>
-      <p>In addition to the mapping of services to specific servers we also have to be able to define how the services connect to one or more networks.</p>
-      <p>In a simple cloud there may be a single L3 network, but normally at least the External APIs that users will use to access the cloud, and the External Addresses that users will use to access their VMS are on separate networks.  In more complex clouds it's not unusual to also separate out virtual networking between VMs,  Block Storage traffic, and Volume traffic onto their own sets of networks.  In a large cloud there may be separate L3 network segments for each rack (where the traffic is routeable - some traffic has to be on the same segment).</p>
-      <p>To allow this kind of network segmentation we define the network configuration in two levels, <uicontrol>network-groups</uicontrol> and <uicontrol>networks</uicontrol>.</p>
+      <p>In addition to the mapping of services to specific servers we also have to be able to
+        define how the services connect to one or more networks.</p>
+      <p>In a simple cloud there may be a single L3 network, but normally at least the External APIs
+        that users will use to access the cloud, and the External Addresses that users will use to
+        access their VMS are on separate networks. In more complex clouds it's not unusual to also
+        separate out virtual networking between VMs, Block Storage traffic, and Volume traffic onto
+        their own sets of networks. In a large cloud there may be separate L3 network segments for
+        each rack (where the traffic is routeable - some traffic has to be on the same segment).</p>
+      <p>To allow this kind of network segmentation we define the network configuration in two
+        levels, <uicontrol>network-groups</uicontrol> and <uicontrol>networks</uicontrol>.</p>
     </section>
     <section id="3.8.1_NetworkGroups"><title>Network Groups</title>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <p>The location of the example files is:</p>
-      <p><codeblock>~/helion/examples/entry-scale-with-vsa/</codeblock></p>
-      <p>Here are shortcuts to each of the files for full descriptions and syntax:</p>
-      <ul>
-        <li><xref href="#entry_scale_with_vsa/cloudConfig.yml">cloudConfig.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/baremetalConfig.yml">baremetalConfig.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/control_plane.yml">control_plane.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/disks_.yml">disks_*.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/net_interfaces.yml">net_interfaces.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/network_groups.yml">network_groups.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/networks.yml">networks.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/nic_mappings.yml">nic_mappings.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/server_groups.yml">server_groups.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/server_roles.yml">server_roles.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/servers.yml">servers.yml</xref></li>
-      </ul>
+      <p><i>Service endpoints attach to networks in a specific Network Group</i></p>
+      <p><i>Network Groups can define routes to other networks</i></p>
+      <p><i>Network Groups encapsulate the configuration for services via
+            <uicontrol>network-tags</uicontrol></i></p>
+      <p>A network-group defines the traffic separation model, and all of the properties that are
+        common to the set of L3 *networks* that carry each type of traffic. They define where
+        services are attached to the network model, and the routing within that model.</p>
+      <p>Each network-group provides isolation for a collection of network traffic between service
+        elements and between service-elements and external clients. The starting point for
+        configuring a network-group then is to define the service endpoints that connect to it. The
+        details of how each service connects, such as what port it uses, if it should be behind a
+        load balancer, if and how it should be registered in Keystone, etc are defined in the
+        service definition files provided by Helion OpenStack. All that has to be captured in the
+        network-groups definition is the same service-element names that are used when defining
+        regions. Helion OpenStackl also allows a "default" attachment to be used to specify "all
+        service-elements" that aren't specifically connected to another network-group; so for
+        example, to isolate Swift traffic the swift-account, swift-container, and swift-object
+        service elements are attached to an "Object" network group and all other services are
+        connected to a "Management" network group via the "default" relationship.</p>
+      <p>In any multiple network configuration, controlling the network routing is a major concern
+        and this is also defined at the network group level. Firstly, all networks are configured to
+        provide the route to any other networks in the same network group. In addition, a
+        network-group can be defined to have a route to other network-groups; for example if the
+        internal APIs are in a dedicated network group (a common configuration in a complex network
+        since a network group with load balancers cannot be segmented) then other network groups may
+        need to include a route to this network so that services can access the internal API
+        endpoints. Routes may also be required to define how to access external storage network,
+        an/or to define a general default route.</p>
+      <p>As part of the Helion OpenStack deployment, networks are configured to act as the default
+        route for all traffic that was received via that network (so that response packets always
+        return via the network the request came from).</p>
+      <p>Note that Helion OpenStack will configure the routing rules on the servers it deploys, but
+        ensuring that gateways can provide the required routes is the responsibility of your network
+        configuration.</p>
     </section>
-    <section id="notes"><title>Important Notes</title>
-      <p>A few things to keep in mind when working with your configuration files:</p>
-      <ul>
-        <li>If you have used earlier beta versions of Helion OpenStack 2.0, be mindful that the
-          contents of these configuration files may have changed. It's considered best practice to
-          copy over the example files per the <xref
-            href="../bare_installation_kvm.dita#install_kvm/Configuration">installation
-            instructions</xref> and edit them with your information.</li>
-        <li>If you need to edit your configuration files after your installation has already begun,
-          there are steps in the <xref href="../installation_troubleshooting.dita">Installation
-            Troubleshooting</xref> document that can assist with the process.</li>
-      </ul>
+    <section id="3.8.1.1_LoadBalancers"><title>Load Balancers</title>
+      <p>Load Balancers provide a specific type of routing and are also defined in network-groups as
+        a relationship between a VIP on a network in one network group and a set of service
+        endpoints (which may be on networks in the same or a different network group).</p>
+      <p>Each load balancer is defined as part of the network group where the virtual IP will be
+        presented – it follows that a network group containing a load balancer can only have one
+        network associated to it.</p>
+      <p>The load balancer definition includes a list of service-elements and roles it will provide
+        A VIP for.</p>
+      <p>The list of service-elements allows service specific load balancers to be defined on
+        networks in different network-groups. As with other service-element relationships, all that
+        is needed in the service-element name, the details of how the load balancer should be
+        configured, are provided in the supplied service definitions. A "default" value is accepted
+        to express "all service-elements which expect to be behind a load balancer and are not
+        explicitly configured in another load balancer configuration". Note that is not necessary to
+        say which network groups the service-elements that are being load balanced are attached to,
+        the Configuration Processor can deduce that information.</p>
+      <p>The endpoint roles make it possible to configure separate load balancers for public and
+        internal access to services, and the Configuration Processor uses this information to both
+        ensure the correct registrations in Keystone and to make sure internal traffic is routed to
+        the correct endpoint. Helion services are configured to only connect to other services via
+        internal VIPs and endpoints, allowing the name and security certificate of public endpoints
+        to be controlled by the customer and set to values that may not be resolvable or accessible
+        from the servers making up the Helion cloud.</p>
+      <p>Note that each load balancer defined in the input model will be allocated a separate VIP,
+        even when the load balancers are part of the same network group. Because of the need to be
+        able to separate public and internal access Helion will not allow a single load balancer to
+        provide both public and internal access. Load balancers in this context are logical entities
+        (sets of rules to transfer traffic from a VIP to one or more endpoints) – multiple load
+        balancers may be implemented by the same service within the cloud (e.g. a ha-proxy
+        cluster).</p>
+      <p>The following diagram shows a possible configuration in which the URL associated with the
+        public endpoint has been set to a name that resolves for customers to a firewall controlling
+        access to the cloud. Helion services use the internal URL to access a separate VIP.</p>
+      <p><image href="../media/config/load_balancers.png"/></p>
     </section>
-    <section id="cloudConfig.yml">
-      <title>cloudConfig.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/cloudConfig.yml</codeblock></p>
-      <p>The key values to enter into this document are described in the table below:</p>
-      <table frame="all" rowsep="1" colsep="1" id="table_pdl_jb4_jt">
+    <section id="3.8.1.2_NetworkTags"><title>Network Tags</title>
+      <!-- need words here on the tags concept -->
+      <p>Network tags are defined by Helion OpenStack service components, and are used in the input
+        model to convey information between the model and the service.</p>
+      <p>Network tags convey information about the physical network configuration to services,
+        allowing the dependent aspects of the service to be automatically configured, for example an
+        option in a service configuration file that contains the IP address of the corresponding
+        network device on a server where that service component is installed.</p>
+      <p>Network tags convey requirements a service may have on aspects of the server network
+        configuration, for example that a bridge is required on the corresponding network device on
+        a server where that service component is installed.</p>
+      <p>See <xref href="#input_model/4.9.1_NetworkTags">Network Tags</xref> for more information on
+        specific tags and their usage.</p>
+    </section>
+    <section id="3.8.2_Networks"><title>Networks</title>
+      <p><i>A Network is part of a Network Group</i>></p>
+      <p><i>A Network can be associated with a Server Group</i></p>
+      <p>Networks, by comparison, are fairly simple definitions. Each network defines the CIDR,
+        start and end address, gateway, and VLAN ID.</p>
+    </section>
+    <section id="3.8.3_InterfaceModel"><title>Interface Model</title>
+      <p><i>A server-role identifies an interface model which describes how its network interfaces
+          are to be configured and used.</i>></p>
+      <p>Networks are mapped onto specific network interfaces via an interface-model, which
+        describes the network devices that need to be created (bonds, ovs-bridges, etc) their
+        properties, and the network-groups that are associated with them.</p>
+      <p>An interface model acts like template; it can define how some or all of the network-groups
+        are to be mapped for a particular combination of physical NICs. However, it is the
+        service-elements on each server that determine which network-groups are required and hence
+        which interfaces and networks will be configured.</p>
+      <p>Interface-models can be shared between different server-roles (say an API role and a
+        database role which may still need different disk models) even though these will require a
+        different subset of the network groups providing the servers have the same number of network
+        interfaces.</p>
+      <p>Within an interface-model, physical ports are identified either by their device name
+        (eth0), or where there are multiple interfaces by a port name that is resolved via a NIC
+        mapping.</p>
+      <p>To allow different physical servers to share an interface-model, the NIC mapping is defined
+        as an optional property of each server.</p>
+    </section>
+    <section id="3.8.4_NICMapping"><title>NIC Mapping</title>
+      <p>Where a server has more than a single NIC, or two NICs that are to be a single bond, then
+        we need a NIC mapping to unambiguously identify each individual NIC. Interface enumeration
+        (eth0, eth1, eth2, ...) is not a reliable mechanism, and so we use PCI bus enumeration
+        instead.</p>
+      <p>This level of abstraction will also allow a network function on SRIOV capable network cards
+        to be used for network connections and consumed by services in a future release.</p>
+    </section>
+    <section id="4.0_ConfigurationObjects"><title>Helion OpenStack 2.0 Configuration Objects</title>
+    </section>
+    <section id="4.1_Cloud"><title>Cloud</title>
+      <p>The top level cloud configuration file defines some global values for the Helion Cloud.</p>
+      <table frame="all" rowsep="1" colsep="1" id="cloud_config">
         <tgroup cols="2">
           <colspec colname="c1" colnum="1"/>
           <colspec colname="c2" colnum="2"/>
@@ -264,6 +449,7 @@
       <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
         are recognized.</note>
     </section>
+    <!--
     <section id="baremetalConfig.yml"><title>baremetalConfig.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/baremetalConfig.yml</codeblock></p>
@@ -272,7 +458,7 @@
         vlan setup information.</p>
       <p>Here is the sample file included with the install:</p>
       <codeblock>
----
+
   product:
     version: 2
   <b>baremetal_network:
@@ -362,9 +548,58 @@
         ilo_user: admin
         ilo_password: password</b></codeblock>
     </section>
-    <section id="control_plane.yml"><title>control_plane.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/control_plane.yml</codeblock></p>
+    -->
+    <section id="4.2_ControlPlane"><title>Control Plane</title>
+      <p>The snippet below shows the control plane definition file:</p>
+      <codeblock>
+---
+  product:
+    version: 2
+        
+  control-planes:
+    - name: ccp
+      region-name: region1
+      failure-zones:
+        - AZ1
+        - AZ2
+        - AZ3
+      common-service-components:
+        - logging-producer
+        - monasca-agent
+        - freezer-agent
+        - stunnel
+      clusters:
+        - id: "1"
+      name: c1
+      server-role: ROLE-CONTROLLER
+      member-count: 3
+      allocation-policy: strict
+      service-components:
+        - ntp-server
+        - swift-ring-builder
+        - mysql
+        - ip-cluster
+        - apache2
+        - keystone-api
+        - keystone-client
+        - rabbitmq
+        - glance-api
+        ...
+        
+  resource-nodes:
+    - name: compute
+      resource-prefix: comp
+      server-role: ROLE-COMPUTE
+      allocation-policy: any
+      min-count: 0
+      service-components:
+        - ntp-client
+        - nova-kvm
+        - nova-compute
+        - neutron-l3-agent
+        - neutron-metadata-agent
+        - neutron-openvswitch-agent
+        - neutron-lbaasv2-agent</codeblock>
       <p>The key values to enter into this document are described in the table below:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_zrw_1z4_jt">
@@ -565,118 +800,6 @@
           </tgroup>
         </table>
       </p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-
-  control-planes:
-    - name: ccp
-      region-name: region1
-      failure-zones:
-        - AZ1
-        - AZ2
-        - AZ3
-      common-service-components:
-        - logging-producer
-        - monasca-agent
-        - freezer-agent
-        - stunnel
-      clusters:
-        - id: "1"
-          name: c1
-          server-role: ROLE-CONTROLLER
-          member-count: 3
-          allocation-policy: strict
-          service-components:
-            - ntp-server
-            - swift-ring-builder
-            - mysql
-            - ip-cluster
-            - apache2
-            - keystone-api
-            - keystone-client
-            - rabbitmq
-            - glance-api
-            - glance-registry
-            - glance-client
-            - cinder-api
-            - cinder-scheduler
-            - cinder-volume
-            - cinder-backup
-            - cinder-client
-            - nova-api
-            - nova-scheduler
-            - nova-conductor
-            - nova-console-auth
-            - nova-novncproxy
-            - nova-client
-            - neutron-server
-            - neutron-ml2-plugin
-            - neutron-vpn-agent
-            - neutron-dhcp-agent
-            - neutron-metadata-agent
-            - neutron-openvswitch-agent
-            - neutron-client
-            - horizon
-            - sherpa-api
-            - swift-proxy
-            - memcached
-            - swift-account
-            - swift-container
-            - swift-object
-            - swift-client
-            - heat-api
-            - heat-api-cfn
-            - heat-api-cloudwatch
-            - heat-engine
-            - heat-client
-            - openstack-client
-            - ceilometer-api
-            - ceilometer-collector
-            - ceilometer-agent-central
-            - ceilometer-agent-notification
-            - ceilometer-expirer
-            - ceilometer-common
-            - ceilometer-client
-            - zookeeper
-            - kafka
-            - vertica
-            - storm
-            - monasca-api
-            - monasca-persister
-            - monasca-notifier
-            - monasca-threshold
-            - monasca-client
-            - logging-server
-            - ops-console-web
-            - ops-console-monitor
-            - cmc-service
-            - freezer-api
-        
-    resource-nodes:
-       - name: compute
-         resource-prefix: comp
-         server-role: ROLE-COMPUTE
-         allocation-policy: any
-         min-count: 0
-         service-components:
-            - ntp-client
-            - nova-kvm
-            - nova-compute
-            - neutron-l3-agent
-            - neutron-metadata-agent
-            - neutron-openvswitch-agent
-            - neutron-lbaasv2-agent
-        
-        - name: vsa
-          resource-prefix: vsa
-          server-role: ROLE-VSA
-          allocation-policy: strict
-          min-count: 3
-          service-components:
-        - vsa</codeblock>
     </section>
     <section id="disks_.yml"><title>disks_*.yml</title>
       <p>The disk model is used to specify how the directly attached disks on the server should be
@@ -1677,9 +1800,8 @@ tags:
         always maps to the same physical device. A NIC mapping is associated to a server in the
           <codeph>servers.yml</codeph> definition file.</p>
       <p>Your NIC adapter PCI Bus address information that will go into your nic_mappings file was
-        also included in the <xref
-          href="../bare_install_kvm_cl.dita#preinstall_checklist/nic_mappings" type="table"
-          >pre-installation checklist</xref> steps.</p>
+        also included in the <xref href="bare_install_kvm_cl.dita#preinstall_checklist/nic_mappings"
+          type="table">pre-installation checklist</xref> steps.</p>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/nic_mappings.yml</codeblock></p>
       <p>Each entry in the <codeph>nic-mappings</codeph> list has the following attributes:</p>
