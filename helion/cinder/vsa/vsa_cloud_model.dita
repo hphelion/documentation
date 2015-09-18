@@ -4,8 +4,8 @@
   <title>Modifying Cloud Model </title>
   <body>
     <p>You can create multiple VSA clusters of same or different type by specifying the
-      configuration in the cloud input model. <note type="tip">The term <b>add</b> and  <b>update</b> in the
-        document means editing the respective YAML files to add or update the
+      configuration in the cloud model. <note type="tip">The term <b>add</b> and <b>update</b> in
+        the document means editing the respective YAML files to add or update the
         configurations/values.</note></p>
     <section>
       <title>Cloud configuration changes to create more than one cluster  (can i get a sample file
@@ -22,22 +22,20 @@
     <section>
       <title>Cloud configuration changes to create two cluster one with adoptive optimization  (AO)
         enabled and another without adoptive optimization</title>
-    </section>
-    <p>
-      <ol id="ol_ccf_lsq_jt">
+      <ol id="ol_ugh_z2x_jt">
         <li>Add new nodes in <codeph>baremetal_config.yml</codeph> with unique name and
             <codeph>node_id</codeph> for each cluster.</li>
         <li>Add new resource-nodes in <codeph>control_plane.yml</codeph> with name, resource-prefix,
           and server-role.</li>
-        <li> Modify the<codeph> disk_set</codeph> for AO and without AO [use different files and
-          diffirent <codeph>disk_set</codeph>]</li>
+        <li>Modify the<codeph> disk_set</codeph> for AO and without AO [use different files and
+          diffirent <codeph>disk_set</codeph></li>
         <li>Update <codeph>server_roles.yml</codeph> with new VSA nodes and approriate
             <codeph>disk_set</codeph> used for that node.</li>
         <li>Add new nodes in <codeph>servers.yml</codeph>.<p>
-            <note>If you have configured your cloud to have more than one cluster then note down all
-              cluster IPs as you are expected to create n-clusters</note>
+            <note>If you have configured your cloud to have more than one cluster or n-clusters then
+              remember to note down all the cluster IPs.</note>
           </p></li>
       </ol>
-    </p>
+    </section>
   </body>
 </topic>
