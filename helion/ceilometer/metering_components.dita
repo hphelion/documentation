@@ -28,7 +28,7 @@
     <p>
       <image href="../../media/ceilometer/ceil_overallarchi.png" id="image_mbd_c5t_ct" placement="break"/></p>
     <section id="components-in-tripleo-overcloud-controller0">
-      <title>Components on the first controller node</title>
+      <title>Ceilometer Components on Controller node 1</title>
       <p>This controller node is the first of the High Available (HA) cluster. In this node there is
         an instance of the Ceilometer API running under the HA Proxy Virtual IP address. The Alarm
         services run on controller node 1.</p>
@@ -85,8 +85,7 @@
           running:<codeblock>sudo service ceilometer-agent-central status 
 ceilometer-agent-central start/running, process 27989</codeblock></li>
         <li>Start or stop the process as
-            needed:<codeblock>sudo service ceilometer-agent-central stop</codeblock><p>or</p> <codeblock>sudo
-          service ceilometer-agent-central start</codeblock></li>
+          needed:<codeblock>sudo service ceilometer-agent-central stop</codeblock>or<codeblock>sudo service ceilometer-agent-central start</codeblock></li>
       </ol>
     </section>
     <section id="collector">
