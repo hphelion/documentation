@@ -6,7 +6,6 @@
   <shortdesc>This page allows you to define charts that display data based on the metrics and
     parameters you choose. </shortdesc>
   <conbody>
-    <note>This section is not confirmed to be working in Beta 1.</note>
     <section>
       <title>Search</title>
       <p>The search bar allows you to filter the notification methods you want to view. </p>
@@ -19,11 +18,47 @@
       <ol>
         <li>Click the <uicontrol>Create Chart</uicontrol> button to open a separate window that
           allows you to configure a new chart.</li>
-        <li>....</li>
-        <li>...:. <ul>
-            <li><uicontrol>...</uicontrol> ....</li>
+        <li>Give your chart a <uicontrol>Name</uicontrol>.</li>
+        <li>Select a <uicontrol>Chart Type</uicontrol> in the drop down. Choices are: <ul>
+            <li><uicontrol>Line</uicontrol></li>
+            <li><uicontrol>Bar</uicontrol></li>
+            <li><uicontrol>Stacked Bar</uicontrol></li>
+            <li><uicontrol>Area</uicontrol></li>
+            <li><uicontrol>Stacked Area</uicontrol></li>
           </ul></li>
-        <li>....</li>
+        <li>Select a <uicontrol>Chart Size</uicontrol> in the drop down.  Choices are:
+        <ul>
+          <li><uicontrol>Small</uicontrol></li>
+          <li><uicontrol>Large</uicontrol></li>
+        </ul></li>
+        <li>Select a <uicontrol>Chart Update Rate</uicontrol> in the drop down.  Choices are:
+        <ul>
+          <li><uicontrol>1 Minute</uicontrol></li>
+          <li><uicontrol>5 Minutes</uicontrol></li>
+          <li><uicontrol>10 Minutes</uicontrol></li>
+          <li><uicontrol>30 Minutes</uicontrol></li>
+          <li><uicontrol>1 Hour</uicontrol></li>
+        </ul></li>
+        <li>Select a <uicontrol>Time Range</uicontrol> in the drop down.  Choices are:
+        <ul>
+          <li><uicontrol>Last 60 Minutes</uicontrol></li>
+          <li><uicontrol>Last 2 Hours</uicontrol></li>
+          <li><uicontrol>Last 4 Hours</uicontrol></li>
+          <li><uicontrol>Last 8 Hours</uicontrol></li>
+          <li><uicontrol>Last 24 Hours</uicontrol></li>
+          <li><uicontrol>Last 7 Days</uicontrol></li>
+          <li><uicontrol>Last 30 Days</uicontrol></li>
+          <li><uicontrol>Last 90 Days</uicontrol></li>
+        </ul></li>
+        <li>Select a <uicontrol>Statistical Function</uicontrol> in the drop down.  Choices are:
+        <ul>
+          <li><uicontrol>[ None ]</uicontrol></li>
+          <li><uicontrol>AVG</uicontrol></li>
+          <li><uicontrol>SUM</uicontrol></li>
+          <li><uicontrol>MIN</uicontrol></li>
+          <li><uicontrol>MAX</uicontrol></li>
+          <li><uicontrol>COUNT</uicontrol></li>
+        </ul></li>
         <li>When done creating the chart, click <uicontrol>Create Chart</uicontrol>. </li>
       </ol>
     </section>
