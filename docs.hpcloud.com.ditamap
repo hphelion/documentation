@@ -37,6 +37,8 @@
       <topicref href="helion/installation_troubleshooting.dita"
         navtitle="Troubleshooting Installation" locktitle="yes"/>
     </topicref>
+    
+    <topicref href="helion/beta1_tobeta2_upgrade.dita"  />
     <!-- BURA -->
     <topicref href="helion/bura/bura_overview.dita" navtitle="Backup and Restore" locktitle="yes">
       <topicref href="helion/bura/backup.dita"/>
