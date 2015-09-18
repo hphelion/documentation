@@ -364,10 +364,11 @@
             </row>
             <row>
               <entry>hostname-data (optional)</entry>
-              <entry>Provides control over some parts of the generated names. You can leave these as
-                the default values or choose new ones.<p>Consists of two values: <ul>
-                    <li>host-prefix</li>
-                    <li>member-prefix</li>
+              <entry>Provides control over some parts of the generated names (see <xref
+                  href="#input_model/5.1_NameGeneration">Name Generation</xref>) <p>Consists of two
+                  values: <ul>
+                    <li>host-prefix - default is to use the cloud name (above)</li>
+                    <li>member-prefix - default is "-m"</li>
                   </ul></p></entry>
             </row>
             <row>
@@ -386,7 +387,7 @@
             <row>
               <entry>smtp-settings (optional)</entry>
               <entry>SMTP client configuration data that will be applied to all servers. See example
-                configuration for a full list of values.</entry>
+                configurations for a full list of values.</entry>
             </row>
           </tbody>
         </tgroup>
@@ -616,7 +617,8 @@
               <row>
                 <entry>name</entry>
                 <entry>This name identifies the control plane and will be used as part of the
-                  hostname prefix.</entry>
+                  hostname prefix. (see <xref href="#input_model/5.1_NameGeneration">Name
+                    Generation</xref>)</entry>
               </row>
               <row>
                 <entry>region-name (optional)</entry>
@@ -636,11 +638,13 @@
               </row>
               <row>
                 <entry>clusters</entry>
-                <entry>A list of clusters for this control plane</entry>
+                <entry>A list of clusters for this control plane (see <xref
+                    href="#input_model/clusters" type="table">Clusters</xref>)</entry>
               </row>
               <row>
                 <entry>resource-nodes</entry>
-                <entry>A list of resource nodes for this control plane</entry>
+                <entry>A list of resource nodes for this control plane (see <xref
+                    href="#input_model/resource_nodes" type="table">Resource Nodes</xref>)</entry>
               </row>
             </tbody>
           </tgroup>
@@ -666,14 +670,18 @@
               </row>
               <row>
                 <entry>name</entry>
-                <entry>The cluster name provided is used in the hostname. Cluster and resource-node
-                  names must be unique within a control plane. This value is used to persist server
-                  allocations and cannot be changed once servers have been allocated.</entry>
+                <entry>The cluster name provided is used in the hostname (see <xref
+                    href="#input_model/5.1_NameGeneration">Name Generation</xref>). Cluster and
+                  resource-node names must be unique within a control plane. This value is used to
+                  persist server allocations (see <xref href="#input_model/5.2_PersistedData"
+                    >Persisted Data</xref>) and cannot be changed once servers have been
+                  allocated.</entry>
               </row>
               <row>
                 <entry>server-role</entry>
-                <entry>Only servers matching the specified role will be allocated to this
-                  cluster.</entry>
+                <entry>Only servers matching the specified role will be allocated to this cluster.
+                  (see <xref href="#input_model/3.4_ServerRoles">Server Roles</xref> for a
+                  description of server roles)</entry>
               </row>
               <row>
                 <entry>service-components</entry>
@@ -707,7 +715,9 @@
                 <entry>failure-zones (optional)</entry>
                 <entry>A list of Server Groups that servers will be allocated from. If specified,
                   this overrides the value specified for the control-plane. If not specified, the
-                  control-plane value is used. </entry>
+                  control-plane value is used. (see <xref
+                    href="#input_model/3.7.1_ServerGroupsAndFailureZones">Server Groups and Failure
+                    Zones</xref> for a description of server groups as failure zones)</entry>
               </row>
               <row>
                 <entry>allocation-policy (optional)</entry>
