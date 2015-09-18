@@ -62,8 +62,7 @@
     </section>
     <section id="working_with_ceilometer">
       <title>Working with Ceilometer</title>
-      <p>All the Ceilometer processes have a unified configuration file that can be found at
-          <i>______________</i> on the ____________.</p>
+      <p>All the Ceilometer processes have a unified configuration file: ceilometer.conf.</p>
       <p>Access to Ceilometer is through the command-line interface <xref
           href="http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html"
           scope="external" format="html">(CLI)</xref>, or the low-level <xref
@@ -93,9 +92,7 @@
             </li>
           </ul>
         </li>
-        <li>
-          <xref href="metering_apiextensions.dita">API Extensions: HP Health Check API</xref>
-        </li>
+    
         <li>
           <xref href="metering_bestpractice.dita#topic11470/ceilandnova" type="section">Managing
             Notifications from the Nova Service</xref>
