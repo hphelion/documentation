@@ -37,6 +37,8 @@
       <topicref href="helion/installation_troubleshooting.dita"
         navtitle="Troubleshooting Installation" locktitle="yes"/>
     </topicref>
+    
+    <topicref href="helion/beta1_to_beta2_upgrade.dita"  />
     <!-- BURA -->
     <topicref href="helion/bura/bura_overview.dita" navtitle="Backup and Restore" locktitle="yes">
       <topicref href="helion/bura/backup.dita"/>
@@ -69,14 +71,12 @@
         <topicref href="helion/cinder/ceph/configuration_files.dita"/>
       </topicref>
       <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration"
-        locktitle="yes">
-        <topicref href="helion/cinder/vsa/vsa_cloud_model.dita" navtitle="Modifying Cloud Model"
-          locktitle="yes"/>
-      </topicref>
+        locktitle="yes"/>
       <topicref href="helion/cinder/3Par/3par_configuration.dita"/>
       <topicref href="helion/cinder/brocade_zone_manager.dita" navtitle="Brocade Zone Manager"
         locktitle="yes"/>
     </topicref>
+    <topicref href="helion/cinder/verify_backend_configuration.dita"/>
     <!-- Object Storage -->
     <topicref href="helion/swift/swift_overview.dita" navtitle="Object Storage Service"
       locktitle="yes">

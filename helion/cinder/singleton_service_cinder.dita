@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_l1p_vpy_jt">
+  <title>Singleton Services -Cinder Volume</title>
+  <body>
+    <p>Due to the single threading required in both cinder-volume and the drivers, the Cinder volume
+      service is run as a singleton in the control plane.</p>
+    <section>
+      <title>Prerequisite</title>
+      <p>HP Helion Cloud must be successfully deployed. It should be up and running.</p>
+    </section>
+    <section>
+      <title>Migrating the CInder Volume and Backup Services</title>
+      <p>Due to the single threading required in both cinder volume and the drivers and because of
+        cinder backups dependency on cinder volume, the cinder volume and backup services are
+        started on one controller node only at a time. By default cinder volume and cinder backup
+        are started on the first node in the cinder volume and backup hostgroup. If needed the
+        volume and backup services can be migrated to a different node in the hostgroup. The
+        following steps explain how to migrate the services to a specified host.</p>
+      <p>Get the hostname of the node cinder volume and backup are to be migrated to. </p>
+      <p>For example:  hostname padawan-ccp-c1-m2-mgmt </p>
+      <p>Run the cinder-migrate-volume playbook specifying the node to migrate to in the "hosts"
+        argument </p>
+      <p>$ cd ~/scratch/ansible/next/hos/ansible</p>
+      <p> $ ansible-playbook -i hosts/verb_hosts cinder-migrate-volume.yml --extra-vars
+        "hosts=padawan-ccp-c1-m2-mgmt" </p>
+      <p>After the cinder-migrate-volume playbook completes the cinder volume and backup services
+        should be running on the specified node - in this example padawan-ccp-c1-m2-mgmt. If the
+        original node the services were running on - for example padawan-ccp-c1-m1-mgmt - is
+        restarted cinder volume and backup will not start on padawan-ccp-c1-m1-mgmt. To get the
+        cinder volume and backup services running again on padawan-ccp-c1-m1-mgmt run the
+        cinder-migrate-volume playbook again - with the "hosts" value set to
+        padawan-ccp-c1-m1-mgmt.</p>
+    </section>
+    <p>
+      <pre>Prerequisite
+HP Helion Cloud must be successfully deployed. It should be up and running.
+
+Migrating the Cinder Volume and Backup services
+Due to the single threading required in both cinder volume and the drivers and because of cinder backups dependency on cinder volume, the cinder volume and backup services are started on one controller node only at a time. 
+By default cinder volume and cinder backup are started on the first node in the cinder volume and backup hostgroup. 
+If needed the volume and backup services can be migrated to a different node in the hostgroup. 
+The following steps explain how to migrate the services to a specified host.
+
+Get the hostname of the node cinder volume and backup are to be migrated to. For example:
+
+$ hostname
+padawan-ccp-c1-m2-mgmt
+
+Run the cinder-migrate-volume playbook specifying the node to migrate to in the "hosts" argument
+
+$ cd ~/scratch/ansible/next/hos/ansible
+
+$ ansible-playbook -i hosts/verb_hosts cinder-migrate-volume.yml --extra-vars "hosts=padawan-ccp-c1-m2-mgmt"
+
+After the cinder-migrate-volume playbook completes the cinder volume and backup services should be running on the specified node - in this example padawan-ccp-c1-m2-mgmt.
+If the original node the services were running on - for example padawan-ccp-c1-m1-mgmt - is restarted cinder volume and backup will not start on padawan-ccp-c1-m1-mgmt. 
+To get the cinder volume and backup services running again on padawan-ccp-c1-m1-mgmt run the cinder-migrate-volume playbook again - with the "hosts" value set to padawan-ccp-c1-m1-mgmt.</pre>
+    </p>
+  </body>
+</topic>

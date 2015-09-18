@@ -11,13 +11,18 @@
       more complex network configuration. At minimum scale it can be used as a POC (3-4 nodes) but
       can also be scaled up to HP Helion OpenStack 1.1 levels, that is, up to 100 compute nodes. The
       network configuration supports separation of networks for: <ul id="ul_l1v_nbz_2t">
-        <li>Management</li>
-        <li>External API</li>
-        <li>External VM communications</li>
+        <li>Management -  This inetwork will be used for all internal traffic between the cloud
+          services. It is an untagged network.</li>
+        <li>External API -  This is the network that users will use to make requests to the cloud.
+          It is a tagged network.</li>
+        <li>External VM -  This network will be used to provide access to VMs (via floating IP
+          addresses). It is a tagged network.</li>
+        <li>Guest - This network will carry traffic between VMs on private networks within the
+          cloud. It is a tagged network.</li>
       </ul>
       <note> The requirement to have a dedicated network for OS-install and system deployment has
-        been removed in Beta 1. To re-use the deployment network as part of the operational network
-        the following conditions must be adhered to:</note>
+        been removed. To re-use the deployment network as part of the operational network the
+        following conditions must be adhered to:</note>
       <ol id="ol_gdv_nbz_2t">
         <li>The network IP addresses used for OS install (i.e. baremetalConfig.yml and servers.yml)
           must belong to a Network that is used for your cloud infrastructure (e.g. in
@@ -100,9 +105,9 @@
      -->
     <section>
       <title>Configuration Illustrations</title>
-      <p>The following diagram depicts a deployment scenario using KVM for Beta1.</p>
+      <p>The following diagram depicts a deployment scenario using KVM for Beta2.</p>
       <p><image href="../media/networking/hos_kvm_diag.png"/></p>
-      <p>The following diagram depicts a deployment scenario using ESX for Beta1.</p>
+      <p>The following diagram depicts a deployment scenario using ESX for Beta2.</p>
       <p><image href="../media/networking/hos_esx_diag.png"/></p>
     </section>
     <section>
