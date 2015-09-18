@@ -6,18 +6,22 @@
     <p>You can create multiple VSA clusters of same or different type by specifying the
       configuration in the cloud model. <note type="tip">The term <b>add</b> and <b>update</b> in
         the document means editing the respective YAML files to add or update the
-        configurations/values.</note></p>
+            configurations/values.<p><b>Prerequisites</b>:</p><p>You must have three nodes per VSA
+          cluster.</p></note></p>
     <section>
       <title>Cloud configuration changes to create more than one cluster  (can i get a sample file
         of the following ??)</title>
-      <p>You must edit the YAML files to create more than one cluster.<ol id="ol_szq_ltq_jt">
+      <p>You must edit the YAML files to create more than one cluster.</p>
+      <p>
+        <ol id="ol_szq_ltq_jt">
           <li>Add new nodes in <codeph>baremetal_config.yml</codeph> with unique name and
               <codeph>node_id</codeph> for each cluster. </li>
           <li>Add new resource-nodes in <codeph>control_plane.yml</codeph> with name,
             resource-prefix, and server-role</li>
           <li>Update <codeph>server_roles.yml</codeph> with new VSA nodes.</li>
           <li>Add new nodes in <codeph>servers.yml</codeph>.</li>
-        </ol></p>
+        </ol>
+      </p>
     </section>
     <section>
       <title>Cloud configuration changes to create two cluster one with adoptive optimization  (AO)

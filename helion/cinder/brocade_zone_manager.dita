@@ -3,8 +3,8 @@
 <topic id="topic_msm_b1j_jt">
   <title>Brocade Fibre Channel Zone Manager </title>
   <body>
-    <p>This page describes the configuration of Brocade Fibre Channel Zone Manager. The Block
-      Storage is configured to use a Fibre Channel Volume Driver that supports Zone Manager. </p>
+    <p>This page describes the configuration of Brocade Fibre Channel Zone Manager for the block
+      storage.<!--. The Block Storage is configured to use a Fibre Channel Volume Driver that supports Zone Manager. --></p>
     <section>
       <title id="preq">Prerequisite</title>
       <p>
@@ -13,9 +13,9 @@
           <li>Brocade switches must be available in the cloud management network.</li>
           <li>
             <p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Block Storage
-              should be configured to use a Fibre Channel Volume Driver that supports Zone Manager
-              and cinder.conf needs the following configuration options to enable Fibre Channel Zone
-              Manage<?oxy_custom_end?>r.</p>
+              should be configured to use a Fibre Channel Volume Driver that supports Zone Manager.
+              To enable Fibre Channel Zone Manager, you require the following
+                <codeph>cinder.conf</codeph> configuration options. <?oxy_custom_end?></p>
           </li>
         </ul>
       </p>
@@ -32,13 +32,13 @@
               <codeph>/home/stack/helion/my_cloud/config/cinder</codeph> to add Brocade Fiber
             Channel Zone Manager Driver data. <note>
               <ul id="ul_ghm_zbj_jt">
-                <li>The values entered in the following section is an example. You must change the
-                  value as per your requirement/environment.</li>
-                <li> To enable FCZM you must add z<codeph>oning_mode=fabric</codeph> to
+                <li>The values entered in step <b>4</b> is an example. You must change the value as
+                  per your requirement/environment.</li>
+                <li> To enable FCZM you must add <codeph>zoning_mode=fabric</codeph> to
                     [<b>DEFAULT</b>] entry. </li>
                 <li>Brocade driver information is a new section added to the [fc-zone-manager]
                   section. Fabric switch [<b>Fabric_A</b>] [<b>Fabric_B</b>] information is added in
-                    [<b>device</b>] section for each side of the fabric</li>
+                    [<b>device</b>] section for each side of the fabric.</li>
               </ul>
             </note></li>
           <li>Copy the following configuration.
@@ -69,8 +69,7 @@ fc_fabric_port = 22
 zone_activate = true 
 zone_name_prefix = FABRIC_B_</codeblock><note>Please
               enter the values which are specific to your environment. </note></li>
-          <li>Commit your configuration to a <xref href="../../using_git.dita#topic_u3v_1yz_ct"
-              >local
+          <li>Commit your configuration to a <xref href="../using_git.dita#topic_u3v_1yz_ct">local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock><note>
@@ -90,63 +89,14 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
     </p>
     <section>
-      <title>Create Volume Type to Verify the Configuration of Fibre Channel Zone Manager </title>
-      <p>You must create a volume to verify the configuration of fibre channel zone manager . Once
-        you are able to create the volume and attach the instance to the volume, you can detach the
-        instance and delete the created volume.</p>
-      <p>Perform the following steps to create a volume using Horizon dashboard:<ol
-          id="ol_f11_l2j_jt">
-          <li>Log into the Horizon dashboard as <b>Admin</b>. The Horizon dashboard displays with
-            the options in the left panel.</li>
-          <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
-            to display the Volumes page.<image href="../../media/brocade_zone/brocade_zone1.png"
-              id="image_m1s_52j_jt"/></li>
-          <li>Click <b>Create Volume Type</b> to display a dialog box.<p><image
-                href="../../media/brocade_zone/borcade-create-vol-type.png" id="image_dyh_hfj_jt"
-              /></p></li>
-          <li>Enter a unique name for the volume. </li>
-          <li>Click<b> Create Volume Type</b> to complete the action. Clicking <b>Cancel</b> returns
-            to the Volumes screen without completing the action.<p><image
-                href="../../media/brocade_zone/brocade_zone_created-vol.png" id="image_bhl_jfj_jt"
-              /></p><p>The newly created volume displays in the Volumes page.</p></li>
-        </ol></p>
-    </section>
-    <section id="associate-volume-backend">
-      <title>Associate the Volume Type to a Brocade Zone Manager</title>
-      <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
-          <li>Login to the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel.</li>
-          <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
-            to display the Volumes page.<p><image
-                href="../../media/brocade_zone/brocade_zone_created-vol2.png" id="image_mxm_qfj_jt"
-              /></p></li>
-          <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
-            associate to the backend. <p>The <b>Create Volume Type Extra Specs</b> dialog box
-              displays. Now map the volume type to the associate backend.</p><p><image
-                href="../../media/brocade_zone/brocade_zone_create-extra-spec.png"
-                id="image_wrm_xfj_jt"/></p></li>
-          <li>In the <b>Key</b> box, enter
-            <i>brcd_fc_zone</i><!-- This is the name of the key used to specify the storage backend when provisioning volumes of this volume type-->.
-            The volume name must match the name mentioned in the <codeph>cinder.conf</codeph>
-              file.<b> &lt;what is the value in conf file></b></li>
-          <li>In the <b>Value</b> box, enter the name to which you want to associate the volume
-            type. For example:<i>brcd_fc</i>.</li>
-          <li>Click <b>Create</b> to create the extra volume type specs.
-            <!--<note> Once the volume type is mapped to the backend, you can create volumes with this volume type.</note>--></li>
-        </ol></p>
-    </section>
-    <p>Once the Admin has performed the above operations, you can login as a user and create a
-      volume.</p>
-    <section>
       <title>Create Volume from User Account</title>
       <p>Perform the following steps to create a volume using Horizon dashboard. <ol
           id="ol_syw_xw3_jt">
           <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
             left panel. </li>
           <li>From the left panel, click the <b>Project</b> tab and then click the <b>Volumes</b>
-            tab to display the Volumes page.<p><image
-                href="../../media/brocade_zone/user-create-vol1.png" id="image_oqy_khj_jt"
-            /></p></li>
+            tab to display the Volumes page. <image
+              href="../../media/brocade_zone/user-create-vol1.png" id="image_oqy_khj_jt"/></li>
           <li>Click <b>Create Volume </b>to display the dialog box.<p><image
                 href="../../media/brocade_zone/user_create-volume.png" id="image_afy_lhj_jt"
             /></p></li>
@@ -174,7 +124,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
           <li>Click <b>Attach Volume</b> to complete the action. Clicking <b>Cancel</b> returns to
             the Volumes screen without completing the action. </li>
           <li>Verify that the volume you attached is displayed in the Attached To columns on the
-            Volumes screen.</li>
+            Volumes screen.<p> Zones are created and activated in switch effective configuration
+              after the successful attachment of volume to an instance.</p></li>
         </ol></p>
     </section>
     <section>
@@ -190,8 +141,9 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
           <li>Click <b>Detach Attachment</b>. A confirmation dialog box appears.</li>
           <li>Click <b>Detach Attachment</b> to confirm the detachment of the volume from the
             associated instance. Clicking <b>Cancel</b> returns to the Volumes screen without
-            completing the action.<p>After you have detached the volume from the instance, you can
-              delete the volume.</p></li>
+            completing the action.<p>When you dettach the last volume from an instance running on
+              the compute host, zones are deleted and removed from the effective
+            configuration.</p></li>
         </ol></p>
     </section>
     <section>

@@ -77,19 +77,19 @@ ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
           <li>Select the cluster type as <i>Standard Cluster</i> from the displayed options and
             click <b>Next</b>.</li>
           <li>In the <b>Cluster Name</b> box, enter the name of the cluster and click <b>Next</b>.
-            For example: hlm003-vsa-cluster</li>
+            For example: <codeph>hlm003-vsa-cluster</codeph>.</li>
           <li>In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the
             cluster in the respective boxes and click <b>OK</b>. The details are displayed in a
             tabular format in the page. <note>The VIP IP can be found as the cluster IP value in the
                 <codeph>~helion/my_cloud/stage/info/net_info.yml</codeph> file.</note></li>
           <li>(Optional) Click the checkbox displayed against <b>Skip Volume Creation</b>.</li>
           <li>Click <b>Next</b>.The Management Group and Cluster is created and displays in the Home
-            page of CMC.<p>Wait for completion.</p></li>
+            page of CMC.<p>Wait till the cluster is displayed in the Home Page of CMC.</p></li>
         </ol></p>
     </section>
     <section>
-      <title>Configure VSA as a Cinder backend</title>
-      <p>You must modify <codeph>cinder.conf.j2</codeph> to update VSA Cluster.</p>
+      <title>Configure VSA as a Cinder Backend</title>
+      <p>You must modify <codeph>cinder.conf.j2</codeph> to update VSA cluster.</p>
       <p>Perform the following steps to update the VSA cluster:<ol id="ol_dj2_qcz_ht">
           <li>Login to deployer node.</li>
           <li>Change the directory as shown below:<codeblock>cd ~/helion</codeblock></li>
@@ -123,7 +123,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         </ol></p>
     </section>
     <p id="run-ceph-client-package"><b>Run Cinder Reconfigure Packages</b></p>
-    <p>Execute the following command to configure 3PAR FC. </p>
+    <p>Execute the following command to configure VSA. </p>
     <p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
@@ -157,11 +157,13 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
             left panel.</li>
           <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
             to display the Volumes page.<image href="../../../media/vsa/create-volumetype2.png"
-              id="image_o13_dmq_jt"/><image
+              id="image_cvw_1my_jt"/></li>
+          <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
+            associate to the backend. <image
               href="../../../media/vsa/create-volumetype2_extra-spec.png" id="image_edj_fmq_jt"
               /><p>The <b>Create Volume Type Extra Specs</b> dialog box displays. Now map the volume
-              type to the associate backend.<image href="../../../media/vsa/volume-extra-specs.png"
-                id="image_xz3_lmq_jt"/></p></li>
+              type to the associate backend.</p><p><image
+                href="../../../media/vsa/volume-extra-specs.png" id="image_xz3_lmq_jt"/></p></li>
           <li>In the <b>Key</b> box, enter <i>volume_banked_name</i> as volume backend name. This is
             the name of the key used to specify the storage backend when provisioning volumes of
             this volume type. The volume backend name must match the backend name mentioned in the
@@ -169,9 +171,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
           <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate
             the volume type. For Example: <i>vsa_storage</i></li>
           <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type
-              is mapped to the backend, you can create volumes with this volume type.</note>Once the
-            Admin has perform the above operations, you can login as a user and create a
-            volume.</li>
+              is mapped to the backend, you can create volumes with this volume type.</note>Now you
+            can login as a user and create a volume.</li>
         </ol></p>
     </section>
     <section>
@@ -183,17 +184,17 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
           <li>From the left panel, click the <b>Project</b> tab and then click the <b>Volumes</b>
             tab to display the Volumes page.<image href="../../../media/vsa/user-create-vol1.png"
               id="image_jh2_tnq_jt"/></li>
-          <li>Click <b>Create Volume Type</b> to display a dialog box.<image
+          <li>Click <b>Create Volume</b> to display a dialog box.<image
               href="../../../media/vsa/user_create-volume.png" id="image_whm_xnq_jt"/></li>
-          <li>Enter a unique name for the volume. </li>
-          <li>Click<b> Create Volume Type</b> to complete the action. Clicking <b>Cancel</b> returns
-            to the Volumes screen without completing the action.<image
+          <li>Enter the required details in the corresponding fields. </li>
+          <li>Click<b> Create Volume </b> to complete the action. Clicking <b>Cancel</b> returns to
+            the Volumes screen without completing the action.<image
               href="../../../media/vsa/user-create-vol-main.png" id="image_sds_14q_jt"/><p>The
               volume is successfully created and the status of the volume is available.</p></li>
         </ol></p>
     </section>
     <section>
-      <title>Delete volume from User Account</title>
+      <title>Delete Volume from User Account</title>
       <p>Perform the following steps to delete a volume using Horizon dashboard:</p>
       <p>
         <ol id="ol_sdl_vy3_jt">
@@ -213,7 +214,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
     </section>
     <note type="important"> You can create more than one VSA cluster of same or different type by
       specifying the configuration in cloud model. For more details, refer <xref
-        href="vsa_cloud_model.dita#topic_q3v_krq_jt">Modifying Cloud Model to Create Multiple
-        Clusters.</xref>.</note>
+        href="vsa_create_multiple_clusters.dita#topic_q3v_krq_jt">Modifying Cloud Model to Create
+        Multiple Clusters</xref>.</note>
   </body>
 </topic>
