@@ -88,6 +88,15 @@ stack@hLinux:~$ openstack role assignment list --user 05f107e4b1645c52c24a529e3f
         <li>Once an LDAP user is granted the appropriate role, he or she can authenticate within the
           specified domain by setting the appropriate OS_* environment variables for the OpenStack
           CLI.</li>
+        
+        <li>To validate that an LDAP configuration is successful:
+          <ol><li>Using the API or OpenStackClient CLI to authenticate with Keystone and get a domain token</li>
+            <li>Create a project in the new domain, assign an LDAP user to that project,
+              authenticate with the LDAP user, and validate project access via the
+              API/OpenStackClient CLI.</li></ol>
+        
+        
+        </li>
       </ol>
     </section>
 
