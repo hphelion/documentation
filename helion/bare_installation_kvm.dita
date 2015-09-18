@@ -107,52 +107,27 @@ helion/hos/                    Directory contains files used by the installer
         <li>Setup your configuration files, as follows: <ol>
             <li>See the sample set of configuration files in the
               ~/helion/examples/entry-scale-with-vsa directory. The accompanying README.md file
-              explains the contents of each of the configuration files. </li>
+              explains the contents of each of the configuration files.</li>
             <li>Copy the example configuration files into the required setup directory and edit them
-              as required: <codeblock>cp -r ~/helion/examples/entry-scale-with-vsa/* ~/helion/my_cloud/definition/</codeblock>
-              <note id="note">There have been changes to some of the files since Beta 0. The
-                configuration files for editing can be found at the following location:
-                <codeblock>~/helion/my_cloud/definition/</codeblock></note>
-              <ul>
-                <li>The <codeph>cloudConfig.yml</codeph> file should contain the NTP and DNS
-                  nameserver information for your environment.</li>
-                <li>The <codeph>data/baremetalConfig.yml</codeph> file should specify the server
-                  information for your environment.</li>
-                <li>The <codeph>data/servers.yml</codeph> file contains the IP address information
-                  for the hardware.</li>
-                <li>The <codeph>data/networks.yml</codeph> file contains networking information. It
-                  is recommended that you set your <codeph>start-address</codeph> at .10 in your
-                  subnet range as to avoid conflicts with the virtual IPs being used by the rest of
-                  your environment.</li>
-                <li>The <codeph>data/net_interfaces.yml</codeph> file contains information related
-                  to your network interfaces. If you are going to use NIC bonding this is where you
-                  would do that.</li>
-                <li>The <codeph>data/control_plane.yml</codeph> file contains information about the
-                  services that will be installed. No edits should be needed for this file.</li>
-                <li>The <codeph>/data/disks_controller.yml</codeph> contains the Swift information
-                  (swiftobj disk-group). This describes what disks on each of the servers are
-                  assigned to Swift and the rings that uses those drives. To know more about the
-                  disk drives, refer to <xref
-                    href="swift/swift_input_cloud_model.dita#modify-input-model">cloud model
-                    modification</xref>.</li>
-                <li>The <codeph>config/swift/rings.yml</codeph> specifies the ring which maps the
-                  logical names of data to locations on a particular disks. To know more about the
-                  rings, refer to <xref href="swift/ring_specifications.dita#ring-specification"
-                    >ring specification</xref>.</li>
-              </ul></li>
-            <li>Edit the <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file and under
-              the <b>Elasticsearch defaults</b> section, change the value of the string below to
-              something other than <codeph>elasticsearch</codeph>:
-              <codeblock>vars.elasticsearch_cluster_name</codeblock> Example:
-                <codeph>helioncloud</codeph></li>
-            <li>Commit your configuration to the <xref href="using_git.dita#topic_u3v_1yz_ct">local
-                git repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
+              to contain the details of your environment:
+              <codeblock>cp -r ~/helion/examples/entry-scale-with-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
+            <li>Begin inputting your environment information into the configuration files in the
+                <codeph>~/helion/my_cloud/definition</codeph> directory. Full details of how to do
+              this can be found here: <xref href="config/entryscalewithvsa.dita">Configuration Files
+                for Entry Scale Model</xref>.</li>
+          </ol></li>
+        <li>Edit the <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file and under the
+            <b>Elasticsearch defaults</b> section, change the value of the string below to something
+          other than <codeph>elasticsearch</codeph>:
+          <codeblock>vars.elasticsearch_cluster_name</codeblock> Example:
+            <codeph>helioncloud</codeph></li>
+        <li>Commit your configuration to the <xref href="using_git.dita">local git
+            repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"
 </codeblock>
-              <note>This step needs to be repeated any time you make changed to your configuration
-                files.</note></li>
-          </ol></li>
+          <note>This step needs to be repeated any time you make changed to your configuration
+            files.</note></li>
       </ol>
     </section>
     <section id="CobblerDeploy">
