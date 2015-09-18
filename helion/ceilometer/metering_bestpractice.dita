@@ -20,36 +20,7 @@
             <!--permalink: /helion/openstack/1.1/services/reporting/bestpractices/--></p>
         <p>Configuration changes that improve reporting API and database responsiveness by keeping
             data storage to a reasonable level.</p>
-        <ul>
-            <li>
-                <xref type="section" href="#topic11470/ceilandnova">Nova</xref>
-                <ul>
-                    <li>
-                        <xref type="section" href="#topic11470/novadata">Data Collected by
-                            Ceilometer (default list)</xref>
-                    </li>
-                    <li>
-                        <xref type="section" href="#topic11470/novaconfigfile">Enabling Nova
-                            Notifications</xref>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <xref type="section" href="#topic11470/webserverapi">Configuring the Web Server for
-                    API Performance</xref>
-            </li>
-            <li>
-                <xref type="section" href="#topic11470/meterlist">Modifying the List of Active
-                    Meters</xref>
-            </li>
-            <li>
-                <xref type="section" href="#topic11470/pollinterval">Modifying Polling
-                    Intervals</xref>
-            </li>
-            <li>
-                <xref type="section" href="#topic11470/swift">Swift</xref>
-            </li>
-        </ul>
+     
         <section id="ceilandnova">
             <title>Nova</title>
             <p>Nova can send notifications related to its usage and VM status simply enabling it
@@ -615,7 +586,7 @@ check_watchers = 10.0</codeblock>
             
             <codeblock>[notification]
                 
-                workload_partitioning = true</codeblock>  
+workload_partitioning = true</codeblock>  
             
             <p>The notification agent HA distributes workload among multiple queues that are created based on the number of unique source:sink combinations in the notification agent pipeline configuration file.
                 
