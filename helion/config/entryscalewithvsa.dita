@@ -850,7 +850,7 @@
     <section id="net_interfaces.yml"><title>net_interfaces.yml</title>
       <p>The path to this file is:</p>
       <p><codeblock>~/helion/my_cloud/definition/data/net_interfaces.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
+      <p>The key values to enter into this document are:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_vs4_g4p_jt">
           <tgroup cols="2">
@@ -875,7 +875,7 @@
           </tgroup>
         </table>
       </p>
-      <p>A network interface is an interface model has the following attributes:</p>
+      <p>A network interface is an interface model that has the following attributes:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_pwy_j4p_jt">
           <tgroup cols="2">
@@ -902,7 +902,7 @@
               </row>
               <row>
                 <entry>bond-data (optional)</entry>
-                <entry>Used to define a bond. See: __ for details.</entry>
+                <entry>Used to define a bond. See the <codeph>bond-data</codeph> section below for details.</entry>
               </row>
               <row>
                 <entry>network-groups</entry>
