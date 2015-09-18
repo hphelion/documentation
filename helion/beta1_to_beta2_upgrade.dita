@@ -5,9 +5,9 @@
   <body>
     <p> Upgrade from Beta1 to Beta2 is now supported. To preform the upgrade, you must have a
       working deployment of the Beta1 release. </p>
-    <p>To perform the upgrade, follow the steps below. The upgrade will apply necessary changes to
-      HP Helion OpenStack services, as well as to the underlying cloud platform. OS kernel updates
-      are not performed at this time. </p>
+    <p>To perform the upgrade, follow the steps below. The upgrade will apply updates to HP Helion
+      OpenStack services, as well as to the underlying cloud platform. OS kernel updates are not
+      performed at this time. </p>
     <p>To upgrade, download the ISO as you would for a beta2 install.<note>You will not be able to
         change your cloud model at this point, other than by adapting it as you did in beta1. You
         may have to merge your current configuration files with the new ones in step 3. </note>
