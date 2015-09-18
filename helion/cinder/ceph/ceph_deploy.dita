@@ -128,7 +128,7 @@ git commit -m "&lt;commit message>"</codeblock>
             playbook:<codeblock>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p>Once
             cinder is configured, launch the Horizon dashboard to create a cinder volume type to
             verify the ceph configuration as backend . Once you are able to create the volume, you
-            can delete the created volume. For more information on verify the VSA configuration,
+            can delete the created volume. For more information on verify the ceph configuration,
             refer to <xref href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Verify
               Backend Configuration</xref>.</p></li>
       </ol></p>

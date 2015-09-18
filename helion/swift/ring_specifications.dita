@@ -4,15 +4,19 @@
   <title>Ring Specifications</title>
   <body>
     <p>The ring maps the logical names of data to locations on a particular disks. There is a
-      separate ring for account database, account database, and individual objects, but each ring
-      works similarly. Ring-builder is a utility which built and manually manages the rings. The
-      ring-builder also keeps its own builder file with the ring information and additional data
-      required to build future rings.</p>
+      separate ring for account databases, container databases and for each object storage policy,
+      but each ring works similarly. The swift-ring-builder utility is used to build and manage
+      rings. The swift-ring-builder utility uses a builder file to contain ring information and
+      additional data required to build future rings. In HOS2.0, you use the cloud model to specify
+      how the rings are configured and used. This model is used to automatically invoke the
+      swift-ring-builder utility as part of the deploy process. Normally, you will not run the
+      swift-ring-builder utility directly.</p>
     <p>The rings are specified in the input model using the <b>ring-specifications</b> key. There is
       an entry for each distinct Swift system – hence the Keystone region name is specified in the
         <b>region-name</b> key of the example cloud model.</p>
-    <p>In the example, a ring-specification is mentioned in <codeph>config/swift/rings.yml</codeph>
-      file. The sample file of ring-specification is as follows:</p>
+    <p>In the cloud model, a ring-specification is mentioned in
+        <codeph>config/swift/rings.yml</codeph> file. The sample file of ring-specification is as
+      follows:</p>
     <p>
       <codeblock>ring-specifications:
     - region-name: region1
@@ -26,7 +30,7 @@
         - name: container
           display-name: Container Ring
           min-part-time: 16
-          partition-power: 17
+          partition-power: 12
           replication-policy:
             replica-count: 3
         - name: object-0
@@ -48,11 +52,11 @@
             <codeph>display-name</codeph> is informational and not used.</li>
         <li><b>Object ring</b> - It is also known as Storage Policy. You must always specify a ring
           called "object-0". It is possible to have multiple object rings, which is known as
-            <i>storage policies</i>. But in this release we support only one storage policy, i.e.
-          object-0. The <codeph>display-name</codeph> is the name of the storage policy and can be
-          used by users of the Swift system when they create containers. It allows them to specify
-          the storage policy that the container uses. In the example, the storage policy is called
-            <b>General</b>.<!--<li>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</li><li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph> attribute is 3. Three copies of data are kept to provide resiliency and availability.</li>--></li>
+            <i>storage policies</i>. The <codeph>display-name</codeph> is the name of the storage
+          policy and can be used by users of the Swift system when they create containers. It allows
+          them to specify the storage policy that the container uses. In the example, the storage
+          policy is called
+          <b>General</b>.<!--<li>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</li><li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph> attribute is 3. Three copies of data are kept to provide resiliency and availability.</li>--></li>
         <li>
           <p>The purpose of the <b>min-part-time, partition-power, replication-policy</b>
               and<b>replica-count</b> are described in the following section. </p>
@@ -61,14 +65,14 @@
     </p>
     <section><b>Ring Parameters</b><simpletable id="simpletable_qyp_lnj_2t">
         <strow>
-          <stentry><b>Replica count</b></stentry>
+          <stentry><codeph>replica-count</codeph></stentry>
           <stentry>You require high resiliency or availability and want a higher replica count. The
               <codeph>replica-count</codeph> is normally 3 (i.e., Swift will keep three copies of
             accounts and containers). It is <b>recommended</b> not to change the value to lower than
             3.</stentry>
         </strow>
         <strow>
-          <stentry><b>min-part-time</b></stentry>
+          <stentry><codeph>min-part-time</codeph></stentry>
           <stentry>This is the number of hours that the swift-ring-builder tool will enforce between
             ring rebuilds. On a small system, this can be as low as one hour. The value can be
             different for each ring. <p>The swift-ring-builder will enforce a minimum of 16 hours
@@ -77,7 +81,7 @@
               more experience with your system.</p></stentry>
         </strow>
         <strow>
-          <stentry><b>partition-power</b></stentry>
+          <stentry><codeph>partition-power</codeph></stentry>
           <stentry>The appropriate value is related to the number of disk drives you allocate for
             the account and container storage. We recommend that you use the same drives for both
             the account and container rings. Therefore, the <b>partition-power</b> value should be
@@ -86,7 +90,7 @@
               partition-power</xref>.</stentry>
         </strow>
         <strow>
-          <stentry><b>replication-policy</b></stentry>
+          <stentry><codeph>replication-policy</codeph></stentry>
           <stentry>The <b>replication-policy</b> attribute is used to specify that a ring uses
             replicated storage. The duplicate copies of the object are created and stored on
             different disk drives. All replicas are identical. If one is lost or corrupted, the
@@ -94,12 +98,8 @@
             replica.</stentry>
         </strow>
         <strow>
-          <stentry><b>Storage Policy</b></stentry>
-          <stentry>Storage policies allow you to differentiate how the objects are stored in the
-              cluster.<p>You require a different name for the Storage Policy. If so, edit the
-                <codeph>display-name</codeph> of the object-0 ring. This must be a single word
-              (character such as underscore or dash are allowed). This is visible to your end
-              users.</p></stentry>
+          <stentry><codeph>default</codeph></stentry>
+          <stentry/>
         </strow>
       </simpletable></section>
    <!--  
@@ -132,22 +132,16 @@
       </ul></section>-->
     <section id="selecting-partition-power">
       <title>Selecting a Partition Power</title>
+      <p>Partition power is used to distribute the data uniformly across drives in a Swift nodes. It
+        also defines the storage cluster capacity. You must set the part partition power value based
+        on the total amount of storage you expect your entire ring to use. </p>
+      <p>When storing an object, the object storage system hashes the name. This hash results in a
+        hit on a partition (so a number of different object names result in the same partition
+        number). Generally, the partition is mapped to available disk drives. With a replica count
+        of 3, each partition is mapped to three different disk drives. The hashing algorithm used
+        hashes over a fixed number of partitions. The partition-power attribute determines the
+        number of partitions you have. </p>
     </section>
-    <p>
-      <ul>
-        <li>
-          <p>Partition power is used to distribute the data uniformly across drives in a Swift
-            nodes. It also defines the storage cluster capacity. You must set the part partition
-            power value based on the total amount of storage you expect your entire ring to use. </p>
-          <p>When storing an object, the object storage system hashes the name. This hash results in
-            a hit on a partition (so a number of different object names result in the same partition
-            number). Generally, the partition is mapped to available disk drives. With a replica
-            count of 3, each partition is mapped to three different disk drives. The hashing
-            algorithm used hashes over a fixed number of partitions. The partition-power attribute
-            determines the number of partitions you have. </p>
-        </li>
-      </ul>
-    </p>
     <p>Select a partition power for a given ring that is appropriate to the number of disk drives
       you allocate to the ring for the following reasons: </p>
     <ul id="ul_i4b_gv5_dt">
@@ -195,7 +189,7 @@
       new containers to take advantage of the new storage policy.</p>
     <p>Use the following table to select an appropriate partition power for each ring. The partition
       power of a ring cannot be changed so it is important to select an appropriate value. This
-      table is based on a replica count of 3. But, your replica count is different or you are unable
+      table is based on a replica count of 3. If  your replica count is different or you are unable
       to find your system in the table then refer to <xref
         href="#topic_efw_k55_dt/calculating-number" format="dita">Calculating Numbers of
         Partitions</xref> for information of selecting a partition power. </p>
@@ -206,7 +200,7 @@
         <ul>
           <li>You use the total number of drives. For example, if you have 3 servers, each with two
             drives, the total number of drives is 6.</li>
-          <li>The lookup should be done separably for each of the account, container and object
+          <li>The lookup should be done separately for each of the account, container and object
             rings. Since account and containers represent approximately 1-2% of object storage, you
             will probably use fewer drives for the account and container rings (i.e., you will have
             fewer Proxy, Account, Container (PAC) servers) – hence you your object rings may have a
@@ -295,7 +289,8 @@
 </codeblock></p></section>
     <p>An ideal number of partition directories per drive is 100. However, the system operate
       normally with a wide range of number of partition directories per drive. The table <i><b>
-          Partition Power</b></i> is based on the following: </p>
+          <xref href="#ring-specification/partition-power" format="dita">Partition
+        Power</xref></b></i> is based on the following: </p>
     <ul>
       <li>A replica count of 3</li>
       <li>For a given partition power, the minimum number of drives results in approximately 10,000

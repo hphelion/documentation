@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ybt_mhb_kt">
+  <title>How to Change min-part-power</title>
+  <body>
+    <p>The following procedures allow you to change the min-part-power.</p>
+    <p>
+      <simpletable>
+        <strow>
+          <stentry><b>Description</b>
+          </stentry>
+          <stentry>In the cloud model ring-specifications, the min-part-time attribute specifies how
+            many hours you must wait between ring rebuilds. If you change the min-part-time
+            attribute, this is not reflected in the ring files and it only applies at the time the
+            rings are created. </stentry>
+        </strow>
+        <strow>
+          <stentry><b>Resolution</b></stentry>
+          <stentry>You can change the values as follows:<ol id="ol_qzp_zhb_kt">
+              <li>Log into the first server running the swift-proxy service.</li>
+              <li>Go to the<codeph> /etc/swiftlm/builder_dir/region-&lt;ragion-name>
+                  </codeph>directory<p>where &lt;region-name> is the region-name field in your cloud
+                  model (For example: region1 is most example files). </p></li>
+              <li>Search files with a <codeph>.builder</codeph> extension. </li>
+              <li> Run the following command against each builder file. For example, to change the
+                value to 16 hours for the account builder file, the command is as follows:
+                <codeblock>sudo swift-ring-builder account.builder set_min_part_hours 16</codeblock></li>
+              <li> You should also update the ring-specifications (usually in
+                  <codeph>config/swift/rings.yml</codeph>) to contain the same value for the
+                min-part-time. This has no effect in the current release but will have an effect in
+                a future release.</li>
+            </ol></stentry>
+        </strow>
+      </simpletable>
+    </p>
+    <p>You can also refer to <xref href="ring_specifications.dita#ring-specification">ring
+        specification</xref> for more details about the min-part-power.</p>
+  </body>
+</topic>
