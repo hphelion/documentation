@@ -87,9 +87,9 @@
         <topicref href="helion/swift/allocating_server.dita" navtitle="Allocating Object Server"/>
         <topicref href="helion/swift/allocating_disk_drives.dita" navtitle="Allocating Disk Drives">
           <topicref href="helion/swift/label_on_partition.dita" toc="yes"
-            navtitle="How to Verify the Partition Label" locktitle="yes"/>
+            navtitle="How to Verify if a Partition Labelled" locktitle="yes"/>
           <topicref href="helion/swift/filesystem_label.dita" toc="yes"
-            navtitle="How to Verify the Filesystem Label" locktitle="yes"/>
+            navtitle="How to Verify if a Filesystem Label" locktitle="yes"/>
         </topicref>
         <topicref href="helion/swift/creating-pac-cluster.dita"/>
         <topicref href="helion/swift/creating-object-server-resource.dita"/>
