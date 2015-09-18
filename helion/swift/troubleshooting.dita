@@ -12,6 +12,8 @@
             msdos Disks Labels Do not Support Partition Names</xref></li>
         <li><xref href="examine_details_planned_ring_changes_prior_deploy.dita#topic_ev4_q2b_kt"
             >Examine Details of Planned Ring Changes Prior to Deploy</xref></li>
+        <li><xref href="how_to_change_min-part-power.dita#topic_ybt_mhb_kt">How to Change
+            min-part-power</xref></li>
         <li><xref href="interpreting%20_swift-validate-input-model.dita#topic_avw_22b_kt"
             >Interpreting _swift-validate-input-model.yml Errors</xref></li>
       </ul>
