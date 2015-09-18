@@ -6,13 +6,13 @@
     <section><b>What is the Object Storage (Swift)?</b><p>Object Storage (Swift) is Software Defined
         Storage (SDS) architecture layered on top of industry-standard servers using native storage
         devices. Swift presents an object paradigm using an underlying set of disk drives. The disk
-        drives are managed by a data structure called a "ring". Swift also enable you to store,
-        retrieve, and delete objects in a containers through RESTful API.</p>Based on <tm
-        tmtype="reg">OpenStack</tm> Object Storage, the HP Helion OpenStack Object Storage service
-      provides a highly available, resilient, and scalable storage pool for unstructured data. It is
-      highly durable architecture with no single point of failure. In addition, HP Helion OpenStack
-      introduces the concept of  cloud models, where the user can modify the YAML to provide the
-      required configuration based on their environment.</section>
+        drives are managed by a data structure called a "ring". You can store, retrieve, and delete
+        objects in a container through RESTful API.</p>Based on <tm tmtype="reg">OpenStack</tm>
+      Object Storage, the HP Helion OpenStack Object Storage service provides a highly available,
+      resilient, and scalable storage pool for unstructured data. It is highly durable architecture
+      with no single point of failure. In addition, HP Helion OpenStack introduces the concept of
+      cloud models, where the user can modify the YAML to provide the required configuration based
+      on their environment.</section>
     <section><b>Object Storage (Swift) Services</b><p>A Swift system comprises a number of services: </p><p>
         <ul>
           <li>Swift-Proxy provides the API for all requests to the Swift system.</li>

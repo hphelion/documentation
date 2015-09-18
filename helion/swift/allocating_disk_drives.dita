@@ -30,14 +30,14 @@
         <li>The disk devices listed in the example disk model have different names on your servers.
           This may be due different hardware drives. Edit the disk model
           <!--(<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) -->and change the
-          device names to the correct names.<note type="tip">The term <b>add</b> and <b>delete</b>
-            in the document means editing the respective YAML files to add or delete the
-            configurations/values.</note></li>
+          device names to the correct names.</li>
         <li>You may prefer a different disk drive than the one listed in the model. For example, if
             <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you
           have SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In
           this case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace with
-            <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.</li>
+            <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.<note type="tip">The term <b>add</b> and
+              <b>delete</b> in the document means editing the respective YAML files to add or delete
+            the configurations/values.</note></li>
       </ul>
     </section>
     <section id="swift-consumer-syntax">
@@ -65,7 +65,7 @@
               <codeph>rings</codeph> item.</stentry>
         </strow>
         <strow>
-          <stentry><b>ring</b></stentry>
+          <stentry><b>rings</b></stentry>
           <stentry> It contains a list of ring names. In the <codeph>rings</codeph> list, the
               <codeph>name</codeph> field is optional.</stentry>
         </strow>
@@ -88,7 +88,7 @@
         rings:
         - name: account
         - name: container
-        - object-0</codeblock></example>
+        - name: object-0</codeblock></example>
     <example>Example:<b>PAC</b> – proxy, account, container run on the same node
       type<codeblock>consumer:
     name: swift
@@ -180,12 +180,11 @@
             - account
             - container</codeblock></p><p>In the above example, Swift uses <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> disk drives and operating system uses <codeph>/dev/sda</codeph> disk drives.</p><p>The disk model has the following fields: </p><simpletable id="simpletable_qyp_lnj_2t"><strow><stentry><b>device-groups</b></stentry><stentry>There can be several device groups. This allows different sets of disks to be used for different purposes. In this example, there is only one entry in the device groups list.</stentry></strow><strow><stentry><b>name</b></stentry><stentry>This is an arbitrary name for the device group. The name must be unique, but is not otherwise used.</stentry></strow><strow><stentry><b>devices</b></stentry><stentry>This is a list of devices allocated to the device group. For Swift, these devices must meet the criteria as explained in <xref href="#allocating-disk-drives/requirement-disk-device" format="dita">Requirements for a disk device</xref>.</stentry></strow><strow><stentry><b>consumer</b></stentry><stentry>This specifies the service that uses the device group. A <codeph>name</codeph> field containing <b>swift</b> indicates that the device group is used by Swift. If the name field contains other values, the Swift system will ignore the device group.</stentry></strow><strow><stentry><b>attrs.rings</b></stentry><stentry>This lists the rings that the devices are allocated to. In this example, the disk model is used by Proxy, Account, Container nodes, so the <b>account</b> and <b>container</b> rings are listed. In the <codeph>DISK_SET_SWOBJ</codeph> disk model, <codeph>object-0</codeph> ring is listed. It would be an error to add the <codeph>object-0</codeph> ring to the <codeph>DISK_SET_SWPAC</codeph> disk model because the Swift-object service does not run on PAC node.</stentry></strow></simpletable>-->
     <p><!--You should review the disk devices in the disk model before making any changes to the existing model. See <xref href="#allocating-disk-drives/making-changes-to-swift" format="dita">Making Changes to a Swift Disk Model</xref>.--></p>
-    <p id="requirement-disk-device"><b><i>Requirements for a Disk Device</i></b></p>
-    <p>Disk devices listed in the <b>devices</b> list must meet the following criteria:</p>
-    <p>
-      <note>Please refer to <xref href="#allocating-disk-drives" format="dita">Allocating Disk
-          Drives</xref> before reading the following information.</note>
-    </p>
+    <p id="requirement-disk-device"><b><i><b>Swift Requirements for Device Group
+      Drives</b></i></b></p>
+    <p>In order to install and deploy, Swift requires that the disk drives listed in the devices
+      list of the device-groups item in a disk model must meet the following criteria. If not, the
+      deploy will fail.</p>
     <ul id="ul_fsy_255_dt">
       <li>The disk device must exist on the server. For example, if you add
           <codeph>/dev/sdx</codeph> to a server with only 3 devices then the deploy process

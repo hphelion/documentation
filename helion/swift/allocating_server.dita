@@ -8,9 +8,6 @@
       <!--The Swift object server type is used to store object data.--></p>
     <p>This section describes the procedure to allocate Swift Object Server during the
         <b>initial</b> deployment of the system. </p>
-    <p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Once the system has been
-      deployed, a different procedure is used to add additional Swift object
-      servers.<?oxy_custom_end?> - &lt;<b>What is that procedure? can user do it in Beta2 ?</b>></p>
     <p>This page contains the following topics:<ul id="ul_gfp_rwc_jt">
         <li><xref href="#topic_tq1_xt5_dt/procedure" format="dita">Procedure to Allocate Swift
             Object Server</xref></li>
@@ -28,9 +25,9 @@
         <li>Verify if the example input model already contains a suitable server role. The server
           roles are usually described in <codeph>data/server_roles.yml</codeph> file. If the server
           role is not described, you must add a suitable server role as described in <i><xref
-              href="#topic_tq1_xt5_dt/create-server-role" format="dita">Creating Server Role for
-              Swift Object Servers</xref></i>. While adding a server role for the Swift object
-          server, you will also allocate drives to store object data as described in <i><xref
+              href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt">Creating  Role for Swift
+              Nodes</xref></i>. While adding a server role for the Swift object server, you will
+          also allocate drives to store object data as described in <i><xref
               href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk
               Drives.</xref></i></li>
         <li>Verify if the example input model has a resource group assigned to Swift object servers.
@@ -61,126 +58,5 @@
     <p><?oxy_custom_end?>The only part of this process that is unique to Swift is the allocation of
       disk drives for use by the object ring as described in <i>Allocating Disk Drives for use by
         Swift.</i></p>
-    <section id="create-server-role">
-      <title>Creating Server Role for Swift Object Servers</title>
-    </section>
-    <p>You must edit the <codeph>data/server_roles.yml</codeph> and add an entry to the server-roles
-      list using the following
-      syntax:<codeblock>server-roles:
-.
-.
-.
-- name: &lt;pick-a-name>
-  interface-model: &lt;specify-a-name>
-  disk-model: &lt;specify-a-name></codeblock></p>
-    <p>The server roles have the following fields:<simpletable id="simpletable_c35_5rb_jt">
-        <strow>
-          <stentry><b>name</b></stentry>
-          <stentry>This is a name assigned for the role. In the following example <b>ROLE_SWPAC</b>
-            is the   role name.</stentry>
-        </strow>
-        <strow>
-          <stentry><b>interface-model</b></stentry>
-          <stentry> You can either select an existing interface model or create one specifically for
-            Swift object servers. In the following example <b>INTERFACE_SET_SWOBJ</b> is used. See
-              <xref href="#topic_tq1_xt5_dt/swift-network" format="dita">Swift Network and service
-              Requirements</xref> more information.</stentry>
-        </strow>
-        <strow>
-          <stentry><b>disk-model</b></stentry>
-          <stentry>You can either select an existing model or create one specifically for Swift
-            object servers. In the following example <b>DISK_SET_SWPAC</b> and <b>DISK_SET_SWOBJ</b>
-            is used (depending on context). See <xref
-              href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk
-              Drives</xref> for more information.</stentry>
-        </strow>
-      </simpletable></p>
-    <example>
-      <codeblock>server-roles:
-.
-.
-.
-- name: <b>ROLE-SWPAC</b>
-  interface-model: <b>INTERFACE_SET_SWOBJ</b>
-  disk-model: <b>DISK_SET_SWOBJ</b></codeblock>
-    </example>
-    <p><!--You must alloacte a server for Swift. Therefore, you specify the roles of the servers in <codeph>data/baremetal.yml</codeph> file. For example, a Swift Proxy, Container, Account (PAC) node is specified as follows:--></p>
-    <!--<p><codeblock>baremetal_servers:
-.
-.
-.
-- node_name: swpac1
-  node_type: ROLE-SWPAC
-  pxe_mac_addr: 26:67:3e:49:5a:a7
-  pxe_interface: eth2
-  pxe_ip_addr: 192.168.10.12
-  ilo_ip: 192.168.9.12
-  ilo_user: admin
-  ilo_password: password
-.
-.
-.</codeblock></p><p>In the above example a <b>node_type</b> is assigned as <b>ROLE-SWPAC</b>, which indicates that this node is Swift Proxy, Container, and Account (PAC) node.</p><note>If you don't use Cobbler to install your servers then you must create <codeph>data/servers.yml</codeph> file (<b>manually</b>) and configure nodes on the file.</note><p>The number of servers is specified in the <b>swpac </b>cluster in the <codeph>data/control_plane.yml</codeph> file. In the following example, the number of servers is set to 3.</p><p><codeblock>control-planes:
-    - name: ccp
-      region-name: region1
-      common-service-components:
-        - logging-producer
-        - monasca-agent
-        - stunnel
-      clusters:
-.
-.
-.
-- id: "4"
-          name: swpac
-          server-role: ROLE-SWPAC
-          member-count: <b>3</b>
-          service-components:
-            - ntp-client
-            - swift-proxy
-            - swift-account
-            - swift-container
-            - swift-ring-builder
-            - swift-client
-.
-.
-.</codeblock></p><p>You can increase the <b>member-count</b> value so that more Proxy, Account, Container nodes are used. When you increase the <b>member-count</b> you must also increase the number of nodes with the <codeph>ROLE-SWPAC</codeph> role in the <codeph>data/baremetalConfig.yml</codeph> (or <codeph>data/servers.yml</codeph>) file. &lt;<b>if we dont increase the nodes in the data/barementalconfig.yml file then what error message do we get?</b>></p><p>A Swift Object (OBJ) node is specified in <codeph>data/baremetalConfig.yml</codeph> file as shown in the following example:<codeblock>baremetal_servers:
-.
-.
-.
-- node_name: swobj1
-  node_type: ROLE-SWOBJ
-  pxe_mac_addr: 8b:f6:9e:ca:3b:78
-  pxe_interface: eth2
-  pxe_ip_addr: 192.168.10.20
-  ilo_ip: 192.168.9.20
-  ilo_user: admin
-  ilo_password: password
-.
-.
-.</codeblock></p><p>In the above example a <codeph>node_type</codeph> is assigned as <codeph>ROLE_SWOBJ</codeph>, which indicates that this node is Swift Object node.</p><p>To specify the number of Swift Object servers add more servers of type <codeph>ROLE_SWOBJ</codeph> to the <codeph>data/baremetalConfig.yml</codeph> (or <codeph>data/servers.yml</codeph>) file. <note>For Swift Object, the <codeph>member-count</codeph> is automatically determined. It is recommended not to change or increment the <codeph>member count</codeph>.</note></p>-->
-    <section id="swift-network">
-      <title>Swift Network and Service Requirement</title>
-      <p>This section describes the network configuration for Swift. The network model allows many
-        options and configurations. For smooth Swift to operation, the following must be true:</p>
-      <p>
-        <ul id="ul_ggm_rkc_jt">
-          <li>The following services must have a direct connection to the same network:<ul
-              id="ul_x1c_5kc_jt">
-              <li>swift-proxy</li>
-              <li>swift-account</li>
-              <li>swift-container</li>
-              <li>swift-object</li>
-              <li>swift-ring-builder</li>
-            </ul></li>
-          <li>The swift-proxy service must have a <b>direct</b> connection to the same network as
-            the <codeph>cluster-ip</codeph> service.</li>
-          <li>The swift-proxy and memcached service must be <b>co-located</b> in the same cluster of
-            the control plane.</li>
-          <li>The swift-proxy and<codeph> switf-ring-builder</codeph> service must be
-              <b>co-located</b> in the same cluster of the control plane.</li>
-          <li>The ntp-client service must be <b>present</b> on all Swift nodes.</li>
-        </ul>
-      </p>
-    </section>
   </body>
 </topic>
