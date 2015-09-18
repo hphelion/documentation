@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_bcg_pwz_jt">
+  <title>Upgrading from Beta1 to Beta 2</title>
+  <body>
+    <p> Upgrade from Beta1 to Beta2 is now supported. To preform the upgrade, yu must have a working
+      deployment of the Beta1 release. </p>
+    <p>To perform the upgrade, follow the steps below. The upgrade will apply necessary changes to
+      HP Helion OpenStack services, as well as to the underlying cloud platform. OS kernel updates
+      are not performed at this time.<ol id="ol_kyd_rxz_jt">
+        <li>Log in to the deployer node as the user you created during the beta1 deployment, and
+          mount the beta2 install media at /media/cdrom, for example:
+          <codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20150901-hlm.&lt;build-date_sha1>.iso /media/cdrom</codeblock>
+        </li>
+        <li> Unpack the following tarball: Note this file name will change (NOTE: the new release is
+          still called beta1, change is pending):
+          <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.1-20150908T154315Z.tgz</codeblock>
+          Run the included initialisation script to update the deployer (NOTE: the new release is
+          still called beta1, change is pending):
+          <codeblock>  ~/hos-2.0.0-b.1/hos-init.bash</codeblock>
+        </li>
+        <li>Prepare the new Ansible tree for the upgrade task: <ol id="ol_zzd_rxz_jt">
+            <li> Resolve any merge conflicts that may have arisen:
+              <codeblock>cd ~/helion
+        git status
+        etc. etc.</codeblock></li>
+            <li> Run the config processor:
+              <codeblock>cd ~/helion/hos/ansible/
+        ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+            </li>
+            <li>Run the ready deployment script:
+              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
+            </li>
+          </ol></li>
+        <li>Run the upgrade playbook:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+        ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock>
+        </li>
+      </ol>
+    </p>
+  </body>
+</topic>
