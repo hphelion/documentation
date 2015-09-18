@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ev4_q2b_kt">
-  <title>Examine details of planned ring changes prior to deploy</title>
+  <title>Examine Details of Planned Ring Changes Prior to Deploy</title>
   <body>
     <p>
       <note>You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as mentioned
