@@ -4,11 +4,11 @@
   <title>Beta 2: Release Notes</title>
   <body>
     <p>This document provides an overview of the features contained within HP Helion <tm
-        tmtype="reg">OpenStack</tm> 2.0 Beta 1, including known issues and workarounds for this
+        tmtype="reg">OpenStack</tm> 2.0 Beta 2, including known issues and workarounds for this
       release:</p>
-    <section id="Features"><title>Features in HP Helion OpenStack 2.0 Beta 1</title>
+    <section id="Features"><title>Features in HP Helion OpenStack 2.0 Beta 2</title>
       <p><b>New UEFI support</b></p>
-      <p>Beta 1 introduces support for UEFI (which replaces the BIOS on newer servers), while
+      <p>Beta 2 introduces support for UEFI (which replaces the BIOS on newer servers), while
         continuing to support Legacy BIOS. Select the required mode on each node through its BIOS
         settings before beginning the install process. HOS 2.0 will detect and use the mode you have
         selected for each node.</p>
@@ -93,7 +93,7 @@
           <!--
 <p><b>Backup and Restore Capabilities for the Control Plane</b> &#154; Allows you to backup and recover your Helion OpenStack</tm> environment with RPO=0.</p>
 --><p><b>NIC
-          Mapping Feature</b></p><p>The new NIC mappings feature in HP Helion OpenStack Beta 1
+          Mapping Feature</b></p><p>The new NIC mappings feature in HP Helion OpenStack Beta 2
         allows the cloud administrator to map network interface names to PCI bus addresses. This is
         important because for well-understood reasons, Linux can sometimes name the network
         interfaces in a pseudo-random order. So in a cluster of identical machines, the <b>eth3</b>
@@ -103,7 +103,7 @@
         quite difficult if not impossible, if most machines understand the Management Network to be
           <b>eth3</b>, but some subset of machines understand that network to be on<b> eth4 </b>(and
         whatever was on eth4 is similarly swapped to <b>eth3</b>). </p><p> To resolve this, and to
-        ensure that all NIC devices have consistent naming across the entire cloud, Beta 1 includes
+        ensure that all NIC devices have consistent naming across the entire cloud, Beta 2 includes
         NIC Mapping facilities. This is a mechanism in the Input Model to define a specific NIC
         interface for a given PCI address for a given class of machine. Generally, when all of the
         network interfaces are defined in the Input Model, it is advisable to use the traditional
@@ -118,12 +118,12 @@
       <title>Limitations in this Release</title>
       <p><b>Helion examples</b></p>
       <p> The examples directly shipped with Beta1 inadvertently include a directory named
-        "mid-size." This example is known not to work with the Beta 1 version of HP Helion OpenStack
+        "mid-size." This example is known not to work with the Beta 2 version of HP Helion OpenStack
         and should not be deployed.</p>
       <p><b>TLS is not supported</b></p>
-      <p>TLS is not supported for any traffic in Beta1.</p>
+      <p>TLS is not supported for any traffic in Beta 2.</p>
       <p><b>HP Helion Development Platform</b></p>
-      <p>Helion Development Platform is not supported on Beta 1.</p>
+      <p>Helion Development Platform is not supported on Beta 2.</p>
       <p><b>Installing Swift</b></p>
       <p>Swift installs with the following limitations: </p>
       <ul>
@@ -141,7 +141,7 @@
       other services as well. This will be beyond be Beta0 timeframe.</p>
     <p> </p>-->
       <p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p>
-      <p>Basic Monitoring is complete for Beta 1 with the following limitations:</p>
+      <p>Basic Monitoring is complete for Beta 2 with the following limitations:</p>
       <ul>
         <li>Access to Monasca is limited to the REST API and Command Line Client (CLI) only. GUI
           access will be implemented in later releases. When using the CLI, the prefix for CLI
@@ -182,7 +182,7 @@
               addition to the "service=block-storage" and "service=object-storage" ones.</li>
           </ul></li>
         <li>HDP - Alarm Summary <ul>
-            <li>This section is not implemented in Beta 1</li>
+            <li>This section is not implemented in Beta 2</li>
           </ul></li>
         <li>Masthead Items <ul>
             <li>The Help and EULA links will not work properly. You can view the Help files here:
@@ -193,7 +193,7 @@
           </ul></li>
       </ul>
       <p><b>Centralized Logging Limitations</b></p>
-      <p>Logging support is complete for Beta 1 with the following limitations:</p>
+      <p>Logging support is complete for Beta 2 with the following limitations:</p>
       <ul>
         <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
         <li>Logging-monitor 'stop' playbook is not integrated.</li>
@@ -230,7 +230,7 @@
       </ul>-->
       <p><b>Cinder Limitations</b></p>
       <ul>
-        <li>3Par storage is not supported in Beta 1</li>
+        <li>3Par storage is not supported in Beta 2</li>
       </ul>
     </section>
     <section id="troubleshooting"><title>Troubleshooting</title>
@@ -252,7 +252,7 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------
       <p><b>Freezer installation fails if an independent network is used for the
         External_API.</b></p>
       <p> Currently the Freezer installation fails if an independent network is used for the
-        External_API. If you intend to deploy the External API in Beta 1 on an independent network,
+        External_API. If you intend to deploy the External API in Beta 2 on an independent network,
         the following changes need to be made: </p>
       <p>In <b>roles/freezer-agent/defaults/main.yml</b> add the following line:
         <codeblock>backup_freezer_api_url: "{{ FRE_API | item('advertises.vips.private[0].url', default=' ') }}"</codeblock>
