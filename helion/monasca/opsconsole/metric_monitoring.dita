@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="notification_methods">
+<concept id="time_series_graphs">
   <title>Metric Monitoring</title>
   <shortdesc>This page allows you to define charts that display data based on the metrics and
     parameters you choose. </shortdesc>
@@ -58,11 +58,21 @@
                 <li>COUNT</li>
               </ul></li>
           </ul></li>
-        <li>In the <uicontrol>Chart Data</uicontrol> section you will define what information you
-          want your chart to reflect: <ul>
-            <li>Select </li>
+        <li>In the <uicontrol>Chart Data</uicontrol> section you will select up to six metric and
+          dimension pairs to define what information your chart will reflect. <ul>
+            <li>Select a <uicontrol>Metric</uicontrol> from the drop down.</li>
+            <li>Select an <uicontrol>Associated Dimension</uicontrol> from the following options: <ul>
+                <li>Service</li>
+                <li>Region</li>
+                <li>Avail. Zone</li>
+                <li>Host</li>
+                <li>Device</li>
+              </ul></li>
+            <li>Select the <uicontrol>Add Data to Chart</uicontrol> button to add the metric and
+              dimension pair to the list that populates on the right side</li>
           </ul></li>
-        <li>When done creating the chart, click <uicontrol>Create Chart</uicontrol>. </li>
+        <li>When done creating the chart, click <uicontrol>Create Chart</uicontrol> to populate it
+          in the Metric Monitoring chart list.</li>
       </ol>
     </section>
     <section>
