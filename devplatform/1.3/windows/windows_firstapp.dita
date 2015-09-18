@@ -84,7 +84,8 @@
     <li><b>Instances</b>: The number of separate installations of the application.</li>
   </ul><image href="../../../media/windows_publish_step2_version_1_3.png" placement="break"/></li>
   <li>In the third <b>Publish to Cloud Foundry</b> dialog (<b>Routes</b>), enter the following values and click <b>Next</b>:
-  <ul><li><b>Hosts</b>: Add the host name that the application will use. This host name will be added to the cluster domain; for instance, in the image below, the URL to access the application will be <b>mygeekquiz.15.125.64.221.xip.io</b></li>
+  <ul><li><b>Hosts</b>: Add the host name that the application will use. This host name will be added to the cluster domain; for instance, in the image below, the URL to access the application will be <b>mygeekquiz.15.125.64.221.xip.io</b>
+  <note>The route name must be lowercase.</note></li>
   <li><b>Shared Domains</b>: Select from one of the available options.</li>
   <li><b>Private Domains</b>: Select from one of the available options.</li></ul>
     <image href="../../../media/windows_publish_step3_version_1_3.png" placement="break" /></li>
