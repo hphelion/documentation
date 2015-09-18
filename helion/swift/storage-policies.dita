@@ -21,17 +21,18 @@
             recommended partition power as described in <xref
               href="ring_specifications.dita#ring-specification/selecting-partition-power">selecting
               partition power</xref>.</p></li>
-        <li>Erasure-coded storage and replicated storage<p>If you use erasure-coded storage for some
-            objects and replicated storage for other objects. </p></li>
+        <li>Erasure-coded storage and replicated storage (This is not supported in this
+            release.)<p>If you use erasure-coded storage for some objects and replicated storage for
+            other objects. </p></li>
       </ul>
     </p>
-    <p>A storage policies are implemented on per-container basis. Usually storage policy is not
+    <p>Storage policies are implemented on per-container basis. Usually storage policy is not
       specified but you can specify which storage policy is used by using the <b>default</b>
-      attribute. </p>
-    <p>Once you create and assign the storage policy to a container that remains intact, i.e., you
-      cannot change the policy for that container but you can always create additional policies and
-      move data from one container to another, if you choose to assign a different policy to a new
-      container. </p>
+      attribute. You can change which storage policy is the default. However, this does not affect
+      existing containers. Once the storage policy of a container is set, the policy for that
+      container cannot be changed.</p>
+    <p><!--Once you create and assign the storage policy to a container that remains intact, i.e., you cannot change the policy for that container but you can always create additional policies and move data from one container to another, if you choose to assign a different policy to a new container.-->
+    </p>
     <p>The disk drives used by storage policies can overlap or be distinct. If the storage policies
       overlap (i.e., have disks in common between two storage policies), it is recommended to use
       the same set of disk drives for both policies. But in case there is a partial overlap in disk
@@ -43,8 +44,8 @@
     <section>
       <title>Specifying Storage Policies</title>
     </section>
-    <p> You can specify the storage policies in two places in the input model as follows:There are
-      two places where storage policies are specified in the input model:<ul id="ul_psf_lg2_jt">
+    <p>There are two places where storage policies are specified in the input model:<ul
+        id="ul_psf_lg2_jt">
         <li>The attribute of the storage policy is specified in ring-specification in
             <codeph>config/swift/rings.yml</codeph> file for a given region. </li>
         <li>When associating disk drives with specific rings. This specifies which drives use the
@@ -68,9 +69,8 @@
         <li>If you change the default, only containers created later will have that changed default
           policy.</li>
       </ul></p>
-    <p>The he following examples shows three storage policies in use. &lt;<b>Please let me know the
-        name of the storage policy in the following
-      example?></b><codeblock>rings:
+    <p>The following examples shows three storage policies in
+      use.<codeblock>rings:
 . . . 
 - name: object-0
   display-name: General
@@ -79,13 +79,13 @@
   partition-power: 12
   replication-policy:
       replica-count: 3
-- name: Working
+- name: object-1
   default: yes
   min-part-time: 16
   partition-power: 20
   replication-policy:
       replica-count: 3
-- name: Resilient
+- name: object-2
   default: no
   min-part-time: 16
   partition-power: 20

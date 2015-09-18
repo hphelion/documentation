@@ -15,8 +15,8 @@
     <section id="swift-recon">
       <title>swift-recon</title>
       <p>The <b>swift-recon</b> command retrieves data from Swift servers and displays the results.
-        To use <b>swift-recon</b>, log on as a root user to the node which is running the
-        swift-proxy service. </p>
+        To use <b>swift-recon</b>, log on as a root user to any node which is running the
+        swift-proxy service.</p>
       <p>The following command retrieves and displays disk usage
         information.<codeblock>$ sudo swift-recon --diskusage</codeblock></p>
       <p>For
@@ -77,7 +77,7 @@ Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4614140152%
           href="../monasca/alarms.dita#alarmdefinitions"/> for a list of alarms that can be
         generated from this data.</p>
       <p>You execute the <b>swiftlm-scan</b> command directly to view the metrics. Log on to the
-        Swift node as the root user. The following example shows a snipper of the output.
+        Swift node as the root user. The following example shows a snippet of the output.
         <codeblock>$ sudo swiftlm-scan --pretty
 . . .
   {
@@ -95,8 +95,8 @@ Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4614140152%
   }, 
 . . .</codeblock></p>
     </section>
-    <note>Use the<b> --pretty</b> option. This makes the JSON file easier to read.<p>The field is as
-        follows:</p><p>
+    <note>Use the<b> --pretty</b> option. This makes the JSON file easier to read.<p>The fields are
+        as follows:</p><p>
         <simpletable>
           <strow>
             <stentry><b>metric</b></stentry>

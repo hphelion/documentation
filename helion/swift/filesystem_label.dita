@@ -5,7 +5,7 @@
   <body>
     <p>This page explains the procedure to check whether a filesystem in a partition has a
       label.</p>
-    <p>To check whether a filesystem i a partition has a label, perform the following step:<ul
+    <p>To check whether a filesystem in a partition has a label, perform the following step:<ul
         id="ul_yzr_fz5_dt">
         <li>Log on to the server and execute the <codeph>xfs_admin</codeph> command as follows
           (where <codeph>/dev/sdc1</codeph> is the partition where the filesystem is located).</li>
@@ -17,5 +17,7 @@ label = "<b>c0a8f502h000</b>"</codeblock>If
       follows:<codeblock>$ sudo xfs_admin -l /dev/sde1
 xfs_admin: /dev/sde is not a valid XFS filesystem (unexpected SB magic number 0x00000000)</codeblock></p>
     <p>In this example, <codeph>/dev/sde1</codeph> does not have a filesystem label.</p>
+    <p>If you are about to install and deploy the system, you must delete before starting the deploy.
+      As part of the deploy, the system will label the partition.</p>
   </body>
 </topic>
