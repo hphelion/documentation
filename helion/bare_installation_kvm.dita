@@ -35,8 +35,8 @@
       <ul>
         <li>Set up the iLO Advanced license in the iLO configuration. Make sure the iLO user has
           admin privileges.</li>
-        <li> HP Helion OpenStack 2.0 Beta 1 will detect and use the "BIOS" mode you have selected
-          for each node; UEFI or legacy BIOS. UEFI support is new in Beta 1.</li>
+        <li> HP Helion OpenStack 2.0 Beta 2 will detect and use the "BIOS" mode you have selected
+          for each node; UEFI or legacy BIOS. UEFI support is new in Beta 2.</li>
         <li>Ensure that the network interface to be used for PXE installation has PXE enabled.</li>
         <li>Ensure that the other network interfaces have PXE disabled.</li>
         <li>Ensure that any logical drives (LUN) for the servers you will be using are created to
