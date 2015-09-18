@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_q5q_trz_jt">
+  <title>Verify Backend Configuration</title>
+  <body>
+    <p>This page describes the procedure to create volume type, associate volume type to backend,
+      create volume, attach volume, detach volume, and delete volume. You perform this operation to
+      verify the configuration of backend (VSA, Ceph, and 3PAR).</p>
+    <section>
+      <title>Create Volume Type to Verify the Configuration of Backend</title>
+      <p>Volumes are the Block Storage devices that you attach to instances to enable persistent
+        storage. You can attach a volume or detach a volume and attach it to another instance at any
+        time. You can also create and delete volume type and volumes.</p>
+      <p>Perform the following steps to create a volume using Horizon dashboard:</p>
+      <p>
+        <ol id="ol_ldf_fxc_gt">
+          <li>Log into the Horizon dashboard as <b>Admin</b>. The Horizon dashboard displays with
+            the options in the left panel.</li>
+          <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
+            to display the Volumes page.<p><image
+                href="../../media/3par/create-ceph-volumetype%20-%201.png" id="image_abz_l5z_jt"
+              /></p></li>
+          <li>Click <b>Create Volume Type</b> to display a dialog box.<p><image
+                href="../../media/3par/create-ceph-volumetype%20(2).png" id="image_z4h_n5z_jt"
+            /></p></li>
+          <li>Enter a unique name for the volume. </li>
+          <li>Click<b> Create Volume Type</b> to complete the action. Clicking <b>Cancel</b> returns
+            to the Volumes screen without completing the action.<p>The newly created volume displays
+              in the Volumes page.</p></li>
+        </ol>
+      </p>
+    </section>
+    <section id="associate-volume-backend">
+      <title>Associate the volume type to a backend</title>
+      <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
+          <li>Login to the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel.</li>
+          <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
+            to display the Volumes page.<image
+              href="../../media/3par/create-ceph-volumetype%20-%20extra-specs.png"
+              id="image_tr2_q5z_jt"/></li>
+          <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
+            associate to the backend. <p><image
+                href="../../media/3par/volume-extra-specs-3par_fc.png" id="image_hvl_t5z_jt"
+              /></p><p>The <b>Create Volume Type Extra Specs</b> dialog box displays. Now map the
+              volume type to the associate backend.</p></li>
+          <li>In the <b>Key</b> box, enter <i>volume_banked_name</i> as volume backend name. This is
+            the name of the key used to specify the storage backend when provisioning volumes of
+            this volume type. The volume backend name must match the backend name mentioned in the
+              <codeph>cinder.conf</codeph> file. <p>For example: You can enter the following backend
+              name for the respective backend used.  This backend name is mentioned in the
+                <codeph>cinder.conf</codeph> file.<ul id="ul_u4j_1vz_jt">
+                <li>VSA: You can enter <codeph>vsa-backend-hlm003</codeph> in the key field.</li>
+                <li>Ceph: You can enter <codeph>ceph</codeph> in the key field.</li>
+                <li>3PAR FC: You can enter <codeph>3par_fc</codeph> in the key field.</li>
+                <li>3PAR iSCSI : You can enter <codeph>3par_iscsi</codeph> in the key field.</li>
+              </ul></p></li>
+          <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate
+            the volume type. </li>
+          <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type
+              is mapped to the backend, you can create volumes with this volume type.</note></li>
+        </ol></p>
+    </section>
+    <section id="create-volume">
+      <title>Create Volume from User Account</title>
+      <p>Perform the following steps to create a volume using Horizon dashboard. <ol
+          id="ol_syw_xw3_jt">
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel. </li>
+          <li>From the left panel, click the <b>Project</b> tab and then click the <b>Volumes</b>
+            tab to display the Volumes page.<p><image href="../../media/3par/user-create-vol1.png"
+                id="image_vdr_4vz_jt"/></p></li>
+          <li>Click <b>Create Volume</b> to display a dialog box.<p><image
+                href="../../media/3par/user_create-volume.png" id="image_hrs_pvz_jt"/></p></li>
+          <li>Enter the required details in the corresponding fields. </li>
+          <li>Click<b> Create Volume </b> to complete the action. Clicking <b>Cancel</b> returns to
+            the Volumes screen without completing the action.<p><image
+                href="../../media/3par/user-create-vol-main.png" id="image_hc5_qvz_jt"/></p><p>The
+              volume is successfully created and the status of the volume is available.</p></li>
+        </ol></p>
+    </section>
+    <section>
+      <title>Delete Volume from User Account</title>
+      <p>Perform the following steps to delete a volume using Horizon dashboard:</p>
+      <p>
+        <ol id="ol_sdl_vy3_jt">
+          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
+            left panel. </li>
+          <li>From the left panel, click the <b>Project</b> tab and then click the <b>Volumes</b>
+            tab to display the Volumes page.<p><image
+                href="../../media/3par/user-create-vol-main.png" id="image_pfw_tvz_jt"/></p></li>
+          <li>Check the box in the row of the volume to delete.</li>
+          <li>Click <b>Delete Volume</b> to display the dialog box.<p><image
+                href="../../media/3par/user-delete-vol.png" id="image_jgn_xvz_jt"/></p></li>
+          <li>Click <b>Delete the Volume</b> to confirm the deletion of the selected volume. To exit
+            without deleting the volume and to close the screen, click <b>Cancel</b> before
+            deleting.</li>
+        </ol>
+      </p>
+    </section>
+  </body>
+</topic>

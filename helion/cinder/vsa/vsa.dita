@@ -128,90 +128,10 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
     </p>
-    <section>
-      <title>Create Volume Type to Verify the Configuration of VSA</title>
-      <p>You must create a volume to verify the configuration of  VSA. Once you are able to create
-        the volume then delete the created volume.</p>
-      <p>Perform the following steps to create a volume using Horizon dashboard:</p>
-      <p>
-        <ol id="ol_ldf_fxc_gt">
-          <li>Log into the Horizon dashboard as <b>Admin</b>. The Horizon dashboard displays with
-            the options in the left panel.</li>
-          <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
-            to display the Volumes page.<image href="../../../media/vsa/create-volumetype.png"
-              id="image_mfk_mlq_jt"/></li>
-          <li>Click <b>Create Volume Type</b> to display a dialog box.<p><image
-                href="../../../media/vsa/create-volumetype1.png" id="image_ub1_4lq_jt"/></p></li>
-          <li>Enter a unique name for the volume. </li>
-          <li>Click<b> Create Volume Type</b> to complete the action. Clicking <b>Cancel</b> returns
-            to the Volumes screen without completing the action.<image
-              href="../../../media/vsa/create-volumetype2.png" id="image_ink_rlq_jt"/><p>The newly
-              created volume displays in the Volumes page.</p></li>
-        </ol>
-      </p>
-    </section>
-    <section id="associate-volume-backend">
-      <title>Associate the volume type to a backend</title>
-      <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
-          <li>Login to the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel.</li>
-          <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab
-            to display the Volumes page.<image href="../../../media/vsa/create-volumetype2.png"
-              id="image_cvw_1my_jt"/></li>
-          <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
-            associate to the backend. <image
-              href="../../../media/vsa/create-volumetype2_extra-spec.png" id="image_edj_fmq_jt"
-              /><p>The <b>Create Volume Type Extra Specs</b> dialog box displays. Now map the volume
-              type to the associate backend.</p><p><image
-                href="../../../media/vsa/volume-extra-specs.png" id="image_xz3_lmq_jt"/></p></li>
-          <li>In the <b>Key</b> box, enter <i>volume_banked_name</i> as volume backend name. This is
-            the name of the key used to specify the storage backend when provisioning volumes of
-            this volume type. The volume backend name must match the backend name mentioned in the
-              <codeph>cinder.conf</codeph> file. For example: <i>vsa-backend-hlm003</i></li>
-          <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate
-            the volume type. For Example: <i>vsa_storage</i></li>
-          <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type
-              is mapped to the backend, you can create volumes with this volume type.</note>Now you
-            can login as a user and create a volume.</li>
-        </ol></p>
-    </section>
-    <section>
-      <title>Create Volume from User Account</title>
-      <p>Perform the following steps to create a volume using Horizon dashboard. <ol
-          id="ol_syw_xw3_jt">
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
-          <li>From the left panel, click the <b>Project</b> tab and then click the <b>Volumes</b>
-            tab to display the Volumes page.<image href="../../../media/vsa/user-create-vol1.png"
-              id="image_jh2_tnq_jt"/></li>
-          <li>Click <b>Create Volume</b> to display a dialog box.<image
-              href="../../../media/vsa/user_create-volume.png" id="image_whm_xnq_jt"/></li>
-          <li>Enter the required details in the corresponding fields. </li>
-          <li>Click<b> Create Volume </b> to complete the action. Clicking <b>Cancel</b> returns to
-            the Volumes screen without completing the action.<image
-              href="../../../media/vsa/user-create-vol-main.png" id="image_sds_14q_jt"/><p>The
-              volume is successfully created and the status of the volume is available.</p></li>
-        </ol></p>
-    </section>
-    <section>
-      <title>Delete Volume from User Account</title>
-      <p>Perform the following steps to delete a volume using Horizon dashboard:</p>
-      <p>
-        <ol id="ol_sdl_vy3_jt">
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
-          <li>From the left panel, click the <b>Project</b> tab and then click the <b>Volumes</b>
-            tab to display the Volumes page.<image
-              href="../../../media/vsa/user-create-vol-main.png" id="image_tch_3pq_jt"/></li>
-          <li>Check the box in the row of the volume to delete.</li>
-          <li>Click <b>Delete Volume</b> to display the dialog box.<image
-              href="../../../media/vsa/user-delete-vol.png" id="image_hpt_z4q_jt"/></li>
-          <li>Click <b>Delete the Volume</b> to confirm the deletion of the selected volume. To exit
-            without deleting the volume and to close the screen, click <b>Cancel</b> before
-            deleting.</li>
-        </ol>
-      </p>
-    </section>
+    <p>You must verify the VSA configuration as backend by creating the volume and volume type. Once
+      you are able to create the volume, you can delete the created volume. For more information,
+      refer to <xref href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Verify Backend
+        Configuration</xref>.</p>
     <note type="important"> You can create more than one VSA cluster of same or different type by
       specifying the configuration in cloud model. For more details, refer <xref
         href="vsa_create_multiple_clusters.dita#topic_q3v_krq_jt">Modifying Cloud Model to Create
