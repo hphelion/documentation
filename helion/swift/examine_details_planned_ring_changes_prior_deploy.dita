@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ev4_q2b_kt">
+  <title>Examine details of planned ring changes prior to deploy</title>
+  <body>
+    <p>
+      <note>You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as mentioned
+        in step <b>1</b> in <b> </b><xref
+          href="../installation.dita#topic_flx_j2b_ws/validate_swift">Validate Object Storage</xref>
+        otherwise the files needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be
+        in place on the node. </note>
+    </p>
+    <section>
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+      <p><?oxy_custom_end?><ul id="ul_sqc_r2b_kt">
+          <li>Log onto the first node in the system that is running the swift-proxy-server
+            process.</li>
+          <li>Execute the following command to get the entire list drives and the actions planned
+            for the rings by executing the following
+            command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report --detail detail</codeblock></li>
+        </ul> The output is verbose. Redirect the output to a file so that it is easier to
+          examine.<ul id="ul_erc_r2b_kt">
+          <li>Validate the following in the output:<ul id="ul_orc_r2b_kt">
+              <li>Drives are being added to all rings in the ring specifications.</li>
+              <li>Servers are being used as expected (for example, you may have a different set of
+                servers for the account/container rings than the object rings.)</li>
+              <li>The weight value is as expected. The weight value is the drive size expressed in
+                GB (i.e., a 1 TB drive has a weight of 1024).</li>
+            </ul></li>
+        </ul></p>
+    </section>
+  </body>
+</topic>

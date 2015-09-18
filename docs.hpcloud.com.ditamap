@@ -97,7 +97,11 @@
         <topicref href="helion/swift/storage-policies.dita"/>
       </topicref>
       <topicref href="helion/swift/check-swift-operation.dita"/>
-      <topicref href="helion/swift/troubleshooting.dita"/>
+      <topicref href="helion/swift/troubleshooting.dita">
+        <topicref href="helion/swift/deploy_fails_with_%20msdos_disks.dita"/>
+        <topicref href="helion/swift/examine_details_planned_ring_changes_prior_deploy.dita"/>
+        <topicref href="helion/swift/interpreting%20_swift-validate-input-model.dita"/>
+      </topicref>
     </topicref>
     <!-- Monasca / Centralized Logging -->
     <topicref href="helion/monasca/monasca.dita" navtitle="Monitoring Service" locktitle="yes">
