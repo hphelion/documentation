@@ -625,13 +625,13 @@ check_watchers = 10.0</codeblock>
             
             
             
-            <p>Ceilometer-expirer is also Active-Active HA, but the key thing is to ensure that a single expirer process runs when multiple processes are scheduled to run at same time (using cron-based scheduling) on multiple controller nodes.
-                
-                Tooz is used to pick an expirer process that acquires a lock when there are mutiple contenders and the winning process runs.
-                
-                There is no failover support, as expirer is not a daemon anyway and is scheduled to run at pre-determined intervals.
-                
-                The following configuration is needed to enable expirer HA:</p>
+            <p>Ceilometer-expirer is also Active-Active HA, but the key thing is to ensure that a
+                single expirer process runs when multiple processes are scheduled to run at same
+                time (using cron-based scheduling) on multiple controller nodes. Tooz is used to
+                pick an expirer process that acquires a lock when there are multiple contenders and
+                the winning process runs. There is no failover support, as expirer is not a daemon
+                anyway and is scheduled to run at pre-determined intervals. The following
+                configuration is needed to enable expirer HA:</p>
             <codeblock>[database]
 
 expirer_ha = true
