@@ -38,7 +38,7 @@ cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-&lt;time>/li
     <section>
       <p>
         <ol id="ol_evc_k11_gt">
-          <li>Login to the Deployer node.</li>
+          <li>Login to the deployer node.</li>
           <li>Create the Ceph configuration files (<b>manually</b>) at
               <codeph>~/helion-input/my_cloud/definition</codeph>. The example configuration files
             are available at <xref href="configuration_files.dita#config_files">Ceph
