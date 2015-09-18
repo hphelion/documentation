@@ -24,11 +24,13 @@
         <li>Prepare the new Ansible tree for the upgrade task: <ol id="ol_zzd_rxz_jt">
             <li> Resolve any merge conflicts that may have arisen:
               <codeblock>cd ~/helion
-git status</codeblock> If git reports merge issues, resolve
-              them by editing the files reported, then add and commit:
+git status</codeblock> Note that git status will also tell you
+              what branch you are on. It should be the site branch. If git reports merge issues,
+              resolve them by editing the files reported, then add and commit:
               <codeblock>git add &lt;filename>
 git commit -m "your commit message here"</codeblock>
-            </li>
+              More information about git and the config processor can be found on the <xref
+                href="using_git.dita#topic_u3v_1yz_ct">Using Git page</xref>.</li>
             <li> Run the config processor:
               <codeblock>cd ~/helion/hos/ansible/
         ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
