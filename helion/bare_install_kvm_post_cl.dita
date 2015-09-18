@@ -18,15 +18,15 @@
             <tbody>
               <row>
                 <entry/>
-                <entry/>
+                <entry>Retrieving Service Endpoints (openstack endpoint list)</entry>
               </row>
               <row>
                 <entry/>
-                <entry/>
+                <entry>Accessing Horizon</entry>
               </row>
               <row>
                 <entry/>
-                <entry/>
+                <entry>Accessing Ops Console</entry>
               </row>
               <row>
                 <entry/>
