@@ -753,17 +753,20 @@
                 <entry>name</entry>
                 <entry><p>The name of this set of resource-nodes. Cluster names and resource-node
                     names must mutually be unique within a control plane.</p> This value is used to
-                  persist server allocations, and cannot be changed once servers have been
-                  allocated. </entry>
+                  persist server allocations (see <xref href="#input_model/5.2_PersistedData"
+                    >Persisted Data</xref>), and cannot be changed once servers have been allocated.
+                </entry>
               </row>
               <row>
                 <entry>resource-prefix</entry>
-                <entry>The resource-prefix is used in the name generation.</entry>
+                <entry>The resource-prefix is used in the name generation. (see <xref
+                    href="#input_model/5.1_NameGeneration">Name Generation</xref>)</entry>
               </row>
               <row>
                 <entry>server-role</entry>
-                <entry>Only servers matching the specified role will be allocated to this
-                  cluster.</entry>
+                <entry>Only servers matching the specified role will be allocated to this cluster.
+                  (see <xref href="#input_model/3.4_ServerRoles">Server Roles</xref> for a
+                  description of server roles)</entry>
               </row>
               <row>
                 <entry>service-components</entry>
@@ -792,7 +795,9 @@
                 <entry>failure-zones (optional)</entry>
                 <entry>A list of Server Groups that servers will be allocated from. If specified,
                   this overrides the value specified for the control-plane. If not specified, the
-                  control-plane value is used. </entry>
+                  control-plane value is used. (see <xref
+                    href="#input_model/3.7.1_ServerGroupsAndFailureZones">Server Groups and Failure
+                    Zones</xref> for a description of server groups as failure zones)</entry>
               </row>
               <row>
                 <entry>allocation-policy (optional)</entry>
@@ -811,7 +816,368 @@
         </table>
       </p>
     </section>
-    <section id="disks_.yml"><title>disks_*.yml</title>
+    <section id="4.3_Servers"><title>Servers</title>
+      <p>The servers configuration object is used to list the available servers for deploying the
+        cloud.</p>
+      <p>It can also be used as an input file to the operating system installation process. In this
+        case some additional fields (identified below) will be necessary.</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="servers">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Id</entry>
+                <entry>A user defined identifier for the server. Id's must be unique and are used to
+                  track server allocations.</entry>
+              </row>
+              <row>
+                <entry>ip-addr</entry>
+                <entry>
+                  <p>The IP address of the server for installation purposes.</p>
+                  <p>This IP address is used by the config-processor to install and configure the
+                    service components on this server.</p>
+                  <p>When the servers.yml file is being used for operating system installation, this
+                    IP address will be assigned to the node by the installation process.</p>
+                  <p>This IP address (and associated NIC) can be re-used within the cloud
+                    infrastructure. To enable this, the following conditions need to be met: <ol>
+                      <li>The IP address must be a member of one of the network CIDRs defined in the
+                        networks.yml file. (see <xref href="#input_model/3.8.2_Networks"
+                          >Networks</xref>)</li>
+                      <li>That network must be on an untagged VLAN.</li>
+                    </ol></p>
+                </entry>
+              </row>
+              <row>
+                <entry>Role</entry>
+                <entry>Identifies the role of the server. (see <xref
+                    href="#input_model/3.4_ServerRoles">Server Roles</xref> for a description of
+                  server roles)</entry>
+              </row>
+              <row>
+                <entry>server-group (optional)</entry>
+                <entry>Identifies the server group that this server belongs to. (see <xref
+                    href="#input_model/3.7_ServerGroups">Server Groups</xref>)</entry>
+              </row>
+              <row>
+                <entry>mac-addr (optional)</entry>
+                <entry>Needed when <codeph>baremetalConfig.yml</codeph> file is being used for the
+                  operating system installation. This identifies the MAC address on the server that
+                  will be used to network install the operating system.</entry>
+              </row>
+              <row>
+                <entry>ilo-ip (optional)</entry>
+                <entry>Needed when the <codeph>baremetalConfig.yml</codeph> file is being used for
+                  the operating system installation. This provides the IP address of the power
+                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
+              </row>
+              <row>
+                <entry>ilo-user (optional)</entry>
+                <entry>Needed when the <codeph>baremetalConfig.yml</codeph> file is being used for
+                  the operating system installation. This provides the username of the power
+                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
+              </row>
+              <row>
+                <entry>ilo-password (optional)</entry>
+                <entry>Needed when the <codeph>baremetalConfig.yml</codeph> file is being used for
+                  the operating system installation. This provides the user password of the power
+                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
+              </row>
+              <row>
+                <entry>nic-mapping (optional)</entry>
+                <entry>Name of the entry from the <codeph>nic-mappings.yml</codeph> file to apply to
+                  this server in the <codeph>servers.yml</codeph> file. (see <xref
+                    href="#input_model/4.8_NICMappings">NIC Mappings</xref>)</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Here is a snippet of the <codeph>servers.yml</codeph> file included with the install:</p>
+      <codeblock>
+---
+  product:
+    version: 2
+        
+  servers:
+    # NOTE: Addresses of servers need to be
+    #       changed to match your environment.
+    #
+    #       Add additional servers as required
+    #
+    #       nic-mapping is optional.  The value specified is the name
+    #       of an entry in the nic-mappings list from nic_mappings.yml.
+    #       To use, uncomment and modify to match your environment.
+    
+    # Controllers
+    - id: controller1
+    ip-addr: 192.168.10.3
+    role: ROLE-CONTROLLER
+    # nic-mapping: HP_DL360_4PORT
+    
+    - id: controller2
+    ip-addr: 192.168.10.4
+    role: ROLE-CONTROLLER
+    # nic-mapping: HP_DL360_4PORT
+    
+    - id: controller3
+    ip-addr: 192.168.10.5
+    role: ROLE-CONTROLLER
+    # nic-mapping: HP_DL360_4PORT
+       
+    # Compute Nodes
+    - id: compute1
+    ip-addr: 192.168.10.6
+    role: ROLE-COMPUTE
+    # nic-mapping: MY_2PORT_SERVER
+     
+    # VSA Storage Nodes
+    - id: vsa1
+    ip-addr: 192.168.10.9
+    role: ROLE-VSA
+    # nic-mapping: MY_2PORT_SERVER</codeblock>
+      <p>Here is a snippet of the <codeph>baremetalConfig.yml</codeph>file included with the
+        install:</p>
+      <codeblock>
+---
+  product:
+    version: 2
+    <b>baremetal_network:
+       subnet: 192.168.10.0
+       netmask: 255.255.255.0
+       server_interface: eth2</b>
+       baremetal_servers:
+         -
+         node_name: controller1
+         node_type: ROLE-CONTROLLER
+         <b>pxe_mac_addr: b2:72:8d:ac:7c:6f
+           pxe_interface: eth2
+           pxe_ip_addr: 192.168.10.3
+           ilo_ip: 192.168.9.3
+           ilo_user: admin
+           ilo_password: password</b>
+         -
+         node_name: controller2
+         node_type: ROLE-CONTROLLER
+         <b>pxe_mac_addr: 8a:8e:64:55:43:76
+           pxe_interface: eth2
+           pxe_ip_addr: 192.168.10.4
+           ilo_ip: 192.168.9.4
+           ilo_user: admin
+           ilo_password: password</b>
+         -
+         node_name: controller3
+         node_type: ROLE-CONTROLLER
+         <b>pxe_mac_addr: 26:67:3e:49:5a:a7
+           pxe_interface: eth2
+           pxe_ip_addr: 192.168.10.5
+           ilo_ip: 192.168.9.5
+           ilo_user: admin
+           ilo_password: password</b>
+         -
+         node_name: compute1
+         node_type: ROLE-COMPUTE
+         <b>pxe_mac_addr: d6:70:c1:36:43:f7
+           pxe_interface: eth2
+           pxe_ip_addr: 192.168.10.6
+           ilo_ip: 192.168.9.6
+           ilo_user: admin
+           ilo_password: password</b>
+         -
+         node_name: vsa1
+         node_type: ROLE-VSA
+         <b>pxe_mac_addr: 8b:f6:9e:ca:3b:78
+           pxe_interface: eth2
+           pxe_ip_addr: 192.168.10.9
+           ilo_ip: 192.168.9.9
+           ilo_user: admin
+           ilo_password: password</b></codeblock>
+    </section>
+    <section id="4.4_ServerGroups"><title>Server Groups></title>
+      <p>Server groups provide a mechanism for organizing servers and networks into a hierarchy that
+        can be used for allocation and network resolution (see <xref
+          href="#input_model/3.7_ServerGroups">Server Groups</xref>)</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="server_groups">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the server group. The name is used to link
+                  server-groups together, and to identify server-groups to be used as failure zones
+                  in a Control Plane. (see <xref href="#input_model/4.2_ControlPlane">Control
+                    Plane</xref>)</entry>
+              </row>
+              <row>
+                <entry>server-groups (optional)</entry>
+                <entry>A list of server group names that are nested below this group in the
+                  hierarchy. Each server group can only be listed in one other server group (i.e. in
+                  a strict tree topology).</entry>
+              </row>
+              <row>
+                <entry>networks (optional)</entry>
+                <entry>A list of network names (see <xref href="#input_model/4.10_Networks"
+                    >Networks</xref>) that will be matched up to the servers via the server groups.
+                  (see <xref href="#input_model/3.7.2_ServerGroupsAndNetworks">Server Groups and
+                    Networks</xref>)</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Here is the sample file included with the install:</p>
+      <codeblock>
+---
+  product:
+    version: 2
+        
+  server-groups:
+   
+  #
+  # Server Groups provide a mechanism for organizing servers
+  # into a hierarchy that reflected the physical topology.
+  #
+  # When allocating a server the configuration processor
+  # will search down the hierarchy from the list of server
+  # groups identified as the failure-zones for the control
+  # plane until it finds an available server of the requested
+  # role.   If the allocation policy is "strict" servers are
+  # allocated from different failure-zones.
+  #
+  # When determining which network from a network group to
+  # associate with a server the configuration processor will
+  # search up the hierarchy from the server group containing the
+  # server until it finds a network in the required network
+  # group.
+  #
+  
+  #
+  # In this example there is only one network in each network
+  # group and so we put all networks in the top level server
+  # group.   Below this we create server groups for three
+  # failure zones, within which servers are grouped by racks.
+  #
+  # Note: the association of servers to server groups is part
+  # of the server definition (servers.yml)
+  #
+  
+  #
+  # At the top of the tree we have a
+  # group for the global networks
+  #
+  - name: GROUP_GLOBAL_NET
+    server-groups:
+      - AZ1
+      - AZ2
+      - AZ3
+        networks:
+        - NET_EXTERNAL_API
+        - NET_EXTERNAL_VM
+        - NET_GUEST
+        - NET_MGMT
+        
+  #
+  # Create a group for each failure zone
+  #
+  - name: AZ1
+    server-groups:
+      - RACK1
+        
+  - name: AZ2
+    server-groups:
+      - RACK2
+        
+  - name: AZ3
+    server-groups:
+      - RACK3
+   
+  #
+  # Create a group for each rack
+  #
+  - name: RACK1
+  
+  - name: RACK2
+  
+  - name: RACK3</codeblock>
+    </section>
+    <section id="4.5_ServerRoles"><title>Server Roles</title>
+      <p>Server roles lists different server roles that you use in your cloud. Each server role is
+        linked to two other configuration objects:</p>
+      <p>
+        <ul>
+          <li>Disk model (see <xref href="#input_model/4.6_DiskModels">Disk Models</xref>)</li>
+          <li>Interface model (see <xref href="#input_model/4.7_InterfaceModels">Interface
+              Models</xref>)</li>
+        </ul>
+      </p>
+      <p>Server roles are referenced in the servers (see <xref href="#input_model/4.3_Servers"
+          >Servers</xref>) configuration object above.</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="server_roles">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the role.</entry>
+              </row>
+              <row>
+                <entry>interface-model</entry>
+                <entry>A cross reference to the interface model to be used for this server
+                    role.<p>Different server roles can use the same interface model.</p></entry>
+              </row>
+              <row>
+                <entry>disk-model</entry>
+                <entry>A cross reference to the disk model to use for this server role.<p>Different
+                    server roles can use the same disk model.</p></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Here is the sample file included with the install:</p>
+      <codeblock>
+---
+  product:
+     version: 2
+        
+  server-roles:
+    
+  - name: ROLE-CONTROLLER
+    interface-model: INTERFACE_SET_CONTROLLER
+    disk-model: DISK_SET_CONTROLLER
+    
+  - name: ROLE-COMPUTE
+    interface-model: INTERFACE_SET_COMPUTE
+    disk-model: DISK_SET_COMPUTE
+  
+  - name: ROLE-VSA
+    interface-model: INTERFACE_SET_VSA
+    disk-model: DISK_SET_VSA</codeblock>
+    </section>
+    <section id="4.6_DiskModels"><title>Disk Models</title>
       <p>The disk model is used to specify how the directly attached disks on the server should be
         configured. It can also identify which service or service component consumes the disk, e.g.
         Swift object server, and provide service specific information associated with the disk.</p>
@@ -822,10 +1188,44 @@
         volume will have been created on a partition identified, symbolically, in the configuration
         files as /dev/sda_root. This is due to the fact that different BIOS systems (UEFI, Legacy)
         will result in different partition numbers on the root disk.</p>
-      <p>The path to these files are:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/disks_compute.yml
-~/helion/my_cloud/definition/data/disks_controller.yml
-~/helion/my_cloud/definition/data/disks_vsa.yml</codeblock></p>
+      <p><b>Device Groups</b></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="device_groups">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Descriptions</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user defined name for the device group</entry>
+              </row>
+              <row>
+                <entry>devices</entry>
+                <entry>A list of named devices to be assigned to this group. There must be at least
+                  one device in the group.</entry>
+              </row>
+              <row>
+                <entry>consumer</entry>
+                <entry>Identifies the name of one of the storage services (e.g. one of the
+                  following: Swift, Cinder, Ceph, VSA, etc) that will consume the disks in this
+                  device group.</entry>
+              </row>
+              <row>
+                <entry>consumer attributes</entry>
+                <entry>These will vary according to the service consuming the device group. The
+                  examples section provides sample content for the different services.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p><b>Volume Groups</b></p>
       <p>The <codeph>volume-groups</codeph> configuration object is used to define volume groups and
         their constituent logical volumes.</p>
       <p>Note that the volume groups are not exact analogs of device groups. A volume group
@@ -897,44 +1297,6 @@
                     examples section provides sample content for the different services.</p>
                   <p>Note, not all services support the use of logical volumes. VSA requires raw
                     devices.</p></entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </p>
-      <p>Here is a description of the fields in the <codeph>device-groups</codeph> portion of the
-        disk model files:</p>
-      <p>
-        <table frame="all" rowsep="1" colsep="1" id="device_groups">
-          <tgroup cols="2">
-            <colspec colname="c1" colnum="1"/>
-            <colspec colname="c2" colnum="2"/>
-            <thead>
-              <row>
-                <entry>Key</entry>
-                <entry>Value Descriptions</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry>name</entry>
-                <entry>A user defined name for the device group</entry>
-              </row>
-              <row>
-                <entry>devices</entry>
-                <entry>A list of named devices to be assigned to this group. There must be at least
-                  one device in the group.</entry>
-              </row>
-              <row>
-                <entry>consumer</entry>
-                <entry>Identifies the name of one of the storage services (e.g. one of the
-                  following: Swift, Cinder, Ceph, VSA, etc) that will consume the disks in this
-                  device group.</entry>
-              </row>
-              <row>
-                <entry>consumer attributes</entry>
-                <entry>These will vary according to the service consuming the device group. The
-                  examples section provides sample content for the different services.</entry>
               </row>
             </tbody>
           </tgroup>
@@ -1100,12 +1462,10 @@
          devices:
            - name: /dev/sdb</codeblock>
     </section>
-    <section id="net_interfaces.yml"><title>net_interfaces.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/net_interfaces.yml</codeblock></p>
-      <p>The key values to enter into this document are:</p>
+    <section id="4.7_InterfaceModels"><title>Interface Models</title>
+      <p>An interface model has the following attributes:</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_vs4_g4p_jt">
+        <table frame="all" rowsep="1" colsep="1" id="interface_model">
           <tgroup cols="2">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -1928,313 +2288,6 @@ tags:
       <note>You can remove the NIC information examples that do not pertain to your environment from
         this file.</note>
     </section>
-    <section id="server_groups.yml"><title>server_groups.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/server_groups.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
-      <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_e2s_z2p_jt">
-          <tgroup cols="2">
-            <colspec colname="c1" colnum="1"/>
-            <colspec colname="c2" colnum="2"/>
-            <thead>
-              <row>
-                <entry>Key</entry>
-                <entry>Value Description</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry>name</entry>
-                <entry>A user defined name for the server group. The name is used to link
-                  server-groups together, and to identify server-groups to be used as failure zones
-                  in a Control Plane.</entry>
-              </row>
-              <row>
-                <entry>server-groups (optional)</entry>
-                <entry>A list of server group names that are nested below this group in the
-                  hierarchy. Each server group can only be listed in one other server group (i.e. in
-                  a strict tree topology).</entry>
-              </row>
-              <row>
-                <entry>networks (optional)</entry>
-                <entry>A list of network names that will be matched up to the servers via the server
-                  groups.</entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
 
-  server-groups:
-
-    #
-    # Server Groups provide a mechanism for organizing servers
-    # into a hierarchy that reflected the physical topology.
-    #
-    # When allocating a server the configuration processor
-    # will search down the hierarchy from the list of server
-    # groups identified as the failure-zones for the control
-    # plane until it finds an available server of the requested
-    # role.   If the allocation policy is "strict" servers are
-    # allocated from different failure-zones.
-    #
-    # When determining which network from a network group to
-    # associate with a server the configuration processor will
-    # search up the hierarchy from the server group containing the
-    # server until it finds a network in the required network
-    # group.
-    #
-
-    #
-    # In this example there is only one network in each network
-    # group and so we put all networks in the top level server
-    # group.   Below this we create server groups for three
-    # failure zones, within which servers are grouped by racks.
-    #
-    # Note: the association of servers to server groups is part
-    # of the server definition (servers.yml)
-    #
-
-    #
-    # At the top of the tree we have a
-    # group for the global networks
-    #
-    - name: GROUP_GLOBAL_NET
-      server-groups:
-        - AZ1
-        - AZ2
-        - AZ3
-      networks:
-        - NET_EXTERNAL_API
-        - NET_EXTERNAL_VM
-        - NET_GUEST
-        - NET_MGMT
-        
-    #
-    # Create a group for each failure zone
-    #
-    - name: AZ1
-      server-groups:
-        - RACK1
-        
-    - name: AZ2
-      server-groups:
-        - RACK2
-        
-    - name: AZ3
-      server-groups:
-        - RACK3
-        
-    #
-    # Create a group for each rack
-    #
-    - name: RACK1
-
-    - name: RACK2
-
-    - name: RACK3</codeblock>
-    </section>
-    <section id="server_roles.yml"><title>server_roles.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/server_roles.yml</codeblock></p>
-      <p>The key values to enter into this document are ....</p>
-      <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_bb3_qfp_jt">
-          <tgroup cols="2">
-            <colspec colname="c1" colnum="1"/>
-            <colspec colname="c2" colnum="2"/>
-            <thead>
-              <row>
-                <entry>Key</entry>
-                <entry>Value Description</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry>name</entry>
-                <entry>A user defined name for the role.</entry>
-              </row>
-              <row>
-                <entry>interface-model</entry>
-                <entry>A cross reference to the interface model to be used for this server
-                    role.<p>Different server roles can use the same interface model.</p></entry>
-              </row>
-              <row>
-                <entry>disk-model</entry>
-                <entry>A cross reference to the disk model to use for this server role.<p>Different
-                    server roles can use the same disk model.</p></entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-        
-  server-roles:
-        
-    - name: ROLE-CONTROLLER
-      interface-model: INTERFACE_SET_CONTROLLER
-      disk-model: DISK_SET_CONTROLLER
-        
-    - name: ROLE-COMPUTE
-      interface-model: INTERFACE_SET_COMPUTE
-      disk-model: DISK_SET_COMPUTE
-        
-    - name: ROLE-VSA
-      interface-model: INTERFACE_SET_VSA
-      disk-model: DISK_SET_VSA</codeblock>
-    </section>
-    <section id="servers.yml"><title>servers.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/servers.yml</codeblock></p>
-      <p>The key values to enter into this document are the IP addresses for each of the servers for
-        your environment. They should also be in the <codeph>baremetalConfig.yml</codeph> file as
-        the <codeph>pxe_ip_addr</codeph> value so you can copy them from there.</p>
-      <p>If you are going to be using network interface (nic) mapping then the definitions will
-        exist in the <codeph>nic_mappings.yml</codeph> file but you will specify which value to use
-        for each of your servers in this file.</p>
-      <note>The entries in this file are examples, if you have more or less nodes you can copy and
-        paste to include your entire environment.</note>
-      <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_rjd_xbp_jt">
-          <tgroup cols="2">
-            <colspec colname="c1" colnum="1"/>
-            <colspec colname="c2" colnum="2"/>
-            <thead>
-              <row>
-                <entry>Key</entry>
-                <entry>Value Description</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry>Id</entry>
-                <entry>A user defined identifier for the server. Id's must be unique and are used to
-                  track server allocations.</entry>
-              </row>
-              <row>
-                <entry>ip-addr</entry>
-                <entry>
-                  <p>The IP address of the server for installation purposes.</p>
-                  <p>This IP address is used by the config-processor to install and configure the
-                    service components on this server.</p>
-                  <p>When the servers.yml file is being used for operating system installation, this
-                    IP address will be assigned to the node by the installation process.</p>
-                  <p>This IP address (and associated NIC) can be re-used within the cloud
-                    infrastructure. To enable this, the following conditions need to be met: <ol
-                      id="ol_b4b_kcp_jt">
-                      <li>The IP address must be a member of one of the network CIDRs defined in the
-                        networks.yml file.</li>
-                      <li>That network must be on an untagged VLAN.</li>
-                    </ol></p>
-                </entry>
-              </row>
-              <row>
-                <entry>Role</entry>
-                <entry>Identifies the role of the server.</entry>
-              </row>
-              <row>
-                <entry>server-group (optional)</entry>
-                <entry>Identifies the server group that this server belongs to.</entry>
-              </row>
-              <row>
-                <entry>mac-addr (optional)</entry>
-                <entry>Needed when <codeph>servers.yml</codeph> file is being used for the operating
-                  system installation. This identifies the MAC address on the server that will be
-                  used to network install the operating system.</entry>
-              </row>
-              <row>
-                <entry>ilo-ip (optional)</entry>
-                <entry>Needed when the <codeph>servers.yml</codeph> file is being used for the
-                  operating system installation. This provides the IP address of the power
-                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
-              </row>
-              <row>
-                <entry>ilo-user (optional)</entry>
-                <entry>Needed when the <codeph>servers.yml</codeph> file is being used for the
-                  operating system installation. This provides the username of the power management
-                  (e.g. ipmi-ip, iLO) subsystem.</entry>
-              </row>
-              <row>
-                <entry>ilo-password (optional)</entry>
-                <entry>Needed when the <codeph>servers.yml</codeph> file is being used for the
-                  operating system installation. This provides the user password of the power
-                  management (e.g. ipmi-ip, iLO) subsystem.</entry>
-              </row>
-              <row>
-                <entry>nic-mapping (optional)</entry>
-                <entry>Name of the entry from the <codeph>nic-mappings.yml</codeph> file to apply to
-                  this server.</entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-        
-  servers:
-    # NOTE: Addresses of servers need to be
-    #       changed to match your environment.
-    #
-    #       Add additional servers as required
-    #
-    #       nic-mapping is optional.  The value specified is the name
-    #       of an entry in the nic-mappings list from nic_mappings.yml.
-    #       To use, uncomment and modify to match your environment.
-        
-    # Controllers
-    - id: controller1
-      <b>ip-addr: 192.168.10.3</b>
-      role: ROLE-CONTROLLER
-    # nic-mapping: HP_DL360_4PORT
-        
-    - id: controller2
-      <b>ip-addr: 192.168.10.4</b>
-      role: ROLE-CONTROLLER
-    # nic-mapping: HP_DL360_4PORT
-        
-    - id: controller3
-      <b>ip-addr: 192.168.10.5</b>
-      role: ROLE-CONTROLLER
-    # nic-mapping: HP_DL360_4PORT
-        
-    # Compute Nodes
-    - id: compute1
-      <b>ip-addr: 192.168.10.6</b>
-      role: ROLE-COMPUTE
-    # nic-mapping: MY_2PORT_SERVER
-        
-    # VSA Storage Nodes
-    - id: vsa1
-      <b>ip-addr: 192.168.10.9</b>
-      role: ROLE-VSA
-    # nic-mapping: MY_2PORT_SERVER  
-      
-    - id: vsa2
-      <b>ip-addr: 192.168.10.10</b>
-      role: ROLE-VSA
-    # nic-mapping: MY_2PORT_SERVER
-      
-    - id: vsa2
-      <b>ip-addr: 192.168.10.11</b>
-      role: ROLE-VSA
-    # nic-mapping: MY_2PORT_SERVER</codeblock>
-      <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
-        are recognized.</note>
-    </section>
   </conbody>
 </concept>
