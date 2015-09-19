@@ -603,7 +603,7 @@
         - neutron-lbaasv2-agent</codeblock>
       <p>The key values to enter into this document are described in the table below:</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_zrw_1z4_jt">
+        <table frame="all" rowsep="1" colsep="1" id="control_plane">
           <tgroup cols="2">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -650,6 +650,7 @@
           </tgroup>
         </table>
       </p>
+      <p><b>Clusters</b></p>
       <p>To further breakdown what the options are in the <codeph>clusters</codeph> portion of this
         file, here are some field descriptions:</p>
       <p>
@@ -1488,9 +1489,9 @@
           </tgroup>
         </table>
       </p>
-      <p>A network interface is an interface model that has the following attributes:</p>
+      <p>A network interface in an interface model has the following attributes:</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_pwy_j4p_jt">
+        <table frame="all" rowsep="1" colsep="1" id="network_interface">
           <tgroup cols="2">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -1510,27 +1511,31 @@
                 <entry>
                   <p>A dictionary containing the network device name as seen on the associated
                     server. If a NIC mapping is defined for the server, the name may be the
-                    logical-name specified by the mapping. When configuring a bond, this is used as
-                    the bond device name.</p></entry>
+                    logical-name specified by the mapping (see <xref href="#input_model/4.3_Servers"
+                      >Servers</xref>). When configuring a bond, this is used as the bond device
+                    name.</p></entry>
               </row>
               <row>
                 <entry>bond-data (optional)</entry>
-                <entry>Used to define a bond. See the <codeph>bond-data</codeph> section below for
-                  details.</entry>
+                <entry>Used to define a bond. See <xref href="#input_model/bond_data" type="table"
+                    >Bond Data</xref> for details.</entry>
               </row>
               <row>
                 <entry>network-groups</entry>
-                <entry>A list of one or more network groups containing networks that will operate on
+                <entry>A list of one or more network groups (see <xref
+                    href="#input_model/4.9_NetworkGroups">Network Groups</xref>) containing networks
+                  (see <xref href="#input_model/4.10_Networks">Networks</xref>) that will operate on
                   this interface.</entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
+      <p><b>Bond Data</b></p>
       <p>A <codeph>bond-data</codeph> definition is used to configure a bond device, and consists of
         the following attributes:</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_oft_z4p_jt">
+        <table frame="all" rowsep="1" colsep="1" id="bond_data">
           <tgroup cols="2">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -1562,6 +1567,7 @@
           </tgroup>
         </table>
       </p>
+      <p><b>Bond Data Options for the "linux" Provider</b></p>
       <p>The linux bonding driver supports a large number of parameters that control the operation
         of the bond, as described in the <xref
           href="https://www.kernel.org/doc/Documentation/networking/bonding.txt" scope="external"
@@ -1634,12 +1640,127 @@
              network-groups:
                - MGMT</codeblock>
     </section>
-    <section id="network_groups.yml"><title>network_groups.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/network_groups.yml</codeblock></p>
+    <section id="4.8_NICMappings"><title>NIC Mappings</title>
+      <p>NIC mappings are used to ensure that the network device name used by the operating system
+        always maps to the same physical device. A NIC mapping is associated to a server in the
+          <codeph>servers.yml</codeph> definition file. (see <xref href="#input_model/4.3_Servers"
+          >Servers</xref>)</p>
+      <p>Each entry in the <codeph>nic-mappings</codeph> list has the following attributes:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="nic_mappings">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>name</entry>
+                <entry>A user-specified name for the mapping. This name may be used in a server
+                  definition (see <xref href="#input_model/4.3_Servers">Servers</xref>) to apply the
+                  mapping to that server.</entry>
+              </row>
+              <row>
+                <entry>physical-ports</entry>
+                <entry>A list containing device name to address mapping information.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Each entry in the <codeph>physical-ports</codeph> list has the following attributes:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="physical_ports">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Value Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>logical-name</entry>
+                <entry>The network device name that will be associated with the device at the
+                  specified <i>bus-address</i>. The logical-name specified here can be used as a
+                  device name in network interface model definitions. (see <xref
+                    href="#input_model/4.7_InterfaceModels">Interface Models</xref>)</entry>
+              </row>
+              <row>
+                <entry>type</entry>
+                <entry>The type of port. The current implementation supports only “simple-port”;
+                  other port types may be added in a future release.</entry>
+              </row>
+              <row>
+                <entry>bus-address</entry>
+                <entry>PCI bus address of the port. Enclose the bus address in quotation marks so
+                  yaml does not misinterpret the embedded colon (:) characters.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Here is the sample file included with the install:</p>
+      <codeblock>
+---
+  product:
+    version: 2
+  
+  # nic-mappings are used to ensure that the device name used by the
+  # operating system always maps to the same physical device.
+  # A nic-mapping is associated to a server in the server definition.
+  # The logical-name specified here can be used as a device name in
+  # the network interface-models definitions.
+  #
+  # - name               user-defined name for each mapping
+  #   physical-ports     list of ports for this mapping
+  #     - logical-name   device name to be used by the operating system
+  #       type           physical port type
+  #       bus-address    bus address of the physical device
+  #
+  # Notes:
+  # - enclose the bus address in quotation marks so yaml does not
+  #   misinterpret the embedded colon (:) characters
+  # - simple-port is the only currently supported port type
+  
+  nic-mappings:
+  
+  - name: HP_DL360_3PORT
+    physical-ports:
+  - logical-name: eth1
+    type: simple-port
+    bus-address: "0000:07:00.0"
+  
+  - logical-name: eth2
+    type: simple-port
+    bus-address: "0000:08:00.0"
+  
+  - logical-name: eth3
+    type: simple-port
+    bus-address: "0000:09:00.0"
+        
+  - name: MY_2PORT_SERVER
+    physical-ports:
+  - logical-name: eth3
+    type: simple-port
+    bus-address: "0000:04:00.0"
+  
+  - logical-name: eth4
+    type: simple-port
+    bus-address: "0000:04:00.1"</codeblock>
+      <note>You can remove the NIC information examples that do not pertain to your environment from
+        this file.</note>
+    </section>
+    <section id="4.9_NetworkGroups"><title>Network Groups</title>
       <p>A network group definition has the following attributes:</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_jp5_jlt_jt">
+        <table frame="all" rowsep="1" colsep="1" id="network_groups">
           <tgroup cols="2">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -1667,7 +1788,8 @@
               </row>
               <row>
                 <entry>hostname-suffix (optional)</entry>
-                <entry>If supplied, this string will be used in the name generation. If not
+                <entry>If supplied, this string will be used in the name generation (see <xref
+                    href="#input_model/5.1_NameGeneration">Name Generation</xref>). If not
                   specified, the name of the network group will be used.</entry>
               </row>
               <row>
@@ -1718,8 +1840,9 @@
                 <entry>roles</entry>
                 <entry>The list of endpoint roles that this load balancer provides (see below).
                   Valid roles are “public”, “internal”, and “admin”. To ensure separation of public
-                  cannot be combined with internal/admin. See 3.8.1.1 for an example of how the role
-                  provides endpoint separation</entry>
+                  cannot be combined with internal/admin. (see <xref
+                    href="#input_model/3.8.1.1_LoadBalancers">Load Balancers</xref> for an example
+                  of how the role provides endpoint separation)</entry>
               </row>
               <row>
                 <entry>components (optional)</entry>
@@ -1744,6 +1867,8 @@
           </tgroup>
         </table>
       </p>
+    </section>
+    <section id="4.9.1_NetworkTags"><title>Network Tags</title>
       <p>Helion OpenStack supports a small number of network tags which may be used to convey
         information between the input model and the service components. A network tag consists
         minimally of a tag name; some network tags have additional attributes, described below:</p>
@@ -2053,9 +2178,9 @@ tags:
           - vsa.iscsi
           - nova.compute.iscsi</codeblock>
     </section>
-    <section id="networks.yml"><title>networks.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/networks.yml</codeblock></p>
+    <section id="4.10_Networks"><title>Networks</title>
+      <p>A network definition represents a network used by the cloud infrastructure; these are not
+        Neutron networks, although some of the networks may be used by Neutron.</p>
       <p>The key values to enter into this document are described in the table below:</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_vd3_lzt_jt">
@@ -2116,7 +2241,7 @@ tags:
           </tgroup>
         </table>
       </p>
-      <p>Here is the sample file included with the install:</p>
+      <p>Here is an example network definition:</p>
       <codeblock>
 ---
   product:
@@ -2165,129 +2290,337 @@ tags:
       gateway-ip: 10.2.1.1
       network-group: MGMT</codeblock>
     </section>
-    <section id="nic_mappings.yml"><title>nic_mappings.yml</title>
-      <p>NIC mappings are used to ensure that the network device name used by the operating system
-        always maps to the same physical device. A NIC mapping is associated to a server in the
-          <codeph>servers.yml</codeph> definition file.</p>
-      <p>Your NIC adapter PCI Bus address information that will go into your nic_mappings file was
-        also included in the <xref href="bare_install_kvm_cl.dita#preinstall_checklist/nic_mappings"
-          type="table">pre-installation checklist</xref> steps.</p>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/nic_mappings.yml</codeblock></p>
-      <p>Each entry in the <codeph>nic-mappings</codeph> list has the following attributes:</p>
-      <p>
-        <table frame="all" rowsep="1" colsep="1" id="nic_mappings">
-          <tgroup cols="2">
-            <colspec colname="c1" colnum="1"/>
-            <colspec colname="c2" colnum="2"/>
-            <thead>
-              <row>
-                <entry>Key</entry>
-                <entry>Value Description</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry>name</entry>
-                <entry>A user-specified name for the mapping. This name may be used in a server
-                  definition to apply the mapping to that server.</entry>
-              </row>
-              <row>
-                <entry>physical-ports</entry>
-                <entry>A list containing device name to address mapping information.</entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </p>
-      <p>Each entry in the <codeph>physical-ports</codeph> list has the following attributes:</p>
-      <p>
-        <table frame="all" rowsep="1" colsep="1" id="physical_ports">
-          <tgroup cols="2">
-            <colspec colname="c1" colnum="1"/>
-            <colspec colname="c2" colnum="2"/>
-            <thead>
-              <row>
-                <entry>Key</entry>
-                <entry>Value Description</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry>logical-name</entry>
-                <entry>The network device name that will be associated with the device at the
-                  specified <i>bus-address</i>. The logical-name specified here can be used as a
-                  device name in network interface model definitions.</entry>
-              </row>
-              <row>
-                <entry>type</entry>
-                <entry>The type of port. The current implementation supports only “simple-port”;
-                  other port types may be added in a future release.</entry>
-              </row>
-              <row>
-                <entry>bus-address</entry>
-                <entry>PCI bus address of the port. Enclose the bus address in quotation marks so
-                  yaml does not misinterpret the embedded colon (:) characters.</entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-        
-  # nic-mappings are used to ensure that the device name used by the
-  # operating system always maps to the same physical device.
-  # A nic-mapping is associated to a server in the server definition.
-  # The logical-name specified here can be used as a device name in
-  # the network interface-models definitions.
-  #
-  # - name               user-defined name for each mapping
-  #   physical-ports     list of ports for this mapping
-  #     - logical-name   device name to be used by the operating system
-  #       type           physical port type
-  #       bus-address    bus address of the physical device
-  #
-  # Notes:
-  # - enclose the bus address in quotation marks so yaml does not
-  #   misinterpret the embedded colon (:) characters
-  # - simple-port is the only currently supported port type
-
-  nic-mappings:
-        
-    - name: HP_DL360_4PORT
-      physical-ports:
-        - logical-name: eth1
-          type: simple-port
-          bus-address: "0000:07:00.0"
-        
-        - logical-name: eth2
-          type: simple-port
-          bus-address: "0000:08:00.0"
-        
-        - logical-name: eth3
-          type: simple-port
-          bus-address: "0000:09:00.0"
-        
-        - logical-name: eth4
-          type: simple-port
-          bus-address: "0000:0a:00.0"
-        
-    - name: MY_2PORT_SERVER
-      physical-ports:
-        - logical-name: eth3
-          type: simple-port
-          bus-address: "0000:04:00.0"
-        
-        - logical-name: eth4
-          type: simple-port
-          bus-address: "0000:04:00.1"</codeblock>
-      <note>You can remove the NIC information examples that do not pertain to your environment from
-        this file.</note>
+    <!--<section id="4.11_PassThrough"><title>Pass Through</title>
+      </section> -->
+    <section id="5.0_OtherTopics"><title>Other Topics</title></section>
+    <section id="5.1_NameGeneration"><title>Name Generation</title>
+      <p>Names are generated by the configuration processor for all allocated IP addresses. A server
+        connected to multiple networks will have multiple names associated with it. One of these may
+        be assigned as the hostname for a server via the network-group configuration (see <xref
+          href="#input_model/4.8_NICMappings">NIC Mappings</xref>). Names are generated from data
+        taken from various parts of the input model as described in the following sections.</p>
     </section>
-
+    <section id="5.1.1_Clusters"><title>Clusters</title>
+      <p>Names generated for servers in a cluster have the following form:</p>
+      <p><codeblock>&lt;cloud>-&lt;control-plane>-&lt;cluster>&lt;member-prefix>&lt;member_id>-&lt;network></codeblock></p>
+      <p>Example: <codeph>helion-ccp-core-m1-mgmt</codeph></p>
+      <table frame="all" rowsep="1" colsep="1" id="cluster_node_names">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Name</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>&lt;cloud></entry>
+              <entry>Comes from the hostname-data section of the Cloud object (see <xref
+                  href="#input_model/4.1_Cloud">Cloud</xref>)</entry>
+            </row>
+            <row>
+              <entry>&lt;control-plane></entry>
+              <entry>is the control-plane name (see <xref href="#input_model/4.2_ControlPlane"
+                  >Control Plane</xref>)</entry>
+            </row>
+            <row>
+              <entry>&lt;cluster></entry>
+              <entry>is the cluster name (see <xref href="#input_model/clusters" type="table"
+                  >Clusters</xref>)</entry>
+            </row>
+            <row>
+              <entry>&lt;member-prefix></entry>
+              <entry>comes from the hostname-data section of the Cloud object (see <xref
+                  href="#input_model/4.1_Cloud">Cloud</xref>)</entry>
+            </row>
+            <row>
+              <entry>&lt;member_id></entry>
+              <entry>is the ordinal within the cluster, generated by the Configuration Processor as
+                servers are allocated to the cluster</entry>
+            </row>
+            <row>
+              <entry>&lt;network></entry>
+              <entry>comes from the hostname-suffix of the network group the network belongs to (see
+                  <xref href="#input_model/4.8_NICMappings">NIC Mappings</xref>)</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="5.1.2_ResourceNodes"><title>Resource Nodes</title>
+      <p>Names generated for servers in a resource group have the following form:</p>
+      <p><codeblock>&lt;cloud>-&lt;control-plane>-&lt;resource-prefix>&lt;member_id>-&lt;network></codeblock></p>
+      <p>Example: <codeph>helion-ccp-comp0001-mgmt</codeph></p>
+      <table frame="all" rowsep="1" colsep="1" id="resource_node_names">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Name</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>&lt;cloud></entry>
+              <entry>Comes from the hostname-data section of the Cloud object (see <xref
+                  href="#input_model/4.1_Cloud">Cloud</xref>)</entry>
+            </row>
+            <row>
+              <entry>&lt;control-plane></entry>
+              <entry>is the control-plane name (see <xref href="#input_model/4.2_ControlPlane"
+                  >Control Plane</xref>)</entry>
+            </row>
+            <row>
+              <entry>&lt;resource-prefix></entry>
+              <entry>is the resource-prefix value name (see <xref href="#input_model/resource_nodes"
+                  type="table">Resource Nodes</xref>)</entry>
+            </row>
+            <row>
+              <entry>&lt;member_id></entry>
+              <entry>is the ordinal within the cluster, generated by the Configuration Processor as
+                servers are allocated to the cluster</entry>
+            </row>
+            <row>
+              <entry>&lt;network></entry>
+              <entry>comes from the hostname-suffix of the network group the network belongs to (see
+                  <xref href="#input_model/4.8_NICMappings">NIC Mappings</xref>)</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="5.2_PersistedData"><title>Persisted Data</title>
+      <p>Because the Configuration Processor is making allocation decisions on servers and IP
+        addresses it needs to be able to persist (remember) those decisions between successive runs,
+        so that if new servers are added to the input model they don’t disrupt the previous
+        (deployed) allocations.</p>
+      <p>To allow users to make multiple iterations of the input model before deployment Helion will
+        only persist data when the user confirms that they are about to deploy the results via the
+        “ready-deployment” operation.</p>
+      <p>To understand this better consider the following example:</p>
+      <p>Imagine you have a completed Helion deployment with servers A, B, and C and you want to add
+        two new compute nodes by adding servers D and E to the input model.</p>
+      <p>When you add these to the input model and re-run the Configuration Processor it will read
+        the persisted data for A, B, and C and allocate D and E as new servers. The Configuration
+        Processor now has allocation data for A, B, C, D, and E – which it keeps in a staging area
+        (actually a special branch in git) until we get confirmation that the Configuration
+        Processor has done what you intended and you are ready to deploy the revised
+        configuration.</p>
+      <p>If you noticed that the role of E was wrong and it became a swift node instead of a nova
+        node you need to be able to change the input mode and re-run the Configuration Processor.
+        This is fine because the allocations of D and E have not been confirmed, and so the
+        Configuration Processor will re-read the data about A, B, C and re-allocate D and E now to
+        the correct clusters, updating the persisted data in staging area.</p>
+      <p>You can loop though this as many times as you need, and each time the Configuration
+        Processor is processing the deltas to what is deployed, now the results of the previous run.
+        When you are ready to use the results of the Configuration Processor, you run
+          <codeph>ready-deployment.yml</codeph> which commits the data in staging area into the
+        persisted data. The next run of the Configuration Processor will then start from the
+        persisted data for A, B, C, D, and E.</p>
+    </section>
+    <section id="5.2.1_PersistedServerAllocations"><title>Persisted Server Allocations</title>
+      <p>Server allocations are persisted by the customer defined server ID (see <xref
+          href="#input_model/4.3_Servers">Servers</xref>), and include the control plane,
+        cluster/resource name, and ordinal within the cluster or resource group.</p>
+      <p>To guard against data loss, the Configuration Processor persists server allocations even
+        when the server ID no longer exists in the input model – for example if a server was removed
+        by accident and Configuration Processor allocated a new server to the same ordinal then it
+        would be very difficult to recover from that situation.</p>
+      <p>The following example illustrates the behavior:</p>
+      <p>A cloud is deployed with four servers with IDs of A, B, C, and D that can all be used in a
+        resource group with <codeph>min-size=0</codeph> and <codeph>max-size=3</codeph>. At the end
+        of this deployment they persisted state is as follows:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="persist_exam_1">
+          <tgroup cols="6">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="newCol6" colnum="6" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>ID</entry>
+                <entry>Control Plane</entry>
+                <entry>Resource Group</entry>
+                <entry>Ordinal</entry>
+                <entry>State</entry>
+                <entry>Deployed As</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>A</entry>
+                <entry>ccp</entry>
+                <entry>compute</entry>
+                <entry>1</entry>
+                <entry>Allocated</entry>
+                <entry>mycloud-ccp-comp0001</entry>
+              </row>
+              <row>
+                <entry>B</entry>
+                <entry>ccp</entry>
+                <entry>compute</entry>
+                <entry>2</entry>
+                <entry>Allocated</entry>
+                <entry>mycloud-ccp-comp0002</entry>
+              </row>
+              <row>
+                <entry>C</entry>
+                <entry>ccp</entry>
+                <entry>compute</entry>
+                <entry>3</entry>
+                <entry>Allocated</entry>
+                <entry>mycloud-ccp-comp0003</entry>
+              </row>
+              <row>
+                <entry>D</entry>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry>Available</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>(In this example Server D has not been allocated because the group is at its max size, and
+        there are no other groups that required this server)</p>
+      <p>If server B is removed from the input model the state is changed to:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="persist_exam_2">
+          <tgroup cols="6">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="newCol6" colnum="6" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>ID</entry>
+                <entry>Control Plane</entry>
+                <entry>Resource Group</entry>
+                <entry>Ordinal</entry>
+                <entry>State</entry>
+                <entry>Deployed As</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>A</entry>
+                <entry>ccp</entry>
+                <entry>compute</entry>
+                <entry>1</entry>
+                <entry>Allocated</entry>
+                <entry>mycloud-ccp-comp0001</entry>
+              </row>
+              <row>
+                <entry>B</entry>
+                <entry>ccp</entry>
+                <entry>compute</entry>
+                <entry>2</entry>
+                <entry>Deleted</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>C</entry>
+                <entry>ccp</entry>
+                <entry>compute</entry>
+                <entry>3</entry>
+                <entry>Allocated</entry>
+                <entry>mycloud-ccp-comp0003</entry>
+              </row>
+              <row>
+                <entry>D</entry>
+                <entry>ccp</entry>
+                <entry>compute</entry>
+                <entry>4</entry>
+                <entry>Allocated</entry>
+                <entry>mycloud-ccp-comp0004</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>The details associated with server “B” are still kept, but the Configuration Processor will
+        not generate any deployment data for this server. Server “D” has been added to the group to
+        meet the minimum size requirement, but has been given a different ordinal and hence will get
+        different names and IP addresses.</p>
+      <p>If server B is added back into the input model the resulting state will be:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="persist_exam_3">
+          <tgroup cols="6">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="newCol6" colnum="6" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>ID</entry>
+                <entry>Control Plane</entry>
+                <entry>Resource Group</entry>
+                <entry>Ordinal</entry>
+                <entry>State</entry>
+                <entry>Deployed As</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>A</entry>
+                <entry>ccp</entry>
+                <entry>compute</entry>
+                <entry>1</entry>
+                <entry>Allocated</entry>
+                <entry>mycloud-ccp-comp0001</entry>
+              </row>
+              <row>
+                <entry>B</entry>
+                <entry>ccp</entry>
+                <entry>compute</entry>
+                <entry>2</entry>
+                <entry>Deleted</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>C</entry>
+                <entry>ccp</entry>
+                <entry>compute</entry>
+                <entry>3</entry>
+                <entry>Allocated</entry>
+                <entry>mycloud-ccp-comp0003</entry>
+              </row>
+              <row>
+                <entry>D</entry>
+                <entry>ccp</entry>
+                <entry>compute</entry>
+                <entry>4</entry>
+                <entry>Allocated</entry>
+                <entry>mycloud-ccp-comp0004</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>The Configuration Processor will issue a warning that server B cannot be returned to the
+        group because it would exceed the max-size constraint. However, because the Configuration
+        Processor knows that server B is associated with this group it won’t allocate it to any
+        other group that could use it, since that might lead to data loss on that server.</p>
+      <p>If the max-size value of the group was increased then server B would be allocated back to
+        the group, with its previous name and addresses.</p>
+      <p>Note that the Configuration Processor relies on the server ID to identify a physical
+        server. If the ID value of a server is changed the Configuration Processor will treat it as
+        a new server. Conversely, if a different physical server is added with the same ID as a
+        deleted server the Configuration Processor will assume that it is the original server being
+        returned to the model.</p>
+    </section>
   </conbody>
 </concept>
