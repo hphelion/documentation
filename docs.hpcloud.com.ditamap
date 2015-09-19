@@ -154,8 +154,7 @@
         locktitle="yes"/>
       <topicref href="helion/ceilometer/metering_troubleshoot.dita"
         navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
-      <topicref href="helion/ceilometer/metering_apiextensions.dita"
-        navtitle="Ceilometer API Extensions" locktitle="yes" toc="no"/>
+    
       <topicref href="helion/ceilometer/metering_bestpractice.dita"
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
     </topichead>
