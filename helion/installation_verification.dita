@@ -97,7 +97,8 @@ testr last</codeblock>
           </li>
         </ul>
       </p>
-    </section> ><!--   <section id="service">
+    </section> 
+    <!--   <section id="service">
       <title>Run Tests for a Specific Service</title>
       <p>You can run tests against a specific service, such as Compute, Networking, or Identity.</p>
       <ol>
@@ -164,12 +165,10 @@ neutron = false</codeblock>
             <b>Example</b>
           </p>
           <codeblock>
-            <codeph>Is the v2 identity API enabled (boolean value)
-              api_v2 = true
-              Is the v3 identity API enabled (boolean value)
-              api_v3 = false
-            </codeph>
-          </codeblock>
+Is the v2 identity API enabled (boolean value)
+api_v2 = true
+Is the v3 identity API enabled (boolean value)
+api_v3 = false</codeblock>
         </li>
         <li>
           <p>Source the overcloud admin credentials, activate the virtual environment and start the
