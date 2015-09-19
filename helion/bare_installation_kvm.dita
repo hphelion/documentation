@@ -184,8 +184,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
             ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>
           <p>If any error is raised when you validate the object storage, refer to <xref
-              href="swift/troubleshooting_beta1.dita#topic_sl2_nht_dt"
-            >Swift-Troubleshooting</xref></p></li>
+              href="swift/troubleshooting.dita">Swift-Troubleshooting</xref></p></li>
       </ol>
     </section>
     <section id="deploy"><title>Deploy the Cloud</title>
@@ -208,37 +207,20 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
       <p>There are two options for the Block Storage backend: VSA and Ceph. Without a valid backend
         your Block Storage (Cinder) implementation will not be usable. These documents will assist
         you in installing and configuring a backend solution.</p>
-      <b>Ceph</b>
+      <p><b>Ceph</b></p>
       <ul>
         <li><xref href="cinder/ceph/ceph_overview.dita">Ceph Overview</xref></li>
         <li><xref href="cinder/ceph/ceph_deploy.dita">Ceph Installation and
           Configuration</xref></li>
       </ul>
-      <b>VSA</b>
+      <p><b>VSA</b></p>
       <ul>
         <li><xref href="cinder/vsa/vsa.dita">VSA Installation and Configuration</xref></li>
       </ul>
+      <p><b>3PAR</b></p>
+      <ul>
+        <li><xref href="cinder/3Par/3par_configuration.dita">3PAR Installation and Configuration</xref></li>
+      </ul>
     </section>
-    <section id="Post-Installation"><title>Verification Steps (Optional)</title>
-      <ol>
-        <li>This step may be used to verify that your cloud is up and running. However, note that
-          running the command below will download a cirros image from the internet, upload it to
-          Glance, and create a Neutron external
-            network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
-            can optionally specify the external network CIDR here too. If you choose not to exercise
-            this option or use a wrong value, the VMs will not be accessible over the
-            network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
-        <li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the
-          deployer:
-          <codeblock>ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml</codeblock> As the
-          /etc/hosts file no longer has entries for HLM, sudo commands may become a bit slower. To
-          fix this issue, once this step is complete, add "hlm" after "127.0.0.1 localhost". The
-          result will look like
-          this:<codeblock>...
-# Localhost Information
-127.0.0.1 localhost hlm
-</codeblock></li>
-      </ol>
-    </section>
-  </body>
+    </body>
 </topic>
