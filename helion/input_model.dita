@@ -1001,7 +1001,7 @@
            ilo_user: admin
            ilo_password: password</b></codeblock>
     </section>
-    <section id="4.4_ServerGroups"><title>Server Groups></title>
+    <section id="4.4_ServerGroups"><title>Server Groups</title>
       <p>Server groups provide a mechanism for organizing servers and networks into a hierarchy that
         can be used for allocation and network resolution (see <xref
           href="#input_model/3.7_ServerGroups">Server Groups</xref>)</p>
