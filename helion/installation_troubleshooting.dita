@@ -60,6 +60,14 @@ ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
         configuration before proceeding.</p>
       <p><codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock></p>
+      <p><b>If the <codeph>site.yml</codeph> playbook fails, you can query the log for the
+          reason</b></p>
+      <p>Ansible is good about outputting the errors into the command line output, however if you'd
+        like to view the full log for any reason the location is:</p>
+      <p><codeblock>~/.ansible/ansible.log</codeblock></p>
+      <p>This log is updated real time as you run ansible playbooks.</p>
+      <note type="tip">Use grep to parse through the log. Usage: <codeph>grep &lt;text>
+          ~/.ansible/ansible.log</codeph></note>
     </section>
   </body>
 </topic>

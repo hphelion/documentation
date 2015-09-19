@@ -141,7 +141,7 @@ git commit -m "My config or other commit message"
         <li>Run the following playbook:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-power-status.yml
-ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+ansible-playbook -i hosts/localhost cobbler-deploy.yml -e hlmuser_password="&lt;password>"</codeblock></li>
         <li>You will see the prompts listed below to enter a password that will be used to access
           the provisioned nodes:
           <codeblock>Enter the password that will be used to access provisioned nodes:
