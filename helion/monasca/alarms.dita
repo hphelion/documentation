@@ -11,14 +11,21 @@
     <section id="services"><title>Services</title>
       <p>Alarms for these services are included:</p>
       <ul>
+        <li><xref href="#alarmdefinitions/ceilometer">Ceilometer</xref></li>
+        <li><xref href="#alarmdefinitions/cinder">Cinder</xref></li>
+        <li><xref href="#alarmdefinitions/cue">Cue</xref></li>
+        <li><xref href="#alarmdefinitions/glance">Glance</xref></li>
         <li><xref href="#alarmdefinitions/haproxy">HAProxy</xref></li>
         <li><xref href="#alarmdefinitions/heat">Heat</xref></li>
+        <li><xref href="#alarmdefinitions/horizon">Horizon</xref></li>
         <li><xref href="#alarmdefinitions/hlinux">HP Linux for HP Helion OpenStack</xref></li>
+        <li><xref href="#alarmdefinitions/keystone">Keystone</xref></li>
         <li><xref href="#alarmdefinitions/logging">Logging</xref></li>
         <li><xref href="#alarmdefinitions/monasca">Monasca</xref></li>
         <li><xref href="#alarmdefinitions/mysql">MySQL</xref></li>
         <li><xref href="#alarmdefinitions/neutron">Neutron</xref></li>
         <li><xref href="#alarmdefinitions/nova">Nova</xref></li>
+        <li><xref href="#alarmdefinitions/opsconsole">Operations Console</xref></li>
         <li><xref href="#alarmdefinitions/rabbitmq">RabbitMQ</xref></li>
         <li><xref href="#alarmdefinitions/swift">Swift</xref></li>
       </ul>
@@ -43,19 +50,19 @@
                 <entry>Process Check</entry>
                 <entry>process_name=ceilometer-agent-notification</entry>
                 <entry>process crashed</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
               </row>
               <row>
                 <entry>Process Check</entry>
                 <entry>process_name=ceilometer-collector</entry>
                 <entry>process crashed</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
               </row>
               <row>
                 <entry>Process Check</entry>
                 <entry>process_name=ceilometer-agent-central</entry>
                 <entry>process crashed</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
               </row>
             </tbody>
           </tgroup>
@@ -81,13 +88,55 @@
                 <entry>Process Check</entry>
                 <entry>process_name=cinder-api</entry>
                 <entry>process crashed</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=cinder-backup</entry>
+                <entry>process crashed</entry>
+                <entry>Alert may be incorrect if the service has migrated. Validate that the service
+                  is intended to be running on this node before restarting the service. Review
+                  logs.</entry>
               </row>
               <row>
                 <entry>Process Check</entry>
                 <entry>process_name=cinder-scheduler</entry>
                 <entry>process crashed</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=cinder-volume</entry>
+                <entry>process crashed</entry>
+                <entry>Alert may be incorrect if the service has migrated. Validate that the service
+                  is intended to be running on this node before restarting the service. Review
+                  logs.</entry>
+              </row>
+              <row>
+                <entry>Cinder backup running &lt;HOSTNAME&gt; check</entry>
+                <entry>Cinder backup singleton check</entry>
+                <entry>
+                  <p>Backup process is either:</p>
+                  <p><ul>
+                      <li>running on a node it should not be on, or</li>
+                      <li>not running on a node it should be on</li>
+                    </ul></p>
+                </entry>
+                <entry>Run cinder-migrate-volume playbook to migrate volume and backup to correct
+                  node</entry>
+              </row>
+              <row>
+                <entry>Cinder volume running &lt;HOSTNAME&gt; check</entry>
+                <entry>Cinder volume singleton check</entry>
+                <entry>
+                  <p>Volume process is either:</p>
+                  <p><ul>
+                      <li>running on a node it should not be on, or</li>
+                      <li>not running on a node it should be on</li>
+                    </ul></p>
+                </entry>
+                <entry>Run cinder-migrate-volume playbook to migrate volume and backup to correct
+                  node</entry>
               </row>
             </tbody>
           </tgroup>
@@ -95,35 +144,35 @@
     </section>
     <section id="cue"><title>Cue</title>
       <p><table frame="all" rowsep="1" colsep="1" id="cue_table">
-        <tgroup cols="4">
-          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="2*"/>
-          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-          <colspec colname="c4" colnum="4" colwidth="2*"/>
-          <thead>
-            <row>
-              <entry>Alarm Name</entry>
-              <entry>Description</entry>
-              <entry>Likely Cause</entry>
-              <entry>Mitigation Tasks to Perform</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>HTTP Status</entry>
-              <entry>component=cue-api</entry>
-              <entry>API is unresponsive</entry>
-              <entry/>
-            </row>
-            <row>
-              <entry>Process Check</entry>
-              <entry>process_name=cue-api</entry>
-              <entry>Process crashed</entry>
-              <entry/>
-            </row>
-          </tbody>
-        </tgroup>
-      </table></p>
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="2*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>component=cue-api</entry>
+                <entry>API is unresponsive</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Process Check</entry>
+                <entry>process_name=cue-api</entry>
+                <entry>Process crashed</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
     </section>
     <section id="glance"><title>Glance</title>
       <p><table frame="all" rowsep="1" colsep="1" id="glance_table">
@@ -253,6 +302,34 @@
         </tgroup>
       </table>
     </section>
+    <section id="horizon"><title>Horizon</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_vtf_3md_3t">
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Alarm Name</entry>
+                <entry>Description</entry>
+                <entry>Likely Cause</entry>
+                <entry>Mitigation Tasks to Perform</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>Alerts when Horizon's login page isn't returned</entry>
+                <entry>Apache is not running or misconfiguration</entry>
+                <entry>Check that Apache is running; investigate Horizon logs</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
     <section id="hlinux">
       <title>HP Linux for HP Helion OpenStack</title>
       <table frame="all" rowsep="1" colsep="1" id="table_ik5_3km_zs">
@@ -310,34 +387,6 @@
           </tbody>
         </tgroup>
       </table>
-    </section>
-    <section id="horizon"><title>Horizon</title>
-      <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_vtf_3md_3t">
-          <tgroup cols="4">
-            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
-            <thead>
-              <row>
-                <entry>Alarm Name</entry>
-                <entry>Description</entry>
-                <entry>Likely Cause</entry>
-                <entry>Mitigation Tasks to Perform</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry>HTTP Status</entry>
-                <entry>Alerts when Horizon's login page isn't returned</entry>
-                <entry>Apache is not running or misconfiguration</entry>
-                <entry>Check that Apache is running; investigate Horizon logs</entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </p>
     </section>
     <section id="keystone"><title>Keystone</title>
       <p>
