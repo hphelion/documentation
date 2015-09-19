@@ -19,12 +19,6 @@
       <li>
         <xref type="section" href="#tempest/custom">Customizing the Test Run</xref>
       </li>
-      <li>
-        <xref type="section" href="#tempest/issues">Known Issues</xref>
-      </li>
-      <li>
-        <xref type="section" href="#tempest/fail">Known Failures</xref>
-      </li>
     </ul>
     <p>For more information on running Tempest tests, see <xref
         href="https://git.openstack.org/cgit/openstack/tempest/tree/README.rst" scope="external"
