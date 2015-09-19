@@ -6,15 +6,15 @@
 
     <section>HP Helion OpenStack&#174; allows you to perform updates on the following parts of the
       Identity service configuration: 
-     <ol><li>Main Keystone configuration file (/etc/keystone/keystone.conf) located on each control plane
-          server is generated from the following template file located on a deployer:
-            <b>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</b> <p>Modify this template
-          file as appropriate. Please refer to <xref
-            href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
-            format="html" scope="external">Keystone Kilo documentation</xref> for full descriptions
-          of all settings: This is a Jinja2 template, which expects certain template variables to be
-          set. Do not change values inside double curly quotes:  {{ }}. </p></li>
-    <li>Once template is modified, commit the change to the local git repository, and rerun
+     <ol><li>The main Keystone configuration file (<b>/etc/keystone/keystone.conf</b>), located on each
+          control plane server is generated from the following template file located on a deployer:
+            <b>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</b>
+          <p>Modify this template file as appropriate. Please refer to <xref
+              href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
+              format="html" scope="external">Keystone Kilo documentation</xref> for full
+            descriptions of all settings: This is a Jinja2 template, which expects certain template
+            variables to be set. Do not change values inside double curly braces: {{ }}. </p></li>
+    <li>Once the template is modified, commit the change to the local git repository, and rerun the
           configuration processor / deployment area preparation playbooks (as suggested at <xref
             href="../using_git.dita#topic_u3v_1yz_ct">Using Git for Configuration
           Managemen</xref>t):
