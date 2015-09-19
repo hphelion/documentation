@@ -50,7 +50,7 @@
       </ol>
     </section>
       
-      <section><title>Running the GUI to Install Your Cloud</title>
+      <section><title>Running the GUI to install your cloud</title>
       <p>The UI is found on the deployer node at: <b>http://&lt;Deployer_IP>:79/dayzero</b></p>
       <p>You should SSH tunnel in with the username/password set up when installing the deployer.
         Username and password should be what was set in "Set up the Deployer" in the installation
