@@ -3,13 +3,10 @@
 <topic id="topic_ev4_q2b_kt">
   <title>Examine Details of Planned Ring Changes Prior to Deploy</title>
   <body>
-    <p>
-      <note>You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as mentioned
-        in step <b>1</b> in <b> </b><xref
-          href="../installation.dita#topic_flx_j2b_ws/validate_swift">Validate Object Storage</xref>
-        otherwise the files needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be
-        in place on the node. </note>
-    </p>
+    <!--You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as mentioned in step <b>1</b> in <b> </b><xref href="../installation.dita#topic_flx_j2b_ws/validate_swift">Validate Object Storage</xref> otherwise the files needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node. -->
+    <p>Before running the <codeph>site.yml</codeph> playbook ( refer <xref
+        href="../installation.dita#topic_flx_j2b_ws/run-config-processor"/>), you can see the
+      planned layout of Swift rings using the following steps:</p>
     <section>
       <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
       <p><?oxy_custom_end?><ul id="ul_sqc_r2b_kt">

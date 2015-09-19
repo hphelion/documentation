@@ -7,9 +7,14 @@
       to pick out the errors being reported. If so, you view the error messages as follows:<ol
         id="ol_szd_tht_dt">
         <li>Log onto the first node in the system that is running the swift-proxy-server process.
-            <p>Before running the <codeph>site.yml</codeph> playbook ( refer <xref
-              href="../installation.dita#topic_flx_j2b_ws/run-config-processor"/>), you can see the
-            planned layout of Swift rings using the following steps:</p></li>
+            <note> You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as
+            mentioned in step <b>1</b> in <b> </b><xref
+              href="../installation.dita#topic_flx_j2b_ws/validate_swift">Validate Object
+              Storage</xref> or run the <codeph>hlm-deploy.yml</codeph> playbook as described in
+            step <b>2 c</b> in <xref
+              href="../installation.dita#topic_flx_j2b_ws/run-config-processor"/>otherwise the files
+            needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the
+            node.</note></li>
         <li>Execute the following
             command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report </codeblock><p>
             The command will report any errors or problems (see List of errors) with the input
@@ -20,8 +25,9 @@
     <p>The following example provides an error message, description, and the resolution.<note>To
         resolve an error, you must first modify the cloud model and re-run the configuration
         processor as described in <xref
-          href="../installation.dita#topic_flx_j2b_ws/run-config-processor">Run the Configuration
-          Processor</xref> and continue with the deploy.</note></p>
+          href="../using_git.dita#topic_u3v_1yz_ct/updating-configuration-including-default-config"
+          >Updating any configuration, including the default configuration</xref> and continue with
+        the deploy.</note></p>
     <p>
       <ol id="ol_vnh_g2b_kt">
         <li><b>Example Message - Model Missmatch: Cannot find drive /dev/sdt on padawan-ccp-c1-m2

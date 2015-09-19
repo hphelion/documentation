@@ -143,7 +143,7 @@
         in order to successfully find and disable them. At the moment, the best use of this
         directory is as a convenient tree to run "diff" from. </p>
     </section>-->
-    <section>
+    <section id="updating-configuration-including-default-config">
       <title>Updating any configuration, including the default configuration</title>
       <p>When you need to make updates to a configuration you must <ol>
           <li>Check out the <b>site</b> branch. You may aready be on that branch. If so, git will
