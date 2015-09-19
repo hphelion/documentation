@@ -3,14 +3,14 @@
 <topic id="ring-specification">
   <title>Ring Specifications</title>
   <body>
-    <p>The ring maps the logical names of data to locations on a particular disks. There is a
-      separate ring for account databases, container databases and for each object storage policy,
-      but each ring works similarly. The swift-ring-builder utility is used to build and manage
-      rings. The swift-ring-builder utility uses a builder file to contain ring information and
-      additional data required to build future rings. In HOS2.0, you use the cloud model to specify
-      how the rings are configured and used. This model is used to automatically invoke the
-      swift-ring-builder utility as part of the deploy process. Normally, you will not run the
-      swift-ring-builder utility directly.</p>
+    <p>The ring is resposible for mapping data on particular disks.There is a separate ring for
+      account databases, container databases and for each object storage policy, but each ring works
+      similarly. The swift-ring-builder utility is used to build and manage rings. The
+      swift-ring-builder utility uses a builder file to contain ring information and additional data
+      required to build future rings. In HOS2.0, you use the cloud model to specify how the rings
+      are configured and used. This model is used to automatically invoke the swift-ring-builder
+      utility as part of the deploy process. Normally, you will not run the swift-ring-builder
+      utility directly.</p>
     <p>The rings are specified in the input model using the <b>ring-specifications</b> key. There is
       an entry for each distinct Swift system – hence the Keystone region name is specified in the
         <b>region-name</b> key of the example cloud model.</p>
@@ -24,7 +24,7 @@
         - name: account
           display-name: Account Ring
           min-part-time: 16
-          partition-power: 17
+          partition-power: 12
           replication-policy:
             replica-count: 3
         - name: container
@@ -37,7 +37,7 @@
           display-name: General
           default: yes
           min-part-time: 16
-          partition-power: 17
+          partition-power: 12
           replication-policy:
             replica-count: 3</codeblock>
     </p>
@@ -66,16 +66,18 @@
     <section><b>Ring Parameters</b><simpletable id="simpletable_qyp_lnj_2t">
         <strow>
           <stentry><codeph>replica-count</codeph></stentry>
-          <stentry>You require high resiliency or availability and want a higher replica count. The
+          <stentry><p>It defines the number of  copies of object created.</p>You require high
+            resiliency or availability and want a higher replica count. The
               <codeph>replica-count</codeph> is normally 3 (i.e., Swift will keep three copies of
             accounts and containers). It is <b>recommended</b> not to change the value to lower than
             3.</stentry>
         </strow>
         <strow>
           <stentry><codeph>min-part-time</codeph></stentry>
-          <stentry>This is the number of hours that the swift-ring-builder tool will enforce between
-            ring rebuilds. On a small system, this can be as low as one hour. The value can be
-            different for each ring. <p>The swift-ring-builder will enforce a minimum of 16 hours
+          <stentry><p>It changes the value used to decide if a given partition can be moved
+              again.</p>This is the number of hours that the swift-ring-builder tool will enforce
+            between ring rebuilds. On a small system, this can be as low as one hour. The value can
+            be different for each ring. <p>The swift-ring-builder will enforce a minimum of 16 hours
               between ring rebuilds. However, this time is system-dependent so you will be unable to
               figure out the appropriate value for <codeph>min-part-power</codeph> until you have
               more experience with your system.</p></stentry>
@@ -99,7 +101,9 @@
         </strow>
         <strow>
           <stentry><codeph>default</codeph></stentry>
-          <stentry/>
+          <stentry>The default value in the above sample file of ring-specification  is set to yes,
+            which means that the storage policy is enabled to store objects. For more details refer
+            to <xref href="storage-policies.dita#topic_gm1_4bc_jt"/>.</stentry>
         </strow>
       </simpletable></section>
    <!--  

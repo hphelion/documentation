@@ -25,7 +25,7 @@
         <li>Verify if the example input model already contains a suitable server role. The server
           roles are usually described in <codeph>data/server_roles.yml</codeph> file. If the server
           role is not described, you must add a suitable server role as described in <i><xref
-              href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt">Creating  Role for Swift
+              href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt">Creating Role for Swift
               Nodes</xref></i>. While adding a server role for the Swift object server, you will
           also allocate drives to store object data as described in <i><xref
               href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk
@@ -36,27 +36,17 @@
             href="creating-object-server-resource.dita#topic_jzk_q1c_jt"><i>Creating an Object Sever
               Resource Group</i></xref></li>
         <li>Identity the physical servers and their IP address and other detailed information. Add
-          the servers details in either of the following YAML file and verify the server-groups information:<simpletable>
-            <strow>
-              <stentry><codeph>data/baremetalConfig.yml</codeph></stentry>
-              <stentry>If you use Cobbler, add these details in the baremetal-servers
-                list.</stentry>
-            </strow>
-            <strow>
-              <stentry><codeph>data/server.yml</codeph></stentry>
-              <stentry>If you do not use Cobbler, add these details to servers list. </stentry>
-            </strow>
-            <strow>
-              <stentry><codeph>data/server_groups.yml</codeph></stentry>
-              <stentry>Verify and/or modify the server-groups information with all
-                servers.</stentry>
-            </strow>
-          </simpletable></li>
+          the servers details in either of the following YAML files and verify the server-groups
+            information:<ul id="ul_gmj_ng3_kt">
+            <li>If you use Cobbler, you add these details the baremetal-servers list (usually in
+                <codeph>data/baremetalConfig.yml</codeph>). Otherwise, you add these details to
+              servers list (usually in <codeph>data/server.yml</codeph>)</li>
+            <li>As with all servers, you must also verify and/or modify the server-groups
+              information (usually in <codeph>data/server_groups.yml</codeph>)</li>
+          </ul>The only part of this process that is unique to Swift is the allocation of disk
+          drives for use by the object ring as described in <i>Allocating Disk Drives for use by
+            Swift.</i></li>
       </ul>
     </p>
-    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-    <p><?oxy_custom_end?>The only part of this process that is unique to Swift is the allocation of
-      disk drives for use by the object ring as described in <i>Allocating Disk Drives for use by
-        Swift.</i></p>
   </body>
 </topic>
