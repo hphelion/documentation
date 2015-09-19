@@ -27,16 +27,17 @@
       <topicref href="helion/beta1_to_beta2_upgrade.dita"/>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
         locktitle="yes"/>
+      <topicref href="helion/bare_install_kvm_cl.dita" navtitle="Pre-Installation Checklist"
+        locktitle="yes"/>
       <topicref href="helion/bare_installation_kvm.dita"
-        navtitle="Baremetal Install for KVM Hypervisor" locktitle="yes">
-        <topicref href="helion/bare_install_kvm_cl.dita"/>
-        <topicref href="helion/bare_install_kvm_post_cl.dita"/>
-      </topicref>
+        navtitle="Baremetal Install for KVM Hypervisor" locktitle="yes"/>
       <topicref href="helion/bare_installation_esx.dita"
         navtitle="Baremetal Install for ESX Hypervisor" locktitle="yes"/>
       <topicref href="helion/installation_troubleshooting.dita"
         navtitle="Troubleshooting Installation" locktitle="yes"/>
       <topicref href="helion/installation_verification.dita" navtitle="Verifying Your Installation"
+        locktitle="yes"/>
+      <topicref href="helion/bare_install_kvm_post_cl.dita" navtitle="Post-Installation Checklist"
         locktitle="yes"/>
     </topicref>
     <!-- BURA -->
