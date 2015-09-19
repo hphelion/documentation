@@ -204,7 +204,7 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
       </ol>
     </section>
     <section id="cinder"><title>Install and Configure a Block Storage Backend (Optional)</title>
-      <p>There are two options for the Block Storage backend: VSA and Ceph. Without a valid backend
+      <p>There are options for the Block Storage backend notated below. Without a valid backend
         your Block Storage (Cinder) implementation will not be usable. These documents will assist
         you in installing and configuring a backend solution.</p>
       <p><b>Ceph</b></p>
