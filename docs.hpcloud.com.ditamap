@@ -33,6 +33,7 @@
         navtitle="Baremetal Install for KVM Hypervisor" locktitle="yes"/>
       <topicref href="helion/bare_installation_esx.dita"
         navtitle="Baremetal Install for ESX Hypervisor" locktitle="yes"/>
+      <topicref href="helion/gui_installer.dita"/>
       <topicref href="helion/installation_troubleshooting.dita"
         navtitle="Troubleshooting Installation" locktitle="yes"/>
       <topicref href="helion/installation_verification.dita" navtitle="Verifying Your Installation"

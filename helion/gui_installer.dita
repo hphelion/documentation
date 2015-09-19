@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_t5f_qzh_kt">
+  <title>Installing HP Helion OpenStack Using the UI </title>
+  <body>
+    
+      <section> HP Helion OpenStack 2.0 Beta 2 comes with a UI for installing your cloud. Rather
+      than searching through and editing a number of YAML files to input your specific configuration
+      data, finding the correct location, and maintaing the format of the files, the UI presents
+      fields in which you may enter your information. </section>
+    <section>In addition, rather than having to run a series of commands to execute the cobbler and
+      ansible scripts that initiate the installation of HP Helion OpenStack, the UI application runs
+      them behind the scenes. </section>
+    <section>While the UI app does more than simply popoulate the configuration files that the
+      configuration processor uses as input to its processses, it does populate them. Therefore you
+      can inspect the files whenever you like, or before reconfiguing your cloud. </section>
+    <section>These YAML configuration files are now stored in a local git repository as well, as
+      explained in <xref href="using_git.dita#topic_u3v_1yz_ct">Using git for Configuration
+        Manangement</xref>. <image placement="break" href="../media/install/GUIpage1.png"
+        id="image_a3s_km3_kt"/></section>
+      
+    
+  </body>
+</topic>
