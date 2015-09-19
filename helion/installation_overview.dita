@@ -3,14 +3,16 @@
 <topic id="install_overview">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Installation Overview</title>
   <body>
-    <section id="about"><title>Installation Steps</title>
+    <section id="about"><title>Helion OpenStack 2.0 Installation</title>
       <ul>
-        <li>Baremetal Install for KVM Hypervisor
-        <ul>
-          <li>Entry Scale Model with VSA Installation Checklist</li>
-        </ul>
-        </li>
-        <li>Baremetal Install for ESX Hypervisor</li>
+        <li><xref href="beta1_to_beta2_upgrade.dita">Upgrading from Beta 1 to Beta 2</xref></li>
+        <li><xref href="using_git.dita">Using Git for Configuration Manqagement</xref></li>
+        <li><xref href="bare_install_kvm_cl.dita">Pre-Installation Checklist</xref></li>
+        <li><xref href="bare_installation_kvm.dita">Baremetal Install for KVM Hypervisor</xref></li>
+        <li><xref href="bare_installation_esx.dita">Baremetal Install for ESX Hypervisor</xref></li>
+        <li><xref href="installation_troubleshooting.dita">Troubleshooting Your Installation</xref></li>
+        <li><xref href="installation_verification.dita">Verifying Your Installation</xref></li>
+        <li><xref href="bare_install_kvm_post_cl.dita">Post-Installation Checklist</xref></li>
       </ul>
     </section>
   </body>

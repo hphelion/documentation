@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_sl2_nht_dt">
-  <title>Troubleshooting </title>
+  <title>Swift Troubleshooting</title>
   <body>
     <p>You can use this guide to help you identify and resolve basic problems you may be
       experiencing while deploying Swift service. It contains following troublshooting
