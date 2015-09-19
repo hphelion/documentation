@@ -4,8 +4,30 @@
   <title>Reconfiguring Keystone</title>
   <body>
 
-    <section>HP Helion OpenStack&#174; allows you to perform updates on the following parts of the
-      Identity service configuration: 
+    <section><title>Updating Keystone</title>HP Helion OpenStack&#174; allows you to perform updates  on the
+      following parts of the Identity service configuration:: </section>
+      
+      <section>
+      
+      <ul>
+      <li>	Any content in main keystone configuration file: /etc/keystone/keystone.conf
+      This allows to manipulate Keystone configuration parameters. Please refer to Updating main Keystone configuration file section below.
+      </li><li>Updating certain configuration options and enabling features, such as:
+      
+      
+      </li><li>Verbosity of logs being written to keystone log files.
+      </li><li>Process counts for Apache2 WSGI module, separately for admin and public Keystone interfaces
+      </li><li>Enabling/disabling auditing.
+      </li><li>Enabling/disabling Fernet Tokens.
+      
+      Please refer to Enabling Keystone Features section below.
+      </li><li>Creating and updating domain-specific configuration files: /etc/keystone/domains/keystone.&lt;domain_name>.conf
+        This allows to integrate Keystone with one or more external authentication sources, such as LDAP server. Please refer to Integrating with an external LDAP server section below.
+      </li>
+      </ul>
+      </section>
+    <section><title>Updating the main Keystone configuration file</title>
+      
      <ol><li>The main Keystone configuration file (<b>/etc/keystone/keystone.conf</b>), located on each
           control plane server is generated from the following template file located on a deployer:
             <b>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</b>
@@ -17,7 +39,7 @@
     <li>Once the template is modified, commit the change to the local git repository, and rerun the
           configuration processor / deployment area preparation playbooks (as suggested at <xref
             href="../using_git.dita#topic_u3v_1yz_ct">Using Git for Configuration
-          Managemen</xref>t):
+          Management</xref>):
           <codeblock>$ cd ~/helion
        $ git checkout site
        $ git add my_cloud/config/keystone/keystone.conf.j2
@@ -29,6 +51,29 @@
        $ cd ~/scratch/ansible/next/hos/ansible
        $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
         </li></ol>
+    </section>
+    
+    <section><title>Enabling Keystone features</title>
+    
+    To enable or disable Keystone features like Fernet Tokens, do the following:
+    <ol><li>Adjust respective parameters in /home/stack/helion/my_cloud/config/keystone/keystone_deploy_config.yml.
+    </li><li>Commit the change into local git repository, and rerun configuration processor / deployment area
+          preparation playbooks (as suggested at <xref href="../using_git.dita#topic_u3v_1yz_ct"
+            >Using Git for Configuration Management</xref>):</li></ol>
+    <codeblock>$ cd ~/helion
+    $ git checkout site
+    $ git add my_cloud/config/keystone/keystone_deploy_config.yml
+    $ git commit -m "Adjusting some WSGI or logging parameters for keystone"
+    $ cd ~/helion/hos/ansible
+    $ ansible-playbook -i hosts/localhost config-processor-run.yml
+    $ ansible-playbook -i hosts/localhost ready-deployment.yml
+    3.	Run reconfiguration playbook in deployment area:
+    $ cd ~/scratch/ansible/next/hos/ansible
+    $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
+    
+    
+    
+    
     </section>
   </body>
 </topic>
