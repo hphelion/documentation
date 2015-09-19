@@ -9,10 +9,10 @@
       <!--The disk model used by any given server is determined as follows:--> You must always
       review the disk devices before making any changes to the existing the disk model.
       <!--If you want to make the possible changes in the disk model--> See <i><xref
-          href="#allocating-disk-drives/making-cahnges-disk-model" format="dita">Making Changes to a
+          href="#allocating-disk-drives/making-changes-disk-model" format="dita">Making Changes to a
           Swift Disk Model</xref></i> for detail. </p>
     <p>This page contains the following topics:<ul id="ul_prc_vgc_jt">
-        <li><xref href="#allocating-disk-drives/making-cahnges-disk-model" format="dita">Making
+        <li><xref href="#allocating-disk-drives/making-changes-disk-model" format="dita">Making
             Changes to a Swift Disk Model</xref></li>
         <li><xref href="#allocating-disk-drives/swift-consumer-syntax" format="dita">Swift Consumer
             Syntax</xref></li>

@@ -18,11 +18,11 @@
         <li><xref href="#entry_scale_with_vsa/disks_.yml">disks_*.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/net_interfaces.yml">net_interfaces.yml</xref></li>
         <li><xref href="#entry_scale_with_vsa/network_groups.yml">network_groups.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/networks.yml">networks.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/nic_mappings.yml">nic_mappings.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/server_groups.yml">server_groups.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/server_roles.yml">server_roles.yml</xref></li>
-        <li><xref href="#entry_scale_with_vsa/servers.yml">servers.yml</xref></li>
+        <li><xref href="#input_model/networks.yml" format="dita">networks.yml</xref></li>
+        <li><xref href="#input_model/nic_mappings.yml" format="dita">nic_mappings.yml</xref></li>
+        <li><xref href="#input_model/server_groups.yml" format="dita">server_groups.yml</xref></li>
+        <li><xref href="#input_model/server_roles.yml" format="dita">server_roles.yml</xref></li>
+        <li><xref href="#input_model/servers.yml" format="dita">servers.yml</xref></li>
       </ul>
     </section>
     <section id="notes"><title>Important Notes</title>

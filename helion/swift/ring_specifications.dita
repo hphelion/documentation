@@ -193,9 +193,9 @@
       new containers to take advantage of the new storage policy.</p>
     <p>Use the following table to select an appropriate partition power for each ring. The partition
       power of a ring cannot be changed so it is important to select an appropriate value. This
-      table is based on a replica count of 3. If  your replica count is different or you are unable
+      table is based on a replica count of 3. If your replica count is different or you are unable
       to find your system in the table then refer to <xref
-        href="#topic_efw_k55_dt/calculating-number" format="dita">Calculating Numbers of
+        href="#ring-specification/calculating-number" format="dita">Calculating Numbers of
         Partitions</xref> for information of selecting a partition power. </p>
     <p> The table assumes that when you first deploy the Swift you have a small number of drives
       (the minimum column in the table) and later you add drives. </p>
@@ -210,7 +210,7 @@
             fewer Proxy, Account, Container (PAC) servers) – hence you your object rings may have a
             higher partition power.</li>
           <li>The largest anticipated number of drives imposes a limit in how a few drives (the
-            minimum) you can have. See <xref href="#topic_efw_k55_dt/calculating-number"
+            minimum) you can have. See <xref href="#ring-specification/calculating-number"
               format="dita">Calculating Numbers of Partitions</xref>. This means that if you
             anticipate significant growth, your initial system can be small, but under certain
             limit.</li>

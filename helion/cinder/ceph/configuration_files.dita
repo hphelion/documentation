@@ -16,22 +16,19 @@
               >baremetalConfig.yml</xref></li>
           <li><xref href="configuration_files.dita#config_files/ccp" type="section"
             >ccp.yml</xref></li>
-          <li><xref href="configuration_files.dita#config_files/disks-compute.yml" type="section"
-              >disks_compute.yml</xref></li>
-          <li><xref href="configuration_files.dita#config_files/disks-controller.yml" type="section"
-              >disks_controller.yml</xref></li>
+          <li><xref href="#config_files/disks-compute" format="dita">disks_compute.yml</xref></li>
+          <li><xref href="#config_files/disks-controller" format="dita"
+            >disks_controller.yml</xref></li>
           <li><xref href="configuration_files.dita#config_files/disks-osd" type="section"
               >disks_osd.yml</xref></li>
           <li><xref href="configuration_files.dita#config_files/interfaces-set" type="section"
               >interfaces_set_1.yml</xref></li>
-          <li><xref href="configuration_files.dita#config_files/network-group" type="section"
-              >network_groups.yml</xref></li>
+          <li><xref href="#config_files/network-groups" format="dita">network_groups.yml</xref></li>
           <li><xref href="configuration_files.dita#config_files/net-global" type="section"
               >net_global.yml</xref></li>
           <li><xref href="configuration_files.dita#config_files/servers" type="section"
               >servers.yml</xref></li>
-          <li><xref href="configuration_files.dita#config_files/servers-role" type="section"
-              >server_roles.yml</xref></li>
+          <li><xref href="#config_files/server-roles" format="dita">server_roles.yml</xref></li>
         </ul></p>
     </section>
     <section id="ring"
