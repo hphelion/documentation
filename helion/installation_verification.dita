@@ -97,7 +97,7 @@ testr last</codeblock>
           </li>
         </ul>
       </p>
-    </section> 
+    </section>
     <!--   <section id="service">
       <title>Run Tests for a Specific Service</title>
       <p>You can run tests against a specific service, such as Compute, Networking, or Identity.</p>
@@ -157,40 +157,33 @@ neutron = false</codeblock>
         <li>
           <p>To test specific features, edit any of the <codeph>*_feature_enabled</codeph> sections
             to enable or disable tests on specific features of a service.</p>
-          <p>[volume-feature-enabled] [compute-feature-enabled] [identity-feature-enabled]
-            [image-feature-enabled] [network-feature-enabled] [object-storage-feature-enabled]</p>
+          <codeblock>
+[volume-feature-enabled]
+[compute-feature-enabled]
+[identity-feature-enabled]
+[image-feature-enabled]
+[network-feature-enabled]
+[object-storage-feature-enabled]</codeblock>
           <p>Clear the comment character <codeph>#</codeph> and set a line to <codeph>true</codeph>
             to run a test or <codeph>false</codeph> to not run that test.</p>
-          <p>
-            <b>Example</b>
-          </p>
+          <p>Example:</p>
           <codeblock>
-Is the v2 identity API enabled (boolean value)
+#Is the v2 identity API enabled (boolean value)
 api_v2 = true
-Is the v3 identity API enabled (boolean value)
+#Is the v3 identity API enabled (boolean value)
 api_v3 = false</codeblock>
         </li>
-        <li>
-          <p>Source the overcloud admin credentials, activate the virtual environment and start the
-            tests:</p>
-          <codeblock>
-            <codeph>source ~root/overcloud.stackrc
-              source /opt/stack/venvs/openstack/bin/activate
-              run-tempest
-            </codeph>
-          </codeblock>
-        </li>
+        <li>Then run tests normally</li>
       </ol>
       <p>
-        <note>You can exclude tests for <xref type="section" href="#topic8087/exclude">features that
+        <note>You can exclude tests for <xref type="section" href="#tempest/exclude">features that
             are not available and test not compatible</xref>.</note>
       </p>
     </section>
-    <section id="list">
-      <title>Run tests matching a series of white and blacklists</title>
-      <p>You can run tests against specific scenarios by editing the <codeph>tests2skip.py</codeph>
-        file.</p>
-      <p>Use the <codeph>tests2skip.py</codeph> file to whitelist a test or blacklist a test:</p>
+    <section id="list"><title>Run Tests Matching a Series of White and Blacklists</title>
+      <p>You can run tests against specific scenarios by editing or creating a run filter file.</p>
+      <p>Run filter files are deployed under <codeph>/opt/stack/tempest/run_fulters</codeph>.</p>
+      <p>Use run filters to whitelist or blacklist specific tests or groups of tests:</p>
       <ul>
         <li>lines starting with # or empty are ignored</li>
         <li>lines starting with <codeph>+</codeph> are whitelisted</li>
@@ -204,36 +197,38 @@ api_v3 = false</codeblock>
       <p>To run whitelist and blacklist tests:</p>
       <ol>
         <li>
-          <p>Login to the seed VM.</p>
+          <p>Login to the deployer node.</p>
         </li>
         <li>
-          <p>SSH into the undercloud node:</p>
+          <p>Go the ansible folder:</p>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock>
+        </li>
+        <li>
+          <p>Make sure you can access the cloud:</p>
           <codeblock>
-            <codeph>ssh heat-admin@${UNDERCLOUD_IP}
-              sudo -i
-            </codeph>
-          </codeblock>
+ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
+source /etc/environment</codeblock>
         </li>
-        <li>
-          <p>Edit the tests2skip.py file</p>
-        </li>
+        <li><p>Run the tests:</p>
+          <codeblock>ansible-playbook -i hosts/verb_hosts tempest-run.yml  -e run_filter &lt;run_filter_name></codeblock></li>
       </ol>
-      <p>Documentation on the format of white and black-lists is available at
-        http://git.openstack.org/cgit/openstack/tripleo-image-elements/tree/elements/tempest/tests2skip.py#n24.</p>
-      <p>
-        <b>Example</b>
-      </p>
+      <p>Note that the run_filter_name is the name of the run_filter file except for the extension.
+        For instance, to run using the filter from the file /opt/stack/tempest/run_filters/ci.txt,
+        use the following:</p>
+      <codeblock>ansible-playbook -i hosts/verb_hosts tempest-run.yml -e run_filter=ci</codeblock>
+      <p>Documentation on the format of white and black-lists is available at:
+        <codeblock>/opt/stack/tempest/tests2skip.py</codeblock></p>
+      <p>Example:</p>
       <p>The following entries run API tests, exclude tests that are less relevant for deployment
         validation, such as negative, admin, cli and thirdparty (EC2) tests:</p>
       <codeblock>
-        <codeph>    +tempest\.api\.*
-          *[Aa]dmin.*
-          *[Nn]egative.*
-          - tempest\.cli.*
-          - tempest\.thirdparty\.*
-        </codeph>
-      </codeblock>
++tempest\.api\.*
+*[Aa]dmin.*
+*[Nn]egative.*
+- tempest\.cli.*
+- tempest\.thirdparty\.*</codeblock>
     </section>
+    <!--
     <section id="issues">
       <title>Known issues</title>
       <p>The following failing tests can be excluded from the test run by adding the following to
@@ -272,7 +267,7 @@ api_v3 = false</codeblock>
           tempest\.api\.object_storage\.test_container_sync_middleware\.ContainerSyncMiddlewareTest\.test_container_synchronization
         </codeph>
       </codeblock>
-      <!-- ===================== horizontal rule ===================== -->
     </section>
+    -->
   </body>
 </topic>
