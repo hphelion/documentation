@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_l1p_vpy_jt">
-  <title>Singleton Services -Cinder Volume</title>
+  <title>Singleton Services - Cinder Volume</title>
   <body>
     <p>Due to the single threading required in both cinder-volume and the drivers, the Cinder volume
       service is run as a singleton in the control plane.</p>
     <section>
       <title>Prerequisite</title>
-      <p>HP Helion Cloud must be successfully deployed. It should be up and running.</p>
+      <p>Helion OpenStack cloud must be successfully deployed. It should be up and running.</p>
     </section>
     <section>
       <title>Migrating the Cinder Volume and Backup Services</title>
@@ -18,21 +18,21 @@
         volume and backup services can be migrated to a different node in the hostgroup. The
         following steps explain how to migrate the services to a specified host.<ol
           id="ol_mmx_mkb_kt">
-          <li>Get the hostname of the node cinder volume and backup are to be migrated to. <p>For
-              example: <!--hostname padawan-ccp-c1-m2-mgmt --></p></li>
+          <li>Get the hostname of the node cinder volume and backup are to be migrated to. <p>For example:
+              <!--hostname ccp-c1-m2-mgmt --></p></li>
           <li>Run the <codeph>cinder-migrate-volume.yml</codeph> playbook specifying the node to
             migrate to in the "hosts"
             argument.<codeblock>cd ~/scratch/ansible/next/hos/ansible 
-ansible-playbook -i hosts/verb_hosts cinder-migrate-volume.yml --extra-vars "hosts=padawan-ccp-c1-m2-mgmt" </codeblock>After
-            successful running of <codeph>cinder-migrate-volume.yml</codeph> playbook , the cinder
+ansible-playbook -i hosts/verb_hosts cinder-migrate-volume.yml --extra-vars "hosts=ccp-c1-m2-mgmt" </codeblock>After
+            successful running of <codeph>cinder-migrate-volume.yml</codeph> playbook, the cinder
             volume and backup services should be running on the specified node. For example:
-              <codeph>padawan-ccp-c1-m2-mgmt</codeph>. <p>If the original node where the services
-              were running is restarted, the cinder volume and backup will not start on the specific
-              cinder volume node. For example: it will not start on
-                <codeph>padawan-ccp-c1-m1-mgmt</codeph>. To get the cinder volume and backup
-              services running again on <codeph>padawan-ccp-c1-m1-mgmt</codeph> run the
-                <codeph>cinder-migrate-volume.yml</codeph>  playbook again by setting the  "hosts"
-              value to <codeph>padawan-ccp-c1-m1-mgmt</codeph>.</p></li>
+              <codeph>ccp-c1-m2-mgmt</codeph>. <p>If the original node where the services were
+              running is restarted, the cinder volume and backup will not start on the specific
+              cinder volume node. For example: it will not start on <codeph>ccp-c1-m1-mgmt</codeph>.
+              To get the cinder volume and backup services running again on
+                <codeph>ccp-c1-m1-mgmt</codeph> run the <codeph>cinder-migrate-volume.yml</codeph>
+              playbook again by setting the "hosts" value to
+            <codeph>ccp-c1-m1-mgmt</codeph>.</p></li>
         </ol></p>
     </section>
   </body>
