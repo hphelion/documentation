@@ -50,28 +50,27 @@
       </ol>
     </section>
       
-      <section><title>Running the GUI to install your cloud</title>
-      <p>The UI is found on the deployer node at: <b>http://&lt;Deployer_IP>:79/dayzero</b></p>
+      <section><title>Running the GUI to install your cloud</title> Now that the OS, HP Linux for HP
+      Helion OpenStack, is installed on all your servers (nodes), you will configure and install
+      your cloud using the GUI.<p>The GUI is found on the deployer node at:
+          <b>http://&lt;Deployer_IP>:79/dayzero</b></p>
       <p>You should SSH tunnel in with the username/password set up when installing the deployer.
         Username and password should be what was set in "Set up the Deployer" in the installation
         instructions. For example:</p>
       <codeblock>ssh -v -N -L 8080:&lt;Deployer_IP>:79 &lt;Username>@&lt;Deployer_IP></codeblock>
       <p>Then on your local machine, point your web browser to: http://localhost:8080/dayzero</p>
       <image placement="break" href="../media/install/GUIpage1.png" id="image_a3s_km3_kt"/>As you
-      proceed through the GUI,  you need only supply your server names and IP addresses.
-      <p>Contextual help is provided throughout.</p>
-        <p>When the installation is complete, the Ansible log will be displayed on the final page.</p>
-        <p>The GUI is used only once: during the initial installation of your cloud.</p>
-        <p>To understand a cloud configuration more thoroughly and to learn how to make any changes later, 
-        visit these documentation pages:
-        <ul>
+      proceed through the GUI, you need only supply your server names and IP addresses.
+        <p>Contextual help is provided throughout.</p>
+      <p>When the installation is complete, the Ansible log will be displayed on the final page.</p>
+      <p>The GUI is used only once: during the initial installation of your cloud.</p>
+      <p>To understand a cloud configuration more thoroughly and to learn how to make any changes
+        later, visit these documentation pages: <ul>
           <li><xref href="input_model.dita">HP Helion OpenStack 2.0 Input Model</xref></li>
           <li><xref href="using_git.dita">Using Git for Configuration Management</xref></li>
-       
         </ul>
-        
-        </p>
-      </section>
+      </p>
+    </section>
 
   </body>
 </topic>
