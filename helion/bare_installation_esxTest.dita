@@ -7,15 +7,12 @@
     <section>
       <note type="important">
         <p>Before you start your ESX cloud deployment ensure that you read the following
-          instructions carefully. <ul>
-            <li>Refer to <b><xref href="bare_installation_kvm.dita#install_kvm/important-notes"
-                  >Important Notes</xref></b> in the Installation Guide.</li>
-            <li>Prepare your baremetal hardware on all nodes. For instruction, please refer to <xref
-                href="bare_installation_kvm.dita#install_kvm/Prereqs"><b>Before You
-              Start</b></xref>.</li>
-          </ul></p>
+          instructions carefully. </p>
       </note>
     </section>
+    <section conref="bare_installation_kvm.dita#install_kvm/important-notes"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/Prereqs"/>
+    <section/>
     <section id="Prereqs">
       <title>Prerequisite</title>
       <p>ESX/vCenter integration is not fully automatic, vCenter administrators are advised of the
@@ -51,29 +48,15 @@
     <section>
       <title>Procedure to Deploy ESX cloud</title>
     </section>
-    <p>The following topics in this section explain how to deploy ESX cloud.<ol id="ol_ctc_gzk_ft">
-        <li><b>Set up the Deployer Node</b>
-          <p> </p></li>
-      </ol></p>
+    <p>The following topics in this section explain how to deploy ESX cloud.</p>
     <section conref="bare_installation_kvm.dita#install_kvm/DeployerInstall"/>
     <p>
-      <ol id="ol_t13_1n4_kt">
-        <li>
-          <p>For the detailed instructions on setting up the deployer node, refer to <xref
-              href="bare_installation_kvm.dita#install_kvm/DeployerInstall">Set up the Deployer
-              node</xref> in the installation guide.</p>
-        </li>
-        <li><b>Configure and Run the Deployer</b><p> </p></li>
-      </ol>
+
     </p>
     <section conref="bare_installation_kvm.dita#install_kvm/HLM_Node_Personalization"/>
     <p>
       <ol id="ol_wtw_dn4_kt">
-        <li>
-          <p>For the detailed instructions on configuring and running deployer node, refer to <xref
-              href="bare_installation_kvm.dita#install_kvm/HLM_Node_Personalization">Configure and
-              Run the Deployer</xref> in the installation guide.</p>
-        </li>
+
         <li><b>Prepare and Deploy Cloud Controllers</b><p>
             <ol id="ol_c1w_pfl_ft">
               <li>See a sample set of configuration files in the
@@ -106,11 +89,7 @@ enable_distributed_routing = False</codeblock><note>
                 <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock></li>
-              <li>Refer to the installation guide and execute the steps mentioned in sections <xref
-                  href="bare_installation_kvm.dita#install_kvm/CobblerDeploy">Deploy Cobbler</xref>,
-                  <xref href="bare_installation_kvm.dita#install_kvm/NodeProvision"/>, and <xref
-                  href="bare_installation_kvm.dita#install_kvm/run-config-processor">Run the
-                  Configuration Processor</xref> to deploy cloud controller.</li>
+   
             </ol>
           </p></li>
       </ol>
@@ -118,18 +97,20 @@ git commit -m "My config or other commit message"</codeblock></li>
     <section conref="bare_installation_kvm.dita#install_kvm/CobblerDeploy"/>
     <section conref="bare_installation_kvm.dita#install_kvm/NodeProvision"/>
     <section conref="bare_installation_kvm.dita#install_kvm/run-config-processor"/>
-    <p>
-      <ol id="ol_rx4_hn4_kt">
-        <li><b>Prepare and Deploy ESX Computes and OVSvAPPs</b><p>The following sections describe
-            the procedure to install and configure ESX compute and OVSvAPPs on vCenter.<ul
+
+      
+        <section id="prepAndDeploy">Prepare and Deploy ESX Computes and OVSvAPPs
+      <p>The following sections describe
+            the procedure to install and configure ESX compute and OVSvAPPs on vCenter.</p>
+      <ul
               id="ul_lns_fjl_ft">
               <li><xref href="#install_esx/deploy-template" format="dita">Deploy Helion Linux Shell
                   VM Template</xref></li>
               <li><xref href="#install_esx/prepare-esx-cloud-deployment" format="dita">Preparation
                   for ESX Cloud Deployment</xref></li>
-            </ul></p></li>
-      </ol>
-    </p>
+            </ul>
+      
+        </section>
     <section id="deploy-template"><b>Deploy Helion Linux Shell VM Template</b><p>The first step in deploying the ESX
         compute proxy and OVSvAPPs is to create a VM template that will make it easier to deploy the
         ESX compute proxy for each Cluster and OVSvAPPs on each ESX server. </p><p>Perform the
