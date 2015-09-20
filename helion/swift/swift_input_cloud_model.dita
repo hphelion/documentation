@@ -61,6 +61,8 @@
           operations:<ul id="ul_hck_4c1_kt">
           <li><xref href="allocate-pac.dita"/></li>
           <li><xref href="allocating_server.dita"/></li>
+          <li><xref href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt"/></li>
+          <li><xref href="allocating_network.dita#topic_pcj_hzv_dt"/></li>
           <li><xref href="allocating_disk_drives.dita"/></li>
           <li><xref href="creating-pac-cluster.dita"/></li>
           <li><xref href="creating-object-server-resource.dita"/></li>
