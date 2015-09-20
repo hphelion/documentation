@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_omx_srg_ws">
+<topic id="min_hardware">
   <title>Beta 2: Minimum Hardware Requirements</title>
   <body>
-    <section id="SupportedConfigs"> <title>Supported Configurations</title>
-      <p>HP supports the following configurations for HP Helion <tm tmtype="reg">OpenStack</tm> deployment:</p>
+    <section id="supported_configs">
+      <title>Supported Hardware Configurations</title>
+      <p>Helion OpenStack 2.0 supports the following configurations for a Helion <tm tmtype="reg"
+          >OpenStack</tm> deployment:</p>
       <p>Storage Interconnects/Protocols</p>
       <ul>
         <li>1Gb or 10Gb Ethernet.</li>
         <li>Software iSCSi</li>
       </ul>
     </section>
-    <section id="HardwareRequirements"><title>Hardware Requirements</title>
-      <p>You must have the following hardware configuration:</p>
-      <ul>
-        <li>1 dedicated NIC for PXE installation. Note: This will disappear in future Beta releases.</li>
-        
-        <li>2 additional NICs for networking</li>
-       </ul>
-      <note>For Swift deployment, two disk drives are required on each of the three controller nodes.</note>
-    </section>
     <section id="MinimumRequirements">
-      <title>Minimum Node Requirements</title>
+      <title>Minimum Hardware Requirements</title>
       <table>
         <tgroup cols="7">
           <colspec colname="c1" colnum="1" colwidth="1.17*"/>
@@ -47,12 +40,17 @@
               <entry>Deployer</entry>
               <entry>Deployer</entry>
               <entry>1</entry>
-              <entry> 8 GB</entry>
+              <entry>8 GB</entry>
               <entry>1 GB</entry>
               <entry>
-                <ul id="ul_i21_xqh_ws">
+                <p>Options:</p>
+                <ul>
                   <li>1 x 1 Gb with PXE Support</li>
                   <li>2 x 1 Gb or 2 x10 Gb</li>
+                </ul>
+                <p>or</p>
+                <ul>
+                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
                 </ul>
               </entry>
               <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
@@ -64,9 +62,14 @@
               <entry>3 X 512 GB (Min.)</entry>
               <entry>32 GB</entry>
               <entry>
-                <ul id="ul_vzb_1rh_ws">
+                <p>Options:</p>
+                <ul>
                   <li>1 x 1 Gb with PXE Support</li>
                   <li>2 x 1 Gb or 2 x10 Gb</li>
+                </ul>
+                <p>or</p>
+                <ul>
+                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
                 </ul>
               </entry>
               <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
@@ -74,14 +77,19 @@
             <row>
               <entry>Compute</entry>
               <entry>Compute</entry>
-              <entry>1-3</entry>
+              <entry>1-100</entry>
               <entry>2 X 512 GB (Min.)</entry>
               <entry>32 GB (Memory must be sized based on the VM instances hosted on the Compute
                 node)</entry>
               <entry>
+                <p>Options:</p>
                 <ul>
                   <li>1 x 1 Gb with PXE Support</li>
                   <li>2 x 1 Gb or 2 x10 Gb</li>
+                </ul>
+                <p>or</p>
+                <ul>
+                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
                 </ul>
               </entry>
               <entry>
@@ -91,38 +99,25 @@
               </entry>
             </row>
             <row>
-              <entry>VSA Server (Optional)</entry>
-              <entry>VSA</entry>
-              <entry>0, 1, or 3</entry>
+              <entry>Block Storage (Optional)</entry>
+              <entry>VSA or OSD (Ceph)</entry>
+              <entry>0 or 3</entry>
               <entry>3 X 512 GB (Min.)</entry>
               <entry>32 GB</entry>
               <entry>
+                <p>Options:</p>
                 <ul>
                   <li>1 x 1 Gb with PXE Support</li>
                   <li>2 x 1 Gb or 2 x10 Gb</li>
+                </ul>
+                <p>or</p>
+                <ul>
+                  <li>2 x 1 Gb or 2 x10 Gb (with one PXE enabled NIC)</li>
                 </ul>
               </entry>
               <entry>
                 <p>8 CPU (64-bit) cores total (can be Intel or AMD)</p>
               </entry>
-            </row>
-            <row>
-              <entry>3PAR</entry>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry>Ceph</entry>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
-              <entry/>
             </row>
           </tbody>
         </tgroup>
@@ -165,8 +160,8 @@
             <entry>8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
           </row>
           <row>
+            <entry>Control Plane</entry>
             <entry>Controller</entry>
-            <entry>ROLE-CONTROLLER</entry>
             <entry>3</entry>
             <entry>3 X 512 GB (Min.)</entry>
             <entry>32 GB</entry>
@@ -192,5 +187,5 @@
         </tbody>
       </tgroup>
     </table>
-    </body>
+  </body>
 </topic>
