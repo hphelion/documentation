@@ -18,6 +18,6 @@
     <section conref="bare_installation_kvm.dita#install_kvm/CobblerDeploy"/>
     <section conref="bare_installation_kvm.dita#install_kvm/NodeProvision"/>
     <p><xref href="gui_installer.dita#topic_t5f_qzh_kt/chooseHypervisor">Return to GUI
-      instrutions</xref></p>
+      instructions</xref></p>
   </body>
 </topic>
