@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_bmy_xt4_kt">
-  <title></title>
+  <title>Installing on ESX via the GUI</title>
   <body>
-    <p>
-      Install on ESX via the GUI
-      
-      
-      
-      
-    </p>
+
     
     <section conref="bare_installation_kvm.dita#install_kvm/important-notes"/>
     <section conref="bare_installation_kvm.dita#install_kvm/Prereqs"/>
