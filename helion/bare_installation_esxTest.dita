@@ -45,7 +45,7 @@
         </ul>
       </p>
     </section>
-    <section><b>Deploy ESX Cloud</b><p>At a high level, here are the steps to configure and deploy
+    <section id="deployCloud"><b>Deploy ESX Cloud</b><p>At a high level, here are the steps to configure and deploy
         ESX cloud:</p><p><image href="../media/esx/esx_deploy.jpg" id="image_kjt_zlm_ft"
       /></p></section>
     <section>
