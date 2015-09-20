@@ -7,9 +7,7 @@
       <title>Supported Hardware Configurations</title>
       <p>Helion OpenStack 2.0 supports the following hardware configurations for a Helion <tm
           tmtype="reg">OpenStack</tm> deployment.</p>
-      <p>For more details about the supported VLAN requirements, see <xref
-          href="supportedconfigs.dita">Supported Configuration</xref></p>
-      <p>Storage Interconnects/Protocols</p>
+            <p>Storage Interconnects/Protocols</p>
       <ul>
         <li>1Gb or 10Gb Ethernet.</li>
         <li>Software iSCSi</li>
@@ -124,6 +122,8 @@
           </tbody>
         </tgroup>
       </table>
+      <p>For more details about the supported network requirements, see <xref
+        href="supportedconfigs.dita">Supported Configuration</xref></p>
     </section>
     <section id="minimum-node-esx"><b>Minimum Node Requirements For ESX</b></section>
     <table id="table_ixh_np2_dt">
