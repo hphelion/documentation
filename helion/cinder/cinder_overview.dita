@@ -4,26 +4,32 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Block Storage Overview</title>
   <body>
     <section id="about"><title>About Block Storage</title>
+      <p>The HP Helion OpenStack Block Storage Volume Operations uses the OpenStack Cinder (Block
+        Storage) service to manage storage volumes, including creating volumes, creating volume
+        snapshots, and configuring volumes.</p>
+      <p>Once created, you can easily disconnect block storage volumes from one instance and attach
+        them to another. You can also create snapshots of these volumes.</p>
+      <!--<p>HP Helion OpenStack uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that the storage controller runs as a virtual appliance and helps realize Software Defined Block Storage. To use StoreVirtual you must use the KVM hypervisor.</p><p>HP Helion OpenStack also supports HP StoreServ 3PAR as a Cinder backend.</p>-->
       <p>Helion OpenStack 2.0 supports the following storage backends for Block Storage Volumes and Backup Datastore Configuration:</p>
       <ul>
         <li>Volumes <ul>
             <li><xref href="vsa/vsa.dita">VSA</xref></li>
-            <li>3PAR FC </li>
-            <li>3PAR iSCSI</li>
-            <!--  
-            <li>VMDK</li>
-            -->
+            <li><xref href="3Par/3par_configuration.dita#topic_vln_2xy_ht">3PAR FC or
+              iSCSI</xref></li>
+             <li><xref href="../bare_installation_esx.dita#install_esx/modify-volume-config"
+                >VMDK</xref></li>
             <li><xref href="ceph/ceph_overview.dita">Ceph</xref></li>
           </ul></li>
         <li>Backup <ul>
             <li>Swift</li>
             <li>Ceph</li>
           </ul></li>
-        <!--
+  
         <li>Zone Driver <ul>
-            <li>Brocade Zone Manager</li>
+            <li><xref href="brocade_zone_manager.dita#topic_msm_b1j_jt">Brocade Zone
+              Manager</xref></li>
           </ul></li>
-         -->
+
       </ul>
     </section>
   </body>
