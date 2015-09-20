@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rk3_pgn_jt">
-  <title>Entry Scale Model with VSA Post-Installation Checklist</title>
+  <title>Post-Installation Checklist</title>
   <body>
     <section id="post_install_cl"><title>First Steps Post-Installation</title>
       <p>
@@ -54,7 +54,7 @@
         <li>This step may be used to verify that your cloud is up and running. However, note that
           running the command below will download a cirros image from the internet, upload it to
           Glance, and create a Neutron external
-          network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
+            network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
             can optionally specify the external network CIDR here too. If you choose not to exercise
             this option or use a wrong value, the VMs will not be accessible over the
             network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
@@ -69,6 +69,20 @@
             127.0.0.1 localhost hlm
           </codeblock></li>
       </ol>
+    </section>
+    <section id="endpoints"><title>Retrieving Service Endpoints</title>
+      <p>text</p>
+      <ol>
+        <li><p>From your deployer node, source the admin creds setup during the installation:</p>
+          <p><codeblock>source ~/keystone.osrc</codeblock></p></li>
+        <li><p>Using the OpenStack command-line tool you can then query the Keystone service for
+            your endpoints:</p>
+          <p><codeblock>openstack endpoint list</codeblock></p>
+          <note type="tip">You can use <codeph>openstack -h</codeph> to access the client help file
+            and a full list of commands.</note></li>
+      </ol>
+      <p>To learn more about Keystone, see <xref href="keystone/keystone_overview.dita">Keystone
+          Overview</xref></p>
     </section>
   </body>
 </topic>
