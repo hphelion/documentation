@@ -3,24 +3,30 @@
 <topic xml:lang="en-us" id="topic12031">
   <title><b>Beta 2: Frequently Asked Questions</b></title>
   <body>
-    <!---
-<section id="Customization"><title>Customization</title>
-<p><b>What level of customization will be possible via modifying the configuration files and using them to deploy?</b></p>
-<p></p>
-</section>
--->
+    <section id="Customization"><title>Customization</title>
+      <p><b>What level of customization will be possible via modifying the configuration files and
+          using them to deploy?</b></p>
+      <p>Full details about the input model and what options are available can be found here: <xref
+          href="input_model.dita">Input Model</xref></p>
+    </section>
     <section>
       <title>How do I change my service passwords from the default?</title>
-      <p>By default the user name and password to administer the services (such as Horizon) are
-        admin and admin. Service accounts are within default domain, so they are stored in MySQL.
-        The default password can be changed via the Keystone API, using
-        <codeblock>openstack user password set -password &lt;one_password> </codeblock> However,
-        this password will also need to be updated in the respective service configurations (for
-        example, in /etc/nova/nova.conf file for Nova). </p>
+      <p>By default the user name and password to administer the services (such as Horizon) are:
+        <codeblock>
+username: admin
+password: admin</codeblock></p>
+      <p>Service accounts are within default domain, so they are stored in MySQL.</p>
+      <p>The default password can be changed via the Keystone API, or by using the OpenStack command
+        line client using these commands on your deployer node after installation:
+        <codeblock>
+source ~/keystone.osrc
+openstack user password set -password &lt;one_password></codeblock></p>
+      <p>However, this password will also need to be updated in the respective service
+        configurations (for example, in <codeph>/etc/nova/nova.conf</codeph> file for Nova).</p>
     </section>
     <section id="Neutron">
       <title>Neutron Features</title>
-      <!--- THIS QUESTION HAS THINGS THAT HAVE NOT BEEN VERIFIED FOR HOS 2.0
+      <!--- THIS QUESTION HAS THINGS THAT HAVE NOT BEEN VERIFIED FOR HOS 2.0 (https://jira.hpcloud.net/browse/DOCS-1410)
 <p><b>How does NIC bonding work?</b></p>
 <p>You can deploy bonded NICs for both high availability (HA) and performance. When two NICs are bonded they appear as a single interface to the operating system but internally the bonding logic decides on which one of the NICs to use to transmit the data packet out of the system. The selection logic is called “mode”. Currently there are seven modes that are configurable.  We will list out the modes here but it has not been determined yet which of these modes will be supported in Helion <tm tmtype="reg">OpenStack</tm> 2.0.
 
