@@ -22,8 +22,8 @@
           <stentry><b>interface-model</b></stentry>
           <stentry> You can either select an existing interface model or create one specifically for
             Swift object servers. In the following example <b>INTERFACE_SET_SWOBJ</b> is used. See
-              <xref href="#topic_tq1_xt5_dt/swift-network" format="dita">Swift Network and service
-              Requirements</xref> more information.</stentry>
+              <xref href="allocating_network.dita#topic_pcj_hzv_dt">Swift Network and service
+              Requirements more information.</xref></stentry>
         </strow>
         <strow>
           <stentry><b>disk-model</b></stentry>
