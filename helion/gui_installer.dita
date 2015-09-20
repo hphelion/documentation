@@ -37,7 +37,7 @@
             model/example</xref> template</li>
         <li>Install HP Linux for HP Helion OpenStack based on your hypervisor by following the
           appropriate installation instructions: <ul>
-            <li><xref href="bare_installation_kvm.dita#install_kvm">KVM</xref></li>
+            <li><xref href="gui_install_on_kvm.dita">KVM</xref></li>
             <li><xref href="bare_installation_esx.dita#install_esx">ESX </xref></li>
           </ul>
           <note>You will follow the installation instructions found on the installation page,

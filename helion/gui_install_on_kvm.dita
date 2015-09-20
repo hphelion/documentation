@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_zfy_cp4_kt">
+  <title>GUI Installation for KVM</title>
+  <body>
+    <p>
+      Install on KVM via the GUI
+      
+      
+      
+      
+      
+    </p>
+    <section conref="bare_installation_kvm.dita#install_kvm/important-notes"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/Prereqs"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/DeployerInstall"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/HLM_Node_Personalization"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/CobblerDeploy"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/NodeProvision"/>
+  </body>
+</topic>
