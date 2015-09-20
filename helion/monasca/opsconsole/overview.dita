@@ -16,10 +16,12 @@
             <li><xref href="alarm_definitions.dita">Alarm Definitions</xref></li>
             <li><xref href="alarm_explorer.dita">Alarms</xref></li>
             <li><xref href="notification_methods.dita">Notification Methods</xref></li>
+            <li><xref href="metric_monitoring.dita">Metric Monitoring</xref></li>
           </ul></li>
         <li>Compute <ul>
             <li><xref href="compute_summary.dita">Compute - Alarm Summary</xref></li>
             <li><xref href="compute_hosts.dita">Compute Hosts</xref></li>
+            <li><xref href="compute_instances.dita">Compute Instances</xref></li>
           </ul>
         </li>
         <li>Networking <ul>
