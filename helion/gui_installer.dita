@@ -40,7 +40,7 @@
             <li><xref href="gui_install_on_kvm.dita">KVM</xref></li>
             <li><xref href="bare_installation_esx.dita#install_esx">ESX </xref></li>
           </ul>
-          <note>You will follow the installation instructions found on the installation page,
+          <p id="chooseHypervisor"/><note>You will follow the installation instructions found on the installation page,
             stopping before the step "Run the Configuration Processor" and skipping the "Configure
             Your Environment" steps. Therefore, your last OS install step will be
             <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
