@@ -5,8 +5,10 @@
   <body>
     <section id="supported_configs">
       <title>Supported Hardware Configurations</title>
-      <p>Helion OpenStack 2.0 supports the following configurations for a Helion <tm tmtype="reg"
-          >OpenStack</tm> deployment:</p>
+      <p>Helion OpenStack 2.0 supports the following hardware configurations for a Helion <tm
+          tmtype="reg">OpenStack</tm> deployment.</p>
+      <p>For more details about the supported VLAN requirements, see <xref
+          href="supportedconfigs.dita">Supported Configuration</xref></p>
       <p>Storage Interconnects/Protocols</p>
       <ul>
         <li>1Gb or 10Gb Ethernet.</li>
