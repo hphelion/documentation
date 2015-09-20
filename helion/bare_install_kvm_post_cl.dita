@@ -70,6 +70,12 @@
           </codeblock></li>
       </ol>
     </section>
+    <section id="sshkeys"><title>Backup Your SSH Keys</title>
+      <p>As part of the cloud deployment setup process, SSH keys to access the systems are generated
+        and stored in <codeph>~/.ssh</codeph> on your deployer node.</p>
+      <p>These SSH keys allow access to the subsequently deployed systems and should be included in
+        the list of content to be archived in any backup strategy.</p>
+    </section>
     <section id="endpoints"><title>Retrieving Service Endpoints</title>
       <p>text</p>
       <ol>
