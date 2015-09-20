@@ -35,9 +35,6 @@
         requirements. The storage service can be scaled up as necessary. It can also scaled
         horizontally to handle an increased number of simultaneous connections and a larger number
         of objects.</p></section>
-    <section>
-      <title>New for HP Helion OpenStack 2.0</title>
-    </section>
     <p>Swift is configured through a number of YAML files in the HP Helion implementation of the
       OpenStack Object storage (Swift) service. For more details on the configuration of the YAML
       files, refer to <xref href="swift_input_cloud_model.dita#modify-input-model"/>.</p>
