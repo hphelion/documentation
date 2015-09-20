@@ -149,10 +149,12 @@
     </section>
     <section id="KnownIssues">
       <title>Limitations in this Release</title>
-      <p><b>Helion examples</b></p>
-      <p> The examples directly shipped with Beta1 inadvertently include a directory named
-        "mid-size." This example is known not to work with the Beta 2 version of HP Helion OpenStack
-        and should not be deployed.</p>
+      <p><b>Helion Examples</b></p>
+      <p>The <codeph>~/helion/examples</codeph> directory contains a folder named "mid-size." This
+        configuration is known not to work with the Beta 2 version of HP Helion OpenStack and should
+        not be deployed.</p>
+      <p>See <xref href="supportedconfigs.dita">Supported Configuration</xref> for the current list
+        of supported configurations.</p>
       <p><b>TLS is not supported</b></p>
       <p>TLS is not supported for any traffic in Beta 2.</p>
       <p><b>HP Helion Development Platform</b></p>
@@ -162,34 +164,22 @@
       <ul>
         <li>Only one Swift zone is supported.</li>
       </ul>
-      <!-- <p>
-      <b>Deployment of VSA cloud on a separate Node as per the life-cycle management
-      features</b></p>
-    <p>Completed activity:</p>
-    <p> vsa-deploy play to deploy VSA on standalone node</p>
-    <p> cmc-deploy play do deploy CMC on controller node [0] </p>
-    <p> one-region-poc-with-vsa file with dev environment </p>
-    <p>Impediment:</p>
-    <p>The one-region-poc-with-vsa will be provided by the HLM team which impacts not only VSA but
-      other services as well. This will be beyond be Beta0 timeframe.</p>
-    <p> </p>-->
       <p><b>Helion Cloud Monitoring (Monasca) Limitations</b></p>
       <p>Basic Monitoring is complete for Beta 2 with the following limitations:</p>
       <ul>
-        <li>Access to Monasca is limited to the REST API and Command Line Client (CLI) only. GUI
-          access will be implemented in later releases. When using the CLI, the prefix for CLI
-          commands is "monasca". Use "monasca help" for details.</li>
-        <li>Vertica is not available in the install. You must choose the InfluxDB option
-          instead.</li>
+        <li>Vertica is the default metrics database option in the install. If you want to use
+          InfluxDB then read <xref href="monasca/monasca.dita#monitoring/config" type="section"
+            >Configuring Monasca</xref> for more details.</li>
         <li>InfluxDB is not configured behind a VIP. It must directly access one node in the
           cluster.</li>
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
       </ul>
       <p><b>Operations Console (Ops Console)</b></p>
-      <p>The Operations Console is available on port 9095 on the Control Plane IP. There are some
+      <p>The Operations Console is available on port 9095 on the first controller node IP. There are some
         limitations to note and they are listed below by menu option in the console:</p>
       <ul>
-        <li>Dashboard <ul>
+        <li>Dashboard 
+          <ul>
             <li>There are two notification sections for the Storage services. The one in the upper
               left is the Compute service mislabeled as Storage.</li>
             <li>The New Alarms section uses the UTC timezone to determine timeframes regardless of
@@ -198,7 +188,8 @@
               defined.</li>
             <li>Platform Services (HDP Summary) alarm panels are not yet implemented but appear in
               the menu and thus will not populate if selected.</li>
-          </ul></li>
+          </ul>
+        </li>
         <li>Logging Dashboard <ul>
             <li>There is no auto-logon function, users must use the credentials in the <xref
                 href="logging/centralized_logging.dita#logging/interface">Logging Overview</xref> to
@@ -231,10 +222,6 @@
         <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
         <li>Logging-monitor 'stop' playbook is not integrated.</li>
       </ul>
-      <p><b>Neutron Feature Limitations</b></p>
-      <ul>
-        <li>VPNaaS (Virtual-Private-Network-as-a-Service) is not enabled in this release.</li>
-      </ul>
       <!--<p><b>Networks</b></p>
       <p>
         <ul id="ul_rlg_dbg_ys">
@@ -261,37 +248,11 @@
             steps to be defined later may be required to complete installation.</p>
         </li>
       </ul>-->
+      <!--
       <p><b>Cinder Limitations</b></p>
       <ul>
         <li>3Par storage is not supported in Beta 2</li>
-      </ul>
-    </section>
-    <section id="troubleshooting"><title>Troubleshooting</title>
-      <p><b>Wait for SSH phase in bm-reimage.yml hangs </b></p>
-      <p>This issue has been observed during deployment to systems configured with QLogic based
-        BCM578XX network adapters utilizing the bnx2x driver and is currently under investigation.
-        The symptom manifests following a cold boot during deployment at the "wait for SSH" phase in
-        bm-reimage.yml which will result in a hang and eventually timeout, causing the baremetal
-        install to fail. The presence of this particular issue can be further confirmed by
-        connecting to the remote console of the server via iLO or by checking the server's dmesg
-        output for the presence of bnx2_panic_dump messages, similar to the following:
-        <codeblock>bnx2x: [bnx2x_prev_unload_common:10433(eth%d)]Failed to empty BRB, hope for the best  ...
-bnx2x: [bnx2x_stats_update:1268(eth0)]storm stats were not updated for 3 times
-bnx2x: [bnx2x_stats_update:1269(eth0)]driver assert
-bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------  .....
-bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump ----------------- 
-</codeblock>
-        This workaround is completed by rebooting the server. </p>
-      <p><b>Freezer installation fails if an independent network is used for the
-        External_API.</b></p>
-      <p> Currently the Freezer installation fails if an independent network is used for the
-        External_API. If you intend to deploy the External API in Beta 2 on an independent network,
-        the following changes need to be made: </p>
-      <p>In <b>roles/freezer-agent/defaults/main.yml</b> add the following line:
-        <codeblock>backup_freezer_api_url: "{{ FRE_API | item('advertises.vips.private[0].url', default=' ') }}"</codeblock>
-        In <b>roles/freezer-agent/templates/backup.osrc.j2</b> add the following line:
-        <codeblock>export OS_FREEZER_URL={{ backup_freezer_api_url }}</codeblock>
-      </p>
+      </ul>-->
     </section>
   </body>
 </topic>

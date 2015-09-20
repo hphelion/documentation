@@ -68,6 +68,31 @@ ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock></p>
       <p>This log is updated real time as you run ansible playbooks.</p>
       <note type="tip">Use grep to parse through the log. Usage: <codeph>grep &lt;text>
           ~/.ansible/ansible.log</codeph></note>
+      <p><b>Wait for SSH phase in bm-reimage.yml hangs </b></p>
+      <p>This issue has been observed during deployment to systems configured with QLogic based
+        BCM578XX network adapters utilizing the bnx2x driver and is currently under investigation.
+        The symptom manifests following a cold boot during deployment at the "wait for SSH" phase in
+        bm-reimage.yml which will result in a hang and eventually timeout, causing the baremetal
+        install to fail. The presence of this particular issue can be further confirmed by
+        connecting to the remote console of the server via iLO or by checking the server's dmesg
+        output for the presence of bnx2_panic_dump messages, similar to the following:
+        <codeblock>
+bnx2x: [bnx2x_prev_unload_common:10433(eth%d)]Failed to empty BRB, hope for the best  ...
+bnx2x: [bnx2x_stats_update:1268(eth0)]storm stats were not updated for 3 times
+bnx2x: [bnx2x_stats_update:1269(eth0)]driver assert
+bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------  .....
+bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
+        This workaround is completed by rebooting the server.</p>
+      <p><b>Freezer installation fails if an independent network is used for the
+        External_API.</b></p>
+      <p> Currently the Freezer installation fails if an independent network is used for the
+        External_API. If you intend to deploy the External API in Beta 2 on an independent network,
+        the following changes need to be made: </p>
+      <p>In <b>roles/freezer-agent/defaults/main.yml</b> add the following line:
+        <codeblock>backup_freezer_api_url: "{{ FRE_API | item('advertises.vips.private[0].url', default=' ') }}"</codeblock>
+        In <b>roles/freezer-agent/templates/backup.osrc.j2</b> add the following line:
+        <codeblock>export OS_FREEZER_URL={{ backup_freezer_api_url }}</codeblock>
+      </p>
     </section>
   </body>
 </topic>
