@@ -15,7 +15,7 @@
             >Supported Configuration</xref> page.</li>
         <li>Read over the page about the <xref href="input_model.dita">Helion OpenStack 2.0 Input
             Model</xref> to learn about the configuration options for your cloud.</li>
-        <li>Make sure <b>all disks on the system(s) are wiped</b> before you begin the install.</li>
+        <li>Make sure <b>all disks on the system(s) are wiped</b> before you begin the install. </li>
         <li>The <codeph>/dev/sda</codeph> disk on your systems will be used for the operating
           system.</li>
         <li>Both HP Linux for HP Helion OpenStack and HP Helion OpenStack are part of the ISO you
