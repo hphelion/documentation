@@ -175,6 +175,14 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
             <li>staging-ansible</li>
             <li>staging-cp-persistent</li>
           </ul>
+          <note> The configuration processor may generate the following warnings which can be
+              <b>safely ignored</b>:
+            <codeblock>  ################################################################################
+  # The configuration processor completed with warnings.
+  #   ans-host-vars-2.0         WRN: Unknown service 'vsa'as consumer of device-group vsa-datain disk-model DISK_SET_VSA.
+  #   ans-host-vars-2.0         WRN: Unknown service 'vsa'as consumer of device-group vsa-cachein disk-model DISK_SET_VSA.
+  ################################################################################</codeblock>
+          </note>
           <note>See <xref href="using_git.dita">Using Git for Configuration Management</xref> for
             more information.</note>
         </li>
