@@ -90,6 +90,7 @@
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.2-20150920T130131Z.tgz</codeblock></li>
         <li>Run the following included script:
           <codeblock>~/hos-2.0.0-b.2/hos-init.bash</codeblock></li>
+        <!-- removed per DOCS-1671
         <li>You will be prompted for an SSH passphrase during initialization. Enter a passphrase if
           you want to use one, otherwise hit return for no passphrase. If you've entered a
           passphrase you will need to add a private key to ssh-agent before running Ansible
@@ -99,6 +100,7 @@
           <codeblock>
 eval $(ssh-agent)
 ssh-add ~/.ssh/id_rsa</codeblock></li>
+-->
       </ol>
       <p>At the end of this section you should have a local directory structure, as described
         below:</p>
