@@ -5,8 +5,8 @@
   <body>
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
       with HP Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
-      perform the cinder operation as documented in this page.
-      <!--It also provides the procedure to perform cinder operation after Ceph deployment.--></p>
+      perform the cinder operation as documented in this page. It also provides the procedure to
+      perform cinder operation after Ceph deployment.</p>
     <section>
       <title id="preq">Prerequisite</title>
       <p>The deployer node must be setup before deploying Ceph. For more details on the installation
@@ -27,20 +27,29 @@
             are available at <xref href="configuration_files.dita#config_files">Ceph
               Configuration
             files</xref>.<!--<p>The configuration files for editing will be available at <codeph>~/helion/my_cloud/definition/data</codeph>.</p>--></li>
-          <li>Copy the configuration files in the respective folder as shown in the screeshot
+          <li>Copy the configuration files in the respective folder as shown in the screen shot
               below.<p/><image href="../../../media/ceph/screenshot-path.png" id="image_arv_dcx_gt"
               /><p>You must copy the <b>yml</b> files in the appropriate folder. For example: Copy
-              the ring.yml file in <codeph>config/swift/</codeph>.</p></li>
+              the <codeph>ring.yml</codeph> file in <codeph>config/swift/</codeph>.</p></li>
           <li>Edit the configuration files, based on your environment, to deploy Ceph. </li>
           <li>Edit the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
             disks meant for OSD data and journal
             filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock></li>
-          <li>Editibable parameters for CEph are available in the following locations:<ul
+          <li>Editable parameters for Ceph are available in the following locations:<ul
               id="ul_jbn_nj5_kt">
-              <li>/home/stack/helion/my_cloud/config/ceph<p>In settings.yml we can edit the
-                  following parameters:</p><p>fsid, ceph clusters, osd_settle_time,
-                  OSD_jorunal_size</p><p>usermodel.yml has editiable values for the different pools
-                  creted by HOS.</p></li>
+              <li><codeph>/home/stack/helion/my_cloud/config/ceph/settings.yml</codeph><p>In the
+                    <codeph>settings.yml</codeph> file, you can edit the following parameters:<ul
+                    id="ul_ocp_ty5_kt">
+                    <li>fsid</li>
+                    <li>ceph clusters</li>
+                    <li>osd_settle_time</li>
+                    <li>OSD_journal_size</li>
+                  </ul></p></li>
+              <li>
+                <p><codeph>/home/stack/helion/my_cloud/config/ceph/usermodel.yml</codeph></p>
+                <p>The <codeph>usermodel.yml</codeph> has the editable values for the different
+                  pools created by HP Helion OpenStack.</p>
+              </li>
             </ul></li>
           <li> Commit your configuration to a <xref href="../../using_git.dita#topic_u3v_1yz_ct"
               >local
@@ -88,7 +97,7 @@ rbd_pool = volumes
 rbd_ceph_conf = /etc/ceph/ceph.conf
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
 volume_backend_name = ceph</codeblock><note>The
-              <b>rbd_uuid </b>is same as given available at
+              <b>rbd_uuid </b>is same as available at
               <codeph>/home/stack/helion/my_cloud/config/ceph/settings.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
         <?oxy_custom_end?>
         <li> Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
