@@ -123,9 +123,9 @@ baremetal_servers:
           </ul>
         </li>
       </ul> Note that the EXTERNAL_API network must be reachable from the EXTERNAL_VM network if you
-      want VMS to be able to make API calls to the cloud. An example set of networks are defined in
+      want VMs to be able to make API calls to the cloud. An example set of networks are defined in
         <b>data/networks.yml</b>. If you are using the GUI installer, it will populate this file
-      with your values, but you can refer to it later for reference. </section>
+      with your values; otherwise, you will need to enter your values here. </section>
     <section>The example uses eth2 for the install network and eth3 and eth4 for the bonded network.
       If you need to modify these for your environment they are defined in<b>
         data/net_interfaces.yml</b>. </section>
@@ -136,8 +136,8 @@ baremetal_servers:
       addition the example configures one additional disk depending on the role of the server:
       Controllers: /dev/sdb is configured to be used by Swift.</section>
     <section> Additional discs can be configured for any of these roles by adding them in the
-      appropriate section. As this installer runs, it will edit the appropriate configuration files;
-      however, if you would like to see the file or edit it later, it is <b>data/disks_.yml</b>. </section>
+      appropriate section. If you are using the GUI installer, it will edit the appropriate
+      configuration files; otherwise, you must enter your values in <b>data/disks_.yml</b>. </section>
     
     
     <section><title>Single Region Cloud (on ESX)</title> Choosing this model will result in a cloud
@@ -173,10 +173,10 @@ baremetal_servers:
               between the cloud services </li>
           </ul></li>
       </ul> Note that the EXTERNAL_API network must be reachable from the EXTERNAL_VM network if you
-      want VMS to be able to make API calls to the cloud. </section>
+      want VMs to be able to make API calls to the cloud. </section>
     <section>An example set of networks are defined in <b>data/networks.yml</b>. </section>
-    <section>If you use the GUI installer, it  will populate this file with your values, but you can
-      refer to it later for reference. </section>
+    <section>If you use the GUI installer, it will populate this file with your values; otherwise,
+      you must enter your values there. </section>
     <section>The example uses eth2 for the install network and eth3 and eth4 for the bonded network.
       If you need to modify these for your environment they are defined in
         <b>data/net_interfaces.yml</b>. </section>
@@ -185,8 +185,8 @@ baremetal_servers:
       addition the example configures one additional disk depending on the role of the server: <ul>
         <li>Controllers: /dev/sdb is configured to be used by Swift</li>
       </ul> Additional discs can be configured for any of these roles by adding them in the
-      appropriate section. As this installer runs, it will edit the appropriate configuration files;
-      however, if you would like to see the file or edit it later, it is <b>data/disks_.yml.</b>
+      appropriate section. If you are using the GUI installer, it will edit the appropriate
+      configuration files; otherwise, you must enter them in <b>data/disks_.yml.</b>
     </section>
     <section id="diagrams">
       <title>Configuration Illustrations</title>
