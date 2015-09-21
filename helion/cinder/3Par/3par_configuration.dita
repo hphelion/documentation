@@ -13,9 +13,10 @@
           <li>HP Helion Cloud must be successfully deployed.
             <!--It should be up and running.--></li>
           <li>3PAR  Storage Array should be available in cloud management network or routed to cloud
-            management network with FC and iSCSI ports configured.</li>
+            management network and 3PAR FC and iSCSI ports configured.</li>
           <li>3PAR management IP and iSCSI port IP's must have connectivity from controller and
             compute nodes.</li>
+          <li>Please refer the system requirements for 3PAR in Openstack configuration guide.</li>
         </ul>
       </p>
     </section>
@@ -26,9 +27,10 @@
           <li>Login to deployer node.</li>
           <li>Change the directory as shown below:<codeblock>cd ~/helion</codeblock></li>
           <li>Edit <codeph>cinder.conf.j2</codeph> file at
-              <codeph>hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to add 3PAR FC
-            data as follows:<codeblock>enabled_backends=3par_FC</codeblock><note>Append this change
-              with the exiting backend, if you have already added VSA as backend.</note></li>
+              <codeph>my_cloud/config/cinder/cinder.conf.j2</codeph> to add 3PAR FC backend:</li>
+          <li>Modify enabled_backends section in <codeph>cinder.conf.j2</codeph> as shown in the
+            following example:<codeblock>enabled_backends=3par_FC</codeblock><note>Append this
+              change with the exiting backend, if you have already added VSA as backend.</note></li>
           <li>Copy 3PAR FC section, uncomment it, and modify the values in the
               <codeph>cinder.conf.j2</codeph> file as shown in the following
               example:<codeblock>[3par_FC]
@@ -51,13 +53,11 @@ git commit -m "&lt;commit message>"</codeblock><note>
           <li>Run the configuration
             processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-          <li>Change the directory to <codeph>~/scratch/ansible/next/hos/ansible</codeph> and run
-            the following command to create a deployment
+          <li>Run the following command to create a deployment
             directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+          <li>Run the following command to configure 3PAR FC as a Cinder backend. </li>
         </ol></p>
     </section>
-    <p id="run-ceph-client-package"><b>Run Cinder Reconfigure Packages</b></p>
-    <p>Execute the following command to configure 3PAR FC. </p>
     <p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
@@ -89,16 +89,14 @@ iscsi_ip_address=172.32.0.9
 hp3par_iscsi_chap_enabled=true</codeblock><note>
               Please enter the values of all the paramters specific to your environment.
             </note></li>
-          <li>Execute the steps (<b>5 -7</b>) mentioned in <xref
+          <li>Execute the steps (<b>5 -9</b>) mentioned in <xref
               href="#topic_vln_2xy_ht/configure-3par-fc" format="dita">Configure 3PAR FC as Cinder
-              backend </xref> and <xref href="#topic_vln_2xy_ht/run-ceph-client-package"
-              format="dita">Run Cinder Reconfigure Packages</xref> as mentioned above.</li>
+              backend </xref> as mentioned above.</li>
         </ol>
       </p>
     </section>
-    <p>You must verify the 3PAR FC and iSCSI configuration as backend by creating the volume and
-      volume type. Once you are able to create the volume, you can delete the created volume. For
-      more information, refer to <xref href="../verify_backend_configuration.dita#topic_q5q_trz_jt"
-        >Verify Backend Configuration</xref>.</p>
+    <p>To verify the 3PAR FC and iSCSI  backends are configured successfully, please refer to <xref
+        href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Verify Backend
+        Configuration</xref>.</p>
   </body>
 </topic>

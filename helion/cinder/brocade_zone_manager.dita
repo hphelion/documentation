@@ -28,8 +28,8 @@
           <li>Login to deployer node.</li>
           <li>Change the directory as shown below:<codeblock>cd ~/helion</codeblock></li>
           <li>Edit <codeph>cinder.conf.j2</codeph> file at
-              <codeph>/home/stack/helion/my_cloud/config/cinder</codeph> to add Brocade Fiber
-            Channel Zone Manager Driver data. <note>
+              <codeph>my_cloud/config/cinder/cinder.conf.j2</codeph> to add Brocade Fiber Channel
+            Zone Manager Driver data. <note>
               <ul id="ul_ghm_zbj_jt">
                 <li>The values entered in step <b>4</b> is an example. You must change the value as
                   per your requirement/environment.</li>
@@ -40,12 +40,14 @@
                     [<b>device</b>] section for each side of the fabric.</li>
               </ul>
             </note></li>
-          <li>Copy the following configuration.
+          <li>Copy the following configuration.  The values in FABRIC_A and FABRIC_B are an example.
               <codeblock>[DEFAULT] 
 zoning_mode=fabric 
 
 [fc-zone-manager] 
-brcd_sb_connector=cinder.zonemanager.drivers.brocade.brcd_fc_zone_client_cli.BrcdFCZoneClientCLI fc_san_lookup_service=cinder.zonemanager.drivers.brocade.brcd_fc_san_lookup_service.BrcdFCSanLookupService zone_driver=cinder.zonemanager.drivers.brocade.brcd_fc_zone_driver.BrcdFCZoneDriver 
+brcd_sb_connector=cinder.zonemanager.drivers.brocade.brcd_fc_zone_client_cli.BrcdFCZoneClientCLI 
+fc_san_lookup_service=cinder.zonemanager.drivers.brocade.brcd_fc_san_lookup_service.BrcdFCSanLookupService 
+zone_driver=cinder.zonemanager.drivers.brocade.brcd_fc_zone_driver.BrcdFCZoneDriver 
 fc_fabric_names=FABRIC_A, FABRIC_B 
 
 [FABRIC_A] 
@@ -67,7 +69,8 @@ zoning_policy = initiator-target
 fc_fabric_port = 22
 zone_activate = true 
 zone_name_prefix = FABRIC_B_</codeblock><note>Please
-              enter the values which are specific to your environment. </note></li>
+              enter the values which are specific to your environment for FABRIC_A and FABRIC_B.
+            </note></li>
           <li>Commit your configuration to a <xref href="../using_git.dita#topic_u3v_1yz_ct">local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
 git add -A
@@ -91,59 +94,6 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
       create a volume before attaching to an instance, as detailed in <xref
         href="verify_backend_configuration.dita#topic_q5q_trz_jt/create-volume">create a
         volume</xref>. </p>
-    <section>
-      <title>Attach Volume to an Instance</title>
-      <p>Perform the following steps to attach a volume to an instance:<ol id="ol_myj_2jj_jt">
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
-          <li>From the left panel, click the <b>Project</b> tab and then click the <b>Volumes</b>
-            tab to display the Volumes page.</li>
-          <li>Click the check box next to the name of the volume you want to attach. </li>
-          <li>In the Action column, click <b>Edit Attachments</b> The Manage Volume Attachments
-            screen is displayed.</li>
-          <li>.In the <b>Attach To Instance</b> drop-down, select the instance that you want to
-            attach to the volume. </li>
-          <li> Edit the <b>Device Name</b> if necessary.</li>
-          <li>Click <b>Attach Volume</b> to complete the action. Clicking <b>Cancel</b> returns to
-            the Volumes screen without completing the action. </li>
-          <li>Verify that the volume you attached is displayed in the Attached To columns on the
-            Volumes screen.<p> Zones are created and activated in switch effective configuration
-              after the successful attachment of volume to an instance.</p></li>
-        </ol></p>
-    </section>
-    <section>
-      <title>Detach Volume from Instance</title>
-      <p>Perform the following steps to detach the volume from instance:<ol id="ol_edq_pkj_jt">
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
-          <li>From the left panel, click the <b>Project</b> tab and then click the <b>Volumes</b>
-            tab to display the Volumes page.</li>
-          <li>Click the check box next to the name of the volume you want to attach. </li>
-          <li>In the Action column, click <b>Edit Attachments</b> The Manage Volume Attachments
-            screen is displayed.</li>
-          <li>Click <b>Detach Attachment</b>. A confirmation dialog box appears.</li>
-          <li>Click <b>Detach Attachment</b> to confirm the detachment of the volume from the
-            associated instance. Clicking <b>Cancel</b> returns to the Volumes screen without
-            completing the action.<p>When you dettach the last volume from an instance running on
-              the compute host, zones are deleted and removed from the effective
-            configuration.</p></li>
-        </ol></p>
-    </section>
-    <section>
-      <title>Delete Volume </title>
-      <p>Perform the following steps to delete a volume using Horizon dashboard:<ol
-          id="ol_adc_wkj_jt">
-          <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
-            left panel. </li>
-          <li>From the left panel, click the <b>Project</b> tab and then click the <b>Volumes</b>
-            tab to display the Volumes page.</li>
-          <li>Check the box in the row of the volume to delete.</li>
-          <li>Click <b>Delete Volume</b> to display the dialog box.</li>
-          <li>Click <b>Delete the Volume</b> to confirm the deletion of the selected volume. To exit
-            without deleting the volume and to close the screen, click <b>Cancel</b> before
-            deleting.</li>
-        </ol></p>
-    </section>
     <section>
       <title>Known Limitations:</title>
       <p>Following are the known limitation for this release:<ol id="ol_bjg_vnj_jt">
