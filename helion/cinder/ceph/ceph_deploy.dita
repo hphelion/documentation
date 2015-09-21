@@ -125,7 +125,6 @@ restore_discard_excess_bytes = true</codeblock></li>
                 can copy the keyring from the deployer
                 node<codeblock>scp /etc/ceph/<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>ceph.client.cinder-backup.keyring<?oxy_custom_end?></codeblock>
                 to <codeph>/etc/ceph</codeph> folder on all the controller nodes.</p></li>
-            <li/>
           </ol></li>
         <li>Commit your configuration to the local repository to configure cinder on the deployer node.<p>
             <codeblock>cd /home/stack/helion/hos/ansible
