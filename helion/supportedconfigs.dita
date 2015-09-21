@@ -140,7 +140,7 @@ baremetal_servers:
       it later, it is data/disks_.yml. </section>
     
     
-    <section><title>Single region cloud on ESX</title> Choosing this model will result in a cloud
+    <section><title>Single Region Cloud (on ESX)</title> Choosing this model will result in a cloud
       that has the following characteristics: </section>
     <section><b>Control Planes</b> </section>
     <section>A single control plane consisting of three servers that co-host all of the required
