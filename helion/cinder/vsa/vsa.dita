@@ -116,13 +116,11 @@ hplefthand_debug: false</codeblock><note>
               >local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
 git add -A
-git commit -m "&lt;commit message>"</codeblock><note>
+git commit -m "your commit message"</codeblock><note>
               Enter your commit message &lt;commit message></note></li>
           <li>Run the configuration
-            processor:<codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-          <li>Change the directory to <codeph>~/helion/hos/ansible</codeph> and run the following
-            command to create a deployment
+            processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Run the following command to create a deployment
             directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
         </ol></p>
     </section>
