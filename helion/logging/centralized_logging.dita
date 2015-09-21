@@ -301,8 +301,6 @@
         <li>Username: kibana</li>
         <li>Password: 1f3pNxQmXXELJn/MJ4jOHixePSXlu4eZzhi1gJjr7mI=</li>
       </ul>
-      <note>In future releases we will offer a method for retrieving and changing these
-        credentials.</note>
     </section>
     <section id="troubleshooting"><title>Using Centralized Logging to Troubleshoot Issues</title>
       <p>You can troubleshoot service-specific issues by reviewing the logs. After logging into
