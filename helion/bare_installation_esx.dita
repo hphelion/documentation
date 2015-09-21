@@ -71,10 +71,10 @@
           containing <codeph>eon.yml</codeph>.</li>
         <li>Modify the <codeph>neutron.conf.j2</codeph> at
               <codeph>~/helion/my_cloud/config/<codeph>neutron/neutron.conf.j2</codeph></codeph>with
-          the following values:<codeblock>router_distributed = False
-modify ml2_conf.ini.j2
-with the below values
-[ml2]
+          the following values:<codeblock>router_distributed = False</codeblock></li>
+        <li>Modify <codeph>ml2_conf.ini.j2</codeph> at
+              <codeph>~/helion/my_cloud/config/<codeph>neutron/neutron.conf.j2</codeph></codeph>with
+          the following values:<codeblock>[ml2]
 mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
 enable_distributed_routing = False</codeblock>
