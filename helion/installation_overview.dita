@@ -17,12 +17,13 @@
       </ul> Instructions for installing via the GUI are here. </section>
     <ul><li><xref href="gui_installer.dita#install_gui">Installing via the GUI</xref></li></ul>
     <section>Note that reconfiguration of your cloud, at the moment, is done via the CLI. The GUI
-      installer if for first-time installation. </section>
+      installer is for first-time installation. </section>
     <section>You should use the CLI if: <ul id="ul_wbl_2lw_kt">
         <li>You are installing a more complex or large-scale cloud. </li>
         <li>You have more than about 15 nodes. </li>
-        <li>You need to use availability zones or the server groups functionality of the cloud model
-          (link this text to model docs). </li>
+        <li>You need to use availability zones or the server groups functionality of the cloud
+          model. See the <xref href="input_model.dita#input_model">Input Model page</xref> for more
+          information. </li>
         <li>You want to customize the cloud configuration beyond the tuned defaults that HP provides
           out of the box. </li>
         <li>You need deeper customizations than are possible to express using the GUI.</li>
