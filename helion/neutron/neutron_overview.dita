@@ -12,23 +12,28 @@
       services.</p>
     <p>You can use the Networking service to connect guest servers or you can define and configure
       your own virtual network topology.</p>
+    <!--
     <p>You can also use the Networking service to identify the actual IP address of a malicious
       user, if you know the user's NAT address. For more information, see <xref
         href="../../commercial/GA1/1.1commercial.networking-maskedIP.dita">Tracking masked IP
         addresses when using network address translation (NAT)</xref>.</p>
+        -->
     <section id="installing-the-networking-service">
       <title>Installing the Networking service</title>
       <p>Helion Network Administrators are responsible for planning for the Neutron networking
         service, and once installed, to configure the service to meet the needs of their cloud
         network users.</p>
+      <!--
       <p>For information, see <xref
           href="../../commercial/GA1/neutron/1.1commercial_neutron-intro.dita">Networking Operation
           (Neutron) Administrator Pre and Post Installation Tasks</xref>.</p>
+          -->
     </section>
     <section id="working-with-the-networking-service">
       <title>Working with the Networking service</title>
       <p>To perform tasks using the Networking service, you can use the dashboard, API or CLI.</p>
     </section>
+  <!--
     <section id="UI">
       <title>Using the dashboards</title>
       <p>You can use the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita">HP
@@ -49,6 +54,7 @@
           href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external"
           format="html">Install the OpenStack command-line clients</xref>.</p>
     </section>
+    -->
     <section id="for-more-information">
       <title>For more information</title>
       <p>For information on how to operate your cloud we suggest you read the <xref
