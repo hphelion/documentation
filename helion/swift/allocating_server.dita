@@ -34,8 +34,9 @@
               <li>As with all servers, you must also verify and/or modify the server-groups
                 information (usually in <codeph>data/server_groups.yml</codeph>)</li>
             </ul>The only part of this process that is unique to Swift is the allocation of disk
-            drives for use by the object ring as described in <i>Allocating Disk Drives for use by
-              Swift.</i></li>
+            drives for use by the object ring as described in <i><xref
+                href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk Drives for
+                use by Swift</xref>.</i></li>
         </ul></p>
     </section>
   </body>

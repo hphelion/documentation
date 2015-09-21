@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="verify-partition-label">
-  <title>How to Verify if a Partition Labelled</title>
+  <title>How to Verify if a Partition is Labelled</title>
   <body>
     <p>This page explains the procedure to check whether a device has label on partition.</p>
     <section id="label-partition">
