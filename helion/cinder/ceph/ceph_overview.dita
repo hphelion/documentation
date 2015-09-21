@@ -19,8 +19,8 @@
     </section>
     <section><p>The HP Helion OpenStack 2.0 Ceph Storage Solution provides an unified scaleable and
         stable storage solution for the management of Helion OpenStack Volume Storage (Cinder
-        persistent Volumes) service. The solution also supports user backup to the Object Storage
-        (Swift) API service writing to the same unified Ceph storage platform.</p>
+        persistent Volumes) service.
+        <!--The solution also supports user backup to the Object Storage (Swift) API service writing to the same unified Ceph storage platform.--></p>
       <p><!--Based on <tm tmtype="reg">OpenStack</tm> Ceph, HP Helion <tm tmtype="reg">OpenStack</tm>2.0 
         Ceph Storage Solution provides an unified scaleable and stable storage solution for the management 
         of Helion OpenStack Volume Storage (Cinder persistent Volumes) service. &lt;<b>didnot understand 

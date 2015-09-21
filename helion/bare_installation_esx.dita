@@ -67,25 +67,26 @@
             <codeph>~/helion/my_cloud/definition/</codeph>. Refer to the <b><xref
               href="input_model.dita">Helion OpenStack 2.0 Input Model</xref></b> document for
           assistance with the configuration files.</li>
-        <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the line
-          containing <codeph>eon.yml</codeph>.</li>
+        <li>Modify the <codeph>~/helion/hos/ansible/hlm-deploy.yml</codeph> to uncomment the line
+          containing <codeph>eon-deploy.yml</codeph>.</li>
         <li>Modify the <codeph>neutron.conf.j2</codeph> at
               <codeph>~/helion/my_cloud/config/<codeph>neutron/neutron.conf.j2</codeph></codeph>with
-          the following values:<codeblock>router_distributed = False</codeblock></li>
+          the following values:<codeblock>router_distributed = False</codeblock><p> And add
+              <codeph>mechanism_drivers = ovsvapp</codeph> at the end of the
+              <codeph>neutron.conf.j2</codeph>.</p></li>
         <li>Modify <codeph>ml2_conf.ini.j2</codeph> at
-              <codeph>~/helion/my_cloud/config/<codeph>neutron/neutron.conf.j2</codeph></codeph>with
-          the following values:<codeblock>[ml2]
+              <codeph>~/helion/my_cloud/config/<codeph>neutron/ml2_conf.ini.j2</codeph></codeph>with
+          the following
+          values:<codeblock>[ml2]
 mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
-enable_distributed_routing = False</codeblock>
-          <note> You modify the mechanism_drivers = ovsvapp in the
-            <codeph>neutron.conf.j2</codeph>.</note></li>
+enable_distributed_routing = False</codeblock></li>
 
         <li>Commit your cloud deploy configuration to the<xref
             href="using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows:
           <codeblock>cd ~/helion/hos/ansible
 git add -A
-git commit -m "My config or other commit message"</codeblock></li>
+git commit -m "My config"</codeblock></li>
 
       </ol>
     </section>
