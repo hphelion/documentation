@@ -22,7 +22,7 @@
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
     <topicref href="helion/faq.dita"/>
-    <topicref href="helion/installation_overview.dita" navtitle="Installation" locktitle="yes">
+    <topicref href="helion/installation_overview.dita" navtitle="Installation - Overview" locktitle="yes">
       <topicref href="helion/beta1_to_beta2_upgrade.dita"/>
       <topicref href="helion/input_model.dita"/>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
