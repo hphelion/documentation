@@ -33,7 +33,6 @@
             format="html" scope="external">Helion Downloads</xref> page. There is only one download;
           it includes both the operating system and the Helion OpenStack installer in one ISO.</li>
         <li>All machines of a given role should be the same configuration.</li>
-        <li>The deployer node must be a dedicated node in Beta 2.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO
           subsystem of each baremetal system to enable host reboots as part of the install process.
