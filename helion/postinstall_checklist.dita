@@ -59,8 +59,7 @@
           <p>The table below shows the optional switches you can use as part of this playbook to
             specify environment-specific information:</p>
           <p>
-            <table frame="all" rowsep="1" colsep="1" id="table_yqt_wqw_kt">
-              <title/>
+            <table frame="all" rowsep="1" colsep="1" id="ansible">
               <tgroup cols="2">
                 <colspec colname="c1" colnum="1" colwidth="1.0*"/>
                 <colspec colname="c2" colnum="2" colwidth="1.0*"/>
