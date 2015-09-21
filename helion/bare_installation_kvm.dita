@@ -13,6 +13,9 @@
         <li>There is no requirement to have a dedicated network for OS-install and system
           deployment. More information can be found on the <xref href="supportedconfigs.dita"
             >Supported Configuration</xref> page.</li>
+        <li>If you run into issues during installation, we have put together a list of <xref
+            href="installation_troubleshooting.dita">Troubleshooting Steps</xref> you can
+          reference.</li>
         <li>Read over the page about the <xref href="input_model.dita">Helion OpenStack 2.0 Input
             Model</xref> to learn about the configuration options for your cloud.</li>
         <li>Make sure <b>all disks on the system(s) are wiped</b> before you begin the install. (For
@@ -154,14 +157,15 @@ git commit -m "My config or other commit message"
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-power-status.yml
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
-        <li>The cobbler-deploy stage of the installation now prompts for a password.  The entered
+        <li>The cobbler-deploy stage of the installation now prompts for a password. The entered
           value is used to set a user-defined password for subsequent node installs so that a user
-          can gain console/terminal access to the nodes.  For example, if a node maintenance is
-          required or if the SSH keys are lost.  The value is encrypted and placed in the kickstart
+          can gain console/terminal access to the nodes. For example, if a node maintenance is
+          required or if the SSH keys are lost. The value is encrypted and placed in the kickstart
           for the node installs.<p>The password prompts look like this:</p>
           <codeblock>Enter the password that will be used to access provisioned nodes:
 confirm Enter the password that will be used to access provisioned nodes:</codeblock>
-        <p>Alternatively, you can also specify this password in the ansible playbook command like this:</p>
+          <p>Alternatively, you can also specify this password in the ansible playbook command like
+            this:</p>
           <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml -e hlmuser_password="&lt;password>"</codeblock></li>
       </ol>
     </section>
@@ -208,7 +212,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
         <li><p>To validate object storage cloud model, execute the following command on the
             deployer:</p>
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
-            ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>
+ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>
           <p>If any error is raised when you validate the object storage, refer to <xref
               href="swift/troubleshooting.dita">Swift-Troubleshooting</xref></p></li>
       </ol>
@@ -247,6 +251,15 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
       <ul>
         <li><xref href="cinder/3Par/3par_configuration.dita">3PAR Installation and
             Configuration</xref></li>
+      </ul>
+    </section>
+    <section id="post-installation"><title>Post-Installation Verification and Administration</title>
+      <p>We recommend the following post-installation steps:</p>
+      <ul>
+        <li><xref href="installation_verification.dita">Verify the installation using Tempest's
+            embedded tests.</xref></li>
+        <li>Go through the <xref href="postinstall_checklist.dita">Post-Installation
+            Checklist</xref> for common administrative tasks.</li>
       </ul>
     </section>
   </body>
