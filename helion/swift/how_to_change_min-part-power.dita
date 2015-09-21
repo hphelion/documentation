@@ -18,10 +18,10 @@
           <stentry><b>Resolution</b></stentry>
           <stentry>You can change the values as follows:<ol id="ol_qzp_zhb_kt">
               <li>Log into the first server running the swift-proxy service.</li>
-              <li>Go to the<codeph> /etc/swiftlm/builder_dir/region-&lt;ragion-name>
+              <li>Go to the<codeph> /etc/swiftlm/builder_dir/region-&lt;region-name>
                   </codeph>directory<p>where &lt;region-name> is the region-name field in your cloud
-                  model (For example: region1 is most example files). </p></li>
-              <li>Search files with a <codeph>.builder</codeph> extension. </li>
+                  model (For example: region1 in most example files). </p></li>
+              <li>For files with a <codeph>.builder</codeph> extension. </li>
               <li> Run the following command against each builder file. For example, to change the
                 value to 16 hours for the account builder file, the command is as follows:
                 <codeblock>sudo swift-ring-builder account.builder set_min_part_hours 16</codeblock></li>

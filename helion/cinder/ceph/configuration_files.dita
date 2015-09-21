@@ -557,9 +557,8 @@ ring-specifications:
           <codeph>nic_mappings.yml</codeph> file but you will specify which value to use for each of
         your servers in this file.</p><note>The entries in this file are examples, if you have more
         or less nodes you can copy and paste to include your entire environment.</note><p>In the
-        following example file three servers are assigned as OSD nodes, which is the minimum
-        requirement for Ceph
-        deployment.<codeblock>---
+        following example file three servers are assigned as OSD
+        nodes<!--, which is the minimum requirement for Ceph deployment-->.<codeblock>---
   product:
     version: 2
 

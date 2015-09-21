@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_drm_rm5_kt">
+  <title>Adding a New OSD Node </title>
+  <body>
+    <p>The page describes the procedure to add a new OSD Node to an existing Ceph cluster.</p>
+    <p>Perform the following steps to add a new OSD Node to an existing Ceph cluster:<ol
+        id="ol_v2t_xm5_kt">
+        <li>Login to the deployer node.</li>
+        <li>Edit <codeph>servers.yml</codeph> at
+            <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> to define a new OSD node
+          as shown
+            below:<codeblock>- id: con-0004
+  ip-addr: 192.168.10.9
+  role: ROLE-OSD</codeblock><note>Replace
+            the <codeph>id</codeph> and<codeph> ip-addr</codeph> in the above snippet with
+            appropriate values.</note></li>
+        <li>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
+          follows:
+            <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "Added OSD node {node-id}"</codeblock><note>Replace
+            the {node-id} in the commit message with appropriate value (example:
+          con-004).</note></li>
+        <li>Execute the following
+          command:<codeblock>cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+        <li>Run the following command, which will reimage all the nodes using
+          PXE.<codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
+        <li>Run the configuration
+          processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Use the playbook below to create a deployment directory:
+          <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Run your "verb_host" commands using the following steps: <p>
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts guard-deployment.yml
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml
+ansible-playbook -i hosts/verb_hosts ceph-deploy.yml</codeblock>
+          </p><p>Therefore, the new OSD node is deployed in an existing ceph cluster.</p></li>
+      </ol></p>
+    <section><b>Verify the newly added OSD nodes</b><p>From the deployer node, execute the following
+          command:<codeblock>$ceph --cluster ceph  osd tree</codeblock><note>If the Ceph cluster
+          name is different than the default (i.e. ceph), you need to modify the above command
+            accordingly.<p>When you execute the above command the hostname of the newly added OSD
+            must appear in the output, if the OSD node is successfully added to the existing ceph
+            cluster.</p></note></p></section>
+  </body>
+</topic>

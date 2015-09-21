@@ -35,6 +35,13 @@
           <li>Edit the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
             disks meant for OSD data and journal
             filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock></li>
+          <li>Editibable parameters for CEph are available in the following locations:<ul
+              id="ul_jbn_nj5_kt">
+              <li>/home/stack/helion/my_cloud/config/ceph<p>In settings.yml we can edit the
+                  following parameters:</p><p>fsid, ceph clusters, osd_settle_time,
+                  OSD_jorunal_size</p><p>usermodel.yml has editiable values for the different pools
+                  creted by HOS.</p></li>
+            </ul></li>
           <li> Commit your configuration to a <xref href="../../using_git.dita#topic_u3v_1yz_ct"
               >local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
@@ -78,9 +85,17 @@ rbd_pool = volumes
 rbd_ceph_conf = /etc/ceph/ceph.conf
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
 volume_backend_name = ceph</codeblock><note>The
-              <b>rbd_uuid </b>is available at
-              <codeph>/home/stack/helion/hos/ansible/roles/ceph-client-prepare/vars/ceph_user_model.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
+              <b>rbd_uuid </b>is same as given available at
+              <codeph>/home/stack/helion/my_cloud/config/ceph/settings.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
         <?oxy_custom_end?>
+        <li> Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
+            id="ol_ihn_2l5_kt">
+            <li>Login to controller node as a root user and execute the following
+                  command.<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p><p>You
+                can copy the keyring from the deployer
+                node<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock> to
+                  <codeph>/etc/ceph</codeph> folder on all the controller nodes.</p></li>
+          </ol></li>
         <li>To enable cinder backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
             <codeph>/home/stack/helion/my_cloud/config/cinder</codeph> with the following values:
           <codeblock>backup_driver = cinder.backup.drivers.ceph
@@ -91,13 +106,14 @@ backup_ceph_pool = backups
 backup_ceph_stripe_unit = 0
 backup_ceph_stripe_count = 0
 restore_discard_excess_bytes = true</codeblock></li>
-        <li> Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
+        <li> Copy <codeph>client.cinder-backup.keyring</codeph> to the controller nodes:<ol
             id="ol_xx5_51x_gt">
             <li>Login to controller node as a root user and execute the following
-                  command.<codeblock>ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring</codeblock><p><b>OR</b></p><p>You
+                  command.<codeblock>ceph auth get-or-create client.cinder-backup | tee /etc/ceph/ceph.client.cinder-backup.keyring</codeblock><p><b>OR</b></p><p>You
                 can copy the keyring from the deployer
-                node<codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock> to
-                  <codeph>/etc/ceph</codeph> folder on all the controller nodes.</p></li>
+                node<codeblock>scp /etc/ceph/<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>ceph.client.cinder-backup.keyring<?oxy_custom_end?></codeblock>
+                to <codeph>/etc/ceph</codeph> folder on all the controller nodes.</p></li>
+            <li/>
           </ol></li>
         <li>Commit your configuration to the local repository to configure cinder on the deployer node.<p>
             <codeblock>cd /home/stack/helion/hos/ansible
