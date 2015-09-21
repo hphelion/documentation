@@ -90,7 +90,7 @@ ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
           add ceph configuration data as shown
           below:<codeblock>enabled_backends=ceph1</codeblock></li>
         <li>Copy the following
-            configurations:<codeblock>[ceph1]
+            configurations:<codeblock id="ceph-cinder-conf">[ceph1]
 rbd_max_clone_depth = 5
 rbd_flatten_volume_from_snapshot = False
 rbd_uuid = 457eb676-33da-42ec-9a8c-9293d545c337

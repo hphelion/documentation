@@ -33,7 +33,7 @@
               change with the exiting backend, if you have already added VSA as backend.</note></li>
           <li>Copy 3PAR FC section, uncomment it, and modify the values in the
               <codeph>cinder.conf.j2</codeph> file as shown in the following
-              example:<codeblock>[3par_FC]
+              example:<codeblock id="3par-fc">[3par_FC]
 hp3par_api_url=https://10.1.192.10:8080/api/v1
 hp3par_username=helionadmin
 hp3par_password=helion
@@ -76,7 +76,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
               change with the exiting backend, if you have already added VSA as backend.</note></li>
           <li>Copy 3PAR iSCSI section, uncomment it, and modify the values in the
               <codeph>cinder.conf.j2</codeph> file as shown in the following
-              example:<codeblock>[3par_iSCSI]
+              example:<codeblock id="3par-iscsi">[3par_iSCSI]
 hp3par_api_url=https://10.1.192.10:8080/api/v1
 hp3par_username=helionadmin
 hp3par_password=helion

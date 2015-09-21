@@ -47,11 +47,19 @@
               respective backend used. The backend name is mentioned in the
                 <codeph>cinder.conf</codeph> file.<ul id="ul_u4j_1vz_jt">
                 <li>VSA: You can enter <codeph>vsa-backend-hlm003</codeph> in the <b>Value</b>
-                  field.</li>
-                <li>Ceph: You can enter <codeph>ceph</codeph> in the <b>Value</b> field.</li>
-                <li>3PAR FC: You can enter <codeph>3par_FC</codeph> in the <b>Value</b> field.</li>
+                  field. In value is taken from <xref
+                    href="vsa/vsa.dita#topic_gmc_dgk_jt/vssa-config">VSA cinder.conf.j2</xref>.</li>
+                <li>Ceph: You can enter <codeph>ceph</codeph> in the <b>Value</b> field. In value is
+                  taken from <xref href="ceph/ceph_deploy.dita#topic_jrc_5lz_ft/ceph-cinder-conf"
+                    >Ceph cinder.conf.j2</xref>.</li>
+                <li>3PAR FC: You can enter <codeph>3par_FC</codeph> in the <b>Value</b> field. In
+                  value is taken from <xref
+                    href="3Par/3par_configuration.dita#topic_vln_2xy_ht/3par-fc">3PAR FC
+                    cinder.conf.j2</xref>.</li>
                 <li>3PAR iSCSI : You can enter <codeph>3par_iscsi</codeph> in the <b>Value</b>
-                  field.</li>
+                  field. In value is taken from <xref
+                    href="3Par/3par_configuration.dita#topic_vln_2xy_ht/3par-iscsi">3PAR iSCSI
+                    cinder.conf.j2</xref>.</li>
               </ul></p></li>
           <li>Click <b>Create</b> to create the extra volume type specs. <note> Once the volume type
               is mapped to the backend, you can create volumes with this volume type.</note></li>
