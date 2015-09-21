@@ -31,7 +31,7 @@
       </p>
     </section>
     <section id="associate-volume-backend">
-      <title>Associate the volume type to a backend</title>
+      <title>Associate the Volume Type to a Backend</title>
       <p>To map a volume type to a backend, do the following: <ol id="ol_owv_krv_3t">
           <li>Login to the Horizon dashboard. The Horizon dashboard displays with the options in the
             left panel.</li>

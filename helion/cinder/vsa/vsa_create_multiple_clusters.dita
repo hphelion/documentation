@@ -10,8 +10,8 @@
           cluster.</p></note></p>
     <section>
       <title>Cloud Configuration Changes to Create More Than One Cluster </title>
-      <p>You must edit the YAML files to create more than one cluster. In this cloud configuration
-        changes you are adding or updating the YAML for a same set of disk.</p>
+      <p>You must edit the YAML files to create more than one cluster. In this cloud configuration,
+        you are adding or updating the YAML files for a same set of disk.</p>
       <p>
         <ol id="ol_szq_ltq_jt">
           <li>Add new nodes in <codeph>baremetal_config.yml</codeph> file with unique name and
@@ -236,8 +236,8 @@
     </section>
     <section>
       <title>Cloud Configuration Changes to Create Two Cluster with Different Set of Disks</title>
-      <p>You must edit the YAML files to create more than one cluster. In this cloud configuration
-        changes you are adding or updating the YAML for a different set of disks, i.e., one with
+      <p>You must edit the YAML files to create more than one cluster. In this cloud configuration,
+        you are adding or updating the YAML files for a different set of disks, i.e., one with
         adoptive optimization (AO) enabled and another without adoptive optimization.</p>
       <ol id="ol_ugh_z2x_jt">
         <li>Add new nodes in <codeph>baremetal_config.yml</codeph> with unique name and
