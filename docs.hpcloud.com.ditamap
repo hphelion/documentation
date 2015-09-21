@@ -46,6 +46,13 @@
         locktitle="yes"/>
     </topicref>
     <topicref href="helion/eula.dita" toc="no"/>
+    <!-- BURA -->
+    <topicref href="helion/bura/bura_overview.dita" navtitle="Backup and Restore" locktitle="yes">
+      <topicref href="helion/bura/backup.dita"/>
+      <topicref href="helion/bura/restore.dita"/>
+    </topicref>
+    
+    
     <!-- keystone identity -->
     <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Service"
       locktitle="yes">
@@ -167,11 +174,7 @@
       <topicref href="helion/logging/logging_settings.dita" navtitle="Logging Settings"
         locktitle="yes"/>
     </topicref>
-    <!-- BURA -->
-    <topicref href="helion/bura/bura_overview.dita" navtitle="Backup and Restore" locktitle="yes">
-      <topicref href="helion/bura/backup.dita"/>
-      <topicref href="helion/bura/restore.dita"/>
-    </topicref>
+
     <!-- reporting = metering = ceilomter -->
     <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Service"
       locktitle="yes">
