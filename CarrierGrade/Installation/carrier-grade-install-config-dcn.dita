@@ -29,7 +29,9 @@
         verify that the VSC VMs are installed and are operational:</p>
       <ol id="ol_fkv_xjj_1t">
         <li>SSH to your VSC VM from HLM Host using the DCM IP. The default username and password:
-            <codeph>admin/admin</codeph></li>
+            <codeph>admin/admin</codeph><p>
+            <codeblock>ssh cghelion@&lt;CLM IP of DCN Host&gt;</codeblock>
+          </p></li>
         <li>Execute the following command: <codeblock>admin display-config</codeblock></li>
         <li>Execute the following commands to verify the VMs are active:
           <codeblock>show vswitch-controller vsd
@@ -348,8 +350,8 @@ fi
             the ribbon.</li>
           <li>Right-click the default ingress security policy and click <b>Edit</b>.</li>
           <li>Select <b>Forward IP Traffic by Default</b>. Make sure <b>Make This Policy Active</b>
-            is selected. <p><image href="../../media/CGH-install-ingress.png" id="image_fkf_yp1_ys"
-                width="650">
+            is selected. <p><image href="../../media/CGH-install-ingress-2.png"
+                id="image_fkf_yp1_ys" width="650">
                 <alt>VSD Ingress Rule</alt>
               </image></p></li>
           <li>Click <b>Update</b>.</li>

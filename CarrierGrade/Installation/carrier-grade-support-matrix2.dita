@@ -226,10 +226,11 @@
       <title>Required Hardware Configurations </title>
       <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported Hardware</xref> lists, must be configured as follows for HP Helion OpenStack
         Carrier Grade.</p>
-      <p><b>HLM Host</b>. You must have a server with a 40GB Disk and 8,192 MB RAM for the HLM
-        host.</p>
-      <p id="non-kvm-hos"><b>HP Helion OpenStack Controllers.</b> You must have three (3) baremetal
-        systems to install the HP Helion OpenStack controllers that meet the following requirements: </p>
+      <p>One (1) <b>HLM Host</b>. You must have a server with a 40GB Disk and 8,192 MB RAM for the
+        HLM host.</p>
+      <p id="non-kvm-hos">Three (3) <b>HP Helion OpenStack Controllers.</b> You must have three (3)
+        baremetal systems to install the HP Helion OpenStack controllers that meet the following
+        requirements: </p>
           <ul id="ul_s1h_432_qs">
             <li>For systems with multiple NICs, only one NIC may be active or connected. </li>
             <li>Capable of hosting VMs <!--Remove for RC0 <li>For Compute nodes, Intel or AMD hardware virtualization support required. The CPU
@@ -245,32 +246,31 @@
                 <li>The root volume cannot exceed 2TB</li>
               </ul></li>
           </ul>
-      <p id="kvm-config"><b>KVM controllers</b>. You must have two (2) baremetal systems to install
-        the KVM region controllers. For systems with multiple NICs, only one NIC may be active or
-        connected. </p>
-      <p><b>KVM compute servers</b>. You must have two (2) or more baremetal systems to install the
-        KVM region compute servers.</p>
-      <p><b>KVM region NICs.</b> The following NICs have been verified for PXE booting of KVM region
-        servers:</p>
-      <ul id="ul_sdq_q1f_qs">
-        <li>Emulex 10G
-        </li>
-        <li>Intel 82599</li>
-      </ul>
-          <p><b>Important:</b> Using the correct NICs is essential to proper installation of HP
-            Helion OpenStack Carrier Grade.</p>
+      <p id="kvm-config">Two (2) <b>KVM controllers</b>. You must have two (2) baremetal systems to
+        install the KVM region controllers. For systems with multiple NICs, only one NIC may be
+        active or connected. </p>
+      <p>Two (2) <b>KVM compute servers</b>. You must have two (2) or more baremetal systems to
+        install the KVM region compute servers.</p>
+      
+        <ul id="ul_lwc_ltz_jt">
+          <li><b>KVM region NICs.</b> The following NICs have been verified for PXE booting of KVM
+          region servers: <ul id="ul_sdq_q1f_qs">
+            <li>Emulex 10G </li>
+            <li>Intel 82599 </li>
+          </ul><p><b>Important:</b> Using the correct NICs is essential to proper installation of HP
+            Helion OpenStack Carrier Grade.</p></li></ul>
       
     <p><b><i>For a KVM and ESX cloud topology</i></b></p>
     <p>
         <ul id="ul_s3d_pmx_dt">
-          <li><b>ESX components</b>. You must have a minimum of two (2) baremetal systems for ESXi
-            hosts. 1 – 4 ESXi clusters are supported. Refer to the ESX documentation for the
+          <li>Two (2) <b>ESX hosts</b>. You must have a minimum of two (2) baremetal systems for
+            ESXi hosts. 1 – 4 ESXi clusters are supported. Refer to the ESX documentation for the
             supported hardware configurations. <ul>
               <li> vSphere Cluster running ESXi 5.5u2 with vMotion enabled.</li>
               <li>1 Virtual Machine Port Group with all Cloud Vlans associated to the Port Group.
               </li>
             </ul><p><b>Note:</b> These systems are not required for a KVM-only cloud.</p></li>
-    <li><b>DCN components</b>. You must have: <ul>
+    <li>Two (2) <b>DCN hosts</b>. You must have: <ul>
               <li>two (2) baremetal systems for DCN VSC controllers (HA mode) </li>
               <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
               <li>VRSvApp requirements VRSvApp must be installed. Please Refer to the DCN VSP 3.0 R7

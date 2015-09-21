@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Troubleshooting</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>This topic describes all the known issues that you might encounter. </p>
+    <section>
+      <title>Installation Issues</title>
+      <p>Installation failure during hConfig</p>
+      <p>Installation failure during hnetinit</p>
+      <p>Installation failure during hDeploy</p>
+      <p>Running Ansible roles starting at a specific role</p>
+      <p>VSC installation failure</p>
+      <p>VSC-VSD communication failure</p>
+      <p>VSC not showing up VRS and VRS-G</p>
+      <p>Failure to start services:</p>
+      <ul id="ul_cp4_r25_jt">
+        <li>
+          <p>Keystone service</p>
+        </li>
+        <li>
+          <p>LDAP service</p>
+        </li>
+        <li>
+          <p>Neutron-server service </p>
+        </li>
+        <li>
+          <p>Nova service </p>
+        </li>
+      </ul>
+    </section>
+    <section><title>Network Issues</title>VM failure<p>Floating IPissues</p><p>Fixed and FIP
+        successful but can’t ping/ssh to the VM </p></section>
+    <section>
+      <title>Configuration Issues</title>
+      <p>VM failure to get private/Fixed IP address</p>
+    </section>
+    <section><title>Compute Node Issues</title>
+    <p>WR compute nodes</p>
+    <p>ESXi compute nodes</p>
+    <p>VRSvAPP deployment failure  </p>
+    <p>ESXi host in maintenance mode</p>
+    <p>VMs are accessible on rebooting Nova Compute Proxy </p>
+    <p>VRSvAPP got migrated to other Hypervisor after reboot </p>
+    </section>
+    
+    <section><title>Cloud Controller Issues</title>
+      <p>MySQL database cluster failure</p>
+    <p>Launching anESXi instance fails during the spawning state</p>
+    <p>Unable to attach an iSCSI volume to a Hyper-V-provisioned instance </p>
+    </section>
+    <section>
+      <title>OpenStack User Portal Issues</title> 
+      <p>Users cannot login to the OpenStack user portal</p>         
+    </section>
+    <section><title>ELK Issues</title>
+      <p>Status of one Cloud controller is undetermined</p>
+      <p>CPU information of Hypervisors not available</p>  
+    </section>
+      
+      <!--Troubleshoot multi-region issues--> 
+     <section> 
+       <p>Backup and Restore Issues</p>
+       <p>Backing up failure</p>
+       <p>Restore failure</p>
+     </section>
+  </body>
+</topic>

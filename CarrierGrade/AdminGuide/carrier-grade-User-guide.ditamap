@@ -18,8 +18,6 @@
         </bookid -->
     </topicmeta>
     <topicref href="CGH-2-User-Overview.dita" navtitle="User Guide" locktitle="yes">
-        <topicref href="CGH-2-User-Network-Reqs.dita"/>
-        <topicref href="CGH-2-Linux-Accounts.dita"/>
         <topicref href="Dashboard/CGH-2-User-Dasboard-Controls.dita">
             <topicref href="Dashboard/CGH-2-User-Dashboard-launch.dita"
                 navtitle="Logging into the Helion Dashboard" locktitle="yes"/>

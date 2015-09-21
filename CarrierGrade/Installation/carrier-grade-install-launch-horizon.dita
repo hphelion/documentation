@@ -45,14 +45,14 @@ Password: cghelion</codeblock>
     <section>
       <title>Import the Horizon browser certificate</title>
       <p>After applying the Horizon patch, you need to import the Horizon security certificate
-        (<codeph>ca.crt</codeph>) into your browser. The <codeph>ca.crt</codeph> is available in
-        the HLM VM in the <codeph>~/&lt;cloudname></codeph> folder.</p>
+          (<codeph>ca.crt</codeph>) into your browser. The <codeph>ca.crt</codeph> is available in
+        the HLM VM in the <codeph>~/&lt;cloudname></codeph> folder. You can use any file transfer
+        program to move the certificate file from the HLM VM to the local system.</p>
       <p>Use the instructions provided by the browser manufacturer to import the
         <codeph>ca.crt</codeph> file. For a list of browsers supported by OpenStack, see <xref
           href="https://wiki.openstack.org/wiki/Horizon/BrowserSupport" format="html"
           scope="external">https://wiki.openstack.org/wiki/Horizon/BrowserSupport</xref>.</p>
       <p>Also, clear the cache from the browser.</p>
-      <p/>
     </section>
     <section><title>Disabling the root user</title>
       <p>For security purposes, we strongly recommend disabling root. After the <codeph>root</codeph>
@@ -78,16 +78,17 @@ Password: cghelion</codeblock>
       <title>Login to Horizon</title>
       <p>At this point, you can log into the Horizon interface, a web-interface you can use to
         manage and maintain HP Helion OpenStack Carrier Grade. Use the <xref href="#topic10581/CAN"
-          format="dita">CAN IP address</xref> to launch Horizon. </p>
+          format="dita">CAN IP address</xref> to launch Horizon. You can locate the CAN IP address
+        in the <codeph>/root/stackrc</codeph> file on any of the controller nodes in the non-KVM
+        region.</p>
+      <p>The CAN IP address contains port <codeph>5000</codeph>. </p>
       <p>
         <codeblock>https://&lt;CAN_IP></codeblock>
       </p>
-      <p>The default credentials are:</p>
-      <codeblock>login: admin
-        password: admin        </codeblock>
-      <p id="CAN">You can locate the CAN IP address in the <codeph>/root/stackrc</codeph> file on any of the
-        controller nodes in the non-KVM region.</p>
-      <p>The CAN IP address contains port <codeph>5000</codeph>. </p>
+      <p>By default, the user name is <codeph>admin</codeph>. You can find the installation password
+        for <codeph>admin</codeph> in the <codeph>/root/stackrc</codeph> file from any of the
+        controller node. If this is the first time you log in with that user name, make sure you
+        change the password</p>
       <p>For example:</p>
       <codeblock>root@B53NEW-CCP-T2-M1-NETCLM:~# cat /root/stackrc
         export OS_PASSWORD=admin
@@ -97,8 +98,8 @@ Password: cghelion</codeblock>
         export OS_AUTH_URL=https://10.x.x.x:5000/v2.0
         export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt </codeblock>
       <p>In this case, the CAN IP address is located in the
-        <codeph>OS_AUTH_URL=https://10.x.x.x:5000/v2.0</codeph> line. You would log in using
-        <codeph>https://10.x.x.x</codeph>.</p>
+          <codeph>OS_AUTH_URL=https://10.x.x.x:5000/v2.0</codeph> line. You would log in using
+          <codeph>https://10.x.x.x</codeph>.</p>
       <p>The Horizon interface appears similar to the following:</p>
       <p><image href="../../media/CGH-install-horizon.png" id="image_rcc_td1_1t"/></p>
     </section>

@@ -129,9 +129,9 @@
         some but not all NICs, provides a mechanism by which a single Ethernet port can appear to be
         multiple separate physical devices. This enables a single NIC to be shared between multiple
         VMs.</p>
-      <p><b> Accelerated vSwitch (AVS)</b>.  AVS is an optimization of Open vSwitch (OVS) technology
-        for NFV environments. Open vSwitch is a multilayer software switch licensed under the open
-        source Apache 2 license.</p>
+      <p><b> Accelerated vSwitch (AVS)</b>. AVS is integrated into the servers in the KVM region.
+        AVS is an optimization of Open vSwitch (OVS) technology for NFV environments. Open vSwitch
+        is a multilayer software switch licensed under the open source Apache 2 license.</p>
     </section>
     <section><title>Installation Options</title>HP Helion OpenStack Carreir Grade has two baremetal
       installation options depending on your system configuration. It allows you to manage the KVM

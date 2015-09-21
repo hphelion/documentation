@@ -129,17 +129,17 @@ ovs_type OVSPort
 </codeph></codeblock></li>
 <li>Execute the following command to check the
                     output:<codeblock>ovs-vsctl show 
-
 706add53-21a4-4062-9149-d7bd77896076
-ovs_version: "2.0.2"
-</codeblock></li>
+ovs_version: "2.0.2"</codeblock></li>
 </ol>
 </section>
 <section id="create-the-networks-for-associating-with-the-hlm-virtual-machine"> <title>Create the networks for associating with the HLM virtual machine</title>
 <p>The installation process will create a virtual machine for HP Helion Lifecycle Management.</p>
 <p>Perform the following steps to enable networks that will be associated with HLM VM.</p>
 <ol>
-<li>Launch a terminal and log in to your KVM host as root:<p>sudo su -</p></li>
+<li>Launch a terminal and log in to your KVM host as root:<p>
+                        <codeblock>sudo su -</codeblock>
+                    </p></li>
 <li>Create the <codeph>br-clm</codeph> network by creating an XML definition file:<p>a. Manually
                         create the XML
                         file:</p><codeblock><codeph>cat br-clm.xml

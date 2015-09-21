@@ -254,39 +254,10 @@ StrictHostKeyChecking no </codeblock></li>
                 <section id="getinstall">
                         <title>Download and unpack the installation packages</title>
                         <p>Before you begin, you must download the required HP Helion OpenStack
-                                installation package(s). Launch the <xref
-                                        href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-                                        format="html" scope="external">Helion Distribution Network
-                                        (HDN)</xref>. You must <xref
-                                        href="https://idm.pod1.prod-core.hpwsportal.com/webid/"
-                                        format="html" scope="external">obtain a user account on
-                                        HDN</xref> in order to download these files. </p>
-                        <p>Click the <b>Downloads</b> tab and locate the following downloads. <ul
-                                        id="ul_dcw_yld_gt">
-                                        <li><b>Helion Carrier Grade 1.1.0</b>. Installation files
-                                                for HP Helion OpenStack Carrier Grade. This link
-                                                will download the <codeph>hcg.1.1.0.tar</codeph>
-                                                file. Also download the <b>
-                                                  Helion Carrier Grade 1.1.0 Checksum File</b> and
-                                                  <b id="productShow_appName">Helion Carrier Grade
-                                                  1.1.0 Signature File</b>.</li>
-                                        <li><b>Helion Carrier Grade 1.1.0 Wind River License
-                                                  Patch</b>. Required license file for the KVM
-                                                region servers. Also download the <b> Helion Carrier
-                                                  Grade 1.1.0 Windriver License patch checksum
-                                                  file</b> and <b> Helion Carrier Grade 1.1.0
-                                                  Windriver License patch signature file</b>.</li>
-                                        <li><b>Horizon Patch Tar File for Helion Carrier Grade
-                                                  1.1.0</b>. Required patch for the Horizon UI. Also
-                                                download the <b> Helion Carrier Grade 1.1.0 Horizon
-                                                  Patch  Checksum File</b> and  <b>Helion Carrier
-                                                  Grade 1.1.0 Horizon Patch Signature File</b>.</li>
-                                        <li><b>GPG keys to verify signature files</b>. A set of GPG
-                                                keys to verify download signatures.
-                                                GPG-HPCSS-Public-Keys(1).tar</li>
-                                </ul></p>
-                        <p><b>Note:</b> When downloading installation files, always download and
-                                verify the signature file before installing. </p>
+                                installation package(s). </p>
+                        <p><image href="../../media/CGH-2-install-download-alpha.png" width="600"
+                                        id="image_nxb_jxz_jt"/></p>
+                        <!--<p>Launch the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Distribution Network (HDN)</xref>. You must <xref href="https://idm.pod1.prod-core.hpwsportal.com/webid/" format="html" scope="external">obtain a user account on HDN</xref> in order to download these files. </p><p>Click the <b>Downloads</b> tab and locate the following downloads. <ul id="ul_dcw_yld_gt"><li><b>Helion Carrier Grade 1.1.0</b>. Installation files for HP Helion OpenStack Carrier Grade. This link will download the <codeph>hcg.1.1.0.tar</codeph> file. Also download the <b> Helion Carrier Grade 1.1.0 Checksum File</b> and <b id="productShow_appName">Helion Carrier Grade 1.1.0 Signature File</b>.</li><li><b>Helion Carrier Grade 1.1.0 Wind River License Patch</b>. Required license file for the KVM region servers. Also download the <b> Helion Carrier Grade 1.1.0 Windriver License patch checksum file</b> and <b> Helion Carrier Grade 1.1.0 Windriver License patch signature file</b>.</li><li><b>Horizon Patch Tar File for Helion Carrier Grade 1.1.0</b>. Required patch for the Horizon UI. Also download the <b> Helion Carrier Grade 1.1.0 Horizon Patch Checksum File</b> and <b>Helion Carrier Grade 1.1.0 Horizon Patch Signature File</b>.</li><li><b>GPG keys to verify signature files</b>. A set of GPG keys to verify download signatures. GPG-HPCSS-Public-Keys(1).tar</li></ul></p><p><b>Note:</b> When downloading installation files, always download and verify the signature file before installing. </p>-->
                         <!--<ol>
                                 
                                 <li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download the following files: <ul><li><b>Helion Carrier Grade 2.0.0</b>. The file is named <codeph>hcg_1.1.0.tar</codeph>. Also download the <b>Helion Carrier Grade 2.0.0 Checksum</b> and <b>Helion Carrier Grade 2.0.0 Signature</b> files.</li><li><b>Horizon Patch Tar File for Helion Carrier Grade</b>. The file is named <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>. Also download the <b>Horizon Patch Tar File for Helion Carrier Grade Checksum</b> and <b>Horizon Patch Tar File for Helion Carrier Grade Signature</b> files.</li><li><b id="productShow_apcodeph">Helion Carrier Grade 1.1.0 Windriver License patch signature file</b> and the <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file signature and <b>Helion Carrier Grade 2.0.0 Windriver License patch</b> signature file checksum files.</li><li>LDAP patch. Download the <codeph>ldap_patch_1.1.tar.gz and hoscg-update.tgz</codeph> file. </li><li>Compute Proxy patch. Dowload the <codeph>compute_proxy_patch_1.1.tar.gz</codeph> file.</li><li>GRE tunnel. Download the <codeph>gre_patch_1.1.tar.gz</codeph> file. </li><li>HLM port security patch. Download the <codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph> file.</li><li>Rabbit MQ Random Password patch. Download the <codeph>random-password.tar.gz</codeph> file.</li><li>Helion Dynamic Password patch. Download the <codeph>horizon_web_patch_1.1.tar.gz</codeph> file.</li><li>NIC Bonding Patch. If you are using bonded NIC, download the <codeph>cg-hos-nic-bonding.patch</codeph> file.</li><li><b>GPG keys to verify signature files</b>. This file is named <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li></ul></li>
@@ -297,52 +268,13 @@ StrictHostKeyChecking no </codeblock></li>
                                                 signature and checksums</xref>. </li>
                         </ol>-->
                 </section>
-                <section id="verify">
-                        <title>Verify the downloaded signature</title>
-                        <p>After downloading the installation packages, you should verify the
-                                signature of the download. You can use the GPG utility, which is
-                                already installed on the HLM node. Signed by the signature file.</p>
-                        <p>A set of GPG public keys are available on <xref
-                                        href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-                                        format="html" scope="external">Helion Download
-                                        Network(HDN)</xref> . If you did not download the public
-                                keys in the previous section, click the <b>GPG keys to verify
-                                        signature files</b> link in HDN to download the
-                                        <codeph>cg-hos.tar.gz.gpg</codeph> file. </p>
-                        <ol>
-                                <li>Copy the  <codeph>GPG-HPCSS-Public-Keys.tar</codeph>  file to
-                                        the <codeph>/root/cg/</codeph> directory. You wlll need to
-                                        create this
-                                        directory:<codeblock>mkdir /root/cg/</codeblock></li>
-                                <li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph>
-                                        file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li>
-                                <li>Copy the public keys to the HLM host server, extract the keys
-                                        from the compressed files. <p>The following keys are
-                                                included in the download:</p><ul id="ul_uzg_xmq_bt">
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-1.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-2.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-3.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-4.pub</li>
-                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-5.pub</li>
-                                                <li>hpPublicKey.pub</li>
-                                                <li>hpPublicKey2048.pub</li>
-                                        </ul></li>
-                                <li>Execute the following command to import the keys:
-                                                <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where
-                                                &lt;filename> is the name of the extracted
-                                                file.</p><p>The keys are then imported into the gpgp
-                                                key share:
-                                                <codeblock>gpg -\-import hpPublicKey.pub 
+                <!--<section id="verify"><title>Verify the downloaded signature</title><p>After downloading the installation packages, you should verify the signature of the download. You can use the GPG utility, which is already installed on the HLM node. Signed by the signature file.</p><p>A set of GPG public keys are available on <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref> . If you did not download the public keys in the previous section, click the <b>GPG keys to verify signature files</b> link in HDN to download the <codeph>cg-hos.tar.gz.gpg</codeph> file. </p><ol><li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the <codeph>/root/cg/</codeph> directory. You wlll need to create this directory:<codeblock>mkdir /root/cg/</codeblock></li><li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li><li>Copy the public keys to the HLM host server, extract the keys from the compressed files. <p>The following keys are included in the download:</p><ul id="ul_uzg_xmq_bt"><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-1.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-2.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-3.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-4.pub</li><li>Hewlett-PackardCompanyRSA(HPCodesigningService)-5.pub</li><li>hpPublicKey.pub</li><li>hpPublicKey2048.pub</li></ul></li><li>Execute the following command to import the keys: <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where &lt;filename> is the name of the extracted file.</p><p>The keys are then imported into the gpgp key share: <codeblock>gpg -\-import hpPublicKey.pub 
 gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-1.pub 
 gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-2.pub 
 gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-3.pub 
 gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-4.pub 
 gpg -\-import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-5.pub 
-gpg -\-import hpPublicKey2048.pub </codeblock></p></li>
-                                <li>Use the following command to view the keys in the key store:
-                                                <codeblock>gpg -\-list-keys</codeblock><p>The key
-                                                store appears similar to the
-                                        following:</p><codeblock>/home/sad/.gnupg/pubring.gpg
+gpg -\-import hpPublicKey2048.pub </codeblock></p></li><li>Use the following command to view the keys in the key store: <codeblock>gpg -\-list-keys</codeblock><p>The key store appears similar to the following:</p><codeblock>/home/sad/.gnupg/pubring.gpg
   -\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 pub   2048R/F7191CB9 2014-12-19
 pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
@@ -358,21 +290,11 @@ uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 4
 pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
 uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 5
 pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
-uid                  Hewlett-Packard Company RSA (HP Codesigning Service)        </codeblock></li>
-                                <li>Use the following command to verify the signature:
-                                                <codeblock>gpg -\-verify ./hcg_1.1.0.tar.sig ./hcg_1.1.0.tar  </codeblock><p>The
-                                                output for the command appears similar to the
-                                                following. This indicates the signature is verified:
-                                                  <b>Good signature from "Hewlett-Packard Company
-                                                  RSA (HP Codesigning
-                                        Service)</b>.</p><codeblock>gpg: Signature made Wed 22 Jul 2015 01:23:24 PM EDT using RSA key ID C6978F0C
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service)        </codeblock></li><li>Use the following command to verify the signature: <codeblock>gpg -\-verify ./hcg_1.1.0.tar.sig ./hcg_1.1.0.tar  </codeblock><p>The output for the command appears similar to the following. This indicates the signature is verified: <b>Good signature from "Hewlett-Packard Company RSA (HP Codesigning Service)</b>.</p><codeblock>gpg: Signature made Wed 22 Jul 2015 01:23:24 PM EDT using RSA key ID C6978F0C
 gpg: Good signature from "Hewlett-Packard Company RSA (HP Codesigning Service) - 5"
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg: There is no indication that the signature belongs to the owner.
-Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li>
-                                <li>Perform this verification for each file you downloaded.</li>
-                        </ol>
-                </section>
+Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li><li>Perform this verification for each file you downloaded.</li></ol></section>-->
                 <section id="checksum">
                         <title>Verify the downloaded checksums</title>
                         <p>You should also use a checksum verification tool, such as sha256sum,
@@ -467,7 +389,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <p>Note:
                                                   <b>E:\sFTP\HCG2.0\DCN3.2bits-For-build9\compute-proxy</b></p>
                                                   </entry>
-                                                  <entry>Will be uploaded to ESX Cluster</entry>
+                                                  <entry>Uploaded to the ESX Cluster</entry>
                                                   <entry> </entry>
                                                 </row>
                                         </tbody>
@@ -611,6 +533,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                 </section>
                 <section>
                         <title>Bring Up Single VSD VM Manually</title>
+                        <p><b>Note:</b> This is applicable only for KVM + ESX Cloud Deployment. </p>
                         <p>You must launch a virtual machine for the required HP DCN Virtualized
                                 Services Directory (<i>VSD</i>) and create required users.</p>
                         <p>For more information, see <xref

@@ -48,7 +48,7 @@ GATEWAY=10.20.5.1</codeblock></p></li>
                     is configured on the DNS server:<p><image
                             href="../../media/CGH-2-hosts-file-temp.png" id="image_e4j_42l_2t"
                     /></p></li>
-                <li>Execute the following command in order for the VSD VM hostname to be reflected
+                <li>Execute the following command in order for the VSD VM host name to be reflected
                     in the <i>/etc/hosts</i> file:
                     <codeblock>service network restart </codeblock></li>
                 <li>Exit the VSD VM console session, then log back in. You should see the VSD name
@@ -71,8 +71,8 @@ service ntpd start</codeblock><p>Where
                 <li>Verify that NTP is synchronized. The synchronization process usually takes 10 to
                     15 minutes. <image href="../../media/CGH-2-ntp-verify-time.png" height="68"
                         width="328" id="image_ntd_b1l_2t"/></li>
-                <li>After NTP is properly synchronized,execute the Install
-                    script:<codeblock> /opt/vsd/install.sh xmpp.dcn-two.helion.cg -t s -y</codeblock></li>
+                <li>After NTP is properly synchronized,execute the install
+                    script:<codeblock> /opt/vsd/install.sh xmpp.&lt;domain_name> -t s -y</codeblock></li>
             </ol>
             <b>Verify that VSD is installed</b>
             <ol id="ol_mgf_hgl_2t">
@@ -129,7 +129,6 @@ VSD Server : auto</codeblock><p>The
                 <li>Click the Groups icon to add the user to the CMS Group</li>
                 <li>Select the <b>CMS Group</b>, then click the link icon click <b>OSadmin</b>.</li>
             </ol>
-            <p> </p>
         </section>
     </body>
 </topic>
