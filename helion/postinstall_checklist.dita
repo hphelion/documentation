@@ -58,7 +58,8 @@
           <codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock>
           <p>The table below shows the optional switches you can use as part of this playbook to
             specify environment-specific information:</p>
-          <p><table frame="all" rowsep="1" colsep="1" id="table_yqt_wqw_kt">
+          <p>
+            <table frame="all" rowsep="1" colsep="1" id="table_yqt_wqw_kt">
               <title/>
               <tgroup cols="2">
                 <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -84,7 +85,8 @@
                   </row>
                 </tbody>
               </tgroup>
-            </table>table</p></li>
+            </table>
+          </p></li>
         <li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the
           deployer:
           <codeblock>ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml</codeblock> As the
