@@ -130,7 +130,7 @@ baremetal_servers:
       If you need to modify these for your environment they are defined in<b>
         data/net_interfaces.yml</b>. </section>
     
-    <section><title>Local Storage </title></section>
+    <section><b>Local Storage </b></section>
     
     <section>Each server should present a single OS disc, protected by a RAID controller. In
       addition the example configures one additional disk depending on the role of the server:
@@ -142,21 +142,21 @@ baremetal_servers:
     
     <section><title>Single region cloud on ESX</title> Choosing this model will result in a cloud
       that has the following characteristics: </section>
-    <section><title>Control Planes</title> </section>
+    <section><b>Control Planes</b> </section>
     <section>A single control plane consisting of three servers that co-host all of the required
       services. Optionally, the deployer can reside on a control plane node, reducing the number of
       servers by one. Separate instructions are available for that option. The defaults for this
       model are described below. </section>
-    <section><title>Resource Pools</title> One compute proxy Node ( 1 per cluster in vCenter) Two OvsVapp Nodes ( 1
+    <section><b>Resource Pools</b> One compute proxy Node ( 1 per cluster in vCenter) Two OvsVapp Nodes ( 1
       per ESX host in the cluster ) Additional resource nodes can be added to the configuration.
       Minimal Swift Resources are provided by the control plane </section>
-    <section><title>Deployer Node</title> </section>
+    <section><b>Deployer Node</b> </section>
     <section>A dedicated deployer node is used in this model. The minimum server count for this
       example is therefore 6 servers (Deployer + Control Plane (x3) + 1 vCenter with 1 cluster)* The
       set of servers will be defined with the values you enter here. If you are using the GUI
       deployer, behind the scenes, it will enter your values into <b>data/barmetalConfig.yml</b>. If
       not, you must enter them there.</section>
-    <section><title>Networking</title> </section>
+    <section><b>Networking</b> </section>
     <section>The example requires the following networks: <ul id="ul_lh3_cgv_kt">
         <li>IMPI/iLO network, connected to the deployer and the IPMI/iLO ports of all servers. </li>
         <li> A network connected to a dedicated NIC on each server used to install the OS and
@@ -179,7 +179,7 @@ baremetal_servers:
       refer to it later for reference. </section>
     <section>The example uses eth2 for the install network and eth3 and eth4 for the bonded network.
       If you need to modify these for your environment they are defined in data/net_interfaces.yml. </section>
-    <section><title>Local Storage</title> </section>
+    <section><b>Local Storage</b> </section>
     <section>Each server should present a single OS disc, protected by a RAID controller. In
       addition the example configures one additional disk depending on the role of the server: 
     <ul><li>Controllers: /dev/sdb is configured to be used by Swift</li></ul> Additional discs can be
