@@ -87,7 +87,7 @@ baremetal_servers:
     </section>-->
     
     <section><title>Single Region Cloud with VSA (on KVM)</title> Choosing this model will result in
-      a cloud with ESX hypervisor that has the following characteristics: </section>
+      a cloud with that has the following characteristics: </section>
     <section><b>Control Planes </b></section>
     <section>A single control plane consisting of three servers that co-host all of the required
       services. Optionally, the deployer can reside on a control plane node, reducing the number of
@@ -101,68 +101,62 @@ baremetal_servers:
       Resources are provided by the control plane </section>
     <section><b>Deployer Node </b></section>
     <section>A dedicated deployer node is used in this model. The minimum server count for this
-      example is therefore 6 servers (Deployer + Control Plane (x3) + 1 vCenter with 1 cluster)* The
-      set of servers will be defined with the values you enter here. Behind the scenes, the deployer
-      will enter your values into data/barmetalConfig.yml. You may want to look at the file later
-      for reference. </section>
+      example is therefore 6 servers (Deployer + Control Plane (x3) + 1 vCenter with 1 cluster). The
+      set of servers will be defined with the values you enter here. If you are using the GUI
+      deployer, behind the scenes, it will enter your values into <b>data/barmetalConfig.yml</b>. If
+      not, you must enter them there.</section>
     <section><b>Networking </b></section>
-    <section>The example requires the following networks: 
-      <ul><li>
-        IMPI/iLO network, connected to the
-        deployer and the IPMI/iLO ports of all servers. </li><li>
-      A network connected to a dedicated NIC on each
-      server used to install the OS and install and configure Helion. </li><li>
-      A pair of bonded NICs which
-      are used used by the following networks: 
-      <ul><li>
-      
-      External API - This is the network that users will
-      use to make requests to the cloud </li><li>
-      
-      External VM - This is the network that will be used to
-      provide access to VMs (via floating IP addresses) </li><li>
-      
-      Guest - This is the network that will carry
-      traffic between VMs on private networks within the cloud </li><li>
-      
-      Cloud Management - This is the
-      network that will be used for all internal traffic between the cloud services </li></ul>
-      </li></ul>
-      Note that the
-      EXTERNAL_API network must be reachable from the EXTERNAL_VM network if you want VMS to be able
-      to make API calls to the cloud. An example set of networks are defined in data/networks.yml.
-      The installer will populate this file with your values, but you can refer to it later for
-      reference. The example uses eth2 for the install network and eth3 and eth4 for the bonded
-      network. If you need to modify these for your environment they are defined in
-      data/net_interfaces.yml. </section>
+    <section>The example requires the following networks: <ul id="ul_cjb_gkv_kt">
+        <li> IMPI/iLO network, connected to the deployer and the IPMI/iLO ports of all servers. </li>
+        <li> A network connected to a dedicated NIC on each server used to install the OS and
+          install and configure Helion. </li>
+        <li> A pair of bonded NICs which are used used by the following networks: <ul
+            id="ul_rkb_gkv_kt">
+            <li> External API - This is the network that users will use to make requests to the
+              cloud </li>
+            <li> External VM - This is the network that will be used to provide access to VMs (via
+              floating IP addresses) </li>
+            <li> Guest - This is the network that will carry traffic between VMs on private networks
+              within the cloud </li>
+            <li> Cloud Management - This is the network that will be used for all internal traffic
+              between the cloud services </li>
+          </ul>
+        </li>
+      </ul> Note that the EXTERNAL_API network must be reachable from the EXTERNAL_VM network if you
+      want VMs to be able to make API calls to the cloud. An example set of networks are defined in
+        <b>data/networks.yml</b>. If you are using the GUI installer, it will populate this file
+      with your values; otherwise, you will need to enter your values here. </section>
+    <section>The example uses eth2 for the install network and eth3 and eth4 for the bonded network.
+      If you need to modify these for your environment they are defined in<b>
+        data/net_interfaces.yml</b>. </section>
     
-    <section><title>Local Storage </title></section>
+    <section><b>Local Storage </b></section>
     
     <section>Each server should present a single OS disc, protected by a RAID controller. In
       addition the example configures one additional disk depending on the role of the server:
-      Controllers: /dev/sdb is configured to be used by Swift Additional discs can be configured for
-      any of these roles by adding them in the appropriate section. As this installer runs, it will
-      edit the appropriate configuration files; however, if you would like to see the file or edit
-      it later, it is data/disks_.yml. </section>
+      Controllers: /dev/sdb is configured to be used by Swift.</section>
+    <section> Additional discs can be configured for any of these roles by adding them in the
+      appropriate section. If you are using the GUI installer, it will edit the appropriate
+      configuration files; otherwise, you must enter your values in <b>data/disks_.yml</b>. </section>
     
     
-    <section><title>Single region cloud on ESX</title> Choosing this model will result in a cloud
-      with ESX hypervisor that has the following characteristics: </section>
-    <section><title>Control Planes</title> </section>
+    <section><title>Single Region Cloud (on ESX)</title> Choosing this model will result in a cloud
+      that has the following characteristics: </section>
+    <section><b>Control Planes</b> </section>
     <section>A single control plane consisting of three servers that co-host all of the required
       services. Optionally, the deployer can reside on a control plane node, reducing the number of
       servers by one. Separate instructions are available for that option. The defaults for this
       model are described below. </section>
-    <section><title>Resource Pools</title> One compute proxy Node ( 1 per cluster in vCenter) Two OvsVapp Nodes ( 1
+    <section><b>Resource Pools</b> One compute proxy Node ( 1 per cluster in vCenter) Two OvsVapp Nodes ( 1
       per ESX host in the cluster ) Additional resource nodes can be added to the configuration.
       Minimal Swift Resources are provided by the control plane </section>
-    <section><title>Deployer Node</title> </section>
+    <section><b>Deployer Node</b> </section>
     <section>A dedicated deployer node is used in this model. The minimum server count for this
       example is therefore 6 servers (Deployer + Control Plane (x3) + 1 vCenter with 1 cluster)* The
-      set of servers will be defined with the values you enter here. Behind the scenes, the deployer
-      will enter your values into data/barmetalConfig.yml. You may want to look at the file later
-      for reference. </section>
-    <section><title>Networking</title> </section>
+      set of servers will be defined with the values you enter here. If you are using the GUI
+      deployer, behind the scenes, it will enter your values into <b>data/barmetalConfig.yml</b>. If
+      not, you must enter them there.</section>
+    <section><b>Networking</b> </section>
     <section>The example requires the following networks: <ul id="ul_lh3_cgv_kt">
         <li>IMPI/iLO network, connected to the deployer and the IPMI/iLO ports of all servers. </li>
         <li> A network connected to a dedicated NIC on each server used to install the OS and
@@ -179,19 +173,21 @@ baremetal_servers:
               between the cloud services </li>
           </ul></li>
       </ul> Note that the EXTERNAL_API network must be reachable from the EXTERNAL_VM network if you
-      want VMS to be able to make API calls to the cloud. </section>
-    <section>An example set of networks are defined in data/networks.yml. </section>
-    <section>If you use the GUI installer, it  will populate this file with your values, but you can
-      refer to it later for reference. </section>
+      want VMs to be able to make API calls to the cloud. </section>
+    <section>An example set of networks are defined in <b>data/networks.yml</b>. </section>
+    <section>If you use the GUI installer, it will populate this file with your values; otherwise,
+      you must enter your values there. </section>
     <section>The example uses eth2 for the install network and eth3 and eth4 for the bonded network.
-      If you need to modify these for your environment they are defined in data/net_interfaces.yml. </section>
-    <section><title>Local Storage</title> </section>
+      If you need to modify these for your environment they are defined in
+        <b>data/net_interfaces.yml</b>. </section>
+    <section><b>Local Storage</b> </section>
     <section>Each server should present a single OS disc, protected by a RAID controller. In
-      addition the example configures one additional disk depending on the role of the server: 
-    <ul><li>Controllers: /dev/sdb is configured to be used by Swift</li></ul> Additional discs can be
-      configured for any of these roles by adding them in the appropriate section. As this installer
-      runs, it will edit the appropriate configuration files; however, if you would like to see the
-      file or edit it later, it is data/disks_.yml. </section>
+      addition the example configures one additional disk depending on the role of the server: <ul>
+        <li>Controllers: /dev/sdb is configured to be used by Swift</li>
+      </ul> Additional discs can be configured for any of these roles by adding them in the
+      appropriate section. If you are using the GUI installer, it will edit the appropriate
+      configuration files; otherwise, you must enter them in <b>data/disks_.yml.</b>
+    </section>
     <section id="diagrams">
       <title>Configuration Illustrations</title>
       <p>The following diagram depicts a deployment scenario using the KVM hypervisor:</p>
