@@ -142,7 +142,7 @@
       <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock>
       <p>The output of that command will show you the VIP you should use. It is listening over port
         9095 on that VIP, so you can use the following syntax to access
-        it:<codeblock>http://VIP:9095</codeblock>.</p>
+        it:<codeblock>http://VIP:9095</codeblock></p>
     </section>
   </body>
 </topic>
