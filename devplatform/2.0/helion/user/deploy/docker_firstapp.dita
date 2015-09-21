@@ -16,15 +16,16 @@
         each separate Dockerfile. This example includes both methods.</p>
     </section>
     
-    <section><title>Prerequisites </title> Before attempting to create Docker applications, ensure
-      you have the following: <ul>
+    <section><title>Prerequisites </title><note type="important">For security, Docker container
+        deployments are disabled. The organization administrator needs to explicitly <xref
+          href="container_enable_deployment.dita#topic_qs2_sgy_kt">enable container
+        deployments</xref>.</note> Before attempting to create Docker applications, ensure you have
+      the following: <ul>
         <li>A DockerHub account.</li>
-        <li>On OSX you also need Boot2Docker installed and running. <note>Boot2Docker does not need
-              <codeph>sudo</codeph> commands</note></li>
+        <li>On OSX you also need Boot2Docker installed and running. [Boot2Docker does not need
+            <codeph>sudo</codeph> commands.]</li>
         <li>On a Linux machine you also need Docker.</li>
-      </ul><note type="important">For security purposes, Docker container deployments are disabled.
-        The organization administrator needs to explicitly enable container deployments.
-      </note></section>
+      </ul></section>
     
     
     
