@@ -5,7 +5,7 @@
   <body>
     <p>This section describes Swift’s requirements for which service components must exist in the
       input model and how these relate to the network model. This information is useful if you are
-      creating a cluster or resource group and when defining the networks used by Swift. The network
+      creating a cluster or resource node and when defining the networks used by Swift. The network
       model allows many options and configurations. For smooth Swift to operation, the following
       must be <b>true</b>:<ul id="ul_ggm_rkc_jt">
         <li>The following services must have a direct connection to the same network:<ul
