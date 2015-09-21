@@ -143,6 +143,29 @@ git commit -m "&lt;commit message>"</codeblock>
               Backend Configuration</xref>.</p></li>
       </ol></p>
     <section>
+      <p><b>Attach Ceph Volume to Instance:</b></p>
+      <p>Perform the following steps to add Ceph volume to an instance: <ol id="ol_vx4_4gv_kt">
+          <li>In Nova configuration of compute node, edit <codeph>kvm-hypervisor.conf.j2</codeph> at
+              <codeph>/home/stack/helion/my_cloud/config/nova/kvm-hypervisor.conf.j2</codeph> to add
+            the following for RBD volume
+              attach:<codeblock>[libvirt]
+rbd_user = cinder
+rbd_secret_uuid = 457eb676-33da-42ec-9a8c-9293d545c337</codeblock><note>The
+                <codeph>rbd_secret_uuid</codeph> is same as available at
+                <codeph>/home/stack/helion/my_cloud/config/ceph/settings.yml</codeph>.</note></li>
+          <li>Commit your configuration to the local repository to configure cinder on the deployer node.<p>
+              <codeblock>cd /home/stack/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message>"</codeblock>
+            </p><note> Enter your commit message &lt;commit message></note></li>
+          <li>Change the directory to <codeph>~/scratch/ansible/next/hos/ansible</codeph> and run
+            the following command to create a deployment
+            directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+          <li>Run the following ansible
+            playbook:<codeblock>ansible-playbook -i hosts/verb_hosts run nova-reconfigure.yml</codeblock></li>
+        </ol></p>
+    </section>
+    <section>
       <title id="ceph-operation">
         <b>Ceph Operations</b></title>
       <p>After the successful deployment of Ceph, you can perform the following Ceph operations:<ul>
