@@ -54,18 +54,18 @@
     </section>
     <p>The consumer field are as follows:<simpletable id="simpletable_c35_5rb_jt">
         <strow>
-          <stentry><b>consumer</b></stentry>
+          <stentry><b><codeph>consumer</codeph></b></stentry>
           <stentry>This specifies the service that uses the device group. A <codeph>name</codeph>
             field containing <b>swift</b> indicates that the drives or logical volumes are used by
             Swift.</stentry>
         </strow>
         <strow>
-          <stentry><b>attrs</b></stentry>
+          <stentry><b><codeph>attrs</codeph></b></stentry>
           <stentry>This lists the rings that the devices are allocated to. It must contain a
               <codeph>rings</codeph> item.</stentry>
         </strow>
         <strow>
-          <stentry><b>rings</b></stentry>
+          <stentry><b><codeph>rings</codeph></b></stentry>
           <stentry> It contains a list of ring names. In the <codeph>rings</codeph> list, the
               <codeph>name</codeph> field is optional.</stentry>
         </strow>
@@ -211,8 +211,8 @@
           <strow>
             <stentry>
               <ul id="ul_whq_2sc_jt">
-                <li><codeph>fstype</codeph></li>
-                <li><codeph>mount</codeph></li>
+                <li><codeph><b>fstype</b></codeph></li>
+                <li><codeph><b>mount</b></codeph></li>
                 <li><codeph>mkfs-opts</codeph></li>
               </ul>
             </stentry>
@@ -221,14 +221,14 @@
           <strow>
             <stentry>
               <ul id="ul_wjz_jsc_jt">
-                <li><codeph>name</codeph></li>
-                <li><codeph>size</codeph></li>
+                <li><codeph><b>name</b></codeph></li>
+                <li><codeph><b>size</b></codeph></li>
               </ul>
             </stentry>
             <stentry>Specify both of this attributes.</stentry>
           </strow>
           <strow>
-            <stentry><codeph>consumer</codeph></stentry>
+            <stentry><codeph><b>consumer</b></codeph></stentry>
             <stentry> This attribute must have <codeph>name</codeph> field containing
               <b>swift</b>.</stentry>
           </strow>

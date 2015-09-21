@@ -6,7 +6,7 @@
     <p>You can create multiple VSA clusters of same or different type by specifying the
       configuration in the cloud model. <note type="tip">The term <b>add</b> and <b>update</b> in
         the document means editing the respective YAML files to add or update the
-            configurations/values.<p><b>Prerequisites</b>:</p><p>You must have three nodes per VSA
+            configurations/values.<p><b>Prerequisites</b></p><p>You must have three nodes per VSA
           cluster.</p></note></p>
     <section>
       <title>Cloud Configuration Changes to Create More Than One Cluster </title>

@@ -14,19 +14,19 @@
   disk-model: &lt;specify-a-name></codeblock></p>
     <p>The server roles have the following fields:<simpletable id="simpletable_c35_5rb_jt">
         <strow>
-          <stentry><b>name</b></stentry>
+          <stentry><b><codeph>name</codeph></b></stentry>
           <stentry>This is a name assigned for the role. In the following example, <b>ROLE_SWOBJ</b>
             is the role name.</stentry>
         </strow>
         <strow>
-          <stentry><b>interface-model</b></stentry>
+          <stentry><b><codeph>interface-model</codeph></b></stentry>
           <stentry> You can either select an existing interface model or create one specifically for
             Swift object servers. In the following example <b>INTERFACE_SET_SWOBJ</b> is used. See
-              <xref href="allocating_network.dita#topic_pcj_hzv_dt">Swift Network and service
-              Requirements more information.</xref></stentry>
+              <xref href="allocating_network.dita#topic_pcj_hzv_dt">Swift Network and Service
+              Requirements</xref> for more information.</stentry>
         </strow>
         <strow>
-          <stentry><b>disk-model</b></stentry>
+          <stentry><b><codeph>disk-model</codeph></b></stentry>
           <stentry>You can either select an existing model or create one specifically for Swift
             object servers. In the following example <b>DISK_SET_SWPAC</b> and <b>DISK_SET_SWOBJ</b>
             is used (depending on context). See <xref

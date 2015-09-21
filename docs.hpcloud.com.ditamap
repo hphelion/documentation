@@ -112,7 +112,6 @@
         <topicref href="helion/swift/allocate-pac.dita"/>
         <topicref href="helion/swift/allocating_server.dita" navtitle="Allocating Object Server"/>
         <topicref href="helion/swift/creating_roles_swift_nodes.dita"/>
-        <topicref href="helion/swift/allocating_network.dita"/>
         <topicref href="helion/swift/allocating_disk_drives.dita" navtitle="Allocating Disk Drives">
           <topicref href="helion/swift/label_on_partition.dita" toc="yes"
             navtitle="How to Verify if a Partition Labelled" locktitle="yes"/>
@@ -121,6 +120,7 @@
         </topicref>
         <topicref href="helion/swift/creating-pac-cluster.dita"/>
         <topicref href="helion/swift/creating-object-server-resource.dita"/>
+        <topicref href="helion/swift/allocating_network.dita"/>
         <topicref href="helion/swift/ring_specifications.dita"/>
         <topicref href="helion/swift/storage-policies.dita"/>
       </topicref>
