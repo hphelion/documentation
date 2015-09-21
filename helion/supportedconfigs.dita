@@ -86,8 +86,8 @@ baremetal_servers:
           Models</xref> for more details on that feature.</p>
     </section>-->
     
-    <section><title>Single Region Cloud with VSA (on KVM)</title> Choosing this model will result in
-      a cloud with that has the following characteristics: </section>
+    <section><title>Entry Scale Cloud with VSA (on KVM)</title> Choosing this model will result in a
+      cloud with that has the following characteristics: </section>
     <section><b>Control Planes </b></section>
     <section>A single control plane consisting of three servers that co-host all of the required
       services. Optionally, the deployer can reside on a control plane node, reducing the number of
@@ -96,15 +96,13 @@ baremetal_servers:
     
       <section><b>Resource Pools</b> </section>
     
-    <section>One compute proxy Node ( 1 per cluster in vCenter) Two OvsVapp Nodes ( 1 per ESX host
-      in the cluster ) Additional resource nodes can be added to the configuration. Minimal Swift
-      Resources are provided by the control plane </section>
+    <section>One compute node, one VSA node</section>
     <section><b>Deployer Node </b></section>
     <section>A dedicated deployer node is used in this model. The minimum server count for this
-      example is therefore 6 servers (Deployer + Control Plane (x3) + 1 vCenter with 1 cluster). The
-      set of servers will be defined with the values you enter here. If you are using the GUI
-      deployer, behind the scenes, it will enter your values into <b>data/barmetalConfig.yml</b>. If
-      not, you must enter them there.</section>
+      example is therefore 5 servers (one Deployer, three Control Plane, one  VSA). The set of
+      servers will be defined with the values you enter here. If you are using the GUI deployer,
+      behind the scenes, it will enter your values into <b>data/barmetalConfig.yml</b>. If not, you
+      must enter them there.</section>
     <section><b>Networking </b></section>
     <section>The example requires the following networks: <ul id="ul_cjb_gkv_kt">
         <li> IMPI/iLO network, connected to the deployer and the IPMI/iLO ports of all servers. </li>
@@ -147,9 +145,9 @@ baremetal_servers:
       services. Optionally, the deployer can reside on a control plane node, reducing the number of
       servers by one. Separate instructions are available for that option. The defaults for this
       model are described below. </section>
-    <section><b>Resource Pools</b> One compute proxy Node ( 1 per cluster in vCenter) Two OvsVapp Nodes ( 1
-      per ESX host in the cluster ) Additional resource nodes can be added to the configuration.
-      Minimal Swift Resources are provided by the control plane </section>
+    <section><b>Resource Pools</b> One compute proxy Node ( one per cluster in vCenter) two OvsVapp
+      Nodes ( one per ESX host in the cluster ) Additional resource nodes can be added to the
+      configuration. Minimal Swift Resources are provided by the control plane </section>
     <section><b>Deployer Node</b> </section>
     <section>A dedicated deployer node is used in this model. The minimum server count for this
       example is therefore 6 servers (Deployer + Control Plane (x3) + 1 vCenter with 1 cluster)* The
