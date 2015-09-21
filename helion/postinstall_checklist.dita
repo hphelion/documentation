@@ -78,7 +78,7 @@
                         network.</p></entry>
                   </row>
                   <row>
-                    <entry><codeph>-e proxy="&lt;proxy_address>"</codeph></entry>
+                    <entry><codeph>-e proxy="&lt;proxy_address:port>"</codeph></entry>
                     <entry>If your environment requires a proxy in order to reach out over the
                       internet, you would enter that here.</entry>
                   </row>
