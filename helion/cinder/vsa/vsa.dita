@@ -24,7 +24,7 @@
               <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock><p>Once
               VSA is successfully deployed then you can execute the ansible playbook to install CMC.
-              CMC is required to configure the HP StoreVirtual VSA nodes </p></li>
+              CMC is required to configure the HP StoreVirtual VSA nodes .</p></li>
           <li>Execute the following command to install
             CMC:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
@@ -35,11 +35,11 @@ ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
         example provides the steps to install Xming and launch CMC.</p>
       <p><!--You must configure X display to launch CMC. Therefore, CMC is required to configure the HP StoreVirtual VSA nodes. In this section we are referring to Xming as a X display tool. The display tool can vary from one user to another.--></p>
       <p><!--The follwowing steps provide an example on the configuration of Xming to launch CMC.--></p>
-      <p><!--In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. The following example provides the steps for installaing CMC. The Xming is a tool we are referring in the example below-->.</p>
       <p>
+        <!--In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. The following example provides the steps for installaing CMC. The Xming is a tool we are referring in the example below-->
         <ol id="ol_alr_mdl_jt">
           <li>Install <b>Xming</b> on Windows Box from where you can access the deployer node.</li>
-          <li>Select <b>Enable X11 forwarding</b> check box on the putty session for deployer node. </li>
+          <li>Select <b>Enable X11 forwarding</b> checkbox on the putty session for deployer node. </li>
           <li>SSH to first control plane node.<codeblock>ssh -X</codeblock></li>
           <li>Execute the following command:
             <codeblock>/opt/HP/StoreVirtual/UI/jre/bin/java -jar /opt/HP/StoreVirtual/UI/UI.jar</codeblock>CMC

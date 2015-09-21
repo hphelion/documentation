@@ -48,7 +48,7 @@
             the name of the key used to specify the storage backend when provisioning volumes of
             this volume type. The volume backend name must match the backend name mentioned in the
               <codeph>cinder.conf</codeph> file. <p>For example: You can enter the following backend
-              name for the respective backend used.  This backend name is mentioned in the
+              name for the respective backend used. The backend name is mentioned in the
                 <codeph>cinder.conf</codeph> file.<ul id="ul_u4j_1vz_jt">
                 <li>VSA: You can enter <codeph>vsa-backend-hlm003</codeph> in the key field.</li>
                 <li>Ceph: You can enter <codeph>ceph</codeph> in the key field.</li>
