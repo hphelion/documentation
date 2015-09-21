@@ -7,6 +7,8 @@
       with HP Helion<tm tmtype="reg">OpenStack</tm>2.0. After the installation of Ceph you can
       perform the cinder operation as documented in this page. It also provides the procedure to
       perform cinder operation after Ceph deployment.</p>
+    <p><!--Ceph has two components, i..e., monitor and OSD. These components require different set of hardware specifications as follows:<ul id="ul_pgh_qjv_kt"><li>For monitor node, storage is not required but it is CPU sensitive. </li><li>For OSD nodes, a significant disk media, RAM and reasonable CPU are required.<p>Therefore, with this requirement we recommend the following:<ul id="ul_rl1_jkv_kt"><li>SL4540 for OSD</li><li>SL230 series of servers for monitor if monitors are not deployed on controller node which is our default configuration. If monitor is deployed on controller node, the server used for controlller node is good neough to support monitor. </li></ul></p></li></ul>--></p>
+    <!--<p>Ceph has two component with differing need of hardware specifications: monitor and OSD. Monitors does not need storage but CPU sensitive. OSD needs significant disk media, RAM and reasonable CPU. Keeping this aspect in mind, we do recommend following: SL4540 for OSD DL380 or SL230 series of servers for monitor if monitors are not deployed on controller node which is our default configuration. If monirot is deployed on controller node, the server used for controlller node is good neough to support monitor </p>-->
     <section>
       <title id="preq">Prerequisite</title>
       <p>The deployer node must be setup before deploying Ceph. For more details on the installation
@@ -144,8 +146,8 @@ git commit -m "&lt;commit message>"</codeblock>
       </ol></p>
     <section>
       <p><b>Attach Ceph Volume to Instance:</b></p>
-      <p>Perform the following steps to add Ceph volume to an instance: <ol id="ol_vx4_4gv_kt">
-          <li>In Nova configuration of compute node, edit <codeph>kvm-hypervisor.conf.j2</codeph> at
+      <p>Perform the following steps to attach Ceph volume to an instance: <ol id="ol_vx4_4gv_kt">
+          <li>On the deployer node, edit <codeph>kvm-hypervisor.conf.j2</codeph> at
               <codeph>/home/stack/helion/my_cloud/config/nova/kvm-hypervisor.conf.j2</codeph> to add
             the following for RBD volume
               attach:<codeblock>[libvirt]
