@@ -65,7 +65,8 @@
         <li>You can use the <codeph>display-name</codeph> attribute when creating a container to
           indicate which storage policy you want to use for that container.</li>
         <li>One of the storage policies can be the default policy. If you do not specify the storage
-          policy then the object created in a new container uses the default storage policy.</li>
+          policy then the <!--object created in-->  new container uses the default storage
+          policy.</li>
         <li>If you change the default, only containers created later will have that changed default
           policy.</li>
       </ul></p>
