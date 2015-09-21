@@ -28,7 +28,7 @@
           <li>Login to deployer node.</li>
           <li>Change the directory as shown below:<codeblock>cd ~/helion</codeblock></li>
           <li>Edit <codeph>cinder.conf.j2</codeph> file at
-              <codeph>my_cloud/config/cinder/cinder.conf.j2</codeph> to add Brocade Fiber Channel
+              <codeph>my_cloud/config/cinder/cinder.conf.j2</codeph> to add Brocade Fibre Channel
             Zone Manager Driver data. <note>
               <ul id="ul_ghm_zbj_jt">
                 <li>The values entered in step <b>4</b> is an example. You must change the value as

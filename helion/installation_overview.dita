@@ -3,14 +3,44 @@
 <topic id="install_overview">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Installation Overview</title>
   <body>
-    <section id="about"><title>Helion OpenStack 2.0 Installation</title>
+    <section id="about"><title>Helion OpenStack 2.0 Installation</title> Beginning with HP Helion
+      OpenStack 2.0 Beta 2, you have two options for installing your cloud. You can use a GUI that
+      runs in your web browser or you can install via a CLI that exposes the full power and
+      flexibility of HP Helion OpenStack 2.0.</section>
+    <section> You should use the GUI if: <ul id="ul_p1l_2lw_kt">
+        <li>You are installing a simple demo or proof-of-concept cloud. </li>
+        <li>You have less than about 15 nodes (it will work for larger numbers but entering all that
+          data in the GUI will get tiresome). </li>
+        <li>You are not planning to deploy availability zones or use L3 segmentation in your initial
+          deployment. </li>
+        <li>You are happy with the tuned HP default OpenStack configuration.</li>
+      </ul> Instructions for installing via the GUI are here. </section>
+    <ul><li><xref href="gui_installer.dita#install_gui">Installing via the GUI</xref></li></ul>
+    <section>Note that reconfiguration of your cloud, at the moment, is done via the CLI. The GUI
+      installer if for first-time installation. </section>
+    <section>You should use the CLI if: <ul id="ul_wbl_2lw_kt">
+        <li>You are installing a more complex or large-scale cloud. </li>
+        <li>You have more than about 15 nodes. </li>
+        <li>You need to use availability zones or the server groups functionality of the cloud model
+          (link this text to model docs). </li>
+        <li>You want to customize the cloud configuration beyond the tuned defaults that HP provides
+          out of the box. </li>
+        <li>You need deeper customizations than are possible to express using the GUI.</li>
+      </ul> Instructions for installing via the CLI are here</section>
+    <section>
       <ul>
+        <li><xref href="bare_installation_kvm.dita">Baremetal Install for KVM Hypervisor</xref></li>
+        <li><xref href="bare_installation_esx.dita">Baremetal Install for ESX Hypervisor</xref></li>
+      </ul>
+<p>Other useful documents that will help you understand, plan, configure, and install your cloud are listed below.</p>
+      <ul id="ul_adl_2lw_kt">
         <li><xref href="beta1_to_beta2_upgrade.dita">Upgrading from Beta 1 to Beta 2</xref></li>
         <li><xref href="using_git.dita">Using Git for Configuration Manqagement</xref></li>
         <li><xref href="preinstall_checklist.dita">Pre-Installation Checklist</xref></li>
         <li><xref href="bare_installation_kvm.dita">Baremetal Install for KVM Hypervisor</xref></li>
         <li><xref href="bare_installation_esx.dita">Baremetal Install for ESX Hypervisor</xref></li>
-        <li><xref href="installation_troubleshooting.dita">Troubleshooting Your Installation</xref></li>
+        <li><xref href="installation_troubleshooting.dita">Troubleshooting Your
+          Installation</xref></li>
         <li><xref href="installation_verification.dita">Verifying Your Installation</xref></li>
         <li><xref href="postinstall_checklist.dita">Post-Installation Checklist</xref></li>
       </ul>
