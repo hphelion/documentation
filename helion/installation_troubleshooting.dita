@@ -58,13 +58,17 @@ ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
         installation and have to go back to re-do your steps, ensure that you run the
           <codeph>config-processor-clean.yml</codeph> playbook to clear out your previous
         configuration before proceeding.</p>
-      <p><codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock></p>
+      <p>
+        <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
+      </p>
       <p><b>If the <codeph>site.yml</codeph> playbook fails, you can query the log for the
           reason</b></p>
       <p>Ansible is good about outputting the errors into the command line output, however if you'd
         like to view the full log for any reason the location is:</p>
-      <p><codeblock>~/.ansible/ansible.log</codeblock></p>
+      <p>
+        <codeblock>~/.ansible/ansible.log</codeblock>
+      </p>
       <p>This log is updated real time as you run ansible playbooks.</p>
       <note type="tip">Use grep to parse through the log. Usage: <codeph>grep &lt;text>
           ~/.ansible/ansible.log</codeph></note>
@@ -93,6 +97,17 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
         In <b>roles/freezer-agent/templates/backup.osrc.j2</b> add the following line:
         <codeblock>export OS_FREEZER_URL={{ backup_freezer_api_url }}</codeblock>
       </p>
+      <b>Changing values after provisioning the nodes</b>
+      <p>If you realize you have values you need to change values after executing the step to <xref
+          href="bare_installation_kvm.dita#install_kvm/NodeProvision">provision nodes</xref>, after
+        correcting the configuration running the bm-reimage.yml playbook will not fix the
+        configuration. </p>
+      <p>You will need to
+        <codeblock>sudo cobbler system list, sudo cobbler system 
+remove --name &lt;server name></codeblock>
+        to remove the servers. Then  rerun from the <xref
+          href="bare_installation_kvm.dita#install_kvm/CobblerDeploy">Deploy Cobbler</xref> section
+        onwards. </p>
     </section>
   </body>
 </topic>
