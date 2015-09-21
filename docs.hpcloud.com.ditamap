@@ -37,6 +37,7 @@
         navtitle="TEST Baremetal Install for ESX Hypervisor" toc="no" locktitle="yes"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
       <topicref href="helion/gui_install_on_kvm.dita" locktitle="yes" toc="no"/>
+      <topicref href="helion/gui_install_on_esx.dita" locktitle="yes" toc="no"/>
       <topicref href="helion/installation_troubleshooting.dita"
         navtitle="Troubleshooting Installation" locktitle="yes"/>
       <topicref href="helion/installation_verification.dita" navtitle="Verifying Your Installation"
