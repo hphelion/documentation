@@ -6,6 +6,9 @@
   <body>
     <section id="important-notes"><title>Important Notes</title>
       <ul>
+        <li>If you are looking for information about when to use the GUI installer and when to use
+          the CLI, see the <xref href="installation_overview.dita#install_overview">Installation
+            Ovweview</xref>.</li>
         <li>We have put together a <xref href="preinstall_checklist.dita">Pre-Installation
             Checklist</xref> that should help with the recommended pre-installation tasks.</li>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met in
