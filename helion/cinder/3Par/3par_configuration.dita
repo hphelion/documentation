@@ -55,13 +55,11 @@ git commit -m "&lt;commit message>"</codeblock><note>
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Run the following command to create a deployment
             directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
-          <li>Run the following command to configure 3PAR FC as a Cinder backend. </li>
+          <li>Run the following command to configure 3PAR FC as a Cinder backend.
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
         </ol></p>
     </section>
-    <p>
-      <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
-    </p>
     <section>
       <title>Configure 3PAR iSCSI as Cinder backend</title>
       <p>You must modify <codeph>cinder.conf.j2</codeph> to configure iSCSI details.</p>
