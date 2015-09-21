@@ -153,11 +153,16 @@ git commit -m "My config or other commit message"
         <li>Run the following playbook:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-power-status.yml
-ansible-playbook -i hosts/localhost cobbler-deploy.yml -e hlmuser_password="&lt;password>"</codeblock></li>
-        <li>You will see the prompts listed below to enter a password that will be used to access
-          the provisioned nodes:
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+        <li>The cobbler-deploy stage of the installation now prompts for a password.  The entered
+          value is used to set a user-defined password for subsequent node installs so that a user
+          can gain console/terminal access to the nodes.  For example, if a node maintenance is
+          required or if the SSH keys are lost.  The value is encrypted and placed in the kickstart
+          for the node installs.<p>The password prompts look like this:</p>
           <codeblock>Enter the password that will be used to access provisioned nodes:
-confirm Enter the password that will be used to access provisioned nodes:</codeblock></li>
+confirm Enter the password that will be used to access provisioned nodes:</codeblock>
+        <p>Alternatively, you can also specify this password in the ansible playbook command like this:</p>
+          <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml -e hlmuser_password="&lt;password>"</codeblock></li>
       </ol>
     </section>
     <section id="NodeProvision"><title>Provision the Nodes</title>
@@ -179,13 +184,14 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
             <li>staging-ansible</li>
             <li>staging-cp-persistent</li>
           </ul>
-          <note> The configuration processor may generate the following warnings which can be
+          <note>The configuration processor may generate the following warnings which can be
               <b>safely ignored</b>:
-            <codeblock>  ################################################################################
-  # The configuration processor completed with warnings.
-  #   ans-host-vars-2.0         WRN: Unknown service 'vsa'as consumer of device-group vsa-datain disk-model DISK_SET_VSA.
-  #   ans-host-vars-2.0         WRN: Unknown service 'vsa'as consumer of device-group vsa-cachein disk-model DISK_SET_VSA.
-  ################################################################################</codeblock>
+            <codeblock>
+################################################################################
+# The configuration processor completed with warnings.
+#   ans-host-vars-2.0         WRN: Unknown service 'vsa'as consumer of device-group vsa-datain disk-model DISK_SET_VSA.
+#   ans-host-vars-2.0         WRN: Unknown service 'vsa'as consumer of device-group vsa-cachein disk-model DISK_SET_VSA.
+################################################################################</codeblock>
           </note>
           <note>See <xref href="using_git.dita">Using Git for Configuration Management</xref> for
             more information.</note>
