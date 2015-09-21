@@ -10,8 +10,7 @@
     <topicref href="2.0/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
     <topicref href="2.0/devplatform.release-notes.dita" locktitle="yes"
       navtitle="Release Notes"/>
-    <topicref href="2.0/devplatform.thirdparty.licensing.dita"
-      navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
+    <topicref href="2.0/devplatform.thirdparty.licensing.dita" navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
     <topicref href="2.0/devplatform.eula.dita" navtitle="Software License Terms" locktitle="yes"/>
     
     
@@ -262,8 +261,9 @@
       <topichead navtitle="Language Specific Application Deployment">
         <topicref href="2.0/helion/user/deploy/docker_firstapp.dita"
           navtitle="Creating and Deploying Your First Docker App" locktitle="yes"/>
-        <topicref href="2.0/helion/user/deploy/languages/docker_apps.dita"
-          navtitle="Docker Apps" locktitle="yes"/>
+        <topicref href="2.0/helion/user/deploy/languages/docker_apps.dita" navtitle="Docker Apps" locktitle="yes"/>
+        <topicref href="2.0/helion/user/deploy/container_enable_deployment.dita" toc="no" />
+        
         <topicref href="2.0/helion/user/deploy/languages/clojure.dita" locktitle="yes"
           navtitle="Clojure"/>
         <topicref href="2.0/helion/user/deploy/languages/go.dita" locktitle="yes"
