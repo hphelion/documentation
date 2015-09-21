@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11202">
-<title>HP Helion 1.3 Development Platform: ALS Command Reference: Administration</title>
+<title>HP Helion 1.3 Development Platform: ALS Command Reference: Administration</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -47,12 +47,12 @@
 <li>
 <xref type="section" href="#topic11202/command-version">helion version</xref>: Print the version number of the client.</li>
 </ul>
-<section id="syntax"> <title>Syntax</title>
+<section id="syntax"> <title>Syntax</title> 
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="command-admin-grant"> <title>helion admin grant &lt;<i>email</i>&gt;</title>
+<section id="command-admin-grant"> <title>helion admin grant &lt;<i>email</i>&gt;</title> 
 <p>Grant the named user administrator privileges for the current or specified target.</p>
 <table>
 <tgroup cols="2">
@@ -101,7 +101,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-admin-list"> <title>helion admin list</title>
+<section id="command-admin-list"> <title>helion admin list</title> 
 <p>Show a list of the administrators for the current or specified target.</p>
 <table>
 <tgroup cols="2">
@@ -168,7 +168,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-admin-patch"> <title>helion admin patch &lt;<i>patch</i>&gt;</title>
+<section id="command-admin-patch"> <title>helion admin patch &lt;<i>patch</i>&gt;</title> 
 <p>Apply a patch to the current or specified target.</p>
 <table>
 <tgroup cols="2">
@@ -239,7 +239,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-admin-report"> <title>helion admin report &lt;<i>destination</i>&gt;</title>
+<section id="command-admin-report"> <title>helion admin report &lt;<i>destination</i>&gt;</title> 
 <p>Retrieve a report containing the logs of the current or specified target.</p>
 <table>
 <tgroup cols="2">
@@ -302,7 +302,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-admin-revoke"> <title>helion admin revoke &lt;<i>email</i>&gt;</title>
+<section id="command-admin-revoke"> <title>helion admin revoke &lt;<i>email</i>&gt;</title> 
 <p>Revoke administrator privileges for the named user at the current or specified target.</p>
 <table>
 <tgroup cols="2">
@@ -351,7 +351,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-info"> <title>helion info</title>
+<section id="command-info"> <title>helion info</title> 
 <p>Show the basic system and account information.</p>
 <table>
 <tgroup cols="2">
@@ -423,7 +423,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-show-token"> <title>helion show-token</title>
+<section id="command-show-token"> <title>helion show-token</title> 
 <p>Print the current target's authorization token.</p>
 <table>
 <tgroup cols="2">
@@ -447,7 +447,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-stacks"> <title>helion stacks</title>
+<section id="command-stacks"> <title>helion stacks</title> 
 <p>List the supported stacks of the target.</p>
 <table>
 <tgroup cols="2">
@@ -510,7 +510,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-targets"> <title>helion targets</title>
+<section id="command-targets"> <title>helion targets</title> 
 <p>List the available targets and their authorization tokens, if any.</p>
 <table>
 <tgroup cols="2">
@@ -550,7 +550,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-tokens"> <title>helion tokens</title>
+<section id="command-tokens"> <title>helion tokens</title> 
 <p>List the available targets and their authorization tokens, if any.</p>
 <table>
 <tgroup cols="2">
@@ -590,7 +590,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-usage"> <title>helion usage &lt;<i>UserOrGroup</i>&gt;</title>
+<section id="command-usage"> <title>helion usage &lt;<i>UserOrGroup</i>&gt;</title> 
 <p>Show the current memory allocation and usage of the specified or current space.</p>
 <table>
 <tgroup cols="2">
@@ -680,7 +680,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-user"> <title>helion user</title>
+<section id="command-user"> <title>helion user</title> 
 <p>Show the name of the current user in the current or specified target.</p>
 <table>
 <tgroup cols="2">
@@ -743,7 +743,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-user-info"> <title>helion user-info &lt;<i>name</i>&gt;</title>
+<section id="command-user-info"> <title>helion user-info &lt;<i>name</i>&gt;</title> 
 <p>Shows the information of a user in the current or specified target. Defaults to the current user.</p>
 <table>
 <tgroup cols="2">
@@ -806,7 +806,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-version"> <title>helion version</title>
+<section id="command-version"> <title>helion version</title> 
 <p>Print the version number of the client.</p>
 <table>
 <tgroup cols="2">

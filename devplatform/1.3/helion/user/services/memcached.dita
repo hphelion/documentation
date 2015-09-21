@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2514">
-<title>HP Helion 1.3 Development Platform: Memcached Service</title>
+<title>HP Helion 1.3 Development Platform: Memcached Service</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -20,7 +20,7 @@
 <p>Memcached is an in-memory key-value store used for caching by many web
 applications and frameworks. It is available in Application Lifecycle Service as a service
 which can be shared by application instances.</p>
-<section id="using-the-service"> <title>Using the Service</title>
+<section id="using-the-service"> <title>Using the Service</title> 
     <p>As with other <xref href="data-services.dita#topic19772">data services</xref>, the
                 location and port of the memcached service is exposed to the application via
                 environment variables: MEMCACHED_URL or VCAP_SERVICES.</p>
@@ -43,7 +43,7 @@ kato restart memcached</codeblock>
                 authentication via SASL.</p>
 <note type="warning">Running Memcached <b>without</b> SASL enabled is insecure and should only be done if all system users are trusted. Any Application Lifecycle Service user can connect to the provisioned service instance if the IP address and port is discovered.</note>
 </section>
-<section id="django-example-using-memcached"> <title>Django Example using Memcached</title>
+<section id="django-example-using-memcached"> <title>Django Example using Memcached</title> 
 <p>The <xref href="https://github.com/Stackato-Apps/django-gtd" scope="external" format="html" >Django GTD</xref> sample
 application uses the simpler VCAP_SERVICES method for connecting to the
 Memcached service without authentication.</p>

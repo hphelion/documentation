@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gwr_qgd_ws">
-  <title>HTTP and SSL Configuration</title>
+  <title>HTTP and SSL Configuration</title> 
   <body>
     <section>
       <p>HTTPS mode provides access to the provisioned apps using wild card SSL certificates through
@@ -56,7 +56,7 @@
       </li>
     </ul>
     <section id="using-your-own-ssl-certificate">
-      <title>Using Your Own SSL Certificate (Replacing the Default)</title>
+      <title>Using Your Own SSL Certificate (Replacing the Default)</title> 
       <p>On all router and controller nodes, upload your <i>.key</i> file to the
           <i>/etc/ssl/private/</i> directory and your <i>.crt</i> file to
         <i>/etc/ssl/certs/</i>.</p>
@@ -69,7 +69,7 @@
       <codeblock>kato config set stackato_rest ssl/strict_ssl true </codeblock>
     </section>
     <section id="adding-custom-ssl-certs-sni">
-      <title>Adding More SSL Certs (SNI)</title>
+      <title>Adding More SSL Certs (SNI)</title> 
       <p>The Application Lifecycle Service router supports <xref
           href="http://en.wikipedia.org/wiki/Server_Name_Indication" scope="external" format="html"
           >SNI</xref>, and custom SSL certificates for domains resolving to the system can be added
@@ -84,7 +84,7 @@
         Lifecycle Service load balancer).</note>
     </section>
     <section id="ca-certificate-chaining">
-      <title>CA Certificate Chaining</title>
+      <title>CA Certificate Chaining</title> 
       <p>When using a signed certificate for Application Lifecycle Service, the certificates in the
         chain must be concatenated in a specific order:</p>
       <ul>
@@ -109,11 +109,11 @@ Certificate chain
    i:/C=US/O=Entrust.net/OU=www.entrust.net/CPS incorp. by ref. (limits liab.)/OU=(c) 1999 Entrust.net Limited/CN=Entrust.net Secure Server Certification Authority</codeblock>
     </section>
     <section id="cipher">
-      <title>Customizing the Cipher Suites</title>
+      <title>Customizing the Cipher Suites</title> 
       <p/>
     </section>
     <section id="generating-a-self-signed-ssl-certificate">
-      <title>Generating a self-signed SSL certificate</title>
+      <title>Generating a self-signed SSL certificate</title> 
       <p>You can re-generate Application Lifecycle Service's self-signed SSL certificate by running
         the following command on the VM:</p>
       <codeblock>kato op regenerate ssl_cert</codeblock>
@@ -140,7 +140,7 @@ chmod 400 host.key host.crt</codeblock>
         certificate will need to be added to the browser exception rules, which you will be prompted
         to do so when visiting one of your apps via HTTPS for the first time.</p>
     </section>
-    <section id="http-proxy"> <title>HTTP Proxy</title>
+    <section id="http-proxy"> <title>HTTP Proxy</title> 
       <note> If your network has an HTTP proxy, the Helion client may attempt to use this when
         connecting to api.helion-xxxx.local and fail because the changes in
         <codeph>/etc/hosts</codeph> file are not reflected in the proxy. To work around this
@@ -165,7 +165,7 @@ socksProxyType=socks4a | OR | socks5;</codeblock></li>
       <p>For log info, any errors reported by Polipo are available on the
         Application Lifecycle Service server in <codeph>/var/log/polipo/polipo.log</codeph>.</p>
     </section>
-    <section id="staging-cache-app-http-proxy"> <title>Staging Cache &amp; App HTTP Proxy</title>
+    <section id="staging-cache-app-http-proxy"> <title>Staging Cache &amp; App HTTP Proxy</title> 
       <p>Application Lifecycle Service caches all application dependencies that are downloaded by module managers that support the <xref href="../../user/reference/environment.dita#topic7631/http-proxy" type="section" >HTTP_PROXY</xref> environment variable (e.g. pip, PyPM, PPM, NPM, etc). This is limited to 100MB of in-memory cache.</p>
       <p>If you have an upstream HTTP proxy that deployed applications and the
         staging system need to traverse to access the internet, use the

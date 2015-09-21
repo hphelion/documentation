@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_t3w_fnh_ts">
-  <title>Install the Messaging Service</title>
+  <title>Install the Messaging Service</title> 
   <body>
 <section id="install-messaging"> 
 <p>This section provides details on installing the Messaging service from the Development Platform.</p>
 </section>
-<section id="connect-to-the-download-service"> <title>Connect to the Download Service</title>
+<section id="connect-to-the-download-service"> <title>Connect to the Download Service</title> 
 <ol>
 <li>Open Horizon and login as the "admin" user. You must run the entire install logged in as "admin".</li>
 <li>Click on the <b>Admin</b> panel in Horizon and select <b>Development Platform</b>. Finally,
@@ -16,7 +16,7 @@
           have an account.</li>
 </ol>
 </section>
-<section id="download-and-configure-the-messaging-service"> <title>Download and Configure the Messaging Service</title>
+<section id="download-and-configure-the-messaging-service"> <title>Download and Configure the Messaging Service</title> 
 <ol>
 <li> In the <b>Configure Services</b> panel locate the <b>Messaging</b> item in the Configure
           Services table and select <b>Download Service</b> and wait for the download to complete.<p>

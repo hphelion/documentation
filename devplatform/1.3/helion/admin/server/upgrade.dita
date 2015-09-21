@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13180">
-<title>HP Helion 1.3 Development Platform: In-Place Upgrades of ALS Nodes and Clusters</title><shortdesc>Procedures for upgrading clusters and nodes created in the previous version to the current version.</shortdesc>
+<title>HP Helion 1.3 Development Platform: In-Place Upgrades of ALS Nodes and Clusters</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -19,11 +19,15 @@
 </metadata>
 </prolog>
 <body>
-  <p>Application Lifecycle Service provides the ability to upgrade a node or cluster in place
-      without the need to rebuild the entire cluster. <note type="important">These upgrade
-        procedures will only upgrade nodes and clusters created in Helion Development Platform
-        version 1.2 to version 1.3. Previous versions do not support in-place upgrading.</note></p>
-<ul>
+  <p>The Application Lifecycle Service provides the ability to upgrade a node or cluster in place
+      without the need to rebuild the entire cluster. <note>
+        <ul>
+          <li>In-place upgrading is only available for clusters and nodes created using Helion
+            Development Platform version 1.2. It is not supported for previous versions.</li>
+          <li>In-place upgrading is not supported in Helion CloudSystem environments.</li>
+        </ul>
+      </note></p>
+<section><title>Procedures</title> <ul>
 <li>
         <xref type="section" href="#topic13180/before-an-upgrade">Before an upgrade</xref>
         <ul>
@@ -70,12 +74,12 @@
 <li>
 <xref type="section" href="#topic13180/troubleshooting">Troubleshooting</xref>
 </li>
-</ul>
-<section id="before-an-upgrade"> <title>Before an upgrade</title>
+</ul></section>
+<section id="before-an-upgrade"> <title>Before an upgrade</title> 
 <p>Ensure that you have the latest version of the Application Lifecycle Service installed before updating any nodes or clusters.</p>
   <p>If <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-patch" >kato patch</xref> has not been applied consistently, <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach">kato node upgrade</xref> can still be executed. It will first upgrade the node to the latest release, which will include all of the interim patches.</p>
 </section>
-<section id="free-disk-space"> <title>Check Free Disk Space</title>
+<section id="free-disk-space"> <title>Check Free Disk Space</title> 
 <p>Each node in the cluster to be upgraded requires at least 4GB free disk space except for the cache node, which needs at least 10GB free.</p>
   <p>If sufficient disk space cannot be reserved in the existing cluster for an upgrade, consider creating a new cluster and <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration">migrating the data</xref> rather than upgrading in place.</p>
 <p>To add additional space on the cache node specifically for the upgrade:</p>
@@ -87,19 +91,19 @@
 <li>On the cache node, run <codeblock>sudo service sentinel-d restart </codeblock></li>
 </ol>
 </section>
-  <section id="free-memory"><title>Check Free Memory</title>
+  <section id="free-memory"><title>Check Free Memory</title> 
 <p>Core/cache nodes require at least 1GB of free memory for upgrades to run successfully. Other nodes require at least 512MB.</p>
 <p>Use the <b>free</b> or <b>vmstat</b> commands to determine how much memory is available on each VM and use <b>kato stop</b> to temporarily stop roles if more memory is required.</p>
 </section>
-<section id="maintenance-mode"> <title>Maintenance Mode</title>
+<section id="maintenance-mode"> <title>Maintenance Mode</title> 
   <p>Before beginning an upgrade, put Application Lifecycle Service in maintenance mode using the <xref href="../console/customize.dita#topic5029/console-settings" >Cloud Controller Settings</xref> or the following <i>kato</i> command:</p>
 <codeblock>kato config set cloud_controller_ng maintenance_mode true</codeblock>
 <p>This shuts down API requests but continues to serve web requests. The Management Console becomes "read only" with the exception of this toggle so that it can be brought back online. Remember to disable maintenance mode once the upgrade has been completed.</p>
 </section>
-<section id="backup-snapshot"> <title>Backups or Snapshots</title>
+<section id="backup-snapshot"> <title>Backups or Snapshots</title> 
   <p>Back up all system and user data by performing a <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration" >data export</xref> (recommended) or create <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-snapshots" type="section">snapshots</xref> of all nodes in your hypervisor.</p>
 </section>
-<section id="proxy-settings"> <title>Proxy settings for Upgrades</title>
+<section id="proxy-settings"> <title>Proxy settings for Upgrades</title> 
 <p>The systems being upgraded will need to be able to access the following
 public URIs:</p>
 <ul>
@@ -114,25 +118,34 @@ public URIs:</p>
   node if a proxy is in use on your network. See <xref href="https_and_ssl.dita#topic_gwr_qgd_ws/http-proxy">Upstream Proxy Settings</xref> for instructions on configuring upstream proxies. For upgrades specifically, the <b>http_proxy</b> environment variable must be set in the shell you'll be running the upgrade from. For example:</p>
 <codeblock>export http_proxy=http://intproxy.example.com: </codeblock>
 </section>
-<section id="rsa-keys"> <title>Passwordless SSH</title>
+<section id="rsa-keys"> <title>Passwordless SSH</title> 
 <p>For cluster upgrades, you should set up SSH keys <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication" type="section"  format="html" >and disable password authentication</xref>
 between the Core node and all other cluster nodes. Without this configuration, you will be prompted for the system user password multiple times for each node.</p>
 </section>
-<section id="pwless-sudo"> <title>Passwordless sudo</title>
+<section id="pwless-sudo"> <title>Passwordless sudo</title> 
 <p>Unless passwordless sudo is enabled, kato will prompt for the sudo password during the upgrade of each node even if passwordless SSH key authentication is enabled.</p>
 <p>For a completely unattended upgrade, configure passwordless sudo in addition to configuring SSH keys as described above. For example, you could run the following commands on all nodes in the cluster:</p>
 <codeblock>echo 'helion ALL = (root) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/nopasswd
 sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
 <p>With passwordless sudo in effect on all nodes, <i>kato node upgrade</i> should run without intervention. Obviously, this change has security implications, and is left to the discretion of the admin. Enable it only for the duration of the upgrade.</p>
 </section>
-<section id="extraDEA"> <title>Temporary Extra DEA Nodes</title>
+<section id="extraDEA"> <title>Temporary Extra DEA Nodes</title> 
   <p>While the upgrade is in progress, DEAs will be <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" >retired</xref> one at a time and the hosted applications will be moved to other DEAs. If the system is operating at or close to capacity (all DEAs are fully populated) it will be necessary to add at least one <xref href="../cluster/cluster_index.dita#topic18326/dea-nodes" type="section"   >DEA node</xref> to the cluster before proceeding. Customers are typically permitted to exceed their node/memory license allocation during an upgrade.</p>
 </section>
-  <section id="executing-the-upgrade"> <title>Executing the Upgrade</title> <note type="important">These upgrade
+  <section id="executing-the-upgrade"> <title>Executing the Upgrade</title>  <note type="important">These upgrade
     procedures will only upgrade nodes and clusters created in Helion Development Platform
     version 1.2 to version 1.3. Previous versions do not support in-place upgrading.</note>
 </section>
-  <section id="move-dea"><title>Moving Windows DEAs</title>
+  <section id="upgrading-a-cluster"><title>Upgrading a cluster</title> <p>To upgrade a cluster:</p>  
+    <ol id="ol_axs_cnk_ft"><li>SSH into the Core node in the cluster.</li>  
+      <li>Run this command <codeblock>eval $(curl -Ls http://bit.ly/1XRoHMV)</codeblock></li>  
+      <li>Update kato itself <codeblock>kato node upgrade --update-kato </codeblock></li>  
+      <li>Upgrade the cluster.<codeblock>kato node upgrade</codeblock></li> </ol>  
+     <p>This will automatically arrange the nodes in the cluster into an upgrade order (see below)  
+      before upgrading the nodes one at a time.</p>  
+</section>  
+   
+  <section id="move-dea"><title>Moving Windows DEAs</title> 
     <p>Microsoft <tm tmtype="reg">Windows</tm> DEAs cannot be upgraded; you will add new DEAs and
         then remove the old ones.</p>
     <p>Follow this procedure so that your cluster will automatically load balance to the new nodes. <ol>
@@ -145,25 +158,14 @@ sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
           <li>Run this command on the core node of your cluster to remove the old
             DEAs.<codeblock>kato node remove --skip-detach &lt;ip&gt; </codeblock></li>
           <li>Terminate the old DEAs.</li>
-        </ol></p></section>
-    <p>All other nodes can be upgraded using the following procedure.</p>
-<section id="upgrading-an-individual-node"> <title>Upgrading an individual node</title>
+    </ol></p></section>
+<section id="upgrading-an-individual-node"> <title>Upgrading an individual node</title> 
 <p>To upgrade an individual node, log into the node and run:</p>
 <codeblock>kato node upgrade</codeblock>
 <p>This will start the <xref href="#topic13180/node-upgrade-process" format="dita">Node Upgrade
           Process</xref> as described below.</p>
 </section>
-<section id="upgrading-a-cluster">
-      <title>Upgrading a cluster</title>
-      <p>To upgrade a cluster:</p>
-      <ol id="ol_axs_cnk_ft"><li>Log into the Core node in the cluster.</li>
-        <li>Run this command <codeblock>eval “$(curl -Ls https://goo.gl/v18vo9)”</codeblock></li>
-        <li>Update kato itself <codeblock>kato node upgrade --update-kato </codeblock></li>
-        <li>Upgrade the cluster.<codeblock>kato node upgrade</codeblock></li> </ol>
-      <p>This will automatically arrange the nodes in the cluster into an upgrade order (see below)
-        before upgrading the nodes one at a time.</p>
-    </section>
-<section id="node-upgrade-ordering"> <title>Node upgrade ordering</title>
+<section id="node-upgrade-ordering"> <title>Node upgrade ordering</title> 
 <p>When performing a cluster upgrade, the nodes in the cluster are automatically arranged into an upgrade order based on the roles they have enabled. This order is then followed when upgrading nodes.</p>
 <p>The default role order is:</p>
 <ol>
@@ -178,7 +180,7 @@ sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
   <p>The order can be overridden with the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-upgrade" type="section"   >--role-order</xref>
 option.</p>
 </section>
-<section id="node-upgrade-process"> <title>Node Upgrade Process</title>
+<section id="node-upgrade-process"> <title>Node Upgrade Process</title> 
 <p>Each node goes through the following process during an upgrade.</p>
 <ol>
 <li>Self-update</li>
@@ -202,7 +204,7 @@ option.</p>
 <p>When <i>kato node upgrade</i> completes successfully, the node is restarted running the latest version of Application Lifecycle Service.</p>
 <p>Remember to take the node out of maintenance mode after the upgrade.</p>
 </section>
-<section id="zero"> <title>Zero-downtime Upgrades</title>
+<section id="zero"> <title>Zero-downtime Upgrades</title> 
 <p>On clusters with redundant components, the upgrade will result in no down time for user applications which:</p>
 <ul>
 <li>Use an external data services (Service Broker)</li>
@@ -215,16 +217,16 @@ option.</p>
 <li>At least two DEA nodes</li>
 </ul>
 </section>
-<section id="troubleshooting"> <title>Troubleshooting</title>
+<section id="troubleshooting"> <title>Troubleshooting</title> 
 <p>Potential difficulties and how to resolve them.</p>
 </section>
-<section id="network-connectivity"> <title>Network Connectivity</title>
+<section id="network-connectivity"> <title>Network Connectivity</title> 
 <p>Network connectivity errors during the upgrade process can cause it to fail. In such cases, it is possible to resume the upgrade once connectivity to the upstream resources is restored.</p>
 </section>
-<section id="app-store-proxy-settings"> <title>App Store Proxy Settings</title>
+<section id="app-store-proxy-settings"> <title>App Store Proxy Settings</title> 
   <p>Proxy settings for the App Store may be lost during an upgrade. If the App Store cannot fetch data after an upgrade, and your system is behind an HTTP(S) proxy, <xref href="https_and_ssl.dita#topic_gwr_qgd_ws/http-proxy" type="section"   >reset the proxy information</xref> for your network.</p>
 </section>
-<section id="upgrading-with-customizations"> <title>Upgrading with Customizations</title>
+<section id="upgrading-with-customizations"> <title>Upgrading with Customizations</title> 
 <p>Many files and directories in the ALS VM are overwritten during an upgrade. The <xref href="../console/customize.dita" >Customization instructions</xref> document best practices which are safe for upgrades, but some customers may have modified the system further.</p>
 <p>Customizations made within the following directories <b>will</b> be deleted or undone during an upgrade:</p>
 <ul>
@@ -257,7 +259,7 @@ option.</p>
 </ul>
 <p>If you have made customizations in these places or in other areas not described in the customization instructions, save the new or modified files elsewhere, run upgrade on a non-production system, then copy or merge the files into the upgraded test system.</p>
 </section>
-<section id="custom-buildpacks"> <title>Custom Buildpacks</title>
+<section id="custom-buildpacks"> <title>Custom Buildpacks</title> 
 <p>
         <note type="warning">Any custom buildpacks added to the system prior to the upgrade will be lost. Custom
           buildpacks must be <xref
@@ -265,12 +267,12 @@ option.</p>
             >restored</xref> to the system after an upgrade.</note>
       </p>
 </section>
-<section id="clearing-the-browser-cache"> <title>Clearing the Browser Cache</title>
+<section id="clearing-the-browser-cache"> <title>Clearing the Browser Cache</title> 
 <p>After an upgrade, certain Management Console JavaScript and CSS files may persist in the browser. For example, Firefox users may see the following error in the Applications view:</p>
 <codeblock>sconsole.cf_api.settings is undefined</codeblock>
 <p>Performing a cache clear using whichever key combination is appropriate for the browser (ex: CTRL+SHIFT+F5) will resolve such errors. When scheduling an upgrade, notify the system users that they should not merely refresh (F5) but perform a cache clear after the upgrade is completed.</p>
 </section>
-<section id="restaging-apps"> <title>Restaging Apps Behind a Proxy</title>
+<section id="restaging-apps"> <title>Restaging Apps Behind a Proxy</title> 
 <p>When migrating applications from Helion <tm tmtype="reg">OpenStack</tm> 1.0 to 1.1, applications
         with broken support for <codeph>https_proxy</codeph> may fail during staging (or pre-running
         hooks) because <codeph>https_proxy</codeph> is now always defined during these stages, even
@@ -278,7 +280,7 @@ option.</p>
           href="https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
           type="section">built-in proxy</xref>.</p>
 </section>
-<section id="missing-kato"> <title>Missing Kato Utility</title>
+<section id="missing-kato"> <title>Missing Kato Utility</title> 
 <p>If the <codeph>kato upgrade </codeph>command exits during the installation of the kato package,
         it is possible that <i>kato</i> itself can "go missing". It is removed before the upgraded
         package is fully installed.</p>

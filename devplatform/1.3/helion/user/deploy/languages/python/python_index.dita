@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11550">
-<title>HP Helion 1.3 Development Platform: Developing In Python</title>
+<title>HP Helion 1.3 Development Platform: Developing In Python</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -20,7 +20,7 @@
         >Cloud Foundry</tm>-based Platform as a Service (PaaS), or writing applications that take
       advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software
       services, tools to enable successful development are available in Python.</p>
-<section id="application-lifecycle-services"> <title>Application Lifecycle Services </title>
+<section id="application-lifecycle-services"> <title>Application Lifecycle Services </title> 
 <p>Application Lifecycle Services (ALS), a Cloud Foundry-based Platform as a Service, provides a
         means to execute Python applications on a managed platform. Deploying Python applications to
         the platform is normally done using a built-in <xref
@@ -52,7 +52,7 @@
         services.</p>
 
 </section>
-<section id="controlling-hp-helion-with-your-application"> <title>Controlling HP Helion with your Application</title>
+<section id="controlling-hp-helion-with-your-application"> <title>Controlling HP Helion with your Application</title> 
 <p>If your Python application is going to control HP Helion resources, it can communicate directly
   with the <xref href="../../../../../../../publiccloud/api.dita">Helion REST APIs</xref> with a client or the Python SDK.
         Currently, the Python SDK is very limited in features, so you will probably be forced to use
@@ -128,7 +128,7 @@ Procfile <codeph>web:</codeph> command. For example:</p>
 <p>See also: <xref href="https://github.com/ActiveState/stackato-buildpack-python" scope="external" format="html" >https://github.com/ActiveState/stackato-buildpack-python</xref>
 </p>
 </section>
-<section id="python-with-the-legacy-buildpack"> <title>Python with the Legacy Buildpack</title>
+<section id="python-with-the-legacy-buildpack"> <title>Python with the Legacy Buildpack</title> 
 <p>If your Python application has configuration for running on Application Lifecycle Service
   2.10 or earlier, you can deploy it using the <xref href="../../buildpack.dita#topic3370/legacy-buildpack" type="section"  >
 <i>Legacy
@@ -148,7 +148,7 @@ application object. For a minimal sample application, see
 <p>It is possible to <xref href="#topic11550/serving-static-files-with-uwsgi" format="dita"><i>serve
             static files with uWSGI</i></xref> .</p>
 </section>
-<section id="django"> <title>Deploying Django applications</title>
+<section id="django"> <title>Deploying Django applications</title> 
 <ul>
 <li>
           <ul>
@@ -175,19 +175,19 @@ application object. For a minimal sample application, see
           </ul></li>
 </ul>
 </section>
-<section id="application-url"> <title>Application URL</title>
+<section id="application-url"> <title>Application URL</title> 
 <p>Some applications require the user to specify the APP_URL. Below is an
 example on how to obtain the correct urls:</p>
 <codeblock>import json
 vcap_app = json.loads(os.environ['VCAP_APPLICATION'])
 APP_URL = 'http://' + vcap_app['uris'][0]</codeblock>
 </section>
-<section id="database-services"> <title>Database Services</title>
+<section id="database-services"> <title>Database Services</title> 
 <p>Some minor edits are required to make your application work with a
 database. Python database configurations are located inside
 <codeph>settings.py</codeph>.</p>
 </section>
-<section id="database-url"> <title>DATABASE_URL</title>
+<section id="database-url"> <title>DATABASE_URL</title> 
 <p>Authentication details for your configured database services can be
 found in the <codeph>os.environ</codeph> variable, under
 <codeph>DATABASE_URL</codeph>. Here is an example of getting the
@@ -217,7 +217,7 @@ else:
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
         }</codeblock>
 </section>
-<section id="vcap-services"> <title>VCAP_SERVICES</title>
+<section id="vcap-services"> <title>VCAP_SERVICES</title> 
 <codeblock>import json
 vcap_services = json.loads(os.environ['VCAP_SERVICES'])
 srv = vcap_services['mysql'][0]
@@ -233,7 +233,7 @@ DATABASES = {
     }
 }</codeblock>
 </section>
-<section id="worker-applications"> <title>Worker Applications</title>
+<section id="worker-applications"> <title>Worker Applications</title> 
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
@@ -246,7 +246,7 @@ web</i>
 </xref> key to
 Null ("\~").</p>
 </section>
-<section id="example"> <title>Example</title>
+<section id="example"> <title>Example</title> 
 <codeblock>name: python-app
 framework:
   type: python
@@ -255,7 +255,7 @@ command: python worker.py
 processes:
   web: ~</codeblock>
 </section>
-<section id="serving-static-files-with-uwsgi"> <title>Serving Static Files with uWSGI</title>
+<section id="serving-static-files-with-uwsgi"> <title>Serving Static Files with uWSGI</title> 
 <p>It is possible to serve static files with uWSGI using
 <codeph>processes: web:</codeph> in the
 <xref href="../../manifestyml.dita" >
@@ -277,7 +277,7 @@ doesn't exist, then uWSGI will forward the request to the app.</p>
           frameworks.</note>
       </p>
 </section>
-<section id="using-a-custom-web-server"> <title>Using a custom web server</title>
+<section id="using-a-custom-web-server"> <title>Using a custom web server</title> 
 <p>To use a different web server instead of uWSGI, specify its startup
 command in <codeph>manifest.yml</codeph>. Here's a sample
 manifest.yml used to deploy a Django 1.4 application named "dj14" using
@@ -298,7 +298,7 @@ used to serve non-WSGI applications (such as Tornado). See the
 <xref href="https://github.com/Stackato-Apps/bottle-py3" scope="external" format="html" >bottle-py3 example</xref> sample
 for an example.</p>
 </section>
-<section id="installing-python-packages"> <title>Installing Python Packages</title>
+<section id="installing-python-packages"> <title>Installing Python Packages</title> 
 <p>To install packages from custom repository/mirror, use the <xref href="#topic11550/pip"
           format="dita"><i>PIP_OPTS</i></xref> or <xref href="#topic11550/pypm" format="dita"
             ><i>PYPM_OPTS</i></xref>
@@ -313,7 +313,7 @@ for an example.</p>
 <i>pip</i>
 </xref>.</p>
 </section>
-<section id="pypm"> <title>PyPM</title>
+<section id="pypm"> <title>PyPM</title> 
   <p>Definition <xref href="../../../reference/glossary.dita#topic6187/term-pypm" type="section"   >
 <i>PyPM</i>
 </xref>
@@ -335,7 +335,7 @@ accepts version specification. The name of this file can be overridden by
 setting the <codeph>PYPM_REQUIREMENTS_FILE</codeph> environment
 variable.</p>
 </section>
-<section id="pip"> <title>pip</title>
+<section id="pip"> <title>pip</title> 
   <p>Definition <xref href="../../../reference/glossary.dita#topic6187/term-pip" type="section"   >
 <i>pip</i>
 </xref>
@@ -364,7 +364,7 @@ can be overridden by setting the <codeph>PIP_REQUIREMENTS_FILE</codeph> environm
             logs</codeph>.</note>
       </p>
 </section>
-<section id="pypy-support"> <title>PyPy Support</title>
+<section id="pypy-support"> <title>PyPy Support</title> 
 <p>Here is an example of pushing an app using PyPy.</p>
 <p>First, clone the <xref href="https://github.com/Stackato-Apps/werkzeug-debugger" scope="external" format="html" >https://github.com/Stackato-Apps/werkzeug-debugger</xref>
 repository.</p>
@@ -375,7 +375,7 @@ repository.</p>
 <p>Finally, push the app to Application Lifecycle Service:</p>
 <codeblock>helion push -n</codeblock>
 </section>
-<section id="other-python-frameworks"> <title>Other Python Frameworks</title>
+<section id="other-python-frameworks"> <title>Other Python Frameworks</title> 
 <p>Examples of deploying other frameworks are included in the <xref href="https://github.com/Stackato-Apps" scope="external" format="html" >GitHub
 samples repo</xref>:</p>
 <ul>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic24073">
-<title>HP Helion 1.3 Development Platform: Installation and Configuration</title>
+<title>HP Helion 1.3 Development Platform: Installation and Configuration</title> 
 <titlealts>
 <searchtitle>HP Helion 1.3 Development Platform: Commercial Installation and Configuration</searchtitle>
 </titlealts>
@@ -55,28 +55,28 @@
   
 </body>
   <topic id="id_tfs_4qv_ft" conref="devplatform_install_prereq.dita#topic_x54_njh_ts">
-    <title>Prerequisites</title>
+    <title>Prerequisites</title> 
   </topic>
   <topic id="id_l4p_cxw_ft" conref="devplatform_install_platform.dita#topic_gly_xmh_ts">
     <title/>
   </topic>
   <topic id="id_jbr_5qv_ft" conref="devplatform.horizonui.install.dita#topic4029">
-    <title>Install the Horizon UI Panels</title>
+    <title>Install the Horizon UI Panels</title> 
   </topic>
   <topic id="id_o3f_zww_ft" conref="devplatform_install_ALS.dita#topic_txg_cnh_ts">
-    <title>Install the Application Lifecycle Service</title>
+    <title>Install the Application Lifecycle Service</title> 
   </topic>
   <topic id="id_xn3_1xw_ft" conref="devplatform_install_database.dita#topic_vsf_hnh_ts">
-    <title>Install the Database Service</title>
+    <title>Install the Database Service</title> 
   </topic>
   <topic id="id_hm5_bxw_ft" conref="devplatform_install_messaging.dita#topic_t3w_fnh_ts">
-    <title>Install the Message Service</title>
+    <title>Install the Message Service</title> 
   </topic>
   <topic id="id_o5g_bxw_ft" conref="devplatform_install_marketplace.dita#topic_z1r_3nh_ts">
-    <title>Install the Marketplace</title>
+    <title>Install the Marketplace</title> 
   </topic>
   <topic id="id_mwp_hxw_ft" conref="devplatform.vertica.install.dita#topic6367">
-    <title>Install the Vertica Application in the Marketplace</title>
+    <title>Install the Vertica Application in the Marketplace</title> 
   </topic>
  
  

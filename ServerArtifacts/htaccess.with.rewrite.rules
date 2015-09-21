@@ -7,7 +7,16 @@ Options +FollowSymLinks
 RewriteEngine on
 #
 #
-RewriteRule ^#devplatform/1.1devplatform.ALS-developer-trial-quick-start.html/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/supportedconfigs?$ http://15.126.244.7/hos2.0beta2/#helion/supportedconfigs.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/hardware?$ http://15.126.244.7/hos2.0beta2/#helion/hardware.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/installation_troubleshooting?$ http://15.126.244.7/hos2.0beta2/#helion/installation_troubleshooting.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/cinder_vsa?$ http://15.126.244.7/hos2.0beta2/#helion/cinder/vsa/vsa.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/bare_installation_esx?$ http://15.126.244.7/hos2.0beta2/#helion/bare_installation_esx.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/monasca_opsconsole_overview?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/overview.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/monasca?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/monasca.html [NE,R=301,L]
+RewriteRule ^helion/devplatform/1.3/als/client/download?$ /#devplatform/1.3/helion/CLI/ALS_Client_Downloads.html [NE,R=301,L]
+RewriteRule ^helion/devplatform/1.3/als/?$ /#devplatform/1.3/devplatform.index.html [NE,R=301,L]
+RewriteRule ^devplatform/1.1devplatform.ALS-developer-trial-quick-start.html/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html [NE,R=301,L]
 RewriteRule ^helion/devplatform/ALS-developer-trial-quick-start/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html [NE,R=301,L]
 RewriteRule ^helion/devplatform/preview/ALS-developer-trial-quick-start/termination/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-termination.html [NE,R=301,L]
 RewriteRule ^helion/devplatform/preview/ALS-developer-trial-quick-start/troubleshooting/?$ /#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.html [NE,R=301,L]

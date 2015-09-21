@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2276">
-<title>HP Helion 1.3 Development Platform: Application Lifecycle Service Admin Guide</title>
+<title>HP Helion 1.3 Development Platform: Application Lifecycle Service Admin Guide</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -22,12 +22,12 @@
 <p>Application Lifecycle Service is our cloud application framework for creating a multi-language,
       secure and private Platform-as-a-Service (PaaS). This guide covers how to set it up and how to
       configure it for your end users.</p>
-<section id="wizard-based-cluster-creation"> <title>Wizard-Based Cluster Creation</title>
+<section id="wizard-based-cluster-creation"> <title>Wizard-Based Cluster Creation</title> 
 <p>You can easily create and access Application Lifecycle Service clusters from the <xref
           href="../../devplatform.deploy-ALS.dita">Horizon Dashboard</xref>
       </p>
 </section>
-<section id="management-console"> <title>Helion Development Platform Management Console</title>
+<section id="management-console"> <title>Helion Development Platform Management Console</title> 
 <ul>
 <li>
 <xref href="../user/console/console_index.dita" >Management Console</xref>
@@ -36,7 +36,7 @@
 <xref href="console/app-store.dita">Sample Applications </xref></li>
 </ul>
 </section>
-<section id="server-configuration"> <title>Advanced/Manual Server Configuration</title>
+<section id="server-configuration"> <title>Advanced/Manual Server Configuration</title> 
 <p>This section covers advanced configuration settings that allow you to modify default cluster component behavior.</p>
 <ul>
 <li>
@@ -141,7 +141,7 @@
           </ul></li>
 </ul>
 </section>
-<section id="cluster-configuration"> <title>Advanced/Manual Cluster Configuration</title>
+<section id="cluster-configuration"> <title>Advanced/Manual Cluster Configuration</title> 
 <p>This section provides information on how to set up a standalone cluster and modify default cluster level settings.</p>
 <ul>
 <li>
@@ -215,7 +215,7 @@
           </ul></li>
 </ul>
 </section>
-<section id="best-practices"> <title>Best Practices</title>
+<section id="best-practices"> <title>Best Practices</title> 
 <ul>
 <li>
           <xref href="best-practices/best_practices_index.dita">Best Practices</xref>
@@ -237,7 +237,7 @@
           </ul></li>
 </ul>
 </section>
-<section id="reference"> <title>Reference</title>
+<section id="reference"> <title>Reference</title> 
 <ul>
 <li>
 <xref href="reference/kato-ref.dita" >Kato Command Reference</xref>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2457">
-<title>HP Helion 1.3 Development Platform: Resources for Application Developers</title>
+<title>HP Helion 1.3 Development Platform: Resources for Application Developers</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -19,7 +19,7 @@
 <body>
 <p>HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.</p>
 <p>Each sample builds on the previous one and all source code is provided for you to build, deploy, and take apart. Each sample is provided in multiple languages.</p>
-<section id="prerequisites-before-you-begin"> <title>Prerequisites - Before you begin</title>
+<section id="prerequisites-before-you-begin"> <title>Prerequisites - Before you begin</title> 
 <p>In order to download and deploy these sample applications, you must have the necessary framework installed and configured.</p>
 <ul>
 <li>HP Helion <tm tmtype="reg">OpenStack</tm>
@@ -39,10 +39,10 @@
 <li>(Optional) Access to the <xref href="devplatform.eclipse.dita" >Eclipse</xref> deployment plugin for JAVA applications.</li>
 </ul>
 </section>
-<section id="sample"> <title>Sample code</title>
+<section id="sample"> <title>Sample code</title> 
 <p>For best results, work with each sample in the order in which they are provided, as each one builds on the knowledge provided in the previous sample.</p>
 </section>
-<section id="java"> <title>Java</title>
+<section id="java"> <title>Java</title> 
 <ol>
 <li>
           <xref href="workbook/helloworld/helloworld.java.dita">Hello
@@ -62,7 +62,7 @@
 </ol>
 <p>More Helion <xref href="helion/user/deploy/languages/java.dita" >Java</xref> references.</p>
 </section>
-<section id="node"> <title>Node</title>
+<section id="node"> <title>Node</title> 
 <ol>
 <li>
           <xref href="workbook/helloworld/helloworld.node.dita">Hello
@@ -82,7 +82,7 @@
 </ol>
 <p>More Helion <xref href="helion/user/deploy/languages/node.dita" >Node</xref> references.</p>
 </section>
-<section id="PHP"> <title>PHP</title>
+<section id="PHP"> <title>PHP</title> 
 <ol>
 <li>
           <xref href="workbook/helloworld/helloworld.php.dita">Hello
@@ -102,7 +102,7 @@
 </ol>
 <p>More Helion <xref href="helion/user/deploy/languages/php.dita" >PHP</xref> references.</p>
 </section>
-<section id="other-references"> <title>Other references</title>
+<section id="other-references"> <title>Other references</title> 
 <ul>
 <li>
 <xref href="installation/devplatform_install_marketplace.dita" >Installing the Marketplace</xref>
@@ -124,7 +124,7 @@
 </li>
 </ul>
 </section>
-<section id="best-practices"> <title>Best practices</title>
+<section id="best-practices"> <title>Best practices</title> 
 <ul>
 <li>
 <xref href="http://12factor.net/" scope="external" format="html" >The 12-Factor App</xref>

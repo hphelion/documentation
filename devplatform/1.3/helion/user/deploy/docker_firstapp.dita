@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_yw1_w3r_dt">
-  <title>Create Your First Docker App</title>
+  <title>Create Your First Docker App</title> 
   <body><section>
     <p>This Helion Development Platform release introduces the ability to deploy Docker images. This example takes an existing app and creates a
       Docker image that will run in ALS and take advantage of the provisioned services. </p></section><section>
-      <title>Start With a New "Stack" </title>
+      <title>Start With a New "Stack" </title> 
       <p>One of the advantages to using Docker is the ability to run different flavors of Linux.
         While ALS is based on Ubuntu 12.04 LTS, Docker images can be based on a different distro,
         such as Debian, CentOS, or even Alpine Linux images. This example uses the openSUSE base
@@ -16,7 +16,7 @@
         each separate Dockerfile. This example includes both methods.</p>
     </section>
     
-    <section><title>Prerequisites </title> Before attempting to create Docker applications, ensure
+    <section><title>Prerequisites </title>  Before attempting to create Docker applications, ensure
       you have the following: <ul>
         <li>A DockerHub account.</li>
         <li>On OSX you also need Boot2Docker installed and running. <note>Boot2Docker does not need
@@ -28,7 +28,7 @@
     
     
     
-    <section><title>Update and Installing OS Packages</title>
+    <section><title>Update and Installing OS Packages</title> 
         <p>Create a Dockerfile with the content below. This docker file executes an update using the
         OS package manager. On openSUSE, this is done with <codeph>zypper</codeph>. </p>
           <codeblock>FROM opensuse:13.2  
@@ -69,7 +69,7 @@ git curl wget</codeblock>
       related commands together reduces the number of layers, helping ensure that the maximum is not exceeded.
       If there are relatively few layers, having the update and package install steps in separate RUN commands can take advantage of Docker's ability to
       use cached layers when rebuilding, which can speed up the build significantly.</p>
-      </section><section><title>Build, test, and push Docker Images</title> 
+      </section><section><title>Build, test, and push Docker Images</title>  
       <p>The new "base+1" image layer is named '<i>&lt;myrepo></i>/opensuse-python'. </p><p>To build it, run this command in a directory that is empty
       except for the Dockerfile:</p><codeblock> $ sudo docker build --no-cache -t &lt;myrepo>/opensuse-python .</codeblock><p>In this case, <codeph>--no-cache</codeph> is used to ensure that the <codeph>zypper</codeph> update runs each time it builds, rather than relying on the cached image layer from previous builds.</p>
         <p>After the build completes, open an interactive shell and verify that it went as expected:</p>
@@ -81,9 +81,9 @@ sh-4.2# exit </codeblock>
           href="https://registry.hub.docker.com/" format="html" scope="external">Docker Hub</xref>
         or other registry server:</p><codeblock>$ sudo docker push &lt;myrepo>/opensuse-python</codeblock></section>
     
-    <section><title>Create an Application Container:<i> bottle-currency-suse</i></title><p>First,
-        clone the the Docker version of the example app (bottle-currency). This app is based on
-        Ubuntu 12.04, so the Dockerfile can be adapted to work with an opensuse-python image.</p><p>
+    <section><title>Create an Application Container:<i> bottle-currency-suse</i></title> <p>First,
+        clone the Docker version of the example app (bottle-currency). This app is based on Ubuntu
+        12.04, so the Dockerfile can be adapted to work with an opensuse-python image.</p><p>
         <codeblock> git clone <xref href="https://github.com/Stackato-Apps/bottle-currency.git" format="html" scope="external">https://github.com/Stackato-Apps/bottle-currency.git</xref></codeblock>
       </p><p> Once the project is cloned, create a Docker file following the steps below
       .</p><codeblock>FROM <i>&lt;myrepo></i>/opensuse-python MAINTAINER <i>&lt;myname> &lt;myemail></i></codeblock>Use
@@ -114,7 +114,7 @@ WORKDIR /home/www</codeblock>This
       browser will show the running web app, but the error message "An error occurred while
       contacting the server" will appear. The conversion app does not function yet because it
       requires a Redis data service. <p>Push the new image to the Docker Hub:
-      </p><codeblock>sudo docker push &lt;myrepo&gt;/bottle-currency-suse</codeblock></section><section><title>Deploying the App</title><p>The bottle-currency app looks for a Redis data service exposed by a REDIS_URL environment
+      </p><codeblock>sudo docker push &lt;myrepo&gt;/bottle-currency-suse</codeblock></section><section><title>Deploying the App</title> <p>The bottle-currency app looks for a Redis data service exposed by a REDIS_URL environment
         variable. <xref href="../reference/environment.dita#topic7631">Environment variables</xref>
         (VCAP_SERVICES) are injected into the Docker containers to provide connection information
         for any services that have been bound to the app. This is the <xref

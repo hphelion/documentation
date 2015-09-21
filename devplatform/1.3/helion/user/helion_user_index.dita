@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic1693">
-<title>HP Helion 1.3 Development Platform: Application Lifecycle Service User Guide</title>
+<title>HP Helion 1.3 Development Platform: Application Lifecycle Service User Guide</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -21,7 +21,7 @@
       data services simply by pushing your source code to the system.</p>
 <p>Application Lifecycle Service handles the automatic configuration of the language runtime,
 web server, application dependencies, databases, and other services.</p>
-<section id="quick-start"> <title>Quick Start</title>
+<section id="quick-start"> <title>Quick Start</title> 
 <ul>
 <li>
   <xref href="quick-start/quickstart_index.dita">ALS Quick Start </xref>(Not to be confused with the <xref href="../../devplatform.ALS-developer-trial-quick-start.dita">Developer Quick Start Trial</xref>.</li>
@@ -39,7 +39,7 @@ web server, application dependencies, databases, and other services.</p>
 </li>
 </ul>
 </section>
-<section id="helion-client"> <title>Application Lifecycle Service Client</title>
+<section id="helion-client"> <title>Application Lifecycle Service Client</title> 
 <ul>
 <li>
 <xref href="../user/reference/client-ref.dita">Application Lifecycle Service Client Command Reference</xref>
@@ -68,7 +68,7 @@ web server, application dependencies, databases, and other services.</p>
           </ul></li>
 </ul>
 </section>
-<section id="deploying-applications"><title>Deploying Applications</title>
+<section id="deploying-applications"><title>Deploying Applications</title> 
 <ul>
 <li>
 <xref href="../user/deploy/deploy_index.dita">General Deployment</xref>
@@ -113,7 +113,7 @@ web server, application dependencies, databases, and other services.</p>
           </ul></li>
 </ul>
 </section>
-<section id="services"> <title>Services</title>
+<section id="services"> <title>Services</title> 
 <ul>
 <li>
 <xref href="../user/services/data-services.dita">Data Services</xref>
@@ -132,7 +132,7 @@ web server, application dependencies, databases, and other services.</p>
 </li>
 </ul>
 </section>
-<section id="logging-monitoring"> <title>Logging &amp; Monitoring</title>
+<section id="logging-monitoring"> <title>Logging &amp; Monitoring</title> 
 <ul>
 <li>
 <xref href="../user/deploy/app-logs.dita">Application Logs</xref>
@@ -142,7 +142,7 @@ web server, application dependencies, databases, and other services.</p>
 </li>
 </ul>
 </section>
-<section id="management-console"> <title>Management Console</title>
+<section id="management-console"> <title>Management Console</title> 
 <ul>
         <li><xref href="console/console_index.dita">Management Console User View</xref></li>
       </ul>

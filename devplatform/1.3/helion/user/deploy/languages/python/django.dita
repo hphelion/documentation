@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3654">
-<title>HP Helion 1.3 Development Platform: Deploying Django applications</title>
+<title>HP Helion 1.3 Development Platform: Deploying Django applications</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -33,7 +33,7 @@ least the <codeph>django</codeph> project:</p>
 <codeblock>cat requirements.txt
 django==1.4
 mysql-python</codeblock>
-<section id="configuring-database"> <title>Configuring the Database</title>
+<section id="configuring-database"> <title>Configuring the Database</title> 
   <p>See <xref href="../../../services/data-services.dita#topic19772/using-external-databases" type="section">Using Configured Database Services</xref> for more information on connecting with database services.</p>
 <ol>
 <li> You must modify the <codeph>DATABASES</codeph> variable of your project's <i>settings.py</i> as
@@ -68,7 +68,7 @@ else:
           <i>requirements.txt</i>:<codeblock>echo 'mysql-python' &gt;&gt; requirements.txt</codeblock></li>
 </ol>
 </section>
-<section id="initializing-database"> <title>Initializing database</title>
+<section id="initializing-database"> <title>Initializing database</title> 
 <p>Run the <codeph>syncdb</codeph> command to initialize the database
 tables:</p>
 <codeblock>helion run &lt;appname&gt; python manage.py syncdb</codeblock>
@@ -76,7 +76,7 @@ tables:</p>
 <xref href="http://south.aeracode.org/" scope="external" format="html" >South</xref>, also run:</p>
 <codeblock>helion run &lt;appname&gt; python manage.py migrate</codeblock>
 </section>
-<section id="configuring-static-media"> <title>Configuring static media</title>
+<section id="configuring-static-media"> <title>Configuring static media</title> 
 <p>There are various ways to serve static files for a Django application. While Option #1 is the most recommended for production deployments, option #3 is the simplest for non-production/development/test/QA deployments.</p>
 <ol>
 <li>Directly serve static files with uWSGI. See <xref href="python_index.dita">
@@ -92,7 +92,7 @@ in the django-gtd sample app. or:</li>
 recommended for production applications.</li>
 </ol>
 </section>
-<section id="configuring-project-location"> <title>Configuring project location</title>
+<section id="configuring-project-location"> <title>Configuring project location</title> 
 <p>Your project's <i>settings.py</i> may not always reside at the root directory. Furthermore, you may want to extend <codeph>sys.path</codeph> to point to certain project sub-directories.</p>
 <p>To persist such environment changes (across wsgi.py, settings.py, manage.py, etc.), add the following to manifest.yml:</p>
 <codeblock>env:

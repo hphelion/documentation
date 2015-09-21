@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13355">
-<title>HP Helion 1.3 Development Platform: Application Lifecycle Service Client Command Reference</title>
+<title>HP Helion 1.3 Development Platform: Application Lifecycle Service Client Command Reference</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -21,7 +21,7 @@
 <p>Note that Administrative user privileges are required for some commands.</p>
 <section id="getting-started"> <title>
   Getting Started
-</title>
+</title> 
 <ul>
 <li>
           <xref href="client-ref-getting-started.dita#topic2439/command-login" type="section"  >helion
@@ -34,7 +34,7 @@
 </section>
 <section id="administration"> <title>
   Administration
-</title>
+</title> 
 <ul>
 <li>
           <xref href="client-ref-administration.dita#topic11202/command-admin-grant" type="section"  >helion admin
@@ -68,7 +68,7 @@
 </section>
 <section id="applications"> <title>
   Applications
-</title>
+</title> 
 <ul>
 <li>
   <xref href="client-ref-applications.dita#topic5470/command-app" type="section">helion app</xref>: Show the information of the specified application.</li>
@@ -84,7 +84,7 @@
 </section>
 <section id="authentication-tokens"> <title>
   Authentication Tokens
-</title>
+</title> 
 <ul>
 <li>
   <xref href="client-ref-tokens.dita#topic3706/command-create-service-auth-token" type="section">helion create-service-auth-token</xref>: Create a new service authentication token.</li>
@@ -98,7 +98,7 @@
 </section>
 <section id="brokers"> <title>
   Brokers
-</title>
+</title> 
 <ul>
 <li>
   <xref href="client-ref-brokers.dita#topic5507/command-add-service-broker" type="section">helion add-service-broker</xref>: Make the named service broker known.</li>
@@ -116,7 +116,7 @@
 </section>
 <section id="buildpacks"> <title>
   Buildpacks
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-buildpacks.dita#topic3572/command-buildpacks" type="section">helion buildpacks</xref>: Show all buildpacks known to the target in the order they are checked in during auto-detection.</li>
@@ -132,7 +132,7 @@
 </section>
 <section id="control"> <title>
   Control
-</title>
+</title> 
 <ul>
 <li>
   <xref href="client-ref-control.dita#topic3247/command-migrate" type="section">helion migrate</xref>: Move the application to a different space. </li>
@@ -142,7 +142,7 @@
 </section>
 <section id="domains"> <title>
   Domains
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-domains.dita#topic2161/command-create-domain" type="section">helion create-domain</xref>: Create a new domain.</li>
@@ -154,7 +154,7 @@
 </section>
 <section id="feature-flags"> <title>
   Feature Flags
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-flags.dita#topic2298/command-disable-feature-flag" type="section">helion disable-feature-flag</xref>: Deactivate the specified feature. </li>
@@ -168,7 +168,7 @@
 </section>
 <section id="history"> <title>
   History
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-history.dita#topic958/command-history-clear" type="section">helion history clear</xref>: Clear the saved history.</li>
@@ -180,7 +180,7 @@
 </section>
 <section id="information"> <title>
   Information
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-information.dita#topic17778/command-crashes" type="section">helion crashes</xref>: List recent application crashes.</li>
@@ -216,7 +216,7 @@
 </section>
 <section id="management"> <title>
   Management
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-management.dita#topic50918/command-create-app" type="section">helion create-app</xref>: Create an empty application with the specified configuration.</li>
@@ -268,7 +268,7 @@
 </section>
 <section id="miscellaneous"> <title>
   Miscellaneous
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-miscellaneous.dita#topic3989/command-admin" type="section">helion admin</xref>: A set of administrative tasks.</li>
@@ -296,7 +296,7 @@
 </section>
 <section id="organizations"> <title>
   Organizations
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-organizations.dita#topic6634/command-create-org" type="section">helion create-org</xref>: Create a new organization.</li>
@@ -324,7 +324,7 @@
 </section>
 <section id="placement-zones"> <title>
   Placement Zones
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-placement.dita#topic4565/command-placement-zone" type="section">helion placement-zone</xref>: Show the list of DEAs associated with the specified placement zone.</li>
@@ -338,7 +338,7 @@
 </section>
 <section id="quotas"> <title>
   Quotas
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-quotas.dita#topic5727/command-quota-configure" type="section">helion quota configure</xref>: Reconfigure the named quota plan.</li>
@@ -358,7 +358,7 @@
 </section>
 <section id="routes"> <title>
   Routes
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-routes.dita#topic2750/command-delete-route" type="section">helion delete-route</xref>: Delete the named route.</li>
@@ -368,7 +368,7 @@
 </section>
 <section id="security-groups"> <title>
   Security Groups
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-securitygroups.dita#topic5620/command-bind-security-group" type="section">helion bind-security-group</xref>: Bind the named security group to the current space, the specified space, or the running and staging phases. </li>
@@ -388,7 +388,7 @@
 </section>
 <section id="service-management"> <title>
   Service Management
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-service-management.dita#topic10567/command-bind-service" type="section">helion bind-service</xref>: Bind the named service to the specified application.</li>
@@ -410,7 +410,7 @@
 </section>
 <section id="service-plans"> <title>
   Service Plans
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-serviceplans.dita#topic4355/command-hide-service-plan" type="section">helion hide-service-plan</xref>: Hide the specified service-plan from the named organization.</li>
@@ -426,7 +426,7 @@
 </section>
 <section id="services"> <title>
   Services
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-services.dita#topic3675/command-marketplace" type="section">helion marketplace</xref>: List the supported service plans of the target for the current or specified space. </li>
@@ -440,7 +440,7 @@
 </section>
 <section id="spaces"> <title>
   Spaces
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-spaces.dita#topic9898/command-create-space" type="section">helion create-space</xref>: Create a new space.</li>
@@ -466,7 +466,7 @@
 </section>
 <section id="space-quotas"> <title>
   Space Quotas
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-spacequotas.dita#topic7566/command-create-space-quota" type="section">helion create-space-quota</xref>: Create a new space quota. </li>
@@ -488,7 +488,7 @@
 </section>
 <section id="user-management"> <title>
   User Management
-</title>
+</title> 
 <ul>
 <li>
 <xref href="client-ref-user-management.dita#topic7058/command-add-user" type="section">helion add-user</xref>: Register a new user in the current or specified target. Requires admin privileges.</li>

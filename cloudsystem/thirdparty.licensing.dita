@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_mqk_j4l_xs">
+  <title>HP Helion CloudSystem: Open Source and Third-Party Software License Agreements</title>
+  <body>
+    <p>Open Source and Third-Party Software License Agreements are available here as a PDF download.</p>
+<ul>
+      <li><xref
+                    href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_CloudSystem_9.0_OSRB.pdf"
+                    format="pdf" scope="external">Helion CloudSystem 9.0</xref></li>
+      <li><xref
+          href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HDP_Thirdparty_OS_v2.pdf"
+          format="pdf" scope="external">Helion Development Platform 1.3</xref></li>
+  <li><xref
+          href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/Helion_OS_OSRB_1.1.1.pdf"
+          scope="external" format="pdf">Helion OpenStack 1.1.1</xref></li>
+      <li><xref
+          href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_CSA_450_OSRB_Licensing.pdf"
+          format="pdf" scope="external">Cloud Service Automation (CSA) 4.5</xref></li>
+      <li><xref
+          href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/OO_OpenSource_ThirdParty-10_20.pdf"
+          format="pdf" scope="external">Operations Orchestration 10.20</xref></li>
+  <li><xref
+                    href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Vertica_71_OSRB_Licensing.pdf"
+                    format="pdf" scope="external">Vertica Analytic Database</xref></li>
+            <li><xref
+                    href="http://h20564.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04647291"
+                    format="html" scope="external">VAN SDN Controller and HP Converged Control SDN
+                    Application</xref></li>
+<li>Codar 1.5: There are no additional license requirements for this product.</li>
+</ul> 
+<p>Please allow sufficient time for the document to fully load. </p>
+  </body>
+</topic>

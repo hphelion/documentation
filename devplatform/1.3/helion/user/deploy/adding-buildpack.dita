@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_pg2_qbl_ls">
-  <title>HP Helion 1.3 Development Platform: Adding Buildpacks</title>
+  <title>HP Helion 1.3 Development Platform: Adding Buildpacks</title> 
   <body>
     <section>
       <p> The Application Lifecycle Service (ALS) has a number of built-in buildpacks installed by
         default. Administrators can install additional buildpacks, making them available to
-        developers pushing applications. </p></section><section><title>Building Packages</title> Buildpacks are normally hosted in Git
+        developers pushing applications. </p></section><section><title>Building Packages</title>  Buildpacks are normally hosted in Git
         repositories with a standard structure described in <xref
           href="https://devcenter.heroku.com/articles/buildpack-api" format="html" scope="external"
           >Heroku's Buildpack API documentation</xref>. These repositories can be packaged into .zip
@@ -26,13 +26,13 @@
             cloudfoundry/java-buildpack</xref></li>
         </ul> When run with "offline" options, the bin/package script or package build target for
         these buildpacks fetch the external assets and bundle them in the .zip file. See their
-        respective README files for more information. </section><section><title>Installing Packaged Buildpacks</title> Use the create-buildpack command to upload
+        respective README files for more information. </section><section><title>Installing Packaged Buildpacks</title>  Use the create-buildpack command to upload
       and install buildpack .zip archives. For example:
       <codeblock>helion create-buildpack June2014CF-ruby ruby_buildpack.zip
 Creating new buildpack June2014CF-ruby ... OK
 Uploading buildpack bits ... 100% OK 
 OK</codeblock></section>
-    <section><title>Buildpack Order</title> When users push applications to the system without
+    <section><title>Buildpack Order</title>  When users push applications to the system without
       specifying an external buildpack, ALS cycles through the detect scripts of the installed
       buildpacks looking for one to match the pushed application type. The first buildpack to match
       the application detection heuristics will stage and run the pushed application. The order in

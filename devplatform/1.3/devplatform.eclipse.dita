@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5712">
-<title>HP Helion 1.3 Development Platform: Eclipse Deployment Plugin</title>
+<title>HP Helion 1.3 Development Platform: Eclipse Deployment Plugin</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -19,7 +19,7 @@
 <body>
 <p>If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to HP Helion Development Platform.</p>
 <p>Follow the steps outlined in this document to get the plugin up and running and to deploy one of the sample apps.</p>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="prerequisites"> <title>Prerequisites</title> 
 <p>If you'd like to deploy the provided <xref href="devplatform.appdev.dita#topic2457/java" type="section" >Java
                     samples</xref>, you will need to install the following prerequisites. If
                 necessary, locate the version appropriate for your environment and install it before
@@ -30,7 +30,7 @@
 <li>The Java Developer Kit (<xref href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" scope="external" format="html" >JDK</xref>)</li>
 </ul>
 </section>
-<section id="installation"> <title>Installation</title>
+<section id="installation"> <title>Installation</title> 
 <ol>
 <li>Open the Eclipse IDE and install the plugin through the <b>Eclipse Marketplace</b> dialog. You
                     can find this dialog by clicking on <b>Help</b> and then <b>Eclipse
@@ -46,7 +46,7 @@
 <li>You will be prompted to restart Eclipse.  </li>
 </ol>
 </section>
-<section id="setupconfiguration"> <title>Setup/Configuration</title>
+<section id="setupconfiguration"> <title>Setup/Configuration</title> 
 <ol>
 <li>Once Eclipse has reloaded, open the Servers window by navigating to Window-&gt; Show View-&gt; Servers. Note that if you have a different version of Eclipse, you might need to go to Window -&gt; Show View -&gt; Other -&gt; Servers.<image href="../../media/eclipse4.png" placement="break"/>
 </li>
@@ -76,7 +76,7 @@
                 sample app.</li>
 </ol>
 </section>
-<section id="usage"> <title>Usage</title>
+<section id="usage"> <title>Usage</title> 
 <p>In order to demonstrate how the plugin works, we'll use a simple Java sample app that connects to a MySQL service.  If you'd like to follow along, <xref href="https://github.com/HelionDevPlatform/helion-mysql-java" scope="external" format="html" >download and install</xref> the sample on your development machine.  If not, please skip the following 5 steps.</p>
 <ol>
 <li>Start by adding a new project. Right-click on Project Explorer and select <b>New</b> &gt; <b>Dynamic Web Project</b>. Name the project <b>MySQLSample</b> and then click <b>Finish</b>.<image href="../../media/eclipse9.png" placement="break"/>
@@ -95,7 +95,7 @@
                         placement="break"/></li>
 </ol>
 </section>
-<section id="deploy-sample"> <title>Deploy sample</title>
+<section id="deploy-sample"> <title>Deploy sample</title> 
 <p>Now that our Sample app is set up, let's deploy it using the Helion Development Platform plugin.</p>
 <ol>
 <li>Right-click the project in Project Explorer and select Configure &gt; Enable as Cloud Foundry App.<image href="../../media/eclipse14.png" placement="break"/>

@@ -92,8 +92,6 @@
             navtitle="Add or Remove Nodes- KVM " locktitle="yes"/>
           <topicref href="commercial/GA1/1.1commercial.install-GA-apparmor.dita"
             navtitle="AppArmor Overview" locktitle="yes"/>
-          <topicref href="commercial/GA1/1.1commercial.install-3par-multipath.dita"
-            navtitle="Configuring Multipath for 3PAR" locktitle="yes"/>
         </topicref>
       </topicref>
       <topicref href="commercial/GA1/1.1commercial.install-GA-esx.dita"
@@ -1879,11 +1877,15 @@
   </topicref>
 
   <!-- END Public cloud -->
+  <topicref href="cloudsystem/cloudsystem.landingpage.dita" navtitle="HP Helion CloudSystem 9.0"
+    locktitle="yes">
+    <topicref href="cloudsystem/thirdparty.licensing.dita"
+      navtitle="Open-Source and Third-Party Licensing" locktitle="yes"/>
+    <topicref href="cloudsystem/licensing.dita"/>
+  </topicref>
 
   <topicref href="automation/csa.index.dita"/>
   <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
-  <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
-  <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
 
 </map>

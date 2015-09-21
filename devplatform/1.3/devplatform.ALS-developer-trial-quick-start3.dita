@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic1871">
-<title>HP Helion 1.3 Development Platform: Quick Start Developer Trial</title>
+<title>HP Helion 1.3 Development Platform: Quick Start Developer Trial</title> 
 <titlealts>
 <searchtitle>Quick Start Developer Trial Step 3: Create Sandbox</searchtitle>
 </titlealts>
@@ -38,6 +38,8 @@
             <li>In the <b>US West section</b>, in the <b>Compute</b> row, click <b>Activate</b> to
                             activate the Compute service.Activating the Compute service is required
                             for creating VM instances.<image href="../../media/quickstartWestActivate.png" id="image_dlk_hxc_ks" placement="break"/>
+              <note>Due to load balancing, your account may be provisioned to use USEast instead of USWest. If you see the <b>Launch Instance</b> button in the <b>Instances</b> pane disabled, try the other region.
+              </note>
                         </li>
             <li>Click the <b>Project</b> panel and then the <b>Compute</b> sub-panel.<image href="../../media/quickstartC11.png" placement="break"/>
                         </li>

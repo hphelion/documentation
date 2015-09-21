@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic31232">
-<title>HP Helion 1.3 Development Platform: Detailed Configuration</title>
+<title>HP Helion 1.3 Development Platform: Detailed Configuration</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -99,7 +99,7 @@ option is useful in this scenario).</p>
             </ul></li>
         </ul></li>
 </ul>
-<section id="changing-the-password"> <title>Changing the Password</title>
+<section id="changing-the-password"> <title>Changing the Password</title> 
 <p>The default password for the Helion system user is <i>stackato</i>. In clusters created by Helion
         Orchestration tools (the Horizon Management Console and Installer CLI VM), access after
         cluster setup is only available by SSH key pair.</p>
@@ -107,9 +107,9 @@ option is useful in this scenario).</p>
   <p>In an Application Lifecycle Service cluster, this change only happens on the node serving the Management Console pages (which could be one of <xref href="../cluster/cluster_index.dita#topic18326/multiple-controllers" type="section" >multiple Controller nodes</xref>). In this case, it's best to log in to each node in the cluster to change the password
 manually with the <i>passwd</i> command.</p>
 </section>
-<section id="network-setup"> <title>Network Setup</title>
+<section id="network-setup"> <title>Network Setup</title> 
 </section>
-<section id="server-config-hostname"> <title>Changing the Hostname</title>
+<section id="server-config-hostname"> <title>Changing the Hostname</title> 
   <p>You may want or need to change the hostname of the Application Lifecycle Service system, either to match a DNS record you've created or just to make the system URLs more convenient. This can be done using the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-rename" type="section" >kato node rename</xref> command:</p>
 <codeblock>kato node rename mynewname.example.com</codeblock>
   <p>This command will change the system hostname in <i>/etc/hostname</i> and <i>/etc/hosts,</i> as well as performing some internal configuration for Application Lifecycle Service such as generating a new server certificate for the <xref href="../../user/console/console_index.dita#topic8844" >Management Console</xref>.</p>
@@ -124,7 +124,7 @@ VM a canonical hostname on an existing network, <xref type="section" href="#topi
               file</i>
           </xref>.</p></note>
 </section>
-<section id="changing-ip-addresses"> <title>Changing IP Addresses</title>
+<section id="changing-ip-addresses"> <title>Changing IP Addresses</title> 
   <p>The Application Lifecycle Service <i>micro cloud</i> server is initially set up for <xref
           href="../../user/reference/glossary.dita#topic6187/term-DHCP">DHCP</xref> and <xref
           href="../../user/reference/glossary.dita#topic6187/term-multicast-dns" type="section"
@@ -191,7 +191,7 @@ the new addresses. You should also use this opportunity to ping the
 router and DNS server for this subnet. Check with your network
 administrator for their addresses.</p>
 </section>
-<section id="setting-a-static-ip"> <title>Setting a Static IP</title>
+<section id="setting-a-static-ip"> <title>Setting a Static IP</title> 
   <p>The easiest way to configure an Application Lifecycle Service VM with a static IP address is to use the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-op-static_ip" type="section" >kato op static_ip</xref> command.</p>
 <p>This command will prompt for the following inputs:</p>
 <ul>
@@ -265,7 +265,7 @@ being used by dnsmasq by checking the file
           href="#topic31232/server-config-etc-hosts" format="dita"><i>/etc/hosts</i></xref> section
         for final configuration of the server.</note>
 </section>
-<section id="server-config-etc-hosts"> <title>Modifying /etc/hosts</title>
+<section id="server-config-etc-hosts"> <title>Modifying /etc/hosts</title> 
 <p>The <codeph>/etc/hosts</codeph> file is used to resolve certain
 essential or local hostnames without calling upon the DNS. Unless you
 need to <xref type="section" href="#topic31232/server-config-hostname">change the local hostname</xref>, you will
@@ -314,7 +314,7 @@ of a hostname change, you can simply edit it as in the following
 example:</p>
 <codeblock>sudo vi /etc/hosts</codeblock>
 </section>
-<section id="server-config-dns"> <title>DNS</title>
+<section id="server-config-dns"> <title>DNS</title> 
   <p>The Application Lifecycle Service micro cloud uses <xref href="../../user/reference/glossary.dita#topic6187/term-multicast-dns" type="section" >multicast DNS</xref> to broadcast its generated hostname (e.g. <codeph>helion-xxxx.local</codeph>). This mechanism is intended for VMs running on a local machine or subnet.</p>
 <p>For production use, the server will need:</p>
 <ul>
@@ -353,7 +353,7 @@ to the DNS zone file as well. For example:</p>
 necessary. To turn it off on the Application Lifecycle Service server, use the command:</p>
 <codeblock>kato role remove mdns</codeblock>
 </section>
-<section id="dynamic-dns"> <title>Dynamic DNS</title>
+<section id="dynamic-dns"> <title>Dynamic DNS</title> 
 <p>If you don't have access to a DNS server, you can use a dynamic DNS
 provider, such as <xref href="http://www.changeip.com/" scope="external" format="html" >ChangeIP</xref>
 and
@@ -368,13 +368,13 @@ assignment is made on the subdomain to handle <codeph>api</codeph>
 and related application subdomains. Then wait to receive the
 authorization email, and verify the zone transfer before proceeding.</p>
 </section>
-<section id="alternate-dns-techniques"> <title>Alternate DNS Techniques</title>
+<section id="alternate-dns-techniques"> <title>Alternate DNS Techniques</title> 
 <p>For situations where mDNS will not work (e.g. running in a cloud hosting
 environment or connecting from a Windows system without mDNS support)
 but which do not merit the effort of manually configuring a DNS record
 (e.g. a test server) alternative methods are available.</p>
 </section>
-<section id="xip-io"> <title>xip.io</title>
+<section id="xip-io"> <title>xip.io</title> 
 <p>The quickest way to get wildcard DNS resolution is to use the
 <xref href="http://xip.io/" scope="external" format="html" >xip.io</xref> service.  This is the approach taken on clusters created with the Horizon Management Console panel or Application Lifecycle Service Installer CLI, and is done as part of the setup process.</p>
 <p>
@@ -388,7 +388,7 @@ Application Lifecycle Service settings. The xip.io DNS servers will resolve the 
 '10.9.8.7.xip.io' and all sub-domains to '10.9.8.7'. This works for
 private subnets as well as public IP addresses.</p>
 </section>
-<section id="dnsmasq"> <title>dnsmasq</title>
+<section id="dnsmasq"> <title>dnsmasq</title> 
 <p>Locally, you can run
   <xref href="../../user/reference/glossary.dita#topic6187/term-dnsmasq" type="section" >dnsmasq</xref> as a simple
 DNS proxy which resolves wildcards for
@@ -399,7 +399,7 @@ present in any of its configuration files:</p>
 <p>You must restart the service to pick up the changed configuration:</p>
 <codeblock>/etc/init.d/dnsmasq restart</codeblock>
 </section>
-<section id="adding-dns-nameservers"> <title>Adding DNS Nameservers</title>
+<section id="adding-dns-nameservers"> <title>Adding DNS Nameservers</title> 
 <p>You may need to add site-specific DNS nameservers manually if the
 Application Lifecycle Service VM or applications running in Application Lifecycle Service containers need to
 resolve internal hosts using a particular nameserver.</p>
@@ -412,7 +412,7 @@ For example:</p>
 when running the <codeph>kato op static_ip</codeph> command (see
   <xref type="section" href="#topic31232/setting-a-static-ip">Setting a Static IP</xref> above).</p>
 </section>
-<section id="tcp-udp-port-configuration"> <title>TCP/UDP Port Configuration</title>
+<section id="tcp-udp-port-configuration"> <title>TCP/UDP Port Configuration</title> 
   <p>The Application Lifecycle Service <xref href="../../user/reference/glossary.dita#topic6187/term-micro-cloud" type="section" >micro cloud</xref> runs with
 the following ports exposed:</p>
 <table>
@@ -539,7 +539,7 @@ nodes (via SSHFS).</li>
 (default 41000 - 61000) which can be exposed externally if required.</li>
 </ul>
 </section>
-  <section id="service_nodes"><title>Service Nodes</title> In addition to the ports listed above for service nodes and
+  <section id="service_nodes"><title>Service Nodes</title>  In addition to the ports listed above for service nodes and
       gateways, several service nodes assign a port for each individual user-requested service
       instance. These ranges should be kept open between DEA nodes and their respective service
       nodes. The default ranges are: <simpletable>
@@ -570,7 +570,7 @@ nodes (via SSHFS).</li>
       </simpletable><note>You can check the port range currently configured for each service with
           <codeph>kato config</codeph> (for exanple: <codeph>kato config get redis_node
           port_range</codeph>).</note></section>
-<section id="container_allowed"><title>Container Allowed Hosts and Ports</title>
+<section id="container_allowed"><title>Container Allowed Hosts and Ports</title> 
   <p>For security reasons, Docker application containers restrict access to hosts on the eth0 subnet (i.e. the hosts making up the cluster). By default, only ports and hosts for built-in services and components, such as service instances bound to an application, are explicitly allowed.</p><p>The following settings are available to allow or restrict access from the application containers:</p> 
    
    <ul>
@@ -593,7 +593,7 @@ nodes (via SSHFS).</li>
     <li><codeph>fence docker/network_interface</codeph>: The Docker bridge interface. Do not
           modify.</li></ul>
   </section>
-<section id="vm-filesystem-setup"> <title>VM Filesystem Setup</title>
+<section id="vm-filesystem-setup"> <title>VM Filesystem Setup</title> 
 <p>The Application Lifecycle Service VM is distributed with a simple default partitioning scheme
 (i.e. everything but "/boot" mounted on "/").</p>
 <note type="warning">When setting up a production cluster, additional filesystem configuration is
@@ -609,7 +609,7 @@ on external block storage for:</p>
   data can be found in the <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-persistent-storage" type="section" >Persistent Storage</xref>
 section.</p>
 </section>
-<section id="helion-data-services-vs-high-availability-databases"> <title>Application Lifecycle Service Data Services vs. High Availability Databases</title>
+<section id="helion-data-services-vs-high-availability-databases"> <title>Application Lifecycle Service Data Services vs. High Availability Databases</title> 
 <p>Application Lifecycle Service data services do not offer any built-in redundancy. For
 business-critical data storage, a high-availability database or cluster
 is recommended.</p>
@@ -623,12 +623,12 @@ environment variable.</p>
 Services</xref> section.</p>
 </section>
 
-<section id="cipher"> <title>Customizing the Cipher Suites</title>
+<section id="cipher"> <title>Customizing the Cipher Suites</title> 
 <p>The router's TLS cipher suite can be modified using <i>kato config</i>. For example:</p>
 <codeblock>kato config set router2g ssl/cipher_suite 'ALL:!ADH:!EXP:!LOW:!RC2:!3DES:!SEED:!SSLv3:RC4+RSA:+HIGH:+MED'</codeblock>
 <p>The setting above is the default for the Helion router minus SSLv3. See OpenSSL's <xref href="https://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT" scope="external" format="html" >Cipher List Format</xref> and <xref href="https://www.openssl.org/docs/apps/ciphers.html#CIPHER_STRINGS" type="section" scope="external" format="html" >Cipher Strings</xref> documentation for other valid values.</p>
 </section>
-<section id="quota-definitions"> <title>Quota Definitions</title>
+<section id="quota-definitions"> <title>Quota Definitions</title> 
 <p>Quota definitions define limits for:</p>
 <ul>
 <li>physical memory (RAM) in MB</li>
@@ -669,10 +669,10 @@ list</i>
           href="../console/console_settings.dita#topic_od4_byj_rs/quotaPlans">Management Console
           Quota Definitions</xref> settings. </p>
 </section>
-<section id="sudo"> <title>sudo</title>
+<section id="sudo"> <title>sudo</title> 
 <p>Quota Definitions can give all users in an Organization the use of the <b>sudo</b> command within application containers. This option is disabled by default as a security precaution, and should only be enabled for Organizations where all users are trusted.</p>
 </section>
-<section id="allowed-repositories"> <title>Allowed Repositories</title>
+<section id="allowed-repositories"> <title>Allowed Repositories</title> 
 <p>Users (with our without <i>sudo</i> permissions) can install Ubuntu packages in application containers by requesting them in the requirements section of an application's <i>manifest.yml</i> file. The system allows package installation only from those repositories specified in the <b>Allowed Repos</b> list in the Management Console.</p>
 <p>This list can also be viewed and modified at the command line using <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section" >kato config</xref>. For example, to view the 
  current list:</p>
@@ -693,7 +693,7 @@ list</i>
 <p>For example, to trust the GPG for the New Relic repository, add the following line to the <i>Dockerfile</i> for the base image:</p>
 <codeblock>RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -</codeblock>
 </section>
-<section id="container_NFS"> <title>Container NFS Mounts</title>
+<section id="container_NFS"> <title>Container NFS Mounts</title> 
       <note type="warning">Reconfiguring ALS to allow user applications to mount NFS partitions has serious
         security implications. See the <xref
           href="../server/docker.dita#topic7767/docker-privileged-containers" type="section"

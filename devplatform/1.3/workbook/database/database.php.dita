@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6918">
-<title>HP Helion 1.3 Development Platform: PHP MySQL Database Sample</title>
+<title>HP Helion 1.3 Development Platform: PHP MySQL Database Sample</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,7 +18,7 @@
 </prolog>
 <body>
 <p>This very simple PHP web app displays the text "Executed query "SELECT "Hello World!"".", and then the result of that query "Hello World!" This is a demonstration of the minimum requirements to build an application that can connect to a MySQL database provided by ALS and run queries against it. Use this sample to ensure that you have set up your environment for connecting to and working with MySQL on the Helion Development Platform.</p>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="prerequisites"> <title>Prerequisites</title> 
 <ul>
 <li>An installation of the <xref href="../../installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>.</li>
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita" >Cluster</xref>
@@ -36,9 +36,9 @@ instructions further down. But before you push the button, ensure that you have 
 <a href="https://deploynow.hpcloud.com/?repoUrl=https://github.com/HelionDevPlatform/helion-mysql-php"><img src="/../media/deploynow.png"/></a>
 -->
 </section>
-<section id="deployment-instructions"> <title>Deployment Instructions</title>
+<section id="deployment-instructions"> <title>Deployment Instructions</title> 
 </section>
-<section id="enablemysql"> <title>Enable the MySQL Service</title>
+<section id="enablemysql"> <title>Enable the MySQL Service</title> 
 <p>If the MySQL service is not enabled on your cluster, or if you are not sure, follow these steps:</p>
 <ol>
 <li>Go to the Administrative console for your ALS cluster. <!--A BR tag was used here in the original source.-->For example: <i>https://api.xx.xx.xx.xx.xip.io</i>, substitute your own cluster's link.</li>
@@ -52,14 +52,14 @@ instructions further down. But before you push the button, ensure that you have 
 <b>Note</b>: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer 
     to <xref href="../../devplatform.database-instance.dita" >Using the Database Service</xref> and <xref href="../../devplatform.database-ALS.dita" >Connecting the Database Service with ALS</xref>.</p>
 </section>
-<section id="download-the-application-files"> <title>Download the Application Files</title>
+<section id="download-the-application-files"> <title>Download the Application Files</title> 
 <p>
 <xref href="https://github.com/HelionDevPlatform/helion-mysql-php/" scope="external" format="html" >Click here to access the code repository</xref>.</p>
 <p>
 <i>Manifest.yml</i> is a configuration file used to specify settings. For PHP, only the <b>name</b> and <b>buildpack</b> fields are required. The <b>buildpack</b> field is a URL for the buildpack that supports the necessary language and/or framework.</p>
 <p>This app uses the <xref href="https://github.com/cloudfoundry/php-buildpack" scope="external" format="html" >Cloud Foundry PHP buildpack</xref>. For more technical details about buildpacks and the <i>composer.json</i> file, please see the README included in the <xref href="https://github.com/HelionDevPlatform/helion-mysql-php/" scope="external" format="html" >download package</xref>.</p>
 </section>
-<section id="deploy-the-application"> <title>Deploy the Application</title>
+<section id="deploy-the-application"> <title>Deploy the Application</title> 
 <p>Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet
                 will need to be <xref
                     href="../../helion/admin/server/https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
@@ -84,7 +84,7 @@ instructions further down. But before you push the button, ensure that you have 
                             <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</note></li>
 </ol>
 </section>
-<section id="view-and-run-the-application"> <title>View and Run the Application</title>
+<section id="view-and-run-the-application"> <title>View and Run the Application</title> 
 <ol>
 <li>Open the Helion Management Console. This is the web-based administrative interface. </li>
 <li>Click <b>Applications</b>. </li>
@@ -95,7 +95,7 @@ instructions further down. But before you push the button, ensure that you have 
                     </ul></li>
 </ol>
 </section>
-<section id="key-code-snippets"> <title>Key Code Snippets</title>
+<section id="key-code-snippets"> <title>Key Code Snippets</title> 
 <p>This first line in this section of the index.php file shows how to retrieve the connection information for the MySQL instance from the application's environment variables. The connection information is represented using JSON.</p>
 <p>The rest of the code shown here parses the JSON string that was retrieved and builds the appropriate connection string. Once the connection has been made, the code executes a query, reads the results, and closes the connection.</p>
 <codeblock>$services = getenv('VCAP_SERVICES');
@@ -148,7 +148,7 @@ applications:
 
 </codeblock>
 </section>
-<section id="key-learnings"> <title>Key Learnings</title>
+<section id="key-learnings"> <title>Key Learnings</title> 
 <ul>
 <li>ALS requires configuration information so that it can bind to a MySQL service. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You will need to provide information about which build pack to use for PHP so that ALS can create an environment for your app. Configuration information is contained in the <i>manifest.yml</i> file.</li>

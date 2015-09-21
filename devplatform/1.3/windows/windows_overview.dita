@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic24073_2">	
-    <title>HP Helion 1.3 Development Platform: Windows Overview</title>
+    <title>HP Helion 1.3 Development Platform: Windows Overview</title> 
     <titlealts>
         <searchtitle>HP Helion 1.3 Development Platform: Windows Overview</searchtitle>
     </titlealts>
@@ -26,7 +26,7 @@
     </prolog>
     <body>
 <!--PUBLISH-->
-<section id="introduction"><title>HP Helion 1.3 Development Platform: Windows Overview</title>
+<section id="introduction"><title>HP Helion 1.3 Development Platform: Windows Overview</title> 
 
     <p><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other 
         countries.</i></p>
@@ -49,7 +49,7 @@
         <li> <xref type="section" href="#topic24073_2/licensing" format="dita">Windows Instance Licensing</xref></li>
     </ul>
 </section>
-    <section id="overview"><title>Overview</title>
+    <section id="overview"><title>Overview</title> 
 
 
         <p>Helion Development Platform version 1.2 adds tools for creating instances of Windows Server 2012 R2 to a Helion <tm tmtype="reg">OpenStack</tm> environment, and Visual 
@@ -85,7 +85,7 @@
                     >services</xref> that can be bound to the application. .NET applications are
                 deployed into a sandbox environment similar to Warden in Cloud Foundry. </p>
         </section>
-    <section id="apps"><title>Supported .NET Application Types</title>
+    <section id="apps"><title>Supported .NET Application Types</title> 
 
         <p>Helion Development Platform supports HTTP-based applications, including ASP.NET and WCF. Design considerations for Windows DEA applications are the 
             same as for 
@@ -103,7 +103,7 @@
     <li> WCF services</li>
 </ul>
         </section>
-    <section id="sql"><title>SQL Server Support</title>
+    <section id="sql"><title>SQL Server Support</title> 
 
 
         <p>The Helion Development Platform 1.2 supports SQL Server Express 2012 and SQL Server Express 2014. SQL Server support is enabled by creating a 
@@ -112,18 +112,18 @@
             and can be accessed either from the 
             <codeph>web.config</codeph> file, or programmatically through the <codeph>VCAP_SERVICES</codeph> environment variable.</p>
         </section>
-    <section id="tools"><title>Windows Tools </title>
+    <section id="tools"><title>Windows Tools </title> 
 
         <p>In order to run .NET framework applications, Helion Development Platform requires that Windows DEA nodes be deployed. The tools used to 
             create and deploy Windows DEA nodes, and to deploy 
             .NET Framework applications, include the following:</p>
         </section>
-        <section id="tools_imaging"><title>Imaging tool</title>
+        <section id="tools_imaging"><title>Imaging tool</title> 
 
             <ul><li> Glazier: This tool creates Windows images for deployment to Helion OpenStack. This tool is not needed for using Windows images in
                 HP Helion Public Cloud.</li></ul>
         </section>
-        <section id="tools_management"><title>Management tool set</title>
+        <section id="tools_management"><title>Management tool set</title> 
 <ul>
     <li>ALS Cluster management (<i>cf-mgmt</i>): This tool adds Windows DEAs and SQL Server services to your cluster.</li>
     <li>ALS Client (<i>helion</i>): This tool deploys .NET applications (run with the <codeph>--stack win2012r2</codeph> switch). The ALS client can 
@@ -131,7 +131,7 @@
         MacOS X environments.</li>
 </ul>
         </section>
-    <section id="tools_net"><title>.NET tool set</title>
+    <section id="tools_net"><title>.NET tool set</title> 
 
         <ul>
             <li>Cloud Foundry Extensions: This Visual Studio extension performs simple management tasks such as starting or stopping an application, 
@@ -145,10 +145,10 @@
                     href="windows_tools_guide.dita#topic_w5z_kcw_js">Windows and .NET Tools
                     Guide</xref>.</p>
         </section>
-    <section id="process"><title>Process</title>
+    <section id="process"><title>Process</title> 
         <p>At a high level, running .NET applications in Helion Development Platform involves the following process:</p>
         </section>
-    <section id="enablingwindows"><title>Enabling Windows (Installation)</title>
+    <section id="enablingwindows"><title>Enabling Windows (Installation)</title> 
 <ol>
 
     <li> Obtain a Windows 2012 R2 server license and ISO image.</li>
@@ -158,7 +158,7 @@
     <li> Add SQL Server services to your cluster.</li>
 </ol>
         </section>
-    <section id="development"><title>Application development and deployment</title>
+    <section id="development"><title>Application development and deployment</title> 
 <ol>
 
     <li> Download the <xref href="../helion/CLI/ALS_Client_Downloads.dita"> Helion client tool</xref>.</li>
@@ -168,7 +168,7 @@
     <li> Deploy your application using either Visual Studio or the Helion client.</li>
 </ol>
         </section>
-    <section id="softwarerequirements"><title>Software Requirements</title>
+    <section id="softwarerequirements"><title>Software Requirements</title> 
 
 
         <p>Windows support has software requirements including the following:</p>
@@ -191,7 +191,7 @@
     <li>Helion OpenStack supports .NET applications created with .NET versions 2.0 through 4.5.2.</li>
 </ul>
         </section>
-    <section id="licensing"><title>Windows Instance Licensing</title>
+    <section id="licensing"><title>Windows Instance Licensing</title> 
         <p>You will need to provide your own Windows licensing for use with Windows instances; Microsoft's licensing requires customers to create their own images using their own 
             licensed software. During 
             image creation, temporary instances of Windows Server are created, so a volume license is required.</p> 

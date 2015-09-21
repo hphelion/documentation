@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_blf_xdh_ts">
-  <title>Uninstall the HP Helion Development Platform</title>
+  <title>Uninstall the HP Helion Development Platform</title> 
   <body>
 
 <p>The HP Helion Development Platform is installed in the overcloud of HP Helion <tm tmtype="reg">OpenStack</tm></p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic9898">
-<title>HP Helion 1.3 Development Platform: ALS Command Reference: Spaces</title>
+<title>HP Helion 1.3 Development Platform: ALS Command Reference: Spaces</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -39,12 +39,12 @@
 <li>
 <xref type="section" href="#topic9898/command-update-space">helion update-space</xref>: Change one or more attributes of a space in a single call.</li>
 </ul>
-<section id="syntax"> <title>Syntax</title>
+<section id="syntax"> <title>Syntax</title> 
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="command-create-space"> <title>helion create-space &lt;<i>name</i>&gt;</title>
+<section id="command-create-space"> <title>helion create-space &lt;<i>name</i>&gt;</title> 
 <p>Create a new space.</p>
 <table>
 <tgroup cols="2">
@@ -129,7 +129,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-delete-space"> <title>helion delete-space &lt;<i>name</i>&gt;</title>
+<section id="command-delete-space"> <title>helion delete-space &lt;<i>name</i>&gt;</title> 
 <p>Delete the named space.</p>
 <table>
 <tgroup cols="2">
@@ -186,7 +186,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-link-user-space"> <title>helion link-user-space &lt;<i>user</i>&gt; &lt;<i>space</i>&gt;</title>
+<section id="command-link-user-space"> <title>helion link-user-space &lt;<i>user</i>&gt; &lt;<i>space</i>&gt;</title> 
 <p>Add the specified user to the named space in various roles.</p>
 <table>
 <tgroup cols="2">
@@ -251,7 +251,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-rename-space"> <title>helion rename-space &lt;<i>name</i>&gt; &lt;<i>NewName</i>&gt;</title>
+<section id="command-rename-space"> <title>helion rename-space &lt;<i>name</i>&gt; &lt;<i>NewName</i>&gt;</title> 
 <p>Rename the named space.</p>
 <table>
 <tgroup cols="2">
@@ -304,7 +304,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-space"> <title>helion space &lt;<i>name</i>&gt;</title>
+<section id="command-space"> <title>helion space &lt;<i>name</i>&gt;</title> 
 <p>Show the named space's information.</p>
 <table>
 <tgroup cols="2">
@@ -365,7 +365,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-spaces"> <title>helion spaces</title>
+<section id="command-spaces"> <title>helion spaces</title> 
 <p>List the available spaces in the specified organization.</p>
 <table>
 <tgroup cols="2">
@@ -426,7 +426,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-space-users"> <title>helion space-users</title>
+<section id="command-space-users"> <title>helion space-users</title> 
 <p>Show the users for the space by role.</p>
 <table>
 <tgroup cols="2">
@@ -471,7 +471,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-switch-space"> <title>helion switch-space &lt;<i>NewName</i>&gt;</title>
+<section id="command-switch-space"> <title>helion switch-space &lt;<i>NewName</i>&gt;</title> 
 <p>Switch from the current space to the named space. If the new space is in a different <xref href="client-ref-organizations.dita" >organization</xref>, this command may switch the organization as well.</p>
 <table>
 <tgroup cols="2">
@@ -524,7 +524,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-unlink-user-space"> <title>helion unlink-user-space &lt;<i>user</i>&gt; &lt;<i>space</i>&gt;</title>
+<section id="command-unlink-user-space"> <title>helion unlink-user-space &lt;<i>user</i>&gt; &lt;<i>space</i>&gt;</title> 
 <p>Remove the specified user from the named space in various roles.</p>
 <table>
 <tgroup cols="2">
@@ -589,7 +589,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-update-space"> <title>helion update-space</title>
+<section id="command-update-space"> <title>helion update-space</title> 
 <p>Change one or more attributes of a space in a single call.</p>
 <table>
 <tgroup cols="2">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3030">
-<title>HP Helion 1.3 Development Platform: ALS Router</title>
+<title>HP Helion 1.3 Development Platform: ALS Router</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -42,7 +42,7 @@ between multiple instances (containers) as required.</p>
 "wss://" secure web sockets) and <xref href="http://www.chromium.org/spdy" scope="external" format="html" >SPDY</xref>.</p>
     <p>For Router SSL/TLS information, see the <xref href="https_and_ssl.dita">HTTPS and SSL
       Configuration</xref> documentation.</p>
-<section id="settings"> <title>Settings</title>
+<section id="settings"> <title>Settings</title> 
  <p>The Router is configured using <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"  >
       <i>kato config</i>
     </xref>. The following settings are configurable:</p>
@@ -116,13 +116,13 @@ between multiple instances (containers) as required.</p>
         </dlentry></dl><p>When configuration is complete, restart the router role to apply any
           changes to the running router(s).<codeblock>kato restart router</codeblock></p>
 </section>
-<section id="websockets"> <title>WebSockets</title>
+<section id="websockets"> <title>WebSockets</title> 
 <p>Applications using web sockets must use the VCAP_APP_PORT or PORT
 <xref href="../../user/reference/environment.dita"><i>environment variables</i>
 </xref>
 to set the default listener port of the WebSocket server.</p>
 </section>
-<section id="router-spdy"> <title>SPDY</title>
+<section id="router-spdy"> <title>SPDY</title> 
 <p>
 <xref href="http://dev.chromium.org/spdy/" scope="external" format="html" >SPDY</xref> is a protocol developed by Google
 for reducing web page load time. The router supports SPDY versions 2 and
@@ -130,7 +130,7 @@ for reducing web page load time. The router supports SPDY versions 2 and
 connection consumers (the application server and browser) support it.</p>
 </section>
   <section id="router">
-      <title>router.yml</title>
+      <title>router.yml</title> 
       <p>The default settings for the router are loaded from a <b>router.yml</b> file in the
           <codeph>/s/code/stackato-router/config/</codeph> directory during first boot (only). You
         can use this file to configure the router, but the changes must be manually re-imported with
@@ -140,7 +140,7 @@ kato restart router </codeblock>
       <p>This approach is often easier than manipulating the settings individually. </p>
     </section>
 
-  <section id="ACL"><title>Access Control List</title>
+  <section id="ACL"><title>Access Control List</title> 
   <p>You can set the router to block specific IP addresses and ranges from connecting to ALS and the
         applications it hosts. </p>
       <p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6634">
-<title>HP Helion 1.3 Development Platform: ALS Command Reference: Organizations</title>
+<title>HP Helion 1.3 Development Platform: ALS Command Reference: Organizations</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -46,12 +46,12 @@
 <li>
 <xref type="section" href="#topic6634/command-update-org">helion update-org</xref>: Change one or more attributes of an organization in a single call.</li>
 </ul>
-<section id="syntax"> <title>Syntax</title>
+<section id="syntax"> <title>Syntax</title> 
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="command-create-org"> <title>helion create-org &lt;<i>name</i>&gt;</title>
+<section id="command-create-org"> <title>helion create-org &lt;<i>name</i>&gt;</title> 
 <p>Create a new organization.</p>
 <table>
 <tgroup cols="2">
@@ -102,7 +102,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="delete-org"> <title>helion delete-org &lt;<i>name</i>&gt;</title>
+<section id="delete-org"> <title>helion delete-org &lt;<i>name</i>&gt;</title> 
 <p>Delete the named organization.</p>
 <table>
 <tgroup cols="2">
@@ -139,7 +139,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-link-user-org"> <title>helion link-user-org &lt;<i>user</i>&gt; &lt;<i>organization</i>&gt;</title>
+<section id="command-link-user-org"> <title>helion link-user-org &lt;<i>user</i>&gt; &lt;<i>organization</i>&gt;</title> 
 <p>Add the specified user to the named organization in various roles.</p>
 <table>
 <tgroup cols="2">
@@ -180,7 +180,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-org"> <title>helion org &lt;<i>name</i>&gt;</title>
+<section id="command-org"> <title>helion org &lt;<i>name</i>&gt;</title> 
 <p>Show the named organization's information.</p>
 <table>
 <tgroup cols="2">
@@ -221,7 +221,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-orgs"> <title>helion orgs</title>
+<section id="command-orgs"> <title>helion orgs</title> 
 <p>List the available organizations.</p>
 <table>
 <tgroup cols="2">
@@ -262,7 +262,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-org-users"> <title>helion org-users</title>
+<section id="command-org-users"> <title>helion org-users</title> 
 <p>Show the users for the organization by role.</p>
 <table>
 <tgroup cols="2">
@@ -299,7 +299,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-quota-org"> <title>helion quota-org &lt;<i>name</i>&gt; &lt;<i>quota</i>&gt;</title>
+<section id="command-quota-org"> <title>helion quota-org &lt;<i>name</i>&gt; &lt;<i>quota</i>&gt;</title> 
 <p>Set the quotas for the current or named organization.</p>
 <table>
 <tgroup cols="2">
@@ -332,7 +332,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-rename-org"> <title>helion rename-org &lt;<i>name</i>&gt; &lt;<i>NewName</i>&gt;</title>
+<section id="command-rename-org"> <title>helion rename-org &lt;<i>name</i>&gt; &lt;<i>NewName</i>&gt;</title> 
 <p>Rename the named organization.</p>
 <table>
 <tgroup cols="2">
@@ -365,7 +365,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-switch-org"> <title>helion switch-org &lt;<i>name</i>&gt; {command-switch-org}</title>
+<section id="command-switch-org"> <title>helion switch-org &lt;<i>name</i>&gt; {command-switch-org}</title> 
 <p>Switch the current organization to the named organization. This invalidates the current space.</p>
 <table>
 <tgroup cols="2">
@@ -398,7 +398,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-unlink-user-org"> <title>helion unlink-user-org &lt;<i>user</i>&gt; &lt;<i>organization</i>&gt;</title>
+<section id="command-unlink-user-org"> <title>helion unlink-user-org &lt;<i>user</i>&gt; &lt;<i>organization</i>&gt;</title> 
 <p>Remove the specified user from the named organization in various roles.</p>
 <table>
 <tgroup cols="2">
@@ -439,7 +439,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-update-org"> <title>helion update-org</title>
+<section id="command-update-org"> <title>helion update-org</title> 
 <p>Change one or more attributes of an organization in a single call.</p>
 <table>
 <tgroup cols="2">

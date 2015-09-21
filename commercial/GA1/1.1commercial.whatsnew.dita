@@ -44,10 +44,10 @@
 <p>
 <b>Ceph Firefly Storage Solution Integration</b> <!--A BR tag was used here in the original source.--> Ceph provides a unified, scalable and stable storage solution for the management of Helion OpenStack Image service (Glance), Compute (Nova Boot Volumes) service, and Volume Storage (Cinder persistent Volumes) service. It also supports user backup and archive workloads to the Object (Swift) API service writing to the same unified Ceph storage platform. <!--hpm30--></p>
 <p>
-<b>Multipath Support for 3PAR</b>
-<!--A BR tag was used here in the original source.--> HP Helion OpenStack now supports multipathing for network redundancy. Multipathing helps maintain a constant connection between an ESXi host and its storage. See <xref href="../../commercial/GA1/1.1commercial.install-3par-multipath.dita" >Configuring Multipath for 3PAR</xref>.<!--HPM121--></p>
-<p>
-<b>Transport Layer Security (TLS) support</b> <!--A BR tag was used here in the original source.-->HP Helion OpenStack now supports TLS protocols to protect internal traffic for Overcloud OpenStack API and endpoints. <!--HPM16--></p>
+        <b>Transport Layer Security (TLS) support</b>
+        <!--A BR tag was used here in the original source.-->HP Helion OpenStack now supports TLS
+        protocols to protect internal traffic for Overcloud OpenStack API and endpoints.
+        <!--HPM16--></p>
 <p>
 <b>HP Helion OpenStack Identity service</b> <!--A BR tag was used here in the original source.-->The Identity service, based on OpenStack Keystone V3 provides one-stop authentication, including Identity, Token, Catalog and Policy services. See <xref href="../../commercial/GA1/1.1commerical.services-identity-overview.dita" >Identity Service Overview</xref>. While Keystone elements have been upgraded to v3, Keystone V2 is still supported.<!--hpm31--></p>
 <p>

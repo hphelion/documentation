@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2161">
-<title>HP Helion 1.3 Development Platform: ALS Command Reference: Domains</title>
+<title>HP Helion 1.3 Development Platform: ALS Command Reference: Domains</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,12 +25,12 @@
 <li>
 <xref type="section" href="#topic2161/command-domains">helion domains</xref>: List the available domains in the specified space or all domains.</li>
 </ul>
-<section id="syntax"> <title>Syntax</title>
+<section id="syntax"> <title>Syntax</title> 
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="command-create-domain"> <title>helion create-domain &lt;<i>name</i>&gt;</title>
+<section id="command-create-domain"> <title>helion create-domain &lt;<i>name</i>&gt;</title> 
 <p>Create a new domain.</p>
 <table>
 <tgroup cols="2">
@@ -71,7 +71,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-delete-domain"> <title>helion delete-domain &lt;<i>name</i>&gt;</title>
+<section id="command-delete-domain"> <title>helion delete-domain &lt;<i>name</i>&gt;</title> 
 <p>Delete the named domain.</p>
 <table>
 <tgroup cols="2">
@@ -104,7 +104,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-domains"> <title>helion domains</title>
+<section id="command-domains"> <title>helion domains</title> 
 <p>List the available domains in the specified space or all domains.</p>
 <table>
 <tgroup cols="2">

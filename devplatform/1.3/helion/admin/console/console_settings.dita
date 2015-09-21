@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_od4_byj_rs">
-  <title>Management Console Settings Menu</title>
+  <title>Management Console Settings Menu</title> 
   <body>
     <section id="settings">
       <p>The Settings menu provides access to the following Console and system settings:</p>
@@ -55,7 +55,7 @@
       </ul>
     </section>
     <section id="cloud-controller">
-      <title>Cloud Controller</title>
+      <title>Cloud Controller</title> 
       <ul>
         <li>
           <b>Maintenance Mode</b>: Shuts down API requests but continues to serve web requests,
@@ -82,7 +82,7 @@
             >Allowed Repositories</xref>.</li>
       </ul>
     </section>
-    <section id="dockerAppSettings"><title>Docker App Settings</title><dl>
+    <section id="dockerAppSettings"><title>Docker App Settings</title> <dl>
         <dlentry>
           <dt>Require sudo</dt>
           <dd>Limit Docker image deployment to Organizations with <codeph>sudo</codeph> permissions
@@ -160,7 +160,7 @@
       container See <xref href="../server/configuration.dita#topic31232/allowed-repositories"
         type="section">Allowed Repositories</xref>. </section>
     <section id="console-settings-applications">
-      <title>Applications</title>
+      <title>Applications</title> 
       <ul>
         <li>Reserved URIs: Virtual hostnames and URIs reserved for use by the system which cannot be
           used for end user applications. This prevents users from deploying applications on URIs
@@ -169,7 +169,7 @@
       </ul>
     </section>
     <section id="console">
-      <title>Console</title>
+      <title>Console</title> 
       <p>Various settings and templates to customize the look and feel of the Management Console.
         The settings are divided into the following categories:</p>
       <ul>
@@ -192,10 +192,10 @@
           href="customize.dita#topic5029">Customization</xref> documentation.</p>
     </section>
     <section id="dea">
-      <title>DEA</title>
+      <title>DEA</title> 
     </section>
     <section id="console-settings-dea">
-      <title>DEA Settings</title>
+      <title>DEA Settings</title> 
       <ul>
         <li>
           <b>Max Memory Percentage</b>: The percentage of physical memory each DEA node can use for
@@ -209,15 +209,15 @@
       </ul>
     </section>
     <section id="dea-zones-placement">
-      <title>DEA Placement Zones</title>
+      <title>DEA Placement Zones</title> 
       <p>A filterable list of DEA Placement Zones on the system.</p>
     </section>
     <section id="dea-zones-available">
-      <title>DEA Availability Zones</title>
+      <title>DEA Availability Zones</title> 
       <p>A filterable list of Availability Zones on the system.</p>
     </section>
     <section id="feature-flags">
-      <title>Feature Flags</title>
+      <title>Feature Flags</title> 
       <p>Organization managers and developers can be granted permission to perform certain tasks
         using feature flags. If a task's feature flag is disabled, only admins can perform these
         tasks. These options can also be managed using the CLI client with the <xref
@@ -255,7 +255,7 @@
       </dl>
     </section>
     <section id="logyard">
-      <title>Logyard</title>
+      <title>Logyard</title> 
       <p>Lists current log <xref href="../server/logging.dita#topic11928/drains" type="section"
           >drains</xref> and the log drain retry limits. Drains and limits cannot be changed in this
         interface; use the <codeph><xref
@@ -265,7 +265,7 @@
             >kato config</xref></codeph> commands.</p>
     </section>
     <section id="file-system">
-      <title>File System</title>
+      <title>File System</title> 
       <ul>
         <li>
           <b>Capacity</b>: Maximum number of service slots to allocate.</li>
@@ -276,7 +276,7 @@
       </ul>
     </section>
     <section id="quotaPlans">
-      <title>Quota Plans</title>
+      <title>Quota Plans</title> 
       <p>Lists the Quota Plans available to apply to Organizations on the system. To edit a
         definition, click the edit button on the right. To create a new definition, use the <xref
           href="../../user/reference/client-ref-quotas.dita#topic5727/command-quota-create"
@@ -304,7 +304,7 @@
       </ul>
     </section>
     <section id="harbor">
-      <title>Harbor</title>
+      <title>Harbor</title> 
       <p>Settings for the <xref href="../cluster/harbor.dita#topic4009">Harbor </xref>TCP/UDP
         port service. See <xref href="../cluster/harbor.dita#topic4009/requirements-setup"
           >Harbor: Requirements</xref> &amp; Setup for more information.</p>
@@ -322,7 +322,7 @@
       </ul>
     </section>
     <section id="data-services">
-      <title>Data Services</title>
+      <title>Data Services</title> 
       <ul>
         <li>
           <b>Allow Over-provisioning</b>: Ignore the Capacity setting.</li>

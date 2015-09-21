@@ -45,7 +45,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
       important to meet the requirements and conform to the recommendations.</p>
     <p>This page provides an overview of the hardware and software that is supported for HP Helion
       OpenStack including setup and configuration information.</p>
-    <ul>
+    <ul> 
       <li>
         <xref type="section" href="#topic12282/os">OpenStack version information</xref>
       </li>
@@ -226,6 +226,23 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
     </section>
     <section>
       <p>The following input/output (I/O) cards are supported:</p>
+    </section>
+    <section id="storage-devices"><title>Storage Systems</title>
+    </section>
+    <section id="emc-storage"><title>EMC Storage Devices</title>
+      <ul>
+        <li>Model Name / Number: EMC VNX 5300</li>
+        <li>Firmware Versions: 05.32.000.5.015 (Block)</li>
+        <li>Supported Protocols: iSCSI</li>
+      </ul>
+    </section>
+    <section id="netapp-storage"><title>NetApp Storage Devices</title>
+      <ul>
+        <li>Model Name / Number: NETAPP FAS3220</li>
+        <li>Firmware Versions: 8.2.2</li>
+        <li>Mode of Storage: 7 MODE</li>
+        <li>Supported Protocols: NFS, iSCSI</li>
+      </ul>
     </section>
     <section id="stand-up-adapters">
       <title>Stand Up Adapters:</title>

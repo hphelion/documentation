@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic id="concept_vrb_bgj_rs">
- <title>Uninstall the Database Service</title>
+ <title>Uninstall the Database Service</title> 
  <shortdesc>Process for uninstalling the Database Service from the HP Helion Development Platform.</shortdesc>
  <body>
   <section id="uninstall-database">     <note type="restriction">These services cannot be uninstalled from the Horizon console.</note><note type="notice">The uninstall instructions listed here do not delete existing database

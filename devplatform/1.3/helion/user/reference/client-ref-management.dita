@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic50918">
-<title>HP Helion 1.3 Development Platform: ALS Command Reference: Management</title>
+<title>HP Helion 1.3 Development Platform: ALS Command Reference: Management</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -66,12 +66,12 @@
 <li>
 <xref type="section" href="#topic50918/command-unset-env">helion unset-env</xref>: Remove the specified environment variable from the named application.</li>
 </ul>
-<section id="syntax"> <title>Syntax</title>
+<section id="syntax"> <title>Syntax</title> 
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="command-create-app"> <title>helion create-app &lt;<i>application</i>&gt;</title>
+<section id="command-create-app"> <title>helion create-app &lt;<i>application</i>&gt;</title> 
 <p>Create an empty application with the specified configuration.</p>
 <table>
 <tgroup cols="2">
@@ -260,7 +260,7 @@ service. Target version 2.8+ only.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-dbshell"> <title>helion dbshell &lt;<i>application</i>&gt; &lt;<i>service</i>&gt;</title>
+<section id="command-dbshell"> <title>helion dbshell &lt;<i>application</i>&gt; &lt;<i>service</i>&gt;</title> 
 <p>Invoke interactive db shell for a bound service.</p>
 <table>
 <tgroup cols="2">
@@ -372,7 +372,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-delete"> <title>helion delete &lt;<i>application</i>&gt;</title>
+<section id="command-delete"> <title>helion delete &lt;<i>application</i>&gt;</title> 
 <p>Delete the specified application(s).</p>
 <table>
 <tgroup cols="2">
@@ -478,7 +478,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-drain-add"> <title>helion drain add &lt;<i>application</i>&gt; &lt;<i>drain</i>&gt; &lt;<i>uri</i>&gt;</title>
+<section id="command-drain-add"> <title>helion drain add &lt;<i>application</i>&gt; &lt;<i>drain</i>&gt; &lt;<i>uri</i>&gt;</title> 
 <p>Attach a new named drain to the application.</p>
 <table>
 <tgroup cols="2">
@@ -587,7 +587,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-drain-delete"> <title>helion drain delete &lt;<i>application</i>&gt; &lt;<i>drain</i>&gt;</title>
+<section id="command-drain-delete"> <title>helion drain delete &lt;<i>application</i>&gt; &lt;<i>drain</i>&gt;</title> 
 <p>Remove the named drain from the application.</p>
 <table>
 <tgroup cols="2">
@@ -691,7 +691,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-env-add"> <title>helion env-add &lt;<i>application</i>&gt; &lt;<i>varname</i>&gt; &lt;<i>value</i>&gt;</title>
+<section id="command-env-add"> <title>helion env-add &lt;<i>application</i>&gt; &lt;<i>varname</i>&gt; &lt;<i>value</i>&gt;</title> 
 <p>Add the specified environment variable to the named application.</p>
 <table>
 <tgroup cols="2">
@@ -807,7 +807,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-env-del"> <title>helion env-del &lt;<i>application</i>&gt; &lt;<i>varname</i>&gt;</title>
+<section id="command-env-del"> <title>helion env-del &lt;<i>application</i>&gt; &lt;<i>varname</i>&gt;</title> 
 <p>Remove the specified environment variable from the named application.</p>
 <table>
 <tgroup cols="2">
@@ -923,7 +923,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-map"> <title>helion map &lt;<i>application</i>&gt; &lt;<i>url</i>&gt;</title>
+<section id="command-map"> <title>helion map &lt;<i>application</i>&gt; &lt;<i>url</i>&gt;</title> 
 <p>Make the application accessible through the specified URL (a route consisting of host and domain)</p>
 <table>
 <tgroup cols="2">
@@ -1028,7 +1028,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-open"> <title>helion open &lt;<i>application</i>&gt;</title>
+<section id="command-open"> <title>helion open &lt;<i>application</i>&gt;</title> 
 <p>Open the url of the specified application in the default web browser. If 'api' is specified as the app name, the Management Console is opened. With no arguments, the 'name' value from the manifest.yml in the current directory is used (if            present).</p>
 <table>
 <tgroup cols="2">
@@ -1125,7 +1125,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-push"> <title>helion push &lt;<i>application</i>&gt;</title>
+<section id="command-push"> <title>helion push &lt;<i>application</i>&gt;</title> 
 <p>Configure, create, push, map, and start a new application.</p>
 <table>
 <tgroup cols="2">
@@ -1352,7 +1352,7 @@ service. Target version 2.8+ only.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-rename"> <title>helion rename &lt;<i>application</i>&gt; &lt;<i>name</i>&gt;</title>
+<section id="command-rename"> <title>helion rename &lt;<i>application</i>&gt; &lt;<i>name</i>&gt;</title> 
 <p>Rename the specified application.</p>
 <table>
 <tgroup cols="2">
@@ -1457,7 +1457,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-restart"> <title>helion restart &lt;<i>application</i>&gt;</title>
+<section id="command-restart"> <title>helion restart &lt;<i>application</i>&gt;</title> 
 <p>Stop and restart a deployed application.</p>
 <table>
 <tgroup cols="2">
@@ -1573,7 +1573,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-rollback"> <title>helion rollback  &lt;<i>application</i>&gt; &lt;<i>appversion</i>&gt;</title>
+<section id="command-rollback"> <title>helion rollback  &lt;<i>application</i>&gt; &lt;<i>appversion</i>&gt;</title> 
 <p>Switch to a different version of the application. This command is new in Helion <tm tmtype="reg">OpenStack</tm> 1.1</p>
 <p>--code-only</p>
 <p>hen specified the rollback reactivates only the old
@@ -1610,7 +1610,7 @@ the targets and authorization tokens.</p>
 <p>-o
   Alias of --organization.</p>
 </section>
-<section id="command-run"> <title>helion run &lt;<i>command</i>&gt;</title>
+<section id="command-run"> <title>helion run &lt;<i>command</i>&gt;</title> 
 <p>Run a specified command on a running instance.</p>
 <table>
 <tgroup cols="2">
@@ -1749,7 +1749,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-scale"> <title>helion scale &lt;<i>application</i>&gt;</title>
+<section id="command-scale"> <title>helion scale &lt;<i>application</i>&gt;</title> 
 <p>Update the number of instances, memory and/or disk reservation for a deployed application.</p>
 <table>
 <tgroup cols="2">
@@ -1888,7 +1888,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-scp"> <title>helion scp &lt;<i>paths</i>&gt;</title>
+<section id="command-scp"> <title>helion scp &lt;<i>paths</i>&gt;</title> 
 <p>Copy source files and directories to the destination.</p>
 <table>
 <tgroup cols="2">
@@ -2005,7 +2005,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-set-env"> <title>helion set-env &lt;<i>application</i>&gt; &lt;<i>varname</i>&gt; &lt;<i>value</i>&gt;</title>
+<section id="command-set-env"> <title>helion set-env &lt;<i>application</i>&gt; &lt;<i>varname</i>&gt; &lt;<i>value</i>&gt;</title> 
 <p>Add the specified environment variable to the named application.</p>
 <table>
 <tgroup cols="2">
@@ -2121,7 +2121,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-ssh"> <title>helion ssh &lt;<i>command</i>&gt;</title>
+<section id="command-ssh"> <title>helion ssh &lt;<i>command</i>&gt;</title> 
 <p>SSH to a running instance (or target), or run a specific command.</p>
 <table>
 <tgroup cols="2">
@@ -2260,7 +2260,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-start"> <title>helion start &lt;<i>application</i>&gt;</title>
+<section id="command-start"> <title>helion start &lt;<i>application</i>&gt;</title> 
 <p>Start a deployed application.</p>
 <table>
 <tgroup cols="2">
@@ -2376,7 +2376,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-stop"> <title>helion stop &lt;<i>application</i>&gt;</title>
+<section id="command-stop"> <title>helion stop &lt;<i>application</i>&gt;</title> 
 <p>Stop a deployed application.</p>
 <table>
 <tgroup cols="2">
@@ -2481,7 +2481,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-switch-version"> <title>helion switch-version &lt;<i>application</i>&gt; &lt;<i>appversion</i>&gt;</title>
+<section id="command-switch-version"> <title>helion switch-version &lt;<i>application</i>&gt; &lt;<i>appversion</i>&gt;</title> 
 <p>Switch to a different version of the application. This command is new in Helion OpenStack 1.1.</p>
 <p>--code-only</p>
 <p>hen specified the rollback reactivates only the old
@@ -2515,7 +2515,7 @@ the targets and authorization tokens.</p>
 <p>-o
   Alias of --organization.</p>
 </section>
-<section id="command-unmap"> <title>helion unmap &lt;<i>application</i>&gt; &lt;<i>URL</i>&gt;</title>
+<section id="command-unmap"> <title>helion unmap &lt;<i>application</i>&gt; &lt;<i>URL</i>&gt;</title> 
 <p>Unregister the application from a URL.</p>
 <table>
 <tgroup cols="2">
@@ -2620,7 +2620,7 @@ command to print the saved trace to stdout.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-unset-env"> <title>helion unset-env &lt;<i>application</i>&gt; &lt;<i>varname</i>&gt;</title>
+<section id="command-unset-env"> <title>helion unset-env &lt;<i>application</i>&gt; &lt;<i>varname</i>&gt;</title> 
 <p>Remove the specified environment variable from the named application.</p>
 <table>
 <tgroup cols="2">

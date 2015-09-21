@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10567">
-<title>HP Helion 1.3 Development Platform: ALS Command Reference: Service Management</title>
+<title>HP Helion 1.3 Development Platform: ALS Command Reference: Service Management</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -35,12 +35,12 @@
 <li>
 <xref type="section" href="#topic10567/command-update-user-provided-service">helion update-user-provided-service</xref>: Update the credentials of a user provided service.</li>
 </ul>
-<section id="syntax"> <title>Syntax</title>
+<section id="syntax"> <title>Syntax</title> 
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="command-bind-service"> <title>helion bind-service &lt;<i>service</i>&gt; &lt;<i>application</i>&gt;</title>
+<section id="command-bind-service"> <title>helion bind-service &lt;<i>service</i>&gt; &lt;<i>application</i>&gt;</title> 
 <p>Bind the named service to the specified application.</p>
 <table>
 <tgroup cols="2">
@@ -111,7 +111,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-clone-services"> <title>helion clone-services &lt;<i>source</i>&gt; &lt;<i>application</i>&gt;</title>
+<section id="command-clone-services"> <title>helion clone-services &lt;<i>source</i>&gt; &lt;<i>application</i>&gt;</title> 
 <p>Copy the service bindings of the source application to the destination application.</p>
 <table>
 <tgroup cols="2">
@@ -173,7 +173,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-create-service"> <title>helion create-service &lt;<i>vendor</i>&gt; &lt;<i>name</i>&gt; &lt;<i>application</i>&gt;</title>
+<section id="command-create-service"> <title>helion create-service &lt;<i>vendor</i>&gt; &lt;<i>name</i>&gt; &lt;<i>application</i>&gt;</title> 
 <p>Create a new provisioned service and optionally bind it to an application.</p>
 <table>
 <tgroup cols="2">
@@ -252,7 +252,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-delete-service"> <title>helion delete-service &lt;<i>service</i>&gt;</title>
+<section id="command-delete-service"> <title>helion delete-service &lt;<i>service</i>&gt;</title> 
 <p>Delete the named provisioned service.</p>
 <table>
 <tgroup cols="2">
@@ -309,7 +309,7 @@ services are skipped and not deleted.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-rename-service"> <title>helion rename-service &lt;<i>service</i>&gt; &lt;<i>name</i>&gt;</title>
+<section id="command-rename-service"> <title>helion rename-service &lt;<i>service</i>&gt; &lt;<i>name</i>&gt;</title> 
 <p>Rename the specified service instance.</p>
 <table>
 <tgroup cols="2">
@@ -356,7 +356,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-tunnel"> <title>helion tunnel &lt;<i>service</i>&gt; &lt;<i>TunnelClient</i>&gt;</title>
+<section id="command-tunnel"> <title>helion tunnel &lt;<i>service</i>&gt; &lt;<i>TunnelClient</i>&gt;</title> 
 <p>Create a local tunnel to a service and optionally start a local client as well.</p>
 <table>
 <tgroup cols="2">
@@ -425,7 +425,7 @@ use of the <varname>tunnel</varname> command.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-unbind-service"> <title>helion unbind-service &lt;<i>service</i>&gt; &lt;<i>application</i>&gt;</title>
+<section id="command-unbind-service"> <title>helion unbind-service &lt;<i>service</i>&gt; &lt;<i>application</i>&gt;</title> 
 <p>Disconnect the named service from the specified application.</p>
 <table>
 <tgroup cols="2">
@@ -513,7 +513,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-update-user-provided-service"> <title>helion update-user-provided-service &lt;<i>service</i>&gt;</title>
+<section id="command-update-user-provided-service"> <title>helion update-user-provided-service &lt;<i>service</i>&gt;</title> 
 <p>Update the credentials of a user provided service.</p>
 <table>
 <tgroup cols="2">

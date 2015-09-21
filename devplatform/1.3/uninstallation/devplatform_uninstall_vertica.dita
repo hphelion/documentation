@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic id="concept_bsx_rfj_rs">
- <title>Uninstall the Vertica Application</title>
+ <title>Uninstall the Vertica Application</title> 
  <shortdesc> Process for uninstalling the Vertica application from the Marketplace.</shortdesc>
  <body>  <note type="restriction">These services cannot be uninstalled from the Horizon console.</note><note type="notice">The uninstall instructions listed here do not delete existing database
   instances. Perform all backups as necessary and then delete your existing database instances

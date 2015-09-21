@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7058">
-<title>HP Helion 1.3 Development Platform: ALS Command Reference: User Management</title>
+<title>HP Helion 1.3 Development Platform: ALS Command Reference: User Management</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -35,12 +35,12 @@
 <li>
 <xref type="section" href="#topic7058/command-users">helion users</xref>: Show the list of users known to the current or specified target.</li>
 </ul>
-<section id="syntax"> <title>Syntax</title>
+<section id="syntax"> <title>Syntax</title> 
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="command-add-user"> <title>helion add-user &lt;<i>name</i>&gt;</title>
+<section id="command-add-user"> <title>helion add-user &lt;<i>name</i>&gt;</title> 
 <p>Register a new user in the current or specified target. This operation requires administrator privileges.</p>
 <table>
 <tgroup cols="2">
@@ -142,7 +142,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-delete-user"> <title>helion delete-user &lt;<i>email</i>&gt;</title>
+<section id="command-delete-user"> <title>helion delete-user &lt;<i>email</i>&gt;</title> 
 <p>Delete the named user and the user's applications and services from the current or specified target. This operation requires administrator privileges.</p>
 <table>
 <tgroup cols="2">
@@ -175,7 +175,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-login-fields"> <title>helion login-fields</title>
+<section id="command-login-fields"> <title>helion login-fields</title> 
 <p>Show the names of the credential fields needed for a login.</p>
 <table>
 <tgroup cols="2">
@@ -208,7 +208,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-passwd"> <title>helion passwd</title>
+<section id="command-passwd"> <title>helion passwd</title> 
 <p>Change the password of the current user in the current or specified target.</p>
 <table>
 <tgroup cols="2">
@@ -250,7 +250,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-register"> <title>helion register &lt;<i>name</i>&gt;</title>
+<section id="command-register"> <title>helion register &lt;<i>name</i>&gt;</title> 
 <p>Register a new user in the current or specified target. This operation requires administrator privileges.</p>
 <table>
 <tgroup cols="2">
@@ -352,7 +352,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-token"> <title>helion token</title>
+<section id="command-token"> <title>helion token</title> 
 <p>Interactively set the authentication token.</p>
 <table>
 <tgroup cols="2">
@@ -380,7 +380,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-unregister"> <title>helion unregister &lt;<i>email</i>&gt;</title>
+<section id="command-unregister"> <title>helion unregister &lt;<i>email</i>&gt;</title> 
 <p>Delete the named user and the user's applications and services from the current or specified target. This operation requires administrator privileges.</p>
 <table>
 <tgroup cols="2">
@@ -413,7 +413,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="command-users"> <title>helion users</title>
+<section id="command-users"> <title>helion users</title> 
 <p>Show the list of users known to the current or specified target.</p>
 <table>
 <tgroup cols="2">

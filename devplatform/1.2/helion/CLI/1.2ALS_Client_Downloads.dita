@@ -40,13 +40,13 @@
 <p>Click the download link that is appropriate for your operating system.</p>
 <ul>
 <li>
-<xref href="https://clients.als.hpcloud.com/cf-mgmt-1.2.1-windows-x86_64.zip" scope="external" format="html" >Windows</xref>
+<xref href="https://clients.als.hpcloud.com/cf-mgmt-1.2.6-windows-x86_64.zip" scope="external" format="html" >Windows</xref>
 </li>
 <li>
-  <xref href="https://clients.als.hpcloud.com/cf-mgmt-1.2.1-linux-x86_64.zip" scope="external" format="html" >Linux x64</xref>
+  <xref href="https://clients.als.hpcloud.com/cf-mgmt-1.2.6-linux-x86_64.zip" scope="external" format="html" >Linux x64</xref>
 </li>
 <li>
-<xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.1-osx-x86_64.zip" scope="external" format="html" >Mac OS X</xref> </li>
+<xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.6-osx-x86_64.zip" scope="external" format="html" >Mac OS X</xref> </li>
 </ul>
 <p>For more information, see the full ALS Cluster Management Tool <xref href="../../../../devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" >command reference</xref>.</p>
 <p>Click to download a sample configuration file for use with the <i>cf-mgmt</i> tool.</p>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gly_xmh_ts">
-  <title>Install the HP Helion Development Platform</title>
+  <title>Install the HP Helion Development Platform</title> 
   <body>
-    <section id="devplat_installer"><title>The HP Helion Development Platform Installer</title>
+    <section id="devplat_installer"><title>The HP Helion Development Platform Installer</title> 
     <ul>
       <li>
         <p>The HP Helion Development Platform installer (<codeph>DevelopmentPlatform_Enable.sh</codeph>) must be run on either the base or seed node of the Helion OpenStack environment. It is strongly recommended to run the installer  on the seed node. The seed node will already have the requisite key (/root/.ssh/id_rsa) for access to the overcloud; if the installation is run on the base node, this key will need to be provided to the installer (see below).</p>
@@ -24,7 +24,7 @@
         <codeblock>pip install cffi enum34 pyasn1 virtualenv </codeblock>
       </li>
     </ul></section>
-<section id="downloading-the-latest-version-of-hp-helion-development-platform"> <title>Downloading the Latest Version of HP Helion Development Platform</title>
+<section id="downloading-the-latest-version-of-hp-helion-development-platform"> <title>Downloading the Latest Version of HP Helion Development Platform</title> 
 <p>The installation of the HP Helion Development Platform for HP Helion OpenStack is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
 <p>
         <note>Should you need more assistance during installation, the install script also has a
@@ -40,7 +40,7 @@
           file.<codeblock>tar -zxvf DevelopmentPlatform_1.2.0.4.tar.gz</codeblock></li>
 </ol>
 </section>
-<section id="pre-installing-the-hp-helion-development-platform"> <title>Installing the HP Helion Development Platform</title>
+<section id="pre-installing-the-hp-helion-development-platform"> <title>Installing the HP Helion Development Platform</title> 
 <ol>
 <li>Navigate to the <i>dev-platform-installer</i> directory inside the
           dev-platform-installer.<codeblock>cd dev-platform-installer  </codeblock></li>

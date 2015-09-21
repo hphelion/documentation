@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6051">
-<title>HP Helion 1.3 Development Platform: Known Issues</title>
+<title>HP Helion 1.3 Development Platform: Known Issues</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -20,7 +20,7 @@
 </prolog>
 <body>
 <p>Please keep up to date with the latest Known Issues, FAQs and announcements in our <xref href="https://community.dev.hp.com/t5/Helion-Developer-Network/bd-p/cloud" scope="external" format="html" >Helion Developer Network forums</xref>.</p>
-<section id="13"><title>1.3</title>
+<section id="13"><title>1.3</title> 
   <dl><dlentry>
     <dt>UTM Gateways</dt>
     <dd>UTM gateways may interfere with upgrades, patches, or normal application staging if they are
@@ -31,9 +31,9 @@
 
 </section>
   
-  <section id="11"> <title>1.1</title>
+  <section id="11"> <title>1.1</title> 
 </section>
-<section id="changing-the-mbus-ip-core-node"> <title>Changing the MBUS IP (Core node)</title>
+<section id="changing-the-mbus-ip-core-node"> <title>Changing the MBUS IP (Core node)</title> 
 <p>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS
         IP address. Run <xref href="kato-ref.dita#topic39432/kato-command-ref-node-migrate">kato
           node migrate</xref> or <xref
@@ -42,7 +42,7 @@
           href="kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" >kato node attach</xref> on all other cluster nodes to set
         the new MBUS IP.</p>
 </section>
-<section id="adding-new-relic-repositories"> <title>Adding New Relic Repositories</title>
+<section id="adding-new-relic-repositories"> <title>Adding New Relic Repositories</title> 
 <p>The New Relic system monitoring (<b>newrelic-sysmond</b>) and PHP application monitoring (<b>newrelic-php5</b>) packages are no longer pre-installed in the ALS default Docker base container.</p>
 <p>To allow end users to install these packages in the <xref
           href="../../user/deploy/manifestyml.dita#topic20922/requirements">requirements</xref>
@@ -51,14 +51,14 @@
           type="section" >add New Relic repository URLS and keys</xref> to the
         system configuration.</p>
 </section>
-<section id="php-55-repositories"> <title>PHP 5.5 Repositories</title>
+<section id="php-55-repositories"> <title>PHP 5.5 Repositories</title> 
 <p>PHP 5.5 in contained in the default Docker image. This version is more recent than the one available in the standard Ubuntu repositories.</p>
 <p>To get updates for PHP 5.5 or add additional modules (globally or as user-defined requirements for applications), a third-party package repository must be added to the Allowed Repos list.</p>
 <p>Administrators can add the <xref href="https://launchpad.net/~ondrej/+archive/php5" scope="external" format="html" >PPA for PHP 5.5</xref> or import from a  repository supporting compatible packages via kato:</p>
 <codeblock>kato config push cloud_controller_ng allowed_repos \
 "deb http://ppa.launchpad.net/ondrej/php5/ubuntu precise main"</codeblock>
 </section>
-<section id="kato-data-users-exportimport-broken"> <title>Kato data users export/import broken</title>
+<section id="kato-data-users-exportimport-broken"> <title>Kato data users export/import broken</title> 
 <p>The <b>kato data users export</b> and <b>kato data users import</b> commands, which save and load
         lists of users to and from CSV files, are non-functional in the current release. The <xref
           href="kato-ref.dita#topic39432/kato-command-ref-data-import">kato data import</xref>
@@ -67,10 +67,10 @@
           type="section" >kato data export</xref> commands are still available for
         migrating users from one ALS installation to another.</p>
 </section>
-<section id="kato-node-reset-factory-with-nopasswd"> <title>Kato node reset factory with NOPASSWD</title>
+<section id="kato-node-reset-factory-with-nopasswd"> <title>Kato node reset factory with NOPASSWD</title> 
 <p>The kato <b>node reset factory</b> command will not work if <b>NOPASSWD</b> has been set for the admin account in <i>/etc/sudoers</i>. To work around this, revert the change to <i>/etc/sudoers</i> before resetting or start over with a new ALS VM.</p>
 </section>
-<section id="cloud-events-not-gathering-logs-from-some-processes"> <title>Cloud Events not gathering logs from some processes</title>
+<section id="cloud-events-not-gathering-logs-from-some-processes"> <title>Cloud Events not gathering logs from some processes</title> 
 <p>Certain processes noted below use non-standard logging formats and are therefore not included in the Cloud Events log stream. So, for example, they will not appear in the Cloud Events view in the Horizon Console.</p>
 <table>
 <tgroup cols="2">
@@ -109,14 +109,14 @@
 </tgroup>
 </table>
 </section>
-<section id="101-and-previous"> <title>1.01 and previous</title>
+<section id="101-and-previous"> <title>1.01 and previous</title> 
 </section>
-<section id="buildpack-config-vars-deprecated"> <title>Buildpack config_vars Deprecated</title>
+<section id="buildpack-config-vars-deprecated"> <title>Buildpack config_vars Deprecated</title> 
 <p>Buildpacks used to rely on the <codeph>config_vars</codeph> feature of <i>bin/release</i> to set environment variables, but this has been deprecated by Heroku.</p>
 <p>The replacement mechanism is to <xref href="https://devcenter.heroku.com/articles/profiled" scope="external" format="html" >create a shell script in \$HOME/.profile.d</xref> to
 set environment variables. This mechanism is fully supported by the Application Lifecycle Service and is used by all of the built-in buildpacks.</p>
 </section>
-<section id="legacy-buildpack-and-environment-variables"> <title>Legacy Buildpack and Environment Variables</title>
+<section id="legacy-buildpack-and-environment-variables"> <title>Legacy Buildpack and Environment Variables</title> 
   <p>When using the <xref href="../../user/deploy/buildpack.dita#topic3370/legacy-buildpack"
           >Legacy Buildpack</xref>, environment variable values defined in <i>manifest.yml</i>
         cannot be updated without re-pushing the application with new settings. Changes to variables
@@ -124,14 +124,14 @@ set environment variables. This mechanism is fully supported by the Application 
         the application is restarted.</p>
 <p>To modify custom environment variables, re-push the application after changing the values in <i>manifest.yml</i>.</p>
 </section>
-<section id="service-gateway-log-errors-in-maintenance-mode"> <title>Service Gateway Log Errors in Maintenance Mode</title>
+<section id="service-gateway-log-errors-in-maintenance-mode"> <title>Service Gateway Log Errors in Maintenance Mode</title> 
 <p>With Application Lifecycle Service set in <i>Maintenance Mode</i>, all <codeph>_gateway</codeph>
         processes will report the following error once per minute:</p>
 <codeblock>Failed registering with cloud controller, status=503</codeblock>
 <p>This is normal, and can be safely ignored. The service nodes will
 reconnect once the Controller is taken out of Maintenance Mode.</p>
 </section>
-<section id="nodes-with-fatal-or-perpetually-starting-processes"> <title>Nodes with FATAL or perpetually STARTING processes</title>
+<section id="nodes-with-fatal-or-perpetually-starting-processes"> <title>Nodes with FATAL or perpetually STARTING processes</title> 
 <p>If the Core node of an Application Lifecycle Service cluster is offline for more than 90
 seconds, <codeph>kato status</codeph> will show processes on other
 nodes (systail, apptail, router and others) in a FATAL or (hung)
@@ -141,7 +141,7 @@ Core node.</p>
 processes) or <codeph>kato restart</codeph> (for STARTING
 processes) on all affected nodes.</p>
 </section>
-<section id="avoiding-app-reliance-on-ip-addresses"> <title>Avoiding App Reliance on IP Addresses</title>
+<section id="avoiding-app-reliance-on-ip-addresses"> <title>Avoiding App Reliance on IP Addresses</title> 
 <p>Cluster configurations make use of private IP addresses for identifying
 the various cluster nodes. Best practice is to avoid the literal use of
 these addresses wherever possible, as these addresses are subject to

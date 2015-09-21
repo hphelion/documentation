@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic2176">
+  <title>HP Helion CloudSystem</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="role" content="Systems Administrator"/>
+      <othermeta name="role" content="Data Center Architect"/>
+      <othermeta name="role" content="Cloud Architect"/>
+      <othermeta name="role" content="Cloud Administrator"/>
+      <othermeta name="role" content="Kathleen J."/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>HP Helion CloudSystem delivers an enterprise private cloud in HP Converged Infrastructure environments.  HP Helion CloudSystem is available as standalone software that supports a multiple vendor hardware environment or as an integrated infrastructure with HP ConvergedSystem.</p>
+      <section>
+      <p>HP Helion CloudSystem consists of two offerings.
+      <ul>
+      <li>HP Helion CloudSystem Foundation is based on the HP Helion OpenStack distribution of OpenStack cloud software and includes Helion Development Platform and DNS as a Service.</li>
+      
+        <li>HP Helion CloudSystem Enterprise expands on CloudSystem Foundation through the addition
+            of HP Cloud Service Automation and HP Operations Orchestration. CloudSystem Enterprise
+            automates the integration of servers, storage, networking, security, and monitoring
+            capabilities throughout the infrastructure service delivery lifecycle of a virtualized
+            data center. <p>HP Helion CloudSystem Enterprise offers additional design tools and
+              provider integration, including OpenStack, HP OneView, and Amazon Web Services through
+              HP Helion Eucalyptus. With the Marketplace Portal, users have secure access to these
+              services. </p></li> 
+      </ul></p>
+
+      </section><section><title>HP Helion CloudSystem Technical Information</title>
+        <p>See the <xref href="http://www.hp.com/go/cloudsystem/docs" format="html" scope="external">Enterprise Information Library</xref> for HP Helion CloudSystem, HP CSA, and HP Operations
+        Orchestration technical information and white papers, including:</p>
+      <sl>
+     <sli>HP Helion CloudSystem 9.0 Administrator Guide </sli>
+        <sli>HP Helion CloudSystem 9.0 Command Line Interface Guide</sli>
+        <sli>HP Helion CloudSystem 9.0 Installation Guide </sli>
+        <sli>HP Helion CloudSystem 9.0 Network Planning Guide </sli>
+        <sli>HP Helion CloudSystem 9.0 Release Notes </sli>
+        <sli>HP Helion CloudSystem 9.0 Support Matrix </sli>
+        <sli>HP Helion CloudSystem 9.0 Troubleshooting Guide </sli>
+        <sli>HP Helion CloudSystem Operations Console Help</sli>
+      </sl> 
+    </section>
+  </body>
+</topic>

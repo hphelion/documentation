@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4009">
-<title>HP Helion 1.3 Development Platform: Harbor TCP/UDP Port Service</title>
+<title>HP Helion 1.3 Development Platform: Harbor TCP/UDP Port Service</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -38,7 +38,7 @@
       service with deployed applications is in the <xref
         href="../../user/services/port-service.dita">Port Service (Harbor)
       documentation</xref>.</p>
-<section id="architecture"> <title>Architecture</title>
+<section id="architecture"> <title>Architecture</title> 
 <p>A Harbor node is designed to sit on the edge of the cluster network
 (i.e. with a publicly routable network interface) in a similar fashion
 to the router component. This allows it to effectively proxy external
@@ -51,7 +51,7 @@ automatically provision ports from a pre-configured range.</p>
         scaled down), Harbor will also drop that instance from its list of backends available for
         the externally facing port.</p>
 </section>
-<section id="requirements-setup"> <title>Requirements &amp; Setup</title>
+<section id="requirements-setup"> <title>Requirements &amp; Setup</title> 
   <p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other <xref href="cluster_index.dita#topic18326/data-services-nodes" type="section" >data service roles</xref>.
 For example:</p>
 <codeblock>kato node attach -e harbor CORE_IP</codeblock>
@@ -75,7 +75,7 @@ details to the users service credentials.</p>
 <p>To set the externally routable IP:</p>
 <codeblock>kato config set harbor_node host_external 192.0.43.10</codeblock>
 </section>
-<section id="troubleshooting"> <title>Troubleshooting</title>
+<section id="troubleshooting"> <title>Troubleshooting</title> 
 <p>If you have problems with the Harbor service, first check the status using the <codeph><xref
             href="../reference/kato-ref.dita#topic39432/kato-command-ref-status">kato
             status</xref></codeph> command.</p>

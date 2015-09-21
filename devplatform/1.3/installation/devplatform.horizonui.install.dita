@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4029">
-<title>HP Helion 1.3 Development Platform: Installing the Horizon UI for ALS, DBaaS, and Marketplace</title>
+<title>HP Helion 1.3 Development Platform: Installing the Horizon UI for ALS, DBaaS, and Marketplace</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,15 +26,15 @@
       <note>You will need to download and install the Horizon UI separately for each service you
         wish to upgrade.</note>
     </p>
-<section id="step-1-retrieve-the-als-dbaas-and-marketplace-service-updates-from-codn"> <title>Step 1: Retrieve the ALS, DBaaS, and Marketplace Service Updates from CODN</title>
+<section id="step-1-retrieve-the-als-dbaas-and-marketplace-service-updates-from-codn"> <title>Step 1: Retrieve the ALS, DBaaS, and Marketplace Service Updates from CODN</title> 
 <p>Use the <b>Helion Development Platform UI</b> to check CODN for a new Service Update for ALS, DBaaS, or Marketplace.</p>
 <p>If there are new Service Updates for ALS, DBaaS, or Marketplace, retrieve them from CODN. This
         will retrieve the installation packages from CODN and push them into a container in Swift
         within your local cloud.</p>
 </section>
-<section id="step-2-install-the-als-dbaas-and-marketplace-service-updates"> <title>Step 2: Install the ALS, DBaaS, and Marketplace Service Updates</title>
+<section id="step-2-install-the-als-dbaas-and-marketplace-service-updates"> <title>Step 2: Install the ALS, DBaaS, and Marketplace Service Updates</title> 
 </section>
-<section id="preparation"> <title>Preparation</title>
+<section id="preparation"> <title>Preparation</title> 
 <p>You will need the following pieces of information in order to run the service updates.</p>
 <table pgwide="1">
 <tgroup cols="2">
@@ -116,7 +116,7 @@ This can typically can be found inside the above container in Swift.
 </tgroup>
 </table>
 </section>
-<section id="lets-get-to-it"> <title>Let's get to it!</title>
+<section id="lets-get-to-it"> <title>Let's get to it!</title> 
 <p>a) SSH to the seed node of your cloud:</p>
 <codeblock># SSH to the base node 
 ssh USERNAME@BASE_NODE_IP
@@ -161,7 +161,7 @@ source admin_under_creds
 cd SERVICE_UPDATE_FILENAME 
 ./install.sh HEAT_ADMIN_KEY </codeblock>
 </section>
-<section id="step-3-configure-each-service"> <title>Step 3: Configure each service</title>
+<section id="step-3-configure-each-service"> <title>Step 3: Configure each service</title> 
 <p>Return to the <b>Helion Development Platform UI</b> and click on "Configure" to configure each service.</p>
 </section>
 </body>

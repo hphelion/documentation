@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5076">
-<title>HP Helion 1.3 Development Platform: Java Hello World Sample</title>
+<title>HP Helion 1.3 Development Platform: Java Hello World Sample</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,7 +18,7 @@
 </prolog>
 <body>
 <p>This Servlet-based Java web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.</p>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="prerequisites"> <title>Prerequisites</title> 
 <p>If you are missing any of these items, you must <xref href="../../installation/devplatform_commercial_install.dita" >install them</xref>.</p>
 <ul>
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita" >Cluster</xref>
@@ -27,7 +27,7 @@
 <li>Access to the web-based <xref href="../../helion/user/console/console_index.dita" >Helion Management Console</xref>.</li>
 </ul>
 </section>
-<section id="jdk"> <title>JDK</title>
+<section id="jdk"> <title>JDK</title> 
 <p>Install the Java Development Kit (JDK) before installing other prerequisites.</p>
 <ul>
 <li>
@@ -41,7 +41,7 @@ sudo apt-get install default-jdk
 </li>
 </ul>
 </section>
-<section id="maven"> <title>Maven</title>
+<section id="maven"> <title>Maven</title> 
 <p>
 <xref href="http://maven.apache.org/" scope="external" format="html" >Maven</xref> must be installed.</p>
 <ul>
@@ -54,17 +54,17 @@ sudo apt-get install default-jdk
 </li>
 </ul>
 </section>
-<section id="download-the-application-files"> <title>Download the Application Files</title>
+<section id="download-the-application-files"> <title>Download the Application Files</title> 
 <p>
 <xref href="https://github.com/HelionDevPlatform/helion-hello-world-java" scope="external" format="html" >Click here to access the code repository.</xref>
 </p>
 </section>
-<section id="build-the-application"> <title>Build the Application</title>
+<section id="build-the-application"> <title>Build the Application</title> 
 <p>In the root directory of the sample package, execute the following command:</p>
 <codeblock>mvn clean package</codeblock>
 <p>This builds the application with Maven. It will create the <i>hello-world-java-1.0.war</i> file within the target directory.</p>
 </section>
-<section id="deploy-the-application"> <title>Deploy the Application</title>
+<section id="deploy-the-application"> <title>Deploy the Application</title> 
 <p>Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet
                 will need to be <xref
                     href="../../helion/admin/server/https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
@@ -89,7 +89,7 @@ sudo apt-get install default-jdk
                             <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</note></li>
 </ol>
 </section>
-<section id="key-code-snippets"> <title>Key Code Snippets</title>
+<section id="key-code-snippets"> <title>Key Code Snippets</title> 
 <p>This simple Servlet prints "Hello World".</p>
 <codeblock>package org.hp.samples;
 
@@ -132,7 +132,7 @@ public class HelloServlet extends HttpServlet {
     &lt;/dependencies&gt;
 &lt;/project&gt;</codeblock>
 </section>
-<section id="run-the-application"> <title>Run the Application</title>
+<section id="run-the-application"> <title>Run the Application</title> 
 <ol>
 <li>Open the Helion Management Console. This is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.</li>
 <li>Click <b>Applications</b>.</li>
@@ -142,7 +142,7 @@ public class HelloServlet extends HttpServlet {
 <li>You should see a simple text message: <b>Hello World!</b> </li>
 </ol>
 </section>
-<section id="key-learnings"> <title>Key Learnings</title>
+<section id="key-learnings"> <title>Key Learnings</title> 
 <ol>
 <li>ALS requires configuration information to create an environment for your app. Configuration information is contained in the <i>pom.xml</i> file. Tools like Maven can generate this configuration file for you.</li>
 <li>You can deploy your app using either the Helion CLI or the <xref href="../../devplatform.eclipse.dita" >Eclipse plugin</xref>.</li>

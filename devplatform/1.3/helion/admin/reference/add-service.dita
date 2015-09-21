@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4486">
-<title>HP Helion 1.3 Development Platform: Adding System Services</title>
+<title>HP Helion 1.3 Development Platform: Adding System Services</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -33,7 +33,7 @@
 </ul>
   <p>The <xref href="../../user/reference/client-ref-services.dita" >helion services</xref> command will show a list of all System Services available on the current target. This command will also display a list of Provisioned Services allocated to the currently authenticated user.</p>
 <p>Administrators can configure external data services to work in the same way that core System Services do, providing users and applications with access to existing software and infrastructure.</p>
-<section id="service-brokers"> <title>Service Brokers</title>
+<section id="service-brokers"> <title>Service Brokers</title> 
 <p>Service brokers are RESTful web services which connect Helion to services that the hosted apps can consume.</p>
 <p>The built-in system services have their own service brokers which handle the provisioning of service instances, but you can add your own service brokers to provide custom services (databases, message queues, etc.) to end users.</p>
 <p>The Cloud Foundry v2 Service Broker API provides a simplified mechanism for connecting data services to the system. A service broker is responsible for:</p>
@@ -45,11 +45,11 @@
 <li>maintaining a consistent record of the provisioned service instances and bindings to ensure services are persistent between broker restarts</li>
 </ul>
 </section>
-<section id="cf-services-connector-nodejs"> <title>CF Services Connector (Node.js)</title>
+<section id="cf-services-connector-nodejs"> <title>CF Services Connector (Node.js)</title> 
 <p>ActiveState has created an open-source service broker library written in Node.js called <i>cf-services-connector</i> to help you create custom service brokers.</p>
 <p>You can install the library with <i>npm install cf-services-connector</i> or include it in the <i>package.json</i> file of your service broker implementation.</p>
 </section>
-<section id="example-echo-service"> <title>Example Echo Service</title>
+<section id="example-echo-service"> <title>Example Echo Service</title> 
 <p>The <i>cf-services-connector-nodejs</i> repository provides an example service broker called <xref href="https://github.com/ActiveState/cf-services-connector-nodejs/tree/master/example/echo-service" scope="external" format="html" >
 <b>echo-service</b>
 </xref>.</p>

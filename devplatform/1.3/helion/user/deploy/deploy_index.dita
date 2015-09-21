@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic1693">
-<title>HP Helion 1.3 Development Platform: Application Lifecycle Service User Guide</title>
+<title>HP Helion 1.3 Development Platform: Application Lifecycle Service User Guide</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,7 +25,7 @@ web server, application dependencies, databases, and other services.</p>
       applications. To deploy worker applications, you need to use the <xref
         href="manifestyml.dita#topic20922/command">command</xref>key and set the <xref
         href="manifestyml.dita#topic20922/web">proceses: web</xref> key to Null ("~").</note>
-<section id="quick-start"> <title>Quick Start</title>
+<section id="quick-start"> <title>Quick Start</title> 
 <ul>
 <li>
           <xref href="../quick-start/quickstart_index.dita">ALS Quick Start Guide</xref> [Not the same as the <xref href="../../../devplatform.ALS-developer-trial-quick-start.dita">Developer Trial Quick Start</xref>].
@@ -47,7 +47,7 @@ web server, application dependencies, databases, and other services.</p>
         </li>
 </ul>
 </section>
-<section id="helion-client"> <title>Application Lifecycle Service Client</title>
+<section id="helion-client"> <title>Application Lifecycle Service Client</title> 
 <ul>
 <li>
           <xref href="../reference/client-ref.dita#topic13355/getting-started" type="section"  >Application
@@ -83,7 +83,7 @@ web server, application dependencies, databases, and other services.</p>
           </ul></li>
 </ul>
 </section>
-<section id="frameworks"><title>Frameworks</title>
+<section id="frameworks"><title>Frameworks</title> 
 
           <ul>
                 <li>
@@ -96,7 +96,7 @@ web server, application dependencies, databases, and other services.</p>
                   <xref href="other-frameworks.dita#topic2413" type="section" scope="local" format="dita" >Generic &amp; Standalone Frameworks</xref>
                 </li>
                 </ul></section>
-  <section id="languages"><title>Deploying Applications (by Language)</title>
+  <section id="languages"><title>Deploying Applications (by Language)</title> 
          <ul>
         <li><xref href="languages/docker_apps.dita">Docker apps</xref></li>
             <li><xref href="languages/clojure.dita">Clojure</xref></li>
@@ -116,7 +116,7 @@ web server, application dependencies, databases, and other services.</p>
             <li><xref href="languages/ruby.dita">Ruby</xref></li>
           </ul>
 </section>
-<section id="services"> <title>Services</title>
+<section id="services"> <title>Services</title> 
 <ul>
 <li>
           <xref href="../services/data-services.dita#topic19772" type="section"  >Data Services</xref>
@@ -137,7 +137,7 @@ web server, application dependencies, databases, and other services.</p>
         </li>
 </ul>
 </section>
-<section id="logging-monitoring"> <title>Logging &amp; Monitoring</title>
+<section id="logging-monitoring"> <title>Logging &amp; Monitoring</title> 
 <ul>
 <li>
           <xref href="app-logs.dita#topic5165" type="section"  >Application Logs</xref>
@@ -147,7 +147,7 @@ web server, application dependencies, databases, and other services.</p>
         </li>
 </ul>
 </section>
-<section id="management-console"> <title>Management Console</title>
+<section id="management-console"> <title>Management Console</title> 
 <ul>
 <li>
           <xref href="../../admin/console/customize.dita#topic5029" type="section"  >Customize the Management
@@ -176,7 +176,7 @@ web server, application dependencies, databases, and other services.</p>
         <li><xref href="../../admin/console/console_settings.dita"/></li>
 </ul>
 </section>
-<section id="reference"> <title>Reference</title>
+<section id="reference"> <title>Reference</title> 
 <ul>
 <li>
           <xref href="../reference/environment.dita#topic7631" type="section"  >Environment Variables</xref>

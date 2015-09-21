@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4410">
-<title>HP Helion 1.3 Development Platform: Common Server Operations</title>
+<title>HP Helion 1.3 Development Platform: Common Server Operations</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -53,7 +53,7 @@
 <xref type="section" href="#topic4410/server-backup-import-and-export">Server Backup, Import, and Export</xref>
 </li>
 </ul>
-<section id="server-status"> <title>Server Status</title>
+<section id="server-status"> <title>Server Status</title> 
 <p>To check the status of Application Lifecycle Service:</p>
 <codeblock>kato status</codeblock>
 <p>This will list all the roles configured to run on the VM, and whether
@@ -67,7 +67,7 @@ they are running, stopped, or starting.</p>
         example, to check that all processes for the configured roles are ready:</p>
 <codeblock>kato process ready all</codeblock>
 </section>
-<section id="starting-and-stopping-roles"> <title>Starting and Stopping Roles</title>
+<section id="starting-and-stopping-roles"> <title>Starting and Stopping Roles</title> 
 <p>To control the Application Lifecycle Service roles, use the <i>kato</i> start, stop and restart
         commands.</p>
       <p>Without any further options specified, the operation applies to all Application Lifecycle
@@ -76,11 +76,11 @@ they are running, stopped, or starting.</p>
 <p> To start, stop or restart individual roles, specify them after the desired command:</p>
 <codeblock>kato stop mysql</codeblock>
 </section>
-<section id="system-shutdown"> <title>System Shutdown</title>
+<section id="system-shutdown"> <title>System Shutdown</title> 
 <p>To safely shut down the VM, run the <i>shutdown</i> command as root:</p>
 <codeblock>sudo shutdown -h now</codeblock>
 </section>
-<section id="setting-the-time-zone"> <title>Setting the Time Zone</title>
+<section id="setting-the-time-zone"> <title>Setting the Time Zone</title> 
 <p>At first boot, the time zone of the Application Lifecycle Service VM is set to UTC. To set this to your local time zone, use the <codeph>kato op set_timezone</codeph> command. When run without arguments, the command will prompt
 for time zone selection, but the time zone can be set non-interactively
 with the <codeph>--timezone</codeph> option. For example:</p>
@@ -88,7 +88,7 @@ with the <codeph>--timezone</codeph> option. For example:</p>
 <p>You can also use the <codeph>tzselect</codeph> command to find the
 appropriate time zone string for your location.</p>
 </section>
-<section id="resetting-the-vm"> <title>Resetting the VM</title>
+<section id="resetting-the-vm"> <title>Resetting the VM</title> 
 <p>If you would like to return an Application Lifecycle Service VM to its original
   "out-of-the-box" configuration, use the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >
 <i>kato node reset</i>
@@ -119,19 +119,19 @@ kato node setup micro</codeblock>
 </li>
 </ul>
 </section>
-<section id="monitoring-the-application-lifecycle-service-server"> <title>Monitoring The Application Lifecycle Service Server</title>
+<section id="monitoring-the-application-lifecycle-service-server"> <title>Monitoring The Application Lifecycle Service Server</title> 
 </section>
-<section id="management-console"> <title>Management Console</title>
+<section id="management-console"> <title>Management Console</title> 
 <p>The <xref href="../../user/console/console_index.dita#topic8844"><i>Management Console</i>
         </xref>has a Settings page that allows an administrator to monitor the server component and
         services, and restart or stop services as necessary.</p>
 </section>
-<section id="new-relic"> <title>New Relic</title>
+<section id="new-relic"> <title>New Relic</title> 
   <p>Please see <xref href="../best-practices/best_practices_index.dita#topic16169"><i>New Relic Server
             Monitoring</i></xref> . New Relic can also be used to <xref
           href="../../user/deploy/newrelic.dita" type="section">monitor apps</xref>.</p>
 </section>
-<section id="creating-an-admin-user"> <title>Creating an Admin User</title>
+<section id="creating-an-admin-user"> <title>Creating an Admin User</title> 
 <p>The easiest way to add admin users to Application Lifecycle Service is via the Management Console
         under <xref href="../console/console_index.dita#topic13823/users">Users</xref>. The Management
         Console will prompt to create the initial admin user the first time you use it.</p>
@@ -142,12 +142,12 @@ helion register superuser@example.net</codeblock>
 <codeblock>kato config push cloud_controller_ng admins superuser@example.net</codeblock>
 <p>Subsequent new users can be added remotely with the Helion client by an admin user.</p>
 </section>
-<section id="system-monitoring-with-nagios"> <title>System Monitoring with Nagios</title>
+<section id="system-monitoring-with-nagios"> <title>System Monitoring with Nagios</title> 
 <p>If Nagios is installed on your server nodes, you can use it to monitor and report resource
         utilization. See the <xref href="../best-practices/best_practices_index.dita#topic16169">Best Practices
           documentation</xref> for details.</p>
 </section>
-<section id="server-backup-import-and-export"> <title>Server Backup, Import, and Export</title>
+<section id="server-backup-import-and-export"> <title>Server Backup, Import, and Export</title> 
 <p>The import and export functionality can be used to do regular backups,
 or to move the Application Lifecycle Service configuration from one server to another. It is also a means of upgrading the Application Lifecycle Service VM without having to install everything from the ground up.</p>
   <p>Please see the <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration"

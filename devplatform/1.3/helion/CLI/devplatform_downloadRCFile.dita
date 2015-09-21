@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rmk_gnx_ft">
-  <title>Download the OpenStack RC File</title>
+  <title>Download the OpenStack RC File</title> 
   <body>
     <ol>
       <li> Log into the <xref href="https://horizon.hpcloud.com/" scope="external" format="html">Horizon console</xref> using the HP Helion Public

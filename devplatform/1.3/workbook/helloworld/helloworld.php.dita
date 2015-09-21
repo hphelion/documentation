@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3770">
-<title>HP Helion 1.3 Development Platform: PHP Hello World Sample</title>
+<title>HP Helion 1.3 Development Platform: PHP Hello World Sample</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,7 +18,7 @@
 </prolog>
 <body>
 <p>This very simple PHP web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.</p>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="prerequisites"> <title>Prerequisites</title> 
 <ul>
 <li>An installation of the <xref href="../../installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>.</li>
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita" >Cluster</xref>
@@ -35,9 +35,9 @@ instructions further down. But before you push the button, ensure that you have 
 <a href="https://deploynow.hpcloud.com/?repoUrl=https://github.com/HelionDevPlatform/helion-hello-world-php"><img src="/../media/deploynow.png"/></a>
 -->
 </section>
-<section id="deployment-instructions"> <title>Deployment Instructions</title>
+<section id="deployment-instructions"> <title>Deployment Instructions</title> 
 </section>
-<section id="download-the-application-files"> <title>Download the Application Files</title>
+<section id="download-the-application-files"> <title>Download the Application Files</title> 
 <p>
   <xref href="https://github.com/HelionDevPlatform/helion-hello-world-php" scope="external" format="html" >Click here to access the code repository.</xref>
 </p>
@@ -45,7 +45,7 @@ instructions further down. But before you push the button, ensure that you have 
 <i>Manifest.yml</i> is a configuration file used to specify settings. For PHP, only the <b>name</b> and <b>buildpack</b> fields are required. The <b>buildpack</b> field is a URL for the buildpack that supports the necessary language and/or framework.</p>
 <p>This app uses the <xref href="https://github.com/cloudfoundry/php-buildpack" scope="external" format="html" >Cloud Foundry PHP buildpack</xref>. For more technical details about buildpacks and the <i>composer.json</i> file, please see the README included in the <xref href="https://github.com/HelionDevPlatform/helion-rabbitmq-php/" scope="external" format="html" >download package</xref>.</p>
 </section>
-<section id="deploy-the-application"> <title>Deploy the Application</title>
+<section id="deploy-the-application"> <title>Deploy the Application</title> 
 <p>
         <b>Note</b>: Application Lifecycle Service clusters that require an upstream HTTP proxy to
         access the internet will need to be <xref
@@ -88,7 +88,7 @@ instructions further down. But before you push the button, ensure that you have 
 </li>
 </ol>
 </section>
-<section id="view-and-run-the-application"> <title>View and Run the Application</title>
+<section id="view-and-run-the-application"> <title>View and Run the Application</title> 
 <ol>
 <li>Open the ALS <b>Management Console</b>. <!--A BR tag was used here in the original source.--> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.</li>
 <li>Click <b>Applications</b>.</li>
@@ -102,7 +102,7 @@ instructions further down. But before you push the button, ensure that you have 
 </li>
 </ol>
 </section>
-<section id="key-code-snippets"> <title>Key Code Snippets</title>
+<section id="key-code-snippets"> <title>Key Code Snippets</title> 
 <p>This simple PHP script prints "Hello World".</p>
 <codeblock>
   <codeph>&lt;?php
@@ -119,7 +119,7 @@ applications:
 </codeph>
 </codeblock>
 </section>
-<section id="key-learnings"> <title>Key Learnings</title>
+<section id="key-learnings"> <title>Key Learnings</title> 
 <ol>
 <li>ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You interact with and deploy your app using the <xref href="../../helion/user/reference/client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/console_index.dita" >ALS Management Console</xref>.</li>

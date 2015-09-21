@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic18326">
-<title>HP Helion 1.3 Development Platform: Cluster Setup</title>
+<title>HP Helion 1.3 Development Platform: Cluster Setup</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -122,7 +122,7 @@
           </li>
         </ul></li>
 </ul>
-<section id="roles"> <title>Node Roles</title>
+<section id="roles"> <title>Node Roles</title> 
   <p>An Application Lifecycle Service <xref href="../../user/reference/glossary.dita#topic6187/term-node" type="section"   >node</xref> can
 take on one or more of the following roles:</p>
 <ul>
@@ -178,7 +178,7 @@ command will show:</p>
 </li>
 </ul>
 </section>
-<section id="preparing-the-core-node"> <title>Preparing the Core Node</title>
+<section id="preparing-the-core-node"> <title>Preparing the Core Node</title> 
 <p>In an Application Lifecycle Service cluster, one node is dedicated as the Core node. This node
 will have a
   <xref href="../reference/architecture.dita#topic4407/architecture-cloud-controller" type="section"   >controller</xref>,
@@ -189,7 +189,7 @@ can also include additional roles.</p>
 <p>Boot an Application Lifecycle Service VM and set up the Core node as described below, then add
 the other nodes and assign roles.</p>
 </section>
-<section id="core-ip"> <title>CORE_IP</title>
+<section id="core-ip"> <title>CORE_IP</title> 
   <p>A <xref href="../server/configuration.dita#topic31232/setting-a-static-ip" type="section"   >static IP address</xref> is
 necessary to provide a consistent network interface for other nodes to connect to. This address is called the MBUS IP. If your IaaS or cloud orchestration software provides IP addresses which persist indefinitely and are not reset on reboot you may not have to set this explicitly.</p>
 <p>Take note of the internal IP address of the Core node. It will be required in the following steps to configure additional nodes to attach to the Core node.</p>
@@ -202,7 +202,7 @@ networking. To check the IP address, run:</p>
 <codeblock>kato op static_ip</codeblock>
   <note>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-migrate" >kato node migrate</xref> on the Core node, then <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref> on all other cluster nodes.</note>
 </section>
-<section id="hostname"> <title>Hostname</title>
+<section id="hostname"> <title>Hostname</title> 
   <p>Next, set the <b>fully qualified hostname</b> of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the <xref href="../server/configuration.dita#topic31232/server-config-dns" type="section"   >DNS record</xref> created for
 this system.</p>
 <p>To set the hostname, run:</p>
@@ -214,12 +214,12 @@ used by clients (e.g. "https://api.hostname.example.com").</p>
             type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer and
             Multiple Routers</xref> section below.</note>
 </section>
-<section id="wildcard-dns"> <title>Wildcard DNS</title>
+<section id="wildcard-dns"> <title>Wildcard DNS</title> 
 <p>A wildcard DNS record is necessary to resolve not only the API endpoint,
 but all applications which will subsequently be deployed on the PaaS.
   <xref href="../server/configuration.dita#topic31232/server-config-dns" type="section"   >Create a wildcard DNS record</xref> for the <xref type="section" href="#topic18326/core-node">Core node</xref> or <xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer/Router</xref>.</p>
 </section>
-<section id="core-node"> <title>Core Node</title>
+<section id="core-node"> <title>Core Node</title> 
 <p>On the Core node, execute the following command:</p>
 <codeblock>kato node setup core api.hostname.example.com</codeblock>
 <p>This sets up the Core node with just the implicit <b>controller</b>,
@@ -233,7 +233,7 @@ kato role add dea</codeblock>
 <p>Then proceed to configure the other VMs by attaching them to the Core
 node and assigning their particular roles.</p>
 </section>
-<section id="attaching-nodes-and-enabling-roles"> <title>Attaching Nodes and Enabling Roles</title>
+<section id="attaching-nodes-and-enabling-roles"> <title>Attaching Nodes and Enabling Roles</title> 
 <p>Adding nodes to the cluster involves attaching the new VMs to the Core
   node's IP address using the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref>
 command. This command will check that the new node has a version number
@@ -243,12 +243,12 @@ compatible with the Core node before attaching it.</p>
 command, but it is generally preferable to enable roles during the
 <codeph>kato attach</codeph> step using the <codeph>-e</codeph> (enable) option as described below for each of the node types.</p>
 </section>
-<section id="router-nodes"> <title>Router Nodes</title>
+<section id="router-nodes"> <title>Router Nodes</title> 
 <p>In smaller clusters, the Router role enabled on a Core node should be sufficient for the Core node to function as the gateway. To attach a node enabling just the router role:</p>
 <codeblock>kato node attach -e router CORE_IP</codeblock>
   <p>If a Router-only node is functioning as the gateway, the public DNS entry for the API endpoint must point to that node. For larger clusters requiring multiple gateway Routers, see the <xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer and Multiple Routers</xref> section below.</p>
 </section>
-<section id="data-services-nodes"> <title>Data Services Nodes</title>
+<section id="data-services-nodes"> <title>Data Services Nodes</title> 
 <p>Data services can share a single node (small clusters) or run on
 separate nodes (recommended for production clusters). To set up all
 available data services on a single node and attach it to the Core node,
@@ -262,30 +262,30 @@ run the following command on the data services node:</p>
             Setup</xref> documentation for details.</note>
       </p>
 </section>
-<section id="dea-nodes"> <title>DEA Nodes</title>
+<section id="dea-nodes"> <title>DEA Nodes</title> 
   <p>Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref> command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:</p>
 <codeblock>kato node attach -e dea CORE_IP</codeblock>
 <p>Continue this process until you have added all the desired DEA nodes.</p>
 </section>
-<section id="verification"> <title>Verification</title>
+<section id="verification"> <title>Verification</title> 
 <p>To verify that all the cluster nodes are configured as expected, run the
 following command on the Core node:</p>
 <codeblock>kato status --all</codeblock>
 </section>
-<section id="removing-nodes"> <title>Removing Nodes</title>
+<section id="removing-nodes"> <title>Removing Nodes</title> 
   <p>Use the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-detach" type="section"  >kato
           node detach</xref> to remove a node from the cluster. Run the following command on the
         core node.</p>
 <codeblock>kato node remove NODE_IP</codeblock>
 </section>
-<section id="role-configuration-using-the-management-console"> <title>Role Configuration using the Management Console</title>
+<section id="role-configuration-using-the-management-console"> <title>Role Configuration using the Management Console</title> 
 <p>Once cluster nodes are connected to the Core node, roles can be enabled
   or disabled using the <xref href="../helion_admin_index.dita#topic2276/cluster-configuration" type="section"   >manual cluster configuration</xref> options in the Management
 Console.</p>
 </section>
-<section id="example-clusters"> <title>Example Clusters</title>
+<section id="example-clusters"> <title>Example Clusters</title> 
 </section>
-<section id="single-node"> <title>Single-Node</title>
+<section id="single-node"> <title>Single-Node</title> 
 <p>This is a configuration (not actually a cluster) which you would not
 generally deploy in production, but it helps to illustrate the role
 architecture in Application Lifecycle Service. A node in this configuration will function
@@ -296,7 +296,7 @@ building a cluster later.</p>
 <codeblock>kato node setup core api.hostname.example.com
 kato role add --all-but mdns</codeblock>
 </section>
-<section id="three-node"> <title>Three-Node</title>
+<section id="three-node"> <title>Three-Node</title> 
 <p>This is the smallest viable cluster deployment, but it lacks the fault
 tolerance of larger configurations:</p>
 <ul>
@@ -310,7 +310,7 @@ services</li>
 node, but the failure of any single node will impact hosted
 applications.</p>
 </section>
-<section id="five-node"> <title>Five-Node</title>
+<section id="five-node"> <title>Five-Node</title> 
 <p>A typical small Application Lifecycle Service cluster deployment might look like this:</p>
 <ul>
 <li>1 Core node consisting of primary, controller, and router (and
@@ -324,7 +324,7 @@ introduced in the pool of DEA nodes. If any single DEA node fails,
 application instances will be automatically redeployed to the remaining
 DEA nodes with little or no application down time.</p>
 </section>
-<section id="node"> <title>20-Node</title>
+<section id="node"> <title>20-Node</title> 
 <p>A larger cluster requires more separation and duplication of roles for
 scalability and fault tolerance. For example:</p>
 <ul>
@@ -351,7 +351,7 @@ services on other nodes</li>
 and system management tasks</li>
 </ul>
 </section>
-<section id="roles-requiring-persistent-or-shared-storage"> <title>Roles Requiring Persistent or Shared Storage</title>
+<section id="roles-requiring-persistent-or-shared-storage"> <title>Roles Requiring Persistent or Shared Storage</title> 
 <p>Though all roles can run using the VM's default filesystem, in
 production clusters some roles should be backed by a persistent
 filesystem (block storage volumes) to provide scalable storage space
@@ -374,7 +374,7 @@ recommended.</p>
   <p>See the <xref href="../best-practices/best_practices_index.dita#topic16169/bestpractices-persistent-storage" type="section"   >Persistent Storage</xref> documentation for instructions on relocating service data, application
 droplets, and containers.</p>
 </section>
-<section id="port-configuration"> <title>Port Configuration</title>
+<section id="port-configuration"> <title>Port Configuration</title> 
   <p>The Application Lifecycle Service <xref href="../../user/reference/glossary.dita#topic6187/term-micro-cloud" type="section"   >micro cloud</xref> runs with the following ports exposed:</p>
 <table>
 <tgroup cols="3">
@@ -506,7 +506,7 @@ settings for this node should make the configured port range accessible
 publicly. See <xref href="harbor.dita#topic4009/requirements-setup" type="section"   >Harbor Setup</xref> for full
 configuration instructions.</note>
 </section>
-  <section id="utm"><title>UTM / Gateway Firewalls</title>Upgrades, patches, and the staging of user
+  <section id="utm"><title>UTM / Gateway Firewalls</title> Upgrades, patches, and the staging of user
       applications may require downloading packages from external sources. This is most often done
       over HTTP (port 80) or HTTPS (port 443). If a UTM (unified threat management) device or other
       network gateway software is inspecting traffic between the nodes and upstream package
@@ -518,7 +518,7 @@ configuration instructions.</note>
       all inbound traffic is a requirement in your network, consider setting up <xref
         href="../../user/deploy/adding-buildpack.dita">offline buildpacks</xref> or creating
       internal package repository mirrors. </section>
-<section id="multiple-controllers"> <title>Multiple Controllers</title>
+<section id="multiple-controllers"> <title>Multiple Controllers</title> 
 <p>An Application Lifecycle Service cluster can have multiple controller nodes running on separate VMs to improve performance. To do this, all controller nodes must share the following two important data directories on a high-availability filesystem server:</p>
 <codeblock>/home/stackato/stackato/data
 /var/stackato/data/cloud_controller_ng/tmp/staged_droplet_uploads  </codeblock>
@@ -550,7 +550,7 @@ configuration instructions.</note>
 </ol><note>Though the <i>Router</i> role <b>must</b> be enabled on the Core node, it is not required for the additional Controller nodes.  
 </note>
 </section>
-<section id="load-balancer-and-multiple-routers"> <title>Load Balancer and Multiple Routers</title>
+<section id="load-balancer-and-multiple-routers"> <title>Load Balancer and Multiple Routers</title> 
 <p>For large scale deployments requiring multiple Router nodes, a load
 balancer must be configured to distribute connections between the
 Routers. Though most users will prefer to use a hardware load balancer
@@ -563,13 +563,13 @@ pool of Routers and handle SSL termination.</p>
 <p>For example, to setup a cluster with an Application Lifecycle Service Load Balancer and
 multiple Routers:</p>
 </section>
-<section id="rename-the-load-balancer"> <title>Rename the Load Balancer</title>
+<section id="rename-the-load-balancer"> <title>Rename the Load Balancer</title> 
 <p>The Load Balancer is the primary point of entry to the cluster. It must
 have a public-facing IP address and take on the primary hostname for the
 system as <xref href="../server/configuration.dita#topic31232/server-config-dns" type="section"   >configured in DNS</xref>. Run the following on Load Balancer node:</p>
 <codeblock>kato node rename *hostname.example.com*</codeblock>
 </section>
-<section id="set-up-the-core-node"> <title>Set up the Core Node</title>
+<section id="set-up-the-core-node"> <title>Set up the Core Node</title> 
 <p>The Core node will need to temporarily take on the API endpoint hostname
 of the Application Lifecycle Service system (i.e. the same name as the Load Balancer above).
 Run the following on the Core node:</p>
@@ -582,7 +582,7 @@ ultimately have unique hostnames. After setup, rename the Core node
 <b>manually</b> by editing <i>/etc/hostname</i> and <i>/etc/hosts</i>, then
 <codeph>sudo service hostname restart</codeph>.</p>
 </section>
-<section id="set-up-supplemental-routers"> <title>Set up Supplemental Routers</title>
+<section id="set-up-supplemental-routers"> <title>Set up Supplemental Routers</title> 
 <p>As with the Core node, you will need to run <codeph>kato node rename</codeph>on each router with the same API endpoint hostname. Run the following on each Router:</p>
 <codeblock>kato node rename *hostname.example.com*</codeblock>
 <p>Then enable the 'router' role and attach the node to the cluster:</p>
@@ -591,7 +591,7 @@ ultimately have unique hostnames. After setup, rename the Core node
 unique hostnames. The MBUS_IP is the network interface of the Core node
 (usually eth0).</p>
 </section>
-<section id="configure-the-helion-load-balancer"> <title>Configure the Application Lifecycle Service Load Balancer</title>
+<section id="configure-the-helion-load-balancer"> <title>Configure the Application Lifecycle Service Load Balancer</title> 
 <p>
         <note> An Application Lifecycle Service node configured as a Load Balancer cannot have any
           other roles enabled.</note>
@@ -606,7 +606,7 @@ cluster.</p>
 Router nodes. For example:</p>
 <codeblock>kato node setup load_balancer 10.5.31.140 10.5.31.145</codeblock>
 </section>
-<section id="load-balancer-ssl-certificates"> <title>Load Balancer SSL Certificates</title>
+<section id="load-balancer-ssl-certificates"> <title>Load Balancer SSL Certificates</title> 
 <p>The load balancer terminates SSL connections, so SSL certificates must
 be set up and maintained on this node.</p>
   <p>See the <xref href="../server/https_and_ssl.dita#topic_gwr_qgd_ws/using-your-own-ssl-certificate" >Using your own SSL certificate</xref> and <xref href="../server/https_and_ssl.dita#topic_gwr_qgd_ws/ca-certificate-chaining" type="section"   >CA Certificate Chaining</xref> sections for Application Lifecycle Service Load Balancer instructions.</p>

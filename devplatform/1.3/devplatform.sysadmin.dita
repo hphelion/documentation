@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic853">
-  <title>HP Helion 1.3 Development Platform: Resources for IT Ops</title>
+  <title>HP Helion 1.3 Development Platform: Resources for IT Ops</title> 
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -23,7 +23,7 @@
   <body>
 
     <section id="installation">
-      <title>Installation</title>
+      <title>Installation</title> 
       <ul>
         <li>
           <xref href="../../commercial/GA1/1.1commercial.index.dita">HP Helion <tm
@@ -48,7 +48,7 @@
       </ul>
     </section>
     <section id="administration">
-      <title>Administration</title>
+      <title>Administration</title> 
       <p>Access control is role-based, with each role granting permissions in either an organization
         or an application space. To create users and manage user roles, use the ALS <xref
           href="helion/user/reference/client-ref.dita">Command Line

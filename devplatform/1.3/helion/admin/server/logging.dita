@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11928">
-<title>HP Helion 1.3 Development Platform: Log Streams</title>
+<title>HP Helion 1.3 Development Platform: Log Streams</title> 
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -98,7 +98,7 @@ Events in the Management Console)</li>
 <p>A <b>message</b> is a single log line or event in a stream.</p>
 <p>Each message has a <b>key</b> which identifies <i>which</i> stream it belongs to (see <i><xref
           href="#topic11928/keys" format="dita">Keys</xref></i> below).</p>
-<section id="logyard"> <title>Logyard</title>
+<section id="logyard"> <title>Logyard</title> 
 <p>Log streams are handled by three processes which run on all Application Lifecycle Service
 nodes:</p>
 <ul>
@@ -118,7 +118,7 @@ events back to <b>logyard</b>
 sends user application logs to <b>logyard</b>, injecting relevant
 application-specific events from the <b>logyard_sieve</b> stream.</p>
 </section>
-<section id="drains"> <title>Drains</title>
+<section id="drains"> <title>Drains</title> 
 <p>A "drain" is a receiver for a log stream. Logyard has four kinds:</p>
 <ul>
 <li>TCP (e.g. &lt;tcp://10.0.11.101:12345&gt;)</li>
@@ -127,7 +127,7 @@ application-specific events from the <b>logyard_sieve</b> stream.</p>
 <li>file (e.g. &lt;file:///s/logs/custom-drain-1.log&gt;)</li>
 </ul>
 </section>
-<section id="system-drains"> <title>System Drains</title>
+<section id="system-drains"> <title>System Drains</title> 
 <p>Drains for system log and cloud event streams can be added by admins
   with the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-log-drain-add" type="section"   >kato log
 drain</xref>
@@ -149,7 +149,7 @@ node.</p>
 instead, add the 'overwrite=1' option:</p>
 <codeblock>kato log drain add debug file:///s/logs/debug-1.log overwrite=1</codeblock>
 </section>
-<section id="log-format"> <title>Log Format</title>
+<section id="log-format"> <title>Log Format</title> 
 <p>Log drains can emit entries in a variety of formats:</p>
 <ul>
 <li>verbatim (default): Log entries as they appear in the source log
@@ -226,7 +226,7 @@ and no format options ("-f") are specified. For example
 <codeph>kato drain add -p systail.dea ...</codeph> would format the
 drain using the <i>systail</i> drain format.</p>
 </section>
-<section id="saving-custom-log-formats"> <title>Saving Custom Log Formats</title>
+<section id="saving-custom-log-formats"> <title>Saving Custom Log Formats</title> 
 <p>Custom formats for drains can be saved as a named type in the Logyard
 configuration. To do this, add the formatting string to a new key in
 logyard/drainformats. For example, to save the log format used in the
@@ -245,7 +245,7 @@ formats to modify the output of any drains using these prefixes (e.g.
   Events in the Management Console, and <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-log-tail" type="section">kato log tail</xref>
 respectively).</p>
 </section>
-<section id="custom-drains"> <title>Custom Drains</title>
+<section id="custom-drains"> <title>Custom Drains</title> 
 <p>You can add custom drains to Logyard to look for certain events or parse
 certain log messages (e.g. tracking application push requests or user
 logins). Examples of custom drains and more advanced usage of Logyard
@@ -253,13 +253,13 @@ can be found in the <xref href="https://github.com/ActiveState/logyard-devguide/
 Guide</xref>
 </p>
 </section>
-<section id="application-drains"> <title>Application Drains</title>
+<section id="application-drains"> <title>Application Drains</title> 
 <p>Drains for application log streams can be added by end users with the <xref
           href="../../user/reference/client-ref-management.dita#topic50918/command-drain-add"
           type="section">
           <i>helion drain add</i>
         </xref> command. See the <xref href="../../user/deploy/app-logs.dita#topic5165">Application Logs</xref> section of the documentation for an example.</p></section>
-<section id="drain-status"> <title>Drain Status</title>
+<section id="drain-status"> <title>Drain Status</title> 
 <p>You can check the status of all drains on Application Lifecycle Service with the
 <codeph>kato log drain status</codeph> subcommand. For example:</p>
 <codeblock>kato log drain status
@@ -271,7 +271,7 @@ builtin.katohistory     192.168.68.5    RUNNING[3]</codeblock>
 <p>If the RETRYING drain hits a <xref href="#topic11928/drain-timeouts" format="dita"><i>drain
             timeout</i></xref>, its status will change to FATAL.</p>
 </section>
-<section id="keys"> <title>Keys</title>
+<section id="keys"> <title>Keys</title> 
 <p>Each message in a log stream is prefixed with a key, identifying what type of message it is or to
         which log stream it belongs. The following keys are available for use in defining drains
         using the <codeph>--prefix</codeph> flag for <xref
@@ -280,10 +280,10 @@ builtin.katohistory     192.168.68.5    RUNNING[3]</codeblock>
 <p>Systail keys are <xref href="#topic11928/managing-the-systail-stream" format="dita"
             ><i>configurable</i></xref> .</p>
 </section>
-<section id="apptail"> <title>apptail</title>
+<section id="apptail"> <title>apptail</title> 
 <codeblock>apptail.\&lt;app.id\&gt;</codeblock>
 </section>
-<section id="event"> <title>event</title>
+<section id="event"> <title>event</title> 
 <ul>
 <li>event.\&lt;eventname&gt; <ul>
             <li>process_stop</li>
@@ -297,7 +297,7 @@ builtin.katohistory     192.168.68.5    RUNNING[3]</codeblock>
           </ul></li>
 </ul>
 </section>
-<section id="systail"> <title>systail</title>
+<section id="systail"> <title>systail</title> 
 <ul>
 <li>systail.\&lt;processname&gt;</li>
 <li>systail.\&lt;processname&gt;.\&lt;nodeip&gt; <ul>
@@ -353,7 +353,7 @@ builtin.katohistory     192.168.68.5    RUNNING[3]</codeblock>
           </ul></li>
 </ul>
 </section>
-<section id="managing-the-systail-stream"> <title>Managing the systail stream</title>
+<section id="managing-the-systail-stream"> <title>Managing the systail stream</title> 
 <p>The list above shows the default systail keys. These can keys can be
   modified with the <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato
@@ -385,7 +385,7 @@ removing log files:</p>
         in the <i><xref href="#topic11928/systail" format="dita">systail</xref></i> list above) as
         this would affect the output of <codeph>kato tail</codeph>.</note>
 </section>
-<section id="configuration"> <title>Configuration</title>
+<section id="configuration"> <title>Configuration</title> 
 <p>Application Lifecycle Service has a number of configurable limits on application log drains
 to help prevent performance problems the logging subsystems. These
 settings can all be viewed and set with <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
@@ -394,7 +394,7 @@ config</i>
 </xref> commands as
 described below:</p>
 </section>
-<section id="drain-timeouts"> <title>Drain Timeouts</title>
+<section id="drain-timeouts"> <title>Drain Timeouts</title> 
 <ul>
 <li>
 <p>
@@ -442,7 +442,7 @@ all nodes.</p>
 </li>
 </ul>
 </section>
-<section id="user-drain-limit"> <title>User Drain Limit</title>
+<section id="user-drain-limit"> <title>User Drain Limit</title> 
 <ul>
 <li>
 <p>
@@ -461,7 +461,7 @@ limit to 5 drains:</p>
 </li>
 </ul>
 </section>
-<section id="apptail-limits"> <title>Apptail Limits</title>
+<section id="apptail-limits"> <title>Apptail Limits</title> 
 <ul>
 <li>
 <p>
@@ -496,7 +496,7 @@ missing data.</p>
 </li>
 </ul>
 </section>
-<section id="debugging-logyard"> <title>Debugging Logyard</title>
+<section id="debugging-logyard"> <title>Debugging Logyard</title> 
 <p>Use <codeph>kato log stream debug</codeph> to monitor
 Logyard-related log activity. The command tails the logyard, apptail,
 systail, and logyard_sieve streams.</p>
