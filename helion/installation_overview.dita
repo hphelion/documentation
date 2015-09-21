@@ -6,7 +6,8 @@
     <section id="about"><title>Helion OpenStack 2.0 Installation</title> Beginning with HP Helion
       OpenStack 2.0 Beta 2, you have two options for installing your cloud. You can use a GUI that
       runs in your web browser or you can install via a CLI that exposes the full power and
-      flexibility of HP Helion OpenStack 2.0 You should use the GUI if: <ul id="ul_p1l_2lw_kt">
+      flexibility of HP Helion OpenStack 2.0.</section>
+    <section> You should use the GUI if: <ul id="ul_p1l_2lw_kt">
         <li>You are installing a simple demo or proof-of-concept cloud. </li>
         <li>You have less than about 15 nodes (it will work for larger numbers but entering all that
           data in the GUI will get tiresome). </li>
