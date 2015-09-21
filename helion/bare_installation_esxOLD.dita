@@ -70,9 +70,9 @@
                 them as required:
                 <codeblock>cp -r ~/helion/examples/one-region-poc-with-esx/* ~/helion/my_cloud/definition/</codeblock></li>
               <li>The configuration files for editing are available at
-                  <codeph>~/helion/my_cloud/definition/</codeph>. Refer to <b><xref
-                    href="bare_installation_kvm.dita#install_kvm/note">Note</xref></b> for the list
-                of configuration files.</li>
+                <codeph>~/helion/my_cloud/definition/</codeph>. Refer to the <b><xref
+                  href="input_model.dita">Helion OpenStack 2.0 Input Model</xref></b> document for
+                assistance with the configuration files.</li>
               <li>Modify the <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the
                 line containing <codeph>eon.yml</codeph>.</li>
               <li>Modify the <codeph>neutron.conf.j2</codeph> at

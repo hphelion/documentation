@@ -9,12 +9,12 @@
         <li>Log onto the first node in the system that is running the swift-proxy-server process.
             <note> You must run the <codeph>_swift-validate-input-model.yml</codeph> playbook as
             mentioned in step <b>1</b> in <b> </b><xref
-              href="../installation.dita#topic_flx_j2b_ws/validate_swift">Validate Object
+              href="../bare_installation_kvm.dita#install_kvm/validate_swift">Validate Object
               Storage</xref> or run the <codeph>hlm-deploy.yml</codeph> playbook as described in
-            step <b>2 c</b> in <xref
-              href="../installation.dita#topic_flx_j2b_ws/run-config-processor"/>otherwise the files
-            needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the
-            node.</note></li>
+            step <b>2 c</b> in the <xref
+              href="../bare_installation_kvm.dita#install_kvm/run-config-processor">Install
+              Guide</xref> otherwise the files needed to run the
+              <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node.</note></li>
         <li>Execute the following
             command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report </codeblock><p>
             The command will report any errors or problems (see List of errors) with the input

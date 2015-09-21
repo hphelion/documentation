@@ -169,10 +169,6 @@ api_v3 = false</codeblock>
         </li>
         <li>Then run tests normally</li>
       </ol>
-      <p>
-        <note>You can exclude tests for <xref type="section" href="#tempest/exclude">features that
-            are not available and test not compatible</xref>.</note>
-      </p>
     </section>
     <section id="list"><title>Run Tests Matching a Series of White and Blacklists</title>
       <p>You can run tests against specific scenarios by editing or creating a run filter file.</p>

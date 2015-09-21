@@ -35,8 +35,9 @@
     </section>
     <section id="Prereqs">
       <title>Before You Start</title>
-      <note type="important">We have put together a <xref href="preinstall_checklist.dita">Pre-Installation
-        Checklist</xref> that should help with the recommended pre-installation tasks.</note>
+      <note type="important">We have put together a <xref href="preinstall_checklist.dita"
+          >Pre-Installation Checklist</xref> that should help with the recommended pre-installation
+        tasks.</note>
       <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
       <ul>
         <li>Set up the iLO Advanced license in the iLO configuration. Make sure the iLO user has
@@ -121,8 +122,8 @@ helion/hos/                    Directory contains files used by the installer
               <codeblock>cp -r ~/helion/examples/entry-scale-with-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
             <li>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory. Full details of how to do
-              this can be found here: <xref href="config/entryscalewithvsa.dita">Configuration Files
-                for Entry Scale Model</xref>.</li>
+              this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
+                Model</xref>.</li>
           </ol></li>
         <li>Edit the <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file and under the
             <b>Elasticsearch defaults</b> section, change the value of
