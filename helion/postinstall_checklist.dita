@@ -34,7 +34,7 @@
               </row>
               <row>
                 <entry/>
-                <entry>Accessing Horizon (COMING SOON)</entry>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/horizon">Accessing Horizon</xref></entry>
               </row>
               <row>
                 <entry/>
@@ -128,8 +128,8 @@
     <section id="horizon"><title>Accessing Horizon</title>
     <p>Horizon is the web GUI for administering your cloud deployment.</p>
       <p>To determine which IP to use to access Horizon you can use this command from your deployer:</p>
-      <codeblock>grep OS_AUTH_URL service.osrc</codeblock>
-      <p>The output of that command will show you your </p>
+      <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock>
+      <p>The output of that command will show you the VIP for Horizon you should use.</p>
     </section>
   </body>
 </topic>
