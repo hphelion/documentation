@@ -6,31 +6,37 @@
   <body>
     <section id="important-notes"><title>Important Notes</title>
       <ul>
-        <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met.</li>
+        <li>We have put together a <xref href="preinstall_checklist.dita">Pre-Installation
+            Checklist</xref> that should help with the recommended pre-installation tasks.</li>
+        <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met in
+          your environment.</li>
+        <li>There is no requirement to have a dedicated network for OS-install and system
+          deployment. More information can be found on the <xref href="supportedconfigs.dita"
+            >Supported Configuration</xref> page.</li>
+        <li>Read over the page about the <xref href="input_model.dita">Helion OpenStack 2.0 Input
+            Model</xref> to learn about the configuration options for your cloud.</li>
         <li>Make sure <b>all disks on the system(s) are wiped</b> before you begin the install.</li>
-        <li>/dev/sda will be used for the OS.</li>
+        <li>The <codeph>/dev/sda</codeph> disk on your systems will be used for the operating
+          system.</li>
         <li>Both HP Linux for HP Helion OpenStack and HP Helion OpenStack are part of the ISO you
           will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page. There is only one download;
-          it includes both the OS and the Beta1 installer in one ISO.</li>
-        <li>Three NICs are tested, one 1Gb used for PXE and two bonded 10Gb for everything else. All
-          machines can net boot from PXE and use the deployer as a DHCP server.</li>
+          it includes both the operating system and the Helion OpenStack installer in one ISO.</li>
         <li>All machines of a given role should be the same configuration.</li>
-        <li>The deployer node must be a dedicated node in Beta1.</li>
+        <li>The deployer node must be a dedicated node in Beta 2.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO
           subsystem of each baremetal system to enable host reboots as part of the install process.
           The HP Helion OpenStack architecture requires that the IPMI network is a separate network
           and that a route exists from the management network to the IPMI network for iLO
           access.</li>
-        <li>Note that the requirement to have a dedicated network for OS-install and system
-          deployment has been removed in Beta 1. More information can be found on the<xref
-            href="supportedconfigs.dita#topic_ckw_kbc_ws"> supported configuration page</xref>.</li>
       </ul>
     </section>
     <section id="Prereqs">
       <title>Before You Start</title>
+      <note type="important">We have put together a <xref href="preinstall_checklist.dita">Pre-Installation
+        Checklist</xref> that should help with the recommended pre-installation tasks.</note>
       <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
       <ul>
         <li>Set up the iLO Advanced license in the iLO configuration. Make sure the iLO user has
@@ -204,9 +210,9 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
       </ol>
     </section>
     <section id="cinder"><title>Install and Configure a Block Storage Backend (Optional)</title>
-      <p>There are options for the Block Storage backend notated below. Without a valid backend
-        your Block Storage (Cinder) implementation will not be usable. These documents will assist
-        you in installing and configuring a backend solution.</p>
+      <p>There are options for the Block Storage backend notated below. Without a valid backend your
+        Block Storage (Cinder) implementation will not be usable. These documents will assist you in
+        installing and configuring a backend solution.</p>
       <p><b>Ceph</b></p>
       <ul>
         <li><xref href="cinder/ceph/ceph_overview.dita">Ceph Overview</xref></li>
@@ -219,8 +225,9 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
       </ul>
       <p><b>3PAR</b></p>
       <ul>
-        <li><xref href="cinder/3Par/3par_configuration.dita">3PAR Installation and Configuration</xref></li>
+        <li><xref href="cinder/3Par/3par_configuration.dita">3PAR Installation and
+            Configuration</xref></li>
       </ul>
     </section>
-    </body>
+  </body>
 </topic>
