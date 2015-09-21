@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_t5f_qzh_kt">
-  <title>Installing HP Helion OpenStack Using the UI </title>
+<topic id="install_gui">
+  <title>Installing HP Helion OpenStack&#174; 2.0 Using the UI</title>
   <body>
-
     <section> HP Helion OpenStack 2.0 Beta 2 comes with a UI for installing your cloud. Rather than
       searching through and editing a number of YAML files to input your specific configuration
       data, finding the correct location, and maintaing the format of the files, the UI presents
@@ -17,61 +16,57 @@
     <section>These YAML configuration files are now stored in a local git repository as well, as
       explained in <xref href="using_git.dita#topic_u3v_1yz_ct">Using git for Configuration
         Manangement</xref>. </section>
-      
-      
-      
     <section><title>Before you begin</title> Before you run the GUI installer to install your cloud,
       there are a number of things you need to do to prepare. <ol>
         <li>Prepare your servers</li>
         <li>Gather your information <ul>
-          <li>Server names </li>
-          <li>IP addresses </li>
-          <li>Server Roles </li>
-          <li>PXE MAC addresses </li>
-          <li>PXE IP addresses </li>
-          <li>PXE interfaces </li>
-          <li>IPMI/iLO IP address, username, password </li>
-        </ul>
-        </li>
-        <li>Choose your <xref href="supportedconfigs.dita#topic_ckw_kbc_ws">cloud
-            model/example</xref> template</li>
-        <li>Install HP Linux for HP Helion OpenStack based on your hypervisor by following the
-          appropriate installation instructions: <ul>
-            <li><xref href="bare_installation_kvm.dita#install_kvm">KVM</xref></li>
-            <li><xref href="bare_installation_esx.dita#install_esx">ESX </xref></li>
+            <li>Server names </li>
+            <li>IP addresses </li>
+            <li>Server Roles </li>
+            <li>PXE MAC addresses </li>
+            <li>PXE IP addresses </li>
+            <li>PXE interfaces </li>
+            <li>IPMI/iLO IP address, username, password </li>
           </ul>
-          <note>You will follow the installation instructions found on the installation page,
+        </li>
+        <li>Choose your <xref href="supportedconfigs.dita">cloud model/example</xref> template</li>
+        <li>Before you use the GUI to install your cloud, you must install the operating system, HP
+          Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor. You must
+          do so by following the appropriate installation instructions: <ul>
+            <li><xref href="gui_install_on_kvm.dita">KVM</xref></li>
+            <li><xref href="gui_install_on_esx.dita">ESX</xref></li>
+          </ul>
+          <p id="chooseHypervisor"
+          /><!--<note>You will follow the installation instructions found on the installation page,
             stopping before the step "Run the Configuration Processor" and skipping the "Configure
             Your Environment" steps. Therefore, your last OS install step will be
             <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
-          </note>
+          </note>-->
         </li>
 
       </ol>
     </section>
-      
-      <section><title>Running the GUI to install your cloud</title>
-      <p>The UI is found on the deployer node at: <b>http://&lt;Deployer_IP>:79/dayzero</b></p>
+    <section><title>Running the GUI to install your cloud</title> Now that the OS, HP Linux for HP
+      Helion OpenStack, is installed on all your servers (nodes), you will configure and install
+      your cloud using the GUI.<p>The GUI is found on the deployer node at:
+          <b>http://&lt;Deployer_IP>:79/dayzero</b></p>
       <p>You should SSH tunnel in with the username/password set up when installing the deployer.
         Username and password should be what was set in "Set up the Deployer" in the installation
         instructions. For example:</p>
       <codeblock>ssh -v -N -L 8080:&lt;Deployer_IP>:79 &lt;Username>@&lt;Deployer_IP></codeblock>
       <p>Then on your local machine, point your web browser to: http://localhost:8080/dayzero</p>
       <image placement="break" href="../media/install/GUIpage1.png" id="image_a3s_km3_kt"/>As you
-      proceed through the GUI,  you need only supply your server names and IP addresses.
-      <p>Contextual help is provided throughout.</p>
-        <p>When the installation is complete, the Ansible log will be displayed on the final page.</p>
-        <p>The GUI is used only once: during the initial installation of your cloud.</p>
-        <p>To understand a cloud configuration more thoroughly and to learn how to make any changes later, 
-        visit these documentation pages:
-        <ul>
+      proceed through the GUI, you need only supply your server names and IP addresses.
+        <p>Contextual help is provided throughout.</p>
+      <p>When the installation is complete, the Ansible log will be displayed on the final page.</p>
+      <p>The GUI is used only once: during the initial installation of your cloud.</p>
+      <p>To understand a cloud configuration more thoroughly and to learn how to make any changes
+        later, visit these documentation pages: <ul>
           <li><xref href="input_model.dita">HP Helion OpenStack 2.0 Input Model</xref></li>
           <li><xref href="using_git.dita">Using Git for Configuration Management</xref></li>
-       
         </ul>
-        
-        </p>
-      </section>
+      </p>
+    </section>
 
   </body>
 </topic>

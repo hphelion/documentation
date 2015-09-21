@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_rk3_pgn_jt">
+<topic id="postinstall_checklist">
   <title>Post-Installation Checklist</title>
   <body>
-    <section id="post_install_cl"><title>First Steps Post-Installation</title>
+    <section id="post_install_cl"><title>Recommended First Steps Post-Installation</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_ckx_rd4_ht">
           <tgroup cols="2">
@@ -18,46 +18,46 @@
             <tbody>
               <row>
                 <entry/>
-                <entry>Retrieving Service Endpoints (openstack endpoint list)</entry>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/verification_scripts">Run additional verification scripts</xref></entry>
               </row>
               <row>
                 <entry/>
-                <entry>Accessing Horizon</entry>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/sshkeys">Backup
+                    your SSH keys</xref></entry>
               </row>
               <row>
                 <entry/>
-                <entry>Accessing Ops Console</entry>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/endpoints"
+                    >Retrieving the Service Endpoints</xref></entry>
               </row>
               <row>
                 <entry/>
-                <entry/>
+                <entry>Accessing Horizon (COMING SOON)</entry>
               </row>
               <row>
                 <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
+                <entry>Accessing Ops Console (COMING SOON)</entry>
               </row>
             </tbody>
           </tgroup>
         </table>
       </p>
     </section>
-    <section id="Post-Installation"><title>Verification Steps (Optional)</title>
+    <section id="verification_scripts"><title>Additional Verification Scripts (Optional)</title>
+      <p>The main method for verifying your installation is by using the Tempest scripts which are
+        documented: <xref href="installation_verification.dita">Verifying Your Installation</xref>.
+        However, there are some additional included scripts that you can run as well and those are
+        detailed below:</p>
       <ol>
-        <li>This step may be used to verify that your cloud is up and running. However, note that
-          running the command below will download a cirros image from the internet, upload it to
-          Glance, and create a Neutron external
-            network.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock><note>You
-            can optionally specify the external network CIDR here too. If you choose not to exercise
-            this option or use a wrong value, the VMs will not be accessible over the
-            network.</note><codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
+        <li>
+          <p>This step may be used to verify that your cloud is up and running. However, note that
+            running the command below will download a cirros image from the internet, upload it to
+            Glance, and create a Neutron external network:</p>
+          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</codeblock>
+          <note>You can optionally specify the external network CIDR here too. If you choose not to
+            exercise this option or use a wrong value, the VMs will not be accessible over the
+            network.</note>
+          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml -e EXT_NET_CIDR=10.240.96.0/20</codeblock></li>
         <li>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the
           deployer:
           <codeblock>ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml</codeblock> As the
@@ -65,9 +65,8 @@
           fix this issue, once this step is complete, add "hlm" after "127.0.0.1 localhost". The
           result will look like
           this:<codeblock>...
-            # Localhost Information
-            127.0.0.1 localhost hlm
-          </codeblock></li>
+# Localhost Information
+127.0.0.1 localhost hlm</codeblock></li>
       </ol>
     </section>
     <section id="sshkeys"><title>Backup Your SSH Keys</title>
