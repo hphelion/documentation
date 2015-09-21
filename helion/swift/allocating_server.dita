@@ -19,12 +19,12 @@
             will also allocate drives to store object data as described in <i><xref
                 href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk
                 Drives.</xref></i></li>
-          <li>Verify if the example input model has a resource group assigned to Swift object
-            servers. The resource group are usually assigned in
+          <li>Verify if the example input model has a resource node assigned to Swift object
+            servers. The resource node are usually assigned in
               <codeph>data/control_plane.yml</codeph> file. If it is not assigned, you must add a
-            suitable resource group as described in <xref
+            suitable resource node as described in <xref
               href="creating-object-server-resource.dita#topic_jzk_q1c_jt"><i>Creating an Object
-                Sever Resource Group</i></xref></li>
+                Sever Resource node</i></xref></li>
           <li>Identity the physical servers and their IP address and other detailed information. Add
             the servers details in either of the following YAML files and verify the server-groups
               information:<ul id="ul_gmj_ng3_kt">

@@ -248,59 +248,7 @@
           different files and different <codeph>disk_set</codeph>. <note>In the example file you
             will find only <codeph>disks_vsa.yml</codeph> file, which contains the information for
             both AO and without AO. You must create a separate YAML file and enter the configuration
-            information of AO in that file.</note><p><b>Example</b> of
-              <codeph>disks_vsa.yml</codeph> file without
-            AO.<codeblock>---
-  product:
-    version: 2
-
-  disk-models:
-  - name: DISK_SET_VSA
-    # Disk model to be used for VSA nodes
-    # /dev/sda_root is used as a Volume Group for /, /var/log, and /var/crash
-    # sda_root is a templated value to align with whatever partition is really used
-    # This value is checked in os config and replaced by the partition actually used
-    # on sda e.g. sda1 or sda5
-    
-    # Disks to be used by VSA
-    # Additional disks can be added if available
-    device_groups:
-      - name: vsa-data
-        consumer:
-          name: vsa
-          usage: data
-        devices:
-          - name: /dev/sdc</codeblock></p><p><b>Example</b>
-            of  <codeph>disks_vsa.yml</codeph> file with
-            AO.<codeblock>---
-  product:
-    version: 2
-
-  disk-models:
-  - name: DISK_SET_VSA_AO
-    # Disk model to be used for VSA nodes
-    # /dev/sda_root is used as a Volume Group for /, /var/log, and /var/crash
-    # sda_root is a templated value to align with whatever partition is really used
-    # This value is checked in os config and replaced by the partition actually used
-    # on sda e.g. sda1 or sda5
-    
-    # Disks to be used by VSA
-    # Additional disks can be added if available
-    device_groups:
-      - name: vsa-data
-        consumer:
-          name: vsa
-          usage: data
-        devices:
-          - name: /dev/sdd
-      - name: vsa-cache
-        consumer:
-          name: vsa
-          usage: adaptive-optimization
-        devices:
-          - name: /dev/sdb
-          - name: /dev/sdc</codeblock></p><p>In
-            this example, you can see a section <b>vsa-cache</b> is added for AO.</p></li>
+            information of AO in that file.</note></li>
         <li>Update <codeph>server_roles.yml</codeph> with new VSA nodes and appropriate
             <codeph>disk_set</codeph> used for that node.<p>Example: In the following
               <codeph>servers_roles.yml</codeph> file you can see both AO and without AO assigned
