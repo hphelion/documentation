@@ -92,8 +92,10 @@
       <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
         locktitle="yes">
         <topicref href="helion/cinder/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
-          locktitle="yes"/>
-        <topicref href="helion/cinder/ceph/configuration_files.dita"/>
+          locktitle="yes">
+          <topicref href="helion/cinder/ceph/configuration_files.dita"/>
+        </topicref>
+        <topicref href="helion/cinder/ceph/adding_new_osd_node.dita"/>
       </topicref>
       <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration"
         locktitle="yes">
