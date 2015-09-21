@@ -15,8 +15,8 @@
   role: ROLE-OSD</codeblock><note>Replace
             the <codeph>id</codeph> and<codeph> ip-addr</codeph> in the above snippet with
             appropriate values.</note></li>
-        <li>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
-          follows:
+        <li>Commit your configuration to the <xref href="../../using_git.dita#topic_u3v_1yz_ct"
+            >local git repo</xref>, as follows:
             <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "Added OSD node {node-id}"</codeblock><note>Replace

@@ -49,7 +49,7 @@
       <b>Note</b>: The metering service shares the same High-availability proxy, messaging, and
       database clusters with the other Information services. To avoid unnecessarily high loads,
         <xref
-          href="metering_bestpractice.dita#topic11470/meterlist"
+          href="metering_bestpractice.dita"
         type="section">non-essential meters can be disabled</xref>.</p>
     <section id="helion-openstack-default-meters">
       <title>Helion OpenStack Default Meters</title>
