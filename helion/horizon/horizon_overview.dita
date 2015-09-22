@@ -30,10 +30,33 @@
 </p>
 <p>Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack web interface or <b>dashboards</b>.</p>
 <p>The dashboards provide a web-based user interface to HP Helion OpenStack services including <xref href="../../commercial/GA1/1.1commerical.services-compute-overview.dita" >Compute</xref>, <xref href="../../commercial/GA1/1.1commerical.services-volume-overview.dita" >Volume Operations</xref>, <xref href="../../commercial/GA1/1.1commerical.services-networking-overview.dita" >Networking</xref>, and <xref href="../../commercial/GA1/1.1commerical.services-identity-overview.dita" >Identity</xref>.</p>
-<p>Horizon ships with several dashboards, including a <b>Project</b> dashboard, an <b>Admin</b> dashboard, and a <b>System</b> dashboard. These dashboards provide administrators and users with a graphical interface to access, provision and automate cloud-based resources.</p>
-<section id="for-more-information"> <title>For more information</title>
-<p>For information on using the dashboards, see <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref>.</p>
+<section>
+  
+  <p/>
+  <p>The interface, based on OpenStack Horizon, is grouped into dashboards, including <xref type="section" href="#topic2088/DashProject">Project</xref>, <xref type="section" href="#topic2088/DashAdmin">Admin</xref> and <xref type="section" href="#topic2088/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
+
+  <p>Across the top are menus to switch between projects and menus where you can access user settings.</p>
+  <p>
+
+    To access the dashboard, <xref href="../../commercial/GA1/1.1commercial.dashboard.launch.dita" >enter the dashboard URL in a supported browser and log in</xref>.</p>
+  <p>At the bottom of this page, you can see some of the services you can manage right from the dashboard.</p>
 </section>
+  <section id="DashProject"> <title>Project dashboard</title>
+    <p>Use the <b>Project</b> dashboard to implement and build out your cloud. This dashboard contains tools to create virtual server instances, create and configure your network, configure access tools (such as key pairs and security groups) and cloud resource templates (stacks).</p>
+  </section>
+  <section id="DashAdmin"> <title>Admin dashboard</title>
+    <p>Use the <b>Admin</b> dashboard to view, allocate, and manage all resources within the cloud.</p>
+    <p>The Admin dashboard allows you to manage instances, define flavors, create and configure images, manage networks, view system resources, manage projects, and manage users.</p>
+  </section>
+  
+  <section id="DashSettings"> <title>Settings dashboard</title>
+    <p>Use the <b>Settings</b> dashboard to change your display language and settings, your time zone, and your password.</p>
+    <p>Click <b>Settings</b> in the user menu to display the Settings dashboard.</p>
+    <p>For a look at the dashboard options, see <xref href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita" >Horizon Overview</xref>
+    </p>
+  </section>
+  
+
 <section id="horizon-dashboard-examples"><title>Horizon Dashboard Examples</title>
       <p>The following screen shots illustrate some of the services you can manage in the Horizon
         dashboard. There is both an overcloud Horizon dashboard and an undercloud dashboard, both of
