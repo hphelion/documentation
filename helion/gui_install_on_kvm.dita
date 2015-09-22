@@ -21,7 +21,7 @@
           <li>Begin inputting your environment information into the <b>baremetalConfig.yml </b>and
                 <b>cloudConfig.yml</b> files in the <codeph>~/helion/my_cloud/definition</codeph>
               directory. Full details of how to do this can be found here: <xref
-                href="input_model.dita">Helion OpenStack 2.0 Input Model</xref>. I addition, if you
+                href="input_model.dita">Helion OpenStack 2.0 Input Model</xref>. In addition, if you
               need any changes from the defaults in<b> network_groups.yml</b> make those changes
               now.</li>
         </ol></li>
