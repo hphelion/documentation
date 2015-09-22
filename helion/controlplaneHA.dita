@@ -39,9 +39,9 @@
     <section><title>Networking</title>
       <p>The example requires the following networks: <ul>
           <li>IMPI/iLO network, connected to the deployer and the IPMI/iLO ports of all servers</li>
-          <li>A network connected to a dedicated NIC on each server used to install the OS and
-            install and configure Helion. In a future Beta release this network can be subsumed into
-            system networks (below).</li>
+          <li>A network connected to a dedicated NIC on each server used to install the operating
+            system and install and configure Helion. In a future Beta release this network can be
+            subsumed into system networks (below).</li>
           <li>A pair of bonded NICs which are used used by the following networks: <ul>
               <li>External API - This is the network that users will use to make requests to the
                 cloud</li>
