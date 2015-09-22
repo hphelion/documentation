@@ -187,7 +187,7 @@ git commit -m "My config"</codeblock></li>
     <section><b>Show vCenter</b><ol id="ol_wh5_rsb_lt">
         <li>Show vCenter using EON python
               client.<codeblock># eon vcenter-show &lt;vCenter ID></codeblock><p><b>Sample
-              Output:</b><codeblock><codeph># eon vcenter-show &lt;BC9DED4E-1639-481D-B190-2B54A2BF5674 ></codeph>
+            Output:</b><codeblock><codeph># eon vcenter-show BC9DED4E-1639-481D-B190-2B54A2BF5674 </codeph>
 +------------+--------------------------------------+
 | Property   | Value                                |
 +------------+--------------------------------------+
