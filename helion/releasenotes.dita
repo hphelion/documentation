@@ -29,6 +29,10 @@ ilo_ip: "192.168.9.3"
 ilo_user: "admin"
 ilo_password: "password"
 <b>is_deployer: true</b></codeblock></p>
+      <p><b>The Installer only supports English language</b></p>
+      <p>The deployer installation process prompts you to select a language, however only the
+        English language as been tested. Therefore, at this time that is the only supported
+        language.</p>
       <p><b>Local Git repository for config tracking</b></p>
       <p>In HP Helion OpenStack 2.0, a local git repository is used to track configuration changes
         and for the config processor to gather configuration settings from. The operations work as
