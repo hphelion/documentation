@@ -55,7 +55,7 @@
     <section conref="bare_installation_kvm.dita#install_kvm/HLM_Node_Personalization"/>
 
 
-    <section><title>Prepare and Deploy Cloud Controllers</title>
+    <section id="Configure"><title>Prepare and Deploy Cloud Controllers</title>
       <ol id="ol_c1w_pfl_ft">
         <li>See a sample set of configuration files in the
             <codeph>~/helion/examples/one-region-poc-with-esx</codeph> directory. The accompanying
