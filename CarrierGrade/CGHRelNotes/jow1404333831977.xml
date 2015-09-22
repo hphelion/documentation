@@ -2,7 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
 
-    <title>Known Problems and Limitations</title>
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Known Problems and
+        Limitations</title>
     <shortdesc>You may encounter some known limitations when working in the KVM region of this release.</shortdesc>
     <prolog>
         <metadata>

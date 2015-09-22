@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3485">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Technical Specifications</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Technical Specifications</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -19,7 +19,7 @@
     <p>For more information on the HP Helion OpenStack Carrier Grade environment, also see the
       Reference Logical Architecture section in the <xref
         href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
-        format="pdf" scope="external">HP Helion OpenStack Carrier Grade 2.0: Administrator
+        format="pdf" scope="external">HP Helion OpenStack Carrier Grade 2.0 Alpha: Administrator
         Guide</xref>.</p>
     <section id="Helion-services">
       <title>Dimensions and Limits</title>

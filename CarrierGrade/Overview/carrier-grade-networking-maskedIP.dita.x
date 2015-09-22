@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6207">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Tracking masked IP addresses when using network address translation (NAT)</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Tracking masked IP addresses when using network address translation (NAT)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>

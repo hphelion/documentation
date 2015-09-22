@@ -63,9 +63,12 @@
     </topicref>
     <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml" navtitle="Release Notes"
       locktitle="yes">
-      <topicref href="CarrierGrade/CGHRelNotes/jow1404333830815.xml"/>
-      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831397.xml"/>
-      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831977.xml"/>
+      <topicref href="CarrierGrade/CGHRelNotes/jow1404333830815.xml"
+        navtitle="Changes in This Release" locktitle="yes"/>
+      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831397.xml" navtitle="Usage Caveats"
+        locktitle="yes"/>
+      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831977.xml"
+        navtitle="Known Problems and Limitations" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"
       navtitle="Technical Overview" locktitle="yes">

@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic4797">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample ansible.json File for
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Sample ansible.json File for
         Installing the KVM + ESX Topology</title>
     <prolog>
         <metadata>
