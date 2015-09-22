@@ -49,7 +49,7 @@ instructions further down. But before you push the button, ensure that you have 
 <li>Click <b>Save</b>.</li>
 </ol>
 <p>
-<b>NOTE:</b> If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to <xref href="../../devplatform.using-the-messaging-service.dita" >create and manage a RabbitMQ cluster</xref> in the Messaging Service, and link that instance to your <xref href="../../devplatform.using-messaging-service-with-ALS.dita" >ALS cluster</xref>.</p>
+  <b>NOTE:</b> If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to <xref href="../../messaging/devplatform.using-the-messaging-service.dita" >create and manage a RabbitMQ cluster</xref> in the Messaging Service, and link that instance to your <xref href="../../messaging/devplatform.using-messaging-service-with-ALS.dita" >ALS cluster</xref>.</p>
 </section>
 <section id="download-the-application-files"> <title>Download the Application Files</title>
 <p>

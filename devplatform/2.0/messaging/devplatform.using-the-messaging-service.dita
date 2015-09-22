@@ -37,14 +37,14 @@
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ol>
-<li>Install the <xref href="installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>and configure the services.</li>
+<li>Install the <xref href="../installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>and configure the services.</li>
 </ol>
 </section>
 <section id="create"> <title>Creating a RabbitMQ Cluster</title>
 <p>The following guide will demonstrate how to deploy a multi-node RabbitMQ cluster using the Messaging Service.</p>
 <ol>
 <li>Log into Horizon and open the <b>Messaging (Beta)</b> panel under your project. Click on the <b>RabbitMQ</b> tab.</li>
-<li>Click the <b>Create Cluster</b> button.<!--A BR tag was used here in the original source.--><image href="../../media/usingRMQ1.png" placement="break"/>
+<li>Click the <b>Create Cluster</b> button.<!--A BR tag was used here in the original source.--><image href="../../../media/usingRMQ1.png" placement="break"/>
 </li>
 <li>
 <p>In the Create RabbitMQ dialog, specify the following information:</p>
@@ -72,7 +72,7 @@
 <p>Click the <b>Launch</b> button.</p>
 </li>
 <li>
-<p>Open the <b>RabbitMQ</b> tab under the <b>Messaging (Beta)</b> panel and identify the <b>RabbitMQ</b> cluster from the list that was created in the previous step. Wait for the cluster to go to the <b>Complete</b> state<!--A BR tag was used here in the original source.--><image href="../../media/usingRMQ2.png" placement="break"/>
+  <p>Open the <b>RabbitMQ</b> tab under the <b>Messaging (Beta)</b> panel and identify the <b>RabbitMQ</b> cluster from the list that was created in the previous step. Wait for the cluster to go to the <b>Complete</b> state<!--A BR tag was used here in the original source.--><image href="../../../media/usingRMQ2.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -93,11 +93,11 @@
 <ol>
 <li>Log in to Horizon and open the <b>Messaging (Beta)</b> panel under you project. Click on the <b>RabbitMQ</b> tab.</li>
 <li>Identify the RabbitMQ cluster that you will manage from the clusters listed in the <b>Clusters</b> table.</li>
-<li>Click on <b>Manage Cluster</b> next to your cluster.<!--A BR tag was used here in the original source.--><image href="../../media/usingRMQ3.png" placement="break"/>
+  <li>Click on <b>Manage Cluster</b> next to your cluster.<!--A BR tag was used here in the original source.--><image href="../../../media/usingRMQ3.png" placement="break"/>
 </li>
-<li>A new browser window will open with the log-in screen for the RabbitMQ cluster. Enter the same username and password you used to log in to HP Helion <tm tmtype="reg">OpenStack</tm> when creating the RabbitMQ cluster and select <b>Login</b>.<!--A BR tag was used here in the original source.--><image href="../../media/usingRMQ4.png" placement="break"/>
+  <li>A new browser window will open with the log-in screen for the RabbitMQ cluster. Enter the same username and password you used to log in to HP Helion <tm tmtype="reg">OpenStack</tm> when creating the RabbitMQ cluster and select <b>Login</b>.<!--A BR tag was used here in the original source.--><image href="../../../media/usingRMQ4.png" placement="break"/>
 </li>
-<li>The management console for RabbitMQ will open. In the management console you can perform tasks such as monitor the queues and message rates, check resource usage on the instances, manage user accounts, and many others.  <!--A BR tag was used here in the original source.--><image href="../../media/usingRMQ5.png" placement="break"/>
+  <li>The management console for RabbitMQ will open. In the management console you can perform tasks such as monitor the queues and message rates, check resource usage on the instances, manage user accounts, and many others.  <!--A BR tag was used here in the original source.--><image href="../../../media/usingRMQ5.png" placement="break"/>
 </li>
 </ol>
 </section>
@@ -108,7 +108,7 @@
 </li>
 <li>
   <p>For more information using HP Helion OpenStack visit the <xref
-              href="../../commercial/GA1/1.1commercial.index.dita">documentation</xref>.</p>
+    href="../../../commercial/GA1/1.1commercial.index.dita">documentation</xref>.</p>
 </li>
 </ul>
 </section>

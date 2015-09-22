@@ -365,14 +365,14 @@
            <topicref href="2.0/helion/admin/server/network_port_configuration.dita"/>
       <topicref href="2.0/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
-      <topicref href="2.0/devplatform.database-ALS.dita" locktitle="yes"
+      <topicref href="2.0/database/devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
-            <topicref href="2.0/devplatform.database-instance.dita" locktitle="yes"
+            <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
         navtitle="Using the Database Service"/>
-            <topicref href="2.0/devplatform.using-the-messaging-service.dita" locktitle="yes"
-        navtitle="Using the RabbitMQ Messaging Service"/>
+            <topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita"
+        locktitle="yes" navtitle="Using the RabbitMQ Messaging Service"/>
       
-      <topicref href="2.0/devplatform.using-messaging-service-with-ALS.dita"
+      <topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita"
         locktitle="yes" navtitle="Using the Messaging Service with ALS"/>
 
       <topicref href="2.0/helion/user/services/data-services.dita" locktitle="yes"

@@ -41,8 +41,8 @@
         <note> If a more durable or scalable MySQL database service is needed, ensure your ALS
           cluster is configured to use a database instance or master/slave pair provided by the
           Database Service. For more information, refer to <xref
-            href="../../devplatform.database-instance.dita">Using the Database Service</xref> and
-            <xref href="../../devplatform.database-ALS.dita">Connecting the Database Service with
+            href="../../database/devplatform.database-instance.dita">Using the Database Service</xref> and
+          <xref href="../../database/devplatform.database-ALS.dita">Connecting the Database Service with
             ALS</xref>.</note>
       </p>
 </section>
