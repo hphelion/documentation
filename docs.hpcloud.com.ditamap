@@ -191,7 +191,7 @@
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
     </topicref>
     <!-- horizon -->
-    <topicref href="helion/horizon_overview.dita" navtitle="Horizon Dashboard"
+    <topicref href="helion/horizon/horizon_overview.dita" navtitle="Horizon Dashboard"
       locktitle="yes" toc="no">
       <topicref href="helion/horizon/horizon_configure_v3.dita" 
         toc="no"/>
