@@ -22,65 +22,54 @@
     <section id="Configuration">
       <title>Configuration</title>
       <p>HP Helion OpenStack 2.0 FWaaS Configuration</p>
-      <p>You can create a set of Firewall rules, add them to a policy and associate it with a
-        Firewall by executing the following commands from a shell with access to the API nodes.</p>
       <ol>
-        <li>Display the available neutron extensions.<codeblock>neutron ext-list</codeblock></li>
-        <li>Display the available networks.<codeblock>neutron net-list</codeblock></li>
-        <li>Display the available machines and networks. <codeblock>nova list</codeblock></li>
+        <li>You should check to determine if the firewall is enabled.  The output of the <i>neutron
+            ext-list</i> should contain a firewall
+          entry.<codeblock>neutron ext-list</codeblock></li>
+        <li>Assuming the external network is already created by the admin, this command will show
+          the external network. <codeblock>neutron net-list</codeblock></li>
       </ol>
       
-      <p>You can set up networks for FWaaS by creating a network, subnet, router, security group rules, security group filters and floating IP's.</p>
+      <p>Before creating firewalls, you will need to create a network, subnet, router, security
+        group rules, start an instance and assign it a floating IP address.</p>
       <ol>
         <li>Create the network, subnet and router.
-          <codeblock>neutron net-create net1
-neutron subnet-create --name sub1 net1 10.0.0.0/24 --gateway 10.0.0.1
-neutron router-create router1
-neutron router-interface-add router1 sub1
-neutron router-gateway-set router1 ext-net</codeblock></li>
-        <li>Create security group rules. Security group rules filters traffic at VM level.
-          <codeblock>nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
-nova secgroup-add-rule default tcp 80 80 0.0.0.0/0
-nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0</codeblock></li>
+          <codeblock>neutron net-create private
+neutron subnet-create --name sub private 10.0.0.0/24 --gateway 10.0.0.1
+neutron router-create router
+neutron router-interface-add router sub
+neutron router-gateway-set router ext-net</codeblock></li>
+        <li>Create security group rules. Security group rules filter traffic at VM level.
+          <codeblock>neutron security-group-rule-create default --protocol icmp
+neutron security-group-rule-create default --protocol tcp --port-range-min 22 --port-range-max 22
+neutron security-group-rule-create default --protocol tcp --port-range-min 80 --port-range-max 80</codeblock></li>
         <li>Boot a VM.
-          <codeblock>NET=$(neutron net-list | awk '/net1/ {print $2}')
-nova boot --flavor 1 --image cirros-0.3.3-x86_64 --nic net-id=$NET vm1 --poll</codeblock></li>
+          <codeblock>NET=$(neutron net-list | awk '/private/ {print $2}')
+nova boot --flavor 1 --image &lt;image&gt; --nic net-id=$NET vm1 --poll</codeblock></li>
         <li>Verify if the instance is ACTIVE and is assigned an IP address.
           <codeblock>nova list</codeblock></li>
-        <li>Create a floating IP in the ext-net.
-          <codeblock>neutron floatingip-create ext-net
-fluuid=$(neutron floatingip-list | awk '/172.16/ {print $2}')
-echo "Floating IP UUID = $fluuid"
-neutron floatingip-list</codeblock></li>
-        <li>Get the fixed IP of the VM instance.
-          <codeblock>fixedip=$(nova list | awk '/Running/ {print $12}' | awk -F '=' '{print $2}')
-echo "VM fixed IP = $fixedip"</codeblock></li>
-        <li>Associate the floating ip with the VM instacne.
-          <codeblock>vmportuuid=$(neutron port-list | grep $fixedip | awk '{print $2}')
-echo "Port ID for VM port is $vmportuuid"
-neutron floatingip-associate $fluuid $vmportuuid
-neutron floatingip-list
-fip=$(neutron floatingip-list | awk '/172.16/ {print $6}')
-echo "Floating IP = $fip"</codeblock></li>
-        <li>Verify that you are able to ssh into the instance from the host machine.  To make the external net accessible,
-          HOSTIP is the IP of nearest machine.
-          <codeblock>ssh ubuntu@$HOSTIP 'sudo ip addr add 172.16.0.1/16 dev virbr4'</codeblock></li>
-        <li>Attempt to log into the VM instance.
-          <codeblock>ssh ubuntu@$HOSTIP ssh-keygen -R $fip
-ssh -t ubuntu@$HOSTIP ssh cirros@$fip</codeblock></li>
-        <li>Ping the router gateway.
-          <codeblock>ping 10.0.0.1
-ping 172.16.0.2</codeblock></li>
-      </ol>
+        <li>Get the port id of the vm1 instance.
+          <codeblock>fixedip=$(nova list | awk '/vm1/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
+vmportuuid=$(neutron port-list | grep $fixedip | awk '{print $2}')</codeblock></li>
+        <li>Create and associate a floating IP address to the vm1 instance.
+          <codeblock>neutron floatingip-create ext-net –-port-id $vmportuuid</codeblock></li>
+        <li>Verify if the floating IP is assigned to the instance. The following command should show
+          an assigned IP address in 172.16.0.0/16 range.<codeblock>nova show vm1</codeblock></li>
+        <li>Verify if the instance is reachable from the external network. SSH into the instance
+          from a node in (or has route to) the external network.
+          <codeblock>ssh cirros@FIP-VM1
+password: &lt;password&gt;</codeblock></li>
+       </ol>
       
       <p>Create and attach the firewall.</p>
-      <note>By default, an internal "drop all" rule is enabled in IP tables if none of the defines rules match the real-time data packets.</note>
+      <note>By default, an internal "drop all" rule is enabled in IP tables if none of the defined
+        rules match the real-time data packets.</note>
       <ol>
-        <li>Create new firewall rules using <codeph>firewall-rule-create</codeph> and providing the
-          protocol, action (allow, deny) and name for the new rule. This example allows icmp and ssh
-          while denying access to http. See the <codeph>neutron</codeph> command-line reference
-          under <xref href="fwaas.dita#HP2.0FWaaS/MoreInfo">more information</xref> on additional 
-          options such as source IP, destination IP, source port and destination
+        <li>Create new firewall rules using <codeph>firewall-rule-create</codeph> command and
+          providing the protocol, action (allow, deny) and name for the new rule. This example
+          allows icmp and ssh while denying access to http. See the <codeph>neutron</codeph>
+          command-line reference under <xref href="fwaas.dita#HP2.0FWaaS/MoreInfo">more information</xref>
+          on additional options such as source IP, destination IP, source port and destination
           port.<codeblock>neutron firewall-rule-create --protocol icmp --action allow --name allow-icmp
 neutron firewall-rule-create --protocol tcp --destination-port 80 --action deny --name deny-http
 neutron firewall-rule-create --protocol tcp --destination-port 22 --action allow --name allow-ssh</codeblock></li>
@@ -91,18 +80,37 @@ neutron firewall-rule-create --protocol tcp --destination-port 22 --action allow
         <li>Finish the firewall creation by using the <codeph>firewall-create</codeph> command, the policy name and the new name you want to
           give to your new firewall.
           <codeblock>neutron firewall-create policy-fw --name user-fw</codeblock></li>
-        <li>You can view the details of your new firewall by using the <codeph>firewall-show</codeph> command and the name of your firewall.
-          <codeblock>neutron firewall-show user-fw</codeblock></li>
+        <li>You can view the details of your new firewall by using the
+            <codeph>firewall-show</codeph> command and the name of your firewall. This will verify
+          the that status of the firewall is
+          ACTIVE.<codeblock>neutron firewall-show user-fw</codeblock></li>
       </ol>
       
       <p>You should verify the FWaaS is functional with the steps included below.</p>
       <ol>
-        <li>From an external network, you should be able to successfully ping the floating IP address of the instance.
-          <codeblock>ping $fip</codeblock></li>
-        <li>Verify from the external network that you are able to connect via ssh to the instance. 
-          <codeblock>ssh -t ubuntu@$HOSTIP ssh cirros@$fip</codeblock></li>
-        <li>You should expect to see curl fail over port 80.  If curl succeeds, the firewall is not blocking incoming http requests.
-          <note>The instance should be listening on port 80 to verify this test.</note><codeblock>curl -vvv $fip</codeblock></li>
+        <li>Since allow-icmp firewall is rule is set you can ping the floating IP address of the
+          instance from the external network.<codeblock>ping FIP-VM1</codeblock></li>
+        <li>Similarly, you can connect via ssh to the instance due to the allow-ssh firewall
+          rule.<codeblock>ssh cirros@FIP-VM1
+password: &lt;password></codeblock></li>
+        <li>Run a web server on vm1 instance that listens over port 80, accepts requests and sends a WELCOME response.
+          <codeblock>$ vi webserv.sh
+            
+#!/bin/ash
+            
+MYIP=$(/sbin/ifconfig eth0|grep 'inet addr'|awk -F: '{print $2}'| awk '{print $1}');
+while true; do
+  echo -e "HTTP/1.0 200 OK\r\n\r\nWelcome to $MYIP" | sudo nc -l -p 80
+done
+            
+# Give it Exec rights
+$ chmod 755 webserv.sh
+            
+# Execute the script
+$ ./webserv.sh</codeblock></li>
+        <li>You should expect to see curl fail over port 80 because of the deny-http firewall rule.  If curl succeeds, 
+          the firewall is not blocking incoming http requests.
+          <codeblock>curl -vvv FIP-VM1</codeblock></li>
       </ol>
       
      </section>
