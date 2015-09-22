@@ -32,15 +32,19 @@
         <note>If you need to run LBaaS V1 instead of the default LBaaS V2, you should make
         appropriate installation preparations during HP Helion OpenStack installation since LBaaS V2
         is the default. If you have selected to install and use LBaaS V1 you will replace the
-        ccp.yml directories and neutron.conf.j2 file to use version 1. </note>
+        control_plane.yml directories and neutron.conf.j2 file to use version 1. </note>
       
-        <p>Before you modify the ccp.yml and neutron.conf.j2 files, it is recommended that you clone the hlm-input-model and neutron-ansible
-          at the same directory level as hlm-dev-tools.  Once you have cloned the directories, modify the ccp.yml and neutron.conf.j2 files.</p>
+        <p>Before you modify the control_plane.yml and neutron.conf.j2 files, it is recommended that
+        you clone the hlm-input-model and neutron-ansible at the same directory level as
+        hlm-dev-tools. Once you have cloned the directories, modify the control_plane.yml and
+        neutron.conf.j2 files.</p>
 
       <ol>
-          <li>Replace LBaaS version 2 with LBaaS version 1 in the <i>ccp.yml</i> file. Depending on Helion OpenStack
-            environment, the location of the ccp.yml will differ slightly. </li>
-          <li>In hlm-input-model, edit <i>2.0/hp-ci/&lt;deployment type&gt;/data/ccp.yml</i></li>
+          <li>Replace LBaaS version 2 with LBaaS version 1 in the <i>control_plane.yml</i> file.
+          Depending on Helion OpenStack environment, the location of the control_plane.yml will
+          differ slightly. </li>
+          <li>In hlm-input-model, edit <i>2.0/hp-ci/&lt;deployment
+            type&gt;/data/control_plane.yml</i></li>
           <li>Replace <i>neutron-lbaasv2-agent</i> with <i>neutron-lbaas-agent</i>.</li>
           <li>In neutron-ansible, edit <i>roles/neutron-common/templates/neutron.conf.j2</i></li>
           <li>Comment out the LBaaS V2 <i>service_plugin</i> and <i>service_provider</i> lines.</li>
