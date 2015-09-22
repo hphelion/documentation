@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_zfy_cp4_kt">
-  <title>Installing the OS on KVM </title>
+  <title>Installing the Operating System on KVM </title>
   <body>
-
     <section conref="bare_installation_kvm.dita#install_kvm/important-notes"/>
     <section conref="bare_installation_kvm.dita#install_kvm/Prereqs"/>
     <section conref="bare_installation_kvm.dita#install_kvm/DeployerInstall"/>
