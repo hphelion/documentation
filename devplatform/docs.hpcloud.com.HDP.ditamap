@@ -59,6 +59,8 @@
           navtitle="Install the Marketplace Service" locktitle="yes"/>
         <topicref href="2.0/installation/devplatform.vertica.install.dita"
           navtitle="Install the Vertica Application" locktitle="yes"/>
+        <topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service"
+          locktitle="yes"/>
       </topichead>
       <topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita"
         navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>
@@ -170,6 +172,7 @@
         <topicref href="2.0/helion/user/deploy/languages/ruby.dita" locktitle="yes"
           navtitle="Ruby"/>
       </topichead>
+      <topicref href="2.0/cue_dev_overview.dita" navtitle="Messaging" locktitle="yes"/>
       <topicref href="2.0/helion/user/reference/environment.dita" locktitle="yes"
         navtitle="Environment Variables "/>
     
@@ -244,6 +247,11 @@
     
       <topicref href="2.0/devplatform_upgrade.dita" navtitle="Upgrading Helion OpenStack"
         locktitle="yes"/>
+      <topicref href="2.0/helion/admin/server/network_port_configuration.dita"/>
+      <topicref href="2.0/helion/admin/server/docker.dita" navtitle="Docker and Fence"
+        locktitle="yes"/>
+      <topicref href="2.0/helion/user/services/filesystem.dita" locktitle="yes"
+        navtitle="Persistent File System"/>
       <topichead navtitle="Command Line Clients">
         <topicref href="2.0/helion/CLI/ALS_Client_Downloads.dita"
           navtitle="Command Line Client Downloads" locktitle="yes"/>
@@ -332,13 +340,13 @@
             navtitle="Sample Applications"/>
         </topichead>
       </topichead>
-      <topichead navtitle="Cluster Creation and Management">
+      <topichead navtitle="Cluster Creation">
         <topicref href="2.0/devplatform.deploy-ALS.dita" locktitle="yes"
-          navtitle="Create a Cluster Using Horizon"/>
+          navtitle="Create an ALS Cluster Using Horizon"/>
         <topicref href="2.0/windows/windows_growcluster.dita"
           navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
         <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
-          navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
+          navtitle="Create Clusters and Add Services from the Command Line" locktitle="yes">
           <topicref href="2.0/helion/CLI/cfmgmt_createcluster_starter.dita"
             navtitle="Example: Create a Starter Cluster" locktitle="yes"/>
           <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addDEANode.dita"
@@ -347,6 +355,23 @@
             navtitle="Example: Add a Service" locktitle="yes"/>
           <topicref href="2.0/helion/CLI/devplatform_downloadRCFile.dita" toc="no"/>
         </topicref>
+      </topichead>
+      <topicref href="2.0/messaging/cue_ops_overview.dita" navtitle="Messaging Service"
+        locktitle="yes">
+        <topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita" locktitle="yes"
+          navtitle="Using the RabbitMQ Messaging Service"/>
+        <topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita"
+          locktitle="yes" navtitle="Using the Messaging Service with ALS"/>
+        <topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service"
+          locktitle="yes"/>
+        <topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita"
+          navtitle="Cue Reference Architecture" locktitle="yes"/>
+        <topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices"
+          locktitle="yes"/>
+        <topicref href="2.0/messaging/cue_ops_monitoring.dita" navtitle="Monitoring Cue"
+          locktitle="yes"/>
+      </topicref>
+      <topichead navtitle="Database Service">
         <topichead navtitle="ALS Management Console">
           <topicref href="2.0/helion/admin/console/console_intro.dita"
             navtitle="Introduction and First Use" locktitle="yes"/>
@@ -361,47 +386,23 @@
           <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
             navtitle="Sample Applications"/>
         </topichead>
+        <topicref href="2.0/database/devplatform.database-ALS.dita" locktitle="yes"
+          navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
+        <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
+          navtitle="Using the Database Service"/>
       </topichead>
-           <topicref href="2.0/helion/admin/server/network_port_configuration.dita"/>
-      <topicref href="2.0/helion/admin/server/docker.dita" navtitle="Docker and Fence"
-        locktitle="yes"/>
-      <topicref href="2.0/database/devplatform.database-ALS.dita" locktitle="yes"
-        navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
-            <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
-        navtitle="Using the Database Service"/>
-            <topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita"
-        locktitle="yes" navtitle="Using the RabbitMQ Messaging Service"/>
-      
-      <topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita"
-        locktitle="yes" navtitle="Using the Messaging Service with ALS"/>
-
-      <topicref href="2.0/helion/user/services/data-services.dita" locktitle="yes"
-        navtitle="Application Lifecycle Service Data Services"/>
-      <topicref href="2.0/helion/admin/cluster/external-db.dita" locktitle="yes"
-        navtitle="External Data Services"/>
-      <topicref href="2.0/helion/user/services/memcached.dita" locktitle="yes"
-        navtitle="Memcached Service"/>
-            <topicref href="2.0/helion/user/services/filesystem.dita" locktitle="yes"
-        navtitle="Persistent File System"/>
-
-      <topicref href="2.0/helion/user/services/port-service.dita" locktitle="yes"
-        navtitle="Port Service (Harbor)"/>
-      <topicref href="2.0/helion/admin/cluster/harbor.dita" locktitle="yes"
-        navtitle="Harbor TCP/UDP Port Service "/>
-            <topicref href="2.0/helion/user/services/user-provided.dita" locktitle="yes"
-        navtitle="User-Provided Services"/>
       <topicref href="2.0/helion/helion_index.dita" locktitle="yes"
-        navtitle="Application Lifecycle Service Documentation">
-                <topicref href="2.0/helion/CLI/constructor_vm.dita" navtitle="ALS Constructor VM"
+        navtitle="Application Lifecycle Service">
+        <topicref href="2.0/helion/user/services/data-services.dita" locktitle="yes"
+          navtitle="Application Lifecycle Service Data Services"/>
+        <topicref href="2.0/helion/CLI/constructor_vm.dita" navtitle="ALS Constructor VM"
           locktitle="yes"/>
         <topicref href="2.0/helion/admin/helion_admin_index.dita" locktitle="yes"
           navtitle="ALS Admin Guide">
-          
           <topicref href="2.0/helion/user/deploy/adding-buildpack.dita" navtitle="Adding Buildpacks"
             locktitle="yes"/>
           <topicref href="2.0/helion/admin/best-practices/best_practices_index.dita" locktitle="yes"
             navtitle="Best Practices"/>
-
           <topicref href="2.0/helion/admin/cluster/cluster_index.dita" locktitle="yes"
             navtitle="Cluster Setup"/>
           <topicref href="2.0/devplatform.deploy-ALS.dita" locktitle="yes"
@@ -427,7 +428,6 @@
             <topicref href="2.0/helion/admin/server/router.dita" locktitle="yes"
               navtitle="ALS Router"/>
           </topicref>
-
           <topichead navtitle="Reference">
             <topicref href="2.0/helion/admin/reference/groups.dita" locktitle="yes"
               navtitle="Managing Groups, Users and Limits (DEPRECATED)"/>
@@ -441,22 +441,34 @@
               navtitle="Troubleshooting"/>
           </topichead>
         </topicref>
-        
         <topicref href="2.0/helion/user/helion_user_index.dita" locktitle="yes"
           navtitle="ALS User Guide">
-
           <topicref href="2.0/helion/user/quick-start/quickstart_index.dita"
             navtitle="ALS Quick Start" locktitle="yes"/>
           <topicref href="2.0/helion/user/reference/api.dita" locktitle="yes"
-            navtitle="Application Lifecycle Service API" />
+            navtitle="Application Lifecycle Service API"/>
           <topicref href="2.0/helion/user/reference/glossary.dita" locktitle="yes"
             navtitle="Glossary"/>
-                    <topicref href="2.0/helion/user/reference/reference_troubleshoot.dita" locktitle="yes"
+          <topicref href="2.0/helion/user/reference/reference_troubleshoot.dita" locktitle="yes"
             navtitle="Troubleshooting "/>
           <topicref href="2.0/helion/user/deploy/app-logs.dita" locktitle="yes"
             navtitle="Application Logs "/>
         </topicref>
       </topicref>
+      <topichead navtitle="Other Services">
+        <topicref href="2.0/helion/user/services/data-services.dita" locktitle="yes"
+          navtitle="Application Lifecycle Service Data Services"/>
+        <topicref href="2.0/helion/admin/cluster/external-db.dita" locktitle="yes"
+          navtitle="External Data Services"/>
+        <topicref href="2.0/helion/admin/cluster/harbor.dita" locktitle="yes"
+          navtitle="Harbor TCP/UDP Port Service "/>
+        <topicref href="2.0/helion/user/services/memcached.dita" locktitle="yes"
+          navtitle="Memcached Service"/>
+        <topicref href="2.0/helion/user/services/port-service.dita" locktitle="yes"
+          navtitle="Port Service (Harbor)"/>
+        <topicref href="2.0/helion/user/services/user-provided.dita" locktitle="yes"
+          navtitle="User-Provided Services"/>
+      </topichead>
     </topicref>
   </topicref>
   <!-- shim files, remove when publishing-->

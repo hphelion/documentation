@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_mbc_yyd_lt">
+  <title>HP Helion 2.0 Development Platform: Messaging</title>
+  <body>
+    <p>Developers may provision message broker clusters using the Cue API, a command-line tool, or
+      from the Horizon console. Alternatively, application developers may leverage messaging
+      resources for their applications.  </p>
+    <ul id="ul_vxf_kzd_lt">
+      <li>Create a Cluster using Horizon</li>
+      <li>Create a Cluster from the Command Line</li>
+      <li>Manage a Cluster from the Command Line</li>
+      <li>Write an App for RabbitMQ </li>
+      <li>Best Practices for RabbitMQ</li>
+      <li>Using the Python API</li>
+      <li>REST API Docs</li>
+    </ul>
+  </body>
+</topic>

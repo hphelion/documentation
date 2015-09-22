@@ -2,20 +2,6 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5773">
 <title>HP Helion 2.0 Development Platform: Using the Database Service</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="Security Engineer"/>
-<othermeta name="role" content="ISV Developer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
-</metadata>
-</prolog>
 <body>
 <p>The database service provides lifecycle services for MySQL database instances. Lifecycle services include provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard.</p>
 <p>These instances can then be utilized by your applications to provide standard datastore/back-end functionality.</p>
