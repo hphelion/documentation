@@ -13,7 +13,7 @@
             Checklist</xref> that should help with the recommended pre-installation tasks.</li>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met in
           your environment.</li>
-        <li>There is no longer a requirement a requirement to use a dedicated deployer node. See the
+        <li>There is no longer a requirement to use a dedicated deployer node. See the
           note in the <xref href="releasenotes.dita">Release Notes</xref> as well as the
           configuration section in the install steps below for details.</li>
         <li>There is no requirement to have a dedicated network for OS-install and system
