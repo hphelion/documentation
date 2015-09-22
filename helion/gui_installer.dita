@@ -31,7 +31,8 @@
         </li>
         <li>Choose your <xref href="supportedconfigs.dita">cloud model/example</xref> template. Note
           that the only option for the Cloud model on KVM with VSA is the have 3 VSA nodes; there is
-          no option to have 0 VSA nodes.</li>
+          no option to have 0 VSA nodes. Note also that you cannot put the deployer on a control
+          plane node using the GUI installer.</li>
         <li>Before you use the GUI to install your cloud, you must install the operating system, HP
           Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor. You must
           do so by following the appropriate installation instructions. <ul>
