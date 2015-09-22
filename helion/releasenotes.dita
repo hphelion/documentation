@@ -249,7 +249,7 @@ ilo_password: "password"
       <b>Issue: Unable to Launch instance from volume on Horizon dashboard</b>
       <p> In Beta 2 you will not be able to launch an instance from a volume in Horizon. To work
         around this issue you have two options: </p><ul>
-        <li>From Horizon Dashboard | Instances Page: Launch an Instance and select source as
+        <li>From Horizon Dashboard | Instances page: Launch an Instance and select source as
           Bootable volume.</li>
         <li>Use the OpenStack or Nova client  to create the instance.</li>
       </ul>
