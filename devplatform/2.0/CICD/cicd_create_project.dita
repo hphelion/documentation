@@ -9,28 +9,59 @@
             
         <ol>
            
-                <li>Click the <b>Projects</b> tab tand then click <b>New Project</b>.</li>
+                <li>Click the <b>Projects</b> tab and then click <b>New Project</b>.</li>
             
             
-                <li>Click to select your Git source.
-                <ul>
-                    <li><b>Use GitHub</b>: Connect to a repository hosted on GitHub .</li>
-                    <li><b>Use Git</b>: Connect to a repository hosted locally.</li>
-                </ul></li>
-           
-                <li>Click a repository in the list to select it.</li>
+                <li>Click to select your Git source. <image placement="break"
+                        href="../../../media/cicd_project_create_source.png" id="image_ux2_sqy_kt"/><ol>
+                        <li><b>GitHub</b>: Click to connect to a repository hosted on GitHub that
+                            you own or have admin rights to. Select the repository to associate with
+                            this project and then click <b>Select</b>.</li>
+                        <li><b>Git</b>: Connect to a repository hosted locally. Enter the
+                                <b>Name</b> of the repo and the <b>Clone URL</b> and click
+                                <b>Select</b>.</li>
+                    
             
-                <li>Provide values: <ul id="ul_i32_rlc_3t">
-                    <li><b>Branch</b>: Select the branch containing the code to build. </li>
-                    <li><b>Environment</b>: Select the target environment to deploy to. If the
-                        target environment has not yet been created, click <xref
-                            href="cicd_environment_create.dita">Create New
+                <li>Click <b>Next</b>.</li></ol></li>
+                <li>Define the Pipeline: <image placement="break"
+                        href="../../../media/cicd_project_create_pipeline.png" id="image_nht_xry_kt"
+                        /><ul id="ul_i32_rlc_3t">
+                        <li><b>Branch</b>: Select the branch containing the code to build. </li>
+                        <li><b>Environment</b>: Select the target environment to deploy to. If the
+                            target environment has not yet been created, click <xref
+                                href="cicd_environment_create.dita">Create New
                             Environment</xref>.</li>
-                    <li><b>Project Type</b>: Select the appropriate development language. </li>
-                    <li><b>Project Name</b>: Enter a name for this project. </li>
-                </ul></li>
-            
-            <li>Click <b>Save</b>.</li>
+                        <li><b>Project Type</b>: Select the appropriate development language. </li>
+                            
+            <li>Click <b>Next</b>.</li> </ul></li>
+                <li>Define Notifications.<image placement="break"
+                        href="../../../media/cicd_project_create_notifications.png"
+                        id="image_onm_4xy_kt"/>
+                    <ol>
+                        <li>HTTP Post <ol>
+                                <li>Notification Target Name</li>
+                                <li>HTTP Endpoint</li>
+                                <li>Token</li>
+                                <li>Click <b>Save</b>.</li>
+                            </ol></li>
+                        <li>HipChat <ol>
+                                <li>Notification Target Name: Enter the name of the person to
+                                    notify.</li>
+                                <li>Hipchat Room Number: <xref
+                                        href="cicd_hipchat_data.dita#topic_ak1_yjd_3t/roomnumber"
+                                        >How to Find</xref></li>
+                                <li>Token: <xref
+                                        href="cicd_hipchat_data.dita#topic_ak1_yjd_3t/token">How to
+                                        Generate</xref></li>
+                                <li>Click <b>Save</b>.</li>
+                            </ol></li>
+                        <li>Flowdock <ol>
+                                <li>Notification Target Name</li>
+                                <li>API Endpoint</li>
+                                <li>Token</li>
+                                <li>Click <b>Save</b>.</li>
+                            </ol></li>
+                    </ol></li><li>Click <b>Save</b>.</li>
         </ol></p>
         </body>
 </topic>

@@ -6,13 +6,13 @@
     <p>This process selects an available source commit and builds it.</p>
     <p id="build_create"><ol>
       
-      <li>Click the <b>Builds</b> tab tand then click <b>New Build</b>.</li>
+      <li>Click the <b>Builds</b> tab and then click <b>New Build</b>.<image placement="break"
+            href="../../../media/cicd_build_create.png" id="image_cp2_3cz_kt"/></li>
       
       
-      <li>Click <b>Select Project.</b>  The list of available commits appears.</li>
-      <li>Click the green Play arrow to the right of the commit that should be built.</li>
-      <li>When complete, the build results and additional information will appear in the list of
-        builds.</li>
-    </ol></p>
+      <li>Click <b>Select Project</b> and select the target project from the list.</li>
+      <li>Click the commit to build and then click <b>Launch Build</b>.</li>
+    </ol></p><p>As the build executes, additional information will appear in the list. When it has completed, if
+      the <b>Results</b> value is <b>Success</b>, click <b>View</b> to view the deployed build.</p>
   </body>
 </topic>
