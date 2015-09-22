@@ -29,19 +29,17 @@
 
 </p>
 <p>Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack web interface or <b>dashboards</b>.</p>
-<p>The dashboards provide a web-based user interface to HP Helion OpenStack services including <xref href="../../commercial/GA1/1.1commerical.services-compute-overview.dita" >Compute</xref>, <xref href="../../commercial/GA1/1.1commerical.services-volume-overview.dita" >Volume Operations</xref>, <xref href="../../commercial/GA1/1.1commerical.services-networking-overview.dita" >Networking</xref>, and <xref href="../../commercial/GA1/1.1commerical.services-identity-overview.dita" >Identity</xref>.</p>
+<p>The dashboards provide a web-based user interface to HP Helion OpenStack services including
+        Compute, Volume Operations, Networking, and
+        Identity.</p>
 <section>
       <p/>
-      <p>The interface, based on OpenStack Horizon, is grouped into dashboards, including <xref
-          type="section" href="#topic2088/DashProject">Project</xref>, <xref type="section"
-          href="#topic2088/DashAdmin">Admin</xref> and <xref type="section"
-          href="#topic2088/DashSettings">Settings</xref>. Tabs on the left side of the interface
+      <p>The interface, based on OpenStack Horizon, is grouped into dashboards, including Project, Admin, and Settings. Tabs on the left side of the interface
         expand and contract to show available commands grouped into <b>panels</b>.</p>
       <p>Across the top are menus to switch between projects and menus where you can access user
         settings.</p>
-      <p> To access the dashboard, <xref
-          href="../../commercial/GA1/1.1commercial.dashboard.launch.dita">enter the dashboard URL in
-          a supported browser and log in</xref>.</p>
+      <p> To access the dashboard, enter the dashboard URL in a supported browser and log
+          in.</p>
       <p/>
     </section>
     <section conref="../postinstall_checklist.dita#postinstall_checklist/horizon"/>

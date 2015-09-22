@@ -32,7 +32,9 @@
         <li>Choose your <xref href="supportedconfigs.dita">cloud model/example</xref> template</li>
         <li>Before you use the GUI to install your cloud, you must install the operating system, HP
           Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor. You must
-          do so by following the appropriate installation instructions: <ul>
+          do so by following the appropriate installation instructions. Note that the only option
+          for the Cloud model on KVM with VSA is the have 3 VSA nodes; there is no option to have 0
+          VSA nodes.<ul>
             <li><xref href="gui_install_on_kvm.dita">KVM</xref></li>
             <li><xref href="gui_install_on_esx.dita">ESX</xref></li>
           </ul>
@@ -49,19 +51,25 @@
     <section><title>Running the GUI to install your cloud</title> Now that the OS, HP Linux for HP
       Helion OpenStack, is installed on all your servers (nodes), you will configure and install
       your cloud using the GUI.<p>The GUI is found on the deployer node at:
-          <b>http://&lt;Deployer_IP>:79/dayzero</b></p>
-      <p>You should SSH tunnel in with the username/password set up when installing the deployer.
-        Username and password should be what was set in "Set up the Deployer" in the installation
-        instructions. For example:</p>
+          <b>http://&lt;Deployer_IP>:79/dayzero</b></p> Make sure you choose "NO" to the question of
+      whether you want the Day0 installer to install the HP Linux for HP Helion OpenStack operatig
+      system on your nodes.<p>To create a secure tunnel/port forwarding into Apache from the
+        deployer to be able to use the GUI in a browser, SSH tunnel into the deployer with the
+        username/password set up when installing the deployer. Username and password should be what
+        was set in "Set up the Deployer" in the installation instructions. For example:</p>
       <codeblock>ssh -v -N -L 8080:&lt;Deployer_IP>:79 &lt;Username>@&lt;Deployer_IP></codeblock>
       <p>Then on your local machine, point your web browser to: http://localhost:8080/dayzero</p>
       <image placement="break" href="../media/install/GUIpage1.png" id="image_a3s_km3_kt"/>As you
-      proceed through the GUI, you need only supply your server names and IP addresses.
-        <p>Contextual help is provided throughout.</p>
-      <p>When the installation is complete, the Ansible log will be displayed on the final page.</p>
-      <p>The GUI is used only once: during the initial installation of your cloud.</p>
-      <p>To understand a cloud configuration more thoroughly and to learn how to make any changes
-        later, visit these documentation pages: <ul>
+      proceed through the GUI, you need only supply your server names and IP addresses.  </section>
+    <section>In the Assign network groups: External VM network fields, <b>do not</b> add entries for
+      CIDR, Gateway, or IP Range, only VLAN ID. Neutron will assign these.<p>When the installation
+        is complete, the Ansible log will be displayed on the final page.</p>
+      <p>The GUI is used only once: during the initial installation of your cloud.</p> After
+      deployment, continue to <xref href="installation_verification.dita#tempest">Verifying Your
+        Installation</xref> and <xref href="postinstall_checklist.dita#postinstall_checklist"
+        >Post-Installation Checklist</xref>.<p>To understand a cloud configuration more thoroughly
+        and to learn how to make any changes later, visit these documentation pages: <ul
+          id="ul_akt_fv2_lt">
           <li><xref href="input_model.dita">HP Helion OpenStack 2.0 Input Model</xref></li>
           <li><xref href="using_git.dita">Using Git for Configuration Management</xref></li>
         </ul>

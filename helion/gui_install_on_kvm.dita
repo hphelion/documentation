@@ -7,6 +7,42 @@
     <section conref="bare_installation_kvm.dita#install_kvm/Prereqs"/>
     <section conref="bare_installation_kvm.dita#install_kvm/DeployerInstall"/>
     <section conref="bare_installation_kvm.dita#install_kvm/HLM_Node_Personalization"/>
+    
+    <section id="Configuration">
+      <title>Configure Your Environment</title>
+      <ol>
+        <li>Setup your configuration files, as follows: <ol>
+          <li>See the sample set of configuration files in the
+            <codeph>~/helion/examples/entry-scale-with-vsa</codeph> directory. The accompanying
+            README.md file explains the contents of each of the configuration files.</li>
+          <li>Copy the example configuration files into the required setup directory and edit them
+            to contain the details of your environment:
+            <codeblock>cp -r ~/helion/examples/entry-scale-with-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
+          <li>Begin inputting your environment information into the <b>baremetalConfig.yml </b>and
+                <b>cloudConfig.yml</b> files in the <codeph>~/helion/my_cloud/definition</codeph>
+              directory. Full details of how to do this can be found here: <xref
+                href="input_model.dita">Helion OpenStack 2.0 Input Model</xref>. I addition, if you
+              need any changes from the defaults in<b> network_groups.yml</b> make those changes
+              now.</li>
+        </ol></li>
+        <li>Edit the <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file and under the
+          <b>Elasticsearch defaults</b> section, change the value of
+          <codeph>vars.elasticsearch_cluster_name</codeph> to something other than
+          <codeph>elasticsearch</codeph> (bolded below): <codeblock>elasticsearch_cluster_name: "{{ LOG_SVR | item('vars.elasticsearch_cluster_name', default='<b>elasticsearch</b>') }}"</codeblock>
+          <p>For example, you could use:
+            <codeblock>elasticsearch_cluster_name: "{{ LOG_SVR | item('vars.elasticsearch_cluster_name', default='<b>helioncloud</b>') }}"</codeblock></p></li>
+        <li>Commit all of your configuration files to the <xref href="using_git.dita">local git
+            repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
+git add --a .
+git commit -m "My config or other commit message"
+</codeblock>
+          <note>This step needs to be repeated any time you make changes to your configuration files
+            before you move onto the following steps. See <xref href="using_git.dita">Using Git for
+              Configuration Management</xref> for more information.</note></li>
+      </ol>
+    </section>
+    
+    
     <section conref="bare_installation_kvm.dita#install_kvm/CobblerDeploy"/>
     <section conref="bare_installation_kvm.dita#install_kvm/NodeProvision"/>
     <p><xref href="gui_installer.dita#install_gui/chooseHypervisor">Return to GUI
