@@ -52,7 +52,7 @@
         <li>Guest - This network will carry traffic between VMs on private networks within the
           cloud. It must be a tagged network.</li>
       </ul>
-      <note>The requirement to have a dedicated network for OS-install and system deployment has
+      <note>The requirement to have a dedicated network for operating system install and system deployment has
         been removed. To re-use the deployment network as part of the operational network the
         following conditions must be adhered to:</note>
       <ol id="single_network">
@@ -106,7 +106,7 @@ baremetal_servers:
     <section id="networking"><title>Networking </title>
       <p>The example requires the following networks: <ul>
           <li> IMPI/iLO network, connected to the deployer and the IPMI/iLO ports of all servers. </li>
-          <li> A network connected to a dedicated NIC on each server used to install the OS and
+          <li> A network connected to a dedicated NIC on each server used to install the operating system and
             install and configure Helion. </li>
           <li> A pair of bonded NICs which are used used by the following networks: <ul>
               <li> External API - This is the network that users will use to make requests to the
@@ -130,7 +130,7 @@ baremetal_servers:
           <codeph>data/net_interfaces.yml.</codeph>.</p>
     </section>
     <section id="localstorage"><title>Local Storage</title>
-      <p>Each server should present a single OS disc, protected by a RAID controller. In addition
+      <p>Each server should present a single operating system disc, protected by a RAID controller. In addition
         the example configures one additional disk depending on the role of the server: Controllers:
         /dev/sdb is configured to be used by Swift.</p>
       <p>Additional discs can be configured for any of these roles by adding them in the appropriate
@@ -163,7 +163,7 @@ baremetal_servers:
     <section id="esx_network"><title>Networking</title>
       <p>The example requires the following networks: <ul>
           <li>IMPI/iLO network, connected to the deployer and the IPMI/iLO ports of all servers. </li>
-          <li> A network connected to a dedicated NIC on each server used to install the OS and
+          <li> A network connected to a dedicated NIC on each server used to install the operating system and
             install and configure Helion. </li>
           <li> A pair of bonded NICs which are used used by the following networks: <ul>
               <li> External API - This is the network that users will use to make requests to the
@@ -186,7 +186,7 @@ baremetal_servers:
           <codeph>data/net_interfaces.yml</codeph>.</p>
     </section>
     <section id="esx_local"><title>Local Storage</title>
-      <p>Each server should present a single OS disc, protected by a RAID controller. In addition
+      <p>Each server should present a single operating system disc, protected by a RAID controller. In addition
         the example configures one additional disk depending on the role of the server: <ul>
           <li>Controllers: /dev/sdb is configured to be used by Swift</li>
         </ul></p>
