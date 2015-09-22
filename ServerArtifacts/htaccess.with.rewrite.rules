@@ -7,7 +7,7 @@ Options +FollowSymLinks
 RewriteEngine on
 #
 #
-RewriteRule ^/helion/HCSPProgramGuide?$ http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Service_Provider_Agreement_Program_Guide.pdf
+RewriteRule ^helion/HCSPProgramGuide?$ http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Service_Provider_Agreement_Program_Guide.pdf
 RewriteRule ^permalink/helion-openstack/2.0/supportedconfigs?$ http://15.126.244.7/hos2.0beta2/#helion/supportedconfigs.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/hardware?$ http://15.126.244.7/hos2.0beta2/#helion/hardware.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/installation_troubleshooting?$ http://15.126.244.7/hos2.0beta2/#helion/installation_troubleshooting.html [NE,R=301,L]
