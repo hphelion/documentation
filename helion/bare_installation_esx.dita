@@ -109,6 +109,7 @@ git commit -m "My config"</codeblock></li>
     <section conref="bare_installation_kvm.dita#install_kvm/CobblerDeploy"/>
     <section conref="bare_installation_kvm.dita#install_kvm/NodeProvision"/>
     <section conref="bare_installation_kvm.dita#install_kvm/run-config-processor"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/deploy"/>
 
 
     <section id="prepAndDeploy">Prepare and Deploy ESX Computes and OVSvAPPs <p>The following
