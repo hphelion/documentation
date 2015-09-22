@@ -46,7 +46,7 @@
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_roles.dita"
         navtitle="Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
-      <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Installation"
+      <topicref href="helion/keystone/keystone_init.dita" navtitle="Keystone Configuration"
         locktitle="yes"> </topicref>
       <topicref href="helion/keystone/keystone_admin.dita" navtitle="Keystone Administration"
         locktitle="yes"> </topicref>
@@ -154,8 +154,7 @@
         locktitle="yes"/>
       <topicref href="helion/ceilometer/metering_troubleshoot.dita"
         navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
-      <topicref href="helion/ceilometer/metering_apiextensions.dita"
-        navtitle="Ceilometer API Extensions" locktitle="yes" toc="no"/>
+    
       <topicref href="helion/ceilometer/metering_bestpractice.dita"
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
     </topichead>

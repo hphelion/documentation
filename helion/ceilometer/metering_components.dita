@@ -28,10 +28,10 @@
     <p>
       <image href="../../media/ceilometer/ceil_overallarchi.png" id="image_mbd_c5t_ct" placement="break"/></p>
     <section id="components-in-tripleo-overcloud-controller0">
-      <title>Components in TripleO Overcloud Controller0______________</title>
+      <title>Ceilometer Components on Controller node 1</title>
       <p>This controller node is the first of the High Available (HA) cluster. In this node there is
         an instance of the Ceilometer API running under the HA Proxy Virtual IP address. The Alarm
-        services run on Overcloud Controller0 ________________.</p>
+        services run on controller node 1.</p>
       <p>
         <b>Note</b>: When a configuration change is made to an API running under the HA Proxy, that
         change needs to be replicated in <b>all</b> controllers.</p>
@@ -40,33 +40,24 @@
         re-instate them, use the following commands.</p>
       <ol>
         <li>Disable the Ceilometer API on the active
-          sites.<codeblock>
-<codeph>sudo a2dissite ceilometer.conf
-</codeph>
-</codeblock></li>
+          sites.<codeblock>sudo a2dissite ceilometer.conf</codeblock></li>
         <li>Perform all necessary changes. The Ceilometer API will not be served until it is
           re-enabled.</li>
         <li>Re-enable the Ceilometer API on the active
-          sites.<codeblock>
-<codeph>sudo a2ensite ceilometer.conf
-</codeph>
-</codeblock></li>
+          sites.<codeblock>sudo a2ensite ceilometer.conf</codeblock></li>
         <li>The new changes need to be picked up by Apache2. If possible, force a reload rather than
           a restart. Unlike a restart, the reload waits for currently active sessions to gracefully
           terminate or
-          complete.<codeblock>
-<codeph>sudo  /etc/init.d/apache2 force-reload
-</codeph>
-</codeblock></li>
+          complete.<codeblock>sudo  /etc/init.d/apache2 force-reload</codeblock></li>
       </ol>
     </section>
     <section id="ceilometer-components-in-tripleo-overcloud-controller1">
-      <title>Ceilometer Components in TripleO Overcloud Controller1_________________</title>
-      <p>Just like Controller0, Controller1 has an instance of the Ceilometer API running under the
-        HA Proxy.</p>
+      <title>Ceilometer Components on Controller node 2</title>
+      <p>Just like Controller node 1, Controller node 2 has an instance of the Ceilometer API
+        running under the HA Proxy.</p>
     </section>
     <section id="ceilometer-components-in-tripleo-overcloud-controller2">
-      <title>Ceilometer Components in TripleO Overcloud Controller2_________________</title>
+      <title>Ceilometer Components on Controller node 3</title>
       <p>This node is where all other Ceilometer components are running.</p>
     </section>
     <section id="ceilometer-sample-polling">
@@ -91,19 +82,10 @@
         In order to avoid this conflict, stop or start processes using the following commands.</p>
       <ol>
         <li>Determine whether the process is
-          running:<codeblock>
-<codeph>sudo service ceilometer-agent-central status 
-ceilometer-agent-central start/running, process 27989
-</codeph>
-</codeblock></li>
+          running:<codeblock>sudo service ceilometer-agent-central status 
+ceilometer-agent-central start/running, process 27989</codeblock></li>
         <li>Start or stop the process as
-            needed:<codeblock>
-<codeph>sudo service ceilometer-agent-central stop
-</codeph>
-</codeblock><p>or</p><codeblock>
-<codeph>sudo service ceilometer-agent-central start
-</codeph>
-</codeblock></li>
+          needed:<codeblock>sudo service ceilometer-agent-central stop</codeblock>or<codeblock>sudo service ceilometer-agent-central start</codeblock></li>
       </ol>
     </section>
     <section id="collector">
@@ -115,19 +97,11 @@ ceilometer-agent-central start/running, process 27989
         In order to avoid this conflict, stop or start processes using the following commands.</p>
       <ol>
         <li>Determine whether the process is
-          running:<codeblock>
-<codeph>sudo service ceilometer-collector status 
-ceilometer-collector start/running, process 27455
-</codeph>
-</codeblock></li>
+          running:<codeblock>sudo service ceilometer-collector status 
+ceilometer-collector start/running, process 27455</codeblock></li>
         <li>Start or stop the process as
-            needed:<codeblock>
-<codeph>sudo service ceilometer-collector stop
-</codeph>
-</codeblock><p>or</p><codeblock>
-<codeph>sudo service ceilometer-collector start
-</codeph>
-</codeblock></li>
+            needed:<codeblock>sudo service ceilometer-collector stop</codeblock>or
+          <codeblock>sudo service ceilometer-collector start</codeblock></li>
       </ol>
     </section>
   </body>

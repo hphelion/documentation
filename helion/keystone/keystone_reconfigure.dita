@@ -3,49 +3,77 @@
 <topic id="topic_m43_2j3_bt">
   <title>Reconfiguring Keystone</title>
   <body>
-    <section>
-      <p>HP Helion OpenStack&#174; allows you to perform updates on the following parts of the
-        Identity service configuration:</p>
+
+    <section><title>Updating Keystone</title>HP Helion OpenStack&#174; allows you to perform updates  on the
+      following parts of the Identity service configuration:: </section>
+      
+      <section>
+      
       <ul>
-        <li>The main Keystone configuration file: <b>/etc/keystone/keystone.conf</b> Here you can
-          manipulate Keystone configuration parameters and enable experimental features, such as
-          Fernet Tokens.</li>
-        <li>Domain-specific configuration files:
-            <b>/etc/keystone/domains/keystone.&lt;domain_name&gt;.conf</b>. Here you can integrate
-          Keystone with one or more external authentication sources, such as an LDAP server. See the
-            <xref href="keystone_ldap.dita#topic_ifg_n33_bt">LDAP Integration page</xref> for more
-          information.</li>
-        <li>Certain content in the logging configuration file: <b>/etc/keystone/logging.conf</b>. In
-          this file you can adjust the verbosity of the output written to Keystone log files. </li>
-        <li> The Apache2 WSGI module configuration file:
-            <b>/etc/apache2/sites-enabled/keystone-modwsgi.conf</b>. In this file you can adjust
-          certain WSGI module parameters (such as process counts). </li>
+      <li>	Any content in main keystone configuration file: /etc/keystone/keystone.conf
+      This allows to manipulate Keystone configuration parameters. Please refer to Updating main Keystone configuration file section below.
+      </li><li>Updating certain configuration options and enabling features, such as:
+      
+      
+      </li><li>Verbosity of logs being written to keystone log files.
+      </li><li>Process counts for Apache2 WSGI module, separately for admin and public Keystone interfaces
+      </li><li>Enabling/disabling auditing.
+      </li><li>Enabling/disabling Fernet Tokens.
+      
+      Please refer to Enabling Keystone Features section below.
+      </li><li>Creating and updating domain-specific configuration files: /etc/keystone/domains/keystone.&lt;domain_name>.conf
+        This allows to integrate Keystone with one or more external authentication sources, such as LDAP server. Please refer to Integrating with an external LDAP server section below.
+      </li>
       </ul>
-    </section>
+      </section>
     <section><title>Updating the main Keystone configuration file</title>
-      <p>The main Keystone configuration file (<b>/etc/keystone/keystone.conf</b>) is generated from
-        the following template file: <b>roles/KEY-API/templates/keystone.conf.j2</b></p>
-      <ol>
-        <li>Modify this template file as appropriate. Please refer to the Keystone Kilo
-          documentation for full descriptions of all settings in the <xref
-            href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
-            scope="external" format="html">Keystone docs at OpenStack.org</xref>
-          <note>This is a Jinja2 template, which expects certain template variables to be set. Do
-            not change values inside double curly braces: {{ }}. </note></li>
-        <li>Once the template is modified, run reconfiguration playbook:
-          <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock></li>
-      </ol>
+      
+     <ol><li>The main Keystone configuration file (<b>/etc/keystone/keystone.conf</b>), located on each
+          control plane server is generated from the following template file located on a deployer:
+            <b>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</b>
+          <p>Modify this template file as appropriate. Please refer to <xref
+              href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
+              format="html" scope="external">Keystone Kilo documentation</xref> for full
+            descriptions of all settings: This is a Jinja2 template, which expects certain template
+            variables to be set. Do not change values inside double curly braces: {{ }}. </p></li>
+    <li>Once the template is modified, commit the change to the local git repository, and rerun the
+          configuration processor / deployment area preparation playbooks (as suggested at <xref
+            href="../using_git.dita#topic_u3v_1yz_ct">Using Git for Configuration
+          Management</xref>):
+          <codeblock>$ cd ~/helion
+       $ git checkout site
+       $ git add my_cloud/config/keystone/keystone.conf.j2
+       $ git commit -m "Adjusting some parameters in keystone.conf"
+       $ cd ~/helion/hos/ansible
+       $ ansible-playbook -i hosts/localhost config-processor-run.yml
+       $ ansible-playbook -i hosts/localhost ready-deployment.yml
+       3.	Run reconfiguration playbook in deployment area:
+       $ cd ~/scratch/ansible/next/hos/ansible
+       $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
+        </li></ol>
     </section>
-    <section><title>Adjusting WSGI and logging parameters</title>
-      <p>To modify Web Server Gateway Interface (WSGI) parameters (such as process counts for public
-        and admin Keystone interfaces) and log levels: </p>
-      <ol>
-        <li>Adjust respective parameters in
-            <b>roles/keystone-common/vars/keystone_deploy_config.yml</b>.</li>
-        <li>Run reconfiguration playbook:
-          <codeblock>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
-        </li>
-      </ol>
+    
+    <section><title>Enabling Keystone features</title>
+    
+    To enable or disable Keystone features like Fernet Tokens, do the following:
+    <ol><li>Adjust respective parameters in /home/stack/helion/my_cloud/config/keystone/keystone_deploy_config.yml.
+    </li><li>Commit the change into local git repository, and rerun configuration processor / deployment area
+          preparation playbooks (as suggested at <xref href="../using_git.dita#topic_u3v_1yz_ct"
+            >Using Git for Configuration Management</xref>):</li></ol>
+    <codeblock>$ cd ~/helion
+    $ git checkout site
+    $ git add my_cloud/config/keystone/keystone_deploy_config.yml
+    $ git commit -m "Adjusting some WSGI or logging parameters for keystone"
+    $ cd ~/helion/hos/ansible
+    $ ansible-playbook -i hosts/localhost config-processor-run.yml
+    $ ansible-playbook -i hosts/localhost ready-deployment.yml
+    3.	Run reconfiguration playbook in deployment area:
+    $ cd ~/scratch/ansible/next/hos/ansible
+    $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
+    
+    
+    
+    
     </section>
   </body>
 </topic>
