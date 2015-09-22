@@ -2,7 +2,7 @@
 <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="time_series_graphs">
-  <title>Metric Monitoring</title>
+  <title>Time Series Graphs</title>
   <shortdesc>This page allows you to define charts that display data based on the metrics and
     parameters you choose. </shortdesc>
   <conbody>
@@ -49,6 +49,7 @@
                 <li>Last 30 Days</li>
                 <li>Last 90 Days</li>
               </ul></li>
+            <!--
             <li>Select a <uicontrol>Statistical Function</uicontrol> in the drop down. Choices are: <ul>
                 <li>[ None ]</li>
                 <li>AVG</li>
@@ -56,7 +57,7 @@
                 <li>MIN</li>
                 <li>MAX</li>
                 <li>COUNT</li>
-              </ul></li>
+              </ul></li>-->
           </ul></li>
         <li>In the <uicontrol>Chart Data</uicontrol> section you will select up to six metric and
           dimension pairs to define what information your chart will reflect. <ul>

@@ -7,13 +7,11 @@
         tmtype="reg">OpenStack</tm> 2.0 Beta 2, including known issues and workarounds for this
       release:</p>
     <section id="Features"><title>Features in HP Helion OpenStack 2.0 Beta 2</title>
-      <p><b>New Installer</b></p>
-      <ul>
-        <li>You supply the cloud configuration you want based on our <xref href="input_model.dita"
-            >Input Model</xref> and the installer will set up your environment.</li>
-        <li>Manage the different phases of your cloud deployment with ease.</li>
-      </ul>
-      <p><b>Local Git repository for config tracking</b></p>
+      <p><b>New Installer</b></p> HP Helion OpenStack 2.0 Beta 2 introduces a GUI installer for
+      configuring and installing OpenStack and OpenStack services. It provides an easy way to
+      populate the configuration files needed to define the <xref href="input_model.dita">Input
+        Model</xref>, and uses them to configure and install your cloud.<p><b>Local Git repository
+          for config tracking</b></p>
       <p>In HP Helion OpenStack 2.0, a local git repository is used to track configuration changes
         and for the config processor to gather configuration settings from. The operations work as
         explained below:</p>
@@ -175,11 +173,10 @@
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
       </ul>
       <p><b>Operations Console (Ops Console)</b></p>
-      <p>The Operations Console is available on port 9095 on the first controller node IP. There are some
-        limitations to note and they are listed below by menu option in the console:</p>
+      <p>The Operations Console is available on port 9095 on the first controller node IP. There are
+        some limitations to note and they are listed below by menu option in the console:</p>
       <ul>
-        <li>Dashboard 
-          <ul>
+        <li>Dashboard <ul>
             <li>There are two notification sections for the Storage services. The one in the upper
               left is the Compute service mislabeled as Storage.</li>
             <li>The New Alarms section uses the UTC timezone to determine timeframes regardless of
@@ -198,6 +195,10 @@
         <li>Alarms <ul>
             <li>The tile view of alarms with lengthy dimensions does not render cleanly.</li>
           </ul></li>
+        <li>Compute Instances <ul>
+            <li>Compute instance utilization metrics are not available in Beta 2</li>
+          </ul>
+        </li>
         <li>Networking - Alarm Summary <ul>
             <li>Alarms may be limited to only those with the dimension "service=networking".</li>
           </ul></li>

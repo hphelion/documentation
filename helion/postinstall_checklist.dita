@@ -34,11 +34,13 @@
               </row>
               <row>
                 <entry/>
-                <entry>Accessing Horizon (COMING SOON)</entry>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/horizon"
+                    >Accessing Horizon</xref></entry>
               </row>
               <row>
                 <entry/>
-                <entry>Accessing Ops Console (COMING SOON)</entry>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/opsconsole"
+                    >Accessing the Operations Console (Ops Console)</xref></entry>
               </row>
             </tbody>
           </tgroup>
@@ -76,8 +78,8 @@
                     </entry>
                     <entry>
                       <p>You can optionally specify the external network CIDR here too. If you
-                      choose not to exercise this option or use a wrong value, the VMs will not be
-                      accessible over the network.</p>
+                        choose not to exercise this option or use a wrong value, the VMs will not be
+                        accessible over the network.</p>
                       <p>This CIDR will be from the EXTERNAL VM network.</p>
                     </entry>
                   </row>
@@ -87,7 +89,7 @@
                     </entry>
                     <entry>
                       <p>If your environment requires a proxy in order to reach out over the
-                      internet, you would enter that here.</p>
+                        internet, you would enter that here.</p>
                     </entry>
                   </row>
                 </tbody>
@@ -126,10 +128,21 @@
           Overview</xref></p>
     </section>
     <section id="horizon"><title>Accessing Horizon</title>
-    <p>Horizon is the web GUI for administering your cloud deployment.</p>
-      <p>To determine which IP to use to access Horizon you can use this command from your deployer:</p>
-      <codeblock>grep OS_AUTH_URL service.osrc</codeblock>
-      <p>The output of that command will show you your </p>
+      <p>Horizon is the web GUI for administering your cloud deployment.</p>
+      <p>To determine which IP to use to access Horizon you can use this command from your
+        deployer:</p>
+      <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock>
+      <p>The output of that command will show you the VIP for Horizon you should use.</p>
+    </section>
+    <section id="opsconsole"><title>Accessing Operations Console</title>
+      <p>Operations Console is the web GUI for administering your cloud deployment's monitoring and
+        infrastructure.</p>
+      <p>To determine which IP to use to access the Operations Console you can use this command from
+        your deployer:</p>
+      <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock>
+      <p>The output of that command will show you the VIP you should use. It is listening over port
+        9095 on that VIP, so you can use the following syntax to access
+        it:<codeblock>http://VIP:9095</codeblock></p>
     </section>
   </body>
 </topic>

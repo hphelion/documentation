@@ -155,9 +155,12 @@ git commit -m "My config or other commit message"
       <ol>
         <li>Run the following command:
           <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
-        <li>Run the following playbook:
+        <li>Run the following playbook which confirms that there is iLo connectivity for each of
+          your nodes so that they are accessible to be re-imaged in a later step:
           <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost bm-power-status.yml
+ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
+        <li>Run the following playbook to deploy Cobbler:
+          <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
         <li>The cobbler-deploy stage of the installation now prompts for a password. The entered
           value is used to set a user-defined password for subsequent node installs so that a user
