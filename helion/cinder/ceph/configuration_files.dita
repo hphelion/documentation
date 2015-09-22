@@ -453,9 +453,6 @@ ring-specifications:
         </strow>
       </simpletable>
     </p>
-    <p>
-      <note type="important">Minimum 3 OSD disks are required to configure Ceph. </note>
-    </p>
     <section id="interfaces-set"><b>interfaces_set.yml</b></section>
     <section>
       <p><!--Copy <codeph>interface_set.yml</codeph> without modification.--></p>
