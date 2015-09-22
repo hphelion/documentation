@@ -86,8 +86,8 @@ baremetal_servers:
           Models</xref> for more details on that feature.</p>
     </section>-->
     
-    <section><title>Entry Scale Cloud with VSA (on KVM)</title> Choosing this model will result in a
-      cloud with that has the following characteristics: </section>
+    <section><title>Entry Scale Cloud</title> Choosing this model will result in a cloud with that
+      has the following characteristics: </section>
     <section><b>Control Planes </b></section>
     <section>A single control plane consisting of three servers that co-host all of the required
       services. Optionally, the deployer can reside on a control plane node, reducing the number of

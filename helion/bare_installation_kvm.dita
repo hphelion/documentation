@@ -8,7 +8,7 @@
       <ul>
         <li>If you are looking for information about when to use the GUI installer and when to use
           the CLI, see the <xref href="installation_overview.dita#install_overview">Installation
-            Ovweview</xref>.</li>
+            Overview</xref>.</li>
         <li>We have put together a <xref href="preinstall_checklist.dita">Pre-Installation
             Checklist</xref> that should help with the recommended pre-installation tasks.</li>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met in
@@ -61,6 +61,9 @@
     </section>
     <section id="DeployerInstall">
       <title>Set up the Deployer</title>
+      <p>You can use a dedicated deployer node or you can run these instructions on your first
+        controller node.  There is only one difference in the steps and that is notated in the <xref
+          href="#install_kvm/Configuration">Configure Your Environment</xref> section.</p>
       <ol>
         <li>Download the HP Helion OpenStack Deployer ISO from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
@@ -84,15 +87,15 @@
         <li>Ensure your deployer has a valid DNS nameserver in the <codeph>/etc/resolv.conf</codeph>
           file</li>
       </ol>
-      <p>At the end of this section you should have a deployer node set up with hLinux on it.</p>
+      <p>At the end of this section you should have a node set up with hLinux on it.</p>
     </section>
     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
       <note>It's critical that you don't run as root. Run as the user you just created (or stack if
         you left the default of "stack"), but do not run as root.</note>
       <ol>
-        <li>Log in to the deployer node as the user you created during the setup phase, and mount
-          the install media at /media/cdrom, for example,
+        <li>Log in to the node you setup in the previous steps as the user you created during the
+          setup phase, and mount the install media at /media/cdrom, for example,
           <codeblock>sudo mount Helion-OpenStack-2.0.0-b.2-Beta2.iso /media/cdrom</codeblock></li>
         <li>Unpack the tarball that is in the <codeph>/media/cdrom/hos2.0.0/</codeph> directory:
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.2-20150920T130131Z.tgz</codeblock></li>
@@ -125,15 +128,30 @@ helion/hos/                    Directory contains files used by the installer
       <ol>
         <li>Setup your configuration files, as follows: <ol>
             <li>See the sample set of configuration files in the
-              ~/helion/examples/entry-scale-with-vsa directory. The accompanying README.md file
-              explains the contents of each of the configuration files.</li>
+                <codeph>~/helion/examples/entry-scale-with-vsa</codeph> directory. The accompanying
+              README.md file explains the contents of each of the configuration files.</li>
             <li>Copy the example configuration files into the required setup directory and edit them
               to contain the details of your environment:
               <codeblock>cp -r ~/helion/examples/entry-scale-with-vsa/* ~/helion/my_cloud/definition/</codeblock></li>
             <li>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory. Full details of how to do
               this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
-                Model</xref>.</li>
+                Model</xref>. <note type="important">If you chose to use your first controller node
+                as your deployer, ensure that your <codeph>baremetalConfig.yml</codeph> file
+                contains the <codeph>is_deployer: true</codeph> notation in your controller options.
+                If you are using a dedicated deployer node you can omit this. Here is an example
+                snippet of a <codeph>baremetalConfig.yml</codeph> file where a user is using their
+                first controller node as their deployer:
+                <codeblock>
+node_name: "ccn-0001"
+role: "ROLE-CONTROLLER"
+pxe_mac_addr: "b2:72:8d:ac:7c:6f"
+pxe_interface: "eth2"
+pxe_ip_addr: "192.168.10.3"
+ilo_ip: "192.168.9.3"
+ilo_user: "admin"
+ilo_password: "password"
+<b>is_deployer: true</b></codeblock></note></li>
           </ol></li>
         <li>Edit the <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file and under the
             <b>Elasticsearch defaults</b> section, change the value of
@@ -146,8 +164,9 @@ helion/hos/                    Directory contains files used by the installer
 git add -A
 git commit -m "My config or other commit message"
 </codeblock>
-          <note>This step needs to be repeated any time you make changed to your configuration files
-            before you move onto the following steps.</note></li>
+          <note>This step needs to be repeated any time you make changes to your configuration files
+            before you move onto the following steps. See <xref href="using_git.dita">Using Git for Configuration Management</xref> for
+              more information.</note></li>
       </ol>
     </section>
     <section id="CobblerDeploy">

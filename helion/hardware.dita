@@ -37,7 +37,8 @@
           </thead>
           <tbody>
             <row>
-              <entry>Deployer</entry>
+              <entry>Deployer (optional, you can also use your first controller node as your
+                deployer if desired.)</entry>
               <entry>Deployer</entry>
               <entry>1</entry>
               <entry>8 GB</entry>
@@ -148,7 +149,8 @@
         </thead>
         <tbody>
           <row>
-            <entry>Deployer</entry>
+            <entry>Deployer, (optional, you can also use your first controller node as your deployer
+              if desired.)</entry>
             <entry>Deployer</entry>
             <entry>1</entry>
             <entry> 8 GB</entry>
