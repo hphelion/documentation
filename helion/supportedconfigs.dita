@@ -151,7 +151,7 @@ baremetal_servers:
         in the cluster ) Additional resource nodes can be added to the configuration. Minimal Swift
         Resources are provided by the control plane.</p>
     </section>
-    <section id="esx_deploy"><title>Deployer Node</title>
+    <section id="esx_deploy"><title>Deployer</title>
       <p>The deployer handles the installation and initial configuration of your cloud. It can live
         on a dedicated node or you can utilize one of your controller nodes for this purpose. The
         minimum server count for this example is therefore 5-6 servers (Deployer [optional] +
