@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qs2_sgy_kt">
+  <title>HP Helion 1.3 Development Platform: Enable Container Deployment</title>
+  <body>
+    <p>For security, Docker container deployments are disabled. There are two ways to enable
+      container deployment:<ul id="ul_ztf_ghy_kt">
+        <li>Add <codeph>sudo</codeph> permissions to users within an organization</li>
+        <li>Don’t require <codeph>sudo</codeph> for Docker apps (disable entirely)</li>
+      </ul></p>
+    <section><title>Add <codeph>sudo</codeph> Permission for All Users</title>
+      <ol id="ol_hnw_thy_kt">
+        <li>Open the Helion Management Console.</li>
+        <li>Navigate to <b>Admin</b> &gt; <b>Quotas</b> &gt; <b>Edit Quota</b>
+        </li>
+        <li>Uncheck the <b>Allow Sudo</b> checkbox and click <b>Update</b>.<image placement="break"
+            href="../../../../../media/docker_sudo_quota.png" id="image_lpg_c3y_kt" align=""/></li>
+      </ol></section>
+    <section><title>Remove <codeph>sudo</codeph> Requirement for Deployment</title>
+      <ol id="ol_qj4_33y_kt">
+        <li>Open the Helion Management Console.</li>
+        <li>Navigate to <b>Settings</b> &gt; <b>HP Helion Development Platform Settings</b> &gt;
+            <b>Docker Apps Settings</b><image placement="break"
+            href="../../../../../media/docker_sudo_disable_horizon.png" id="image_w2r_l3y_kt"/></li>
+        <li>Uncheck the <b>Require Sudo </b>checkbox.</li>
+      </ol></section>
+  </body>
+</topic>

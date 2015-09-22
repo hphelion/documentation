@@ -139,6 +139,7 @@
       <topichead navtitle="Language Specific Application Deployment">
         <topicref href="1.3/helion/user/deploy/docker_firstapp.dita"
           navtitle="Creating and Deploying Your First Docker App" locktitle="yes"/>
+        <topicref href="1.3/helion/user/deploy/container_enable_deploy.dita" toc="no" />
         <topicref href="1.3/helion/user/deploy/languages/docker_apps.dita"
           navtitle="Docker Apps" locktitle="yes"/>
         <topicref href="1.3/helion/user/deploy/languages/clojure.dita" locktitle="yes"

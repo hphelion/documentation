@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_yw1_w3r_dt">
-  <title>Create Your First Docker App</title> 
+  <title>HP Helion 1.3 Development Platform: Create Your First Docker App</title> 
   <body><section>
     <p>This Helion Development Platform release introduces the ability to deploy Docker images. This example takes an existing app and creates a
       Docker image that will run in ALS and take advantage of the provisioned services. </p></section><section>
@@ -16,11 +16,14 @@
         each separate Dockerfile. This example includes both methods.</p>
     </section>
     
-    <section><title>Prerequisites </title>  Before attempting to create Docker applications, ensure
-      you have the following: <ul>
+    <section><title>Prerequisites </title><note type="important">For security, Docker container
+        deployments are disabled. The organization administrator needs to explicitly <xref
+          href="container_enable_deploy.dita#topic_qs2_sgy_kt">enable container
+        deployments</xref>.</note> Before attempting to create Docker applications, ensure you have
+      the following: <ul>
         <li>A DockerHub account.</li>
-        <li>On OSX you also need Boot2Docker installed and running. <note>Boot2Docker does not need
-              <codeph>sudo</codeph> commands</note></li>
+        <li>On OSX you also need Boot2Docker installed and running. [Boot2Docker does not need
+            <codeph>sudo</codeph> commands.]</li>
         <li>On a Linux machine you also need Docker.</li>
       </ul></section>
     
