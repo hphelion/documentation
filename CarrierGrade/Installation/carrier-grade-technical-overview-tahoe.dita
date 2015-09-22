@@ -17,14 +17,13 @@
   <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
     <p>This page introduces deployment and network architectures of the KVM with DCN deployment of
-      HP Helion OpenStack Carrier Grade. This deployment supports the integration of VMware ESX<tm
-        tmtype="reg"/> storage into HP Helion OpenStack Carrier Grade.</p>
+      HP Helion OpenStack Carrier Grade. </p>
     <section id="deploy-arch">
       <title>Deployment architecture</title>
       <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack
         Carrier Grade.</p>
       <p>
-        <image href="../../media/CGH-2-architecture-esx-tahoe-aplha.png" width="800"/></p>
+        <image href="../../media/CGH-architecture-esx-alpha-tahoe.png" width="800"/></p>
       <p>The following sections describe essential aspects of this diagram.</p>
     </section>
     <section id="networkarch">
@@ -152,7 +151,6 @@
               <entry> CLM </entry>
               <entry>
                 <p>VSC IP to HLM CLM VM IP (only during deployment)</p>
-                <p>VSD IP to ESX host CLM IP (during VRS-vAp deployment)</p>
               </entry>
             </row>
             <row>
@@ -182,20 +180,20 @@
             Architecture diagram</xref> shows an illustration of these two zones. </p>
         <p><b>Non-KVM</b></p>
         <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
-          maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
-          distribution of OpenStack. The ESX and DCN components and servers also reside in the
-          non-KVM zone.  </p>
+        maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
+        distribution of OpenStack. The DCN components and servers also reside in the non-KVM zone. </p>
         <p><b>KVM</b></p>
         <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM region consists
           of a software platform, providing ultra-reliability and exceptional performance
           efficiencies for telecommunications networks. </p>
       </section>
     <section id="dcn"><title>HP Distributed Cloud Networking Components </title><p>The HP Helion
-        OpenStack Carrier Grade KVM + ESX deployment uses HP Distributed Cloud Networking to provide
-        virtual networking within the cloud.</p><p>DCN must be deployed before starting the cloud
-        deployment. Please refer to DCN documentation for details. </p>The main components in the HP
-      DCN solution are: Virtualized Services Directory (VSD) and Virtualized Services Directory
-      Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and Switching (VRS).<ul>
+        OpenStack Carrier Grade KVM with DCN deployment uses HP Distributed Cloud Networking to
+        provide virtual networking within the cloud.</p><p>DCN must be deployed before starting the
+        cloud deployment. Please refer to DCN documentation for details. </p>The main components in
+      the HP DCN solution are: Virtualized Services Directory (VSD) and Virtualized Services
+      Directory Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and
+      Switching (VRS).<ul>
         <li>HP Virtualized Service Directory (VSD) - The VSD is a policy engine for managing users,
           compute resources and network resources, that is located on a server outside of the HP
           Helion OpenStack Carrier Grade cloud. </li>

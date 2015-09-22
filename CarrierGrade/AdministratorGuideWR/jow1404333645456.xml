@@ -1,1 +1,928 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333645456" xml:lang="en-us">    <!-- Modification History   -->    <title >Resource Usage</title>    <shortdesc >Usage of system resources is monitored by Ceilometer, the standard        OpenStack mechanism for collecting and distributing performance monitoring samples from the        cluster. The HP Helion OpenStack Carrier Grade cluster extends Ceilometer with improved reports and new tools        to facilitate offline analysis of the collected data.</shortdesc>    <prolog>        <author >Pedro Sanchez</author>    </prolog>    <body>        <p >Performance Monitor (PM) samples are periodically collected from different            resources such as hosts, virtual machine instances, AVS, and others. They include CPU            and memory utilization, network traffic counters, storage space, and several more. By            default the samples are stored in a database which is used for reporting activities such            as:</p>        <ul id="ul_pfp_vlr_j4">            <li >                <p >command line queries and graphical charts</p>            </li>            <li >                <p >triggering of threshold alarms</p>            </li>            <li >                <p >triggering of threshold actions. The most common example is Heat actions to scale up and          down a resource.</p>            </li>        </ul>        <p >The Ceilometer database is periodically cleaned in order to contain its size and prevent the      overuse of storage resources on the controller nodes.</p>        <p >The Ceilometer implementation in HP Helion OpenStack Carrier Grade improves on several            aspects. They are described in the following sections.</p>        <section id="section_N10048_N1001C_N10001" >            <title >Optimized Ceilometer Filters</title>            <p >The Ceilometer implementation in HP Helion OpenStack Carrier Grade is specially tuned                to allow time-sensitive actions, such as Heat autoscaling, to take place in response                to relatively high-frequency sample rates of system events. The size of both the                Ceilometer database and the CSV files are maintained under control at all times,                while still enabling the required system actions to take place in real-time.</p>        </section>        <section id="section_N1006E_N1001C_N10001" >            <title >On-Line Ceilometer Reports</title>            <p >On-line, on-demand, Ceilometer reports in HP Helion OpenStack Carrier Grade benefit                from several improvements over the stock OpenStack reporting tool, including:</p>            <ul id="ul_lfg_pdz_j4">                <li >                    <p >optimized Ceilometer database queries</p>                </li>                <li >                    <p >improved naming of menu entries on pull-down menus</p>                </li>                <li >                    <p >use of brief meter descriptions and human-readable legends on                        the charts</p>                </li>            </ul>            <p >Additionally, all database queries are user-initiated, as opposed to event-initiated. This        provides a different user workflow, whereby all required report parameters and filters are        configured first, before the database query is executed</p>            <p >Access to Ceilometer reports is available from the <uicontrol >Stats</uicontrol> tab on the <wintitle >Resource                    Usage Overview</wintitle> page. This page can be accessed from the web                management interface by selecting the option <option >Resource                    Usage</option> on the <uicontrol >Admin</uicontrol> tab of the                system panel. The <uicontrol >Stats</uicontrol> tab is presented as                follows:</p>            <fig id="fig_N100B3_N1006E_N1001C_N10001" >                <image href="jow1404333641017.image" id="image_bsy_t3s_j4"  placement="inline" width="4in"/>            </fig>            <p >The following fields are available:</p>            <dl>                <dlentry >                    <dt >Metric</dt>                    <dd >                        <p >The Ceilometer metric you want to query. Metrics are                            grouped by service, as follows:</p>                        <ul id="ul_btj_sjs_j4">                            <li >                                <p >Compute (Nova)</p>                            </li>                            <li >                                <p >Network (Neutron)</p>                            </li>                            <li >                                <p >Image (Glance)</p>                            </li>                            <li >                                <p >Volume (Cinder)</p>                            </li>                            <li >                                <p >Switching (AVS)</p>                            </li>                        </ul>                        <p >On the CLI, use the following command to list the available metrics, and find their              resource IDs:</p>                        <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >ceilometer meter-list</userinput></codeblock>                    </dd>                </dlentry>                <dlentry >                    <dt >Value</dt>                    <dd >                        <p >The particular statistic you want to visualize. Select                            among <option >Average</option>, <option >Minimum</option>, <option >Maximum</option>, and <option >Summation</option>.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Group by</dt>                    <dd >                        <p >How to group the displayed charts, as follows:</p>                        <dl>                            <dlentry >                                <dt >None</dt>                                <dd >                                    <p >The selected statistic is presented as a single line chart reporting the                    aggregate over all resources and projects (tenants).</p>                                </dd>                            </dlentry>                            <dlentry >                                <dt >Projects (Tenants)</dt>                                <dd >                                    <p >The selected statistic is presented as a multiple line charts over all                    resources, one line per tenant.</p>                                </dd>                            </dlentry>                            <dlentry >                                <dt >Resource</dt>                                <dd >                                    <p >The selected statistic is presented as a multiple line charts over all                    resources, one line per resource (hosts, instances, and so on).</p>                                </dd>                            </dlentry>                        </dl>                    </dd>                </dlentry>                <dlentry >                    <dt >Period</dt>                    <dd >                        <p >The period of time to be covered by the report. They                            include <option >last 15 minutes</option>, <option >last 30 minutes</option>, <option >last hour</option>, <option >last day</option>,                                <option >last week</option>, <option >last 15 days</option>, <option >last 30 days</option>, <option >last year</option>,                            and <option >other</option>. When selecting <option >other</option>, two new fields become available,                                <option >Date From</option> and <option >Date To</option>, allowing you to specify a                            specific time period.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Metadata</dt>                    <dd >                        <p >Metadata represents additional attributes collected with a metric. In this menu, you              can select the specific attribute you want the report on.</p>                        <p >The pull-down menu is auto-populated with the corresponding attributes for the              selected metric. On the CLI, use the following command to list the metadata associated              with a metric identified with its resource ID:</p>                        <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >ceilometer resource-show –r &lt;resource_id&gt;</userinput></codeblock>                    </dd>                </dlentry>                <dlentry >                    <dt >Filter</dt>                    <dd >                        <p >Use this field to limit the report to show metric samples whose metadata attribute              equals the specified value. The filter field is applied only when a specific metadata              attribute is selected.</p>                    </dd>                </dlentry>            </dl>            <p >Once the selections are in place, click the <option >Report</option> button to display the        report.</p>        </section>        <section id="section_N101AA_N1001C_N10001" >            <title >CSV Performance Monitoring Backend</title>            <p >HP Helion OpenStack Carrier Grade provides access to performance measurement samples in                the form of comma-separated values (CSV) files. They provide the following                benefits:</p>            <ul id="ul_dnc_dpz_j4">                <li >                    <p >off-line permanent storage of large samples history</p>                </li>                <li >                    <p >enables the use of off-line tools for data analysis, accounting, and archiving</p>                </li>            </ul>            <p >The CSV files are expected to be retrieved from the controllers using any suitable file        transfer client application such as SFTP or SCP. This can be done manually by the system        administrator, or automatically by an operations and support server (OSS/BSS) configured        with the appropriate login credentials.</p>            <p >Recording of samples and management of CSV files is done through                special Ceilometer pipelines available from the <uicontrol >Pipelines</uicontrol> tab, as illustrated below:</p>            <fig id="fig_N101DC_N101AB_N1001C_N10001" >                <image href="jow1404333642494.image" id="image_dkk_ptz_j4"  placement="inline" width="6in"/>            </fig>            <p >The <b >csv</b> pipeline collects system information with the                exception of AVS switching meters. The latter are collected by the                    <b >vswitch_avg</b> pipeline.</p>            <p >Click the button <uicontrol >Update                    Settings</uicontrol> to configure the behavior of a pipeline. The <wintitle >Edit Pipeline</wintitle> window is presented as follows:</p>            <fig id="fig_N101F4_N101AB_N1001C_N10001" >                <image href="jow1404333644008.image" id="image_ckk_gvz_j4"  placement="inline" width="4in"/>            </fig>            <p >The following fields are available:</p>            <dl>                <dlentry >                    <dt >Name</dt>                    <dd >                        <p >A read-only field displaying the name of the pipeline</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Meters</dt>                    <dd >                        <p >An editable field displaying the list of comma-separated                            meters included in the pipeline. The list must be enclosed in square                            brackets, as follows:</p>                        <codeblock ><userinput >[meter1,meter2,...]</userinput></codeblock>                        <p >The following syntax rules apply to the specified meters:</p>                        <ul id="ul_ipr_k42_1p">                            <li >                                <p >A meter specification is a text string of the form                                        <term >metergroup.metersubgroup.meter</term>, for example,                                        <userinput >disk.read.bytes</userinput></p>                            </li>                            <li >                                <p >A meter specification supports a trailing wild-card to include                                    all <term >meters</term> within a <term >metergroup</term>. For                                    example, the text <userinput >disk.*</userinput> matches the                                    meters <userinput >disk.read.bytes</userinput> and                                        <userinput >disk.write.bytes</userinput>.</p>                            </li>                            <li >                                <p >A meter specification supports a trailing                                    wild-card to include all <term >metersubgroups</term> within a <term >metergroup</term>. For example, the text <userinput >disk.read.*</userinput> matches the meter                                        <userinput >disk.read.bytes</userinput>.</p>                            </li>                            <li >                                <p >Meter specifications support a leading exclamation mark to                                    exclude the specified meter, as follows:</p>                                <codeblock ><userinput >[!meter1,!meter2,...]</userinput></codeblock>                                <p >Such a pipeline includes all meters but the ones in the list.</p>                                <p >Exclamation marks cannot be applied selectively in a list of                                    meters. Either all meters use them or none at all. The following                                    list is therefore invalid:</p>                                <codeblock ><userinput >[meter1,!meter2,meter3]</userinput></codeblock>                            </li>                        </ul>                    </dd>                </dlentry>                <dlentry >                    <dt >Location</dt>                    <dd >                        <p >The absolute path to the CSV file on the controller.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Enabled</dt>                    <dd >                        <p >A check box used to enable or disable the pipeline.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Max Bytes</dt>                    <dd >                        <p >The maximum size, in bytes, of a CSV file. The default value is 10 MB.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Backup Count</dt>                    <dd >                        <p >The number of concurrent backup CSV files to maintain in a rotation ring, including              the currently active file. When a CSV file reaches its maximum size, it is renamed as              a backup file, and a new CSV file is opened for writing. Backup files older than the              size of the rotation ring are automatically removed.</p>                    </dd>                </dlentry>                <dlentry >                    <dt >Compress Backups</dt>                    <dd >                        <p >A check box used to select whether or not to compress backup files in the rotation              ring.</p>                    </dd>                </dlentry>            </dl>        </section>        <section id="section_N103F2_N1001F_N10001" >            <title >Retention Period</title>            <p >Performance samples are kept in the database for a limited period of time known as                the <term >retention period</term>. Its  default value is 86400 seconds, or 24                hours.</p>            <p >Click the <uicontrol >Edit Retention Period</uicontrol> button in the                    <uicontrol >Retention Period</uicontrol> tab to modify the current value. You                must ensure that the configured value is equal or higher than the period over which                you intend to gather statistics.</p>            <p >You can also control the retention period from the CLI. To view the current settings,                use the following command.</p>            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system pm-show</userinput></codeblock>            <p >To change the retention period from the CLI, use the following command syntax.</p>            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system pm-modify retention_secs=<varname >retention_period</varname></userinput></codeblock>            <p >For example:</p>            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system pm-modify retention_secs=172800</userinput></codeblock>            <note id="note_N1041B_N103CD_N1001F_N10001" >                <p >Changes to the retention period cause <b >250.001 Configuration                        out-of-date</b> alarms to be raised briefly for the controller                    nodes. During this period, the status <b >Config                        out-of-date</b> is displayed for the controller nodes on the                        <wintitle >Host</wintitle> tab of the <wintitle >Inventory</wintitle> pane.                    These alarms are resolved and cleared automatically after a few seconds.</p>            </note>        </section>    </body></topic>
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333645456" xml:lang="en-us">
+
+
+    <!-- Modification History
+
+
+   -->
+
+
+    <title >Resource Usage</title>
+
+
+    <shortdesc >Usage of system resources is monitored by Ceilometer, the standard
+
+
+        OpenStack mechanism for collecting and distributing performance monitoring samples from the
+
+
+        cluster. The HP Helion OpenStack Carrier Grade cluster extends Ceilometer with improved reports and new tools
+
+
+        to facilitate offline analysis of the collected data.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Pedro Sanchez</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <p >Performance Monitor (PM) samples are periodically collected from different
+
+
+            resources such as hosts, virtual machine instances, AVS, and others. They include CPU
+
+
+            and memory utilization, network traffic counters, storage space, and several more. By
+
+
+            default the samples are stored in a database which is used for reporting activities such
+
+
+            as:</p>
+
+
+        <ul id="ul_pfp_vlr_j4">
+
+
+            <li >
+
+
+                <p >command line queries and graphical charts</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >triggering of threshold alarms</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >triggering of threshold actions. The most common example is Heat actions to scale up and
+
+
+          down a resource.</p>
+
+
+            </li>
+
+
+        </ul>
+
+
+        <p >The Ceilometer database is periodically cleaned in order to contain its size and prevent the
+
+
+      overuse of storage resources on the controller nodes.</p>
+
+
+        <p >The Ceilometer implementation in HP Helion OpenStack Carrier Grade improves on several
+
+
+            aspects. They are described in the following sections.</p>
+
+
+        <section id="section_N10048_N1001C_N10001" >
+
+
+            <title >Optimized Ceilometer Filters</title>
+
+
+            <p >The Ceilometer implementation in HP Helion OpenStack Carrier Grade is specially tuned
+
+
+                to allow time-sensitive actions, such as Heat autoscaling, to take place in response
+
+
+                to relatively high-frequency sample rates of system events. The size of both the
+
+
+                Ceilometer database and the CSV files are maintained under control at all times,
+
+
+                while still enabling the required system actions to take place in real-time.</p>
+
+
+        </section>
+
+
+        <section id="section_N1006E_N1001C_N10001" >
+
+
+            <title >On-Line Ceilometer Reports</title>
+
+
+            <p >On-line, on-demand, Ceilometer reports in HP Helion OpenStack Carrier Grade benefit
+
+
+                from several improvements over the stock OpenStack reporting tool, including:</p>
+
+
+            <ul id="ul_lfg_pdz_j4">
+
+
+                <li >
+
+
+                    <p >optimized Ceilometer database queries</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >improved naming of menu entries on pull-down menus</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >use of brief meter descriptions and human-readable legends on
+
+
+                        the charts</p>
+
+
+                </li>
+
+
+            </ul>
+
+
+            <p >Additionally, all database queries are user-initiated, as opposed to event-initiated. This
+
+
+        provides a different user workflow, whereby all required report parameters and filters are
+
+
+        configured first, before the database query is executed</p>
+
+
+            <p >Access to Ceilometer reports is available from the <uicontrol >Stats</uicontrol> tab on the <wintitle >Resource
+
+
+                    Usage Overview</wintitle> page. This page can be accessed from the web
+
+
+                management interface by selecting the option <option >Resource
+
+
+                    Usage</option> on the <uicontrol >Admin</uicontrol> tab of the
+
+
+                system panel. The <uicontrol >Stats</uicontrol> tab is presented as
+
+
+                follows:</p>
+
+
+            <fig id="fig_N100B3_N1006E_N1001C_N10001" >
+
+
+                <image href="jow1404333641017.image" id="image_bsy_t3s_j4"  placement="inline" width="4in"/>
+
+
+            </fig>
+
+
+            <p >The following fields are available:</p>
+
+
+            <dl>
+
+
+                <dlentry >
+
+
+                    <dt >Metric</dt>
+
+
+                    <dd >
+
+
+                        <p >The Ceilometer metric you want to query. Metrics are
+
+
+                            grouped by service, as follows:</p>
+
+
+                        <ul id="ul_btj_sjs_j4">
+
+
+                            <li >
+
+
+                                <p >Compute (Nova)</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Network (Neutron)</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Image (Glance)</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Volume (Cinder)</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Switching (AVS)</p>
+
+
+                            </li>
+
+
+                        </ul>
+
+
+                        <p >On the CLI, use the following command to list the available metrics, and find their
+
+
+              resource IDs:</p>
+
+
+                        <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >ceilometer meter-list</userinput></codeblock>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >Value</dt>
+
+
+                    <dd >
+
+
+                        <p >The particular statistic you want to visualize. Select
+
+
+                            among <option >Average</option>, <option >Minimum</option>, <option >Maximum</option>, and <option >Summation</option>.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >Group by</dt>
+
+
+                    <dd >
+
+
+                        <p >How to group the displayed charts, as follows:</p>
+
+
+                        <dl>
+
+
+                            <dlentry >
+
+
+                                <dt >None</dt>
+
+
+                                <dd >
+
+
+                                    <p >The selected statistic is presented as a single line chart reporting the
+
+
+                    aggregate over all resources and projects (tenants).</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Projects (Tenants)</dt>
+
+
+                                <dd >
+
+
+                                    <p >The selected statistic is presented as a multiple line charts over all
+
+
+                    resources, one line per tenant.</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                            <dlentry >
+
+
+                                <dt >Resource</dt>
+
+
+                                <dd >
+
+
+                                    <p >The selected statistic is presented as a multiple line charts over all
+
+
+                    resources, one line per resource (hosts, instances, and so on).</p>
+
+
+                                </dd>
+
+
+                            </dlentry>
+
+
+                        </dl>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >Period</dt>
+
+
+                    <dd >
+
+
+                        <p >The period of time to be covered by the report. They
+
+
+                            include <option >last 15 minutes</option>, <option >last 30 minutes</option>, <option >last hour</option>, <option >last day</option>,
+
+
+                                <option >last week</option>, <option >last 15 days</option>, <option >last 30 days</option>, <option >last year</option>,
+
+
+                            and <option >other</option>. When selecting <option >other</option>, two new fields become available,
+
+
+                                <option >Date From</option> and <option >Date To</option>, allowing you to specify a
+
+
+                            specific time period.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >Metadata</dt>
+
+
+                    <dd >
+
+
+                        <p >Metadata represents additional attributes collected with a metric. In this menu, you
+
+
+              can select the specific attribute you want the report on.</p>
+
+
+                        <p >The pull-down menu is auto-populated with the corresponding attributes for the
+
+
+              selected metric. On the CLI, use the following command to list the metadata associated
+
+
+              with a metric identified with its resource ID:</p>
+
+
+                        <codeblock><systemoutput>~(keystone_admin)$ </systemoutput><userinput>ceilometer resource-show &lt;resource_id&gt;</userinput></codeblock>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >Filter</dt>
+
+
+                    <dd >
+
+
+                        <p >Use this field to limit the report to show metric samples whose metadata attribute
+
+
+              equals the specified value. The filter field is applied only when a specific metadata
+
+
+              attribute is selected.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+            </dl>
+
+
+            <p >Once the selections are in place, click the <option >Report</option> button to display the
+
+
+        report.</p>
+
+
+        </section>
+
+
+        <section id="section_N101AA_N1001C_N10001" >
+
+
+            <title >CSV Performance Monitoring Backend</title>
+
+
+            <p >HP Helion OpenStack Carrier Grade provides access to performance measurement samples in
+
+
+                the form of comma-separated values (CSV) files. They provide the following
+
+
+                benefits:</p>
+
+
+            <ul id="ul_dnc_dpz_j4">
+
+
+                <li >
+
+
+                    <p >off-line permanent storage of large samples history</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >enables the use of off-line tools for data analysis, accounting, and archiving</p>
+
+
+                </li>
+
+
+            </ul>
+
+
+            <p >The CSV files are expected to be retrieved from the controllers using any suitable file
+
+
+        transfer client application such as SFTP or SCP. This can be done manually by the system
+
+
+        administrator, or automatically by an operations and support server (OSS/BSS) configured
+
+
+        with the appropriate login credentials.</p>
+
+
+            <p >Recording of samples and management of CSV files is done through
+
+
+                special Ceilometer pipelines available from the <uicontrol >Pipelines</uicontrol> tab, as illustrated below:</p>
+
+
+            <fig id="fig_N101DC_N101AB_N1001C_N10001" >
+
+
+                <image href="jow1404333642494.image" id="image_dkk_ptz_j4"  placement="inline" width="6in"/>
+
+
+            </fig>
+
+
+            <p >The <b >csv</b> pipeline collects system information with the
+
+
+                exception of AVS switching meters. The latter are collected by the
+
+
+                    <b >vswitch_avg</b> pipeline.</p>
+
+
+            <p >Click the button <uicontrol >Update
+
+
+                    Settings</uicontrol> to configure the behavior of a pipeline. The <wintitle >Edit Pipeline</wintitle> window is presented as follows:</p>
+
+
+            <fig id="fig_N101F4_N101AB_N1001C_N10001" >
+
+
+                <image href="jow1404333644008.image" id="image_ckk_gvz_j4"  placement="inline" width="4in"/>
+
+
+            </fig>
+
+
+            <p >The following fields are available:</p>
+
+
+            <dl>
+
+
+                <dlentry >
+
+
+                    <dt >Name</dt>
+
+
+                    <dd >
+
+
+                        <p >A read-only field displaying the name of the pipeline</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >Meters</dt>
+
+
+                    <dd >
+
+
+                        <p >An editable field displaying the list of comma-separated
+
+
+                            meters included in the pipeline. The list must be enclosed in square
+
+
+                            brackets, as follows:</p>
+
+
+                        <codeblock ><userinput >[meter1,meter2,...]</userinput></codeblock>
+
+
+                        <p >The following syntax rules apply to the specified meters:</p>
+
+
+                        <ul id="ul_ipr_k42_1p">
+
+
+                            <li >
+
+
+                                <p >A meter specification is a text string of the form
+
+
+                                        <term >metergroup.metersubgroup.meter</term>, for example,
+
+
+                                        <userinput >disk.read.bytes</userinput></p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >A meter specification supports a trailing wild-card to include
+
+
+                                    all <term >meters</term> within a <term >metergroup</term>. For
+
+
+                                    example, the text <userinput >disk.*</userinput> matches the
+
+
+                                    meters <userinput >disk.read.bytes</userinput> and
+
+
+                                        <userinput >disk.write.bytes</userinput>.</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >A meter specification supports a trailing
+
+
+                                    wild-card to include all <term >metersubgroups</term> within a <term >metergroup</term>. For example, the text <userinput >disk.read.*</userinput> matches the meter
+
+
+                                        <userinput >disk.read.bytes</userinput>.</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Meter specifications support a leading exclamation mark to
+
+
+                                    exclude the specified meter, as follows:</p>
+
+
+                                <codeblock ><userinput >[!meter1,!meter2,...]</userinput></codeblock>
+
+
+                                <p >Such a pipeline includes all meters but the ones in the list.</p>
+
+
+                                <p >Exclamation marks cannot be applied selectively in a list of
+
+
+                                    meters. Either all meters use them or none at all. The following
+
+
+                                    list is therefore invalid:</p>
+
+
+                                <codeblock ><userinput >[meter1,!meter2,meter3]</userinput></codeblock>
+
+
+                            </li>
+
+
+                        </ul>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >Location</dt>
+
+
+                    <dd >
+
+
+                        <p >The absolute path to the CSV file on the controller.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >Enabled</dt>
+
+
+                    <dd >
+
+
+                        <p >A check box used to enable or disable the pipeline.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >Max Bytes</dt>
+
+
+                    <dd >
+
+
+                        <p >The maximum size, in bytes, of a CSV file. The default value is 10 MB.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >Backup Count</dt>
+
+
+                    <dd >
+
+
+                        <p >The number of concurrent backup CSV files to maintain in a rotation ring, including
+
+
+              the currently active file. When a CSV file reaches its maximum size, it is renamed as
+
+
+              a backup file, and a new CSV file is opened for writing. Backup files older than the
+
+
+              size of the rotation ring are automatically removed.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >Compress Backups</dt>
+
+
+                    <dd >
+
+
+                        <p >A check box used to select whether or not to compress backup files in the rotation
+
+
+              ring.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+            </dl>
+
+
+        </section>
+
+
+        <section id="section_N103F2_N1001F_N10001" >
+
+
+            <title >Retention Period</title>
+
+
+            <p >Performance samples are kept in the database for a limited period of time known as
+
+
+                the <term >retention period</term>. Its  default value is 86400 seconds, or 24
+
+
+                hours.</p>
+
+
+            <p >Click the <uicontrol >Edit Retention Period</uicontrol> button in the
+
+
+                    <uicontrol >Retention Period</uicontrol> tab to modify the current value. You
+
+
+                must ensure that the configured value is equal or higher than the period over which
+
+
+                you intend to gather statistics.</p>
+
+
+            <p >You can also control the retention period from the CLI. To view the current settings,
+
+
+                use the following command.</p>
+
+
+            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system pm-show</userinput></codeblock>
+
+
+            <p >To change the retention period from the CLI, use the following command syntax.</p>
+
+
+            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system pm-modify retention_secs=<varname >retention_period</varname></userinput></codeblock>
+
+
+            <p >For example:</p>
+
+
+            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system pm-modify retention_secs=172800</userinput></codeblock>
+
+
+            <note id="note_N1041B_N103CD_N1001F_N10001" >
+
+
+                <p >Changes to the retention period cause <b >250.001 Configuration
+
+
+                        out-of-date</b> alarms to be raised briefly for the controller
+
+
+                    nodes. During this period, the status <b >Config
+
+
+                        out-of-date</b> is displayed for the controller nodes on the
+
+
+                        <wintitle >Host</wintitle> tab of the <wintitle >Inventory</wintitle> pane.
+
+
+                    These alarms are resolved and cleared automatically after a few seconds.</p>
+
+
+            </note>
+
+
+        </section>
+
+
+    </body>
+
+
+</topic>
