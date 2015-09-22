@@ -259,8 +259,23 @@
             <li>Intel 82599 </li>
           </ul><p><b>Important:</b> Using the correct NICs is essential to proper installation of HP
             Helion OpenStack Carrier Grade.</p></li></ul>
-      
+     
+    <p><b><i>For a KVM with DCN cloud topology</i></b></p>
+      <p>If you are installing the KVM with DCN topology (using the <codeph>tahoe</codeph>
+        template), you need the following additional components:</p>
+    <p>
+      <ul>
+        <li>Two (2) <b>DCN hosts</b>. You must have: <ul>
+          <li>two (2) baremetal systems for DCN VSC controllers (HA mode) </li>
+          <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
+          <li>VRSvApp requirements VRSvApp must be installed. Please Refer to the DCN VSP 3.0 R7
+            installation Guide for VRSvApp installation. </li>
+        </ul><p>Refer to the DCN documentation for the supported hardware configurations.
+        </p><p><b>Note:</b> These systems are not required for a KVM-only cloud.</p></li></ul></p>
+     
     <p><b><i>For a KVM and ESX cloud topology</i></b></p>
+      <p>If you are installing the KVM + ESX topology (using the <codeph>memphis</codeph> template),
+        you need the following additional components:</p>
     <p>
         <ul id="ul_s3d_pmx_dt">
           <li>Two (2) <b>ESX hosts</b>. You must have a minimum of two (2) baremetal systems for
