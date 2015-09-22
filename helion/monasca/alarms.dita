@@ -64,6 +64,26 @@
                 <entry>process crashed</entry>
                 <entry>Restart process on affected node. Review logs.</entry>
               </row>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>
+                  <p>service=telemetry and used with hostname of one of the controller </p>
+                </entry>
+                <entry>Ceilometer API</entry>
+                <entry>Restart apache on affected node. Review logs.</entry>
+              </row>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>component=ceilometer-api </entry>
+                <entry>Ceilometer API on admin VIP</entry>
+                <entry><p>If this occurs with http_status in error on all nodes then restart apache
+                    on all controllers.</p>
+                  <p>If this occurs with a specific host with http_status in non error for telemetry
+                    then it should be a haproxy issue and it needs to be restarted.</p>
+                  <p>For further troubleshooting you can look into the Ceilometer access log in the
+                    Ceilometer log directory for ceilometer_modwsgi file and ceilometer api
+                    logs.</p></entry>
+              </row>
             </tbody>
           </tgroup>
         </table></p>
@@ -407,8 +427,20 @@
             <tbody>
               <row>
                 <entry>HTTP Status</entry>
-                <entry>component-keystone-api</entry>
+                <entry>component=keystone-api,api_endpoint=public</entry>
                 <entry>API is unresponsive</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>component=keystone-api,api_endpoint=admin</entry>
+                <entry>API is unresponsive</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>HTTP Status</entry>
+                <entry>component=keystone-api,monitored_host_type=vip</entry>
+                <entry>API is unresponsive on each node</entry>
                 <entry/>
               </row>
               <row>
@@ -421,6 +453,12 @@
                 <entry>Process Check</entry>
                 <entry>process_name=keystone-admin</entry>
                 <entry>Process crashed</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Host alive Check</entry>
+                <entry>hostname=***</entry>
+                <entry>Host is halt or SSH service down</entry>
                 <entry/>
               </row>
             </tbody>
@@ -892,13 +930,24 @@
                 <entry>HTTP Status</entry>
                 <entry>service=ops-console</entry>
                 <entry>The Operations Console is unresponsive</entry>
-                <entry/>
+                <entry><p>Review logs in <codeph>/var/log/ops-console</codeph> and logs in
+                      <codeph>/var/log/apache2</codeph>. Restart ops-console by running the
+                    following commands on the deployer:</p>
+                  <codeblock>
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ops-console-stop.yml 
+ansible-playbook -i hosts/verb_hosts ops-console-start.yml</codeblock></entry>
               </row>
               <row>
                 <entry>Process Check</entry>
                 <entry>process_name=leia-leia_monitor</entry>
-                <entry>Process crashed</entry>
-                <entry/>
+                <entry>Process crashed or unresponsive</entry>
+                <entry><p>Review logs in <codeph>/var/log/ops-console</codeph>. Restart ops-console
+                    by running the following commands on the deployer:</p>
+                  <codeblock>
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ops-console-stop.yml 
+ansible-playbook -i hosts/verb_hosts ops-console-start.yml</codeblock></entry>
               </row>
             </tbody>
           </tgroup>
