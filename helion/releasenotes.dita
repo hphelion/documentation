@@ -7,17 +7,28 @@
         tmtype="reg">OpenStack</tm> 2.0 Beta 2, including known issues and workarounds for this
       release:</p>
     <section id="Features"><title>Features in HP Helion OpenStack 2.0 Beta 2</title>
-      <p><b>New GUI Installer</b></p> HP Helion OpenStack 2.0 Beta 2 introduces a GUI installer for
-      configuring and installing OpenStack and OpenStack services. It provides an easy way to
-      populate the configuration files needed to define the <xref href="input_model.dita">Input
-        Model</xref>, and uses them to configure and install your cloud. <p><b>Dedicated Deployer
-          Node No Longer Required</b></p>
-      <p>You can use a dedicated deployer node or you can run the installation on your first
-        controller node. There is only one difference in the steps and that is in your
-          <codeph>baremetalConfig.yml</codeph> file that you fill out as part of the configuration
-        process. A note about this step can be found on the Installation page under the <xref
-          href="bare_installation_kvm.dita#install_kvm/Configuration">Configure Your
-          Environment</xref> section.</p>
+      <p><b>New GUI Installer</b></p>
+      <p>HP Helion OpenStack 2.0 Beta 2 introduces a GUI installer for configuring and installing
+        OpenStack and OpenStack services. It provides an easy way to populate the configuration
+        files needed to define the <xref href="input_model.dita">Input Model</xref>, and uses them
+        to configure and install your cloud.</p>
+      <p><b>Dedicated Deployer Node No Longer Required</b></p>
+      <p>You can now use either a dedicated deployer node or setup the deployer on your first
+        controller node. If you choose to use your first controller node as your deployer, ensure
+        that your <codeph>baremetalConfig.yml</codeph> file contains the <codeph>is_deployer:
+          true</codeph> notation in the options. If you are using a dedicated deployer node you can
+        omit this. Here is an example snippet of a <codeph>baremetalConfig.yml</codeph> file where a
+        user is using their first controller node as their deployer:
+        <codeblock>
+node_name: "ccn-0001"
+role: "ROLE-CONTROLLER"
+pxe_mac_addr: "b2:72:8d:ac:7c:6f"
+pxe_interface: "eth2"
+pxe_ip_addr: "192.168.10.3"
+ilo_ip: "192.168.9.3"
+ilo_user: "admin"
+ilo_password: "password"
+<b>is_deployer: true</b></codeblock></p>
       <p><b>Local Git repository for config tracking</b></p>
       <p>In HP Helion OpenStack 2.0, a local git repository is used to track configuration changes
         and for the config processor to gather configuration settings from. The operations work as

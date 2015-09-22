@@ -66,7 +66,23 @@
         <li>The configuration files for editing are available at
             <codeph>~/helion/my_cloud/definition/</codeph>. Refer to the <b><xref
               href="input_model.dita">Helion OpenStack 2.0 Input Model</xref></b> document for
-          assistance with the configuration files.</li>
+          assistance with the configuration files. <note type="important">If you chose to use your
+            first controller node as your deployer, ensure that your
+              <codeph>baremetalConfig.yml</codeph> file contains the <codeph>is_deployer:
+              true</codeph> notation in your controller options. If you are using a dedicated
+            deployer node you can omit this. Here is an example snippet of a
+              <codeph>baremetalConfig.yml</codeph> file where a user is using their first controller
+            node as their deployer:
+            <codeblock>
+node_name: "ccn-0001"
+role: "ROLE-CONTROLLER"
+pxe_mac_addr: "b2:72:8d:ac:7c:6f"
+pxe_interface: "eth2"
+pxe_ip_addr: "192.168.10.3"
+ilo_ip: "192.168.9.3"
+ilo_user: "admin"
+ilo_password: "password"
+<b>is_deployer: true</b></codeblock></note></li>
         <li>Modify the <codeph>~/helion/hos/ansible/hlm-deploy.yml</codeph> to uncomment the line
           containing <codeph>eon-deploy.yml</codeph>.</li>
         <li>Modify the <codeph>neutron.conf.j2</codeph> at

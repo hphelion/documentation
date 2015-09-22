@@ -13,8 +13,9 @@
             Checklist</xref> that should help with the recommended pre-installation tasks.</li>
         <li>Ensure the <xref href="hardware.dita">minimum hardware requirements</xref> are met in
           your environment.</li>
-        <li>There is no longer a requirement a requirement to use a dedicated deployer node.  See
-          the note in the <xref href="#install_kvm/DeployerInstall">Deployer setup</xref> section for details.</li>
+        <li>There is no longer a requirement a requirement to use a dedicated deployer node. See the
+          note in the <xref href="releasenotes.dita">Release Notes</xref> as well as the
+          configuration section in the install steps below for details.</li>
         <li>There is no requirement to have a dedicated network for OS-install and system
           deployment. More information can be found on the <xref href="supportedconfigs.dita"
             >Supported Configuration</xref> page.</li>
@@ -64,7 +65,7 @@
     <section id="DeployerInstall">
       <title>Set up the Deployer</title>
       <p>You can use a dedicated deployer node or you can run these instructions on your first
-        controller node.  There is only one difference in the steps and that is notated in the <xref
+        controller node. There is only one difference in the steps and that is notated in the <xref
           href="#install_kvm/Configuration">Configure Your Environment</xref> section.</p>
       <ol>
         <li>Download the HP Helion OpenStack Deployer ISO from the <xref
@@ -167,8 +168,8 @@ git add -A
 git commit -m "My config or other commit message"
 </codeblock>
           <note>This step needs to be repeated any time you make changes to your configuration files
-            before you move onto the following steps. See <xref href="using_git.dita">Using Git for Configuration Management</xref> for
-              more information.</note></li>
+            before you move onto the following steps. See <xref href="using_git.dita">Using Git for
+              Configuration Management</xref> for more information.</note></li>
       </ol>
     </section>
     <section id="CobblerDeploy">
