@@ -106,14 +106,14 @@ ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
           <li>Copy VSA section, uncomment it, and modify the values in the
               <codeph>cinder.conf.j2</codeph> file as shown in the following
               example:<codeblock id="vssa-config">[vsa-1]
-hplefthand_password: stack
-hplefthand_clustername: hlm003-vsa-cluster
-hplefthand_api_url: https://10.241.103.7:8081/lhos
-hplefthand_username: stack
+hplefthand_password: &lt;password given during cluster creation>
+hplefthand_clustername: &lt;VSA cluster name>
+hplefthand_api_url: https://&lt;store virtual virtual ip>:8081/lhos
+hplefthand_username: &lt;username given during cluster creation>
 hplefthand_iscsi_chap_enabled: true
-volume_backend_name: vsa-backend-hlm003
+volume_backend_name: &lt;volume backend name>
 volume_driver: cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
-hplefthand_debug: false</codeblock><note>
+hplefthand_debug: false</codeblock><p><!--where,<ul id="ul_swt_2mb_lt"><li>hplefthand_password :  Password given during cluster creation.</li><li>hplefthand_clustername: Name of the VSA cluster.</li><li>hplefthand_api_url: Virtual IP of Store Virtual.</li><li>hplefthand_username: Username given during cluster creation.</li><li>hplefthand_iscsi_chap_enabled : </li><li>volume_backend_name: Name of the backend.</li><li>volume_driver</li><li>hplefthand_debug</li></ul>--></p><note>
               Please enter the parameter values which are specific to your environment. </note></li>
           <li>Commit your configuration to a <xref href="../../using_git.dita#topic_u3v_1yz_ct"
               >local
