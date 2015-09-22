@@ -173,11 +173,10 @@
         <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
       </ul>
       <p><b>Operations Console (Ops Console)</b></p>
-      <p>The Operations Console is available on port 9095 on the first controller node IP. There are some
-        limitations to note and they are listed below by menu option in the console:</p>
+      <p>The Operations Console is available on port 9095 on the first controller node IP. There are
+        some limitations to note and they are listed below by menu option in the console:</p>
       <ul>
-        <li>Dashboard 
-          <ul>
+        <li>Dashboard <ul>
             <li>There are two notification sections for the Storage services. The one in the upper
               left is the Compute service mislabeled as Storage.</li>
             <li>The New Alarms section uses the UTC timezone to determine timeframes regardless of
@@ -196,6 +195,10 @@
         <li>Alarms <ul>
             <li>The tile view of alarms with lengthy dimensions does not render cleanly.</li>
           </ul></li>
+        <li>Compute Instances <ul>
+            <li>Compute instance utilization metrics are not available in Beta 2</li>
+          </ul>
+        </li>
         <li>Networking - Alarm Summary <ul>
             <li>Alarms may be limited to only those with the dimension "service=networking".</li>
           </ul></li>
