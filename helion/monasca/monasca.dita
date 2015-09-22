@@ -94,7 +94,11 @@
       <p>The Operations Console (Ops Console) is designed for Helion OpenStack Administrators to
         have a web-based UI that they can use to operate and manage the Helion OpenStack
         environment.</p>
-      <p>It can be accessed on port 9095 on the control plane IP.</p>
+      <p>To determine which IP address to use to access the Operations Console you can use this
+        command from your deployer: <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock></p>
+      <p>The output of that command will show you the VIP you should use. It is listening over port
+        9095 on that VIP, so you can use the following syntax to access
+        it:<codeblock>http://VIP:9095</codeblock></p>
       <p>For details on the use of the Operations Console, see <xref href="opsconsole/overview.dita"
           >Operations Console Overview</xref></p>
       <b>Command-Line Interface</b>

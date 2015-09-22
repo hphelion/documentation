@@ -285,16 +285,18 @@
       <p>There are two ways to access Kibana:</p>
       <ul>
         <li>Through the <b>Logging Dashboard</b> option in the Operations Console</li>
-        <li>Direct link via port 5601 on the control plane IP</li>
+        <li>Direct link via port 5601 on the Horizon VIP address</li>
       </ul>
       <p>Details:</p>
-      <p><b>Operations Console method</b> - Launch a web browser on the control plane host to the
-        following IP address, using the control plane IP address from the end of the install:</p>
-      <codeblock>http://&lt;control plane IP&gt;:9095</codeblock>
+      <p><b>Operations Console method</b> - Access the <xref
+          href="../monasca/monasca.dita#monitoring/working" type="section">Operations
+        Console</xref>.</p>
       <p>Navigate to the <b>Logging Dashboard</b> via the menu.</p>
-      <p><b>Direct Access method</b> - Launch a web browser on the control plane host to the
-        following IP address, using the control plane IP address from the end of the install:</p>
-      <codeblock>http://&lt;control plane IP&gt;:5601</codeblock>
+      <p><b>Direct Access method</b> - From either your deployer or controller node, run the
+        following command to find your Horizon VIP:</p>
+      <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock>
+      <p>Access to Kibana will be over port 5601 of your Horizon VIP address. Example:</p>
+      <codeblock>http://&lt;VIP&gt;:5601</codeblock>
       <b>Login Credentials</b>
       <p>Log in with these credentials:</p>
       <ul>
