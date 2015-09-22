@@ -99,7 +99,7 @@
       </p>
 </section>
 <section id="step-1-create-a-glazier-virtual-machine"> <title>Step 1: Create a Glazier Virtual Machine</title>
-<p>This VM is used to create the images for the guest OS.</p>
+<p>This VM is used to create the images for the guest operating system.</p>
 <ol>
 <li>Open Terminal and change to the Glazier directory where you extracted the tool.</li>
 <li> Run the <codeph>create-glazier</codeph> command (To verify your parameters before starting the

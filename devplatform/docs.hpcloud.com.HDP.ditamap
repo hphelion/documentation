@@ -172,7 +172,7 @@
         <topicref href="2.0/helion/user/deploy/languages/ruby.dita" locktitle="yes"
           navtitle="Ruby"/>
       </topichead>
-      <topicref href="2.0/cue_dev_overview.dita" navtitle="Messaging" locktitle="yes"/>
+      <topicref href="2.0/messaging/cue_dev_overview.dita" navtitle="Messaging" locktitle="yes"/>
       <topicref href="2.0/helion/user/reference/environment.dita" locktitle="yes"
         navtitle="Environment Variables "/>
     

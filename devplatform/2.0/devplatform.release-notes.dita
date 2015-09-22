@@ -184,8 +184,8 @@
           on a target created with a previous version of ALS. Application names are strings, must
           not be mistaken for object. For S3 targets we additional check the class of the object. </li>
         <li>[104626] Only for Windows, added a 1s delay between closing the temp file used by
-          command "create-buildpack" and its deletion. Done to avoid the OS race where we try to
-          delete the file while it is not yet unlocked. Small tweaks to the progress reporting. </li>
+          command "create-buildpack" and its deletion. Done to avoid a race where we try to delete
+          the file while it is not yet unlocked. Small tweaks to the progress reporting. </li>
         <li>[105748] Suppress SSL warnings for quiet commands like ssh, scp, etc., and when --json
           is given, to prevent interference with scripted use of this data. </li>
         <li>[104652] Drop ".exe" extension from the application name shown in the help. </li>

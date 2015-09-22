@@ -12,8 +12,10 @@
       <li>Manage a Cluster from the Command Line</li>
       <li>Write an App for RabbitMQ </li>
       <li>Best Practices for RabbitMQ</li>
-      <li>Using the Python API</li>
-      <li>REST API Docs</li>
+      <li><xref href="http://python-cueclient.readthedocs.org/en/latest/python-bindings.html"
+          format="html" scope="external">Using the Python API</xref></li>
+      <li><xref href="http://cue.readthedocs.org/en/latest/rest.html" format="html" scope="external"
+          >REST API Docs</xref></li>
     </ul>
   </body>
 </topic>
