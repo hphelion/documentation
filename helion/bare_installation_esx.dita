@@ -177,13 +177,34 @@ git commit -m "My config"</codeblock></li>
 | id         | BC9DED4E-1639-481D-B190-2B54A2BF5674 |
 | ip_address | 10.1.200.41                          |
 | name       | vc01                                 |
-| password   | &lt;password>                          |
+| password   | &lt;SANITIZED>                          |
 | port       | 443                                  |
 | type       | vcenter                              |
 | updated_at | 2015-08-20T12:08:09.000000           |
 | username   | administrator@vsphere.local          |
 +------------+--------------------------------------+</codeblock></p></li>
       </ol></p>
+    <section><b>Show vCenter</b><ol id="ol_wh5_rsb_lt">
+        <li>Show vCenter using EON python
+              client.<codeblock># eon vcenter-show &lt;vCenter ID></codeblock><p><b>Sample
+              Output:</b><codeblock><codeph># eon vcenter-show &lt;BC9DED4E-1639-481D-B190-2B54A2BF5674 ></codeph>
++------------+--------------------------------------+
+| Property   | Value                                |
++------------+--------------------------------------+
+| created_at | 2015-08-20T12:08:09.000000           |
+| datacenters| DC1                                  |
+| deleted    | False                                |
+| deleted_at | None                                 |
+| id         | BC9DED4E-1639-481D-B190-2B54A2BF5674 |
+| ip_address | 10.1.200.41                          |
+| name       | vc01                                 |
+| password   | &lt;SANITIZED>                          |
+| port       | 443                                  |
+| type       | vcenter                              |
+| updated_at | 2015-08-20T12:08:09.000000           |
+| username   | administrator@vsphere.local          |
++------------+--------------------------------------+</codeblock></p></li>
+      </ol></section>
     <p id="register-network"><b>Register ESX Cloud Network Configuration</b></p>
     <p>This involve getting a sample network information template. Fill the details of the template
       and use that template to register cloud network configuration for the vCenter.</p>
@@ -196,20 +217,23 @@ git commit -m "My config"</codeblock></li>
             below:<codeblock>{
     "network": {
         # Deployer Network details
+        # This network should be reachable from the Deployer node
         "deployer_network": {
             #Deployer Portgroup Name.
             "deployer_pg_name": "hlm-Deployer-PG",
 
             #VLAN id for Deployer Portgroup
-            "deployer_vlan": "1702",
+            "deployer_vlan": "33",
 
             #Enable DHCP for Deployer N/W
             "enable_deployer_dhcp": "no",
 
-            #CIDR and gateway for deployer network
-            "deployer_cidr": "172.170.2.0/24",
-            "deployer_gateway_ip": "172.170.2.1",
-            "deployer_node_ip": "172.170.1.10"
+            #CIDR and gateway for deployer network only when static
+            "deployer_cidr": "10.20.18.0/23",
+            "deployer_gateway_ip": "10.20.18.1",
+
+            #Deployer Node's PXE IP Address
+            "deployer_node_ip": "10.20.16.2"
         },
 
         #Management Network details
@@ -218,13 +242,21 @@ git commit -m "My config"</codeblock></li>
             "mgmt_dvs_name": "hlm-Mgmt",
 
             #Physical NIC name for Mgmt DVS
-            "mgmt_nic_name": "vmnic1",
+            "mgmt_nic_name": "vmnic3",
 
             #Mgmt Portgroup Name.
             "mgmt_pg_name": "hlm-Mgmt-PG",
 
             #Interface order: Example eth1
-            "mgmt_interface_order": "eth1"
+            "mgmt_interface_order": "eth1",
+
+            "active_nics": "",
+
+            "load_balancing": "1",
+
+            "network_failover_detection": "1",
+
+            "notify_switches": "yes"
         },
 
         "data_network": {
@@ -233,7 +265,7 @@ git commit -m "My config"</codeblock></li>
 
             "data_dvs_name": "hlm-Data",
 
-            "data_nic_name": "vmnic2",
+            "data_nic_name": "vmnic2, vmnic1",
 
             #Data Portgroup Name.
             "data_pg_name": "hlm-Data-PG",
@@ -279,8 +311,8 @@ git commit -m "My config"</codeblock></li>
     },
 
     "template": {
-        #Provide the template/appliance name that will be used for cloning
-        "template_name": "hlm-shell-vm"
+        #Provide the template/appliance name that will be used for cloning Computeproxy and OVSvApp VMs
+        "template_name": "hlm-template"
     },
 
     "vmconfig": {
@@ -291,23 +323,22 @@ git commit -m "My config"</codeblock></li>
         "memory_in_mb": "4096",
 
         #SSH public key content for OVSvAPP/Computeproxy password less login.
-        "ssh_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCbSGs9OeJofAp7oHrztyAWX5LKK8ZSyLjRbmPwDls0qu+obWxRi7vJF9SdRgOB44zoLyRT2i5DC9Vz3sg4zshygLdg9qwtyTKS5N0Qi+R8D5rnbCAPGiU7eTu3jpgVy/xJOuCo6u1TQm2zA8epsSisqjtg6o36gZNvVcOE8XBYr92Dc3wFncjCh+Ej+X2WsKQHiais2fgCME1g4bj2r2E4+8oTiL/g5bhrhl1fSwQZPAMc2WO18Eyum3ItHpD9stxr3OgEpR0sqk2piUasgT5lc4x9NGqa0RZgtbrEVjATBCdF6EOrxEAlfAf6mMQ6/qWzx9SDeD4dyDa4Y+P+Letp stack@hlm"
+        "ssh_key": "&lt;deployer-ssh-pub-key-contents>"
     },
         # Do you want to skip inactive or maintenance mode hosts ?
     "skip_inactive_hosts": "yes",
         # Provide new host mo ids when you are adding a new host in an activated cluster.
     "new_host_mo_ids": ""
-}
-</codeblock></p></li>
+}</codeblock></p></li>
         <li>Modify the template (json file) as per your
             environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
             example:<codeblock>vi net_conf.json</codeblock></p></li>
         <li>Use the template to register Cloud Network Configuration. This sets the network
           information for a vCenter which is used to deploy and configure compute proxy and OVSvAPP
           VMs during the cluster activation.
-            <codeblock><codeph># eon set-network-info --vcenter-id &lt;vCenter ID> --config-json &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
+            <codeblock><codeph># eon set-network-info --vcenter-id &lt;vCenter ID> --datacenter-name &lt;datacenter name> --config-json &lt;NETWORK_CONF_FILENAME></codeph></codeblock><p>For
             example:
-            <codeblock># eon set-network-info --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --config-json net_conf.json</codeblock></p><p>
+            <codeblock># eon set-network-info --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter DC1 --config-json net_conf.json</codeblock></p><p>
             <note>The vcenter ID is generated when you execute the above (<b>step 2</b>)
               command.</note>
           </p></li>

@@ -353,19 +353,22 @@ ring-specifications:
            name: os</codeblock></section>
     <section id="disks-osd"
         ><b>disks_osd.yml</b><p><!--Copy <codeph>disk_osd.yml</codeph> file without modification.--></p><p>Ceph
-        OSD needs to disk for data disks which is expressed using disk_osd.yml. disks_osd.yml is per
-        node type and used to express disks being used for OS and data. Every OSD needs to have
-        minimum three disks. However, in general each OSD nodes will have three sets of disks based
-        on usages:</p><p> </p><ol id="ol_qpr_jnb_lt">
+        OSD needs disk for data disks which is expressed using <codeph>disk_osd.yml</codeph>.
+          <codeph>disks_osd.yml</codeph> is per node type and used to express disks being used for
+        OS and data. Every OSD needs to have minimum three disks. However, in general each OSD nodes
+        will have three sets of disks based on usages:</p><ol id="ol_qpr_jnb_lt">
         <li>Systems disks used for OS, logging etc. Minimum count it 2</li>
         <li>Data disks. Minimum count is 1</li>
         <li>Journal disks. Minimum count is 0. If you do not configure journal disks for a disks
           then a partition of data disk is used as journal disk.</li>
-      </ol><p> </p><p>Sets of OSD disks are mapped to journal disks. The below example illustrates
-        the above configuration with 7 disks, where </p><p> </p><ol id="ol_g5r_jnb_lt">
-        <li>sda, sdb have been used as system disks</li>
-        <li>sdc, sde and sdf have been used as data disks</li>
-        <li>sdd (for sdc data disk) and sdg (for sde and sdf data disks) have been used as journal
+      </ol><p>Sets of OSD disks are mapped to journal disks. The below example illustrates the above
+        configuration with 7 disks, where </p><ol id="ol_g5r_jnb_lt">
+        <li>
+          <codeph>sda</codeph>, <codeph>sdb</codeph> are used as system disks</li>
+        <li><codeph>sdc</codeph>, <codeph>sde</codeph> and <codeph>sdf</codeph> are used as data
+          disks</li>
+        <li><codeph>sdd</codeph> (for <codeph>sdc</codeph> data disk) and <codeph>sdg</codeph> (for
+            <codeph>sde</codeph> and <codeph>sdf</codeph> data disks) have been used as journal
           disks</li>
       </ol><p>The example file is as
         follows:<codeblock>---
