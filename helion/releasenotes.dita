@@ -11,7 +11,8 @@
       <p>HP Helion OpenStack 2.0 Beta 2 introduces a GUI installer for configuring and installing
         OpenStack and OpenStack services. It provides an easy way to populate the configuration
         files needed to define the <xref href="input_model.dita">Input Model</xref>, and uses them
-        to configure and install your cloud.</p>
+        to configure and install your cloud.</p><p>Note that in Beta 2, the GUI does not have final
+        help text and has placeholder text on screens.</p>
       <p><b>Dedicated Deployer Node No Longer Required</b></p>
       <p>You can now use either a dedicated deployer node or setup the deployer on your first
         controller node. If you choose to use your first controller node as your deployer, ensure
