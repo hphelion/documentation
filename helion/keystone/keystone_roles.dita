@@ -3,7 +3,7 @@
 <topic id="topic_iq3_nl3_bt">
   <title>Domains, Projects, Users, Groups, and Roles</title>
   <body>
-    <section>
+    <section id="domains_projects_roles">
       <title>Domains, Projects, Users, Groups, and Roles</title>
       <p>Most large business organizations use an identity system such as Microsoft Active Directory
         to store and manage their internal user information. A variety of applications such as HR
@@ -31,7 +31,7 @@
         "abc" domain would be authenticated against the authentication system provided by the ABC
         organization; in this case ldap://ad.abc.com </p>
     </section>
-    <section>
+    <section id="domains">
       <title>Domains</title> A domain is a top-level container targeted at defining major
       organizational entities. <ul>
         <li> Domains can be used in a multi-tenant OpenStack deployment to segregate projects and
@@ -58,7 +58,7 @@
         <li>Domain admins can be any UserID inside or outside of the domain.</li>
       </ul>
     </section>
-    <section>
+    <section id="domain_admin">
       <title>Domain Administrator</title> A UID is a domain administrator for a given domain if that
       UID has a domain-scoped token scoped for the given domain. This means that the UID has the
       "admin" role assigned to it for the selected domain. <ul>
@@ -95,7 +95,7 @@
           would know the specific UID and would not need to list users from an external domain.</li>
       </ul>
     </section>
-    <section>
+    <section id="projects">
       <title>Projects</title> The domain administrator creates projects within his assigned domain
       and assigns the project admin role to each project to a selected UID. A UID is a project
       administrator for a given project if that UID has a project-scoped token scoped for the given
@@ -104,7 +104,7 @@
       the assigned project. 
       Users can be belong to multiple projects and have different roles on each project. 
       Users are assigned to a specific domain and a default project. Roles are assigned per project. </section>
-    <section>
+    <section id="users_groups">
       <title>Users and Groups</title> Each user belongs to one domain only. Domain assignments are
       defined either by the domain configuration files or by a domain administrator when creating a
       new, local (user authenticated against Keystone) user. There is no current method for "moving"
@@ -115,7 +115,7 @@
       projects within a domain and have different roles assigned to the group per project. A group
       can be assigned the "admin" role for a domain or project. All members of the group will be an
       "admin" for the selected domain or project. </section>
-    <section>
+    <section id="roles">
       <title>Roles</title>
       <p>Service roles represent the function used to implement the OpenStack role based access
         control, or RBAC, model used to manage access to each OpenStack service. Roles are named and
@@ -125,10 +125,10 @@
         that user for a particular project. When a user attempts to access a specific OpenStack
         service the role is parsed by the service, compared to the service-specific policy file, and
         then granted the resource access defined for that role by the service policy
-        file.</p><p>Each service has its own service policy file with the
-        /etc/[SERVICE_CODENAME]/policy.json file name format where [SERVICE_CODENAME] represents a
-        specific OpenStack service name. For example, the OpenStack Nova service would have a policy
-        file called /etc/nova/policy.json.</p><p>Helion OpenStack is deployed with 3 redundant
+        file.</p><p>Each service has its own service policy file with the <b>/etc/[SERVICE_CODENAME]/policy.json</b>
+        file name format where [SERVICE_CODENAME] represents a specific OpenStack service name. For
+        example, the OpenStack Nova service would have a policy file called
+          <b>/etc/nova/policy.json</b>.</p><p>Helion OpenStack is deployed with 3 redundant
         control plane servers. If modified, the policy files for each service need to be replicated
         in each control plane server. Service restarts are NOT required for policy file changes.</p>
     </section>

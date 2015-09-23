@@ -13,6 +13,11 @@
     <section>While the UI app does more than simply popoulate the configuration files that the
       configuration processor uses as input to its processses, it does populate them. Therefore you
       can inspect the files whenever you like, or before reconfiguing your cloud. </section>
+    <section>Note, however, that  if you decide to look at or try to modify configuration files
+      during the process, none of your values are actually written to the configuration files until
+      you cick the Deploy button at the end of the process. That would mean too that if you were to
+      try to change anything in the files themselves mid process, the values would get overwritten
+      by values you have entered in the GUI before cicking the Deploy button.</section>
     <section>These YAML configuration files are now stored in a local git repository as well, as
       explained in <xref href="using_git.dita#topic_u3v_1yz_ct">Using git for Configuration
         Manangement</xref>. </section>

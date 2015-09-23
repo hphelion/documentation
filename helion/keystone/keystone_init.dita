@@ -3,13 +3,13 @@
 <topic id="topic_qmz_fg3_bt">
   <title>Initial Configuration of Keystone</title>
   <body>
-    <section><p>Keystone is a vital part of HP Helion OpenStack&#174;, and as such it is installed automatically
+    <section id="intro"><p>Keystone is a vital part of HP Helion OpenStack&#174;, and as such it is installed automatically
         by the Helion OpenStack installer (just after MySQL and RabbitMQ). The recommended way of
         installing Keystone is to allow the installer to install it with the default configuration.
         Once your cloud is up and running, you can customize Keystone in a number of ways, including
         integration with LDAP servers. </p>
     </section>
-    <section><title>Default Settings</title>
+    <section id="settings"><title>Default Settings</title>
       <b>Keystone Configuration Settings</b> The Keystone identity service configuration options are
       described in the OpenStack documentation on the <xref
         href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
@@ -44,7 +44,7 @@
         token scoped to the <i>default</i> domain via the Keystone v3 identity API. These settings
         are preconfigured in the <i>keystone.osrc</i> file. </p></section>
 
-    <section> Here are some examples:
+    <section id="examples"> Here are some examples:
       <codeblock>
       
 # Set environment variables needed for Keystone administration

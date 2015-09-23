@@ -20,8 +20,8 @@
             <!--permalink: /helion/openstack/1.1/services/reporting/bestpractices/--></p>
         <p>Configuration changes that improve reporting API and database responsiveness by keeping
             data storage to a reasonable level.</p>
-     
-        <section id="ceilandnova">
+
+        <section id="ceilometer_nova">
             <title>Nova</title>
             <p>Nova can send notifications related to its usage and VM status simply enabling it
                 from its configuration file.</p>
@@ -175,12 +175,12 @@ Listen &lt;ipaddress>:8777
                 threads for each process is also recommended: <codeblock>threads=5</codeblock>
             </note>
         </section>
-        <section><title>Add softlink for config file</title>
-            <p>Next, create/add a softlink for the ceilometer.conf in the /etc/apache2/sites-enabled
-                folder.</p>
+        <section id="add_soft_link"><title>Add softlink for config file</title>
+            <p>Next, create/add a softlink for the ceilometer.conf in the
+                    <b>/etc/apache2/sites-enabled</b> folder.</p>
             <codeblock>ln -s /etc/apache2/sites-available/ceilometer.conf /etc/apache2/sites-enabled</codeblock>
         </section>
-        <section><title>Reload Apache2</title>
+        <section id="reload_apache"><title>Reload Apache2</title>
             <p>For the changes to take effect, the apache2 service needs to be reloaded. This
                 ensures that all the configuration changes are considered and the service has
                 applied them. The system administrator can change the configuration of processes and
@@ -188,13 +188,13 @@ Listen &lt;ipaddress>:8777
                 the apache2 service is the following:</p>
             <codeblock>sudo service apache2 reload</codeblock>
         </section>
-        <section><title>Verification</title>
+        <section id="verification"><title>Verification</title>
             <p>Once the Apache2 service has been reloaded it is possible to make sure that the
                 Ceilometer APIs are running and able to receive incoming traffic. </p>
             <p>The Ceilometer APIs are listening on port 8777. The verification can be performed
                 using the following command:</p>
             <codeblock>ps -ef | grep apache</codeblock> This should generate output showing Apache2
-            w/Ceilometer Running Instances, similar to the following if everything is in order: <codeblock>ceilome+ 31430 31427 10 16:29 ? 00:02:40 /usr/sbin/apache2 -k start
+            with Ceilometer Running Instances, similar to the following if everything is in order: <codeblock>ceilome+ 31430 31427 10 16:29 ? 00:02:40 /usr/sbin/apache2 -k start
 ceilome+ 31431 31427 10 16:29 ? 00:02:41 /usr/sbin/apache2 -k start
 ceilome+ 31432 31427 10 16:29 ? 00:02:42 /usr/sbin/apache2 -k start
 ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start</codeblock>
@@ -207,12 +207,13 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start</codeblock>
             <note>If Ceilometer fails to deploy, check the proxy setting, and unset https_proxy
                 http_proxy HTTP_PROXY HTTPS_PROXY</note>
         </section>
-        <section><title>Notification White-listing and Polling Strategies</title>
+        <section id="notification_strategy"><title>Notification Whitelisting and Polling
+                Strategies</title>
             <p>In HP Helion 2.0 we have adopted a strategy to reduce the amount of data that is sent
                 to the storage. The main reason is that we are currently using a SQL based cluster
                 that is not highly indicated for big data. Ceilometer can be controlled for the data
-                that collects using the pipeline.yaml file. This configuration file is located in
-                the /etc/ceilometer folder in any of the controller nodes.</p>
+                that collects using the <b>pipeline.yaml</b> file. This configuration file is
+                located in the<b> /etc/ceilometer</b> folder in any of the controller nodes.</p>
             <note>The pipeline.yaml file needs to be changed in all the controller nodes to change
                 the white-listing and or polling strategy.</note>
             <p> The pipeline file is comprised of two major elements:</p>
@@ -225,9 +226,11 @@ ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start</codeblock>
                 modified before is published to the internal queue for collection and storage. In
                 the Sources section there is a list of meters. These meters are the data that is
                 going to be collected. For a full list please refer to the Ceilometer documentation
-                available at:
-                http://docs.openstack.org/admin-guide-cloud/telemetry-measurements.html Here it is
-                an example of the default pipeline.yaml file:</p>
+                available at: <xref
+                    href="http://docs.openstack.org/admin-guide-cloud/telemetry-measurements.html"
+                    format="html" scope="external"
+                    >http://docs.openstack.org/admin-guide-cloud/telemetry-measurements.html</xref>
+                Here it is an example of the default <b>pipeline.yaml</b> file:</p>
             <codeblock>---
 sources:
     - name: meter_source
@@ -257,23 +260,25 @@ sinks:
           - notifier://</codeblock>
             <p>The interval attribute decides the frequency of the data polling whenever the meter
                 can be polled. In general the meters that are available as notification and polling
-                (indicated as both in
-                http://docs.openstack.org/admin-guide-cloud/telemetry-measurements.html) are going
-                to be polled at the specified interval. In our setting, since we want to rely on
-                notifications rather than polling, the interval is set to 604800 that corresponds to
-                1 week expressed in seconds. The combination of meters and polling interval is the
-                most performing compromise that we found using the SQL cluster back-end.</p>
+                (indicated as both in <xref
+                    href="http://docs.openstack.org/openstack-ops/content/scaling.htmlhttp://docs.openstack.org/admin-guide-cloud/telemetry-measurements.html"
+                    format="html" scope="external"
+                    >http://docs.openstack.org/admin-guide-cloud/telemetry-measurements.html</xref>)
+                are going to be polled at the specified interval. In our setting, since we want to
+                rely on notifications rather than polling, the interval is set to 604800 that
+                corresponds to 1 week expressed in seconds. The combination of meters and polling
+                interval is the most performing compromise that we found using the SQL cluster
+                back-end.</p>
             <note>Swift account data will be collected using the polling mechanism in an hourly
                 interval </note>
         </section>
-        <section><title>Changing the List of Meters </title>
+        <section id="changing_meter_list"><title>Changing the List of Meters </title>
             <p>The list of meters can be easily reduced or increased editing the pipeline.yaml and
                 subsequently restarting the central-agent (please see: Helion Ceilometer Runbook -
                 Ceilometer Central Agent) and the Collector (please see: Helion Ceilometer Runbook -
                 Ceilometer Collector). Here it is an example of compute only pipeline.yaml with the
                 daily poll interval:</p>
-            <codeblock>
----
+            <codeblock>---
 sources:
     - name: meter_source
       interval: 86400
@@ -295,7 +300,8 @@ sinks:
             <note> This change will cause all non-default meters to stop receiving
                 notifications</note>
         </section>
-        <section><title>Updating the Polling Strategy and Swift Considerations</title>
+        <section id="update_polling_strategy"><title>Updating the Polling Strategy and Swift
+                Considerations</title>
             <p>Polling can be very taxing on the system due to the sheer amount of data that the
                 system may have to ingest. It also has severe impact on queries since the database
                 will now have very large amount of data to scan to respond to the query, usually
@@ -311,7 +317,6 @@ sinks:
             </ul>
             <p>Here it is an example of the pipeline.yaml with Swift polling on an hourly
                 interval.</p>
-            
             <codeblock>---
 sources:
     - name: meter_source
@@ -349,51 +354,66 @@ sinks:
       transformers:
       publishers:
           - notifier://</codeblock>
-            
-            <p>So every time the polling interval is due for polling at least 5 messages per existing object/container in Swift are collected.
-                The following table illustrate the amount of data will be produce hourly in different scenarios:</p>
-            
-            <table><tgroup cols="4">
-                <tbody>
-                    <row>
-                        <entry>Swift Containers</entry><entry>Swift Objects per container</entry><entry>Samples per Hour</entry><entry>Samples stored per 24 hours</entry>
-                    </row>
-                    <row>
-                        <entry>10</entry><entry>10</entry><entry>500</entry><entry>12000</entry>
-                    </row>
-                    <row>
-                        <entry>10</entry><entry>100</entry><entry>5000</entry><entry>120000</entry>
-                    </row>
-                    <row>
-                        <entry>100</entry><entry>100</entry><entry>50000</entry><entry>1200000</entry>
-                    </row>
-                    <row>
-                        <entry>100</entry><entry>1000</entry><entry>500000</entry><entry>12000000</entry>
-                    </row>
-                </tbody>
-            </tgroup>
-                
-                
+            <p>So every time the polling interval is due for polling at least 5 messages per
+                existing object/container in Swift are collected. The following table illustrate the
+                amount of data will be produce hourly in different scenarios:</p>
+            <table>
+                <tgroup cols="4">
+                    <tbody>
+                        <row>
+                            <entry>Swift Containers</entry>
+                            <entry>Swift Objects per container</entry>
+                            <entry>Samples per Hour</entry>
+                            <entry>Samples stored per 24 hours</entry>
+                        </row>
+                        <row>
+                            <entry>10</entry>
+                            <entry>10</entry>
+                            <entry>500</entry>
+                            <entry>12000</entry>
+                        </row>
+                        <row>
+                            <entry>10</entry>
+                            <entry>100</entry>
+                            <entry>5000</entry>
+                            <entry>120000</entry>
+                        </row>
+                        <row>
+                            <entry>100</entry>
+                            <entry>100</entry>
+                            <entry>50000</entry>
+                            <entry>1200000</entry>
+                        </row>
+                        <row>
+                            <entry>100</entry>
+                            <entry>1000</entry>
+                            <entry>500000</entry>
+                            <entry>12000000</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+
+
             </table>
-            <p>This means that even a very small Swift storage with 10 containers and 100 files 
-                will store 120K samples in 24H bringing to a grand total of 3.6 million samples.</p>
-            
-            <note>The file size of each file does not have any impact on the number of samples collected. 
-                In fact the smaller is the number of container or files the better 
-                it is. So the scenario where there a lot of small files and containers is the worst.</note>
-            
+            <p>This means that even a very small Swift storage with 10 containers and 100 files will
+                store 120K samples in 24H bringing to a grand total of 3.6 million samples.</p>
+            <note>The file size of each file does not have any impact on the number of samples
+                collected. In fact the smaller is the number of container or files the better it is.
+                So the scenario where there a lot of small files and containers is the worst.</note>
         </section>
-        <section><title>Separate pipeline.yaml for Ceilometer Central Agent and Ceilometer Notification Agent</title>
-            
-            <ul><li>Ceilometer Central Agent and Ceilometer Notification agent use different pipeline.yaml to configure 
-                meters that are fetched via polling and using notifications. This was done to prevent accidently polling for 
-                meters which can be retrieved by polling agent as well as the notification agent. (e.g glance image and
-                image.size are meters which are both of pollster and notification type)</li>
-                <li>Ceilometer Central Agent's (polling agent) pipeline.yaml is located 
-                    at /opt/stack/service/ceilometer-common/etc/pipeline-agent-central.yaml
-                    <p>Here is an example of the pipeline-agent-central</p>
-                
-                <codeblock>---
+        <section id="pipelines"><title>Separate pipeline.yaml for Ceilometer Central Agent and
+                Ceilometer Notification Agent</title>
+            <ul>
+                <li>Ceilometer Central Agent and Ceilometer Notification agent use different
+                    pipeline.yaml to configure meters that are fetched via polling and using
+                    notifications. This was done to prevent accidently polling for meters which can
+                    be retrieved by polling agent as well as the notification agent. (e.g glance
+                    image and image.size are meters which are both of pollster and notification
+                    type)</li>
+                <li>Ceilometer Central Agent's (polling agent) pipeline.yaml is located at
+                        <b>/opt/stack/service/ceilometer-common/etc/pipeline-agent-central.yaml
+                        </b><p>Here is an example of the pipeline-agent-central</p>
+                    <codeblock>---
 sources:
     - name: meter_source
       interval: 600
@@ -409,12 +429,10 @@ sinks:
       publishers:
          - notifier://</codeblock>
                 </li>
-                <li>
-                    Ceilometer Notification Agent (notification agent) pipeline.yaml is located at /opt/stack/service/ceilometer-common/etc/pipeline.yaml
-                    
-                   <p> Here is an example of the default pipeline.yaml file:</p>
-                    
-        <codeblock>---
+                <li> Ceilometer Notification Agent (notification agent) <b>pipeline.yaml </b>is
+                    located at <b>/opt/stack/service/ceilometer-common/etc/pipeline.yaml </b><p>
+                        Here is an example of the default pipeline.yaml file:</p>
+                    <codeblock>---
 sources:
     - name: meter_source
       interval: 30
@@ -440,21 +458,19 @@ sinks:
     - name: meter_sink
       transformers:
       publishers:
-         - notifier://</codeblock>            
-                  
-                    
-                    
-                </li></ul>
+         - notifier://</codeblock>
+                </li>
+            </ul>
         </section>
-        <section><title>Ceilometer API</title>
-            
+        <section id="ceilometer_api"><title>Ceilometer API</title>
             <b>Separate pipeline.yaml for Ceilometer Post Sample API</b>
-            
-            
-            <p>Post Sample API is disabled by default in HOS CM 2.0 and its configured with a pipeline configuration different than the agents. The api pipeline has no meters enabled, so it needs to be configured with meters when the Post sample API is enabled. Exercise caution when adding meters to the API pipeline. Ensure that only those meters are added to this pipeline which are already present in the notification agent and the central agent pipeline.
-                
-                Here is a sample of the api pipeline:</p>
-            
+            <p>Post Sample API is disabled by default in HOS CM 2.0 and its configured with a
+                pipeline configuration different than the agents. The api pipeline has no meters
+                enabled, so it needs to be configured with meters when the Post sample API is
+                enabled. Exercise caution when adding meters to the API pipeline. Ensure that only
+                those meters are added to this pipeline which are already present in the
+                notification agent and the central agent pipeline. Here is a sample of the API
+                pipeline:</p>
             <codeblock>---
 sources:
     - name: meter_source
@@ -470,23 +486,19 @@ sinks:
       transformers:
       publishers:
          - notifier://</codeblock>
-            
         </section>
-        <section><title>Ceilometer Sample API</title>
-            
-            <p>Ceilometer query-sample API uses anonymous/alias table to cache the JOIN query results.
-                When the filter parameters are not sufficiently provided, the result set can grow large, 
-                to the point of exceeding the temp table space available on the mysql database instance. 
-                If this happens, an exception is thrown, halting the query execution. If the resource and sample 
-                tables have close to 80~100K records, the suggestion is to use filter conditions or in case of 
-                wanting to get all the data, the temp table size should be increased to avoid query interruption.</p>
-            
+        <section id="ceilomter_sample_API"><title>Ceilometer Sample API</title>
+            <p>Ceilometer query-sample API uses anonymous/alias table to cache the JOIN query
+                results. When the filter parameters are not sufficiently provided, the result set
+                can grow large, to the point of exceeding the temp table space available on the
+                mysql database instance. If this happens, an exception is thrown, halting the query
+                execution. If the resource and sample tables have close to 80~100K records, the
+                suggestion is to use filter conditions or in case of wanting to get all the data,
+                the temp table size should be increased to avoid query interruption.</p>
             <codeblock>ceilometer sample-list --meter image.serve -q 'resource_id=a1ec2585'</codeblock>
-
-<codeblock>ceilometer query-samples --filter '{"and": [{"=": {"counter_name":"cpu_util"}}, {"=": {"project":"7d4af57f557547b4a28b40b054d6ffb2"}}]}'</codeblock>
-            
+            <codeblock>ceilometer query-samples --filter '{"and": [{"=": {"counter_name":"cpu_util"}}, {"=": {"project":"7d4af57f557547b4a28b40b054d6ffb2"}}]}'</codeblock>
         </section>
-        <section><title>Ceilometer Statistics API</title>
+        <section id="ceilometer_stats"><title>Ceilometer Statistics API</title>
             <p>Ceilometer Statistics is an open ended query and can put a significant load on the
                 database leading to unexpected results and or failures. Ceilometer Statistics API
                 does a query on sample table and obtains the minimum and maximum timestamp for the
@@ -498,13 +510,11 @@ sinks:
                 timestamp>={$start-timestamp} and timestamp&lt;{$end-timestamp} to cover a time
                 range of at the most 1 day (24 hours) irrespective of whether you provide a period
                 or or not. Example: With period parameter</p>
-            <codeblock>
-ceilometer statistics -q "timestamp&gt;=2014-12-11T00:00:10;timestamp&lt;2014-12-11T23:00:00" -m "instance" -p 3600</codeblock>
+            <codeblock>ceilometer statistics -q "timestamp&gt;=2014-12-11T00:00:10;timestamp&lt;2014-12-11T23:00:00" -m "instance" -p 3600</codeblock>
             <p>Without period parameter:</p>
-            <codeblock>
-ceilometer statistics -q "timestamp>=2014-12-11T00:00:10;timestamp&lt;2014-12-11T23:00:00" -m "instance"</codeblock>
+            <codeblock>ceilometer statistics -q "timestamp>=2014-12-11T00:00:10;timestamp&lt;2014-12-11T23:00:00" -m "instance"</codeblock>
             The recommended values for query (-q) parameter and period (-p) parameter are </section>
-        <section><b>query parameter (-q):</b> Always provide a timestamp range which restricts the
+        <section id="query_params"><b>query parameter (-q):</b> Always provide a timestamp range which restricts the
             query to one day (24 hours). Providing a timestamp range more than a day or not at all
             providing the time stamp range as a query parameter is not recommended e.g. -q
             "timestamp>=2014-12-11T00:00:10;timestamp&lt;2014-12-11T23:00:00" If query parameter and
@@ -514,15 +524,14 @@ ceilometer statistics -q "timestamp>=2014-12-11T00:00:10;timestamp&lt;2014-12-11
             recommended value 3600 or more (1 hour or more). Providing a period of less than 3600 is
             not recommended. e.g. -p 3600 Period parameter (value in seconds) is used to divide the
             overall time range into intervals. A small period value will translate into huge number
-            of queries against the database which is not recommended 
-            
-            
-        </section>
-        <section><title>Alarm API and Post Meters API disabled</title>
-            <ul><li>Ceilometer Alarms are disabled</li><li>Post Meters API is also disabled </li>
-                <li>Custom rule hp_disabled_rule:not_implemented is added to each of those API's in ceilometer's policy.json
-                
-                <codeblock>{
+            of queries against the database which is not recommended </section>
+        <section id="alarm_post-meters_APIs"><title>Alarm API and Post Meters API disabled</title>
+            <ul>
+                <li>Ceilometer Alarms are disabled</li>
+                <li>Post Meters API is also disabled </li>
+                <li>Custom rule hp_disabled_rule:not_implemented is added to each of those APIs in
+                    ceilometer's <b>policy.json
+                    </b>.<codeblock>{
 "context_is_admin": "role:admin",
 "context_is_project": "project_id:%(target.project_id)s",
 "context_is_owner": "user_id:%(target.user_id)s",
@@ -541,12 +550,11 @@ ceilometer statistics -q "timestamp>=2014-12-11T00:00:10;timestamp&lt;2014-12-11
  
 "default": ""
 }</codeblock>
-                
-                
                 </li>
-                <li>Accessing any of the Alarm API's or Post Meter API will result in HTTP response 501 Not Implemented</li>
-                <li>The following Alarm API's are disabled
-  <codeblock>POST /v2/alarms
+                <li>Accessing any of the Alarm APIs or Post Meter API will result in HTTP response
+                    501 Not Implemented</li>
+                <li>The following Alarm APIs are disabled
+                    <codeblock>POST /v2/alarms
 GET /v2/alarms
 GET /v2/alarms/(alarm_id)
 PUT /v2/alarms/(alarm_id)
@@ -555,47 +563,39 @@ GET /v2/alarms/(alarm_id)/history
 PUT /v2/alarms/(alarm_id)/state
 GET /v2/alarms/(alarm_id)/state
 POST /v2/query/alarms
-POST /v2/query/alarms/history</codeblock>              
-                
-                
+POST /v2/query/alarms/history</codeblock>
                 </li>
-                <li>Post Meters API is disabled
-                <codeblock>POST /v2/meters/(meter_name)</codeblock>
-                </li><li>To manually enable any of the API's remove the corresponding rule and restart Apache</li></ul>
-            
-            
+                <li>Post Meters API is disabled <codeblock>POST /v2/meters/(meter_name)</codeblock>
+                </li>
+                <li>To manually enable any of the APIs remove the corresponding rule and restart
+                    Apache</li>
+            </ul>
         </section>
-        <section><title>Failover Support (HA)</title>
-            
-            <p>In the Helion environment, Ceilometer supports native Active-Active HA for notification agent and central agent. Agent HA support includes workload-balancing/distribution and failover.
-                
-                Tooz is the coordination engine that is used to coordinate workload among mulltiple active agent instances and maintain the knowledge of active instance to handle failover and group membership using hearbeats(pings).
-                
-                Zookeeper is the coordination backend used but the internals of that is encapsulated using Tooz which exposes APIs to manage group membership and retrieve workload specific to each agent.
-                
-                The following section in conf is used to configure HA:</p>
+        <section id="failover_support"><title>Failover Support (HA)</title>
+            <p>In the Helion environment, Ceilometer supports native Active-Active HA for
+                notification agent and central agent. Agent HA support includes
+                workload-balancing/distribution and failover. Tooz is the coordination engine that
+                is used to coordinate workload among mulltiple active agent instances and maintain
+                the knowledge of active instance to handle failover and group membership using
+                hearbeats(pings). Zookeeper is the coordination backend used but the internals of
+                that is encapsulated using Tooz which exposes APIs to manage group membership and
+                retrieve workload specific to each agent. The following section in conf is used to
+                configure HA:</p>
             <codeblock>[coordination]
-
 backend_url = &lt;IP address of Zookeeper host: port> (port is usually 2181 as a zookeeper default)
-
 heartbeat = 1.0
-
 check_watchers = 10.0</codeblock>
-            
-            <p>For the notification agent to be configured in HA mode, additional configuration is needed:</p>       
-            
+            <p>For the notification agent to be configured in HA mode, additional configuration is
+                needed:</p>
             <codeblock>[notification]
-                
-workload_partitioning = true</codeblock>  
-            
-            <p>The notification agent HA distributes workload among multiple queues that are created based on the number of unique source:sink combinations in the notification agent pipeline configuration file.
-                
-                If there are additional services to be metered using notifications, then the recommendation is to use a separate source for those events, especially if the expected load of data from that source is considered high.
-                
-                This should lead to better workload balancing among multiple active notification agents.</p>    
-            
-            
-            
+workload_partitioning = true</codeblock>
+            <p>The notification agent HA distributes workload among multiple queues that are created
+                based on the number of unique source:sink combinations in the notification agent
+                pipeline configuration file. If there are additional services to be metered using
+                notifications, then the recommendation is to use a separate source for those events,
+                especially if the expected load of data from that source is considered high. This
+                should lead to better workload balancing among multiple active notification
+                agents.</p>
             <p>Ceilometer-expirer is also Active-Active HA, but the key thing is to ensure that a
                 single expirer process runs when multiple processes are scheduled to run at same
                 time (using cron-based scheduling) on multiple controller nodes. Tooz is used to
@@ -604,25 +604,8 @@ workload_partitioning = true</codeblock>
                 anyway and is scheduled to run at pre-determined intervals. The following
                 configuration is needed to enable expirer HA:</p>
             <codeblock>[database]
-
 expirer_ha = true
-
 expirer_ha_backend_url = &lt;IP address of coordination backend url></codeblock>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
         </section>
     </body>
 </topic>

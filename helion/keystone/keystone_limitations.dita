@@ -3,7 +3,7 @@
 <topic id="topic_qtp_cn3_bt">
   <title>Notes and Limitations</title>
   <body>
-    <section><title>Notes</title>
+    <section id="notes"><title>Notes</title>
       <b>Domains</b>
       <ul>
         <li>Domains can be created and managed by the Keystone API and OpenStackClient CLI.</li>
@@ -20,30 +20,27 @@
       <ul>
         <li>Keystone-to-Keystone (K2K) Federation provides the ability to authenticate once with one
           cloud and then use these credentials to access resources on other federated clouds.</li>
-        <li>All configurations are managed by creating and editing specific configuration files. </li>
+        <li>All configurations are managed by creating and editing specific configuration files.
+        </li>
       </ul>
-      
       <b>Multi-Factor Authentication (MFA)</b>
       <ul>
         <li>The Keystone architecture provides support for MFA deployments.</li>
         <li>MFA provides the ability to deploy non-password based authentication; for example: token
           providing hardware and text messages.</li>
       </ul>
-      
-      
       <b>Hierarchical Multitenancy</b>
-      
       <ul>
-        
+
         <li>Provides the ability to create sub-projects within a Domain-Project hierarchy.</li>
-        
-        
+
+
       </ul>
     </section>
 
 
 
-    <section>
+    <section id="limitations">
       <title>Limitations</title>
       <b>Domains</b><ul id="ul_ks2_jpd_bt">
 
@@ -63,8 +60,8 @@
           future OpenStack release.</li>
       </ul>
       <b>Keystone-to-Keystone Federation</b><ul id="ul_xw2_jpd_bt">
-    
-     
+
+
         <li>No Horizon web portal support currently exists for the creation and management of
           federation configurations.</li>
         <li>All end users authentication is available only via the Keystone API and OpenStackClient
@@ -75,12 +72,10 @@
             format="html" scope="external"
             >http://docs.openstack.org/developer/keystone/configure_federation.html</xref></li>
       </ul>
-      
       <b>Multi-Factor Authentication (MFA)</b>
-      
       <ul id="ul_az2_jpd_bt">
 
-        
+
         <li>Helion OpenStack MFA support is a custom configuration requiring HP Professional
           Services support.</li>
         <li>MFA drivers are not included with Helion OpenStack and need to be provided by a specific
@@ -92,7 +87,7 @@
       </ul>
       <b>Hierarchical Multitenancy</b>
       <ul id="ul_tbf_jpd_bt">
-       
+
         <li>Requires additional OpenStack service support prior to being used for general use.</li>
         <li>Recommended currently only for test deployments.</li>
         <li>Additional information can be found at <xref

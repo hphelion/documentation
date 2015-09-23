@@ -22,12 +22,12 @@
       installation, the Metering service is automatically configured to collect data from the Nova,
       Cinder, Glance and Neutron services.</p>
     <p>All the metering processes have a unified configuration file that can be found at
-        <i>/etc/ceilometer/ceilometer.conf</i> on the specific overcloud controller you are logged
+        <b>/etc/ceilometer/ceilometer.conf</b> on the specific overcloud controller you are logged
       in to.</p>
     <p>The installation creates several management nodes running different metering components.</p>
     <p>
       <image href="../../media/ceilometer/ceil_overallarchi.png" id="image_mbd_c5t_ct" placement="break"/></p>
-    <section id="components-in-tripleo-overcloud-controller0">
+    <section id="controller1_components">
       <title>Ceilometer Components on Controller node 1</title>
       <p>This controller node is the first of the High Available (HA) cluster. In this node there is
         an instance of the Ceilometer API running under the HA Proxy Virtual IP address. The Alarm
@@ -51,12 +51,12 @@
           complete.<codeblock>sudo  /etc/init.d/apache2 force-reload</codeblock></li>
       </ol>
     </section>
-    <section id="ceilometer-components-in-tripleo-overcloud-controller1">
+    <section id="controller2_components">
       <title>Ceilometer Components on Controller node 2</title>
       <p>Just like Controller node 1, Controller node 2 has an instance of the Ceilometer API
         running under the HA Proxy.</p>
     </section>
-    <section id="ceilometer-components-in-tripleo-overcloud-controller2">
+    <section id="controller3_components">
       <title>Ceilometer Components on Controller node 3</title>
       <p>This node is where all other Ceilometer components are running.</p>
     </section>
@@ -72,7 +72,7 @@
     <section id="centralagent">
       <title>Ceilometer Central Agent</title>
       <p>The Central Agent is responsible for coordinating the polling activity. It parses the
-          <i>pipeline.yml</i> configuration file and identifies all the sources that need to be
+          <b>pipeline.yml</b> configuration file and identifies all the sources that need to be
         polled from. The sources are then evaluated using a discovery mechanism and all the sources
         are translated to resources where a dedicated pollster can retrieve and publish data. At
         each identified interval the discovery mechanism is triggered, the resource list is

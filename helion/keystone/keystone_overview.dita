@@ -3,7 +3,7 @@
 <topic id="topic_ugs_fnd_bt">
   <title>Keystone Identity Service</title>
   <body>
-    <section>
+    <section id="intro">
       <title>What is the Identity service?</title>
       <p>The HP Helion OpenStack&#174; Identity service, based on the OpenStack Keystone API, is
         responsible for providing UserID authentication and access authorization to enable
@@ -11,7 +11,7 @@
         deploy OpenStack. In short, the Identity Service is the gateway to the rest of the OpenStack
         services. </p>
     </section>
-    <section>
+    <section id="authentication">
       <title>Authentication</title>
       <p>The authentication function provides the initial login function to OpenStack. Keystone
         supports multiple sources of authentication, including a native or built-in authentication
@@ -84,7 +84,7 @@
         fingerprint scanner, etc. Each of these types of MFA are usually specific to a particular
         MFA vendor. The Keystone architecture supports an MFA-based authentication system, but this
         has not yet been certified or documented for HP Helion OpenStack.</p></section>
-    <section>
+    <section id="authorization">
       <title>Authorization</title>
       <p>The second major function provided by the Keystone service is access authorization that
         determines what resources and actions are available based on the UserID, the role of the
