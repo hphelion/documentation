@@ -39,7 +39,7 @@
             filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock></li>
           <li>Editable parameters for Ceph are available in the following locations:<ul
               id="ul_jbn_nj5_kt">
-              <li><codeph>/home/stack/helion/my_cloud/config/ceph/settings.yml</codeph><p>In the
+              <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph><p>In the
                     <codeph>settings.yml</codeph> file, you can edit the following parameters:<ul
                     id="ul_ocp_ty5_kt">
                     <li>fsid</li>
@@ -48,7 +48,7 @@
                     <li>OSD_journal_size</li>
                   </ul></p></li>
               <li>
-                <p><codeph>/home/stack/helion/my_cloud/config/ceph/usermodel.yml</codeph></p>
+                <p><codeph>~/helion/my_cloud/config/ceph/usermodel.yml</codeph></p>
                 <p>The <codeph>usermodel.yml</codeph> has the editable values for the different
                   pools created by HP Helion OpenStack.</p>
               </li>
@@ -99,8 +99,8 @@ rbd_pool = volumes
 rbd_ceph_conf = /etc/ceph/ceph.conf
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
 volume_backend_name = ceph</codeblock><note>The
-              <b>rbd_uuid </b>is same as available at
-              <codeph>/home/stack/helion/my_cloud/config/ceph/settings.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
+              <b>rbd_uuid </b>is same as <b>fsid</b> available at
+              <codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
         <?oxy_custom_end?>
         <li> Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
             id="ol_ihn_2l5_kt">
@@ -111,7 +111,7 @@ volume_backend_name = ceph</codeblock><note>The
                   <codeph>/etc/ceph</codeph> folder on all the controller nodes.</p></li>
           </ol></li>
         <li>To enable cinder backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
-            <codeph>/home/stack/helion/my_cloud/config/cinder</codeph> with the following values:
+            <codeph>~/helion/my_cloud/config/cinder</codeph> with the following values:
           <codeblock>backup_driver = cinder.backup.drivers.ceph
 backup_ceph_conf = /etc/ceph/ceph.conf
 backup_ceph_user = cinder-backup
@@ -148,15 +148,15 @@ git commit -m "&lt;commit message>"</codeblock>
       <p><b>Attach Ceph Volume to Instance</b></p>
       <p>Perform the following steps to attach Ceph volume to an instance: <ol id="ol_vx4_4gv_kt">
           <li>On the deployer node, edit <codeph>kvm-hypervisor.conf.j2</codeph> at
-              <codeph>/home/stack/helion/my_cloud/config/nova/kvm-hypervisor.conf.j2</codeph> to add
-            the following for RBD volume
+              <codeph>~/helion/my_cloud/config/nova/kvm-hypervisor.conf.j2</codeph> to add the
+            following for RBD volume
               attach:<codeblock>[libvirt]
 rbd_user = cinder
 rbd_secret_uuid = 457eb676-33da-42ec-9a8c-9293d545c337</codeblock><note>The
                 <codeph>rbd_secret_uuid</codeph> is same as available at
-                <codeph>/home/stack/helion/my_cloud/config/ceph/settings.yml</codeph>.</note></li>
+                <codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph>.</note></li>
           <li>Commit your configuration to the local repository to configure cinder on the deployer node.<p>
-              <codeblock>cd /home/stack/helion/hos/ansible
+              <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock>
             </p><note> Enter your commit message &lt;commit message></note></li>
