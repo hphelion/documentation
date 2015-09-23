@@ -357,7 +357,7 @@ ring-specifications:
           <codeph>disks_osd.yml</codeph> is per node type and used to express disks being used for
         OS and data. Every OSD needs to have minimum three disks. However, in general each OSD nodes
         will have three sets of disks based on usages:</p><ol id="ol_qpr_jnb_lt">
-        <li>Systems disks used for OS, logging etc. Minimum count it 2</li>
+        <li>Systems disks used for OS, logging etc.<!-- Minimum count it 2--></li>
         <li>Data disks. Minimum count is 1</li>
         <li>Journal disks. Minimum count is 0. If you do not configure journal disks for a disks
           then a partition of data disk is used as journal disk.</li>
