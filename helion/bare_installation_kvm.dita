@@ -238,6 +238,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
       </ol>
     </section>
+    <!--
     <section id="validate_swift"><title>Validate Object Storage (Optional)</title>
       <ol>
         <li><p>To validate object storage cloud model, execute the following command on the
@@ -248,6 +249,7 @@ ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>
               href="swift/troubleshooting.dita">Swift-Troubleshooting</xref></p></li>
       </ol>
     </section>
+    -->
     <section id="deploy"><title>Deploy the Cloud</title>
       <ol>
         <li>Run the <codeph>site.yml</codeph> playbook using the following steps: 
