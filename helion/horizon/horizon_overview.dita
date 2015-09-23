@@ -108,7 +108,14 @@
         following screen shots illustrate some of the services you can manage in the Horizon
         dashboard. There is both an overcloud Horizon dashboard and an undercloud dashboard, both of
         which are accessible via your URL in a browser.
-        <!--Removed anchor point images--><!-- id="images" --></p><p><b>Viewing System
+        <!--Removed anchor point images--><!-- id="images" --></p>
+      <note>In Beta 2 you will not be able to launch an instance from a volume in Horizon. To work around this issue you have two options:
+        <ul><li>
+        From Horizon Dashboard | Instances page: Launch an Instance and select source as Bootable volume.
+        </li><li>Use the OpenStack or Nova client to create the instance.</li></ul></note>
+      
+      
+      <p><b>Viewing System
           Info</b></p><p><image href="../../media/horizon/sysinfo.png" id="image_avw_nb3_ps"
         /></p><p>The System Info panel provides a list of all currently installed OpenStack services
         and their operation status.</p><p/><p>Additional panels on the System Info display sub
