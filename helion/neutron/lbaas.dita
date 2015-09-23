@@ -61,7 +61,6 @@
       
       
       <sectiondiv id="CreateExternalNetwork">
-        <title>Create External Network</title>
         <p>Create External Network and Register Image</p>
         <p>You will need to create an external network and register an image to test LBaaS functionality.  If you have already created
           an external network and registered and image, this step can be skipped.</p>
