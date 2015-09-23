@@ -17,18 +17,56 @@
   <body>
     <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion Lifecycle
         Management (HLM) VM is installed</xref>, the next task in installing the <xref
-        href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM + ESX
-        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HP Distributed
-      Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
-      proxy. </p>
+        href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM with DCN</xref>
+      is to deploy the HP Helion OpenStack cloud and install the HP Distributed Cloud Networking
+      (DCN) components.</p>
     <p><b>Note:</b> If you are installing the KVM-only deployment, see <xref
         href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref>.</p>
+    <p/>
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/prereqs"/>
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/vsd"/>
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/vsd-license"/>
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-user-for-plugin-login"/>
-    <section
-      conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-a-json-file-for-installation"/>
+    <section id="hos-install">
+      <title>Launch the HP Helion OpenStack cloud</title>
+      <p>Use the following steps on the HLM host to log on to the HLM VM created in <xref
+        href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HP Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
+      <ol>
+        <li>Login to HLM VM. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
+          IP of the HLM VM. Locate the IP address for the HLM VM in the
+          <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file under
+          <codeph>hlm_clmstaticip</codeph> field.</p><p>Use the default credentials: </p><p>
+            <codeblock>User Name: cghelion
+              Password: cghelion</codeblock>
+          </p><p><b>Important:</b> After logging in with the default password, make sure you change
+            the password for the <codeph>cghelion</codeph> user. </p><p><image
+              href="../../media/CGH-2-login-hlm.png" width="400" id="image_nnb_fyb_3t"/></p></li>
+        <li>Execute the following command to switch to the root
+          user:<codeblock>sudo su -</codeblock></li>
+        <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
+        
+        <li>Execute the following command to provision and configure the HP Helion OpenStack cloud.
+            <codeblock>hnewcloud  &lt;cloudname&gt; tahoe</codeblock><p>Where::</p><ul>
+            <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.<p>The cloud
+                name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
+                  chracter:<ul id="ul_lz5_rbf_bt">
+                  <li>
+                    <p>Cannot start or end with the <codeph>-</codeph> chracter;</p>
+                  </li>
+                  <li>
+                    <p>Must be greater than 0 characters;</p>
+                  </li>
+                  <li>
+                    <p>No restriction on the number of letters or digits (0 or more).</p>
+                  </li>
+                </ul></p></li>
+            <li><codeph>tahoe</codeph> is the name of the template to use. The installation kit
+              includes a template called <codeph>memphis</codeph> designed to install HP Helion
+              OpenStack, specific to the KVM + ESX deployment.</li>
+          </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which
+            contains several JSON template files. </p></li></ol>
+    </section>
+    
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-node-provision-json"/>
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-def-json"/>
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-env-json"/>

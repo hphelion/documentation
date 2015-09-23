@@ -109,7 +109,7 @@
       <p>Use the following steps on the HLM host to log on to the HLM VM created in <xref
         href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HP Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
       <ol>
-        <li outputclass="Passthrough" value="7">Login to HLM VM. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
+        <li>Login to HLM VM. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
             IP of the HLM VM. Locate the IP address for the HLM VM in the
               <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file under
               <codeph>hlm_clmstaticip</codeph> field.</p><p>Use the default credentials: </p><p>
@@ -122,8 +122,8 @@ Password: cghelion</codeblock>
           user:<codeblock>sudo su -</codeblock></li>
         <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
 
-        <li>Execute the following command to provision and configure the HP Helion OpenStack
-            cloud.<codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where::</p><ul>
+        <li>Execute the following command to provision and configure the HP Helion OpenStack cloud.
+            <codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where::</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.<p>The cloud
                 name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
                   chracter:<ul id="ul_lz5_rbf_bt">
@@ -141,9 +141,9 @@ Password: cghelion</codeblock>
               includes a template called <codeph>memphis</codeph> designed to install HP Helion
               OpenStack, specific to the KVM + ESX deployment.</li>
           </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which
-            contains several JSON template files. </p></li>
-      </ol>
-    </section>
+            contains several JSON template files. </p></li></ol>
+      </section>
+    
     <section id="configure-node-provision-json">
       <title>Configure the node-provision JSON file</title>
       <p>Modify the <codeph>node-provision.json</codeph> file in the <codeph>&lt;cloudname></codeph>
