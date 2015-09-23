@@ -82,16 +82,16 @@ neutron firewall-rule-create --protocol tcp --destination-port 22 --action allow
           <codeblock>neutron firewall-create policy-fw --name user-fw</codeblock></li>
         <li>You can view the details of your new firewall by using the
             <codeph>firewall-show</codeph> command and the name of your firewall. This will verify
-          the that status of the firewall is
+          that the status of the firewall is
           ACTIVE.<codeblock>neutron firewall-show user-fw</codeblock></li>
       </ol>
       
       <p>You should verify the FWaaS is functional with the steps included below.</p>
       <ol>
         <li>Since allow-icmp firewall is rule is set you can ping the floating IP address of the
-          instance from the external network.<codeblock>ping FIP-VM1</codeblock></li>
+          instance from the external network.<codeblock>ping &lt;FIP-VM1></codeblock></li>
         <li>Similarly, you can connect via ssh to the instance due to the allow-ssh firewall
-          rule.<codeblock>ssh cirros@FIP-VM1
+          rule.<codeblock>ssh cirros@&lt;FIP-VM1>
 password: &lt;password></codeblock></li>
         <li>Run a web server on vm1 instance that listens over port 80, accepts requests and sends a WELCOME response.
           <codeblock>$ vi webserv.sh
@@ -108,9 +108,9 @@ $ chmod 755 webserv.sh
             
 # Execute the script
 $ ./webserv.sh</codeblock></li>
-        <li>You should expect to see curl fail over port 80 because of the deny-http firewall rule.  If curl succeeds, 
-          the firewall is not blocking incoming http requests.
-          <codeblock>curl -vvv FIP-VM1</codeblock></li>
+        <li>You should expect to see curl fail over port 80 because of the deny-http firewall rule.
+          If curl succeeds, the firewall is not blocking incoming http requests.
+          <codeblock>curl -vvv &lt;FIP-VM1></codeblock></li>
       </ol>
       
      </section>
