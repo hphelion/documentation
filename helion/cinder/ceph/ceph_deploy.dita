@@ -111,15 +111,19 @@ volume_backend_name = ceph</codeblock><note>The
                   <codeph>/etc/ceph</codeph> folder on all the controller nodes.</p></li>
           </ol></li>
         <li>To enable cinder backup to Ceph, modify <codeph>cinder.conf.j2</codeph> at
-            <codeph>~/helion/my_cloud/config/cinder</codeph> with the following values:
-          <codeblock>backup_driver = cinder.backup.drivers.ceph
+            <codeph>~/helion/my_cloud/config/cinder</codeph> in the [<b>Default</b>] section with
+          the following values:
+            <codeblock># Ceph backup
+backup_driver = cinder.backup.drivers.ceph
 backup_ceph_conf = /etc/ceph/ceph.conf
 backup_ceph_user = cinder-backup
 backup_ceph_chunk_size = 134217728
 backup_ceph_pool = backups
 backup_ceph_stripe_unit = 0
 backup_ceph_stripe_count = 0
-restore_discard_excess_bytes = true</codeblock></li>
+restore_discard_excess_bytes = true</codeblock><note>You
+            can add a comment (<b># Ceph backup </b>) as shown above so that ceph backup content can
+            be easily identified in the<codeph> cinder.conf.j2</codeph> file.</note></li>
         <li> Copy <codeph>client.cinder-backup.keyring</codeph> to the controller nodes:<ol
             id="ol_xx5_51x_gt">
             <li>Login to controller node as a root user and execute the following
