@@ -46,7 +46,7 @@
       as applicable for your license agreement. Refer to the DCN documentation for more information.</p>
       </section>
     <section id="sdk"><title>Software Development Kit</title>
-    <p><b>HP Helion OpenStack CArrier Grade Software Development Kit (SDK)</b></p>
+    <p><b>HP Helion OpenStack Carrier Grade Software Development Kit (SDK)</b></p>
     <p>The HP Helion OpenStack Carrier Grade SDK can be used by guest applications to interact
         programmatically with HP Helion OpenStack Carrier Grade. See the <xref
           href="../../PDF/HP-Helion-OpenStack-Carrier-Grade-SDK-1.1.pdf" format="pdf">Software

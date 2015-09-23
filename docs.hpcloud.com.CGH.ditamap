@@ -48,6 +48,8 @@
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"
           navtitle="Metering Service (Ceilometer) Overview" locktitle="yes"/>
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-ironic-overview.dita"
+          navtitle="Ironic Service Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
           navtitle="Horizon Service Overview" locktitle="yes">
           <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
@@ -59,8 +61,6 @@
             href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita"
             navtitle="Using the Helion Dashboard to Manage Your Cloud" locktitle="yes"/>
         </topicref>
-        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-ironic-overview.dita"
-          navtitle="Ironic Service Overview" locktitle="yes"/>
       </topicref>
     </topicref>
     <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml" navtitle="Release Notes"

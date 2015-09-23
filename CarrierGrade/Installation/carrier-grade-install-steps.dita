@@ -2,27 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Installing the KVM + ESX<tm
-      tmtype="reg"/> Deployment</title>
-  <prolog>
-    <metadata>
-      <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
-      <othermeta name="role" content="Storage Administrator"/>
-      <othermeta name="role" content="Storage Architect"/>
-      <othermeta name="role" content="Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
-    </metadata>
-  </prolog>
   <body>
-    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion Lifecycle
-        Management (HLM) VM is installed</xref>, the next task in installing the <xref
-        href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM + ESX
-        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HP Distributed
-      Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
-      proxy. </p>
-    <p><b>Note:</b> If you are installing the KVM-only deployment, see <xref
-        href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref>.</p>
     <section id="prereqs"><p>Before starting the HP Helion OpenStack Carrier Grade installation, the
         VMware vSphere application and HP Distributed Cloud Networking components must be fully
         installed and functioning:</p><p><b>DCN Requirements</b></p><p>HP Helion Distributed Cloud
@@ -94,7 +74,7 @@
       <p>
         <image href="../../media/CGH-install-virsh-vsd.png" width="400"/></p>
     </section>
-    <section id="vsd-license"><title>Apply the VSD License</title>You should have recevied a license file when you
+    <section><title>Apply the VSD License</title>You should have recevied a license file when you
       purchased DCN. You need to apply that license on the HLM host. For more information, see <xref
         href="carrier-grade-install-vsd-license.dita#topic10581"/>.</section>
     <section id="create-user-for-plugin-login">
@@ -279,7 +259,7 @@ Password: cghelion</codeblock>
     </section>
     <section id="configure-wr-json"
       ><!--Hide for 8/28 release <title>Configure the wr.json file</title><p>Modify the <codeph>wr.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph> directory on the HLM VM.</p><p>To see a sample <codeph>wr.json</codeph> file, see <xref href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the KVM + ESX Topology</xref>. </p>--></section>
-    <section id="dcn-json">
+    <section>
       <title>Configure the dcn.json file</title>
       <p>Modify the <codeph>dcn.json</codeph> file in the
           <codeph>/opt/share/hlm/1/site/services/dcn.json</codeph> directory of the HLM VM to remove
@@ -294,7 +274,7 @@ Password: cghelion</codeblock>
             "scope": "private"
       },    </codeblock></p>
     </section>
-    <section id="ccp-dcn-esx-json"><title>Configure the <codeph>ccp-dcn-esx.json</codeph> file</title>Update the
+    <section><title>Configure the <codeph>ccp-dcn-esx.json</codeph> file</title>Update the
         <codeph>~/&lt;cloudname&gt;/.hos/ccp-dcn-esx.json</codeph> file. Change the field to 1. By
       default it will be
       2.<codeblock>"tiers": [
@@ -311,13 +291,13 @@ Password: cghelion</codeblock>
           href="carrier-grade-install-pb-kvm-env-json-bonded.dita#topic4797">Sample enviroment.json
           File for Installing the KVM + ESX Topology in an Bonded NIC Environment</xref>.</p>
     </section>
-    <section id="verify-json">
+    <section>
       <title>Verify the JSON files</title>
       <p>After editing the JSON files, validate each JSON file to make sure there are no syntax
         errors using the tool of your preference. For example, using the Python json.tool: </p>
       <codeblock>python -m json.tool &lt;filename>.json</codeblock>
     </section>
-    <section id="esx-proxy">
+    <section>
       <title>Configure the ESX Compute Proxy</title>
       <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
         that enables the Compute service to communicate with a VMware vCenter server. The HP Helion
@@ -357,7 +337,7 @@ Password: cghelion</codeblock>
           </ol></li>
       </ol>
     </section>
-    <section id="back-end"><title>Configure the back-end drivers</title>
+    <section><title>Configure the back-end drivers</title>
         <p>Configure the back-end drivers to enable management of the OpenStack Block Storage
           volumes on vCenter-managed data stores and 3PAR and/or VSA storage arrays. The HP Block
           Storage (Cinder) service allows you to configure multiple storage back-ends. Use the
@@ -457,7 +437,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
           href="carrier-grade-install-esx-proxy-patch.dita#topic10581">Apply the ESX Compute Proxy
           Patch</xref>.</p>
     </section>
-        <section id="gre-patch">
+        <section>
       <title>Apply the Generic Routing Encapsulation (GRE) patch</title>
       <p>This patch contains three files. The first file fixes an issue with the IP tables role
         failing during installation while enabling Generic Routing Encapsulation (GRE) in firewall
@@ -471,7 +451,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
           Password Patch</xref>.</p>
     </section>
         
-        <section id="reverse-patch"><title>Apply the Reverse Path Filter Patch</title>After deploying the HP OpenStack
+        <section><title>Apply the Reverse Path Filter Patch</title>After deploying the HP OpenStack
       cloud, you might not be able to access the Horizon interface and the OpenStack services cannot
       be accessed over the CAN network. <p>To prevent this problem, install a patch to configure the
         kernel to set the reverse path filter (<codeph>rp_filter</codeph>) to 1 in the
@@ -480,7 +460,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
           href="carrier-grade-install-rp-filter.dita#topic10581">Applying the Reverse Path Filter
           Patch</xref>.</p></section>
         
-        <section id="helion-pass-patch"><title>Apply the Helion Dynamic Password Patch</title>The HP Helion OpenStack cloud
+        <section><title>Apply the Helion Dynamic Password Patch</title>The HP Helion OpenStack cloud
       deployment creates a default password to log into the Helion interface. You can deploy a patch
       to configure the installer to generate a dynamic user name and password for the Helion
       interface. The user name can password can be retrieved from a configuration files. <p>For more
@@ -488,11 +468,11 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
           href="carrier-grade-install-helion-password-patch.dita#topic10581">Applying the Helion
           Dynamic Password Patch</xref>.</p></section>
         
-        <section id="nic-patch"><title>Apply the NIC bonding patch</title><p>HP Helion OpenStack Carrier Grade environments using NIC bonding, see the README in the download
+        <section><title>Apply the NIC bonding patch</title><p>HP Helion OpenStack Carrier Grade environments using NIC bonding, see the README in the download
         or <xref href="carrier-grade-install-nic-patch.dita#topic10581">Applying the NIC Bonding
           Patch</xref> to install a required patch.</p></section>
         
-    <section id="hos-cloud"><title>Deploy the HP Helion OpenStack cloud</title>
+    <section><title>Deploy the HP Helion OpenStack cloud</title>
       <ol>
         <li>Run the HP Helion OpenStack Configuration Processor:
             <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
@@ -548,7 +528,7 @@ The configuration processor completed successfully.
         the README in the download or <xref
           href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port
           Security Patch</xref>. </p></section>
-    <section id="root-user">
+    <section>
       <title>Disable the Root User</title>
       <p>For security purposes, we strongly recommend disabling root. After the
           <codeph>root</codeph> user is disabled, you can use another default user account,
@@ -557,10 +537,8 @@ The configuration processor completed successfully.
       <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581"
           >Disabling the Root User</xref>.</p>
     </section>
-    <section id="kibana"><title>Launch the Kibana interface</title> 
-      <p>To launch Kibana, see <xref href="carrier-grade-install-access-kibana.dita#topic10581"
-        >Accessing Kibana</xref>.</p>
-    </section>
+    <section> To launch Kibana, see <xref href="carrier-grade-install-access-kibana.dita#topic10581"
+        >Accessing Kibana</xref>.</section>
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>

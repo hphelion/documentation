@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Installing the KVM with
+    DCN Deployment</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion Lifecycle
+        Management (HLM) VM is installed</xref>, the next task in installing the <xref
+        href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM + ESX
+        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HP Distributed
+      Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
+      proxy. </p>
+    <p><b>Note:</b> If you are installing the KVM-only deployment, see <xref
+        href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref>.</p>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/prereqs"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/vsd"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/vsd-license"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-user-for-plugin-login"/>
+    <section
+      conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-a-json-file-for-installation"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-node-provision-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-def-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-env-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-ansible-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-ldap-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-wr-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/dcn-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-mach-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/verify-json"/>
+    <section
+      conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/back-end"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/gre-patch"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/reverse-patch"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/helion-pass-patch"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/nic-patch"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/hos-cloud"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/patch-after"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/root-user"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/kibana"/>
+    <section id="next-step">
+      <title>Next Step</title>
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>
+      <!--<p><xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref></p>-->
+    </section>
+  </body>
+</topic>
