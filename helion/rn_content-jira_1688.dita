@@ -3,10 +3,11 @@
 <topic id="topic_j4d_c1c_lt">
   <title>RN</title>
   <body>
-    <p>This page captures which high level, upstream OpenStack projects/services are included in
-      which releases of Helion OpenStack, and their status. If a service is not listed, it should be
-      assumed to be absent. Only official upstream OpenStack projects are included, not
-      non-OpenStack add-ons that originate elsewhere.</p>
+    <p>A high level overview of  the  OpenStack projects/services which are included in HP Helion
+      OpenStack are listed in the following table. It also shows the status of the services.Only
+      official upstream OpenStack projects are included, not non-OpenStack add-ons that originate
+      elsewhere. <note>If the service is not listed in the table then it is not present in HP Helion
+        OpenStack.</note></p>
     <p>
       <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_q2l_d1c_lt">
         <strow>

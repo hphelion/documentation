@@ -38,7 +38,7 @@
           <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
             associate to the backend. <p>The <b>Create Volume Type Extra Specs</b> dialog box
               displays. Now map the volume type to the associate backend.</p></li>
-          <li>In the <b>Key</b> box, enter <i>volume_banked_name</i> as extra spec key. This is the
+          <li>In the <b>Key</b> box, enter <i>volume_backend_name</i> as extra spec key. This is the
             name of the key used to specify the storage backend when provisioning volumes of this
             volume type. The volume backend name must match the backend name mentioned in the
               <codeph>cinder.conf</codeph> file. </li>
