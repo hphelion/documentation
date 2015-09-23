@@ -33,11 +33,10 @@
       Compute, Volume Operations, Networking, and Identity.</p>
     <section>
       <p/>
-      <p>Using Horizon you can create Project, Admin, and Settings. Tabs on the left side of the
-        interface expand and contract to show available tasks grouped into <b>panels</b>.</p>
+      <p>The left side of the UI displays Project, Admin, and Settings sectins. They expand and
+        contract to show available tasks grouped into <b>panels</b>.</p>
       <p>Across the top are menus to switch between projects and menus where you can access user
         settings.</p>
-      <p> To access the dashboard, enter the dashboard URL in a supported browser and log in.</p>
       <p/>
     </section>
     <section conref="../postinstall_checklist.dita#postinstall_checklist/horizon"/>
@@ -101,57 +100,54 @@
         into a database.</p>
       </li>
         <li>
-          <p>If you are a non-admin user, you will only be able to select a project from the list at
+          <p>If you are a non-admin user, you will only be able to select a Project from the list at
             the top of the screen.</p></li>
       </ol></section>
 
-    <section id="horizon-dashboard-examples"><title>Horizon Dashboard Examples</title>
-      <p>The following screen shots illustrate some of the services you can manage in the Horizon
+    <section id="horizon-dashboard-examples"><title>Horizon Dashboard Examples</title><p>The
+        following screen shots illustrate some of the services you can manage in the Horizon
         dashboard. There is both an overcloud Horizon dashboard and an undercloud dashboard, both of
         which are accessible via your URL in a browser.
-        <!--Removed anchor point images--><!-- id="images" --></p>
-      <p><b>Viewing System Info</b></p>
-      <p><image href="../../media/horizon/sysinfo.png" id="image_avw_nb3_ps"/></p>
-      <p>The System Info panel provides a list of all currently installed OpenStack services and
-        their operation status.</p><p/><p>Additional panels on the System Info display sub service
-        status for services like Compute, Block Storage, and Network services. This is a view of the
-        Compute Services tab. There  is  also a Block Storages Services tab and a tab for Network
-        Agents.</p><p><b>Managing Quotas </b></p>
-      <p><image href="../../media/horizon/quotas2.png" id="image_lnv_rb3_ps"/></p>
-      <p><b>Managing Routers </b></p>
-      <p><image href="../../media/horizon/routers.png" id="image_kl5_5b3_ps"/></p>
-      <p><b>Managing Availability Zones</b>
-      </p>
-      <p><image href="../../media/horizon/AZ.png" id="image_slz_wb3_ps"/></p>
-      <p><b>Getting Hypervisor Status</b></p>
-      <p><image href="../../media/horizon/hypervisors.png" id="image_jt2_zb3_ps"/></p>
-      <p>The first tab option on the Hypervisors panel provides a view of the different hypervisors
-        currently running, which physical server each hypervisor instance is running on, the type of
-        hypervisor, and the infrastructure resources consumed by the hypervisor. </p><p>The Compute
-        Host tab lists all of the currently configured physical hosts, which Availability Zone each
-        host is configured for, the status, and total consumed resources.</p>
-      <p>The Compute Host tab lists all of the currently configured physical hosts, which
-        Availability Zone each host is configured for, the status, and total consumed resources.</p><p><b>Creating a DNS
-          Record </b> </p>
-      <p><image href="../../media/horizon/create_a_record.png" id="image_zfd_cc3_ps"/></p>
-      <p><b>Managing Services </b>  </p>
-      <p><image href="../../media/horizon/services.png" id="image_d5m_2c3_ps"/></p>
-      <p><b>Viewing Stacks </b>
-      </p>
-      <p><image href="../../media/horizon/stacks.png" id="image_lgf_gc3_ps"/></p>
-      <p><b>Creating a Domain</b>    </p>
-      <p><image href="../../media/horizon/create_domain.png" id="image_pdf_3c3_ps"/></p>
-      <p><b>Viewing Network Topology</b></p>
-      <p><image href="../../media/horizon/HelionDashboardMenusnew1.png" id="image_xdh_gf3_ps"/></p>
-      </section><section>
+        <!--Removed anchor point images--><!-- id="images" --></p><p><b>Viewing System
+          Info</b></p><p><image href="../../media/horizon/sysinfo.png" id="image_avw_nb3_ps"
+        /></p><p>The System Info panel provides a list of all currently installed OpenStack services
+        and their operation status.</p><p/><p>Additional panels on the System Info display sub
+        service status for services like Compute, Block Storage, and Network services. This is a
+        view of the Compute Services tab. There is also a Block Storages Services tab and a tab for
+        Network Agents.</p><p><b>Managing Quotas </b></p><p><image
+          href="../../media/horizon/quotas2.png" id="image_lnv_rb3_ps"/></p><p><b>Managing Routers
+        </b></p><p><image href="../../media/horizon/routers.png" id="image_kl5_5b3_ps"/></p> Routers
+      are created to connect end user networks together as well as to provide external connectivity.
+      This panel provides a list of all currently deployed routers and associated metadata and
+      enables the system administrator the ability to created, edit, and delete routers.
+          <p><b>Managing Availability Zones</b>
+      </p><p><image href="../../media/horizon/AZ.png" id="image_slz_wb3_ps"/></p><p><b>Getting
+          Hypervisor Status</b></p><p><image href="../../media/horizon/hypervisors.png"
+          id="image_jt2_zb3_ps"/></p><p>The first tab option on the Hypervisors panel provides a
+        view of the different hypervisors currently running, which physical server each hypervisor
+        instance is running on, the type of hypervisor, and the infrastructure resources consumed by
+        the hypervisor. </p><p>The Compute Host tab lists all of the currently configured physical
+        hosts, which Availability Zone each host is configured for, the status, and total consumed
+        resources.</p><p>The Compute Host tab lists all of the currently configured physical hosts,
+        which Availability Zone each host is configured for, the status, and total consumed
+        resources.</p><p><b>Creating a DNS Record </b> </p><p><image
+          href="../../media/horizon/create_a_record.png" id="image_zfd_cc3_ps"/></p><p><b>Managing
+          Services </b>  </p><p><image href="../../media/horizon/services.png" id="image_d5m_2c3_ps"
+        /></p><p><b>Viewing Stacks </b>
+      </p><p><image href="../../media/horizon/stacks.png" id="image_lgf_gc3_ps"/></p><p><b>Creating
+          a Domain</b>    </p><p><image href="../../media/horizon/create_domain.png"
+          id="image_pdf_3c3_ps"/></p><p><b>Viewing Network Topology</b></p><p><image
+          href="../../media/horizon/HelionDashboardMenusnew1.png" id="image_xdh_gf3_ps"
+      /></p></section><section><title>Other Panels</title>
         <ul>
-          <li>The Updates and Extensions panel provides a list of available files that can be downloaded and installed.  This view is also only available to UserIDs with the “admin” role.
-          </li>
-           <li> Host aggregates are a grouping of physical servers or hosts with associated
+          <li>The <b>Updates and Extensions </b>panel provides a list of available files that can be
+          downloaded and installed. This view is also only available to UserIDs with the admin role. </li>
+           <li>
+          <b>Host aggregates </b>are a grouping of physical servers or hosts with associated
           metadata. A host can belong to multiple aggregates. </li>
         <li>Common use cases for host aggregates include supporting the scheduling of instances to a
           subset of hosts that have a specific capability or flavor such as a specific type of
-          storage, lots of RAM, and/or large numbers of processors. Another use case of host
+          storage, lots of RAM, and/or large numbers of processors. <p/>Another use case of host
           aggregates is to support the arrangement of hosts into logical groups for load balancing
           and instance distribution. Host aggregates are configured and only viewable by system
           admins. The end user view of a host aggregate is called an Availability Zone. Availability
@@ -160,11 +156,57 @@
           hosts in multiple availability zones. A load balancer can then be configured and the
           instances running each deployment of the application in each availability zone can be
           assigned to the load balancer thus providing a measure of failover and high availability
-          support. Additional information on host aggregates and availability zones is available at
-          http://blog.russellbryant.net/2013/05/21/availability-zones-and-host-aggregates-in-openstack-compute-nova/
-          and http://docs.openstack.org/openstack-ops/content/scaling.html. </li>   
-          
-          
+          support.<p/> Additional information on host aggregates and availability zones is available
+          at <xref
+            href="http://blog.russellbryant.net/2013/05/21/availability-zones-and-host-aggregates-in-openstack-compute-nova/"
+            format="html" scope="external"
+            >http://blog.russellbryant.net/2013/05/21/availability-zones-and-host-aggregates-in-openstack-compute-nova/</xref>
+          and <xref href="http://docs.openstack.org/openstack-ops/content/scaling.html"
+            format="html" scope="external"
+            >http://docs.openstack.org/openstack-ops/content/scaling.html</xref>. </li>
+        <li>
+          <b>The Instances panel </b>provides a view of all deployed enduser instances across all
+            projects, the images applied to those instances, the status of each instance, flavor
+            type, and network information. This information is also supplied by the Nova API.
+          </li>
+          <li><b>The Volumes panel</b> is displayed if the OpenStack Cinder service is available.
+            Cinder provides block storage infrastructure. Block storage provides the ability for end
+            users to attach storage as discrete drives to a compute instance. These drives are
+            persistent and can be reassigned to a different instance. The Volumes tab on this view
+            shows all currently created volumes and associated metadata and status, which physical
+            host the volume is hosted on, and the ability for the admin to manage each volume.
+          </li><li>
+          <b>Flavors </b>are virtual hardware templates. Flavors are used to define a virtual
+          compute host. Flavors are assigned during the creation of a new instance. This panel
+          displays all of the current flavor types and provides the ability for the admin to create,
+          edit or delete flavors. Hosting organizations often use flavors as a form of billing unit;
+          flavors with more resources are charged at a higher rate than flavors with fewer
+            resources.<p>Flavors are virtual hardware templates. Flavors are used to define a
+            virtual compute host. Flavors are assigned during the creation of a new instance. This
+            panel displays all of the current flavor types and provides the ability for the admin to
+            create, edit or delete flavors. Hosting organizations often use flavors as a form of
+            billing unit; flavors with more resources are charged at a higher rate than flavors with
+            fewer resources. </p></li>   
+          <li><b>Images</b> are discrete software builds that can be loaded onto an instance. An
+          image can be a standalone operating system implementation or a bundle of operating system
+          and other pre-configured applications. This panel displays all currently available images
+          and associated metadata and enables the system administrator to create, edit and delete
+          images. </li>
+          <li><b>Networks</b> are used by end users to provide connectivity to and between their
+          deployed instances. This panel provides a list of all currently deployed networks and
+          associated metadata and enables the system administrator the ability to created, edit, and
+          delete networks. </li>
+       
+          <li><b>Quotas </b>provide the means to limit resource usage. Quotas are assigned per
+          project. This panel provides a view of all current quotas and enables a system
+          administrator with the ability to edit quota line items. </li>
+        <li>
+          <b>The Identity panel</b> has two major panels. The Projects panel provides a list of all
+          current projects and enables a system administrator the ability to create, modify, and
+          delete panels and panel membership. </li><li>
+          <b>The Users panel </b>is available only to system administrators and provides the ability
+          to create, modify, and delete users. These users are considered "local" to Keystone and
+          are authenticated by Keystone. </li>
         </ul>
       </section>
         
