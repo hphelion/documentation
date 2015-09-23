@@ -208,14 +208,15 @@ ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
     </section>
     <section id="run-config-processor"><title>Run the Configuration Processor</title>
       <ol>
-        <li>Run the configuration processor, as follows:
-          <codeblock>cd ~/helion/hos/ansible
+        <li>Run the configuration processor, as follows: <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+          <!--
           The configuration processor output is placed onto the following two private branches of
           the git repo: <ul>
             <li>staging-ansible</li>
             <li>staging-cp-persistent</li>
-          </ul>
+               </ul>
+               -->
           <note>The configuration processor may generate the following warnings which can be
               <b>safely ignored</b>:
             <codeblock>
@@ -252,8 +253,7 @@ ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>
     -->
     <section id="deploy"><title>Deploy the Cloud</title>
       <ol>
-        <li>Run the <codeph>site.yml</codeph> playbook using the following steps: 
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+        <li>Run the <codeph>site.yml</codeph> playbook using the following steps: <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
           <note>The step above runs osconfig to configure the cloud and hlm-deploy, to deploy the
             cloud. Therefore, this step may run for quite some time while all the nodes are
