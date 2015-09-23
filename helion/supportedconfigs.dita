@@ -85,7 +85,7 @@ baremetal_servers:
         see <xref href="input_model.dita#input_model/4.7_InterfaceModels" type="section">Interface
           Models</xref> for more details on that feature.</p>
     </section>-->
-    <section><title>Entry Scale Cloud</title>
+    <section><title>Entry scale cloud with VSA (on KVM)</title>
       <p>Choosing this model will result in a cloud with that has the following
       characteristics:</p></section>
     <section id="controlplane"><title>Control Planes</title>
