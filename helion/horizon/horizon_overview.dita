@@ -1,45 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1564">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Horizon Service Overview</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
-<othermeta name="role" content="Systems Administrator"/>
-<othermeta name="role" content="Cloud Architect"/>
-<othermeta name="role" content="Storage Administrator"/>
-<othermeta name="role" content="Network Administrator"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Cloud Administrator"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="Network Engineer"/>
-<othermeta name="role" content="Michael B, Nancy M"/>
-<othermeta name="product-version1" content="HP Helion Openstack"/>
-<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
-</metadata>
-</prolog>
-<body>
-<p>
-<!--PUBLISHED-->
- <!--./commercial/GA1/1.1commerical.services-horizon-overview.md-->
- <!--permalink: /helion/openstack/1.1/services/horizon/overview/--></p>
-<p>
-
-</p>
-<p>Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack web interface or <b>dashboards</b>.</p>
-<p>The dashboards provide a web-based user interface to HP Helion OpenStack services including
-        Compute, Volume Operations, Networking, and
-        Identity.</p>
-<section>
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic1564">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Horizon Service Overview</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+      <othermeta name="role" content="Systems Administrator"/>
+      <othermeta name="role" content="Cloud Architect"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Network Administrator"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Cloud Administrator"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="Network Engineer"/>
+      <othermeta name="role" content="Michael B, Nancy M"/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>
+      <!--PUBLISHED-->
+      <!--./commercial/GA1/1.1commerical.services-horizon-overview.md-->
+      <!--permalink: /helion/openstack/1.1/services/horizon/overview/--></p>
+    <p> </p>
+    <p>Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack
+      dashboards.</p>
+    <p>The dashboards provide a web-based user interface to HP Helion OpenStack services including
+      Compute, Volume Operations, Networking, and Identity.</p>
+    <section>
       <p/>
-      <p>The interface, based on OpenStack Horizon, is grouped into dashboards, including Project, Admin, and Settings. Tabs on the left side of the interface
-        expand and contract to show available commands grouped into <b>panels</b>.</p>
+      <p>Using Horizon you can create Project, Admin, and Settings. Tabs on the left side of the
+        interface expand and contract to show available tasks grouped into <b>panels</b>.</p>
       <p>Across the top are menus to switch between projects and menus where you can access user
         settings.</p>
-      <p> To access the dashboard, enter the dashboard URL in a supported browser and log
-          in.</p>
+      <p> To access the dashboard, enter the dashboard URL in a supported browser and log in.</p>
       <p/>
     </section>
     <section conref="../postinstall_checklist.dita#postinstall_checklist/horizon"/>
@@ -47,54 +45,78 @@
       <p>At the bottom of this page, you can see some of the services you can manage right from the
         dashboard.</p>
     </section>
-  <section id="DashProject"> <title>Project dashboard</title>
-    <p>Use the <b>Project</b> dashboard to implement and build out your cloud. This dashboard contains tools to create virtual server instances, create and configure your network, configure access tools (such as key pairs and security groups) and cloud resource templates (stacks).</p>
-  </section>
-  <section id="DashAdmin"> <title>Admin dashboard</title>
-    <p>Use the <b>Admin</b> dashboard to view, allocate, and manage all resources within the cloud.</p>
-    <p>The Admin dashboard allows you to manage instances, define flavors, create and configure images, manage networks, view system resources, manage projects, and manage users.</p>
-  </section>
-  
-  <section id="DashSettings"> <title>Settings dashboard</title>
-    <p>Use the <b>Settings</b> dashboard to change your display language and settings, your time zone, and your password.</p>
-    <p>Click <b>Settings</b> in the user menu to display the Settings dashboard.</p>
-    <p>For a look at the dashboard options, see <xref href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita" >Horizon Overview</xref>
-    </p>
-  </section>
-  <section><ol>
-    <li>
-      <p>Ask the cloud operator for the host name or public IP address where the dashboard is located, your user name, and your password.</p>
-    </li>
-    <li>
-      <p>Open a web browser that has both JavaScript and cookies enabled.</p>
-    </li>
-    <li>
-      <p>In the address bar, enter the host name or IP address for the dashboard.</p>
-      <note> If a certificate warning appears when you try to access the URL for the first time, a
-        self-signed certificate is in use. These certificates are not considered trustworthy by
-        default. Verify the certificate or add an exception in the browser to bypass the
-        warning.</note>
-    </li>
-    <li>
-      <p>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign In</b>.</p>
-      
-      <p>
+    <section id="DashProject">
+      <title>Project dashboard</title>
+      <p>Use the <b>Project</b> dashboard to implement and build out your cloud. This dashboard
+        contains tools to create virtual server instances, create and configure your network,
+        configure access tools (such as key pairs and security groups) and cloud resource templates
+        (stacks).</p>
+    </section>
+    <section id="DashAdmin">
+      <title>Admin dashboard</title>
+      <p>Use the <b>Admin</b> dashboard to view, allocate, and manage all resources within the
+        cloud.</p>
+      <p>The Admin dashboard allows you to manage instances, define flavors, create and configure
+        images, manage networks, view system resources, manage projects, and manage users.</p>
+    </section>
+
+    <section id="DashSettings">
+      <title>Settings dashboard</title>
+      <p>Use the <b>Settings</b> dashboard to change your display language and settings, your time
+        zone, and your password.</p>
+      <p>Click <b>Settings</b> in the user menu to display the Settings dashboard.</p>
+      <p>For a look at the dashboard options, see <xref
+          href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita">Horizon
+          Overview</xref>
+      </p>
+    </section>
+    <section><ol>
+        <li>
+          <p>Open a web browser that has both JavaScript and cookies enabled.</p>
+        </li>
+        <li>
+          <p>In the address bar, enter the host name or IP address for the dashboard.</p>
+          <note> If a certificate warning appears when you try to access the URL for the first time,
+            a self-signed certificate is in use. These certificates are not considered trustworthy
+            by default. Verify the certificate or add an exception in the browser to bypass the
+            warning.</note>
+        </li>
+        <li>
+          <p>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign
+              In</b>.</p>
+          <p>
             <image href="../../media/horizon/HelionLogin.png">
               <alt/>
             </image>
           </p>
-    </li>
-    <li>
-      <p>If you are a non-admin user, you will only be able to select a project from the list at the top of the screen.</p></li></ol></section>
+        </li>
+      <li><p>The UserID with the "admin" role is provided with a special tab called Admin. The menu options
+            underneath this tab are similar to the non-admin user views but cover all projects as
+            well as some additional panels not available to general users. </p>
+        <p>The Overview page provides a summary by project of the current 
+        utilization of major OpenStack resources.  The information on this 
+        screen is drawn directly from the Compute or Nova service API and provides 
+        the ability to filter the query by date range and an option to download results 
+        into a CSV file that is compatible with Microsoft Excel or can be imported 
+        into a database.</p>
+      </li>
+        <li>
+          <p>If you are a non-admin user, you will only be able to select a project from the list at
+            the top of the screen.</p></li>
+      </ol></section>
 
-<section id="horizon-dashboard-examples"><title>Horizon Dashboard Examples</title>
+    <section id="horizon-dashboard-examples"><title>Horizon Dashboard Examples</title>
       <p>The following screen shots illustrate some of the services you can manage in the Horizon
         dashboard. There is both an overcloud Horizon dashboard and an undercloud dashboard, both of
         which are accessible via your URL in a browser.
         <!--Removed anchor point images--><!-- id="images" --></p>
       <p><b>Viewing System Info</b></p>
       <p><image href="../../media/horizon/sysinfo.png" id="image_avw_nb3_ps"/></p>
-      <p><b>Managing Quotas </b></p>
+      <p>The System Info panel provides a list of all currently installed OpenStack services and
+        their operation status.</p><p/><p>Additional panels on the System Info display sub service
+        status for services like Compute, Block Storage, and Network services. This is a view of the
+        Compute Services tab. There  is  also a Block Storages Services tab and a tab for Network
+        Agents.</p><p><b>Managing Quotas </b></p>
       <p><image href="../../media/horizon/quotas2.png" id="image_lnv_rb3_ps"/></p>
       <p><b>Managing Routers </b></p>
       <p><image href="../../media/horizon/routers.png" id="image_kl5_5b3_ps"/></p>
@@ -103,7 +125,14 @@
       <p><image href="../../media/horizon/AZ.png" id="image_slz_wb3_ps"/></p>
       <p><b>Getting Hypervisor Status</b></p>
       <p><image href="../../media/horizon/hypervisors.png" id="image_jt2_zb3_ps"/></p>
-      <p><b>Creating a DNS Record </b> </p>
+      <p>The first tab option on the Hypervisors panel provides a view of the different hypervisors
+        currently running, which physical server each hypervisor instance is running on, the type of
+        hypervisor, and the infrastructure resources consumed by the hypervisor. </p><p>The Compute
+        Host tab lists all of the currently configured physical hosts, which Availability Zone each
+        host is configured for, the status, and total consumed resources.</p>
+      <p>The Compute Host tab lists all of the currently configured physical hosts, which
+        Availability Zone each host is configured for, the status, and total consumed resources.</p><p><b>Creating a DNS
+          Record </b> </p>
       <p><image href="../../media/horizon/create_a_record.png" id="image_zfd_cc3_ps"/></p>
       <p><b>Managing Services </b>  </p>
       <p><image href="../../media/horizon/services.png" id="image_d5m_2c3_ps"/></p>
@@ -114,7 +143,35 @@
       <p><image href="../../media/horizon/create_domain.png" id="image_pdf_3c3_ps"/></p>
       <p><b>Viewing Network Topology</b></p>
       <p><image href="../../media/horizon/HelionDashboardMenusnew1.png" id="image_xdh_gf3_ps"/></p>
-      <xref href="#topic1564"> Return to Top </xref>
-    </section>
-</body>
+      </section><section>
+        <ul>
+          <li>The Updates and Extensions panel provides a list of available files that can be downloaded and installed.  This view is also only available to UserIDs with the “admin” role.
+          </li>
+           <li> Host aggregates are a grouping of physical servers or hosts with associated
+          metadata. A host can belong to multiple aggregates. </li>
+        <li>Common use cases for host aggregates include supporting the scheduling of instances to a
+          subset of hosts that have a specific capability or flavor such as a specific type of
+          storage, lots of RAM, and/or large numbers of processors. Another use case of host
+          aggregates is to support the arrangement of hosts into logical groups for load balancing
+          and instance distribution. Host aggregates are configured and only viewable by system
+          admins. The end user view of a host aggregate is called an Availability Zone. Availability
+          zones are created via the Nova API and the host aggregates function. End users can use
+          availability zones for similar use cases. For example, an application could be deployed on
+          hosts in multiple availability zones. A load balancer can then be configured and the
+          instances running each deployment of the application in each availability zone can be
+          assigned to the load balancer thus providing a measure of failover and high availability
+          support. Additional information on host aggregates and availability zones is available at
+          http://blog.russellbryant.net/2013/05/21/availability-zones-and-host-aggregates-in-openstack-compute-nova/
+          and http://docs.openstack.org/openstack-ops/content/scaling.html. </li>   
+          
+          
+        </ul>
+      </section>
+        
+     
+        
+      
+     <!-- <xref href="#topic1564"> Return to Top </xref>-->
+ 
+  </body>
 </topic>

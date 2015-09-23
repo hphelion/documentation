@@ -43,7 +43,7 @@
 <codeblock>OPENSTACK_KEYSTONE_URL = "http://%s:5000/v3" % OPENSTACK_HOST</codeblock>
 </li>
 <li>
-<p>Restart the apache server in each controller nodes:</p>
+<p>Restart the Apache server in each controller nodes:</p>
 
 <codeblock>sudo service apache2 restart</codeblock>
 </li>

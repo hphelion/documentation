@@ -314,6 +314,8 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
           Bootable volume.</li>
         <li>Use the OpenStack or Nova client to create the instance.</li>
       </ul>
+      <note>When using the Launch Instance action in the Volumes table, the Launch Instance
+        Wizard form doesn't get pre-populated with the Volumes option selected, nor does it select the given Volume.</note>
       <!--<p><b>Networks</b></p>
       <p>
         <ul id="ul_rlg_dbg_ys">
