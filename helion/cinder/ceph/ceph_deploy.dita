@@ -48,8 +48,8 @@
                     <li>OSD_journal_size</li>
                   </ul></p></li>
               <li>
-                <p><codeph>~/helion/my_cloud/config/ceph/usermodel.yml</codeph></p>
-                <p>The <codeph>usermodel.yml</codeph> has the editable values for the different
+                <p><codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph></p>
+                <p>The <codeph>user_model.yml</codeph> has the editable values for the different
                   pools created by HP Helion OpenStack.</p>
               </li>
             </ul></li>
@@ -99,8 +99,8 @@ rbd_pool = volumes
 rbd_ceph_conf = /etc/ceph/ceph.conf
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
 volume_backend_name = ceph</codeblock><note>The
-              <b>rbd_uuid </b>is same as <b>fsid</b> available at
-              <codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
+              <b>rbd_uuid </b>is same as <b>secret_id </b> available at
+              <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
         <?oxy_custom_end?>
         <li> Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
             id="ol_ihn_2l5_kt">
