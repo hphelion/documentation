@@ -195,7 +195,7 @@
     </section>
     <section id="newfile">
       <title>New RBAC Policy File</title>
-      <p>This is the policy file for Ceilometer without RBAC (<i>etc/ceilometer/policy.json</i>)</p>
+      <p>This is the policy file for Ceilometer without RBAC (<b>etc/ceilometer/policy.json</b>)</p>
       <codeblock>{
   "context_is_admin": "role:admin"
 }</codeblock>
@@ -227,14 +227,14 @@
     </section>
     <section id="apply_policy">
       <title>Applying Policies to Roles</title>
-      <p>Copy the <i>rbac_policy.json</i> file over the <i>policy.json</i> file and make any
+      <p>Copy the <b>rbac_policy.json</b> file over the <b>policy.json</b> file and make any
         required changes.</p>
     </section>
     <section id="apply-a-policy-to-multiple-roles">
       <title>Apply a policy to multiple roles</title>
       <p>For example, the ResellerAdmin role could also be permitted to access
           <b>compute_statistics</b>. This change would require the following changes in the
-          <i>rbac_policy.json</i> policy file:</p>
+          <b>rbac_policy.json</b> policy file:</p>
       <codeblock>{
     "context_is_admin": "role:admin",
     "i_am_reseller": "role:ResellerAdmin",
