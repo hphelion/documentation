@@ -34,22 +34,22 @@
           navtitle="Compute Service (Nova) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-networking-overview.dita"
-          navtitle="HP Networking Service (Neutron) Overview" locktitle="yes"/>
+          navtitle="Networking Service (Neutron) Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-imaging-overview.dita"
-          navtitle="HP Image Operations (Glance) Overview" locktitle="yes"/>
+          navtitle="Image Operations (Glance) Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-volume-overview.dita"
-          navtitle="HP Block Storage Operations (Cinder) Overview" locktitle="yes"/>
+          navtitle="Block Storage Operations (Cinder) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"
-          navtitle="HP Orchestration Service (Heat) Overview" locktitle="yes"/>
+          navtitle="Orchestration Service (Heat) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-identity-overview.dita"
-          navtitle="HP Identity Service (Keystone) Overview" locktitle="yes"/>
+          navtitle="Identity Service (Keystone) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"
-          navtitle="HP Metering Service (Ceilometer) Overview" locktitle="yes"/>
+          navtitle="Metering Service (Ceilometer) Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
-          navtitle="HP Horizon Service Overview" locktitle="yes">
+          navtitle="Horizon Service Overview" locktitle="yes">
           <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
             navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
           <topicref
@@ -59,6 +59,8 @@
             href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita"
             navtitle="Using the Helion Dashboard to Manage Your Cloud" locktitle="yes"/>
         </topicref>
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-ironic-overview.dita"
+          navtitle="Ironic Service Overview" locktitle="yes"/>
       </topicref>
     </topicref>
     <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml" navtitle="Release Notes"

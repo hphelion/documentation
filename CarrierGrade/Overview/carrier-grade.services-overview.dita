@@ -70,45 +70,43 @@
 -->
 </section>
 <section id="OpenStack">
-      <title>OpenStack Services</title>
-      <p>The following services are foundation technologies used by the HP Helion OpenStack Carrier
-        Grde. </p>
-      <p><b>Compute Operations (Nova)</b>. The Compute service manages the hypervisors and virtual
-        machines in your environment. </p><p>See <xref
+      <title>OpenStack Services</title><p>The following services are foundation technologies used by
+        the HP Helion OpenStack Carrier Grde. </p><p><b>Compute Operations (Nova)</b>. The Compute
+        service manages the hypervisors and virtual machines in your environment. </p><p>See <xref
           href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita"
-          >Overview of the Compute service</xref>. </p>
-      <p><b>Networking Operations (Neutron)</b>. The Networking Operations service is a virtual
-        networking service that leverages the OpenStack Neutron service to provide network
-        connectivity and addressing to HP Helion OpenStack Carrier Grade devices. </p>
-      <p>See <xref
+          >Overview of the Compute service</xref>. </p><p><b>Networking Operations (Neutron)</b>.
+        The Networking Operations service is a virtual networking service that leverages the
+        OpenStack Neutron service to provide network connectivity and addressing to HP Helion
+        OpenStack Carrier Grade devices. </p><p>See <xref
           href="../ServicesOverviews/carrier-grade-services-networking-overview.dita#topic2677"
-          >Overview of the Network Operations service</xref>.</p>
-      <p><b>Image Operations (Glance)</b></p>The Image Operations service is a web service for
-      managing virtual machine images. <p> See <xref
+          >Overview of the Network Operations service</xref>.</p><p><b>Image Operations
+        (Glance)</b></p>The Image Operations service is a web service for managing virtual machine
+      images. <p> See <xref
           href="../ServicesOverviews/carrier-grade-services-imaging-overview.dita#topic4195"
-          >Overview of the Image Operations service</xref></p>
-      <p><b>Metering (Ceilometer)</b>. The Metering service enables a single infrastructure to
-        collect measurements throughout your cloud environment.</p><p>See <xref
+          >Overview of the Image Operations service</xref></p><p><b>Metering (Ceilometer)</b>. The
+        Metering service enables a single infrastructure to collect measurements throughout your
+        cloud environment.</p><p>See <xref
           href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"
-          >Overview of the Metering service</xref>.</p>
-      <p><b>Orchestration (Heat)</b>. The Orchestration service provides a template-based
-        orchestration for describing a cloud application. A Heat template is a <xref
-          href="http://www.yaml.org/" scope="external" format="html">YAML</xref> file that describes
-        the infrastructure for a cloud application. Templates contain vendor-independent
-        specifications for launching a particular service or application.</p><p>See <xref
+          >Overview of the Metering service</xref>.</p><p><b>Orchestration (Heat)</b>. The
+        Orchestration service provides a template-based orchestration for describing a cloud
+        application. A Heat template is a <xref href="http://www.yaml.org/" scope="external"
+          format="html">YAML</xref> file that describes the infrastructure for a cloud application.
+        Templates contain vendor-independent specifications for launching a particular service or
+        application.</p><p>See <xref
           href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"
-          >Overview of the Orchestration service</xref>.</p>
-      <p><b>Volume Operations (Cinder)</b>. The Volume Operations service enables you to attach
-        storage volumes to the virtual instances in your cloud environment. The service provides
-        persistent block level storage devices for use with your Compute instances.</p>
-      <p>See <xref href="../ServicesOverviews/carrier-grade-services-volume-overview.dita#topic2606"
-          >Overview of the Volume Operations service</xref>.</p>
-      <p><b>Identity Management (Keystone)</b>. The Identity Management service enables you to
-        create and administer users and security groups, and control access to your cloud
-        environment.</p>
-      <p>See <xref
+          >Overview of the Orchestration service</xref>.</p><p><b>Volume Operations (Cinder)</b>.
+        The Volume Operations service enables you to attach storage volumes to the virtual instances
+        in your cloud environment. The service provides persistent block level storage devices for
+        use with your Compute instances.</p><p>See <xref
+          href="../ServicesOverviews/carrier-grade-services-volume-overview.dita#topic2606">Overview
+          of the Volume Operations service</xref>.</p><p><b>Identity Management (Keystone)</b>. The
+        Identity Management service enables you to create and administer users and security groups,
+        and control access to your cloud environment.</p><p>See <xref
           href="../ServicesOverviews/carrier-grade-services-identity-overview.dita#topic7556"
-          >Overview of the Identity Management service</xref>.</p>
+          >Overview of the Identity Management service</xref>.</p><p><b>Ironic</b>. HP Helion
+        OpenStack leverages the OpenStack Ironic service during the installation for provisioning of
+        the controller and KVM compute host in a baremetal deployment.</p><p>See <xref
+          href="../ServicesOverviews/carrier-grade-services-ironic-overview.dita#topic1235">Overview of the Ironic Service</xref></p>
       <!-- Hiding for Alpha
 **Image Operations (Glance)**. The Image Operations service enables you to create and maintain server images, which you can use to launch virtual machines across the cloud. Also known as **Glance**.
 
