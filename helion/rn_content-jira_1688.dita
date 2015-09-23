@@ -3,11 +3,10 @@
 <topic id="topic_j4d_c1c_lt">
   <title>RN</title>
   <body>
-    <p>A high level overview of  the  OpenStack projects/services which are included in HP Helion
-      OpenStack are listed in the following table. It also shows the status of the services.Only
-      official upstream OpenStack projects are included, not non-OpenStack add-ons that originate
-      elsewhere. <note>If the service is not listed in the table then it is not present in HP Helion
-        OpenStack.</note></p>
+    <p>The following table list a high level overview of  the  OpenStack projects/services which are
+      included in HP Helion OpenStack  and their status. Only official upstream OpenStack projects
+      are included, not non-OpenStack add-ons that originate elsewhere. <note>If the service is not
+        listed in the table then it is not present in HP Helion OpenStack.</note></p>
     <p>
       <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_q2l_d1c_lt">
         <strow>
@@ -101,20 +100,23 @@
       </simpletable>
     </p>
     <p/>
-    <p>Relation of HOS OpenStack Services to OpenStack stable/kiloThe general policy for HOS 2.0 is
-      that each service is kept up to date versus upstream OpenStack stable/kilo. Automated jobs run
-      nightly to mirror upstream OpenStack stable/kilo down to HOS's internal code mirror so, unless
-      the sync job fails, each service should be up to date. The level of drift between upstream
-      OpenStack stable/kilo and what is included in the HOS V2.0 build is summarised here. This is
-      automated output from all the OpenStack repos included in the HOS daily builds. Note that
-      Ceilometer, Nova, Horizon, Keystone and Cinder have >2 local patches.The detailed list of all
-      missing patches and all local patches is here. OpenStack Kilo Stable Patch Release ScheduleThe
-      schedule for patch releases for OpenStack Kilo is at Planned stable/kilo releases (9 months).
-      Note that 2015.1.1 released in July and 2015.1.2 is due in mid-Sept. What 'version' of
-      OpenStack Kilo will HOS V2.0 ship with?As per above, HOS V2.0 is built from code which is
-      sync'd nightly with upstream OpenStack stable/kilo. HOS V2.0 will therefore ship with the
-      latest Kilo patches as of the final build of HOS V2.0. In other words, the HOS V2.0 plan is
-      that it will be more up to date than the 2015.1.2 "Kilo patch release".</p>
+    <section>
+      <title>Relation of HOS OpenStack Services to OpenStack stable/kilo</title>
+    </section>
+    <p>The general policy for HOS 2.0 is that each service is kept up to date versus upstream
+      OpenStack stable/kilo. Automated jobs run nightly to mirror upstream OpenStack stable/kilo
+      down to HOS's internal code mirror so, unless the sync job fails, each service should be up to
+      date. The level of drift between upstream OpenStack stable/kilo and what is included in the
+      HOS V2.0 build is summarised here. This is automated output from all the OpenStack repos
+      included in the HOS daily builds. Note that Ceilometer, Nova, Horizon, Keystone and Cinder
+      have >2 local patches.The detailed list of all missing patches and all local patches is here.
+      OpenStack Kilo Stable Patch Release ScheduleThe schedule for patch releases for OpenStack Kilo
+      is at Planned stable/kilo releases (9 months). Note that 2015.1.1 released in July and
+      2015.1.2 is due in mid-Sept. What 'version' of OpenStack Kilo will HOS V2.0 ship with?As per
+      above, HOS V2.0 is built from code which is sync'd nightly with upstream OpenStack
+      stable/kilo. HOS V2.0 will therefore ship with the latest Kilo patches as of the final build
+      of HOS V2.0. In other words, the HOS V2.0 plan is that it will be more up to date than the
+      2015.1.2 "Kilo patch release".</p>
     <p/>
   </body>
 </topic>

@@ -473,7 +473,8 @@ cd /home/stack/scratch/ansible/next/hos/ansible;</codeblock></li>
     <p>Execute the following command to deploy a esx compute and
       OVSvApps:<codeblock>ansible-playbook -i hosts/verb_hosts guard-deployment.yml
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit '*<b>esx-ovsvapp:*esx-compute</b>' 
-ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit NOV-ESX:NEU-OVSVAPP</codeblock></p>
+ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit NOV-ESX:NEU-OVSVAPP
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></p>
     <note>The variable <b>esx-ovsvapp</b> and <b>esx-compute</b> must be taken from the <b>name</b>
       key in the <codeph>resource-nodes</codeph> section in the
         <codeph>/data/control_plane.yml</codeph> file
