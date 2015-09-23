@@ -429,31 +429,31 @@
                 <entry>HTTP Status</entry>
                 <entry>component=keystone-api,api_endpoint=public</entry>
                 <entry>API is unresponsive</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
               </row>
               <row>
                 <entry>HTTP Status</entry>
                 <entry>component=keystone-api,api_endpoint=admin</entry>
                 <entry>API is unresponsive</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
               </row>
               <row>
                 <entry>HTTP Status</entry>
                 <entry>component=keystone-api,monitored_host_type=vip</entry>
                 <entry>API is unresponsive on each node</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
               </row>
               <row>
                 <entry>Process Check</entry>
                 <entry>process_name=keystone-main</entry>
                 <entry>Process crashed</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
               </row>
               <row>
                 <entry>Process Check</entry>
                 <entry>process_name=keystone-admin</entry>
                 <entry>Process crashed</entry>
-                <entry/>
+                <entry>Restart process on affected node. Review logs.</entry>
               </row>
               <row>
                 <entry>Host alive Check</entry>
