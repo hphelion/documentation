@@ -75,8 +75,8 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
     <p>Ceph Monitor service is deployed on the Controller Nodes and OSD's are deployed as separate
       nodes (Resource Nodes).</p>
     <p id="run-ceph-client-package"><b>Run Ceph Client Packages</b></p>
-    <p>Ceph can be used as backend for <!--nova-compute, glance,--> cinder-volume, and
-      cinder-backup. The nodes running these services should have a client installed on it. Use
+    <p>Ceph can be used as backend for <!--nova-compute, glance,--> cinder-volume and cinder-backup.
+      The nodes running these services should have a client installed on it. Use
         <codeph>ceph-client-prepare.yml</codeph> to deploy client on respective nodes.</p>
     <p><!--Execute the following command to install the Ceph client packages on controller nodes. --></p>
     <p>
