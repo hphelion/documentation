@@ -18,7 +18,10 @@
     <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
     <p>This page introduces deployment and network architectures of the KVM + ESX deployment of HP
       Helion OpenStack Carrier Grade. This deployment supports the integration of VMware ESX<tm
-        tmtype="reg"/> storage into HP Helion OpenStack Carrier Grade.</p>
+        tmtype="reg"/> storage into HP Helion OpenStack Carrier Grade using HP. The KVM + ESX
+      deployment incorprates HP Distributed Cloud Networking (DCN) virtual network solution. During
+      the installation, use the <codeph>memphis</codeph> template that comes with the installation
+      package to create the KVM + ESX deployment.</p>
     <section id="deploy-arch">
       <title>Deployment architecture</title>
       <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack

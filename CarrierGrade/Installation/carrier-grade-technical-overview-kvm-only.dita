@@ -16,8 +16,9 @@
   </prolog>
   <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
-    <p>This page introduces deployment and network architectures of the KVM + ESX deployment of HP
-      Helion OpenStack Carrier Grade.</p>
+    <p>This page introduces deployment and network architectures of the KVM deployment of HP Helion
+      OpenStack Carrier Grade. During the installation, use the <codeph>denver</codeph> template
+      that comes with the installation package to create the KVM deployment. </p>
     <ul>
       <li>
         <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>

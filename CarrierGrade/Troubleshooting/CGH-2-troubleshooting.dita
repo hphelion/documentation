@@ -15,65 +15,39 @@
   </prolog>
   <body>
     <p>This topic describes all the known issues that you might encounter. </p>
+    <section><title>VM failure to get private/Fixed IP address</title>Memphis region deployment is
+      done with basic verification. Configuration of VRS-G is done as per the cookbook <xref
+        href="https://wiki.hpcloud.net/download/attachments/49089763/ESX-DCN-Baremetal-Install-Instructions-HCG2.0-Build9.docx?api=v2"
+        format="html" scope="external"
+        >https://wiki.hpcloud.net/download/attachments/49089763/ESX-DCN-Baremetal-Install-Instructions-HCG2.0-Build9.docx?api=v2</xref>.
+      Using the same cookbook, networks, image, etc are created and VM provisioning is attempted. VM
+      launched has private and floating IP seen on dashboard. However, when consoled into VM, there
+      is no networking.<p>
+        <b>Resolution</b>
+      </p><p>Check if the glance image created has right properties set. In this case, glance image
+        was created with adapter type lsiLogic instead of ide. Also, check if gateway and subnet
+        values are correctly assigned to VRSvAPPs. In this case, it was mistakenly swapped on one of
+        the vrsApps. </p></section>
     <section>
-      <title>Installation Issues</title>
-      <p>Installation failure during hConfig</p>
-      <p>Installation failure during hnetinit</p>
-      <p>Installation failure during hDeploy</p>
-      <p>Running Ansible roles starting at a specific role</p>
-      <p>VSC installation failure</p>
-      <p>VSC-VSD communication failure</p>
-      <p>VSC not showing up VRS and VRS-G</p>
-      <p>Failure to start services:</p>
-      <ul id="ul_cp4_r25_jt">
-        <li>
-          <p>Keystone service</p>
-        </li>
-        <li>
-          <p>LDAP service</p>
-        </li>
-        <li>
-          <p>Neutron-server service </p>
-        </li>
-        <li>
-          <p>Nova service </p>
-        </li>
-      </ul>
+      <title>VRSvAPPs missing in VSD dashboard</title>
+      <p>
+        <b>System Behavior/Message</b>
+      </p>
+      <p>While performing basic verification of cloud deployment, it is observed that VRSvAPPs are
+        missing in VSD. Their TUL addresses are not pingable from VRS-G node. </p>
+      <p>Solution: </p>
+      <p>Above changes required vswitch1 on VRSvAPPs to be presented on Niantics as well. Once this
+        was done, VRSvAPPS were synchronized in VSD dashboard. </p>
+      <p>Memphis region deployment is done with following networking changes. </p>
+      <p>Networking changes done are as follows –</p>
+      <p>ETH0 is active</p>
+      <p>ETH1 is off</p>
+      <p>UNTAGGED TUL on NIANTICS on DCN, VRS and WR Computes</p>
     </section>
-    <section><title>Network Issues</title>VM failure<p>Floating IPissues</p><p>Fixed and FIP
-        successful but can’t ping/ssh to the VM </p></section>
-    <section>
-      <title>Configuration Issues</title>
-      <p>VM failure to get private/Fixed IP address</p>
+    <section><title>See Also</title>
+      <p>For troubleshooting tips related to the HP Helion OpenStack cloud, see <xref
+          href="../../commercial/GA1/1.1commercial.troubleshooting.dita#topic2105">HP Helion
+          OpenStack 1.1: Troubleshooting</xref>.</p>
     </section>
-    <section><title>Compute Node Issues</title>
-    <p>WR compute nodes</p>
-    <p>ESXi compute nodes</p>
-    <p>VRSvAPP deployment failure  </p>
-    <p>ESXi host in maintenance mode</p>
-    <p>VMs are accessible on rebooting Nova Compute Proxy </p>
-    <p>VRSvAPP got migrated to other Hypervisor after reboot </p>
-    </section>
-    
-    <section><title>Cloud Controller Issues</title>
-      <p>MySQL database cluster failure</p>
-    <p>Launching anESXi instance fails during the spawning state</p>
-    <p>Unable to attach an iSCSI volume to a Hyper-V-provisioned instance </p>
-    </section>
-    <section>
-      <title>OpenStack User Portal Issues</title> 
-      <p>Users cannot login to the OpenStack user portal</p>         
-    </section>
-    <section><title>ELK Issues</title>
-      <p>Status of one Cloud controller is undetermined</p>
-      <p>CPU information of Hypervisors not available</p>  
-    </section>
-      
-      <!--Troubleshoot multi-region issues--> 
-     <section> 
-       <p>Backup and Restore Issues</p>
-       <p>Backing up failure</p>
-       <p>Restore failure</p>
-     </section>
   </body>
 </topic>
