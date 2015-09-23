@@ -192,9 +192,9 @@
     </topicref>
     <!-- horizon -->
     <topicref href="helion/horizon/horizon_overview.dita" navtitle="Horizon Dashboard"
-      locktitle="yes" toc="no">
-      <topicref href="helion/horizon/horizon_configure_v3.dita" 
-        toc="no"/>
+      locktitle="yes" toc="yes">
+      <topicref href="helion/horizon/horizon_configure_v3.dita" navtitle="Configuring Horizon for Keystone v3"
+        locktitle="yes" toc="yes"/>
     </topicref>
   </topicref>
 </map>
