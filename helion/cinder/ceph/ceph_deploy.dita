@@ -122,8 +122,8 @@ backup_ceph_pool = backups
 backup_ceph_stripe_unit = 0
 backup_ceph_stripe_count = 0
 restore_discard_excess_bytes = true</codeblock><note>You
-            can add a comment (<b># Ceph backup </b>) as shown above so that ceph backup content can
-            be easily identified in the<codeph> cinder.conf.j2</codeph> file.</note></li>
+            can add a comment (<b># Ceph backup </b>) as shown above so that the ceph backup content
+            can be easily identified in the<codeph> cinder.conf.j2</codeph> file.</note></li>
         <li> Copy <codeph>client.cinder-backup.keyring</codeph> to the controller nodes:<ol
             id="ol_xx5_51x_gt">
             <li>Login to controller node as a root user and execute the following
