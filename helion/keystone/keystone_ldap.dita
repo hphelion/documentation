@@ -21,8 +21,7 @@
     
     Here is the sample YAML configuration, optimized for Microsoft AD server:
     
-    <codeblock>
----
+    <codeblock>---
  
 keystone_domainldap_conf:
  
@@ -96,8 +95,7 @@ keystone_domainldap_conf:
        <li>As suggested at Using Git for Configuration Management, commit the new file into local git repository,
          and rerun configuration processor / deployment area preparation playbooks :
     
-    <codeblock>
-$ cd ~/helion
+    <codeblock>$ cd ~/helion
 $ git checkout site
 $ git add my_cloud/config/keystone/keystone_configure_ldap_my.yml
 $ git commit -m "Adding LDAP server integration config"
@@ -106,8 +104,7 @@ $ ansible-playbook -i hosts/localhost config-processor-run.yml
 $ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
    </li> <li>
      Run reconfiguration playbook in a deployment area, passing a YAML file created at previous step as command line option:
-    <codeblock>
-$ cd ~/scratch/ansible/next/hos/ansible
+    <codeblock>$ cd ~/scratch/ansible/next/hos/ansible
 $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml</codeblock>
    </li>
        <li>
@@ -115,8 +112,7 @@ $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/home/stack/h
          creating a yaml file for each and running the reconfigure playbook once for each additional domain.
        </li>
        <li>Ensure that new domain was created for LDAP (Microsoft AD in this example):
-    <codeblock>
-# Set environment variables for admin level access
+    <codeblock># Set environment variables for admin level access
 $ source keystone.osrc
  
 # Get list of domains
@@ -142,8 +138,7 @@ $ openstack group list --domain ad
        </li> 
      <li>
        Once LDAP user is granted appropriate role, it can authenticate within specified domain:
-       <codeblock>
-# Set environment variables for admin level access
+       <codeblock># Set environment variables for admin level access
 $ source keystone.osrc
  
 # Get user record within ad domain
@@ -254,9 +249,10 @@ $ openstack --os-identity-api-version 3 \
      
      </ol>
     </section>
-    <section><title>Transport Layer Security (TLS) Support</title>
+    <section id="encrypt"><title>Transport Layer Security (TLS) Support</title>
     <p>
-    The Identity service supports various encryption options when an external LDAP or Microsoft Active Directory is configured for external authentication including:
+    The Identity service supports various encryption options when an external LDAP or Microsoft Active Directory 
+    is configured for external authentication including:
     </p>
     <ul>
       <li>External authentication with LDAP and Microsoft Active Directory systems</li>
