@@ -31,9 +31,13 @@
           <li><xref href="#input_model/3.8.3_InterfaceModel">Interface Model</xref></li>
           <li><xref href="#input_model/3.8.4_NICMapping">NIC Mapping</xref></li>
         </ol></li>
-        <li>Next line</li>
-      </ol>
+         </ol>
       </li>
+      <li><xref href="#input_model/4.0_ConfigurationObjects">Helion OpenStack 2.0 Configuration Objects</xref>
+      <ol>
+        <li><xref href="#input_model/4.1_Cloud">Cloud</xref></li>
+        <li><xref href="#input_model/4.2_Cloud">ControlPlane</xref></li>
+      </ol></li>
     </ol>
     
     
@@ -346,7 +350,7 @@
         specific tags and their usage.</p>
     </section>
     <section id="3.8.2_Networks"><title>Networks</title>
-      <p><i>A Network is part of a Network Group</i>></p>
+      <p><i>A Network is part of a Network Group</i></p>
       <p><i>A Network can be associated with a Server Group</i></p>
       <p>Networks, by comparison, are fairly simple definitions. Each network defines the CIDR,
         start and end address, gateway, and VLAN ID.</p>
