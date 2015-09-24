@@ -136,10 +136,10 @@
       </topicref>
       <topicref href="helion/swift/check-swift-operation.dita"/>
       <topicref href="helion/swift/troubleshooting.dita">
-        <topicref href="helion/swift/deploy_fails_with_%20msdos_disks.dita"/>
+        <topicref href="helion/swift/deploy_fails_with_msdos_disks.dita"/>
         <topicref href="helion/swift/examine_details_planned_ring_changes_prior_deploy.dita"/>
         <topicref href="helion/swift/how_to_change_min-part-power.dita"/>
-        <topicref href="helion/swift/interpreting%20_swift-validate-input-model.dita"/>
+        <topicref href="helion/swift/interpreting_swift-validate-input-model.dita"/>
       </topicref>
     </topicref>
     <!-- Monasca / Centralized Logging -->

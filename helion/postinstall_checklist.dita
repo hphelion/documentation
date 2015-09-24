@@ -74,7 +74,7 @@
                 <tbody>
                   <row>
                     <entry>
-                      <p><codeph>-e EXT-NET-CIDR=&lt;CIDR></codeph></p>
+                      <p><codeph>-e EXT_NET_CIDR=&lt;CIDR></codeph></p>
                     </entry>
                     <entry>
                       <p>You can optionally specify the external network CIDR here too. If you
