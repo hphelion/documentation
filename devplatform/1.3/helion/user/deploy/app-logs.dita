@@ -20,9 +20,8 @@
 <p>Logs for applications running on Application Lifecycle Service are aggregated into streams so that data from multiple instances can be viewed together and filtered. Application log streams can be accessed via:</p>
 <ul>
 <li>the <xref href="../../admin/console/customize.dita">
-<i>Management Console</i>
-</xref>
-using the <b>View Logs</b> button on the application Details page, or</li>
+          <i>Management Console</i>
+        </xref> using the <b>View Logs</b> button on the Application Details page, or</li>
   <li>the <xref href="../reference/client-ref-information.dita#topic17778/command-files" type="section"   >
 <i>helion logs</i>
 </xref>
@@ -47,7 +46,10 @@ Console</i>
         filesystem.</note>
     </p>
 <section id="helion-logs">
-      <title>helion logs</title> 
+      <title>helion logs</title>
+      <note>The file being monitored must already exist <b>before</b> apptail begins monitoring. Use
+        the application code, the buildpack, a pre-staging hook or a post-staging hook to create the
+        file before the app instance is created.</note> 
       <p>To view an application log stream, use the <xref
           href="../reference/client-ref-information.dita#topic17778/command-logs"
           type="section">
