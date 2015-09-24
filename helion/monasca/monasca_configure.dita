@@ -23,25 +23,16 @@
           >Vertica Documentation</xref></p>
       <p>The alternative opensource database option is <b>InfluxDB</b>. InfluxDB is an emerging
         opensource monitoring database, however the current release contains the following
-        limitations:</p>
+        limitation:</p>
       <ul>
         <li>InfluxDB cluster does not recover upon node failure.</li>
       </ul>
-      <sectiondiv id="influxdb">
-        <p>To use InfluxDB as your metrics database there are some additional steps that must be
-          performed during the installation.</p>
-        <ul>
-          <li>Edit the <codeph>data/ccp.yml</codeph> file, replacing 'vertica' with 'influxdb'</li>
-          <li>Then when running the <codeph>hlm-deploy.yml</codeph> Ansible playbook, add the
-            argument <codeph>-e database_type=influxdb</codeph></li>
-        </ul>
-        <p>Example:</p>
-        <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium -e database_type=influxdb</codeblock>
-      </sectiondiv>
       <sectiondiv id="install_influxdb">
         <p>In order to replace the default database option with InfluxDB as the metrics database,
           you need to follow these steps:</p>
-        <p>During....</p>
+        <p>During the <xref href="../bare_installation_kvm.dita#kvm_install/Configure">Configure
+            Your Environment</xref> portion of the installation, ensure you make these configuration
+          file edits:</p>
         <ol>
           <li>On your deployer, edit the following two files: <ol>
               <li>Edit the <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file
@@ -62,7 +53,8 @@
             </ol></li>
         </ol>
         <p>Then, before you run the <codeph>site.yml</codeph> playbook as part of the <xref
-          href="../bare_installation_kvm.dita#kvm_install/deploy">Deploy the Cloud</xref> installation step, make these changes:</p>
+            href="../bare_installation_kvm.dita#kvm_install/deploy">Deploy the Cloud</xref>
+          installation step, make these changes:</p>
         <ol>
           <li>Edit the
               <codeph>~/helion/hos/ansible/roles/monasca-api/templates/api-config.yml.j2</codeph>
