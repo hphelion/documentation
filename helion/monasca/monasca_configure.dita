@@ -2,21 +2,16 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="monitoring">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monitoring Guide</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Monitoring Service</title>
   <body>
-    <section id="about">
-      <p>The HP Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
-        scalable, fault-tolerant OpenStack monitoring service.</p>
-      <p>This document describes the Monasca service and contains the following sections:</p>
-    </section>
-    <section id="config"><title>Configuring Monasca</title>
+    <section id="config">
       <p>In Beta 2 you will have the option to specify which database platform you want to use for
-        the Metrics Database</p>
+        the Metrics Database.</p>
       <p>The Monitoring service supports two different database options. The default metrics
         database is <b>Vertica</b>, which is a highly-scalable analytics database from HP. Vertica
         is free to use, up to 12TB, for all paid Helion customers as a Helion operational database
-        (please see <xref href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html"
-          format="html" scope="external">Helion EULA</xref>). Vertica is the recommended database
+        <!--(please see <xref href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html"
+          format="html" scope="external">Helion EULA</xref>)-->. Vertica is the recommended database
         for Helion OpenStack.</p>
       <p>You can learn more about Vertica here: <xref
           href="https://www.vertica.com/hp-vertica-documentation/" scope="external" format="html"
