@@ -7,10 +7,15 @@
     <note>Currently, only StormRunner integration is supported.</note>
     <p  id="createpd"> 
     <ol><li>Click the <b>Projects</b> tab.</li>
-      <li>Select the target project and click <b>Edit</b>.</li>
-      <li>Scroll down and click <b>New Action</b>.</li>
-      <li>Specify the information for the action.
-      <ul><li>For StormRunner load testing, you will need the Username, Password, Test Number, Tenant ID, and Action Name.</li></ul></li>
+      <li>Find the target project in the list and click <b>View Details</b>.</li>
+      <li>Scroll down to the <b>Post Deploy Actions</b> section and click <b>New Action</b>.</li>
+        <li>Select the desired Post Deployment Action. <note>At this time, only StormRunner actions
+            are supported.</note><image placement="break"
+            href="../../../media/cicd_create_postDeploy.png" id="image_prw_55m_lt"/></li>
+      <li>Specify the information required for the action. <ul>
+            <li>For StormRunner load testing, you will need the Username, Password, Test Number,
+              Tenant ID, and Action Name.</li>
+          </ul></li>
       <li>Click <b>Save</b>.</li>
     </ol></p>
   </body>

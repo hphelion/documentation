@@ -18,12 +18,12 @@
                                             </ul></p>
      <section><title>Overview</title>
      <p>Using the CICD tool, specify what will happen each time the application is built: which
-                environment to deploy the application to, which tests should be run, and who should
-                be notified of what and how that notification should be delivered. All this
-                information is contained in a Project.</p>
+                environment to deploy the application to, which tests to run, who should be
+                notified, and how that notification should be delivered. All this information is
+                contained in a Project.</p>
             <p>After the cycle is defined, each build will automatically deploy the app to the
-                target environment, run the specified tests, and send relevant notifications along
-                the way. All the developers have to do is write, commit, and build.</p>                                       
+                target environment, run the specified tests, and send relevant notifications. All
+                the developers have to do is write, commit, and build.</p>                                       
                                             
                                             </section>
         <section><title>Steps</title>
@@ -33,8 +33,7 @@
                     This defines the target code repository and specifies build notifications.</li>
             <li><xref href="cicd_walkthrough.dita#task_sw4_1zq_dt/post">Create Post-Deployment Actions</xref>. This defines what actions to take, usually
                     testing, after the build is completed. (optional)</li>
-            <li><xref href="cicd_walkthrough.dita#task_sw4_1zq_dt/build">Run a Build</xref>. Building the code kicks off the whole cycle.</li>
-            
+            <li><xref href="cicd_walkthrough.dita#task_sw4_1zq_dt/commit">Commit and Build</xref>. Start the whole cycle from your source repo.</li>
         </ol>
         </section>
 <section id="environment"><title>Specify an Environment</title>
@@ -45,8 +44,11 @@
         <p conref="cicd_create_project.dita#s45_4m4_ht/project_create"/></section> 
     
         <section id="post"><title>Add Post-Deployment Tasks</title><p conref="cicd_create_postdeploy.dita#topic_mxf_jxb_3t/createpd"/></section>
-        
-     <section id="build"><title>Perform a Build</title><p conref="cicd_create_build.dita#topic_a34_wqb_3t/build_create"> </p></section>
+        <section id="commit">
+            <title>Commit and Build</title>
+           <note>You can also <xref href="cicd_create_build.dita">perform a manual build</xref> at any time from the CICD tool. </note> <p/>
+        </section>      
+  
     </body>
 
  </topic>
