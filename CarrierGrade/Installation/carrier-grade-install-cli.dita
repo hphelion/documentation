@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Configuring the KVM
+        Region Hosts</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><i>Return to the Installing the <xref
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+        Deployment</xref>.</i></p>
+
+    <p>After deploying the KVM region, you must perform the following steps to configure the  </p>
+        <section>
+            <title>Unlocking the KVM region controllers</title>
+            <ol id="ol_cht_tmr_lt">
+                <li>Log into the KVM region controller-0.</li>
+                <li>Copy <codeph>cakey.pem</codeph> file, the <codeph>region_config</codeph> file,
+                    and latest license file (<codeph>HCG_2.0_WR_license.lic.txt</codeph>) to KVM
+                    region controller-0.</li>
+                <li>Edit <codeph>region_config</codeph> file per instructions listed in HCG-287
+                    JIRA. Additional to JIRA instructions, </li>
+                <li>Update region name under [shared services] to <codeph>memphis</codeph> in place
+                    of <codeph>regionone</codeph>.</li>
+                <li>Execute the following command:<p>
+                        <codeblock>sudo config_region</codeblock>
+                    </p></li>
+                <li>Executet the following command to associate controller-1 and the compute nodes
+                    with
+                    <codeph>controller-0</codeph>:<codeblock>system host-add --hostname controller-1 --personality controller --mgmt_mac &lt;mgmt_mac&gt; --bm_mac &lt;bm_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt; --bm_password &lt;ilo_password&gt;
+system host-add --hostname &lt;unique-compute-name&gt; --personality compute --mgmt_mac &lt;mgmt_mac&gt; --mgmt_ip &lt;mgmt_ip&gt; --bm_mac &lt;ilo_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt;  --bm_password &lt;ilo_password&gt;</codeblock></li>
+                <li>After the controller-1 and the compute nodes come up successfully after PXE
+                    boot, execute the following commands from controller-0 to unlock the compute
+                    nodes:
+                            <codeblock>system host-if-add –V &lt;bls/infra VLAN ID&gt; –nt infra &lt;compute-0&gt; infra vlan pxeboot0
+system host-addr-add &lt;compute-0&gt; infra 10.X.X.X 24
+system host-if-modify &lt;compute-0&gt; -n vrs -nt data-vrs --ipv4-mode=static ethX (interface on which untagged TUL is presented)
+system host-addr-add &lt;compute-0&gt; vrs 10.X.X.X 24
+system host-update &lt;compute-0&gt; vsc_controllers=10.X.X.X,10.X.X.X [VSC controller IP’s]
+system host-unlock &lt;compute-0&gt;                        </codeblock><p><b>PFB
+                            the working
+                    sample:</b></p><codeblock>system host-if-add –V 722 –nt infra 3 infra vlan pxeboot0
+system host-addr-add 3 infra 10.70.22.81 24
+system host-if-modify 3 -n vrs -nt data-vrs --ipv4-mode=static eth4
+system host-addr-add 3 vrs 10.70.5.83 24
+system host-update 3 vsc_controllers=10.70.5.31,10.70.5.32
+system host-unlock 3        </codeblock></li></ol>
+            <p>In addition to above set of commands, please apply the below work around on
+                controller-0 (active controller) in order to ensure instance launching succeeds.
+                Repeat the commands for each compute node.</p>
+            <codeblock>source /etc/nova/openrc
+nova aggregate-create remote_storage_hosts
+nova aggregate-set-metadata remote_storage_hosts localstorage=false
+nova aggregate-add-host remote_storage_hosts &lt;compute host name&gt;</codeblock>
+        </section>
+  </body>
+</topic>

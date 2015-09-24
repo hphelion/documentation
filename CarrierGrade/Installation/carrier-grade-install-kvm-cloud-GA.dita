@@ -164,8 +164,8 @@ password:  admin </codeblock></p><p><b>Important:</b> After
     </section>
   
   <section id="next-step"> <title>Next Step</title>
-    <p> Perform some required <xref href="carrier-grade-install-post-install.dita#topic1107"
-          >post-installation tasks</xref>. </p>
+    <p><xref href="carrier-grade-install-cli.dita#topic10581">Configure the KVM Region Hosts</xref>
+      </p>
   </section>
 </body>
 </topic>
