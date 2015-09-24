@@ -10,8 +10,8 @@
         <li><xref href="#install_esx/deployCloud" format="dita">Deploy ESX Cloud</xref></li>
         <li><xref href="#install_esx/prepAndDeploy" format="dita">Prepare and Deploy ESX Computes
             and OVSvAPPs</xref></li>
-        <li><xref href="#install_esx/host-commissioning" format="dita">ESX Host
-          Commissioning</xref></li>
+        <li><xref href="#install_esx/host-commissioning" format="dita">ESX Host Commissioning</xref>
+            (<b>Optional</b>)</li>
       </ul></p>
     <section>
       <note type="important">
