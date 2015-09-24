@@ -248,6 +248,10 @@ ilo_password: "password"
         <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
         <li>Logging-monitor 'stop' playbook is not integrated.</li>
       </ul>
+      <p><b>The Elasticsearch Cluster Name Must Be Unique</b></p>
+      <p>The default Elasticsearch cluster name is set to <codeph>elasticsearch</codeph> in the
+        Logging configuration files. It is necessary during installation to change this value to a
+        unique name. This step is included in our installation documentation.</p>
       <p><b>Issue: Logrotate Settings for MySQL, keepalived, and RabbitMQ are Invalid</b></p>
       <p>There is currently a workaround needed on the controller nodes to fix the logrotate
         settings for the MySQL, keepalived, and RabbitMQ services.</p>
@@ -287,9 +291,9 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
                fi
         endscript
 }</codeblock></p>
-        <p>should be copied into /etc/logrotate.d/mysql on the controller nodes and variables
-          replaced to result in this config:</p>
-        <codeblock>
+      <p>should be copied into /etc/logrotate.d/mysql on the controller nodes and variables replaced
+        to result in this config:</p>
+      <codeblock>
 /var/log/mysql/*.log {
           daily
           rotate 7
@@ -316,8 +320,9 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
           Bootable volume.</li>
         <li>Use the OpenStack or Nova client to create the instance.</li>
       </ul>
-      <note>When using the Launch Instance action in the Volumes table, the Launch Instance
-        Wizard form doesn't get pre-populated with the Volumes option selected, nor does it select the given Volume.</note>
+      <note>When using the Launch Instance action in the Volumes table, the Launch Instance Wizard
+        form doesn't get pre-populated with the Volumes option selected, nor does it select the
+        given Volume.</note>
       <!--<p><b>Networks</b></p>
       <p>
         <ul id="ul_rlg_dbg_ys">
