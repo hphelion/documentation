@@ -136,11 +136,10 @@ git commit -m "&lt;commit message>"</codeblock>
         <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
           left panel.</li>
         <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab to
-          display the Volumes page.<p><image
-              href="../../../media/ceph/create-ceph-volumetype%20-%201.png" id="image_nrn_sxc_gt"
-          /></p></li>
+          display the Volumes page.<p><image href="../../../media/ceph/create-ceph-volumetype1.png"
+              id="image_nrn_sxc_gt"/></p></li>
         <li>Click <b>Create Volume Type</b> to display a dialog box.<p><image
-              href="../../../media/ceph/create-ceph-volumetype%20(2).png" id="image_vww_tyc_gt"
+              href="../../../media/ceph/create-ceph-volumetype2.png" id="image_vww_tyc_gt"
           /></p></li>
         <li>Enter the name of the volume type.</li>
         <li>Click<b> Create Volume Type</b>. The newly created volume displays in the Volumes
@@ -157,7 +156,7 @@ git commit -m "&lt;commit message>"</codeblock>
           id="image_izx_2cd_gt"/></li>
       <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
         associate to the backend.<p/><image
-          href="../../../media/ceph/create-ceph-volumetype%20-%20extra-specs.png" id="image_cgv_dcd_gt"
+          href="../../../media/ceph/create-ceph-volumetype_extra-specs.png" id="image_cgv_dcd_gt"
           /><p>The <b>Create Volume Type Extra Specs</b> dialog box displays.</p><p><image
             href="../../../media/ceph/volume-extra-specs-ceph.png" id="image_clm_rcd_gt"/></p></li>
       <li>In the <b>Key</b> box, enter <i>ceph</i> as volume backend name. This is the name of the
