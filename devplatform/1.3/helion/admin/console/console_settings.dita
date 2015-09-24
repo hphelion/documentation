@@ -268,7 +268,7 @@
       <title>File System</title> 
       <ul>
         <li>
-          <b>Capacity</b>: Maximum number of service slots to allocate.</li>
+          <b>Capacity</b>: Maximum number of data service instances to allow globally across all Organizations and Spaces.</li>
         <li>
           <b>Max FS Size</b>: Maximum size on disk for filesystem services in MB.</li>
         <li>
@@ -327,7 +327,7 @@
         <li>
           <b>Allow Over-provisioning</b>: Ignore the Capacity setting.</li>
         <li>
-          <b>Capacity</b>: Maximum number of service slots to allocate.</li>
+          <b>Capacity</b>: Maximum number of data service instances to allow globally across all Organizations and Spaces.</li>
         <li>
           <b>Max DB size</b>: Maximum size on disk for database services.</li>
         <li>
