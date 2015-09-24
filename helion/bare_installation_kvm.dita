@@ -255,19 +255,14 @@ ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>
     -->
     <section id="deploy"><title>Deploy the Cloud</title>
       <ol>
-        <li>Run the <codeph>site.yml</codeph> playbook using the following steps: <codeblock>cd ~/scratch/ansible/next/hos/ansible
-            ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60;name></codeblock>
-          <note>
-            <ul>
-              <li>The <codeph>-e elasticsearch_cluster_name</codeph> switch is used to set a unique
-                name for your elasticsearch cluster. This should be set to a value other than
-                  <codeph>elasticsearch</codeph>. For example, you could use <codeph>-e
-                  elasticsearch_cluster_name=searchcluster</codeph></li>
-              <li>The step above runs osconfig to configure the cloud and hlm-deploy, to deploy the
-                cloud. Therefore, this step may run for quite some time while all the nodes are
-                configured (perhaps 45 minutes or more, depending on the number of nodes, to a
-                degree).</li>
-            </ul>
+        <li>Run the <codeph>site.yml</codeph> playbook using the following command. The <codeph>-e
+            elasticsearch_cluster_name</codeph> switch is used to set a unique name for your
+          elasticsearch cluster. This should be set to a value other than
+            <codeph>elasticsearch</codeph>. 
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60;name></codeblock>
+          <note> The step above runs osconfig to configure the cloud and hlm-deploy, to deploy the
+            cloud. Therefore, this step may run for quite some time while all the nodes are
+            configured (perhaps 45 minutes or more, depending on the number of nodes, to a degree).
           </note>
         </li>
         <li>Verify that the network is working correctly. Ping each IP (excluding VSA-BLK and VIPs)
