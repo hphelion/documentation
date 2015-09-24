@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
 <topic id="task_sw4_1zq_dt">
-    <title>Create an Automated Build-Test-Deploy Cycle</title>
+    <title>HP Helion 2.0 Development Platform: Create an Automated Build-Test-Deploy Cycle</title>
     <body>
     <p>The true advantage of CICD is creating a build-test-deploy cycle which will occur
             automatically whenever a change is committed.</p>
@@ -43,7 +43,7 @@
         <section id="project"><title>Create a Project</title>
         <p conref="cicd_create_project.dita#createProject/project_create"/></section> 
     
-        <section id="post"><title>Add Post-Deployment Tasks</title><p conref="cicd_create_postdeploy.dita#topic_mxf_jxb_3t/createpd"/></section>
+        <section id="post"><title>Add Post-Deployment Tasks</title><p conref="cicd_create_postdeploy.dita#createPostDeploy/createpd"/></section>
         <section id="commit">
             <title>Commit and Build</title>
            <note>You can also <xref href="cicd_create_build.dita">perform a manual build</xref> at any time from the CICD tool. </note> <p/>

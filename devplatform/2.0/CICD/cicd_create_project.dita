@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
 <topic id="createProject">
-    <title>Create a New Project</title>
+    <title>HP Helion 2.0 Development Platform: Create a New Project</title>
     <body>
         <p>The Project is a workspace where the application is built. </p>
     
@@ -34,17 +34,18 @@
                         <li><b>Project Type</b>: Select the appropriate development language. </li>
                             
             <li>Click <b>Next</b>.</li> </ul></li>
-            <li id="defineNotifications" >Define the Notification.<image placement="break"
+            <li>Define the Notification.<image placement="break"
                         href="../../../media/cicd_project_create_notifications.png"
-                        id="image_onm_4xy_kt"/>
-                    <ol>
-                        <li>HTTP Post <ol>
+                        id="image_onm_4xy_kt"/></li>
+            <li id="defineNotifications">Select the <b>Type</b> of Notification and then provide the
+                    required credentials.<ol>
+                        <li><b>HTTP Post </b><ol>
                                 <li>Notification Target Name</li>
                                 <li>HTTP Endpoint</li>
                                 <li>Token</li>
                                 <li>Click <b>Save</b>.</li>
                             </ol></li>
-                        <li>HipChat <ol>
+                        <li><b>HipChat </b><ol>
                                 <li>Notification Target Name: Enter the name of the person to
                                     notify.</li>
                                 <li>Hipchat Room Number: <xref
@@ -55,7 +56,8 @@
                                         Generate</xref></li>
                                 <li>Click <b>Save</b>.</li>
                             </ol></li>
-                        <li>Flowdock <ol>
+                        <li><b>Flowdock</b>
+                            <ol>
                                 <li>Notification Target Name</li>
                                 <li>API Endpoint</li>
                                 <li>Token</li>

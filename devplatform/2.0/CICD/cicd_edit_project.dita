@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_g2r_w5b_3t">
-  <title>Edit an Existing Project</title>
+<topic id="projectEdit">
+  <title>HP Helion 2.0 Development Platform: Change an Existing Project</title>
   <body>
     <p>Some elements of an existing project can be changed.</p>
     <section><title>Edit Project Specifications</title>
@@ -22,31 +22,16 @@
         <li>Click <b>Save</b>.</li>
       </ol>
     </section>
-   <section><title>Create Post-deployment Actions</title>
-    <p conref="cicd_create_postdeploy.dita#topic_mxf_jxb_3t/createpd"></p></section>
+   <section id="changePostDeploy"><title>Create Post-deployment Actions</title>
+    <p conref="cicd_create_postdeploy.dita#createPostDeploy/createpd"/></section>
     
     <section><title>Create Notifications</title>
       <ol><li>Click the <b>Projects</b> tab.</li>
         <li>Find the desired Project in the list and then click <b>View Details</b>.</li>
-        <li>Scroll down to <b>Notification Targets </b>and then click <b>New Target</b>.</li>
+        <li>Scroll down to <b>Notification Targets </b>and then click <b>New Target</b>.<image
+            href="../../../media/cicd_edit_notification.png" id="image_k1l_hhs_lt"/></li>
         <li conref="cicd_create_project.dita#createProject/defineNotifications"/>
       </ol></section>
     
-    <section><title>Delete a Project</title>
-    <ol id="project_delete">
-      
-      <li>Click the <b>Projects</b> tab.</li>
-      <li>Click the trash-can icon to the right of the target project in the list.</li>
-      <li>Click <b>Delete</b> to confirm.</li>
-    </ol></section>
-    <section><title>Iniviting Users to a Project</title>
-      Only individuals assigned to a project as a User can work on that project. 
-    <ol id="invite_user">
-      
-      <li>Click the <b>Projects</b> tab.</li>
-      <li>Note the URL listed after Invite.</li>
-      <li>Copy and send this URL to the person you want to add as a User.</li>
-    </ol>
-    </section>
   </body>
 </topic>

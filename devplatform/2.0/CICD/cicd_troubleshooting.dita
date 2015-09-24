@@ -25,7 +25,7 @@
         <dlentry>
           <dt>Desired Project doesn't appear in the list.</dt>
           <dd>You may not be a User on this project. Have someone <xref
-              href="cicd_edit_project.dita#topic_g2r_w5b_3t/invite_user">add you to the
+              href="cicd_project_invite.dita">add you to the
               project</xref>.</dd>
         </dlentry>
       </dl></section>

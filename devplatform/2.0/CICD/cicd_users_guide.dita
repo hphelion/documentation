@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_op3_g5c_dt">
-  <title>User's Guide</title>
+  <title>HP Helion 2.0 Development Platform: CICD User's Guide</title>
   <body>
-    <p>"How Do I" answers. May encompass multiple topics.</p>
-    <p>Keep in mind the mandate to move to task-based documentation, not just providing reference
-        material.</p>
+    
+    <section><title>Environments</title>
+      <ul>
+        <li><xref href="cicd_environment_create.dita">Create a New Environment</xref></li>
+        <li><xref href="cicd_edit_environment.dita#topic_ib5_v5b_3t">Change an Existing
+            Environment</xref></li>
+      </ul>
+    </section>
       
-      
-      <ul id="ul_dqz_j24_ht">
-                <li>Projects
-          <ul>
-            <li>Create new</li>
-            <li>Delete?</li>
-            <li>Filter?</li>
-            <li>(understand build messages)</li>
-          </ul>
-        </li>
-         <li>Builds
+     <section><title>Projects</title>
+     
             <ul>
-            <li>Create a new Build</li>
-            <li>Filter Builds</li>
+            <li><xref href="cicd_create_project.dita#createProject">Create a New Project</xref></li>
+        <li><xref href="cicd_edit_project.dita#projectEdit">Change an Existing Project</xref></li>
+            <li><xref href="cicd_project_delete.dita#topic_o4x_zhs_lt">Delete a Project</xref></li>
+              <li><xref href="cicd_project_invite.dita#inviteUser">Add Users to a
+          Project</xref></li>
+            <li><xref href="cicd_edit_project.dita#projectEdit/changePostDeploy">Change Post Deployment Actions</xref></li>
             <li>(understand build messages)</li>
             </ul>
-          </li>
-        <li>Environments
-          <ul>
-            <li><xref href="cicd_environment_create.dita">Create a New Environment</xref></li>
-            <li>Filter</li>
-            <li>(understand messages)</li>
-          </ul>
-        </li>
-      </ul>
+     </section> 
+    
+    <section><title>Builds</title>
+            <ul>
+            <li><xref href="cicd_create_build.dita#topic_a34_wqb_3t">Create a New Manual
+            Build</xref></li>
+            <li><xref href="cicd_preview_tempdeploy.dita#topic_mpz_ypd_3t">Create a Preview
+            Deployment</xref></li>
+            <li>(understand build messages)</li>
+            </ul>
+  </section>
+      
   </body>
 </topic>

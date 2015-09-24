@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ak1_yjd_3t">
-  <title>Where to Find HipChat Notification Data</title>
+  <title>HP Helion 2.0 Development Platform: Where to Find HipChat Notification Data</title>
   <body>
     <p>
       <note>You must be the owner of the HipChat room where the notifications will appear.</note>
