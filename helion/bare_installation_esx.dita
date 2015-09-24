@@ -113,7 +113,8 @@ git commit -m "My config or other commit message"</codeblock></li>
     <section conref="bare_installation_kvm.dita#install_kvm/NodeProvision"/>
     <section conref="bare_installation_kvm.dita#install_kvm/run-config-processor"/>
     <section conref="bare_installation_kvm.dita#install_kvm/deploy"/>
-    <section id="prepAndDeploy"><b>Prepare and Deploy ESX Computes and OVSvAPPs</b>
+    <section id="prepAndDeploy">
+      <title>Prepare and Deploy ESX Computes and OVSvAPPs </title>
       <p>The following sections describe the procedure to install and configure ESX compute and
         OVSvAPPs on vCenter.</p>
       <ul id="ul_lns_fjl_ft">
