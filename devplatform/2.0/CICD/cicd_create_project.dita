@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
-<topic id="s45_4m4_ht">
+<topic id="createProject">
     <title>Create a New Project</title>
     <body>
         <p>The Project is a workspace where the application is built. </p>
@@ -34,7 +34,7 @@
                         <li><b>Project Type</b>: Select the appropriate development language. </li>
                             
             <li>Click <b>Next</b>.</li> </ul></li>
-                <li>Define Notifications.<image placement="break"
+            <li id="defineNotifications" >Define the Notification.<image placement="break"
                         href="../../../media/cicd_project_create_notifications.png"
                         id="image_onm_4xy_kt"/>
                     <ol>

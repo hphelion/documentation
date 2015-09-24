@@ -41,7 +41,7 @@
 </section>
         
         <section id="project"><title>Create a Project</title>
-        <p conref="cicd_create_project.dita#s45_4m4_ht/project_create"/></section> 
+        <p conref="cicd_create_project.dita#createProject/project_create"/></section> 
     
         <section id="post"><title>Add Post-Deployment Tasks</title><p conref="cicd_create_postdeploy.dita#topic_mxf_jxb_3t/createpd"/></section>
         <section id="commit">

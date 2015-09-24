@@ -26,7 +26,11 @@
     <p conref="cicd_create_postdeploy.dita#topic_mxf_jxb_3t/createpd"></p></section>
     
     <section><title>Create Notifications</title>
-      <p conref="cicd_create_notifications.dita#topic_ifw_mxb_3t/noticecreate"></p></section>
+      <ol><li>Click the <b>Projects</b> tab.</li>
+        <li>Find the desired Project in the list and then click <b>View Details</b>.</li>
+        <li>Scroll down to <b>Notification Targets </b>and then click <b>New Target</b>.</li>
+        <li conref="cicd_create_project.dita#createProject/defineNotifications"/>
+      </ol></section>
     
     <section><title>Delete a Project</title>
     <ol id="project_delete">

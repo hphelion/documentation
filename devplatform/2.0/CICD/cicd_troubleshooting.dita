@@ -16,8 +16,8 @@
       <dlentry>
         <dt>Desired Space doesn't appear in the list.</dt>
         <dd>Space doesn't exist. <xref
-          href="../helion/user/reference/client-ref-spaces.dita#topic9898/command-create-space"
-          >Create it.</xref>.</dd>
+              href="../helion/user/reference/client-ref-spaces.dita#topic9898/command-create-space"
+              >Create it</xref>.</dd>
       </dlentry>
     </dl></section>
     <section><title>Projects</title>
