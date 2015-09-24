@@ -24,10 +24,7 @@
             <p>When working with the servers in the KVM region, do not use the Horizon interface.
                 Please use the <xref href="http://docs.openstack.org/cli-reference/content/"
                     format="html" scope="external">OpenStack command-line interface CLI
-                    commands</xref>. Commands that are included in the KVM region CLI extension are
-                listed as appropriate in the  <xref
-                    href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide-11.pdf"
-                    format="pdf" scope="external">Administrator Guide</xref>.</p>
+                    commands</xref>. </p>
         </section>
         <section><title>Potential Vulnerability with Intel® LAN Products with SR-IOV</title>
             <p>In Intel® LAN products with SR-IOV capability, the potential exists where, under
