@@ -61,7 +61,7 @@ vmportuuid=$(neutron port-list | grep $fixedip | awk '{print $2}')</codeblock></
 password: &lt;password&gt;</codeblock></li>
        </ol>
       
-      <p>Create and attach the firewall.</p>
+      <p><b>Create and attach the firewall.</b></p>
       <note>By default, an internal "drop all" rule is enabled in IP tables if none of the defined
         rules match the real-time data packets.</note>
       <ol>
@@ -86,7 +86,7 @@ neutron firewall-rule-create --protocol tcp --destination-port 22 --action allow
           ACTIVE.<codeblock>neutron firewall-show user-fw</codeblock></li>
       </ol>
       
-      <p>You should verify the FWaaS is functional with the steps included below.</p>
+      <p><b>You should verify the FWaaS is functional with the steps included below.</b></p>
       <ol>
         <li>Since allow-icmp firewall is rule is set you can ping the floating IP address of the
           instance from the external network.<codeblock>ping &lt;FIP-VM1></codeblock></li>
@@ -112,7 +112,20 @@ $ ./webserv.sh</codeblock></li>
           If curl succeeds, the firewall is not blocking incoming http requests.
           <codeblock>curl -vvv &lt;FIP-VM1></codeblock></li>
       </ol>
+    </section>
+    
+    
+    <section>
+      <note type="warning">When using reference implementation, new networks, FIPs and routers
+        created after the Firewall creation will not be automatically updated with firewall rules.
+        Thus, execute the firewall-update command by passing the current and new router Ids such
+        that the rules are reconfigured across all the routers (both current and new). <p>For
+          example if router-1 is created before and router-2 is created after the firewall
+          creation</p>
+        <codeblock>$ neutron firewall-update —router &lt;router-1-id&gt; —router &lt;router-2-id&gt; &lt;firewall-name&gt;</codeblock>
+      </note>
       
+           
      </section>
     <section id="MoreInfo">
       <title>More Information</title>
