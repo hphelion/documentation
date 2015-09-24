@@ -112,9 +112,9 @@ git commit -m "My config"</codeblock></li>
     <section conref="bare_installation_kvm.dita#install_kvm/deploy"/>
 
 
-    <section id="prepAndDeploy">Prepare and Deploy ESX Computes and OVSvAPPs <p>The following
-        sections describe the procedure to install and configure ESX compute and OVSvAPPs on
-        vCenter.</p>
+    <section id="prepAndDeploy"><b>Prepare and Deploy ESX Computes and OVSvAPPs</b>
+      <p>The following sections describe the procedure to install and configure ESX compute and
+        OVSvAPPs on vCenter.</p>
       <ul id="ul_lns_fjl_ft">
         <li><xref href="#install_esx/deploy-template" format="dita">Deploy Helion Linux Shell VM
             Template</xref></li>
@@ -479,6 +479,47 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></p>
       key in the <codeph>resource-nodes</codeph> section in the
         <codeph>/data/control_plane.yml</codeph> file
         (<codeph>/home/stack/helion/my_cloud/definition/data/control_plane.yml</codeph>). </note>
+    <section>
+      <title>Host Commissioning</title>
+      <p>Perform the following steps to add a new host to activated a cluster.<ol id="ol_ttd_bw4_lt">
+          <li>List the current state of the cluster using EON python
+            client.<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock><codeblock># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
++------------+------------+-----------------+
+| MOID | Name| Datacenter | Import Status   |
++------------+------------+-----------------+
+| domain-c21 | Cluster1   | DC1 | activated |
++------------+------------+-----------------+</codeblock></li>
+          <li>Add host in the maintenance mode to the already activated cluster</li>
+          <li>Execute the following command to import the eon
+            cluster<codeblock><codeph># eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock><codeblock># eon cluster-import --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-name Cluster1 --cluster-moid domain-c21
++--------------+-----------+
+| Property     | Value     |
++--------------+-----------+
+| cpu_free     | 83071.73  |
+| cpu_total    | 83072     |
+| cpu_used     | 0.27      |
+| datacenter   | DC1       |
+| disk_free    | 1022.79   |
+| disk_total   | 1023.75   |
+| errors       | []        |
+| memory_free  | 496.82    |
+| memory_total | 511.76    |
+| memory_used  | 14.94     |
+| name         | Cluster1  |
+| state        | importing |
+| switches     | []        |
++--------------+-----------+</codeblock><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>After
+            successful import the cluster state will change to partially_activated and the hosts
+            would have moved to folder with ovsvapp installed.<?oxy_custom_end?></li>
+          <li>To know the status, execute the following
+            command:<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock><codeblock># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
++------------+----------+------------+---------------------+
+| MOID       | Name     | Datacenter | Import Status       |
++------------+----------+------------+---------------------+
+| domain-c21 | Cluster1 | DC1        | partially_activated |
++------------+----------+------------+---------------------+</codeblock></li>
+        </ol></p>
+    </section>
   </body>
 
 </topic>
