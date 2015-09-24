@@ -79,13 +79,14 @@
     <section
       conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"/>
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/back-end"/>
+    <!--  
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/gre-patch"/>
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/reverse-patch"/>
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/helion-pass-patch"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/nic-patch"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/nic-patch"/> -->
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/hos-cloud"/>
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/patch-after"/>
+    <!--<section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/patch-after"/>-->
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/root-user"/>
     <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/kibana"/>
     <section id="next-step">
