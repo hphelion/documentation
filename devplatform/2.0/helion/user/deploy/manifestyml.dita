@@ -434,9 +434,9 @@ helion apps
     ubuntu:
       - libfoo
       - some-app</codeblock>
-<p>To add the OS requirements to both the staging and running phases add
-the <codeph>ubuntu:</codeph> block directly beneath the
-<codeph>requirements:</codeph> key:</p>
+<p>To add the package requirements to both the staging and running phases add the
+          <codeph>ubuntu:</codeph> block directly beneath the <codeph>requirements:</codeph>
+        key:</p>
 <codeblock>  requirements:
   ubuntu:
     - libfoo-dev</codeblock>
