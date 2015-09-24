@@ -37,8 +37,8 @@
       <p>The Monasca service is automatically installed as part of the HP Helion OpenStack
         installation.</p>
       <p>No specific configuration is required to use Monasca. However, you can configure the
-        database for your environment as detailed in the <xref href="#monitoring/config">Configuring
-          Monasca</xref> section.</p>
+        database for storing metrics as detailed in the <xref href="monasca_configure.dita"
+          >Monitoring Configuration</xref> document.</p>
     </section>
     <section id="differences"><title>Differences Between Upstream and Helion OpenStack
         Implementations</title>
@@ -55,34 +55,6 @@
     <section id="diagram">
       <title>Diagram of Monasca Service</title>
       <p><image placement="break" href="../../media/monasca_diagram.png"/></p>
-    </section>
-    <section id="config"><title>Configuring Monasca</title>
-      <p>In Beta 1 you will have the option to specify which database platform you want to use for
-        the Metrics Database</p>
-      <p>Monasca supports two different database options. The default metrics database is
-          <b>Vertica</b>, which is a highly-scalable analytics database from HP. Vertica is free to
-        use, up to 12TB, for all paid Helion customers as a Helion operational database (please see
-          <xref href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html" format="html"
-          scope="external">Helion EULA</xref>). Vertica is the recommended database for Helion
-        OpenStack.</p>
-      <p>You can learn more about Vertica here: <xref
-          href="https://www.vertica.com/hp-vertica-documentation/" scope="external" format="html"
-          >Vertica Documentation</xref></p>
-      <p>The alternative opensource database option is <b>InfluxDB</b>. InfluxDB is an emerging
-        opensource monitoring database, however the current release contains the following
-        limitations:</p>
-      <ul>
-        <li>InfluxDB cluster does not recover upon node failure.</li>
-      </ul>
-      <p>To use InfluxDB there are two steps that must be completed during your cloud
-        deployment:</p>
-      <ul>
-        <li>Edit the <codeph>data/ccp.yml</codeph> file, replacing 'vertica' with 'influxdb'</li>
-        <li>Then when running the <codeph>hlm-deploy.yml</codeph> Ansible playbook, add the argument
-            <codeph>-e database_type=influxdb</codeph></li>
-      </ul>
-      <p>Example:</p>
-      <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium -e database_type=influxdb</codeblock>
     </section>
     <section id="working"><title>Working with Monasca</title>
       <p>Access to Monasca is available through the Web UI (Operations Console), <xref

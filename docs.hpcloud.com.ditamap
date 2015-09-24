@@ -144,6 +144,8 @@
     </topicref>
     <!-- Monasca / Centralized Logging -->
     <topicref href="helion/monasca/monasca.dita" navtitle="Monitoring Service" locktitle="yes">
+      <topicref href="helion/monasca/monasca_configure.dita" navtitle="Monitoring Configuration"
+        locktitle="yes"/>
       <topicref href="helion/monasca/alarms.dita" navtitle="Service Alarm Definitions"
         locktitle="yes"/>
     </topicref>

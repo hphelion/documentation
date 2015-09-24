@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="monitoring">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monitoring Guide</title>
+  <body>
+    <section id="about">
+      <p>The HP Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
+        scalable, fault-tolerant OpenStack monitoring service.</p>
+      <p>This document describes the Monasca service and contains the following sections:</p>
+    </section>
+    <section id="config"><title>Configuring Monasca</title>
+      <p>In Beta 2 you will have the option to specify which database platform you want to use for
+        the Metrics Database</p>
+      <p>The Monitoring service supports two different database options. The default metrics
+        database is <b>Vertica</b>, which is a highly-scalable analytics database from HP. Vertica
+        is free to use, up to 12TB, for all paid Helion customers as a Helion operational database
+        (please see <xref href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html"
+          format="html" scope="external">Helion EULA</xref>). Vertica is the recommended database
+        for Helion OpenStack.</p>
+      <p>You can learn more about Vertica here: <xref
+          href="https://www.vertica.com/hp-vertica-documentation/" scope="external" format="html"
+          >Vertica Documentation</xref></p>
+      <p>The alternative opensource database option is <b>InfluxDB</b>. InfluxDB is an emerging
+        opensource monitoring database, however the current release contains the following
+        limitations:</p>
+      <ul>
+        <li>InfluxDB cluster does not recover upon node failure.</li>
+      </ul>
+      <sectiondiv id="influxdb">
+        <p>To use InfluxDB as your metrics database there are some additional steps that must be
+          performed during the installation.</p>
+        <ul>
+          <li>Edit the <codeph>data/ccp.yml</codeph> file, replacing 'vertica' with 'influxdb'</li>
+          <li>Then when running the <codeph>hlm-deploy.yml</codeph> Ansible playbook, add the
+            argument <codeph>-e database_type=influxdb</codeph></li>
+        </ul>
+        <p>Example:</p>
+        <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e tuning_selector=medium -e database_type=influxdb</codeblock>
+      </sectiondiv>
+      <sectiondiv id="install_influxdb">
+        <p>In order to replace the default database option with InfluxDB as the metrics database,
+          you need to follow these steps:</p>
+        <p>During....</p>
+        <ol>
+          <li>On your deployer, edit the following two files: <ol>
+              <li>Edit the <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file
+                and under your control plane cluster <codeph>service-clusters</codeph> section, edit
+                the entry for <codeph>vertica</codeph> to read <codeph>influxdb</codeph>.</li>
+              <li>Edit the <codeph>~/helion/my_cloud/definition/data/disks_controller.yml</codeph>
+                and either replace the existing <codeph>vertica</codeph> information or insert the
+                information for InfluxDB as seen below in the section labeled for
+                  <codeph>logical-volumes</codeph> on the <codeph>DISK_SET_CONTROLLER</codeph>:
+                <codeblock>
+  - name: influxdb
+    size: 5%
+    mount: /var/opt/influxdb
+    fstype: ext4
+    mkfs-opts: -O large_file
+    consumer:
+        name: influxdb</codeblock></li>
+            </ol></li>
+        </ol>
+        <p>Then, before you run the <codeph>site.yml</codeph> playbook as part of the <xref
+          href="../bare_installation_kvm.dita#kvm_install/deploy">Deploy the Cloud</xref> installation step, make these changes:</p>
+        <ol>
+          <li>Edit the
+              <codeph>~/helion/hos/ansible/roles/monasca-api/templates/api-config.yml.j2</codeph>
+            file to remove information referencing Vertica: <p>Section to remove or comment out:</p>
+            <codeblock>
+{% set vertica_api_user = [] %}
+{% if vertica_users is defined %}
+{% for item in vertica_users %}
+{% if item.role == 'monasca_api'%}
+{% if vertica_api_user.append(item) %}{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}</codeblock>
+            <p>Replace a portion of this text in this file with the replacement text below:</p>
+            <codeblock>
+vertica:
+  driverClass: com.vertica.jdbc.Driver
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon')}}"
+{% if vertica_api_user|count == 0%}
+  user: mon_api
+  password: password
+{% else %}
+  user: "{{ vertica_api_user[0].username }}"
+  password: "{{ vertica_api_user[0].password }}"
+{% endif %}</codeblock>
+            <p>Replace the above with the text with this:</p>
+            <codeblock>
+vertica:
+  driverClass: com.vertica.jdbc.Driver
+{% if database_type == 'vertica' %}
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon')}}"
+  user: "{{ vertica_api_user }}"
+  password: "{{ vertica_api_password }}"
+{% else %}
+  url:
+  user:
+  password:
+  {% endif %}</codeblock>
+          </li>
+          <li>Edit the
+              <codeph>~/helion/hos/ansible/roles/monasca-persister/templates/persister-config.yml.j2</codeph>
+            file to remove information referencing Vertica: <p>Section to remove or comment out:</p>
+            <codeblock>
+{% set vertica_api_user = [] %}
+{% if vertica_users is defined %}
+{% for item in vertica_users %}
+{% if item.role == 'monasca_api'%}
+{% if vertica_api_user.append(item) %}{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}</codeblock>
+            <p>Replace a portion of this text in this file with the replacement text below:</p>
+            <codeblock>
+dataSourceFactory:
+  driverClass: com.vertica.jdbc.Driver
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon') }}"
+{% if vertica_persister_user|count == 0%}
+  user: mon_persister
+  password: password
+{% else %}
+  user: "{{ vertica_persister_user[0].username }}"
+  password: "{{ vertica_persister_user[0].password }}"
+{% endif %}</codeblock>
+            <p>Replace the above with the text with this:</p>
+            <codeblock>
+dataSourceFactory:
+  driverClass: com.vertica.jdbc.Driver
+{% if database_type == 'vertica' %}
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon') }}"
+  user: "{{ vertica_persister_user }}"
+  password: "{{ vertica_persister_password }}"
+{% else %}
+  url:
+  user:
+  password:
+{% endif %}</codeblock>
+          </li>
+          <li>Edit the
+              <codeph>~/helion/hos/ansible/roles/monasca-variables/defaults/main.yml</codeph> file
+            and add the lines below between the <codeph>vertica_users</codeph> and
+              <codeph>vertica_resource_pools_limits</codeph> entries near the bottom of the file:
+            <codeblock>
+vertica_api_user: "{{ MON_API.consumes_FND_VDB.vars.vertica_monasca_api_user }}"
+vertica_api_password: "{{ MON_API.consumes_FND_VDB.vars.vertica_monasca_api_password }}"
+vertica_persister_user: "{{ MON_PST.consumes_FND_VDB.vars.vertica_monasca_persister_user }}"
+vertica_persister_password: "{{ MON_PST.consumes_FND_VDB.vars.vertica_monasca_persister_password }}"</codeblock></li>
+        </ol>
+        <p>Then, when running your <codeph>site.yml</codeph> playbook as part of the <xref
+            href="../bare_installation_kvm.dita#kvm_install/deploy">Deploy the Cloud</xref>
+          installation step, ensure that you use the <codeph>-e database_type=influxdb</codeph>
+          switch. For example:</p>
+        <codeblock>ansible-playbook -i hosts/verb_hosts site.yml -e database_type=influxdb</codeblock>
+        <note type="important">Ensure you use any other necessary switches based on your setup that
+          may be included in other parts of the installation documentation.</note>
+      </sectiondiv>
+    </section>
+  </body>
+</topic>
