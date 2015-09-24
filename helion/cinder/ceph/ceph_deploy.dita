@@ -137,7 +137,8 @@ git add -A
 git commit -m "&lt;commit message>"</codeblock>
           </p><note> Enter your commit message &lt;commit message></note></li>
         <li>Run the following command to create a deployment
-          directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+          directory.<codeblock>cd ~/helion/hos/ansible
+<codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
         <li>Run the following ansible
             playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p>Once
@@ -157,7 +158,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p>Once
 rbd_user = cinder
 rbd_secret_uuid = 457eb676-33da-42ec-9a8c-9293d545c337</codeblock><note>The
                 <codeph>rbd_secret_uuid</codeph> is same as available at
-                <codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph>.</note></li>
+                <codeph>~/helion/my_cloud/config/ceph/user_model.ym</codeph>.</note></li>
           <li>Commit your configuration to the local repository to configure cinder on the deployer node.<p>
               <codeblock>cd ~/helion/hos/ansible
 git add -A
