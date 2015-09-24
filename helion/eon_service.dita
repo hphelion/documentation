@@ -7,17 +7,22 @@
       existing VMware vCenter installation. The VMware vCenter driver connects to ESXi clusters in a
       vCenter through Compute proxy nodes. The Nova scheduler sees the ESXi clusters as compute
       nodes and uses that information for scheduling a new instance.</p>
-    <p>The ESX on border (EON) service is an inventory which interacts with the VMware vCenter
+    <p>The ESX on boarding (EON) service is an inventory which interacts with the VMware vCenter
       server and collects the information available at the datacenters and clusters. This
-      information is used for deployment and configuration of ESX Proxy Compute nodes. The EON
-      service is deployed in the undercloud controller node.</p>
+      information is used for deployment and configuration of ESX Proxy Compute nodes. </p>
     <p>EON, a new service sub component, captures details of the vCenter server in a Cloud
       Controller and provides the details of the clusters for configuring the list of clusters
       managed by ESX Proxy Compute node. The ESX Proxy Compute driver communicates to VMware vCenter
       server through VI SDK.</p>
     <section>
-      <title>Host Commissioning</title>
-      <p>Perform the following steps to add a new host to activated a cluster.<ol id="ol_ttd_bw4_lt">
+      <title>ESX Host Commissioning</title>
+      <p>ESX Host Commissioning is a functionality provided to a user to add additional ESX hosts to
+        an already activated cluster. Adding ESX host to an already activated cluster will require
+        the host to have OVSvApp to be installed in order to connect the tenant VMs being spawned on
+        that host to the tenant network. The following steps provides a detailed procedure on how to
+        commission a new a host to an already activated cluster.</p>
+      <p>Perform the following steps to add a new host to an activated cluster.<ol
+          id="ol_ttd_bw4_lt">
           <li>List the current state of the cluster using EON python
               client.<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock><p>For
               example:</p><codeblock># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
@@ -26,9 +31,9 @@
 +------------+------------+-----------------+
 | domain-c21 | Cluster1   | DC1 | activated |
 +------------+------------+-----------------+</codeblock></li>
-          <li>Add host in the maintenance mode to the already activated cluster as shown
-                below.<p><image href="../media/esx/eon_service_host1.png" id="image_it1_3bp_lt"
-              /></p></li>
+          <li>Add host in the maintenance mode to the already activated cluster as shown in the
+            following example.<p><image href="../media/esx/eon_service_host1.png"
+                id="image_it1_3bp_lt"/></p></li>
           <li>Execute the following command to import the eon
               cluster.<codeblock><codeph># eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock><p>For
               example:</p><codeblock># eon cluster-import --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-name Cluster1 --cluster-moid domain-c21
@@ -61,7 +66,8 @@
 +------------+----------+------------+---------------------+</codeblock><p><image
                 href="../media/esx/eon_service_host2.png" id="image_ush_nbp_lt"/></p></li>
           <li>Run cluster activate
-              command<codeblock><codeph># eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock><codeblock>eon cluster-activate --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c22</codeblock><p>After
+              command.<codeblock><codeph># eon cluster-activate --vcenter-id &lt;vCenter ID> --cluster-moid &lt;Cluster Moid> </codeph></codeblock><p>For
+              example:</p><codeblock>eon cluster-activate --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c22</codeblock><p>After
               successful activation the cluster state will change to activate state.</p></li>
           <li>To know whether the cluster is activate or not, execute the following
               command:<codeblock># eon cluster-list --vcenter-id &lt;vCenter ID></codeblock><p>For
@@ -77,14 +83,18 @@
 git add -A
 git commit -m "My config"</codeblock></li>
           <li>Run the following
-            playbook<codeblock>ansible-playbook -i hosts/verb_hosts guard-deployment.yml
+            playbook:<codeblock>ansible-playbook -i hosts/verb_hosts guard-deployment.yml
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit '*esx-ovsvapp'
 ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit NEU-OVSVAPP</codeblock></li>
-          <li>After successful deployment of  the hlm-deploy, execute the following command from
-            deployer
-              node<codeblock># eon move-hosts –vcenter-id &lt;vCenter ID> --host 100.10.0.50 –status SUCCESS</codeblock><p>The
+          <li>After successful deployment of  the <b>hlm-deploy</b>, execute the following command
+            from the deployer
+              node.<codeblock># eon move-hosts –vcenter-id &lt;vCenter ID> --host &lt;host IP> –status SUCCESS</codeblock><p>The
               host will be moved back to the original cluster as shown below:</p><p><image
-                href="../media/esx/eon_service_host3.png" id="image_xhw_pbp_lt"/></p></li>
+                href="../media/esx/eon_service_host3.png" id="image_xhw_pbp_lt"/></p><p>
+              <note type="tip">You can get the host IP address from <codeph>pass_through.yml</codeph> file at
+                  <codeph>/home/stack/helion/definition/data/</codeph> as shown below. <p><image
+                    href="../media/esx/host_ip_add.png" id="image_dm5_4np_lt"/></p><p/></note>
+            </p><p/></li>
         </ol></p>
     </section>
   </body>
