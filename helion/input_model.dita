@@ -55,7 +55,7 @@
               </ol></li>
             <li><xref href="#input_model/4.7_InterfaceModels">Interface Models</xref>
               <ol>
-                <li><xref href="#input_model/4.7.1_BondData">Bond Data</xref></li>
+                <li><xref href="#input_model/4.7.1_BondData" type="p">Bond Data</xref></li>
               </ol></li>
             <li><xref href="#input_model/4.8_NICMapping">NIC Mapping</xref></li>
             <li><xref href="#input_model/4.9_NetworkGroups">Network Groups</xref>
@@ -1617,7 +1617,7 @@
           </tgroup>
         </table>
       </p>
-      <p><b>Bond Data</b></p>
+      <p id="4.7.1_BondData"><b>Bond Data</b></p>
       <p>A <codeph>bond-data</codeph> definition is used to configure a bond device, and consists of
         the following attributes:</p>
       <p>
