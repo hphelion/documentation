@@ -25,8 +25,10 @@
         <li> Heat</li>
         <li> Logging</li>
         <li> Freezer</li>
-      </ul>
-    </p>
+      </ul> If you are running a configuration based on the Beta 1 model configuration, you may
+      still use that configuration after upgrading to Beta 2. However, a few changes are
+      required.</p>
+    <p/>
     <p>To upgrade, download the ISO as you would for a beta2 install.<note>You will not be able to
         change your cloud model at this point, other than by adapting it as you did in beta1. You
         may have to merge your current configuration files with the new ones in step 3. </note>
@@ -52,6 +54,28 @@ git status</codeblock>
 git commit -m "your commit message here"</codeblock> More
               information about git and the config processor can be found on the <xref
                 href="using_git.dita#topic_u3v_1yz_ct">Using Git page</xref>.</li>
+            <li> Remove any data persisted from the Beta 1 deployment by executing these commands on
+              the deployer node to delete the cp-persistent branch and all its persistent data, and
+              recreate it.
+              <codeblock>stack@hLinux:~$ cd helion
+stack@hLinux:~/helion$ git branch -D cp-persistent
+stack@hLinux:~/helion$ git checkout -b cp-persistent
+stack@hLinux:~/helion $ git checkout site</codeblock>
+            </li>
+            <li>The recommended filesystem layout of for controller nodes has changed to provide
+              better isolation for some services and to reapportion the capacity. The
+                <b>disk_controller.yml </b>input file included comments to explain the recommended
+              layout, which is based on a 500GB volume. <p/>Copy the modified
+                <b>disk_controller.yml</b> file into your cloud definition
+              <codeblock>$ cp ~/helion/examples/entry-scale-with-vsa/data/disk_controller*.yml ~/helion/my_cloud/definition/data</codeblock>and
+              re-apply any local changes. Note that an alternative layout,
+                <b>disk_controller_1TB.yml</b>, is now also provided for systems with a larger disc
+              capacity. To use this instead, modify the ROLE_CONTROLLER entries in
+                <b>server_roles.yml</b> to reference DISK_SET_CONTROLLER_1TB, as
+              below:<codeblock>- name: ROLE-CONTROLLER interface-model:
+      INTERFACE_SET_CONTROLLER 
+      disk-model: DISK_SET_CONTROLLER_1TB</codeblock>
+            </li>
             <li>Run the config processor:
               <codeblock>cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
