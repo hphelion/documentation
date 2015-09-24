@@ -32,9 +32,7 @@
       <topicref href="helion/bare_installation_kvm.dita"
         navtitle="Baremetal Install for KVM Hypervisor" locktitle="yes"/>
       <topicref href="helion/bare_installation_esx.dita"
-        navtitle="Baremetal Install for ESX Hypervisor" locktitle="yes">
-        <topicref href="helion/eon_service.dita"/>
-      </topicref>
+        navtitle="Baremetal Install for ESX Hypervisor" locktitle="yes"/>
       <topicref href="helion/bare_installation_esxOLD.dita"
         navtitle="TEST Baremetal Install for ESX Hypervisor" toc="no" locktitle="yes"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
