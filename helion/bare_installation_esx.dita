@@ -4,8 +4,8 @@
   <title>Deploying ESX Cloud </title>
   <body>
     <p>This document describes the procedure for the deployment of ESX cloud using input model and
-      adding additional ESX hosts to an already activated cluster . It contains the following
-        topics:<ul id="ul_wrs_dwq_lt">
+      adding additional ESX hosts to an already activated cluster.</p>
+    <p> It contains the following topics:<ul id="ul_wrs_dwq_lt">
         <li><xref href="#install_esx/Prereqs" format="dita">Prerequisite</xref></li>
         <li><xref href="#install_esx/deployCloud" format="dita">Deploy ESX Cloud</xref></li>
         <li><xref href="#install_esx/prepAndDeploy" format="dita">Prepare and Deploy ESX Computes
