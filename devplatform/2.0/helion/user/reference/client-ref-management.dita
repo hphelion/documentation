@@ -1283,8 +1283,8 @@ guid. This is an Application Lifecycle Service 3 option. Cannot be used together
 </row>
 <row>
 <entry>--stack</entry>
-<entry>The OS foundation the application will run on. This is an Application Lifecycle Service
-3 specific option.</entry>
+<entry>The operating system foundation the application will run on. This is an Application Lifecycle
+                Service 3 specific option.</entry>
 </row>
 <row>
 <entry>--helion-debug</entry>

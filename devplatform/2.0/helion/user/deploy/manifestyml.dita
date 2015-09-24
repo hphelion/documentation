@@ -419,12 +419,13 @@ helion apps
 +-------------+---+---------+------------------------------+-------------+</codeblock>
 </section>
 <section id="requirements"> <title>Requirements</title>
-<p>Specifies required modules and allows the installation of additional OS
-packages.</p>
+<p>Specifies required modules and allows the installation of additional operating system
+        packages.</p>
 </section>
-<section id="os-packages"> <title>OS Packages</title>
-<p>OS packages can be added in an <codeph>ubuntu:</codeph> block
-within a <codeph>staging:</codeph> and/or <codeph>running:</codeph> block. Plain strings are treated as package names:</p>
+<section id="os-packages"> <title>Operating System Packages</title>
+<p>Operating System (OS) packages can be added in an <codeph>ubuntu:</codeph> block within a
+          <codeph>staging:</codeph> and/or <codeph>running:</codeph> block. Plain strings are
+        treated as package names:</p>
 <codeblock>  requirements:
   staging:
     ubuntu:
