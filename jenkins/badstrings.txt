@@ -1,3 +1,5 @@
+%[^Mac] OS %=Write OS as operating system.
+%guestt%=Correct the typo.
 %lbass[^-]%=Use LBaaS.
 %ÎíÎñ%=this is an en-dash.  Use only dashes.
 % are have%= incorrect word grouping.
