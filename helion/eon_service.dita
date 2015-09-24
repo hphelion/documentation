@@ -83,7 +83,7 @@
               href="using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows:
             <codeblock>cd ~/helion/hos/ansible
 git add -A
-git commit -m "My config"</codeblock></li>
+git commit -m "My config or other commit message"</codeblock></li>
           <li>Prepare your environment for deployment:
             <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml;
 ansible-playbook -i hosts/localhost ready-deployment.yml;

@@ -97,7 +97,7 @@ enable_distributed_routing = False</codeblock></li>
             href="using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows:
           <codeblock>cd ~/helion/hos/ansible
 git add -A
-git commit -m "My config"</codeblock></li>
+git commit -m "My config or other commit message"</codeblock></li>
       </ol>
     </section>
     <section conref="bare_installation_kvm.dita#install_kvm/CobblerDeploy"/>
@@ -452,7 +452,7 @@ git commit -m "My config"</codeblock></li>
         <li> Add the cloud deployment definition to the git
           :<codeblock>cd /home/stack/helion/hos/ansible;
 git add -A;
-git commit -m 'Adding ESX Configurations';</codeblock></li>
+git commit -m 'Adding ESX Configurations or other commit message';</codeblock></li>
         <li>Prepare your environment for deployment:
           <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml;
 ansible-playbook -i hosts/localhost ready-deployment.yml;
