@@ -55,7 +55,7 @@ git commit -m "your commit message here"</codeblock> More
               information about git and the config processor can be found on the <xref
                 href="using_git.dita#topic_u3v_1yz_ct">Using Git page</xref>.</li>
             <li> Remove any data persisted from the Beta 1 deployment by executing these commands on
-              the deployer node to delete the cp-persistent branch and all its persistent data, and
+              the deployer node to delete the cp-persistent branch and all its persisted data, and
               recreate it.
               <codeblock>stack@hLinux:~$ cd helion
 stack@hLinux:~/helion$ git branch -D cp-persistent
