@@ -242,7 +242,7 @@ ilo_password: "password"
               address or password.</li>
           </ul></li>
       </ul>
-      <p><b>Centralized Logging Limitations</b></p>
+      <p id="logging"><b>Centralized Logging Limitations</b></p>
       <p>Logging support is complete for Beta 2 with the following limitations:</p>
       <ul>
         <li>Alarm definition and generation for Kibana and curator are not integrated.</li>
