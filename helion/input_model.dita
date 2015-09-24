@@ -36,7 +36,20 @@
       <li><xref href="#input_model/4.0_ConfigurationObjects">Helion OpenStack 2.0 Configuration Objects</xref>
       <ol>
         <li><xref href="#input_model/4.1_Cloud">Cloud</xref></li>
-        <li><xref href="#input_model/4.2_Cloud">ControlPlane</xref></li>
+        <li><xref href="#input_model/4.2_ControlPlane">Control Plane</xref>
+        <ol>
+          <li><xref href="#input_model/4.2.1_Clusters">Clusters</xref></li>
+          <li><xref href="#input_model/4.2.2_ResourceNodes">Resource Nodes</xref></li>
+        </ol></li>
+        <li><xref href="#input_model/4.3_Servers">Servers</xref></li>
+        <li><xref href="#input_model/4.4_ServerGroups">Server Groups</xref></li>
+        <li><xref href="#input_model/4.5_ServerRoles">Server Roles</xref></li>
+        <li><xref href="#input_model/4.6_DiskModels">Disk Models</xref>
+        <ol>
+          <li><xref href="#input_model/4.6.1_DeviceGroups">Device Groups</xref></li>
+          <li><xref href="#input_model/4.6.2_VolumeGroups">Volume Groups</xref></li>
+        </ol></li>
+        <li><xref href="#input_model/4.7_InterfaceModels">Interface Models</xref></li>
       </ol></li>
     </ol>
     
