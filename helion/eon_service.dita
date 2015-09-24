@@ -94,8 +94,8 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit '*esx-ovsvapp'
 ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit NEU-OVSVAPP</codeblock></li>
           <li>After successful deployment of the <b>hlm-deploy</b>, execute the following command
             from the deployer
-              node.<codeblock># eon move-hosts –vcenter-id &lt;vCenter ID> --host &lt;host IP> –-status &lt;Status of deployment></codeblock><note>The
-              status can be failure or success based on the deployment.</note><p>For example:
+              node.<codeblock># eon move-hosts –-vcenter-id &lt;vCenter ID> --host &lt;host IP> –-status &lt;Status of deployment></codeblock><note>The
+              status can be "failure "or "success" based on the deployment.</note><p>For example:
               </p><codeblock># eon move-hosts –vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --host 100.10.0.50 –-status SUCCESS</codeblock><p>The
               host will be moved back to the original cluster as shown below:</p><p><image
                 href="../media/esx/eon_service_host3.png" id="image_xhw_pbp_lt"/></p><p>
