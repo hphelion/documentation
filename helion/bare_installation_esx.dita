@@ -4,7 +4,7 @@
   <title>Deploying ESX Cloud </title>
   <body>
     <p>This document describes the procedure for the deployment of ESX cloud using input model and
-      adding additional ESX hosts to an already activated cluster. It contains the following
+      adding additional ESX hosts to an already activated cluster . It contains the following
         topics:<ul id="ul_wrs_dwq_lt">
         <li><xref href="#install_esx/Prereqs" format="dita">Prerequisite</xref></li>
         <li><xref href="#install_esx/deployCloud" format="dita">Deploy ESX Cloud</xref></li>
@@ -479,7 +479,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></p>
         <codeph>/data/control_plane.yml</codeph> file
         (<codeph>/home/stack/helion/my_cloud/definition/data/control_plane.yml</codeph>). </note>
     <section id="host-commissioning">
-      <title>ESX Host Commissioning</title>
+      <title>ESX Host Commissioning (Optional)</title>
       <p>ESX Host Commissioning is a functionality provided to a user to add additional ESX hosts to
         an already activated cluster. You can add ESX host to an already activated cluster if
         OVSvApp is installed in the host. With the OVSvApp installed, you can connect the tenant VMs
