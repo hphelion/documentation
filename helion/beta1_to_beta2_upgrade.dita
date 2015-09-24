@@ -29,7 +29,7 @@
       still use that configuration after upgrading to Beta 2. However, a few changes are
       required.</p>
     <p/>
-    <p>To upgrade, download the ISO as you would for a beta2 install.<note>You will not be able to
+    <p>To upgrade, download the ISO as you would for a Beta 2 install.<note>You will not be able to
         change your cloud model at this point, other than by adapting it as you did in beta1. You
         may have to merge your current configuration files with the new ones in step 3. </note>
       <ol>
@@ -42,9 +42,7 @@
           Run the included initialization script to update the deployer
           <codeblock>~/hos-2.0.0-b.2/hos-init.bash</codeblock>
         </li>
-        <li>Prepare the new Ansible tree for the upgrade task: 
-          
-          <ol id="ol_zzd_rxz_jt">
+        <li>Prepare the new Ansible tree for the upgrade task: <ol id="ol_zzd_rxz_jt">
             <li>Identify any merge conflicts that may have arisen getting doing git status: <codeblock>cd ~/helion
 git status</codeblock>
               <p>Note that git status will also tell you what branch you are on. It should be the
@@ -56,7 +54,7 @@ git commit -m "your commit message here"</codeblock> More
                 href="using_git.dita#topic_u3v_1yz_ct">Using Git page</xref>.</li>
             <li> Remove any data persisted from the Beta 1 deployment by executing these commands on
               the deployer node to delete the cp-persistent branch and all its persisted data, and
-              recreate it.
+              recreate it. Then switch to the site branch:
               <codeblock>stack@hLinux:~$ cd helion
 stack@hLinux:~/helion$ git branch -D cp-persistent
 stack@hLinux:~/helion$ git checkout -b cp-persistent
