@@ -158,6 +158,12 @@ ilo_password: "password"
         Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP
         Helion OpenStack.</p><p>Learn more about Monasca here: <xref href="monasca/monasca.dita"
           >Monasca Overview</xref></p>
+      <p><b>Monitoring Configuration Options Available for Metrics Database</b></p>
+      <p>In Beta 2 you will have the option to specify which database platform you want to use for
+        the Metrics Database. The default option with the installation is Vertica. The opensource
+        alternative is InfluxDB.</p>
+      <p>Learn more about these options here: <xref href="monasca/monasca_configure.dita"
+          >Configuring the Monitoring Service</xref></p>
       <p><b>Centralized Logging</b></p>
       <p>Logging for the services below is enabled in the default configuration. You will have the
         ability to disable per-service logging as needed.</p>
