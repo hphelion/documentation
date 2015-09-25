@@ -24,8 +24,10 @@
       <p>In order to tell Cobbler that you want to re-image it, you can run these commands: <ol>
           <li>To get a list of your system names, use:
             <codeblock>sudo cobbler system list</codeblock></li>
-          <li>Notify Cobbler to set the <codeph>netboot-enabled</codeph> flag to true by using:
-            <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml -e nodelist="&lt;node1>,&lt;node2>..."</codeblock></li>
+          <li>Notify Cobbler to set the <codeph>netboot-enabled</codeph> flag to true by using: <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml -e nodelist="&lt;node1>,&lt;node2>..."</codeblock>
+            <note>If you need to re-image your nodes, you can add the <codeph>-e
+                nodelist=all</codeph> switch to the end of your <codeph>bm-reimage.yml</codeph>
+              command.</note></li>
           <li>Then proceed with your <codeph>cobbler-deploy.yml</codeph> and
               <codeph>bm-reimage.yml</codeph> playbooks again.</li>
         </ol>
@@ -47,11 +49,11 @@ git commit -m "My config or other commit message"</codeblock></li>
         <li>Remove the nodes that had the old information from Cobbler using:
           <codeblock>sudo cobbler system remove --name &lt;nodename></codeblock></li>
         <li>Re-run the <codeph>cobbler-deploy.yml</codeph> and <codeph>bm-reimage.yml</codeph>
-          ansible scripts to upload the new node definitions to Cobbler and image the nodes: <codeblock>cd ~/helion/hos/ansible
+          ansible scripts to upload the new node definitions to Cobbler and image the nodes:
+          <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
-          <note>If you need to re-image your nodes, you can add the <codeph>-e nodelist=all</codeph>
-            switch to the end of your <codeph>bm-reimage.yml</codeph> command.</note></li>
+        </li>
       </ol>
       <p><b>Change needed to configuration files after you've run the
             <codeph>config-processor-run.yml</codeph> playbook</b></p>
