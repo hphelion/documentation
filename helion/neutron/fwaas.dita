@@ -4,8 +4,9 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 FWaaS Configuration</title>
   <body>
     <p>HP Helion OpenStack 2.0 FWaaS Configuration</p>
-    <p>This document describes the configuration process and requirements for the HP Helion
-      OpenStack 2.0 Firewall as a Service module.</p>
+    <p>Firewall as a Service (FWaaS) is an advance networking service that introduces firewall
+      feature set. This document describes the configuration process and requirements for the HP
+      Helion OpenStack 2.0 Firewall as a Service module. </p>
     <p>
       <ul id="LBaaSlist">
         <li><xref href="fwaas.dita#HP2.0FWaaS/Prerequisites">Prerequisites</xref></li>
@@ -20,8 +21,9 @@
       
     </section>
     <section id="Configuration">
-      <title>Configuration</title>
-      <p>HP Helion OpenStack 2.0 FWaaS Configuration</p>
+      <title>HP Helion OpenStack 2.0 FWaaS Configuration</title>
+      
+      <p><b>Check for an enabled firewall.</b></p>
       <ol>
         <li>You should check to determine if the firewall is enabled.  The output of the <i>neutron
             ext-list</i> should contain a firewall
@@ -30,6 +32,7 @@
           the external network. <codeblock>neutron net-list</codeblock></li>
       </ol>
       
+      <p><b>Create required assets.</b></p>
       <p>Before creating firewalls, you will need to create a network, subnet, router, security
         group rules, start an instance and assign it a floating IP address.</p>
       <ol>
@@ -86,9 +89,9 @@ neutron firewall-rule-create --protocol tcp --destination-port 22 --action allow
           ACTIVE.<codeblock>neutron firewall-show user-fw</codeblock></li>
       </ol>
       
-      <p><b>You should verify the FWaaS is functional with the steps included below.</b></p>
+      <p><b>Verify the FWaaS is functional.</b></p>
       <ol>
-        <li>Since allow-icmp firewall is rule is set you can ping the floating IP address of the
+        <li>Since allow-icmp firewall rule is set you can ping the floating IP address of the
           instance from the external network.<codeblock>ping &lt;FIP-VM1></codeblock></li>
         <li>Similarly, you can connect via ssh to the instance due to the allow-ssh firewall
           rule.<codeblock>ssh cirros@&lt;FIP-VM1>
