@@ -313,11 +313,12 @@ ring-specifications:
               - account
               - container
               - object-0
-      - name: cinder-volume
+      <!-- - name: cinder-volume
         devices:
           - name: /dev/sdd
         consumer:
-           name: cinder
+           name: cinder -->
+        <!--docs 1734-->
     volume-groups:
     # The policy is not to consume 100% of the space of each volume group.
     # 5% should be left free for snapshots and to allow for some flexibility.
