@@ -94,6 +94,10 @@
           <dt>Multiple Admin Password Prompts During Patch</dt>
           <dd>When patching, the admin will be prompted for the password at least once and usually multiple times. This is a known issue.</dd>
         </dlentry>
+        <dlentry>
+          <dt>Disk Allocation Min/Max for <codeph>helion push --disk</codeph></dt>
+          <dd>The application disk reservation setting has a minimum value of 512 MB and a maximum of 2 GB. This is a per-instance limit.</dd>
+        </dlentry>
       </dl>
     </section>
 <section><title>Fixes, Changes and Updates</title> 

@@ -1129,332 +1129,330 @@ command to print the saved trace to stdout.</entry>
 <p>Configure, create, push, map, and start a new application.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-    <entry>
-      <b>Option</b>
-    </entry>
-    <entry>
-      <b>Description</b>
-    </entry>
-  </row>
-<row>
-<entry>--as</entry>
-<entry>The name of the application to push/update the selected
-application as. Possible only if a single application is pushed or
-updated.</entry>
-</row>
-<row>
-<entry>--buildpack</entry>
-<entry>Url of a custom buildpack. This is an Application Lifecycle Service 3 specific option.</entry>
-</row>
-<row>
-<entry>--command</entry>
-<entry>The application's start command. Defaults to a framework-specific
-value if required and not specified by manifest.yml.</entry>
-</row>
-<row>
-<entry>--copy-unsafe-links</entry>
-<entry>Links pointing outside of the application directory are copied
-into the application.</entry>
-</row>
-<row>
-<entry>--disk</entry>
-<entry>The application's per-instance disk allocation. Defaults to a
-framework-specific value if not specified by manifest.yml.</entry>
-</row>
-<row>
-<entry>--env</entry>
-<entry>Environment variable overrides. These are always applied
-regardless of --env-mode. The mode is restricted to the variable
-declarations found in the manifest.</entry>
-</row>
-<row>
-<entry>--env-mode</entry>
-<entry>Environment replacement mode. One of preserve, or replace. The
-default is "preserve". Using mode "replace" implies --reset as
-well, for push. Note that new variables are always set. Preserve
-only prevents update of existing variables. This setting applies
-only to the variable declarations found in the manifest. Overrides
-made with --env are always applied.</entry>
-</row>
-<row>
-<entry>--force-start</entry>
-<entry>Push, and start the application, even when stopped.</entry>
-</row>
-<row>
-<entry>--framework</entry>
-<entry>Specify the framework to use. Cannot be used together with --no-framework. Defaults to a heuristically chosen value if not
-specified, and none for --no-framework. This is an Application Lifecycle Service 2
-specific option.</entry>
-</row>
-<row>
-<entry>--group</entry>
-<entry>The once-off group to use for the current operation. This is a
-Application Lifecycle Service 2 option.</entry>
-</row>
-<row>
-<entry>--instances</entry>
-<entry>The number of application instances to create. Defaults to 1, if
-not specified by a manifest.yml.</entry>
-</row>
-<row>
-<entry>--manifest</entry>
-<entry>Path of the manifest file to use. If not specified a search is
-done.</entry>
-</row>
-<row>
-<entry>--mem</entry>
-<entry>The application's per-instance memory allocation. Defaults to a
-framework-specific value if not specified by manifest.yml.</entry>
-</row>
-<row>
-<entry>--no-framework</entry>
-<entry>Create application without any framework. Cannot be used together
-with --framework. This is an Application Lifecycle Service 2 specific option.</entry>
-</row>
-<row>
-<entry>--no-prompt</entry>
-<entry>Disable interactive queries.</entry>
-</row>
-<row>
-<entry>--no-resources</entry>
-<entry>Do not optimize upload by checking for existing file resources.</entry>
-</row>
-<row>
-<entry>--no-start</entry>
-<entry>Push, but do not start the application.</entry>
-</row>
-<row>
-<entry>--no-tail</entry>
-<entry>Complementary alias of --tail.</entry>
-</row>
-<row>
-<entry>--no-trace</entry>
-<entry>Complementary alias of --trace.</entry>
-</row>
-<row>
-<entry>--non-interactive</entry>
-<entry>Alias of --no-prompt.</entry>
-</row>
-<row>
-<entry>--noprompt</entry>
-<entry>Alias of --no-prompt.</entry>
-</row>
-<row>
-<entry>--noresources</entry>
-<entry>Alias of --no-resources.</entry>
-</row>
-<row>
-<entry>--nostart</entry>
-<entry>Alias of --no-start.</entry>
-</row>
-<row>
-<entry>--organization</entry>
-<entry>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</entry>
-</row>
-<row>
-<entry>--path</entry>
-<entry>Path of the directory holding the application files to push.
-Defaults to the current working directory.</entry>
-</row>
-<row>
-<entry>--reset</entry>
-<entry>Analogue of --env-mode, for the regular settings.</entry>
-</row>
-<row>
-<entry>--runtime</entry>
-<entry>The name of the runtime to use. Default is framework specific, if
-not specified by a manifest.yml. This is an Application Lifecycle Service 2 specific
-option.</entry>
-</row>
-<row>
-<entry>--space</entry>
-<entry>The once-off space to use for the current operation, specified by
-name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</entry>
-</row>
-<row>
-<entry>--space-guid</entry>
-<entry>The once-off space to use for the current operation, specified by
-guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</entry>
-</row>
-<row>
-<entry>--stack</entry>
-<entry>The OS foundation the application will run on. This is an Application Lifecycle Service
-3 specific option.</entry>
-</row>
-<row>
-<entry>--helion-debug</entry>
-<entry>host:port of the Komodo debugger listener to inject into the
-application as environment variables.</entry>
-</row>
-<row>
-<entry>--tail</entry>
-<entry>Request target to stream the log.</entry>
-</row>
-<row>
-<entry>--target</entry>
-<entry>The once-off target to use for the current operation.</entry>
-</row>
-<row>
-<entry>--timeout</entry>
-<entry>The time the client waits for an application to start before
-giving up and returning, in seconds. Note that this is measured
-from the last entry seen in the log stream. While there is
-activity in the log the timeout is reset.
-The default is 2 minutes.
-Use the suffixes 'm', 'h', and 'd' for the convenient
-specification of minutes, hours, and days. The optional suffix 's'
-stands for seconds.</entry>
-</row>
-<row>
-<entry>--token</entry>
-<entry>The once-off authentication token to use for the current
-operation.</entry>
-</row>
-<row>
-<entry>--token-file</entry>
-<entry>Path to an existing and readable file containing the targets and
-authorization tokens.</entry>
-</row>
-<row>
-<entry>--trace</entry>
-<entry>Activate tracing of the issued REST requests and responses. This
-option is a no-op now. Tracing is always active. See the 'trace'
-command to print the saved trace to stdout.</entry>
-</row>
-<row>
-<entry>--url</entry>
-<entry>The urls to map the application to. I.e. can be specified multiple
-times.</entry>
-</row>
-<row>
-<entry>-d</entry>
-<entry>Set up debugging through an application-specific harbor (port)
-service. Target version 2.8+ only.</entry>
-</row>
-<row>
-<entry>-n</entry>
-<entry>Alias of --no-prompt.</entry>
-</row>
-<row>
-<entry>-o</entry>
-<entry>Alias of --organization.</entry>
-</row>
-<row>
-<entry>-t</entry>
-<entry>Alias of --trace.</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="5.45*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--as</entry>
+              <entry>The name of the application to push/update the selected application as.
+                Possible only if a single application is pushed or updated.</entry>
+            </row>
+            <row>
+              <entry>--buildpack</entry>
+              <entry>Url of a custom buildpack. This is an Application Lifecycle Service 3 specific
+                option.</entry>
+            </row>
+            <row>
+              <entry>--command</entry>
+              <entry>The application's start command. Defaults to a framework-specific value if
+                required and not specified by manifest.yml.</entry>
+            </row>
+            <row>
+              <entry>--copy-unsafe-links</entry>
+              <entry>Links pointing outside of the application directory are copied into the
+                application.</entry>
+            </row>
+            <row>
+              <entry>--disk</entry>
+              <entry>The application's per-instance disk allocation. Defaults to a
+                framework-specific value if not specified by manifest.yml.<note type="warning">The
+                  minimum value is 512 MB; the maximum is 2 GB. This is a per-instance
+                limit.</note></entry>
+            </row>
+            <row>
+              <entry>--env</entry>
+              <entry>Environment variable overrides. These are always applied regardless of
+                --env-mode. The mode is restricted to the variable declarations found in the
+                manifest.</entry>
+            </row>
+            <row>
+              <entry>--env-mode</entry>
+              <entry>Environment replacement mode. One of preserve, or replace. The default is
+                "preserve". Using mode "replace" implies --reset as well, for push. Note that new
+                variables are always set. Preserve only prevents update of existing variables. This
+                setting applies only to the variable declarations found in the manifest. Overrides
+                made with --env are always applied.</entry>
+            </row>
+            <row>
+              <entry>--force-start</entry>
+              <entry>Push, and start the application, even when stopped.</entry>
+            </row>
+            <row>
+              <entry>--framework</entry>
+              <entry>Specify the framework to use. Cannot be used together with --no-framework.
+                Defaults to a heuristically chosen value if not specified, and none for
+                --no-framework. This is an Application Lifecycle Service 2 specific option.</entry>
+            </row>
+            <row>
+              <entry>--group</entry>
+              <entry>The once-off group to use for the current operation. This is a Application
+                Lifecycle Service 2 option.</entry>
+            </row>
+            <row>
+              <entry>--instances</entry>
+              <entry>The number of application instances to create. Defaults to 1, if not specified
+                by a manifest.yml.</entry>
+            </row>
+            <row>
+              <entry>--manifest</entry>
+              <entry>Path of the manifest file to use. If not specified a search is done.</entry>
+            </row>
+            <row>
+              <entry>--mem</entry>
+              <entry>The application's per-instance memory allocation. Defaults to a
+                framework-specific value if not specified by manifest.yml.</entry>
+            </row>
+            <row>
+              <entry>--no-framework</entry>
+              <entry>Create application without any framework. Cannot be used together with
+                --framework. This is an Application Lifecycle Service 2 specific option.</entry>
+            </row>
+            <row>
+              <entry>--no-prompt</entry>
+              <entry>Disable interactive queries.</entry>
+            </row>
+            <row>
+              <entry>--no-resources</entry>
+              <entry>Do not optimize upload by checking for existing file resources.</entry>
+            </row>
+            <row>
+              <entry>--no-start</entry>
+              <entry>Push, but do not start the application.</entry>
+            </row>
+            <row>
+              <entry>--no-tail</entry>
+              <entry>Complementary alias of --tail.</entry>
+            </row>
+            <row>
+              <entry>--no-trace</entry>
+              <entry>Complementary alias of --trace.</entry>
+            </row>
+            <row>
+              <entry>--non-interactive</entry>
+              <entry>Alias of --no-prompt.</entry>
+            </row>
+            <row>
+              <entry>--noprompt</entry>
+              <entry>Alias of --no-prompt.</entry>
+            </row>
+            <row>
+              <entry>--noresources</entry>
+              <entry>Alias of --no-resources.</entry>
+            </row>
+            <row>
+              <entry>--nostart</entry>
+              <entry>Alias of --no-start.</entry>
+            </row>
+            <row>
+              <entry>--organization</entry>
+              <entry>The once-off organization to use for the current operation. This is an
+                Application Lifecycle Service 3 option.</entry>
+            </row>
+            <row>
+              <entry>--path</entry>
+              <entry>Path of the directory holding the application files to push. Defaults to the
+                current working directory.</entry>
+            </row>
+            <row>
+              <entry>--reset</entry>
+              <entry>Analogue of --env-mode, for the regular settings.</entry>
+            </row>
+            <row>
+              <entry>--runtime</entry>
+              <entry>The name of the runtime to use. Default is framework specific, if not specified
+                by a manifest.yml. This is an Application Lifecycle Service 2 specific
+                option.</entry>
+            </row>
+            <row>
+              <entry>--space</entry>
+              <entry>The once-off space to use for the current operation, specified by name. This is
+                an Application Lifecycle Service 3 option. Cannot be used together with
+                --space-guid.</entry>
+            </row>
+            <row>
+              <entry>--space-guid</entry>
+              <entry>The once-off space to use for the current operation, specified by guid. This is
+                an Application Lifecycle Service 3 option. Cannot be used together with
+                --space.</entry>
+            </row>
+            <row>
+              <entry>--stack</entry>
+              <entry>The OS foundation the application will run on. This is an Application Lifecycle
+                Service 3 specific option.</entry>
+            </row>
+            <row>
+              <entry>--helion-debug</entry>
+              <entry>host:port of the Komodo debugger listener to inject into the application as
+                environment variables.</entry>
+            </row>
+            <row>
+              <entry>--tail</entry>
+              <entry>Request target to stream the log.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--timeout</entry>
+              <entry>The time the client waits for an application to start before giving up and
+                returning, in seconds. Note that this is measured from the last entry seen in the
+                log stream. While there is activity in the log the timeout is reset. The default is
+                2 minutes. Use the suffixes 'm', 'h', and 'd' for the convenient specification of
+                minutes, hours, and days. The optional suffix 's' stands for seconds.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+            <row>
+              <entry>--trace</entry>
+              <entry>Activate tracing of the issued REST requests and responses. This option is a
+                no-op now. Tracing is always active. See the 'trace' command to print the saved
+                trace to stdout.</entry>
+            </row>
+            <row>
+              <entry>--url</entry>
+              <entry>The urls to map the application to. I.e. can be specified multiple
+                times.</entry>
+            </row>
+            <row>
+              <entry>-d</entry>
+              <entry>Set up debugging through an application-specific harbor (port) service. Target
+                version 2.8+ only.</entry>
+            </row>
+            <row>
+              <entry>-n</entry>
+              <entry>Alias of --no-prompt.</entry>
+            </row>
+            <row>
+              <entry>-o</entry>
+              <entry>Alias of --organization.</entry>
+            </row>
+            <row>
+              <entry>-t</entry>
+              <entry>Alias of --trace.</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="command-rename"> <title>helion rename &lt;<i>application</i>&gt; &lt;<i>name</i>&gt;</title> 
 <p>Rename the specified application.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-    <entry>
-      <b>Option</b>
-    </entry>
-    <entry>
-      <b>Description</b>
-    </entry>
-  </row>
-<row>
-<entry>--group</entry>
-<entry>The once-off group to use for the current operation. This is a
-Application Lifecycle Service 2 option.</entry>
-</row>
-<row>
-<entry>--manifest</entry>
-<entry>Path of the manifest file to use. If not specified a search is
-done.</entry>
-</row>
-<row>
-<entry>--no-prompt</entry>
-<entry>Disable interactive queries.</entry>
-</row>
-<row>
-<entry>--no-tail</entry>
-<entry>Complementary alias of --tail.</entry>
-</row>
-<row>
-<entry>--no-trace</entry>
-<entry>Complementary alias of --trace.</entry>
-</row>
-<row>
-<entry>--non-interactive</entry>
-<entry>Alias of --no-prompt.</entry>
-</row>
-<row>
-<entry>--noprompt</entry>
-<entry>Alias of --no-prompt.</entry>
-</row>
-<row>
-<entry>--organization</entry>
-<entry>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</entry>
-</row>
-<row>
-<entry>--path</entry>
-<entry>Path of the directory holding the application files to push.
-Defaults to the current working directory.</entry>
-</row>
-<row>
-<entry>--space</entry>
-<entry>The once-off space to use for the current operation, specified by
-name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</entry>
-</row>
-<row>
-<entry>--space-guid</entry>
-<entry>The once-off space to use for the current operation, specified by
-guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</entry>
-</row>
-<row>
-<entry>--tail</entry>
-<entry>Request target to stream the log.</entry>
-</row>
-<row>
-<entry>--target</entry>
-<entry>The once-off target to use for the current operation.</entry>
-</row>
-<row>
-<entry>--token</entry>
-<entry>The once-off authentication token to use for the current
-operation.</entry>
-</row>
-<row>
-<entry>--token-file</entry>
-<entry>Path to an existing and readable file containing the targets and
-authorization tokens.</entry>
-</row>
-<row>
-<entry>--trace</entry>
-<entry>Activate tracing of the issued REST requests and responses. This
-option is a no-op now. Tracing is always active. See the 'trace'
-command to print the saved trace to stdout.</entry>
-</row>
-<row>
-<entry>-n</entry>
-<entry>Alias of --no-prompt.</entry>
-</row>
-<row>
-<entry>-o</entry>
-<entry>Alias of --organization.</entry>
-</row>
-<row>
-<entry>-t</entry>
-<entry>Alias of --trace.</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="6.14*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--group</entry>
+              <entry>The once-off group to use for the current operation. This is a Application
+                Lifecycle Service 2 option.</entry>
+            </row>
+            <row>
+              <entry>--manifest</entry>
+              <entry>Path of the manifest file to use. If not specified a search is done.</entry>
+            </row>
+            <row>
+              <entry>--no-prompt</entry>
+              <entry>Disable interactive queries.</entry>
+            </row>
+            <row>
+              <entry>--no-tail</entry>
+              <entry>Complementary alias of --tail.</entry>
+            </row>
+            <row>
+              <entry>--no-trace</entry>
+              <entry>Complementary alias of --trace.</entry>
+            </row>
+            <row>
+              <entry>--non-interactive</entry>
+              <entry>Alias of --no-prompt.</entry>
+            </row>
+            <row>
+              <entry>--noprompt</entry>
+              <entry>Alias of --no-prompt.</entry>
+            </row>
+            <row>
+              <entry>--organization</entry>
+              <entry>The once-off organization to use for the current operation. This is an
+                Application Lifecycle Service 3 option.</entry>
+            </row>
+            <row>
+              <entry>--path</entry>
+              <entry>Path of the directory holding the application files to push. Defaults to the
+                current working directory.</entry>
+            </row>
+            <row>
+              <entry>--space</entry>
+              <entry>The once-off space to use for the current operation, specified by name. This is
+                an Application Lifecycle Service 3 option. Cannot be used together with
+                --space-guid.</entry>
+            </row>
+            <row>
+              <entry>--space-guid</entry>
+              <entry>The once-off space to use for the current operation, specified by guid. This is
+                an Application Lifecycle Service 3 option. Cannot be used together with
+                --space.</entry>
+            </row>
+            <row>
+              <entry>--tail</entry>
+              <entry>Request target to stream the log.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+            <row>
+              <entry>--trace</entry>
+              <entry>Activate tracing of the issued REST requests and responses. This option is a
+                no-op now. Tracing is always active. See the 'trace' command to print the saved
+                trace to stdout.</entry>
+            </row>
+            <row>
+              <entry>-n</entry>
+              <entry>Alias of --no-prompt.</entry>
+            </row>
+            <row>
+              <entry>-o</entry>
+              <entry>Alias of --organization.</entry>
+            </row>
+            <row>
+              <entry>-t</entry>
+              <entry>Alias of --trace.</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="command-restart"> <title>helion restart &lt;<i>application</i>&gt;</title> 
