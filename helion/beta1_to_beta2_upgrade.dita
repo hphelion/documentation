@@ -7,7 +7,7 @@
       working deployment of the Beta 1 release. </p>
     <p>To perform the upgrade, follow the steps below. The upgrade will apply updates to HP Helion
       OpenStack services, as well as to the underlying cloud platform. </p>
-    <p> The upgrade mechanism included in the Beta2 release is not complete in that it does not
+    <p> The upgrade mechanism included in the Beta 2 release is not complete in that it does not
       upgrade the full set of services in the HOS stack. Beta2 will allow users to get experience
       with applying upgrades through HLM. The following set of HOS components are upgraded as part
       of the Beta2 upgrade: <ul>
@@ -64,10 +64,10 @@ stack@hLinux:~/helion $ git checkout site</codeblock>
               better isolation for some services and to reapportion the capacity. The
                 <b>disk_controller.yml </b>input file included comments to explain the recommended
               layout, which is based on a 500GB volume. <p/>Copy the modified
-                <b>disk_controller.yml</b> file into your cloud definition
-              <codeblock>$ cp ~/helion/examples/entry-scale-with-vsa/data/disk_controller*.yml ~/helion/my_cloud/definition/data</codeblock>and
+                <b>disks_controller.yml</b> file into your cloud definition
+              <codeblock>$ cp ~/helion/examples/entry-scale-with-vsa/data/disks_controller*.yml ~/helion/my_cloud/definition/data</codeblock>and
               re-apply any local changes. Note that an alternative layout,
-                <b>disk_controller_1TB.yml</b>, is now also provided for systems with a larger disc
+                <b>disks_controller_1TB.yml</b>, is now also provided for systems with a larger disc
               capacity. To use this instead, modify the ROLE_CONTROLLER entries in
                 <b>server_roles.yml</b> to reference DISK_SET_CONTROLLER_1TB, as
               below:<codeblock>- name: ROLE-CONTROLLER interface-model:
