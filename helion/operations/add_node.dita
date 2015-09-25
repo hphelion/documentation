@@ -50,8 +50,8 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
       Now configure the new node(s)
       <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblock>
-      Finally, run the following deployment step specifying the '--limit' option to only apply the
-      deployment actions to the target node(s).
+      Finally, run the following deployment step specifying the '--limit' option to apply the
+      deployment actions only to the target node(s).
       <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit hlm004-ccp-comp0007*</codeblock>
     </section>
   </body>
