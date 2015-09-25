@@ -277,8 +277,6 @@ Password: cghelion</codeblock>
           href="carrier-grade-install-pb-kvm-ldap-json.dita">Sample ldap.json File for Installing
           the KVM + ESX Topology</xref>. </p>
     </section>
-    <section id="configure-wr-json"
-      ><!--Hide for 8/28 release <title>Configure the wr.json file</title><p>Modify the <codeph>wr.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph> directory on the HLM VM.</p><p>To see a sample <codeph>wr.json</codeph> file, see <xref href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the KVM + ESX Topology</xref>. </p>--></section>
     <section id="dcn-json">
       <title>Configure the dcn.json file</title>
       <p>Modify the <codeph>dcn.json</codeph> file in the
@@ -301,6 +299,14 @@ Password: cghelion</codeblock>
   {
     "id": "1",
     "member-count": 1,      </codeblock></section>
+    <section id="configure-wr-json">
+      <title>Configure the wr.json file</title>
+      <p><b>For bonded NIC environments</b>, modify the <codeph>wr.json</codeph> file in the
+          <codeph>&lt;cloudname>/vars</codeph> directory on the HLM VM.</p>
+      <p>To see a sample <codeph>wr.json</codeph> file, see <xref
+          href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the
+          KVM + ESX Topology</xref>. </p>
+    </section>
     <section id="configure-mach-json">
       <title>Configure the machine_architecture.json file</title>
       <p><b>For bonded NIC environments</b>, modify the <codeph>machine_architecture.json</codeph>
@@ -483,10 +489,10 @@ The configuration processor completed successfully.
     <section id="hdeploy"><title>Deploy HP Helion OpenStack</title>
       <ol>
         <li>Use the following command to deploy the HP Helion OpenStack cloud:
-            <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>This command takes a
-            significant period of time. When this command is complete, the non-KVM cloud
-            installation is complete. Use the following sections to configure the Horizon interface,
-            configure networking, and configure the ESX environment. </p></li>
+            <codeblock>hdeploy &lt;cloudname&gt;</codeblock><p>This command takes a significant
+            period of time. When this command is complete, the non-KVM cloud installation is
+            complete. Use the following sections to configure the Horizon interface, configure
+            networking, and configure the ESX environment. </p></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
       <p><b>Note:</b> If the <codeph>hdeploy</codeph> script fails, review the topics in <xref

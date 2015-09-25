@@ -23,8 +23,12 @@
             deploying the HLM VM.</p>
 <section id="sample-node-provisionjson-file">
   <p>The following represents a sample <codeph>machine_architecture.json</codeph> file for <xref
-          href="carrier-grade-install-pb-overview.dita#topic1925/nic">a bonded NIC
-          installation</xref>.  Use values appropriate for your environment.</p>
+                    href="carrier-grade-install-pb-overview.dita#topic1925/nic">a bonded NIC
+                    installation</xref>. Use values appropriate for your environment. You can use
+                the following command on the KVM host to gather the required PCI network info: </p>
+            <p>
+                <codeblock>ls -l /sys/class/net | egrep pci | sed -e 's/^.*pci//' -e 's%/net.*$%%' </codeblock>
+            </p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
         

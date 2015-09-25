@@ -124,5 +124,48 @@ unset OS_USER_DOMAIN_ID=default
 unset OS_IDENTITY_API_VERSION=3
 unset OS_AUTH_VERSION=3</codeblock>
     </section>
+    <section><title>hdeploy failure during swift role configuration</title>
+      
+      <p>If you experience errors during swift role configurations, as shown in the following error messages, perform the following
+        perform the following tasks to recover the RabbitMQ Cluster</p> 
+      
+      <codeblock>2015-09-24 11:13:37,315 p=6946 u=root |  TASK: [Ensure swift node ring path exists] ************************************
+2015-09-24 11:13:37,483 p=6946 u=root |  changed: [B15-CCP-T2-M1-NETCLM]
+2015-09-24 11:13:37,483 p=6946 u=root |  TASK: [Create rings] **********************************************************
+2015-09-24 11:13:38,128 p=6946 u=root |  changed: [B15-CCP-T2-M1-NETCLM] => (item={'key': 'object.builder', 'value': {'min_part': 1, 'replica': 3, 'part_power': 10}})
+2015-09-24 11:13:38,129 p=6946 u=root |  TASK: [Register disks] ********************************************************
+2015-09-24 11:13:38,199 p=6946 u=root |  ok: [B15-CCP-T2-M1-NETCLM]
+2015-09-24 11:13:38,204 p=6946 u=root |  ok: [B15-CCP-T2-M3-NETCLM]
+2015-09-24 11:13:38,216 p=6946 u=root |  TASK: [Write disks to config file] ********************************************
+2015-09-24 11:13:38,263 p=6946 u=root |  fatal: [B15-CCP-T2-M1-NETCLM] => {'msg': "AnsibleUndefinedVariable: One or more undefined variables: 'dict object' has no attribute 'swift_local_disks'", 'failed': True}
+2015-09-24 11:13:38,263 p=6946 u=root |  fatal: [B15-CCP-T2-M1-NETCLM] => {'msg': "AnsibleUndefinedVariable: One or more undefined variables: 'dict object' has no attribute 'swift_local_disks'", 'failed': True}
+2015-09-24 11:13:38,263 p=6946 u=root |  FATAL: all hosts have already failed -- aborting
+2015-09-24 11:13:38,264 p=6946 u=root |  PLAY RECAP ********************************************************************
+2015-09-24 11:13:38,264 p=6946 u=root |             to retry, use: --limit @/root/deploy.retry
+
+2015-09-24 11:13:38,264 p=6946 u=root |  B15-CCP-T1-M1-NETCLM       : ok=77   changed=67   unreachable=0    failed=0
+2015-09-24 11:13:38,264 p=6946 u=root |  B15-CCP-T2-M1-NETCLM       : ok=181  changed=160  unreachable=0    failed=1
+2015-09-24 11:13:38,265 p=6946 u=root |  B15-CCP-T2-M2-NETCLM       : ok=67   changed=58   unreachable=0    failed=1
+2015-09-24 11:13:38,265 p=6946 u=root |  B15-CCP-T2-M3-NETCLM       : ok=180  changed=161  unreachable=0    failed=1      </codeblock>
+      
+      <p>There may be a specific set of steps to follow for a particular RabbitMQ cluster issues,
+        but the general procedure for resetting an entire RabbitMQ cluster is as follows:</p>
+      <ol>
+      <li>On each controller node, perform the following commands: <ol>
+            <li>Use the following command to stop the RabbitMQ application, leaving the Erlang node
+              running.: <codeblock>sudo rabbitmqctl stop_app</codeblock></li>
+            <li>Use the following command to remove the node from any cluster it belongs to, remove
+              all data from the management database, such as configured users and vhosts, and delete
+              all persistent messages:  <codeblock>sudo rabbitmqctl reset</codeblock></li>
+            <li>Use the following command to restart the RabbitMQ application::
+              <codeblock>sudo rabbitmqctl start_app</codeblock></li>
+          </ol></li>
+      <li>On controller0, use the following command to unconditionally start the node:
+          <codeblock>sudo rabbitmqctl force_boot</codeblock></li>
+        <li><xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">Restart the
+            hdeploy process</xref>.<p>
+            <codeblock>hdeploy &lt;cloudname&gt;</codeblock>
+          </p></li></ol>
+    </section>
     </body>
 </topic>

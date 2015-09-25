@@ -20,15 +20,13 @@
           <codeph>/etc/default/nuage-metadata-agent</codeph> to reflect:</p>
       <ol>
       <li>Append <codeph>v2.0</codeph> to the the Keystone URL:
-            <codeblock># NOVA_OS_AUTH_URL=http://&lt;ip_address&gt;:5000/v2.0
-# NOVA_OS_AUTH_URL=http://10.30.3.103:35357
+            <codeblock># NOVA_OS_AUTH_URL=http://10.30.3.103:35357
 NOVA_OS_AUTH_URL=http://10.30.3.103:5000/v2.0</codeblock><p>Where
               <codeph>NOVA_OS_AUTH_URL</codeph> is Identity service endpoint, which the nova client
             uses for authentication. </p></li>
       
       <li>Change the Nova API endpoint to <codeph>internalURL</codeph>:
-          <codeblock># NOVA_API_ENDPOINT_TYPE: one of publicURL, internalURL, adminURL 
-# NOVA_API_ENDPOINT_TYPE=publicURL 
+          <codeblock># NOVA_API_ENDPOINT_TYPE=publicURL 
 NOVA_API_ENDPOINT_TYPE=internalURL</codeblock></li>
       </ol>
     </section>

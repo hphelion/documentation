@@ -69,6 +69,10 @@ system host-unlock 3        </codeblock></li>
 nova aggregate-create remote_storage_hosts
 nova aggregate-set-metadata remote_storage_hosts localstorage=false
 nova aggregate-add-host remote_storage_hosts &lt;compute host name&gt;</codeblock></li></ol>
+            <title>Next Step</title>
+            <p><xref href="carrier-grade-install-metadata.dita#topic10581">Configure the DCN
+                    Metadata Agent</xref>
+            </p>
         </section>
   </body>
 </topic>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Configuring rabbitMQ for
+    Cloud Deployment</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>The HP Helion OpenStack Carrier Grade installation process installs the RabbitMQ  message
+      broker software. Before </p>
+    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patch-after">KVM
+      installation</xref>.</p>
+    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/patch-after">the KVM + ESX
+      installation</xref>.</p>
+    </body>
+</topic>

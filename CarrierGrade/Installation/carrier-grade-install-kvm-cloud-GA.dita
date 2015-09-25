@@ -160,9 +160,11 @@ nova aggregate-add-host remote_storage_hosts &lt;compute host name&gt;</codebloc
       </ol> 
     </section>
   
-  <section id="next-step"> <title>Next Step</title>
+  <section id="next-step"> <title>Next Steps</title>
     <p><xref href="carrier-grade-install-cli.dita#topic10581">Configure the KVM Region Hosts</xref>
       </p>
+      <p><xref href="carrier-grade-install-metadata.dita#topic10581">Configure the DCN Metadata
+          Agent</xref></p>
   </section>
 </body>
 </topic>
