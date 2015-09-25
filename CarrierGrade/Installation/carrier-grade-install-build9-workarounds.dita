@@ -158,23 +158,22 @@ unset OS_AUTH_VERSION=3</codeblock>
 2015-09-24 11:13:38,265 p=6946 u=root |  B15-CCP-T2-M3-NETCLM       : ok=180  changed=161  unreachable=0    failed=1      </codeblock>
       
       <p>There may be a specific set of steps to follow for a particular RabbitMQ cluster issues,
-        but the general procedure for resetting an entire RabbitMQ cluster is as follows:</p>
-      <ol>
-      <li>On each controller node, perform the following commands: <ol>
-            <li>Use the following command to stop the RabbitMQ application, leaving the Erlang node
-              running.: <codeblock>sudo rabbitmqctl stop_app</codeblock></li>
-            <li>Use the following command to remove the node from any cluster it belongs to, remove
-              all data from the management database, such as configured users and vhosts, and delete
-              all persistent messages:  <codeblock>sudo rabbitmqctl reset</codeblock></li>
-            <li>Use the following command to restart the RabbitMQ application::
-              <codeblock>sudo rabbitmqctl start_app</codeblock></li>
-          </ol></li>
-      <li>On controller0, use the following command to unconditionally start the node:
-          <codeblock>sudo rabbitmqctl force_boot</codeblock></li>
-        <li><xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">Restart the
-            hdeploy process</xref>.<p>
-            <codeblock>hdeploy &lt;cloudname&gt;</codeblock>
-          </p></li></ol>
+        but the general procedure for resetting an entire RabbitMQ cluster is as follows:<ol
+          id="ol_p5w_5q1_mt">
+          <li>Log into the HLM VM.</li>
+          <li>Change to the <codeph>ansible</codeph> directory:<p>
+              <codeblock>cd ~/&lt;cloud_name&gt;/clouds/&lt;cloud_name&gt;/001/stage/ansible</codeblock>
+            </p>Where <codeph>&lt;cloud_name&gt;</codeph> is the name of your cloud.</li>
+          <li>Execute the following commands:<p>
+              <codeblock>ansible &lt;tier_name&gt; -i hosts -su cghelion -m apt -a "name=rabbitmq-server state=absent"
+ansible &lt;tier_name&gt; -i hosts -su cghelion -a "rm -r /var/lib/rabbitmq"</codeblock>
+            </p> Where <codeph>&lt;tier_name&gt;</codeph> is the control plane being deployed, for
+            example: INFRA-CCP-T1.</li>
+          <li><xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">Restart the
+            hdeploy process</xref>.
+              <codeblock>hdeploy &lt;cloudname&gt;</codeblock></li>
+        </ol></p>
+      
     </section>
     </body>
 </topic>

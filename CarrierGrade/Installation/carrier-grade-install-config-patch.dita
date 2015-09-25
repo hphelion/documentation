@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Deploying the
+    Configuration Processor Patches</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>Before launching the HP Helion OpenStack cloud (using the <codeph>hcfgproc</codeph> command),
+      deploy the following patches to update required configuration files. </p>
+    <p>
+      <ol id="ol_pn3_141_mt">
+        <li>Download the <codeph>kcp-windriver-build-15-only.patch</codeph> and
+            <codeph>knc-horizon-helion-theme-dashboard.patch</codeph> files.</li>
+        <li>Copy the patch files to the  <codeph>~/</codeph> directroy on the HLM host. </li>
+        <li> Change to the <codeph>kenobi-configuration-processor</codeph> directory:<p>
+            <codeblock>cd ~/kenobi-configuration-processor</codeblock>
+          </p></li>
+        <li>Execute the following command to deploy the patch:<p>
+            <codeblock>patch -p1 &lt; ../kcp-windriver-build-15-only.patch
+patch -p1 &lt; ../knc-horizon-helion-theme-dashboard.patch</codeblock>
+          </p></li>
+        <li>Execute the  following command to integrate the patches into the installation environment:<p>
+            <codeblock>./hlm_prepare-env.sh</codeblock>
+          </p><p>When the <codeph>hcfgproc</codeph> command is executed, the updated configuration
+            file will be used. </p></li>
+      </ol>
+    </p>
+    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patch-after">KVM
+      installation</xref>.</p>
+    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/patch-after">the KVM + ESX
+      installation</xref>.</p>
+    </body>
+</topic>
