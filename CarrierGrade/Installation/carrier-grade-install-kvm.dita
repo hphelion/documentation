@@ -423,38 +423,12 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
           syntactical errors using the tool of your preference. For example, using the Python
           json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>
       </ol></section>
-    <section id="patches">
-      <title>Apply the Rabbit MQ Random Password patch</title>
-      <p>For information, see the README in the download or  <xref
-          href="carrier-grade-install-rabbitmq-patch.dita#topic10581">Applying the Random RabbitMQ
-          Password Patch</xref>.</p>
-    </section>
     
-    <section><title>Apply the Reverse Path Filter Patch</title>After deploying the HP OpenStack
-      cloud, you might not be able to access the Horizon interface and the OpenStack services cannot
-      be accessed over the CAN network. <p>To prevent this problem, install a patch to configure the
-        kernel to set the reverse path filter (<codeph>rp_filter</codeph>) to 1 in the
-          <codeph>all</codeph> and <codeph>default</codeph> configuration files. </p><p>For more
-        information, see the README in the download or  <xref
-          href="carrier-grade-install-rp-filter.dita#topic10581">Applying the Reverse Path Filter
-          Patch</xref>.</p></section>
-    
-    <section><title>Apply the Helion Dynamic Password Patch</title>The HP Helion OpenStack cloud
-      deployment creates a default password to log into the Helion interface. You can deploy a patch
-      to configure the installer to generate a dynamic user name and password for the Helion
-      interface. The user name can password can be retrieved from a configuration files. <p>For more
-        information, see the README in the download or  <xref
-          href="carrier-grade-install-helion-password-patch.dita#topic10581">Applying the Helion
-          Dynamic Password Patch</xref>.</p></section>
-    
-    <section><title>Apply the NIC bonding patch</title><p>HP Helion OpenStack Carrier Grade environments using NIC bonding, see the README in the download
-        or <xref href="carrier-grade-install-nic-patch.dita#topic10581">Applying the NIC Bonding
-          Patch</xref> to install a required patch.</p></section>
-    
-    <section><title>Deploy the HP Helion OpenStack cloud</title>
+    <section>
+      <title>Deploy the HP Helion OpenStack cloud</title>
       <ol>
-        <li>Once you have correctly edited all the json files and applied the appropriate patches, run the HP Helion
-          OpenStack Configuration Processor:
+        <li>Once you have correctly edited all the json files and applied the appropriate patches,
+          run the HP Helion OpenStack Configuration Processor:
             <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
             Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
             incorporated into the installation environment. </p></li>
@@ -465,7 +439,6 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
             <codeblock><codeph>hnetinit &lt;cloudname&gt;</codeph></codeblock><p>You can run this
             command from any directory.</p><p>After this command completes, all cloud nodes and CLM
             network interfaces should be set correctly.</p></li>
-
         <li>Use the following command to deploy the cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>Once cloud
             deployment is successfully complete, there will be 3 controller nodes in the non-KVM
@@ -479,21 +452,15 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
         able to execute OpenStack CLI commands until the specific changes are made on all three
         controller nodes in the non-KVM region. </p>
       <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
-    </section>
-    <section><title>Applying the HLM Port Security Patch</title>This patch secures all ports on the
-      HLM VM. The standard protocol ports will allow inbound access only and the only the cloud
-      nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see
-        the README in the download or <xref
-          href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port
-          Security Patch</xref>.</p></section>    
+    </section>    
     <section>
       <title>Disable the Root User</title>
       <p>For security purposes, we strongly recommend disabling root. After the
-        <codeph>root</codeph> user is disabled, you can use another default user account,
-        <codeph>cghelion</codeph> to access the HLM VM and any actions that require root access
+          <codeph>root</codeph> user is disabled, you can use another default user account,
+          <codeph>cghelion</codeph> to access the HLM VM and any actions that require root access
         should be done using <codeph>sudo</codeph>.</p>
       <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581"
-        >Disabling the Root User</xref>.</p>
+          >Disabling the Root User</xref>.</p>
     </section>
     <section id="next-step">
       <title>Next Step</title>
