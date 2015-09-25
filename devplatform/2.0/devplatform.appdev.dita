@@ -105,9 +105,6 @@
 <section id="other-references"> <title>Other references</title>
 <ul>
 <li>
-<xref href="installation/devplatform_install_marketplace.dita" >Installing the Marketplace</xref>
-</li>
-<li>
   <xref href="helion/user/reference/client-ref.dita" type="section" >ALS command-line interface (CLI) reference</xref>
 </li>
 <li>

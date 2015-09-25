@@ -59,8 +59,6 @@
           navtitle="Install the Marketplace Service" locktitle="yes"/>
         <topicref href="2.0/installation/devplatform.vertica.install.dita"
           navtitle="Install the Vertica Application" locktitle="yes"/>
-        <topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service"
-          locktitle="yes"/>
       </topichead>
       <topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita"
         navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>

@@ -21,18 +21,19 @@
 </metadata>
 </prolog>
 <body>
-  <p>This document shows how to install the Horizon UI for the <xref href="../helion/helion_index.dita" >Application Lifetime Service (ALS)</xref>, <xref href="devplatform_install_database.dita" >Database as a Service (DBaaS)</xref>, and <xref href="devplatform_install_marketplace.dita" >Marketplace</xref> Services.</p>
+  <p>This document shows how to install the Horizon UI for the <xref
+        href="../helion/helion_index.dita">Application Lifetime Service (ALS)</xref> and <xref
+        href="devplatform_install_database.dita">Database as a Service (DBaaS)</xref> Services.</p>
 <p>
       <note>You will need to download and install the Horizon UI separately for each service you
         wish to upgrade.</note>
     </p>
-<section id="step-1-retrieve-the-als-dbaas-and-marketplace-service-updates-from-codn"> <title>Step 1: Retrieve the ALS, DBaaS, and Marketplace Service Updates from CODN</title>
+<section id="step-1-retrieve-the-als-dbaas-and-marketplace-service-updates-from-codn"> <title>Step 1: Retrieve the ALS, DBaaS Service Updates from CODN</title>
 <p>Use the <b>Helion Development Platform UI</b> to check CODN for a new Service Update for ALS, DBaaS, or Marketplace.</p>
-<p>If there are new Service Updates for ALS, DBaaS, or Marketplace, retrieve them from CODN. This
-        will retrieve the installation packages from CODN and push them into a container in Swift
-        within your local cloud.</p>
+<p>If there are new Service Updates, retrieve them from CODN. This will retrieve the installation
+        packages from CODN and push them into a container in Swift within your local cloud.</p>
 </section>
-<section id="step-2-install-the-als-dbaas-and-marketplace-service-updates"> <title>Step 2: Install the ALS, DBaaS, and Marketplace Service Updates</title>
+<section id="step-2-install-the-als-dbaas-and-marketplace-service-updates"> <title>Step 2: Install the Service Updates</title>
 </section>
 <section id="preparation"> <title>Preparation</title>
 <p>You will need the following pieces of information in order to run the service updates.</p>
