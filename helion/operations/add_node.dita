@@ -3,10 +3,10 @@
 <topic id="topic_qsv_h5y_lt">
   <title>Adding a Node</title>
   <body>
-   <section> To add a new node to your cloud, you will need to add it to servers.yml and
-      baremetalConfig.yml, and then run the scripts that update your cloud configuration. To begin,
-      access the <b>servers.yml</b> and <b>baremetalConfig.yml</b> files by checking out the git
-      branch where you are required to make the changes:
+   <section> To add a new node to your cloud, you will need to add it to <b>servers.yml</b> and
+        <b>baremetalConfig.yml</b>, and then run the scripts that update your cloud configuration.
+      To begin, access the <b>servers.yml</b> and <b>baremetalConfig.yml</b> files by checking out
+      the git branch where you are required to make the changes:
       <codeblock>cd ~/helion/my_cloud/definition/data
      git checkout site</codeblock> Add details
       of new node(s) to <b>baremetalConfig.yml</b> and <b>severs.yml</b> For example, if adding new
