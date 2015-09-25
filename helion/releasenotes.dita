@@ -312,7 +312,7 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
                   fi
           endscript
 }</codeblock>
-      <p><b>Issue: Unable to Launch instance from volume on Horizon dashboard</b></p>
+      <p><b>Issue: Unable to Launch Instance from Volume on Horizon Dashboard</b></p>
       <p>In Beta 2 you will not be able to launch an instance from a volume in Horizon. To work
         around this issue you have two options:</p>
       <ul>
@@ -325,27 +325,27 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
         given Volume.</note>
       <p id="nondedicateddeployerworkaround"><b>Issue with Apache If You Use a Non-Dedicated
           Deployer Setup</b></p>
-      <p>If you choose to use a combined deployer/controller node during the installation process,
-        there is an Apache configuration used to allow the installer UI to work that prevents the
-        controller from responding to API calls. If you are using a HA 3-node cluster for your
-        control plane then this will present as intermittent errors as your first controller won't
-        always be the one hit.</p>
-      <p>To resolve this issue you can remove this Apache configuration file. If you are using the
-        installer UI you would want to wait to do this step until after your installation.</p>
-      <p>To remove this Apache configuration you can run these commands from your deployer:</p>
+      <p>The Apache configuration file used by the installer GUI will prevent the controller on a
+        cloud with a combined controller/deployer node from responding to API calls. If you are
+        using an HA 3-node cluster for your control plane, then this will present as intermittent
+        errors as your first controller won't always be the one hit.</p>
+      <p>To resolve this issue you can remove GUI installer's Apache configuration file
+        (dayzero-apache.conf). If you are using the installer UI to install, you must wait until
+        after  installation is complete to remove it.</p>
+      <p>To remove the file, you can run these commands from your deployer:</p>
       <ol>
-        <li>To remove the configuration, run this command:
+        <li>To remove the file, run:
           <codeblock>sudo rm /etc/apache2/sites-enabled/dayzero-apache.conf</codeblock></li>
-        <li>To restart Apache for the change to take affect, run this command:
+        <li>To reload Apache for the change to take effect, run this command:
           <codeblock>sudo service apache2 reload</codeblock></li>
       </ol>
-      <p>If you don't want to remove this configuration but simply want to move it, you can do that
-        by using these commands:</p>
+      <p>If you don't want to remove this configuration but simply want to move it, you can do so by
+        using these commands:</p>
       <ol>
         <li>To move the configuration file:
           <codeblock>sudo mv /etc/apache2/sites-enabled/dayzero-apache.conf /etc/apache2/sites-available/dayzero-apache.conf</codeblock></li>
-        <li>To restart Apache for the change to take affect, run this command:
-          <codeblock>sudo service apache2 reload</codeblock></li>
+        <li>Reload Apache for the change to take
+          effect:<codeblock>sudo service apache2 reload</codeblock></li>
       </ol>
     </section>
   </body>
