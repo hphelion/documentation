@@ -331,7 +331,7 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
         errors as your first controller won't always be the one hit.</p>
       <p>To resolve this issue you can remove GUI installer's Apache configuration file
         (dayzero-apache.conf). If you are using the installer UI to install, you must wait until
-        after  installation is complete to remove it.</p>
+        after  installation is complete to remove it. That conf file is not needed again.</p>
       <p>To remove the file, you can run these commands from your deployer:</p>
       <ol>
         <li>To remove the file, run:
