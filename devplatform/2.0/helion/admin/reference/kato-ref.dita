@@ -2,20 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic39432">
 <title>HP Helion 2.0 Development Platform: Kato Command Reference</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="ISV Developer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Systems Administrator"/>
-<othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
-</metadata>
-</prolog>
+
 <body>
 <p>Kato is the Application Lifecycle Service command line administration utility.</p>
 <section id="usage"> <title>Syntax</title>
@@ -1834,16 +1821,12 @@ kato log drain add -f systail-syslog system_splunk_2 \
 <p>
   <b>Syntax</b>
 </p>
-<codeblock>node reset factory
-
-node reset docker
+<codeblock>node reset docker
 
 node reset services
 
 node reset --help</codeblock>
 <ul>
-<li>
-<i>factory</i>: returns the VM to its state prior to first boot.</li>
 <li>
 <i>docker</i>: removes all Docker containers and deletes all but the ALS release images; not meant for general use.</li>
 <li>
@@ -1872,7 +1855,7 @@ node reset --help</codeblock>
 </tbody>
 </tgroup>
 </table>
-<!-- ===================== horizontal rule ===================== -->
+      <note><codeph>node reset factory</codeph> is no longer a supported operation.</note>
 </section>
 <section id="kato-command-ref-node-retire"> <title>Node Retire</title>
 <p>Gracefully retires a DEA node from the cluster. New instances of the apps are started on other available DEAs before the retiring DEA is shut down.</p>
