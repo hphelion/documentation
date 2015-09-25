@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Deploying the
-    Configuration Processor Patches</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Deploying the Role
+    Generator Patches</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -16,12 +16,16 @@
   </prolog>
   <body>
     <p>Before launching the HP Helion OpenStack cloud (using the <codeph>hcfgproc</codeph> command),
-      deploy the following patches to update required configuration files. </p>
+      deploy the following patches to correct the following issues: </p>
+    <ul id="ul_emj_1cb_mt">
+      <li>The floating IP assigned to the HLM VM not pingable with DCNR3 and VSD managed networks. </li>
+      <li>The installation fails due to excessive ESX logs</li>
+    </ul>
     <p>
       <ol id="ol_pn3_141_mt">
-        <li>Download the <codeph>kcp-windriver-build-15-only.patch</codeph> and
-            <codeph>knc-horizon-helion-theme-dashboard.patch</codeph> files.</li>
-        <li>Copy the patch files to the  <codeph>~/</codeph> directroy on the HLM host. </li>
+        <li>Download the <codeph>fip_patch</codeph> drectory and <codeph>logrotate_patch</codeph>
+          directroy and the <codeph>role-generator</codeph>  file.</li>
+        <li>Copy the patch files to the <codeph>~/</codeph> directory on the HLM host. </li>
         <li> Change to the <codeph>kenobi-configuration-processor</codeph> directory:<p>
             <codeblock>cd ~/kenobi-configuration-processor</codeblock>
           </p></li>

@@ -138,24 +138,28 @@ unset OS_AUTH_VERSION=3</codeblock>
       <p>If you experience errors during swift role configurations, as shown in the following error messages, perform the following
         perform the following tasks to recover the RabbitMQ Cluster</p> 
       
-      <codeblock>2015-09-24 11:13:37,315 p=6946 u=root |  TASK: [Ensure swift node ring path exists] ************************************
-2015-09-24 11:13:37,483 p=6946 u=root |  changed: [B15-CCP-T2-M1-NETCLM]
-2015-09-24 11:13:37,483 p=6946 u=root |  TASK: [Create rings] **********************************************************
-2015-09-24 11:13:38,128 p=6946 u=root |  changed: [B15-CCP-T2-M1-NETCLM] => (item={'key': 'object.builder', 'value': {'min_part': 1, 'replica': 3, 'part_power': 10}})
-2015-09-24 11:13:38,129 p=6946 u=root |  TASK: [Register disks] ********************************************************
-2015-09-24 11:13:38,199 p=6946 u=root |  ok: [B15-CCP-T2-M1-NETCLM]
-2015-09-24 11:13:38,204 p=6946 u=root |  ok: [B15-CCP-T2-M3-NETCLM]
-2015-09-24 11:13:38,216 p=6946 u=root |  TASK: [Write disks to config file] ********************************************
-2015-09-24 11:13:38,263 p=6946 u=root |  fatal: [B15-CCP-T2-M1-NETCLM] => {'msg': "AnsibleUndefinedVariable: One or more undefined variables: 'dict object' has no attribute 'swift_local_disks'", 'failed': True}
-2015-09-24 11:13:38,263 p=6946 u=root |  fatal: [B15-CCP-T2-M1-NETCLM] => {'msg': "AnsibleUndefinedVariable: One or more undefined variables: 'dict object' has no attribute 'swift_local_disks'", 'failed': True}
-2015-09-24 11:13:38,263 p=6946 u=root |  FATAL: all hosts have already failed -- aborting
-2015-09-24 11:13:38,264 p=6946 u=root |  PLAY RECAP ********************************************************************
-2015-09-24 11:13:38,264 p=6946 u=root |             to retry, use: --limit @/root/deploy.retry
+      <codeblock>2015-09-24 11:10:57,275 p=6946 u=root | TASK: [Enable RMQ management plugin] ******************************************
+2015-09-24 11:10:58,563 p=6946 u=root | failed: [B15-CCP-T2-M2-NETCLM] =>
+{"changed": true, "cmd": ["rabbitmq-plugins", "enable", "rabbitmq_management"], "delta": "0:00:01.050269", "end": "2015-09-24 11:10:21.939417", "rc": 1, "start": "2015-09-24 11:10:20.889148"}
 
-2015-09-24 11:13:38,264 p=6946 u=root |  B15-CCP-T1-M1-NETCLM       : ok=77   changed=67   unreachable=0    failed=0
-2015-09-24 11:13:38,264 p=6946 u=root |  B15-CCP-T2-M1-NETCLM       : ok=181  changed=160  unreachable=0    failed=1
-2015-09-24 11:13:38,265 p=6946 u=root |  B15-CCP-T2-M2-NETCLM       : ok=67   changed=58   unreachable=0    failed=1
-2015-09-24 11:13:38,265 p=6946 u=root |  B15-CCP-T2-M3-NETCLM       : ok=180  changed=161  unreachable=0    failed=1      </codeblock>
+2015-09-24 11:10:58,564 p=6946 u=root | stderr: ^M
+Crash dump was written to: erl_crash.dump^M
+Kernel pid terminated (application_controller) ({application_start_failure,kernel,{#shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution#}}}},{k
+2015-09-24 11:10:58,564 p=6946 u=root | stdout: {error_logger,
+{#2015,9,24},{11,10,21#},"Protocol: ~tp: register/listen error: ~tp~n",["inet_tcp",econnrefused]}^M
+{error_logger,{#2015,9,24}       
+,
+{11,10,21#},crash_report,[[{initial_call,{net_kernel,init,['Argument__1']}},{pid,&lt;0.21.0>},{registered_name,[]},{error_info,{exit,{error,badarg},
+[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,322}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},
+{line,237}]}]}},{ancestors,[net_sup,kernel_sup,&lt;0.10.0>]},{messages,[]},{links,[#Port&lt;0.93>,&lt;0.18.0>]},{dictionary,[{longnames,false}]},{trap_exit,true},{status,running},{heap_size,610},{stack_size,27},{reductions,823}],[]]}^M
+{error_logger,{#2015,9,24},{11,10,21#}
+          
+,supervisor_report,[{supervisor,{local,net_sup}},
+{errorContext,start_error},{reason,{'EXIT',nodistribution}},{offender,[{pid,undefined},{name,net_kernel},{mfargs,{net_kernel,start_link,[['rabbitmq-plugins23209',shortnames]]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]}]}^M
+{error_logger,{#2015,9,24},{11,10,21#},supervisor_report,[{supervisor,{local,kernel_sup}},{errorContext,start_error}
+
+,{reason,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}},{offender,[
+{pid,undefined} </codeblock>
       
       <p>There may be a specific set of steps to follow for a particular RabbitMQ cluster issues,
         but the general procedure for resetting an entire RabbitMQ cluster is as follows:<ol
@@ -168,10 +172,12 @@ unset OS_AUTH_VERSION=3</codeblock>
               <codeblock>ansible &lt;tier_name&gt; -i hosts -su cghelion -m apt -a "name=rabbitmq-server state=absent"
 ansible &lt;tier_name&gt; -i hosts -su cghelion -a "rm -r /var/lib/rabbitmq"</codeblock>
             </p> Where <codeph>&lt;tier_name&gt;</codeph> is the control plane being deployed, for
-            example: INFRA-CCP-T1.</li>
+            example: INFRA-CCP-T1.<p>For example: host=INFRA-CCP-T1-M1-NETCLM is composed
+            of:</p><codeblock>tier=INFRA-CCP-T1 
+host=M1
+network=CLM            </codeblock></li>
           <li><xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">Restart the
-            hdeploy process</xref>.
-              <codeblock>hdeploy &lt;cloudname&gt;</codeblock></li>
+              hdeploy process</xref>. <codeblock>hdeploy -t &lt;cloudname&gt;</codeblock></li>
         </ol></p>
       
     </section>
