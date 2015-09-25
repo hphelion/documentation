@@ -86,7 +86,7 @@ ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
           <li>In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the
             cluster in the respective boxes and click <b>OK</b>. The details are displayed in a
             tabular format in the page. <note>The VIP IP can be found as the cluster IP value in the
-                <codeph>~/scratch/ansible/last/my_cloud/stage/info/net_info.yml</codeph>
+                <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph>
               file.</note></li>
           <li>Click <b>Next</b> to go to the next page.</li>
           <li>Select the checkbox displayed against <b>Skip Volume Creation</b>.</li>
