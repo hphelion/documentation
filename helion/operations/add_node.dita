@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qsv_h5y_lt">
+  <title>Adding a Node</title>
+  <body>
+   <section> To add a new node to your cloud, you will need to add it to servers.yml and
+      baremetalConfig.yml, and then run the scripts that update your cloud configuration. To begin,
+      access the servers.yml and baremetalConfig.yml files by checking out the git branch where tyu
+      need to make the changes:
+      <codeblock>cd ~/helion/my_cloud/definition/data
+     git checkout site</codeblock> Add details
+      of new node(s) to baremetalConfig.yml and severs.yml For example, if adding new server
+      cpn-0004 in servers.yml
+      <codeblock>---
+     product:
+     version: 2
+     servers:
+     
+     ... 
+     
+     - id: compute7
+     ip-addr: 10.240.21.13
+     role: ROLE-COMPUTE
+     nic-mapping: HP_DL360_6PORT</codeblock>
+      And in baremetalConfig.yml
+      <codeblock>---
+     product:
+     version: 1
+     baremetal_network:
+     subnet: "10.240.20.0"
+     netmask: "255.255.252.0"
+     server_interface: "eth4"
+     baremetal_servers:
+     -
+     ...
+     -
+     node_name: "compute7"
+     node_type: ROLE-COMPUTE
+     pxe_mac_addr: "ec:b1:d7:8e:77:92"
+     pxe_interface: "eth4"
+     pxe_ip_addr: "10.240.21.13"
+     ilo_ip: "10.1.12.74"
+     ilo_user: "hosqaadm"
+     ilo_password: "mul3d33r"</codeblock>
+      Commit the changes <codeblock>git commit -a -m "Add node &lt;name></codeblock> Then run the
+      configuration processor and the ready deploment
+      playbooks:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
+      Now configure the new node(s)
+      <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblock>
+      Finally, run the following deployment step specifying the '--limit' option to only apply the
+      deployment actions to the target node(s).
+      <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit hlm004-ccp-comp0007*</codeblock>
+    </section>
+  </body>
+</topic>

@@ -55,6 +55,7 @@
       <topicref href="helion/bura/restore.dita"/>
     </topicref>
       <topicref href="helion/operations/repair_node.dita"/>
+      <topicref href="helion/operations/add_node.dita"/>
     </topichead>
     <!-- keystone identity -->
     <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Service"
