@@ -1,3 +1,4 @@
+%HP Enterprise%=Use Hewlett Packard Enterprise or HPE.
 %[^Mac] OS %=Write OS as operating system.
 %guestt%=Correct the typo.
 %lbass[^-]%=Use LBaaS.
