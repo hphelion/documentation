@@ -482,8 +482,8 @@ requirements:
 <codeblock>  mem: 64M</codeblock>
 </section>
 <section id="disk"> <title>disk:</title> 
-<p>The amount of disk space to allocate for the application (minimum
-512MB).</p>
+<p>The amount of disk space to allocate for the application (minimum 512MB). This is a per-instance
+        limit.</p>
 <p>Syntax: \&lt;int&gt; or \&lt;int&gt;M - Disk in megabytes. eg. 768M</p>
 <p>Syntax: \&lt;int&gt;G or \&lt;float&gt;G - Disk in gigabytes. eg. 1.5G or 2G</p>
 <p>If not specified, 2GB of disk space is allocated. Can also be specified
