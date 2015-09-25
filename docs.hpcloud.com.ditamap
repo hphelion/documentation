@@ -22,7 +22,8 @@
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
     <topicref href="helion/faq.dita"/>
-    <topicref href="helion/installation_overview.dita" navtitle="Installation - Overview" locktitle="yes">
+    <topicref href="helion/installation_overview.dita" navtitle="Installation - Overview"
+      locktitle="yes">
       <topicref href="helion/beta1_to_beta2_upgrade.dita"/>
       <topicref href="helion/input_model.dita"/>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
@@ -51,8 +52,8 @@
       <topicref href="helion/bura/backup.dita"/>
       <topicref href="helion/bura/restore.dita"/>
     </topicref>
-    
-    
+
+
     <!-- keystone identity -->
     <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Service"
       locktitle="yes">
@@ -112,7 +113,7 @@
       <topicref href="helion/cinder/brocade_zone_manager.dita" navtitle="Brocade Zone Manager"
         locktitle="yes"/>
       <topicref href="helion/cinder/verify_backend_configuration.dita"/>
-      <topicref href="helion/cinder/singleton_service_cinder.dita"/>
+
     </topicref>
     <!-- Object Storage -->
     <topicref href="helion/swift/swift_overview.dita" navtitle="Object Storage Service"
@@ -143,10 +144,7 @@
       </topicref>
     </topicref>
     <!-- Monasca / Centralized Logging -->
-    <topicref href="helion/monasca/monasca.dita" navtitle="Monitoring Service" locktitle="yes">
-      <topicref href="helion/monasca/alarms.dita" navtitle="Service Alarm Definitions"
-        locktitle="yes"/>
-    </topicref>
+
     <topicref href="helion/monasca/opsconsole/overview.dita" navtitle="Operations Console"
       locktitle="yes">
       <topichead navtitle="General">
@@ -169,11 +167,7 @@
         <topicref href="helion/monasca/opsconsole/storage_summary.dita"/>
       </topichead>
     </topicref>
-    <topicref href="helion/logging/centralized_logging.dita" navtitle="Centralized Logging Service"
-      locktitle="yes">
-      <topicref href="helion/logging/logging_settings.dita" navtitle="Logging Settings"
-        locktitle="yes"/>
-    </topicref>
+
 
     <!-- reporting = metering = ceilomter -->
     <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Service"
@@ -193,8 +187,36 @@
     <!-- horizon -->
     <topicref href="helion/horizon/horizon_overview.dita" navtitle="Horizon Dashboard"
       locktitle="yes" toc="yes">
-      <topicref href="helion/horizon/horizon_configure_v3.dita" navtitle="Configuring Horizon for Keystone v3"
-        locktitle="yes" toc="yes"/>
+      <topicref href="helion/horizon/horizon_configure_v3.dita"
+        navtitle="Configuring Horizon for Keystone v3" locktitle="yes" toc="yes"/>
     </topicref>
   </topicref>
+
+<!-- NEW TOC STUFF -->
+  <topichead navtitle="Operations">
+    <topicref href="start.stop.check" toc="no">
+      <topicref href="checking.object.storage" toc="no"/>
+    </topicref>
+    <topicref href="helion/operations/add_node.dita" toc="no"/>
+    <topicref href="helion/operations/repair_node.dita" toc="no"/>
+    <topicref href="helion/operations/remove_node.dita" toc="no"/>
+    <topicref href="helion/cinder/singleton_service_cinder.dita"/>
+    <topicref href="helion/bura/bura_overview.dita">
+      <topicref href="helion/bura/backup.dita"/>
+      <topicref href="helion/bura/restore.dita"/>
+    </topicref>
+    <topicref href="helion/monasca/monasca.dita" navtitle="Monitoring Service" locktitle="yes">
+      <topicref href="helion/monasca/alarms.dita" navtitle="Service Alarm Definitions"
+        locktitle="yes"/>
+    </topicref>
+    <topicref href="helion/logging/centralized_logging.dita" navtitle="Centralized Logging Service"
+      locktitle="yes">
+      <topicref href="helion/logging/logging_settings.dita" navtitle="Logging Settings"
+        locktitle="yes"/>
+    </topicref>
+  </topichead>
+
+
+
+
 </map>
