@@ -23,8 +23,9 @@
       <title>Bring Up Controller-0 in the KVM Region</title>
       <ol>
         <li>Make sure other servers to be used in KVM region are shutdown.</li>
-        <li>Use the <codeph>HP-HCG-Server-host-installer-15.05-b10.iso</codeph> to boot the controller node
-          <codeblock>mount HP-HCG-Server-host-installer-15.05-b10.iso</codeblock></li>
+        <li>Use the <codeph>HP-HCG-Server-host-installer-15.05-b10.iso</codeph> to boot the
+          controller
+          node.<codeblock>mount HP-HCG-Server-host-installer-15.05-b10.iso</codeblock></li>
         <li>Follow the install wizard. Select the Graphics mode for the controller only. Do not
           select <codeph>Controller+Compute</codeph>.</li>
         <li>After the reboot, log in as user name <codeph>wrsroot</codeph> and password
@@ -36,8 +37,7 @@ ifconfig eth0 up</codeblock></li>
           <codeblock>route add default gw &lt;CIDR_gateway_IP&gt;</codeblock></li></ol>
   </section>
     
-    <section><title>Download and install the required patches</title>
-      <p>The following patches must be installed in the KVM region</p>
+    <section>
       <p><b>Install the KVM region license</b></p>
       <p>The servers in the KVM region require a specific license file to be installed. You must
         download this file from the <xref
@@ -46,59 +46,19 @@ ifconfig eth0 up</codeblock></li>
       <p>Before installing the patch, make sure the KVM region controller-0 was properly installed
         by the HP Helion OpenStack Carrier Grade installation. </p>
       <ol id="ol_mdt_dd3_ys">
-        <li>In a browser, navigate to <xref
-          href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
-          scope="external">HP Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs">
-            <li>Click <b>Sign In</b> to log in using your account. </li>
-            <li>After signing in, click the <b>Downloads</b> link in the menu on the left side of
-              the page.</li>
-            <li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click
-              <b>Download</b>.</li>
-          </ul></li>
+        <!--<li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HP Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b></li></ul>.</li>-->
         <li>Download and extract the <b id="productShow_apcodeph">Helion Carrier Grade 2.0.0
-          Windriver License patch signature file</b> and the associated signature and checksum
-          files.  For information on performing verifications of the download, see the
-          Prerequistues. </li>
-        <li>Copy the <codeph>HCG_2.0_WR_license.lic.txt</codeph> file to KVM region
-            <codeph>controller0</codeph> node to the <codeph>/home/wrsroot/</codeph> directory.</li>
-        <li>Restart <codeph>controller-0</codeph> to load the license file.</li>
-      </ol>
-      
-      <p><b>Apply KVM region patches</b></p>
-    <ol>
-        <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
-          controller-0. The files are located in the <codeph>/root/cg-hlm/windriver-files</codeph>
-          directory on the HLM host.<ul>
-            <li>TS_15.05_PATCH_0001.patch</li>
-            <li>TS_15.05_PATCH_0002.patch</li>
-            <li>TS_15.05_DESIGN_PATCH_HEAT.patch</li>
-            <li>TS_15.05_DESIGN_PATCH_HORIZON.patch</li>
-          </ul></li>
+            Windriver License patch signature file</b> and the associated signature and checksum
+          files. For information on performing verifications of the download, see the Prerequistues. </li>
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
           controller-0. The files are located in the <codeph>/root/cg-hlm/windriver-files</codeph>
           directory on the HLM host.<ul id="ul_mpn_hnr_bt">
+            <li>license</li>
             <li>region_config </li>
             <li>cakey.pem</li>
           </ul></li>
-        <li> Copy the following file to <codeph>/opt/branding</codeph> on the
-            <codeph>controller-0</codeph>. The file is located in the
-            <codeph>/root/cg-hlm/windriver-files</codeph> directory on the HLM host.<ul
-            id="ul_rzd_pnr_bt">
-            <li>helion_branding-v1.3.tgz</li>
-          </ul></li>
-        <li>Apply the required patches on controller-0. Execute the following commands for each
-          patch listed in the previous step.
-          <codeblock>sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0001.patch
-sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0002.patch
-sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HEAT.patch
-sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HORIZON.patch
-sudo wrs-patch apply /home/wrsroot/TS_15.05_PATCH_0001.patch
-sudo wrs-patch apply /home/wrsroot/TS_15.05_PATCH_0002.patch
-sudo wrs-patch apply /home/wrsroot/TS_15.05_DESIGN_PATCH_HEAT.patch
-sudo wrs-patch upload /home/wrsroot/TS_15.05_DESIGN_PATCH_HORIZON.patch
-sudo wrs-patch install-local /opt/branding</codeblock></li>
-        <li>Reboot <codeph>controller-0</codeph>.<codeblock>sudo reboot       </codeblock></li>
-    </ol>
+        <li>Restart <codeph>controller-0</codeph> to load the license file.</li>
+      </ol>
     </section><section><title>Install the KVM region cloud</title>
       <ol>
         <li>Execute the following command to install the KVM region cloud:
@@ -119,14 +79,7 @@ system host-add --hostname &lt;unique-compute-name&gt; --personality compute --m
         <li>Configure the controller and compute nodes to one-time PXE booting from the
           network.</li>
         <li>Restart the nodes.</li>
-        <li>Access the Horizon dashboard using the CAN network IP (HTTPS). By default, Horizon is
-          restricted to access the CAN network using the CLM network as the default gateway. You can
-          workaround this, use SSH to access each controller node and update the filters:
-          <codeblock>echo 0 > /proc/sys/net/ipv4/conf/default/rp_filter
-echo 0 > /proc/sys/net/ipv4/conf/all/rp_filter
-echo 0 > /proc/sys/net/ipv4/conf/eth0.&lt;CAN_VLAN_ID&gt;/rp_filter
-echo 0 > /proc/sys/net/ipv4/conf/eth0.&lt;CLM_VLAN_ID&gt;/rp_filter
-echo 1 > /proc/sys/net/ipv4/ip_forward </codeblock><!--   <p>Leave in workaround, per Naveen and Hrushi email 8/17</p>  --></li>
+        <li>Access the Horizon dashboard using the CAN network IP (HTTPS). </li>
         <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160"
             >Log in to the Horizon interface</xref> and monitor the status of nodes being PXE
           booted. After succesful PXE boot, Operational State as Disabled and Availability State as
@@ -134,33 +87,75 @@ echo 1 > /proc/sys/net/ipv4/ip_forward </codeblock><!--   <p>Leave in workaround
             Dashboard will be running on the first IP address of the CLM network range (refer to the
               <codeph>ip_start_address</codeph> value provided for the CLM network in the
               <codeph>definition.json</codeph> during the non-KVM Region deployment). </p><p>The
-            log-in credentials for Horizon are as follows:
-            <codeblock>username: admin 
-password:  admin </codeblock></p><p><b>Important:</b> After
-            logging in with the default password, make sure you change the password for the
-              <codeph>admin</codeph> user. </p></li>
-        <li>For each compute node in the inventory, do the following<ol id="ul_gss_srg_ms">
-            <li>Create the Infra interface. See <xref
-                href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
-              /> or <i>Interfaces</i> in the Administrtor Guide.</li>
-            <li>Create a Provider Network. See <xref
-                href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita#topic3878"
-              /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
-            <li>Create VLAN Ranges on the provider network using the <b>Create Segmentation
-                Range</b> option. See <xref
-                href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita#topic2171"
-              /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
-            <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107">Create data
-                interface.</xref> See <i>Configuring Endpoint IP Addresses</i> in the Administrator
-              Guide.</li>
-            <li>Optionally, change the default CPU allocations and/or the default memory allocations
-              (huge pages) on each processor, such as the NUMA (Non-Uniform Memory Access) nodes.
-              See <i>Processor</i> in the Administrator Guide.</li>
-          </ol></li>
-        <li><xref
-            href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
-            >Unlock the compute nodes</xref>. Compute nodes will reboot. Keep polling the status on
-          the inventory page to show <b>Available</b> and <b>Online</b>.</li>
+            log-in credentials for Horizon are as
+            follows:</p><codeblock>username: admin 
+password:  &lt;random> </codeblock><p>The
+            Horizon password is randomly generated during the installation. You can locate the
+            password in the <codeph>stackrc</codeph> file on any of the non-KVM region
+            controllers.</p></li></ol> 
+    </section>
+  <section><title>Configure and unlock the compute controllers</title>
+    <p>After the controller-1 and the compute nodes come up successfully after PXE boot, execute the
+        following commands from controller-0 to unlock  each compute node in the inventory, based on
+        your deployment.</p>
+    <p><b>For KVM deployments</b></p>
+    <ol>
+      <li>Create the Infra interface. See <xref
+        href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
+      /> or <i>Interfaces</i> in the Administrtor Guide.</li>
+      <li>Create a Provider Network. See <xref
+        href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita#topic3878"
+      /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
+      <li>Create VLAN Ranges on the provider network using the <b>Create Segmentation
+        Range</b> option. See <xref
+          href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita#topic2171"
+        /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
+      <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107">Create data
+        interface.</xref> See <i>Configuring Endpoint IP Addresses</i> in the Administrator
+        Guide.</li>
+      <li>Optionally, change the default CPU allocations and/or the default memory allocations
+        (huge pages) on each processor, such as the NUMA (Non-Uniform Memory Access) nodes.
+        See <i>Processor</i> in the Administrator Guide.</li>
+    
+    <li><xref
+      href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
+      >Unlock the compute nodes</xref>. Compute nodes will reboot.  Keep polling the status on
+      the inventory page to show <b>Available</b> and <b>Online</b>.</li>
+      </ol> 
+    <p><b>For KVM with DCN or KVM + ESX deployments</b></p>
+    <ol>
+            <li>After the controller-1 and the compute nodes come up successfully after PXE boot,
+              execute the following commands from controller-0 to unlock the compute nodes: <ol
+                id="ol_p42_d35_lt">
+                <li>Create the Infra interface:
+                  <codeblock>system host-if-add –V &lt;bls/infra VLAN ID&gt; –nt &lt;network_type> &lt;host-name or ID> &lt;interface_name> &lt;interface_type> &lt;port or interfaces></codeblock></li>
+                <li>Add an IP address to the Infra interface:
+                  <codeblock>system host-addr-add &lt;host-name or ID> &lt;interface_name> &lt;ipv4/ipv6_address> &lt;prefix-length></codeblock></li>
+                <li>Configure the VRS interface:
+                    <codeblock>system host-if-modify &lt;host-name or ID> -n &lt;interface_name> -nt &lt;network_type> --ipv4-mode=static eth-x </codeblock><p>Where
+                      <codeph>eth-x</codeph> is the interface on which untagged TUL is
+                    presented.</p></li>
+                <li>Add an IP address to the VRS interface:
+                  <codeblock>system host-addr-add &lt;host-name or ID> vrs &lt;ipv4/ipv6_address> &lt;prefix_length></codeblock></li>
+                <li>Update the host:
+                    <codeblock> system host-update &lt;host-name or ID> vsc_controllers=&lt;ipv4/ipv6_address>,&lt;ipv4/ipv6_address> </codeblock><p>Enter
+                    the IP address of the VSC controllers</p></li>
+                <li>Unlock the host:
+                  <codeblock>system host-unlock &lt;host-name or ID></codeblock></li>
+              </ol><p><b>Example
+              commands:</b></p><codeblock>system host-if-add –V 722 –nt infra compute-3 infra vlan pxeboot0
+system host-addr-add compute-3 infra 10.70.22.81 24
+system host-if-modify compute-3 -n vrs -nt data-vrs --ipv4-mode=static eth4
+system host-addr-add compute-3 vrs 10.70.5.83 24
+system host-update compute-3 vsc_controllers=10.70.5.31,10.70.5.32
+system host-unlock compute-3        </codeblock></li>
+            <li>Perform the following steps on controller-0 to ensure instance launching succeeds.
+              Repeat the commands for each compute node.
+              <codeblock>source /etc/nova/openrc
+nova aggregate-create remote_storage_hosts
+nova aggregate-set-metadata remote_storage_hosts localstorage=false
+nova aggregate-add-host remote_storage_hosts &lt;compute host name&gt;</codeblock></li>
+      
       </ol> 
     </section>
   

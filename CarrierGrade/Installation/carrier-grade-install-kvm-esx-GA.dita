@@ -294,7 +294,7 @@ Password: cghelion</codeblock>
             "scope": "private"
       },    </codeblock></p>
     </section>
-    <section id="ccp-dcn-esx-json"><title>Configure the <codeph>ccp-dcn-esx.json</codeph> file</title>Update the
+    <section id="ccp-dcn-esx-json"><title>Configure the ccp-dcn-esx.json file</title>Update the
         <codeph>~/&lt;cloudname&gt;/.hos/ccp-dcn-esx.json</codeph> file. Change the field to 1. By
       default it will be
       2.<codeblock>"tiers": [
@@ -493,14 +493,8 @@ The configuration processor completed successfully.
           href="carrier-grade-install-build9-workarounds.dita#topic10581">this section for
           troubleshooting</xref>. </p>
     </section>
-    <section id="patch-after">
-      <title>Configure LDAP to enable CLI and use Keystone v3</title>
-      <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
-        v2 authorization. The services need to be modified to use Keystone v3.  Users will not be
-        able to execute OpenStack CLI commands until the specific changes are made on all three
-        controller nodes in the non-KVM region. </p>
-      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
-    </section>
+    <section id="patch-after"
+      ><!--<b><systemoutput>ccp-dcn-esx.json</systemoutput></b><title>Configure LDAP to enable CLI and use Keystone v3</title><p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone v2 authorization. The services need to be modified to use Keystone v3. Users will not be able to execute OpenStack CLI commands until the specific changes are made on all three controller nodes in the non-KVM region. </p><p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>--></section>
     <section><!--<title>Applying the HLM Port Security Patch</title>This patch secures all ports on the HLM VM. The standard protocol ports will allow inbound access only and the only the cloud nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see the README in the download or <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port Security Patch</xref>. </p>--></section>
     <section id="root-user">
       <title>Disable the Root User</title>

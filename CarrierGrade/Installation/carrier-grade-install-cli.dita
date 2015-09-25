@@ -42,17 +42,20 @@ system host-add --hostname &lt;unique-compute-name&gt; --personality compute --m
                     boot, execute the following commands from controller-0 to unlock the compute
                     nodes: <ol>
                         <li>Create the Infra interface:
-                            <codeblock>system host-if-add –V &lt;bls/infra VLAN ID&gt; –nt infra &lt;compute-0&gt; infra vlan pxeboot0</codeblock></li>
-                        <li>Add an IP address to the interface:
-                            <codeblock>system host-addr-add &lt;compute-0&gt; infra 10.X.X.X 24</codeblock></li>
-                        <li>Configure the interface:
-                            <codeblock>system host-if-modify &lt;compute-0&gt; -n vrs -nt data-vrs --ipv4-mode=static ethX (interface on which untagged TUL is presented)</codeblock></li>
-                        <li>Add an IPv4 or IPv6 address to the interface:
-                            <codeblock>system host-addr-add &lt;compute-0&gt; vrs 10.X.X.X 24</codeblock></li>
+                            <codeblock>system host-if-add –V &lt;bls/infra VLAN ID&gt; –nt infra &lt;compute-N&gt; infra vlan pxeboot0</codeblock></li>
+                        <li>Add an IP address to the Infra interface:
+                            <codeblock>system host-addr-add &lt;compute-N&gt; infra &lt;ip_address> 24</codeblock></li>
+                        <li>Configure the VRS interface:
+                                <codeblock>system host-if-modify &lt;compute-N&gt; -n vrs -nt data-vrs --ipv4-mode=static ethX </codeblock><p>Where
+                                    <codeph>ethx</codeph> is the interface on which untagged TUL is
+                                presented.</p></li>
+                        <li>Add an IP address to the VRS interface:
+                            <codeblock>system host-addr-add &lt;compute-N> vrs &lt;ip_address></codeblock></li>
                         <li>Update the host:
-                            <codeblock> system host-update &lt;compute-0&gt; vsc_controllers=10.X.X.X,10.X.X.X [VSC controller IP’s]</codeblock></li>
+                                <codeblock> system host-update &lt;compute-N> vsc_controllers=&lt;ip_address>,&lt;ip_address> </codeblock><p>Enter
+                                the IP address of the VSC controllers</p></li>
                         <li>Unlock the host:
-                            <codeblock>system host-unlock &lt;compute-0&gt;</codeblock></li>
+                            <codeblock>system host-unlock &lt;compute-N></codeblock></li>
                     </ol><p><b>Example
                     commands:</b></p><codeblock>system host-if-add –V 722 –nt infra 3 infra vlan pxeboot0
 system host-addr-add 3 infra 10.70.22.81 24
@@ -60,11 +63,8 @@ system host-if-modify 3 -n vrs -nt data-vrs --ipv4-mode=static eth4
 system host-addr-add 3 vrs 10.70.5.83 24
 system host-update 3 vsc_controllers=10.70.5.31,10.70.5.32
 system host-unlock 3        </codeblock></li>
-                    <li>In
-                        addition to above set of commands, please apply the below work around on
-                        controller-0 (active controller) in order to ensure instance launching
-                        succeeds. Repeat the commands for each compute
-                    node.
+                    <li>Perform the following steps on controller-0 to ensure instance launching
+                    succeeds. Repeat the commands for each compute node.
                     <codeblock>source /etc/nova/openrc
 nova aggregate-create remote_storage_hosts
 nova aggregate-set-metadata remote_storage_hosts localstorage=false
