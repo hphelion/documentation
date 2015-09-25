@@ -28,6 +28,11 @@
       </ul> If you are running a configuration based on the Beta 1 model configuration, you may
       still use that configuration after upgrading to Beta 2. However, a few changes are
       required.</p>
+    <note>The upgrade process is a live upgrade in the sense that VMs, volumes, network resources, etc. should survive the upgrade, but can't guarantee 
+      no-downtime of the APIs, although such downtime is minimized.
+    
+      If an upgrade requires a reboot, then the reboot is left to the operator/customer to handle. The upgrase process
+       does not automatically reboot nodes as part of an upgrade.</note>
     <p/>
     <p>To upgrade, download the ISO as you would for a Beta 2 install.<note>You will not be able to
         change your cloud model at this point, other than by adapting it as you did in beta1. You
