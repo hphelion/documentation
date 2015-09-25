@@ -339,7 +339,7 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
         <li>To reload Apache for the change to take effect, run this command:
           <codeblock>sudo service apache2 reload</codeblock></li>
       </ol>
-      <p>If you don't want to remove this configuration but simply want to move it, you can do so by
+      <p>If you don't want to remove this configuration but simply want to move it, you can do so
         using these commands:</p>
       <ol>
         <li>To move the configuration file:
