@@ -1884,7 +1884,7 @@ node reset --help</codeblock>
     <entry>Show help information</entry>
   </row>
 <row>
-    <entry>-n --node node-id&gt;</entry>
+    <entry>-n --node &lt;node-id&gt;</entry>
     <entry>Retire the specified DEA node; if unspecified, the local node is used.</entry>
   </row>
 </tbody>
