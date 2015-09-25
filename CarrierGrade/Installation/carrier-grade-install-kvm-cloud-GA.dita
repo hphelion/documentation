@@ -53,9 +53,10 @@ ifconfig eth0 up</codeblock></li>
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
           controller-0. The files are located in the <codeph>/root/cg-hlm/windriver-files</codeph>
           directory on the HLM host.<ul id="ul_mpn_hnr_bt">
-            <li>license</li>
-            <li>region_config </li>
-            <li>cakey.pem</li>
+            <li><codeph>HCG_2.0_WR_license.lic.txt</codeph></li>
+            <li><codeph>region_config</codeph>
+            </li>
+            <li><codeph>cakey.pem</codeph></li>
           </ul></li>
         <li>Restart <codeph>controller-0</codeph> to load the license file.</li>
       </ol>
