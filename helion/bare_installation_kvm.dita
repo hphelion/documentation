@@ -174,7 +174,8 @@ git commit -m "My config or other commit message"
             before you move onto the following steps. See <xref href="using_git.dita">Using Git for
               Configuration Management</xref> for more information.</note></li>
       </ol>
-      <p>Then you can verify your configuration is correct with the following steps:</p>
+      <p>Then you need to run the following commands to complete your configuration. These commands
+        also verify your configuration is correct.</p>
       <ol>
         <li>Run the following playbook which confirms that there is iLo connectivity for each of
           your nodes so that they are accessible to be re-imaged in a later step:
@@ -189,13 +190,9 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         in each of your configuration files is correct for your environment and then commit those
         changes to git using the instructions above.</p>
       <p>Before re-running the Configuration Processor after fixing an error you need to run the
-        clean script below:</p>
-      <ol>
-        <li><codeblock>cd ~/helion/hos/ansible
-          ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock></li>
-        <li><codeblock>cd ~/helion/hos/ansible
-          ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-      </ol>
+        clean script detailed in the <xref
+          href="installation_troubleshooting.dita#troubleshooting_installation/configproc"
+          >Installation Troubleshooting</xref> document.</p>
     </section>
     <section id="CobblerDeploy">
       <title>Deploy Cobbler </title>

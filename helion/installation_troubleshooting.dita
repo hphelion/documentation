@@ -32,6 +32,18 @@
               <codeph>bm-reimage.yml</codeph> playbooks again.</li>
         </ol>
       </p>
+      
+      <p id="configproc"><b>Change needed to configuration files after you've run the
+        <codeph>config-processor-run.yml</codeph> playbook</b></p>
+      <p>If you've run the <codeph>config-processor-run.yml</codeph> playbook during the
+        installation and have to go back to re-do your steps, ensure that you run the
+        <codeph>config-processor-clean.yml</codeph> playbook to clear out your previous
+        configuration before proceeding.</p>
+      <p>
+        <codeblock>cd ~/helion/hos/ansible
+          ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
+      </p>
+      
       <p><b>Change needed to <codeph>baremetalConfig.yml</codeph> file needed after the Cobbler
           deploy</b></p>
       <p>If you've made a mistake or wish to change your <codeph>baremetalConfig.yml</codeph>
@@ -55,16 +67,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
         </li>
       </ol>
-      <p><b>Change needed to configuration files after you've run the
-            <codeph>config-processor-run.yml</codeph> playbook</b></p>
-      <p>If you've run the <codeph>config-processor-run.yml</codeph> playbook during the
-        installation and have to go back to re-do your steps, ensure that you run the
-          <codeph>config-processor-clean.yml</codeph> playbook to clear out your previous
-        configuration before proceeding.</p>
-      <p>
-        <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
-      </p>
+
       <p><b>If the <codeph>site.yml</codeph> playbook fails, you can query the log for the
           reason</b></p>
       <p>Ansible is good about outputting the errors into the command line output, however if you'd
