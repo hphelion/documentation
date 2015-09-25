@@ -56,6 +56,7 @@
                 <topicref href="carrier-grade-install-disable-root.dita" toc="no"/>
                 <topicref href="carrier-grade-install-config-patch.dita"
                     navtitle="Deploying the Configuration Processor Patch" locktitle="yes" toc="no"/>
+                <topicref href="carrier-grade-install-role-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-build9-workarounds.dita" toc="no"/>
             </topicref>
             <topicref href="carrier-grade-install-launch-horizon.dita"
@@ -70,6 +71,8 @@
                 navtitle="Configuring the KVM Region Hosts" locktitle="yes"/>
             <topicref href="carrier-grade-install-metadata.dita" toc="no"
                 navtitle="Configuring the DCN Metadata Agent" locktitle="yes"/>
+            <topicref href="carrier-grade-install-ldap-verify.dita"
+                navtitle="Verifying the LDAP Deployment" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
         </topicref>
     </topicref></map>

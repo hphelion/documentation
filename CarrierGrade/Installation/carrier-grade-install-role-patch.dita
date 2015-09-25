@@ -24,20 +24,17 @@
     <p>
       <ol id="ol_pn3_141_mt">
         <li>Download the <codeph>fip_patch</codeph> drectory and <codeph>logrotate_patch</codeph>
-          directroy and the <codeph>role-generator</codeph>  file.</li>
-        <li>Copy the patch files to the <codeph>~/</codeph> directory on the HLM host. </li>
-        <li> Change to the <codeph>kenobi-configuration-processor</codeph> directory:<p>
-            <codeblock>cd ~/kenobi-configuration-processor</codeblock>
+          directroy and the <codeph>role-generator.py</codeph> file.</li>
+        <li>Copy the <codeph>fip_patch.tar.gz</codeph> and <codeph>metadata.tar.gz</codeph> files to
+          the <codeph>~/&lt;cloudname></codeph> directory on the HLM host. </li>
+        <li>Use the following commands to extract the compressed files: <p>
+            <codeblock>tar -zvcf fip_patch.tar.gz
+tar -zvcf metadata.tar.gz</codeblock>
           </p></li>
-        <li>Execute the following command to deploy the patch:<p>
-            <codeblock>patch -p1 &lt; ../kcp-windriver-build-15-only.patch
-patch -p1 &lt; ../knc-horizon-helion-theme-dashboard.patch</codeblock>
+        <li>Execute the following commands to apply the patches:<p>
+            <codeblock>python role-generator.py /root/fip_patch/ apply &lt;cloudname&gt;
+python role-generator.py /root/logrotate_patch/ apply &lt;cloudname&gt;</codeblock>
           </p></li>
-        <li>Execute the  following command to integrate the patches into the installation environment:<p>
-            <codeblock>cd ~/cg-hlm/hlm-build
-./hlm_prepare-env.sh</codeblock>
-          </p><p>When the <codeph>hcfgproc</codeph> command is executed, the updated configuration
-            file will be used. </p></li>
       </ol>
     </p>
     <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/hos-cloud">KVM

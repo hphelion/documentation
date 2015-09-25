@@ -176,6 +176,7 @@ ansible &lt;tier_name&gt; -i hosts -su cghelion -a "rm -r /var/lib/rabbitmq"</co
             of:</p><codeblock>tier=INFRA-CCP-T1 
 host=M1
 network=CLM            </codeblock></li>
+          <li>echo "FND-RMO" &gt; /tmp/deploy.role</li>
           <li><xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">Restart the
               hdeploy process</xref>. <codeblock>hdeploy -t &lt;cloudname&gt;</codeblock></li>
         </ol></p>

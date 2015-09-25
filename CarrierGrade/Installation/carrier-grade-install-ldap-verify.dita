@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Verifying the LDAP
+    Deployment</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>After installing HP Helion OpenStack Carrier Grade, you can use the following commands to
+      verify that LDAP is functoning correctly. </p>
+    <p>
+      <ol id="ol_vcf_skb_mt">
+        <li>Log into any of the controllers. <p>
+            <codeblock>sudo su -</codeblock>
+          </p></li>
+        <li>Source the stackrcv3 file:<p>
+            <codeblock>source stackrcv3</codeblock>
+          </p></li>
+        <li>List the current Keystone users:<p>
+            <codeblock>keystone user-list</codeblock>
+          </p></li>
+        <li>List the current users in the domain you want to test. Make note of the user_id of the
+          user you want to test with<p>
+            <codeblock>openstack user list --domain &lt;domain_name> </codeblock>
+          </p></li>
+        <li>Create new project and make note of its ID: <p>
+            <codeblock>openstack project create --domain &lt;domain_name> &lt;project_name></codeblock>
+          </p></li>
+        <li>Grant the user administrative permsission to the project you created. <p>
+            <codeblock>openstack role add --user &lt;user name> --project &lt;tenant id> admin</codeblock>
+          </p></li>
+        <li>List the current domains and make note of the domain_id for domain you are testing in:<p>
+            <codeblock>openstack domain list</codeblock>
+          </p></li>
+        <li>Copy the <codeph>stackrcv3</codeph> to new a file. For example:<p>
+            <codeblock>cp stackrcv3 stackrcv3_new </codeblock>
+          </p></li>
+        <li>Edit the new file with details of the user you want to use and the project you want to
+          use </li>
+        <li>Exit the session to clear environmental variables:<p>
+            <codeblock>exit </codeblock>
+          </p></li>
+        <li>Log back into the controller. <p>
+            <codeblock> sudo su -</codeblock>
+          </p></li>
+        <li>Source newly created stackrcv3 file. For example:<p>
+            <codeblock>source stackrcv3_new </codeblock>
+          </p></li>
+        <li>Test the Keystone service: <p>
+            <codeblock>openstack user list --domain &lt;domain_name> 
+keystone user-list </codeblock>
+          </p></li>
+        <li>Test the Neutron service: <p>
+            <codeblock>openstack network list 
+neutron net-list</codeblock>
+          </p></li>
+        <li> Test the Nova service: <p>
+            <codeblock>nova list</codeblock>
+          </p></li>
+        <li> Test the Glance service: <p>
+            <codeblock>openstack image list 
+glance image-list</codeblock>
+          </p></li>
+        <li> Test the Cinder service: <p>
+            <codeblock>openstack volume list </codeblock>
+          </p></li>
+        <li>Test the Swift service: <p>
+            <codeblock>openstack container list 
+swift list</codeblock>
+          </p></li>
+        <li>Test the Heat service: <p>
+            <codeblock>heat stack-list</codeblock>
+          </p></li>
+        <li>Test the Ceilometer service: <p>
+            <codeblock>ceilometer event-list</codeblock>
+          </p></li>
+      </ol>
+    </p>
+    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/hos-cloud">KVM
+      installation</xref>.</p>
+    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hos-cloud">the KVM + ESX
+      installation</xref>.</p>
+    </body>
+</topic>
