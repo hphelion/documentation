@@ -55,6 +55,9 @@
           <dd><codeph>op regenerate <xref
                 href="helion/admin/reference/kato-ref.dita#topic39432/kato-command-ref-op-regenerate"
                 >authorized_keys</xref></codeph></dd>
+        </dlentry><dlentry>
+          <dt>node reset factory</dt>
+          <dd>This kato command is no longer a supported operation.</dd>
         </dlentry>
       </dl>
     </section>

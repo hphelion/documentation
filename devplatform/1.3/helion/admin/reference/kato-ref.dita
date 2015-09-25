@@ -1829,86 +1829,99 @@ kato log drain add -f systail-syslog system_splunk_2 \
 </table>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="kato-command-ref-node-reset"> <title>Node Reset</title> 
-<p>Reset the ALS VM to its default configuration.</p>
-<p>
-  <b>Syntax</b>
-</p>
-<codeblock>node reset factory
-
-node reset docker
+<section id="kato-command-ref-node-reset">
+      <title>Node Reset</title>
+      <p>Reset the ALS VM to its default configuration.</p>
+      <p>
+        <b>Syntax</b>
+      </p>
+      <codeblock>node reset docker
 
 node reset services
 
 node reset --help</codeblock>
-<ul>
-<li>
-<i>factory</i>: returns the VM to its state prior to first boot.</li>
-<li>
-<i>docker</i>: removes all Docker containers and deletes all but the ALS release images; not meant for general use.</li>
-<li>
-<i>services</i>: removes all service data; not meant for general use.</li>
-</ul>
-<p>
-  <b>Options</b>
-</p>
-<table>
-<tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-<entry>
-<b>Name</b>
-</entry>
-<entry>
-<b>Purpose</b>
-</entry>
-</row>
-<row>
-    <entry>-h  --help</entry>
-    <entry>Show help information</entry>
-  </row>
-</tbody>
-</tgroup>
-</table>
-<!-- ===================== horizontal rule ===================== -->
-</section>
-<section id="kato-command-ref-node-retire"> <title>Node Retire</title> 
-<p>Gracefully retires a DEA node from the cluster. New instances of the apps are started on other available DEAs before the retiring DEA is shut down.</p>
-<p>
-  <b>Syntax</b>
-</p>
-<codeblock>node retire [options]</codeblock>
-<p>
-  <b>Options</b>
-</p>
-<table>
-<tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-<entry>
-<b>Name</b>
-</entry>
-<entry>
-<b>Purpose</b>
-</entry>
-</row>
-<row>
-    <entry>-h  --help</entry>
-    <entry>Show help information</entry>
-  </row>
-<row>
-    <entry>-n --node node-id&gt;</entry>
-    <entry>Retire the specified DEA node; if unspecified, the local node is used.</entry>
-  </row>
-</tbody>
-</tgroup>
-</table>
-<!-- ===================== horizontal rule ===================== -->
-</section>
+      <ul id="ul_n4n_khv_lt">
+        <li>
+          <i>docker</i>: removes all Docker containers and deletes all but the ALS release images;
+          not meant for general use.</li>
+        <li>
+          <i>services</i>: removes all service data; not meant for general use.</li>
+      </ul>
+      <p>
+        <b>Options</b>
+      </p>
+      <table id="table_pyp_khv_lt">
+        <tgroup cols="2">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Name</b>
+              </entry>
+              <entry>
+                <b>Purpose</b>
+              </entry>
+            </row>
+            <row>
+              <entry>-h --help</entry>
+              <entry>Show help information</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>
+        <note>
+          <codeph>node reset factory</codeph>, which returns the VM to its state prior to first
+          boot, is no longer a supported operation.</note>
+      </p>
+      <title>Node Retire</title>
+      <p>Gracefully retires a DEA node from the cluster. New instances of the apps are started on
+        other available DEAs before the retiring DEA is shut down.</p>
+      <p>
+        <b>Syntax</b>
+      </p>
+      <codeblock>node retire [options]</codeblock>
+      <p>
+        <b>Options</b>
+      </p>
+      <table id="table_nwf_khv_lt">
+        <tgroup cols="2">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <tbody>
+            <row>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <table id="table_yhs_khv_lt">
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>
+                <b>Name</b>
+              </entry>
+              <entry>
+                <b>Purpose</b>
+              </entry>
+            </row>
+            <row>
+              <entry>-h --help</entry>
+              <entry>Show help information</entry>
+            </row>
+            <row>
+              <entry>-n --node node-id&gt;</entry>
+              <entry>Retire the specified DEA node; if unspecified, the local node is used.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <!-- ===================== horizontal rule ===================== -->
+    </section>
 <section id="kato-command-ref-node-setup-core"> <title>Node Setup Core</title> 
 <p>Configure the core node of your ALS cluster.</p>
 <p>
