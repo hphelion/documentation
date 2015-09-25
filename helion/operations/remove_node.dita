@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_fld_zzy_lt">
-  <title>Removing a Node</title>
+  <title>Removing a Compute Node</title>
   <body>
   <section> The process for removing a compute node requires that you run these steps: <ol>
         <li>Disable provisioning. </li>
