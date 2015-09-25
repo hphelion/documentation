@@ -1874,8 +1874,8 @@ node reset --help</codeblock>
         <note>
           <codeph>node reset factory</codeph>, which returns the VM to its state prior to first
           boot, is no longer a supported operation.</note>
-      </p>
-      <title>Node Retire</title>
+      </p></section>
+      <section id="kato-command-ref-node-retire"><title>Node Retire</title>
       <p>Gracefully retires a DEA node from the cluster. New instances of the apps are started on
         other available DEAs before the retiring DEA is shut down.</p>
       <p>
@@ -1920,8 +1920,7 @@ node reset --help</codeblock>
           </tbody>
         </tgroup>
       </table>
-      <!-- ===================== horizontal rule ===================== -->
-    </section>
+          </section>
 <section id="kato-command-ref-node-setup-core"> <title>Node Setup Core</title> 
 <p>Configure the core node of your ALS cluster.</p>
 <p>
@@ -3089,7 +3088,10 @@ patch revert [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;</codeblock>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="kato-command-ref-relocate"> <title>Relocate</title> 
-<p>Move containers, application droplets, or services to a new mount point or filesystem location.</p>
+<p>Move containers, application droplets, or services to a new mount point or filesystem
+          location.<note>This command stops all roles and does not restart them after execution.
+          This behavior permits performing multiple sequential <codeph>relocate</codeph>
+          commands.</note></p>
 <p>
   <b>Syntax</b>
 </p>

@@ -465,8 +465,6 @@
           <topichead navtitle="Reference">
             <topicref href="1.3/helion/admin/reference/groups.dita" locktitle="yes"
               navtitle="Managing Groups, Users and Limits (DEPRECATED)"/>
-            <topicref href="1.3/helion/admin/reference/known-issues.dita" locktitle="yes"
-              navtitle="Known Issues"/>
             <topicref href="1.3/helion/admin/reference/architecture.dita" locktitle="yes"
               navtitle="Architectural Design"/>
             <topicref href="1.3/helion/admin/reference/add-service.dita" locktitle="yes"

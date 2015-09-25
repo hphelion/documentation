@@ -22,10 +22,12 @@ framework:
   type: python
   runtime: python32</codeblock>
 <p>
-  <note type="restriction"> When using the <xref
-    href="../../admin/reference/known-issues.dita#topic6051/legacy-buildpack-and-environment-variables"
-    type="section">Legacy buildpack</xref>, config-defined environment variable values can only
-          be updated by re-pushing the entire application with the new settings.</note>
+  <note type="restriction"> When using the Legacy buildpack, config-defined environment variable
+          values can only be updated by re-pushing the entire application with the new settings.
+          Changes to variables made in the Management Console will be overwritten by the original
+          ones defined at push when the application is restarted. To modify custom environment
+          variables, re-push the application after changing the values in
+            <filepath>manifest.yml</filepath>. </note>
       </p>
 </section>
 <section id="custom-buildpacks"> <title>Custom Buildpacks</title> 
