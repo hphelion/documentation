@@ -5,13 +5,13 @@
   <body>
    <section> To add a new node to your cloud, you will need to add it to servers.yml and
       baremetalConfig.yml, and then run the scripts that update your cloud configuration. To begin,
-      access the servers.yml and baremetalConfig.yml files by checking out the git branch where tyu
-      need to make the changes:
+      access the <b>servers.yml</b> and <b>baremetalConfig.yml</b> files by checking out the git
+      branch where you are required to make the changes:
       <codeblock>cd ~/helion/my_cloud/definition/data
      git checkout site</codeblock> Add details
-      of new node(s) to baremetalConfig.yml and severs.yml For example, if adding new server
-      cpn-0004 in servers.yml
-      <codeblock>---
+      of new node(s) to <b>baremetalConfig.yml</b> and <b>severs.yml</b> For example, if adding new
+      server cpn-0004 in <b>servers.yml
+      </b><codeblock>---
      product:
      version: 2
      servers:
@@ -22,8 +22,8 @@
      ip-addr: 10.240.21.13
      role: ROLE-COMPUTE
      nic-mapping: HP_DL360_6PORT</codeblock>
-      And in baremetalConfig.yml
-      <codeblock>---
+      And in <b>baremetalConfig.yml
+      </b><codeblock>---
      product:
      version: 1
      baremetal_network:
