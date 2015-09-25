@@ -774,20 +774,40 @@ env:
       <p>This defines a "MY_NAME" environment variable with the value "example-app".  <note>See the
           services section for an example of variable key substitution for yaml key
         names.</note></p>
-      <p>A small number of keys are predefined for your use within <i>manifest.yml</i>:</p>
-      <codeblock>  ------------------------------------------------------------------------
-  key
-  substitution
-  value
-  -------------- ---------------------------------------------------------
-  \${random-word \${target-base}
-  }              The hostname of the targeted Application Lifecycle Service system, for
-  A short        example **helion-xxxx.local**
-  alphanumeric   
-  string of      
-  random         
-  characters     
-  ------------------------------------------------------------------------</codeblock>
+      <p>A small number of keys are predefined for your use within <i>manifest.yml</i>:
+        <table
+          frame="all" rowsep="1" colsep="1" id="table_kcc_m4z_lt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Key Substitution</entry>
+                <entry>Value</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry><codeph>$random-word</codeph></entry>
+                <entry>A short, alphanumeric string of random characters</entry>
+              </row>
+              <row>
+                <entry><codeph>${target-base}</codeph></entry>
+                <entry>The hostname of the targeted Stackato system, for example
+                  <codeph>helion-xxxx.local</codeph></entry>
+              </row>
+              <row>
+                <entry><codeph>${target-url}</codeph></entry>
+                <entry>The URL of the targeted API endpoint, for example
+                  <codeph>https://api.stackato-xxxx.local</codeph></entry>
+              </row>
+              <row>
+                <entry><codeph>${ask <varname>&lt;QUESTION></varname>}</codeph></entry>
+                <entry>An interactive prompt for user input</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
     </section>
 </body>
 </topic>
