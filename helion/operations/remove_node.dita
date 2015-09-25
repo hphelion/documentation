@@ -4,7 +4,7 @@
   <title>Removing a Compute Node</title>
   <body>
   <section> The process for removing a compute node requires that you run these steps: <ol>
-        <li>Disable provisioning. </li>
+        <li>Disable provisioning to prevent new instances from being created on this node.  </li>
         <li>If possible migrate any instances on the node to other nodes. </li>
         <li>Shut down the node or stop the nova-compute service. </li>
         <li>Delete the compute node from nova </li>
