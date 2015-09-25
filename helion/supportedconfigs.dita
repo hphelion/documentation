@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="supported_configs">
-  <title>Beta 2: Supported Configurations</title>
+  <title>Beta 2: Example Configurations</title>
   <body>
     <!--<p>In Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta 2 we offer the Entry Scale Cloud model
       with two variations depending on the hypervisor you wish to use: KVM or ESX.</p>
