@@ -11,7 +11,10 @@
         <li>Amend servers.yml in the cloud configuration to remove entry for this node, commit the
           change and re run the config processor </li>
         <li>Remove the node from cobbler</li>
-      </ol> For example, using a cloud administrator account first disable provisioning and then run
+      </ol> 
+    
+    <ol>
+    <li>For example, using a cloud administrator account first disable provisioning and then run
       nova service-list
       <codeblock>~$ nova service-disable --reason="HNOV-240 - removed" hlm004-ccp-comp0004-mgmt nova-compute
 ~$ nova service-list</codeblock>
@@ -27,37 +30,37 @@
 | 55 | nova-compute     | hlm004-ccp-comp0001-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:56.000000 | -                  |
 | 58 | nova-compute     | hlm004-ccp-comp0004-mgmt | nova     | disabled | up    | 2015-09-17T10:29:55.000000 | HNOV-240 - removed |
 +----+------------------+--------------------------+----------+----------+-------+----------------------------+--------------------+</codeblock>
-      Next, run<codeblock>~$ nova list --host=hlm004-ccp-comp0004-mgmt --all_tenants=1</codeblock>
+  </li><li>    Next, run<codeblock>~$ nova list --host=hlm004-ccp-comp0004-mgmt --all_tenants=1</codeblock>
       to see all
       tenants<codeblock>+--------------------------------------+--------+----------------------------------+--------+------------+-------------+-----------------+
 | ID                                   | Name   | Tenant ID                        | Status | Task State | Power State | Networks        |
 +--------------------------------------+--------+----------------------------------+--------+------------+-------------+-----------------+
 | 78fdb938-a89c-4a0c-a0d4-b88f1555c3b9 | paul4d | 5e9998f1b1824ea9a3b06ad142f09ca5 | ACTIVE | -          | Running     | paul=10.10.10.7 |
 +--------------------------------------+--------+----------------------------------+--------+------------+-------------+-----------------+</codeblock>
-      then perform the
-      migration:<codeblock>~$ nova live-migration --block-migrate 78fdb938-a89c-4a0c-a0d4-b88f1555c3b9
+    </li><li> Now, perform the
+          migration:<codeblock>~$ nova live-migration --block-migrate 78fdb938-a89c-4a0c-a0d4-b88f1555c3b9
 ~$ nova list --host=hlm004-ccp-comp0004-mgmt --all_tenants=1</codeblock>
-      and run nova list (above) to get the
-      status:<codeblock>+--------------------------------------+--------+----------------------------------+-----------+------------+-------------+-----------------+
+          and run nova list (above) to get the
+          status:<codeblock>+--------------------------------------+--------+----------------------------------+-----------+------------+-------------+-----------------+
 | ID                                   | Name   | Tenant ID                        | Status    | Task State | Power State | Networks        |
 +--------------------------------------+--------+----------------------------------+-----------+------------+-------------+-----------------+
 | 78fdb938-a89c-4a0c-a0d4-b88f1555c3b9 | paul4d | 5e9998f1b1824ea9a3b06ad142f09ca5 | MIGRATING | migrating  | Running     | paul=10.10.10.7 |
 +--------------------------------------+--------+----------------------------------+-----------+------------+-------------+-----------------+</codeblock>
-      run nova list again
-      <codeblock>~$ nova list --host=hlm004-ccp-comp0004-mgmt --all_tenants=1</codeblock> to see
-      that the running instance has been
-      migrated:<codeblock>+----+------+-----------+--------+------------+-------------+----------+
+        </li><li> Run nova list again
+          <codeblock>~$ nova list --host=hlm004-ccp-comp0004-mgmt --all_tenants=1</codeblock> to see
+          that the running instance has been
+          migrated:<codeblock>+----+------+-----------+--------+------------+-------------+----------+
 | ID | Name | Tenant ID | Status | Task State | Power State | Networks |
 +----+------+-----------+--------+------------+-------------+----------+
 +----+------+-----------+--------+------------+-------------+----------+</codeblock>
-      Log into compute node and stop nova service or shutdown node. (alternatively, you may re-image
-      the
-      node)<codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo systemctl stop nova-compute"</codeblock>
-      or to shut it
-      down:<codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo shutdown now"</codeblock>Alternatively,
-      from deployer, run the<b>bm-power-down.yml </b>playbook <codeblock>~$ cd ~/helion/hos/ansible
+        </li><li> Log into compute node and stop nova service or shutdown node. (alternatively, you may re-image
+          the
+          node)<codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo systemctl stop nova-compute"</codeblock>
+          or to shut it
+          down:<codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo shutdown now"</codeblock>Alternatively,
+          from the deployer, run the<b>bm-power-down.yml </b>playbook <codeblock>~$ cd ~/helion/hos/ansible
     ~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-power-down.yml -e nodelist=cpn-0004</codeblock>
-      <codeblock>PLAY [localhost] **************************************************************
+          <codeblock>PLAY [localhost] **************************************************************
     GATHERING FACTS *************************************************************** 
     ok: [localhost]
     TASK: [cobbler | get-nodelist | User-specified target list] ******************* 
@@ -81,8 +84,8 @@
     cobbler | get-nodelist | Check we have targets -------------------------- 0.01s
     -------------------------------------------------------------------------------
     Total: ------------------------------------------------------------------ 3.54s
-    localhost : ok=4 changed=1 unreachable=0 failed=0</codeblock>Next,
-      delete the nova compute node:
+    localhost : ok=4 changed=1 unreachable=0 failed=0</codeblock>
+        </li><li>Next, delete the nova compute node:
       <codeblock>~$ nova service-delete 58
 ~$ nova service-list</codeblock> And run nova
       service-list (above) to see that it s
@@ -96,7 +99,7 @@
 | 52 | nova-compute     | hlm004-ccp-comp0003-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:52.000000 | -                  |
 | 55 | nova-compute     | hlm004-ccp-comp0001-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:56.000000 | -                  |
 +----+------------------+--------------------------+----------+----------+-------+----------------------------+--------------------+</codeblock>
-      Then get hypervisor status:<codeblock>~$ nova hypervisor-list</codeblock> And check that the
+      </li><li>Then get hypervisor status:<codeblock>~$ nova hypervisor-list</codeblock> And check that the
       node has been removed from the
       list:<codeblock>+----+--------------------------+-------+---------+
 | ID | Hypervisor hostname      | State | Status  |
@@ -107,20 +110,21 @@
 | 13 | hlm004-ccp-comp0003-mgmt | up    | enabled |
 | 16 | hlm004-ccp-comp0001-mgmt | up    | enabled |
 +----+--------------------------+-------+---------+</codeblock>
-      Then on the deployer node,  remove the node from <b>servers.yml </b>, commit the change, and
+      </li><li>Then, on the deployer node,  remove the node from <b>servers.yml </b>, commit the change, and
       rerun the config
       processor:<codeblock>git checkout site
 cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock>
-      Edit <b>servers.yml </b>to remove the entry for removed node.
+      </li><li>Edit <b>servers.yml </b>to remove the entry for removed node.
       <codeblock>git commit -a -m "Removed node &lt;name>
 cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
-      There is no need to run the site.yml playbook. However you should remove the node from
+      </li><li>There is no need to run the site.yml playbook. However you should remove the node from
       cobbler, as shown
       here:<codeblock>sudo cobbler system remove --name=&lt;node>
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
+      </li></ol>
     </section>
   </body>
 </topic>

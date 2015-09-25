@@ -7,11 +7,14 @@
         <b>baremetalConfig.yml</b>, and then run the scripts that update your cloud configuration.
       To begin, access the <b>servers.yml</b> and <b>baremetalConfig.yml</b> files by checking out
       the git branch where you are required to make the changes:
-      <codeblock>cd ~/helion/my_cloud/definition/data
-     git checkout site</codeblock> Add details
-      of new node(s) to <b>baremetalConfig.yml</b> and <b>severs.yml</b> For example, if adding new
-      server cpn-0004 in <b>servers.yml
-      </b><codeblock>---
+      
+      <ol>
+      <li>Get the <b>servers.yml</b> and <b>baremetalConfig.yml</b> files stored in
+          git:<codeblock>cd ~/helion/my_cloud/definition/data
+     git checkout site</codeblock> Add
+          details of new node(s) to <b>baremetalConfig.yml</b> and <b>severs.yml</b> For example, if
+          adding new server cpn-0004 in <b>servers.yml
+          </b><codeblock>---
      product:
      version: 2
      servers:
@@ -22,8 +25,8 @@
      ip-addr: 10.240.21.13
      role: ROLE-COMPUTE
      nic-mapping: HP_DL360_6PORT</codeblock>
-      And in <b>baremetalConfig.yml
-      </b><codeblock>---
+          And in <b>baremetalConfig.yml
+          </b><codeblock>---
      product:
      version: 1
      baremetal_network:
@@ -42,17 +45,18 @@
      ilo_ip: "10.1.12.74"
      ilo_user: "hosqaadm"
      ilo_password: "mul3d33r"</codeblock>
+        </li><li>
       Commit the changes <codeblock>git commit -a -m "Add node &lt;name></codeblock> Then run the
       configuration processor and the ready deploment
       playbooks:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
-      Now configure the new node(s)
+     </li><li>Now configure the new node(s)
       <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblock>
-      Finally, run the following deployment step specifying the '--limit' option to apply the
+     </li><li>Finally, run the following deployment step specifying the '--limit' option to apply the
       deployment actions only to the target node(s).
-      <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit hlm004-ccp-comp0007*</codeblock>
+       <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit hlm004-ccp-comp0007*</codeblock></li></ol>
     </section>
   </body>
 </topic>
