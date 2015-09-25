@@ -4,40 +4,41 @@
   <title>Repair Node</title>
   <body>
     <section>
-      <p>There are a number of routine operations you must perforn in the ingoing running and
-        maintenance of your cloud, including the repair of a node. To repair a node, you will have
-        to take it offline, repair it, and restart it. To do so,  follow these steps.</p> If the
-      node is being taken offline for maintenance, disable provisioning to prevent new instances
-      being created on this node.
-      <codeblock>nova service-disable --reason "&lt;describe reason>" &lt;node name> nova-compute</codeblock>
-      Note that this does not prevent user with the forcehost role from deploying instances on the
-      node. This features is useful for testing purposes but should be used with care and only
-      granted to trusted users. If the node has existing instances on and the nature of the
-      maintenance will impact these instances the recommended approach is to stop these instances
-      prior to the maintenance activity <codeblock>nova stop &lt;instance uuid></codeblock> start
-      them again afterwards <codeblock>nova start &lt;instance uuid></codeblock> If 'nova start'
-      fails, try... <codeblock>nova reboot --hard &lt;instance uuid></codeblock> Re-enable
+      <p>There are a number of routine operations you must perform in the ingoing running and
+        maintenance of your cloud, including the repair of a node when, for example, you need to
+        replace part of the server, such as a disk. To repair a node, you will have to take it
+        offline, repair it, and restart it. To do so, follow these steps.</p> If the node is being
+      taken offline for maintenance, you will need to disable provisioning to prevent new instances
+      from being created on this node.
+      <codeblock>nova service-disable --reason "&lt;describe reason>" &lt;node name> nova-compute</codeblock>Note
+      that this does not prevent a user with the forcehost role from deploying instances on the
+      node. This role is useful for testing purposes, but should be used with care and only granted
+      to trusted users. If the node has existing instances runing on it and the nature of the
+      maintenance will impact these instances, the recommended approach is to stop these instances
+      prior to the maintenance activity: <codeblock>nova stop &lt;instance uuid></codeblock> Then
+      start them again after the repair: <codeblock>nova start &lt;instance uuid></codeblock> If
+      'nova start' fails, try <codeblock>nova reboot --hard &lt;instance uuid></codeblock> Re-enable
       provisioning when the node is fixed <codeblock>nova service-enable &lt;node name></codeblock>
       If the maintenance includes disk replacements that would cause loss of data in
-        <b>/var/lib/nova</b> then moving or deleting the instances will be necessary. It may be
-      possible to migrate instances to a different compute node.
-      <codeblock>nova live-migration --block-migrate [&lt;target compute host>]</codeblock> <!--See
-      HNOV-240 for details of alternative instance backup mechanism.--> When the node is ready to be
-      restored the process for re-introducing it will depend on the actions performed to repair it.
-      If it was simply rebooted to introduce new software etc then the hlm-start.yml playbook will
-      suffice. If needed use bm-power-up.yml playbook to restart the node. Specify just the node(s)
-      you want to start in 'nodelist' parameter aguments, i.e.
-      nodelist=&lt;node1>[,&lt;node2>][,&lt;node3>]
+        <b>/var/lib/nova</b>, then moving or deleting the instances will be necessary. It may be
+      possible to migrate instances to a different compute node. <codeblock>nova live-migration --block-migrate [&lt;target compute host>]</codeblock>
+      <!--See
+      HNOV-240 for details of alternative instance backup mechanism.--> When the node
+      is ready to be restored, the process for re-introducing it will depend on the actions
+      performed to repair it. If it was simply rebooted to introduce new software, etc. then running
+      the <b>hlm-start.yml</b> playbook will suffice. If needed, use <b>bm-power-up.yml </b>playbook
+      to restart the node. Specify just the node(s) you want to start in the 'nodelist' parameter
+      aguments, i.e. nodelist=&lt;node1>[,&lt;node2>][,&lt;node3>]
       <codeblock>cd ~/helion/hos/ansible
               ~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-power-up.yml -e nodelist=cpn-0004</codeblock>
-      Then execute the hlm-start.yml playbook. Specifying the node(s) you want to start in the
-      'limit' parameter arguments. This parameter accepts wildcarded arguments or '@&lt;filename>'
-      to process all hosts listed in the file.
+      Then execute the <b>hlm-start.yml </b>playbook. Specifying the node(s) you want to start in
+      the 'limit' parameter arguments. This parameter accepts wildcard arguments and also
+      '@&lt;filename>' to process all hosts listed in the file.
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
                 ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit hlm004-ccp-comp0004-mgmt</codeblock>
-      If it has undergone repairs that impact disk contents then running the <b>re-image.yml</b> and
-        <b>hlm-deploy.yml </b>playbooks will be required.
-      <codeblock>cd ~/helion/hos/ansible
+      If the node has undergone repairs that impact disk contents, then running the
+        <b>re-image.yml</b> and <b>hlm-deploy.yml </b>playbooks will be required.
+      Run<codeblock>cd ~/helion/hos/ansible
                 ~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=cpn-0004</codeblock>
       Then execute the <b>hlm-start.yml</b> playbook.
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
