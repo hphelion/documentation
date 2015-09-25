@@ -103,15 +103,35 @@ mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
 enable_distributed_routing = False</codeblock></li>
         <li>Commit your cloud deploy configuration to the<xref
-            href="using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows:
-          <codeblock>cd ~/helion/hos/ansible
+            href="using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
 git add -A
-git commit -m "My config or other commit message"</codeblock></li>
+git commit -m "My config or other commit message"</codeblock>
+          <note>This step needs to be repeated any time you make changes to your configuration files
+            before you move onto the following steps. See <xref href="using_git.dita">Using Git for
+              Configuration Management</xref> for more information.</note></li>
       </ol>
+      <p>Then you need to run the following commands to complete your configuration. These commands
+        also verify your configuration is correct.</p>
+      <ol>
+        <li>Run the following playbook which confirms that there is iLo connectivity for each of
+          your nodes so that they are accessible to be re-imaged in a later step:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
+        <li>Run the configuration processor, as follows:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+      </ol>
+      <p>If you receive an error during either of these steps then there is an issue with one or
+        more of your configuration files. We recommend that you verify that all of the information
+        in each of your configuration files is correct for your environment and then commit those
+        changes to git using the instructions above.</p>
+      <p>Before re-running the Configuration Processor after fixing an error you need to run the
+        clean script detailed in the <xref
+          href="installation_troubleshooting.dita#troubleshooting_installation/configproc"
+          >Installation Troubleshooting</xref> document.</p>
     </section>
     <section conref="bare_installation_kvm.dita#install_kvm/CobblerDeploy"/>
     <section conref="bare_installation_kvm.dita#install_kvm/NodeProvision"/>
-    <section conref="bare_installation_kvm.dita#install_kvm/run-config-processor"/>
     <section conref="bare_installation_kvm.dita#install_kvm/deploy"/>
     <section id="prepAndDeploy">
       <title>Prepare and Deploy ESX Computes and OVSvAPPs </title>
