@@ -1872,8 +1872,7 @@ node reset --help</codeblock>
       </table>
       <p>
         <note>
-          <codeph>node reset factory</codeph>, which returns the VM to its state prior to first
-          boot, is no longer a supported operation.</note>
+          <codeph>node reset factory</codeph> is no longer a supported operation.</note>
       </p></section>
       <section id="kato-command-ref-node-retire"><title>Node Retire</title>
       <p>Gracefully retires a DEA node from the cluster. New instances of the apps are started on
