@@ -90,6 +90,10 @@
               be specified if a trove database is used.".</codeph> The cluster will not be created.
             This is a current limitation in the Helion Development Platform.</dd>
         </dlentry>
+        <dlentry>
+          <dt>Multiple Admin Password Prompts During Patch</dt>
+          <dd>When patching, the admin will be prompted for the password at least once and usually multiple times. This is a known issue.</dd>
+        </dlentry>
       </dl>
     </section>
 <section><title>Fixes, Changes and Updates</title> 

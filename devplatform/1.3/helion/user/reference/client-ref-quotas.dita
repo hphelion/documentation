@@ -44,323 +44,331 @@
 <p>Reconfigure the named quota definition.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-<entry>
-<b>Option</b>
-</entry>
-<entry>
-<b>Description</b>
-</entry>
-</row>
-<row>
-<entry>--allow-sudo</entry>
-<entry>Applications can use sudo in their container.</entry>
-</row>
-<row>
-    <entry>--droplets</entry>
-    <entry> Limit for the number of droplets per application that are stored (older droplets that exceed this quota are removed and their associated versions can no longer be restored). This option is new in Helion <tm tmtype="reg">OpenStack</tm> 1.1</entry>
-  </row>
-<row>
-<entry>--mem</entry>
-<entry>Amount of memory applications can use. Use the suffices 'M' and 'G' for the convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be specified as fractions.</entry>
-</row>
-<row>
-<entry>--no-allow-sudo</entry>
-<entry>Complementary alias of --allow-sudo.</entry>
-</row>
-<row>
-<entry>--no-paid-services-allowed</entry>
-<entry>Complementary alias of --paid-services-allowed.</entry>
-</row>
-<row>
-<entry>--no-trial-db-allowed</entry>
-<entry>Complementary alias of --trial-db-allowed. Applies to Helion OpenStack 1.0 only.</entry>
-</row>
-<row>
-<entry>--paid-services-allowed</entry>
-<entry>Applications can use non-free services.</entry>
-</row>
-<row>
-    <entry>--routes</entry>
-    <entry>Limit for the number of routes in the quota.</entry>
-  </row>
-<row>
-<entry>--services</entry>
-<entry>Limit for the number of services in the quota.</entry>
-</row>
-<row>
-<entry>--target</entry>
-<entry>The once-off target to use for the current operation.</entry>
-</row>
-<row>
-<entry>--token</entry>
-<entry>The once-off authentication token to use for the current
-operation.</entry>
-</row>
-<row>
-<entry>--token-file</entry>
-<entry>Path to an existing and readable file containing the targets and
-authorization tokens.</entry>
-</row>
-<row>
-<entry>--trial-db-allowed</entry>
-<entry>Applications can use trial databases. Applies to Helion OpenStack 1.0 only.</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="3.88*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--allow-sudo</entry>
+              <entry>Applications can use sudo in their container.</entry>
+            </row>
+            <row>
+              <entry>--droplets</entry>
+              <entry> Limit for the number of droplets per application that are stored (older
+                droplets that exceed this quota are removed and their associated versions can no
+                longer be restored). This option is new in Helion <tm tmtype="reg">OpenStack</tm>
+                1.1</entry>
+            </row>
+            <row>
+              <entry>--mem</entry>
+              <entry>Amount of memory applications can use. Use the suffices 'M' and 'G' for the
+                convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes
+                are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be
+                specified as fractions.</entry>
+            </row>
+            <row>
+              <entry>--no-allow-sudo</entry>
+              <entry>Complementary alias of --allow-sudo.</entry>
+            </row>
+            <row>
+              <entry>--no-paid-services-allowed</entry>
+              <entry>Complementary alias of --paid-services-allowed.</entry>
+            </row>
+            <row>
+              <entry>--no-trial-db-allowed</entry>
+              <entry>Complementary alias of --trial-db-allowed. Applies to Helion OpenStack 1.0
+                only.</entry>
+            </row>
+            <row>
+              <entry>--paid-services-allowed</entry>
+              <entry>Applications can use non-free services.</entry>
+            </row>
+            <row>
+              <entry>--routes</entry>
+              <entry>Limit for the number of routes in the quota.</entry>
+            </row>
+            <row>
+              <entry>--services</entry>
+              <entry>Limit for the number of services in the quota.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+            <row>
+              <entry>--trial-db-allowed</entry>
+              <entry>Applications can use trial databases. Applies to Helion OpenStack 1.0
+                only.</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="command-quota-create"> <title>helion quota create &lt;<i>name</i>&gt;</title> 
 <p>Create a new quota definition.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-<entry>
-<b>Option</b>
-</entry>
-<entry>
-<b>Description</b>
-</entry>
-</row>
-<row>
-<entry>--allow-sudo</entry>
-<entry>Applications can use sudo in their container.</entry>
-</row>
-<row>
-    <entry>--droplets</entry>
-    <entry> Limit for the number of droplets per application that are stored (older droplets that exceed this quota are removed and their associated versions can no longer be restored). This option is new in Helion OpenStack 1.1</entry>
-  </row>
-<row>
-<entry>--mem</entry>
-<entry>Amount of memory applications can use. Use the suffices 'M' and 'G' for the convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be specified as fractions.</entry>
-</row>
-<row>
-<entry>--no-allow-sudo</entry>
-<entry>Complementary alias of --allow-sudo.</entry>
-</row>
-<row>
-<entry>--no-paid-services-allowed</entry>
-<entry>Complementary alias of --paid-services-allowed.</entry>
-</row>
-<row>
-<entry>--no-trial-db-allowed</entry>
-<entry>Complementary alias of --trial-db-allowed. Applies to Helion OpenStack 1.0 only.</entry>
-</row>
-<row>
-<entry>--paid-services-allowed</entry>
-<entry>Applications can use non-free services.</entry>
-</row>
-<row>
-    <entry>--routes</entry>
-    <entry>Limit for the number of routes in the quota.</entry>
-  </row>
-<row>
-<entry>--services</entry>
-<entry>Limit for the number of services in the quota.</entry>
-</row>
-<row>
-<entry>--target</entry>
-<entry>The once-off target to use for the current operation.</entry>
-</row>
-<row>
-<entry>--token</entry>
-<entry>The once-off authentication token to use for the current
-operation.</entry>
-</row>
-<row>
-<entry>--token-file</entry>
-<entry>Path to an existing and readable file containing the targets and
-authorization tokens.</entry>
-</row>
-<row>
-<entry>--trial-db-allowed</entry>
-<entry>Applications can use trial databases. Applies to Helion OpenStack 1.0 only.</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="3.35*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--allow-sudo</entry>
+              <entry>Applications can use sudo in their container.</entry>
+            </row>
+            <row>
+              <entry>--droplets</entry>
+              <entry> Limit for the number of droplets per application that are stored (older
+                droplets that exceed this quota are removed and their associated versions can no
+                longer be restored). This option is new in Helion OpenStack 1.1</entry>
+            </row>
+            <row>
+              <entry>--mem</entry>
+              <entry>Amount of memory applications can use. Use the suffices 'M' and 'G' for the
+                convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes
+                are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be
+                specified as fractions.</entry>
+            </row>
+            <row>
+              <entry>--no-allow-sudo</entry>
+              <entry>Complementary alias of --allow-sudo.</entry>
+            </row>
+            <row>
+              <entry>--no-paid-services-allowed</entry>
+              <entry>Complementary alias of --paid-services-allowed.</entry>
+            </row>
+            <row>
+              <entry>--no-trial-db-allowed</entry>
+              <entry>Complementary alias of --trial-db-allowed. Applies to Helion OpenStack 1.0
+                only.</entry>
+            </row>
+            <row>
+              <entry>--paid-services-allowed</entry>
+              <entry>Applications can use non-free services.</entry>
+            </row>
+            <row>
+              <entry>--routes</entry>
+              <entry>Limit for the number of routes in the quota.</entry>
+            </row>
+            <row>
+              <entry>--services</entry>
+              <entry>Limit for the number of services in the quota.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+            <row>
+              <entry>--trial-db-allowed</entry>
+              <entry>Applications can use trial databases. Applies to Helion OpenStack 1.0
+                only.</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="command-quota-delete"> <title>helion quota delete &lt;<i>name</i>&gt;</title> 
 <p>Delete the named quota definition.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-<entry>
-<b>Option</b>
-</entry>
-<entry>
-<b>Description</b>
-</entry>
-</row>
-<row>
-<entry>--target</entry>
-<entry>The once-off target to use for the current operation.</entry>
-</row>
-<row>
-<entry>--token</entry>
-<entry>The once-off authentication token to use for the current
-operation.</entry>
-</row>
-<row>
-<entry>--token-file</entry>
-<entry>Path to an existing and readable file containing the targets and
-authorization tokens.</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="8.26*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="command-quota-list"> <title>helion quota list</title> 
 <p>List the available quota definitions.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-<entry>
-<b>Option</b>
-</entry>
-<entry>
-<b>Description</b>
-</entry>
-</row>
-<row>
-<entry>--json</entry>
-<entry>Print raw json as output, not human-formatted data.</entry>
-</row>
-<row>
-<entry>--target</entry>
-<entry>The once-off target to use for the current operation.</entry>
-</row>
-<row>
-<entry>--token</entry>
-<entry>The once-off authentication token to use for the current
-operation.</entry>
-</row>
-<row>
-<entry>--token-file</entry>
-<entry>Path to an existing and readable file containing the targets and
-authorization tokens.</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="7.33*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--json</entry>
+              <entry>Print raw json as output, not human-formatted data.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="command-quota-rename"> <title>helion quota rename &lt;<i>name</i>&gt; &lt;<i>NewName</i>&gt;</title> 
 <p>Rename the named quota definition.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-<entry>
-<b>Option</b>
-</entry>
-<entry>
-<b>Description</b>
-</entry>
-</row>
-<row>
-<entry>--target</entry>
-<entry>The once-off target to use for the current operation.</entry>
-</row>
-<row>
-<entry>--token</entry>
-<entry>The once-off authentication token to use for the current
-operation.</entry>
-</row>
-<row>
-<entry>--token-file</entry>
-<entry>Path to an existing and readable file containing the targets and
-authorization tokens.</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="7.33*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="command-quota-show"> <title>helion quota show &lt;<i>name</i>&gt;</title> 
 <p>Show the details of the named quota definition. If not specified it will be asked for interactively (menu).</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-<entry>
-<b>Option</b>
-</entry>
-<entry>
-<b>Description</b>
-</entry>
-</row>
-<row>
-<entry>--json</entry>
-<entry>Print raw json as output, not human-formatted data.</entry>
-</row>
-<row>
-<entry>--target</entry>
-<entry>The once-off target to use for the current operation.</entry>
-</row>
-<row>
-<entry>--token</entry>
-<entry>The once-off authentication token to use for the current
-operation.</entry>
-</row>
-<row>
-<entry>--token-file</entry>
-<entry>Path to an existing and readable file containing the targets and
-authorization tokens.</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="7.7*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--json</entry>
+              <entry>Print raw json as output, not human-formatted data.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="command-quotas"> <title>helion quotas</title> 
 <p>List the available quota definitions.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-<entry>
-<b>Option</b>
-</entry>
-<entry>
-<b>Description</b>
-</entry>
-</row>
-<row>
-<entry>--json</entry>
-<entry>Print raw json as output, not human-formatted data.</entry>
-</row>
-<row>
-<entry>--target</entry>
-<entry>The once-off target to use for the current operation.</entry>
-</row>
-<row>
-<entry>--token</entry>
-<entry>The once-off authentication token to use for the current
-operation.</entry>
-</row>
-<row>
-<entry>--token-file</entry>
-<entry>Path to an existing and readable file containing the targets and
-authorization tokens.</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="7.33*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--json</entry>
+              <entry>Print raw json as output, not human-formatted data.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 </body>
