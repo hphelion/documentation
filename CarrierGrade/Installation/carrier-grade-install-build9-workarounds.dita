@@ -18,8 +18,17 @@
       <title>Workarounds to be followed when hdeploy with Build#9 fails</title>
       <p>If the <codeph>hdeploy</codeph> script in build 9 fails, review the topics in this section
         for troubleshooting.</p>
+      <p>
+        <ul id="ul_a5g_3k1_mt">
+          <li><xref href="#topic10581/apache" format="dita"/></li>
+          <li><xref href="#topic10581/vrg" format="dita"/></li>
+          <li><xref href="#topic10581/nova" format="dita"/></li>
+          <li><xref href="#topic10581/stackrc" format="dita"/></li>
+          <li><xref href="#topic10581/rabbitmq" format="dita"/></li>
+        </ul>
+      </p>
     </section>
-    <section>
+    <section id="apache">
       <title>Apache2 Failure During hdeploy</title>
     <p>If the <codeph>hdeploy</codeph> script fails to restart the Apache v2 web server, the problem
         can be with the configuration of the Attis role. </p>
@@ -51,7 +60,7 @@
       <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">the KVM +
           ESX installation</xref>.</p>
     </section>
-    <section><title>VRG Failure During hdeploy</title>
+    <section id="vrg"><title>VRG Failure During hdeploy</title>
     
     <p>If the DCN installation packages fail to install, do the following:</p>
       <ol>
@@ -79,7 +88,7 @@
           option: <codeblock>hdeploy –t &lt;cloudname&gt;</codeblock></li></ol>
       <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy">the KVM + ESX installation</xref>.</p>
     </section>
-    <section><title>nova-compute is down after cloud deploy</title> As a workaround, comment the
+    <section id="nova"><title>nova-compute is down after cloud deploy</title> As a workaround, comment the
       line <codeph>log_config_append = /etc/nova/logging.conf</codeph> in
         <codeph>/etc/nova/nova.conf </codeph>on compute node. Restart <codeph>nova-compute</codeph>
       service on the compute-proxy node and all nova servcies on controllers. </section>
@@ -110,7 +119,7 @@ Restart Icinga2 service ==> service icinga2 restart.
 Access Icinga-Web
 http://&lt;CLM-VIP>/icinga-web
   Credentials: root / password        </codeblock></section>
-    <section><title>stackrc should have right variable names with unset command</title>
+    <section id="stackrc"><title>stackrc should have right variable names with unset command</title>
       <p>Remove all the values highlighted below and source stackrc again</p>
       <codeblock>export OS_PASSWORD=0nOIyeQTy
 export OS_USERNAME=admin
@@ -124,7 +133,7 @@ unset OS_USER_DOMAIN_ID=default
 unset OS_IDENTITY_API_VERSION=3
 unset OS_AUTH_VERSION=3</codeblock>
     </section>
-    <section><title>hdeploy failure during swift role configuration</title>
+    <section id="rabbitmq"><title>hdeploy failure during swift role configuration</title>
       
       <p>If you experience errors during swift role configurations, as shown in the following error messages, perform the following
         perform the following tasks to recover the RabbitMQ Cluster</p> 
