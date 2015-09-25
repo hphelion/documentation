@@ -3059,7 +3059,10 @@ patch revert [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;</codeblock>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="kato-command-ref-relocate"> <title>Relocate</title>
-<p>Move containers, application droplets, or services to a new mount point or filesystem location.</p>
+<p>Move containers, application droplets, or services to a new mount point or filesystem
+          location.<note>This command stops all roles and does <b>not</b> restart them after
+          execution. This behavior permits performing multiple sequential <codeph>relocate</codeph>
+          commands.</note></p>
 <p>
   <b>Syntax</b>
 </p>
