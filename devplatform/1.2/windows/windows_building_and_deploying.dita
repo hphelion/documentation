@@ -110,7 +110,7 @@
 <b>Note:</b> A Windows DEA and a SQL Server <b>cannot</b> both exist on the same image. You will need to create an image for each one.</p>
 </section>
 <section id="step-1-create-a-glazier-virtual-machine"> <title>Step 1: Create a Glazier Virtual Machine</title>
-<p>This VM is used to create the images for the guest OS.</p>
+<p>This VM is used to create the images for the guest operating system.</p>
 <ol>
 <li>Open Terminal and change to the Glazier directory where you extracted the tool.</li>
 <li>
@@ -130,7 +130,7 @@
 <li>When the tool finishes, you will see a command prompt open in a Virtual Box instance. </li>
 </ol>
 </section>
-<section id="step-2-create-and-initialize-the-os-windows-dea-image"> <title>Step 2: Create and Initialize the OS Windows DEA Image</title>
+<section id="step-2-create-and-initialize-the-os-windows-dea-image"> <title>Step 2: Create and Initialize the Windows DEA Image</title>
 <ol>
 <li>
 <p>In the Glazier VM command prompt that opens after the end of the previous step, run the following command:</p>
@@ -143,7 +143,7 @@
 <li>Once the image gets created, the image will be initialized automatically.</li>
 </ol>
 </section>
-<section id="step-3-create-and-initialize-the-os-sql-server-express-2012-image-optional"> <title>Step 3: Create and Initialize the OS SQL Server Express 2012 Image (Optional)</title>
+<section id="step-3-create-and-initialize-the-os-sql-server-express-2012-image-optional"> <title>Step 3: Create and Initialize the SQL Server Express 2012 Image (Optional)</title>
 <ol>
 <li>
 <p>In the Glazier VM command prompt, run the following command:</p>
@@ -158,7 +158,7 @@
 </li>
 </ol>
 </section>
-<section id="step-4-create-and-initialize-the-os-sql-server-express-2014-image-optional"> <title>Step 4: Create and Initialize the OS SQL Server Express 2014 Image (Optional)</title>
+<section id="step-4-create-and-initialize-the-os-sql-server-express-2014-image-optional"> <title>Step 4: Create and Initialize the SQL Server Express 2014 Image (Optional)</title>
 <ol>
 <li>
 <p>In the Glazier VM command prompt, run the following command:</p>
