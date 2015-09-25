@@ -178,12 +178,6 @@ ilo_password: "password"
     <!--<section><title>OpenStack Services inlcuded in HP Helion OpenStack</title><p>The following table list a high level overview of  the OpenStack projects/services which are included in HP Helion OpenStack and their status. Only official upstream OpenStack projects are included, not non-OpenStack add-ons that originate elsewhere. <note>If the service is not listed in the table then it is not present in HP Helion OpenStack.</note></p><p><simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_q2l_d1c_lt"><strow><stentry>Service Name</stentry><stentry>Status in HOS 2.0</stentry></strow><strow><stentry>Barbican</stentry><stentry>Not Included</stentry></strow><strow><stentry>Ceilometer</stentry><stentry>GA</stentry></strow><strow><stentry>Cinder</stentry><stentry>GA</stentry></strow><strow><stentry>Designate</stentry><stentry>In-Cloud Service (Installed Separately)</stentry></strow><strow><stentry>Glance</stentry><stentry>GA</stentry></strow><strow><stentry>Heat</stentry><stentry>GA</stentry></strow><strow><stentry>Horizon</stentry><stentry>GA</stentry></strow><strow><stentry>Ironic</stentry><stentry>Not Included</stentry></strow><strow><stentry>Keystone</stentry><stentry>GA</stentry></strow><strow><stentry>Magnum</stentry><stentry>Not Included</stentry></strow><strow><stentry>Manila</stentry><stentry>Not Included</stentry></strow><strow><stentry>Monasca</stentry><stentry>GA</stentry></strow><strow><stentry>Neutron</stentry><stentry>GA</stentry></strow><strow><stentry>Neutron-FWaaS</stentry><stentry>non-core</stentry></strow><strow><stentry>Neutron-LBaaS v1</stentry><stentry>Not recommended</stentry></strow><strow><stentry>Neutron-LBaaS v2</stentry><stentry>non-core</stentry></strow><strow><stentry>Neutron-Octavia</stentry><stentry>non-core (TBC)</stentry></strow><strow><stentry>Neutron-VPNaaS</stentry><stentry>non-core</stentry></strow><strow><stentry>Nova</stentry><stentry>GA</stentry></strow><strow><stentry>Swift</stentry><stentry>GA</stentry></strow><strow><stentry>Tempest</stentry><stentry>GA</stentry></strow></simpletable></p></section>-->
     <section id="KnownIssues">
       <title>Limitations in this Release</title>
-      <p><b>Helion Examples</b></p>
-      <p>The <codeph>~/helion/examples</codeph> directory contains a folder named "mid-size." This
-        configuration is known not to work with the Beta 2 version of HP Helion OpenStack and should
-        not be deployed.</p>
-      <p>See <xref href="supportedconfigs.dita">Supported Configuration</xref> for the current list
-        of supported configurations.</p>
       <p><b>TLS is not supported</b></p>
       <p>TLS is not supported for any traffic in Beta 2.</p>
       <p><b>HP Helion Development Platform</b></p>
@@ -329,37 +323,30 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <note>When using the Launch Instance action in the Volumes table, the Launch Instance Wizard
         form doesn't get pre-populated with the Volumes option selected, nor does it select the
         given Volume.</note>
-      <!--<p><b>Networks</b></p>
-      <p>
-        <ul id="ul_rlg_dbg_ys">
-          <li>Multiple NICs on a compute node and each NIC is connected to a different external
-            network. Today we don't support multiple external networks at L2 (ML2 OVS mech driver)
-            nor L3 (DVR or Centralized).</li>
-        </ul>
-      </p>-->
-      <!--<p>Need use cases/stories </p>
-    <p>* ability to span L3</p>
-    <p>* multiple provider networks/separation of traffic</p>
-    <p>* two pools for fip to span networks/different fip pools</p>
-    <p>* talk to multiple networks</p>
-    <p> </p>
-    <p>[06/02/15]</p>
-    <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
-    <p> </p>-->
-      <!--  <p><b>Cinder</b></p><ul id="ul_vld_l1g_ys">
-        <li>
-          <p>Core cinder services are all being installed and configured via the installer. </p>
-        </li>
-        <li>
-          <p>Cinder installation with VSA as a backend is being worked through at the moment, manual
-            steps to be defined later may be required to complete installation.</p>
-        </li>
-      </ul>-->
-      <!--
-      <p><b>Cinder Limitations</b></p>
-      <ul>
-        <li>3Par storage is not supported in Beta 2</li>
-      </ul>-->
+      <p id="nondedicateddeployerworkaround"><b>Issue with Apache If You Use a Non-Dedicated
+          Deployer Setup</b></p>
+      <p>If you choose to use a combined deployer/controller node during the installation process,
+        there is an Apache configuration used to allow the installer UI to work that prevents the
+        controller from responding to API calls. If you are using a HA 3-node cluster for your
+        control plane then this will present as intermittent errors as your first controller won't
+        always be the one hit.</p>
+      <p>To resolve this issue you can remove this Apache configuration file. If you are using the
+        installer UI you would want to wait to do this step until after your installation.</p>
+      <p>To remove this Apache configuration you can run these commands from your deployer:</p>
+      <ol>
+        <li>To remove the configuration, run this command:
+          <codeblock>sudo rm /etc/apache2/sites-enabled/dayzero-apache.conf</codeblock></li>
+        <li>To restart Apache for the change to take affect, run this command:
+          <codeblock>sudo service apache2 reload</codeblock></li>
+      </ol>
+      <p>If you don't want to remove this configuration but simply want to move it, you can do that
+        by using these commands:</p>
+      <ol>
+        <li>To move the configuration file:
+          <codeblock>sudo mv /etc/apache2/sites-enabled/dayzero-apache.conf /etc/apache2/sites-available/dayzero-apache.conf</codeblock></li>
+        <li>To restart Apache for the change to take affect, run this command:
+          <codeblock>sudo service apache2 reload</codeblock></li>
+      </ol>
     </section>
   </body>
 </topic>
