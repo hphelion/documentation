@@ -30,7 +30,8 @@
 patch -p1 &lt; ../knc-horizon-helion-theme-dashboard.patch</codeblock>
           </p></li>
         <li>Execute the  following command to integrate the patches into the installation environment:<p>
-            <codeblock>./hlm_prepare-env.sh</codeblock>
+            <codeblock>cd ~/cg-hlm/hlm-build
+./hlm_prepare-env.sh</codeblock>
           </p><p>When the <codeph>hcfgproc</codeph> command is executed, the updated configuration
             file will be used. </p></li>
       </ol>
