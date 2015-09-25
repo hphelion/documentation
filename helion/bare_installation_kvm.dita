@@ -186,9 +186,16 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       </ol>
       <p>If you receive an error during either of these steps then there is an issue with one or
         more of your configuration files. We recommend that you verify that all of the information
-        in each of your configuration files is correct for your environment. You can read <xref
-          href="input_model.dita">Helion OpenStack 2.0 Input Model</xref> for details about what
-        each of the values mean.</p>
+        in each of your configuration files is correct for your environment and then commit those
+        changes to git using the instructions above.</p>
+      <p>Before re-running the Configuration Processor after fixing an error you need to run the
+        clean script below:</p>
+      <ol>
+        <li><codeblock>cd ~/helion/hos/ansible
+          ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock></li>
+        <li><codeblock>cd ~/helion/hos/ansible
+          ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+      </ol>
     </section>
     <section id="CobblerDeploy">
       <title>Deploy Cobbler </title>
