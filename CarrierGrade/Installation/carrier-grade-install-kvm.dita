@@ -278,6 +278,12 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
           </ol></li>
       </ol>
     </section>
+    <section id="verify-json">
+      <title>Verify the JSON files</title>
+      <p>After editing the JSON files, validate each JSON file to make sure there are no syntax
+        errors using the tool of your preference. For example, using the Python json.tool: </p>
+      <codeblock>python -m json.tool &lt;filename>.json</codeblock>
+    </section>
     <section id="pxe-boot">
       <title>Configure PXE boot</title>
       <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE
@@ -308,7 +314,6 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
             nodes are provisioned, make sure the <codeph>nodes.json</codeph> file is generated and
             that you can establish a password-less SSH connection to these nodes from HLM
           VM.</p></li>
-
         <li>Configure the back-end drivers to enable management of the OpenStack Block Storage
           volumes in the KVM region equipped with 3PAR and/or VSA storage arrays. The HP Block
           Storage (Cinder) service allows you to configure multiple storage back-ends. Use the
@@ -356,9 +361,9 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
                   </tbody>
                 </tgroup>
               </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select
-                both if you have respective storage arrays </p><p id="storage"><b>For 3PAR storage </b>: Edit the
-                  <codeph>cinder_conf.hp3parSample</codeph> file to configure the 3PAR settings. For
-                example:</p><codeblock>[DEFAULT]
+                both if you have respective storage arrays </p><p id="storage"><b>For 3PAR storage
+                </b>: Edit the <codeph>cinder_conf.hp3parSample</codeph> file to configure the 3PAR
+                settings. For example:</p><codeblock>[DEFAULT]
 enabled_backends=hp3par
 
 [hp3par]
@@ -419,10 +424,16 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
               </p></li>
             <li>Save the file to <codeph>cinder_conf</codeph>.</li>
           </ol></li>
-        <li>After editing the JSON files, validate each JSON file to make sure there are no
-          syntactical errors using the tool of your preference. For example, using the Python
-          json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>
-      </ol></section>
+      </ol>
+    </section>
+    <section>
+      <title>Deploy the Configuration Processor Patches</title>
+      <p>Before launching the HP Helion OpenStack cloud in the following section, deploy two patches
+        to update required configuration files. </p>
+      <p>See the README in the download or <xref
+          href="carrier-grade-install-config-patch.dita#topic10581">Deploying the Configuration
+          Processor Patches</xref>.</p>
+    </section>
     
     <section>
       <title>Deploy the HP Helion OpenStack cloud</title>
@@ -445,6 +456,12 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
             region.</p></li>
       </ol>
     </section>
+    <section><title>Deploy the Role Generator Patches</title>After launching the hdeploy command,
+      deploy two following patches to correct the following issues: <ul id="ul_emj_1cb_mt">
+        <li>The floating IP assigned to the HLM VM not pingable with DCNR3 and VSD managed networks. </li>
+        <li>The installation fails due to excessive ESX logs</li>
+      </ul><p>For information, see <xref href="carrier-grade-install-role-patch.dita#topic10581"
+          >Deploying the Role Generator Patches</xref>.</p></section>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
       <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
