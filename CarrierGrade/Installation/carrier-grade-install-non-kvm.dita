@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Installing the Non-KVM
+    Region</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>
+      <!--UNDER REVISION-->
+      <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
+      <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
+    <p>After the Helion Lifecycle Management (HLM) is installed, the next task is to deploy the HP
+      Helion Openstack cloud into the non-KVM region.</p>
+    <p>If you are installing the KVM deployment, see  <xref
+      href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref></p>
+    <p>If you are installing the KVM with DCN deployment, see<xref
+      href="carrier-grade-install-kvm-dcn.dita#topic10581">Installing the KVM with DCN Deployment</xref></p>
+    <p>If you are installing the KVM + ESX deployment, see <xref
+        href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the KVM + ESX
+        Deployment</xref>.</p>
+  </body>
+</topic>

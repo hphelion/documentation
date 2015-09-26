@@ -27,43 +27,47 @@
         <topichead navtitle="Deploying the Non-KVM Region">
             <topicref href="carrier-grade-install-hlm-vm.dita"
                 navtitle="Deploying the HLM VM and Installation Services" locktitle="yes"/>
-            <topicref href="carrier-grade-install-kvm.dita" navtitle="Installing the KVM Deployment"
-                locktitle="yes">
-                <topicref href="carrier-grade-install-pb-kvm-only-json.dita"
-                    navtitle="Sample JSON File for Installing the KVM Deployment" locktitle="yes"
-                    toc="no"/>
+            <topicref href="carrier-grade-install-non-kvm.dita"
+                navtitle="Installing the Non-KVM Region" locktitle="yes">
+                <topicref href="carrier-grade-install-kvm.dita"
+                    navtitle="Installing the KVM Deployment" locktitle="yes">
+                    <topicref href="carrier-grade-install-pb-kvm-only-json.dita"
+                        navtitle="Sample JSON File for Installing the KVM Deployment"
+                        locktitle="yes" toc="no"/>
+                </topicref>
+                <topicref href="carrier-grade-install-kvm-dcn.dita"
+                    navtitle="Installing the KVM with DCN Deployment" locktitle="yes"/>
+                <topicref href="carrier-grade-install-kvm-esx-GA.dita"
+                    navtitle="Installing the KVM + ESX Deployment" locktitle="yes">
+                    <topicref href="carrier-grade-install-pb-kvm-node-json.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-pb-kvm-def-json.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-pb-kvm-ansible-json.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-pb-kvm-env-json.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-pb-kvm-machine-json-bonded.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-pb-kvm-esx-json.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-pb-kvm-wr-json.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-pb-kvm-ldap-json.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-hcfgproc-output.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-vsvapp.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-vsd-license.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-vsd-user.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-config-ldap3.dita" toc="no"
+                        navtitle="Configuring LDAP 3" locktitle="yes"/>
+                    <topicref href="carrier-grade-install-disable-root.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-config-patch.dita"
+                        navtitle="Deploying the Configuration Processor Patch" locktitle="yes"
+                        toc="no"/>
+                    <topicref href="carrier-grade-install-role-patch.dita" toc="no"/>
+                    <topicref href="carrier-grade-install-build9-workarounds.dita" toc="no"/>
+                </topicref>
+                <topicref href="carrier-grade-install-launch-horizon.dita"
+                    navtitle="Launching the Horizon Interface" locktitle="yes"/>
+                <topicref href="carrier-grade-install-config-dcn.dita"
+                    navtitle="Configuring the DCN Components" locktitle="yes"/>
+                <topicref href="carrier-grade-install-access-kibana.dita" toc="no"/>
             </topicref>
-            <topicref href="carrier-grade-install-kvm-dcn.dita"
-                navtitle="Installing the KVM with DCN Deployment" locktitle="yes"/>
-            <topicref href="carrier-grade-install-kvm-esx-GA.dita"
-                navtitle="Installing the KVM + ESX Deployment" locktitle="yes">
-                <topicref href="carrier-grade-install-pb-kvm-node-json.dita" toc="no"/>
-                <topicref href="carrier-grade-install-pb-kvm-def-json.dita" toc="no"/>
-                <topicref href="carrier-grade-install-pb-kvm-ansible-json.dita" toc="no"/>
-                <topicref href="carrier-grade-install-pb-kvm-env-json.dita" toc="no"/>
-                <topicref href="carrier-grade-install-pb-kvm-machine-json-bonded.dita" toc="no"/>
-                <topicref href="carrier-grade-install-pb-kvm-esx-json.dita" toc="no"/>
-                <topicref href="carrier-grade-install-pb-kvm-wr-json.dita" toc="no"/>
-                <topicref href="carrier-grade-install-pb-kvm-ldap-json.dita" toc="no"/>
-                <topicref href="carrier-grade-install-hcfgproc-output.dita" toc="no"/>
-                <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
-                <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
-                <topicref href="carrier-grade-install-vsvapp.dita" toc="no"/>
-                <topicref href="carrier-grade-install-vsd-license.dita" toc="no"/>
-                <topicref href="carrier-grade-install-vsd-user.dita" toc="no"/>
-                <topicref href="carrier-grade-install-config-ldap3.dita" toc="no"
-                    navtitle="Configuring LDAP 3" locktitle="yes"/>
-                <topicref href="carrier-grade-install-disable-root.dita" toc="no"/>
-                <topicref href="carrier-grade-install-config-patch.dita"
-                    navtitle="Deploying the Configuration Processor Patch" locktitle="yes" toc="no"/>
-                <topicref href="carrier-grade-install-role-patch.dita" toc="no"/>
-                <topicref href="carrier-grade-install-build9-workarounds.dita" toc="no"/>
-            </topicref>
-            <topicref href="carrier-grade-install-launch-horizon.dita"
-                navtitle="Launching the Horizon Interface" locktitle="yes"/>
-            <topicref href="carrier-grade-install-config-dcn.dita"
-                navtitle="Configuring the DCN Components" locktitle="yes"/>
-            <topicref href="carrier-grade-install-access-kibana.dita" toc="no"/>
         </topichead>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita" navtitle="Deploying the KVM Region"
             locktitle="yes">
@@ -71,8 +75,8 @@
                 navtitle="Configuring the KVM Region Hosts" locktitle="yes"/>
             <topicref href="carrier-grade-install-metadata.dita" toc="no"
                 navtitle="Configuring the DCN Metadata Agent" locktitle="yes"/>
-            <topicref href="carrier-grade-install-ldap-verify.dita"
-                navtitle="Verifying the LDAP Deployment" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
         </topicref>
+        <topicref href="carrier-grade-install-ldap-verify.dita"
+            navtitle="Verifying the LDAP Deployment" locktitle="yes"/>
     </topicref></map>
