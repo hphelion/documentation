@@ -16,7 +16,7 @@
   <body>
     <p>This topic describes all the known issues that you might encounter. </p>
     <section>
-      <title>VM failure to get private/Fixed IP address</title>
+      <title>VM fails to get private/Fixed IP address</title>
       <p>
         <b>System Behavior/Message</b>
       </p>
@@ -49,6 +49,20 @@
       <p>ETH0 is active</p>
       <p>ETH1 is off</p>
       <p>UNTAGGED TUL on NIANTICS on DCN, VRS and WR Computes</p>
+    </section>
+    <section>
+      <title>Backup storage size should be at least 120GB</title>
+      <p>If you experience the following error, you can edit the <codeph>region_config</codeph> file
+        for the KVM region to increase the default storage.</p>
+      <p><image href="../../media/CGH-trouble-storage.png" width="400" id="image_ehc_qjc_mt"/></p>
+      <p>
+        <ol id="ol_vcj_rjc_mt">
+          <li>Log into the KVM region controller-0.</li>
+          <li>Edit the <codeph>./&lt;cloud name&gt;/clouds/&lt;cloud
+              name&gt;/001/stage/windriver-config/region_config</codeph> file to update the
+              <codeph>backup_storage</codeph> value to 120 or higher.</li>
+        </ol>
+      </p>
     </section>
     <section><title>See Also</title>
       <p>For troubleshooting tips related to the HP Helion OpenStack cloud, see <xref

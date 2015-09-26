@@ -25,14 +25,12 @@
       <ol id="ol_pn3_141_mt">
         <li>Download the <codeph>fip_patch</codeph> drectory and <codeph>logrotate_patch</codeph>
           directroy and the <codeph>role-generator.py</codeph> file.</li>
-        <li>Copy the <codeph>fip_patch.tar.gz</codeph> and <codeph>metadata.tar.gz</codeph> files to
-          the <codeph>~/&lt;cloudname></codeph> directory on the HLM host. </li>
-        <li>Use the following commands to extract the compressed files: <p>
-            <codeblock>tar -zvcf fip_patch.tar.gz
-tar -zvcf metadata.tar.gz</codeblock>
-          </p></li>
+        <li>Copy  the <codeph>fip_patch</codeph> drectory and <codeph>logrotate_patch</codeph>
+          directroy and the <codeph>role-generator.py</codeph> file to the
+            <codeph>~/&lt;cloudname></codeph> directory on the HLM host. </li>
         <li>Execute the following commands to apply the patches:<p>
-            <codeblock>python role-generator.py /root/fip_patch/ apply &lt;cloudname&gt;
+            <codeblock>cd ~/&lt;cloudname&gt;
+python role-generator.py /root/fip_patch/ apply &lt;cloudname&gt;
 python role-generator.py /root/logrotate_patch/ apply &lt;cloudname&gt;</codeblock>
           </p></li>
       </ol>
