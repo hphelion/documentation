@@ -36,7 +36,7 @@
                         locktitle="yes" toc="no"/>
                 </topicref>
                 <topicref href="carrier-grade-install-kvm-dcn.dita"
-                    navtitle="Installing the KVM with DCN Deployment" locktitle="yes"/>
+                    navtitle="Installing the KVM with DCN Deployment" locktitle="yes" toc="no"/>
                 <topicref href="carrier-grade-install-kvm-esx-GA.dita"
                     navtitle="Installing the KVM + ESX Deployment" locktitle="yes">
                     <topicref href="carrier-grade-install-pb-kvm-node-json.dita" toc="no"/>

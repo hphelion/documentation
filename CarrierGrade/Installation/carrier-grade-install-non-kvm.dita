@@ -23,8 +23,7 @@
       Helion Openstack cloud into the non-KVM region.</p>
     <p>If you are installing the KVM deployment, see  <xref
       href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref></p>
-    <p>If you are installing the KVM with DCN deployment, see<xref
-      href="carrier-grade-install-kvm-dcn.dita#topic10581">Installing the KVM with DCN Deployment</xref></p>
+    <p><!--If you are installing the KVM with DCN deployment, see<xref href="carrier-grade-install-kvm-dcn.dita#topic10581">Installing the KVM with DCN Deployment</xref>--></p>
     <p>If you are installing the KVM + ESX deployment, see <xref
         href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the KVM + ESX
         Deployment</xref>.</p>

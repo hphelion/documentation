@@ -48,8 +48,7 @@
           id="ul_th3_bpb_ws">
           <li><xref href="carrier-grade-technical-overview-kvm-only.dita#topic3485">KVM Deployment
               Architecture Reference </xref></li>
-          <li><xref href="carrier-grade-technical-overview-tahoe.dita#topic3485">KVM with DCN
-              Deployment Architecture Reference </xref></li>
+        <!--<li><xref href="carrier-grade-technical-overview-tahoe.dita#topic3485">KVM with DCN Deployment Architecture Reference </xref></li>-->
           <li><xref href="carrier-grade-technical-overview-esx.dita#topic3485">KVM + ESX with DCN
               Deployment Architecture Reference </xref></li>
         </ul></p>
