@@ -14,8 +14,14 @@
     </metadata>
   </prolog>
   <body>
-    <p>This topic describes all the known issues that you might encounter. </p>
-    <section>
+    <p>This topic describes all the known issues that you might encounter:</p>
+    <ul id="ul_xzh_nmc_mt">
+      <li><xref href="#topic10581/vm" format="dita"/></li>
+      <li><xref href="#topic10581/vrs" format="dita"/></li>
+      <li><xref href="#topic10581/backup" format="dita"/></li>
+    </ul>
+    
+    <section  id="vm">
       <title>VM fails to get private/Fixed IP address</title>
       <p>
         <b>System Behavior/Message</b>
@@ -32,7 +38,7 @@
         adapter type is <codeph>ide</codeph>. Also, check if gateway and subnet values are correctly
         assigned to VRSvAPPs. </p>
     </section>
-    <section>
+    <section id="vrs">
       <title>VRSvAPPs missing in VSD dashboard</title>
       <p>
         <b>System Behavior/Message</b>
@@ -50,7 +56,7 @@
       <p>ETH1 is off</p>
       <p>UNTAGGED TUL on NIANTICS on DCN, VRS and WR Computes</p>
     </section>
-    <section>
+    <section id="backup">
       <title>Backup storage size should be at least 120GB</title>
       <p>If you experience the following error, you can edit the <codeph>region_config</codeph> file
         for the KVM region to increase the default storage.</p>
