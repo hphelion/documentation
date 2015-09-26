@@ -71,6 +71,12 @@
       <p>The output of that command will show you the VIP you should use. It is listening over port
         9095 on that VIP, so you can use the following syntax to access
         it:<codeblock>http://VIP:9095</codeblock></p>
+      <p>The default login credentials are:</p>
+      <codeblock>Username: admin
+        Password: admin</codeblock>
+      <note type="important">The credentials for your <codeph>admin</codeph> user account can be
+        changed. See <xref href="keystone/keystone_init.dita">Keystone Configuration</xref> for more
+        details.</note>
       <p>For details on the use of the Operations Console, see <xref href="opsconsole/overview.dita"
           >Operations Console Overview</xref></p>
       <b>Command-Line Interface</b>
