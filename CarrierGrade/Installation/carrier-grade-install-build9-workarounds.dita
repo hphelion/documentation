@@ -172,8 +172,7 @@ Kernel pid terminated (application_controller) ({application_start_failure,kerne
               <codeblock>ansible &lt;tier_name&gt; -i hosts -su cghelion -m apt -a "name=rabbitmq-server state=absent"
 ansible &lt;tier_name&gt; -i hosts -su cghelion -a "apt-get -y autoremove"
 ansible &lt;tier_name&gt; -i hosts -su cghelion -a "pkill -u rabbitmq"
-ansible &lt;tier_name&gt; -i hosts -su cghelion -a "rm -r /var/lib/rabbitmq" 
-echo "FND-RMQ" &gt; /tmp/deploy.role</codeblock>
+ansible &lt;tier_name&gt; -i hosts -su cghelion -a "rm -r /var/lib/rabbitmq" </codeblock>
             </p> Where <codeph>&lt;tier_name&gt;</codeph> is the control plane being deployed, for
             example: INFRA-CCP-T1.<p>For example: host=INFRA-CCP-T1-M1-NETCLM is composed
             of:</p><codeblock>tier=INFRA-CCP-T1 
