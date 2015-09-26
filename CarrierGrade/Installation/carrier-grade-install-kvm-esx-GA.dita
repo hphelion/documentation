@@ -510,7 +510,7 @@ The configuration processor completed successfully.
     <section>
       <!--<title>Applying the HLM Port Security Patch</title>This patch secures all ports on the HLM VM. The standard protocol ports will allow inbound access only and the only the cloud nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see the README in the download or <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port Security Patch</xref>. </p>-->
     </section>
-    <section><title>Deploy the Role Generator Patches</title>After launching the hdeploy command,
+    <section id="role"><title>Deploy the Role Generator Patches</title>After launching the hdeploy command,
       deploy two following patches to correct the following issues: <ul id="ul_emj_1cb_mt">
         <li>The floating IP assigned to the HLM VM not pingable with DCNR3 and VSD managed networks. </li>
         <li>The installation fails due to excessive ESX logs</li>

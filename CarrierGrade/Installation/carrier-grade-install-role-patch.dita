@@ -21,6 +21,7 @@
       <li>The floating IP assigned to the HLM VM not pingable with DCNR3 and VSD managed networks. </li>
       <li>The installation fails due to excessive ESX logs</li>
     </ul>
+    <p>To install the patches:</p>
     <p>
       <ol id="ol_pn3_141_mt">
         <li>Download the <codeph>fip_patch</codeph> drectory and <codeph>logrotate_patch</codeph>
@@ -35,9 +36,9 @@ python role-generator.py /root/logrotate_patch/ apply &lt;cloudname&gt;</codeblo
           </p></li>
       </ol>
     </p>
-    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/hos-cloud">KVM
+    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/role">KVM
       installation</xref>.</p>
-    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hos-cloud">the KVM + ESX
+    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/role">the KVM + ESX
       installation</xref>.</p>
     </body>
 </topic>
