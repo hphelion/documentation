@@ -28,6 +28,9 @@ NOVA_OS_AUTH_URL=http://10.30.3.103:5000/v2.0</codeblock><p>Where
       <li>Change the Nova API endpoint to <codeph>internalURL</codeph>:
           <codeblock># NOVA_API_ENDPOINT_TYPE=publicURL 
 NOVA_API_ENDPOINT_TYPE=internalURL</codeblock></li>
+        <li>Restart OpenvSwitch:<p>
+            <codeblock>service openvswitch restart</codeblock>
+          </p></li>
       </ol>
     </section>
   <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patches">KVM
