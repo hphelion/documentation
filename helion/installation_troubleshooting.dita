@@ -14,7 +14,7 @@
         your deployer node then it won't be able to complete.</p>
       <p>To resolve this issue, double check your nameserver in your
           <codeph>/etc/resolv.conf</codeph> file on your deployer.</p>
-      <p><b>How to re-image an existing node</b></p>
+      <p id="reimage"><b>How to re-image an existing node</b></p>
       <p>If you've already run the <codeph>cobbler-deploy.yml</codeph> and
           <codeph>bm-reimage.yml</codeph> playbooks and needed to make a change to your
         configuration files or for any other reason need to re-image one of your nodes, you need to
@@ -93,6 +93,8 @@ bnx2x: [bnx2x_stats_update:1269(eth0)]driver assert
 bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------  .....
 bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
         This workaround is completed by rebooting the server.</p>
+    </section>
+      <section id="freezer">
       <p><b>Freezer installation fails if an independent network is used for the
         External_API.</b></p>
       <p> Currently the Freezer installation fails if an independent network is used for the
@@ -103,6 +105,14 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
         In <b>roles/freezer-agent/templates/backup.osrc.j2</b> add the following line:
         <codeblock>export OS_FREEZER_URL={{ backup_freezer_api_url }}</codeblock>
       </p>
-    </section>
+      </section>
+    <section id="imageFailure">
+      <b>Soft lockup at imaging </b> When imaging your nodes, if you see a kernel error of the type
+      "BUG: soft lockup - CPU#10 stuck...." you should reset the node and make sure it is imaged
+      properly next time. Note that depending on when you get the error, you may have to rerun
+      <codeph>cobbler-deploy.yml</codeph>. If the bm-reimage playbook says it failed to image the node, then cobbler
+      knows this has occurred and you can reset the node. If not, you can follow the instructions
+      above for <xref href="#troubleshooting_installation/reimage" format="dita">reimaging the
+        node</xref>.</section>
   </body>
 </topic>
