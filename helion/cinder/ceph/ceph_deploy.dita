@@ -63,7 +63,8 @@ git commit -m "&lt;commit message>"</codeblock><note>
             processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Run the following command to create a deployment
-            directory.<codeblock><codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+            directory.<codeblock>cd ~/helion/hos/ansible
+<codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
           <li>Modify <codeph>~/helion/hlm/ansible/hlm-deploy.yml</codeph> and uncomment the line
             containing <codeph>ceph-deploy.yml</codeph> to enable deployment of ceph.</li>
           <li>Run the following ansible
@@ -157,8 +158,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock><p>Once
               attach:<codeblock>[libvirt]
 rbd_user = cinder
 rbd_secret_uuid = 457eb676-33da-42ec-9a8c-9293d545c337</codeblock><note>The
-                <codeph>rbd_secret_uuid</codeph> is same as available at
-                <codeph>~/helion/my_cloud/config/ceph/user_model.ym</codeph>.</note></li>
+                <b>rbd_secret_uuid </b>is same as <b>secret_id </b> available at
+                <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph>.</note></li>
           <li>Commit your configuration to the local repository to configure cinder on the deployer node.<p>
               <codeblock>cd ~/helion/hos/ansible
 git add -A
