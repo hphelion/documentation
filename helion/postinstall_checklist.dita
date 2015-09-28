@@ -161,7 +161,8 @@ ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml</codeblock>
       <p>text</p>
       <ol>
         <li><p>From your deployer node, source the admin creds setup during the installation:</p>
-          <p><codeblock>source ~/keystone.osrc</codeblock></p></li>
+          <p><codeblock>unset OS_TENANT_NAME
+source ~/keystone.osrc</codeblock></p></li>
         <li><p>Using the OpenStack command-line tool you can then query the Keystone service for
             your endpoints:</p>
           <p><codeblock>openstack endpoint list</codeblock></p>
