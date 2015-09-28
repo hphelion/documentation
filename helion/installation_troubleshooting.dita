@@ -107,12 +107,14 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
       </p>
       </section>
     <section id="imageFailure">
-      <b>Soft lockup at imaging </b> When imaging your nodes, if you see a kernel error of the type
-      "BUG: soft lockup - CPU#10 stuck...." you should reset the node and make sure it is imaged
-      properly next time. Note that depending on when you get the error, you may have to rerun
-      <codeph>cobbler-deploy.yml</codeph>. If the bm-reimage playbook says it failed to image the node, then cobbler
-      knows this has occurred and you can reset the node. If not, you can follow the instructions
-      above for <xref href="#troubleshooting_installation/reimage" format="dita">reimaging the
-        node</xref>.</section>
+      <b>Soft lockup at imaging </b>
+    </section>
+    <section>When imaging your nodes, if you see a kernel error of the type "BUG: soft lockup -
+      CPU#10 stuck...." you should reset the node and make sure it is imaged properly next time.
+      Note that depending on when you get the error, you may have to rerun
+        <codeph>cobbler-deploy.yml</codeph>. If the bm-reimage playbook says it failed to image the
+      node, then cobbler knows this has occurred and you can reset the node. If not, you can follow
+      the instructions above for <xref href="#reimage" format="dita">reimaging the
+      node</xref>.</section>
   </body>
 </topic>
