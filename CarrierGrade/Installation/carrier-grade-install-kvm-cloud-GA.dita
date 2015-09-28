@@ -95,7 +95,7 @@ password:  &lt;random> </codeblock><p>The
             password in the <codeph>stackrc</codeph> file on any of the non-KVM region
             controllers.</p></li></ol> 
     </section>
-  <section><title>Configure and unlock the compute controllers</title>
+  <section id="unlock"><title>Configure and unlock the compute controllers</title>
     <p>After the controller-1 and the compute nodes come up successfully after PXE boot, execute the
         following commands from controller-0 to unlock  each compute node in the inventory, based on
         your deployment.</p>
@@ -164,7 +164,7 @@ nova aggregate-add-host remote_storage_hosts &lt;compute host name&gt;</codebloc
     <p><xref href="carrier-grade-install-cli.dita#topic10581">Configure the KVM Region Hosts</xref>
       </p>
       <p><xref href="carrier-grade-install-metadata.dita#topic10581">Configure the DCN Metadata
-          Agent</xref></p>
+          Agent</xref> (KVM + ESX deployments only)</p>
   </section>
 </body>
 </topic>
