@@ -85,9 +85,9 @@ swift list</codeblock>
           </p></li>
       </ol>
     </p>
-    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/hos-cloud">KVM
-      installation</xref>.</p>
-    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/hos-cloud">the KVM + ESX
-      installation</xref>.</p>
-    </body>
+    <p>If all these test pass to your satisfaction, the HP Helion OpenStack Carrier Grade
+      installation is complete. To learn more information about using HP Helion OpenStack Carrier
+      Grade, see the <xref href="../Troubleshooting/CGH-2-troubleshooting.dita#topic10581"
+        >Administrator Guide</xref>.</p>
+  </body>
 </topic>

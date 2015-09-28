@@ -16,6 +16,7 @@
 <body>
     <p><!--Based on https://wiki.hpcloud.net/display/HCG/.Helion+CG+1.1+GA+Patch+Instructions--></p>
     <section>
+      <p><b><i>For a KVM and ESX cloud topology</i></b></p>
       <p>After deploying the KVM cloud, on each compute node, update the following lines in the
           <codeph>/etc/default/nuage-metadata-agent</codeph> to reflect:</p>
       <ol>
