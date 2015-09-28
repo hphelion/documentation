@@ -99,6 +99,8 @@ password:  &lt;random> </codeblock><p>The
     <p>After the controller-1 and the compute nodes come up successfully after PXE boot, execute the
         following commands from controller-0 to unlock  each compute node in the inventory, based on
         your deployment.</p>
+      <p><b>Note:</b> If you are using a bonded interface, <xref href="#topic1107/nic" format="dita"
+          >also follow the instructions below</xref> after completing these steps.</p>
     <p><b>For KVM deployments</b></p>
     <ol>
       <li>Create the Infra interface. See <xref
@@ -122,29 +124,30 @@ password:  &lt;random> </codeblock><p>The
       href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
       >Unlock the compute nodes</xref>. Compute nodes will reboot.  Keep polling the status on
       the inventory page to show <b>Available</b> and <b>Online</b>.</li>
+        <li>If you are using a bonded interface, see <xref href="#topic1107/nic" format="dita">For
+            bonded NIC environments</xref>.</li>
       </ol> 
     <p><b>For KVM with DCN or KVM + ESX deployments</b></p>
     <ol>
             <li>After the controller-1 and the compute nodes come up successfully after PXE boot,
-              execute the following commands from controller-0 to unlock the compute nodes: <ol
-                id="ol_p42_d35_lt">
-                <li>Create the Infra interface:
-                  <codeblock>system host-if-add –V &lt;bls/infra VLAN ID&gt; –nt &lt;network_type> &lt;host-name or ID> &lt;interface_name> &lt;interface_type> &lt;port or interfaces></codeblock></li>
-                <li>Add an IP address to the Infra interface:
-                  <codeblock>system host-addr-add &lt;host-name or ID> &lt;interface_name> &lt;ipv4/ipv6_address> &lt;prefix-length></codeblock></li>
-                <li>Configure the VRS interface:
-                    <codeblock>system host-if-modify &lt;host-name or ID> -n &lt;interface_name> -nt &lt;network_type> --ipv4-mode=static eth-x </codeblock><p>Where
-                      <codeph>eth-x</codeph> is the interface on which untagged TUL is
-                    presented.</p></li>
-                <li>Add an IP address to the VRS interface:
-                  <codeblock>system host-addr-add &lt;host-name or ID> vrs &lt;ipv4/ipv6_address> &lt;prefix_length></codeblock></li>
-                <li>Update the host:
-                    <codeblock> system host-update &lt;host-name or ID> vsc_controllers=&lt;ipv4/ipv6_address>,&lt;ipv4/ipv6_address> </codeblock><p>Enter
-                    the IP address of the VSC controllers</p></li>
-                <li>Unlock the host:
-                  <codeblock>system host-unlock &lt;host-name or ID></codeblock></li>
-              </ol><p><b>Example
-              commands:</b></p><codeblock>system host-if-add –V 722 –nt infra compute-3 infra vlan pxeboot0
+          execute the following commands from controller-0 to unlock the compute nodes.<ol
+            id="ol_p42_d35_lt">
+            <li>Create the Infra interface:
+              <codeblock>system host-if-add –V &lt;bls/infra VLAN ID&gt; –nt &lt;network_type> &lt;host-name or ID> &lt;interface_name> &lt;interface_type> &lt;port or interfaces></codeblock></li>
+            <li>Add an IP address to the Infra interface:
+              <codeblock>system host-addr-add &lt;host-name or ID> &lt;interface_name> &lt;ipv4/ipv6_address> &lt;prefix-length></codeblock></li>
+            <li>Configure the VRS interface:
+                <codeblock>system host-if-modify &lt;host-name or ID> -n &lt;interface_name> -nt &lt;network_type> --ipv4-mode=static eth-x </codeblock><p>Where
+                  <codeph>eth-x</codeph> is the interface on which untagged TUL is
+              presented.</p></li>
+            <li>Add an IP address to the VRS interface:
+              <codeblock>system host-addr-add &lt;host-name or ID> vrs &lt;ipv4/ipv6_address> &lt;prefix_length></codeblock></li>
+            <li>Update the host:
+                <codeblock> system host-update &lt;host-name or ID> vsc_controllers=&lt;ipv4/ipv6_address>,&lt;ipv4/ipv6_address> </codeblock><p>Enter
+                the IP address of the VSC controllers</p></li>
+            <li>Unlock the host: <codeblock>system host-unlock &lt;host-name or ID></codeblock></li>
+          </ol><p><b>Example
+          commands:</b></p><codeblock>system host-if-add –V 722 –nt infra compute-3 infra vlan pxeboot0
 system host-addr-add compute-3 infra 10.70.22.81 24
 system host-if-modify compute-3 -n vrs -nt data-vrs --ipv4-mode=static eth4
 system host-addr-add compute-3 vrs 10.70.5.83 24
@@ -156,45 +159,30 @@ system host-unlock compute-3        </codeblock></li>
 nova aggregate-create remote_storage_hosts
 nova aggregate-set-metadata remote_storage_hosts localstorage=false
 nova aggregate-add-host remote_storage_hosts &lt;compute host name&gt;</codeblock></li>
+        <li>If you are using a bonded interface, see <xref href="#topic1107/nic" format="dita">For
+            bonded NIC environments</xref>.</li>
       
-      </ol> 
-    <codeblock>
-      The steps for bonding with WR region on first controller is to edit the WR.JSON to use :
+      </ol>
+  </section>
+  <section id="nic"><title>For bonded NIC environments</title>
+      <p>If you are using a bonded NIC environment, after configuring and unlocking the compute
+        nodes, perform these steps:</p>
+      <ol id="ol_nr5_ddw_mt">
+        <li>Use the following commands to delete MGMT interface:
+          <codeblock>system host-list ( used to gather compute name or id# )
+system host-if-list ( used to gather UUID of interface mgmt to remove )
+system host-if-modify -nt "none" compute-0 pxeboot0 ( used to remove pxeboot flag off interface )
+system host-if-delete compute-0 95e7b495-1454-49d1-8123-301215503e86      </codeblock></li>
       
-      {
-      "lag_interface": "Y",
-      "lag_mode": 4,
-      "interface_mtu": 1500,
-      "interface_ports": [
-      "eth0, eth1"
-      ],
-      
-      
-      Then after system host-add computes examples of steps used:
-      
-      
-      
-      Delete MGMT interface:
-      
-      system host-list ( used to gather compute name or id# )
-      system host-if-list ( used to gather UUID of interface mgmt to remove )
-      system host-if-modify -nt "none" compute-0 pxeboot0 ( used to remove pxeboot flag off interface )
-      system host-if-delete compute-0 95e7b495-1454-49d1-8123-301215503e86 
-      
-      Create Bond Interaface and setup node to be unlocked:
-      
-      system host-if-add -a 802.3ad -x layer2 -nt pxeboot compute-0 bond0 ae "none" eth0 eth1
-      system host-if-add -V 303 -nt mgmt compute-0 mgmt vlan bond0
-      system host-if-add -V 74 -nt infra compute-0 infra vlan bond0
-      system host-addr-add compute-0 infra 172.16.74.244 24
-      system host-if-add -a balanced -x layer2 -nt "none" compute-0 bondvrs ae "none" eth2 eth3
-      system host-if-modify compute-0 -nt data-vrs --ipv4-mode=static bondvrs
-      system host-addr-add compute-0 bondvrs 10.30.6.244 24
-      system host-update compute-0 vsc_controllers=10.30.6.31,10.30.6.32
-      
-      
-      
-    </codeblock>
+    <li>Use the following commands to create a bonded interface and setup node to be unlocked:
+          <codeblock>system host-if-add -a 802.3ad -x layer2 -nt pxeboot compute-0 bond0 ae "none" eth0 eth1
+system host-if-add -V 303 -nt mgmt compute-0 mgmt vlan bond0
+system host-if-add -V 74 -nt infra compute-0 infra vlan bond0
+system host-addr-add compute-0 infra 172.16.74.244 24
+system host-if-add -a balanced -x layer2 -nt "none" compute-0 bondvrs ae "none" eth2 eth3
+system host-if-modify compute-0 -nt data-vrs --ipv4-mode=static bondvrs
+system host-addr-add compute-0 bondvrs 10.30.6.244 24
+system host-update compute-0 vsc_controllers=10.30.6.31,10.30.6.32</codeblock></li></ol>
     </section>
   
   <section id="next-step"> <title>Next Steps</title>

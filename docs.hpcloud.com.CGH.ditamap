@@ -76,8 +76,7 @@
       navtitle="Technical Overview" locktitle="yes">
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-kvm-only.dita"
         navtitle="KVM Deployment Architecture Reference" locktitle="yes"/>
-      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-tahoe.dita"
-        navtitle="KVM with DCN Deployment Architecture Reference " locktitle="yes" toc="no"/>
+      <!--<topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-tahoe.dita" navtitle="KVM with DCN Deployment Architecture Reference " locktitle="yes" toc="no"/>-->
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-esx.dita"
         navtitle="KVM + ESX Deployment Architecture Reference" locktitle="yes"/>
     </topicref>

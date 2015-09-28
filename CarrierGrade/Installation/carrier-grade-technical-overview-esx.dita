@@ -22,12 +22,15 @@
       deployment incorprates HP Distributed Cloud Networking (DCN) virtual network solution. During
       the installation, use the <codeph>memphis</codeph> template that comes with the installation
       package to create the KVM + ESX deployment.</p>
+    <p><image href="../../media/CGH-2-block-arch-memphis.png" width="600" id="image_wdn_zbw_mt"
+      /></p>
     <section id="deploy-arch">
       <title>Deployment architecture</title>
       <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack
         Carrier Grade.</p>
       <p>
-        <image href="../../media/CGH-architecture-esx-GA.png" width="800"/></p>
+        <image href="../../media/CGH-2-architecture-esx-memphis-aplha.png" width="800"
+          alt="AlphaReleaseNetwork-ComponentArchitecture.png"/></p>
       <p>The following sections describe essential aspects of this diagram.</p>
     </section>
     <section id="networkarch">
