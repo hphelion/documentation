@@ -111,7 +111,6 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
           <codeph>cobbler-deploy.yml</codeph>. If the bm-reimage playbook says it failed to image
         the node, then cobbler knows this has occurred and you can reset the node. If not, you can
         follow the instructions above for <xref href="#reimage" format="dita">reimaging the
-          node</xref>.</p>
-    </section>
+          node</xref>.</p></section>
   </body>
 </topic>
