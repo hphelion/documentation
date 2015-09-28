@@ -68,7 +68,7 @@ if [ -z "$EXIT" ]
  
 #Set HipChat authorization and room     
 auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
-room="1537175"  
+room="145"  
 
 #amok 145 
 #doctest 1537175
