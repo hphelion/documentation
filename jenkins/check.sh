@@ -38,9 +38,25 @@ do
 			EXIT=$(($EXIT + 1))
 		fi
 	done < ./jenkins/badstrings.txt
-done
-#Read chcktemp and assign content to EXIT (indicating that at least one error was found)
 
+	
+
+done
+
+#Check for filenames that contain bad characters
+BAD_FILE_NAME=`find . -regex '.*[ (\!@#$%\^&*)+=?\\<>~,:;\`\"].*'`
+
+	if [[ -n $BAD_FILE_NAME ]]
+	then
+		echo "The following file names contain one or more bad characters:
+		"
+		echo $BAD_FILE_NAME | sed 's| ./|\n./|g'
+		echo "
+		Filenames should only contain letters, numbers, underscores, dashes, and periods."
+		EXIT=$(($EXIT + 1))
+	else
+		echo all good
+	fi	
 
 #Exit script with 1 if an error was found.  Otherwise exit with 0.
 if [ -z "$EXIT" ]
@@ -52,9 +68,9 @@ if [ -z "$EXIT" ]
  
 #Set HipChat authorization and room     
 auth="zKuxF5Bt5H9dpNysOSf8nRPw2GbT41f3vAS5jKSI"
-room="145"  
+room="1537175"  
 
-#amok  
+#amok 145 
 #doctest 1537175
 
 #Set the URL to the console output for this build
