@@ -3,7 +3,7 @@
 <topic id="HP2.0LBaaS">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 LBaaS Configuration</title>
   <body>
-    <p>HP Helion OpenStack 2.0 LBaaS Configuration</p>
+    <p><b>HP Helion OpenStack 2.0 LBaaS Configuration</b></p>
     <p> Load Balancing as a Service (LBaaS) is an advanced networking service that allows load
       balancing of multi-node environments. It provides the ability to spread requests across
       multiple servers thereby reducing the load on any single server.  This document describes the
@@ -179,7 +179,8 @@ nova show vm2</codeblock></li>
       <sectiondiv id="CreateLoadBalancer">
       <p><b>Create Load Balancer v2</b></p>
       <ol>
-        <li>Create the new load balancer using the <codeph>lbaas-loadbalancer-create</codeph> command and giving the load balancer a name and subnet.
+        <li>Create the new load balancer using the <codeph>lbaas-loadbalancer-create</codeph> command and giving the load balancer a name and subnet. 
+          <note>The creation of the Load Balancer requires a tenant network and not an external network. </note>
           <codeblock>neutron lbaas-loadbalancer-create --name lb sub</codeblock></li>
         <li>Create a new listener for the load balancer using the
               <codeph>lbaas-listener-create</codeph> command and giving the listener the name of the
