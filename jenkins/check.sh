@@ -51,8 +51,10 @@ BAD_FILE_NAME=`find . -regex '.*[ (\!@#$%\^&*)+=?\\<>~,:;\`\"].*'`
 		echo "The following file names contain one or more bad characters:
 		"
 		echo $BAD_FILE_NAME | sed 's| ./|\n./|g'
-		echo "
-		Filenames should only contain letters, numbers, underscores, dashes, and periods."
+		echo ""
+		echo "Filenames should only contain letters, numbers, underscores, dashes, and periods.
+		
+		"
 		EXIT=$(($EXIT + 1))
 	else
 		echo all good
