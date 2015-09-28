@@ -32,18 +32,16 @@
               <codeph>bm-reimage.yml</codeph> playbooks again.</li>
         </ol>
       </p>
-      
       <p id="configproc"><b>Change needed to configuration files after you've run the
-        <codeph>config-processor-run.yml</codeph> playbook</b></p>
+            <codeph>config-processor-run.yml</codeph> playbook</b></p>
       <p>If you've run the <codeph>config-processor-run.yml</codeph> playbook during the
         installation and have to go back to re-do your steps, ensure that you run the
-        <codeph>config-processor-clean.yml</codeph> playbook to clear out your previous
+          <codeph>config-processor-clean.yml</codeph> playbook to clear out your previous
         configuration before proceeding.</p>
       <p>
         <codeblock>cd ~/helion/hos/ansible
           ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
       </p>
-      
       <p><b>Change needed to <codeph>baremetalConfig.yml</codeph> file needed after the Cobbler
           deploy</b></p>
       <p>If you've made a mistake or wish to change your <codeph>baremetalConfig.yml</codeph>
@@ -67,7 +65,6 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
         </li>
       </ol>
-
       <p><b>If the <codeph>site.yml</codeph> playbook fails, you can query the log for the
           reason</b></p>
       <p>Ansible is good about outputting the errors into the command line output, however if you'd
@@ -94,7 +91,7 @@ bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------  .....
 bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
         This workaround is completed by rebooting the server.</p>
     </section>
-      <section id="freezer">
+    <section id="freezer">
       <p><b>Freezer installation fails if an independent network is used for the
         External_API.</b></p>
       <p> Currently the Freezer installation fails if an independent network is used for the
@@ -105,16 +102,16 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
         In <b>roles/freezer-agent/templates/backup.osrc.j2</b> add the following line:
         <codeblock>export OS_FREEZER_URL={{ backup_freezer_api_url }}</codeblock>
       </p>
-      </section>
-    <section id="imageFailure">
-      <b>Soft lockup at imaging </b>
     </section>
-    <section>When imaging your nodes, if you see a kernel error of the type "BUG: soft lockup -
-      CPU#10 stuck...." you should reset the node and make sure it is imaged properly next time.
-      Note that depending on when you get the error, you may have to rerun
-        <codeph>cobbler-deploy.yml</codeph>. If the bm-reimage playbook says it failed to image the
-      node, then cobbler knows this has occurred and you can reset the node. If not, you can follow
-      the instructions above for <xref href="#reimage" format="dita">reimaging the
-      node</xref>.</section>
+    <section id="imageFailure">
+      <b>Soft lockup at imaging</b>
+      <p>When imaging your nodes, if you see a kernel error of the type "BUG: soft lockup - CPU#10
+        stuck...." you should reset the node and make sure it is imaged properly next time. Note
+        that depending on when you get the error, you may have to rerun
+          <codeph>cobbler-deploy.yml</codeph>. If the bm-reimage playbook says it failed to image
+        the node, then cobbler knows this has occurred and you can reset the node. If not, you can
+        follow the instructions above for <xref href="#reimage" format="dita">reimaging the
+          node</xref>.</p>
+    </section>
   </body>
 </topic>
