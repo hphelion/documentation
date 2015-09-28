@@ -55,7 +55,8 @@ nova boot --flavor 1 --image &lt;image&gt; --nic net-id=$NET vm1 --poll</codeblo
           <codeblock>fixedip=$(nova list | awk '/vm1/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
 vmportuuid=$(neutron port-list | grep $fixedip | awk '{print $2}')</codeblock></li>
         <li>Create and associate a floating IP address to the vm1 instance.
-          <codeblock>neutron floatingip-create ext-net –-port-id $vmportuuid</codeblock></li>
+          <codeblock>fluuid=$(neutron floatingip-create ext-net | awk 'FNR == 8{print $4}')
+echo "Floating IP UUID = $fluuid"</codeblock></li>
         <li>Verify if the floating IP is assigned to the instance. The following command should show
           an assigned IP address in 172.16.0.0/16 range.<codeblock>nova show vm1</codeblock></li>
         <li>Verify if the instance is reachable from the external network. SSH into the instance
