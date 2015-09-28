@@ -15,8 +15,8 @@
     </metadata>
   </prolog>
   <body>
-    <p>After launching the hdeploy command, deploy two following patches to correct the following
-      issues: </p>
+    <p>After launching the <codeph>hdeploy</codeph> command, deploy two following patches to correct
+      the following issues: </p>
     <ul id="ul_emj_1cb_mt">
       <li>The floating IP assigned to the HLM VM not pingable with DCNR3 and VSD managed networks. </li>
       <li>The installation fails due to excessive ESX logs</li>

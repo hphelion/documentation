@@ -180,10 +180,11 @@ VSD Server : auto </codeblock>
               </p></li>
             <li>Click the arrow icon to log in.</li>
           </ul></li>
-        <li>Click the <b>Gateways</b> tab. Two new gateways appear in the <b>Pending Gateways</b>
-          list on the left.</li>
+        <li>Click the <b>Infrastructure</b> tab, then click the <b>Gateways</b> tab. The new gateway
+          appears in the <b>Pending Gateways</b> list on the left.</li>
         <li>Click the blue arrow next to one of the new gateways to manage that gateway.<p><image
-              href="../../media/CGH-install-nuage-gateway.png" id="image_rgy_5fz_xs" width="500">
+              href="../../media/CGH-2-install-nuage-gateway-alpha.png" id="image_rgy_5fz_xs"
+              width="500">
               <alt>Discover the Gateway</alt>
             </image></p></li>
         <li>Add a port for the gateway by clicking <b>Create a Port</b> in the second panel from the
@@ -202,29 +203,16 @@ VSD Server : auto </codeblock>
               id="image_sgn_mh1_1t"/></p></li>
       </ol>
     </section>
-    <section><title>Create a redundancy group for the VRS-G</title>
-      <i>For more information on performing this task, refer to the latest DCN documentation </i>
-      <p>In order to achieve high availability for the VRS-G, you must create a redundancy group
-        using the VSD dashboard.</p><p>A redundancy group will designate one of the two gateways as
-        the authoritative (active) gateway and the other as the secondary (passive) gateway. You can
-        change which gateway is authoritative either at that point or at a later tine, by selecting
-        the group and clicking the pencil icon.</p><p> Redundancy groups can be created out of two
-        instantiated gateways of the VRS-G type. Both instances must either:</p><ul>
-        <li>Come from the same template</li>
-        <li>Be instantiated </li>
-      </ul><p>In addition, the two gateways that make up a redundancy group must have exactly the
-        same port and VLAN configuration. </p><p>To create a redundancy group, using the VSD
-        dashboard: </p><ol>
-        <li>Select the two peers and click on the redundancy group icon.<p><image
-              href="../../media/CGH-install-vsd-redundancy.png" id="image_q5q_5j1_1t"/></p></li>
-      </ol></section>
+    <!--<section><title>Create a redundancy group for the VRS-G</title>
+Hide for alpha
+ <i>For more information on performing this task, refer to the latest DCN documentation </i> <p>In order to achieve high availability for the VRS-G, you must create a redundancy group using the VSD dashboard.</p><p>A redundancy group will designate one of the two gateways as the authoritative (active) gateway and the other as the secondary (passive) gateway. You can change which gateway is authoritative either at that point or at a later tine, by selecting the group and clicking the pencil icon.</p><p> Redundancy groups can be created out of two instantiated gateways of the VRS-G type. Both instances must either:</p><ul><li>Come from the same template</li><li>Be instantiated </li></ul><p>In addition, the two gateways that make up a redundancy group must have exactly the same port and VLAN configuration. </p><p>To create a redundancy group, using the VSD dashboard: </p><ol><li>Select the two peers and click on the redundancy group icon.<p><image href="../../media/CGH-install-vsd-redundancy.png" id="image_q5q_5j1_1t"/></p></li></ol></section><section/>-->
     <section><title>Assign permissions to the VRS-G</title> There are two types of permissions,
         <b>Use Permissions</b> and <b>Extend Permissions</b>. Use Permissions allow members in the
       assigned group to use an object. Extend Permissions allow the members of an assigned group to
       use an object and to allow other groups to use the object. For this installation, you can
       select <b>Use Permission</b>. <p><i>For more information on performing this task, refer to the
           latest DCN documentation </i></p><p>To assign permissions:</p><ol id="ol_x4q_vl1_1t">
-        <li>Select the redundancy group you created and click <b>Add a Permission</b>.</li>
+        <li>Select the gateway you created and click <b>Add a Permission</b>.</li>
         <li>Select a group and click <b>Select</b>. Members of this group will be able to use the
           gateway.</li>
       </ol></section>
@@ -236,13 +224,16 @@ VSD Server : auto </codeblock>
       <p><i>For more information on performing these tasks, refer to the DCN documentation </i></p>
       <ol>
         <li>In the VSD dashboard, click <b>Open Data Center Configuration</b>, then <b>Shared
-            Network</b> tab. <p><image href="../../media/CGH-install-vsd-fip.png"
-              id="image_okn_sjz_xs">
+            Network</b> tab. </li>
+        <li>Click the + icon to create a floating IP subnet.<p><image
+              href="../../media/CGH-2-install-nuage-ipsub-alpha.png" width="600"
+              id="image_vgv_lqw_mt"/></p></li>
+        <li>Click <b>Create</b> and default route information generated.</li>
+        <li>For the floating IP subnet, right-click and select <b>Edit</b> to get the name.
+              <p><image href="../../media/CGH-install-vsd-fip.png" id="image_okn_sjz_xs">
               <alt>Gateway Port</alt>
-            </image></p></li>
-        <li>For the floating IP subnet, right-click and select <b>Edit</b> to get the name. <p>This
-            is the same name you assigned when you created the subnet. Make note of this name, as
-            you will use it to tun the cURL script in the following step.</p></li>
+            </image></p><p>This is the same name you assigned when you created the subnet. Make note
+            of this name, as you will use it to tun the cURL script in the following step.</p></li>
       </ol>
     </section>
     <section>
@@ -257,33 +248,15 @@ VSD Server : auto </codeblock>
             <li>FIP_NAME is the one that is retrieved from previous step.</li>
             <li>GW_NAME is the redundant gateway name.</li>
             <li>All the UPLINK info are from the core switch on their specific testbed</li>
-          </ul>
-          <codeblock>
-#############################################################
-#!/bin/bash
-set -x
-#
-# Starting with VSP 3.0R2, there is an officially supported way to enable FIP using
-# a VSG or VRS-G uplink port
-#
-            
-# Parameters
-VLAN="209"
-VSD_IP="10.20.5.21"
-FIP_NAME="eec14785-be36-4975-9ef8-2bf7edc5590e" # unique name show in VSD created for external network floating ip pool
-#GW_ID="3aa23ffa-7530-46eb-ab3b-eff9fe65b0f6"
-#GW_NAME="10.20.6.106" # use the ip of the VRSG node created on VSD / VSC
-GW_NAME="LR4-TB2-VRSG-Cluster" # use the ip of the VRSG node created on VSD / VSC
-PORT_NAME="eth0" # pyshical nic use don VRSG node for trunk/ tagged external trafic
-             
-#
-# IANA has reserved 192.0.0.0/29 for DS-lite transition
+          </ul><codeblock># IANA has reserved 192.0.0.0/29 for DS-lite transition
 #
 UPLINK_SUBNET="10.20.9.0"
 UPLINK_MASK="255.255.255.192"
-VRSG_IP="10.20.9.2"  #Modified :P
+VRSG_IP="10.20.9.2"  #DUncan Modified :P
 UPLINK_GW="10.20.9.1"                         # ROUTER IP ON SWITCH main switch 10.1.64.21
 UPLINK_GW_MAC="bc:ea:fa:1d:b0:80"       # VLAN 1209 MAC address not VRSG is from main switch 10.1.64.21
+#UPLINK_GW_MAC="78:48:59:4f:fb:3c"       # VLAN 1209 MAC address not VRSG is from main switch 10.1.64.21
+
 if [ $# -eq 1 ]; then # remote install
 echo "Performing remote install to root@'$1' (requires PermitRootLogin=yes in sshd config)..."
 ssh root@$1 'bash -s ' &lt; $0
@@ -298,21 +271,8 @@ fi
 # Install required software packages, if not already
 if [ -e /usr/bin/yum ]; then
 [[ `which jq` != "" ]] || yum install -y jq
-QEMU_KVM="/usr/libexec/qemu-kvm"
-QEMU_USR="qemu:qemu"
-LIBVIRTD="libvirtd"
-else
-[[ `which jq` != "" ]] || apt-get install -y jq
-QEMU_KVM="/usr/bin/kvm"
-QEMU_USR="libvirt-qemu:kvm"
-LIBVIRTD="libvirt-bin"
-fi
-              
-# Determine Domain name for the Floating IP pool ( based on pool name )
-APIKEY=`curl -ks -H "X-Nuage-Organization: csp" -H "Content-Type: application/json" -H "Authorization: XREST Y3Nwcm9vdDpjc3Byb290" https://$VSD_IP:8443/nuage/api/v3_0/me | jq -r '.[0].APIKey'`
-TOKEN=`echo -n "csproot:$APIKEY" | base64`
-ZONE_ID=`curl -ks -H "X-Nuage-Organization: CSP" -H "X-Nuage-Filter: name=='$FIP_NAME'" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
-https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources | jq -r '.[0].parentID'`
+\
+ https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources | jq -r '.[0].parentID'`
 if [ "$ZONE_ID" == "" ]; then
 echo "Error: Floating IP pool named '$FIP_NAME' not found"
 exit 1
@@ -320,39 +280,43 @@ fi
 
 # Lookup VLAN to use
 GW_ID=`curl -ks -H "X-Nuage-Filter: name=='$GW_NAME'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
-https://$VSD_IP:8443/nuage/api/v3_0/redundancygroups | jq -r '.[0].ID'`
-PORT_ID=`curl -ks -H "X-Nuage-Filter: name=='$PORT_NAME'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
-https://$VSD_IP:8443/nuage/api/v3_0/redundancygroups/$GW_ID/ports | jq -r '.[0].ID'`
+ https://$VSD_IP:8443/nuage/api/v3_0/gateways | jq -r '.[0].ID'`
+PORT_ID=`curl -ks -H "X-Nuage-Filter: name=='$PORT_NAME'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN"
+ \
+ https://$VSD_IP:8443/nuage/api/v3_0/gateways/$GW_ID/ports | jq -r '.[0].ID'`
 VLAN_ID=`curl -ks -H "X-Nuage-Filter: value==$VLAN" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
-https://$VSD_IP:8443/nuage/api/v3_0/ports/$PORT_ID/vlans | jq -r '.[0].ID'`
+ https://$VSD_IP:8443/nuage/api/v3_0/ports/$PORT_ID/vlans | jq -r '.[0].ID'`
 if [ "$VLAN_ID" == "" ]; then
-echo "Error: VLAN on redundancygroup '$GW_NAME' with port '$PORT_NAME' and value '$VLAN' not found"
+echo "Error: VLAN on gateway '$GW_NAME' with port '$PORT_NAME' and value '$VLAN' not found"
 exit 1
 fi
 echo "VLAN $VLAN ID: $VLAN_ID"
+
 # Get/Create uplink subnet
 SUBNET_ID=`curl -ks -H "X-Nuage-Filter: type=='UPLINK_SUBNET'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" \
--H "Authorization: XREST $TOKEN" https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources | jq -r '.[0].ID'`
-if [ "$SUBNET_ID" == "" ]; then
+# Get/Create uplink subnet
+SUBNET_ID=`curl -ks -H "X-Nuage-Filter: type=='UPLINK_SUBNET'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" \
+ -H "Authorization: XREST $TOKEN" https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources | jq -r '.[0].ID'`
+#if [ "$SUBNET_ID" == "" ]; then
 echo "Creating new FIP uplink subnet in ZONE $ZONE_ID"
 curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
-https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources -d "{ \
-\"name\": \"FIP uplink subnet\", \
-\"description\": \"uplink subnet\", \
-\"address\": \"$UPLINK_SUBNET\", \
-\"netmask\": \"$UPLINK_MASK\", \
-\"gateway\": \"$VRSG_IP\", \
-\"type\": \"UPLINK_SUBNET\", \
-\"uplinkInterfaceIP\" : \"$UPLINK_GW\", \
-\"uplinkInterfaceMAC\" : \"$UPLINK_GW_MAC\", \
-\"sharedResourceParentID\" : \"$ZONE_ID\", \
-\"uplinkGWVlanAttachmentID\" : \"$VLAN_ID\", \
-\"uplinkVPortName\" : \"uplink vport1\" \
-}"
-else
-echo "FIP uplink subnet already exists: $SUBNET_ID"
-fi
-#############################################################          </codeblock></li>
+ https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources -d "{ \
+        \"name\": \"FIP uplink subnet\", \
+    \"description\": \"uplink subnet\", \
+    \"address\": \"$UPLINK_SUBNET\", \
+    \"netmask\": \"$UPLINK_MASK\", \
+    \"gateway\": \"$VRSG_IP\", \
+    \"type\": \"UPLINK_SUBNET\", \
+    \"uplinkInterfaceIP\" : \"$UPLINK_GW\", \
+    \"uplinkInterfaceMAC\" : \"$UPLINK_GW_MAC\", \
+    \"sharedResourceParentID\" : \"$ZONE_ID\", \
+    \"uplinkGWVlanAttachmentID\" : \"$VLAN_ID\", \
+    \"uplinkVPortName\" : \"uplink vport1\" \
+ }"
+#else
+#echo "FIP uplink subnet already exists: $SUBNET_ID"
+#fi
+##########</codeblock></li>
         <li>Save and close the script.</li>
         <li>Execute the cURL script <codeblock>bash +x &lt;script_name>.sh</codeblock><p>Where:
             &lt;script_name> is the name of the cURL script you created.</p></li>

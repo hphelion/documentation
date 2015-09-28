@@ -59,8 +59,13 @@ Password: cghelion</codeblock>
         user is disabled, you can use another default user account, <codeph>cghelion</codeph> to
         access the HLM VM and any actions that require root access should be done using
         <codeph>sudo</codeph>.</p>
-      <p>Execute the following command to run a script that disables the <codeph>root</codeph> user. </p>
-      <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock>
+      <p>
+        <ol id="ol_td4_5nw_mt">
+          <li>Log into the HLM host.</li>
+          <li>Execute the following command to run a script that disables the <codeph>root</codeph>
+            user. <codeblock>sudo /root/cg-hlm/dev-tools/disable-root.sh</codeblock></li>
+        </ol>
+      </p>
       <p>This command will disable the <codeph>root</codeph> user and performs the following tasks:</p>
       <ul>
         <li>removes password for root from the /etc/shadow file</li>

@@ -533,6 +533,24 @@ The configuration processor completed successfully.
         <li>The installation fails due to excessive ESX logs</li>
       </ul><p>For information, see <xref href="carrier-grade-install-role-patch.dita#topic10581"
           >Deploying the Role Generator Patches</xref>.</p></section>
+    <section>
+      <title>Deploy the Networking Patch</title>
+      <p>After launching the <codeph>hdeploy</codeph> command,, deploy the a networking patch. </p>
+      <p>For more information, see <xref href="carrier-grade-install-network-patch.dita#topic10581"
+          >Deploy the Networking Patch</xref>.  </p>
+    </section>
+    <section><title>Disable debugging for the ESX Compute Proxy</title>Edit the
+        <codeph>nova.conf</codeph> file on the ESX compute proxy nodes to disable debugging. <p>
+        <ol id="ol_xrc_fmw_mt">
+          <li>Log into each ESX compute proxy node. </li>
+          <li>Edit the <codeph>/etc/nova/nova.conf</codeph> to comment out or change the
+              <codeph>debug</codeph> value to
+            <codeph>false</codeph>.<codeblock>#debug=true
+debug=false</codeblock></li>
+          <li>Execute the following command to restart the compute service:
+            <codeblock>service nova-compute restart </codeblock></li>
+        </ol>
+      </p></section>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
       <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
@@ -540,16 +558,6 @@ The configuration processor completed successfully.
         able to execute OpenStack CLI commands until the specific changes are made on all three
         controller nodes in the non-KVM region. </p>
       <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
-    </section>    
-    
-    <section id="root-user">
-      <title>Disable the Root User</title>
-      <p>For security purposes, we strongly recommend disabling root. After the
-          <codeph>root</codeph> user is disabled, you can use another default user account,
-          <codeph>cghelion</codeph> to access the HLM VM and any actions that require root access
-        should be done using <codeph>sudo</codeph>.</p>
-      <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581"
-          >Disabling the Root User</xref>.</p>
     </section>
     <section id="kibana"><title>Launch the Kibana interface</title> 
       <p>To launch Kibana, see <xref href="carrier-grade-install-access-kibana.dita#topic10581"

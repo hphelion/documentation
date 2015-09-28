@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Deploying the Networking
+    Patch</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>After launching the <codeph>hdeploy</codeph> command,, deploy the following patch. </p>
+    <p>
+      <ol id="ol_pn3_141_mt">
+        <li>Download the <codeph>nuage_restproxy.py.diff.gz</codeph> file.</li>
+        <li>Copy the <codeph>nuage_restproxy.py.diff.gz</codeph> file to the <codeph>/tmp/</codeph>
+          directroy on all three controller nodes</li>
+        <li>SSH to each controller node as the <codeph>cghelion</codeph> user.</li>
+        <li>Use sudo to get root shell:<p>
+            <codeblock>sudo su -</codeblock>
+          </p></li>
+        <li>Change to the following directory:<p>
+            <codeblock>cd /opt/stack/venvs/neutron/local/lib/python2.7/site-packages/nuagenetlib/</codeblock>
+          </p></li>
+        <li>Execute the following command to deploy the patch:<p>
+            <codeblock> zcat /tmp/nuage_restproxy.py.diff.gz | patch</codeblock>
+          </p><p>Upon completion, the following message displays:</p><p>
+            <codeblock>patching file restproxy.py</codeblock>
+          </p></li>
+        <li>Perform these steps on the remaining servers.<p>Make sure the
+              <codeph>neutron-server</codeph> status is <codeph>active</codeph> and running on all
+            three controllers. If <codeph>neutron-server</codeph> is in failed state, restart
+            service using “service neutron-server restart”</p></li>
+      </ol>
+    </p>
+    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/role">the KVM + ESX
+        installation</xref>.</p>
+    </body>
+</topic>

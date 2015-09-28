@@ -22,7 +22,7 @@
       deployment incorprates HP Distributed Cloud Networking (DCN) virtual network solution. During
       the installation, use the <codeph>memphis</codeph> template that comes with the installation
       package to create the KVM + ESX deployment.</p>
-    <p><image href="../../media/CGH-2-block-arch-memphis.png" width="600" id="image_wdn_zbw_mt"
+    <p><image href="../../media/CGH-2-block-arch-memphis.png" width="750" id="image_wdn_zbw_mt"
       /></p>
     <section id="deploy-arch">
       <title>Deployment architecture</title>
