@@ -50,9 +50,9 @@
                   "type": "vlan",
                   "segment-id": "203",
                   "network-address": {
-                  "cidr": "10.x.x.x/24",
-                  "start-address": "10.x.x.x",
-                  "gateway": "10.x.x.x"
+                    "cidr": "10.x.x.x/24",
+                    "start-address": "10.x.x.x",
+                    "gateway": "10.x.x.x"
                 }
                 },
                 {
@@ -60,8 +60,8 @@
                   "type": "vlan",
                   "segment-id": "204",
                   "network-address": {
-                  "cidr": "10.x.x.x/24",
-                  "start-address": "10.x.x.x"
+                    "cidr": "10.x.x.x/24",
+                    "start-address": "10.x.x.x"
                   }
                 },
                 {
@@ -78,21 +78,63 @@
             ]
         },
         {
-          "name": "CPN",
-          "interface-map": [
-            {
-              "name": "INTF0",
-              "ethernet-port-map": {
-                  "interface-ports": [ "eth0" ]
-              },
-              "logical-network-map": [
-               {
-                  "name": "management",
-                  "ref": "ccn-INTF0-management"
-                 }
-               ]
-             }
-           ]
+            "name": "CPN",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "ethernet-port-map": {
+                        "interface-ports": [ "eth0" ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "ref": "ccn-INTF0-management"
+                        },
+                        {
+                            "name": "blockstore",
+                            "ref": "ccn-INTF0-blockstore"
+                        }
+
+                    ]
+                },
+                {
+                    "name": "INTF1",
+                     "ethernet-port-map": { 
+                     "interface-ports": [ "eth1" ]
+                    },
+                    "logical-network-map": [
+                    {
+                            "name": "tenant",
+                            "type": "vlan",
+                            "segment-id": "",
+                            "network-address": {
+                                "cidr": "10.x.x.x/24",
+                                "start-address": "10.x.x.x",
+                                "gateway": "10.x.x.x"
+                            }
+
+                        }
+
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "CPX",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "ethernet-port-map": {
+                        "interface-ports": [ "eth0" ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "ref": "ccn-INTF0-management"
+                        }
+                    ]
+                }
+            ]
         },
         {
           "name": "DCN",

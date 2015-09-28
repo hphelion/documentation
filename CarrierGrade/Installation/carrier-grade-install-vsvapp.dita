@@ -24,131 +24,97 @@
       DCN.</p>
     <p><b>Important:</b> You must disable vMotion for the VRSvApp to prevent the VRS VM from moving
       from the ESX host. in case of failure of the host in the ESX cluster. </p>
-    <p>To disable vMotion for the VRSvApp:</p>
+    <section><title>Disable vMotion></title>
+      <p>To disable vMotion for the VRSvApp:</p>
     <ol>
-        <li>Iin the vSphere Client, right-click the VRSvApp and select <b>Edit Settings</b>.
-    <p><image href="../../media/CGH-install-vrsvapp.png" id="image_ab4_wy3_1t"/></p></li>
+        <li>Iin the vSphere Client, right-click the VRSvApp and select <b>Edit Settings</b>. </li>
     <li>Select <b>Virtual Machine Options</b>.</li>
       <li> For each VRSvApp, select Disabled from the tAutomation Level list.  </li>
-      <li>Click <b>OK</b> to save the settings. <p><image href="../../media/CGH-install-vmotion.png"
-            id="image_j3x_cz3_1t"/></p>
-      </li></ol>
-    <section>
-      <p> To install the VRSvApp:</p>
-      <ol id="ol_hf4_nvy_zs">
-        <li>Copy the downloaded <codeph>VRS_3.2.2-74.ovf</codeph> and
-            <codeph>VRS_3.2.2-74-disk1.vmdk</codeph>  files from HLM host to VSD node in the
-            <codeph>/opt/vsd</codeph> directory. For more information on downloading DCN files, see
-            <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/download-esx">Download
-            packages for KVM + ESX</xref>.</li>
-        <li>Extract <codeph>DCN-VRS-VMware-3.0R7.zip</codeph> file to the
-            <codeph>/opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeph> directory. </li>
-        <li>Change to the directory where you extracted the files, for
-            example:<codeblock>cd /opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeblock><p>The
-              <codeph>vrs-metafile.config</codeph> file is in the extracted files. </p></li>
-        <li>Modify the <codeph>vrs-metafile.config</codeph> using values appropriate for your
-          environment. See the <xref href="#topic10581/example" format="dita">example config
-            file</xref>.<p><b>Important:</b> The values in this files are case sensitive and errors
-            will cause the installation to stop.</p></li>
-        <li>Run the command to deploy the template using the example below after making changes to
-          file paths to match your environment, vCenter username, vCenter password and vCenter IP
-          address:
-            <codeblock>./cli.bash deploy_vrs -f /opt/vsd/CloudMgmt-vmware/&lt;VRS-Template.ovf&gt; -m /opt/vsd/CloudMgmt-vmware/vrs-metafile.config -p &lt;vcenter password&gt; -u &lt;vcenter user&gt; --url https://&lt;vecenter IP&gt;/sdk</codeblock><p>Where:</p><codeblock>usage: 
--f,--path &lt;PATH>                   VRS template path.
--m,--metafile &lt;FILE>               Meta file defining VRS property values.
--p,--password &lt;PASSWORD>           vCenter password.
--r,--resourcepool &lt;RESOURCEPOOL>   Resource pool name or moref. (Optional)
--u,--username &lt;USRNAME>            vCenter user name.
---url &lt;URL>                     vCenter url (example: https://localhost/sdk)          </codeblock><p><b>Syntax
-              Help</b></p><codeblock>usage: deploy_vrs [-d &lt;DATASTORE&gt;] -f &lt;PATH&gt; -m &lt;FILE&gt; -p &lt;PASSWORD&gt; [-r &lt;RESOURCEPOOL&gt;] –u &lt;USRNAME&gt; --url &lt;URL&gt;
--d,--datastore &lt;DATASTORE&gt; Datastore name or moref. (Optional)
--f,--path &lt;PATH&gt; VRS template path.
--m,--metafile &lt;FILE&gt; Meta file defining VRS property values.
--p,--password &lt;PASSWORD&gt; vCenter password.
--r,--resourcepool &lt;RESOURCEPOOL&gt; Resource pool name or moref. (Optional)
--u,--username &lt;USRNAME&gt; vCenter user name.
---url &lt;URL&gt; vCenter url (example: <xref href="https://localhost/sdk" format="html" scope="external">https://localhost/sdk</xref>)</codeblock></li>
-        <li>Use the vSpenere client to power on the VRSvApp. <p>This process must be performed for
-            each ESX host.</p></li>
-      </ol>
-          
-          <p id="example"><b>Example <codeph>vrs-metafile.config</codeph> file</b></p>
-      <p>The following is a sample <codeph>vrs-metafile.config</codeph> that you can use to create a
-        file on your local system. Note that the IP addresses have been masked for security
-        purposes. You must use proper IP addresses in your file.</p>
-      <codeblock>  {
-    "servers":{
-        "vcenter":{
-            "ip":"10.x.x.x",
-            "user":"root",
-            "password":"xxxx"
-        },
-        "hypervisor1":{
-            "ip":"10.x.x.x",
-            "user":"root",
-            "password":"xxxx"
-        }
-    },
-    "subnets":{
-        "mgmtSubnet1":{
-            "ip":"192.168.1.168",
-            "netmask":"255.255.255.0",
-            "gateway":"192.168.1.1"
-        },
-        "dataSubNet1":{
-            "ip":"192.168.10.1",
-            "netmask":"255.255.255.0",
-            "gateway":"192.168.10.1"
-        }
-    },
-    "ipMappings":{
-        "controller":"192.168.1.123",
-        "dns1":"192.168.1.123",
-        "dns2":"192.168.1.123",
-        "ntpServer":"192.168.1.123"
-        
-    },
-    "properties":[
-        {
-            "vcenter_":"vcenter",
-            "hypervisor_":"hypervisor1",
-            "primaryController_":"controller",
-            "secondaryController_":"controller",
-            "powerOn": "false",
-            "allowMgmtDhcp": "false",
-            "mgmtDns1_":"dns1",
-            "mgmtDns2_":"dns2",
-            "mgmtNetwork_":"mgmtSubnet1",
-            "separateDataNetwork":"true",
-            "allowDataDhcp":"false",
-            "dataNetwork_":"dataSubNet1",
-            "dataDns1_":"dns1",
-            "dataDns2_":"dns2",
-            "dataNetworkPortgroup":"DVRS Datapath",
-            "mgmtNetworkPortgroup":"Cloud Lab Management",
-            "vmNetworkPortgroup":"dvPortGroup",
-            "ntpServer1_":"ntpServer",
-            "ntpServer2_":"ntpServer",
-            "staticRoute":"0.0.0.0",
-            "staticRouteGateway":"0.0.0.0",
-            "requireNuageMetadata":"false",
-            "multiVMSupport":"false",
-            "mtu":"1500",
-            "personality":"VRS"
-        }
-    ]
-} </codeblock>
-      <p><b>Notes and definitions regarding VRSvApp</b></p>
-      <ul id="ul_if4_nvy_zs">
-        <li>vCenter=vcenter Ip address</li>
-        <li>Hypervisor=ESX Host that this VRSvApp will be deployed</li>
-        <li>mgmtSubnet1=CLM network</li>
-        <li>dataSubNet1=TUL network</li>
-        <li>controller=VSC server ip</li>
-        <li>Default user name and password for the VRS vm: ,<codeph>root/UFXCr4733F</codeph></li></ul>
-      <p><i>Return to the Installing the <xref
-            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
-            Deployment</xref>.</i></p>
+      <li>Click <b>OK</b> to save the settings.  </li></ol>
     </section>
+    <section>
+            <title>Install VRSvApp</title>
+            <p>This process must be performed for each ESX host.</p>
+            <p>Notes and definitions regarding VRSvApp:</p>
+            <ul id="ul_if4_nvy_zs">
+                <li>vCenter=vcenter Ip address</li>
+                <li>Hypervisor=ESX Host that this VRSvApp will be deployed</li>
+                <li>mgmtSubnet1=CLM network</li>
+                <li>dataSubNet1=TUL network</li>
+                <li>controller=VSC server ip</li>
+                <li>Default user name and password for the VRS vm:
+                    ,<codeph>root/UFXCr4733F</codeph></li>
+            </ul>
+            <p>To install the VRSvApp:</p>
+            <ol id="ol_hf4_nvy_zs">
+                <li>Copy the downloaded <codeph>VRS_3.2.3-104_08282015.ovf</codeph> and
+                        <codeph>VRS_3.2.3-104_08282015-disk1.vmdk</codeph> files from HLM host to
+                    VSD node in the <codeph>/opt/vsd/</codeph> directory. For more information on
+                    downloading DCN files, see <xref
+                        href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/download-esx"
+                        >Download packages for KVM + ESX</xref>.</li>
+                <li>In the vSpenere client, click <b>Open File</b> then <b>Deploy OVF
+                    Template</b>.</li>
+                <li>In the <b>Deploy OVF Template</b> wizard, browse to your OVF template. </li>
+                <li>Click <b>Next</b> and complete the wizard:
+                <ol>
+                <li>Review the template details and click <b>Next</b>. </li>
+                <li>Enter a descriptive name for the VRS vApp and select the inventory location.
+                    Click <b>Next</b>. </li>
+                <li>Select the cluster and click <b>Next</b>. </li>
+                <li>Select the resource pool (if available) and click <b>Next</b>. </li>
+                <li>Select a shared storage location and click <b>Next</b>. </li>
+                <li>Select <b>Thin Provision</b> and click <b>Next</b>. </li>
+                <li>Configure the networks using the drop down mean identical to the example below.<p>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                                <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                                <thead>
+                                    <row>
+                                        <entry>Source Networks</entry>
+                                        <entry>Destination Networks</entry>
+                                    </row>
+                                </thead>
+                                <tbody>
+                                    <row>
+                                        <entry>VM Network</entry>
+                                        <entry>Cloud Lab Management</entry>
+                                    </row>
+                                    <row>
+                                        <entry>1-mvdce2esim04-OVSPG</entry>
+                                        <entry>dvPortGroup</entry>
+                                    </row>
+                                    <row>
+                                        <entry>mvdce2esim04-Datapath</entry>
+                                        <entry>DVRS Datapath</entry>
+                                    </row>
+                                    <row>
+                                        <entry>Multicast Source</entry>
+                                        <entry>DVRS Datapath</entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                    </p></li>
+                <li> Complete the Properties screen and click <b>Next</b>.<p><b>Important
+                            Properties:</b>
+                    </p><ul id="ul_txw_ny5_mt">
+                        <li>Mgmt Network= Clm network</li>
+                        <li>Data network = TUL</li>
+                        <li>vCenter credentials</li>
+                        <li>Nuage Controller = VSC Server</li>
+                        <li>Hypervisor = ESX host that will be assigned to this VM</li>
+                        <li>vRequire_NuageMetadata = No</li>
+                        <li>VRS Personality = VRS</li>
+                        <li>Multi Vm Support = No</li>
+                    </ul></li>
+                <li>Click <b>Finish</b>.</li>
+                </ol></li>
+            </ol>
+            <p><i>Return to the Installing the <xref
+                        href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+                        Deployment</xref>.</i></p>
+        </section>
   </body>
 </topic>

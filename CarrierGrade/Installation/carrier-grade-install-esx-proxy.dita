@@ -38,7 +38,7 @@
       <p>To deploy the compute proxy:<ol id="ol_ezn_ybt_xs">
           <li>Launch the VMware vCenter client.</li>
           <li>Click <b>File</b>, then <b>Deploy OVF Template</b>.</li>
-          <li>In the Deploy OVF Template wizard, specify the location of the
+          <li>In the <b>Deploy OVF Template</b> wizard, browse to the location of the
               <codeph>TEMPL-CPV9.ova</codeph> file.</li>
           <li>Click <b>Next</b> and complete the wizard:<ol id="ol_dsf_tnm_2t">
               <li>Verify the details of the template.</li>

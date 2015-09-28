@@ -43,7 +43,7 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
       the cloud deployment. Use the following command to verify that the VRS-G is active:
         <codeblock>show vswitch-controller vswitches  </codeblock><p>The output for the command
         should appear similar to the following image:</p>
-      <image href="../../media/CGH-2-verify-vrsg.png"/>
+      <image href="../../media/CGH-2-verify-vrsg-alpha.png" width="400"/>
       <!-- <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/> -->
       <p>Verify that the domain name and DNS server are listed in the
           <codeph>/etc/resolv.conf</codeph> file on all the cloud
@@ -118,6 +118,28 @@ source stackrc</codeblock></li>
           <image href="../../media/CGH-install-router-create.png" id="image_qfb_k1b_ct"/></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol></section>
+    <section>
+      <title>Create New Organization in VSD</title>
+      <p>Create an organization in VSD. </p>
+      <p>
+        <ol>
+          <li>Launch the VSD dashboard:<ul id="ul_urx_ftv_mt">
+              <li>Using Chrome or Safari, navigate to
+                  <codeph>https://&lt;VSD_address>:8443/</codeph> and enter user name, password and
+                organization. See the DCN documentation if you need to locate the IP address for the VSD.<p>
+                  <codeblock>User Name: Csproot 
+Password: csproot 
+Org: csp 
+VSD Server : auto </codeblock>
+                </p></li>
+            <li>Click the arrow icon to log in.</li></ul></li>
+              <li>Go to “Open Monitoring Console” on the VSD.</li>
+          <li>Click the <b>Back</b> tab. </li>
+          <li>Right click <b>Helion_Nuage_Integration</b> to create a new organization.</li>
+            
+        </ol>
+      </p>
+    </section>
     <section>
       <title>Add VLAN to VRS-G network device</title>
       <p>VRS‐G configuration includes setting up the port and VLAN ranges that are to be available

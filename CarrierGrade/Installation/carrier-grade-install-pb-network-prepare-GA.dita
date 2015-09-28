@@ -18,11 +18,155 @@
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/network/prepare/--></p>
 <p>Before installing HP Helion OpenStack Carrier Grade, you are responsible for preparing the network for all installations.</p>
-<section id="configure-vlan-networking-on-the-kvm-host"> <title>Configure VLAN networking on the KVM host</title>
-<ol>
+        <section>
+            <title>VLAN ID Reference</title>
+            <p>Make sure you have all VLAN IDs defined for the networks as defined in the <xref
+                    href="carrier-grade-technical-overview.dita#topic3485">Architecture
+                    Diagram</xref></p>
+
+        <p><b><u>Example</u></b></p>
+        <table id="table_a1r_yq5_mt">
+            <tgroup cols="3">
+                <colspec colnum="1" colname="col1"/>
+                <colspec colnum="2" colname="col2"/>
+                <colspec colnum="3" colname="col3"/>
+                <tbody>
+                    <row>
+                        <entry><b>VLAN ID</b></entry>
+                        <entry><b>Description/Assignment</b></entry>
+                        <entry><b>CIDR</b></entry>
+                    </row>
+                    <row>
+                        <entry>201</entry>
+                        <entry>HOS-PXE</entry>
+                        <entry>10.20.1.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>202</entry>
+                        <entry>WR-PXE</entry>
+                        <entry>10.20.2.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>203</entry>
+                        <entry>CLM</entry>
+                        <entry>10.20.3.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>204</entry>
+                        <entry>CAN</entry>
+                        <entry>10.20.4.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>205</entry>
+                        <entry>DCM</entry>
+                        <entry>10.20.5.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>206</entry>
+                        <entry>TUL - HOS</entry>
+                        <entry>10.20.6.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>207</entry>
+                        <entry>ESX - MGMT </entry>
+                        <entry>10.20.7.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>208</entry>
+                        <entry>ESX - MGMT / VMOTION</entry>
+                        <entry>10.20.8.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>209</entry>
+                        <entry>EXT</entry>
+                        <entry>10.20.9.0/26 x 4</entry>
+                    </row>
+                    <row>
+                        <entry>210</entry>
+                        <entry>Unused</entry>
+                        <entry>10.20.10.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>211</entry>
+                        <entry>WR- TUL</entry>
+                        <entry>10.20.11.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>212</entry>
+                        <entry>WR- TUL</entry>
+                        <entry>10.20.12.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>213</entry>
+                        <entry>WR- TUL</entry>
+                        <entry>10.20.13.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>214</entry>
+                        <entry>WR- TUL</entry>
+                        <entry>10.20.14.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>215</entry>
+                        <entry>WR- TUL</entry>
+                        <entry>10.20.15.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>216</entry>
+                        <entry>WR- TUL</entry>
+                        <entry>10.20.16.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>217</entry>
+                        <entry>WR- TUL</entry>
+                        <entry>10.20.17.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>218</entry>
+                        <entry>WR- TUL</entry>
+                        <entry>10.20.18.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>219</entry>
+                        <entry>WR- TUL</entry>
+                        <entry>10.20.19.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>220</entry>
+                        <entry>WR- TUL</entry>
+                        <entry>10.20.20.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>221</entry>
+                        <entry>Unused</entry>
+                        <entry>10.20.21.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>222</entry>
+                        <entry>Unused</entry>
+                        <entry>10.20.22.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>73</entry>
+                        <entry>WR INFRA / BLS</entry>
+                        <entry>172.16.73.0/24</entry>
+                    </row>
+                    <row>
+                        <entry>7</entry>
+                        <entry>BLS</entry>
+                        <entry>172.16.12.2-254</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    <section id="configure-vlan-networking-on-the-kvm-host">
+            <title>Configure VLAN networking on the KVM host</title>
+            <ol>
                 <li>Launch a terminal and log in to your KVM host as root:
                     <codeblock>sudo su -</codeblock></li>
-<li>Edit <codeph>/etc/network/interfaces</codeph> file to provide network details on the each interface:<codeblock><codeph>auto lo
+                <li>Edit <codeph>/etc/network/interfaces</codeph> file to provide network details on
+                    the each interface:<codeblock><codeph>auto lo
 iface lo inet loopback
 
 # The primary network interface
@@ -127,12 +271,12 @@ iface em1.1550 inet manual
 ovs_bridge br-dcm
 ovs_type OVSPort
 </codeph></codeblock></li>
-<li>Execute the following command to check the
+                <li>Execute the following command to check the
                     output:<codeblock>ovs-vsctl show 
 706add53-21a4-4062-9149-d7bd77896076
 ovs_version: "2.0.2"</codeblock></li>
-</ol>
-</section>
+            </ol>
+        </section>
 <section id="create-the-networks-for-associating-with-the-hlm-virtual-machine"> <title>Create the networks for associating with the HLM virtual machine</title>
 <p>The installation process will create a virtual machine for HP Helion Lifecycle Management.</p>
 <p>Perform the following steps to enable networks that will be associated with HLM VM.</p>

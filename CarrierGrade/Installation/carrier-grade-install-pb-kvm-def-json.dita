@@ -55,29 +55,17 @@
                 
                     "control-planes": [
                         {
-                            "file": ".hos/ccp-dcn-esx.json",
-                            "resource-nodes": [
+                            "file": ".hos/ccp-cpx.json",
+                            "count": 2
+                        },
                                 {
-                                    "type": "cpn",
-                                    "count": 1,
-                                    "services": [
-                                        "FND-IPT",
-                                        "NTP-SVR",
-                                        "NOV-CPX",
-                                        "CPX-CFG",
-                                        "CEI-CMP"
-                                        ]
-                       },
-                       {
-                            "file":  ".hos/ccp-vrsg.json",
+                            "file": ".hos/ccp-vrsg.json",
                             "count": 1
                         }
                     ]
                 }
              ]
-         }
-                
-</codeblock>
+         }</codeblock>
         </section>
 </body>
 </topic>

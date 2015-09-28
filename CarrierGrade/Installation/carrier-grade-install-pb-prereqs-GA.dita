@@ -396,6 +396,48 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                 </tgroup>
                         </table>
                 </section>
+                <p/>
+                <p><b>Required patch files</b></p>
+                <table id="table_ich_gs5_mt">
+                        <tgroup cols="2">
+                                <colspec colnum="1" colname="col2"/>
+                                <colspec colnum="2" colname="col3"/>
+                                <tbody>
+                                        <row>
+                                                <entry><b>File Name</b></entry>
+                                                <entry><b>Files within the folder</b></entry>
+                                        </row>
+                                        <row>
+                                                <entry> Nuage_restproxy</entry>
+                                                <entry>
+                                                  <p>nuage_restproxy.py.diff.gz</p>
+                                                  <p>nuage_restproxy.txt</p>
+                                                  <p> </p>
+                                                </entry>
+                                        </row>
+                                        <row>
+                                                <entry>fip_patch</entry>
+                                                <entry>
+                                                  <p>configure.json</p>
+                                                  <p>ReadMe.txt</p>
+                                                </entry>
+                                        </row>
+                                        <row>
+                                                <entry>logrotate_patch</entry>
+                                                <entry>
+                                                  <p>configure.json</p>
+                                                  <p>metadata.tar.gz</p>
+                                                  <p>ReadMe.txt</p>
+                                                </entry>
+                                        </row>
+                                        <row>
+                                                <entry>role-generator.py</entry>
+                                                <entry> </entry>
+                                        </row>
+                                </tbody>
+                        </tgroup>
+                </table>
+                <p> </p>
                         <!--<ol>
                                 <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file. The following
                                         list of files is extracted:
@@ -464,7 +506,8 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                         </ul></li>
                                 <li>Create the <codeph>~/cg/dcn</codeph> directory on the HLM
                                         host.</li>
-                                <li>Extract the compressed download packages. <table
+                                <li>Extract the compressed download packages. 
+                                        <!--<table
                                                 id="table_e4b_pyk_2t">
                                                 <tgroup cols="3">
                                                   <colspec colnum="1" colname="col2"
@@ -524,6 +567,55 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <p>Then untarring this file will extract a patch
                                                   file for the vSphere Distributed Switch. </p>
                                                   </entry>
+                                                  <entry>Any location. Copy to VSD VM.</entry>
+                                                  </row>
+                                                  </tbody>
+                                                </tgroup>
+                                        </table>-->
+                                        <table
+                                                id="t">
+                                                <tgroup cols="2">
+                                                  <colspec colnum="1" colname="col3"
+                                                  colwidth="2.77*"/>
+                                                  <colspec colnum="2" colname="col4" colwidth="1*"/>
+                                                  <thead>
+                                                  <row>
+                                                  <entry>List of files to be used after
+                                                  Extraction</entry>
+                                                  <entry>Copy the files to directory on HLM
+                                                  Host</entry>
+                                                  </row>
+                                                  </thead>
+                                                  <tbody>
+                                                  <row>
+                                                  <entry>
+                                                  <p> nuage-metadata-agent_3.2.3-102_all.deb</p>
+                                                  <p> nuage-neutron_1694-nuage-kilo_all.deb</p>
+                                                  <p>
+                                                  nuage-openvswitch-common_3.2.3-102_amd64.deb</p>
+                                                  <p>
+                                                  nuage-openvswitch-switch_3.2.3-102_amd64.deb</p>
+                                                  <p> nuage-python-openvswitch_3.2.3-102_all.deb</p>
+                                                  <p> python-nuagenetlib_3.2.3-101-kilo_all.deb</p>
+                                                  <p> vsc_singledisk.qcow2</p>
+                                                  </entry>
+                                                  <entry>/root/cg/dcn</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry>
+                                                  <p>VSD-3.2.3_105-hp.qcow2</p>
+                                                  <p>vsd.xml</p>
+                                                  </entry>
+                                                  <entry>/var/lib/libvirt/images</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry>
+                                                  <p>VRS_3.2.3-104_08282015.ovf</p>
+                                                  </entry>
+                                                  <entry>Any location. Copy to VSD VM.</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry>VRS_3.2.3-104_08282015-disk1.vmdk</entry>
                                                   <entry>Any location. Copy to VSD VM.</entry>
                                                   </row>
                                                   </tbody>

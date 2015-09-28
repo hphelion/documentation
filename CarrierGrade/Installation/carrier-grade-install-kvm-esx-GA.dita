@@ -113,7 +113,7 @@
             IP of the HLM VM. Locate the IP address for the HLM VM in the
               <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file under
               <codeph>hlm_clmstaticip</codeph> field.</p><p>Use the default credentials: </p><p>
-            <codeblock>User Name: cghelion
+            <codeblock>User Name: root
 Password: cghelion</codeblock>
           </p><p><b>Important:</b> After logging in with the default password, make sure you change
             the password for the <codeph>cghelion</codeph> user. </p><p><image
@@ -221,9 +221,9 @@ Password: cghelion</codeblock>
       <p><b>Note:</b> To see a sample <codeph>definition.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-def-json.dita#topic4797">Sample definition.json File
           for Installing the KVM + ESX Topology</xref>.<ol id="ol_zzr_khl_zs">
-          <li>Set the number of compute systems to
-            1<!--2 for an HA VRS-G installation-->.<codeblock>"file": ".hos/ccp-vrsg.json",
-"count": 1
+          <li>Set the number of compute systems to 2 for an HA VRS-G
+            installation.<codeblock>"file": ".hos/ccp-vrsg.json",
+"count": 2
 ...
 "file":  ".hos/ccp-vrsg.json",
 "count": 1</codeblock></li>
@@ -251,6 +251,18 @@ Password: cghelion</codeblock>
           <li><xref href="carrier-grade-install-pb-kvm-env-json-bonded.dita#topic4797">For a Bonded
               NIC Environment</xref></li>
         </ul></p>
+    </section>
+    <section>
+      <title>Congfure the ccp-dcn-esx.json file</title>
+      <p>Modify the <codeph>member-count</codeph> field in the <codeph>ccp-dcn-esx.json</codeph> in
+        the <codeph>~/&lt;cloudname&gt;/.hos/ccp-dcn-esx.json</codeph>  directory of the HLM VM.
+        Make sure the <codeph>member-count</codeph> field in the <codeph>tiers</codeph> section is
+        set to <b>1</b> as shown:</p>
+      <p><!--By default it will be “2”, change to “1” for Build#15.--></p>
+      <codeblock>"tiers": [
+        {
+            "id": "1",
+            "member-count": 1,</codeblock>
     </section>
     <section id="configure-ansible-json">
       <title>Configure the ansible.json file</title>
@@ -354,7 +366,7 @@ Password: cghelion</codeblock>
               href="../../media/CGH-2-install-cobbler.png" width="600" id="image_c5k_d4b_kt"
           /></p>Once the baremetal nodes are provisioned, make sure the <codeph>nodes.json</codeph>
           file is generated. The <codeph>nodes.json</codeph> file will have entries of 3
-          controllers, 2 DCN Hosts, 2 VRS-G and the compute proxy node.</li>
+          controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</li>
         <li>Verify that each node in the <codeph>nodes.json</codeph> file is installed and active. <ol>
             <li>Ping proxy node from HLM VM with the IP using IP specified in
                 <codeph>nodes.json</codeph> file.</li>
@@ -375,58 +387,48 @@ Password: cghelion</codeblock>
               contains several sample Cinder configuration files that you can edit, depending upon
               which storage method(s) you are using.</li>
             <li>Depending upon the type of storage you are using, edit the following file: <ul>
-                <li><codeph>cinder_conf.multiBackendSample</codeph> - this sample file provides all
-                  the variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA
-                  and/or HP StoreServ (3PAR) attched to the KVM region;</li>
-              </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the
-                back-ends you are using. You must specify at least one back-end for the non-KVM
-                region and one or more for the KVM region.</p><table>
-                <tgroup cols="3">
-                  <colspec colname="col1" colsep="1" rowsep="1"/>
-                  <colspec colname="col2" colsep="1" rowsep="1"/>
-                  <colspec colname="col3" colsep="1" rowsep="1"/>
-                  <thead>
-                    <row>
-                      <entry colsep="1" rowsep="1">Region/Hypervisor</entry>
-                      <entry colsep="1" rowsep="1">Volume Backend</entry>
-                      <entry colsep="1" rowsep="1">Backend Name</entry>
-                    </row>
-                  </thead>
-                  <tbody>
-                    <row>
-                      <entry>KVM</entry>
-                      <entry>3PAR </entry>
-                      <entry>hp3par</entry>
-                    </row>
-                    <row>
-                      <entry>KVM</entry>
-                      <entry>VSA</entry>
-                      <entry>hplefthand</entry>
-                    </row>
-                    <row>
-                      <entry>Non-KVM </entry>
-                      <entry>ESX Datastores</entry>
-                      <entry>vmdk </entry>
-                    </row>
-                  </tbody>
-                </tgroup>
-              </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select
-                both if you have respective storage arrays </p><p id="storage">A typical
-                  <codeph>cinder_conf</codeph> that enables all three back ends appears similar to
-                the following
-              example:</p><codeblock>[DEFAULT]
+            <li><codeph>cinder_conf.multiBackendSample</codeph> - this sample file provides all the
+              variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA and/or HP
+              StoreServ (3PAR) attched to the KVM region;</li>
+          </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the back-ends
+            you are using. You must specify at least one back-end for the non-KVM region and one or
+            more for the KVM region.</p><table>
+            <tgroup cols="3">
+              <colspec colname="col1" colsep="1" rowsep="1"/>
+              <colspec colname="col2" colsep="1" rowsep="1"/>
+              <colspec colname="col3" colsep="1" rowsep="1"/>
+              <thead>
+                <row>
+                  <entry colsep="1" rowsep="1">Region/Hypervisor</entry>
+                  <entry colsep="1" rowsep="1">Volume Backend</entry>
+                  <entry colsep="1" rowsep="1">Backend Name</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>KVM</entry>
+                  <entry>3PAR </entry>
+                  <entry>hp3par</entry>
+                </row>
+                <row>
+                  <entry>KVM</entry>
+                  <entry>VSA</entry>
+                  <entry>hplefthand</entry>
+                </row>
+                <row>
+                  <entry>Non-KVM </entry>
+                  <entry>ESX Datastores</entry>
+                  <entry>vmdk </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select both
+            if you have respective storage arrays </p><p id="storage">A typical
+              <codeph>cinder_conf</codeph> that enables all three back ends appears similar to the
+            following
+          example:</p><codeblock>[DEFAULT]
 enabled_backends=vmdk, hp3par, hplefthand
 ...                                
-[vmdk]
-volume_backend_name = &lt;mybackendname3>
-vmware_host_ip = &lt;hostip>
-vmware_host_username = &lt;username>
-vmware_host_password = &lt;password>
-vmware_volume_folder = &lt;volumes_folder>
-vmware_image_transfer_timeout_secs = 7200
-vmware_task_poll_interval = 0.5
-vmware_max_objects_retrieval = 100
-volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
           
 [hp3par]
 volume_backend_name=&lt;mybackendname1>
@@ -449,7 +451,20 @@ volume_backend_name=&lt;mybackendname2>
 hplefthand_username = &lt;username>
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>
-hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li>
+hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos 
+volume_driver = cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
+hplefthand_debug = false
+
+[vmdk]
+volume_backend_name = &lt;mybackendname3>
+vmware_host_ip = &lt;hostip>
+vmware_host_username = &lt;username>
+vmware_host_password = &lt;password>
+vmware_volume_folder = &lt;volumes_folder>
+vmware_image_transfer_timeout_secs = 7200
+vmware_task_poll_interval = 0.5
+vmware_max_objects_retrieval = 100
+volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock></li>
             <li>Save the file to <codeph>cinder_conf</codeph>.</li>
           </ol>
       </section>
@@ -486,8 +501,8 @@ The configuration processor completed successfully.
               <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created.</p><p>After
             this command completes, all cloud nodes and CLM network interfaces are configured. The
             output for the command should appear similar to the following:</p><p><image
-              href="../../media/CGH-install-hnetinit-output.png" id="image_tft_r11_1t" width="500"
-            /></p></li>
+              href="../../media/CGH-2-install-hnetinit-output-alpha.png" id="image_tft_r11_1t"
+              width="500"/></p></li>
         <li>You can use the following command to ping each of the installed nodes:<p>
             <codeblock>hnetping &lt;cloud name&gt;</codeblock>
           </p></li>
@@ -499,7 +514,9 @@ The configuration processor completed successfully.
             <codeblock>hdeploy &lt;cloudname&gt;</codeblock><p>This command takes a significant
             period of time. When this command is complete, the non-KVM cloud installation is
             complete. Use the following sections to configure the Horizon interface, configure
-            networking, and configure the ESX environment. </p></li>
+            networking, and configure the ESX environment. </p><p><image
+              href="../../media/CGH-2-install-hdeploy-output-alpha.png" width="500"
+              id="image_tgj_fnv_mt"/></p></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
       <p><b>Note:</b> If the <codeph>hdeploy</codeph> script fails, review the topics in <xref

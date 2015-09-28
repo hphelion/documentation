@@ -63,16 +63,14 @@ server 16.110.135.113 </codeblock><p><image
 ntpdate &lt;ip-address&gt;
 service ntpd start</codeblock><p>Where
                         &lt;ip-address&gt; is the address of your NTP server.</p></li>
-                <li> Execute the following command to verify that the NTP servers are
-                    listed:<codeblock>ntpq –p</codeblock>
-                <p>
-                    <image href="../../media/CGH-2-ntp-verify.png" id="image_ltd_b1l_2t" width="500"
-                    /></p></li>
+                <li> Execute the following command to verify that the NTP servers are listed:<codeblock>ntpq –p</codeblock><p>
+                        <image href="../../media/CGH-2-ntp-verify.png" id="image_ltd_b1l_2t"
+                            width="500"/></p></li>
                 <li>Verify that NTP is synchronized. The synchronization process usually takes 10 to
                     15 minutes. <image href="../../media/CGH-2-ntp-verify-time.png" height="68"
                         width="328" id="image_ntd_b1l_2t"/></li>
-                <li>After NTP is properly synchronized,execute the install
-                    script:<codeblock> /opt/vsd/install.sh xmpp.&lt;domain_name> -t s -y</codeblock></li>
+                <li>After NTP is properly synchronized,execute the following command to install
+                    VSD:<codeblock> /opt/vsd/install.sh xmpp.&lt;domain_name> -t s -y</codeblock></li>
             </ol>
             <b>Verify that VSD is installed</b>
             <ol id="ol_mgf_hgl_2t">
@@ -83,8 +81,7 @@ service ntpd start</codeblock><p>Where
                         <codeblock>service vsd status </codeblock><p>You should see the status as
                         shown:</p><p><image href="../../media/CGH-2-vsd-verify.png"
                             id="image_wty_ygl_2t"/></p></li>
-            </ol>
-        </section>
+            </ol></section>
             <section>
             <title>Logging into VSD node, creating user and applying License</title>
             <ol>

@@ -155,59 +155,57 @@ _vars.vsc_dcm_ip_subnet}}
                 appropriate for your environment. The IP addresses are masked for security purposes.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
-<codeblock>
-    {
-        "product": {
-            "version": 1
-           },
-    
-        "property-groups": [
-            {
-                "name": "ansible-vars",
-                "properties": {
-                    "nuagenetlib_tar_name": "nuage-openstack-nuagenetlib-juno.tar.gz",
-                    "nuageneutron_tar_name": "nuage-openstack-neutron-juno-plugin.tar.gz",
-                    "dns_domain_name": "dcn-two.helion.cg",
-                    "ext_dns_ip": "10.1.x.x",
-                    "dns_address": "10.1.x.x",
-                    "vsc_dcm_ip": "10.20.x.x",
-                    "vsc_dcm_ip_ha": "10.20.x.x",
-                    "vsc_dcm_ip_subnet": "24",
-                    "vsc_tul_cidr": "10.10.x.x/24",
-                    "vsc_tul_cidr_ha": "10.10.x.x/24",
-                    "vsc_tul_ip": "10.10.x.x",
-                    "vsc_tul_ip_ha": "10.10.x.x",
-                    "vsc_user_name": "admin",
-                    "vsc_user_pass": "admin",
-                    "vsc_xmpp_name": "vscha1:password@vsd1.dcn-two.helion.cg",
-                "vsc_xmpp_name_ha": "vscha2:password@vsd1.dcn-two.helion.cg",
-                    "vsc_route_mgmt_cidr": [
-                        "10.1.x.x/24",
-                        "10.10.x.x/24"
-                        ],
-                    "vsc_route_mgmt_gw": "10.10.x.x",
-                    "vsd_address": "10.10.x.x",
-                    "vsd_name": "vsd1",
-                    "vsc_image_name": "vsc_singledisk",
-                    "vsc_host_name": "vscha1",
-                "vsc_host_name_ha": "vscha2",
-                    "vsc_ha_enabled": 1,
-                "vsc_bgp_required": 1,
-                    "vsd_image_name": "VSD-3.0.0_HP_r3.0_36",
-                    "vsd_gateway": "10.10.x.x",
-                    "vsd_netmask": "255.255.255.0",
-                    "upstream_ntp_servers": [
-                        "10.1.x.x",
-                        "16.110.x.x
-                        ],
-                    "compute_virt_type": "kvm",
-                    "ssl_cert_file": "ca.crt",
-                    "ssl_key_file": "cakey.pem",
-                    "ssl_passphrase": "cghelion"
-                }
+<codeblock>{
+    "product": {
+        "version": 1
+    },
+
+    "property-groups": [
+        {
+            "name": "ansible-vars",
+            "properties": {
+                "dns_domain_name": "dcn-one.helion.cg",
+                "ext_dns_ip": "10.x.x.x",
+                "dns_address": "10.x.x.x",
+                "vsc_dcm_ip": "10.x.x.x",
+                "vsc_dcm_ip_ha": "10.x.x.x",
+                "vsc_dcm_ip_subnet": "24",
+                "vsc_tul_cidr": "10.x.x.x/24",
+                "vsc_tul_cidr_ha": "10.x.x.x/24",
+                "vsc_tul_ip": "10.x.x.x",
+                "vsc_tul_ip_ha": "10.x.x.x",
+                "vsc_user_name": "admin",
+                "vsc_user_pass": "admin",
+                "vsc_xmpp_name": "vsc1:password@vsd1.dcn-one.helion.cg",
+                "vsc_xmpp_name_ha": "vsc2:password@vsd1.dcn-one.helion.cg",
+                "vsc_route_mgmt_cidr": [
+                    "10.x.x.x/24",
+                    "10.x.x.x/24"
+                ],
+                "vsc_route_mgmt_gw": "10.x.x.x",
+                "vsd_address": "10.x.x.x",
+                "vsd_name": "vsd1",
+                "vsc_image_name": "vsc_singledisk",
+                "vsc_host_name": "vsc1",
+                "vsc_host_name_ha": "vsc2",
+                "vsc_ha_enabled": 0,
+                "vsc_bgp_required": 0, 
+              "vsd_image_name": "VSD-3.2.2_74-hp.qcow2",
+                "vsd_gateway": "10.x.x.x",
+                "vsd_netmask": "255.255.255.0",
+                "upstream_ntp_servers": [
+                    "10.x.x.x",
+                    "16.x.x.x"
+                ],
+                "compute_virt_type": "kvm",
+                "ssl_cert_file": "ca.crt",
+                "ssl_key_file": "cakey.pem",
+                "ssl_passphrase": "cghelion"
             }
-        ]
-    }
+        }
+    ]
+}
+
 </codeblock>
            
         
