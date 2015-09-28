@@ -4,15 +4,63 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 LBaaS Configuration</title>
   <body>
     <p>HP Helion OpenStack 2.0 LBaaS Configuration</p>
-    <p>This document describes the configuration process and requirements for the HP Helion OpenStack 2.0 
-      Load Balancing as a Service module.</p>
-    <note type="important">It is not recommended that LBaaS v1 is used in a production
-        environment. It is recommended you use LBaaS v2. If you do deploy LBaaS v1, the upgrade to
-        LBaaS v2 is non-trivial and may require the use of professional services.</note>
-  
- 
+    <p> Load Balancing as a Service (LBaaS) is an advanced networking service that allows load
+      balancing of multi-node environments. It provides the ability to spread requests across
+      multiple servers thereby reducing the load on any single server.  This document describes the
+      installation steps for LBaaS v1 (see prerequisites) and the configuration for LBaaS v1 and
+      v2.</p>
+
+    <p>HP Helion OpenStack 2.0 can support either LBaaS v1 or LBaaS v2 to allow for wide ranging
+      customer requirements. If the decision is made to utilize LBaaS v1 it is highly unlikely that
+      you will be able to perform an on-line upgrade of the service to v2 after the fact as the
+      internal data structures are significantly different. Should you wish to attempt an upgrade
+      support will be needed from Helion Professional Services and your chosen load balancer
+      partner.</p>
+    
+    <p>Currently neither version offers a software load balancing solution that supports both a highly available 
+      control plane and data plane. However, should an external hardware load balancer be selected the cloud operation 
+      can achieve a highly available data plane.</p>
+    
+    <p><b>LBaaS v1</b></p>
+    <p>Reasons to select this version.</p>
+    <ol>
+      <li>You must be able to configure LBaaS via Horizon.</li>
+      <li>Your hardware load balancer vendor does not currently support LBaaS v2.</li>
+    </ol>
+    <p>Reasons not to select this version.</p>
+    <ol>
+      <li>No active development is being performed on this API in the OpenStack community. (Security fixes are still being worked upon).</li>
+      <li>It does not allow for multiple ports on the same VIP (e.g. support both port 80 and 443 on a single VIP).</li>
+      <li>It will never be able to support TLS termination/re-encryption at the load balancer.</li>
+      <li>It will never be able to support L7 rules for load balancing.</li>
+      <li>LBaaS v1 will likely become officially deprecated by the OpenStack community at the Tokyo
+        (October 2015) summit.</li>
+    </ol>
+    <p><b>LBaaS v2</b></p>
+    <p>Reasons to select this version.</p>
+    <ol>
+      <li>Your vendor already has a driver that supports LBaaS v2. Many hardware load balancer
+        vendors already support LBaaS v2 and this list is growing all the time.</li>
+      <li>You intend to script your load balancer creation and management so a UI is not important right now (Horizon support will be added in a future release).</li>
+      <li>You intend in future releases to support TLS termination at the load balancer.</li>
+      <li>You intend in future releases to use the Octavia software load balancer (adding HA and scalability).</li>
+      <li>You don’t want to take your load balancers offline in order to perform subsequent LBaaS upgrades.</li>
+      <li>You intend in future releases to need L7 load balancing.</li>
+    </ol>
+    <p>Reasons not to select this version.</p>
+    <ol>
+      <li>Your LBaaS vendor doesn’t have a v2 driver.</li>
+      <li>You must be able to manage your load balancers from Horizon.</li>
+      <li>You have legacy software which utilizes the LBaaS v1 API.</li>
+    </ol>
+
+    <p>LBaaS v1 requires configuration changes prior to installation and is not recommended. LBaaS
+      v2 is installed by default with HP Helion OpenStack and requires minimal configuration to
+      start the service.</p>
+
+
+
     <p>  
-      
       <ul id="LBaaSlist">
         <li><xref href="lbaas.dita#HP2.0LBaaS/Prerequisites">Prerequisites</xref></li>
         <li><xref href="lbaas.dita#HP2.0LBaaS/Configuration">Configuration</xref></li>
@@ -22,17 +70,14 @@
     
     <section id="Prerequisites">
       <title>Prerequisites</title>
-      <p>HP Helion OpenStack must be installed for LBaaS V2.</p>
-      
-    </section>
-    
-    
-    <section id="InstallingLBaaSV1">
-      <title>Installing LBaaS V1</title>
-        <p>Installing LBaaS V1</p>
-        <note>If you need to run LBaaS V1 instead of the default LBaaS V2, you should make
-        appropriate installation preparations during HP Helion OpenStack installation since LBaaS V2
-        is the default. If you have selected to install and use LBaaS V1 you will replace the
+      <p><b>HP Helion OpenStack LBaaS v1</b></p>
+       <p>Installing LBaaS v1</p>
+        <note type="important">It is not recommended that LBaaS v1 is used in a production
+        environment. It is recommended you use LBaaS v2. If you do deploy LBaaS v1, the upgrade to
+        LBaaS v2 is non-trivial and may require the use of professional services.</note>
+        <note>If you need to run LBaaS v1 instead of the default LBaaS v2, you should make
+        appropriate installation preparations during HP Helion OpenStack installation since LBaaS v2
+        is the default. If you have selected to install and use LBaaS v1 you will replace the
         control_plane.yml directories and neutron.conf.j2 file to use version 1. </note>
       
         <p>Before you modify the control_plane.yml and neutron.conf.j2 files, it is recommended that
@@ -48,11 +93,14 @@
             type&gt;/data/control_plane.yml</i></li>
           <li>Replace <i>neutron-lbaasv2-agent</i> with <i>neutron-lbaas-agent</i>.</li>
           <li>In neutron-ansible, edit <i>roles/neutron-common/templates/neutron.conf.j2</i></li>
-          <li>Comment out the LBaaS V2 <i>service_plugin</i> and <i>service_provider</i> lines.</li>
-          <li>Uncomment the LBaaS V1 lines.</li>
+          <li>Comment out the LBaaS v2 <i>service_plugin</i> and <i>service_provider</i> lines.</li>
+          <li>Uncomment the LBaaS v1 lines.</li>
         </ol>
+      <p><b>HP Helion OpenStack LBaaS v2</b></p>
+      <ol>
+        <li>HP Helion OpenStack must be installed for LBaaS v2.</li>
+      </ol> 
     </section>
-    
     
     <section id="Configuration">
       <title>Configuration</title>
@@ -76,7 +124,7 @@
       </sectiondiv>
       
       <sectiondiv id="CreateLBaaSNetwork">
-        <p>Create Private Network for LBaaS</p>
+        <p><b>Create Private Network for LBaaS</b></p>
           
         <p>You can create the new network and router by executing the following command from the deployer or a shell with access to the API nodes.</p>
         <ol>
@@ -96,7 +144,7 @@ neutron router-gateway-set router ext-net</codeblock></li>
       </sectiondiv>
       
       <sectiondiv id="StartVirtualMachines">
-      <p>Start Virtual Machines</p>
+      <p><b>Start Virtual Machines</b></p>
       <ol>
         <li>Add security group rules. <note>In the example below the load balancer is tested on port
               80. If you need to test the load balancer on a different port you will need to create
@@ -129,7 +177,7 @@ nova show vm2</codeblock></li>
       </sectiondiv>
       
       <sectiondiv id="CreateLoadBalancer">
-      <p>Create Load Balancer V2</p>
+      <p><b>Create Load Balancer v2</b></p>
       <ol>
         <li>Create the new load balancer using the <codeph>lbaas-loadbalancer-create</codeph> command and giving the load balancer a name and subnet.
           <codeblock>neutron lbaas-loadbalancer-create --name lb sub</codeblock></li>
@@ -155,11 +203,13 @@ portuuid_vip=$(neutron port-list | grep $fixedip_vip | awk '{print $2}')</codebl
         <li>Create and associate floating IP address to lbaas vip address.
         <codeblock>neutron floatingip-create ext-net –-port-id $portuuid_vip</codeblock></li>
       </ol>
-        
-      <p>Create Load Balancer V1</p>
-        <note type="important">It is not recommended that LBaaS v1 is used in a production environment.  
-          It is recommended you use LBaaS v2. If you do deploy LBaaS v1, the upgrade to LBaaS v2 is non-trivial and may 
-          require the use of professional services</note>
+      </sectiondiv>
+      
+      <sectiondiv id="CreateLoadBalancerV1">
+      <p><b>Create Load Balancer v1</b></p>
+        <note type="important">It is not recommended that LBaaS v1 is used in a production
+          environment. It is recommended you use LBaaS v2. If you do deploy LBaaS v1, the upgrade to
+          LBaaS v2 is non-trivial and may require the use of professional services</note>
         <ol>
           <li>Create the load balancer pool with <codeph>lb-pool-create</codeph> giving it a method, name, protocol and subnet.
           <codeblock>neutron lb-pool-create --lb-method ROUND_ROBIN --name pool --protocol HTTP --subnet-id $(neutron subnet-list | awk '/sub/ {print $2}')</codeblock></li>
@@ -176,7 +226,7 @@ neutron lb-member-create --address &lt;ip address vm2> --protocol-port &lt;port>
       </sectiondiv>
       
       <sectiondiv id="TestLoadBalancer">
-      <p>Validate LBaaS Functionality</p>
+      <p><b>Validate LBaaS Functionality</b></p>
         <note>You should perform the following steps from a node that has a route to the private
           network. Using the examples from above, 10.1.0.0/24 should be reachable.  <p>If LBaaS VIP
             needs to be accessed from the external network, it is currently only supported for
@@ -210,8 +260,8 @@ $ ./webserv.sh</codeblock></li>
           <li>Open a separate window. From the respective source node in external network (in case
             of accessing LBaaS VIP thorough its FIP) or in private network (in case of no FIP), add
             the respective IP address to the no_proxy env variable, if required. You can get the
-              <i>VIP</i> from the <codeph>neutron lbaas-loadbalancer-list</codeph> for LBaaS V2 and
-              <codeph>neutron lb-vip-list</codeph> for LBaaS V1.</li>
+              <i>VIP</i> from the <codeph>neutron lbaas-loadbalancer-list</codeph> for LBaaS v2 and
+              <codeph>neutron lb-vip-list</codeph> for LBaaS v1.</li>
           <li>Run the following commands to test load balancing. In this example, the VIP IP address
             is 10.1.0.7 and when executing curl against the VIP, the responses are returned from the
             load balanced
@@ -229,6 +279,7 @@ Welcome to 10.1.0.4</codeblock></li>
         </ol>
       </sectiondiv>
     </section>
+    
     <section id="MoreInfo">
       <title>More Information</title>
       <p>For more information on the neutron command-line interface (CLI) and load balancing, see the OpenStack networking command-line client
