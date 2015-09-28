@@ -2045,7 +2045,7 @@ tags:
 tags:
   - neutron.networks.vlan:
       provider-physical-network: physnet1
-      tenant-vxlan-id-range: “100:200”</codeblock></p>
+      tenant-vlan-id-range: “100:200”</codeblock></p>
       <p><b>neutron.networks.flat</b></p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="neutron_networks_flat">
