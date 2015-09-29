@@ -17,7 +17,7 @@
   <!-- Index -->
   <topicref href="home.dita"/>
   <!-- HoS 2.0 -->
-  <topicref href="helion/index.dita" toc="no">
+  <topicref href="helion/index.dita">
     <topicref href="helion/releasenotes.dita"/>
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
