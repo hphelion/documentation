@@ -7,12 +7,19 @@
       <p>These steps assume the following has been completed:</p>
       <ul>
         <li>Your Administrator has created a valid External Network for your environment.</li>
+        <li>Your Administrator has provided you with the IP address or Hostname for the Horizon
+          Dashboard.</li>
       </ul>
+      <p>These steps use the pre-setup <codeph>demo</codeph> user account in Helion OpenStack. If
+        your Administrator has setup a separate user account for you then you will use those
+        credentials to access Horizon.</p>
     </section>
     <section id="create_router"><title>Creating a Router</title>
       <p>
         <ol>
-          <li>Access Horizon and login as demo/demo</li>
+          <li>Access Horizon and login with the following credentials:
+            <codeblock>Username: demo
+Password: demo</codeblock></li>
           <li>Open the Create Router wizard by following these steps: <ol>
               <li>Navigate to <b>Routers</b> under the Network menu.</li>
               <li>Click on the <b>Create Router</b> button.</li>
@@ -37,7 +44,9 @@
     </section>
     <section id="create_network"><title>Creating a Network and Subnet</title>
       <ol>
-        <li>Access Horizon and login as demo/demo</li>
+        <li>Access Horizon and login with the following credentials:
+          <codeblock>Username: demo
+Password: demo</codeblock></li>
         <li>Open the Create Network wizard by following these steps: <ol>
             <li>Navigate to <b>Networks</b> under the Network menu.</li>
             <li>Click on the <b>Create Network</b> button.</li>
