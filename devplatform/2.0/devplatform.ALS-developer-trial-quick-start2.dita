@@ -5,18 +5,6 @@
 <titlealts>
 <searchtitle>HP Helion 2.0 Development Platform: Quick Start Developer Trial Step 2</searchtitle>
 </titlealts>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="Security Engineer"/>
-<othermeta name="role" content="ISV Developer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-</metadata>
-</prolog>
 <body>
 <p>During this step, you will download and install the configuration tool, named <varname>cf-mgmt</varname>. This tool provides a quick way to pass configuration parameters to the Helion Development Platform. <!--A BR tag was used here in the original source.-->The download links and instructions will open in a separate page so you don't lose your place.
 </p>
@@ -38,6 +26,7 @@
             update, or delete ALS clusters. Click the download link that is appropriate for your
             operating system. </p><ul>
             <li>
+<<<<<<< HEAD:devplatform/2.0/devplatform.ALS-developer-trial-quick-start2.dita
               <xref href="https://clients.als.hpcloud.com/cf-mgmt-1.2.1-windows-x86_64.zip"
                 scope="external" format="html"><tm tmtype="reg">Windows</tm></xref>
             </li>
@@ -46,6 +35,18 @@
             </li>
             <li>
               <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.1-osx-x86_64.zip" scope="external" format="html"><tm tmtype="reg">Mac OS X</tm></xref>
+=======
+              <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.3.0-windows-x86_64.zip"
+                scope="external" format="html">Windows</xref>
+            </li>
+            <li>
+              <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.3.0-linux-x86_64.zip"
+                scope="external" format="html">Linux x64</xref>
+            </li>
+            <li>
+              <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.3.0-osx-x86_64.zip"
+                scope="external" format="html">Mac OS X</xref>
+>>>>>>> 1870793... updates to quick start and adding docker image to helion push:devplatform/1.3/devplatform.ALS-developer-trial-quick-start2.dita
             </li>
           </ul><note> After installation, you may run the <varname>cf-mgmt update</varname> command
             at any time to check for and install the most recent version. </note><p>
@@ -54,7 +55,7 @@
             applications, link Helion <tm tmtype="reg">OpenStack</tm> services to applications, and
             perform other application management operations. Download this tool if you intend to
             push applications to your quick-start trial environment. </p>Click the download link
-          that is appropriate for your operating system. <ul>
+          that is appropriate for your operating system and then extract the files.<ul>
             <li>
               <xref href="http://clients.als.hpcloud.com/helion-1.3.0-win32-ix86.zip"
                 scope="external" format="html"><tm tmtype="reg">Windows</tm></xref>
@@ -67,8 +68,8 @@
               <xref href="http://clients.als.hpcloud.com/helion-1.3.0-macosx10.5-i386-x86_64.zip"
                 scope="external" format="html"><tm tmtype="reg">Mac OS X</tm></xref>
             </li>
-          </ul> The <xref href="helion/user/reference/client-ref.dita">Command Reference</xref>
-          has full descriptions of all ALS Client commands and options. <xref
+          </ul> The <xref href="helion/user/reference/client-ref.dita">Command Reference</xref> has
+          full descriptions of all ALS Client commands and options. <xref
             href="devplatform.ALS-developer-trial-quick-start3.dita">
             <image href="../../media/NextButton.png" id="image_i4h_mjp_js" placement="break"/>
           </xref></stentry></strow>

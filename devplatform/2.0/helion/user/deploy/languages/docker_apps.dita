@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_l4n_y3n_xs">
-  <title>Deploying Docker Apps</title>
+  <title>HP Helion 2.0 Development Platform: Deploying Docker Apps</title>
   <body>
     <section>
   <p> Docker images can be deployed in much the same way as source code, either directly from the

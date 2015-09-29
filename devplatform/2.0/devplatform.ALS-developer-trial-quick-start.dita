@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic1952">
+<<<<<<< HEAD:devplatform/2.0/devplatform.ALS-developer-trial-quick-start.dita
 <title>HP Helion 2.0 Development Platform: Quick Start Developer Trial</title>
 <prolog>
 <metadata>
@@ -13,6 +14,9 @@
 <othermeta name="product-version1" content="HP Helion Development Platform"/>
 </metadata>
 </prolog>
+=======
+<title>HP Helion 1.3 Development Platform: Quick Start Developer Trial</title> 
+>>>>>>> 1870793... updates to quick start and adding docker image to helion push:devplatform/1.3/devplatform.ALS-developer-trial-quick-start.dita
 <body>
 <p>The Quick Start Developer Trial is the fastest way to evaluate the HP Helion Development Platform for yourself. Download the files, create and configure your sandbox environment, and deploy one or more sample applications. We provide several sample applications to help you get started quickly, but you may also use your own.</p>
 <p>
