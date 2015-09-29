@@ -5,17 +5,40 @@
   <body>
     <section id="troubleshooting">
       <title>Troubleshooting Tips</title>
+
+      <p id="reimage"><b>How to re-image an existing node</b></p>
+      
+      <p>
+        
+        Once HP Linux for HP Helion OpenStack has been successfully installed on a node, that node will be marked as "installed" 
+        and subsequent runs of <codeph>bm-reimage.yml</codeph> (and related playbooks) will not target it. This is deliberate 
+        so that you can't reimage the node by accident. If you do need to reimage existing nodes you will need to 
+        use the <codeph>-e nodelist</codeph> option to target them specifically:
+        <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=cpn-0044,cpn-0045</codeblock>
+        This will power cycle the specified nodes and reinstall the operating system on them, using the existing settings stored 
+        in Cobbler. If you want to change settings for a node, see Changing iLO or other settings after the Cobbler 
+        deploy below.
+        The nodelist option can also be used with commands like <codeph>bm-power-down.yml</codeph> and <codeph>bm-power-up.yml</codeph>. 
+         Those commands 
+        deliberately have no default set of targets, so that you can't accidentally power down live nodes. You can target 
+        all nodes with <codeblock>-e nodelist=all</codeblock>
+        
+        
+        
+      </p>
+      
       <p><b>Running the <codeph>hos-init.bash</codeph> script when configuring your deployer does
-          not complete</b></p>
+        not complete</b></p>
       <p>Part of what the <codeph>hos-init.bash</codeph> script does in <xref
-          href="bare_installation_kvm.dita#install_kvm/HLM_Node_Personalization">step 3 of
-          configuring the Deployer</xref> is install git and so if your DNS nameserver is not
+        href="bare_installation_kvm.dita#install_kvm/HLM_Node_Personalization">step 3 of
+        configuring the Deployer</xref> is install git and so if your DNS nameserver is not
         configured or is not funcionting properly in your <codeph>/etc/resolv.conf</codeph> file of
         your deployer node then it won't be able to complete.</p>
       <p>To resolve this issue, double check your nameserver in your
-          <codeph>/etc/resolv.conf</codeph> file on your deployer.</p>
-      <p id="reimage"><b>How to re-image an existing node</b></p>
-      <p>If you've already run the <codeph>cobbler-deploy.yml</codeph> and
+        <codeph>/etc/resolv.conf</codeph> file on your deployer.</p>
+      
+      
+     <!-- <p>If you've already run the <codeph>cobbler-deploy.yml</codeph> and
           <codeph>bm-reimage.yml</codeph> playbooks and needed to make a change to your
         configuration files or for any other reason need to re-image one of your nodes, you need to
         notify Cobbler in order to do this. The reason for this is that whenever a node has been
@@ -31,7 +54,7 @@
           <li>Then proceed with your <codeph>cobbler-deploy.yml</codeph> and
               <codeph>bm-reimage.yml</codeph> playbooks again.</li>
         </ol>
-      </p>
+      </p>-->
       <p id="configproc"><b>Change needed to configuration files after you've run the
             <codeph>config-processor-run.yml</codeph> playbook</b></p>
       <p>If you've run the <codeph>config-processor-run.yml</codeph> playbook during the
@@ -40,7 +63,7 @@
         configuration before proceeding.</p>
       <p>
         <codeblock>cd ~/helion/hos/ansible
-          ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
+ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
       </p>
       <p><b>Change needed to <codeph>baremetalConfig.yml</codeph> file needed after the Cobbler
           deploy</b></p>
