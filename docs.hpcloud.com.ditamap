@@ -155,6 +155,7 @@
   </topicref>
 
   <!-- NEW TOC STUFF -->
+  <topichead navtitle="Installation">
   <topicref href="helion/installation_overview.dita" navtitle="Installation - Overview"
     locktitle="yes">
     <topicref href="helion/beta1_to_beta2_upgrade.dita"/>
@@ -179,6 +180,7 @@
     <topicref href="helion/postinstall_checklist.dita" navtitle="Post-Installation Checklist"
       locktitle="yes"/>
   </topicref>
+  </topichead>
 
   <topichead navtitle="Administration">
     <topichead navtitle="Minimum Set of Customizations">
