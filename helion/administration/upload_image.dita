@@ -1,46 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_un4_ddc_nt">
+<topic id="upload_image">
   <title>Upload an Image for Use</title>
   <body>
-    <section id="create_image"><title>Download a Cirros Image and Upload it to the Image
-      Repository</title>
-      <p>In order to properly create a Compute instance you need an image to use. These steps will
-        help you download a Cirros image and upload it to the image repository for use:</p>
-      <ol>
-        <li>
-          <p>This playbook will download the Cirros image from the internet and upload it for
-            use:</p>
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
-            ansible-playbook -i hosts/verb_hosts glance-cloud-configure.yml -e proxy=&#60;PROXY></codeblock>
-          <p>The table below shows the optional switches you can use as part of this playbook to
-            specify environment-specific information:</p>
-          <p>
-            <table frame="all" rowsep="1" colsep="1" id="ansible2">
-              <tgroup cols="2">
-                <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-                <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-                <thead>
-                  <row>
-                    <entry>Switch</entry>
-                    <entry>Description</entry>
-                  </row>
-                </thead>
-                <tbody>
-                  <row>
-                    <entry>
-                      <p><codeph>-e proxy="&lt;proxy_address:port>"</codeph></p>
-                    </entry>
-                    <entry>
-                      <p>If your environment requires a proxy in order to reach out over the
-                        internet, you would enter that here.</p>
-                    </entry>
-                  </row>
-                </tbody>
-              </tgroup>
-            </table>
-          </p></li>
-      </ol>
+    <section id="about">
+      <p>In order to properly create a Compute instance you need an image to use. The Helion
+        OpenStack installer provides an Ansible playbook that will download a Cirros linux image and
+        upload it as a public image to your image repository for use across your Projects.</p>
+    </section>
+    <section id="playbook"><title>Running the Playbook</title>
+      <p>Use this command to run this playbook:</p>
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts glance-cloud-configure.yml -e proxy=&#60;PROXY></codeblock>
+      <p>The table below shows the optional switches you can use as part of this playbook to specify
+        environment-specific information:</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="ansible2">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Switch</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  <p><codeph>-e proxy="&lt;proxy_address:port>"</codeph></p>
+                </entry>
+                <entry>
+                  <p>If your environment requires a proxy in order to reach out over the internet,
+                    you would enter that here.</p>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    <section id="custom_image"><title>How to Curate Your Own Images</title>
+      <p>OpenStack has put together a guide to show you how to obtain, create, and modify images
+        that will be compatible with your cloud:</p>
+      <p><xref href="http://docs.openstack.org/image-guide/content/" scope="external" format="html"
+          >OpenStack Virtual Machine Image Guide</xref></p>
     </section>
   </body>
 </topic>
