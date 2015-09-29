@@ -1168,6 +1168,12 @@ command to print the saved trace to stdout.</entry>
                 limit.</note></entry>
             </row>
             <row>
+              <entry>--docker-image</entry>
+              <entry>Specifies that the app being pushed is a Docker image. See the <xref
+                  href="../deploy/docker_deploy.dita#topic_yr4_frc_nt/pushingDockerApps">Docker
+                  deployment</xref> documentation for details.</entry>
+            </row>
+            <row>
               <entry>--env</entry>
               <entry>Environment variable overrides. These are always applied regardless of
                 --env-mode. The mode is restricted to the variable declarations found in the
