@@ -16,8 +16,7 @@
         use the <codeph>-e nodelist</codeph> option to target them specifically:
         <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=cpn-0044,cpn-0045</codeblock>
         This will power cycle the specified nodes and reinstall the operating system on them, using the existing settings stored 
-        in Cobbler. If you want to change settings for a node, see Changing iLO or other settings after the Cobbler 
-        deploy below.
+        in Cobbler. If you want to change settings for a node, see Configuration changes needed after Cobbler deploy below.
         The nodelist option can also be used with commands like <codeph>bm-power-down.yml</codeph> and <codeph>bm-power-up.yml</codeph>. 
          Those commands 
         deliberately have no default set of targets, so that you can't accidentally power down live nodes. You can target 
@@ -55,18 +54,8 @@
               <codeph>bm-reimage.yml</codeph> playbooks again.</li>
         </ol>
       </p>-->
-      <p id="configproc"><b>Change needed to configuration files after you've run the
-            <codeph>config-processor-run.yml</codeph> playbook</b></p>
-      <p>If you've run the <codeph>config-processor-run.yml</codeph> playbook during the
-        installation and have to go back to re-do your steps, ensure that you run the
-          <codeph>config-processor-clean.yml</codeph> playbook to clear out your previous
-        configuration before proceeding.</p>
-      <p>
-        <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
-      </p>
-      <p><b>Change needed to <codeph>baremetalConfig.yml</codeph> file needed after the Cobbler
-          deploy</b></p>
+
+      <p><b>Configuration changes needed after Cobbler deploy</b></p>
       <p>If you've made a mistake or wish to change your <codeph>baremetalConfig.yml</codeph>
         configuration file after you've already run the <codeph>cobbler-deploy.yml</codeph>
         playbook, follow these steps to ensure Cobbler gets updated with the new server
@@ -88,6 +77,16 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
         </li>
       </ol>
+      <p id="configproc"><b>Change needed to configuration files after you've run the
+        <codeph>config-processor-run.yml</codeph> playbook</b></p>
+      <p>If you've run the <codeph>config-processor-run.yml</codeph> playbook during the
+        installation and have to go back to re-do your steps, ensure that you run the
+        <codeph>config-processor-clean.yml</codeph> playbook to clear out your previous
+        configuration before proceeding.</p>
+      <p>
+        <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
+      </p>
       <p><b>If the <codeph>site.yml</codeph> playbook fails, you can query the log for the
           reason</b></p>
       <p>Ansible is good about outputting the errors into the command line output, however if you'd
