@@ -19,15 +19,15 @@
       deploy the following patches to update required configuration files. </p>
     <p>
       <ol id="ol_pn3_141_mt">
-        <li>Download the <codeph>kcp-windriver-build-15-only.patch</codeph> and
-            <codeph>knc-horizon-helion-theme-dashboard.patch</codeph> files.</li>
+        <li>Download the
+          <codeph>kcp-windriver-build-15-only.patch</codeph><!-- and <codeph>knc-horizon-helion-theme-dashboard.patch</codeph> files-->.</li>
         <li>Copy the patch files to the  <codeph>~/</codeph> directroy on the HLM host. </li>
         <li> Change to the <codeph>kenobi-configuration-processor</codeph> directory:<p>
             <codeblock>cd ~/kenobi-configuration-processor</codeblock>
           </p></li>
         <li>Execute the following command to deploy the patch:<p>
             <codeblock>patch -p1 &lt; ../kcp-windriver-build-15-only.patch
-patch -p1 &lt; ../knc-horizon-helion-theme-dashboard.patch</codeblock>
+<!--patch -p1 < ../knc-horizon-helion-theme-dashboard.patch--></codeblock>
           </p></li>
         <li>Execute the  following command to integrate the patches into the installation environment:<p>
             <codeblock>cd ~/cg-hlm/hlm-build
