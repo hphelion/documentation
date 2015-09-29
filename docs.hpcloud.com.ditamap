@@ -223,7 +223,9 @@
     </topicref>
   </topichead>
 
-
+<topichead navtitle="User Guide">
+  <topicref href="helion/user/create_network.dita"/>
+</topichead>
 
 
 </map>

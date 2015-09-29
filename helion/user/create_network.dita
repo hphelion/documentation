@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="create_network">
+  <title>Creating a Private Network</title>
+  <body>
+    <p>
+      <ol>
+        <li>Access Horizon and login as demo/demo</li>
+        <li>Navigate to the Routers menu under Network and click on the Create Router button:
+              <p><image href="../../media/networking/create_router.png"/></p></li>
+
+        <li>Give your router a name and then click the Create Router button again: 
+          <p><image href="../../media/networking/create_router_2.png"/></p>
+        <p>Here is what a successsful outcome looks like:</p>
+          <p><image href="../../media/networking/create_router_3.png"/></p>
+        </li>
+
+        <li>To confirm your router is setup properly you can click on the **Network Topology**
+          option and ensure it looks like the screenshot below: INSERT_IMAGE_HERE</li>
+
+      </ol></p>
+  </body>
+</topic>
