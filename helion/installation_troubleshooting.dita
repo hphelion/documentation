@@ -14,6 +14,16 @@
         your deployer node then it won't be able to complete.</p>
       <p>To resolve this issue, double check your nameserver in your
           <codeph>/etc/resolv.conf</codeph> file on your deployer.</p>
+      <p id="configproc"><b>Change needed to configuration files after you've run the
+            <codeph>config-processor-run.yml</codeph> playbook</b></p>
+      <p>If you've run the <codeph>config-processor-run.yml</codeph> playbook during the
+        installation and have to go back to re-do your steps, ensure that you run the
+          <codeph>config-processor-clean.yml</codeph> playbook to clear out your previous
+        configuration before proceeding.</p>
+      <p>
+        <codeblock>cd ~/helion/hos/ansible
+          ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
+      </p>
       <p id="cobblerchange"><b>Configuration changes needed after Cobbler deploy</b></p>
       <p>If you've made a mistake or wish to change your <codeph>baremetalConfig.yml</codeph>
         configuration file after you've already run the <codeph>cobbler-deploy.yml</codeph>
@@ -36,16 +46,6 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
         </li>
       </ol>
-      <p id="configproc"><b>Change needed to configuration files after you've run the
-            <codeph>config-processor-run.yml</codeph> playbook</b></p>
-      <p>If you've run the <codeph>config-processor-run.yml</codeph> playbook during the
-        installation and have to go back to re-do your steps, ensure that you run the
-          <codeph>config-processor-clean.yml</codeph> playbook to clear out your previous
-        configuration before proceeding.</p>
-      <p>
-        <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
-      </p>
       <p id="reimage"><b>How to re-image an existing node</b></p>
       <p>Once HP Linux for HP Helion OpenStack has been successfully installed on a node, that node
         will be marked as "installed" and subsequent runs of <codeph>bm-reimage.yml</codeph> (and
