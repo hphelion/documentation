@@ -10,7 +10,7 @@
         <li>Your Administrator has provided you with the IP address or Hostname for the Horizon
           Dashboard.</li>
       </ul>
-      <p>These steps use the pre-setup <codeph>demo</codeph> user account in Helion OpenStack. If
+      <p>These steps use the pre-setup <codeph>demo</codeph> user account in Helion OpenStack 2.0. If
         your Administrator has setup a separate user account for you then you will use those
         credentials to access Horizon.</p>
     </section>
