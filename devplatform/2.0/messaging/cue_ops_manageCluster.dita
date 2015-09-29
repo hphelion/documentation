@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="cue_manageCluster">
-  <title>Manage a Cluster from the Command Line</title>
+  <title>HP Helion 2.0 Development Platform: Manage a Cluster from the Command Line</title>
   <body>
     <ul><li><xref href="#cue_manageCluster/delete" format="dita">Delete a Cluster</xref></li>
       <li><xref href="#cue_manageCluster/show" format="dita">Show Details About a

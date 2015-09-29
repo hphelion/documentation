@@ -264,8 +264,8 @@
         <topicref href="2.0/helion/user/deploy/languages/docker_apps.dita" navtitle="Docker Apps" locktitle="yes"/>
         <topicref href="2.0/helion/user/deploy/container_enable_deployment.dita" toc="no" />
         
-        <topicref href="2.0/helion/user/deploy/languages/clojure.dita" locktitle="yes"
-          navtitle="Clojure"/>
+        <topicref href="2.0/helion/user/deploy/languages/clojure.dita" locktitle="yes"  navtitle="Clojure"/>
+         
         <topicref href="2.0/helion/user/deploy/languages/go.dita" locktitle="yes"
           navtitle="Go"/>
         <topicref href="2.0/helion/user/deploy/languages/java.dita" locktitle="yes"
@@ -404,6 +404,10 @@
           navtitle="Using the RabbitMQ Messaging Service"/>
         <topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita"
           locktitle="yes" navtitle="Using the Messaging Service with ALS"/>
+        <topicref href="2.0/messaging/cue_dev_createCluster.dita"
+          navtitle="Create a Cluster from the Command Line" locktitle="yes"/>
+        <topicref href="2.0/messaging/cue_ops_manageCluster.dita"
+          navtitle="Manage a Cluster from the Command Line" locktitle="yes"/>
         <topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service"
           locktitle="yes"/>
         <topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita"
