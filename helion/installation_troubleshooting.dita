@@ -40,10 +40,12 @@ git commit -m "My config or other commit message"</codeblock></li>
         <li>Remove the nodes that had the old information from Cobbler using:
           <codeblock>sudo cobbler system remove --name &lt;nodename></codeblock></li>
         <li>Re-run the <codeph>cobbler-deploy.yml</codeph> and <codeph>bm-reimage.yml</codeph>
-          ansible scripts to upload the new node definitions to Cobbler and image the nodes:
-          <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost cobbler-deploy.yml
-ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
+          ansible scripts to upload the new node definitions to Cobbler and image the nodes: <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
+          <note>If you've also already run the <codeph>bm-reimage.yml</codeph> playbook then read
+            the <xref href="#troubleshooting_installation/reimage">How to re-image an existing
+              node</xref> section below for how to ensure your nodes get re-imaged when re-running
+            this playbook.</note>
         </li>
       </ol>
       <p id="reimage"><b>How to re-image an existing node</b></p>
