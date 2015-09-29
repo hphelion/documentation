@@ -166,8 +166,7 @@ git add -A
 git commit -m "&lt;commit message>"</codeblock>
             </p><note> Enter your commit message &lt;commit message></note></li>
           <li>Run the following ansible
-            playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts run nova-reconfigure.yml</codeblock></li>
+            playbook:<codeblock>ansible-playbook -i hosts/verb_hosts run nova-reconfigure.yml</codeblock></li>
         </ol></p>
     </section>
     <section>
