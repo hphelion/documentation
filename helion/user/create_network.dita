@@ -62,7 +62,7 @@
           </ol>
           <p><image href="../../media/networking/create_network_4.png"/></p>
           <p>Here is what a successsful outcome looks like:</p>
-          <p><image href="../../media/networking/create_router_5.png"/></p>
+          <p><image href="../../media/networking/create_network_5.png"/></p>
         </li>
 
         <li>Next step is to attach your subnet to your router. Navigate to the **Routers** menu
