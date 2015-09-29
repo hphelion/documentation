@@ -196,6 +196,7 @@
   <topichead navtitle="Administration">
     <topichead navtitle="Minimum Set of Customizations">
       <topicref href="helion/administration/create_extnet.dita"/>
+      <topicref href="helion/administration/upload_image.dita"/>
     </topichead>
   </topichead>
 
