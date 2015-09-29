@@ -220,7 +220,7 @@ portuuid_vip=$(neutron port-list | grep $fixedip_vip | awk '{print $2}')</codebl
 neutron lb-member-create --address &lt;ip address vm2> --protocol-port &lt;port> pool</codeblock></li>
           <li>Create the vip with <codeph>lb-vip-create</codeph> giving it a name, protocol,
             protocol port and a subnet.
-            <codeblock>neutron lb-vip-create --name vip --protocol-port &lt;port> --protocol HTTP --subnet-id $(neutron subnet-list | awk '/sub/ {print $2}')</codeblock></li>
+            <codeblock>neutron lb-vip-create --name vip --protocol-port &lt;port> --protocol HTTP --subnet-id $(neutron subnet-list | awk '/sub/ {print $2}') pool</codeblock></li>
           <li>You can check to see if the load balancer is active with <codeph>lb-vip-show</codeph>
           <codeblock>neutron lb-vip-show vip</codeblock></li>
         </ol>
