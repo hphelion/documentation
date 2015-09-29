@@ -53,9 +53,9 @@ ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
         by accident. If you do need to reimage existing nodes you will need to use the <codeph>-e
           nodelist</codeph> option to target them specifically. For example:</p>
       <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=cpn-0044,cpn-0045</codeblock>
-      <note>You can target all nodes with <codeph>-e nodelist=all</codeph></note>. <p>This will
-        power cycle the specified nodes and reinstall the operating system on them, using the
-        existing settings stored in Cobbler.</p>
+      <note>You can target all nodes with <codeph>-e nodelist=all</codeph></note>
+      <p>This will power cycle the specified nodes and reinstall the operating system on them, using
+        the existing settings stored in Cobbler.</p>
       <p>If you want to change settings for a node in the configuration files, see the <xref
           href="#troubleshooting_installation/cobblerchange">Configuration changes needed after
           Cobbler deploy</xref> section above.</p>
