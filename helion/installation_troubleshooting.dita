@@ -22,7 +22,7 @@
         configuration before proceeding.</p>
       <p>
         <codeblock>cd ~/helion/hos/ansible
-          ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
+ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
       </p>
       <p id="cobblerchange"><b>Configuration changes needed after Cobbler deploy</b></p>
       <p>If you've made a mistake or wish to change your <codeph>baremetalConfig.yml</codeph>
