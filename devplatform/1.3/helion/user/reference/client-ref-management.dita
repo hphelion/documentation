@@ -1170,8 +1170,8 @@ command to print the saved trace to stdout.</entry>
             <row>
               <entry>--docker-image</entry>
               <entry>Specifies that the app being pushed is a Docker image. See the <xref
-                  href="../deploy/docker_deploy.dita#topic_yr4_frc_nt/pushingDockerApps">Docker
-                  deployment</xref> documentation for details.</entry>
+                  href="../deploy/languages/docker_apps.dita#topic_l4n_y3n_xs/pushingDockerApps"
+                  >Docker deployment </xref>documentation for details.</entry>
             </row>
             <row>
               <entry>--env</entry>

@@ -20,7 +20,8 @@
       <p>Pushing as an unauthorized user:
         <codeblock> Error staging: Need 'allow_sudo' quota to stage and run a Docker app (400)</codeblock>Pushing
         an unauthorized image::
-        <codeblock> Error staging: Docker image example/simple-server is not from an allowed registry (400)</codeblock></p></section><section><title>Pushing Docker Apps</title> Official images in the Docker Hub library can be
+        <codeblock> Error staging: Docker image example/simple-server is not from an allowed registry (400)</codeblock></p></section>
+    <section id="pushingDockerApps"><title>Pushing Docker Apps</title> Official images in the Docker Hub library can be
       specified by <b>name</b>, with or without a tag::
       <codeblock>helion push --docker-image django:1.8-python2 </codeblock>Images from a particular
       user or organization can be specified with the
