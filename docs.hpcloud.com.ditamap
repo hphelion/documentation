@@ -182,6 +182,7 @@
     <topichead navtitle="Minimum Set of Customizations">
       <topicref href="helion/administration/create_extnet.dita"/>
       <topicref href="helion/administration/upload_image.dita"/>
+      <topichead navtitle="Configuring a Block Storage Backend">
       <topicref href="helion/cinder/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
         locktitle="yes">
         <topicref href="helion/cinder/ceph/configuration_files.dita"/>
@@ -190,6 +191,7 @@
         locktitle="yes"/>
       <topicref href="helion/cinder/3Par/3par_configuration.dita"/>
       <topicref href="helion/cinder/verify_backend_configuration.dita"/>
+      </topichead>
     </topichead>
   </topichead>
 
