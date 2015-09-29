@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Deploying the
-    Configuration Processor Patches</title>
+    Configuration Processor Patch</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -19,17 +19,15 @@
       deploy the following patches to update required configuration files. </p>
     <p>
       <ol id="ol_pn3_141_mt">
-        <li>Download the
-          <codeph>kcp-windriver-build-15-only.patch</codeph><!-- and <codeph>knc-horizon-helion-theme-dashboard.patch</codeph> files-->.</li>
-        <li>Copy the patch files to the  <codeph>~/</codeph> directroy on the HLM host. </li>
+        <li>Download the <codeph>kcp-windriver-build-15-only.patch</codeph> file.</li>
+        <li>Copy the patch file to the <codeph>~/</codeph> directroy on the HLM host. </li>
         <li> Change to the <codeph>kenobi-configuration-processor</codeph> directory:<p>
             <codeblock>cd ~/kenobi-configuration-processor</codeblock>
           </p></li>
         <li>Execute the following command to deploy the patch:<p>
-            <codeblock>patch -p1 &lt; ../kcp-windriver-build-15-only.patch
-<!--patch -p1 < ../knc-horizon-helion-theme-dashboard.patch--></codeblock>
+            <codeblock>patch -p1 &lt; ../kcp-windriver-build-15-only.patch</codeblock>
           </p></li>
-        <li>Execute the  following command to integrate the patches into the installation environment:<p>
+        <li>Execute the following command to integrate the patch into the installation environment:<p>
             <codeblock>cd ~/cg-hlm/hlm-build
 ./hlm_prepare-env.sh</codeblock>
           </p><p>When the <codeph>hcfgproc</codeph> command is executed, the updated configuration
