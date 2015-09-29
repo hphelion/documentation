@@ -4,7 +4,10 @@
   <title>Creating a Private Network</title>
   <body>
     <section id="prereqs"><title>Pre-requisites</title>
-      <p>text</p>
+      <p>These steps assume the following has been completed:</p>
+      <ul>
+        <li>Your Administrator has created a valid External Network for your environment.</li>
+      </ul>
     </section>
     <section id="create_router"><title>Creating a Router</title>
       <p>
