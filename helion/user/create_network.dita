@@ -34,42 +34,45 @@
     </section>
     <section id="create_network"><title>Creating a Network and Subnet</title>
       <ol>
-        <li>Navigate to the **Networks** menu under Network and click on the **Create Network**
-          button: <p><image href="../../media/networking/create_network.png"/></p></li>
+        <li>Access Horizon and login as demo/demo</li>
+        <li>Open the Create Network wizard by following these steps: <ol>
+            <li>Navigate to <b>Networks</b> under the Network menu.</li>
+            <li>Click on the <b>Create Network</b> button.</li>
+          </ol>
+          <p><image href="../../media/networking/create_network.png"/></p>
+        </li>
+        <li>On the first window of the create network wizard, choose a **Network Name** and select
+          Next: <p><image href="../../media/networking/create_network_2.png"/></p></li>
 
-        <!--
-      **2.** On the first window of the create network wizard, choose a **Network Name** and select Next:
-      
-      [[{"type":"media","view_mode":"media_original","fid":"1530","attributes":{}}]]
-      
-      **3.** On the second window of the create network wizard, choose a **Subnet Name** and a **Network Address** (CIDR) for your subnet:
-      
-      [[{"type":"media","view_mode":"media_original","fid":"1532","attributes":{}}]]
-      
-      **4.** On the final window of the create network wizard, ensure that **Enable DHCP** is checked.  Leave the **DNS Name Servers** field blank to use our name servers or specify your own.  Select **Create** when finished:
-      
-      [[{"type":"media","view_mode":"media_original","fid":"1531","attributes":{}}]]
-      
-      **5.** Next step is to attach your subnet to your router.  Navigate to the **Routers** menu under Network and click on your router name to bring up it's settings:
-      
-      [[{"type":"media","view_mode":"media_original","fid":"1606","attributes":{}}]]
-      
-      **6.** Click the **Add Interface** button:
-      
-      [[{"type":"media","view_mode":"media_original","fid":"1609","attributes":{}}]]
-      
-      **7.** Select your subnet from the drop down menu and select the **Add Interface** button to attach:
-      
-      [[{"type":"media","view_mode":"media_original","fid":"1534","attributes":{}}]]
-      
-      **IMPORTANT!**  Do NOT enter a value for the <code>IP Address (Optional)</code> field as this can cause other issues.
-      
-      **8.** To confirm your network is setup properly you can click on the **Network Topology** option and ensure it looks like the screenshot below:
-      
-      [[{"type":"media","view_mode":"media_original","fid":"1610","attributes":{}}]]
-      
-      If your setup doesn't look similar to the one above, with your Router connected to the External Network and your Network connected to your Router then repeat the steps above or contact Support for assistance. 
-      -->
+        <li>On the second window of the create network wizard, choose a **Subnet Name** and a
+          **Network Address** (CIDR) for your subnet: <p><image
+              href="../../media/networking/create_network_3.png"/></p></li>
+
+        <li>On the final window of the create network wizard, ensure that **Enable DHCP** is
+          checked. Leave the **DNS Name Servers** field blank to use our name servers or specify
+          your own. Select **Create** when finished: <p><image
+              href="../../media/networking/create_network_4.png"/></p></li>
+        <li>Next step is to attach your subnet to your router. Navigate to the **Routers** menu
+          under Network and click on your router name to bring up it's settings: <p><image
+              href="../../media/networking/create_network_5.png"/></p></li>
+
+        <li>Click the **Add Interface** button: <p><image
+              href="../../media/networking/create_network_6.png"/></p></li>
+
+        <li>Select your subnet from the drop down menu and select the **Add Interface** button to
+          attach: <p><image href="../../media/networking/create_network_7.png"/></p>
+          <note>Do NOT enter a value for the <codeph>IP Address (Optional)</codeph> field as this
+            can cause other issues.</note></li>
+
+        <li>To confirm your network is setup properly you can click on the **Network Topology**
+          option and ensure it looks like the screenshot below: <p><image
+              href="../../media/networking/create_network_8.png"/></p></li>
+
+        <li>If your setup doesn't look similar to the one above, with your Router connected to the
+          External Network and your Network connected to your Router then repeat the steps above or
+          contact Support for assistance. <p><image
+              href="../../media/networking/create_network_9.png"/></p></li>
+
       </ol>
     </section>
 
