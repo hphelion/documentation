@@ -4,37 +4,39 @@
   <title>Creating a Private Network</title>
   <body>
     <section id="prereqs"><title>Pre-requisites</title>
-    <p>text</p>
+      <p>text</p>
     </section>
     <section id="create_router"><title>Creating a Router</title>
-    <p>
-      <ol>
-        <li>Access Horizon and login as demo/demo</li>
-        <li>Open the Create Router wizard by following these steps:
-          <ol>
-            <li>Navigate to the Routers menu under Network</li>
-            <li>Click on the Create Router button
-              <p><image href="../../media/networking/create_router.png"/></p></li>
-          </ol>
-        </li>
-        <li>Give your router a name and then click the Create Router button again: 
-          <p><image href="../../media/networking/create_router_2.png"/></p>
-        <p>Here is what a successsful outcome looks like:</p>
-          <p><image href="../../media/networking/create_router_3.png"/></p>
-        </li>
+      <p>
+        <ol>
+          <li>Access Horizon and login as demo/demo</li>
+          <li>Open the Create Router wizard by following these steps: <ol>
+              <li>Navigate to <b>Routers</b> under the Network menu.</li>
+              <li>Click on the Create Router button. <p><image
+                    href="../../media/networking/create_router.png"/></p></li>
+            </ol>
+          </li>
+          <li>Give your router a name and then click the Create Router button again: <ol>
+              <li>Select a <b>Router Name</b>.</li>
+              <li>Select an <b>External Network</b> from the drop down menu.</li>
+            </ol>
+            <p><image href="../../media/networking/create_router_2.png"/></p>
+            <p>Here is what a successsful outcome looks like:</p>
+            <p><image href="../../media/networking/create_router_3.png"/></p>
+          </li>
 
-        <li>To confirm your router is setup properly you can click on the Network Topology
-          option and ensure it looks like the screenshot below:
-          <p><image href="../../media/networking/create_router_4.png"/></p></li>
+          <li>To confirm your router is setup properly you can click on the Network Topology option
+            and ensure it looks like the screenshot below: <p><image
+                href="../../media/networking/create_router_4.png"/></p></li>
 
-      </ol></p>
+        </ol></p>
     </section>
     <section id="create_network"><title>Creating a Network and Subnet</title>
       <ol>
-      <li>Navigate to the **Networks** menu under Network and click on the **Create Network** button:
-        <p><image href="../../media/networking/create_network.png"/></p></li>
-      
-      <!--
+        <li>Navigate to the **Networks** menu under Network and click on the **Create Network**
+          button: <p><image href="../../media/networking/create_network.png"/></p></li>
+
+        <!--
       **2.** On the first window of the create network wizard, choose a **Network Name** and select Next:
       
       [[{"type":"media","view_mode":"media_original","fid":"1530","attributes":{}}]]
@@ -69,6 +71,6 @@
       -->
       </ol>
     </section>
-    
+
   </body>
 </topic>
