@@ -321,9 +321,8 @@ curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "
         <li>Execute the cURL script <codeblock>bash +x &lt;script_name>.sh</codeblock><p>Where:
             &lt;script_name> is the name of the cURL script you created.</p></li>
         <li>Use the VSD dashboard to confirm that uplink port appears in the <b>Monitoring</b> tab
-          under VRS-G node. <p><b><i> You might see the VSC in red when the VRS-G is in HA mode,
-                rather that green. This is expected behavior.</i></b></p><p><image
-              href="../../media/CGH-install-curl.png" id="image_d2h_mcc_1t" width="700"/></p></li>
+          under VRS-G node. <p><image href="../../media/CGH-install-curl.png" id="image_d2h_mcc_1t"
+              width="700"/></p></li>
       </ol>
     </section>
     <section>

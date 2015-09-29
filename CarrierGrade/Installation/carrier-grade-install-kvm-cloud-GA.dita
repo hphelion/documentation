@@ -186,8 +186,6 @@ system host-update compute-0 vsc_controllers=10.30.6.31,10.30.6.32</codeblock></
     </section>
   
   <section id="next-step"> <title>Next Steps</title>
-    <p><xref href="carrier-grade-install-cli.dita#topic10581">Configure the KVM Region Hosts</xref>
-      </p>
       <p><xref href="carrier-grade-install-metadata.dita#topic10581">Configure the DCN Metadata
           Agent</xref> (KVM + ESX deployments only)</p>
   </section>

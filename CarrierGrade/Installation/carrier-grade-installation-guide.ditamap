@@ -72,10 +72,6 @@
         </topichead>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita" navtitle="Deploying the KVM Region"
             locktitle="yes">
-            <topicref href="carrier-grade-install-cli.dita"
-                navtitle="Configuring the KVM Region Hosts" locktitle="yes"/>
-            <topicref href="carrier-grade-install-metadata.dita" toc="no"
-                navtitle="Configuring the DCN Metadata Agent" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
         </topicref>
         <topicref href="carrier-grade-install-ldap-verify.dita"

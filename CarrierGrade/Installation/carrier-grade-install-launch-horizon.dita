@@ -113,7 +113,7 @@ Password: cghelion</codeblock>
       <p>For the <xref href="carrier-grade-install-pb-overview.dita#topic1925/install-option"><b>KVM
             + ESX deployment</b></xref>, perform the following task. </p>
       <p>For <xref href="carrier-grade-install-pb-overview.dita#topic1925/install-option"><b>the KVM
-            deployment</b></xref>, proced to the <xref href="#topic10581/next-step" format="dita"
+            deployment</b></xref>, proceed to the <xref href="#topic10581/next-step" format="dita"
           >Next Step</xref>.</p>
       <p>In order to create VM instances in HP Helion OpenStack Carrier Grade, you need to supply at
         least on ISO image file, and import that file into Horizon. </p>
@@ -135,9 +135,16 @@ Password: cghelion</codeblock>
         <li>For the image, click <b>More</b> then click <b>Edit</b> to update the metadata for the
           image.<p><image href="../../media/CGH-install-create-image.png" width="400"
             id="image_etd_dlj_1t"/></p></li>
-        <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph>
-          properties. For Ubuntu, Rhel images you can change the <codeph>vmware_adaptertype</codeph>
-          to <codeph>lsiLogic</codeph>.</li>
+        <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph> properties
+          and set the <codeph>vmware_adaptertype</codeph> to <codeph>lsiLogic</codeph> and the
+            <codeph>vmware_disktype</codeph> to <codeph>sparse</codeph>.. <ul id="ul_rrk_mxb_nt">
+            <li>For CirrOS VMDK images, change the <codeph>vmware_adaptertype</codeph> to
+                <codeph>ide</codeph> and <codeph>vmware_disktype</codeph> to
+              <codeph>sparse</codeph>.</li>
+            <li>For Ubuntu RHEL images you can change the <codeph>vmware_adaptertype</codeph> to
+                <codeph>lsiLogic</codeph> and the <codeph>vmware_disktype</codeph> to
+                <codeph>sparse</codeph>.</li>
+          </ul></li>
         <li>When complete, click <b>Update Image</b>.  </li>
       </ol>
       <p>Once the images are uploaded, you are ready to launch the instance with different flavors.
