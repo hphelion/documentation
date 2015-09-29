@@ -12,23 +12,24 @@
           <li>Access Horizon and login as demo/demo</li>
           <li>Open the Create Router wizard by following these steps: <ol>
               <li>Navigate to <b>Routers</b> under the Network menu.</li>
-              <li>Click on the Create Router button. <p><image
-                    href="../../media/networking/create_router.png"/></p></li>
+              <li>Click on the <b>Create Router</b> button.</li>
             </ol>
+            <p><image href="../../media/networking/create_router.png"/></p>
           </li>
           <li>Give your router a name and then click the Create Router button again: <ol>
               <li>Select a <b>Router Name</b>.</li>
               <li>Select an <b>External Network</b> from the drop down menu.</li>
+              <li>Click on the <b>Create Router</b> button.</li>
             </ol>
             <p><image href="../../media/networking/create_router_2.png"/></p>
             <p>Here is what a successsful outcome looks like:</p>
             <p><image href="../../media/networking/create_router_3.png"/></p>
           </li>
-
-          <li>To confirm your router is setup properly you can click on the Network Topology option
-            and ensure it looks like the screenshot below: <p><image
-                href="../../media/networking/create_router_4.png"/></p></li>
-
+          <li>To confirm your router is setup properly you can: <ol>
+              <li>Click on the <b>Network Topology</b> menu option and ensure it looks like the
+                screenshot below:</li>
+            </ol>
+            <p><image href="../../media/networking/create_router_4.png"/></p></li>
         </ol></p>
     </section>
     <section id="create_network"><title>Creating a Network and Subnet</title>
