@@ -17,35 +17,12 @@
   <!-- Index -->
   <topicref href="home.dita"/>
   <!-- HoS 2.0 -->
-  <topicref href="helion/index.dita">
+  <topicref href="helion/index.dita" toc="no">
     <topicref href="helion/releasenotes.dita"/>
     <topicref href="helion/supportedconfigs.dita"/>
     <topicref href="helion/hardware.dita"/>
     <topicref href="helion/faq.dita"/>
-    <topicref href="helion/installation_overview.dita" navtitle="Installation - Overview"
-      locktitle="yes">
-      <topicref href="helion/beta1_to_beta2_upgrade.dita"/>
-      <topicref href="helion/input_model.dita"/>
-      <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
-        locktitle="yes"/>
-      <topicref href="helion/preinstall_checklist.dita" navtitle="Pre-Installation Checklist"
-        locktitle="yes"/>
-      <topicref href="helion/bare_installation_kvm.dita"
-        navtitle="Baremetal Install for KVM Hypervisor" locktitle="yes"/>
-      <topicref href="helion/bare_installation_esx.dita"
-        navtitle="Baremetal Install for ESX Hypervisor" locktitle="yes"/>
-      <topicref href="helion/bare_installation_esxOLD.dita"
-        navtitle="TEST Baremetal Install for ESX Hypervisor" toc="no" locktitle="yes"/>
-      <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
-      <topicref href="helion/gui_install_on_kvm.dita" locktitle="yes" toc="no"/>
-      <topicref href="helion/gui_install_on_esx.dita" locktitle="yes" toc="no"/>
-      <topicref href="helion/installation_troubleshooting.dita"
-        navtitle="Troubleshooting Installation" locktitle="yes"/>
-      <topicref href="helion/installation_verification.dita" navtitle="Verifying Your Installation"
-        locktitle="yes"/>
-      <topicref href="helion/postinstall_checklist.dita" navtitle="Post-Installation Checklist"
-        locktitle="yes"/>
-    </topicref>
+
     <topicref href="helion/eula.dita" toc="no"/>
     <!-- BURA -->
     <topicref href="helion/bura/bura_overview.dita" navtitle="Backup and Restore" locktitle="yes">
@@ -178,19 +155,44 @@
   </topicref>
 
   <!-- NEW TOC STUFF -->
+  <topicref href="helion/installation_overview.dita" navtitle="Installation - Overview"
+    locktitle="yes">
+    <topicref href="helion/beta1_to_beta2_upgrade.dita"/>
+    <topicref href="helion/input_model.dita"/>
+    <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"
+      locktitle="yes"/>
+    <topicref href="helion/preinstall_checklist.dita" navtitle="Pre-Installation Checklist"
+      locktitle="yes"/>
+    <topicref href="helion/bare_installation_kvm.dita"
+      navtitle="Baremetal Install for KVM Hypervisor" locktitle="yes"/>
+    <topicref href="helion/bare_installation_esx.dita"
+      navtitle="Baremetal Install for ESX Hypervisor" locktitle="yes"/>
+    <topicref href="helion/bare_installation_esxOLD.dita"
+      navtitle="TEST Baremetal Install for ESX Hypervisor" toc="no" locktitle="yes"/>
+    <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
+    <topicref href="helion/gui_install_on_kvm.dita" locktitle="yes" toc="no"/>
+    <topicref href="helion/gui_install_on_esx.dita" locktitle="yes" toc="no"/>
+    <topicref href="helion/installation_troubleshooting.dita"
+      navtitle="Troubleshooting Installation" locktitle="yes"/>
+    <topicref href="helion/installation_verification.dita" navtitle="Verifying Your Installation"
+      locktitle="yes"/>
+    <topicref href="helion/postinstall_checklist.dita" navtitle="Post-Installation Checklist"
+      locktitle="yes"/>
+  </topicref>
+
   <topichead navtitle="Administration">
     <topichead navtitle="Minimum Set of Customizations">
       <topicref href="helion/administration/create_extnet.dita"/>
       <topicref href="helion/administration/upload_image.dita"/>
       <topichead navtitle="Configuring a Block Storage Backend">
-      <topicref href="helion/cinder/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
-        locktitle="yes">
-        <topicref href="helion/cinder/ceph/configuration_files.dita"/>
-      </topicref>
-      <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration"
-        locktitle="yes"/>
-      <topicref href="helion/cinder/3Par/3par_configuration.dita"/>
-      <topicref href="helion/cinder/verify_backend_configuration.dita"/>
+        <topicref href="helion/cinder/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
+          locktitle="yes">
+          <topicref href="helion/cinder/ceph/configuration_files.dita"/>
+        </topicref>
+        <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration"
+          locktitle="yes"/>
+        <topicref href="helion/cinder/3Par/3par_configuration.dita"/>
+        <topicref href="helion/cinder/verify_backend_configuration.dita"/>
       </topichead>
     </topichead>
   </topichead>
