@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="postinstall_checklist">
+  <title>Post-Installation Checklist</title>
+  <body>
+    <section id="post_install_cl"><title>Recommended First Steps Post-Installation</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_ckx_rd4_ht">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="25pt"/>
+            <colspec colname="c2" colnum="2" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>&#9744;</entry>
+                <entry>Item</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/create_extnet"
+                    >Setup an External Network</xref></entry>
+              </row>
+              <row>
+                <entry/>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/create_image"
+                    >Download a Cirros Image and Upload it to the Image Repository</xref></entry>
+              </row>
+              <row>
+                <entry/>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/creds">Setup
+                    Environmental Variables</xref></entry>
+              </row>
+              <row>
+                <entry/>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/sshkeys">Backup
+                    your SSH keys</xref></entry>
+              </row>
+              <row>
+                <entry/>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/endpoints"
+                    >Retrieving the Service Endpoints</xref></entry>
+              </row>
+              <row>
+                <entry/>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/horizon"
+                    >Accessing Horizon</xref></entry>
+              </row>
+              <row>
+                <entry/>
+                <entry><xref href="postinstall_checklist.dita#postinstall_checklist/opsconsole"
+                    >Accessing the Operations Console (Ops Console)</xref></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+    <section id="create_extnet"><title>Setup an External Network</title>
+      <p>In order for your Compute instances to reach the internet you need to have an external
+        network setup. These steps will help you do that:</p>
+      <ol>
+        <li>
+          <p>This playbook will query the Networking service for an existing external network and
+            create a new one if you don't already have one:</p>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts neutron-cloud-configure.yml -e EXT_NET_CIDR=&#60;CIDR></codeblock>
+          <p>The table below shows the optional switches you can use as part of this playbook to
+            specify environment-specific information:</p>
+          <p>
+            <table frame="all" rowsep="1" colsep="1" id="ansible">
+              <tgroup cols="2">
+                <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                <thead>
+                  <row>
+                    <entry>Switch</entry>
+                    <entry>Description</entry>
+                  </row>
+                </thead>
+                <tbody>
+                  <row>
+                    <entry>
+                      <p><codeph>-e EXT_NET_CIDR=&lt;CIDR></codeph></p>
+                    </entry>
+                    <entry>
+                      <p>You can optionally specify the external network CIDR here too. If you
+                        choose not to exercise this option or use a wrong value, the VMs will not be
+                        accessible over the network.</p>
+                      <p>This CIDR will be from the EXTERNAL VM network.</p>
+                    </entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table>
+          </p></li>
+      </ol>
+    </section>
+    <section id="create_image"><title>Download a Cirros Image and Upload it to the Image
+        Repository</title>
+      <p>In order to properly create a Compute instance you need an image to use. These steps will
+        help you download a Cirros image and upload it to the image repository for use:</p>
+      <ol>
+        <li>
+          <p>This playbook will download the Cirros image from the internet and upload it for
+            use:</p>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts glance-cloud-configure.yml -e proxy=&#60;PROXY></codeblock>
+          <p>The table below shows the optional switches you can use as part of this playbook to
+            specify environment-specific information:</p>
+          <p>
+            <table frame="all" rowsep="1" colsep="1" id="ansible2">
+              <tgroup cols="2">
+                <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                <thead>
+                  <row>
+                    <entry>Switch</entry>
+                    <entry>Description</entry>
+                  </row>
+                </thead>
+                <tbody>
+                  <row>
+                    <entry>
+                      <p><codeph>-e proxy="&lt;proxy_address:port>"</codeph></p>
+                    </entry>
+                    <entry>
+                      <p>If your environment requires a proxy in order to reach out over the
+                        internet, you would enter that here.</p>
+                    </entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table>
+          </p></li>
+      </ol>
+    </section>
+    <section id="creds"><title>Setup Environment Variables</title>
+      <p>This playbook will setup the proper environmental variables for your cloud so you can use
+        command-line clients</p>
+      <ol>
+        <li><p>Run the following command, which will replace <codeph>/etc/hosts</codeph> on the
+            deployer:</p>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml</codeblock>
+          <p>As the <codeph>/etc/hosts</codeph> file no longer has entries for HLM, sudo commands
+            may become a bit slower. To fix this issue, once this step is complete, add "hlm" after
+            "127.0.0.1 localhost". The result will look like this:</p>
+          <codeblock>...
+# Localhost Information
+127.0.0.1 localhost hlm</codeblock></li>
+      </ol>
+    </section>
+    <section id="sshkeys"><title>Backup Your SSH Keys</title>
+      <p>As part of the cloud deployment setup process, SSH keys to access the systems are generated
+        and stored in <codeph>~/.ssh</codeph> on your deployer node.</p>
+      <p>These SSH keys allow access to the subsequently deployed systems and should be included in
+        the list of content to be archived in any backup strategy.</p>
+    </section>
+    <section id="endpoints"><title>Retrieving Service Endpoints</title>
+      <p>text</p>
+      <ol>
+        <li><p>From your deployer node, source the admin creds setup during the installation:</p>
+          <p><codeblock>unset OS_TENANT_NAME
+source ~/keystone.osrc</codeblock></p></li>
+        <li><p>Using the OpenStack command-line tool you can then query the Keystone service for
+            your endpoints:</p>
+          <p><codeblock>openstack endpoint list</codeblock></p>
+          <note type="tip">You can use <codeph>openstack -h</codeph> to access the client help file
+            and a full list of commands.</note></li>
+      </ol>
+      <p>To learn more about Keystone, see <xref href="keystone/keystone_overview.dita">Keystone
+          Overview</xref></p>
+    </section>
+    <section id="horizon"><title>Accessing Horizon</title>
+      <p>Horizon is the web GUI for administering your cloud deployment.</p>
+      <p>To determine which IP to use to access Horizon you can use this command from your
+        deployer:</p>
+      <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock>
+      <p>The output of that command will show you the VIP for Horizon you should use.</p>
+      <p>The default login credentials are:</p>
+      <codeblock>Username: admin
+Password: admin</codeblock>
+      <note type="important">The credentials for your <codeph>admin</codeph> user account can be
+        changed. See <xref href="keystone/keystone_init.dita">Keystone Configuration</xref> for more
+        details.</note>
+    </section>
+    <section id="opsconsole"><title>Accessing Operations Console</title>
+      <p>Operations Console is the web GUI for administering your cloud deployment's monitoring and
+        infrastructure.</p>
+      <p>To determine which IP to use to access the Operations Console you can use this command from
+        your deployer:</p>
+      <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock>
+      <p>The output of that command will show you the VIP you should use. It is listening over port
+        9095 on that VIP, so you can use the following syntax to access
+        it:<codeblock>http://VIP:9095</codeblock></p>
+      <p>The default login credentials are:</p>
+      <codeblock>Username: admin
+Password: admin</codeblock>
+      <note type="important">The credentials for your <codeph>admin</codeph> user account can be
+        changed. See <xref href="keystone/keystone_init.dita">Keystone Configuration</xref> for more
+        details.</note>
+    </section>
+  </body>
+</topic>

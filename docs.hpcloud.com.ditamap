@@ -192,7 +192,13 @@
     </topicref>
   </topicref>
 
-<!-- NEW TOC STUFF -->
+  <!-- NEW TOC STUFF -->
+  <topichead navtitle="Administration">
+    <topichead navtitle="Minimum Set of Customizations">
+      <topicref href="helion/administration/create_extnet.dita"/>
+    </topichead>
+  </topichead>
+
   <topichead navtitle="Operations">
     <topicref href="start.stop.check" toc="no">
       <topicref href="checking.object.storage" toc="no"/>

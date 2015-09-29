@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jsy_lcc_nt">
+  <title>Creating an External Network</title>
+  <body>
+    <section id="create_extnet"><title>Setup an External Network</title>
+      <p>In order for your Compute instances to reach the internet you need to have an external
+        network setup. These steps will help you do that:</p>
+      <ol>
+        <li>
+          <p>This playbook will query the Networking service for an existing external network and
+            create a new one if you don't already have one:</p>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+            ansible-playbook -i hosts/verb_hosts neutron-cloud-configure.yml -e EXT_NET_CIDR=&#60;CIDR></codeblock>
+          <p>The table below shows the optional switches you can use as part of this playbook to
+            specify environment-specific information:</p>
+          <p>
+            <table frame="all" rowsep="1" colsep="1" id="ansible">
+              <tgroup cols="2">
+                <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                <thead>
+                  <row>
+                    <entry>Switch</entry>
+                    <entry>Description</entry>
+                  </row>
+                </thead>
+                <tbody>
+                  <row>
+                    <entry>
+                      <p><codeph>-e EXT_NET_CIDR=&lt;CIDR></codeph></p>
+                    </entry>
+                    <entry>
+                      <p>You can optionally specify the external network CIDR here too. If you
+                        choose not to exercise this option or use a wrong value, the VMs will not be
+                        accessible over the network.</p>
+                      <p>This CIDR will be from the EXTERNAL VM network.</p>
+                    </entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table>
+          </p></li>
+      </ol>
+    </section>
+  </body>
+</topic>
