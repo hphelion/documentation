@@ -20,7 +20,7 @@
       <p>After deploying the KVM cloud, on each compute node, update the following lines in the
           <codeph>/etc/default/nuage-metadata-agent</codeph> to reflect:</p>
       <ol>
-      <li>Append <codeph>v2.0</codeph> to the the Keystone URL:
+      <li>Append <codeph>v2.0</codeph> to the Keystone URL:
             <codeblock># NOVA_OS_AUTH_URL=http://10.30.3.103:35357
 NOVA_OS_AUTH_URL=http://10.30.3.103:5000/v2.0</codeblock><p>Where
               <codeph>NOVA_OS_AUTH_URL</codeph> is Identity service endpoint, which the nova client

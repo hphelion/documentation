@@ -159,13 +159,10 @@
               Usage</b> tab. </li>
           <li>Click the <b>Pipelines</b> table.</li>
           <li>Click the <b>Update Settings</b> button to configure the behavior of a pipeline. </li>
-          <li>In the the <b>Edit Pipeline</b> window, enter the values as needed:
-      <ul>
-        <li>
-
-            <b>Name</b> - A read-only field displaying the name of the pipeline.
-        </li>
-        <li>
+          <li>In the <b>Edit Pipeline</b> window, enter the values as needed: <ul>
+              <li>
+                <b>Name</b> - A read-only field displaying the name of the pipeline. </li>
+              <li>
                 <b>Meters</b> - An editable field displaying the list of comma-separated meters
                 included in the pipeline. The list must be enclosed in square brackets, as follows:
                   <codeblock>[meter1,meter2,...] </codeblock><p>The following syntax rules apply to
@@ -190,25 +187,24 @@
                       all meters use them or none at all.</p>
                     <p>The following list is therefore invalid: [meter1,!meter2,meter3] </p>
                   </li>
-                </ul></li>                
-                  <li>
-                    <b>Location</b> - The absolute path to the CSV file on the controller. </li>
-                  <li>
-                    <b>Enabled</b> - A check box used to enable or disable the pipeline.</li>
-                  <li>
-                    <b>Max Bytes</b> - The maximum size, in bytes, of a CSV file. The default value
-                    is 10 MB.</li>
-                  <li>
-                    <b>Backup Count</b> - The number of concurrent backup CSV files to maintain in a
-                    rotation ring, including the currently active file. When a CSV file reaches its
-                    maximum size, it is renamed as a backup file, and a new CSV file is opened for
-                    writing. Backup files older than the size of the rotation ring are automatically
-                    removed.</li>
-                  <li>
-                    <b>Compress Backups</b> - A check box used to select whether or not to compress
-                    backup files in the rotation ring.</li>
-                
-              </ul></li></ol></p>   </section>
+                </ul></li>
+              <li>
+                <b>Location</b> - The absolute path to the CSV file on the controller. </li>
+              <li>
+                <b>Enabled</b> - A check box used to enable or disable the pipeline.</li>
+              <li>
+                <b>Max Bytes</b> - The maximum size, in bytes, of a CSV file. The default value is
+                10 MB.</li>
+              <li>
+                <b>Backup Count</b> - The number of concurrent backup CSV files to maintain in a
+                rotation ring, including the currently active file. When a CSV file reaches its
+                maximum size, it is renamed as a backup file, and a new CSV file is opened for
+                writing. Backup files older than the size of the rotation ring are automatically
+                removed.</li>
+              <li>
+                <b>Compress Backups</b> - A check box used to select whether or not to compress
+                backup files in the rotation ring.</li>
+            </ul></li></ol></p>   </section>
 <section id="retention">
       <title>Retention Period</title>
       <p>Performance samples are kept in the database for a limited period of time known as the
