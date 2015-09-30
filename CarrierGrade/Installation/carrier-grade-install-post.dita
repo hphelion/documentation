@@ -130,7 +130,7 @@ password:  &lt;random> </codeblock><p>The
       </ol> 
   </section>
   <section>
-    <title id="kvm-esx">For KVM with DCN or KVM + ESX deployments</title>
+    <title id="kvm-esx"><!--For KVM with DCN or -->KVM + ESX deployments</title>
     <ol>
             <li>After the controller-1 and the compute nodes come up successfully after PXE boot,
           execute the following commands from controller-0 to unlock the compute nodes.<ol
@@ -185,12 +185,24 @@ system host-if-modify compute-0 -nt data-vrs --ipv4-mode=static bondvrs
 system host-addr-add compute-0 bondvrs 10.30.6.244 24
 system host-update compute-0 vsc_controllers=10.30.6.31,10.30.6.32</codeblock></li></ol>
     </section>
+    <section>
+      <title>Deploy the Horizon Patch</title>
+      <p>After deploying the KVM cloud, on each controller node, apply a patch to incorporate
+        specific UI rebranding changes. </p>
+      <p>For more information, see  <xref href="carrier-grade-install-horizon-patch.dita#topic10581"
+          >Deploying the Horizon Patch</xref></p>
+    </section>
+    <section>
+      <title>Configure the DCN Metadata Agent</title>
+      <p><b>KVM + ESX deployments only</b></p>
+      <p>After deploying the KVM cloud, on each compute node, update the following lines in the
+          <codeph>/etc/default/nuage-metadata-agent</codeph>. </p>
+      <p>For more information, see <xref href="carrier-grade-install-metadata.dita#topic10581"
+          >Configuring the DCN Metadata Agent</xref>
+      </p>
+    </section>
   
   <section id="next-step"> <title>Next Steps</title>
-      <p><xref href="carrier-grade-install-metadata.dita#topic10581">Configure the DCN Metadata
-          Agent</xref> (KVM + ESX deployments only)</p>
-      <p><xref href="carrier-grade-install-horizon-patch.dita#topic10581">Deploying the Horizon
-          Patch</xref></p>
       <p><xref href="carrier-grade-install-ldap-verify.dita#topic10581">Verify the LDAP
           Deployment</xref></p>
   </section>
