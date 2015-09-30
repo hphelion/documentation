@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
+<map>
+   <title>HP Helion Cloud Foundry Variables</title>
+   <keydef keys="prodLong">
+      <topicmeta>
+         <keywords>
+            <keyword>HP Helion Cloud Foundry</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="prodShort">
+      <topicmeta>
+         <keywords>
+            <keyword>HCF</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="prodVer">
+      <topicmeta>
+         <keywords>
+            <keyword>1.0</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+</map>

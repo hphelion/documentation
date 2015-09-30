@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_qlr_s3c_nt">
+ <title><keyword keyref="prodLong"></keyword> <keyword keyref="prodVer"></keyword>: Documentation</title>
+ <shortdesc><keyword keyref="prodLong"></keyword> (<keyword keyref="prodShort"></keyword>) is a polyglot Platform-as-a-Service 
+  (PaaS) software. You can run it in your own data center using the hypervisor of your choice, or on your favorite cloud
+  hosting provider to provide a private or public PaaS.</shortdesc>
+ <prolog>
+   <metadata>
+     <othermeta name="author" content="Michael Khmelnitsky"/>
+   </metadata>
+ </prolog>
+ <conbody>
+    <!--michaelk: The information in the note below is probably all wrong. Correct+careful rewrite deferred to troytop.-->
+  <note><keyword keyref="prodShort"/>
+      <keyword keyref="prodVer"/> is based on Stackato 3.6.0 and there are some important
+      differences you must be aware of if you are transitioning from version 3.6.0 or earlier:<ul
+        id="ul_i1r_zjc_nt">
+        <li>Application development is now primarily performed using <b>buildpacks</b>
+          <!--link to buildpacks--></li>
+        <li/>
+        <li><codeph>stackato.yml</codeph> has been deprecated</li>
+        <li>Some keys in <b>manifest.yml</b> have changed <!--link to manifest.yml--></li>
+        <li>Groups have been replaced with <b>Organizations and Spaces</b></li>
+      </ul></note>
+  <p>This guide has been created for two target audiences with some overlapping roles:<ul
+    id="ul_nqc_ckc_nt">
+    <li><keyword keyref="prodShort"></keyword> application developers who use a PaaS set up and maintained by an IT administrator</li>
+    <li>IT administrators who set up, configure, and maintain a PaaS</li>
+   </ul></p>
+ </conbody>
+</concept>

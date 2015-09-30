@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
+<map>
+   <title>Reference</title>
+   <mapref href="_docs.hpcloud.com_HCF_variables.ditamap" format="ditamap"></mapref>
+   <topicref href="HCF_ref_kato_commands.dita"/>
+</map>
