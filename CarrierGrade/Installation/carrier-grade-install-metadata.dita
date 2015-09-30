@@ -18,7 +18,7 @@
     <section>
       <p><b><i>For a KVM and ESX cloud topology</i></b></p>
       <p>After deploying the KVM cloud, on each compute node, update the following lines in the
-          <codeph>/etc/default/nuage-metadata-agent</codeph> to reflect:</p>
+          <codeph>/etc/default/nuage-metadata-agent</codeph>:</p>
       <ol>
       <li>Append <codeph>v2.0</codeph> to the Keystone URL:
             <codeblock># NOVA_OS_AUTH_URL=http://10.30.3.103:35357

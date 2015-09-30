@@ -16,7 +16,7 @@
   </prolog>
   <body>
     <p>After installing HP Helion OpenStack Carrier Grade, you can use the following commands to
-      verify that LDAP is functoning correctly. </p>
+      verify that LDAP is functioning correctly. </p>
     <p>
       <ol id="ol_vcf_skb_mt">
         <li>Log into any of the controllers. <p>

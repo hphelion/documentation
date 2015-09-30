@@ -69,7 +69,7 @@
             locktitle="yes">
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
         </topicref>
-        <topicref href="carrier-grade-install-post.dita" navtitle="Post Installation Tasks"
+        <topicref href="carrier-grade-install-post.dita" navtitle="Post-Installation Tasks"
             locktitle="yes">
             <topicref href="carrier-grade-install-horizon-patch.dita" toc="no"
                 navtitle="Deploying the Horizon Patch" locktitle="yes"/>

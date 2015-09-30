@@ -13,13 +13,11 @@
   </metadata>
 </prolog>
 <body>
-
-
- <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.md-->
- <!--permalink: /helion/openstack/carrier/install/pb/hlm-cloud/-->
-<p>After the HLM VM is up and running and HP Helion OpenStack is installed, use the following steps
-      to deploy the KVM region.</p>
-  <section>
+    <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.md-->
+    <!--permalink: /helion/openstack/carrier/install/pb/hlm-cloud/-->
+    <p>After the HLM VM is up and running and HP Helion OpenStack is installed, use the following
+      steps to deploy the KVM region.</p>
+    <section>
       <title>Bring Up Controller-0 in the KVM Region</title>
       <ol>
         <li>Make sure other servers to be used in KVM region are shutdown.</li>
@@ -34,9 +32,9 @@
           the KVM PXE. <codeblock>ip addr add &lt;CIDR> dev eth0
 ifconfig eth0 up</codeblock></li>
         <li> Set the default gateway to the PXE network gateway
-          <codeblock>route add default gw &lt;CIDR_gateway_IP&gt;</codeblock></li></ol>
-  </section>
-    
+          <codeblock>route add default gw &lt;CIDR_gateway_IP&gt;</codeblock></li>
+      </ol>
+    </section>
     <section>
       <p><b>Install the KVM region license</b></p>
       <p>The servers in the KVM region require a specific license file to be installed.
@@ -58,7 +56,9 @@ ifconfig eth0 up</codeblock></li>
               prerequisites</xref></p></li>
         <li>Restart <codeph>controller-0</codeph> to load the license file.</li>
       </ol>
-    </section><section><title>Install the KVM region cloud</title>
+    </section>
+    <section>
+      <title>Install the KVM region cloud</title>
       <ol>
         <li>Execute the following command to install the KVM region cloud:
               <codeblock>sudo config_region</codeblock><p><image
@@ -91,48 +91,49 @@ system host-add --hostname &lt;unique-compute-name&gt; --personality compute --m
 password:  &lt;random> </codeblock><p>The
             Horizon password is randomly generated during the installation. You can locate the
             password in the <codeph>stackrc</codeph> file on any of the non-KVM region
-            controllers.</p></li></ol> 
+            controllers.</p></li>
+      </ol>
     </section>
-  <section id="unlock"><title>Configure and unlock the compute controllers</title>
-    <p>After the controller-1 and the compute nodes come up successfully after PXE boot, execute the
-        following commands from controller-0 to unlock each compute node in the inventory, based on
-        your deployment:</p>
+    <section id="unlock">
+      <title>Configure and unlock the compute controllers</title>
+      <p>After the controller-1 and the compute nodes come up successfully after PXE boot, execute
+        the following commands from controller-0 to unlock each compute node in the inventory, based
+        on your deployment:</p>
       <p><xref href="#topic1107/kvm" format="dita">For KVM deployments</xref></p>
       <p><xref href="#topic1107/kvm-esx" format="dita">For KVM + ESX deployments</xref></p>
       <p><xref href="#topic1107/nic" format="dita">For bonded NIC environments</xref></p>
-  </section>
-  <section>
-    <title id="kvm">For KVM deployments</title>
-    <ol>
-      <li>Create the Infra interface. See <xref
-        href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
-      /> or <i>Interfaces</i> in the Administrtor Guide.</li>
-      <li>Create a Provider Network. See <xref
-        href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita#topic3878"
-      /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
-      <li>Create VLAN Ranges on the provider network using the <b>Create Segmentation
-        Range</b> option. See <xref
-          href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita#topic2171"
-        /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
-      <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107">Create data
-        interface.</xref> See <i>Configuring Endpoint IP Addresses</i> in the Administrator
-        Guide.</li>
-      <li>Optionally, change the default CPU allocations and/or the default memory allocations
-        (huge pages) on each processor, such as the NUMA (Non-Uniform Memory Access) nodes.
-        See <i>Processor</i> in the Administrator Guide.</li>
-    
-    <li><xref
-      href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
-      >Unlock the compute nodes</xref>. Compute nodes will reboot.  Keep polling the status on
-      the inventory page to show <b>Available</b> and <b>Online</b>.</li>
+    </section>
+    <section>
+      <title id="kvm">For KVM deployments</title>
+      <ol>
+        <li>Create the Infra interface. See <xref
+            href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
+          /> or <i>Interfaces</i> in the Administrtor Guide.</li>
+        <li>Create a Provider Network. See <xref
+            href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita#topic3878"
+          /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
+        <li>Create VLAN Ranges on the provider network using the <b>Create Segmentation Range</b>
+          option. See <xref
+            href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita#topic2171"
+          /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
+        <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107">Create data
+            interface.</xref> See <i>Configuring Endpoint IP Addresses</i> in the Administrator
+          Guide.</li>
+        <li>Optionally, change the default CPU allocations and/or the default memory allocations
+          (huge pages) on each processor, such as the NUMA (Non-Uniform Memory Access) nodes. See
+            <i>Processor</i> in the Administrator Guide.</li>
+        <li><xref
+            href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
+            >Unlock the compute nodes</xref>. Compute nodes will reboot. Keep polling the status on
+          the inventory page to show <b>Available</b> and <b>Online</b>.</li>
         <li>If you are using a bonded interface, see <xref href="#topic1107/nic" format="dita">For
             bonded NIC environments</xref>.</li>
-      </ol> 
-  </section>
-  <section>
-    <title id="kvm-esx">For KVM with DCN or KVM + ESX deployments</title>
-    <ol>
-            <li>After the controller-1 and the compute nodes come up successfully after PXE boot,
+      </ol>
+    </section>
+    <section>
+      <title id="kvm-esx">For KVM with DCN or KVM + ESX deployments</title>
+      <ol>
+        <li>After the controller-1 and the compute nodes come up successfully after PXE boot,
           execute the following commands from controller-0 to unlock the compute nodes.<ol
             id="ol_p42_d35_lt">
             <li>Create the Infra interface:
@@ -156,16 +157,16 @@ system host-if-modify compute-3 -n vrs -nt data-vrs --ipv4-mode=static eth4
 system host-addr-add compute-3 vrs 10.70.5.83 24
 system host-update compute-3 vsc_controllers=10.70.5.31,10.70.5.32
 system host-unlock compute-3        </codeblock></li>
-            <li>Perform the following steps on controller-0 to ensure instance launching succeeds.
-              Repeat the commands for each compute node.
-              <codeblock>source /etc/nova/openrc
+        <li>Perform the following steps on controller-0 to ensure instance launching succeeds.
+          Repeat the commands for each compute node.
+          <codeblock>source /etc/nova/openrc
 nova aggregate-create remote_storage_hosts
 nova aggregate-set-metadata remote_storage_hosts localstorage=false
 nova aggregate-add-host remote_storage_hosts &lt;compute host name&gt;</codeblock></li>
-      
       </ol>
-  </section>
-  <section id="nic"><title>For bonded NIC environments</title>
+    </section>
+    <section id="nic">
+      <title>For bonded NIC environments</title>
       <p>If you are using a bonded NIC environment, after configuring and unlocking the compute
         nodes, perform these steps:</p>
       <ol id="ol_nr5_ddw_mt">
@@ -174,8 +175,7 @@ nova aggregate-add-host remote_storage_hosts &lt;compute host name&gt;</codebloc
 system host-if-list ( used to gather UUID of interface mgmt to remove )
 system host-if-modify -nt "none" compute-0 pxeboot0 ( used to remove pxeboot flag off interface )
 system host-if-delete compute-0 95e7b495-1454-49d1-8123-301215503e86      </codeblock></li>
-      
-    <li>Use the following commands to create a bonded interface and setup node to be unlocked:
+        <li>Use the following commands to create a bonded interface and setup node to be unlocked:
           <codeblock>system host-if-add -a 802.3ad -x layer2 -nt pxeboot compute-0 bond0 ae "none" eth0 eth1
 system host-if-add -V 303 -nt mgmt compute-0 mgmt vlan bond0
 system host-if-add -V 74 -nt infra compute-0 infra vlan bond0
@@ -183,16 +183,12 @@ system host-addr-add compute-0 infra 172.16.74.244 24
 system host-if-add -a balanced -x layer2 -nt "none" compute-0 bondvrs ae "none" eth2 eth3
 system host-if-modify compute-0 -nt data-vrs --ipv4-mode=static bondvrs
 system host-addr-add compute-0 bondvrs 10.30.6.244 24
-system host-update compute-0 vsc_controllers=10.30.6.31,10.30.6.32</codeblock></li></ol>
+system host-update compute-0 vsc_controllers=10.30.6.31,10.30.6.32</codeblock></li>
+      </ol>
     </section>
-  
-  <section id="next-step"> <title>Next Steps</title>
-      <p><xref href="carrier-grade-install-metadata.dita#topic10581">Configure the DCN Metadata
-          Agent</xref> (KVM + ESX deployments only)</p>
-      <p><xref href="carrier-grade-install-horizon-patch.dita#topic10581">Deploying the Horizon
-          Patch</xref></p>
-      <p><xref href="carrier-grade-install-ldap-verify.dita#topic10581">Verify the LDAP
-          Deployment</xref></p>
-  </section>
-</body>
+    <section id="next-step">
+      <title>Next Steps</title>
+      <p><xref href="carrier-grade-install-post.dita#topic1107">Post-Installation Tasks</xref></p>
+    </section>
+  </body>
 </topic>
