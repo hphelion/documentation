@@ -1,2 +1,0 @@
-#!/bin/bash
-find . -name "*.dita" -exec grep -H "$1" {} \;

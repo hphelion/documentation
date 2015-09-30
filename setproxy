@@ -1,2 +1,0 @@
-git config --global http.proxy http://proxy.houston.hp.com:8080
-git config --global https.proxy https://proxy.houston.hp.com:8080
