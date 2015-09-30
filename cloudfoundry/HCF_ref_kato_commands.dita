@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_yff_q32_nt">
+  <title>Kato Command Reference</title>
+  <shortdesc>
+    <codeph>kato</codeph> is an <keyword keyref="prodLong"></keyword> administration utility.
+  </shortdesc>
+  <prolog>
+    <metadata>
+      <othermeta name="author" content="Michael Khmelnitsky"/>
+    </metadata>
+  </prolog>
+  <refbody>
+    <section>
+      <title>Syntax</title>
+      <codeblock>kato <varname>&lt;command></varname> [-h] [--help] [<varname>&lt;arguments></varname>] [<varname>&lt;command-options></varname>]</codeblock>
+    </section>
+    <section>
+      <title>Commands</title>
+      <dl>
+        <dlentry>
+          <dt><codeph>config</codeph></dt>
+          <dd>Manipulate the configuration values of <keyword keyref="prodShort"/> components</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>data</codeph></dt>
+          <dd>Import, export, or repair <keyword keyref="prodShort"/> system data<ul
+              id="ul_evv_hk2_nt">
+              <li><codeph>data export</codeph></li>
+              <li><codeph>data import</codeph></li>
+              <li><codeph>data repair</codeph></li>
+            </ul></dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>debug</codeph></dt>
+          <dd>Debug <keyword keyref="prodShort"/> internals<ul id="ul_syr_5k2_nt">
+              <li><codeph>debug configwatch</codeph></li>
+              <li><codeph>debug redis</codeph></li>
+            </ul></dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>history</codeph></dt>
+          <dd>Show the <codeph>kato</codeph> commands that have been run</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>info</codeph></dt>
+          <dd>Show information about the current node or cluster</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>inspect</codeph></dt>
+          <dd>Detect common problems with your <keyword keyref="prodShort"/> installation</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>license</codeph></dt>
+          <dd>Set the <keyword keyref="prodShort"/> license in use for the current microcloud or
+            cluster</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>log</codeph></dt>
+          <dd>Manage <keyword keyref="prodShort"/> logging<ul id="ul_ybc_pl2_nt">
+              <li><codeph>log drain</codeph></li>
+              <li><codeph>log stream</codeph></li>
+              <li><codeph>log tail</codeph></li>
+            </ul></dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>node</codeph></dt>
+          <dd>Manage nodes<ul id="ul_jvq_1m2_nt">
+              <li><codeph>node attach</codeph></li>
+              <li><codeph>node availabilityzone</codeph></li>
+              <li><codeph>node detach</codeph></li>
+              <li><codeph>node list</codeph></li>
+              <li><codeph>node migrate</codeph></li>
+              <li><codeph>node placementzones</codeph></li>
+              <li><codeph>node reattach</codeph></li>
+              <li><codeph>remove</codeph></li>
+              <li><codeph>node rename</codeph></li>
+              <li><codeph>node reset</codeph></li>
+              <li><codeph>node retire</codeph></li>
+              <li><codeph>node setup</codeph></li>
+              <li><codeph>node update</codeph></li>
+              <li><codeph>node version</codeph></li>
+            </ul></dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>op</codeph></dt>
+          <dd>Run operational commands<ul id="ul_vt5_lm2_nt">
+              <li><codeph>op authorize_ssh_key</codeph></li>
+              <li><codeph>op custom_ssl_cert</codeph></li>
+              <li><codeph>op defer</codeph></li>
+              <li><codeph>op dhcp</codeph></li>
+              <li><codeph>op generate_service_tokens</codeph></li>
+              <li><codeph>op import_from_yaml_file</codeph></li>
+              <li><codeph>op import_from_yaml_files</codeph></li>
+              <li><codeph>op max_client_upload</codeph></li>
+              <li><codeph>op regenerate</codeph></li>
+              <li><codeph>op remap_hosts</codeph></li>
+              <li><codeph>op run_deferred</codeph></li>
+              <li><codeph>op set_timezone</codeph></li>
+              <li><codeph>op static_ip</codeph></li>
+              <li><codeph>op update_hostsfile</codeph></li>
+              <li><codeph>op upstream_proxy</codeph></li>
+            </ul></dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>patch</codeph></dt>
+          <dd>Update a <keyword keyref="prodShort"/> cluster with post-release fixes</dd>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt><codeph>process</codeph></dt>
+          <dd>Start, stop, or restart individual processes (generally not required)<ul
+              id="ul_zlm_pn2_nt">
+              <li><codeph>process list</codeph></li>
+              <li><codeph>process ready</codeph></li>
+              <li><codeph>process restart</codeph></li>
+              <li><codeph>process start</codeph></li>
+              <li><codeph>process stop</codeph></li>
+            </ul></dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>relocate</codeph></dt>
+          <dd>Move containers, local docker cache, application droplets, or services</dd>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt><codeph>report</codeph></dt>
+          <dd>Generate a report that can be sent to <keyword keyref="prodShort"/> support</dd>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt><codeph>restart</codeph></dt>
+          <dd>Restart <keyword keyref="prodShort"/> or individual roles</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>role</codeph></dt>
+          <dd>Manage node roles<ul id="ul_a4z_wn2_nt">
+              <li><codeph>role add</codeph></li>
+              <li><codeph>role info</codeph></li>
+              <li><codeph>role remove</codeph></li>
+            </ul></dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>shell</codeph></dt>
+          <dd>Use an interactive shell for <codeph>kato</codeph></dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>start</codeph></dt>
+          <dd>Start <keyword keyref="prodShort"/> or individual roles</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>status</codeph></dt>
+          <dd>List configured roles and their current status across the cluster</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>stop</codeph></dt>
+          <dd>Stop <keyword keyref="prodShort"/> or individual roles</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>version</codeph></dt>
+          <dd>Display the version of <keyword keyref="prodShort"/> being run</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>Command Usage Details</title>
+      <sectiondiv id="config">
+        <codeblock>config get [options] [<varname>&lt;component&gt;</varname>] [<varname>&lt;key-path&gt;</varname>]</codeblock>
+        <codeblock>config set [options] <varname>&lt;component&gt;</varname> <varname>&lt;key-path&gt;</varname> [<varname>&lt;value&gt;</varname>]</codeblock>
+        <codeblock>config del [options] <varname>&lt;component&gt;</varname> <varname>&lt;key-path&gt;</varname></codeblock>
+        <codeblock>config push [options] <varname>&lt;component&gt;</varname> <varname>&lt;key-path&gt;</varname> <varname>&lt;value&gt;</varname></codeblock>
+        <codeblock>config pop [options] <varname>&lt;component&gt;</varname> <varname>&lt;key-path&gt;</varname> <varname>&lt;value&gt;</varname></codeblock>
+        <p>Manipulate configuration values of <keyword keyref="prodShort"/> components.</p>
+        <note>
+          <p><codeph><varname>&lt;component></varname></codeph> can be <codeph>cluster</codeph>,
+              <codeph>local</codeph>, or the name of a process.</p>
+          <p>If <codeph><varname>&lt;value></varname></codeph> is not given for
+            <codeph>set</codeph>, then it is read from <codeph>STDIN</codeph>.</p>
+        </note>
+        <table frame="all" rowsep="1" colsep="1" id="table_lqd_4q2_nt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Option</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry><codeph>-j --json</codeph></entry>
+                <entry>For <codeph>set</codeph>, use JSON format when setting config key
+                  values.</entry>
+              </row>
+              <row>
+                <entry><codeph>-h --help</codeph></entry>
+                <entry>Show help information.</entry>
+              </row>
+              <row>
+                <entry><codeph>-y --yaml</codeph></entry>
+                <entry>Use YAML format when retrieving or setting config key values.<note>YAML is
+                    the default output format.</note></entry>
+              </row>
+              <row>
+                <entry><codeph>-f --flat</codeph></entry>
+                <entry>Use a flat output format
+                      <codeph><varname>&lt;full-config-path></varname><varname>&lt;value></varname></codeph></entry>
+              </row>
+              <row>
+                <entry><codeph>--force</codeph></entry>
+                <entry>Force the update of a value to a different type.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+      <sectiondiv id="data">
+        <codeblock>data export --only-this-node [options] [<varname>&lt;filename&gt;</varname>]</codeblock>
+        <codeblock>data export --cluster [options] [<varname>&lt;filename&gt;</varname>]</codeblock>
+        <codeblock>data export --manual [options] [<varname>&lt;filename&gt;</varname>]</codeblock>
+        <p>Export <keyword keyref="prodShort"/> system data to or from clusters or nodes. </p>
+        <note>When no options are specified, all data except <codeph>resources</codeph> and
+            <codeph>aok-config</codeph> is included.</note>
+        <table frame="all" rowsep="1" colsep="1" id="table_kx5_ht2_nt">
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Option</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry><codeph>-h --help</codeph></entry>
+                <entry>Show help information</entry>
+              </row>
+              <row>
+                <entry><codeph>--cluster</codeph></entry>
+                <entry>Operate on the entire cluster</entry>
+              </row>
+              <row>
+                <entry><codeph>--only-this-node</codeph></entry>
+                <entry>Affect only this node</entry>
+              </row>
+              <row>
+                <entry><codeph>--manual</codeph></entry>
+                <entry>Import/export only roles specified on the command line </entry>
+              </row>
+              <row>
+                <entry><codeph>--force</codeph></entry>
+                <entry>Force import/export of specified roles even if they are not
+                    enabled<note>Requires <codeph>--manual</codeph> and implies
+                      <codeph>--only-this-node</codeph></note></entry>
+              </row>
+              <row>
+                <entry><codeph>--remote</codeph></entry>
+                <entry>Specify remote import/export (internal use only)</entry>
+              </row>
+              <row>
+                <entry><codeph>--base-dir <varname>&lt;base-dir></varname></codeph></entry>
+                <entry>Specify the base directory for extracting temporary files</entry>
+              </row>
+              <row>
+                <entry><codeph>--only-users-orgs</codeph></entry>
+                <entry> Include only the portions related to users and orgs (parts of
+                    <codeph>main-db</codeph>, <codeph>aok-db</codeph>, <codeph>aok-config</codeph>,
+                    <codeph>db-encryption-key</codeph>, <codeph>license</codeph>)</entry>
+              </row>
+              <row>
+                <entry><codeph>--droplets</codeph></entry>
+                <entry>Include droplets (uploaded apps)</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-droplets</codeph></entry>
+                <entry>Do not include droplets (uploaded apps)</entry>
+              </row>
+              <row>
+                <entry><codeph>--packages</codeph></entry>
+                <entry>Include app packages</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-packages</codeph></entry>
+                <entry>Do not include app packages</entry>
+              </row>
+              <row>
+                <entry><codeph>--resources</codeph></entry>
+                <entry>Include the upload cache</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-resources</codeph></entry>
+                <entry>Do not include the upload cache (default)</entry>
+              </row>
+              <row>
+                <entry><codeph>--license</codeph></entry>
+                <entry>Include the <keyword keyref="prodShort"/> license</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-license</codeph></entry>
+                <entry>Do not include the <keyword keyref="prodShort"/> license</entry>
+              </row>
+              <row>
+                <entry><codeph>--db-encryption-key</codeph></entry>
+                <entry>Include the key used to encrypt the <keyword keyref="prodShort"/> DB
+                  (recommended)</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-db-encryption-key</codeph></entry>
+                <entry>Do not include the key used to encrypt the <keyword keyref="prodShort"/> DB
+                  (recommended)</entry>
+              </row>
+              <row>
+                <entry><codeph>--main-db</codeph></entry>
+                <entry>Include the cloud controller's main database</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-main-db</codeph></entry>
+                <entry>Do not include the cloud controller's main database</entry>
+              </row>
+              <row>
+                <entry><codeph>--aok-db</codeph></entry>
+                <entry>Include AOK database</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-aok-db</codeph></entry>
+                <entry>Do not include AOK database</entry>
+              </row>
+              <row>
+                <entry><codeph>--aok-config</codeph></entry>
+                <entry>Include AOK configuration</entry>
+              </row>
+              <row>
+                <entry><codeph>-exclude-aok-config</codeph></entry>
+                <entry>Do not include AOK configuration (default)</entry>
+              </row>
+              <row>
+                <entry><codeph>--stackato-rest-db</codeph></entry>
+                <entry>Include Stackato Rest database</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-stackato-rest-db</codeph></entry>
+                <entry>Do not include Stackato Rest database</entry>
+              </row>
+              <row>
+                <entry><codeph>--filesystem</codeph></entry>
+                <entry>Include the filesystem service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-filesystem</codeph></entry>
+                <entry>Do not include the filesystem service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-filesystem-data</codeph></entry>
+                <entry>Do not include the filesystem service user data</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-filesystem-user-creation</codeph></entry>
+                <entry>Do not include the filesystem service user creation/quota</entry>
+              </row>
+              <row>
+                <entry><codeph>--harbor</codeph></entry>
+                <entry>Include the harbor service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude harbor</codeph></entry>
+                <entry>Do not include the harbor service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-harbor-data</codeph></entry>
+                <entry>Do not include the harbor service user data</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-harbor-metadata</codeph></entry>
+                <entry>Do not include the harbor service metadata</entry>
+              </row>
+              <row>
+                <entry><codeph>--mysql</codeph></entry>
+                <entry>Include the MySQL service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-mysql</codeph></entry>
+                <entry>Do not include the MySQL service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-mysql-data</codeph></entry>
+                <entry>Do not include the MySQL services data</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-mysql-metadata</codeph></entry>
+                <entry>Do not include the MySQL service metadata</entry>
+              </row>
+              <row>
+                <entry><codeph>--postgresql</codeph></entry>
+                <entry>Include the PostgreSQL service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-postgresql</codeph></entry>
+                <entry>Do not include the PostgreSQL service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-postgresql-data</codeph></entry>
+                <entry>Do not include the PostgreSQL service data</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-postgresql-metadata</codeph></entry>
+                <entry>Do not include the PostgreSQL service metadata</entry>
+              </row>
+              <row>
+                <entry><codeph>--mongodb</codeph></entry>
+                <entry>Include the MongoDB service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-mongodb</codeph></entry>
+                <entry>Do not include the MongoDB service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-mongodb-data</codeph></entry>
+                <entry>Do not include the MongoDB service data</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-mongodb-metadata</codeph></entry>
+                <entry>Do not include the MongoDB service metadata</entry>
+              </row>
+              <row>
+                <entry><codeph>--memcached</codeph></entry>
+                <entry>Include the memcached service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-memcached</codeph></entry>
+                <entry>Do not include the memcached service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-memcached-data</codeph></entry>
+                <entry>Do not include the memcached service data</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-memcached-metadata</codeph></entry>
+                <entry> Do not include the memcached service metadata</entry>
+              </row>
+              <row>
+                <entry><codeph>--redis</codeph></entry>
+                <entry>Include the Redis service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-redis</codeph></entry>
+                <entry>Do not include the Redis service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-redis-data</codeph></entry>
+                <entry>Do not include the Redis service data</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-redis-metadata</codeph></entry>
+                <entry>Do not include the Redis service metadata</entry>
+              </row>
+              <row>
+                <entry><codeph>--rabbit</codeph></entry>
+                <entry>Include the RabbitMQ service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-rabbit</codeph></entry>
+                <entry>Do not include the RabbitMQ service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-rabbit-data</codeph></entry>
+                <entry>Do not include the RabbitMQ service data</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-rabbit-metadata</codeph></entry>
+                <entry>Do not include the RabbitMQ service metadata</entry>
+              </row>
+              <row>
+                <entry><codeph>--rabbit3</codeph></entry>
+                <entry>Include the RabbitMQ service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-rabbit3</codeph></entry>
+                <entry>Do not include the RabbitMQ service</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-rabbit3-data</codeph></entry>
+                <entry>Do not include the RabbitMQ service data</entry>
+              </row>
+              <row>
+                <entry><codeph>--exclude-rabbit3-metadata</codeph></entry>
+                <entry>Do not include the RabbitMQ service's metadata</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+    </section>
+  </refbody>
+</reference>
