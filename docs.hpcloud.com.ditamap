@@ -107,28 +107,7 @@
     </topicref>
     <!-- Monasca / Centralized Logging -->
 
-    <topicref href="helion/monasca/opsconsole/overview.dita" navtitle="Operations Console"
-      locktitle="yes">
-      <topichead navtitle="General">
-        <topicref href="helion/monasca/opsconsole/dashboard.dita"/>
-        <topicref href="helion/monasca/opsconsole/logging.dita"/>
-        <topicref href="helion/monasca/opsconsole/alarm_definitions.dita"/>
-        <topicref href="helion/monasca/opsconsole/alarm_explorer.dita"/>
-        <topicref href="helion/monasca/opsconsole/notification_methods.dita"/>
-        <topicref href="helion/monasca/opsconsole/metric_monitoring.dita"/>
-      </topichead>
-      <topichead navtitle="Compute">
-        <topicref href="helion/monasca/opsconsole/compute_summary.dita"/>
-        <topicref href="helion/monasca/opsconsole/compute_hosts.dita"/>
-        <topicref href="helion/monasca/opsconsole/compute_instances.dita"/>
-      </topichead>
-      <topichead navtitle="Networking">
-        <topicref href="helion/monasca/opsconsole/networking_summary.dita"/>
-      </topichead>
-      <topichead navtitle="Storage">
-        <topicref href="helion/monasca/opsconsole/storage_summary.dita"/>
-      </topichead>
-    </topicref>
+
 
 
     <!-- reporting = metering = ceilomter -->
@@ -229,6 +208,28 @@
       locktitle="yes">
       <topicref href="helion/logging/logging_settings.dita" navtitle="Logging Settings"
         locktitle="yes"/>
+    </topicref>
+    <topicref href="helion/operations/opsconsole/overview.dita" navtitle="Operations Console"
+      locktitle="yes">
+      <topichead navtitle="General">
+        <topicref href="helion/operations/opsconsole/dashboard.dita"/>
+        <topicref href="helion/operations/opsconsole/logging.dita"/>
+        <topicref href="helion/operations/opsconsole/alarm_definitions.dita"/>
+        <topicref href="helion/operations/opsconsole/alarm_explorer.dita"/>
+        <topicref href="helion/operations/opsconsole/notification_methods.dita"/>
+        <topicref href="helion/operations/opsconsole/metric_monitoring.dita"/>
+      </topichead>
+      <topichead navtitle="Compute">
+        <topicref href="helion/operations/opsconsole/compute_summary.dita"/>
+        <topicref href="helion/operations/opsconsole/compute_hosts.dita"/>
+        <topicref href="helion/operations/opsconsole/compute_instances.dita"/>
+      </topichead>
+      <topichead navtitle="Networking">
+        <topicref href="helion/operations/opsconsole/networking_summary.dita"/>
+      </topichead>
+      <topichead navtitle="Storage">
+        <topicref href="helion/operations/opsconsole/storage_summary.dita"/>
+      </topichead>
     </topicref>
   </topichead>
 
