@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_h3s_n4t_mt">
+  <title>Provision Moonshot Nodes</title>
+  <body>
+    <p>
+      <note type="important">Moonshots are supported as compute nodes.</note>
+    </p>
+    <p>The HP Moonshot Servers are now verified hardware to run HP Helion OpenStack. The supported
+      Moonshot Servers are :<ul id="ul_m44_rpt_mt">
+        <li>HP ProLiant m710 Server Cartridge</li>
+        <li>HP ProLiant m300 Server Cartridge</li>
+      </ul></p>
+    <p>To manage HP Moonshot servers you must know the cartridge address and the node address (these
+      are also known as the <b>transit_address</b> and the <b>target_address</b> respectively).<ul
+        id="ul_sk2_vpt_mt">
+        <li><b>transit_address</b> and <b>target_address</b> are the values that would be specified
+          to the <systemoutput>-T</systemoutput> and <systemoutput>-t</systemoutput> flags of
+          ipmitool, respectively, when using dual bridging mode.</li>
+        <li><b>Node Address</b>
+          <b>(or "-t", "target_address"):</b> Moonshot cartridges may have one or more nodes in a
+          single cartridge. The first node in the cartridge has <systemoutput>0x72</systemoutput> as
+          its node address.</li>
+      </ul></p>
+    <p>If the Moonshot cartridge has only one node, the node address will always be
+        <systemoutput>0x72</systemoutput>.</p>
+    <p>If it were to have 4 nodes, for example, the second, third and fourth nodes will have
+        <systemoutput>0x74</systemoutput>, <systemoutput>0x76</systemoutput> and
+        <systemoutput>0x78</systemoutput> as their addresses, respectively.<ul id="ul_bcn_dqt_mt">
+        <li><b>Cartridge Address (or "-T", "transit_address")</b><p>Below is a sample mapping
+            between the cartridge-no and cartridge address. The address increases by 2 as the
+            cartridge number increases:<ul id="ul_j54_hrt_mt">
+              <li>C1N1 = 0x82</li>
+              <li>C2N1 = 0x84</li>
+              <li>C3N1 = 0x86</li>
+              <li>-----</li>
+              <li>C10N1 = 0x94</li>
+              <li>C11N1 = 0x96</li>
+              <li>-----</li>
+              <li>C28N1 = 0xB8</li>
+              <li>-----</li>
+            </ul></p></li>
+      </ul></p>
+    <p>This command returns the cartridge
+      address:<codeblock>ipmitool -I lanplus -H xx.xx.xx.xx -U Administrator -P xxxxx sdr list mcloc</codeblock></p>
+    <section>
+      <title>Configure Moonshot Nodes</title>
+      <p>To configure Moonshot Nodes, you must add an additional qualifier in the following YAML
+          files:<ul id="ul_vyc_fm1_nt">
+          <li><codeph>baremetalConfig.yml</codeph></li>
+          <li><codeph>control_plane.yml</codeph></li>
+          <li><codeph>disks_compute.yml</codeph></li>
+          <li><codeph>net_interfaces.yml</codeph></li>
+          <li><codeph>servers.yml</codeph></li>
+          <li><codeph>server_roles.yml</codeph></li>
+        </ul> For each Moonshot Nodes you must provide the iLO information which is shared across
+        Moonshot and a Moonshot identifier as an additional field.</p>
+      <note> The minimum size of the root device used in input model is 32GB. You can increase the %
+        value so that the size is greater than 32GB. This is a generic requirement but is
+        specifically relevant to moonshots since the disk is relatively small. </note>
+    </section>
+    <section><sectiondiv><b>YAML Files</b></sectiondiv><p>Ensure that you modify the following YAML
+        file before provisioning Moonshot nodes:<ul id="ul_qbb_ln1_nt">
+          <li><codeph>baremetalConfig.yml</codeph><p>The <codeph>baremetalConfig.yml</codeph>
+              provides a detail about each of the servers in your environment. You must add the iLO
+              information and Moonshot identifier to this file. A sample file of
+                <codeph>baremetalConfig.yml</codeph> is shown
+              below:<codeblock>baremetal_servers:
+    - 
+      node_name: Compute005
+      role: ROLE-COMPUTE-MOONSHOT
+      pxe_mac_addr: f0:92:1c:b4:59:30
+      pxe_interface: eth0
+      pxe_ip_addr: 192.168.60.20
+      <b>moonshot: c39n1</b>
+      <b>kopt_extras: vga=788 console=ttyS0,9600 earlyprint=serial,ttyS0,9600</b>
+      ilo_ip: 10.1.196.27
+      ilo_user: Administrator
+      ilo_password: password</codeblock></p>In
+            the sample file, <b>moonshot: c39n1</b> is an identifier for Moonshot node.</li>
+          <li><codeph>control_plane.yml</codeph><p>A control plane uses a server with a particular
+              server-role. A sample file of <codeph>control_plane.yml</codeph> is shown
+              below:<codeblock>resource-nodes:
+        - <b>name: moonshot</b>
+          resource-prefix: moon
+          <b>server-role: ROLE-COMPUTE-MOONSHOT</b>
+          service-components:
+            - ntp-client
+            - nova-kvm
+            - nova-compute
+            - neutron-l3-agent
+            - neutron-metadata-agent
+            - neutron-openvswitch-agent
+            - neutron-lbaasv2-agent
+</codeblock></p><p>In
+              the sample file,  <b>server-role: ROLE-COMPUTE-MOONSHOT</b> identifies the role of the
+              Moonshot node.</p></li>
+        </ul></p></section>
+    <section>
+      <ul id="ul_n51_lp1_nt">
+        <li><codeph>disks_compute.yml</codeph><p>A disk model defines how local storage is to be
+            configured and presented to services. Disk models are identified by a name, which can be
+            specified by the user. Since, Moonshot has only one disk, you must specify one or more
+            disk before provisioning the Moonshot nodes. A sample file of
+              <codeph>disks_compute.yml</codeph> is shown
+            below:<codeblock>disk-models:
+  - name: DISK_SET_COMPUTE_MOONSHOT</codeblock></p></li>
+        <li><codeph>net_interfaces.yml</codeph><p>Interface model describes how its network
+            interfaces are to be configured and used. <!--You need not modify this YAML file.--> A
+            sample file of <codeph>net_interfaces.yml</codeph> is shown
+            below:<codeblock>interface-models:
+   - name: INTERFACE_SET_COMPUTE</codeblock></p></li>
+        <li><codeph>servers.yml</codeph><p>Servers list the available servers used for deploying the
+            cloud. A sample file of <codeph>servers.yml</codeph> is shown
+            below:<codeblock>servers:   
+  - id: compute5
+      ip-addr: 192.168.60.20
+      <b>role: ROLE-COMPUTE-MOONSHOT</b></codeblock></p><p>In
+            the sample  file, <b>role: ROLE-COMPUTE-MOONSHOT</b> identifies the role of the Moonshot
+            node.</p></li>
+        <li><codeph>server_roles.yml</codeph><p>You specify the usage of the server or where you
+            want to use a particular server. A sample file of <codeph>server_roles.yml</codeph> is
+            shown
+            below:<codeblock>server-roles:
+   - name: ROLE-COMPUTE-MOONSHOT
+     interface-model: INTERFACE_SET_COMPUTE_MOONSHOT
+     disk-model: DISK_SET_COMPUTE_MOONSHOT</codeblock></p><p>Once
+            you have modified the YAML files as per the moonshot node requirement, you can proceed
+            with the installation. Refer to<b> installation guide</b> (need to insert the link) for
+            more details.</p></li>
+      </ul>
+      <p> </p>
+    </section>
+  </body>
+</topic>
