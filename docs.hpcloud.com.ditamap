@@ -54,10 +54,11 @@
       <topicref href="helion/bura/backup.dita"/>
       <topicref href="helion/bura/restore.dita"/>
     </topicref>
+      <topicref href="helion/operations/node_maintenance.dita" navtitle="Node Maintenance" locktitle="yes">
       <topicref href="helion/operations/add_node.dita"/>
       <topicref href="helion/operations/repair_node.dita"/>
       <topicref href="helion/operations/remove_node.dita"/>
-      
+      </topicref>
     </topichead>
     <!-- keystone identity -->
     <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Service"

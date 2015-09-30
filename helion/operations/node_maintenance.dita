@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_s3h_vs3_nt">
+  <title>Adding, Removing, and Repairing Nodes</title>
+  <body>
+    <p> If you are planning to scale up, have a failed server, or need to remove a node, there are a
+      few things to remember. For control plane nodes, right now you need to maintain three.
+      Therefore you will not remove a control plane node comletely; you will just replace it. If you
+      are swapping out the hardware for that control plane node, and the same is true for compute
+      nodes, the process is to keep the entry you have in <b>servers.yml</b> and
+        <b>baremetalConfig.yml</b> files but change harware-specific iinformation, such the MAC
+      addresses, IMPI username, IPMI IP address (if changed) ad IPMI pasword.</p>
+     <p> To add compute nodes, which can total up to 99 at this point, the process is to add entries
+      to the <b>servers.yml</b> and <b>baremetalConfig.yml</b> files.</p>
+    <p>To remove compute nodes, you will remove their entries in <b>servers.yml</b> after you disabe
+      provisioning, migrate any running instances, and stop the Nova compute service</p>
+    <p>Instructions for storage node scale out, repair, and removal are found in the respective
+      storage sections:</p>
+    <ul>
+      <li>Adding a New Object Storage Device Node</li>
+
+            
+    </ul>
+    
+    <p>Instructions for controller node and compute node changes are in these documents:</p>
+    
+    <ul>
+      
+      <li><xref href="../operations/add_node.dita#topic_qsv_h5y_lt">Adding a Compute
+        Node</xref></li>
+      <li><xref href="../operations/remove_node.dita#topic_fld_zzy_lt">Removing a Compute
+          Node</xref></li>
+      <li><xref href="../operations/repair_node.dita#topic_gcv_r4y_lt">Repairing a Compute
+          Node</xref></li>
+      <li>Repairing a Controller Node</li>
+    </ul>
+  </body>
+</topic>
