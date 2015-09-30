@@ -18,7 +18,6 @@
         id="ul_i1r_zjc_nt">
         <li>Application development is now primarily performed using <b>buildpacks</b>
           <!--link to buildpacks--></li>
-        <li/>
         <li><codeph>stackato.yml</codeph> has been deprecated</li>
         <li>Some keys in <b>manifest.yml</b> have changed <!--link to manifest.yml--></li>
         <li>Groups have been replaced with <b>Organizations and Spaces</b></li>
