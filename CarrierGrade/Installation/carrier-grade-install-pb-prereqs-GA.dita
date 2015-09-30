@@ -550,7 +550,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   <entry><codeph>hcg_1.1.0.tar</codeph></entry>
                                                   <entry><codeph>/root</codeph> on
                                                   <codeph>controller-0</codeph> in the KVM region.
-                                                  Sample guestt OS files to be used as
+                                                  Sample guest operating system files to be used as
                                                   needed.</entry>
                                                 </row>
                                                   </tbody>
