@@ -58,6 +58,7 @@
       <topicref href="helion/operations/add_node.dita"/>
       <topicref href="helion/operations/repair_node.dita"/>
       <topicref href="helion/operations/remove_node.dita"/>
+        <topicref href="helion/operations/replace_controller.dita" toc="no"/>
       </topicref>
     </topichead>
     <!-- keystone identity -->
