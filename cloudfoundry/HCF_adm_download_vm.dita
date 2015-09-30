@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_nqt_ltl_nt">
+ <title>Downloading the VM</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p><xref href="http://downloads.stackato.com/vm/" format="html" scope="external">Download an
+          <keyword keyref="prodShort"/> VM</xref> in the hypervisor format of your choice or get
+      access<!--Link--> to an image hosted on Amazon EC2 or HP Cloud Services.</p>
+  <p>Host system requirements:<ul id="ul_spb_lvl_nt">
+    <li>x86_64 processor with VT-x enabled (x86 virtualization)</li>
+    <li>3 GB+ of free memory</li>
+    <li>20 GB+ of free disk space</li>
+   </ul></p>
+  <p>The <keyword keyref="prodShort"/> VM requires at least 3 GB of RAM to run (4 GB recommended).
+   Ensure that the host system has an amount of memory sufficient for running the operating system
+   and any other applications you require.</p>
+ </conbody>
+</concept>
