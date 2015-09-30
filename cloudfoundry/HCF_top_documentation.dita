@@ -12,16 +12,7 @@
  </prolog>
  <conbody>
     <!--michaelk: The information in the note below is probably all wrong. Correct+careful rewrite deferred to troytop.-->
-  <note><keyword keyref="prodShort"/>
-      <keyword keyref="prodVer"/> is based on Stackato 3.6.0 and there are some important
-      differences you must be aware of if you are transitioning from version 3.6.0 or earlier:<ul
-        id="ul_i1r_zjc_nt">
-        <li>Application development is now primarily performed using <b>buildpacks</b>
-          <!--link to buildpacks--></li>
-        <li><codeph>stackato.yml</codeph> has been deprecated</li>
-        <li>Some keys in <b>manifest.yml</b> have changed <!--link to manifest.yml--></li>
-        <li>Groups have been replaced with <b>Organizations and Spaces</b></li>
-      </ul></note>
+    <!--"Apology" written by Troy will go here. Discussion of needs relevant to Stackato 3.6.0 or HDP 1.3/2.0 users?-->
   <p>This guide has been created for two target audiences with some overlapping roles:<ul
     id="ul_nqc_ckc_nt">
     <li><keyword keyref="prodShort"></keyword> application developers who use a PaaS set up and maintained by an IT administrator</li>

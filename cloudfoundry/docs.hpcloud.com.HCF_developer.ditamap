@@ -2,4 +2,5 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
 <map>
    <title>Application Developer Guide</title>
+   <mapref href="docs.hpcloud.com.HCF_variables.ditamap" format="ditamap"/>
 </map>
