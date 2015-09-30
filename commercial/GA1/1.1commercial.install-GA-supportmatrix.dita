@@ -121,22 +121,22 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
       <title>HP ProLiant Rack Servers</title>
       <ul>
         <li><xref
+          href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836"
+          scope="external" format="html">DL360 Gen9</xref></li>
+        <li><xref
+          href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241"
+          format="html" scope="external">DL380 Gen9</xref></li>
+       <li><xref
             href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8255128"
             scope="external" format="html">DL560 Gen9</xref></li>
-        <li><xref
+       <li><xref
             href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8090149"
             scope="external" format="html">DL580 Gen9</xref></li>
         <li><xref
-            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836"
-            scope="external" format="html">DL360 Gen9</xref></li>
-        <li><xref
-            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241"
-            format="html" scope="external">DL380 Gen9</xref></li>
-        <li><xref
-            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527"
-            scope="external" format="html">DL320 Gen8</xref></li>
+          href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527"
+          scope="external" format="html">DL320 Gen8</xref></li>
         <li>DL360 Gen8</li>
-        <li><xref
+       <li><xref
             href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957"
             scope="external" format="html">DL380 Gen8</xref></li>
         <li><xref
@@ -220,8 +220,13 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
     <section>
       <title>Dell Systems</title>
       <ul>
+        <li>PowerEdge R920</li>
+        <li>PowerEdge R820</li>
+        <li>PowerEdge R730</li>
         <li>PowerEdge R720xd</li>
+        <li>PowerEdge R630</li>
         <li>PowerEdge R620</li>
+        <li>PowerEdge R520</li>
       </ul>
     </section>
     <section>
@@ -262,6 +267,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
     <section id="nic">
       <title>NIC</title>
       <ul>
+        <li>Broadcom Corporation NetXtreme BCM5720 Gigabit Ethernet PCIe</li>
         <li>Cisco Systems Inc UCS VIC 1225 10Gbps 2 port CNA SFP+</li>
         <li>Dell: Broadcom Corporation NetXtreme II BCM57810 10 Gigabit Ethernet (rev 10)</li>
         <li>HP Ethernet 10Gb/40Gb 2-port 544+QSFP Adapter </li>
@@ -271,6 +277,9 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
         <li>HP NC552SFP 10Gb 2-port Ethernet Server Adapter</li>
         <li>HP Ethernet 10Gb 2-port 560SFP+ Adapter </li>
         <li>IBM: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)</li>
+        <li>Intel Corporation 82599ES X520 10-Gigabit SFI/SFP+ Network Connection</li>
+        <li>Intel Corporation Ethernet 10G 2P X520 Adapter (rev 01)</li>
+        <li>Intel Corporation i350 Gigabit Network Connection</li>
         <li>Intel Corporation i350 Onboard 1Gbps Network Controller</li>
       </ul>
     </section>
@@ -296,6 +305,11 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
         <li>HP H241 12Gb 2-ports Ext Smart Host Bus Adapter</li>
         <li>HP H244br 12Gb 2-ports Int Smart Host Bus Adapter </li>
         <li>IBM ServeRAID M5210 SAS/SATA Controller</li>
+        <li>Intel Corporation C600/X79 series chipset 6-Port SATA AHCI Controller</li>
+        <li>Intel Corporation Wellsburg 6-Port SATA Controller [AHCI mode]</li>
+        <li>Intel Corporation Wellsburg sSATA Controller [AHCI mode]</li>
+        <li>LSI Logic / Symbios Logic MegaRAID SAS 2208 [Thunderbolt]</li>
+        <li>LSI Logic / Symbios Logic MegaRAID SAS-3 3108 [Invader]</li>
       </ul>
     </section>
     <section id="fc">
