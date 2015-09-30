@@ -25,10 +25,11 @@ do
 	while IFS='' read -r line  || [[ -n "$line" ]]
 	do
 		test=`echo $line | sed 's|=.*||' | sed 's|%||g' `
-		help=`echo $line | sed 's|.*=||' `
-		if [[ -n $(cat $i |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g' | grep "$test") ]]; 
+		help=`echo $line | sed 's|.*=||' | sed 's|%.*||' `
+		except=`echo $line | sed 's|.*%||'`
+		if [[ -n $(cat $i |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g' | grep "$test" | grep -v "$except") ]]; 
 		then
-		#cat $i |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g' | grep "$test"
+		#cat $i |sed ':a;N;$!ba;s/\n/ /g'| perl -pe  's|<!--.*-->||g' | grep "$test" | grep "$except"
 			echo -e "${cc_blue}Found in file: $i on the $GIT_BRANCH (the issue is surrounded by ${cc_red}##${cc_blue}):${cc_normal}"
 			issue=`grep -n "$test" $i  | sed "s|\($test\)|${cc_red} ## \1 ## ${cc_normal}|"`
 			echo -e "${cc_blue}Line number and text${cc_normal}:"
@@ -40,7 +41,6 @@ do
 	done < ./jenkins/badstrings.txt
 
 	
-
 done
 
 #Check for filenames that contain bad characters
