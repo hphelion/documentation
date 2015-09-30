@@ -23,4 +23,11 @@
          </keywords>
       </topicmeta>
    </keydef>
+   <keydef keys="defaultSysUser">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
 </map>

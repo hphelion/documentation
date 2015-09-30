@@ -3,7 +3,7 @@
 <concept id="concept_cdw_mrl_nt">
  <title>Micro Cloud VM: Quick Start</title>
  <shortdesc>This section describes running the VM as a micro cloud. To get started with building a
-  cluster, see the Cluster Setup<!--Insert link here.--> section.</shortdesc>
+  cluster, see the <b>Cluster Setup</b> section.</shortdesc>
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
