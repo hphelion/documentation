@@ -1190,9 +1190,9 @@ Successfully pivoted
         requirements:</p>
 <ul>
 <li>
-<p>Install HP Linux for HP Helion OpenStack Ubuntu 14.04 LTS or Debian 8</p>
+<p>Install Linux for HP Helion Ubuntu 14.04 LTS or Debian 8</p>
 
-<p>The seed cloud host must have HP Linux for HP Helion OpenStack Ubuntu 14.04 LTS or Debian 8 installed before performing the restore procedure.</p>
+<p>The seed cloud host must have Linux for HP Helion Ubuntu 14.04 LTS or Debian 8 installed before performing the restore procedure.</p>
 </li>
 <li>
 <p>Configure SSH</p>
