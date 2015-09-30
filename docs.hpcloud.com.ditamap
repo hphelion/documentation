@@ -197,6 +197,7 @@
         <topicref href="helion/cinder/verify_backend_configuration.dita"/>
       </topichead>
     </topichead>
+    <topicref href="helion/administration/lbaas_admin.dita" navtitle="Configuring LBaaS" locktitle="yes"/>
   </topichead>
 
   <topichead navtitle="Operations">
@@ -228,6 +229,7 @@
 
   <topichead navtitle="User Guide">
     <topicref href="helion/user/create_network.dita" navtitle="Creating a Private Network" locktitle="yes"/>
+    <topicref href="helion/user/lbaas.dita" navtitle="Creating a Load Balancer" locktitle="yes"/>
   </topichead>
 
 
