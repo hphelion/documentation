@@ -58,7 +58,7 @@
       Helion OpenStack, is installed on all your servers (nodes), you will configure and install
       your cloud using the GUI.<p>The GUI is found on the deployer node at:
           <b>http://&lt;Deployer_IP>:79/dayzero</b></p> Make sure you choose "NO" to the question of
-      whether you want the Day0 installer to install the HP Linux for HP Helion OpenStack operatig
+      whether you want the Day0 installer to install the Linux for HP Helion operatig
       system on your nodes.<p>To create a secure tunnel/port forwarding into Apache from the
         deployer to be able to use the GUI in a browser, SSH tunnel into the deployer with the
         username/password set up when installing the deployer. Username and password should be what

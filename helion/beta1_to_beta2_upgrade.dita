@@ -11,7 +11,7 @@
       upgrade the full set of services in the HOS stack. Beta2 will allow users to get experience
       with applying upgrades through HLM. The following set of HOS components are upgraded as part
       of the Beta2 upgrade: <ul>
-        <li> HP Linux for HP Helion OpenStack </li>
+        <li> Linux for HP Helion </li>
         <li> sosreport</li>
         <li> monasca-agent</li>
         <li> Openstack clients</li>

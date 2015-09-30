@@ -49,7 +49,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
         </li>
       </ol>
       <p id="reimage"><b>How to re-image an existing node</b></p>
-      <p>Once HP Linux for HP Helion OpenStack has been successfully installed on a node, that node
+      <p>Once Linux for HP Helion has been successfully installed on a node, that node
         will be marked as "installed" and subsequent runs of <codeph>bm-reimage.yml</codeph> (and
         related playbooks) will not target it. This is deliberate so that you can't reimage the node
         by accident. If you do need to reimage existing nodes you will need to use the <codeph>-e

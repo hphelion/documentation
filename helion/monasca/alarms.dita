@@ -18,7 +18,7 @@
         <li><xref href="#alarmdefinitions/haproxy">HAProxy</xref></li>
         <li><xref href="#alarmdefinitions/heat">Heat</xref></li>
         <li><xref href="#alarmdefinitions/horizon">Horizon</xref></li>
-        <li><xref href="#alarmdefinitions/hlinux">HP Linux for HP Helion OpenStack</xref></li>
+        <li><xref href="#alarmdefinitions/hlinux">Linux for HP Helion</xref></li>
         <li><xref href="#alarmdefinitions/keystone">Keystone</xref></li>
         <li><xref href="#alarmdefinitions/logging">Logging</xref></li>
         <li><xref href="#alarmdefinitions/monasca">Monasca</xref></li>
@@ -351,7 +351,7 @@
       </p>
     </section>
     <section id="hlinux">
-      <title>HP Linux for HP Helion OpenStack</title>
+      <title>Linux for HP Helion</title>
       <table frame="all" rowsep="1" colsep="1" id="table_ik5_3km_zs">
         <tgroup cols="4">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
