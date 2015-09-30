@@ -79,15 +79,16 @@
                     Allocations</xref></li>
               </ol></li>
           </ol></li>
-        <!--
-      <li><xref href="#input_model/6.0_Examples">Examples</xref>
-      <ol>
-        <li><xref href="#input_model/6.1_Networking">Networking</xref>
-        <ol>
-          <li><xref href="#input_model/6.1.1_ConfiguringNicBonding">Persisted Server Allocations</xref></li>
-        </ol></li>
-      </ol></li>
-      -->
+        <li><xref href="#input_model/6.0_Examples">Examples</xref>
+          <ol>
+            <li><xref href="#input_model/6.1_Networking">Persisted Server Allocations</xref>
+              <ol>
+                <li><xref href="#input_model/6.1.4_NeutronProviderVLANs">Configuring Neutron
+                    Provider VLANs</xref></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
       </ol>
     </section>
     <section id="Intro"><title>Introduction</title>
@@ -2709,6 +2710,7 @@ tags:
         returned to the model.</p>
     </section>
     <section id="6.0_Examples"><title>Examples</title></section>
+    <section id="6.1_Networking"><title>Networking</title></section>
     <section id="6.1.4_NeutronProviderVLANs"><title>Configuring Neutron Provider VLANs</title>
       <p>Neutron provider VLANs are Neutron networks that map directly to an 802.1Q VLAN in the
         cloud provider’s physical network infrastructure. There are four aspects to a provider VLAN
