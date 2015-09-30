@@ -1996,7 +1996,7 @@ tags:
 tags:
   - neutron.networks.vxlan:
       tenant-vxlan-id-range: “1:20000”</codeblock></p>
-      <p><b>neutron.networks.vlan</b></p>
+      <p id="4.9.1.2_neutron.networks.vlan"><b>neutron.networks.vlan</b></p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="neutron_networks_vlan">
           <tgroup cols="2">
@@ -2707,6 +2707,75 @@ tags:
         a new server. Conversely, if a different physical server is added with the same ID as a
         deleted server the Configuration Processor will assume that it is the original server being
         returned to the model.</p>
+    </section>
+    <section id="6.0_Examples"><title>Examples</title></section>
+    <section id="6.1.4_NeutronProviderVLANs"><title>Configuring Neutron Provider VLANs</title>
+      <p>Neutron provider VLANs are Neutron networks that map directly to an 802.1Q VLAN in the
+        cloud provider’s physical network infrastructure. There are four aspects to a provider VLAN
+        configuration:</p>
+      <ul>
+        <li>Network infrastructure configuration (e.g. the top-of-rack switch)</li>
+        <li>Server networking configuration (for compute nodes and neutron network nodes)</li>
+        <li>Neutron configuration file settings</li>
+        <li>Create the corresponding network objects in Neutron</li>
+      </ul>
+      <p>The physical network infrastructure must be configured to convey the provider VLAN traffic
+        as tagged VLANs to the cloud compute nodes and Neutron network nodes. Configuration of the
+        physical network infrastructure is outside the scope of the Helion OpenStack 2.0
+        software.</p>
+      <p>Helion OpenStack 2.0 automates the server networking configuration and the Neutron
+        configuration based on information in the cloud definition. To configure the system for
+        provider VLANs, specify the <codeph>neutron.networks.vlan</codeph> tag with a
+          <codeph>provider-physical-network</codeph> attribute on one or more network groups as
+        described in the <xref href="#input_model/4.9.1.2_neutron.networks.vlan">Network
+          Groups</xref> section. For example (some attributes omitted for brevity):</p>
+      <codeblock>
+  network-groups:
+
+    - name: NET_GROUP_A
+      tags:
+        - neutron.networks.vlan:
+          provider-physical-network: physnet1
+        
+    - name: NET_GROUP_B
+      tags:
+        - neutron.networks.vlan:
+          provider-physical-network: physnet2</codeblock>
+      <p>A network group is associated with a server network interface via an interface model as
+        described in the <xref href="#input_model/4.7_InterfaceModels">Interface Models</xref>
+        section. For example (some attributes omitted for brevity):</p>
+      <codeblock>
+  interface-models:
+     - name: INTERFACE_SET_X
+       network-interfaces:
+        - device:
+              name: bond0
+          network-groups:
+            - NET_GROUP_A
+        - device:
+              name: eth3
+          network-groups:
+            - NET_GROUP_B</codeblock>
+      <p>A network group used for provider VLANs may contain only a single Helion OpenStack network,
+        because that VLAN must span all compute nodes and any Neutron network nodes/controllers
+        (i.e. it is a single L2 segment). The Helion OpenStack network must be defined with
+          <codeph>tagged-vlan: false</codeph>, otherwise a linux VLAN network interface will be
+        created. For example:</p>
+      <codeblock>
+  networks:
+     - name: NET_A
+       tagged-vlan: false
+       network-group: NET_GROUP_A
+     - name: NET_B
+       tagged-vlan: false
+       network-group: NET_GROUP_B</codeblock>
+      <p>When the cloud is deployed, Helion OpenStack 2.0 will create the appropriate bridges on the
+        servers, and set the appropriate attributes in the Neutron configuration files (e.g.
+        bridge_mappings).</p>
+      <p>After the cloud has been deployed, create Neutron network objects for each provider VLAN.
+        For example, using the Neutron CLI:</p>
+      <codeblock>neutron net-create --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id 101 mynet101</codeblock>
+      <codeblock>neutron net-create --provider:network_type vlan --provider:physical_network physnet2 --provider:segmentation_id 234 mynet234</codeblock>
     </section>
   </conbody>
 </concept>
