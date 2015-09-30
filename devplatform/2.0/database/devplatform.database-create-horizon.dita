@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_create_database_horizon">
-  <title>Create a database instance from Horizon</title>
+  <title>Creating a database from Horizon</title>
   <body>
+    <p>This topic describes how to create a database instance from the Horizon interface.</p>
     <ol>
       <li> Log into the Horizon console.<p>Under your project, open the Database panel and then click the <b>Instances</b> tab. 
         <image href="../../../media/createDBinstance1.png" placement="break" id="image_yb1_mlp_ms" /></p></li>
@@ -15,12 +16,11 @@
           <li><b>Datastore</b> - The database architecture and version to use for the new instance. Options are as follows:
             <ul>
               <li><b>mongodb</b> version 3.0</li>
-              <li><b>vertica_preview</b> version 7.1</li>
               <li><b>redis</b> version 3.0</li>
               <li><b>mysql</b> version 5.5 (A single instance of MySql)</li>
               <li><b>mysql-cluster</b> version 5.5 (An instance of MySql that supports clustering)</li>
             </ul>
-            MongoDB, Vertica, and Redis instances can be used for single-instance or clustered databases; for a MySql database, using the single-instance version provides some performance enhancements over te clustered version. </li>
+            MongoDB and Redis instances can be used for single-instance or clustered databases; for a MySql database, using the single-instance version provides some performance enhancements over te clustered version. </li>
           
           <li> Under the <b>Networking</b> tab, specify the network to associate the database instance with. This is required and should be the same network that any application that accesses the
             database is on. <image href="../../../media/createDBinstance3.png" placement="break" id="image_dbb_ylp_ms"/></li>

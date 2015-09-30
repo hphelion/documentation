@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_create_database_cli">
-  <title>Create a database from the command line</title>
+  <title>Creating a database from the command line</title>
   <body>
+    <p>This topic describes how to create a database instance from the command line.</p>
     <ol>
       <li>Log in to the installer node for your Helion OpenStack environment and source the service.osrc file:
         <codeblock>. service.osrc</codeblock></li>

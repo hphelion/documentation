@@ -10,9 +10,14 @@
 <ul>
   <li><xref href="devplatform.database-create-horizon.dita" format="dita">Create a database instance from Horizon</xref></li>
   <li><xref href="devplatform.database-create-cli.dita" format="dita">Create a database instance from the command line</xref></li>
+  <li><xref href="devplatform.database-create-cluster-horizon.dita" format="dita">Create a database cluster from Horizon</xref></li>
+  <li><xref href="devplatform.database-create-cluster-cli.dita" format="dita">Create a database cluster from the command line</xref></li>
+  <li><xref href="devplatform.database-monitor-horizon.dita" format="dita">Monitor a database from Horizon</xref></li>
+  <li><xref href="devplatform.database-monitor-cli.dita" format="dita">Monitor a database from the command line</xref></li>
   <li><xref href="devplatform.database-backup.dita" format="dita">Create a database backup</xref></li>
   <li><xref href="devplatform.database-replicate.dita" format="dita">Replicate a database</xref></li>
   <li><xref href="devplatform.database-attach-ip.dita" format="dita">Attach a Floating IP</xref></li>
+  
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ol>
