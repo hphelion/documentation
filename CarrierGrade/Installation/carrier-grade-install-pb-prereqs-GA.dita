@@ -52,9 +52,13 @@
                                         /><?oxy_insert_end?></li>
                                 <li><xref href="#topic7148/ssh" format="dita"/></li>
                                 <li><xref href="#topic7148/getinstall" format="dita"/></li>
+                                <li><xref href="#topic7148/kvm-region" format="dita">Download the
+                                                installation packages for the KVM region</xref></li>
+                                <li><xref href="#topic7148/patches" format="dita">Download required
+                                                patches</xref></li>
                                 <li><xref href="#topic7148/download-esx" format="dita"/> This is
                                         applicable only for KVM + ESX Cloud Deployment. </li>
-                                <li><xref href="#topic7148/verify" format="dita"/></li>
+                                <!--<li><xref href="#topic7148/verify" format="dita"/></li>-->
                                 <li><xref href="#topic7148/checksum" format="dita"/></li>
                                 <li><xref href="#topic7148/prepbare" format="dita"/></li>
                         </ul>
@@ -396,8 +400,8 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                 </tgroup>
                         </table>
                 </section>
-                <section>
-                        <title>KVM Region Insstallation files</title>
+                <section id="kvm-region">
+                        <title>KVM Region Installation files</title>
                         <p>Download the following files required to install the KVM region:</p>
                         <p>
                                 <ul>
@@ -413,7 +417,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                 installation process. </p>
                 </section>
                 <section id="patches"><title>Required patch files</title>
-                <p><b>Download the following required patch files:</b></p>
+                <p>Download the following required patch files:</p>
                 <table id="table_ich_gs5_mt">
                         <tgroup cols="2">
                                 <colspec colnum="1" colname="col2"/>

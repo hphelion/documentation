@@ -38,8 +38,6 @@ python role-generator.py /root/logrotate_patch/ apply &lt;cloudname&gt;</codeblo
           </p></li>
       </ol>
     </p>
-    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/role">KVM
-      installation</xref>.</p>
     <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/role">the KVM + ESX
       installation</xref>.</p>
     </body>
