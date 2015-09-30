@@ -396,8 +396,8 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                 </tgroup>
                         </table>
                 </section>
-                <p/>
-                <p><b>Required patch files</b></p>
+                <section id="patches"><title>Required patch files</title>
+                <p><b>Download the following required patch files:</b></p>
                 <table id="table_ich_gs5_mt">
                         <tgroup cols="2">
                                 <colspec colnum="1" colname="col2"/>
@@ -434,10 +434,31 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 <entry>role-generator.py</entry>
                                                 <entry> </entry>
                                         </row>
+                                                <row>
+                                                  <entry>Horizon_patch</entry>
+                                                  <entry>hoscg-horizon-2015.1.2.487-1.deb
+                                                  <p>Readme.txt</p></entry>
+                                                </row>
+                                                <row>
+                                                  <entry>WR_Licence_patch</entry>
+                                                  <entry>
+                                                  <p>license.lic</p>
+                                                  <p>Readme.txt</p>
+                                                  </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>WR_region_config_patch</entry>
+                                                  <entry><p>kcp-windriver-build-15-only.patch</p>
+                                                  kcp-windriver-build-15-only.txt</entry>
+                                                </row>
+                                                <row>
+                                                  <entry>Icinga_patch</entry>
+                                                  <entry><p>kcp-icinga-monitor-subservices.patch</p><p>knc-icinga-heat-ceilometer.patch</p>icinga-monitor-subservices.txt</entry>
+                                                </row>
                                 </tbody>
                         </tgroup>
                 </table>
-                <p> </p>
+                </section>
                         <!--<ol>
                                 <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file. The following
                                         list of files is extracted:
@@ -468,7 +489,74 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                         <p><b>DCN components</b></p>
                         <p>Download all required DCN packages needed to deploy the DCN environment.
                                 The current supported version is DCN version 3.2 R3.</p>
-                        <ol id="ol_b4b_pyk_2t">
+                        <p/>
+                        <p>LR4 Jump server 15.215.66.57: Location: E:\DCN\DCN3.2R3</p>
+                        <table id="table_jl2_lyj_nt">
+                                <tgroup cols="2">
+                                        <colspec colnum="1" colname="col2"/>
+                                        <colspec colnum="2" colname="col3"/>
+                                        <tbody>
+                                                <row>
+                                                  <entry>File Name</entry>
+                                                  <entry>To be copied in the Base HLM KVM
+                                                  Host</entry>
+                                                </row>
+                                                <row>
+                                                  <entry>
+                                                  <p>nuage-metadata-agent_3.2.3-102_all.deb</p>
+                                                  <p> nuage-neutron_1694-nuage-kilo_all.deb</p>
+                                                  <p>
+                                                  nuage-openvswitch-common_3.2.3-102_amd64.deb</p>
+                                                  <p>
+                                                  nuage-openvswitch-switch_3.2.3-102_amd64.deb</p>
+                                                  <p> nuage-python-openvswitch_3.2.3-102_all.deb</p>
+                                                  <p> python-nuagenetlib_3.2.3-101-kilo_all.deb</p>
+                                                  <p> vsc_singledisk.qcow2</p>
+                                                  <p>Note: <b>Jump server location path:
+                                                  E:\DCN\DCN3.2R3\DCN</b></p>
+                                                  </entry>
+                                                  <entry>
+                                                  <p>/root/cg/dcn</p>
+                                                  <p><b>Create dcn folder uncer /root/cg if you
+                                                  don’t have in the KVM Host</b></p>
+                                                  </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>
+                                                  <p>VSD-3.2.3_105-hp.qcow2</p>
+                                                  <p>vsd.xml</p>
+                                                  <p> </p>
+                                                  <p>Note: <b>Jump server location path:
+                                                  E:\DCN\DCN3.2R3\vsd</b></p>
+                                                  </entry>
+                                                  <entry>
+                                                  <p>/var/lib/libvirt/images</p>
+                                                  <p> </p>
+                                                  <p> </p>
+                                                  </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>
+                                                  <p>VRS_3.2.3-104_08282015.ovf</p>
+                                                  <p>VRS_3.2.3-104_08282015-disk1.vmdk</p>
+                                                  <p> </p>
+                                                  <p>Note: <b>Jump server location path:
+                                                  </b>E:\DCN\DCN3.2R3\VRS-vAPP\Nuage-VRS-3.2.3-104-vmware\Nuage-VRS-3.2.3-104-vmware</p>
+                                                  </entry>
+                                                  <entry>
+                                                  <p>Any location on the KVM host. Will be copied
+                                                  over to VSD VM.</p>
+                                                  <p> </p>
+                                                  </entry>
+                                                </row>
+                                                <row>
+                                                  <entry> </entry>
+                                                  <entry> </entry>
+                                                </row>
+                                        </tbody>
+                                </tgroup>
+                        </table>
+                        <!--<ol id="ol_b4b_pyk_2t">
                                 <li> DCN has a well-defined process for Pre-Sales and Post-Sales
                                         process to download DCN bits and obtain license. Use one of
                                         the following processes to download DCN bits and obtain
@@ -507,7 +595,7 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                 <li>Create the <codeph>~/cg/dcn</codeph> directory on the HLM
                                         host.</li>
                                 <li>Extract the compressed download packages. 
-                                        <!--<table
+                                        <table
                                                 id="table_e4b_pyk_2t">
                                                 <tgroup cols="3">
                                                   <colspec colnum="1" colname="col2"
@@ -571,57 +659,73 @@ WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                                                   </row>
                                                   </tbody>
                                                 </tgroup>
-                                        </table>-->
+                                        </table>
                                         <table
                                                 id="t">
-                                                <tgroup cols="2">
-                                                  <colspec colnum="1" colname="col3"
-                                                  colwidth="2.77*"/>
-                                                  <colspec colnum="2" colname="col4" colwidth="1*"/>
-                                                  <thead>
-                                                  <row>
-                                                  <entry>List of files to be used after
-                                                  Extraction</entry>
-                                                  <entry>Copy the files to directory on HLM
-                                                  Host</entry>
-                                                  </row>
-                                                  </thead>
-                                                  <tbody>
-                                                  <row>
-                                                  <entry>
-                                                  <p> nuage-metadata-agent_3.2.3-102_all.deb</p>
-                                                  <p> nuage-neutron_1694-nuage-kilo_all.deb</p>
-                                                  <p>
-                                                  nuage-openvswitch-common_3.2.3-102_amd64.deb</p>
-                                                  <p>
-                                                  nuage-openvswitch-switch_3.2.3-102_amd64.deb</p>
-                                                  <p> nuage-python-openvswitch_3.2.3-102_all.deb</p>
-                                                  <p> python-nuagenetlib_3.2.3-101-kilo_all.deb</p>
-                                                  <p> vsc_singledisk.qcow2</p>
-                                                  </entry>
-                                                  <entry>/root/cg/dcn</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry>
-                                                  <p>VSD-3.2.3_105-hp.qcow2</p>
-                                                  <p>vsd.xml</p>
-                                                  </entry>
-                                                  <entry>/var/lib/libvirt/images</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry>
-                                                  <p>VRS_3.2.3-104_08282015.ovf</p>
-                                                  </entry>
-                                                  <entry>Any location. Copy to VSD VM.</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry>VRS_3.2.3-104_08282015-disk1.vmdk</entry>
-                                                  <entry>Any location. Copy to VSD VM.</entry>
-                                                  </row>
-                                                  </tbody>
+                                                <tgroup cols="3">
+                                                        <colspec colnum="1" colname="col2"
+                                                                colwidth="1.89*"/>
+                                                        <colspec colnum="2" colname="col3"
+                                                                colwidth="2.77*"/>
+                                                        <colspec colnum="3" colname="col4" colwidth="1*"/>
+                                                        <thead>
+                                                                <row>
+                                                                        <entry>File Name</entry>
+                                                                        <entry>List of files to be used after
+                                                                                Extraction</entry>
+                                                                        <entry>Copy the files to directory on HLM
+                                                                                Host</entry>
+                                                                </row>
+                                                        </thead>
+                                                        <tbody>
+                                                                <row>
+                                                                        <entry>DCN-VRS-GW-3.0R7</entry>
+                                                                        <entry>
+                                                                                <p>
+                                                                                        <codeph>DCN-VRS-3.0.7-125-ubuntu.14.04.tar.gz
+                                                                                        </codeph></p>
+                                                                                <p>Untarring this file will extract::</p>
+                                                                                <p><codeph>nuage-openvswitch-common_3.0.7-125_amd64.deb</codeph></p>
+                                                                                <p><codeph>nuage-openvswitch-switch_3.0.7-125_amd64.deb</codeph></p>
+                                                                                <p><codeph>nuage-python-openvswitch_3.0.7-125_all.deb</codeph></p>
+                                                                        </entry>
+                                                                        <entry>~/cg/dcn</entry>
+                                                                </row>
+                                                                <row>
+                                                                        <entry>DCN-VRS-VMware-3.0R7</entry>
+                                                                        <entry/>
+                                                                        <entry>~/cg/dcn</entry>
+                                                                </row>
+                                                                <row>
+                                                                        <entry>DCN-VSC-3.0R7</entry>
+                                                                        <entry>
+                                                                                <p><codeph> DCN-VSC-07-OEM-125.tar.gz</codeph></p>
+                                                                                <p>Untarring this file will extract::</p>
+                                                                                <p><codeph>…/single_disk/vsc_singledisk.qcow2</codeph></p>
+                                                                                <p>Copy this file to
+                                                                                        <codeph>~/cg/dcn</codeph>.</p>
+                                                                        </entry>
+                                                                        <entry>~/cg/dcn</entry>
+                                                                </row>
+                                                                <row>
+                                                                        <entry> DCN-VRS-VMware-3.0R7.zip</entry>
+                                                                        <entry>Unzipping this file extracts the VRS VM
+                                                                                template for the VRSvApp installation.</entry>
+                                                                        <entry>Any location. Copy to VSD VM.</entry>
+                                                                </row>
+                                                                <row>
+                                                                        <entry>DCN-VSD-QCOW-3.0R8.zip</entry>
+                                                                        <entry>
+                                                                                <p><codeph>CloudMgmt-vmware.tar.gz</codeph></p>
+                                                                                <p>Then untarring this file will extract a patch
+                                                                                        file for the vSphere Distributed Switch. </p>
+                                                                        </entry>
+                                                                        <entry>Any location. Copy to VSD VM.</entry>
+                                                                </row>
+                                                        </tbody>
                                                 </tgroup>
                                         </table></li>
-                        </ol>
+                        </ol>-->
                 </section>
                 <section>
                         <title>Bring Up Single VSD VM Manually</title>

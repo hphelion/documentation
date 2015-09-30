@@ -48,8 +48,8 @@
       <p>
         <b>Resolution</b>
       </p>
-      <p>Above changes required vswitch1 on VRSvAPPs to be presented on Niantics as well. Once this
-        was done, VRSvAPPS were synchronized in VSD dashboard. </p>
+      <p>The vswitch1 on VRSvAPPs needs to be presented to the Niantics card. Once this was done,
+        VRSvAPPS were synchronized in VSD dashboard. </p>
       <p>Memphis region deployment is done with following networking changes. </p>
       <p>Networking changes done are as follows –</p>
       <p>ETH0 is active</p>

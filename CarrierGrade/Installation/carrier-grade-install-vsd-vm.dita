@@ -44,15 +44,16 @@ GATEWAY=10.20.5.1</codeblock></p></li>
                     <codeblock>service network restart</codeblock></li>
                 <li>Edit the <i>/etc/resolv.conf</i> file with the IP address of the DNS name
                     server:<codeblock>nameserver &lt;ip-address&gt;</codeblock></li>
-                <li>Update <i>/etc/hosts</i> file with your VSD name. The name must be the same that
-                    is configured on the DNS server:<p><image
-                            href="../../media/CGH-2-hosts-file-temp.png" id="image_e4j_42l_2t"
-                    /></p></li>
+                <li>Update the <i>/etc/sysconfig/network</i> file with the <b>vsd1</b> host name.
+                    The name must be the same that is configured on the DNS server. For
+                    example:<codeblock>root@vsd1 ~]# cat /etc/sysconfig/network
+NETWORKING=yes
+HOSTNAME=vsd1.dcn-one.helion.cg</codeblock></li>
                 <li>Execute the following command in order for the VSD VM host name to be reflected
-                    in the <i>/etc/hosts</i> file:
+                    in the <i>/etc/sysconfig/network</i> file:
                     <codeblock>service network restart </codeblock></li>
                 <li>Exit the VSD VM console session, then log back in. You should see the VSD name
-                    in the <i>/etc/hosts</i> file.</li>
+                    in the <i>/etc/sysconfig/network</i> file.</li>
                 <li>Configure an NTP Server for the VSD VM by editing the <i>/etc/ntp.conf</i> file.
                     Commenting out other server list and add your DNS servers. For
                             example:<codeblock>server 10.1.64.20
@@ -75,7 +76,7 @@ service ntpd start</codeblock><p>Where
             <b>Verify that VSD is installed</b>
             <ol id="ol_mgf_hgl_2t">
                 <li>Start a console session to the VSD VM from HLM host using the following command:
-                        <codeblock><i>virsh console &lt;vsdname&gt;</i> </codeblock><p>Where
+                        <codeblock>virsh console &lt;vsdname&gt; </codeblock><p>Where
                         &lt;vsdname&gt; is the name of your VSD.</p></li>
                 <li>Execute the following command to confirm that you can access VSD.
                         <codeblock>service vsd status </codeblock><p>You should see the status as

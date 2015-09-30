@@ -47,9 +47,9 @@ ifconfig eth0 up</codeblock></li>
         by the HP Helion OpenStack Carrier Grade installation. </p>
       <ol id="ol_mdt_dd3_ys">
         <!--<li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HP Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b></li></ul>.</li>-->
-        <li>Download and extract the <b id="productShow_apcodeph">Helion Carrier Grade 2.0.0
-            Windriver License patch signature file</b> and the associated signature and checksum
-          files. For information on performing verifications of the download, see the Prerequistues. </li>
+        <li>Download and extract the <b id="productShow_apcodeph">Helion Carrier Grade 2.0 Windriver
+            License patch signature file</b> and the associated signature and checksum files. For
+          information on performing verifications of the download, see the Prerequistues. </li>
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
           controller-0. The files are located in the <codeph>/root/cg-hlm/windriver-files</codeph>
           directory on the HLM host.<ul id="ul_mpn_hnr_bt">
@@ -97,11 +97,14 @@ password:  &lt;random> </codeblock><p>The
     </section>
   <section id="unlock"><title>Configure and unlock the compute controllers</title>
     <p>After the controller-1 and the compute nodes come up successfully after PXE boot, execute the
-        following commands from controller-0 to unlock  each compute node in the inventory, based on
-        your deployment.</p>
-      <p><b>Note:</b> If you are using a bonded interface, <xref href="#topic1107/nic" format="dita"
-          >also follow the instructions below</xref> after completing these steps.</p>
-    <p><b>For KVM deployments</b></p>
+        following commands from controller-0 to unlock each compute node in the inventory, based on
+        your deployment:</p>
+      <p><xref href="#topic1107/kvm" format="dita">For KVM deployments</xref></p>
+      <p><xref href="#topic1107/kvm-esx" format="dita">For KVM + ESX deployments</xref></p>
+      <p><xref href="#topic1107/nic" format="dita">For bonded NIC environments</xref></p>
+  </section>
+  <section>
+    <title id="kvm">For KVM deployments</title>
     <ol>
       <li>Create the Infra interface. See <xref
         href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
@@ -127,7 +130,9 @@ password:  &lt;random> </codeblock><p>The
         <li>If you are using a bonded interface, see <xref href="#topic1107/nic" format="dita">For
             bonded NIC environments</xref>.</li>
       </ol> 
-    <p><b>For KVM with DCN or KVM + ESX deployments</b></p>
+  </section>
+  <section>
+    <title id="kvm-esx">For KVM with DCN or KVM + ESX deployments</title>
     <ol>
             <li>After the controller-1 and the compute nodes come up successfully after PXE boot,
           execute the following commands from controller-0 to unlock the compute nodes.<ol
@@ -159,8 +164,6 @@ system host-unlock compute-3        </codeblock></li>
 nova aggregate-create remote_storage_hosts
 nova aggregate-set-metadata remote_storage_hosts localstorage=false
 nova aggregate-add-host remote_storage_hosts &lt;compute host name&gt;</codeblock></li>
-        <li>If you are using a bonded interface, see <xref href="#topic1107/nic" format="dita">For
-            bonded NIC environments</xref>.</li>
       
       </ol>
   </section>

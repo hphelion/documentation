@@ -33,10 +33,14 @@
           </p><p>Upon completion, the following message displays:</p><p>
             <codeblock>patching file restproxy.py</codeblock>
           </p></li>
-        <li>Perform these steps on the remaining servers.<p>Make sure the
-              <codeph>neutron-server</codeph> status is <codeph>active</codeph> and running on all
-            three controllers. If <codeph>neutron-server</codeph> is in failed state, restart
-            service using “service neutron-server restart”</p></li>
+        <li>Make sure the
+              <codeph>neutron-server</codeph> status is <codeph>active</codeph> and running<p>
+            <codeblock>service neutron-server status</codeblock>
+          </p><p> If <codeph>neutron-server</codeph> is in failed state, restart service using the
+            following command:</p><p>
+            <codeblock>service neutron-server restart</codeblock>
+          </p></li>
+        <li>Perform these steps on the remaining servers.</li>
       </ol>
     </p>
     <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/role">the KVM + ESX

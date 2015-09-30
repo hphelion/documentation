@@ -20,7 +20,7 @@
       <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
     <p>After the Helion Lifecycle Management (HLM) is installed, the next task is to deploy the HP
-      Helion Openstack cloud into the non-KVM region.</p>
+      Helion OpenStack cloud into the non-KVM region.</p>
     <p>If you are installing the KVM deployment, see  <xref
       href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref></p>
     <p><!--If you are installing the KVM with DCN deployment, see<xref href="carrier-grade-install-kvm-dcn.dita#topic10581">Installing the KVM with DCN Deployment</xref>--></p>

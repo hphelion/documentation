@@ -195,12 +195,12 @@ VSD Server : auto </codeblock>
               href="../../media/CGH-install-gateway-port.png" id="image_w3p_sgz_xs" width="250">
               <alt>Gateway Port</alt>
             </image></p></li>
-        <li>Click <b>Create</b>.</li>
-        <li>Click the blue arrow next to the second new gateway.</li>
+        <li>Click <b>Create</b>.<p>The VLAN and other ports will appear similar to
+          the following:</p><p><image href="../../media/CGH-install-vcenter-vlan.png"
+            id="image_sgn_mh1_1t"/></p></li>
+        <!-- Hide for alpha <li>Click the blue arrow next to the second new gateway.</li>
         <li>Perform the same steps to add a port entering the same information. Both gateways must
-          be configured in an identical manner.<p>The VLAN and other ports will appear similar to
-            the following:</p><p><image href="../../media/CGH-install-vcenter-vlan.png"
-              id="image_sgn_mh1_1t"/></p></li>
+          be configured in an identical manner.</li>-->
       </ol>
     </section>
     <!--<section><title>Create a redundancy group for the VRS-G</title>
@@ -213,14 +213,14 @@ Hide for alpha
       select <b>Use Permission</b>. <p><i>For more information on performing this task, refer to the
           latest DCN documentation </i></p><p>To assign permissions:</p><ol id="ol_x4q_vl1_1t">
         <li>Select the gateway you created and click <b>Add a Permission</b>.</li>
-        <li>Select a group and click <b>Select</b>. Members of this group will be able to use the
-          gateway.</li>
+        <li>Select an organization and click <b>Select</b>. Members of this group will be able to
+          use the gateway.</li>
       </ol></section>
     <section>
-      <title>Retrieve the subnet floating IP name from the VSD</title>
-      <p>You will need the floating IP subnet name during the installation when you create and edit
-        a cURL script. If you do not have the name of the subnet you created, use the following
-        steps:</p>
+      <title>Create a subnet for the floating IP</title>
+      <p>Use the following steps to create a subnet for the floating IP.</p>
+      <p><b>Note:</b> You will need the floating IP subnet name during the installation when you
+        create and edit a cURL script. </p>
       <p><i>For more information on performing these tasks, refer to the DCN documentation </i></p>
       <ol>
         <li>In the VSD dashboard, click <b>Open Data Center Configuration</b>, then <b>Shared
@@ -324,6 +324,92 @@ curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "
           under VRS-G node. <p><image href="../../media/CGH-install-curl.png" id="image_d2h_mcc_1t"
               width="700"/></p></li>
       </ol>
+    </section>
+    <section><title>Create a Layer 3 Domain Template</title>
+      <p>A domain is a single Layer 3 space. A Domain Template contains components to define a
+        domain, including domain zones,  subnet pools, and security policies. A domain template can
+        be used to create a domain instance. You can either use the default template or create a new
+        L3 Domain Template.</p>
+      
+      <p><b>Networks TAB:</b></p>
+      <ul id="ul_mvq_z5d_nt">
+        <li>Default L3 Template is created for newly created organization</li>
+        <li><b>Designer TAB:</b><ul id="ul_nvq_z5d_nt">
+            <li>Either use the default template or create a new L3 Domain Template<ul
+                id="ul_ovq_z5d_nt">
+                <li> in VSD is equivalent to a router<ul id="ul_pvq_z5d_nt">
+                    <li>Create new L3 domain template </li>
+                    <li>For Ex.: lr4tb2domaintemplate<ul id="ul_qvq_z5d_nt">
+                        <li> </li>
+                        <li/>
+                        <li> </li>
+                        <li/>
+                      </ul></li>
+                  </ul></li>
+              </ul></li>
+            <li>Select L3 Domain template that was created above and add (drag and drop on to the
+              domain linkage icon on the middle ) zones from the Library TAB (Bottom Right
+                corner)<ul id="ul_rvq_z5d_nt">
+                <li>Zone Template (private)</li>
+                <li>Public Zone Template<ul id="ul_svq_z5d_nt">
+                    <li> </li>
+                    <li/>
+                  </ul></li>
+              </ul></li>
+            <li>Select Zone Template (private)</li>
+          </ul></li>
+        <li><b>Policies TAB:</b><ul id="ul_tvq_z5d_nt">
+            <li><b>Policies available: Redirect, Ingress, Egress, Forward and External</b></li>
+            <li> </li>
+            <li/>
+          </ul></li>
+        <li><b>Ingress policy:</b><ul id="ul_uvq_z5d_nt">
+            <li>Create New Ingress Security Policy </li>
+            <li>For Ex.: policy “ingressallanyan” (anyany)<ul id="ul_vvq_z5d_nt">
+                <li> </li>
+                <li/>
+                <li> </li>
+              </ul></li>
+            <li>Provide appropriate policy options to suit use case<ul id="ul_wvq_z5d_nt">
+                <li> </li>
+                <li>Select forward IP traffic by default tab </li>
+                <li>Enable this policy</li>
+              </ul></li>
+            <li>Select Create</li>
+            <li>Select Ingress Policy created above</li>
+            <li>Create New Ingress Policy Entry <ul id="ul_xvq_z5d_nt">
+                <li/>
+                <li/>
+              </ul></li>
+            <li>Apply Policy Changes (policy is effective only when it is applied)</li>
+          </ul></li>
+        <li><b>Egress policy:</b><ul id="ul_yvq_z5d_nt">
+            <li>Create New Egress Security Policy</li>
+            <li>For Ex.: egressallpolicy1 (at the template level)<ul id="ul_zvq_z5d_nt">
+                <li> </li>
+                <li/>
+                <li> </li>
+              </ul></li>
+            <li>Select Create </li>
+            <li>Apply Policy</li>
+            <li>Select Egress Policy created above<ul id="ul_awq_z5d_nt">
+                <li>Eg. egressallpolicy1</li>
+              </ul></li>
+            <li>Unlock – icon will be seen at the bottom of the screen </li>
+          </ul></li>
+        <li>Add Security Policy Entry rule<ul id="ul_bwq_z5d_nt">
+            <li/>
+          </ul></li>
+      </ul>
+      <ul id="ul_cwq_z5d_nt">
+        <li>Create Policy entry</li>
+        <li>Apply Policy changes </li>
+      </ul>
+      <p/>
+      <ul id="ul_dwq_z5d_nt">
+        <li/>
+        <li><b>3. Instantiate L3 Domain template as desired</b></li>
+      </ul>
     </section>
     <section>
       <title>Configure ingress and egress security policies</title>
