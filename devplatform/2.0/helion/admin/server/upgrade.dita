@@ -2,22 +2,6 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13180">
 <title>HP Helion 2.0 Development Platform: In-Place Upgrades of ALS Nodes and Clusters</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="ISV Developer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Network Administrator"/>
-<othermeta name="role" content="Systems Administrator"/>
-<othermeta name="role" content="Security Engineer"/>
-<othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
-</metadata>
-</prolog>
 <body>
   <p>Application Lifecycle Service provides the ability to upgrade a node or cluster in place
     without the need to rebuild the entire cluster. <note><sl><sli>In-place upgrading is supported only for clusters and nodes created using Helion Development
@@ -133,7 +117,7 @@ sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
 </section>
   <section id="upgrading-a-cluster"><title>Upgrading a cluster</title><p>To upgrade a cluster:</p>  
     <ol id="ol_axs_cnk_ft"><li>SSH into the Core node in the cluster.</li>  
-      <li>Run this command <codeblock>eval “$(curl -Ls http://bit.ly/1XRoHMV)”</codeblock></li>  
+      <li>Run this command <codeblock>eval "$(curl -Ls http://bit.ly/1XRoHMV)"</codeblock></li>  
       <li>Update kato itself <codeblock>kato node upgrade --update-kato </codeblock></li>  
       <li>Upgrade the cluster.<codeblock>kato node upgrade</codeblock></li> </ol>  
      <p>This will automatically arrange the nodes in the cluster into an upgrade order (see below)  

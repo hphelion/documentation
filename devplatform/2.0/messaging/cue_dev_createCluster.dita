@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cue_createCluster">
+  <title>Create a Cluster from the Command Line</title>
+  <body>
+    <section>
+      <dl>
+        <dlentry>
+          <dt>Syntax</dt>
+          <dd>
+            <codeblock>message-broker cluster create</codeblock>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt>Required Fields</dt>
+          <dd>name, network-id, flavor and size</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Sample</dt>
+          <dd>
+            <codeblock outputclass="language-python">#!/usr/bin/env python
+
+from keystoneclient.auth.identity import v3 as keystone_v3_auth
+from keystoneclient import session as keystone_session
+from cueclient.v1 import client
+
+auth = keystone_v3_auth.Password(
+        auth_url="http://example.com:5000/v3",
+        username="admin",
+        password="password",
+        project_name="admin",
+        project_domain_name="default",
+        user_domain_name="default"
+)
+
+session = keystone_session.Session(auth=auth)
+cue_client = client.Client(session=session)
+
+# Cluster create
+create_response = cue_client.clusters.create(name="test_binding5",
+                    nic="55555", flavor="1",size="2",volume_size="0")</codeblock>
+          </dd>
+        </dlentry>
+      </dl>
+    </section>
+  </body>
+</topic>
