@@ -184,8 +184,8 @@
 
   <topichead navtitle="Administration">
     <topichead navtitle="Minimum Set of Customizations">
-      <topicref href="helion/administration/create_extnet.dita"/>
-      <topicref href="helion/administration/upload_image.dita"/>
+      <topicref href="helion/administration/create_extnet.dita" navtitle="Creating an External Network" locktitle="yes"/>
+      <topicref href="helion/administration/upload_image.dita" navtitle="Upload an Image for Use" locktitle="yes"/>
       <topichead navtitle="Configuring a Block Storage Backend">
         <topicref href="helion/cinder/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
           locktitle="yes">
@@ -227,7 +227,7 @@
   </topichead>
 
   <topichead navtitle="User Guide">
-    <topicref href="helion/user/create_network.dita"/>
+    <topicref href="helion/user/create_network.dita" navtitle="Creating a Private Network" locktitle="yes"/>
   </topichead>
 
 
