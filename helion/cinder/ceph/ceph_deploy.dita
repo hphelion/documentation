@@ -25,12 +25,12 @@
         <ol id="ol_evc_k11_gt">
           <li>Login to the deployer node.</li>
           <li>Create the Ceph configuration files (<b>manually</b>) at
-              <codeph>~/helion-input/my_cloud/definition</codeph>. The example configuration files
-            are available at <xref href="configuration_files.dita#config_files">Ceph
+              <codeph>~/home/stack/helion/my_cloud/definition</codeph>. The example configuration
+            files are available at <xref href="configuration_files.dita#config_files">Ceph
               Configuration
             files</xref>.<!--<p>The configuration files for editing will be available at <codeph>~/helion/my_cloud/definition/data</codeph>.</p>--></li>
           <li>Copy the configuration files in the respective folder as shown in the screen shot
-              below.<p/><image href="../../../media/ceph/screenshot-path.png" id="image_arv_dcx_gt"
+              below.<image href="../../../media/ceph/screenshot-path.png" id="image_arv_dcx_gt"
               /><p>You must copy the <b>yml</b> files in the appropriate folder. For example: Copy
               the <codeph>ring.yml</codeph> file in <codeph>config/swift/</codeph>.</p></li>
           <li>Edit the configuration files, based on your environment, to deploy Ceph. </li>
