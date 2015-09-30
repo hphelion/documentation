@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_cdw_mrl_nt">
+ <title>Micro Cloud VM: Quick Start</title>
+ <shortdesc>This section describes running the VM as a micro cloud. To get started with building a
+  cluster, see the Cluster Setup<!--Insert link here.--> section.</shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>By default, the <keyword keyref="prodShort"/> VM starts as a single-node micro cloud with a
+   base set of roles already running and ready to use. You can use this VM to test pushing
+   applications still in development. If your application deploys successfully to an <keyword
+    keyref="prodShort"/> micro cloud, it will deploy to any <keyword keyref="prodShort"/> PaaS of
+   the same version. The application hosting environment is the same in all aspects except
+   scale.</p>
+ </conbody>
+</concept>

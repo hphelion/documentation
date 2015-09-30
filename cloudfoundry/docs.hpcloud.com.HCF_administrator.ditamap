@@ -3,4 +3,9 @@
 <map xml:lang="en" linking="none" locktitle="no">
    <title>Administrator Guide</title>
    <mapref href="docs.hpcloud.com.HCF_variables.ditamap" format="ditamap"/>
+   <topicref href="HCF_adm_micro_cloud_vm.dita" format="dita">
+      <topicref href="HCF_adm_start_vm.dita"/>
+      <topicref href="HCF_adm_import_vm.dita"/>
+      <topicref href="HCF_adm_download_vm.dita"/>
+   </topicref>
 </map>

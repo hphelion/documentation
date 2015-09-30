@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_m2x_4wl_nt">
+ <title>Importing the VM</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>The steps for importing and starting the <keyword keyref="prodShort"/> VM vary depending on
+   which hypervisor and operating system you use. Follow the steps in one of the guides below, then
+   continue with Initial Configuration:<ul id="ul_vcj_vwl_nt">
+    <li>EC2 AMI<!--Link--></li>
+    <li>HP Cloud Services<!--Link--></li>
+    <li>OpenStqack<!--Link--></li>
+    <li>Virtual Box<!--Link--></li>
+    <li>VMware Fusion/Player<!--Link--></li>
+    <li>VMware vSphere<!--Link--></li>
+   </ul></p>
+ </conbody>
+</concept>
