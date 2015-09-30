@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_backup_database">
+  <title>Back up a database</title>
+  <body>
+    <p>The following section will demonstrate how to back up an existing database instance. This will take a backup of the entire database instance. If necessary, the backup can be restored to a new instance at a later time.</p>
+    <ol>
+      <li>Log in to the Horizon console.</li>
+      <li>Under your project, open the <b>Database</b> panel and then click the <b>Instances</b> tab.</li>
+      <li>A list of active database instances will be displayed. Identify the database instance to back up
+        and click <b>Create Backup</b> next to that
+        instance.<!--A BR tag was used here in the original source.--><image
+          href="../../../media/createDBinstance6.png" placement="break"/></li>
+      <li>In the <b>Backup Database</b> dialog, specify the following information:
+        
+        <ul>
+          <li>
+            <b>Name</b> - the name of the backup to create. This name will help you identify the backup in the future.</li>
+          <li>
+            <b>Database Instance</b> - The database instance that will be backed up.</li>
+          <li>
+            <b>Description</b> - a text description of the backup (optional).</li>
+          <li>
+            <b>Parent Backup</b> - if a previous backup of this database instance exists. it is
+            possible to take an incremental backup. An incremental backup will process faster
+            because it only stores the differences between the two. Select the previous backup if
+            an incremental backup is desired.<image href="../../../media/createDBinstance7.png"
+              placement="break" scale="75"/></li>
+        </ul>
+      </li>
+      <li>Click <b>Backup</b>.</li>
+      <li>In the <b>Database</b> panel, click the <b>Backups</b> tab to view all existing backups,
+        including the newly-created
+        backup.<!--A BR tag was used here in the original source.--><image
+          href="../../../media/createDBinstance8.png" placement="break"/></li>
+    </ol>
+  </body>
+</topic>
