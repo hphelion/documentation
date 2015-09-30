@@ -81,7 +81,7 @@
           </ol></li>
         <li><xref href="#input_model/6.0_Examples">Examples</xref>
           <ol>
-            <li><xref href="#input_model/6.1_Networking">Persisted Server Allocations</xref>
+            <li><xref href="#input_model/6.1_Networking">Networking</xref>
               <ol>
                 <li><xref href="#input_model/6.1.4_NeutronProviderVLANs">Configuring Neutron
                     Provider VLANs</xref></li>
