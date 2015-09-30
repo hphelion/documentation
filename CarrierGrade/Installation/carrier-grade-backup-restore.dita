@@ -42,7 +42,7 @@
         Grade components, for example:</p>
       <ul>
         <li>there is any problem with a VM;</li>
-        <li>there is any problem in the OS level;</li>
+        <li>there is any problem in the operating system level;</li>
         <li>there is any problem with the installation that cannot be corrected.</li>
       </ul>
       <p><b>Important:</b> During the restore process the original HLM VM will be deleted from the
