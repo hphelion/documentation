@@ -59,18 +59,18 @@
                 <topicref href="carrier-grade-install-role-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-build9-workarounds.dita" toc="no"/>
             </topicref>
-            <topicref href="carrier-grade-install-launch-horizon.dita"
-                navtitle="Launching the Horizon Interface" locktitle="yes"/>
-            <topicref href="carrier-grade-install-config-dcn.dita"
-                navtitle="Configuring the DCN Components" locktitle="yes"/>
             <topicref href="carrier-grade-install-access-kibana.dita" toc="no"/>
         </topicref>
+        <topicref href="carrier-grade-install-launch-horizon.dita"
+            navtitle="Launching the Horizon Interface" locktitle="yes"/>
+        <topicref href="carrier-grade-install-config-dcn.dita"
+            navtitle="Configuring the DCN Components" locktitle="yes"/>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita" navtitle="Deploying the KVM Region"
             locktitle="yes">
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
             <topicref href="carrier-grade-install-metadata.dita" toc="no"/>
             <topicref href="carrier-grade-install-horizon-patch.dita" toc="no"/>
+            <topicref href="carrier-grade-install-ldap-verify.dita"
+                navtitle="Verifying the LDAP Deployment" locktitle="yes" toc="no"/>
         </topicref>
-        <topicref href="carrier-grade-install-ldap-verify.dita"
-            navtitle="Verifying the LDAP Deployment" locktitle="yes"/>
     </topicref></map>

@@ -39,25 +39,23 @@ ifconfig eth0 up</codeblock></li>
     
     <section>
       <p><b>Install the KVM region license</b></p>
-      <p>The servers in the KVM region require a specific license file to be installed. You must
-        download this file from the <xref
-          href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
-          scope="external">HP Helion Download Network(HDN)</xref>. </p>
+      <p>The servers in the KVM region require a specific license file to be installed.
+        <!--You must download this file from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HP Helion Download Network(HDN)</xref>. --></p>
       <p>Before installing the patch, make sure the KVM region controller-0 was properly installed
         by the HP Helion OpenStack Carrier Grade installation. </p>
       <ol id="ol_mdt_dd3_ys">
-        <!--<li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HP Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b></li></ul>.</li>-->
-        <li>Download and extract the <b id="productShow_apcodeph">Helion Carrier Grade 2.0 Windriver
-            License patch signature file</b> and the associated signature and checksum files. For
-          information on performing verifications of the download, see the Prerequistues. </li>
+        <!--<li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HP Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download and extract the <b id="productShow_apcodeph">Helion Carrier Grade 2.0 Windriver License patch signature file</b> and the associated signature and checksum files. For information on performing verifications of the download, see the Prerequistues. </li>-->
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
-          controller-0. The files are located in the <codeph>/root/cg-hlm/windriver-files</codeph>
-          directory on the HLM host.<ul id="ul_mpn_hnr_bt">
-            <li><codeph>HCG_2.0_WR_license.lic.txt</codeph></li>
+            <codeph>controller-0</codeph>. The files are located in the
+            <codeph>/root/cg-hlm/windriver-files</codeph> directory on the HLM host.<ul
+            id="ul_mpn_hnr_bt">
+            <li><codeph>license.lic</codeph></li>
             <li><codeph>region_config</codeph>
             </li>
             <li><codeph>cakey.pem</codeph></li>
-          </ul></li>
+          </ul><p>You should have downloaded these files <xref
+              href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/patches">in the
+              prerequisites</xref></p></li>
         <li>Restart <codeph>controller-0</codeph> to load the license file.</li>
       </ol>
     </section><section><title>Install the KVM region cloud</title>
@@ -191,6 +189,8 @@ system host-update compute-0 vsc_controllers=10.30.6.31,10.30.6.32</codeblock></
   <section id="next-step"> <title>Next Steps</title>
       <p><xref href="carrier-grade-install-metadata.dita#topic10581">Configure the DCN Metadata
           Agent</xref> (KVM + ESX deployments only)</p>
+      <p><xref href="carrier-grade-install-ldap-verify.dita#topic10581">Verify the LDAP
+          Deployment</xref></p>
   </section>
 </body>
 </topic>
