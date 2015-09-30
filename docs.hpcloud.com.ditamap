@@ -178,11 +178,13 @@
         <topicref href="helion/cinder/verify_backend_configuration.dita"/>
       </topichead>
     </topichead>
+    <topicref href="helion/administration/wipe_disks.dita" navtitle="Wiping the Disks"
+      locktitle="yes"/>
     <topicref href="helion/administration/lbaas_admin.dita" navtitle="Configuring LBaaS"
       locktitle="yes"/>
     <topicref href="helion/administration/monasca_configure.dita" navtitle="Configuring Monitoring"
       locktitle="yes"/>
-  </topichead>
+ </topichead>
 
   <topichead navtitle="Operations">
     <topicref href="start.stop.check" toc="no">
