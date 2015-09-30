@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qsv_h5y_lt">
-  <title>Adding a Node</title>
+  <title>Adding a Compute Node</title>
   <body>
    <section> To add a new node to your cloud, you will need to add it to <b>servers.yml</b> and
         <b>baremetalConfig.yml</b>, and then run the scripts that update your cloud configuration.
