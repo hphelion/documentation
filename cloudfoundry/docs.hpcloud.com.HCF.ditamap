@@ -5,16 +5,16 @@
    <mapref href="docs.hpcloud.com.HCF_variables.ditamap"/>
    <topicref href="HCF_top_documentation.dita" navtitle="Helion Cloud Foundry 1.0: Documentation" type="concept"/>
    <topicref href="HCF_top_whats_new.dita" navtitle="What's New" type="concept"/>
-    <topicref href="HCF_release_notes.dita" navtitle="Release Notes" type="concept"/>
+   <topicref href="HCF_top_release_notes.dita" navtitle="Release Notes" type="concept"/>
    <topicref href="HCF_top_license_agreements.dita" navtitle="Open Source and Third-Party Software License Agreements" type="concept"/>
    <topicref href="HCF_top_software_license_terms.dita" navtitle="Software License Terms" type="concept"/>
    <topichead navtitle="Administrator Guide">
-      <topicref href="docs.hpcloud.com.HCF_administrator.ditamap" navtitle="Administrator Guide" type="ditamap"/>      
+      <mapref href="docs.hpcloud.com.HCF_administrator.ditamap" navtitle="Administrator Guide" type="ditamap"/>      
    </topichead>
    <topichead navtitle="Application Developer Guide">
-       <topicref href="docs.hpcloud.com.HCF_developer.ditamap" navtitle="Application Developer Guide" type="ditamap"/>
+      <mapref href="docs.hpcloud.com.HCF_developer.ditamap" navtitle="Application Developer Guide" type="ditamap"/>
    </topichead>
    <topichead navtitle="Reference">
-       <topicref href="docs.hpcloud.com.HCF_reference.ditamap" navtitle="Reference" type="ditamap"/>
+      <mapref href="docs.hpcloud.com.HCF_reference.ditamap" navtitle="Reference" type="ditamap"/>
    </topichead>
 </map>
