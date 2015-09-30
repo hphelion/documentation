@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
+<<<<<<< HEAD
  <mapref href="cf-release/docs.hpcloud.com.CFR.ditamap"/>
+=======
+ <mapref href="cloudfoundry/docs.hpcloud.com.HDP.ditamap"/>
+>>>>>>> b40d79b... Revising file/dir structure
 </map>
