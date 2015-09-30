@@ -116,7 +116,7 @@ ip-address
             defined in <codeph>cephcluster.csv</codeph>. </p><p> Also, if there is only one RADOS
             node, then the type must be <codeph>radosgw-master</codeph>. </p><p>
             <b>user</b>: used to login to Ceph nodes for performing the configuration. In this case
-            it is <b>hlinux</b>. (<b>hlinux</b> refers to HP Linux for HP Helion OpenStack</p><p>
+            it is <b>hlinux</b>. (<b>hlinux</b> refers to Linux for HP Helion</p><p>
             <b>osd-partition-type</b>: partition type to be used while formatting the disk for OSD
             storage (This attribute exists only for OSD type node).</p><p>
             <b>osd-disk-path</b>: disk to be used for OSD storage (This attribute exists only for
