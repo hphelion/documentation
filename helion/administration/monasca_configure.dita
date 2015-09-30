@@ -5,14 +5,39 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Monitoring Service</title>
   <body>
     <section id="config">
-      <p>In Beta 2 you will have the option to specify which database platform you want to use for
-        the Metrics Database.</p>
+      <p>In Helion OpenStack 2.0 you will have the option to specify which database platform you
+        want to use for the Metrics Database.</p>
+    </section>
+    <section id="email"><title>Specifying a SMTP Server for Email Notifications</title>
+      <p>In order for the Monitoring service to be able to send email notifications about alarms, it
+        needs to be configured with an email server. The email server not be provided by Helion
+        OpenStack. The email server must support SMTP.</p>
+      <p>To configure the SMTP server, edit the <codeph>cloudConfig.yml</codeph> file during
+        installation. There should be a section at the bottom for <codeph>smtp-settings</codeph>
+        that looks like this below:</p>
+      <codeblock>
+  smtp-settings:
+  #  server: mailserver.examplecloud.com
+  #  port: 25
+  #  timeout: 15
+  # These are only needed if your server requires authentication
+  #  user:
+  #  password:</codeblock>
+      <p>The server entry must be uncommented and set to a valid hostname or IP Address. That is the
+        only required entry, the others are all optional. If your SMTP server is running on a port
+        other than the standard 25, then uncomment the port line and set it your port. If email
+        server is heavily loaded, the timeout parameter can be uncommented and set to a larger
+        value. 15 is the default. If your SMTP server requires authentication, then you can
+        configure user and password. Use double quotes around the password to avoid issues with
+        special characters.</p>
+    </section>
+    <section id="database"><title>Choosing a Metrics Database Options</title>
       <p>The Monitoring service supports two different database options. The default metrics
         database is <b>Vertica</b>, which is a highly-scalable analytics database from HP. Vertica
         is free to use, up to 12TB, for all paid Helion customers as a Helion operational database
         <!--(please see <xref href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html"
-          format="html" scope="external">Helion EULA</xref>)-->. Vertica is the recommended database
-        for Helion OpenStack.</p>
+          format="html" scope="external">Helion EULA</xref>)-->.
+        Vertica is the recommended database for Helion OpenStack.</p>
       <p>You can learn more about Vertica here: <xref
           href="https://www.vertica.com/hp-vertica-documentation/" scope="external" format="html"
           >Vertica Documentation</xref></p>
