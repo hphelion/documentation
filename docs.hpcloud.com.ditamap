@@ -144,7 +144,7 @@
       <topicref href="helion/preinstall_checklist.dita" navtitle="Pre-Installation Checklist"
         locktitle="yes"/>
       <topicref href="helion/bare_installation_kvm.dita"
-        navtitle="Baremetal Install for KVM Hypervisor" locktitle="yes"/>
+        navtitle="Installation for KVM Hypervisor on Baremetal" locktitle="yes"/>
       <topicref href="helion/bare_installation_esx.dita"
         navtitle="Baremetal Install for ESX Hypervisor" locktitle="yes"/>
       <topicref href="helion/bare_installation_esxOLD.dita"
