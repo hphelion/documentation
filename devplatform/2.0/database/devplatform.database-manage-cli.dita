@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_database_manage_cli">
+  <title></title>
+  <body>
+    <p>This topic describes how to manage a database instance from the command line.</p>
+    <p>This document has script examples for the following tasks:</p>
+    <ul>
+      <li><xref type="section" format="dita" href="#topic_database_manage_cli/user">User management</xref></li>
+      <li><xref type="section" format="dita" href="#topic_database_manage_cli/configure">Configuration management</xref></li>
+      <li><xref type="section" format="dita" href="#topic_database_manage_cli/metadata">Metadata management</xref></li>
+    </ul>
+    
+  </body>
+</topic>

@@ -4,6 +4,7 @@
   <title>Backing up a database</title>
   <body>
     <p>The following section will demonstrate how to back up an existing database instance. This will take a backup of the entire database instance. If necessary, the backup can be restored to a new instance at a later time.</p>
+    <section id="horizon"><title>Backing up a database from Horizon</title>
     <ol>
       <li>Log in to the Horizon console.</li>
       <li>Under your project, open the <b>Database</b> panel and then click the <b>Instances</b> tab.</li>
@@ -34,5 +35,29 @@
         backup.<!--A BR tag was used here in the original source.--><image
           href="../../../media/createDBinstance8.png" placement="break"/></li>
     </ol>
+    </section>
+    <section id="cli"><title>Working with backups from the command line</title>
+      <ol>
+        <li>To work with backups from the command line, log in to the installer node for your Helion OpenStack environment and source the service.osrc file:
+          <codeblock>. service.osrc</codeblock></li>
+        <li><b>Back up a database:</b>T o back up a database, use the <codeph>trove backup-create</codeph> command, passing in the database instance (by name or ID) to back up, and the name of the backup to be created.</li>
+        <li>
+          <dl>
+            <dlentry>
+              <dt>Example: Creating a backup by name</dt>
+              <dd><codeblock>trove backup-create myRedisInstance myBackup</codeblock></dd>
+            </dlentry>
+            <dlentry>
+              <dt>Example: Creating a backup by ID</dt>
+              <dd><codeblock>trove backup-create 0043b7e3-7376-44e6-8239-06156e03c5cd myBackup</codeblock></dd>
+            </dlentry>
+          </dl>
+        </li>
+        <li><b>List created backups: </b>To view the created backups, use the <codeph>trove backup-list</codeph> command:
+        <p>TODO: screenshot here</p></li>
+        <li><b>Restore a database from a backup: </b>To restore a backup (that is, create a new instance from a backup), use the <codeph>trove create --backup &lt;backup ID&gt;</codeph> command:
+          <p>TODO: screenshot here</p></li>
+      </ol>
+    </section>
   </body>
 </topic>
