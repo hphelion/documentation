@@ -148,17 +148,17 @@ Kernel pid terminated (application_controller) ({application_start_failure,kerne
 2015-09-24 11:10:58,564 p=6946 u=root | stdout: {error_logger,
 {#2015,9,24},{11,10,21#},"Protocol: ~tp: register/listen error: ~tp~n",["inet_tcp",econnrefused]}^M
 {error_logger,{#2015,9,24}       
-,
+
 {11,10,21#},crash_report,[[{initial_call,{net_kernel,init,['Argument__1']}},{pid,&lt;0.21.0>},{registered_name,[]},{error_info,{exit,{error,badarg},
 [{gen_server,init_it,6,[{file,"gen_server.erl"},{line,322}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},
 {line,237}]}]}},{ancestors,[net_sup,kernel_sup,&lt;0.10.0>]},{messages,[]},{links,[#Port&lt;0.93>,&lt;0.18.0>]},{dictionary,[{longnames,false}]},{trap_exit,true},{status,running},{heap_size,610},{stack_size,27},{reductions,823}],[]]}^M
 {error_logger,{#2015,9,24},{11,10,21#}
           
-,supervisor_report,[{supervisor,{local,net_sup}},
+supervisor_report,[{supervisor,{local,net_sup}},
 {errorContext,start_error},{reason,{'EXIT',nodistribution}},{offender,[{pid,undefined},{name,net_kernel},{mfargs,{net_kernel,start_link,[['rabbitmq-plugins23209',shortnames]]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]}]}^M
 {error_logger,{#2015,9,24},{11,10,21#},supervisor_report,[{supervisor,{local,kernel_sup}},{errorContext,start_error}
 
-,{reason,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}},{offender,[
+{reason,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}},{offender,[
 {pid,undefined} </codeblock>
       
       <p>There may be a specific set of steps to follow for a particular RabbitMQ cluster issues,
