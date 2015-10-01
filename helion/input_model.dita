@@ -414,7 +414,9 @@
                         <row>
                             <entry>smtp-settings (optional)</entry>
                             <entry>SMTP client configuration data that will be applied to all
-                                servers. See example configurations for a full list of
+                                servers. See <xref
+                                    href="administration/configure_monitoring.dita#monitoring/email"
+                                    >Configuring Monitoring</xref> for a full list of
                                 values.</entry>
                         </row>
                     </tbody>

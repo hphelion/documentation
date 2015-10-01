@@ -182,7 +182,7 @@
       locktitle="yes"/>
     <topicref href="helion/administration/lbaas_admin.dita" navtitle="Configuring LBaaS"
       locktitle="yes"/>
-    <topicref href="helion/administration/monasca_configure.dita" navtitle="Configuring Monitoring"
+    <topicref href="helion/administration/configure_monitoring.dita" navtitle="Configuring Monitoring"
       locktitle="yes"/>
  </topichead>
 
