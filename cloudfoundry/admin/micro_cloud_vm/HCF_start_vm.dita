@@ -36,19 +36,16 @@
      configured). This configuration is recommended if you are operating on an untrusted
      network.</p>
    </note>
-   <note>
-    <p>Multiple hosts broadcasting the same name via mDNS on the same network can cause confusion
-     and network problems. If you plan on running multiple Stackato micro clouds on one network,
-     follow these guidelines:</p>
-    <ul id="ul_fll_b1m_nt">
+   <note>Multiple hosts broadcasting the same name via mDNS on the same network can cause confusion
+    and network problems. If you plan on running multiple Stackato micro clouds on one network,
+    follow these guidelines:<ul id="ul_fll_b1m_nt">
      <li>Ensure that the MAC address of each virtual machine is unique</li>
      <li>If the hostname is not unique, do one of the following:<ul id="ul_kx5_f1m_nt">
        <li><b>Change the hostname</b></li>
        <li>Use NAT networking</li>
        <li><b>Configure DNS manually</b></li>
       </ul></li>
-    </ul>
-   </note>
+    </ul></note>
   </section>
   <section>
    <title>DNS vs. mDNS</title>
@@ -65,12 +62,10 @@
    </ul>
    <p>For instructions on setting up the <keyword keyref="prodShort"/> VM in these situations, see
     the <b>Detailed Configuration</b>.</p>
-   <note>
-    <p>Windows does not properly support mDNS hostname resolution. You will need to use the xip.io
-     service, <b>update the Windows hosts file</b>, or create a DNS record in order to target the
-      <keyword keyref="prodShort"/> endpoint, push applications, and resolve the deployed
-     applications.</p>
-   </note>
+   <note>Windows does not properly support mDNS hostname resolution. You will need to use the xip.io
+    service, <b>update the Windows hosts file</b>, or create a DNS record in order to target the
+     <keyword keyref="prodShort"/> endpoint, push applications, and resolve the deployed
+    applications.</note>
   </section>
  </conbody>
 </concept>

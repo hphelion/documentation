@@ -3,18 +3,18 @@
 <map>
    <title>HP Helion Cloud Foundry</title>
    <mapref href="docs.hpcloud.com.HCF_variables.ditamap"/>
-   <topicref href="HCF_top_documentation.dita" navtitle="Helion Cloud Foundry 1.0: Documentation" type="concept"/>
-   <topicref href="HCF_top_whats_new.dita" navtitle="What's New" type="concept"/>
-   <topicref href="HCF_top_release_notes.dita" navtitle="Release Notes" type="concept"/>
-   <topicref href="HCF_top_license_agreements.dita" navtitle="Open Source and Third-Party Software License Agreements" type="concept"/>
-   <topicref href="HCF_top_software_license_terms.dita" navtitle="Software License Terms" type="concept"/>
+   <topicref href="root/HCF_documentation.dita" navtitle="Helion Cloud Foundry 1.0: Documentation"/>
+   <topicref href="root/HCF_whats_new.dita" navtitle="What's New"/>
+   <topicref href="root/HCF_release_notes.dita" navtitle="Release Notes"/>
+   <topicref href="root/HCF_license_agreements.dita" navtitle="Open Source and Third-Party Software License Agreements"/>
+   <topicref href="root/HCF_software_license_terms.dita" navtitle="Software License Terms"/>
    <topichead navtitle="Administrator Guide">
-      <mapref href="docs.hpcloud.com.HCF_administrator.ditamap" navtitle="Administrator Guide" type="ditamap"/>      
+      <mapref href="docs.hpcloud.com.HCF_administrator.ditamap" navtitle="Administrator Guide"/>      
    </topichead>
    <topichead navtitle="Application Developer Guide">
-      <mapref href="docs.hpcloud.com.HCF_developer.ditamap" navtitle="Application Developer Guide" type="ditamap"/>
+      <mapref href="docs.hpcloud.com.HCF_developer.ditamap" navtitle="Application Developer Guide"/>
    </topichead>
    <topichead navtitle="Reference">
-      <mapref href="docs.hpcloud.com.HCF_reference.ditamap" navtitle="Reference" type="ditamap"/>
+      <mapref href="docs.hpcloud.com.HCF_reference.ditamap" navtitle="Reference"/>
    </topichead>
 </map>
