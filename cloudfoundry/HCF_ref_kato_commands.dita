@@ -178,7 +178,7 @@
           <p><codeph><varname>&lt;component></varname></codeph> can be <codeph>cluster</codeph>,
               <codeph>local</codeph>, or the name of a process.</p>
           <p>If <codeph><varname>&lt;value></varname></codeph> is not given for
-            <codeph>set</codeph>, then it is read from <codeph>STDIN</codeph>.</p>
+              <codeph>set</codeph>, then it is read from <codeph>STDIN</codeph>.</p>
         </note>
         <table frame="all" rowsep="1" colsep="1" id="table_lqd_4q2_nt">
           <tgroup cols="2">

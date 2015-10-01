@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_r2v_jwq_nt">
+ <title>Adding Spaces</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>Before members of an organization can deploy applications, one or more <b>spaces</b> must be
+   added to the organization. The Management Console prompts for the creation of the first space. </p>
+  <p>To create additional spaces, click <uicontrol>+ Add Space</uicontrol> in the Organization view
+   or use the <b><codeph><keyword keyref="CLIfile"/> create-space</codeph></b> command.</p>
+ </conbody>
+</concept>
