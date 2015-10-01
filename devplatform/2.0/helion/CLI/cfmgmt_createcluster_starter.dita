@@ -60,10 +60,13 @@ cf-mgmt create-cluster \
    --load bootstrap.yml</codeblock></li></ul></li></ol><note>If you are using self-signed certificates, add the <codeph>--skip-ssl-validation</codeph>
         option before the <codeph>create-cluster</codeph> command.</note>
     </section>
-  </body>
-  <related-links>
-    <link href="cfmgmt_growcluster_addDEANode.dita" />
-    <link href="cfmgmt_growcluster_addservice.dita" />
-    <link href="ALS_Client_Reference.dita" />
-  </related-links>
+ 
+    <section><title>Related Links</title>
+      <sl>
+        <sli><xref href="cfmgmt_growcluster_addservice.dita" >Add A Service to an Existing Cluster</xref></sli>
+        <sli><xref href="cfmgmt_growcluster_addDEANode.dita">Add a DEA Node to an Existing Cluster</xref></sli>
+        <sli><xref href="ALS_Client_Reference.dita">ALS Cluster Management Tool Reference</xref></sli>
+        <sli><xref href="../../devplatform.release-notes.dita#topic2502/413">Handling "Entity Too Large" Errors</xref></sli>
+      </sl> </section> 
+ </body>  
 </topic>

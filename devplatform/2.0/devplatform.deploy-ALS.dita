@@ -2,23 +2,6 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2870">
 <title>HP Helion 2.0 Development Platform: Configuring and Deploying an Application Lifecycle Service Cluster</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.3"/>
-<othermeta name="role" content="Systems Administrator"/>
-<othermeta name="role" content="System Engineer"/>
-<othermeta name="role" content="Cloud Administrator"/>
-<othermeta name="role" content="Network Administrator"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="ISV Developer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.3"/>
-</metadata>
-</prolog>
 <body>
 <p>This document explains the process to configure and deploy an Application Lifecycle Service (ALS) cluster from the Horizon user interface.</p>
 <p>The document covers the following sections:</p>
@@ -93,18 +76,19 @@
           and specify the correct port numbers. <image href="../../media/ALSConfig5_1.png"
             placement="break" id="image_x1w_szc_ks"/>
         </li>
-<li> Click <b>Create</b>. You will see the cluster building as shown below.<image
+<li> Click <b>Create</b>. You will see the cluster building as shown below.<note>If your cluster
+            fails to build with the error message: <codeph>413 Request Entity Too Large</codeph>,
+            see the documentation on <xref href="../../devplatform.release-notes.dita#topic2502/413"
+              >handling "Entity Too Large" errors</xref>.</note><image
             href="../../media/ALSConfig6.png" placement="break" id="image_n3d_tzc_ks"/>
         </li>
 <li>Once the cluster has been built, you can access it by clicking on the URL of the created
           cluster, which can be reached in the <b>Clusters</b> view or by the <b>Cluster Details</b>
           page. <image href="../../media/ALSConfig7.png" placement="break" id="image_hyv_tzc_ks"/>
         </li>
-<li>The <xref href="helion/helion_index.dita">Application Lifecycle Service
-            Documentation </xref> provides an overview of how to administer and use the configured
-          cluster, which opens up in a separate tab and requires the admin credentials set in step 3
-          to access and provision.</li>
+<li>The <xref href="helion/helion_index.dita">Application Lifecycle Service Documentation </xref>
+          provides an overview of how to administer and use the configured cluster.</li>
 </ol>
-</section>
+</section> 
 </body>
 </topic>
