@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_kp1_qzq_nt">
+ <title>Using <keyword keyref="prodShort"/></title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>The Administrator view of the Management Console provides access to most commonly configured
+   system settings, control over the roles that are running on the VM, and views of the system log
+   streams and other metrics.</p>
+  <p>End users of the system without administrative privileges have a more limited view that shows
+   only information for their user or group accounts. Deploying applications and consuming system
+   services is covered in the <b><cite>Application Developer User Guide</cite></b>.</p>
+ </conbody>
+</concept>

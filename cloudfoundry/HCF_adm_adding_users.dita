@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_yck_5xq_nt">
+ <title>Adding Users</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>To create additional users, use the <b>Users</b> section of the Management Console (or the
+      <b><codeph><keyword keyref="CLIfile"/> add-user command</codeph></b>):</p>
+  <codeblock>$ <keyword keyref="CLIfile"/> add-user <varname>&lt;username></varname> [--passwd <varname>&lt;password></varname>]</codeblock>
+ </conbody>
+</concept>

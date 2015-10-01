@@ -23,6 +23,13 @@
          </keywords>
       </topicmeta>
    </keydef>
+   <keydef keys="CLIfile">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
    <keydef keys="defaultSysUser">
       <topicmeta>
          <keywords>
@@ -30,4 +37,11 @@
          </keywords>
       </topicmeta>
    </keydef>
+   <keydef keys="defaultSysPass">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef> 
 </map>

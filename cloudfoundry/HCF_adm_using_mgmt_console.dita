@@ -20,7 +20,8 @@
   <p>When the Management Console loads, you will be prompted to create the first administrative user
    and the first <b>organization</b> for the system. You can use these account credentials to push
    applications, create additional users, and configure the system.</p>
-  <note>The password you set here will become the new password for the <keyword
-    keyref="defaultSysUser"/> system user for access via SSH or the hypervisor console.</note>
+  <note>The password you set here will become the new password for the <codeph><keyword
+     keyref="defaultSysUser"/></codeph> system user for access via SSH or the hypervisor
+   console.</note>
  </conbody>
 </concept>

@@ -15,8 +15,8 @@
     <b>multicast DNS</b>.</p>
   <p>You will use this hostname to open the <b>Management Console</b> in a browser or to connect to
    the <b><keyword keyref="prodShort"/> CLI client</b>. </p>
-  <note>The default password for the <keyword keyref="defaultSysUser"/> system user is
-    <codeph>hcf</codeph><!--Check-->. This password is changed automatically when you set up the
+  <note>The default password for the <codeph><keyword keyref="defaultSysUser"/></codeph> system user
+   is <keyword keyref="defaultSysPass"/>. This password is changed automatically when you set up the
    first administrative user in the Management Console. Once you set up the primary administrator
    account, use that account password to log in from the command line.</note>
   <section>
@@ -68,7 +68,8 @@
    <note>
     <p>Windows does not properly support mDNS hostname resolution. You will need to use the xip.io
      service, <b>update the Windows hosts file</b>, or create a DNS record in order to target the
-     API endpoint, push applications, and resolve the deployed applications.</p>
+      <keyword keyref="prodShort"/> endpoint, push applications, and resolve the deployed
+     applications.</p>
    </note>
   </section>
  </conbody>

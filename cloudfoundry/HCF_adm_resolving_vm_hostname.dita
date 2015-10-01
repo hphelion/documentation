@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_bl4_b1r_nt">
+ <title><b>Resolving a VM Hostname without mDNS</b></title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <section>
+   <title>Using xip.io</title>
+   <p>You can quickly set up wildcard DNS resolution by using <xref href="http://xip.io"
+     format="html" scope="external">xip.io</xref> or a similar service. xip.io provides wildcard DNS
+    resolution for addresses in the format <codeph><varname>&lt;IP
+     address></varname>.xip.io</codeph></p>
+   <p>To change the hostname of the <keyword keyref="prodShort"/> VM, log in to the VM via SSH or
+    the hypervisor console with the username <keyword keyref="defaultSysUser"/> and password
+     <keyword keyref="defaultSysPass"/> and then run the <codeph>kato node rename
+      <varname>&lt;...></varname></codeph> command with the external IP address and the xip.io
+    domain appended to it. For example:</p>
+   <codeblock>$ kato node rename 10.9.8.7.xip.io</codeblock>
+   <p>This command will change the system hostname and reconfigure some internal <keyword
+     keyref="prodShort"/> settings. The xip.io DNS servers will resolve the domain
+     <codeph>10.9.8.7.xip.io</codeph> and all sub-domains to <codeph>10.9.8.7</codeph>. This
+    functionality is the same for private subnets and public IP addresses.</p>
+  </section>
+ </conbody>
+</concept>

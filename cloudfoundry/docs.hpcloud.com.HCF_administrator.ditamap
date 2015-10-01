@@ -8,5 +8,13 @@
       <topicref href="HCF_adm_import_vm.dita"/>
       <topicref href="HCF_adm_start_vm.dita"/>
       <topicref href="HCF_adm_using_mgmt_console.dita"/>
+      <topicref href="HCF_adm_adding_orgs.dita"/>
+      <topicref href="HCF_adding_spaces.dita"/>
+      <topicref href="HCF_adm_adding_users.dita"/>
+      <topicref href="HCF_adm_enabling_services.dita"/>
+      <topicref href="HCF_adm_using_HCF.dita"/>
+      <topicref href="HCF_adm_resolving_vm_hostname.dita"/>
+      <topicref href="HCF_adm_updating_winhosts.dita"/>
+      <topicref href="HCF_adm_uninstalling_vm.dita"/>
    </topicref>
 </map>
