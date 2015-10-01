@@ -16,10 +16,21 @@
   <body>
     <p>This topic describes all the known issues that you might encounter:</p>
     <ul id="ul_xzh_nmc_mt">
+      <li><xref href="#topic10581/no-instance" format="dita">Unable to create an instance in the
+          non-KVM region</xref></li>
       <li><xref href="#topic10581/vm" format="dita"/></li>
       <li><xref href="#topic10581/vrs" format="dita"/></li>
       <li><xref href="#topic10581/backup" format="dita"/></li>
     </ul>
+    <section id="no-instance">
+      <title><b>Unable to create an instance in the non-KVM region</b></title>
+      <p>When trying to create a virtual machine instance in the non-KVM region, the user receives a
+          <codeph>No valid host found</codeph> error.  Check that all ESX host machines in the
+        cluster are configured with the ESX compute proxy. If one more more hosts in the cluster
+        configured with the proxy, disconnect the host(s) from the cluster or <xref
+          href="../Installation/carrier-grade-install-esx-proxy.dita#topic10581">install the ESX
+          compute proxy</xref>. <!--CG-1413--></p>
+    </section>
     
     <section  id="vm">
       <title>VM fails to get private/Fixed IP address</title>
