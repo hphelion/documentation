@@ -3,5 +3,5 @@
 <map>
    <title>Reference</title>
    <mapref href="docs.hpcloud.com.HCF_variables.ditamap" format="ditamap"></mapref>
-   <topicref href="HCF_ref_kato_commands.dita" type="reference"/>
+   <topicref href="refs/HCF_kato_commands.dita" type="reference"/>
 </map>

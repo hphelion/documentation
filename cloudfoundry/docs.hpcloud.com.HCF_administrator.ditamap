@@ -3,18 +3,29 @@
 <map xml:lang="en" linking="none" locktitle="no">
    <title>Administrator Guide</title>
    <mapref href="docs.hpcloud.com.HCF_variables.ditamap" format="ditamap"/>
-   <topicref href="HCF_adm_micro_cloud_vm.dita" format="dita">
-      <topicref href="HCF_adm_download_vm.dita"/>
-      <topicref href="HCF_adm_import_vm.dita"/>
-      <topicref href="HCF_adm_start_vm.dita"/>
-      <topicref href="HCF_adm_using_mgmt_console.dita"/>
-      <topicref href="HCF_adm_adding_orgs.dita"/>
-      <topicref href="HCF_adding_spaces.dita"/>
-      <topicref href="HCF_adm_adding_users.dita"/>
-      <topicref href="HCF_adm_enabling_services.dita"/>
-      <topicref href="HCF_adm_using_HCF.dita"/>
-      <topicref href="HCF_adm_resolving_vm_hostname.dita"/>
-      <topicref href="HCF_adm_updating_winhosts.dita"/>
-      <topicref href="HCF_adm_uninstalling_vm.dita"/>
+   <topicref href="admin/micro_cloud_vm/HCF_micro_cloud_vm.dita">
+      <topicref href="admin/micro_cloud_vm/HCF_download_vm.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_import_vm.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_start_vm.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_using_mgmt_console.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_adding_orgs.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_adding_spaces.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_adding_users.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_enabling_services.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_using_HCF.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_resolving_vm_hostname.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_updating_winhosts.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_uninstalling_vm.dita"/>
    </topicref>
+   <topicref>
+      <topicref/>
+      <topicref/>
+      <topicref/>
+      <topicref/>
+      <topicref/>
+   </topicref>
+   <topichead navtitle="VM Setup"></topichead>
+   <topichead navtitle="Server Configuration"></topichead>
+   <topichead navtitle="Cluster Configuration"></topichead>
+   <topichead navtitle="Best Practices"></topichead>
 </map>

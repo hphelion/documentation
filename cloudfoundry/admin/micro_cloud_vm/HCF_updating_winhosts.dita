@@ -30,8 +30,8 @@
 192.168.68.54 logs.stackato-xxxx.local
 192.168.68.54 myapp.stackato-xxxx.local</codeblock>
   <note type="tip">
-   <p>To determine the IP address of the Stackato server, run the <codeph>$ ifconfig</codeph>
-    command.</p>
+   To determine the IP address of the Stackato server, run the <codeph>$ ifconfig</codeph>
+    command.
   </note>
  </conbody>
 </concept>
