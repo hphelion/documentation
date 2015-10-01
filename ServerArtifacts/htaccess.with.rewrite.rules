@@ -7,7 +7,19 @@ Options +FollowSymLinks
 RewriteEngine on
 #
 #
-RewriteRule ^helion/HCSPProgramGuide?$ http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Service_Provider_Agreement_Program_Guide.pdf
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_overview?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/overview.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_dashboard?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/dashboard.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_logging?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/logging.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_alarm_definitions?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/alarm_definitions.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_alarm_explorer?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/alarm_explorer.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_notification_methods?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/notification_methods.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_metric_monitoring?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/metric_monitoring.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_compute_summary?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/compute_summary.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_compute_hosts?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/compute_hosts.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_compute_instances?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/compute_instances.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_networking_summary?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/networking_summary.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_storage_summary?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/storage_summary.html [NE,R=301,L]
+RewriteRule ^helion/HCSPProgramGuide?$ http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Service_Provider_Agreement_Program_Guide.pdf [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/supportedconfigs?$ http://15.126.244.7/hos2.0beta2/#helion/supportedconfigs.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/hardware?$ http://15.126.244.7/hos2.0beta2/#helion/hardware.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/installation_troubleshooting?$ http://15.126.244.7/hos2.0beta2/#helion/installation_troubleshooting.html [NE,R=301,L]
