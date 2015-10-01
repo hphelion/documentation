@@ -89,10 +89,8 @@
 
     <section id="MoreInfo">
       <title>More Information</title>
-      <p>For more information on the neutron command-line interface (CLI) and firewalls, see the
-        OpenStack networking command-line client reference: <xref
-          href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html"
-          scope="external" format="html"/></p>
+      <p>For more information on OpenStack Kilo, see the OpenStack Kilo release page: 
+        <xref href="https://www.openstack.org/software/kilo/" scope="external" format="html"/></p>
     </section>
   </body>
 </topic>
