@@ -25,15 +25,14 @@
 <li>HP Helion <tm tmtype="reg">OpenStack</tm>
           <xref href="../../commercial/GA1/1.1commercial.index.dita">cloud [version 1.1.1]
             deployed</xref>.</li>
-<li>Application Lifecycle Service <xref href="devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
-
-<ul>
-<li>You can also quickly setup a cluster in the free and publicly available Helion cloud as part of
-              the <xref href="devplatform.ALS-developer-trial-quick-start.dita#topic1952" type="section"  >Quick
-                Start Developer Trial</xref>: </li>
-</ul>
-</li>
-<li>Logon and password credentials for the cluster.</li>
+<li>Application Lifecycle Service <xref href="devplatform.deploy-ALS.dita">Cluster</xref> available
+          with MySQL <!--and RabbitMQ -->enabled. <ul>
+            <li>You can also quickly set up a cluster in the free and publicly available Helion
+              cloud as part of the <xref
+                href="devplatform.ALS-developer-trial-quick-start.dita#topic1952" type="section"
+                >Quick Start Developer Trial</xref>: </li>
+          </ul></li>
+<li>Log on and password credentials for the cluster.</li>
 <li>Access to the <xref href="helion/user/client/client_index.dita" >Helion command-line interface (CLI)</xref>
 </li>
 <li>(Optional) Access to the <xref href="devplatform.eclipse.dita" >Eclipse</xref> deployment plugin for JAVA applications.</li>
@@ -54,11 +53,7 @@
             Databases</xref>
           <!--A BR tag was used here in the original source.--> Create a database and execute a
           query against it. </li>
-<li>
-          <xref href="workbook/messaging/messaging.java.dita">Working with
-            Messaging</xref>
-          <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
-          message.</li>
+<li><!-- <xref href="workbook/messaging/messaging.java.dita">Working with Messaging</xref>  Enter, send, and display a brief message.--></li>
 </ol>
 <p>More Helion <xref href="helion/user/deploy/languages/java.dita" >Java</xref> references.</p>
 </section>
@@ -74,11 +69,7 @@
             Databases</xref>
           <!--A BR tag was used here in the original source.--> Create a database and execute a
           query against it.</li>
-<li>
-          <xref href="workbook/messaging/messaging.node.dita">Working with
-            Messaging</xref>
-          <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
-          message.</li>
+<li><!-- <xref href="workbook/messaging/messaging.node.dita">Working with Messaging</xref> Enter, send, and display a brief message.--></li>
 </ol>
 <p>More Helion <xref href="helion/user/deploy/languages/node.dita" >Node</xref> references.</p>
 </section>
@@ -94,35 +85,34 @@
             Databases</xref>
           <!--A BR tag was used here in the original source.--> Create a database and execute a
           query against it.</li>
-<li>
+<!--  <li>
           <xref href="workbook/messaging/messaging.php.dita">Working with
             Messaging</xref>
-          <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
-          message.</li>
+          Enter, send, and display a brief
+          message.</li>-->
 </ol>
 <p>More Helion <xref href="helion/user/deploy/languages/php.dita" >PHP</xref> references.</p>
 </section>
 <section id="other-references"> <title>Other references</title>
 <ul>
-<li>
-<xref href="installation/devplatform_install_marketplace.dita" >Installing the Marketplace</xref>
-</li>
-<li>
-  <xref href="helion/user/reference/client-ref.dita" type="section" >ALS command-line interface (CLI) reference</xref>
-</li>
-<li>
-<xref href="helion/user/helion_user_index.dita" >Application Lifecycle Service (ALS) User's Guide</xref>
-</li>
-<li>
-<xref href="helion/user/deploy/app-debug.dita" >Remote Debugging</xref>
-</li>
-<li>
-<xref href="helion/user/console/console_index.dita" >The Management Console</xref>
-</li>
-<li>
-<xref href="helion/user/deploy/app-logs.dita" >Logs, Streams, and Drains</xref>
-</li>
-</ul>
+        <li>
+          <xref href="helion/user/reference/client-ref.dita" type="section">ALS command-line
+            interface (CLI) reference</xref>
+        </li>
+        <li>
+          <xref href="helion/user/helion_user_index.dita">Application Lifecycle Service (ALS) User's
+            Guide</xref>
+        </li>
+        <li>
+          <xref href="helion/user/deploy/app-debug.dita">Remote Debugging</xref>
+        </li>
+        <li>
+          <xref href="helion/user/console/console_index.dita">The Management Console</xref>
+        </li>
+        <li>
+          <xref href="helion/user/deploy/app-logs.dita">Logs, Streams, and Drains</xref>
+        </li>
+      </ul>
 </section>
 <section id="best-practices"> <title>Best practices</title>
 <ul>
