@@ -22,8 +22,8 @@ git checkout site</codeblock>then change
           previously. Save and commit the change
           <codeblock>git commit -a -m "repaired node X"</codeblock></li> 
   <li>Run the configuration processor as follows:
-    <codeblock>cd ~/helion/hos/ansible
-          ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 </ol>
       
       <b>Image the new node</b>
