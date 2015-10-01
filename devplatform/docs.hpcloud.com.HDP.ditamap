@@ -344,7 +344,11 @@
       <topichead navtitle="Administrator Reference">
         <topicref href="2.0/windows/windows_building_and_deploying.dita" locktitle="yes"
           navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
+<<<<<<< HEAD
         <topicref href="2.0/windows/windows_password.dita"
+=======
+        <topicref href="1.3/windows/windows_password.dita"
+>>>>>>> 50f302f... Moving Add Services under Developer rather than Ops
           navtitle="Retrieving the Admin Password for Windows Instances" locktitle="yes"/>
         <topicref href="2.0/windows/windows_remoting.dita" navtitle="Remote Desktop Access"
           locktitle="yes"/>
@@ -354,9 +358,15 @@
       <topichead navtitle="Developer Reference">
         <topicref href="2.0/windows/windows_firstapp.dita" locktitle="yes"
           navtitle="Deploying your first .NET Application"/>
+<<<<<<< HEAD
         <topicref href="2.0/windows/windows_adding_services.dita" locktitle="yes"
           navtitle="Adding Services to Windows Applications"/>
         <topicref href="2.0/windows/windows_tools_guide.dita" locktitle="yes"
+=======
+        <topicref href="1.3/windows/windows_adding_services.dita" locktitle="yes"
+          navtitle="Adding Services to Windows Applications"/>
+        <topicref href="1.3/windows/windows_tools_guide.dita" locktitle="yes"
+>>>>>>> 50f302f... Moving Add Services under Developer rather than Ops
           navtitle="Windows and .NET Applications Tools Guide"/>
         <topicref href="2.0/windows/windows_wcf.dita" navtitle=" Deploying a WCF service"
           locktitle="yes"/>
