@@ -783,7 +783,6 @@ RewriteRule ^helion/commercial/1.1/services/kibana/?$	/#commercial/GA1/1.1commer
 RewriteRule ^helion/commercial/1.1/services/icinga/?$	/#commercial/GA1/1.1commercial.services-icinga.html [NE,R=301,L]
 RewriteRule ^eucalyptus/masterservice/?$	/#euca/euca-eula.html [NE,R=301,L]
 RewriteRule ^eucalyptus/3rd-party-license-agreements/?$	/#euca/euca.thirdparty.licensing.html [NE,R=301,L]
-RewriteRule ^eucalyptus/?$  /eucalyptus/4.1.2/ [NE,R=301,L]
 RewriteRule ^content/documentation/commercial/GA1/RollYourOwn10/index.html	/#commercial/GA1/RollYourOwn10/roll_your_own.html [NE,R=301,L]
 RewriteRule ^content/documentation/commercial/GA1/ServicesFlow/index.html	/#commercial/GA1/ServicesFlow/under_the_hood.html [NE,R=301,L]
 RewriteRule ^content/documentation/commercial/GA1/RollYourOwn11/index.html	/#commercial/GA1/RollYourOwn11/roll_your_own.html [NE,R=301,L]
