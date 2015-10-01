@@ -17,11 +17,11 @@
       <title>Minimum Hardware Requirements</title>
       <table>
         <tgroup cols="5">
-          <colspec colname="c1" colnum="1" colwidth="1.17*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.42*"/>
-          <colspec colname="c2" colnum="3" colwidth="1*"/>
-          <colspec colname="c2" colnum="4" colwidth="1.23*"/>
-          <colspec colname="c2" colnum="5" colwidth="1.23*"/>
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <colspec colname="c2" colnum="3"/>
+          <colspec colname="c2" colnum="4"/>
+          <colspec colname="c2" colnum="5"/>
           <thead>
             <row>
               <entry>Node Type</entry>
