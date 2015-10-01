@@ -7,13 +7,13 @@
       few things to remember. For control plane nodes, right now you need to maintain three.
       Therefore you will not remove a control plane node comletely; you will just replace it. If you
       are swapping out the hardware for that control plane node, and the same is true for compute
-      nodes, the process is to keep the entry you have in <b>servers.yml</b> and
+      nodes, the process is to keep the entry you have in the <b>servers.yml</b> and
         <b>baremetalConfig.yml</b> files but change harware-specific iinformation, such the MAC
-      addresses, IMPI username, IPMI IP address (if changed) ad IPMI pasword.</p>
-     <p> To add compute nodes, which can total up to 99 at this point, the process is to add entries
-      to the <b>servers.yml</b> and <b>baremetalConfig.yml</b> files.</p>
-    <p>To remove compute nodes, you will remove their entries in <b>servers.yml</b> after you disabe
-      provisioning, migrate any running instances, and stop the Nova compute service</p>
+      addresses, IMPI username, IPMI IP address (if changed) and IPMI pasword.</p>
+     <p> To add compute nodes, which can total up to 100 at this point, the process is to add
+      entries to the <b>servers.yml</b> and <b>baremetalConfig.yml</b> files.</p>
+    <p>To remove compute nodes, you will remove their entries in <b>servers.yml</b> after you
+      disable provisioning, migrate any running instances, and stop the Nova compute service.</p>
     <p>Instructions for storage node scale out, repair, and removal are found in the respective
       storage sections:</p>
     <ul>
@@ -33,7 +33,8 @@
           Node</xref></li>
       <li><xref href="../operations/repair_node.dita#topic_gcv_r4y_lt">Repairing a Compute
           Node</xref></li>
-      <li>Repairing a Controller Node</li>
+      <li><xref href="replace_controller.dita#topic_ijj_45j_nt">Repairing a Controller
+        Node</xref></li>
     </ul>
   </body>
 </topic>
