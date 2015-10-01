@@ -844,3 +844,4 @@ RewriteRule ^als/v1/admin/best-practices/logging-examples/?$	/#devplatform/helio
 RewriteRule ^als/v1/admin/best-practices/?$	/#devplatform/helion/admin/best-practices/1.0index.html [NE,R=301,L]
 RewriteRule ^als/v1/admin/?$	/#devplatform/helion/admin/1.0index.html [NE,R=301,L]
 RewriteRule ^als/v1/?$	/#devplatform/helion/1.0index.html [NE,R=301,L]
+RewriteRule ^eucalyptus?$	/eucalyptus/4.2 [NE,R=301,L]
