@@ -36,7 +36,9 @@
           <li>Edit the configuration files, based on your environment, to deploy Ceph. </li>
           <li>Edit the file <codeph>disks_osd.yml</codeph> and enter the details for the additional
             disks meant for OSD data and journal
-            filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock></li>
+              filesystems.<codeblock>vi <codeph>disks_osd.yml</codeph></codeblock><note>Ensure that
+              disks designated to be used for the OSD data and journal storage must be in a clean
+              state (i.e. any existing partitions must be deleted).</note></li>
           <li>Editable parameters for Ceph are available in the following locations:<ul
               id="ul_jbn_nj5_kt">
               <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph><p>In the
