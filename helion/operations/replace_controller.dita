@@ -8,8 +8,9 @@
         adding and removing nodes are not options. However, if you need to repair or replace a
         controller node, you may do so by following the steps outlined here.</p>
       <note>Do not add entries for a new server; instead, just update the entries for the broken
-        one. Also note that <p>if you are replacing your first control plane node (node 1) and it’s
-          also running the deployer, that process is different. </p></note>
+        one. Also note that <p>if you are replacing a control plane node that also happens to be
+          running the deployer, that process is different. You’ll need to restore you deployer data
+          first. </p></note>
       <b>Update your model with replacement server information</b>
       <ol>
         <li> Update your cloud model (<b>servers.yml </b>and <b>baremtal.yml</b>) with new MAC
@@ -30,7 +31,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <ol>
         <li>Log onto the node that is running the deployer. Remove the broken control plane node
           from cobbler by running sudo cobbler system remove --name &lt;server-id>. Here's an
-          example:<codeblock> sudo cobbler system remove --name ccn-0001</codeblock>
+          example:<codeblock> sudo cobbler system remove --name ccp-0001</codeblock>
         </li>
         <li> Re-run the cobbler deploy playbook to re-add the removed node
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
@@ -38,7 +39,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
         </li>
         <li> Re-image the new nodes by running <b>bm-reimage.yml</b>: ansible-playbook -i
           hosts/localhost bm-reimage.yml -e nodelist=&lt;node-name>. Here's an
-          example:<codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=ccn-0001</codeblock>
+          example:<codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=ccp-0001</codeblock>
         </li>
         <li> Re-deploy the services on the node using ansible-playbook -i hosts/verb_hosts site.yml
           -e rebuild=True --limit=&lt;node_name>. Here's an example:
