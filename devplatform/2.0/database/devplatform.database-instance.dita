@@ -13,9 +13,11 @@
   <li><xref href="devplatform.database-create-cluster-horizon.dita" format="dita">Create a database cluster from Horizon</xref></li>
   <li><xref href="devplatform.database-create-cluster-cli.dita" format="dita">Create a database cluster from the command line</xref></li>
   <li><xref href="devplatform.database-monitor.dita" format="dita">Monitor a database from the Operations Console</xref></li>
-  <li><xref href="devplatform.database-backup.dita" format="dita">Create a database backup</xref></li>
-  <li><xref href="devplatform.database-replicate.dita" format="dita">Replicate a database</xref></li>
   <li><xref href="devplatform.database-attach-ip.dita" format="dita">Attach a Floating IP</xref></li>
+  <li><xref href="devplatform.database-replicate.dita" format="dita">Replicate a database</xref></li>
+  <li><xref href="devplatform.database-backup.dita" format="dita">Create a database backup</xref></li>
+  <li><xref href="devplatform.database-ALS.dita" format="dita">Connect the Database Service with the Application Lifecycle Service</xref></li>
+  
   
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
