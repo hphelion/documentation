@@ -239,9 +239,6 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
       <li>Supermicro SYS-1028U-TNRTP+</li>
     </ul>
     </section>
-    <section>
-      <p>The following input/output (I/O) cards are supported:</p>
-    </section>
     <section id="storage-devices"><title>Storage Systems</title>
     </section>
     <section id="emc-storage"><title>EMC Storage Devices</title>
@@ -468,20 +465,20 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
           </thead>
           <tbody>
             <row>
-              <entry morerows="3"> Seed Cloud Host </entry>
+              <entry morerows="3">Seed Cloud Host</entry>
               <entry morerows="3">N/A</entry>
               <entry morerows="3">1</entry>
               <entry>Disk </entry>
-              <entry> 1TB - This host will store the downloaded images as well as act as a host
+              <entry>1TB - This host will store the downloaded images as well as act as a host
                 where backup data is preserved.</entry>
             </row>
             <row>
-              <entry> Memory </entry>
+              <entry>Memory</entry>
               <entry>16GB</entry>
             </row>
             <row>
-              <entry>Network </entry>
-              <entry> 1 x 10Gb NIC</entry>
+              <entry>Network</entry>
+              <entry>1 x 10Gb NIC</entry>
             </row>
             <row>
               <entry>CPU </entry>
