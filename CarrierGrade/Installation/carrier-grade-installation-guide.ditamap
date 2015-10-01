@@ -63,8 +63,6 @@
         </topicref>
         <topicref href="carrier-grade-install-launch-horizon.dita"
             navtitle="Launching the Horizon Interface" locktitle="yes"/>
-        <topicref href="carrier-grade-install-config-dcn.dita"
-            navtitle="Configuring the DCN Components" locktitle="yes"/>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita" navtitle="Deploying the KVM Region"
             locktitle="yes">
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
@@ -78,4 +76,6 @@
             <topicref href="carrier-grade-install-ldap-verify.dita"
                 navtitle="Verifying the LDAP Deployment" locktitle="yes" toc="yes"/>
         </topicref>
+        <topicref href="carrier-grade-install-config-dcn.dita"
+            navtitle="Configuring Your Cloud with DCN VSD" locktitle="yes"/>
     </topicref></map>

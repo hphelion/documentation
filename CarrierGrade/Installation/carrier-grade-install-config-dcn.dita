@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Configuring the DCN
-    Components</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Configuring Your Cloud
+    with DCN VSD</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -16,13 +16,16 @@
   </prolog>
   <body>
     <p>After <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">the HP Helion OpenStack
-        cloud  is installed</xref> in the <xref
-        href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM + ESX
-        deployment</xref>, you must perform the following tasks to integrate the HP Helion OpenStack
-      Carrier Grade and HP Distributed Cloud Networking (DCN) environments. </p>
+        cloud is installed</xref>, you must perform the following tasks to prepare your cloud for
+      use. These tasks use CLI commands, the HP Helion OpenStack Carrier Grade Horizon interface,
+      and the HP Virtualized Services Directory Architect (VSD Architect) interface.  </p>
     <p><b>Note:</b> If you are deploying the <xref
         href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM
-      deployment</xref>, you do not need to perform these tasks. </p>  
+      deployment</xref>, you do not need to perform these tasks. </p>
+    <p>The following diagram illustrates the general workflow of the post-installation
+      configuration.</p>
+    <p><image href="../../media/CGH-install-post-workflow.png" width="600" id="image_bgh_tlq_nt"
+      /></p>  
     <section>
       <title>Verify the VSC VMs</title>
       <p>The installation process creates virtual machines for VSC. Use the following steps to
