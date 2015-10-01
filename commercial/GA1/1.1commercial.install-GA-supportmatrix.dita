@@ -229,8 +229,15 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
         <li>PowerEdge R520</li>
       </ul>
     </section>
-    <section>
-      <p>The following input/output (I/O) cards are supported:</p>
+    <section><title>Lenovo Systems</title>
+    <ul>
+      <li>Lenovo ThinkServer RD650</li>
+    </ul>
+    </section>
+    <section><title>Supermicro Systems</title>
+    <ul>
+      <li>Supermicro SYS-1028U-TNRTP+</li>
+    </ul>
     </section>
     <section id="storage-devices"><title>Storage Systems</title>
     </section>
@@ -277,6 +284,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
         <li>HP NC552SFP 10Gb 2-port Ethernet Server Adapter</li>
         <li>HP Ethernet 10Gb 2-port 560SFP+ Adapter </li>
         <li>IBM: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)</li>
+        <li>Intel Corporation 82599ES 10-Gigabit SFI/SFP+ Network Connection</li>
         <li>Intel Corporation 82599ES X520 10-Gigabit SFI/SFP+ Network Connection</li>
         <li>Intel Corporation Ethernet 10G 2P X520 Adapter (rev 01)</li>
         <li>Intel Corporation i350 Gigabit Network Connection</li>
@@ -308,6 +316,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
         <li>Intel Corporation C600/X79 series chipset 6-Port SATA AHCI Controller</li>
         <li>Intel Corporation Wellsburg 6-Port SATA Controller [AHCI mode]</li>
         <li>Intel Corporation Wellsburg sSATA Controller [AHCI mode]</li>
+        <li>Lenovo ThinkServer RAID 720ix AnyRAID Adapter</li>
         <li>LSI Logic / Symbios Logic MegaRAID SAS 2208 [Thunderbolt]</li>
         <li>LSI Logic / Symbios Logic MegaRAID SAS-3 3108 [Invader]</li>
       </ul>
@@ -456,20 +465,20 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
           </thead>
           <tbody>
             <row>
-              <entry morerows="3"> Seed Cloud Host </entry>
+              <entry morerows="3">Seed Cloud Host</entry>
               <entry morerows="3">N/A</entry>
               <entry morerows="3">1</entry>
               <entry>Disk </entry>
-              <entry> 1TB - This host will store the downloaded images as well as act as a host
+              <entry>1TB - This host will store the downloaded images as well as act as a host
                 where backup data is preserved.</entry>
             </row>
             <row>
-              <entry> Memory </entry>
+              <entry>Memory</entry>
               <entry>16GB</entry>
             </row>
             <row>
-              <entry>Network </entry>
-              <entry> 1 x 10Gb NIC</entry>
+              <entry>Network</entry>
+              <entry>1 x 10Gb NIC</entry>
             </row>
             <row>
               <entry>CPU </entry>
