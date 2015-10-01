@@ -32,6 +32,11 @@
               called <b>MyMongoDatabase</b>, and a user called Admin with password <b>password</b>:
               <codeblock>trove create MyMongoDBInstance 4 --datastore mongodb --size 5 --databases MyMongoDatabase --users admin:password</codeblock></dd>
           </dlentry>
+          <dlentry>
+            <dt>Example 3: Create a Redis instance</dt>
+            <dd>The following command creates a single or clustered Redis instance called <b>MyRedisInstance</b> with flavor <b>m1.small</b>, allocating 1 GB of space.
+            <codeblock>trove create MyRedisInstance 2 --datastore redis --size 1</codeblock></dd>
+          </dlentry>
         </dl>
       </li>
     </ol>

@@ -4,6 +4,7 @@
   <title>Attaching a floating IP to a database instance</title>
   <body>
     <p>It is possible to attach a floating IP address to a database instance - this will make it possible to access your instance from outside of your cloud environment.</p>
+    
     <p>To create a database with a floating IP address follow these steps from the command line. Note the following instructions require that you use the Trove CLI to create a database instance.</p>
     <p>For more information on using the Trove CLI, refer to the <xref type="section" href="#DatabaseService/more">More Resources</xref> section at the end of this guide.</p>
     <ol>
