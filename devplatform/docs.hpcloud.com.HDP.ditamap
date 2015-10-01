@@ -7,40 +7,20 @@
     navtitle="HP Helion Development Platform 2.0" locktitle="yes">
     
     <!--root level-->
-    <topicref href="2.0/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
-    <topicref href="2.0/devplatform.release-notes.dita" locktitle="yes"
-      navtitle="Release Notes"/>
-    <topicref href="2.0/devplatform.thirdparty.licensing.dita" navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
-    <topicref href="2.0/devplatform.eula.dita" navtitle="Software License Terms" locktitle="yes"/>
+    <!--<topicref href="2.0/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>-->
+    <!--<topicref href="2.0/devplatform.release-notes.dita" locktitle="yes" navtitle="Release Notes"/>-->
+    <!--<topicref href="2.0/devplatform.thirdparty.licensing.dita" navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>-->
+    <!--<topicref href="2.0/devplatform.eula.dita" navtitle="Software License Terms" locktitle="yes"/>-->
     
     
     
     <!--quick start-->
-    <topichead navtitle="Developer Quick Start Trial Guide">
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start.dita"
-        navtitle="Quick Start Step 1: Register" locktitle="yes"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start2.dita"
-        navtitle="Quick Start Step 2: Download Tools" locktitle="yes"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start3.dita"
-        navtitle="Quick Start Step 3: Create Sandbox" locktitle="yes"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start4.dita"
-        navtitle="Quick Start Step 4: Create Cluster" locktitle="yes"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start5.dita"
-        locktitle="yes" navtitle="Quick Start Step 5: Windows (optional)"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start6.dita"
-        locktitle="yes" navtitle="Quick Start Step 6: Explore More"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start-termination.dita"
-        locktitle="yes" navtitle="Quick Start Termination"/>
-      <topicref
-        href="2.0/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
-        locktitle="yes" navtitle="Quick Start Troubleshooting"/>
-    </topichead>
+    <!--<topichead navtitle="Developer Quick Start Trial Guide"><topicref href="2.0/devplatform.ALS-developer-trial-quick-start.dita" navtitle="Quick Start Step 1: Register" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start2.dita" navtitle="Quick Start Step 2: Download Tools" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start3.dita" navtitle="Quick Start Step 3: Create Sandbox" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start4.dita" navtitle="Quick Start Step 4: Create Cluster" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start5.dita" locktitle="yes" navtitle="Quick Start Step 5: Windows (optional)"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start6.dita" locktitle="yes" navtitle="Quick Start Step 6: Explore More"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start-termination.dita" locktitle="yes" navtitle="Quick Start Termination"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita" locktitle="yes" navtitle="Quick Start Troubleshooting"/></topichead>-->
     
     
     <!--installation-->
     <topichead navtitle="Installation">
-      <topicref href="2.0/installation/devplatform_commercial_install.dita"
-        navtitle="Full Platform Installation - All Services" locktitle="yes"></topicref>
+      <!--<topicref href="2.0/installation/devplatform_commercial_install.dita" navtitle="Full Platform Installation - All Services" locktitle="yes"/>-->
       <topichead navtitle="Individual Service Installation">
         <topicref href="2.0/installation/devplatform_install_prereq.dita"
           navtitle="Installation Prerequisites" locktitle="yes"/>
@@ -52,14 +32,9 @@
           navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
         <topicref href="2.0/installation/devplatform_install_database.dita"
           navtitle="Install the Database Service" locktitle="yes"/>
-        <topicref href="2.0/installation/devplatform_install_messaging.dita"
-          navtitle="Install the Messaging Service" locktitle="yes"/>
-        <topicref href="2.0/installation/devplatform_install_marketplace.dita"
-          navtitle="Install the Marketplace Service" locktitle="yes"/>
-        <topicref href="2.0/installation/devplatform.vertica.install.dita"
-          navtitle="Install the Vertica Application" locktitle="yes"/>
-        <topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service"
-          locktitle="yes"/>
+        <!--<topicref href="2.0/installation/devplatform_install_messaging.dita" navtitle="Install the Messaging Service" locktitle="yes"/>-->
+        <!--<topicref href="2.0/installation/devplatform.vertica.install.dita" navtitle="Install the Vertica Application" locktitle="yes"/>-->
+        <!--<topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service" locktitle="yes"/>-->
       </topichead>
       <topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita"
         navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>
@@ -211,37 +186,7 @@
     </topichead>
     <topicref href="2.0/devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers ">
-      
-        <topicref href="2.0/CICD/cicd_overview.dita" navtitle="Continuous Integration and Deployment" locktitle="yes">
-        <topicref href="2.0/CICD/cicd_walkthrough.dita"
-          navtitle="Create an Automated Build-Test-Deploy Cycle" locktitle="yes"/>
-        <topicref href="2.0/CICD/cicd_installation.dita"/>
-          <topicref href="2.0/CICD/cicd_initial_configuration.dita"/>
-          <topicref href="2.0/CICD/cicd_troubleshooting.dita"/>
-          <topicref href="2.0/CICD/cicd_users_guide.dita" navtitle="User's Guide" locktitle="yes">
-          <topicref href="2.0/CICD/cicd_environment_create.dita" navtitle="Create a New Environment"
-            locktitle="yes"/>
-          <topicref href="2.0/CICD/cicd_edit_environment.dita"
-            navtitle="Change an Existing Environment" locktitle="yes"/>
-          <topicref href="2.0/CICD/cicd_create_project.dita" navtitle="Create a New Project"
-            locktitle="yes">
-            <topicref href="2.0/CICD/cicd_hipchat_data.dita"
-              navtitle="Where to Find HipChat Notification Data" locktitle="yes"/>
-          </topicref>
-          <topicref href="2.0/CICD/cicd_edit_project.dita" navtitle="Change an Existing Project"
-            locktitle="yes">
-            <topicref href="2.0/CICD/cicd_project_delete.dita" navtitle="Delete a Project"
-              locktitle="yes"/>
-            <topicref href="2.0/CICD/cicd_project_invite.dita" navtitle="Invite Users to a Project"
-              locktitle="yes"/>
-            <topicref href="2.0/CICD/cicd_create_postdeploy.dita"
-              navtitle="Add or Edit Post Deployment Actions" locktitle="yes"/>
-          </topicref>
-          <topicref href="2.0/CICD/cicd_create_build.dita" navtitle="Create a New Build"
-            locktitle="yes"/>
-          <topicref href="2.0/CICD/cicd_preview_tempdeploy.dita"
-            navtitle="Create a Temporary Deployment" locktitle="yes"/>
-        </topicref></topicref>
+      <!--<topicref href="2.0/CICD/cicd_overview.dita" navtitle="Continuous Integration and Deployment" locktitle="yes"><topicref href="2.0/CICD/cicd_walkthrough.dita" navtitle="Create an Automated Build-Test-Deploy Cycle" locktitle="yes"/><topicref href="2.0/CICD/cicd_installation.dita"/><topicref href="2.0/CICD/cicd_initial_configuration.dita"/><topicref href="2.0/CICD/cicd_troubleshooting.dita"/><topicref href="2.0/CICD/cicd_users_guide.dita" navtitle="User's Guide" locktitle="yes"><topicref href="2.0/CICD/cicd_environment_create.dita" navtitle="Create a New Environment" locktitle="yes"/><topicref href="2.0/CICD/cicd_edit_environment.dita" navtitle="Change an Existing Environment" locktitle="yes"/><topicref href="2.0/CICD/cicd_create_project.dita" navtitle="Create a New Project" locktitle="yes"><topicref href="2.0/CICD/cicd_hipchat_data.dita" navtitle="Where to Find HipChat Notification Data" locktitle="yes"/></topicref><topicref href="2.0/CICD/cicd_edit_project.dita" navtitle="Change an Existing Project" locktitle="yes"><topicref href="2.0/CICD/cicd_project_delete.dita" navtitle="Delete a Project" locktitle="yes"/><topicref href="2.0/CICD/cicd_project_invite.dita" navtitle="Invite Users to a Project" locktitle="yes"/><topicref href="2.0/CICD/cicd_create_postdeploy.dita" navtitle="Add or Edit Post Deployment Actions" locktitle="yes"/></topicref><topicref href="2.0/CICD/cicd_create_build.dita" navtitle="Create a New Build" locktitle="yes"/><topicref href="2.0/CICD/cicd_preview_tempdeploy.dita" navtitle="Create a Temporary Deployment" locktitle="yes"/></topicref></topicref>-->
       
       <topicref href="2.0/helion/user/deploy/deploy_index.dita" locktitle="yes"
         navtitle="General Deployment">
@@ -259,10 +204,14 @@
           navtitle="Organizations and Spaces"/>
               </topicref>
       <topichead navtitle="Language Specific Application Deployment">
-        <topicref href="2.0/helion/user/deploy/docker_firstapp.dita"
-          navtitle="Creating and Deploying Your First Docker App" locktitle="yes"/>
-        <topicref href="2.0/helion/user/deploy/languages/docker_apps.dita" navtitle="Docker Apps" locktitle="yes"/>
-        <topicref href="2.0/helion/user/deploy/container_enable_deployment.dita" toc="no" />
+        <topichead navtitle="Docker">
+          <topicref href="2.0/helion/user/deploy/docker_firstapp.dita"
+            navtitle="Creating and Deploying Your First Docker App" locktitle="yes"/>
+          <topicref href="2.0/helion/user/deploy/languages/docker_apps.dita" navtitle="Docker Apps"
+            locktitle="yes"/>
+          <topicref href="2.0/helion/user/deploy/container_enable_deployment.dita" toc="no"
+            navtitle="Enable Container Deployment" locktitle="yes"/>
+        </topichead>
         
         <topicref href="2.0/helion/user/deploy/languages/clojure.dita" locktitle="yes"  navtitle="Clojure"/>
          
@@ -302,7 +251,7 @@
         <topicref href="2.0/helion/user/deploy/languages/ruby.dita" locktitle="yes"
           navtitle="Ruby"/>
       </topichead>
-      <topicref href="2.0/messaging/cue_dev_overview.dita" navtitle="Messaging" locktitle="yes"/>
+      <!--<topicref href="2.0/messaging/cue_dev_overview.dita" navtitle="Messaging" locktitle="yes"/>-->
       <topicref href="2.0/helion/user/reference/environment.dita" locktitle="yes"
         navtitle="Environment Variables "/>
     
@@ -315,24 +264,21 @@
           navtitle="Java Hello World Sample"/>
         <topicref href="2.0/workbook/database/database.java.dita" locktitle="yes"
           navtitle="Java MySQL Database Sample"/>
-        <topicref href="2.0/workbook/messaging/messaging.java.dita" locktitle="yes"
-          navtitle="Java RabbitMQ Messaging Sample"/>
+        <!--<topicref href="2.0/workbook/messaging/messaging.java.dita" locktitle="yes" navtitle="Java RabbitMQ Messaging Sample"/>-->
       </topichead>
       <topichead navtitle="Node Code Samples">
         <topicref href="2.0/workbook/helloworld/helloworld.node.dita" locktitle="yes"
           navtitle="Node Hello World Sample"/>
         <topicref href="2.0/workbook/database/database.node.dita" locktitle="yes"
           navtitle="Node MySQL Database Sample"/>
-        <topicref href="2.0/workbook/messaging/messaging.node.dita" locktitle="yes"
-          navtitle="Node RabbitMQ Messaging Sample"/>
+        <!--<topicref href="2.0/workbook/messaging/messaging.node.dita" locktitle="yes" navtitle="Node RabbitMQ Messaging Sample"/>-->
       </topichead>
       <topichead navtitle="PHP Code Samples">
         <topicref href="2.0/workbook/helloworld/helloworld.php.dita" locktitle="yes"
           navtitle="PHP Hello World Sample "/>
         <topicref href="2.0/workbook/database/database.php.dita" locktitle="yes"
           navtitle="PHP MySQL Database Sample"/>
-        <topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes"
-          navtitle="PHP RabbitMQ Messaging Sample"/>
+        <!--<topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes" navtitle="PHP RabbitMQ Messaging Sample"/>-->
       </topichead>
 
     </topicref>
@@ -398,25 +344,7 @@
           <topicref href="2.0/helion/CLI/devplatform_downloadRCFile.dita" toc="no"/>
         </topicref>
       </topichead>
-      <topicref href="2.0/messaging/cue_ops_overview.dita" navtitle="Messaging Service"
-        locktitle="yes">
-        <topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita" locktitle="yes"
-          navtitle="Using the RabbitMQ Messaging Service"/>
-        <topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita"
-          locktitle="yes" navtitle="Using the Messaging Service with ALS"/>
-        <topicref href="2.0/messaging/cue_dev_createCluster.dita"
-          navtitle="Create a Cluster from the Command Line" locktitle="yes"/>
-        <topicref href="2.0/messaging/cue_ops_manageCluster.dita"
-          navtitle="Manage a Cluster from the Command Line" locktitle="yes"/>
-        <topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service"
-          locktitle="yes"/>
-        <topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita"
-          navtitle="Cue Reference Architecture" locktitle="yes"/>
-        <topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices"
-          locktitle="yes"/>
-        <topicref href="2.0/messaging/cue_ops_monitoring.dita" navtitle="Monitoring Cue"
-          locktitle="yes"/>
-      </topicref>
+      <!--<topicref href="2.0/messaging/cue_ops_overview.dita" navtitle="Messaging Service" locktitle="yes"><topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita" locktitle="yes" navtitle="Using the RabbitMQ Messaging Service"/><topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita" locktitle="yes" navtitle="Using the Messaging Service with ALS"/><topicref href="2.0/messaging/cue_dev_createCluster.dita" navtitle="Create a Cluster from the Command Line" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_manageCluster.dita" navtitle="Manage a Cluster from the Command Line" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita" navtitle="Cue Reference Architecture" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_monitoring.dita" navtitle="Monitoring Cue" locktitle="yes"/></topicref>-->
       <topichead navtitle="Database Service">
         <topichead navtitle="ALS Management Console">
           <topicref href="2.0/helion/admin/console/console_intro.dita"
@@ -517,13 +445,6 @@
       </topichead>
     </topicref>
   </topicref>
-  <!-- shim files, remove when publishing-->
- <topicref href="../commercial/GA1/1.1.13rd-party-license-agreements.dita" toc="no"></topicref>
- <topicref href="../commercial/GA1/1.1commercial-vsa-overview.dita" toc="no"></topicref>
-  <topicref href="../commercial/GA1/1.1commercial.index.dita" toc="no"></topicref>
-  <topicref href="../commercial/GA1/1.1commercial.install-3par.dita" toc="no"></topicref>
-  <topicref href="../commercial/GA1/1.1commercial.install-GA-overview.dita" toc="no"></topicref>
-  <topicref href="../commercial/GA1/1.1commerical.services-identity-overview.dita" toc="no"></topicref>
-  <topicref href="../publiccloud/api.dita" toc="no"></topicref>
+  <!-- -->
  </map>
 
