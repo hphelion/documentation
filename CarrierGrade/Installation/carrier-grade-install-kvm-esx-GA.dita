@@ -558,11 +558,40 @@ debug=false</codeblock></li>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
       <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
-        v2 authorization. The services need to be modified to use Keystone v3.  Users will not be
+        v2 authorization. The services need to be modified to use Keystone v3. Users will not be
         able to execute OpenStack CLI commands until the specific changes are made on all three
         controller nodes in the non-KVM region. </p>
-      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
+      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581"
+          >Configuring LDAP CLI Support</xref></p>
     </section>
+    <section>
+      <title>Verify the VSC VMs</title>
+      <p>The installation process creates virtual machines for VSC. Use the following steps to
+        verify that the VSC VMs are installed and are operational:</p>
+      <ol id="ol_fkv_xjj_1t">
+        <li>SSH to your VSC VM from HLM Host using the DCM IP. The default username and password:
+            <codeph>admin/admin</codeph><p>
+            <codeblock>ssh cghelion@&lt;CLM IP of DCN Host&gt;</codeblock>
+          </p></li>
+        <li>Execute the following command: <codeblock>admin display-config</codeblock></li>
+        <li>Execute the following commands to verify the VMs are active:
+          <codeblock>show vswitch-controller vsd
+show vswitch-controller xmpp-server
+ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
+      </ol>
+    </section>
+    <section><title>Verify the VRS-G Node</title> The installation creates a VRS-G node as part of
+      the cloud deployment. Use the following command to verify that the VRS-G is active:
+        <codeblock>show vswitch-controller vswitches  </codeblock><p>The output for the command
+        should appear similar to the following image:</p>
+      <image href="../../media/CGH-2-verify-vrsg-alpha.png" width="400" id="image_ip4_jnq_nt"/>
+      <!-- <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/> -->
+      <p>Verify that the domain name and DNS server are listed in the
+          <codeph>/etc/resolv.conf</codeph> file on all the cloud
+        nodes,.</p><codeblock>cat etc/resolv.conf          </codeblock><image
+        href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
+        <alt>Verify VRS-G </alt>
+      </image></section>
     <section id="kibana"><title>Launch the Kibana interface</title> 
       <p>To launch Kibana, see <xref href="carrier-grade-install-access-kibana.dita#topic10581"
         >Accessing Kibana</xref>.</p>
