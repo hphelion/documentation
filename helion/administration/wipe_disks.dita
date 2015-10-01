@@ -4,7 +4,18 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Wiping the Disks</title>
   <body>
     <section id="about">
-      <p>You may have a need to wipe the disks of one or more of the nodes in your Cloud.  There is an Ansible playbook included as part of the installation that will assist in this tasks.</p>
+      <p>You may have a need to wipe the disks of one or more of the nodes in your Cloud. There is
+        an Ansible playbook included as part of the installation that will assist in this tasks.</p>
+    </section>
+    <section id="prereq"><title>Pre-requisites</title>
+      <p>If you're wanting to wipe your disks but you've previously run through a Helion OpenStack
+        installation, chances are you will get an error telling you that <codeph>osconfig</codeph>
+        has already run on your nodes. In order to successfully use the
+          <codeph>wipe_disks.yml</codeph> playbook below you will need to SSH to each of the nodes
+        you want to wipe and remove the <codeph>/etc/hos/osconfig-ran</codeph> file with this
+        command:</p>
+      <codeblock>sudo rm /etc/hos/osconfig-ran</codeblock>
+      <p>That will clear this flag and all the disk to be wiped.</p>
     </section>
     <section id="playbook"><title>Run the Playbook</title>
       <p>This playbook will wipe the disks of the nodes that you specify:</p>
