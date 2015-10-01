@@ -53,7 +53,7 @@ ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
       </p>
     </section>
     <section>
-      <title>Creating a StoreVirtual Cluster and adding it to a new Management GroupCluster using
+      <title>Creating a StoreVirtual Cluster and adding it to a new Management Group Cluster using
         CMC</title>
       <!--<p><note type="important"><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Ensure that CMC is installed successfully and HP StoreVirtual VSA (one or more) is deployed in the same management network where CMC is installed.<?oxy_custom_end?></note></p>-->
       <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
