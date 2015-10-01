@@ -4,7 +4,7 @@
   <title>Replacing a Controller Node</title>
   <body>
     <section>
-      <p>For Hp Helion OpenStack 2.0 versions, you must have three controller nodes. Therefore,
+      <p>For HP Helion OpenStack 2.0 versions, you must have three controller nodes. Therefore,
         adding and removing nodes are not options. However, if you need to repair or replace a
         controller node, you may do so by following the steps outlined here.</p>
       <note>Do not add entries for a new server; instead, just update the entries for the broken
