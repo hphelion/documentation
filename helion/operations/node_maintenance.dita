@@ -5,10 +5,10 @@
   <body>
     <p> If you are planning to scale up, have a failed server, or need to remove a node, there are a
       few things to remember. For control plane nodes, right now you need to maintain three.
-      Therefore you will not remove a control plane node comletely; you will just replace it. If you
+      Therefore you will not remove a control plane node completely; you will just replace it. If you
       are swapping out the hardware for that control plane node, and the same is true for compute
       nodes, the process is to keep the entry you have in the <b>servers.yml</b> and
-        <b>baremetalConfig.yml</b> files but change harware-specific iinformation, such the MAC
+        <b>baremetalConfig.yml</b> files but change hardware-specific iinformation, such the MAC
       addresses, IMPI username, IPMI IP address (if changed) and IPMI pasword.</p>
      <p> To add compute nodes, which can total up to 100 at this point, the process is to add
       entries to the <b>servers.yml</b> and <b>baremetalConfig.yml</b> files.</p>
