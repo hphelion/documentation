@@ -3,22 +3,15 @@
  
 <map xml:lang="en" linking="none" locktitle="no">
 <title>HP Helion Development Platform</title>
-  <topicref href="2.0/devplatform.index.dita"
-    navtitle="HP Helion Development Platform 2.0" locktitle="yes">
-    
-    <!--root level-->
-    <!--<topicref href="2.0/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>-->
-    <!--<topicref href="2.0/devplatform.release-notes.dita" locktitle="yes" navtitle="Release Notes"/>-->
-    <!--<topicref href="2.0/devplatform.thirdparty.licensing.dita" navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>-->
-    <!--<topicref href="2.0/devplatform.eula.dita" navtitle="Software License Terms" locktitle="yes"/>-->
-    
-    
-    
+  <topicref href="2.0/devplatform.index.dita" navtitle="HP Helion Development Platform 2.0"
+    locktitle="yes">
+    <!--root level installation-->
+    <topicref href="2.0/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
+    <topicref href="2.0/devplatform.release-notes.dita" locktitle="yes" navtitle="Release Notes"/>
+    <topicref href="2.0/devplatform.thirdparty.licensing.dita" navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
+    <topicref href="2.0/devplatform.eula.dita" navtitle="Software License Terms" locktitle="yes"/>
     <!--quick start-->
     <!--<topichead navtitle="Developer Quick Start Trial Guide"><topicref href="2.0/devplatform.ALS-developer-trial-quick-start.dita" navtitle="Quick Start Step 1: Register" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start2.dita" navtitle="Quick Start Step 2: Download Tools" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start3.dita" navtitle="Quick Start Step 3: Create Sandbox" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start4.dita" navtitle="Quick Start Step 4: Create Cluster" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start5.dita" locktitle="yes" navtitle="Quick Start Step 5: Windows (optional)"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start6.dita" locktitle="yes" navtitle="Quick Start Step 6: Explore More"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start-termination.dita" locktitle="yes" navtitle="Quick Start Termination"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita" locktitle="yes" navtitle="Quick Start Troubleshooting"/></topichead>-->
-    
-    
-    <!--installation-->
     <topichead navtitle="Installation">
       <!--<topicref href="2.0/installation/devplatform_commercial_install.dita" navtitle="Full Platform Installation - All Services" locktitle="yes"/>-->
       <topichead navtitle="Individual Service Installation">
@@ -38,19 +31,18 @@
       </topichead>
       <topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita"
         navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>
-        <topicref href="2.0/helion/admin/server/upgrade.dita" locktitle="yes"
+      <topicref href="2.0/helion/admin/server/upgrade.dita" locktitle="yes"
         navtitle="Upgrade Existing ALS Clusters"/>
       <topicref href="2.0/devplatform.troubleshooting.dita" locktitle="yes"
         navtitle="Installation Troubleshooting"/>
       <topicref href="2.0/devplatform.related-topics.dita" locktitle="yes"
         navtitle="Related Documentation "/>
     </topichead>
-    
-    
     <!--uninstallation -->
-    <topichead navtitle="Uninstallation">  <topicref href="2.0/uninstallation/devplatform_uninstall.dita"
-        navtitle="Full Uninstallation - All Services" locktitle="yes" ></topicref>
-          <topicref href="2.0/uninstallation/devplatform_uninstall_platform.dita"
+    <topichead navtitle="Uninstallation">
+      <topicref href="2.0/uninstallation/devplatform_uninstall.dita"
+        navtitle="Full Uninstallation - All Services" locktitle="yes"/>
+      <topicref href="2.0/uninstallation/devplatform_uninstall_platform.dita"
         navtitle="Uninstall the Development Platform" locktitle="yes"/>
       <topicref href="2.0/uninstallation/devplatform_uninstall_ALS.dita"
         navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>
@@ -151,8 +143,6 @@
           navtitle="Sample Applications"/>
       </topichead>
     </topichead>
-    
-    
     <!--application developers-->
     <topichead navtitle="Windows Reference">
       <topicref href="2.0/windows/windows_overview.dita" locktitle="yes" navtitle="Windows Overview"/>
@@ -187,22 +177,20 @@
     <topicref href="2.0/devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers ">
       <!--<topicref href="2.0/CICD/cicd_overview.dita" navtitle="Continuous Integration and Deployment" locktitle="yes"><topicref href="2.0/CICD/cicd_walkthrough.dita" navtitle="Create an Automated Build-Test-Deploy Cycle" locktitle="yes"/><topicref href="2.0/CICD/cicd_installation.dita"/><topicref href="2.0/CICD/cicd_initial_configuration.dita"/><topicref href="2.0/CICD/cicd_troubleshooting.dita"/><topicref href="2.0/CICD/cicd_users_guide.dita" navtitle="User's Guide" locktitle="yes"><topicref href="2.0/CICD/cicd_environment_create.dita" navtitle="Create a New Environment" locktitle="yes"/><topicref href="2.0/CICD/cicd_edit_environment.dita" navtitle="Change an Existing Environment" locktitle="yes"/><topicref href="2.0/CICD/cicd_create_project.dita" navtitle="Create a New Project" locktitle="yes"><topicref href="2.0/CICD/cicd_hipchat_data.dita" navtitle="Where to Find HipChat Notification Data" locktitle="yes"/></topicref><topicref href="2.0/CICD/cicd_edit_project.dita" navtitle="Change an Existing Project" locktitle="yes"><topicref href="2.0/CICD/cicd_project_delete.dita" navtitle="Delete a Project" locktitle="yes"/><topicref href="2.0/CICD/cicd_project_invite.dita" navtitle="Invite Users to a Project" locktitle="yes"/><topicref href="2.0/CICD/cicd_create_postdeploy.dita" navtitle="Add or Edit Post Deployment Actions" locktitle="yes"/></topicref><topicref href="2.0/CICD/cicd_create_build.dita" navtitle="Create a New Build" locktitle="yes"/><topicref href="2.0/CICD/cicd_preview_tempdeploy.dita" navtitle="Create a Temporary Deployment" locktitle="yes"/></topicref></topicref>-->
-      
       <topicref href="2.0/helion/user/deploy/deploy_index.dita" locktitle="yes"
         navtitle="General Deployment">
-           <topicref href="2.0/helion/user/deploy/app-debug.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/app-debug.dita" locktitle="yes"
           navtitle="Remote Debugging"/>
         <topicref href="2.0/helion/user/deploy/other-frameworks.dita" locktitle="yes"
           navtitle="Generic and Standalone Frameworks"/>
-           <topicref href="2.0/helion/user/deploy/buildpack.dita" locktitle="yes"
-          navtitle="Buildpacks"/>
+        <topicref href="2.0/helion/user/deploy/buildpack.dita" locktitle="yes" navtitle="Buildpacks"/>
         <topicref href="2.0/helion/user/deploy/manifestyml.dita" locktitle="yes"
           navtitle="Manifest.yml Options"/>
-                <topicref href="2.0/helion/user/deploy/newrelic.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/newrelic.dita" locktitle="yes"
           navtitle="New Relic Monitoring"/>
-                <topicref href="2.0/helion/user/deploy/orgs-spaces.dita" locktitle="yes"
+        <topicref href="2.0/helion/user/deploy/orgs-spaces.dita" locktitle="yes"
           navtitle="Organizations and Spaces"/>
-              </topicref>
+      </topicref>
       <topichead navtitle="Language Specific Application Deployment">
         <topichead navtitle="Docker">
           <topicref href="2.0/helion/user/deploy/docker_firstapp.dita"
@@ -212,52 +200,40 @@
           <topicref href="2.0/helion/user/deploy/container_enable_deployment.dita" toc="no"
             navtitle="Enable Container Deployment" locktitle="yes"/>
         </topichead>
-        
-        <topicref href="2.0/helion/user/deploy/languages/clojure.dita" locktitle="yes"  navtitle="Clojure"/>
-         
-        <topicref href="2.0/helion/user/deploy/languages/go.dita" locktitle="yes"
-          navtitle="Go"/>
-        <topicref href="2.0/helion/user/deploy/languages/java.dita" locktitle="yes"
-          navtitle="Java"/>
-        <topicref href="2.0/helion/user/deploy/languages/node.dita" locktitle="yes"
-          navtitle="Node"/>
+        <topicref href="2.0/helion/user/deploy/languages/clojure.dita" locktitle="yes"
+          navtitle="Clojure"/>
+        <topicref href="2.0/helion/user/deploy/languages/go.dita" locktitle="yes" navtitle="Go"/>
+        <topicref href="2.0/helion/user/deploy/languages/java.dita" locktitle="yes" navtitle="Java"/>
+        <topicref href="2.0/helion/user/deploy/languages/node.dita" locktitle="yes" navtitle="Node"/>
         <topicref href="2.0/helion/user/deploy/languages/perl/perl_index.dita" locktitle="yes"
           navtitle="Perl">
-                    <topicref href="2.0/helion/user/deploy/languages/perl/catalyst.dita"
-            locktitle="yes" navtitle="Catalyst"/>
-                    <topicref href="2.0/helion/user/deploy/languages/perl/cgiapppsgi.dita"
-            locktitle="yes" navtitle="CGI Application"/>
-                    <topicref href="2.0/helion/user/deploy/languages/perl/dancer.dita"
-            locktitle="yes" navtitle="Dancer"/>
-          
-          <topicref href="2.0/helion/user/deploy/languages/perl/mason.dita"
-            locktitle="yes" navtitle="Mason"/>
-          
-          <topicref href="2.0/helion/user/deploy/languages/perl/mojo.dita"
-            locktitle="yes" navtitle="Mojolicious"/>
-          
-          <topicref href="2.0/helion/user/deploy/languages/perl/perlcgi.dita"
-            locktitle="yes" navtitle="Perl CGI"/>
-          
+          <topicref href="2.0/helion/user/deploy/languages/perl/catalyst.dita" locktitle="yes"
+            navtitle="Catalyst"/>
+          <topicref href="2.0/helion/user/deploy/languages/perl/cgiapppsgi.dita" locktitle="yes"
+            navtitle="CGI Application"/>
+          <topicref href="2.0/helion/user/deploy/languages/perl/dancer.dita" locktitle="yes"
+            navtitle="Dancer"/>
+          <topicref href="2.0/helion/user/deploy/languages/perl/mason.dita" locktitle="yes"
+            navtitle="Mason"/>
+          <topicref href="2.0/helion/user/deploy/languages/perl/mojo.dita" locktitle="yes"
+            navtitle="Mojolicious"/>
+          <topicref href="2.0/helion/user/deploy/languages/perl/perlcgi.dita" locktitle="yes"
+            navtitle="Perl CGI"/>
         </topicref>
-        <topicref href="2.0/helion/user/deploy/languages/php.dita" locktitle="yes"
-          navtitle=" PHP"/>
-        <topicref href="2.0/helion/user/deploy/languages/python/python_index.dita"
-          locktitle="yes" navtitle="Python">
-         
-          <topicref href="2.0/helion/user/deploy/languages/python/django.dita"
-            locktitle="yes" navtitle="Deploying Django Apps"/>
+        <topicref href="2.0/helion/user/deploy/languages/php.dita" locktitle="yes" navtitle=" PHP"/>
+        <topicref href="2.0/helion/user/deploy/languages/python/python_index.dita" locktitle="yes"
+          navtitle="Python">
+          <topicref href="2.0/helion/user/deploy/languages/python/django.dita" locktitle="yes"
+            navtitle="Deploying Django Apps"/>
         </topicref>
-        <topicref href="2.0/helion/user/deploy/languages/ruby.dita" locktitle="yes"
-          navtitle="Ruby"/>
+        <topicref href="2.0/helion/user/deploy/languages/ruby.dita" locktitle="yes" navtitle="Ruby"
+        />
       </topichead>
       <!--<topicref href="2.0/messaging/cue_dev_overview.dita" navtitle="Messaging" locktitle="yes"/>-->
       <topicref href="2.0/helion/user/reference/environment.dita" locktitle="yes"
         navtitle="Environment Variables "/>
-    
       <topicref href="2.0/devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin"/>
-      
       <!--workbook-->
       <topichead navtitle="JAVA Code Samples">
         <topicref href="2.0/workbook/helloworld/helloworld.java.dita" locktitle="yes"
@@ -280,17 +256,15 @@
           navtitle="PHP MySQL Database Sample"/>
         <!--<topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes" navtitle="PHP RabbitMQ Messaging Sample"/>-->
       </topichead>
-
     </topicref>
-    
     <!--windows stuff-->
     <topichead navtitle="Windows Reference">
-      <topicref href="2.0/windows/windows_overview.dita" locktitle="yes"
-        navtitle="Windows Overview"/>
+      <topicref href="2.0/windows/windows_overview.dita" locktitle="yes" navtitle="Windows Overview"/>
       <topichead navtitle="Administrator Reference">
         <topicref href="2.0/windows/windows_building_and_deploying.dita" locktitle="yes"
           navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
-        <topicref href="2.0/windows/windows_password.dita" navtitle="Retrieving the Admin Password for Windows Instances" locktitle="yes"/>
+        <topicref href="2.0/windows/windows_password.dita"
+          navtitle="Retrieving the Admin Password for Windows Instances" locktitle="yes"/>
         <topicref href="2.0/windows/windows_remoting.dita" navtitle="Remote Desktop Access"
           locktitle="yes"/>
         <topicref href="2.0/windows/windows_glazier_reference_guide.dita" locktitle="yes"
@@ -299,7 +273,6 @@
       <topichead navtitle="Developer Reference">
         <topicref href="2.0/windows/windows_firstapp.dita" locktitle="yes"
           navtitle="Deploying your first .NET Application"/>
-
         <topicref href="2.0/windows/windows_adding_services.dita" locktitle="yes"
           navtitle="Adding Services to Windows Applications"/>
         <topicref href="2.0/windows/windows_tools_guide.dita" locktitle="yes"
@@ -315,12 +288,8 @@
       <topicref href="2.0/windows/windows_custom_buildpacks.dita" navtitle="Custom Buildpacks"
         locktitle="yes" toc="no"/>
     </topichead>
-    
     <!--IT Ops-->
-    
-    <topicref href="2.0/devplatform.sysadmin.dita" locktitle="yes"
-      navtitle="Resources for IT Ops">
-    
+    <topicref href="2.0/devplatform.sysadmin.dita" locktitle="yes" navtitle="Resources for IT Ops">
       <topicref href="2.0/devplatform_upgrade.dita" navtitle="Upgrading Helion OpenStack"
         locktitle="yes"/>
       <topicref href="2.0/helion/admin/server/network_port_configuration.dita"/>
