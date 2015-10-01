@@ -21,7 +21,11 @@ git checkout site</codeblock>then change
           address and IPMI/iLO info in <b>baremetalConfig.yml </b>if different from what was there
           previously. Save and commit the change
           <codeblock>git commit -a -m "repaired node X"</codeblock></li> 
+  <li>Run the configuration processor as follows:
+    <codeblock>cd ~/helion/hos/ansible
+          ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 </ol>
+      
       <b>Image the new node</b>
       <ol>
 
@@ -36,9 +40,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
           example:<codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=ccn-0001</codeblock>
         </li>
         
-        <li>Run the configuration processor as follows:
-          <codeblock>cd ~/helion/hos/ansible
-          ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+    
         
         
         <li> Re-deploy the services on the node using ansible-playbook -i hosts/verb_hosts site.yml
