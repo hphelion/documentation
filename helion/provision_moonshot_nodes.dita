@@ -126,8 +126,9 @@
      interface-model: INTERFACE_SET_COMPUTE_MOONSHOT
      disk-model: DISK_SET_COMPUTE_MOONSHOT</codeblock></p><p>Once
             you have modified the YAML files as per the moonshot node requirement, you can proceed
-            with the installation. Refer to<b> installation guide</b> (need to insert the link) for
-            more details.</p></li>
+            with the installation. Refer to<b> </b><xref
+              href="bare_installation_kvm.dita#install_kvm">installation guide</xref> (need to
+            insert the link) for more details.</p></li>
       </ul>
       <p> </p>
     </section>
