@@ -45,7 +45,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
       important to meet the requirements and conform to the recommendations.</p>
     <p>This page provides an overview of the hardware and software that is supported for HP Helion
       OpenStack including setup and configuration information.</p>
-    <ul> 
+    <ul>
       <li>
         <xref type="section" href="#topic12282/os">OpenStack version information</xref>
       </li>
@@ -121,22 +121,22 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
       <title>HP ProLiant Rack Servers</title>
       <ul>
         <li><xref
-          href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836"
-          scope="external" format="html">DL360 Gen9</xref></li>
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836"
+            scope="external" format="html">DL360 Gen9</xref></li>
         <li><xref
-          href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241"
-          format="html" scope="external">DL380 Gen9</xref></li>
-       <li><xref
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241"
+            format="html" scope="external">DL380 Gen9</xref></li>
+        <li><xref
             href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8255128"
             scope="external" format="html">DL560 Gen9</xref></li>
-       <li><xref
+        <li><xref
             href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8090149"
             scope="external" format="html">DL580 Gen9</xref></li>
         <li><xref
-          href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527"
-          scope="external" format="html">DL320 Gen8</xref></li>
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527"
+            scope="external" format="html">DL320 Gen8</xref></li>
         <li>DL360 Gen8</li>
-       <li><xref
+        <li><xref
             href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957"
             scope="external" format="html">DL380 Gen8</xref></li>
         <li><xref
@@ -179,20 +179,23 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
       <title>HP ProLiant XL Servers</title>
       <ul>
         <li><xref
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7832023"
+            scope="external" format="html">Apollo 2000 Gen9</xref></li>
+        <li><xref
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8261831"
+            scope="external" format="html">Apollo 4200 Gen9</xref></li>
+        <li><xref
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8261835"
+            format="html" scope="external">Apollo 4500 Gen9</xref></li>
+        <li><xref
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7152918"
+            format="html" scope="external">Apollo 6000</xref></li>
+        <li><xref
             href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7799270"
             scope="external" format="html">XL170r Gen9</xref></li>
         <li><xref
             href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7799274"
             scope="external" format="html">XL190r Gen9</xref></li>
-        <li><xref
-            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7832023"
-            scope="external" format="html">Apollo 2000 Gen9</xref></li>
-        <li><xref
-            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8261839#!tab=features"
-            format="html" scope="external">XL450 Gen9</xref></li>
-        <li><xref
-            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8261835"
-            format="html" scope="external">Apollo 4500 Gen9</xref></li>
         <li><xref
             href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7307066"
             scope="external" format="html">XL230a Gen9</xref></li>
@@ -200,8 +203,8 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
             href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7307070"
             format="html" scope="external">XL250a Gen9</xref></li>
         <li><xref
-            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7152918"
-            format="html" scope="external">Apollo 6000</xref></li>
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=8261839#!tab=features"
+            format="html" scope="external">XL450 Gen9</xref></li>
       </ul>
     </section>
     <section>
@@ -230,14 +233,14 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
       </ul>
     </section>
     <section><title>Lenovo Systems</title>
-    <ul>
-      <li>Lenovo ThinkServer RD650</li>
-    </ul>
+      <ul>
+        <li>Lenovo ThinkServer RD650</li>
+      </ul>
     </section>
     <section><title>Supermicro Systems</title>
-    <ul>
-      <li>Supermicro SYS-1028U-TNRTP+</li>
-    </ul>
+      <ul>
+        <li>Supermicro SYS-1028U-TNRTP+</li>
+      </ul>
     </section>
     <section id="storage-devices"><title>Storage Systems</title>
     </section>
@@ -469,8 +472,8 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
               <entry morerows="3">N/A</entry>
               <entry morerows="3">1</entry>
               <entry>Disk </entry>
-              <entry>1TB - This host will store the downloaded images as well as act as a host
-                where backup data is preserved.</entry>
+              <entry>1TB - This host will store the downloaded images as well as act as a host where
+                backup data is preserved.</entry>
             </row>
             <row>
               <entry>Memory</entry>
