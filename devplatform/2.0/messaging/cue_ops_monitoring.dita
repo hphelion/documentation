@@ -3,6 +3,7 @@
 <topic id="topic_ycg_5yd_lt">
   <title>HP Helion 2.0 Development Platform: Monitoring Cue</title>
   <body>
-    <p></p>
+    <p><!--;look for service alarm definitions in email--></p>
+    <p><!--disk, cpu, other usual standards. alarms for various processes to alert if they go down.--></p>
   </body>
 </topic>

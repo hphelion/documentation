@@ -38,7 +38,7 @@ cue_client = client.Client(session=session)
 
 # Cluster create
 create_response = cue_client.clusters.create(name="test_binding5",
-                    nic="55555", flavor="1",size="2",volume_size="0")</codeblock>
+                    nic="55555", flavor="1",size="2",volume_size="0", <!--username, password-->)</codeblock>
           </dd>
         </dlentry>
       </dl>
