@@ -16,7 +16,7 @@
             processor.<!-- (It is recommended that you write down the IP address so that it can be easily accessible).--></li>
         </ul>
       </p>
-      <p>You can deploy VSA with adoptive optmization (AO) and without adoptive optmization. The
+      <p>You can deploy VSA with adoptive optimization (AO) and without adoptive optimization. The
         process to deploy VSA with AO and without AO remains similar except the change in the disk
         input model. For more detailed information, refer to <xref
           href="#topic_gmc_dgk_jt/deploy-vsa-with-ao-without-ao" format="dita">VSA with AO and
@@ -143,8 +143,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
         href="vsa_create_multiple_clusters.dita#topic_q3v_krq_jt">Modifying Cloud Model to Create
         Multiple Clusters</xref>.</note>
     <section id="deploy-vsa-with-ao-without-ao"><b>VSA with AO and without AO</b><p>VSA is deployed
-        with adoptive optmization (AO) and without AO. AO allows in-built storage tiring for VSA.
-        While deploying VSA with or without AO you must ensure to use appropriate disk input
+        with adoptive optimization (AO) and without AO. AO allows built-in storage tiering for VSA.
+        While deploying VSA with or without AO you must ensure to use the appropriate disk input
         model.</p><p>VSA with AO will have extra disk section with the marked usage of
         adoptive-optimization as mentioned in the following
         example:<codeblock>Additional disks can be added if available
