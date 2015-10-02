@@ -10,7 +10,7 @@
       <li>Under your project, open the <b>Database</b> panel and then click the <b>Instances</b> tab.</li>
       <li>A list of active database instances will be displayed. Identify the database instance to back up
         and click <b>Create Backup</b> next to that
-        instance.<!--A BR tag was used here in the original source.--><image
+        instance.<image
           href="../../../media/createDBinstance6.png" placement="break"/></li>
       <li>In the <b>Backup Database</b> dialog, specify the following information:
         
