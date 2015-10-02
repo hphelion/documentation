@@ -10,25 +10,41 @@
     <topicref href="2.0/devplatform.release-notes.dita" locktitle="yes" navtitle="Release Notes"/>
     <topicref href="2.0/devplatform.thirdparty.licensing.dita" navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
     <topicref href="2.0/devplatform.eula.dita" navtitle="Software License Terms" locktitle="yes"/>
-    <!--quick start-->
-    <!--<topichead navtitle="Developer Quick Start Trial Guide"><topicref href="2.0/devplatform.ALS-developer-trial-quick-start.dita" navtitle="Quick Start Step 1: Register" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start2.dita" navtitle="Quick Start Step 2: Download Tools" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start3.dita" navtitle="Quick Start Step 3: Create Sandbox" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start4.dita" navtitle="Quick Start Step 4: Create Cluster" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start5.dita" locktitle="yes" navtitle="Quick Start Step 5: Windows (optional)"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start6.dita" locktitle="yes" navtitle="Quick Start Step 6: Explore More"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start-termination.dita" locktitle="yes" navtitle="Quick Start Termination"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita" locktitle="yes" navtitle="Quick Start Troubleshooting"/></topichead>-->
+  
+       
+    <!--quick start
+    <topichead navtitle="Developer Quick Start Trial Guide">
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start.dita"
+        navtitle="Quick Start Step 1: Register" locktitle="yes"/>
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start2.dita"
+        navtitle="Quick Start Step 2: Download Tools" locktitle="yes"/>
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start3.dita"
+        navtitle="Quick Start Step 3: Create Sandbox" locktitle="yes"/>
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start4.dita"
+        navtitle="Quick Start Step 4: Create Cluster" locktitle="yes"/>
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start5.dita"
+        locktitle="yes" navtitle="Quick Start Step 5: Windows (optional)"/>
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start6.dita"
+        locktitle="yes" navtitle="Quick Start Step 6: Explore More"/>
+      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start-termination.dita"
+        locktitle="yes" navtitle="Quick Start Termination"/>
+      <topicref
+        href="2.0/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
+        locktitle="yes" navtitle="Quick Start Troubleshooting"/>
+    </topichead>-->
+    
+    
+    <!--installation-->
     <topichead navtitle="Installation">
       <!--<topicref href="2.0/installation/devplatform_commercial_install.dita" navtitle="Full Platform Installation - All Services" locktitle="yes"/>-->
-
       <topichead navtitle="Individual Service Installation">
         <!--<topicref href="2.0/installation/devplatform_install_prereq.dita" navtitle="Installation Prerequisites" locktitle="yes"/>-->
-        <topicref href="2.0/installation/devplatform.horizonui.install.dita" navtitle="Install the Horizon UI Panels" locktitle="yes"/>
-        <topicref href="2.0/installation/devplatform_install_platform.dita" navtitle="Install the HP Helion Development Platform (no services)" locktitle="yes"/>
-        <topicref href="2.0/installation/devplatform_install_ALS.dita"
-          navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
-        <!--<topicref href="2.0/installation/devplatform_install_database.dita" navtitle="Install the Database Service" locktitle="yes"/>-->
-        <!--<topicref href="2.0/installation/devplatform_install_messaging.dita" navtitle="Install the Messaging Service" locktitle="yes"/>-->
-        <!--<topicref href="2.0/installation/devplatform.vertica.install.dita" navtitle="Install the Vertica Application" locktitle="yes"/>-->
-        <!--<topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service" locktitle="yes"/>-->
+        <!--<topicref href="2.0/installation/devplatform.horizonui.install.dita" navtitle="Install the Horizon UI Panels" locktitle="yes"/>-->
+        <!--<topicref href="2.0/installation/devplatform_install_platform.dita" navtitle="Install the HP Helion Development Platform (no services)" locktitle="yes"/>-->
+        <topicref href="2.0/installation/devplatform_install_ALS.dita" navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
         <topicref href="2.0/installation/devplatform_install_database.dita"
           navtitle="Install the Database Service" locktitle="yes"/>
-
-      </topichead>
+    </topichead>
      <!-- <topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita"
         navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>
       <topicref href="2.0/helion/admin/server/upgrade.dita" locktitle="yes"
@@ -36,100 +52,15 @@
       <topicref href="2.0/devplatform.troubleshooting.dita" locktitle="yes"
         navtitle="Installation Troubleshooting"/>
       <topicref href="2.0/devplatform.related-topics.dita" locktitle="yes"
-        navtitle="Related Documentation "/> -->
+        navtitle="Related Documentation "/>     -->
+</topichead>
 
-    </topichead>
     <!--uninstallation -->
-    <topichead navtitle="Uninstallation"
-      ><!--<topicref href="2.0/uninstallation/devplatform_uninstall.dita" navtitle="Full Uninstallation - All Services" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_platform.dita" navtitle="Uninstall the Development Platform" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_ALS.dita" navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_database.dita" navtitle="Uninstall the Database Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_messaging.dita" navtitle="Uninstall the Messaging Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_vertica.dita" navtitle="Uninstall the Vertica Application" locktitle="yes"/>--></topichead>
-    <topichead navtitle="Command Line Clients">
-      <topicref href="2.0/helion/CLI/ALS_Client_Downloads.dita"
-        navtitle="Command Line Client Downloads" locktitle="yes"/>
-      <topicref href="2.0/helion/admin/reference/kato-ref.dita" locktitle="yes"
-        navtitle="Kato Command Reference"/>
-      <topichead navtitle="ALS Helion Client">
-        <topicref href="2.0/helion/user/client/client_index.dita" locktitle="yes"
-          navtitle="ALS Client Installation"/>
-        <topicref href="2.0/helion/user/reference/client-ref.dita" locktitle="yes"
-          navtitle="ALS Client Command Reference">
-          <topicref href="2.0/helion/user/reference/client-ref-administration.dita" locktitle="yes"
-            navtitle="Administration"/>
-          <topicref href="2.0/helion/user/reference/client-ref-applications.dita" locktitle="yes"
-            navtitle="Applications"/>
-          <topicref href="2.0/helion/user/reference/client-ref-buildpacks.dita" locktitle="yes"
-            navtitle="Buildpacks"/>
-          <topicref href="2.0/helion/user/reference/client-ref-control.dita" locktitle="yes"
-            navtitle="Control"/>
-          <topicref href="2.0/helion/user/reference/client-ref-domains.dita" locktitle="yes"
-            navtitle="Domains"/>
-          <topicref href="2.0/helion/user/reference/client-ref-flags.dita" locktitle="yes"
-            navtitle="Feature Flags"/>
-          <topicref href="2.0/helion/user/reference/client-ref-getting-started.dita" locktitle="yes"
-            navtitle="Getting Started"/>
-          <topicref href="2.0/helion/user/reference/client-ref-history.dita" locktitle="yes"
-            navtitle="History"/>
-          <topicref href="2.0/helion/user/reference/client-ref-information.dita" locktitle="yes"
-            navtitle="Information "/>
-          <topicref href="2.0/helion/user/reference/client-ref-management.dita" locktitle="yes"
-            navtitle="Management "/>
-          <topicref href="2.0/helion/user/reference/client-ref-miscellaneous.dita" locktitle="yes"
-            navtitle="Miscellaneous "/>
-          <topicref href="2.0/helion/user/reference/client-ref-organizations.dita" locktitle="yes"
-            navtitle="Organizations "/>
-          <topicref href="2.0/helion/user/reference/client-ref-placement.dita" locktitle="yes"
-            navtitle="Placement Zones "/>
-          <topicref href="2.0/helion/user/reference/client-ref-quotas.dita" locktitle="yes"
-            navtitle="Quotas "/>
-          <topicref href="2.0/helion/user/reference/client-ref-routes.dita" locktitle="yes"
-            navtitle="Routes "/>
-          <topicref href="2.0/helion/user/reference/client-ref-securitygroups.dita" locktitle="yes"
-            navtitle="Security Groups "/>
-          <topicref href="2.0/helion/user/reference/client-ref-brokers.dita" locktitle="yes"
-            navtitle="Service Brokers "/>
-          <topicref href="2.0/helion/user/reference/client-ref-service-management.dita"
-            locktitle="yes" navtitle="Service Management "/>
-          <topicref href="2.0/helion/user/reference/client-ref-serviceplans.dita" locktitle="yes"
-            navtitle="Service Plans "/>
-          <topicref href="2.0/helion/user/reference/client-ref-services.dita" locktitle="yes"
-            navtitle="Services "/>
-          <topicref href="2.0/helion/user/reference/client-ref-spacequotas.dita" locktitle="yes"
-            navtitle="Space Quotas "/>
-          <topicref href="2.0/helion/user/reference/client-ref-spaces.dita" locktitle="yes"
-            navtitle="Spaces "/>
-          <topicref href="2.0/helion/user/reference/client-ref-tokens.dita" locktitle="yes"
-            navtitle="Authentication Tokens "/>
-          <topicref href="2.0/helion/user/reference/client-ref-user-management.dita" locktitle="yes"
-            navtitle="User Management "/>
-        </topicref>
-      </topichead>
-      <topichead navtitle="Cluster Management Tool">
-        <topicref href="2.0/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
-          navtitle="Cluster Management Tool Installation and Reference"/>
-        <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
-          navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
-          <topicref href="2.0/helion/CLI/cfmgmt_createcluster_starter.dita"
-            navtitle="Example: Create a Starter Cluster" locktitle="yes"/>
-          <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addDEANode.dita"
-            navtitle="Example: Add a DEA Node" locktitle="yes"/>
-          <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addservice.dita"
-            navtitle="Example: Add a Service" locktitle="yes"/>
-        </topicref>
-      </topichead>
-      <topichead navtitle="ALS Management Console">
-        <topicref href="2.0/helion/admin/console/console_intro.dita"
-          navtitle="Introduction and First Use" locktitle="yes"/>
-        <topicref href="2.0/helion/admin/console/console_index.dita" locktitle="yes"
-          navtitle="Management Console (Admin View)"/>
-        <topicref href="2.0/helion/user/console/console_index.dita"
-          navtitle="Management Console (User View)" locktitle="yes"/>
-        <topicref href="2.0/helion/admin/console/console_settings.dita"
-          navtitle="Management Console Settings" locktitle="yes"/>
-        <topicref href="2.0/helion/admin/console/customize.dita" locktitle="yes"
-          navtitle="Management Console Customization"/>
-        <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
-          navtitle="Sample Applications"/>
-      </topichead>
-    </topichead>
+    
+    <!--uninstallation-->
+    <topichead navtitle="Uninstallation">
+      <!--<topicref href="2.0/uninstallation/devplatform_uninstall.dita" navtitle="Full Uninstallation - All Services" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_platform.dita" navtitle="Uninstall the Development Platform" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_ALS.dita" navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_database.dita" navtitle="Uninstall the Database Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_messaging.dita" navtitle="Uninstall the Messaging Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_marketplace.dita" navtitle="Uninstall the Marketplace Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_vertica.dita" navtitle="Uninstall the Vertica Application" locktitle="yes"/>--></topichead>
+    
     <!--application developers-->
     <topichead navtitle="Windows Reference">
       <topicref href="2.0/windows/windows_overview.dita" locktitle="yes" navtitle="Windows Overview"/>
@@ -216,7 +147,9 @@
         <topicref href="2.0/helion/user/deploy/languages/ruby.dita" locktitle="yes" navtitle="Ruby"
         />
       </topichead>
+
       <!--<topicref href="2.0/messaging/cue_dev_overview.dita" navtitle="Messaging" locktitle="yes"/>-->
+
       <topicref href="2.0/helion/user/reference/environment.dita" locktitle="yes"
         navtitle="Environment Variables "/>
       <topicref href="2.0/devplatform.eclipse.dita" locktitle="yes"
@@ -290,7 +223,9 @@
           <topicref href="2.0/helion/CLI/devplatform_downloadRCFile.dita" toc="no"/>
         </topicref>
       </topichead>
+
       <!--<topicref href="2.0/messaging/cue_ops_overview.dita" navtitle="Messaging Service" locktitle="yes"><topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita" locktitle="yes" navtitle="Using the RabbitMQ Messaging Service"/><topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita" locktitle="yes" navtitle="Using the Messaging Service with ALS"/><topicref href="2.0/messaging/cue_dev_createCluster.dita" navtitle="Create a Cluster from the Command Line" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_manageCluster.dita" navtitle="Manage a Cluster from the Command Line" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita" navtitle="Cue Reference Architecture" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_monitoring.dita" navtitle="Monitoring Cue" locktitle="yes"/></topicref>-->
+      
       <topichead navtitle="Database Service">
         <topichead navtitle="ALS Management Console">
           <topicref href="2.0/helion/admin/console/console_intro.dita"
@@ -406,6 +341,5 @@
       </topichead>
     </topicref>
   </topicref>
-  <!-- -->
  </map>
 

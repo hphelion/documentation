@@ -6,7 +6,7 @@
     <p>This topic describes how to create a database instance from the Horizon interface.</p>
     <ol>
       <li> Log into the Horizon console.<p>Under your project, open the Database panel and then click the <b>Instances</b> tab. 
-        <image href="../../../media/createDBinstance1_2.png" placement="break" id="image_yb1_mlp_ms" /></p></li>
+        <image href="../../../media/createDBinstance1_2.PNG" placement="break" id="image_yb1_mlp_ms" /></p></li>
       <li> Click <b>Launch Instance</b>.</li>
       <li> In the <b>Details</b> tab, specify the following options:
         <ul>
