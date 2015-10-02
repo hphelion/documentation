@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_zry_mqr_nt">
- <title>Support</title>
- <shortdesc></shortdesc>
- <prolog>
-  <metadata>
-   <othermeta name="author" content="Michael Khmelnitsky"/>
-  </metadata>
- </prolog>
- <conbody>
-  <p>This view contains a list of resources for getting support on using <keyword keyref="prodShort"
-   />. </p>
- </conbody>
-</concept>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_bwd_ttz_nt">
+  <title>Support</title>
+  <shortdesc>This view contains a list of resources for getting support on using <keyword keyref="prodShort"/>.</shortdesc>
+  <prolog>
+    <metadata>
+      <othermeta name="author" content="Michael Khmelnitsky"/>
+    </metadata>
+  </prolog>
+  <refbody>
+  </refbody>
+</reference>

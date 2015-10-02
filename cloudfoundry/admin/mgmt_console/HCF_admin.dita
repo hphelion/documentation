@@ -1,198 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_pxb_tns_nt">
- <title>Admin</title>
- <shortdesc></shortdesc>
- <prolog>
-  <metadata>
-   <othermeta name="author" content="Michael Khmelnitsky"/>
-  </metadata>
- </prolog>
- <conbody>
-  <p>There are several views that are available only to <keyword keyref="prodShort"/>
-   administrators.</p>
-  <section>
-   <title>Cluster Management</title>
-   <dl>
-    <dlentry>
-     <dt><uicontrol>Summary</uicontrol></dt>
-     <dd>
-      <p>Displays a list of roles and their status in the system. The following system information
-       is also displayed:</p>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_p3r_ytz_nt">
+  <title>Admin</title>
+  <shortdesc>There are several views that are available only to <keyword keyref="prodShort"/>
+    administrators.</shortdesc>
+  <prolog>
+    <metadata>
+      <othermeta name="author" content="Michael Khmelnitsky"/>
+    </metadata>
+  </prolog>
+  <refbody>
+    <section>
+      <title>Cluster Management</title>
       <dl>
-       <dlentry>
-        <dt><uicontrol>Number of nodes</uicontrol></dt>
-        <dd>The number of nodes in a cluster</dd>
-       </dlentry>
-       <dlentry>
-        <dt><uicontrol>Version</uicontrol></dt>
-        <dd>The version (release) number of the system</dd>
-       </dlentry>
-       <dlentry>
-        <dt><uicontrol>MBUS IP</uicontrol></dt>
-        <dd>The IP address that hosts the primary node. Cluster nodes (if any) connect via this IP
-         address. In a micro cloud setting, it is <codeph>127.0.0.1</codeph></dd>
-       </dlentry>
-       <dlentry>
-        <dt><uicontrol>API Endpoint</uicontrol></dt>
-        <dd>The URL that <keyword keyref="prodShort"/> clients target. Normally, it is also the URL
-         for the Management Console.</dd>
-       </dlentry>
+        <dlentry>
+          <dt><uicontrol>Summary</uicontrol></dt>
+          <dd>
+            <p>Displays a list of roles and their status in the system. The following system information
+              is also displayed:</p>
+            <dl>
+              <dlentry>
+                <dt><uicontrol>Number of nodes</uicontrol></dt>
+                <dd>The number of nodes in a cluster</dd>
+              </dlentry>
+              <dlentry>
+                <dt><uicontrol>Version</uicontrol></dt>
+                <dd>The version (release) number of the system</dd>
+              </dlentry>
+              <dlentry>
+                <dt><uicontrol>MBUS IP</uicontrol></dt>
+                <dd>The IP address that hosts the primary node. Cluster nodes (if any) connect via this IP
+                  address. In a micro cloud setting, it is <codeph>127.0.0.1</codeph></dd>
+              </dlentry>
+              <dlentry>
+                <dt><uicontrol>API Endpoint</uicontrol></dt>
+                <dd>The URL that <keyword keyref="prodShort"/> clients target. Normally, it is also the URL
+                  for the Management Console.</dd>
+              </dlentry>
+            </dl>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt>Cluster Nodes</dt>
+          <dd>
+            <p>Displays a list of nodes in the current cluster, and what services are running on each
+              node. In a micro cloud configuration, only the current local node
+              (<codeph>127.0.0.1</codeph>) is displayed.</p>
+            <p>To enable or disable services on a node, click <uicontrol>Configure Roles (cog
+              icon)</uicontrol> to see the <uicontrol>Node Settings</uicontrol> that shows a list of all
+              available roles and allows enabling or disabling them, and then click
+              <uicontrol>Save</uicontrol>.</p>
+            <note type="tip">For information on adding nodes to a cluster, see <b>Cluster Setip</b> and
+              the <b><codeph>kato role</codeph></b> and <b><codeph>kato info</codeph></b> commands.</note>
+          </dd>
+        </dlentry>
       </dl>
-     </dd>
-    </dlentry>
-    <dlentry>
-     <dt>Cluster Nodes</dt>
-     <dd>
-      <p>Displays a list of nodes in the current cluster, and what services are running on each
-       node. In a micro cloud configuration, only the current local node
-       (<codeph>127.0.0.1</codeph>) is displayed.</p>
-      <p>To enable or disable services on a node, click <uicontrol>Configure Roles (cog
-        icon)</uicontrol> to see the <uicontrol>Node Settings</uicontrol> that shows a list of all
-       available roles and allows enabling or disabling them, and then click
-        <uicontrol>Save</uicontrol>.</p>
-      <note type="tip">For information on adding nodes to a cluster, see <b>Cluster Setip</b> and
-       the <b><codeph>kato role</codeph></b> and <b><codeph>kato info</codeph></b> commands.</note>
-     </dd>
-    </dlentry>
-   </dl>
-  </section>
-  <section>
-   <title>Available Patches</title>
-   <p>Displays a list of the available patches for the current cluster.</p>
-  </section>
-  <section>
-   <title>Applications &amp; Organizations</title>
-   <p>Displays links to the <b>Applications</b> and <b>Organizations</b></p>
-  </section>
-  <section>
-   <title>Domains</title>
-   <p>Displays a filterable list of all domains configured on the system, showing whether they are
-     <b>Shared or Owned domains</b>
-   </p>
-  </section>
-  <section>
-   <title>Routes</title>
-   <p>Displays a filterable list of routes in the system</p>
-  </section>
-  <section>
-   <title>Services</title>
-   <dl>
-    <dlentry>
-     <dt><uicontrol>Managed Services Instances</uicontrol></dt>
-     <dd>Displays a filterable list of managed service instances on the system</dd>
-    </dlentry>
-    <dlentry>
-     <dt><uicontrol>User Provided Service Instances</uicontrol></dt>
-     <dd>Displays a filterable list of user provided service instances on the system</dd>
-    </dlentry>
-   </dl>
-   <dl>
-    <dlentry>
-     <dt>Available Services</dt>
-     <dd>Displays a list of available service types and their versions</dd>
-    </dlentry>
-   </dl>
-  </section>
-  <section>
-   <title>Users</title>
-   <p>Displays a list of users and admins.</p>
-   <p>To add users, click <uicontrol>+ Add User</uicontrol>.</p>
-   <p>To view account details or to change passwords, click on the username or email address.</p>
-  </section>
-  <section>
-   <title>Quota Plans</title>
-   <p>Displays a list of the quota plans available to apply to organizations on the system. To edit
-    a definition, click the <uicontrol>Edit</uicontrol> button on the right. The following fields
-    can be modified:</p>
-   <dl>
-    <dlentry>
-     <dt>Name</dt>
-     <dd>
-      <p>The definition name. <note type="caution">Do not change this setting without also changing
-        the settings of any organization using the definition.</note></p>
-     </dd>
-    </dlentry>
-    <dlentry>
-     <dt><uicontrol>Memory Usage Limit</uicontrol></dt>
-     <dd>The total amount of app RAM (in MB) that can be allocated to user applications.</dd>
-    </dlentry>
-    <dlentry>
-     <dt><uicontrol>Total Services</uicontrol></dt>
-     <dd>The total number of service instances that can be allocated.</dd>
-    </dlentry>
-    <dlentry>
-     <dt><uicontrol>Total Routes</uicontrol></dt>
-     <dd>The total number of routes that can be created.</dd>
-    </dlentry>
-    <dlentry>
-     <dt><uicontrol>Droplets per App</uicontrol></dt>
-     <dd>The number of droplets stored (per app) for versioning and rollback.</dd>
-    </dlentry>
-    <dlentry>
-     <dt><uicontrol>Allow Sudo</uicontrol></dt>
-     <dd>Allow users in the organizations to have <codeph>sudo</codeph> privileges within their
-      application containers.</dd>
-    </dlentry>
-   </dl>
-   <p>To create a new definition, use the <b><codeph><keyword keyref="CLIfile"/> quota
-      create</codeph></b> command.</p>
-  </section>
-  <section>
-   <title><uicontrol>Dashboards</uicontrol></title>
-   <dl>
-    <dlentry>
-     <dt><uicontrol>Memory Summary</uicontrol></dt>
-     <dd>Tracks and displays the amount of memory used by applications across all DEA nodes and
-      shows various reports. Available memory is calculated based on the system memory of the DEA
-      nodes multiplied by the Max <b>Memory Percentage</b>. <b>Memory Summary</b> shows how much
-       memory:<ul id="ul_ikp_mzs_nt">
-       <li>Has been assigned to organizations via <b>Quota Plans</b></li>
-       <li>Is available on DEA nodes</li>
-       <li>Remains unallocated</li>
-       <li>Has been allocated</li>
-       <li>Is currently in use</li>
-      </ul></dd>
-    </dlentry>
-    <dlentry>
-     <dt>DEA Usage</dt>
-     <dd>Displays memory usage statistics and a usage bar graph for each DEA node in the pool</dd>
-    </dlentry>
-    <dlentry>
-     <dt>Placement Zone Usage</dt>
-     <dd>Displays memory usage statistics and a usage bar graph for all configured <b>Placement
-       Zones</b></dd>
-    </dlentry>
-    <dlentry>
-     <dt>Availability Zone Usage</dt>
-     <dd>Displays memory usage statistics and a usage bar graph for all configured <b>Availability
-       Zones</b></dd>
-    </dlentry>
-    <dlentry>
-     <dt>Router Stats</dt>
-     <dd>Displays realtime results for incoming requests (connections per second), routing errors
-      (errors per second), and an overview of the cumulative requests to the system.</dd>
-    </dlentry>
-    <dlentry>
-     <dt>Primary Node Status Graphs</dt>
-     <dd>Displays graphs for server statistics:<ul id="ul_nmm_11t_nt">
-       <li><uicontrol>CPU</uicontrol></li>
-       <li><uicontrol>Load</uicontrol></li>
-       <li><uicontrol>Memory</uicontrol></li>
-       <li><uicontrol>Disk Operations</uicontrol></li>
-       <li><uicontrol>Disk Space</uicontrol></li>
-       <li><uicontrol>Processes</uicontrol></li>
-       <li><uicontrol>Swap</uicontrol> (primary node or micro cloud only)</li>
-      </ul></dd>
-    </dlentry>
-   </dl>
-  </section>
-  <section>
-   <title>Cloud Events</title>
-   <p>Displays a list of events (including errors and warnings) on the <keyword keyref="prodShort"/>
-    server. These events can be filtered by <uicontrol>Severity</uicontrol>, <uicontrol>Node
-     ID</uicontrol>, or <uicontrol>Type</uicontrol>, or using a substring match in the
-     <uicontrol>Search</uicontrol> field.</p>
-  </section>
- </conbody>
-</concept>
+    </section>
+    <section>
+      <title>Available Patches</title>
+      <p>Displays a list of the available patches for the current cluster.</p>
+    </section>
+    <section>
+      <title>Applications &amp; Organizations</title>
+      <p>Displays links to the <b>Applications</b> and <b>Organizations</b></p>
+    </section>
+    <section>
+      <title>Domains</title>
+      <p>Displays a filterable list of all domains configured on the system, showing whether they are
+        <b>Shared or Owned domains</b>
+      </p>
+    </section>
+    <section>
+      <title>Routes</title>
+      <p>Displays a filterable list of routes in the system</p>
+    </section>
+    <section>
+      <title>Services</title>
+      <dl>
+        <dlentry>
+          <dt><uicontrol>Managed Services Instances</uicontrol></dt>
+          <dd>Displays a filterable list of managed service instances on the system</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>User Provided Service Instances</uicontrol></dt>
+          <dd>Displays a filterable list of user provided service instances on the system</dd>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt>Available Services</dt>
+          <dd>Displays a list of available service types and their versions</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>Users</title>
+      <p>Displays a list of users and admins.</p>
+      <p>To add users, click <uicontrol>+ Add User</uicontrol>.</p>
+      <p>To view account details or to change passwords, click on the username or email address.</p>
+    </section>
+    <section>
+      <title>Quota Plans</title>
+      <p>Displays a list of the quota plans available to apply to organizations on the system. To edit
+        a definition, click the <uicontrol>Edit</uicontrol> button on the right. The following fields
+        can be modified:</p>
+      <dl>
+        <dlentry>
+          <dt>Name</dt>
+          <dd>
+            <p>The definition name. <note type="caution">Do not change this setting without also changing
+              the settings of any organization using the definition.</note></p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>Memory Usage Limit</uicontrol></dt>
+          <dd>The total amount of app RAM (in MB) that can be allocated to user applications.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>Total Services</uicontrol></dt>
+          <dd>The total number of service instances that can be allocated.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>Total Routes</uicontrol></dt>
+          <dd>The total number of routes that can be created.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>Droplets per App</uicontrol></dt>
+          <dd>The number of droplets stored (per app) for versioning and rollback.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>Allow Sudo</uicontrol></dt>
+          <dd>Allow users in the organizations to have <codeph>sudo</codeph> privileges within their
+            application containers.</dd>
+        </dlentry>
+      </dl>
+      <p>To create a new definition, use the <b><codeph><keyword keyref="CLIfile"/> quota
+        create</codeph></b> command.</p>
+    </section>
+    <section>
+      <title><uicontrol>Dashboards</uicontrol></title>
+      <dl>
+        <dlentry>
+          <dt><uicontrol>Memory Summary</uicontrol></dt>
+          <dd>Tracks and displays the amount of memory used by applications across all DEA nodes and
+            shows various reports. Available memory is calculated based on the system memory of the DEA
+            nodes multiplied by the Max <b>Memory Percentage</b>. <b>Memory Summary</b> shows how much
+            memory:<ul id="ul_ikp_mzs_nt">
+              <li>Has been assigned to organizations via <b>Quota Plans</b></li>
+              <li>Is available on DEA nodes</li>
+              <li>Remains unallocated</li>
+              <li>Has been allocated</li>
+              <li>Is currently in use</li>
+            </ul></dd>
+        </dlentry>
+        <dlentry>
+          <dt>DEA Usage</dt>
+          <dd>Displays memory usage statistics and a usage bar graph for each DEA node in the pool</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Placement Zone Usage</dt>
+          <dd>Displays memory usage statistics and a usage bar graph for all configured <b>Placement
+            Zones</b></dd>
+        </dlentry>
+        <dlentry>
+          <dt>Availability Zone Usage</dt>
+          <dd>Displays memory usage statistics and a usage bar graph for all configured <b>Availability
+            Zones</b></dd>
+        </dlentry>
+        <dlentry>
+          <dt>Router Stats</dt>
+          <dd>Displays realtime results for incoming requests (connections per second), routing errors
+            (errors per second), and an overview of the cumulative requests to the system.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Primary Node Status Graphs</dt>
+          <dd>Displays graphs for server statistics:<ul id="ul_nmm_11t_nt">
+            <li><uicontrol>CPU</uicontrol></li>
+            <li><uicontrol>Load</uicontrol></li>
+            <li><uicontrol>Memory</uicontrol></li>
+            <li><uicontrol>Disk Operations</uicontrol></li>
+            <li><uicontrol>Disk Space</uicontrol></li>
+            <li><uicontrol>Processes</uicontrol></li>
+            <li><uicontrol>Swap</uicontrol> (primary node or micro cloud only)</li>
+          </ul></dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>Cloud Events</title>
+      <p>Displays a list of events (including errors and warnings) on the <keyword keyref="prodShort"/>
+        server. These events can be filtered by <uicontrol>Severity</uicontrol>, <uicontrol>Node
+          ID</uicontrol>, or <uicontrol>Type</uicontrol>, or using a substring match in the
+        <uicontrol>Search</uicontrol> field.</p>
+    </section>
+  </refbody>
+</reference>

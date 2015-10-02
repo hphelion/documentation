@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_cgq_fqr_nt">
- <title>Applications</title>
- <shortdesc/>
- <prolog>
-  <metadata>
-   <othermeta name="author" content="Michael Khmelnitsky"/>
-  </metadata>
- </prolog>
- <conbody>
-  <p>The <uicontrol>Applications</uicontrol> view displays a list of all applications on the server.
-   To view an application's details, click anywhere on its line in the list.</p>
-  <p>In the <b>Application</b> view, an administrator has the same permissions as an application
-   developer associated with the space to which an applications was deployed.</p>
- </conbody>
-</concept>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_kbz_ktz_nt">
+  <title>Applications</title>
+  <shortdesc/>
+  <prolog>
+    <metadata>
+      <othermeta name="author" content="Michael Khmelnitsky"/>
+    </metadata>
+  </prolog>
+  <refbody>
+    <section>
+      <p>The <uicontrol>Applications</uicontrol> view displays a list of all applications on the server.
+        To view an application's details, click anywhere on its line in the list.</p>
+      <p>In the <b>Application</b> view, an administrator has the same permissions as an application
+        developer associated with the space to which an applications was deployed.</p>
+    </section>
+  </refbody>
+</reference>
