@@ -231,6 +231,9 @@
       <topichead navtitle="Storage">
         <topicref href="helion/operations/opsconsole/storage_summary.dita"/>
       </topichead>
+      <topichead navtitle="Helion Development Platform">
+        <topicref href="helion/operations/opconsole/hdp_summary.dita"/>
+      </topichead>
     </topicref>
   </topichead>
 
