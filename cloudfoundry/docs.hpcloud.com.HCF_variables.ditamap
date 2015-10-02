@@ -2,10 +2,31 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
 <map>
    <title>HP Helion Cloud Foundry Variables</title>
+   <keydef keys="corpLong">
+      <topicmeta>
+         <keywords>
+            <keyword>Hewlett-Packard Enterprise</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="corpShort">
+      <topicmeta>
+         <keywords>
+            <keyword>HP Enterprise</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
    <keydef keys="prodLong">
       <topicmeta>
          <keywords>
             <keyword>HP Helion Cloud Foundry</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="prodLongNoCorp">
+      <topicmeta>
+         <keywords>
+            <keyword>Helion Cloud Foundry</keyword>
          </keywords>
       </topicmeta>
    </keydef>
@@ -51,4 +72,18 @@
          </keywords>
       </topicmeta>
    </keydef> 
+   <keydef keys="docsLongURL">
+      <topicmeta>
+         <keywords>
+            <keyword>http://docs.hpcloud.com/#cloudfoundry/1.0/cloudfoundry.index.html</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="docsShortURL">
+      <topicmeta>
+         <keywords>
+            <keyword>http://docs.hpcloud.com/</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
 </map>

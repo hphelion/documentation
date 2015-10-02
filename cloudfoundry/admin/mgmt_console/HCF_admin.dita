@@ -16,8 +16,8 @@
         <dlentry>
           <dt><uicontrol>Summary</uicontrol></dt>
           <dd>
-            <p>Displays a list of roles and their status in the system. The following system information
-              is also displayed:</p>
+            <p>Displays a list of roles and their status in the system. The following system
+              information is also displayed:</p>
             <dl>
               <dlentry>
                 <dt><uicontrol>Number of nodes</uicontrol></dt>
@@ -47,9 +47,9 @@
               node. In a micro cloud configuration, only the current local node
               (<codeph>127.0.0.1</codeph>) is displayed.</p>
             <p>To enable or disable services on a node, click <uicontrol>Configure Roles (cog
-              icon)</uicontrol> to see the <uicontrol>Node Settings</uicontrol> that shows a list of all
-              available roles and allows enabling or disabling them, and then click
-              <uicontrol>Save</uicontrol>.</p>
+                icon)</uicontrol> to see the <uicontrol>Node Settings</uicontrol> that displays a
+              list of all available roles and allows enabling or disabling them, and then click
+                <uicontrol>Save</uicontrol>.</p>
             <note type="tip">For information on adding nodes to a cluster, see <b>Cluster Setip</b> and
               the <b><codeph>kato role</codeph></b> and <b><codeph>kato info</codeph></b> commands.</note>
           </dd>
@@ -66,8 +66,8 @@
     </section>
     <section>
       <title>Domains</title>
-      <p>Displays a filterable list of all domains configured on the system, showing whether they are
-        <b>Shared or Owned domains</b>
+      <p>Displays a filterable list of all domains configured on the system, indicating whether they
+        are <b>Shared or Owned domains</b>
       </p>
     </section>
     <section>
@@ -143,9 +143,9 @@
         <dlentry>
           <dt><uicontrol>Memory Summary</uicontrol></dt>
           <dd>Tracks and displays the amount of memory used by applications across all DEA nodes and
-            shows various reports. Available memory is calculated based on the system memory of the DEA
-            nodes multiplied by the Max <b>Memory Percentage</b>. <b>Memory Summary</b> shows how much
-            memory:<ul id="ul_ikp_mzs_nt">
+            displays various reports. Available memory is calculated based on the system memory of
+            the DEA nodes multiplied by the Max <b>Memory Percentage</b>. <b>Memory Summary</b>
+            displays how much memory<ul id="ul_ikp_mzs_nt">
               <li>Has been assigned to organizations via <b>Quota Plans</b></li>
               <li>Is available on DEA nodes</li>
               <li>Remains unallocated</li>

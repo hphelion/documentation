@@ -17,7 +17,7 @@
           <codeph>manifest.yml</codeph> file.</note><codeph>store:</codeph><dl>
         <dlentry>
           <dt><codeph>title</codeph>:</dt>
-          <dd>The display name of the App Store that appears in the Management Console</dd>
+          <dd>The display name of the App Store in the Management Console</dd>
         </dlentry>
         <dlentry>
           <dt><codeph>contact</codeph>:</dt>

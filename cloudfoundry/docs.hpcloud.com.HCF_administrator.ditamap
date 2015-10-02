@@ -26,10 +26,16 @@
          <topicref href="admin/mgmt_console/HCF_admin.dita"/>
          <topicref href="admin/mgmt_console/HCF_settings.dita"/>
       </topicref>
-      <topicref href="admin/app_store/HCF_app_store.dita">
-         <topicref href="admin/app_store/HCF_app_store_definition.dita"/>
-         <topicref href="admin/app_store/HCF_add_app_store.dita"/>
+      <topicref href="admin/mgmt_console/HCF_app_store.dita">
+         <topicref href="admin/mgmt_console/HCF_app_store_definition.dita"/>
+         <topicref href="admin/mgmt_console/HCF_add_app_store.dita"/>
       </topicref>
+      <topichead navtitle="Customizing the Management Console">
+         <topicref href="admin/mgmt_console/HCF_console_settings.dita">
+            <topicref href="admin/mgmt_console/HCF_settings_variables.dita"/>
+            <topicref href="admin/mgmt_console/HCF_customize_error_page.dita"/>
+         </topicref>
+      </topichead>
    </topichead>
    <topichead navtitle="Setting up a VM"/>
    <topichead navtitle="Configuring a Server"/>
