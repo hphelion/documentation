@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_s1z_4qr_nt">
- <title>Settings</title>
- <shortdesc>The <uicontrol>Settings</uicontrol> view gives access to the following console and
-  system settings:</shortdesc>
- <prolog>
-  <metadata>
-   <othermeta name="author" content="Michael Khmelnitsky"/>
-  </metadata>
- </prolog>
- <conbody>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_jjg_l5z_nt">
+  <title>Settings</title>
+  <shortdesc>The <uicontrol>Settings</uicontrol> view gives access to the following console and
+    system settings:</shortdesc>
+  <prolog>
+    <metadata>
+      <othermeta name="author" content="Michael Khmelnitsky"/>
+    </metadata>
+  </prolog>
+  <refbody>
   <section>
    <title><keyword keyref="prodShort"/> Settings</title>
    <dl>
@@ -380,5 +380,5 @@
     </dlentry>
    </dl>
   </section>
- </conbody>
-</concept>
+  </refbody>
+</reference>
