@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_kvm">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for KVM Hypervisor on Baremetal</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for KVM Hypervisor on
+    Baremetal</title>
   <body>
     <section id="important-notes"><title>Important Notes</title>
       <ul>
@@ -104,18 +105,18 @@
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.2-20150920T130131Z.tgz</codeblock></li>
         <li>Run the following included script:
           <codeblock>~/hos-2.0.0-b.2/hos-init.bash</codeblock></li>
-        <!-- removed per DOCS-1671
-        <li>You will be prompted for an SSH passphrase during initialization. Enter a passphrase if
-          you want to use one, otherwise hit return for no passphrase. If you've entered a
-          passphrase you will need to add a private key to ssh-agent before running Ansible
-          playbooks.</li>
-        <li>If you entered a passphrase for your SSH keys, execute the following commands before
-          running any Ansible playbooks:
-          <codeblock>
-eval $(ssh-agent)
-ssh-add ~/.ssh/id_rsa</codeblock></li>
--->
+        <li><p>You will be prompted to enter a SSH passphrase when running
+              <codeph>hos-init.bash</codeph>. This passphrase is used to protect the key used by
+            Ansible when connecting to its client nodes.</p>
+          <p>For CI purposes it is possible to disable SSH passphrase prompting by setting the
+              <codeph>HOS_INIT_AUTO</codeph> environment variable before running
+              <codeph>hos-init.bash</codeph>, like this:</p>
+          <codeblock>export HOST_INIT_AUTO=y"</codeblock></li>
       </ol>
+      <p>If you have protected the SSH key with a passphrase then execute the following commands to
+        avoid having to enter the passphrase on every attempt by Ansible to connect to its client
+        nodes: <codeblock>eval $(ssh-agent)
+ssh-add ~/.ssh/id_rsa</codeblock></p>
       <p>At the end of this section you should have a local directory structure, as described
         below:</p>
       <codeblock>
@@ -155,15 +156,23 @@ ilo_ip: "192.168.9.3"
 ilo_user: "admin"
 ilo_password: "password"
 <b>is_deployer: true</b></codeblock></note></li>
+            <li>You can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo passwords.
+              This script uses OpenSSL. <ol>
+                <li>Change to the Ansible directory:
+                  <codeblock>cd ~/helion/hos/ansible</codeblock></li>
+                <li>Put the encrytion key into the following environment variable:
+                  <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
+                <li>Run the python script below and follow the instructions. Enter a password that
+                  you want to encrypt. <codeblock>hosencrypt.py</codeblock></li>
+                <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph>
+                  field in your <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file,
+                  remembering to enclose it in quotes.</li>
+                <li>Repeat the above for each server.</li>
+              </ol>
+              <note>Before you run any playbooks, remember that you need to export the encryption
+                key in the following environment variable: <codeph>export
+                  HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeph></note></li>
           </ol></li>
-        <!--
-        <li>Edit the <codeph>~/helion/my_cloud/config/logging/main.yml</codeph> file and under the
-            <b>Elasticsearch defaults</b> section, change the value of
-            <codeph>vars.elasticsearch_cluster_name</codeph> to something other than
-            <codeph>elasticsearch</codeph> (bolded below): <codeblock>elasticsearch_cluster_name: "{{ LOG_SVR | item('vars.elasticsearch_cluster_name', default='<b>elasticsearch</b>') }}"</codeblock>
-          <p>For example, you could use:
-            <codeblock>elasticsearch_cluster_name: "{{ LOG_SVR | item('vars.elasticsearch_cluster_name', default='<b>helioncloud</b>') }}"</codeblock></p></li>
-            -->
         <li>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
           follows: <codeblock>cd ~/helion/hos/ansible
 git add -A
@@ -184,6 +193,18 @@ ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       </ol>
+      <p>When you run the Configuration Processor you will be prompted for two passwords. Enter the
+        first password to make the Configuration Processor encrypt its sensitive data, which is
+        comprised of the random inter-service passwords that it generates and the Ansible group_vars
+        and host_vars that it produces for subsequent deploy runs. You will need this key for
+        subsequent Ansible deploy runs and subsequent Configuration Processor runs. If you wish to
+        change an encryption password that you have already used when running the Configuration
+        Processor then enter the new password at the second prompt, otherwise just press carriage
+        return.</p>
+      <p>For CI purposes you can specify the required passwords on the ansible command line. For
+        example, the command below will disable encryption by the configuration processor
+        <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</codeblock>
+      </p>
       <p>If you receive an error during either of these steps then there is an issue with one or
         more of your configuration files. We recommend that you verify that all of the information
         in each of your configuration files is correct for your environment and then commit those
@@ -243,6 +264,10 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           elasticsearch cluster. This should be set to a value other than
             <codeph>elasticsearch</codeph>. <codeblock>cd ~/scratch/ansible/next/hos/ansible 
 ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60;name></codeblock>
+          <p>If you have used an encryption password when running the Configuration processor use
+            the command below and enter the encryption password when prompted:
+            <codeblock>ansible-playbook -i hosts/verb_hosts site.yml --ask-vault-pass</codeblock>
+          </p>
           <note> The step above runs osconfig to configure the cloud and hlm-deploy, to deploy the
             cloud. Therefore, this step may run for quite some time while all the nodes are
             configured (perhaps 45 minutes or more, depending on the number of nodes, to a degree).
