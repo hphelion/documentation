@@ -4,27 +4,40 @@
   <title>Install the Application Lifecycle Service (ALS)</title>
   <body>
     
-<ol>   <li> Source a stack rc file for the admin user and tenant.</li>
-      <li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
+<ol><li> Source a stack RC file for the admin user and tenant. <ol>
+          <li> Log in to Horizon using the admin account.</li>
+          <li>Download the OpenStack RC file. <p><b>Project</b> &gt; <b>Compute</b> &gt; <b>Access
+                &amp; Security</b> &gt; <b>API Access</b> &gt; click <b>Download OpenStack RC
+                File</b><image placement="break" href="../../../media/quickstartDownloadRCFile.png"
+                id="image_asb_jvy_nt"/></p></li>
+          <li>Source the RC file<p>
+              <codeblock> source admin-openrc.sh</codeblock>
+            </p></li>
+        </ol></li><li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
         information for your installation in the file. The following sample configuration provides a
-        starting point:
-        <codeblock>clouds:
+        starting point. For more detailed information, see the OpenStack <xref
+          href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
+          format="html" scope="external">client configuration documentation</xref>. <note>The
+          Identity URL can be found in Horizon at: <b>Project</b> &gt; <b>Compute</b> &gt; <b>Access
+            &amp; Security</b> &gt; <b>API Access</b>. Note the URL for the Identity
+        Service.</note><codeblock>clouds:
     mycloud:
     codn_username: hdnuser@domain.com
     codn_password: password
     horizon_url: http://&lt;horizon-ip-address&gt;/
       cacert: /etc/ssl/certs/ca-certificates.crt
       region_name: region1
-      auth_url: &lt;auth url&gt;
+      auth:
+        auth_url: &lt;identity url&gt;
         project_name: &lt;admin project name&gt;
         username: &lt;admin user name&gt;
-        password: &lt;admin password&gt;</codeblock></li>
-              
-              <li>List the available ALS versions to
+        password: &lt;admin password&gt;</codeblock></li><li>List the available ALS versions to
         install.<codeblock>openstack hdpi list --os-cloud mycloud | grep als</codeblock>The output
         should appear similar
-        to:<codeblock>als | wscatalog.2655 | 2.0.0.0 | available</codeblock></li><li> Select the ALS version to install and view the details of the
-        package.<codeblock>openstack hdpi show wscatalog.2655 --os-cloud mycloud</codeblock></li><li> Install the ALS
+        to:<codeblock>als | wscatalog.2655 | 2.0.0.0 | available</codeblock></li><li> Select the ALS
+        version to install and view the details of the
+        package.<codeblock>openstack hdpi show wscatalog.2655 --os-cloud mycloud</codeblock></li><li>
+        Install the ALS
         service.<codeblock>openstack --os-cloud mycloud hdpi database install –-package wscatalog.2655</codeblock></li></ol>
               
   </body>
