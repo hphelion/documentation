@@ -24,6 +24,7 @@
         </dlentry>
         <dlentry>
           <dt><codeph>data</codeph></dt>
+          <dd>a</dd>
           <dd>Import, export, or repair <keyword keyref="prodShort"/> system data<ul
               id="ul_evv_hk2_nt">
               <li><codeph>data export</codeph>m</li>
@@ -274,19 +275,19 @@
               </row>
               <row>
                 <entry><codeph>--droplets</codeph></entry>
-                <entry>Include droplets (uploaded apps)</entry>
+                <entry>Include droplets (uploaded applications)</entry>
               </row>
               <row>
                 <entry><codeph>--exclude-droplets</codeph></entry>
-                <entry>Do not include droplets (uploaded apps)</entry>
+                <entry>Do not include droplets (uploaded applications)</entry>
               </row>
               <row>
                 <entry><codeph>--packages</codeph></entry>
-                <entry>Include app packages</entry>
+                <entry>Include application packages</entry>
               </row>
               <row>
                 <entry><codeph>--exclude-packages</codeph></entry>
-                <entry>Do not include app packages</entry>
+                <entry>Do not include application packages</entry>
               </row>
               <row>
                 <entry><codeph>--resources</codeph></entry>

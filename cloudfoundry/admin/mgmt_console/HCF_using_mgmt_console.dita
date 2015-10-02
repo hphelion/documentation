@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_nvp_bqr_nt">
- <title>Using the Management Console: Admin View</title>
+ <title>Working with the Admin View</title>
  <shortdesc></shortdesc>
  <prolog>
   <metadata>
@@ -15,7 +15,7 @@
    users. Some of the features described below are only available in the
     <uicontrol>Admin</uicontrol> view.</note>
   <section>
-   <title>Accessing the Management Consoles</title>
+   <title>Accessing the Management Console</title>
    <p>Your hypervisor provides <b>tty console</b> access to each of its virtual machines. After
     startup, an <keyword keyref="prodShort"/> VM displays the following:</p>
    <codeblock><keyword keyref="prodShort"/> Management Console at
@@ -43,7 +43,7 @@ https://<keyword keyref="mDNShostname"/></codeblock>
      keyref="defaultSysUser"/> user on the VM (for example, for <codeph>ssh</codeph> access).</note>
   </section>
   <section>
-   <title>Getting Started with Management Console</title>
+   <title>Customizing the Configuration</title>
    <p>After you log in, you can add other users and administrators, enable and disable services, and
     customize the system according to your requirements.</p>
    <p>Basic <keyword keyref="prodShort"/> administration can be done through the Management Console,
