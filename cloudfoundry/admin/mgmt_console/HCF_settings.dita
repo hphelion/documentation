@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_s1z_4qr_nt">
+ <title>Settings</title>
+ <shortdesc>The <uicontrol>Settings</uicontrol> view gives access to the following console and
+  system settings:</shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <section>
+   <title><keyword keyref="prodShort"/> Settings</title>
+   <dl>
+    <dlentry>
+     <dt><uicontrol>System Settings</uicontrol></dt>
+     <dd>
+      <dl>
+       <dlentry>
+        <dt><uicontrol>Logging Level</uicontrol></dt>
+        <dd>Sets the verbosity of <keyword keyref="prodShort"/> logs from <codeph>debug2</codeph>
+         (most verbose) through <codeph>off</codeph> (silent)</dd>
+       </dlentry>
+       <dlentry>
+        <dt><uicontrol>Support Email</uicontrol></dt>
+        <dd>Sets the email address displayed to application developers when errors are
+          encountered<note type="tip">Use an email address monitored by <keyword keyref="prodShort"
+          /> administrators.</note></dd>
+       </dlentry>
+      </dl>
+     </dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>App Store URLs</uicontrol></dt>
+     <dd>Sets the URIs for <b>App Store Definition YAML files</b> which populate the App Store (the
+      URIs do not have to be public, but must be accessible from the controller node)</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Docker App Settings</uicontrol></dt>
+     <dd>
+      <dl>
+       <dlentry>
+        <dt><uicontrol>Require sudo</uicontrol></dt>
+        <dd>Limits Docker image deployment to organizations with <codeph>sudo</codeph> permissions
+         enabled in the quota plan</dd>
+       </dlentry>
+       <dlentry>
+        <dt><uicontrol>Allow any docker registry</uicontrol></dt>
+        <dd>Allows users to deploy Docker images from any registry server <note type="caution"
+          >Docker image deployment should be limited to either a trusted group of users, trusted
+          image sources, or both. Allowing any user to deploy Docker images without restrictions is
+          not recommended.</note></dd>
+       </dlentry>
+      </dl>
+      <dl>
+       <dlentry>
+        <dt>Allowed Docker Registries</dt>
+        <dd>
+         <p>Displays a list of servers, namespaces, or images that users are allowed to deploy.
+          Entries are specified in the standard format accepted by the <codeph>docker</codeph>
+          client:
+          <codeblock><varname>&lt;username></varname>:<varname>&lt;password></varname>@<varname>&lt;domain></varname>:<varname>&lt;port></varname>/<varname>&lt;namespace></varname>/<varname>&lt;repo></varname>:<varname>&lt;tag></varname></codeblock></p>
+         <table id="table_n1y_jgt_nt">
+          <tgroup cols="2">
+           <colspec colnum="1" colname="col1"/>
+           <colspec colnum="2" colname="col2"/>
+           <thead>
+            <row>
+             <entry>Pattern</entry>
+             <entry>What it allows</entry>
+            </row>
+           </thead>
+           <tbody>
+            <row>
+             <entry><codeph>httpd</codeph></entry>
+             <entry>
+              <ul id="ul_qnp_pgt_nt">
+               <li>the <codeph>library/httpd</codeph> repo on the Docker Hub</li>
+               <li>any tag</li>
+              </ul>
+             </entry>
+            </row>
+            <row>
+             <entry><codeph>httpd:</codeph></entry>
+             <entry>only <codeph>library/httpd:latest</codeph></entry>
+            </row>
+            <row>
+             <entry><codeph>httpd:2.4</codeph></entry>
+             <entry>only <codeph>library/httpd:2.4</codeph></entry>
+            </row>
+            <row>
+             <entry><codeph>cloudfoundry/</codeph></entry>
+             <entry>
+              <ul id="ul_osf_sgt_nt">
+               <li>Docker Hub repos under the <codeph>cloudfoundry</codeph> namespace</li>
+               <li>any tag</li>
+              </ul>
+             </entry>
+            </row>
+            <row>
+             <entry><codeph>cloudfoundry/lattice-app</codeph></entry>
+             <entry>
+              <ul id="ul_alh_tgt_nt">
+               <li>only <codeph>clouddfoundry/lattice-app</codeph></li>
+               <li>any tag</li>
+              </ul>
+             </entry>
+            </row>
+            <row>
+             <entry><codeph>reg.example.com</codeph></entry>
+             <entry>any namespace, repo, or tag in a private registry</entry>
+            </row>
+            <row>
+             <entry><codeph>reg.example.com/</codeph></entry>
+             <entry>any repo in the <codeph>library</codeph> namespace</entry>
+            </row>
+            <row>
+             <entry><codeph>reg.example.com/prod</codeph></entry>
+             <entry>
+              <ul id="ul_pmy_3ht_nt">
+               <li>any repo in the <codeph>prod</codeph> namespace</li>
+               <li>any tag</li>
+              </ul>
+             </entry>
+            </row>
+            <row>
+             <entry><codeph>reg.example.com/prod/app</codeph></entry>
+             <entry>
+              <ul id="ul_uvx_cht_nt">
+               <li>only the <codeph>prod/app</codeph> repo</li>
+               <li>any tag</li>
+              </ul>
+             </entry>
+            </row>
+            <row>
+             <entry><codeph>reg.example.com/prod/app:</codeph></entry>
+             <entry>only <codeph>prod/app:latest</codeph></entry>
+            </row>
+            <row>
+             <entry><codeph>reg.example.com/prod/app:mytag</codeph></entry>
+             <entry>only <codeph>prod/app:mytag</codeph></entry>
+            </row>
+            <row>
+             <entry><codeph>reg.example.com:5000</codeph></entry>
+             <entry>a registry server running on a specific port</entry>
+            </row>
+            <row>
+             <entry><codeph>user:pass@reg.example.com</codeph></entry>
+             <entry>a registry server requiring login</entry>
+            </row>
+           </tbody>
+          </tgroup>
+         </table>
+         <note>When a user requests a matching image name without credentials, credentials specified
+          in the Allowed Docker Registries list are used by default.</note>
+        </dd>
+       </dlentry>
+      </dl>
+     </dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Allowed Repos</uicontrol></dt>
+     <dd>Sets the Debian package repositories allowed in application containers. Application
+      developers can install additional packages (using <codeph>apt-get</codeph> or
+       <codeph>aptitude</codeph>) only from these repositories. When adding new repositories, GPG
+      keys for each new repo must also be added to the Docker base container (see <b>Allowed
+       Repositories</b>).</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Maintenance Mode</uicontrol></dt>
+     <dd>
+      <p>Shuts down API requests but continues to serve web requests (this is useful for performing
+       system operations such as importing and exporting data for upgrades). When the primary node
+       enters maintenance mode, the Management Console becomes read-only with the exception of this
+       toggle (which allows it to be brought back online)</p>
+     </dd>
+    </dlentry>
+   </dl>
+  </section>
+  <section>
+   <title><uicontrol>Applications</uicontrol></title>
+   <dl>
+    <dlentry>
+     <dt><uicontrol>Reserved URIs</uicontrol></dt>
+     <dd>Sets virtual hostnames reserved for use by the <keyword keyref="prodShort"/> system which
+      cannot be used for applications. This setting prevents application developers from deploying
+      applications on URIs required by the system (for example, <codeph>api</codeph>). It can also
+      be used when a particular DNS sub-domain record is not being resolved to the <keyword
+       keyref="prodShort"/> system. <note>Specify only the host (subdomain) portion of the URI.
+       Fully-qualified URLs will be ignored.</note></dd>
+    </dlentry>
+   </dl>
+  </section>
+  <section>
+   <title><uicontrol>Console</uicontrol></title>
+   <p>Settings and templates that allow you to customize the look and feel of the Management
+    Console. These settings are divided into the following categories:</p>
+   <dl>
+    <dlentry>
+     <dt><uicontrol>Product</uicontrol></dt>
+     <dd>Sets the options to rename and reversion <keyword keyref="prodShort"/> for OEM deployments,
+      change the default locale (currently only <codeph>en</codeph> and <codeph>de</codeph> are
+      available), choose a different URL for documentation, or disable console pingbacks</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Client</uicontrol></dt>
+     <dd>Sets the version number setting and alternative paths or URLs for alternative or renamed
+      CLI clients</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Look and Feel</uicontrol></dt>
+     <dd>Sets the favicon, header, footer, or background color</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Welcome Page</uicontrol></dt>
+     <dd>Sets the EJS-templated HTML for displaying on the <uicontrol>Welcome</uicontrol> view</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Support Page</uicontrol></dt>
+     <dd>Sets the EJS-templated HTML for displaying on the <uicontrol>Support</uicontrol> view.
+       <note>Change this setting if you support your application developers directly.</note></dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Eula Content</uicontrol></dt>
+     <dd>Sets the End User License Agreement. <note>Change this setting only if you are an OEM
+       customer exposing <keyword keyref="prodShort"/> to application developers under your own
+       specific licensing terms</note></dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Custom Stylesheet</uicontrol></dt>
+     <dd>Sets the single CSS file used to override any existing styling in the Management Console
+       <note type="tip">Inspect the Console with browser tools such as Firebug or Chrome Developer
+       Tools to see the class names and IDs</note></dd>
+    </dlentry>
+   </dl>
+   <note type="tip">For detailed instructions on customizing and branding <keyword
+     keyref="prodShort"/>, see <b>Theming and Customization</b>.</note>
+  </section>
+  <section>
+   <title><uicontrol>DEA</uicontrol></title>
+   <dl>
+    <dlentry>
+     <dt><uicontrol>DEA Settings</uicontrol></dt>
+     <dd>
+      <dl>
+       <dlentry>
+        <dt>Max Memory Percentage</dt>
+        <dd>Sets the percentage of physical memory that each DEA node can use for hosted
+         applications. The 80% default setting leaves enough memory for the operating system and DEA
+         processes on a node with 4 GB of RAM. This setting can be increased on nodes that have more
+         memory available (for example, to 90% on a node with 8 GB of RAM). Restart all DEA roles
+         and nodes to apply your change.<note>Do not exceed 100% unless the system correctly
+          supports swap space and has it enabled.</note></dd>
+       </dlentry>
+       <dlentry>
+        <dt>Max Staging Duration</dt>
+        <dd>Sets the maximum time allowed for application staging</dd>
+       </dlentry>
+      </dl>
+     </dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>DEA Placement Zones</uicontrol></dt>
+     <dd>Displays a filterable list of DEA Placement Zones on the <keyword keyref="prodShort"/></dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Availability Zones</uicontrol></dt>
+     <dd>Displays a filterable list of Availability Zones on the <keyword keyref="prodShort"/></dd>
+    </dlentry>
+   </dl>
+  </section>
+  <section>
+   <title><uicontrol>Feature Flags</uicontrol></title>
+   <p>Administrators can use feature flags to toggle specific permissions that allow organization
+    managers and developers to perform certain tasks. When the feature flag is disabled, only an
+    administrator can perform the task.</p>
+   <dl>
+    <dlentry>
+     <dt><uicontrol>Enable App Bits Upload</uicontrol></dt>
+     <dd>Allows developers to upload application bits (enabled by default)</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Enable App Scaling</uicontrol></dt>
+     <dd>Allows developers to scale applications (enabled by default)</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Enable Private Domain Creation</uicontrol></dt>
+     <dd>Allows organization managers to create private domains for that organization (enabled by
+      default)</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Enable Route Creation</uicontrol></dt>
+     <dd>Allows developers to create routes in a space (enabled by default)</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Enable Service Instance Creation</uicontrol></dt>
+     <dd>Allows developers to create service instances in a space (enabled by default)</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Enable User Organization Creation</uicontrol></dt>
+     <dd>Allows any user to create an organization via the API (disabled by default)</dd>
+    </dlentry>
+   </dl>
+   <p>These options can also be toggled using the <keyword keyref="CLIfile"/> CLI client with the
+     <b>feature flags</b> commands.</p>
+  </section>
+  <section>
+   <title><uicontrol>Logging</uicontrol></title>
+   <p>???</p>
+   <!--Figure this out.-->
+  </section>
+  <section>
+   <title><uicontrol>File System</uicontrol></title>
+   <dl>
+    <dlentry>
+     <dt><uicontrol>Capacity</uicontrol></dt>
+     <dd>Sets the maximum number of service slots to allocate</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Max FS Size</uicontrol></dt>
+     <dd>Sets the maximum size on disk for filesystem services (in MB)</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Allow Over-provisioning</uicontrol></dt>
+     <dd>Ignores the <uicontrol>Capacity</uicontrol> setting</dd>
+    </dlentry>
+   </dl>
+  </section>
+  <section>
+   <title><uicontrol>Harbor</uicontrol></title>
+   <p>Settings for the  <b>Harbor</b> TCP/UDP port service.</p>
+   <dl>
+    <dlentry>
+     <dt><uicontrol>External Host</uicontrol></dt>
+     <dd>
+      <p>Sets the public IP (if configured) for the Harbor node</p>
+     </dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>External Hostname</uicontrol></dt>
+     <dd>Sets the public hostname for the Harbor node</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Port Range Minimum</uicontrol></dt>
+     <dd>Sets the minimum for the exposed port range (the default is 35000)</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Port Range Maximum</uicontrol></dt>
+     <dd>Sets the maximum for the exposed port range (the default is 40000)</dd>
+    </dlentry>
+   </dl>
+   <note type="tip">For more information, see <b>Harbor: Requirements &amp; Setup</b>.</note>
+  </section>
+  <section>
+   <title><uicontrol>Data Services</uicontrol></title>
+   <dl>
+    <dlentry>
+     <dt><uicontrol>Allow Over-provisioning</uicontrol></dt>
+     <dd>Ignores the <uicontrol>Capacity</uicontrol> setting</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Capacity</uicontrol></dt>
+     <dd>Sets the maximum number of service slots to allocate</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Max DB size</uicontrol></dt>
+     <dd>Sets the maximum size on disk to allocate for database services</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Max Memory</uicontrol></dt>
+     <dd>Sets the maximum amount of physical memory to allocate to the service</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Memcached Memory</uicontrol></dt>
+     <dd>Sets the maximum amount of physical memory to allocate for memcached instances</dd>
+    </dlentry>
+    <dlentry>
+     <dt><uicontrol>Max FS Size</uicontrol></dt>
+     <dd>Sets the maximum size on disk for filesystem services</dd>
+    </dlentry>
+   </dl>
+  </section>
+ </conbody>
+</concept>

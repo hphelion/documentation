@@ -26,7 +26,7 @@
           <dt><codeph>data</codeph></dt>
           <dd>Import, export, or repair <keyword keyref="prodShort"/> system data<ul
               id="ul_evv_hk2_nt">
-              <li><codeph>data export</codeph></li>
+              <li><codeph>data export</codeph>m</li>
               <li><codeph>data import</codeph></li>
               <li><codeph>data repair</codeph></li>
             </ul></dd>
@@ -52,7 +52,7 @@
         </dlentry>
         <dlentry>
           <dt><codeph>license</codeph></dt>
-          <dd>Set the <keyword keyref="prodShort"/> license in use for the current microcloud or
+          <dd>Set the <keyword keyref="prodShort"/> license in use for the current micro cloud or
             cluster</dd>
         </dlentry>
         <dlentry>

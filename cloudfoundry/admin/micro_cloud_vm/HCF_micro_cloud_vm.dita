@@ -2,8 +2,8 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_cdw_mrl_nt">
  <title>Micro Cloud VM: Quick Start</title>
- <shortdesc>This section describes running the VM as a micro cloud. To get started with building a
-  cluster, see the <b>Cluster Setup</b> section.</shortdesc>
+ <shortdesc>This topic describes running the VM as a micro cloud. To get started with building a
+  cluster, see <b>Cluster Setup</b>.</shortdesc>
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>

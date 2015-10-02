@@ -9,8 +9,8 @@
   </metadata>
  </prolog>
  <conbody>
-  <p>To create additional users, use the <b>Users</b> section of the Management Console (or the
-      <b><codeph><keyword keyref="CLIfile"/> add-user command</codeph></b>):</p>
-  <codeblock>$ <keyword keyref="CLIfile"/> add-user <varname>&lt;username></varname> [--passwd <varname>&lt;password></varname>]</codeblock>
+  <p>To create additional users, use the <b>Users</b> view of the Management Console (or the
+                        <b><codeph><keyword keyref="CLIfile"/> add-user command</codeph></b>):</p>
+  <codeblock>$ <keyword keyref="CLIfile"/> add-user <varname>&lt;username&gt;</varname> [--passwd <varname>&lt;password&gt;</varname>]</codeblock>
  </conbody>
 </concept>

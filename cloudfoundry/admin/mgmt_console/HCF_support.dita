@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_usy_xcr_nt">
- <title>Uninstalling the VM</title>
+<concept id="concept_zry_mqr_nt">
+ <title>Support</title>
  <shortdesc></shortdesc>
  <prolog>
   <metadata>
@@ -9,7 +9,7 @@
   </metadata>
  </prolog>
  <conbody>
-  <p>Using the <keyword keyref="prodShort"/> VM makes no changes to the host operating system. To
-   remove it, delete the VM from your hypervisor.</p>
+  <p>This view contains a list of resources for getting support on using <keyword keyref="prodShort"
+   />. </p>
  </conbody>
 </concept>

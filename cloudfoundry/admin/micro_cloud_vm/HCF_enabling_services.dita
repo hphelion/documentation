@@ -20,7 +20,7 @@
   <p>To enable these services individually, click <menucascade>
     <uicontrol>Admin</uicontrol>
     <uicontrol>Cluster</uicontrol>
-    <uicontrol>Node Settings (Cog Icon)</uicontrol>
+    <uicontrol>Node Settings (cog icon)</uicontrol>
    </menucascade> in the Management console, or use the <b><codeph>kato role add</codeph></b>
    command.</p>
  </conbody>

@@ -21,17 +21,15 @@
    typically contains some comments and one or two entries. Add your new entries to the bottom of
    the file on separate lines.</p>
   <p>Add entries and corresponding IP addresses for the <keyword keyref="prodShort"/> endpoint, the
-   AOK (authentication) endpoint, the logs endpoint, and for each application. For example, if the
-   IP address of your <keyword keyref="prodShort"/> VM is <codeph>192.168.68.54</codeph>, and you
-   have an application with the URL <codeph>myapp.stackato-xxxx.local</codeph>, you would enter the
-   following lines: </p>
-  <codeblock>192.168.68.54 api.stackato-xxxx.local
-192.168.68.54 aok.stackato-xxxx.local
-192.168.68.54 logs.stackato-xxxx.local
-192.168.68.54 myapp.stackato-xxxx.local</codeblock>
-  <note type="tip">
-   To determine the IP address of the Stackato server, run the <codeph>$ ifconfig</codeph>
-    command.
-  </note>
+      AOK (authentication) endpoint, the logs endpoint, and for each application. For example, if
+      the IP address of your <keyword keyref="prodShort"/> VM is <codeph>192.168.68.54</codeph>, and
+      you have an application with the URL <codeph>myapp.<keyword keyref="mDNShostname"/></codeph>,
+      you would enter the following lines: </p>
+  <codeblock>192.168.68.54 api.<keyword keyref="mDNShostname"/>
+192.168.68.54 aok.<keyword keyref="mDNShostname"/>
+192.168.68.54 logs.<keyword keyref="mDNShostname"/>
+192.168.68.54 myapp.<keyword keyref="mDNShostname"/></codeblock>
+  <note type="tip"> To determine the IP address of the <keyword keyref="prodShort"/> server, run the
+        <codeph>$ ifconfig</codeph> command. </note>
  </conbody>
 </concept>

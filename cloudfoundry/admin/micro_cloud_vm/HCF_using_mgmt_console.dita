@@ -10,11 +10,12 @@
  </prolog>
  <conbody>
   <p>The <b>Management Console</b> is the web interface of <keyword keyref="prodShort"/>.</p>
-  <p>When the Stackato server finishes the start-up process, the hypervisor's <b>tty console</b>
-   displays the URL of the Management Console. Enter this URL into your web browser.</p>
-  <note>The SSL certificate for the <keyword keyref="prodLong"/> Management Console is self-signed.
+  <p>When the <keyword keyref="prodShort"/> server finishes the start-up process, the hypervisor's
+    <b>tty console</b> displays the URL of the Management Console. Enter this URL into your web
+   browser.</p>
+  <note>The SSL certificate for the <keyword keyref="prodShort"/> Management Console is self-signed.
    You will need to manually accept this certificate in your browser. For information on using your
-   own certificate, see the <b>HTTPS section</b>.</note>
+   own certificate, see <b>HTTPS</b>.</note>
   <p>When the Management Console loads, you will be prompted to create the first administrative user
    and the first <b>organization</b> for the system. You can use these account credentials to push
    applications, create additional users, and configure the system.</p>
