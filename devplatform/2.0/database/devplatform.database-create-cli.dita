@@ -46,9 +46,9 @@
         </dl>
       </li>
       <li><p>To view created instances, use the <codeph>trove list</codeph> command:</p>
-        <p outputclass="codehighlight">TODO: Screenshot</p></li>
+        <image href="../../../media/dbaas_list.PNG" placement="break" /></li>
       <li><p>To delete a database instance, use the <codeph>trove delete</codeph> command:</p>
-        <p outputclass="codehighlight">TODO: Screenshot</p></li>
+        <image href="../../../media/dbaas_delete.PNG" placement="break" /></li>
     </ol>
     
   </body>
