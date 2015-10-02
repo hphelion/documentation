@@ -2,8 +2,9 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="opsconsole">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Operations Console Overview</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Operations Console</title>
   <body>
+    <!--
     <section id="about">
       <p>The Operations Console (Ops Console) is designed for Helion OpenStack Administrators to
         have a web-based UI that they can use to operate and manage the Helion OpenStack
@@ -32,6 +33,29 @@
             <li><xref href="storage_summary.dita">Storage - Storage Alarm Summary</xref></li>
           </ul></li>
       </ul>
+    </section>
+    -->
+    <section id="about">
+      <p>The Operations Console (Ops Console) for Helion OpenStack 2.0 is designed for Helion
+        Openstack Administrators to have a web-based UI they can use to view data about their cloud
+        infrastructure. The Ops Console is a web-based GUI that offers the user access to data such
+        as monitoring alarms data by service, performance data, compute nodes and instances lists,
+        and a drilldown to Kibana for a deep look into logs. The Business Logic Layer is a
+        middleware component that serves as a single point of contact for the UI to communicate with
+        Openstack services such as Monasca, Nova, and others.</p>
+    </section>
+    <section id="connecting"><title>Connecting to the Operations Console</title>
+      <p>To determine which IP address to use to access the Operations Console you can use this
+        command from your deployer: <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock></p>
+      <p>The output of that command will show you the VIP you should use. It is listening over port
+        9095 on that VIP, so you can use the following syntax to access
+        it:<codeblock>http://VIP:9095</codeblock></p>
+      <p>The default login credentials are:</p>
+      <codeblock>Username: admin
+      Password: admin</codeblock>
+      <note type="important">The credentials for your <codeph>admin</codeph> user account can be
+        changed. See <xref href="../../keystone/keystone_init.dita">Keystone Configuration</xref>
+        for more details.</note>
     </section>
   </body>
 </topic>
