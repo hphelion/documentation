@@ -4,17 +4,20 @@
   <title>Install the Application Lifecycle Service (ALS)</title>
   <body>
     
-<ol><li>SSH to the Deployer node.</li>
-      <li>Source a stack RC file for the admin user and project. <ol id="ol_bpk_1c1_4t">
+<ol>
+      <li>Download an RC file for the admin user and project. <ol id="ol_bpk_1c1_4t">
           <li> Log in to Horizon using the admin account.</li>
           <li>Download the OpenStack RC file. <p>
               <image placement="break" href="../../../media/quickstartDownloadRCFile.png"
                 id="image_asb_jvy_nt"/>
             </p></li>
-          <li>Source the RC file.<p>
+          <li>Use <codeph>scp</codeph> to copy the RC file over to the Deployer.</li>
+          <li>SSH to the Deployer and source the RC file. You will need to provide the same admin
+            password that you used to log in to Horizon. <p>
               <codeblock> source admin-openrc.sh</codeblock>
             </p></li>
-        </ol></li><li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
+        </ol></li>
+      <li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
         information for your installation in the file. The following sample configuration provides a
         starting point. For more detailed information, see the OpenStack <xref
           href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
@@ -32,10 +35,12 @@
       auth_url: &lt;identity url&gt;
       project_name: &lt;admin project name&gt;
       username: &lt;admin user name&gt;
-      password: &lt;admin password&gt;</codeblock></li><li>List the available ALS versions to
+      password: &lt;admin password&gt;</codeblock></li>
+      <li>List the available ALS versions to
         install.<codeblock>openstack hdpi list --os-cloud mycloud | grep als</codeblock>The output
-        should include:<codeblock>| als | wscatalog.2670 | 2.0.0 | available |</codeblock></li><li> Use the ALS version number to view the details of the specific package. The output provides
-        significant administration information such as download size, version, and so
+        should include:<codeblock>| als | wscatalog.2670 | 2.0.0 | available |</codeblock></li>
+      <li> Use the ALS version number to view the details of the specific package. The output
+        provides significant administration information such as download size, version, and so
         forth.<codeblock>openstack hdpi show wscatalog.2670 --os-cloud mycloud</codeblock> The
         output will appear similar to:
         <codeblock>+---------------+---------------------------------------------------------------------------------------------+
@@ -55,7 +60,8 @@
 | type          | PaaS Workloads                                                                              |
 | version       | 2.0.0                                                                                       |
 | webpage       | http://www.hp.com/helion/devplatform                                                        |
-+---------------+---------------------------------------------------------------------------------------------+        </codeblock></li><li> Install the ALS
++---------------+---------------------------------------------------------------------------------------------+        </codeblock></li>
+      <li> Install the ALS
         service.<codeblock>openstack --os-cloud mycloud hdpi als install –-package wscatalog.2670</codeblock>
         The output will appear similar to:
         <codeblock>Application Lifecycle Service is now downloading
@@ -66,6 +72,7 @@ Application Lifecycle Service is already (available)
 Application Lifecycle Service is already configured
 Completed installing application
 $</codeblock>
-      </li></ol>
+      </li>
+    </ol>
   </body>
 </topic>
