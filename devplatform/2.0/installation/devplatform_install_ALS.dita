@@ -2,27 +2,30 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_txg_cnh_ts">
   <title>Install the Application Lifecycle Service (ALS)</title>
-  <body> <ol id="ol_jkm_hbq_ft">
-      <li>Log in to the Horizon web console as an Admin or user with Admin privileges.</li>
-      <li> Select the <i>Admin</i> project in the <b>Project</b> selector. <note type="important"
-          >This installation will fail if a tenant/project other than "Admin" is selected.</note>
-        <image href="../../../media/DevPlatInstallAdminCheck.png" id="image_syj_2bq_ft"/>
-      </li>
-      <li>Click on the Admin panel in Horizon, select the <b>Development Platform</b> panel, and
-        then click <b>Configure Services</b>.<image
-          href="../../../media/devplat_configure_services.png" id="image_klm_hbq_ft"
-          placement="break"/></li>
-      <li>If you are not already connected to the HP Download Network (HDN), click <b>Connect</b> in
-        the Configure Services panel and enter your username and password. If you don't have a
-        username and pasword yet, click <b>Sign-up</b> and follow the prompts.</li>
-      <li>In the <b>Configure Services</b> table, locate the <b>Application Lifecycle Service</b>
-        item. </li>
-      <li>Select <b>Download Service</b> and wait for the download to complete. <note
-          type="important">Do not download multiple services at the same time. This is unsupported
-          and will cause errors.</note></li>
-      <li>When the download is complete, click <b>Project</b> > <b>Compute</b> > <b>Images</b> and
-        verify that two images with the prefix "HP Helion Development Platform - Application
-        Lifecycle Service" are now available for use.</li>
-      </ol>
+  <body>
+    
+<ol>   <li> Source a stack rc file for the admin user and tenant.</li>
+      <li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
+        information for your installation in the file. The following sample configuration provides a
+        starting point:
+        <codeblock>clouds:
+    mycloud:
+    codn_username: hdnuser@domain.com
+    codn_password: password
+    horizon_url: http://&lt;horizon-ip-address&gt;/
+      cacert: /etc/ssl/certs/ca-certificates.crt
+      region_name: region1
+      auth_url: &lt;auth url&gt;
+        project_name: &lt;admin project name&gt;
+          username: &lt;admin user name&gt;
+            password: &lt;admin password&gt;</codeblock></li>
+              
+              <li>List the available database versions to
+        install.<codeblock>openstack hdpi list --os-cloud mycloud | grep database</codeblock>The
+        output should appear similar
+        to:<codeblock>database | wscatalog.2655 | 2.0.0.0 | available</codeblock></li><li> Select the database version to install and view the details of the
+        package.<codeblock>openstack hdpi show wscatalog.2655 --os-cloud mycloud</codeblock></li><li> Install the database
+        service.<codeblock>openstack --os-cloud mycloud hdpi database install –-package wscatalog.2655</codeblock></li></ol>
+              
   </body>
 </topic>
