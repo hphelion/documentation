@@ -4,10 +4,12 @@
 <title>HP Helion 2.0 Development Platform: Installing the Horizon UI Panels for Service
     Management</title>
 <body>
+
   <p>This document shows how to install the Horizon UI panels for the <xref
         href="../helion/helion_index.dita">Application Lifetime Service (ALS)</xref> and <xref
         href="devplatform_install_database.dita">Database as a Service (DBaaS)</xref>.</p>
-<section id="preparation"> <title>1. Pre-requisites</title>
+
+<section id="preparation"> <title>Preparation</title>
 <p>You will need the following pieces of information in order to run the service updates.</p>
 <table pgwide="1">
 <tgroup cols="2">

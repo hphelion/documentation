@@ -25,6 +25,9 @@
         <!--<topicref href="2.0/installation/devplatform_install_messaging.dita" navtitle="Install the Messaging Service" locktitle="yes"/>-->
         <!--<topicref href="2.0/installation/devplatform.vertica.install.dita" navtitle="Install the Vertica Application" locktitle="yes"/>-->
         <!--<topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service" locktitle="yes"/>-->
+        <topicref href="2.0/installation/devplatform_install_database.dita"
+          navtitle="Install the Database Service" locktitle="yes"/>
+
       </topichead>
      <!-- <topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita"
         navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>
@@ -272,6 +275,28 @@
       <topicref href="2.0/windows/windows_custom_buildpacks.dita" navtitle="Custom Buildpacks"
         locktitle="yes" toc="no"/>
     </topichead>
+
+    <topichead navtitle="Database Service Reference">
+      <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
+        navtitle="Using the Database Service"/>
+      <topicref href="2.0/database/devplatform.database-create-horizon.dita"
+        navtitle="Creating a database from Horizon"/>
+      <topicref href="2.0/database/devplatform.database-create-cli.dita"
+        navtitle="Create a database instance from the command line"/>
+      <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
+        navtitle="Creating a database cluster from Horizon"/>
+      <topicref href="2.0/database/devplatform.database-create-cluster-cli.dita"
+        navtitle="Creating a database cluster from the command line"/>
+      <topicref href="2.0/database/devplatform.database-monitor.dita"
+        navtitle="Monitoring a database from the Operations Console"/>
+      <topicref href="2.0/database/devplatform.database-attach-ip.dita"
+        navtitle="Attach a floating IP to a database instance"/>
+      <topicref href="2.0/database/devplatform.database-replicate.dita"/>
+      <topicref href="2.0/database/devplatform.database-backup.dita" navtitle="Back up a database"/>
+      <topicref href="2.0/database/devplatform.database-ALS.dita" locktitle="yes"
+        navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
+    </topichead>
+    
     <!--IT Ops-->
     <topicref href="2.0/devplatform.sysadmin.dita" locktitle="yes" navtitle="Resources for IT Ops">
       <topicref href="2.0/devplatform_upgrade.dita" navtitle="Upgrading Helion OpenStack"
@@ -318,6 +343,7 @@
         <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
           navtitle="Using the Database Service"/>
       </topichead>
+
       <topicref href="2.0/helion/helion_index.dita" locktitle="yes"
         navtitle="Application Lifecycle Service">
         <topicref href="2.0/helion/user/services/data-services.dita" locktitle="yes"
@@ -381,6 +407,20 @@
           <topicref href="2.0/helion/user/deploy/app-logs.dita" locktitle="yes"
             navtitle="Application Logs "/>
         </topicref>
+        <topichead navtitle="ALS Management Console">
+          <topicref href="2.0/helion/admin/console/console_intro.dita"
+            navtitle="Introduction and First Use" locktitle="yes"/>
+          <topicref href="2.0/helion/admin/console/console_index.dita" locktitle="yes"
+            navtitle="Management Console (Admin View)"/>
+          <topicref href="2.0/helion/user/console/console_index.dita"
+            navtitle="Management Console (User View)" locktitle="yes"/>
+          <topicref href="2.0/helion/admin/console/console_settings.dita"
+            navtitle="Management Console Settings" locktitle="yes"/>
+          <topicref href="2.0/helion/admin/console/customize.dita" locktitle="yes"
+            navtitle="Management Console Customization"/>
+          <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
+            navtitle="Sample Applications"/>
+        </topichead>
       </topicref>
       <topichead navtitle="Other Services">
         <topicref href="2.0/helion/user/services/data-services.dita" locktitle="yes"
