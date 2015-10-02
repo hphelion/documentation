@@ -17,28 +17,38 @@
         <li>Download the Development Platform Installer 2.0.0.0 beta package.</li>
       </ol>
     </section>
-    <section id="pre-installing-the-hp-helion-development-platform">
-      <title>Step 2. Install the HP Helion Development Platform</title>
-      <note type="tip"> For help with the installer, enter the command <codeph>openstack
-          hdpi</codeph>
-      </note>
+    <section>
+      <title>Step 2. Download and Install the Python Scripts</title>
       <ol>
-        <li>Create a Virtual Environment <codeblock>virtualenv .devplatform</codeblock></li>
-        <li>Source the Virtual Environment<codeblock>..devplatform/bin/activate</codeblock></li>
-        <li> If your network uses a proxy, it may be necessary to set the <i>https_proxy</i> shell
-          variable so that the installer may download required Python libraries from the <xref
-            href="https://pypi.python.org/pypi" scope="external" format="html">pypi</xref> site. To
-          set the <i>https_proxy</i> shell variable, enter the following
-            command:<codeblock>export https_proxy={ip address or url of http proxy} </codeblock><p>Example:</p><codeblock>export https_proxy=http://proxy.example.com</codeblock></li>
-        <li> Confirm that you have access to the <xref href="https://pypi.python.org/pypi"
+        <li>Confirm that you have access to the <xref href="https://pypi.python.org/pypi"
             scope="external" format="html">pypi</xref> site. The following commands will verify
           access to the site and download one of the prerequisite files as a brief test. <note> If
               <i>ping</i> is unavailable, use
           <i>wget</i>.</note><codeblock>ping pypi.python.org
 sudo -E pip install python-novaclient</codeblock></li>
-        <li> If your network uses a proxy, you must define the proxy exclusion list so that proxies
-          are not used for communicating with the services in the overcloud. To define the proxy
-          exclusion list, enter the following command:<codeblock>export no_proxy=localhost,127.0.0.1, &lt;ip address or host name of identity service aka keystone&gt;</codeblock><dl>
+        <li>Install <codeph>python-virtualenv</codeph>
+          <codeblock>sudo apt-get install python-virtualenv</codeblock></li>
+        <li> Install <codeph>python-dev
+          </codeph><codeblock>sudo apt-get install python-dev</codeblock></li>
+      </ol>
+    </section>
+    <section id="pre-installing-the-hp-helion-development-platform">
+      <title>Step 3. Install the HP Helion Development Platform</title>
+      <note type="tip"> For help with the installer, enter the command <codeph>openstack
+          hdpi</codeph>
+      </note>
+      <ol>
+        <li>Create a Virtual Environment
+          <!--where do we run this? with what tool?--><codeblock>virtualenv .devplatform</codeblock></li>
+        <li>Source the Virtual Environment
+          <!--check source syntax--><codeblock>source .devplatform/bin/activate</codeblock></li>
+        <li> If your network uses a proxy, it may be necessary to set the <i>https_proxy</i> shell
+          variable so that the installer may download required Python libraries from the <xref
+            href="https://pypi.python.org/pypi" scope="external" format="html">pypi</xref> site. To
+          set the <i>https_proxy</i> shell variable, enter the following command:
+            <!--add http proxy as well per Chris--><codeblock>export https_proxy={ip address or url of http proxy} </codeblock><p>Example:</p><codeblock>export https_proxy=http://proxy.example.com</codeblock></li>
+        <li> If your network uses a proxy, you must define the proxy exclusion list. Enter the
+          following command:<codeblock>export no_proxy=localhost,127.0.0.1, &lt;ip address or host name of identity service aka keystone&gt;</codeblock><dl>
             <dlentry>
               <dt>Example:</dt>
               <dd>
@@ -46,8 +56,6 @@ sudo -E pip install python-novaclient</codeblock></li>
               </dd>
             </dlentry>
           </dl></li>
-        <li> Install <codeph>python-dev
-          </codeph><codeblock>sudo apt-get install python-dev</codeblock></li>
         <li>Install the Development Platform Installer in the Virtual Environment
           .<codeblock>pip install DevelopmentPlatformInstaller.2.0.0.0.tar.gz</codeblock></li>
       </ol>

@@ -21,12 +21,8 @@
           </thead>
           <tbody>
             <row>
-              <entry> BASE_NODE_IP </entry>
-              <entry>The IP address of the base node for your Helion installation. </entry>
-            </row>
-            <row>
-              <entry> SEED_NODE_IP </entry>
-              <entry>The IP address of the seed node for your Helion installation. </entry>
+              <entry> </entry>
+              <entry>&lt;deployer information></entry>
             </row>
             <row>
               <entry> USERNAME </entry>
@@ -38,29 +34,13 @@
               <entry>The password of a cloud admin that has rights to perform a service update for
                 the selected service.</entry>
             </row>
-            <row>
-              <entry> HEAT_ADMIN_KEY </entry>
-              <entry>The private key file for the <b>heat-admin</b> user.  <p>Usually available
-                  within the root user account on the seed node here: <codeph>~/.ssh/id_rsa
-                  </codeph></p></entry>
-            </row>
-            <row>
-              <entry> CONTAINER_NAME </entry>
-              <entry>The Swift container that contains the service update.<p> Defaults to
-                    <b>als-horizon-ui</b> for ALS.  Defaults to <b>dbaas-horizon-ui</b> for DBaaS.
-                </p></entry>
-            </row>
-            <row>
-              <entry>SERVICE_UPDATE_FILENAME </entry>
-              <entry>The filename of the service update. This can typically can be found inside the
-                Swift container that contains the service update.</entry>
-            </row>
           </tbody>
         </tgroup>
 </table>
 </section>
-<section id="lets-get-to-it"><title>2. Configure each service</title>Return to the Helion
-      Development Platform UI and click <b>Configure</b> for each service to complete
-      configuration.</section>
+<section id="lets-get-to-it">
+      <title>2. Configure each service
+        <!--if the previous instructions were wrong, then we need instructions here--></title>
+    </section>
 </body>
 </topic>
