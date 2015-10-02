@@ -12,7 +12,7 @@
   <p>There are several views that are available only to <keyword keyref="prodShort"/>
    administrators.</p>
   <section>
-   <title>Cluster Mantagement</title>
+   <title>Cluster Management</title>
    <dl>
     <dlentry>
      <dt><uicontrol>Summary</uicontrol></dt>
