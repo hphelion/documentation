@@ -244,6 +244,7 @@
         navtitle="Creating a database cluster from the command line"/>
       <topicref href="2.0/database/devplatform.database-monitor.dita"
         navtitle="Monitoring a database from the Operations Console"/>
+      <topicref href="monitoring_cli.dita"/>
       <topicref href="2.0/database/devplatform.database-attach-ip.dita"
         navtitle="Attach a floating IP to a database instance"/>
       <topicref href="2.0/database/devplatform.database-replicate.dita"/>

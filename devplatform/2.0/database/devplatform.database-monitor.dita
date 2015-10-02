@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_database_manage_horizon">
-  <title>Monitoring a database with the Operations Console</title>
+  <title>Monitoring a database from the Operations Console</title>
   <body>
     <p>This topic describes monitoring information available through the Operations Console. </p>
     <p>The monitoring console can generate the following alarms:
