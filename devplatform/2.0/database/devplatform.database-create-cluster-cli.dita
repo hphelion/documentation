@@ -12,11 +12,13 @@
         <ul><li>To view the valid <b>datastore</b> values, use <codeph>trove datastore-list</codeph>.</li>
         <li>To view the valid <b>datastore_version</b> values, use <codeph>trove datastore-version-list &lt;datastore&gt;</codeph>, where <b>datastore</b> is the
           name of the datastore (e.g. <b>mysql</b>.)</li>
-        </ul></li>
+        </ul>
+        <note>MongoDB instances require a minimum volume size of 5.</note>
+      </li>
       <li>To verify that the cluster was created, use the <codeph>trove cluster-list</codeph> command.
-      <p outputclass="codehighlight">TODO: screenshot here</p></li>
+      </li>
       <li>To list the databases that are part of a cluster, use the <codeph>trove list --include-clustered</codeph> command.
-      <p outputclass="codehighlight">TODO: screenshot here</p></li>
+      </li>
       
     </ol>
     
@@ -32,7 +34,7 @@
       </dlentry>
       <dlentry>
         <dt>Example 3: Create a MongoDB cluster called MyMongoDBCluster with three database instances of flavor m1.large and volume size 2</dt>
-        <dd><codeblock>trove cluster-create MyMongoDBCluster mongodb 3.0 --instance flavor=4,volume=2 --instance flavor=4,volume=2 --instance flavor=4,volume=2</codeblock></dd>
+        <dd><codeblock>trove cluster-create MyMongoDBCluster mongodb 3.0 --instance flavor=4,volume=5 --instance flavor=4,volume=5 --instance flavor=4,volume=5</codeblock></dd>
       </dlentry>
       
     </dl></section>
