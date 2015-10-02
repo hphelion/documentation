@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_database_monitor_cli">
+  <title>Monitoring a database from the command line</title>
+  <body>
+    <p>Databases and database clusters can be monitored from the command line using the following Trove commands:</p>
+    <ul>
+      <li><xref type="section" href="#topic_database_monitor_cli/" format="dita"></xref></li>
+      <li><xref type="section" href="#topic_database_monitor_cli/" format="dita"></xref></li>
+      <li><xref type="section" href="#topic_database_monitor_cli/" format="dita"></xref></li>
+      <li><xref type="section" href="#topic_database_monitor_cli/" format="dita"></xref></li>
+    </ul>
+  </body>
+</topic>
