@@ -5,8 +5,10 @@
   <body>
     <p>This document describes how to back up an existing database instance. This will take a backup of the entire database instance. If necessary, the backup can be restored to a new instance at a later time.</p>
     <ul>
-      <li>Backing up a database from Horizon</li>
-      <li>Backing up a database from the command line</li>
+      <li><xref href="#topic_backup_database/horizon" format="dita">Backing up a database from
+          Horizon</xref></li>
+      <li><xref href="#topic_backup_database/cli" format="dita">Backing up a database from the
+          command line</xref></li>
     </ul>
     <note>Backing up a MongoDB database is not supported.</note>
     <section id="horizon"><title>Backing up a database from Horizon</title>
