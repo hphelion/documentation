@@ -41,10 +41,6 @@
           <xref href="helion/CLI/ALS_Client_Downloads.dita">Application Lifecycle
             Service Client installation</xref>
         </li>
-        <li>
-          <xref href="installation/devplatform_install_marketplace.dita">Installing the
-            Marketplace</xref>
-        </li>
       </ul>
     </section>
     <section id="administration">

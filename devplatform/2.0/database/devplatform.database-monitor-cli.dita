@@ -3,12 +3,6 @@
 <topic id="topic_database_monitor_cli">
   <title>Monitoring a database from the command line</title>
   <body>
-    <p>Databases and database clusters can be monitored from the command line using the following Trove commands:</p>
-    <ul>
-      <li><xref type="section" href="#topic_database_monitor_cli/" format="dita"></xref></li>
-      <li><xref type="section" href="#topic_database_monitor_cli/" format="dita"></xref></li>
-      <li><xref type="section" href="#topic_database_monitor_cli/" format="dita"></xref></li>
-      <li><xref type="section" href="#topic_database_monitor_cli/" format="dita"></xref></li>
-    </ul>
+    <p>Monitoring client databases from the command line is not supported in Helion Development Platform 2.0 Beta 1.</p>
   </body>
 </topic>
