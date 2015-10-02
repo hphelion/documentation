@@ -14,12 +14,27 @@
     <!--<topichead navtitle="Developer Quick Start Trial Guide"><topicref href="2.0/devplatform.ALS-developer-trial-quick-start.dita" navtitle="Quick Start Step 1: Register" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start2.dita" navtitle="Quick Start Step 2: Download Tools" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start3.dita" navtitle="Quick Start Step 3: Create Sandbox" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start4.dita" navtitle="Quick Start Step 4: Create Cluster" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start5.dita" locktitle="yes" navtitle="Quick Start Step 5: Windows (optional)"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start6.dita" locktitle="yes" navtitle="Quick Start Step 6: Explore More"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start-termination.dita" locktitle="yes" navtitle="Quick Start Termination"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita" locktitle="yes" navtitle="Quick Start Troubleshooting"/></topichead>-->
     <topichead navtitle="Installation">
       <!--<topicref href="2.0/installation/devplatform_commercial_install.dita" navtitle="Full Platform Installation - All Services" locktitle="yes"/>-->
-      <topichead navtitle="Individual Service Installation"
-        ><!--<topicref href="2.0/installation/devplatform_install_prereq.dita" navtitle="Installation Prerequisites" locktitle="yes"/>--><topicref href="2.0/installation/devplatform.horizonui.install.dita" navtitle="Install the Horizon UI Panels" locktitle="yes"/><topicref href="2.0/installation/devplatform_install_platform.dita" navtitle="Install the HP Helion Development Platform (no services)" locktitle="yes"/><!--<topicref href="2.0/installation/devplatform_install_ALS.dita" navtitle="Install the Application Lifecycle Service" locktitle="yes"/>--><!--<topicref href="2.0/installation/devplatform_install_database.dita" navtitle="Install the Database Service" locktitle="yes"/>--><!--<topicref href="2.0/installation/devplatform_install_messaging.dita" navtitle="Install the Messaging Service" locktitle="yes"/>--><!--<topicref href="2.0/installation/devplatform.vertica.install.dita" navtitle="Install the Vertica Application" locktitle="yes"/>--><!--<topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service" locktitle="yes"/>--></topichead>
-      <!--<topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita" navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>-->
-      <!--<topicref href="2.0/helion/admin/server/upgrade.dita" locktitle="yes" navtitle="Upgrade Existing ALS Clusters"/>-->
-      <!--<topicref href="2.0/devplatform.troubleshooting.dita" locktitle="yes" navtitle="Installation Troubleshooting"/>-->
-      <!--<topicref href="2.0/devplatform.related-topics.dita" locktitle="yes" navtitle="Related Documentation "/>-->
+
+      <topichead navtitle="Individual Service Installation">
+        <!--<topicref href="2.0/installation/devplatform_install_prereq.dita" navtitle="Installation Prerequisites" locktitle="yes"/>-->
+        <topicref href="2.0/installation/devplatform.horizonui.install.dita" navtitle="Install the Horizon UI Panels" locktitle="yes"/>
+        <topicref href="2.0/installation/devplatform_install_platform.dita" navtitle="Install the HP Helion Development Platform (no services)" locktitle="yes"/>
+        <topicref href="2.0/installation/devplatform_install_ALS.dita"
+          navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
+        <!--<topicref href="2.0/installation/devplatform_install_database.dita" navtitle="Install the Database Service" locktitle="yes"/>-->
+        <!--<topicref href="2.0/installation/devplatform_install_messaging.dita" navtitle="Install the Messaging Service" locktitle="yes"/>-->
+        <!--<topicref href="2.0/installation/devplatform.vertica.install.dita" navtitle="Install the Vertica Application" locktitle="yes"/>-->
+        <!--<topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service" locktitle="yes"/>-->
+      </topichead>
+     <!-- <topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita"
+        navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>
+      <topicref href="2.0/helion/admin/server/upgrade.dita" locktitle="yes"
+        navtitle="Upgrade Existing ALS Clusters"/>
+      <topicref href="2.0/devplatform.troubleshooting.dita" locktitle="yes"
+        navtitle="Installation Troubleshooting"/>
+      <topicref href="2.0/devplatform.related-topics.dita" locktitle="yes"
+        navtitle="Related Documentation "/> -->
+
     </topichead>
     <!--uninstallation -->
     <topichead navtitle="Uninstallation"
