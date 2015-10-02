@@ -137,13 +137,15 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
       <ol id="ol_xct_5dz_nt">
         <li> Source a stack RC file for the admin user and tenant. <ol>
           <li> Log in to Horizon using the admin account.</li>
-          <li>Download the OpenStack RC file. <p><b>Project</b> &gt; <b>Compute</b> &gt; <b>Access
-            &amp; Security</b> &gt; <b>API Access</b> &gt; click <b>Download OpenStack RC
-              File</b><image placement="break" href="../../../media/quickstartDownloadRCFile.png"
-                id="image_asb_jvy_nt"/></p></li>
-          <li>Source the RC file<p>
-            <codeblock> source admin-openrc.sh</codeblock>
-          </p></li>
+          <li> Download the OpenStack RC file. <p><b>Project</b> &gt; <b>Compute</b> &gt; <b>Access
+                  &amp; Security</b> &gt; <b>API Access</b> &gt; click <b>Download OpenStack RC
+                  File</b><image placement="break"
+                  href="../../../media/quickstartDownloadRCFile.png" id="image_asb_jvy_nt"
+              /></p></li>
+          <li>Source the RC file. You will need to provide the same admin password that you used to
+              log in to Horizon. Log in to the environment, open a command line client,  and execute:<p>
+                <codeblock> source admin-openrc.sh</codeblock>
+              </p></li>
         </ol></li><li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
           information for your installation in the file. The following sample configuration provides
           a starting point. For more detailed information, see the OpenStack <xref
@@ -157,16 +159,18 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
     codn_username: hdnuser@domain.com
     codn_password: password
     horizon_url: http://&lt;horizon-ip-address&gt;/
-    cacert: /etc/ssl/certs/ca-certificates.crt
+    cacert: unset
     region_name: region1
     database:
-      external_network: &lt;guid of ext-net&gt;;
+      ephemeral_ca_host: unset
+      ephemeral_ca_password: unset
+      external_network: &lt;guid of ext-net&gt;
       provider_network: &lt; guid of svc-net&gt;
       ntp_server: &lt;ip address of ntp server&gt;
       keypair: default
       enable_ha: true
       flavor: m1.small
-      database_flavor: m1.small
+      database_flavor: m1.medium
       messaging_flavor: m1.medium
       database_volume_size: 10
       logstash_rabbitmq_host: &lt; ip address of logging service&gt;
@@ -199,17 +203,17 @@ auth:
         following steps will configure HAProxy to receive and forward HTTP requests to the VM that
         hosts the REST API endpoint for the Database Service.<ol>
           <li> Identify the API server IPs on the SVC network. You should have as many API servers
-            (and IPs) as you have Availability Zones in your Helion OpenStack
-            installation.<codeblock>nova list | awk '/trove[0-9]*_api/{ print $4,"\t", substr($12,5) }' </codeblock></li>
-          <li> Identify the Virtual IP used by the controller nodes to be able to load balance the
-            Helion OpenStack
-            services:<codeblock>keystone endpoint-list | awk '/8779/{ print $6 }' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"</codeblock></li>
+            (and IPs) as you have Availability Zones in your Helion OpenStack installation.<p>
+              <codeblock>openstack server list | awk '/trove[0-9]*_api/{ print $4,"\t", substr($8,5) }'</codeblock>
+            </p></li>
+          <li> Identify the Virtual IP used to load balance the Helion OpenStack
+            services:<codeblock>openstack endpoint show database -c publicurl --format value</codeblock></li>
           <li> Update configuration on each of the Helion OpenStack controller nodes by connecting
             to the controller and doing the following: <ol>
               <li>Edit the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following lines. The
                 last line should be repeated once for each API server identified in step
                 1.<codeblock>listen trove_api
-bind &lt;Virtual IP from step 2&gt;:8779
+bind &lt;virtual IP from step 2&gt;:8779
 option httpchk GET /
 server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&gt; check inter 2000 rise 2 fall 5 check-ssl ca-file /etc/ssl/certs/ca-certificates.crt</codeblock></li>
               <li> Edit the /etc/iptables/rules.v4 file and add to
