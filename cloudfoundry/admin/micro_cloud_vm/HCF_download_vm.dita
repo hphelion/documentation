@@ -9,7 +9,7 @@
   </metadata>
  </prolog>
  <conbody>
-  <p>You can <xref href="http://downloads.stackato.com/vm/" format="html" scope="external">download an
+   <p>You can <xref href="http://downloads.stackato.com/vm/" format="html" scope="external">download an
      <keyword keyref="prodShort"/> VM</xref> in the hypervisor format of your choice or use the
    latest image on Amazon EC2 or HP Public Cloud.</p>
   <p>Host system requirements:<ul id="ul_spb_lvl_nt">

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_wvw_5zz_nt">
+ <title>Customizing Error Pages</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>To create custom error pages, create the following HTML files in
+          <filepath>/home/<varname>&lt;hcf-directory></varname>/static/vendor/errors/</filepath> on
+      each router node:</p>
+  <ul id="ul_r33_gb1_4t">
+   <li><filepath>404.html</filepath></li>
+   <li><filepath>422.html</filepath></li>
+   <li><filepath>500.html</filepath></li>
+   <li><filepath>502.html</filepath></li>
+   <li><filepath>app-not-available.html</filepath></li>
+  </ul>
+  <p>When present, these files can be used to display information about the corresponding HTTP
+   errors.</p>
+  <note type="tip">You can use the default error pages in
+          <filepath>/home/<varname>&lt;hcf-directory></varname>/code/console/errors</filepath> as a
+      reference. However, you must not modify these files directly because your changes may be lost
+      during a patch or an upgrade.</note>
+ </conbody>
+</concept>
