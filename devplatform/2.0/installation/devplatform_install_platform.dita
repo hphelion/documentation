@@ -49,13 +49,13 @@
     <section>
       <title>Step 3. Download and Install the Python Scripts</title>
       <ol>
-        <li>Confirm that you have access to the <xref href="https://pypi.python.org/pypi"
-            scope="external" format="html">pypi</xref> site.<note> If <i>ping</i> is unavailable,
-            use <i>wget</i>.</note><codeblock>ping pypi.python.org</codeblock></li>
+        <li>Verify that you have access to the <xref href="https://pypi.python.org/pypi"
+            scope="external" format="html">pypi</xref> site.  If <i>ping</i> is unavailable, use
+            <i>wget</i>.<codeblock>ping pypi.python.org</codeblock></li>
         <li>Install <codeph>python-virtualenv</codeph>
           <codeblock>sudo apt-get install python-virtualenv</codeblock></li>
-        <li> Install <codeph>python-dev
-          </codeph><codeblock>sudo apt-get install python-dev</codeblock></li>
+        <li> Install <codeph>python-dev </codeph>
+          <!--we're not sure about this one but you might need it to do pip--><codeblock>sudo apt-get install python-dev</codeblock></li>
       </ol>
     </section>
     <section id="pre-installing-the-hp-helion-development-platform">
@@ -64,7 +64,7 @@
           hdpi</codeph>
       </note>
       <ol>
-        <li>Open a terminal session.
+        <li>SSH to the Deployer.
           <!--find out whether this works on a windows box or if it needs further explanation; where should this be run from?--></li>
         <li> If your network uses a proxy, it may be necessary to set the
           <codeph>https_proxy</codeph> and <codeph>http_proxy</codeph> shell variables so that the
