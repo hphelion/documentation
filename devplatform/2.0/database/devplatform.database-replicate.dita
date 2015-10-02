@@ -6,7 +6,7 @@
     <p>Replicating a database creates a slave for your instance that replicates every action on the master. Creating a database instance that is automatically replicated results in more durable data and can 
       prevent data loss in a disaster scenario.</p>
       <section id="db-prerequisites"> <title>Prerequisites</title>
-        <p>To follow this guide, you must have already <xref type="section" href="#DatabaseService/create">created</xref> a database instance that will be the master database.</p>
+        <p>To follow this guide, you must have already <xref type="internal" href="devplatform.database-create-horizon.dita#topic_create_database_horizon">created</xref> a database instance that will be the master database.</p>
       </section>
     <section id="steps"> <title>Steps</title>
       <ol>
@@ -48,4 +48,8 @@
       </ol>
     </section>
   </body>
+  <related-links>
+    <link href="devplatform.database-instance.dita#DatabaseService"/>
+    <link href="devplatform.database-create-horizon.dita#topic_create_database_horizon"/>
+  </related-links>
 </topic>

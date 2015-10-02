@@ -7,9 +7,9 @@
     <p>The monitoring console can generate the following alarms:
       <table frame="all" rowsep="1" colsep="1" id="table_cry_hwm_nt">
         <tgroup cols="4">
-          <colspec colname="Alarm name" colnum="1" colwidth="1.0*"/>
+          <colspec colname="AlarmName" colnum="1" colwidth="1.0*"/>
           <colspec colname="Metric" colnum="2" colwidth="1.0*"/>
-          <colspec colname="Alarm ID" colnum="3" colwidth="1.0*"/>
+          <colspec colname="AlarmID" colnum="3" colwidth="1.0*"/>
           <colspec colname="Threshold" colnum="4" colwidth="1.0*"/>
           <thead>
             <row>
