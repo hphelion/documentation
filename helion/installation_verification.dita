@@ -40,8 +40,7 @@
         </li>
         <li>
           <p>Ensure you can access your cloud:</p>
-          <codeblock>
-ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
+          <codeblock>ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
 source /etc/environment</codeblock>
         </li>
         <li>
@@ -66,9 +65,8 @@ source /etc/environment</codeblock>
         </li>
         <li>
           <p>Change to the <codeph>tempest</codeph> directory and list the test results:</p>
-          <codeblock>
-cd /opt/stack/tempest
-testr last</codeblock>
+          <codeblock>cd /opt/stack/tempest
+./venv/bin/testr last</codeblock>
         </li>
       </ol>
       <p>See <xref href="https://testrepository.readthedocs.org/en/latest/" scope="external"
