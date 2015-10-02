@@ -44,4 +44,11 @@
          </keywords>
       </topicmeta>
    </keydef> 
+   <keydef keys="mDNShostname">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf-xxxx.local</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef> 
 </map>

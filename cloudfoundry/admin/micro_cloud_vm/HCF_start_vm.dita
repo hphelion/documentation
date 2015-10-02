@@ -10,15 +10,15 @@
  </prolog>
  <conbody>
   <p>On first boot, the <keyword keyref="prodShort"/> VM generates a hostname in the form
-    <codeph>stackato-xxxx.local</codeph>. This hostname is displayed on the hypervisor console. It
-   receives its IP address via DHCP and broadcasts the generated hostname on the local subnet via
-    <b>multicast DNS</b>.</p>
-  <p>You will use this hostname to open the <b>Management Console</b> in a browser or to connect to
-   the <b><keyword keyref="prodShort"/> CLI client</b>. </p>
+          <codeph><keyword keyref="mDNShostname"/></codeph>. This hostname is displayed on the
+      hypervisor console. It receives its IP address via DHCP and broadcasts the generated hostname
+      on the local subnet via <b>multicast DNS</b>.</p>
+  <p>You will use this hostname to open the <b>Management Console</b> in a browser or to connect
+   using the <b><keyword keyref="prodShort"/> CLI client</b>. </p>
   <note>The default password for the <codeph><keyword keyref="defaultSysUser"/></codeph> system user
-   is <keyword keyref="defaultSysPass"/>. This password is changed automatically when you set up the
-   first administrative user in the Management Console. Once you set up the primary administrator
-   account, use that account password to log in from the command line.</note>
+   is <keyword keyref="defaultSysPass"/>. This passwordc is changed automatically when you set up
+   the first administrative user in the Management Console. Once you set up the primary
+   administrator account, use that account password to log in from the command line.</note>
   <section>
    <title>NAT vs. Bridged Networking</title>
    <p>The VMware and VirtualBox start virtual machines with <b>NAT</b> networking enabled by
@@ -37,8 +37,8 @@
      network.</p>
    </note>
    <note>Multiple hosts broadcasting the same name via mDNS on the same network can cause confusion
-    and network problems. If you plan on running multiple Stackato micro clouds on one network,
-    follow these guidelines:<ul id="ul_fll_b1m_nt">
+    and network problems. If you plan on running multiple <keyword keyref="prodShort"/> micro clouds
+    on one network, follow these guidelines:<ul id="ul_fll_b1m_nt">
      <li>Ensure that the MAC address of each virtual machine is unique</li>
      <li>If the hostname is not unique, do one of the following:<ul id="ul_kx5_f1m_nt">
        <li><b>Change the hostname</b></li>
@@ -50,18 +50,18 @@
   <section>
    <title>DNS vs. mDNS</title>
    <p>By default, the <keyword keyref="prodShort"/> VM broadcasts its generated hostname via
-    multicast DNS. This mDNS/DNS-SD broadcast address (for example,
-     <codeph>stackato-xxxx.local</codeph>) is intended for micro clouds running on a local machine
-    or subnet. To use the VM on a remote subnet, the server may need one or more of the
-    following:</p>
+        multicast DNS. This mDNS/DNS-SD broadcast address (for example, <codeph><keyword
+            keyref="mDNShostname"/></codeph>) is intended for micro clouds running on a local
+        machine or subnet. To use the VM on a remote subnet, the server may need one or more of the
+        following:</p>
    <ul id="ul_z3h_m1m_nt">
     <li><b>A wildcard DNS A or CNAME record</b></li>
     <li><b>A fixed IP address</b></li>
     <li><b>A hostname that works with xip.io</b></li>
     <li><b>A modified Windows <codeph>hosts</codeph> file</b></li>
    </ul>
-   <p>For instructions on setting up the <keyword keyref="prodShort"/> VM in these situations, see
-    the <b>Detailed Configuration</b>.</p>
+   <note type="tip">For instructions on setting up the <keyword keyref="prodShort"/> VM in these
+    situations, see the <b>Detailed Configuration</b>.</note>
    <note>Windows does not properly support mDNS hostname resolution. You will need to use the xip.io
     service, <b>update the Windows hosts file</b>, or create a DNS record in order to target the
      <keyword keyref="prodShort"/> endpoint, push applications, and resolve the deployed

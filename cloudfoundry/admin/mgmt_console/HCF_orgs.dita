@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_rms_gqr_nt">
+ <title>Organizations</title>
+ <shortdesc/>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>The top-level <uicontrol>Organizations</uicontrol> view allows administrator to add and delete
+    <b>organizations</b>. To view an organization's details, click its name.</p>
+  <p>The <uicontrol>Organizations</uicontrol> view is the same for administrators and <b>for
+    application developers</b>. However, administrators can edit quotas and add or remove domains,
+   spaces, and users.</p>
+ </conbody>
+</concept>

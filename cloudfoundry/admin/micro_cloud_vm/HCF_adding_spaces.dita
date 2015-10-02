@@ -11,7 +11,8 @@
  <conbody>
   <p>Before members of an organization can deploy applications, one or more <b>spaces</b> must be
    added to the organization. The Management Console prompts for the creation of the first space. </p>
-  <p>To create additional spaces, click <uicontrol>+ Add Space</uicontrol> in the Organization view
-   or use the <b><codeph><keyword keyref="CLIfile"/> create-space</codeph></b> command.</p>
+  <p>To create additional spaces, click <uicontrol>+ Add Space</uicontrol> in the
+    <uicontrol>Organization</uicontrol> view or use the <b><codeph><keyword keyref="CLIfile"/>
+     create-space</codeph></b> command.</p>
  </conbody>
 </concept>

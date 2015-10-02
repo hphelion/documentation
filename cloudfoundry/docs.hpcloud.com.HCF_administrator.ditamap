@@ -17,15 +17,18 @@
       <topicref href="admin/micro_cloud_vm/HCF_updating_winhosts.dita"/>
       <topicref href="admin/micro_cloud_vm/HCF_uninstalling_vm.dita"/>
    </topicref>
-   <topicref>
-      <topicref/>
-      <topicref/>
-      <topicref/>
-      <topicref/>
-      <topicref/>
-   </topicref>
-   <topichead navtitle="VM Setup"></topichead>
-   <topichead navtitle="Server Configuration"></topichead>
-   <topichead navtitle="Cluster Configuration"></topichead>
-   <topichead navtitle="Best Practices"></topichead>
+   <topichead navtitle="Management Console">
+      <topicref href="admin/mgmt_console/HCF_using_mgmt_console.dita">
+         <topicref href="admin/mgmt_console/HCF_welcome.dita"/>
+         <topicref href="admin/mgmt_console/HCF_apps.dita"/>
+         <topicref href="admin/mgmt_console/HCF_orgs.dita"/>
+         <topicref href="admin/mgmt_console/HCF_support.dita"/>
+         <topicref href="admin/mgmt_console/HCF_admin.dita"/>
+         <topicref href="admin/mgmt_console/HCF_settings.dita"/>
+      </topicref>
+   </topichead>
+   <topichead navtitle="VM Setup"/>
+   <topichead navtitle="Server Configuration"/>
+   <topichead navtitle="Cluster Configuration"/>
+   <topichead navtitle="Best Practices"/>
 </map>
