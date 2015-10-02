@@ -3,9 +3,10 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="DatabaseService">
 <title>HP Helion 2.0 Development Platform: Using the Database Service</title>
 <body>
-<p>The database service provides lifecycle services for MySQL, Redis, Vertica, or MondoDB database instances. Lifecycle 
+<p>The database service provides lifecycle services for MySQL, Redis, or MondoDB database instances. Lifecycle 
   services include provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard.</p>
 <p>These instances can then be utilized by your applications to provide standard datastore/back-end functionality.</p>
+  <p>Databases can be either single-instance or clustered. Clustered instances are recommended for development environments.</p>
 <p>The following topics explain how to create and manage a database:</p>
 <ul>
   <li><xref href="devplatform.database-create-horizon.dita" format="dita">Create a database instance from Horizon</xref></li>
