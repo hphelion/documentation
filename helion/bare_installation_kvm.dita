@@ -51,6 +51,8 @@
         tasks.</note>
       <p>Prepare your baremetal hardware, as follows, on all nodes:</p>
       <ul>
+        <li><b>Make sure all firmware on all devices is current and up to date. If not, it is very
+            imortant that you apply updates</b>.</li>
         <li>Set up the iLO Advanced license in the iLO configuration. Make sure the iLO user has
           admin privileges.</li>
         <li> HP Helion OpenStack 2.0 Beta 2 will detect and use the "BIOS" mode you have selected
