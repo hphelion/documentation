@@ -17,14 +17,14 @@
       region_name: region1
       auth_url: &lt;auth url&gt;
         project_name: &lt;admin project name&gt;
-          username: &lt;admin user name&gt;
-            password: &lt;admin password&gt;</codeblock></li>
+        username: &lt;admin user name&gt;
+        password: &lt;admin password&gt;</codeblock></li>
               
-              <li>List the available database versions to
-        install.<codeblock>openstack hdpi list --os-cloud mycloud | grep database</codeblock>The
-        output should appear similar
-        to:<codeblock>database | wscatalog.2655 | 2.0.0.0 | available</codeblock></li><li> Select the database version to install and view the details of the
-        package.<codeblock>openstack hdpi show wscatalog.2655 --os-cloud mycloud</codeblock></li><li> Install the database
+              <li>List the available ALS versions to
+        install.<codeblock>openstack hdpi list --os-cloud mycloud | grep als</codeblock>The output
+        should appear similar
+        to:<codeblock>als | wscatalog.2655 | 2.0.0.0 | available</codeblock></li><li> Select the ALS version to install and view the details of the
+        package.<codeblock>openstack hdpi show wscatalog.2655 --os-cloud mycloud</codeblock></li><li> Install the ALS
         service.<codeblock>openstack --os-cloud mycloud hdpi database install –-package wscatalog.2655</codeblock></li></ol>
               
   </body>
