@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_ebs_vty_nt">
+  <title>App Store Definition</title>
+  <shortdesc>The App Store definition uses <b>YAML</b> files to describe each store and its
+    applications, including a link to the source location for each application. The YAML files can
+    be served via HTTP or HTTPS by any web server at a URL accessible from the Cloud Controller. The
+    YAML string requires two top-level keys, <codeph>store:</codeph> and
+    <codeph>app:</codeph></shortdesc>
+  <prolog>
+    <metadata>
+      <othermeta name="author" content="Michael Khmelnitsky"/>
+    </metadata>
+  </prolog>
+  <refbody>
+    <section><note>The store definition settings do not override settings in the application's
+          <codeph>manifest.yml</codeph> file.</note><codeph>store:</codeph><dl>
+        <dlentry>
+          <dt><codeph>title</codeph>:</dt>
+          <dd>The display name of the App Store that appears in the Management Console</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>contact</codeph>:</dt>
+          <dd>The name and email address of the store maintainer</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>icon</codeph>:</dt>
+          <dd>The image used for the App Store icon, specified as a full URL</dd>
+        </dlentry>
+      </dl></section>
+    <section><codeph>apps:</codeph><dl>
+        <dlentry>
+          <dt><codeph>name</codeph>:</dt>
+          <dd>The name of the app, displayed in the App Store list</dd>
+        </dlentry>
+      </dl><dl>
+        <dlentry>
+          <dt><codeph>desc</codeph>:</dt>
+          <dd>The short description of the application, displayed below the
+            <codeph>name:</codeph></dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>id</codeph>:</dt>
+          <dd>The short, lowercase, unique string associated with the application, used to sort
+            applications alphabetically in the list</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>repo</codeph>:</dt>
+          <dd>The URL of the git repository where the application code resides.</dd>
+        </dlentry>
+      </dl><dl>
+        <dlentry>
+          <dt><codeph>commit</codeph>:</dt>
+          <dd>The branch name, tag name, or exact commit hash to use<note>If unspecified, the
+                <codeph>HEAD</codeph> commit of the <codeph>master</codeph> branch is
+            used</note></dd>
+        </dlentry>
+      </dl><dl>
+        <dlentry>
+          <dt><codeph>framework</codeph>:</dt>
+          <dd>The framework type, if the application is deployed using the <b>Legacy Buildpack</b>
+            (for example, <codeph>perl</codeph>, <codeph>python</codeph>, <codeph>node</codeph>,
+              <codeph>rails3</codeph>)</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>icon</codeph>:</dt>
+          <dd>The image used for the application icon, specified either as a full URL, a file
+            relative to the <codeph>store:</codeph> key, the <codeph>icon-url</codeph> URL,
+              <codeph>default</codeph>, or other variable values</dd>
+        </dlentry>
+      </dl><dl>
+        <dlentry>
+          <dt><codeph>info</codeph>:</dt>
+          <dd>The URL to the documentation of the application</dd>
+        </dlentry>
+      </dl><dl>
+        <dlentry>
+          <dt><codeph>license:</codeph></dt>
+          <dd>(Optional) The software license type (for example, <codeph>MIT</codeph>,
+              <codeph>MPL</codeph>, <codeph>BSD</codeph>).</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>mem</codeph>:</dt>
+          <dd>The memory requirements of the application (an integer, in MB).</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>runtime</codeph>:</dt>
+          <dd>The runtime type, if the application is deployed using the <b>Legacy Buildpack</b>
+            (for example <codeph>java</codeph>, <codeph>python32</codeph>, <codeph>ruby19</codeph>,
+              <codeph>php</codeph>, <codeph>perl518</codeph>).</dd>
+        </dlentry>
+      </dl><dl>
+        <dlentry>
+          <dt><codeph>services</codeph>:</dt>
+          <dd>The data services required by the application</dd>
+        </dlentry>
+      </dl></section>
+    <section>
+      <title>Example</title>
+    </section>
+    <example>
+      <pre>store:
+  title: Third-Party Applications for <keyword keyref="prodShort"/>
+  contact: Support &lt;support@example.com&gt;
+  icon: https://get.example.com/store/icon/third-party.png
+
+apps:
+- name: Widget Town
+  id: widget-town
+  desc: An application for making widgets
+  framework: perl
+  runtime: perl514
+  services: mysql
+  license: MPL
+  commit: master
+  src: https://github.com/<keyword keyref="prodShort"/>-Applications/widget-town.git
+  info: https://github.com/<keyword keyref="prodShort"/>-Applications/widget-town.git#readme
+  icon: https://get.example.com/store/icon/widget-town.png
+  mem: 256</pre>
+    </example>
+  </refbody>
+</reference>

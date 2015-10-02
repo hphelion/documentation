@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_cdw_mrl_nt">
- <title>Micro Cloud VM: Quick Start</title>
+ <title>Getting Started with Micro Cloud VM</title>
  <shortdesc>This topic describes running the VM as a micro cloud. To get started with building a
   cluster, see <b>Cluster Setup</b>.</shortdesc>
  <prolog>

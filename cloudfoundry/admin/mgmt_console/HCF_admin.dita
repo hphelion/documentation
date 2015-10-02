@@ -115,8 +115,7 @@
     </dlentry>
     <dlentry>
      <dt><uicontrol>Memory Usage Limit</uicontrol></dt>
-     <dd>The total amount of application RAM (in MB) that can be allocated to user
-      applications.</dd>
+     <dd>The total amount of app RAM (in MB) that can be allocated to user applications.</dd>
     </dlentry>
     <dlentry>
      <dt><uicontrol>Total Services</uicontrol></dt>
@@ -128,7 +127,7 @@
     </dlentry>
     <dlentry>
      <dt><uicontrol>Droplets per App</uicontrol></dt>
-     <dd>The number of droplets stored (per application) for versioning and rollback.</dd>
+     <dd>The number of droplets stored (per app) for versioning and rollback.</dd>
     </dlentry>
     <dlentry>
      <dt><uicontrol>Allow Sudo</uicontrol></dt>

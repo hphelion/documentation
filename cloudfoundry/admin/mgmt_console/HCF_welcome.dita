@@ -9,7 +9,7 @@
   </metadata>
  </prolog>
  <conbody>
-  <p>The top-level view of the Management Console displays quick links to thse most used resources
+  <p>The top-level view of the Management Console displays quick links to these most used resources
    and views:</p>
   <ul id="ul_mbp_vwr_nt">
    <li>Blue buttons are for features also available for administrators and application developers
@@ -44,6 +44,6 @@
     </dl></li>
   </ul>
   <p>Available system patches, new <keyword keyref="prodShort"/> releases, and the latest <keyword
-    keyref="prodShort"/> news are also displayed on this view.</p>
+    keyref="prodShort"/> news are also displayed in this view.</p>
  </conbody>
 </concept>
