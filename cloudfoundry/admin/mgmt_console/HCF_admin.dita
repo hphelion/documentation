@@ -12,7 +12,7 @@
   <p>There are several views that are available only to <keyword keyref="prodShort"/>
    administrators.</p>
   <section>
-   <title>Cluster Management</title>
+   <title>Cluster Mantagement</title>
    <dl>
     <dlentry>
      <dt><uicontrol>Summary</uicontrol></dt>
@@ -102,9 +102,9 @@
   </section>
   <section>
    <title>Quota Plans</title>
-   <p>Displays a list of the the quota plans available to apply to organizations on the system. To
-    edit a definition, click the <uicontrol>Edit</uicontrol> button on the right. The following
-    fields can be modified:</p>
+   <p>Displays a list of the quota plans available to apply to organizations on the system. To edit
+    a definition, click the <uicontrol>Edit</uicontrol> button on the right. The following fields
+    can be modified:</p>
    <dl>
     <dlentry>
      <dt>Name</dt>
