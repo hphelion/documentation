@@ -159,17 +159,16 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
     codn_username: hdnuser@domain.com
     codn_password: password
     horizon_url: http://&lt;horizon-ip-address&gt;/
-    cacert: unset
+    cacert: /etc/ssl/certs/ca-certificates.crt
     region_name: region1
     database:
-      ephemeral_ca_host: unset
-      ephemeral_ca_password: unset
+      ephemeral_ca_cert: unset
       external_network: &lt;guid of ext-net&gt;
       provider_network: &lt; guid of svc-net&gt;
       ntp_server: &lt;ip address of ntp server&gt;
       keypair: default
       enable_ha: true
-      flavor: m1.small
+      flavor: m1.medium
       database_flavor: m1.medium
       messaging_flavor: m1.medium
       database_volume_size: 10
