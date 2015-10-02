@@ -204,9 +204,9 @@
       <topicref href="helion/operations/alarms.dita" navtitle="Service Alarm Definitions"
         locktitle="yes"/>
     </topicref>
-    <topicref href="helion/logging/centralized_logging.dita" navtitle="Centralized Logging Service"
+    <topicref href="helion/operations/centralized_logging.dita" navtitle="Centralized Logging Service"
       locktitle="yes">
-      <topicref href="helion/logging/logging_settings.dita" navtitle="Logging Settings"
+      <topicref href="helion/operations/logging_settings.dita" navtitle="Logging Settings"
         locktitle="yes"/>
     </topicref>
     <topicref href="helion/operations/opsconsole/overview.dita" navtitle="Operations Console"
