@@ -3,13 +3,42 @@
 <topic id="topic_gly_xmh_ts">
   <title>Install the HP Helion Development Platform</title>
   <body>
-    <section id="devplat_installer"
-      ><!--<title>The HP Helion Development Platform Installer</title><ul><li><p>The HP Helion Development Platform installer (<codeph>DevelopmentPlatform_Enable.sh</codeph>) must be run on either the base or seed node of the Helion OpenStack environment. It is strongly recommended to run the installer on the seed node. The seed node will already have the requisite key (/root/.ssh/id_rsa) for access to the overcloud; if the installation is run on the base node, this key will need to be provided to the installer (see below).</p></li><li><p>The installer requires the following packages. If they are not found, it will prompt you to install them.</p><ul><li>python-dev </li><li>libffi-dev </li><li>libssl-dev </li><li>python-virtualenv</li><li>python-pip</li></ul><p>On the Base node, these packages can be installed using <codeph>apt-get</codeph>, but on the Seed node, you 'll need to use <codeph>pip</codeph> to install the following packages:</p><codeblock>pip install cffi enum34 pyasn1 virtualenv </codeblock></li></ul>--></section>
-    <section id="downloading-the-latest-version-of-hp-helion-development-platform">
-      <title>Step 1. Download the Latest Version of HP Helion Development Platform</title>
+    
+      <section id="preparation"> <title>1. Pre-requisites</title>
+      <p>You will need the following pieces of information in order to run the service updates.</p>
+      <table pgwide="1">
+        <tgroup cols="2">
+          <colspec colname="col1" colwidth="237px" colsep="1"/>
+          <colspec colname="col2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry> Identifier </entry>
+              <entry> Description </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> DEPLOYER</entry>
+              <entry>IP address of the Deployer.</entry>
+            </row>
+            <row>
+              <entry> USERNAME </entry>
+              <entry>The username of a cloud admin that has rights to perform a service update for
+                the selected service.</entry>
+            </row>
+            <row>
+              <entry> PASSWORD </entry>
+              <entry>The password of a cloud admin that has rights to perform a service update for
+                the selected service.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section><section>
+      <title>Step 2. Download the Latest Version of HP Helion Development Platform</title>
       <p>The installation of the HP Helion Development Platform for HP Helion OpenStack is provided
-        as a small compressed tar file. The images for the actual services will be downloaded at the
-        installer's request.</p>
+        as a small compressed tar file. The images for the individual services will be downloaded at
+        the installer's request.</p>
       <ol id="ol_ogs_qpt_nt">
         <li>Navigate to the the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
             format="html" scope="external">HP Helion Download Network</xref> (HDN) and log in. If
@@ -18,44 +47,52 @@
       </ol>
     </section>
     <section>
-      <title>Step 2. Download and Install the Python Scripts</title>
+      <title>Step 3. Download and Install the Python Scripts</title>
       <ol>
-        <li>Confirm that you have access to the <xref href="https://pypi.python.org/pypi"
-            scope="external" format="html">pypi</xref> site. The following commands will verify
-          access to the site and download one of the prerequisite files as a brief test. <note> If
-              <i>ping</i> is unavailable, use
-          <i>wget</i>.</note><codeblock>ping pypi.python.org
-sudo -E pip install python-novaclient</codeblock></li>
+        <li>Verify that you have access to the <xref href="https://pypi.python.org/pypi"
+            scope="external" format="html">pypi</xref> site.  If <i>ping</i> is unavailable, use
+            <i>wget</i>.<codeblock>ping pypi.python.org</codeblock></li>
         <li>Install <codeph>python-virtualenv</codeph>
           <codeblock>sudo apt-get install python-virtualenv</codeblock></li>
-        <li> Install <codeph>python-dev
-          </codeph><codeblock>sudo apt-get install python-dev</codeblock></li>
+        <li> Install <codeph>python-dev </codeph>
+          <!--we're not sure about this one but you might need it to do pip--><codeblock>sudo apt-get install python-dev</codeblock></li>
       </ol>
     </section>
     <section id="pre-installing-the-hp-helion-development-platform">
-      <title>Step 3. Install the HP Helion Development Platform</title>
+      <title>Step 4. Install the HP Helion Development Platform</title>
       <note type="tip"> For help with the installer, enter the command <codeph>openstack
           hdpi</codeph>
       </note>
       <ol>
-        <li>Create a Virtual Environment
-          <!--where do we run this? with what tool?--><codeblock>virtualenv .devplatform</codeblock></li>
-        <li>Source the Virtual Environment
-          <!--check source syntax--><codeblock>source .devplatform/bin/activate</codeblock></li>
-        <li> If your network uses a proxy, it may be necessary to set the <i>https_proxy</i> shell
-          variable so that the installer may download required Python libraries from the <xref
+        <li>SSH to the Deployer.
+          <!--find out whether this works on a windows box or if it needs further explanation; where should this be run from?--></li>
+        <li> If your network uses a proxy, it may be necessary to set the
+          <codeph>https_proxy</codeph> and <codeph>http_proxy</codeph> shell variables so that the
+          installer may download required Python libraries from the <xref
             href="https://pypi.python.org/pypi" scope="external" format="html">pypi</xref> site. To
-          set the <i>https_proxy</i> shell variable, enter the following command:
-            <!--add http proxy as well per Chris--><codeblock>export https_proxy={ip address or url of http proxy} </codeblock><p>Example:</p><codeblock>export https_proxy=http://proxy.example.com</codeblock></li>
+          set the shell variables, enter the following commands: <codeblock>export https_proxy={ip address or url of https proxy} 
+export http_proxy={ip address or url of http proxy} </codeblock><dl>
+  <dlentry>
+    <dt>Example:</dt>
+    <dd>
+      <codeblock>export https_proxy=http://proxy.example.com
+export http_proxy=http://proxy.example.com</codeblock>
+    </dd>
+  </dlentry>
+</dl></li>
         <li> If your network uses a proxy, you must define the proxy exclusion list. Enter the
-          following command:<codeblock>export no_proxy=localhost,127.0.0.1, &lt;ip address or host name of identity service aka keystone&gt;</codeblock><dl>
+          following command: <!--confirm if this setting is still necessary--><codeblock>export no_proxy=localhost,127.0.0.1, &lt;ip address or host name of identity service aka keystone&gt;</codeblock><dl>
             <dlentry>
               <dt>Example:</dt>
               <dd>
                 <codeblock>export no_proxy=localhost,127.0.0.1,10.0.0.10 </codeblock>
               </dd>
             </dlentry>
-          </dl></li>
+          </dl></li><li>Create a Virtual Environment. <codeblock>virtualenv .devplatform</codeblock></li>
+        <li>Source the Virtual
+          Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
+       
+       
         <li>Install the Development Platform Installer in the Virtual Environment
           .<codeblock>pip install DevelopmentPlatformInstaller.2.0.0.0.tar.gz</codeblock></li>
       </ol>

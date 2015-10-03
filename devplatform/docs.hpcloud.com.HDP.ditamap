@@ -43,6 +43,7 @@
         <topicref href="2.0/installation/devplatform_install_ALS.dita" navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
         <topicref href="2.0/installation/devplatform_install_database.dita" navtitle="Install the Database Service" locktitle="yes"/>
 
+
       <!--<topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita" navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>-->
       <!--<topicref href="2.0/helion/admin/server/upgrade.dita" locktitle="yes" navtitle="Upgrade Existing ALS Clusters"/>-->
       <!--<topicref href="2.0/devplatform.troubleshooting.dita" locktitle="yes" navtitle="Installation Troubleshooting"/>-->
@@ -51,7 +52,6 @@
     </topichead>
     
 
-    <!--uninstallation -->
     
     <!--uninstallation-->
     <topichead navtitle="Uninstallation">
