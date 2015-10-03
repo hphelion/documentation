@@ -13,10 +13,10 @@
           <li><b>Datastore</b>: The database architecture to be used. Redis and MongoDB are supported.1</li>
           <li><b>Flavor</b>: The instance flavor (virtual hardware template) to use for the cluster.</li>
           <li><b>Network</b>: The OpenStack network to attach to the cluster.</li>
-          <li><b>Volume Size</b>: The size in GB of the new cluster.</li>
-          <li><b>Number of Shards</b> (MongoDB only): The number of MongoDB shards to span the database across. See <xref type="external" href="http://docs.mongodb.org/manual/sharding/" format="html">Sharding</xref>
+          <li><b>Volume Size</b>: The size in GB of the new cluster. <note>MongoDB instances require a minimum volume size of 5.</note></li>
+          <li><b>Number of Shards</b> (MongoDB only): The number of MongoDB shards to span the database across. One shard will be used to create the database cluster; this value cannot be changed. See <xref type="external" href="http://docs.mongodb.org/manual/sharding/" format="html">Sharding</xref>
           for more information.</li>
-          <li><b>Number of Instances</b>: The number of OpenStack instances to span the database across.</li>
+          <li><b>Number of Instances</b>: The number of OpenStack instances to span the database across. Three instances will be used to create the cluster; this value cannot be changed, but more instances can be added later.</li>
         </ul>
         <image href="../../../media/dbaas_clusters_1.PNG" placement="break" /></li>
       <li>The new cluster will be created, and appear in the Clusters page, with its status displaying as <b>Building</b>.</li>

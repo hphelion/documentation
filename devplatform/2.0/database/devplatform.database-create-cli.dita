@@ -20,6 +20,7 @@
           <sli><codeph>[--configuration &lt;configuration&gt;]</codeph>: The configuration group to which to add the new instance. Configuration groups can be applied after instance creation using <codeph>trove configuration-attach</codeph></sli>
           <sli><codeph>[--replica_of &lt;source_instance&gt;] [--replica_count &lt;count&gt;]</codeph></sli>
         </sl>
+        <note>MongoDB instances require a minimum volume size of 5.</note>
         <dl>
           <dlentry>
             <dt>Example 1: Create a single MySql instance</dt>
