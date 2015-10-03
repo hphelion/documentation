@@ -5,35 +5,50 @@
   <body>
     
       <section id="preparation"> <title>1. Pre-requisites</title>
-      <p>You will need the following pieces of information in order to run the service updates.</p>
-      <table pgwide="1">
-        <tgroup cols="2">
-          <colspec colname="col1" colwidth="237px" colsep="1"/>
-          <colspec colname="col2" colwidth="1*"/>
-          <thead>
-            <row>
-              <entry> Identifier </entry>
-              <entry> Description </entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry> DEPLOYER</entry>
-              <entry>IP address of the Deployer.</entry>
-            </row>
-            <row>
-              <entry> USERNAME </entry>
-              <entry>The username of a cloud admin that has rights to perform a service update for
-                the selected service.</entry>
-            </row>
-            <row>
-              <entry> PASSWORD </entry>
-              <entry>The password of a cloud admin that has rights to perform a service update for
-                the selected service.</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
+      <ol id="ol_w1c_vy1_4t">
+        <li>You will need the following pieces of information in order to run the service
+          updates.
+        <table pgwide="1" id="table_ydc_vy1_4t">
+          <tgroup cols="2">
+            <colspec colname="col1" colwidth="237px" colsep="1"/>
+            <colspec colname="col2" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry> Identifier </entry>
+                <entry> Description </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry> DEPLOYER</entry>
+                <entry>IP address of the Deployer.</entry>
+              </row>
+              <row>
+                <entry> USERNAME </entry>
+                <entry>The OpenStack username of a cloud admin that has rights to perform a service
+                    update for the selected service.</entry>
+              </row>
+              <row>
+                <entry> PASSWORD </entry>
+                <entry>The OpenStack password of a cloud admin that has rights to perform a service
+                    update for the selected service.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></li><li>Manually set ownership of the <codeph>bin</codeph> folder. [This is an extra step required for
+          the beta release.]<ol>
+            <li>SSH to the Deployer node using admin credentials.</li>
+            <li>On the Deployer, find the <codeph>/etc/hosts</codeph> file, which lists all of the
+              cloud hosts. Identify the three cloud management nodes; they will look similar to the
+              following:<codeblock>cat /etc/hosts | grep c1-m1-mgmt
+cat /etc/hosts | grep c1-m2-mgmt
+cat /etc/hosts | grep c1-m3-mgmt</codeblock></li>
+            <li> SSH to <b>each</b> of those three management nodes with admin credentials and run
+              the following commands on each
+              one:<codeblock>sudo chown -r horizon-venv /opt/stack/services/horizon/venv/bin
+sudo chown -r horizon-venv /opt/stack/services/horizon/venv/lib</codeblock></li>
+          </ol></li>
+      </ol>
     </section><section>
       <title>Step 2. Download the Latest Version of HP Helion Development Platform</title>
       <p>The installation of the HP Helion Development Platform for HP Helion OpenStack is provided
@@ -55,7 +70,7 @@
         <li>Install <codeph>python-virtualenv</codeph>
           <codeblock>sudo apt-get install python-virtualenv</codeblock></li>
         <li> Install <codeph>python-dev </codeph>
-          <!--we're not sure about this one but you might need it to do pip--><codeblock>sudo apt-get install python-dev</codeblock></li>
+          <codeblock>sudo apt-get install python-dev</codeblock></li>
       </ol>
     </section>
     <section id="pre-installing-the-hp-helion-development-platform">
@@ -67,28 +82,18 @@
         <li>SSH to the Deployer.
           <!--find out whether this works on a windows box or if it needs further explanation; where should this be run from?--></li>
         <li> If your network uses a proxy, it may be necessary to set the
-          <codeph>https_proxy</codeph> and <codeph>http_proxy</codeph> shell variables so that the
+            <codeph>https_proxy</codeph> and <codeph>http_proxy</codeph> shell variables so that the
           installer may download required Python libraries from the <xref
             href="https://pypi.python.org/pypi" scope="external" format="html">pypi</xref> site. To
-          set the shell variables, enter the following commands: <codeblock>export https_proxy={ip address or url of https proxy} 
-export http_proxy={ip address or url of http proxy} </codeblock><dl>
-  <dlentry>
-    <dt>Example:</dt>
-    <dd>
-      <codeblock>export https_proxy=http://proxy.example.com
-export http_proxy=http://proxy.example.com</codeblock>
-    </dd>
-  </dlentry>
-</dl></li>
+          set the shell variables, enter the following commands:
+          <codeblock>export https_proxy={ip address or url of https proxy} 
+export http_proxy={ip address or url of http proxy} </codeblock>Example:
+          <codeblock>export https_proxy=http://proxy.example.com
+export http_proxy=http://proxy.example.com</codeblock></li>
         <li> If your network uses a proxy, you must define the proxy exclusion list. Enter the
-          following command: <!--confirm if this setting is still necessary--><codeblock>export no_proxy=localhost,127.0.0.1, &lt;ip address or host name of identity service aka keystone&gt;</codeblock><dl>
-            <dlentry>
-              <dt>Example:</dt>
-              <dd>
-                <codeblock>export no_proxy=localhost,127.0.0.1,10.0.0.10 </codeblock>
-              </dd>
-            </dlentry>
-          </dl></li><li>Create a Virtual Environment. <codeblock>virtualenv .devplatform</codeblock></li>
+          following command:
+          <!--confirm if this setting is still necessary--><codeblock>export no_proxy=localhost,127.0.0.1, &lt;ip address or host name of identity service aka keystone&gt;</codeblock>
+          Example: <codeblock>export no_proxy=localhost,127.0.0.1,10.0.0.10 </codeblock></li><li>Create a Virtual Environment. <codeblock>virtualenv .devplatform</codeblock></li>
         <li>Source the Virtual
           Environment.<codeblock>source .devplatform/bin/activate</codeblock></li>
        
