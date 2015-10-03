@@ -35,18 +35,42 @@
               </row>
             </tbody>
           </tgroup>
-        </table></li><li>Manually set ownership of the <codeph>bin</codeph> folder. [This is an extra step required for
-          the beta release.]<ol>
+        </table></li><li>Manually set folder ownership where required. [This is an extra step required for the beta release.]<ol>
             <li>SSH to the Deployer node using admin credentials.</li>
-            <li>On the Deployer, find the <codeph>/etc/hosts</codeph> file, which lists all of the
-              cloud hosts. Identify the three cloud management nodes; they will look similar to the
-              following:<codeblock>cat /etc/hosts | grep c1-m1-mgmt
-cat /etc/hosts | grep c1-m2-mgmt
-cat /etc/hosts | grep c1-m3-mgmt</codeblock></li>
+            <li>On the Deployer, search within the <codeph>/etc/hosts</codeph> file, which lists all
+              of the cloud hosts. Identify the three cloud management nodes; they will look similar
+              to the
+              following:<codeblock>$ cat /etc/hosts | grep c1-m1-mgmt
+10.10.10.11    mi-ccp-c1-m1-mgmt
+
+$ cat /etc/hosts | grep c1-m2-mgmt
+10.10.10.12    mi-ccp-c1-m2-mgmt
+
+$ cat /etc/hosts | grep c1-m3-mgmt
+10.10.10.13    mi-ccp-c1-m3-mgmt</codeblock></li>
             <li> SSH to <b>each</b> of those three management nodes with admin credentials and run
               the following commands on each
-              one:<codeblock>sudo chown -r horizon-venv /opt/stack/services/horizon/venv/bin
-sudo chown -r horizon-venv /opt/stack/services/horizon/venv/lib</codeblock></li>
+              one:<codeblock>$ sudo chown -r horizon-venv /opt/stack/services/horizon/venv/bin
+$ sudo chown -r horizon-venv /opt/stack/services/horizon/venv/lib</codeblock></li>
+          </ol></li><li>The DBaaS, DNSaaS and Cue services rely on the creation of a VM service network. This service
+          network is a VLAN-encapsulated provider network which is fully routable to the Helion
+          OpenStack MGMT network.  [This is an extra step required for the beta release.]<ol>
+            <li>Install the neutron client, if not already available.
+              <codeblock>sudo apt-get python-neutronclient</codeblock></li>
+            <li>To create this network, an administrator should issue the following
+              commands:<codeblock>neutron net-create svc-net --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id &lt;SVC VLAN_ID> 
+neutron subnet-create --allocation-pool start=&lt;low address on SVC network>,end=&lt;high address on SVC network> --no-gateway --host-route destination=&lt;CIDR of MGMT network>,nexthop=&lt;gateway from SVC to MGMT net> --enable-dhcp svc-net &lt;SVC network CIDR></codeblock>As
+              an example, given a management network with the following attributes: <sl>
+                <sli> MGMT Net = 10.1.2.0/24</sli>
+                <sli> SVC Net = 10.1.6.0/24</sli>
+                <sli> SVC gateway to MGMT = 10.1.6.1</sli>
+                <sli> SVC Net VLAN = 306</sli>
+              </sl>the commands for creating the service network would
+                be:<codeblock>neutron net-create svc-net --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id 306 
+neutron subnet-create --allocation-pool start=10.1.6.2,end=10.1.6.254 --no-gateway --host-route destination=10.1.2.0/24,nexthop=10.1.6.1 --enable-dhcp svc-net 10.1.6.0/24</codeblock><note>
+                To configure a service network for flat or VXLAN encapsulation, modify the service
+                network creation statement. The subnet creation statement does not change.
+              </note></li>
           </ol></li>
       </ol>
     </section><section>
