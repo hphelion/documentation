@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="beta_upgrade">
-  <title>Upgrading from Beta 1 to Beta 2</title>
+  <title>Upgrading from Beta 2</title>
   <body>
     <p> Upgrade from Beta 1 to Beta 2 is now supported. To perform the upgrade, you must have a
       working deployment of the Beta 1 release. </p>
