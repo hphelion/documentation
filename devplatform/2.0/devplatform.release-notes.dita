@@ -3,10 +3,47 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2502">
 <title>HP Helion 2.0 Development Platform: Release Notes</title>
 <body>
-    <p>The following release notes are for the HP Helion Development Platform 2.0.</p>
+    <p>The following release notes are for the HP Helion Development Platform 2.0 beta released in
+      October, 2015. We hope you enjoy the release!</p>
+    <section>
+      <title>2.0 Beta Notes</title>
+      <dl>
+        <dlentry>
+          <dt>Enable Monasca Monitoring for the Database Service</dt>
+          <dd> The following instructions will enable the Monasca agent on the DBaaS control plane.
+              <note>These instructions assume that you have permission to SSH into the control
+              plane.</note><ol>
+              <li> Secure copy the following packages onto <b>each</b> control plane
+                instance:<codeblock>Six-1.9.0
+Python-keystoneclient-0.10.1
+Oslo.i18n-1.5.0
+Pbr-0.11.0
+Oslo.utils-1.4.0
+Oslo.serialization-1.4.0
+Stevedore-1.3.0
+Oslo.config-1.3.0</codeblock></li>
+              <li>Use <codeph>pip install</codeph> to install the packages <b>in the order
+                  listed</b>.</li>
+              <li> Run <codeph>bash /etc/monasca/start-monasca</codeph> to set up the Monasca agent
+                on that machine.</li>
+            </ol></dd>
+        </dlentry>
+        <dlentry>
+          <dt>Manual Creation of the Database Endpoint</dt>
+          <dd> If the beta installer fails to create the database endpoint at the end of the
+            installation, run the following commands to manually create one. You will need to supply
+            the IP address of the
+            VIP.<codeblock>$ openstack service create --name database database
+$ openstack endpoint create database admin 'http://<i>&lt;public-VIP-IP-address></i>:8779/v1.0/$(tenant_id)s'
+$ openstack endpoint create database internal 'http://<i>&lt;public-VIP-IP-address></i>:8779/v1.0/$(tenant_id)s'
+$ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address></i>:8779/v1.0/$(tenant_id)s'</codeblock></dd>
+        </dlentry>
+      </dl>
+    </section>
+
     <section id="DPnotes">
-      <title>Release Notes</title>
-      <p>The following features have been changed in HP Helion Development Platform 1.3:</p>
+      <title>1.3 Release Notes</title>
+      <p>The following features were changed in HP Helion Development Platform 1.3:</p>
       <dl>
         <dlentry>
           <dt>Docker Image Deployment</dt>
