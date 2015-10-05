@@ -11,7 +11,7 @@
       <p>The output of that command will show you the VIP for Horizon you should use.</p>
       <p>The default login credentials are:</p>
       <codeblock>Username: admin
-        Password: admin</codeblock>
+Password: admin</codeblock>
       <note type="important">The credentials for your <codeph>admin</codeph> user account can be
         changed. See <xref href="keystone/keystone_init.dita">Keystone Configuration</xref> for more
         details.</note>
