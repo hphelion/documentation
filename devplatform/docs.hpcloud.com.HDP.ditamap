@@ -22,8 +22,8 @@
       <!--<topicref href="2.0/devplatform.related-topics.dita" locktitle="yes" navtitle="Related Documentation "/>-->
     </topichead>
     <!--uninstallation -->
-    <topichead navtitle="Uninstallation"
-      ><!--<topicref href="2.0/uninstallation/devplatform_uninstall.dita" navtitle="Full Uninstallation - All Services" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_platform.dita" navtitle="Uninstall the Development Platform" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_ALS.dita" navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_database.dita" navtitle="Uninstall the Database Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_messaging.dita" navtitle="Uninstall the Messaging Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_vertica.dita" navtitle="Uninstall the Vertica Application" locktitle="yes"/>--></topichead>
+    <!--  <topichead navtitle="Uninstallation"-->
+    <!--<topicref href="2.0/uninstallation/devplatform_uninstall.dita" navtitle="Full Uninstallation - All Services" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_platform.dita" navtitle="Uninstall the Development Platform" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_ALS.dita" navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_database.dita" navtitle="Uninstall the Database Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_messaging.dita" navtitle="Uninstall the Messaging Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_vertica.dita" navtitle="Uninstall the Vertica Application" locktitle="yes"/>--><!--  </topichead>-->
     <topichead navtitle="Command Line Clients">
       <topicref href="2.0/helion/CLI/ALS_Client_Downloads.dita"
         navtitle="Command Line Client Downloads" locktitle="yes"/>
