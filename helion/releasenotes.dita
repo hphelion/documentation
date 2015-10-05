@@ -96,6 +96,10 @@
       <p>TLS is now supported for public endpoints. See <xref
           href="security/tls.dita#topic_yym_nps_4t">Enabling TLS for Public Endpoints</xref> for
         more information.</p>
+      <p><b>ENcryption of sensitive data</b></p>
+      <p>In this release, connection details and passwords are encrypted and or protected. See <xref
+          href="security/encrypted_storage.dita#topic_w3l_pht_4t">Encryption of Passwords and
+          Sensitive Data </xref>for more information.</p>
       <p><b>Dedicated Deployer Node No Longer Required</b></p>
       <p>You can now use either a dedicated deployer node or setup the deployer on your first
         controller node. If you choose to use your first controller node as your deployer, ensure
