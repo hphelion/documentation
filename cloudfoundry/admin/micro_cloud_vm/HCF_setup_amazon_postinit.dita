@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_hsf_m35_4t">
+    <title>To Configure an Image on Amazon EC2</title>
+    <shortdesc/>
+    <prolog>
+        <metadata>
+            <othermeta name="author" content="Michael Khmelnitsky"/>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>After launching your image, associate an <xref
+                        href="http://aws.amazon.com/articles/1346" format="html" scope="external"
+                        >elastic IP</xref> with it.</cmd>
+                <info>
+                    <note type="tip">An elastic IP allocates a static external address to your
+                        cluster and exposes this address on the border router where the cluster is
+                        hosted. The router associates this address with a corresponding dynamic
+                        address local to your cluster. This address is leased over <b>DHCP</b> along
+                        with the address of the local DNS server which keeps track of private
+                        addresses allocated by the DHCP server. Thus, each node in your cluster
+                        automatically receives the private address of the head node, while outside
+                        traffic receives the public address.</note>
+                </info>
+            </step>
+            <step>
+                <cmd>Publish the external address for your domain name using <b>DNS</b> or
+                        <b>dynamic DNS</b>. For example, a static DNS zone file for
+                        <codeph>hcf-test</codeph> on <codeph>example.com</codeph> would have the
+                    following entries:</cmd>
+                <info><codeblock><keyword keyref="testSysName"/>      IN  A        AWS-Elastic-IP.
+*.<keyword keyref="testSysName"/>    IN  CNAME    hcf-test</codeblock><note>Ensure
+                        that <codeph>.</codeph> ends the <codeph>A</codeph> record. For </note>more
+                    information, see <b>DNS</b>.</info>
+            </step>
+            <step>
+                <cmd>When the <keyword keyref="prodShort"/> is launched, log in using SSH as the
+                    user <codeph><keyword keyref="defaultSysUser"/></codeph> with the password
+                            <codeph><keyword keyref="defaultSysPass"/></codeph>, for example:</cmd>
+                <info><codeblock>$ssh <keyword keyref="defaultSysUser"/>@<keyword keyref="testSysName"/>@example.com</codeblock><note
+                        type="important">Do not change the password in this step. You will do this
+                        during console setup.</note>In this example, <codeph><keyword
+                            keyref="testSysName"/>.ddns.us </codeph>will be the fully-qualified
+                    domain name (FQDN) resolved using dynamic DNS at the domain
+                        <codeph>ddns.us:</codeph><codeblock>$ kato node rename <keyword keyref="testSysName"/>.ddns.us</codeblock></info>
+            </step>
+            <step>
+                <cmd>Complete the configuration of the <keyword keyref="prodShort"/>
+                    <b>micro cloud</b> using the <b>Management Console</b>. </cmd>
+            </step>
+            <step>
+                <cmd>Direct your browser to the hostname that you have configured and use the
+                        <uicontrol>Welcome</uicontrol> view to create the first administrator. The
+                    password that you use here will become the <keyword keyref="prodShort"/> system
+                    user password for subsequent logins using SSH.</cmd>
+                <info>
+                    <note>To set up a multi-node, clustered <keyword keyref="prodShort"/>
+                        <b>PaaS</b>, see <b>Cluster Setup</b>.</note>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task>

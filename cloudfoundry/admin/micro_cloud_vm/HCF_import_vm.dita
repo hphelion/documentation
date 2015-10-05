@@ -10,14 +10,7 @@
  </prolog>
  <conbody>
   <p>The steps for importing and starting the <keyword keyref="prodShort"/> VM vary depending on
-   which hypervisor and operating system you use. Follow the steps in one of the guides below, then
-   continue with Initial Configuration:<ul id="ul_vcj_vwl_nt">
-    <li><b>EC2 AMI</b></li>
-    <li><b>HP Cloud Services</b></li>
-    <li><b>OpenStack</b></li>
-    <li><b>Virtual Box</b></li>
-    <li><b>VMware Fusion/Player</b></li>
-    <li><b>VMware vSphere</b></li>
-   </ul></p>
+   which hypervisor and operating system you use. Follow the steps for the relevant hypervisor, then
+    <xref href="HCF_start_vm.dita#concept_imy_zwl_nt">start the VM</xref>.</p>
  </conbody>
 </concept>

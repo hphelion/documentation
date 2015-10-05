@@ -40,7 +40,7 @@ https://<keyword keyref="mDNShostname"/></codeblock>
     administrative user for <keyword keyref="prodShort"/>. Enter an email address as the username
     and enter a secure password, then review and accept the license agreement.</p>
    <note>The password that you enter here becomes the password for the <keyword
-     keyref="defaultSysUser"/> user on the VM (for example, for <codeph>ssh</codeph> access).</note>
+     keyref="defaultSysUser"/> user on the VM (for example, for SSH access).</note>
   </section>
   <section>
    <title>Customizing the Configuration</title>
