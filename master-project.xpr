@@ -13,7 +13,11 @@
             </serialized>
         </options>
     </meta>
+<<<<<<< HEAD
     <projectTree name="master-project.xpr">
+=======
+    <projectTree name="Master-Project.xpr">
+>>>>>>> hdp-dbaas
         <folder path="devplatform/"/>
         <folder path="media/"/>
     </projectTree>
