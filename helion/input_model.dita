@@ -2679,12 +2679,12 @@ tags:
     - name: NET_GROUP_A
       tags:
         - neutron.networks.vlan:
-          provider-physical-network: physnet1
+              provider-physical-network: physnet1
         
     - name: NET_GROUP_B
       tags:
         - neutron.networks.vlan:
-          provider-physical-network: physnet2</codeblock>
+              provider-physical-network: physnet2</codeblock>
       <p>A network group is associated with a server network interface via an interface model as
         described in the <xref href="#input_model/4.7_InterfaceModels">Interface Models</xref>
         section. For example (some attributes omitted for brevity):</p>
