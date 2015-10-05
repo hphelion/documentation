@@ -14,9 +14,7 @@
         </options>
     </meta>
     <projectTree name="master-project.xpr">
-        <folder path="commercial/"/>
         <folder path="devplatform/"/>
         <folder path="media/"/>
-        <folder path="publiccloud/"/>
     </projectTree>
 </project>
