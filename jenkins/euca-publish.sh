@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-SERVER=$1
+SERVER1=$1
 VERSION_TO_PUBLISH=$2
 
 echo >>Begin staging
@@ -14,7 +14,7 @@ echo ">>Ensure target directory has correct ownership..."
 ssh ubuntu@${SERVER1} "sudo chown -R ubuntu:www-data /var/www/html/eucaProd/"
 
 echo ">>rsync /var/www/html/euca-incoming/$VERSION_TO_PUBLISH  to /var/www/html/eucaProd/$VERSION_TO_PUBLISH "
-rsync -avr --delete   /var/www/html/euca-incoming/${VERSION_TO_PUBLISH} ubuntu@${SERVER1}:/var/www/html/eucaProd
+rsync -avr --delete   /var/www/html/euca-incoming/$VERSION_TO_PUBLISH ubuntu@${SERVER1}:/var/www/html/eucaProd
 
 ssh ubuntu@${SERVER1} 'sudo chmod 777 /var/www/html/hphelionFransProd/.htaccess'
 
