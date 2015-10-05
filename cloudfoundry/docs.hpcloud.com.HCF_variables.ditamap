@@ -16,6 +16,13 @@
          </keywords>
       </topicmeta>
    </keydef>
+   <keydef keys="pubCloudLong">
+      <topicmeta>
+         <keywords>
+            <keyword>HP Helion Public Cloud</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
    <keydef keys="prodLong">
       <topicmeta>
          <keywords>
@@ -79,6 +86,27 @@
          </keywords>
       </topicmeta>
    </keydef> 
+   <keydef keys="installDir">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf-directory</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="sampleMachine">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="sampleSecGroup">
+      <topicmeta>
+         <keywords>
+            <keyword>hcf-micro</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
    <keydef keys="docsLongURL">
       <topicmeta>
          <keywords>

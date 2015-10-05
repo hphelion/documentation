@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_ky3_4fw_4t">
+    <title>To Configure Stackato</title>
+    <shortdesc/>
+    <prolog>
+        <metadata>
+            <othermeta name="author" content="Michael Khmelnitsky"/>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>Log into the <keyword keyref="prodShort"/> instance using SSH with the username
+                        <keyword keyref="defaultSysUser"/> and default password <keyword
+                        keyref="defaultSysPass"/>.</cmd>
+                <info>
+                    <codeblock>$ ssh <keyword keyref="defaultSysUser"/>@<keyword keyref="testSysName"/>.example.com</codeblock>
+                    <note type="important">Do not change the password in this step. You will do this
+                        during console setup.</note>
+                </info>
+            </step>
+            <step>
+                <cmd>Use the <codeph><b>kato</b></codeph> command to disable mDNS because this
+                    service is not useful on a remote network:</cmd>
+                <info>
+                    <codeblock>$ kato role remove mdns</codeblock>
+                </info>
+            </step>
+            <step>
+                <cmd>Set the server hostname and internal <keyword keyref="prodShort"/>
+                    configuration to match the DNS name you use, for example:</cmd>
+                <info><codeph>$ kato node rename <keyword keyref="testSysName"
+                        />.example.com</codeph></info>
+            </step>
+        </steps>
+    </taskbody>
+</task>

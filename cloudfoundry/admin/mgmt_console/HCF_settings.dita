@@ -201,7 +201,7 @@
      <dt><uicontrol>Product</uicontrol></dt>
      <dd>Sets the options to rename and reversion <keyword keyref="prodShort"/> for OEM deployments,
       change the default locale (currently only <codeph>en</codeph> and <codeph>de</codeph> are
-      available), choose a different URL for documentation, or disable console pingbacks</dd>
+      available), select a different URL for documentation, or disable console pingbacks</dd>
     </dlentry>
     <dlentry>
      <dt><uicontrol>Client</uicontrol></dt>

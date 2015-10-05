@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="task_lps_y25_4t">
-    <title>To Launch an AMI Image on Amazon EC2</title>
-    <shortdesc>A prebuilt <uicontrol><keyword keyref="prodShort"/></uicontrol>
-        <b>AMI</b> is available on the Amazon <b>EC2</b> platform.</shortdesc>
+    <title>To Launch an AMI on Amazon EC2</title>
+    <shortdesc/>
     <prolog>
         <metadata>
             <othermeta name="author" content="Michael Khmelnitsky"/>
         </metadata>
     </prolog>
     <taskbody>
-        <context>To perform initial setup, follow these steps.</context>
+        <context>A prebuilt <uicontrol><keyword keyref="prodShort"/></uicontrol>
+            <b>AMI</b> is available on the Amazon <b>EC2</b> platform. To perform initial setup,
+            follow these steps.</context>
         <steps>
             <step>
                 <cmd>On the <xref href="https://console.aws.amazon.com/ec2/v2/" format="html"

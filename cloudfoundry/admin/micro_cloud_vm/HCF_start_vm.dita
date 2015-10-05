@@ -16,9 +16,9 @@
   <p>You will use this hostname to open the <b>Management Console</b> in a browser or to connect
    using the <b><keyword keyref="prodShort"/> CLI client</b>. </p>
   <note>The default password for the <codeph><keyword keyref="defaultSysUser"/></codeph> system user
-   is <keyword keyref="defaultSysPass"/>. This passwordc is changed automatically when you set up
-   the first administrative user in the Management Console. Once you set up the primary
-   administrator account, use that account password to log in from the command line.</note>
+   is <keyword keyref="defaultSysPass"/>. This password is changed automatically when you set up the
+   first administrator in the Management Console. Once you set up the primary administrator account,
+   use that account password to log in from the command line.</note>
   <section>
    <title>NAT vs. Bridged Networking</title>
    <p>The VMware and VirtualBox start virtual machines with <b>NAT</b> networking enabled by

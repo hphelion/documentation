@@ -14,7 +14,7 @@
    services data on the root filesystem. The size of the ephemeral disk varies by the instance type. </p>
   <p>It is recommended to check EC2 instances for disk utilization. In the following example, the
    root file system is almost half-full on a new, medium <keyword keyref="prodShort"/> instance:</p>
-  <screen><keyword keyref="defaultSysUser"/>@hcf-7tgy:~$ df-h
+  <screen><keyword keyref="defaultSysUser"/>@<keyword keyref="sampleMachine"/>-7tgy:~$ df-h
 Filesystem             Size  Used Avail Use% Mounted on
 /dev/sda1              7.9G  3.3G  4.3G  43% /
 none                   3.7G  112K  3.7G   1% /dev

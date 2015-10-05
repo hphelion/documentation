@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_z52_wt5_4t">
- <title>Configuring Harbor Nodes</title>
- <shortdesc>The optional</shortdesc>
+ <title>Configuring Harbor (Port Service) Nodes</title>
+ <shortdesc/>
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
   </metadata>
  </prolog>
- <conbody>  <p>If you want to enable port forwarding for user applications, you must set up the <b>Harbor</b>
+ <conbody>
+  <draft-comment author="michaelk">This topic is single-sourced.</draft-comment>  <p>If you want to enable port forwarding for user applications, you must set up the <b>Harbor</b>
    TCP/UDP port service on a node with a public network interface. The security group or firewall
    settings for this node should make the configured port range accessible publicly.</p>
   <note type="tip">For detailed configuration instructions, see <b>Harbor Setup</b>.</note>

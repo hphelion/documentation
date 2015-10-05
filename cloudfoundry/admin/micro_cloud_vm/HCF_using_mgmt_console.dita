@@ -16,11 +16,15 @@
   <note>The SSL certificate for the <keyword keyref="prodShort"/> Management Console is self-signed.
    You will need to manually accept this certificate in your browser. For information on using your
    own certificate, see <b>HTTPS</b>.</note>
-  <p>When the Management Console loads, you will be prompted to create the first administrative user
-   and the first <b>organization</b> for the system. You can use these account credentials to push
-   applications, create additional users, and configure the system.</p>
-  <note>The password you set here will become the new password for the <codeph><keyword
-     keyref="defaultSysUser"/></codeph> system user for access via SSH or the hypervisor
-   console.</note>
+  <p id="complete_setup"><draft-comment author="michaelk">This element is
+    single-sourced.</draft-comment>When the Management Console loads, you will be prompted to create
+   the first administrator and the first <b>organization</b> for the system. Enter a username (your
+   email address) and a password, read and accept the Terms of Use Agreeement, and click
+    <uicontrol>Complete Setup</uicontrol>.</p>
+  <note conref="HCF_setup_amazon_postinit.dita#task_hsf_m35_4t/system_user_pass"/>
+  <p id="after_adding"><draft-comment author="michaelk">This element is single-sourced.</draft-comment>After creating
+   the first administrator, you can use these account credentials to create additional users,
+   organizations, and spaces, push applications, and configure the system using the Management
+   Console.</p>
  </conbody>
 </concept>

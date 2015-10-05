@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_fnc_p3w_4t">
+    <title>To Create an Administrator</title>
+    <shortdesc/>
+    <prolog>
+        <metadata>
+            <othermeta name="author" content="Michael Khmelnitsky"/>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>Copy the fully-qualified hostname of your instance in the address bar of your
+                    web browser and load the page.</cmd>
+            </step>
+            <step>
+                <cmd>The SSL certificate of the Management Console is self-signed. You must manually
+                    accept this certificate in your browser.</cmd>
+                <info>
+                    <note type="tip">For information on using your own certificate, see <b>HTTPS
+                            &amp; SSL</b>.</note>
+                </info>
+                <stepresult>The Management Console prompts you to create the first administrator for
+                    the system. </stepresult>
+            </step>
+            <step>
+                <cmd/>
+                <info>
+                    <p conref="HCF_using_mgmt_console.dita#concept_npv_xbm_nt/complete_setup"/>
+                    <note conref="HCF_setup_amazon_postinit.dita#task_hsf_m35_4t/system_user_pass"/>
+                </info>
+                <stepresult>
+                    <p conref="HCF_using_mgmt_console.dita#concept_npv_xbm_nt/after_adding"/>
+                </stepresult>
+            </step>
+        </steps>
+    </taskbody>
+</task>

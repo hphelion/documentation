@@ -25,7 +25,7 @@ https://<keyword keyref="mDNShostname"/></codeblock>
     will be <codeph><keyword keyref="mDNShostname"/></codeph>. If you configured the <b>hostname</b>
     and <b>DNS</b> of the <keyword keyref="prodShort"/> server manually, or if you connect to a
     server administered by someone else, supply the assigned hostname instead (for example,
-     <codeph>api.hcf-test.example.com</codeph>).</p>
+      <codeph>api.<keyword keyref="testSysName"/>.example.com</codeph>).</p>
    <p>To load Management Console, enter the URL into your web browser.</p>
    <note>Using a browser that supports WebSockets fully is recommended. The console is supported on
     the following browsers:<ul id="ul_ajq_xtr_nt">
@@ -35,12 +35,11 @@ https://<keyword keyref="mDNShostname"/></codeblock>
     </ul></note>
   </section>
   <section>
-   <title>Creating the First Administrative User</title>
+   <title>Creating the First Administrator</title>
    <p>When you first access the Management Console, you will be prompted to create a primary
-    administrative user for <keyword keyref="prodShort"/>. Enter an email address as the username
-    and enter a secure password, then review and accept the license agreement.</p>
-   <note>The password that you enter here becomes the password for the <keyword
-     keyref="defaultSysUser"/> user on the VM (for example, for SSH access).</note>
+    administrator for <keyword keyref="prodShort"/>. Enter an email address as the username and
+    enter a secure password, then review and accept the license agreement.</p>
+   <note conref="../micro_cloud_vm/HCF_setup_amazon_postinit.dita#task_hsf_m35_4t/system_user_pass"/>
   </section>
   <section>
    <title>Customizing the Configuration</title>

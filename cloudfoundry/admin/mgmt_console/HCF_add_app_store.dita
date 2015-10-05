@@ -28,9 +28,9 @@
         <result>The app store is added to <keyword keyref="prodShort"/>. </result>
         <postreq>To confirm that the App Store loads correctly, click <uicontrol>App
                 Store</uicontrol> on the menu and view the list of applications. If an app store URL
-            fails to load, a "CC Catalog Manager" error is displayed in the Event Log.<note>You can
-                also view, add, enable, and disable app store URLs using the <codeph>kato
-                    config</codeph> command, for
+            fails to load, a <msgph>CC Catalog Manager</msgph> error is displayed in the Event
+                Log.<note>You can also view, add, enable, and disable app store URLs using the
+                    <codeph>kato config</codeph> command, for
                 example:<codeblock>$ kato config get cloud_controller_ng app_store</codeblock></note></postreq>
     </taskbody>
 </task>
