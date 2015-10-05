@@ -28,7 +28,9 @@ ssh ubuntu@${SERVER1} 'sudo chmod 755 $(find /var/www/html/hphelionFransProd -ty
 ssh ubuntu@${SERVER1} 'sudo chmod 644 $(find /var/www/html/hphelionFransProd -type f) && chmod 444 /var/www/html/hphelionFransProd/.htaccess'
 
 
-ssh ubuntu@${SERVER1} 'sudo rm /var/www/html/hphelionFransProd/eucalyptus && sudo ln -s /var/www/html/eucaProd /var/www/html/hphelionFransProd/eucalyptus' || true
+ssh ubuntu@${SERVER1} 'sudo rm /var/www/html/hphelionFransProd/eucalyptus' || true
+ssh ubuntu@${SERVER1} 'sudo ln -s /var/www/html/eucaProd /var/www/html/hphelionFransProd/eucalyptus' || true
+
 
 
 echo ">>Staging complete"
