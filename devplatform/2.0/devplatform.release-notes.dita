@@ -7,7 +7,15 @@
       October, 2015. We hope you enjoy the release!</p>
     <section>
       <title>2.0 Beta Notes</title>
-      <dl>
+      <dl><dlentry>
+        <dt>Beta Installer Command Set Restricted</dt>
+        <dd>The only commands supported for the beta are as follows:
+            <codeblock>hdpi als install
+hdpi database install
+hdpi database upgrade
+hdpi list
+hdpi show</codeblock></dd>
+      </dlentry>
         <dlentry>
           <dt>Enable Monasca Monitoring for the Database Service</dt>
           <dd> The following instructions will enable the Monasca agent on the DBaaS control plane.
