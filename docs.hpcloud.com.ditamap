@@ -245,6 +245,8 @@
         navtitle="Configuring Your Network Securely"/>
       <topicref href="helion/security/encrypted_storage.dita"
         navtitle="Encryption of Passwords and Sensitive Data"/>
+      <topicref href="helion/security/using_apparmor.dita"
+        />
 
     </topichead>
 
