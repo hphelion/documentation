@@ -40,6 +40,8 @@ ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock><p>Once
               The deployer ip address can be obtained by looking at the existing hlinux apt source
               file in that directory. This is a workaround for an issue that exists in the Beta 2
               build if you use a combined deployer/controller only.</p>
+            <p>Then run this command to update your packages:
+              <codeblock>dpkg --add-architecture i386 &#38;&#38; apt-get update</codeblock></p>
             <p>If you use a dedicated deployer node then this step is not needed.</p></li>
           <li>Execute the following command to install
             CMC:<codeblock>cd ~/scratch/ansible/next/hos/ansible
