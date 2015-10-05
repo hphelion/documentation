@@ -159,7 +159,12 @@
       <topicref href="helion/postinstall_checklist.dita" navtitle="Post-Installation Checklist"
         locktitle="yes"/>
     </topicref>
+ <topichead navtitle="Security">
+   <topicref href="helion/security/tls.dita" navtitle="Enabling TLS for Public Endpoints"></topicref>
+   <topicref href="helion/security/secure_network_config.dita" navtitle="Configuring Your Network Securely"></topicref>
+   <topicref href="helion/security/encrypted_storage.dita" navtitle="Encryption of Passwords and Sensitive Data"></topicref>
  
+ </topichead>
   <topichead navtitle="Administration">
     <topichead navtitle="Minimum Set of Customizations">
       <topicref href="helion/administration/create_extnet.dita"
