@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_tdv_3v5_4t">
+ <title>Configuring the EC2 Elastic Load Balancer</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>To spread web traffic between <b>two or more <keyword keyref="prodShort"/> Router nodes</b>,
+   you can set up <keyword keyref="prodShort"/> clusters behind an <xref
+    href="http://aws.amazon.com/elasticloadbalancing/" format="html" scope="external">EC2 Elastic
+    Load Balancer</xref>.</p>
+  <p>The load balancer must be part of a security group that allows access on ports 80 (HTTP) and
+   443 (HTTPS). If there are no other gateways into the <keyword keyref="prodShort"/> cluster, allow
+   access to an arbitrary external port (between 1024 and 4999) which can be forwarded internally
+   using SSH to port 22 for administrative access.</p>
+  <note>When exposing SSH, setting up <b>key-based, passwordless authentication</b> on the router
+   nodes is recommended .</note>
+  <p>The <uicontrol>Port Configuration</uicontrol> settings of the load balancer should be
+   configured as follows:</p>
+  <table frame="all" rowsep="1" colsep="1" id="table_kmk_jw5_4t">
+   <tgroup cols="4">
+    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+    <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+    <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+    <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+    <thead>
+     <row>
+      <entry>Load Balancer Protocol</entry>
+      <entry>Load Balancer Port</entry>
+      <entry>Instance Protocol</entry>
+      <entry>Instance Port</entry>
+     </row>
+    </thead>
+    <tbody>
+     <row>
+      <entry>TCP</entry>
+      <entry>80</entry>
+      <entry>TCP</entry>
+      <entry>80</entry>
+     </row>
+     <row>
+      <entry>SSL</entry>
+      <entry>443</entry>
+      <entry>SSL</entry>
+      <entry>443</entry>
+     </row>
+     <row>
+      <entry>TCP</entry>
+      <entry>2222 (for example)</entry>
+      <entry>TCP</entry>
+      <entry>22</entry>
+     </row>
+    </tbody>
+   </tgroup>
+  </table>
+  <p>This configuration allows the load balancer to pass SSL connections to the router nodes.</p>
+  <note type="tip">For more detailed instructions on setting up certificates on the Router nodes,
+   see <b>Using Your Own SSL Certificate</b> and <b>CA Certificate Chaining</b>.</note>
+ </conbody>
+</concept>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_b3j_555_4t">
+ <title>Configuring System Monitoring with Nagios</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>If Nagios is installed on your EC2 instances, you can use it to monitor and report resource
+   utilization.</p>
+  <note type="tip">For more information, see <b>Best Practices</b>.</note>
+ </conbody>
+</concept>

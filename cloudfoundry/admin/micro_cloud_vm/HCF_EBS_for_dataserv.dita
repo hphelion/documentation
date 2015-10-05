@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_jbw_5w5_4t">
+ <title>Configuring EBS for Data Services and Droplets</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p>The default set of disks in an EC2 instance is limited: root volumes are small and the disk
+   mounted on <filepath>/mnt</filepath> is ephemeral. <keyword keyref="prodShort"/> stores its
+   services data on the root filesystem. The size of the ephemeral disk varies by the instance type. </p>
+  <p>It is recommended to check EC2 instances for disk utilization. In the following example, the
+   root file system is almost half-full on a new, medium <keyword keyref="prodShort"/> instance:</p>
+  <screen><keyword keyref="defaultSysUser"/>@hcf-7tgy:~$ df-h
+Filesystem             Size  Used Avail Use% Mounted on
+/dev/sda1              7.9G  3.3G  4.3G  43% /
+none                   3.7G  112K  3.7G   1% /dev
+none                   3.8G     0  3.8G   0% /dev/shm
+none                   3.8G   80K  3.8G   1% /var/run
+none                   3.8G     0  3.8G   0% /var/lock
+none                   3.8G     0  3.8G   0% /lib/init/rw
+/dev/sdb               414G  199M  393G   1% /mnt</screen>
+  <p>You can create a more robust instance by moving the <keyword keyref="prodShort"/> service data
+   and droplets onto an Amazon EBS (Elastic Block Store) volume.</p>
+ </conbody>
+</concept>

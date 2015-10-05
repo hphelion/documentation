@@ -2,9 +2,7 @@
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="reference_scp_4xz_nt">
   <title>Console Settings</title>
-  <shortdesc><keyword keyref="prodShort"/> can be customized and themed extensively. Administrators
-    can add and remove runtimes, frameworks, and services from the system and change look and
-    content of the <b>Management Console</b> interface.</shortdesc>
+  <shortdesc></shortdesc>
   <prolog>
     <metadata>
       <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -39,12 +37,6 @@
           <dd>Sets the default locale of the console if the user's current locale is not recognized.
               <note>Currently, only the <codeph>en</codeph> and <codeph>de</codeph> localizations
               are available.</note></dd>
-        </dlentry>
-        <dlentry>
-          <dt><uicontrol>External Docs URL</uicontrol></dt>
-          <dd>Sets the link to the documentation, by default set to <keyword keyref="docsShortURL"
-            />. To serve documentation from the VM, click <uicontrol>Use local
-            docs</uicontrol>.</dd>
         </dlentry>
       </dl>
     </section>

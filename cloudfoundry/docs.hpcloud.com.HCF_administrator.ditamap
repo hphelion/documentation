@@ -5,7 +5,24 @@
    <mapref href="docs.hpcloud.com.HCF_variables.ditamap" format="ditamap"/>
    <topicref href="admin/micro_cloud_vm/HCF_micro_cloud_vm.dita">
       <topicref href="admin/micro_cloud_vm/HCF_download_vm.dita"/>
-      <topicref href="admin/micro_cloud_vm/HCF_import_vm.dita"/>
+      <topicref href="admin/micro_cloud_vm/HCF_import_vm.dita">
+         <topicref href="admin/micro_cloud_vm/HCF_setup_amazon.dita">
+            <topicref href="admin/micro_cloud_vm/HCF_setup_amazon_postinit.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_setup_amazon_secgroup.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_configure_harbor.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_etc_hosts.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_configure_sysmon.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_configure_EC2_elastic.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_EBS_for_dataserv.dita">
+               <topicref href="admin/micro_cloud_vm/HCF_create_EBS_vol.dita"/>
+            </topicref>
+         </topicref>
+         <topicref href="admin/micro_cloud_vm/HCF_setup_hp_helion.dita"/>
+         <topicref href="admin/micro_cloud_vm/HCF_setup_openstack.dita"/>
+         <topicref href="admin/micro_cloud_vm/HCF_setup_virtualbox.dita"/>
+         <topicref href="admin/micro_cloud_vm/HCF_setup_vmware.dita"/>
+         <topicref href="admin/micro_cloud_vm/HCF_setup_vsphere.dita"/>
+      </topicref>
       <topicref href="admin/micro_cloud_vm/HCF_start_vm.dita"/>
       <topicref href="admin/micro_cloud_vm/HCF_using_mgmt_console.dita"/>
       <topicref href="admin/micro_cloud_vm/HCF_adding_orgs.dita"/>
@@ -30,12 +47,11 @@
          <topicref href="admin/mgmt_console/HCF_app_store_definition.dita"/>
          <topicref href="admin/mgmt_console/HCF_add_app_store.dita"/>
       </topicref>
-      <topichead navtitle="Customizing the Management Console">
-         <topicref href="admin/mgmt_console/HCF_console_settings.dita">
-            <topicref href="admin/mgmt_console/HCF_settings_variables.dita"/>
-            <topicref href="admin/mgmt_console/HCF_customize_error_page.dita"/>
-         </topicref>
-      </topichead>
+      <topicref href="admin/mgmt_console/HCF_customize_mgmt_console.dita">
+         <topicref href="admin/mgmt_console/HCF_console_settings.dita"/>
+         <topicref href="admin/mgmt_console/HCF_settings_variables.dita"/>
+         <topicref href="admin/mgmt_console/HCF_customize_error_page.dita"/>
+      </topicref>
    </topichead>
    <topichead navtitle="Setting up a VM"/>
    <topichead navtitle="Configuring a Server"/>

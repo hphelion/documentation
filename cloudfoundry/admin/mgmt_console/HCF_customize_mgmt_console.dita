@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_c44_md5_4t">
+ <title>Customizing the Management Console</title>
+ <shortdesc><keyword keyref="prodShort"/> can be customized and themed extensively. Administrators
+  can add and remove runtimes, frameworks, and services from the system and change look and
+  content of the <b>Management Console</b> interface.</shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <p></p>
+ </conbody>
+</concept>
