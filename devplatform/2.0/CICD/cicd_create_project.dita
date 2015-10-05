@@ -41,8 +41,12 @@
                     required credentials.<ol>
                         <li><b>HTTP Post </b><ol>
                                 <li>Notification Target Name</li>
-                                <li>HTTP Endpoint</li>
-                                <li>Token</li>
+                                <li>HTTP Endpoint: Specify an endpoint where HelionCI events should
+                                    be sent. Very similar to defining a webhook. Examples would be
+                                    the URL of an internal website, a communication tool, or an RSS
+                                    feed. </li>
+                                <li>Token: Generate a token as required for the target endpoint. The
+                                    method will vary depending on the target. </li>
                                 <li>Click <b>Save</b>.</li>
                             </ol></li>
                         <li><b>HipChat </b><ol>
@@ -59,8 +63,12 @@
                         <li><b>Flowdock</b>
                             <ol>
                                 <li>Notification Target Name</li>
-                                <li>API Endpoint</li>
-                                <li>Token</li>
+                                <li>API Endpoint: <xref href="https://api.flowdock.com"
+                                        format="html" scope="external"
+                                        >How to Find</xref></li>
+                                <li>Token: <xref
+                                        href="https://www.flowdock.com/api/authentication#source-token"
+                                        format="html" scope="external">How to Generate</xref></li>
                                 <li>Click <b>Save</b>.</li>
                             </ol></li>
                     </ol></li><li>Click <b>Save</b>.</li>
