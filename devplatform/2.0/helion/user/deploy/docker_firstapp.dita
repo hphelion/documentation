@@ -31,8 +31,8 @@
     
     
     
-    <section><title>Update and Installing OS Packages</title>
-        <p>Create a Dockerfile with the content below. This docker file executes an update using the
+    <section><title>Update and Installing Operating System Packages</title>
+        <p>Create a Dockerfile with the content below. This Dockerfile executes an update using the
         OS package manager. On openSUSE, this is done with <codeph>zypper</codeph>. </p>
           <codeblock>FROM opensuse:13.2  
 MAINTAINER Troy Topnik &lt;troyt@activestate.com&gt;
