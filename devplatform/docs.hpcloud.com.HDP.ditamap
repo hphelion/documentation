@@ -309,22 +309,12 @@
               navtitle="Example: Add a Service" locktitle="yes"/>
           </topicref>
         </topichead>
-        <topichead navtitle="ALS Management Console">
-          <topicref href="2.0/helion/admin/console/console_intro.dita"
-            navtitle="Introduction and First Use" locktitle="yes"/>
-          <topicref href="2.0/helion/admin/console/console_index.dita" locktitle="yes"
-            navtitle="Management Console (Admin View)"/>
-          <topicref href="2.0/helion/user/console/console_index.dita"
-            navtitle="Management Console (User View)" locktitle="yes"/>
-          <topicref href="2.0/helion/admin/console/console_settings.dita"
-            navtitle="Management Console Settings" locktitle="yes"/>
-          <topicref href="2.0/helion/admin/console/customize.dita" locktitle="yes"
-            navtitle="Management Console Customization"/>
-          <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
-            navtitle="Sample Applications"/>
-        </topichead>
       </topichead>
       <topichead navtitle="Cluster Creation">
+        <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
+          navtitle="Creating a database cluster from Horizon"/>
+        <topicref href="2.0/database/devplatform.database-create-cluster-cli.dita"
+          navtitle="Creating a database cluster from the command line"/>
         <topicref href="2.0/devplatform.deploy-ALS.dita" locktitle="yes"
           navtitle="Create an ALS Cluster Using Horizon"/>
         <topicref href="2.0/windows/windows_growcluster.dita"
