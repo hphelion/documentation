@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ohx_j1t_4t">
+  <title>When it is safe to rebalance and deploy a new ring?</title>
+  <body>
+    <p/>
+    <p>Before deploying a new ring, you want to know that the last ring change has been applied —
+      that all partitions are in their correct location (i.e., replication is complete). There are
+      three aspects to this:</p>
+    <ul id="ul_dnm_m1t_4t">
+      <li>
+        <p>Is the replication system busy? You might want to postpone a ring change until after the
+          system settles down. If the replication system is busy repairing a failed drive, a ring
+          change will place additional load on the system. To check that replication has finished,
+          use the swift-recon command with the --replication argument. See {ref swift-recon) for
+          more about running swift-recon. The oldeest replication time is useful as shown in the
+          following
+          example:<codeblock>$ sudo swift-recon --replication
+===============================================================================
+--> Starting reconnaissance on 3 hosts
+===============================================================================
+[2015-10-02 15:31:45] Checking on replication
+[replication_time] low: 0, high: 0, avg: 0.0, total: 0, Failed: 0.0%, no_result: 0, reported: 3
+Oldest completion was 2015-10-02 15:31:32 (120 seconds ago) by 192.168.245.4:6000.
+Most recent completion was 2015-10-02 15:31:43 (10 seconds ago) by 192.168.245.3:6000.
+===============================================================================</codeblock></p>
+      </li>
+    </ul>
+    <p>
+      <ul id="ul_k2d_2dt_4t">
+        <li>
+          <p>Are there drive or server failures? A drive failure does not preclude deploying a new
+            ring. In principal, there should be two copies elsewhere. However, <i>another</i> drive
+            failure in the middle of replication might make data temporally unavailable. If
+            possible, postpone ring changes until all servers and drives are operating normally.</p>
+        </li>
+        <li>Has min-part-time elapsed? The swift-ring-builder will refuse to build a new ring until
+          min-part-time hours has elapsed since the last time it built rings. You must postone
+          changes until this time has elapsed. Alternativly you can change the value of
+          min-part-time (ref Changing min-part-time)</li>
+      </ul>
+    </p>
+  </body>
+</topic>

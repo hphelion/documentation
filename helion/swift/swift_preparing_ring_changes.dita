@@ -53,21 +53,21 @@
     <p>The following table describes how playbooks relate to ring management</p>
     <simpletable id="simpletable_mtc_yb1_kt">
       <strow>
-        <stentry>Playbook</stentry>
-        <stentry>Description</stentry>
-        <stentry>Notes</stentry>
+        <stentry><b>Playbook</b></stentry>
+        <stentry><b>Description</b></stentry>
+        <stentry><b>Notes</b></stentry>
       </strow>
       <strow>
-        <stentry>swift-reconfigure.yml</stentry>
-        <stentry>This playbook takes rings that the _swift-make-delta-rebalance.yml playbook has
-          changed and copies them to all Swift nodes.</stentry>
+        <stentry><codeph>swift-reconfigure.yml</codeph></stentry>
+        <stentry>This playbook takes rings that the <codeph>_swift-make-delta-rebalance.yml</codeph>
+          playbook has changed and copies them to all Swift nodes.</stentry>
         <stentry>Every time that you use the _swift-make-delta-rebalance.yml playbook, you must copy
           these rings to the system using the swift-reconfigure.yml playbook. If you forget and run
           _swift-make-delta-rebalance.yml twice, the process may move two replicates of some
           partitions at the same time.</stentry>
       </strow>
       <strow>
-        <stentry>swift-deploy.yml</stentry>
+        <stentry><codeph>swift-deploy.yml</codeph></stentry>
         <stentry>This playbook is responsible for installing software and configuring Swift on
           nodes. As part of this, it runs the _swift-make-delta-rebalance.yml and
           swift-reconfigure.yml playbooks.</stentry>
@@ -75,7 +75,7 @@
           run either of those playbooks, the swift-deploy.yml playbook is also run.</stentry>
       </strow>
       <strow>
-        <stentry>_swift-validate-input-model.yml</stentry>
+        <stentry><codeph>_swift-validate-input-model.yml</codeph></stentry>
         <stentry>There are two steps in this playbook:Make deltaThis is the same step as described
           aboveReportThis prints a summary of the proposed changes that will be made to the rings
           (ie. what would happen if we rebalanced). As a side effect, the playbook reports any
@@ -87,7 +87,7 @@
         <stentry/>
       </strow>
       <strow>
-        <stentry>_swift-make-delta-rebalance.yml</stentry>
+        <stentry><codeph>_swift-make-delta-rebalance.yml</codeph></stentry>
         <stentry>There are two steps in this playbook:Make deltaIt processes the Input Model and
           compares against the existing rings. It then produces a list of differences between the
           Input Model and the exiting rings. Is is called the ring delta. The ring delta covers

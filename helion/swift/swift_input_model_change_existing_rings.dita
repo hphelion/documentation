@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_vyp_cft_4t">
+  <title>Applying Input Model Changes to Existing Rings</title>
+  <body>
+    <p>This section describes a general approach to making changes to an existing rings. This
+      applies to such actions as adding a server. There are a number of phases and actions to
+      perform as shown below:</p>
+    <p>
+      <ul id="ul_sqz_jft_4t">
+        <li>Changing the Input Model Phase<ul id="ul_wrz_jft_4t">
+            <li>If not already done, set the weight-step attribute <b>(how to set up the weight step
+                attribute?)</b></li>
+            <li>Edit the Input Model as appropriate. You must edit the YAML file as per your
+              requirement. For more information, refer <xref href="../input_model.dita#input_model"
+              /></li>
+            <li>Commit your configuration to the <xref href="../using_git.dita#topic_u3v_1yz_ct"
+                >local repo</xref>, as
+              follows<codeblock>git add -A
+git commit -m "commit message"</codeblock></li>
+            <li>Run the configuration
+              processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+            <li>Run the following command to create a deployment
+              directory.<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+            <li>Run the following
+              playbook.<codeblock> _swift-validate-input-model.yml </codeblock></li>
+            <li>
+              <p><?oxy_custom_start type="oxy_content_highlight" color="255,60,255"?>Validate that
+                the number of drives proposed to be added or deleted or weight change is correct.
+                Fix any errors in your Input Model. At this stage, no changes have been made to
+                rings<?oxy_custom_end?>.</p>
+            </li>
+          </ul></li>
+        <li>Perform first phase of ring rebalance:<ul id="ul_gsz_jft_4t">
+            <li>Run the following command:<codeblock>swift-deploy.yml </codeblock></li>
+            <li>
+              <p>Wait until replication has finished or min-part-time has elapsed (which ever is
+                longer) (<b>any output we get after executing the above command?)</b></p>
+            </li>
+          </ul></li>
+        <li>Perform weight change phase of ring rebalance:<ul id="ul_qsz_jft_4t">
+            <li>Run the following
+              playbook<codeblock> _swift-make-delta-rebalance.yml</codeblock></li>
+            <li>Run the reconfigure<codeblock>swift-reconfigure.yml </codeblock></li>
+            <li>Wait until replication has finished or min-part-time has elapsed (which ever is
+              longer)</li>
+            <li>Run the _swift-validate-input-model.yml playbook and examine the report:<ul
+                id="ul_atz_jft_4t">
+                <li>When there are no proposed weight changes, you proceed the final phase</li>
+                <li>
+                  <p>If there are proposed weight changes repeat this phase again
+                    (_swift-make-delta-rebalance.yml)</p>
+                  <p> </p>
+                </li>
+              </ul></li>
+          </ul></li>
+        <li>Perform the final rebalance phase as follows. This phase moves all replicas to their
+          final destination.<ul id="ul_ktz_jft_4t">
+            <li>Run the _swift-make-delta-rebalance.yml playbook</li>
+            <li>Run the swift-reconfigure.yml playbook</li>
+            <li>Wait until replication has finished or min-part-time has elapsed (which ever is
+              longer)</li>
+            <li>Repeat these action one more time.</li>
+          </ul></li>
+      </ul>
+    </p>
+  </body>
+</topic>
