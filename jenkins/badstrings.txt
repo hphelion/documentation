@@ -1,3 +1,4 @@
+%baremetalConfig.yml%=baremetalConfig has been merged with servers.yml. The combined servers file is servers.yml"%servers.yml|rm 
 % hLinux %=Use Linux for HP Helion or Linux for HP Helion OpenStack.%codeph
 %HP Enterprise%=Use Hewlett Packard Enterprise or HPE.
 %[^Mac] OS %=Write OS as operating system.
