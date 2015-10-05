@@ -200,9 +200,10 @@
       <topicref href="start.stop.check" toc="no">
         <topicref href="checking.object.storage" toc="no"/>
       </topicref>
-      <topicref href="helion/operations/add_node.dita" toc="no"/>
-      <topicref href="helion/operations/repair_node.dita" toc="no"/>
-      <topicref href="helion/operations/remove_node.dita" toc="no"/>
+      <topicref href="helion/operations/add_node.dita" />
+      <topicref href="helion/operations/repair_node.dita" />
+      <topicref href="helion/operations/remove_node.dita" />
+      <topicref href="helion/operations/replace_controller.dita" />
       <topicref href="helion/cinder/vsa/vsa_create_multiple_clusters.dita"/>
       <topicref href="helion/cinder/ceph/adding_new_osd_node.dita"/>
       <topicref href="helion/cinder/singleton_service_cinder.dita"/>
