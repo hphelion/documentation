@@ -79,7 +79,7 @@ neutron subnet-create --allocation-pool start=10.1.6.2,end=10.1.6.254 --no-gatew
         as a small compressed tar file. The images for the individual services will be downloaded at
         the installer's request.</p>
       <ol id="ol_ogs_qpt_nt">
-        <li>Navigate to the the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
+        <li>Navigate to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
             format="html" scope="external">HP Helion Download Network</xref> (HDN) and log in. If
           necessary, create an account first.</li>
         <li>Download the Development Platform Installer 2.0.0.0 beta package.</li>
