@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_create_database_horizon">
-  <title>Creating a database from Horizon</title>
+  <title>Creating a database instance from Horizon</title>
   <body>
     <p>This topic describes how to create a database instance from the Horizon interface.</p>
     <ol>

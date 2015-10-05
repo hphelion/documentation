@@ -17,26 +17,20 @@
       </li>
       <li>To verify that the cluster was created, use the <codeph>trove cluster-list</codeph> command.
       </li>
-      <li>To list the databases that are part of a cluster, use the <codeph>trove list --include-clustered</codeph> command.
-      </li>
+      <li>To list the instances that are part of a cluster, use the <codeph>trove cluster-list
+          &lt;clutster name></codeph> command. </li>
       
     </ol>
     
     <section id="examples"><title>Examples</title>
-    <dl>
-      <dlentry>
-        <dt>Example 1: Create a MySql cluster called MyCluster with three database instances of flavor m1.medium and volume size 3</dt>
-        <dd><codeblock>trove cluster-create MyCluster mysql-cluster 5.5 --instance flavor=3,volume=3 --instance flavor=3,volume=3 --instance flavor=3,volume=3 </codeblock></dd>
-      </dlentry>
-      <dlentry>
-        <dt>Example 2: Create a Redis cluster called MyRedisCluster with two database instances of flavor m1.small and volume size 4</dt>
-        <dd><codeblock>trove cluster-create MyRedisCluster redis 3.0 --instance flavor=2,volume=4 --instance flavor=2,volume=4</codeblock></dd>
-      </dlentry>
-      <dlentry>
-        <dt>Example 3: Create a MongoDB cluster called MyMongoDBCluster with three database instances of flavor m1.large and volume size 2</dt>
-        <dd><codeblock>trove cluster-create MyMongoDBCluster mongodb 3.0 --instance flavor=4,volume=5 --instance flavor=4,volume=5 --instance flavor=4,volume=5</codeblock></dd>
-      </dlentry>
-      
-    </dl></section>
+      <ul>
+        <li><b>Example 1:</b> Create a MySql cluster called MyCluster with three database instances of flavor m1.medium and volume size 3
+        <codeblock>trove cluster-create MyCluster mysql-cluster 5.5 --instance flavor=3,volume=3 --instance flavor=3,volume=3 --instance flavor=3,volume=3 </codeblock></li>
+        <li><b>Example 2:</b> Create a Redis cluster called MyRedisCluster with two database instances of flavor m1.small and volume size 4
+        <codeblock>trove cluster-create MyRedisCluster redis 3.0 --instance flavor=2,volume=4 --instance flavor=2,volume=4</codeblock></li>
+        <li><b>Example 3:</b> Create a MongoDB cluster called MyMongoDBCluster with three database instances of flavor m1.large and volume size 2 
+        <codeblock>trove cluster-create MyMongoDBCluster mongodb 3.0 --instance flavor=4,volume=5 --instance flavor=4,volume=5 --instance flavor=4,volume=5</codeblock></li>
+      </ul>
+    </section>
   </body>
 </topic>

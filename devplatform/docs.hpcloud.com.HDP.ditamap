@@ -206,7 +206,7 @@
       <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
         navtitle="Using the Database Service"/>
       <topicref href="2.0/database/devplatform.database-create-horizon.dita"
-        navtitle="Creating a database from Horizon"/>
+        navtitle="Creating a database instance from Horizon"/>
       <topicref href="2.0/database/devplatform.database-create-cli.dita"
         navtitle="Create a database instance from the command line"/>
       <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
