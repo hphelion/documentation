@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_kdx_zqv_4t">
+  <title>HP Helion 2.0 Development Platform: Log Files for Continuous Integration</title>
+  <body>
+    
+    <p>Every build, test, deployment and post-deploy event generates log files.  </p>
+<p>To access the logs, click the <b>Projects</b> tab and then click the title of a particular build.
+        <image href="../../../media/cicd_logging_buildlist.png" id="image_qmw_bcw_4t"/></p><p>Each event - Building, Testing, and Deploying - can be expanded to display the logs associated
+      with that event.<ul id="ul_yhf_qbw_4t">
+        <li>Checking <b>Dark Background</b> will invert the colors to white text on a black
+          background. This may be easier to read.</li>
+        <li>Checking <b>Show Raw Log</b> will </li>
+      </ul>
+      <image href="../../../media/cicd_logging_alerts.png" id="image_d22_ttv_4t"/></p>
+  </body>
+</topic>
