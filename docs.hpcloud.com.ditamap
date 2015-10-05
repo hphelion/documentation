@@ -213,6 +213,7 @@
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>
       </topicref>
+      <topichead navtitle="Monitoring and Logging">
       <topicref href="helion/operations/monasca.dita" navtitle="Monitoring Service" locktitle="yes">
         <topicref href="helion/operations/alarms.dita" navtitle="Service Alarm Definitions"
           locktitle="yes"/>
@@ -247,6 +248,7 @@
           <topicref href="helion/operations/opsconsole/hdp_summary.dita"/>
         </topichead>
       </topicref>
+      </topichead>
     </topichead>
 
     <!-- USER GUIDE -->
