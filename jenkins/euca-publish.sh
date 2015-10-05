@@ -1,4 +1,4 @@
-!/bin/bash 
+#!/bin/bash 
 
 SERVER=$1
 VERSION_TO_PUBLISH=$2
