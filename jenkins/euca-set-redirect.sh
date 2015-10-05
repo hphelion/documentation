@@ -39,7 +39,7 @@ else #If the user wants to change the default version
 
     if [ $VERSION_TO_PUBLISH !=  $DEFAULT_VERSION ]
 	then #If the version to set to default is NOT the version being published, make sure that it is already on the server
-		TEST=`ssh ubuntu@$SERVER1 "ls /var/www/html/eucaProd/$DEFAULT_VERSION"`
+		TEST=`ssh ubuntu@15.126.215.92 "ls /var/www/html/eucaProd/$DEFAULT_VERSION"`
         
         echo ">>The version to be set to default ($DEFAULT_VERSION) exists on the server"
 
