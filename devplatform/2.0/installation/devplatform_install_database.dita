@@ -229,7 +229,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
             </ol></li>
           <li> The installation is complete. Return to the Horizon dashboard (you may log out and
             log in with a non-Admin account if desired), and click on the <b>Database</b> panel
-            under the current Project to being using Database Service. </li>
+            under the current Project to begin using the Database Service. </li>
         </ol></sectiondiv></section>
 
  
