@@ -9,7 +9,7 @@
     <p>The following command retrieves and displays disk usage
       information.<codeblock>$ sudo swift-recon --diskusage</codeblock></p>
     <p>For
-      example:<codeblock/><codeblock>$ sudo swift-recon --diskusage
+      example:<codeblock>$ sudo swift-recon --diskusage
 ===============================================================================
 --> Starting reconnaissance on 3 hosts
 ===============================================================================

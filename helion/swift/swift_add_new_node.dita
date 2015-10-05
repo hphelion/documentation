@@ -7,16 +7,16 @@
       system.</p>
     <section>
       <title>Procedure to add a new node</title>
-      <p>You must add a new node to the <codeph>server.yml</codeph> file. </p>
+      <p>You must add a new node details in the <codeph>server.yml</codeph> file. </p>
       <p>Perform the following steps to add a new node:<ol id="ol_p4w_gbr_4t">
           <li>Log in to the deployer node.</li>
-          <li>Change the directory<codeblock>cd ~/helion/my_cloud/definition/data</codeblock></li>
-          <li>Execute the following command<codeblock>git checkout site</codeblock></li>
-          <li>Include the swift-object components in the resource-nodes section of the
+          <li>Change the directory.<codeblock>cd ~/helion/my_cloud/definition/data</codeblock></li>
+          <li>Execute the following command:<codeblock>git checkout site</codeblock></li>
+          <li>Add the swift-object components in the resource-nodes section of the
               <codeph>control_plane.yml</codeph> file, if you are adding a new node/swift object
-            server to an entry-scale system. A sample of <codeph>control_plane.yml</codeph> file is
-            shown
-            below<codeblock>---
+            server to an entry-scale model. An example of <codeph>control_plane.yml</codeph> file is
+            shown below: (<b>are there any other model also? or can we make this
+            generic?</b>)<codeblock>---
   product:
     version: 2
   servers:
@@ -34,8 +34,8 @@
             - swift-object
             - swift-common</codeblock></li>
           <li>Add details of new node(s) to <codeph>server.yml</codeph> file. In the following
-            example we are adding only one new server "cpn-0004". You can add multiple servers at a
-            time by providing the server details in the <codeph>server.yml</codeph>
+            example we are adding only one new server "cpn-0004". You can add multiple servers by
+            providing the server details in the <codeph>server.yml</codeph>
             file.<codeblock>servers.yml
 
 ---
@@ -76,10 +76,10 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblo
             command?)</b><codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit <b>&lt;Name of the node> (is this correct. If not then please let me know the correct term to use as placeholder)</b></codeblock>In
             the following example, you have added a computer server to <b>hlm004-ccp-comp0007</b>.<p>
               <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit <b>hlm004-ccp-comp0007*(where do we get this information?)</b></codeblock>
-            </p><p>Once you have added a new node/server to the system, you must enure that the
-              swift rings are updated with the new node/server(s) details and the rings are
-              distributed to all swift servers. Run the following
-              command:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit SWF* (what is the meaning of "*"?) </codeblock></p></li>
+            </p><p>Once you have added a new node/server to the system, you must enure that the swift rings are
+              updated with the new node/server(s) details and the rings are distributed to all swift
+              servers. Run the following
+              command:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit SWF* (<b>what is the meaning of "*"?</b>) </codeblock></p></li>
         </ol></p>
     </section>
   </body>
