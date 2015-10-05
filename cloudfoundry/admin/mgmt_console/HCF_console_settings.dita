@@ -45,10 +45,9 @@
       <p>Sets the <keyword keyref="prodShort"/> CLI client version number and the paths or URLs to
         the downloadable archives for each platform.</p>
       <note>
-        <p>Local paths are relative to the
-            <filepath>/home/<varname>&lt;hcf-directory></varname>/</filepath> directory (for the
-          router node, see <b>Renaming the Client</b>). However, you can also use HTTP URLs for
-          externally-hosted files.</p>
+        <p>Local paths are relative to the <filepath>/home/<keyword keyref="installDir"
+            />/</filepath> directory (for the router node, see <b>Renaming the Client</b>). However,
+          you can also use HTTP URLs for externally-hosted files.</p>
       </note>
       <p>The CLI client executables served from the VM are the latest version available at the time
         of a <keyword keyref="prodShort"/> VM release. However, updated clients may become available

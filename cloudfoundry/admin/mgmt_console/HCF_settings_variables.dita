@@ -32,11 +32,11 @@
   </section>
   <section>
    <title>Restoring Values</title>
-   <p>The <uicontrol>Load Default</uicontrol> button (the icon to the left of the value field)
+   <p>Clicking <uicontrol>Load Default</uicontrol> (the icon to the left of the value field)
     replaces the custom value of the corresponding setting with the default value. Click
      <uicontrol>Save</uicontrol> to apply your changes.</p>
-   <p>The red <uicontrol>Load Defaults</uicontrol> button (at the top of the page) deletes all
-    custom values and loads the default values for all settings.</p>
+   <p>Clicking <uicontrol>Load Defaults</uicontrol> (at the top of the page) deletes all custom
+    values and loads the default values for all settings.</p>
    <note type="important">If style changes obscure the interface, an administrator can also reset
     specific settings by loading a URL with the following format:
       <uicontrol>https://<varname>&lt;hcf-URL></varname>/#settings/console/reset/setting_name</uicontrol>

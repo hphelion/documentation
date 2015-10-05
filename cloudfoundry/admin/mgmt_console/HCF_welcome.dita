@@ -12,38 +12,34 @@
   </prolog>
   <refbody>
     <section>
-      <!--ul id="ul_mbp_vwr_nt">
-        <li>Blue buttons are for features also available for administrators and application
-          developers (see <xref href="HCF_using_mgmt_console.dita#concept_nvp_bqr_nt"/>).</li>
-        <li>Green buttons expose functionality available only to administrators:--><dl>
-            <dlentry>
-              <dt><uicontrol>Configure Available Services</uicontrol></dt>
-              <dd>Opens the <b>Cluster Nodes</b> view that displays which roles are running on which
-            nodes. From this view you can add or remove Service roles on the various nodes in the
-            cluster (or on <codeph>127.0.0.1</codeph> for micro clouds)</dd>
-            </dlentry>
-            <dlentry>
-              <dt><uicontrol>Manage Organizations</uicontrol></dt>
-              <dd>Opens the <b>Organizations</b> view</dd>
-            </dlentry>
-            <dlentry>
-              <dt><uicontrol>Manage Users</uicontrol></dt>
-              <dd>Opens the <b>Users</b> view.</dd>
-            </dlentry>
-            <dlentry>
-              <dt><uicontrol>View All Deployed Applications</uicontrol></dt>
-              <dd>Open the <b>Applications</b> view</dd>
-            </dlentry>
-            <dlentry>
-              <dt><uicontrol>View Cloud Events</uicontrol></dt>
-              <dd>Opens the <b>Cloud Events</b></dd>
-            </dlentry>
-            <dlentry>
-              <dt><uicontrol>View Dashboard</uicontrol></dt>
-              <dd>Opens the <b>Dashboard</b></dd>
-            </dlentry>
-          </dl><!--/li>
-      </ul-->
+      <dl>
+        <dlentry>
+          <dt><uicontrol>Configure Available Services</uicontrol></dt>
+          <dd>Opens the <b>Cluster Nodes</b> view that displays which roles are running on which
+        nodes. From this view you can add or remove Service roles on the various nodes in the
+        cluster (or on <codeph>127.0.0.1</codeph> for micro clouds)</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>Manage Organizations</uicontrol></dt>
+          <dd>Opens the <b>Organizations</b> view</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>Manage Users</uicontrol></dt>
+          <dd>Opens the <b>Users</b> view.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>View All Deployed Applications</uicontrol></dt>
+          <dd>Open the <b>Applications</b> view</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>View Cloud Events</uicontrol></dt>
+          <dd>Opens the <b>Cloud Events</b></dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>View Dashboard</uicontrol></dt>
+          <dd>Opens the <b>Dashboard</b></dd>
+        </dlentry>
+      </dl>
     </section>
   </refbody>
 </reference>

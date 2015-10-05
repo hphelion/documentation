@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_vyl_plv_4t">
+    <title>To Configure Security Group Settings</title>
+    <shortdesc>Before launching a <keyword keyref="prodShort"/> VM instance, you must create a
+        security group that  exposes only the necessary network ports (or modify an existing group
+        using the following properties).</shortdesc>
+    <prolog>
+        <metadata>
+            <othermeta name="author" content="Michael Khmelnitsky"/>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>Click <menucascade>
+                        <uicontrol>Project</uicontrol>
+                        <uicontrol>Compute</uicontrol>
+                        <uicontrol>Access &amp; Security</uicontrol>
+                    </menucascade> to see a list of the existing security groups available in your
+                    account.</cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>+ Create Security Group</uicontrol> and enter a name and
+                    description for your new security group (for example,
+                        <uicontrol>Name:</uicontrol>
+                    <userinput><keyword keyref="sampleSecGroup"/></userinput>,
+                        <uicontrol>Description:</uicontrol>
+                    <userinput>Public-facing <keyword keyref="prodShort"/>micro
+                    cloud</userinput>).</cmd>
+                <info>
+                    <note>If you already have security group rules matching the requirements below,
+                        skip this step and launch a <keyword keyref="prodShort"/> VM
+                        instance.</note>
+                </info>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Manage Rules</uicontrol> for the new security group.</cmd>
+                <info>
+                    <note>By default, a new group has open egress rules. Do not modify these rules
+                        unless you have special security requirements forbidding this, because
+                            <keyword keyref="prodShort"/> requires access to several remote domains
+                        for updates and package management.</note>
+                </info>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>+ Add Rule</uicontrol> and enter the following new ingress
+                    rules:</cmd>
+                <info>
+                    <table frame="all" rowsep="1" colsep="1" id="table_i3t_dqv_4t">
+                        <tgroup cols="3">
+                            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+                            <thead>
+                                <row>
+                                    <entry>Rule</entry>
+                                    <entry>Remote</entry>
+                                    <entry>CIDR</entry>
+                                </row>
+                            </thead>
+                            <tbody>
+                                <row>
+                                    <entry>HTTP</entry>
+                                    <entry>CIDR</entry>
+                                    <entry><uicontrol>0.0.0.0/0</uicontrol></entry>
+                                </row>
+                                <row>
+                                    <entry>HTTPS</entry>
+                                    <entry>CIDR</entry>
+                                    <entry><uicontrol>0.0.0.0/0</uicontrol></entry>
+                                </row>
+                                <row>
+                                    <entry>SSH</entry>
+                                    <entry>CIDR</entry>
+                                    <entry><uicontrol>0.0.0.0/0</uicontrol></entry>
+                                </row>
+                            </tbody>
+                        </tgroup>
+                    </table>
+                </info>
+            </step>
+            <step>
+                <cmd>(Optional) If you require a stricter set of rules (for example, restricting SSH
+                    access to a specific IP range), modify the rules above to suit your needs.</cmd>
+                <info>
+                    <note type="tip">For more information on the ports required by services, see
+                            <b>Port Configuration</b>.</note>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task>

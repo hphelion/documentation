@@ -18,8 +18,8 @@
                     <note type="tip">An elastic IP allocates a static external address to your
                         cluster and exposes this address on the border router where the cluster is
                         hosted. The router associates this address with a corresponding dynamic
-                        address local to your cluster. This address is leased over <b>DHCP</b> along
-                        with the address of the local DNS server which keeps track of private
+                        addrpess local to your cluster. This address is leased over <b>DHCP</b>
+                        along with the address of the local DNS server which keepws track of private
                         addresses allocated by the DHCP server. Thus, each node in your cluster
                         automatically receives the private address of the head node, while outside
                         traffic receives the public address.</note>
@@ -27,13 +27,15 @@
             </step>
             <step>
                 <cmd>Publish the external address for your domain name using <b>DNS</b> or
-                        <b>dynamic DNS</b>. For example, a static DNS zone file for
-                        <codeph>hcf-test</codeph> on <codeph>example.com</codeph> would have the
-                    following entries:</cmd>
-                <info><codeblock><keyword keyref="testSysName"/>      IN  A        AWS-Elastic-IP.
-*.<keyword keyref="testSysName"/>    IN  CNAME    hcf-test</codeblock><note>Ensure
-                        that <codeph>.</codeph> ends the <codeph>A</codeph> record. For </note>more
-                    information, see <b>DNS</b>.</info>
+                        <b>dynamic DNS</b>. For example, a static DNS zone file for <codeph><keyword
+                            keyref="testSysName"/></codeph> on <codeph>example.com</codeph> would
+                    have the following entries:</cmd>
+                <info>
+                    <codeblock><keyword keyref="testSysName"/>      IN  A        AWS-Elastic-IP.
+*.<keyword keyref="testSysName"/>    IN  CNAME    <keyword keyref="testSysName"/></codeblock>
+                    <note>Ensure that <codeph>.</codeph> ends the <codeph>A</codeph> record. For
+                        more information, see <b>DNS</b>.</note>
+                </info>
             </step>
             <step>
                 <cmd>When the <keyword keyref="prodShort"/> is launched, log in using SSH as the
@@ -52,10 +54,12 @@
             </step>
             <step>
                 <cmd>Direct your browser to the hostname that you have configured and use the
-                        <uicontrol>Welcome</uicontrol> view to create the first administrator. The
-                    password that you use here will become the <keyword keyref="prodShort"/> system
-                    user password for subsequent logins using SSH.</cmd>
+                        <uicontrol>Welcome</uicontrol> view to create the first administrator. </cmd>
                 <info>
+                    <note id="system_user_pass" type="important"><draft-comment author="michaelk"
+                            >This element is single-sourced.</draft-comment>The password that you
+                        use here will become the <keyword keyref="prodShort"/> system user password
+                        for subsequent logins using SSH.</note>
                     <note>To set up a multi-node, clustered <keyword keyref="prodShort"/>
                         <b>PaaS</b>, see <b>Cluster Setup</b>.</note>
                 </info>

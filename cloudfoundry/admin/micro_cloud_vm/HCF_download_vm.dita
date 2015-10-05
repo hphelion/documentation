@@ -9,9 +9,9 @@
   </metadata>
  </prolog>
  <conbody>
-   <p>You can <xref href="http://downloads.stackato.com/vm/" format="html" scope="external">download an
-     <keyword keyref="prodShort"/> VM</xref> in the hypervisor format of your choice or use the
-   latest image on Amazon EC2 or HP Public Cloud.</p>
+   <p>You can <xref href="http://downloads.stackato.com/vm/" format="html" scope="external">download
+        an <keyword keyref="prodShort"/> VM</xref> in the hypervisor format of your choice or use
+      the latest image on Amazon EC2 or <keyword keyref="pubCloudLong"/>.</p>
   <p>Host system requirements:<ul id="ul_spb_lvl_nt">
     <li>x86_64 processor with VT-x enabled (x86 virtualization)</li>
     <li>3 GB+ of free memory</li>

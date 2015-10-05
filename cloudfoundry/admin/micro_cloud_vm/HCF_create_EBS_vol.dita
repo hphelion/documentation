@@ -31,12 +31,10 @@
                         <uicontrol>Attach Volume</uicontrol>
                     </menucascade>, select your instance from the list and click <uicontrol>Yes,
                         Attach</uicontrol>.</cmd>
-                <info>
-                    <note type="important">To ensure that the specified defice name is not already
-                        in use by your instance, use the <codeph>mount</codeph> or
+                <info>hc<note type="important">To ensure that the specified defice name is not
+                        already in use by your instance, use the <codeph>mount</codeph> or
                             <codeph>df</codeph> commands to see which devices are already in use on
-                        your system.</note>
-                </info>
+                        your system.</note></info>
             </step>
             <step>
                 <cmd>To identify the device name of the volume, run the <codeph>fdisk -1</codeph>
@@ -44,7 +42,7 @@
                 <info>
                     <note>There is no need to partition the device before building a filesystem on
                         it.</note>
-                    <screen>root@hcf-7tgy:~# fdisk -1
+                    <screen>root@<keyword keyref="sampleMachine"/>-7tgy:~# fdisk -1
 
 Disk /dev/sdf: 214.7 GB, 214748364800 bytes
 255 heads, 63 sectors/track, 2108 cylinders
@@ -61,7 +59,7 @@ Disk identifier: 0x00000000</screen>
                     <note>For maximum compatibility, use the filesystem type that matches your root
                         partition. In the following example, <codeph>ext3</codeph> is
                         specified.</note>
-                    <screen>root@hcf-7tgy:~# mkfs.ext3 /dev/sdf
+                    <screen>root@<keyword keyref="sampleMachine"/>-7tgy:~# mkfs.ext3 /dev/sdf
 mke2fs 1.41.11 (14-Mar-2010)
 /dev/sdf is entire device, not just one partition!
 Proceed anyway? (y,n) y

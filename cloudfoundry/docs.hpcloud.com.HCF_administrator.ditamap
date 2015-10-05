@@ -11,17 +11,26 @@
             <topicref href="admin/micro_cloud_vm/HCF_setup_amazon_secgroup.dita"/>
             <topicref href="admin/micro_cloud_vm/HCF_configure_harbor.dita"/>
             <topicref href="admin/micro_cloud_vm/HCF_etc_hosts.dita"/>
-            <topicref href="admin/micro_cloud_vm/HCF_configure_sysmon.dita"/>
             <topicref href="admin/micro_cloud_vm/HCF_configure_EC2_elastic.dita"/>
             <topicref href="admin/micro_cloud_vm/HCF_EBS_for_dataserv.dita">
                <topicref href="admin/micro_cloud_vm/HCF_create_EBS_vol.dita"/>
             </topicref>
          </topicref>
-         <topicref href="admin/micro_cloud_vm/HCF_setup_hp_helion.dita"/>
-         <topicref href="admin/micro_cloud_vm/HCF_setup_openstack.dita"/>
+         <topicref href="admin/micro_cloud_vm/HCF_setup_hp_helion.dita">
+            <topicref href="admin/micro_cloud_vm/HCF_configure_secgroup.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_configure_harbor.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_start_hcf_instance.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_associate_floating_ip.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_configure_dns.dita">
+               <topicref href="admin/micro_cloud_vm/HCF_mng_record_HPPC.dita"/>
+            </topicref>
+            <topicref href="admin/micro_cloud_vm/HCF_configure_hcf.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_create_admin_user.dita"/>
+         </topicref>
+         <!--<topicref href="admin/micro_cloud_vm/HCF_setup_openstack.dita"/>
          <topicref href="admin/micro_cloud_vm/HCF_setup_virtualbox.dita"/>
          <topicref href="admin/micro_cloud_vm/HCF_setup_vmware.dita"/>
-         <topicref href="admin/micro_cloud_vm/HCF_setup_vsphere.dita"/>
+         <topicref href="admin/micro_cloud_vm/HCF_setup_vsphere.dita"/>-->
       </topicref>
       <topicref href="admin/micro_cloud_vm/HCF_start_vm.dita"/>
       <topicref href="admin/micro_cloud_vm/HCF_using_mgmt_console.dita"/>

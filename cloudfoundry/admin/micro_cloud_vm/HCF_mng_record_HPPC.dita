@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_uw4_jcw_4t">
+    <title>To Manage Records Using <keyword keyref="pubCloudLong"/></title>
+    <shortdesc/>
+    <prolog>
+        <metadata>
+            <othermeta name="author" content="Michael Khmelnitsky"/>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>Click <menucascade>
+                        <uicontrol>Project</uicontrol>
+                        <uicontrol>Manage DNS</uicontrol>
+                        <uicontrol>Domains</uicontrol>
+                    </menucascade>.</cmd>
+            </step>
+            <step>
+                <cmd>Select or create a domain for your new <keyword keyref="prodShort"/>
+                    instance.</cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>+ Create Record</uicontrol>.</cmd>
+            </step>
+            <step>
+                <cmd>Under <uicontrol>Record Type</uicontrol>, set an A record, for example:</cmd>
+                <info>
+                    <dl>
+                        <dlentry>
+                            <dt><uicontrol>Record Type</uicontrol></dt>
+                            <dd><uicontrol>A</uicontrol></dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt><uicontrol>Name</uicontrol></dt>
+                            <dd><userinput><keyword keyref="testSysName"
+                                />.example.com</userinput></dd>
+                        </dlentry>
+                    </dl>
+                    <dl>
+                        <dlentry>
+                            <dt><uicontrol>IP Address</uicontrol></dt>
+                            <dd><userinput>15.125.90.97</userinput></dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt><uicontrol>TTL</uicontrol></dt>
+                            <dd><userinput>1800</userinput></dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>Description</dt>
+                            <dd><keyword keyref="prodShort"/> PaaS on <keyword keyref="pubCloudLong"
+                                /></dd>
+                        </dlentry>
+                    </dl>
+                </info>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Create Domain Record</uicontrol> to save your settings.</cmd>
+            </step>
+            <step>
+                <cmd>Set a CNAME wildcard record for the same instance, pointing to the A record,
+                    for example:</cmd>
+                <info>
+                    <dl>
+                        <dlentry>
+                            <dt><uicontrol>Record Type</uicontrol></dt>
+                            <dd><uicontrol>CNAME</uicontrol></dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt><uicontrol>Name</uicontrol></dt>
+                            <dd><userinput>*.<keyword keyref="testSysName"
+                                />.example.com</userinput></dd>
+                        </dlentry>
+                    </dl>
+                    <dl>
+                        <dlentry>
+                            <dt><uicontrol>Canonical Name</uicontrol></dt>
+                            <dd><userinput><keyword keyref="testSysName"
+                                />.example.com</userinput></dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt><uicontrol>TTL</uicontrol></dt>
+                            <dd><userinput>1800</userinput></dd>
+                        </dlentry>
+                        <dlentry>
+                            <dt>Description</dt>
+                            <dd>Wildcard for PaaS-hosted apps</dd>
+                        </dlentry>
+                    </dl>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task>
