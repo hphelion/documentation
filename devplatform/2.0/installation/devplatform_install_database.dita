@@ -174,7 +174,7 @@ openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
     database:
       ephemeral_ca_cert: unset
       external_network: &lt;guid of ext-net&gt;
-      provider_network: &lt; guid of svc-net&gt;
+      provider_network: &lt;guid of svc-net&gt;
       ntp_server: &lt;ip address of ntp server&gt;
       keypair: default
       enable_ha: true
@@ -182,17 +182,14 @@ openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
       database_flavor: m1.medium
       messaging_flavor: m1.medium
       database_volume_size: 10
-      logstash_rabbitmq_host: &lt; ip address of logging service&gt;
-      logstash_rabbitmq_password: &lt; password for logging service&gt;
+      logstash_rabbitmq_host: &lt;ip address of logging service&gt;
+      logstash_rabbitmq_password: &lt;password for logging service&gt;
       hotpools_enabled: true
       hotpools_max_instances: 1
       hotpools_image_name: percona
-      hotpools_flavor_names:
-          - 'm1.medium'
-          - 'm1.small'
-          - 'm1.large'
+      hotpools_flavor_names: "m1.medium,m1.small,m1.large"
       disable_rollback: true
-      project_id: &lt; project id of user to install service to&gt;   </codeblock></li>
+      project_id: &lt;project id of user to install service to&gt;   </codeblock></li>
          <li>List the available database versions to install:
           <codeblock>openstack hdpi list --os-cloud mycloud | grep database</codeblock>The output
           should look similar
@@ -214,14 +211,12 @@ openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
             services:<codeblock>openstack endpoint show database -c publicurl --format value</codeblock></li>
           <li> Update configuration on each of the Helion OpenStack controller nodes by connecting
             to the controller and doing the following: <ol>
-              <li>Edit the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following lines. The
+              <li>Edit the <i>/etc/haproxy/haproxy.cfg</i> file and add the following lines. The
                 last line should be repeated once for each API server identified in step
                 1.<codeblock>listen trove_api
 bind &lt;virtual IP from step 2&gt;:8779
 option httpchk GET /
-server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&gt; check inter 2000 rise 2 fall 5 check-ssl ca-file /etc/ssl/certs/ca-certificates.crt</codeblock></li>
-              <li> Edit the /etc/iptables/rules.v4 file and add to
-                it:<codeblock>-I INPUT -p tcp --dport 8779 -j ACCEPT</codeblock></li>
+server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&gt; check inter 2000 rise 2 fall 5</codeblock></li>
               <li>Run the following command as
                 root:<codeblock>sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT</codeblock></li>
               <li>Reload the haproxy service
