@@ -122,12 +122,21 @@ swift-proxy         8080
 - "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</codeblock>
       Make the changes as needed. It's best to keep the two options identical. 
     </section>
-    <section id="new_cert"><title>Installing a new certificate</title>
-      You should obtain your own certificate and install it in
-      the cloud. When this certificate is ready, please do the following and rerun the
-      config-processor and reconfigure. Copy the certificate (containing both public and private
-      key) to helion/my_cloud/config/tls/certs/ directory Update the new certificate filename in
-      cert-file in helion/my_cloud/definition/data/network_groups.yml </section>
+    <section id="new_cert"><title>Installing a new certificate</title> You should obtain your own
+      certificate and install it in the cloud. When this certificate is ready, please do the
+      following and rerun the config-processor and reconfigure. Copy the certificate (containing
+      both public and private key) to helion/my_cloud/config/tls/certs/ directory Update the new
+      certificate filename in cert-file in helion/my_cloud/definition/data/network_groups.yml <p
+        conref="../installation_troubleshooting.dita#troubleshooting_installation/configproc"
+      />
+      <p>Commit your changes to git.</p>
+      <codeblock>cd ~/helion/hos/ansible
+      git add -A
+      git commit -m "My config or other commit message"</codeblock>
+    <p>Rerun the config processor</p>
+      <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+    </section>
    
     <!-- ===================== horizontal rule ===================== -->
     <!-- Tom Cammann, Thom Leggett- SMEs Nova      -->
