@@ -20,17 +20,7 @@
     <topicref href="helion/bura/backup.dita"/>
     <topicref href="helion/bura/restore.dita"/>
   </topicref>
-  <!-- SECURITY -->
-  <topichead navtitle="Security">
-    <topicref href="helion/security/tls.dita" navtitle="Enabling TLS for Public Endpoints"/>
-    <topicref href="helion/security/secure_network_config.dita"
-      navtitle="Configuring Your Network Securely"/>
-    <topicref href="helion/security/encrypted_storage.dita"
-      navtitle="Encryption of Passwords and Sensitive Data"/>
-    <topicref href="helion/security/using_apparmor.dita"
-    />
-    
-  </topichead>
+
   <!-- keystone identity -->
   <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Service"
     locktitle="yes">
@@ -162,7 +152,17 @@
       <topicref href="helion/postinstall_checklist.dita" navtitle="Post-Installation Checklist"
         locktitle="yes"/>
     </topicref>
-
+    <!-- SECURITY -->
+    <topichead navtitle="Security">
+      <topicref href="helion/security/tls.dita" navtitle="Enabling TLS for Public Endpoints"/>
+      <topicref href="helion/security/secure_network_config.dita"
+        navtitle="Configuring Your Network Securely"/>
+      <topicref href="helion/security/encrypted_storage.dita"
+        navtitle="Encryption of Passwords and Sensitive Data"/>
+      <topicref href="helion/security/using_apparmor.dita"
+      />
+      
+    </topichead>
     <!-- ADMINISTRATION -->
     <topichead navtitle="Administration">
       <topichead navtitle="Minimum Set of Customizations">
