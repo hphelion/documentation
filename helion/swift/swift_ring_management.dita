@@ -26,9 +26,9 @@
       <!--after modification or adding of new Swift configuration in the YAML file-->. Therefore,
       you need to run the playbooks several times over several days. The following section explains
       the reason for the requirement of several phases for the change of the ring.</p>
-    <section><title>Rebalance</title><p>The ring building process tries to distribute data evenly
-        among the available disk drives. The data is stored in partition, as explained in <xref
-          href="ring_specifications.dita#ring-specification"/>
+    <section><title>Rebalance Explained</title><p>The ring building process tries to distribute data
+        evenly among the available disk drives. The data is stored in partition, as explained in
+          <xref href="ring_specifications.dita#ring-specification"/>
         (<?oxy_custom_start type="oxy_content_highlight" color="255,60,255"?>need to insert link
         appropriate to selecting a partition power<?oxy_custom_end?>).  Suppose you double the
         number of disk drives in a ring, you need to move 50% of the partitions to the new drives so

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_t1y_vjs_4t">
+  <title>Preparing for Ring Changes</title>
+  <body>
+    <p></p>
+    <p>When we build rings during a deploy, we automatically set the weights of disk drives such
+      that smaller disk drives have a smaller weight than larger disk drives. As explained in
+      Rebalance Explained, when making changes it can be useful to limit the amount of change that
+      occurs. This is done by limiting the weights that new drives to a smaller value than they
+      might otherwise have and then build new rings. Once the replication process has finished, we
+      can increase the weight and rebuild rings to trigger another round of replication.</p>
+    <p>In HOS 2.0, we indicate to this by setting the weight-step attribute in the ring
+      specification of the Input Model. The weight-step value specifies a maximum value for how much
+      we will change the weight of a drive in any single rebalance. For example, if we add a drive
+      of 4TB in size, we would normally assign a weight of 4096. However, if the weight-step
+      attribute is set to 1024, when we add a drive, the weight is initially set to 1024. The next
+      time we rebalance the ring, the weight is set to 2048. Yet another rebalance sets the weight
+      to the final value of 4096.</p>
+    <p>The value of weight-step is dependent on the size of your drives and how many servers you are
+      adding and your experience with how long the replication process takes. A common staring value
+      is to use 20% of the size of your drives. For example, for 4TB drives a value of 820 would be
+      appropriate. when you get more experience with your system, you may increase or reduce this
+      value.</p>
+    <p>We set the weight-step attribute as follows:</p>
+    <p>
+      <ul id="ul_udv_bks_4t">
+        <li>Edit the file containing the ring-specifications in the Input Model
+          (data/swift/rings.yml)</li>
+        <li>
+          <p>Look the attributes of a ring. For
+            example:<codeblock>- name: account
+  display-name: Account Ring
+  min-part-time: 16
+  ...</codeblock></p>
+        </li>
+      </ul>
+    </p>
+    <ul id="ul_y5r_dks_4t">
+      <li>Add the weight-step attribute. For example, to set to 820, add the attribute as
+        follows:<codeblock>- name: account
+  weight-step: 820
+  display-name: Account Ring
+  min-part-time: 16
+  ...</codeblock></li>
+    </ul>
+    <ul id="ul_b33_hks_4t">
+      <li>Repeat this for other rings (container, object-0, etc)</li>
+      <li>Run the config-processor-run.yml and ready-deployment.yml playbooks as described in (need
+        ref to somewhere in install process)</li>
+    </ul>
+    <p>This attribute takes effect the next time you run any of the following playbooks:</p>
+    <ul id="ul_nsy_hks_4t">
+      <li>swift-deploy.yml (which is included when you use the hlm-deploy.yml playbook)</li>
+      <li>_swift-make-delta-rebalance.yml</li>
+      <li>_swift-validate-input-model.yml</li>
+    </ul>
+  </body>
+</topic>
