@@ -7,8 +7,8 @@
       on every Object Storage node in the
         <codeph>/etc/swiftlm/buiilder_dir/region-&lt;region-name></codeph> directory. You can
       restore the builder files as follows:<ol id="ol_smw_g3t_mt">
-        <li>Log into the the first proxy server node .<note>To identify the first proxy node, refer
-            to <xref href="swift_first_proxy_server.dita#topic_rtc_s3t_mt"/></note></li>
+        <li>Log into the first proxy server node .<note>To identify the first proxy node, refer to
+              <xref href="swift_first_proxy_server.dita#topic_rtc_s3t_mt"/></note></li>
         <li>Copy the <b>swift-rings-tarball.tar</b> file from any other
           node:<codeblock>scp &lt;username>@&lt;nodename>:/etc/swiftlm/swiftlm-rings-tarball.tar /tmp</codeblock></li>
         <li>Unpack the tarball at <codeph>/etc/swiftlm/builder_dir/region-&lt;region-name></codeph>
