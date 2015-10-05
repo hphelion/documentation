@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_j2p_d1r_4t">
+  <title>Add New Node/Server</title>
+  <body>
+    <p>This page describes the procedure to add new node(s)/swift object server to an existing
+      system.</p>
+    <section>
+      <title>Procedure to add a new node</title>
+      <p>You must add a new node to the <codeph>server.yml</codeph> file. </p>
+      <p>Perform the following steps to add a new node:<ol id="ol_p4w_gbr_4t">
+          <li>Log in to the deployer node.</li>
+          <li>Change the directory<codeblock>cd ~/helion/my_cloud/definition/data</codeblock></li>
+          <li>Execute the following command<codeblock>git checkout site</codeblock></li>
+          <li>Include the swift-object components in the resource-nodes section of the
+              <codeph>control_plane.yml</codeph> file, if you are adding a new node/swift object
+            server to an entry-scale system. A sample of <codeph>control_plane.yml</codeph> file is
+            shown
+            below<codeblock>---
+  product:
+    version: 2
+  servers:
+
+... 
+
+      resource-nodes:
+        - name: swobj
+          resource-prefix: swobj
+          server-role: ROLE-SWOBJ
+          allocation-policy: strict
+          min-count: 3
+          service-components:
+            - ntp-client
+            - swift-object
+            - swift-common</codeblock></li>
+          <li>Add details of new node(s) to <codeph>server.yml</codeph> file. In the following
+            example we are adding only one new server "cpn-0004". You can add multiple servers at a
+            time by providing the server details in the <codeph>server.yml</codeph>
+            file.<codeblock>servers.yml
+
+---
+  product:
+    version: 2
+  servers:
+
+... 
+
+  - id: compute7
+    ip-addr: 10.240.21.13
+    role: ROLE-COMPUTE
+    nic-mapping: HP_DL360_6PORT</codeblock></li>
+          <li>Commit your configuration to the <xref href="../using_git.dita#topic_u3v_1yz_ct">local
+              repo</xref>, as
+              follows<codeblock>git add -A
+git commit -m "Add Node &lt;name>"</codeblock><note>Enter
+              your commit message "Add Node &lt;name>"</note></li>
+          <li>Run the configuration
+            processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Run the following command to create a deployment
+            directory.<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+          <li>Use the following playbook to configure new
+              node(s):<codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&lt;extra_vars></codeblock><p>In
+              the following example we have used server id as <b>compute 7</b> (mentioned in step
+              5).<codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblock></p><note>You
+              must use the server id as it appears in the <codeph>server.yml</codeph> file in the
+              field &lt;extra_vars></note></li>
+          <li>Run the following command. This command adds the compute server to the selected target
+            nodes because you have specified the limit (<codeph>--limit</codeph>) option.  (<b>if we
+              don’t specify the limit option then it gets added to all the nodes? Also if there are
+              multiple compute server then do we run the same command as below? How do we separate
+              the different compute server in the
+            command?)</b><codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit <b>&lt;Name of the node> (is this correct. If not then please let me know the correct term to use as placeholder)</b></codeblock>In
+            the following example, you have added a computer server to <b>hlm004-ccp-comp0007</b>.<p>
+              <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit <b>hlm004-ccp-comp0007*(where do we get this information?)</b></codeblock>
+            </p><p>Once you have added a new node/server to the system, you must enure that the
+              swift rings are updated with the new node/server(s) details and the rings are
+              distributed to all swift servers. Run the following
+              command:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit SWF* (what is the meaning of "*"?) </codeblock></p></li>
+        </ol></p>
+    </section>
+  </body>
+</topic>
