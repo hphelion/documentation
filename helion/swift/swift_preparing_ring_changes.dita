@@ -3,20 +3,21 @@
 <topic id="topic_t1y_vjs_4t">
   <title>Preparing for Ring Changes</title>
   <body>
-    <p></p>
-    <p>When we build rings during a deploy, we automatically set the weights of disk drives such
+    <p>When a ring is build during a deploy, it automatically set the weights of disk drives such
       that smaller disk drives have a smaller weight than larger disk drives. As explained in
       Rebalance Explained, when making changes it can be useful to limit the amount of change that
       occurs. This is done by limiting the weights that new drives to a smaller value than they
       might otherwise have and then build new rings. Once the replication process has finished, we
       can increase the weight and rebuild rings to trigger another round of replication.</p>
-    <p>In HOS 2.0, we indicate to this by setting the weight-step attribute in the ring
-      specification of the Input Model. The weight-step value specifies a maximum value for how much
-      we will change the weight of a drive in any single rebalance. For example, if we add a drive
-      of 4TB in size, we would normally assign a weight of 4096. However, if the weight-step
-      attribute is set to 1024, when we add a drive, the weight is initially set to 1024. The next
-      time we rebalance the ring, the weight is set to 2048. Yet another rebalance sets the weight
-      to the final value of 4096.</p>
+    <p>In this release, we</p>
+    <p>I<?oxy_custom_start type="oxy_content_highlight" color="255,60,255"?>n HOS 2.0, we indicate
+      to this by setting the weight-step attribute in the ring specification of the Input Model. The
+      weight-step value specifies a maximum value for how much we will change the weight of a drive
+      in any single rebalance. For example, if we add a drive of 4TB in size, we would normally
+      assign a weight of 4096. However, if the weight-step attribute is set to 1024, when we add a
+      drive, the weight is initially set to 1024. The next time we rebalance the ring, the weight is
+      set to 2048. Yet another rebalance sets the weight to the final value of
+      4096.<?oxy_custom_end?></p>
     <p>The value of weight-step is dependent on the size of your drives and how many servers you are
       adding and your experience with how long the replication process takes. A common staring value
       is to use 20% of the size of your drives. For example, for 4TB drives a value of 820 would be

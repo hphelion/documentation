@@ -46,8 +46,8 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
             <li>Run the reconfigure<codeblock>swift-reconfigure.yml </codeblock></li>
             <li>Wait until replication has finished or min-part-time has elapsed (which ever is
               longer)</li>
-            <li>Run the _swift-validate-input-model.yml playbook and examine the report:<ul
-                id="ul_atz_jft_4t">
+            <li>Run the following command and examine the
+                report.<codeblock>_swift-validate-input-model.yml</codeblock><ul id="ul_atz_jft_4t">
                 <li>When there are no proposed weight changes, you proceed the final phase</li>
                 <li>
                   <p>If there are proposed weight changes repeat this phase again
