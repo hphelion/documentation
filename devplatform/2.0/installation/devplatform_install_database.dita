@@ -6,7 +6,7 @@
 <section id="install-database">
 <p>This section provides details on installing the Database Service for the Development Platform.<ul
           id="ul_rt3_x2z_nt">
-  <li><xref href="#topic_vsf_hnh_ts/availability-zones">Configure Availablility Zones</xref></li>
+  <li><xref href="#topic_vsf_hnh_ts/availability-zones">Configure Availability Zones</xref></li>
   <li><xref href="#topic_vsf_hnh_ts/quotas">Set Quotas</xref></li>
   <li><xref href="#topic_vsf_hnh_ts/dbaas_installation">Install the Database Service</xref></li>
   <li><xref href="#topic_vsf_hnh_ts/configure_haproxy">Configure HAProxy</xref></li>
