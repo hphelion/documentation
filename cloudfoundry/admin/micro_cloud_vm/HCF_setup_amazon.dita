@@ -2,9 +2,8 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="task_lps_y25_4t">
     <title>To Launch an AMI Image on Amazon EC2</title>
-    <shortdesc>Amazon supplies a prebuilt <uicontrol><keyword keyref="prodShort"
-            />-Internal</uicontrol>
-        <b>AMI</b> on its <b>EC2</b> platform.</shortdesc>
+    <shortdesc>A prebuilt <uicontrol><keyword keyref="prodShort"/></uicontrol>
+        <b>AMI</b> is available on the Amazon <b>EC2</b> platform.</shortdesc>
     <prolog>
         <metadata>
             <othermeta name="author" content="Michael Khmelnitsky"/>
