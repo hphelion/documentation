@@ -55,7 +55,7 @@ $ sudo chown -r horizon-venv /opt/stack/services/horizon/venv/lib</codeblock></l
           </ol></li><li>The DBaaS, DNSaaS and Cue services rely on the creation of a VM service network. This service
           network is a VLAN-encapsulated provider network which is fully routable to the Helion
           OpenStack MGMT network.  [This is an extra step required for the beta release.]<ol>
-            <li>Install the neutron client, if not already available.
+            <li>Install the Neutron client, if not already available.
               <codeblock>sudo apt-get python-neutronclient</codeblock></li>
             <li>To create this network, an administrator should issue the following
               commands:<codeblock>neutron net-create svc-net --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id &lt;SVC VLAN_ID> 
@@ -88,6 +88,7 @@ neutron subnet-create --allocation-pool start=10.1.6.2,end=10.1.6.254 --no-gatew
     <section>
       <title>Step 3. Download and Install the Python Scripts</title>
       <ol>
+        <li>SSH to the Deployer. </li>
         <li>Verify that you have access to the <xref href="https://pypi.python.org/pypi"
             scope="external" format="html">pypi</xref> site.  If <i>ping</i> is unavailable, use
             <i>wget</i>.<codeblock>ping pypi.python.org</codeblock></li>
