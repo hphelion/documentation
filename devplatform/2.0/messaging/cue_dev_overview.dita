@@ -7,17 +7,19 @@
       from the Horizon console. Alternatively, application developers may leverage messaging
       resources for their applications.  </p>
     <ul id="ul_vxf_kzd_lt">
+            <li>Installation cue (ops via the command line installer)</li>
+            <li>installing the cue client (dev)</li>
       <li>Create a Cluster using Horizon</li>
       <li><xref href="cue_dev_createCluster.dita#cue_createCluster">Create a Cluster from the
           Command Line</xref></li>
       <li><xref href="cue_ops_manageCluster.dita#cue_manageCluster">Manage a Cluster from the
           Command Line</xref></li>
-      <li>Write an App for RabbitMQ </li>
-      <li>Best Practices for RabbitMQ</li>
-      <li><xref href="http://python-cueclient.readthedocs.org/en/latest/python-bindings.html"
-          format="html" scope="external">Using the Python API</xref></li>
+      <li>Write an App for RabbitMQ<!-- <- using with ALS original topic and connecting--></li>
+      <li>Best Practices for RabbitMQ <!--<- user defined services etc see Arun--></li>
       <li><xref href="http://cue.readthedocs.org/en/latest/rest.html" format="html" scope="external"
-          >REST API Docs</xref></li>
+                    >REST API Docs</xref>
+                <!--<- lift and shift these, they need to be static.--></li>
+            <li>Troubleshooting (assuming we have any content to put here before release)</li>
     </ul>
     <section>
       <title>Overview Sample</title>
