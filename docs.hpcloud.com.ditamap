@@ -138,16 +138,16 @@
       <topicref href="helion/bare_installation_kvm.dita"
         navtitle="Installation for KVM Hypervisor on Baremetal" locktitle="yes"/>
       <topicref href="helion/bare_installation_esx.dita"
-        navtitle="Baremetal Install for ESX Hypervisor" locktitle="yes"/>
+        navtitle="Installation for ESX Hypervisor on Baremetal" locktitle="yes"/>
       <topicref href="helion/bare_installation_esxOLD.dita"
         navtitle="TEST Baremetal Install for ESX Hypervisor" toc="no" locktitle="yes"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
       <topicref href="helion/gui_install_on_kvm.dita" locktitle="yes" toc="no"/>
       <topicref href="helion/gui_install_on_esx.dita" locktitle="yes" toc="no"/>
-      <topicref href="helion/installation_troubleshooting.dita"
-        navtitle="Troubleshooting Installation" locktitle="yes"/>
       <topicref href="helion/installation_verification.dita" navtitle="Verifying Your Installation"
         locktitle="yes"/>
+      <topicref href="helion/installation_troubleshooting.dita"
+        navtitle="Troubleshooting Your Installation" locktitle="yes"/>
       <topicref href="helion/postinstall_checklist.dita" navtitle="Post-Installation Checklist"
         locktitle="yes"/>
     </topicref>
