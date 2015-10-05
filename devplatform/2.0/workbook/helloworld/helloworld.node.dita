@@ -119,8 +119,11 @@ Note that <b>name</b> is always required while other fields are optional.</p>
 </li>
 </ul>
 <p>
-<xref href="../../devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../messaging/messaging.node.dita" >Previous Sample</xref> | <xref href="../database/database.node.dita" >Next Sample</xref>
-</p>
+        <xref href="../../devplatform.appdev.dita">Exit Samples</xref>
+        <!--|-->
+        <!--<xref href="../messaging/messaging.node.dita">Previous Sample</xref>--> | <xref
+          href="../database/database.node.dita">Next Sample</xref>
+      </p>
 </section>
 </body>
 </topic>

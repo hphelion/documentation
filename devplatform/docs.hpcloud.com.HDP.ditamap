@@ -53,7 +53,7 @@
 
     <!--uninstallation -->
     <!--  <topichead navtitle="Uninstallation"-->
-    <!--<topicref href="2.0/uninstallation/devplatform_uninstall.dita" navtitle="Full Uninstallation - All Services" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_platform.dita" navtitle="Uninstall the Development Platform" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_ALS.dita" navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_database.dita" navtitle="Uninstall the Database Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_messaging.dita" navtitle="Uninstall the Messaging Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_vertica.dita" navtitle="Uninstall the Vertica Application" locktitle="yes"/>--><!--  </topichead>-->
+    <!--<topicref href="2.0/uninstallation/devplatform_uninstall.dita" navtitle="Full Uninstallation - All Services" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_platform.dita" navtitle="Uninstall the Development Platform" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_ALS.dita" navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_database.dita" navtitle="Uninstall the Database Service" locktitle="yes"/>--><!--<topicref href="2.0/uninstallation/devplatform_uninstall_messaging.dita" navtitle="Uninstall the Messaging Service" locktitle="yes"/>--><!--  </topichead>-->
     <topichead navtitle="Command Line Clients">
       <topicref href="2.0/helion/CLI/ALS_Client_Downloads.dita"
         navtitle="Command Line Client Downloads" locktitle="yes"/>
@@ -266,6 +266,8 @@
         navtitle="Using the Database Service"/>
       <topicref href="2.0/database/devplatform.database-create-horizon.dita"
         navtitle="Creating a database from Horizon"/>
+      <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
+        navtitle="Create a Database Cluster Using Horizon" locktitle="yes"/>
       <topicref href="2.0/database/devplatform.database-create-cli.dita"
         navtitle="Create a database instance from the command line"/>
       <topicref href="2.0/database/devplatform.database-create-cluster-cli.dita"
@@ -292,6 +294,8 @@
       <topichead navtitle="Cluster Creation">
         <topicref href="2.0/devplatform.deploy-ALS.dita" locktitle="yes"
           navtitle="Create an ALS Cluster Using Horizon"/>
+        <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
+          navtitle="Create a Database Cluster Using Horizon" locktitle="yes"/>
         <topicref href="2.0/windows/windows_growcluster.dita"
           navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
         <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
@@ -307,8 +311,9 @@
       </topichead>
 
       <!--<topicref href="2.0/messaging/cue_ops_overview.dita" navtitle="Messaging Service" locktitle="yes"><topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita" locktitle="yes" navtitle="Using the RabbitMQ Messaging Service"/><topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita" locktitle="yes" navtitle="Using the Messaging Service with ALS"/><topicref href="2.0/messaging/cue_dev_createCluster.dita" navtitle="Create a Cluster from the Command Line" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_manageCluster.dita" navtitle="Manage a Cluster from the Command Line" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita" navtitle="Cue Reference Architecture" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_monitoring.dita" navtitle="Monitoring Cue" locktitle="yes"/></topicref>-->
-      
-      <topichead navtitle="Database Service">
+
+      <topicref href="2.0/helion/helion_index.dita" locktitle="yes"
+        navtitle="Application Lifecycle Service">
         <topichead navtitle="ALS Management Console">
           <topicref href="2.0/helion/admin/console/console_intro.dita"
             navtitle="Introduction and First Use" locktitle="yes"/>
@@ -323,14 +328,6 @@
           <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
             navtitle="Sample Applications"/>
         </topichead>
-        <topicref href="2.0/database/devplatform.database-ALS.dita" locktitle="yes"
-          navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
-        <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
-          navtitle="Using the Database Service"/>
-      </topichead>
-
-      <topicref href="2.0/helion/helion_index.dita" locktitle="yes"
-        navtitle="Application Lifecycle Service">
         <topicref href="2.0/helion/user/services/data-services.dita" locktitle="yes"
           navtitle="Application Lifecycle Service Data Services"/>
         <topicref href="2.0/helion/CLI/constructor_vm.dita" navtitle="ALS Constructor VM"
@@ -392,20 +389,6 @@
           <topicref href="2.0/helion/user/deploy/app-logs.dita" locktitle="yes"
             navtitle="Application Logs "/>
         </topicref>
-        <topichead navtitle="ALS Management Console">
-          <topicref href="2.0/helion/admin/console/console_intro.dita"
-            navtitle="Introduction and First Use" locktitle="yes"/>
-          <topicref href="2.0/helion/admin/console/console_index.dita" locktitle="yes"
-            navtitle="Management Console (Admin View)"/>
-          <topicref href="2.0/helion/user/console/console_index.dita"
-            navtitle="Management Console (User View)" locktitle="yes"/>
-          <topicref href="2.0/helion/admin/console/console_settings.dita"
-            navtitle="Management Console Settings" locktitle="yes"/>
-          <topicref href="2.0/helion/admin/console/customize.dita" locktitle="yes"
-            navtitle="Management Console Customization"/>
-          <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
-            navtitle="Sample Applications"/>
-        </topichead>
       </topicref>
       <topichead navtitle="Other Services">
         <topicref href="2.0/helion/user/services/data-services.dita" locktitle="yes"

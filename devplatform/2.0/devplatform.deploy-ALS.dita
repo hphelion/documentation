@@ -78,7 +78,7 @@
         </li>
 <li> Click <b>Create</b>. You will see the cluster building as shown below.<note>If your cluster
             fails to build with the error message: <codeph>413 Request Entity Too Large</codeph>,
-            see the documentation on <xref href="../../devplatform.release-notes.dita#topic2502/413"
+            see the documentation on <xref href="../2.0/devplatform.release-notes.dita#topic2502/413"
               >handling "Entity Too Large" errors</xref>.</note><image
             href="../../media/ALSConfig6.png" placement="break" id="image_n3d_tzc_ks"/>
         </li>

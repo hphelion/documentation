@@ -37,9 +37,6 @@
 <li>
 <xref type="section" href="#topic4855/ALS">ALS</xref> (Application Lifecycle Service)</li>
 <li>
-<xref type="section" href="#topic4855/marketplace">Marketplace</xref>
-</li>
-<li>
 <xref type="section" href="#topic4855/instance-create">Creating Instances</xref>
 </li>
 </ul>
@@ -59,8 +56,7 @@
 <li>Delete the <i>dev-platform-installer.conf</i> file.</li>
 </ul>
 </li>
-<li>
-  <xref href="installation/devplatform_install_platform.dita#topic_gly_xmh_ts/commandline" type="section">Run the install command</xref> again with all command line options.</li>
+<li> Run the install command again with all command line options.</li>
 </ol>
 </section>
 <section id="download"> <title>Download</title>
@@ -121,11 +117,6 @@
 </section>
 <section id="dbaas-instance-fails-to-start"> <title>DbaaS instance fails to start</title>
 <p>Resolution: Check if you can create and start a Nova instance with the same flavor and verify you can attach a volume to that Nova instance. Verify that the Nova flavors have not been updated to invalid values. Verify that the flavor's ID is correct, as flavor updates cause the flavor IDs to change.</p>
-</section>
-<section id="marketplace"> <title>Marketplace</title>
-</section>
-<section id="vertica-installation-fails-after-successful-marketplace-installation"> <title>Vertica installation fails after successful Marketplace installation</title>
-<p>Resolution: Immediately after installing Marketplace, log out of Horizon and then back in before beginning the Vertica installation.</p>
 </section>
 <section id="ALS"> <title>ALS</title>
 <p>

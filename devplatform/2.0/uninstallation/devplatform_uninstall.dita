@@ -30,8 +30,6 @@
   <li><xref href="#id_pjb_4zw_ft" format="dita">Uninstall the Application Lifecycle Service</xref></li>
   <li><xref href="#id_aqx_4zw_ft" format="dita">Uninstall the Database Service</xref></li>
   <li><xref href="#id_szv_vzw_ft" format="dita">Uninstall the Messaging Service</xref></li>
-  <li><xref href="#id_vyh_wzw_ft" format="dita">Uninstall the Marketplace Service</xref></li>
-  <li><xref href="#id_nkw_wzw_ft" format="dita">Uninstall the Vertica Application</xref></li>
 </ul>
 
 
@@ -49,10 +47,4 @@
   <topic id="id_szv_vzw_ft" conref="devplatform_uninstall_messaging.dita#concept_iqy_2gj_rs">
     <title>Uninstall the Messaging Service</title>
   </topic>
-  <topic id="id_vyh_wzw_ft" conref="devplatform_uninstall_marketplace.dita#concept_yqc_xfj_rs">
-    <title>Uninstall the Marketplace Service</title>
-  </topic>
-  <topic id="id_nkw_wzw_ft" conref="devplatform_uninstall_vertica.dita#concept_bsx_rfj_rs">
-    <title>Uninstall the Vertica Application</title>
-  </topic>
-</topic>  
+</topic>
