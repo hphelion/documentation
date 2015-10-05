@@ -152,6 +152,7 @@
       <topicref href="helion/postinstall_checklist.dita" navtitle="Post-Installation Checklist"
         locktitle="yes"/>
     </topicref>
+    
     <!-- SECURITY -->
     <topichead navtitle="Security">
       <topicref href="helion/security/tls.dita" navtitle="Enabling TLS for Public Endpoints"/>
@@ -163,6 +164,7 @@
       />
       
     </topichead>
+    
     <!-- ADMINISTRATION -->
     <topichead navtitle="Administration">
       <topichead navtitle="Minimum Set of Customizations">
@@ -191,6 +193,10 @@
 
     <!-- OPERATIONS -->
     <topichead navtitle="Operations">
+      <topicref href="helion/operations/accessing_horizon.dita" navtitle="Accessing the Horizon Dashboard"
+        locktitle="yes"/>
+      <topicref href="helion/operations/accessing_opsconsole.dita" navtitle="Accessing the Operations Console"
+        locktitle="yes"/>
       <topicref href="start.stop.check" toc="no">
         <topicref href="checking.object.storage" toc="no"/>
       </topicref>
