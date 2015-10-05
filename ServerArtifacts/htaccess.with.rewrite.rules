@@ -19,6 +19,7 @@ RewriteRule ^permalink/helion-openstack/2.0/opsconsole_compute_hosts?$ http://15
 RewriteRule ^permalink/helion-openstack/2.0/opsconsole_compute_instances?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/compute_instances.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/opsconsole_networking_summary?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/networking_summary.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/opsconsole_storage_summary?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/storage_summary.html [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack/2.0/opsconsole_hdp_summary?$ http://15.126.244.7/hos2.0beta2/#helion/monasca/opsconsole/hdp_summary.html [NE,R=301,L]
 RewriteRule ^helion/HCSPProgramGuide?$ http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Service_Provider_Agreement_Program_Guide.pdf [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/supportedconfigs?$ http://15.126.244.7/hos2.0beta2/#helion/supportedconfigs.html [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/hardware?$ http://15.126.244.7/hos2.0beta2/#helion/hardware.html [NE,R=301,L]
