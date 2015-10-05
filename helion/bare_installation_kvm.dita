@@ -120,7 +120,7 @@
         you left the default of "stack"), but do not run as root.</note>
       <ol>
         <li>Log in to the node you setup in the previous steps as the user you created during the
-          setup phase, and mount the install media at /media/cdrom, for example,
+          setup phase, and mount the install media at <codeph>/media/cdrom</codeph>.  Here is the command to achieve this:
           <codeblock>sudo mount Helion-OpenStack-2.0.0-b.2-Beta2.iso /media/cdrom</codeblock></li>
         <li>Unpack the tarball that is in the <codeph>/media/cdrom/hos2.0.0/</codeph> directory:
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.2-20150920T130131Z.tgz</codeblock></li>
