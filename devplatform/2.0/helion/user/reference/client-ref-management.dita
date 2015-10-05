@@ -55,7 +55,6 @@
 <section id="syntax"> <title>Syntax</title>
 <codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="command-create-app"> <title>helion create-app &lt;<i>application</i>&gt;</title>
 <p>Create an empty application with the specified configuration.</p>

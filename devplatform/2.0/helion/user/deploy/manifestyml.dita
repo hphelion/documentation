@@ -423,7 +423,7 @@ helion apps
         packages.</p>
 </section>
 <section id="os-packages"> <title>Operating System Packages</title>
-<p>Operating System (OS) packages can be added in an <codeph>ubuntu:</codeph> block within a
+<p>Operating System packages can be added in an <codeph>ubuntu:</codeph> block within a
           <codeph>staging:</codeph> and/or <codeph>running:</codeph> block. Plain strings are
         treated as package names:</p>
 <codeblock>  requirements:
