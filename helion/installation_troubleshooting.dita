@@ -48,6 +48,20 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
             this playbook.</note>
         </li>
       </ol>
+      <p id="install_fail"><b>Dealing With Nodes that Fail to Install</b></p>
+      <p>The <codeph>bm-reimage.yml</codeph> playbook will take every node as far as it can through
+        the baremetal install process. Nodes that fail will not prevent the others from continuing
+        to completion. At the end of the run you will get a list of the nodes (if any) that failed
+        to install.</p>
+      <p>The places where you are most likely to see a node fail is timeout in the "wait for
+        shutdown" step, which means that the node did not successfully install an operating system
+        (e.g. it could be stuck in POST) or a timeout in "wait for ssh" at the end of the baremetal
+        install. This means that the node did not come back up after being powered on. To fix the
+        issues you'll need to connect to the nodes' consoles and investigate.</p>
+      <p>If you run <codeph>bm-reimage.yml</codeph> a second time, by default it will target only
+        the failed nodes the second time round (because the others are already marked as
+        "completed"). Alternatively you can target specific nodes for reimage using <codeph>-e
+          nodelist</codeph> as described in the section below.</p>
       <p id="reimage"><b>How to re-image an existing node</b></p>
       <p>Once Linux for HP Helion has been successfully installed on a node, that node will be
         marked as "installed" and subsequent runs of <codeph>bm-reimage.yml</codeph> (and related
