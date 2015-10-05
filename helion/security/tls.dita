@@ -5,6 +5,10 @@
   <body>
 
     <section id="intro">
+      <p>
+        <note><b>THIS DOCUMENT IS IN NO WAY READY FOR GA AND NEEDS MUCH UPDATING. ESPECIALLY WRT TO PORTS LISTED</b></note>
+      </p>
+      
       <p>The Transport Layer Security (TLS) protocol, successor of SSL, provides the mechanisms to
         ensure authentication, non-repudiation, confidentiality, and integrity of user
         communications to the HP Helion OpenStack services from public endpoints.</p>
@@ -124,6 +128,7 @@ swift-proxy         8080
       config-processor and reconfigure. Copy the certificate (containing both public and private
       key) to helion/my_cloud/config/tls/certs/ directory Update the new certificate filename in
       cert-file in helion/my_cloud/definition/data/network_groups.yml </section>
+   
     <!-- ===================== horizontal rule ===================== -->
     <!-- Tom Cammann, Thom Leggett- SMEs Nova      -->
   </body>
