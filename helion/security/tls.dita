@@ -125,11 +125,11 @@ swift-proxy         8080
     <section id="new_cert"><title>Installing a new certificate</title> You should obtain your own
       certificate and install it in the cloud. When this certificate is ready, please do the
       following and rerun the config-processor and reconfigure. Copy the certificate (containing
-      both public and private key) to helion/my_cloud/config/tls/certs/ directory Update the new
-      certificate filename in cert-file in helion/my_cloud/definition/data/network_groups.yml If you
-      have already run the config-processor-run.yml playbook during the installation, run the
-      config-processor-clean.yml playbook to clear out your previous configuration before rerunning
-      the configuration procesor: <codeblock>cd ~/helion/hos/ansible
+      both public and private key) to <b>helion/my_cloud/config/tls/certs/ directory</b> </section>
+    <section>Update the new certificate filename in cert-file in
+      <b>helion/my_cloud/definition/data/network_groups.yml</b>. If you have already run the
+      config-processor-run.yml playbook whih is required during installation, run the config-processor-clean.yml
+      playbook to clear out your previous configuration before rerunning the configuration procesor: <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
       <p>Commit your changes to git.</p>
       <codeblock>cd ~/helion/hos/ansible
