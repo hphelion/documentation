@@ -6,33 +6,38 @@
 <section id="install-database">
 <p>This section provides details on installing the Database Service for the Development Platform.<ul
           id="ul_rt3_x2z_nt">
-  <li><xref href="#topic_vsf_hnh_ts/availability-zones">Configure Availablility Zones</xref></li>
+  <li><xref href="#topic_vsf_hnh_ts/availability-zones">Configure Availability Zones</xref></li>
   <li><xref href="#topic_vsf_hnh_ts/quotas">Set Quotas</xref></li>
   <li><xref href="#topic_vsf_hnh_ts/dbaas_installation">Install the Database Service</xref></li>
   <li><xref href="#topic_vsf_hnh_ts/configure_haproxy">Configure HAProxy</xref></li>
         </ul></p>
 </section>
 
-<section id="availability-zones"> <title>Availability Zones</title>
-<p>To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HP recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.</p>
+<section id="availability-zones"> <title>Configure Availability Zones</title>
+<p>To configure the Database Service in a highly available manner, it is necessary to create
+        separate availability zones. As a best practice, HP recommends creating three availability
+        zones. All hosts should be placed within one of these availability zones. </p>
+      <p>If a host is not associated with an availability zone, the Database Service will not be
+        able to provision a database instance to it. As a result, the Database Service may run out
+        of capacity even though there are hosts with free capacity.</p>
 <p>The following steps show how to create three availability zones and assign a compute host to the zone.</p>
 <ol>
 <li>Execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and
-          "AZ-3".<codeblock>nova aggregate-create aggregate-AZ-1 AZ-1
-nova aggregate-create aggregate-AZ-2 AZ-2
-nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
+          "AZ-3".<codeblock>openstack aggregate create --zone AZ-1 aggregate-AZ-1
+openstack aggregate create --zone AZ-2 aggregate-AZ-2
+openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
 <li> Validate that the availability zones were correctly created by issuing the following
-          command.<codeblock>nova aggregate-list</codeblock></li>
-<li> The following commands will add a compute host to your newly created availability zones. Issue
-          this command for every compute host that you wish to associate with an availability
-          zone.<codeblock>nova aggregate-add-host &lt;id&gt; &lt;hostname&gt;</codeblock></li>
-<li> The following command can be used to list all availability zones and the compute hosts
-          associated with them.<codeblock>nova availability-zone-list</codeblock></li>
+          command.<codeblock>openstack aggregate list</codeblock></li>
+<li> The following commands will add a host to your newly created aggregate. Execute this command
+          once for every host that you wish to associate with an
+          aggregate.<codeblock>openstack aggregate add host &lt;aggregate name or id&gt; &lt;host&gt;</codeblock></li>
+<li> The following command can be used to list all availability zones and the hosts associated with
+          each one.<codeblock>openstack availability zone list</codeblock></li>
 </ol>
 </section>
 <section id="quotas"> <title>Set Quotas</title>
-<p>The admin tenant must have sufficient quota available and unused resources for the service to
-        use. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and
+<p>The project tenant must have sufficient quota available and unused resources for the service to
+        use. To check existing quota availability, log in to Horizon as the <b>admin</b> user and
         open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <p>If you are not configuring the Database Service to be highly available you must have the following quota available:</p>
 <table>
@@ -129,24 +134,24 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
         </tgroup>
 </table>
 <p>In addition to the quotas mentioned above, for every database instance that is created by a user,
-        the necessary resources to create that instance will be deducted from the admin tenant
-        quota. The users database service quota will also be affected.</p>
+        the necessary resources to create that instance will be deducted from the admin project
+        quota. The user's database service quota will also be affected.</p>
 </section>
 <section id="dbaas_installation">
       <title>Install the Database Service </title>
       <ol id="ol_xct_5dz_nt">
-        <li> Source a stack RC file for the admin user and tenant. <ol>
-          <li> Log in to Horizon using the admin account.</li>
-          <li> Download the OpenStack RC file. <p><b>Project</b> &gt; <b>Compute</b> &gt; <b>Access
-                  &amp; Security</b> &gt; <b>API Access</b> &gt; click <b>Download OpenStack RC
-                  File</b><image placement="break"
-                  href="../../../media/quickstartDownloadRCFile.png" id="image_asb_jvy_nt"
-              /></p></li>
-          <li>Source the RC file. You will need to provide the same admin password that you used to
-              log in to Horizon. Log in to the environment, open a command line client,  and execute:<p>
+        <li> Source a stack RC file for the admin user and project. <ol>
+            <li> Log in to Horizon using the admin account.</li>
+            <li> Download the OpenStack RC file. <p>
+                <image placement="break" href="../../../media/quickstartDownloadRCFile.png"
+                  id="image_asb_jvy_nt"/>
+              </p></li>
+            <li>Use <codeph>scp</codeph> to copy the RC file over to the Deployer.</li>
+            <li>SSH to the Deployer and source the RC file. You will need to provide the same admin
+              password that you used to log in to Horizon. <p>
                 <codeblock> source admin-openrc.sh</codeblock>
               </p></li>
-        </ol></li><li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
+          </ol></li><li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
           information for your installation in the file. The following sample configuration provides
           a starting point. For more detailed information, see the OpenStack <xref
             href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
@@ -161,6 +166,11 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
     horizon_url: http://&lt;horizon-ip-address&gt;/
     cacert: /etc/ssl/certs/ca-certificates.crt
     region_name: region1
+    auth:
+      auth_url: &lt;identity url&gt;
+      project_name: &lt; admin project name&gt;
+      username: &lt; admin user name&gt;
+      password: &lt; admin password&gt;
     database:
       ephemeral_ca_cert: unset
       external_network: &lt;guid of ext-net&gt;
@@ -182,18 +192,13 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
           - 'm1.small'
           - 'm1.large'
       disable_rollback: true
-      project_id: &lt; project id of user to install service to&gt;
-auth:
-      auth_url: &lt;identity url&gt;
-      project_name: &lt; admin project name&gt;
-      username: &lt; admin user name&gt;
-      password: &lt; admin password&gt;</codeblock></li>
+      project_id: &lt; project id of user to install service to&gt;   </codeblock></li>
          <li>List the available database versions to install:
           <codeblock>openstack hdpi list --os-cloud mycloud | grep database</codeblock>The output
           should look similar
           to:<codeblock>database | wscatalog.2655 | 2.0.0.0 | available</codeblock></li>
-        <li>Select the database version to install and view the details of the package
-          <codeblock>openstack hdpi show wscatalog.2655 --os-cloud mycloud</codeblock></li>
+        <li>Select the database version to install and view the details of the
+          package:<codeblock>openstack hdpi show wscatalog.2655 --os-cloud mycloud</codeblock></li>
         <li>Install the database service
           <codeblock>openstack --os-cloud mycloud hdpi database install –-package wscatalog.2655 </codeblock></li>
       </ol>
@@ -224,7 +229,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
             </ol></li>
           <li> The installation is complete. Return to the Horizon dashboard (you may log out and
             log in with a non-Admin account if desired), and click on the <b>Database</b> panel
-            under the current Project to being using Database Service. </li>
+            under the current Project to begin using the Database Service. </li>
         </ol></sectiondiv></section>
 
  
