@@ -14,7 +14,7 @@
       hypervisor console. It receives its IP address via DHCP and broadcasts the generated hostname
       on the local subnet via <b>multicast DNS</b>.</p>
   <p>You will use this hostname to open the <b>Management Console</b> in a browser or to connect
-   using the <b><keyword keyref="prodShort"/> CLI client</b>. </p>
+   using the <b><keyword keyref="prodShort"/> command-line client</b>. </p>
   <note>The default password for the <codeph><keyword keyref="defaultSysUser"/></codeph> system user
    is <keyword keyref="defaultSysPass"/>. This password is changed automatically when you set up the
    first administrator in the Management Console. Once you set up the primary administrator account,
