@@ -86,6 +86,14 @@
       <topicref href="helion/swift/ring_specifications.dita"/>
       <topicref href="helion/swift/storage-policies.dita"/>
     </topicref>
+    <topicref href="helion/swift/swift_add_new_node.dita"/>
+    <topicref href="helion/swift/swift_ring_management.dita">
+      <topicref href="helion/swift/swift_rebalanced_explained.dita"/>
+      <topicref href="helion/swift/swift_preparing_ring_changes.dita"/>
+      <topicref href="helion/swift/swift_play_book_linked_ring_management.dita"/>
+      <topicref href="helion/swift/swift_safe-rebalance-deploy-ring.dita"/>
+      <topicref href="helion/swift/swift_input_model_change_existing_rings.dita"/>
+    </topicref>
     <topicref href="helion/swift/check-swift-operation.dita">
       <topicref href="helion/swift/swift_utility.dita"/>
       <topicref href="helion/swift/swiftlm-scan_metering.dita"/>
