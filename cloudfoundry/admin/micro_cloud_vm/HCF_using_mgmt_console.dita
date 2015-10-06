@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_npv_xbm_nt">
- <title>Using the Management Console</title>
+ <title>!!!Using the Management Console</title>
  <shortdesc></shortdesc>
  <prolog>
   <metadata>
@@ -18,7 +18,8 @@
    own certificate, see <b>HTTPS</b>.<p><ph id="complete_setup">When the Management Console loads,
      you will be prompted to create the first administrator and the first <b>organization</b> for
      the system. Enter a username (your email address) and a password, read and accept the Terms of
-     Use Agreeement, and click <uicontrol>Complete Setup</uicontrol>.</ph></p></note>
+     Use Agreeement, and click <uicontrol>Complete Setup</uicontrol>.<draft-comment
+      author="michaelk">This element is single-sourced.</draft-comment></ph></p></note>
   <note conref="HCF_setup_amazon_postinit.dita#task_hsf_m35_4t/system_user_pass"/>
   <p id="after_adding">After creating
    the first administrator, you can use these account credentials to create additional users,
