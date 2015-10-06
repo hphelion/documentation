@@ -94,6 +94,8 @@
       navtitle="Troubleshooting" locktitle="yes"/>
     <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
       locktitle="yes"/>
+    <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
+      navtitle="Helion Lifecycle Manageent CLI Reference" locktitle="yes"/>
     <topicref href="CarrierGrade/Installation/carrier-grade-backup-restore.dita" toc="yes"
       navtitle="Backup and Restore the HLM Node and MySQL Cluster" locktitle="yes"/>
     <topichead navtitle=" License Files">

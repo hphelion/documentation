@@ -19,18 +19,18 @@
       <!--UNDER REVISION-->
       <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
-    <p>After the Helion Lifecycle Management (HLM) is installed, the next task in installing the
-        <xref href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM
-        deployment</xref> is to  deploy the HP Helion Openstack cloud.</p>
+    <p>After Helion lifecycle management is installed, the next task in installing the <xref
+        href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM topology</xref>
+      is to deploy the HP Helion Openstack cloud.</p>
     <p><b>Note:</b> If you are installing the KVM + ESX deployment, see <xref
         href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the KVM + ESX
         Deployment</xref>.</p>
     
     <section>
-      <title>Log into the HLM VM</title>
-      <p>Log into the HLM VM you created in the previous page.</p>
+      <title>Log into the Helion lifecycle management VM (VM)</title>
+      <p>To log into the VM you created in the previous page.</p>
       <ol>
-        <li>Login to HLM VM.
+        <li>Login to the HLM VM.
             <codeblock>ssh &lt;HLM_VM_IP>
 where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
             the <codeph>cghelion</codeph> credentials:
@@ -169,7 +169,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
             <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM
             address range to itself for serving python and debian repositories. Make sure that you
             set the first IP address of the CLM range for the eth2 (CLM) address of the HLM
-            node.</p></li>
+            host.</p></li>
         <li>Modify the <codeph>definition.json</codeph> file: <ol id="ol_t3x_btn_xs">
             <li>Set the number of compute systems to 2.
               <codeblock>"count": 2, //number of computes in the resource pool</codeblock></li>
