@@ -199,7 +199,7 @@ baremetal_servers:
       <p>The following diagram depicts a deployment scenario using the KVM hypervisor:</p>
       <p><image href="../media/networking/hos_kvm_diag.png"/></p>
       <p>The following diagram depicts a deployment scenario using the ESX hypervisor:</p>
-      <p/>
+      <p><image href="../media/networking/hos_esx_diag.png" id="image_emc_5c1_pt"/></p>
     </section>
   </body>
 </topic>
