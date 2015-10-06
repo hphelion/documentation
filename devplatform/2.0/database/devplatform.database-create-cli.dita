@@ -46,7 +46,7 @@
         </ul>
         <dl>
           <dlentry>
-            <dt><p>Example 1: Create a single MySql instance</p>
+            <dt>Example 1: Create a single MySql instance
               </dt>
             <dd>The following command creates a single (non-clustered) MySql instance called <b>MyInstance</b> with flavor <b>m1.medium</b>, allocating 3 GB of space (the MySql datastore is the default):
               <codeblock>trove create MyInstance 3 --size 3</codeblock></dd>

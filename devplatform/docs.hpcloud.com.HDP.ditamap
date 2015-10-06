@@ -228,9 +228,6 @@
     
     <topicref href="2.0/devplatform.sysadmin.dita" locktitle="yes"
       navtitle="Resources for IT Ops">
-    
-      <topicref href="2.0/devplatform_upgrade.dita" navtitle="Upgrading Helion OpenStack"
-        locktitle="yes"/>
       <topicref href="2.0/helion/admin/server/network_port_configuration.dita"/>
       <topicref href="2.0/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
