@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_m43_2j3_bt">
-  <title>Reconfiguring Keystone</title>
+  <title>Reconfiguring the Identity Service</title>
   <body>
 
-    <section><title>Updating Keystone</title>HP Helion OpenStack&#174; allows you to perform updates  on the
-      following parts of the Identity service configuration:: </section>
+    <section><title>Updating the Keystone Identity Service</title>HP Helion OpenStack&#174; allows
+      you to perform updates on the following parts of the Identity service configuration:: </section>
       
       <section>
       
@@ -27,11 +27,11 @@
           refer to Integrating with an external LDAP server section below. </li>
       </ul>
       </section>
-    <section id="updating"><title>Updating the main Keystone configuration file</title>
+    <section id="updating"><title>Updating the main Identity Service configuration file</title>
       
-     <ol><li>The main Keystone configuration file (<b>/etc/keystone/keystone.conf</b>), located on each
-          control plane server is generated from the following template file located on a deployer:
-            <b>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</b>
+     <ol><li>The main Keystone Identity Service configuration file (<b>/etc/keystone/keystone.conf</b>),
+          located on each control plane server is generated from the following template file located
+          on a deployer: <b>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</b>
           <p>Modify this template file as appropriate. Please refer to <xref
               href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
               format="html" scope="external">Keystone Kilo documentation</xref> for full
@@ -54,14 +54,16 @@
         </li></ol>
     </section>
     
-    <section id="enable_features"><title>Enabling Keystone features</title>
-    
-    To enable or disable Keystone features like Fernet Tokens, do the following:
-    <ol><li>Adjust respective parameters in
-            <b>/home/stack/helion/my_cloud/config/keystone/keystone_deploy_config.ym</b>l. </li><li>Commit the change into local git repository, and rerun configuration processor / deployment area
-          preparation playbooks (as suggested at <xref href="../using_git.dita#topic_u3v_1yz_ct"
-            >Using Git for Configuration Management</xref>):</li></ol>
-    <codeblock>$ cd ~/helion
+    <section id="enable_features"><title>Enabling Identity Service features</title> To enable or
+      disable Keystone features like Fernet Tokens, do the following: <ol>
+        <li>Adjust respective parameters in
+            <b>/home/stack/helion/my_cloud/config/keystone/keystone_deploy_config.ym</b>l. </li>
+        <li>Commit the change into local git repository, and rerun configuration processor /
+          deployment area preparation playbooks (as suggested at <xref
+            href="../using_git.dita#topic_u3v_1yz_ct">Using Git for Configuration
+          Management</xref>):</li>
+      </ol>
+      <codeblock>$ cd ~/helion
     $ git checkout site
     $ git add my_cloud/config/keystone/keystone_deploy_config.yml
     $ git commit -m "Adjusting some WSGI or logging parameters for keystone"
@@ -71,10 +73,6 @@
     3.	Run reconfiguration playbook in deployment area:
     $ cd ~/scratch/ansible/next/hos/ansible
     $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock>
-    
-    
-    
-    
     </section>
   </body>
 </topic>
