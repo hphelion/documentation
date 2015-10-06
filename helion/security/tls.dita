@@ -73,8 +73,9 @@ swift-proxy         8080</codeblock>
       <p> An endpoint can be either a virtual IP (VIP) or a back-end service URI. A VIP can be
         public, internal or admin. </p>
     </section>
-    <section id="TLS_termination"><title>TLS termination for a public endpoint VIP </title> Open the
-      following file and change components to tls-components in
+    <section id="TLS_termination"><title>TLS termination for a public endpoint VIP </title> HP
+      Helion OpenStack&#174; 2.0 supports fully qualified domain names (FQDN) for public endpoints.
+      Open the following file and change components to tls-components in
       /home/stack/helion/my_cloud/definition/data/network_groups.yml load-balancers:
       <codeblock>   - provider: ip-cluster
      name: extlb                      # This is the external LB.
@@ -89,7 +90,6 @@ swift-proxy         8080</codeblock>
           <dt>name: extlb</dt>
           <dd>The external Loadbalancer (LB)</dd>
         </dlentry>
-
         <dlentry>
           <dt>external-name:</dt>
           <dd>This name will be used in place of the external VIP address. This name can be an FQDN.
@@ -111,8 +111,8 @@ swift-proxy         8080</codeblock>
             own name. When you specify your own you also need to have the certificate copied in
             ~/helion/my_cloud/config/tls/certs on the deployer. </dd>
         </dlentry>
-
-      </dl> <note>Do not enable TLS to the internal loadbalancer. </note></section>
+      </dl>
+      <note>Do not enable TLS to the internal loadbalancer. </note></section>
     <section id="configure_cipher">
       <title>Configuring the cipher suite for public endpoints</title> We have set the default
       cipher suite to be: <codeph>HIGH:!aNULL:!eNULL:!DES:!3DES</codeph>. This is a recommended
