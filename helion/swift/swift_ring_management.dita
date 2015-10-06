@@ -11,9 +11,11 @@
         href="../../../documentation/helion/input_model.dita#input_model"/>). </p>
     <p>After successful deployment of cloud, you may want to change or modify your cloud
       configuration for Swift, like:<ul id="ul_yxs_dzr_4t">
-        <li>Adding or removing Swift nodes</li>
+        <li><xref href="swift_input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
+            >Adding or removing Swift nodes</xref></li>
         <li>Adding additional storage policies</li>
-        <li>Upgrading the size of disk drives used by Swift</li>
+        <li><xref href="swift_input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
+            >Upgrading the size of disk drives used by Swift</xref></li>
       </ul></p>
     <p>Some of the above changes require the rebuilt of the rings.</p>
     <p>
@@ -24,40 +26,17 @@
     </p>
     <p>Changes to the rings require several phases to complete the process of deployment
       <!--after modification or adding of new Swift configuration in the YAML file-->. Therefore,
-      you need to run the playbooks several times over several days. The following section explains
-      the reason for the requirement of several phases for the change of the ring.</p>
-    <section><title>Rebalance Explained</title><p>The ring building process tries to distribute data
-        evenly among the available disk drives. The data is stored in partition, as explained in
-          <xref href="ring_specifications.dita#ring-specification"/>
-        (<?oxy_custom_start type="oxy_content_highlight" color="255,60,255"?>need to insert link
-        appropriate to selecting a partition power<?oxy_custom_end?>).  Suppose you double the
-        number of disk drives in a ring, you need to move 50% of the partitions to the new drives so
-        that all drives contain the same number of partitions (and hence same number amount of
-        data). But it is not possible to move the partitions in a single step. It can take minutes
-        to hours to move partitions from the original drives to their new drives (this process is
-        called the <i>replication</i> process). If you move all partitions at once, there is a
-        possibility that the data is not replicated on the new drives. Hence, Swift won't be able to
-        find the partition of the new drive and won't be able to return the data to the user.
-        Therefore, you must move one replica at a time. If the replica count is 3, you can first
-        move 16.6% of the partitions and wait till all data are replicated. Then move a further
-        16.6% of partitions and wait again for all the data to replicate and finally move the
-        remaining 16.6% of partitions. For any given object, only one of the replicas is moved at a
-        time.</p><sectiondiv><b>Reason to move partition gradually</b></sectiondiv><p>Due to the
-        following factors, you must move the partition gradually: </p><ul id="ul_jrz_q3s_4t">
-        <li>Not all devices are of the same size. We automatically assign different weights to
-          drives so that smaller drives store fewer partitions than larger drives.</li>
-        <li>The process attempts to keep replicas of the same partition in different servers, Swift
-          zones or Swift regions.</li>
-        <li>When making large changes, you may not double the number of drives in one step. This may
-          involve much traffic related to replication process which may suffer the system
-          performance.</li>
-        <li> we might not double the number of drives in one step since this might involve so much
-          traffic related to the replication process that the system performance suffers. There are
-          two ways to mitigate this:<ul id="ul_msz_tjs_4t">
-            <li>Add servers in smaller groups</li>
-            <li>Set the weight-step attribute in the ring specification (see Preparing for Ring
-              Changes)</li>
-          </ul></li>
-      </ul></section>
+      you need to run the playbooks several times over several days. </p>
+    <p>The following section explains the reason for the requirement of several phases for the
+      change of the ring.<ul id="ul_pgc_plz_4t">
+        <li><xref href="swift_rebalanced_explained.dita#topic_izw_1mz_4t">Rebalance
+          Explained</xref></li>
+        <li><xref href="swift_preparing_ring_changes.dita#topic_t1y_vjs_4t">Preparing for Ring
+            Changes</xref></li>
+        <li><xref href="swift_play_book_linked_ring_management.dita#topic_jmm_cnz_4t">Swift
+            Playbooks Linked to Ring Management</xref></li>
+        <li>When it is safe to rebalance and deploy a new ring?</li>
+        <li>Applying Input Model Changes to Existing Ring</li>
+      </ul></p>
   </body>
 </topic>

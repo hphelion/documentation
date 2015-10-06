@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_izw_1mz_4t">
+  <title>Rebalance Explained</title>
+  <body>
+    <p>The ring building process tries to distribute data evenly among the available disk drives.
+      The data is stored in partition, as explained in <xref
+        href="ring_specifications.dita#ring-specification"/>
+      (<?oxy_custom_start type="oxy_content_highlight" color="255,60,255"?>need to insert link
+      appropriate to selecting a partition power<?oxy_custom_end?>). Suppose you double the number
+      of disk drives in a ring, you need to move 50% of the partitions to the new drives so that all
+      drives contain the same number of partitions (and hence same number amount of data). But it is
+      not possible to move the partitions in a single step. It can take minutes to hours to move
+      partitions from the original drives to their new drives (this process is called the
+        <i>replication</i> process). If you move all partitions at once, there is a possibility that
+      the data is not replicated on the new drives. Hence, Swift won't be able to find the partition
+      of the new drive and won't be able to return the data to the user. Therefore, you must move
+      one replica at a time. If the replica count is 3, you can first move 16.6% of the partitions
+      and wait till all data are replicated. Then move a further 16.6% of partitions and wait again
+      for all the data to replicate and finally move the remaining 16.6% of partitions. For any
+      given object, only one of the replicas is moved at a time.</p>
+    <section><sectiondiv><b>Reason to move partition gradually</b></sectiondiv><p>Due to the
+        following factors, you must move the partition gradually: </p><ul id="ul_jrz_q3s_4t">
+        <li>Not all devices are of the same size. We automatically assign different weights to
+          drives so that smaller drives store fewer partitions than larger drives.</li>
+        <li>The process attempts to keep replicas of the same partition in different servers, Swift
+          zones or Swift regions.</li>
+        <li>When making large changes, you may not double the number of drives in one step. This may
+          involve much traffic related to replication process which may suffer the system
+          performance.</li>
+        <li> we might not double the number of drives in one step since this might involve so much
+          traffic related to the replication process that the system performance suffers. There are
+          two ways to mitigate this:<ul id="ul_msz_tjs_4t">
+            <li>Add servers in smaller groups</li>
+            <li>Set the weight-step attribute in the ring specification (see <xref
+                href="swift_preparing_ring_changes.dita#topic_t1y_vjs_4t">Preparing for Ring
+                Changes</xref>).</li>
+          </ul></li>
+      </ul></section>
+  </body>
+</topic>

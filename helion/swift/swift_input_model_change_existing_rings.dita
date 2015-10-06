@@ -3,12 +3,13 @@
 <topic id="topic_vyp_cft_4t">
   <title>Applying Input Model Changes to Existing Rings</title>
   <body>
-    <p>This section describes a general approach to making changes to an existing rings. This
-      applies to such actions as adding a server. There are a number of phases and actions to
-      perform as shown below:</p>
+    <p>This section describes a general approach of making changes to an existing rings. This
+      applies to actions as adding and removing a server, replacing and upgrading the disk drive(s).
+      There are a number of phases that must be performed to  adding and removing a server,
+      replacing and upgrading the disk drive(s), as shown below:</p>
     <p>
       <ul id="ul_sqz_jft_4t">
-        <li>Changing the Input Model Phase<ul id="ul_wrz_jft_4t">
+        <li><b>Changing the Input Model Phase</b><ul id="ul_wrz_jft_4t">
             <li>If not already done, set the weight-step attribute <b>(how to set up the weight step
                 attribute?)</b></li>
             <li>Edit the Input Model as appropriate. You must edit the YAML file as per your
@@ -26,45 +27,104 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
             <li>Run the following
               playbook.<codeblock> _swift-validate-input-model.yml </codeblock></li>
-            <li>
-              <p><?oxy_custom_start type="oxy_content_highlight" color="255,60,255"?>Validate that
-                the number of drives proposed to be added or deleted or weight change is correct.
-                Fix any errors in your Input Model. At this stage, no changes have been made to
-                rings<?oxy_custom_end?>.</p>
-            </li>
+            <li>  Validate that the number of drives proposed to be added or deleted or weight
+              change is correct. Fix any errors in your Input Model. At this stage, no changes have
+              been made to rings.  </li>
           </ul></li>
-        <li>Perform first phase of ring rebalance:<ul id="ul_gsz_jft_4t">
+        <li><b>First phase of ring rebalance:</b><ul id="ul_gsz_jft_4t">
             <li>Run the following command:<codeblock>swift-deploy.yml </codeblock></li>
             <li>
               <p>Wait until replication has finished or min-part-time has elapsed (which ever is
                 longer) (<b>any output we get after executing the above command?)</b></p>
             </li>
           </ul></li>
-        <li>Perform weight change phase of ring rebalance:<ul id="ul_qsz_jft_4t">
+        <li><b>Weight change phase of ring rebalance</b>:<ul id="ul_qsz_jft_4t">
             <li>Run the following
               playbook<codeblock> _swift-make-delta-rebalance.yml</codeblock></li>
             <li>Run the reconfigure<codeblock>swift-reconfigure.yml </codeblock></li>
             <li>Wait until replication has finished or min-part-time has elapsed (which ever is
               longer)</li>
-            <li>Run the following command and examine the
-                report.<codeblock>_swift-validate-input-model.yml</codeblock><ul id="ul_atz_jft_4t">
-                <li>When there are no proposed weight changes, you proceed the final phase</li>
+            <li>Run the following command <codeblock>_swift-validate-input-model.yml</codeblock>and
+              examine the report.<ul id="ul_atz_jft_4t">
+                <li>When there are no proposed weight changes, you proceed the final phase.</li>
                 <li>
                   <p>If there are proposed weight changes repeat this phase again
-                    (_swift-make-delta-rebalance.yml)</p>
-                  <p> </p>
+                      (<codeph>_swift-make-delta-rebalance.yml</codeph>). </p>
                 </li>
               </ul></li>
           </ul></li>
-        <li>Perform the final rebalance phase as follows. This phase moves all replicas to their
-          final destination.<ul id="ul_ktz_jft_4t">
-            <li>Run the _swift-make-delta-rebalance.yml playbook</li>
-            <li>Run the swift-reconfigure.yml playbook</li>
+        <li><b>Final rebalance phase:</b><p>The final rebalance phase moves all replicas to their
+            final destination.</p><ul id="ul_ktz_jft_4t">
+            <li>Run the following
+              playbook<codeblock> _swift-make-delta-rebalance.yml</codeblock></li>
+            <li>Run the reconfigure<codeblock>swift-reconfigure.yml </codeblock></li>
             <li>Wait until replication has finished or min-part-time has elapsed (which ever is
               longer)</li>
-            <li>Repeat these action one more time.</li>
+            <li>Repeat the above action till the ring is rebalanced.</li>
           </ul></li>
       </ul>
     </p>
+    <section id="system-change"><sectiondiv><b>System change that change existing
+        rings</b></sectiondiv><p>There are many system changes ranging from adding servers to
+        replacing drives that might require some ring rebuild and rebalance actions.</p><p>Note:
+        This section provides an overview of these changes and a summary of the required actions.
+        More detailed procedures are provided elsewhere.</p><p>
+        <simpletable id="simpletable_mtc_yb1_kt">
+          <strow>
+            <stentry><b>Actions</b></stentry>
+            <stentry><b>Process</b></stentry>
+          </strow>
+          <strow>
+            <stentry>Adding servers(s)</stentry>
+            <stentry>
+              <p>Follow the process described in <xref href="#topic_vyp_cft_4t" format="dita"/>.</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry>Removing server(s)</stentry>
+            <stentry>
+              <p>In HP Helion OpenStack when you remove servers from the Input Model, the disk
+                drives are removed from the ring – the weight is not gradually reduced using the
+                weight-step attribute. </p>
+              <p>Follow the steps mentioned in <xref href="#topic_vyp_cft_4t" format="dita"/> except
+                the "Weight change phase of ring rebalance" is not used.</p>
+            </stentry>
+          </strow>
+          <strow>
+            <stentry>Replacing disk drive(s)</stentry>
+            <stentry><p>When a drive fails, replace it as soon as possible. Do not attempt to remove
+                it from the ring – this creates too operator overhead. Swift will continue to store
+                the correct number of replicas by "handing off" objects to other drives instead of
+                the failed drive.</p>If the disk drives are of the same size as the original when
+              the drive is replaced, no ring changes are required. You can confirm this by running
+              the <codeph>_swift-make-delta-rebalance.yml</codeph> playbook. It should report that
+              no weight changes are needed. <p>For a single drive replacement, if the drive is
+                significantly larger than the original drives then you do not need to rebalance the
+                ring (however, the extra space on the drive will not be used).</p></stentry>
+          </strow>
+          <strow>
+            <stentry>Upgrading disk drives</stentry>
+            <stentry>
+              <p>If the drives are different size (for example, you are upgrading your system), you
+                can proceed as follows:</p>
+              <ul id="ul_smv_pfz_4t">
+                <li>If not already done, set the weight-step attribute</li>
+                <li>Replace drives in phases<ul id="ul_gvy_5fz_4t">
+                    <li>Avoid replacing too many drives at once.</li>
+                    <li>If your rings use swift zones, upgrade a number of drives in the same zone
+                      at the same time – not drives in several zones.</li>
+                    <li>It is also safer to upgrade one server instead of drives in several servers
+                      at the same time.</li>
+                    <li>Remember that the final size of all Swift zones must be the same, so you may
+                      need to replace a small number of drives in one zone, then a small number in
+                      second zone, then return to the first zone and replace more drives, etc. </li>
+                  </ul></li>
+                <li>Use the process described in <xref href="#topic_vyp_cft_4t" format="dita"
+                  />.</li>
+              </ul>
+            </stentry>
+          </strow>
+        </simpletable>
+      </p></section>
   </body>
 </topic>

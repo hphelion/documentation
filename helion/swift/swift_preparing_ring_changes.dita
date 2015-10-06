@@ -3,105 +3,56 @@
 <topic id="topic_t1y_vjs_4t">
   <title>Preparing for Ring Changes</title>
   <body>
-    <p>When a ring is build during a deploy, it automatically set the weights of disk drives such
-      that smaller disk drives have a smaller weight than larger disk drives. As explained in
-      Rebalance Explained, when making changes it can be useful to limit the amount of change that
-      occurs. This is done by limiting the weights that new drives to a smaller value than they
-      might otherwise have and then build new rings. Once the replication process has finished, we
-      can increase the weight and rebuild rings to trigger another round of replication.</p>
-    <p>In this release, we</p>
-    <p>I<?oxy_custom_start type="oxy_content_highlight" color="255,60,255"?>n HOS 2.0, we indicate
-      to this by setting the weight-step attribute in the ring specification of the Input Model. The
-      weight-step value specifies a maximum value for how much we will change the weight of a drive
-      in any single rebalance. For example, if we add a drive of 4TB in size, we would normally
-      assign a weight of 4096. However, if the weight-step attribute is set to 1024, when we add a
-      drive, the weight is initially set to 1024. The next time we rebalance the ring, the weight is
-      set to 2048. Yet another rebalance sets the weight to the final value of
-      4096.<?oxy_custom_end?></p>
-    <p>The value of weight-step is dependent on the size of your drives and how many servers you are
-      adding and your experience with how long the replication process takes. A common staring value
-      is to use 20% of the size of your drives. For example, for 4TB drives a value of 820 would be
-      appropriate. when you get more experience with your system, you may increase or reduce this
-      value.</p>
-    <p>We set the weight-step attribute as follows:</p>
-    <p>
-      <ul id="ul_udv_bks_4t">
-        <li>Edit the file containing the ring-specifications in the Input Model
-          (data/swift/rings.yml)</li>
-        <li>
-          <p>Look the attributes of a ring. For
-            example:<codeblock>- name: account
-  display-name: Account Ring
-  min-part-time: 16
-  ...</codeblock></p>
-        </li>
-      </ul>
-    </p>
-    <ul id="ul_y5r_dks_4t">
-      <li>Add the weight-step attribute. For example, to set to 820, add the attribute as
-        follows:<codeblock>- name: account
-  weight-step: 820
+    <p>Rings are build during a deploy and it automatically set the weights of disk drives such that
+      smaller disk drives have a smaller weight than larger disk drives. As explained in <xref
+        href="swift_rebalanced_explained.dita#topic_izw_1mz_4t">Rebalance Explained</xref>, when
+      making changes in the ring it can be useful to limit the amount of change that occurs. This is
+      done by limiting the weights of the new drives to the smaller value and then build new rings.
+      Once the replication process has finished, we can increase the weight and rebuild rings to
+      trigger another round of replication.</p>
+    <p>In HP Helion OpenStack, the weight-step attribute is set in the ring specification of the
+      Input Model. The weight-step value specifies a maximum value for the change of the weight of a
+      drive in any single rebalance. For example, if we add a drive of 4TB in size, we would
+      normally assign a weight of 4096. However, if the weight-step attribute is set to 1024, when
+      we to add a drive, the weight is initially set to 1024. Then next time we rebalance the ring,
+      the weight is set to 2048. Yet another rebalance sets the weight to the final value of
+      4096.</p>
+    <p>The value of weight-step is dependent on the size of the drives and number of the servers
+      being added and your experience period of time of the replication process. A common staring
+      value is to use 20% of the size of the drives. For example, for 4TB drives a value of 820
+      would be appropriate. As you gain more experience with your system, you may increase or reduce
+      this value.</p>
+    <section><sectiondiv><b>Setting the weight-step attribute</b></sectiondiv><p>Perform the
+        following steps to set the weight-step attribute:<note>You can set the weight-step
+          attributes for Account, Container, Object-0, etc in the similar way.</note><ol
+          id="ol_dl2_bdy_4t">
+          <li>Edit the (<codeph>data/swift/rings.yml</codeph>)file containing the
+            ring-specifications in the Input Model.</li>
+          <li>Search the attributes of a ring. In the following example we are setting the attribute
+            for Account Ring. Similar procedure needs to be performed for Container and Object
+            Rings.<codeblock>- name: account
   display-name: Account Ring
   min-part-time: 16
   ...</codeblock></li>
-    </ul>
-    <ul id="ul_b33_hks_4t">
-      <li>Repeat this for other rings (container, object-0, etc)</li>
-      <li>Run the config-processor-run.yml and ready-deployment.yml playbooks as described in (need
-        ref to somewhere in install process)</li>
-    </ul>
-    <section><sectiondiv><b>Swift Playbooks related to Ring Management</b></sectiondiv></section>
-    <p>The following table describes how playbooks relate to ring management</p>
-    <simpletable id="simpletable_mtc_yb1_kt">
-      <strow>
-        <stentry><b>Playbook</b></stentry>
-        <stentry><b>Description</b></stentry>
-        <stentry><b>Notes</b></stentry>
-      </strow>
-      <strow>
-        <stentry><codeph>swift-reconfigure.yml</codeph></stentry>
-        <stentry>This playbook takes rings that the <codeph>_swift-make-delta-rebalance.yml</codeph>
-          playbook has changed and copies them to all Swift nodes.</stentry>
-        <stentry>Every time that you use the _swift-make-delta-rebalance.yml playbook, you must copy
-          these rings to the system using the swift-reconfigure.yml playbook. If you forget and run
-          _swift-make-delta-rebalance.yml twice, the process may move two replicates of some
-          partitions at the same time.</stentry>
-      </strow>
-      <strow>
-        <stentry><codeph>swift-deploy.yml</codeph></stentry>
-        <stentry>This playbook is responsible for installing software and configuring Swift on
-          nodes. As part of this, it runs the _swift-make-delta-rebalance.yml and
-          swift-reconfigure.yml playbooks.</stentry>
-        <stentry>This playbook is included in the hlm-deploy.yml and site.yml playbooks, so if you
-          run either of those playbooks, the swift-deploy.yml playbook is also run.</stentry>
-      </strow>
-      <strow>
-        <stentry><codeph>_swift-validate-input-model.yml</codeph></stentry>
-        <stentry>There are two steps in this playbook:Make deltaThis is the same step as described
-          aboveReportThis prints a summary of the proposed changes that will be made to the rings
-          (ie. what would happen if we rebalanced). As a side effect, the playbook reports any
-          issues or problems it finds with the Input Model.This playbook can be useful to confirm
-          that there are no errors in the Input Model. It also allows you to check that when you
-          change the Input Model, that the proposed ring changes are as you expect. For example, if
-          you thought you had added a server to the Input Model, but this playbook reports that no
-          drives are being added, you should determine the cause.</stentry>
-        <stentry/>
-      </strow>
-      <strow>
-        <stentry><codeph>_swift-make-delta-rebalance.yml</codeph></stentry>
-        <stentry>There are two steps in this playbook:Make deltaIt processes the Input Model and
-          compares against the existing rings. It then produces a list of differences between the
-          Input Model and the exiting rings. Is is called the ring delta. The ring delta covers
-          drives being added, drives being removed, weight changes and replica count
-          changes.RebalanceThe ring delta is then converted into a series of commands (such as
-          "add") to the swift-ring-builder program. Finally, the "rebalance" command is issued to
-          the swift-ring-builder program.</stentry>
-        <stentry>This playbook performs its actions on the first node running the swift-proxy
-          service. However, it also scans all Swift nodes to find the size of disk drives.If there
-          are no changes in the ring delta, the "rebalance" command is still issued to rebalance the
-          rings. If min-part-time has not yet elapsed or if no partitions need to be moved, new
-          rings are not written.</stentry>
-      </strow>
-    </simpletable>
+          <li>Add the weight-step attribute.
+              <codeblock>- name: account
+  <b>weight-step: &lt;value></b>
+  display-name: Account Ring
+  min-part-time: 16
+  ...</codeblock><p>For
+              example: to set to 820 as weight-step, add the attribute as
+              follows:<codeblock>- name: account
+  weight-step: &lt;<b>value</b>>
+  display-name: Account Ring
+  min-part-time: 16
+  ...</codeblock></p></li>
+          <li>Repeat step <b>3</b> for other rings (container, Object-0, etc).</li>
+          <li>Run the configuration processor:
+            <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Use the playbook below to create a deployment directory:
+            <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        </ol></p></section>
   </body>
 </topic>
