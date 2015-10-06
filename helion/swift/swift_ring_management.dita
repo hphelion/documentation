@@ -8,7 +8,7 @@
       data storage (for example: defining the number of replicas). The rings are automatically built
       during the initial deployment of the system with the configuration provided during the setting
       up your Helion OpenStack Input Model (for more information, refer to <xref
-        href="../../../documentation/helion/input_model.dita#input_model"/>). </p>
+        href="../input_model.dita#input_model"/>). </p>
     <p>After successful deployment of cloud, you may want to change or modify your cloud
       configuration for Swift, like:<ul id="ul_yxs_dzr_4t">
         <li><xref href="swift_input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
