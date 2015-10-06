@@ -136,6 +136,7 @@
   <!-- NEW TOC STUFF, see https://etherpad.hpcloud.net/p/HOS2.0_doc_structure for details -->
   <topicref href="home.dita"/>
   <topicref href="helion/index.dita">
+    <topicref href="technical_overview.dita" />
     <topicref href="helion/input_model.dita" navtitle="Helion OpenStack 2.0 Input Model"
       locktitle="yes"/>
     <topicref href="helion/supportedconfigs.dita" navtitle="Example Configurations" locktitle="yes"/>
