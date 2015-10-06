@@ -10,18 +10,15 @@
       <li> Click <b>Launch Instance</b>.</li>
       <li> In the <b>Details</b> tab, specify the following options:
         <ul>
-          <li><b>Instance Name</b> - the name of the MySQL instance to create </li>
+          <li><b>Instance Name</b> - the name of the instance to create </li>
           <li><b>Flavor</b> - the size of the instance to host the database on.<image href="../../../media/createDBinstance2_2.png" placement="break" scale="75"/></li>
           <li><b>Volume Size</b> - the size of the volume to host the data on (in GB). 
-            <note>This <b>cannot</b> be changed later.</note>
             <note>MongoDB instances require a minimum volume size of 5.</note></li>
           <li><b>Datastore</b> - The database architecture and version to use for the new instance.
             Options are as follows: <ul>
               <li><b>mongodb</b> version 3.0</li>
               <li><b>redis</b> version 3.0</li>
               <li><b>mysql</b> version 5.5 (A single instance of MySql)</li>
-              <li><b>mysql-cluster</b> version 5.5 (An instance of MySql that supports
-                clustering)</li>
             </ul> MongoDB and Redis instances can be used for single-instance or clustered
             databases; for a MySql database, using the single-instance version provides some
             performance enhancements over the clustered version. </li>

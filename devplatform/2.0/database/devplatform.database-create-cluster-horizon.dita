@@ -10,16 +10,18 @@
       <li>In the <b>Launch Cluster</b> page, enter the following information and click <b>Launch Cluster</b>:
         <ul>
           <li><b>Cluster Name</b>: The name of the cluster to be created. The cluster ID will be generated automatically.</li>
-          <li><b>Datastore</b>: The database architecture to be used. Redis and MongoDB are supported.1</li>
+          <li><b>Datastore</b>: The database type to be used. MySql, Redis and MongoDB are supported.</li>
           <li><b>Flavor</b>: The instance flavor (virtual hardware template) to use for the cluster.</li>
           <li><b>Network</b>: The OpenStack network to attach to the cluster.</li>
           <li><b>Volume Size</b>: The size in GB of the new cluster. <note>MongoDB instances require a minimum volume size of 5.</note></li>
           <li><b>Number of Shards</b> (MongoDB only): The number of MongoDB shards to span the database across. One shard will be used to create the database cluster; this value cannot be changed. See <xref type="external" href="http://docs.mongodb.org/manual/sharding/" format="html">Sharding</xref>
           for more information.</li>
           <li><b>Number of Instances</b>: The number of OpenStack instances to span the database across. Three instances will be used to create the cluster; this value cannot be changed, but more instances can be added later.</li>
+          <li><note>The number of instances and shards is not editable.</note></li>
         </ul>
         <image href="../../../media/dbaas_clusters_1.PNG" placement="break" /></li>
-      <li>The new cluster will be created, and appear in the Clusters page, with its status displaying as <b>Building</b>.</li>
+      <li>The new cluster will be created, and appear in the Clusters page. Once it is done creating, the status will display as <b>None</b>, indicating that the cluster is finished provisioning. Click on the name of the cluster to see details of the cluster and the status of the cluster.
+      </li>
     </ol>
   </body>
 </topic>
