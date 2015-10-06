@@ -150,7 +150,7 @@ ilo_password: "password"
           >Kilo release</xref> with the exception of limitations notated in this document.</p>
       <p><b>More Cinder Backend Options Available</b></p>
       <p>You can now choose between Ceph, VSA, and 3PAR for Cinder backends.</p>
-      <p>See: <xref href="cinder/cinder_overview.dita">Cinder Overview</xref> for more details</p>
+      <p>See: <xref href="test/cinder_overview.dita">Cinder Overview</xref> for more details</p>
       <p><b>Neutron LBaaS and FWaaS Extensions</b></p>
       <p>We have implemented networking extensions for load balancing and firewalls. Here is a
         description of each of these:</p>

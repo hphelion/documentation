@@ -17,7 +17,7 @@
     <p>Instructions for storage node scale out, repair, and removal are found in the respective
       storage sections:</p>
     <ul>
-      <li><xref href="../cinder/ceph/adding_new_osd_node.dita#topic_drm_rm5_kt">Adding a New Object
+      <li><xref href="../test/ceph/adding_new_osd_node.dita#topic_drm_rm5_kt">Adding a New Object
           Storage Device Node</xref></li>
 
             
