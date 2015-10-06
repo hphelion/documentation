@@ -423,7 +423,8 @@ helion apps
         packages.</p>
 </section>
 <section id="os-packages"> <title>Operating System Packages</title>
-<p>Operating System packages can be added in an <codeph>ubuntu:</codeph> block within a
+
+<p>These packages can be added in an <codeph>ubuntu:</codeph> block within a
           <codeph>staging:</codeph> and/or <codeph>running:</codeph> block. Plain strings are
         treated as package names:</p>
 <codeblock>  requirements:
@@ -434,7 +435,8 @@ helion apps
     ubuntu:
       - libfoo
       - some-app</codeblock>
-<p>To add the package requirements to both the staging and running phases add the
+<p>To add the operating system requirements to both the staging and running phases add the
+
           <codeph>ubuntu:</codeph> block directly beneath the <codeph>requirements:</codeph>
         key:</p>
 <codeblock>  requirements:
