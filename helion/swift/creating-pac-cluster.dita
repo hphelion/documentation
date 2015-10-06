@@ -9,7 +9,7 @@
       <li>In the <codeph>data/control_plane.yml</codeph> file, identity the control plane that the
         object serves are associated with. </li>
       <li>Identity the node type/role used by the Swift Object servers. In the following example,
-          <b>ROLE_SWPAC</b> is mentioned as server-role.<p>Add an entry to the <b>clusters </b>item
+          <b>SWPAC-ROLE</b> is mentioned as server-role.<p>Add an entry to the <b>clusters </b>item
           in the <b>control-plane</b> as
           follows:<codeblock>control-planes:
 - name: ccp

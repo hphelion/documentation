@@ -15,7 +15,7 @@
       an entry for each distinct Swift system – hence the Keystone region name is specified in the
         <b>region-name</b> key of the example cloud model.</p>
     <p>In the cloud model, a ring-specification is mentioned in
-        <codeph>config/swift/rings.yml</codeph> file. The sample file of ring-specification is as
+        <codeph>data/swift/rings.yml</codeph> file. The sample file of ring-specification is as
       follows:</p>
     <p>
       <codeblock>ring-specifications:
