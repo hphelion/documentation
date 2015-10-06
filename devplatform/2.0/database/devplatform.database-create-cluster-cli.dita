@@ -5,7 +5,7 @@
   <body>
     <p>This topic describes how to create a database cluster from the command line.</p>
     <ol>
-      <li>Log in to the installer node for your Helion OpenStack environment and source the service.osrc file:
+      <li>Log in to the installer node for your HP Helion OpenStack environment and source the service.osrc file:
         <codeblock>. service.osrc</codeblock></li>
       <li>Use the <codeph>trove cluster-create</codeph> command to create the new database. The syntax is as follows:
       <codeblock>trove cluster-create &lt;name&gt; &lt;datastore&gt; &lt;datastore_version&gt; [--instance &lt;flavor=flavor_name_or_id,volume=volume&gt;]</codeblock>

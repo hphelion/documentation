@@ -120,7 +120,7 @@
         </section>
         <section id="tools_imaging"><title>Imaging tool</title>
 
-            <ul><li> Glazier: This tool creates Windows images for deployment to Helion OpenStack. This tool is not needed for using Windows images in
+            <ul><li> Glazier: This tool creates Windows images for deployment to HP Helion OpenStack. This tool is not needed for using Windows images in
                 HP Helion Public Cloud.</li></ul>
         </section>
         <section id="tools_management"><title>Management tool set</title>
@@ -173,7 +173,7 @@
 
         <p>Windows support has software requirements including the following:</p>
 <ul>
-    <li> A deployment of Helion OpenStack 1.1.1 or an HP Helion Public Cloud account. To try HP Helion Public Cloud, see 
+    <li> A deployment of HP Helion OpenStack 1.1.1 or an HP Helion Public Cloud account. To try HP Helion Public Cloud, see 
         <xref format="html" scope="external" href="http://www.hpcloud.com/cloud-credit">HP Cloud Signup</xref>. Helion Development Platform 1.2 is not 
         supported on Helion OpenStack 1.0 or 1.1.</li>
     <li> A licensed, retail, English-language Windows 2012 R2 ISO image. Evaluation versions and non-English versions are not supported. This image 
@@ -188,7 +188,7 @@
     <li> The <xref href="windows_tools_guide.dita#topic_w5z_kcw_js/cloudfoundryextensions">Cloud Foundry Explorer Visual Studio extension</xref>. This
                     extension can be found by searching for <b>Cloud Foundry Explorer</b> in the
                         <i>Extensions and Updates</i> module of Visual Studio.</li>
-    <li>Helion OpenStack supports .NET applications created with .NET versions 2.0 through 4.5.2.</li>
+    <li>HP Helion OpenStack supports .NET applications created with .NET versions 2.0 through 4.5.2.</li>
 </ul>
         </section>
     <section id="licensing"><title>Windows Instance Licensing</title>
@@ -198,7 +198,7 @@
 
         <p>Windows Server licensing for Windows DEAs and Windows SQL Server instances consists of two components:</p>
 <ul>
-    <li> Licensing agreements. These are paid contracts with Microsoft, which include the legal right to run a software package and support agreements. Since Helion OpenStack is a 
+    <li> Licensing agreements. These are paid contracts with Microsoft, which include the legal right to run a software package and support agreements. Since HP Helion OpenStack is a 
         <xref format="html" scope="external" href="http://www.windowsservercatalog.com/svvp.aspx">certified SSVP provider</xref>, customers can use Microsoft support with their own 
         licensing agreements.</li> 
         <li>Activation. Your Windows instances can be activated by using your KVM server, or by connecting to the Windows instance directly using Remote Desktop, and providing 

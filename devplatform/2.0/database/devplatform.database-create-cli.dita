@@ -5,7 +5,7 @@
   <body>
     <p>This topic describes how to create a database instance from the command line.</p>
     <ol>
-      <li>Log in to the installer node for your Helion OpenStack environment and source the service.osrc file:
+      <li>Log in to the installer node for your HP Helion OpenStack environment and source the service.osrc file:
         <codeblock>. service.osrc</codeblock></li>
       <li>Use the <codeph>trove create</codeph> command to create the new database. The syntax is as follows:
         <p></p><codeph>trove create &lt;name&gt; &lt;flavor&gt;</codeph>
