@@ -50,13 +50,13 @@ $ cat /etc/hosts | grep c1-m3-mgmt
 10.10.10.13    mi-ccp-c1-m3-mgmt</codeblock></li>
             <li> SSH to <b>each</b> of those three management nodes with admin credentials and run
               the following commands on each
-              one:<codeblock>$ sudo chown -r horizon-venv /opt/stack/services/horizon/venv/bin
-$ sudo chown -r horizon-venv /opt/stack/services/horizon/venv/lib</codeblock></li>
+              one:<codeblock>$ sudo chown -R horizon-venv /opt/stack/service/horizon/venv/bin
+$ sudo chown -R horizon-venv /opt/stack/service/horizon/venv/lib</codeblock></li>
           </ol></li><li>The DBaaS, DNSaaS and Cue services rely on the creation of a VM service network. This service
           network is a VLAN-encapsulated provider network which is fully routable to the Helion
           OpenStack MGMT network.  [This is an extra step required for the beta release.]<ol>
             <li>Install the Neutron client, if not already available.
-              <codeblock>sudo apt-get python-neutronclient</codeblock></li>
+              <codeblock>sudo apt-get install -y python-neutronclient</codeblock></li>
             <li>To create this network, an administrator should issue the following
               commands:<codeblock>neutron net-create svc-net --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id &lt;SVC VLAN_ID> 
 neutron subnet-create --allocation-pool start=&lt;low address on SVC network>,end=&lt;high address on SVC network> --no-gateway --host-route destination=&lt;CIDR of MGMT network>,nexthop=&lt;gateway from SVC to MGMT net> --enable-dhcp svc-net &lt;SVC network CIDR></codeblock>As
@@ -124,7 +124,7 @@ export http_proxy=http://proxy.example.com</codeblock></li>
        
        
         <li>Install the Development Platform Installer in the Virtual Environment
-          .<codeblock>pip install DevelopmentPlatformInstaller.2.0.0.0.tar.gz</codeblock></li>
+          .<codeblock>pip install DevelopmentPlatformInstaller_2.0.0.0.tar.gz</codeblock></li>
       </ol>
     </section>
   </body>
