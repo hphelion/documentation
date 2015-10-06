@@ -656,7 +656,7 @@ sudo -i
 </ol>
 <p>
 <b>Note</b>: Installer VM can also be deleted, if it is not deleted already.</p>
-<p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="http://docs.openstack.org/developer/keystone/" scope="external" format="html" >Keystone documentation</xref>.</p>
+<p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="http://docs.openstack.org/developer/identity/" scope="external" format="html" >Keystone documentation</xref>.</p>
 </section>
 <section id="increasequotas"> <title>Troubleshooting: Increasing Quotas</title>
 <p>If the associated project already has existing instances (VMs), the DNSaaS installation will not have sufficient room to complete. An admin must increase the quota levels to allow sufficient room before installation.</p>
