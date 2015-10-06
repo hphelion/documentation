@@ -3,10 +3,10 @@
 <topic id="install_gui">
   <title>Installing HP Helion OpenStack&#174; 2.0 Using the UI</title>
   <body>
-    <section> HP Helion OpenStack 2.0 Beta 2 comes with a UI for installing your cloud. Rather than
-      searching through and editing a number of YAML files to input your specific configuration
-      data, finding the correct location, and maintaing the format of the files, the UI presents
-      fields in which you may enter your information. </section>
+    <section> HP Helion OpenStack 2.0 comes with a UI, the Dayzero Installer,  for installing your
+      cloud. Rather than searching through and editing a number of YAML files to input your specific
+      configuration data, finding the correct location, and maintaing the format of the files, the
+      UI presents fields in which you may enter your information. </section>
     <section>In addition, rather than having to run a series of commands to execute the cobbler and
       ansible scripts that initiate the installation of HP Helion OpenStack, the UI application runs
       them behind the scenes. </section>
@@ -18,6 +18,8 @@
       you cick the Deploy button at the end of the process. That would mean too that if you were to
       try to change anything in the files themselves mid process, the values would get overwritten
       by values you have entered in the GUI before cicking the Deploy button.</section>
+    
+
     <section>These YAML configuration files are now stored in a local git repository as well, as
       explained in <xref href="using_git.dita#topic_u3v_1yz_ct">Using git for Configuration
         Manangement</xref>. </section>
@@ -70,6 +72,16 @@
     <section>In the Assign network groups: External VM network fields, <b>do not</b> add entries for
       CIDR, Gateway, or IP Range, only VLAN ID. Neutron will assign these.<p>When the installation
         is complete, the Ansible log will be displayed on the final page.</p>
+    </section>
+    <section><title>Using the installer securely</title>
+      <p>The Dayzero Installer is a web based application . It runs on the deployer and is implemented
+        in nodejs. Currently this application runs behind Apache 2.0 where requests are proxied to
+        the nodejs Express Web Server. The nodejs Express Server runs on port 3000 and Apache runs
+        on port 79. You should access the installer through Apache and not directly from the Express
+        server. An Example URL looks like this: http://&lt;deployer-host-ip>:79/installer When you
+        finish installing, the  Installer will be disabled via Ansible.</p>
+    </section>
+    <section>
       <p>The GUI is used only once: during the initial installation of your cloud.</p><p>For VSA you
         must follow the steps outlined in the <xref href="cinder/vsa/vsa.dita#topic_gmc_dgk_jt"
             >VSA Configuration</xref>page.</p> After deployment, continue to <xref
