@@ -1,5 +1,5 @@
-%HLM%=Do not abbreviate.  Use Helion Lifecycle Management
-HOS%=Do not abbreviate. Use HP Helion OpenStack
+% HLM[ \.,]%=Do not abbreviate.  Use Helion Lifecycle Management
+ HOS%[ \.,]=Do not abbreviate. Use HP Helion OpenStack
 %[^P] Helion OpenStack%=Change to HP Helion OpenStack
 %baremetalConfig.yml%=baremetalConfig has been merged with servers.yml. The combined servers file is servers.yml"%(servers.yml|rm) 
 % hLinux %=Use Linux for HP Helion or Linux for HP Helion OpenStack.%codeph
