@@ -101,10 +101,6 @@
               VSA</xref>
           </li>
           <li>
-            <xref type="section" href="#topic21822/block-storeserv">Block Storage with 3PAR
-              StoreServ</xref>
-          </li>
-          <li>
             <xref type="section" href="#topic21822/object-storage">Object Storage with Swift</xref>
           </li>
           <li>
@@ -434,10 +430,6 @@ overcloud-controller1-px7gyh74dccx
             VSA</xref>
         </li>
         <li>
-          <xref type="section" href="#topic21822/block-storeserv">Block Storage with 3PAR
-            StoreServ</xref>
-        </li>
-        <li>
           <xref type="section" href="#topic21822/object-storage">Object Storage with Swift</xref>
         </li>
         <li>
@@ -505,11 +497,7 @@ overcloud-controller1-px7gyh74dccx
 
         document.</p><image href="../../media/ha-block-storage.png" id="image_vy2_3cw_ps"
       /></section>
-    <section>
-      <title>Block Storage with 3PAR StoreServ</title>
-      <p>The 3PAR StoreServ device family has several layers of redundancy built in through its
-        hardware architecture. For more information, refer to the 3PAR StoreServ documentation.</p>
-    </section>
+    <section/>
     <section>
       <title>Cinder availability zones</title>
       <p>Cinder availability zones are not supported for general consumption in the current
