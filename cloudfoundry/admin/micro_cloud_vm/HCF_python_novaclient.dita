@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_thy_rjb_pt">
+ <title>Using Python Novaclient</title>
+ <shortdesc>You can use the <codeph><xref href="https://launchpad.net/python-novaclient"
+    format="html" scope="external">python-novaclient</xref></codeph> command-line tool as an
+  alternative to the Horizon web interface. </shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <note type="warning">On 2012-05-08, HP Cloud Services reported a vulnerability in Nova API
+   handling. When a security group that uses a protocol defined in an incorrect casing (for example,
+    <codeph>TCP</codeph> rather than <codeph>tcp</codeph>) is created, later string comparisons fail
+   causing security groups to be set incorrectly.</note>
+  <p>The version recommended for <keyword keyref="pubCloudLong"/> is the <xref
+    href="https://docs.hpcloud.com/cli/nova" format="html" scope="external">HP Extended Python
+    Novaclient</xref>. The standard version is available from the <xref
+    href="https://launchpad.net/nova" format="html" scope="external">Nova project page</xref> or via
+    <codeph>pip</codeph> or <codeph>pypm</codeph>.</p>
+  <p>For <codeph>nova</codeph> to be able to interace with your account, you must set some local
+   environment variables, for example:</p>
+  <codeblock>OS_USERNAME='admin@example.com'
+OS_PASSWORD='passwd'
+OS_TENANT_NAME='admin@example.com'
+OS_AUTH_URL=https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
+OS_REGION_NAME=az-n.region-a.geo-1</codeblock>
+  <note type="tip">For a general overview, see <xref href="https://docs.hpcloud.com/cli/nova"
+    format="html" scope="external">HP Extended Python Novaclient</xref>.</note>
+ </conbody>
+</concept>

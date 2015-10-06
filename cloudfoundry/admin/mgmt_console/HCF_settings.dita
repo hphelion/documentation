@@ -206,7 +206,7 @@
     <dlentry>
      <dt><uicontrol>Client</uicontrol></dt>
      <dd>Sets the version number setting and alternative paths or URLs for alternative or renamed
-      CLI clients</dd>
+      command-line clients</dd>
     </dlentry>
     <dlentry>
      <dt><uicontrol>Look and Feel</uicontrol></dt>
@@ -302,8 +302,8 @@
      <dd>Allows any user to create an organization via the API (disabled by default)</dd>
     </dlentry>
    </dl>
-   <p>These options can also be toggled using the <keyword keyref="CLIfile"/> CLI client with the
-     <b>feature flags</b> commands.</p>
+   <p>These options can also be toggled using the <keyword keyref="CLIfile"/> command-line client
+    with the <b>feature flags</b> commands.</p>
   </section>
   <section>
    <title><uicontrol>Logging</uicontrol></title>

@@ -25,9 +25,9 @@
                     the system. </stepresult>
             </step>
             <step>
-                <cmd/>
+                <cmd><ph conref="HCF_using_mgmt_console.dita#concept_npv_xbm_nt/complete_setup"
+                    /></cmd>
                 <info>
-                    <p conref="HCF_using_mgmt_console.dita#concept_npv_xbm_nt/complete_setup"/>
                     <note conref="HCF_setup_amazon_postinit.dita#task_hsf_m35_4t/system_user_pass"/>
                 </info>
                 <stepresult>

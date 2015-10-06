@@ -26,11 +26,12 @@
             </topicref>
             <topicref href="admin/micro_cloud_vm/HCF_configure_hcf.dita"/>
             <topicref href="admin/micro_cloud_vm/HCF_create_admin_user.dita"/>
+            <topicref href="admin/micro_cloud_vm/HCF_python_novaclient.dita"/>
          </topicref>
-         <!--<topicref href="admin/micro_cloud_vm/HCF_setup_openstack.dita"/>
+         <topicref href="admin/micro_cloud_vm/HCF_setup_openstack.dita"/>
          <topicref href="admin/micro_cloud_vm/HCF_setup_virtualbox.dita"/>
          <topicref href="admin/micro_cloud_vm/HCF_setup_vmware.dita"/>
-         <topicref href="admin/micro_cloud_vm/HCF_setup_vsphere.dita"/>-->
+         <topicref href="admin/micro_cloud_vm/HCF_setup_vsphere.dita"/>
       </topicref>
       <topicref href="admin/micro_cloud_vm/HCF_start_vm.dita"/>
       <topicref href="admin/micro_cloud_vm/HCF_using_mgmt_console.dita"/>

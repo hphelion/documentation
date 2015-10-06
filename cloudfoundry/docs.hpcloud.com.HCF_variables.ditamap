@@ -89,7 +89,7 @@
    <keydef keys="installDir">
       <topicmeta>
          <keywords>
-            <keyword>hcf-directory</keyword>
+            <keyword>hcf-installdir</keyword>
          </keywords>
       </topicmeta>
    </keydef>
