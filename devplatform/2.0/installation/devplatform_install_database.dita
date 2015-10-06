@@ -22,6 +22,7 @@
         of capacity even though there are hosts with free capacity.</p>
 <p>The following steps show how to create three availability zones and assign a compute host to the zone.</p>
 <ol>
+        <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
 <li>Execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and
           "AZ-3".<codeblock>openstack aggregate create --zone AZ-1 aggregate-AZ-1
 openstack aggregate create --zone AZ-2 aggregate-AZ-2
@@ -190,6 +191,7 @@ openstack aggregate create --zone AZ-3 aggregate-AZ-3</codeblock></li>
       hotpools_flavor_names: "m1.medium,m1.small,m1.large"
       disable_rollback: true
       project_id: &lt;project id of user to install service to&gt;   </codeblock></li>
+        <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
          <li>List the available database versions to install:
           <codeblock>openstack hdpi list --os-cloud mycloud | grep database</codeblock>The output
           should look similar
