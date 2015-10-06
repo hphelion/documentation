@@ -27,16 +27,21 @@
     <p>Changes to the rings require several phases to complete the process of deployment
       <!--after modification or adding of new Swift configuration in the YAML file-->. Therefore,
       you need to run the playbooks several times over several days. </p>
-    <p>The following section explains the reason for the requirement of several phases for the
-      change of the ring.<ul id="ul_pgc_plz_4t">
+    <p>The following topic covers the details about ring management:</p>
+    <p>
+      <!--The following section explains the reason for the requirement of several phases for the change of the ring.-->
+      <ul id="ul_pgc_plz_4t">
         <li><xref href="swift_rebalanced_explained.dita#topic_izw_1mz_4t">Rebalance
           Explained</xref></li>
         <li><xref href="swift_preparing_ring_changes.dita#topic_t1y_vjs_4t">Preparing for Ring
             Changes</xref></li>
         <li><xref href="swift_play_book_linked_ring_management.dita#topic_jmm_cnz_4t">Swift
             Playbooks Linked to Ring Management</xref></li>
-        <li>When it is safe to rebalance and deploy a new ring?</li>
-        <li>Applying Input Model Changes to Existing Ring</li>
-      </ul></p>
+        <li><xref href="swift_safe-rebalance-deploy-ring.dita#topic_ohx_j1t_4t">When it is safe to
+            rebalance and deploy a new ring?</xref></li>
+        <li><xref href="swift_input_model_change_existing_rings.dita#topic_vyp_cft_4t">Applying
+            Input Model Changes to Existing Rings</xref></li>
+      </ul>
+    </p>
   </body>
 </topic>
