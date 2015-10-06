@@ -15,9 +15,10 @@
       <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on the
         management network. All traffic to OpenStack services coming in on the public endpoints are
         secured using TLS connections.</p>
-      <p>The following secure service endpoints and their associated ports use TLS:</p>
-      <codeblock>
-<codeph>ceilometer          8777
+      <p>The following secure service endpoints and their associated ports use TLS: [<b>NOTE THESE
+          ENDPOINTS ARE NOT ALL SECURED. REVIEWERS PLEASE NOTE WHICH ARE</b>]</p>
+      
+      <codeblock>ceilometer          8777
 cinder              8776
 glance-api          9292
 glance-registry     9191
@@ -32,9 +33,9 @@ nova-novncproxy     6080
 nova-metadata       8775
 nova-api            8774
 sherpa              21131
-swift-proxy         8080
-</codeph>
-</codeblock>
+swift-proxy         8080</codeblock>
+
+
 
       <p>It is generally recommended that you provide a CA key and certificate generated from a
         well-known certificate authority during the installation process, so trust can be
@@ -114,23 +115,24 @@ swift-proxy         8080
       </dl> <note>Do not enable TLS to the internal loadbalancer. </note></section>
     <section id="configure_cipher">
       <title>Configuring the cipher suite for public endpoints</title> We have set the default
-      cipher suite to be: <codeph>HIGH:!aNULL:!eNULL:!DES:!3DES</codeph>. This is a recommended setting from
-      http://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html
-      You may override this. Open config/haproxy/defaults.yml and edit it. The parameters
-      would be under haproxy_globals list.
+      cipher suite to be: <codeph>HIGH:!aNULL:!eNULL:!DES:!3DES</codeph>. This is a recommended
+      setting from the <xref
+        href="http://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html"
+        format="html" scope="external">OpenStack documentation site</xref>.   You may override this.
+      Open <b>config/haproxy/defaults.yml</b> and edit it. The parameters would be under
+      haproxy_globals list.
       <codeblock>- "ssl-default-bind-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"
 - "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</codeblock>
-      Make the changes as needed. It's best to keep the two options identical. 
-    </section>
+      Make the changes as needed. It's best to keep the two options identical. </section>
     <section id="new_cert"><title>Installing a new certificate</title> You should obtain your own
       certificate and install it in the cloud. When this certificate is ready, please do the
       following and rerun the config-processor and reconfigure. Copy the certificate (containing
       both public and private key) to <b>helion/my_cloud/config/tls/certs/ directory</b> </section>
     <section>Update the new certificate filename in cert-file in
         <b>helion/my_cloud/definition/data/network_groups.yml</b>. If you have already run the
-      config-processor-run.yml playbook whih is required during installation, run the
-      config-processor-clean.yml playbook to clear out your previous configuration before rerunning
-      the configuration procesor: <codeblock>cd ~/helion/hos/ansible
+      config-processor-run.yml playbook which is required during installation, run the
+        <b>config-processor-clean.yml</b> playbook to clear out your previous configuration before
+      rerunning the configuration procesor: <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
       <p>Commit your changes to git.</p>
       <codeblock>cd ~/helion/hos/ansible
