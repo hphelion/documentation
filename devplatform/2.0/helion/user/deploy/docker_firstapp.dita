@@ -30,7 +30,7 @@
     
     
     
-    <section><title>Update and Installing OS Packages</title>
+    <section><title>Update and Installing Operating System Packages</title>
         <p>Create a Dockerfile with the content below. This Dockerfile executes the update using the
         operating system package manager; on openSUSE, this is done with <codeph>zypper</codeph>. </p>
           <codeblock>FROM opensuse:13.2  
