@@ -95,9 +95,6 @@
 <xref type="section" href="#topic21283/block-storage">Block Storage with StoreVirtual VSA</xref>
 </li>
 <li>
-<xref type="section" href="#topic21283/block-storeserv">Block Storage with 3PAR StoreServ</xref>
-</li>
-<li>
 <xref type="section" href="#topic21283/object-storage">Object Storage with Swift</xref>
 </li>
 <li>
@@ -306,9 +303,6 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 </li>
 <li>
 <xref type="section" href="#topic21283/block-storage">Block Storage with StoreVirtual VSA</xref>
-</li>
-<li>
-<xref type="section" href="#topic21283/block-storeserv">Block Storage with 3PAR StoreServ</xref>
 </li>
 <li>
 <xref type="section" href="#topic21283/object-storage">Object Storage with Swift</xref>
