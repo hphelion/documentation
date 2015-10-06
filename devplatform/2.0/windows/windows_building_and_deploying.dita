@@ -116,7 +116,7 @@
 <li>When the tool finishes, you will see a command prompt open in a Virtual Box instance. </li>
 </ol>
 </section>
-<section id="step-2-create-and-initialize-the-os-windows-dea-image"> <title>Step 2: Create and Initialize the OS Windows DEA Image</title>
+<section id="step-2-create-and-initialize-the-os-windows-dea-image"> <title>Step 2: Create and Initialize the Windows DEA Image</title>
 <ol>
 <li> In the Glazier VM command prompt that opens after the end of the previous step, run the
           following
@@ -124,14 +124,14 @@
 <li>Once the image gets created, the image will be initialized automatically.</li>
 </ol>
 </section>
-<section id="step-3-create-and-initialize-the-os-sql-server-express-2012-image-optional"> <title>Step 3: Create and Initialize the OS SQL Server Express 2012 Image (Optional)</title>
+<section id="step-3-create-and-initialize-the-os-sql-server-express-2012-image-optional"> <title>Step 3: Create and Initialize the SQL Server Express 2012 Image (Optional)</title>
 <ol>
 <li> In the Glazier VM command prompt, run the following
           command:<codeblock>New-Image -name "windows 2012r2-sql2012" -GlazierProfilePath "mssql2012"</codeblock></li>
 <li> Once the image gets created, the image will be initialized automatically.</li>
 </ol>
 </section>
-<section id="step-4-create-and-initialize-the-os-sql-server-express-2014-image-optional"> <title>Step 4: Create and Initialize the OS SQL Server Express 2014 Image (Optional)</title>
+<section id="step-4-create-and-initialize-the-os-sql-server-express-2014-image-optional"> <title>Step 4: Create and Initialize the SQL Server Express 2014 Image (Optional)</title>
 <ol>
 <li> In the Glazier VM command prompt, run the following
           command:<codeblock>New-Image -name "windows 2012r2-sql2014" -GlazierProfilePath "mssql2014"</codeblock></li>
