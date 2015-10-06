@@ -91,7 +91,22 @@ bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------  .....
 bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
         This workaround is completed by rebooting the server.</p>
     </section>
-
+    <section id="imageFailure">
+      <p><b>Soft lockup at imaging</b></p>
+      <p>When imaging your nodes, if you see a kernel error of the type "BUG: soft lockup - CPU#10
+        stuck...." you should reset the node and make sure it is imaged properly next time. Note
+        that depending on when you get the error, you may have to rerun
+          <codeph>cobbler-deploy.yml</codeph>. If the bm-reimage playbook says it failed to image
+        the node, then cobbler knows this has occurred and you can reset the node. If not, you can
+        follow the instructions above for <xref href="#reimage" format="dita">reimaging the
+          node</xref>.</p>
+    </section>
+    <p><b>Blank Screen Seen When Monitoring the Imaging Step</b></p>
+    <p>If you are watching the <codeph>os-install</codeph> process on a node via the console output,
+      there can be a pause between 2-3 minutes in length where nothing gets reported to the console
+      screen. This is just after the grub menu has been displayed on a UEFI-based system.</p>
+    <p>This is normal and nothing to be concerned with. The imaging process will continue on after
+      this pause.</p>
     <p><b>If the <codeph>site.yml</codeph> playbook fails, you can query the log for the
       reason</b></p>
     <p>Ansible is good about outputting the errors into the command line output, however if you'd
@@ -115,14 +130,7 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
         <codeblock>export OS_FREEZER_URL={{ backup_freezer_api_url }}</codeblock>
       </p>
     </section>
-    <section id="imageFailure">
-      <b>Soft lockup at imaging</b>
-      <p>When imaging your nodes, if you see a kernel error of the type "BUG: soft lockup - CPU#10
-        stuck...." you should reset the node and make sure it is imaged properly next time. Note
-        that depending on when you get the error, you may have to rerun
-          <codeph>cobbler-deploy.yml</codeph>. If the bm-reimage playbook says it failed to image
-        the node, then cobbler knows this has occurred and you can reset the node. If not, you can
-        follow the instructions above for <xref href="#reimage" format="dita">reimaging the
-          node</xref>.</p></section>
+
+
   </body>
 </topic>
