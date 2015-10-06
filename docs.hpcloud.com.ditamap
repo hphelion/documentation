@@ -86,7 +86,16 @@
       <topicref href="helion/swift/ring_specifications.dita"/>
       <topicref href="helion/swift/storage-policies.dita"/>
     </topicref>
-    <topicref href="helion/swift/check-swift-operation.dita"/>
+    <topicref href="helion/swift/check-swift-operation.dita">
+      <topicref href="helion/swift/swift_utility.dita"/>
+      <topicref href="helion/swift/swiftlm-scan_metering.dita"/>
+      <topicref href="helion/swift/validating_swift_recon.dita"/>
+    </topicref>
+    <topicref href="helion/swift/swift_operational_procedure.dita">
+      <topicref href="helion/swift/swift_resetting_builder_file.dita"/>
+      <topicref href="helion/swift/swift_recovering_builder_file.dita"/>
+      <topicref href="helion/swift/swift_first_proxy_server.dita"/>
+    </topicref>
     <topicref href="helion/swift/troubleshooting.dita">
       <topicref href="helion/swift/deploy_fails_with_msdos_disks.dita"/>
       <topicref href="helion/swift/examine_details_planned_ring_changes_prior_deploy.dita"/>
