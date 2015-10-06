@@ -25,11 +25,13 @@
         <li>On OSX you also need Boot2Docker installed and running. [Boot2Docker does not need
             <codeph>sudo</codeph> commands.]</li>
         <li>On a Linux machine you also need Docker.</li>
-      </ul></section>
+      </ul><note type="important">For security purposes, Docker container deployments are disabled.
+        The organization administrator needs to explicitly enable container deployments.
+      </note></section>
 
     <section><title>Update and Installing Operating System Packages</title>
-        <p>Create a Dockerfile with the content below. This Dockerfile executes an update using the
-        package manager; on openSUSE, this is done with <codeph>zypper</codeph>. </p>
+        <p>Create a Dockerfile with the content below. This Dockerfile executes the update using the
+        operating system package manager; on openSUSE, this is done with <codeph>zypper</codeph>. </p>
 
           <codeblock>FROM opensuse:13.2  
 MAINTAINER Troy Topnik &lt;troyt@activestate.com&gt;
