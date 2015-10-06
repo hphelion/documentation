@@ -27,6 +27,16 @@
       <p> To install the VDS:</p>
       <ol id="ol_z24_nvy_zs">
         <li>Log into your VSD server.</li>
+        <li>Install the RPM Package Manager (RPM) package management system:<ol id="ol_xjh_jv1_pt">
+            <li>Copy the downloaded and extracted
+                <codeph>CloudMgmt-vmware-3.2.2_74-1.x86_64.rpm</codeph> file from HLM host to VSD
+              node in the <codeph>/opt/vsd/Packages/</codeph> directory</li>
+            <li>Change to the <codeph>/opt/vsd/Packages/</codeph> directory.<p>
+                <codeblock>cd /opt/vsd/Packages/</codeblock>
+              </p></li>
+            <li> Execute the following
+              command:<codeblock>rpm -ivh CloudMgmt-vmware-3.2.2_74-1.x86</codeblock></li>
+          </ol></li>
         <li>Copy the downloaded and extracted <codeph>CloudMgmt-vmware.tar.gz</codeph> file from HLM
           host to VSD node in the <codeph>/opt/vsd/</codeph> directory. For more information on
           downloading DCN files, see <xref
