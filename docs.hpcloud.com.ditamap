@@ -146,6 +146,8 @@
     <!-- INSTALLATION -->
     <topicref href="helion/installation_overview.dita" navtitle="Installation - Overview"
       locktitle="yes">
+      <topicref href="helion/administration/wipe_disks.dita" navtitle="Wiping the Disks"
+        locktitle="yes"/>
       <topicref href="helion/beta1_to_beta2_upgrade.dita"/>
       <topicref href="helion/combining_files.dita"
         navtitle="Combining the baremetalConfig.yml and servers.yml Files" locktitle="yes"/>
@@ -153,10 +155,10 @@
         locktitle="yes"/>
       <topicref href="helion/preinstall_checklist.dita" navtitle="Pre-Installation Checklist"
         locktitle="yes"/>
-      <topicref href="helion/bare_installation_kvm.dita"
-        navtitle="Installation for KVM Hypervisor on Baremetal" locktitle="yes"/>
-      <topicref href="helion/bare_installation_esx.dita"
-        navtitle="Installation for ESX Hypervisor on Baremetal" locktitle="yes"/>
+      <topicref href="helion/bare_installation_kvm.dita" navtitle="Installation for KVM Hypervisor"
+        locktitle="yes"/>
+      <topicref href="helion/bare_installation_esx.dita" navtitle="Installation for ESX Hypervisor"
+        locktitle="yes"/>
       <topicref href="helion/bare_installation_esxOLD.dita"
         navtitle="TEST Baremetal Install for ESX Hypervisor" toc="no" locktitle="yes"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
@@ -169,7 +171,7 @@
       <topicref href="helion/postinstall_checklist.dita" navtitle="Post-Installation Checklist"
         locktitle="yes"/>
     </topicref>
-    
+
     <!-- SECURITY -->
     <topichead navtitle="Security">
       <topicref href="helion/security/tls.dita" navtitle="Enabling TLS for Public Endpoints"/>
@@ -177,11 +179,10 @@
         navtitle="Configuring Your Network Securely"/>
       <topicref href="helion/security/encrypted_storage.dita"
         navtitle="Encryption of Passwords and Sensitive Data"/>
-      <topicref href="helion/security/using_apparmor.dita"
-      />
-      
+      <topicref href="helion/security/using_apparmor.dita"/>
+
     </topichead>
-    
+
     <!-- ADMINISTRATION -->
     <topichead navtitle="Administration">
       <topichead navtitle="Minimum Set of Customizations">
@@ -200,8 +201,6 @@
           <topicref href="helion/cinder/verify_backend_configuration.dita"/>
         </topichead>
       </topichead>
-      <topicref href="helion/administration/wipe_disks.dita" navtitle="Wiping the Disks"
-        locktitle="yes"/>
       <topicref href="helion/administration/lbaas_admin.dita" navtitle="Configuring LBaaS"
         locktitle="yes"/>
       <topicref href="helion/administration/configure_monitoring.dita"
@@ -210,17 +209,17 @@
 
     <!-- OPERATIONS -->
     <topichead navtitle="Operations">
-      <topicref href="helion/operations/accessing_horizon.dita" navtitle="Accessing the Horizon Dashboard"
-        locktitle="yes"/>
-      <topicref href="helion/operations/accessing_opsconsole.dita" navtitle="Accessing the Operations Console"
-        locktitle="yes"/>
+      <topicref href="helion/operations/accessing_horizon.dita"
+        navtitle="Accessing the Horizon Dashboard" locktitle="yes"/>
+      <topicref href="helion/operations/accessing_opsconsole.dita"
+        navtitle="Accessing the Operations Console" locktitle="yes"/>
       <topicref href="start.stop.check" toc="no">
         <topicref href="checking.object.storage" toc="no"/>
       </topicref>
-      <topicref href="helion/operations/add_node.dita" />
-      <topicref href="helion/operations/repair_node.dita" />
-      <topicref href="helion/operations/remove_node.dita" />
-      <topicref href="helion/operations/replace_controller.dita" />
+      <topicref href="helion/operations/add_node.dita"/>
+      <topicref href="helion/operations/repair_node.dita"/>
+      <topicref href="helion/operations/remove_node.dita"/>
+      <topicref href="helion/operations/replace_controller.dita"/>
       <topicref href="helion/cinder/vsa/vsa_create_multiple_clusters.dita"/>
       <topicref href="helion/cinder/ceph/adding_new_osd_node.dita"/>
       <topicref href="helion/cinder/singleton_service_cinder.dita"/>
@@ -231,40 +230,41 @@
         <topicref href="helion/bura/restore.dita"/>
       </topicref>
       <topichead navtitle="Monitoring and Logging">
-      <topicref href="helion/operations/monasca.dita" navtitle="Monitoring Service" locktitle="yes">
-        <topicref href="helion/operations/alarms.dita" navtitle="Service Alarm Definitions"
-          locktitle="yes"/>
-      </topicref>
-      <topicref href="helion/operations/centralized_logging.dita"
-        navtitle="Centralized Logging Service" locktitle="yes">
-        <topicref href="helion/operations/logging_settings.dita" navtitle="Logging Settings"
-          locktitle="yes"/>
-      </topicref>
-      <topicref href="helion/operations/opsconsole/overview.dita" navtitle="Operations Console"
-        locktitle="yes">
-        <topichead navtitle="General">
-          <topicref href="helion/operations/opsconsole/dashboard.dita"/>
-          <topicref href="helion/operations/opsconsole/logging.dita"/>
-          <topicref href="helion/operations/opsconsole/alarm_definitions.dita"/>
-          <topicref href="helion/operations/opsconsole/alarm_explorer.dita"/>
-          <topicref href="helion/operations/opsconsole/notification_methods.dita"/>
-          <topicref href="helion/operations/opsconsole/metric_monitoring.dita"/>
-        </topichead>
-        <topichead navtitle="Compute">
-          <topicref href="helion/operations/opsconsole/compute_summary.dita"/>
-          <topicref href="helion/operations/opsconsole/compute_hosts.dita"/>
-          <topicref href="helion/operations/opsconsole/compute_instances.dita"/>
-        </topichead>
-        <topichead navtitle="Networking">
-          <topicref href="helion/operations/opsconsole/networking_summary.dita"/>
-        </topichead>
-        <topichead navtitle="Storage">
-          <topicref href="helion/operations/opsconsole/storage_summary.dita"/>
-        </topichead>
-        <topichead navtitle="Helion Development Platform">
-          <topicref href="helion/operations/opsconsole/hdp_summary.dita"/>
-        </topichead>
-      </topicref>
+        <topicref href="helion/operations/monasca.dita" navtitle="Monitoring Service"
+          locktitle="yes">
+          <topicref href="helion/operations/alarms.dita" navtitle="Service Alarm Definitions"
+            locktitle="yes"/>
+        </topicref>
+        <topicref href="helion/operations/centralized_logging.dita"
+          navtitle="Centralized Logging Service" locktitle="yes">
+          <topicref href="helion/operations/logging_settings.dita" navtitle="Logging Settings"
+            locktitle="yes"/>
+        </topicref>
+        <topicref href="helion/operations/opsconsole/overview.dita" navtitle="Operations Console"
+          locktitle="yes">
+          <topichead navtitle="General">
+            <topicref href="helion/operations/opsconsole/dashboard.dita"/>
+            <topicref href="helion/operations/opsconsole/logging.dita"/>
+            <topicref href="helion/operations/opsconsole/alarm_definitions.dita"/>
+            <topicref href="helion/operations/opsconsole/alarm_explorer.dita"/>
+            <topicref href="helion/operations/opsconsole/notification_methods.dita"/>
+            <topicref href="helion/operations/opsconsole/metric_monitoring.dita"/>
+          </topichead>
+          <topichead navtitle="Compute">
+            <topicref href="helion/operations/opsconsole/compute_summary.dita"/>
+            <topicref href="helion/operations/opsconsole/compute_hosts.dita"/>
+            <topicref href="helion/operations/opsconsole/compute_instances.dita"/>
+          </topichead>
+          <topichead navtitle="Networking">
+            <topicref href="helion/operations/opsconsole/networking_summary.dita"/>
+          </topichead>
+          <topichead navtitle="Storage">
+            <topicref href="helion/operations/opsconsole/storage_summary.dita"/>
+          </topichead>
+          <topichead navtitle="Helion Development Platform">
+            <topicref href="helion/operations/opsconsole/hdp_summary.dita"/>
+          </topichead>
+        </topicref>
       </topichead>
     </topichead>
 
