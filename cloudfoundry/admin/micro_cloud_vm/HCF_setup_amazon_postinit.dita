@@ -56,10 +56,10 @@
                 <cmd>Direct your browser to the hostname that you have configured and use the
                         <uicontrol>Welcome</uicontrol> view to create the first administrator. </cmd>
                 <info>
-                    <note id="system_user_pass" type="important"><draft-comment author="michaelk"
-                            >This element is single-sourced.</draft-comment>The password that you
-                        use here will become the <keyword keyref="prodShort"/> system user password
-                        for subsequent logins using SSH.</note>
+                    <note id="system_user_pass" type="important">The password that you use here will
+                        become the <keyword keyref="prodShort"/> system user password for subsequent
+                        logins using SSH.<draft-comment author="michaelk">This element is
+                            single-sourced.</draft-comment></note>
                     <note>To set up a multi-node, clustered <keyword keyref="prodShort"/>
                         <b>PaaS</b>, see <b>Cluster Setup</b>.</note>
                 </info>
