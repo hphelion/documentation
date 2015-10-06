@@ -80,7 +80,7 @@
         <li>Select the location.</li>
         <li>Select the keyboard layout.</li>
         <li>Select the primary network interface, if prompted:<ul>
-            <li>Assign IP address, netmask</li>
+            <li>Assign IP address, netmask, default gateway</li>
           </ul></li>
         <li>Create new account:<ul>
             <li>Enter a username.</li>
@@ -93,28 +93,7 @@
       </ol>
       <p>At the end of this section you should have a node set up with hLinux on it.</p>
     </section>
-    <section id="protection"><title>Protecting Sensitive Data on the Deployer</title>
-      <p>There are a number of mechanisms that can be used to protect sensitive data such as
-        passwords, some Ansible inputs, and the SSH key used by Ansible on the deployer. See the
-        installation section below for details. Please remember the need to guard against exposure
-        of your environment variables, which may happen through observation over the shoulder.</p>
-      <p>There are instructions included in the sections below that show how to encrypt your data
-        using the <codeph>hosencrypt.py</codeph> script. You may want to change the encryption keys
-        used to protect your sensitive data in the future and this shows you how:</p>
-      <ul>
-        <li><b>SSH keys</b> - Run the command below to change the passphrase used to protect the
-          key: <codeblock>ssh-keygen -f id_rsa -p</codeblock></li>
-        <li><b>Configuration Processor Key</b> - If you wish to change an encryption password that
-          you have already used when running the Configuration Processor then enter the existing
-          password at the first prompt and the new password at the second prompt when running the
-          Configuration Processor playbook. See <xref href="#install_kvm/encrypt">Encrypting
-            Password during Configuration Processor</xref> for more details.</li>
-        <li><b>iLO passwords, VSA password if encrypted with <codeph>hosencrypt.py</codeph></b> -
-          Rerun the utility specifying a new encryption key when prompted. You will need to enter
-          the plaintext passwords at the password prompt.</li>
-      </ul>
-    </section>
-    <section id="HLM_Node_Personalization">
+     <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
       <note>It's critical that you don't run as root. Run as the user you just created (or stack if
         you left the default of "stack"), but do not run as root.</note>
