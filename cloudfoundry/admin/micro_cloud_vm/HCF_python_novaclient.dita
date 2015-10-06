@@ -3,8 +3,8 @@
 <concept id="concept_thy_rjb_pt">
  <title>Using Python Novaclient</title>
  <shortdesc>You can use the <codeph><xref href="https://launchpad.net/python-novaclient"
-    format="html" scope="external">python-novaclient</xref></codeph> command-line tool as an
-  alternative to the Horizon web interface. </shortdesc>
+        format="html" scope="external">python-novaclient</xref></codeph> command-line tool as an
+    alternative to the Horizon web interface. </shortdesc>
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
