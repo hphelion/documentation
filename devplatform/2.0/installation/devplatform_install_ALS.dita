@@ -23,7 +23,8 @@
           href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
           format="html" scope="external">client configuration documentation</xref>. <note>The
           Identity URL can be found in Horizon at: <b>Project</b> &gt; <b>Compute</b> &gt; <b>Access
-            &amp; Security</b> &gt; <b>API Access</b>. Note the URL for the Identity
+            &amp; Security</b> &gt; <b>API Access</b>. Note the Service Endpoint URL for the
+          Identity
         Service.</note><codeblock>clouds:
   mycloud:
     codn_username: hdnuser@domain.com
@@ -36,6 +37,7 @@
       project_name: &lt;admin project name&gt;
       username: &lt;admin user name&gt;
       password: &lt;admin password&gt;</codeblock></li>
+      <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
       <li>List the available ALS versions to
         install.<codeblock>openstack hdpi list --os-cloud mycloud | grep als</codeblock>The output
         should include:<codeblock>| als | wscatalog.2670 | 2.0.0 | available |</codeblock></li>
