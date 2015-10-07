@@ -292,10 +292,7 @@ MONITORING AND LOGGING
 
     <!-- CONCEPTS -->
     <topichead navtitle="Conceptual Overviews">
-
-      <topichead navtitle="High Availability"> </topichead>
-
-
+<topicref href="helion/high_availability.dita" />
     </topichead>
 
 
