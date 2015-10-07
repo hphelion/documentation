@@ -15,12 +15,12 @@
     </prodinfo>
   </topicmeta>
   <topicref href="helion/eula.dita" toc="no"/>
-  <topicref href="helion/provision_moonshot_nodes.dita"/>
   <!-- BURA -->
   <topicref href="helion/bura/bura_overview.dita" navtitle="Backup and Restore" locktitle="yes">
     <topicref href="helion/bura/backup.dita"/>
     <topicref href="helion/bura/restore.dita"/>
   </topicref>
+  <topicref href="helion/provision_moonshot_nodes.dita"/>
 
   <!-- keystone identity -->
   <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Service"
