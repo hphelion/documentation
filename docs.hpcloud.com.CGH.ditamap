@@ -90,6 +90,8 @@
       navtitle="User Guide" locktitle="yes"/>
     <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
       navtitle="Administrator Guide" locktitle="yes"/>
+    <topicref href="CarrierGrade/AdminGuide/Logging/CHG-2-logging-overview.dita"
+      navtitle="Centralized Logging" locktitle="yes"/>
     <topicref href="CarrierGrade/Troubleshooting/CGH-2-troubleshooting.dita"
       navtitle="Troubleshooting" locktitle="yes"/>
     <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
