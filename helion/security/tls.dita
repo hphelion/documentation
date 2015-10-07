@@ -15,25 +15,25 @@
       <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on the
         management network. All traffic to OpenStack services coming in on the public endpoints are
         secured using TLS connections.</p>
-      <p>The following secure service endpoints and their associated ports use TLS: [<b>NOTE THESE
-          ENDPOINTS ARE NOT ALL SECURED. REVIEWERS PLEASE NOTE WHICH ARE</b>]</p>
+      <p>The following secure service endpoints and their associated ports use TLS: </p>
       
-      <codeblock>ceilometer          8777
-cinder              8776
-glance-api          9292
-glance-registry     9191
-heat-api            8004
-heat-cfn            8000
-heat-cloudwatch     8003
-horizon             443
-keystone-admin      35357
-keystone-public     5000
-neutron             9696
-nova-novncproxy     6080
-nova-metadata       8775
-nova-api            8774
-sherpa              21131
-swift-proxy         8080</codeblock>
+      <codeblock>HEA-ACF-mgmt:8000 heat-api-cfn (cloud foundry) 
+SHP-API-mgmt:21131 sherpa-api 
+FRE-API-mgmt:9090 freezer-api 
+OPS-WEB-mgmt:9095 ops-console-web 
+GLA-API-mgmt:9292 glance-api 
+HEA-ACW-mgmt:8003 heat-api-cloudwatch 
+MON-API-mgmt:8070 monasca-api 
+NEU-SVR-mgmt:9696 neutron-server 
+CEI-API-mgmt:8777 ceilometer-api 
+NOV-VNC-mgmt:6080 nova-vnc 
+KEY-API-mgmt:5000 keystone-api 
+HZN-WEB-mgmt:443 horizon-web 
+CND-API-mgmt:8776 cinder-api 
+NOV-API-mgmt:8774 nova-api 
+HEA-API-mgmt:8004 heat-api 
+SWF-PRX-mgmt:8080 swift-proxy 
+</codeblock>
 
 
 
