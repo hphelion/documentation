@@ -198,8 +198,9 @@ resource-nodes:
             node.</p><p>Moonshot server comes with only 2 NICs. One is used for PXE and another is
             used as truck 9. <note>NIC binding is not supported due to limited number of
               NICs.</note></p></li>
-        <li><codeph>server_roles.yml</codeph><p>You specify the usage of the server or where you want to use a particular server. A sample file
-            of <codeph>server_roles.yml</codeph> is shown
+        <li><codeph>server_roles.yml</codeph><p>You specify the usage of the server or where you
+            want to use a particular server. A sample file of <codeph>server_roles.yml</codeph> is
+            shown
             below:<codeblock>---
   product:
     version: 2
@@ -211,8 +212,8 @@ resource-nodes:
       disk-model: DISK_SET_COMPUTE_MOONSHOT</codeblock></p><p>Once
             you have modified the YAML files as per the moonshot node requirement, you can proceed
             with the installation. Refer to<b> </b><xref
-              href="bare_installation_kvm.dita#install_kvm">installation guide</xref> (need to
-            insert the link) for more details.</p></li>
+              href="bare_installation_kvm.dita#install_kvm">installation guide</xref> for more
+            details.</p></li>
       </ul>
       <p> </p>
     </section>
