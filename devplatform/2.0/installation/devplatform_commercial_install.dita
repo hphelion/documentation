@@ -42,14 +42,10 @@
 
   <li>
     <xref href="#id_xn3_1xw_ft" format="dita">Install the Database Service</xref> </li>
-  <li>
+<!--  <li>
     <xref href="#id_hm5_bxw_ft" format="dita">Install the Messaging Service</xref>
-</li>
-<li>
-  <xref href="#id_o5g_bxw_ft" format="dita">Install the Marketplace Service</xref>
-</li>
-  <li>  <xref href="#id_mwp_hxw_ft" format="dita">Install the Vertica Application for the Marketplace</xref>
-  </li>
+</li>-->
+
 </ul>
 </section>
   
@@ -69,17 +65,9 @@
   <topic id="id_xn3_1xw_ft" conref="devplatform_install_database.dita#topic_vsf_hnh_ts">
     <title>Install the Database Service</title>
   </topic>
-  <topic id="id_hm5_bxw_ft" conref="devplatform_install_messaging.dita#topic_t3w_fnh_ts">
+  <!--<topic id="id_hm5_bxw_ft" conref="devplatform_install_messaging.dita#topic_t3w_fnh_ts">
     <title>Install the Message Service</title>
-  </topic>
-  <topic id="id_o5g_bxw_ft" conref="devplatform_install_marketplace.dita#topic_z1r_3nh_ts">
-    <title>Install the Marketplace</title>
-  </topic>
-  <topic id="id_mwp_hxw_ft" conref="devplatform.vertica.install.dita#topic6367">
-    <title>Install the Vertica Application in the Marketplace</title>
-  </topic>
- 
- 
+  </topic>-->
  
   
   
