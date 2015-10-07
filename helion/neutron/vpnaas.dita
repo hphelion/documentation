@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0VPNaaS">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 VPNaaS Configuration</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring VPN as a Service
+    (VPNaaS)</title>
   <body>
     <p><b>HP Helion OpenStack 2.0 VPNaaS Configuration</b></p>
     <p>This document describes the configuration process and requirements for the HP Helion

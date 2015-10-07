@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0FWaaS">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 FWaaS Configuration</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Firewall as a Service
+    (FWaaS)</title>
   <body>
     <p>HP Helion OpenStack 2.0 FWaaS Configuration</p>
     <p>Firewall as a Service (FWaaS) is an advance networking service that introduces firewall
