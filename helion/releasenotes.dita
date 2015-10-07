@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="release_notes">
-  <title>Beta 2: Release Notes</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Release Notes</title>
   <body>
     <p>This document provides an overview of the features contained within HP Helion <tm
         tmtype="reg">OpenStack</tm> 2.0 Beta 2, including known issues and workarounds for this
@@ -105,20 +105,21 @@
       <p><b>Dedicated Deployer Node No Longer Required</b></p>
       <p>You can now use either a dedicated deployer node or setup the deployer on your first
         controller node. If you choose to use your first controller node as your deployer, ensure
-        that your <codeph>baremetalConfig.yml</codeph> file contains the <codeph>is_deployer:
+        that your <codeph>servers.yml</codeph> file contains the <codeph>is-deployer:
           true</codeph> notation in the options. If you are using a dedicated deployer node you can
-        omit this. Here is an example snippet of a <codeph>baremetalConfig.yml</codeph> file where a
+        omit this. Here is an example snippet of a <codeph>servers.yml</codeph> file where a
         user is using their first controller node as their deployer:
-        <codeblock>
-node_name: "ccn-0001"
-role: "ROLE-CONTROLLER"
-pxe_mac_addr: "b2:72:8d:ac:7c:6f"
-pxe_interface: "eth2"
-pxe_ip_addr: "192.168.10.3"
-ilo_ip: "192.168.9.3"
-ilo_user: "admin"
-ilo_password: "password"
-<b>is_deployer: true</b></codeblock></p>
+        <codeblock># Controllers
+- id: controller1
+  ip-addr: 192.168.10.3
+  role: CONTROLLER-ROLE
+  server-group: RACK1
+  nic-mapping: HP-DL360-4PORT
+  mac-addr: b2:72:8d:ac:7c:6f
+  ilo-ip: 192.168.9.3
+  ilo-password: password
+  ilo-user: admin
+  <b>is-deployer: true</b></codeblock></p>
       <p><b>The Installer only supports English language</b></p>
       <p>The deployer installation process prompts you to select a language, however only the
         English language as been tested. Therefore, at this time that is the only supported
@@ -157,7 +158,7 @@ ilo_password: "password"
       <ul>
         <li>
           <p>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
-            balancing feature set. Helion OpenStack 2.0 includes the V2 version which allows
+            balancing feature set.  HP Helion OpenStack 2.0 includes the V2 version which allows
             implementation uses haproxy but third-party Load Balancers can be integrated as well. In
             case that a third-party driver doesn’t exist for LBaaS V2 installing LBaaS V1 instead of
             V2 is supported.</p>
@@ -169,7 +170,7 @@ ilo_password: "password"
         <li>
           <p>FWaaS (FireWall-as-a-Service) is a Neutron extension that introduces a firewall feature
             set. The included reference implementation is using iptables to block traffic but
-            third-party Firewalls can be integrated with this extension into Helion OpenStack as
+            third-party Firewalls can be integrated with this extension into HP Helion OpenStack as
             well.</p>
           <ul>
             <li>For more information, see: <xref href="neutron/fwaas.dita">Firewall (FWaaS)
@@ -187,7 +188,7 @@ ilo_password: "password"
           </ul>
         </li>
         <li>
-          <p>Multiple networks is a feature in Helion OpenStack 2.0 that enables bridging of
+          <p>Multiple networks is a feature in HP Helion OpenStack 2.0 that enables bridging of
             multiple external physical networks to neutron network. Using this functionality a
             tenant can dictate the path taken by the data in the physical network outside the cloud.
             It can also be used for multi-homing to two physical networks.</p>
@@ -234,8 +235,8 @@ ilo_password: "password"
       <p><b>Monasca-based Monitoring</b></p>
       <p>Monasca is a multi-tenant, scalable, fault-tolerant, monitoring service. It uses a REST API
         for high-speed metrics processing and querying, and has a streaming alarm and notification
-        engine. In the Helion OpenStack 2.0 release, the OpenStack monitoring standard, Monasca, is
-        supported as the Helion OpenStack monitoring solution with the following exceptions (which
+        engine. In the HP Helion OpenStack 2.0 release, the OpenStack monitoring standard, Monasca, is
+        supported as the HP Helion OpenStack monitoring solution with the following exceptions (which
         are not implemented):</p>
       <ul>
         <li>Transform Engine</li>
@@ -260,7 +261,7 @@ ilo_password: "password"
       <p>Learn more about Centralized Logging here: <xref href="logging/centralized_logging.dita"
           >Centralized Logging Overview</xref></p>
       <!--
-<p><b>Backup and Restore Capabilities for the Control Plane</b> &#154; Allows you to backup and recover your Helion OpenStack</tm> environment with RPO=0.</p>
+<p><b>Backup and Restore Capabilities for the Control Plane</b> &#154; Allows you to backup and recover your HP Helion OpenStack</tm> environment with RPO=0.</p>
 -->
     </section>
     <!--<section><title>OpenStack Services inlcuded in HP Helion OpenStack</title><p>The following table list a high level overview of  the OpenStack projects/services which are included in HP Helion OpenStack and their status. Only official upstream OpenStack projects are included, not non-OpenStack add-ons that originate elsewhere. <note>If the service is not listed in the table then it is not present in HP Helion OpenStack.</note></p><p><simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_q2l_d1c_lt"><strow><stentry>Service Name</stentry><stentry>Status in HOS 2.0</stentry></strow><strow><stentry>Barbican</stentry><stentry>Not Included</stentry></strow><strow><stentry>Ceilometer</stentry><stentry>GA</stentry></strow><strow><stentry>Cinder</stentry><stentry>GA</stentry></strow><strow><stentry>Designate</stentry><stentry>In-Cloud Service (Installed Separately)</stentry></strow><strow><stentry>Glance</stentry><stentry>GA</stentry></strow><strow><stentry>Heat</stentry><stentry>GA</stentry></strow><strow><stentry>Horizon</stentry><stentry>GA</stentry></strow><strow><stentry>Ironic</stentry><stentry>Not Included</stentry></strow><strow><stentry>Keystone</stentry><stentry>GA</stentry></strow><strow><stentry>Magnum</stentry><stentry>Not Included</stentry></strow><strow><stentry>Manila</stentry><stentry>Not Included</stentry></strow><strow><stentry>Monasca</stentry><stentry>GA</stentry></strow><strow><stentry>Neutron</stentry><stentry>GA</stentry></strow><strow><stentry>Neutron-FWaaS</stentry><stentry>non-core</stentry></strow><strow><stentry>Neutron-LBaaS v1</stentry><stentry>Not recommended</stentry></strow><strow><stentry>Neutron-LBaaS v2</stentry><stentry>non-core</stentry></strow><strow><stentry>Neutron-Octavia</stentry><stentry>non-core (TBC)</stentry></strow><strow><stentry>Neutron-VPNaaS</stentry><stentry>non-core</stentry></strow><strow><stentry>Nova</stentry><stentry>GA</stentry></strow><strow><stentry>Swift</stentry><stentry>GA</stentry></strow><strow><stentry>Tempest</stentry><stentry>GA</stentry></strow></simpletable></p></section>-->

@@ -5,7 +5,7 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Monitoring Service</title>
   <body>
     <section id="config">
-      <p>In Helion OpenStack 2.0 you will have the option to specify a SMTP server for email
+      <p>In HP Helion OpenStack 2.0 you will have the option to specify a SMTP server for email
         notifications and a database platform you want to use for the Metrics Database.  These steps
         will assist in this process.</p>
     </section>
@@ -67,7 +67,7 @@
         is free to use, up to 12TB, for all paid Helion customers as a Helion operational database
         <!--(please see <xref href="http://docs-staging.hpcloud.com/hos2.0beta1/#helion/eula.html"
           format="html" scope="external">Helion EULA</xref>)-->.
-        Vertica is the recommended database for Helion OpenStack.</p>
+        Vertica is the recommended database for HP Helion OpenStack.</p>
       <p>You can learn more about Vertica here: <xref
           href="https://www.vertica.com/hp-vertica-documentation/" scope="external" format="html"
           >Vertica Documentation</xref></p>

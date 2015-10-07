@@ -5,7 +5,7 @@
   <body>
     <section id="about">
       <p>In order for your Compute instances to reach the internet you need to have an external
-        network setup. The Helion OpenStack installer provides an Ansible playbook that will create
+        network setup. The HP Helion OpenStack installer provides an Ansible playbook that will create
         this network for use across your Projects.</p>
     </section>
     <section id="playbook"><title>Run the Playbook</title>

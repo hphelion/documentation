@@ -19,13 +19,13 @@
   <!-- NEW TOC STUFF, see https://etherpad.hpcloud.net/p/HOS2.0_doc_structure for details -->
   <topicref href="home.dita"/>
   <topicref href="helion/index.dita">
-    <topicref href="helion/technical_overview.dita" navtitle="Technical Overview"/>
+    <topicref href="helion/technical_overview.dita" navtitle="Technical Overview" locktitle="yes"/>
     <topicref href="helion/input_model.dita" navtitle="HP Helion OpenStack 2.0 Input Model"
       locktitle="yes"/>
     <topicref href="helion/example_configs.dita" navtitle="Example Configurations" locktitle="yes"/>
     <topicref href="helion/hardware.dita" navtitle="Hardware Requirements" locktitle="yes"/>
     <topicref href="helion/releasenotes.dita" navtitle="Release Notes" locktitle="yes"/>
-    <topicref href="helion/faq.dita"/>
+    <topicref href="helion/faq.dita" navtitle="Frequently Asked Questions" locktitle="yes"/>
     <topicref href="helion/eula.dita" toc="no"/>
     <!-- INSTALLATION -->
     <topicref href="helion/installation_overview.dita" navtitle="Installation" locktitle="yes">

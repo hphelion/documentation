@@ -8,7 +8,7 @@
         an Ansible playbook included as part of the installation that will assist in this tasks.</p>
     </section>
     <section id="prereq"><title>Pre-requisites</title>
-      <p>If you're wanting to wipe your disks but you've previously run through a Helion OpenStack
+      <p>If you're wanting to wipe your disks but you've previously run through a HP Helion OpenStack
         installation, chances are you will get an error telling you that <codeph>osconfig</codeph>
         has already run on your nodes. In order to successfully use the
           <codeph>wipe_disks.yml</codeph> playbook below you will need to SSH to each of the nodes
