@@ -6,7 +6,7 @@
 
     <section id="intro">
       <p>
-        <note><b>THIS DOCUMENT IS IN NO WAY READY FOR GA AND NEEDS MUCH UPDATING. ESPECIALLY WRT TO PORTS LISTED</b></note>
+        <note><b>THIS DOCUMENT IS IN NO WAY READY FOR GA AND NEEDS MUCH UPDATING.</b></note>
       </p>
       
       <p>The Transport Layer Security (TLS) protocol, successor of SSL, provides the mechanisms to
