@@ -63,8 +63,7 @@
               <entry>--droplets</entry>
               <entry> Limit for the number of droplets per application that are stored (older
                 droplets that exceed this quota are removed and their associated versions can no
-                longer be restored). This option is new in Helion <tm tmtype="reg">OpenStack</tm>
-                1.1</entry>
+                longer be restored).</entry>
             </row>
             <row>
               <entry>--mem</entry>
@@ -83,7 +82,7 @@
             </row>
             <row>
               <entry>--no-trial-db-allowed</entry>
-              <entry>Complementary alias of --trial-db-allowed. Applies to Helion OpenStack 1.0
+              <entry>Complementary alias of --trial-db-allowed. Applies to HP Helion OpenStack 1.0
                 only.</entry>
             </row>
             <row>
@@ -113,7 +112,7 @@
             </row>
             <row>
               <entry>--trial-db-allowed</entry>
-              <entry>Applications can use trial databases. Applies to Helion OpenStack 1.0
+              <entry>Applications can use trial databases. Applies to HP Helion OpenStack 1.0
                 only.</entry>
             </row>
           </tbody>

@@ -17,7 +17,6 @@
 </metadata>
 </prolog>
 <body>
-<p>These commands are new in Helion <tm tmtype="reg">OpenStack</tm> Development Platform 1.1</p>
 <ul>
 <li>
 <xref type="section" href="#topic3247/command-migrate">helion migrate</xref>: Move the application to a different space.</li>
