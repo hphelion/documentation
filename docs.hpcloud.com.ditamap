@@ -207,7 +207,7 @@
       <topicref href="helion/cinder/singleton_service_cinder.dita"/>
       <topicref href="helion/cinder/brocade_zone_manager.dita" navtitle="Brocade Zone Manager"
         locktitle="yes"/>
-      <topicref href="helion/provision_moonshot_nodes.dita"/>
+      <topicref href="helion/adding_moonshot_nodes.dita"/>
       <topicref href="helion/bura/bura_overview.dita">
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>

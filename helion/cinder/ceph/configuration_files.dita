@@ -12,8 +12,7 @@
       <p>The configuration files are as follows:<ul id="ul_vr3_dqw_gt">
           <li><xref href="configuration_files.dita#config_files/ring" type="section"
             >ring.yml</xref></li>
-          <li><xref href="configuration_files.dita#config_files/baremetalConfig.yml" type="section"
-              >baremetalConfig.yml</xref></li>
+          <li><!--<xref href="configuration_files.dita#config_files/baremetalConfig.yml" type="section">baremetalConfig.yml</xref>--></li>
           <li><xref href="configuration_files.dita#config_files/ccp" type="section"
             >ccp.yml</xref></li>
           <li><xref href="#config_files/disks-compute" format="dita">disks_compute.yml</xref></li>
@@ -68,87 +67,7 @@ ring-specifications:
             replica-count: 3</codeblock>
       </p></section>
     <section id="baremetalConfig.yml">
-      <title>baremetalConfig.yml</title>
-      <p>The values you enter in the <codeph>baremetal.yml</codeph> file are the details about each
-        of the servers in your environment. The details of the values are obtained from the iLO
-        console or from your vlan setup information.</p>
-      <p>The example file is as
-        follows:<codeblock>---
-  product:
-    version: 2
-  <b>baremetal_network:
-    subnet: 192.168.50.0
-    netmask: 255.255.255.0
-    gateway: 192.168.50.1
-    name_server: 16.110.135.51
-    server_interface: eth1</b>
-  baremetal_servers:
-    -
-      node_name: controller-0001
-      node_type: CCN-001-001
-      <b>pxe_mac_addr: 5C:B9:01:78:AE:48
-      pxe_interface: eth0
-      pxe_ip_addr: 192.168.50.10
-      ilo_ip: 10.1.195.64
-      ilo_user: Administrator
-      ilo_password: password</b>
-    -
-      node_name: controller-0002
-      node_type: CCN-001-001
-      <b>pxe_mac_addr: 5C:B9:01:78:9E:E8
-      pxe_interface: eth0
-      pxe_ip_addr: 192.168.50.11
-      ilo_ip: 10.1.195.65
-      ilo_user: Administrator
-      ilo_password: password</b>
-    -
-      node_name: controller-0003
-      node_type: CCN-001-001
-      <b>pxe_mac_addr: 5C:B9:01:78:7D:88
-      pxe_interface: eth0
-      pxe_ip_addr: 192.168.50.12
-      ilo_ip: 10.1.195.66
-      ilo_user: Administrator
-      ilo_password: password</b>
-    -
-      node_name: compute-0001
-      node_type: CPN-001-001
-      <b>pxe_mac_addr: 5C:B9:01:78:7D:08
-      pxe_interface: eth0
-      pxe_ip_addr: 192.168.50.13
-      ilo_ip: 10.1.195.67
-      ilo_user: Administrator
-      ilo_password: password</b>
-    -
-      node_name: osd-0001
-      node_type: CON-001-001
-      <b>pxe_mac_addr: 5C:B9:01:78:AE:08
-      pxe_interface: eth0
-      pxe_ip_addr: 192.168.50.14
-      ilo_ip: 10.1.195.68
-      ilo_user: Administrator
-      ilo_password: password</b>
-    -
-      node_name: osd-0002
-      node_type: CON-001-001
-     <b> pxe_mac_addr: 5C:B9:01:78:7D:78
-      pxe_interface: eth0
-      pxe_ip_addr: 192.168.50.15
-      ilo_ip: 10.1.195.69
-      ilo_user: Administrator
-      ilo_password: password</b>
-    -
-      node_name: osd-0003
-      node_type: CON-001-001
-      <b>pxe_mac_addr: 5C:B9:01:78:3F:D8
-      pxe_interface: eth0
-      pxe_ip_addr: 192.168.50.16
-      ilo_ip: 10.1.195.70
-      ilo_user: Administrator
-      ilo_password: password</b></codeblock></p>
-    </section>
-    <section id="ccp"
-        ><b>ccp.yml</b><p><!--Copying the <codeph>ccpl.yml</codeph> file without any modification.--></p><p>The
+      <b>ccp.yml</b><p><!--Copying the <codeph>ccpl.yml</codeph> file without any modification.--></p><p>The
         example file is as
       follows:</p><codeblock>---
   product:
