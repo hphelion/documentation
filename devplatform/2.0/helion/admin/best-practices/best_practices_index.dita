@@ -120,8 +120,7 @@ minor fixes to particular components) can be applied in place using the
 command.</p>
 <p>
         <note> If there is a web proxy on your network between the ALS systems and the ActiveState
-          servers, first configure all nodes as per the Proxy Settings
-          \&lt;server-config-http-proxy&gt; documentation.</note>
+          servers, first configure all nodes as per the <xref href="../server/https_and_ssl.dita#topic_gwr_qgd_ws/http-proxy">Proxy Settings</xref> documentation.</note>
       </p>
 <p>To see a list of patches available from HP, run the following
 command on any Application Lifecycle Service VM:</p>
@@ -276,10 +275,8 @@ some shell operations performed in the export require <codeph>sudo</codeph> when
 <codeblock>kato data import --cluster helion-host.example.com</codeblock>
 </section>
 <section id="upgrade"> <title>Upgrading</title>
-<p>The <i>kato node upgrade</i> command was added in this version to allow upgrading Application Lifecycle Service clusters in place. See
-<xref href="../server/upgrade.dita">Upgrading Application Lifecycle Service</xref> for full
-instructions.</p>
-<p>The <i>kato data import</i> command automatically detects if you are upgrading from version 2.x to 3.x and does some special processing to account for differences in the two versions:</p>
+<p>The <i>kato data import</i> command automatically detects if you are upgrading from earlier
+        versions:</p>
 <ul>
 <li>Users will be imported, and each user will be added to their own Organization.</li>
 <li>Existing admin users will have corresponding (global) admin privileges in the new system.</li>
