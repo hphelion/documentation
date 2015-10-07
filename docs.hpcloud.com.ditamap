@@ -87,8 +87,7 @@
 
       </topichead>
 
-      <topicref href="helion/administration/lbaas_admin.dita" navtitle="Configuring LBaaS"
-        locktitle="yes"/>
+ 
       <topicref href="helion/administration/configure_monitoring.dita"
         navtitle="Configuring Monitoring" locktitle="yes"/>
 
@@ -159,24 +158,15 @@
           locktitle="yes"/>
       </topicref>
       <!-- end cinder -->
+      
+      
       <!-- Neutron -->
       <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Service"
         locktitle="yes">
-        <topicref href="helion/neutron/lbaas.dita" locktitle="yes">
-          <topicmeta>
-            <navtitle>Load Balancer (LBaaS)</navtitle>
-          </topicmeta>
-        </topicref>
-        <topicref href="helion/neutron/fwaas.dita" locktitle="yes">
-          <topicmeta>
-            <navtitle>Firewall (FWaaS)</navtitle>
-          </topicmeta>
-        </topicref>
-        <topicref href="helion/neutron/vpnaas.dita" locktitle="yes">
-          <topicmeta>
-            <navtitle>VPN (VPNaaS)</navtitle>
-          </topicmeta>
-        </topicref>
+        <topicref href="helion/neutron/lbaas_admin.dita" navtitle="Configuring Load Balancing as a Service (LBaaS)"
+          locktitle="yes"/>
+        
+
         <topicref href="helion/neutron/multinetwork.dita" locktitle="yes">
           <topicmeta>
             <navtitle>Multiple External Networks</navtitle>
@@ -279,7 +269,16 @@ MONITORING AND LOGGING
         locktitle="yes"/>
       <topicref href="helion/user/lbaas.dita" navtitle="Creating a Load Balancer" locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
-
+      <topicref href="helion/neutron/fwaas.dita" locktitle="yes" >
+        <topicmeta>
+          <navtitle>Configuring Firewall as a Service (FWaaS)</navtitle>
+        </topicmeta>
+      </topicref>
+      <topicref href="helion/neutron/vpnaas.dita" locktitle="yes">
+        <topicmeta>
+          <navtitle>Configuring VPN as a Service (VPNaaS)</navtitle>
+        </topicmeta>
+      </topicref>
       <!-- horizon -->
       <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
         locktitle="yes" toc="yes" />

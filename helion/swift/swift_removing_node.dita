@@ -5,7 +5,7 @@
     Node<?oxy_custom_end?></title>
   <body>
     <p>This process is used when you want to remove one or more node permanently from the Swift
-      system. This process include three phases as follows:<ul id="ul_vs4_rcg_pt">
+      system. This process has three phases as follows:<ul id="ul_vs4_rcg_pt">
         <li>Removing the node's drives from the rings - move data off the node and store it on the
           remaining nodes.</li>
         <li>Disabling Swift on the node - prevent the node from participating in the Swift
