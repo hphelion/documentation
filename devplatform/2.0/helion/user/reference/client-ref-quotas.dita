@@ -41,7 +41,7 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="command-quota-configure"> <title>helion quota configure &lt;<i>name</i>&gt;</title>
-<p>Reconfigure the named quota definition.</p>
+<p>Reconfigure the named quota definition. </p>
 <table>
 <tgroup cols="2">
           <colspec colname="col1" colwidth="1*"/>
@@ -81,11 +81,6 @@
               <entry>Complementary alias of --paid-services-allowed.</entry>
             </row>
             <row>
-              <entry>--no-trial-db-allowed</entry>
-              <entry>Complementary alias of --trial-db-allowed. Applies to HP Helion OpenStack 1.0
-                only.</entry>
-            </row>
-            <row>
               <entry>--paid-services-allowed</entry>
               <entry>Applications can use non-free services.</entry>
             </row>
@@ -111,9 +106,9 @@
                 tokens.</entry>
             </row>
             <row>
-              <entry>--trial-db-allowed</entry>
-              <entry>Applications can use trial databases. Applies to HP Helion OpenStack 1.0
-                only.</entry>
+              <entry>--no-trial-db-allowed, --trial-db-allowed</entry>
+              <entry>Applications can  / cannot use trial databases. Trial databases were available
+                with HP Helion Development Platform 1.0 only.</entry>
             </row>
           </tbody>
         </tgroup>
@@ -142,7 +137,7 @@
               <entry>--droplets</entry>
               <entry> Limit for the number of droplets per application that are stored (older
                 droplets that exceed this quota are removed and their associated versions can no
-                longer be restored). This option is new in Helion OpenStack 1.1</entry>
+                longer be restored). </entry>
             </row>
             <row>
               <entry>--mem</entry>
@@ -158,11 +153,6 @@
             <row>
               <entry>--no-paid-services-allowed</entry>
               <entry>Complementary alias of --paid-services-allowed.</entry>
-            </row>
-            <row>
-              <entry>--no-trial-db-allowed</entry>
-              <entry>Complementary alias of --trial-db-allowed. Applies to Helion OpenStack 1.0
-                only.</entry>
             </row>
             <row>
               <entry>--paid-services-allowed</entry>
@@ -190,9 +180,9 @@
                 tokens.</entry>
             </row>
             <row>
-              <entry>--trial-db-allowed</entry>
-              <entry>Applications can use trial databases. Applies to Helion OpenStack 1.0
-                only.</entry>
+              <entry>--no-trial-db-allowed, --trial-db-allowed</entry>
+              <entry>Applications can  / cannot use trial databases. Trial databases were available
+                with HP Helion Development Platform 1.0 only.</entry>
             </row>
           </tbody>
         </tgroup>
