@@ -3,8 +3,8 @@
 <topic id="topic_pgq_mnw_dt">
     <title>Backing up Your Data</title>
     <body>
-        <section><title>Introduction </title><p>As of HP Helion <tm tmtype="reg">OpenStack</tm> 2.0
-                Beta 1, you must do the following: <ol>
+        <section><title>Introduction </title><p>As of HP Helion <tm tmtype="reg">OpenStack</tm> 2.0, you must follow these steps to perform
+                backups: <ol>
                     <li>Define what you want to backup.</li>
                     <li>Define a mode for that backup. The following modes are available: <ul>
                             <li>fs (filesystem) (default)</li>
