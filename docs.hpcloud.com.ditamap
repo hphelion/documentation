@@ -30,7 +30,7 @@
     <!-- INSTALLATION -->
     <topicref href="helion/installation_overview.dita" navtitle="Installation"
       locktitle="yes">
-      <topicref href="helion/administration/wipe_disks.dita" navtitle="Wiping the Disks"
+      <topicref href="helion/administration/wipe_disks.dita" navtitle="Pre-installation Disk Cleanup"
         locktitle="yes"/>
       <topicref href="helion/beta1_to_beta2_upgrade.dita"/>
       <topicref href="helion/combining_files.dita"
@@ -279,11 +279,11 @@ MONITORING AND LOGGING
       <!--  LBaaS, FWaaS, VPNaaS -->
 
       <!-- horizon -->
-      <topicref href="helion/horizon/horizon_overview.dita" navtitle="Horizon Dashboard"
-        locktitle="yes" toc="yes">
+      <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
+        locktitle="yes" toc="yes" />
         <topicref href="helion/horizon/horizon_configure_v3.dita"
           navtitle="Configuring Horizon for Keystone v3" locktitle="yes" toc="yes"/>
-      </topicref>
+      
       <!-- END HORIZON -->
     </topichead>
     <!-- END USER GUIDE -->
