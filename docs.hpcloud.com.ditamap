@@ -207,11 +207,11 @@
       <topicref href="helion/cinder/ceph/adding_new_osd_node.dita"/>
       
       <topicref href="helion/cinder/singleton_service_cinder.dita"/>
-      <topicref href="helion/cinder/brocade_zone_manager.dita" navtitle="Brocade Zone Manager"
+      <topicref href="helion/cinder/brocade_zone_manager.dita" navtitle="Configuring Brocade Zone Manager"
         locktitle="yes"/>
       <!-- BURA -->
       <topicref href="helion/adding_moonshot_nodes.dita"/>
-      <topicref href="helion/bura/bura_overview.dita">
+      <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>
       </topicref>
