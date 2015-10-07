@@ -14,7 +14,7 @@ cc_yellow="${esc}[0;33m"
 cc_blue="${esc}[0;34m"
 cc_normal=`echo -en "${esc}[m\017"`
 
-cat ./jenkins/badstrings.txt ./jenkins/badstrings.LOCAL.txt > ./jenkins/allbad.txt
+cat ./jenkins/badstrings.txt ./jenkins/badstrings.LOCAL.txt > ./jenkins/allbad.txt || cat ./jenkins/badstrings > ./jenkins/allbad.txt
 
 for i in `find . -name "*.dita"`
 do
@@ -36,8 +36,9 @@ do
 		fi
 	done < ./jenkins/allbad.txt
 
-rm ./jenkins/allbad.txt	
 done
+
+rm ./jenkins/allbad.txt	
 
 #Check for filenames that contain bad characters
 BAD_FILE_NAME=`find . -regex '.*[ (\!@#$%\^&*)+=?\\<>~,:;\`\"].*'`
