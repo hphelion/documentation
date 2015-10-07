@@ -19,7 +19,7 @@
   <!-- NEW TOC STUFF, see https://etherpad.hpcloud.net/p/HOS2.0_doc_structure for details -->
   <topicref href="home.dita"/>
   <topicref href="helion/index.dita">
-    <topicref href="helion/technical_overview.dita"/>
+    <topicref href="helion/technical_overview.dita" navtitle="Technical Overview"/>
     <topicref href="helion/input_model.dita" navtitle="HP Helion OpenStack 2.0 Input Model"
       locktitle="yes"/>
     <topicref href="helion/supportedconfigs.dita" navtitle="Example Configurations" locktitle="yes"/>
@@ -69,10 +69,10 @@
 
     <!-- ADMINISTRATION -->
     <topichead navtitle="Administration">
-      <topichead navtitle="Minimum Set of Customizations">
+      <topichead navtitle="Initial Configuration">
         <topicref href="helion/administration/create_extnet.dita"
           navtitle="Creating an External Network" locktitle="yes"/>
-        <topicref href="helion/administration/upload_image.dita" navtitle="Upload an Image for Use"
+        <topicref href="helion/administration/upload_image.dita" navtitle="Uploading an Image for Use"
           locktitle="yes"/>
         <topichead navtitle="Configuring a Block Storage Backend">
           <topicref href="helion/cinder/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
@@ -82,7 +82,7 @@
           <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Installation and Configuration"
             locktitle="yes"/>
           <topicref href="helion/cinder/3Par/3par_configuration.dita"/>
-          <topicref href="helion/cinder/verify_backend_configuration.dita"/>
+          <topicref href="helion/cinder/verify_backend_configuration.dita" navtitle="Verifying a Back-End Configuration"/>
         </topichead>
 
       </topichead>
@@ -104,6 +104,8 @@
           locktitle="yes"/>
         <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
           locktitle="yes"> </topicref>
+        <topicref href="helion/horizon/horizon_configure_v3.dita"
+          navtitle="Configuring Horizon for Keystone v3" locktitle="yes" toc="yes"/>
         <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Notes and Limitations"
           locktitle="yes"> </topicref>
       </topicref>
@@ -113,7 +115,7 @@
       <topicref href="helion/swift/swift_overview.dita" navtitle="Object Storage Service"
         locktitle="yes">
         <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes"
-          navtitle="Modify the Example Cloud Model" locktitle="yes">
+          navtitle="Modifying Example Configurations for Object Storage" locktitle="yes">
           <topicref href="helion/swift/allocate-pac.dita"/>
           <topicref href="helion/swift/allocating_server.dita" navtitle="Allocating Object Server"/>
           <topicref href="helion/swift/creating_roles_swift_nodes.dita"/>
@@ -252,7 +254,7 @@ MONITORING AND LOGGING
 
     <!-- TROUBLESHOOTING -->
     <topichead navtitle="Troubleshooting">
-      <topicref href="helion/swift/troubleshooting.dita">
+      <topicref href="helion/swift/troubleshooting.dita" navtitle="Object Storage Troubleshooting" locktitle="yes">
         <topicref href="helion/swift/deploy_fails_with_msdos_disks.dita"/>
         <topicref href="helion/swift/examine_details_planned_ring_changes_prior_deploy.dita"/>
         <topicref href="helion/swift/how_to_change_min-part-power.dita"/>
@@ -282,8 +284,7 @@ MONITORING AND LOGGING
       <!-- horizon -->
       <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
         locktitle="yes" toc="yes" />
-        <topicref href="helion/horizon/horizon_configure_v3.dita"
-          navtitle="Configuring Horizon for Keystone v3" locktitle="yes" toc="yes"/>
+        
       
       <!-- END HORIZON -->
     </topichead>

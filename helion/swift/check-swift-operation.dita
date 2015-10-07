@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_bvm_yg2_jt">
-  <title>Checking Swift Operation</title>
+  <title>Checking Object Storage Status</title>
   <body>
-    <p>You can verify the Swift operation using:<ul id="ul_v51_hh2_jt">
+    <p>You can verify the Swift Object Storage operational status using:<ul id="ul_v51_hh2_jt">
         <li>
-          <p>
-            <xref href="validating_swift_recon.dita#topic_xq2_dw4_nt">swift-recon</xref></p>
+          <p><xref href="validating_swift_recon.dita#topic_xq2_dw4_nt">swift-recon</xref></p>
         </li>
         <li>
           <p><xref href="swiftlm-scan_metering.dita#topic_pcv_fy4_nt">swiftlm-scan</xref></p>
