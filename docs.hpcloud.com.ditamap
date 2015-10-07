@@ -28,7 +28,7 @@
     <topicref href="helion/faq.dita"/>
     <topicref href="helion/eula.dita" toc="no"/>
     <!-- INSTALLATION -->
-    <topicref href="helion/installation_overview.dita" navtitle="Installation - Overview"
+    <topicref href="helion/installation_overview.dita" navtitle="Installation"
       locktitle="yes">
       <topicref href="helion/administration/wipe_disks.dita" navtitle="Wiping the Disks"
         locktitle="yes"/>
