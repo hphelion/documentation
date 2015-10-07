@@ -18,10 +18,10 @@
     <section><title>Entry Scale Cloud with KVM Hypervisor on Compute Hosts and VSA Block Storage
         Backend</title>
       <p>Choosing this model will result in a cloud with that has the following characteristics:</p>
-      <table frame="all" rowsep="1" colsep="1" id="table_bcp_f2k_pt">
+      <table frame="all" rowsep="1" colsep="1" id="entry_scale_cloud">
         <tgroup cols="2">
-          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
           <thead>
             <row>
               <entry>Item</entry>
