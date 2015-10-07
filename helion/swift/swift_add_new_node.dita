@@ -5,17 +5,21 @@
   <body>
     <p>This page describes the procedure to add new node(s)/swift object server to an existing
       system.</p>
+    <p>To add a new node to your cloud, you will need to add it to <b>servers.yml</b>, and then run
+      the scripts that update your cloud configuration. To begin, access the <b>servers.yml</b>
+      file by checking out the git branch where you are required to make the changes:</p>
     <section>
       <title>Procedure to add a new node</title>
       <p>You must add a new node details in the <codeph>server.yml</codeph> file. </p>
       <p>Perform the following steps to add a new node:<ol id="ol_p4w_gbr_4t">
-          <li>Log in to the deployer node.</li>
-          <li>Change the directory.<codeblock>cd ~/helion/my_cloud/definition/data</codeblock></li>
-          <li>Execute the following command:<codeblock>git checkout site</codeblock></li>
+          <li><!--Log in to the deployer node.--> Get the<codeph> server.ym</codeph>l file stored in
+            git:<codeblock>cd ~/helion/my_cloud/definition/data
+git checkout site</codeblock></li>
           <li>Add the swift-object components in the resource-nodes section of the
-              <codeph>control_plane.yml</codeph> file, if you are adding a new node/swift object
-            server to an entry-scale model. An example of <codeph>control_plane.yml</codeph> file is
-            shown below: (<b>are there any other model also? or can we make this
+              <codeph>control_plane.yml</codeph>
+            file<!--, if you are adding a new node/swift object server to an entry-scale model.-->
+            An example of <codeph>control_plane.yml</codeph> file is shown below: (<b>are there any
+              other model also? or can we make this
             generic?</b>)<codeblock>---
   product:
     version: 2
@@ -49,9 +53,8 @@
     ip-addr: 10.240.21.13
     role: ROLE-COMPUTE
     nic-mapping: HP_DL360_6PORT</codeblock></li>
-          <li>Commit your configuration to the <xref href="../using_git.dita#topic_u3v_1yz_ct">local
-              repo</xref>, as
-              follows<codeblock>git add -A
+          <li>Commit your
+              changes<codeblock>git add -A
 git commit -m "Add Node &lt;name>"</codeblock><note>Enter
               your commit message "Add Node &lt;name>"</note></li>
           <li>Run the configuration
@@ -64,7 +67,7 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
               node(s):<codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&lt;extra_vars></codeblock><p>In
               the following example we have used server id as <b>compute 7</b> (mentioned in step
-              5).<codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
+              4).<codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblock></p><note>You
               must use the server id as it appears in the <codeph>server.yml</codeph> file in the
               field &lt;extra_vars></note></li>
