@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_drm_rm5_kt">
-  <title>Adding an Object Storage Device Node </title>
+  <title>Adding an Object Storage Daemon (OSD) Node </title>
   <body>
     <p>The page describes the procedure to add a new OSD Node to an existing Ceph cluster.</p>
     <p>Perform the following steps to add a new OSD Node to an existing Ceph cluster:<ol
