@@ -184,7 +184,7 @@
     <topichead navtitle="Operations">
       <topicref href="helion/operations/accessing_horizon.dita"
         navtitle="Accessing the Horizon Dashboard" locktitle="yes"/>
-      <topicref href="helion/operations/accessing_opsconsole.dita"
+      <topicref href="helion/operations/opsconsole_overview.dita"
         navtitle="Accessing the Operations Console" locktitle="yes"/>
 
       <topicref href="start.stop.check" toc="no">
@@ -236,21 +236,19 @@ MONITORING AND LOGGING
       </topicref>
 
       <!-- OPS CONSOLE PAGES (will be hidden from the TOC) -->
-      <topicref href="helion/operations/opsconsole/overview.dita" navtitle="Operations Console"
-        locktitle="yes">
-        <topicref href="helion/operations/opsconsole/dashboard.dita" toc="no"/>
-        <topicref href="helion/operations/opsconsole/logging.dita" toc="no"/>
-        <topicref href="helion/operations/opsconsole/alarm_definitions.dita" toc="no"/>
-        <topicref href="helion/operations/opsconsole/alarm_explorer.dita" toc="no"/>
-        <topicref href="helion/operations/opsconsole/notification_methods.dita" toc="no"/>
-        <topicref href="helion/operations/opsconsole/metric_monitoring.dita" toc="no"/>
-        <topicref href="helion/operations/opsconsole/compute_summary.dita" toc="no"/>
-        <topicref href="helion/operations/opsconsole/compute_hosts.dita" toc="no"/>
-        <topicref href="helion/operations/opsconsole/compute_instances.dita" toc="no"/>
-        <topicref href="helion/operations/opsconsole/networking_summary.dita" toc="no"/>
-        <topicref href="helion/operations/opsconsole/storage_summary.dita" toc="no"/>
-        <topicref href="helion/operations/opsconsole/hdp_summary.dita" toc="no"/>
-      </topicref>
+      <topicref href="helion/operations/opsconsole/dashboard.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/logging.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/alarm_definitions.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/alarm_explorer.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/notification_methods.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/metric_monitoring.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/compute_summary.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/compute_hosts.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/compute_instances.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/networking_summary.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/storage_summary.dita" toc="no"/>
+      <topicref href="helion/operations/opsconsole/hdp_summary.dita" toc="no"/>
+
 
       <!-- TROUBLESHOOTING -->
       <topichead navtitle="Troubleshooting">
@@ -285,7 +283,7 @@ MONITORING AND LOGGING
           <navtitle>Using VPN as a Service (VPNaaS)</navtitle>
         </topicmeta>
       </topicref>
-      
+
 
 
       <!-- END HORIZON -->
