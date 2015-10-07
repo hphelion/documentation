@@ -15,12 +15,6 @@
     </prodinfo>
   </topicmeta>
 
-  
-
-
-
-
-
 
   <!-- NEW TOC STUFF, see https://etherpad.hpcloud.net/p/HOS2.0_doc_structure for details -->
   <topicref href="home.dita"/>
@@ -90,14 +84,14 @@
           <topicref href="helion/cinder/3Par/3par_configuration.dita"/>
           <topicref href="helion/cinder/verify_backend_configuration.dita"/>
         </topichead>
-        
+
       </topichead>
-      
+
       <topicref href="helion/administration/lbaas_admin.dita" navtitle="Configuring LBaaS"
         locktitle="yes"/>
       <topicref href="helion/administration/configure_monitoring.dita"
         navtitle="Configuring Monitoring" locktitle="yes"/>
-      
+
       <!-- keystone identity -->
       <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Service"
         locktitle="yes">
@@ -109,12 +103,13 @@
           locktitle="yes"> </topicref>
         <topicref href="helion/keystone/keystone_reconfigure.dita" navtitle="Reconfiguring Keystone"
           locktitle="yes"/>
-        <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration" locktitle="yes"> </topicref>
+        <topicref href="helion/keystone/keystone_ldap.dita" navtitle="LDAP Integration"
+          locktitle="yes"> </topicref>
         <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Notes and Limitations"
           locktitle="yes"> </topicref>
       </topicref>
       <!-- END KEYSTONE IDENTITY -->
-      
+
       <!-- Object Storage -->
       <topicref href="helion/swift/swift_overview.dita" navtitle="Object Storage Service"
         locktitle="yes">
@@ -123,7 +118,8 @@
           <topicref href="helion/swift/allocate-pac.dita"/>
           <topicref href="helion/swift/allocating_server.dita" navtitle="Allocating Object Server"/>
           <topicref href="helion/swift/creating_roles_swift_nodes.dita"/>
-          <topicref href="helion/swift/allocating_disk_drives.dita" navtitle="Allocating Disk Drives">
+          <topicref href="helion/swift/allocating_disk_drives.dita"
+            navtitle="Allocating Disk Drives">
             <topicref href="helion/swift/label_on_partition.dita" toc="yes"
               navtitle="How to Verify if a Partition Labelled" locktitle="yes"/>
             <topicref href="helion/swift/filesystem_label.dita" toc="yes"
@@ -153,10 +149,10 @@
           <topicref href="helion/swift/swift_first_proxy_server.dita"/>
           <topicref href="helion/swift/swift_add_new_node.dita"/>
         </topicref>
-        
-      </topicref> 
+
+      </topicref>
       <!-- END SWIFT OBJECT STORAGE -->
-      
+
       <!-- Neutron -->
       <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Service"
         locktitle="yes">
@@ -182,10 +178,10 @@
         </topicref>
       </topicref>
       <!-- END NEUTRON -->
-      
+
     </topichead>
     <!-- END ADMINISTRATION -->
-    
+
     <!-- OPERATIONS   left off here 653 pm 10-6 -->
     <topichead navtitle="Operations">
       <topicref href="helion/operations/accessing_horizon.dita"
@@ -215,12 +211,11 @@
       <!-- Cinder -->
       <topicref href="helion/cinder/cinder_overview.dita" navtitle="Block Storage Service"
         locktitle="yes">
-        <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview" locktitle="yes"
-        />
+        <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
+          locktitle="yes"/>
       </topicref>
       <!-- end cinder -->
-    </topichead>
-    <!-- END OPERATIONS -->
+
     <!-- 
 
 MONITORING AND LOGGING 
@@ -246,7 +241,7 @@ MONITORING AND LOGGING
         locktitle="yes"/>
     </topicref>
 
-<!-- OPS CONSOLE PAGES (will be hidden from the TOC) -->
+    <!-- OPS CONSOLE PAGES (will be hidden from the TOC) -->
     <topicref href="helion/operations/opsconsole/overview.dita" navtitle="Operations Console"
       locktitle="yes">
       <topicref href="helion/operations/opsconsole/dashboard.dita"/>
@@ -261,8 +256,8 @@ MONITORING AND LOGGING
       <topicref href="helion/operations/opsconsole/networking_summary.dita"/>
       <topicref href="helion/operations/opsconsole/storage_summary.dita"/>
       <topicref href="helion/operations/opsconsole/hdp_summary.dita"/>
-</topicref>
-    
+    </topicref>
+
     <!-- TROUBLESHOOTING -->
     <topichead navtitle="Troubleshooting">
       <topicref href="helion/swift/troubleshooting.dita">
@@ -274,24 +269,25 @@ MONITORING AND LOGGING
       <topicref href="helion/ceilometer/metering_troubleshoot.dita"
         navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
     </topichead>
-
+    </topichead>
+    <!-- END OPERATIONS -->
     <!-- USER GUIDE -->
     <topichead navtitle="User Guide">
       <topicref href="helion/user/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
       <topicref href="helion/user/lbaas.dita" navtitle="Creating a Load Balancer" locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
-      
+
       <!-- horizon -->
-      <topicref href="helion/horizon/horizon_overview.dita" navtitle="Horizon Dashboard" locktitle="yes"
-        toc="yes">
+      <topicref href="helion/horizon/horizon_overview.dita" navtitle="Horizon Dashboard"
+        locktitle="yes" toc="yes">
         <topicref href="helion/horizon/horizon_configure_v3.dita"
           navtitle="Configuring Horizon for Keystone v3" locktitle="yes" toc="yes"/>
       </topicref>
       <!-- END HORIZON -->
     </topichead>
     <!-- END USER GUIDE -->
-    
+
     <!-- CONCEPTS -->
     <topichead navtitle="Conceptual Overviews">
 
