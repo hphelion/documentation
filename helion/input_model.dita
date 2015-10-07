@@ -2,12 +2,12 @@
 <!--This work by HP Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="input_model">
-  <title>Helion <tm tmtype="reg">OpenStack</tm> 2.0 Input Model</title>
+  <title>Helion <tm tmtype="reg">OpenStack</tm> 2.0: Input Model</title>
   <conbody>
     <section id="toc"><title>Table of Contents</title>
       <ol>
         <li><xref href="#input_model/Intro">Introduction</xref></li>
-        <li><xref href="#input_model/3.0_Concepts">Helion OpenStack 2.0 Concepts</xref>
+        <li><xref href="#input_model/3.0_Concepts">HP Helion OpenStack 2.0 Concepts</xref>
           <ol>
             <li><xref href="#input_model/3.1_Cloud">Cloud</xref></li>
             <li><xref href="#input_model/3.2_ControlPlanes">Control Planes</xref>
@@ -36,7 +36,7 @@
               </ol></li>
           </ol>
         </li>
-        <li><xref href="#input_model/4.0_ConfigurationObjects">Helion OpenStack 2.0 Configuration
+        <li><xref href="#input_model/4.0_ConfigurationObjects">HP Helion OpenStack 2.0 Configuration
             Objects</xref>
           <ol>
             <li><xref href="#input_model/4.1_Cloud">Cloud</xref></li>
@@ -92,9 +92,9 @@
       </ol>
     </section>
     <section id="Intro"><title>Introduction</title>
-      <p>This page describes how the Helion OpenStack 2.0 Input Model can be used to define and
+      <p>This page describes how the HP Helion OpenStack 2.0 Input Model can be used to define and
         configure your cloud environment.</p>
-      <p>The Helion OpenStack 2.0 product ships with a set of sample input-models that can be used
+      <p>The HP Helion OpenStack 2.0 product ships with a set of sample input-models that can be used
         as starting points for defining your custom cloud.</p>
       <p>The input model allows the user to describe the cloud configuration in terms of:</p>
       <p><ul>
@@ -110,7 +110,7 @@
       <p>The document is structured as follows:</p>
       <p><ul>
           <li><uicontrol>Concepts</uicontrol> - This explains the ideas behind the declarative model
-            approach used in Helion OpenStack 2.0 and the core concepts used in describing that
+            approach used in HP Helion OpenStack 2.0 and the core concepts used in describing that
             model</li>
           <li><uicontrol>Input Model</uicontrol> - This section provides a description of each of
             the configuration entities in the input model</li>
@@ -118,8 +118,8 @@
             of some of the more important configuration entities</li>
         </ul></p>
     </section>
-    <section id="3.0_Concepts"><title>Helion OpenStack 2.0 Concepts</title>
-      <p>A Helion OpenStack 2.0 system is defined by a declarative model that is described in a
+    <section id="3.0_Concepts"><title>HP Helion OpenStack 2.0 Concepts</title>
+      <p>A HP Helion OpenStack 2.0 system is defined by a declarative model that is described in a
         series of configuration objects. These objects are stored in YAML files and the product
         ships with a number of examples. These examples can potentially be used almost as shipped –
         just modifying to provide site specific IP addresses, or customized to meet site
@@ -191,8 +191,8 @@
         single service-element.</p>
       <p>All you need to know about services to define your cloud is the names of the service
         components. The details of the services themselves, and how they interact with each other is
-        captured in service definition files provided by Helion OpenStack.</p>
-      <p>When specifying your Helion OpenStack cloud you have to decide where components will run,
+        captured in service definition files provided by HP Helion OpenStack.</p>
+      <p>When specifying your HP Helion OpenStack cloud you have to decide where components will run,
         and how they connect to the networks. For example, should they all run in one control plane
         sharing common services, or be distributed across multiple control planes to provide
         separate instances of some services. The supplied examples provide solutions for some
@@ -249,7 +249,7 @@
     <section id="3.6_Servers"><title>Servers</title>
       <p><i>Servers have a role which determines how they will be used in the cloud</i></p>
       <p>Servers enumerate the resources available for your cloud. A server could be a physical
-        server or a virtual machine, all Helion OpenStack requires is that it is capable of booting
+        server or a virtual machine, all HP Helion OpenStack requires is that it is capable of booting
         a supported operating system and that it has an IP address that can be accessed via SSH. In
         addition to this IP address, each server says what its <uicontrol>server-role</uicontrol>
         is.</p>
@@ -263,7 +263,7 @@
         is one that everyone can understand. Such racks generally provide a degree of physical
         isolation such as separate power and/or network connectivity. In a multi-region cloud,
         individual racks or groups of racks will normally be allocated to a specific region.</p>
-      <p>In the Helion OpenStack model we support this concept by allowing you to define a hierarchy
+      <p>In the HP Helion OpenStack model we support this concept by allowing you to define a hierarchy
         of server groups. Each server is associated with one server group, normally at the bottom of
         the hierarchy.</p>
       <p>Server groups are an optional part of the input model – if you don’t define any then all
@@ -285,7 +285,7 @@
     <section id="3.7.2_ServerGroupsAndNetworks"><title>Server Groups and Networks</title>
       <p>Each L3 network in a cloud needs to be associated with all or some of the servers, normally
         following a physical pattern (such as having separate networks for each rack or set of
-        racks). This is also represented in the Helion OpenStack model via server groups, each
+        racks). This is also represented in the HP Helion OpenStack model via server groups, each
         server group listing zero or more networks that servers associated to server groups at or
         below this point in the hierarchy are connected to.</p>
       <p>When the Configuration Processor needs to resolve which specific network a server should be
@@ -323,9 +323,9 @@
         configuring a network-group then is to define the service endpoints that connect to it. The
         details of how each service connects, such as what port it uses, if it should be behind a
         load balancer, if and how it should be registered in Keystone, etc are defined in the
-        service definition files provided by Helion OpenStack. All that has to be captured in the
+        service definition files provided by HP Helion OpenStack. All that has to be captured in the
         network-groups definition is the same service-element names that are used when defining
-        regions. Helion OpenStackl also allows a "default" attachment to be used to specify "all
+        regions. HP Helion OpenStackl also allows a "default" attachment to be used to specify "all
         service-elements" that aren't specifically connected to another network-group; so for
         example, to isolate Swift traffic the swift-account, swift-container, and swift-object
         service elements are attached to an "Object" network group and all other services are
@@ -339,10 +339,10 @@
         need to include a route to this network so that services can access the internal API
         endpoints. Routes may also be required to define how to access external storage network,
         an/or to define a general default route.</p>
-      <p>As part of the Helion OpenStack deployment, networks are configured to act as the default
+      <p>As part of the HP Helion OpenStack deployment, networks are configured to act as the default
         route for all traffic that was received via that network (so that response packets always
         return via the network the request came from).</p>
-      <p>Note that Helion OpenStack will configure the routing rules on the servers it deploys, but
+      <p>Note that HP Helion OpenStack will configure the routing rules on the servers it deploys, but
         ensuring that gateways can provide the required routes is the responsibility of your network
         configuration.</p>
     </section>
@@ -384,7 +384,7 @@
     </section>
     <section id="3.8.1.2_NetworkTags"><title>Network Tags</title>
       <!-- need words here on the tags concept -->
-      <p>Network tags are defined by Helion OpenStack service components, and are used in the input
+      <p>Network tags are defined by HP Helion OpenStack service components, and are used in the input
         model to convey information between the model and the service.</p>
       <p>Network tags convey information about the physical network configuration to services,
         allowing the dependent aspects of the service to be automatically configured, for example an
@@ -430,7 +430,7 @@
       <p>This level of abstraction will also allow a network function on SRIOV capable network cards
         to be used for network connections and consumed by services in a future release.</p>
     </section>
-    <section id="4.0_ConfigurationObjects"><title>Helion OpenStack 2.0 Configuration Objects</title>
+    <section id="4.0_ConfigurationObjects"><title>HP Helion OpenStack 2.0 Configuration Objects</title>
     </section>
     <section id="4.1_Cloud"><title>Cloud</title>
       <p>The top level cloud configuration file defines some global values for the Helion Cloud.</p>
@@ -537,106 +537,6 @@
       <note>Ensure that you remove the <codeph>#</codeph> tags in front of your nameservers so they
         are recognized.</note>
     </section>
-    <!--
-    <section id="baremetalConfig.yml"><title>baremetalConfig.yml</title>
-      <p>The path to this file is:</p>
-      <p><codeblock>~/helion/my_cloud/definition/data/baremetalConfig.yml</codeblock></p>
-      <p>The key values to enter into this document are the details about each of the servers in
-        your environment. Most of these values will be gathered from the iLO console or from your
-        vlan setup information.</p>
-      <p>Here is the sample file included with the install:</p>
-      <codeblock>
-
-  product:
-    version: 2
-  <b>baremetal_network:
-    subnet: 192.168.10.0
-    netmask: 255.255.255.0
-    server_interface: eth2</b>
-   baremetal_servers:
-     -
-        node_name: controller1
-        node_type: ROLE-CONTROLLER
-        <b>pxe_mac_addr: b2:72:8d:ac:7c:6f
-        pxe_interface: eth2
-        pxe_ip_addr: 192.168.10.3
-        ilo_ip: 192.168.9.3
-        ilo_user: admin
-        ilo_password: password</b>
-     -
-        node_name: controller2
-        node_type: ROLE-CONTROLLER
-        <b>pxe_mac_addr: 8a:8e:64:55:43:76
-        pxe_interface: eth2
-        pxe_ip_addr: 192.168.10.4
-        ilo_ip: 192.168.9.4
-        ilo_user: admin
-        ilo_password: password</b>
-     -
-        node_name: controller3
-        node_type: ROLE-CONTROLLER
-        <b>pxe_mac_addr: 26:67:3e:49:5a:a7
-        pxe_interface: eth2
-        pxe_ip_addr: 192.168.10.5
-        ilo_ip: 192.168.9.5
-        ilo_user: admin
-        ilo_password: password</b>
-     -
-        node_name: compute1
-        node_type: ROLE-COMPUTE
-        <b>pxe_mac_addr: d6:70:c1:36:43:f7
-        pxe_interface: eth2
-        pxe_ip_addr: 192.168.10.6
-        ilo_ip: 192.168.9.6
-        ilo_user: admin
-        ilo_password: password</b>
-     -
-        node_name: compute2
-        node_type: ROLE-COMPUTE
-        <b>pxe_mac_addr: 8e:8e:62:a6:ce:76
-        pxe_interface: eth2
-        pxe_ip_addr: 192.168.10.7
-        ilo_ip: 192.168.9.7
-        ilo_user: admin
-        ilo_password: password</b>
-     -
-        node_name: compute3
-        node_type: ROLE-COMPUTE
-        <b>pxe_mac_addr: 22:f1:9d:ba:2c:2d
-        pxe_interface: eth2
-        pxe_ip_addr: 192.168.10.8
-        ilo_ip: 192.168.9.8
-        ilo_user: admin
-        ilo_password: password</b>
-     -
-        node_name: vsa1
-        node_type: ROLE-VSA
-        <b>pxe_mac_addr: 8b:f6:9e:ca:3b:78
-        pxe_interface: eth2
-        pxe_ip_addr: 192.168.10.9
-        ilo_ip: 192.168.9.9
-        ilo_user: admin
-        ilo_password: password</b>
-     -
-        node_name: vsa2
-        node_type: ROLE-VSA
-        <b>pxe_mac_addr: 8b:f6:9e:ca:3b:79
-        pxe_interface: eth2
-        pxe_ip_addr: 192.168.10.10
-        ilo_ip: 192.168.9.10
-        ilo_user: admin
-        ilo_password: password</b>
-     -
-        node_name: vsa3
-        node_type: ROLE-VSA
-        <b>pxe_mac_addr: 8b:f6:9e:ca:3b:7a
-        pxe_interface: eth2
-        pxe_ip_addr: 192.168.10.11
-        ilo_ip: 192.168.9.11
-        ilo_user: admin
-        ilo_password: password</b></codeblock>
-    </section>
-    -->
     <section id="4.2_ControlPlane"><title>Control Plane</title>
       <p>The snippet below shows the control plane definition file:</p>
       <codeblock>
@@ -956,26 +856,22 @@
               </row>
               <row>
                 <entry>mac-addr (optional)</entry>
-                <entry>Needed when <codeph>baremetalConfig.yml</codeph> file is being used for the
-                  operating system installation. This identifies the MAC address on the server that
+                <entry>This identifies the MAC address on the server that
                   will be used to network install the operating system.</entry>
               </row>
               <row>
                 <entry>ilo-ip (optional)</entry>
-                <entry>Needed when the <codeph>baremetalConfig.yml</codeph> file is being used for
-                  the operating system installation. This provides the IP address of the power
+                <entry>This provides the IP address of the power
                   management (e.g. ipmi-ip, iLO) subsystem.</entry>
               </row>
               <row>
                 <entry>ilo-user (optional)</entry>
-                <entry>Needed when the <codeph>baremetalConfig.yml</codeph> file is being used for
-                  the operating system installation. This provides the username of the power
+                <entry>This provides the username of the power
                   management (e.g. ipmi-ip, iLO) subsystem.</entry>
               </row>
               <row>
                 <entry>ilo-password (optional)</entry>
-                <entry>Needed when the <codeph>baremetalConfig.yml</codeph> file is being used for
-                  the operating system installation. This provides the user password of the power
+                <entry>This provides the user password of the power
                   management (e.g. ipmi-ip, iLO) subsystem.</entry>
               </row>
               <row>
@@ -989,105 +885,100 @@
         </table>
       </p>
       <p>Here is a snippet of the <codeph>servers.yml</codeph> file included with the install:</p>
-      <codeblock>
----
+      <codeblock>---
   product:
     version: 2
         
+  baremetal:
+    # NOTE: These values need to be changed to match your environment.
+    # Define the network range that contains the ip-addr values for
+    # the individual servers listed below.
+    subnet: 192.168.10.0
+    netmask: 255.255.255.0
+    # NOTE: This value needs to be changed to match your environment.
+    # Define the interface on the Cobbler server where Cobbler should
+    # be configured to listen.
+    server-interface: eth2
+    
   servers:
-    # NOTE: Addresses of servers need to be
-    #       changed to match your environment.
+    # NOTE: Addresses of servers need to be changed to match your environment.
     #
     #       Add additional servers as required
     #
-    #       nic-mapping is optional.  The value specified is the name
-    #       of an entry in the nic-mappings list from nic_mappings.yml.
-    #       To use, uncomment and modify to match your environment.
-    
+     
     # Controllers
     - id: controller1
-    ip-addr: 192.168.10.3
-    role: ROLE-CONTROLLER
-    # nic-mapping: HP_DL360_4PORT
-    
+      ip-addr: 192.168.10.3
+      role: CONTROLLER-ROLE
+      server-group: RACK1
+      nic-mapping: HP-DL360-4PORT
+      mac-addr: b2:72:8d:ac:7c:6f
+      ilo-ip: 192.168.9.3
+      ilo-password: password
+      ilo-user: admin
+        
     - id: controller2
-    ip-addr: 192.168.10.4
-    role: ROLE-CONTROLLER
-    # nic-mapping: HP_DL360_4PORT
-    
+      ip-addr: 192.168.10.4
+      role: CONTROLLER-ROLE
+      server-group: RACK2
+      nic-mapping: HP-DL360-4PORT
+      mac-addr: 8a:8e:64:55:43:76
+      ilo-ip: 192.168.9.4
+      ilo-password: password
+      ilo-user: admin
+        
     - id: controller3
-    ip-addr: 192.168.10.5
-    role: ROLE-CONTROLLER
-    # nic-mapping: HP_DL360_4PORT
-       
+      ip-addr: 192.168.10.5
+      role: CONTROLLER-ROLE
+      server-group: RACK3
+      nic-mapping: HP-DL360-4PORT
+      mac-addr: 26:67:3e:49:5a:a7
+      ilo-ip: 192.168.9.5
+      ilo-password: password
+      ilo-user: admin
+        
     # Compute Nodes
     - id: compute1
-    ip-addr: 192.168.10.6
-    role: ROLE-COMPUTE
-    # nic-mapping: MY_2PORT_SERVER
-     
+      ip-addr: 192.168.10.6
+      role: COMPUTE-ROLE
+      server-group: RACK1
+      nic-mapping: MY-2PORT-SERVER
+      mac-addr: d6:70:c1:36:43:f7
+      ilo-ip: 192.168.9.6
+      ilo-password: password
+      ilo-user: admin
+        
     # VSA Storage Nodes
     - id: vsa1
-    ip-addr: 192.168.10.9
-    role: ROLE-VSA
-    # nic-mapping: MY_2PORT_SERVER</codeblock>
-      <p>Here is a snippet of the <codeph>baremetalConfig.yml</codeph>file included with the
-        install:</p>
-      <codeblock>
----
-  product:
-    version: 2
-    <b>baremetal_network:
-       subnet: 192.168.10.0
-       netmask: 255.255.255.0
-       server_interface: eth2</b>
-       baremetal_servers:
-         -
-         node_name: controller1
-         node_type: ROLE-CONTROLLER
-         <b>pxe_mac_addr: b2:72:8d:ac:7c:6f
-           pxe_interface: eth2
-           pxe_ip_addr: 192.168.10.3
-           ilo_ip: 192.168.9.3
-           ilo_user: admin
-           ilo_password: password</b>
-         -
-         node_name: controller2
-         node_type: ROLE-CONTROLLER
-         <b>pxe_mac_addr: 8a:8e:64:55:43:76
-           pxe_interface: eth2
-           pxe_ip_addr: 192.168.10.4
-           ilo_ip: 192.168.9.4
-           ilo_user: admin
-           ilo_password: password</b>
-         -
-         node_name: controller3
-         node_type: ROLE-CONTROLLER
-         <b>pxe_mac_addr: 26:67:3e:49:5a:a7
-           pxe_interface: eth2
-           pxe_ip_addr: 192.168.10.5
-           ilo_ip: 192.168.9.5
-           ilo_user: admin
-           ilo_password: password</b>
-         -
-         node_name: compute1
-         node_type: ROLE-COMPUTE
-         <b>pxe_mac_addr: d6:70:c1:36:43:f7
-           pxe_interface: eth2
-           pxe_ip_addr: 192.168.10.6
-           ilo_ip: 192.168.9.6
-           ilo_user: admin
-           ilo_password: password</b>
-         -
-         node_name: vsa1
-         node_type: ROLE-VSA
-         <b>pxe_mac_addr: 8b:f6:9e:ca:3b:78
-           pxe_interface: eth2
-           pxe_ip_addr: 192.168.10.9
-           ilo_ip: 192.168.9.9
-           ilo_user: admin
-           ilo_password: password</b></codeblock>
-    </section>
+      ip-addr: 192.168.10.9
+      server-group: RACK1
+      role: VSA-ROLE
+      nic-mapping: MY-2PORT-SERVER
+      mac-addr: 8b:f6:9e:ca:3b:78
+      ilo-ip: 192.168.9.9
+      ilo-password: password
+      ilo-user: admin
+        
+    - id: vsa2
+      ip-addr: 192.168.10.10
+      server-group: RACK2
+      role: VSA-ROLE
+      nic-mapping: MY-2PORT-SERVER
+      mac-addr: 8b:f6:9e:ca:3b:79
+      ilo-ip: 192.168.9.10
+      ilo-password: password
+      ilo-user: admin
+      
+    - id: vsa3
+      ip-addr: 192.168.10.11
+      role: VSA-ROLE
+      server-group: RACK3
+      nic-mapping: MY-2PORT-SERVER
+      mac-addr: 8b:f6:9e:ca:3b:7a
+      ilo-ip: 192.168.9.11
+      ilo-password: password
+      ilo-user: admin</codeblock>
+       </section>
     <section id="4.4_ServerGroups"><title>Server Groups</title>
       <p>Server groups provide a mechanism for organizing servers and networks into a hierarchy that
         can be used for allocation and network resolution (see <xref
@@ -1347,9 +1238,9 @@
               <row>
                 <entry>physical-volumes</entry>
                 <entry><p>A list of physical disks that make up the volume group.</p> As installed
-                  by the HOS OS install process the volume group “hlm-vg” will use a large partition
-                  (sda_root) on the first disk. This can be expanded by adding additional
-                  disk(s)</entry>
+                  by the HP Helion OpenStack operating system install process the volume group
+                  “hlm-vg” will use a large partition (sda_root) on the first disk. This can be
+                  expanded by adding additional disk(s)</entry>
               </row>
               <row>
                 <entry>logical-volumes</entry>
@@ -1956,7 +1847,7 @@
       </p>
     </section>
     <section id="4.9.1_NetworkTags"><title>Network Tags</title>
-      <p>Helion OpenStack supports a small number of network tags which may be used to convey
+      <p>HP Helion OpenStack supports a small number of network tags which may be used to convey
         information between the input model and the service components. A network tag consists
         minimally of a tag name; some network tags have additional attributes, described below:</p>
       <p><b>neutron.networks.vxlan</b></p>
@@ -2119,7 +2010,7 @@ tags:
         <codeblock>
 tags:
   - neutron.l3_agent.external_network_bridge</codeblock></p>
-       <p>Here is the sample file included with the install:</p>
+      <p>Here is the sample file included with the install:</p>
       <codeblock>
 ---
   product:
@@ -2362,7 +2253,7 @@ servers:
           </tgroup>
         </table>
       </p>
-      </section>
+    </section>
 
     <section id="5.0_OtherTopics"><title>Other Topics</title></section>
     <section id="5.1_NameGeneration"><title>Name Generation</title>
@@ -2708,9 +2599,9 @@ servers:
       </ul>
       <p>The physical network infrastructure must be configured to convey the provider VLAN traffic
         as tagged VLANs to the cloud compute nodes and Neutron network nodes. Configuration of the
-        physical network infrastructure is outside the scope of the Helion OpenStack 2.0
+        physical network infrastructure is outside the scope of the HP Helion OpenStack 2.0
         software.</p>
-      <p>Helion OpenStack 2.0 automates the server networking configuration and the Neutron
+      <p>HP Helion OpenStack 2.0 automates the server networking configuration and the Neutron
         configuration based on information in the cloud definition. To configure the system for
         provider VLANs, specify the <codeph>neutron.networks.vlan</codeph> tag with a
           <codeph>provider-physical-network</codeph> attribute on one or more network groups as
@@ -2743,9 +2634,9 @@ servers:
               name: eth3
           network-groups:
             - NET_GROUP_B</codeblock>
-      <p>A network group used for provider VLANs may contain only a single Helion OpenStack network,
+      <p>A network group used for provider VLANs may contain only a single HP Helion OpenStack network,
         because that VLAN must span all compute nodes and any Neutron network nodes/controllers
-        (i.e. it is a single L2 segment). The Helion OpenStack network must be defined with
+        (i.e. it is a single L2 segment). The HP Helion OpenStack network must be defined with
           <codeph>tagged-vlan: false</codeph>, otherwise a linux VLAN network interface will be
         created. For example:</p>
       <codeblock>
@@ -2756,7 +2647,7 @@ servers:
      - name: NET_B
        tagged-vlan: false
        network-group: NET_GROUP_B</codeblock>
-      <p>When the cloud is deployed, Helion OpenStack 2.0 will create the appropriate bridges on the
+      <p>When the cloud is deployed, HP Helion OpenStack 2.0 will create the appropriate bridges on the
         servers, and set the appropriate attributes in the Neutron configuration files (e.g.
         bridge_mappings).</p>
       <p>After the cloud has been deployed, create Neutron network objects for each provider VLAN.
