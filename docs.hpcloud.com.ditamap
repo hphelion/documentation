@@ -22,7 +22,7 @@
     <topicref href="helion/technical_overview.dita" navtitle="Technical Overview"/>
     <topicref href="helion/input_model.dita" navtitle="HP Helion OpenStack 2.0 Input Model"
       locktitle="yes"/>
-    <topicref href="helion/supportedconfigs.dita" navtitle="Example Configurations" locktitle="yes"/>
+    <topicref href="helion/example_configs.dita" navtitle="Example Configurations" locktitle="yes"/>
     <topicref href="helion/hardware.dita" navtitle="Hardware Requirements" locktitle="yes"/>
     <topicref href="helion/releasenotes.dita" navtitle="Release Notes" locktitle="yes"/>
     <topicref href="helion/faq.dita"/>
