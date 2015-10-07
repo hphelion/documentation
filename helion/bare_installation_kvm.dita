@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_kvm">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for KVM Hypervisor on
-    Baremetal</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for KVM Hypervisor</title>
   <body>
     <section id="important-notes"><title>Important Notes</title>
       <ul>
@@ -93,25 +92,27 @@
       </ol>
       <p>At the end of this section you should have a node set up with hLinux on it.</p>
     </section>
-     <section id="HLM_Node_Personalization">
+    <section id="HLM_Node_Personalization">
       <title>Configure and Run the Deployer</title>
       <note>It's critical that you don't run as root. Run as the user you just created (or stack if
         you left the default of "stack"), but do not run as root.</note>
       <ol>
         <li>Log in to the node you setup in the previous steps as the user you created during the
-          setup phase, and mount the install media at <codeph>/media/cdrom</codeph>.  Here is the command to achieve this:
+          setup phase, and mount the install media at <codeph>/media/cdrom</codeph>. Here is the
+          command to achieve this:
           <codeblock>sudo mount Helion-OpenStack-2.0.0-b.2-Beta2.iso /media/cdrom</codeblock></li>
         <li>Unpack the tarball that is in the <codeph>/media/cdrom/hos2.0.0/</codeph> directory:
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.2-20150920T130131Z.tgz</codeblock></li>
         <li>Run the following included script:
           <codeblock>~/hos-2.0.0-b.2/hos-init.bash</codeblock></li>
-        <li><p>You will be prompted to enter a SSH passphrase when running
+        <li><p>You will be prompted to enter an optional SSH passphrase when running
               <codeph>hos-init.bash</codeph>. This passphrase is used to protect the key used by
-            Ansible when connecting to its client nodes.</p>
-          <p>For CI purposes it is possible to disable SSH passphrase prompting by setting the
-              <codeph>HOS_INIT_AUTO</codeph> environment variable before running
+            Ansible when connecting to its client nodes. If you do not want to use a passphrase then
+            just press return at the prompt.</p>
+          <p>For automated installation (e.g. CI) it is possible to disable SSH passphrase prompting
+            by setting the <codeph>HOS_INIT_AUTO</codeph> environment variable before running
               <codeph>hos-init.bash</codeph>, like this:</p>
-          <codeblock>export HOST_INIT_AUTO=y"</codeblock></li>
+          <codeblock>export HOST_INIT_AUTO=y</codeblock></li>
       </ol>
       <p>If you have protected the SSH key with a passphrase then execute the following commands to
         avoid having to enter the passphrase on every attempt by Ansible to connect to its client
@@ -156,8 +157,8 @@ ilo_ip: "192.168.9.3"
 ilo_user: "admin"
 ilo_password: "password"
 <b>is_deployer: true</b></codeblock></note></li>
-            <li id="encrypt">You can use the <codeph>hosencrypt.py</codeph> script to encrypt your
-              iLo passwords. This script uses OpenSSL. <ol>
+            <li id="encrypt">[Optional] You can use the <codeph>hosencrypt.py</codeph> script to
+              encrypt your iLo passwords. This script uses OpenSSL. <ol>
                 <li>Change to the Ansible directory:
                   <codeblock>cd ~/helion/hos/ansible</codeblock></li>
                 <li>Put the encrytion key into the following environment variable:
@@ -215,7 +216,18 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           >Installation Troubleshooting</xref> document.</p>
     </section>
     <section id="CobblerDeploy">
-      <title>Deploy Cobbler </title>
+      <title>Deploy Cobbler</title>
+      <p>This phase of the install process takes the baremetal information that was provided in
+          <codeph>servers.yml</codeph> and installs the Cobbler provisioning tool and loads this
+        information into Cobbler. This sets each node to <codeph>netboot-enabled: true</codeph>.
+        Each node will be automatically marked as <codeph>netboot-enabled: false</codeph> when it
+        completes its operating system install successfully. Even if the node tries to PXE boot
+        subsequently, Cobbler will not serve it. This is deliberate so that you can't reimage a live
+        node by accident.</p>
+      <p>The <codeph>cobbler-deploy.yml</codeph> playbook prompts for a password - this is the
+        password to be able to log in to the nodes via their consoles after install. The username is
+        the same as the user set up in the initial dialogue when installing the deployer from the
+        iso, and is the same user that is running the cobbler-deploy play.</p>
       <ol>
         <li>Run the following command:
           <codeblock>export ANSIBLE_HOST_KEY_CHECKING=False</codeblock></li>
@@ -235,25 +247,29 @@ confirm Enter the password that will be used to access provisioned nodes:</codeb
       </ol>
     </section>
     <section id="NodeProvision"><title>Provision the Nodes</title>
-      <ol>
-        <li>Run the following command, which will reimage all the nodes using PXE:
-          <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock></li>
-        <li>The script will wait for the nodes to install and come back up.</li>
-      </ol>
+      <p>This phase of the install process goes through a number of distinct steps: <ol>
+          <li>Powers down the nodes to be installed</li>
+          <li>Sets the nodes hardware boot order so that the first option is a network boot.</li>
+          <li>Powers on the nodes. (The nodes will then boot from the network and be installed using
+            infrastructure set up in the previous phase)</li>
+          <li>Waits for the nodes to power themselves down (this indicates a success install). This
+            can take some time.</li>
+          <li>Sets the boot order to hard disk and powers on the nodes.</li>
+          <li>Waits for the nodes to be ssh-able and verifies that they have the signature
+            expected.</li>
+        </ol>
+      </p>
+      <p>The reimage command is:</p>
+      <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml [-e nodelist=node1,node2,node3]</codeblock>
+      <p>If a nodelist is not specified then the set of nodes in cobbler with
+          <codeph>netboot-enabled: True</codeph> is selected. The playbook pauses at the start to
+        give you a chance to review the set of nodes that it is targeting and to confirm that it's
+        correct.</p>
+      <p>You can use <codeph>sudo cobbler system report</codeph> which will give you a synopsis of
+        the nodes' information including whether the <codeph>netboot-enabled</codeph> flag is
+        set.</p>
     </section>
-    <!--
-    <section id="validate_swift"><title>Validate Object Storage (Optional)</title>
-      <ol>
-        <li><p>To validate object storage cloud model, execute the following command on the
-            deployer:</p>
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>
-          <p>If any error is raised when you validate the object storage, refer to <xref
-              href="swift/troubleshooting.dita">Swift-Troubleshooting</xref></p></li>
-      </ol>
-    </section>
-    -->
     <section id="deploy"><title>Deploy the Cloud</title>
       <ol>
         <li>Use the playbook below to create a deployment directory:

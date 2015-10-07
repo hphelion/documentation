@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_esx">
-  <title>Deploying ESX Cloud </title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for ESX Hypervisor</title>
   <body>
     <p>This document describes the procedure for the deployment of ESX cloud using input model and
       adding additional ESX hosts to an already activated cluster.</p>
