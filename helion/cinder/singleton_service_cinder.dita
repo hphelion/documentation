@@ -36,32 +36,27 @@ ansible-playbook -i hosts/verb_hosts cinder-migrate-volume.yml --extra-vars "mig
               "migrate_host" value to <codeph>padawan-ccp-c1-m1-mgmt</codeph>.</p></li>
         </ol></p>
     </section>
-    <section><b>Managing Cinder Volume and Backup Services during a node reboot or
-        replacement</b><p>If the controller node running Cinder volume and backup reboots: <ol
-          id="ol_o3k_1ff_pt">
+    <section><b>Managing Cinder Volume and Backup Services During a Node Reboot or
+        Replacement</b><p>If the controller node is running cinder volume and backup reboots,
+        perform the following steps: <ol id="ol_o3k_1ff_pt">
           <li>Run the <codeph>hlm-start.yml</codeph> playbook on the node that has just rebooted
             using the "--limit &lt;hostname>" option. <p>For example:
             </p><codeblock> cd ~/scratch/ansible/next/hos/ansible/
  ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit padawan-ccp-c1-m1-mgmt </codeblock></li>
-          <li/>
-          <li/>
-          <li/>
-          <li>
-            <p/>
-          </li>
-        </ol><ol id="ol_xn4_z2f_pt">
-          <li>Run Run the hlm-start.yml For example: cd ~/scratch/ansible/next/hos/ansible/
-            ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit padawan-ccp-c1-m1-mgmt 2.
-            Migrate the Cinder volume and backup services using the cinder-migrate-volume.yml
-            playbook The node to migrate to may be the node that has just rebooted or it can be one
-            of the other nodes in the cinder volume hostgroup. If the controller node running Cinder
-            volume and backup is going to be replaced with a new node: 1. Migrate the Cinder volume
-            and backup services to another controller node using the cinder-migrate-volume.yml
-            playbook 2. Follow the replacement procedure for control plane nodes 3. Run the
-            cinder-migrate-volume.yml playbook again to ensure the new node has an up to date view
-            of the volume service location. When running cinder-migrate-volume.yml the volume
-            service can optionally be migrated on to the new node or on to one of the other nodes in
-            the cinder volume hostgroup </li>
+          <li>Migrate the cinder volume and backup services using the<codeph>
+              cinder-migrate-volume.yml</codeph> playbook .<p>The node to migrate to may be the node
+              that has just rebooted or it can be one of the other nodes in the cinder volume
+              hostgroup. </p></li>
+        </ol></p><p>If the controller node running cinder volume and backup is going to be replaced
+        with a new node, perform the following steps: <ol id="ol_b1c_ngf_pt">
+          <li>Migrate the cinder volume and backup services to another controller node using the
+              <codeph>cinder-migrate-volume.yml</codeph> playbook.</li>
+          <li>Follow the replacement procedure for control plane nodes. </li>
+          <li>Run the <codeph>cinder-migrate-volume.yml</codeph> playbook again to ensure the new
+            node has an up to date view of the volume service location. <p>When running
+                <codeph>cinder-migrate-volume.yml</codeph> the volume service can optionally be
+              migrated on to the new node or on to one of the other nodes in the cinder volume
+              hostgroup.</p></li>
         </ol></p></section>
   </body>
 </topic>
