@@ -5,20 +5,97 @@
   <body>
     <section id="about"><title>Configuration Options</title>
       <ul>
-        <li>Entry Scale Cloud - uses KVM Hypervisor for Compute hosts and VSA Block Storage backend
-          <p>Variations include:</p>
-        <ul>
-          <li>Using a Ceph Block Storage backend</li>
-          <li>Using a 3PAR Block Storage backend</li>
-          <li>Using ESX as your Compute host hypervisor</li>
-        </ul></li>
+        <li>Entry Scale Cloud - uses KVM Hypervisor for Compute hosts and VSA Block Storage
+          backend</li>
+        <li>Entry Scale Cloud variations: <ul>
+            <li>Using a Ceph Block Storage backend</li>
+            <li>Using a 3PAR Block Storage backend</li>
+            <li>Using ESX as your Compute host hypervisor</li>
+          </ul></li>
         <li>Entry Scale Storage Depot - deploys exclusively as an Object Storage service</li>
       </ul>
     </section>
-
-    <section><title>Entry scale cloud with VSA (on KVM)</title>
-      <p>Choosing this model will result in a cloud with that has the following
-      characteristics:</p></section>
+    <section><title>Entry Scale Cloud with KVM Hypervisor on Compute Hosts and VSA Block Storage
+        Backend</title>
+      <p>Choosing this model will result in a cloud with that has the following characteristics:</p>
+      <table frame="all" rowsep="1" colsep="1" id="table_bcp_f2k_pt">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Item</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Control Planes</entry>
+              <entry>A single control plane consisting of three servers that co-host all of the
+                required services. Optionally, the deployer can reside on a control plane node,
+                reducing the number of servers by one. Separate instructions are available for that
+                option. The defaults for this model are described below.</entry>
+            </row>
+            <row>
+              <entry>Resource Pools</entry>
+              <entry>One compute node, one VSA node</entry>
+            </row>
+            <row>
+              <entry>Deployer</entry>
+              <entry>The deployer handles the installation and initial configuration of your cloud.
+                It can live on a dedicated node or you can utilize one of your controller nodes for
+                this purpose. If you are using the GUI deployer, behind the scenes, it will enter
+                your values into <b>data/baremetalConfig.yml</b>. If not, you must enter them
+                there.</entry>
+            </row>
+            <row>
+              <entry>Networking</entry>
+              <entry><p>The example requires the following networks: <ul>
+                    <li> IMPI/iLO network, connected to the deployer and the IPMI/iLO ports of all
+                      servers. </li>
+                    <li> A network connected to a dedicated NIC on each server used to install the
+                      operating system and install and configure Helion. </li>
+                    <li> A pair of bonded NICs which are used used by the following networks: <ul>
+                        <li> External API - This is the network that users will use to make requests
+                          to the cloud </li>
+                        <li> External VM - This is the network that will be used to provide access
+                          to VMs (via floating IP addresses) </li>
+                        <li> Guest - This is the network that will carry traffic between VMs on
+                          private networks within the cloud </li>
+                        <li> Cloud Management - This is the network that will be used for all
+                          internal traffic between the cloud services </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </p>
+                <p>Note that the EXTERNAL_API network must be reachable from the EXTERNAL_VM network
+                  if you want VMs to be able to make API calls to the cloud. An example set of
+                  networks are defined in <codeph>data/networks.yml</codeph>. If you are using the
+                  GUI installer, it will populate this file with your values; otherwise, you will
+                  need to enter your values here.</p>
+                <p>The example uses eth2 for the install network and eth3 and eth4 for the bonded
+                  network. If you need to modify these for your environment they are defined in
+                    <codeph>data/net_interfaces.yml.</codeph>.</p></entry>
+            </row>
+            <row>
+              <entry>Local Storage</entry>
+              <entry>
+                <p>Each server should present a single operating system disc, protected by a RAID
+                  controller. In addition the example configures one additional disk depending on
+                  the role of the server: Controllers: /dev/sdb is configured to be used by
+                  Swift.</p>
+                <p>Additional discs can be configured for any of these roles by adding them in the
+                  appropriate section. If you are using the GUI installer, it will edit the
+                  appropriate configuration files; otherwise, you must enter your values in
+                    <codeph>data/disks_.yml</codeph>.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <!-- HIDING
+    </section>
     <section id="controlplane"><title>Control Planes</title>
       <p>A single control plane consisting of three servers that co-host all of the required
         services. Optionally, the deployer can reside on a control plane node, reducing the number
@@ -37,8 +114,8 @@
     <section id="networking"><title>Networking </title>
       <p>The example requires the following networks: <ul>
           <li> IMPI/iLO network, connected to the deployer and the IPMI/iLO ports of all servers. </li>
-          <li> A network connected to a dedicated NIC on each server used to install the operating system and
-            install and configure Helion. </li>
+          <li> A network connected to a dedicated NIC on each server used to install the operating
+            system and install and configure Helion. </li>
           <li> A pair of bonded NICs which are used used by the following networks: <ul>
               <li> External API - This is the network that users will use to make requests to the
                 cloud </li>
@@ -61,13 +138,14 @@
           <codeph>data/net_interfaces.yml.</codeph>.</p>
     </section>
     <section id="localstorage"><title>Local Storage</title>
-      <p>Each server should present a single operating system disc, protected by a RAID controller. In addition
-        the example configures one additional disk depending on the role of the server: Controllers:
-        /dev/sdb is configured to be used by Swift.</p>
+      <p>Each server should present a single operating system disc, protected by a RAID controller.
+        In addition the example configures one additional disk depending on the role of the server:
+        Controllers: /dev/sdb is configured to be used by Swift.</p>
       <p>Additional discs can be configured for any of these roles by adding them in the appropriate
         section. If you are using the GUI installer, it will edit the appropriate configuration
         files; otherwise, you must enter your values in <codeph>data/disks_.yml</codeph>.</p>
     </section>
+    -->
     <section id="single_esx"><title>Single Region Cloud (on ESX)</title>
       <p>Choosing this model will result in a cloud that has the following characteristics:</p>
     </section>
@@ -94,8 +172,8 @@
     <section id="esx_network"><title>Networking</title>
       <p>The example requires the following networks: <ul>
           <li>IMPI/iLO network, connected to the deployer and the IPMI/iLO ports of all servers. </li>
-          <li> A network connected to a dedicated NIC on each server used to install the operating system and
-            install and configure Helion. </li>
+          <li> A network connected to a dedicated NIC on each server used to install the operating
+            system and install and configure Helion. </li>
           <li> A pair of bonded NICs which are used used by the following networks: <ul>
               <li> External API - This is the network that users will use to make requests to the
                 cloud </li>
@@ -117,8 +195,8 @@
           <codeph>data/net_interfaces.yml</codeph>.</p>
     </section>
     <section id="esx_local"><title>Local Storage</title>
-      <p>Each server should present a single operating system disc, protected by a RAID controller. In addition
-        the example configures one additional disk depending on the role of the server: <ul>
+      <p>Each server should present a single operating system disc, protected by a RAID controller.
+        In addition the example configures one additional disk depending on the role of the server: <ul>
           <li>Controllers: /dev/sdb is configured to be used by Swift</li>
         </ul></p>
       <p>Additional discs can be configured for any of these roles by adding them in the appropriate
@@ -132,13 +210,13 @@
       <p>The following diagram depicts a deployment scenario using the ESX hypervisor:</p>
       <p><image href="../media/esx/Beta1-ESX-Network-Diagram%20(2).jpg" id="image_phk_1wz_4t"/></p>
     </section>
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     <!--<p>In Helion <tm tmtype="reg">OpenStack</tm> 2.0 Beta 2 we offer the Entry Scale Cloud model
       with two variations depending on the hypervisor you wish to use: KVM or ESX.</p>
     <p>The following list summarizes this configuration and it's purpose.</p>
