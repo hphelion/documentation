@@ -192,18 +192,9 @@
     <topichead navtitle="Operations">
       <topicref href="helion/operations/accessing_horizon.dita"
         navtitle="Accessing the Horizon Dashboard" locktitle="yes"/>
-      <topicref href="helion/operations/opsconsole/networking_summary.dita"/>
       <topicref href="helion/operations/accessing_opsconsole.dita"
         navtitle="Accessing the Operations Console" locktitle="yes"/>
-      <topicref href="helion/operations/opsconsole/overview.dita" navtitle="Operations Console"
-        locktitle="yes">
-        <topichead navtitle="Storage">
-          <topicref href="helion/operations/opsconsole/storage_summary.dita"/>
-        </topichead>
-        <topichead navtitle="Helion Development Platform">
-          <topicref href="helion/operations/opsconsole/hdp_summary.dita"/>
-        </topichead>
-      </topicref>
+
       <topicref href="start.stop.check" toc="no">
         <topicref href="checking.object.storage" toc="no"/>
       </topicref>
@@ -220,14 +211,14 @@
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>
       </topicref>
-     
 
-          
 
-        
-      
+
+
+
+
     </topichead>
-    
+
     <!-- 
 
 MONITORING AND LOGGING 
@@ -245,39 +236,43 @@ MONITORING AND LOGGING
         navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
     </topicref>
     <topicref href="helion/operations/monasca.dita" navtitle="Monitoring Service" locktitle="yes"/>
+    <topicref href="helion/operations/alarms.dita" navtitle="Service Alarm Definitions"
+      locktitle="yes"/>
     <topicref href="helion/operations/centralized_logging.dita"
       navtitle="Centralized Logging Service" locktitle="yes">
       <topicref href="helion/operations/logging_settings.dita" navtitle="Logging Settings"
         locktitle="yes"/>
     </topicref>
-    <topicref href="helion/operations/alarms.dita" navtitle="Service Alarm Definitions"
-      locktitle="yes"/>
-    <topicref href="helion/operations/opsconsole/dashboard.dita"/>
-    <topicref href="helion/operations/opsconsole/logging.dita"/>
-    <topicref href="helion/operations/opsconsole/alarm_definitions.dita"/>
-    <topicref href="helion/operations/opsconsole/alarm_explorer.dita"/>
-    <topicref href="helion/operations/opsconsole/notification_methods.dita"/>
-    <topicref href="helion/operations/opsconsole/metric_monitoring.dita"/>
-    <topicref href="helion/operations/opsconsole/compute_summary.dita"/>
-    <topicref href="helion/operations/opsconsole/compute_hosts.dita"/>
-    <topicref href="helion/operations/opsconsole/compute_instances.dita"/>
-    
-    
-    
-    <!--
 
- TROUBLESHOOTING -->
+<!-- OPS CONSOLE PAGES (will be hidden from the TOC) -->
+    <topicref href="helion/operations/opsconsole/overview.dita" navtitle="Operations Console"
+      locktitle="yes">
+      <topicref href="helion/operations/opsconsole/dashboard.dita"/>
+      <topicref href="helion/operations/opsconsole/logging.dita"/>
+      <topicref href="helion/operations/opsconsole/alarm_definitions.dita"/>
+      <topicref href="helion/operations/opsconsole/alarm_explorer.dita"/>
+      <topicref href="helion/operations/opsconsole/notification_methods.dita"/>
+      <topicref href="helion/operations/opsconsole/metric_monitoring.dita"/>
+      <topicref href="helion/operations/opsconsole/compute_summary.dita"/>
+      <topicref href="helion/operations/opsconsole/compute_hosts.dita"/>
+      <topicref href="helion/operations/opsconsole/compute_instances.dita"/>
+      <topicref href="helion/operations/opsconsole/networking_summary.dita"/>
+      <topicref href="helion/operations/opsconsole/storage_summary.dita"/>
+      <topicref href="helion/operations/opsconsole/hdp_summary.dita"/>
+</topicref>
+    
+    <!-- TROUBLESHOOTING -->
     <topichead navtitle="Troubleshooting">
-    <topicref href="helion/swift/troubleshooting.dita">
-      <topicref href="helion/swift/deploy_fails_with_msdos_disks.dita"/>
-      <topicref href="helion/swift/examine_details_planned_ring_changes_prior_deploy.dita"/>
-      <topicref href="helion/swift/how_to_change_min-part-power.dita"/>
-      <topicref href="helion/swift/interpreting_swift-validate-input-model.dita"/>
-    </topicref>
+      <topicref href="helion/swift/troubleshooting.dita">
+        <topicref href="helion/swift/deploy_fails_with_msdos_disks.dita"/>
+        <topicref href="helion/swift/examine_details_planned_ring_changes_prior_deploy.dita"/>
+        <topicref href="helion/swift/how_to_change_min-part-power.dita"/>
+        <topicref href="helion/swift/interpreting_swift-validate-input-model.dita"/>
+      </topicref>
       <topicref href="helion/ceilometer/metering_troubleshoot.dita"
         navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
     </topichead>
-    
+
     <!-- USER GUIDE -->
     <topichead navtitle="User Guide">
       <topicref href="helion/user/create_network.dita" navtitle="Creating a Private Network"
