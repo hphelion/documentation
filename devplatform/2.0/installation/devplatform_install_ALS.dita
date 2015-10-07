@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_txg_cnh_ts">
+  <title>Install the Application Lifecycle Service (ALS)</title>
+  <body>
+    
+<ol>
+      <li>Download an RC file for the admin user and project. <ol id="ol_bpk_1c1_4t">
+          <li> Log in to Horizon using the admin account.</li>
+          <li>Download the OpenStack RC file. <p>
+              <image placement="break" href="../../../media/quickstartDownloadRCFile.png"
+                id="image_asb_jvy_nt"/>
+            </p></li>
+          <li>Use <codeph>scp</codeph> to copy the RC file over to the Deployer.</li>
+          <li>SSH to the Deployer and source the RC file. You will need to provide the same admin
+            password that you used to log in to Horizon. <p>
+              <codeblock> source admin-openrc.sh</codeblock>
+            </p></li>
+        </ol></li>
+      <li>Create a file <codeph>~/.config/openstack/clouds.yaml</codeph> and enter the configuration
+        information for your installation in the file. The following sample configuration provides a
+        starting point. For more detailed information, see the OpenStack <xref
+          href="http://docs.openstack.org/developer/python-openstackclient/configuration.html"
+          format="html" scope="external">client configuration documentation</xref>. <note>The
+          Identity URL can be found in Horizon at: <b>Project</b> &gt; <b>Compute</b> &gt; <b>Access
+            &amp; Security</b> &gt; <b>API Access</b>. Note the Service Endpoint URL for the
+          Identity
+        Service.</note><codeblock>clouds:
+  mycloud:
+    codn_username: hdnuser@domain.com
+    codn_password: password
+    horizon_url: http://&lt;horizon-ip-address&gt;/
+    cacert: /etc/ssl/certs/ca-certificates.crt
+    region_name: region1
+    auth:
+      auth_url: &lt;identity url&gt;
+      project_name: &lt;admin project name&gt;
+      username: &lt;admin user name&gt;
+      password: &lt;admin password&gt;</codeblock></li>
+      <li>Source the Virtual Environment.<pre>source .devplatform/bin/activate</pre></li>
+      <li>List the available ALS versions to
+        install.<codeblock>openstack hdpi list --os-cloud mycloud | grep als</codeblock>The output
+        should include:<codeblock>| als | wscatalog.2670 | 2.0.0 | available |</codeblock></li>
+      <li> Use the ALS version number to view the details of the specific package. The output
+        provides significant administration information such as download size, version, and so
+        forth.<codeblock>openstack hdpi show wscatalog.2670 --os-cloud mycloud</codeblock> The
+        output will appear similar to:
+        <codeblock>+---------------+---------------------------------------------------------------------------------------------+
+| Field         | Value                                                                                       |
++---------------+---------------------------------------------------------------------------------------------+
+| actions       | download                                                                                    |
+| description   | als_2.0.0.517_qcow2.csu - Application Lifecycle Service for HP Helion Development Platform. |
+| download_size | 5157019481                                                                                  |
+| email         |                                                                                             |
+| id            | wscatalog.2670                                                                              |
+| name          | Application Lifecycle Service                                                               |  
+| package_id    | g11.2e8ab198-5b0f-4bda-9ec7-8ab9c13b53dd                                                    |
+| provider_name | Hewlett Packard Company                                                                     |
+| service       | als                                                                                         |
+| sku           | B4CD85EA-742F-B8BA-DD39-3A81EEC89741                                                        |
+| state         | available                                                                                   |
+| type          | PaaS Workloads                                                                              |
+| version       | 2.0.0                                                                                       |
+| webpage       | http://www.hp.com/helion/devplatform                                                        |
++---------------+---------------------------------------------------------------------------------------------+        </codeblock></li>
+      <li> Install the ALS
+        service.<codeblock>openstack --os-cloud mycloud hdpi als install –-package wscatalog.2670</codeblock>
+        The output will appear similar to:
+        <codeblock>Application Lifecycle Service is now downloading
+...
+...
+Application Lifecycle Service is (downloaded)
+Application Lifecycle Service is already (available)
+Application Lifecycle Service is already configured
+Completed installing application
+$</codeblock>
+      </li>
+    </ol>
+  </body>
+</topic>
