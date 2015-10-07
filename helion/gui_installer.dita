@@ -3,7 +3,7 @@
 <topic id="install_gui">
   <title>Installing HP Helion OpenStack&#174; 2.0 Using the Day Zero Installer</title>
   <body>
-    <section> HP Helion OpenStack 2.0 comes with a UI, the Dayzero Installer,  for installing your
+    <section> HP Helion OpenStack 2.0 comes with a UI, the Dayzero Installer, for installing your
       cloud. Rather than searching through and editing a number of YAML files to input your specific
       configuration data, finding the correct location, and maintaing the format of the files, the
       UI presents fields in which you may enter your information. </section>
@@ -13,12 +13,12 @@
     <section>While the UI app does more than simply popoulate the configuration files that the
       configuration processor uses as input to its processses, it does populate them. Therefore you
       can inspect the files whenever you like, or before reconfiguing your cloud. </section>
-    <section>Note, however, that  if you decide to look at or try to modify configuration files
+    <section>Note, however, that if you decide to look at or try to modify configuration files
       during the process, none of your values are actually written to the configuration files until
       you cick the Deploy button at the end of the process. That would mean too that if you were to
       try to change anything in the files themselves mid process, the values would get overwritten
       by values you have entered in the GUI before cicking the Deploy button.</section>
-    
+
 
     <section>These YAML configuration files are now stored in a local git repository as well, as
       explained in <xref href="using_git.dita#topic_u3v_1yz_ct">Using git for Configuration
@@ -56,35 +56,37 @@
 
       </ol>
     </section>
-    <section><title>Running the GUI to install your cloud</title> Now that the OS, HP Linux for HP
-      Helion OpenStack, is installed on all your servers (nodes), you will configure and install
-      your cloud using the GUI.<p>The GUI is found on the deployer node at:
-          <b>http://&lt;Deployer_IP>:79/dayzero</b></p> Make sure you choose "NO" to the question of
-      whether you want the Day0 installer to install the Linux for HP Helion operatig
-      system on your nodes.<p>To create a secure tunnel/port forwarding into Apache from the
-        deployer to be able to use the GUI in a browser, SSH tunnel into the deployer with the
-        username/password set up when installing the deployer. Username and password should be what
-        was set in "Set up the Deployer" in the installation instructions. For example:</p>
+    <section><title>Running the GUI to install your cloud</title>
+      <p>Now that the OS, HP Linux for HP Helion OpenStack, is installed on all your servers
+        (nodes), you will configure and install your cloud using the GUI.</p>
+      <p>The GUI is found on the deployer node at: <b>http://&lt;Deployer_IP>:79/dayzero</b></p>
+      <p>Make sure you choose "NO" to the question of whether you want the Day0 installer to install
+        the Linux for HP Helion operating system on your nodes.</p>
+      <p>To create a secure tunnel/port forwarding into Apache from the deployer to be able to use
+        the GUI in a browser, SSH tunnel into the deployer with the username/password set up when
+        installing the deployer. Username and password should be what was set in "Set up the
+        Deployer" in the installation instructions. For example:</p>
       <codeblock>ssh -v -N -L 8080:&lt;Deployer_IP>:79 &lt;Username>@&lt;Deployer_IP></codeblock>
       <p>Then on your local machine, point your web browser to: http://localhost:8080/dayzero</p>
       <image placement="break" href="../media/install/GUIpage1.png" id="image_a3s_km3_kt"/>As you
-      proceed through the GUI, you need only supply your server names and IP addresses.  </section>
+      proceed through the GUI, you need only supply your server names and IP addresses. </section>
     <section>In the Assign network groups: External VM network fields, <b>do not</b> add entries for
       CIDR, Gateway, or IP Range, only VLAN ID. Neutron will assign these.<p>When the installation
         is complete, the Ansible log will be displayed on the final page.</p>
     </section>
     <section><title>Using the installer securely</title>
-      <p>The Dayzero Installer is a web based application . It runs on the deployer and is implemented
-        in nodejs. Currently this application runs behind Apache 2.0 where requests are proxied to
-        the nodejs Express Web Server. The nodejs Express Server runs on port 3000 and Apache runs
-        on port 79. You should access the installer through Apache and not directly from the Express
-        server. An Example URL looks like this: http://&lt;deployer-host-ip>:79/installer When you
-        finish installing, the  Installer will be disabled via Ansible.</p>
+      <p>The Dayzero Installer is a web based application . It runs on the deployer and is
+        implemented in nodejs. Currently this application runs behind Apache 2.0 where requests are
+        proxied to the nodejs Express Web Server. The nodejs Express Server runs on port 3000 and
+        Apache runs on port 79. You should access the installer through Apache and not directly from
+        the Express server. An Example URL looks like this:
+        http://&lt;deployer-host-ip>:79/installer When you finish installing, the Installer will be
+        disabled via Ansible.</p>
     </section>
     <section>
       <p>The GUI is used only once: during the initial installation of your cloud.</p><p>For VSA you
-        must follow the steps outlined in the <xref href="cinder/vsa/vsa.dita#topic_gmc_dgk_jt"
-            >VSA Configuration</xref>page.</p> After deployment, continue to <xref
+        must follow the steps outlined in the <xref href="cinder/vsa/vsa.dita#topic_gmc_dgk_jt">VSA
+          Configuration</xref>page.</p> After deployment, continue to <xref
         href="installation_verification.dita#tempest">Verifying Your Installation</xref> and <xref
         href="postinstall_checklist.dita#postinstall_checklist">Post-Installation
         Checklist</xref>.<p>To understand a cloud configuration more thoroughly and to learn how to

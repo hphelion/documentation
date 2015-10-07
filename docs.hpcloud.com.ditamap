@@ -31,7 +31,7 @@
     <topicref href="helion/installation_overview.dita" navtitle="Installation" locktitle="yes">
       <topicref href="helion/administration/wipe_disks.dita"
         navtitle="Pre-Installation Disk Cleanup" locktitle="yes"/>
-      <topicref href="helion/beta1_to_beta2_upgrade.dita"/>
+      <topicref href="helion/beta1_to_beta2_upgrade.dita" navtitle="Upgrading from Beta 2" locktitle="yes"/>
       <topicref href="helion/combining_files.dita"
         navtitle="Combining the baremetalConfig.yml and servers.yml Files" locktitle="yes"/>
       <topicref href="helion/using_git.dita" navtitle="Using Git for Configuration Management"

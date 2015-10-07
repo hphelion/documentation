@@ -14,7 +14,7 @@
         </li>
         <li>
           <xref type="section" href="#monitoring/differences">Differences Between Upstream and
-            Helion OpenStack Implementations</xref>
+            HP Helion OpenStack Implementations</xref>
         </li>
         <li>
           <xref type="section" href="#monitoring/diagram">Diagram of Monasca Service</xref>
@@ -40,16 +40,16 @@
         database for storing metrics as detailed in the <xref href="monasca_configure.dita"
           >Monitoring Configuration</xref> document.</p>
     </section>
-    <section id="differences"><title>Differences Between Upstream and Helion OpenStack
+    <section id="differences"><title>Differences Between Upstream and HP Helion OpenStack
         Implementations</title>
-      <p>In the Helion OpenStack 2.0 release, the OpenStack monitoring service, Monasca, is included
-        as the Helion OpenStack monitoring solution with the following exceptions:</p>
+      <p>In the HP Helion OpenStack 2.0 release, the OpenStack monitoring service, Monasca, is included
+        as the HP Helion OpenStack monitoring solution with the following exceptions:</p>
       <ul>
         <li>Transform Engine</li>
         <li>Events Engine </li>
         <li>Anomaly and Prediction Engine</li>
       </ul>
-      <note>Icinga was supported in previous Helion versions but it has been deprecated in Helion
+      <note>Icinga was supported in previous Helion versions but it has been deprecated in HP Helion
         OpenStack 2.0.</note>
     </section>
     <section id="diagram">
@@ -63,8 +63,8 @@
           href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md"
           format="html" scope="external">REST API</xref>.</p>
       <b>Operations Console</b>
-      <p>The Operations Console (Ops Console) is designed for Helion OpenStack Administrators to
-        have a web-based UI that they can use to operate and manage the Helion OpenStack
+      <p>The Operations Console (Ops Console) is designed for HP Helion OpenStack Administrators to
+        have a web-based UI that they can use to operate and manage the HP Helion OpenStack
         environment.</p>
       <p>To determine which IP address to use to access the Operations Console you can use this
         command from your deployer: <codeblock>grep vip-HZN-WEB /etc/hosts</codeblock></p>

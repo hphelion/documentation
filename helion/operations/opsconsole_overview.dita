@@ -4,39 +4,8 @@
 <topic xml:lang="en-us" id="opsconsole">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Operations Console</title>
   <body>
-    <!--
-    <section id="about">
-      <p>The Operations Console (Ops Console) is designed for Helion OpenStack Administrators to
-        have a web-based UI that they can use to operate and manage the Helion OpenStack
-        environment.</p>
-      <p>The following topics explain how to use each of the menus in the console:</p>
-      <ul>
-        <li>General <ul>
-            <li><xref href="dashboard.dita">Dashboard</xref></li>
-            <li><xref href="logging.dita">Logging</xref></li>
-            <li><xref href="alarm_definitions.dita">Alarm Definitions</xref></li>
-            <li><xref href="alarm_explorer.dita">Alarms</xref></li>
-            <li><xref href="notification_methods.dita">Notification Methods</xref></li>
-            <li><xref href="metric_monitoring.dita">Metric Monitoring</xref></li>
-          </ul></li>
-        <li>Compute <ul>
-            <li><xref href="compute_summary.dita">Compute - Alarm Summary</xref></li>
-            <li><xref href="compute_hosts.dita">Compute Hosts</xref></li>
-            <li><xref href="compute_instances.dita">Compute Instances</xref></li>
-          </ul>
-        </li>
-        <li>Networking <ul>
-            <li><xref href="networking_summary.dita">Networking - Alarm Summary</xref></li>
-          </ul>
-        </li>
-        <li>Storage <ul>
-            <li><xref href="storage_summary.dita">Storage - Storage Alarm Summary</xref></li>
-          </ul></li>
-      </ul>
-    </section>
-    -->
     <section id="about"><title>About the Operations Console</title>
-      <p>The Operations Console (Ops Console) for Helion OpenStack 2.0 is designed for Helion
+      <p>The Operations Console (Ops Console) for HP Helion OpenStack 2.0 is designed for HP Helion
         Openstack Administrators to have a web-based UI they can use to view data about their cloud
         infrastructure. The Ops Console is a web-based GUI that offers the user access to data such
         as monitoring alarms data by service, performance data, compute nodes and instances lists,
@@ -54,7 +23,7 @@
       <codeblock>Username: admin
 Password: admin</codeblock>
       <note type="important">The credentials for your <codeph>admin</codeph> user account can be
-        changed. See <xref href="../../keystone/keystone_init.dita">Keystone Configuration</xref>
+        changed. See <xref href="../keystone/keystone_init.dita">Keystone Configuration</xref>
         for more details.</note>
     </section>
   </body>

@@ -66,7 +66,7 @@
       </p>
       <p>Use these checklists to confirm and record your network configuration information.</p>
       <p><b>Router</b></p>
-      <p>The IP router used with Helion OpenStack must support the updated of it's ARP table through
+      <p>The IP router used with HP Helion OpenStack must support the updated of it's ARP table through
         gratuitous ARP packets.</p>
       <p><b>PXE Installation Network</b></p>
       <p>When provisioning the IP range, allocate sufficient IP addresses to cover both the current
@@ -165,7 +165,7 @@
         </table>
       </p>
       <p><b>Management Network</b></p>
-      <p>The management network is the backbone used for the majority of Helion OpenStack management
+      <p>The management network is the backbone used for the majority of HP Helion OpenStack management
         communications. Control messages are exchanged between the Controllers, Compute hosts, and
         Cinder backends through this network. In addition to the control flows, the management
         network is also used to transport Swift and iSCSI based Cinder block storage traffic between
@@ -451,7 +451,7 @@
       </p>
     </section>
     <section id="deployer"><title>Deployer</title>
-      <p>This server contains the Helion OpenStack installer, which is based on Git, Ansible, and
+      <p>This server contains the HP Helion OpenStack installer, which is based on Git, Ansible, and
         Cobbler.</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_d2v_mk4_ht">
@@ -545,7 +545,7 @@
     </section>
     <section id="control_plane"><title>Control Plane</title>
       <p>The Control Plane consists of three servers, in a highly available cluster, that host the
-        core Helion OpenStack services including Nova, Keystone, Glance, Cinder, Heat, Neutron,
+        core HP Helion OpenStack services including Nova, Keystone, Glance, Cinder, Heat, Neutron,
         Swift, Ceilometer, and Horizon. Additional services include mysql, ip-cluster, apache2,
         rabbitmq, memcached, zookeeper, kafka, influxDB, storm, monasca, logging, and cmc.</p>
       <p><b>Control Plane 1</b></p>

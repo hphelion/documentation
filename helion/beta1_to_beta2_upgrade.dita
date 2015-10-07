@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="beta_upgrade">
-  <title>Upgrading from Beta 2</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Upgrading from Beta 2</title>
   <body>
     <p> Upgrade from Beta 2 is now supported. To perform the upgrade, you must have a working
       deployment of the Beta 2 release. </p>
     <p>To perform the upgrade, follow the steps below. The upgrade will apply updates to HP Helion
       OpenStack services, as well as to the underlying cloud platform. </p>
     <p> The upgrade mechanism included in this release is not complete in that it does not upgrade
-      the full set of services in the HOS stack. The following set of  components are upgraded as
+      the full set of services in the HP Helion OpenStack stack. The following set of components are upgraded as
       part of the upgrade: <ul>
-        <li> Linux for HP Helion </li>
-        <li> sosreport</li>
-        <li> monasca-agent</li>
-        <li> Openstack clients</li>
-        <li> haproxy/keepalived</li>
-        <li> Apache</li>
-        <li> Swift</li>
-        <li> Nova</li>
-        <li> Glance</li>
-        <li> Neutron</li>
-        <li> Cinder</li>
-        <li> Heat</li>
-        <li> Logging</li>
-        <li> Freezer</li>
+        <li>Linux for HP Helion</li>
+        <li>sosreport</li>
+        <li>monasca-agent</li>
+        <li>Openstack clients</li>
+        <li>haproxy/keepalived</li>
+        <li>Apache</li>
+        <li>Swift</li>
+        <li>Nova</li>
+        <li>Glance</li>
+        <li>Neutron</li>
+        <li>Cinder</li>
+        <li>Heat</li>
+        <li>Logging</li>
+        <li>Freezer</li>
       </ul> If you are running a configuration based on the Beta 2 model configuration, you may
       still use that configuration after upgrading. However, a few changes are required.</p>
     <note>The upgrade process is a live upgrade in the sense that VMs, volumes, network resources,

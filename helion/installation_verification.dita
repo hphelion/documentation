@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="tempest">
-  <title>Verifying the Install Using Embedded Tests</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Verifying the Install Using Embedded Tests</title>
   <body>
     <p>Tempest is a set of integration tests for OpenStack API validation, scenarios, and other
       specific tests to be run against a live OpenStack cluster.</p>
     <p>A version of the upstream <xref href="http://docs.openstack.org/developer/tempest/"
-        scope="external" format="html">Tempest</xref> integration tests is pre-deployed in the HP
-      Helion OpenStack deployer node.</p>
+        scope="external" format="html">Tempest</xref> integration tests is pre-deployed on the 
+      HP Helion OpenStack deployer node.</p>
     <p>You can use these embedded tests to verify if the deployed cloud is functional.</p>
     <ul>
       <li>
