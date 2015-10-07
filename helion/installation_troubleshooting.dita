@@ -25,12 +25,12 @@
 ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
       </p>
       <p id="cobblerchange"><b>Configuration changes needed after Cobbler deploy</b></p>
-      <p>If you've made a mistake or wish to change your <codeph>baremetalConfig.yml</codeph>
+      <p>If you've made a mistake or wish to change your <codeph>servers.yml</codeph>
         configuration file after you've already run the <codeph>cobbler-deploy.yml</codeph>
         playbook, follow these steps to ensure Cobbler gets updated with the new server
         information:</p>
       <ol>
-        <li>Ensure your <codeph>baremetalConfig.yml</codeph> file is updated</li>
+        <li>Ensure your <codeph>servers.yml</codeph> file is updated</li>
         <li>Commit your changes to git:
           <codeblock>cd ~/helion/hos/ansible
 git add -A

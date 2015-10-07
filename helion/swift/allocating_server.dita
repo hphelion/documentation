@@ -29,8 +29,7 @@
             the servers details in either of the following YAML files and verify the server-groups
               information:<ul id="ul_gmj_ng3_kt">
               <li>If you use Cobbler, add these details the baremetal-servers list (usually in
-                  <codeph>data/baremetalConfig.yml</codeph>). Otherwise, you add these details to
-                servers list (usually in <codeph>data/server.yml</codeph>)</li>
+                  <codeph>data/servers.yml</codeph>).</li>
               <li>As with all servers, you must also verify and/or modify the server-groups
                 information (usually in <codeph>data/server_groups.yml</codeph>)</li>
             </ul>The only part of this process that is unique to Swift is the allocation of disk

@@ -163,7 +163,7 @@
             case that a third-party driver doesn’t exist for LBaaS V2 installing LBaaS V1 instead of
             V2 is supported.</p>
           <ul>
-            <li>For more information, see: <xref href="neutron/lbaas.dita">Load Balancer (LBaaS)
+            <li>For more information, see: <xref href="neutron/lbaas_admin.dita">Load Balancer (LBaaS)
                 Configuration</xref></li>
           </ul>
         </li>
@@ -244,21 +244,21 @@
         <li>Anomaly and Prediction Engine</li>
       </ul>
       <p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer,
-        Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for HP
-        Helion OpenStack.</p><p>Learn more about Monasca here: <xref href="monasca/monasca.dita"
+        Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for 
+        HP Helion OpenStack.</p><p>Learn more about Monasca here: <xref href="operations/monasca.dita"
           >Monasca Overview</xref></p>
       <p><b>Monitoring Configuration Options Available for Metrics Database</b></p>
       <p>In Beta 2 you will have the option to specify which database platform you want to use for
         the Metrics Database. The default option with the installation is Vertica. The opensource
         alternative is InfluxDB.</p>
-      <p>Learn more about these options here: <xref href="monasca/monasca_configure.dita"
+      <p>Learn more about these options here: <xref href="administration/configure_monitoring.dita"
           >Configuring the Monitoring Service</xref></p>
       <p><b>Centralized Logging</b></p>
       <p>Logging for the services below is enabled in the default configuration. You will have the
         ability to disable per-service logging as needed.</p>
       <p>Logging is integrated for the following services: Nova, Glance, Swift, Neutron, Ceilometer,
         Monasca, Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p>
-      <p>Learn more about Centralized Logging here: <xref href="logging/centralized_logging.dita"
+      <p>Learn more about Centralized Logging here: <xref href="operations/centralized_logging.dita"
           >Centralized Logging Overview</xref></p>
       <!--
 <p><b>Backup and Restore Capabilities for the Control Plane</b> &#154; Allows you to backup and recover your HP Helion OpenStack</tm> environment with RPO=0.</p>
@@ -278,7 +278,7 @@
       <p>Basic Monitoring is complete for Beta 2 with the following limitations:</p>
       <ul>
         <li>Vertica is the default metrics database option in the install. If you want to use
-          InfluxDB then read <xref href="monasca/monasca.dita#monitoring/config" type="section"
+          InfluxDB then read <xref href="operations/monasca.dita#monitoring/config" type="section"
             >Configuring Monasca</xref> for more details.</li>
         <li>InfluxDB is not configured behind a VIP. It must directly access one node in the
           cluster.</li>
@@ -301,7 +301,7 @@
         </li>
         <li>Logging Dashboard <ul>
             <li>There is no auto-logon function, users must use the credentials in the <xref
-                href="logging/centralized_logging.dita#logging/interface">Logging Overview</xref> to
+                href="operations/centralized_logging.dita#logging/interface">Logging Overview</xref> to
               access the UI.</li>
           </ul></li>
         <li>Alarms <ul>
@@ -323,7 +323,7 @@
           </ul></li>
         <li>Masthead Items <ul>
             <li>The Help and EULA links will not work properly. You can view the Help files here:
-                <xref href="monasca/opsconsole/overview.dita">Operations Console
+                <xref href="operations/opsconsole_overview.dita">Operations Console
               Overview</xref></li>
             <li>User information panel fails to load making it so a user cannot update their email
               address or password.</li>

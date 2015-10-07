@@ -1320,7 +1320,7 @@
               mkfs-opts: -O large_file
         
         - name: vg-comp
-          # this VG is dedicated to Nova Compute to keep VM IOPS off the OS disk
+          # this VG is dedicated to Nova Compute to keep VM IOPS off the operating system disk
           physical-volumes:
             - /dev/sdb
           logical-volumes:

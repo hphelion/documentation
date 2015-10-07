@@ -63,8 +63,8 @@
 
     <p>  
       <ul id="LBaaSlist">
-        <li><xref href="lbaas.dita#HP2.0LBaaS/Prerequisites">Prerequisites</xref></li>
-        <li><xref href="lbaas.dita#HP2.0LBaaS/Configuration">Configuration</xref></li>
+        <li><xref href="lbaas_admin.dita#HP2.0LBaaS/Prerequisites">Prerequisites</xref></li>
+        <li><xref href="lbaas_admin.dita#HP2.0LBaaS/Configuration">Configuration</xref></li>
       </ul>
     </p>
     
@@ -87,7 +87,7 @@
 
       <ol>
           <li>Replace LBaaS version 2 with LBaaS version 1 in the <i>control_plane.yml</i> file.
-          Depending on Helion OpenStack environment, the location of the control_plane.yml will
+          Depending on HP Helion OpenStack environment, the location of the control_plane.yml will
           differ slightly. </li>
           <li>In hlm-input-model, edit <i>2.0/hp-ci/&lt;deployment
             type&gt;/data/control_plane.yml</i></li>

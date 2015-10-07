@@ -33,7 +33,7 @@
           will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page. There is only one download;
-          it includes both the operating system and the Helion OpenStack installer in one ISO.</li>
+          it includes both the operating system and the HP Helion OpenStack installer in one ISO.</li>
         <li>All machines of a given role should be the same configuration.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO

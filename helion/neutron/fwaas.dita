@@ -5,8 +5,8 @@
   <body>
     <p>HP Helion OpenStack 2.0 FWaaS Configuration</p>
     <p>Firewall as a Service (FWaaS) is an advance networking service that introduces firewall
-      feature set. This document describes the configuration process and requirements for the HP
-      Helion OpenStack 2.0 Firewall as a Service module. </p>
+      feature set. This document describes the configuration process and requirements for the 
+      HP Helion OpenStack 2.0 Firewall as a Service module. </p>
     <p>
       <ul id="LBaaSlist">
         <li><xref href="fwaas.dita#HP2.0FWaaS/Prerequisites">Prerequisites</xref></li>

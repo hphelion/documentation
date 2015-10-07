@@ -17,8 +17,8 @@
 
     <section id="NeutronCoreFeatures">
       <title>HP Helion OpenStack Neutron Core Features</title>
-      <p>Neutron - OpenStack Kilo upstream features that are enabled by default in HOS V2.0List high
-        level Kilo features here that are enabled in the HOS V2.0 kit. This list is for Product
+      <p>Neutron - OpenStack Kilo upstream features that are enabled by default in HP Helion OpenStack 2.0 List high
+        level Kilo features here that are enabled in the HP Helion OpenStack 2.0 kit. This list is for Product
         Management for use in communication with the field &amp; customers.</p>
       <ul>
         <li>API perspective <ul>

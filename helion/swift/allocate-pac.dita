@@ -28,8 +28,7 @@
       <li>Identity the physical servers and their IP address and other detailed information.<ul
           id="ul_tzf_pqb_jt">
           <li>If you use Cobbler, you add these details the baremetal-servers list (usually in
-              <codeph>data/baremetalConfig.yml</codeph>). Otherwise, you add these details to
-            servers list (usually in <codeph>data/server.yml</codeph>)</li>
+              <codeph>data/servers.yml</codeph>).</li>
           <li>As with all servers, you must also verify and/or modify the server-groups information
             (usually in <codeph>data/server_groups.yml</codeph>)</li>
         </ul></li>
