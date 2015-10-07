@@ -15,6 +15,7 @@
     </prodinfo>
   </topicmeta>
   <topicref href="helion/eula.dita" toc="no"/>
+  <topicref href="helion/provision_moonshot_nodes.dita"/>
   <!-- BURA -->
   <topicref href="helion/bura/bura_overview.dita" navtitle="Backup and Restore" locktitle="yes">
     <topicref href="helion/bura/backup.dita"/>
