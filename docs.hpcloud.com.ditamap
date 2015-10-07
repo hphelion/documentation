@@ -30,7 +30,7 @@
     <!-- INSTALLATION -->
     <topicref href="helion/installation_overview.dita" navtitle="Installation"
       locktitle="yes">
-      <topicref href="helion/administration/wipe_disks.dita" navtitle="Pre-installation Disk Cleanup"
+      <topicref href="helion/administration/wipe_disks.dita" navtitle="Pre-Installation Disk Cleanup"
         locktitle="yes"/>
       <topicref href="helion/beta1_to_beta2_upgrade.dita"/>
       <topicref href="helion/combining_files.dita"
@@ -152,7 +152,13 @@
 
       </topicref>
       <!-- END SWIFT OBJECT STORAGE -->
-
+      <!-- Cinder -->
+      <topicref href="helion/cinder/cinder_overview.dita" navtitle="Block Storage Service"
+        locktitle="yes">
+        <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
+          locktitle="yes"/>
+      </topicref>
+      <!-- end cinder -->
       <!-- Neutron -->
       <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Service"
         locktitle="yes">
@@ -197,7 +203,9 @@
       <topicref href="helion/operations/remove_node.dita"/>
       <topicref href="helion/operations/replace_controller.dita"/>
       <topicref href="helion/cinder/vsa/vsa_create_multiple_clusters.dita"/>
+      <topicref href="helion/swift/swift_removing_node.dita"/>
       <topicref href="helion/cinder/ceph/adding_new_osd_node.dita"/>
+      
       <topicref href="helion/cinder/singleton_service_cinder.dita"/>
       <topicref href="helion/cinder/brocade_zone_manager.dita" navtitle="Brocade Zone Manager"
         locktitle="yes"/>
@@ -208,13 +216,7 @@
         <topicref href="helion/bura/restore.dita"/>
       </topicref>
 
-      <!-- Cinder -->
-      <topicref href="helion/cinder/cinder_overview.dita" navtitle="Block Storage Service"
-        locktitle="yes">
-        <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
-          locktitle="yes"/>
-      </topicref>
-      <!-- end cinder -->
+   
 
     <!-- 
 

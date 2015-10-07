@@ -3,9 +3,9 @@
 <topic id="topic_tq1_xt5_dt">
   <title>Allocating Object Servers</title>
   <body>
-    <p>A Swift object server is a node that runs the swift-object service (<b>only</b>) and used to
-      store object data. It does not run the swift-proxy, swift-account or swift-container services.
-      <!--The Swift object server type is used to store object data.--></p>
+    <p>A Swift object server is a node that runs the swift-object service (<b>only</b>) and is used
+      to store object data. It does not run the swift-proxy, swift-account or swift-container
+      services. <!--The Swift object server type is used to store object data.--></p>
     <p>This section describes the procedure to allocate Swift Object Server during the
         <b>initial</b> deployment of the system. </p>
     <section id="procedure">
@@ -20,7 +20,7 @@
                 href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk
                 Drives.</xref></i></li>
           <li>Verify if the example input model has a resource node assigned to Swift object
-            servers. The resource node are usually assigned in
+            servers. The resource nodes are usually assigned in
               <codeph>data/control_plane.yml</codeph> file. If it is not assigned, you must add a
             suitable resource node as described in <xref
               href="creating-object-server-resource.dita#topic_jzk_q1c_jt"><i>Creating an Object
@@ -28,7 +28,7 @@
           <li>Identity the physical servers and their IP address and other detailed information. Add
             the servers details in either of the following YAML files and verify the server-groups
               information:<ul id="ul_gmj_ng3_kt">
-              <li>If you use Cobbler, you add these details the baremetal-servers list (usually in
+              <li>If you use Cobbler, add these details the baremetal-servers list (usually in
                   <codeph>data/baremetalConfig.yml</codeph>). Otherwise, you add these details to
                 servers list (usually in <codeph>data/server.yml</codeph>)</li>
               <li>As with all servers, you must also verify and/or modify the server-groups

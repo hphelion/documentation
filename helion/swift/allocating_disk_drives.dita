@@ -3,14 +3,14 @@
 <topic id="allocating-disk-drives">
   <title>Allocating Disk Drives</title>
   <body>
-    <p>The disk model describes the configuration of disk drives
-      <!--number of disk present on a particular server--> and its
-      usage<!-- are specified in the disk-->. The examples include several disk models.
+    <p>The disk model describes the configuration of disk drives,
+      <!--the number of disk present on a particular server-->, and their usage. The examples
+      include several disk models.
       <!--The disk model used by any given server is determined as follows:--> You must always
       review the disk devices before making any changes to the existing the disk model.
-      <!--If you want to make the possible changes in the disk model--> See <i><xref
+      <!--If you want to make changes to the disk model--> see <i><xref
           href="#allocating-disk-drives/making-changes-disk-model" format="dita">Making Changes to a
-          Swift Disk Model</xref></i> for detail. </p>
+          Swift Disk Model</xref></i> for details. </p>
     <p>This page contains the following topics:<ul id="ul_prc_vgc_jt">
         <li><xref href="#allocating-disk-drives/making-changes-disk-model" format="dita">Making
             Changes to a Swift Disk Model</xref></li>
@@ -23,21 +23,21 @@
       </ul></p>
     <section id="making-changes-disk-model">
       <title>Making Changes to a Swift Disk Model</title>
-      <p>There are several reasons for changing the disk model as follows:</p>
+      <p>There are several reasons for changing the disk model.</p>
       <ul id="ul_d5y_255_dt">
-        <li>It is advisable that if you have additional drives available then you can add the drives
-          to the devices list.</li>
+        <li>When you have additional drives available. If you do, then you add the drives to the
+          devices list.</li>
         <li>The disk devices listed in the example disk model have different names on your servers.
-          This may be due different hardware drives. Edit the disk model
+          This may be due to different hardware drives. Edit the disk model
           <!--(<codeph>DISK_SET_SWPAC</codeph> or <codeph>DISK_SET_SWOBJ</codeph>) -->and change the
           device names to the correct names.</li>
-        <li>You may prefer a different disk drive than the one listed in the model. For example, if
+        <li>You prefer a different disk drive than the one listed in the model. For example, if
             <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> are slow hard drives and you
           have SDD drives available in <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>. In
           this case, delete <codeph>/dev/sdb</codeph> and <codeph>/dev/sdc</codeph> and replace with
-            <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.<note type="tip">The term <b>add</b> and
-              <b>delete</b> in the document means editing the respective YAML files to add or delete
-            the configurations/values.</note></li>
+            <codeph>/dev/sdd</codeph> and <codeph>/dev/sde</codeph>.<note type="tip">The term
+              <b>add</b> and <b>delete</b> in the document means editing the respective YAML files
+            to add or delete the configurations/values.</note></li>
       </ul>
     </section>
     <section id="swift-consumer-syntax">
