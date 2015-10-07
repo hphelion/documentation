@@ -272,7 +272,7 @@ MONITORING AND LOGGING
         locktitle="yes" toc="yes"/>
       <topicref href="helion/user/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
-      <topicref href="helion/user/lbaas.dita" navtitle="Creating a Load Balancer" locktitle="yes"/>
+      <topicref href="helion/user/lbaas.dita" navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
       <topicref href="helion/neutron/fwaas.dita" locktitle="yes">
         <topicmeta>
