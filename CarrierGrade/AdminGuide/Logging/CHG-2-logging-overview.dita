@@ -66,8 +66,8 @@
 </li>
 </ul>
 <section id="install"> <title>Installation</title>
-<p>The Centralized Logging feature is automatically installed as part of the HP Helion OpenStack
-        Carrier Grade installation.</p>
+<p>The Centralized Logging feature is automatically installed on all controllers as part of the HP
+        Helion OpenStack Carrier Grade installation.</p>
 <p>No specific configuration is required to use Centralized Logging. However, you can tune or configure the individual components as needed for your environment. Tuning and configuring these components is outside the scope of this document.</p>
 </section>
 <section id="components"> <title>Centralized Logging components</title>
