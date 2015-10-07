@@ -268,23 +268,24 @@ MONITORING AND LOGGING
     <!-- END OPERATIONS -->
     <!-- USER GUIDE -->
     <topichead navtitle="User Guide">
+      <!-- horizon -->
+      <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
+        locktitle="yes" toc="yes"/>
       <topicref href="helion/user/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
       <topicref href="helion/user/lbaas.dita" navtitle="Creating a Load Balancer" locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
       <topicref href="helion/neutron/fwaas.dita" locktitle="yes">
         <topicmeta>
-          <navtitle>Configuring Firewall as a Service (FWaaS)</navtitle>
+          <navtitle>Using Firewall as a Service (FWaaS)</navtitle>
         </topicmeta>
       </topicref>
       <topicref href="helion/neutron/vpnaas.dita" locktitle="yes">
         <topicmeta>
-          <navtitle>Configuring VPN as a Service (VPNaaS)</navtitle>
+          <navtitle>Using VPN as a Service (VPNaaS)</navtitle>
         </topicmeta>
       </topicref>
-      <!-- horizon -->
-      <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
-        locktitle="yes" toc="yes"/>
+      
 
 
       <!-- END HORIZON -->
