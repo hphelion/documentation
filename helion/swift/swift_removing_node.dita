@@ -4,22 +4,22 @@
   <title><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Removing a Swift
     Node<?oxy_custom_end?></title>
   <body>
-    <p>This process is used when you want to remove one or more node permantly from the Swift
+    <p>This process is used when you want to remove one or more node permanently from the Swift
       system. This process include three phases as follows:<ul id="ul_vs4_rcg_pt">
         <li>Removing the node's drives from the rings - move data off the node and store it on the
           remaining nodes.</li>
-        <li>Disabling Swift on the node -  prevent the node from participating in the Swift
+        <li>Disabling Swift on the node - prevent the node from participating in the Swift
           system.</li>
         <li>Removing the node from the input model - the node is removed completely from the
           system.</li>
       </ul></p>
     <section>
-      <title>Removing a Node's Drive fromt the Rings</title>
+      <title>Removing a Node's Drive from the Rings</title>
       <p>To remove a node's drives from the rings, use these steps. The concept is that we change
         the role of the server being removed so that it used a disk model that does not include
-        Swift drives.We then build new rings and deploy them. The new rings will not contain the
+        Swift drives. We then build new rings and deploy them. The new rings will not contain the
         node's drives.<ol id="ol_lnw_cdg_pt">
-          <li>Edit the definition of the server (usually in daat/servers.yml). For example, if the
+          <li>Edit the definition of the server (usually in data/servers.yml). For example, if the
             entry for the server look
               like:<codeblock>- id: swobj0003
       ip-addr: 192.168.10.5
@@ -103,9 +103,9 @@ ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
       <title><b>Disabling Swift on a Node</b></title>
       <p>The node is still running Swift services. It is still part of the cloud model and is fully
         configured so we can log in and perform other operations.</p>
-      <p>To disable the node, use the following steps. In this exmaple, swobj0003 is the node being
+      <p>To disable the node, use the following steps. In this example, swobj0003 is the node being
         removed from Swift.<ol id="ol_lty_22g_pt">
-          <li>Stop Swift services on the node using the swift-stop.yml playbook and limiiting the
+          <li>Stop Swift services on the node using the swift-stop.yml playbook and limiting the
             swobj0003 as
             follows:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-stop --limit swobj003</codeblock></li>

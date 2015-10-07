@@ -167,11 +167,9 @@ resource-nodes:
           network-groups:
             - EXTERNAL_VM
             - GUEST
-            - MGMT</codeblock></p><p>Moonshot
-            server comes with only 2 nics. One is used for PXE and another is used as truck 9.
-              <note>NIC binding is not supported due to limited number of nics.</note></p></li>
-        <li><codeph>servers.yml</codeph><p>Servers list the available servers used for deploying the cloud. A sample file of
-              <codeph>servers.yml</codeph> is shown
+            - MGMT</codeblock></p></li>
+        <li><codeph>servers.yml</codeph><p>Servers list the available servers used for deploying the
+            cloud. A sample file of <codeph>servers.yml</codeph> is shown
             below:<codeblock>---
   product:
     version: 2
@@ -192,8 +190,10 @@ resource-nodes:
       ip-addr: 192.168.60.21
       role: <b>ROLE-COMPUTE-MOONSHOT</b>
     # nic-mapping: MY_2PORT_SERVER</codeblock></p><p>In
-            the sample  file, <b>role: ROLE-COMPUTE-MOONSHOT</b> identifies the role of the Moonshot
-            node.</p></li>
+            the sample file, <b>role: ROLE-COMPUTE-MOONSHOT</b> identifies the role of the Moonshot
+            node.</p><p>Moonshot server comes with only 2 NICs. One is used for PXE and another is
+            used as truck 9. <note>NIC binding is not supported due to limited number of
+              NICs.</note></p></li>
         <li><codeph>server_roles.yml</codeph><p>You specify the usage of the server or where you want to use a particular server. A sample file
             of <codeph>server_roles.yml</codeph> is shown
             below:<codeblock>---
