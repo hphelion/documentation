@@ -54,7 +54,8 @@ ansible-playbook -i hosts/verb_hosts cinder-migrate-volume.yml --extra-vars "mig
         node, perform the following steps: <ol id="ol_b1c_ngf_pt">
           <li>Migrate the cinder volume and backup services to another controller node using the
               <codeph>cinder-migrate-volume.yml</codeph> playbook.</li>
-          <li>Follow the replacement procedure for control plane nodes. </li>
+          <li>Follow the <xref href="../operations/replace_controller.dita#topic_ijj_45j_nt"
+              >replacement procedure </xref>for control plane nodes. </li>
           <li>Run the <codeph>cinder-migrate-volume.yml</codeph> playbook again to ensure the new
             node has an up to date view of the volume service location. <p>When running
                 <codeph>cinder-migrate-volume.yml</codeph> the volume service can optionally be

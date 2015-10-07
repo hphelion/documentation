@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_h3s_n4t_mt">
-  <title>Provision Moonshot Nodes</title>
+  <title>Adding Moonshot Nodes</title>
   <body>
     <p>
       <note type="important">Moonshots are supported as compute nodes.</note>
@@ -11,6 +11,9 @@
       applications to Social Media, Big Data and Mobility. HP Moonshot is the world’s first software
       defined web server that will accelerate innovation while delivering breakthrough efficiency
       and scale.</p>
+    <section>
+      <title>Supported Moonshot Servers</title>
+    </section>
     <p>The HP Moonshot Servers are now verified hardware to run HP Helion OpenStack. The supported
       Moonshot Servers are :<ul id="ul_m44_rpt_mt">
         <li>HP ProLiant m710 Server Cartridge</li>
