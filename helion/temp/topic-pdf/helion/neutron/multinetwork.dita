@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\temp\topic-pdf\helion\neutron?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/temp/topic-pdf/helion/neutron/?><?path2project ..\?><?path2project-uri ../?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="HP2.0LBaaS" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="topic:1;3:24">
+  <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="title:1;4:10">HP Helion <tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="tm:1;4:37">OpenStack</tm> 2.0 Multiple External Network
+    Configuration</title>
+  <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="body:1;6:9">
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:1;7:8">HP Helion OpenStack 2.0 Multiple External Network Configuration</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:2;8:8">This document describes the configuration process and requirements for the HP Helion
+      OpenStack 2.0 Multiple External Network.</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:3;10:8">  
+      
+      <ul id="LBaaSlist" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="ul:1;12:26">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="li:1;13:13"><xref href="lbaas.dita#HP2.0LBaaS/Prerequisites" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="xref:1;13:62"><?ditaot usertext?>Prerequisites</xref></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="li:2;14:13"><xref href="lbaas.dita#HP2.0LBaaS/Configuration" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="xref:2;14:62"><?ditaot usertext?>Configuration</xref></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="li:3;15:13"><xref href="lbaas.dita#HP2.0LBaaS/MoreInfo" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="xref:3;15:57"><?ditaot usertext?>More Information</xref></li>
+      </ul>
+    </p>
+    
+    <section id="Prerequisites" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="section:1;19:33">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="title:2;20:14">Prerequisites</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:4;21:10">HP Helion OpenStack must be installed. </p>
+      
+    </section>
+    
+    
+    <section id="Configuration" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="section:2;26:33">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="title:3;27:14">Configuration</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:5;28:10">HP Helion OpenStack 2.0 Multiple External Network Configuration</p>
+      
+      
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:6;31:10">Neutron provider VLANs are neutron networks that map directly to an 802.1Q VLAN in the 
+        cloud provider’s physical network infrastructure. There are four aspects to provider vlan 
+        configuration:</p>
+      <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="ul:2;34:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="li:4;35:13">Network infrastructure configuration (e.g. the top-of-rack switch)</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="li:5;36:13">Server networking configuration (for compute nodes and neutron network nodes)</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="li:6;37:13">Neutron configuration file settings</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="li:7;38:13">Create the corresponding network objects in Neutron</li>
+      </ul>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:7;40:10">The physical network infrastructure must be configured to convey the provider VLAN traffic as 
+        tagged VLANs to the cloud compute nodes and neutron network nodes. Configuration of the physical 
+        network infrastructure is outside the scope of the HP Helion OpenStack 2.0 software.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:8;43:10">HP Helion OpenStack 2.0 automates the server networking configuration and the Neutron
+        configuration based on information in the cloud definition. To configure the system for
+        provider VLANs, specify the<i class="+ topic/ph hi-d/i " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="i:1;45:39"> neutron.networks.vlan</i> tag with a
+          <i class="+ topic/ph hi-d/i " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="i:2;46:14">provider-physical-network</i> attribute on one or more network groups. For example
+        (some attributes omitted for brevity):</p>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="codeblock:1;48:18">network-groups:
+        
+  - name: NET_GROUP_A
+  tags:
+  - neutron.networks.vlan:
+     provider-physical-network: physnet1
+        
+  - name: NET_GROUP_B
+  tags:
+  - neutron.networks.vlan:
+     provider-physical-network: physnet2</codeblock>
+      
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:9;60:10">A network group is associated with a server network interface via an interface model. 
+        For example (some attributes omitted for brevity):</p>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="codeblock:2;62:18">interface-models:
+  - name: INTERFACE_SET_X
+    network-interfaces:
+      - device:
+        name: bond0
+    network-groups:
+      - NET_GROUP_A
+    - device:
+      name: eth3
+    network-groups:
+      - NET_GROUP_B
+      </codeblock>
+      
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:10;75:10">A network group used for provider VLANs may contain only a single HOS network, because that 
+        VLAN must span all compute nodes and any neutron network nodes/controllers 
+        (i.e. it is a single L2 segment). The HOS network must be defined with tagged-vlan false, 
+        otherwise a linux vlan network interface will be created. For example:</p>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="codeblock:3;79:18">networks:
+        
+  - name: NET_A
+    tagged-vlan: false
+    network-group: NET_GROUP_A
+        
+  - name: NET_B
+    tagged-vlan: false
+    network-group: NET_GROUP_B</codeblock>
+      
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:11;89:10">When the cloud is deployed, HP Helion OpenStack 2.0 will create the appropriate bridges on
+        the servers, and set the appropriate attributes in the Neutron configuration files (e.g.
+        bridge_mappings).</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="p:12;92:10">After the cloud has been deployed, create Neutron network objects for each provider VLAN. 
+        For example, using the Neutron CLI:</p>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="codeblock:4;94:18">neutron net-create --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id 101 mynet101
+neutron net-create --provider:network_type vlan --provider:physical_network physnet2 --provider:segmentation_id 234 mynet234</codeblock>
+    </section>
+    
+    
+    <section id="MoreInfo" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="section:3;99:28">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="title:4;100:14">More Information</title>For more information on the neutron
+      command-line interface (CLI), see the OpenStack networking command-line client reference:
+        <xref href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" scope="external" format="html" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\multinetwork.dita" xtrc="xref:4;103:41"><?ditaot gentext?>http://docs.openstack.org/cli-reference/content/neutronclient_commands.html</xref></section>
+  </body>
+</topic>

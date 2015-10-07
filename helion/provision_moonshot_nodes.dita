@@ -8,9 +8,9 @@
     </p>
     <p>HP Moonshot Servers are designed and tailored for specific workloads to deliver optimum
       performance. These support a wide range of complex IT demands right from cloud based
-      applications to Social Media, Big Data and Mobility. HP Moonshot is the world’s first software
-      defined web server that will accelerate innovation while delivering breakthrough efficiency
-      and scale.</p>
+      applications to Social Media, Big Data and Mobility. HP Moonshot Server is the world’s first
+      software defined web server that will accelerate innovation while delivering breakthrough
+      efficiency and scale.</p>
     <section>
       <title>Supported Moonshot Servers</title>
     </section>
@@ -20,15 +20,15 @@
         <li>HP ProLiant m300 Server Cartridge</li>
       </ul></p>
     <section><sectiondiv><b>Cartridge Identifier</b></sectiondiv><p>To manage HP Moonshot servers you
-        must know the cartridge address and the node address (these are also known as the
-          <b>transit_address</b> and the <b>target_address</b> respectively).<ul id="ul_sk2_vpt_mt">
-          <li><b>transit_address</b> and <b>target_address</b> are the values that would be
-            specified to the <systemoutput>-T</systemoutput> and <systemoutput>-t</systemoutput>
-            flags of ipmitool, respectively, when using dual bridging mode.</li>
+        must know the node address (these are also known as the <b>transit_address</b> and the
+          <b>target_address</b> respectively) and the cartridge address .<ul id="ul_sk2_vpt_mt">
           <li><b>Node Address</b>
             <b>(or "-t", "target_address"):</b> Moonshot cartridges may have one or more nodes in a
             single cartridge. The first node in the cartridge has <systemoutput>0x72</systemoutput>
-            as its node address.<p>If the Moonshot cartridge has only one node, the node address
+            as its node address.<p><b>transit_address</b> and <b>target_address</b> are the values
+              that would be specified to the <systemoutput>-T</systemoutput> and
+                <systemoutput>-t</systemoutput> flags of ipmitool, respectively, when using dual
+              bridging mode.</p><p>If the Moonshot cartridge has only one node, the node address
               will always be <systemoutput>0x72</systemoutput>.</p><p>If it were to have 4 nodes,
               for example, the second, third and fourth nodes will have
                 <systemoutput>0x74</systemoutput>, <systemoutput>0x76</systemoutput> and
@@ -50,18 +50,18 @@
       address:<codeblock>ipmitool -I lanplus -H xx.xx.xx.xx -U Administrator -P xxxxx sdr list mcloc</codeblock></section>
     <section>
       <title>Configure Moonshot Nodes</title>
-      <p>To configure Moonshot Nodes, you must add the configuration details in the  following YAML
-          files:<ul id="ul_vyc_fm1_nt">
+      <p>To configure Moonshot Nodes, you must add the Moonshot node's configuration details in the
+        following YAML files:<ul id="ul_vyc_fm1_nt">
           <li><codeph>control_plane.yml</codeph></li>
           <li><codeph>disks_compute.yml</codeph></li>
           <li><codeph>net_interfaces.yml</codeph></li>
           <li><codeph>servers.yml</codeph></li>
           <li><codeph>server_roles.yml</codeph></li>
-        </ul> For each Moonshot Nodes you must provide the iLO information which is shared across
+        </ul>For each Moonshot Nodes you must provide the iLO information which is shared across
         Moonshot and a Moonshot identifier as an additional field.</p>
     </section>
     <section><sectiondiv><b>YAML Files</b></sectiondiv><p>Ensure that you modify the following YAML
-        file before provisioning Moonshot nodes:<ul id="ul_qbb_ln1_nt">
+        files before provisioning Moonshot nodes:<ul id="ul_qbb_ln1_nt">
           <li><!--<codeph>baremetalConfig.yml</codeph><p>The <codeph>baremetalConfig.yml</codeph> provides a detail about each of the servers in your environment. You must add the iLO information and Moonshot identifier to this file. A sample file of <codeph>baremetalConfig.yml</codeph> is shown below:<codeblock>baremetal_servers:
     - 
       node_name: Compute005
@@ -74,8 +74,8 @@
       ilo_ip: 10.1.196.27
       ilo_user: Administrator
       ilo_password: password</codeblock></p>In the sample file, <b>moonshot: c39n1</b> is an identifier for Moonshot node.--></li>
-          <li><codeph>control_plane.yml</codeph><p>A control plane uses a server with a particular server-role. A sample file of
-                <codeph>control_plane.yml</codeph> is shown
+          <li><codeph>control_plane.yml</codeph><p>A control plane uses a server with a particular
+              server-role. A sample file of <codeph>control_plane.yml</codeph> is shown
               below:<codeblock>---
   product:
     version: 2
@@ -92,7 +92,7 @@ resource-nodes:
        - neutron-metadata-agent
        - neutron-openvswitch-agent
        - neutron-lbaasv2-agent</codeblock></p><p>In
-              the sample file,  <b>server-role: ROLE-COMPUTE-MOONSHOT</b> identifies the role of the
+              the sample file, <b>server-role: ROLE-COMPUTE-MOONSHOT</b> identifies the role of the
               Moonshot node.</p></li>
         </ul></p></section>
     <section>
@@ -143,7 +143,9 @@ resource-nodes:
             size: 45%
             mount: /var/lib/nova
             fstype: ext4
-            mkfs-opts: -O large_file</codeblock></p></li>
+            mkfs-opts: -O large_file</codeblock></p><p>In
+            the sample file, the name of the disk model is
+          <b>DISK_SET_COMPUTE_MOONSHOT</b>.</p></li>
         <li><codeph>net_interfaces.yml</codeph><p>Interface model describes how its network
             interfaces are to be configured and used. <!--You need not modify this YAML file.--> A
             sample file of <codeph>net_interfaces.yml</codeph> is shown
@@ -167,7 +169,9 @@ resource-nodes:
           network-groups:
             - EXTERNAL_VM
             - GUEST
-            - MGMT</codeblock></p></li>
+            - MGMT</codeblock></p><p>In
+            the sample file, the name of the interface model is
+                <b><b>INTERFACE_SET_COMPUTE_MOONSHOT</b></b>.</p></li>
         <li><codeph>servers.yml</codeph><p>Servers list the available servers used for deploying the
             cloud. A sample file of <codeph>servers.yml</codeph> is shown
             below:<codeblock>---

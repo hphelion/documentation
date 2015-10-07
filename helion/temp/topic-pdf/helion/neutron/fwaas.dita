@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\temp\topic-pdf\helion\neutron?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/temp/topic-pdf/helion/neutron/?><?path2project ..\?><?path2project-uri ../?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="HP2.0FWaaS" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="topic:1;3:24">
+  <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="title:1;4:10">HP Helion <tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="tm:1;4:37">OpenStack</tm> 2.0 FWaaS Configuration</title>
+  <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="body:1;5:9">
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="p:1;6:8">HP Helion OpenStack 2.0 FWaaS Configuration</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="p:2;7:8">Firewall as a Service (FWaaS) is an advance networking service that introduces firewall
+      feature set. This document describes the configuration process and requirements for the HP
+      Helion OpenStack 2.0 Firewall as a Service module. </p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="p:3;10:8">
+      <ul id="LBaaSlist" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="ul:1;11:26">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:1;12:13"><xref href="fwaas.dita#HP2.0FWaaS/Prerequisites" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="xref:1;12:62" type="section"><?ditaot usertext?>Prerequisites</xref></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:2;13:13"><xref href="fwaas.dita#HP2.0FWaaS/Configuration" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="xref:2;13:62" type="section"><?ditaot usertext?>Configuration</xref></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:3;14:13"><xref href="fwaas.dita#HP2.0FWaaS/MoreInfo" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="xref:3;14:57" type="section"><?ditaot usertext?>More Information</xref></li>
+      </ul>
+    </p>
+    
+    <section id="Prerequisites" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="section:1;18:33">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="title:2;19:14">Prerequisites</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="p:4;20:10">HP Helion OpenStack must be installed. </p>
+      
+    </section>
+    <section id="Configuration" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="section:2;23:33">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="title:3;24:14">HP Helion OpenStack 2.0 FWaaS Configuration</title>
+      
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="p:5;26:10"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="b:1;26:13">Check for an enabled firewall.</b></p>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="ol:1;27:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:4;28:13">You should check to determine if the firewall is enabled.  The output of the <i class="+ topic/ph hi-d/i " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="i:1;28:93">neutron
+            ext-list</i> should contain a firewall
+          entry.<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:1;30:28">neutron ext-list</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:5;31:13">Assuming the external network is already created by the admin, this command will show
+          the external network. <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:2;32:44">neutron net-list</codeblock></li>
+      </ol>
+      
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="p:6;35:10"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="b:2;35:13">Create required assets.</b></p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="p:7;36:10">Before creating firewalls, you will need to create a network, subnet, router, security
+        group rules, start an instance and assign it a floating IP address.</p>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="ol:2;38:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:6;39:13">Create the network, subnet and router.
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:3;40:22">neutron net-create private
+neutron subnet-create --name sub private 10.0.0.0/24 --gateway 10.0.0.1
+neutron router-create router
+neutron router-interface-add router sub
+neutron router-gateway-set router ext-net</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:7;45:13">Create security group rules. Security group rules filter traffic at VM level.
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:4;46:22">neutron security-group-rule-create default --protocol icmp
+neutron security-group-rule-create default --protocol tcp --port-range-min 22 --port-range-max 22
+neutron security-group-rule-create default --protocol tcp --port-range-min 80 --port-range-max 80</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:8;49:13">Boot a VM.
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:5;50:22">NET=$(neutron net-list | awk '/private/ {print $2}')
+nova boot --flavor 1 --image &lt;image&gt; --nic net-id=$NET vm1 --poll</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:9;52:13">Verify if the instance is ACTIVE and is assigned an IP address.
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:6;53:22">nova list</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:10;54:13">Get the port id of the vm1 instance.
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:7;55:22">fixedip=$(nova list | awk '/vm1/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
+vmportuuid=$(neutron port-list | grep $fixedip | awk '{print $2}')</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:11;57:13">Create and associate a floating IP address to the vm1 instance.
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:8;58:22">neutron floatingip-create ext-net –-port-id $vmportuuid</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:12;59:13">Verify if the floating IP is assigned to the instance. The following command should show
+          an assigned floating IP address from the external network
+          range.<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:9;61:28">nova show vm1</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:13;62:13">Verify if the instance is reachable from the external network. SSH into the instance
+          from a node in (or has route to) the external network.
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:10;64:22">ssh cirros@FIP-VM1
+password: &lt;password&gt;</codeblock></li>
+       </ol>
+      
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="p:8;68:10"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="b:3;68:13">Create and attach the firewall.</b></p>
+      <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="note:1;69:13">By default, an internal "drop all" rule is enabled in IP tables if none of the defined
+        rules match the real-time data packets.</note>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="ol:3;71:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:14;72:13">Create new firewall rules using <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeph:1;72:53">firewall-rule-create</codeph> command and
+          providing the protocol, action (allow, deny) and name for the new rule. This example
+          allows icmp and ssh while denying access to http. See the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeph:2;74:77">neutron</codeph>
+          command-line reference under <xref href="fwaas.dita#HP2.0FWaaS/MoreInfo" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="xref:4;75:84" type="section"><?ditaot usertext?>more information</xref>
+          on additional options such as source IP, destination IP, source port and destination
+          port.<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:11;77:27">neutron firewall-rule-create --protocol icmp --action allow --name allow-icmp
+neutron firewall-rule-create --protocol tcp --destination-port 80 --action deny --name deny-http
+neutron firewall-rule-create --protocol tcp --destination-port 22 --action allow --name allow-ssh</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:15;80:13">Once the rules are created, create the firewall policy by using the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeph:3;80:89">firewall-policy-create</codeph> command with the 
+          <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeph:4;81:19">--firewall-rules</codeph> option and rules to include in quotes, followed by the name of the new policy.  The order of the 
+          rules is important.
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:12;83:22">neutron firewall-policy-create --firewall-rules "allow-icmp deny-http allow-ssh" policy-fw</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:16;84:13">Finish the firewall creation by using the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeph:5;84:63">firewall-create</codeph> command, the policy name and the new name you want to
+          give to your new firewall.
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:13;86:22">neutron firewall-create policy-fw --name user-fw</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:17;87:13">You can view the details of your new firewall by using the
+            <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeph:6;88:21">firewall-show</codeph> command and the name of your firewall. This will verify
+          that the status of the firewall is
+          ACTIVE.<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:14;90:29">neutron firewall-show user-fw</codeblock></li>
+      </ol>
+      
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="p:9;93:10"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="b:4;93:13">Verify the FWaaS is functional.</b></p>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="ol:4;94:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:18;95:13">Since allow-icmp firewall rule is set you can ping the floating IP address of the
+          instance from the external network.<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:15;96:57">ping &lt;FIP-VM1&gt;</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:19;97:13">Similarly, you can connect via ssh to the instance due to the allow-ssh firewall
+          rule.<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:16;98:27">ssh cirros@&lt;FIP-VM1&gt;
+password: &lt;password&gt;</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:20;100:13">Run a web server on vm1 instance that listens over port 80, accepts requests and sends a WELCOME response.
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:17;101:22">$ vi webserv.sh
+            
+#!/bin/ash
+            
+MYIP=$(/sbin/ifconfig eth0|grep 'inet addr'|awk -F: '{print $2}'| awk '{print $1}');
+while true; do
+  echo -e "HTTP/1.0 200 OK\r\n\r\nWelcome to $MYIP" | sudo nc -l -p 80
+done
+            
+# Give it Exec rights
+$ chmod 755 webserv.sh
+            
+# Execute the script
+$ ./webserv.sh</codeblock></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="li:21;115:13">You should expect to see curl fail over port 80 because of the deny-http firewall rule.
+          If curl succeeds, the firewall is not blocking incoming http requests.
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:18;117:22">curl -vvv &lt;FIP-VM1&gt;</codeblock></li>
+      </ol>
+    </section>
+    
+    
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="section:3;122:14">
+      <note type="warning" class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="note:2;123:28">When using reference implementation, new networks, FIPs and routers
+        created after the Firewall creation will not be automatically updated with firewall rules.
+        Thus, execute the firewall-update command by passing the current and new router Ids such
+        that the rules are reconfigured across all the routers (both current and new). <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="p:10;126:91">For
+          example if router-1 is created before and router-2 is created after the firewall
+          creation</p>
+        <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="codeblock:19;129:20">$ neutron firewall-update —router &lt;router-1-id&gt; —router &lt;router-2-id&gt; &lt;firewall-name&gt;</codeblock>
+      </note>
+      
+           
+     </section>
+    <section id="MoreInfo" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="section:4;134:28">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="title:4;135:14">More Information</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="p:11;136:10">For more information on the neutron command-line interface (CLI) and firewalls, see the OpenStack networking command-line client
+        reference: <xref href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" scope="external" format="html" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\neutron\fwaas.dita" xtrc="xref:5;137:140"><?ditaot gentext?>http://docs.openstack.org/cli-reference/content/neutronclient_commands.html</xref></p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\temp\topic-pdf\helion?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/temp/topic-pdf/helion/?><?path2project?><?path2project-uri ./?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="install_gui" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="topic:1;3:25">
+  <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="title:1;4:10">Installing HP Helion OpenStack® 2.0 Using the Day Zero Installer</title>
+  <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="body:1;5:9">
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="section:1;6:14"> HP Helion OpenStack 2.0 comes with a UI, the Dayzero Installer,  for installing your
+      cloud. Rather than searching through and editing a number of YAML files to input your specific
+      configuration data, finding the correct location, and maintaing the format of the files, the
+      UI presents fields in which you may enter your information. </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="section:2;10:14">In addition, rather than having to run a series of commands to execute the cobbler and
+      ansible scripts that initiate the installation of HP Helion OpenStack, the UI application runs
+      them behind the scenes. </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="section:3;13:14">While the UI app does more than simply popoulate the configuration files that the
+      configuration processor uses as input to its processses, it does populate them. Therefore you
+      can inspect the files whenever you like, or before reconfiguing your cloud. </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="section:4;16:14">Note, however, that  if you decide to look at or try to modify configuration files
+      during the process, none of your values are actually written to the configuration files until
+      you cick the Deploy button at the end of the process. That would mean too that if you were to
+      try to change anything in the files themselves mid process, the values would get overwritten
+      by values you have entered in the GUI before cicking the Deploy button.</section>
+    
+
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="section:5;23:14">These YAML configuration files are now stored in a local git repository as well, as
+      explained in <xref href="using_git.dita#topic_u3v_1yz_ct" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="xref:1;24:65" type="topic"><?ditaot usertext?>Using git for Configuration
+        Manangement</xref>. </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="section:6;26:14"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="title:2;26:21">Before you begin</title> Before you run the GUI installer to install your cloud,
+      there are a number of things you need to do to prepare. <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="ol:1;27:67">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:1;28:13">Prepare your servers</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:2;29:13">Gather your information <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="ul:1;29:41">
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:3;30:17">Server names </li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:4;31:17">IP addresses </li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:5;32:17">Server Roles </li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:6;33:17">PXE MAC addresses </li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:7;34:17">PXE IP addresses </li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:8;35:17">PXE interfaces </li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:9;36:17">IPMI/iLO IP address, username, password </li>
+          </ul>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:10;39:13">Choose your <xref href="supportedconfigs.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="xref:2;39:60" type="topic"><?ditaot usertext?>cloud model/example</xref> template. Note
+          that the only option for the Cloud model on KVM with VSA is the have 3 VSA nodes; there is
+          no option to have 0 VSA nodes. Note also that you cannot put the deployer on a control
+          plane node using the GUI installer.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:11;43:13">Before you use the GUI to install your cloud, you must install the operating system, HP
+          Linux for HP Helion OpenStack, on your nodes (servers) based on your hypervisor. You must
+          do so by following the appropriate installation instructions. <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="ul:2;45:77">
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:12;46:17"><xref href="gui_install_on_kvm.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="xref:3;46:54" type="topic"><?ditaot usertext?>KVM</xref></li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:13;47:17"><xref href="gui_install_on_esx.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="xref:4;47:54" type="topic"><?ditaot usertext?>ESX</xref></li>
+          </ul>
+          <p id="chooseHypervisor" class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="p:1;50:13"/><!--<note>You will follow the installation instructions found on the installation page,
+            stopping before the step "Run the Configuration Processor" and skipping the "Configure
+            Your Environment" steps. Therefore, your last OS install step will be
+            <codeblock>ansible-playbook -i hosts/localhost bm-reimage.yml</codeblock>
+          </note>-->
+        </li>
+
+      </ol>
+    </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="section:7;59:14"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="title:3;59:21">Running the GUI to install your cloud</title> Now that the OS, HP Linux for HP
+      Helion OpenStack, is installed on all your servers (nodes), you will configure and install
+      your cloud using the GUI.<p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="p:2;61:35">The GUI is found on the deployer node at:
+          <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="b:1;62:14">http://&lt;Deployer_IP&gt;:79/dayzero</b></p> Make sure you choose "NO" to the question of
+      whether you want the Day0 installer to install the Linux for HP Helion operatig
+      system on your nodes.<p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="p:3;64:31">To create a secure tunnel/port forwarding into Apache from the
+        deployer to be able to use the GUI in a browser, SSH tunnel into the deployer with the
+        username/password set up when installing the deployer. Username and password should be what
+        was set in "Set up the Deployer" in the installation instructions. For example:</p>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="codeblock:1;68:18">ssh -v -N -L 8080:&lt;Deployer_IP&gt;:79 &lt;Username&gt;@&lt;Deployer_IP&gt;</codeblock>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="p:4;69:10">Then on your local machine, point your web browser to: http://localhost:8080/dayzero</p>
+      <image placement="break" href="../media/install/GUIpage1.png" id="image_a3s_km3_kt" class="- topic/image " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="image:1;70:92"/>As you
+      proceed through the GUI, you need only supply your server names and IP addresses.  </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="section:8;72:14">In the Assign network groups: External VM network fields, <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="b:2;72:75">do not</b> add entries for
+      CIDR, Gateway, or IP Range, only VLAN ID. Neutron will assign these.<p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="p:5;73:78">When the installation
+        is complete, the Ansible log will be displayed on the final page.</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="section:9;76:14"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="title:4;76:21">Using the installer securely</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="p:6;77:10">The Dayzero Installer is a web based application . It runs on the deployer and is implemented
+        in nodejs. Currently this application runs behind Apache 2.0 where requests are proxied to
+        the nodejs Express Web Server. The nodejs Express Server runs on port 3000 and Apache runs
+        on port 79. You should access the installer through Apache and not directly from the Express
+        server. An Example URL looks like this: http://&lt;deployer-host-ip&gt;:79/installer When you
+        finish installing, the  Installer will be disabled via Ansible.</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="section:10;84:14">
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="p:7;85:10">The GUI is used only once: during the initial installation of your cloud.</p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="p:8;85:90">For VSA you
+        must follow the steps outlined in the <xref href="cinder/vsa/vsa.dita#topic_gmc_dgk_jt" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="xref:5;87:14" type="topic"><?ditaot usertext?>VSA Configuration</xref>page.</p> After deployment, continue to <xref href="installation_verification.dita#tempest" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="xref:6;88:55" type="topic"><?ditaot usertext?>Verifying Your Installation</xref> and <xref href="postinstall_checklist.dita#postinstall_checklist" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="xref:7;89:65" type="topic"><?ditaot usertext?>Post-Installation
+        Checklist</xref>.<p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="p:9;90:29">To understand a cloud configuration more thoroughly and to learn how to
+        make any changes later, visit these documentation pages: <ul id="ul_akt_fv2_lt" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="ul:3;91:89">
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:14;92:15"><xref href="input_model.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="xref:8;92:45" type="concept"><?ditaot usertext?>HP Helion OpenStack 2.0 Input Model</xref></li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="li:15;93:15"><xref href="using_git.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\gui_installer.dita" xtrc="xref:9;93:43" type="topic"><?ditaot usertext?>Using Git for Configuration Management</xref></li>
+        </ul>
+      </p>
+    </section>
+
+  </body>
+</topic>

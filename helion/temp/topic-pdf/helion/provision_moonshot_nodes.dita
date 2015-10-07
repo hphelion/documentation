@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\temp\topic-pdf\helion?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/temp/topic-pdf/helion/?><?path2project?><?path2project-uri ./?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="topic_h3s_n4t_mt" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="topic:1;3:30">
+  <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="title:1;4:10">Adding Moonshot Nodes</title>
+  <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="body:1;5:9">
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:1;6:8">
+      <note type="important" class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="note:1;7:30">Moonshots are supported as compute nodes.</note>
+    </p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:2;9:8">HP Moonshot Servers are designed and tailored for specific workloads to deliver optimum
+      performance. These support a wide range of complex IT demands right from cloud based
+      applications to Social Media, Big Data and Mobility. HP Moonshot Server is the world’s first
+      software defined web server that will accelerate innovation while delivering breakthrough
+      efficiency and scale.</p>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="section:1;14:14">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="title:2;15:14">Supported Moonshot Servers</title>
+    </section>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:3;17:8">The HP Moonshot Servers are now verified hardware to run HP Helion OpenStack. The supported
+      Moonshot Servers are :<ul id="ul_m44_rpt_mt" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="ul:1;18:52">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:1;19:13">HP ProLiant m710 Server Cartridge</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:2;20:13">HP ProLiant m300 Server Cartridge</li>
+      </ul></p>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="section:2;22:14"><sectiondiv class="- topic/sectiondiv " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="sectiondiv:1;22:26"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:1;22:29">Cartridge Identifier</b></sectiondiv><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:4;22:69">To manage HP Moonshot servers you
+        must know the node address (these are also known as the <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:2;23:68">transit_address</b> and the
+          <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:3;24:14">target_address</b> respectively) and the cartridge address .<ul id="ul_sk2_vpt_mt" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="ul:2;24:97">
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:3;25:15"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:4;25:18">Node Address</b>
+            <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:5;26:16">(or "-t", "target_address"):</b> Moonshot cartridges may have one or more nodes in a
+            single cartridge. The first node in the cartridge has <systemoutput class="+ topic/ph sw-d/systemoutput " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="systemoutput:1;27:81">0x72</systemoutput>
+            as its node address.<p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:5;28:36"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:6;28:39">transit_address</b> and <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:7;28:66">target_address</b> are the values
+              that would be specified to the <systemoutput class="+ topic/ph sw-d/systemoutput " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="systemoutput:2;29:60">-T</systemoutput> and
+                <systemoutput class="+ topic/ph sw-d/systemoutput " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="systemoutput:3;30:31">-t</systemoutput> flags of ipmitool, respectively, when using dual
+              bridging mode.</p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:6;31:36">If the Moonshot cartridge has only one node, the node address
+              will always be <systemoutput class="+ topic/ph sw-d/systemoutput " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="systemoutput:4;32:44">0x72</systemoutput>.</p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:7;32:71">If it were to have 4 nodes,
+              for example, the second, third and fourth nodes will have
+                <systemoutput class="+ topic/ph sw-d/systemoutput " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="systemoutput:5;34:31">0x74</systemoutput>, <systemoutput class="+ topic/ph sw-d/systemoutput " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="systemoutput:6;34:66">0x76</systemoutput> and
+                <systemoutput class="+ topic/ph sw-d/systemoutput " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="systemoutput:7;35:31">0x78</systemoutput> as their addresses, respectively.</p></li>
+        </ul></p><sectiondiv class="- topic/sectiondiv " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="sectiondiv:2;36:30"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:8;36:33">Cartridge Address (or "-T",
+        "transit_address")</b></sectiondiv><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:8;37:47">Below is a sample mapping between the cartridge-no and
+        cartridge address. The address increases by 2 as the cartridge number increases:<ul id="ul_j54_hrt_mt" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="ul:3;39:30">
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:4;40:15">C1N1 = 0x82</li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:5;41:15">C2N1 = 0x84</li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:6;42:15">C3N1 = 0x86</li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:7;43:15">-----</li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:8;44:15">C10N1 = 0x94</li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:9;45:15">C11N1 = 0x96</li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:10;46:15">-----</li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:11;47:15">C28N1 = 0xB8</li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:12;48:15">-----</li>
+        </ul></p>This command returns the cartridge
+      address:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeblock:1;50:26">ipmitool -I lanplus -H xx.xx.xx.xx -U Administrator -P xxxxx sdr list mcloc</codeblock></section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="section:3;51:14">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="title:3;52:14">Configure Moonshot Nodes</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:9;53:10">To configure Moonshot Nodes, you must add the Moonshot node's configuration details in the
+        following YAML files:<ul id="ul_vyc_fm1_nt" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="ul:4;54:53">
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:13;55:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:1;55:23">control_plane.yml</codeph></li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:14;56:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:2;56:23">disks_compute.yml</codeph></li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:15;57:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:3;57:23">net_interfaces.yml</codeph></li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:16;58:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:4;58:23">servers.yml</codeph></li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:17;59:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:5;59:23">server_roles.yml</codeph></li>
+        </ul>For each Moonshot Nodes you must provide the iLO information which is shared across
+        Moonshot and a Moonshot identifier as an additional field.</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="section:4;63:14"><sectiondiv class="- topic/sectiondiv " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="sectiondiv:3;63:26"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:9;63:29">YAML Files</b></sectiondiv><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:10;63:59">Ensure that you modify the following YAML
+        files before provisioning Moonshot nodes:<ul id="ul_qbb_ln1_nt" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="ul:5;64:73">
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:18;65:15"><!--<codeph>baremetalConfig.yml</codeph><p>The <codeph>baremetalConfig.yml</codeph> provides a detail about each of the servers in your environment. You must add the iLO information and Moonshot identifier to this file. A sample file of <codeph>baremetalConfig.yml</codeph> is shown below:<codeblock>baremetal_servers:
+    - 
+      node_name: Compute005
+      role: ROLE-COMPUTE-MOONSHOT
+      pxe_mac_addr: f0:92:1c:b4:59:30
+      pxe_interface: eth0
+      pxe_ip_addr: 192.168.60.20
+      <b>moonshot: c39n1</b>
+      <b>kopt_extras: vga=788 console=ttyS0,9600 earlyprint=serial,ttyS0,9600</b>
+      ilo_ip: 10.1.196.27
+      ilo_user: Administrator
+      ilo_password: password</codeblock></p>In the sample file, <b>moonshot: c39n1</b> is an identifier for Moonshot node.--></li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:19;77:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:6;77:23">control_plane.yml</codeph><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:11;77:52">A control plane uses a server with a particular
+              server-role. A sample file of <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:7;78:53">control_plane.yml</codeph> is shown
+              below:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeblock:2;79:32">---
+  product:
+    version: 2
+
+resource-nodes:
+    - name: <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:10;84:16">moonshot</b>
+    resource-prefix: moon
+    server-role: <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:11;86:21">ROLE-COMPUTE-MOONSHOT</b>
+    service-components:
+       - ntp-client
+       - nova-kvm
+       - nova-compute
+       - neutron-l3-agent
+       - neutron-metadata-agent
+       - neutron-openvswitch-agent
+       - neutron-lbaasv2-agent</codeblock></p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:12;94:50">In
+              the sample file, <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:12;95:35">server-role: ROLE-COMPUTE-MOONSHOT</b> identifies the role of the
+              Moonshot node.</p></li>
+        </ul></p></section>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="section:5;98:14">
+      <ul id="ul_n51_lp1_nt" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="ul:6;99:30">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:20;100:13"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:8;100:21">disks_compute.yml</codeph><note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="note:2;100:53"> The minimum size of the root device used in
+            input model is 32GB. You can increase the % value so that the size is greater than 32GB.
+            This is a generic requirement but is specifically relevant to moonshots since the disk
+            is relatively small. </note><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:13;103:44">A disk model defines how local storage is to be
+            configured and presented to services. Disk models are identified by a name, which can be
+            specified by the user.
+            <!--Since, Moonshot has only one disk, you must specify one or more disk before provisioning the Moonshot nodes-->.
+            A sample file of <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:9;107:38">disks_compute.yml</codeph> is shown
+            below:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeblock:3;108:30">---
+  product:
+    version: 2
+
+  disk-models:
+  - name: <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:13;113:14">DISK_SET_COMPUTE_MOONSHOT</b>
+    # Disk model to be used for moonshot compute nodes
+    # /dev/sda_root is used as a volume group for /, /var/log and /var/crash
+    # sda_root is a templated value to align with whatever partition is really used
+    # This value is checked in os config and replaced by the partition actually used
+    # on sda e.g. sda1 or sda5
+    # /dev/sdb is used as a volume group for /var/lib (for VM storage)
+    # Additional discs can be added to either volume group
+    volume-groups:
+    # The policy is not to consume 100% of the space of each volume group.
+    # 5% should be left free for snapshots and to allow for some flexibility.
+      - name: hlm-vg
+        physical-volumes:
+         - /dev/sda_root
+        logical-volumes:
+          - name: root
+            size: 35%
+            fstype: ext4
+            mount: /
+          - name: log
+            size: 10%
+            mount: /var/log
+            fstype: ext4
+            mkfs-opts: -O large_file
+          - name: crash
+            size: 5%
+            mount: /var/crash
+            fstype: ext4
+            mkfs-opts: -O large_file
+          - name: compute
+            size: 45%
+            mount: /var/lib/nova
+            fstype: ext4
+            mkfs-opts: -O large_file</codeblock></p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:14;146:56">In
+            the sample file, the name of the disk model is
+          <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:14;148:14">DISK_SET_COMPUTE_MOONSHOT</b>.</p></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:21;149:13"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:10;149:21">net_interfaces.yml</codeph><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:15;149:51">Interface model describes how its network
+            interfaces are to be configured and used. <!--You need not modify this YAML file.--> A
+            sample file of <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:11;151:36">net_interfaces.yml</codeph> is shown
+            below:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeblock:4;152:30">---
+  product:
+    version: 2
+
+  interface-models:
+      # These examples uses eth3 and eth4 as a bonded
+      # pair for all networks on all three server roles
+      #
+      # Edit the device names and bond options
+      # to match your environment
+      #
+    
+    - name: <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:15;164:16">INTERFACE_SET_COMPUTE_MOONSHOT</b>
+      network-interfaces:
+        - name: eth1
+          device:
+              name: eth1
+          network-groups:
+            - EXTERNAL_VM
+            - GUEST
+            - MGMT</codeblock></p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:16;172:38">In
+            the sample file, the name of the interface model is
+                <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:16;174:20"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:17;174:23">INTERFACE_SET_COMPUTE_MOONSHOT</b></b>.</p></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:22;175:13"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:12;175:21">servers.yml</codeph><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:17;175:44">Servers list the available servers used for deploying the
+            cloud. A sample file of <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:13;176:45">servers.yml</codeph> is shown
+            below:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeblock:5;177:30">---
+  product:
+    version: 2
+
+  servers:
+    # NOTE: Addresses of servers need to be
+    #       changed to match your environment.
+    #
+    #       Add additional servers as required
+    #
+    #       nic-mapping is optional.  The value specified is the name
+    #       of an entry in the nic-mappings list from nic_mappings.yml.
+    #       To use, uncomment and modify to match your environment.
+
+    
+    # Compute Nodes
+    - id: compute6
+      ip-addr: 192.168.60.21
+      role: <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:18;195:16">ROLE-COMPUTE-MOONSHOT</b>
+    # nic-mapping: MY_2PORT_SERVER</codeblock></p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:18;196:54">In
+            the sample file, <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:19;197:33">role: ROLE-COMPUTE-MOONSHOT</b> identifies the role of the Moonshot
+            node.</p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:19;198:25">Moonshot server comes with only 2 NICs. One is used for PXE and another is
+            used as truck 9. <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="note:3;199:36">NIC binding is not supported due to limited number of
+              NICs.</note></p></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="li:23;201:13"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:14;201:21">server_roles.yml</codeph><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:20;201:49">You specify the usage of the server or where you want to use a particular server. A sample file
+            of <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeph:15;202:24">server_roles.yml</codeph> is shown
+            below:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="codeblock:6;203:30">---
+  product:
+    version: 2
+
+  server-roles:
+    
+    - name: ROLE-COMPUTE-MOONSHOT
+      interface-model: INTERFACE_SET_COMPUTE_MOONSHOT
+      disk-model: DISK_SET_COMPUTE_MOONSHOT</codeblock></p><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:21;211:63">Once
+            you have modified the YAML files as per the moonshot node requirement, you can proceed
+            with the installation. Refer to<b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="b:20;213:47"> </b><xref href="bare_installation_kvm.dita#install_kvm" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="xref:1;214:61" type="topic"><?ditaot usertext?>installation guide</xref> (need to
+            insert the link) for more details.</p></li>
+      </ul>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\provision_moonshot_nodes.dita" xtrc="p:22;217:10"> </p>
+    </section>
+  </body>
+</topic>

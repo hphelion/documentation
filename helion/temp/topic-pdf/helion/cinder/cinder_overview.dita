@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\temp\topic-pdf\helion\cinder?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/temp/topic-pdf/helion/cinder/?><?path2project ..\?><?path2project-uri ../?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="topic_e5g_z3h_gt" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="topic:1;3:30">
+  <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="title:1;4:10">HP Helion <tm tmtype="reg" class="- topic/tm " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="tm:1;4:37">OpenStack</tm> 2.0: Block Storage Overview</title>
+  <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="body:1;5:9">
+    <section id="about" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="section:1;6:25"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="title:2;6:32">About Block Storage</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="p:1;7:10">The HP Helion OpenStack Block Storage Volume Operations uses the OpenStack Cinder (Block
+        Storage) service to manage storage volumes, including creating volumes, creating volume
+        snapshots, and configuring volumes.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="p:2;10:10">Once created, you can easily disconnect block storage volumes from one instance and attach
+        them to another. You can also create snapshots of these volumes.</p>
+      <!--<p>HP Helion OpenStack uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that the storage controller runs as a virtual appliance and helps realize Software Defined Block Storage. To use StoreVirtual you must use the KVM hypervisor.</p><p>HP Helion OpenStack also supports HP StoreServ 3PAR as a Cinder backend.</p>-->
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="p:3;13:10">Helion OpenStack 2.0 supports the following storage backends for Block Storage Volumes and Backup Datastore Configuration:</p>
+      <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="ul:1;14:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="li:1;15:13">Volumes <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="ul:2;15:25">
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="li:2;16:17"><xref href="vsa/vsa.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="xref:1;16:43" type="topic"><?ditaot usertext?>VSA</xref></li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="li:3;17:17"><xref href="3Par/3par_configuration.dita#topic_vln_2xy_ht" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="xref:2;17:76" type="topic"><?ditaot usertext?>3PAR FC or
+              iSCSI</xref></li>
+             <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="li:4;19:18"><xref href="../bare_installation_esx.dita#install_esx/modify-volume-config" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="xref:3;20:18" type="p"><?ditaot usertext?>VMDK</xref></li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="li:5;21:17"><xref href="ceph/ceph_overview.dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="xref:4;21:54" type="topic"><?ditaot usertext?>Ceph</xref></li>
+          </ul></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="li:6;23:13">Backup <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="ul:3;23:24">
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="li:7;24:17">Swift</li>
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="li:8;25:17">Ceph</li>
+          </ul></li>
+  
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="li:9;28:13">Zone Driver <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="ul:4;28:29">
+            <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="li:10;29:17"><xref href="brocade_zone_manager.dita#topic_msm_b1j_jt" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\cinder\cinder_overview.dita" xtrc="xref:5;29:73" type="topic"><?ditaot usertext?>Brocade Zone
+              Manager</xref></li>
+          </ul></li>
+
+      </ul>
+    </section>
+  </body>
+</topic>

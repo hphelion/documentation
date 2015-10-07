@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\temp\topic-pdf\helion?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/temp/topic-pdf/helion/?><?path2project?><?path2project-uri ./?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="tempest" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="topic:1;3:21">
+  <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="title:1;4:10">Verifying the Install Using Embedded Tests</title>
+  <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="body:1;5:9">
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:1;6:8">Tempest is a set of integration tests for OpenStack API validation, scenarios, and other
+      specific tests to be run against a live OpenStack cluster.</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:2;8:8">A version of the upstream <xref href="http://docs.openstack.org/developer/tempest/" scope="external" format="html" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="xref:1;9:40"><?ditaot usertext?>Tempest</xref> integration tests is pre-deployed in the HP
+      Helion OpenStack deployer node.</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:3;11:8">You can use these embedded tests to verify if the deployed cloud is functional.</p>
+    <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="ul:1;12:9">
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:1;13:11">
+        <xref href="#tempest/running" type="section" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="xref:2;14:54"><?ditaot usertext?>Running the Tests</xref>
+      </li>
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:2;16:11">
+        <xref type="section" href="#tempest/results" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="xref:3;17:54"><?ditaot usertext?>Viewing Test Results</xref>
+      </li>
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:3;19:11">
+        <xref type="section" href="#tempest/custom" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="xref:4;20:53"><?ditaot usertext?>Customizing the Test Run</xref>
+      </li>
+    </ul>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:4;23:8">For more information on running Tempest tests, see <xref href="https://git.openstack.org/cgit/openstack/tempest/tree/README.rst" scope="external" format="html" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="xref:5;25:23"><?ditaot usertext?>Tempest - The OpenStack Integration Test Suite</xref>. <note type="important" class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="note:1;26:10">Running these tests requires access to the deployed cloud's identity admin
+        credentials</note></p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:5;28:8">Tempest creates and deletes test accounts and test resources for test purposes.</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:6;29:8">In certain cases Tempest might fail to clean-up some of test resources after a test is
+      complete, for example in case of failed tests.</p>
+    <section id="running" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="section:1;31:27"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="title:2;31:34">Running the Rests</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:7;32:10">To run the default set of Tempest tests:</p>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="ol:1;33:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:4;34:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:8;35:14">Login to the deployer node.</p>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:5;37:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:9;38:14">Navigate to the ansible folder:</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:1;39:22">cd ~/scratch/ansible/next/hos/ansible</codeblock>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:6;41:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:10;42:14">Ensure you can access your cloud:</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:2;43:22">
+ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
+source /etc/environment</codeblock>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:7;47:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:11;48:14">Run the tests:</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:3;49:22">ansible-playbook -i hosts/verb_hosts tempest-run.yml</codeblock>
+        </li>
+      </ol>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:12;52:10">Optionally, you can <xref type="section" href="#tempest/custom" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="xref:6;52:74"><?ditaot usertext?>customize Tempest to run
+          specific tests</xref>.</p>
+    </section>
+    <section id="results" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="section:2;55:27"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="title:3;55:34">Viewing Test Results</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:13;56:10">Tempest is deployed under <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:1;56:44">/opt/stack/tempest</codeph>. Test results are written in
+        the following log file:</p>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:4;58:18">/opt/stack/tempest/testr_results.log </codeblock>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:14;59:10">A detailed log file is written to:
+        <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:5;60:20">/opt/stack/tempest/tempest.log</codeblock></p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:15;61:10">The results are also stored in the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:2;61:53">testrepository</codeph> database.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:16;62:10">To access the results after the run:</p>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="ol:2;63:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:8;64:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:17;65:14">Login to the deployer node.</p>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:9;67:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:18;68:14">Change to the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:3;68:36">tempest</codeph> directory and list the test results:</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:6;69:22">
+cd /opt/stack/tempest
+testr last</codeblock>
+        </li>
+      </ol>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:19;74:10">See <xref href="https://testrepository.readthedocs.org/en/latest/" scope="external" format="html" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="xref:7;75:25"><?ditaot usertext?>Test Repository Users Manual</xref> for more details on how to manage the
+        test result repository.</p>
+    </section>
+    <section id="custom" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="section:3;78:26"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="title:4;78:33">Customizing the Test Run</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:20;79:10">There are several ways available to customize which tests will be executed.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:21;80:10"><ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="ul:2;80:14">
+          <!--   <li>
+            <xref type="section" href="#tempest/service">Run Tests for a Specific Service</xref>
+          </li> -->
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:10;84:15">
+            <xref type="section" href="#tempest/services" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="xref:8;85:59"><?ditaot usertext?>Run Tests for Specific Services and
+              Exclude Specific Features</xref>
+          </li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:11;88:15">
+            <xref type="section" href="#tempest/list" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="xref:9;89:55"><?ditaot usertext?>Run Tests Matching a Series of White and
+              Blacklists</xref>
+          </li>
+        </ul>
+      </p>
+    </section>
+    <!--   <section id="service">
+      <title>Run Tests for a Specific Service</title>
+      <p>You can run tests against a specific service, such as Compute, Networking, or Identity.</p>
+      <ol>
+        <li>
+          <p>Login to the seed VM.</p>
+        </li>
+        <li>
+          <p>SSH into the undercloud node:</p>
+          <codeblock>
+            <codeph>ssh heat-admin@${UNDERCLOUD_IP}
+              sudo -i
+            </codeph>
+          </codeblock>
+        </li>
+        <li>
+          <p>Use the following command to specify that tests run on the a specific service.</p>
+          <codeblock>
+            <codeph>OS_TESTPATH=./tempest/{service} run-tempest
+            </codeph>
+          </codeblock>
+          <p>Where <codeph>{service}</codeph> is the name of the service, such as
+              <codeph>api</codeph>, <codeph>compute</codeph>, <codeph>identity</codeph>, or
+              <codeph>network</codeph>.</p>
+          <p>For example, execute the following command to run the Tempest test against the Nova
+            (Compute service) API:</p>
+          <codeblock>
+            <codeph>OS_TESTPATH=./tempest/api/compute run-tempest
+            </codeph>
+          </codeblock>
+        </li>
+      </ol>
+    </section>-->
+    <section id="services" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="section:4;128:28"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="title:5;128:35">Run Tests for Specific Services and Exclude Specific
+        Features</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:22;130:10">Tempest allows you to test specific services and features using the
+          <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:4;131:19">tempest.conf</codeph> configuration file.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:23;132:10">A working configuration file with inline documentation is deployed under
+          <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:5;133:19">/opt/stack/tempest/etc/</codeph>.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:24;134:10">To use this, follow these steps:</p>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="ol:3;135:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:12;136:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:25;137:14">Login to the deployer node.</p>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:13;139:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:26;140:14">Edit the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:6;140:31">/opt/stack/tempest/etc/tempest.conf</codeph> file</p>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:14;142:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:27;143:14">To test specific service, edit the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:7;143:57">[service_available]</codeph> section :</p>
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:28;144:14">Clear the comment character <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:8;144:50">#</codeph> and set a line to <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:9;144:87">true</codeph>
+            to test that service or <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:10;145:45">false</codeph> to not test that service.</p>
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:29;146:14">Example:</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:7;147:22">
+cinder = true
+neutron = false</codeblock>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:15;151:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:30;152:14">To test specific features, edit any of the <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:11;152:65">*_feature_enabled</codeph> sections
+            to enable or disable tests on specific features of a service.</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:8;154:22">
+[volume-feature-enabled]
+[compute-feature-enabled]
+[identity-feature-enabled]
+[image-feature-enabled]
+[network-feature-enabled]
+[object-storage-feature-enabled]</codeblock>
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:31;161:14">Clear the comment character <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:12;161:50">#</codeph> and set a line to <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:13;161:87">true</codeph>
+            to run a test or <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:14;162:38">false</codeph> to not run that test.</p>
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:32;163:14">Example:</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:9;164:22">
+#Is the v2 identity API enabled (boolean value)
+api_v2 = true
+#Is the v3 identity API enabled (boolean value)
+api_v3 = false</codeblock>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:16;170:13">Then run tests normally</li>
+      </ol>
+    </section>
+    <section id="list" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="section:5;173:24"><title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="title:6;173:31">Run Tests Matching a Series of White and Blacklists</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:33;174:10">You can run tests against specific scenarios by editing or creating a run filter file.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:34;175:10">Run filter files are deployed under <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:15;175:54">/opt/stack/tempest/run_fulters</codeph>.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:35;176:10">Use run filters to whitelist or blacklist specific tests or groups of tests:</p>
+      <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="ul:3;177:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:17;178:13">lines starting with # or empty are ignored</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:18;179:13">lines starting with <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:16;179:41">+</codeph> are whitelisted</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:19;180:13">lines starting with <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeph:17;180:41">-</codeph> are blacklisted</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:20;181:13">lines not matching any of the above conditions are blacklisted</li>
+      </ul>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:36;183:10">If whitelist is empty, all available tests are fed to blacklist. If blacklist is empty, all
+        tests from whitelist are returned.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:37;185:10">Whitelist is applied first. The blacklist is executed against the set of tests returned by
+        the whitelist.</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:38;187:10">To run whitelist and blacklist tests:</p>
+      <ol class="- topic/ol " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="ol:4;188:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:21;189:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:39;190:14">Login to the deployer node.</p>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:22;192:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:40;193:14">Go the ansible folder:</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:10;194:22">cd ~/scratch/ansible/next/hos/ansible</codeblock>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:23;196:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:41;197:14">Make sure you can access the cloud:</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:11;198:22">
+ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
+source /etc/environment</codeblock>
+        </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="li:24;202:13"><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:42;202:16">Run the tests:</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:12;203:22">ansible-playbook -i hosts/verb_hosts tempest-run.yml  -e run_filter &lt;run_filter_name&gt;</codeblock></li>
+      </ol>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:43;205:10">Note that the run_filter_name is the name of the run_filter file except for the extension.
+        For instance, to run using the filter from the file /opt/stack/tempest/run_filters/ci.txt,
+        use the following:</p>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:13;208:18">ansible-playbook -i hosts/verb_hosts tempest-run.yml -e run_filter=ci</codeblock>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:44;209:10">Documentation on the format of white and black-lists is available at:
+        <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:14;210:20">/opt/stack/tempest/tests2skip.py</codeblock></p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:45;211:10">Example:</p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="p:46;212:10">The following entries run API tests, exclude tests that are less relevant for deployment
+        validation, such as negative, admin, cli and thirdparty (EC2) tests:</p>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\installation_verification.dita" xtrc="codeblock:15;214:18">
++tempest\.api\.*
+*[Aa]dmin.*
+*[Nn]egative.*
+- tempest\.cli.*
+- tempest\.thirdparty\.*</codeblock>
+    </section>
+    <!--
+    <section id="issues">
+      <title>Known issues</title>
+      <p>The following failing tests can be excluded from the test run by adding the following to
+        the <codeph>tests2skip.txt file</codeph>:</p>
+    </section>
+    <section id="exclude">
+      <title>Exclude tests for features that are not available and test not compatible</title>
+      <codeblock>
+        <codeph>tempest\.api\.compute\.certificates\.*
+          tempest\.api\.compute\.servers.test_disk_config\.*
+          tempest\.api\.network\.test_fwaas_extensions\.*
+          tempest\.api\.network\.test_vpnaas_extensions\.*
+          tempest\.api\.network\.test_load_balancer\.*
+          tempest\.api\.image\.v1\.test_image\.CreateRegisterImagesTest\.test_register_http_image
+          tempest\.api\.image\.v1\.test_images\.CreateRegisterImagesTest\.test_register_remote_image
+          tempest.api\.network\.test_metering_extensions\.MeteringTestJSON
+          tempest\.api\.network\.test_metering_extensions\.MeteringIpV6TestJSON
+          tempest\.api\.compute\.test_live_block_migration.LiveBlockMigrationTestJSON\.test_live_block_migration
+          tempest\.api\.compute\.floating_ips\.test_list_floating_ips\.FloatingIPDetailsTestJSON\.test_list_floating_ip_pools
+        </codeph>
+      </codeblock>
+    </section>
+    <section id="fail">
+      <title>Known failures</title>
+      <p>The following tests will result in failure using the installed Tempest library. These known
+        failures can be fixed by installing the <codeph>tempest-lib&gt;=0.2.0</codeph> OpenStack
+        Functional Testing Library.</p>
+      <p>See <xref href="https://pypi.python.org/pypi/tempest-lib/0.2.0" scope="external"
+          format="html">tempest-lib 0.2.0</xref> for information on downloading the library.</p>
+      <codeblock>
+        <codeph>tempest\.api\.object_storage\.test_container_staticweb\.StaticWebTest\.test_web_index      
+          tempest\.api\.object_storage\.test_container_staticweb\.StaticWebTest\.test_web_listing_css
+          tempest\.api\.object_storage\.test_container_services\.ContainerTest\.test_update_container_metadata_with_delete_metadata
+          tempest\.api\.object_storage\.test_container_services\.ContainerTest\.test_update_container_metadata_with_delete_metadata_key
+          tempest\.api\.object_storage\.test_object_slo\.ObjectSloTest\.test_upload_manifest
+          tempest\.api\.object_storage\.test_container_sync_middleware\.ContainerSyncMiddlewareTest\.test_container_synchronization
+        </codeph>
+      </codeblock>
+    </section>
+    -->
+  </body>
+</topic>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\Users\sharmabi\git\documentation\helion\temp\topic-pdf\helion\swift?><?workdir-uri file:/C:/Users/sharmabi/git/documentation/helion/temp/topic-pdf/helion/swift/?><?path2project ..\?><?path2project-uri ../?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="ring-specification" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="topic:1;3:32">
+  <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="title:1;4:10">Ring Specifications</title>
+  <body class="- topic/body " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="body:1;5:9">
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:1;6:8">The ring is resposible for mapping data on particular disks.There is a separate ring for
+      account databases, container databases and for each object storage policy, but each ring works
+      similarly. The swift-ring-builder utility is used to build and manage rings. The
+      swift-ring-builder utility uses a builder file to contain ring information and additional data
+      required to build future rings. In HOS2.0, you use the cloud model to specify how the rings
+      are configured and used. This model is used to automatically invoke the swift-ring-builder
+      utility as part of the deploy process. Normally, you will not run the swift-ring-builder
+      utility directly.</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:2;14:8">The rings are specified in the input model using the <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:1;14:64">ring-specifications</b> key. There is
+      an entry for each distinct Swift system – hence the Keystone region name is specified in the
+        <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:2;16:12">region-name</b> key of the example cloud model.</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:3;17:8">In the cloud model, a ring-specification is mentioned in
+        <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeph:1;18:17">data/swift/rings.yml</codeph> file. The sample file of ring-specification is as
+      follows:</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:4;20:8">
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeblock:1;21:18">ring-specifications:
+    - region-name: region1
+      rings:
+        - name: account
+          display-name: Account Ring
+          min-part-time: 16
+          partition-power: 12
+          replication-policy:
+            replica-count: 3
+        - name: container
+          display-name: Container Ring
+          min-part-time: 16
+          partition-power: 12
+          replication-policy:
+            replica-count: 3
+        - name: object-0
+          display-name: General
+          default: yes
+          min-part-time: 16
+          partition-power: 12
+          replication-policy:
+            replica-count: 3</codeblock>
+    </p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:5;44:8">The above sample file shows that the <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:3;44:48">region1</b> has three rings as follows: </p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:6;45:8">
+      <ul id="ul_hl3_q55_dt" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="ul:1;46:30">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:1;47:13"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:4;47:16">Account ring</b> - You must always specify a ring called <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:5;47:76">account</b>. The account
+          ring is used by Swift to store metadata about the projects in your system. In Swift, a
+          Keystone project maps to a Swift account. The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeph:2;49:65">display-name</codeph> is
+          informational and not used. </li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:2;51:13"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:6;51:16">Container ring</b> -You must always specify a ring called "container". The
+            <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeph:3;52:21">display-name</codeph> is informational and not used.</li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:3;53:13"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:7;53:16">Object ring</b> - It is also known as Storage Policy. You must always specify a ring
+          called "object-0". It is possible to have multiple object rings, which is known as
+            <i class="+ topic/ph hi-d/i " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="i:1;55:16">storage policies</i>. The <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeph:4;55:50">display-name</codeph> is the name of the storage
+          policy and can be used by users of the Swift system when they create containers. It allows
+          them to specify the storage policy that the container uses. In the example, the storage
+          policy is called
+          <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:8;59:14">General</b>.<!--<li>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</li><li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph> attribute is 3. Three copies of data are kept to provide resiliency and availability.</li>--></li>
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:4;60:13">
+          <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:7;61:14">The purpose of the <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:9;61:36">min-part-time, partition-power, replication-policy</b>
+              and<b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:10;62:21">replica-count</b> are described in the following section. </p>
+        </li>
+      </ul>
+    </p>
+    <section class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="section:1;66:14"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:11;66:17">Ring Parameters</b><simpletable id="simpletable_qyp_lnj_2t" class="- topic/simpletable " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="simpletable:1;66:77">
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="strow:1;67:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="stentry:1;68:20"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeph:5;68:28">replica-count</codeph></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="stentry:2;69:20"><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:8;69:23">It defines the number of  copies of object created.</p>You require high
+            resiliency or availability and want a higher replica count. The
+              <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeph:6;71:23">replica-count</codeph> is normally 3 (i.e., Swift will keep three copies of
+            accounts and containers). It is <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:12;72:48">recommended</b> not to change the value to lower than
+            3.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="strow:2;75:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="stentry:3;76:20"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeph:7;76:28">min-part-time</codeph></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="stentry:4;77:20"><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:9;77:23">It changes the value used to decide if a given partition can be moved
+              again.</p>This is the number of hours that the swift-ring-builder tool will enforce
+            between ring rebuilds. On a small system, this can be as low as one hour. The value can
+            be different for each ring. <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:10;80:44">The swift-ring-builder will enforce a minimum of 16 hours
+              between ring rebuilds. However, this time is system-dependent so you will be unable to
+              figure out the appropriate value for <codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeph:8;82:60">min-part-power</codeph> until you have
+              more experience with your system.</p></stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="strow:3;85:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="stentry:5;86:20"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeph:9;86:28">partition-power</codeph></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="stentry:6;87:20">The appropriate value is related to the number of disk drives you allocate for
+            the account and container storage. We recommend that you use the same drives for both
+            the account and container rings. Therefore, the <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:13;89:64">partition-power</b> value should be
+            the same. For more detailed information on partition-power, refer to <xref href="#ring-specification/selecting-partition-power" format="dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="xref:1;91:82" type="section"><?ditaot usertext?>selecting
+              partition-power</xref>.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="strow:4;94:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="stentry:7;95:20"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeph:10;95:28">replication-policy</codeph></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="stentry:8;96:20">The <b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:14;96:27">replication-policy</b> attribute is used to specify that a ring uses
+            replicated storage. The duplicate copies of the object are created and stored on
+            different disk drives. All replicas are identical. If one is lost or corrupted, the
+            system automatically copies one of the remaining replicas to restore the missing
+            replica.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="strow:5;102:16">
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="stentry:9;103:20"><codeph class="+ topic/ph pr-d/codeph " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeph:11;103:28">default</codeph></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="stentry:10;104:20">The default value in the above sample file of ring-specification  is set to yes,
+            which means that the storage policy is enabled to store objects. For more details refer
+            to <xref href="storage-policies.dita#topic_gm1_4bc_jt" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="xref:2;106:69" type="topic"><?ditaot gentext?>Designing Storage Policies</xref>.</stentry>
+        </strow>
+      </simpletable></section>
+   <!--  
+    <section id="make-changes-ring"><b>Making Changes to the Ring Specifications</b><p>The ring
+        specification provided in the example model contains adequate configuration details to
+        deploy Swift. However, there may be reasons for changing the model as follows: </p><ul
+        id="ul_ef1_y55_dt">
+        <li>Your system has more servers and disks than in the mid sized cloud example. Therefore,
+          you may require to pick a different value for <codeph>partition-power</codeph>. The
+          appropriate value is related to the number of disk drives you allocate for the account and
+          container storage. We recommend that you use the same drives for both the account and
+          container rings. Hence, the <codeph>partition-power</codeph> value should be the same. For
+          more information about selecting an appropriate value, refer to <xref
+            href="#topic_efw_k55_dt/selection-partition" format="dita">Selecting a Partition
+            Power</xref>.</li>
+        <li>You require high resiliency or availability and want a higher replica count. The
+            <codeph>replica-count</codeph> is normally 3 (i.e., Swift will keep three copies of
+          accounts and containers). It is <b>recommended</b> not to change the value to lower than
+          3.</li>
+        <li>You require a different name for the Storage Policy. If so, edit the
+            <codeph>display-name</codeph> of the object-0 ring. This must be a single word
+          (character such as underscore or dash are allowed). This is visible to your end
+          users.</li>
+        <li>Your system has more servers and disks than in the mid sized cloud example and the time
+          to replicate data during a ring rebuild is longer than 16 hours. However, this time is
+          system-dependent so you will be unable to figure out the appropriate value for
+            <codeph>min-part-power</codeph> until you have more experience with your
+            system.<p>Therefore, during the initial deployment of Swift, we suggest not to make
+            changes in <b>min-part-time</b>. </p></li>
+      </ul></section>-->
+    <section id="selecting-partition-power" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="section:2;137:45">
+      <title class="- topic/title " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="title:2;138:14">Selecting a Partition Power</title>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:11;139:10">Partition power is used to distribute the data uniformly across drives in a Swift nodes. It
+        also defines the storage cluster capacity. You must set the part partition power value based
+        on the total amount of storage you expect your entire ring to use. </p>
+      <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:12;142:10">When storing an object, the object storage system hashes the name. This hash results in a
+        hit on a partition (so a number of different object names result in the same partition
+        number). Generally, the partition is mapped to available disk drives. With a replica count
+        of 3, each partition is mapped to three different disk drives. The hashing algorithm used
+        hashes over a fixed number of partitions. The partition-power attribute determines the
+        number of partitions you have. </p>
+    </section>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:13;149:8">Select a partition power for a given ring that is appropriate to the number of disk drives
+      you allocate to the ring for the following reasons: </p>
+    <ul id="ul_i4b_gv5_dt" class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="ul:2;151:28">
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:5;152:11">If you use a high partition power and have a few disk drives, each disk drives will have
+        1000s of partitions. With too many partitions, audit and other processes in the Object
+        Storage system cannot "walk" the partitions in a reasonable time and updates will not occur
+        in a timely manner.</li>
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:6;156:11">If you use a low partition power and have many disk drives, you will have 10s (or maybe
+        only one) partition on a drive. The Object Storage system does not use size when hashing to
+        a partition – it hashes the name.
+          <!--If sizes and names are randomly distributed, it is normally expected a random, even,  distribution of sizes within a partition. However, this may not happen (i.e., two neighboring partitions may have different sizes). --><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:14;159:239">With
+          many partitions on a drive, a large partition is cancelled out by a smaller partition so
+          the overall drive usage is similar. However, with very small numbers of partitions, the
+          uneven distribution of sizes can be reflected in uneven disk drive utilization (so one
+          drive becomes full while a neighboring drive is empty).</p></li>
+    </ul>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:15;165:8">An ideal number of partitions per drive is 100. If you know the number of drives, select part
+      power approximately to 100 partition per drive. Usually, you install a system with a specific
+      number of drives and add drives as your required for storage grows. However, you cannot change
+      the value of the partition power. Hence you must select a value that is a compromise between
+      current and planned capacity. </p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:16;170:8"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:15;170:11">Important</b>: If you are installing a small capacity system and you need to grow to a
+      very large capacity but you cannot fit within any of the ranges in the table, please seek help
+      from Professional Services to plan your system.</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:17;173:8">There are a few additional factors that can help or mitigate the fixed nature of the
+      partition power, as follows:</p>
+    <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="ul:3;175:9">
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:7;176:11">Account and container storage represents a small fraction (typically 1%) of your object
+        storage needs. Hence, you can select a smaller partition power (relative to object ring
+        partition power) for the account and container rings. </li>
+    </ul>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:18;180:8">
+      <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="ul:4;181:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:8;182:13">For object storage, you can add additional storage policies (i.e., another object ring).
+          When you have reached capacity in an existing storage policy, you can add a new storage
+          policy with a higher partition power (because you now have more disk drives in your
+          system). This means that you can install your system with a small partition power
+          appropriate to a small number of initial disk drives. Later when you have many disk
+          drives, the new storage policy can have a higher value appropriate to the larger number of
+          drives.</li>
+      </ul>
+    </p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:19;191:8"> However, when you continue to add storage capacity you should note that existing containers
+      continue to use their original storage policy. Hence, the additional objects must be added to
+      new containers to take advantage of the new storage policy.</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:20;194:8">Use the following table to select an appropriate partition power for each ring. The partition
+      power of a ring cannot be changed so it is important to select an appropriate value. This
+      table is based on a replica count of 3. If your replica count is different or you are unable
+      to find your system in the table then refer to <xref href="#ring-specification/calculating-number" format="dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="xref:3;198:69" type="section"><?ditaot usertext?>Calculating Numbers of
+        Partitions</xref> for information of selecting a partition power. </p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:21;200:8"> The table assumes that when you first deploy the Swift you have a small number of drives
+      (the minimum column in the table) and later you add drives. </p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:22;202:8">
+      <note class="- topic/note " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="note:1;203:13">
+        <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="ul:5;204:13">
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:9;205:15">You use the total number of drives. For example, if you have 3 servers, each with two
+            drives, the total number of drives is 6.</li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:10;207:15">The lookup should be done separately for each of the account, container and object
+            rings. Since account and containers represent approximately 1-2% of object storage, you
+            will probably use fewer drives for the account and container rings (i.e., you will have
+            fewer Proxy, Account, Container (PAC) servers) – hence you your object rings may have a
+            higher partition power.</li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:11;212:15">The largest anticipated number of drives imposes a limit in how a few drives (the
+            minimum) you can have. See <xref href="#ring-specification/calculating-number" format="dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="xref:4;214:29" type="section"><?ditaot usertext?>Calculating Numbers of Partitions</xref>. This means that if you
+            anticipate significant growth, your initial system can be small, but under certain
+            limit.</li>
+          <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:12;217:15">The table assumes that disk drives are the same size. The actual size of a drive is
+            not significant.</li>
+        </ul>
+      </note>
+    </p>
+    <section id="partition-power" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="section:3;222:35"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:16;222:38">Partition Power</b><table frame="all" rowsep="1" colsep="1" id="table_fz3_2hg_dt" class="- topic/table " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="table:1;222:120">
+        <tgroup cols="3" class="- topic/tgroup " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="tgroup:1;223:26">
+          <colspec colname="col1" colnum="1" colwidth="1.0*" class="- topic/colspec " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="colspec:1;224:61"/>
+          <colspec colname="col2" colnum="2" colwidth="1.0*" class="- topic/colspec " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="colspec:2;225:61"/>
+          <colspec colname="col3" colnum="3" colwidth="1.0*" class="- topic/colspec " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="colspec:3;226:61"/>
+          <thead class="- topic/thead " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="thead:1;227:18">
+            <row class="- topic/row " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="row:1;228:18">
+              <entry colname="col1" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:1;229:22">Number of drive during deployment (minimum)</entry>
+              <entry colname="col2" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:2;230:22">Number of drives in largest anticipated system (maximum)</entry>
+              <entry colname="col3" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:3;231:22">Recommended Part Power</entry>
+            </row>
+          </thead>
+          <tbody class="- topic/tbody " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="tbody:1;234:18">
+            <row class="- topic/row " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="row:2;235:18">
+              <entry colname="col1" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:4;236:22">6</entry>
+              <entry colname="col2" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:5;237:22">5,000</entry>
+              <entry colname="col3" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:6;238:22">14</entry>
+            </row>
+            <row class="- topic/row " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="row:3;240:18">
+              <entry colname="col1" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:7;241:22">12</entry>
+              <entry colname="col2" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:8;242:22">10,000</entry>
+              <entry colname="col3" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:9;243:22">15</entry>
+            </row>
+            <row class="- topic/row " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="row:4;245:18">
+              <entry colname="col1" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:10;246:22">36</entry>
+              <entry colname="col2" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:11;247:22">40,000</entry>
+              <entry colname="col3" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:12;248:22">17</entry>
+            </row>
+            <row class="- topic/row " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="row:5;250:18">
+              <entry colname="col1" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:13;251:22">72</entry>
+              <entry colname="col2" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:14;252:22">80,000</entry>
+              <entry colname="col3" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:15;253:22">18</entry>
+            </row>
+            <row class="- topic/row " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="row:6;255:18">
+              <entry colname="col1" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:16;256:22">128</entry>
+              <entry colname="col2" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:17;257:22">160,000</entry>
+              <entry colname="col3" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:18;258:22">19</entry>
+            </row>
+            <row class="- topic/row " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="row:7;260:18">
+              <entry colname="col1" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:19;261:22">256</entry>
+              <entry colname="col2" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:20;262:22">300,000</entry>
+              <entry colname="col3" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:21;263:22">20</entry>
+            </row>
+            <row class="- topic/row " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="row:8;265:18">
+              <entry colname="col1" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:22;266:22">512</entry>
+              <entry colname="col2" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:23;267:22">600,000</entry>
+              <entry colname="col3" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:24;268:22">21</entry>
+            </row>
+            <row class="- topic/row " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="row:9;270:18">
+              <entry colname="col1" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:25;271:22">1024</entry>
+              <entry colname="col2" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:26;272:22">1,200,00</entry>
+              <entry colname="col3" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:27;273:22">22</entry>
+            </row>
+            <row class="- topic/row " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="row:10;275:18">
+              <entry colname="col1" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:28;276:22">2048</entry>
+              <entry colname="col2" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:29;277:22">2,500,000</entry>
+              <entry colname="col3" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:30;278:22">23</entry>
+            </row>
+            <row class="- topic/row " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="row:11;280:18">
+              <entry colname="col1" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:31;281:22">5120</entry>
+              <entry colname="col2" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:32;282:22">5,000,000</entry>
+              <entry colname="col3" class="- topic/entry " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="entry:33;283:22">24</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></section>
+    <section id="calculating-number" class="- topic/section " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="section:4;288:38"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:17;288:41">Calculating Numbers of Partitions</b><p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:23;288:81">The Object Storage system hashes a given
+        name into a specific <i class="+ topic/ph hi-d/i " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="i:2;289:33">partition</i>. For each partition, for a replica count of 3, there
+        are three <i class="+ topic/ph hi-d/i " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="i:3;290:22">partition directories</i>. The partition directories are then evenly scattered
+        over all drives. We can calculate the number of partition directories as
+        follows:<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="codeblock:2;292:28">number-partition-directories-per-drive = ( (2 ** partition-power) * replica-count ) / number-of-drives
+</codeblock></p></section>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:24;294:8">An ideal number of partition directories per drive is 100. However, the system operate
+      normally with a wide range of number of partition directories per drive. The table <i class="+ topic/ph hi-d/i " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="i:4;295:93"><b class="+ topic/ph hi-d/b " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="b:18;295:96">
+          <xref href="#ring-specification/partition-power" format="dita" class="- topic/xref " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="xref:5;296:74" type="section"><?ditaot usertext?>Partition
+        Power</xref></b></i> is based on the following: </p>
+    <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="ul:6;298:9">
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:13;299:11">A replica count of 3</li>
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:14;300:11">For a given partition power, the minimum number of drives results in approximately 10,000
+        partition directories per drive. With more directories on a drive results in performance
+        issues.</li>
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:15;303:11">
+        <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:25;304:12">For a given partition power, the maximum number of drives results in approximately 10
+          partition directories per drive. With fewer directories per drive results in an uneven
+          distribution of space utilization.</p>
+      </li>
+    </ul>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:26;309:8"> It is easy to select an appropriate partition power if your system is a fixed size. Select a
+      value that gives the closest value to 100 partition directories per drive. If your system
+      starts smaller and then grows, the issue is more complicated. The following two techniques may
+      help:</p>
+    <p class="- topic/p " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="p:27;313:8">
+      <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="ul:7;314:11">
+        <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:16;315:13">Start with a system that is closer to your final anticipated system size – this means
+          you can use a high partition power that suites your final system.</li>
+      </ul>
+    </p>
+    <ul class="- topic/ul " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="ul:8;319:9">
+      <li class="- topic/li " xtrf="C:\Users\sharmabi\git\documentation\helion\swift\ring_specifications.dita" xtrc="li:17;320:11">You can add additional storage policies as the system grows. These storage policies can
+        have a higher partition power because there will be more drives in a larger system. Note
+        that this does not help account and container rings – storage policies are only applicable
+        to object rings.</li>
+    </ul>
+  </body>
+</topic>
