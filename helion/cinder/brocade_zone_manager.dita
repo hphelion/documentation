@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_msm_b1j_jt">
-  <title>Brocade Fibre Channel Zone Manager </title>
+  <title>Configuring Brocade Fibre Channel Zone Manager </title>
   <body>
     <p>This page describes the configuration of Brocade Fibre Channel Zone Manager for the block
       storage.<!--. The Block Storage is configured to use a Fibre Channel Volume Driver that supports Zone Manager. --></p>

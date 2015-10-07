@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_pgq_mnw_dt">
-    <title>Backup</title>
+    <title>Backing up Your Data</title>
     <body>
         <section><title>Introduction </title><p>As of HP Helion <tm tmtype="reg">OpenStack</tm> 2.0
                 Beta 1, you must do the following: <ol>
