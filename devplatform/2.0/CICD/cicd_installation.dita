@@ -2,9 +2,5 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_lcx_vtc_dt">
   <title>Installation</title>
-  <body>
-    <p>Installation instructions for CI/CD. Note that this is the same HLM process as used for
-      Helion Development Platform as a whole. </p>
-    <p>May also be included in "HDP full installation" instructions. TBD</p>
-  </body>
+  <body><!--Installation instructions for CI/CD. Note that this is the same process as used for Helion Development Platform as a whole. May also be included in H D P full installation instructions. TBD--></body>
 </topic>
