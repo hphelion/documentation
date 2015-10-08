@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3485">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: KVM Deployment Architecture
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: KVM Deployment Architecture
     Reference</title>
   <prolog>
     <metadata>
@@ -16,12 +16,12 @@
   </prolog>
   <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
-    <p>This page introduces deployment and network architectures of the KVM deployment of HP Helion
-      OpenStack Carrier Grade. During the installation, use the <codeph>denver</codeph> template
-      that comes with the installation package to create the KVM deployment. </p>
-    <p><b>Network/Component Architecture</b></p>
-    <p><image href="../../media/CGH-2-block-arch-denver.png" width="750" id="image_wdn_zbw_mt"/></p>
+    <p>This page introduces deployment and network architectures of the KVM + ESX deployment of HP
+      Helion OpenStack Carrier Grade.</p>
     <ul>
+      <li>
+        <xref type="section" href="#topic3485/Helion-services">HP Helion OpenStack services</xref>
+      </li>
       <li>
         <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
       </li>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Sample wr.json File for
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample wr.json File for
         Installing the KVM + ESX Topology</title>
 <prolog>
     <metadata>
@@ -23,31 +23,11 @@
             deploying the HLM VM.</p>
         
 <section id="sample-node-provisionjson-file">
-<<<<<<< .merge_file_2GNM4L
     <p>The following represents a sample <codeph>wr.json</codeph> file in the
                     <codeph>&lt;cloudname>/vars</codeph> directory of the HLM VM. The IP addresses
                 are masked for security purposes. Use values appropriate for your environment.</p>
-=======
-            <p><b>For bonded NIC environments</b>, edit the file as follows:</p>
-<codeblock>{
-    "lag_interface": "Y",   
-    "lag_mode": 4,
-    "interface_mtu": 1500,
-    "interface_ports": [
-    "eth0, eth1"
-],</codeblock>
->>>>>>> .merge_file_b50qSL
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
-            <p>Make sure the file contains the following lines for the TUL network. Remove any
-                additional TUL entries, if present:</p>
-            <codeblock>"vswitch_type": "nuage_vrs",
-"tul_ip_start_address": "10.20.6.50",
-"tul_ip_end_address": "10.20.6.99",
-"region_name": "regionone",</codeblock>
-
-    <p>The following represents a sample <codeph>wr.json</codeph> file. The IP addresses are
-                masked for security purposes. Use values appropriate for your environment.</p>
 <codeblock>{
     "product": {
         "version": 1
@@ -57,49 +37,39 @@
         {
             "name": "wr-vars",
             "properties": {
-<<<<<<< .merge_file_2GNM4L
                 "database_storage":, # The storage allotment for the OpenStack databases. As a reference point, a system with six hosts, 40 VMs and 120 tenant networks requires about 9 GiB.
                 "backup_storage":, # The storage allotment for backup operations. To ensure enough space for at least one backup, this should be equal to or greater than the sum of "database storage" and "image storage"
                 "image_storage":, # The size of the partition to use for nova instances (root and ephemeral storage for an instance accounted under this). So please specify the value (in GB) per your requirement
                 "region_name": "", # Specify a custom name of the KVM region
-=======
-                "database_storage": 70,
-                "backup_storage": 300,
-                "shared_instance_storage": 250,
-                "vswitch_type": "nuage_vrs",
-                "tul_ip_start_address": "10.20.6.50",
-                "tul_ip_end_address": "10.20.6.99",
-                 "region_name": "regionone",
->>>>>>> .merge_file_b50qSL
                 "logical_interface": [
                     {
-                        "lag_interface": "N",
-                        "lag_mode": 4,
-                        "interface_mtu": 1500,
+                        "lag_interface": "N", # An option to use LAG for the management network. If using LAG, specify lag_mode and multiple nic ports in interface_ports 
+                        "lag_mode":   "4", # 4=802.3ad (LACP) policy (default); This is the only supported option for the management (CLM) interface.                         
+                        "interface_mtu": 1500, # The maximum transmission unit for the interface. Typically set it to 9000.
                         "interface_ports": [
-                            "eth0"
+                            "eth0" # Interface to be used. In case of lag mode, specific multiple interfaces with comma separated for example, “eth0”, “eth1”
                         ],
                         "network": [
                             {
-                                "ip_start_address": "10.20.5.50",
-                                "ip_end_address": "10.20.3.99",
+                                "ip_start_address": "", # The start and end address should be from CLM subnet and non-conflicting with non-kvm/standard region
+                                "ip_end_address": "", # The start and end address should be from CLM subnet and non-conflicting with non-kvm/standard region
                                 "name": "management"
                             },
                             {
-                                "ip_start_address": "172.16.73.50",
-                                "ip_end_address": "172.16.73.99",
+                                "ip_start_address": "", # The start and end address should be from BLS subnet and non-conflicting with non-kvm/standard region
+                                "ip_end_address": "", # The start and end address should be from BLS subnet and non-conflicting with non-kvm/standard region
                                 "name": "blockstore"
                             },
                             {
-                                "ip_start_address": "10.20.4.50",
-                                "ip_end_address": "10.20.4.99",
+                                "ip_start_address": "", # The start and end address should be from CAN subnet and non-conflicting with non-kvm/standard region
+                                "ip_end_address": "", # The start and end address should be from CAN subnet and non-conflicting with non-kvm/standard region
                                 "name": "api"
                             }
                         ]
                     }
                 ],
-                "pxeboot_cidr": "10.20.2.0/24",
-                "license_file_name": "license.lic"
+                "pxeboot_cidr": "", # This should be unique subnet for KVM region
+                "license_file_name": "" # Specify the full name of the licence file 
             }
         }
     ]

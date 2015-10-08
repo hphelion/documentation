@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Installing the KVM
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM
     Deployment</title>
   <prolog>
     <metadata>
@@ -19,26 +19,25 @@
       <!--UNDER REVISION-->
       <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
       <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
-    <p>After Helion lifecycle management is installed, the next task in installing the <xref
-        href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM topology</xref>
-      is to deploy the HP Helion Openstack cloud.</p>
+    <p>After the Helion Lifecycle Management (HLM) is installed, the next task in installing the
+        <xref href="carrier-grade-install-pb-overview.dita#topic1925/install-option">KVM
+        deployment</xref> is to  deploy the HP Helion Openstack cloud.</p>
     <p><b>Note:</b> If you are installing the KVM + ESX deployment, see <xref
         href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the KVM + ESX
         Deployment</xref>.</p>
     
     <section>
-      <title>Log into the Helion lifecycle management VM (VM)</title>
-      <p>To log into the VM you created in the previous page.</p>
+      <title>Log into the HLM VM</title>
+      <p>Log into the HLM VM you created in the previous page.</p>
       <ol>
-        <li>Login to the HLM VM.
+        <li>Login to HLM VM.
             <codeblock>ssh &lt;HLM_VM_IP>
 where: HLM_VM_IP is the CLM IP of the HLM VM. </codeblock><p>Use
             the <codeph>cghelion</codeph> credentials:
             <codeblock>User Name: cghelion
 Password: cghelion</codeblock></p><p><b>Important:</b>
             After logging in with the default password, make sure you change the password for the
-              <codeph>cghelion</codeph> user. </p><p><image href="../../media/CGH-2-login-hlm.png"
-              width="400" id="image_nnb_fyb_3t"/></p></li>
+              <codeph>cghelion</codeph> user. </p></li>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
         <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
@@ -169,7 +168,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
             <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM
             address range to itself for serving python and debian repositories. Make sure that you
             set the first IP address of the CLM range for the eth2 (CLM) address of the HLM
-            host.</p></li>
+            node.</p></li>
         <li>Modify the <codeph>definition.json</codeph> file: <ol id="ol_t3x_btn_xs">
             <li>Set the number of compute systems to 2.
               <codeblock>"count": 2, //number of computes in the resource pool</codeblock></li>
@@ -278,12 +277,6 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
           </ol></li>
       </ol>
     </section>
-    <section id="verify-json">
-      <title>Verify the JSON files</title>
-      <p>After editing the JSON files, validate each JSON file to make sure there are no syntax
-        errors using the tool of your preference. For example, using the Python json.tool: </p>
-      <codeblock>python -m json.tool &lt;filename>.json</codeblock>
-    </section>
     <section id="pxe-boot">
       <title>Configure PXE boot</title>
       <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE
@@ -314,6 +307,7 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
             nodes are provisioned, make sure the <codeph>nodes.json</codeph> file is generated and
             that you can establish a password-less SSH connection to these nodes from HLM
           VM.</p></li>
+
         <li>Configure the back-end drivers to enable management of the OpenStack Block Storage
           volumes in the KVM region equipped with 3PAR and/or VSA storage arrays. The HP Block
           Storage (Cinder) service allows you to configure multiple storage back-ends. Use the
@@ -361,9 +355,9 @@ Password: cghelion</codeblock></p><p><b>Important:</b>
                   </tbody>
                 </tgroup>
               </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select
-                both if you have respective storage arrays </p><p id="storage"><b>For 3PAR storage
-                </b>: Edit the <codeph>cinder_conf.hp3parSample</codeph> file to configure the 3PAR
-                settings. For example:</p><codeblock>[DEFAULT]
+                both if you have respective storage arrays </p><p id="storage"><b>For 3PAR storage </b>: Edit the
+                  <codeph>cinder_conf.hp3parSample</codeph> file to configure the 3PAR settings. For
+                example:</p><codeblock>[DEFAULT]
 enabled_backends=hp3par
 
 [hp3par]
@@ -424,22 +418,42 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
               </p></li>
             <li>Save the file to <codeph>cinder_conf</codeph>.</li>
           </ol></li>
-      </ol>
-    </section>
-    <section>
-      <title>Deploy the Configuration Processor Patches</title>
-      <p>Before launching the HP Helion OpenStack cloud in the following section, deploy two patches
-        to update required configuration files. </p>
-      <p>See the README in the download or <xref
-          href="carrier-grade-install-config-patch.dita#topic10581">Deploying the Configuration
-          Processor Patches</xref>.</p>
+        <li>After editing the JSON files, validate each JSON file to make sure there are no
+          syntactical errors using the tool of your preference. For example, using the Python
+          json.tool: <codeblock>python -m json.tool &lt;filename>.json</codeblock></li>
+      </ol></section>
+    <section id="patches">
+      <title>Apply the Rabbit MQ Random Password patch</title>
+      <p>For information, see the README in the download or  <xref
+          href="carrier-grade-install-rabbitmq-patch.dita#topic10581">Applying the Random RabbitMQ
+          Password Patch</xref>.</p>
     </section>
     
-    <section>
-      <title>Deploy the HP Helion OpenStack cloud</title>
+    <section><title>Apply the Reverse Path Filter Patch</title>After deploying the HP OpenStack
+      cloud, you might not be able to access the Horizon interface and the OpenStack services cannot
+      be accessed over the CAN network. <p>To prevent this problem, install a patch to configure the
+        kernel to set the reverse path filter (<codeph>rp_filter</codeph>) to 1 in the
+          <codeph>all</codeph> and <codeph>default</codeph> configuration files. </p><p>For more
+        information, see the README in the download or  <xref
+          href="carrier-grade-install-rp-filter.dita#topic10581">Applying the Reverse Path Filter
+          Patch</xref>.</p></section>
+    
+    <section><title>Apply the Helion Dynamic Password Patch</title>The HP Helion OpenStack cloud
+      deployment creates a default password to log into the Helion interface. You can deploy a patch
+      to configure the installer to generate a dynamic user name and password for the Helion
+      interface. The user name can password can be retrieved from a configuration files. <p>For more
+        information, see the README in the download or  <xref
+          href="carrier-grade-install-helion-password-patch.dita#topic10581">Applying the Helion
+          Dynamic Password Patch</xref>.</p></section>
+    
+    <section><title>Apply the NIC bonding patch</title><p>HP Helion OpenStack Carrier Grade environments using NIC bonding, see the README in the download
+        or <xref href="carrier-grade-install-nic-patch.dita#topic10581">Applying the NIC Bonding
+          Patch</xref> to install a required patch.</p></section>
+    
+    <section><title>Deploy the HP Helion OpenStack cloud</title>
       <ol>
-        <li>Once you have correctly edited all the json files and applied the appropriate patches,
-          run the HP Helion OpenStack Configuration Processor:
+        <li>Once you have correctly edited all the json files and applied the appropriate patches, run the HP Helion
+          OpenStack Configuration Processor:
             <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
             Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
             incorporated into the installation environment. </p></li>
@@ -450,6 +464,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
             <codeblock><codeph>hnetinit &lt;cloudname&gt;</codeph></codeblock><p>You can run this
             command from any directory.</p><p>After this command completes, all cloud nodes and CLM
             network interfaces should be set correctly.</p></li>
+
         <li>Use the following command to deploy the cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>Once cloud
             deployment is successfully complete, there will be 3 controller nodes in the non-KVM
@@ -463,6 +478,21 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
         able to execute OpenStack CLI commands until the specific changes are made on all three
         controller nodes in the non-KVM region. </p>
       <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
+    </section>
+    <section><title>Applying the HLM Port Security Patch</title>This patch secures all ports on the
+      HLM VM. The standard protocol ports will allow inbound access only and the only the cloud
+      nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see
+        the README in the download or <xref
+          href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port
+          Security Patch</xref>.</p></section>    
+    <section>
+      <title>Disable the Root User</title>
+      <p>For security purposes, we strongly recommend disabling root. After the
+        <codeph>root</codeph> user is disabled, you can use another default user account,
+        <codeph>cghelion</codeph> to access the HLM VM and any actions that require root access
+        should be done using <codeph>sudo</codeph>.</p>
+      <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581"
+        >Disabling the Root User</xref>.</p>
     </section>
     <section id="next-step">
       <title>Next Step</title>

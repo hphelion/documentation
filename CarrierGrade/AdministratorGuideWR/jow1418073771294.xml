@@ -1,22 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic id="jow1418073771294" xml:lang="en-us">
-<!-- Modification History
-
- -->
- <title >The App Scale Helper Script</title>
- <shortdesc >The App Scale Helper script supports resource scaling
-    customizations.</shortdesc>
- <prolog>
-  <author >Jim Owens</author>
- </prolog>
- <body>
-  <p >This is an optional script running on the guest. If present, it can modify
-            aspects of scaling behavior. For example, it can control which CPU is taken offline
-            during a scale-down operation, overriding the default selection. </p>
-        <p >It can also call other scripts or programs. You can use this to coordinate
-            or manage processing work for the vCPUs as you scale them.</p>
-  <p >For more about the App Scale Helper script, refer to the documentation for the
-            HP Helion OpenStack Carrier Grade Software Development Kit.</p>
- </body>
-</topic>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4010">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Overview</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -109,64 +109,42 @@
       <p>For more information, see <xref href="carrier-grade.services-overview.dita">Services
           Overview</xref>.</p>
     </section>
-    <section>
-      <title>Virtual Switching</title>
-      <!--<p>Taken from http://blogs.windriver.com/wind_river_blog/2014/10/wanted-virtual-switching-without-compromise.html. Must rewrite</p>-->
-      <p>Virtual switching is a key function within data centers based on Software Defined
-        Networking (SDN) as well as in telecom infrastructure that leverages Network Functions
-        Virtualization (NFV). </p>
-      <p>In the NFV scenario, for example, the virtual switch (vSwitch) is responsible for switching
-        network traffic between the core network and the virtualized applications or Virtual Network
-        Functions (VNFs) that are running in Virtual Machines (VMs). </p>
-      <p><b>PCI Pass-through</b>.  PCI pass-through is the simplest approach to switching for NFV
-        infrastructure. As explained in detail <xref
-          href="http://libvirt.org/guide/html/Application_Development_Guide-Device_Config-PCI_Pass.html"
-          format="html" scope="external">here</xref>, it allows a physical PCI Network Interface
-        Card (NIC) on the host server to be assigned directly to a guest VM. The guest OS drivers
-        can use the device hardware directly without relying on any driver capabilities from the
-        host OS.</p>
-      <p><b>Single-Root I/O Virtualization (SR-IOV)</b>. Basically, SR-IOV, which is implemented in
-        some but not all NICs, provides a mechanism by which a single Ethernet port can appear to be
-        multiple separate physical devices. This enables a single NIC to be shared between multiple
-        VMs.</p>
-      <p><b>HP DCN Virtual Routing Switch (VRS)</b>. HP DCN VRS is..</p>
-      <p><b> Accelerated vSwitch (AVS)</b>. AVS is integrated into the servers in the KVM region.
-        AVS is an optimization of Open vSwitch (OVS) technology for NFV environments. Open vSwitch
-        is a multilayer software switch licensed under the open source Apache 2 license.</p>
-    </section>
     <section><title>Installation Options</title>HP Helion OpenStack Carreir Grade has two baremetal
       installation options depending on your system configuration. It allows you to manage the KVM
       and VMware ESX<tm tmtype="reg"/> hypervisors and provision virtual machines.<p>You can find
         more information on the hypervisor options in the <xref
           href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
-          Overview</xref>.</p>
-      <b>KVM Topology</b>
-      <p>If you install the KVM deployment, you can integrate either HP Storevirtual (VSA) or HP
-        StoreServ (3PAR) storage in the KVM region.</p><ul>
-        <li>With HP StoreVirtual VSA storage <p>HP StoreVirtual VSA software is a Virtual Storage
-            Appliance that provides the complete array functionality on top of a Linux KVM
-            environment without external hardware. VSA eliminates the need for external shared
-            storage required to implement Block Storage features.</p></li>
-        <li>With HP StoreServ (3PAR) storage <p>HP 3PAR StoreServ is a storage array that supports
-            Fibre Channel (FC) as well as iSCSI protocol.</p></li>
-      </ul><p>You must install 3PAR or VSA before starting the HP Helion OpenStack installation and
-        are independent of HP Helion OpenStack Carrier Grade. </p>
-      <b>KVM with DCN Topology</b>
-      <p>The KVM topology can be optimized using HP DCN Virtual Routing Switch. </p>
-      <b>KVM + ESX Topology</b>The ESXi/DCN integration enables data-center-to-data-center
-      communications through DCN, which connects to the KVM region through a gateway (VRS-G). <p>HP
-        Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision
-        and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a part of ESX
-        integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute
-        proxy nodes.</p><p>Virtual networking between HP Helion Carrier Grade and the ESX servers is
-        handled by HP Distributed Cloud Networking (DCN) is a software-defined networking (SDN)
-        solution that enhances data center (DC) network virtualization by automatically establishing
-        connectivity between compute resources upon their creation. </p><p>The ESX integration uses
-        the OVSvApp application to connect the vCenter networking to the Network Operations
-        controller to manage workload networks. </p><p>You can also integrate HP Storevirtual (VSA)
-        or HP StoreServ (3PAR) storage in the KVM region. </p><p>You must install ESX, 3PAR or VSA
-        before starting the HP Helion OpenStack installation and are independent of HP Helion
-        OpenStack Carrier Grade. </p></section>
+          Overview</xref>.</p></section>
+  <section id="kvm-Hypervisor">
+    <title>KVM Topology</title>
+    <p>If you install the KVM deployment, you can integrate either HP Storevirtual (VSA) or HP
+      StoreServ (3PAR) storage in the KVM region.</p>
+    <ul>
+      <li>With HP StoreVirtual VSA storage <p>HP StoreVirtual VSA software is a Virtual Storage
+        Appliance that provides the complete array functionality on top of a Linux KVM
+        environment without external hardware. VSA eliminates the need for external shared
+        storage required to implement Block Storage features.</p></li>
+      
+      <li>With HP StoreServ (3PAR) storage <p>HP 3PAR StoreServ is a storage array that supports
+        Fibre Channel (FC) as well as iSCSI protocol.</p></li>
+    </ul>
+    <p>You must install 3PAR or VSA before starting the HP Helion OpenStack installation and are
+        independent of HP Helion OpenStack Carrier Grade. </p>
+  </section>
+  <section id="esx-hypervisor"><title>KVM + ESX Topology</title>The ESXi/DCN integration enables
+      data-center-to-data-center communications through DCN, which connects to the KVM region
+      through a gateway (VRS-G). <p>HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX
+        integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute
+        driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX
+        clusters in a vCenter through Compute proxy nodes.</p><p>Virtual networking between HP
+        Helion Carrier Grade and the ESX servers is handled by HP Distributed Cloud Networking (DCN)
+        is a software-defined networking (SDN) solution that enhances data center (DC) network
+        virtualization by automatically establishing connectivity between compute resources upon
+        their creation. </p><p>The ESX integration uses the OVSvApp application to connect the
+        vCenter networking to the Network Operations controller to manage workload networks.
+        </p><p>You can also integrate HP Storevirtual (VSA) or HP StoreServ (3PAR) storage in the
+        KVM region. </p><p>You must install ESX, 3PAR or VSA before starting the HP Helion OpenStack
+        installation and are independent of HP Helion OpenStack Carrier Grade. </p></section>
   
   <section id="nic"><title>Unbonded or Bonded NIC configuration</title>
     <p>The HP Helion OpenStack Carrier Grade installation allows for network interface card bonding

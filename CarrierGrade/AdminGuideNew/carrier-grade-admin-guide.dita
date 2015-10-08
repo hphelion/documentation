@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15959">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Carrier Grade: Administrator Guide</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 Carrier Grade: Administrator Guide</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -15,10 +15,6 @@
   </prolog>
   <body>
     <section><p>Click 
-<<<<<<< .merge_file_47Yohk
-=======
-                  
->>>>>>> .merge_file_rGrOwk
       <xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide-11.pdf"
           format="pdf" scope="external">here to launch the HP Helion OpenStack Carrier Grade
           Administrator Guide</xref>.</p>The Administrator Guide is addressed to HP Helion OpenStack

@@ -1,7 +1,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
     
-    <title> HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Installation Guide</title>
+    <title> HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation Guide</title>
     <topicmeta>
         <copyright>
             <copyryear year="2015"/>
@@ -13,6 +13,9 @@
                 <vrm release="1.1" version=""/>
             </vrmlist>
         </prodinfo>
+        <!-- bookid ixia_locid="133">
+            <edition ixia_locid="134">Patch 0003</edition>
+        </bookid -->
     </topicmeta>
     <topicref href="carrier-grade-install-pb-overview.dita" navtitle="Installation Guide"
         locktitle="yes">
@@ -22,12 +25,10 @@
                 navtitle="Preparing the Network for Installation" locktitle="yes"/>
             <topicref href="carrier-grade-install-NTP.dita" toc="no" navtitle="Configuring NTP"
                 locktitle="yes"/>
-            <topicref href="carrier-grade-install-vsd-vm.dita" toc="no"/>
         </topicref>
-        <topicref href="carrier-grade-install-hlm-vm.dita"
-            navtitle="Deploying the HLM VM and Installation Services" locktitle="yes"/>
-        <topicref href="carrier-grade-install-non-kvm.dita" navtitle="Deploying the Non-KVM Region"
-            locktitle="yes">
+        <topichead navtitle="Deploying the Non-KVM Region">
+            <topicref href="carrier-grade-install-hlm-vm.dita"
+                navtitle="Deploying the HLM VM and Installation Services" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm.dita" navtitle="Installing the KVM Deployment"
                 locktitle="yes">
                 <topicref href="carrier-grade-install-pb-kvm-only-json.dita"
@@ -42,17 +43,16 @@
                 <topicref href="carrier-grade-install-pb-kvm-env-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-machine-json-bonded.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-esx-json.dita" toc="no"/>
+                <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-wr-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-pb-kvm-ldap-json.dita" toc="no"/>
                 <topicref href="carrier-grade-install-hcfgproc-output.dita" toc="no"/>
                 <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
-                <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
                 <topicref href="carrier-grade-install-vsvapp.dita" toc="no"/>
                 <topicref href="carrier-grade-install-vsd-license.dita" toc="no"/>
                 <topicref href="carrier-grade-install-vsd-user.dita" toc="no"/>
                 <topicref href="carrier-grade-install-config-ldap3.dita" toc="no"
                     navtitle="Configuring LDAP 3" locktitle="yes"/>
-<<<<<<< .merge_file_sx18cW
                 <topicref href="carrier-grade-install-secure-port-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-rabbitmq-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-services-netcan.dita" toc="no"/>
@@ -62,34 +62,16 @@
                 <topicref href="carrier-grade-install-gre-patch.dita" toc="no"/>
                 <topicref href="carrier-grade-install-disable-root.dita" toc="no"/>
                 <topicref href="carrier-grade-install-ceilometer-patch.dita"/>
-=======
-                <topicref href="carrier-grade-install-config-patch.dita"
-                    navtitle="Deploying the Configuration Processor Patch" locktitle="yes" toc="no"/>
-                <topicref href="carrier-grade-install-network-patch.dita"
-                    navtitle="Deploy the Networkng Patch" locktitle="yes" toc="no"/>
-                <topicref href="carrier-grade-install-role-patch.dita" toc="no"/>
-                <topicref href="carrier-grade-install-build9-workarounds.dita" toc="no"/>
->>>>>>> .merge_file_fdyt3W
             </topicref>
-            <topicref href="carrier-grade-install-access-kibana.dita" toc="no"/>
-        </topicref>
-        <topicref href="carrier-grade-install-launch-horizon.dita"
-            navtitle="Launching the Horizon Interface" locktitle="yes"/>
+            <topicref href="carrier-grade-install-launch-horizon.dita"
+                navtitle="Launching the Horizon Interface" locktitle="yes"/>
+            <topicref href="carrier-grade-install-config-dcn.dita"
+                navtitle="Configuring the DCN Components" locktitle="yes"/>
+        </topichead>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita" navtitle="Deploying the KVM Region"
             locktitle="yes">
             <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
         </topicref>
-        <topicref href="carrier-grade-install-post.dita" navtitle="Post-Installation Tasks"
-            locktitle="yes">
-            <topicref href="carrier-grade-install-horizon-patch.dita" toc="yes"
-                navtitle="Deploying the Horizon Patch" locktitle="yes"/>
-            <topicref href="carrier-grade-install-metadata.dita" toc="yes"
-                navtitle="Configuring the DCN Metadata Agent" locktitle="yes"/>
-            <topicref href="carrier-grade-install-ldap-verify.dita"
-                navtitle="Verifying the LDAP Deployment" locktitle="yes" toc="yes"/>
-        </topicref>
-        <topicref href="carrier-grade-install-config-dcn.dita"
-            navtitle="Configuring Your Cloud with DCN VSD" locktitle="yes">
-            <topicref href="../AdminGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita" toc="no"/>
-        </topicref>
+        <topicref href="carrier-grade-install-config-backend.dita"
+            navtitle="Configuring Multi-Backend Support" locktitle="yes" toc="no"/>
     </topicref></map>

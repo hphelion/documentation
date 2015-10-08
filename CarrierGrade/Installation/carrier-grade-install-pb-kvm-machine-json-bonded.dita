@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Sample machine_architecture.json
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample machine_architecture.json
     File for Installing the KVM + ESX Topology in an Bonded NIC Environment</title>
 <prolog>
     <metadata>
@@ -22,20 +22,10 @@
                 KVM + ESX deployment</xref> requires several JSON files that will be used when
             deploying the HLM VM.</p>
 <section id="sample-node-provisionjson-file">
-<<<<<<< .merge_file_kfA2OI
   <p>The following represents a sample <codeph>machine_architecture.json</codeph> file in the
                     <codeph>/opt/share/hlm/1/site/</codeph> directory of the HLM VM for <xref
                     href="carrier-grade-install-pb-overview.dita#topic1925/nic">a bonded NIC
                     installation</xref>. Use values appropriate for your environment.</p>
-=======
-  <p>The following represents a sample <codeph>machine_architecture.json</codeph> file for <xref
-                    href="carrier-grade-install-pb-overview.dita#topic1925/nic">a bonded NIC
-                    installation</xref>. Use values appropriate for your environment. You can use
-                the following command on the KVM host to gather the required PCI network info: </p>
-            <p>
-                <codeblock>ls -l /sys/class/net | egrep pci | sed -e 's/^.*pci//' -e 's%/net.*$%%' </codeblock>
-            </p>
->>>>>>> .merge_file_9RBgMI
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
         

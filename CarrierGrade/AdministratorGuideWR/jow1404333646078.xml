@@ -1,17 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333646078" xml:lang="en-us">
-    <!-- Modification History
-   -->
-    <title >Managing Hardware Inventory</title>
-    <shortdesc >The maintenance and inventory component of HP Helion OpenStack Carrier Grade allows the administrator to
-    install, configure, and manage the hosts of the HP Helion OpenStack Carrier Grade cluster.</shortdesc>
-    <prolog>
-        <author >Pedro Sanchez</author>
-    </prolog>
-    <body>
-        <p >To access the <wintitle >System Inventory</wintitle> page on the web management interface,
-      click the <option >Inventory</option> option of the <uicontrol >Admin</uicontrol> tab on the
-      side panel.</p>
-    </body>
-</topic>

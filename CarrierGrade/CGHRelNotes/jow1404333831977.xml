@@ -2,8 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
 
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Known Problems and
-        Limitations</title>
+    <title>Known Problems and Limitations</title>
     <shortdesc>You may encounter some known limitations when working in the KVM region of this release.</shortdesc>
     <prolog>
         <metadata>
@@ -19,28 +18,15 @@
         <!--  
         <section>CG-1307; ;CG-1305; CG-1292</section>
        -->
-        <section>
-            <title>Use the CLI with the KVM Region </title>
-            <p>When working with the servers in the KVM region, do not use the Horizon interface.
-                Please use the <xref href="http://docs.openstack.org/cli-reference/content/"
-                    format="html" scope="external">OpenStack command-line interface CLI
-                    commands</xref>. </p>
-        </section>
         <section><title>Potential Vulnerability with Intel® LAN Products with SR-IOV</title>
             <p>In Intel® LAN products with SR-IOV capability, the potential exists where, under
                 specific conditions, Virtual Machines (VMs) can cause network congestion spreading,
                 a well-known side-effect of Ethernet flow control, which could affect other VMs as
                 well as the Hypervisor itself.</p>
-<<<<<<< .merge_file_YJRLUj
             <p>For more information, see <xref
                     href="https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00046&languageid=en-fr"
                     format="html" scope="external">the bulletin in the Intel Security
                 Center</xref>.</p>
-=======
-            <p>For more information, see the <xref
-                    href="https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00046&amp;languageid=en-fr"
-                    format="html" scope="external">bulletin in the Intel Security Center</xref>.</p>
->>>>>>> .merge_file_N9rqAj
         </section>
         <section><title>Non-shared services do not work from Horizon dashboard</title>
             <ol><li>1. Go to each controller node in the non-KVM region and replace <codeph>user.py</codeph> file in the following location:
@@ -160,7 +146,7 @@ hp3par_snapshot_expiration=72</codeblock>
 
         <section><title>Cinder Volume Backup is not working upon cloud deployment</title>
             <!-- CG-410 -->
-            <p>Cinder Volume Backup is not working upon installation of HP Helion OpenStack Carrier Grade 2.0 
+            <p>Cinder Volume Backup is not working upon installation of HP Helion OpenStack Carrier Grade 1.1 
                 The  <codeph>cinder.backup.driver</codeph> file is not present in /etc/cinder/cinder.conf.</p>
        </section>
         
@@ -172,7 +158,7 @@ hp3par_snapshot_expiration=72</codeblock>
         </section>
         <section><title>LAG for the KVM region control plane does not work</title>
     
-            <p>Link aggregation groups (LAG) are not supported in the KVM region control plane. This is a known limitation that is scheduled to 
+            <p>Link aggregation groups (LAG) are not supported in the the KVM region control plane. This is a known limitation that is scheduled to 
                 be corrected with the HP Helion OpenStack Carrier Grade GA release. A LAG is a mechanism that allows multiple parallel Ethernet network connections between two hosts to be used as a
                 single logical connection.</p>
     
