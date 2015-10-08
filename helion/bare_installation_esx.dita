@@ -19,8 +19,8 @@
           instructions carefully. </p>
       </note>
     </section>
-    <section conref="bare_installation_kvm.dita#install_kvm/important-notes"/>
-    <section conref="bare_installation_kvm.dita#install_kvm/Prereqs"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/important_notes"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/prereqs"/>
     <section id="Prereqs">
       <title>Prerequisite</title>
       <p>ESX/vCenter integration is not fully automatic, vCenter administrators are advised of the
@@ -57,8 +57,8 @@
       <title>Procedure to Deploy ESX cloud</title>
     </section>
     <p>The following topics in this section explain how to deploy ESX cloud.</p>
-    <section conref="bare_installation_kvm.dita#install_kvm/DeployerInstall"/>
-    <section conref="bare_installation_kvm.dita#install_kvm/HLM_Node_Personalization"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/install_deployer"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/configure_deployer"/>
     <section id="Configure">
       <title>Prepare and Deploy Cloud Controllers</title>
       <ol id="ol_c1w_pfl_ft">
@@ -131,8 +131,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           href="installation_troubleshooting.dita#troubleshooting_installation/configproc"
           >Installation Troubleshooting</xref> document.</p>
     </section>
-    <section conref="bare_installation_kvm.dita#install_kvm/CobblerDeploy"/>
-    <section conref="bare_installation_kvm.dita#install_kvm/NodeProvision"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/deploy_cobbler"/>
+    <section conref="bare_installation_kvm.dita#install_kvm/provision_nodes"/>
     <section conref="bare_installation_kvm.dita#install_kvm/deploy"/>
     <section id="prepAndDeploy">
       <title>Prepare and Deploy ESX Computes and OVSvAPPs </title>

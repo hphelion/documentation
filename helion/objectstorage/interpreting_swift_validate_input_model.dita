@@ -12,7 +12,7 @@
               href="../bare_installation_kvm.dita#install_kvm/validate_swift">Validate Object
               Storage</xref> or run the <codeph>hlm-deploy.yml</codeph> playbook as described in
             step <b>2 c</b> in the <xref
-              href="../bare_installation_kvm.dita#install_kvm/Configuration">Install
+              href="../bare_installation_kvm.dita#install_kvm/configuration">Install
               Guide</xref> otherwise the files needed to run the
               <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node.</note></li>
         <li>Execute the following

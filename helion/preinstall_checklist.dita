@@ -475,7 +475,7 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="bare_installation_kvm.dita#install_kvm/DeployerInstall">Set up
+                <entry><xref href="bare_installation_kvm.dita#install_kvm/install_deployer">Set up
                     the Deployer using the hLinux ISO</xref></entry>
                 <entry/>
               </row>
