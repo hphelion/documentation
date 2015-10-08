@@ -100,7 +100,7 @@
           navtitle="Creating Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
         <topicref href="helion/identity/keystone_init.dita"
           navtitle="Configuring the Identity Service" locktitle="yes"> </topicref>
-        <topicref href="helion/identity/keystone_admin.dita"
+        <topicref href="helion/identity/identity_admin.dita"
           navtitle="Administering the Identity Service" locktitle="yes"> </topicref>
         <topicref href="helion/identity/keystone_reconfigure.dita"
           navtitle="Reconfiguring the Identity Service" locktitle="yes"/>
