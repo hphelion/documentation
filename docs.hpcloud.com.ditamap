@@ -43,17 +43,6 @@
         locktitle="yes"/>
       <topicref href="helion/bare_installation_esx.dita" navtitle="Installation for ESX Hypervisor"
         locktitle="yes"/>
-      <topichead navtitle="Configuring a Block Storage Backend">
-        <topicref href="helion/cinder/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
-          locktitle="yes">
-          <topicref href="helion/cinder/ceph/configuration_files.dita"/>
-        </topicref>
-        <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Configuration" locktitle="yes"/>
-        <topicref href="helion/cinder/3Par/3par_configuration.dita" navtitle="3PAR Configuration"
-          locktitle="yes"/>
-        <topicref href="helion/cinder/verify_backend_configuration.dita"
-          navtitle="Verifying a Backend Configuration" locktitle="yes"/>
-      </topichead>
       <topicref href="helion/bare_installation_esxOLD.dita"
         navtitle="TEST Baremetal Install for ESX Hypervisor" toc="no" locktitle="yes"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
@@ -84,6 +73,17 @@
     <!-- ADMINISTRATION -->
     <topichead navtitle="Administration">
       <topichead navtitle="Initial Configuration">
+        <topichead navtitle="Configuring a Block Storage Backend">
+          <topicref href="helion/cinder/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
+            locktitle="yes">
+            <topicref href="helion/cinder/ceph/configuration_files.dita"/>
+          </topicref>
+          <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Configuration" locktitle="yes"/>
+          <topicref href="helion/cinder/3Par/3par_configuration.dita" navtitle="3PAR Configuration"
+            locktitle="yes"/>
+          <topicref href="helion/cinder/verify_backend_configuration.dita"
+            navtitle="Verifying a Backend Configuration" locktitle="yes"/>
+        </topichead>
         <topicref href="helion/administration/create_extnet.dita"
           navtitle="Creating an External Network" locktitle="yes"/>
         <topicref href="helion/administration/upload_image.dita"
