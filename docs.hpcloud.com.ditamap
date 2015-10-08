@@ -133,7 +133,7 @@
           <topicref href="helion/objectstorage/ring_specifications.dita"/>
           <topicref href="helion/objectstorage/storage-policies.dita"/>
         </topicref>
-        <topicref href="helion/objectstorage/swift_ring_management.dita">
+        <topicref href="helion/objectstorage/ring_management.dita">
           <topicref href="helion/objectstorage/rebalanced_explained.dita"/>
           <topicref href="helion/objectstorage/preparing_ring_changes.dita"/>
           <topicref href="helion/objectstorage/playbook_linked_ring_management.dita"/>
