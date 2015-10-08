@@ -33,7 +33,8 @@
           will download from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page. There is only one download;
-          it includes both the operating system and the HP Helion OpenStack installer in one ISO.</li>
+          it includes both the operating system and the HP Helion OpenStack installer in one
+          ISO.</li>
         <li>All machines of a given role should be the same configuration.</li>
         <li>The machine hosting the deployer and all baremetal systems must be connected to a
           management network. Nodes on this management network must be able to reach the iLO
@@ -67,11 +68,10 @@
         controller node. There is only one difference in the steps and that is notated in the <xref
           href="#install_kvm/Configuration">Configure Your Environment</xref> section.</p>
       <ol>
-        <li>Download the HP Helion OpenStack Deployer ISO from the <xref
-            href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10311%7D/Show"
-            format="html" scope="external">Helion Downloads</xref> page after signing up and being
-          approved for the program.</li>
-        <li>Boot your deployer from the ISO. Insert the CD ROM in the Virtual Media drive on the
+        <li>Download the HP Helion OpenStack 2.0.0 product from the <xref
+          href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
+            format="html" scope="external">Helion Downloads</xref> page after signing in.</li>
+        <li>Boot your deployer from the ISO contained in the download. Insert the CD ROM in the Virtual Media drive on the
           iLO.</li>
         <li>Enter "install" to start installation. <note>"install" is all lower case</note></li>
         <li>Select the language. Note that only the English language selection is currently
@@ -89,6 +89,10 @@
         </li>
         <li>Ensure your deployer has a valid DNS nameserver in the <codeph>/etc/resolv.conf</codeph>
           file</li>
+        <li>Install and configure NTP for your environment <ul>
+            <li>Ensure your NTP server(s) is placed into your <codeph>/etc/ntp.conf</codeph>
+              file</li>
+          </ul></li>
       </ol>
       <p>At the end of this section you should have a node set up with hLinux on it.</p>
     </section>
@@ -98,8 +102,9 @@
         you left the default of "stack"), but do not run as root.</note>
       <ol>
         <li>Log in to the node you setup in the previous steps as the user you created during the
-          setup phase, and mount the install media at <codeph>/media/cdrom</codeph>. Here is the
-          command to achieve this:
+          setup phase, and mount the install media at <codeph>/media/cdrom</codeph>. It may be
+          necessary to use <codeph>wget</codeph> or another file transfer method to transfer the
+          install media to the deployer before completing this step. Here is the command to mount the media:
           <codeblock>sudo mount Helion-OpenStack-2.0.0-b.2-Beta2.iso /media/cdrom</codeblock></li>
         <li>Unpack the tarball that is in the <codeph>/media/cdrom/hos2.0.0/</codeph> directory:
           <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.2-20150920T130131Z.tgz</codeblock></li>
@@ -142,12 +147,12 @@ helion/hos/                    Directory contains files used by the installer
                 <codeph>~/helion/my_cloud/definition</codeph> directory. Full details of how to do
               this can be found here: <xref href="input_model.dita">Helion OpenStack 2.0 Input
                 Model</xref>. <note type="important">If you chose to use your first controller node
-                as your deployer, ensure that your <codeph>servers.yml</codeph> file
-                contains the <codeph>is-deployer: true</codeph> notation in your controller options.
-                If you are using a dedicated deployer node you can omit this. Here is an example
-                snippet of a <codeph>servers.yml</codeph> file where a user is using their
-                first controller node as their deployer:
-                  <codeblock># Controllers
+                as your deployer, ensure that your <codeph>servers.yml</codeph> file contains the
+                  <codeph>is-deployer: true</codeph> notation in your controller options. If you are
+                using a dedicated deployer node you can omit this. Here is an example snippet of a
+                  <codeph>servers.yml</codeph> file where a user is using their first controller
+                node as their deployer:
+                <codeblock># Controllers
 - id: controller1
   ip-addr: 192.168.10.3
   role: CONTROLLER-ROLE
@@ -180,9 +185,10 @@ helion/hos/                    Directory contains files used by the installer
 git add -A
 git commit -m "My config or other commit message"
 </codeblock>
-          <note>This step needs to be repeated any time you make changes to your configuration files
-            before you move onto the following steps. See <xref href="using_git.dita">Using Git for
-              Configuration Management</xref> for more information.</note></li>
+          <note type="important">This step needs to be repeated any time you make changes to your
+            configuration files before you move onto the following steps. See <xref
+              href="using_git.dita">Using Git for Configuration Management</xref> for more
+            information.</note></li>
       </ol>
       <p>Then you need to run the following commands to complete your configuration. These commands
         also verify your configuration is correct.</p>
