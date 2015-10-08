@@ -28,7 +28,9 @@ But the CLI, REST API etc should all be same -->
       database corruption.</p>
     <p>HP Helion OpenStack Carrier Grade includes a backup and restore application called Attis
       which you can use to backup and restore essential system files and components of the non-KVM
-      cloud. Attis is automatically installed on each of the controller nodes in the non-KVM region. </p>
+      cloud. Attis is automatically installed on each of the controller nodes in the non-KVM region.
+      Attis uses a command line interface. For more information, see <xref href="#topic10581"
+        format="dita">Attis Backup and Restore CLI</xref>.</p>
     <p>The installation also includes the Percona XtraDB application, which takes care of
       synchronization of the data between nodes if one of the nodes goes down and comes back later.
       You can use Percona XtraDB to backup and restore the MySQL nodes that the HP Helion OpenStack

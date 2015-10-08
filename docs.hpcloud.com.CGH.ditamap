@@ -101,7 +101,7 @@
     <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore.dita" toc="yes"
       navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes">
       <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore-cli.dita"
-        navtitle="Backup and Restore CLI" locktitle="yes"/>
+        navtitle="Attis Backup and Restore CLI" locktitle="yes"/>
     </topicref>
     <topichead navtitle=" License Files">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"

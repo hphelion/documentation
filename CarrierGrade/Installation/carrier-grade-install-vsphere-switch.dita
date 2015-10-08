@@ -49,12 +49,11 @@
         <li>Execute the following command, using appropriate values for the vCenter IP address, the
           vCenter user and password, and the ESX cluster name. The other values are
           static.<codeblock>./cli.bash create_dvswitch --add-hosts true --num-portgroups 1 --provider-vdc-id 1 --url https://&lt;vcenter ip&gt;/sdk -u &lt;vcenter user&gt; -p &lt;vcenter password&gt; -r  &lt;cluster-name&gt;</codeblock></li>
-      
-      <li>After the command completes successfully, launch the ESX vCenter client and navigate to
+        <li>After the command completes successfully, launch the ESX vCenter client and navigate to
           the <b>Network Inventory</b> page, as shown: <p><image
               href="../../media/CGH-install-vcenter-network-inv.png" id="image_y1g_rfz_zs"
-          /></p></li>  
-    <li>Change the name of the port group ending in <codeph>-OVSPG</codeph> to
+          /></p></li>
+        <li>Change the name of the port group ending in <codeph>-OVSPG</codeph> to
             <codeph>dvPortGroup</codeph>, as shown:<p><image
               href="../../media/CGH-install-portgroup-name.png" id="image_eqm_ngz_zs"/></p></li>
       </ol>
