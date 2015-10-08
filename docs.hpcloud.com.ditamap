@@ -41,8 +41,6 @@
         locktitle="yes"/>
       <topicref href="helion/bare_installation_esx.dita" navtitle="Installation for ESX Hypervisor"
         locktitle="yes"/>
-      <topicref href="helion/bare_installation_esxOLD.dita"
-        navtitle="TEST Baremetal Install for ESX Hypervisor" toc="no" locktitle="yes"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
       <topicref href="helion/gui_install_on_kvm.dita"
         navtitle="Installing the Operating System on KVM" locktitle="yes" toc="no"/>
