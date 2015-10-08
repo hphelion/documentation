@@ -5,88 +5,249 @@
   <body>
     <section id="KiloFeatures">
       <title>HP Helion OpenStack 2.0 Kilo Features</title>
-      <p>HP Helion OpenStack 2.0 Core features are enabled by default and supported by HP.</p>
-      <p>HP Helion OpenStack 2.0 Non-core services are provided as-is and supported on a best-effort
-        basis only, but are provided in this release to provide early access to features that HP may
-        support fully in future releases, as well as legacy features that OpenStack is planning to
-        deprecate but may be needed in the short-term for compatibility reasons. If you need
-        additional support on any of these features for a specific use case, please contact HP’s
-        professional services team. </p>
+      <p>Core features are enabled by default and supported by HP.</p>
+      <p>Non-core services are provided as-is and supported on a best-effort basis only, but are
+        provided in this release to provide early access to features that HP may support fully in
+        future releases, as well as legacy features that OpenStack is planning to deprecate but may
+        be needed in the short-term for compatibility reasons. If you need additional support on any
+        of these features for a specific use case, please contact HP’s professional services team. </p>
     </section>
 
-
-    <section id="NeutronCoreFeatures">
-      <title>HP Helion OpenStack Neutron Core Features</title>
-      <p>Neutron - OpenStack Kilo upstream features that are enabled by default in HP Helion OpenStack 2.0 List high
-        level Kilo features here that are enabled in the HP Helion OpenStack 2.0 kit. This list is for Product
-        Management for use in communication with the field &amp; customers.</p>
-      <ul>
-        <li>API perspective <ul>
-            <li>Networking API v2 core APIs <ul>
-                <li>Network</li>
-                <li>Subnet</li>
-                <li>Port</li>
-              </ul>
-            </li>
-            <li>Networking API v2 extensions <ul>
-                <li>Quotas</li>
-                <li>Routers</li>
-                <li>Floating IPs</li>
-                <li>Security groups and rules</li>
-                <li>Port binding</li>
-                <li>Provider networks</li>
-                <li>Agent</li>
-                <li>Allowed address pairs</li>
-                <li>Extra DHCP opt</li>
-                <li>Subnet allocation</li>
-                <li>VLAN transparency</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>LBass v2.0</li>
-        <li>FWaaS</li>
-        <li>VPNaaS</li>
-        <li>ESX support(networking_vsphere repo)</li>
-        <li>Tenant network types: VxLAN, VLAN</li>
-        <li>Provider networks: flat,VLAN</li>
-        <li>Distributed routers (DVR) as tenant router default</li>
-        <li>Functional components <ul>
-            <li>ML2 plugin</li>
-            <li>OVS agent</li>
-            <li>DHCP agent</li>
-            <li>L3 agent with DVR</li>
-            <li>Metadata proxy/agent </li>
-          </ul>
-        </li>
-      </ul>
+    <section id="NovaFeatures">
+      <title>Nova Features</title>
+      <p>Nova features and their corresponding state with the HP Helion OpenStack 2.0 release.</p>
+      
     </section>
 
-    <section id="NeutronNonCoreFeatures">
-      <title>HP Helion OpenStack 2.0 Neutron Non-Core Features</title>
-      <p>The Non-Core Features provided in this list can be turned on but are not enabled by
-        default. HP Helion OpenStack engineering supports these features.</p>
-      <ul>
-        <li>Networking API v2 extensions <ul>
-            <li>metering</li>
-            <li>networks multiple provider extension</li>
-            <li>MTU</li>
-          </ul>
-        </li>
-        <li>Tenant network types: GRE</li>
-        <li>Provider networks: VxLAN</li>
-        <li>Centralized routers as tenant router default</li>
-        <li>Functional components <ul>
-            <li>metering agent</li>
-          </ul>
-        </li>
-        <li>SR-IOV</li>
-        <li>IPv6 for tenant networks</li>
-        <li>L2 Gateway</li>
-        <li>LBaaS v1.0</li>
-      </ul>
+    <section id="NeutronFeatures">
+      <title>Neutron Features</title>
+      <p>OpenStack Kilo upstream features that are enabled by default in HOS V2.0.  List high level
+        Kilo features here that are enabled in the HOS V2.0 kit. This list is for Product Management
+        for use in communication with the field &amp; customers.</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="NeutronTable">
+          <title>Neutron Features in Kilo</title>
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="newCol2" colnum="2" colwidth="1*"/>
+            <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+            <colspec colname="newCol4" colnum="4" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>Category</entry>
+                <entry>Core (Included)</entry>
+                <entry>Non-core (Included)</entry>
+                <entry>Not included</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Networking v2 API</entry>
+                <entry>Network, Subnet, Port</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="10">Networking v2 Extensions</entry>
+                <entry>Quotas</entry>
+                <entry>Metering</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Routers</entry>
+                <entry>Networks Multiple Provider Extension</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Floating IPs</entry>
+                <entry>MTU</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Security groups and rules</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Port Binding</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Provider Networks</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Agent</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Allowed address pairs</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Extra DHCP opt</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Subnet allocation</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>VLAN transparency</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="2">Service</entry>
+                <entry>LBaaS v2.0</entry>
+                <entry>LBaaS v1.0</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>FWaaS</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>VPNaaS</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Hypervisor</entry>
+                <entry>ESX Support</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Tenant Network Types</entry>
+                <entry>VxLAN</entry>
+                <entry>GRE</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>VLAN</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="1">Provider Networks</entry>
+                <entry>flat</entry>
+                <entry>VxLAN</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>VLAN</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Tenant Router Default</entry>
+                <entry>Distributed routers (DVR)</entry>
+                <entry>Centralized routers</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry morerows="4">Functional Components</entry>
+                <entry>ML2 Plugin</entry>
+                <entry>Metering Agent</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>OVS Agent</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>DHCP Agent</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>L3 Agent with DVR</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Metadata Proxy/Agent</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Tenant Networks</entry>
+                <entry/>
+                <entry>IPv6</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>SR-IOV</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry>L2 Gateway</entry>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
     </section>
 
+    <section id="GlanceFeatures">
+      <title>Glance Features</title>
+      
+    </section>
+
+    <section id="SwiftFeatures">
+      <title>Swift Features</title>
+      
+    </section>
+    
+    <section id="CinderFeatures">
+      <title>Cinder Features</title>
+      
+    </section>
+    
+    <section id="KeystoneFeatures">
+      <title>Keystone Features</title>
+      
+    </section>
+    
+    <section id="CeilometerFeatures">
+      <title>Ceilometer Features</title>
+      
+    </section>
+    
+    <section id="HeatFeatures">
+      <title>Heat Features</title>
+      
+    </section>
+    
+    <section id="IronicFeatures">
+      <title>Ironic Features</title>
+      
+    </section>
+    
+    <section id="HorizonFeatures">
+      <title>Horizon Features</title>
+      
+    </section>
+    
+    <section id="MonascaFeatures">
+      <title>Monasca Features</title>
+      
+    </section>
+    
     <section id="MoreInfo">
       <title>More Information</title>
       <p>For more information on OpenStack Kilo, see the OpenStack Kilo release page: 
