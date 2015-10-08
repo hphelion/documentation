@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_vyp_cft_4t">
-  <title>Applying Input Model Changes to Existing Rings</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Applying Input Model Changes to Existing
+    Rings</title>
   <body>
-    <p>This section describes a general approach of making changes to an existing rings. This
-      applies to actions as adding and removing a server, replacing and upgrading the disk drive(s).
-      There are a number of phases that must be performed to adding and removing a server, replacing
-      and upgrading the disk drive(s), as shown below:</p>
+    <p>This section describes a general approach of making changes to existing rings. This applies
+      to actions such as adding and removing a server and replacing and upgrading the disk drive(s).
+      There are a number of phases that must be performed when adding and removing a server and
+      replacing and upgrading the disk drive(s), as shown below:</p>
     <p>
       <ul id="ul_sqz_jft_4t">
         <li><b>Changing the Input Model Phase</b><ul id="ul_wrz_jft_4t">
@@ -16,9 +17,8 @@
             <li>Edit the Input Model as appropriate. You must edit the YAML file as per your
               requirement. For more information, refer <xref href="../input_model.dita#input_model"
               /></li>
-            <li>Commit your configuration to the <xref href="../using_git.dita"
-                >local repo</xref>, as
-              follows<codeblock>git add -A
+            <li>Commit your configuration to the <xref href="../using_git.dita">local repo</xref>,
+              as follows<codeblock>git add -A
 git commit -m "commit message"</codeblock></li>
             <li>Run the configuration
               processor:<codeblock>cd ~/helion/hos/ansible
