@@ -14,7 +14,7 @@
             process.</li>
           <li>Execute the following command to get the entire list drives and the actions planned
             for the rings by executing the following
-            command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report --detail detail</codeblock></li>
+            command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report --detail </codeblock></li>
         </ul> The output is verbose. Redirect the output to a file so that it is easier to
           examine.<ul id="ul_erc_r2b_kt">
           <li>Validate the following in the output:<ul id="ul_orc_r2b_kt">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_j2p_d1r_4t">
-  <title>Adding New Node/Server</title>
+  <title>Adding a New Node/Server</title>
   <body>
     <p>This page describes the procedure to add new node(s)/swift object server to an existing
       system.</p>
