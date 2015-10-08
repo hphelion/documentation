@@ -4,9 +4,9 @@
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Modifying Example Configurations for Object
     Storage</title>
   <body>
-    <p>This page describes the configuration of Swift services with the various types of input
-      models supported in this release. </p>
-    <section><title>Types of Input Model(s)</title>
+    <p>This page describes the configuration of Object Storage services using the supported example
+      configuration input models.</p>
+    <section><title>Example Configurations</title>
       <ul>
         <li><b>
             <xref href="#modify-input-model/entry-scale-with-vsa" format="dita"

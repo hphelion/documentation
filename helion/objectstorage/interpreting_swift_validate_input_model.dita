@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_avw_22b_kt">
-  <title>Interpreting _swift-validate-input-model.yml Errors</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Interpreting _swift-validate-input-model.yml
+    Errors</title>
   <body>
     <p>When you execute the <codeph>_swift-validate-input-model.yml</codeph> playbook it can be hard
       to pick out the errors being reported. If so, you view the error messages as follows:<ol
@@ -12,9 +13,9 @@
               href="../bare_installation_kvm.dita#install_kvm/validate_swift">Validate Object
               Storage</xref> or run the <codeph>hlm-deploy.yml</codeph> playbook as described in
             step <b>2 c</b> in the <xref
-              href="../bare_installation_kvm.dita#install_kvm/configuration">Install
-              Guide</xref> otherwise the files needed to run the
-              <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node.</note></li>
+              href="../bare_installation_kvm.dita#install_kvm/configuration">Install Guide</xref>
+            otherwise the files needed to run the <codeph>swiftlm-ring-supervisor</codeph> will not
+            be in place on the node.</note></li>
         <li>Execute the following
             command:<codeblock>sudo swiftlm-ring-supervisor --make-delta --report </codeblock><p>
             The command will report any errors or problems (see List of errors) with the input
