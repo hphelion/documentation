@@ -117,7 +117,7 @@
         locktitle="yes">
         <topicref href="helion/objectstorage/input_cloud_model.dita" toc="yes"
           navtitle="Modifying Example Configurations for Object Storage" locktitle="yes">
-          <topicref href="helion/objectstorage/allocate-pac.dita"/>
+          <topicref href="helion/objectstorage/allocate_pac.dita"/>
           <topicref href="helion/objectstorage/allocating_server.dita" navtitle="Allocating Object Server"/>
           <topicref href="helion/objectstorage/creating_roles_swift_nodes.dita"/>
           <topicref href="helion/objectstorage/allocating_disk_drives.dita"

@@ -61,7 +61,7 @@
       <p>The Swift-proxy service uses two other cloud services. Both of these are configured in the example to run on the <b>core</b> cluster: <ul id="ul_iyr_gps_ht"><li>Swift validates tokens by making requests to the Keystone service</li><li>Swift caches tokens and other data using the memcached service</li></ul></p>
       <p>In the entry-scale-with-vsa cloud model, you can perform the following swift operations:<ul
           id="ul_hck_4c1_kt">
-          <li><xref href="allocate-pac.dita"/></li>
+          <li><xref href="allocate_pac.dita"/></li>
           <li><xref href="allocating_server.dita"/></li>
           <li><xref href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt"/></li>
           <li><xref href="allocating_network.dita#topic_pcj_hzv_dt"/></li>
