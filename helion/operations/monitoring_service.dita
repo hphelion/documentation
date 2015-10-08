@@ -20,9 +20,6 @@
           <xref type="section" href="#monitoring/diagram">Diagram of Monasca Service</xref>
         </li>
         <li>
-          <xref type="section" href="#monitoring/config">Configuring Monasca</xref>
-        </li>
-        <li>
           <xref type="section" href="#monitoring/working">Working with Monasca</xref>
         </li>
         <li>

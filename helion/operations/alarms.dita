@@ -30,7 +30,7 @@
         <li><xref href="#alarmdefinitions/objectstorage">Swift</xref></li>
       </ul>
     </section>
-    <section id="ceilometer"><title>Ceilometer</title>
+    <section id="metering"><title>Ceilometer</title>
       <p><table frame="all" rowsep="1" colsep="1" id="ceilometer_table">
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1*"/>
@@ -88,7 +88,7 @@
           </tgroup>
         </table></p>
     </section>
-    <section id="cinder"><title>Cinder</title>
+    <section id="blockstorage"><title>Cinder</title>
       <p><table frame="all" rowsep="1" colsep="1" id="cinder_table">
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -408,7 +408,7 @@
         </tgroup>
       </table>
     </section>
-    <section id="keystone"><title>Keystone</title>
+    <section id="identity"><title>Keystone</title>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_bw1_jmd_3t">
           <tgroup cols="4">
@@ -729,7 +729,7 @@
         </tgroup>
       </table>
     </section>
-    <section id="neutron">
+    <section id="networking">
       <title>Neutron</title>
       <table frame="all" rowsep="1" colsep="1" id="table_bcj_5p4_1t">
         <tgroup cols="5">
@@ -988,7 +988,7 @@ ansible-playbook -i hosts/verb_hosts ops-console-start.yml</codeblock></entry>
         </tgroup>
       </table>
     </section>
-    <section id="swift">
+    <section id="objectstorage">
       <title>Swift</title>
       <table frame="all" rowsep="1" colsep="1" id="table_zn3_2pb_bt">
         <tgroup cols="4">

@@ -279,7 +279,7 @@
       <p>Basic Monitoring is complete for Beta 2 with the following limitations:</p>
       <ul>
         <li>Vertica is the default metrics database option in the install. If you want to use
-          InfluxDB then read <xref href="operations/monitoring_service.dita#monitoring/config"
+          InfluxDB then read <xref href="administration/configure_monitoring.dita#monitoring/config"
             type="section">Configuring Monasca</xref> for more details.</li>
         <li>InfluxDB is not configured behind a VIP. It must directly access one node in the
           cluster.</li>
