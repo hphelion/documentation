@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1404832975002" xml:lang="en-us">
+<title 
+<body>
+        <li id="open-stack-list" 
+            <p 
+            <info 
+                <p 
+                    web administration interface, in the <uicontrol 
+                <fig id="fig_N10045_N10032_N1002A_N10027_N1001B_N10001" 
+                    <image alt="Project: Orchestration: Stacks" href="Fig_1_page_190.JPG" id="image_j1s_kmf_k4" 
+                </fig>
+                <p 
+                <fig id="fig_N10056_N10032_N1002A_N10027_N1001B_N10001" 
+                    <image alt="Stacks table: Launch Stack control" href="jow1404333623353.image" id="image_gv4_yy3_34" 
+                </fig>
+            
+        </li>
+    </body>
+</referable-content>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1681">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Creating Externally Available Networks</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforAdmins/Network/1.1commercial.dashboard.network.admin.create.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/network/external/create/--></p>
+<p>A network is a pluggable, scalable and API-driven system for managing networks and IP addresses.</p>
+  <p>A non-admin user or admin user can <xref href="CGH-2-User-network-create.dita#topic3372">create</xref> and <xref href="CGH-2-User-network-create.dita#topic3372">delete</xref> networks as needed.</p>
+<section id="createnet"> <title>Create an externally available network</title>
+<ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>Network</b> panel. <p>The network(s) for
+            the selected project appear.</p></li>
+<li>Click <b>Create Network</b>.</li>
+<li>On the <b>Network</b> tab:<p>
+            <ol id="ol_z1w_b1y_3t">
+              <li>Enter a name for the network.</li>
+              <li>Leave <b>Admin State</b> selected to launch the network in the enabled state or
+                clear the field to disable the new network.</li>
+              <li>Determine if the network is to be available in all projects in the domain or only
+                the selected project:</li>
+              <li>Select <b>Shared</b> to make the network available in all projects.</li>
+              <li>Leave the <b>Shared</b> option clear to limit the network to the selected
+                project.</li>
+            </ol>
+          </p></li>
+<li>Determine if the network is to be available externally or only internally:<p>
+            <ol id="ol_c2v_d1y_3t">
+              <li>Select <b>External Network</b> to make the network an externally accessible.</li>
+              <li>Leave the <b>External Network</b> option clear to make the network internal, only
+                accessible from the external network through a network router.</li>
+            </ol>
+          </p></li>
+<li>Click <b>Create Network</b>.</li>
+</ol>
+<p>To configure a subnet and ports for the network, see:</p>
+<ul>
+        <li>
+          <xref href="CGH-2-User-network-subnet.dita#topic3262">Add or remove a subnet to/from a
+            Network</xref></li>
+        <li>
+          <xref href="CGH-2-User-network-ports.dita#topic3171">Create, Modify, or Delete a port on
+            a Network</xref></li>
+</ul>
+</section>
+</body>
+</topic>

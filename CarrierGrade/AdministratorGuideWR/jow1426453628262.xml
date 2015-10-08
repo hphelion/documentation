@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1426453628262" xml:lang="en-us">
+<title 
+<body><!-- Includes an alternative for locking the host first. -->
+   
+        <li id="li_N1002B_N10028_N1001C_N10001" 
+            <p 
+                page for the host.</p>
+            <ol id="ol_fql_wfn_m4">
+                <li 
+                    <p 
+                        the web administration interface, in the <uicontrol 
+                            Panel</uicontrol> section, select <uicontrol 
+                </li>
+                <li 
+                    <p 
+                        tab, and then in the <uicontrol 
+                        column, click the name of the host.</p>
+                </li>
+            </ol>
+        </li>
+    <ol id="ol_N1005F_N1000F_N10001">
+        <li id="lock_host" 
+            <p 
+            <ol id="ol_trc_4nz_jr">
+                <li 
+                    <p 
+                        the web administration interface, in the <uicontrol 
+                            Panel</uicontrol> section, select <uicontrol 
+                </li>
+                <li 
+                    <p 
+                        tab.</p>
+                </li>
+                <li 
+                    <p 
+                            drop-down list for the host, and then select <uicontrol 
+                </li>
+                    <li 
+                        <p 
+                            <nameliteral 
+                    </li>
+            </ol>
+        </li>
+        <li id="open_details_locked_host" 
+            <p 
+                    page for the locked host.</p>
+            <info 
+                <p 
+                        click the name of the host.</p>
+            
+        </li>
+    </ol>
+    </body>
+</referable-content>

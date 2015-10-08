@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
-  <title>HP Helion OpenStack Carrier Grade 1.1</title>
+  <title>HP Helion OpenStack Carrier Grade 2.0 Alpha</title>
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
@@ -34,22 +34,24 @@
           navtitle="Compute Service (Nova) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-networking-overview.dita"
-          navtitle="HP Networking Service (Neutron) Overview" locktitle="yes"/>
+          navtitle="Networking Service (Neutron) Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-imaging-overview.dita"
-          navtitle="HP Image Operations (Glance) Overview" locktitle="yes"/>
+          navtitle="Image Operations (Glance) Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-volume-overview.dita"
-          navtitle="HP Block Storage Operations (Cinder) Overview" locktitle="yes"/>
+          navtitle="Block Storage Operations (Cinder) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"
-          navtitle="HP Orchestration Service (Heat) Overview" locktitle="yes"/>
+          navtitle="Orchestration Service (Heat) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-identity-overview.dita"
-          navtitle="HP Identity Service (Keystone) Overview" locktitle="yes"/>
+          navtitle="Identity Service (Keystone) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"
-          navtitle="HP Metering Service (Ceilometer) Overview" locktitle="yes"/>
+          navtitle="Metering Service (Ceilometer) Overview" locktitle="yes"/>
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-ironic-overview.dita"
+          navtitle="Ironic Service Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
-          navtitle="HP Horizon Service Overview" locktitle="yes">
+          navtitle="Horizon Service Overview" locktitle="yes">
           <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
             navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
           <topicref
@@ -63,16 +65,20 @@
     </topicref>
     <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml" navtitle="Release Notes"
       locktitle="yes">
-      <topicref href="CarrierGrade/CGHRelNotes/jow1404333830815.xml"/>
-      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831397.xml"/>
-      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831977.xml"/>
+      <topicref href="CarrierGrade/CGHRelNotes/jow1404333830815.xml"
+        navtitle="Changes in This Release" locktitle="yes"/>
+      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831397.xml" navtitle="Usage Caveats"
+        locktitle="yes"/>
+      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831977.xml"
+        navtitle="Known Problems and Limitations" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"
       navtitle="Technical Overview" locktitle="yes">
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-kvm-only.dita"
         navtitle="KVM Deployment Architecture Reference" locktitle="yes"/>
+      <!--<topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-tahoe.dita" navtitle="KVM with DCN Deployment Architecture Reference " locktitle="yes" toc="no"/>-->
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-esx.dita"
-        navtitle="KVM + ESX  Deployment Architecture Reference" locktitle="yes"/>
+        navtitle="KVM + ESX Deployment Architecture Reference" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade/Installation/carrier-grade-technical-specs.dita"
       navtitle="Technical Specifications" locktitle="yes"/>
@@ -80,12 +86,23 @@
       navtitle="Support Matrix" locktitle="yes"/>
     <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
       format="ditamap" navtitle="Installation Guide" locktitle="yes"/>
+    <topicref href="CarrierGrade/AdminGuide/carrier-grade-User-guide.ditamap" format="ditamap"
+      navtitle="User Guide" locktitle="yes"/>
     <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
       navtitle="Administrator Guide" locktitle="yes"/>
+    <topicref href="CarrierGrade/AdminGuide/Logging/CHG-2-logging-overview.dita"
+      navtitle="Centralized Logging" locktitle="yes"/>
+    <topicref href="CarrierGrade/Troubleshooting/CGH-2-troubleshooting.dita"
+      navtitle="Troubleshooting" locktitle="yes"/>
     <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
       locktitle="yes"/>
-    <topicref href="CarrierGrade/Installation/carrier-grade-backup-restore.dita" toc="yes"
-      navtitle="Backup and Restore the HLM Node and MySQL Cluster" locktitle="yes"/>
+    <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
+      navtitle="Helion Lifecycle Manageent CLI Reference" locktitle="yes"/>
+    <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore.dita" toc="yes"
+      navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes">
+      <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore-cli.dita"
+        navtitle="Backup and Restore CLI" locktitle="yes"/>
+    </topicref>
     <topichead navtitle=" License Files">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
         navtitle="Open Source and Third-Party Software License Agreement" locktitle="yes"/>

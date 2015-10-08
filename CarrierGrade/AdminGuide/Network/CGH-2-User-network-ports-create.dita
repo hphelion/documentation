@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3171">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Creating and Deleting Ports</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforAdmins/Network/1.1commercial.dashboard.network.ports.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/network/ports/--></p>
+<p>A port is a connection point for attaching a single device, such as the NIC of a virtual server, to a virtual network. You can configure rich network topologies by creating and configuring networks and subnets, and then instructing other OpenStack services like Compute to attach virtual devices to ports on these networks.</p>
+<p>As an admin, you can:</p>
+<ul>
+<li>
+<xref type="section" href="#topic3171/createport">create a port</xref>
+</li>
+<li>
+<xref type="section" href="#topic3171/deleteport">delete a port</xref>
+</li>
+</ul>
+<section id="createport"> <title>Create a port</title>
+<ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>Network</b> panel.</li>
+<li>Click the name of the network you want to work with.</li>
+<li>On the <b>Network Detail</b> page, click <b>Create Port</b>.</li>
+<li>On the <b>Create Port</b> screen:<p>
+            <ol id="ol_pc2_hcy_3t">
+              <li>Enter a descriptive name for the port.</li>
+              <li>Leave the <b>Admin State</b> field selected to create a port in the active state.
+                Or, clear the field to create a non-active port.</li>
+              <li>Optionally, specify a device ID to assign the port to that device.</li>
+              <li>Optionally, specify a device name to assign the port to that device.</li>
+            </ol>
+          </p><p>
+            <b>Note:</b>If you do not know the device ID and name, you can create the port and later
+            edit the port to add the ID and name.</p></li>
+<li>Click <b>Create Port</b>.<p>A message appears indicating if the port was successfully created.
+            When the port is created, an available fixed IP address out of one the designated
+            subnets is associated with the port.</p></li>
+</ol>
+</section>
+<section id="editport"> <title>Edit a port</title>
+<ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>Network</b> panel.</li>
+        <li>Click the name of the network you want to work with.</li>
+<li>On the <b>Network Detail</b> page, for the port you want to delete, click <b>Edit Port</b>.</li>
+<li>On the <b>Edit Port</b> screen:<p>
+            <ol id="ol_w2h_kcy_3t">
+              <li>Leave the <b>Admin State</b> field selected to create a port in the active state.
+                Or, clear the field to create a non-active port.</li>
+              <li>Specify a device ID to assign the port to that device.</li>
+              <li>Specify a device name to assign the port to that device.</li>
+            </ol>
+          </p></li>
+<li>Click <b>Save Changes</b>.<p>A message appears indicating if the port was successfully
+            modified.</p></li>
+</ol>
+</section>
+<section id="deleteport">
+      <title>Delete a port</title>
+      <ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>Network</b> panel.</li>
+        <li>Click the name of the network you want to work with.</li>
+        <li>On the <b>Network Detail</b> page, for the port you want to delete, click <b>Edit
+            Port</b> then <b>Delete Port</b></li>
+        <li>In the confirmation screen, click <b>Delete Port</b>.<p>A message appears indicating if
+            the port was deleted successfully.</p></li>
+      </ol>
+    </section>
+</body>
+</topic>

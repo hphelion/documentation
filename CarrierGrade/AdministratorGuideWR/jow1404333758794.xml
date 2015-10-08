@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333758794" xml:lang="en-us">
+    <!-- Modification History
+   -->
+    <title >Inventory Detail</title>
+    <shortdesc >From the <wintitle >Inventory Detail</wintitle> page you
+        can see detailed information about a host, and use it to define hardware profiles that can
+        be used across the cluster.</shortdesc>
+    <prolog>
+        <author >Pedro Sanchez</author>
+    </prolog>
+    <body>
+        <p >You access the <wintitle >Inventory Detail</wintitle> page
+            by clicking the host name on the <uicontrol >Hosts</uicontrol> tab of the
+                <wintitle >Systems Inventory</wintitle> page, as described in <xref href="jow1404333646078.xml" />. The inventory detail for a host
+            consists of multiple tabs, each addressing a different aspect of the host. They
+            include:</p>
+        <ul id="ul_ayq_s3z_l4">
+            <li >
+                <p >overview</p>
+            </li>
+            <li >
+                <p >processor</p>
+            </li>
+            <li >
+                <p >memory</p>
+            </li>
+            <li >
+                <p >storage</p>
+            </li>
+            <li >
+                <p >ports</p>
+            </li>
+            <li >
+                <p >interfaces</p>
+            </li>
+        </ul>
+    </body>
+</topic>

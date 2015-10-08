@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic id="jow1409240700100" xml:lang="en-us">
+
+
+<!-- Modification History
+
+
+
+
+
+ -->
+
+
+ <title >Customizing Guest Images with User Data</title>
+
+
+ <shortdesc >You can provide bootstrap configuration for an instance at launch by including user data
+
+
+  in the template.</shortdesc>
+
+
+ <prolog>
+
+
+  <author >Jim Owens</author>
+
+
+ </prolog>
+
+
+ <body>
+
+
+  <p >You can include user data by defining a <b >UserData</b> property for an instance. This sends configuration instructions to
+
+
+      the instance at launch. For an example of user data, see the <filepath >CPUScale.yaml</filepath> template included with the HP Helion OpenStack Carrier Grade.</p>
+
+
+  <p >Normally, this requires <i>cloud-init</i> to
+
+
+      be installed in the guest, because the user data is converted to MIME format and then
+
+
+      interpreted by <i>cloud-init</i>. For instances that do not
+
+
+      include <i>cloud-init</i>, you can bypass the MIME
+
+
+      conversion of user data by invoking a HP Helion OpenStack Carrier Grade extension property and
+
+
+      assigning the value <b >'RAW'</b>. This allows the VM to
+
+
+      retrieve the specified user data in unaltered format through a simple REST API call to the
+
+
+      metadata server. The name of the property follows the convention for the associated resource
+
+
+      type. For an AWS resource (for example, <b 
+
+
+        >AWS::EC2::Instance</b>), use <parmname >UserDataType</parmname>.
+
+
+      For an OpenStack resource (for example, <b 
+
+
+        >OS::Nova::Server</b>), use <parmname >user_data_type</parmname>.
+
+
+      The following code fragment shows the property used with an AWS resource.</p>
+
+
+  <codeblock >type : AWS::EC2::Instance
+
+
+. . .
+
+
+UserDataType: 'RAW'
+
+
+UserData:
+
+
+        Fn::Base64:
+
+
+          Fn::Replace:
+
+
+          - 'AWS::StackName': {Ref: 'AWS::StackName'}
+
+
+            'AWS::Region': {Ref: 'AWS::Region'}
+
+
+            'AWS::AccessKey': {Ref: 'WebServerKeys'}
+
+
+            'AWS::SecretKey': {"Fn::GetAtt": [WebServerKeys, SecretAccessKey]}
+
+
+          - |
+
+
+. . .</codeblock>
+
+
+    <note id="note_N10063_N1001F_N10001" >
+
+
+      <p >For a VM to access user data, it must have a DHCP-enabled interface on a
+
+
+        tenant network that has a Neutron router. Typically, this is the interface to the VM's OAM
+
+
+        network or an internal network. The Neutron router provides a route to the metadata server,
+
+
+        which provides instances with access to user data.</p>
+
+
+    </note>
+
+
+ </body>
+
+
+</topic>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="m" >
+
+
+    <title >Security Groups</title>
+
+
+    <shortdesc >Security groups are tenant-specific sets of IP filter rules that are
+
+
+        applied to the networking stack of a virtual machine.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Pedro Sanchez</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <p >The HP Helion OpenStack Carrier Grade does not enforce a default security group when launching a new
+
+
+            virtual machine. Instead, the security groups are optional, and only enforced when
+
+
+            explicitly assigned to a virtual machine, either at launch time, or while it is
+
+
+            executing.</p>
+
+
+        <p >At launch time, select the desired security groups from the tab <uicontrol >Access &amp;
+
+
+    Security</uicontrol> on the <wintitle >Launch Instance</wintitle> window, as illustrated
+
+
+   below.</p>
+
+
+        <fig id="fig_N10029_N1001A_N10001" >
+
+
+            <image href="jow1404333746212.image" id="image_zvn_z4l_44"  placement="inline" width="4in"/>
+
+
+        </fig>
+
+
+        <p >To assign security groups to a running instance, display the <wintitle >Instances</wintitle>
+
+
+   page, click the <uicontrol >More</uicontrol> button associated with the instance, and select the
+
+
+   option <option >Edit Security Groups</option>. The <wintitle >Edit Instance</wintitle> window
+
+
+   displays with the tab <uicontrol >Security Groups</uicontrol> showing the available security
+
+
+   instance groups, as illustrated below.</p>
+
+
+        <fig id="fig_N1004D_N1001A_N10001" >
+
+
+            <image href="jow1404333747855.image" id="image_hdq_3ql_44"  placement="inline" width="4in"/>
+
+
+        </fig>
+
+
+        <p >You can then drag and drop security groups from the section <b >All Security
+
+
+    Groups</b> to the section <b >Instance Security Groups</b>. The
+
+
+   selected security groups are applied immediately once the configuration is saved.</p>
+
+
+        <p >In the HP Helion OpenStack Carrier Grade implementation, the following limitations apply:</p>
+
+
+        <ul id="ul_uyw_pzl_44">
+
+
+            <li >
+
+
+                <p >the maximum number of security groups that can be applied to a single tenant network is
+
+
+     10</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >the maximum number of rules that can be configured on a single tenant network is 100</p>
+
+
+            </li>
+
+
+        </ul>
+
+
+        <p >These two limitations work always together, whichever is first
+
+
+            reached.</p>
+
+
+    </body>
+
+
+</topic>

@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic id="jow1404333563170" xml:lang="en-us">
+
+
+    <!-- Modification History
+
+
+
+
+
+ -->
+
+
+    <title >Reference Logical Architecture</title>
+
+
+    <shortdesc >The HP Helion OpenStack Carrier Grade architecture supports various types of host,
+
+
+        networks, and networking hardware in different configurations. In this documentation, a
+
+
+        reference configuration is used for discussion.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Pedro Sanchez</author>
+
+
+        <author >Jim Owens</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <!-- note id="note_N10027_N10024_N10001" >
+
+
+            <p >The reference configuration assumes that the controller and compute
+
+
+                functions are implemented on different hosts. HP Helion OpenStack Carrier Grade also supports a
+
+
+                minimal two-server configuration in which these functions are implemented on the
+
+
+                same host. For more information, see the <cite >HP Helion OpenStack Carrier Grade
+
+
+                    Software Installation Guide: Minimal Two-server Configuration</cite>. </p>
+
+
+        </note> -->
+
+
+        <p >The following components are used in HP Helion OpenStack Carrier Grade.
+
+
+            For specific details on the deployment and network architectures, refer to the <xref
+
+
+                href="http://docs.hpcloud.com/#CarrierGrade/Installation/carrier-grade-technical-overview.html"
+
+
+                format="html" scope="external">Technical Overview</xref>.</p>
+
+
+        <dl>
+
+
+            <dlentry><dt>HLM</dt> 
+
+
+            <dd><p>Helion Lifecycle Management deploys and manages the non-KVM Region controllers. HLM provides
+
+
+                        input files to deploy the KVM region of the cloud. HLM provisions the node
+
+
+                        on PXE-1 network and configures nodes on CLM network.</p></dd>
+
+
+            </dlentry></dl>     
+
+
+        
+
+
+        <dl>
+
+
+        <dlentry>
+
+
+            <dt>Non-KVM Region Controller</dt>
+
+
+            <dd><p>The Runs the HP Helion OpenStack Carrier Grade services needed to manage the cloud
+
+
+                        infrastructure: Keystone with LDAP backend, Glance with Swift backend, and
+
+
+                        Cinder with 3Par as storage backend. Some of these services are shared with
+
+
+                        KVM Region of the cloud. Controller nodes run the services in carrier grade
+
+
+                        mode, that is, as a high-availability cluster. The controller manages other
+
+
+                        hosts on CLM network, and provides API interfaces to clients over CAN
+
+
+                        (Consumer Access Network) or OAM (Operations, Administration and Management)
+
+
+                        network.</p></dd>
+
+
+        </dlentry>
+
+
+        
+
+
+        <dlentry>
+
+
+                <dt>KVM Region Controller</dt>
+
+
+                <dd>
+
+
+                    <p>The KVM region controller is a real-time control plane for the HP Compute
+
+
+                        (nova) service and HP Network Operation (Neutron) service. The controller
+
+
+                        nodes run the services in carrier grade mode, that is, as a
+
+
+                        high-availability cluster.</p>
+
+
+                </dd>
+
+
+            </dlentry>
+
+
+        <dlentry>
+
+
+            <dt>Compute</dt>
+
+
+            <dd><p>The real-time compute nodes are based on Wind River Linux(WR) with Accelerated Virtual Switch
+
+
+                        (AVS) networking components. The nodes run HP Helion OpenStack Carrier Grade
+
+
+                        compute services and host the virtual machines. A compute node connects to
+
+
+                        the controller nodes over CLM network, and to the provider networks using
+
+
+                        its data interfaces. Compute nodes also have connectivity to BLS enabling
+
+
+                        attaching a Cinder volume to the VM guest.</p></dd> 
+
+
+        </dlentry>
+
+
+        <dlentry>  
+
+
+            <dt>Infratructure Services</dt>   
+
+
+            <dd><p>A block of servers provide NTP, SMTP, LDAP and other infrastructure services to the Cloud.</p></dd>       
+
+
+        </dlentry>
+
+
+        
+
+
+            <dlentry id="provider-networks-definition" >
+
+
+                <dt >Provider Network</dt>
+
+
+                <dd >
+
+
+                    <p >A Layer 2 virtual network used to provide the underlying
+
+
+                        network connectivity needed to instantiate the tenant networks. Multiple
+
+
+                        provider networks may be configured as required, and realized over the same
+
+
+                        or different physical networks. Access to external networks is typically
+
+
+                        granted to the compute nodes via the provider network. The extent of this
+
+
+                        connectivity, including access to the open Internet, is application
+
+
+                        dependent.</p>
+
+
+                    <p >Provider networks are created by the HP Helion OpenStack Carrier Grade administrator to make use of an
+
+
+            underlying set of resources on a physical network. They can be created as being of one
+
+
+            of the following types:</p>
+
+
+                    <dl>
+
+
+                        <dlentry >
+
+
+                            <dt >flat</dt>
+
+
+                            <dd >
+
+
+                                <p >A provider network mapped entirely over the
+
+
+                                    physical network. The physical network is used as a single Layer
+
+
+                                    2 broadcast domain. Each physical network can realize at most
+
+
+                                    one flat provider network.</p>
+
+
+                                <p >A provider network of this type supports at most
+
+
+                                    one tenant network, even if its corresponding shared flag is
+
+
+                                    enabled.</p>
+
+
+                            </dd>
+
+
+                        </dlentry>
+
+
+                        <dlentry >
+
+
+                            <dt >VLAN</dt>
+
+
+                            <dd >
+
+
+                                <p >A provider network implemented over a range of IEEE 802.1Q VLAN identifiers
+
+
+                  supported by the physical network. This allows for multiple provider networks to
+
+
+                  be defined over the same physical network, all operating over non-overlapping sets
+
+
+                  of VLAN IDs.</p>
+
+
+                                <p >A set of consecutive VLAN IDs over which the
+
+
+                                    provider network is defined is referred to as a network's
+
+
+                                        <b >segmentation
+
+
+                                        range</b>. A provider network can have more than
+
+
+                                    one segmentation range. Each VLAN ID in a segmentation range is
+
+
+                                    used to support the implementation of a single tenant
+
+
+                                    network.</p>
+
+
+                                <p >A segmentation range can be shared by multiple
+
+
+                                    tenants if its <b >shared</b> flag is set.
+
+
+                                    Otherwise, the segmentation range supports tenant networks
+
+
+                                    belonging to a single specified tenant.</p>
+
+
+                            </dd>
+
+
+                        </dlentry>
+
+
+                        <dlentry >
+
+
+                            <dt >VXLAN</dt>
+
+
+                            <dd >
+
+
+                                <p >A provider network implemented over a range of
+
+
+                                    VXLAN Network Identifiers (VNIs.) This is similar to the VLAN
+
+
+                                    option, in that it allows multiple provider networks to be
+
+
+                                    defined over the same physical network using unique VNIs defined
+
+
+                                    in segmentation ranges. In addition, VXLAN provides a Layer 2
+
+
+                                    overlay scheme on Layer 3 networks, enabling connectivity
+
+
+                                    between Layer 2 segments separated by one or more Layer 3
+
+
+                                    routers.</p>
+
+
+                            </dd>
+
+
+                        </dlentry>
+
+
+                    </dl>
+
+
+                </dd>
+
+
+            </dlentry>
+
+
+            <dlentry >
+
+
+                <dt >Tenant Network</dt>
+
+
+                <dd >
+
+
+                    <p >A virtual network associated with a tenant. A tenant network
+
+
+                        is instantiated on a compute node, and makes use of a provider network,
+
+
+                        either directly over a flat network, or using technologies such as VLAN and
+
+
+                        VXLAN.</p>
+
+
+                    <p >Tenant networks use the high-performance virtual L2 switching capabilities built into
+
+
+            the HP Helion OpenStack Carrier Grade software stack of the compute node. They provide switching
+
+
+            facilities to the virtual service instances, to communicate with external resources and
+
+
+            with other virtual service instances running on the same or different compute nodes.</p>
+
+
+                    <p >When instantiated over a provider network of the VLAN or
+
+
+                        VXLAN type, the VLAN ID or VNI  for the tenant network is assigned
+
+
+                        automatically. The allocation algorithm selects the lowest available ID from
+
+
+                        any segmentation range owned by the tenant. If no such ID is available, it
+
+
+                        selects the lowest available ID from any shared segmentation range. The
+
+
+                        system reports an error when no available ID is found.</p>
+
+
+                    <p >Tenant networks created by the administration can also be
+
+
+                        configured to use a pre-selected VLAN ID or VNI. This can be used to extend
+
+
+                        connectivity to external networks.</p>
+
+
+                </dd>
+
+
+            </dlentry>
+
+
+            <dlentry >
+
+
+                <dt >Controller Floating IP Address</dt>
+
+
+                <dd >
+
+
+                    <p >A unique IP address shared by the cluster of controller nodes. Only the master
+
+
+            controller node is active on this address at any time. The IP address is floating in the
+
+
+            sense that it is automatically transferred from one controller node to the other, as
+
+
+            dictated by the high-availability directives of the cluster.</p>
+
+
+                    <p >The controller cluster has two floating IP addresses, one
+
+
+                        facing the OAM network, only seen by the web interface SSH administration
+
+
+                        clients and REST APIs, and another facing the internal management network,
+
+
+                        only seen by the compute nodes.</p>
+
+
+                </dd>
+
+
+            </dlentry>
+
+
+            <dlentry >
+
+
+                <dt >Link Aggregation (LAG) or Aggregated Ethernet (AE)</dt>
+
+
+                <dd >
+
+
+                    <p >A mechanism that allows multiple parallel Ethernet network
+
+
+                        connections between two hosts to be used as a single logical connection. The
+
+
+                        HP Helion OpenStack Carrier Grade supports LAG connections on all its
+
+
+                        Ethernet connections for the purpose of protection (fault-tolerance) only.
+
+
+                        Different modes of operation are supported. For details, see <xref
+
+
+                            href="http://docs-staging.hpcloud.com/DRAFT/#CarrierGrade/Installation/carrier-grade-install-pb-overview.html"
+
+
+                            format="html" scope="external">Installing HP Helion OpenStack Carrier
+
+
+                            Grade</xref>.</p>
+
+
+                </dd>
+
+
+            </dlentry>
+
+
+            <dlentry >
+
+
+                <dt >OAM Network L2 Switch(es)</dt>
+
+
+                <dd >
+
+
+                    <p >One or more switches used to provide an entry point into the
+
+
+                        OAM network.</p>
+
+
+                    <note id="note_N101AD_N101A6_N1019F_N10033_N1001C_N10001" >
+
+
+                        <p >The OAM ports on the controller do not support VLAN
+
+
+                            tagging. If needed, port- or MAC-based VLANs defined on the L2 switch
+
+
+                            can be used to steer OAM traffic appropriately.</p>
+
+
+                    </note>
+
+
+                </dd>
+
+
+            </dlentry>
+
+
+            <dlentry >
+
+
+                <dt >Provider Network L2 Switches</dt>
+
+
+                <dd >
+
+
+                    <p >Provide the entry point into the provider networks. It is through these L2 switches
+
+
+            that the compute nodes get integrated as active end points into each of the provider
+
+
+            networks.</p>
+
+
+                </dd>
+
+
+            </dlentry>
+
+
+            <dlentry >
+
+
+                <dt >Edge Router</dt>
+
+
+                <dd >
+
+
+                    <p >Provides connectivity to external networks as needed by controller and compute
+
+
+            nodes.</p>
+
+
+                    <p >Reachability to the open Internet is not mandatory, but strictly application-dependent.
+
+
+            Guest applications running on the compute nodes may need to access, or be reachable
+
+
+            from, the Internet. Additionally, access to the OAM Network from external networks might
+
+
+            be desirable.</p>
+
+
+                </dd>
+
+
+            </dlentry>
+
+
+            <dlentry >
+
+
+                <dt >Web Administration Interface</dt>
+
+
+                <dd >
+
+
+                    <p >Provides the HP Helion OpenStack Carrier Grade main management interface. It is available using any W3C
+
+
+            standards-compliant web browser, from any point within the OAM Network where the
+
+
+            OAM floating IP address is reachable.</p>
+
+
+                </dd>
+
+
+            </dlentry>
+
+
+        </dl>
+
+
+        <section id="section_N101EC_N1001C_N10001" >
+
+
+            <title >About Tenants (Projects) and Users</title>
+
+
+            <p >Tenants and users are system resources managed by the OpenStack
+
+
+                Keystone service.</p>
+
+
+            <p >Tenants are the core resource structure on which all end user services are managed. They
+
+
+        are isolated resource containers consisting of networks, storage volumes, images, virtual
+
+
+        machines, authentication keys, and users.</p>
+
+
+            <p >When the HP Helion OpenStack Carrier Grade is deployed, two default tenants are
+
+
+                created: <b >admin</b> and <b >services</b>. They are used to group resources to be
+
+
+                associated with the user <b >admin</b> and the
+
+
+                cloud services, respectively.</p>
+
+
+            <note id="note_N10211_N101ED_N1001C_N10001" >
+
+
+                <p >Earlier versions of OpenStack used the term <term >project</term>
+
+
+                    instead of <term >tenant</term>. Because of this legacy terminology, the web
+
+
+                    administration interface uses both terms, and some command-line tools use
+
+
+                        <b >--project_id</b> when a tenant ID is
+
+
+                    expected.</p>
+
+
+            </note>
+
+
+            <p >Users are system resources that can operate on one or more tenants, within the constraints
+
+
+        of a particular role. For each user, the Keystone service maintains a list of (tenant, role)
+
+
+        tuples, which are used to determine the tenants the user can operate on, and the role the
+
+
+        user should play on each of them.</p>
+
+
+            <p >In the default installation of the HP Helion OpenStack Carrier Grade, several users are already defined. Each
+
+
+        of the OpenStack services, such as Nova and Neutron, exist as system users. They all operate
+
+
+        on the default tenant <b >services</b>.</p>
+
+
+            <p >The Keystone <b >admin</b> user
+
+
+                is associated with the <b >admin</b> tenant.
+
+
+                This user has administrator privileges for creating, modifying, and deleting
+
+
+                OpenStack resources, including creating other tenants and users.</p>
+
+
+            <p ><b>Note:</b> In this document, after this point, all references to
+
+
+                contoller-0 and controller-1 are specific to the KVM region only. </p>
+
+
+        </section>
+
+
+    </body>
+
+
+</topic>
+
+

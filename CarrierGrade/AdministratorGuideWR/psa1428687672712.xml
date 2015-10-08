@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic id="psa1428687672712" xml:lang="en-us">
+
+
+<!-- Modification History
+
+
+        
+
+
+-->
+
+
+    <title >SR-IOV Ethernet Interfaces</title>
+
+
+    <shortdesc >A SR-IOV Ethernet interface is a physical PCI Ethernet NIC that
+
+
+        implements hardware-based virtualization mechanisms to expose multiple virtual network
+
+
+        interfaces that can be used by one or more virtual machines simultaneously.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Pedro Sanchez</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <section id="section_N10022_N1001F_N10001" >
+
+
+            <p >The PCI-SIG Single Root I/O Virtualization and Sharing (SR-IOV)
+
+
+                specification defines a standardized mechanism to create individual virtual Ethernet
+
+
+                devices from a single physical Ethernet interface. For each exposed virtual Ethernet
+
+
+                device, formally referred to as a <term >Virtual Function</term>
+
+
+                (VF), the SR-IOV interface provides separate management memory space, work queues,
+
+
+                interrupts resources, and DMA streams, while utilizing common resources behind the
+
+
+                host interface. Each VF therefore has direct access to the hardware and can be
+
+
+                considered to be an independent Ethernet interface.</p>
+
+
+            <p >When compared with a PCI Passthtrough Ethernet interface, a SR-IOV Ethernet
+
+
+                interface:</p>
+
+
+            <ul id="ul_tyq_ymg_rr">
+
+
+                <li >
+
+
+                    <p >Provides benefits similar to those of a PCI Passthtrough Ethernet interface,
+
+
+                        including lower latency packet processing.</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >Scales up more easily in a virtualized environment by providing multiple VFs
+
+
+                        that can be attached to multiple virtual machine interfaces.</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >Shares the same limitations, including the lack of support for LAG, QoS, ACS,
+
+
+                        and live migration.</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >Has the same requirements regarding the VLAN configuration of
+
+
+                        the access switches.</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >Provides a similar configuration workflow when used on HP Helion OpenStack Carrier Grade.</p>
+
+
+                </li>
+
+
+            </ul>
+
+
+            <p >It is suggested that you read <xref href="psa1413402160578.xml" /> first. Most configuration ol are similar, with the
+
+
+                difference that you use <b >pci-sriov</b>
+
+
+                instead of <b >pci-passthrough</b> when defining
+
+
+                the network type of an interface.</p>
+
+
+            <p >In the following example a new virtual machine is launched by user
+
+
+                    <b >user1</b> on tenant <b >tenant1</b>, with a VF interface connected to the
+
+
+                tenant network <b >tenant1-net1</b> identified
+
+
+                with VLAN ID 20.</p>
+
+
+        </section>
+
+
+        <section id="section_N10065_N10020_N10001" >
+
+
+            <p >The exercise assumes that the underlying provider network
+
+
+                    <b >group0-data0</b> exists already, and that
+
+
+                VLAN ID 20 is a valid segmentation ID assigned to <b >tenant1</b>.</p>
+
+
+        </section>
+
+
+        <ol>
+
+
+            <li id="li_N10079_N10076_N10020_N10001" >
+
+
+                <p >Log in as the <b >admin</b>
+
+
+                    user to the web management interface.</p>
+
+
+            </li>
+
+
+            <li id="li_N100BC_N100A9_N1001F_N10001" >
+
+
+                <p >Lock the compute node you want to configure.</p>
+
+
+            </li>
+
+
+            <li id="li_N10086_N10076_N10020_N10001" >
+
+
+                <p >Configure the Ethernet interface to be used as a SR-IOV
+
+
+                    interface.</p>
+
+
+                
+
+
+                    <p >Select the <wintitle >System
+
+
+                            Inventory</wintitle> window from the <uicontrol >Admin</uicontrol> panel, click the <uicontrol >Hosts</uicontrol> tab, click the name of the compute node where the PCI
+
+
+                        interface is available, click the <uicontrol >Interfaces</uicontrol> tab, and finally click the <uicontrol >Edit Interface</uicontrol> button associated with the
+
+
+                        interface you want to configure. Fill in the window as illustrated
+
+
+                        below:</p>
+
+
+                    <fig id="fig_hfk_cfh_rr" >
+
+
+                        <image href="psa1428767288855.image" id="image_zl3_ffh_rr"  width="4in">
+
+
+                            <alt >TiS Edit SR-IOV Interface</alt>
+
+
+                        </image>
+
+
+                    </fig>
+
+
+                    <p >In this example, Ethernet interface <b >eth8</b> is assigned the network type <term >pci-sriov</term>, enabled to use 4 VFs, and configured as connected to
+
+
+                        provider network <b >group0-data0</b>.
+
+
+                        Click the <uicontrol >Save</uicontrol> button to proceed.</p>
+
+
+                    <p >The Maximum number of VFs displayed in this form is a read-only item which is
+
+
+                        auto-discovered by the system by inspecting the specific NIC model. This
+
+
+                        value is reported as 0 when the selected interface does not support
+
+
+                        SR-IOV.</p>
+
+
+                    <p >The interface can also be configured from the CLI as
+
+
+                        illustrated below:</p>
+
+
+                    <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >system host-if-modify \
+
+
+-nt pci-sriov -N 4 -p group0-data0 compute-0 eth8</userinput></codeblock>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N10080_N1007D_N1001F_N10001" >
+
+
+                <p >Create the <b >tenant1-net1</b> tenant network.</p>
+
+
+                
+
+
+                    <p >You must ensure that:</p>
+
+
+                    <ul id="ul_pcn_vb4_tp">
+
+
+                        <li >
+
+
+                            <p >The <b >tenant1</b> tenant has access to the tenant network,
+
+
+                                either assigning it as the owner, or by enabling the tenant
+
+
+                                network's shared flag.</p>
+
+
+                        </li>
+
+
+                        <li >
+
+
+                            <p >The segmentation ID is set to 20. </p>
+
+
+                        </li>
+
+
+                    </ul>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N10160_N100A9_N1001F_N10001" >
+
+
+                <p >Configure the access switch.</p>
+
+
+                
+
+
+                    <p >Configure the physical port on the access switch used to
+
+
+                        connect to Ethernet interface <b >eth8</b> as an access port with default VLAN ID of 20.</p>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N10178_N100A9_N1001F_N10001" >
+
+
+                <p >Unlock the compute node.</p>
+
+
+            </li>
+
+
+            <li id="li_N10181_N100A9_N1001F_N10001" >
+
+
+                <p >Launch the virtual machine.</p>
+
+
+                <ol id="ol_snp_klt_tp">
+
+
+                    <li >
+
+
+                        <p >Log in as user <b >user1</b> to the web management interface.</p>
+
+
+                    </li>
+
+
+                    <li >
+
+
+                        <p >Configure the network interfaces for the new virtual
+
+
+                            machine.</p>
+
+
+                        
+
+
+                            <p >Open the <wintitle >Launch
+
+
+                                    Instance</wintitle> dialog by clicking the <uicontrol >Launch Interface</uicontrol> button on the
+
+
+                                    <wintitle >Instances</wintitle> window. Configure
+
+
+                                the necessary options for the new virtual machine. In particular,
+
+
+                                click the <uicontrol >Networking</uicontrol> tab and
+
+
+                                add a SR-IOV interface on the tenant network <b >tenant1-net1</b>, as illustrated
+
+
+                                below. Add other network interfaces as needed, there are as many
+
+
+                                SR-IOV ports available as VFs have been enabled.</p>
+
+
+                            <fig id="fig_yxy_t1g_tp" >
+
+
+                                <image href="psa1428773859042.image" id="image_g4g_b4h_rr" >
+
+
+                                    <alt >TiS Assign SR-IOV interface</alt>
+
+
+                                </image>
+
+
+                            </fig>
+
+
+                            <p >Click the <uicontrol >Launch</uicontrol> button to proceed.</p>
+
+
+                            <p >SR-IOV interfaces can be attached from the CLI when
+
+
+                                booting a new virtual machine, as illustrated below:</p>
+
+
+                            <codeblock ><systemoutput >~(keystone_admin)$ </systemoutput><userinput >nova boot \
+
+
+--nic net-id=704e9f3b,vif-model=pci-sriov my-new-vm</userinput></codeblock>
+
+
+                        
+
+
+                    </li>
+
+
+                </ol>
+
+
+            </li>
+
+
+        </ol>
+
+
+
+
+
+            <p >The new virtual machine instance is up now. It has a SR-IOV VF
+
+
+                connection to the <b >tenant1-net1</b> tenant
+
+
+                network identified with VLAN ID 20.</p>
+
+
+
+
+
+    </body>
+
+
+</topic>

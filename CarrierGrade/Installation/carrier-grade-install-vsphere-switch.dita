@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the VMware vSphere
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Deploying the VMware vSphere
     Distributed Switch</title>
 <prolog>
   <metadata>
@@ -26,26 +26,34 @@
       <p>Before starting, make sure your VSD server is up and running.</p>
       <p> To install the VDS:</p>
       <ol id="ol_z24_nvy_zs">
+        <li>Log into your VSD server.</li>
+        <li>Install the RPM Package Manager (RPM) package management system. The RPM installation
+          package is installed on your VSD host  in the <codeph>/opt/vsd/Packages/</codeph>
+            directory..<ol id="ol_xjh_jv1_pt">
+            <li>Change to the <codeph>/opt/vsd/Packages/</codeph> directory.<p>
+                <codeblock>cd /opt/vsd/Packages/</codeblock>
+              </p></li>
+            <li> Execute the following
+              command:<codeblock>rpm -ivh CloudMgmt-vmware-3.2.2_74-1.x86</codeblock></li>
+          </ol></li>
         <li>Copy the downloaded and extracted <codeph>CloudMgmt-vmware.tar.gz</codeph> file from HLM
-          host to VSD node in the <codeph>/opt/vsd</codeph> directory. For more information on
+          host to VSD node in the <codeph>/opt/vsd/</codeph> directory. For more information on
           downloading DCN files, see <xref
             href="carrier-grade-install-pb-prereqs-GA.dita#topic7148/download-esx">Download packages
             for KVM + ESX</xref>.</li>
-        <li>Log into your VSD server</li>
         <li>Extract the contents of the <codeph>CloudMgmt-vmware.tar.gz</codeph> file into the
             <codeph>/opt/vsd/ </codeph>directory. </li>
         <li>Change to the directory created by extracting the
-          files:<codeblock>cd /opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeblock></li>
-        <li>Change the permissions on that
-          directory:<codeblock>Chmod -R 777 /opt/vsd/rsanghvi/CloudMgmt-vmware-working/</codeblock></li>
+          files:<codeblock>cd /opt/vsd/CloudMgmt-vmware/</codeblock></li>
+        <!--<li>Change the permissions on that directory:<codeblock>Chmod -R 777 /opt/vsdCloudMgmt-vmware-working/</codeblock></li>-->
         <li>Execute the following command, using appropriate values for the vCenter IP address, the
           vCenter user and password, and the ESX cluster name. The other values are
-          static.<codeblock>./cli.bash create_dvswitch --add-hosts true --num-portgroups 1 --provider-vdc-id 1 --url https://&lt;vcenter-ip> /sdk -u &lt;vcenter user&gt; -p &lt;vcenter password&gt; -r  &lt;cluster name&gt;</codeblock></li>
+          static.<codeblock>./cli.bash create_dvswitch --add-hosts true --num-portgroups 1 --provider-vdc-id 1 --url https://&lt;vcenter ip&gt;/sdk -u &lt;vcenter user&gt; -p &lt;vcenter password&gt; -r  &lt;cluster-name&gt;</codeblock></li>
       
-      <li>After the command completes successfully, launch the vCenter client and navigate to the
-          <b>Network Inventory</b> page, as shown: 
-            <p><image href="../../media/CGH-install-vcenter-network-inv.png" id="image_y1g_rfz_zs"
-            /></p></li>  
+      <li>After the command completes successfully, launch the ESX vCenter client and navigate to
+          the <b>Network Inventory</b> page, as shown: <p><image
+              href="../../media/CGH-install-vcenter-network-inv.png" id="image_y1g_rfz_zs"
+          /></p></li>  
     <li>Change the name of the port group ending in <codeph>-OVSPG</codeph> to
             <codeph>dvPortGroup</codeph>, as shown:<p><image
               href="../../media/CGH-install-portgroup-name.png" id="image_eqm_ngz_zs"/></p></li>

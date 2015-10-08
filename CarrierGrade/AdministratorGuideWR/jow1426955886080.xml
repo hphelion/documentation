@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1426955886080" xml:lang="en-us">
+<!-- This version is used in the TiS Installation Guide
+    
+-->
+  <title 
+  <shortdesc 
+    the type of network to which the interface is connected (for example, <nameliteral 
+    as the type of interface (for example, <nameliteral 
+      ethernet</nameliteral> or <nameliteral 
+  <prolog>
+    <author 
+  </prolog>
+  <body>
+    <section id="section_N1001F_N1001C_N10001" 
+      <p 
+      <dl conref="jow1431023964659.xml#jow1431023964659/interface_settings">
+        <dlentry 
+          <dt 
+          <dd 
+        </dlentry>
+      </dl>
+      <p 
+      <p 
+    </section>
+  </body>
+</topic>

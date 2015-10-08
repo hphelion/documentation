@@ -2,9 +2,9 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic1925">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation Guide</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Installation Guide</title>
   <titlealts>
-    <searchtitle>HP Helion Openstack Carrier Grade 1.1: Installation Overivew</searchtitle>
+    <searchtitle>HP Helion Openstack Carrier Grade 2.0 Alpha: Installation Overivew</searchtitle>
   </titlealts>
   <prolog>
     <metadata>
@@ -39,25 +39,41 @@
     </section>
     <section id="kvm-Hypervisor">
       <title>KVM Topology</title>
-      <p>If you install the KVM deployment, you can integrate either HP Storevirtual (VSA) or HP
-        StoreServ (3PAR) storage in the KVM region.</p>
+      <p>If you install the KVM deployment (also called the <codeph>denver</codeph> deployment), you
+        can integrate either HP Storevirtual (VSA) or HP StoreServ (3PAR) storage in the KVM
+        region.</p>
       <p>You must install 3PAR or VSA before starting the HP Helion OpenStack installation and are
         independent of HP Helion OpenStack Carrier Grade. During the installation, you will
         integrate the storage into HP Helion OpenStack Carrier Grade. See the <xref
             href="carrier-grade-install-kvm.dita#topic10581/storage">installation
             instructions</xref> for the 3PAR and/or VSA parameters you will need.</p>
     </section>
-    <section id="esx-hypervisor">
-      <title>KVM + ESX Topology</title>
-      <p>If installing the KVM + ESX deployment, you will need to perform tasks to integrate ESX and
-        DCN with HP Helion OpenStack Carrier Grade. </p>
+    <section id="dcn-hypervisor">
+      <title>KVM with DCN Topology</title>
+      <p>If installing the KVM with DCN deployment (also called the <codeph>tahoe</codeph>
+        deployment), you will need to perform tasks to integrate DCN with HP Helion OpenStack
+        Carrier Grade. </p>
       <p>You can also integrate HP Storevirtual (VSA) or HP StoreServ (3PAR) storage in the KVM
         region. </p>
-      <p>You must install ESX, 3PAR or VSA before starting the HP Helion OpenStack installation and
+      <p>You must install DCN, 3PAR or VSA before starting the HP Helion OpenStack installation and
         are independent of HP Helion OpenStack Carrier Grade. During the installation, you will
         integrate the storage into HP Helion OpenStack Carrier Grade. See the <xref
           href="carrier-grade-install-kvm.dita#topic10581/storage">installation instructions</xref>
-        for the ESX, 3PAR and/or VSA parameters you will need.</p>
+        for the 3PAR and/or VSA parameters you will need.</p>
+    </section>
+    
+    <section id="esx-hypervisor">
+      <title>KVM + ESX Topology</title>
+      <p>If installing the KVM + ESX deployment (also called the <codeph>memphis</codeph>
+        deployment), you will need to perform tasks to integrate ESX and DCN with HP Helion
+        OpenStack Carrier Grade. </p>
+      <p>You can also integrate HP Storevirtual (VSA) or HP StoreServ (3PAR) storage in the KVM
+        region. </p>
+      <p>You must install DCN, ESX, and 3PAR and/or VSA before starting the HP Helion OpenStack
+        installation and are independent of HP Helion OpenStack Carrier Grade. During the
+        installation, you will integrate the storage into HP Helion OpenStack Carrier Grade. See the
+          <xref href="carrier-grade-install-kvm.dita#topic10581/storage">installation
+          instructions</xref> for the 3PAR and/or VSA parameters you will need.</p>
     </section>
 
     <section id="nic"><title>Unbonded or Bonded NIC configuration</title>
@@ -88,9 +104,9 @@
             >Prepare the network for installation</xref>
         </li>
         <li>Install the cloud topologies: <ul>
-            <li>KVM Cloud <p>In this cloud topology, the standard OpenStack services like Keystone,
-                Glance, Cinder, Swift are installed in the non-KVM region first. Then the KVM region
-                is installed. </p><ul>
+            <li>KVM Deployment <p>In this cloud topology, the standard OpenStack services like
+                Keystone, Glance, Cinder, Swift are installed in the non-KVM region first. Then the
+                KVM region is installed. </p><ul>
                 <li> Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion
                     Lifecycle Management and Installation Services</xref>.</li>
                 <li>Install the <xref href="carrier-grade-install-kvm.dita#topic10581">HP Helion
@@ -101,16 +117,36 @@
                 <li>Install the carrier grade cloud. The carrier grade cloud is deployed into what
                   is called the <i>KVM region.</i></li>
               </ul></li>
-          </ul><ul>
-            <li>KVM + ESX Cloud <p>In this cloud topology, the components required to support ESX
-                hypervisor are installed along with standard services in the non-KVM region first.
-                Then the KVM region is installed.</p><ul>
+          </ul><p>
+            <ul id="ul_mzq_bgk_lt">
+              <li>KVM with DCN Deployment <p>In this cloud topology, the DCN components are
+                  installed along with standard services in the non-KVM region first. Then the KVM
+                  region is installed.</p><ul id="ul_nzq_bgk_lt">
+                  <li>Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion
+                      Lifecycle Management and Installation Services</xref>.</li>
+                  <li>Install <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">the HP
+                      Helion OpenStack cloud and install the HP Distributed Cloud Networking (DCN)
+                      components</xref> into what is called the non-KVM region </li>
+                  <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581"
+                      >Helion user interface</xref>.</li>
+                  <li>Configure <xref href="carrier-grade-install-config-dcn.dita#topic10581"
+                      >required DCN components</xref>.</li>
+                  <li>Install the <xref href="carrier-grade-install-kvm-cloud-GA.dita#topic1107"
+                      >carrier grade cloud</xref>. The carrier grade cloud is deployed into what is
+                    called the <i>KVM region</i>
+                  </li>
+                </ul></li>
+            </ul>
+          </p><ul>
+            <li>KVM + ESX Deployment<p>In this cloud topology, the components required to support
+                ESX hypervisor are installed along with standard services in the non-KVM region
+                first. Then the KVM region is installed.</p><ul>
                 <li>Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion
                     Lifecycle Management and Installation Services</xref>.</li>
                 <li>Install <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">the HP
                     Helion OpenStack cloud and install the HP Distributed Cloud Networking (DCN)
                     components</xref>. You will also install the VMware ESX compute proxy. These
-                  components will be installed into what is called the Non-KVM region and connect to
+                  components will be installed into what is called the non-KVM region and connect to
                   the ESX cluster with DCN networking.</li>
                 <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581"
                     >Helion user interface</xref>.</li>
@@ -130,7 +166,6 @@
       <p>Perform the <xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148">prerequisite
           steps and one time setup</xref> on your HLM host required to install HP Helion OpenStack
         Carrier Grade in a baremetal environment.</p>
-      <!-- ===================== horizontal rule ===================== -->
     </section>
   </body>
 </topic>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: How to use the Helion
+    Dashboard</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Michael B"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.md-->
+ <!--permalink: /helion/openstack/carrier/dashboard/how-works/--></p>
+<p>The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Carrier Grade.</p>
+<p>The interface, based on OpenStack Horizon, is grouped into tabs, including <xref type="section"
+        href="#topic6108/DashProject">Project</xref>, <xref type="section"
+        href="#topic6108/DashAdmin">Admin</xref> and <xref type="section"
+        href="#topic6108/DashIdent">Identity</xref>. The tabs expand and contract to show available
+      commands grouped into <b>panels</b>.</p>
+<p>Across the top are menus to switch between projects and menus where you can access user settings.</p>
+<!-- 
+  <p>
+      <image href="../../../media/CGH-Helion-Window-RC.png"></image></p>
+   -->
+<p>How you interact with your network environment depends upon your user type, either an administrative user or a non-administrative user (user). In general, a non-admin user can make changes to projects to which that user is associated. Admin users can make changes throughout the domain.</p>
+<p>To access the dashboard, enter the dashboard URL in a supported browser and log in.<xref
+        href="CGH-2-User-Dashboard-launch.dita#topic1160"/></p>
+<p>The layout of a typical Helion page contains dashboards, panels, tabs, and tables, as shown in
+      the following diagram:</p>
+    <p><image href="../../../media/CGH-Horizon-Map.png" id="image_vw5_djf_ht" width="600"/></p>
+<section id="DashProject"> <title>Project dashboard</title>
+<p>Use the <b>Project</b> dashboard to implement and build out your cloud. This dashboard contains
+        tools to create virtual server instances, create and configure your network, configure
+        access tools (such as key pairs and security groups) and cloud resource templates (stacks). </p>
+      <p>For more information, see <xref href="CGH-2-User-Dasboard-Project.dita#jow1404333629232"
+          >Using the Projects Dashboard</xref></p>
+</section>
+<section id="DashAdmin"> <title>Admin dashboard</title>
+<p>Use the <b>Admin</b> dashboard to view, allocate, and manage all resources within the cloud.</p>
+<p>The Admin tab allows you to manage instances, define flavors, create and configure images, manage
+        networks, view system resources, manage projects, and manage users.</p>
+      <p>For more information, see <xref href="CGH-2-User-Dasboard-Admin.dita#jow1404333729535"
+          >Using the Admin Dashboard</xref>.</p>
+</section>
+<section id="DashIdent"> <title>Identity dashboard</title>
+<p>Use the <b>Identity</b> tab to create and delete users, change user passwords, assign users to
+        projects, and other tasks.</p>
+      <p>For more information, see <xref href="CGH-2-User-Dasboard-Identity.dita#jow1432757989702"
+          >Using the Identity Dashboard</xref>.</p>
+</section>
+<!--
+## Settings dashboard<a name="DashSettings"></a>
+
+Use the **Settings** dashboard to change your display language and settings, your time zone, and your password.
+ 
+Click **Settings** in the user menu to display the Settings dashboard. 
+
+For a look at the dashboard options, see [Horizon Overview](/helion/openstack/1.1/services/horizon/overview/)
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top </a>
+-->
+<!-- ===================== horizontal rule ===================== -->
+
+</body>
+</topic>

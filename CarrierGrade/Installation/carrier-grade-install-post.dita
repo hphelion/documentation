@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Post-Installation
+    Tasks</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+  </metadata>
+</prolog>
+<body>
+    <p>After HP Helion OpenStack Carrier Grade is fully installed and deployed, perform the tasks in
+      this section.</p>
+    <section>
+      <title>Deploy the Horizon Patch</title>
+      <p>After deploying the KVM cloud, on each controller node, apply a patch to incorporate
+        specific UI rebranding changes. </p>
+      <p>For more information, see  <xref href="carrier-grade-install-horizon-patch.dita#topic10581"
+          >Deploying the Horizon Patch</xref></p>
+    </section>
+    <section>
+      <title>Configure the DCN Metadata Agent</title>
+      <p><b>KVM + ESX deployments only</b></p>
+      <p>After deploying the KVM cloud, on each compute node, update the following lines in the
+          <codeph>/etc/default/nuage-metadata-agent</codeph>. </p>
+      <p>For more information, see <xref href="carrier-grade-install-metadata.dita#topic10581"
+          >Configuring the DCN Metadata Agent</xref>
+      </p>
+    </section>
+  
+  <section id="next-step"> <title>Verify LDAP</title>
+      <p>Use the commands to verify that LDAP is functioning correctly.</p>
+      <p>For more information, see <xref href="carrier-grade-install-ldap-verify.dita#topic10581"
+          >Verifying the LDAP Deployment</xref></p>
+  </section>
+</body>
+</topic>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic585">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Managing Identity</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforAdmins/Users/1.1commercial.managing.users.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/users/--></p>
+<p>You can use HP Helion OpenStack to manage users.</p>
+<p>As an admin, you can use the dashboards to:</p>
+  
+    <p>You can manage access to projects by assigning users and setting primary projects. You can
+      also control resources by managing operational quotas.</p>
+    <section id="users">
+      <title>Working with Users</title>
+      <p>As an admin, you can use create projects and allow specific users to access each
+        project:</p>
+      <ul id="ul_rl4_wkp_ft">
+        <li><xref href="CGH-2-User-Identity-users.dita#topic1645">Create and delete users</xref></li>
+        <li><xref href="CGH-2-User-Identity-users.enable.dita#topic1170">Disable and enable a user</xref></li>
+        <li><xref href="CGH-2-User-Identity-users-password.dita#topic1008">Change a user password</xref></li>
+        <li><xref href="CGH-2-User-Identity-add-users-projects.dita#topic1645">Specify a primary project for a user</xref></li>
+      </ul>
+    </section>
+    <section id="creating-projects">
+      <title>Working with projects</title>
+      <p>As an admin, you can use create projects and allow specific users to access each
+        project:</p>
+      <ul id="ul_k32_nkp_ft">
+        <li>
+          <xref href="CGH-2-User-Identity-projects-create.dita#topic2004">Create and delete
+            projects</xref></li>
+        <li><xref href="CGH-2-User-Identity-projects-primary.dita#topic1138">Specifying a Primary Project for a User</xref></li>
+        <li><xref href="CGH-2-User-Identity-projects-view.dita#topic1218">View details on a
+            project</xref></li>
+      </ul>
+    </section>
+    <section id="managing-quotas">
+      <title>Managing quotas</title>
+      <p>Quotas are operational limits that you can configure to prevent system capacities from
+        being exhausted without notification.</p>
+      <p>Use the <b>Identity</b> panel on the <b>Admin</b> dashboard to set maximum limits for
+        metadata, instances, CPUs, memory, and other settings for each project.</p>
+      <ul id="ul_l32_nkp_ft">
+        <li>
+          <xref href="CGH-2-User-Identity-quotas.dita#topic1853">Modify the quota of a
+            project</xref></li>
+      </ul>
+    </section>
+
+</body>
+</topic>

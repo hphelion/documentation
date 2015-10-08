@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1404833049288" xml:lang="en-us">
+<title 
+<body>
+        <li id="launch-stack" 
+            <p 
+            <info 
+                <p 
+                    then complete the <wintitle 
+                    box.</p>
+                <fig id="fig_N1007C_N1006D_N10065_N10027_N1001B_N10001" 
+                    <image alt="Select Template" href="jow1404333624807.image" id="image_ddm_k1j_34" 
+                </fig>
+                <p 
+                    drop-down list offers several ways to specify a template.</p>
+            
+            <choicetable id="choicetable_bz5_c3h_k4" keycol="1">
+                <chrow>
+                    <choption 
+                        <p 
+                    </choption>
+                    <chdesc 
+                        <p 
+                            file.</p>
+                    </chdesc>
+                </chrow>
+                <chrow>
+                    <choption 
+                        <p 
+                    </choption>
+                    <chdesc 
+                        <p 
+                            button for access to locally stored template files.</p>
+                    </chdesc>
+                </chrow>
+                <chrow>
+                    <choption 
+                        <p 
+                    </choption>
+                    <chdesc 
+                        <p 
+                            content.</p>
+                    </chdesc>
+                </chrow>
+            </choicetable>
+        </li>
+    </body>
+</referable-content>

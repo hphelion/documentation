@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM + ESX<tm
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Installing the KVM + ESX<tm
       tmtype="reg"/> Deployment</title>
   <prolog>
     <metadata>
@@ -23,24 +23,16 @@
       proxy. </p>
     <p><b>Note:</b> If you are installing the KVM-only deployment, see <xref
         href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref>.</p>
-    <section id="prereqs">
-      <p>Before starting the HP Helion OpenStack Carrier Grade installation, the VMware vSphere
-        application and HP Distributed Cloud Networking components must be fully installed and
-        functioning:</p>
-      <p><b>DCN Requirements</b></p>
-      <p>HP Helion Distributed Cloud Networking (DCN) must be deployed before starting the cloud
-        deployment. Please refer to DCN documentation for details. </p>
-      <p>For a quick overview of the DCN components, see <xref
+    <section id="prereqs"><p>Before starting the HP Helion OpenStack Carrier Grade installation, the
+        VMware vSphere application and HP Distributed Cloud Networking components must be fully
+        installed and functioning:</p><p><b>DCN Requirements</b></p><p>HP Helion Distributed Cloud
+        Networking (DCN) must be deployed before starting the cloud deployment. Please refer to DCN
+        documentation for details. </p><p>For a quick overview of the DCN components, see <xref
           href="carrier-grade-technical-overview-esx.dita#topic3485/dcn">KVM + ESX Deployment
-          Architecture Reference</xref></p>
-      <p>In production cloud deployments:</p>
-      <ul id="ul_hnw_pry_zs">
+          Architecture Reference</xref></p><p>In production cloud deployments:</p><ul
+        id="ul_hnw_pry_zs">
         <li>DCN should be deployed in HA mode (with 2 VSCs, 2 VRS-Gs).</li>
         <li>VSD should be deployed in HA mode (3+1 VSDs). </li>
-        <li>Configure appropriate entries for VSD into DNS so that the SRV record for
-            <codeph>_xmpp-client</codeph> resolves. This is required for DCN Cloud. Refer to  the
-          DCN documentation examples of <codeph>BIND</codeph> commands and instructions for testing
-          the DNS configuration. </li>
         <li>VSD should be assigned a DCM IP accessible for cloud deployment. Refer to the <xref
             href="carrier-grade-technical-overview-esx.dita#topic3485">architecture
           diagram</xref>.</li>
@@ -50,18 +42,28 @@
         <li><xref href="#topic10581/vsd" format="dita">Apply the VSD license</xref> based on single
           or clustered VSD setup. </li>
         <li><xref href="#topic10581" format="dita">Create the required VSD users</xref>.</li>
-      </ul>
-      <p>Optionally, you can integrate LDAP into the DCN environment.</p>
-    </section>
+      </ul><p>Optionally, you can integrate LDAP into the DCN environment.</p><p><b>DNS
+          Configuration</b></p><p>Configure appropriate entries for VSD into DNS so that the SRV
+        record for <codeph>_xmpp-client</codeph> resolves. This is required for DCN Cloud. Refer to
+        the DCN documentation examples of <codeph>BIND</codeph> commands and instructions for
+        testing the DNS configuration, such as shown in the following example:</p><p><image
+          href="../../media/CGH-2-install-DNS-config.png" width="400" id="image_eyr_z5z_jt"
+      /></p>Make sure that reverse DNS resolution <b>is not enabled</b> the for xmpp Host
+          record:<p><image href="../../media/CGH-2-install-DNS-config-example.png" width="400"
+          id="image_ugq_rvz_jt"/></p></section>
     <section>
       <p><b>ESXi requirements</b></p>
       <p>ESX should be deployed before starting the cloud deployment. For more information, refer to the VMware product
         documentation.</p>
       <p>In production cloud deployments:</p>
       <ul id="ul_ejv_35y_zs">
+        <li>ESX Cluster is installed and functional with external storage connected to all the hosts
+          that are part of ESX cluster</li>
         <li>ESX Cluster with two (2) or more hosts installed with ESXi 5.5 U2 and above</li>
         <li>ESX Cluster should have HA, DRS &amp; Vmotion Enabled</li>
-        <li>ESX Cluster should have Shared Storag</li>
+        <li>ESX Cluster should have Shared Storage</li>
+        <li>vCenter is working with the supported versions. One vCenter
+          supported<!-- with HCG 2.0 Build#9-->.</li>
         <li>The CLM and TUL networks must be available to all ESX hosts VMNICs</li>
       </ul>
       <p><b>ESX Network Configuration Requriements</b></p>
@@ -96,7 +98,7 @@
       <p>
         <image href="../../media/CGH-install-virsh-vsd.png" width="400"/></p>
     </section>
-    <section><title>Apply the VSD License</title>You should have recevied a license file when you
+    <section id="vsd-license"><title>Apply the VSD License</title>You should have recevied a license file when you
       purchased DCN. You need to apply that license on the HLM host. For more information, see <xref
         href="carrier-grade-install-vsd-license.dita#topic10581"/>.</section>
     <section id="create-user-for-plugin-login">
@@ -106,23 +108,31 @@
           OSadmin User for VSD</xref>.</p>
     </section>
     
-    <section id="configure-a-json-file-for-installation">
+    <section id="hos-install">
       <title>Launch the HP Helion OpenStack cloud</title>
       <p>Use the following steps on the HLM host to log on to the HLM VM created in <xref
         href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HP Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
       <ol>
         <li>Login to HLM VM. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
+<<<<<<< .merge_file_Cs7xOr
             IP of the HLM VM. Locate the IP address for the HLM VM in the /root/infra-ansible-playbooks/group_vars/all file under hlm_clmstaticip field.</p><p>Use the default credentials: </p><p>
             <codeblock>User Name: cghelion
+=======
+            IP of the HLM VM. Locate the IP address for the HLM VM in the
+              <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file under
+              <codeph>hlm_clmstaticip</codeph> field.</p><p>Use the default credentials: </p><p>
+            <codeblock>User Name: root
+>>>>>>> .merge_file_Bumvmr
 Password: cghelion</codeblock>
           </p><p><b>Important:</b> After logging in with the default password, make sure you change
-            the password for the <codeph>cghelion</codeph> user. </p></li>
+            the password for the <codeph>cghelion</codeph> user. </p><p><image
+              href="../../media/CGH-2-login-hlm.png" width="400" id="image_nnb_fyb_3t"/></p></li>
         <li>Execute the following command to switch to the root
           user:<codeblock>sudo su -</codeblock></li>
         <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
-      
-        <li>Execute the following command to provision and configure the HP Helion OpenStack
-            cloud.<codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where::</p><ul>
+
+        <li>Execute the following command to provision and configure the HP Helion OpenStack cloud.
+            <codeblock>hnewcloud  &lt;cloudname&gt; memphis</codeblock><p>Where::</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create.<p>The cloud
                 name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
                   chracter:<ul id="ul_lz5_rbf_bt">
@@ -140,9 +150,9 @@ Password: cghelion</codeblock>
               includes a template called <codeph>memphis</codeph> designed to install HP Helion
               OpenStack, specific to the KVM + ESX deployment.</li>
           </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which
-            contains several JSON template files. </p></li>
-      </ol>
-    </section>
+            contains several JSON template files. </p></li></ol>
+      </section>
+    
     <section id="configure-node-provision-json">
       <title>Configure the node-provision JSON file</title>
       <p>Modify the <codeph>node-provision.json</codeph> file in the <codeph>&lt;cloudname></codeph>
@@ -220,9 +230,12 @@ Password: cghelion</codeblock>
       <p><b>Note:</b> To see a sample <codeph>definition.json</codeph> file, see <xref
           href="carrier-grade-install-pb-kvm-def-json.dita#topic4797">Sample definition.json File
           for Installing the KVM + ESX Topology</xref>.<ol id="ol_zzr_khl_zs">
-          <li>Set the number of compute systems to 2 for  an HA VRS-G
+          <li>Set the number of compute systems to 2 for an HA VRS-G
             installation.<codeblock>"file": ".hos/ccp-vrsg.json",
-"count": 2</codeblock></li>
+"count": 2
+...
+"file":  ".hos/ccp-vrsg.json",
+"count": 1</codeblock></li>
         </ol></p>
     </section>
     <section id="configure-env-json">
@@ -247,6 +260,18 @@ Password: cghelion</codeblock>
           <li><xref href="carrier-grade-install-pb-kvm-env-json-bonded.dita#topic4797">For a Bonded
               NIC Environment</xref></li>
         </ul></p>
+    </section>
+    <section>
+      <title>Congfure the ccp-dcn-esx.json file</title>
+      <p>Modify the <codeph>member-count</codeph> field in the <codeph>ccp-dcn-esx.json</codeph> in
+        the <codeph>~/&lt;cloudname&gt;/.hos/ccp-dcn-esx.json</codeph>  directory of the HLM VM.
+        Make sure the <codeph>member-count</codeph> field in the <codeph>tiers</codeph> section is
+        set to <b>1</b> as shown:</p>
+      <p><!--By default it will be “2”, change to “1” for Build#15.--></p>
+      <codeblock>"tiers": [
+        {
+            "id": "1",
+            "member-count": 1,</codeblock>
     </section>
     <section id="configure-ansible-json">
       <title>Configure the ansible.json file</title>
@@ -273,15 +298,7 @@ Password: cghelion</codeblock>
           href="carrier-grade-install-pb-kvm-ldap-json.dita">Sample ldap.json File for Installing
           the KVM + ESX Topology</xref>. </p>
     </section>
-    <section id="configure-wr-json">
-      <title>Configure the wr.json file</title>
-      <p>Modify the <codeph>wr.json</codeph> file in the <codeph>&lt;cloudname>/vars</codeph>
-        directory on the HLM VM.</p>
-      <p>To see a sample <codeph>wr.json</codeph> file, see <xref
-          href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the
-          KVM + ESX Topology</xref>. </p>
-    </section>
-    <section>
+    <section id="dcn-json">
       <title>Configure the dcn.json file</title>
       <p>Modify the <codeph>dcn.json</codeph> file in the
           <codeph>/opt/share/hlm/1/site/services/dcn.json</codeph> directory of the HLM VM to remove
@@ -296,6 +313,21 @@ Password: cghelion</codeblock>
             "scope": "private"
       },    </codeblock></p>
     </section>
+    <section id="ccp-dcn-esx-json"><title>Configure the ccp-dcn-esx.json file</title>Update the
+        <codeph>~/&lt;cloudname&gt;/.hos/ccp-dcn-esx.json</codeph> file. Change the field to 1. By
+      default it will be
+      2.<codeblock>"tiers": [
+  {
+    "id": "1",
+    "member-count": 1,      </codeblock></section>
+    <section id="configure-wr-json">
+      <title>Configure the wr.json file</title>
+      <p><b>For bonded NIC environments</b>, modify the <codeph>wr.json</codeph> file in the
+          <codeph>&lt;cloudname>/vars</codeph> directory on the HLM VM.</p>
+      <p>To see a sample <codeph>wr.json</codeph> file, see <xref
+          href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the
+          KVM + ESX Topology</xref>. </p>
+    </section>
     <section id="configure-mach-json">
       <title>Configure the machine_architecture.json file</title>
       <p><b>For bonded NIC environments</b>, modify the <codeph>machine_architecture.json</codeph>
@@ -306,13 +338,13 @@ Password: cghelion</codeblock>
           href="carrier-grade-install-pb-kvm-env-json-bonded.dita#topic4797">Sample enviroment.json
           File for Installing the KVM + ESX Topology in an Bonded NIC Environment</xref>.</p>
     </section>
-    <section>
+    <section id="verify-json">
       <title>Verify the JSON files</title>
       <p>After editing the JSON files, validate each JSON file to make sure there are no syntax
         errors using the tool of your preference. For example, using the Python json.tool: </p>
       <codeblock>python -m json.tool &lt;filename>.json</codeblock>
     </section>
-    <section>
+    <section id="esx-proxy">
       <title>Configure the ESX Compute Proxy</title>
       <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
         that enables the Compute service to communicate with a VMware vCenter server. The HP Helion
@@ -339,78 +371,73 @@ Password: cghelion</codeblock>
             </p><p>You can log in to the iLO server management tool for each of the nodes to monitor
             the boot process. Consult yout iLO documentation for information on how to log into iLO.
           </p></li>
-        <li>Make sure the nodes are booted up using iLO. </li>
-        <li>Once the baremetal nodes are provisioned, make sure the <codeph>nodes.json</codeph> file
-          is generated. The <codeph>nodes.json</codeph> file will have entries of 3 controllers, 2
-          DCN Hosts, 2 VRS-G and the compute proxy node.</li>
+        <li>Make sure the nodes are booted up using iLO. For example:<p><image
+              href="../../media/CGH-2-install-cobbler.png" width="600" id="image_c5k_d4b_kt"
+          /></p>Once the baremetal nodes are provisioned, make sure the <codeph>nodes.json</codeph>
+          file is generated. The <codeph>nodes.json</codeph> file will have entries of 3
+          controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</li>
         <li>Verify that each node in the <codeph>nodes.json</codeph> file is installed and active. <ol>
             <li>Ping proxy node from HLM VM with the IP using IP specified in
                 <codeph>nodes.json</codeph> file.</li>
             <li>SSH to the compute proxy node from the HLM VM using IP specified in
                 <codeph>nodes.json</codeph> file.</li>
           </ol></li>
-        <li>Configure the back-end drivers to enable management of the OpenStack Block Storage
+      </ol>
+    </section>
+    <section id="back-end"><title>Configure the back-end drivers</title>
+        <p>Configure the back-end drivers to enable management of the OpenStack Block Storage
           volumes on vCenter-managed data stores and 3PAR and/or VSA storage arrays. The HP Block
           Storage (Cinder) service allows you to configure multiple storage back-ends. Use the
-          following steps to configure back-end support:<ol id="ul_btr_l52_xs">
+          following steps to configure back-end support:</p>
+          <ol id="ul_btr_l52_xs">
             <li>Change to the <codeph>/cinder/blocks</codeph> directory:
               <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where
                 <codeph>&lt;cloudname></codeph> is the name you assigned to the cloud. The directory
               contains several sample Cinder configuration files that you can edit, depending upon
               which storage method(s) you are using.</li>
             <li>Depending upon the type of storage you are using, edit the following file: <ul>
-                <li><codeph>cinder_conf.multiBackendSample</codeph> - this sample file provides all
-                  the variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA
-                  and/or HP StoreServ (3PAR) attched to the KVM region;</li>
-              </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the
-                back-ends you are using. You must specify at least one back-end for the non-KVM
-                region and one or more for the KVM region.</p><table>
-                <tgroup cols="3">
-                  <colspec colname="col1" colsep="1" rowsep="1"/>
-                  <colspec colname="col2" colsep="1" rowsep="1"/>
-                  <colspec colname="col3" colsep="1" rowsep="1"/>
-                  <thead>
-                    <row>
-                      <entry colsep="1" rowsep="1">Region/Hypervisor</entry>
-                      <entry colsep="1" rowsep="1">Volume Backend</entry>
-                      <entry colsep="1" rowsep="1">Backend Name</entry>
-                    </row>
-                  </thead>
-                  <tbody>
-                    <row>
-                      <entry>KVM</entry>
-                      <entry>3PAR </entry>
-                      <entry>hp3par</entry>
-                    </row>
-                    <row>
-                      <entry>KVM</entry>
-                      <entry>VSA</entry>
-                      <entry>hplefthand</entry>
-                    </row>
-                    <row>
-                      <entry>Non-KVM </entry>
-                      <entry>ESX Datastores</entry>
-                      <entry>vmdk </entry>
-                    </row>
-                  </tbody>
-                </tgroup>
-              </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select
-                both if you have respective storage arrays </p><p id="storage">A typical
-                  <codeph>cinder_conf</codeph> that enables all three back ends appears similar to
-                the following
-              example:</p><codeblock>[DEFAULT]
+            <li><codeph>cinder_conf.multiBackendSample</codeph> - this sample file provides all the
+              variables needed to use ESX in the non-KVM region and HP StoreVirtual VSA and/or HP
+              StoreServ (3PAR) attched to the KVM region;</li>
+          </ul><p>Use the <codeph>enabled_backends</codeph> variable to list each of the back-ends
+            you are using. You must specify at least one back-end for the non-KVM region and one or
+            more for the KVM region.</p><table>
+            <tgroup cols="3">
+              <colspec colname="col1" colsep="1" rowsep="1"/>
+              <colspec colname="col2" colsep="1" rowsep="1"/>
+              <colspec colname="col3" colsep="1" rowsep="1"/>
+              <thead>
+                <row>
+                  <entry colsep="1" rowsep="1">Region/Hypervisor</entry>
+                  <entry colsep="1" rowsep="1">Volume Backend</entry>
+                  <entry colsep="1" rowsep="1">Backend Name</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>KVM</entry>
+                  <entry>3PAR </entry>
+                  <entry>hp3par</entry>
+                </row>
+                <row>
+                  <entry>KVM</entry>
+                  <entry>VSA</entry>
+                  <entry>hplefthand</entry>
+                </row>
+                <row>
+                  <entry>Non-KVM </entry>
+                  <entry>ESX Datastores</entry>
+                  <entry>vmdk </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select both
+            if you have respective storage arrays </p><p id="storage">A typical
+              <codeph>cinder_conf</codeph> that enables all three back ends appears similar to the
+            following
+          example:</p><codeblock>[DEFAULT]
 enabled_backends=vmdk, hp3par, hplefthand
 ...                                
-[vmdk]
-volume_backend_name = &lt;mybackendname3>
-vmware_host_ip = &lt;hostip>
-vmware_host_username = &lt;username>
-vmware_host_password = &lt;password>
-vmware_volume_folder = &lt;volumes_folder>
-vmware_image_transfer_timeout_secs = 7200
-vmware_task_poll_interval = 0.5
-vmware_max_objects_retrieval = 100
-volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
           
 [hp3par]
 volume_backend_name=&lt;mybackendname1>
@@ -433,63 +460,42 @@ volume_backend_name=&lt;mybackendname2>
 hplefthand_username = &lt;username>
 hplefthand_password = &lt;password>
 hplefthand_clustername = &lt;Cluster Name>
-hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li>
+hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos 
+volume_driver = cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
+hplefthand_debug = false
+
+[vmdk]
+volume_backend_name = &lt;mybackendname3>
+vmware_host_ip = &lt;hostip>
+vmware_host_username = &lt;username>
+vmware_host_password = &lt;password>
+vmware_volume_folder = &lt;volumes_folder>
+vmware_image_transfer_timeout_secs = 7200
+vmware_task_poll_interval = 0.5
+vmware_max_objects_retrieval = 100
+volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock></li>
             <li>Save the file to <codeph>cinder_conf</codeph>.</li>
-          </ol></li>
-      </ol></section>
-        
-        <section id="proxy-patch">
-      <title>Apply the ESX compute proxy patch</title>
-      <p>This patch fixes an intermittent issue where the ESX compute proxy is not configured after
-        the <codeph>hprovision</codeph> completes successfully. The patch increase the timeout to
-        allow enough time for the proxy VM to boot. </p>
-      <p>For more information, see the README in the download or <xref
-          href="carrier-grade-install-esx-proxy-patch.dita#topic10581">Apply the ESX Compute Proxy
-          Patch</xref>.</p>
-    </section>
-        <section>
-      <title>Apply the Generic Routing Encapsulation (GRE) patch</title>
-      <p>This patch contains three files. The first file fixes an issue with the IP tables role
-        failing during installation while enabling Generic Routing Encapsulation (GRE) in firewall
-        in VRS-G nodes. The other two files enable GRE on VRS-G nodes in the IP tables.  </p>
-      <p>For more information, see the README in the download or <xref
-          href="carrier-grade-install-gre-patch.dita#topic10581">Applying the Generic Routing
-          Encapsulation (GRE) Patch</xref>.</p>
-      <title>Apply the RabbitMQ Random Password patch</title>
-      <p>For information, see the README in the download or <xref
-          href="carrier-grade-install-rabbitmq-patch.dita#topic10581">Applying the Random RabbitMQ
-          Password Patch</xref>.</p>
+          </ol>
+      </section>
+    <section>
+      <title>Deploy the Configuration Processor Patches</title>
+      <p>Before launching the HP Helion OpenStack cloud in the following section, deploy two patches
+        to update required configuration files. </p>
+      <p>See the README in the download or <xref
+          href="carrier-grade-install-config-patch.dita#topic10581">Deploying the Configuration
+          Processor Patches</xref>.</p>
     </section>
         
-        <section><title>Apply the Reverse Path Filter Patch</title>After deploying the HP OpenStack
-      cloud, you might not be able to access the Horizon interface and the OpenStack services cannot
-      be accessed over the CAN network. <p>To prevent this problem, install a patch to configure the
-        kernel to set the reverse path filter (<codeph>rp_filter</codeph>) to 1 in the
-          <codeph>all</codeph> and <codeph>default</codeph> configuration files. </p><p>For more
-        information, see the README in the download or <xref
-          href="carrier-grade-install-rp-filter.dita#topic10581">Applying the Reverse Path Filter
-          Patch</xref>.</p></section>
-        
-        <section><title>Apply the Helion Dynamic Password Patch</title>The HP Helion OpenStack cloud
-      deployment creates a default password to log into the Helion interface. You can deploy a patch
-      to configure the installer to generate a dynamic user name and password for the Helion
-      interface. The user name can password can be retrieved from a configuration files. <p>For more
-        information, see the README in the download or <xref
-          href="carrier-grade-install-helion-password-patch.dita#topic10581">Applying the Helion
-          Dynamic Password Patch</xref>.</p></section>
-        
-        <section><title>Apply the NIC bonding patch</title><p>HP Helion OpenStack Carrier Grade environments using NIC bonding, see the README in the download
-        or <xref href="carrier-grade-install-nic-patch.dita#topic10581">Applying the NIC Bonding
-          Patch</xref> to install a required patch.</p></section>
-        
-    <section><title>Deploy the HP Helion OpenStack cloud</title>
+    <section id="hos-cloud">
+      <title>Deploy the HP Helion OpenStack cloud</title>
       <ol>
         <li>Run the HP Helion OpenStack Configuration Processor:
             <codeblock>hcfgproc -d definition.json</codeblock><p>The HP Helion OpenStack
             Configuration Processor is a script, called <codeph>hcfgproc</codeph>, that is
             incorporated into the installation environment. This command generates the necessary
-            configuration for the cloud. </p><p>When the command completes, you will see the
-            following:
+            configuration for the cloud. </p><p><image
+              href="../../media/CGH-2-install-proc-done.png" width="600" id="image_sqd_rpb_kt"
+            /></p><p>When the command completes, you will see the following:
             message:</p><codeblock>#################################################################################
 The configuration processor completed successfully.
 ################################################################################</codeblock><p>To
@@ -504,42 +510,97 @@ The configuration processor completed successfully.
               <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created.</p><p>After
             this command completes, all cloud nodes and CLM network interfaces are configured. The
             output for the command should appear similar to the following:</p><p><image
-              href="../../media/CGH-install-hnetinit-output.png" id="image_tft_r11_1t"/></p></li></ol>
-    </section>
-    <section><title>Deploy HP Helion OpenStack</title>
-      <ol>
-        <li>Use the following command to deploy the HP Helion OpenStack cloud:
-            <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>This command takes a
-            significant period of time. When this command is complete, the non-KVM cloud
-            installation is complete. Use the following sections to configure the Horizon interface,
-            configure networking, and configure the ESX environment. </p></li>
-        <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
+              href="../../media/CGH-2-install-hnetinit-output-alpha.png" id="image_tft_r11_1t"
+              width="500"/></p></li>
+        <li>You can use the following command to ping each of the installed nodes:<p>
+            <codeblock>hnetping &lt;cloud name&gt;</codeblock>
+          </p></li>
       </ol>
     </section>
+    <section id="hdeploy"><title>Deploy HP Helion OpenStack</title>
+      <ol>
+        <li>Use the following command to deploy the HP Helion OpenStack cloud:
+            <codeblock>hdeploy &lt;cloudname&gt;</codeblock><p>This command takes a significant
+            period of time. When this command is complete, the non-KVM cloud installation is
+            complete. Use the following sections to configure the Horizon interface, configure
+            networking, and configure the ESX environment. </p><p><image
+              href="../../media/CGH-2-install-hdeploy-output-alpha.png" width="500"
+              id="image_tgj_fnv_mt"/></p></li>
+        <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
+      </ol>
+      <p><b>Note:</b> If the <codeph>hdeploy</codeph> script fails, review the topics in <xref
+          href="carrier-grade-install-build9-workarounds.dita#topic10581">this section for
+          troubleshooting</xref>. </p>
+    </section>
+    
+    <section>
+      <!--<title>Applying the HLM Port Security Patch</title>This patch secures all ports on the HLM VM. The standard protocol ports will allow inbound access only and the only the cloud nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see the README in the download or <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port Security Patch</xref>. </p>-->
+    </section>
+    <section id="role"><title>Deploy the Role Generator Patches</title>After launching the hdeploy command,
+      deploy two following patches to correct the following issues: <ul id="ul_emj_1cb_mt">
+        <li>The floating IP assigned to the HLM VM not pingable with DCNR3 and VSD managed networks. </li>
+        <li>The installation fails due to excessive ESX logs</li>
+      </ul><p>For information, see <xref href="carrier-grade-install-role-patch.dita#topic10581"
+          >Deploying the Role Generator Patches</xref>.</p></section>
+    <section>
+      <title>Deploy the Networking Patch</title>
+      <p>After launching the <codeph>hdeploy</codeph> command,, deploy the a networking patch. </p>
+      <p>For more information, see <xref href="carrier-grade-install-network-patch.dita#topic10581"
+          >Deploy the Networking Patch</xref>.  </p>
+    </section>
+    <section><title>Disable debugging for the ESX Compute Proxy</title>Edit the
+        <codeph>nova.conf</codeph> file on the ESX compute proxy nodes to disable debugging. <p>
+        <ol id="ol_xrc_fmw_mt">
+          <li>Log into each ESX compute proxy node. </li>
+          <li>Edit the <codeph>/etc/nova/nova.conf</codeph> to comment out or change the
+              <codeph>debug</codeph> value to
+            <codeph>false</codeph>.<codeblock>#debug=true
+debug=false</codeblock></li>
+          <li>Execute the following command to restart the compute service:
+            <codeblock>service nova-compute restart </codeblock></li>
+        </ol>
+      </p></section>
     <section id="patch-after">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
       <p>By default, the HP Helion OpenStack Carrier Grade services are configured to use Keystone
-        v2 authorization. The services need to be modified to use Keystone v3.  Users will not be
+        v2 authorization. The services need to be modified to use Keystone v3. Users will not be
         able to execute OpenStack CLI commands until the specific changes are made on all three
         controller nodes in the non-KVM region. </p>
-      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
+      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581"
+          >Configuring LDAP CLI Support</xref></p>
     </section>
-    <section><title>Applying the HLM Port Security Patch</title>This patch secures all ports on the
-      HLM VM. The standard protocol ports will allow inbound access only and the only the cloud
-      nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see
-        the README in the download or <xref
-          href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port
-          Security Patch</xref>. </p></section>
     <section>
-      <title>Disable the Root User</title>
-      <p>For security purposes, we strongly recommend disabling root. After the
-          <codeph>root</codeph> user is disabled, you can use another default user account,
-          <codeph>cghelion</codeph> to access the HLM VM and any actions that require root access
-        should be done using <codeph>sudo</codeph>.</p>
-      <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581"
-          >Disabling the Root User</xref>.</p>
+      <title>Verify the VSC VMs</title>
+      <p>The installation process creates virtual machines for VSC. Use the following steps to
+        verify that the VSC VMs are installed and are operational:</p>
+      <ol id="ol_fkv_xjj_1t">
+        <li>SSH to your VSC VM from HLM Host using the DCM IP. The default username and password:
+            <codeph>admin/admin</codeph><p>
+            <codeblock>ssh cghelion@&lt;CLM IP of DCN Host&gt;</codeblock>
+          </p></li>
+        <li>Execute the following command: <codeblock>admin display-config</codeblock></li>
+        <li>Execute the following commands to verify the VMs are active:
+          <codeblock>show vswitch-controller vsd
+show vswitch-controller xmpp-server
+ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
+      </ol>
     </section>
-    
+    <section><title>Verify the VRS-G Node</title> The installation creates a VRS-G node as part of
+      the cloud deployment. Use the following command to verify that the VRS-G is active:
+        <codeblock>show vswitch-controller vswitches  </codeblock><p>The output for the command
+        should appear similar to the following image:</p>
+      <image href="../../media/CGH-2-verify-vrsg-alpha.png" width="400" id="image_ip4_jnq_nt"/>
+      <!-- <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/> -->
+      <p>Verify that the domain name and DNS server are listed in the
+          <codeph>/etc/resolv.conf</codeph> file on all the cloud
+        nodes,.</p><codeblock>cat etc/resolv.conf          </codeblock><image
+        href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
+        <alt>Verify VRS-G </alt>
+      </image></section>
+    <section id="kibana"><title>Launch the Kibana interface</title> 
+      <p>To launch Kibana, see <xref href="carrier-grade-install-access-kibana.dita#topic10581"
+        >Accessing Kibana</xref>.</p>
+    </section>
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>

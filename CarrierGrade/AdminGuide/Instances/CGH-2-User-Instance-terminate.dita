@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic811">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Terminating Instances</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.terminate.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/instances/terminate/--></p>
+<p>You can terminate an instance, as needed.</p>
+<section id="terminate-an-instance"> <title>Terminate an instance</title>
+<ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Based on whether you are <xref
+                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on
+                        a project or the domain</xref>:<ul id="ul_rq1_rft_jt">
+                        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
+                                <b>Instances</b> tab. </li>
+                        <li>Click the <b>Project</b> dashboard, then the <b>Compute</b> panel, then
+                            the <b>Instances</b> tab. </li>
+                    </ul></li>
+<li>In the <b>Instances</b> screen, for the instance you want to terminate, click <b>Edit
+            Instance</b> then <b>Terminate Instance</b>.<p>In the confirmation screen that appears,
+            click <b>Terminate Instance</b>.</p><p>The instance is terminated and no longer appears
+            in the instance list.</p></li>
+</ol>
+</section>
+</body>
+</topic>

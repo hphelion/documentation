@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333749994" xml:lang="en-us">
+
+
+    <!-- Modification Historyjow1404333749994.xml
+
+
+
+
+
+ -->
+
+
+    <title >Storage Planning</title>
+
+
+    <shortdesc >Storage resources on the controller are used to maintain internal
+
+
+        databases, and to provide storage for virtual machines. For VMs, it is highly recommended to
+
+
+        use storage provided through volumes (Cinder service backed by 3PAR). There might not be
+
+
+        enough storage on compute nodes (especially blades). </shortdesc>
+
+
+    <prolog>
+
+
+        <author >Jim Owens</author>
+
+
+        <author >Pedro Sanchez</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <p >During HP Helion OpenStack Carrier Grade software installation, the controller configuration
+
+
+            script gives you the options to allocate space on the controller for the internal
+
+
+            database, and for general storage volumes (images and disk space for the virtual
+
+
+            machines).</p>
+
+
+        <p >The size of the database grows with the number system resources created by
+
+
+            the system administrator and the tenants. This includes objects of all kinds such as
+
+
+            compute nodes, provider networks, images, flavors, tenant networks, subnets, virtual
+
+
+            machine instances and NICs. As a reference point, consider the following deployment
+
+
+            scenario:</p>
+
+
+        <ul id="ul_drv_fjf_4n">
+
+
+            <li >
+
+
+                <p >two controllers</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >four compute nodes with dual Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz each.</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >40 virtual machine instances</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >120 tenant networks</p>
+
+
+            </li>
+
+
+            <li >
+
+
+                <p >steady collection of power management statistics</p>
+
+
+            </li>
+
+
+        </ul>
+
+
+        <p >The size of the database in this case is approximately 9 GB. With a
+
+
+            suggested default of 20 GB, there is still plenty of room to grow. However, you should
+
+
+            periodically monitor the size of the database to ensure that it does not become a
+
+
+            bottleneck when delivering new services.</p>
+
+
+        <p >For general storage, the default settings suggested during the controller
+
+
+            configuration script are recommended to utilize the maximum available space on the
+
+
+            storage media.</p>
+
+
+        <section id="section_N1005C_N1001C_N10001" >
+
+
+            <title >Storage for Virtual Machines</title>
+
+
+            <p >For VMs, you can use remote Cinder storage or local storage.</p>
+
+
+            <p >Persistent block storage for virtual machines is allocated by the
+
+
+                Cinder service using 3PAR.</p>
+
+
+            <dl>
+
+
+                <dlentry >
+
+
+                    <dt >LVM/iSCSI</dt>
+
+
+                    <dd >
+
+
+                        <p >This backend provides block storage managed by the Linux
+
+
+                            Logical Volume Manager (LVM) exposed as iSCSI targets. In the HP Helion
+
+
+                            OpenStack Carrier Grade implementation: </p>
+
+
+                        <ul id="ul_czg_wxt_44">
+
+
+                            <li >
+
+
+                                <p >Storage space is allocated on the active
+
+
+                                    controller and automatically mounted over iSCSI by the virtual
+
+
+                                    machines running on the compute nodes. No storage space is
+
+
+                                    allocated on the compute nodes. </p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >The two controllers always maintain their storage
+
+
+                                    partitions in sync for carrier-grade reliability.</p>
+
+
+                            </li><!--                              <li >
+
+
+                                <p >This backend does not support storage nodes.</p>
+
+
+                            </li>-->
+
+
+
+
+
+                        </ul>
+
+
+                    </dd>
+
+
+                </dlentry><!--
+
+
+                <dlentry >
+
+
+                    <dt >Ceph</dt>
+
+
+                    <dd >
+
+
+                        <p >This backend provides block storage using Ceph, a
+
+
+                            distributed storage system. In the HP Helion OpenStack Carrier Grade implementation:</p>
+
+
+                        <ul id="ul_vc5_bpc_qp">
+
+
+                            <li >
+
+
+                                <p >Storage space is allocated on the storage nodes
+
+
+                                    exclusively. No persistent block storage space is allocated on
+
+
+                                    the compute nodes or the controllers.</p>
+
+
+                            </li>
+
+
+                            <li >
+
+
+                                <p >Two storage nodes are used to provide a scalable and fully
+
+
+                                    HA-protected storage solution. For details on hardware
+
+
+                                    requirements and software installation procedures for storage
+
+
+                                    nodes, refer to the <cite >HP Helion OpenStack Carrier Grade
+
+
+                                        Software Installation Guide</cite>. </p>
+
+
+                            </li>
+
+
+                        </ul>
+
+
+                        <note id="note_N100F5_N100CE_N100C5_N1008B_N10077_N1001F_N10001" >
+
+
+                            <p >For Ceph storage, an infrastructure network is required.</p>
+
+
+                        </note>
+
+
+                    </dd>
+
+
+                </dlentry> -->
+
+
+            </dl><!--
+
+
+            <p >The LVM/iSCSCI and Ceph-based storage backend options are exclusive.
+
+
+                You select one or another when configuring <b >controller-0</b> by selecting the appropriate storage option. Select
+
+
+                    <uicontrol >lvm</uicontrol> for the LVM/iSCSCI backend, or
+
+
+                    <uicontrol >ceph</uicontrol> for the Ceph backend. See the <cite >HP Helion OpenStack Carrier Grade Software Installation Guide</cite> for
+
+
+                details.</p>   -->
+
+
+            <p >As an alternative to persistent storage provided by the Cinder
+
+
+                service, you can implement ephemeral local storage on the compute nodes where the
+
+
+                VMs are instantiated. This is useful for VMs requiring local disk access for
+
+
+                performance optimization. You can use a pre-allocated partition on the root disk, as
+
+
+                well as additional disks optionally installed in the compute nodes. For more
+
+
+                information, see <xref href="jow1426183480976.xml" />. </p>
+
+
+            <note conref="jow1426942555025.xml#jow1426942555025/note_local_storage_ephemeral" id="note_N10130_N1007C_N10024_N10001" />
+
+
+            <p >To instantiate VMs on compute nodes configured for local storage, see
+
+
+                    <xref href="jow1426181040008.xml" />.</p>
+
+
+        </section>
+
+
+    </body>
+
+
+</topic>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic concept topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333739778" xml:lang="en-us">
+    <title >L2 Access Switches</title>
+    <shortdesc >L2 access switches connect the HP Helion OpenStack Carrier Grade hosts to the different
+        networks. Proper configuration of the access ports is necessary to ensure proper traffic
+        flow.</shortdesc>
+    <prolog>
+        <author >Pedro Sanchez</author>
+    </prolog>
+    <body>
+        <section id="section_N1001D_N1001A_N10001" >
+            <p >One or more L2 switches can be used to connect the HP Helion OpenStack Carrier Grade
+                hosts to the different networks. When sharing a single L2 switch you must ensure
+                proper isolation of the network traffic. Here is an example of how to configure a
+                shared L2 switch:</p>
+            <ul id="ul_obf_dyr_4n">
+                <li >
+                    <p >one port- or MAC-based VLAN for the internal management network</p>
+                </li>
+                <li >
+                    <p >one port- or MAC-based VLAN for the OAM network</p>
+                </li>
+                <li >
+                    <p >one port-based VLAN for an optional board management network,
+                        if the network is configured for internal access</p>
+                </li>
+                <li >
+                    <p >one or more sets of VLANs for provider networks. For
+                        example:</p>
+                    <ul id="ul_ov4_kyr_4n">
+                        <li >
+                            <p >one set of VLANs with good QoS for bronze tenants</p>
+                        </li>
+                        <li >
+                            <p >one set of VLANs with better QoS for silver tenants</p>
+                        </li>
+                        <li >
+                            <p >one set of VLANs with the best QoS for gold tenants</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p >When using multiple L2 switches, there are several deployment possibilities. Here is an
+    example:</p>
+            <ul id="ul_qmd_wyr_4n">
+                <li >
+                    <p >A single L2 switch for the internal management and OAM networks. Port- or MAC-based network
+      isolation is mandatory.</p>
+                </li>
+                <li >
+                    <p >One or more L2 switches, not necessarily inter-connected, with one L2 switch per provider
+      network.</p>
+                </li>
+            </ul>
+            <p >Switch ports that send tagged traffic are referred to as <term >trunk</term> ports. They usually participate in the Spanning
+                Tree Protocol (STP) from the moment the link goes up, which usually translates into
+                several seconds of delay before the trunk port moves to the forwarding state. This
+                delay is likely to impact services such as DHCP and PXE which are used during
+                regular operations of HP Helion OpenStack Carrier Grade.</p>
+            <p >Therefore, you must consider configuring the switch ports to which
+                the management interfaces are attached to transition to the forwarding state
+                immediately after the link goes up. This option is usually referred to as a <term >PortFast</term>.</p>
+            <p >You should also consider configuring these ports to prevent them from
+                participating on any STP exchanges. This is usually done by configuring them to
+                avoid processing inbound and outbound BDPU STP packets completely. Consult your
+                switch's manual for details.</p>
+        </section>
+    </body>
+</topic>

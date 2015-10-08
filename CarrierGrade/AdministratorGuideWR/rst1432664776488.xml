@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="rst1432664776488" xml:lang="en-us">
+<title 
+<body>
+        <shortdesc id="shortdesc" 
+            interface.</shortdesc>
+        <prolog id="prolog">
+            <author 
+        </prolog>
+        <body id="body">
+            <section id="section" 
+                <p 
+                    initialized, Ethernet interfaces are created automatically for each physical
+                    port detected. To support installation using PXE booting, one interface is
+                    attached automatically to the management network. You must attach additional
+                    interfaces manually before you can unlock the node. For more about this
+                    requirement, see <xref href="jow1426948577755.xml" 
+                <p 
+                    existing Ethernet interface on the node to attach it, as described in this
+                    topic. You can also do this from the CLI; for more information, see <xref href="jow1427029415968.xml" 
+                <p 
+                    you must create an interface in order to attach it; see <xref href="jow1426951671346.xml" 
+            </section>
+            <ol id="ol_z3w_41x_ds">
+                <li conref="jow1426453628262.xml#jow1426453628262/li_N1002B_N10028_N1001C_N10001" id="li_N1003B_N10038_N1001C_N10001" 
+                    <p 
+                </li>
+                <li id="li_N10044_N10038_N1001C_N10001" 
+                    <p 
+                    <liresult 
+                        <fig id="fig_ypk_blk_lr" 
+                            <image href="jow1426954731455.image" id="image_onc_hlk_lr" 
+                                <alt 
+                            </image>
+                        </fig>
+                    
+                </li>
+                <li id="li_N10066_N10038_N1001C_N10001" 
+                    <p 
+                        for the interface you want to attach to a network.</p>
+                    <liresult 
+                        <fig id="fig_tgf_tlk_lr" 
+                            <image href="jow1426954976474.image" id="image_w5l_tlk_lr" 
+                                <alt 
+                            </image>
+                        </fig>
+                        <p 
+                    
+                </li>
+                <li id="li_N10088_N10038_N1001C_N10001" 
+                    <p 
+                    <info 
+                        <p 
+                    
+                </li>
+                <li id="li_N10101_N10038_N1001C_N10001" 
+                    <p 
+                        interface.</p>
+                    <info 
+                        <p 
+                    
+                </li>
+                <li id="li_N10116_N10038_N1001C_N10001" 
+                    <p 
+                        your changes and close the dialog box. </p>
+                </li>
+            </ol>
+            Carrier Grade 2.0
+                <p 
+            </result>
+        </body>
+    </body>
+</referable-content>

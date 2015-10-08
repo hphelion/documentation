@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic task topic)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333496222" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title 
+    <shortdesc 
+        the Linux command line.</shortdesc>
+    <prolog>
+        <author 
+        <author 
+        <author 
+    </prolog>
+    <body>
+        <section id="section_N1002B_N10028_N10001" 
+            <p 
+            <ul id="ul_hk2_wmr_g4">
+                <li 
+                    <p 
+                        initialized, as described in <xref href="jow1404333490251.xml" 
+                </li>
+                <li 
+                    <p 
+                            <nameliteral 
+                        operational.</p>
+                </li>
+                <li 
+                    <p 
+                        River.</p>
+                </li>
+                <li 
+                    <p 
+                        details, see  the <cite 
+                            Guide: Storage Planning</cite>.</p>
+                </li>
+            </ul>
+        </section>
+        <!-- section id="section_N1007D_N1002E_N10001" 
+            <p 
+                compute functions are combined on a single host, the procedure varies slightly. The
+                compute function on <nameliteral 
+                configured before the <nameliteral 
+                configuration is started. This allows the first host to be fully configured without
+                requiring a swact to lock it.</p>
+        </section -->
+        <ol>
+            <li id="li_N10102_N10031_N1001E_N10001" 
+                <p 
+                <ol id="ol_rqq_nn2_hq">
+                    <li 
+                        <p 
+                        <info 
+                            <p 
+                                address to the appropriate port.</p>
+                            <codeblock 
+<systemoutput 
+<systemoutput 
+                            <note id="note_N10139_N10115_N1010C_N10108_N10101_N10031_N1001E_N10001" 
+                                <p 
+                                    address, refer to your OAM network plan.</p>
+                            </note>
+                        
+                        <lixmp 
+                            <p 
+                            <codeblock 
+<systemoutput 
+<systemoutput 
+                        </lixmp>
+                    </li>
+                    <li 
+                        <p 
+                            OAM network.</p>
+                    </li>
+                    <li 
+                        <p 
+                            controller.</p>
+                        <info 
+                            <p 
+                                configuration. If you prefer, you can copy the file to a different
+                                path, and specify the path during configuration.</p>
+                        
+                        <lixmp 
+                            <codeblock 
+                        </lixmp>
+                    </li>
+                </ol>
+            </li>
+            <li id="li_N1015F_N10092_N1002E_N10001" importance="optional" 
+                <p 
+                <info 
+                    <p 
+                        CA-signed digital certificate (PEM file) to a directory on the controller.
+                        The recommended path is <filepath 
+                
+                <lixmp 
+                    <codeblock 
+                </lixmp>
+            </li>
+            <li id="li_N1007E_N1007B_N1002E_N10001" 
+                <p 
+                <info 
+                    <p 
+                        the configuration process. For details, see the <cite 
+                            Installing Patches Locally</cite>.</p>
+                
+            </li>
+            <li id="li_N10058_N10055_N10028_N10001" 
+                <p 
+                <lixmp 
+                    <codeblock 
+<systemoutput 
+======================================
+Enter Q at any prompt to abort...</systemoutput></codeblock>
+                </lixmp>
+            </li>
+            <li id="li_N10072_N10055_N10028_N10001" 
+                <p 
+                <info 
+                    <note id="note_N1007B_N10078_N10071_N10055_N10028_N10001" 
+                        <p 
+                            You can safely abort the configuration process at any time by pressing
+                            the <nameliteral 
+                    </note>
+                    <p 
+                        refer to <xref href="jow1419271369349.xml" 
+                    <table frame="all" id="table_m21_cmz_cn">
+                        <title 
+                        <tgroup cols="2">
+                            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                            <thead>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                </row>
+                            </thead>
+                            <tbody>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                            clock.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                            volume storage. For details, see the <cite 
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                            network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                            control network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                            network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                            The servers must be accessible from the OAM Network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                            The servers must be accessible from the OAM Network.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                            file.</p>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                            Server cloud <nameliteral 
+                                        <note id="note_N1016A_N1015F_N10154_N100C1_N10099_N10090_N10078_N10071_N10055_N10028_N10001" 
+                                            <p 
+                                                  <nameliteral 
+                                                account, not the Linux <nameliteral 
+                                        </note>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry 
+                                        <p 
+                                    </entry>
+                                    <entry 
+                                        <p 
+                                            configuration selections are applied. Once you enter
+                                                <userinput 
+                                            the selected options, the installation script commits
+                                            the configuration settings.</p>
+                                    </entry>
+                                </row>
+                            </tbody>
+                        </tgroup>
+                    </table>
+                
+                <liresult 
+                    <p 
+                        <b 
+                    
+                        appears.</p>
+                
+            </li>
+            <li id="li_N1023D_N10087_N1002E_N10001" 
+                <p 
+                <info 
+                    <p 
+                            <nameliteral 
+                    <codeblock 
+<systemoutput 
+                
+            </li>
+            
+            <li id="li_N101C3_N10055_N10028_N10001" 
+                <p 
+                <lixmp 
+                    <codeblock 
+<systemoutput 
+| Binary           | Host         | Zone   | Status  | Maint Mode | State | ...
++------------------+--------------+--------+---------+------------+-------+ ...
+| nova-conductor   | controller-0 | int... | enabled | disabled   | up    | ...
+| nova-cert        | controller-0 | int... | enabled | disabled   | up    | ...
+| nova-consoleauth | controller-0 | int... | enabled | disabled   | up    | ...
+| nova-scheduler   | controller-0 | int... | enabled | disabled   | up    | ...
++------------------+--------------+--------+---------+------------+-------+ ...</systemoutput>
+</codeblock>
+                </lixmp>
+            </li>
+            <li id="li_N101DE_N10055_N10028_N10001" 
+                <p 
+                        <nameliteral 
+                <lixmp 
+                    <codeblock 
+<systemoutput 
+| id | hostname     | personality | administrative | operational | availability |
++----+--------------+-------------+----------------+-------------+--------------+
+| 1  | controller-0 | controller  | unlocked       | enabled     | available    |
++----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
+                    <!-- note id="note_N103BB_N103A6_N10392_N10092_N1002E_N10001" 
+                        <p 
+                                <nameliteral 
+                                <nameliteral 
+                            function is not yet configured.</p>
+                    </note -->
+                </lixmp>
+            </li>
+            <li id="li_N10200_N10055_N10028_N10001" importance="optional" 
+                <p 
+                <info 
+                    <p 
+                        the RAID array manually, do so now. You may be able to do this by pressing a
+                        button on the unit, or using a special key combination on the console
+                        keyboard. For details, consult the OEM documentation for the RAID.</p>
+                
+            </li>
+            <li id="li_N10212_N10055_N10028_N10001" 
+                <p 
+                    to verify that the HP Helion OpenStack Carrier Grade web administration interface is
+                    available.</p>
+                <info 
+                    <p 
+                        configuration plan.</p>
+                
+                <liresult 
+                    <p 
+                        screen appears.</p>
+                    <fig id="fig_N10228_N1021D_N1020A_N10055_N10028_N10001" 
+                        <title 
+                        <image alt="Carrier Grade Communication Server login screen" href="jow1404333491396.image" id="image_t5q_4b1_dn" 
+                    </fig>
+                
+            </li>
+            <li id="li_N10244_N10055_N10028_N10001" 
+                <p 
+                <liresult 
+                    <p 
+                        administration interface appears.</p>
+                    <fig id="fig_N10251_N10246_N1023B_N10055_N10028_N10001" 
+                        <title 
+                        <image alt="Carrier Grade Communication Server web administration interface" href="jow1404333493002.image" id="image_pzt_1ts_g4" 
+                    </fig>
+                
+            </li>
+            <li id="li_N1026E_N10055_N10028_N10001" 
+                <p 
+                        <uicontrol 
+                        <uicontrol 
+                <liresult 
+                    <p 
+                        list.</p>
+                    <fig id="fig_N10281_N10277_N10264_N10055_N10028_N10001" 
+                        <image alt="Hosts list showing controller-0" href="jow1404333494735.image" id="image_f1p_dtm_jn" 
+                    </fig>
+                    <!-- note id="note_N10484_N10468_N1044F_N10092_N1002E_N10001" 
+                        <p 
+                                State</nameliteral> is shown as <nameliteral 
+                            This is because the compute function is not yet configured.</p>
+                    </note -->
+                
+            </li>
+            <!-- li id="li_N1045B_N1008E_N1002E_N10001" 
+                <p 
+                    configure the compute function on <nameliteral 
+                <ol id="ol_u5p_fth_yr">
+                    <li 
+                        <p 
+                        <info 
+                            <p 
+                            <p 
+                                configure data interfaces and unlock the host. By configuring the
+                                data interfaces on <nameliteral 
+                                need to swact controllers.</p>
+                            <p 
+                                the affected host. On a host that supports controller and compute
+                                functions, this would require a swact to lock the host. The Titanium
+                                Server setup for a minimal two-server configuration avoids this by
+                                allowing you to define the data interfaces on the unlocked
+                                    <nameliteral 
+                                initial setup.</p>
+                        
+                    </li>
+                    <li 
+                        <p 
+                        <info 
+                            <p 
+                        
+                    </li>
+                    <li 
+                        <p 
+                        <info 
+                            <p 
+                            <codeblock 
+                        
+                        <liresult 
+                            <p 
+                                rebooted. </p>
+                        
+                    </li>
+                </ol>
+            </li -->
+        </ol>
+        
+            <p>The host <nameliteral 
+                now fully operational. It can be used to initialize all other hosts in the Titanium
+                Server cluster.</p>
+        
+    </body>
+</topic>

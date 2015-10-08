@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content  id="jow1404333809730" xml:lang="en-us">
+    <!-- Modification History
+        
+-->
+    <title 
+    <shortdesc 
+    <prolog>
+        <author 
+    </prolog>
+    <body>
+        <ol id="ol_N10021_N1001E_N10001">
+            <li id="li_N10021_N1001E_N1001B_N10001" 
+                <p id="locate-flavor" 
+                    profile).</p>
+            </li>
+            <li id="li_N1003B_N1001E_N1001B_N10001" 
+                <p id="locate-keypair" 
+                    secure access to the stack.</p>
+            </li>
+            <li id="li_N10055_N1001E_N1001B_N10001" 
+                <p id="locate-image" 
+                        <uicontrol 
+                        <uicontrol 
+                        <uicontrol 
+                    </menucascade> page, locate an <uicontrol 
+                    to specify the VM image used by the stack.</p>
+            </li>
+            <li id="li_N1006F_N1001E_N1001B_N10001" 
+                <p id="locate-tenant" 
+                        <uicontrol 
+                        <uicontrol 
+                        <uicontrol 
+                    </menucascade> page, click the appropriate network <uicontrol 
+                    network <uicontrol 
+            </li>
+            <li id="li_N100B3_N10021_N1001E_N10001" 
+                <p id="locate-user" 
+                        <uicontrol 
+                        <uicontrol 
+                        <uicontrol 
+                    </menucascade> page, locate the <uicontrol 
+                    for the tenant where the VM will be launched.</p>
+            </li>            
+        </ol>
+    </body>
+</referable-content>

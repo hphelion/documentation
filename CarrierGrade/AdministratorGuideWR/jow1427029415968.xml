@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1427029415968" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title 
+ <shortdesc 
+  interfaces.</shortdesc>
+ <prolog>
+  <author 
+ </prolog>
+ <conbody>
+  <p 
+   administration interface, see <xref href="jow1426948577755.xml" 
+  <p 
+   command.</p>
+  <codeblock 
+<systemoutput 
+...| name   | netwo...| type     | vlan id | ports     | uses i/f   | used by i/f |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| infra0 | infra...| vlan     | 22      | []        | [u'mgmt0'] | []          |...
+...| oam0   | oam  ...| ethernet | None    | [u'eth0'] | []         | []          |...
+...| mgmt0  | mgmt ...| ethernet | None    | [u'eth1'] | []         | [u'infra0'] |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput>
+</codeblock>
+  <p 
+   flag.</p>
+  <codeblock 
+<systemoutput 
+...| name   | netwo...| type     | vlan id | ports     | uses i/f   | used by i/f |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...
+...| eth3   | None ...| ethernet | None    | [u'eth3'] | []         | []          |...
+...| infra0 | infra...| vlan     | 22      | []        | [u'mgmt0'] | []          |...
+...| eth2   | None ...| ethernet | None    | [u'eth2'] | []         | []          |...
+...| oam0   | oam  ...| ethernet | None    | [u'eth0'] | []         | []          |...
+...| mgmt0  | mgmt ...| ethernet | None    | [u'eth1'] | []         | [u'infra0'] |...
+...+--------+------...+----------+---------+-----------+------------+-------------+...</systemoutput></codeblock>
+  <section id="section_N1005F_N1001E_N10001" 
+   <title 
+   <p 
+    a command of the following form:</p>
+   <codeblock 
+-nt <varname 
+   <p 
+   <parml>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+       spaces; for example, <userinput 
+       To specify a single provider network, omit the quotes. This parameter is required only if the
+        <varname 
+     </pd>
+    </plentry>
+   </parml>
+   <p 
+    infrastructure network, using Ethernet interface <nameliteral 
+     <nameliteral 
+   <codeblock 
+-nt infra compute0 eth0</userinput></codeblock>
+  </section>
+  <section id="section_N100FB_N1001E_N10001" 
+   <title 
+   <p 
+    following form:</p>
+   <codeblock 
+-a <varname 
+ ae "<varname 
+   <p 
+   <parml>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+      <note id="note_N101E4_N101DB_N101D2_N1016B_N10123_N1001E_N10001" 
+       <p 
+        required.</p>
+      </note>
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+   </parml>
+   <p 
+    to provider networks <nameliteral 
+     <nameliteral 
+     <nameliteral 
+     <nameliteral 
+   <codeblock 
+-x layer2 compute-0 ae "provider-net-a provider-net-b" eth2 eth3</userinput></codeblock>
+   <p 
+  </section>
+  <section id="section_N101D8_N1001E_N10001" 
+   <title 
+   <p 
+    form:</p>
+   <codeblock 
+-nt <varname 
+</codeblock>
+   <p 
+   <parml>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+       spaces; for example, <userinput 
+       To specify a single provider network, omit the quotes. This parameter is required only if the
+        <varname 
+     </pd>
+    </plentry>
+   </parml>
+   <p 
+     <nameliteral 
+     <nameliteral 
+   <codeblock 
+<systemoutput 
+| Property         | Value                                |
++------------------+--------------------------------------+
+| ifname           | infra0                               |
+| networktype      | infra                                |
+| iftype           | vlan                                 |
+| ports            | []                                   |
+| providernetworks | None                                 |
+| imac             | 08:00:27:f2:0d:68                    |
+| imtu             | 1500                                 |
+| aemode           | None                                 |
+| schedpolicy      | None                                 |
+| txhashpolicy     | None                                 |
+| uuid             | 8ca9854e-a18e-4a3c-8afe-f050da702fdf |
+| ihost_uuid       | 3d207384-7d30-4bc0-affe-d68ab6a00a5b |
+| vlan_id          | 22                                   |
+| uses             | [u'eth1']                            |
+| used_by          | []                                   |
+| created_at       | 2015-02-04T16:23:28.917084+00:00     |
+| updated_at       | None                                 |
++------------------+--------------------------------------+
+</systemoutput></codeblock>
+   <p 
+   <parml>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+    <plentry 
+     <pt 
+     <pd 
+      <p 
+     </pd>
+    </plentry>
+   </parml>
+   <p 
+     Ethernet Interfaces</cite>.</p>
+  </section>
+  <section id="section_N10391_N1001E_N10001" 
+   <title 
+   <p 
+    the following form:</p>
+   <codeblock 
+   <p 
+    provider network <nameliteral 
+  </section>
+ </conbody>
+</concept-wr>

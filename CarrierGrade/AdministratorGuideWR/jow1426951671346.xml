@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1426951671346" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title 
+    <shortdesc 
+        the web administration interface or the CLI.</shortdesc>
+    <prolog>
+        <author 
+    </prolog>
+    <body>
+        <section id="section_N1001F_N1001C_N10001" 
+            <p 
+        </section>
+        <ol>
+            <li conref="jow1426453628262.xml#jow1426453628262/li_N1002B_N10028_N1001C_N10001" id="li_N1002B_N10028_N1001C_N10001" 
+                <p 
+            </li>
+            <li id="li_N10034_N10028_N1001C_N10001" 
+                <p 
+                <liresult 
+                    <fig id="fig_ypk_blk_lr" 
+                        <image href="jow1426954731455.image" id="image_onc_hlk_lr" 
+                            <alt 
+                        </image>
+                    </fig>
+                
+            </li>
+            <li id="li_N10056_N10028_N1001C_N10001" 
+                <p 
+                <liresult 
+                    <fig id="fig_N100B5_N10092_N10087_N1003B_N10033_N10030_N1001C_N10001" 
+                        <image href="jow1426798023770.image" id="image_jf3_mgx_kr" 
+                            <alt 
+                        </image>
+                    </fig>
+                
+            </li>
+            <li id="li_N1007B_N10028_N1001C_N10001" 
+                <p 
+                <info 
+                    <p 
+                
+            </li>
+            <li id="li_N100E4_N10028_N1001C_N10001" 
+                <p 
+                    select <nameliteral 
+                <info 
+                    <p 
+                            <uicontrol 
+                            <uicontrol 
+                            <uicontrol 
+                
+            </li>
+            <li id="li_N10105_N10028_N1001C_N10001" 
+                <p 
+                    information, see <xref href="jow1404333496893.xml" 
+            </li>
+            <li id="li_N10116_N10028_N1001C_N10001" 
+                <p 
+                    used to attach this interface to the network. </p>
+            </li>
+            <li id="li_N1012F_N10028_N1001C_N10001" 
+                <p 
+                    information, see <xref href="jow1426955886080.xml" 
+            </li>
+            <li id="li_N1013C_N10028_N1001C_N10001" 
+                <p 
+                    the dialog box. </p>
+            </li>
+        </ol>
+        Carrier Grade 2.0
+            <p 
+        </result>
+    </body>
+</topic>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1406727863674" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title 
+ <shortdesc 
+  reset, power-up, and power-down operations.</shortdesc>
+ <prolog>
+  <author 
+  <author 
+ </prolog>
+ <conbody>
+  <p 
+   management modules optionally installed in the hosts. These modules provide support for remote
+   reset and power control of the hosts.</p>
+  <p 
+   externally using the OAM network, or only accessible internally to the hosts in the cluster. This
+   choice is made at system installation, during the configuration controller script. For details,
+   see the <cite 
+    Configuration Script</cite>.</p>
+  <section id="section_N10036_N10024_N10001" 
+   <title 
+   <p 
+    controller configuration script (press <userinput 
+   <p 
+   <ul id="ul_kw4_qpp_ds">
+    <li 
+     <p 
+    </li>
+    <li 
+     <p 
+    </li>
+    <li 
+     <p 
+      configuration has access to the board management network.</p>
+    </li>
+   </ul>
+  </section>
+  <section id="section_N1006F_N10024_N10001" 
+   <title 
+   <p 
+    controller configuration script (press <userinput 
+    and then specify a VLAN ID and a subnet). This configures a VLAN ID on the controller management
+    interface for use with a board management network. To complete the VLAN, you must connect the
+    modules to VLAN-tagged ports on an internal L2 switch. The modules are assigned IP addresses
+    from the specified subnet.</p>
+   <fig id="fig_lwg_xlp_ds" 
+    <title 
+    <image href="psa1408575952625.image" id="image_mwg_xlp_ds" 
+     <alt 
+    </image>
+   </fig>
+   <p 
+    configured for internal access. Computenodes connect using iLO modules, while
+    controller nodes use the management port in tagged mode. As indicated in the figure, the
+    controller nodes can optionally attach using their own iLO modules, if available.</p>
+   <ul id="ul_n5g_xlp_ds">
+    <li 
+     <p 
+     <ul id="ul_x5g_xlp_ds">
+      <li 
+       <p 
+      </li>
+      <li 
+       <p 
+      </li>
+      <li 
+       <p 
+        participant hosts are attached to it.</p>
+      </li>
+     </ul>
+    </li>
+    <li 
+     <p 
+     <ul id="ul_y5g_xlp_ds">
+      <li 
+       <p 
+        network.</p>
+      </li>
+      <li 
+       <p 
+      </li>
+      <li 
+       <p 
+        network to the VLAN. You must ensure that these ports are tagged ports for this VLAN, that
+        is, that outgoing board management traffic (toward the controllers) uses ﻿IEEE 802.1Q
+        tagging. Other management traffic on this port is untagged.</p>
+      </li>
+     </ul>
+    </li>
+    <li 
+     <p 
+    </li>
+    <li 
+     <p 
+    </li>
+   </ul>
+   <p 
+    consult the user documentation supplied with the equipment.</p>
+  </section>
+  <section id="module_and_host_provisioning" 
+   <title 
+   <p 
+    provisioning:</p>
+   <ul id="ul_tmg_cmp_ds">
+    <li 
+     <p 
+      access.</p>
+    </li>
+    <li 
+     <p 
+      required so that the system can associate the module's assigned IP address with the correct
+      host.</p>
+    </li>
+    <li 
+     <p 
+      attached iLO module.</p>
+    </li>
+    <li 
+     <p 
+      module. This is required for controller access to the module.</p>
+    </li>
+   </ul>
+   <p 
+    equipment.</p>
+   <p 
+     Management</wintitle> tab on the <wintitle 
+    the CLI. For more information, see the HP Helion OpenStack Carrier Grade Software Installation Guide.</p>
+  </section>
+ </conbody>
+</concept-wr>

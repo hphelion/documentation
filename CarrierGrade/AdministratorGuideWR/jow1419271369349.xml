@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic id="jow1419271369349" xml:lang="en-us">
+<!-- This version is for use with the 15.x stream.
+    
+-->
+  <title 
+  <shortdesc conref="jow1419271183630.xml#jow1419271183630/shortdesc" 
+  <prolog>
+    <author 
+  </prolog>
+  <body>
+    <section id="section_N1001F_N1001C_N10001" 
+      <p 
+        cluster as <nameliteral 
+        area. Details for each area are described in the following tables. Review them carefully
+        before committing configuration changes to the controller. For configuration planning
+        information, see the <cite 
+          Guidelines</cite>.</p>
+      <note conref="jow1419271183630.xml#jow1419271183630/note_N1003D_N10027_N10024_N10001" id="note_N10037_N1001F_N1001C_N10001" 
+      <p conref="jow1419271183630.xml#jow1419271183630/apply_or_abort" 
+      <table id="table_vs3_pcb_3p">
+        <tgroup cols="2">
+          <colspec colname="prompts" colwidth="1.07*"/>
+          <colspec colname="comments" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry colname="prompts" 
+                <p 
+              </entry>
+              <entry colname="comments" 
+                <p 
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/date_time_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/date_time" 
+                <p conref="jow1419271183630.xml#jow1419271183630/date_time_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/storage_section" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/backend_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/backend" 
+                <note conref="jow1419271183630.xml#jow1419271183630/note_N10109_N100AF_N100A2_N1006D_N10041_N1003D_N10027_N10024_N10001" id="note_N100B0_N100A8_N1009C_N10070_N10044_N10040_N1001F_N1001C_N10001" 
+                <dl conref="jow1419271183630.xml#jow1419271183630/backend_Install">
+                  <dlentry 
+                    <dt 
+                    <dd 
+                  </dlentry>
+                </dl>
+                <note conref="jow1419271183630.xml#jow1419271183630/note_N1012D_N100C7_N100BA_N10086_N1005A_N10056_N10027_N10024_N10001" id="note_N100C4_N100A8_N1009C_N10070_N10044_N10040_N1001F_N1001C_N10001" 
+                <p conref="jow1419271183630.xml#jow1419271183630/local_storage" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/db_storage_prompt" 
+              </entry>
+              <entry 
+                
+                <p 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/image_storage_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/image_storage" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/backup_storage_prompt" 
+              </entry>
+              <entry 
+                <p 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_prompt" 
+              </entry>
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_Install_1" 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_2" 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/vol_storage_loc_Install_2" 
+                </p>
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/vol_storage_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/vol_storage" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_network_section" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p 
+              </entry>
+              <entry 
+                <p 
+                </p>
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_network_LAG_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_MTU_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_if_MTU" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/mgmt_subnet_prompt" 
+              </entry>
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/mgmt_subnet_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_network_section" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/config_bd_mgmt_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/config_bd_mgmt_Install" 
+                <note conref="jow1419271183630.xml#jow1419271183630/config_bd_mgmt_OAM_note" id="note_N10221_N10218_N1020B_N10076_N1004A_N10046_N10022_N1001F_N10001" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_vlan_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_vlan_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_MTU_prompt" 
+              </entry>
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_Install" 
+                </p>
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/bd_mgmt_subnet_prompt" 
+              </entry>
+              <entry 
+                <p 
+                </p>
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_network_section" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/config_infra_if_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/config_infra_if_Install" 
+                <p conref="jow1419271183630.xml#jow1419271183630/config_infra_if" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_LAG_prompt" 
+              </entry>
+              <entry 
+                <p 
+                </p>
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_LAG_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_vlan_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_vlan" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_vlan_id_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_vlan_id" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_MTU_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_if_MTU" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/infra_subnet_prompt" 
+              </entry>
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/infra_subnet_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_section" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_LAG_prompt" 
+              </entry>
+              <entry 
+                <p 
+                </p>
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_LAG_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_if_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_if_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan_id_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/oam_vlan_id" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_MTU_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_MTU" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_subnet_prompt" 
+              </entry>
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/ext_OAM_subnet_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_gateway_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_gateway" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_floating_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_floating" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c1_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c1_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c2_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/ext_OAM_addr_c2_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/DNS_section" 
+              </entry>
+            </row>
+            <row>
+              <entry conref="jow1419271183630.xml#jow1419271183630/nameservers_prompts" 
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/nameservers" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/NTP_section" 
+              </entry>
+            </row>
+            <row>
+              <entry conref="jow1419271183630.xml#jow1419271183630/timeservers_prompts" 
+              <entry 
+                <p 
+                  <ph conref="jow1419271183630.xml#jow1419271183630/timeservers_ntp_pool" 
+                <p conref="jow1419271183630.xml#jow1419271183630/timeservers_Install" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/license_section" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/license_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/license" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_section" 
+              </entry>
+              <entry 
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_desc" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_self-signed_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_self-signed" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_CA-signed_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_CA-signed" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_passphrase_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/api_https_passphrase" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/auth_section" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/password_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/password" 
+              </entry>
+            </row>
+            <row>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/password_confirm_prompt" 
+              </entry>
+              <entry 
+                <p conref="jow1419271183630.xml#jow1419271183630/password_confirm" 
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </body>
+</topic>

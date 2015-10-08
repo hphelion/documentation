@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic id="jow1425585636142" xml:lang="en-us">
+
+
+<!-- Modification History
+
+
+        
+
+
+-->
+
+
+    <title >Setting Up a VXLAN Provider Network</title>
+
+
+    <shortdesc >You can use the CLI or the web administration interface to set up a VXLAN provider
+
+
+        network and add segmentation ranges.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Jim Owens</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <section id="section_N10022_N1001F_N10001" >
+
+
+            <p >VXLAN provider networks are an alternative to VLAN provider networks
+
+
+                when VM L2 connectivity is required across separate Layer 2 network segments
+
+
+                separated by one or more Layer 3 routers.</p>
+
+
+            <p >The ol in this section describe how to set up a VXLAN provider
+
+
+                network and add segmentation ranges using the web administration interface. For
+
+
+                information about using CLI commands, see <xref href="jow1425677233816.xml" />.</p>
+
+
+        </section>
+
+
+        <ol id="ol_rvq_zr2_hr">
+
+
+            <li conref="jow1424191621914.xml#jow1424191621914/li_N1003F_N1003C_N10024_N10001" id="li_N10031_N1002D_N1001F_N10001" >
+
+
+                <p />
+
+
+            </li>
+
+
+            <li conref="jow1424191621914.xml#jow1424191621914/li_N10054_N1003C_N10024_N10001" id="li_N1003A_N1002D_N1001F_N10001" >
+
+
+                <p />
+
+
+            </li>
+
+
+            <li id="li_N10043_N1002D_N1001F_N10001" >
+
+
+                <p >Create a  provider network.
+                    <xref href="jow1424191621914.xml#jow1424191621914/Provider_Network_dialog" /></p>
+
+
+                
+
+
+                    <fig id="fig_v3z_zsg_hr" >
+
+
+                        <image href="jow1425675012586.image" id="image_jss_vsg_hr"  width="5in">
+
+
+                            <alt >i-ccs-create-provider-network-generic</alt>
+
+
+                        </image>
+
+
+                    </fig>
+
+
+                    <p >For the <b >Type</b>, select <b >VXLAN</b>.</p>
+
+
+                    <p >For the MTU, set a maximum transmission unit that allows for the overhead
+
+
+                        required by VXLAN encapsulation. For more information, see <xref href="jow1404333732592.xml" />.</p>
+
+
+                
+
+
+            </li>
+
+
+            <li conref="jow1424191621914.xml#jow1424191621914/li_N10127_N1003C_N10024_N10001" id="li_N1005D_N1002D_N1001F_N10001" >
+
+
+                <p />
+
+
+            </li>
+
+
+            <li id="li_N10072_N1002D_N1001F_N10001" >
+
+
+                <p >Add one or more segmentation ranges.</p>
+
+
+                
+
+
+                    <p conref="jow1425657297895.xml#jow1425657297895/seg_range_definition" >
+
+
+                
+
+
+                        <xref href="jow1425657297895.xml#jow1425657297895/info_add_seg-range" /></p>
+
+
+                
+
+
+                    <dl conref="jow1425657297895.xml#jow1425657297895/dl_VxLAN_extras">
+
+
+                        <dlentry >
+
+
+                            <dt />
+
+
+                            <dd />
+
+
+                        </dlentry>
+
+
+                    </dl>
+
+
+                    <fig id="fig_tlm_tfg_hr" >
+
+
+                        <image href="jow1425669118942.image" id="image_o4n_cgg_hr"  width="5in">
+
+
+                            <alt >i-css-create-seg-range-vxlan</alt>
+
+
+                        </image>
+
+
+                    </fig>
+
+
+                
+
+
+            </li>
+
+
+            <li id="li_N10088_N1002D_N1001F_N10001" >
+
+
+                <p conref="jow1425657297895.xml#jow1425657297895/p_commit_seg_range" />
+
+
+            </li>
+
+
+        </ol>
+
+
+    </body>
+    
+
+
+</topic>

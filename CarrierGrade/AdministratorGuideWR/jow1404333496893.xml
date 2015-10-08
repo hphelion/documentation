@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333496893" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+    
+-->
+    <title 
+    <shortdesc 
+        operational modes.</shortdesc>
+    <prolog>
+        <author 
+        <author 
+        <author 
+    </prolog>
+    <body>
+        <section id="section_N10027_N10024_N10001" 
+            <p 
+                configuring the management, infrastructure, or OAM networks, you can choose from the
+                following operational modes. For more information, refer to the Linux kernel <xref format="html" href="https://www.kernel.org/doc/Documentation/networking/bonding.txt" 
+                documentation.</p>
+            <!-- note id="note_N1003E_N1002C_N10029_N10001" 
+                <p 
+                    Balanced-alb modes is planned for a future release.</p>
+            </note -->
+            <table frame="all" id="table_kb5_rwb_ln">
+                <title 
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                    <colspec colname="c2" colnum="2" colwidth="3.0*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                            </entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <!-- row>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                                    tolerance. Data packets are transmitted in sequential order from
+                                    the first available slave interface to the second.</p>
+                            </entry>
+                        </row -->
+                        <row>
+                            <entry 
+                                <p 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                                    interface at a time is available. The backup slave interface
+                                    becomes active only when the active slave interface fails.</p>
+                            </entry>
+                            <entry 
+                                <p 
+                            </entry>
+                        </row>
+                        <row>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                                    tolerance. The same slave interface is used for each destination
+                                    MAC address.</p>
+                                <p 
+                                    the target slave interface is determined by calculating the
+                                    source MAC address XOR'd with the destination MAC address,
+                                    modulo 2.</p>
+                                <p 
+                                    xmit-hash-policy option. For details, see <xref href="#jow1404333496893/xmit-hash-policy" 
+                            </entry>
+                            <entry 
+                                <p 
+                            </entry>
+                        </row>
+                        <!-- row>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                  slave interfaces.</p>
+                            </entry>
+                        </row -->
+                        <row>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                                    tolerance. Implements dynamic link aggregation as per the IEEE
+                                    802.3ad specification.</p>
+                                <p 
+                                    xmit-hash-policy option. For details, see <xref href="#jow1404333496893/xmit-hash-policy" 
+                                <p 
+                                    interface, the far-end switch ports must be configured in
+                                    passive LACP mode.</p>
+                            </entry>
+                            <entry 
+                                <p 
+                            </entry>
+                        </row>
+                        <!-- row>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                                    tolerance. Transmitted data traffic is distributed according to
+                                    the current load, computed relative to the speed on each slave.
+                                    If a receiving slave interface fails, the another slave
+                                    interface takes over the orphan MAC addresses.</p>
+                                <p 
+                            </entry>
+                        </row -->
+                        <!-- row>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                                    tolerance. Includes Balance-tlb mode, plus receive load
+                                    balancing for IPV4 traffic, which is achieved by ARP
+                                    negotiation. </p>
+                                <p 
+                            </entry>
+                        </row -->
+                    </tbody>
+                </tgroup>
+            </table>
+            <table frame="all" id="xmit-hash-policy">
+                <title 
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                    <colspec colname="c2" colnum="2" colwidth="2.0*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="2*"/>
+                    <thead>
+                        <row>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                            </entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry 
+                                <p 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                                    addresses.</p>
+                            </entry>
+                            <entry 
+                                <p 
+                                    (compute nodes)</p>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                                    and on source and destination IP addresses.</p>
+                            </entry>
+                            <entry 
+                                <p 
+                            </entry>
+                        </row>
+                        <row>
+                            <entry 
+                                <p 
+                            </entry>
+                            <entry 
+                                <p 
+                                    and on source and destination ports.</p>
+                            </entry>
+                            <entry 
+                                <p 
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+    </body>
+</topic>
