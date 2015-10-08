@@ -137,11 +137,7 @@
           <topicref href="helion/objectstorage/safe_rebalance_deploy_ring.dita"/>
           <topicref href="helion/objectstorage/input_model_change_existing_rings.dita"/>
         </topicref>
-        <topicref href="helion/objectstorage/check_objectstorage_operation.dita">
-          <topicref href="helion/objectstorage/validating_swift_recon.dita"/>
-          <topicref href="helion/objectstorage/lm_scan_metering.dita"/>
-          <topicref href="helion/objectstorage/utility.dita"/>
-        </topicref>
+        
         <topicref href="helion/objectstorage/operational_procedure.dita">
           <topicref href="helion/objectstorage/resetting_builder_file.dita"/>
           <topicref href="helion/objectstorage/recovering_builder_file.dita"/>
@@ -198,6 +194,12 @@
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>
+      </topicref>
+      <!-- OBJECT STORAGE -->
+      <topicref href="helion/objectstorage/check_objectstorage_operation.dita">
+        <topicref href="helion/objectstorage/validating_swift_recon.dita"/>
+        <topicref href="helion/objectstorage/lm_scan_metering.dita"/>
+        <topicref href="helion/objectstorage/utility.dita"/>
       </topicref>
       <!-- reporting = metering = ceilomter -->
       <topicref href="helion/metering/metering_overview.dita" navtitle="Metering Service"
