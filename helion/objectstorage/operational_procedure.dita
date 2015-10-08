@@ -31,7 +31,7 @@
         id="ul_rwy_ntz_4t">
         <li><xref href="resetting_builder_file.dita">Resetting Builder Files</xref></li>
         <li><xref href="recovering_builder_file.dita">Recovering Builder Files</xref></li>
-        <li><xref href="swift_first_proxy_server.dita">Identify the first Swift Proxy
+        <li><xref href="first_proxy_server.dita">Identify the first Swift Proxy
           Server</xref></li>
       </ul><?oxy_custom_start type="oxy_content_highlight" color="255,60,255"?></p>
     <?oxy_custom_end?>

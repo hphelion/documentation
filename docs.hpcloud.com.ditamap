@@ -147,7 +147,7 @@
         <topicref href="helion/objectstorage/operational_procedure.dita">
           <topicref href="helion/objectstorage/resetting_builder_file.dita"/>
           <topicref href="helion/objectstorage/recovering_builder_file.dita"/>
-          <topicref href="helion/objectstorage/swift_first_proxy_server.dita"/>
+          <topicref href="helion/objectstorage/first_proxy_server.dita"/>
           <topicref href="helion/objectstorage/add_new_node.dita"/>
           <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
         </topicref>
