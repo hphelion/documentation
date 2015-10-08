@@ -85,10 +85,10 @@
     </section>
     <section>
       <p>The GUI is used only once: during the initial installation of your cloud.</p><p>For VSA you
-        must follow the steps outlined in the <xref href="cinder/vsa/vsa.dita#topic_gmc_dgk_jt">VSA
+        must follow the steps outlined in the <xref href="cinder/vsa/vsa.dita">VSA
           Configuration</xref>page.</p> After deployment, continue to <xref
-        href="installation_verification.dita#tempest">Verifying Your Installation</xref> and <xref
-        href="postinstall_checklist.dita#postinstall_checklist">Post-Installation
+        href="installation_verification.dita">Verifying Your Installation</xref> and <xref
+        href="postinstall_checklist.dita">Post-Installation
         Checklist</xref>.<p>To understand a cloud configuration more thoroughly and to learn how to
         make any changes later, visit these documentation pages: <ul id="ul_akt_fv2_lt">
           <li><xref href="input_model.dita">HP Helion OpenStack 2.0 Input Model</xref></li>
