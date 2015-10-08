@@ -114,9 +114,6 @@
             format="html" scope="external">XL450 Gen9</xref></li>
       </ul>
     </section>
-    <p>For more information about independent hardware vendor (IHV) supported hardware, see the
-        <xref href="http://helionready.hpcloud.com/ihv/category/Server" format="html"
-        scope="external">HP Helion Ready Solution Catalog.</xref></p>
     <section id="stand-up-adapters">
       <title>Stand Up Adapters:</title>
     </section>
@@ -220,5 +217,6 @@
         <li>HP QMH2672 16Gb Fibre Channel Host Bus Adapter </li>
       </ul>
     </section>
+    <p>For more information about independent hardware vendor (IHV) supported hardware, see the HP Helion Ready Solution Catalog.</p>
   </body>
 </topic>
