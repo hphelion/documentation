@@ -5,7 +5,7 @@
   <body>
 
     <section id="supportedhw">
-      <title>Supported Hardware</title>
+      <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Supported Hardware</title>
       <p>The following hardware has been tested and verified to work with HP Helion OpenStack
         2.0:</p>
     </section>
