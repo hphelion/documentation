@@ -61,9 +61,9 @@
               <codeph>_swift-make-delta-rebalance.yml</codeph> playbook has changed and copies those
             rings to all Swift nodes.</p>
         </stentry>
-        <stentry>Every time that you use the<codeph> _swift-make-delta-rebalance.yml</codeph>
-          playbook, you must copy these rings to the system using the
-            <codeph>swift-reconfigure.yml</codeph> playbook. If you forget and run
+        <stentry>Every time that you directly use the<codeph>
+            _swift-make-delta-rebalance.yml</codeph> playbook, you must copy these rings to the
+          system using the <codeph>swift-reconfigure.yml</codeph> playbook. If you forget and run
             _<codeph>swift-make-delta-rebalance.yml</codeph> twice, the process may move two
           replicates of some partitions at the same time.</stentry>
       </strow>

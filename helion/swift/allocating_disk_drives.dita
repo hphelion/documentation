@@ -211,7 +211,6 @@
           <strow>
             <stentry>
               <ul id="ul_whq_2sc_jt">
-                <li><codeph><b>fstype</b></codeph></li>
                 <li><codeph><b>mount</b></codeph></li>
                 <li><codeph>mkfs-opts</codeph></li>
               </ul>
@@ -220,15 +219,27 @@
           </strow>
           <strow>
             <stentry>
+              <ul id="ul_ixh_r3n_pt">
+                <li><codeph><b>fstype</b></codeph></li>
+              </ul>
+            </stentry>
+            <stentry>Set this to <codeph>xfs</codeph></stentry>
+          </strow>
+          <strow>
+            <stentry>
               <ul id="ul_wjz_jsc_jt">
                 <li><codeph><b>name</b></codeph></li>
                 <li><codeph><b>size</b></codeph></li>
               </ul>
             </stentry>
-            <stentry>Specify both of this attributes.</stentry>
+            <stentry>Specify both of these attributes.</stentry>
           </strow>
           <strow>
-            <stentry><codeph><b>consumer</b></codeph></stentry>
+            <stentry>
+              <ul id="ul_z5d_s3n_pt">
+                <li><codeph><b>consumer</b></codeph></li>
+              </ul>
+            </stentry>
             <stentry> This attribute must have <codeph>name</codeph> field containing
               <b>swift</b>.</stentry>
           </strow>

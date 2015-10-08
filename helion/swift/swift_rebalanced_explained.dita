@@ -24,12 +24,10 @@
         following factors, you must move the partition gradually: </p><ul id="ul_jrz_q3s_4t">
         <li>Not all devices are of the same size. We automatically assign different weights to
           drives so that smaller drives store fewer partitions than larger drives.</li>
-        <li>The process attempts to keep replicas of the same partition in different servers, Swift
-          zones or Swift regions.</li>
-        <li>When making large changes, you may not double the number of drives in one step. This may
-          involve much traffic related to replication process which may suffer the system
-          performance.</li>
-        <li> we might not double the number of drives in one step since this might involve so much
+        <li>The process attempts to keep replicas of the same partition in different servers.</li>
+        <li>When making large changes,
+          <!--you may not double the number of drives in one step. This may involve much traffic related to replication process which may suffer the system performance.-->
+          you might not double the number of drives in one step since this might involve much
           traffic related to the replication process that the system performance suffers. There are
           two ways to mitigate this:<ul id="ul_msz_tjs_4t">
             <li>Add servers in smaller groups</li>

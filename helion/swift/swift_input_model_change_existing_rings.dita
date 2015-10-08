@@ -10,8 +10,9 @@
     <p>
       <ul id="ul_sqz_jft_4t">
         <li><b>Changing the Input Model Phase</b><ul id="ul_wrz_jft_4t">
-            <li>If not already done, set the weight-step attribute <b>(how to set up the weight step
-                attribute?)</b></li>
+            <li>If not already done, set the weight-step attribute. (See <xref
+                href="swift_preparing_ring_changes.dita#topic_t1y_vjs_4t/setting-weight-step-attribute"
+                >Setting the weight-step attribute</xref>). </li>
             <li>Edit the Input Model as appropriate. You must edit the YAML file as per your
               requirement. For more information, refer <xref href="../input_model.dita#input_model"
               /></li>
@@ -26,13 +27,16 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
               directory.<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
             <li>Run the following
-              playbook.<codeblock> _swift-validate-input-model.yml </codeblock></li>
+              playbook.<codeblock>cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _swift-validate-input-model.yml</codeblock></li>
             <li>  Validate that the number of drives proposed to be added or deleted or weight
               change is correct. Fix any errors in your Input Model. At this stage, no changes have
               been made to rings.  </li>
           </ul></li>
         <li><b>First phase of ring rebalance:</b><ul id="ul_gsz_jft_4t">
-            <li>Run the following command:<codeblock>swift-deploy.yml </codeblock></li>
+            <li>Run the following
+              command:<codeblock>cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost swift-deploy.yml </codeblock></li>
             <li>
               <p>Wait until replication has finished or min-part-time has elapsed (which ever is
                 longer) (<b>any output we get after executing the above command?)</b></p>
@@ -40,11 +44,16 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           </ul></li>
         <li><b>Weight change phase of ring rebalance</b>:<ul id="ul_qsz_jft_4t">
             <li>Run the following
-              playbook<codeblock> _swift-make-delta-rebalance.yml</codeblock></li>
-            <li>Run the reconfigure<codeblock>swift-reconfigure.yml </codeblock></li>
+              playbook<codeblock>cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _swift-make-delta-rebalance.yml</codeblock></li>
+            <li>Run the
+              reconfigure<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
             <li>Wait until replication has finished or min-part-time has elapsed (which ever is
               longer)</li>
-            <li>Run the following command <codeblock>_swift-validate-input-model.yml</codeblock>and
+            <li>Run the following command
+              <codeblock>cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _swift-validate-input-model.yml</codeblock>and
               examine the report.<ul id="ul_atz_jft_4t">
                 <li>When there are no proposed weight changes, you proceed the final phase.</li>
                 <li>
@@ -56,19 +65,24 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
         <li><b>Final rebalance phase:</b><p>The final rebalance phase moves all replicas to their
             final destination.</p><ul id="ul_ktz_jft_4t">
             <li>Run the following
-              playbook<codeblock> _swift-make-delta-rebalance.yml</codeblock></li>
-            <li>Run the reconfigure<codeblock>swift-reconfigure.yml </codeblock></li>
+              playbook<codeblock>cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _swift-make-delta-rebalance.yml</codeblock></li>
+            <li>Run the
+              reconfigure<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
             <li>Wait until replication has finished or min-part-time has elapsed (which ever is
-              longer)</li>
+              longer).</li>
             <li>Repeat the above action till the ring is rebalanced.</li>
           </ul></li>
       </ul>
     </p>
-    <section id="system-change"><sectiondiv><b>System change that change existing
-        rings</b></sectiondiv><p>There are many system changes ranging from adding servers to
-        replacing drives that might require some ring rebuild and rebalance actions.</p><p>Note:
-        This section provides an overview of these changes and a summary of the required actions.
-        More detailed procedures are provided elsewhere.</p><p>
+    <section>
+      <title>System change that change existing rings</title>
+      <p>There are many system changes ranging from adding servers to replacing drives that might
+        require some ring rebuild and rebalance actions.</p>
+      <p>Note: This section provides an overview of these changes and a summary of the required
+        actions. More detailed procedures are provided elsewhere.</p>
+      <p>
         <simpletable id="simpletable_mtc_yb1_kt">
           <strow>
             <stentry><b>Actions</b></stentry>
@@ -127,6 +141,7 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
             </stentry>
           </strow>
         </simpletable>
-      </p></section>
+      </p>
+    </section>
   </body>
 </topic>

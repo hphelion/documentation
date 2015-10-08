@@ -4,7 +4,7 @@
   <title>When it is safe to rebalance and deploy a new ring?</title>
   <body>
     <p>Before deploying a new ring, you must know the change that has been applied to the last ring,
-      i.e., all the partitions are in their correct location (for example: replication is complete).
+      i.e., all the partitions are in their correct location (for example: replication) is complete.
       There are three aspects to this:</p>
     <ul id="ul_dnm_m1t_4t">
       <li>
