@@ -9,9 +9,10 @@
         <image href="../../../media/cicd_logging_buildlist.png" id="image_qmw_bcw_4t"
         placement="break"/></p><p>Each event - Building, Testing, and Deploying - can be expanded to display the logs associated
       with that event.<ul id="ul_yhf_qbw_4t">
+        <li>Checking <b>Show Raw Log</b> will strip out the formatting that makes the logs easier to
+          read and display only the raw output.</li>
         <li>Checking <b>Dark Background</b> will invert the colors to white text on a black
           background. This may be easier to read.</li>
-        <li>Checking <b>Show Raw Log</b> will </li>
       </ul>
       <image href="../../../media/cicd_logging_alerts.png" id="image_d22_ttv_4t"/></p>
   </body>

@@ -32,8 +32,6 @@
           navtitle="Add or Edit Post Deployment Actions" locktitle="yes"/>
       </topicref>
       <topicref href="2.0/CICD/cicd_create_build.dita" navtitle="Create a New Build" locktitle="yes"/>
-      <topicref href="2.0/CICD/cicd_preview_tempdeploy.dita"
-        navtitle="Create a Temporary Deployment" locktitle="yes"/>
     </topicref>
   </topicref>
   <!-- -->
