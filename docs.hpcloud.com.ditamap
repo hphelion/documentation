@@ -24,7 +24,7 @@
       locktitle="yes"/>
     <topicref href="helion/example_configs.dita" navtitle="Example Configurations" locktitle="yes"/>
     <topicref href="helion/hardware.dita" navtitle="Hardware Requirements" locktitle="yes"/>
-    <topicref href="helion/supported_hardware.dita" type="topic" format="dita" scope="local"/>
+    <topicref href="helion/supported_hardware.dita" navtitle="Supported Hardware" locktitle="yes"/>
     <topicref href="helion/releasenotes.dita" navtitle="Release Notes" locktitle="yes"/>
     <topicref href="helion/faq.dita" navtitle="Frequently Asked Questions" locktitle="yes"/>
     <topicref href="helion/eula.dita" toc="no"/>
