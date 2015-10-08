@@ -113,44 +113,44 @@
       </topicref>
 
       <!-- Object Storage -->
-      <topicref href="helion/swift/swift_overview.dita" navtitle="Object Storage Service"
+      <topicref href="helion/objectstorage/swift_overview.dita" navtitle="Object Storage Service"
         locktitle="yes">
-        <topicref href="helion/swift/swift_input_cloud_model.dita" toc="yes"
+        <topicref href="helion/objectstorage/swift_input_cloud_model.dita" toc="yes"
           navtitle="Modifying Example Configurations for Object Storage" locktitle="yes">
-          <topicref href="helion/swift/allocate-pac.dita"/>
-          <topicref href="helion/swift/allocating_server.dita" navtitle="Allocating Object Server"/>
-          <topicref href="helion/swift/creating_roles_swift_nodes.dita"/>
-          <topicref href="helion/swift/allocating_disk_drives.dita"
+          <topicref href="helion/objectstorage/allocate-pac.dita"/>
+          <topicref href="helion/objectstorage/allocating_server.dita" navtitle="Allocating Object Server"/>
+          <topicref href="helion/objectstorage/creating_roles_swift_nodes.dita"/>
+          <topicref href="helion/objectstorage/allocating_disk_drives.dita"
             navtitle="Allocating Disk Drives">
-            <topicref href="helion/swift/label_on_partition.dita" toc="yes"
+            <topicref href="helion/objectstorage/label_on_partition.dita" toc="yes"
               navtitle="How to Verify if a Partition Labelled" locktitle="yes"/>
-            <topicref href="helion/swift/filesystem_label.dita" toc="yes"
+            <topicref href="helion/objectstorage/filesystem_label.dita" toc="yes"
               navtitle="How to Verify if a Filesystem Label" locktitle="yes"/>
           </topicref>
-          <topicref href="helion/swift/creating-pac-cluster.dita"/>
-          <topicref href="helion/swift/creating-object-server-resource.dita"/>
-          <topicref href="helion/swift/allocating_network.dita"/>
-          <topicref href="helion/swift/ring_specifications.dita"/>
-          <topicref href="helion/swift/storage-policies.dita"/>
+          <topicref href="helion/objectstorage/creating-pac-cluster.dita"/>
+          <topicref href="helion/objectstorage/creating-object-server-resource.dita"/>
+          <topicref href="helion/objectstorage/allocating_network.dita"/>
+          <topicref href="helion/objectstorage/ring_specifications.dita"/>
+          <topicref href="helion/objectstorage/storage-policies.dita"/>
         </topicref>
-        <topicref href="helion/swift/swift_ring_management.dita">
-          <topicref href="helion/swift/swift_rebalanced_explained.dita"/>
-          <topicref href="helion/swift/swift_preparing_ring_changes.dita"/>
-          <topicref href="helion/swift/swift_play_book_linked_ring_management.dita"/>
-          <topicref href="helion/swift/swift_safe-rebalance-deploy-ring.dita"/>
-          <topicref href="helion/swift/swift_input_model_change_existing_rings.dita"/>
+        <topicref href="helion/objectstorage/swift_ring_management.dita">
+          <topicref href="helion/objectstorage/swift_rebalanced_explained.dita"/>
+          <topicref href="helion/objectstorage/swift_preparing_ring_changes.dita"/>
+          <topicref href="helion/objectstorage/swift_play_book_linked_ring_management.dita"/>
+          <topicref href="helion/objectstorage/swift_safe-rebalance-deploy-ring.dita"/>
+          <topicref href="helion/objectstorage/swift_input_model_change_existing_rings.dita"/>
         </topicref>
-        <topicref href="helion/swift/check-swift-operation.dita">
-          <topicref href="helion/swift/validating_swift_recon.dita"/>
-          <topicref href="helion/swift/swiftlm-scan_metering.dita"/>
-          <topicref href="helion/swift/swift_utility.dita"/>
+        <topicref href="helion/objectstorage/check-swift-operation.dita">
+          <topicref href="helion/objectstorage/validating_swift_recon.dita"/>
+          <topicref href="helion/objectstorage/swiftlm-scan_metering.dita"/>
+          <topicref href="helion/objectstorage/swift_utility.dita"/>
         </topicref>
-        <topicref href="helion/swift/swift_operational_procedure.dita">
-          <topicref href="helion/swift/swift_resetting_builder_file.dita"/>
-          <topicref href="helion/swift/swift_recovering_builder_file.dita"/>
-          <topicref href="helion/swift/swift_first_proxy_server.dita"/>
-          <topicref href="helion/swift/swift_add_new_node.dita"/>
-          <topicref href="helion/swift/swift_add_new_storage_policy.dita"/>
+        <topicref href="helion/objectstorage/swift_operational_procedure.dita">
+          <topicref href="helion/objectstorage/swift_resetting_builder_file.dita"/>
+          <topicref href="helion/objectstorage/swift_recovering_builder_file.dita"/>
+          <topicref href="helion/objectstorage/swift_first_proxy_server.dita"/>
+          <topicref href="helion/objectstorage/swift_add_new_node.dita"/>
+          <topicref href="helion/objectstorage/swift_add_new_storage_policy.dita"/>
         </topicref>
       </topicref>
 
@@ -192,7 +192,7 @@
       <topicref href="helion/operations/remove_node.dita"/>
       <topicref href="helion/operations/replace_controller.dita"/>
       <topicref href="helion/cinder/vsa/vsa_create_multiple_clusters.dita"/>
-      <topicref href="helion/swift/swift_removing_node.dita"/>
+      <topicref href="helion/objectstorage/swift_removing_node.dita"/>
       <topicref href="helion/cinder/ceph/adding_new_osd_node.dita"/>
 
       <topicref href="helion/cinder/singleton_service_cinder.dita"/>
@@ -250,12 +250,12 @@ MONITORING AND LOGGING
 
       <!-- TROUBLESHOOTING -->
       <topichead navtitle="Troubleshooting">
-        <topicref href="helion/swift/troubleshooting.dita" navtitle="Object Storage Troubleshooting"
+        <topicref href="helion/objectstorage/troubleshooting.dita" navtitle="Object Storage Troubleshooting"
           locktitle="yes">
-          <topicref href="helion/swift/deploy_fails_with_msdos_disks.dita"/>
-          <topicref href="helion/swift/examine_details_planned_ring_changes_prior_deploy.dita"/>
-          <topicref href="helion/swift/how_to_change_min-part-power.dita"/>
-          <topicref href="helion/swift/interpreting_swift-validate-input-model.dita"/>
+          <topicref href="helion/objectstorage/deploy_fails_with_msdos_disks.dita"/>
+          <topicref href="helion/objectstorage/examine_details_planned_ring_changes_prior_deploy.dita"/>
+          <topicref href="helion/objectstorage/how_to_change_min-part-power.dita"/>
+          <topicref href="helion/objectstorage/interpreting_swift-validate-input-model.dita"/>
         </topicref>
         <topicref href="helion/ceilometer/metering_troubleshoot.dita"
           navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>

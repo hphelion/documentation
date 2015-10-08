@@ -27,7 +27,7 @@
         <li><xref href="#alarmdefinitions/nova">Nova</xref></li>
         <li><xref href="#alarmdefinitions/opsconsole">Operations Console</xref></li>
         <li><xref href="#alarmdefinitions/rabbitmq">RabbitMQ</xref></li>
-        <li><xref href="#alarmdefinitions/swift">Swift</xref></li>
+        <li><xref href="#alarmdefinitions/objectstorage">Swift</xref></li>
       </ul>
     </section>
     <section id="ceilometer"><title>Ceilometer</title>

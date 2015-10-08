@@ -25,7 +25,7 @@
             Model</xref> to learn about the configuration options for your cloud.</li>
         <li>Make sure <xref href="administration/wipe_disks.dita">all disks on the system(s) are
             wiped</xref> before you begin the install. (For Swift, refer to <xref
-            href="swift/allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
+            href="objectstorage/allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
             >Swift Requirements for Device Group Drives</xref>)</li>
         <li>The <codeph>/dev/sda</codeph> disk on your systems will be used for the operating
           system.</li>
