@@ -104,7 +104,7 @@ mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
 enable_distributed_routing = False</codeblock></li>
         <li>Commit your cloud deploy configuration to the<xref
-            href="using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
+            href="using_git.dita"> local git repo</xref>, as follows: <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock>
           <note>This step needs to be repeated any time you make changes to your configuration files
@@ -563,7 +563,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></p>
 | domain-c21 | Cluster1 | DC1        | activated           |
 +------------+----------+------------+---------------------+</codeblock></li>
           <li>Commit your cloud deploy configuration to the<xref
-              href="using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows:
+              href="using_git.dita"> local git repo</xref>, as follows:
             <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock></li>

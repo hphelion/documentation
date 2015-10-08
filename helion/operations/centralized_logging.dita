@@ -289,7 +289,7 @@
       </ul>
       <p>Details:</p>
       <p><b>Operations Console method</b> - Access the <xref
-          href="../monasca/monasca.dita#monitoring/working" type="section">Operations
+          href="monitoring_service.dita#monitoring/working" type="section">Operations
         Console</xref>.</p>
       <p>Navigate to the <b>Logging Dashboard</b> via the menu.</p>
       <p><b>Direct Access method</b> - From either your deployer or controller node, run the
@@ -345,15 +345,14 @@
         <li>Log in to the Operations Console GUI</li>
         <li>Navigate to the Monitoring | Alarm Definitions page</li>
         <li>Find the alarm definitions that are applied to the various hosts. See the <xref
-            href="../monasca/alarms.dita">Alarm Definitions List</xref> for the Centralized Logging
-          Alarm Definitions.</li>
+            href="alarms.dita">Alarm Definitions List</xref> for the Centralized Logging Alarm
+          Definitions.</li>
         <li>Navigate to the Monitoring | Alarm page</li>
         <li>Find the alarm definitions applied to the various hosts. These should match the alarm
-          definitions in the <xref href="../monasca/alarms.dita">Alarms Definitions list</xref>
-          below.</li>
+          definitions in the <xref href="alarms.dita">Alarms Definitions list</xref> below.</li>
         <li>See if the alarm is green (good) or is in a bad state. If any are in a bad state, see
-          the possible actions to perform in the <xref href="../monasca/alarms.dita">Alarms
-            Definitions list</xref>.</li>
+          the possible actions to perform in the <xref href="alarms.dita">Alarms Definitions
+            list</xref>.</li>
       </ol>
       <p>You can use this filtering technique in the "Alarms" page to look for the following:</p>
       <ol>

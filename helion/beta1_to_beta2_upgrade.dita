@@ -8,8 +8,8 @@
     <p>To perform the upgrade, follow the steps below. The upgrade will apply updates to HP Helion
       OpenStack services, as well as to the underlying cloud platform. </p>
     <p> The upgrade mechanism included in this release is not complete in that it does not upgrade
-      the full set of services in the HP Helion OpenStack stack. The following set of components are upgraded as
-      part of the upgrade: <ul>
+      the full set of services in the HP Helion OpenStack stack. The following set of components are
+      upgraded as part of the upgrade: <ul>
         <li>Linux for HP Helion</li>
         <li>sosreport</li>
         <li>monasca-agent</li>
@@ -53,7 +53,7 @@ git status</codeblock>
               <codeblock>git add --all .
 git commit -m "your commit message here"</codeblock> More
               information about git and the config processor can be found on the <xref
-                href="using_git.dita#topic_u3v_1yz_ct">Using Git page</xref>.</li>
+                href="using_git.dita">Using Git page</xref>.</li>
             <li> Remove any data persisted from the Beta 1 deployment by executing these commands on
               the deployer node to delete the cp-persistent branch and all its persisted data, and
               recreate it. Then switch to the site branch:

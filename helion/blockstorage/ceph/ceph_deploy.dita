@@ -53,7 +53,7 @@
                   pools created by HP Helion OpenStack.</p>
               </li>
             </ul></li>
-          <li> Commit your configuration to a <xref href="../../using_git.dita#topic_u3v_1yz_ct"
+          <li> Commit your configuration to a <xref href="../../using_git.dita"
               >local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
 git add -A

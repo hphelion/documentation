@@ -39,7 +39,7 @@
             variables to be set. Do not change values inside double curly braces: {{ }}. </p></li>
     <li>Once the template is modified, commit the change to the local git repository, and rerun the
           configuration processor / deployment area preparation playbooks (as suggested at <xref
-            href="../using_git.dita#topic_u3v_1yz_ct">Using Git for Configuration
+            href="../using_git.dita">Using Git for Configuration
           Management</xref>):
           <codeblock>$ cd ~/helion
        $ git checkout site
@@ -60,7 +60,7 @@
             <b>/home/stack/helion/my_cloud/config/keystone/keystone_deploy_config.ym</b>l. </li>
         <li>Commit the change into local git repository, and rerun configuration processor /
           deployment area preparation playbooks (as suggested at <xref
-            href="../using_git.dita#topic_u3v_1yz_ct">Using Git for Configuration
+            href="../using_git.dita">Using Git for Configuration
           Management</xref>):</li>
       </ol>
       <codeblock>$ cd ~/helion

@@ -88,14 +88,14 @@ enable_distributed_routing = False</codeblock><note>
                   You modify the mechanism_drivers = ovsvapp in the
                   <codeph>neutron.conf.j2</codeph>.</note></li>
               <li>Commit your cloud deploy configuration to the<xref
-                  href="using_git.dita#topic_u3v_1yz_ct"> local git repo</xref>, as follows:
+                  href="using_git.dita"> local git repo</xref>, as follows:
                 <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock></li>
               <li>Refer to the installation guide and execute the steps mentioned in sections <xref
                   href="bare_installation_kvm.dita#install_kvm/CobblerDeploy">Deploy Cobbler</xref>,
                   <xref href="bare_installation_kvm.dita#install_kvm/NodeProvision"/>, and <xref
-                  href="bare_installation_kvm.dita#install_kvm/run-config-processor">Run the
+                  href="bare_installation_kvm.dita#install_kvm/Configuration">Run the
                   Configuration Processor</xref> to deploy cloud controller.</li>
             </ol>
           </p></li>

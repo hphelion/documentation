@@ -12,7 +12,7 @@
               href="../bare_installation_kvm.dita#install_kvm/validate_swift">Validate Object
               Storage</xref> or run the <codeph>hlm-deploy.yml</codeph> playbook as described in
             step <b>2 c</b> in the <xref
-              href="../bare_installation_kvm.dita#install_kvm/run-config-processor">Install
+              href="../bare_installation_kvm.dita#install_kvm/Configuration">Install
               Guide</xref> otherwise the files needed to run the
               <codeph>swiftlm-ring-supervisor</codeph> will not be in place on the node.</note></li>
         <li>Execute the following
@@ -25,7 +25,7 @@
     <p>The following example provides an error message, description, and the resolution.<note>To
         resolve an error, you must first modify the cloud model and re-run the configuration
         processor as described in <xref
-          href="../using_git.dita#topic_u3v_1yz_ct/updating-configuration-including-default-config"
+          href="../using_git.dita#using_git/updating-configuration-including-default-config"
           >Updating any configuration, including the default configuration</xref> and continue with
         the deploy.</note></p>
     <p>
