@@ -39,7 +39,7 @@
         settings.</p>
       <p/>
     </section>
-    <section conref="../postinstall_checklist.dita#postinstall_checklist/horizon"/>
+    <section conref="../operations/accessing_horizon.dita#horizon_access/horizon"/>
     <section>
       <p>At the bottom of this page, you can see some of the services you can manage right from the
         dashboard.</p>

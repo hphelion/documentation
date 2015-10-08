@@ -98,7 +98,7 @@
         more information.</p>
       <p><b>Encryption of sensitive data</b></p>
       <p>In this release, connection details and passwords are encrypted and or protected. See <xref
-          href="security/encrypted_storage.dita#topic_w3l_pht_4t">Encryption of Passwords and
+          href="security/encrypted_storage.dita">Encryption of Passwords and
           Sensitive Data </xref>for more information.</p>
       <p><b>AppArmor enabled</b></p>
       <p>...</p>

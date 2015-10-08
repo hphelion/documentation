@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic20483">
+<topic xml:lang="en-us" id="secure_network">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring Your Network Securely</title>
   <prolog>
     <metadata>
@@ -215,8 +215,8 @@
         </li>
         <li>Internal url (VIP) - <codeph>https://&lt;HelionOpenStack</codeph>
           <note>All access to overcloud services now happens over a TLS connection. Read more about
-            this change in <xref href="tls.dita">HP
-              Helion OpenStack TLS Support</xref> HP Helion OpenStack TLS Support</note></li>
+            this change in <xref href="tls.dita">HP Helion OpenStack TLS Support</xref> HP Helion
+            OpenStack TLS Support</note></li>
       </ul>
       <table>
         <tgroup cols="3">
@@ -661,11 +661,11 @@
           </tbody>
         </tgroup>
       </table>
-      <p>Jump to <xref type="section" href="#topic20483/ref2">Reference 2: HP4000 SAN - SANiQ TCP
-          and UDP Port Usage</xref>.</p>
+      <p>Jump to <xref type="section" href="#secure_network/ref2">Reference 2: HP4000 SAN - SANiQ
+          TCP and UDP Port Usage</xref>.</p>
       <p>
-        <xref type="section" href="#topic20483/fig6">Figure 6</xref> depicts a logical deployment
-        after applying ACLs for flows in table:</p>
+        <xref type="section" href="#secure_network/fig6">Figure 6</xref> depicts a logical
+        deployment after applying ACLs for flows in table:</p>
     </section>
     <section id="fig6">
       <title>Figure 6: StoreVirtual in a logical deployment</title>
