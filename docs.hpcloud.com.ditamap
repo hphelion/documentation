@@ -162,7 +162,7 @@
       </topicref>
 
       <!-- Neutron -->
-      <topicref href="helion/networking/neutron_overview.dita" navtitle="Networking Service"
+      <topicref href="helion/networking/networking_overview.dita" navtitle="Networking Service"
         locktitle="yes">
         <topicref href="helion/networking/lbaas_admin.dita"
           navtitle="Configuring Load Balancing as a Service (LBaaS)" locktitle="yes"/>
