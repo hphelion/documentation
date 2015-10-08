@@ -17,7 +17,7 @@
         <li><xref href="swift_input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
             >Upgrading the size of disk drives used by Swift</xref></li>
       </ul></p>
-    <p>Some of the above changes require the rebuilt of the rings.</p>
+    <p>Some of the above changes require the rebuild of the rings.</p>
     <p>
       <note>The process of modifying or adding a configuration is similar to other configuration or
         topology change in the cloud. Generally, you make the changes to the input model files at
