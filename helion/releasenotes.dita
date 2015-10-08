@@ -163,7 +163,7 @@
             case that a third-party driver doesn’t exist for LBaaS V2 installing LBaaS V1 instead of
             V2 is supported.</p>
           <ul>
-            <li>For more information, see: <xref href="neutron/lbaas_admin.dita">Load Balancer (LBaaS)
+            <li>For more information, see: <xref href="networking/lbaas_admin.dita">Load Balancer (LBaaS)
                 Configuration</xref></li>
           </ul>
         </li>
@@ -173,7 +173,7 @@
             third-party Firewalls can be integrated with this extension into HP Helion OpenStack as
             well.</p>
           <ul>
-            <li>For more information, see: <xref href="neutron/fwaas.dita">Firewall (FWaaS)
+            <li>For more information, see: <xref href="networking/fwaas.dita">Firewall (FWaaS)
                 Configuration</xref></li>
           </ul>
         </li>
@@ -183,7 +183,7 @@
             different datacenters hence supporting secure multi Availability Zone architectures for
             customers.</p>
           <ul>
-            <li>For more information, see: <xref href="neutron/vpnaas.dita">VPNaaS
+            <li>For more information, see: <xref href="networking/vpnaas.dita">VPNaaS
                 Configuration</xref></li>
           </ul>
         </li>
@@ -193,7 +193,7 @@
             tenant can dictate the path taken by the data in the physical network outside the cloud.
             It can also be used for multi-homing to two physical networks.</p>
           <ul>
-            <li>For more information, see: <xref href="neutron/multinetwork.dita">Multiple External
+            <li>For more information, see: <xref href="networking/multinetwork.dita">Multiple External
                 Network Configuration</xref></li>
           </ul>
         </li>

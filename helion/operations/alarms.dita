@@ -23,7 +23,7 @@
         <li><xref href="#alarmdefinitions/logging">Logging</xref></li>
         <li><xref href="#alarmdefinitions/monasca">Monasca</xref></li>
         <li><xref href="#alarmdefinitions/mysql">MySQL</xref></li>
-        <li><xref href="#alarmdefinitions/neutron">Neutron</xref></li>
+        <li><xref href="#alarmdefinitions/networking">Neutron</xref></li>
         <li><xref href="#alarmdefinitions/nova">Nova</xref></li>
         <li><xref href="#alarmdefinitions/opsconsole">Operations Console</xref></li>
         <li><xref href="#alarmdefinitions/rabbitmq">RabbitMQ</xref></li>

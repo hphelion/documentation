@@ -162,11 +162,11 @@
       </topicref>
 
       <!-- Neutron -->
-      <topicref href="helion/neutron/neutron_overview.dita" navtitle="Networking Service"
+      <topicref href="helion/networking/neutron_overview.dita" navtitle="Networking Service"
         locktitle="yes">
-        <topicref href="helion/neutron/lbaas_admin.dita"
+        <topicref href="helion/networking/lbaas_admin.dita"
           navtitle="Configuring Load Balancing as a Service (LBaaS)" locktitle="yes"/>
-        <topicref href="helion/neutron/multinetwork.dita" locktitle="yes">
+        <topicref href="helion/networking/multinetwork.dita" locktitle="yes">
           <topicmeta>
             <navtitle>Multiple External Networks</navtitle>
           </topicmeta>
@@ -272,12 +272,12 @@ MONITORING AND LOGGING
       <topicref href="helion/user/lbaas.dita" navtitle="Using Load Balancing as a Service (LBaaS)"
         locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
-      <topicref href="helion/neutron/fwaas.dita" locktitle="yes">
+      <topicref href="helion/networking/fwaas.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Using Firewall as a Service (FWaaS)</navtitle>
         </topicmeta>
       </topicref>
-      <topicref href="helion/neutron/vpnaas.dita" locktitle="yes">
+      <topicref href="helion/networking/vpnaas.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Using VPN as a Service (VPNaaS)</navtitle>
         </topicmeta>
