@@ -155,7 +155,7 @@
       </topicref>
 
       <!-- Cinder -->
-      <topicref href="helion/blockstorage/cinder_overview.dita" navtitle="Block Storage Service"
+      <topicref href="helion/blockstorage/blockstorage_overview.dita" navtitle="Block Storage Service"
         locktitle="yes">
         <topicref href="helion/blockstorage/ceph/ceph_overview.dita" navtitle="Ceph Overview"
           locktitle="yes"/>
