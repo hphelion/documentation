@@ -192,7 +192,7 @@
       <topicref href="helion/operations/remove_node.dita"/>
       <topicref href="helion/operations/replace_controller.dita"/>
       <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"/>
-      <topicref href="helion/objectstorage/swift_removing_node.dita"/>
+      <topicref href="helion/objectstorage/removing_node.dita"/>
       <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"/>
 
       <topicref href="helion/blockstorage/singleton_service_cinder.dita"/>
