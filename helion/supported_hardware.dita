@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_s5z_vn4_pt">
-  <title>Supported Hardware</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Supported Hardware</title>
   <body>
 
     <section id="supportedhw">
-      <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Supported Hardware</title>
       <p>The following hardware has been tested and verified to work with HP Helion OpenStack
         2.0:</p>
     </section>
@@ -217,6 +216,7 @@
         <li>HP QMH2672 16Gb Fibre Channel Host Bus Adapter </li>
       </ul>
     </section>
-    <p>For more information about independent hardware vendor (IHV) supported hardware, see the HP Helion Ready Solution Catalog.</p>
+    <p>For more information about independent hardware vendor (IHV) supported hardware, see the HP
+      Helion Ready Solution Catalog.</p>
   </body>
 </topic>
