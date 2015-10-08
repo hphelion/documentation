@@ -115,7 +115,7 @@
       <!-- Object Storage -->
       <topicref href="helion/objectstorage/swift_overview.dita" navtitle="Object Storage Service"
         locktitle="yes">
-        <topicref href="helion/objectstorage/swift_input_cloud_model.dita" toc="yes"
+        <topicref href="helion/objectstorage/input_cloud_model.dita" toc="yes"
           navtitle="Modifying Example Configurations for Object Storage" locktitle="yes">
           <topicref href="helion/objectstorage/allocate-pac.dita"/>
           <topicref href="helion/objectstorage/allocating_server.dita" navtitle="Allocating Object Server"/>
