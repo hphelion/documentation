@@ -113,7 +113,7 @@
       </topicref>
 
       <!-- Object Storage -->
-      <topicref href="helion/objectstorage/swift_overview.dita" navtitle="Object Storage Service"
+      <topicref href="helion/objectstorage/objectstorage_overview.dita" navtitle="Object Storage Service"
         locktitle="yes">
         <topicref href="helion/objectstorage/input_cloud_model.dita" toc="yes"
           navtitle="Modifying Example Configurations for Object Storage" locktitle="yes">
