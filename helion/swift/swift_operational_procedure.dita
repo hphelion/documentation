@@ -28,7 +28,7 @@
       <!--<p> creating a ring from scratch, no builder file exists. Instead, the first step in the process is to build a builder file. The deploy playbooks do this for you as part of the deployment process. If you have already successfully deployed some of the system, the ring builder files will exist. If you now make changes to the input model (for example, adding servers), the process assumes you are <i>modifying</i> a ring and will behave differently than when it is creating a ring from scratch. Specifically, the rings might not be balanced. If the Cloud Model contains errors or you decide to make substantive changes, you may wish to start from scratch and build rings from scratch using the procedure described in "Resetting Builder Files".</p>-->
       <?oxy_custom_start type="oxy_content_highlight" color="255,60,255"?>
     </section>
-    <p><?oxy_custom_end?>You can perform tha various operational procedure aas follows:<ul
+    <p><?oxy_custom_end?>You can perform the various operational procedure as follows:<ul
         id="ul_rwy_ntz_4t">
         <li><xref href="swift_resetting_builder_file.dita#topic_d3v_4tz_4t">Resetting Builder
             Files</xref></li>

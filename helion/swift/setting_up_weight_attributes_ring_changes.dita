@@ -11,8 +11,8 @@
       Once the replication process has finished, we can increase the weight and rebuild rings to
       trigger another round of replication.</p>
     <p>In addition, it is useful to know how the replication process behaves on your system in
-      normal operation. Before making ring changes, use the <!--swift-recon--> command to determine
-      typical oldest replication times for your system. For instructions see <xref
+      normal operation. Before making ring changes, use the <codeph>swift-recon</codeph> command to
+      determine typical oldest replication times for your system. For instructions see <xref
         href="swift_safe-rebalance-deploy-ring.dita#topic_ohx_j1t_4t"
         >swift_safe-rebalance-deploy-ring.html</xref>.</p>
     <p>In HP Helion OpenStack, the weight-step attribute is set in the ring specification of the

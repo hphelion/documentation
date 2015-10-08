@@ -35,8 +35,8 @@ ansible-playbook -i hosts/localhost _swift-validate-input-model.yml</codeblock><
           </ul></li>
         <li><b>First phase of ring rebalance:</b><ul id="ul_gsz_jft_4t">
             <li>Run the following
-              command:<codeblock>cd ~/helion/hos/ansible/
-ansible-playbook -i hosts/localhost swift-deploy.yml </codeblock></li>
+              command:<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-deploy.yml </codeblock></li>
             <li>
               <p>Wait until replication has finished or min-part-time has elapsed (which ever is
                 longer) (<b>any output we get after executing the above command?)</b></p>
@@ -80,8 +80,7 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
       <title>System change that change existing rings</title>
       <p>There are many system changes ranging from adding servers to replacing drives that might
         require some ring rebuild and rebalance actions.</p>
-      <p>Note: This section provides an overview of these changes and a summary of the required
-        actions. More detailed procedures are provided elsewhere.</p>
+      <p><!--Note: This section provides an overview of these changes and a summary of the required actions. More detailed procedures are provided elsewhere.--></p>
       <p>
         <simpletable id="simpletable_mtc_yb1_kt">
           <strow>
