@@ -137,7 +137,7 @@
           <topicref href="helion/objectstorage/rebalanced_explained.dita"/>
           <topicref href="helion/objectstorage/preparing_ring_changes.dita"/>
           <topicref href="helion/objectstorage/playbook_linked_ring_management.dita"/>
-          <topicref href="helion/objectstorage/swift_safe-rebalance-deploy-ring.dita"/>
+          <topicref href="helion/objectstorage/safe-rebalance-deploy-ring.dita"/>
           <topicref href="helion/objectstorage/input_model_change_existing_rings.dita"/>
         </topicref>
         <topicref href="helion/objectstorage/check-swift-operation.dita">
