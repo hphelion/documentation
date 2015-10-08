@@ -151,7 +151,7 @@ hlm define -l </codeblock>
       </p>
       <p><b>Arguments</b>
       </p>
-      <p><codeph>-cloud, -c</codeph> -- Specify the name of the cloud to act upon. </p>
+      <p><codeph>--cloud, -c</codeph> -- Specify the name of the cloud to act upon. </p>
       <p><codeph>--verbose, -v</codeph> -- Produce verbose output. </p>
       <p><codeph>--tags, -t</codeph>  --Run only specified tags separated by a space and included in
         double quotes.</p>
@@ -170,7 +170,7 @@ hlm define -l </codeblock>
       </p>
       <p><b>Arguments</b>
       </p>
-      <p><codeph>-cloud, -c</codeph> -- Specify the name of the cloud to act upon. </p>
+      <p><codeph>--cloud, -c</codeph> -- Specify the name of the cloud to act upon. </p>
       <p><codeph>--verbose, -v</codeph> -- Produce verbose output. </p>
       <p><codeph>--tags, -t</codeph>  --Run only specified tags separated by a space and included in
         double quotes.</p>

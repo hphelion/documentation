@@ -98,8 +98,8 @@
       locktitle="yes"/>
     <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
       navtitle="Helion Lifecycle Manageent CLI Reference" locktitle="yes"/>
-    <topicref href="CarrierGrade/Installation/carrier-grade-backup-restore.dita" toc="yes"
-      navtitle="Backup and Restore the HLM Node and MySQL Cluster" locktitle="yes"/>
+    <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore.dita" toc="yes"
+      navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes"/>
     <topichead navtitle=" License Files">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
         navtitle="Open Source and Third-Party Software License Agreement" locktitle="yes"/>

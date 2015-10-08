@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Backup and Restore the HLM VM
-    and MySQL Cluster</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Backup and Restore
+    Configuration Files and MySQL Clusters</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -21,18 +21,38 @@
 The high level design needs to be adjusted to more suite with CG(It is reflecting CS in some areas)I will soon update it. 
 But the CLI, REST API etc should all be same </pre>
     </p>
-    <p>This page explains how to backup and restore the HLM VM in the event of catastrophic failure.
-      The page also explains how to <xref href="#topic10581/mysql" format="dita">recover the <tm
-          tmtype="reg">Percona</tm>
+    <p>This page explains how to backup and restore HP OpenStack Carrier Grade amd HP DCN
+      configuration files in the event of catastrophic failure. The page also explains how to <xref
+        href="#topic10581/mysql" format="dita">recover the <tm tmtype="reg">Percona</tm>
         <tm tmtype="reg">XtraDB</tm> cluster</xref> on the cloud controllers in the event of a
       database corruption.</p>
-    <p>The HP Helion OpenStack cloud installation provides highly optimized <tm tmtype="reg">MySQL</tm>
-      databases inside of the HP Helion Public Cloud. A MySQL node is installed on each of the three
-      controller nodes in the non-KVM region. The installation also includes the Percona XtraDB
-      application, which takes care of synchronization of the data between nodes if one of the nodes
-      goes down and comes back later. You can use Percona XtraDB to backup and restore the MySQL
-      nodes.</p>
-    <section><title>When to Backup the HLM VM</title>
+    <p>The HP Helion OpenStack Carrier Grade cloud installation provides highly optimized <tm
+        tmtype="reg">MySQL</tm> databases on all controllers in the non-KVM region. The installation
+      also includes the Percona XtraDB application, which takes care of synchronization of the data
+      between nodes if one of the nodes goes down and comes back later. You can use Percona XtraDB
+      to backup and restore the MySQL nodes.</p>
+    <section>
+      <title>What gets backed up</title>
+      <p>The following components can be backed up and restored:</p>
+      <p>
+        <ul id="ul_hwh_hg3_pt">
+          <li><tm tmtype="reg">Percona</tm>
+            <tm tmtype="reg">XtraDB</tm> cluster on the controllers.</li>
+          <li><tm tmtype="reg">Percona</tm>
+            <tm tmtype="reg">XtraDB</tm> cluster on the VSD host.</li>
+          <li>All files under the <codeph>/opt/</codeph> folder on the HLM host.  This backs up all
+            the installed code/configuration and also h* installation scripts.</li>
+          <li>All files under the <codeph>/root/</codeph> folder on the HLM host. This backs up all
+            the source code, packages, hlinux netboot, infra-ansible-playbooks, SSH keys, as well as
+            cloud folders.</li>
+          <li>All files under <codeph>/etc/default/openvswitch-switch/</codeph> on the controllers
+            for KVM + ESX deployments</li>
+          <li>All files under <codeph>/etc/default/openvswitch-switch/</codeph> on the VSD host for
+            KVM + ESX deployments</li>
+        </ul>
+      </p>
+    </section>
+    <section><title>When to perform backups</title>
       <p>You should create a backup from HLM VM as follows:</p>
       <ul>
         <li>when the HP Helion OpenStack Carrier Grade installation is complete,</li>
@@ -42,7 +62,7 @@ But the CLI, REST API etc should all be same </pre>
       </ul>
     </section>
     <section>
-      <title>When to Restore the HLM VM</title>
+      <title>When to restore</title>
       <p>You should restore the HLM VM if there are any issues with the HP Helion OpenStack Carrier
         Grade components, for example:</p>
       <ul>
@@ -53,39 +73,50 @@ But the CLI, REST API etc should all be same </pre>
       <p><b>Important:</b> During the restore process the original HLM VM will be deleted from the
         KVM Host. </p>
     </section>
-    <section><title>Backing up the HLM VM</title>
-      <p>To back up the HLM VM, use the following steps:</p>
+    <section><title>Backing up the HP Helion OpenStack Carrier Grade controllers</title>
+      <p>To back up an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
       <ol>
-        <li>Log in to the HLM host.</li>
-        <li>Backup the <codeph>/root/infra-ansible-playbooks</codeph> folder by copying the folders
-          to a remote system. This will backup the <codeph>group_vars</codeph> folder used to create
-          the HLM VM. </li>
-        <li>Backup the following folders to a remote system: <ul>
-            <li>
-              <codeph>/root</codeph> - This backs up all the source code, packages, hlinux netboot
-              as well as cloud folders</li>
-            <li><codeph>/opt</codeph> - This backs up all the installed code/configuration and also
-              h* scripts</li>
-            <li><codeph>/var/log/hlm</codeph> - This backs up all generated log files </li>
-            <li><codeph>/root/.ssh</codeph> - This backs up ssh keys generated per cloud used to
-              access cloud nodes </li>
-          </ul></li>
+        <li>Log in to the controller.</li>
+        <li> Authenticate using export
+          variables:<codeblock>export OS_TENANT_NAME=admin 
+export OS_USERNAME=admin 
+export OS_PASSWORD=1234 
+export OS_AUTH_URL=http://127.0.0.1:5000/v2.0</codeblock>Optionally
+          you can pass the authentication values when you execute a CLI command
+          <codeblock>--os-tenant-name "admin" --os-username "admin" --os-password "1234" --os-auth-url "http://192.168.56.103:35357/v2.0"</codeblock></li>
+        <li>Execute the following command to start the
+            backup:<codeblock>attis backup --config-id CONFIG_ID --backup_type BACKUP_TYPE</codeblock><p>Where </p><p>
+            <ul id="ul_xvq_bm3_pt">
+              <li><codeph>config-id CONFIG_ID</codeph> authenticates using the ID configuration
+                file.</li>
+              <li><codeph>backup_type BACKUP_TYPE</codeph> is <codeph>full</codeph> or
+                  <codeph>incremental</codeph>. Full backup is the default.</li>
+            </ul>
+          </p></li>
       </ol>
     </section>
-    <section><title>Restore the HLM VM</title>
-      <p>To restore the HLM VM, use the following steps:</p>
-      <ol>
-        <li>Log in to the HLM host.</li>
-        <li>Copy the <codeph>/root/infra-ansible-playbooks</codeph> folder from the backup location
-          to the HLM host.</li>
-        <li>Re-create the HLM VM by executing from <codeph>/root/infra-ansible-playbooks</codeph>
-          folder: <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock></li>
-        <li>Log in to the HLM VM.</li>
-        <li>Copy the following files from the backup folder to the same location on the HLM VM:
-          <ul><li><codeph>/root</codeph></li>
-        <li><codeph>/opt</codeph></li>
-        <li><codeph>/var/log/hlm</codeph></li>
-        <li><codeph>/root/.ssh</codeph></li></ul></li>
+    <section>
+      <title>Restore the HP Helion OpenStack Carrier Grade controllers</title>
+      <p>To restore an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
+      <ol id="ol_vlq_wm3_pt">
+        <li>Log in to the controller.</li>
+        <li> Authenticate using export
+          variables:<codeblock>export OS_TENANT_NAME=admin 
+export OS_USERNAME=admin 
+export OS_PASSWORD=1234 
+export OS_AUTH_URL=http://127.0.0.1:5000/v2.0</codeblock>Optionally
+          you can pass the authentication values when you execute a CLI command
+          <codeblock>--os-tenant-name "admin" --os-username "admin" --os-password "1234" --os-auth-url "http://192.168.56.103:35357/v2.0"</codeblock></li>
+        <li>Execute the following command to start the
+            backup:<codeblock>attis restore --config-id CONFIG_ID --backup-id BACKUP_ID</codeblock><p>Where </p><p>
+            <ul id="ul_wlq_wm3_pt">
+              <li><codeph>config-id CONFIG_ID</codeph> authenticates using the ID configuration
+                file.</li>
+              <li><codeph>backup-id BACKUP_ID</codeph> is the name of the backup from which you want
+                to perform the restore. Use the <codeph>attis backuplog --id BACKUP_LOG_ID</codeph>
+                command to get a list of backup jobs.</li>
+            </ul>
+          </p></li>
       </ol>
     </section>
     <section id="mysql"><title>Backup and Restore the MySQL cluster</title>
