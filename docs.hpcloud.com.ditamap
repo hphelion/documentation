@@ -94,7 +94,7 @@
         navtitle="Configuring Monitoring" locktitle="yes"/>
 
       <!-- keystone identity -->
-      <topicref href="helion/identity/keystone_overview.dita" navtitle="Identity Service"
+      <topicref href="helion/identity/identity_overview.dita" navtitle="Identity Service"
         locktitle="yes">
         <topicref href="helion/identity/keystone_roles.dita"
           navtitle="Creating Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
