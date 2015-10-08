@@ -255,7 +255,7 @@ MONITORING AND LOGGING
           <topicref href="helion/objectstorage/deploy_fails_with_msdos_disks.dita"/>
           <topicref href="helion/objectstorage/examine_details_planned_ring_changes_prior_deploy.dita"/>
           <topicref href="helion/objectstorage/how_to_change_min-part-power.dita"/>
-          <topicref href="helion/objectstorage/interpreting_swift-validate-input-model.dita"/>
+          <topicref href="helion/objectstorage/interpreting_swift_validate_input_model.dita"/>
         </topicref>
         <topicref href="helion/metering/metering_troubleshoot.dita"
           navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
