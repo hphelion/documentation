@@ -31,12 +31,6 @@ neutron router-create router
 neutron router-interface-add router sub
 neutron router-gateway-set router ext-net</codeblock></li>
         </ol>
-        <note>If you need access to LBaaS VIP from an external network you need to create and
-          associate a floating IP to the LBaaS VIP. Currently, this floating IP assignment for LBaaS
-          is unavailable in Beta 2 for DVR router. Therefore, we recommend you use a non-DVR router.
-          Using admin credentials, execute the following command to create a non-DVR router.
-          <codeblock>neutron router-create router -–distributed False</codeblock>
-        </note>
       </sectiondiv>
       
       <sectiondiv id="StartVirtualMachines">
@@ -93,12 +87,12 @@ nova show vm2</codeblock></li>
 neutron lbaas-member-create --subnet sub --address &lt;ip address vm2> --protocol-port &lt;port> pool</codeblock></li>
         <li>Display the current state of the load balancer and values with <codeph>lbaas-loadbalancer-show</codeph>.
           <codeblock>neutron lbaas-loadbalancer-show lb</codeblock></li>
-        <li>You need to assign the floating ip to lbaas vip so it could be accessed from external network.
-          <note>Currently in Beta 2 only non-DVR router supports LBaaS access using FIP.</note>
-          <codeblock>fixedip_vip=$(neutron lbaas-loadbalancer-list | awk '/lb/ {print $6}')
+        <li>You need to assign the floating IP to lbaas VIP so it could be accessed from external
+            network.
+            <codeblock>fixedip_vip=$(neutron lbaas-loadbalancer-list | awk '/lb/ {print $6}')
 portuuid_vip=$(neutron port-list | grep $fixedip_vip | awk '{print $2}')</codeblock></li>
-        <li>Create and associate floating IP address to lbaas vip address.
-        <codeblock>neutron floatingip-create ext-net –-port-id $portuuid_vip</codeblock></li>
+        <li>Create and associate floating IP address to lbaas VIP address.
+            <codeblock>neutron floatingip-create ext-net –-port-id $portuuid_vip</codeblock></li>
       </ol>
       </sectiondiv>
       
@@ -122,10 +116,7 @@ neutron lb-member-create --address &lt;ip address vm2> --protocol-port &lt;port>
       <sectiondiv id="TestLoadBalancer">
       <p><b>Validate LBaaS Functionality</b></p>
         <note>You should perform the following steps from a node that has a route to the private
-          network. Using the examples from above, 10.1.0.0/24 should be reachable.  <p>If LBaaS VIP
-            needs to be accessed from the external network, it is currently only supported for
-            non-DVR routers in Beta 2. In this case, replace the private IP addresses with their
-            corresponding FIP addresses in the below commands.</p></note>
+          network. Using the examples from above, 10.1.0.0/24 should be reachable. </note>
         <ol>
           <li>SSH into both vm1 and vm2 in two separate windows and make them listen on your
             configured port. </li>
