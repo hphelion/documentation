@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="wipe_disks">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Wiping the Disks</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Pre-Installation Disk Cleanup</title>
   <body>
     <section id="about">
       <p>You may have a need to wipe the disks of one or more of the nodes in your Cloud. There is

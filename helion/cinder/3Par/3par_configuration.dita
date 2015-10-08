@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_vln_2xy_ht">
-  <title>3PAR Configuration</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: 3PAR Configuration</title>
   <body>
     <p>This page describes the configuration of HP 3PAR StoreServ Fibre Channel (FC) or iSCSI
       storage devices as a Cinder backend. Once the backend is configured you can create and

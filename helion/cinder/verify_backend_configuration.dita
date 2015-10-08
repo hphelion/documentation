@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_q5q_trz_jt">
-  <title>Verify Backend Configuration</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Verify Backend Configuration</title>
   <body>
     <p>This page describes the procedure to create volume type, associate volume type to backend,
       create volume, attach volume, detach volume, and delete volume. You perform this operation to

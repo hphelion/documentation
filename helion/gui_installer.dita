@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_gui">
-  <title>Installing HP Helion OpenStack&#174; 2.0 Using the Day Zero Installer</title>
+  <title>Installing HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Using the Day Zero Installer</title>
   <body>
     <section> HP Helion OpenStack 2.0 comes with a UI, the Dayzero Installer, for installing your
       cloud. Rather than searching through and editing a number of YAML files to input your specific
@@ -21,7 +21,7 @@
 
 
     <section>These YAML configuration files are now stored in a local git repository as well, as
-      explained in <xref href="using_git.dita#topic_u3v_1yz_ct">Using git for Configuration
+      explained in <xref href="using_git.dita">Using git for Configuration
         Manangement</xref>. </section>
     <section><title>Before you begin</title> Before you run the GUI installer to install your cloud,
       there are a number of things you need to do to prepare. <ol>
@@ -36,7 +36,7 @@
             <li>IPMI/iLO IP address, username, password </li>
           </ul>
         </li>
-        <li>Choose your <xref href="supportedconfigs.dita">cloud model/example</xref> template. Note
+        <li>Choose your <xref href="example_configs.dita">cloud model/example</xref> template. Note
           that the only option for the Cloud model on KVM with VSA is the have 3 VSA nodes; there is
           no option to have 0 VSA nodes. Note also that you cannot put the deployer on a control
           plane node using the GUI installer.</li>

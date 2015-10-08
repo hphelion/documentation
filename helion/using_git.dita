@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_u3v_1yz_ct">
-  <title>Using the local git repository for configuration</title>
+<topic id="using_git">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Git for Configuration
+    Management</title>
   <body>
-    <p>In HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 versions, inclusding Beta1, a local git
-      repository is used to track configuration changes and for the config processor to look to for
-      configuration changes. The introduction of a git workflow also means that your configuration
-      history is maintained, making rollbacks easier as well as keeping a record of previous
-      configuration settings.</p>
+    <p>In HP Helion OpenStack 2.0, a local git repository is used to track configuration changes and
+      for the config processor to look to for configuration changes. The introduction of a git
+      workflow also means that your configuration history is maintained, making rollbacks easier as
+      well as keeping a record of previous configuration settings.</p>
     <p>The git repository, which is installed by the deployer, is local to your cloud servers, but
       in other ways functions like a remote git repository.</p>
- 
+
     <p>Below is a representation of the typical git workflow in HP Helion OpenStack 2.0. </p>
     <p><image href="../media/install/gitWorkflow.png" id="image_cbv_wg4_dt"/></p>
     <p/>
