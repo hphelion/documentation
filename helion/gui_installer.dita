@@ -85,7 +85,7 @@
     </section>
     <section>
       <p>The GUI is used only once: during the initial installation of your cloud.</p><p>For VSA you
-        must follow the steps outlined in the <xref href="cinder/vsa/vsa.dita">VSA
+        must follow the steps outlined in the <xref href="blockstorage/vsa/vsa.dita">VSA
           Configuration</xref>page.</p> After deployment, continue to <xref
         href="installation_verification.dita">Verifying Your Installation</xref> and <xref
         href="postinstall_checklist.dita">Post-Installation

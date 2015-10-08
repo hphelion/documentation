@@ -12,7 +12,7 @@
       <p>Alarms for these services are included:</p>
       <ul>
         <li><xref href="#alarmdefinitions/ceilometer">Ceilometer</xref></li>
-        <li><xref href="#alarmdefinitions/cinder">Cinder</xref></li>
+        <li><xref href="#alarmdefinitions/blockstorage">Cinder</xref></li>
         <li><xref href="#alarmdefinitions/cue">Cue</xref></li>
         <li><xref href="#alarmdefinitions/glance">Glance</xref></li>
         <li><xref href="#alarmdefinitions/haproxy">HAProxy</xref></li>

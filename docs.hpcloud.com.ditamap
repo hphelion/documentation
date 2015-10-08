@@ -75,14 +75,14 @@
     <topichead navtitle="Administration">
       <topichead navtitle="Initial Configuration">
         <topichead navtitle="Configuring a Block Storage Backend">
-          <topicref href="helion/cinder/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
+          <topicref href="helion/blockstorage/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
             locktitle="yes">
-            <topicref href="helion/cinder/ceph/configuration_files.dita"/>
+            <topicref href="helion/blockstorage/ceph/configuration_files.dita"/>
           </topicref>
-          <topicref href="helion/cinder/vsa/vsa.dita" navtitle="VSA Configuration" locktitle="yes"/>
-          <topicref href="helion/cinder/3Par/3par_configuration.dita" navtitle="3PAR Configuration"
+          <topicref href="helion/blockstorage/vsa/vsa.dita" navtitle="VSA Configuration" locktitle="yes"/>
+          <topicref href="helion/blockstorage/3Par/3par_configuration.dita" navtitle="3PAR Configuration"
             locktitle="yes"/>
-          <topicref href="helion/cinder/verify_backend_configuration.dita"
+          <topicref href="helion/blockstorage/verify_backend_configuration.dita"
             navtitle="Verifying a Backend Configuration" locktitle="yes"/>
         </topichead>
         <topicref href="helion/administration/create_extnet.dita"
@@ -155,9 +155,9 @@
       </topicref>
 
       <!-- Cinder -->
-      <topicref href="helion/cinder/cinder_overview.dita" navtitle="Block Storage Service"
+      <topicref href="helion/blockstorage/cinder_overview.dita" navtitle="Block Storage Service"
         locktitle="yes">
-        <topicref href="helion/cinder/ceph/ceph_overview.dita" navtitle="Ceph Overview"
+        <topicref href="helion/blockstorage/ceph/ceph_overview.dita" navtitle="Ceph Overview"
           locktitle="yes"/>
       </topicref>
 
@@ -191,12 +191,12 @@
       <topicref href="helion/operations/repair_node.dita"/>
       <topicref href="helion/operations/remove_node.dita"/>
       <topicref href="helion/operations/replace_controller.dita"/>
-      <topicref href="helion/cinder/vsa/vsa_create_multiple_clusters.dita"/>
+      <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"/>
       <topicref href="helion/objectstorage/swift_removing_node.dita"/>
-      <topicref href="helion/cinder/ceph/adding_new_osd_node.dita"/>
+      <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"/>
 
-      <topicref href="helion/cinder/singleton_service_cinder.dita"/>
-      <topicref href="helion/cinder/brocade_zone_manager.dita"
+      <topicref href="helion/blockstorage/singleton_service_cinder.dita"/>
+      <topicref href="helion/blockstorage/brocade_zone_manager.dita"
         navtitle="Configuring Brocade Zone Manager" locktitle="yes"/>
       <!-- BURA -->
       <topicref href="helion/adding_moonshot_nodes.dita"/>
