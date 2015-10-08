@@ -56,14 +56,14 @@ $ cat /etc/hosts | grep c1-m3-mgmt
 $ sudo chown -R horizon-venv /opt/stack/service/horizon/venv/lib</codeblock></li>
           </ol></li>
         <li>The DBaaS, DNSaaS and Cue services rely on the creation of a VM service network. This
-          service network is a VLAN-encapsulated provider network which is fully routable to the
+          service network is a VLAN-encapsulated provider network which is fully routable to the HP
           Helion OpenStack MGMT network. [This is an extra step required for the beta release.]<ol>
             <li>SSH to the Deployer node using admin credentials.</li>
             <li>Source the admin credentials:
               <!--This step will not be necessary after HOS GA but it is during the beta per Alex--><codeblock>source ~/service.osrc</codeblock></li>
             <li>Install the Neutron client, if not already available.
               <codeblock>sudo apt-get install -y python-neutronclient</codeblock></li>
-<!-- WHEN HOS GA goes live, comment out the following step and uncomment out the step below it: -->            
+            <!-- WHEN HOS GA goes live, comment out the following step and uncomment out the step below it: -->
             <li>To create this network, an administrator should issue the following
               commands:<codeblock>neutron net-create svc-net --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id &lt;SVC VLAN_ID> </codeblock><codeblock>neutron subnet-create --allocation-pool start=&lt;low address on SVC network>,end=&lt;high address on SVC network> --no-gateway --host-route destination=&lt;CIDR of MGMT network>,nexthop=&lt;gateway from SVC to MGMT net> --enable-dhcp svc-net &lt;SVC network CIDR></codeblock>As
               an example, given a management network with the following attributes: <sl>
@@ -76,7 +76,7 @@ $ sudo chown -R horizon-venv /opt/stack/service/horizon/venv/lib</codeblock></li
                 To configure a service network for flat encapsulation, modify the service network
                 creation statement: <codeph>--provider:network_type flat</codeph> The subnet
                 creation statement does not change. </note></li>
-<!-- THIS IS STEP #3 for after HOS goes to GA, just replace the existing step three above with this info:          
+            <!-- THIS IS STEP #3 for after HOS goes to GA, just replace the existing step three above with this info:          
               <li>To create this network, an administrator should use the following Ansible
               playbook: <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml \
