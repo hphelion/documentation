@@ -31,12 +31,14 @@
     <p><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other 
         countries.</i></p>
 
-<p>Helion Development Platform version 1.3 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can 
-    now leverage their knowledge and use the tools 
-    they are accustomed to in order to leverage the power of the Helion Development Platform. HTTP-based .NET applications that follow 
-    the <xref format="html" scope="external" href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</xref>
-    are a great fit for this feature support.
-</p>
+<p>The Helion Development Platform includes a full end-to-end solution for creating and deploying
+                .NET Framework applications. Windows developers can now leverage their knowledge and
+                use the tools they are accustomed to in order to leverage the power of the Helion
+                Development Platform. HTTP-based .NET applications that follow the <xref
+                    format="html" scope="external"
+                    href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html"
+                    >Cloud Foundry application model</xref> are a great fit for this feature
+                support. </p>
 <p>This document contains the following sections:
 </p>
     <ul>
@@ -122,8 +124,8 @@
         </section>
         <section id="tools_imaging"><title>Imaging tool</title>
 
-            <ul><li> Glazier: This tool creates Windows images for deployment to Helion OpenStack. This tool is not needed for using Windows images in
-                HP Helion Public Cloud.</li></ul>
+            <ul><li> Glazier: This tool creates Windows images for deployment to HP Helion OpenStack. This tool is
+                    not needed for using Windows images in HP Helion Public Cloud.</li></ul>
         </section>
         <section id="tools_management"><title>Management tool set</title>
 <ul>

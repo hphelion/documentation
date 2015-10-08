@@ -114,7 +114,7 @@ ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_T
       </ol>
     </section>
     <section>
-      <title>Step 3. Download and Install the Python Scripts</title>
+      <title>Step 3. Download and Install the Python Scripts </title>
       <ol>
         <li>SSH to the Deployer. </li>
         <li>Verify that you have access to the <xref href="https://pypi.python.org/pypi"
