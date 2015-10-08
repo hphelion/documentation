@@ -72,7 +72,7 @@ source ~/keystone.osrc</codeblock></p></li>
           <note type="tip">You can use <codeph>openstack -h</codeph> to access the client help file
             and a full list of commands.</note></li>
       </ol>
-      <p>To learn more about Keystone, see <xref href="keystone/keystone_overview.dita">Keystone
+      <p>To learn more about Keystone, see <xref href="identity/keystone_overview.dita">Keystone
           Overview</xref></p>
     </section>
   </body>

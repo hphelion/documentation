@@ -19,7 +19,7 @@
         <li><xref href="#alarmdefinitions/heat">Heat</xref></li>
         <li><xref href="#alarmdefinitions/horizon">Horizon</xref></li>
         <li><xref href="#alarmdefinitions/hlinux">Linux for HP Helion</xref></li>
-        <li><xref href="#alarmdefinitions/keystone">Keystone</xref></li>
+        <li><xref href="#alarmdefinitions/identity">Keystone</xref></li>
         <li><xref href="#alarmdefinitions/logging">Logging</xref></li>
         <li><xref href="#alarmdefinitions/monasca">Monasca</xref></li>
         <li><xref href="#alarmdefinitions/mysql">MySQL</xref></li>

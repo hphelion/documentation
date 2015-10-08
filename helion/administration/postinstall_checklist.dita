@@ -169,7 +169,7 @@ source ~/keystone.osrc</codeblock></p></li>
           <note type="tip">You can use <codeph>openstack -h</codeph> to access the client help file
             and a full list of commands.</note></li>
       </ol>
-      <p>To learn more about Keystone, see <xref href="keystone/keystone_overview.dita">Keystone
+      <p>To learn more about Keystone, see <xref href="identity/keystone_overview.dita">Keystone
           Overview</xref></p>
     </section>
     <section id="horizon"><title>Accessing Horizon</title>
@@ -182,7 +182,7 @@ source ~/keystone.osrc</codeblock></p></li>
       <codeblock>Username: admin
 Password: admin</codeblock>
       <note type="important">The credentials for your <codeph>admin</codeph> user account can be
-        changed. See <xref href="keystone/keystone_init.dita">Keystone Configuration</xref> for more
+        changed. See <xref href="identity/keystone_init.dita">Keystone Configuration</xref> for more
         details.</note>
     </section>
     <section id="opsconsole"><title>Accessing Operations Console</title>
@@ -198,7 +198,7 @@ Password: admin</codeblock>
       <codeblock>Username: admin
 Password: admin</codeblock>
       <note type="important">The credentials for your <codeph>admin</codeph> user account can be
-        changed. See <xref href="keystone/keystone_init.dita">Keystone Configuration</xref> for more
+        changed. See <xref href="identity/keystone_init.dita">Keystone Configuration</xref> for more
         details.</note>
     </section>
   </body>

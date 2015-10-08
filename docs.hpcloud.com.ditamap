@@ -94,21 +94,21 @@
         navtitle="Configuring Monitoring" locktitle="yes"/>
 
       <!-- keystone identity -->
-      <topicref href="helion/keystone/keystone_overview.dita" navtitle="Identity Service"
+      <topicref href="helion/identity/keystone_overview.dita" navtitle="Identity Service"
         locktitle="yes">
-        <topicref href="helion/keystone/keystone_roles.dita"
+        <topicref href="helion/identity/keystone_roles.dita"
           navtitle="Creating Domains, Projects, Users, Groups, and Roles" locktitle="yes"> </topicref>
-        <topicref href="helion/keystone/keystone_init.dita"
+        <topicref href="helion/identity/keystone_init.dita"
           navtitle="Configuring the Identity Service" locktitle="yes"> </topicref>
-        <topicref href="helion/keystone/keystone_admin.dita"
+        <topicref href="helion/identity/keystone_admin.dita"
           navtitle="Administering the Identity Service" locktitle="yes"> </topicref>
-        <topicref href="helion/keystone/keystone_reconfigure.dita"
+        <topicref href="helion/identity/keystone_reconfigure.dita"
           navtitle="Reconfiguring the Identity Service" locktitle="yes"/>
-        <topicref href="helion/keystone/keystone_ldap.dita"
+        <topicref href="helion/identity/keystone_ldap.dita"
           navtitle="Integrating LDAP Integration with the Identity Service" locktitle="yes"> </topicref>
         <topicref href="helion/horizon/horizon_configure_v3.dita"
           navtitle="Configuring Horizon for Keystone v3" locktitle="yes" toc="yes"/>
-        <topicref href="helion/keystone/keystone_limitations.dita" navtitle="Notes and Limitations"
+        <topicref href="helion/identity/keystone_limitations.dita" navtitle="Notes and Limitations"
           locktitle="yes"> </topicref>
       </topicref>
 
