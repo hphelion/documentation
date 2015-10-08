@@ -142,7 +142,7 @@
         </topicref>
         <topicref href="helion/objectstorage/check_objectstorage_operation.dita">
           <topicref href="helion/objectstorage/validating_swift_recon.dita"/>
-          <topicref href="helion/objectstorage/swiftlm-scan_metering.dita"/>
+          <topicref href="helion/objectstorage/lm_scan_metering.dita"/>
           <topicref href="helion/objectstorage/utility.dita"/>
         </topicref>
         <topicref href="helion/objectstorage/operational_procedure.dita">
