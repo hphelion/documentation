@@ -212,15 +212,15 @@
 MONITORING AND LOGGING 
 -->
       <!-- reporting = metering = ceilomter -->
-      <topicref href="helion/ceilometer/metering_overview.dita" navtitle="Metering Service"
+      <topicref href="helion/metering/metering_overview.dita" navtitle="Metering Service"
         locktitle="yes">
-        <topicref href="helion/ceilometer/metering_components.dita"
+        <topicref href="helion/metering/metering_components.dita"
           navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
-        <topicref href="helion/ceilometer/metering_metertypes.dita" navtitle="Available Meter Types"
+        <topicref href="helion/metering/metering_metertypes.dita" navtitle="Available Meter Types"
           locktitle="yes"/>
-        <topicref href="helion/ceilometer/metering_rbac.dita"
+        <topicref href="helion/metering/metering_rbac.dita"
           navtitle="Setting Role-based Access Control" locktitle="yes"/>
-        <topicref href="helion/ceilometer/metering_bestpractice.dita"
+        <topicref href="helion/metering/metering_bestpractice.dita"
           navtitle="Optimizing the Metering Service" locktitle="yes"/>
       </topicref>
       <topicref href="helion/operations/monasca.dita" navtitle="Monitoring Service" locktitle="yes">
@@ -257,7 +257,7 @@ MONITORING AND LOGGING
           <topicref href="helion/objectstorage/how_to_change_min-part-power.dita"/>
           <topicref href="helion/objectstorage/interpreting_swift-validate-input-model.dita"/>
         </topicref>
-        <topicref href="helion/ceilometer/metering_troubleshoot.dita"
+        <topicref href="helion/metering/metering_troubleshoot.dita"
           navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
       </topichead>
     </topichead>

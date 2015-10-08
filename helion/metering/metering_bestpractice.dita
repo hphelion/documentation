@@ -127,7 +127,7 @@ instance_usage_audit_period=hour</codeblock>
                 platforms</note>
             <p>For a more in-depth look at how information is sent over <i>openstack.common.rpc</i>,
                 refer to the <xref
-                    href="http://docs.openstack.org/developer/ceilometer/measurements.html"
+                    href="http://docs.openstack.org/developer/metering/measurements.html"
                     scope="external" format="html">OpenStack Ceilometer documentation</xref>.</p>
             <p>
                 <b>Validation</b> After the Nova service is restarted, the notification daemons
