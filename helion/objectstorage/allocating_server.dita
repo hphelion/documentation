@@ -14,17 +14,15 @@
           <li>Verify if the example input model already contains a suitable server role. The server
             roles are usually described in <codeph>data/server_roles.yml</codeph> file. If the
             server role is not described, you must add a suitable server role as described in
-                <i><xref href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt">Creating Role for
-                Swift Nodes</xref></i>. While adding a server role for the Swift object server, you
-            will also allocate drives to store object data as described in <i><xref
-                href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk
-                Drives.</xref></i></li>
+                <i><xref href="creating_roles_swift_nodes.dita">Creating Role for Swift
+              Nodes</xref></i>. While adding a server role for the Swift object server, you will
+            also allocate drives to store object data as described in <i><xref
+                href="allocating_disk_drives.dita">Allocating Disk Drives.</xref></i></li>
           <li>Verify if the example input model has a resource node assigned to Swift object
             servers. The resource nodes are usually assigned in
               <codeph>data/control_plane.yml</codeph> file. If it is not assigned, you must add a
-            suitable resource node as described in <xref
-              href="creating-object-server-resource.dita#topic_jzk_q1c_jt"><i>Creating an Object
-                Sever Resource node</i></xref></li>
+            suitable resource node as described in <xref href="creating_object_server_resource.dita"
+                ><i>Creating an Object Sever Resource node</i></xref></li>
           <li>Identity the physical servers and their IP address and other detailed information. Add
             the servers details in either of the following YAML files and verify the server-groups
               information:<ul id="ul_gmj_ng3_kt">

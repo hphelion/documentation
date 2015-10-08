@@ -97,8 +97,8 @@
         - name: account
         - name: container</codeblock></example>
     <example>Example:<b>OBJ</b> - Dedicated object server. The following example shows two Storage
-      Policies (object-0 and object-1). See <i><xref href="storage-policies.dita#topic_gm1_4bc_jt"
-          >Designing Storage Policies</xref></i> for more
+      Policies (object-0 and object-1). See <i><xref href="storage_policies.dita">Designing Storage
+          Policies</xref></i> for more
       information.<codeblock>consumer:
     name: swift
     attrs:
@@ -123,7 +123,7 @@
           rings:
           - name: object-0
           - name: object-1</codeblock></example>
-    <p>You may have several device groups if  you have several different uses for different sets of
+    <p>You may have several device groups if you have several different uses for different sets of
       drive. </p>
     <example>The following example shows a configuration where one drive is used for account and
       container rings and the other drives are used by the object-0

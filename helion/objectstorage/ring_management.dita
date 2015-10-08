@@ -11,11 +11,11 @@
         href="../input_model.dita#input_model"/>). </p>
     <p>After successful deployment of cloud, you may want to change or modify your cloud
       configuration for Swift, like:<ul id="ul_yxs_dzr_4t">
-        <li><xref href="swift_input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
+        <li><xref href="input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
             >Adding or removing Swift nodes</xref></li>
-        <li><xref href="swift_add_new_storage_policy.dita#topic_evl_wln_pt">Adding additional
-            storage policies</xref></li>
-        <li><xref href="swift_input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
+        <li><xref href="add_new_storage_policy.dita#topic_evl_wln_pt">Adding additional storage
+            policies</xref></li>
+        <li><xref href="input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
             >Upgrading the size of disk drives used by Swift</xref></li>
       </ul></p>
     <p>Some of the above changes require the rebuild of the rings.</p>
@@ -32,16 +32,14 @@
     <p>
       <!--The following section explains the reason for the requirement of several phases for the change of the ring.-->
       <ul id="ul_pgc_plz_4t">
-        <li><xref href="swift_rebalanced_explained.dita#topic_izw_1mz_4t">Rebalance
-          Explained</xref></li>
-        <li><xref href="swift_preparing_ring_changes.dita#topic_t1y_vjs_4t">Preparing for Ring
-            Changes</xref></li>
-        <li><xref href="swift_play_book_linked_ring_management.dita#topic_jmm_cnz_4t">Swift
-            Playbooks Linked to Ring Management</xref></li>
-        <li><xref href="swift_safe-rebalance-deploy-ring.dita#topic_ohx_j1t_4t">When it is safe to
-            rebalance and deploy a new ring?</xref></li>
-        <li><xref href="swift_input_model_change_existing_rings.dita#topic_vyp_cft_4t">Applying
-            Input Model Changes to Existing Rings</xref></li>
+        <li><xref href="rebalanced_explained.dita">Rebalance Explained</xref></li>
+        <li><xref href="preparing_ring_changes.dita">Preparing for Ring Changes</xref></li>
+        <li><xref href="playbook_linked_ring_management.dita">Swift Playbooks Linked to Ring
+            Management</xref></li>
+        <li><xref href="safe_rebalance_deploy_ring.dita">When it is safe to rebalance and deploy a
+            new ring?</xref></li>
+        <li><xref href="input_model_change_existing_rings.dita">Applying Input Model Changes to
+            Existing Rings</xref></li>
       </ul>
     </p>
   </body>

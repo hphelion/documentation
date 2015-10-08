@@ -66,7 +66,7 @@
     <section><b>Ring Parameters</b><simpletable id="simpletable_qyp_lnj_2t">
         <strow>
           <stentry><codeph>replica-count</codeph></stentry>
-          <stentry><p>It defines the number of  copies of object created.</p>You require high
+          <stentry><p>It defines the number of copies of object created.</p>You require high
             resiliency or availability and want a higher replica count. The
               <codeph>replica-count</codeph> is normally 3 (i.e., Swift will keep three copies of
             accounts and containers). It is <b>recommended</b> not to change the value to lower than
@@ -101,12 +101,12 @@
         </strow>
         <strow>
           <stentry><codeph>default</codeph></stentry>
-          <stentry>The default value in the above sample file of ring-specification  is set to yes,
+          <stentry>The default value in the above sample file of ring-specification is set to yes,
             which means that the storage policy is enabled to store objects. For more details refer
-            to <xref href="storage-policies.dita#topic_gm1_4bc_jt"/>.</stentry>
+            to <xref href="storage_policies.dita"/>.</stentry>
         </strow>
       </simpletable></section>
-   <!--  
+    <!--  
     <section id="make-changes-ring"><b>Making Changes to the Ring Specifications</b><p>The ring
         specification provided in the example model contains adequate configuration details to
         deploy Swift. However, there may be reasons for changing the model as follows: </p><ul
@@ -219,7 +219,8 @@
         </ul>
       </note>
     </p>
-    <section id="partition-power"><b>Partition Power</b><table frame="all" rowsep="1" colsep="1" id="table_fz3_2hg_dt">
+    <section id="partition-power"><b>Partition Power</b><table frame="all" rowsep="1" colsep="1"
+        id="table_fz3_2hg_dt">
         <tgroup cols="3">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
           <colspec colname="c2" colnum="2" colwidth="1.0*"/>
@@ -285,10 +286,11 @@
           </tbody>
         </tgroup>
       </table></section>
-    <section id="calculating-number"><b>Calculating Numbers of Partitions</b><p>The Object Storage system hashes a given
-        name into a specific <i>partition</i>. For each partition, for a replica count of 3, there
-        are three <i>partition directories</i>. The partition directories are then evenly scattered
-        over all drives. We can calculate the number of partition directories as
+    <section id="calculating-number"><b>Calculating Numbers of Partitions</b><p>The Object Storage
+        system hashes a given name into a specific <i>partition</i>. For each partition, for a
+        replica count of 3, there are three <i>partition directories</i>. The partition directories
+        are then evenly scattered over all drives. We can calculate the number of partition
+        directories as
         follows:<codeblock>number-partition-directories-per-drive = ( (2 ** partition-power) * replica-count ) / number-of-drives
 </codeblock></p></section>
     <p>An ideal number of partition directories per drive is 100. However, the system operate

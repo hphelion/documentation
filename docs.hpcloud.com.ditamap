@@ -14,9 +14,6 @@
       </vrmlist>
     </prodinfo>
   </topicmeta>
-
-
-  <!-- NEW TOC STUFF, see https://etherpad.hpcloud.net/p/HOS2.0_doc_structure for details -->
   <topicref href="home.dita"/>
   <topicref href="helion/index.dita">
     <topicref href="helion/technical_overview.dita" navtitle="Technical Overview" locktitle="yes"/>

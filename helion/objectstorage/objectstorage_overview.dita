@@ -37,7 +37,7 @@
         of objects.</p></section>
     <p>Swift is configured through a number of YAML files in the HP Helion implementation of the
       OpenStack Object storage (Swift) service. For more details on the configuration of the YAML
-      files, refer to <xref href="swift_input_cloud_model.dita#modify-input-model"/>.</p>
+      files, refer to <xref href="input_cloud_model.dita#modify-input-model"/>.</p>
     <!--<section><title>Installation</title></section><section><p>Swift is installed automatically, if your environment meet the basic hardware requirement required for installing Swift. Please refer to <xref href="../supportedconfigs.dita#topic_ckw_kbc_ws">Supported Configuration</xref> for hardware requirement. </p></section>-->
   </body>
 </topic>

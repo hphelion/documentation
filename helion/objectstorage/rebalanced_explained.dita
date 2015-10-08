@@ -10,9 +10,9 @@
       contain the same number of partitions (and hence same amount of data). But it is not possible
       to move the partitions in a single step. It can take minutes to hours to move partitions from
       the original drives to their new drives (this process is called the <i>replication</i>
-      process).  If you move all partitions at once, there would be a period where Swift would
-      expect to find partitions on the new drives, but the data had not yet replicated there and
-      hence Swift could not return the data to the user. This is because data will eventually be
+      process). If you move all partitions at once, there would be a period where Swift would expect
+      to find partitions on the new drives, but the data had not yet replicated there and hence
+      Swift could not return the data to the user. This is because data will eventually be
       replicated. Therefore, Swift won't be able to find all the data in the middle of replication
       as some data has finished replication while other bits of data are still in the old locations
       and have not yet been moved. Instead, move only one replica at a time. If the replica count is
@@ -32,8 +32,7 @@
           two ways to mitigate this:<ul id="ul_msz_tjs_4t">
             <li>Add servers in smaller groups</li>
             <li>Set the weight-step attribute in the ring specification (see <xref
-                href="swift_preparing_ring_changes.dita#topic_t1y_vjs_4t">Preparing for Ring
-                Changes</xref>).</li>
+                href="preparing_ring_changes.dita">Preparing for Ring Changes</xref>).</li>
           </ul></li>
       </ul></section>
   </body>

@@ -61,13 +61,13 @@
         the networks as documented in these links:</p>
       <p>
         <ul>
-          <li><xref href="supportedconfigs.dita">Supported Configurations</xref></li>
+          <li><xref href="example_configs.dita">Example Configurations</xref></li>
         </ul>
       </p>
       <p>Use these checklists to confirm and record your network configuration information.</p>
       <p><b>Router</b></p>
-      <p>The IP router used with HP Helion OpenStack must support the updated of it's ARP table through
-        gratuitous ARP packets.</p>
+      <p>The IP router used with HP Helion OpenStack must support the updated of it's ARP table
+        through gratuitous ARP packets.</p>
       <p><b>PXE Installation Network</b></p>
       <p>When provisioning the IP range, allocate sufficient IP addresses to cover both the current
         number of servers and any planned expansion. Use the following table to help calculate the
@@ -165,12 +165,12 @@
         </table>
       </p>
       <p><b>Management Network</b></p>
-      <p>The management network is the backbone used for the majority of HP Helion OpenStack management
-        communications. Control messages are exchanged between the Controllers, Compute hosts, and
-        Cinder backends through this network. In addition to the control flows, the management
-        network is also used to transport Swift and iSCSI based Cinder block storage traffic between
-        servers. Also implemented on this network are VxLAN tunnels that are used for enabling
-        tenant networking for the instances.</p>
+      <p>The management network is the backbone used for the majority of HP Helion OpenStack
+        management communications. Control messages are exchanged between the Controllers, Compute
+        hosts, and Cinder backends through this network. In addition to the control flows, the
+        management network is also used to transport Swift and iSCSI based Cinder block storage
+        traffic between servers. Also implemented on this network are VxLAN tunnels that are used
+        for enabling tenant networking for the instances.</p>
       <p>When provisioning the IP Range, allocate sufficient IP addresses to cover both the current
         number of servers and any planned expansion. Use the following table to help calculate the
         requirements:</p>
@@ -571,7 +571,8 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are wiped</xref></entry>
+                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are
+                  wiped</xref></entry>
                 <entry/>
               </row>
               <row>
@@ -621,7 +622,8 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are wiped</xref></entry>
+                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are
+                  wiped</xref></entry>
                 <entry/>
               </row>
               <row>
@@ -671,7 +673,8 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are wiped</xref></entry>
+                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are
+                  wiped</xref></entry>
                 <entry/>
               </row>
               <row>
@@ -725,7 +728,8 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are wiped</xref></entry>
+                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are
+                  wiped</xref></entry>
               </row>
               <row>
                 <entry/>
@@ -807,7 +811,8 @@
               </row>
               <row>
                 <entry/>
-                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are wiped</xref></entry>
+                <entry><xref href="administration/wipe_disks.dita">Ensure the disks are
+                  wiped</xref></entry>
               </row>
               <row>
                 <entry/>

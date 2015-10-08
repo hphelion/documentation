@@ -61,9 +61,11 @@
             format="html" scope="external">m300 Server Cartridges (compute node only)</xref></li>
         <li>m710 Server Cartridges (compute node only)</li>
       </ul>
+      <!-- link doesn't work in 2.0
       <p>For more information, see <xref
           href="../../commercial/GA1/1.1commercial.install-GA-Moonshot.dita">Managing Moonshot
           Servers</xref>.</p>
+          -->
     </section>
     <section id="hp-proliant-scalable-systems">
       <title>HP ProLiant Scalable Systems</title>
