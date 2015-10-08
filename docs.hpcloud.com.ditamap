@@ -108,7 +108,7 @@
           navtitle="Integrating LDAP Integration with the Identity Service" locktitle="yes"> </topicref>
         <topicref href="helion/horizon/horizon_configure_v3.dita"
           navtitle="Configuring Horizon for Keystone v3" locktitle="yes" toc="yes"/>
-        <topicref href="helion/identity/keystone_limitations.dita" navtitle="Notes and Limitations"
+        <topicref href="helion/identity/identity_limitations.dita" navtitle="Notes and Limitations"
           locktitle="yes"> </topicref>
       </topicref>
 
