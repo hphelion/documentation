@@ -73,6 +73,11 @@ But the CLI, REST API etc should all be same </pre>
       <p><b>Important:</b> During the restore process the original HLM VM will be deleted from the
         KVM Host. </p>
     </section>
+    <section>
+      <title>Backup and Restore CLI</title>
+      <p>For more information on the Attis backup and restore CLI see <xref
+          href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore CLI</xref>.</p>
+    </section>
     <section><title>Backing up the HP Helion OpenStack Carrier Grade controllers</title>
       <p>To back up an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
       <ol>
