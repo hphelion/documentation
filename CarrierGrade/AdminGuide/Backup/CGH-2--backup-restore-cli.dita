@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Backup and Restore
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Attis Backup and Restore
     CLI</title>
   <prolog>
     <metadata>
@@ -21,7 +21,31 @@
 The high level design needs to be adjusted to more suite with CG(It is reflecting CS in some areas)I will soon update it. 
 But the CLI, REST API etc should all be same -->
     </p>
-    <p/>
+    <p>HP Helion OpenStack Carrier Grade includes a backup and restore application called Attis
+      which you can use to backup and restore essential system files and components of the non-KVM
+      cloud. Attis is automatically installed on each of the controller nodes in the non-KVM region.
+      Attis uses a command line interface.</p>
+    <p>The following document describes the full Attis CLI for backing up and restoring. You can
+      also use the built-in Attis help system by entering <codeph>attis help</codeph> before any
+      command when working with the CLI. For example:</p>
+    <p>
+      <codeblock>attis help storage</codeblock>
+    </p>
+    <section>
+      <title>IMPORTANT: Attis Administrator Responsibilites for Protecting Credentials</title>
+      <p> Attis performs encrypted backup and restore of system data. The key for encryption and
+        decryption is stored in the Attis configuration file on each controller node. If this key is
+        lost, your backups can not be restored. Consider storing the backup encryption key
+        separately from your cloud infrastructure, in addition to the copy stored on each controller
+        node.</p>
+      <p> Be aware that keys and passwords for other OpenStack services are stored in configuration
+        files on cloud infrastructure nodes, protected by filesystem controls. Protect servers from
+        authorized access to protect against exposure of credentials in configuration files. Attis
+        backups contain copies of these credentials as well, protected from snooping via backup
+        encryption, but exposure of the Attis backup key could result in unauthorized exposure of
+        credentials stored in backups.</p>
+    </section>
+    <section/>
     <p><b>Synopsis</b></p>
     <p>
       <codeblock>attis [--version] [-v] [--log-file LOG_FILE] [-q] [-h] [--debug]</codeblock>
