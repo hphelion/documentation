@@ -13,7 +13,7 @@
           replication system is busy repairing a failed drive, a ring change will place additional
           load on the system. To check that replication has finished, use the
             <codeph>swift-recon</codeph> command with the <b>--replication</b> argument. See <xref
-            href="validating_swift.dita#topic_xq2_dw4_nt"> swift-recon</xref> for more information.
+            href="validating_swift_recon.dita"> swift-recon</xref> for more information.
           The oldest replication time is useful as shown in the following
           example:<codeblock>$ sudo swift-recon --replication
 ===============================================================================
