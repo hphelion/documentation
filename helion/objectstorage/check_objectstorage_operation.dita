@@ -5,12 +5,12 @@
   <body>
     <p>You can verify the Swift Object Storage operational status using:<ul id="ul_v51_hh2_jt">
         <li>
-          <p><xref href="validating_swift_recon.dita#topic_xq2_dw4_nt">swift-recon</xref></p>
+          <p><xref href="validating_swift_recon.dita">swift-recon</xref></p>
         </li>
         <li>
-          <p><xref href="swiftlm-scan_metering.dita#topic_pcv_fy4_nt">swiftlm-scan</xref></p>
+          <p><xref href="lm_scan_metering.dita">swiftlm-scan</xref></p>
         </li>
-        <li><xref href="swift_utility.dita#topic_m13_dgp_nt">swift utility</xref></li>
+        <li><xref href="utility.dita">swift utility</xref></li>
       </ul></p>
   </body>
 </topic>

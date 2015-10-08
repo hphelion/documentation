@@ -5,13 +5,13 @@
   <body>
     <p>This section describes a general approach of making changes to an existing rings. This
       applies to actions as adding and removing a server, replacing and upgrading the disk drive(s).
-      There are a number of phases that must be performed to  adding and removing a server,
-      replacing and upgrading the disk drive(s), as shown below:</p>
+      There are a number of phases that must be performed to adding and removing a server, replacing
+      and upgrading the disk drive(s), as shown below:</p>
     <p>
       <ul id="ul_sqz_jft_4t">
         <li><b>Changing the Input Model Phase</b><ul id="ul_wrz_jft_4t">
             <li>If not already done, set the weight-step attribute. (See <xref
-                href="swift_preparing_ring_changes.dita#topic_t1y_vjs_4t/setting-weight-step-attribute"
+                href="preparing_ring_changes.dita#topic_t1y_vjs_4t/setting-weight-step-attribute"
                 >Setting the weight-step attribute</xref>). </li>
             <li>Edit the Input Model as appropriate. You must edit the YAML file as per your
               requirement. For more information, refer <xref href="../input_model.dita#input_model"
@@ -29,9 +29,9 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
             <li>Run the following
               playbook.<codeblock>cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost _swift-validate-input-model.yml</codeblock></li>
-            <li>  Validate that the number of drives proposed to be added or deleted or weight
-              change is correct. Fix any errors in your Input Model. At this stage, no changes have
-              been made to rings.  </li>
+            <li> Validate that the number of drives proposed to be added or deleted or weight change
+              is correct. Fix any errors in your Input Model. At this stage, no changes have been
+              made to rings. </li>
           </ul></li>
         <li><b>First phase of ring rebalance:</b><ul id="ul_gsz_jft_4t">
             <li>Run the following

@@ -22,20 +22,17 @@
         you are <i>modifying</i> a ring and behaves differently than while creating a ring from
         scratch. In such case the ring is not balanced. So, if the cloud model contains an error or
         you decide to make substantive changes, it is always advised to start from scratch and build
-        rings from the scratch using procedure described in <xref
-          href="swift_resetting_builder_file.dita#topic_d3v_4tz_4t">resetting builder</xref>
-        files.</p>
+        rings from the scratch using procedure described in <xref href="resetting_builder_file.dita"
+          >resetting builder</xref> files.</p>
       <!--<p> creating a ring from scratch, no builder file exists. Instead, the first step in the process is to build a builder file. The deploy playbooks do this for you as part of the deployment process. If you have already successfully deployed some of the system, the ring builder files will exist. If you now make changes to the input model (for example, adding servers), the process assumes you are <i>modifying</i> a ring and will behave differently than when it is creating a ring from scratch. Specifically, the rings might not be balanced. If the Cloud Model contains errors or you decide to make substantive changes, you may wish to start from scratch and build rings from scratch using the procedure described in "Resetting Builder Files".</p>-->
       <?oxy_custom_start type="oxy_content_highlight" color="255,60,255"?>
     </section>
     <p><?oxy_custom_end?>You can perform the various operational procedure as follows:<ul
         id="ul_rwy_ntz_4t">
-        <li><xref href="swift_resetting_builder_file.dita#topic_d3v_4tz_4t">Resetting Builder
-            Files</xref></li>
-        <li><xref href="swift_recovering_builder_file.dita#topic_gbz_13t_mt">Recovering Builder
-            Files</xref></li>
-        <li><xref href="swift_first_proxy_server.dita#topic_rtc_s3t_mt">Identify the first Swift
-            Proxy Server</xref></li>
+        <li><xref href="resetting_builder_file.dita">Resetting Builder Files</xref></li>
+        <li><xref href="recovering_builder_file.dita">Recovering Builder Files</xref></li>
+        <li><xref href="swift_first_proxy_server.dita">Identify the first Swift Proxy
+          Server</xref></li>
       </ul><?oxy_custom_start type="oxy_content_highlight" color="255,60,255"?></p>
     <?oxy_custom_end?>
   </body>

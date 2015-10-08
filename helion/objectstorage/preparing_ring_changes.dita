@@ -5,11 +5,11 @@
   <body>
     <p>Rings are build during a deploy and it automatically set the weights of disk drives such that
       smaller disk drives have a smaller weight than larger disk drives. As explained in <xref
-        href="swift_rebalanced_explained.dita#topic_izw_1mz_4t">Rebalance Explained</xref>, when
-      making changes in the ring it can be useful to limit the amount of change that occurs. This is
-      done by limiting the weights of the new drives to the smaller value and then build new rings.
-      Once the replication process has finished, we can increase the weight and rebuild rings to
-      trigger another round of replication.</p>
+        href="rebalanced_explained.dita">Rebalance Explained</xref>, when making changes in the ring
+      it can be useful to limit the amount of change that occurs. This is done by limiting the
+      weights of the new drives to the smaller value and then build new rings. Once the replication
+      process has finished, we can increase the weight and rebuild rings to trigger another round of
+      replication.</p>
     <p>In HP Helion OpenStack, the weight-step attribute is set in the ring specification of the
       Input Model. The weight-step value specifies a maximum value for the change of the weight of a
       drive in any single rebalance. For example, if we add a drive of 4TB in size, we would
@@ -22,10 +22,10 @@
       value is to use 20% of the size of the drives. For example, for 4TB drives a value of 820
       would be appropriate. As you gain more experience with your system, you may increase or reduce
       this value.</p>
-    <section id="setting-weight-step-attribute"><sectiondiv><b>Setting the weight-step attribute</b></sectiondiv><p>Perform the
-        following steps to set the weight-step attribute:<note>You can set the weight-step
-          attributes for Account, Container, Object-0, etc in the similar way.</note><ol
-          id="ol_dl2_bdy_4t">
+    <section id="setting-weight-step-attribute"><sectiondiv><b>Setting the weight-step
+        attribute</b></sectiondiv><p>Perform the following steps to set the weight-step
+          attribute:<note>You can set the weight-step attributes for Account, Container, Object-0,
+          etc in the similar way.</note><ol id="ol_dl2_bdy_4t">
           <li>Edit the (<codeph>data/swift/rings.yml</codeph>)file containing the
             ring-specifications in the Input Model.</li>
           <li>Search the attributes of a ring. In the following example we are setting the attribute

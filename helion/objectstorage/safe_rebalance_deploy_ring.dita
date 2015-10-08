@@ -13,8 +13,8 @@
           replication system is busy repairing a failed drive, a ring change will place additional
           load on the system. To check that replication has finished, use the
             <codeph>swift-recon</codeph> command with the <b>--replication</b> argument. See <xref
-            href="validating_swift_recon.dita"> swift-recon</xref> for more information.
-          The oldest replication time is useful as shown in the following
+            href="validating_swift_recon.dita"> swift-recon</xref> for more information. The oldest
+          replication time is useful as shown in the following
           example:<codeblock>$ sudo swift-recon --replication
 ===============================================================================
 --> Starting reconnaissance on 3 hosts
@@ -38,9 +38,8 @@ Most recent completion was 2015-10-02 15:31:43 (10 seconds ago) by 192.168.245.3
         <li>Has min-part-time elapsed? <p>The <codeph>swift-ring-builder</codeph> will refuse to
             build a new ring until min-part-time hours has elapsed since the last time it built
             rings. You must postpone changes until this time has elapsed. Alternatively you can
-            change the value of min-part-time (See <xref
-              href="how_to_change_min-part-power.dita#topic_ybt_mhb_kt">Changing
-              min-part-time</xref>).</p></li>
+            change the value of min-part-time (See <xref href="how_to_change_min_part_power.dita"
+              >Changing min-part-time</xref>).</p></li>
       </ul>
     </p>
   </body>
