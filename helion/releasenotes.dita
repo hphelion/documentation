@@ -245,7 +245,7 @@
       </ul>
       <p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer,
         Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HP Linux for 
-        HP Helion OpenStack.</p><p>Learn more about Monasca here: <xref href="operations/monasca.dita"
+        HP Helion OpenStack.</p><p>Learn more about Monasca here: <xref href="operations/monitoring_service.dita"
           >Monasca Overview</xref></p>
       <p><b>Monitoring Configuration Options Available for Metrics Database</b></p>
       <p>In Beta 2 you will have the option to specify which database platform you want to use for

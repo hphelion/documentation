@@ -223,7 +223,7 @@ MONITORING AND LOGGING
         <topicref href="helion/metering/metering_bestpractice.dita"
           navtitle="Optimizing the Metering Service" locktitle="yes"/>
       </topicref>
-      <topicref href="helion/operations/monasca.dita" navtitle="Monitoring Service" locktitle="yes">
+      <topicref href="helion/operations/monitoring_service.dita" navtitle="Monitoring Service" locktitle="yes">
         <topicref href="helion/operations/alarms.dita" navtitle="Service Alarm Definitions"
           locktitle="yes"/>
       </topicref>
