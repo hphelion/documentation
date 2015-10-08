@@ -54,8 +54,8 @@
           <stentry><b>value</b></stentry>
           <stentry>This is the value of the metric. For many metrics, this is simply the value of
             the metric. But for other metrics, the value indicates a status. If the
-              <b>value_meta</b> contains a "msg" field, the value is a status. The following status
-            values are used:<ul id="ul_rjy_hm2_jt">
+              <b>value_meta</b> contains a <b>msg</b> field, the value is a status. The following
+            status values are used:<ul id="ul_rjy_hm2_jt">
               <li>0 - no error</li>
               <li>1 - warning</li>
               <li>2 - failure</li>
@@ -63,8 +63,8 @@
         </strow>
         <strow>
           <stentry><b>value_meta</b></stentry>
-          <stentry>This contains additional information. The "msg" field is the most useful of this
-            information. </stentry>
+          <stentry>This contains additional information. The <b>msg</b> field is the most useful of
+            this information. </stentry>
         </strow>
       </simpletable>
     </p>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_enj_cms_mt">
-  <title>Restarting the  Object Storge Deployment</title>
+  <title>Restarting the Object Storage Deployment</title>
   <body>
     <p>This page describes the various operational procedures performed by Swift.</p>
     <section>
-      <title>Restart the Swift Object Storge Deployment </title>
+      <title>Restart the Swift Object Storage Deployment </title>
       <p>The structure of ring is built in an incremental stages. When you modify a ring, the new
         ring uses the state of the old ring as a basis for the new ring. Rings are stored in the
         builder file. The <b>swiftlm-ring-supervisor</b> stores builder files in the<codeph>

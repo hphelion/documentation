@@ -3,14 +3,14 @@
 <topic id="ring-specification">
   <title>Ring Specifications</title>
   <body>
-    <p>The ring is resposible for mapping data on particular disks.There is a separate ring for
+    <p>The ring is responsible for mapping data on particular disks. There is a separate ring for
       account databases, container databases and for each object storage policy, but each ring works
       similarly. The swift-ring-builder utility is used to build and manage rings. The
       swift-ring-builder utility uses a builder file to contain ring information and additional data
-      required to build future rings. In HOS2.0, you use the cloud model to specify how the rings
-      are configured and used. This model is used to automatically invoke the swift-ring-builder
-      utility as part of the deploy process. Normally, you will not run the swift-ring-builder
-      utility directly.</p>
+      required to build future rings. In HP Helion OpenStack 2.0, you use the cloud model to specify
+      how the rings are configured and used. This model is used to automatically invoke the
+      swift-ring-builder utility as part of the deploy process. Normally, you will not run the
+      swift-ring-builder utility directly.</p>
     <p>The rings are specified in the input model using the <b>ring-specifications</b> key. There is
       an entry for each distinct Swift system – hence the Keystone region name is specified in the
         <b>region-name</b> key of the example cloud model.</p>

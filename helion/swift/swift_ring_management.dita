@@ -13,7 +13,8 @@
       configuration for Swift, like:<ul id="ul_yxs_dzr_4t">
         <li><xref href="swift_input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
             >Adding or removing Swift nodes</xref></li>
-        <li>Adding additional storage policies (<b>we need content for this</b>)</li>
+        <li><xref href="swift_add_new_storage_policy.dita#topic_evl_wln_pt">Adding additional
+            storage policies</xref></li>
         <li><xref href="swift_input_model_change_existing_rings.dita#topic_vyp_cft_4t/system-change"
             >Upgrading the size of disk drives used by Swift</xref></li>
       </ul></p>

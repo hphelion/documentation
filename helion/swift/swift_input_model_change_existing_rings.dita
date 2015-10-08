@@ -76,7 +76,7 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
           </ul></li>
       </ul>
     </p>
-    <section>
+    <section id="system-cahnge-existing-rings">
       <title>System change that change existing rings</title>
       <p>There are many system changes ranging from adding servers to replacing drives that might
         require some ring rebuild and rebalance actions.</p>

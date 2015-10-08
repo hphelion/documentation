@@ -149,6 +149,7 @@
           <topicref href="helion/swift/swift_recovering_builder_file.dita"/>
           <topicref href="helion/swift/swift_first_proxy_server.dita"/>
           <topicref href="helion/swift/swift_add_new_node.dita"/>
+          <topicref href="helion/swift/swift_add_new_storage_policy.dita"/>
         </topicref>
       </topicref>
 
