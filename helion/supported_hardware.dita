@@ -216,7 +216,6 @@
         <li>HP QMH2672 16Gb Fibre Channel Host Bus Adapter </li>
       </ul>
     </section>
-    <p>For more information about independent hardware vendor (IHV) supported hardware, see the HP
-      Helion Ready Solution Catalog.</p>
+    <p>For more information about independent hardware vendor (IHV) supported hardware, see the <xref href="http://helionready.hpcloud.com/ihv/category/Server" format="html" scope="external">HP Helion Ready Solution Catalog.</xref></p>
   </body>
 </topic>
