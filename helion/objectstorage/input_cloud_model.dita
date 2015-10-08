@@ -66,7 +66,7 @@
           <li><xref href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt"/></li>
           <li><xref href="allocating_network.dita#topic_pcj_hzv_dt"/></li>
           <li><xref href="allocating_disk_drives.dita"/></li>
-          <li><xref href="creating-pac-cluster.dita"/></li>
+          <li><xref href="creating_pac_cluster.dita"/></li>
           <li><xref href="creating_object_server_resource.dita"/></li>
           <li><xref href="ring_specifications.dita"/></li>
           <li><xref href="storage-policies.dita"/><p>You can not only perform the above operation

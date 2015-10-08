@@ -127,7 +127,7 @@
             <topicref href="helion/objectstorage/filesystem_label.dita" toc="yes"
               navtitle="How to Verify if a Filesystem Label" locktitle="yes"/>
           </topicref>
-          <topicref href="helion/objectstorage/creating-pac-cluster.dita"/>
+          <topicref href="helion/objectstorage/creating_pac_cluster.dita"/>
           <topicref href="helion/objectstorage/creating_object_server_resource.dita"/>
           <topicref href="helion/objectstorage/allocating_network.dita"/>
           <topicref href="helion/objectstorage/ring_specifications.dita"/>
