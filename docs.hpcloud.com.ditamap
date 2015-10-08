@@ -102,7 +102,7 @@
           navtitle="Configuring the Identity Service" locktitle="yes"> </topicref>
         <topicref href="helion/identity/identity_admin.dita"
           navtitle="Administering the Identity Service" locktitle="yes"> </topicref>
-        <topicref href="helion/identity/keystone_reconfigure.dita"
+        <topicref href="helion/identity/identity_reconfigure.dita"
           navtitle="Reconfiguring the Identity Service" locktitle="yes"/>
         <topicref href="helion/identity/identity_ldap.dita"
           navtitle="Integrating LDAP Integration with the Identity Service" locktitle="yes"> </topicref>
