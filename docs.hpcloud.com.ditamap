@@ -131,7 +131,7 @@
           <topicref href="helion/objectstorage/creating_object_server_resource.dita"/>
           <topicref href="helion/objectstorage/allocating_network.dita"/>
           <topicref href="helion/objectstorage/ring_specifications.dita"/>
-          <topicref href="helion/objectstorage/storage-policies.dita"/>
+          <topicref href="helion/objectstorage/storage_policies.dita"/>
         </topicref>
         <topicref href="helion/objectstorage/ring_management.dita">
           <topicref href="helion/objectstorage/rebalanced_explained.dita"/>

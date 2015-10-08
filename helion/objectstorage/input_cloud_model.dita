@@ -69,7 +69,7 @@
           <li><xref href="creating_pac_cluster.dita"/></li>
           <li><xref href="creating_object_server_resource.dita"/></li>
           <li><xref href="ring_specifications.dita"/></li>
-          <li><xref href="storage-policies.dita"/><p>You can not only perform the above operation
+          <li><xref href="storage_policies.dita"/><p>You can not only perform the above operation
               but you can check the <xref href="check-swift-operation.dita#topic_bvm_yg2_jt">swift
                 operation</xref> in your environment.</p></li>
         </ul></p>
