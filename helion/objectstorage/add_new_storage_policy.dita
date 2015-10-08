@@ -4,7 +4,7 @@
   <title>Adding a New Storage Policy</title>
   <body>
     <p>This page describes the procedure to add an additional Storage Policy to an existing system.
-      For an overview of Storage Policies see <xref href="storage-policies.dita#topic_gm1_4bc_jt"/>. </p>
+      For an overview of Storage Policies see <xref href="storage_policies.dita"/>. </p>
     <p><b>Procedure to add a Storage Policy</b></p>
     <p>Perform the following steps to add the storage policy to an existing system.</p>
     <p>
@@ -80,10 +80,9 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           playbook as
           follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>If
-          there are errors see <xref
-            href="interpreting_swift-validate-input-model.dita#topic_avw_22b_kt"/> and correct them.
-          Once the error is rectified, you must  run the steps <b>5 -10.</b></li>
-        <li>Create the new ring  (for example; object-2) and reconfigure Swift node to use a new
+          there are errors see <xref href="interpreting_swift_validate_input_model.dita"/> and
+          correct them. Once the error is rectified, you must run the steps <b>5 -10.</b></li>
+        <li>Create the new ring (for example; object-2) and reconfigure Swift node to use a new
           Storage Policy by running the <codeph>swift-deploy.yml</codeph> playbook as follows.
             <note>Before using <codeph>swift-deploy.yml</codeph>, check that Swift is running
             normally.</note><codeblock>cd ~/scratch/ansible/next/hos/ansible

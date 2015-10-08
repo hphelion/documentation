@@ -40,7 +40,7 @@
                     [<b>device</b>] section for each side of the fabric.</li>
               </ul>
             </note></li>
-          <li>Copy the following configuration.  The values in FABRIC_A and FABRIC_B are an example.
+          <li>Copy the following configuration. The values in FABRIC_A and FABRIC_B are an example.
               <codeblock>[DEFAULT] 
 zoning_mode=fabric 
 
@@ -87,8 +87,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
         </ol></p>
     </section>
     <p>To verify the brocade zone manager are configured successfully, please refer to <xref
-        href="../verify_backend_configuration.dita#topic_q5q_trz_jt">Verify Backend
-        Configuration</xref>.</p>
+        href="verify_backend_configuration.dita">Verify Backend Configuration</xref>.</p>
     <p> </p>
     <section>
       <title>Known Limitations:</title>
