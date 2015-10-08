@@ -267,9 +267,9 @@ MONITORING AND LOGGING
       <!-- horizon -->
       <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
         locktitle="yes" toc="yes"/>
-      <topicref href="helion/user/create_network.dita" navtitle="Creating a Private Network"
+      <topicref href="helion/userguide/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
-      <topicref href="helion/user/lbaas.dita" navtitle="Using Load Balancing as a Service (LBaaS)"
+      <topicref href="helion/userguide/lbaas.dita" navtitle="Using Load Balancing as a Service (LBaaS)"
         locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
       <topicref href="helion/networking/fwaas.dita" locktitle="yes">
