@@ -26,7 +26,8 @@
       in to.</p>
     <p>The installation creates several management nodes running different metering components.</p>
     <p>
-      <image href="../../media/metering/ceil_overallarchi.png" id="image_mbd_c5t_ct" placement="break"/></p>
+      <image href="../../media/metering/ceil_overallarchi.png" id="image_mbd_c5t_ct"
+        placement="break"/></p>
     <section id="controller1_components">
       <title>Ceilometer Components on Controller node 1</title>
       <p>This controller node is the first of the High Available (HA) cluster. In this node there is
@@ -47,8 +48,7 @@
           sites.<codeblock>sudo a2ensite ceilometer.conf</codeblock></li>
         <li>The new changes need to be picked up by Apache2. If possible, force a reload rather than
           a restart. Unlike a restart, the reload waits for currently active sessions to gracefully
-          terminate or
-          complete.<codeblock>sudo  /etc/init.d/apache2 force-reload</codeblock></li>
+          terminate or complete.<codeblock>sudo  /etc/init.d/apache2 force-reload</codeblock></li>
       </ol>
     </section>
     <section id="controller2_components">
@@ -66,8 +66,7 @@
         are consumed by the Collector and stored in the database. The Collector is also responsible
         for consuming and storing notifications. Here there is a high level picture of the overall
         polling/collecting cycle.</p>
-      <p><image href="../../media/metering/ceil_collectorandagents.png" id="image_u42_fvt_ct"
-        /></p>
+      <p><image href="../../media/metering/ceil_collectorandagents.png" id="image_u42_fvt_ct"/></p>
     </section>
     <section id="centralagent">
       <title>Ceilometer Central Agent</title>
@@ -100,7 +99,7 @@ ceilometer-agent-central start/running, process 27989</codeblock></li>
           running:<codeblock>sudo service ceilometer-collector status 
 ceilometer-collector start/running, process 27455</codeblock></li>
         <li>Start or stop the process as
-            needed:<codeblock>sudo service ceilometer-collector stop</codeblock>or
+          needed:<codeblock>sudo service ceilometer-collector stop</codeblock>or
           <codeblock>sudo service ceilometer-collector start</codeblock></li>
       </ol>
     </section>

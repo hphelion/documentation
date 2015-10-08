@@ -37,7 +37,7 @@
       <p>The Monasca service is automatically installed as part of the HP Helion OpenStack
         installation.</p>
       <p>No specific configuration is required to use Monasca. However, you can configure the
-        database for storing metrics as detailed in the <xref href="monasca_configure.dita"
+        database for storing metrics as detailed in the <xref href="../administration/configure_monitoring.dita"
           >Monitoring Configuration</xref> document.</p>
     </section>
     <section id="differences"><title>Differences Between Upstream and HP Helion OpenStack
@@ -75,9 +75,9 @@
       <codeblock>Username: admin
         Password: admin</codeblock>
       <note type="important">The credentials for your <codeph>admin</codeph> user account can be
-        changed. See <xref href="identity/identity_init.dita">Keystone Configuration</xref> for more
+        changed. See <xref href="../identity/identity_init.dita">Keystone Configuration</xref> for more
         details.</note>
-      <p>For details on the use of the Operations Console, see <xref href="opsconsole/overview.dita"
+      <p>For details on the use of the Operations Console, see <xref href="opsconsole_overview.dita"
           >Operations Console Overview</xref></p>
       <b>Command-Line Interface</b>
       <p>For users who prefer using the command line, there is the python-monascaclient.</p>
@@ -97,7 +97,7 @@
           Alarm Definitions</xref>.</p>
       <p>When alarms are triggered it is helpful to review the service logs. Details on how to use
         the logging UI built into the Operations Console can be found here: <xref type="section"
-          href="../logging/centralized_logging.dita#logging/interface">Logging Interface</xref></p>
+          href="centralized_logging.dita#logging/interface">Logging Interface</xref></p>
     </section>
     <section id="info"><title>For More Information</title>
       <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca"
