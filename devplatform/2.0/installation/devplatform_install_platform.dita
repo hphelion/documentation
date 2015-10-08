@@ -55,9 +55,7 @@ $ cat /etc/hosts | grep c1-m3-mgmt
               one:<codeblock>$ sudo chown -R horizon-venv /opt/stack/service/horizon/venv/bin
 $ sudo chown -R horizon-venv /opt/stack/service/horizon/venv/lib</codeblock></li>
           </ol></li>
-        <li>The DBaaS, DNSaaS and Cue services rely on the creation of a VM service network. This
-          service network is a VLAN-encapsulated provider network which is fully routable to the HP
-          Helion OpenStack MGMT network. [This is an extra step required for the beta release.]<ol>
+        <li>The DBaaS, DNSaaS and Cue services rely on the creation of a VM service network. This service network is a VLAN-encapsulated provider network which is fully routable to the HP Helion OpenStack MGMT network. [This is an extra step required for the beta release.]<ol>
             <li>SSH to the Deployer node using admin credentials.</li>
             <li>Source the admin credentials:
               <!--This step will not be necessary after HOS GA but it is during the beta per Alex--><codeblock>source ~/service.osrc</codeblock></li>
