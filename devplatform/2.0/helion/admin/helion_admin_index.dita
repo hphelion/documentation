@@ -126,18 +126,6 @@
                 Setup</xref>
             </li>
           </ul></li>
-<li>
-          <xref href="server/upgrade.dita">Upgrading Application Lifecycle Service</xref>
-          <ul>
-            <li>
-              <xref href="server/upgrade.dita#topic13180/before-an-upgrade" type="section"  >Before an
-                upgrade</xref>
-            </li>
-            <li>
-              <xref href="server/upgrade.dita#topic13180/executing-the-upgrade" type="section"  >Executing the
-                upgrade</xref>
-            </li>
-          </ul></li>
 </ul>
 </section>
 <section id="cluster-configuration"> <title>Advanced/Manual Cluster Configuration</title>
