@@ -101,10 +101,24 @@
                     between two nodes.</stentry>
                 </strow>
               </simpletable>
-            </p><p>
-              <note type="important">Minimum 3 OSD nodes are required to configure Ceph. </note>
             </p></li>
-          <li> Commit your configuration to a <xref href="using_git.dita">local
+          <li> Editable parameters for Ceph are available in the following locations:<ul
+              id="ul_jbn_nj5_kt">
+              <li><codeph>~/helion/my_cloud/config/ceph/settings.yml</codeph><p>In the
+                    <codeph>settings.yml</codeph> file, you can edit the following parameters:<ul
+                    id="ul_ocp_ty5_kt">
+                    <li>fsid</li>
+                    <li>ceph clusters</li>
+                    <li>osd_settle_time</li>
+                    <li>OSD_journal_size</li>
+                  </ul></p></li>
+              <li>
+                <p><codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph></p>
+                <p>The <codeph>user_model.yml</codeph> has the editable values for the different
+                  pools created by HP Helion OpenStack.</p>
+              </li>
+            </ul></li>
+          <li>Commit your configuration to a <xref href="using_git.dita">local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock><note>
@@ -112,14 +126,14 @@ git commit -m "&lt;commit message>"</codeblock><note>
           <li>Run the configuration
             processor<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-          <li>Use <codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph> file to
-            create a deployment directory.</li>
-          <li>Run <codeph>verb_host</codeph> commands from the following directory:
-            <codeblock> ~/scratch/ansible/next/hos/ansible</codeblock></li>
-          <li>Modify <codeph>./helion/hlm/ansible/hlm-deploy.yml</codeph> to uncomment the line
-            containing <codeph>ceph-deploy.yml</codeph>.</li>
+          <li>Run the following command to create a deployment
+            directory.<codeblock>cd ~/helion/hos/ansible
+<codeph>ansible-playbook -i hosts/localhost ready-deployment.yml</codeph></codeblock></li>
+          <li>Modify <codeph>~/helion/hlm/ansible/hlm-deploy.yml</codeph> and uncomment the line
+            containing <codeph>ceph-deploy.yml</codeph> to enable deployment of ceph.</li>
           <li>Run the following ansible
-            playbook:<codeblock>ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
+            playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
         </ol>
       </p>
     </section>
@@ -132,7 +146,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</codeblock>
     </p>
-    <p><b>Configure Ceph as a Cinder backend</b></p>
+    <p><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?><b>Configure Ceph as a
+        Cinder backend</b></p>
     <p>Perform the following procedure on the Deployer node to configure Ceph as a Cinder
         backend:<ol id="ol_scj_1cb_gt">
         <li>Edit <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> to
@@ -149,8 +164,7 @@ rbd_ceph_conf = /etc/ceph/ceph.conf
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
 volume_backend_name = ceph</codeblock><note>The
               <b>rbd_uuid </b>is available in
-              <codeph>/home/stack/helion/hos/ansible/roles/ceph-client-prepare/vars/ceph_user_model.yml</codeph><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></note></li>
-        <?oxy_custom_end?>
+              <codeph>/home/stack/helion/hos/ansible/roles/ceph-client-prepare/vars/ceph_user_model.yml</codeph></note></li>
         <li>Modify <codeph>cinder.conf.j2</codeph> at
             <codeph>~/helion/hos/ansible/roles/_CND-CMN/templates/cinder.conf.j2</codeph> with the
           following values:
@@ -260,3 +274,4 @@ ansible-playbook -i hosts/verb_hosts ceph-stop.yml</codeblock></li>
     </section>
   </body>
 </topic>
+<?oxy_custom_end?>
