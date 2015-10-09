@@ -5,14 +5,11 @@
   <body>
     <section id="about"><title>Configuration Options</title>
       <ul>
-        <li>Entry Scale Cloud - uses KVM Hypervisor for Compute hosts and VSA Block Storage
-          backend</li>
+        <li>Entry Scale Cloud with VSA</li>
         <li>Entry Scale Cloud variations: <ul>
-            <li>Using a Ceph Block Storage backend</li>
-            <li>Using a 3PAR Block Storage backend</li>
-            <li>Using ESX as your Compute host hypervisor</li>
+            <li>Entry Scale Cloud with Ceph</li>
+            <li>Entry Scale Cloud with ESX</li>
           </ul></li>
-        <li>Entry Scale Storage Depot - deploys exclusively as an Object Storage service</li>
       </ul>
     </section>
     <section><title>Entry Scale Cloud using KVM and VSA Block Storage Backend</title>
