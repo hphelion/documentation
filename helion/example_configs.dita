@@ -10,7 +10,6 @@
             <li>Entry Scale Cloud with Ceph</li>
             <li>Entry Scale Cloud with ESX</li>
           </ul></li>
-        <li>Entry Scale Storage Depot - deploys exclusively as an Object Storage service</li>
       </ul>
     </section>
     <section><title>Entry Scale Cloud using KVM and VSA Block Storage Backend</title>
