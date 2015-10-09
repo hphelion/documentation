@@ -11,6 +11,33 @@
         future releases, as well as legacy features that OpenStack is planning to deprecate but may
         be needed in the short-term for compatibility reasons. If you need additional support on any
         of these features for a specific use case, please contact HP’s professional services team. </p>
+      
+      <p>
+        <ul id="KiloFeatureJumplist">
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/NovaFeatures">Nova
+            Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/NeutronFeatures">Neutron
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/GlanceFeatures">Glance
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/SwiftFeatures">Swift
+            Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/CinderFeatures">Cinder
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/KeystoneFeatures">Keystone
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/CeilometerFeatures">Ceilometer
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/HeatFeatures">Heat
+            Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/IronicFeatures">Ironic
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/HorizonFeatures">Horizon
+              Features</xref></li>
+          <li><xref href="kilo_features.dita#HP2.0KiloFeatures/MonascaFeatures">Monasca
+              Features</xref></li>
+        </ul>
+      </p>
     </section>
 
     <section id="NovaFeatures">
