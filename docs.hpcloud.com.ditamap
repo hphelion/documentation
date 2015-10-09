@@ -52,7 +52,7 @@
         <topicref href="helion/blockstorage/verify_backend_configuration.dita"
           navtitle="Verifying a Backend Configuration" locktitle="yes"/>
       </topichead>
-      <topicref href="helion/bare_installation_esx.dita" navtitle="Installation for ESX Hypervisor"
+      <topicref href="helion/install_entryscale_esx.dita" navtitle="Installation for ESX Hypervisor"
         locktitle="yes"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
       <topicref href="helion/gui_install_on_kvm.dita"

@@ -39,7 +39,7 @@
     <section>
       <ul>
         <li><xref href="install_entryscale_kvm_vsa.dita">Baremetal Install for KVM Hypervisor</xref></li>
-        <li><xref href="bare_installation_esx.dita">Baremetal Install for ESX Hypervisor</xref></li>
+        <li><xref href="install_entryscale_esx.dita">Baremetal Install for ESX Hypervisor</xref></li>
       </ul>
       <p>Other useful documents that will help you understand, plan, configure, and install your
         cloud are listed below.</p>
@@ -48,7 +48,7 @@
         <li><xref href="using_git.dita">Using Git for Configuration Manqagement</xref></li>
         <li><xref href="preinstall_checklist.dita">Pre-Installation Checklist</xref></li>
         <li><xref href="install_entryscale_kvm_vsa.dita">Baremetal Install for KVM Hypervisor</xref></li>
-        <li><xref href="bare_installation_esx.dita">Baremetal Install for ESX Hypervisor</xref></li>
+        <li><xref href="install_entryscale_esx.dita">Baremetal Install for ESX Hypervisor</xref></li>
         <li><xref href="installation_troubleshooting.dita">Troubleshooting Your
           Installation</xref></li>
         <li><xref href="installation_verification.dita">Verifying Your Installation</xref></li>
