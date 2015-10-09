@@ -21,7 +21,7 @@
         <ol id="ol_evc_k11_gt">
           <li>Login to the Deployer node.</li>
           <li>Copy <codeph>helion/examples/</codeph> in the Deployed node.
-            <codeblock>cp -r ~/helion/examples/ ~/helion-input/my_cloud/definition</codeblock></li>
+            <codeblock>cp -r ~/helion/examples/entry-scale-kvm-ceph/* ~/helion/my_cloud/definition/</codeblock></li>
           <li>List the folder in <codeph>~/helion-input/my_cloud/definition</codeph>. <p>The
               configuration files for editing are available at
                 <codeph>~/helion/my_cloud/definition/data</codeph>.</p></li>
@@ -104,7 +104,7 @@
             </p><p>
               <note type="important">Minimum 3 OSD nodes are required to configure Ceph. </note>
             </p></li>
-          <li> Commit your configuration to a <xref href="../using_git.dita#topic_u3v_1yz_ct">local
+          <li> Commit your configuration to a <xref href="using_git.dita">local
               repository</xref>:<codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "&lt;commit message>"</codeblock><note>
@@ -193,14 +193,14 @@ git commit -m "&lt;your commit message>"</codeblock>
         <li>Log into the Horizon dashboard. The Horizon dashboard displays with the options in the
           left panel.</li>
         <li>From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab to
-          display the Volumes page.<p><image href="../../media/ceph/create-ceph-volumetype1.png"
+          display the Volumes page.<p><image href="../media/ceph/create-ceph-volumetype1.png"
               id="image_nrn_sxc_gt"/></p></li>
         <li>Click <b>Create Volume Type</b> to display a dialog box.<p><image
-              href="../../media/ceph/create-ceph-volumetype2.png" id="image_vww_tyc_gt"/></p></li>
+              href="../media/ceph/create-ceph-volumetype2.png" id="image_vww_tyc_gt"/></p></li>
         <li>Enter the name of the volume type.</li>
         <li>Click<b> Create Volume Type</b>. The newly created volume displays in the Volumes
-              page.<p><image href="../../media/ceph/create-ceph-volumetype.png"
-              id="image_ilf_wzc_gt"/></p></li>
+              page.<p><image href="../media/ceph/create-ceph-volumetype.png" id="image_ilf_wzc_gt"
+            /></p></li>
       </ol></p>
     <p><b>Associate the volume type to a backend</b></p>
     <p>To map a volume type to a backend, do the following:</p>
@@ -208,13 +208,13 @@ git commit -m "&lt;your commit message>"</codeblock>
       <li>Login to the Overcloud Horizon dashboard. The Overcloud dashboard displays with the
         options in the left panel.</li>
       <li> From the left panel, click the <b>Admin</b> tab and then click the <b>Volumes</b> tab to
-        display the Volumes page.<p/><image href="../../media/ceph/create-ceph-volumetype.png"
+        display the Volumes page.<p/><image href="../media/ceph/create-ceph-volumetype.png"
           id="image_izx_2cd_gt"/></li>
       <li>Click <b>View Extra Specs</b> displayed against the volume type which you want to
         associate to the backend.<p/><image
-          href="../../media/ceph/create-ceph-volumetype_extra-specs.png" id="image_cgv_dcd_gt"
-          /><p>The <b>Create Volume Type Extra Specs</b> dialog box displays.</p><p><image
-            href="../../media/ceph/volume-extra-specs-ceph.png" id="image_clm_rcd_gt"/></p></li>
+          href="../media/ceph/create-ceph-volumetype_extra-specs.png" id="image_cgv_dcd_gt"/><p>The
+            <b>Create Volume Type Extra Specs</b> dialog box displays.</p><p><image
+            href="../media/ceph/volume-extra-specs-ceph.png" id="image_clm_rcd_gt"/></p></li>
       <li>In the <b>Key</b> box, enter <i>volume_backend_name</i>. This is the name of the key used
         to specify the storage backend when provisioning volumes of this volume type.</li>
       <li>In the <b>Value</b> box, enter the name of the backend to which you want to associate the
