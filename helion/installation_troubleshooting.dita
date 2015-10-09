@@ -3,17 +3,23 @@
 <topic id="troubleshooting_installation">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the Installation</title>
   <body>
-    <section id="troubleshooting">
-      <title>Troubleshooting Tips</title>
+    <section id="about">
+      <p>We have gathered some of the common issues that occur during installation and organized
+        them by when they occur during the installation. These sections will coincide with the steps
+        labeled in the installation instructions.</p>
+    </section>
+    <section id="deployer_setup"><title>Issues during Deployer Setup</title>
       <p id="hosinit"><b>Running the <codeph>hos-init.bash</codeph> script when configuring your
           deployer does not complete</b></p>
       <p>Part of what the <codeph>hos-init.bash</codeph> script does in <xref
-          href="bare_installation_kvm.dita#install_kvm/configure_deployer">step 3 of
+          href="install_entryscale_kvm_vsa.dita#install_kvm/configure_deployer">step 3 of
           configuring the Deployer</xref> is install git and so if your DNS nameserver is not
         configured or is not functioning properly in your <codeph>/etc/resolv.conf</codeph> file of
         your deployer node then it won't be able to complete.</p>
       <p>To resolve this issue, double check your nameserver in your
           <codeph>/etc/resolv.conf</codeph> file on your deployer.</p>
+    </section>
+    <section id="config_processor"><title>Issues during Configuring Your Environment</title>
       <p id="configproc"><b>Change needed to configuration files after you've run the
             <codeph>config-processor-run.yml</codeph> playbook</b></p>
       <p>If you've run the <codeph>config-processor-run.yml</codeph> playbook during the
@@ -24,11 +30,12 @@
         <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-clean.yml</codeblock>
       </p>
+    </section>
+    <section id="deploy_cobbler"><title>Issues during Cobbler Deploy</title>
       <p id="cobblerchange"><b>Configuration changes needed after Cobbler deploy</b></p>
-      <p>If you've made a mistake or wish to change your <codeph>servers.yml</codeph>
-        configuration file after you've already run the <codeph>cobbler-deploy.yml</codeph>
-        playbook, follow these steps to ensure Cobbler gets updated with the new server
-        information:</p>
+      <p>If you've made a mistake or wish to change your <codeph>servers.yml</codeph> configuration
+        file after you've already run the <codeph>cobbler-deploy.yml</codeph> playbook, follow these
+        steps to ensure Cobbler gets updated with the new server information:</p>
       <ol>
         <li>Ensure your <codeph>servers.yml</codeph> file is updated</li>
         <li>Commit your changes to git:
@@ -48,6 +55,8 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
             this playbook.</note>
         </li>
       </ol>
+    </section>
+    <section id="provision_nodes"><title>Issues during Node Provisioning</title>
       <p id="install_fail"><b>Dealing With Nodes that Fail to Install</b></p>
       <p>The <codeph>bm-reimage.yml</codeph> playbook will take every node as far as it can through
         the baremetal install process. Nodes that fail will not prevent the others from continuing
@@ -62,7 +71,6 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
         (e.g. it could be stuck in POST) or a timeout in "wait for ssh" at the end of the baremetal
         install. This means that the node did not come back up after being powered on. To fix the
         issues you'll need to connect to the nodes' consoles and investigate.</p>
-      
       <p id="reimage"><b>How to re-image an existing node</b></p>
       <p>Once Linux for HP Helion has been successfully installed on a node, that node will be
         marked as "installed" and subsequent runs of <codeph>bm-reimage.yml</codeph> (and related
@@ -91,35 +99,33 @@ bnx2x: [bnx2x_stats_update:1269(eth0)]driver assert
 bnx2x: [bnx2x_panic_dump:929(eth0)]begin crash dump -----------------  .....
 bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
         This workaround is completed by rebooting the server.</p>
-    </section>
-    <section id="imageFailure">
       <p><b>Soft lockup at imaging</b></p>
       <p>When imaging your nodes, if you see a kernel error of the type "BUG: soft lockup - CPU#10
         stuck...." you should reset the node and make sure it is imaged properly next time. Note
         that depending on when you get the error, you may have to rerun
           <codeph>cobbler-deploy.yml</codeph>. If the bm-reimage playbook says it failed to image
         the node, then cobbler knows this has occurred and you can reset the node. If not, you can
-        follow the instructions above for <xref href="#troubleshooting_installation/reimage" format="dita">reimaging the
-          node</xref>.</p>
+        follow the instructions above for <xref href="#troubleshooting_installation/reimage"
+          format="dita">reimaging the node</xref>.</p>
+      <p><b>Blank Screen Seen When Monitoring the Imaging Step</b></p>
+      <p>If you are watching the <codeph>os-install</codeph> process on a node via the console
+        output, there can be a pause between 2-3 minutes in length where nothing gets reported to
+        the console screen. This is just after the grub menu has been displayed on a UEFI-based
+        system.</p>
+      <p>This is normal and nothing to be concerned with. The imaging process will continue on after
+        this pause.</p>
     </section>
-    <p><b>Blank Screen Seen When Monitoring the Imaging Step</b></p>
-    <p>If you are watching the <codeph>os-install</codeph> process on a node via the console output,
-      there can be a pause between 2-3 minutes in length where nothing gets reported to the console
-      screen. This is just after the grub menu has been displayed on a UEFI-based system.</p>
-    <p>This is normal and nothing to be concerned with. The imaging process will continue on after
-      this pause.</p>
-    <p><b>If the <codeph>site.yml</codeph> playbook fails, you can query the log for the
-      reason</b></p>
-    <p>Ansible is good about outputting the errors into the command line output, however if you'd
-      like to view the full log for any reason the location is:</p>
-    <p>
-      <codeblock>~/.ansible/ansible.log</codeblock>
-    </p>
-    <p>This log is updated real time as you run ansible playbooks.</p>
-    <note type="tip">Use grep to parse through the log. Usage: <codeph>grep &lt;text>
-        ~/.ansible/ansible.log</codeph></note>
-
-    <section id="freezer">
+    <section id="deploy_cloud"><title>Issues while Deploying the Cloud</title>
+      <p><b>If the <codeph>site.yml</codeph> playbook fails, you can query the log for the
+          reason</b></p>
+      <p>Ansible is good about outputting the errors into the command line output, however if you'd
+        like to view the full log for any reason the location is:</p>
+      <p>
+        <codeblock>~/.ansible/ansible.log</codeblock>
+      </p>
+      <p>This log is updated real time as you run ansible playbooks.</p>
+      <note type="tip">Use grep to parse through the log. Usage: <codeph>grep &lt;text>
+          ~/.ansible/ansible.log</codeph></note>
       <p><b>Freezer installation fails if an independent network is used for the
         External_API.</b></p>
       <p> Currently the Freezer installation fails if an independent network is used for the
@@ -131,7 +137,6 @@ bnx2x: [bnx2x_panic_dump:1163(eth0)]end crash dump -----------------</codeblock>
         <codeblock>export OS_FREEZER_URL={{ backup_freezer_api_url }}</codeblock>
       </p>
     </section>
-
 
   </body>
 </topic>

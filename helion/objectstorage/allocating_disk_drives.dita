@@ -223,7 +223,7 @@
                 <li><codeph><b>fstype</b></codeph></li>
               </ul>
             </stentry>
-            <stentry>Set this to <codeph>xfs</codeph>.</stentry>
+            <stentry>Set this to <b>xfs</b>.</stentry>
           </strow>
           <strow>
             <stentry>

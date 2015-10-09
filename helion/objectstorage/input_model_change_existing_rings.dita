@@ -10,70 +10,98 @@
       replacing and upgrading the disk drive(s), as shown below:</p>
     <p>
       <ul id="ul_sqz_jft_4t">
-        <li><b>Changing the Input Model Phase</b><ul id="ul_wrz_jft_4t">
-            <li>If not already done, set the weight-step attribute. (See <xref
-                href="preparing_ring_changes.dita#topic_t1y_vjs_4t/setting-weight-step-attribute"
-                >Setting the weight-step attribute</xref>). </li>
-            <li>Edit the Input Model as appropriate. You must edit the YAML file as per your
-              requirement. For more information, refer <xref href="../input_model.dita#input_model"
-              /></li>
-            <li>Commit your configuration to the <xref href="../using_git.dita">local repo</xref>,
-              as follows<codeblock>git add -A
+        <li><b>Changing the Input Model Phase</b><p>Do the following:<ol id="ol_jv2_zf5_pt">
+              <li>If not already done, set the weight-step attribute. (See <xref
+                  href="preparing_ring_changes.dita#topic_t1y_vjs_4t/setting-weight-step-attribute"
+                  >Setting the weight-step attribute</xref>). </li>
+              <li>Edit the Input Model as appropriate. You must edit the YAML file as per your
+                requirement. For more information, refer <xref
+                  href="../input_model.dita#input_model"/></li>
+              <li>Commit your configuration to the <xref href="../using_git.dita">local repo</xref>,
+                as follows<codeblock>git add -A
 git commit -m "commit message"</codeblock></li>
-            <li>Run the configuration
-              processor:<codeblock>cd ~/helion/hos/ansible
+              <li>Run the configuration
+                processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-            <li>Run the following command to create a deployment
-              directory.<codeblock>cd ~/helion/hos/ansible
+              <li>Run the following command to create a deployment
+                directory.<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
-            <li>Run the following
-              playbook.<codeblock>cd ~/helion/hos/ansible/
+              <li>Run the following
+                playbook.<codeblock>cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost _swift-validate-input-model.yml</codeblock></li>
-            <li> Validate that the number of drives proposed to be added or deleted or weight change
-              is correct. Fix any errors in your Input Model. At this stage, no changes have been
-              made to rings. </li>
-          </ul></li>
-        <li><b>First phase of ring rebalance:</b><ul id="ul_gsz_jft_4t">
-            <li>Run the following
-              command:<codeblock>cd ~/scratch/ansible/next/hos/ansible
+              <li>Validate that the number of drives proposed to be added or deleted or weight
+                change is correct. Fix any errors in your Input Model. At this stage, no changes
+                have been made to rings. </li>
+            </ol></p></li>
+        <li><b>First phase of ring rebalance:</b><p>Do the following:<ol id="ol_f5m_dg5_pt">
+              <li>Apply the input model changes to the rings, rebalance the rings and deploy them to
+                all Swift nodes by running the following
+                playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-deploy.yml </codeblock></li>
-            <li>
-              <p>Wait until replication has finished or min-part-time has elapsed (which ever is
-                longer) (<b>any output we get after executing the above command?)</b></p>
-            </li>
-          </ul></li>
-        <li><b>Weight change phase of ring rebalance</b>:<ul id="ul_qsz_jft_4t">
-            <li>Run the following
-              playbook<codeblock>cd ~/helion/hos/ansible/
+              <li>Wait until replication has finished or min-part-time has elapsed (which ever is
+                longer). For more information see <xref
+                  href="safe_rebalance_deploy_ring.dita#topic_ohx_j1t_4t"/></li>
+            </ol></p></li>
+        <li><b>Weight change phase of ring rebalance:</b><p>At this stage, no changes are being made
+            to the input mode. However, when you set the weight-step attribute, the rings that was
+            rebuilt in the previous rebalance phase have weights that are different than their
+            target/final value. You gradually move to the target/final weight by rebalancing a
+            number of times as described in this page. For more information about the weight-step
+            attribute see <xref href="preparing_ring_changes.dita#topic_t1y_vjs_4t">Swift preparing
+              ring changes</xref>.</p><p>Do the following:<ol id="ol_vyc_gg5_pt">
+              <li>Rebalance the rings by running the following
+                playbook:<codeblock>cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost _swift-make-delta-rebalance.yml</codeblock></li>
-            <li>Run the
-              reconfigure<codeblock>cd ~/scratch/ansible/next/hos/ansible
+              <li>Run the
+                reconfigure<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
-            <li>Wait until replication has finished or min-part-time has elapsed (which ever is
-              longer)</li>
-            <li>Run the following command
-              <codeblock>cd ~/helion/hos/ansible/
+              <li>Wait until replication has finished or min-part-time has elapsed (which ever is
+                longer). For more information see <xref
+                  href="safe_rebalance_deploy_ring.dita#topic_ohx_j1t_4t"/></li>
+              <li>Run the following command
+                <codeblock>cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost _swift-validate-input-model.yml</codeblock>and
-              examine the report.<ul id="ul_atz_jft_4t">
-                <li>When there are no proposed weight changes, you proceed the final phase.</li>
-                <li>
-                  <p>If there are proposed weight changes repeat this phase again
-                      (<codeph>_swift-make-delta-rebalance.yml</codeph>). </p>
-                </li>
-              </ul></li>
-          </ul></li>
+                examine the report.<p>An example of the output after executing the above
+                  command.<codeblock>TASK: [swiftlm-ring-supervisor | validate-input-model | Print report] ********* 
+ok: [padawan-ccp-c1-m1-mgmt] => {
+    "var": {
+        "report.stdout_lines": [
+            "Need to add 0 devices", 
+            "Need to remove 0 devices", 
+            "Need to set weight on 0 devices"
+        ]
+    }
+}</codeblock></p></li>
+              <li>When there are no proposed weight changes, you proceed the final phase.</li>
+              <li>If there are proposed weight changes repeat this phase again. </li>
+            </ol></p></li>
         <li><b>Final rebalance phase:</b><p>The final rebalance phase moves all replicas to their
-            final destination.</p><ul id="ul_ktz_jft_4t">
-            <li>Run the following
-              playbook<codeblock>cd ~/helion/hos/ansible/
-ansible-playbook -i hosts/localhost _swift-make-delta-rebalance.yml</codeblock></li>
-            <li>Run the
-              reconfigure<codeblock>cd ~/scratch/ansible/next/hos/ansible
+            final destination.<ol id="ol_nlx_3g5_pt">
+              <li>Rebalance the rings by running the following playbook.
+                  <codeblock>cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _swift-make-delta-rebalance.yml | tee /tmp/rebalance.log</codeblock><note>The
+                  output is saved for later examination.</note></li>
+              <li>Examine the output from the previous step. If the output for all ring is similar
+                to the following, the rebalance had no effect. That is, the rings are as well
+                balanced as can be and no further changes are needed. In addition, the ring files
+                were not change so you do not need to deploy them to the Swift
+                  nodes.<codeblock>"Running: swift-ring-builder /etc/swiftlm/builder_dir/region-region1/account.builder rebalance 999", 
+      "NOTE: No partitions could be reassigned.", 
+      "Either none need to be or none can be due to min_part_hours [16]."</codeblock><p>The
+                  text <b>No partitions could be reassigned</b> indicates that no further rebalances
+                  are necessary. If this is true for all the rings, you are completed with the final
+                    phase.<note>You must have allowed enough time to elapse since the last
+                    rebalance. In the example, you must have waited at least 16 hours since the last
+                    rebalance. If not, you should wait until enough time has elapsed and repeat this
+                    phase.</note></p></li>
+              <li>Run the
+                reconfigure<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
-            <li>Wait until replication has finished or min-part-time has elapsed (which ever is
-              longer).</li>
-            <li>Repeat the above action till the ring is rebalanced.</li>
-          </ul></li>
+              <li>Wait until replication has finished or min-part-time has elapsed (which ever is
+                longer). For more information see <xref
+                  href="safe_rebalance_deploy_ring.dita#topic_ohx_j1t_4t"/></li>
+              <li>Repeat the above steps until the ring is rebalanced.</li>
+            </ol></p></li>
       </ul>
     </p>
     <section id="system-cahnge-existing-rings">
@@ -88,25 +116,56 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
             <stentry><b>Process</b></stentry>
           </strow>
           <strow>
-            <stentry>Adding servers(s)</stentry>
+            <stentry>Adding Servers(s)</stentry>
             <stentry>
-              <p>Follow the process described in <xref href="#topic_vyp_cft_4t" format="dita"/>.
-                  (<b>this sounds similar to adding node- the contnet provided by Gerry. Please
-                  confirm</b>) </p>
+              <p>
+                <ul id="ul_tn1_vj5_pt">
+                  <li>If not already done, set the weight change attribute as described in <xref
+                      href="preparing_ring_changes.dita#topic_t1y_vjs_4t">Swift preparing ring
+                      changes</xref>.</li>
+                  <li>Add servers in phases<ul id="ul_vcn_wj5_pt">
+                      <li>This reduces the impact of the changes on your system.</li>
+                      <li>
+                        <p>If your rings use swift zones, ensure you add the same number of servers
+                          to each zone at each phase.</p>
+                      </li>
+                    </ul></li>
+                </ul>
+                <ul id="ul_hs5_yj5_pt">
+                  <li>To add a server, follow the procedure described in <xref
+                      href="add_new_node.dita#topic_j2p_d1r_4t">Adding a New
+                    Node/Server</xref>.</li>
+                  <li>Follow the instructions menitoned in <xref href="#topic_vyp_cft_4t"
+                      format="dita"/> to incrementally change the weights and perform the final
+                    rebalance.</li>
+                </ul>
+              </p>
             </stentry>
           </strow>
           <strow>
-            <stentry>Removing server(s)</stentry>
+            <stentry>Removing Server(s)</stentry>
             <stentry>
-              <p>In HP Helion OpenStack when you remove servers from the Input Model, the disk
+              <p>In HP Helion OpenStack 2.0, when you remove servers from the Input Model, the disk
                 drives are removed from the ring – the weight is not gradually reduced using the
-                weight-step attribute. </p>
-              <p>Follow the steps mentioned in <xref href="#topic_vyp_cft_4t" format="dita"/> except
-                the "Weight change phase of ring rebalance" is not used.</p>
+                weight-step attribute. <ul id="ul_dwn_nk5_pt">
+                  <li>Remove servers in phases<ul id="ul_wqy_nk5_pt">
+                      <li>This reduces the impact of the changes on your system.</li>
+                      <li>
+                        <p>If your rings use swift zones, ensure you remove the same number of
+                          servers to each zone at each phase.</p>
+                      </li>
+                    </ul></li>
+                </ul></p>
+              <ul id="ul_wdk_rk5_pt">
+                <li>To remove a server, follow the procedure described in<xref
+                    href="removing_node.dita#topic_ndn_4bg_pt"> Removing a Swift Node</xref>. </li>
+                <li>Follow the instructions mentioned in <xref href="#topic_vyp_cft_4t"
+                    format="dita"/> to perform the final rebalance.</li>
+              </ul>
             </stentry>
           </strow>
           <strow>
-            <stentry>Replacing disk drive(s)</stentry>
+            <stentry>Replacing Disk Drive(s)</stentry>
             <stentry><p>When a drive fails, replace it as soon as possible. Do not attempt to remove
                 it from the ring – this creates too operator overhead. Swift will continue to store
                 the correct number of replicas by "handing off" objects to other drives instead of
@@ -118,7 +177,7 @@ ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock></li>
                 ring (however, the extra space on the drive will not be used).</p></stentry>
           </strow>
           <strow>
-            <stentry>Upgrading disk drives</stentry>
+            <stentry>Upgrading Disk Drives</stentry>
             <stentry>
               <p>If the drives are different size (for example, you are upgrading your system), you
                 can proceed as follows:</p>

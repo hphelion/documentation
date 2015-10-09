@@ -37,17 +37,31 @@
         locktitle="yes"/>
       <topicref href="helion/preinstall_checklist.dita" navtitle="Pre-Installation Checklist"
         locktitle="yes"/>
-      <topicref href="helion/bare_installation_kvm.dita" navtitle="Installation for KVM Hypervisor"
-        locktitle="yes"/>
-      <topicref href="helion/bare_installation_esx.dita" navtitle="Installation for ESX Hypervisor"
-        locktitle="yes"/>
+      <topichead navtitle="Entry Scale Cloud Installation">
+        <topicref href="helion/install_entryscale_kvm_vsa.dita"
+          navtitle="Installation for Helion Entry Scale Cloud with VSA" locktitle="yes">
+          <topicref href="helion/blockstorage/vsa/vsa.dita" navtitle="VSA Configuration"
+            locktitle="yes"/>
+        </topicref>
+        <topicref href="helion/install_entryscale_kvm_ceph.dita"
+          navtitle="Installation for Helion Entry Scale Cloud with Ceph" locktitle="yes">
+          <topicref href="helion/blockstorage/ceph/configuration_files.dita"/>
+        </topicref>
+        <topicref href="helion/blockstorage/3Par/3par_configuration.dita"
+          navtitle="3PAR Configuration" locktitle="yes"/>
+                <topicref href="helion/install_entryscale_esx.dita" navtitle="Entry Scale Cloud with ESX"
+          locktitle="yes"/>
+      </topichead>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
       <topicref href="helion/gui_install_on_kvm.dita"
         navtitle="Installing the Operating System on KVM" locktitle="yes" toc="no"/>
       <topicref href="helion/gui_install_on_esx.dita"
         navtitle="Installing the Operating System on ESX" locktitle="yes" toc="no"/>
       <topicref href="helion/installation_verification.dita" navtitle="Verifying Your Installation"
-        locktitle="yes"/>
+        locktitle="yes">
+      <topicref href="helion/blockstorage/verify_backend_configuration.dita"
+        navtitle="Verifying a Backend Configuration" locktitle="yes"/>
+      </topicref>
       <topicref href="helion/installation_troubleshooting.dita"
         navtitle="Troubleshooting Your Installation" locktitle="yes"/>
       <topicref href="helion/postinstall_checklist.dita" navtitle="Post-Installation Checklist"
@@ -69,18 +83,6 @@
     <!-- ADMINISTRATION -->
     <topichead navtitle="Administration">
       <topichead navtitle="Initial Configuration">
-        <topichead navtitle="Configuring a Block Storage Backend">
-          <topicref href="helion/blockstorage/ceph/ceph_deploy.dita" navtitle="Ceph Configuration"
-            locktitle="yes">
-            <topicref href="helion/blockstorage/ceph/configuration_files.dita"/>
-          </topicref>
-          <topicref href="helion/blockstorage/vsa/vsa.dita" navtitle="VSA Configuration"
-            locktitle="yes"/>
-          <topicref href="helion/blockstorage/3Par/3par_configuration.dita"
-            navtitle="3PAR Configuration" locktitle="yes"/>
-          <topicref href="helion/blockstorage/verify_backend_configuration.dita"
-            navtitle="Verifying a Backend Configuration" locktitle="yes"/>
-        </topichead>
         <topicref href="helion/administration/create_extnet.dita"
           navtitle="Creating an External Network" locktitle="yes"/>
         <topicref href="helion/administration/upload_image.dita"
@@ -136,14 +138,8 @@
           <topicref href="helion/objectstorage/playbook_linked_ring_management.dita"/>
           <topicref href="helion/objectstorage/safe_rebalance_deploy_ring.dita"/>
           <topicref href="helion/objectstorage/input_model_change_existing_rings.dita"/>
-        </topicref>
-        
-        <topicref href="helion/objectstorage/operational_procedure.dita">
-          <topicref href="helion/objectstorage/resetting_builder_file.dita"/>
-          <topicref href="helion/objectstorage/recovering_builder_file.dita"/>
-          <topicref href="helion/objectstorage/first_proxy_server.dita"/>
-          <topicref href="helion/objectstorage/add_new_node.dita"/>
           <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
+          <topicref href="helion/objectstorage/how_to_change_min_part_power.dita"/>
         </topicref>
       </topicref>
 
@@ -184,13 +180,16 @@
       <topicref href="helion/operations/remove_node.dita"/>
       <topicref href="helion/operations/replace_controller.dita"/>
       <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"/>
-      <topicref href="helion/objectstorage/removing_node.dita"/>
       <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"/>
       <topicref href="helion/blockstorage/singleton_service_cinder.dita"/>
       <topicref href="helion/blockstorage/brocade_zone_manager.dita"
         navtitle="Configuring Brocade Zone Manager" locktitle="yes"/>
       <!-- BURA -->
       <topicref href="helion/adding_moonshot_nodes.dita"/>
+      <topicref href="helion/objectstorage/add_new_node.dita"/>
+      <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"/>
+      <topicref href="helion/objectstorage/replacing_swift_node.dita"/>
+      <topicref href="helion/objectstorage/removing_node.dita"/>
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>
@@ -245,8 +244,12 @@
           <topicref href="helion/objectstorage/deploy_fails_with_msdos_disks.dita"/>
           <topicref
             href="helion/objectstorage/examine_details_planned_ring_changes_prior_deploy.dita"/>
-          <topicref href="helion/objectstorage/how_to_change_min_part_power.dita"/>
           <topicref href="helion/objectstorage/interpreting_swift_validate_input_model.dita"/>
+          <topicref href="helion/objectstorage/first_proxy_server.dita"/>
+          <topicref href="helion/objectstorage/label_on_partition.dita"/>
+          <topicref href="helion/objectstorage/filesystem_label.dita"/>
+          <topicref href="helion/objectstorage/recovering_builder_file.dita"/>
+          <topicref href="helion/objectstorage/operational_procedure.dita"/>
         </topicref>
         <topicref href="helion/metering/metering_troubleshoot.dita"
           navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
