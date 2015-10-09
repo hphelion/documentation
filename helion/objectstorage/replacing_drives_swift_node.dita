@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_am4_mjv_pt">
+  <title>Replacing Drives in  a Swift Node</title>
+  <body>
+    <p>There are two different classes of drives in a swift node that may need to be replaced; the
+      OS disk drive (generally <b>/dev/sda</b>) and storage disk drives. There are different
+      procedures for the replacement of each one in order to get the server back to normal.</p>
+    <section>
+      <title><b>Replacing an OS disk drive</b></title>
+      <p>After the OS disk drive is replaced, the node will need to be re-imaged.<ol
+          id="ol_ewb_vjv_pt">
+          <li>Log onto the deployer.</li>
+          <li>Edit the cobbler entry for the server that you wish to re-image so that netboot is
+            enabled. For this example, swobj2 is the server that has the OS drive
+            replaced.<codeblock>cobbler system edit --name swobj002 --netboot-enabled=NETBOOT_ENABLED</codeblock></li>
+          <li>Using ansible, re-image the
+            server:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swobj2</codeblock></li>
+          <li>Configure the operating system as
+            follows:<codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit helion-ccp-swobj2*</codeblock></li>
+          <li>If this is the first server running the swift-proxy service (see <xref
+              href="first_proxy_server.dita#topic_rtc_s3t_mt">identifying first proxy server</xref>)
+            you need to restore the Swift Ring Builder files to the
+              <codeph>/etc/swiftlm/builder_dir</codeph> directory. See <xref
+              href="recovering_builder_file.dita#topic_gbz_13t_mt">recovering builder files</xref>
+            for details.</li>
+          <li>Configuring services on the node using the site.yml playbook. If you have used an
+            encryption password when running the Configuration processor incude the --ask-vault-pass
+            argument.<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit helion-ccp-swobj2*</codeblock></li>
+        </ol></p>
+    </section>
+    <section>
+      <title><b>Replacing a storage disk drive</b></title>
+      <p>After a storage drive is replaced, there is no need to re-image the server. All that is
+        required is that you run the swift-reconfigure.yml playbook.<ol id="ol_kqj_hkv_pt">
+          <li>Log onto deployer</li>
+          <li>Run the following commands (with swobj2 the server being used as an
+            example):<codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml --limit helion-ccp-swobj002-mgmt</codeblock></li>
+        </ol></p>
+    </section>
+    <p> </p>
+  </body>
+</topic>

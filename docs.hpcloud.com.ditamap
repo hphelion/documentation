@@ -141,11 +141,6 @@
           <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
           <topicref href="helion/objectstorage/how_to_change_min_part_power.dita"/>
         </topicref>
-
-        <topicref href="helion/objectstorage/operational_procedure.dita">
-          <topicref href="helion/objectstorage/resetting_builder_file.dita"/>
-          <topicref href="helion/objectstorage/recovering_builder_file.dita"/>
-        </topicref>
       </topicref>
 
       <!-- Cinder -->
@@ -251,6 +246,8 @@
           <topicref href="helion/objectstorage/first_proxy_server.dita"/>
           <topicref href="helion/objectstorage/label_on_partition.dita"/>
           <topicref href="helion/objectstorage/filesystem_label.dita"/>
+          <topicref href="helion/objectstorage/recovering_builder_file.dita"/>
+          <topicref href="helion/objectstorage/operational_procedure.dita"/>
         </topicref>
         <topicref href="helion/metering/metering_troubleshoot.dita"
           navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
