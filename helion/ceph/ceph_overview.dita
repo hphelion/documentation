@@ -19,7 +19,7 @@
         unified Ceph storage platform.<?oxy_custom_end?></p>This release supports Ceph Firefly
       0.80.7 version, which runs on the hlinux kernel 3.14.44-1. Therefore you can configure and
       intergrate Ceph Block Storage with HP Helion OpenStack 2.0 as detailed in the <xref
-        href="deploy_ceph.dita#topic_jrc_5lz_ft"
+        href="install_entryscale_kvm_ceph.dita#topic_jrc_5lz_ft"
         />.<p><!--In addition, HP Helion OpenStack2.0 introduces the concept of example cloud models. This model allows the user to provide the configuration details, based on hardware requirment, to build a ceph storage system. --></p></section>
   </body>
 </topic>

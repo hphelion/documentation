@@ -50,7 +50,7 @@
                   field. In value is taken from <xref
                     href="vsa/vsa.dita#topic_gmc_dgk_jt/vssa-config">VSA cinder.conf.j2</xref>.</li>
                 <li>Ceph: You can enter <codeph>ceph</codeph> in the <b>Value</b> field. In value is
-                  taken from <xref href="ceph/deploy_ceph.dita#topic_jrc_5lz_ft/ceph-cinder-conf"
+                  taken from <xref href="ceph/install_entryscale_kvm_ceph.dita#topic_jrc_5lz_ft/ceph-cinder-conf"
                     >Ceph cinder.conf.j2</xref>.</li>
                 <li>3PAR FC: You can enter <codeph>3par_FC</codeph> in the <b>Value</b> field. In
                   value is taken from <xref
