@@ -7,6 +7,11 @@
     <p>Firewall as a Service (FWaaS) is an advance networking service that introduces firewall
       feature set. This document describes the configuration process and requirements for the 
       HP Helion OpenStack 2.0 Firewall as a Service module. </p>
+
+    <p>FWaaS is implemented directly in the L3 agent (<i>neutron-l3-agent</i>), however if VPNaaS is
+      enabled, FWaaS is implemented in the VPNaaS agent (<i>neutron-vpn-agent</i>). Because FWaaS
+      does not use a separate agent process or start a specific service, there currently are no
+      Monasca alarms for it. </p>
     <p>
       <ul id="LBaaSlist">
         <li><xref href="fwaas.dita#HP2.0FWaaS/Prerequisites">Prerequisites</xref></li>
