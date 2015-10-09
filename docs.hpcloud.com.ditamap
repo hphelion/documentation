@@ -43,7 +43,7 @@
         <topicref href="helion/blockstorage/vsa/vsa.dita" navtitle="VSA Configuration"
           locktitle="yes"/>
       </topicref>
-        <topicref href="helion/blockstorage/ceph/ceph_deploy.dita" navtitle="Entry Scale Cloud with KVM and Ceph"
+        <topicref href="helion/install_entryscale_kvm_ceph.dita" navtitle="Entry Scale Cloud with KVM and Ceph"
           locktitle="yes">
           <topicref href="helion/blockstorage/ceph/configuration_files.dita"/>
         </topicref>
