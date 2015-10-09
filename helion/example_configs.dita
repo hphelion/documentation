@@ -15,8 +15,7 @@
         <li>Entry Scale Storage Depot - deploys exclusively as an Object Storage service</li>
       </ul>
     </section>
-    <section><title>Entry Scale Cloud with KVM Hypervisor on Compute Hosts and VSA Block Storage
-        Backend</title>
+    <section><title>Entry Scale Cloud using KVM and VSA Block Storage Backend</title>
       <p>Choosing this model will result in a cloud with that has the following characteristics:</p>
       <table frame="all" rowsep="1" colsep="1" id="entry_scale_cloud_kvm">
         <tgroup cols="2">
@@ -97,7 +96,7 @@
       <p><image href="../media/networking/hos_kvm_diag.png"/></p>
     </section>
 
-    <section id="single_esx"><title>Single Region Cloud (on ESX)</title>
+    <section id="single_esx"><title>Entry Scale Cloud using ESX</title>
       <p>Choosing this model will result in a cloud that has the following characteristics:</p>
       <p><table frame="all" rowsep="1" colsep="1" id="entry_scale_cloud_esx">
           <tgroup cols="2">
@@ -105,8 +104,8 @@
             <colspec colname="c2" colnum="2"/>
             <thead>
               <row>
-                <entry/>
-                <entry/>
+                <entry>Item</entry>
+                <entry>Description</entry>
               </row>
             </thead>
             <tbody>
