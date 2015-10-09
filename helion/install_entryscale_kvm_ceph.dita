@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_jrc_5lz_ft">
-  <title> Installing Ceph </title>
+<topic id="install_kvm_ceph">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for KVM Hypervisor and
+    Ceph</title>
   <body>
     <p>This page describes configuration, installation, and the integration of Ceph Block Storage
       with HP Helion OpenStack 2.0. It also provides the procedure to perform Ceph operation after
@@ -163,7 +164,7 @@ backup_ceph_stripe_count = 0
 restore_discard_excess_bytes = true</codeblock></li>
         <li> On all the Controller nodes copy the following packages:<codeblock>cp /usr/lib/python2.7/dist-packages/rbd.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/
 cp /usr/lib/python2.7/dist-packages/rados.py /opt/stack/venv/cinder-20150827T030317Z/lib/python2.7/site-packages/</codeblock><p>
-            <note type="important">Beta1 does not support the  RBD volume attachment to a Nova
+            <note type="important">Beta1 does not support the RBD volume attachment to a Nova
               instance.</note>
           </p></li>
         <li>Copy <codeph>ceph.client.cinder.keyring</codeph> to the controller nodes:<ol
@@ -259,4 +260,3 @@ git commit -m "&lt;your commit message>"</codeblock>
     </section>
   </body>
 </topic>
-
