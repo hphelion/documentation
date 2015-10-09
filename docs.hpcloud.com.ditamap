@@ -138,14 +138,13 @@
           <topicref href="helion/objectstorage/playbook_linked_ring_management.dita"/>
           <topicref href="helion/objectstorage/safe_rebalance_deploy_ring.dita"/>
           <topicref href="helion/objectstorage/input_model_change_existing_rings.dita"/>
+          <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
+          <topicref href="helion/objectstorage/how_to_change_min_part_power.dita"/>
         </topicref>
 
         <topicref href="helion/objectstorage/operational_procedure.dita">
           <topicref href="helion/objectstorage/resetting_builder_file.dita"/>
           <topicref href="helion/objectstorage/recovering_builder_file.dita"/>
-          <topicref href="helion/objectstorage/first_proxy_server.dita"/>
-          <topicref href="helion/objectstorage/add_new_node.dita"/>
-          <topicref href="helion/objectstorage/add_new_storage_policy.dita"/>
         </topicref>
       </topicref>
 
@@ -193,6 +192,7 @@
         navtitle="Configuring Brocade Zone Manager" locktitle="yes"/>
       <!-- BURA -->
       <topicref href="helion/adding_moonshot_nodes.dita"/>
+      <topicref href="helion/objectstorage/add_new_node.dita"/>
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>
@@ -247,8 +247,10 @@
           <topicref href="helion/objectstorage/deploy_fails_with_msdos_disks.dita"/>
           <topicref
             href="helion/objectstorage/examine_details_planned_ring_changes_prior_deploy.dita"/>
-          <topicref href="helion/objectstorage/how_to_change_min_part_power.dita"/>
           <topicref href="helion/objectstorage/interpreting_swift_validate_input_model.dita"/>
+          <topicref href="helion/objectstorage/first_proxy_server.dita"/>
+          <topicref href="helion/objectstorage/label_on_partition.dita"/>
+          <topicref href="helion/objectstorage/filesystem_label.dita"/>
         </topicref>
         <topicref href="helion/metering/metering_troubleshoot.dita"
           navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>

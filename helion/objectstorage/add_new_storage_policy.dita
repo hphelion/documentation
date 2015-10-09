@@ -18,7 +18,7 @@
           should be a single word (hyphen and dashes are allowed).</li>
         <li>Decide if this new policy is to be the default for all new containers.</li>
         <li>Decide on other attributes such as partition-power and replica-count. See <xref
-            href="ring_specifications.dita#ring-specification">Ring Specification</xref> for more
+            href="ring_specifications.dita#ring-specification">Ring Specifications</xref> for more
           details on the required attributes.</li>
         <li>Edit the ring-specifications (usually in <codeph>data/swift/rings.yml</codeph> file) and
           add the new ring specification. If this policy is to be the default Storage Policy for new
@@ -32,7 +32,7 @@
           </note></li>
         <li>Update the appropriate disk model to use the new storage policy (for example:
             <codeph>data/disks_swobj.yml</codeph> file). The following sample shows that the
-          object-2 has been added to the list of existing rings that use the
+            <b>object-2</b> has been added to the list of existing rings that use the
             drives:<codeblock>disk-models:
 - name: SWOBJ-DISKS
   ...
@@ -46,10 +46,9 @@
             rings:
             - object-0
             - object-1
-              # Adding object-2 here
-            - object-2
+            - <b>object-2</b>
   ...</codeblock><note>Note:
-            You must use the new object ring on at lease one node that runs the <b>swift-object
+            You must use the new object ring on at least one node that runs the <b>swift-object
               service.</b> If you skip this step and continue to run the
               <codeph>_swift-validate-input-model.yml</codeph> and<codeph> swift-deploy.yml</codeph>
             playbooks then it will fail with the error (There are no devices in this ring, or all
