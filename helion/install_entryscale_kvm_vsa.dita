@@ -309,7 +309,7 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
             the command below and enter the encryption password when prompted:
             <codeblock>ansible-playbook -i hosts/verb_hosts site.yml --ask-vault-pass</codeblock>
           </p>
-          <note> The step above runs osconfig to configure the cloud and hlm-deploy, to deploy the
+          <note>The step above runs osconfig to configure the cloud and hlm-deploy, to deploy the
             cloud. Therefore, this step may run for quite some time while all the nodes are
             configured (perhaps 45 minutes or more, depending on the number of nodes, to a degree).
           </note>
@@ -318,27 +318,19 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
           from the /etc/hosts file from one of the controller nodes.</li>
       </ol>
     </section>
- 
     <section>
-      <title>Installing VSA and CMC</title>
-      <p>Perform the following steps to deploy VSA and CMC:<ol id="ol_wgh_djk_jt">
-        <li>Login to deployer node.</li>
-        <li>Execute the following command to install VSA:
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
-            ansible-playbook -i hosts/verb_hosts vsa-deploy.yml</codeblock><p>Once
-              VSA is successfully deployed then you can execute the ansible playbook to install CMC.
-              CMC is required to configure the HP StoreVirtual VSA nodes .</p></li>
-        <li>Execute the following command to install
-          CMC:<codeblock>cd ~/scratch/ansible/next/hos/ansible
-            ansible-playbook -i hosts/verb_hosts cmc-deploy.yml</codeblock></li>
-      </ol><b> Install (any) X Display Tool to Launch Centralized Management Console (CMC)</b></p>
+      <title>Creating a StoreVirtual Cluster and adding it to a new Management Group Cluster using
+        CMC</title>
+      <p><b> Install (any) X Display Tool to Launch Centralized Management Console (CMC)</b></p>
       <p>You must configure X display tool to launch CMC. User can select <b>any</b> X display tool.
         In this section we are using <b>Xming</b> tool as an example to launch CMC. The following
         example provides the steps to install Xming and launch CMC.</p>
-      <p><!--You must configure X display to launch CMC. Therefore, CMC is required to configure the HP StoreVirtual VSA nodes. In this section we are referring to Xming as a X display tool. The display tool can vary from one user to another.--></p>
+      <p><!--You must configure X display to launch CMC. Therefore, CMC is required to configure the HP StoreVirtual VSA nodes. 
+        In this section we are referring to Xming as a X display tool. The display tool can vary from one user to another.--></p>
       <p><!--The follwowing steps provide an example on the configuration of Xming to launch CMC.--></p>
       <p>
-        <!--In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. The following example provides the steps for installaing CMC. The Xming is a tool we are referring in the example below-->
+        <!--In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. The following example 
+          provides the steps for installaing CMC. The Xming is a tool we are referring in the example below-->
         <ol id="ol_alr_mdl_jt">
           <li>Install <b>Xming</b> on Windows Box from where you can access the deployer node.</li>
           <li>Select <b>Enable X11 forwarding</b> checkbox on the putty session for deployer node. </li>
@@ -348,10 +340,6 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
             will be launch successfully.</li>
         </ol>
       </p>
-    </section>
-    <section>
-      <title>Creating a StoreVirtual Cluster and adding it to a new Management Group Cluster using
-        CMC</title>
       <!--<p><note type="important"><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Ensure that CMC is installed successfully and HP StoreVirtual VSA (one or more) is deployed in the same management network where CMC is installed.<?oxy_custom_end?></note></p>-->
       <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
         <li>Open CMC.<p>By default, the CMC is configured to discover the StoreVirtual nodes in
