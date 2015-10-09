@@ -35,7 +35,7 @@
       <section><title>Apply the patch to the Configuration Processor</title>
         <ol>
         <li>Change to the following directory:
-          <codeblock>cd ~/kenobi-configuration-processor</codeblock></li>
+          <codeblock>cd ~/kenobi-node-configuration</codeblock></li>
         <li> Execute the following command to perform a dry-run of the patch to verify:
             <codeblock>patch -p1 --dry-run &lt; ~/patch_cghelion1.1/rp_filter.patch </codeblock><p>The
             output appears similar to the
