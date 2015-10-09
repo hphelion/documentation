@@ -39,7 +39,7 @@
         locktitle="yes"/>
       <topichead navtitle="Entry Scale Cloud Installation">
         <topicref href="helion/install_entryscale_kvm_vsa.dita"
-          navtitle="Entry Scale Cloud with KVM and VSA" locktitle="yes">
+          navtitle="Installation for Helion Entry Scale Cloud with VSA" locktitle="yes">
           <topicref href="helion/blockstorage/vsa/vsa.dita" navtitle="VSA Configuration"
             locktitle="yes"/>
         </topicref>
