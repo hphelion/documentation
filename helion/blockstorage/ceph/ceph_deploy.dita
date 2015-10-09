@@ -12,7 +12,7 @@
     <section>
       <title id="preq">Prerequisite</title>
       <p>The deployer node must be setup before deploying Ceph. For more details on the installation
-        of deployer node, refer to <xref href="../../bare_installation_kvm.dita#install_kvm"
+        of deployer node, refer to <xref href="../../install_entryscale_kvm_vsa.dita#install_kvm"
           >installation guide.</xref></p>
     </section>
     <section>

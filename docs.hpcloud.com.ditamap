@@ -38,7 +38,7 @@
       <topicref href="helion/preinstall_checklist.dita" navtitle="Pre-Installation Checklist"
         locktitle="yes"/>
       <topichead navtitle="Entry Scale Cloud Installation">
-      <topicref href="helion/bare_installation_kvm.dita" navtitle="Entry Scale Cloud with KVM and VSA"
+      <topicref href="helion/install_entryscale_kvm_vsa.dita" navtitle="Entry Scale Cloud with KVM and VSA"
         locktitle="yes">
         <topicref href="helion/blockstorage/vsa/vsa.dita" navtitle="VSA Configuration"
           locktitle="yes"/>
