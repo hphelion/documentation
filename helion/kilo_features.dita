@@ -45,7 +45,7 @@
       <p>Nova features and their corresponding state with the HP Helion OpenStack 2.0 release.</p>
       
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_lqz_n1r_pt">
+        <table frame="all" rowsep="1" colsep="1" id="NovaTable">
           <title>Nova Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -234,7 +234,7 @@
     <section id="NeutronFeatures">
       <title>Neutron Features</title>
       <p>OpenStack Kilo upstream features that are enabled by default in HOS V2.0.  List high level
-        Kilo features here that are enabled in the HOS V2.0 kit. This list is for Product Management
+        Kilo features here that are enabled in HP Helion OpenStack 2.0. This list is for Product Management
         for use in communication with the field &amp; customers.</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="NeutronTable">
@@ -419,7 +419,7 @@
       <title>Glance Features</title>
       <p>Glance Description</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_t4w_rvr_pt">
+        <table frame="all" rowsep="1" colsep="1" id="GlanceTable">
           <title>Glance Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -535,7 +535,7 @@
       <title>Swift Features</title>
       <p>Swift Description</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_iqh_svr_pt">
+        <table frame="all" rowsep="1" colsep="1" id="SwiftTable">
           <title>Swift Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -720,7 +720,7 @@
       <title>Cinder Features</title>
       <p>Cinder Description</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_qxq_svr_pt">
+        <table frame="all" rowsep="1" colsep="1" id="CinderTable">
           <title>Cinder Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -806,7 +806,7 @@
       <title>Keystone Features</title>
       <p>Keystone Description</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_uk1_tvr_pt">
+        <table frame="all" rowsep="1" colsep="1" id="KeystoneTable">
           <title>Keystone Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -928,7 +928,7 @@
       <title>Ceilometer Features</title>
       <p>Ceilometer Description</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_vck_tvr_pt">
+        <table frame="all" rowsep="1" colsep="1" id="CeilometerTable">
           <title>Ceilometer Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -1012,7 +1012,7 @@
       <title>Heat Features</title>
       <p>Heat Description</p>
       <p></p>
-      <table frame="all" rowsep="1" colsep="1" id="table_u5s_tvr_pt">
+      <table frame="all" rowsep="1" colsep="1" id="HeatTable">
         <title>Heat Features in Kilo</title>
         <tgroup cols="4">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -1104,7 +1104,7 @@
       <title>Ironic Features</title>
       <p>Ironic Description</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_rwb_5vr_pt">
+        <table frame="all" rowsep="1" colsep="1" id="IronicTable">
           <title>Ironic Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -1161,7 +1161,7 @@
       <title>Horizon Features</title>
       <p>Horizon Description</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_bhk_5vr_pt">
+        <table frame="all" rowsep="1" colsep="1" id="HorizonTable">
           <title>Horizon Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -1211,7 +1211,7 @@
       <title>Monasca Features</title>
       <p>Monasca Description</p>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_tvs_5vr_pt">
+        <table frame="all" rowsep="1" colsep="1" id="MonascaTable">
           <title>Monasca Features in Kilo</title>
           <tgroup cols="4">
             <colspec colname="c1" colnum="1" colwidth="1.0*"/>
