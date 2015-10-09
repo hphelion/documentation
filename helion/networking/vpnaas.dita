@@ -22,6 +22,7 @@
           with access to the internet. Information on how to create the external network and subnet
           can be found in the <xref href="vpnaas.dita#HP2.0VPNaaS/MoreInfo"> More Information</xref>
           section of this document.</li>
+        <li>You should assume 172.16.0.0/16 as the ext-net CIDR in this document.</li>
       </ol>
     </section>
     <section id="Considerations">
