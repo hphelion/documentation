@@ -180,7 +180,6 @@
       <topicref href="helion/operations/remove_node.dita"/>
       <topicref href="helion/operations/replace_controller.dita"/>
       <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"/>
-      <topicref href="helion/objectstorage/removing_node.dita"/>
       <topicref href="helion/blockstorage/ceph/adding_new_osd_node.dita"/>
       <topicref href="helion/blockstorage/singleton_service_cinder.dita"/>
       <topicref href="helion/blockstorage/brocade_zone_manager.dita"
@@ -188,6 +187,9 @@
       <!-- BURA -->
       <topicref href="helion/adding_moonshot_nodes.dita"/>
       <topicref href="helion/objectstorage/add_new_node.dita"/>
+      <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"/>
+      <topicref href="helion/objectstorage/replacing_swift_node.dita"/>
+      <topicref href="helion/objectstorage/removing_node.dita"/>
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing up and Restoring Your Data">
         <topicref href="helion/bura/backup.dita"/>
         <topicref href="helion/bura/restore.dita"/>

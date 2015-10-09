@@ -85,9 +85,11 @@
           <li>Commit the changes to
             git<codeblock>cd ~helion
 git commit -a -m "&lt;commit message>"</codeblock></li>
-          <li>Re-run the configuration processor and ready deployment
-            playbooks:<codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml
+          <li>Run the configuration
+            processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Run the following command to create a deployment
+            directory.<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           <li>Run the swift-deploy.yml playbook. Do not limit to just the node (swobj4) that you are
             draining.<codeblock>cd ~/scratch/ansible/next/hos/ansible
