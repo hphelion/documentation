@@ -49,9 +49,7 @@
         </topicref>
         <topicref href="helion/blockstorage/3Par/3par_configuration.dita"
           navtitle="3PAR Configuration" locktitle="yes"/>
-        <topicref href="helion/blockstorage/verify_backend_configuration.dita"
-          navtitle="Verifying a Backend Configuration" locktitle="yes"/>
-        <topicref href="helion/install_entryscale_esx.dita" navtitle="Entry Scale Cloud with ESX"
+                <topicref href="helion/install_entryscale_esx.dita" navtitle="Entry Scale Cloud with ESX"
           locktitle="yes"/>
       </topichead>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
@@ -60,7 +58,10 @@
       <topicref href="helion/gui_install_on_esx.dita"
         navtitle="Installing the Operating System on ESX" locktitle="yes" toc="no"/>
       <topicref href="helion/installation_verification.dita" navtitle="Verifying Your Installation"
-        locktitle="yes"/>
+        locktitle="yes">
+      <topicref href="helion/blockstorage/verify_backend_configuration.dita"
+        navtitle="Verifying a Backend Configuration" locktitle="yes"/>
+      </topicref>
       <topicref href="helion/installation_troubleshooting.dita"
         navtitle="Troubleshooting Your Installation" locktitle="yes"/>
       <topicref href="helion/postinstall_checklist.dita" navtitle="Post-Installation Checklist"
