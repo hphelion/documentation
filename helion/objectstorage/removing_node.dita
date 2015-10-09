@@ -21,13 +21,13 @@
         node's drives.<ol id="ol_lnw_cdg_pt">
           <li>Edit the definition of the server (usually in data/servers.yml). For example, if the
             entry for the server look
-              like:<codeblock>- id: swobj0003
+              like:<codeblock>- id: swobj4
       ip-addr: 192.168.10.5
       role: SWOBJ-ROLE
       server-group: RACK3
    ...</codeblock><p>Change
               the role to a new value – for example:
-              SWOBJ-DRAINING_ROLE<codeblock>- id: swobj0003
+              SWOBJ-DRAINING_ROLE<codeblock>- id: swobj4
       ip-addr: 192.168.10.5
       role: SWOBJ-DRAINING-ROLE
       server-group: RACK3
@@ -89,30 +89,29 @@ git commit -a -m "&lt;commit message>"</codeblock></li>
             playbooks:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
-          <li>Run the swift-deploy.yml playbook. Do not limit to just the node (swobj0003) that you
-            are
+          <li>Run the swift-deploy.yml playbook. Do not limit to just the node (swobj4) that you are
             draining.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
           <li>Wait until replication has finished. See <xref href="safe_rebalance_deploy_ring.dita"
-              /><p>At this stage, all data has been moved from swobj0003 and replicated on the
-              remaining nodes. we can now proceed to the next phase.</p></li>
+            /> for more details.<p>At this stage, all data has been moved from swobj4 and replicated
+              on the remaining nodes. we can now proceed to the next phase.</p></li>
         </ol></p>
     </section>
     <section>
       <title><b>Disabling Swift on a Node</b></title>
       <p>The node is still running Swift services. It is still part of the cloud model and is fully
         configured so we can log in and perform other operations.</p>
-      <p>To disable the node, use the following steps. In this example, swobj0003 is the node being
+      <p>To disable the node, use the following steps. In this example, swobj4 is the node being
         removed from Swift.<ol id="ol_lty_22g_pt">
           <li>Stop Swift services on the node using the swift-stop.yml playbook and limiting the
-            swobj0003 as
+            swobj4 as
             follows:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-stop --limit swobj003</codeblock></li>
           <li>Remove configuration files as follows. This assumes you are logged onto the
-              deployer:<codeblock>ssh swobj0003 sudo rm -R /etc/swift</codeblock><note>Do not run
-              any other playbooks until you have finished the process described in the next phase.
-              Otherwise, these playbooks may recreate /etc/swift and restart Swift on swobj0003. If
-              you accidentally run a playbook, simply repeat the process described here.</note></li>
+              deployer:<codeblock>ssh swobj4 sudo rm -R /etc/swift</codeblock><note>Do not run any
+              other playbooks until you have finished the process described in the next phase.
+              Otherwise, these playbooks may recreate /etc/swift and restart Swift on swobj4. If you
+              accidentally run a playbook, simply repeat the process described here.</note></li>
         </ol></p>
     </section>
     <section>
@@ -125,19 +124,25 @@ ansible-playbook -i hosts/verb_hosts swift-stop --limit swobj003</codeblock></li
             needed.</li>
           <li>Commit the changes to
             git:<codeblock>cd ~helion
-git commit -a -m "removed swobj0003"</codeblock></li>
-          <li>Re-run the configuration processor and ready deployment
-            playbooks<codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml
+git commit -a -m "removed swobj4"</codeblock></li>
+          <li>Run the configuration
+            processor:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Run the following command to create a deployment
+            directory.<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           <li>Remove the node from cobbler as
             follows:<codeblock>sudo cobbler system remove --name=swbobj003
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
-          <li>If the node was a SWPAC node, run the hlm-deploy.yml playbook as
+          <li>If the node was a SWPAC node, run the<codeph> hlm-deploy.yml playbook</codeph> as
             follows:<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts hlm-deploy.yml</codeblock></li>
-          <li/>
-          <li/>
+          <li>Wait until replication has finished. See <xref href="safe_rebalance_deploy_ring.dita"
+            /> for more details.</li>
+          <li>Further rebalances of the rings may be necessary. Use the process described in
+              <b>Final rebalance phase </b> at<xref
+              href="input_model_change_existing_rings.dita#topic_vyp_cft_4t"> Applying Input Model
+              Changes to Existing Rings</xref>. </li>
         </ol></p>
     </section>
   </body>
