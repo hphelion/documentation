@@ -323,15 +323,10 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
         CMC</title>
       <p><b> Install (any) X Display Tool to Launch Centralized Management Console (CMC)</b></p>
       <p>You must configure X display tool to launch CMC. User can select <b>any</b> X display tool.
-        In this section we are using <b>Xming</b> tool as an example to launch CMC. The following
+        In this section we are using <b>Xming</b> tool for Windows as an example to launch CMC. The following
         example provides the steps to install Xming and launch CMC.</p>
-      <p><!--You must configure X display to launch CMC. Therefore, CMC is required to configure the HP StoreVirtual VSA nodes. 
-        In this section we are referring to Xming as a X display tool. The display tool can vary from one user to another.--></p>
-      <p><!--The follwowing steps provide an example on the configuration of Xming to launch CMC.--></p>
       <p>
-        <!--In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. The following example 
-          provides the steps for installaing CMC. The Xming is a tool we are referring in the example below-->
-        <ol id="ol_alr_mdl_jt">
+        <ol>
           <li>Install <b>Xming</b> on Windows Box from where you can access the deployer node.</li>
           <li>Select <b>Enable X11 forwarding</b> checkbox on the putty session for deployer node. </li>
           <li>SSH to first control plane node.<codeblock>ssh -X</codeblock></li>
@@ -340,7 +335,6 @@ ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60
             will be launch successfully.</li>
         </ol>
       </p>
-      <!--<p><note type="important"><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Ensure that CMC is installed successfully and HP StoreVirtual VSA (one or more) is deployed in the same management network where CMC is installed.<?oxy_custom_end?></note></p>-->
       <p>Perform the following steps to create the cluster.<ol id="ol_yln_fhl_jt">
         <li>Open CMC.<p>By default, the CMC is configured to discover the StoreVirtual nodes in
           the subnet in which it is installed. You can manually add the nodes also.</p></li>
