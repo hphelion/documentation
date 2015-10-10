@@ -78,7 +78,7 @@ SWF-PRX-mgmt:8080 swift-proxy
       Open the following file and change components to tls-components in
       /home/stack/helion/my_cloud/definition/data/network_groups.yml load-balancers:
       <codeblock>   - provider: ip-cluster
-     name: extlb                      # This is the external LB.
+     name: extlb                      # This is the external load balancer.
      external-name: myhelion.test     # change this to a resolvable FQDN
      tls-components:
         - default
