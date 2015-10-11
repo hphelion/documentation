@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148">
-        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Installation
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installation
                 Prerequisites</title>
         <titlealts>
                 <searchtitle>HP Helion Openstack Installation Prerequisites</searchtitle>
@@ -125,14 +125,14 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address&gt;,&lt;provider_net
                                 <li>python-virtualenv </li>
                                 <li>python-dev virt-manager</li>
                                 <li>sshpass</li>
-                                <li>gnugpg</li>
+                                <li>gnupg</li>
                                 <li>jq</li>
                         </ul>
                         <p>To install the packages on the KVM host:</p>
                         <ol>
                                 <li>On the KLM host, run the following all in one command to install
                                         packages:
-                                        <codeblock><codeph>sudo su -l -c "apt-get install -y vlan sudo ansible sshpass ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager gnugpg jq xorg gnome-core gnome-system-tools gnome-app-install"</codeph></codeblock></li>
+                                        <codeblock><codeph>sudo su -l -c "apt-get install -y vlan sudo ansible sshpass ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager gnupg jq xorg gnome-core gnome-system-tools gnome-app-install"</codeph></codeblock></li>
                                 <li>Add the 802.1q module to the kernel on boot. The 802.1q standard
                                         supports VLAN tagging on an ethernet
                                         network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'

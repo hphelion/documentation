@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Attis Backup and Restore
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Backup and Restore
     CLI</title>
   <prolog>
     <metadata>
@@ -16,11 +16,9 @@
   </prolog>
   <body>
     <!-- https://wiki.hpcloud.net/pages/viewpage.action?pageId=53513771 -->
-    <p>
-      <!-- Here is the wiki link for Attis. <xref href="https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841" format="html" scope="external">https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841</xref> 
+    <p><!-- Here is the wiki link for Attis. <xref href="https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841" format="html" scope="external">https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?pageId=946944841</xref> 
 The high level design needs to be adjusted to more suite with CG(It is reflecting CS in some areas)I will soon update it. 
-But the CLI, REST API etc should all be same -->
-    </p>
+But the CLI, REST API etc should all be same --></p>
     <p>HP Helion OpenStack Carrier Grade includes a backup and restore application called Attis
       which you can use to backup and restore essential system files and components of the non-KVM
       cloud. Attis is automatically installed on each of the controller nodes in the non-KVM region.
@@ -167,7 +165,7 @@ But the CLI, REST API etc should all be same -->
         <li><codeph>--os-username USERNAME</codeph> -- Specified the user name to execute the
           recovery report.</li>
         <li><codeph>--os-password PASSWORD</codeph> -- Specifies the password of the user used to
-          execute the  recovery report.</li>
+          execute the recovery report.</li>
         <li><codeph>--os-auth-url AUTH_URL</codeph> -- Specifies the Keystone authentication
           URL.</li>
       </ul>
@@ -181,8 +179,8 @@ But the CLI, REST API etc should all be same -->
     <p><b>Arguments</b></p>
     <p>
       <ul id="ul_lb4_gvl_pt">
-        <li><codeph>--config-id CONFIG_ID</codeph>  -- Restores using configuration with id. Refer
-          to attis config </li>
+        <li><codeph>--config-id CONFIG_ID</codeph> -- Restores using configuration with id. Refer to
+          attis config </li>
         <li><codeph>--os-tenant-name TENANT_NAME</codeph> -- Tenant name of the user used to execute
           the restart </li>
         <li><codeph>--os-tenant-name TENANT_NAME</codeph> -- Specifies the project (tenant) name of
@@ -190,7 +188,7 @@ But the CLI, REST API etc should all be same -->
         <li><codeph>--os-username USERNAME</codeph> -- Specified the user name to execute the
           recovery restart.</li>
         <li><codeph>--os-password PASSWORD</codeph> -- Specifies the password of the user used to
-          execute the  recovery restart.</li>
+          execute the recovery restart.</li>
         <li><codeph>--os-auth-url AUTH_URL</codeph> -- Specifies the Keystone authentication
           URL.</li>
       </ul>
@@ -198,6 +196,10 @@ But the CLI, REST API etc should all be same -->
     <p><b>Storage</b></p>
     <p>The following command shows stored storage configuration for the Attis service. Use 'attis
       help storage' for more information. <b>storageuration</b></p>
+    <p><b>Synopsis</b></p>
+    <p>
+      <codeblock>attis storage --update '{"parameter":"new value", "parameter":"new value"}' --id &lt;storage_id from the table></codeblock>
+    </p>
     <p><b>Arguments</b></p>
     <p>
       <ul id="ul_cdh_yvl_pt">
@@ -213,9 +215,9 @@ But the CLI, REST API etc should all be same -->
         <li><codeph>--os-tenant-name TENANT_NAME</codeph> -- Specifies the project (tenant) name of
           the user used to execute the storage command. </li>
         <li><codeph>--os-username USERNAME</codeph> -- Specified the user name to execute the
-          recovery  storage command.</li>
+          recovery storage command.</li>
         <li><codeph>--os-password PASSWORD</codeph> -- Specifies the password of the user used to
-          execute the  recovery  storage command.</li>
+          execute the recovery storage command.</li>
         <li><codeph>--os-auth-url AUTH_URL</codeph> -- Specifies the Keystone authentication
           URL.</li>
       </ul>
