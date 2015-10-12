@@ -19,35 +19,6 @@
         <li>HP ProLiant m710 Server Cartridge</li>
         <li>HP ProLiant m300 Server Cartridge</li>
       </ul></p>
-    <section><sectiondiv><b>Cartridge Identifier</b></sectiondiv><p>To manage HP Moonshot servers you
-        must know the node address (these are also known as the <b>transit_address</b> and the
-          <b>target_address</b> respectively) and the cartridge address .<ul id="ul_sk2_vpt_mt">
-          <li><b>Node Address</b>
-            <b>(or "-t", "target_address"):</b> Moonshot cartridges may have one or more nodes in a
-            single cartridge. The first node in the cartridge has <systemoutput>0x72</systemoutput>
-            as its node address.<p><b>transit_address</b> and <b>target_address</b> are the values
-              that would be specified to the <systemoutput>-T</systemoutput> and
-                <systemoutput>-t</systemoutput> flags of ipmitool, respectively, when using dual
-              bridging mode.</p><p>If the Moonshot cartridge has only one node, the node address
-              will always be <systemoutput>0x72</systemoutput>.</p><p>If it were to have 4 nodes,
-              for example, the second, third and fourth nodes will have
-                <systemoutput>0x74</systemoutput>, <systemoutput>0x76</systemoutput> and
-                <systemoutput>0x78</systemoutput> as their addresses, respectively.</p></li>
-        </ul></p><sectiondiv><b>Cartridge Address (or "-T",
-        "transit_address")</b></sectiondiv><p>Below is a sample mapping between the cartridge-no and
-        cartridge address. The address increases by 2 as the cartridge number increases:<ul
-          id="ul_j54_hrt_mt">
-          <li>C1N1 = 0x82</li>
-          <li>C2N1 = 0x84</li>
-          <li>C3N1 = 0x86</li>
-          <li>-----</li>
-          <li>C10N1 = 0x94</li>
-          <li>C11N1 = 0x96</li>
-          <li>-----</li>
-          <li>C28N1 = 0xB8</li>
-          <li>-----</li>
-        </ul></p>This command returns the cartridge
-      address:<codeblock>ipmitool -I lanplus -H xx.xx.xx.xx -U Administrator -P xxxxx sdr list mcloc</codeblock></section>
     <section>
       <title>Configure Moonshot Nodes</title>
       <p>To configure Moonshot Nodes, you must add the Moonshot node's configuration details in the
