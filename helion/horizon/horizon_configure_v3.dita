@@ -15,8 +15,12 @@
 <p>Horizon does not support Keystone v3 or domains by default.</p>
 <p>As a result:</p>
 <ul>
-<li>the admin cannot perform domain management using the Horizon dashboard</li>
-<li>if the admin creates a user though the CLI using a Keystone v3 token, the user will not be able to log in to the Horizon dashboard.  Any user created from within Horizon is able to log into Horizon, but the user will be in the default domain.  </li>
+<li>the admin cannot perform identity management using the Horizon dashboard</li>
+<li>if the admin creates a user though the CLI using a Keystone v3 token, the user will not be able
+        to log in to the Horizon dashboard. Any user created from within Horizon is able to log into
+        Horizon. </li>
+  <li>The Keystone v3 endpoint is in the format: http://&lt;host>:&lt;port>/v3 and should be the internal URL. 
+    The local_settings.py file will have the endpoint for v2 by default.</li>
 </ul>
 <p>To use Keystone v3 in Horizon (perhaps to use LDAP), they can manually change the settings (see below).  When Keystone v3 is enabled, all User, Project, and Domain management must be done via the CLI.  The Identity panel will not be visible in Horizon.</p>
 <p>Steps to switch Horizon from Keystone v2 to Keystone v3:</p>
