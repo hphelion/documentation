@@ -77,16 +77,17 @@ $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock></li>
     <section><title>Fernet Token</title>
       
       
-      <p>HOS 2.0 supports UUID tokens by default. Fernet Tokens are available as an experimental
-        feature. You can switch to using Fernet tokens instead of UUID tokens by following the above
-        steps. The benefit of using Fernet tokens is that tokens are not persisted in a database,
-        which is helpful if you want to deploy Keystone Identity service as one master and multiple
-        slaves: only roles, projects, etc. will need to be replicated from master to slaves, not the
-        token table. The tradeoff is the cost of token validation. According to our performance
-        testing, although Fernet tokens perform slightly better than UUID on token creation, the
-        degradation is about 400% on token validation when compared to UUID tokens. The performance
-        degradation is caused mainly by database operations; there are 39 queries per fernet token
-        validation, while UUID causes only 2 queries per token validation.</p>
+      <p>HP Helion OpenStack 2.0 supports UUID tokens by default. Fernet Tokens are available as an
+        experimental feature. You can switch to using Fernet tokens instead of UUID tokens by
+        following the above steps. The benefit of using Fernet tokens is that tokens are not
+        persisted in a database, which is helpful if you want to deploy Keystone Identity service as
+        one master and multiple slaves: only roles, projects, etc. will need to be replicated from
+        master to slaves, not the token table. The tradeoff is the cost of token validation.
+        According to our performance testing, although Fernet tokens perform slightly better than
+        UUID on token creation, the degradation is about 400% on token validation when compared to
+        UUID tokens. The performance degradation is caused mainly by database operations; there are
+        39 queries per fernet token validation, while UUID causes only 2 queries per token
+        validation.</p>
       
       <note>Tempest doesn't work with Fernet Tokens in HP Helion OpenStack 2.0. If Fernet tokens are
         enabled, please don't run token tests in Tempest.</note>
@@ -100,7 +101,7 @@ $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock></li>
       exclusive access to the messages in this queue. So a typical client which likes to consume the
       audit message should create an exclusive queue for itself, attach the queue to the exchange
       "keystone" and look for the messages with the binding key "notification.info". Given below is
-      the sample code for a typical client consuming audit messages.<p>The 2.0 Keystone auditing was
+      the sample code for a typical client consuming audit messages.<p>Keystone auditing was
         implemented for Ceilometer. However, since Ceilometer is focused on metrics that support
         showback/chargebac/billing and there's no product plan for Keystone metrics to be part of
         the Ceilometer collection.
