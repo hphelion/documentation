@@ -134,7 +134,21 @@ stack@hLinux:~$ openstack role assignment list --user testuser --domain default
  
 </codeblock>
     </section>
+    <section><title>Pre-Installed Roles</title>
 
+<p> The following are the pre-installed Roles. Additional roles can be created by UIDs with the
+        'admin' role. Roles are defined on a per service basis (more information available at: <xref
+          href="http://docs.openstack.org/user-guide-admin/manage_projects_users_and_roles.html"
+          format="html" scope="external">Manage projects, users, and roles</xref> on the OpenStack
+        web site.</p>
+<ul><li>
+  Role</li>
+  <li> Description</li>
+  <li>admin	 </li>
+  <li>_member_	 </li>
+</ul>
+
+</section>
 
 
   </body>
