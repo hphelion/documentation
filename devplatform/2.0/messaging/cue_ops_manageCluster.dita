@@ -6,7 +6,11 @@
     <ul><li><xref href="#cue_manageCluster/delete" format="dita">Delete a Cluster</xref></li>
       <li><xref href="#cue_manageCluster/show" format="dita">Show Details About a
         Cluster</xref></li>
-      <li><xref href="#cue_manageCluster/list" format="dita">List all Clusters on a Node</xref></li></ul>
+      <li><xref href="#cue_manageCluster/list" format="dita">List all Clusters on a Node</xref></li>
+     <!--<li>app dev creats an app to talk using cue; how to automatically create message brokers, if
+        you're using it, just use the cue client instead
+          <p>http://python-cueclient.readthedocs.org/en/latest/command-line.html The
+          python-cueclient can be used as a command line tool for accessing Cue API.</p></li>--></ul>
     <section id="delete">
       <title>Delete A Cluster</title>
       

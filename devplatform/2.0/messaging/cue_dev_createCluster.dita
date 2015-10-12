@@ -37,11 +37,12 @@ session = keystone_session.Session(auth=auth)
 cue_client = client.Client(session=session)
 
 # Cluster create
-create_response = cue_client.clusters.create(name="test_binding5",
-                    nic="55555", flavor="1",size="2",volume_size="0", <!--username, password-->)</codeblock>
+create_response = cue_client.clusters.create(name="test_binding5", nic="55555", flavor="1",size="2",volume_size="0", <!--username, password-->)</codeblock>
           </dd>
         </dlentry>
       </dl>
     </section>
   </body>
 </topic>
+<!--add the cue client from the read the docs here, that's what the "command line" concept is about, using the cue client
+this example is more for an app developer perspective.-->

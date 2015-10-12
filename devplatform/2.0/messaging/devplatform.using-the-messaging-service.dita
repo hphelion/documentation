@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3880">
-<title>HP Helion 2.0 Development Platform: Using the RabbitMQ Messaging Service</title>
+<title>HP Helion 2.0 Development Platform: Using Messaging as a Service</title>
 <body>
 
 <p>The Messaging service is a key aspect of applications architected for the cloud as it helps to create scalable and distributed applications. This is achieved by enabling your software applications and services to communicate with each other as sub-components of a larger-scale application while allowing you to incorporate data from users, devices, and data streams.</p>
-<p>The Messaging service (beta) provisions RabbitMQ clusters that can be used for robust messaging in applications.</p>
+<p>The Messaging service provisions clusters that can be used for robust messaging in
+      applications.</p>
 <p>The following topics explain how to create and manage a RabbitMQ instance:</p>
 <ul>
 <li>

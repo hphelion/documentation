@@ -5,7 +5,7 @@
 <title>HP Helion Development Platform</title>
   <topicref href="2.0/messaging/cue_ops_overview.dita" navtitle="Messaging Service" locktitle="yes">
     <topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita" locktitle="yes"
-      navtitle="Using the RabbitMQ Messaging Service"/>
+      navtitle="Using Messaging as a Service"/>
     <topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita" locktitle="yes"
       navtitle="Using the Messaging Service with ALS"/>
     <topicref href="2.0/messaging/cue_dev_createCluster.dita"
