@@ -9,13 +9,11 @@
     <p>While deploying Swift using the input model you must enure that the disk drives exists and
       are correctly assigned to Swift node. Also, you have made the Swift required changes in the
       YAML files.</p>
-    <section><title><!--Example Configurations--></title>
-      <ul>
-        <li>
-          <!--<b> <xref href="#modify-input-model/entry-scale-with-vsa" format="dita">entry-scale-with-vsa</xref></b>: This has a single control plane cluster which runs all services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova compute servers.-->
-          <p><!--<b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref> </b>: This example cloud model describes a system using multiple servers and networks. It provides an example for the configuration of the mid sized cloud. --></p>
-        </li>
-      </ul></section>
+    <section>
+      <title><!--Example Configurations--></title>
+      <!--<b> <xref href="#modify-input-model/entry-scale-with-vsa" format="dita">entry-scale-with-vsa</xref></b>: This has a single control plane cluster which runs all services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova compute servers.-->
+      <p><!--<b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref> </b>: This example cloud model describes a system using multiple servers and networks. It provides an example for the configuration of the mid sized cloud. --></p>
+    </section>
     <section id="entry-scale-with-vsa"
         ><title><!--Entry-scale-with-vsa--></title><p><!--The <codeph>entry-scale-with-vsa</codeph> input model is relatively simple and constrained. You must ensure that the disk drives exists and are correctly assigned to Swift nodes. Therefore, no Swift-specific modification is required for this model while deploying Swift.--></p><p><!--Before starting the deployment, you must validate, and possibly update the data in the example cloud model files as follows:<ul><li>Examine the <codeph>data/disks_controller.yml</codeph> file and validate that the drives exist and have the appropriate preconditions as described in <xref href="allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device">Requirements for a disk device</xref>.</li><li>If you plan to add more Swift storage nodes or drives, you should read the information about partition power in <xref href="ring_specifications.dita#ring-specification/selecting-partition-power" type="section">Specifying the rings (ring specifications)</xref>. However, in most cases you do not need to change the <codeph>data/swift/rings.yml</codeph> file.</li></ul>--></p><sectiondiv><b>Node
           Types</b></sectiondiv><ul id="ul_qp3_fhr_qt">
@@ -31,8 +29,8 @@
         <li><b>Object (OBJ) Node</b>: This node runs the Swift-object service. The Swift-object
           service handles requests for objects.</li>
       </ul><sectiondiv><b>YML files associated with Swift Services</b></sectiondiv><p>The following
-          <codeph>yml</codeph> files are configured for <b>entry-scale-with-vsa</b>
-        model:</p><simpletable id="simpletable_mtc_yb1_kt">
+          <codeph>yml</codeph> files are configured for input model:</p><simpletable
+        id="simpletable_mtc_yb1_kt">
         <strow>
           <stentry><codeph>data/control_plane.yml</codeph></stentry>
           <stentry>This<b> ROLE-CONTROLLER</b> node type runs on the <b>cluster1</b> cluster as
@@ -49,6 +47,30 @@
             specification of the rings. For more information on ring specification, refer to <xref
               href="ring_specifications.dita#ring-specification">ring
             specification</xref>.</stentry>
+        </strow>
+        <strow>
+          <stentry><codeph>data/server_roles.yml </codeph></stentry>
+          <stentry>It defines the role of the server.</stentry>
+        </strow>
+        <strow>
+          <stentry><codeph>data/swobj-disks.yml</codeph></stentry>
+          <stentry>The Object node type uses two disk drives to store account and container
+            databases.</stentry>
+        </strow>
+        <strow>
+          <stentry><codeph>data/disks_swpac.yml</codeph></stentry>
+          <stentry>The Proxy, Container, Account node type uses two disk drives to store account and
+            container databases.</stentry>
+        </strow>
+        <strow>
+          <stentry><codeph>data/server_groups.yml</codeph></stentry>
+          <stentry>Identifies the server group that it belongs to.</stentry>
+        </strow>
+        <strow>
+          <stentry><codeph>data/network_groups.yml</codeph></stentry>
+          <stentry>The <codeph>swift-proxy</codeph> service uses the SWIFT network to communicate
+            with the other swift services (they also communicated among themselves). The MGMT and
+            SWIFT networks are specified in this YAML file.</stentry>
         </strow>
       </simpletable><p>You can implementing the input model and perform the following Swift
         activities: <ul id="ul_vsp_33r_qt">

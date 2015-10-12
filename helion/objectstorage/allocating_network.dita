@@ -22,7 +22,7 @@
           deployments, it is convenient to run it on the same cluster as the horizon service. For
           larger deployments with many nodes running the <codeph>swift-proxy</codeph> service, it
           may be better to <b>co-locate</b> the <codeph>swift-proxy</codeph> and
-            <codeph>memcached</codeph> services. The <codeph>swift-proxy</codeph> and and
+            <codeph>memcached</codeph> services. The <codeph>swift-proxy</codeph> and
             <codeph>swift-container</codeph> services must have a <b>direct</b> connection to the
           same network as the <codeph>memcached</codeph> service.</li>
         <li>The swift-proxy and<codeph> swift-ring-builder</codeph> service must be
