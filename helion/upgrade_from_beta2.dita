@@ -3,58 +3,61 @@
 <topic id="beta_upgrade">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Upgrading from Beta 2</title>
   <body>
-    <p> Upgrade from Beta 2 is now supported. To perform the upgrade, you must have a working
-      deployment of the Beta 2 release. </p>
-    <p>To perform the upgrade, follow the steps below. The upgrade will apply updates to HP Helion
-      OpenStack services, as well as to the underlying cloud platform. </p>
-    <p> The upgrade mechanism included in this release is not complete in that it does not upgrade
-      the full set of services in the HP Helion OpenStack stack. The following set of components are
-      upgraded as part of the upgrade: <ul>
-        <li>Linux for HP Helion</li>
-        <li>sosreport</li>
-        <li>monasca-agent</li>
-        <li>Openstack clients</li>
-        <li>haproxy/keepalived</li>
-        <li>Apache</li>
-        <li>Swift</li>
-        <li>Nova</li>
-        <li>Glance</li>
-        <li>Neutron</li>
-        <li>Cinder</li>
-        <li>Heat</li>
-        <li>Logging</li>
-        <li>Freezer</li>
-      </ul> If you are running a configuration based on the Beta 2 model configuration, you may
-      still use that configuration after upgrading. However, a few changes are required.</p>
-    <note>The upgrade process is a live upgrade in the sense that VMs, volumes, network resources,
-      etc. should survive the upgrade, but can't guarantee no-downtime of the APIs, although such
-      downtime is minimized. If an upgrade requires a reboot, then the reboot is left to the
-      operator/customer to handle. The upgrade process does not automatically reboot nodes.</note>
-    <p/>
-    <p>To upgrade, download the ISO as you would for the install.<note>You will not be able to
-        change your cloud model at this point, other than by adapting it as you did in beta1. You
-        may have to merge your current configuration files with the new ones in step 3. </note>
-      <ol>
-        <li>Log in to the deployer node as the user you created during the beta 2 deployment, and
-          mount the new install media at /media/cdrom, for example:
-          <codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20150901-hlm.&lt;<i>build-date</i>_sha1>.iso /media/cdrom</codeblock>
-        </li>
-        <li> Unpack the following tarball:
-          <codeblock>tar zxvf /media/cdrom/hos-2.0.0/hos-2.0.0-b.2-&lt;whatever timestamp>.tgz</codeblock>
-          Run the included initialization script to update the deployer
-          <codeblock>~/hos-2.0.0-b.2/hos-init.bash</codeblock>
-        </li>
-        <li>Prepare the new Ansible tree for the upgrade task: <ol id="ol_zzd_rxz_jt">
-            <li>Identify any merge conflicts that may have arisen getting doing git status: <codeblock>cd ~/helion
+    <section>
+      <p> Upgrade from Beta 2 is now supported. To perform the upgrade, you must have a working
+        deployment of the Beta 2 release. </p>
+      <p>To perform the upgrade, follow the steps below. The upgrade will apply updates to HP Helion
+        OpenStack services, as well as to the underlying cloud platform. </p>
+      <p> The upgrade mechanism included in this release is not complete in that it does not upgrade
+        the full set of services in the HP Helion OpenStack stack. The following set of components
+        are upgraded as part of the upgrade: <ul>
+          <li>Linux for HP Helion</li>
+          <li>sosreport</li>
+          <li>monasca-agent</li>
+          <li>Openstack clients</li>
+          <li>haproxy/keepalived</li>
+          <li>Apache</li>
+          <li>Swift</li>
+          <li>Nova</li>
+          <li>Glance</li>
+          <li>Neutron</li>
+          <li>Cinder</li>
+          <li>Heat</li>
+          <li>Logging</li>
+          <li>Freezer</li>
+          <li>OTHERS TO BE LISTED</li>
+        </ul> If you are running a configuration based on the Beta 2 model configuration, you may
+        still use that configuration after upgrading. However, a few changes are required.</p>
+      <note>The upgrade process is a live upgrade in the sense that VMs, volumes, network resources,
+        etc. should survive the upgrade, but can't guarantee no-downtime of the APIs, although such
+        downtime is minimized. If an upgrade requires a reboot, then the reboot is left to the
+        operator/customer to handle. The upgrade process does not automatically reboot nodes.</note>
+      <p/>
+      <p>To upgrade, download the ISO as you would for the install.<note>You will not be able to
+          change your cloud model at this point, other than by adapting it as you did in beta 2. You
+          will have to change all the model files to the new format. This is documented
+          below.</note>
+        <ol>
+          <li>Log in to the deployer node as the user you created during the beta 2 deployment, and
+            mount the new install media at /media/cdrom, for example:
+            <codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20151005-hlm.&lt;<i>build-date_sha1</i>>.iso /media/cdrom</codeblock>
+          </li>
+          <li> Unpack the following tarball:
+            <codeblock>tar faxv /media/cdrom/hos/hos-2.0&lt;<i>timestamp</i>>.tar</codeblock> Run
+            the included initialization script to update the deployer
+            <codeblock>~/hos-2.0&lt;<i>appropriate build number</i>>/hos-init.bash</codeblock>
+          </li>
+          <li>Prepare the new Ansible tree for the upgrade task: <ol id="ol_zzd_rxz_jt">
+              <li>Identify any merge conflicts that may have arisen getting doing git status: <codeblock>cd ~/helion
 git status</codeblock>
-              <p>Note that git status will also tell you what branch you are on. It should be the
-                site branch. If git reports merge issues, resolve them by editing the files
-                reported, then add and commit:</p>
-              <codeblock>git add --all .
+                <p>Note that git status will also tell you what branch you are on. It should be the
+                  site branch. If git reports merge issues, resolve them by editing the files
+                  reported, then add and commit:</p>
+                <codeblock>git add --all .
 git commit -m "your commit message here"</codeblock> More
-              information about git and the config processor can be found on the <xref
-                href="using_git.dita">Using Git page</xref>.</li>
-            <li> Remove any data persisted from the Beta 1 deployment by executing these commands on
+                information about git and the config processor can be found on the <xref
+                  href="using_git.dita">Using Git page</xref>.</li>
+              <!--<li> Remove any data persisted from the Beta 1 deployment by executing these commands on
               the deployer node to delete the cp-persistent branch and all its persisted data, and
               recreate it. Then switch to the site branch:
               <codeblock>stack@hLinux:~$ cd helion
@@ -75,20 +78,455 @@ stack@hLinux:~/helion $ git checkout site</codeblock>
               below:<codeblock>- name: ROLE-CONTROLLER interface-model:
       INTERFACE_SET_CONTROLLER 
       disk-model: DISK_SET_CONTROLLER_1TB</codeblock>
-            </li>
-            <li>Run the config processor:
-              <codeblock>cd ~/helion/hos/ansible/
+            </li>-->
+              <li>Run the config processor:
+                <codeblock>cd ~/helion/hos/ansible/
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
-            </li>
-            <li>Run the ready deployment script:
-              <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
-            </li>
-          </ol></li>
-        <li>Run the upgrade playbook:
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+              </li>
+              <li>Run the ready deployment script:
+                <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
+              </li>
+            </ol></li>
+          <li>Run the upgrade playbook:
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock>
-        </li>
-      </ol>
-    </p>
+          </li>
+        </ol>
+      </p>
+    </section>
+    <section><title>Model Changes required before Upgrading from Beta2 to HP Helion Openstack
+        2.0</title> After running the hos-init.bash script (or vagrant provision in a virtual
+      environment), the cloud model from the original Beta2 deployment must be updated prior to
+      running the upgrade to HOS 2.0. The exact changes depend on the original deployed cloud model.
+      The following are the model changes required before upgrading a cloud based on the standard
+      padawan model (used in CI), which uses a dedicated deployer (known as the lifecycle-manager)
+      node and a dedicated network for carrying HLM traffic: 1. Update the control plane model with
+      the lifecycle-manager/lifecycle-manager-target service components. For a cloud model using a
+      dedicated deployer/HLM node, the following changes are required: a. Remove logging-producer
+      and monasca-agent from common-service-components and add lifecycle-manager-target. b. Add a
+      new single-node (member-count of 1) cluster for the deployer/lifecycle manager node, which
+      includes the lifecycle-manager service component. c. Add logging-producer and monasca-agent
+      service component to all clusters except the single-node deployer/lifecycle-manager cluster. <codeblock>hlmuser@hLinux:~/helion/my_cloud/definition/data$ git diff
+diff --git a/my_cloud/definition/data/control_plane.yml b/my_cloud/definition/data/control_plane.yml
+index f4f6273..6b999b8 100644
+--- a/my_cloud/definition/data/control_plane.yml
++++ b/my_cloud/definition/data/control_plane.yml
+@@ -19,12 +19,19 @@
+         - AZ2
+         - AZ3
+       common-service-components:
++        - lifecycle-manager-target
+         - freezer-agent
+-        - logging-producer
+-        - monasca-agent
+         - stunnel
+       clusters:
++        - name: cluster0
++          cluster-prefix: c0
++          server-role: HLM-ROLE
++          member-count: 1
++          allocation-policy: strict
++          service-components:
++            - lifecycle-manager
++
+         - id: "1"
+           name: c1
+           server-role: ROLE-CONTROLLER
+@@ -95,6 +102,8 @@
+             - ops-console-monitor
+             - cmc-service
+             - freezer-api
++            - logging-producer
++            - monasca-agent
+       resource-nodes:
+         - name: compute
+@@ -110,3 +119,5 @@
+             - neutron-metadata-agent
+             - neutron-openvswitch-agent
+             - neutron-lbaasv2-agent
++            - logging-producer
++            - monasca-agent</codeblock>
+      <p>2. Add a server entry for the deployer node to the list of baremetal servers, servers, and
+        assign it the HLM role (e.g. in servers.yml):</p>
+      <codeblock>diff --git a/my_cloud/definition/data/servers.yml b/my_cloud/definition/data/servers.yml
+index c5e934d..6c4cef9 100644
+--- a/my_cloud/definition/data/servers.yml
++++ b/my_cloud/definition/data/servers.yml
+@@ -18,6 +18,15 @@
+   servers:
++    - id: deployer
++      ip-addr: 192.168.10.254
++      role: HLM-ROLE
++      server-group: RACK1
++      mac-addr: a4:93:0c:4f:7c:73
++      ilo-ip: 192.168.9.2
++      ilo-password: password
++      ilo-user: admin
++
+     - id: ccn-0001
+       ip-addr: 192.168.10.3
+       role: ROLE-CONTROLLER</codeblock>
+      <p>3. Add a new HLM role to the list of server-roles, e.g. to server_roles.yml:</p>
+      <codeblock>- name: HLM-ROLE
+  interface-model: HLM-INTERFACES
+  disk-model: HLM-DISKS</codeblock>
+      <p>4. Note that in this example, a different interface model and disk model are defined for
+        the HLM role. 5. If the HLM/deployer had been given a dedicated network in the Beta2 model,
+        then the following set of network definition changes are required: a. Add a new HLM network
+        group to network-groups (e.g. in network_groups.yml):</p>
+      <codeblock>diff --git a/my_cloud/definition/data/network_groups.yml b/my_cloud/definition/data/network_groups.yml
+index 4328074..a391f8d 100644
+--- a/my_cloud/definition/data/network_groups.yml
++++ b/my_cloud/definition/data/network_groups.yml
+@@ -12,6 +12,12 @@
+     version: 2
+   network-groups:
++    - name: HLM
++      hostname-suffix: hlm
++      component-endpoints:
++        - lifecycle-manager
++        - lifecycle-manager-target
++
+     - name: MGMT
+       hostname-suffix: mgmt
+       hostname: true</codeblock>
+      <p>b. Add a new network to networks (e.g. in net_global.yml) with this network as a member of
+        of the above-defined HLM network group:</p>
+      <codeblock>diff --git a/my_cloud/definition/data/net_global.yml b/my_cloud/definition/data/net_global.yml
+index c41cffe..7d57478 100644
+--- a/my_cloud/definition/data/net_global.yml
++++ b/my_cloud/definition/data/net_global.yml
+@@ -12,6 +12,13 @@
+     version: 2
+   networks:
++    - name: HLM-NET
++      vlanid: 101
++      tagged-vlan: false
++      cidr: 192.168.10.0/24
++      gateway-ip: 192.168.10.1
++      network-group: HLM
++
+     - name: NET_MGMT
+       vlanid: 102
+       tagged-vlan: false</codeblock>
+      <p>c. Add a HLM interface model to interface-models (e.g. in interfaces_set_1.yml),
+        identifying the interface assigned for carrying HLM traffic; also need to assign the
+        interface used for HLM traffic in the pre-existing interface models used for target cloud
+        nodes (in this example, all target cloud nodes have the same interface model):</p>
+      <codeblock>diff --git a/my_cloud/definition/data/interfaces_set_1.yml b/my_cloud/definition/data/interfaces_set_1.yml
+index 4983e06..ed9b1c7 100644
+--- a/my_cloud/definition/data/interfaces_set_1.yml
++++ b/my_cloud/definition/data/interfaces_set_1.yml
+@@ -12,6 +12,21 @@
+     version: 2
+   interface-models:
++    - name: HLM-INTERFACES
++      network-interfaces:
++
++        - name: eth1
++          device:
++            name: eth1
++          network-groups:
++            - MGMT
++
++        - name: eth2
++          device:
++            name: eth2
++          network-groups:
++            - HLM
++
+     - name: INTERFACE_SET_1
+       network-interfaces:
+@@ -21,6 +36,12 @@
+           network-groups:
+             - MGMT
++        - name: eth2
++          device:
++            name: eth2
++          network-groups:
++            - HLM
++
+         - name: eth3
+           device:
+             name: eth3</codeblock>
+      <p>d. Add the HLM-NET network to the list of global networks (e.g in server_groups.yml):</p>
+      <codeblock>diff --git a/my_cloud/definition/data/server_groups.yml b/my_cloud/definition/data/server_groups.yml
+index 67f37d8..c5a672b 100644
+--- a/my_cloud/definition/data/server_groups.yml
++++ b/my_cloud/definition/data/server_groups.yml
+@@ -23,6 +23,7 @@
+         - AZ2
+         - AZ3
+       networks:
++        - HLM-NET
+         - NET_MGMT
+         - NET_EXTERNAL_VM</codeblock>
+      <p>6. If a separate disk model is required for the HLM node, this should be added to
+        disk-models, as done in the following, which uses a separate yaml file for the HLM disk
+        model definition (disks_hlm.yml):</p>
+      <codeblock>disk-models:
+- name: HLM-DISKS
+  volume-groups:
+  # The policy is not to consume 100% of the space of each volume group.
+  # 5% should be left free for snapshots and to allow for some flexibility.
+  # sda_root is a templated value to align with whatever partition is really used
+  # This value is checked in os config and replaced by the partition actually used
+  # on sda e.g. sda1 or sda5
+    - name: hlm-vg
+      physical-volumes:
+        - /dev/sda_root
+      logical-volumes:
+        - name: root
+          size: 95%
+          fstype: ext4
+          mount: /
+      consumer:
+        name: os</codeblock>
+      <p>7. HOS 2.0 includes the feature to create firewall rules for enabling access between
+        services across the deployed cloud. Additional firewall rules can be supplied in the cloud
+        model. The following is an example firewall rules files – <b>NOTE; I believe MANAGEMENT
+          should be MGMT (need to verify and retest):</b></p>
+      <codeblock>---
+  product:
+    version: 2
+#
+# HOS will create firewall rules to enable the required access for
+# all of the deployed services. Use this section to define any
+# additional access.
+#
+# Each group of rules can be applied to one or more network groups
+# Examples are given for ping and ssh
+#
+# Names of rules, (e.g. "PING") are arbitrary and have no special significance
+#
+  firewall-rules:
+    - name: SSH
+      # network-groups is a list of all the network group names
+      # that the rules apply to
+      network-groups:
+      - MANAGEMENT
+      rules:
+      - type: allow
+        # range of remote addresses in CIDR format that this
+        # rule applies to
+        remote-ip-prefix:  0.0.0.0/0
+        port-range-min: 22
+        port-range-max: 22
+        # protocol must be one of: null, tcp, udp or icmp
+        protocol: tcp
+    - name: PING
+      network-groups:
+      - MANAGEMENT
+      - HLM
+      rules:
+      # open ICMP echo request (ping)
+      - type: allow
+        remote-ip-prefix:  0.0.0.0/0
+        # icmp type
+        port-range-min: 8
+        # icmp code
+        port-range-max: 0
+        protocol: icmp</codeblock>
+      <p>Full set of changes shown here:</p>
+      <codeblock>commit 19aff9e924655ef3c6a25f96ff5573fb1b0c9d96
+Author: Helion git user &lt;helion@hp.com>
+Date:   Sun Oct 11 22:21:18 2015 +0000</codeblock>
+      <p>Model changes required before Beta2 to 2.0 upgrade</p>
+      <codeblock>diff --git a/my_cloud/definition/data/control_plane.yml b/my_cloud/definition/data/control_plane.yml
+index f4f6273..6b999b8 100644
+--- a/my_cloud/definition/data/control_plane.yml
++++ b/my_cloud/definition/data/control_plane.yml
+@@ -19,12 +19,19 @@
+         - AZ2
+         - AZ3
+       common-service-components:
++        - lifecycle-manager-target
+         - freezer-agent
+-        - logging-producer
+-        - monasca-agent
+         - stunnel
+       clusters:
++        - name: cluster0
++          cluster-prefix: c0
++          server-role: HLM-ROLE
++          member-count: 1
++          allocation-policy: strict
++          service-components:
++            - lifecycle-manager
++
+         - id: "1"
+           name: c1
+           server-role: ROLE-CONTROLLER
+@@ -95,6 +102,8 @@
+             - ops-console-monitor
+             - cmc-service
+             - freezer-api
++            - logging-producer
++            - monasca-agent
+       resource-nodes:
+         - name: compute
+@@ -110,3 +119,5 @@
+             - neutron-metadata-agent
+             - neutron-openvswitch-agent
+             - neutron-lbaasv2-agent
++            - logging-producer
++            - monasca-agent</codeblock>
+      <codeblock>diff --git a/my_cloud/definition/data/disks_hlm.yml b/my_cloud/definition/data/disks_hlm.yml
+new file mode 100644
+index 0000000..fc5574e
+--- /dev/null
++++ b/my_cloud/definition/data/disks_hlm.yml
+@@ -0,0 +1,39 @@
++#
++# (c) Copyright 2015 Hewlett Packard Enterprise Development Company LP
++#
++# Licensed under the Apache License, Version 2.0 (the "License"); you may
++# not use this file except in compliance with the License. You may obtain
++# a copy of the License at
++#
++# http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
++# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
++# License for the specific language governing permissions and limitations
++# under the License.
++#
++---
++  product:
++    version: 2
++
++  disk-models:
++  - name: HLM-DISKS
++    volume-groups:
++    # The policy is not to consume 100% of the space of each volume group.
++    # 5% should be left free for snapshots and to allow for some flexibility.
++    # sda_root is a templated value to align with whatever partition is really used
++    # This value is checked in os config and replaced by the partition actually used
++    # on sda e.g. sda1 or sda5
++
++      - name: hlm-vg
++        physical-volumes:
++          - /dev/sda_root
++        logical-volumes:
++          - name: root
++            size: 95%
++            fstype: ext4
++            mount: /
++
++        consumer:
++          name: os</codeblock>
+      <codeblock>diff --git a/my_cloud/definition/data/interfaces_set_1.yml b/my_cloud/definition/data/interfaces_set_1.yml
+index 4983e06..ed9b1c7 100644
+--- a/my_cloud/definition/data/interfaces_set_1.yml
++++ b/my_cloud/definition/data/interfaces_set_1.yml
+@@ -12,6 +12,21 @@
+     version: 2
+   interface-models:
++    - name: HLM-INTERFACES
++      network-interfaces:
++
++        - name: eth1
++          device:
++            name: eth1
++          network-groups:
++            - MGMT
++
++        - name: eth2
++          device:
++            name: eth2
++          network-groups:
++            - HLM
++
+     - name: INTERFACE_SET_1
+       network-interfaces:
+@@ -21,6 +36,12 @@
+           network-groups:
+             - MGMT
++        - name: eth2
++          device:
++            name: eth2
++          network-groups:
++            - HLM
++
+         - name: eth3
+           device:
+             name: eth3</codeblock>
+      <codeblock>diff --git a/my_cloud/definition/data/net_global.yml b/my_cloud/definition/data/net_global.yml
+index c41cffe..7d57478 100644
+--- a/my_cloud/definition/data/net_global.yml
++++ b/my_cloud/definition/data/net_global.yml
+@@ -12,6 +12,13 @@
+     version: 2
+   networks:
++    - name: HLM-NET
++      vlanid: 101
++      tagged-vlan: false
++      cidr: 192.168.10.0/24
++      gateway-ip: 192.168.10.1
++      network-group: HLM
++
+     - name: NET_MGMT
+       vlanid: 102
+       tagged-vlan: false</codeblock>
+      <codeblock>diff --git a/my_cloud/definition/data/network_groups.yml b/my_cloud/definition/data/network_groups.yml
+index 4328074..a391f8d 100644
+--- a/my_cloud/definition/data/network_groups.yml
++++ b/my_cloud/definition/data/network_groups.yml
+@@ -12,6 +12,12 @@
+     version: 2
+   network-groups:
++    - name: HLM
++      hostname-suffix: hlm
++      component-endpoints:
++        - lifecycle-manager
++        - lifecycle-manager-target
++
+     - name: MGMT
+       hostname-suffix: mgmt
+       hostname: true</codeblock>
+      <codeblock>diff --git a/my_cloud/definition/data/server_groups.yml b/my_cloud/definition/data/server_groups.yml
+index 67f37d8..c5a672b 100644
+--- a/my_cloud/definition/data/server_groups.yml
++++ b/my_cloud/definition/data/server_groups.yml
+@@ -23,6 +23,7 @@
+         - AZ2
+         - AZ3
+       networks:
++        - HLM-NET
+         - NET_MGMT
+         - NET_EXTERNAL_VM</codeblock>
+      <codeblock>diff --git a/my_cloud/definition/data/server_roles.yml b/my_cloud/definition/data/server_roles.yml
+index ec7bde5..1eb315e 100644
+--- a/my_cloud/definition/data/server_roles.yml
++++ b/my_cloud/definition/data/server_roles.yml
+@@ -13,6 +13,10 @@
+   server-roles:
++    - name: HLM-ROLE
++      interface-model: HLM-INTERFACES
++      disk-model: HLM-DISKS
++
+     - name: ROLE-CONTROLLER
+       interface-model: INTERFACE_SET_1
+       disk-model: DISK_SET_CONTROLLER</codeblock>
+      <codeblock>diff --git a/my_cloud/definition/data/servers.yml b/my_cloud/definition/data/servers.yml
+index c5e934d..6c4cef9 100644
+--- a/my_cloud/definition/data/servers.yml
++++ b/my_cloud/definition/data/servers.yml
+@@ -18,6 +18,15 @@
+   servers:
++    - id: deployer
++      ip-addr: 192.168.10.254
++      role: HLM-ROLE
++      server-group: RACK1
++      mac-addr: a4:93:0c:4f:7c:73
++      ilo-ip: 192.168.9.2
++      ilo-password: password
++      ilo-user: admin
++
+     - id: ccn-0001
+       ip-addr: 192.168.10.3
+       role: ROLE-CONTROLLER</codeblock>
+    </section>
   </body>
 </topic>
