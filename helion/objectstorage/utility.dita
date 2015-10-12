@@ -4,7 +4,7 @@
   <title>Using the Swift CLI</title>
   <body>
     <p>The swift utility (or CLI) is installed on the deployer node and also on all other nodes
-      running the swift proxy service. To use the swift utility, set the following environment
+      running the Swift proxy service. To use the Swift utility, set the following environment
       variables. </p>
     <note>You do not need to be the root user.</note>
     <codeblock>OS_USERNAME=demo

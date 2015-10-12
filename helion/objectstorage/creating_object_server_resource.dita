@@ -9,7 +9,7 @@
       <li>In the <codeph>data/control_plane.yml</codeph> file, identity the control plane that the
         object serves are associated with. </li>
       <li>Identity the node type/role used by the Swift Object servers. In the following example,
-          <b>ROLE_SWOBJ</b> is mentioned as server-role.<p>Add an entry to the <b>resources</b> item
+          <b>SWOBJ-ROLE</b> is mentioned as server-role.<p>Add an entry to the <b>resources</b> item
           in the <b>control-plane</b> as
         follows:</p><codeblock>control-planes:
 - name: ccp
@@ -19,7 +19,7 @@
   . . .
   - name: swobj
     resource-prefix: swobj
-    server-role: ROLE-SWOBJ
+    server-role: SWOBJ-ROLE
     allocation-policy: strict
     min-count: 0
     service-components:

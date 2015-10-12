@@ -55,8 +55,9 @@
             <i>storage policies</i>. The <codeph>display-name</codeph> is the name of the storage
           policy and can be used by users of the Swift system when they create containers. It allows
           them to specify the storage policy that the container uses. In the example, the storage
-          policy is called
-          <b>General</b>.<!--<li>The swift-ring-builder will enforce a minimum of 16 hours between ring rebuilds.</li><li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph> attribute is 3. Three copies of data are kept to provide resiliency and availability.</li>--></li>
+          policy is called <b>General</b>.</li>
+        <li>The swift-ring-builder will enforce a minimum of 16 hours between ring
+          rebuilds.<!--</li><li><b>Replica count</b>: The recommended value for the <codeph>replica-count</codeph> attribute is 3. Three copies of data are kept to provide resiliency and availability.</li>--></li>
         <li>
           <p>The purpose of the <b>min-part-time, partition-power, replication-policy</b>
               and<b>replica-count</b> are described in the following section. </p>
@@ -207,7 +208,7 @@
           <li>The lookup should be done separately for each of the account, container and object
             rings. Since account and containers represent approximately 1-2% of object storage, you
             will probably use fewer drives for the account and container rings (i.e., you will have
-            fewer Proxy, Account, Container (PAC) servers) – hence you your object rings may have a
+            fewer Proxy, Account, Container (PAC) servers) – hence  your object rings may have a
             higher partition power.</li>
           <li>The largest anticipated number of drives imposes a limit in how a few drives (the
             minimum) you can have. See <xref href="#ring-specification/calculating-number"
@@ -289,7 +290,7 @@
     <section id="calculating-number"><b>Calculating Numbers of Partitions</b><p>The Object Storage
         system hashes a given name into a specific <i>partition</i>. For each partition, for a
         replica count of 3, there are three <i>partition directories</i>. The partition directories
-        are then evenly scattered over all drives. We can calculate the number of partition
+        are then evenly scattered over all drives. You can calculate the number of partition
         directories as
         follows:<codeblock>number-partition-directories-per-drive = ( (2 ** partition-power) * replica-count ) / number-of-drives
 </codeblock></p></section>

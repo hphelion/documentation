@@ -5,14 +5,19 @@
   <body>
     <section id="about"><title>Configuration Options</title>
       <ul>
-        <li>Entry Scale Cloud with VSA</li>
-        <li>Entry Scale Cloud variations: <ul>
-            <li>Entry Scale Cloud with Ceph</li>
-            <li>Entry Scale Cloud with ESX</li>
+        <li>Entry Scale Cloud using KVM Hypervisor
+        <ul>
+          <li>Variations include:
+          <ul>
+            <li>VSA backend</li>
+            <li>Ceph backend</li>
+            <li>3PAR backend</li>
           </ul></li>
+        </ul></li>
+        <li>Entry Scale Cloud using ESX Hypervisor</li>
       </ul>
     </section>
-    <section><title>Entry Scale Cloud using KVM and VSA Block Storage Backend</title>
+    <section><title>Entry Scale Cloud using KVM Hypervisor</title>
       <p>Choosing this model will result in a cloud with that has the following characteristics:</p>
       <table frame="all" rowsep="1" colsep="1" id="entry_scale_cloud_kvm">
         <tgroup cols="2">
@@ -34,7 +39,11 @@
             </row>
             <row>
               <entry>Resource Pools</entry>
-              <entry>One compute node, one VSA node</entry>
+              <entry><ul>
+                <li>Compute - Minimum one node (up to 100)</li>
+                <li>VSA Cluster - Minimum one node, three nodes for HA</li>
+                <li>Ceph - </li>
+              </ul></entry>
             </row>
             <row>
               <entry>Deployer</entry>

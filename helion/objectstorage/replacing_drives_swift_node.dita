@@ -8,13 +8,13 @@
       for the replacement of each classes of drives to bring the node back to normal.</p>
     <section>
       <title><b>Replacing an OS disk drive</b></title>
-      <p>After the OS disk drive is replaced, the node must be re-imaged.<ol id="ol_ewb_vjv_pt">
+      <p>After the OS disk drive is replaced, the node must be reimaged.<ol id="ol_ewb_vjv_pt">
           <li>Log onto the deployer.</li>
-          <li>Using ansible, re-image the
+          <li>Using ansible, reimage the
               node:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&lt;server id></codeblock><p>In
               the example below <b>swobj2</b> server is
-              re-imaged.<codeblock>cd ~/helion/hos/ansible
+              reimaged.<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swobj2</codeblock></p></li>
           <li>Examine the <codeph>cloudConfig.yml</codeph> and<codeph>
               data/control_plane.yml</codeph> files to get the host prefix (for example, helion) and
@@ -22,7 +22,7 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swobj2</codeblock
             Configure the operating system as
               follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit &lt;hostname></codeblock><p>In
-              the following example, for swobj2, the hostname is <b>helion-ccp-swobj2</b>.
+              the following example, for <b>swobj2</b>, the hostname is <b>helion-ccp-swobj2</b>.
               <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-ccp-swobj2*</codeblock></p></li>
           <li>If this is the first server running the swift-proxy service (see <xref
@@ -41,12 +41,12 @@ ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-ccp-swobj2
       example:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit helion-ccp-swobj2*</codeblock></p>
     <section>
       <title><b>Replacing a storage disk drive</b></title>
-      <p>After a storage drive is replaced, there is no need to re-image the server. Now, you  must
+      <p>After a storage drive is replaced, there is no need to reimage the server. Now, you must
         run the <codeph>swift-reconfigure.yml</codeph> playbook.<ol id="ol_kqj_hkv_pt">
           <li>Log onto deployer</li>
           <li>Run the following commands
               <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml --limit helion-ccp-swobj002-mgmt</codeblock><p>In
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml --limit &lt;hostname></codeblock><p>In
               following example, <b>swobj2</b> the server is
               used.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml --limit helion-ccp-swobj002-mgmt</codeblock></p></li>

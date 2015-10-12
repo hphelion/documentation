@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ndn_4bg_pt">
-  <title><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Removing a Swift
-    Node<?oxy_custom_end?></title>
+  <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+  <title><?oxy_custom_end?>Removing a Swift Node</title>
   <body>
     <p>This process is used when you want to remove one or more node permanently from the Swift
       system. This process has three phases as follows:<ul id="ul_vs4_rcg_pt">
@@ -15,26 +15,28 @@
       </ul></p>
     <section>
       <title>Removing a Node's Drive from the Rings</title>
-      <p>To remove a node's drives from the rings, use these steps. The concept is that we change
-        the role of the server being removed so that it used a disk model that does not include
-        Swift drives. We then build new rings and deploy them. The new rings will not contain the
-        node's drives.<ol id="ol_lnw_cdg_pt">
-          <li>Edit the definition of the server (usually in<codeph> data/servers.yml</codeph>). For
-            example, if the entry for the server look
+      <p>To remove a node's drives from the rings, use the following steps. Change the role of the
+        server that is being removed so that it uses that disk model that does not include Swift
+        drives. Then a new ring is built and deployed. The new rings will not contain the node's
+        drives.</p>
+      <p>
+        <ol id="ol_lnw_cdg_pt">
+          <li>Edit the definition of the server (usually in<codeph> data/servers.yml</codeph> file).
+            For example, if the entry for the server look
               like:<codeblock>- id: swobj4
       ip-addr: 192.168.10.5
       role: SWOBJ-ROLE
       server-group: RACK3
    ...</codeblock><p>Change
               the role to a new value – for example:
-              SWOBJ-DRAINING_ROLE<codeblock>- id: swobj4
+              SWOBJ-DRAINING-ROLE<codeblock>- id: swobj4
       ip-addr: 192.168.10.5
       role: SWOBJ-DRAINING-ROLE
       server-group: RACK3
    ...</codeblock></p></li>
-          <li>Edit the server-roles definition (usually in data/server_roles.yml) and add the
-            SWOBJ-DRAINING-ROLE role. Keep the interface model of the original SWOBJ-ROLE, but
-            change the disk model to SWOBJ-DRAINING-DISKS as shown in the following
+          <li>Edit the server-roles definition (usually in <codeph>data/server_roles.yml</codeph>
+            file) and add the SWOBJ-DRAINING-ROLE role. Keep the interface model of the original
+            SWOBJ-ROLE, but change the disk model to SWOBJ-DRAINING-DISKS as shown in the following
             example:<codeblock>- name: SWOBJ-ROLE
       interface-model: INTERFACE_SET_SWOBJ
       disk-model: SWOBJ-DISKS
@@ -43,9 +45,9 @@
       interface-model: INTERFACE_SET_SWOBJ
       disk-model: SWOBJ-DRAINING-DISKS</codeblock></li>
           <li>Create a SWOBJ-DRAINING-DISKS disk model by editing the file containing the
-            SWOBJ-DISKS disk model (usually <codeph>data/swobj_disks.yml</codeph>) and adding an
-            entry for SWOBJ-DRAINING-DISKS. Make it a copy of the SWOBJ-DISKS disk model, but change
-            the consumer field from "swift" to "swift-draining". For
+            SWOBJ-DISKS disk model (usually <codeph>data/swobj_disks.yml</codeph> file) and adding
+            an entry for SWOBJ-DRAINING-DISKS. Make a copy of the SWOBJ-DISKS disk model, but change
+            the consumer field from "<b>swift</b>" to "<b>swift-draining</b>". For
             example:<codeblock>disk-models:
 - name: SWOBJ-DISKS  
   volume-groups:
@@ -83,7 +85,7 @@
           rings:
             - object-0</codeblock></li>
           <li>Commit the changes to
-            git<codeblock>cd ~helion
+            git.<codeblock>cd ~helion
 git commit -a -m "&lt;commit message>"</codeblock></li>
           <li>Run the configuration
             processor:<codeblock>cd ~/helion/hos/ansible
@@ -91,39 +93,43 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Run the following command to create a deployment
             directory.<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
-          <li>Run the swift-deploy.yml playbook. Do not limit to just the node (swobj4) that you are
+          <li>Run the swift-deploy.yml playbook. Do not limit to just the node (<b>swobj4</b>) that
+            you are
             draining.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
           <li>Wait until replication has finished. See <xref href="safe_rebalance_deploy_ring.dita"
-            /> for more details.<p>At this stage, all data has been moved from swobj4 and replicated
-              on the remaining nodes. we can now proceed to the next phase.</p></li>
-        </ol></p>
+            /> for more details.<p>At this stage, all data has been moved from <b>swobj4</b> and
+              replicated on the remaining nodes. Now, you can proceed to the next phase.</p></li>
+        </ol>
+      </p>
     </section>
     <section>
       <title><b>Disabling Swift on a Node</b></title>
-      <p>The node is still running Swift services. It is still part of the cloud model and is fully
-        configured so we can log in and perform other operations.</p>
-      <p>To disable the node, use the following steps. In this example, swobj4 is the node being
-        removed from Swift.<ol id="ol_lty_22g_pt">
-          <li>Stop Swift services on the node using the swift-stop.yml playbook and limiting the
-            swobj4 as
+      <p>The node is still running Swift services. It is still part of the input model and is fully
+        configured so you can log in and perform the other operations.</p>
+      <p>To disable the node, use the following steps. In this example, <b>swobj4</b> is the node
+        being removed from Swift.<ol id="ol_lty_22g_pt">
+          <li>Stop Swift services on the node using the <codeph>swift-stop.yml</codeph> playbook and
+            limiting the <b>swobj4</b> as
             follows:<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts swift-stop --limit swobj4</codeblock></li>
+ansible-playbook -i hosts/verb_hosts swift-stop --limit <b>swobj4</b></codeblock></li>
           <li>Remove configuration files as follows. This assumes you are logged onto the
               deployer:<codeblock>ssh swobj4 sudo rm -R /etc/swift</codeblock><note>Do not run any
-              other playbooks until you have finished the process described in the next phase.
-              Otherwise, these playbooks may recreate /etc/swift and restart Swift on swobj4. If you
-              accidentally run a playbook, simply repeat the process described here.</note></li>
+              other playbooks until you have finished the process described in the R<b>emoving a
+                node from the input model</b>. Otherwise, these playbooks may recreate
+                <codeph>/etc/swift</codeph> and restart Swift on <b>swobj4</b>. If you accidentally
+              run a playbook, simply repeat the process described <b>Disabling Swift on a
+              Node</b>.</note></li>
         </ol></p>
     </section>
     <section>
       <title><b>Removing a node from the input model</b></title>
       <p>Use the following steps to remove a node.<ol id="ol_afc_m2g_pt">
-          <li>Edit the servers list (usually in data/servers.yml). Remove the entry for the node
-            (swobj4 in this example).</li>
+          <li>Edit the servers list (usually in <codeph>data/servers.yml</codeph> file). Remove the
+            entry for the node (<b>swobj4</b> in this example).</li>
           <li>If this was a SWPAC node, reduce the member-count attribute by 1 in the control-planes
-            definition (usually in data/control_plane.yml). For SWOBJ nodes, no such action is
-            needed.</li>
+            definition (usually in <codeph>data/control_plane.yml</codeph> file). For SWOBJ nodes,
+            no such action is needed.</li>
           <li>Commit the changes to
             git:<codeblock>cd ~helion
 git commit -a -m "removed swobj4"</codeblock></li>
@@ -141,9 +147,9 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts hlm-deploy.yml</codeblock></li>
           <li>Wait until replication has finished. See <xref href="safe_rebalance_deploy_ring.dita"
             /> for more details.</li>
-          <li>Further rebalances of the rings may be necessary. Use the process described in
-              <b>Final rebalance phase </b> at<xref href="ring_management.dita#topic_d3l_svr_4t">
-              Managing Object Storage (Swift) Rings</xref>.</li>
+          <li>Further rebalances of the rings are necessary. Use the process described in <b>Final
+              rebalance phase </b> at <xref href="ring_management.dita#topic_d3l_svr_4t"> Managing
+              Object Storage (Swift) Rings</xref>.</li>
         </ol></p>
     </section>
   </body>

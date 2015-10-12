@@ -6,42 +6,37 @@
   <body>
     <p>This page describes the configuration of Object Storage services using the supported example
       configuration input models.</p>
-    <section><title>Example Configurations</title>
+    <p>While deploying Swift using the input model you must enure that the disk drives exists and
+      are correctly assigned to Swift node. Also, you have made the Swift required changes in the
+      YAML files.</p>
+    <section><title><!--Example Configurations--></title>
       <ul>
-        <li><b>
-            <xref href="#modify-input-model/entry-scale-with-vsa" format="dita"
-              >entry-scale-with-vsa</xref></b>: This has a single control plane cluster which runs
-          all services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova
-          compute servers.
-            <p><!--<b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref> </b>: This example cloud model describes a system using multiple servers and networks. It provides an example for the configuration of the mid sized cloud. --></p></li>
+        <li>
+          <!--<b> <xref href="#modify-input-model/entry-scale-with-vsa" format="dita">entry-scale-with-vsa</xref></b>: This has a single control plane cluster which runs all services (Nova, Swift, Glance, etc) with an additional 3 resource nodes used as Nova compute servers.-->
+          <p><!--<b><xref href="#topic_qkg_l4v_bt/mid-size" format="dita">mid size cloud</xref> </b>: This example cloud model describes a system using multiple servers and networks. It provides an example for the configuration of the mid sized cloud. --></p>
+        </li>
       </ul></section>
-    <section id="entry-scale-with-vsa"><title>Entry-scale-with-vsa</title><p>The
-          <codeph>entry-scale-with-vsa</codeph> input model is relatively simple and constrained.
-        You must ensure that the disk drives exists and are correctly assigned to Swift nodes.
-        Therefore, no Swift-specific modification is required for this model while deploying
-        Swift.</p><p>Before starting the deployment, you must validate, and possibly update the data
-        in the example cloud model files as follows:<ul>
-          <li>Examine the <codeph>data/disks_controller.yml</codeph> file and validate that the
-            drives exist and have the appropriate preconditions as described in <xref
-              href="allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device"
-              >Requirements for a disk device</xref>.</li>
-          <li>If you plan to add more Swift storage nodes or drives, you should read the information
-            about partition power in <xref
-              href="ring_specifications.dita#ring-specification/selecting-partition-power"
-              type="section">Specifying the rings (ring specifications)</xref>. However, in most
-            cases you do not need to change the <codeph>data/swift/rings.yml</codeph> file.</li>
-        </ul></p><sectiondiv><b>Node Type</b></sectiondiv><p><b>Proxy, Container, Account, Object
-          (PACO) Node</b>: The Swift-proxy, Account, Container and Object services run on the same
-        (PACO) node type in the control plane. All other control services also run in this node
-        type.
-        <!--This is used for smaller clouds or where Swift is a minor element in a larger cloud.--></p><sectiondiv><b>YML
-          files associated with Swift Services</b></sectiondiv><p>The following <codeph>yml</codeph>
-        files are configured for <b>entry-scale-with-vsa</b> model:</p><simpletable
-        id="simpletable_mtc_yb1_kt">
+    <section id="entry-scale-with-vsa"
+        ><title><!--Entry-scale-with-vsa--></title><p><!--The <codeph>entry-scale-with-vsa</codeph> input model is relatively simple and constrained. You must ensure that the disk drives exists and are correctly assigned to Swift nodes. Therefore, no Swift-specific modification is required for this model while deploying Swift.--></p><p><!--Before starting the deployment, you must validate, and possibly update the data in the example cloud model files as follows:<ul><li>Examine the <codeph>data/disks_controller.yml</codeph> file and validate that the drives exist and have the appropriate preconditions as described in <xref href="allocating_disk_drives.dita#allocating-disk-drives/requirement-disk-device">Requirements for a disk device</xref>.</li><li>If you plan to add more Swift storage nodes or drives, you should read the information about partition power in <xref href="ring_specifications.dita#ring-specification/selecting-partition-power" type="section">Specifying the rings (ring specifications)</xref>. However, in most cases you do not need to change the <codeph>data/swift/rings.yml</codeph> file.</li></ul>--></p><sectiondiv><b>Node
+          Types</b></sectiondiv><ul id="ul_qp3_fhr_qt">
+        <li><b>Proxy, Container, Account, Object (PACO) Node</b>: The Swift-proxy, Account,
+          Container and Object services run on the same (PACO) node type in the control plane. All
+          other control services also run in this node type.
+          <!--This is used for smaller clouds or where Swift is a minor element in a larger cloud.--></li>
+        <li><b>Proxy, Container, Account (PAC) Node</b>: This node runs the Swift-proxy,
+          Swift-account, and Swift-container services. The Swift-proxy service processes API
+          requests and directs them to the Swift-account, Swift-container or Swift-object services
+          for processing. The Swift-account and Swift-container handle requests to accounts and
+          containers respectively.</li>
+        <li><b>Object (OBJ) Node</b>: This node runs the Swift-object service. The Swift-object
+          service handles requests for objects.</li>
+      </ul><sectiondiv><b>YML files associated with Swift Services</b></sectiondiv><p>The following
+          <codeph>yml</codeph> files are configured for <b>entry-scale-with-vsa</b>
+        model:</p><simpletable id="simpletable_mtc_yb1_kt">
         <strow>
           <stentry><codeph>data/control_plane.yml</codeph></stentry>
-          <stentry>This<b> ROLE-CONTROLLER</b> node type runs on the <b>c1</b> cluster as specified
-            in this file.</stentry>
+          <stentry>This<b> ROLE-CONTROLLER</b> node type runs on the <b>cluster1</b> cluster as
+            specified in this file.</stentry>
         </strow>
         <strow>
           <stentry><codeph>data/disk_controller.yml</codeph></stentry>
@@ -55,21 +50,63 @@
               href="ring_specifications.dita#ring-specification">ring
             specification</xref>.</stentry>
         </strow>
-      </simpletable>
-      <p>In the entry-scale-with-vsa cloud model, you can perform the following swift operations:<ul
-          id="ul_hck_4c1_kt">
-          <li><xref href="allocate_pac.dita"/></li>
-          <li><xref href="allocating_server.dita"/></li>
-          <li><xref href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt"/></li>
-          <li><xref href="allocating_network.dita#topic_pcj_hzv_dt"/></li>
-          <li><xref href="allocating_disk_drives.dita"/></li>
+      </simpletable><p>You can implementing the input model and perform the following Swift
+        activities: <ul id="ul_vsp_33r_qt">
+          <li><xref href="#modify-input-model" format="dita">Modifying Example Configurations for
+              Object Storage</xref><ul id="ul_fc4_j3r_qt">
+              <li><xref href="allocate_pac.dita"/></li>
+              <li><xref href="allocating_server.dita"/></li>
+              <li><xref href="creating_roles_swift_nodes.dita#topic_uh2_td1_kt"/></li>
+              <li><xref href="allocating_network.dita#topic_pcj_hzv_dt"/></li>
+            </ul></li>
+        </ul><ul id="ul_e34_l3r_qt">
+          <li><xref href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk
+              Drives</xref><ul id="ul_zjl_t3r_qt">
+              <li><xref href="label_on_partition.dita#verify-partition-label">How to verify if a
+                  Partition is Labelled</xref></li>
+              <li><xref href="filesystem_label.dita#verify-the-filesystem-label">How to Verify if a
+                  Filesystem is Labelled</xref></li>
+            </ul></li>
+        </ul><ul id="ul_ep5_bjr_qt">
           <li><xref href="creating_pac_cluster.dita"/></li>
           <li><xref href="creating_object_server_resource.dita"/></li>
           <li><xref href="ring_specifications.dita"/></li>
-          <li><xref href="storage_policies.dita"/><p>You can not only perform the above operation
-              but you can check the <xref href="check_objectstorage_operation.dita">swift
-                operation</xref> in your environment.</p></li>
-        </ul></p></section>
+          <li><xref href="storage_policies.dita"/></li>
+        </ul></p><ul id="ul_f1l_xjr_qt">
+        <li><xref href="ring_management.dita"/><ul id="ul_b4k_yjr_qt">
+            <li><xref href="rebalanced_explained.dita">Rebalance Explained</xref></li>
+            <li><xref href="preparing_ring_changes.dita">Preparing for Ring Changes</xref></li>
+            <li><xref href="playbook_linked_ring_management.dita">Swift Playbooks Linked to Ring
+                Management</xref></li>
+            <li><xref href="safe_rebalance_deploy_ring.dita">When it is safe to rebalance and deploy
+                a new ring?</xref></li>
+            <li><xref href="input_model_change_existing_rings.dita">Applying Input Model Changes to
+                Existing Rings</xref></li>
+            <li><xref href="add_new_storage_policy.dita"/></li>
+          </ul></li>
+        <li>Swift Operations<ul id="ul_dzk_njr_qt">
+            <li><xref href="add_new_node.dita"/></li>
+            <li><xref href="replacing_swift_node.dita"/></li>
+            <li><xref href="removing_node.dita"/></li>
+            <li><xref href="replacing_drives_swift_node.dita"/></li>
+          </ul></li>
+        <li><xref href="check_objectstorage_operation.dita"/><ul id="ul_b1x_clr_qt">
+            <li><xref href="validating_swift_recon.dita"/></li>
+            <li><xref href="lm_scan_metering.dita"/></li>
+            <li><xref href="utility.dita"/></li>
+          </ul></li>
+      </ul><ul id="ul_knx_1js_qt">
+        <li><xref href="troubleshooting.dita"/><ul id="ul_lh5_fjs_qt">
+            <li><xref href="deploy_fails_with_msdos_disks.dita"/></li>
+            <li><xref href="examine_details_planned_ring_changes_prior_deploy.dita"/></li>
+            <li><xref href="interpreting_swift_validate_input_model.dita"/></li>
+            <li><xref href="first_proxy_server.dita"/></li>
+            <li><xref href="label_on_partition.dita"/></li>
+            <li><xref href="filesystem_label.dita"/></li>
+            <li><xref href="recovering_builder_file.dita"/></li>
+            <li><xref href="restart_deploy_from_scratch.dita"/></li>
+          </ul></li>
+      </ul><p><!--In the entry-scale-with-vsa cloud model, you can perform the following swift operations: --></p></section>
     <!-- 
     <section id="mid-size"><title>Mid Size Cloud Model</title><p>This section describes
         configuration of Swift services in the mid size cloud model.</p><p>This example model allows

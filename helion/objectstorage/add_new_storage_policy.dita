@@ -12,7 +12,7 @@
         <li>Select a storage policy index and ring name. <p>For example, if you already have
             object-0 and object-1 rings in your ring-specifications (usually in
               <codeph>data/swift/rings.yml</codeph> file), the next index is 2 and the ring name is
-            object-2</p></li>
+            object-2.</p></li>
         <li>Select a user-visible name so that you can see when you examine container metadata or
           when you want to specify the Storage Policy used when you create a container. The name
           should be a single word (hyphen and dashes are allowed).</li>
@@ -47,12 +47,12 @@
             - object-0
             - object-1
             - <b>object-2</b>
-  ...</codeblock><note>Note:
-            You must use the new object ring on at least one node that runs the <b>swift-object
+  ...</codeblock><note>You
+            must use the new object ring on at least one node that runs the <b>swift-object
               service.</b> If you skip this step and continue to run the
               <codeph>_swift-validate-input-model.yml</codeph> and<codeph> swift-deploy.yml</codeph>
-            playbooks then it will fail with the error (There are no devices in this ring, or all
-            devices have been deleted) as shown
+            playbooks then it will fail with an error ,"There are no devices in this ring, or all
+            devices have been deleted", as shown
             below:<codeblock>TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] *** 
 failed: [padawan-ccp-c1-m1-mgmt] => {"changed": true, "cmd": ["swiftlm-ring-supervisor", "--make-delta", "--rebalance"], "delta": "0:00:03.511929", "end": "2015-10-07 14:02:03.610226", "rc": 2, "start": "2015-10-07 14:02:00.098297", "warnings": []}
 ...
@@ -65,7 +65,7 @@ Original exception message:
 There are no devices in this ring, or all devices have been deleted
 -------------------------------------------------------------------------------</codeblock></note></li>
         <li>Commit your configuration as
-            follows<codeblock>git add -A
+            follows:<codeblock>git add -A
 git commit -m "commit message"</codeblock><p>For
             example:<codeblock>cd ~/helion
 git commit -a -m "added object-2 Storage Policy and updated SWOBJ disk model"</codeblock></p></li>
@@ -79,7 +79,7 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           playbook as
           follows.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</codeblock>If
-          there are errors see <xref href="interpreting_swift_validate_input_model.dita"/> and
+          any errors occur, see <xref href="interpreting_swift_validate_input_model.dita"/> and
           correct them. Once the error is rectified, you must run the steps <b>5 -10.</b></li>
         <li>Create the new ring (for example; object-2) and reconfigure Swift node to use a new
           Storage Policy by running the <codeph>swift-deploy.yml</codeph> playbook as follows.

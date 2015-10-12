@@ -3,8 +3,8 @@
 <topic id="topic_uh2_td1_kt">
   <title>Creating Roles for Swift Nodes</title>
   <body>
-    <p>You must edit the <codeph>data/server_roles.yml</codeph> and add an entry to the server-roles
-      list using the following
+    <p>You must edit the <codeph>data/server_roles.yml</codeph> file and add an entry to the
+      server-roles list using the following
       syntax:<codeblock>server-roles:
 .
 .
@@ -15,21 +15,21 @@
     <p>The server roles have the following fields:<simpletable id="simpletable_c35_5rb_jt">
         <strow>
           <stentry><b><codeph>name</codeph></b></stentry>
-          <stentry>This is a name assigned for the role. In the following example, <b>ROLE_SWOBJ</b>
+          <stentry>This is a name assigned for the role. In the following example, <b>SWOBJ-ROLE</b>
             is the role name.</stentry>
         </strow>
         <strow>
           <stentry><b><codeph>interface-model</codeph></b></stentry>
           <stentry> You can either select an existing interface model or create one specifically for
-            Swift object servers. In the following example <b>INTERFACE_SET_SWOBJ</b> is used. See
+            Swift object servers. In the following example <b>SWPAC-INTERFACES</b> is used. See
               <xref href="allocating_network.dita#topic_pcj_hzv_dt">Swift Network and Service
               Requirements</xref> for more information.</stentry>
         </strow>
         <strow>
           <stentry><b><codeph>disk-model</codeph></b></stentry>
           <stentry>You can either select an existing model or create one specifically for Swift
-            object servers. In the following example <b>DISK_SET_SWPAC</b> and <b>DISK_SET_SWOBJ</b>
-            is used (depending on context). See <xref
+            object servers. In the following example <b>SWPAC-DISKS</b> and <b>SWOBJ-DISKS</b> is
+            used (depending on context). See <xref
               href="allocating_disk_drives.dita#allocating-disk-drives">Allocating Disk
               Drives</xref> for more information.</stentry>
         </strow>
@@ -39,9 +39,9 @@
 .
 .
 .
-- name: <b>ROLE-SWOBJ</b>
-  interface-model: <b>INTERFACE_SET_SWOBJ</b>
-  disk-model: <b>DISK_SET_SWOBJ</b></codeblock>
+- name: <b>SWOBJ-ROLE</b>
+  interface-model: <b>SWPAC-INTERFACES</b>
+  disk-model: <b>SWPAC-DISKS</b></codeblock>
     </example>
     <p><!--You must alloacte a server for Swift. Therefore, you specify the roles of the servers in <codeph>data/baremetal.yml</codeph> file. For example, a Swift Proxy, Container, Account (PAC) node is specified as follows:--></p>
     <!--<p><codeblock>baremetal_servers:

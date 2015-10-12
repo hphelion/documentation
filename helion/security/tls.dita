@@ -36,7 +36,7 @@ SWF-PRX-mgmt:8080 swift-proxy
 </codeblock>
 
 
-
+<!--
       <p>It is generally recommended that you provide a CA key and certificate generated from a
         well-known certificate authority during the installation process, so trust can be
         established using the certificate chain. This can be either a specific certificate/key
@@ -67,18 +67,18 @@ SWF-PRX-mgmt:8080 swift-proxy
 
       <p>Another option is for the clients not to authenticate TLS connections. This is not advised
         as this will mean the identity of the server you are contacting will not be verified.
-        However if you want to bypass this check you can use the --insecure option. A certificate is
+        However if you want to bypass this check you can use the - -insecure option. A certificate is
         not needed then.</p>
-      <codeblock>nova --insecure list</codeblock>
+      <codeblock>nova - -insecure list</codeblock>
       <p> An endpoint can be either a virtual IP (VIP) or a back-end service URI. A VIP can be
-        public, internal or admin. </p>
+        public, internal or admin. </p>-->
     </section>
     <section id="TLS_termination"><title>TLS termination for a public endpoint VIP </title> HP
       Helion OpenStack&#174; 2.0 supports fully qualified domain names (FQDN) for public endpoints.
       Open the following file and change components to tls-components in
       /home/stack/helion/my_cloud/definition/data/network_groups.yml load-balancers:
       <codeblock>   - provider: ip-cluster
-     name: extlb                      # This is the external LB.
+     name: extlb                      # This is the external load balancer.
      external-name: myhelion.test     # change this to a resolvable FQDN
      tls-components:
         - default

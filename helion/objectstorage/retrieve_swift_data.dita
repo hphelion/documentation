@@ -56,9 +56,8 @@ Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4614140152%
 3/3 hosts matched, 0 error[s] while checking hosts.
 ===============================================================================</codeblock></p>
     <p>
-      <note>Use <b>--help</b> to see all the available commands. These two commands (<b>--async</b>
-        and <b>--driveaudit</b>)<b> are not supported in this release</b> (<b>aren,t we supporting
-          this in GA too?)</b>.</note>
+      <note>Use <b>--help</b> to see all the available commands. <b>--driveaudit</b> command is not
+        supported in this release.</note>
     </p>
   </body>
 </topic>
