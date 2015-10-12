@@ -2,36 +2,9 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="HP2.0DNSaaS">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: DNSaaS Installation and
-    Configuration</title>
-  <titlealts>
-    <searchtitle>HP Helion Openstack 1.1: DNSaaS Installation and Configuration</searchtitle>
-  </titlealts>
-  <prolog>
-    <metadata>
-      <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
-      <othermeta name="role" content="Storage Administrator"/>
-      <othermeta name="role" content="Storage Architect"/>
-      <othermeta name="role" content="Michael B, Gerladine K, Graham H,"/>
-      <othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
-    </metadata>
-  </prolog>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: DNSaaS Installation and Configuration</title>
   <body>
-    <p>
-      <!--PUBLISHED-->
-      <!--./commercial/GA1/1.1commercial.install-GA-DNSaaS.md-->
-      <!--permalink: /helion/openstack/1.1/install/dnsaas/--></p>
-    <p>
-      <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita"/>
-    </p>
-    <p>
-      <b>This document describes the installation process for HP Helion OpenStack 2.0</b>
-    </p>
-    <p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by
-      following the update procedures described in <xref
-        href="../../commercial/GA1/1.1.1commercial.helion-update.dita">HP Helion OpenStack 1.1.1
-        Update Guide</xref>.)</p>
+    <p><b>This document describes the installation process for HP Helion OpenStack 2.0</b></p>
     <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you
       create, publish, and manage your DNS zones and records securely and efficiently to either a
       public or private DNS server network.</p>
@@ -39,67 +12,63 @@
       how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack</p>
     <note>These installation instructions assume that the associated project currently contains no
       instances (VMs). If this is not the case, see the instructions for <xref type="section"
-        href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space
+        href="#HP2.0DNSaaS/increasequotas">increasing quotas</xref> to ensure you have enough space
       before you begin.</note>
-    <p>
-      <b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on Helion OpenStack 1.1 and 1.1.1. Do
-        <b>not</b> attempt to install DNSaaS on any previous versions. </p>
+
     <ul>
       <li>
-        <xref type="section" href="#topic20357/preq">Prerequisites</xref>
+        <xref type="section" href="#HP2.0DNSaaS/preq">Prerequisites</xref>
       </li>
       <li>
-        <xref type="section" href="#topic20357/credentials">Creating Prerequisite Credentials</xref>
+        <xref type="section" href="#HP2.0DNSaaS/credentials">Creating Prerequisite Credentials</xref>
         <ul>
           <li>
-            <xref type="section" href="#topic20357/target-cred">Target Credentials</xref>
+            <xref type="section" href="#HP2.0DNSaaS/target-cred">Target Credentials</xref>
           </li>
           <li>
-            <xref type="section" href="#topic20357/service-cred">Service Credentials</xref>
+            <xref type="section" href="#HP2.0DNSaaS/service-cred">Service Credentials</xref>
           </li>
         </ul>
       </li>
       <li>
-        <xref type="section" href="#topic20357/publication">Sherpa CSU Publication and Booting the
+        <xref type="section" href="#HP2.0DNSaaS/publication">Sherpa CSU Publication and Booting the
           Installer VM</xref>
       </li>
       <li>
-        <xref type="section" href="#topic20357/configure">Installing and Configuring DNSaaS</xref>
+        <xref type="section" href="#HP2.0DNSaaS/configure">Installing and Configuring DNSaaS</xref>
       </li>
       <li>
-        <xref type="section" href="#topic20357/configovercloud">Configure the Overcloud Load
+        <xref type="section" href="#HP2.0DNSaaS/configovercloud">Configure the Overcloud Load
           Balancer for DNSaaS</xref>
       </li>
       <li>
-        <xref type="section" href="#topic20357/keyreg">Registering the Service with Keystone</xref>
+        <xref type="section" href="#HP2.0DNSaaS/keyreg">Registering the Service with Keystone</xref>
       </li>
       <li>
-        <xref type="section" href="#topic20357/uninstall">Uninstalling DNaaS</xref>
+        <xref type="section" href="#HP2.0DNSaaS/uninstall">Uninstalling DNaaS</xref>
       </li>
       <li>
-        <xref type="section" href="#topic20357/firewall-requirements">Required Firewall
+        <xref type="section" href="#HP2.0DNSaaS/firewall-requirements">Required Firewall
           Openings</xref>
       </li>
       <li>
-        <xref type="section" href="#topic20357/moreinfo">More Information</xref>
+        <xref type="section" href="#HP2.0DNSaaS/moreinfo">More Information</xref>
       </li>
     </ul>
     <section id="preq">
       <title>Prerequisites</title>
-      <p>
-        <b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on Helion OpenStack 1.1 Do <b>not</b>
-        attempt to install DNSaaS on any previous versions. </p>
+     
       <note> These installation instructions assume that the associated project currently contains
         no instances (VMs). If this is not the case, see the instructions for <xref type="section"
-          href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space
+          href="#HP2.0DNSaaS/increasequotas">increasing quotas</xref> to ensure you have enough space
         before you begin.</note>
       <ul>
         <li>HP Helion OpenStack is successfully installed</li>
-        <li>Download <xref type="section" href="#topic20357/publication">DNSaaS Installer
+        <li>Download <xref type="section" href="#HP2.0DNSaaS/publication">DNSaaS Installer
             Image</xref>
         </li>
         <li>
-          <p>Obtain <xref type="section" href="#topic20357/target-cred">Target Credentials</xref>:
+          <p>Obtain <xref type="section" href="#HP2.0DNSaaS/target-cred">Target Credentials</xref>:
             credentials of the user+tenant where the service is to be deployed.</p>
           <ul>
             <li>This user should have the <b>admin</b> and <b>_member_</b> roles.</li>
@@ -109,7 +78,7 @@
           </ul>
         </li>
         <li>
-          <p>Obtain <xref type="section" href="#topic20357/service-cred">Service Credentials</xref>:
+          <p>Obtain <xref type="section" href="#HP2.0DNSaaS/service-cred">Service Credentials</xref>:
             credentials for the user+tenant used to validate end user tokens.</p>
           <ul>
             <li>This user should be in the <b>service</b> tenant, have the <b>admin</b> and
@@ -124,10 +93,13 @@
           <p>A chosen backend driver and its prerequisites:</p>
           <ul>
             <li>
-              <p>PowerDNS (self hosted)<!--A BR tag was used here in the original source.--> A
-                domain name for the nameservers ("Namesever FQDNs"). For example, if your
+              <p>PowerDNS (self hosted)</p>
+                <ul>
+                  <li>A domain name for the nameservers ("Namesever FQDNs"). For example, if your
                 nameservers are to be named <i>ns1.mycompany.com</i>, you will need the
-                  <i>mycompany.com</i> domain.</p>
+                  <i>mycompany.com</i> domain.</li>
+                </ul>
+                
             </li>
             <li>
               <p>Microsoft DNS (self-hosted)</p>
@@ -189,6 +161,8 @@
 ## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa) ??
 -->
     </section>
+    
+    
     <section id="credentials">
       <title>Creating Prerequisite Credentials</title>
       <p>You must create both <b>target</b> and <b>service</b> credentials.</p>
@@ -339,7 +313,7 @@
           <p>Generate a floating IP address to use:</p>
           <p>a. Open a shell.</p>
           <p>b. Make sure you have the nova command line client installed.</p>
-          <p>c. Download the <xref type="section" href="#topic20357/target-cred">target
+          <p>c. Download the <xref type="section" href="#HP2.0DNSaaS/target-cred">target
               credentials</xref> in an RC file, for example using Horizon.</p>
           <p>d. Source the credentials.</p>
           <codeblock>
@@ -700,7 +674,7 @@ sudo -i
       <p>You must perform an initial configuration step to communicate the names of the servers that
         serve DNS to Designate. Please ensure you have a valid set of admin credentials in the
         standard OS_* environment variables before proceeding.</p>
-      <p>For the "Nameserver FQDNs" gathered during the <xref type="section" href="#topic20357/preq"
+      <p>For the "Nameserver FQDNs" gathered during the <xref type="section" href="#HP2.0DNSaaS/preq"
           >prerequisites</xref> step, issue a <codeph>server-create</codeph> command for each name
         to add the server:</p>
       <codeblock>
@@ -849,7 +823,7 @@ sudo -i
       </ul>
       <note>Public Cloud API and HP Helion Openstack API details are similar.</note>
       <p>
-        <xref href="#topic20357"> Return to Top </xref>
+        <xref href="#HP2.0DNSaaS"> Return to Top </xref>
       </p>
       <!-- ===================== horizontal rule ===================== -->
     </section>
