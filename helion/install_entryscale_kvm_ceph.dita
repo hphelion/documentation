@@ -33,16 +33,16 @@
                   <codeph>servers.yml</codeph> file where a user is using their first controller
                 node as their deployer:
                 <codeblock># Controllers
-                    - id: controller1
-                    ip-addr: 192.168.10.3
-                    role: CONTROLLER-ROLE
-                    server-group: RACK1
-                    nic-mapping: HP-DL360-4PORT
-                    mac-addr: b2:72:8d:ac:7c:6f
-                    ilo-ip: 192.168.9.3
-                    ilo-password: password
-                    ilo-user: admin
-                    <b>is-deployer: true</b></codeblock></note></li>
+   - id: controller1
+     ip-addr: 192.168.10.3
+     role: CONTROLLER-ROLE
+     server-group: RACK1
+     nic-mapping: HP-DL360-4PORT
+     mac-addr: b2:72:8d:ac:7c:6f
+     ilo-ip: 192.168.9.3
+     ilo-password: password
+     ilo-user: admin
+     <b>is-deployer: true</b></codeblock></note></li>
             <li id="encrypt">[Optional] You can use the <codeph>hosencrypt.py</codeph> script to
               encrypt your iLo passwords. This script uses OpenSSL. <ol>
                 <li>Change to the Ansible directory:
@@ -165,10 +165,10 @@ git commit -m "&lt;commit message>"</codeblock>
         <li>Run the following playbook which confirms that there is iLo connectivity for each of
           your nodes so that they are accessible to be re-imaged in a later step:
           <codeblock>cd ~/helion/hos/ansible
-              ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
+ansible-playbook -i hosts/localhost bm-power-status.yml</codeblock></li>
         <li>Run the configuration processor, as follows:
           <codeblock>cd ~/helion/hos/ansible
-              ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       </ol>
       <p>When you run the Configuration Processor you will be prompted for two passwords. Enter the
         first password to make the Configuration Processor encrypt its sensitive data, which is
